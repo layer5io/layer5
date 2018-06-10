@@ -1,0 +1,17 @@
+<div class="row">
+
+  <div class="col s12">
+    <div class="card">
+      <div class="card-image">
+        <span class="card-title"><a style="color:white" href=""></a></span>
+      </div>
+        <div class="card-content">
+
+
+      {% for skill in site.skills %}
+          <i class="devicon-{{skill.name}}-plain {{site.colored}}" style="font-size:{{site.icon_size}}px;" title="{{skill.name}}"></i>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

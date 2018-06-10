@@ -1,0 +1,24 @@
+---
+layout: default
+---
+  <div class="container">
+    <div class="col s10">
+    <div class="row" style="padding:10px;">
+      <a id="home" class="waves-effect waves-light btn white-text darken-2 grey z-depth-4" href="{{site.baseurl}}/#blog"><i class="material-icons">arrow_back</i></a>
+    </div>
+    <h3 class="post-title" itemprop="name headline" style="text-align:center">{{ page.title | escape }}</h3>
+
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        {{ page.date | date: date_format }}
+      </time>
+      {% if page.author %}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+      {% endif %}</p>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+</div>
+</div>

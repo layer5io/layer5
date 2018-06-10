@@ -1,0 +1,39 @@
+<div class="carousel carousel-slider center" data-indicators="true">
+  <div class="carousel-fixed-item">
+    <i class="material-icons" style="color:white" href="https://jameshamann.com">code</i>
+  </div>
+  <div class="carousel-item white-text" style="background-color: #90a4ae;" href="#one!">
+    <h2>{{ site.project_one }}</h2>
+    <i class="medium material-icons">{{site.project_one_icon}}</i>
+    <p class="white-text">{{ site.project_one_description }}</p>
+    <br><br>
+    <a class="btn waves-effect waves-dark white black-text z-depth-4" target="_blank" href="{{site.project_one_url}}">{{site.project_button}}</a>
+  </div>
+  {% if site.project_two != nil %}
+  <div class="carousel-item white-text" style="background-color: #78909c;" href="#two!">
+    <h2>{{ site.project_two }}</h2>
+    <i class="medium material-icons">{{site.project_two_icon}}</i>
+    <p class="white-text">{{ site.project_two_description }}</p>
+    <br><br>
+    <a class="btn waves-effect waves-light white black-text z-depth-4" target="_blank" href="{{site.project_two_url}}">{{site.project_button}}</a>
+  </div>
+  {% endif %}
+  {% if site.project_three != nil %}
+  <div class="carousel-item white-text" style="background-color: #607d8b;" href="{{site.project_three_url}}">
+    <h2>{{ site.project_three }}</h2>
+    <i class="medium material-icons">{{site.project_three_icon}}</i>
+    <p class="white-text">{{ site.project_three_description }}</p>
+    <br><br>
+    <a class="btn waves-effect waves-light white black-text z-depth-4" target="_blank" href="{{site.project_three_url}}">{{site.project_button}}</a>
+  </div>
+  {% endif %}
+  {% if site.project_four != nil %}
+  <div class="carousel-item white-text" style="background-color: #546e7a" href="{{site.project_four_url}}">
+    <h2>{{ site.project_four }}</h2>
+    <i class="medium material-icons">{{site.project_four_icon}}</i>
+    <p class="white-text">{{ site.project_four_description }}</p>
+    <br><br>
+    <a class="btn waves-effect waves-light white black-text z-depth-4" target="_blank" href="{{site.project_four_url}}">{{site.project_button}}</a>
+  </div>
+  {% endif %}
+</div>

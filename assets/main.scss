@@ -1,0 +1,12 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+// Syntax highlighting sass properties and inclusion
+$base-font-size: 1em;
+$spacing-unit:     30px !default;
+
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+}
+
+@import "syntax-highlighting";

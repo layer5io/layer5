@@ -1,0 +1,17 @@
+<div class="row">
+  {% for post in site.posts %}
+
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <img src="{{post.image}}">
+        <span class="card-title"><a style="color:white">{{ post.title | escape }}</a></span>
+        <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect waves-light red" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+      </div>
+      <div class="card-content">
+        <p>{{post.excerpt}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

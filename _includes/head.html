@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      {% if jekyll.environment == 'production' %}
+        {% if site.tag_manager_id %}
+          {% include google_tag_manager.html %}
+        {% elsif site.google_analytics_tracking_id %}
+          {% include google_analytics.html %}
+        {% endif %}
+      {% endif %}
+
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/materialize.css">
+      {% if site.syntax_highlighting %}
+        <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/main.css">
+      {% endif %}
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+      <title>{{site.title}}</title>
+    </head>
+    <body>
+      {% if site.tag_manager_id and jekyll.environment == 'production' %}
+        <!-- Google Tag Manager (noscript) -->
+          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.tag_manager_id}}"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+      {% endif %}
+
