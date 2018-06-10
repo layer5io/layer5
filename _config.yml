@@ -6,7 +6,7 @@ description: Characterizing and contrasting service meshes and related technolog
 baseurl: ""
 url: ""
 
-parallax_image_one: assets/images/cube-header-large.jpg # These are the images used for the parallax background
+#parallax_image_one: assets/images/cube-sh-small.png # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
 
 project_one: "Using Istio Workshop"
@@ -146,6 +146,8 @@ project_button: Github
 
 github: https://github.com/leecalcote/istio-service-mesh-workshop
 medium: http://gingergeek.com
+blog: http://gingergeek.com
+
 
 baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
 #url: http://localhost:4000/ #the url of your site
@@ -156,7 +158,7 @@ google_analytics_tracking_id: # This looks something like UA-000000000-0 Head ov
 
 cookies_banner: show # The value "show" will show the cookies banner, the value "none" will hide the banner.
 
-cookie_accept_message: Enjoy!
+cookie_accept_message: Thank you. Enjoy!
 
 syntax_highlighting: true # include the css for syntax highlighting
 

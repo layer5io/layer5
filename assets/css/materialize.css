@@ -1017,6 +1017,7 @@
 
 .teal-text.text-lighten-2 {
   color: #ffff !important;
+  font-family:  'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Helvetica, sans-serif;  
 }
 
 .teal.lighten-1 {
@@ -2159,6 +2160,7 @@ html {
  */
 body {
   margin: 0;
+  background-color:#647881;
 }
 
 /* HTML5 display definitions
@@ -2763,7 +2765,7 @@ video.responsive-video {
 .parallax-container {
   position: relative;
   overflow: hidden;
-  height: 500px;
+  height: 600px;
 }
 
 .parallax-container .parallax {
@@ -4310,7 +4312,7 @@ nav .brand-logo.right {
 nav .brand-logo i,
 nav .brand-logo [class^="mdi-"], nav .brand-logo [class*="mdi-"],
 nav .brand-logo i.material-icons {
-  float: left;
+  float: right;
   margin-right: 15px;
 }
 
