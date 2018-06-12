@@ -1,31 +1,38 @@
 {% include head.html %}
 
   <div id="home" class="section scrollspy">
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">{{ site.title }}</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">{{ site.description }}</h5>
+  <div id="index-banner" class="parallax-container" style="height: 400px;">
+    
+    <div style="padding-right: 5%; padding-left:5%;">
+        <img src="/assets/images/cube.png" align="right" height="400px" />
+        <h1  style="  font-family:  'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Helvetica, sans-serif;  
+          color: #ffff !important;">{{ site.title }}</h1>
+        <p style=" font-size: 2em;color:#cfd8dc;" class="light text-lighten-2">Characterizing and contrasting service meshes and related technologies.</p>
+          <!-- <h5 class="header light" style="float:left;">{{ site.description }}</h5> -->
+          
+          <div class="container" style="width:50%">
+          
+      <div class="container" style="width:50%">
+              
         </div>
         <!-- <br><br> -->
 
       </div>
     </div>
+    <div></div>
     <!-- <div class="parallax"><img src="{{site.parallax_image_one}}" alt="Layer 5 Service Mesh"></div> -->
   </div>
 </div>
 
-<div id="cookies" style="display:{{site.cookies_banner}}">
+<!-- <div id="cookies" style="display:{{site.cookies_banner}}">
   <p style="text-align:left; padding-left:8px"><a value="hide/show" id="check" class="waves-effect waves-light green lighten-1 btn btn-floating pulse" onclick="Materialize.toast('{{site.cookie_accept_message}}', 2000)" ><i class="material-icons">check</i></a></p>
   {% include cookies.html %}
-</div>
+</div> -->
 
 <div class="container" style="padding:20px;">
   <div id="portfolio" class="section scrollspy">
 
-  <h3 style="text-align:center;">{{site.portfolio_heading}}</h3>
+  <h3 style="text-align:center;color:aliceblue;">{{site.portfolio_heading}}</h3>
 
 {% include portfolio_{{site.portfolio_type}}.html %}
 
@@ -34,14 +41,14 @@
 
 </div>
 
-<div class="container" style="padding:20px;">
+<!--<div class="container" style="padding:20px;">
   <div id="skills" class="section scrollspy">
    <h3 style="text-align:center;">Characterizations and Contrasts</h3>
    {% include skills.html %}
  </div>
 </div>
 
-  <!-- <div class="parallax-container valign-wrapper">
+   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
@@ -55,14 +62,14 @@
 
 <div class="container" style="padding:20px;">
   <div id="blog" class="section scrollspy">
-  <h3 style="text-align:center;">Blog</h3>
+  <h3 style="text-align:center;color:aliceblue;">Upcoming Books</h3>
   {% include blog-feed.html %}
 </div>
 </div>
 
 <div class="container" style="padding:20px;">
   <div id="contact" class="section scrollspy">
-  <h3 style="text-align:center;">Contact</h3>
+  <h3 style="text-align:center;color:aliceblue;">Contact</h3>
   {% include contact.html %}
 </div>
 </div>

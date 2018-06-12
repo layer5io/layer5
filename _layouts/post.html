@@ -6,7 +6,7 @@ layout: default
     <div class="row" style="padding:10px;">
       <a id="home" class="waves-effect waves-light btn white-text darken-2 grey z-depth-4" href="{{site.baseurl}}/#blog"><i class="material-icons">arrow_back</i></a>
     </div>
-    <h3 class="post-title" itemprop="name headline" style="text-align:center">{{ page.title | escape }}</h3>
+    <h3 class="post-title" itemprop="name headline" style="text-align:center;color:aliceblue">{{ page.title | escape }}</h3>
 
     <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -17,8 +17,9 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
       {% endif %}</p>
 
-  <div class="post-content" itemprop="articleBody">
+  <div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
     {{ content }}
   </div>
 </div>
+<br />
 </div>

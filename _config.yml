@@ -6,7 +6,7 @@ description: Characterizing and contrasting service meshes and related technolog
 baseurl: ""
 url: ""
 
-#parallax_image_one: assets/images/cube-sh-small.png # These are the images used for the parallax background
+parallax_image_one: assets/images/cube.png #-header-large.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
 
 project_one: "Using Istio Workshop"
@@ -14,10 +14,10 @@ project_one_description: A worshop containing 10 Istio labs. First presented at 
 project_one_url: https://github.com/leecalcote/istio-service-mesh-workshop
 project_one_icon: location_on
 
-project_two: Second Project
-project_two_description: Describe your project!
-project_two_url: https://github.com/jameshamann/jekyll-material-theme
-project_two_icon: photo_camera
+# project_two: Second Project
+# project_two_description: Describe your project!
+# project_two_url: https://github.com/jameshamann/jekyll-material-theme
+# project_two_icon: photo_camera
 
 
 project_three: Third Project
