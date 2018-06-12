@@ -2,7 +2,7 @@
 layout: post
 title:  "The Enterprise Path to Servcie Mesh"
 date:   2018-06-08 21:15:05 +0000
-image: /assets/images/primates.jpg
+image: /assets/images/rhino.jpg
 #author: Lee Calcote
 
 ---
