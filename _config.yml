@@ -156,7 +156,7 @@ baseurl: # if your site is located at /blog or /home, enter it here, otherwise l
 tag_manager_id: # This looks something like GTM-XXXXXXX
 google_analytics_tracking_id: # This looks something like UA-000000000-0 Head over to https://analytics.google.com/ to setup.
 
-cookies_banner: show # The value "show" will show the cookies banner, the value "none" will hide the banner.
+cookies_banner: none # The value "show" will show the cookies banner, the value "none" will hide the banner.
 
 cookie_accept_message: Thank you. Enjoy!
 
