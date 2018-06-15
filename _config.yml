@@ -10,7 +10,7 @@ parallax_image_one: assets/images/cube.png #-header-large.jpg # These are the im
 parallax_image_two: assets/images/startup3.jpg
 
 project_one: "Using Istio Workshop"
-project_one_description: A worshop containing ten labs on the Istio service mesh. First presented at DockerCon18. <p>See the resource links below.</p>
+project_one_description: A worshop containing ten labs on the Istio service mesh. First presented at DockerCon18. <p>See the resource links below.</p><p>(<a href="/assets/images/using-istio.jpg">large image</a>)</p>
 project_one_url: https://github.com/leecalcote/istio-service-mesh-workshop
 project_one_icon: location_on
 
