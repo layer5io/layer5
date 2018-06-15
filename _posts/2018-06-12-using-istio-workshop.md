@@ -7,7 +7,7 @@ image: /assets/images/primates.jpg
 
 ---
 <h4> Book: <i>Istio: Up and Running</i></h4>
-By Lee Calcote, Matt Baldwin
+By Lee Calcote, Matt Baldwin, Zack Butcher
 
 Istio is a service mesh announced in 2017 and supported by Google, IBM, and Lyft. It is open-source, incorporates Envoy Proxy, a component developed and battle hardened at Lyft, and is one of the fastest growing solutions for connecting, managing, and securing microservices. 
 
