@@ -2,7 +2,8 @@
 
   <div id="home" class="section scrollspy">
   <div id="index-banner" class="parallax-container" style="height: 280px;">
-    
+    <div class="container">
+
     <div style="padding-right: 5%; padding-left:5%;">
         <img src="/assets/images/cube.png" align="left" height="270px" style="padding-right:20px;" />
         <h1  style="  font-family:  'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Helvetica, sans-serif; padding-top:20px; 
@@ -10,12 +11,7 @@
          <p style=" font-size: 2em;color:#cfd8dc;line-height:15px;" class="light text-lighten-2">A collection of meshy things. <br />
          <p style=" font-size: 1.5em;color:#cfd8dc;" class="light text-lighten-2"><i>Characterizing and contrasting service meshes and related technologies.</i></p>
           <!-- <h5 class="header light" style="float:left;">{{ site.description }}</h5> -->
-          
-          <div class="container" style="width:50%">
-          
-      <div class="container" style="width:50%">
-              
-        </div>
+        
         <!-- <br><br> -->
 
       </div>
@@ -32,7 +28,6 @@
 
 <div class="container" style="padding:20px;">
   <div id="portfolio" class="section scrollspy">
-
   <h3 style="text-align:center;color:aliceblue;">{{site.portfolio_heading}}</h3>
 
 {% include portfolio_{{site.portfolio_type}}.html %}
@@ -61,14 +56,14 @@
   </div> -->
 
 
-<div class="container" style="padding:20px;">
+<div class="container no-pad-top" >
   <div id="blog" class="section scrollspy">
   <h3 style="text-align:center;color:aliceblue;">Upcoming Books</h3>
   {% include blog-feed.html %}
 </div>
 </div>
 
-<div class="container" style="padding:20px;">
+<div class="container">
   <div id="contact" class="section scrollspy">
   <h3 style="text-align:center;color:aliceblue;">Contact / Subscribe</h3>
   {% include contact.html %}
