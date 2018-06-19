@@ -2,7 +2,7 @@
 layout: post
 title:  "The Enterprise Path to Service Mesh"
 date:   2018-06-08 21:15:05 +0000
-image: /assets/images/rhino.gif
+image: /assets/images/ORM_logo_box_rgb.png
 #author: Lee Calcote
 
 ---

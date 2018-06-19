@@ -2,7 +2,7 @@
 layout: post
 title:  "Istio: Up and Running"
 date:   2018-06-07 21:15:05 +0000
-image: /assets/images/polar-bear.gif
+image: /assets/images/ORM_logo_box_rgb.png
 #author: Lee Calcote
 
 ---
