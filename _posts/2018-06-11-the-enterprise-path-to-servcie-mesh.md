@@ -14,12 +14,13 @@ As someone interested in modern software design, you have heard of service mesh 
 Three most important things readers will learn from this book:
 
 <div style="margin-left:25px">
-<li> What is a service mesh and why do I need one? </li>
-  <li style="margin-left:15px"> What are the different service meshes and how do they contrast?</li>
-  <li style="margin-left:15px"> Where services meshes layer in with other technologies.</li>
-<li>When and why should I adopt a service mesh?</li>
-  <li style="margin-left:15px">What are popular deployment models and why?</li>
-<li> What are practical steps to adopt a service mesh in my enterprise?</li>
-<li> How do I fit a service mesh into my existing infrastructure?</li>
+  <li> What is a service mesh and why do I need one? </li>
+    <li style="margin-left:15px"> What are the different service meshes and how do they contrast?</li>
+    <li style="margin-left:15px"> Where services meshes layer in with other technologies.</li>
+  <li>When and why should I adopt a service mesh?</li>
+    <li style="margin-left:15px">What are popular deployment models and why?</li>
+  <li> What are practical steps to adopt a service mesh in my enterprise?</li>
+  <li> How do I fit a service mesh into my existing infrastructure?</li>
 </div>
 <b>Publish date: July/August 2018</b>
+
