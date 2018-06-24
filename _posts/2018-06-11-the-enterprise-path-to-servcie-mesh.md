@@ -9,9 +9,10 @@ image: /assets/images/ORM_logo_box_rgb.png
 <h4> Book: <i>The Enterprise Path to Service Mesh Architectures</i></h4>
 By Lee Calcote
 
-As a technology leader, you have heard of service mesh architectures in context of microservices. This book will help answer common questions on service mesh architectures, through the lens of a large enterprise. A service mesh approach offers a lot of potential for creating robust and scalable applications, but also introduces new challenges. The book covers how to evaluate your organization’s readiness, the factors to consider when deciding upon which applications should be built from the ground up or converted with a new service mesh architecture, and offers a path of how you can get there. 
+As someone interested in modern software design, you have heard of service mesh architectures in context of microservices. This book will help answer common questions on service mesh architectures, through the lens of a large enterprise. Service meshes introduce a new layer into modern infrastructures, offering the potential for creating robust and scalable applications and granular control over them. Is a service mesh right for you? This book covers how to evaluate your organization’s readiness, the factors to consider when building new applications and converting existing applications to best leverage a service mesh, and offers insight on deployment architectures used to get you there. 
 
-The three most important things readers will learn from this book:
+Three most important things readers will learn from this book:
+
 <div style="margin-left:25px">
 <li> What is a service mesh and why do I need one? </li>
   <li style="margin-left:15px"> What are the different service meshes and how do they contrast?</li>
