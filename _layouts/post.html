@@ -8,7 +8,7 @@ layout: default
     </div>
     <h3 class="post-title" itemprop="name headline" style="text-align:center;color:aliceblue">{{ page.title | escape }}</h3>
 
-    <p class="post-meta">
+    <p class="post-meta" style="color:#cfd8dc;">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         {{ page.date | date: date_format }}
