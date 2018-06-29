@@ -16,9 +16,8 @@ project_one_icon: location_on
 
 project_two: "Using Istio Workshop"
 project_two_description: A worshop containing ten labs on the Istio service mesh. Presented at Velocity London 2018. <p>Resources not available yet.</p>
-project_two_url: https://github.com/jameshamann/jekyll-material-theme
-project_two_icon: location_on
-
+project_two_url: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506
+project_two_icon: session
 
 project_three: Third Project
 project_three_description: Describe your project!
@@ -144,6 +143,7 @@ colored: colored # Leave blank for black and white icons
 
 project_button: Github
 
+session: Session
 github: https://github.com/leecalcote/istio-service-mesh-workshop
 medium: http://gingergeek.com
 blog: http://gingergeek.com
