@@ -14,10 +14,10 @@ project_one_description: A worshop containing ten labs on the Istio service mesh
 project_one_url: https://github.com/leecalcote/istio-service-mesh-workshop
 project_one_icon: location_on
 
-# project_two: Second Project
-# project_two_description: Describe your project!
-# project_two_url: https://github.com/jameshamann/jekyll-material-theme
-# project_two_icon: photo_camera
+project_two: "Using Istio Workshop"
+project_two_description: A worshop containing ten labs on the Istio service mesh. Presented at Velocity London 2018. <p>Resources not available yet.</p>
+project_two_url: https://github.com/jameshamann/jekyll-material-theme
+project_two_icon: location_on
 
 
 project_three: Third Project

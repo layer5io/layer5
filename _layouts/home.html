@@ -22,7 +22,9 @@
 </div>
 
 <div id="cookies" style="display:{{site.cookies_banner}}">
-  <p style="text-align:left; padding-left:8px"><a value="hide/show" id="check" class="waves-effect waves-light green lighten-1 btn btn-floating pulse" onclick="Materialize.toast('{{site.cookie_accept_message}}', 2000)" ><i class="material-icons">check</i></a></p>
+  <p style="text-align:left; padding-left:8px">
+    <a value="hide/show" id="check" class="waves-effect waves-light green lighten-1 btn btn-floating pulse" 
+       onclick="Materialize.toast('{{site.cookie_accept_message}}', 2000)" ><i class="material-icons">check</i></a></p>
   {% include cookies.html %}
 </div>
 
