@@ -2158,9 +2158,13 @@ html {
 /**
  * Remove default margin.
  */
+ :root {
+  --main-bg-color: #647881;
+}
+ 
 body {
   margin: 0;
-  background-color:#647881;
+  background-color: var(--main-bg-color);
 }
 
 /* HTML5 display definitions
