@@ -2885,14 +2885,14 @@ ul.staggered-list li {
 }
 
 .page-footer {
-  padding-top: 20px;
+  padding-top: 10px;
   color: #fff;
-  background-color: #cfd8dc;
+  background-color: #a6b7be;
 }
 
 .page-footer .footer-copyright {
   overflow: hidden;
-  min-height: 50px;
+  min-height: 40px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2901,9 +2901,11 @@ ul.staggered-list li {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px 0px;
-  color: #000000;
-  background-color: rgba(51, 51, 51, 0.08);
+
+  color:rgb(174, 176, 177);
+  vertical-align: middle; 
+  padding-left: 30px;
+  background-color: var(--main-bg-color);
 }
 
 table, th, td {
