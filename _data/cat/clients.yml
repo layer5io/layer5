@@ -1,0 +1,8 @@
+- name: Akka
+  link: https://akka.io
+- name: Finagle
+  link: https://github.com/twitter/finagle/
+- name: Hystrix
+  link: https://www.github.com/Netflix/Hystrix
+- name: Ribbon
+  link: https://github.com/Netflix/Ribbon

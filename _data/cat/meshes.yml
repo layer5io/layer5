@@ -1,0 +1,14 @@
+- name: Conduit
+  link: https://conduit.io
+- name: Consul Connect
+  link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
+- name: Houston
+  link: https://www.turbinelabs.io/product
+- name: Istio
+  link: https://istio.io
+- name: Linkerd
+  link: https://linkerd.io
+- name: Zuul
+  link: https://github.com/Netflix/zuul
+- name: Vamp
+  link: https://vamp.io
