@@ -2,8 +2,8 @@
   link: https://conduit.io
 - name: Consul Connect
   link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
-- name: Houston
-  link: https://www.turbinelabs.io/product
+- name: Rotor
+  link: https://github.com/turbinelabs/rotor
 - name: Istio
   link: https://istio.io
 - name: Linkerd
