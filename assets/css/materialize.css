@@ -2831,6 +2831,12 @@ ul.staggered-list li {
   }
 }
 
+@media only screen and (min-width: 992px) {
+  .show-on-med-and-down {
+    display: none !important;
+  }
+}
+
 @media only screen and (min-width: 601px) {
   .hide-on-med-and-up {
     display: none !important;
