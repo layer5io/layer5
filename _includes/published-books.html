@@ -1,6 +1,7 @@
 <div class="row">
-  {% for post in site.posts %}
+    {% for post in site.posts %}
 
+  {% if post.author == "Lee Calcote" %}
   <div class="col s12 m6">
     <div class="card">
       <div class="card-image">
@@ -13,6 +14,8 @@
       </div>
     </div>
   </div>
+  {% endif %}
   {% endfor %}
+
 </div>
 <!-- waves-light light -->
