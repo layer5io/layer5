@@ -24,4 +24,8 @@ Three most important things readers will learn from this book:
   <li> What are practical steps to adopt a service mesh in my enterprise?</li>
   <li> How do I fit a service mesh into my existing infrastructure?</li>
 </div>
-<b>Publish date: July/August 2018</b>
+<i>Published August 2018</i>
+
+<div class="row" style="padding:10px;text-align:center;">
+  <a id="home" class="waves-effect waves-light btn white-text darken-2 orange z-depth-4" href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures/">Get the free ebook</a>
+</div>
