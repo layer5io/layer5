@@ -1,4 +1,6 @@
 - name: Linkerd 2.x (Conduit)
+  desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setup. 
+Open Source. From Buoyant. Written in Rust and Go."
   link: https://conduit.io
   autoinject: "Experimental"
   grpc: "Yes"
@@ -17,6 +19,7 @@
   multi-cluster: "Experimental"
   multi-tenant: "Experimental"
 - name: Linkerd 1.x
+  desc: "Linkerd - hosted by the CNCF and built on top of Twitter Finagle. Linkerd includes both a proxying data plane and the Namerd (“namer-dee”) control plane all in one package. "
   link: https://linkerd.io
   tcp-web: "Yes"
 - name: Zuul

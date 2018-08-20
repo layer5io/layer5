@@ -1,8 +1,14 @@
 - name: Ambassador
   link: https://getambassador.io
+  desc: "Ambassador uses Envoy"
 - name: Contour
   link: https://github.com/heptio/contour
+  desc: "Contour uses Envoy"
 - name: Kong
   link: https://github.com/kong/kong
+  desc: "Kong uses Nginx"
 - name: OpenResty
   link: http://openresty.org
+  desc: "OpenResty uses Nginx"
+- name: Traefik
+  link: https://traefik.io/

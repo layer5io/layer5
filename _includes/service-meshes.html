@@ -61,7 +61,10 @@
         <div class="card-content comparison">
             <ul>API Gateway
               {% for gw in site.data.cat.gw %}
-                  <li><a href="{{gw.link}}" class="orange-text">{{gw.name}}</a></li>
+                  <li><div class="tooltip"><a href="{{gw.link}}" class="orange-text">{{gw.name}}</a>
+                    <span class="tooltiptext">{{gw.desc}}</span></div>
+                  </li>
+
               {% endfor %}
             </ul>
         </div>
@@ -69,7 +72,9 @@
         <div class="card-content comparison">
             <ul>Service or Edge Proxy
               {% for proxies in site.data.cat.proxies %}
-                  <li><a href="{{proxies.link}}" class="orange-text">{{proxies.name}}</a></li>
+                  <li><div class="tooltip"><a href="{{proxies.link}}" class="orange-text">{{proxies.name}}</a>
+                    <span class="tooltiptext">{{proxies.desc}}</span>
+                  </div></li>
               {% endfor %}
             </ul>
         </div>

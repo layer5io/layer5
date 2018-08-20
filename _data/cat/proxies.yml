@@ -1,4 +1,6 @@
 - name: Envoy
   link: https://www.envoyproxy.io
+  desc: "Envoy - a modern proxy hosted by the CNCF. Many projects have sprung up to leverage Envoy, including Istio."
 - name: nginMesh
   link: https://github.com/nginxinc/nginmesh
+  desc: "nginMesh - launched in September 2017, the nginMesh project deploys Nginx as a sidecar proxy in Istio."
