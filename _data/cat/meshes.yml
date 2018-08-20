@@ -1,7 +1,8 @@
 - name: Linkerd 2.x (Conduit)
   link: https://conduit.io
-  tcp-web: "Yes"
   autoinject: "Experimental"
+  grpc: "Yes"
+  tcp-web: "Yes"
 - name: Consul Connect
   link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
   autoinject: "No"

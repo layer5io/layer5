@@ -10,6 +10,32 @@
           border-right-width: 1px; border-right-style: dashed;
           border-right-color: var(--main-bg-color);
           } 
+          
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color:var(--main-bg-color);
+            color:aliceblue ;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            left: 105%; 
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
         </style>
 
         <div class="card-content comparison">
@@ -23,7 +49,11 @@
         <div class="card-content comparison">
           <ul>Client Library
             {% for clients in site.data.cat.clients %}
-                <li><a href="{{clients.link}}" class="orange-text">{{clients.name}}</a></li>
+            
+                <li><div class="tooltip"><a href="{{clients.link}}" class="orange-text">{{clients.name}}</a>
+                <span class="tooltiptext">{{clients.desc}}</span></div>
+              </li>
+              
             {% endfor %}
           </ul>
         </div>

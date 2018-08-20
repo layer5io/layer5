@@ -1,8 +1,12 @@
 - name: Akka
   link: https://akka.io
+  desc: "an open source toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala."
 - name: Finagle
   link: https://github.com/twitter/finagle/
+  desc: "an open source RPC library built on Netty for engineers that want a strongly-typed language and be on the JVM. Finagle is written in Scala."
 - name: Hystrix
   link: https://www.github.com/Netflix/Hystrix
+  desc: "an open source latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience. Hystrix is written in Java."
 - name: Ribbon
   link: https://github.com/Netflix/Ribbon
+  desc: "an open source Inter-Process Communication (remote procedure calls) library with built-in software load balancers. Ribbon is written in Java."
