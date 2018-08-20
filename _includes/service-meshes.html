@@ -1,14 +1,17 @@
 <div class="row">
   <div class="col s12"><h5 style="color:aliceblue;">Categories</h5>
     <div class="card col s12" style="background-color: white;">
-      <style> ul {font-weight:bold;} li {margin-left:5px; font-weight: normal;} .comparison {
-        float:left; display: inline; b
-        background-color: white; 
-        border-right-width: 1px; border-right-style: dashed;
-        border-right-color:var(--main-bg-color);
-        } </style>
+      <style> 
+        ul {font-weight:bold;} 
+        li {margin-left:5px; font-weight: normal;} 
+        .comparison {
+          float:left; display: inline; 
+          background-color: white; 
+          border-right-width: 1px; border-right-style: dashed;
+          border-right-color: var(--main-bg-color);
+          } 
+        </style>
 
-        <!-- {% include service-mesh-categories.html %} -->
         <div class="card-content comparison">
           <ul>Service Mesh
             {% for meshes in site.data.cat.meshes %}
@@ -40,11 +43,10 @@
               {% endfor %}
             </ul>
         </div>
-
+        
       </div><span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/leecalcote/layer5/issues" style="color: #ff9800;">submit an issue</a>.</span>
       </div>
     </div>
-    <!-- <a id="home" class="waves-effect waves-light btn white-text darken-2 orange z-depth-4" style="height: 20px; width: 20px;font-size: 2em;" href="{{site.baseurl}}/#home"><i class="material-icons">comment</i></a> -->
 
 <div class="row">
   <div class="col s12"><h5 style="color:aliceblue;">Non-Functional</h5>    

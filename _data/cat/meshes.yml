@@ -1,14 +1,26 @@
-- name: Conduit
+- name: Linkerd 2.x (Conduit)
   link: https://conduit.io
+  tcp-web: "Yes"
+  autoinject: "Experimental"
 - name: Consul Connect
   link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
+  autoinject: "No"
 - name: Rotor
   link: https://github.com/turbinelabs/rotor
 - name: Istio
   link: https://istio.io
-- name: Linkerd
+  autoinject: "Yes"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Experimental"
+  multi-tenant: "Experimental"
+- name: Linkerd 1.x
   link: https://linkerd.io
+  tcp-web: "Yes"
 - name: Zuul
   link: https://github.com/Netflix/zuul
+  autoinject: "No"
 - name: Vamp
   link: https://vamp.io
+  autoinject: "No"

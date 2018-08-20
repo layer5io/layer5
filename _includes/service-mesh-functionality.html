@@ -4,58 +4,25 @@
               <th>Service Mesh</th>
               <th>Auto Proxy Injection</th>
               <th>TCP + WebSockets</th>
-              <th>HTTP, HTTP/2, gRPC</th>
-              <th>Capability XX</th>
-              <th>Capability XX</th>
-              <th>Capability XX</th>
+              <th>HTTP, HTTP/2</th>
+              <th>gRPC</th>
+              <th>Multi-Cluster</th>
+              <th>Multi-Tenant</th>
+              <th></th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-              <td>Conduit (Linkerd 2.x)</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-          </tr>
-          <tr>
-              <td>Linkerd 1.x</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-          </tr>
-          <tr>
-              <td>Istio</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-          </tr>
-          <tr>
-              <td>Mesh XX</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-          </tr>
-          <tr>
-              <td>Mesh XX</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-          </tr>
+            {% for meshes in site.data.cat.meshes %}
+            <tr style="border: 1px dashed #a6b7be; text-align:center;">
+                <td><a href="{{meshes.link}}" class="orange-text">{{meshes.name}}</a></td>
+                <td style="text-align:center;"> {{meshes.autoinject}} </td>
+                <td style="text-align:center;"> {{meshes.tcp-web}} </td>
+                <td style="text-align:center;"> {{meshes.h2}} </td>
+                <td style="text-align:center;"> {{meshes.grpc}} </td>
+                <td style="text-align:center;"> {{meshes.multi-cluster}} </td>
+                <td style="text-align:center;"> {{meshes.multi-tenant}} </td>
+            </tr>
+            {% endfor %}
           </tbody>
         </table>
