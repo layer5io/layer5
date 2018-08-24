@@ -154,7 +154,7 @@ baseurl: # if your site is located at /blog or /home, enter it here, otherwise l
 
 # Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
 tag_manager_id: # This looks something like GTM-XXXXXXX
-google_analytics_tracking_id: # This looks something like UA-000000000-0 Head over to https://analytics.google.com/ to setup.
+google_analytics_tracking_id: UA-2969471-4 # This looks something like UA-000000000-0 Head over to https://analytics.google.com/ to setup.
 
 cookies_banner: none # The value "show" will show the cookies banner, the value "none" will hide the banner.
 
