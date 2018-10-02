@@ -3,6 +3,7 @@
 Open Source. From Buoyant. Written in Rust and Go."
   link: https://conduit.io
   autoinject: "Experimental"
+  h2: "Yes"
   grpc: "Yes"
   tcp-web: "Yes"
 - name: Consul Connect
