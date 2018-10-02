@@ -1,11 +1,3 @@
-- name: Linkerd 2.x (Conduit)
-  desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setup. 
-Open Source. From Buoyant. Written in Rust and Go."
-  link: https://conduit.io
-  autoinject: "Experimental"
-  h2: "Yes"
-  grpc: "Yes"
-  tcp-web: "Yes"
 - name: Consul Connect
   link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
   autoinject: "No"
@@ -23,6 +15,14 @@ Open Source. From Buoyant. Written in Rust and Go."
   desc: "Linkerd - hosted by the CNCF and built on top of Twitter Finagle. Linkerd includes both a proxying data plane and the Namerd (“namer-dee”) control plane all in one package. "
   link: https://linkerd.io
   h2: "Yes"
+  tcp-web: "Yes"
+- name: Linkerd 2.x (Conduit)
+  desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setup. 
+Open Source. From Buoyant. Written in Rust and Go."
+  link: https://conduit.io
+  autoinject: "Experimental"
+  h2: "Yes"
+  grpc: "Yes"
   tcp-web: "Yes"
 - name: Zuul
   link: https://github.com/Netflix/zuul
