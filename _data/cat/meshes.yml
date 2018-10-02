@@ -22,6 +22,7 @@ Open Source. From Buoyant. Written in Rust and Go."
 - name: Linkerd 1.x
   desc: "Linkerd - hosted by the CNCF and built on top of Twitter Finagle. Linkerd includes both a proxying data plane and the Namerd (“namer-dee”) control plane all in one package. "
   link: https://linkerd.io
+  h2: "Yes"
   tcp-web: "Yes"
 - name: Zuul
   link: https://github.com/Netflix/zuul
