@@ -145,8 +145,8 @@ project_button: Github
 
 session: Session
 github: https://github.com/leecalcote/istio-service-mesh-workshop
-medium: http://gingergeek.com
-blog: http://gingergeek.com
+medium: https://gingergeek.com
+blog: https://gingergeek.com
 
 
 baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
