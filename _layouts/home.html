@@ -3,21 +3,16 @@
   <div id="home" class="section scrollspy">
   <div id="index-banner" class="parallax-container" style="height: 280px;">
     <div class="container">
-
     <div style="padding-right: 5%; padding-left:5%;">
         <img class="hide-on-med-and-down " src="/assets/images/cube.png" align="left" height="270px" style="padding-right:20px;" />
         <img class="show-on-med-and-down" src="/assets/images/cube-sh-small.png" align="left"  style="padding-right:20px;" />
         <h1  style="  font-family:  'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Helvetica, sans-serif; padding-top:20px; 
           color: #ffff !important; text-shadow: 1px 2px #000000; line-height: 100%;">Layer5.io</h1>
-         <p style=" font-size: 2em;color:#cfd8dc;line-height:15px;" class="light text-lighten-2">A community-curated collection. <br />
-         <p style=" font-size: 1.5em;color:#cfd8dc;" class="light text-lighten-2"><i>Characterizing and contrasting service meshes and related technologies.</i></p>
+         <p style="font-size: 2em;color:#cfd8dc;line-height:1em;" class="light text-lighten-2">A community-curated collection.</p>
+         <p style="color:#cfd8dc;line-height:1em;font-size:1.25em;" class="center-on-small-only light text-lighten-2"><i>Characterizing and contrasting service meshes and related technologies.</i></p>
           <!-- <h5 class="header light" style="float:left;">{{ site.description }}</h5> -->
-        
-        <!-- <br><br> -->
-
       </div>
     </div>
-    <div></div>
     <!-- <div class="parallax"><img src="{{site.parallax_image_one}}" alt="Layer 5 Service Mesh"></div> -->
   </div>
 </div>
@@ -39,13 +34,9 @@
 
 <div class="container" style="padding:20px;">
   <div id="workshop" class="section scrollspy">
-  <h3 style="text-align:center;color:aliceblue;">{{site.portfolio_heading}}</h3>
-
-{% include portfolio_{{site.portfolio_type}}.html %}
-
-</div>
-
-
+    <h3 style="text-align:center;color:aliceblue;">{{site.portfolio_heading}}</h3>
+    {% include portfolio_{{site.portfolio_type}}.html %}
+  </div>
 </div>
 
 <!--<div class="container" style="padding:20px;">
@@ -69,12 +60,12 @@
 
 <div class="container no-pad-top" >
   <div id="blog" class="section scrollspy">
-  <h3 style="text-align:center;color:aliceblue;">Published Books</h3>
-  {% include published-books.html %}
-  
-  <h3 style="text-align:center;color:aliceblue;">Upcoming Books</h3>
-  {% include upcoming-books.html %}
-</div>
+    <h3 style="text-align:center;color:aliceblue;">Published Books</h3>
+    {% include published-books.html %}
+    
+    <h3 style="text-align:center;color:aliceblue;">Upcoming Books</h3>
+    {% include upcoming-books.html %}
+  </div>
 </div>
   
 <div class="container">

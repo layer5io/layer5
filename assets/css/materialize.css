@@ -2888,6 +2888,7 @@ ul.staggered-list li {
 @media only screen and (max-width: 600px) {
   .center-on-small-only {
     text-align: center;
+
   }
 }
 
@@ -4783,7 +4784,8 @@ small {
 }
 
 .card.medium {
-  /* height: 400px; */
+  /* height: 300px; */
+  vertical-align: top;
 }
 
 .card.large {
