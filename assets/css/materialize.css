@@ -9476,3 +9476,13 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   stroke-linecap: round;
   /*shape-rendering: crispEdges;*/
 }
+
+  div.slack {
+    width: 55px;
+    height: 55px;
+    float: left;
+    background-position: center top;
+    
+    background-repeat: no-repeat; 
+    background-image: url(/assets/images/slack.png); 
+  }
