@@ -4,7 +4,7 @@ email: lee@layer5.io
 description: Characterizing and contrasting service meshes and related technologies.
 
 baseurl: ""
-url: ""
+url: "https://layer5.io"
 
 parallax_image_one: assets/images/cube.png #-header-large.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
