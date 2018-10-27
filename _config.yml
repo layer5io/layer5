@@ -144,8 +144,8 @@ project_button: Github
 
 session: Session
 github: https://github.com/leecalcote/istio-service-mesh-workshop
-medium: https://gingergeek.com
-blog: https://gingergeek.com
+medium: https://layer5.io
+blog: https://layer5.io
 
 
 baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
@@ -169,3 +169,5 @@ plugins:
   - jekyll-feed
   - jekyll-assets
   - jekyll-minifier
+  - jekyll-sitemap
+
