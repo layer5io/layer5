@@ -116,7 +116,7 @@ skills:
 #   - name: safari
 #   - name: sass
 #   - name: sequelize
-#   - name: slack
+    - name: slack
 #   - name: sourcetree
 #   - name: ssh
 #   - name: swift
