@@ -8,7 +8,7 @@
           float:left; display: inline; 
           background-color: white; 
           border-right-width: 1px; border-right-style: dashed;
-          border-right-color: var(--main-bg-color);
+          border-right-color: var(--main-dark-grey);
           } 
           
         .tooltip {
@@ -20,7 +20,7 @@
         .tooltip .tooltiptext {
             visibility: hidden;
             width: 200px;
-            background-color:var(--main-bg-color);
+            background-color:var(--main-dark-grey);
             color:aliceblue ;
             text-align: center;
             border-radius: 6px;
@@ -41,7 +41,9 @@
         <div class="card-content comparison">
           <ul>Service Mesh
             {% for meshes in site.data.cat.meshes %}
-                <li><a href="{{meshes.link}}" class="orange-text">{{meshes.name}}</a></li>
+                <li><div class="tooltip"><a href="{{meshes.link}}" class="orange-text">{{meshes.name}}</a>
+                  <span class="tooltiptext">{{meshes.desc}}</span></div>
+                </li>
             {% endfor %}
           </ul>
         </div>
@@ -49,7 +51,6 @@
         <div class="card-content comparison">
           <ul>Client Library
             {% for clients in site.data.cat.clients %}
-            
                 <li><div class="tooltip"><a href="{{clients.link}}" class="orange-text">{{clients.name}}</a>
                 <span class="tooltiptext">{{clients.desc}}</span></div>
               </li>
