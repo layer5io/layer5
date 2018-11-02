@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '2.5.1'
+ruby '2.3.7'
 
 gem 'materialize-sass'
 gem "jekyll", "~> 3.6.2"
@@ -11,6 +11,7 @@ gem "selenium-webdriver"
 gem "rack-jekyll"
 gem "pry"
 gem "puma"
+gem 'jekyll-sitemap'
 
 
 group :jekyll_plugins do

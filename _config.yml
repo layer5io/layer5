@@ -1,10 +1,10 @@
 title: Layer 5
 name: Lee Calcote
-email: lee@calcotestudios.com
+email: lee@layer5.io
 description: Characterizing and contrasting service meshes and related technologies.
 
 baseurl: ""
-url: ""
+url: "https://layer5.io"
 
 parallax_image_one: assets/images/cube.png #-header-large.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
@@ -19,16 +19,15 @@ project_two_description: A worshop containing ten labs on the Istio service mesh
 project_two_url: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506
 project_two_icon: session
 
-project_three: Third Project
-project_three_description: Describe your project!
-project_three_url: https://github.com/jameshamann/jekyll-material-theme
-project_three_icon: hotel
+project_three: "Using Istio Workshop"
+project_three_description: A worshop containing ten labs on the Istio service mesh. Presenting at DockerCon EU 2018. <p>Resources not available yet.</p>
+project_three_url: https://europe-2018.dockercon.com/
+project_three_icon: session
 
-
-project_four: Fourth Project
-project_four_description: Describe your project!
-project_four_url: https://github.com/jameshamann/jekyll-material-theme
-project_four_icon: restaurant
+project_four: "Using Istio Workshop"
+project_four_description: A worshop containing ten labs on the Istio service mesh. Presenting at KubeCon NA 2018. <p>Resources not available yet.</p>
+project_four_url: https://kccna18.sched.com/event/Gram/tutorial-using-istio-lee-calcote-girish-ranganathan-solarwinds?iframe=yes&w=100%&sidebar=yes&bg=no#
+project_four_icon: session
 
 portfolio_heading: Workshops
 portfolio_type: cards
@@ -117,7 +116,7 @@ skills:
 #   - name: safari
 #   - name: sass
 #   - name: sequelize
-#   - name: slack
+    - name: slack
 #   - name: sourcetree
 #   - name: ssh
 #   - name: swift
@@ -145,8 +144,8 @@ project_button: Github
 
 session: Session
 github: https://github.com/leecalcote/istio-service-mesh-workshop
-medium: https://gingergeek.com
-blog: https://gingergeek.com
+medium: https://layer5.io
+blog: https://layer5.io
 
 
 baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
@@ -170,3 +169,5 @@ plugins:
   - jekyll-feed
   - jekyll-assets
   - jekyll-minifier
+  - jekyll-sitemap
+

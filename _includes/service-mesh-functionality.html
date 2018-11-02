@@ -15,7 +15,7 @@
         <tbody>
             {% for meshes in site.data.cat.meshes %}
             <tr style="border: 1px dashed #a6b7be; text-align:center;">
-                <td><a href="{{meshes.link}}" class="orange-text">{{meshes.name}}</a></td>
+                <td><a href="{{meshes.link}}" title="{{meshes.desc}}" class="orange-text">{{meshes.name}}</a></td>
                 <td style="text-align:center;"> {{meshes.autoinject}} </td>
                 <td style="text-align:center;"> {{meshes.tcp-web}} </td>
                 <td style="text-align:center;"> {{meshes.h2}} </td>

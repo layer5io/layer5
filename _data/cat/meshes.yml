@@ -1,8 +1,18 @@
 - name: Consul Connect
+  desc: "Consul Connect - is a new feature that enables simplified network topologies and management while also strengthening security and maintaining high performance in a distributed system."
   link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
   autoinject: "No"
+
 - name: Rotor
-  link: https://github.com/turbinelabs/rotor
+  link: https://github.com/turbinelabs/
+  autoinject: "<i><a href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  tcp-web: "<i><a href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  grpc: "<i><a href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  h2: "<i><a href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  multi-cluster: "<i><a href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  multi-tenant: "<i><a href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  desc: "Rotor - a fast, lightweight bridge between your service discovery and Envoy’s configuration APIs. Turbine Labs has shutdown."
+
 - name: Istio
   link: https://istio.io
   autoinject: "Yes"
@@ -11,6 +21,8 @@
   h2: "Yes"
   multi-cluster: "Experimental"
   multi-tenant: "Experimental"
+  desc: "An open platform to connect, monitor, and secure microservices. Governed by Google and IBM."
+
 - name: Kong
   link: https://konghq.com/solutions/service-mesh/
   autoinject: "No"
@@ -19,11 +31,13 @@
   h2: "Yes"
   multi-cluster: "Experimental"
   multi-tenant: "Kong Enterprise only"
+
 - name: Linkerd 1.x
   desc: "Linkerd - hosted by the CNCF and built on top of Twitter Finagle. Linkerd includes both a proxying data plane and the Namerd (“namer-dee”) control plane all in one package. "
   link: https://linkerd.io
   h2: "Yes"
   tcp-web: "Yes"
+
 - name: Linkerd 2.x (Conduit)
   desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setup.
 Open Source. From Buoyant. Written in Rust and Go."
@@ -32,9 +46,13 @@ Open Source. From Buoyant. Written in Rust and Go."
   h2: "Yes"
   grpc: "Yes"
   tcp-web: "Yes"
+
 - name: Zuul
+  desc: "Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more."
   link: https://github.com/Netflix/zuul
   autoinject: "No"
+
 - name: Vamp
+  desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."
   link: https://vamp.io
   autoinject: "No"

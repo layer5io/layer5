@@ -1652,6 +1652,36 @@
   color: #ffab00 !important;
 }
 
+.l5-light-blue {
+  background-color: var(--main-light-blue) !important;
+}
+
+.l5-light-blue-text {
+  color: var(--main-light-blue) !important;
+}
+
+.l5-dark-blue {
+  background-color: var(--main-dark-blue) !important;
+  color: var(--main-dark-blue) !important;
+}
+
+.l5-light-grey {
+  background-color: var(--main-light-grey) !important;
+}
+.l5-light-grey-text {
+  color: var(--main-light-grey) !important;
+}
+
+.l5-dark-grey {
+  background-color: var(--main-dark-grey) !important;
+  color: var(--main-dark-grey) !important;
+}
+
+.l5-grey {
+  background-color: var(--main-grey) !important;
+  color: var(--main-grey) !important;
+}
+
 .orange {
   background-color: #ff9800 !important;
 }
@@ -2159,12 +2189,17 @@ html {
  * Remove default margin.
  */
  :root {
-  --main-bg-color: #647881;
+  --main-grey: #647881;
+  --main-light-blue: #62ACCD;
+  --main-dark-grey: #3C494E;
+  --main-dark-blue: #477E96;
+  --main-light-grey: #9FBFCD;
 }
  
 body {
   margin: 0;
-  background-color: var(--main-bg-color);
+  background-color: var(--main-grey);
+  a: var(--main-light-blue);
 }
 
 /* HTML5 display definitions
@@ -2231,6 +2266,7 @@ template {
  */
 a {
   background-color: transparent;
+  color: var(--main-a-color);
 }
 
 /**
@@ -2888,13 +2924,16 @@ ul.staggered-list li {
 @media only screen and (max-width: 600px) {
   .center-on-small-only {
     text-align: center;
+
   }
 }
 
 .page-footer {
   padding-top: 10px;
   color: #fff;
-  background-color: #a6b7be;
+  background-color: #7D9098;
+  width: 100%;)
+  
 }
 
 .page-footer .footer-copyright {
@@ -2909,10 +2948,14 @@ ul.staggered-list li {
       -ms-flex-align: center;
           align-items: center;
 
-  color:rgb(174, 176, 177);
+  color:lightgrey;
   vertical-align: middle; 
+  text-align: center;
+  
   padding-left: 30px;
-  background-color: var(--main-bg-color);
+  padding-right: 30px;
+  width: 100%;
+  background-color: var(--main-grey);
 }
 
 table, th, td {
@@ -4783,7 +4826,8 @@ small {
 }
 
 .card.medium {
-  /* height: 400px; */
+  /* height: 300px; */
+  vertical-align: top;
 }
 
 .card.large {
@@ -9432,3 +9476,13 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   stroke-linecap: round;
   /*shape-rendering: crispEdges;*/
 }
+
+  div.slack {
+    width: 55px;
+    height: 55px;
+    float: left;
+    background-position: center top;
+    
+    background-repeat: no-repeat; 
+    background-image: url(/assets/images/slack.png); 
+  }
