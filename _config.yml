@@ -1,7 +1,8 @@
 title: Layer 5
 name: Lee Calcote
 email: lee@layer5.io
-description: Characterizing and contrasting service meshes and related technologies.
+name:  Layer5.io
+description: A community-curated collection.
 
 baseurl: ""
 url: "https://layer5.io"
@@ -123,8 +124,10 @@ colored: colored # Leave blank for black and white icons
 project_button: Github
 
 session: Session
-github: https://github.com/leecalcote/istio-service-mesh-workshop
+github: https://github.com/layer5io
 medium: https://layer5.io
+slack: https://layer5io.slack.com/
+twitter: https://twitter.com/layer5
 blog: https://layer5.io
 
 
