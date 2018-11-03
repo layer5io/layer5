@@ -2197,7 +2197,6 @@ html {
 
 }
 
-
 body {
   margin: 0;
   background: rgb(60,73,78);
@@ -2963,7 +2962,7 @@ ul.staggered-list li {
   padding-left: 30px;
   padding-right: 30px;
   width: 100%;
-  background-color: var(--main-grey);
+  background-color: var(--main-dark-grey);
 }
 
 table, th, td {

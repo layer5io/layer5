@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+    <div id="home" class="section scrollspy">
+        <div id="index-banner" class="parallax-container" style="height: 280px;">
+          <div class="container">
+          <div style="padding-right: 5%; padding-left:5%;">
+              <img class="hide-on-med-and-down " src="/assets/images/cube.png" align="left" height="270px" style="padding-right:20px;" />
+              <img class="show-on-med-and-down" src="/assets/images/cube-sh-small.png" align="left"  style="padding-right:20px;" />
+              <h1  style="  font-family:  'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Helvetica, sans-serif; padding-top:20px; 
+                color: #ffff !important; text-shadow: 1px 2px #000000; line-height: 100%;">Layer5.io</h1>
+               <p style="font-size: 2em;color:#cfd8dc;line-height:1em;" class="light text-lighten-2">A community-curated collection.</p>
+               <p style="color:#cfd8dc;line-height:1em;font-size:1.25em;" class="center-on-small-only text-lighten-2"><i>Characterizing and contrasting service meshes and related technologies.</i></p>
+                <!-- <h5 class="header light" style="float:left;">{{ site.description }}</h5> -->
+            </div>
+          </div>
+          <!-- <div class="parallax"><img src="{{site.parallax_image_one}}" alt="Layer 5 Service Mesh"></div> -->
+        </div>
+      </div>
+
+
+<div class="container no-pad-top">
+    <div id="landscape" class="section scrollspy">
+    <h5 style="text-align:center;color:aliceblue;">
+        <a width="50%" class="waves-effect waves-dark btn white-text 
+        darken-2 l5-light-blue z-depth-4" href="/landscape">Service Mesh Landscape</a>
+      </h5>
+  </div>
+</div>
+
+<div class="container" style="padding:20px;">
+    <div id="workshop" class="section scrollspy">
+      <h3 style="text-align:center;color:aliceblue;">{{site.portfolio_heading}}</h3>
+      {% include portfolio_{{site.portfolio_type}}.html %}
+    </div>
+  </div>
+
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<!-- scripts -->
+<script src="/assets/js/particles/particles.js"></script>
+<script src="/assets/js/particles/app.js"></script>
