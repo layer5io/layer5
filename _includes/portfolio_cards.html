@@ -11,10 +11,10 @@
         <div class="card-action">
           <span class="card-title activator grey-text text-darken-4">{{workshop.name}}<i class="material-icons right">more_vert</i></span>
           <p>
-            {% if workshop.eurl %}<a href="{{workshop.labs}}">LABS</a> {% endif %}
+            {% if workshop.labs %}<a href="{{workshop.labs}}">LABS</a> {% endif %}
             {% if workshop.rurl %} | &nbsp;&nbsp;&nbsp;<a href="{{workshop.rurl}}">LAB RESOURCES</a> {% endif %}
             {% if workshop.slides %} | &nbsp;&nbsp;&nbsp;<a href="{{workshop.slides}}">SLIDES</a> {% endif %}
-            {% if workshop.slides %} | &nbsp;&nbsp;&nbsp;<a href="{{workshop.slack}}">SLACK</a> {% endif %}
+            {% if workshop.slack %} | &nbsp;&nbsp;&nbsp;<a href="{{workshop.slack}}">SLACK</a> {% endif %}
           </p>
         </div>
         <div class="card-reveal">
