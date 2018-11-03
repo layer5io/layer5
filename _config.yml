@@ -124,6 +124,8 @@ colored: colored # Leave blank for black and white icons
 project_button: Github
 
 session: Session
+
+#Contact / Social
 github: https://github.com/layer5io
 medium: https://layer5.io
 slack: https://layer5io.slack.com/
