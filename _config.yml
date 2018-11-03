@@ -9,26 +9,6 @@ url: "https://layer5.io"
 parallax_image_one: assets/images/cube.png #-header-large.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
 
-project_one: "Using Istio Workshop"
-project_one_description: A worshop containing ten labs on the Istio service mesh. First presented at DockerCon18. <p>See the resource links below.</p><p>(<a href="/assets/images/using-istio.jpg">large image</a>)</p>
-project_one_url: https://github.com/leecalcote/istio-service-mesh-workshop
-project_one_icon: location_on
-
-project_two: "Using Istio Workshop"
-project_two_description: A worshop containing ten labs on the Istio service mesh. Presented at Velocity London 2018. <p>Resources not available yet.</p>
-project_two_url: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506
-project_two_icon: session
-
-project_three: "Using Istio Workshop"
-project_three_description: A worshop containing ten labs on the Istio service mesh. Presenting at DockerCon EU 2018. <p>Resources not available yet.</p>
-project_three_url: https://europe-2018.dockercon.com/
-project_three_icon: session
-
-project_four: "Using Istio Workshop"
-project_four_description: A worshop containing ten labs on the Istio service mesh. Presenting at KubeCon NA 2018. <p>Resources not available yet.</p>
-project_four_url: https://kccna18.sched.com/event/Gram/tutorial-using-istio-lee-calcote-girish-ranganathan-solarwinds?iframe=yes&w=100%&sidebar=yes&bg=no#
-project_four_icon: session
-
 portfolio_heading: Workshops
 portfolio_type: cards
 
@@ -171,3 +151,9 @@ plugins:
   - jekyll-minifier
   - jekyll-sitemap
 
+# Reference
+# http://www.fabiolamanna.it
+# https://github.com/jameshamann/jekyll-material-theme
+# https://github.com/VincentGarreau/particles.js
+# https://cssgradient.io
+# https://coolbackgrounds.io

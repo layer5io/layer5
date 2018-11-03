@@ -2194,11 +2194,19 @@ html {
   --main-dark-grey: #3C494E;
   --main-dark-blue: #477E96;
   --main-light-grey: #9FBFCD;
+
 }
- 
+
+
 body {
   margin: 0;
-  background-color: var(--main-grey);
+  background: rgb(60,73,78);
+  background: linear-gradient(162deg, 
+  rgba(100,120,129,1) 0%, 
+  rgba(159,191,205,1) 25%, 
+    rgba(60,73,78,1) 80%); 
+
+  /* background-color: var(--main-grey); */
   a: var(--main-light-blue);
 }
 
