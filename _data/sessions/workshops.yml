@@ -5,6 +5,7 @@
   labs: https://github.com/leecalcote/istio-service-mesh-workshop
   slides: https://calcotestudios.com/talks/decks/slides-dockercon-18-using-istio.html
   rurl: https://docs.google.com/spreadsheets/d/1Rnqje4oQEQeaQRG24ApgdIzn8A2Pa3j5kzbm13_bJLA/edit#gid=785404462
+  status: "delivered"
 
 - name: Velocity London 2018
   desc: "A worshop containing ten labs on the Istio service mesh. Presented at Velocity London 2018. <p>Resources not available yet.</p>"
@@ -15,16 +16,18 @@
   slides: https://calcotestudios.com/talks/decks/slides-velocity-london-2018-using-istio-workshop.html
   slack: https://join.slack.com/t/layer5io/shared_invite/enQtNDY3NDU3NDQyODIwLWUxOTEwOWYzNWI0MmFmN2I4ZTYyNzM2YjUyOTVkOGI3ZDM1NGQ3MzlhZjczY2VkN2Y5ODViNGRiOTE0ZTM1MTA
   rurl: https://docs.google.com/spreadsheets/d/174haSpPTlDZeZLJTJRUeHZydgxpnTQScthtLLWMj3mc/edit?usp=sharing
+  status: "delivered"
 
 - name: DockerCon EU 2018 
   desc: "A worshop containing ten labs on the Istio service mesh. Presenting at DockerCon EU 2018. <p><i>Resources not available yet.</i></p>"
   img: /assets/images/dockercon-barcelona-logo-tall.svg
   style: position:relative;top:-50px;height:300px;padding:60px;
-  
+  status: "upcoming"
 
 - name: "KubeCon NA 2018" 
   desc: "A worshop containing ten labs on the Istio service mesh. Presenting at KubeCon NA 2018. <p><i>Resources not available yet.</i></p>"
   img: /assets/images/kccnc-na-white.svg
   style: position:relative;top:-50px;height:300px;padding:80px;
   eurl: https://kccna18.sched.com/event/Gram/tutorial-using-istio-lee-calcote-girish-ranganathan-solarwinds?iframe=yes&w=100%&sidebar=yes&bg=no#
+  status: "upcoming"
   
