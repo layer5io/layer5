@@ -1,6 +1,7 @@
 - name: DockerCon NA 2018 
   desc: "A worshop containing ten labs on the Istio service mesh. First presented at DockerCon18. <p>See the resource links below.</p>      <p>(<a href='/assets/images/using-istio.jpg'>large image</a>)</p>"
   img: /assets/images/using-istio_thumb.jpg
+  style: "height:340px;"
   eurl: https://dockercon18.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=187485
   labs: https://github.com/leecalcote/istio-service-mesh-workshop
   slides: https://calcotestudios.com/talks/decks/slides-dockercon-18-using-istio.html
@@ -10,7 +11,7 @@
 - name: Velocity London 2018
   desc: "A worshop containing ten labs on the Istio service mesh. Presented at Velocity London 2018. <p>Resources not available yet.</p>"
   img: /assets/images/Velocity.png
-  style: "height:300px;padding-top: -20px;"
+  style: "height:340px;padding-top: -20px;"
   eurl: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506
   labs: https://github.com/leecalcote/istio-service-mesh-workshop
   slides: https://calcotestudios.com/talks/decks/slides-velocity-london-2018-using-istio-workshop.html
@@ -21,13 +22,13 @@
 - name: DockerCon EU 2018 
   desc: "A worshop containing ten labs on the Istio service mesh. Presenting at DockerCon EU 2018. <p><i>Resources not available yet.</i></p>"
   img: /assets/images/dockercon-barcelona-logo-tall.svg
-  style: position:relative;top:-50px;height:300px;padding:60px;
+  style: "position:relative;height:300px;padding-left:60px;padding-right:60px;padding-top:20px;"
   status: "upcoming"
 
 - name: "KubeCon NA 2018" 
   desc: "A worshop containing ten labs on the Istio service mesh. Presenting at KubeCon NA 2018. <p><i>Resources not available yet.</i></p>"
   img: /assets/images/kccnc-na-white.svg
-  style: position:relative;top:-50px;height:300px;padding:80px;
+  style: "position:relative;height:300px;padding-left:60px;padding-right:60px;padding-top:20px;"
   eurl: https://kccna18.sched.com/event/Gram/tutorial-using-istio-lee-calcote-girish-ranganathan-solarwinds?iframe=yes&w=100%&sidebar=yes&bg=no#
   status: "upcoming"
   
