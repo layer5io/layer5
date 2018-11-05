@@ -2273,7 +2273,7 @@ template {
  */
 a {
   background-color: transparent;
-  color: var(--main-a-color);
+  color: var(--main-light-blue);
 }
 
 /**
