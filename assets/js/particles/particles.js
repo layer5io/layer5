@@ -1505,10 +1505,21 @@ window.particlesJS = function(tag_id, params){
   var canvas_el = document.createElement('canvas');
   canvas_el.className = pJS_canvas_class;
 
+
+
   /* set size canvas */
   canvas_el.style.width = "100%";
-  canvas_el.style.height = "200%";
+  canvas_el.style.height = "100%";
+  //alert("canvas height:"+canvas_el.style.height);
 
+  /* set canvas height 
+  var footer = document.getElementById("footer");
+  var rect = footer.getBoundingClientRect();
+  canvas_el.style.height = rect.top;
+  alert("top height:"+rect.top);
+  alert("top canvas height:"+canvas_el.style.height);
+  */
+  
   /* append canvas */
   var canvas = document.getElementById(tag_id).appendChild(canvas_el);
 
@@ -1518,7 +1529,25 @@ window.particlesJS = function(tag_id, params){
   }
 
 };
+/*
+function positionParticles() {
+  var footer = document.getElementById("footer");
+  var rect = footer.getBoundingClientRect();
+    x = rect.left;
+    y = rect.top;
+    w = rect.width;
+    h = rect.height;
+    b = rect.bottom;
+    alert ("Left: " + x + ", Top: " + y + ", Width: " + w + ", Height: " + h +", Bottom:" + b);
+    setParticlesHeight();
+};
 
+function setParticlesHeight(canvas_el) {
+  //var c = document.getElementsByClassName('particles-js-canvas-el');
+  alert(canvas_el.style.height);
+
+}
+*/
 window.particlesJS.load = function(tag_id, path_config_json, callback){
 
   /* load json config */
