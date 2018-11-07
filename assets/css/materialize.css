@@ -2959,8 +2959,7 @@ ul.staggered-list li {
   vertical-align: middle; 
   text-align: center;
   
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 30px;
   width: 100%;
   background-color: var(--main-dark-grey);
 }

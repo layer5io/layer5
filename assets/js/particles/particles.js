@@ -1505,20 +1505,27 @@ window.particlesJS = function(tag_id, params){
   var canvas_el = document.createElement('canvas');
   canvas_el.className = pJS_canvas_class;
 
-
+  canvas_el.bottom
 
   /* set size canvas */
   canvas_el.style.width = "100%";
-  canvas_el.style.height = "100%";
-  //alert("canvas height:"+canvas_el.style.height);
+  canvas_el.style.height = "50%";
+  canvas_el.height = "50%";
 
-  /* set canvas height 
+  //canvas_el.style.position = "absolute";
+
+  /* set canvas height */
   var footer = document.getElementById("footer");
   var rect = footer.getBoundingClientRect();
-  canvas_el.style.height = rect.top;
-  alert("top height:"+rect.top);
-  alert("top canvas height:"+canvas_el.style.height);
-  */
+  var h = rect.top;
+  //canvas_el.height = "100";
+  //canvas_el.style.height = h;
+  //canvas_el.style.overflow = "hidden";
+  //alert("hs:"+h);
+  //alert("top height:"+rect.top);
+  alert("canvas_el.style.height:"+canvas_el.style.height);
+  alert("canvas_el.height:"+canvas_el.height);
+ 
   
   /* append canvas */
   var canvas = document.getElementById(tag_id).appendChild(canvas_el);
