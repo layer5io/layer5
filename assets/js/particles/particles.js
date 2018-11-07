@@ -1523,8 +1523,8 @@ window.particlesJS = function(tag_id, params){
   //canvas_el.style.overflow = "hidden";
   //alert("hs:"+h);
   //alert("top height:"+rect.top);
-  alert("canvas_el.style.height:"+canvas_el.style.height);
-  alert("canvas_el.height:"+canvas_el.height);
+  //alert("canvas_el.style.height:"+canvas_el.style.height);
+  //alert("canvas_el.height:"+canvas_el.height);
  
   
   /* append canvas */
