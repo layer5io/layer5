@@ -2284,6 +2284,7 @@ a:active,
 a:hover {
   outline: 0;
   font-weight:bold;
+  color: var(--main-light-blue);
 }
 
 /* Text-level semantics
