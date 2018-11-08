@@ -24,6 +24,7 @@
   desc: "An open platform to connect, monitor, and secure microservices. Governed by Google and IBM."
 
 - name: Kong
+  desc: "Incrementally deploy Kong proxies to go from an API gateway to a modern mesh with reliability, security, and observability built-in."
   link: https://konghq.com/solutions/service-mesh/
   autoinject: "No"
   tcp-web: "Yes"
