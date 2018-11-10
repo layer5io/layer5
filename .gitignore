@@ -3,3 +3,5 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 serve
+Gemfile.lock
+.gitignore
