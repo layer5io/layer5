@@ -9,7 +9,7 @@
   status: "delivered"
 
 - name: Velocity London 2018
-  desc: "A worshop containing ten labs on the Istio service mesh. Presented at Velocity London 2018. <p>Resources not available yet.</p>"
+  desc: "A worshop containing ten labs on the Istio service mesh. Presented at Velocity London 2018. <p>Resources posted below.</p>"
   img: /assets/images/Velocity.png
   style: "height:340px;padding-top: -20px;"
   eurl: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506
