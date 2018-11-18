@@ -7,3 +7,6 @@
 - name: SOFAMosn
   link: https://github.com/alipay/sofa-mosn
   desc: SOFAMosn is a modular observable smart network which can be used in service mesh deployed as a data plane sidecar.
+- name: Traefik
+  link: https://traefik.io/
+  desc: "Traefik is a modern HTTP reverse proxy and load balancer that integrates with service discovery systems and container orchestrators."

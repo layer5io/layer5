@@ -10,5 +10,3 @@
 - name: OpenResty
   link: http://openresty.org
   desc: "OpenResty uses Nginx"
-- name: Traefik
-  link: https://traefik.io/

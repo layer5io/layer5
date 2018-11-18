@@ -2869,6 +2869,12 @@ ul.staggered-list li {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .small-on-med-and-down {
+    width: 20px !important;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .hide-on-med-and-down {
     display: none !important;
