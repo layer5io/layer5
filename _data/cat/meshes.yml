@@ -53,7 +53,7 @@ Open Source. From Buoyant. Written in Rust and Go."
   link: https://github.com/Netflix/zuul
   autoinject: "No"
 
-- name: Vamp
-  desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."
-  link: https://vamp.io
-  autoinject: "No"
+# - name: Vamp
+#   desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."
+#   link: https://vamp.io
+#   autoinject: "No"
