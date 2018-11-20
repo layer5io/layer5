@@ -1,9 +1,9 @@
-<div class="row" style="position:relative;z-index: 1;">
+<div class="row">
   {% for post in site.posts %}
   {% if post.author != "Lee Calcote" %}
 
   <div class="col s12 m6">
-    <div class="card">
+    <div class="card" style="z-index: 1;">
       <div class="card-image">
         <a href="{{ post.url | relative_url }}"><img src="{{post.image}}"></a>
         <!-- <span class="card-title"><a style="color:white">{{ post.title | escape }}</a></span> -->
