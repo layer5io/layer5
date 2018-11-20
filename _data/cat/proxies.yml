@@ -1,3 +1,6 @@
+- name: Contour
+  link: https://github.com/heptio/contour
+  desc: Contour - a reverse proxy and load balancer deployed as a Kubernetes Ingress Controller. 
 - name: Envoy
   link: https://www.envoyproxy.io
   desc: "Envoy - a modern proxy hosted by the CNCF. Many projects have sprung up to leverage Envoy, including Istio."
