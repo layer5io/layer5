@@ -12,7 +12,7 @@
   desc: "A worshop containing ten labs on the Istio service mesh. Presented at Velocity London 2018. <p>Resources posted below.</p>"
   img: /assets/images/Velocity.png
   style: "height:340px;padding-top: -20px;"
-  eurl: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506
+  eurl: https://dockerconeurope18.smarteventscloud.com/connect/search.ww#loadSearch-searchPhrase=&searchType=session&tc=0&sortBy=dayTime&i(1037)=&p=
   labs: https://github.com/leecalcote/istio-service-mesh-workshop
   slides: https://calcotestudios.com/talks/decks/slides-velocity-london-2018-using-istio-workshop.html
   slack: https://join.slack.com/t/layer5io/shared_invite/enQtNDY3NDU3NDQyODIwLWUxOTEwOWYzNWI0MmFmN2I4ZTYyNzM2YjUyOTVkOGI3ZDM1NGQ3MzlhZjczY2VkN2Y5ODViNGRiOTE0ZTM1MTA
@@ -23,6 +23,11 @@
   desc: "A worshop containing ten labs on the Istio service mesh. Presenting at DockerCon EU 2018. <p><i>Resources not available yet.</i></p>"
   img: /assets/images/dockercon-barcelona-logo-tall.svg
   style: "position:relative;height:300px;padding-left:60px;padding-right:60px;padding-top:20px;"
+  eurl: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506
+  labs: https://github.com/leecalcote/istio-service-mesh-workshop
+  slides: https://calcotestudios.com/talks/decks/slides-dockercon-eu-2018-using-istio-workshop.html
+  slack: https://join.slack.com/t/layer5io/shared_invite/enQtNDY3NDU3NDQyODIwLWUxOTEwOWYzNWI0MmFmN2I4ZTYyNzM2YjUyOTVkOGI3ZDM1NGQ3MzlhZjczY2VkN2Y5ODViNGRiOTE0ZTM1MTA
+  rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
   status: "upcoming"
 
 - name: "KubeCon NA 2018" 
