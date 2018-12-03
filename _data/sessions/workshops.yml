@@ -15,7 +15,7 @@
   eurl: https://dockerconeurope18.smarteventscloud.com/connect/search.ww#loadSearch-searchPhrase=&searchType=session&tc=0&sortBy=dayTime&i(1037)=&p=
   labs: https://github.com/leecalcote/istio-service-mesh-workshop
   slides: https://calcotestudios.com/talks/decks/slides-velocity-london-2018-using-istio-workshop.html
-  slack: https://join.slack.com/t/layer5io/shared_invite/enQtNDY3NDU3NDQyODIwLWUxOTEwOWYzNWI0MmFmN2I4ZTYyNzM2YjUyOTVkOGI3ZDM1NGQ3MzlhZjczY2VkN2Y5ODViNGRiOTE0ZTM1MTA
+  slack: https://join.slack.com/t/layer5io/shared_invite/enQtNDk0MzUwMDE5MDkzLTA5ODUzNjNjOTBjMGIxM2JjOGNiM2E2YTM0OTU3NzBiOTA3NjFlMWUwOTU0MjgzMzVhMDNlZDcxYjcxYmJkYjc
   rurl: https://docs.google.com/spreadsheets/d/174haSpPTlDZeZLJTJRUeHZydgxpnTQScthtLLWMj3mc/edit?usp=sharing
   status: "delivered"
 
@@ -26,7 +26,7 @@
   eurl: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506
   labs: https://github.com/leecalcote/istio-service-mesh-workshop
   slides: https://calcotestudios.com/talks/decks/slides-dockercon-eu-2018-using-istio-workshop.html
-  slack: https://join.slack.com/t/layer5io/shared_invite/enQtNDY3NDU3NDQyODIwLWUxOTEwOWYzNWI0MmFmN2I4ZTYyNzM2YjUyOTVkOGI3ZDM1NGQ3MzlhZjczY2VkN2Y5ODViNGRiOTE0ZTM1MTA
+  slack: https://join.slack.com/t/layer5io/shared_invite/enQtNDk0MzUwMDE5MDkzLTA5ODUzNjNjOTBjMGIxM2JjOGNiM2E2YTM0OTU3NzBiOTA3NjFlMWUwOTU0MjgzMzVhMDNlZDcxYjcxYmJkYjc
   rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
   status: "delivered"
 
