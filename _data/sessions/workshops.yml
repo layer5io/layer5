@@ -20,7 +20,7 @@
   status: "delivered"
 
 - name: DockerCon EU 2018 
-  desc: "A worshop containing ten labs on the Istio service mesh. Presenting at DockerCon EU 2018. <p><i>Resources not available yet.</i></p>"
+  desc: "A worshop containing ten labs on the Istio service mesh. Presenting at DockerCon EU 2018. <p><i>Resources posted below.</i></p>"
   img: /assets/images/dockercon-barcelona-logo-tall.svg
   style: "position:relative;height:300px;padding-left:60px;padding-right:60px;padding-top:20px;"
   eurl: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506
