@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "The Enterprise Path to Service Mesh"
