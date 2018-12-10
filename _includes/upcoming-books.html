@@ -1,6 +1,7 @@
 <div class="row">
   {% for post in site.posts %}
   {% if post.author != "Lee Calcote" %}
+  {% if post.author !="Lee Calcote " %}
 
   <div class="col s12 m6">
     <div class="card" style="z-index: 1;">
@@ -14,6 +15,8 @@
       </div>
     </div>
   </div>
+  {% endif %}
+
   {% endif %}
   {% endfor %}
 </div>
