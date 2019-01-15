@@ -1,0 +1,79 @@
+
+<p class="post-meta" style="color:#cfd8dc;font-size: 1.25em;text-align:center;"><i>a multi-mesh performance benchmark and playground</i></p>
+
+<h4 style="color:aliceblue;">Features</h4>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card" style="z-index: 1;">
+     <!--  <div class="card-image">
+        <a href="{{ post.url | relative_url }}"><img src="{{post.image}}"></a>
+        <span class="card-title"><a style="color:white">{{ post.title | escape }}</a></span>
+      <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+      </div> -->
+      <div class="card-content">
+        <h4>Performance Benchmark</h4>
+        <p>Meshery acts as a performance benchmark for multi-mesh performance comparison. 
+          Meshery incorporates the collection and display of metrics from applications running in the playground.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m6">
+    <div class="card" style="z-index: 1;">
+     <!-- <div class="card-image">
+        <a href="{{ post.url | relative_url }}"><img src="{{post.image}}"></a>
+         <span class="card-title"><a style="color:white">{{ post.title | escape }}</a></span> 
+      <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+      </div>-->
+      <div class="card-content">
+        <h4>Playground</h4>
+        <p>A service mesh playground to faciliate learning about functionality of different service meshes. 
+          Meshery incorporates a visual interface for manipulating traffic routing rules.
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4 style="color:aliceblue;">Project</h4>
+<p class="post-meta" style="color:#e5ecf0;font-size: 1.em;text-align:left;"><i>Meshery is written in Golang and leverages Go Modules. </i></p>
+
+<img title="Istio Playground" src="https://raw.githubusercontent.com/layer5io/meshery/master/static/img/istio-playground.png" width="100%" />
+
+
+<div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
+<p style="float:right;position:relative;"><a href="https://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3-w9t0/edit?usp=sharing">Design document</a></p>
+<h5 style="color:#111111;">Situation</h5>
+  <p>
+    An engineer learns of the architecture and value provided by service meshes. 
+    Quite commonly, they are impressed and intrigued. Upon reflection, the most commonly asked question 
+    they then ask is “<b><i>what overhead does being on the mesh incur?</i></b>”. 
+  </p>
+<h5 style="color:#111111;">Problem</h5>
+  <p>
+    Anytime performance questions are to be answered, they are subjective to the specific workload and infrastructure used for measurement. 
+    Given this challenge, the Envoy project, for example, refuses to publish performance data because such tests can be: 
+    <ul><ol>1) involved</ol>
+      <ol>2) misinterpreted</ol>
+      </ul>
+    
+    Beyond the need for performance and overhead data under a permutation of different workloads (applications) and types and sizes of infrastructure resources, the need for cross-project, apple-to-apple comparisons also desired in order to facilitate an of behavioral differences between service meshes and selection of their use. Individual projects shy from publishing test results of other, competing service meshes. An independent, credible analysis is needed.
+  </p>
+</div>
+<h4  style="color:aliceblue;">Contributing</h4>
+<div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
+This project is community-built and welcomes collaboration. 
+<a href="https://github.com/layer5io/meshery">Fork on GitHub</a>. 
+</div>
+
+
+<div class="row">
+  <div class="col s12">
+      <div>
+        <div id="contact" class="section scrollspy" style="width:100%;">
+          <h3 style="text-align:center;color:aliceblue;">Mailing List</h3>
+          {% include contact.html %}
+        </div>
+    </div>
+  </div>
