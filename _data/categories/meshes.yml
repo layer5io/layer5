@@ -18,16 +18,6 @@
   multi-cluster: "No"
   multi-tenant: "No"
 
-- name: Rotor
-  link: https://github.com/turbinelabs/
-  autoinject: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  tcp-web: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  grpc: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  h2: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  multi-cluster: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  multi-tenant: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  desc: "Rotor - a fast, lightweight bridge between your service discovery and Envoy’s configuration APIs. Turbine Labs has shutdown."
-
 - name: Istio
   link: https://istio.io
   autoinject: "Yes"
@@ -68,6 +58,27 @@ Open Source. From Buoyant. Written in Rust and Go."
   tcp-web: "Yes"
   multi-cluster: "?"
   multi-tenant: "?"
+
+- name: Mesher
+  desc: "A service mesh implementation based on go chassis. One big advantage of Mesher is it is able to work with go-chassis in same service mesh control plane like Istio. Without Istio they can work together with ServiceComb Service center and running on any infrastructure(docker, VM, baremetal).
+Mesher supports both linux and windows OS, that makes possible that .Net service can work with java, go, python service in one distributed system easily"
+  link: https://github.com/go-mesh/mesher
+  autoinject: "Yes"
+  h2: "Yes"
+  grpc: "Yes"
+  tcp-web: "No"
+  multi-cluster: "Yes, Powered by ServiceComb"
+  multi-tenant: "Huawei cloud only"
+
+- name: Rotor
+  link: https://github.com/turbinelabs/
+  autoinject: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  tcp-web: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  grpc: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  h2: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  multi-cluster: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  multi-tenant: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  desc: "Rotor - a fast, lightweight bridge between your service discovery and Envoy’s configuration APIs. Turbine Labs has shutdown."
 
 - name: Zuul
   desc: "Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more."
