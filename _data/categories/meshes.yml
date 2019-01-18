@@ -60,15 +60,14 @@ Open Source. From Buoyant. Written in Rust and Go."
   multi-tenant: "?"
 
 - name: Mesher
-  desc: "A service mesh implementation based on go chassis. One big advantage of Mesher is it is able to work with go-chassis in same service mesh control plane like Istio. Without Istio they can work together with ServiceComb Service center and running on any infrastructure(docker, VM, baremetal).
-Mesher supports both linux and windows OS, that makes possible that .Net service can work with java, go, python service in one distributed system easily"
+  desc: "Mesher is service mesh implementation based on go-chassis which can work together with ServiceComb Service center running on any infrastructure. Mesher can work with go-chassis in same service mesh control plane and it supports both linux and windows OS"
   link: https://github.com/go-mesh/mesher
   autoinject: "Yes"
   h2: "Yes"
   grpc: "Yes"
   tcp-web: "No"
-  multi-cluster: "Yes, Powered by ServiceComb"
-  multi-tenant: "Huawei cloud only"
+  multi-cluster: "Yes, powered by ServiceComb"
+  multi-tenant: "Huawei Cloud only"
 
 - name: Rotor
   link: https://github.com/turbinelabs/
