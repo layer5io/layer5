@@ -69,6 +69,16 @@ Open Source. From Buoyant. Written in Rust and Go."
   multi-cluster: "?"
   multi-tenant: "?"
 
+- name: SOFAMesh
+  desc: A solution for large-scale Service Mesh based on Istio.
+  link: https://github.com/alipay/sofa-mesh
+  autoinject: "Yes"
+  h2: "Yes"
+  grpc: "Yes"
+  tcp-web: "Yes"
+  multi-cluster: "Cloud only"
+  multi-tenant: "Cloud only"
+
 - name: Zuul
   desc: "Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more."
   link: https://github.com/Netflix/zuul
