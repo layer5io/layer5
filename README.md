@@ -1,14 +1,14 @@
-# Layer 5 - Service Meshes
+# About
 
-[Layer5.io](https://layer5.io) is a repository for information pertaining to the technology ecosystem surrounding service meshes, api gateways, edge proxies, ingress and egress controllers - - microservice management in cloud native environments.
+[Layer5.io](https://layer5.io) is a community-maintained repository of information pertaining to the technology ecosystem surrounding service meshes, API gateways, edge proxies, ingress and egress controllers - - microservice management in cloud native environments.
 
-## Projects
+# Projects
 
-### Landscape
+## Landscape
 See (https://layer5.io/landscape) - a collection of prominent projects and offerings laid out in contrast to one another.
 
-### Meshery
-See (https://github.com/layer5io/meshery) - A service mesh playground to faciliate learning about functionality and performance of different service meshes. Meshery incorporates the collection and display of metrics from applications running in the playground.
+## Meshery
+See (https://layer5.io/meshery) - A service mesh playground to faciliate learning about functionality and performance of different service meshes. Meshery incorporates the collection and display of metrics from applications running in the playground.
 
 ## Contributing
 
