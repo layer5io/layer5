@@ -18,6 +18,7 @@
         <div class="col l4 offset-l2 s6" >
           <span class="white-text" style="font-weight: bold;font-size:1.3em;">Contact</span>
           {% include hori-social.html %}
+          <a class="white-text" href="/subscribe">Subscribe to mailing list</a>
         </div>
         
       
@@ -29,7 +30,7 @@
         <div class="col l4">
           <i class="material-icons grey-text" style="padding-right:2px;vertical-align: middle;">copyright</i>2018 Copyright
           <a class="waves-effect waves-light grey-text text-lighten-2" style="vertical-align: middle;"
-          href="https://github.com/leecalcote/layer5/graphs/contributors">Layer5 Authors</a>
+          href="https://github.com/layer5io/layer5/graphs/contributors">Layer5 Authors</a>
         </div>
         <div class="col l4">
           <a class="waves-effect waves-light grey-text text-lighten-2" style="vertical-align: middle;">
@@ -45,6 +46,12 @@
 
 
   </footer>
+  {% if site.tag_manager_id and jekyll.environment == 'production' %}
+  <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.tag_manager_id}}"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+{% endif %}     
 
 </html>
 

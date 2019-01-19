@@ -32,8 +32,13 @@
   {% endfor %}
 
 </div>
+
+{% assign upcoming = site.data.sessions.workshops %}
+{% if upcoming.status == "upcoming" %}
+
 <div class="row">
   <h5 style="text-align:center;color:aliceblue;">Upcoming</h5>
+{% endif %}
 
 {% for workshop in site.data.sessions.workshops %}
   

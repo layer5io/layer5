@@ -1,26 +1,9 @@
 {% include head.html %}
 <!-- scripts -->
 
-  <div id="home" class="section scrollspy">
-  <div id="index-banner" class="parallax-container" style="height: 280px;">
+{% include banner.html %}
 
-    <div class="container" >
-    <div style="padding-right: 5%; padding-left:5%;">
-        <img class="hide-on-med-and-down " src="/assets/images/cube.png" align="left" height="270px" style="padding-right:20px;" />
-        <img class="show-on-med-and-down" src="/assets/images/cube-sh-small.png" align="left"  style="padding-right:20px;" />
-        {% include vert-social.html %}
-        <h1  style="  font-family:  'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Helvetica, sans-serif; padding-top:20px; 
-          color: #ffff !important; text-shadow: 1px 2px #000000; line-height: 100%;">{{site.name}}</h1>
-         <p style="font-size: 2em;color:#cfd8dc;line-height:1em;" class="light text-lighten-2">{{ site.description }}</p>
-         
-      </div>
-    </div>
-    
-    <!-- <div class="parallax"><img src="{{site.parallax_image_one}}" alt="Layer 5 Service Mesh"></div> -->
-  </div>
-</div>
-
-<div class="container" style="padding:20px;">
+<div class="container">
   <div id="ecosystem" class="section scrollspy">
     <h3 style="text-align:center;color:aliceblue;">Ecosystem</h3>
     {% include ecosystem.html %}
@@ -54,7 +37,7 @@
     </div>
     <div class="parallax"><img src="{{site.parallax_image_two}}" alt="Unsplashed background img 3"></div>
   </div> -->
-  <div class="container" style="padding:20px;">
+  <div class="container" style="padding:0px;">
     <div id="workshops" class="section scrollspy">
       <h3 style="text-align:center;color:aliceblue;">{{site.portfolio_heading}}</h3>
       {% include portfolio_{{site.portfolio_type}}.html %}

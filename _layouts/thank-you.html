@@ -13,7 +13,7 @@
          class="light text-lighten-2">Your subscription to our list has been confirmed.</p>
          <p style=" font-size: 1.25em;color:#cfd8dc;line-height:15px;" 
          class="light text-lighten-2">
-         Thank you for subscribing! </p>
+         Thank you for <a class="white-text" href="/subscribe">subscribing</a>! </p>
          <div class="row" style="padding:10px;">
             <a id="home" class="waves-effect waves-light btn white-text darken-2 l5-light-blue z-depth-4" 
             href="{{site.baseurl}}/#home"><i class="material-icons">arrow_back</i></a>
@@ -25,4 +25,11 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" 
+  data-dojo-config="usePlainJson: true, isDebug: false">
+</script>
+<script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], 
+  function(L) { L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"6b50be5aea3dfe1fd4c041d80","lid":"6bb65defeb","uniqueMethods":true}) })
+</script>
+
 {% include footer-plain.html %}

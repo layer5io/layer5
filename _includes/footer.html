@@ -34,7 +34,7 @@
         <div class="col l4">
           <i class="material-icons grey-text" style="padding-right:2px;vertical-align: middle;">copyright</i>2019 Copyright
           <a class="waves-effect waves-light grey-text text-lighten-2" style="vertical-align: middle;"
-          href="https://github.com/leecalcote/layer5/graphs/contributors">Layer5 Authors</a>
+          href="https://github.com/layer5io/layer5/graphs/contributors">Layer5 Authors</a>
         </div>
         <div class="col l4">
           <a class="waves-effect waves-light grey-text text-lighten-2" style="vertical-align: middle;">
@@ -53,6 +53,12 @@
 
   </footer>
   <!-- scripts -->
+  {% if site.tag_manager_id and jekyll.environment == 'production' %}
+  <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.tag_manager_id}}"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+{% endif %}     
 <script src="/assets/js/particles/particles.js"></script>
 <script src="/assets/js/particles/app.js"></script>
 <!-- <button onclick="positionParticles()">Footer</button> -->
