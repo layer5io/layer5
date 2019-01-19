@@ -1,14 +1,15 @@
   <div id="home" class="section scrollspy">
-  <div id="index-banner" class="parallax-container" style="height: 280px;">
+  <div id="index-banner" class="parallax-container" style="height: 100%;">
 
     <div class="container" >
     <div style="padding-right: 5%; padding-left:5%;"><a href="/">
         <img class="hide-on-med-and-down " src="/assets/images/cube.png" align="left" height="270px" style="padding-right:20px;" />
         <img class="show-on-med-and-down" src="/assets/images/cube-sh-small.png" align="left"  style="padding-right:20px;" /></a>
         {% include vert-social.html %}
-        <h1  style="  font-family:  'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Helvetica, sans-serif; padding-top:20px; 
-          color: #ffff !important; text-shadow: 1px 2px #000000; line-height: 100%;">{{site.name}}</h1>
-         <p style="font-size: 2em;color:#cfd8dc;line-height:1em;" class="light text-lighten-2">{{ site.description }}</p>
+        <h1 class="site-title" style="font-family: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Helvetica, sans-serif;
+          padding-top:20px; color: #ffff !important; text-shadow: 1px 2px #000000; line-height: 100%; text-align: left;">
+          {{site.name}}</h1>
+         <p class="site-tagline"style="color:#cfd8dc;line-height:1em;text-align: left;" class="light text-lighten-2">{{ site.description }}</p>
          
       </div>
     </div>
