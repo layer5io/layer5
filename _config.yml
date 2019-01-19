@@ -1,10 +1,10 @@
-title: Layer 5
-name: Lee Calcote
-email: lee@layer5.io
+title: Layer5
+name: Layer5 Authors
+email: community@layer5.io
 name:  Layer5.io
 description: A community-curated collection of service meshes.
-baseurl: ""
 url: "https://layer5.io"
+baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
 
 parallax_image_one: assets/images/cube.png #-header-large.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
@@ -13,10 +13,52 @@ portfolio_heading: Workshops
 portfolio_type: cards
 
 syntax_highlighting: true
-# Skill icons from https://konpa.github.io/devicon/
 
-skills: 
-    - name: docker
+project_button: Github
+
+session: Session
+
+#Contact / Social
+github: https://github.com/layer5io
+medium: https://layer5.io
+slack: http://slack.layer5.io/
+twitter: https://twitter.com/layer5
+blog: https://layer5.io
+docker: https://hub.docker.com/u/layer5/
+
+# Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
+tag_manager_id: # This looks something like GTM-XXXXXXX
+google_analytics_tracking_id: UA-2969471-4 # This looks something like UA-000000000-0 Head over to https://analytics.google.com/ to setup.
+
+syntax_highlighting: true # include the css for syntax highlighting
+
+# Build settings
+# theme: minima
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-assets
+  - jekyll-minifier
+  - jekyll-sitemap
+
+## Reference - OSS this site uses:
+    # http://www.fabiolamanna.it
+    # https://github.com/jameshamann/jekyll-material-theme
+    # https://github.com/VincentGarreau/particles.js
+    # https://cssgradient.io
+    # https://coolbackgrounds.io
+
+## A message to have visitors acknowledge use of cookies (not currently used)
+# cookies_banner: none # The value "show" will show the cookies banner, the value "none" will hide the banner.
+# cookie_accept_message: Thank you. Enjoy!
+
+## Skill icons from https://konpa.github.io/devicon/ (not currently used)
+# icon_size: 50 # font-size of icons in px
+# colored: colored # Leave blank for black and white icons
+
+#skills: 
+#    - name: docker
 #   - name: android
 #   - name: angularjs
 #   - name: apache
@@ -96,7 +138,7 @@ skills:
 #   - name: safari
 #   - name: sass
 #   - name: sequelize
-    - name: slack
+#    - name: slack
 #   - name: sourcetree
 #   - name: ssh
 #   - name: swift
@@ -116,49 +158,3 @@ skills:
 #   - name: wordpress
 #   - name: yii
 #   - name: zend
-
-icon_size: 50 # font-size of icons in px
-colored: colored # Leave blank for black and white icons
-
-project_button: Github
-
-session: Session
-
-#Contact / Social
-github: https://github.com/layer5io
-medium: https://layer5.io
-slack: http://slack.layer5.io/
-twitter: https://twitter.com/layer5
-blog: https://layer5.io
-docker: https://hub.docker.com/u/layer5/
-
-
-baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
-#url: http://localhost:4000/ #the url of your site
-
-# Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
-tag_manager_id: # This looks something like GTM-XXXXXXX
-google_analytics_tracking_id: UA-2969471-4 # This looks something like UA-000000000-0 Head over to https://analytics.google.com/ to setup.
-
-cookies_banner: none # The value "show" will show the cookies banner, the value "none" will hide the banner.
-
-cookie_accept_message: Thank you. Enjoy!
-
-syntax_highlighting: true # include the css for syntax highlighting
-
-# Build settings
-markdown: kramdown
-# theme: minima
-permalink: pretty
-plugins:
-  - jekyll-feed
-  - jekyll-assets
-  - jekyll-minifier
-  - jekyll-sitemap
-
-# Reference
-# http://www.fabiolamanna.it
-# https://github.com/jameshamann/jekyll-material-theme
-# https://github.com/VincentGarreau/particles.js
-# https://cssgradient.io
-# https://coolbackgrounds.io
