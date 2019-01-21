@@ -1,5 +1,5 @@
 title: Layer5
-name: Layer5 Authors
+author: Lee Calcote
 email: community@layer5.io
 name:  Layer5.io
 description: A community-curated collection of service meshes.
@@ -12,8 +12,6 @@ parallax_image_two: assets/images/startup3.jpg
 portfolio_heading: Workshops
 portfolio_type: cards
 
-syntax_highlighting: true
-
 project_button: Github
 
 session: Session
@@ -22,9 +20,13 @@ session: Session
 github: https://github.com/layer5io
 medium: https://layer5.io
 slack: http://slack.layer5.io/
-twitter: https://twitter.com/layer5
 blog: https://layer5.io
 docker: https://hub.docker.com/u/layer5/
+
+twitter:
+  card: summary
+  username: layer5
+  url: "https://twitter.com/layer5"
 
 # Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
 tag_manager_id: # This looks something like GTM-XXXXXXX
