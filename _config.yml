@@ -41,6 +41,7 @@ plugins:
   - jekyll-assets
   - jekyll-minifier
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 ## Reference - OSS this site uses:
     # http://www.fabiolamanna.it

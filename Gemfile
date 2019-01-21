@@ -12,7 +12,6 @@ gem "rack-jekyll"
 gem "pry"
 gem "puma"
 gem 'jekyll-sitemap'
-gem 'jekyll-seo-tag'
 
 
 group :jekyll_plugins do
