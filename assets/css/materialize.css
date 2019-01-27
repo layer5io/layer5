@@ -2957,6 +2957,22 @@ ul.staggered-list li {
   }
 }
 
+/* Meshery Arch iframe */
+.iframe-container {
+  overflow: hidden;
+  padding-top: 60%;
+  position: relative;
+}
+
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
 .page-footer {
   padding-top: 10px;
   color: #fff;
