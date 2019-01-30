@@ -1,4 +1,5 @@
-<img style="position:relative; float: right;" src="https://layer5.io/assets/images/cube-sh-small.png" />
+<img align="right" src="https://layer5.io/assets/images/cube-sh-small.png" />
+                                                                               
 # About
 [Layer5.io](https://layer5.io) is a community-maintained repository of information pertaining to the technology ecosystem surrounding service meshes, API gateways, edge proxies, ingress and egress controllers - - microservice management in cloud native environments.
 
