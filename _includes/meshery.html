@@ -79,9 +79,24 @@ This project is community-built and welcomes collaboration!
     <ol>- See <a href="https://docs.google.com/document/d/1i6aa5OWTS7Ul1V2vJKVnJswlbBJi_CN5LhWs4xd85vw/edit#">community meeting minutes</a></ol>    
   </ul>
 </p>
-
 </div>
 
+<h4  style="color:aliceblue;">FAQ</h4>
+<div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
+    <p>
+        Question: <b>Why create Meshery and not use regpatrol?</b>
+         - regpatrol is not open source or available in binary form to use.
+        Question: <b>What are some differences between regpatrol and Meshery?</b>
+        - regpatrol sources telemetry from Mixer Prometheus adapter and uses IBM's proprietary node agent.
+        - - Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.
+        - regpatrol uses jmeter, which can parse responses and perform functional tests.
+        - - Meshery is using fortio, which is for load-gen and perf-testing only. 
+        Question: <b>Why use Meshery?</b>
+        - because its an open source, vendor neutral projects that facilitates testing across meshes.
+        - because fortio is not packaged into a mesh testing utility, but is only a load-generator unto its own.
+	    - because regpatrol is closed sourcej, binary is not released, scripted for one mesh, and is produced by a vendor of that mesh.
+    </p>
+</div>
 
 <div class="row">
   <div class="col s12">
