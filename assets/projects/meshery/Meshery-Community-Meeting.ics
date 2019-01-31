@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Apple Inc.//Mac OS X 10.14.2//EN
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0600
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+DTSTART:20070311T020000
+TZNAME:CDT
+TZOFFSETTO:-0500
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0500
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+DTSTART:20071104T020000
+TZNAME:CST
+TZOFFSETTO:-0600
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTEND;TZID=America/Chicago:20190201T150000
+TRANSP:OPAQUE
+ORGANIZER;CN="Lee Calcote":mailto:leecalcote@gmail.com
+UID:4un8cv80qcp94sog7nqautphuv@google.com
+DTSTAMP:20190131T185301Z
+LOCATION:Hangouts
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+DESCRIPTION:<br><br>Links:<br><ul><li><a href="https://docs.google.com/d
+ ocument/d/1i6aa5OWTS7Ul1V2vJKVnJswlbBJi_CN5LhWs4xd85vw/edit#" id="ow397"
+  __is_owner="true">Community meeting minutes</a><br></li><li><a href="ht
+ tps://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3
+ -w9t0/edit?usp=sharing" id="ow410" __is_owner="true">Meshery design docu
+ ment</a><br></li><li><a href="https://drive.google.com/open?id=1cSSCn442
+ 8TFhyg5mCMZq-oDi-Gwrcqqt" id="ow426" __is_owner="true">Google Drive fold
+ er</a></li></ul>\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nPlease do not edit this section of 
+ the description.\n\nThis event has a Google Hangouts video call.\nJoin: 
+ https://hangouts.google.com/hangouts/_/calendar/bGVlY2FsY290ZUBnbWFpbC5j
+ b20.4un8cv80qcp94sog7nqautphuv?hs=121\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+X-GOOGLE-HANGOUT:https://hangouts.google.com/hangouts/_/calendar/bGVlY2F
+ sY290ZUBnbWFpbC5jb20.4un8cv80qcp94sog7nqautphuv
+STATUS:CONFIRMED
+SEQUENCE:0
+SUMMARY:Meshery Community Meeting
+LAST-MODIFIED:20190131T185301Z
+DTSTART;TZID=America/Chicago:20190201T140000
+CREATED:20190131T185301Z
+RRULE:FREQ=WEEKLY;BYDAY=FR
+BEGIN:VALARM
+X-WR-ALARMUID:9043483E-AFBE-4D6F-ABAB-70E24C78B0BD
+UID:9043483E-AFBE-4D6F-ABAB-70E24C78B0BD
+TRIGGER:-PT15M
+ATTACH;VALUE=URI:Basso
+X-APPLE-LOCAL-DEFAULT-ALARM:TRUE
+ACTION:AUDIO
+X-APPLE-DEFAULT-ALARM:TRUE
+END:VALARM
+BEGIN:VALARM
+X-WR-ALARMUID:74BDB325-672F-4A31-B6FD-8D8802BAB896
+UID:74BDB325-672F-4A31-B6FD-8D8802BAB896
+TRIGGER:-PT15M
+X-APPLE-DEFAULT-ALARM:TRUE
+ATTACH;VALUE=URI:Basso
+ACTION:AUDIO
+END:VALARM
+END:VEVENT
+END:VCALENDAR

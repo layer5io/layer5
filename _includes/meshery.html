@@ -64,7 +64,7 @@
   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqJ2cFC9LSGVi1ReDjphzOfpWwINPg4__XyMZu85R8KNPnuHmnswEnHnTkY-8FQl-GrjuXpQ7WlCLE/embed?start=false&loop=false&delayms=3000" 
           class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
           allowtransparency="true"></iframe>
-  </div>
+  </div> 
 </div>
 <h4  style="color:aliceblue;">Contributing</h4>
 <div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
@@ -75,26 +75,32 @@
 This project is community-built and welcomes collaboration! 
 <p>
   <ul>
-    <ol>- See <a href="https://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3-w9t0/edit?usp=sharing">design document</a></ol>
-    <ol>- See <a href="https://docs.google.com/document/d/1i6aa5OWTS7Ul1V2vJKVnJswlbBJi_CN5LhWs4xd85vw/edit#">community meeting minutes</a></ol>    
+    <ol>- Join the <a href="/assets/projects/meshery/Meshery-Community-Meeting.ics">weekly community meeting</a> on Fridays from 2pm to 3pm Central.</ol>
+    <ol>- Comment on the <a href="https://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3-w9t0/edit?usp=sharing">design document.</a></ol>
+    <ol>- Review the <a href="https://docs.google.com/document/d/1i6aa5OWTS7Ul1V2vJKVnJswlbBJi_CN5LhWs4xd85vw/edit#">community meeting minutes.</a></ol>    
   </ul>
 </p>
 </div>
 
 <h4  style="color:aliceblue;">FAQ</h4>
 <div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
-    <p>
-        Question: <b>Why create Meshery and not use regpatrol?</b>
-         - regpatrol is not open source or available in binary form to use.
-        Question: <b>What are some differences between regpatrol and Meshery?</b>
-        - regpatrol sources telemetry from Mixer Prometheus adapter and uses IBM's proprietary node agent.
-        - - Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.
-        - regpatrol uses jmeter, which can parse responses and perform functional tests.
-        - - Meshery is using fortio, which is for load-gen and perf-testing only. 
-        Question: <b>Why use Meshery?</b>
-        - because its an open source, vendor neutral projects that facilitates testing across meshes.
-        - because fortio is not packaged into a mesh testing utility, but is only a load-generator unto its own.
-	    - because regpatrol is closed sourcej, binary is not released, scripted for one mesh, and is produced by a vendor of that mesh.
+    <p>  <ul>
+        <ol><b>Why create Meshery and not use regpatrol?</b></ol>
+    <ol>- regpatrol is not open source or available in binary form to use.</ol>
+          </ul>
+          <ul>
+          <ol><b>What are some differences between regpatrol and Meshery?</b></ol>
+            <ol><em>Telemetry</em> - regpatrol sources telemetry from Mixer Prometheus adapter and uses IBM's proprietary node agent.</ol>
+            <ol>- - Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.</ol>
+            <ol><em>Traffic type</em> - regpatrol uses jmeter, which can parse responses and perform functional tests.</ol>
+            <ol>- - Meshery is using fortio, which is for load-gen and perf-testing only. </ol>
+        </ul>
+        <ul>
+            <ol><b>Why use Meshery?</b></ol>
+            <ol> - because its an open source, vendor neutral projects that facilitates testing across meshes.</ol>
+            <ol> - because fortio is not packaged into a mesh testing utility, but is only a load-generator unto its own.</ol>
+            <ol> - because regpatrol is closed sourcej, binary is not released, scripted for one mesh, and is produced by a vendor of that mesh.</ol>
+    </ul>
     </p>
 </div>
 
