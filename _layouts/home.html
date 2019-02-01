@@ -13,13 +13,11 @@
 <div class="container no-pad-top" >
   <div id="books" class="section scrollspy">
     <h3 style="text-align:center;color:aliceblue;">Books</h3>
-      <h5 style="text-align:center;color:aliceblue;">Published</h5>
-      {% include published-books.html %}
-    
-    <h5 style="text-align:center;color:aliceblue;">Upcoming</h5>
-    {% include upcoming-books.html %}
+      {% include books-published.html %}
+      {% include books-upcoming.html %}
   </div>
 </div>
+
 <!--<div class="container" style="padding:20px;">
   <div id="skills" class="section scrollspy">
    <h3 style="text-align:center;">Characterizations and Contrasts</h3>
@@ -37,13 +35,14 @@
     </div>
     <div class="parallax"><img src="{{site.parallax_image_two}}" alt="Unsplashed background img 3"></div>
   </div> -->
-  <div class="container" style="padding:0px;">
-    <div id="workshops" class="section scrollspy">
-      <h3 style="text-align:center;color:aliceblue;">{{site.portfolio_heading}}</h3>
-      {% include portfolio_{{site.portfolio_type}}.html %}
-    </div>
+<div class="container no-pad-top" >
+  <div id="workshops" class="section scrollspy">
+    <h3 style="text-align:center;color:aliceblue;">Workshops</h3>
+    {% include workshops-delivered.html %}
+    {% include workshops-upcoming.html %}
   </div>
-  
+</div>
+
 <div class="container">
   <div id="contact" class="section scrollspy">
     <h3 style="text-align:center;color:aliceblue;">Mailing List</h3>

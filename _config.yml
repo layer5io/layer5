@@ -46,6 +46,24 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+collections_dir: collections
+collections:
+  authors:
+    output: true
+  books:
+    output: true
+    permalink: /books/:title
+  people:
+    output: true
+  projects:
+    output: true
+    permalink: /projects/:title
+  topics:
+    output: true
+    permalink: /topics/:title
+  workshops:
+    output: true
+    permalink: /workshops/:title
 ## Reference - OSS this site uses:
     # http://www.fabiolamanna.it
     # https://github.com/jameshamann/jekyll-material-theme
