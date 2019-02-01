@@ -1,7 +1,7 @@
 ---
 layout: workshop
 name: DockerCon EU 2018 
-desc: "A worshop containing ten labs on the Istio service mesh. Presented at DockerCon EU 2018. <p><i>Resources posted below.</i></p>"
+desc: "A workshop containing ten labs on the Istio service mesh. Presented at DockerCon EU 2018. <p><i>Resources posted below.</i></p>"
 img: /assets/images/dockercon-barcelona-logo-tall.svg
 style: "position:relative;height:340px;padding-left:60px;padding-right:60px;padding-top:20px;"
 eurl: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506

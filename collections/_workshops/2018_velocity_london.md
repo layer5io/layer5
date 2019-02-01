@@ -1,7 +1,7 @@
 ---
 layout: workshop
 name: Velocity London 2018
-desc: "A worshop containing ten labs on the Istio service mesh. Presented at Velocity London 2018. <p>Resources posted below.</p>"
+desc: "A workshop containing ten labs on the Istio service mesh. Presented at Velocity London 2018. <p>Resources posted below.</p>"
 img: /assets/images/Velocity.png
 style: "height:340px;padding-top: -20px;"
 eurl: https://dockerconeurope18.smarteventscloud.com/connect/search.ww#loadSearch-searchPhrase=&searchType=session&tc=0&sortBy=dayTime&i(1037)=&p=
