@@ -3,7 +3,8 @@ source "https://rubygems.org"
 ruby '2.5.1'
 
 gem 'materialize-sass'
-gem "jekyll", "~> 3.6.3"
+#gem "jekyll", "~> 3.6.3"
+gem "jekyll", "~> 3.8.5"
 gem "minima", "~> 2.0"
 gem 'rspec'
 gem 'capybara'
