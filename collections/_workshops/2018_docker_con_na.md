@@ -1,7 +1,7 @@
 ---
 layout: workshop
 name: DockerCon NA 2018 
-desc: "A worshop containing ten labs on the Istio service mesh. First presented at DockerCon18. <p>See the resource links below.</p>      <p>(<a href='/assets/images/using-istio.jpg'>large image</a>)</p>"
+desc: "A workshop containing ten labs on the Istio service mesh. First presented at DockerCon18. <p>See the resource links below.</p>      <p>(<a href='/assets/images/using-istio.jpg'>large image</a>)</p>"
 img: /assets/images/using-istio_thumb.jpg
 style: "height:340px;"
 eurl: https://dockercon18.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=187485
