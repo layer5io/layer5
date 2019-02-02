@@ -1,7 +1,7 @@
 <img align="right" src="https://layer5.io/assets/images/cube-sh-small.png" />
                                                                                
 # About
-[Layer5.io](https://layer5.io) is a community-maintained repository of information pertaining to the technology ecosystem surrounding service meshes, API gateways, edge proxies, ingress and egress controllers - - microservice management in cloud native environments.
+[Layer5.io](https://layer5.io) is a community-maintained repository of information pertaining to the technology ecosystem surrounding service meshes, API gateways, edge proxies, ingress and egress controllers - - microservice management in cloud native environments. 
 
 # Projects
 
@@ -9,7 +9,7 @@
 See (https://layer5.io/landscape) - a collection of prominent projects and offerings laid out in contrast to one another.
 
 ## Meshery
-See (https://layer5.io/meshery) - A service mesh playground to faciliate learning about functionality and performance of different service meshes. Meshery incorporates the collection and display of metrics from applications running in the playground.
+See (https://layer5.io/meshery) - A service mesh playground to faciliate learning about functionality and performance of different service meshes. Meshery incorporates the collection and display of metrics from applications running in the playground. Community meeting [times](https://layer5.io/meshery/#contributing) and [recordings](https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA).
 
 ## Contributing
 
