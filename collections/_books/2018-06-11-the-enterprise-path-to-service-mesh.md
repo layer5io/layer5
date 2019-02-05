@@ -4,7 +4,7 @@ title:  "The Enterprise Path to Service Mesh"
 date:   2018-06-11 21:15:05 +0000
 image: /assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures.gif
 author: Lee Calcote
-
+status: published
 ---
 <h4> Book: <i>The Enterprise Path to Service Mesh Architectures</i></h4>
 By Lee Calcote

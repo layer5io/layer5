@@ -1,7 +1,8 @@
 <div class="row">
   <h5 style="text-align:center;color:aliceblue;">Published</h5>
   {% for book in site.books %}
-  {% if book.author == "Lee Calcote" %}
+  {% if book.status == "published" %}
+  {% if book.visibility != "hide" %}
 
   <div class="col s12 m6">
     <div class="card" style="z-index: 1;">
@@ -15,6 +16,7 @@
       </div>
     </div>
   </div>
+  {% endif %}
   {% endif %}
   {% endfor %}
 </div>
