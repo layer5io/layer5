@@ -64,6 +64,22 @@ collections:
   workshops:
     output: true
     permalink: /workshops/:title
+
+defaults:
+  - scope:
+      type: pages
+    values:
+      layout: default
+      body-class: left-sidebar
+      sidebar: open
+  - scope:
+      type: books
+    values:
+      layout: default
+      body-class: left-sidebar
+      sidebar: open
+    # Collection defaults
+
 ## Reference - OSS this site uses:
     # http://www.fabiolamanna.it
     # https://github.com/jameshamann/jekyll-material-theme

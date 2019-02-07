@@ -9,4 +9,6 @@ $spacing-unit:     30px !default;
     margin-bottom: $spacing-unit / 2;
 }
 
-@import "syntax-highlighting";
+@import "../_sass/sidebar-left";
+@import "../_sass/sidebar";
+@import "../_sass/syntax-highlighting";
