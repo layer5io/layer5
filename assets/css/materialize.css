@@ -2859,21 +2859,49 @@ ul.staggered-list li {
   -webkit-transform-origin: 0 50%;
           transform-origin: 0 50%;
 }
+.nav-sidebar span {
+  font-weight: bold;
+}
+.nav-sidebar ul {
+  background: rgba(159, 191, 205, .25);
+  /* opacity: 0.25; */
+  border-radius: 15px;
+  padding: 20px;
+}
+.nav-sidebar li {
+/* line-height: 1.1em; */
+  margin-bottom: 1em;
+  list-style-type: none;
 
+}
 /*********************
   Media Query Classes
 **********************/
+
 @media only screen and (max-width: 600px) {
   .hide-on-small-only, .hide-on-small-and-down {
     display: none !important;
   }
 }
 
-/* @media only screen and (max-width: 600px) {
-  .small-on-med-and-down {
-    width: 20px !important;
+@media only screen and (max-width: 1260px) {
+  .nav-sidebar {
+    /* font-size: 4vw; */
+     display: none !important;  
   }
-} */
+}
+
+ @media only screen and (min-width: 1750px) {
+ .nav-sidebar span {
+    font-size: 16px;
+  } 
+  .nav-sidebar li {
+    font-size: 14px;
+  }
+  .nav-sidebar ul {
+    font-size: 16px;
+  }
+} 
 
 @media only screen and (max-width: 805px) {
   .hide-on-med-and-down {
