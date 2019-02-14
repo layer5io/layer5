@@ -10,7 +10,7 @@ Array.prototype.forEach.call( document.querySelectorAll('table td:nth-child(2)')
         lookup[ id ].push( td );
     }
 });
-var colors = ['#808080', '#ffffff', '#e6e6e6', '#D3D3D3', '#cccccc','#f0f5f5'];
+var colors = ['#f2f2f2', '#ffffff', '#f2f2f2', '#ffffff', '#f2f2f2','#ffffff'];
 var i = 0;
 Object.keys( lookup ).forEach(function( name ) {
     if( lookup[ name ] && lookup[ name ].length ) {
