@@ -69,14 +69,14 @@
       <li>Meshery App</li>
         <p>
           Meshery App is the central component of Meshery. It deals with:
-          <ul>
-            <li>redirecting users to Meshery SaaS to get them authenticated</li>
-            <li>presenting the user interface to authenticated users</li>
-            <li>accepts and maintains the Kubernetes cluster config and context info for the period of the session</li>
-            <li>enables users to run load tests against their applications</li>
-            <li>collects the results of the load tests from the load generator and passes it to Meshery SaaS</li>
-            <li>interfaces with the Meshery adapters dynamically and enables the user to play with the service mesh</li>
-          </ul>
+          <ol>
+            <li style="list-style-type: circle;">redirecting users to Meshery SaaS to get them authenticated</li>
+            <li style="list-style-type: circle;">presenting the user interface to authenticated users</li>
+            <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context info for the period of the session</li>
+            <li style="list-style-type: circle;">enables users to run load tests against their applications</li>
+            <li style="list-style-type: circle;">collects the results of the load tests from the load generator and passes it to Meshery SaaS</li>
+            <li style="list-style-type: circle;">interfaces with the Meshery adapters dynamically and enables the user to play with the service mesh</li>
+          </ol>
         </p>
       <li>Meshery Adapters</li>
         <p>
@@ -184,27 +184,27 @@
       </li>
       </ol>
       <h6><a name="using-twitter-for-sso">Using Twitter for SSO</a></h6>
-      <ul>
+      <ol>
       <li>Create an app in the Twitter developer console: <a href="https://developer.twitter.com/en/apps" rel="nofollow">https://developer.twitter.com/en/apps</a> after logging in.</li>
       <li>Fill appropriate details in the presented form
-      <ul>
-      <li>Remember to enable to <code>Sign in with Twitter</code></li>
-      <li>For the callback url, please use this value: <code>http://meshery-saas:9876/auth/twitter/callback</code></li>
-      </ul>
+      <ol>
+      <li style="list-style-type: circle;">Remember to enable to <code>Sign in with Twitter</code></li>
+      <li style="list-style-type: circle;">For the callback url, please use this value: <code>http://meshery-saas:9876/auth/twitter/callback</code></li>
+      </ol>
       </li>
       <li>After creating the app you will be able to grab the API key and secret from the <code>Keys and tokens</code> section of the app.</li>
-      </ul>
+      </ol>
       <h6><a name="using-github-for-sso">Using Github for SSO</a></h6>
       <p>
-        <ul>
+        <ol>
         <li>Create an OAuth app in the Github developer settings: <a href="https://github.com/settings/developers">https://github.com/settings/developers</a> after logging in.</li>
         <li>Fill appropriate details in the presented form
-        <ul>
-        <li>For the callback url, please use this value: <code>http://meshery-saas:9876/auth/github/callback</code></li>
-        </ul>
+        <ol>
+        <li style="list-style-type: circle;">For the callback url, please use this value: <code>http://meshery-saas:9876/auth/github/callback</code></li>
+        </ol>
         </li>
         <li>After creating the app you will be able to grab the Client ID and Secret from the app page.</li>
-        </ul>
+        </ol>
       </p>
   </p>
 </div>
