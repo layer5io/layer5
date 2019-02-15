@@ -50,19 +50,161 @@
   <p>
     Anytime performance questions are to be answered, they are subjective to the specific workload and infrastructure used for measurement. 
     Given this challenge, the Envoy project, for example, refuses to publish performance data because such tests can be: 
-    <ul><ol>1) involved</ol>
-      <ol>2) misinterpreted</ol>
-      </ul>
+    <ol><li>involved</li>
+      <li>misinterpreted</li>
+      </ol>
     
     Beyond the need for performance and overhead data under a permutation of different workloads (applications) and types and sizes of infrastructure resources, the need for cross-project, apple-to-apple comparisons also desired in order to facilitate an of behavioral differences between service meshes and selection of their use. Individual projects shy from publishing test results of other, competing service meshes. An independent, credible analysis is needed.
   </p>
   <h5 style="color:#111111;">Solution</h5>
-  <h6>Architecture</h6>
+  <p>
+    In its current state, Meshery consists of the following components:
+    <ol>
+      <li>Meshery SaaS</li>
+        <p>
+          Meshery SaaS plays a very minimalistic role in getting the user authenticated and persisting the results sent to it by the Meshery App.
+        </p>
+      <li>Meshery App</li>
+        <p>
+          Meshery App is the central component of Meshery. It deals with:
+          <ul>
+            <li>redirecting users to Meshery SaaS to get them authenticated</li>
+            <li>presenting the user interface to authenticated users</li>
+            <li>accepts and maintains the Kubernetes cluster config and context info for the period of the session</li>
+            <li>enables users to run load tests against their applications</li>
+            <li>collects the results of the load tests from the load generator and passes it to Meshery SaaS</li>
+            <li>interfaces with the Meshery adapters dynamically and enables the user to play with the service mesh</li>
+          </ul>
+        </p>
+      <li>Meshery Adapters</li>
+        <p>
+          Meshery adapters are the components which will be interfacing with the specific service meshes to apply the config changes requested through Meshery App. 
+          Meshery app will be interfacing with the relevant adapters over gRPC. The adapters will be running the gRPC server and the Meshery App will spin up the gRPC client as and when an operation is requeted through the user interface.
+          The proto buf spec is kept in the Meshery App so as to keep it in a central location. 
+          Today we have a functional adapter for Istio which is named <b>meshery-istio</b>. 
+          The adapters will be maintained in their own git repository. Source code for <b>meshery-istio</b> can be found <a href="https://github.com/layer5io/meshery-istio">here</a>.
+          We have also created a repository <a href="https://github.com/layer5io/meshery-linkerd">here</a> for working with <a href="https://linkerd.io/2/getting-started/">Linkerd2</a>.
+        </p>
+      <li>Load Generator</li>
+        <p>
+          For the load generator we are currently using <a href="https://fortio.org">Fortio</a>.
+        </p>
+    </ol>
+  </p>
+  <h5 style="color:#111111;">Architecture</h5>
   <div class="iframe-container">
   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqJ2cFC9LSGVi1ReDjphzOfpWwINPg4__XyMZu85R8KNPnuHmnswEnHnTkY-8FQl-GrjuXpQ7WlCLE/embed?start=false&loop=false&delayms=3000" 
           class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
           allowtransparency="true"></iframe>
   </div> 
+
+  <h5 style="color:#111111;">Give Meshery a try</h5>
+  <p>
+      To run Meshery:
+      <ol>
+      <li style="list-style-type: circle;">On Kubernetes
+        <ol>
+          <li>
+            <p>You can deploy Meshery to an existing kubernetes cluster using the provided yaml file into any namespace of your choice. For now let us deploy it to a namespace <code>meshery</code>:</p>
+            <div class="highlight highlight-source-shell">
+<pre>
+  kubectl create ns meshery
+  kubectl -n meshery apply -f deployment_yamls/k8s
+
+  <span class="pl-c"><span class="pl-c">#</span> additional step for running on Istio</span>
+  kubectl -n meshery apply -f deployment_yamls/istio.yaml
+</pre>
+            </div>
+            <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately.</p>
+          </li>
+          <li>
+            <p>Meshery can be deployed either on/off the mesh.</p>
+          </li>
+          <li>
+            <p>If deployed on the same Kubernetes cluster as the mesh, you dont have to provide a kubeconfig file.</p>
+          </li>
+          <li>
+            <p>please review the yaml and make necessary changes as needed for your cluster</p>
+          </li>
+        </ol>
+      </li>
+      <li style="list-style-type: circle;">On Docker
+        <ol>
+          <li>We have a docker-compose.yaml file which can be used to spin up the services quickly</li>
+          <li>There a few requirements for running all the Meshery services on your local
+            <ol>
+              <li>
+                <p>SSO, which uses Twitter and/or Github</p>
+                <ol>
+                <li style="list-style-type: circle;">Instructions to setup Twitter for SSO can be found <a href="#using-twitter-for-sso">below</a></li>
+                <li style="list-style-type: circle;">Instructions to setup Github for SSO can be found <a href="#using-github-for-sso">below</a></li>
+                </ol>
+              </li>
+              <li>
+                <p>Add an entry for <code>meshery-saas</code> in your <code>/etc/hosts</code> file to point to 127.0.0.1 and save the file</p>
+              </li>
+              <li>
+                <p>After setting up SSO, store the respective key and secret as variables in the shell as shown below.</p>
+                <ol>
+                  <li style="list-style-type: circle;">for Twitter:</li>
+                </ol>
+                <div class="highlight highlight-source-shell">
+                <pre><code>TWITTERKEY="PASTE TWITTER KEY"
+                </code></pre>
+                </div>
+                <div class="highlight highlight-source-shell">
+                <pre><code>TWITTERSECRET="PASTE TWITTER SECRET"
+                </code></pre>
+                </div>
+                <ol>
+                  <li style="list-style-type: circle;">for Github:</li>
+                </ol>
+                <div class="highlight highlight-source-shell">
+                <pre><code>GITHUBKEY="PASTE GITHUB KEY"
+                </code></pre>
+                </div>
+                <div class="highlight highlight-source-shell">
+                <pre><code>GITHUBSECRET="PASTE GITHUB SECRET"
+                </code></pre>
+                </div>
+                <p><strong>Note</strong>: you can use Twitter and/or Github</p>
+                <p>Now that the environment variables are setup, we can start the containers by running:</p>
+                <div class="highlight highlight-source-shell">
+                <pre><code>docker-compose up
+                </code></pre>
+                </div>
+                <p>Please add a <code>-d</code> flag to the above command if you want to run it in the background.</p>
+              </li>
+            </ol>
+          </li>
+          <li>Now you should be able to access Meshery in your browser at <code>http://localhost:8080/play</code></li>
+        </ol>
+      </li>
+      </ol>
+      <h6><a name="using-twitter-for-sso">Using Twitter for SSO</a></h6>
+      <ul>
+      <li>Create an app in the Twitter developer console: <a href="https://developer.twitter.com/en/apps" rel="nofollow">https://developer.twitter.com/en/apps</a> after logging in.</li>
+      <li>Fill appropriate details in the presented form
+      <ul>
+      <li>Remember to enable to <code>Sign in with Twitter</code></li>
+      <li>For the callback url, please use this value: <code>http://meshery-saas:9876/auth/twitter/callback</code></li>
+      </ul>
+      </li>
+      <li>After creating the app you will be able to grab the API key and secret from the <code>Keys and tokens</code> section of the app.</li>
+      </ul>
+      <h6><a name="using-github-for-sso">Using Github for SSO</a></h6>
+      <p>
+        <ul>
+        <li>Create an OAuth app in the Github developer settings: <a href="https://github.com/settings/developers">https://github.com/settings/developers</a> after logging in.</li>
+        <li>Fill appropriate details in the presented form
+        <ul>
+        <li>For the callback url, please use this value: <code>http://meshery-saas:9876/auth/github/callback</code></li>
+        </ul>
+        </li>
+        <li>After creating the app you will be able to grab the Client ID and Secret from the app page.</li>
+        </ul>
+      </p>
+  </p>
 </div>
 <a name="contributing"></a>
 <h4  style="color:aliceblue;">Contributing</h4>
