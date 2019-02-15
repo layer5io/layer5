@@ -81,11 +81,11 @@
       <li>Meshery Adapters</li>
         <p>
           Meshery adapters are the components which will be interfacing with the specific service meshes to apply the config changes requested through Meshery App. 
-          Meshery app will be interfacing with the relevant adapters over gRPC. The adapters will be running the gRPC server and the Meshery App will spin up the gRPC client as and when an operation is requeted through the user interface.
+          Meshery app will be interfacing with the relevant adapters over gRPC. The adapters will be running the gRPC server and the Meshery App will spin up the gRPC client as and when an operation is requested through the user interface.
           The proto buf spec is kept in the Meshery App so as to keep it in a central location. 
           Today we have a functional adapter for Istio which is named <b>meshery-istio</b>. 
           The adapters will be maintained in their own git repository. Source code for <b>meshery-istio</b> can be found <a href="https://github.com/layer5io/meshery-istio">here</a>.
-          We have also created a repository <a href="https://github.com/layer5io/meshery-linkerd">here</a> for working with <a href="https://linkerd.io/2/getting-started/">Linkerd2</a>.
+          We have also created a repository <a href="https://github.com/layer5io/meshery-linkerd">here</a> for working with <a href="https://linkerd.io/2/getting-started/">Linkerd 2.0</a>.
         </p>
       <li>Load Generator</li>
         <p>
@@ -136,10 +136,10 @@
           <li>There a few requirements for running all the Meshery services on your local
             <ol>
               <li>
-                <p>SSO, which uses Twitter and/or Github</p>
+                <p>SSO, which uses Twitter and/or GitHub</p>
                 <ol>
                 <li style="list-style-type: circle;">Instructions to setup Twitter for SSO can be found <a href="#using-twitter-for-sso">below</a></li>
-                <li style="list-style-type: circle;">Instructions to setup Github for SSO can be found <a href="#using-github-for-sso">below</a></li>
+                <li style="list-style-type: circle;">Instructions to setup GitHub for SSO can be found <a href="#using-github-for-sso">below</a></li>
                 </ol>
               </li>
               <li>
@@ -159,7 +159,7 @@
                 </code></pre>
                 </div>
                 <ol>
-                  <li style="list-style-type: circle;">for Github:</li>
+                  <li style="list-style-type: circle;">for GitHub:</li>
                 </ol>
                 <div class="highlight highlight-source-shell">
                 <pre><code>GITHUBKEY="PASTE GITHUB KEY"
@@ -169,7 +169,7 @@
                 <pre><code>GITHUBSECRET="PASTE GITHUB SECRET"
                 </code></pre>
                 </div>
-                <p><strong>Note</strong>: you can use Twitter and/or Github</p>
+                <p><strong>Note</strong>: you can use Twitter and/or GitHub</p>
                 <p>Now that the environment variables are setup, we can start the containers by running:</p>
                 <div class="highlight highlight-source-shell">
                 <pre><code>docker-compose up
@@ -194,10 +194,10 @@
       </li>
       <li>After creating the app you will be able to grab the API key and secret from the <code>Keys and tokens</code> section of the app.</li>
       </ol>
-      <h6><a name="using-github-for-sso">Using Github for SSO</a></h6>
+      <h6><a name="using-github-for-sso">Using GitHub for SSO</a></h6>
       <p>
         <ol>
-        <li>Create an OAuth app in the Github developer settings: <a href="https://github.com/settings/developers">https://github.com/settings/developers</a> after logging in.</li>
+        <li>Create an OAuth app in the GitHub developer settings: <a href="https://github.com/settings/developers">https://github.com/settings/developers</a> after logging in.</li>
         <li>Fill appropriate details in the presented form
         <ol>
         <li style="list-style-type: circle;">For the callback url, please use this value: <code>http://meshery-saas:9876/auth/github/callback</code></li>
