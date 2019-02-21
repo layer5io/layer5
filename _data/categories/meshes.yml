@@ -24,6 +24,19 @@
   tracing: "Pluggable"
   encryption: "Yes"
 
+- name: Grey Matter
+  desc: "Grey Matter is an enterprise framework and ecosystem covering common use cases and patterns, so your team can focus on what they do best."
+  link: http://www.deciphernow.com
+  autoinject: "No"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "No"
+  multi-tenant: "No"
+  prometheus: "Yes"
+  tracing: "OpenTracing"
+  encyrption: "Yes"
+
 - name: Istio
   link: https://istio.io
   autoinject: "Yes"
