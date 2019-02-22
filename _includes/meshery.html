@@ -1,5 +1,5 @@
-<p class="post-meta" style="color:#cfd8dc;font-size: 1.25em;text-align:center;"><i>
-    a multi-mesh performance benchmark and playground</i></p>
+<h2 class="post-meta" style="color:#cfd8dc;font-size: 1.25em;text-align:center;"><i>
+    a multi-mesh performance benchmark and playground</i></h2>
     <!-- <h5 style="text-align:center;color:aliceblue;">
       <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
          href="https://github.com/layer5io/meshery/blob/master/README.md#running-meshery">Download</a> </h5> -->
@@ -37,16 +37,20 @@
     </div>
   </div>
 </div>
-
+<div id="landscape" class="card-content" style="position:relative;float:center;">        
+    <h5 style="text-align:center;color:aliceblue;">
+      <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:300px;" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
+      href="#getting-started">Run Meshery</a> </h5>
+</div>
 <h4 style="color:aliceblue;">Project</h4>
 <div class="post-content" style="position: relative; background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
   <a href="/assets/images/meshery/meshery-large.png"><img src="/assets/images/meshery/meshery.png" width="400" margin="5%" style="float:right;"
   title="Service Mesh Playground"  /></a>
-<h5 style="color:#111111;">Situation</h5>
   <p>
     An engineer learns of the architecture and value provided by service meshes. 
-    Quite commonly, they are impressed and intrigued. Upon reflection, the most commonly asked question 
-    they then ask is “<b><i>what overhead does being on the mesh incur?</i></b>”. 
+    Quite commonly, they are impressed and intrigued. Upon reflection, the most commonly asked questions 
+    they then ask is: <ul><li><b><i>What overhead does being on the mesh incur?</i></b></li>
+    <li><b><i>Which one should I use and how do I get started?</i></b></li></ul>
   </p>
 <h5 style="color:#111111;">Problem</h5>
   <p>
@@ -58,17 +62,19 @@
     
     Beyond the need for performance and overhead data under a permutation of different workloads (applications) and types and sizes of infrastructure resources, the need for cross-project, apple-to-apple comparisons also desired in order to facilitate an of behavioral differences between service meshes and selection of their use. Individual projects shy from publishing test results of other, competing service meshes. An independent, credible analysis is needed.
   </p>
-  <h5 style="color:#111111;">Solution</h5>
+
+  <h5 style="color:#111111;">Architecture</h5>
+  <div class="iframe-container">
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqJ2cFC9LSGVi1ReDjphzOfpWwINPg4__XyMZu85R8KNPnuHmnswEnHnTkY-8FQl-GrjuXpQ7WlCLE/embed?start=false&loop=false&delayms=3000" 
+          class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+          allowtransparency="true"></iframe>
+  </div> 
   <p>
     In its current state, Meshery consists of the following components:
     <ol>
-      <li>Meshery SaaS</li>
+      <li>Meshery</li>
         <p>
-          Meshery SaaS plays a very minimalistic role in getting the user authenticated and persisting the results sent to it by the Meshery App.
-        </p>
-      <li>Meshery App</li>
-        <p>
-          Meshery App is the central component of Meshery. It deals with:
+          Meshery is the central component of Meshery. It deals with:
           <ol>
             <li style="list-style-type: circle;">redirecting users to Meshery SaaS to get them authenticated</li>
             <li style="list-style-type: circle;">presenting the user interface to authenticated users</li>
@@ -93,22 +99,13 @@
         </p>
     </ol>
   </p>
-  <h5 style="color:#111111;">Architecture</h5>
-  <div class="iframe-container">
-  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqJ2cFC9LSGVi1ReDjphzOfpWwINPg4__XyMZu85R8KNPnuHmnswEnHnTkY-8FQl-GrjuXpQ7WlCLE/embed?start=false&loop=false&delayms=3000" 
-          class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
-          allowtransparency="true"></iframe>
-  </div> 
-
-  <h5 style="color:#111111;">Give Meshery a try</h5>
-  <p>
-      To run Meshery:
-      <ol>
-      <li style="list-style-type: circle;">On Kubernetes
-        <ol>
-          <li>
-            <p>You can deploy Meshery to an existing kubernetes cluster using the provided yaml file into any namespace of your choice. For now let us deploy it to a namespace <code>meshery</code>:</p>
-            <div class="highlight highlight-source-shell">
+</div>
+  <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
+  <div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
+      <h5 style="color:#111111;">Run Meshery on Kubernetes:</h5>
+    <p>You can deploy Meshery to an existing kubernetes cluster using the provided yaml file into any namespace 
+      of your choice. For now let us deploy it to a namespace <code>meshery</code>:</p>
+    <div class="highlight highlight-source-shell">
 <pre>
   kubectl create ns meshery
   kubectl -n meshery apply -f deployment_yamls/k8s
@@ -116,73 +113,60 @@
   <span class="pl-c"><span class="pl-c">#</span> additional step for running on Istio</span>
   kubectl -n meshery apply -f deployment_yamls/istio.yaml
 </pre>
-            </div>
-            <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately.</p>
-          </li>
-          <li>
-            <p>Meshery can be deployed either on/off the mesh.</p>
-          </li>
-          <li>
-            <p>If deployed on the same Kubernetes cluster as the mesh, you dont have to provide a kubeconfig file.</p>
-          </li>
-          <li>
-            <p>please review the yaml and make necessary changes as needed for your cluster</p>
-          </li>
-        </ol>
-      </li>
-      <li style="list-style-type: circle;">On Docker
+    </div>
+    <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
+    <p>Meshery can be deployed either on/off the mesh. If deployed on the same Kubernetes cluster as the mesh, 
+      you don't have to provide a `kubeconfig` file. Please review the yaml and make necessary changes as needed for 
+      your cluster.</p>
+
+    <h5 style="color:#111111;">Run Meshery on Docker:</h5>
+    <p>We have a docker-compose.yaml file which can be used to spin up the services quickly
+    There a few requirements for running all the Meshery services on your local system.</p>
+    <ol>
+      <li>
+        <p>SSO, which uses Twitter and/or GitHub</p>
         <ol>
-          <li>We have a docker-compose.yaml file which can be used to spin up the services quickly</li>
-          <li>There a few requirements for running all the Meshery services on your local
-            <ol>
-              <li>
-                <p>SSO, which uses Twitter and/or GitHub</p>
-                <ol>
-                <li style="list-style-type: circle;">Instructions to setup Twitter for SSO can be found <a href="#using-twitter-for-sso">below</a></li>
-                <li style="list-style-type: circle;">Instructions to setup GitHub for SSO can be found <a href="#using-github-for-sso">below</a></li>
-                </ol>
-              </li>
-              <li>
-                <p>Add an entry for <code>meshery-saas</code> in your <code>/etc/hosts</code> file to point to 127.0.0.1 and save the file</p>
-              </li>
-              <li>
-                <p>After setting up SSO, store the respective key and secret as variables in the shell as shown below.</p>
-                <ol>
-                  <li style="list-style-type: circle;">for Twitter:</li>
-                </ol>
-                <div class="highlight highlight-source-shell">
-                <pre><code>TWITTERKEY="PASTE TWITTER KEY"
-                </code></pre>
-                </div>
-                <div class="highlight highlight-source-shell">
-                <pre><code>TWITTERSECRET="PASTE TWITTER SECRET"
-                </code></pre>
-                </div>
-                <ol>
-                  <li style="list-style-type: circle;">for GitHub:</li>
-                </ol>
-                <div class="highlight highlight-source-shell">
-                <pre><code>GITHUBKEY="PASTE GITHUB KEY"
-                </code></pre>
-                </div>
-                <div class="highlight highlight-source-shell">
-                <pre><code>GITHUBSECRET="PASTE GITHUB SECRET"
-                </code></pre>
-                </div>
-                <p><strong>Note</strong>: you can use Twitter and/or GitHub</p>
-                <p>Now that the environment variables are setup, we can start the containers by running:</p>
-                <div class="highlight highlight-source-shell">
-                <pre><code>docker-compose up
-                </code></pre>
-                </div>
-                <p>Please add a <code>-d</code> flag to the above command if you want to run it in the background.</p>
-              </li>
-            </ol>
-          </li>
-          <li>Now you should be able to access Meshery in your browser at <code>http://localhost:8080/play</code></li>
+        <li style="list-style-type: circle;">Instructions to setup Twitter for SSO can be found <a href="#using-twitter-for-sso">below</a></li>
+        <li style="list-style-type: circle;">Instructions to setup GitHub for SSO can be found <a href="#using-github-for-sso">below</a></li>
         </ol>
       </li>
-      </ol>
+      <li>
+        <p>Add an entry for <code>meshery-saas</code> in your <code>/etc/hosts</code> file to point to 127.0.0.1 and save the file</p>
+      </li>
+      <li>
+        <p>After setting up SSO, store the respective key and secret as variables in the shell as shown below.</p>
+        <ol>
+          <li style="list-style-type: circle;">for Twitter:</li>
+        </ol>
+        <div class="highlight highlight-source-shell">
+        <pre><code>TWITTERKEY="PASTE TWITTER KEY"
+        </code></pre>
+        </div>
+        <div class="highlight highlight-source-shell">
+        <pre><code>TWITTERSECRET="PASTE TWITTER SECRET"
+        </code></pre>
+        </div>
+        <ol>
+          <li style="list-style-type: circle;">for GitHub:</li>
+        </ol>
+        <div class="highlight highlight-source-shell">
+        <pre><code>GITHUBKEY="PASTE GITHUB KEY"
+        </code></pre>
+        </div>
+        <div class="highlight highlight-source-shell">
+        <pre><code>GITHUBSECRET="PASTE GITHUB SECRET"
+        </code></pre>
+        </div>
+        <p><strong>Note</strong>: you can use Twitter and/or GitHub</p>
+        <p>Now that the environment variables are setup, we can start the containers by running:</p>
+        <div class="highlight highlight-source-shell">
+        <pre><code>docker-compose up
+        </code></pre>
+        </div>
+        <p>Please add a <code>-d</code> flag to the above command if you want to run it in the background.</p>
+      </li>
+    </ol>
+    <p>Now you should be able to access Meshery in your browser at <code>http://localhost:8080/play</code></p>
       <h6><a name="using-twitter-for-sso">Using Twitter for SSO</a></h6>
       <ol>
       <li>Create an app in the Twitter developer console: <a href="https://developer.twitter.com/en/apps" rel="nofollow">https://developer.twitter.com/en/apps</a> after logging in.</li>
@@ -229,7 +213,7 @@ This project is community-built and welcomes collaboration!
 </div>
 
 <a name="benchmark-spec"></a>
-<h4  style="color:aliceblue;">Benchmark Specification</h4>
+<h4 style="color:aliceblue;">Benchmark Specification</h4>
 <div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
   The <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Benchmark Specification</a> is a 
   common format for describing and capturing performance benchmark tests and results. This specification is 
