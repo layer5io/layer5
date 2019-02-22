@@ -1017,7 +1017,6 @@
 
 .teal-text.text-lighten-2 {
   color: #ffff !important;
-  font-family:  'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Helvetica, sans-serif;  
 }
 
 .teal.lighten-1 {
@@ -2908,13 +2907,15 @@ ul.staggered-list li {
     display: none !important;
   }
   .site-title {
-    font-size: 2.7em;
+    font-size: 2.4em;
+    line-height: 0em;
+    padding-top: 5%;
   }
   .small-on-med-and-down {
     width: 23px !important;
   }
   .site-tagline {
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 }
 
@@ -2924,6 +2925,11 @@ ul.staggered-list li {
   }
   .site-title {
     font-size: 4em;
+    line-height: 0em;
+    padding-top: 5%;
+    padding-bottom: 9px;
+
+
   }
   .site-tagline {
     font-size: 2em;
