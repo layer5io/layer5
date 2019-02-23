@@ -1,11 +1,7 @@
 <div class="row">
-    <h5 style="text-align:center;color:aliceblue;">Delivered</h5>
-
     {% for workshop in site.workshops %}
 
-    {% if workshop.status == "delivered" %}
-
-    <div class="col s12 m6">
+    <div class="col s12 m4">
         <div class="card medium sticky-action">
             <div class="card-image waves-effect waves-block waves-light" style="overflow: fill; {{workshop.style}}">
                 <img class="activator" src="{{workshop.img}}" />
@@ -28,7 +24,6 @@
             </div>
         </div>
     </div>
-    {% endif %}
     {% endfor %}
 
 </div>
