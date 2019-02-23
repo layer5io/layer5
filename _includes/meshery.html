@@ -37,7 +37,7 @@
     </div>
   </div>
 </div>
-<div id="landscape" class="card-content" style="position:relative;float:center;">        
+<div id="meshery" class="card-content" style="position:relative;float:center;">        
     <h5 style="text-align:center;color:aliceblue;">
       <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:300px;" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
       href="#getting-started">Run Meshery</a> </h5>
@@ -62,43 +62,38 @@
     
     Beyond the need for performance and overhead data under a permutation of different workloads (applications) and types and sizes of infrastructure resources, the need for cross-project, apple-to-apple comparisons also desired in order to facilitate an of behavioral differences between service meshes and selection of their use. Individual projects shy from publishing test results of other, competing service meshes. An independent, credible analysis is needed.
   </p>
-
   <h5 style="color:#111111;">Architecture</h5>
+  <p  style="margin-left:10px;">Meshery is comprised of the following components.</p>
   <div class="iframe-container">
   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqJ2cFC9LSGVi1ReDjphzOfpWwINPg4__XyMZu85R8KNPnuHmnswEnHnTkY-8FQl-GrjuXpQ7WlCLE/embed?start=false&loop=false&delayms=3000" 
           class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
           allowtransparency="true"></iframe>
   </div> 
-  <p>
-    In its current state, Meshery consists of the following components:
-    <ol>
-      <li>Meshery</li>
-        <p>
-          Meshery is the central component of Meshery. It deals with:
-          <ol>
-            <li style="list-style-type: circle;">redirecting users to Meshery SaaS to get them authenticated</li>
-            <li style="list-style-type: circle;">presenting the user interface to authenticated users</li>
-            <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context info for the period of the session</li>
-            <li style="list-style-type: circle;">enables users to run load tests against their applications</li>
-            <li style="list-style-type: circle;">collects the results of the load tests from the load generator and passes it to Meshery SaaS</li>
-            <li style="list-style-type: circle;">interfaces with the Meshery adapters dynamically and enables the user to play with the service mesh</li>
-          </ol>
-        </p>
-      <li>Meshery Adapters</li>
-        <p>
-          Meshery adapters are the components which will be interfacing with the specific service meshes to apply the config changes requested through Meshery App. 
-          Meshery app will be interfacing with the relevant adapters over gRPC. The adapters will be running the gRPC server and the Meshery App will spin up the gRPC client as and when an operation is requested through the user interface.
-          The proto buf spec is kept in the Meshery App so as to keep it in a central location. 
-          Today we have a functional adapter for Istio which is named <b>meshery-istio</b>. 
-          The adapters will be maintained in their own git repository. Source code for <b>meshery-istio</b> can be found <a href="https://github.com/layer5io/meshery-istio">here</a>.
-          We have also created a repository <a href="https://github.com/layer5io/meshery-linkerd">here</a> for working with <a href="https://linkerd.io/2/getting-started/">Linkerd 2</a>.
-        </p>
-      <li>Load Generator</li>
-        <p>
-          For the load generator we are currently using <a href="https://fortio.org">Fortio</a>.
-        </p>
-    </ol>
-  </p>
+    <p><strong>Meshery, which provides:</strong></p>
+    <div style="margin-left:20px;">
+      <ul>
+        <li style="list-style-type: circle;">redirecting users to Meshery SaaS to get them authenticated</li>
+        <li style="list-style-type: circle;">presenting the user interface to authenticated users</li>
+        <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context info for the period of the session</li>
+        <li style="list-style-type: circle;">enables users to run load tests against their applications</li>
+        <li style="list-style-type: circle;">collects the results of the load tests from the load generator and passes it to Meshery SaaS</li>
+        <li style="list-style-type: circle;">interfaces with the Meshery adapters dynamically and enables the user to play with the service mesh</li>
+      </ul>
+    </div>
+    <strong>Adapters, which provide:</strong>
+      <p style="margin-left:10px;">
+        Meshery adapters are the components which will be interfacing with the specific service meshes to apply the config changes requested through Meshery App. 
+        Meshery app will be interfacing with the relevant adapters over gRPC. The adapters will be running the gRPC server and the Meshery App will spin up the gRPC client as and when an operation is requested through the user interface.
+        The proto buf spec is kept in the Meshery App so as to keep it in a central location. 
+        Today we have a functional adapter for Istio which is named <b>meshery-istio</b>. 
+        The adapters will be maintained in their own git repository. Source code for <b>meshery-istio</b> can be found <a href="https://github.com/layer5io/meshery-istio">here</a>.
+        We have also created a repository <a href="https://github.com/layer5io/meshery-linkerd">here</a> for working with <a href="https://linkerd.io/2/getting-started/">Linkerd 2</a>.
+      </p>
+    <strong>Load Generator</strong>
+      <p style="margin-left:10px;">
+        <a href="https://fortio.org">Fortio</a> is the load generator used within Meshery.
+      </p>
+</div>
 </div>
   <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
   <div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
@@ -120,7 +115,7 @@
       your cluster.</p>
 
     <h5 style="color:#111111;">Run Meshery on Docker:</h5>
-    <p>We have a docker-compose.yaml file which can be used to spin up the services quickly
+    <p>Using a docker-compose.yaml file, Meshery services can be spun up quickly.
     There a few requirements for running all the Meshery services on your local system.</p>
     <ol>
       <li>
