@@ -13,7 +13,8 @@
       <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div> -->
       <div class="card-content">
-        <h4>Performance Benchmark</h4>
+        <h4 style="text-align:center;">Performance Benchmark</h4>
+        <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;"><i>What overhead does being on the mesh incur?</i><br /><br /></p>
         <p>Meshery acts as a performance benchmark for multi-mesh performance comparison. 
           Meshery incorporates the collection and display of metrics from applications running in the playground.
         </p>
@@ -29,7 +30,8 @@
       <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div>-->
       <div class="card-content">
-        <h4>Playground</h4>
+        <h4 style="text-align:center;">Playground</h4>
+        <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;"><i>Which one should I use and how do I get started?</i><br /><br /></p>
         <p>A service mesh playground to faciliate learning about functionality of different service meshes. 
           Meshery incorporates a visual interface for manipulating traffic routing rules.<br />
           </p>
@@ -41,18 +43,11 @@
     <h5 style="text-align:center;color:aliceblue;">
       <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:300px;" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
       href="#getting-started">Run Meshery</a> </h5>
+      <br />
 </div>
-<h4 style="color:aliceblue;">Project</h4>
 <div class="post-content" style="position: relative; background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
-  <a href="/assets/images/meshery/meshery-large.png"><img src="/assets/images/meshery/meshery.png" width="400" margin="5%" style="float:right;"
+  <a href="/assets/images/meshery/meshery-large.png"><img src="/assets/images/meshery/meshery.png" width="400" margin="5%" alt="Meshery screenshot" style="float:right;  box-shadow: 5px 5px grey;"
   title="Service Mesh Playground"  /></a>
-  <p>
-    An engineer learns of the architecture and value provided by service meshes. 
-    Quite commonly, they are impressed and intrigued. Upon reflection, the most commonly asked questions 
-    they then ask is: <p style="text-align:center;"><span style="text-transform: uppercase;"><i>What overhead does being on the mesh incur?</i></p>
-      <p style="text-align:center;"><span style="text-transform: uppercase;"><i>Which one should I use and how do I get started?</i></p>
-  </p>
-<h5 style="color:#111111;">Problem</h5>
   <p>
     Anytime performance questions are to be answered, they are subjective to the specific workload and infrastructure used for measurement. 
     Given this challenge, the Envoy project, for example, refuses to publish performance data because such tests can be: 
@@ -72,12 +67,11 @@
     <p><strong>Meshery, which provides:</strong></p>
     <div style="margin-left:20px;">
       <ul>
-        <li style="list-style-type: circle;">redirecting users to Meshery SaaS to get them authenticated</li>
-        <li style="list-style-type: circle;">presenting the user interface to authenticated users</li>
-        <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context info for the period of the session</li>
-        <li style="list-style-type: circle;">enables users to run load tests against their applications</li>
-        <li style="list-style-type: circle;">collects the results of the load tests from the load generator and passes it to Meshery SaaS</li>
-        <li style="list-style-type: circle;">interfaces with the Meshery adapters dynamically and enables the user to play with the service mesh</li>
+        <li style="list-style-type: circle;">the user interface to authenticate users.</li>
+        <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context.</li>
+        <li style="list-style-type: circle;">enables users to generate load against their applications.</li>
+        <li style="list-style-type: circle;">collects the results of the performance tests from the load generator and passes it to Meshery SaaS</li>
+        <li style="list-style-type: circle;">interfaces with the Meshery adapters dynamically and enables users to play with service mesh.</li>
       </ul>
     </div>
     <strong>Adapters, which provide:</strong>
