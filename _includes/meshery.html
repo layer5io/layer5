@@ -82,12 +82,14 @@
     </div>
     <strong>Adapters, which provide:</strong>
       <p style="margin-left:10px;">
-        Meshery adapters are the components which will be interfacing with the specific service meshes to apply the config changes requested through Meshery App. 
-        Meshery app will be interfacing with the relevant adapters over gRPC. The adapters will be running the gRPC server and the Meshery App will spin up the gRPC client as and when an operation is requested through the user interface.
-        The proto buf spec is kept in the Meshery App so as to keep it in a central location. 
-        Today we have a functional adapter for Istio which is named <b>meshery-istio</b>. 
-        The adapters will be maintained in their own git repository. Source code for <b>meshery-istio</b> can be found <a href="https://github.com/layer5io/meshery-istio">here</a>.
-        We have also created a repository <a href="https://github.com/layer5io/meshery-linkerd">here</a> for working with <a href="https://linkerd.io/2/getting-started/">Linkerd 2</a>.
+        Meshery adapters interface with specific service meshes to provision and apply the configuration. 
+        Meshery and its adapters interface over gRPC. Adapters run gRPC servers and Meshery uses a gRPC client as and when an operation is requested through the user interface.
+        Protocol buffer specifications for each adapter is kept in Meshery, so as centralize their definition.  Adapters and (status):
+        <ol>
+          <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (alpha)</li>
+          <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd2</a> (pre-alpha)</li>
+          <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (pre-alpha)</li>
+        </ol>
       </p>
     <strong>Load Generator</strong>
       <p style="margin-left:10px;">
@@ -115,77 +117,13 @@
       your cluster.</p>
 
     <h5 style="color:#111111;">Run Meshery on Docker:</h5>
-    <p>Using a docker-compose.yaml file, Meshery services can be spun up quickly.
-    There a few requirements for running all the Meshery services on your local system.</p>
-    <ol>
-      <li>
-        <p>SSO, which uses Twitter and/or GitHub</p>
-        <ol>
-        <li style="list-style-type: circle;">Instructions to setup Twitter for SSO can be found <a href="#using-twitter-for-sso">below</a></li>
-        <li style="list-style-type: circle;">Instructions to setup GitHub for SSO can be found <a href="#using-github-for-sso">below</a></li>
-        </ol>
-      </li>
-      <li>
-        <p>Add an entry for <code>meshery-saas</code> in your <code>/etc/hosts</code> file to point to 127.0.0.1 and save the file</p>
-      </li>
-      <li>
-        <p>After setting up SSO, store the respective key and secret as variables in the shell as shown below.</p>
-        <ol>
-          <li style="list-style-type: circle;">for Twitter:</li>
-        </ol>
-        <div class="highlight highlight-source-shell">
-        <pre><code>TWITTERKEY="PASTE TWITTER KEY"
-        </code></pre>
-        </div>
-        <div class="highlight highlight-source-shell">
-        <pre><code>TWITTERSECRET="PASTE TWITTER SECRET"
-        </code></pre>
-        </div>
-        <ol>
-          <li style="list-style-type: circle;">for GitHub:</li>
-        </ol>
-        <div class="highlight highlight-source-shell">
-        <pre><code>GITHUBKEY="PASTE GITHUB KEY"
-        </code></pre>
-        </div>
-        <div class="highlight highlight-source-shell">
-        <pre><code>GITHUBSECRET="PASTE GITHUB SECRET"
-        </code></pre>
-        </div>
-        <p><strong>Note</strong>: you can use Twitter and/or GitHub</p>
-        <p>Now that the environment variables are setup, we can start the containers by running:</p>
+    <p>Useing the docker-compose.yaml file, Meshery services can be spun up quickly. Start the containers by running:</p>
         <div class="highlight highlight-source-shell">
         <pre><code>docker-compose up
         </code></pre>
         </div>
         <p>Please add a <code>-d</code> flag to the above command if you want to run it in the background.</p>
-      </li>
-    </ol>
-    <p>Now you should be able to access Meshery in your browser at <code>http://localhost:8080/play</code></p>
-      <h6><a name="using-twitter-for-sso">Using Twitter for SSO</a></h6>
-      <ol>
-      <li>Create an app in the Twitter developer console: <a href="https://developer.twitter.com/en/apps" rel="nofollow">https://developer.twitter.com/en/apps</a> after logging in.</li>
-      <li>Fill appropriate details in the presented form
-      <ol>
-      <li style="list-style-type: circle;">Remember to enable to <code>Sign in with Twitter</code></li>
-      <li style="list-style-type: circle;">For the callback url, please use this value: <code>http://meshery-saas:9876/auth/twitter/callback</code></li>
-      </ol>
-      </li>
-      <li>After creating the app you will be able to grab the API key and secret from the <code>Keys and tokens</code> section of the app.</li>
-      </ol>
-      <h6><a name="using-github-for-sso">Using GitHub for SSO</a></h6>
-      <p>
-        <ol>
-        <li>Create an OAuth app in the GitHub developer settings: <a href="https://github.com/settings/developers">https://github.com/settings/developers</a> after logging in.</li>
-        <li>Fill appropriate details in the presented form
-        <ol>
-        <li style="list-style-type: circle;">For the callback url, please use this value: <code>http://meshery-saas:9876/auth/github/callback</code></li>
-        </ol>
-        </li>
-        <li>After creating the app you will be able to grab the Client ID and Secret from the app page.</li>
-        </ol>
-      </p>
-  </p>
+    <p>Now you should be able to access Meshery in your browser at <code>http://localhost:8080</code></p>
 </div>
 <a name="contributing"></a>
 <h4  style="color:aliceblue;">Contributing</h4>
