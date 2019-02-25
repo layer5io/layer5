@@ -11,9 +11,10 @@ See (https://layer5.io/landscape) - a collection of prominent projects and offer
 ## Meshery
 See (https://layer5.io/meshery) - A service mesh playground to faciliate learning about functionality and performance of different service meshes. Meshery incorporates the collection and display of metrics from applications running in the playground. Community meeting [times](https://layer5.io/meshery/#contributing) and [recordings](https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA).
 
-## Contributing
+## <a name="contributing">Contributing</a>
+Please do! Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+*Not sure where to start?* Grab an open issue with the [help-wanted label](../../labels/help%20wanted).
 
 ## License
 
