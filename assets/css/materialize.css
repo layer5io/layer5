@@ -2392,6 +2392,8 @@ hr {
  */
 pre {
   overflow: auto;
+  background-color: #000;
+  color: #FFF;
 }
 
 /**
