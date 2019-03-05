@@ -22,19 +22,13 @@ END:VTIMEZONE
 BEGIN:VEVENT
 DTEND;TZID=America/Chicago:20190201T150000
 TRANSP:OPAQUE
-ORGANIZER;CN="Lee Calcote":mailto:leecalcote@gmail.com
+ORGANIZER;CN="Lee Calcote":mailto:lee@layer5.io
 UID:4un8cv80qcp94sog7nqautphuv@google.com
 DTSTAMP:20190131T185301Z
 LOCATION:Hangouts
 X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
-DESCRIPTION:<br><br>Links:<br><ul><li><a href="https://docs.google.com/d
- ocument/d/1i6aa5OWTS7Ul1V2vJKVnJswlbBJi_CN5LhWs4xd85vw/edit#" id="ow397"
-  __is_owner="true">Community meeting minutes</a><br></li><li><a href="ht
- tps://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3
- -w9t0/edit?usp=sharing" id="ow410" __is_owner="true">Meshery design docu
- ment</a><br></li><li><a href="https://drive.google.com/open?id=1cSSCn442
- 8TFhyg5mCMZq-oDi-Gwrcqqt" id="ow426" __is_owner="true">Google Drive fold
- er</a></li></ul>\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+DESCRIPTION:Community meeting minutes - https://goo.gl/qKR2R9
+ \n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
  ~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nPlease do not edit this section of 
  the description.\n\nThis event has a Google Hangouts video call.\nJoin: 
  https://hangouts.google.com/hangouts/_/calendar/bGVlY2FsY290ZUBnbWFpbC5j
