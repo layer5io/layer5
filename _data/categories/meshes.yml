@@ -34,7 +34,7 @@
   multi-cluster: "No"
   multi-tenant: "No"
   prometheus: "Yes"
-  tracing: "OpenTracing"
+  tracing: "OpenTracing compatible"
   encyrption: "Yes"
 
 - name: Istio
