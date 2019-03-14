@@ -12,7 +12,7 @@
   encryption: "?"
 
 - name: Consul Connect
-  desc: "Consul Connect - is a new feature that enables simplified network topologies and management while also strengthening security and maintaining high performance in a distributed system."
+  desc: "Consul Connect - is a feature that enables encrpyted communication between services."
   link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
   autoinject: "No"
   tcp-web: "?"
@@ -25,8 +25,8 @@
   encryption: "Yes"
 
 - name: Grey Matter
-  desc: "Grey Matter is an enterprise framework and ecosystem covering common use cases and patterns, so your team can focus on what they do best."
-  link: http://www.deciphernow.com
+  desc: "Grey Matter is an enterprise framework and ecosystem covering common use cases and patterns."
+  link: http://deciphernow.com/grey-matter
   autoinject: "No"
   tcp-web: "Yes"
   grpc: "Yes"
