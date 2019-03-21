@@ -28,6 +28,16 @@
   commerical: Consul Enterprise (HashiCorp)
   category: Service Mesh
 
+- name: Grey Matter
+  opensource: "No"
+  link: http://deciphernow.com/grey-matter
+  governance: Decipher Technology Studios
+  primary-lang: Go
+  announce-date: November 2017
+  ga-1-date: February 2019
+  commerical: Grey Matter
+  category: Service Mesh
+
 - name: Istio
   opensource: "Yes"
   link: https://istio.io
