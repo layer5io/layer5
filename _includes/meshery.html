@@ -95,15 +95,15 @@
   <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
   <div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
       <h5 style="color:#111111;">Run Meshery on Kubernetes:</h5>
-    <p>You can deploy Meshery to an existing kubernetes cluster using the provided yaml file into any namespace 
-      of your choice. For now let us deploy it to a namespace <code>meshery</code>:</p>
+    <p>You can deploy Meshery to an existing Kubernetes cluster into the namespace 
+      of your choice. Here we deploy into namespace named <code>meshery</code>:</p>
     <div class="highlight highlight-source-shell">
 <pre>
-  kubectl create ns meshery
-  kubectl -n meshery apply -f deployment_yamls/k8s
+  $ kubectl create ns meshery
+  $ kubectl -n meshery apply -f deployment_yamls/k8s
 
   <span class="pl-c"><span class="pl-c">#</span> additional step for running on Istio</span>
-  kubectl -n meshery apply -f deployment_yamls/istio.yaml
+  $ kubectl -n meshery apply -f deployment_yamls/istio.yaml
 </pre>
     </div>
     <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
