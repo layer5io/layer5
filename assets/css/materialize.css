@@ -2207,6 +2207,10 @@ body {
   /* background-color: var(--main-grey); */
   a: var(--main-light-blue);
 }
+.post-content {
+  background-color:#FFFFFF;
+  padding:2em;
+   }
 
 /* HTML5 display definitions
    ========================================================================== */

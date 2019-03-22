@@ -1,9 +1,9 @@
-<h2 class="post-meta" style="color:#cfd8dc;font-size: 1.25em;text-align:center;"><i>
-    a multi-mesh performance benchmark and playground</i></h2>
+<h2 class="post-meta" style="color:#cfd8dc;font-size: 1.5em;text-align:center;"><i>
+    a multi-service mesh performance benchmark and playground</i></h2>
     <!-- <h5 style="text-align:center;color:aliceblue;">
       <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
          href="https://github.com/layer5io/meshery/blob/master/README.md#running-meshery">Download</a> </h5> -->
-<h4 style="color:aliceblue;">Features</h4>
+<!-- <h4 style="color:aliceblue;">Features</h4> -->
 <div class="row">
   <div class="col s12 m6">
     <div class="card" style="z-index: 1;">
@@ -14,9 +14,8 @@
       </div> -->
       <div class="card-content">
         <h4 style="text-align:center;">Performance Benchmark</h4>
-        <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;"><i>What overhead does being on the mesh incur?</i><br /><br /></p>
-        <p>Meshery acts as a performance benchmark for multi-mesh performance comparison. 
-          Meshery incorporates the collection and display of metrics from applications running in the playground.
+        <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;"><i>What overhead does being on the service mesh incur?</i><br /><br /></p>
+        <p>Benchmark the performance of your application across different service meshes and compare their overhead.
         </p>
       </div>
     </div>
@@ -31,9 +30,9 @@
       </div>-->
       <div class="card-content">
         <h4 style="text-align:center;">Playground</h4>
-        <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;"><i>Which one should I use and how do I get started?</i><br /><br /></p>
-        <p>A service mesh playground to faciliate learning about functionality of different service meshes. 
-          Meshery incorporates a visual interface for manipulating traffic routing rules.<br />
+        <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;"><i>Which service mesh should I use and how do I get started?</i><br /><br /></p>
+        <p>Learn about the functionality of different service meshes
+          and visually manipulate mesh configuration.<br />
           </p>
       </div>
     </div>
@@ -45,8 +44,8 @@
       href="#getting-started">Run Meshery</a> </h5>
       <br />
 </div>
-<div class="post-content" style="position: relative; background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
-  <a href="/assets/images/meshery/meshery-large.png"><img src="/assets/images/meshery/meshery.png" width="390" margin="5%" alt="Meshery screenshot" style="float:right;  box-shadow: 5px 5px grey;"
+<div class="post-content" style="position: relative;" itemprop="articleBody">
+  <a href="/assets/images/meshery/meshery-large.png"><img src="/assets/images/meshery/meshery.png" width="390" margin="5%" alt="Meshery screenshot" style="float:right; padding-left:1em; box-shadow: 2px 2px grey;"
   title="Service Mesh Playground"  /></a>
   <p>
     Anytime performance questions are to be answered, they are subjective to the specific workload and infrastructure used for measurement. 
@@ -93,7 +92,7 @@
 </div>
 </div>
   <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
-  <div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
+  <div class="post-content" itemprop="articleBody">
       <h5 style="color:#111111;">Run Meshery on Kubernetes:</h5>
     <p>You can deploy Meshery to an existing kubernetes cluster using the provided yaml file into any namespace 
       of your choice. For now let us deploy it to a namespace <code>meshery</code>:</p>
@@ -121,7 +120,7 @@
 </div>
 <a name="contributing"></a>
 <h4  style="color:aliceblue;">Contributing</h4>
-<div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
+<div class="post-content" itemprop="articleBody">
     <a href="https://github.com/layer5io/meshery">
       <img style="position: relative; float:right; top: -2em; right: -2em; border: 0; width: 149px; height: 149px;" 
       src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" 
@@ -141,7 +140,7 @@ This project is community-built and welcomes collaboration!
 
 <a name="benchmark-spec"></a>
 <h4 style="color:aliceblue;">Benchmark Specification</h4>
-<div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
+<div class="post-content" itemprop="articleBody">
   The <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Benchmark Specification</a> is a 
   common format for describing and capturing performance benchmark tests and results. This specification is 
   currently being advanced through discussion in the Meshery project.
@@ -150,7 +149,7 @@ This project is community-built and welcomes collaboration!
   
 
 <h4  style="color:aliceblue;">FAQ</h4>
-<div class="post-content" style="background-color:#cfd8dc;padding:2em;" itemprop="articleBody">
+<div class="post-content" itemprop="articleBody">
     <p>  <ul>
         <ol><b>Why create Meshery and not use regpatrol?</b></ol>
     <ol>- regpatrol is not open source or available in binary form to use.</ol>
