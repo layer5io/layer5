@@ -2160,6 +2160,9 @@
 .white-text {
   color: #FFFFFF !important;
 }
+a:hover none {
+  font-weight:normal;
+}
 
 .transparent {
   background-color: transparent !important;
@@ -2198,16 +2201,39 @@ html {
 
 body {
   margin: 0;
-  background: rgb(60,73,78);
+  background: #fff;
+  /* Flare 
+  background: #f12711;  /* fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 
+background: linear-gradient(to right, #f5af19, #f12711); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* layer5
+  background-color: #FFE53B;
+  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+  */
+
+  /* Gray */
+  /* background: rgb(60,73,78);
   background: linear-gradient(162deg, 
   rgba(100,120,129,1) 0%, 
   rgba(159,191,205,1) 25%, 
-    rgba(60,73,78,1) 80%); 
+  rgba(60,73,78,1) 80%);  */
 
   /* background-color: var(--main-grey); */
   a: var(--main-light-blue);
 }
 
+.flare {
+
+    /* Flare */
+  background: #f12711;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6  */
+  background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.white-bg {
+  background: #fff;
+}
 /* HTML5 display definitions
    ========================================================================== */
 /**
