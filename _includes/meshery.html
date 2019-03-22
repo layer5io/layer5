@@ -93,33 +93,41 @@
 </div>
   <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
   <div class="post-content" itemprop="articleBody">
+      <p>Meshery can be deployed on your local machine or into an existing service mesh. </p>        
+      <p>Start by cloning the Meshery repo:</p>
+      <div class="highlight highlight-source-shell">
+        <pre><code>
+ $ git clone https://github.com/layer5io/meshery.git; cd meshery        
+        </code></pre>
+      </div>
+      <h5 style="color:#111111;">Run Meshery on Docker:</h5>
+      <p>Using the docker-compose.yaml file, Meshery services can be spun up quickly. To start Meshery, run:</p>
+          <div class="highlight highlight-source-shell">
+          <pre><code>
+ $ docker-compose up -d
+          </code></pre>
+          <span><i>Use `-d` flag to background Meshery.</i></span>
+        </div>
+          
+      <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
+  
       <h5 style="color:#111111;">Run Meshery on Kubernetes:</h5>
     <p>You can deploy Meshery to an existing Kubernetes cluster into the namespace 
-      of your choice. Here we deploy into namespace named <code>meshery</code>:</p>
+      of your choice.</p>
     <div class="highlight highlight-source-shell">
-<pre>
+<pre><code>
   $ kubectl create ns meshery
   $ kubectl -n meshery apply -f deployment_yamls/k8s
 
-  <span class="pl-c"><span class="pl-c">#</span> additional step for running on Istio</span>
+  # additional step for running on Istio
   $ kubectl -n meshery apply -f deployment_yamls/istio.yaml
+</code>
 </pre>
     </div>
     <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
-    <p>Meshery can be deployed either on/off the mesh. If deployed on the same Kubernetes cluster as the mesh, 
-      you don't have to provide a `kubeconfig` file. Please review the yaml and make necessary changes as needed for 
-      your cluster.</p>
-
-    <h5 style="color:#111111;">Run Meshery on Docker:</h5>
-    <p>Useing the docker-compose.yaml file, Meshery services can be spun up quickly. Start the containers by running:</p>
-        <div class="highlight highlight-source-shell">
-        <pre><code>  docker-compose up</code></pre>
-        </div>
-        <p>Please add a <code>-d</code> flag to the above command if you want to run it in the background.</p>
-    <p>You should be able to access Meshery in your browser at <a href="http://localhost:8080">http://localhost:8080</a>.</p>
-</div>
-<a name="contributing"></a>
-<h4  style="color:aliceblue;">Contributing</h4>
+  </div>
+<a name="contributing"></a><a name="community"></a>
+<h4  style="color:aliceblue;">Community</h4>
 <div class="post-content" itemprop="articleBody">
     <a href="https://github.com/layer5io/meshery">
       <img style="position: relative; float:right; top: -2em; right: -2em; border: 0; width: 149px; height: 149px;" 
