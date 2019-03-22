@@ -25,14 +25,14 @@
   encryption: "Yes"
 
 - name: Grey Matter
-  desc: "Grey Matter is an enterprise framework and ecosystem covering common use cases and patterns."
+  desc: "Grey Matter is an Istio-compliant, Envoy proxy-based, hybrid cloud service mesh platform for business insight and secure data control with your microservices."
   link: http://deciphernow.com/grey-matter
-  autoinject: "No"
+  autoinject: "Yes"
   tcp-web: "Yes"
   grpc: "Yes"
   h2: "Yes"
-  multi-cluster: "No"
-  multi-tenant: "No"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
   prometheus: "Yes"
   tracing: "OpenTracing compatible"
   encyrption: "Yes"
