@@ -2202,6 +2202,9 @@ html {
   --main-light-grey: #9FBFCD;
 
 }
+html {
+  min-height: 100%;
+}
 
 body {
   margin: 0;
@@ -2209,7 +2212,7 @@ body {
   background: linear-gradient(162deg, 
   rgba(100,120,129,1) 0%, 
   rgba(159,191,205,1) 25%, 
-    rgba(60,73,78,1) 80%); 
+  rgba(60,73,78,1) 80%); 
 
   /* background-color: var(--main-grey); */
   a: var(--main-light-blue);
