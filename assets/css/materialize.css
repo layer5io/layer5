@@ -2183,6 +2183,8 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
  *    without disabling user zoom.
  */
 html {
+  min-height: 100%;
+
   font-family: sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
@@ -2191,9 +2193,7 @@ html {
   /* 2 */
 }
 
-/**
- * Remove default margin.
- */
+
  :root {
   --main-grey: #647881;
   --main-light-blue: #62ACCD;
@@ -2202,10 +2202,10 @@ html {
   --main-light-grey: #9FBFCD;
 
 }
-html {
-  min-height: 100%;
-}
 
+/**
+ * Remove default margin.
+ */
 body {
   margin: 0;
   background: rgb(60,73,78);
