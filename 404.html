@@ -1,37 +1,40 @@
 ---
+layout: plain
 permalink: /404.html
 ---
-{% include head.html %}
-<div id="home" class="section scrollspy">
+
+<div id="home" class="section scrollspy" style="min-height: 100%;">
 <div id="index-banner" class="parallax-container" style="height: 280px;">
   <div class="container">
 
   <div style="padding-right: 5%; padding-left:5%;">
-    <a href="{{site.baseurl}}/#home"><img class="hide-on-med-and-down " src="/assets/images/cube.png" align="left" height="270px" style="padding-right:20px;" /></a>
+    <a href="{{site.baseurl}}/#home"><img class="hide-on-med-and-down " src="/assets/images/cube-sh-small.png" align="left"  style="padding-right:20px;" /></a>
     <img class="show-on-med-and-down" src="/assets/images/cube-sh-small.png" align="left"  style="padding-right:20px;" />
     <h1  style="  font-family:  'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', Helvetica, sans-serif; padding-top:20px; 
       color: #ffff !important; text-shadow: 1px 2px #000000; line-height: 100%;">Layer5.io</h1>
-
-        <h3 style=" font-size: 2em;color:#FFFFFF;line-height:15px;" 
-          class="strong text-lighten-2">Oh, no. Page not found.</h3>
-        <p style=" font-size: 1em;color:#cfd8dc;line-height:15px;font-style:italic;" 
-            class="text-lighten-2">You may have stumbled across a broken link.</p>
-        <p style="line-height: 3em;" class="text-lighten-2">Please 
-            <a style="color:#cfd8dc;" href="../../issues/new">log an issue</a> to have this fixed <em>(thank you!)</em>
-            and then return to <a style="color:#cfd8dc;" href="/">layer5.io</a>.</p>
-            <p style="line-height: 1em;font-size:.8em;" class="light text-lighten-2"> 
-              from: <script type="text/javascript">
-              document.write(document.referrer)
-              </script> </p>
+        
                  <!-- <p>&nbsp;&nbsp;<a style="font-weight:bold; color: rgba(255, 152, 0, 0.7);" href="/">back to site</a></p> -->
         <!-- <h5 class="header light" style="float:left;">{{ site.description }}</h5> -->
-      
-      <!-- <br><br> -->
-
-    </div>
   </div>
-  <div></div>
-  <!-- <div class="parallax"><img src="{{site.parallax_image_one}}" alt="Layer 5 Service Mesh"></div> -->
+
+  </div>
+</div>
+
+<div class="container" style="text-align:center;" >
+    <br />
+  <h3 style=" font-size: 3em;color:#FFFFFF;line-height:15px;" 
+    class="strong text-lighten">Oh, no. Page not found.</h3>
+  <p style=" font-size: 2em;color:#cfd8dc;line-height:15px;font-style:italic;" 
+      class="text-lighten-2">You may have stumbled across a broken link.</p>
+  <p style="line-height: 5em;color:#cfd8dc;" class="text-lighten-2">Please 
+      <a style="color:#cfd8dc;" href="../../issues/new">log an issue</a> <em>(thank you!)</em>
+      and return to <a style="color:#cfd8dc;" href="/">layer5.io</a>.</p>
+      <p style="line-height: 1em;font-size:.8em;margin-bottom: 30%;" class="light text-lighten-2"> 
+        <!-- from: <script type="text/javascript">
+        document.write(document.referrer)
+        </script> -->
+        
+        </p>
+        </p>
 </div>
 </div>
-{% include footer-plain.html %}

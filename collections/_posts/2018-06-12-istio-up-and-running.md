@@ -9,7 +9,9 @@ author: Lee Calcote and Zack Butcher
 <h4> Book: <i>Istio: Up and Running</i></h4>
 <p>By Lee Calcote and Zack Butcher</p>
 
-<div style="float:right;padding:20px;"><img  width="300px" src="/assets/images/istio-up-and-running.png" align="right" /></div>
+<div style="float:right;padding:20px;"><a href="/assets/images/istio-up-and-running.png"><img  width="300px" src="/assets/images/istio-up-and-running.png" align="right" /></a>
+  <a id="home" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4" href="/subscribe">Get notified when available</a>
+</div>
 Istio is a service mesh announced in 2017 and supported by Google, IBM, and Lyft. It is open-source, incorporates Envoy Proxy, a component developed and battle hardened at Lyft, and is one of the fastest growing solutions for connecting, managing, and securing microservices. 
 
 Over time, microservices become opaque as they become larger. This makes troubleshooting and management increasingly difficult and complex. Service meshes, like Istio, introduce a way for operators and developers to easily manage their microservices. Among a multitude of use cases, Istio allows users to manage and control traffic and API calls between services, introduce resiliency and robustness when the network itself becomes unstable, provide observability of the dependencies between services, policy enforcement, mTLS and service identity, and more.
