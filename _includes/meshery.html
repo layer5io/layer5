@@ -45,14 +45,13 @@
       <br />
 </div>
 <div class="post-content" style="position: relative;" itemprop="articleBody">
-  <a href="/assets/images/meshery/meshery-large.png"><img src="/assets/images/meshery/meshery.png" width="390" margin="5%" alt="Meshery screenshot" style="float:right; padding-left:1em; box-shadow: 2px 2px grey;"
-  title="Service Mesh Playground"  /></a>
+
   <p>
-    Anytime performance questions are to be answered, they are subjective to the specific workload and infrastructure used for measurement. 
-    Given this challenge, the Envoy project, for example, refuses to publish performance data because such tests can be: 
-    <ol><li>involved</li>
-      <li>misinterpreted</li>
-      </ol>
+    Anytime performance questions are to be answered, they are subjective to the specific workload and infrastructure used for measurement   
+    <div style="float:right; display: inline;"><a href="/assets/images/meshery/meshery result comparison.png"><img src="/assets/images/meshery/meshery result comparison.png" width="400"
+      alt="Meshery screenshot" style=" box-shadow: 2px 2px black; margin-left:10px; margin-bottom:10px;"
+    title="Service Mesh Playground"  /><p style="text-align: center;">multi-comparison screenshot</a></p></div>
+    Given this challenge, the Envoy project, for example, does not publish performance data because such tests can be involved and misinterpreted.
     
     Beyond the need for performance and overhead data under a permutation of different workloads (applications) and types and sizes of infrastructure resources, the need for cross-project, apple-to-apple comparisons also desired in order to facilitate an of behavioral differences between service meshes and selection of their use. Individual projects shy from publishing test results of other, competing service meshes. An independent, credible analysis is needed.
     <br /><br />
@@ -65,7 +64,10 @@
           allowtransparency="true"></iframe>
   </div> 
     <p><strong>Meshery, which provides:</strong></p>
-    <div style="margin-left:20px;">
+    <div style="float:right;"><a href="/assets/images/meshery/meshery performance results.png"><img src="/assets/images/meshery/meshery performance results.png" width="380" 
+      alt="Meshery screenshot"  style="box-shadow: 2px 2px black;"
+    title="Service Mesh Playground"  /><p style="text-align: center;">single comparison screenshot</a></p></div>
+    <div style="margin-left:20px;margin-right:5px;">
       <ul>
         <li style="list-style-type: circle;">the user interface to authenticate users.</li>
         <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context.</li>
@@ -75,7 +77,7 @@
       </ul>
     </div>
     <strong>Adapters, which provide:</strong>
-      <p style="margin-left:10px;">
+      <p style="margin-left:10px; padding-right:1em;">
         Meshery adapters interface with specific service meshes to provision and apply the configuration. 
         Meshery and its adapters interface over gRPC. Adapters run gRPC servers and Meshery uses a gRPC client as and when an operation is requested through the user interface.
         Protocol buffer specifications for each adapter is kept in Meshery, so as centralize their definition.  Adapters and (status):
