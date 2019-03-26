@@ -2222,6 +2222,11 @@ body {
   padding:2em;
    }
 
+  .site-tagline {
+    color:#cfd8dc; 
+    text-align: left;
+  }
+
 /* HTML5 display definitions
    ========================================================================== */
 /**
@@ -2932,6 +2937,7 @@ ul.staggered-list li {
   }
   .site-tagline {
     font-size: 1.25em;
+    margin-top: .9em;
   }
 }
 
@@ -2949,6 +2955,7 @@ ul.staggered-list li {
   }
   .site-tagline {
     font-size: 2em;
+    margin-top: 1em;
   }
 }
 
