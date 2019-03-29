@@ -50,12 +50,14 @@
     <div style="position:relative;float:right;clear: both; "><a href="/assets/images/meshery/meshery result comparison.png"><img src="/assets/images/meshery/meshery result comparison.png" width="400"
       alt="Meshery screenshot" style=" box-shadow: 2px 2px black; margin-left:10px; margin-bottom:10px;"
     title="Service Mesh Playground"  /><p style="text-align: center;">multi-comparison screenshot</a></p></div>
-    Anytime performance questions are to be answered, they are subjective to the specific workload and infrastructure used for measurement   
-    Given this challenge, the Envoy project, for example, does not publish performance data because such tests can be involved and misinterpreted.
-    
-    Beyond the need for performance and overhead data under a permutation of different workloads (applications) and types and sizes of infrastructure resources, the need for cross-project, apple-to-apple comparisons also desired in order to facilitate an of behavioral differences between service meshes and selection of their use. Individual projects shy from publishing test results of other, competing service meshes. An independent, credible analysis is needed.
-    <br /><br />
+    <h5 style="color:#111111;">Adopt, Configure, Benchmark</h5>
 
+    <ul style="line-height:2.5em;text-align: center;">
+      <ol> - Compare performance in an apples-to-apples manner across service meshes.</ol>
+      <ol> - Track your service mesh performance from release to release.</ol>
+      <ol> - Understand behavioral differences between service meshes.</ol> 
+      <ol> - Track your application performance from version to version.</ol>
+      </ul>
   <h5 style="color:#111111;clear: both;">Architecture</h5>
   <p  style="margin-left:10px;">Meshery is comprised of the following components.</p>
   <div class="iframe-container">
@@ -72,7 +74,7 @@
         <li style="list-style-type: circle;">the user interface to authenticate users.</li>
         <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context.</li>
         <li style="list-style-type: circle;">enables users to generate load against their applications.</li>
-        <li style="list-style-type: circle;">collects the results of the performance tests from the load generator and passes it to Meshery SaaS</li>
+        <li style="list-style-type: circle;">collects the results of the performance tests from its load generator (<a href="https://fortio.org">Fortio</a>) and stores in the cloud for historical viewing.</li>
         <li style="list-style-type: circle;">interfaces with the Meshery adapters dynamically and enables users to play with service mesh.</li>
       </ul>
     </div>
@@ -80,17 +82,15 @@
       <p style="margin-left:10px; padding-right:1em;">
         Meshery adapters interface with specific service meshes to provision and apply the configuration. 
         Meshery and its adapters interface over gRPC. Adapters run gRPC servers and Meshery uses a gRPC client as and when an operation is requested through the user interface.
-        Protocol buffer specifications for each adapter is kept in Meshery, so as centralize their definition.  Adapters and (status):
+        Protocol buffer specifications for each adapter is kept in Meshery, so as centralize their definition.  
+        </p>
+        <p><b>Adapters (status):</b>
         <ol>
           <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (alpha)</li>
-          <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (pre-alpha)</li>
           <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (pre-alpha)</li>
+          <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (pre-alpha)</li>
           <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul Connect</a> (pre-alpha)</li>
         </ol>
-      </p>
-    <strong>Load Generator</strong>
-      <p style="margin-left:10px;">
-        <a href="https://fortio.org">Fortio</a> is the load generator used within Meshery.
       </p>
 </div>
 </div>
