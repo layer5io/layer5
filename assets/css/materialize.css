@@ -1650,11 +1650,21 @@
 .amber-text.text-accent-4 {
   color: #ffab00 !important;
 }
+.l5-deep-red {
+  background-color: var(--main-deep-red) !important;
+}
+
+.l5-light-teal {
+  background-color: var(--main-light-teal) !important;
+}
+.l5-dark- {
+  background-color: var(--main-light-blue) !important;
+}
 
 .l5-light-blue {
   background-color: var(--main-light-blue) !important;
 }
-
+--main-dark-teal: #0063AE;
 .l5-light-blue-text {
   color: var(--main-light-blue) !important;
 }
@@ -1671,7 +1681,7 @@
   color: var(--main-light-grey) !important;
 }
 
-.l5-dark-grey {
+.l5-bg-dark-grey {
   background-color: var(--main-dark-grey) !important;
   color: var(--main-dark-grey) !important;
 }
@@ -2197,6 +2207,9 @@ html {
   --main-dark-blue: #477E96;
   --main-light-grey: #9FBFCD;
 
+  --main-dark-teal: #0063AE;
+  --main-light-teal: #34FFFF;
+  --main-deep-red: #FF2525;
 }
 
 body {
@@ -2960,7 +2973,7 @@ ul.staggered-list li {
 
   }
   .site-tagline {
-    font-size: 2em;
+    font-size: 1.1em;
   }
 }
 
