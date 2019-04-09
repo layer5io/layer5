@@ -52,12 +52,12 @@
     title="Service Mesh Playground"  /><p style="text-align: center;">multi-comparison screenshot</a></p></div>
     <h5 style="color:#111111;">Adopt, Configure, Benchmark</h5>
 
-    <ul style="line-height:2.5em;text-align: center;">
-      <ol> - Compare performance in an apples-to-apples manner across service meshes.</ol>
-      <ol> - Track your service mesh performance from release to release.</ol>
-      <ol> - Understand behavioral differences between service meshes.</ol> 
-      <ol> - Track your application performance from version to version.</ol>
-      </ul>
+    <p style="line-height:1.75em;text-align: left;">
+       - Compare performance in an apples-to-apples manner across service meshes.<br />
+       - Track your service mesh performance from release to release.<br />
+       - Understand behavioral differences between service meshes.<br />
+       - Track your application performance from version to version.<br />
+    </p>
   <h5 style="color:#111111;clear: both;">Architecture</h5>
   <p  style="margin-left:10px;">Meshery is comprised of the following components.</p>
   <div class="iframe-container">
@@ -107,14 +107,12 @@
       <p>Using the docker-compose.yaml file, Meshery services can be spun up quickly. To start Meshery, run:</p>
           <div class="highlight highlight-source-shell">
           <pre><code>
- $ docker-compose up -d
+ $ ./meshery-cli start
           </code></pre>
-          <span><i>Use `-d` flag to background Meshery.</i></span>
         </div>
-          
-      <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>. Configure Meshery with 
-      references to your deployed adapters, using <i>meshery-&lt;service-mesh-name&gt;:10000</i> (e.g. <code>meshery-istio:10000</code>)
-      in the <i>Mesh Adapter Location</i> field.</p>
+        <p>You may then access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>. Configure Meshery with 
+          references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code>)
+          in the <i>Mesh Adapter Location</i> field.</p>
   
       <h5 style="color:#111111;">Run Meshery on Kubernetes:</h5>
     <p>You can deploy Meshery to an existing Kubernetes cluster into the namespace 
@@ -130,8 +128,8 @@
 </pre>
     </div>
     <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
-    <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>. Configure Meshery with 
-      references to your deployed adapters, using <i>meshery-&lt;service-mesh-name&gt;:10000</i> (e.g. <code>meshery-istio:10000</code>)
+    <p>You may then access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>. Configure Meshery with 
+      references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code>)
       in the <i>Mesh Adapter Location</i> field.</p>
   </div>
 <a name="contributing"></a><a name="community"></a>
