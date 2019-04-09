@@ -65,7 +65,6 @@ collections:
   workshops:
     output: true
     permalink: /workshops/:title
-
 defaults:
   - scope:
       type: pages
