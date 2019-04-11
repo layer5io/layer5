@@ -87,8 +87,8 @@
         <p><b>Adapters (status):</b>
         <ol>
           <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (alpha)</li>
+          <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (alpha)</li>
           <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (pre-alpha)</li>
-          <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (pre-alpha)</li>
           <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul Connect</a> (pre-alpha)</li>
         </ol>
       </p>
@@ -97,7 +97,16 @@
   <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
   <div class="post-content" itemprop="articleBody">
       <p>Meshery can be deployed on your local machine or into an existing service mesh. </p>        
-      <p>Start by cloning the Meshery repo:</p>
+      <p>To quickly get started, we have a script which can be used to run Meshery services on your local:</p>
+      <div class="highlight highlight-source-shell">
+        <pre><code>
+ $ curl https://meshery.layer5.io/cli > meshery-cli
+ $ chmod +x meshery-cli
+ $ ./meshery-cli start
+        </code></pre>
+      </div>
+      <p>You can now proceed to the accessing Meshery <a href="#useMeshery">here</a></p>
+      <p>(OR) Start by cloning the Meshery repo:</p>
       <div class="highlight highlight-source-shell">
         <pre><code>
  $ git clone https://github.com/layer5io/meshery.git; cd meshery        
@@ -110,8 +119,10 @@
  $ ./meshery-cli start
           </code></pre>
         </div>
-        <p>You may then access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>. Configure Meshery with 
-          references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code>)
+      
+        <a name="useMeshery"></a>
+        <p>Once you have Meshery up and running, you may then access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>. Configure Meshery with 
+          references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code>  or <code>meshery-linkerd:10001</code>)
           in the <i>Mesh Adapter Location</i> field.</p>
   
       <h5 style="color:#111111;">Run Meshery on Kubernetes:</h5>
@@ -129,7 +140,7 @@
     </div>
     <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
     <p>You may then access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>. Configure Meshery with 
-      references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code>)
+      references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code> or <code>meshery-linkerd:10001</code>)
       in the <i>Mesh Adapter Location</i> field.</p>
   </div>
 <a name="contributing"></a><a name="community"></a>
