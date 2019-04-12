@@ -87,8 +87,8 @@
         <p><b>Adapters (status):</b>
         <ol>
           <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (alpha)</li>
+          <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (alpha)</li>
           <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (pre-alpha)</li>
-          <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (pre-alpha)</li>
           <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul Connect</a> (pre-alpha)</li>
         </ol>
       </p>
@@ -96,13 +96,16 @@
 </div>
   <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
   <div class="post-content" itemprop="articleBody">
-      <p>Meshery can be deployed on your local machine or into an existing service mesh. </p>        
-      <p>Start by cloning the Meshery repo:</p>
+      <h5 style="color:#111111;">Step 1) Run Meshery using Docker:</h5>
+      <p>Install Meshery on your local machine by running the following:</p>        
       <div class="highlight highlight-source-shell">
         <pre><code>
- $ git clone https://github.com/layer5io/meshery.git; cd meshery        
+ $ sudo curl -L https://meshery.layer5.io/cli -o /usr/local/bin/mesheryctl
+ $ sudo chmod a+x /usr/local/bin/mesheryctl
+ $ mesheryctl start
         </code></pre>
       </div>
+      <!-- <p>You can now proceed to the accessing Meshery <a href="#useMeshery">here</a></p>
       <h5 style="color:#111111;">Run Meshery on Docker:</h5>
       <p>Using the docker-compose.yaml file, Meshery services can be spun up quickly. To start Meshery, run:</p>
           <div class="highlight highlight-source-shell">
@@ -110,27 +113,34 @@
  $ ./meshery-cli start
           </code></pre>
         </div>
-        <p>You may then access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>. Configure Meshery with 
-          references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code>)
-          in the <i>Mesh Adapter Location</i> field.</p>
-  
-      <h5 style="color:#111111;">Run Meshery on Kubernetes:</h5>
-    <p>You can deploy Meshery to an existing Kubernetes cluster into the namespace 
-      of your choice.</p>
+      
+        <a name="useMeshery"></a> -->
+        
+      <h5 style="color:#111111;">or Step 1) Run Meshery on Kubernetes:</h5>
+      <p>Start by cloning the Meshery repo:</p>
+      <div class="highlight highlight-source-shell">
+        <pre><code>
+ $ git clone https://github.com/layer5io/meshery.git; cd meshery        
+        </code></pre>
+      </div>
+    <p>Install Meshery on your cluster by running the following:</p>
     <div class="highlight highlight-source-shell">
 <pre><code>
   $ kubectl create ns meshery
   $ kubectl -n meshery apply -f deployment_yamls/k8s
 
-  # additional step for running on Istio
-  $ kubectl -n meshery apply -f deployment_yamls/istio.yaml
-</code>
-</pre>
+</code></pre>
+<!-- PROVIDE THE "ON THE MESH" VERSION IN FUTURE DOCUMENTATION
+# additional step for running on Istio
+$ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
     </div>
     <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
-    <p>You may then access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>. Configure Meshery with 
-      references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code>)
-      in the <i>Mesh Adapter Location</i> field.</p>
+    <h5 style="color:#111111;">Step 2) Log into Meshery</h5>
+    <p>- Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
+  
+  <h5 style="color:#111111;">Step 3) Configure and Enjoy Meshery</h5>
+  <p>- Configure Meshery with references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code> or <code>meshery-linkerd:10001</code>)
+    in the <i>Mesh Adapter Location</i> field.</p>
   </div>
 <a name="contributing"></a><a name="community"></a>
 <h4  style="color:aliceblue;">Community</h4>
