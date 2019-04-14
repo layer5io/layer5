@@ -69,8 +69,12 @@
       </p>
    </div>
   </div>
+</div>
+  <a name="architecture"></a><h4 style="color:aliceblue;">Architecture</h4>
+  <div class="post-content" style="position: relative;overflow: auto;" itemprop="articleBody">
+
   <!-- <h5 style="color:#111111;clear: both;text-align: center;">Architecture</h5> -->
-  <p  style="margin-left:10px;text-align: center;clear: both;">Meshery is comprised of the following components:</p>
+  <p  style="margin-left:10px;text-align: left;">Meshery is comprised of the following components:</p>
   <div class="iframe-container">
   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqJ2cFC9LSGVi1ReDjphzOfpWwINPg4__XyMZu85R8KNPnuHmnswEnHnTkY-8FQl-GrjuXpQ7WlCLE/embed?start=false&loop=false&delayms=3000" 
           class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
@@ -107,8 +111,8 @@
 </div>
   <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
   <div class="post-content" itemprop="articleBody">
-      <h5 style="color:#111111;">Step 1) Run Meshery using Docker:</h5>
-      <p>Install Meshery on your local machine by running the following:</p>        
+      <h5 style="color:#111111;">Step 1: Install and start</h5>
+      <p>Using Docker, install Meshery on your local machine by running the following:</p>        
       <div class="highlight highlight-source-shell">
         <pre><code>
  $ sudo curl -L https://git.io/meshery -o /usr/local/bin/meshery
@@ -116,19 +120,43 @@
  $ meshery start
         </code></pre>
       </div>
-      <!-- <p>You can now proceed to the accessing Meshery <a href="#useMeshery">here</a></p>
-      <h5 style="color:#111111;">Run Meshery on Docker:</h5>
-      <p>Using the docker-compose.yaml file, Meshery services can be spun up quickly. To start Meshery, run:</p>
-          <div class="highlight highlight-source-shell">
-          <pre><code>
- $ ./meshery-cli start
-          </code></pre>
-        </div>
+<style>
+        /* toggle instructions */
+
+        .toggle .hidediv {
+          width: 80%;
+          display: table;
+          height: 150px; /* any arbitrary height but best at the minimum initial height you would want. */
+          overflow: hidden;
+          background: #EEE;
+          margin: 0px auto;
+          transition-timing-function: linear;
+          transition: cubic-bezier(0, 1, 0, 1);
+       
+        }
+        .innerdiv {
+          padding: 10px;
+        }
+        .toggle input[type="checkbox"]:checked + .hidediv {
+          height: 0;
+          opacity: 0;
+          display: block;
+        }
+        .toggle label {
+          font-family: sans-serif;
+          font-size: 1em;
+          color: #000;
+        }
+      </style>
       
-        <a name="useMeshery"></a> -->
-        
-      <h5 style="color:#111111;">or Step 1) Run Meshery on Kubernetes:</h5>
-      <p>Start by cloning the Meshery repo:</p>
+        <div class="toggle">
+          
+          <label for="k8s-instructions">Or to install on Kubernetes, <b>click here</b>.</label>
+          <input type="checkbox" checked name="one" id="k8s-instructions">
+          <div class="hidediv">
+            <div class="innerdiv">
+              
+      <p>Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
       <div class="highlight highlight-source-shell">
         <pre><code>
  $ git clone https://github.com/layer5io/meshery.git; cd meshery        
@@ -146,13 +174,17 @@
 $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
     </div>
     <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
-    <h5 style="color:#111111;">Step 2) Log into Meshery</h5>
-    <p>- Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
+            </div>
+          </div>
+    <h5 style="color:#111111;">Step 2: Login</h5>
+    <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
   
-  <h5 style="color:#111111;">Step 3) Configure and Enjoy Meshery</h5>
+  <!-- <h5 style="color:#111111;">Step 3: Configure and Enjoy Meshery</h5>
   <p>- Configure Meshery with references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code> or <code>meshery-linkerd:10001</code>)
-    in the <i>Mesh Adapter Location</i> field.</p>
+    in the <i>Mesh Adapter Location</i> field.</p> -->
   </div>
+  </div>
+
 <a name="contributing"></a><a name="community"></a>
 <h4  style="color:aliceblue;">Community</h4>
 <div class="post-content" itemprop="articleBody">
@@ -163,13 +195,13 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
 This project is community-built and welcomes collaboration! 
 <p>
   <ul>
-    <li><em>Join</em> <a href="https://docs.google.com/document/d/1i6aa5OWTS7Ul1V2vJKVnJswlbBJi_CN5LhWs4xd85vw/edit#">weekly community meeting</a> on <a href="/assets/projects/meshery/Meshery-Community-Meeting.ics">Fridays from 2pm to 3pm Central</a>.</li>
+    <li><em><strong>Join</strong></em> <a href="https://docs.google.com/document/d/1i6aa5OWTS7Ul1V2vJKVnJswlbBJi_CN5LhWs4xd85vw/edit#">weekly community meeting</a> on <a href="/assets/projects/meshery/Meshery-Community-Meeting.ics">Fridays from 2pm to 3pm Central</a>.</li>
     <ul>
-        <li><em>Watch</em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.</li>
+        <li><em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.</li>
     </ul>
     <li><em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/folders/1cSSCn4428TFhyg5mCMZq-oDi-Gwrcqqt">community folder</a>.</li>
       <ul>
-        <li><em>Comment</em> on the <a href="https://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3-w9t0/edit?usp=sharing">design document.</a></li>
+        <li><em><strong>Comment</strong></em> on the <a href="https://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3-w9t0/edit?usp=sharing">design document.</a></li>
       </ul>
     </ul>
 </p>
