@@ -26,4 +26,5 @@ The hope is that readers will:
 <li style="margin-left:15px"> A broad understanding of the Istio ecosystem.</li>
 <li style="margin-left:15px"> How to engage with the community.</li>
 
-<b>Publish date: Spring 2019</b>
+<p>Early Release: <b>Spring 2019</b>
+<br />Anticipated Publish: <b>Summer 2019</b></p>
