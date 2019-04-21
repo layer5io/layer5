@@ -54,6 +54,10 @@ collections:
   books:
     output: true
     permalink: /books/:title
+  posts:
+    output: true
+    permalink: /posts/:title
+
   people:
     output: true
   projects:

@@ -1,18 +1,18 @@
 <div class="row">
-  {% for book in site.books %}
+  {% for post in site.posts %}
   
-  {% if book.visibility != "hide" %}
+  {% if post.visibility != "hide" %}
 
   <div class="col s12 m4">
     <div class="card" style="z-index: 1;">
       <div class="card-image">
-        <a href="{{ book.url | relative_url }}"><img src="{{book.image}}"></a>
+        <a href="{{ post.url | relative_url }}"><img src="{{post.image}}"></a>
         <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
-      <a id="{{book.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3" 
-        href="{{ book.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+      <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3"
+        href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div>
       <div class="card-content">
-        <p>{{book.excerpt}}</p>
+        <p>{{post.excerpt}}</p>
       </div>
     </div>
   </div>
