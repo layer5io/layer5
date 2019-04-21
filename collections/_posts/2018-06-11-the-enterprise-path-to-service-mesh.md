@@ -10,7 +10,7 @@ author: Lee Calcote
 By Lee Calcote
 
 <div class="row" style="float:right;padding:10px;text-align:center;">
-<a href="/assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures.png"><img src="/assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures-small.png" alt="" width="200" height="300" /></a><br />
+<a href="/assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures.png"><img class="card" src="/assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures-small.png" alt="" width="270"  /></a><br />
   <a id="home" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4" href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote">Get the free ebook</a>
 </div>As someone interested in modern software design, you have heard of service mesh architectures in context of microservices. Service meshes introduce a new layer into modern infrastructures, offering the potential for creating robust and scalable applications and granular control over them. Is a service mesh right for you? This book will help answer common questions on service mesh architectures through the lens of a large enterprise and addresses how to evaluate your organization’s readiness, factors to consider when building new applications and converting existing applications to best leverage a service mesh, and offers insight on deployment architectures used to get you there. 
 
