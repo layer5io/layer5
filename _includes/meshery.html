@@ -74,7 +74,7 @@
 </div>
   <a name="architecture"></a>
   <!-- <h4 style="color:aliceblue;">Architecture</h4> -->
-  <div class="post-content" style="position: relative;overflow: auto;" itemprop="articleBody">
+  <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
 
   <!-- <h5 style="color:#111111;clear: both;text-align: center;">Architecture</h5> -->
   <p  style="margin-left:10px;text-align: left;">Meshery is comprised of the following components:</p>
@@ -83,9 +83,10 @@
           class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
           allowtransparency="true"></iframe>
   </div> 
-    <p><strong>Meshery provides:</strong></p>
-    <div class="row">
+    
+    <div class="">
       <div class="col s12 m6">
+        <p><strong>Meshery provides:</strong></p>
         <ul>
           <li style="list-style-type: circle;">the user interface to authenticate users.</li>
           <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context.</li>
@@ -93,46 +94,45 @@
           <li style="list-style-type: circle;">collects the results of the performance tests from its load generator (<a href="https://fortio.org">Fortio</a>) and stores in the cloud for historical viewing.</li>
           <li style="list-style-type: circle;">interfaces with the Meshery adapters dynamically and enables users to play with service mesh.</li>
         </ul>
+        <strong>Meshery Adapters:</strong>
+        <p style="margin-left:10px; padding-right:1em;">
+          Meshery adapters provision, configure, and manage their respective service meshes. 
+          <ol>
+            <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (alpha)</li>
+            <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (alpha)</li>
+            <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (pre-alpha)</li>
+            <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul Connect</a> (pre-alpha)</li>
+          </ol>
+        </p>
       </div>
       <div class="col s12 m6">
         <a href="/assets/images/meshery/meshery performance results.png">
           <img src="/assets/images/meshery/meshery performance results.png" width="100%" 
-          alt="Meshery screenshot"  style="box-shadow: .5px .5px 2px 2px gray;"
+          alt="Meshery screenshot"  style="box-shadow: .5px .5px 2px 2px gray; margin-top: 5px;"
         title="Service Mesh Playground"  /><p style="text-align: center;">single comparison screenshot</a></p>
       </div>
     </div>
-    <strong>Meshery Adapters:</strong>
-      <p style="margin-left:10px; padding-right:1em;">
-        Meshery adapters provision, configure, and manage their respective service meshes. 
-        <ol>
-          <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (alpha)</li>
-          <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (alpha)</li>
-          <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (pre-alpha)</li>
-          <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul Connect</a> (pre-alpha)</li>
-        </ol>
-      </p>
 </div>
 </div>
 <a name="demo"></a><h4 style="color:aliceblue;"></h4>
-<div class="post-content" style="position: relative;overflow: auto;" itemprop="articleBody">
-  <div style="position: relative;float:left;padding:1em;width:60%;">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/CFj1O_uyhhs" frameborder="0" 
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-      style="position:relative; float:left;"></iframe>
+<div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
+  <div class="col s12 m6">
+    <iframe width="100%" src="https://www.youtube.com/embed/CFj1O_uyhhs" frameborder="0" 
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="min-height: 315px;"></iframe>
   </div>
-  <div style="position: relative;float:left;padding:1em;width:40%;">
+  <div class="col s12 m6">
     <b>See Meshery at:</b>
-    <ul style="list-style-type: circle;">
-      <li>- <a href="https://servicemeshday.com/schedule/">Service Mesh Day 2019</a></li>
-      <li>- <a href="https://innotechsanantonio2019.sched.com/event/Lmlb/the-enterprise-path-to-service-mesh-architectures?iframe=no&w=100%&sidebar=yes&bg=no">Innotech San Antonio 2019</a></li>
-      <li>- <a href="https://tmt.knect365.com/container-world/speakers/lee-calcote">Container World 2019</a></li>
-      <li>- <a href="https://dockercon19.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=309149&tclass=popup#.XJxH-TOcbjI.twitter">DockerCon 2019</a></li>
-      <li>- <a href="https://kccnceu19.sched.com/event/MPf7/service-meshes-at-what-cost-lee-calcote-layer5-girish-ranganathan-solarwinds?iframe=no&w=100%&sidebar=yes&bg=no">KubeCon EU 2019</a></li>
+    <ul>
+      <li style="list-style-type: circle;"><a href="https://servicemeshday.com/schedule/">Service Mesh Day 2019</a></li>
+      <li style="list-style-type: circle;"> <a href="https://innotechsanantonio2019.sched.com/event/Lmlb/the-enterprise-path-to-service-mesh-architectures?iframe=no&w=100%&sidebar=yes&bg=no">Innotech San Antonio 2019</a></li>
+      <li style="list-style-type: circle;"> <a href="https://tmt.knect365.com/container-world/speakers/lee-calcote">Container World 2019</a></li>
+      <li style="list-style-type: circle;"> <a href="https://dockercon19.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=309149&tclass=popup#.XJxH-TOcbjI.twitter">DockerCon 2019</a></li>
+      <li style="list-style-type: circle;"> <a href="https://kccnceu19.sched.com/event/MPf7/service-meshes-at-what-cost-lee-calcote-layer5-girish-ranganathan-solarwinds?iframe=no&w=100%&sidebar=yes&bg=no">KubeCon EU 2019</a></li>
     </ul>
   </div>
 </div>
   <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
-  <div class="post-content" itemprop="articleBody">
+  <div class="post-content row" itemprop="articleBody">
       <h5 style="color:#111111;">Step 1: Install and start</h5>
       <p>Using Docker, install Meshery on your local machine by running the following:</p>        
       <div class="highlight highlight-source-shell">
@@ -209,7 +209,7 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
 
 <a name="contributing"></a><a name="community"></a>
 <h4  style="color:aliceblue;">Community</h4>
-<div class="post-content" itemprop="articleBody">
+<div class="post-content row" itemprop="articleBody">
     <a href="https://github.com/layer5io/meshery">
       <img style="position: relative; float:right; top: -2em; right: -2em; border: 0; width: 149px; height: 149px;" 
       src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" 
@@ -231,7 +231,7 @@ This project is community-built and welcomes collaboration!
 
 <a name="benchmark-spec"></a>
 <h4 style="color:aliceblue;">Benchmark Specification</h4>
-<div class="post-content" itemprop="articleBody">
+<div class="post-content row" itemprop="articleBody">
   The <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Benchmark Specification</a> is a 
   common format for describing and capturing performance benchmark tests and results. This specification is 
   currently being advanced through discussion in the Meshery project.
@@ -240,7 +240,7 @@ This project is community-built and welcomes collaboration!
   
 
 <h4  style="color:aliceblue;">FAQ</h4>
-<div class="post-content" itemprop="articleBody">
+<div class="post-content row" itemprop="articleBody">
     <p>  <ul>
         <ol><b>Why create Meshery and not use regpatrol?</b></ol>
     <ol>- regpatrol is not open source or available in binary form to use.</ol>
@@ -262,10 +262,8 @@ This project is community-built and welcomes collaboration!
 </div>
 
 <div class="row">
-  <div class="col s12">
-    <div id="contact" class="section scrollspy" style="width:100%;">
+  <div id="contact" class="section scrollspy" style="width:100%;">
       <h3 style="text-align:center;color:aliceblue;">Mailing List</h3>
       {% include contact.html %}
     </div>
-  </div>
 </div>
