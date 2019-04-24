@@ -49,83 +49,93 @@
       <br />
 </div>
 
-<div class="post-content" style="position: relative;overflow: auto;" itemprop="articleBody">
-  <div style="margin-left: 0 auto; display: flex;text-align: center; justify-content: center; ">
-    <div style="position:relative;float:left;">
-    <a href="/assets/images/meshery/meshery result comparison.png" style="display: inline;">
-      <img src="/assets/images/meshery/meshery-result-comparison-small.png" width="300"
-        alt="Meshery screenshot" style=" box-shadow: .5px .5px 2px 2px gray; 
-          margin-right:20px; display: inline;"
-        title="Service Mesh Playground" /><br />multi-comparison screenshot</a>
-    </div> 
+<div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
+  <!-- <div style="margin-left: 0 auto; display: flex;text-align: center; justify-content: center; "> -->
+      <div class="col s12 m4" style="text-align: center;">
+          <a href="/assets/images/meshery/meshery_chart_2.png">
+            <img src="/assets/images/meshery/meshery_chart_2.png" width="100%" 
+            alt="Meshery screenshot"  style="box-shadow: .5px .5px 2px 2px gray;"
+          title="Service Mesh Playground"  />comparison screenshot</a>
+       </div>
 
-    <div style="position:relative;float:left;">
-      <h5 style="color:#111111;">Benchmark, Configure, and Adopt</h5>
+       <div class="col s12 m4" style="text-align: center;">
+        <a href="/assets/images/meshery/meshery_chart_3.png">
+          <img src="/assets/images/meshery/meshery_chart_3.png" width="100%"
+            alt="Meshery screenshot" style=" box-shadow: .5px .5px 2px 2px gray; 
+              margin-right:20px; display: inline;"
+            title="Service Mesh Playground" />multi-comparison screenshot</a>
+        </div> 
+
+    <div class="col s12 m4">
+      <h5 style="color:#111111;text-align: center;">Benchmark, Configure, Adopt</h5>
       <p style="line-height:2em;text-align: center;">
-        - Compare apples-to-apples performance across service meshes.<br />
-        - Track your service mesh performance from release to release.<br />
-        - Understand behavioral differences between service meshes.<br />
-        - Track your application performance from version to version.<br />
+        <ul style="line-height: 1.5em;height: auto;text-align: center;">
+          <li style="">Compare apples-to-apples performance across service meshes.</li>
+          <li style="">Track your service mesh performance from release to release.</li>
+          <li style="">Understand behavioral differences between service meshes.</li>
+          <li style="">Track your application performance from version to version.</li>
+        </ul>
       </p>
    </div>
-  </div>
+
+
+  <!-- </div> -->
 </div>
   <a name="architecture"></a>
   <!-- <h4 style="color:aliceblue;">Architecture</h4> -->
-  <div class="post-content" style="position: relative;overflow: auto;" itemprop="articleBody">
+  <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
 
   <!-- <h5 style="color:#111111;clear: both;text-align: center;">Architecture</h5> -->
-  <p  style="margin-left:10px;text-align: left;">Meshery is comprised of the following components:</p>
-  <div class="iframe-container">
-  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqJ2cFC9LSGVi1ReDjphzOfpWwINPg4__XyMZu85R8KNPnuHmnswEnHnTkY-8FQl-GrjuXpQ7WlCLE/embed?start=false&loop=false&delayms=3000" 
-          class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
-          allowtransparency="true"></iframe>
-  </div> 
-    <p><strong>Meshery provides:</strong></p>
-    <div style="float:right;"><a href="/assets/images/meshery/meshery performance results.png"><img src="/assets/images/meshery/meshery performance results.png" width="380" 
-      alt="Meshery screenshot"  style="box-shadow: .5px .5px 2px 2px gray;margin-left:20px;"
-    title="Service Mesh Playground"  /><p style="text-align: center;">single comparison screenshot</a></p></div>
-    <div style="margin-left:20px;margin-right:5px;">
-      <ul>
-        <li style="list-style-type: circle;">the user interface to authenticate users.</li>
-        <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context.</li>
-        <li style="list-style-type: circle;">enables users to generate load against their applications.</li>
-        <li style="list-style-type: circle;">collects the results of the performance tests from its load generator (<a href="https://fortio.org">Fortio</a>) and stores in the cloud for historical viewing.</li>
-        <li style="list-style-type: circle;">interfaces with the Meshery adapters dynamically and enables users to play with service mesh.</li>
-      </ul>
-    </div>
-    <strong>Meshery Adapters:</strong>
-      <p style="margin-left:10px; padding-right:1em;">
-        Meshery adapters provision, configure, and manage their respective service meshes. 
-        <ol>
-          <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (alpha)</li>
-          <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (alpha)</li>
-          <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (pre-alpha)</li>
-          <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul Connect</a> (pre-alpha)</li>
-        </ol>
-      </p>
+    <div class="col s12 m6">
+        <h5 style="color:#111111;">Meshery provides</h5>
+        <ul>
+          <li style="list-style-type: circle;">the user interface to authenticate users.</li>
+          <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context.</li>
+          <li style="list-style-type: circle;">enables users to generate load against their applications.</li>
+          <li style="list-style-type: circle;">collects the results of the performance tests from its load generator (<a href="https://fortio.org">Fortio</a>) and stores in the cloud for historical viewing.</li>
+          <li style="list-style-type: circle;">interfaces with the service mesh adapters dynamically and enables users to play with service mesh.</li>
+        </ul>
+      </div>
+      <div class="col s12 m6">
+          <h5 style="color:#111111;">Service Mesh Adapters</h5>
+          <p style="margin-left:10px; padding-right:1em;">
+            Service mesh adapters provision, configure, and manage their respective service meshes. 
+            <ol>
+              <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (beta)</li>
+              <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (alpha)</li>
+              <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (pre-alpha)</li>
+              <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul Connect</a> (pre-alpha)</li>
+            </ol>
+          </p>
+      </div>
 </div>
+<div class="post-content row">
+    <div class="iframe-container">
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqJ2cFC9LSGVi1ReDjphzOfpWwINPg4__XyMZu85R8KNPnuHmnswEnHnTkY-8FQl-GrjuXpQ7WlCLE/embed?start=false&loop=false&delayms=3000" 
+              class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+              allowtransparency="true"></iframe>
+      </div> 
 </div>
+
 <a name="demo"></a><h4 style="color:aliceblue;"></h4>
-<div class="post-content" style="position: relative;overflow: auto;" itemprop="articleBody">
-  <div style="position: relative;float:left;padding:1em;width:60%;">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/CFj1O_uyhhs" frameborder="0" 
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-      style="position:relative; float:left;"></iframe>
+<h5 style="color:aliceblue;">See Meshery at</h5>
+<div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
+  <div class="col s12 m9">
+    <iframe width="100%" src="https://www.youtube.com/embed/CFj1O_uyhhs" frameborder="0" 
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="min-height: 315px;"></iframe>
   </div>
-  <div style="position: relative;float:left;padding:1em;width:40%;">
-    <b>See Meshery at:</b>
-    <ul style="list-style-type: circle;">
-      <li>- <a href="https://servicemeshday.com/schedule/">Service Mesh Day 2019</a></li>
-      <li>- <a href="https://innotechsanantonio2019.sched.com/event/Lmlb/the-enterprise-path-to-service-mesh-architectures?iframe=no&w=100%&sidebar=yes&bg=no">Innotech San Antonio 2019</a></li>
-      <li>- <a href="https://tmt.knect365.com/container-world/speakers/lee-calcote">Container World 2019</a></li>
-      <li>- <a href="https://dockercon19.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=309149&tclass=popup#.XJxH-TOcbjI.twitter">DockerCon 2019</a></li>
-      <li>- <a href="https://kccnceu19.sched.com/event/MPf7/service-meshes-at-what-cost-lee-calcote-layer5-girish-ranganathan-solarwinds?iframe=no&w=100%&sidebar=yes&bg=no">KubeCon EU 2019</a></li>
+  <div class="col s12 m3">
+    <ul>
+      <li style="list-style-type: circle;"><a href="https://servicemeshday.com/schedule/">Service Mesh Day 2019</a></li>
+      <li style="list-style-type: circle;"> <a href="https://innotechsanantonio2019.sched.com/event/Lmlb/the-enterprise-path-to-service-mesh-architectures?iframe=no&w=100%&sidebar=yes&bg=no">Innotech San Antonio 2019</a></li>
+      <li style="list-style-type: circle;"> <a href="https://tmt.knect365.com/container-world/speakers/lee-calcote">Container World 2019</a></li>
+      <li style="list-style-type: circle;"> <a href="https://dockercon19.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=309149&tclass=popup#.XJxH-TOcbjI.twitter">DockerCon 2019</a></li>
+      <li style="list-style-type: circle;"> <a href="https://kccnceu19.sched.com/event/MPf7/service-meshes-at-what-cost-lee-calcote-layer5-girish-ranganathan-solarwinds?iframe=no&w=100%&sidebar=yes&bg=no">KubeCon EU 2019</a></li>
     </ul>
   </div>
 </div>
   <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
-  <div class="post-content" itemprop="articleBody">
+  <div class="post-content row" itemprop="articleBody">
       <h5 style="color:#111111;">Step 1: Install and start</h5>
       <p>Using Docker, install Meshery on your local machine by running the following:</p>        
       <div class="highlight highlight-source-shell">
@@ -202,7 +212,7 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
 
 <a name="contributing"></a><a name="community"></a>
 <h4  style="color:aliceblue;">Community</h4>
-<div class="post-content" itemprop="articleBody">
+<div class="post-content row" itemprop="articleBody">
     <a href="https://github.com/layer5io/meshery">
       <img style="position: relative; float:right; top: -2em; right: -2em; border: 0; width: 149px; height: 149px;" 
       src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" 
@@ -210,11 +220,11 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
 This project is community-built and welcomes collaboration! 
 <p>
   <ul>
-    <li><em><strong>Join</strong></em> <a href="https://docs.google.com/document/d/1i6aa5OWTS7Ul1V2vJKVnJswlbBJi_CN5LhWs4xd85vw/edit#">weekly community meeting</a> on <a href="/assets/projects/meshery/Meshery-Community-Meeting.ics">Fridays from 2pm to 3pm Central</a>.</li>
+    <li style="list-style-type: circle;"><em><strong>Join</strong></em> <a href="https://docs.google.com/document/d/1i6aa5OWTS7Ul1V2vJKVnJswlbBJi_CN5LhWs4xd85vw/edit#">weekly community meeting</a> on <a href="/assets/projects/meshery/Meshery-Community-Meeting.ics">Fridays from 2pm to 3pm Central</a>.</li>
     <ul>
         <li><em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.</li>
     </ul>
-    <li><em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/folders/1cSSCn4428TFhyg5mCMZq-oDi-Gwrcqqt">community folder</a>.</li>
+    <li style="list-style-type: circle;"><em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/folders/1cSSCn4428TFhyg5mCMZq-oDi-Gwrcqqt">community folder</a>.</li>
       <ul>
         <li><em><strong>Comment</strong></em> on the <a href="https://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3-w9t0/edit?usp=sharing">design document.</a></li>
       </ul>
@@ -224,7 +234,7 @@ This project is community-built and welcomes collaboration!
 
 <a name="benchmark-spec"></a>
 <h4 style="color:aliceblue;">Benchmark Specification</h4>
-<div class="post-content" itemprop="articleBody">
+<div class="post-content row" itemprop="articleBody">
   The <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Benchmark Specification</a> is a 
   common format for describing and capturing performance benchmark tests and results. This specification is 
   currently being advanced through discussion in the Meshery project.
@@ -233,32 +243,42 @@ This project is community-built and welcomes collaboration!
   
 
 <h4  style="color:aliceblue;">FAQ</h4>
-<div class="post-content" itemprop="articleBody">
-    <p>  <ul>
-        <ol><b>Why create Meshery and not use regpatrol?</b></ol>
-    <ol>- regpatrol is not open source or available in binary form to use.</ol>
-          </ul>
+<div class="post-content row" itemprop="articleBody">
+    <p>  
+      <ul>
+        <li style="list-style-type: circle;"><b>Why create Meshery and not use regpatrol?</b>
           <ul>
-          <ol><b>What are some differences between regpatrol and Meshery?</b></ol>
-            <ol><em>Telemetry</em> - regpatrol sources telemetry from Mixer Prometheus adapter and uses IBM's proprietary node agent.</ol>
-            <ol>- - Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.</ol>
-            <ol><em>Traffic type</em> - regpatrol uses jmeter, which can parse responses and perform functional tests.</ol>
-            <ol>- - Meshery is using fortio, which is for load-gen and perf-testing only. </ol>
-        </ul>
-        <ul>
-            <ol><b>Why use Meshery?</b></ol>
-            <ol> - because its an open source, vendor neutral projects that facilitates testing across meshes.</ol>
-            <ol> - because fortio is not packaged into a mesh testing utility, but is only a load-generator unto its own.</ol>
-            <ol> - because regpatrol is closed sourcej, binary is not released, scripted for one mesh, and is produced by a vendor of that mesh.</ol>
+            <li style="list-style-type: square;">regpatrol is not open source or available in binary form to use.</li>
+          </ul>
+        </li>
+        <li style="list-style-type: circle;"><b>What are some differences between regpatrol and Meshery?</b>
+          <ul>
+            <li style="list-style-type: square;"><em>Telemetry</em> - regpatrol sources telemetry from Mixer Prometheus adapter and uses IBM's proprietary node agent.
+              <ul>
+                  <li style="list-style-type: disc;">Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.</li>
+              </ul>
+            </li>
+            <li style="list-style-type: square;"><em>Traffic type</em> - regpatrol uses jmeter, which can parse responses and perform functional tests.
+              <ul>
+                  <li style="list-style-type: disc;">Meshery is using fortio, which is for load-gen and perf-testing only.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li style="list-style-type: circle;"><b>Why use Meshery?</b>
+            <ul>
+                <li style="list-style-type: square;">because its an open source, vendor neutral projects that facilitates testing across meshes.</li>
+                <li style="list-style-type: square;"> because fortio is not packaged into a mesh testing utility, but is only a load-generator unto its own.</li>
+                <li style="list-style-type: square;"> because regpatrol is closed sourcej, binary is not released, scripted for one mesh, and is produced by a vendor of that mesh.</li>
+            </ul>
+        </li>
     </ul>
     </p>
 </div>
 
 <div class="row">
-  <div class="col s12">
-    <div id="contact" class="section scrollspy" style="width:100%;">
+  <div id="contact" class="section scrollspy" style="width:100%;">
       <h3 style="text-align:center;color:aliceblue;">Mailing List</h3>
       {% include contact.html %}
     </div>
-  </div>
 </div>
