@@ -24,6 +24,19 @@
   tracing: "Pluggable"
   encryption: "Yes"
 
+- name: SuperGloo
+  desc: "SuperGloo - The Service Mesh Orchestration Platform"
+  link: https://supergloo.solo.io/
+  autoinject: "Yes"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "Yes"
+  tracing: "Grafana, Prometheus, and OpenTracing compatible"
+  encyrption: "Yes"
+
 - name: Grey Matter
   desc: "Grey Matter is an Istio-compliant, Envoy proxy-based, hybrid cloud service mesh platform for business insight and secure data control with your microservices."
   link: http://deciphernow.com/grey-matter
