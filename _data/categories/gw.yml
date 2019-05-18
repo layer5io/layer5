@@ -13,15 +13,3 @@
 - name: OpenResty
   link: http://openresty.org
   desc: "OpenResty uses Nginx"
-- name: 
-  link: 
-  desc: 
-- name: 
-  link: 
-  desc: 
-- name: 
-  link: 
-  desc: 
-- name: 
-  link: 
-  desc: 
