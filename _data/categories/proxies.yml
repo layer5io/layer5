@@ -13,12 +13,3 @@
 - name: Traefik
   link: https://traefik.io/
   desc: "Traefik is a modern HTTP reverse proxy and load balancer that integrates with service discovery systems and container orchestrators."
-- name: 
-  link: 
-  desc: 
-- name: 
-  link: 
-  desc: 
-- name: 
-  link: 
-  desc: 

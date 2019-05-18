@@ -168,6 +168,17 @@
   commerical: Kong Inc.
   category: API Gateway
 
+- name: Gloo
+  opensource: "Yes"
+  link: https://gloo.solo.io/
+  governance: Solo.io Inc.
+  primary-lang: Go
+  announce-date: "?"
+  ga-1-date: "?"
+  desc: An Envoy-powered API Gateway
+  commerical: Solo.io Inc.
+  category: API Gateway
+
 - name: OpenResty
   opensource: "Yes"
   link: https://openresty.org/en/
