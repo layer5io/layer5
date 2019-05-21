@@ -8,6 +8,8 @@ permalink: /blog/a-standard-interface-for-service-meshes
 
 ---
 <h4> A Standard Interface for Service Meshes</h4>
+by Lee Calcote
+
 <div class="row" style="float:right;padding:20px;text-align:center;">
 <a href="https://smi-spec.io" rel="nofollow"><img src="/assets/images/smi-logo.png" alt="" width="220"  /></a>
 </div>
@@ -22,6 +24,3 @@ Meshery and SMI are aligned on common goals of getting users started quickly, un
 As a multi-mesh manager, Meshery, understands that each service mesh has it own strengths. SMI intends to allow for differentiation by service mesh providers, at the same time providing interoperability between service meshes and their surrounding tooling. As a management plane, Meshery enhances networking intelligence in a multi-mesh way, encouraging users to expect more from their infrastructure. Meshery exposes each service mesh’s differentiated capabilities. 
 
 SMI’s aim for consistent APIs facilitates Meshery’s same goals, allowing for users and tools to flourish. As SMI unveils today, so does Meshery’s compatibility. Try out [Meshery and SMI](https://layer5.io/meshery) today!
-
-\- Lee Calcote<br />
-Founder, Layer5
