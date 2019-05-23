@@ -14,7 +14,8 @@
       </div> -->
       <div class="card-content">
         <h4 style="text-align:center;">Performance Benchmark</h4>
-        <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;"><i>What overhead does being on the service mesh incur?</i><br /><br /></p>
+        <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;">
+        <i style="padding-left: 10px; padding-right: 10px;">What overhead does being on the service mesh incur?</i><br /><br /></p>
         <p>Benchmark the performance of your application across different service meshes and compare their overhead.
         </p>
       </div>
@@ -41,12 +42,21 @@
     </div>
   </div>
 </div>
-<div id="meshery" class="card-content" style="position:relative;float:center;">        
-    <h5 style="text-align:center;color:aliceblue;">
+
+<div id="meshery" class="card-content row">
+    <div class="col s12 m6">
+      <h5 style="text-align:center;color:aliceblue;">
       <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:300px;" 
         class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
-        href="#getting-started">Run Meshery</a> </h5>
-      <br />
+        href="#getting-started">Run Meshery</a> 
+      </h5>
+    </div>
+    <div class="col s12 m6">
+      <h5 style="text-align:center;color:aliceblue;">
+          <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:300px;" 
+            class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
+            href="#smi">Service Mesh Interface</a> </h5>
+    </div>
 </div>
 
 <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
@@ -110,6 +120,8 @@
           </p>
       </div>
 </div>
+
+<a name="smi"></a>
 <div class="post-content row">
   <div class="col s12 m10">
       <a href="http://smi-spec.io" target="_blank">Service Mesh Interface (SMI)</a> is a specification for service meshes that run on Kubernetes. SMI defines a common standard that can be implemented by a variety of service mesh projects and vendors.  
