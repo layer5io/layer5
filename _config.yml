@@ -46,6 +46,7 @@ plugins:
   - jekyll-minifier
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 collections_dir: collections
 collections:
