@@ -2,7 +2,7 @@
 layout: post
 title:  "A Standard Interface for Service Meshes"
 date:   2019-05-21 12:15:05 +0000
-image: /assets/images/smi-logo.png
+image: /assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png
 author: Lee Calcote
 permalink: /blog/a-standard-interface-for-service-meshes
 
@@ -11,7 +11,7 @@ permalink: /blog/a-standard-interface-for-service-meshes
 by Lee Calcote
 
 <div class="row" style="float:right;padding:20px;text-align:center;">
-<a href="https://smi-spec.io" rel="nofollow"><img src="/assets/images/smi-logo.png" alt="" width="220"  /></a>
+<a href="https://smi-spec.io" rel="nofollow"><img src="/assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png" alt="" width="220"  /></a>
 </div>
 Most began their cloud native journey with their first step being use of containers, and taking a second step, moved into container orchestration as their workloads grew. Now, waves and waves of organizations are considering service meshes as their third significant step in their cloud native journey. As they invest into service meshes as their next layer of key infrastructure, users will continue to look for the same assurances sought from other commonly accepted (standard) interfaces for container runtimes (e.g. CRI), container storage (e.g. CSI), container networking (e.g. CNI) and they will look for a commonly accepted service mesh interface.
 

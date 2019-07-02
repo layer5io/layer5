@@ -61,14 +61,14 @@
 
 <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
   <!-- <div style="margin-left: 0 auto; display: flex;text-align: center; justify-content: center; "> -->
-      <div class="col s12 m4" style="text-align: center;">
+      <div class="col s12 m3" style="text-align: center;position:relative;float:left;">
           <a href="/assets/images/meshery/meshery_chart_2.png">
             <img src="/assets/images/meshery/meshery_chart_2.png" width="100%" 
             alt="Meshery screenshot"  style="box-shadow: .5px .5px 2px 2px gray;"
           title="Service Mesh Playground"  />comparison screenshot</a>
        </div>
 
-       <div class="col s12 m4" style="text-align: center;">
+       <div class="col s12 m3" style="text-align: center;position:relative;float:left;">
         <a href="/assets/images/meshery/meshery_chart_3.png">
           <img src="/assets/images/meshery/meshery_chart_3.png" width="100%"
             alt="Meshery screenshot" style=" box-shadow: .5px .5px 2px 2px gray; 
@@ -76,14 +76,14 @@
             title="Service Mesh Playground" />multi-comparison screenshot</a>
         </div> 
 
-    <div class="col s12 m4">
+    <div class="col s12 m5">
       <h5 style="color:#111111;text-align: center;">Benchmark, Configure, Adopt</h5>
       <p style="line-height:2em;text-align: center;">
         <ul style="line-height: 1.5em;height: auto;text-align: center;">
-          <li style="">Compare apples-to-apples performance across service meshes.</li>
-          <li style="">Track your service mesh performance from release to release.</li>
-          <li style="">Understand behavioral differences between service meshes.</li>
-          <li style="">Track your application performance from version to version.</li>
+          <li style="">- Compare apples-to-apples performance across service meshes.</li>
+          <li style="">- Track your service mesh performance from release to release.</li>
+          <li style="">- Understand behavioral differences between service meshes.</li>
+          <li style="">- Track your application performance from version to version.</li>
         </ul>
       </p>
    </div>
@@ -125,18 +125,19 @@
 <div class="post-content row">
   <div class="col s12 m10">
       <a href="http://smi-spec.io" target="_blank">Service Mesh Interface (SMI)</a> is a specification for service meshes that run on Kubernetes. SMI defines a common standard that can be implemented by a variety of service mesh projects and vendors.  
-      SMI’s aim for consistent APIs facilitates Meshery’s same goals, allowing for users and tools to flourish. As SMI was unveiled at KubeCon + CloudNativeCon Europe 2019, so did Meshery’s compatibility. Layer5 is pleased to partner with Microsoft in support of SMI.
-      To read more about it, please checkout out the announcement blog post <a href="/blog/a-standard-interface-for-service-meshes">here</a>.
+      SMI’s aim for consistent APIs facilitates Meshery’s same goals, allowing for users and tools to flourish. As SMI was unveiled at KubeCon + CloudNativeCon Europe 2019, so did Meshery’s compatibility. 
+      <p align="center"><a href="/blog/a-standard-interface-for-service-meshes">Layer5 is pleased to partner with Microsoft in support of SMI</a>!</p>
   </div> 
   <div class="col s12 m2">
     <div style="width: 100%; margin-left: auto; margin-right: auto;">
-      <a href="/blog/a-standard-interface-for-service-meshes"><img src="/assets/images/smi-logo.png" width="70%" ></a>
+      <a href="/blog/a-standard-interface-for-service-meshes">
+        <img src="/assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png" width="85%" ></a>
     </div>
   </div>
 </div>
 <div class="post-content row">
     <div class="iframe-container">
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRqJ2cFC9LSGVi1ReDjphzOfpWwINPg4__XyMZu85R8KNPnuHmnswEnHnTkY-8FQl-GrjuXpQ7WlCLE/embed?start=false&loop=false&delayms=3000" 
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSj6eYr6AgZ4mBgOL_Gv9T4WyLBFkPv49asNtdw1_Gn_xCsk37QRhOjdBRB-3Jp1ehneFmm2dpgFie-/embed?start=false&loop=false&delayms=3000" 
               class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
               allowtransparency="true"></iframe>
       </div> 
@@ -201,7 +202,7 @@
       
         <div class="toggle">
           
-          <label for="k8s-instructions">Or to install on Kubernetes, <b>click here</b>.</label>
+          <label for="k8s-instructions">Or to install on Kubernetes, <a>click here</a>.</label>
           <input type="checkbox" checked name="one" id="k8s-instructions">
           <div class="hidediv">
             <div class="innerdiv">
@@ -245,11 +246,11 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
 This project is community-built and welcomes collaboration! 
 <p>
   <ul>
-    <li style="list-style-type: circle;"><em><strong>Join</strong></em> <a href="https://docs.google.com/document/d/1i6aa5OWTS7Ul1V2vJKVnJswlbBJi_CN5LhWs4xd85vw/edit#">weekly community meeting</a> on <a href="/assets/projects/meshery/Meshery-Community-Meeting.ics">Fridays from 2pm to 3pm Central</a>.</li>
+    <li style="list-style-type: circle;"><em><strong>Join</strong></em> <a href="https://docs.google.com/document/d/1c07UO9dS7_tFD-ClCWHIrEzRnzUJoFQ10EzfJTpS7FY/edit?usp=sharing">weekly community meeting</a> on <a href="/assets/projects/meshery/Meshery-Community-Meeting.ics">Fridays from 2pm to 3pm Central</a>.</li>
     <ul>
         <li><em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.</li>
     </ul>
-    <li style="list-style-type: circle;"><em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/folders/1cSSCn4428TFhyg5mCMZq-oDi-Gwrcqqt">community folder</a>.</li>
+    <li style="list-style-type: circle;"><em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">community drive</a>.</li>
       <ul>
         <li><em><strong>Comment</strong></em> on the <a href="https://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3-w9t0/edit?usp=sharing">design document.</a></li>
       </ul>

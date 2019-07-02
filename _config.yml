@@ -23,14 +23,10 @@ slack: http://slack.layer5.io/
 blog: https://layer5.io
 docker: https://hub.docker.com/u/layer5/
 youtube: https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0
-
-
 twitter:
   card: summary
   username: layer5
   url: "https://twitter.com/layer5"
-  
-
 
 # Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
 tag_manager_id: # This looks something like GTM-XXXXXXX
