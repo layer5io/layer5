@@ -3,7 +3,8 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
- ul {
+
+ul {
   margin-left:15px;
 }
  ul ul {
@@ -2897,6 +2898,40 @@ ul.staggered-list li {
   list-style-type: none;
 
 }
+.comparison {
+          float:left; display: inline; 
+          background-color: white; 
+          border-right-width: 1px; border-right-style: dashed;
+          border-right-color: var(--main-dark-grey);
+          } 
+          
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color:var(--main-dark-grey);
+            color:aliceblue ;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 50%; 
+            margin-left: -60px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
 /*********************
   Media Query Classes
 **********************/
