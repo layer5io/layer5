@@ -6,7 +6,7 @@ image: /assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures.gif
 #author: Lee Calcote
 status: published
 ---
-<h4> Book: <i>The Enterprise Path to Service Mesh Architectures</i></h4>
+<h1> Book: <i>The Enterprise Path to Service Mesh Architectures</i></h1>
 By Lee Calcote
 
 <div class="row" style="float:right;padding:20px;text-align:center;">

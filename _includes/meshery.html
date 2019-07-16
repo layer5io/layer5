@@ -1,8 +1,8 @@
 <h2 class="post-meta" style="color:#cfd8dc;font-size: 1.5em;text-align:center;"><i>
-    a multi-service mesh performance benchmark and playground</i></h2>
-    <!-- <h5 style="text-align:center;color:aliceblue;">
+    a multi-service mesh management plane</i></h2>
+    <!-- <h3 style="text-align:center;color:aliceblue;">
       <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
-         href="https://github.com/layer5io/meshery/blob/master/README.md#running-meshery">Download</a> </h5> -->
+         href="https://github.com/layer5io/meshery/blob/master/README.md#running-meshery">Download</a> </h3> -->
 <!-- <h4 style="color:aliceblue;">Features</h4> -->
 <div class="row">
   <div class="col s12 m6">
@@ -45,17 +45,17 @@
 
 <div id="meshery" class="card-content row">
     <div class="col s12 m6">
-      <h5 style="text-align:center;color:aliceblue;">
+      <h3 style="text-align:center;color:aliceblue;">
       <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:300px;" 
         class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
         href="#getting-started">Run Meshery</a> 
-      </h5>
+      </h3>
     </div>
     <div class="col s12 m6">
-      <h5 style="text-align:center;color:aliceblue;">
+      <h3 style="text-align:center;color:aliceblue;">
           <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:300px;" 
             class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
-            href="#smi">Service Mesh Interface</a> </h5>
+            href="#smi">Service Mesh Interface</a> </h3>
     </div>
 </div>
 
@@ -77,7 +77,7 @@
         </div> 
 
     <div class="col s12 m5">
-      <h5 style="color:#111111;text-align: center;">Benchmark, Configure, Adopt</h5>
+      <h3 style="color:#111111;text-align: center;">Benchmark, Configure, Adopt</h3>
       <p style="line-height:2em;text-align: center;">
         <ul style="line-height: 1.5em;height: auto;text-align: center;">
           <li style="">- Compare apples-to-apples performance across service meshes.</li>
@@ -95,9 +95,9 @@
   <!-- <h4 style="color:aliceblue;">Architecture</h4> -->
   <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
 
-  <!-- <h5 style="color:#111111;clear: both;text-align: center;">Architecture</h5> -->
+  <!-- <h3 style="color:#111111;clear: both;text-align: center;">Architecture</h3> -->
     <div class="col s12 m6">
-        <h5 style="color:#111111;">Meshery provides</h5>
+        <h3 style="color:#111111;">Meshery provides</h3>
         <ul>
           <li style="list-style-type: circle;">the user interface to authenticate users.</li>
           <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context.</li>
@@ -107,7 +107,7 @@
         </ul>
       </div>
       <div class="col s12 m6">
-          <h5 style="color:#111111;">Service Mesh Adapters</h5>
+          <h3 style="color:#111111;">Service Mesh Adapters</h3>
           <p style="margin-left:10px; padding-right:1em;">
             Service mesh adapters provision, configure, and manage their respective service meshes. 
             <ol>
@@ -143,8 +143,8 @@
       </div> 
 </div>
 
-<a name="demo"></a><h4 style="color:aliceblue;"></h4>
-<h5 style="color:aliceblue;">See Meshery at</h5>
+<a name="demo"></a>
+<h3 style="color:aliceblue;">See Meshery at</h3>
 <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
   <div class="col s12 m9">
     <iframe width="100%" src="https://www.youtube.com/embed/CFj1O_uyhhs" frameborder="0" 
@@ -160,9 +160,9 @@
     </ul>
   </div>
 </div>
-  <a name="getting-started"></a><h4 style="color:aliceblue;">Run Meshery</h4>
+  <a name="getting-started"></a><h3 style="color:aliceblue;">Run Meshery</h3>
   <div class="post-content row" itemprop="articleBody">
-      <h5 style="color:#111111;">Step 1: Install and start</h5>
+      <h4 style="color:#111111;">Step 1: Install and start</h4>
       <p>Using Docker, install Meshery on your local machine by running the following:</p>        
       <div class="highlight highlight-source-shell">
         <pre><code>
@@ -227,17 +227,17 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
     <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
             </div>
           </div>
-    <h5 style="color:#111111;">Step 2: Login</h5>
+    <h4 style="color:#111111;">Step 2: Login</h4>
     <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
   
-  <!-- <h5 style="color:#111111;">Step 3: Configure and Enjoy Meshery</h5>
+  <!-- <h3 style="color:#111111;">Step 3: Configure and Enjoy Meshery</h3>
   <p>- Configure Meshery with references to your deployed adapters, using "meshery-&lt;service-mesh-name&gt;:&lt;port&gt;" (e.g. <code>meshery-istio:10000</code> or <code>meshery-linkerd:10001</code>)
     in the <i>Mesh Adapter Location</i> field.</p> -->
   </div>
   </div>
 
 <a name="contributing"></a><a name="community"></a>
-<h4  style="color:aliceblue;">Community</h4>
+<h3  style="color:aliceblue;">Community</h3>
 <div class="post-content row" itemprop="articleBody">
     <a href="https://github.com/layer5io/meshery">
       <img style="position: relative; float:right; top: -2em; right: -2em; border: 0; width: 149px; height: 149px;" 
@@ -259,7 +259,7 @@ This project is community-built and welcomes collaboration!
 </div>
 
 <a name="benchmark-spec"></a>
-<h4 style="color:aliceblue;">Benchmark Specification</h4>
+<h3 style="color:aliceblue;">Benchmark Specification</h3>
 <div class="post-content row" itemprop="articleBody">
   The <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Benchmark Specification</a> is a 
   common format for describing and capturing performance benchmark tests and results. This specification is 
@@ -268,7 +268,7 @@ This project is community-built and welcomes collaboration!
 </div>
   
 
-<h4  style="color:aliceblue;">FAQ</h4>
+<h3  style="color:aliceblue;">FAQ</h3>
 <div class="post-content row" itemprop="articleBody">
     <p>  
       <ul>

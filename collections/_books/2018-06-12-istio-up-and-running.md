@@ -6,7 +6,7 @@ image: /assets/images/istio-up-and-running_top.png
 author: Lee Calcote and Zack Butcher
 status: upcoming
 ---
-<h4> Book: <i>Istio: Up and Running</i></h4>
+<h1> Book: <i>Istio: Up and Running</i></h1>
 By Lee Calcote and Zack Butcher
 
 <div style="float:right;padding:20px;"><a href="/assets/images/istio-up-and-running.png"><img class="card" width="300px" src="/assets/images/istio-up-and-running.png" align="right" /></a><div>&nbsp;</div>
