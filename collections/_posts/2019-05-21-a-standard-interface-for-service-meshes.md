@@ -7,7 +7,7 @@ author: Lee Calcote
 permalink: /blog/a-standard-interface-for-service-meshes
 
 ---
-<h4> A Standard Interface for Service Meshes</h4>
+<h1> A Standard Interface for Service Meshes</h1>
 by Lee Calcote
 
 <div class="row" style="float:right;padding:20px;text-align:center;">

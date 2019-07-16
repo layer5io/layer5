@@ -3,6 +3,12 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+ img.center-50 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
  ul {
   margin-left:15px;
 }
@@ -2417,7 +2423,11 @@ pre {
   background-color: #000;
   color: #FFF;
 }
-
+code {
+  color: #FFF;
+  padding-left: .25rem;
+  padding-right: .25rem;
+}
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
@@ -2427,6 +2437,7 @@ pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
+  background-color:#000;
 }
 
 /* Forms
@@ -4663,40 +4674,46 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h1 {
-  font-size: 4.2rem;
+  font-size: 2.25rem;
   line-height: 110%;
+  color: #000;
   margin: 2.1rem 0 1.68rem 0;
 }
 
 h2 {
-  font-size: 3.56rem;
+  font-size: 1.95rem;
   line-height: 110%;
+  color: #222222;
   margin: 1.78rem 0 1.424rem 0;
 }
 
 h3 {
-  font-size: 2.92rem;
+  font-size: 1.45rem;
   line-height: 110%;
-  margin: 1.46rem 0 1.168rem 0;
+  color: #333333;
+  margin: 1.5rem 0 1.168rem 0;
 }
 
 h4 {
-  font-size: 2.28rem;
+  font-size: 1.15rem;
   line-height: 110%;
-  margin: 1.14rem 0 0.912rem 0;
+  color: #444444;
+  font-weight: 400;
+  margin: 1.5rem 0 0.912rem 0;
 }
 
 h5 {
-  font-size: 1.64rem;
+  font-size: .95rem;
   line-height: 110%;
-  margin: 0.82rem 0 0.656rem 0;
-  color: #ffff
+  color: #555555;
+  margin: 1.5rem 0 0.656rem 0;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: .85rem;
   line-height: 110%;
-  margin: 0.5rem 0 0.4rem 0;
+  color: #666666;
+  margin: 1.5rem 0 0.4rem 0;
 }
 
 em {
