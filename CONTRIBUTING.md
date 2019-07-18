@@ -2,7 +2,7 @@
 
 Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-### Updating the Landscape
+### <a name="landscape">Updating the Landscape</a>
 
 The service mesh landscape is powered by Jekyll. In order to add/update the landscape, clone this repository, create a branch and navigate to the **_data/categories** folder. Edit these yaml files (if appropriate):
 
@@ -11,6 +11,19 @@ The service mesh landscape is powered by Jekyll. In order to add/update the land
 - [proxies.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/proxies.yml) - list of individual modern proxies
 - [lb.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/gw.yml) - list of API gateways
 
-Entries should be listed in alphabetical order. Edit other yaml files as needed. Build and preview your changes by running `make` or `make docker`.
+Entries should be listed in alphabetical order. Edit other yaml files as needed. Build and preview your changes by running `make site` or `make docker`.
 
-Submit your [pull request](../../pulls)!
+### <a name="flow">Contribution Flow</a>
+Please contribute! The Layer5 site uses GitHub Pages to host the docs site. The process of contributing to documentation follows this flow:
+
+1. Get a local copy of the documentation.
+`git clone https://github.com/layer5io/layer5`
+1. Create and checkout a new branch to make changes within
+`git checkout -b <my-username>/<my-changes>` 
+1. Edit/add documentation.
+`vi <specific page>.md`
+1. Run site locally to preview changes.
+`make site`
+1. Commit and push changes to your remote branch.
+`git push origin <my-username>/<my-changes>`
+1. Open a [pull request](../../pulls) (in your web browser) against the master branch on https://github.com/layer5io/layer5.
