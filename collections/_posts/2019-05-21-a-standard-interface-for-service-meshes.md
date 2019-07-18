@@ -3,11 +3,11 @@ layout: post
 title:  "A Standard Interface for Service Meshes"
 date:   2019-05-21 12:15:05 +0000
 image: /assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png
-author: Lee Calcote
+#author: Lee Calcote
 permalink: /blog/a-standard-interface-for-service-meshes
 
 ---
-<h1> A Standard Interface for Service Meshes</h1>
+<h4> A Standard Interface for Service Meshes</h4>
 by Lee Calcote
 
 <div class="row" style="float:right;padding:20px;text-align:center;">
