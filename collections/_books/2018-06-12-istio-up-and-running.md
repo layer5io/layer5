@@ -3,7 +3,7 @@ layout: book
 title:  "Istio: Up and Running"
 date:   2018-06-07 21:15:05 +0000
 image: /assets/images/istio-up-and-running_top.png
-author: Lee Calcote and Zack Butcher
+#author: Lee Calcote and Zack Butcher
 status: upcoming
 brief: "A must-read for anyone looking to get started with a Istio."
 ---

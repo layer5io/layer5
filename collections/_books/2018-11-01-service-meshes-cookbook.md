@@ -3,7 +3,7 @@ layout: book
 title:  "Service Meshes Cookbook"
 date:   2018-10-31 21:15:05 +0000
 image: /assets/images/ORM_logo_box_rgb.png
-author: Lee Calcote
+#author: Lee Calcote
 status: upcoming
 brief: "Recipes and best practices for application deployments on service meshes."
 ---
