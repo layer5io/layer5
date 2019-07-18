@@ -6,13 +6,13 @@ image: /assets/images/ORM_logo_box_rgb.png
 author: Lee Calcote
 status: upcoming
 ---
-<h1> Book: <i>Service Meshes Cookbook</i></h1>
+<h4> Book: <i>Service Meshes Cookbook</i></h4>
 By Michael Hausenblaus and Lee Calcote
 
 Getting most out of Istio, Linkerd, App Mesh, Envoy, and Consul Connect.
 
 Stay tuned for details...
 
-<i>Anticipated Summer 2019</i>
+<i>Anticipated Fall 2019</i>
 
 
