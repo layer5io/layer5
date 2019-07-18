@@ -5,6 +5,7 @@ date:   2018-06-07 21:15:05 +0000
 image: /assets/images/istio-up-and-running_top.png
 author: Lee Calcote and Zack Butcher
 status: upcoming
+brief: "A must-read for anyone looking to get started with a Istio."
 ---
 <h4> Book: <i>Istio: Up and Running</i></h4>
 By Lee Calcote and Zack Butcher
@@ -26,5 +27,6 @@ The hope is that readers will:
 <li style="margin-left:15px"> A broad understanding of the Istio ecosystem.</li>
 <li style="margin-left:15px"> How to engage with the community.</li>
 
-<p>Early Release: <b>Spring 2019</b>
+<p>Authors: <b>Lee Calcote and Zack Butcher</b>
+<br />Early Release: <b>Spring 2019</b>
 <br />Anticipated Publish: <b>Summer 2019</b></p>

@@ -5,10 +5,11 @@ date:   2018-06-11 21:15:05 +0000
 image: /assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures.gif
 #author: Lee Calcote
 status: published
+brief: "Approaches to service mesh deployments and an explanation of service meshes in contrast to related technologies."
 ---
+
 <h4> Book: <i>The Enterprise Path to Service Mesh Architectures</i></h4>
 By Lee Calcote
-
 <div class="row" style="float:right;padding:20px;text-align:center;">
 <a href="/assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures.png"><img class="card" src="/assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures-small.png" alt="" width="270"  /></a><br />
   <a id="home" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4" href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote">Get free ebook</a> <a id="home" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4" href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote">Read on Safari</a>
@@ -27,6 +28,6 @@ Three most important things readers will learn from this book:
   <li> What are practical steps to adopt a service mesh in my enterprise?</li>
   <li> How do I fit a service mesh into my existing infrastructure?</li>
 </div>
-<i>Published August 2018</i>
+<i>Author: Lee Calcote, Publisher: O'Reilly, Publish Date: August 2018</i>
 
 
