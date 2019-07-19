@@ -77,7 +77,7 @@ $ meshery start
     </code></pre>
 </div>
 <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-start.png"><
-    img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-start.png" class="thumbnail" /></a>
+    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-start.png" class="thumbnail" /></a>
 </li>
 <li> Once Meshery is fully started, login in your preferred browser using the <code>WSL2 IP</code> instead of <code>localhost</code>
 <div class="highlight highlight-source-shell">
@@ -86,16 +86,24 @@ $ export BROWSER=/mnt/c/Firefox/firefox.exe
 $ $BROWSER $mainIP:9081 &
     </code></pre>
 </div>
-<p align="center">
+<div style="display: grid;  grid-template-columns: auto auto;">
+<div style="postion:relative; float:left; ">
     <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login.png">
-        <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login.png" class="thumbnail"  /></a>
+        <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login.png"  
+            style="display: block; margin-left: auto;  margin-right: auto; max-width: 70%;" />
+    </a>
+</div>
+<div style="postion:relative; float:left; ">
     <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login-success.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login-success.png" class="thumbnail" /></a>
-</p>
+        <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login-success.png" 
+            style="display: block; margin-left: auto;  margin-right: auto;  max-width: 90%;"/>
+    </a>
+</div>
+</div>
 </li>
 </ol>
 
-### [Optional] More analytics with Graphana
+#### [Optional] More analytics with Graphana
 As stated above, Meshery can leverage the analytics provided by Graphana. For this blog post, as everything is built from scratch.
 <div class="toggle">
     <label for="meshery-instructions"><a>Here is the setup</a> for a new Graphana dockerized instance.</label>
@@ -144,7 +152,7 @@ In this case, we are almost exclusively working with Docker and the "inside look
     <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-complete.png" class="thumbnail" />
 </a>
 
-## Conclusion
+#### Conclusion
 As [Lee Calcote](https://twitter.com/lcalcote) put it, this is a lot of buzz words: Meshery > K3s (deployed via K3d) > Docker > WSL2 > Windows 10
 
 And he's totally right, still the "beauty" here, is that it "simply works".
@@ -159,9 +167,7 @@ Hope you had fun assembling all these pieces and stay tunned for the "Bonuses", 
 > > > *Nunix out*
 
 ---
-## Coming soon...
-### Bonus 1: Meshery configuration
----
-### Bonus 2: Adding a Service Mesh to the mix
----
-### Bonus 3: A CNAB Bundle to install them all
+#### Other posts in this series
+- Bonus 1: Meshery configuration
+- Bonus 2: Adding a Service Mesh to the mix
+- Bonus 3: A CNAB Bundle to install them all
