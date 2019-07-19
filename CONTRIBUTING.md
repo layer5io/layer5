@@ -11,7 +11,7 @@ The service mesh landscape is powered by Jekyll. In order to add/update the land
 - [proxies.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/proxies.yml) - list of individual modern proxies
 - [lb.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/gw.yml) - list of API gateways
 
-Entries should be listed in alphabetical order. Edit other yaml files as needed. Build and preview your changes by running `make site` or `make docker`.
+Entries should be listed in alphabetical order. Edit other yaml files as needed. 
 
 ### <a name="flow">Contribution Flow</a>
 Please contribute! The Layer5 site uses GitHub Pages to host the docs site. The process of contributing to documentation follows this flow:
@@ -27,3 +27,5 @@ Please contribute! The Layer5 site uses GitHub Pages to host the docs site. The 
 1. Commit and push changes to your remote branch.
 `git push origin <my-username>/<my-changes>`
 1. Open a [pull request](../../pulls) (in your web browser) against the master branch on https://github.com/layer5io/layer5.
+
+Build and preview your changes by running `make site` or `make docker`.
