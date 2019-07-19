@@ -176,42 +176,14 @@
  $ meshery start
         </code></pre>
       </div>
-<style>
-        /* toggle instructions */
 
-        .toggle .hidediv {
-          width: 80%;
-          display: table;
-          height: 150px; /* any arbitrary height but best at the minimum initial height you would want. */
-          overflow: hidden;
-          background: #EEE;
-          margin: 0px auto;
-          transition-timing-function: linear;
-          transition: cubic-bezier(0, 1, 0, 1);
-       
-        }
-        .innerdiv {
-          padding: 10px;
-        }
-        .toggle input[type="checkbox"]:checked + .hidediv {
-          height: 0;
-          opacity: 0;
-          display: block;
-        }
-        .toggle label {
-          font-family: sans-serif;
-          font-size: 1em;
-          color: #000;
-        }
-      </style>
-      
-        <div class="toggle">
-          
-          <label for="k8s-instructions">Or to install on Kubernetes, <a>click here</a>.</label>
-          <input type="checkbox" checked name="one" id="k8s-instructions">
-          <div class="hidediv">
-            <div class="innerdiv">
-              
+      <div class="toggle">
+        
+        <label for="k8s-instructions">Or to install on Kubernetes, <a>click here</a>.</label>
+        <input type="checkbox" checked name="one" id="k8s-instructions">
+        <div class="hidediv">
+          <div class="innerdiv">
+            
       <p>Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
       <div class="highlight highlight-source-shell">
         <pre><code>

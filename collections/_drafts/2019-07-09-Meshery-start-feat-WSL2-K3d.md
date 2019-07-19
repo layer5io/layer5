@@ -96,41 +96,46 @@ $ $BROWSER $mainIP:9081 &
 </ol>
 
 ### [Optional] More analytics with Graphana
-As stated above, Meshery can leverage the analytics provided by Graphana.
-
-For this blog post, as everything is built from scratch, here is the setup for a new Graphana dockerized instance:
-<ol>
-<li>Start a new Grafana on docker instance
-<div class="highlight highlight-source-shell">
-    <pre><code>
-$ docker run \
-  -d \
-  -p 3000:3000 \
-  --name=grafana \
-  -e "GF_SERVER_ROOT_URL=http://$mainIP" \
-  -e "GF_SECURITY_ADMIN_PASSWORD=MesheryInstance" \
-  grafana/grafana
-    </code></pre>
+As stated above, Meshery can leverage the analytics provided by Graphana. For this blog post, as everything is built from scratch.
+<div class="toggle">
+    <label for="meshery-instructions"><a>Here is the setup</a> for a new Graphana dockerized instance.</label>
+    <input type="checkbox" checked name="one" id="meshery-instructions">
+    <div class="hidediv">
+        <div class="innerdiv">
+            <ol>
+            <li>Start a new Grafana on docker instance
+            <div class="highlight highlight-source-shell">
+                <pre><code>
+            $ docker run \
+            -d \
+            -p 3000:3000 \
+            --name=grafana \
+            -e "GF_SERVER_ROOT_URL=http://$mainIP" \
+            -e "GF_SECURITY_ADMIN_PASSWORD=MesheryInstance" \
+            grafana/grafana
+                </code></pre>
+            </div>
+            <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-start.png">
+                <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-start.png" class="thumbnail">
+            </a>
+            </li>
+            <li>Access the new instance with the admin password that you set in the docker environment variable
+            <div class="highlight highlight-source-shell">
+                <pre><code>
+            $ $BROWSER $mainIP:3000 &
+                </code></pre>
+            </div>
+            <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login.png">
+                <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login.png" class="thumbnail" />
+            </a>
+            <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login-success.png">
+                <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login-success.png" class="thumbnail" />
+            </a>
+            </li>
+            </ol>
+        </div>
+    </div>
 </div>
-<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-start.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-start.png" class="thumbnail">
-</a>
-</li>
-<li>Access the new instance with the admin password that you set in the docker environment variable
-<div class="highlight highlight-source-shell">
-    <pre><code>
-$ $BROWSER $mainIP:3000 &
-    </code></pre>
-</div>
-<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login.png" class="thumbnail" />
-</a>
-<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login-success.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login-success.png" class="thumbnail" />
-</a>
-</li>
-</ol>
-
 ### An inside look
 While everything should run fine, it's always good to have a look at what has been deployed.
 
