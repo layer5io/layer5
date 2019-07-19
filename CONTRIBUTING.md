@@ -14,7 +14,7 @@ The service mesh landscape is powered by Jekyll. In order to add/update the land
 Entries should be listed in alphabetical order. Edit other yaml files as needed. 
 
 ### <a name="flow">Contribution Flow</a>
-Please contribute! The Layer5 site uses GitHub Pages to host the docs site. The process of contributing to documentation follows this flow:
+Please contribute! The Layer5 site uses GitHub Pages (Jekyll) to host its site. The process of contributing to documentation follows this flow:
 
 1. Get a local copy of the site.
 `git clone https://github.com/layer5io/layer5`
