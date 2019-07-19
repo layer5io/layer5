@@ -260,49 +260,53 @@ This project is community-built and welcomes collaboration!
 
 <a name="benchmark-spec"></a>
 <h3 style="color:aliceblue;">Benchmark Specification</h3>
-<div class="post-content row" itemprop="articleBody">
+<div class="post-content row" itemprop="articleBody" style="height:149px">
     <a href="https://github.com/layer5io/service-mesh-benchmark-spec">
       <img style="position: relative; float:right; top: -2em; right: -2em; border: 0; width: 149px; height: 149px;" 
       src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" 
       alt="Fork me on GitHub"></a>
   The <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Benchmark Specification</a> is a 
   common format for describing and capturing performance benchmark tests and results. This specification is 
-  currently being advanced through discussion in the Meshery project.
-
-</div>
+  currently being advanced through discussion in the Meshery project.</div>
   
 
 <h3  style="color:aliceblue;">FAQ</h3>
 <div class="post-content row" itemprop="articleBody">
     <p>  
       <ul>
-        <li style="list-style-type: circle;"><b>Why create Meshery and not use regpatrol?</b>
+        <li style="list-style-type: circle;"><b>Does Meshery manage service meshes?</b>
           <ul>
-            <li style="list-style-type: square;">regpatrol is not open source or available in binary form to use.</li>
+          <div style="line-height: .4em;">&nbsp;</div>
+            <li style="list-style-type: square;">Yes, Meshery acts as a management plane to provision and manage the lifecycle of service meshes.</li>
           </ul>
         </li>
-        <li style="list-style-type: circle;"><b>What are some differences between regpatrol and Meshery?</b>
+        <br />
+        <li style="list-style-type: circle;"><b>Why do I need to authenticate my social account to use Meshery?</b>
           <ul>
-            <li style="list-style-type: square;"><em>Telemetry</em> - regpatrol sources telemetry from Mixer Prometheus adapter and uses IBM's proprietary node agent.
+            <div style="line-height: .4em;">&nbsp;</div>
+            <li style="list-style-type: square;"><em>Create your account</em> - avoid having to reconfigure Meshery each time you deploy it. 
+              When you use a social account to authenticate to Meshery, your environment configuration persists from session to session.
               <ul>
                   <li style="list-style-type: disc;">Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.</li>
               </ul>
             </li>
-            <li style="list-style-type: square;"><em>Traffic type</em> - regpatrol uses jmeter, which can parse responses and perform functional tests.
-              <ul>
-                  <li style="list-style-type: disc;">Meshery is using fortio, which is for load-gen and perf-testing only.</li>
+            <br />
+            <li style="list-style-type: square;"><em>Rank your deployment</em> 
+              - results of performance tests are anonymously collected using the 
+              <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Service Mesh Performance Benchmark</a>, so that 
+              Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.
               </ul>
             </li>
           </ul>
-        </li>
+        <ul>
         <li style="list-style-type: circle;"><b>Why use Meshery?</b>
             <ul>
-                <li style="list-style-type: square;">because its an open source, vendor neutral projects that facilitates testing across meshes.</li>
-                <li style="list-style-type: square;"> because fortio is not packaged into a mesh testing utility, but is only a load-generator unto its own.</li>
-                <li style="list-style-type: square;"> because regpatrol is closed sourcej, binary is not released, scripted for one mesh, and is produced by a vendor of that mesh.</li>
+                <div style="line-height: .4em;">&nbsp;</div>
+                <li style="list-style-type: square;"> Meshery is an open source, vendor neutral projects that facilitates testing across meshes.</li>
+                <li style="list-style-type: square;"> Other performance benchmark tools are not packaged into a mesh testing utility, butare only a load-generators unto their own.</li>
             </ul>
-        </li>
-    </ul>
+          </li>
+
     </p>
 </div>
 
