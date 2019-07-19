@@ -6,7 +6,7 @@ image: /assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/cnab-logo.jpg
 author: Nuno do Carmo
 permalink: /blog/2019-07-09-Meshery-start-feat-WSL2-K3d
 ---
-# Meshery start (feat. WSL2 & K3d)
+### Meshery start (feat. WSL2 & K3d)
 *by Nuno do Carmo*
 
 During KubeCon EU 2019, I had the chance to discover two new softwares that simply amazed me:
@@ -16,7 +16,7 @@ During KubeCon EU 2019, I had the chance to discover two new softwares that simp
 And, what really appealed to me about both of them is that everything from the installation to the usage was just *simple!*
 And cream on the top, both softwares are used with or inside containers, making each ideal for a create/try/delete workflow.
 
-## The base configuration
+<h4>Environment Setup</h4>
 Before we start having *real* fun with Meshery, I will quickly list the different components I used for this blog post and ensure I define what could be optional for your own setup:
 1. [Meshery](https://layer5.io/meshery)
 2. [Docker](https://docs.docker.com/install/) 
@@ -55,7 +55,7 @@ $ docker version
  $ meshery start
     </code></pre>
 </div>
-<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-docker-start.png"><img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-docker-start.png" class="center-50" /></a>
+<div class="thumbnail"><a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-docker-start.png"><img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-docker-start.png" class="thumbnail" /></a></div>
 </li>
 <li> Create a new K3d cluster with the <code> WSL2 IP </code>
 <div class="highlight highlight-source-shell">
@@ -67,7 +67,8 @@ $ export KUBECONFIG="$(k3d get-kubeconfig --name='k3s-default')"
 $ kubectl cluster-info
     </code></pre>
 </div>
-<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-k3d-start.png"><img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-k3d-start.png" class="center-50" /></a>
+<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-k3d-start.png">
+    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-k3d-start.png" class="thumbnail" /></a>
 </li>
 <li> Start Meshery on the newly created cluster
 <div class="highlight highlight-source-shell">
@@ -75,7 +76,8 @@ $ kubectl cluster-info
 $ meshery start
     </code></pre>
 </div>
-<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-start.png"><img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-start.png" class="center-50" /></a>
+<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-start.png"><
+    img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-start.png" class="thumbnail" /></a>
 </li>
 <li> Once Meshery is fully started, login in your preferred browser using the <code>WSL2 IP</code> instead of <code>localhost</code>
 <div class="highlight highlight-source-shell">
@@ -85,8 +87,10 @@ $ $BROWSER $mainIP:9081 &
     </code></pre>
 </div>
 <p align="center">
-    <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login.png"><img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login.png" class="center-50"  /></a>
-    <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login-success.png"><img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login-success.png" class="center-50" /></a>
+    <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login.png">
+        <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login.png" class="thumbnail"  /></a>
+    <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login-success.png">
+    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-login-success.png" class="thumbnail" /></a>
 </p>
 </li>
 </ol>
@@ -109,7 +113,7 @@ $ docker run \
     </code></pre>
 </div>
 <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-start.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-start.png" class="center-50">
+    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-start.png" class="thumbnail">
 </a>
 </li>
 <li>Access the new instance with the admin password that you set in the docker environment variable
@@ -119,10 +123,10 @@ $ $BROWSER $mainIP:3000 &
     </code></pre>
 </div>
 <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login.png" class="center-50" />
+    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login.png" class="thumbnail" />
 </a>
 <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login-success.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login-success.png" class="center-50" />
+    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-grafana-login-success.png" class="thumbnail" />
 </a>
 </li>
 </ol>
@@ -132,7 +136,7 @@ While everything should run fine, it's always good to have a look at what has be
 
 In this case, we are almost exclusively working with Docker and the "inside look" should look something like this:
 <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-complete.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-complete.png" class="center-50" />
+    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-K3d/wsl-meshery-complete.png" class="thumbnail" />
 </a>
 
 ## Conclusion

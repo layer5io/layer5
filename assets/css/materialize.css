@@ -4,6 +4,11 @@
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
 
+
+.thumbnail {
+  text-align: center;
+  max-width: 50%;
+}
 ul {
   margin-left:15px;
 }

@@ -89,6 +89,7 @@ defaults:
     # https://github.com/VincentGarreau/particles.js
     # https://cssgradient.io
     # https://coolbackgrounds.io
+    # https://jekyllcodex.org/without-plugin/lightbox/
 
 ## A message to have visitors acknowledge use of cookies (not currently used)
 # cookies_banner: none # The value "show" will show the cookies banner, the value "none" will hide the banner.

@@ -7,7 +7,7 @@ image: /assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/s
 permalink: /blog/a-standard-interface-for-service-meshes
 
 ---
-<h4> A Standard Interface for Service Meshes</h4>
+<h4>A Standard Interface for Service Meshes</h4>
 by Lee Calcote
 
 <div class="row" style="float:right;padding:20px;text-align:center;">
