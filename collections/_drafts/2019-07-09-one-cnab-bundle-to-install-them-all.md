@@ -28,14 +28,14 @@ Before we start having *real* fun with Meshery, I will quickly list the differen
 5. [Graphana](https://grafana.com/) *(optional)*
  - Graphana is not mandatory however is strongly recommend. We will setup a dockerized instance, but feel free to plug Meshery with your existing instance.
 
-### Nothing is granted 
+<h6> Nothing is granted </h6>
 For the sake of making the blog post around Meshery, I won't explain how to install each component and will focus only on getting K3d and Meshery working.
 
 That said, I do not take anything for granted and as Scott Hanselman once taught me: there is no "just have to ..." or "by simply doing ...".
 
 If you face any issue with your setup (hopefully WSL2), just let me know on [Twitter](https://twitter.com/nunixtech) or on the [Meshery Slack channel](http://slack.layer5.io).
 
-## Meshery Installation
+<h4>Meshery Installation</h4>
 For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
 
 <ol>
