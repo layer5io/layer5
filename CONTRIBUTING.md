@@ -16,14 +16,14 @@ Entries should be listed in alphabetical order. Edit other yaml files as needed.
 ### <a name="flow">Contribution Flow</a>
 Please contribute! The Layer5 site uses GitHub Pages to host the docs site. The process of contributing to documentation follows this flow:
 
-1. Get a local copy of the documentation.
+1. Get a local copy of the site.
 `git clone https://github.com/layer5io/layer5`
 1. Create and checkout a new branch to make changes within
 `git checkout -b <my-username>/<my-changes>` 
-1. Edit/add documentation.
-`vi <specific page>.md`
+1. Edit site/add content.
+`vi <specific page>.md` # or use your favorite IDE
 1. Run site locally to preview changes.
-`make site`
+`make site` # this will run a local web server with "live reload" conveniently enabled.
 1. Commit and push changes to your remote branch.
 `git push origin <my-username>/<my-changes>`
 1. Open a [pull request](../../pulls) (in your web browser) against the master branch on https://github.com/layer5io/layer5.
