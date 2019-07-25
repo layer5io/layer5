@@ -2,7 +2,7 @@
 
 ![GitHub contributors](https://img.shields.io/github/contributors/layer5io/layer5.svg)
 ![GitHub](https://img.shields.io/github/license/layer5io/layer5.svg) 
-![GitHub issues by-label](https://img.shields.io/github/issues/layer5io/layer5/help%20wanted.svg)
+![GitHub issues by-label](https://img.shields.io/github/issues/layer5io/layer5/help%20wanted.svg?color=%23DDDD00)
 # About
 [Layer5.io](https://layer5.io) is a community-maintained repository of information pertaining to the technology ecosystem surrounding service meshes, API gateways, edge proxies, ingress and egress controllers - - microservice management in cloud native environments. 
 
