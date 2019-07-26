@@ -81,6 +81,8 @@ GEM
       jekyll (>= 3.5)
       json-minify (~> 0.0.3)
       uglifier (~> 4.1)
+    jekyll-redirect-from (0.15.0)
+      jekyll (>= 3.3, < 5.0)
     jekyll-sanity (1.2.0)
       jekyll (~> 3.1)
     jekyll-sass-converter (1.5.2)
@@ -184,6 +186,7 @@ DEPENDENCIES
   jekyll-feed (~> 0.6)
   jekyll-material-theme!
   jekyll-minifier
+  jekyll-redirect-from
   jekyll-sitemap
   materialize-sass
   minima (~> 2.0)
