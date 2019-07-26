@@ -1,8 +1,8 @@
 <table class="responsive-table highlight" style="color:var(--main-bg-color);">
     <thead style="text-align:center;background-color: #a6b7be;color:#222; text-align:center; word-wrap: none;">
     <tr>
-        <th>Name</th>
         <th>Category</th>
+        <th>Name</th>
         <th>Open Source</th>
         <th>Governance</th>
         <th>Primary Language</th>
@@ -15,8 +15,8 @@
     <tbody>
     {% for nonfunc in site.data.categories.non-functional %}
     <tr style="border: 1px dashed #a6b7be; text-align:center;">
-        <td><a href="{{nonfunc.link}}" title="{{nonfunc.link}}" class="orange-text">{{nonfunc.name}}</a></td>
         <td style="text-align:center;"> {{nonfunc.category}} </td>
+        <td><a href="{{nonfunc.link}}" title="{{nonfunc.link}}" class="orange-text">{{nonfunc.name}}</a></td>
         <td style="text-align:center;"> {{nonfunc.opensource}} </td>
         <td style="text-align:center;"> {{nonfunc.governance}} </td>
         <td style="text-align:center;"> {{nonfunc.primary-lang}} </td>
