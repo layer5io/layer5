@@ -4728,31 +4728,31 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h1 {
-  font-size: 3.8rem;
+  font-size: 3.5rem;
   line-height: 110%;
   margin: 2.1rem 0 1.68rem 0;
 }
 
 h2 {
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   line-height: 110%;
   margin: 1.78rem 0 1.424rem 0;
 }
 
 h3 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 110%;
   margin: 1.46rem 0 1.168rem 0;
 }
 
 h4 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   line-height: 110%;
   margin: 1.14rem 0 0.912rem 0;
 }
 
 h5 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 110%;
   margin: 0.82rem 0 0.656rem 0;
   color: #ffff
