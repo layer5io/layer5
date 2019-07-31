@@ -6,6 +6,7 @@ image: /assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures.gif
 #author: Lee Calcote
 status: published
 brief: "Approaches to service mesh deployments and an explanation of service meshes in contrast to related technologies."
+redirect_from: "/2018/06/08/the-enterprise-path-to-servcie-mesh/"
 ---
 
 <h4> Book: <i>The Enterprise Path to Service Mesh Architectures</i></h4>

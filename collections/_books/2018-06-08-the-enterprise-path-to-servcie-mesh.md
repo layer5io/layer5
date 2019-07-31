@@ -6,8 +6,6 @@ image: /assets/images/The-Enterprise-Path-to-Service-Mesh-Architectures.gif
 #author: Lee Calcote
 visibility: hide
 status: published
-redirect_from: 
- - /2018/06/08/the-enterprise-path-to-servcie-mesh/
 brief: "Approaches to service mesh deployments and an explanation of service meshes in contrast to related technologies."
 ---
 <h4> Book: <i>The Enterprise Path to Service Mesh Architectures</i></h4>
