@@ -108,6 +108,16 @@
   commerical: Ant Financial
   category: Service Mesh
 
+- name: Yggdrasil
+  opensource: "Yes"
+  link: https://github.com/uswitch/yggdrasil
+  governance: uSwitch
+  primary-lang: Go
+  announce-date: August 2018
+  ga-1-date: "?"
+  commerical: "N/A"
+  category: Service Mesh
+
 - name: Envoy
   opensource: "Yes"
   link: https://www.envoyproxy.io/
@@ -258,4 +268,3 @@
   ga-1-date: "?"
   commerical: "?"
   category: Load-Balancers
-
