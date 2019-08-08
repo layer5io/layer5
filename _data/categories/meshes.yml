@@ -1,15 +1,15 @@
-- name: AspenMesh
-  desc: AspenMesh - a commercial offering built on top of Istio. Closed source. 
+- name: Aspen Mesh
+  desc: "Aspen Mesh - a commercial offering built on top of Istio with some open source components."
   link: https://aspenmesh.io/
-  autoinject: "?"
-  tcp-web: "?"
-  grpc: "?"
-  h2: "?"
-  multi-cluster: "?"
-  multi-tenant: "?"
-  prometheus: "?"
-  tracing: "?"
-  encryption: "?"
+  autoinject: "Yes"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "Yes"
+  tracing: "Jaeger"
+  encryption: "Yes"
 
 - name: Consul Connect
   desc: "Consul Connect - is a feature that enables encrpyted communication between services."
