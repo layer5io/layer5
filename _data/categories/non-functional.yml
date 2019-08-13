@@ -189,6 +189,16 @@
   commerical: OpenResy Inc.
   category: API Gateway
 
+- name: 3scale
+  opensource: "Yes"
+  link: https://github.com/3scale/APIcast
+  governance: Red Hat
+  primary-lang: Lua
+  announce-date: "December 2014(?)"
+  ga-1-date: "December 2014(?)"
+  commerical: Red Hat 
+  category: API Gateway
+
 - name: HAProxy
   opensource: "Yes"
   link: http://www.haproxy.org/
