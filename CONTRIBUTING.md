@@ -9,7 +9,8 @@ The service mesh landscape is powered by Jekyll. In order to add/update the land
 - [non-functional.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/non-functional.yml) - overview of various service meshes
 - [meshes.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/meshes.yml) - list of individual service mesh details
 - [proxies.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/proxies.yml) - list of individual modern proxies
-- [lb.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/gw.yml) - list of API gateways
+- [gw.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/gw.yml) - list of API gateways
+- [lb.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/lb.yml) - list of load balancers
 
 Entries should be listed in alphabetical order. Edit other yaml files as needed. 
 
