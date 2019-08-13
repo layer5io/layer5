@@ -13,9 +13,9 @@
 - name: OpenResty
   link: http://openresty.org
   desc: "OpenResty uses Nginx"
-- name: 
-  link: 
-  desc: 
+- name: 3scale
+  link: https://www.3scale.net/
+  desc: "An API gateway built on top of NGINX. It is part of the Red Hat 3scale API Management Platform."
 - name:  
   link: 
   desc: 
