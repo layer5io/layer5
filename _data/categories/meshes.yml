@@ -1,5 +1,5 @@
 - name: AspenMesh
-  desc: AspenMesh - a commercial offering built on top of Istio. Closed source. 
+  desc: AspenMesh - a commercial offering built on top of Istio. Closed source.
   link: https://aspenmesh.io/
   autoinject: "?"
   tcp-web: "?"
@@ -128,6 +128,19 @@ Open Source. From Buoyant. Written in Rust and Go."
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+
+- name: Yggdrasil
+  desc: "Yggdrasil is an Envoy control plane that configures listeners and clusters based off Kubernetes ingresses from multiple Kube Clusters."
+  link: https://github.com/uswitch/yggdrasil
+  autoinject: "N/A"
+  tcp-web: "?"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "?"
+  prometheus: "Yes"
+  tracing: "Pluggable"
+  encryption: "Yes"
 
 - name: Zuul
   desc: "Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more."
