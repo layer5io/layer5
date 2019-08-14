@@ -9660,5 +9660,5 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     background-position: center top;
     
     background-repeat: no-repeat; 
-    background-image: url(/assets/images/slack.png); 
+    background-image: url(/assets/images/slack.svg); 
   }

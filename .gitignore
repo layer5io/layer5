@@ -5,3 +5,4 @@ _site/
 serve
 Gemfile.lock
 .gitignore
+.DS_Store
