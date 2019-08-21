@@ -1,0 +1,57 @@
+<html><head><style>
+.tooltip {
+  /* position: relative; */
+  display: flex;
+  height: 70px;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+body { 
+  background-color: black; 
+  background:black;
+}
+</style>  
+</head>
+<body>
+  <div style="display: flex; justify-content: center;">
+    <ul>
+      <div class="tooltip">
+      <a class="white-text " href="mailto:community@layer5.io">
+        <img class="small-on-med-and-down" width="100%" src="/assets/images/email.svg"  />
+        <span class="tooltiptext">Get connected with the Layer5 community</span></a>
+      </div>
+      
+      <div class="tooltip">
+      <a  href="{{site.slack}}">
+        <img class="small-on-med-and-down" width="auto" src="/assets/images/slack.svg" />
+        <span class="tooltiptext">Join the Layer5 Slack</span></a>
+      </div>
+        
+        <div class="tooltip">
+     <a  href="{{site.twitter.url}}">
+       <img class="small-on-med-and-down" width="100%" src="/assets/images/twitter.svg" />
+       <span class="tooltiptext">Follow Layer5 on Twitter</span></a>
+      </div>
+          
+          <div class="tooltip">
+      <a  href="{{site.github}}">
+        <img class="small-on-med-and-down" width="" src="/assets/images/github.svg" />
+       <span class="tooltiptext">Contribute to Layer5 projects</span></a>
+      </div >
+      
+      <div class="tooltip">
+      <a  href="{{site.youtube}}">
+        <img class="small-on-med-and-down tooltip" width="" src="/assets/images/youtube.svg" />
+        <span class="tooltiptext">Watch community meeting recordings</span></a>
+      </div>
+      
+      <div class="tooltip">
+      <a  href="{{site.docker}}">
+        <img class="small-on-med-and-down tooltip" width="" src="/assets/images/docker.svg" />
+        <span class="tooltiptext">Access Docker images for Layer5 projects</span></a>
+      </div>
+      <!-- devicon-docker-plain -->
+    </ul>
+  </div>
+</body>
+</html>
