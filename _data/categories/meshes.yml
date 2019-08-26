@@ -1,3 +1,16 @@
+- name: A10 Secure Service Mesh
+  desc: “A10’s Secure Service Mesh - is a solution that utilizes a hub-spoke model to provide scalable east-west network security and automatic service discovery.”
+  link: https://www.a10networks.com/products/secure-service-mesh/
+  autoinject: "No"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "No, Replaced by Harmony Controller"
+  tracing: "Yes"
+  encryption: "Yes"
+
 - name: AspenMesh
   desc: AspenMesh - a commercial offering built on top of Istio. Closed source.
   link: https://aspenmesh.io/
