@@ -11,6 +11,19 @@
   tracing: "?"
   encryption: "?"
 
+- name: Cilium
+  desc: Cilium - DaemonSet-based service mesh using Linux BPF.
+  link: https://cilium.io/
+  autoinject: "?"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "?"
+  multi-cluster: "Yes"
+  multi-tenant: "?"
+  prometheus: "Yes"
+  tracing: "?"
+  encryption: "Yes"
+
 - name: Consul Connect
   desc: "Consul Connect - is a feature that enables encrpyted communication between services."
   link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
