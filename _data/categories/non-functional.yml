@@ -18,6 +18,16 @@
   commerical: "?"
   category: Service Mesh
 
+- name: Cilium
+  opensource: "Yes"
+  link: https://cilium.io/
+  governance: Isovalent
+  primary-lang: Go
+  announce-date: March 2017
+  ga-1-date: November 2017
+  commerical: "Isovalent"
+  category: Service Mesh
+
 - name: Consul Connect
   opensource: "Yes"
   link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
