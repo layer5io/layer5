@@ -288,3 +288,13 @@
   ga-1-date: "?"
   commerical: "?"
   category: Load-Balancers
+
+- name: Vulcand
+  opensource: "Yes"
+  link: https://github.com/vulcand/vulcand
+  governance: Mailgun Inc
+  primary-lang: Go
+  announce-date: December 2014
+  ga-1-date: December 2014
+  commerical: N/A
+  category: Service Mesh
