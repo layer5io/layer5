@@ -78,6 +78,16 @@
   commerical: Buoyant
   category: Service Mesh
 
+- name: Maesh
+  opensource: "Yes"
+  link: https://github.com/containous/maesh
+  governance: Containous
+  primary-lang: Go
+  announce-date: September 2019
+  ga-1-date: "?"
+  commerical: Containous
+  category: Service Mesh
+
 - name: Mesher
   opensource: "Yes"
   link: https://github.com/go-mesh/mesher
@@ -216,7 +226,7 @@
   primary-lang: Lua
   announce-date: "December 2014(?)"
   ga-1-date: "December 2014(?)"
-  commerical: Red Hat 
+  commerical: Red Hat
   category: API Gateway
 
 - name: HAProxy
