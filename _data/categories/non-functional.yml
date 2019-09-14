@@ -224,10 +224,10 @@
   link: http://www.haproxy.org/
   governance: HAProxy
   primary-lang: C
-  announce-date: "?"
-  ga-1-date: "?"
-  commerical: HAProxy Technologies
-  category: Load-Balancers
+  announce-date: "December 2001"
+  ga-1-date: "December 2001"
+  commercial: HAProxy Technologies
+  category: Service Proxy
 
 - name: Kong
   opensource: "Yes"
