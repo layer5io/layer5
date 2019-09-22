@@ -9662,3 +9662,8 @@ div.slack {
     background-repeat: no-repeat; 
     background-image: url(/assets/images/slack.svg); 
   }
+
+/*colorize social buttons on hover*/
+.swap img:last-child{display:none}
+.swap:hover img:first-child{display:none}
+.swap:hover img:last-child{display:inline-block}  
