@@ -19,9 +19,9 @@
 - name: Traefik
   link: https://traefik.io/
   desc: "Traefik is a modern HTTP reverse proxy and load balancer that integrates with service discovery systems and container orchestrators."
-- name:  
-  link: 
-  desc: 
+- name: Vulcand
+  link: https://github.com/vulcand/vulcand
+  desc: "Programmatic load balancer and service mesh backed by etcd"
 - name:  
   link: 
   desc: 

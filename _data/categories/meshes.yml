@@ -194,6 +194,19 @@ Open Source. From Buoyant. Written in Rust and Go."
   tracing: "?"
   encryption: "?"
 
+- name: Vulcand
+  desc: "Programmatic load balancer and service mesh backed by etcd"
+  link: https://github.com/vulcand/vulcand
+  autoinject: "No"
+  tcp-web: "No"
+  grpc: "?"
+  h2: "Yes"
+  multi-cluster: "?"
+  multi-tenant: "?"
+  prometheus: "No"
+  tracing: "No"
+  encryption: "Yes"
+
 # - name: Vamp
 #   desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."
 #   link: https://vamp.io
