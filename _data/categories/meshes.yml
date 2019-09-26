@@ -141,6 +141,19 @@ Open Source. From Buoyant. Written in Rust and Go."
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+  
+  - name: Maistra
+  desc: "Maistra is an open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data"
+  link: https://github.com/Maistra/
+  autoinject: "Yes"
+  h2: "Yes"
+  grpc: "Yes"
+  tcp-web: "No"
+  multi-cluster: "No"
+  multi-tenant: "No"
+  prometheus: "?"
+  tracing: "?"
+  encryption: "?"
 
 - name: Rotor
   link: https://github.com/turbinelabs/
