@@ -88,6 +88,16 @@
   commerical: Containous
   category: Service Mesh
 
+- name: Maistra
+  opensource: "Yes"
+  link: https://www.maistra.io
+  governance: Red Hat
+  primary-lang: Go
+  announce-date: May 2018
+  ga-1-date: September 2019
+  commerical: OpenShift Service Mesh (Red Hat)
+  category: Service Mesh
+
 - name: Mesher
   opensource: "Yes"
   link: https://github.com/go-mesh/mesher
