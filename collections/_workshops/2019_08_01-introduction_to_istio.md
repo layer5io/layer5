@@ -15,7 +15,7 @@ labs: https://github.com/leecalcote/istio-service-mesh-workshop
 slides: https://calcotestudios.com/talks/decks/slides-oreilly-introduction-to-istio.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
-status: "upcoming"
+status: "delivered"
 ---  
 
 <h4>Introduction to Istio - O'Reilly Live Online Training</h4>
