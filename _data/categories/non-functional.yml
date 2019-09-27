@@ -30,7 +30,7 @@
 
 - name: Consul Connect
   opensource: "Yes"
-  link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
+  link: https://www.consul.io/mesh.html
   governance: HashiCorp
   primary-lang: Go
   announce-date: June 2016
