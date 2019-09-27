@@ -211,3 +211,16 @@ Open Source. From Buoyant. Written in Rust and Go."
 #   desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."
 #   link: https://vamp.io
 #   autoinject: "No"
+
+- name: AppSwitch
+  desc: "AppSwitch performs service discovery, access control and traffic management functions on behalf of the applications by transparently taking over the applications’ network API calls. In addition, AppSwitch decouples the application from the constructs of underlying network infrastructure by projecting a consistent, virtual view of the network to the application. In abstract terms, it combines the application-level functionality offered by the service mesh approach with the familiarity and compatibility of traditional networking."
+  link: https://github.com/appswitch/
+  autoinject: "Yes"
+  tcp-web: "No"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "Yes"
+  tracing: "No"
+  encryption: "Yes"
