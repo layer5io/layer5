@@ -142,18 +142,18 @@ Open Source. From Buoyant. Written in Rust and Go."
   tracing: "?"
   encryption: "?"
   
-  - name: Maistra
-  desc: "Maistra is an open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data"
-  link: https://github.com/Maistra/
+- name: Maistra
+  desc: "Maistra is a security focused distribution of Istio designed to run on top of OpenShift."
+  link: https://www.maistra.io
   autoinject: "Yes"
   h2: "Yes"
   grpc: "Yes"
-  tcp-web: "No"
+  tcp-web: "Yes"
   multi-cluster: "No"
-  multi-tenant: "No"
-  prometheus: "?"
-  tracing: "?"
-  encryption: "?"
+  multi-tenant: "Yes"
+  prometheus: "Yes"
+  tracing: "Jaeger/Grafana"
+  encryption: "Yes"
 
 - name: Rotor
   link: https://github.com/turbinelabs/
