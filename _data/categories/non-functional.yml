@@ -17,15 +17,25 @@
   ga-1-date: 2019
   commerical: "?"
   category: Service Mesh
-
-- name: Cilium
-  opensource: "Yes"
-  link: https://cilium.io/
-  governance: Isovalent
+  
+  - name: AspenMesh
+  opensource: "No"
+  link: https://aspenmesh.io/
+  governance: F5
   primary-lang: Go
-  announce-date: March 2017
-  ga-1-date: November 2017
-  commerical: "Isovalent"
+  announce-date: November 2017
+  ga-1-date: 2019
+  commerical: "?"
+  category: Service Mesh
+
+- name: Baywire
+  opensource: "Yes"
+  link: https://www.bayware.io/
+  governance: "?"
+  primary-lang: "?"
+  announce-date: "?"
+  ga-1-date: "?"
+  commerical: "?"
   category: Service Mesh
 
 - name: Consul Connect
