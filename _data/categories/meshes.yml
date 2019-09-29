@@ -23,7 +23,20 @@
   prometheus: "?"
   tracing: "?"
   encryption: "?"
-
+  
+  - name: Baywire
+  desc: Baywire multicloud service mesh is infrastructure as code for interconnecting application microservices.
+  link: https://www.bayware.io/
+  autoinject: "?"
+  tcp-web: "?"
+  grpc: "?"
+  h2: "?"
+  multi-cluster: "?"
+  multi-tenant: "?"
+  prometheus: "?"
+  tracing: "?"
+  encryption: "?"
+  
 - name: Cilium
   desc: Cilium - DaemonSet-based service mesh using Linux BPF.
   link: https://cilium.io/
