@@ -10,6 +10,19 @@
   prometheus: "No, Replaced by Harmony Controller"
   tracing: "Yes"
   encryption: "Yes"
+  
+  - name: App Mesh
+  desc: A multi-service mesh management plane to enable adoption, operation and development of service meshes and services running on them
+  link: https://github.com/layer5io/meshery-app-mesh
+  autoinject: "No"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "Yes"
+  tracing: "Yes"
+  encryption: "Yes"
 
 - name: AspenMesh
   desc: AspenMesh - a commercial offering built on top of Istio. Closed source.
