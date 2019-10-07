@@ -49,6 +49,19 @@
   prometheus: "Yes"
   tracing: "Pluggable"
   encryption: "Yes"
+  
+  - name: Baywire
+  desc: "A secure, responsive, multi-cloudservice mesh for every application.Bayware is a programmable network microservices architecture that enables you to give every application its own secure, isolated overlay network, all in software"
+  link: https://www.bayware.io/
+  autoinject: "No"
+  tcp-web: "Yes"
+  grpc: "?"
+  h2: "?"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "Yes"
+  tracing: "Pluggable"
+  encryption: "Yes"
 
 - name: Grey Matter
   desc: "Grey Matter is an Istio-compliant, Envoy proxy-based, hybrid cloud service mesh platform for business insight and secure data control with your microservices."
