@@ -3,8 +3,23 @@
     <div class="card col s12" style="background-color: white;">
       <style> 
         ul {font-weight:bold;} 
-        li {margin-left:5px; font-weight: normal;} 
-        
+        li {
+          margin-left: 5px;
+          font-weight: normal;
+          float: right;
+          width: 200px;
+        }
+
+        .card-content {
+          padding: 0 0 5px 0 !important;
+          border-right: none;
+        }
+
+        .card-content:not(:last-child) {
+          border-bottom-width: 1px;
+          border-bottom-style: dashed;
+          border-bottom-color: var(--main-dark-grey);
+        }
         </style>
 
         <div class="card-content comparison">
