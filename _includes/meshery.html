@@ -21,6 +21,20 @@
       </div>
     </div>
   </div>
+  <div class="performance">
+      <h3 style=" box-shadow: 0 8px 8px 0 rgba(129, 127, 127, 0.5); width:auto; padding: 2px 16px; ">
+          <span id="testresults"></span>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            $.get("https://meshery.layer5.io/result/total", function(data, status) {
+                                var testresults = JSON.parse(data);
+                                document.getElementById("testresults").innerHTML = testresults.total_runs;
+                            });
+                        });
+                    </script>
+                    performance tests run</h3>
+            </div>
 
   <div class="col s12 m6">
     <div class="card" style="z-index: 1;">
