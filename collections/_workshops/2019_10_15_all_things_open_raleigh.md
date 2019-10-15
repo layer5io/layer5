@@ -1,22 +1,22 @@
 ---
 layout: workshop
-name: Istio Service Mesh Workshop
-desc: "<strong>Istio Service Mesh Workshop - Devfest Montreal 2019</strong>
+name: Using Service Meshes Workshop
+desc: "<strong>Using Service Meshes Workshop - All Things Open 2019</strong><br>
 By the end of this live, hands-on, online course, you’ll understand:
 <ul>
 <li>- How to manage traffic through load balancing and resilient communications.</li>
 <li>- How to enforce policies and rate limiting.</li>
 <li>- Istio's methods for managing telemetry, monitoring and reporting.</li>
 <li>- Approaches to canary deployments and securing communication with Istio.</li></ul>"
-img: /assets/images/workshops/devfest-montreal.svg
+img: /assets/images/workshops/allthingsopen-raleigh.svg
 style: "position:relative;height:320px;overflow:hidden; padding-top: 15%;padding-left:5%;padding-right:5%"
-eurl: https://devfest.cloud-montreal.ca/schedule/2019-09-28?sessionId=405
-labs: https://github.com/leecalcote/istio-service-mesh-workshop
-slides: https://calcotestudios.com/talks/decks/slides-devfest-montreal-2019-introduction-to-istio.html
+eurl: https://allthingsopen.org/talk/using-service-meshes-workshop-extended-session/
+labs: https://github.com/layer5io/istio-service-mesh-workshop
+slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-training-introduction-to-istio-august-2019.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
-status: "delivered"
+status: "upcoming"
 ---  
 
-<h4>Istio Service Mesh Workshop - Devfest Montreal 2019</h4>
+<h4>Using Service Meshes Workshop - All Things Open 2019, Raleigh, NC</h4>
 As the third phase in your microservices journey, service meshes provide a substrate of secure connectivity, uniform visibility and granular control over service requests. Service meshes have quickly entered the cloud native landscape filling unmet service-level needs. Organizations that have adopted containers and who are running a handful or more of microservices find tools to provide observability, control and security lacking. Operating at layer 5, service meshes promise much value. This live training walks you through a series of hands-on labs, introducing you to each and every aspect of the popular service mesh - Istio. During this workshop you will gain hands-on experience as we walk through deploying Istio alongside microservices running in Kubernetes.
