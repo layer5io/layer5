@@ -11,18 +11,18 @@
   tracing: "Yes"
   encryption: "Yes"
 
-- name: AspenMesh
-  desc: AspenMesh - a commercial offering built on top of Istio. Closed source.
+- name: Aspen Mesh
+  desc: "Aspen Mesh - a commercial offering built on top of Istio with some open source components."
   link: https://aspenmesh.io/
-  autoinject: "?"
-  tcp-web: "?"
-  grpc: "?"
-  h2: "?"
-  multi-cluster: "?"
-  multi-tenant: "?"
-  prometheus: "?"
-  tracing: "?"
-  encryption: "?"
+  autoinject: "Yes"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "Yes"
+  tracing: "Jaeger"
+  encryption: "Yes"
 
 - name: Cilium
   desc: Cilium - DaemonSet-based service mesh using Linux BPF.
