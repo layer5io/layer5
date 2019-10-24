@@ -65,6 +65,22 @@
 <script src="/assets/js/particles/particles.js"></script>
 <script src="/assets/js/particles/app.js"></script>
 <!-- <button onclick="positionParticles()">Footer</button> -->
+
+<!--Script for Copy to Clipboard-->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  var clipboard = new ClipboardJS('.btn');
+  clipboard.on('success', function(e) {
+      console.info('Action:', e.action);
+      console.info('Text:', e.text);
+      console.info('Trigger:', e.trigger);
+      e.clearSelection();
+  });
+  clipboard.on('error', function(e) {
+      console.error('Action:', e.action);
+      console.error('Trigger:', e.trigger);
+  });
+</script>
 </html>
 
 

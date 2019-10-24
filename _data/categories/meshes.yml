@@ -1,3 +1,16 @@
+- name: A10 Secure Service Mesh
+  desc: “A10’s Secure Service Mesh - is a solution that utilizes a hub-spoke model to provide scalable east-west network security and automatic service discovery.”
+  link: https://www.a10networks.com/products/secure-service-mesh/
+  autoinject: "No"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "No, Replaced by Harmony Controller"
+  tracing: "Yes"
+  encryption: "Yes"
+
 - name: Aspen Mesh
   desc: "Aspen Mesh - a commercial offering built on top of Istio with some open source components."
   link: https://aspenmesh.io/
@@ -11,14 +24,40 @@
   tracing: "Jaeger"
   encryption: "Yes"
 
+- name: Cilium
+  desc: Cilium - DaemonSet-based service mesh using Linux BPF.
+  link: https://cilium.io/
+  autoinject: "?"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "?"
+  multi-cluster: "Yes"
+  multi-tenant: "?"
+  prometheus: "Yes"
+  tracing: "?"
+  encryption: "Yes"
+
+- name: Citrix Service Mesh
+  desc: Service mesh based on Istio and served with Citrix ADC CPX sidecar proxies.
+  link: https://github.com/citrix/citrix-istio-adaptor
+  autoinject: "Yes"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "?"
+  multi-tenant: "?"
+  prometheus: "Yes"
+  tracing: "?"
+  encryption: "Yes"
+
 - name: Consul Connect
   desc: "Consul Connect - is a feature that enables encrpyted communication between services."
-  link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
-  autoinject: "No"
-  tcp-web: "?"
-  grpc: "?"
-  h2: "?"
-  multi-cluster: "No"
+  link: https://www.consul.io/mesh.html
+  autoinject: "Yes"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
   multi-tenant: "No"
   prometheus: "Yes"
   tracing: "Pluggable"
@@ -90,6 +129,19 @@ Open Source. From Buoyant. Written in Rust and Go."
   tracing: "None"
   encryption: "Yes"
 
+- name: Maesh
+  desc: "Maesh is a simple, yet full-featured service mesh. It is container-native and fits as your de-facto service mesh in your Kubernetes cluster."
+  link: https://github.com/containous/maesh
+  autoinject: "No"
+  h2: "Yes"
+  grpc: "Yes"
+  tcp-web: "Yes"
+  multi-cluster: "No"
+  multi-tenant: "No"
+  prometheus: "Yes"
+  tracing: "Yes"
+  encryption: "No"
+
 - name: Mesher
   desc: "Mesher is service mesh implementation based on go-chassis which can work together with ServiceComb Service center running on any infrastructure. Mesher can work with go-chassis in same service mesh control plane and it supports both linux and windows OS"
   link: https://github.com/go-mesh/mesher
@@ -129,6 +181,19 @@ Open Source. From Buoyant. Written in Rust and Go."
   tracing: "?"
   encryption: "?"
 
+- name: Yggdrasil
+  desc: "Yggdrasil is an Envoy control plane that configures listeners and clusters based off Kubernetes ingresses from multiple Kube Clusters."
+  link: https://github.com/uswitch/yggdrasil
+  autoinject: "N/A"
+  tcp-web: "?"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "?"
+  prometheus: "Yes"
+  tracing: "Pluggable"
+  encryption: "Yes"
+
 - name: Zuul
   desc: "Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more."
   link: https://github.com/Netflix/zuul
@@ -141,6 +206,19 @@ Open Source. From Buoyant. Written in Rust and Go."
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+
+- name: Vulcand
+  desc: "Programmatic load balancer and service mesh backed by etcd"
+  link: https://github.com/vulcand/vulcand
+  autoinject: "No"
+  tcp-web: "No"
+  grpc: "?"
+  h2: "Yes"
+  multi-cluster: "?"
+  multi-tenant: "?"
+  prometheus: "No"
+  tracing: "No"
+  encryption: "Yes"
 
 # - name: Vamp
 #   desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."

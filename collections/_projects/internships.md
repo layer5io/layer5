@@ -6,7 +6,10 @@ excerpt: "Layer5 Community - Internships"
 ---
 <div style="z-index:20;">
 <h3 class="black-text"> Layer5 Community Internships</h3>
-    <p>  
+    
+    <div id="gsoc-2019" class="card-content" style="position:relative;float:right;" ><iframe width="392" height="220.5" src="https://www.youtube.com/embed/cgAVKoAk0fk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+    <div>  
        <ul>
          <ol><b>What is Layer5 Community?</b></ol>
          <ol>While small, the Layer5 community represents the largest collection of service mesh projects and their maintainers in the world. We build projects to provide learning environments, deployment and operational best practices, performance benchmarks, create documentation, share networking opportunities, and more. Our shared commitment to the open source spirit pushes Layer5 projects forward. New members are always welcome.
@@ -24,7 +27,7 @@ excerpt: "Layer5 Community - Internships"
         <ul><ol> We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution. We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement, while building the size, diversity, and strength of our community.
          </ol>
      </ul>
-    </p>
+    </div>
     <p>
     <h5 class="black-text">Participating Partners</h5>
      <ul>
@@ -32,6 +35,7 @@ excerpt: "Layer5 Community - Internships"
        <ol><b>UEM Computer Science and Engineering</b> - <a href="/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf">Internship Flyer</a></ol>
     </ul>
      </p>
+
  <!-- Internships 2019 -->
       <div style="flex-grow: .25;"></div><p>&nbsp;</p>
       <div id="gsoc-2019" class="card-content" style="position:relative;float:center;vertical-align: bottom;" >
@@ -40,4 +44,5 @@ excerpt: "Layer5 Community - Internships"
                 class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
                  href="https://summerofcode.withgoogle.com/get-started/">Join Today</a> </h3>
       </div>
+      
 </div>

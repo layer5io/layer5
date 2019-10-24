@@ -3,7 +3,28 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+
+  /****** Meshery ******/
+  /* Total Perf Test Results */
+  div.performance {
+    position: relative;
+    text-align: center;
+    padding: .7em;
+    height: auto; width: auto; 
+    border-radius: 2px; 
+    box-shadow: 0 5px 5px 0 rgba(99, 99, 99, 0.5); 
+    background-color:#EEE;
+    font-style: italic;
+  }
   
+  span.testresults {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+  }
+
  /* toggle a section */
   .toggle .hidediv {
   width: 80%;
@@ -9653,12 +9674,12 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   /*shape-rendering: crispEdges;*/
 }
 
-  div.slack {
+div.slack {
     width: 55px;
     height: 55px;
     float: left;
     background-position: center top;
     
     background-repeat: no-repeat; 
-    background-image: url(/assets/images/slack.png); 
+    background-image: url(/assets/images/slack.svg); 
   }
