@@ -37,6 +37,19 @@
   tracing: "?"
   encryption: "Yes"
 
+- name: Citrix Service Mesh
+  desc: Service mesh based on Istio and served with Citrix ADC CPX sidecar proxies.
+  link: https://github.com/citrix/citrix-istio-adaptor
+  autoinject: "Yes"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "?"
+  multi-tenant: "?"
+  prometheus: "Yes"
+  tracing: "?"
+  encryption: "Yes"
+
 - name: Consul Connect
   desc: "Consul Connect - is a feature that enables encrpyted communication between services."
   link: https://www.consul.io/mesh.html
