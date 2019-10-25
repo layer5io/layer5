@@ -12,12 +12,28 @@
         <span class="card-title"><a style="color:white">{{ post.title | escape }}</a></span>
       <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div> -->
-      <div class="card-content">
+      <div class="card-content" style="margin-bottom: 0px;">
         <h4 style="text-align:center;">Performance Benchmark</h4>
         <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;">
         <i style="padding-left: 10px; padding-right: 10px;">What overhead does being on the service mesh incur?</i><br /><br /></p>
         <p>Benchmark the performance of your application across different service meshes and compare their overhead.
         </p>
+      </div>
+    </div>
+      <!-- show number of total performance tests run by Meshery users -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script>
+          $(document).ready(function() {
+              $.get("https://meshery.layer5.io/result/total", function(data, status) {
+                  var testresults = JSON.parse(data);
+                  document.getElementById("testresults").innerHTML = "&nbsp;"+testresults.total_runs+"&nbsp;&nbsp;";
+              });
+          });
+      </script>
+      <div class="card" style="z-index: 1;">
+        <div class="performance">
+          <span class="testresults" id="testresults"></span>
+          performance tests run!
       </div>
     </div>
   </div>
@@ -38,6 +54,12 @@
         <p>Learn about the functionality of different service meshes
           and visually manipulate mesh configuration.<br />
           </p>
+      </div>
+    </div>
+    <!-- add a link to the Meshery docs site -->      
+      <div class="card" style="z-index: 1;">
+        <div class="performance">
+          See the <a href = "https://meshery.layer5.io/docs">Playground documentation</a>.
       </div>
     </div>
   </div>

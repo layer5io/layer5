@@ -1,23 +1,24 @@
-      <table class="responsive-table highlight striped" style="color:var(--main-bg-color);">
-            <thead style="background-color: #a6b7be;color:#222; text-align:center; word-wrap: none;">
-                    <tr>
-              <th>Service Mesh</th>
-              <th>Auto Proxy Injection</th>
-              <th>TCP + WebSockets</th>
-              <th>HTTP, HTTP/2</th>
-              <th>gRPC</th>
-              <th>Multi-Cluster</th>
-              <th>Multi-Tenant</th>
-              <th>Prometheus Integration</th>
-              <th>Tracing Integration</th>
-              <th>Encryption</th>
+        <table id="meshes-table" class="responsive-table highlight striped" style="color:var(--main-bg-color);">
+        <thead style="background-color: #a6b7be;color:#222; text-align:center; word-wrap: none;">
+          <tr style="cursor: pointer">
+              <th onclick="sortTable('meshes-table',0)">Service Mesh</th>
+              <th onclick="sortTable('meshes-table',1)">Auto Proxy Injection</th>
+              <th onclick="sortTable('meshes-table',2)">TCP + WebSockets</th>
+              <th onclick="sortTable('meshes-table',3)">HTTP, HTTP/2</th>
+              <th onclick="sortTable('meshes-table',4)">gRPC</th>
+              <th onclick="sortTable('meshes-table',5)">Multi-Cluster</th>
+              <th onclick="sortTable('meshes-table',6)">Multi-Tenant</th>
+              <th onclick="sortTable('meshes-table',7)">Prometheus Integration</th>
+              <th onclick="sortTable('meshes-table',8)">Tracing Integration</th>
+              <th onclick="sortTable('meshes-table',9)">Encryption</th>
           </tr>
         </thead>
 
         <tbody>
-            {% for meshes in site.data.categories.meshes %}
+            {% assign meshes_by_category = site.data.categories.meshes | sort: "category" | reverse %}
+            {% for meshes in meshes_by_category %}
             <tr style="border: 1px dashed #a6b7be; text-align:center;">
-                <td><a href="{{meshes.link}}" title="{{meshes.desc}}" class="orange-text">{{meshes.name}}</a></td>
+                <td><a href="{{meshes.link}}" title="{{meshes.desc}}">{{meshes.name}}</a></td>
                 <td style="text-align:center;"> {{meshes.autoinject}} </td>
                 <td style="text-align:center;"> {{meshes.tcp-web}} </td>
                 <td style="text-align:center;"> {{meshes.h2}} </td>
@@ -29,5 +30,5 @@
                 <td style="text-align:center;"> {{meshes.encryption}} </td>
             </tr>
             {% endfor %}
-          </tbody>
+        </tbody>
         </table>
