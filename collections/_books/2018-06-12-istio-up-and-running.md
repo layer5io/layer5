@@ -30,4 +30,4 @@ The hope is that readers will:
 
 <p>Authors: <b>Lee Calcote and Zack Butcher</b>
 <br />Early Release: <b>Summer 2019</b>
-<br />Publish: <b>Octorber 2019</b></p>
+<br />Publish: <b>October 2019</b></p>
