@@ -10,24 +10,24 @@
 - name: Ribbon
   link: https://github.com/Netflix/Ribbon
   desc: "Ribbon - an open source Inter-Process Communication (remote procedure calls) library with built-in software load balancers. Ribbon is written in Java."
-- name:  
-  link: 
-  desc: 
-- name:  
-  link: 
-  desc: 
-- name:  
-  link: 
-  desc: 
-- name:  
-  link: 
-  desc: 
-- name:  
-  link: 
-  desc: 
-- name:  
-  link: 
-  desc: 
-- name:  
-  link: 
+- name: Go kit
+  link: https://gokit.io
+  desc: "Go kit - a collection of Go packages that help you build robust, reliable, maintainable microservices (or elegant monoliths)."
+- name:
+  link:
+  desc:
+- name:
+  link:
+  desc:
+- name:
+  link:
+  desc:
+- name:
+  link:
+  desc:
+- name:
+  link:
+  desc:
+- name:
+  link:
   desc:
