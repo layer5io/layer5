@@ -220,6 +220,19 @@ Open Source. From Buoyant. Written in Rust and Go."
   tracing: "No"
   encryption: "Yes"
 
+- name: Network
+  desc: "Network Service Mesh (NSM) is a novel approach solving complicated L2/L3 use cases in Kubernetes that are tricky to address with the existing Kubernetes Network Mode"
+  link: https://github.com/networkservicemesh/networkservicemesh
+  autoinject: "?"
+  tcp-web: "?"
+  grpc: "?"
+  h2: "?"
+  multi-cluster: "?"
+  multi-tenant: "?"
+  prometheus: "?"
+  tracing: "?"
+  encryption: "?"
+
 # - name: Vamp
 #   desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."
 #   link: https://vamp.io
