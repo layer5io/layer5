@@ -338,3 +338,13 @@
   ga-1-date: December 2014
   commerical: N/A
   category: Service Mesh
+
+- name: Network
+  opensource: "Yes"
+  link: https://github.com/networkservicemesh/networkservicemesh
+  governance: CNCF
+  primary-lang: "GO"
+  announce-date: "?"
+  ga-1-date: "?"
+  commerical: "?"
+  category: Service Mesh
