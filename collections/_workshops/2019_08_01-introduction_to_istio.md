@@ -8,7 +8,7 @@ By the end of this live, hands-on, online course, you’ll understand:
 <li>- How to enforce policies and rate limiting.</li>
 <li>- Istio's methods for managing telemetry, monitoring and reporting.</li>
 <li>- Approaches to canary deployments and securing communication with Istio.</li></ul>"
-img: /assets/images/workshops/introduction-to-istio.jp2
+img: /assets/images/workshops/introduction-to-istio.jpg
 style: "position:relative;height:320px;overflow:hidden;"
 eurl: https://learning.oreilly.com/live-training/courses/introduction-to-istio/0636920282938/
 labs: https://github.com/leecalcote/istio-service-mesh-workshop
