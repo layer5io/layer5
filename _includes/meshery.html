@@ -5,6 +5,22 @@
          href="https://github.com/layer5io/meshery/blob/master/README.md#running-meshery">Download</a> </h3> -->
 <!-- <h4 style="color:aliceblue;">Features</h4> -->
 <div class="row">
+    <div id="meshery" class="card-content row">
+        <div class="col s12 m12">
+          <h5 style="text-align:center;color:aliceblue;">
+          <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
+            class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
+            href="#getting-started">Run Meshery</a> 
+          </h5>
+        </div>
+        <!-- <div class="col s12 m6">
+          <h5 style="text-align:center;color:aliceblue;">
+              <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
+                class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
+                href="#smi">Service Mesh Interface</a> </h5>
+        </div> -->
+    </div>
+
   <div class="col s12 m6">
     <div class="card" style="z-index: 1;">
      <!--  <div class="card-image">
@@ -12,12 +28,28 @@
         <span class="card-title"><a style="color:white">{{ post.title | escape }}</a></span>
       <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div> -->
-      <div class="card-content">
+      <div class="card-content" style="margin-bottom: 0px;">
         <h4 style="text-align:center;">Performance Benchmark</h4>
         <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;">
         <i style="padding-left: 10px; padding-right: 10px;">What overhead does being on the service mesh incur?</i><br /><br /></p>
         <p>Benchmark the performance of your application across different service meshes and compare their overhead.
         </p>
+      </div>
+    </div>
+      <!-- show number of total performance tests run by Meshery users -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script>
+          $(document).ready(function() {
+              $.get("https://meshery.layer5.io/result/total", function(data, status) {
+                  var testresults = JSON.parse(data);
+                  document.getElementById("testresults").innerHTML = "&nbsp;"+testresults.total_runs+"&nbsp;&nbsp;";
+              });
+          });
+      </script>
+      <div class="card" style="z-index: 1;">
+        <div class="performance">
+          <span class="testresults" id="testresults"></span>
+          performance tests run!
       </div>
     </div>
   </div>
@@ -40,23 +72,13 @@
           </p>
       </div>
     </div>
+    <!-- add a link to the Meshery docs site -->      
+      <div class="card" style="z-index: 1;">
+        <div class="performance">
+          See the <a href = "https://meshery.layer5.io/docs">Playground documentation</a>.
+      </div>
+    </div>
   </div>
-</div>
-
-<div id="meshery" class="card-content row">
-    <div class="col s12 m6">
-      <h5 style="text-align:center;color:aliceblue;">
-      <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
-        class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
-        href="#getting-started">Run Meshery</a> 
-      </h5>
-    </div>
-    <div class="col s12 m6">
-      <h5 style="text-align:center;color:aliceblue;">
-          <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
-            class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
-            href="#smi">Service Mesh Interface</a> </h5>
-    </div>
 </div>
 
 <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
@@ -116,8 +138,9 @@
               <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul</a> (stable)</li>
               <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (beta)</li>
               <li><a href="https://github.com/layer5io/meshery-nsm">Meshery adapter for Network Service Mesh</a> (beta)</li> 
-              <li><a href="https://github.com/layer5io/meshery-maesh">Meshery adapter for Maesh</a>(alpha)</li>
+              <li><a href="https://github.com/layer5io/meshery-maesh">Meshery adapter for Maesh</a> (alpha)</li>
               <li><a href="https://github.com/layer5io/meshery-app-mesh">Meshery adapter for App Mesh</a> (alpha)</li>
+              <li><a href="https://github.com/layer5io/meshery-kuma">Meshery adapter for Kuma</a> (alpha)</li>
           </ol>
           </p>
       </div>
@@ -175,17 +198,13 @@
       <div id="start" class="highlight highlight-source-shell">
           <div style="width:auto; height:120px; padding:0px; position:relative;">
             <pre><code>
- sudo curl -L https://git.io/meshery -o /usr/local/bin/meshery
- sudo chmod a+x /usr/local/bin/meshery
- meshery start        
+ curl -L https://git.io/meshery | sh -
             </code></pre>
             <!-- copy to clipboard -->
             <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue z-depth-4"
               style="position: absolute; top: 0px; right: 0px; border: 0;"
               data-clipboard-target="#start"
-              data-clipboard-text="sudo curl -L https://git.io/meshery -o /usr/local/bin/meshery;
-sudo chmod a+x /usr/local/bin/meshery; 
-meshery start">
+              data-clipboard-text="curl -L https://git.io/meshery | bash -">
               <img src="/assets/images/buttons/clippy.svg" width="18px" height="18px" style="vertical-align: middle;" />
             </a>
         </div>
@@ -229,9 +248,10 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
 
 <a name="contributing"></a><a name="community"></a>
 <h3  style="color:aliceblue;">Community</h3>
-<div class="post-content row" itemprop="articleBody">
-    <a href="https://github.com/layer5io/meshery">
-      <img style="position: relative; float:right; top: -2em; right: -2em; border: 0; width: 149px; height: 149px;" 
+<div class="post-content row" itemprop="articleBody" style="min-height: 149px; padding-right:149px; padding-bottom:0px;">
+  <a href="https://github.com/layer5io/meshery">
+    <img style="position: absolute; top: 0px; right: 0px; border: 0; width: 149px; height: 149px;
+      padding-top: 0px;padding-right:0px;" 
       src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" 
       alt="Fork me on GitHub"></a>
 This project is community-built and welcomes collaboration! 
@@ -282,13 +302,13 @@ This project is community-built and welcomes collaboration!
   </div>
 </p>
 </div>
-
 <a name="benchmark-spec"></a>
 <h3 style="color:aliceblue;">Benchmark Specification</h3>
-<div class="post-content row" itemprop="articleBody" style="height:149px">
+<div class="post-content row" itemprop="articleBody" style="min-height: 149px; padding-right:149px; padding-bottom:0px;">
     <a href="https://github.com/layer5io/service-mesh-benchmark-spec">
-      <img style="position: relative; float:right; top: -2em; right: -2em; border: 0; width: 149px; height: 149px;" 
-      src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" 
+      <img style="position: absolute; top: 0px; right: 0px; border: 0; width: 149px; height: 149px;
+        padding-top: 0px;padding-right:0px;" 
+      src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png"
       alt="Fork me on GitHub"></a>
   The <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Benchmark Specification</a> is a 
   common format for describing and capturing performance benchmark tests and results. This specification is 
