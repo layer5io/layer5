@@ -1,4 +1,6 @@
-<img align="right" src="https://layer5.io/assets/images/layer5/layer5-community-logo.png" width="25%" />
+<p align="center">
+  <img align="center" src="https://layer5.io/assets/images/layer5/layer5-community-logo.png" width="45%" />
+</p>
 
 ![GitHub contributors](https://img.shields.io/github/contributors/layer5io/layer5.svg)
 ![GitHub](https://img.shields.io/github/license/layer5io/layer5.svg) 

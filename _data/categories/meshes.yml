@@ -89,8 +89,8 @@
   tracing: "Jaeger"
   encryption: "Yes"
 
-- name: Kong
-  desc: "Incrementally deploy Kong proxies to go from an API gateway to a modern mesh with reliability, security, and observability built-in."
+- name: Kuma
+  desc: "Incrementally deploy Kuma proxies to go from an API gateway to a modern mesh with reliability, security, and observability built-in."
   link: https://konghq.com/solutions/service-mesh/
   autoinject: "No"
   tcp-web: "Yes"
