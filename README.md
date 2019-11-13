@@ -1,4 +1,6 @@
-<img align="right" src="https://layer5.io/assets/images/layer5/layer5-community-logo.png" width="25%" />
+<p align="center">
+  <img align="center" src="https://layer5.io/assets/images/layer5/layer5-community-logo.png" width="45%" />
+</p>
 
 ![GitHub contributors](https://img.shields.io/github/contributors/layer5io/layer5.svg)
 ![GitHub](https://img.shields.io/github/license/layer5io/layer5.svg) 
@@ -23,7 +25,7 @@ A common format for describing and capturing performance benchmark test environm
 ## <a name="contributing">Contributing</a>
 Please do! Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-*Not sure where to start?* Grab an open issue with the [help-wanted label](../../labels/help%20wanted).
+*Not sure where to start?* Grab an open issue with the [help-wanted label](https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+).
 
 #### License
 
