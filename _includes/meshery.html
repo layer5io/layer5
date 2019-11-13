@@ -198,7 +198,10 @@
       <div id="start" class="highlight highlight-source-shell">
           <div style="width:auto; height:65px; padding:0px; position:relative;">
             <pre><code>
- curl -L https://git.io/meshery | sh -
+                brew tap layer5io/tap
+                brew install mesheryctl
+                mesheryctl start
+
             </code></pre>
             <!-- copy to clipboard -->
             <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue z-depth-4"
@@ -212,6 +215,21 @@
       
       <div class="toggle">
         
+        <div>
+            <label for="k8s-instructions"> <p>To install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Docker <a>click here</a></p></label> 
+            <input type="checkbox" checked name="one" id="k8s-instructions">
+            <div class="hidediv">
+              <div class="innerdiv">
+                
+          <p>Install Meshery on your local machine by running the following</p>
+          <div class="highlight highlight-source-shell">
+            <pre><code>
+     $ curl -L https://git.io/meshery | sh -        
+            </code></pre>
+          </div>
+              </div>
+            </div>
+        </div>
         <label for="k8s-instructions">To install on Kubernetes, <a>click here</a></label> 
         or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.
         <input type="checkbox" checked name="one" id="k8s-instructions">
