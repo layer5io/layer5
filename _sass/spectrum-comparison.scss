@@ -1,0 +1,119 @@
+/* Adapted from https://stackoverflow.com/a/49615868 */
+.spectrum-banner-arrow {
+  position: relative;
+  display: inline-block;
+  color: white;
+  height: 2em;
+  width: inherit;
+  min-width: max-content;
+  line-height: 2em;
+  font-size: 2em;
+  font-weight: 400;
+  text-align: center;
+  margin: 20px 0 20px 20px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), #039be5, rgba(255, 255, 255, 0.2));
+}
+
+.spectrum-banner-arrow::before,
+.spectrum-banner-arrow::after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-top: 1.5em solid transparent;
+  border-bottom: 1.5em solid transparent;
+  margin-top: -0.5em;
+}
+
+.spectrum-banner-arrow::before {
+  left: -1em;
+  border-right: 1em solid rgba(255, 255, 255, 0.2);
+}
+
+.spectrum-banner-arrow::after {
+  right: -1em;
+  border-left: 1em solid rgba(255, 255, 255, 0.2);
+}
+
+.spectrum-banner-arrow-blue {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), #039be5, rgba(255, 255, 255, 0.2));
+}
+
+.spectrum-grid-arrow {
+  position: relative;
+  display: inline-block;
+  top: -20px;
+  color: white;
+  height: 3px;
+  width: calc(100% - 2em);
+  font-size: 5px;
+  text-align: center;
+  margin-left: 1em;
+  background: var(--main-dark-blue);
+}
+
+.spectrum-grid-arrow::before,
+.spectrum-grid-arrow::after {
+  content: '';
+  position: absolute;
+  border-top: 1em solid transparent;
+  border-bottom: 1em solid transparent;
+}
+
+.spectrum-grid-arrow::before {
+  top: -3px;
+  left: -10px;
+  border-right: 10px solid var(--main-dark-blue);
+}
+
+.spectrum-grid-arrow::after {
+  top: -3px;
+  right: -10px;
+  border-left: 10px solid var(--main-dark-blue);
+}
+
+
+.spectrum-grid {
+  height: auto;
+  width: inherit;
+  min-width: 50vw;
+  display: grid;
+  grid-gap: 2px;
+  grid-template: repeat(4, 1fr) / repeat(10, 1fr);
+  grid-auto-flow: column dense;
+}
+
+.spectrum-grid > img {
+  width: 100%; object-fit: contain;
+}
+
+.spectrum-grid-header {
+  color: var(--main-dark-blue);
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 0 5px 0 5px;
+}
+
+.spectrum-card-content {
+  border-radius: 15px;
+  height: max-content;
+  padding-bottom: 1em;
+}
+
+.spectrum-card-image {
+  border-radius: 12px;
+  height: max-content;
+  padding-bottom: 1em;
+}
+
+.spectrum-grid-cell {
+  grid-column-start: var(--score);
+}
+
+.spectrum-card-centered {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
