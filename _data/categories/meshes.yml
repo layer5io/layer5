@@ -233,7 +233,7 @@ Open Source. From Buoyant. Written in Rust and Go."
   tracing: "No"
   encryption: "Yes"
 
-- name: Network
+- name: Network Service Mesh
   desc: "Network Service Mesh (NSM) is a novel approach solving complicated L2/L3 use cases in Kubernetes that are tricky to address with the existing Kubernetes Network Mode"
   link: https://github.com/networkservicemesh/networkservicemesh
   autoinject: "?"
