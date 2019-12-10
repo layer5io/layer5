@@ -1,64 +1,57 @@
 BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
 VERSION:2.0
-PRODID:-//Apple Inc.//Mac OS X 10.14.2//EN
 CALSCALE:GREGORIAN
+METHOD:REQUEST
 BEGIN:VTIMEZONE
 TZID:America/Chicago
+X-LIC-LOCATION:America/Chicago
 BEGIN:DAYLIGHT
 TZOFFSETFROM:-0600
-RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
-DTSTART:20070311T020000
-TZNAME:CDT
 TZOFFSETTO:-0500
+TZNAME:CDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
 END:DAYLIGHT
 BEGIN:STANDARD
 TZOFFSETFROM:-0500
-RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
-DTSTART:20071104T020000
-TZNAME:CST
 TZOFFSETTO:-0600
+TZNAME:CST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-DTEND;TZID=America/Chicago:20190201T150000
-TRANSP:OPAQUE
-ORGANIZER;CN="Lee Calcote":mailto:lee@layer5.io
-UID:4un8cv80qcp94sog7nqautphuv@google.com
-DTSTAMP:20190131T185301Z
-LOCATION:Hangouts
-X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
-DESCRIPTION:Community meeting minutes - https://goo.gl/qKR2R9
- \n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
- ~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nPlease do not edit this section of 
- the description.\n\nThis event has a Google Hangouts video call.\nJoin: 
- https://hangouts.google.com/hangouts/_/calendar/bGVlY2FsY290ZUBnbWFpbC5j
- b20.4un8cv80qcp94sog7nqautphuv?hs=121\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~
- :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
-X-GOOGLE-HANGOUT:https://hangouts.google.com/hangouts/_/calendar/bGVlY2F
- sY290ZUBnbWFpbC5jb20.4un8cv80qcp94sog7nqautphuv
-STATUS:CONFIRMED
-SEQUENCE:0
-SUMMARY:Meshery Community Meeting
-LAST-MODIFIED:20190131T185301Z
-DTSTART;TZID=America/Chicago:20190201T140000
-CREATED:20190131T185301Z
+DTSTART;TZID=America/Chicago:20190712T100000
+DTEND;TZID=America/Chicago:20190712T110000
 RRULE:FREQ=WEEKLY;BYDAY=FR
-BEGIN:VALARM
-X-WR-ALARMUID:9043483E-AFBE-4D6F-ABAB-70E24C78B0BD
-UID:9043483E-AFBE-4D6F-ABAB-70E24C78B0BD
-TRIGGER:-PT15M
-ATTACH;VALUE=URI:Basso
-X-APPLE-LOCAL-DEFAULT-ALARM:TRUE
-ACTION:AUDIO
-X-APPLE-DEFAULT-ALARM:TRUE
-END:VALARM
-BEGIN:VALARM
-X-WR-ALARMUID:74BDB325-672F-4A31-B6FD-8D8802BAB896
-UID:74BDB325-672F-4A31-B6FD-8D8802BAB896
-TRIGGER:-PT15M
-X-APPLE-DEFAULT-ALARM:TRUE
-ATTACH;VALUE=URI:Basso
-ACTION:AUDIO
-END:VALARM
+DTSTAMP:20190712T050400Z
+ORGANIZER;CN=Layer5 Community Calendar:mailto:layer5.io_eh2aa9dpf1g40elvoc7
+ 62jnphs@group.calendar.google.com
+UID:3scgt6kq226lrclm4akm6r3f4k@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=Meshery Community;X-NUM-GUESTS=0:mailto:community@meshery.dev
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=leecalcote@gmail.com;X-NUM-GUESTS=0:mailto:leecalcote@gmail.com
+X-MICROSOFT-CDO-OWNERAPPTID:-646566210
+CREATED:20190712T050351Z
+DESCRIPTION:\nCommunity Call - https://bit.ly/2XXPm2S\n\n\nMeeting Minutes 
+ - https://bit.ly/2It7IA4\n\nCommunity Drive - https://bit.ly/2Y7njyd\n\nCom
+ munity Calendar - https://bit.ly/2SbrRhe\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-\nPlease do not edi
+ t this section of the description.\n\nThis event has a video call.\nJoin: h
+ ttps://meet.google.com/mnb-nxkt-gvt\n+1 614-948-6245 PIN: 413917300#\n\nVie
+ w your event at https://www.google.com/calendar/event?action=VIEW&eid=M3NjZ
+ 3Q2a3EyMjZscmNsbTRha202cjNmNGsgbGVlY2FsY290ZUBt&tok=NjIjbGF5ZXI1LmlvX2VoMmF
+ hOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20yZmU2Yjk4ZD
+ g0YmNjMDRkYzQxMTEyYTBhMmU2ZWYzMmVmYTQ0ZTQ1&ctz=America%2FChicago&hl=en&es=1
+ .\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:
+ ~:~:~:~::~:~::-
+LAST-MODIFIED:20190712T050359Z
+LOCATION:Google Meet
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Meshery Community Meeting
+TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR

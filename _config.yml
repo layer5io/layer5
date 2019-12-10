@@ -1,8 +1,8 @@
 title: Layer5
 author: Lee Calcote
 email: community@layer5.io
-name:  Layer5.io
-description: A service mesh community
+name:  Layer5
+description: the service mesh community
 url: "https://layer5.io"
 baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
 
@@ -22,9 +22,7 @@ medium: https://layer5.io
 slack: http://slack.layer5.io/
 blog: https://layer5.io
 docker: https://hub.docker.com/u/layer5/
-youtube: https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0
-
-
+youtube: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1
 twitter:
   card: summary
   username: layer5
@@ -46,6 +44,7 @@ plugins:
   - jekyll-minifier
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 collections_dir: collections
 collections:
@@ -54,6 +53,10 @@ collections:
   books:
     output: true
     permalink: /books/:title
+  posts:
+    output: true
+    permalink: /posts/:title
+
   people:
     output: true
   projects:
@@ -65,7 +68,6 @@ collections:
   workshops:
     output: true
     permalink: /workshops/:title
-
 defaults:
   - scope:
       type: pages
@@ -87,6 +89,7 @@ defaults:
     # https://github.com/VincentGarreau/particles.js
     # https://cssgradient.io
     # https://coolbackgrounds.io
+    # https://jekyllcodex.org/without-plugin/lightbox/
 
 ## A message to have visitors acknowledge use of cookies (not currently used)
 # cookies_banner: none # The value "show" will show the cookies banner, the value "none" will hide the banner.

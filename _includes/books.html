@@ -12,12 +12,14 @@
         href="{{ book.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div>
       <div class="card-content">
-        <p>{{book.excerpt}}</p>
+        <h4>{{book.title}}</h4>{{book.brief}}
       </div>
     </div>
   </div>
+  
   {% endif %}
 
   {% endfor %}
 </div>
+<!--{{book.excerpt}} -->
 <!-- waves-light light -->

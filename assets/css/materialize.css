@@ -3,6 +3,66 @@
  * Copyright 2014-2017 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+
+  /****** Meshery ******/
+  /* Total Perf Test Results */
+  div.performance {
+    position: relative;
+    text-align: center;
+    padding: .7em;
+    height: auto; width: auto; 
+    border-radius: 2px; 
+    box-shadow: 0 5px 5px 0 rgba(99, 99, 99, 0.5); 
+    background-color:#EEE;
+    font-style: italic;
+  }
+  
+  span.testresults {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+  }
+
+ /* toggle a section */
+  .toggle .hidediv {
+  width: 80%;
+  display: table;
+  height: 150px; /* any arbitrary height but best at the minimum initial height you would want. */
+  overflow: hidden;
+  background: #EEE;
+  margin: 0px auto;
+  transition-timing-function: linear;
+  transition: cubic-bezier(0, 1, 0, 1);
+
+}
+.innerdiv {
+  padding: 10px;
+}
+.toggle input[type="checkbox"]:checked + .hidediv {
+  height: 0;
+  opacity: 0;
+  display: block;
+}
+.toggle label {
+  font-family: sans-serif;
+  font-size: 1em;
+  color: #000;
+}
+.thumbnail {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
+ul {
+  margin-left:15px;
+}
+ ul ul {
+  margin-left:15px;
+}
+li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -1685,6 +1745,9 @@
   background-color: var(--main-dark-grey) !important;
   color: var(--main-dark-grey) !important;
 }
+.l5-dark-grey-text {
+  color: var(--main-dark-grey) !important;
+}
 
 .l5-grey {
   background-color: var(--main-grey) !important;
@@ -2189,6 +2252,8 @@ a:hover none {
  *    without disabling user zoom.
  */
 html {
+  min-height: 100%;
+
   font-family: sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
@@ -2197,9 +2262,7 @@ html {
   /* 2 */
 }
 
-/**
- * Remove default margin.
- */
+
  :root {
   --main-grey: #647881;
   --main-light-blue: #62ACCD;
@@ -2212,6 +2275,9 @@ html {
   --main-deep-red: #FF2525;
 }
 
+/**
+ * Remove default margin.
+ */
 body {
   margin: 0;
   background: #fff;
@@ -2230,11 +2296,20 @@ background: linear-gradient(to right, #f5af19, #f12711); W3C, IE 10+/ Edge, Fire
   background: linear-gradient(162deg, 
   rgba(100,120,129,1) 0%, 
   rgba(159,191,205,1) 25%, 
-  rgba(60,73,78,1) 80%);  */
+  rgba(60,73,78,1) 80%); 
 
   /* background-color: var(--main-grey); */
   a: var(--main-light-blue);
 }
+.post-content {
+  background-color:#FFFFFF;
+  padding:2em;
+   }
+
+  .site-tagline {
+    color:#cfd8dc; 
+    text-align: left;
+  }
 
 .flare {
 
@@ -2914,6 +2989,39 @@ ul.staggered-list li {
   list-style-type: none;
 
 }
+.comparison {
+  float:left; display: inline; 
+  background-color: white; 
+  border-right-width: 1px; border-right-style: dashed;
+  border-right-color: var(--main-dark-grey);
+} 
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color:var(--main-dark-grey);
+  color:aliceblue ;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%; 
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 /*********************
   Media Query Classes
 **********************/
@@ -2957,6 +3065,7 @@ ul.staggered-list li {
   }
   .site-tagline {
     font-size: 1.25em;
+    margin-top: .9em;
   }
 }
 
@@ -2973,7 +3082,8 @@ ul.staggered-list li {
 
   }
   .site-tagline {
-    font-size: 1.1em;
+    font-size: 2em;
+    margin-top: 1em;
   }
 }
 
@@ -4678,31 +4788,31 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h1 {
-  font-size: 4.2rem;
+  font-size: 3.5rem;
   line-height: 110%;
   margin: 2.1rem 0 1.68rem 0;
 }
 
 h2 {
-  font-size: 3.56rem;
+  font-size: 2.4rem;
   line-height: 110%;
   margin: 1.78rem 0 1.424rem 0;
 }
 
 h3 {
-  font-size: 2.92rem;
+  font-size: 2rem;
   line-height: 110%;
   margin: 1.46rem 0 1.168rem 0;
 }
 
 h4 {
-  font-size: 2.28rem;
+  font-size: 1.7rem;
   line-height: 110%;
   margin: 1.14rem 0 0.912rem 0;
 }
 
 h5 {
-  font-size: 1.64rem;
+  font-size: 1.3rem;
   line-height: 110%;
   margin: 0.82rem 0 0.656rem 0;
   color: #ffff
@@ -9603,12 +9713,12 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   /*shape-rendering: crispEdges;*/
 }
 
-  div.slack {
+div.slack {
     width: 55px;
     height: 55px;
     float: left;
     background-position: center top;
     
     background-repeat: no-repeat; 
-    background-image: url(/assets/images/slack.png); 
+    background-image: url(/assets/images/slack.svg); 
   }

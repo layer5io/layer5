@@ -1,29 +1,48 @@
+<script type="text/javascript" src="{{site.baseurl}}/assets/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="{{site.baseurl}}/assets/js/materialize.min.js"></script>
 
+<script src="{{site.baseurl}}/assets/js/init.js"></script>
+{% include lightbox.html %}
 </body>
 
 <footer class="page-footer" id="footer">
     <div class="container">
       <div class="row">
-        <div class="col l4 offset-l2 s6">
+        <div class="col l3 ">
           <span class="white-text" style="font-weight: bold;font-size:1.3em;">Resources</span>
           <ul>
             <li><a class="white-text" href="/landscape">Service Mesh Comparison</a></li>
             <li><a class="white-text" href="/landscape#tools">Service Mesh Tools</a></li>
-            <li><a class="white-text" href="/#blog">Service Mesh Books</a></li>
-            <li><a class="white-text" href="/#workshop">Service Mesh Workshop</a></li>
+            <li><a class="white-text" href="/books/">Service Mesh Books</a></li>
+            <li><a class="white-text" href="/workshops/">Service Mesh Workshops</a></li>
           </ul>
         </div>
 
+        <div class="col l3">
+          <span class="white-text" style="font-weight: bold;font-size:1.3em;">Community</span>
+          <ul>
+            <li><a class="white-text" href="/blog">Blog</a></li>
+            <li><a class="white-text" href="/internships">Internships</a></li>
+            <li><a class="white-text" href="/gsoc/2019">Partners</a></li>
+            <li><a class="white-text " href="mailto:community@layer5.io">Contact</a></li>
 
-        <div class="col l4 offset-l2 s6" >
-          <span class="white-text" style="font-weight: bold;font-size:1.3em;">Contact</span>
-          {% include partials/hori-social.html %}
-          <a class="white-text" href="/subscribe">Subscribe to mailing list</a>
+          </ul>
         </div>
-        
-      
-     
+
+        <div class="col l3" >
+          <span class="white-text" style="font-weight: bold;font-size:1.3em;">Projects</span>
+          <ul>
+              <li><a class="white-text" href="/meshery">Meshery</a></li>
+              <li><a class="white-text" href="/landscape">Service Mesh Landscape</a></li>
+              <li><a class="white-text" href="/blog/a-standard-interface-for-service-meshes">Service Mesh Interface</a></li>
+          </ul>
+        </div>
+        <div class="col l3">
+            <div class="white-text" style="font-weight: bold;font-size:1.3em;">Get Involved!</div>
+            {% include partials/vert-social.html %}
+          </div>       
       </div>
+
     </div>
     <div class="footer-copyright grey-text text-lighten-1">
       <div class="row">
@@ -43,7 +62,6 @@
         </div>
       </div>
     </div>
-
 
   </footer>
   {% if site.tag_manager_id and jekyll.environment == 'production' %}

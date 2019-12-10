@@ -29,7 +29,7 @@
 
 .sidebar-nav {
   position: fixed;
-  top: 20%;
+  top: 7.5%;
   width: 300px;
   list-style: none;
   margin: 0;
@@ -37,10 +37,10 @@
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
   height: 100%;
-  height: calc(100% + 60px);
+  // height: calc(100% + 60px);
   height: -moz-calc(100%);
   padding-bottom: 60px;
-  #background-color: #111;
+  // background-color: #111;
   z-index: 999;
   overflow-y: auto;
   will-change: transform;

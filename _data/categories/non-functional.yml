@@ -8,24 +8,44 @@
   commerical: AWS
   category: Service Mesh
 
-- name: AspenMesh
-  opensource: "No"
+- name: Aspen Mesh
+  opensource: "Partial"
   link: https://aspenmesh.io/
   governance: F5
   primary-lang: Go
   announce-date: November 2017
   ga-1-date: 2019
-  commerical: "?"
+  commerical: Aspen Mesh
+  category: Service Mesh
+
+- name: Cilium
+  opensource: "Yes"
+  link: https://cilium.io/
+  governance: Isovalent
+  primary-lang: Go
+  announce-date: March 2017
+  ga-1-date: November 2017
+  commerical: "Isovalent"
   category: Service Mesh
 
 - name: Consul Connect
   opensource: "Yes"
-  link: https://www.hashicorp.com/blog/smart-networking-with-consul-and-service-meshes
+  link: https://www.consul.io/mesh.html
   governance: HashiCorp
   primary-lang: Go
   announce-date: June 2016
   ga-1-date: June 2018
   commerical: Consul Enterprise (HashiCorp)
+  category: Service Mesh
+
+- name: Grey Matter
+  opensource: "No"
+  link: http://deciphernow.com/grey-matter
+  governance: Decipher Technology Studios
+  primary-lang: Go
+  announce-date: November 2017
+  ga-1-date: February 2019
+  commerical: Grey Matter
   category: Service Mesh
 
 - name: Istio
@@ -56,6 +76,26 @@
   announce-date: December 2017
   ga-1-date: Sept 2018
   commerical: Buoyant
+  category: Service Mesh
+
+- name: Maesh
+  opensource: "Yes"
+  link: https://github.com/containous/maesh
+  governance: Containous
+  primary-lang: Go
+  announce-date: September 2019
+  ga-1-date: "?"
+  commerical: Containous
+  category: Service Mesh
+
+- name: Maistra
+  opensource: "Yes"
+  link: https://www.maistra.io
+  governance: Red Hat
+  primary-lang: Go
+  announce-date: May 2018
+  ga-1-date: September 2019
+  commerical: OpenShift Service Mesh (Red Hat)
   category: Service Mesh
 
 - name: Mesher
@@ -98,6 +138,26 @@
   commerical: Ant Financial
   category: Service Mesh
 
+- name: Yggdrasil
+  opensource: "Yes"
+  link: https://github.com/uswitch/yggdrasil
+  governance: uSwitch
+  primary-lang: Go
+  announce-date: August 2018
+  ga-1-date: "?"
+  commerical: "N/A"
+  category: Service Mesh
+
+- name: Citrix ADC CPX
+  opensource: "No"
+  link: https://www.citrix.com/en-in/networking/microservices.html
+  governance: Citrix
+  primary-lang: "C"
+  announce-date: "January 2016"
+  ga-1-date: "July 2016"
+  commerical: "Citrix Systems, Inc."
+  category: Service Proxy
+
 - name: Envoy
   opensource: "Yes"
   link: https://www.envoyproxy.io/
@@ -127,6 +187,16 @@
   ga-1-date: "?"
   commerical: Ant Financial
   category: Service Proxy
+
+- name: Citrix ADC
+  opensource: "No"
+  link: https://www.citrix.com/en-in/products/citrix-adc/
+  governance: Citrix
+  primary-lang: "C"
+  announce-date: "January 2016"
+  ga-1-date: "July 2016"
+  commerical: "Citrix Systems, Inc."
+  category: API Gateway
 
 - name: Contour
   opensource: "Yes"
@@ -158,6 +228,17 @@
   commerical: Kong Inc.
   category: API Gateway
 
+- name: Gloo
+  opensource: "Yes"
+  link: https://gloo.solo.io/
+  governance: Solo.io Inc.
+  primary-lang: Go
+  announce-date: "?"
+  ga-1-date: "?"
+  desc: An Envoy-powered API Gateway
+  commerical: Solo.io Inc.
+  category: API Gateway
+
 - name: OpenResty
   opensource: "Yes"
   link: https://openresty.org/en/
@@ -168,14 +249,44 @@
   commerical: OpenResy Inc.
   category: API Gateway
 
+- name: 3scale
+  opensource: "Yes"
+  link: https://github.com/3scale/APIcast
+  governance: Red Hat
+  primary-lang: Lua
+  announce-date: "December 2014(?)"
+  ga-1-date: "December 2014(?)"
+  commerical: Red Hat
+  category: API Gateway
+
 - name: HAProxy
   opensource: "Yes"
   link: http://www.haproxy.org/
   governance: HAProxy
   primary-lang: C
-  announce-date: "?"
-  ga-1-date: "?"
+  announce-date: "December 2001"
+  ga-1-date: "December 2001"
   commerical: HAProxy Technologies
+  category: Service Proxy
+
+- name: Contour
+  opensource: "Yes"
+  link: https://github.com/heptio/contour
+  governance: Heptio
+  primary-lang: Go
+  announce-date: October 2017
+  ga-1-date: October 2017
+  commerical: Heptio
+  category: API Gateway
+
+- name: Citrix ADC
+  opensource: "No"
+  link: https://www.citrix.com/en-in/products/citrix-adc/
+  governance: Citrix
+  primary-lang: "C"
+  announce-date: "January 2001"
+  ga-1-date: "July 2001"
+  commerical: "Citrix Systems, Inc."
   category: Load-Balancers
 
 - name: Kong
@@ -228,13 +339,22 @@
   commerical: "?"
   category: Load-Balancers
 
-- name: NetScaler CPX
-  opensource: "No"
-  link: https://www.citrix.com/products/citrix-adc/cpx-express.html
-  governance: Citrix
-  primary-lang: "?"
+- name: Vulcand
+  opensource: "Yes"
+  link: https://github.com/vulcand/vulcand
+  governance: Mailgun Inc
+  primary-lang: Go
+  announce-date: December 2014
+  ga-1-date: December 2014
+  commerical: N/A
+  category: Service Mesh
+
+- name: Network
+  opensource: "Yes"
+  link: https://github.com/networkservicemesh/networkservicemesh
+  governance: CNCF
+  primary-lang: "GO"
   announce-date: "?"
   ga-1-date: "?"
   commerical: "?"
-  category: Load-Balancers
-
+  category: Service Mesh
