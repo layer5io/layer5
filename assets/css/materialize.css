@@ -13,8 +13,11 @@
     height: auto; width: auto; 
     border-radius: 2px; 
     box-shadow: 0 5px 5px 0 rgba(99, 99, 99, 0.5); 
-    background-color:#EEE;
+    /* background-color:#EEE; */
     font-style: italic;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #DDD;
   }
   
   span.testresults {
@@ -22,7 +25,7 @@
     font-weight: bold;
     text-decoration-line: underline;
     text-decoration-style: wavy;
-    text-decoration-color: red;
+    text-decoration-color: var(--main-light-blue);
   }
 
  /* toggle a section */
