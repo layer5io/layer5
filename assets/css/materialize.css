@@ -9687,9 +9687,8 @@ div.slack {
   display: flex;
   flex-wrap: nowrap;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 10%;
+  margin: auto;
 }
 
 .comm ul li {
@@ -9697,8 +9696,8 @@ div.slack {
 }
 
 .comm ul li a {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background-color: rgb(255, 255, 255);
   text-align: center;
   line-height: 120px;
@@ -9716,7 +9715,7 @@ div.slack {
   position: relative;
   color: #262626;
   transition: .5s;
-  z-index: 3;
+  z-index: 1;
 }
 
 .comm ul li a:hover .icon {
