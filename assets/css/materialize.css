@@ -2062,7 +2062,7 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   background-color: #607d8b !important;
 }
 
-.blue-grey-text {
+.--main-light-blue-grey-text {
   color: #607d8b !important;
 }
 
@@ -2266,7 +2266,7 @@ html {
  :root {
   --main-grey: #647881;
   --main-light-blue: #62ACCD;
-  --main-dark-grey: #3C494E;
+  --main-dark-grey: #3c494f;
   --main-dark-blue: #477E96;
   --main-light-grey: #9FBFCD;
 
@@ -2280,7 +2280,7 @@ html {
  */
 body {
   margin: 0;
-  background: #fff;
+  
   /* Flare 
   background: #f12711;  /* fallback for old browsers */
 /* background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 
@@ -2292,11 +2292,11 @@ background: linear-gradient(to right, #f5af19, #f12711); W3C, IE 10+/ Edge, Fire
   */
 
   /* Gray */
-  /* background: rgb(60,73,78);
-  background: linear-gradient(162deg, 
-  rgba(100,120,129,1) 0%, 
-  rgba(159,191,205,1) 25%, 
-  rgba(60,73,78,1) 80%); 
+  /* background: rgb(60,73,79); */
+  background: linear-gradient(102deg, 
+  rgba(60,73,79,1) 10%, 
+  rgba(159,191,205,1) 35%, 
+  rgba(60,73,79,1) 80%); 
 
   /* background-color: var(--main-grey); */
   a: var(--main-light-blue);
@@ -2311,12 +2311,20 @@ background: linear-gradient(to right, #f5af19, #f12711); W3C, IE 10+/ Edge, Fire
     text-align: left;
   }
 
+.darkgreenflare {
+
+    /* Flare 
+  background: #fff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00b39f, #231f20);  /* Chrome 10-25, Safari 5.1-6  */
+  background: linear-gradient(to right, #00b39f, #231f20); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
 .flare {
 
-    /* Flare */
-  background: #f12711;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6  */
-  background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* Flare */
+background: #f12711;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6  */
+background: linear-gradient(to right, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .white-bg {
@@ -3161,7 +3169,7 @@ ul.staggered-list li {
 .page-footer {
   padding-top: 10px;
   color: #fff;
-  background-color: #7D9098;
+  /* background-color: #7D9098; */
   width: 100%;
   
 }
