@@ -9733,3 +9733,62 @@ div.slack {
     background-repeat: no-repeat; 
     background-image: url(/assets/images/slack.svg); 
   }
+.comm ul{
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  bottom: 10%;
+  margin: auto;
+}
+
+.comm ul li {
+  list-style: none;
+}
+
+.comm ul li a {
+  width: 80px;
+  height: 80px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 120px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgb(95, 165, 192);
+  z-index: 1;
+}
+
+.comm ul li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 1;
+}
+
+.comm ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.comm ul li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+.comm ul li a:hover:before {
+  top: 0;
+}
+
+.comm ul li:nth-child(1) a:before{
+  background:  rgb(95, 165, 192);
+}
