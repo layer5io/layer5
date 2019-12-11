@@ -142,6 +142,19 @@ Open Source. From Buoyant. Written in Rust and Go."
   tracing: "Yes"
   encryption: "No"
 
+- name: Maistra
+  desc: "Maistra is a security focused distribution of Istio designed to run on top of OpenShift."
+  link: https://www.maistra.io
+  autoinject: "Yes"
+  h2: "Yes"
+  grpc: "Yes"
+  tcp-web: "Yes"
+  multi-cluster: "No"
+  multi-tenant: "Yes"
+  prometheus: "Yes"
+  tracing: "Jaeger/Grafana"
+  encryption: "Yes"
+
 - name: Mesher
   desc: "Mesher is service mesh implementation based on go-chassis which can work together with ServiceComb Service center running on any infrastructure. Mesher can work with go-chassis in same service mesh control plane and it supports both linux and windows OS"
   link: https://github.com/go-mesh/mesher
@@ -154,6 +167,18 @@ Open Source. From Buoyant. Written in Rust and Go."
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+
+- name: Octarine
+  desc: "Octarine is a security platform for k8s workloads that combines admission control with runtime network security leveraging an Envoy-based service mesh"
+  link: https://www.octarinesec.com/
+  h2: "Yes"
+  grpc: "Yes"
+  tcp-web: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "No"
+  tracing: "No"
+  encryption: "Yes"
 
 - name: Rotor
   link: https://github.com/turbinelabs/
@@ -220,7 +245,7 @@ Open Source. From Buoyant. Written in Rust and Go."
   tracing: "No"
   encryption: "Yes"
 
-- name: Network
+- name: Network Service Mesh
   desc: "Network Service Mesh (NSM) is a novel approach solving complicated L2/L3 use cases in Kubernetes that are tricky to address with the existing Kubernetes Network Mode"
   link: https://github.com/networkservicemesh/networkservicemesh
   autoinject: "?"
