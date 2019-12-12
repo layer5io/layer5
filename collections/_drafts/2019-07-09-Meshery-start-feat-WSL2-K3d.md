@@ -162,6 +162,7 @@ And of course, Meshery which integrates and simplifies the installation and benc
 
 ---
 #### Other posts in this series
-- Bonus 1: Meshery configuration
-- Bonus 2: Adding a Service Mesh to the mix
-- Bonus 3: A CNAB Bundle to install them all
+
+- Meshery configuration
+- Adding a Service Mesh to the mix
+- A CNAB Bundle to install them all
