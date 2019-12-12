@@ -57,7 +57,8 @@ collections:
   posts:
     output: true
     permalink: /posts/:title
-
+  pages:
+    output: true
   people:
     output: true
   projects:
