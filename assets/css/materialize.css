@@ -2358,6 +2358,13 @@ summary {
 
 }
 
+p .indent {
+  text-indent: 5px;
+}
+p .heading {
+  line-height: -5px;
+}
+
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
@@ -4833,6 +4840,7 @@ h6 {
   font-size: 1rem;
   line-height: 110%;
   margin: 0.5rem 0 0.4rem 0;
+  font-weight: 500;
 }
 
 em {
@@ -5294,6 +5302,10 @@ small {
 }
 
 .toast.rounded {
+  border-radius: 24px;
+}
+
+.rounded {
   border-radius: 24px;
 }
 
