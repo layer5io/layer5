@@ -1727,7 +1727,7 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
 .l5-light-blue {
   background-color: var(--main-light-blue) !important;
 }
---main-dark-teal: #0063AE;
+
 .l5-light-blue-text {
   color: var(--main-light-blue) !important;
 }
