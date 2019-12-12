@@ -1,10 +1,10 @@
 ---
-layout: project
+layout: page
 title:  "Layer5 Internships"
-permalink: /internships
+permalink: /careers
 redirects:
 - /careers
 excerpt: "Layer5 Community - Internships"
 ---
 
-{% include careers/internships.html %}
+{% include careers/careers.html %}
