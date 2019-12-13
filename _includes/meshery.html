@@ -1,5 +1,5 @@
-<h2 class="post-meta" style="color:#cfd8dc;font-size: 1.5em;text-align:center;"><i>
-    a multi-service mesh management plane</i></h2>
+<h2 style="color:#fff;font-size:2vw;text-align:center;padding-top:0px;margin-top:0px;"><i>
+    the multi-service mesh management plane</i></h2>
     <!-- <h3 style="text-align:center;color:aliceblue;">
       <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
          href="https://github.com/layer5io/meshery/blob/master/README.md#running-meshery">Download</a> </h3> -->
@@ -20,7 +20,6 @@
                 href="#smi">Service Mesh Interface</a> </h5>
         </div> -->
     </div>
-
   <div class="col s12 m6">
     <div class="card" style="z-index: 1;">
      <!--  <div class="card-image">
@@ -62,7 +61,7 @@
       <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div>-->
       <div class="card-content">
-        <h4 style="text-align:center;">Playground</h4>
+        <h4 style="text-align:center;">Multi-Mesh Manager</h4>
         <p style="text-align:center;">
           <span style="color: gray; text-transform: uppercase;">
             <i>Which service mesh should I use and how do I get started?</i>
@@ -75,7 +74,7 @@
     <!-- add a link to the Meshery docs site -->      
       <div class="card" style="z-index: 1;">
         <div class="performance">
-          See the <a href = "https://meshery.layer5.io/docs">Playground documentation</a>.
+          See the <a href = "https://meshery.layer5.io/docs">Meshery documentation</a>.
       </div>
     </div>
   </div>
@@ -113,12 +112,8 @@
 
   <!-- </div> -->
 </div>
-  <a name="architecture"></a>
-  <!-- <h4 style="color:aliceblue;">Architecture</h4> -->
+
   <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
-
-  <!-- <h3 style="color:#111111;clear: both;text-align: center;">Architecture</h3> -->
-
       <div class="col s12 m6">
           <h3 style="color:#111111;text-align: center;">Multi-Mesh Management</h3>
           <p style="margin-left:10px; padding-right:1em;">
@@ -170,12 +165,15 @@
   
 
 </div>
+<a name="architecture"></a>
+    <h3 style="color:aliceblue;">Architecture</h3>
 <div class="post-content row">
-    <div class="iframe-container">
+  <img src="/assets/images/meshery/meshery-architecture.svg" />
+    <!-- <div class="iframe-container">
         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSj6eYr6AgZ4mBgOL_Gv9T4WyLBFkPv49asNtdw1_Gn_xCsk37QRhOjdBRB-3Jp1ehneFmm2dpgFie-/embed?start=false&loop=false&delayms=3000" 
               class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
               allowtransparency="true"></iframe>
-      </div> 
+      </div>  -->
 </div>
 
 <a name="demo"></a>
@@ -187,6 +185,8 @@
   </div>
   <div class="col s12 m3">
     <ul>
+        <li style="list-style-type: circle;"><a href="https://networkservicemesh.io/events/nsmcon2019/">Network Service Mesh Con 2019</a></li>
+        <li style="list-style-type: circle;"><a href="https://www.lakeside-hackfest.com/speakers/#lee-calcote">Lakeside HackFest 2019</a></li>
       <li style="list-style-type: circle;"><a href="https://servicemeshday.com/schedule/">Service Mesh Day 2019</a></li>
       <li style="list-style-type: circle;"> <a href="https://innotechsanantonio2019.sched.com/event/Lmlb/the-enterprise-path-to-service-mesh-architectures?iframe=no&w=100%&sidebar=yes&bg=no">Innotech San Antonio 2019</a></li>
       <li style="list-style-type: circle;"> <a href="https://tmt.knect365.com/container-world/speakers/lee-calcote">Container World 2019</a></li>
@@ -254,25 +254,67 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
 
 <a name="contributing"></a><a name="community"></a>
 <h3  style="color:aliceblue;">Community</h3>
-<div class="post-content row" itemprop="articleBody" style="min-height: 149px; padding-right:149px; padding-bottom:0px;">
+<div class="post-content row" itemprop="articleBody" style="min-height: 155px; padding-right:149px; padding-bottom:0px;">
+  <div>This project is community-built and welcomes collaboration!</div>
+
   <a href="https://github.com/layer5io/meshery">
     <img style="position: absolute; top: 0px; right: 0px; border: 0; width: 149px; height: 149px;
       padding-top: 0px;padding-right:0px;" 
       src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" 
       alt="Fork me on GitHub"></a>
-This project is community-built and welcomes collaboration! 
-<p>
+
+  <div class="comm">
   <ul>
-    <li style="list-style-type: circle;"><em><strong>Join</strong></em> <a href="https://docs.google.com/document/d/1c07UO9dS7_tFD-ClCWHIrEzRnzUJoFQ10EzfJTpS7FY/edit?usp=sharing">weekly community meeting</a> on <a href="/assets/projects/meshery/Meshery-Community-Meeting.ics">Fridays from 10am to 11am Central</a>.</li>
-    <ul>
-        <li><em><strong>Watch</strong></em> community <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA">meeting recordings</a> and <i><b>subscribe</b></i> to the <a href="https://bit.ly/2SbrRhe">community calendar</a>.</li>
-    </ul>
-    <li style="list-style-type: circle;"><em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">community drive</a>.</li>
-      <ul>
-        <li><em><strong>Comment</strong></em> on the <a href="https://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3-w9t0/edit?usp=sharing">design document.</a></li>
-      </ul>
-    </ul>
-</p>
+    <div class="tooltip">
+    <li>
+      <a href="https://docs.google.com/document/d/1c07UO9dS7_tFD-ClCWHIrEzRnzUJoFQ10EzfJTpS7FY/edit?usp=sharing" target="_blank">
+        <img src="/assets/images/meshery/comments-regular.svg" alt="" 
+          style="position: relative; z-index: 10; width: 45px; vertical-align: top; padding-top: 15px;">
+      </a>
+    </li>
+    <span class="tooltiptext">Join the weekly community meeting on Friday from 10am to 11am Central.</span>
+    </div>
+    <div class="tooltip">
+        <li>
+          <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA" target="_blank">
+            <img src="/assets/images/buttons/youtube_black.svg" alt="" 
+              style="position: relative; z-index: 10; width: 45px; vertical-align: top; padding-top: 15px;">
+          </a>
+        </li>
+        <span class="tooltiptext">Watch community meeting recordings.</span>
+        </div>
+    <div class="tooltip">
+         <li>
+         <a href="https://bit.ly/2SbrRhe" target="_blank">
+          <img src="/assets/images/meshery/calendar-plus-regular.svg" alt="" 
+            style="position: relative; z-index: 10; width: 35px; 
+              vertical-align: top; padding-top: 15px;">
+         </a>
+         </li>
+         <span class="tooltiptext">Subscribe to the community calender.</span>
+         </div>
+    <div class="tooltip">
+         <li>
+         <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA" target="_blank">
+          <img src="/assets/images/meshery/google-drive-brands.svg" alt="" 
+            style="position: relative; z-index: 10; width: 45px; vertical-align: top; 
+              padding-top: 13px;">
+         </a>
+         </li>
+         <span class="tooltiptext">Access the community drive</span>
+         </div>  
+   <div class="tooltip">
+         <li>
+         <a href="http://slack.layer5.io" target="_blank">
+          <img src="/assets/images/buttons/slack_black_trans.svg" alt="" 
+            style="position: relative; z-index: 10; width: 65px; height: 70px;">
+         </a>
+         </li>
+         <span class="tooltiptext">Join the community on Slack</span>
+         </div>      
+  </ul>
+  </div>
+
 </div>
 <a name="benchmark-spec"></a>
 <h3 style="color:aliceblue;">Benchmark Specification</h3>
@@ -325,11 +367,4 @@ This project is community-built and welcomes collaboration!
           </li>
 
     </p>
-</div>
-
-<div class="row">
-  <div id="contact" class="section scrollspy" style="width:100%;">
-      <h4 style="text-align:center;color:aliceblue;">Mailing List</h4>
-      {% include contact.html %}
-    </div>
 </div>
