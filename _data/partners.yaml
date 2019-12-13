@@ -1,0 +1,11 @@
+- name: University of Engineering & Management (UEM), Jaipur
+  link: https://uem.edu.in/uem-jaipur/
+  desc: |
+    We have partnered with the University of Engineering & Management (UEM), Jaipur. As part of the partnership program we have a wide variety of interns from the univeristy participate in our open source projects. 
+    As part of the internship the interns get the opportunity to work on cutting edge cloud native technologies and
+    To see the participating interns please checkout <a href="https://meshery.io/community/">our community members</a> page.
+  img: /assets/images/partners/UEM_logo.jpg
+  style: "height:340px;"
+  eurl: https://dockercon18.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=187485
+  visibility: ""
+
