@@ -1,0 +1,40 @@
+<div class="stellarnav">
+		<ul>
+            <!-- <ul class="right hide-on-med-and-down"> -->
+        {% for link in site.data.navigation %}
+            {% assign class = "" %}
+            
+            {% comment %}
+            {% if link.highlight %}
+                {% assign class = class | append: " highlight" %}
+            {% endif %}
+            {% endcomment %}
+    
+            {% if link.link == page.url %}
+                {% assign class = class | append: " active" %}
+            {% endif %}
+            {% assign lInd = forloop.index %}
+            {% if link.subitems[0] %}
+                {% assign class = class | append: " dropdown-button" %}
+                {% assign dataTarget = "dropdown" | append: lInd %}
+            {% endif %}
+            <li><a href="{% if link.subitems[0] %}#!{% else %}{{link.link}}{% endif %}" class="{{ class }}" 
+                {% if link.new_window %}target="_blank"{% endif %}>
+                {{ link.name }}
+            </a>
+            
+            {% if link.subitems[0] %}
+                <ul id="dropdown{{lInd}}">
+                {% for sublink in link.subitems %}
+                    <li><a href="{{sublink.link}}" {% if sublink.new_window %}target="_blank"{% endif %}>{{sublink.name}}</a></li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            </li>
+            
+        {% endfor %}
+            </ul>
+        </div>
+    
+    </nav>
+    
