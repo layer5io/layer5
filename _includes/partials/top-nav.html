@@ -1,48 +1,9 @@
-<nav>
-    <div class="nav-wrapper">
-        <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-	{% for link in site.data.navigation %}
-		{% assign class = "" %}
-        
-        {% comment %}
-        {% if link.highlight %}
-            {% assign class = class | append: " highlight" %}
-        {% endif %}
-        {% endcomment %}
-
-		{% if link.link == page.url %}
-			{% assign class = class | append: " active" %}
-        {% endif %}
-        {% assign dataTarget = "" %}
-        {% assign lInd = forloop.index %}
-        {% if link.subitems[0] %}
-            {% assign class = class | append: " dropdown-button" %}
-            {% assign dataTarget = "dropdown" | append: lInd %}
-        {% endif %}
-        <li><a href="{% if link.subitems[0] %}#!{% else %}{{link.link}}{% endif %}" class="{{ class }}" 
-            {% if link.new_window %}target="_blank"{% endif %} data-activates="{{dataTarget}}">
-            {{ link.name }}
-            {% if link.subitems[0] %}<i class="material-icons right">arrow_drop_down</i>{% endif %}
-        </a>
-        
-        {% if link.subitems[0] %}
-            <ul id="dropdown{{lInd}}" class="dropdown-content">
-            {% for sublink in link.subitems %}
-                <li><a href="{{sublink.link}}" {% if sublink.new_window %}target="_blank"{% endif %}>{{sublink.name}}</a></li>
-            {% endfor %}
-            </ul>
-        {% endif %}
-        </li>
-        
-    {% endfor %}
-        </ul>
-    </div>
-
-    <ul class="sidenav" id="mobile-menu">
-            {% for link in site.data.navigation %}
+<div class="stellarnav">
+		<ul>
+            <!-- <ul class="right hide-on-med-and-down"> -->
+        {% for link in site.data.navigation %}
             {% assign class = "" %}
-
+            
             {% comment %}
             {% if link.highlight %}
                 {% assign class = class | append: " highlight" %}
@@ -52,20 +13,18 @@
             {% if link.link == page.url %}
                 {% assign class = class | append: " active" %}
             {% endif %}
-            {% assign dataTarget = "" %}
             {% assign lInd = forloop.index %}
             {% if link.subitems[0] %}
                 {% assign class = class | append: " dropdown-button" %}
-                {% assign dataTarget = "sidedropdown" | append: lInd %}
+                {% assign dataTarget = "dropdown" | append: lInd %}
             {% endif %}
             <li><a href="{% if link.subitems[0] %}#!{% else %}{{link.link}}{% endif %}" class="{{ class }}" 
-                {% if link.new_window %}target="_blank"{% endif %} data-activates="{{dataTarget}}">
+                {% if link.new_window %}target="_blank"{% endif %}>
                 {{ link.name }}
-                {% if link.subitems[0] %}<i class="material-icons right">arrow_drop_down</i>{% endif %}
             </a>
             
             {% if link.subitems[0] %}
-                <ul id="sidedropdown{{lInd}}" class="dropdown-content">
+                <ul id="dropdown{{lInd}}">
                 {% for sublink in link.subitems %}
                     <li><a href="{{sublink.link}}" {% if sublink.new_window %}target="_blank"{% endif %}>{{sublink.name}}</a></li>
                 {% endfor %}
@@ -74,44 +33,8 @@
             </li>
             
         {% endfor %}
-    </ul>
-</nav>
-
-
-
-<!-- <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-  </ul>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-  </ul> -->
+            </ul>
+        </div>
+    
+    </nav>
+    
