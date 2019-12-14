@@ -27,18 +27,21 @@
 <div class="row" style="position: relative;overflow: auto;" itemprop="articleBody">
   {% capture parter_desc %}
   <div class="col s12 m8">
-      <h3 style="color:#111111;text-align: center;">{{partner.name}}</h3>
-      <p style="margin-left:10px; padding-right:1em;">
+      <h3 style="color:#111111;text-align: justify;">{{partner.name}}</h3>
+      <div style="margin-left:10px; padding-right:1em;">
         {{partner.desc}}
         <br />
-        Please feel free to checkout our partners site <a href="{{partner.link}}">here</a>.
-      </p>
+        <div style="width: 100%; text-align: center; font-weight: bold;">
+        Please feel free to checkout our partner <br />
+        <a href="{{partner.link}}">{{partner.link}}</a>
+        </div>
+    </div>
   </div>
   {% endcapture %}
   {% capture parter_image %}
   <div class="col s12 m4">
     <div style="text-align:center; vertical-align:middle; position:relative;float:right;">
-      <a href="https://raw.githubusercontent.com/layer5io/layer5/master/{{partner.img}}">
+      <a href="https://raw.githubusercontent.com/layer5io/layer5/master{{partner.img}}">
         <img src="{{partner.img}}" width="100%"
           alt="{{partner.name}}"></a>
       </div> 
