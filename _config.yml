@@ -6,7 +6,7 @@ description: the service mesh community
 url: "https://layer5.io"
 baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
 
-parallax_image_one: assets/images/cube.png #-header-large.jpg # These are the images used for the parallax background
+parallax_image_one: assets/images/layer5-logo.gif #-header-large.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
 
 portfolio_heading: Workshops
@@ -14,13 +14,14 @@ portfolio_type: cards
 
 project_button: Github
 
+redirects: yes
 session: Session
 
 #Contact / Social
 github: https://github.com/layer5io
 medium: https://layer5.io
 slack: http://slack.layer5.io/
-blog: https://layer5.io
+blog: https://layer5.io/blog
 docker: https://hub.docker.com/u/layer5/
 youtube: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1
 twitter:
@@ -56,7 +57,8 @@ collections:
   posts:
     output: true
     permalink: /posts/:title
-
+  pages:
+    output: true
   people:
     output: true
   projects:
@@ -82,6 +84,11 @@ defaults:
       body-class: left-sidebar
       sidebar: open
     # Collection defaults
+
+# Colors
+layer5.gray: "#3c494f"
+layer5.darkgreen: "#00b39f"
+layer5.lightgreen: "#00d3a9"
 
 ## Reference - OSS this site uses:
     # http://www.fabiolamanna.it
