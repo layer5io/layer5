@@ -91,12 +91,13 @@ layer5.darkgreen: "#00b39f"
 layer5.lightgreen: "#00d3a9"
 
 ## Reference - OSS this site uses:
-    # http://www.fabiolamanna.it
-    # https://github.com/jameshamann/jekyll-material-theme
+    # Particles - http://www.fabiolamanna.it
+    # Nav menu - https://github.com/vinnymoreira/stellarnav
+    # Jekyll theme - https://github.com/jameshamann/jekyll-material-theme
     # https://github.com/VincentGarreau/particles.js
     # https://cssgradient.io
     # https://coolbackgrounds.io
-    # https://jekyllcodex.org/without-plugin/lightbox/
+    # Image view - https://jekyllcodex.org/without-plugin/lightbox/
 
 ## A message to have visitors acknowledge use of cookies (not currently used)
 # cookies_banner: none # The value "show" will show the cookies banner, the value "none" will hide the banner.

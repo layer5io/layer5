@@ -109,17 +109,26 @@
 //         }
 //     }
 // }
-
 .stellarnav {
+    vertical-align: middle;
+    $main-dark-grey: #3c494f;
+    $main-light-green: #00b39f;
+    $main-dark-green: #00d3a9;
+    $main-dark-green-trans: #00b39e7a;
+
     li a {
-        color: black;
+        color: $main-dark-grey;
+        font-size:1em;
+        min-width: fit-content;
+
         &:hover {
             font-weight: inherit;
-            // border: 1px solid black;
-            color: white;
+            border: 1px solid  $main-dark-green;
+            // color: white;
             // background-color: var(--main-light-blue);
-            background-color: #3E4B51;
+            background-color: $main-light-green;
             border-radius: 5px;
+          
         }
         &.active {
             color: white;
@@ -131,6 +140,9 @@
         }
     }
 
+    li {
+
+    }
     ul>li>a {
         padding-left: 15px;
         padding-right: 15px;
@@ -138,7 +150,7 @@
 
     ul ul {
         background: #fff;
-        border: 1px solid #3C494F;
+        // border: 1px solid #3C494F;
         border-radius: 5px;
     }
 

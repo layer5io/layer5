@@ -1,9 +1,11 @@
  (function($){
    $(function(){
+
+    // start nav
      setTimeout(function(){
       $('.stellarnav').stellarNav({
         theme: 'plain', // adds default color to nav. (light, dark)
-        breakpoint: 1320, // number in pixels to determine when the nav should turn mobile friendly
+        breakpoint: 850, // number in pixels to determine when the nav should turn mobile friendly
         menuLabel: '', // label for the mobile nav
         sticky: false, // makes nav sticky on scroll (desktop only)
         position: 'right', // 'static', 'top', 'left', 'right' - when set to 'top', this forces the mobile nav to be placed absolutely on the very top of page
@@ -15,12 +17,13 @@
         // locationBtn: '', // adds a location link to the top of menu - i.e.: "/location/", "http://site.com/contact-us/"
         // locationLabel: 'Location', // label for the location button
         closeBtn: false, // adds a close button to the end of nav
-        closeLabel: 'Close', // label for the close button
+        closeLabel: ' ', // label for the close button
         mobileMode: false,
         scrollbarFix: false // fixes horizontal scrollbar issue on very long navs
       });
       $('.stellarnav').show();
      }, 500);
+    // end nav
 
      $('.button-collapse').sideNav();
      $('.parallax').parallax();
