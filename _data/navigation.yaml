@@ -3,7 +3,7 @@
   new_window: false
   highlight: false
 - name: Projects
-  link: /community/
+  link: /projects/
   new_window: false
   highlight: false
   subitems:
@@ -34,6 +34,7 @@
 - name: Resources
   new_window: false
   highlight: true
+  link: /resources/
   subitems:
     - name: Books
       link: /books/
