@@ -1,25 +1,20 @@
 <div style="z-index:20;">
 <h3 class="black-text">Layer5 Partners Program</h3>
     
-    <div id="layer5-intro" class="card-content" style="position:relative;float:right;" >
-      <iframe width="392" height="220.5" src="https://www.youtube.com/embed/0yN5T5LB9ps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+<div class="card-content" style="position:relative; float:right; width:40%; vertical-align: bottom;" >
+  <h3 style="text-align:center;color:aliceblue;">
+      <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:auto;" 
+        class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
+         href="mailto:community@layer5.io">Become a Partner</a></h3>
+</div>      
 
-    <div>  
-       <ul>
-         <ol><b>What is Layer5 Partners Program?</b></ol>
-         <ol>While small, the Layer5 community represents the largest collection of service mesh projects and their maintainers in the world. We build projects to provide learning environments, deployment and operational best practices, performance benchmarks, create documentation, share networking opportunities, and more. Our shared commitment to the open source spirit pushes Layer5 projects forward. New members are always welcome.
-         </ol>
-       </ul>
-       
-        <div id="gsoc-2019" class="card-content" style="position:relative;float:center;vertical-align: bottom;" >
-            <h3 style="text-align:center;color:aliceblue;">
-                <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:auto;" 
-                  class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
-                   href="/internships">See Available Opportunities</a></h3>
-        </div>      
-    </div>
-
+    <p>Layer5 is dedicated to partnering with leading educational institutions, technology vendors, solution providers and 
+      industry experts to drive the adoption of cloud native technologies focused on the evolution of how developers write modern applications,
+      how operators run infrastructure and how product owners manage service offerings.         
+    </p>        
+    <p>Layer5, the service mesh community, established the Layer5 Partner Program 
+      to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers
+        to accelerate customers’ digital transformations, helping them move into the new era of DevOps and cloud native applications.</p>
 </div>
 
 {% for partner in site.data.partners %}
@@ -32,7 +27,7 @@
         {{partner.desc}}
         <br />
         <div style="width: 100%; text-align: center; font-weight: bold;">
-        Please feel free to checkout our partner <br />
+        More about our partner: 
         <a href="{{partner.link}}">{{partner.link}}</a>
         </div>
     </div>
@@ -41,7 +36,7 @@
   {% capture parter_image %}
   <div class="col s12 m4">
     <div style="text-align:center; vertical-align:middle; position:relative;float:right;">
-      <a href="https://raw.githubusercontent.com/layer5io/layer5/master{{partner.img}}">
+      <a href="{{partner.img}}">
         <img src="{{partner.img}}" width="100%"
           alt="{{partner.name}}"></a>
       </div> 

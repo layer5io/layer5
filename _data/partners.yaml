@@ -10,16 +10,17 @@
   style: "height:340px;"
   eurl: https://dockercon18.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=187485
   visibility: ""
-- name: University of Engineering & Management (UEM), Jaipur
-  link: https://uem.edu.in/uem-jaipur/
+- name: The University of Texas at Austin
+  link: https://www.utexas.edu
   desc: |
-    We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us.
-    As part of the partnership program we have a wide variety of interns from the univeristy participating in our open source projects. 
-    The interns have the opportunity to work on a variety of cloud native technologies. Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills.
+    In partnership with faculty of the Cockrell School of Engineering at The University of Texas at Austin,
+    graduate students engage in research on the affects of hardware architectures and the performance of 
+    software-based networking. Ph.D. candidates leverage Meshery in research and analysis of affect and
+    overhead service mesh architectures have on when running distributed systems.
     
-    To see the participating interns please checkout <a href="https://meshery.io/community/">our community members</a> page.
-  img: /assets/images/partners/UEM_logo.jpg
+    Learn more about <a href="http://www.ece.utexas.edu">our collaborative research</a>.
+  img: /assets/images/partners/University_of_Texas_at_Austin_seal.png
   style: "height:340px;"
-  eurl: https://dockercon18.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=187485
+  eurl: http://www.ece.utexas.edu
   visibility: ""
 
