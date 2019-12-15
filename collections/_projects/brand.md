@@ -2,6 +2,8 @@
 layout: default
 title:  "Layer5 Brand Kit"
 permalink: /brand
+redirects:
+- /resources/brand
 excerpt: "Layer5 Community - Brand"
 ---
 <h3 style="color:aliceblue;text-align:center;">Layer5 Community - Brand</h3>
