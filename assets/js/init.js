@@ -5,7 +5,7 @@
      setTimeout(function(){
       $('.stellarnav').stellarNav({
         theme: '', // adds default color to nav. (light, dark)
-        breakpoint: 850, // number in pixels to determine when the nav should turn mobile friendly
+        breakpoint: 800, // number in pixels to determine when the nav should turn mobile friendly
         menuLabel: 'Menu', // label for the mobile nav
         sticky: false, // makes nav sticky on scroll (desktop only)
         position: 'right', // 'static', 'top', 'left', 'right' - when set to 'top', this forces the mobile nav to be placed absolutely on the very top of page
