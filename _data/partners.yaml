@@ -1,4 +1,4 @@
-- name: University of Engineering & Management (UEM), Jaipur
+- name: University of Engineering & Management Jaipur
   link: https://uem.edu.in/uem-jaipur/
   desc: |
     We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us.
@@ -6,10 +6,11 @@
     The interns have the opportunity to work on a variety of cloud native technologies. Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills.
     
     To see the participating interns please checkout <a href="https://meshery.io/community/">our community members</a> page.
-  img: /assets/images/partners/UEM_logo.jpg
-  style: "height:340px;"
-  eurl: https://dockercon18.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=187485
+  img: /assets/images/partners/UEM_Logo.jpg
+  style: "width:100%"
+  eurl: ""
   visibility: ""
+  type: education
 - name: The University of Texas at Austin
   link: https://www.utexas.edu
   desc: |
@@ -20,7 +21,8 @@
     
     Learn more about <a href="http://www.ece.utexas.edu">our collaborative research</a>.
   img: /assets/images/partners/University_of_Texas_at_Austin_seal.png
-  style: "height:340px;"
+  style: "width:100%"
   eurl: http://www.ece.utexas.edu
   visibility: ""
+  type: education
 

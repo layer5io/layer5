@@ -1,7 +1,8 @@
 <div style="z-index:20;">
 <h3 class="black-text">Layer5 Partners Program</h3>
     
-<div class="card-content" style="position:relative; float:right; width:40%; vertical-align: bottom;" >
+<div class="card-content" style="position:relative; 
+  float:right; width:40%; vertical-align: bottom;" >
   <h3 style="text-align:center;color:aliceblue;">
       <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:auto;" 
         class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
@@ -19,27 +20,26 @@
 
 {% for partner in site.data.partners %}
 {% if partner.visibility != "hide" %}
-<div class="row" style="position: relative;overflow: auto;" itemprop="articleBody">
+<div class="row">
   {% capture parter_desc %}
-  <div class="col s12 m8">
-      <h3 style="color:#111111;text-align: justify;">{{partner.name}}</h3>
-      <div style="margin-left:10px; padding-right:1em;">
+  <div class="col m8" style="position:relative;">
+      <h3 style="color:#111111;">{{partner.name}}</h3>
+      <div style="margin-left:10px; margin-right:10px;">
         {{partner.desc}}
-        <br />
-        <div style="width: 100%; text-align: center; font-weight: bold;">
+        
+        <p style="text-align: center;font-weight: bold;">
         More about our partner: 
         <a href="{{partner.link}}">{{partner.link}}</a>
-        </div>
+        </p>
+      </div>
     </div>
-  </div>
+
   {% endcapture %}
   {% capture parter_image %}
-  <div class="col s12 m4">
-    <div style="text-align:center; vertical-align:middle; position:relative;float:right;">
+  <div class="col m4" style="position:relative;">
       <a href="{{partner.img}}">
-        <img src="{{partner.img}}" width="100%"
-          alt="{{partner.name}}"></a>
-      </div> 
+        <img src="{{partner.img}}" style="{{partner.style}}"
+        alt="{{partner.name}}"></a>
   </div>
   {% endcapture %}
 
