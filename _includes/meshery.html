@@ -198,26 +198,47 @@
 </div>
   <a name="getting-started"></a><h3 style="color:aliceblue;">Run Meshery</h3>
   <div class="post-content row" itemprop="articleBody">
-      <h4 style="color:#111111;">Step 1: Install and start</h4>
-      <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Docker, install Meshery on your local machine by running the following:</p>        
+
+      <h3 style="color:#111111;">Step 1: Install and start</h3></br>
+
+
+      <h4>Bash user</h4>
+      <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Docker, install Meshery on your local machine by running the following:</p>
+      <div class="highlight highlight-source-shell">
+      <div style="width:auto; height:auto; padding:0px; position:relative;">
+            <pre><code>
+ $ curl -L https://git.io/meshery | bash -    
+        </code></pre>
+            <!-- copy to clipboard -->
+            <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue z-depth-4"
+              style="position: absolute; top: 0px; right: 0px; border: 0;"
+              data-clipboard-target="#start"
+              data-clipboard-text="curl -L https://git.io/meshery | bash -  ">
+              <img src="/assets/images/buttons/clippy.svg" width="18px" height="18px" style="vertical-align: middle;" />
+            </a>
+        </div> 
+      </div>
+      <h4>Brew user</h4>
+      <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using brew, install Meshery on your local machine by running the following:</p>        
 
       <div id="start" class="highlight highlight-source-shell">
-          <div style="width:auto; height:65px; padding:0px; position:relative;">
-            <pre><code>
- curl -L https://git.io/meshery | sh -
+          <div style="width:auto; height:auto; padding:0px; position:relative;">
+            <pre><code></br> $ brew tap layer5io/tap</br> $ brew install mesheryctl</br> $ mesheryctl start
             </code></pre>
             <!-- copy to clipboard -->
             <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue z-depth-4"
               style="position: absolute; top: 0px; right: 0px; border: 0;"
               data-clipboard-target="#start"
-              data-clipboard-text="curl -L https://git.io/meshery | bash -">
+              data-clipboard-text="brew tap layer5io/tap
+              brew install mesheryctl
+              mesheryctl start">
               <img src="/assets/images/buttons/clippy.svg" width="18px" height="18px" style="vertical-align: middle;" />
             </a>
         </div>
       </div>
       
       <div class="toggle">
-        
+        <h4>Kubernetes user</h4>
         <label for="k8s-instructions">To install on Kubernetes, <a>click here</a></label> 
         or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.
         <input type="checkbox" checked name="one" id="k8s-instructions">
@@ -226,24 +247,56 @@
             
       <p>Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
       <div class="highlight highlight-source-shell">
-        <pre><code>
+        
+
+
+        <div style="width:auto; height:auto; padding:0px; position:relative;">
+            <pre><code>
  $ git clone https://github.com/layer5io/meshery.git; cd meshery        
         </code></pre>
+            <!-- copy to clipboard -->
+            <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue z-depth-4"
+              style="position: absolute; top: 0px; right: 0px; border: 0;"
+              data-clipboard-target="#start"
+              data-clipboard-text="git clone https://github.com/layer5io/meshery.git; cd meshery">
+              <img src="/assets/images/buttons/clippy.svg" width="18px" height="18px" style="vertical-align: middle;" />
+            </a>
+        </div>
+
+
+
+
       </div>
     <p>Install Meshery on your cluster by running the following:</p>
     <div class="highlight highlight-source-shell">
-<pre><code>
+
+<div style="width:auto; height:auto; padding:0px; position:relative;">
+            <pre><code>
   $ kubectl create ns meshery
   $ kubectl -n meshery apply -f deployment_yamls/k8s
 
 </code></pre>
+            <!-- copy to clipboard -->
+            <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue z-depth-4"
+              style="position: absolute; top: 0px; right: 0px; border: 0;"
+              data-clipboard-target="#start"
+              data-clipboard-text="kubectl create ns meshery
+              kubectl -n meshery apply -f deployment_yamls/k8s">
+              <img src="/assets/images/buttons/clippy.svg" width="18px" height="18px" style="vertical-align: middle;" />
+            </a>
+        </div>
+
 <!-- PROVIDE THE "ON THE MESH" VERSION IN FUTURE DOCUMENTATION
 # additional step for running on Istio
 $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
     </div>
     <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
+    
             </div>
           </div>
+          
+
+
     <h4 style="color:#111111;">Step 2: Login</h4>
     <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
   
