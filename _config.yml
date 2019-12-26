@@ -75,6 +75,10 @@ collections:
     permalink: /workshops/:title
 defaults:
   - scope:
+      path: ""
+    values:
+      image: /assets/images/layer5/layer5-community-logo.png
+  - scope:
       type: pages
     values:
       layout: default
