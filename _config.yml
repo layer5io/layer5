@@ -79,12 +79,6 @@ defaults:
     values:
       image: /assets/images/layer5/layer5-community-logo.png
   - scope:
-      type: pages
-    values:
-      layout: default
-      body-class: left-sidebar
-      sidebar: open
-  - scope:
       type: books
     values:
       layout: default
