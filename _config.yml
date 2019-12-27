@@ -78,7 +78,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/layer5/layer5-community-logo.png
+      image: /assets/images/layer5/layer5-tag-linkedin.png
   - scope:
       type: pages
     values:
