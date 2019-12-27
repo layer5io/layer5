@@ -31,6 +31,7 @@ twitter:
   card: summary
   username: layer5
   url: "https://twitter.com/layer5"
+  image: "https://layer5.io/assets/images/layer5/5-dark-bg.png"
 
 # Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
 tag_manager_id: # This looks something like GTM-XXXXXXX
