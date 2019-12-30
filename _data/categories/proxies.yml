@@ -13,9 +13,9 @@
 - name: nginMesh
   link: https://github.com/nginxinc/nginmesh
   desc: "nginMesh - launched in September 2017, the nginMesh project deploys Nginx as a sidecar proxy in Istio."
-- name: SOFAMosn
-  link: https://github.com/alipay/sofa-mosn
-  desc: SOFAMosn is a modular observable smart network which can be used in service mesh deployed as a data plane sidecar.
+- name: MOSN
+  link: https://github.com/mosn/mosn
+  desc: "MOSN is a powerful cloud-native proxy acts as a edge proxy or service mesh's data plane."
 - name: Traefik
   link: https://traefik.io/
   desc: "Traefik is a modern HTTP reverse proxy and load balancer that integrates with service discovery systems and container orchestrators."
