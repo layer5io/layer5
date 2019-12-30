@@ -178,9 +178,9 @@
   commerical: Nginx
   category: Service Proxy
 
-- name: SOFAMosn
+- name: MOSN
   opensource: "Yes"
-  link: https://github.com/alipay/sofa-mosn
+  link: https://github.com/mosn/mosn
   governance: Ant Financial
   primary-lang: Go
   announce-date: July 2018
