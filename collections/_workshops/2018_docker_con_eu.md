@@ -8,7 +8,7 @@ eurl: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/7050
 labs: https://github.com/leecalcote/istio-service-mesh-workshop
 slides: https://calcotestudios.com/talks/decks/slides-dockercon-eu-2018-using-istio-workshop.html
 slack: https://join.slack.com/t/layer5io/shared_invite/enQtNDk0MzUwMDE5MDkzLTA5ODUzNjNjOTBjMGIxM2JjOGNiM2E2YTM0OTU3NzBiOTA3NjFlMWUwOTU0MjgzMzVhMDNlZDcxYjcxYmJkYjc
-rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
+# rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
 status: "delivered"
 ---  
 
