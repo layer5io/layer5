@@ -10,6 +10,7 @@
   prometheus: "No, Replaced by Harmony Controller"
   tracing: "Yes"
   encryption: "Yes"
+  score: 6
 
 - name: Aspen Mesh
   desc: "Aspen Mesh - a commercial offering built on top of Istio with some open source components."
@@ -23,6 +24,7 @@
   prometheus: "Yes"
   tracing: "Jaeger"
   encryption: "Yes"
+  score: 4
 
 - name: Cilium
   desc: Cilium - DaemonSet-based service mesh using Linux BPF.
@@ -36,6 +38,7 @@
   prometheus: "Yes"
   tracing: "?"
   encryption: "Yes"
+  score: 4
 
 - name: Citrix Service Mesh
   desc: Service mesh based on Istio and served with Citrix ADC CPX sidecar proxies.
