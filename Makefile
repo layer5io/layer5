@@ -8,7 +8,7 @@ site-admin:
 	ADMIN=on $(jekyll) serve --drafts --livereload
 
 build:
-	$(jekyll) build --drafts --livereload
+	$(jekyll) build --drafts 
 
 setup:
 	ADMIN=on bundle install
