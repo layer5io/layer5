@@ -1,65 +1,10 @@
 <div class="row">
-  <div class="col s12">
-
-    <!-- Comparative Spectrum Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Service Meshes'
-      COLOR = 'blue'
-    %}
-
-    <!-- Comparative Spectrum Table -->
-    {% assign
-      PROJECTS = 'A10, Aspen, grey, cilium' | downcase | split: ', ' %}
-    {% assign
-      KEYS = 'multi-cluster, autoinject, tracing, prometheus' | downcase | split: ', ' %}
-    {% assign
-      GREAT = 'Jaeger' | downcase %}
-    {% assign
-      GOOD = 'Yes, Replaced' | downcase %}
-    {% assign
-      BAD = 'No, ?' | downcase %} 
-    {% include partials/spectrum/table.html PROJECTS=PROJECTS KEYS=KEYS GREAT=GREAT GOOD=GOOD BAD=BAD %}
-
-    <!-- Comparative Spectrum Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Istio-compliant'
-      COLOR = 'grey'
-    %}
-
-    <br/><br/><br/><hr><br/><br/>
-
-    <!-- Comparative Spectrum Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Multi-Tenancy'
-      COLOR = 'red'
-    %}
-
-    <!-- Comparative Spectrum Cards -->
-    {% include partials/spectrum/cards.html
-      KEY = 'multi-tenant'
-      VALUE = 'Yes'
-    %}
-
-    <br/><hr><br/><br/>
-
-    <!-- Comparative Spectrum Grid -->
-    {% include partials/spectrum/grid.html
-      LVALUE = 'Network Engineers'
-      LCOLOR = 'blue'
-     
-      RVALUE = 'Developers'
-      RCOLOR = 'red'
-      
-      KEY = 'score'
-    %}
-
-  </div>
 
   <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
 
   <style> 
-    ul {font-weight:bold;} 
-    li {
+    .card-content>ul {font-weight:bold;} 
+    .card-content>ul>li {
       margin-left: 5px;
       font-weight: normal;
       float: right;
