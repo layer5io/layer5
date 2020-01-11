@@ -1,5 +1,5 @@
-        <table id="meshes-table" class="responsive-table highlight striped" style="color:var(--main-bg-color);">
-        <thead style="background-color: #a6b7be;color:#222; text-align:center; word-wrap: none;">
+        <table id="meshes-table" class="spectrum-table responsive-table highlight striped" style="color:var(--main-bg-color); width: 100%;">
+        <thead style="background-color: #a6b7be; color:#222; text-align:center; word-wrap: none;">
           <tr style="cursor: pointer">
               <th onclick="sortTable('meshes-table',0)">Service Mesh</th>
               <th onclick="sortTable('meshes-table',1)">Auto Proxy Injection</th>
@@ -18,16 +18,16 @@
             {% assign meshes_by_category = site.data.categories.meshes | sort: "category" | reverse %}
             {% for meshes in meshes_by_category %}
             <tr style="border: 1px dashed #a6b7be; text-align:center;">
-                <td><a href="{{meshes.link}}" title="{{meshes.desc}}">{{meshes.name}}</a></td>
-                <td style="text-align:center;"> {{meshes.autoinject}} </td>
-                <td style="text-align:center;"> {{meshes.tcp-web}} </td>
-                <td style="text-align:center;"> {{meshes.h2}} </td>
-                <td style="text-align:center;"> {{meshes.grpc}} </td>
-                <td style="text-align:center;"> {{meshes.multi-cluster}} </td>
-                <td style="text-align:center;"> {{meshes.multi-tenant}} </td>
-                <td style="text-align:center;"> {{meshes.prometheus}} </td>
-                <td style="text-align:center;"> {{meshes.tracing}} </td>
-                <td style="text-align:center;"> {{meshes.encryption}} </td>
+                <td><a href="{{meshes.link}}" title="{{meshes.desc}}">{{meshes.name}}</a></td>    
+                {% include service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD COL=meshes.autoinject %}
+                {% include service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD COL=meshes.tcp-web %}
+                {% include service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD COL=meshes.h2 %}
+                {% include service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD COL=meshes.grpc %}
+                {% include service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD COL=meshes.multi-cluster %}
+                {% include service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD COL=meshes.multi-tenant %}
+                {% include service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD COL=meshes.prometheus %}
+                {% include service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD COL=meshes.tracing %}
+                {% include service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD COL=meshes.encryption %}
             </tr>
             {% endfor %}
         </tbody>
