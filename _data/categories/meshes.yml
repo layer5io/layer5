@@ -11,6 +11,20 @@
   tracing: "Yes"
   encryption: "Yes"
   score: 6
+  
+  - name: App Mesh
+  desc: AWS App Mesh - a managed control plane offering using Envoy as the data plane.
+  link: https://github.com/aws/aws-app-mesh-examples
+  autoinject: "No"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "No"
+  prometheus: "No"
+  tracing: "Yes"
+  encryption: "Yes"
+  score: 6
 
 - name: Aspen Mesh
   desc: "Aspen Mesh - a commercial offering built on top of Istio with some open source components."
