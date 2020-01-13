@@ -10,12 +10,15 @@
     - name: Meshery
       link: /meshery/
       new_window: false
+    - name: Service Mesh Landscape
+      link: /landscape
+      new_window: false
     - name: Service Mesh Performance Specification
       link: https://github.com/layer5io/service-mesh-benchmark-spec
       new_window: true
 - name: Community
   link: https://github.com/layer5io/meshery
-  new_window: false
+  new_window: true
   highlight: false
   subitems: 
     - name: Slack
