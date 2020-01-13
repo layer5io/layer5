@@ -349,7 +349,7 @@
   commerical: N/A
   category: Service Mesh
 
-- name: Network
+- name: Network Service Mesh
   opensource: "Yes"
   link: https://github.com/networkservicemesh/networkservicemesh
   governance: CNCF
