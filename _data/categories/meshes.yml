@@ -11,8 +11,8 @@
   tracing: "Yes"
   encryption: "Yes"
   score: 6
-  
-  - name: App Mesh
+
+- name: App Mesh
   desc: AWS App Mesh - a managed control plane offering using Envoy as the data plane.
   link: https://github.com/aws/aws-app-mesh-examples
   autoinject: "No"
