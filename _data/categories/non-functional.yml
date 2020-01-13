@@ -8,14 +8,14 @@
   commerical: AWS
   category: Service Mesh
 
-- name: AspenMesh
-  opensource: "No"
+- name: Aspen Mesh
+  opensource: "Partial"
   link: https://aspenmesh.io/
   governance: F5
   primary-lang: Go
   announce-date: November 2017
   ga-1-date: 2019
-  commerical: "?"
+  commerical: Aspen Mesh
   category: Service Mesh
 
 - name: Cilium
@@ -88,6 +88,16 @@
   commerical: Containous
   category: Service Mesh
 
+- name: Maistra
+  opensource: "Yes"
+  link: https://www.maistra.io
+  governance: Red Hat
+  primary-lang: Go
+  announce-date: May 2018
+  ga-1-date: September 2019
+  commerical: OpenShift Service Mesh (Red Hat)
+  category: Service Mesh
+
 - name: Mesher
   opensource: "Yes"
   link: https://github.com/go-mesh/mesher
@@ -102,9 +112,9 @@
   opensource: "No"
   link: https://www.octarinesec.com/
   governance: OctarineSec
-  primary-lang: "?"
-  announce-date: "?"
-  ga-1-date: 1H 2019
+  primary-lang: Go
+  announce-date: November 2018
+  ga-1-date: November 2019
   commerical: Octarine
   category: Service Mesh
 
@@ -138,6 +148,16 @@
   commerical: "N/A"
   category: Service Mesh
 
+- name: Citrix ADC CPX
+  opensource: "No"
+  link: https://www.citrix.com/en-in/networking/microservices.html
+  governance: Citrix
+  primary-lang: "C"
+  announce-date: "January 2016"
+  ga-1-date: "July 2016"
+  commerical: "Citrix Systems, Inc."
+  category: Service Proxy
+
 - name: Envoy
   opensource: "Yes"
   link: https://www.envoyproxy.io/
@@ -158,15 +178,25 @@
   commerical: Nginx
   category: Service Proxy
 
-- name: SOFAMosn
+- name: MOSN
   opensource: "Yes"
-  link: https://github.com/alipay/sofa-mosn
+  link: https://github.com/mosn/mosn
   governance: Ant Financial
   primary-lang: Go
   announce-date: July 2018
   ga-1-date: "?"
   commerical: Ant Financial
   category: Service Proxy
+
+- name: Citrix ADC
+  opensource: "No"
+  link: https://www.citrix.com/en-in/products/citrix-adc/
+  governance: Citrix
+  primary-lang: "C"
+  announce-date: "January 2016"
+  ga-1-date: "July 2016"
+  commerical: "Citrix Systems, Inc."
+  category: API Gateway
 
 - name: Contour
   opensource: "Yes"
@@ -239,6 +269,26 @@
   commerical: HAProxy Technologies
   category: Service Proxy
 
+- name: Contour
+  opensource: "Yes"
+  link: https://github.com/heptio/contour
+  governance: Heptio
+  primary-lang: Go
+  announce-date: October 2017
+  ga-1-date: October 2017
+  commerical: Heptio
+  category: API Gateway
+
+- name: Citrix ADC
+  opensource: "No"
+  link: https://www.citrix.com/en-in/products/citrix-adc/
+  governance: Citrix
+  primary-lang: "C"
+  announce-date: "January 2001"
+  ga-1-date: "July 2001"
+  commerical: "Citrix Systems, Inc."
+  category: Load-Balancers
+
 - name: Kong
   opensource: "Yes"
   link: https://github.com/kong/kong
@@ -289,16 +339,6 @@
   commerical: "?"
   category: Load-Balancers
 
-- name: NetScaler CPX
-  opensource: "No"
-  link: https://www.citrix.com/products/citrix-adc/cpx-express.html
-  governance: Citrix
-  primary-lang: "?"
-  announce-date: "?"
-  ga-1-date: "?"
-  commerical: "?"
-  category: Load-Balancers
-
 - name: Vulcand
   opensource: "Yes"
   link: https://github.com/vulcand/vulcand
@@ -307,4 +347,14 @@
   announce-date: December 2014
   ga-1-date: December 2014
   commerical: N/A
+  category: Service Mesh
+
+- name: Network
+  opensource: "Yes"
+  link: https://github.com/networkservicemesh/networkservicemesh
+  governance: CNCF
+  primary-lang: "GO"
+  announce-date: "?"
+  ga-1-date: "?"
+  commerical: "?"
   category: Service Mesh

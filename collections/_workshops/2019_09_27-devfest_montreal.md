@@ -15,7 +15,7 @@ labs: https://github.com/leecalcote/istio-service-mesh-workshop
 slides: https://calcotestudios.com/talks/decks/slides-devfest-montreal-2019-introduction-to-istio.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
-status: "upcoming"
+status: "delivered"
 ---  
 
 <h4>Istio Service Mesh Workshop - Devfest Montreal 2019</h4>

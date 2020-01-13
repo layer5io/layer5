@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 
-ruby '2.6.3'
+ruby '2.6.5'
 
 gem 'materialize-sass'
-gem "jekyll", "~> 3.8.5"
+gem "jekyll", "~> 4.0.0"
 gem "minima", "~> 2.0"
 gem 'rspec'
 gem 'capybara'
@@ -23,4 +23,3 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gemspec
