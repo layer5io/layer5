@@ -18,7 +18,7 @@ Before I continue on, I want to acknowledge the project that I have contributed 
 
 As I mentioned my last post, I came into contact with Layer5 after discovering (through the [Hacktoberfest Issue Finder](https://hacktoberfest-finder.netlify.com/)) its [issue regarding table filtering](https://github.com/layer5io/layer5/issues/65)—and subsequently discovered an unreported styling issue:
 
-[![A styling issue with a collection of lists hosted on Layer5's Landscape page.](https://user-images.githubusercontent.com/13500769/66007380-2d643700-e480-11e9-8bda-e81dd0e166d9.png)](https://layer5.io/landscape/)
+[![A styling issue with a collection of lists hosted on Layer5's Landscape page.](https://user-images.githubusercontent.com/13500769/66007380-2d643700-e480-11e9-8bda-e81dd0e166d9.png){:width="100%"}](https://user-images.githubusercontent.com/13500769/66007380-2d643700-e480-11e9-8bda-e81dd0e166d9.png)
 
 A styling issue affected a collection of lists hosted on Layer5's [Landscape page](https://layer5.io/landscape/).
 
@@ -26,7 +26,7 @@ Of the three GitHub issues I've scoped out, the resolution of this styling issue
 
 As far as I could tell, no open issues concerned the styling problem that I discovered. So, as instructed both Layer5's website (and encouraged its extremely-welcoming development team), [I opened _my own issue_](https://github.com/layer5io/layer5/issues/191):
 
-[![https://github.com/layer5io/layer5/issues/191](https://raungar.files.wordpress.com/2019/10/image-1.png?w=1024)](https://github.com/layer5io/layer5/issues/191)
+[![https://github.com/layer5io/layer5/issues/191](https://raungar.files.wordpress.com/2019/10/image-1.png?w=1024){:width="100%"}](https://raungar.files.wordpress.com/2019/10/image-1.png?w=1024)
 
 Issue – [Enhance landscape categories section wrapping (#191)](https://github.com/layer5io/layer5/issues/191)
 
@@ -52,11 +52,11 @@ Implementating this idea proved quite simple, requiring only [a few added CSS ru
 ```
 The vertical stack is implemented by the rules in the first selector: list items are floated right and assigned a fixed width, which aligns them neatly. The dashed borders and padding used to separate category lists was also adjusted to accomodate the new design (pictured below):
 
-![https://github.com/layer5io/layer5/issues/191#issuecomment-537304508](https://user-images.githubusercontent.com/13500769/66013483-5e049a80-e499-11e9-8920-52c3da81ece7.png)
+[![https://github.com/layer5io/layer5/issues/191#issuecomment-537304508](https://user-images.githubusercontent.com/13500769/66013483-5e049a80-e499-11e9-8920-52c3da81ece7.png){:width="100%"}](https://user-images.githubusercontent.com/13500769/66013483-5e049a80-e499-11e9-8920-52c3da81ece7.png)
 
 The above image is one of the [two mockups of the redesign](https://github.com/layer5io/layer5/issues/191#issuecomment-537304508) that I produced for the consideration of the project's developers. As luck would have it, Layer5 project lead [Lee Calcote](https://github.com/leecalcote) provided [a lightning-quick response](https://github.com/layer5io/layer5/issues/191#issuecomment-537310179), welcoming a pull request to it!
 
-![https://github.com/layer5io/layer5/issues/191#issuecomment-537310179](https://raungar.files.wordpress.com/2019/10/image-2.png?w=1024)
+[![https://github.com/layer5io/layer5/issues/191#issuecomment-537310179](https://raungar.files.wordpress.com/2019/10/image-2.png?w=1024){:width="100%"}](https://raungar.files.wordpress.com/2019/10/image-2.png?w=1024)
 
 #### Future research area: Materialize CSS
 
@@ -110,7 +110,7 @@ How much documentation is too little? Too much? How high should the bar be set f
 
 After successfully testing and fixing the styling on my local fork, I created [a pull request](https://github.com/layer5io/layer5/pull/192):
 
-![https://github.com/layer5io/layer5/pull/192](https://raungar.files.wordpress.com/2019/10/image-3.png?w=1024)
+[![https://github.com/layer5io/layer5/pull/192](https://raungar.files.wordpress.com/2019/10/image-3.png?w=1024){:width="100%"}](https://raungar.files.wordpress.com/2019/10/image-3.png?w=1024)
 
 Pull request – [Restyle landscape categories (#192)](https://github.com/layer5io/layer5/pull/192)
 
