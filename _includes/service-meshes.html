@@ -1,6 +1,23 @@
 <div class="row">
   <div class="col s12">
 
+    <div class="col s12">
+      <!-- Comparative Spectrum Grid -->
+      {% include partials/spectrum/grid.html
+        LVALUE = 'Network Engineers'
+        LCOLOR = 'blue'
+       
+        RVALUE = 'Developers'
+        RCOLOR = 'red'
+
+        NAME = 'Multi-tenancy'
+        
+        KEY = 'multi-tenant-score'
+      %}
+  
+    </div>
+  
+
   <style> 
     .card-content>ul {font-weight:bold;} 
     .card-content>ul>li {
