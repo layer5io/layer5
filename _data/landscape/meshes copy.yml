@@ -10,7 +10,7 @@
   prometheus: "No, Replaced by Harmony Controller"
   tracing: "Yes"
   encryption: "Yes"
-  score: 6
+  multi-tenant-score: 10
 
 - name: App Mesh
   desc: "AWS App Mesh - a managed control plane offering using Envoy as the data plane."
@@ -38,7 +38,7 @@
   prometheus: "Yes"
   tracing: "Jaeger"
   encryption: "Yes"
-  score: 4
+  multi-tenant-score: 10
 
 - name: Cilium
   desc: "Cilium - DaemonSet-based service mesh using Linux BPF."
@@ -52,7 +52,7 @@
   prometheus: "Yes"
   tracing: "?"
   encryption: "Yes"
-  score: 4
+  multi-tenant-score: 1
 
 - name: Citrix Service Mesh
   desc: "Service mesh based on Istio and served with Citrix ADC CPX sidecar proxies."
@@ -66,6 +66,7 @@
   prometheus: "Yes"
   tracing: "?"
   encryption: "Yes"
+  multi-tenant-score: 1
 
 - name: Consul Connect
   desc: "Consul Connect - is a feature that enables encrpyted communication between services."
@@ -79,7 +80,7 @@
   prometheus: "Yes"
   tracing: "Pluggable"
   encryption: "Yes"
-  smi: {tac: "Yes", taclink: "https://github.com/hashicorp/consul-smi-controller", tmetrics: "No", tmetricslink: "", tsplit: "No", tsplitlink: "", tspec: "No", tspeclink: ""}
+  multi-tenant-score: 1
 
 - name: Grey Matter
   desc: "Grey Matter is an Istio-compliant, Envoy proxy-based, hybrid cloud service mesh platform for business insight and secure data control with your microservices."
@@ -92,7 +93,8 @@
   multi-tenant: "Yes"
   prometheus: "Yes"
   tracing: "OpenTracing compatible"
-  encryption: "Yes"
+  encyrption: "Yes"
+  multi-tenant-score: 1
 
 - name: Istio
   link: https://istio.io
@@ -106,7 +108,7 @@
   prometheus: "Yes"
   tracing: "Jaeger"
   encryption: "Yes"
-  smi: {tac: "Yes", taclink: "https://github.com/deislabs/smi-adapter-istio", tmetrics: "Yes", tmetricslink: "https://github.com/deislabs/smi-metrics/tree/master/pkg/istio", tsplit: "Yes", tsplitlink: "https://github.com/deislabs/smi-adapter-istio", tspec: "Yes", tspeclink: "https://github.com/deislabs/smi-adapter-istio"}
+  multi-tenant-score: 5
 
 - name: Kuma
   desc: "Kuma is a universal open source control-plane that can run and be operated natively across both Kubernetes and VM environments."
@@ -120,6 +122,7 @@
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+  multi-tenant-score: 8
 
 - name: Linkerd 1.x
   desc: "Linkerd - hosted by the CNCF and built on top of Twitter Finagle. Linkerd includes both a proxying data plane and the Namerd (“namer-dee”) control plane all in one package. "
@@ -133,6 +136,7 @@
   prometheus: "Yes"
   tracing: "Zipkin"
   encryption: "Yes"
+  multi-tenant-score: 1
 
 - name: Linkerd 2.x (Conduit)
   desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setu. Open Source. From Buoyant. Written in Rust and Go."
@@ -146,7 +150,7 @@
   prometheus: "Yes"
   tracing: "None"
   encryption: "Yes"
-  smi: {tac: "No", taclink: "", tmetrics: "Yes", tmetricslink: "https://github.com/deislabs/smi-metrics/tree/master/pkg/linkerd", tsplit: "Yes", tsplitlink: "https://linkerd.io/2/features/traffic-split/", tspec: "No", tspeclink: ""}
+  multi-tenant-score: 1
 
 - name: Maesh
   desc: "Maesh is a simple, yet full-featured service mesh. It is container-native and fits as your de-facto service mesh in your Kubernetes cluster."
@@ -160,7 +164,7 @@
   prometheus: "Yes"
   tracing: "Yes"
   encryption: "No"
-  smi: {tac: "Yes", taclink: "https://github.com/containous/maesh", tmetrics: "No", tmetricslink: "", tsplit: "Yes", tsplitlink: "https://github.com/containous/maesh", tspec: "Yes", tspeclink: "https://github.com/containous/maesh"}
+  multi-tenant-score: 1
 
 - name: Maistra
   desc: "Maistra is a security focused distribution of Istio designed to run on top of OpenShift."
@@ -174,6 +178,7 @@
   prometheus: "Yes"
   tracing: "Jaeger/Grafana"
   encryption: "Yes"
+  multi-tenant-score: 10
 
 - name: Mesher
   desc: "Mesher is service mesh implementation based on go-chassis which can work together with ServiceComb Service center running on any infrastructure. Mesher can work with go-chassis in same service mesh control plane and it supports both linux and windows OS"
@@ -187,6 +192,7 @@
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+  multi-tenant-score: 8
 
 - name: Octarine
   desc: "Octarine is a security platform for k8s workloads that combines admission control with runtime network security leveraging an Envoy-based service mesh"
@@ -199,6 +205,7 @@
   prometheus: "No"
   tracing: "No"
   encryption: "Yes"
+  multi-tenant-score: 10
 
 - name: Rotor
   link: https://github.com/turbinelabs/
@@ -225,6 +232,7 @@
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+  multi-tenant-score: 8
 
 - name: Yggdrasil
   desc: "Yggdrasil is an Envoy control plane that configures listeners and clusters based off Kubernetes ingresses from multiple Kube Clusters."
@@ -238,6 +246,7 @@
   prometheus: "Yes"
   tracing: "Pluggable"
   encryption: "Yes"
+  multi-tenant-score: 1
 
 - name: Zuul
   desc: "Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more."
@@ -251,6 +260,7 @@
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+  multi-tenant-score: 1
 
 - name: Vulcand
   desc: "Programmatic load balancer and service mesh backed by etcd"
@@ -264,6 +274,7 @@
   prometheus: "No"
   tracing: "No"
   encryption: "Yes"
+  multi-tenant-score: 1
 
 - name: Network Service Mesh
   desc: "Network Service Mesh (NSM) is a novel approach solving complicated L2/L3 use cases in Kubernetes that are tricky to address with the existing Kubernetes Network Mode"
@@ -277,6 +288,7 @@
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+  multi-tenant-score: 1
 
 # - name: Vamp
 #   desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."

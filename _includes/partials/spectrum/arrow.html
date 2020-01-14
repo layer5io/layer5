@@ -17,8 +17,9 @@
     class="spectrum-arrow spectrum-dual"
     style="--lcolor: {{LCOLOR}}; --rcolor: {{RCOLOR}}"
 >
-    <span style="float: left">{{include.LVALUE}}</span>
-    <span style="float: right">{{include.RVALUE}}</span>
+    <span style="float: left; font-size:medium;">{{include.LVALUE}}</span>
+    {{ include.NAME }}
+    <span style="float: right; font-size:medium;">{{include.RVALUE}}</span>
 </div>
 {% else %}
 <!-- Single-valued arrow -->
