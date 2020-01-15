@@ -16,7 +16,7 @@ _Before I continue on, I want to extend a huge thank-you to Layer5's lead develo
 
 This week, I helped resolve the very first issue that I outlined in my [Planning for #Hacktoberfest 2019](https://raungar.wordpress.com/2019/09/27/planning-for-hacktoberfest-2019/) post:
 
-![](https://raungar.files.wordpress.com/2019/10/image-4.png?w=1024)
+[![](https://raungar.files.wordpress.com/2019/10/image-4.png?w=1024)](https://raungar.files.wordpress.com/2019/10/image-4.png?w=1024)
 
 Issue [layerio#65](https://github.com/layer5io/layer5/issues/65): enhancements for the [Layer5 Landscape page](https://layer5.io/landscape/)
 
@@ -47,7 +47,7 @@ let bubbleSort = () => {
   for (i = 0; i < rows.length-1; i++) {
     for (j = 0; j < rows.length-i-1; j++) {
       if (shouldSwap(text(j), text(j+1))) {
-        rows\[j\].parentNode.insertBefore(rows\[j+1\], rows\[j\]);
+        rows[j].parentNode.insertBefore(rows[j+1], rows[j]);
         didSort = true;
       }
     }
@@ -67,7 +67,7 @@ Although this asset has been [frequently modified](https://github.com/layer5io/l
 
 All of the changes I've made can be viewed through [my (merged) pull request](https://github.com/layer5io/layer5/pull/209):
 
-![](https://raungar.files.wordpress.com/2019/10/image-6.png?w=1024)
+[![](https://raungar.files.wordpress.com/2019/10/image-6.png?w=1024)](https://raungar.files.wordpress.com/2019/10/image-6.png?w=1024)
 
 Pull request [layer5io#209](https://github.com/layer5io/layer5/pull/209): resolved the remainder of issue [layerio#65](https://github.com/layer5io/layer5/issues/65)
 
