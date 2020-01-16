@@ -17,7 +17,7 @@
       to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers
         to accelerate customers’ digital transformations, helping them move into the new era of DevOps and cloud native applications.</p>
 </div>
-
+<h1>Education Partners</h1>
 {% for partner in site.data.partners %}
 {% if partner.visibility != "hide" %}
 <div class="row">
@@ -57,3 +57,43 @@
   {% endif %}
 
   {% endfor %}
+  <h1>Technology Partners</h1>
+  {% for partner in site.data.tech_partners %}
+{% if partner.visibility != "hide" %}
+<div class="row">
+  {% capture parter_desc %}
+  <div class="col m8" style="position:relative;">
+      <h3 style="color:#111111;">{{partner.name}}</h3>
+      <div style="margin-left:10px; margin-right:10px;">
+        {{partner.desc}}
+        
+        <p style="text-align: center;font-weight: bold;">
+        More about our partner: 
+        <a href="{{partner.link}}">{{partner.link}}</a>
+        </p>
+      </div>
+    </div>
+
+    {% endcapture %}
+    {% capture parter_image %}
+    <div class="col m4" style="position:relative;">
+        <a href="{{partner.img}}">
+          <img src="{{partner.img}}" style="{{partner.style}}"
+          alt="{{partner.name}}"></a>
+    </div>
+    {% endcapture %}
+  
+    {% assign cont = forloop.index | modulo: 2 %}
+      {% if cont == 0 %}
+        {{ parter_desc }}
+        {{ parter_image }}
+      {% else %}
+        {{ parter_image }}
+        {{ parter_desc }}
+      {% endif %}
+  
+  </div>
+  
+    {% endif %}
+  
+    {% endfor %}
