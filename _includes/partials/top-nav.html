@@ -13,7 +13,9 @@
             {% endcomment %}
     
             {% if link.link == page.url %}
-                {% assign class = class |  %}
+
+                {% assign class = class | append: " active" %}
+
             {% endif %}
             {% assign lInd = forloop.index %}
             {% if link.subitems[0] %}
