@@ -27,7 +27,8 @@
   
   <div class="card-content comparison">
     <ul>Service Mesh
-      {% for meshes in site.data.categories.meshes %}
+      {% assign sorted = (site.data.categories.meshes | sort: 'name')  %}
+      {% for meshes in sorted %}
           <li><div class="tooltip"><a href="{{meshes.link}}">{{meshes.name}}</a>
             <span class="tooltiptext">{{meshes.desc}}</span></div>
           </li>
