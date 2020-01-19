@@ -107,7 +107,7 @@
   encryption: "Yes"
 
 - name: Kuma
-  desc: "Incrementally deploy Kuma proxies to go from an API gateway to a modern mesh with reliability, security, and observability built-in."
+  desc: "Kuma is a universal open source control-plane for Service Mesh and Microservices that can run and be operated natively across both Kubernetes and VM environments, in order to be easily adopted by every team in the organization.."
   link: https://konghq.com/solutions/service-mesh/
   autoinject: "No"
   tcp-web: "Yes"
