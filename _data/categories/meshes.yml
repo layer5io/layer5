@@ -107,8 +107,8 @@
   encryption: "Yes"
 
 - name: Kuma
-  desc: "Kuma is a universal open source control-plane for Service Mesh and Microservices that can run and be operated natively across both Kubernetes and VM environments, in order to be easily adopted by every team in the organization.."
-  link: https://konghq.com/solutions/service-mesh/
+  desc: "Kuma is a universal open source control-plane that can run and be operated natively across both Kubernetes and VM environments."
+  link: https://kuma.io
   autoinject: "No"
   tcp-web: "Yes"
   grpc: "No"
