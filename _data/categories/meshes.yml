@@ -106,9 +106,9 @@
   tracing: "Jaeger"
   encryption: "Yes"
 
-- name: Kong
-  desc: "Incrementally deploy Kong proxies to go from an API gateway to a modern mesh with reliability, security, and observability built-in."
-  link: https://konghq.com/solutions/service-mesh/
+- name: Kuma
+  desc: "Kuma is a universal open source control-plane that can run and be operated natively across both Kubernetes and VM environments."
+  link: https://kuma.io
   autoinject: "No"
   tcp-web: "Yes"
   grpc: "No"
