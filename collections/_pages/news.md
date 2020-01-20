@@ -6,6 +6,4 @@ redirect_from:
 - /company/news
 excerpt: "News and Press about Layer5"
 ---
-{% include banner.html %}
-
 {% include news.html %}
