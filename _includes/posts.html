@@ -1,7 +1,7 @@
 <div class="row">
   {% for post in site.posts %}
   
-  {% if post.visibility != "hide" %}
+  {% if post.visibility != "hide" and post.type != "news" %}
 
   <div class="col s12 m4">
     <div class="card" style="z-index: 1;">
