@@ -4,6 +4,8 @@ layout: plain
 permalink: /news
 redirect_from:
 - /company/news
+- /company/news/
+- /news/
 excerpt: "News and Press about Layer5"
 ---
 {% include news.html %}

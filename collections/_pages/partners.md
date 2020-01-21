@@ -2,7 +2,7 @@
 layout: page
 title:  "Layer5 Partners"
 permalink: /partners
-redirects:
+redirect_from:
 - /partners/
 excerpt: "Layer5 Community - Partners"
 ---
