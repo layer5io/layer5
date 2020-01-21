@@ -8,7 +8,7 @@
   highlight: false
   subitems:
     - name: Meshery
-      link: /meshery/
+      link: https://github.com/layer5io/meshery
       new_window: false
     - name: Service Mesh Landscape
       link: /landscape
@@ -40,8 +40,8 @@
   link: /resources/
   subitems:
     - name: Books
-      link: /books/
+      link: /books
       new_window: false
     - name: Workshops
-      link: /workshops/
+      link: /workshops
       new_window: false
