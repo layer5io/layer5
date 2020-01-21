@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "#Hacktoberfest 2019 is heating up!"
+title:  "Hacktoberfest 2019: Heating up!"
 date:   2019-10-12 21:58:00 +0000
 image: https://raungar.files.wordpress.com/2019/10/hacktoberfestw2.png
 author: Rafi Ungar
-permalink: /blog/hacktoberfest-2019-is-heating-up
+permalink: /blog/hacktoberfest-2019-heating-up
 ---
 _(ICYMI: [I've made my first-ever Hacktoberfest contribution](https://raungar.wordpress.com/2019/10/02/hacktoberfest-2019-documenting-my-first-ever-hacktoberfest-contribution/)!)_
 
@@ -16,7 +16,7 @@ _Before I continue on, I want to extend a huge thank-you to Layer5's lead develo
 
 This week, I helped resolve the very first issue that I outlined in my [Planning for #Hacktoberfest 2019](https://raungar.wordpress.com/2019/09/27/planning-for-hacktoberfest-2019/) post:
 
-[![](https://raungar.files.wordpress.com/2019/10/image-4.png?w=1024)](https://raungar.files.wordpress.com/2019/10/image-4.png?w=1024)
+[![](https://raungar.files.wordpress.com/2019/10/image-4.png?w=1024){:width="80%"}](https://raungar.files.wordpress.com/2019/10/image-4.png?w=1024)
 
 Issue [layerio#65](https://github.com/layer5io/layer5/issues/65): enhancements for the [Layer5 Landscape page](https://layer5.io/landscape/)
 
@@ -67,10 +67,12 @@ Although this asset has been [frequently modified](https://github.com/layer5io/l
 
 All of the changes I've made can be viewed through [my (merged) pull request](https://github.com/layer5io/layer5/pull/209):
 
-[![](https://raungar.files.wordpress.com/2019/10/image-6.png?w=1024)](https://raungar.files.wordpress.com/2019/10/image-6.png?w=1024)
+[![](https://raungar.files.wordpress.com/2019/10/image-6.png?w=1024){:width="80%"}](https://raungar.files.wordpress.com/2019/10/image-6.png?w=1024)
 
 Pull request [layer5io#209](https://github.com/layer5io/layer5/pull/209): resolved the remainder of issue [layerio#65](https://github.com/layer5io/layer5/issues/65)
 
 * * * 
 
 I am very fortunate to be so well-supported by the open source communities I have worked with so far, both on-campus and abroad. With their support behind me, I feel equipped to start learning what I need to know to resolve the next two more-difficult issues that lie ahead of me!
+
+\- [Rafi Ungar](https://meshery.io/contributors/rafi-ungar/)
