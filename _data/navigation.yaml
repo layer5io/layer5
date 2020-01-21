@@ -1,5 +1,5 @@
 - name: Blog
-  link: /blog/
+  link: /blog
   new_window: false
   highlight: false
 - name: Projects
