@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "#Hacktoberfest 2019: documenting my first-ever Hacktoberfest contribution"
+title:  "Hacktoberfest 2019: documenting my first-ever Hacktoberfest contribution"
 date:   2019-10-02 18:19:00 +0000
 image: https://raungar.files.wordpress.com/2019/10/hacktoberfest-pr-1-1.png
 author: Rafi Ungar
@@ -8,33 +8,32 @@ permalink: /blog/hacktoberfest-2019-documenting-my-first-ever-hacktoberfest-cont
 ---
 In [my last post](https://raungar.wordpress.com/2019/09/27/planning-for-hacktoberfest-2019/), I identified three GitHub issues to kick off my participation in Hacktoberfest 2019. Today, I am happy to showcase my resolution of one of those issues, marking my first-ever Hacktoberfest contribution!
 
-## [Layer5.io](https://github.com/layer5io/layer5)
+* * *
+
+#### [Layer5.io](https://github.com/layer5io/layer5)
 
 Before I continue on, I want to acknowledge the project that I have contributed to. In [an article](https://layer5.io/gsoc/2019) discussing their participating in the Google Summer of Code 2019 program, [**Layer5**](https://github.com/layer5io/layer5) is described as a community which represents "the largest collection of _service mesh_ projects and their maintainers in the world". [RedHat.com](https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh) helpfully defines a service mesh as "a dedicated infrastructure layer" of an application that controls how different parts of that application ("services") share data with one another (i.e. 'mesh together').
 
 * * *
 
-## Selecting my first Hacktoberfest issue
+### Selecting my first Hacktoberfest issue
 
-As I mentioned my last post, I came into contact with Layer5 after discovering (through the [Hacktoberfest Issue Finder](https://hacktoberfest-finder.netlify.com/)) its [issue regarding table filtering](https://github.com/layer5io/layer5/issues/65)—and subsequently discovered an unreported styling issue:
-
-[![A styling issue with a collection of lists hosted on Layer5's Landscape page.](https://user-images.githubusercontent.com/13500769/66007380-2d643700-e480-11e9-8bda-e81dd0e166d9.png){:width="100%"}](https://user-images.githubusercontent.com/13500769/66007380-2d643700-e480-11e9-8bda-e81dd0e166d9.png)
+As I mentioned my last post, I came into contact with Layer5 after discovering (through the [Hacktoberfest Issue Finder](https://hacktoberfest-finder.netlify.com/)) its [issue regarding table filtering](https://github.com/layer5io/layer5/issues/65)—and subsequently discovered an unreported styling issue. [![A styling issue with a collection of lists hosted on Layer5's Landscape page.](https://user-images.githubusercontent.com/13500769/66007380-2d643700-e480-11e9-8bda-e81dd0e166d9.png){:style="float:left; margin: 1em; width:50%"}](https://user-images.githubusercontent.com/13500769/66007380-2d643700-e480-11e9-8bda-e81dd0e166d9.png)
 
 A styling issue affected a collection of lists hosted on Layer5's [Landscape page](https://layer5.io/landscape/).
 
 Of the three GitHub issues I've scoped out, the resolution of this styling issue (i.e. tweaking CSS) represents the simplest of tasks that I have lined up—and an ideal candidate for a first-time Hacktoberfest contribution!
 
-As far as I could tell, no open issues concerned the styling problem that I discovered. So, as instructed both Layer5's website (and encouraged its extremely-welcoming development team), [I opened _my own issue_](https://github.com/layer5io/layer5/issues/191):
+As far as I could tell, no open issues concerned the styling problem that I discovered. So, as instructed both Layer5's website (and encouraged its extremely-welcoming development team), I opened _my own issue_ - [Enhance landscape categories section wrapping (#191)](https://github.com/layer5io/layer5/issues/191).
 
-[![https://github.com/layer5io/layer5/issues/191](https://raungar.files.wordpress.com/2019/10/image-1.png?w=1024){:width="100%"}](https://raungar.files.wordpress.com/2019/10/image-1.png?w=1024)
+[![https://github.com/layer5io/layer5/issues/191](https://raungar.files.wordpress.com/2019/10/image-1.png?w=1024){:style="text-align:center;width:50%"}](https://raungar.files.wordpress.com/2019/10/image-1.png?w=1024)
 
-Issue – [Enhance landscape categories section wrapping (#191)](https://github.com/layer5io/layer5/issues/191)
-
-## Identifying a solution
+### Identifying a solution
 
 To address this issue, I came up with the idea of realigning the category list items horizontally, transforming the poorly-behaving columns of category 'cards' into rows in a responsive and easily-scalable vertical stack.
 
 Implementating this idea proved quite simple, requiring only [a few added CSS rules](https://github.com/layer5io/layer5/issues/191#issuecomment-537304508), which I first accomplished by tinkering with the live webpage's styling (with the help of the [Stylish](https://addons.mozilla.org/en-US/firefox/addon/stylish/) browser extension):
+
 ```css
 .card .card-content li {
   float: right;
@@ -50,13 +49,14 @@ Implementating this idea proved quite simple, requiring only [a few added CSS ru
   border-bottom-color: var(--main-dark-grey);
 }
 ```
+
 The vertical stack is implemented by the rules in the first selector: list items are floated right and assigned a fixed width, which aligns them neatly. The dashed borders and padding used to separate category lists was also adjusted to accomodate the new design (pictured below):
 
 [![https://github.com/layer5io/layer5/issues/191#issuecomment-537304508](https://user-images.githubusercontent.com/13500769/66013483-5e049a80-e499-11e9-8920-52c3da81ece7.png){:width="100%"}](https://user-images.githubusercontent.com/13500769/66013483-5e049a80-e499-11e9-8920-52c3da81ece7.png)
 
 The above image is one of the [two mockups of the redesign](https://github.com/layer5io/layer5/issues/191#issuecomment-537304508) that I produced for the consideration of the project's developers. As luck would have it, Layer5 project lead [Lee Calcote](https://github.com/leecalcote) provided [a lightning-quick response](https://github.com/layer5io/layer5/issues/191#issuecomment-537310179), welcoming a pull request to it!
 
-[![https://github.com/layer5io/layer5/issues/191#issuecomment-537310179](https://raungar.files.wordpress.com/2019/10/image-2.png?w=1024){:width="100%"}](https://raungar.files.wordpress.com/2019/10/image-2.png?w=1024)
+[![https://github.com/layer5io/layer5/issues/191#issuecomment-537310179](https://raungar.files.wordpress.com/2019/10/image-2.png?w=1024){:width="80%"}](https://raungar.files.wordpress.com/2019/10/image-2.png?w=1024)
 
 #### Future research area: Materialize CSS
 
@@ -110,7 +110,7 @@ How much documentation is too little? Too much? How high should the bar be set f
 
 After successfully testing and fixing the styling on my local fork, I created [a pull request](https://github.com/layer5io/layer5/pull/192):
 
-[![https://github.com/layer5io/layer5/pull/192](https://raungar.files.wordpress.com/2019/10/image-3.png?w=1024){:width="100%"}](https://raungar.files.wordpress.com/2019/10/image-3.png?w=1024)
+[![https://github.com/layer5io/layer5/pull/192](https://raungar.files.wordpress.com/2019/10/image-3.png?w=1024){:width="80%"}](https://raungar.files.wordpress.com/2019/10/image-3.png?w=1024)
 
 Pull request – [Restyle landscape categories (#192)](https://github.com/layer5io/layer5/pull/192)
 
@@ -121,3 +121,5 @@ Pull request – [Restyle landscape categories (#192)](https://github.com/layer5
 I ended [my last post](https://raungar.wordpress.com/2019/09/27/planning-for-hacktoberfest-2019/) by stating that I have yet to gain any experience with makefiles. Well, thanks to my work on Layer5, that is no longer true: I have since used a makefile (to launch a Jekyll executable)! This experience will undoubtedly save me some time with resolving [the Comcast issue I found](https://github.com/Comcast/RestfulHttpsProxy/issues/5)! However, the next Hacktoberfest issue I resolve will be [_the first one I blogged about_](https://github.com/layer5io/layer5/issues/65).
 
 Stay tuned!
+
+\- [Rafi Ungar](https://meshery.io/contributors/rafi-ungar/)
