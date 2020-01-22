@@ -4,7 +4,6 @@ layout: plain
 permalink: /news
 redirect_from:
 - /company/news
-- /company/news/
 
 excerpt: "News and Press about Layer5"
 ---

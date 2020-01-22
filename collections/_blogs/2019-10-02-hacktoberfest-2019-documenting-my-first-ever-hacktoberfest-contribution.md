@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Hacktoberfest 2019: documenting my first-ever Hacktoberfest contribution"
-date:   2019-09-27 18:19:00 +0000
+date:   2019-10-02 18:19:00 +0000
 image: https://raungar.files.wordpress.com/2019/10/hacktoberfest-pr-1-1.png
 author: Rafi Ungar
 permalink: /blog/hacktoberfest-2019-documenting-my-first-ever-hacktoberfest-contribution

@@ -60,6 +60,9 @@ collections:
   blogs:
     output: true
     permalink: /blog/:title
+  news:
+    output: true
+    permalink: /news/:title
   pages:
     output: true
   people:
