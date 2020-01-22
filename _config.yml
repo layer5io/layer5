@@ -57,9 +57,9 @@ collections:
   books:
     output: true
     permalink: /books/:title
-  posts:
+  blogs:
     output: true
-    permalink: /posts/:title
+    permalink: /blog/:title
   pages:
     output: true
   people:

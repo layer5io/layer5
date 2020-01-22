@@ -1,20 +1,26 @@
 <div class="row">
-  {% for post in site.posts %}
+  {% assign sorted = (site.blogs | sort: 'date') | reverse %}
+
+  {% for post in sorted %}
   
   {% if post.visibility != "hide" and post.type != "news" %}
 
   <div class="col s12 m4">
     <div class="card" style="z-index: 1;">
       <div class="card-image">
-        <a href="{{ post.url | relative_url }}"><img src="{{post.image}}" style="max-width:50%; text-align: center;
+        <a href="{{ post.url | relative_url }}">
+          <img src="{{post.image}}" style="max-width:50%; text-align: center;
           margin-left: auto;
           margin-right: auto;"></a>
         <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
-      <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3"
-        href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+      <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 
+        l5-light-blue waves-dark darken-3"
+        href="{{ post.url | relative_url }}">
+        <i class="material-icons">more_horiz</i></a>
       </div>
       <div class="card-content">
-        <h4>{{post.title}}</h4>
+        <h5 class="black-text">{{post.title}}</h5>
+        <p class="grey-text text-darken-2">by {{post.author}}</p>
       </div>
     </div>
   </div>
