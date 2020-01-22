@@ -4,10 +4,23 @@ lang: en
 image:
   path: /assets/images/layer5/5-dark-bg.png
 ---
+<head>
+  <style>
+    html {
+      overflow:   scroll;
+    }
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+    }
+   </style>
+</head>
+<body>
 <div class="container no-pad-top">
     <div id="ecosystem" class="section scrollspy">
       <h3 style="text-align:center;color:aliceblue;">The Service Mesh Community</h3>
       {% include ecosystem.html %}
     </div>
   </div>
+</body>
   
