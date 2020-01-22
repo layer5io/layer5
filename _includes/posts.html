@@ -6,10 +6,11 @@
   {% if post.visibility != "hide" and post.type != "news" %}
 
   <div class="col s12 m4">
-    <div class="card" style="z-index: 1;">
+    <div class="card" style="z-index: 1; height:330px;">
       <div class="card-image">
         <a href="{{ post.url | relative_url }}">
-          <img src="{{post.image}}" style="max-width:50%; text-align: center;
+          <img src="{{post.image}}" style="max-width:100%;  max-height: 180px; width: auto;
+          height: auto; text-align: center;
           margin-left: auto;
           margin-right: auto;"></a>
         <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
@@ -20,7 +21,13 @@
       </div>
       <div class="card-content">
         <h5 class="black-text">{{post.title}}</h5>
-        <p class="grey-text text-darken-2">by {{post.author}}</p>
+        <p class="grey-text text-darken-2" style="padding-top:1em; padding-bottom: .75em;">
+        <time style="float:left" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+          {{ post.date | date: date_format }}
+        </time>
+        <span style="float:right;">by {{post.author}}</span>
+        
       </div>
     </div>
   </div>
