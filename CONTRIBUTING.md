@@ -9,13 +9,13 @@ Contributions, updates, [discrepancy reports](/../../issues) and [pull requests]
 
 ### <a name="landscape">Updating the Landscape</a>
 
-The service mesh landscape is powered by Jekyll. In order to add/update the landscape, clone this repository, create a branch and navigate to the **_data/categories** folder. Edit these yaml files (if appropriate):
+The service mesh landscape is powered by Jekyll. In order to add/update the landscape, clone this repository, create a branch and navigate to the **_data/landscape** folder. Edit these yaml files (if appropriate):
 
-- [non-functional.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/non-functional.yml) - overview of various service meshes
-- [meshes.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/meshes.yml) - list of individual service mesh details
-- [proxies.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/proxies.yml) - list of individual modern proxies
-- [gw.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/gw.yml) - list of API gateways
-- [lb.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/lb.yml) - list of load balancers
+- [non-functional.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/non-functional.yml) - overview of various service meshes
+- [meshes.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/meshes.yml) - list of individual service mesh details
+- [proxies.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/proxies.yml) - list of individual modern proxies
+- [gw.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/gw.yml) - list of API gateways
+- [lb.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/lb.yml) - list of load balancers
 
 Entries should be listed in alphabetical order. Edit other yaml files as needed. 
 

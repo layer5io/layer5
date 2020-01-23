@@ -15,7 +15,7 @@
         </thead>
 
         <tbody>
-            {% assign meshes_by_category = site.data.categories.meshes | sort: "category" | reverse %}
+            {% assign meshes_by_category = site.data.landscape.meshes | sort: "category" | reverse %}
             {% for meshes in meshes_by_category %}
             <tr style="border: 1px dashed #a6b7be; text-align:center;">
                 <td><a href="{{meshes.link}}" title="{{meshes.desc}}">{{meshes.name}}</a></td>

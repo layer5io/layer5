@@ -13,75 +13,87 @@
 </body>
 
 <footer class="page-footer white-bg" id="footer" style="padding-top:45px;">
-    <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col l2">
+        <span class="black-text" style="font-weight: bold;font-size:1.3em;">Resources</span>
+        <ul>
+          <li><a class="black-text" href="/landscape">Service Mesh Comparison</a></li>
+          <li><a class="black-text" href="/landscape#tools">Service Mesh Tools</a></li>
+          <li><a class="black-text" href="/books">Service Mesh Books</a></li>
+          <li><a class="black-text" href="/workshops">Service Mesh Workshops</a></li>
+        </ul>
+      </div>
+
+      <div class="col l2">
+        <span class="black-text" style="font-weight: bold;font-size:1.3em;">Community</span>
+        <ul>
+          <li><a class="black-text" href="/blog">Blog</a></li>
+          <li><a class="black-text" href="/partners">Partners</a></li>
+          <li><a class="black-text" href="/careers/internships">Internships</a></li>
+        </ul>
+      </div>
+
+      <div class="col l2">
+        <span class="black-text" style="font-weight: bold;font-size:1.3em;">Social</span>  
+        <ul>
+          <li><a class="black-text" href="https://www.linkedin.com/company/layer5/">
+            <img src="{{site.baseurl}}/assets/images/buttons/linkedin_no-trim_black.svg" style="vertical-align:middle;height:.85em;" /> Layer5</a></li>
+          <li><a class="black-text" href="https://twitter.com/layer5">
+            <img src="{{site.baseurl}}/assets/images/buttons/twitter_no-trim_black.svg" style="vertical-align:middle;height:.85em;"> @layer5</a></li>
+          <li><a class="black-text" href="https://twitter.com/mesheryio">
+            <img src="{{site.baseurl}}/assets/images/buttons/twitter_no-trim_black.svg" style="vertical-align:middle;height:.85em;" /> @mesheryio</i></a></li>
+        </ul>
+      </div>
+      
+      <div class="col l3" >
+        <span class="black-text" style="font-weight: bold;font-size:1.3em;">Projects</span>
+        <ul>
+            <li><a class="black-text" href="/meshery">Meshery</a></li>
+            <li><a class="black-text" href="/landscape">Service Mesh Landscape</a></li>
+            <li><a class="black-text" href="/blog/a-standard-interface-for-service-meshes">Service Mesh Interface</a></li>
+            <li><a class="black-text" href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance Specification</a></li>
+        </ul>
+      </div>
+
+      <div class="col l4">
+        <a class="twitter-timeline" data-height="260px"
+        data-theme="light" data-link-color="#62ACCD" href="https://twitter.com/layer5"
+        data-chrome="nofooter noborders noscrollbar">Tweets by Layer5</a> 
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+
       <div class="row">
-        <div class="col l3">
-          <span class="black-text" style="font-weight: bold;font-size:1.3em;">Resources</span>
-          <ul>
-            <li><a class="black-text" href="/landscape">Service Mesh Comparison</a></li>
-            <li><a class="black-text" href="/landscape#tools">Service Mesh Tools</a></li>
-            <li><a class="black-text" href="/books">Service Mesh Books</a></li>
-            <li><a class="black-text" href="/workshops">Service Mesh Workshops</a></li>
-          </ul>
-        </div>
-
-          <div class="col l3">
-
-          <span class="black-text" style="font-weight: bold;font-size:1.3em;">Community</span>
-
-          <ul>
-            <li><a class="black-text" href="/blog">Blog</a></li>
-            <li><a class="black-text" href="/partners">Partners</a></li>
-            <li><a class="black-text" href="/careers/internships">Internships</a></li>
-          </ul>
+        <div class="col l2">
+          <span class="black-text" style="font-weight: bold;font-size:1.3em;">Company</span>  
           <ul>
             <li><a class="black-text" href="/news">News</a></li>
             <li><a class="black-text" href="/careers">Careers</a></li>
             <li><a class="black-text" href="/brand">Brand</a></li>
           </ul>
         </div>
-
-        
-        <div class="col l3" >
-          <span class="black-text" style="font-weight: bold;font-size:1.3em;">Projects</span>
-          <ul>
-              <li><a class="black-text" href="/meshery">Meshery</a></li>
-              <li><a class="black-text" href="/landscape">Service Mesh Landscape</a></li>
-              <li><a class="black-text" href="/blog/a-standard-interface-for-service-meshes">Service Mesh Interface</a></li>
-              <li><a class="black-text" href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance Specification</a></li>
-          </ul>
-        </div>
-        <div class="col l3" >
+        <div class="col l4" >
           <span class="black-text" style="font-weight: bold;font-size:1.3em;">Contact</span>
           {% include partials/hori-social.html %}
           <a class="black-text" href="/subscribe">Subscribe to mailing list</a>
         </div>
       </div>
-      <div class="row">
-
-      <div class="col l5">
-        <a class="twitter-timeline" data-height="260px"
-        data-theme="light" data-link-color="#62ACCD" href="https://twitter.com/layer5"
-        data-chrome="nofooter noborders noscrollbar">Tweets by Layer5</a> 
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </div>
-
-    </div>
-    <div class="footer-copyright white-text text-lighten-1">
-      <div class="row">
-        <div class="col">
-          <i class="material-icons white-text" style="padding-right:1px;vertical-align: middle;font-size: .9em;">copyright</i> 2020
-          Layer5, Inc. All rights reserved. 
-        </div>
-        <div class="col">
-          <a href="https://meshery.layer5.io/privacy-policy.html" class="white-text none" style="vertical-align: middle; ">Privacy</a>
-          |
-          <a href="https://meshery.layer5.io/terms-of-service.html" class="white-text none" style="vertical-align: middle; ">Terms</a>
-        </div>
+  <div class="footer-copyright white-text text-lighten-1">
+    <div class="row">
+      <div class="col">
+        <i class="material-icons white-text" style="padding-right:1px;vertical-align: middle;font-size: .9em;">copyright</i> 2020
+        Layer5, Inc. All rights reserved. 
+      </div>
+      <div class="col">
+        <a href="https://meshery.layer5.io/privacy-policy.html" class="white-text none" style="vertical-align: middle; ">Privacy</a>
+        |
+        <a href="https://meshery.layer5.io/terms-of-service.html" class="white-text none" style="vertical-align: middle; ">Terms</a>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
   <!-- scripts -->
   {% if site.tag_manager_id and jekyll.environment == 'production' %}
   <!-- Google Tag Manager (noscript) -->

@@ -1,7 +1,5 @@
 <div class="row">
 
-  <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
-
   <style> 
     .card-content>ul {font-weight:bold;} 
     .card-content>ul>li {
@@ -27,7 +25,7 @@
   
   <div class="card-content comparison">
     <ul>Service Mesh
-      {% assign sorted = (site.data.categories.meshes | sort: 'name')  %}
+      {% assign sorted = (site.data.landscape.meshes | sort: 'name')  %}
       {% for meshes in sorted %}
           <li><div class="tooltip"><a href="{{meshes.link}}">{{meshes.name}}</a>
             <span class="tooltiptext">{{meshes.desc}}</span></div>
@@ -38,7 +36,7 @@
 
   <div class="card-content comparison">
     <ul>Client Library
-      {% for clients in site.data.categories.clients %}
+      {% for clients in site.data.landscape.clients %}
           <li><div class="tooltip"><a href="{{clients.link}}">{{clients.name}}</a>
           <span class="tooltiptext">{{clients.desc}}</span></div>
         </li>
@@ -49,7 +47,7 @@
 
   <div class="card-content comparison">
       <ul>API Gateway
-        {% for gw in site.data.categories.gw %}
+        {% for gw in site.data.landscape.gw %}
             <li><div class="tooltip"><a href="{{gw.link}}">{{gw.name}}</a>
               <span class="tooltiptext">{{gw.desc}}</span></div>
             </li>
@@ -60,7 +58,7 @@
   
   <div class="card-content comparison">
       <ul>Service Proxy
-        {% for proxies in site.data.categories.proxies %}
+        {% for proxies in site.data.landscape.proxies %}
             <li><div class="tooltip"><a href="{{proxies.link}}">{{proxies.name}}</a>
               <span class="tooltiptext">{{proxies.desc}}</span>
             </div></li>
@@ -70,7 +68,7 @@
 
   <div class="card-content comparison">
     <ul>Load Balancer
-      {% for lbs in site.data.categories.lb %}
+      {% for lbs in site.data.landscape.lb %}
           <li><div class="tooltip"><a href="{{lbs.link}}">{{lbs.name}}</a>
             <span class="tooltiptext">{{lbs.desc}}</span>
           </div></li>
