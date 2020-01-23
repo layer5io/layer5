@@ -91,7 +91,7 @@
   multi-tenant: "Yes"
   prometheus: "Yes"
   tracing: "OpenTracing compatible"
-  encyrption: "Yes"
+  encryption: "Yes"
 
 - name: Istio
   link: https://istio.io
