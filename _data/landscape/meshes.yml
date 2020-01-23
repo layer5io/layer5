@@ -82,7 +82,7 @@
 
 - name: Grey Matter
   desc: "Grey Matter is an Istio-compliant, Envoy proxy-based, hybrid cloud service mesh platform for business insight and secure data control with your microservices."
-  link: http://deciphernow.com/grey-matter
+  link: https://greymatter.io
   autoinject: "Yes"
   tcp-web: "Yes"
   grpc: "Yes"
