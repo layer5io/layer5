@@ -2269,9 +2269,13 @@ html {
  :root {
   --main-grey: #647881;
   --main-light-blue: #62ACCD;
-  --main-dark-grey: #3c494f;
   --main-dark-blue: #477E96;
+
+  --main-dark-grey: #3c494f;
   --main-light-grey: #9FBFCD;
+
+  --main-dark-green: #00b39f;
+  --main-light-green: #00d3a9;
 
   --main-dark-teal: #0063AE;
   --main-light-teal: #34FFFF;
@@ -3069,7 +3073,7 @@ ul.staggered-list li {
   }
 } 
 
-@media only screen and (max-width: 805px) {
+@media only screen and (max-width: 801px) {
   .hide-on-med-and-down {
     display: none !important;
   }
@@ -3087,7 +3091,7 @@ ul.staggered-list li {
   }
 }
 
-@media only screen and (min-width: 805px) {
+@media only screen and (min-width: 800px) {
   .show-on-med-and-down {
     display: none !important;
   }
@@ -3678,21 +3682,10 @@ nav ul a span.badge {
   width: 90%;
 }
 
-@media only screen and (min-width: 601px) {
-  .container {
-    width: 85%;
-  }
-}
 @media only screen and (max-width: 550px) {
   .row .col.l4 {
     width: 100%;
     }
-}
-
-@media only screen and (min-width: 993px) {
-  .container {
-    width: 70%;
-  }
 }
 
 .container .row {

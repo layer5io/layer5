@@ -2,7 +2,7 @@
     <thead style="background-color: #a6b7be; word-wrap: none">
         <tr>
             <th>Project</th>
-            {% for mesh in site.data.categories.meshes %}
+            {% for mesh in site.data.landscape.meshes %}
                 {% for PROJECT in include.PROJECTS %}
                     {% assign name = mesh.name | downcase %}
                     {% if name contains PROJECT %}
@@ -23,7 +23,7 @@
         {% for KEY in include.KEYS %}
         <tr style="border: 1px dashed #a6b7be">
             <td>{{KEY}}</td>
-            {% for mesh in site.data.categories.meshes %}
+            {% for mesh in site.data.landscape.meshes %}
                 {% for PROJECT in include.PROJECTS %}
                     {% assign name = mesh.name | downcase %}
                     {% assign value = mesh[KEY] | downcase %}

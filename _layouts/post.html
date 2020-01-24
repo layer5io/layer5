@@ -30,8 +30,16 @@
     
   </div>
   
-  {% include posts-list.html %}
+  {% if page.type == "news" %}
+    
+    {% include collections/news-list.html %}
+  
+  {% else %}
+  
+    {% include collections/posts-list.html %}
+  
+  {% endif %}
 
   {% include newsletter-signup.html %}
 
-  {% include footer-plain.html %}
+  {% include footer.html %}

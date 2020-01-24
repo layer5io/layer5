@@ -17,7 +17,6 @@ portfolio_type: cards
 
 project_button: Github
 
-redirects: yes
 session: Session
 
 #Contact / Social
@@ -41,6 +40,7 @@ syntax_highlighting: true # include the css for syntax highlighting
 
 # Build settings
 # theme: minima
+paginate: 5
 markdown: kramdown
 permalink: pretty
 plugins:
@@ -58,9 +58,12 @@ collections:
   books:
     output: true
     permalink: /books/:title
-  posts:
+  blogs:
     output: true
-    permalink: /posts/:title
+    permalink: /blog/:title
+  news:
+    output: true
+    permalink: /news/:title
   pages:
     output: true
   people:
@@ -81,12 +84,14 @@ defaults:
       image: /assets/images/layer5/layer5-tag-linkedin.png
   - scope:
       type: pages
+      path: ""
     values:
       layout: default
       body-class: left-sidebar
       sidebar: open
   - scope:
       type: books
+      path: ""
     values:
       layout: default
       body-class: left-sidebar

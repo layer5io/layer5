@@ -1,9 +1,9 @@
 ---
 layout: project
 title:  "Layer5 Internships"
-permalink: /internships
-redirects:
-- /careers
+permalink: /careers/internships
+redirect_from:
+  - /internships
 excerpt: "Layer5 Community - Internships"
 ---
 
