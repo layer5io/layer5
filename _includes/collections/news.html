@@ -15,17 +15,21 @@
                   
                   {% if post.eurl %}
                   <a id="{{post.eurl}}" class="btn-floating halfway-fab 
-                  waves-effect z-depth-4 l5-light-blue waves-dark darken-3"
-                  href="{{post.eurl}}">
+                  waves-effect z-depth-4 l5-light-green waves-dark darken-3" href="{{post.eurl}}">
+                  <img src="/assets/images/buttons/external-link_white.svg" 
+                    style="position:absolute; max-width:100%;  max-height: 20px; width: auto;
+                    height: auto; text-align: center; top: 10px;
+                    margin-left: auto;
+                    margin-right: auto;" /></a>
                   
 
                   {% else %}
                   <a id="{{post.url}}" class="btn-floating halfway-fab 
-                  waves-effect z-depth-4 l5-light-blue waves-dark darken-3"
-                  href="{{ post.url | relative_url }}">
+                  waves-effect z-depth-4 l5-dark-green waves-dark darken-3"
+                  href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
                   {% endif %}
 
-                  <i class="material-icons">more_horiz</i></a>
+                  
                 </div>
                 <div class="card-content">
                   <h5 class="black-text">{{post.title}}</h5>

@@ -2269,9 +2269,13 @@ html {
  :root {
   --main-grey: #647881;
   --main-light-blue: #62ACCD;
-  --main-dark-grey: #3c494f;
   --main-dark-blue: #477E96;
+
+  --main-dark-grey: #3c494f;
   --main-light-grey: #9FBFCD;
+
+  --main-dark-green: #00b39f;
+  --main-light-green: #00d3a9;
 
   --main-dark-teal: #0063AE;
   --main-light-teal: #34FFFF;
