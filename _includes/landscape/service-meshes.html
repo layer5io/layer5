@@ -101,40 +101,21 @@
 </div>
 
 <div class="row">
-<<<<<<< HEAD:_includes/service-meshes.html
     <div class="col s12">
       {% include partials/spectrum/arrow.html
         NAME = 'Non-Functional'
         COLOR = 'blue'
       %}  
         {% include service-mesh-non-functional.html %}
-=======
     <div class="col s12"><h5 style="color:aliceblue;">Non-Functional</h5>
         {% include landscape/service-mesh-non-functional.html %}
->>>>>>> master:_includes/landscape/service-meshes.html
         <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
     </div>
 </div>
 
 <div class="row">
-<<<<<<< HEAD:_includes/service-meshes.html
-    <div class="col s12">
-      <!-- Comparative Spectrum Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Functional'
-      COLOR = 'red'
-    %}   
-      {% assign
-        GREAT = 'Yes' | downcase %}
-      {% assign
-        GOOD = 'Experimental, Replaced' | downcase %}
-      {% assign
-        BAD = 'No, ?' | downcase %} 
-      {% include service-mesh-functionality.html GREAT=GREAT GOOD=GOOD BAD=BAD %}
-=======
     <div class="col s12"><h5 style="color:aliceblue;">Functional</h5>    
       {% include landscape/service-mesh-functionality.html %}
->>>>>>> master:_includes/landscape/service-meshes.html
       <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
     </div>
 </div>
