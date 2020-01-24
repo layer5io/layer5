@@ -1,7 +1,3 @@
-<div class="container no-pad-top" >
-    <div id="posts" class="section scrollspy">
-        <h3 style="text-align:center;color:aliceblue;">News</h3>
-
         <div class="row">
             {% for post in site.news %}
             
@@ -17,12 +13,13 @@
                     margin-right: auto;"></a>
                   <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
                   
-                  {% if post.eurl != "" %}
+                  {% if post.eurl %}
                   <a id="{{post.eurl}}" class="btn-floating halfway-fab 
                   waves-effect z-depth-4 l5-light-blue waves-dark darken-3"
                   href="{{post.eurl}}">
                   
-                  {% elsif post.eurl == "" %}
+
+                  {% else %}
                   <a id="{{post.url}}" class="btn-floating halfway-fab 
                   waves-effect z-depth-4 l5-light-blue waves-dark darken-3"
                   href="{{ post.url | relative_url }}">
@@ -44,8 +41,3 @@
           
             {% endfor %}
           </div>
-
-    </div>
-</div>
-
-
