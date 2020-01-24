@@ -5,4 +5,4 @@ permalink: /projects
 excerpt: "Layer5 Community - Projects"
 ---
 
-{% include projects-list.html %}
+{% include collections/projects-list.html %}

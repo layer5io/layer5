@@ -7,4 +7,4 @@ redirect_from:
 
 excerpt: "News and Press about Layer5"
 ---
-{% include news-list.html %}
+{% include collections/news-list.html %}
