@@ -24,7 +24,7 @@
   prometheus: "No"
   tracing: "Yes"
   encryption: "Yes"
-  score: 6
+  multi-tenant-score: 6
 
 - name: Aspen Mesh
   desc: "Aspen Mesh - a commercial offering built on top of Istio with some open source components."
@@ -68,8 +68,8 @@
   encryption: "Yes"
   multi-tenant-score: 1
 
-- name: Consul Connect
-  desc: "Consul Connect - is a feature that enables encrpyted communication between services."
+- name: Consul
+  desc: "Consul - Connect is a feature that enables encrpyted communication between services."
   link: https://www.consul.io/mesh.html
   autoinject: "Yes"
   tcp-web: "Yes"
