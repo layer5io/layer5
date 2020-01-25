@@ -3018,9 +3018,108 @@ ul.staggered-list li {
   border-right-color: var(--main-dark-grey);
 } 
 
+.comm ul{
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  bottom: 10%;
+  margin: auto;
+}
+
+.comm ul li {
+  list-style: none;
+}
+
+.comm ul li a {
+  width: 80px;
+  height: 80px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 120px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgb(95, 165, 192);
+  z-index: 1;
+}
+
+.comm ul li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 1;
+}
+
+.comm ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.comm ul li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+.comm ul li a:hover:before {
+  top: 0;
+}
+
+.comm ul li:nth-child(1) a:before{
+  background:  rgb(95, 165, 192);
+}
+
 .tooltip {
   position: relative;
   display: inline-block;
+}
+.comm_icon_meeting{
+  position: relative;
+  z-index: 10;
+  width: 45px;
+  vertical-align: top;
+  padding-top: 15px;
+}
+
+.comm_icon_youtube{
+  position: relative;
+  z-index: 10;
+  width: 45px;
+  vertical-align: top;
+  padding-top: 15px;
+}
+
+.comm_icon_calendar{
+  position: relative;
+  z-index: 10;
+  width: 35px;
+  vertical-align: top;
+  padding-top: 15px;
+}
+
+.comm_icon_drive{
+  position: relative;
+  z-index: 10;
+  width: 45px;
+  vertical-align: top; 
+  padding-top: 13px;
+}
+
+.comm_icon_slack{
+  position: relative;
+  z-index: 10;
+  width: 65px;
+  vertical-align: top;
+  padding-top: 5px;
 }
 
 .tooltip .tooltiptext {
@@ -3161,6 +3260,103 @@ ul.staggered-list li {
   .center-on-small-only {
     text-align: center;
 
+  }
+}
+
+/*Community Icons Resizing*/
+@media only screen and (max-width: 630px){
+  .comm ul li a{
+    width: 60px;
+    height: 60px;
+  }
+  
+  .comm_icon_meeting{
+    width: 35px;
+    padding-top: 12px;
+  }
+
+  .comm_icon_youtube{
+    width: 35px;
+    padding-top: 9px;
+  }
+  
+  .comm_icon_calendar{
+    width: 25px;
+    padding-top: 12px;
+  }
+  
+  .comm_icon_drive{
+    width: 35px;
+    padding-top: 9px;
+  }
+  
+  .comm_icon_slack{
+    width: 55px;
+    padding-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 510px){
+  .comm ul li a{
+    width: 40px;
+    height: 40px;
+  }
+  
+  .comm_icon_meeting{
+    width: 25px;
+    padding-top: 5px;
+  }
+
+  .comm_icon_youtube{
+    width: 25px;
+    padding-top: 5px;
+  }
+  
+  .comm_icon_calendar{
+    width: 20px;
+    padding-top: 5px;
+  }
+  
+  .comm_icon_drive{
+    width: 25px;
+    padding-top: 4px;
+  }
+  
+  .comm_icon_slack{
+    width: 35px;
+    padding-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 380px){
+  .comm ul li a{
+    width: 30px;
+    height: 30px;
+  }
+  
+  .comm_icon_meeting{
+    width: 18px;
+    padding-top: 4px;
+  }
+
+  .comm_icon_youtube{
+    width: 18px;
+    padding-top: 4px;
+  }
+  
+  .comm_icon_calendar{
+    width: 15px;
+    padding-top: 3px;
+  }
+  
+  .comm_icon_drive{
+    width: 18px;
+    padding-top: 3px;
+  }
+  
+  .comm_icon_slack{
+    width: 25px;
+    padding-top: 0px;
   }
 }
 
@@ -9738,62 +9934,3 @@ div.slack {
     background-repeat: no-repeat; 
     background-image: url(/assets/images/slack.svg); 
   }
-.comm ul{
-  display: flex;
-  flex-wrap: nowrap;
-  position: absolute;
-  bottom: 10%;
-  margin: auto;
-}
-
-.comm ul li {
-  list-style: none;
-}
-
-.comm ul li a {
-  width: 80px;
-  height: 80px;
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-  line-height: 120px;
-  font-size: 35px;
-  margin: 0 10px;
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  border: 3px solid rgb(95, 165, 192);
-  z-index: 1;
-}
-
-.comm ul li a .icon {
-  position: relative;
-  color: #262626;
-  transition: .5s;
-  z-index: 1;
-}
-
-.comm ul li a:hover .icon {
-  color: #fff;
-  transform: rotateY(360deg);
-}
-
-.comm ul li a:before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #f00;
-  transition: .5s;
-  z-index: 2;
-}
-
-.comm ul li a:hover:before {
-  top: 0;
-}
-
-.comm ul li:nth-child(1) a:before{
-  background:  rgb(95, 165, 192);
-}
