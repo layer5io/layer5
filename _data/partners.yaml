@@ -48,7 +48,7 @@
 
 - name: Microsft
   link: https://www.microsoft.com/
-  desc: Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.
+  desc: Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.
   img: /assets/images/partners/microsft.svg
   style: "width:80%"
   visibility: ""
