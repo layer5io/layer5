@@ -112,8 +112,9 @@
 .stellarnav {
     vertical-align: middle;
     $main-dark-grey: #3c494f;
+    $main-light-grey: #a0aaaa;
     $main-light-green: #00b39f;
-    $main-dark-green: #00d3a9;
+    $main-dark-green: #00b39e7a;
     $main-dark-green-trans: #00b39e7a;
 
     li a {
@@ -126,14 +127,15 @@
             border: 0px solid  $main-dark-green;
             // color: white;
             // background-color: var(--main-light-blue);
-            background-color: $main-dark-green;
+            background-color: $main-light-green;
             border-radius: 5px;
-          
+            color: #fff;
+
         }
         &.active {
             color: white;
             font-weight: inherit;
-            background-color: #3E4B51;
+            background-color: $main-dark-grey;
             border-radius: 5px;
             // background-color: var(--main-light-blue);
             // border: 1px solid black;
@@ -147,9 +149,14 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+    ul>li>ul>li>a {
+        padding-left: 15px;
+        padding-right: 15px;
+        color: #fff;
+    }
 
     ul ul {
-        background: #fff;
+        background: $main-dark-grey;
         // border: 1px solid #3C494F;
         border-radius: 5px;
     }
