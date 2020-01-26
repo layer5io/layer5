@@ -4,6 +4,11 @@
 <div id="particles-js"></div>
 <script type="text/javascript" src="{{site.baseurl}}/assets/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="{{site.baseurl}}/assets/js/stellarnav.min.js"></script>
+{% if jekyll.environment == 'production' %}
+  <script type="text/javascript" src="{{site.baseurl}}/assets/js/stellarnav.min.js"></script>
+{% else %}
+  <script type="text/javascript" src="{{site.baseurl}}/assets/js/stellarnav.js"></script>
+{% endif %}      
 <script type="text/javascript" src="{{site.baseurl}}/assets/js/materialize.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/init.js"></script>
 {% include lightbox.html %}

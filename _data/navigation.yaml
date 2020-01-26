@@ -3,7 +3,7 @@
   new_window: false
   highlight: false
 - name: Projects
-  link: /projects/
+  link: /projects
   new_window: false
   highlight: false
   subitems:
@@ -17,7 +17,6 @@
       link: https://github.com/layer5io/service-mesh-benchmark-spec
       new_window: true
 - name: Community
-  link: https://github.com/layer5io/meshery
   new_window: true
   highlight: false
   subitems: 
@@ -37,7 +36,7 @@
 - name: Resources
   new_window: false
   highlight: true
-  link: /resources/
+  link: /resources
   subitems:
     - name: Books
       link: /books

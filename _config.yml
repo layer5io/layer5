@@ -100,6 +100,7 @@ defaults:
 
 # Colors
 layer5.gray: "#3c494f"
+layer5.lightgray: "#a0aaaa"
 layer5.darkgreen: "#00b39f"
 layer5.lightgreen: "#00d3a9"
 

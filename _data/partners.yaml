@@ -45,3 +45,22 @@
   visibility: ""
   type: technology
 
+
+- name: Microsft
+  link: https://www.microsoft.com/
+  desc: Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington. It develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.
+  img: /assets/images/partners/microsft.svg
+  style: "width:80%"
+  visibility: ""
+  type: technology
+
+
+- name: Service Mesh Interface
+  link: https://smi-spec.io/
+  desc: The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.
+  img: /assets/images/partners/smi1.png
+  style: "width:80%"
+  visibility: ""
+  type: technology
+
+
