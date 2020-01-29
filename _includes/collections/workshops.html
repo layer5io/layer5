@@ -1,10 +1,10 @@
 <div class="row">
+    <div class="col s6 m4"><img  src="/assets/images/workshops/workshops.svg" style="overflow: hidden;" /></div>
     {% for workshop in site.workshops %}
-
     <div class="col s12 m4">
         <div class="card medium sticky-action">
             <div class="card-image waves-effect waves-block waves-light" style="{{workshop.style}}">
-                <img class="activator " src="{{workshop.img}}" style="display: block; width:100%;   vertical-align: middle;
+                <img class="activator" src="{{workshop.img}}" style="display: block; width:100%; vertical-align: middle;
 
                 margin: auto;" />
             </div>
@@ -31,6 +31,25 @@
             </div>
         </div>
     </div>
+    {% if forloop.last == true %}
+    {% endif %}
     {% endfor %}
+    <div class="col s12 m8" style="text-align: center;">
+        <div  style="text-align: center;display: inline;">
+            <img src="/assets/images/workshops/workshops.svg" style="display: inline;" width="80%" />
+            <div style="flex-grow: .25;">&nbsp;</div>
+
+            <h5 style="text-align:left;color:aliceblue;display: inline;">
+                <a style="font-size:.9em;padding-top:5px;padding-bottom:45px;
+                  min-width:240px;max-width:280px; width:100%" 
+                  class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
+                  href="mailto:community@layer5.io?subject=Workshop Inquiry">
+              <span style="position: relative;bottom:-5px;padding-left:.3em;">Request a Workshop</span></a>
+            </h5>
+
+        
+    </div>
 
 </div>
+
+

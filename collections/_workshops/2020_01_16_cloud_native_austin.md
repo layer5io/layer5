@@ -8,14 +8,14 @@ By the end of this live, hands-on, online course, you’ll understand:
 <li>- How to enforce policies and rate limiting.</li>
 <li>- Istio's methods for managing telemetry, monitoring and reporting.</li>
 <li>- Approaches to canary deployments and securing communication with Istio.</li></ul>"
-img: /assets/images/workshops/allthingsopen-raleigh.svg
-style: "position:relative;height:320px;overflow:hidden; padding-top: 15%;padding-left:5%;padding-right:5%"
+img: /assets/images/workshops/cloud-native-austin-meetup.png
+style: "position:relative;height:320px;overflow:hidden;margin-bottom:50px"
 eurl: https://allthingsopen.org/talk/using-service-meshes-workshop-extended-session/
 labs: https://github.com/layer5io/istio-service-mesh-workshop
 slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-training-introduction-to-istio-august-2019.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
-status: "upcoming"
+status: "delivered"
 ---  
 
 <h4>Introduction to Istio Workshop - Cloud Native Austin 2020, Austin, TX</h4>

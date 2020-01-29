@@ -3,7 +3,7 @@ layout: workshop
 name: DockerCon EU 2018 
 desc: "A workshop containing ten labs on the Istio service mesh. Presented at DockerCon EU 2018. <p><i>Resources posted below.</i></p>"
 img: /assets/images/dockercon-barcelona-logo-tall.svg
-style: "position:relative;height:340px;padding:5%;"
+style: "position:relative;height:320px;padding:5%;"
 eurl: https://conferences.oreilly.com/velocity/vl-eu/public/schedule/detail/70506
 labs: https://github.com/leecalcote/istio-service-mesh-workshop
 slides: https://calcotestudios.com/talks/decks/slides-dockercon-eu-2018-using-istio-workshop.html
