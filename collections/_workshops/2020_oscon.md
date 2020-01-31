@@ -1,7 +1,7 @@
 ---
 layout: workshop
 name: Adopting and Using a Service Mesh
-desc: "<strong>Using Service Meshes Workshop - Infrastructure & Ops 2020</strong><br>
+desc: "<strong>Using Service Meshes Workshop - OSCON 2020</strong><br>
 In the adoption of cloud native technologies, engineers find one of the greatest challenges is the management of their services as distributed systems. Service meshes have quickly entered the cloud native landscape filling unmet service-level needs. Service management challenges include service discovery, load balancing, fault tolerance, end-to-end monitoring, dynamic routing for canary deployments and securing communication. Which service mesh should you use? What are their performance characteristics? What are best practices to on boarding your applications to a mesh? As a service mesh, Istio addresses these problems by providing a layer of infrastructure between the services and network that allows service communication to be controlled outside the application code.
 
 During this workshop, you will gain hands-on experience by deploying different service meshes running sample applications on top of Kubernetes. Using Meshery, a multi-service mesh management plane, we will walk through a series of labs in which various service meshes are deployed and their functionality explored. Functionality such as:
@@ -12,9 +12,9 @@ During this workshop, you will gain hands-on experience by deploying different s
 <li>-  Securing Communication
 <li>-  Canary Deployments
 </ul>"
-img: /assets/images/workshops/infra-ops.jpg
+img: /assets/images/workshops/oscon.png
 style: "position:relative;height:320px;overflow:hidden;"
-eurl: https://conferences.oreilly.com/infrastructure-ops/io-ca
+eurl: https://conferences.oreilly.com/oscon/oscon-or
 labs: 
 slides: 
 slack: http://slack.layer5.io
@@ -22,7 +22,7 @@ slack: http://slack.layer5.io
 status: "upcoming"
 ---  
 
-<h4>Using Service Meshes Workshop - Infrastructure & Ops 2020</strong></h4>
+<h4>Using Service Meshes Workshop - OSCON 2020</strong></h4>
 In the adoption of cloud native technologies, engineers find one of the greatest challenges is the management of their services as distributed systems. Service meshes have quickly entered the cloud native landscape filling unmet service-level needs. Service management challenges include service discovery, load balancing, fault tolerance, end-to-end monitoring, dynamic routing for canary deployments and securing communication. Which service mesh should you use? What are their performance characteristics? What are best practices to on boarding your applications to a mesh? As a service mesh, Istio addresses these problems by providing a layer of infrastructure between the services and network that allows service communication to be controlled outside the application code.
 
 During this workshop, you will gain hands-on experience by deploying different service meshes running sample applications on top of Kubernetes. Using Meshery, a multi-service mesh management plane, we will walk through a series of labs in which various service meshes are deployed and their functionality explored. Functionality such as:
