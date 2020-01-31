@@ -1,6 +1,6 @@
 ---
 layout: workshop
-name: Introduction to Istio Workshop
+name: Cloud Native Austin 2020
 desc: "<strong>Introduction to Istio Workshop - Cloud Native Austin 2020</strong><br>
 By the end of this live, hands-on, online course, you’ll understand:
 <ul>
@@ -16,6 +16,7 @@ slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-traini
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
 status: "delivered"
+date:   2020-01-16 12:15:05 +0000
 ---  
 
 <h4>Introduction to Istio Workshop - Cloud Native Austin 2020, Austin, TX</h4>

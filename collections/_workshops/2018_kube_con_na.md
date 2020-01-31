@@ -10,6 +10,7 @@ slack: https://join.slack.com/t/layer5io/shared_invite/enQtNDk0MzUwMDE5MDkzLTA5O
 eurl: https://kccna18.sched.com/event/Gram/tutorial-using-istio-lee-calcote-girish-ranganathan-solarwinds?iframe=yes&w=100%&sidebar=yes&bg=no#
 video: https://www.youtube.com/watch?v=jlHLZqS7Vek&t=595s&list=PLYjO73_1efChX9NuRaU7WocTbgrfvCoPE&index=2
 status: "delivered"
+date:   2018-05-21 12:15:05 +0000
 ---
 <h4> name: KubeCon NA 2018 </h4>
 A workshop containing ten labs on the Istio service mesh. Presented at KubeCon NA 2018.

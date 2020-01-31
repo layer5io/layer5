@@ -1,6 +1,6 @@
 ---
 layout: workshop
-name: Istio Service Mesh Workshop
+name: Devfest Montreal 2019
 desc: "<strong>Istio Service Mesh Workshop - Devfest Montreal 2019</strong>
 By the end of this live, hands-on, online course, you’ll understand:
 <ul>
@@ -15,6 +15,7 @@ labs: https://github.com/leecalcote/istio-service-mesh-workshop
 slides: https://calcotestudios.com/talks/decks/slides-devfest-montreal-2019-introduction-to-istio.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
+date:   2019-09-27 12:15:05 +0000
 status: "delivered"
 ---  
 
