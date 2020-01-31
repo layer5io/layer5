@@ -3018,6 +3018,14 @@ ul.staggered-list li {
   border-right-color: var(--main-dark-grey);
 } 
 
+.comparison-gradient {
+  float:left; display: inline; 
+  border-right-width: 1px; border-right-style: dashed;
+  border-right-color: var(--main-dark-grey);
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(255,255,255,.7) 100%);
+} 
+
 .comm ul{
   display: flex;
   flex-wrap: nowrap;
@@ -3421,6 +3429,7 @@ table.bordered > tbody > tr {
 
 table.striped > tbody > tr:nth-child(odd) {
   background-color: #f2f2f2;
+  
 }
 
 table.striped > tbody > tr > td {

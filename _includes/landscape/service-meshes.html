@@ -1,4 +1,5 @@
-<div class="row">
+<div ></div>
+<div class="row" >
 
   <style> 
     .card-content>ul {font-weight:bold;} 
@@ -22,8 +23,8 @@
   </style>
 
   <h5 style="color:aliceblue;">Categories</h5>
-  
-  <div class="card-content comparison">
+
+  <div class="card-content comparison-gradient">
     <ul>Service Mesh
       {% assign sorted = (site.data.landscape.meshes | sort: 'name')  %}
       {% for meshes in sorted %}
@@ -34,7 +35,7 @@
     </ul>
   </div>
 
-  <div class="card-content comparison">
+  <div class="card-content comparison-gradient">
     <ul>Client Library
       {% for clients in site.data.landscape.clients %}
           <li><div class="tooltip"><a href="{{clients.link}}">{{clients.name}}</a>
@@ -45,7 +46,7 @@
     </ul>
   </div>
 
-  <div class="card-content comparison">
+  <div class="card-content comparison-gradient">
       <ul>API Gateway
         {% for gw in site.data.landscape.gw %}
             <li><div class="tooltip"><a href="{{gw.link}}">{{gw.name}}</a>
@@ -56,7 +57,7 @@
       </ul>
   </div>
   
-  <div class="card-content comparison">
+  <div class="card-content comparison-gradient">
       <ul>Service Proxy
         {% for proxies in site.data.landscape.proxies %}
             <li><div class="tooltip"><a href="{{proxies.link}}">{{proxies.name}}</a>
@@ -66,7 +67,7 @@
       </ul>
   </div>
 
-  <div class="card-content comparison">
+  <div class="card-content comparison-gradient">
     <ul>Load Balancer
       {% for lbs in site.data.landscape.lb %}
           <li><div class="tooltip"><a href="{{lbs.link}}">{{lbs.name}}</a>
@@ -75,7 +76,6 @@
       {% endfor %}
     </ul>
   </div>
-    
   <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
 </div>
 
@@ -100,5 +100,4 @@
       <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
     </div>
 </div>
-
 {% include newsletter-signup.html %}
