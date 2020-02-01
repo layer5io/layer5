@@ -41,6 +41,9 @@
       <link rel="stylesheet" media="screen" href="/assets/css/particle-style.css">
       
       {% seo %}
+      {% if site.tags != "" %}
+  {% include collecttags.html %}
+{% endif %}
 
     </head>
     <body>

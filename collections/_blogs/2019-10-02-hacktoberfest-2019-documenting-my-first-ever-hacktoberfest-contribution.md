@@ -5,6 +5,7 @@ date:   2019-10-02 18:19:00 +0000
 image: https://raungar.files.wordpress.com/2019/10/hacktoberfest-pr-1-1.png
 author: Rafi Ungar
 permalink: /blog/hacktoberfest-2019-documenting-my-first-ever-hacktoberfest-contribution
+tags: layer5 docker smi
 ---
 In [my last post](https://raungar.wordpress.com/2019/09/27/planning-for-hacktoberfest-2019/), I identified three GitHub issues to kick off my participation in Hacktoberfest 2019. Today, I am happy to showcase my resolution of one of those issues, marking my first-ever Hacktoberfest contribution!
 

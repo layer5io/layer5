@@ -5,6 +5,7 @@ date:   2019-10-12 21:58:00 +0000
 image: https://raungar.files.wordpress.com/2019/10/hacktoberfestw2.png
 author: Rafi Ungar
 permalink: /blog/hacktoberfest-2019-heating-up
+tags: layer5 docker smi
 ---
 _(ICYMI: [I've made my first-ever Hacktoberfest contribution](https://raungar.wordpress.com/2019/10/02/hacktoberfest-2019-documenting-my-first-ever-hacktoberfest-contribution/)!)_
 
