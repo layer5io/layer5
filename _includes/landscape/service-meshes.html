@@ -1,9 +1,67 @@
-<div ></div>
-<div class="row" >
+<div class="row">
+  <div class="col s12">
+
+    <!-- Comparative Spectrum Arrow -->
+    {% include partials/spectrum/arrow.html
+      NAME = 'Service Meshes'
+      COLOR = 'blue'
+    %}
+
+    <!-- Comparative Spectrum Table -->
+    {% assign
+      PROJECTS = 'A10, Aspen, grey, cilium' | downcase | split: ', ' %}
+    {% assign
+      KEYS = 'multi-cluster, autoinject, tracing, prometheus' | downcase | split: ', ' %}
+    {% assign
+      GREAT = 'Jaeger' | downcase %}
+    {% assign
+      GOOD = 'Yes, Replaced' | downcase %}
+    {% assign
+      BAD = 'No, ?' | downcase %} 
+    {% include partials/spectrum/table.html PROJECTS=PROJECTS KEYS=KEYS GREAT=GREAT GOOD=GOOD BAD=BAD %}
+
+    <!-- Comparative Spectrum Arrow -->
+    {% include partials/spectrum/arrow.html
+      NAME = 'Istio-compliant'
+      COLOR = 'grey'
+    %}
+
+    <br/><br/><br/><hr><br/><br/>
+
+    <!-- Comparative Spectrum Arrow -->
+    {% include partials/spectrum/arrow.html
+      NAME = 'Multi-Tenancy'
+      COLOR = 'red'
+    %}
+
+    <!-- Comparative Spectrum Cards -->
+    {% include partials/spectrum/cards.html
+      KEY = 'multi-tenant'
+      VALUE = 'Yes'
+    %}
+
+    <br/><hr><br/><br/>
+
+    <!-- Comparative Spectrum Grid -->
+    {% include partials/spectrum/grid.html
+      LVALUE = 'Network Engineers'
+      LCOLOR = 'blue'
+     
+      RVALUE = 'Developers'
+      RCOLOR = 'red'
+      
+      KEY = 'score'
+    %}
+
+  </div>
+</div>
+<div class="row">
+
+  <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
 
   <style> 
-    .card-content>ul {font-weight:bold;} 
-    .card-content>ul>li {
+    ul {font-weight:bold;} 
+    li {
       margin-left: 5px;
       font-weight: normal;
       float: right;
@@ -22,12 +80,11 @@
     }
   </style>
 
-  <h5 style="color:aliceblue;">Categories</h5>
-
-  <div class="card-content comparison-gradient">
+  <h5 style="color:aliceblue;">Category</h5>
+  
+  <div class="card-content comparison">
     <ul>Service Mesh
-      {% assign sorted = (site.data.landscape.meshes | sort: 'name')  %}
-      {% for meshes in sorted %}
+      {% for meshes in site.data.landscape.meshes %}
           <li><div class="tooltip"><a href="{{meshes.link}}">{{meshes.name}}</a>
             <span class="tooltiptext">{{meshes.desc}}</span></div>
           </li>
@@ -35,7 +92,7 @@
     </ul>
   </div>
 
-  <div class="card-content comparison-gradient">
+  <div class="card-content comparison">
     <ul>Client Library
       {% for clients in site.data.landscape.clients %}
           <li><div class="tooltip"><a href="{{clients.link}}">{{clients.name}}</a>
@@ -46,7 +103,7 @@
     </ul>
   </div>
 
-  <div class="card-content comparison-gradient">
+  <div class="card-content comparison">
       <ul>API Gateway
         {% for gw in site.data.landscape.gw %}
             <li><div class="tooltip"><a href="{{gw.link}}">{{gw.name}}</a>
@@ -57,7 +114,7 @@
       </ul>
   </div>
   
-  <div class="card-content comparison-gradient">
+  <div class="card-content comparison">
       <ul>Service Proxy
         {% for proxies in site.data.landscape.proxies %}
             <li><div class="tooltip"><a href="{{proxies.link}}">{{proxies.name}}</a>
@@ -67,7 +124,7 @@
       </ul>
   </div>
 
-  <div class="card-content comparison-gradient">
+  <div class="card-content comparison">
     <ul>Load Balancer
       {% for lbs in site.data.landscape.lb %}
           <li><div class="tooltip"><a href="{{lbs.link}}">{{lbs.name}}</a>
@@ -76,6 +133,7 @@
       {% endfor %}
     </ul>
   </div>
+    
   <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
 </div>
 
@@ -100,4 +158,5 @@
       <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
     </div>
 </div>
+
 {% include newsletter-signup.html %}
