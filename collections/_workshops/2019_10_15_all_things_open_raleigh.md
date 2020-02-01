@@ -1,6 +1,6 @@
 ---
 layout: workshop
-name: Using Service Meshes Workshop
+name: All Things Open 2019
 desc: "<strong>Using Service Meshes Workshop - All Things Open 2019</strong><br>
 By the end of this live, hands-on, online course, you’ll understand:
 <ul>
@@ -9,13 +9,14 @@ By the end of this live, hands-on, online course, you’ll understand:
 <li>- Istio's methods for managing telemetry, monitoring and reporting.</li>
 <li>- Approaches to canary deployments and securing communication with Istio.</li></ul>"
 img: /assets/images/workshops/allthingsopen-raleigh.svg
-style: "position:relative;height:320px;overflow:hidden; padding-top: 15%;padding-left:5%;padding-right:5%"
+style: "position:relative;height:320px;overflow:hidden; padding-left:5%;padding-right:5%"
 eurl: https://allthingsopen.org/talk/using-service-meshes-workshop-extended-session/
 labs: https://github.com/layer5io/istio-service-mesh-workshop
 slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-training-introduction-to-istio-august-2019.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
-status: "upcoming"
+date:   2019-10-15 12:15:05 +0000
+status: "delivered"
 ---  
 
 <h4>Using Service Meshes Workshop - All Things Open 2019, Raleigh, NC</h4>
