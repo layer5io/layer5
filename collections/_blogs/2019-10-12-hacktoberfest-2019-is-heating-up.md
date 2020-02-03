@@ -41,6 +41,11 @@ To do so, I followed coding style on the issue's previous contributor by encapsu
 
 I chose to implement the [simplest of sorting algorithms](https://github.com/layer5io/layer5/blob/master/assets/js/table-sort.js#L13) in JavaScript (which I count as study for my _Data Structures and Algorithms_ midterm):
 
+<style>
+  code, kbd, pre, samp {
+    color: mediumblue;
+  }
+</style>
 ```js
 // Excerpted from https://github.com/layer5io/layer5/blob/master/assets/js/table-sort.js
 let bubbleSort = () => {

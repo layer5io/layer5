@@ -34,6 +34,12 @@ To address this issue, I came up with the idea of realigning the category list i
 
 Implementating this idea proved quite simple, requiring only [a few added CSS rules](https://github.com/layer5io/layer5/issues/191#issuecomment-537304508), which I first accomplished by tinkering with the live webpage's styling (with the help of the [Stylish](https://addons.mozilla.org/en-US/firefox/addon/stylish/) browser extension):
 
+<style>
+  code, kbd, pre, samp {
+    color: mediumblue;
+  }
+</style>
+
 ```css
 .card .card-content li {
   float: right;
@@ -76,7 +82,7 @@ Although I knew that my styling worked well when loaded from a browser extension
 
 Picking through my ~/.bash\_history file, here is the sequence of Bash shell commands that I issued (via WSL Ubuntu) in order to execute a local copy of the layer5 website (annotated for your convenience):
 ```sh
-\## Install dependency packages ##
+## Install dependency packages ##
 sudo apt-get install build-essential
 sudo apt-get install software-properties-common
 
