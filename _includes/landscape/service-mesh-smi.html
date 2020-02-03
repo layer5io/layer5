@@ -1,0 +1,50 @@
+<a name="smi"></a>
+<table id="smi-table" class="responsive-table highlight striped" style="color:var(--main-bg-color);">
+    <thead style="background-color: #a6b7be;color:#222; text-align:center; word-wrap: none;">
+        <tr style="cursor: pointer">
+            <th onclick="sortTable('meshes-table',0)">Service Mesh</th>
+            <th onclick="sortTable('meshes-table',1)">Traffic Access Control</th>
+            <th onclick="sortTable('meshes-table',2)">Traffic Metrics</th>
+            <th onclick="sortTable('meshes-table',3)">Traffic Split</th>
+            <th onclick="sortTable('meshes-table',4)">Traffic Specs</th>
+        </tr>
+      </thead>
+<tbody>
+  {% assign meshes_by_category = site.data.landscape.meshes | sort: "smi" | reverse %}
+  {% for meshes in meshes_by_category %}
+  {% if meshes.smi %}
+    <tr>
+      <th scope="row">{{meshes.name}}</th>
+      <td>
+        {% if meshes.smi.taclink != "" %}
+        <a href="{{meshes.smi.taclink}}" target="_blank">{{meshes.smi.tac}}</a>
+        {% elsif !meshes.smi.tac %}
+          {{meshes.smi.tac}}
+      {% endif %}
+    </td>
+    <td>
+      {% if meshes.smi.tmetricslink != "" %}
+      <a href="{{meshes.smi.tmetricslink}}" target="_blank">{{meshes.smi.tmetrics}}</a>
+      {% elsif !meshes.smi.tmetrics %}
+        {{meshes.smi.tmetrics}}
+      {% endif %}
+    </td>
+    <td>
+      {% if meshes.smi.tsplitlink != "" %}
+      <a href="{{meshes.smi.tsplitlink}}" target="_blank">{{meshes.smi.tsplit}}</a>
+      {% elsif !meshes.smi.tsplit %}
+        {{meshes.smi.tsplit}}
+      {% endif %}
+    </td>
+    <td>
+      {% if meshes.smi.tspeclink != "" %}
+      <a href="{{meshes.smi.tspeclink}}" target="_blank">{{meshes.smi.tspec}}</a>
+      {% elsif !meshes.smi.tspec %}
+        {{meshes.smi.tspec}}
+      {% endif %}
+    </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</tbody>
+</table>
