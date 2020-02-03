@@ -1,4 +1,5 @@
-        <table id="meshes-table" class="responsive-table highlight striped" style="color:var(--main-bg-color);">
+        <table id="meshes-table" class="responsive-table highlight striped" 
+        style="color:var(--main-bg-color);">
         <thead style="background-color: #a6b7be;color:#222; text-align:center; word-wrap: none;">
           <tr style="cursor: pointer">
               <th onclick="sortTable('meshes-table',0)">Service Mesh</th>
@@ -15,7 +16,7 @@
         </thead>
 
         <tbody>
-            {% assign meshes_by_category = site.data.categories.meshes | sort: "category" | reverse %}
+            {% assign meshes_by_category = site.data.landscape.meshes | sort: "category" | reverse %}
             {% for meshes in meshes_by_category %}
             <tr style="border: 1px dashed #a6b7be; text-align:center;">
                 <td><a href="{{meshes.link}}" title="{{meshes.desc}}">{{meshes.name}}</a></td>

@@ -13,7 +13,7 @@
     </thead>
 
     <tbody>
-    {% assign nonfunc_by_category = site.data.categories.non-functional | sort: "category" | reverse %}
+    {% assign nonfunc_by_category = site.data.landscape.non-functional | sort: "category" | reverse %}
     {% for nonfunc in nonfunc_by_category %}
     <tr style="border: 1px dashed #a6b7be; text-align:center;">
         <td style="text-align:center;"> {{nonfunc.category}} </td>

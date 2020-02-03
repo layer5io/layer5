@@ -1,10 +1,9 @@
 ---
 layout: post
-title:  "CNCF SIG Network Set Intro and Deep-Dive"
+type:   news
 date:   2019-11-23 12:15:05 +0000
-image: /assets/images/posts/2019-11-23-cncf-sig-network-intro-and-deep-dive/KubeCon_NA_2019_bg-01.svg
-author: Lee Calcote
-type: news
+title:  "CNCF SIG Network Set Intro and Deep-Dive"
+image:  /assets/images/posts/2019-11-23-cncf-sig-network-intro-and-deep-dive/KubeCon_NA_2019_bg-01.svg
 permalink: /company/news/cncf-sig-network-intro-and-deep-dive
 ---
 KubeCon NA 2019 - San Diego, CA

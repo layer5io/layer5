@@ -7,7 +7,7 @@
 %}
 
 <div class="row card-content comparison spectrum-grid valign-wrapper">
-{% for mesh in site.data.categories.meshes %}
+{% for mesh in site.data.landscape.meshes %}
     {% if mesh[include.KEY] %}
     <div class="card tooltip center-align spectrum-grid-cell" style="--col: {{mesh[include.KEY]}}">
         <a href="{{mesh.link}}">
