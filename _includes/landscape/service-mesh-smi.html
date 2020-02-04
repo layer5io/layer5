@@ -9,37 +9,37 @@
         </tr>
       </thead>
 <tbody>
-  {% assign meshes_by_category = site.data.landscape.meshes | sort: "smi" | reverse %}
+  {% assign meshes_by_category = site.data.landscape.smi | sort: "smi" | reverse %}
   {% for meshes in meshes_by_category %}
-  {% if meshes.smi %}
+  {% if meshes %}
     <tr>
       <th scope="row">{{meshes.name}}</th>
       <td>
-        {% if meshes.smi.taclink != "" %}
-        <a href="{{meshes.smi.taclink}}" target="_blank">{{meshes.smi.tac}}</a>
-        {% elsif !meshes.smi.tac %}
-          {{meshes.smi.tac}}
+        {% if meshes.taclink != "" %}
+        <a href="{{meshes.taclink}}" target="_blank">{{meshes.tac}}</a>
+        {% elsif !meshes.tac %}
+          {{meshes.tac}}
       {% endif %}
     </td>
     <td>
-      {% if meshes.smi.tmetricslink != "" %}
-      <a href="{{meshes.smi.tmetricslink}}" target="_blank">{{meshes.smi.tmetrics}}</a>
-      {% elsif !meshes.smi.tmetrics %}
-        {{meshes.smi.tmetrics}}
+      {% if meshes.tmetricslink != "" %}
+      <a href="{{meshes.tmetricslink}}" target="_blank">{{meshes.tmetrics}}</a>
+      {% elsif !meshes.tmetrics %}
+        {{meshes.tmetrics}}
       {% endif %}
     </td>
     <td>
-      {% if meshes.smi.tsplitlink != "" %}
-      <a href="{{meshes.smi.tsplitlink}}" target="_blank">{{meshes.smi.tsplit}}</a>
-      {% elsif !meshes.smi.tsplit %}
-        {{meshes.smi.tsplit}}
+      {% if meshes.tsplitlink != "" %}
+      <a href="{{meshes.tsplitlink}}" target="_blank">{{meshes.tsplit}}</a>
+      {% elsif !meshes.tsplit %}
+        {{meshes.tsplit}}
       {% endif %}
     </td>
     <td>
-      {% if meshes.smi.tspeclink != "" %}
-      <a href="{{meshes.smi.tspeclink}}" target="_blank">{{meshes.smi.tspec}}</a>
-      {% elsif !meshes.smi.tspec %}
-        {{meshes.smi.tspec}}
+      {% if meshes.tspeclink != "" %}
+      <a href="{{meshes.tspeclink}}" target="_blank">{{meshes.tspec}}</a>
+      {% elsif !meshes.tspec %}
+        {{meshes.tspec}}
       {% endif %}
     </td>
     </tr>
