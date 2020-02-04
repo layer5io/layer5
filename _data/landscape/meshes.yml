@@ -82,8 +82,7 @@
   smi: {tac: "Yes", taclink: "https://github.com/hashicorp/consul-smi-controller",
       tmetrics: "No", tmetricslink: "",
       tsplit: "No", tsplitlink: "",
-      tspec: "No", tspeclink: ""
-      }
+      tspec: "No", tspeclink: ""}
 
 - name: Grey Matter
   desc: "Grey Matter is an Istio-compliant, Envoy proxy-based, hybrid cloud service mesh platform for business insight and secure data control with your microservices."
@@ -113,8 +112,7 @@
   smi: {tac: "Yes", taclink: "https://github.com/deislabs/smi-adapter-istio",
       tmetrics: "Yes", tmetricslink: "https://github.com/deislabs/smi-metrics/tree/master/pkg/istio",
       tsplit: "Yes", tsplitlink: "https://github.com/deislabs/smi-adapter-istio",
-      tspec: "Yes", tspeclink: "https://github.com/deislabs/smi-adapter-istio"
-      }
+      tspec: "Yes", tspeclink: "https://github.com/deislabs/smi-adapter-istio"}
 
 - name: Kuma
   desc: "Kuma is a universal open source control-plane that can run and be operated natively across both Kubernetes and VM environments."
@@ -158,8 +156,7 @@ Open Source. From Buoyant. Written in Rust and Go."
   smi: {tac: "No", taclink: "",
     tmetrics: "Yes", tmetricslink: "https://github.com/deislabs/smi-metrics/tree/master/pkg/linkerd",
     tsplit: "Yes", tsplitlink: "https://linkerd.io/2/features/traffic-split/",
-    tspec: "No", tspeclink: ""
-    }
+    tspec: "No", tspeclink: ""}
 
 - name: Maesh
   desc: "Maesh is a simple, yet full-featured service mesh. It is container-native and fits as your de-facto service mesh in your Kubernetes cluster."
@@ -176,8 +173,7 @@ Open Source. From Buoyant. Written in Rust and Go."
   smi: {tac: "Yes", taclink: "https://github.com/containous/maesh",
       tmetrics: "No", tmetricslink: "",
       tsplit: "Yes", tsplitlink: "https://github.com/containous/maesh",
-      tspec: "Yes", tspeclink: "https://github.com/containous/maesh"
-      }
+      tspec: "Yes", tspeclink: "https://github.com/containous/maesh"}
 
 - name: Maistra
   desc: "Maistra is a security focused distribution of Istio designed to run on top of OpenShift."
