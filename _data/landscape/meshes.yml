@@ -141,8 +141,7 @@
   encryption: "Yes"
 
 - name: Linkerd 2.x (Conduit)
-  desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setup.
-Open Source. From Buoyant. Written in Rust and Go."
+  desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setu. Open Source. From Buoyant. Written in Rust and Go."
   link: https://linkerd.io
   autoinject: "Yes"
   h2: "Yes"
