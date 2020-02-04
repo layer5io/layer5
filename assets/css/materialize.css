@@ -3016,6 +3016,8 @@ ul.staggered-list li {
   background-color: white; 
   border-right-width: 1px; border-right-style: dashed;
   border-right-color: var(--main-dark-grey);
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(255,255,255,.7) 100%);
 } 
 
 .comparison-gradient {
