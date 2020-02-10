@@ -12,7 +12,7 @@ img: /assets/images/workshops/cloud-native-austin-meetup.png
 style: "position:relative;height:320px;overflow:hidden;margin-bottom:50px"
 eurl: https://allthingsopen.org/talk/using-service-meshes-workshop-extended-session/
 labs: https://github.com/layer5io/istio-service-mesh-workshop
-slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-training-introduction-to-istio-august-2019.html
+slides: https://calcotestudios.com/talks/decks/slides-cloud-native-austin-2020-introduction-to-istio.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
 status: "delivered"

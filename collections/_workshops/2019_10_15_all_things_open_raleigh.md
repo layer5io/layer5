@@ -12,7 +12,7 @@ img: /assets/images/workshops/allthingsopen-raleigh.svg
 style: "position:relative;height:320px;overflow:hidden; padding-left:5%;padding-right:5%"
 eurl: https://allthingsopen.org/talk/using-service-meshes-workshop-extended-session/
 labs: https://github.com/layer5io/istio-service-mesh-workshop
-slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-training-introduction-to-istio-august-2019.html
+slides: https://calcotestudios.com/talks/decks/slides-all-things-open-2019-using-service-meshes-workshop.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
 date:   2019-10-15 12:15:05 +0000
