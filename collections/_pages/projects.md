@@ -1,8 +1,8 @@
 ---
-layout: plain
+layout: default
 title:  "Layer5 Projects"
 permalink: /projects
 excerpt: "Layer5 Community - Projects"
 ---
 
-{% include collections/projects.html %}
+{% include collections/projects-list.html %}

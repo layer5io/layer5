@@ -5,7 +5,7 @@
 - name: Projects
   link: /projects
   new_window: false
-  highlight: false
+  highlight: true
   subitems:
     - name: Meshery
       link: /meshery
