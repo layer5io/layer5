@@ -10,25 +10,27 @@ excerpt: "Measuring and indexing the performance and value of service mesh deplo
 <style>
 ul.bullet li {
   list-style-type: circle;
-  margin-left:25px;
+  margin-left:15px;
+  position: relative;
+  text-align: left;
 }
 ul.bullet ul {
   margin-left:25px;
+  list-style-position: inside;
 }
 ul.bullet li ul {
   list-style-type: circle;
   margin-left:15px;
-  indent: 25px;
 }
 </style>
 <div class="row" style="vertical-align: middle;" >
-    <div class="col m8" width="100%" height="100%" style="display:inline;float:left;">
+
+    <p>
         <img src="{{ page.image }}" 
-            class="light-shadow" width="25%" style="filter: invert(60%); display:inline;float:left;margin-right:25px;padding:10px;" />
-    </div>
-    <div class="col m12" style="float:left;position:relative;display:inline;">
-            The Service Mesh Performance Specification (SMPS) is a vendor-neutral specification for capturing details of:
-        <ul class="bullet">
+          class="light-shadow" width="25%" style="filter: invert(60%); display:inline;float:left;margin-right:5%;padding:10px;" />
+        The Service Mesh Performance Specification (SMPS) is a vendor-neutral specification for capturing details of:
+        
+        <ul class="bullet" style="position: relative; left:40px;">
             <li>Environment and infrastructure details</li>
             <ul class="bullet">
                 <li>Number and size of nodes, orchestrator</li>
@@ -37,6 +39,8 @@ ul.bullet li ul {
             <li>Service / application details</li>
             <li>Bundled with test results.</li>
         </ul>
-        <a href="https://github.com/layer5io/service-mesh-performance-specification">Learn more</a> about the Service Mesh Performance Specification.
-    </div>
+
+        <p>SMPS is a collaborative effort of Layer5, Google, and The Linux Foundation.</p>
+        <p style="text-align: center;font-weight: bold;"><a href="https://github.com/layer5io/service-mesh-performance-specification">Learn more</a> about the Service Mesh Performance Specification.</p>
+      </p>
 </div>
