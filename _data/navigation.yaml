@@ -1,7 +1,3 @@
-- name: Blog
-  link: /blog
-  new_window: false
-  highlight: false
 - name: Projects
   link: /projects
   new_window: false
@@ -14,21 +10,24 @@
       link: /landscape
       new_window: false
     - name: Service Mesh Performance Specification
-      link: https://github.com/layer5io/service-mesh-benchmark-spec
-      new_window: true
+      link: /performance
+      new_window: false
 - name: Community
   new_window: true
   highlight: false
   subitems: 
-    - name: Slack
-      link: http://slack.layer5.io/
-      new_window: true
-    - name: GitHub
+    - name: Open Source
       link: https://github.com/layer5io
       new_window: true
     - name: Partners
       link: /partners
       new_window: false
+    - name: Slack
+      link: http://slack.layer5.io/
+      new_window: true
+    - name: Videos
+      link: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1 
+      new_window: true
 # - name: Login
 #   link: /
 #   new_window: true
@@ -44,3 +43,7 @@
     - name: Workshops
       link: /workshops
       new_window: false
+- name: Blog
+  link: /blog
+  new_window: false
+  highlight: false   
