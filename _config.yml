@@ -52,6 +52,11 @@ plugins:
   - jekyll-redirect-from
   - jekyll-archives
 
+jekyll-archives:
+  enabled: []
+  layout: default
+  permalinks:
+    all: '/'
 
 collections_dir: collections
 collections:
