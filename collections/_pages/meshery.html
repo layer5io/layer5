@@ -12,8 +12,8 @@ image:
   height: 807
 redirect_from:
   - /Meshery
+  - /Meshery/
   - meshery/
-permalink: /meshery/
 accordion: 
   - title: Does Meshery manage service meshes?
     content: Yes, Meshery acts as a management plane to provision and manage the lifecycle of service meshes.
@@ -22,6 +22,9 @@ accordion:
   - title: Does Meshery manage service meshes?
     content: Yes, Meshery acts as a management plane to provision and manage the lifecycle of service meshes.
 ---
+{% if jekyll.environment == "production" %}
+  {% assign page.permalink = "/meshery" %}
+{% endif %}
 
 <div class="container" style="position:relative;z-index: 1;">
     <div class="col s10">

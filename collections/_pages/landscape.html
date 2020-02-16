@@ -9,7 +9,7 @@ lang: en
 permalink: /landscape
 ---
 {% if jekyll.environment == 'production' %}
-  assign page.redirect_from: "landscape/"
+  {% assign page.redirect_from = "landscape/" %}
 {% endif %}
 
 <div style="
