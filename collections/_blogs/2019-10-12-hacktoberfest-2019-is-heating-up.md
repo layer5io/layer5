@@ -18,11 +18,11 @@ This week, I helped resolve the very first issue that I outlined in my [Planning
 
 [![](https://raungar.files.wordpress.com/2019/10/image-4.png?w=1024){:width="80%"}](https://raungar.files.wordpress.com/2019/10/image-4.png?w=1024)
 
-Issue [layerio#65](https://github.com/layer5io/layer5/issues/65): enhancements for the [Layer5 Landscape page](https://layer5.io/landscape/)
+Issue [layerio#65](https://github.com/layer5io/layer5/issues/65): enhancements for the [Layer5 Landscape page](https://layer5.io/landscape)
 
 At the time I found this issue, the second requested enhancement (concerning table row coloration) [was already handled](https://github.com/layer5io/layer5/commit/b313268cb578e762d1212c9910b522af2869b57b) by another contributor, leaving me with two tasks:
 
-1. Implementing the specified sorting functionalities (for the three tables on the [Landscape page](https://layer5.io/landscape/))
+1. Implementing the specified sorting functionalities (for the three tables on the [Landscape page](https://layer5.io/landscape))
 2. Restyling the font color of site hyperlinks (an enhancement [requested later on](https://github.com/layer5io/layer5/issues/65#issuecomment-483912458) in the issue)
 
 ### The strange case of Jekyll

@@ -20,7 +20,7 @@ Before I continue on, I want to acknowledge the project that I have contributed 
 
 As I mentioned my last post, I came into contact with Layer5 after discovering (through the [Hacktoberfest Issue Finder](https://hacktoberfest-finder.netlify.com/)) its [issue regarding table filtering](https://github.com/layer5io/layer5/issues/65)—and subsequently discovered an unreported styling issue. [![A styling issue with a collection of lists hosted on Layer5's Landscape page.](https://user-images.githubusercontent.com/13500769/66007380-2d643700-e480-11e9-8bda-e81dd0e166d9.png){:style="float:left; margin: 1em; width:50%"}](https://user-images.githubusercontent.com/13500769/66007380-2d643700-e480-11e9-8bda-e81dd0e166d9.png)
 
-A styling issue affected a collection of lists hosted on Layer5's [Landscape page](https://layer5.io/landscape/).
+A styling issue affected a collection of lists hosted on Layer5's [Landscape page](https://layer5.io/landscape).
 
 Of the three GitHub issues I've scoped out, the resolution of this styling issue (i.e. tweaking CSS) represents the simplest of tasks that I have lined up—and an ideal candidate for a first-time Hacktoberfest contribution!
 
