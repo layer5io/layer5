@@ -7,9 +7,11 @@ author:
   twitter: layer5
 lang: en
 permalink: /landscape
-redirect_from: 
- - "landscape/"
 ---
+{% if jekyll.environment == 'production' %}
+  assign page.redirect_from: "landscape/"
+{% endif %}
+
 <div style="
 background-image: url('/assets/images/mesh-cubes-trans.svg');
 background-repeat: no-repeat; background-position: topright;
