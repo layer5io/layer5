@@ -21,6 +21,9 @@ accordion:
   - title: Does Meshery manage service meshes?
     content: Yes, Meshery acts as a management plane to provision and manage the lifecycle of service meshes.
 ---
+{% if jekyll.environment == 'production' %}
+  assign page.redirect_from: "meshery/"
+{% endif %}
 <div class="container" style="position:relative;z-index: 1;">
     <div class="col s10">
     <div style="text-align:center;padding:0;margin:0;">
