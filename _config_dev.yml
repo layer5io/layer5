@@ -49,12 +49,9 @@ plugins:
   - jekyll-minifier
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-redirect-from
+  # This commenting is included based on differences of the handling of trailing slashes between Jekyll and GitHub Pages
+  #- jekyll-redirect-from
   - jekyll-archives
-
-# This logic is included based on differences of the handling of trailing slashes between Jekyll and GitHub Pages
-permalinks:
- - meshery: "/meshery"
 
 collections_dir: collections
 collections:

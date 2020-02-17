@@ -2,6 +2,7 @@
 layout: plain
 title:  "Resources"
 permalink: /resources
+redirect_from: resources/
 excerpt: "Resources"
 ---
 
