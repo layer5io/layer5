@@ -2,6 +2,7 @@
 layout: page
 title:  "Layer5 Internships"
 permalink: /careers
+redirect_from: careers/
 excerpt: "Layer5 Community - Internships"
 ---
 

@@ -6,10 +6,10 @@
     - name: Meshery
       link: /meshery
       new_window: false
-    - name: Service Mesh Landscape
+    - name: Landscape
       link: /landscape
       new_window: false
-    - name: Service Mesh Performance Specification
+    - name: Performance Specification
       link: /performance
       new_window: false
 - name: Community
@@ -19,23 +19,22 @@
     - name: Open Source
       link: https://github.com/layer5io
       new_window: true
+      external: true
     - name: Partners
       link: /partners
       new_window: false
     - name: Slack
       link: http://slack.layer5.io/
       new_window: true
+      external: true
     - name: Videos
       link: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1 
       new_window: true
-# - name: Login
-#   link: /
-#   new_window: true
-#   highlight: false
-- name: Resources
+      external: true
+- name: Learn
   new_window: false
   highlight: true
-  link: /resources
+  link: /learn
   subitems:
     - name: Books
       link: /books
@@ -43,6 +42,10 @@
     - name: Workshops
       link: /workshops
       new_window: false
+    - name: Videos
+      link: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1 
+      new_window: true
+      external: true
 - name: Blog
   link: /blog
   new_window: false

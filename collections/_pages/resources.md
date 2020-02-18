@@ -1,9 +1,9 @@
 ---
 layout: plain
-title:  "Resources"
-permalink: /resources
-redirect_from: resources/
-excerpt: "Resources"
+title:  "Learn"
+permalink: /learn
+redirect_from: learn/
+excerpt: "Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Maesh, Kuma, App Mesh"
 ---
 
 {% include collections/books-list.html %}
