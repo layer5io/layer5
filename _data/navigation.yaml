@@ -42,10 +42,10 @@
     - name: Workshops
       link: /workshops
       new_window: false
-    - name: Videos
-      link: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1 
-      new_window: true
-      external: true
+    # - name: Videos
+    #   link: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1 
+    #   new_window: true
+    #   external: true
 - name: Blog
   link: /blog
   new_window: false

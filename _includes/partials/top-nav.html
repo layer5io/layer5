@@ -15,10 +15,6 @@
         {% if link.link == page.url %}
             {% assign class = class | append: " active" %}
         {% endif %}
-
-        {% if link.external %}
-            {% assign class = class | append: " external-link_white" %}
-        {% endif %}
        
         {% assign lInd = forloop.index %}
         {% if link.subitems[0] %}
@@ -44,8 +40,10 @@
                 <li><a href="{{sublink.link}}" {% if sublink.new_window %}target="_blank"{% endif %}>{{sublink.name}} 
                     {% if sublink.external %}
                     <img src="/assets/images/buttons/external-link_white.svg" 
-          style="max-height: 10px; width: auto; height: auto; text-align: left; 
-          margin-left: auto; margin-right: auto;" />
+                    style="max-height: 10px;display:inline;" /></a>
+                     <!-- left: 0px; width: auto; height: auto; text-align: right;
+                    margin-left: auto;
+                    margin-right: auto; -->
                 {% endif %}
                 </a></li>
             {% endfor %}
