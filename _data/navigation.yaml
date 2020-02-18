@@ -15,6 +15,7 @@
 - name: Community
   new_window: true
   highlight: false
+  link: /community
   subitems: 
     - name: Open Source
       link: https://github.com/layer5io
