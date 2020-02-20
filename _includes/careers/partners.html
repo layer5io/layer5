@@ -1,5 +1,4 @@
 <div style="z-index:20;">
-<h2 class="black-text">Layer5 Partners Program</h2>
    
 <div class="card-content" style="position:relative; 
   float:right; width:40%; vertical-align: bottom;" >
@@ -16,7 +15,7 @@
       to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers
         to accelerate customers’ digital transformations, helping them move into the new era of DevOps and cloud native applications.</p>
 </div>
-<h3>Education Partners</h3>
+<h2>Education Partners</h2>
 {% for partner in site.data.partners %}
 {% if partner.visibility != "hide" and partner.type == "education" %}
 <div class="row">
@@ -52,7 +51,7 @@
   {% endif %}
 
   {% endfor %}
-  <h3>Technology Partners</h3>
+  <h2>Technology Partners</h2>
 {% for partner in site.data.partners %}
 {% if partner.visibility != "hide" and partner.type == "technology" %}
 <div class="row">
