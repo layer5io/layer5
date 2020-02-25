@@ -2,11 +2,15 @@
   <div id="events" class="section scrollspy">
     <h3 style="text-align:center;color:aliceblue;">
       <a href="/events/meetups" alt="Service Mesh Community Events" style="color:aliceblue;">Meetups</a></h3>
-      <div class="row" style="display: flex; align-items: center;
-      justify-content: center;
-      height: auto; flex-direction: row; flex-flow: row;">
-        <div class="col s12 m6">
-          <div class="card">
+      <div class="card">
+        <div class="post-content" style="padding-top:4vh;margin-left:2vw;margin-right:2vw;" itemprop="articleBody">
+          Meet Layer5 at events, conferences, workshops, or in-person meetups we organize and speak at around the world. 
+          You can connect with us at any of the events below.</p>
+            </div>
+      <div class="row" style="display: flex; align-items: left;
+      height: auto; flex-flow: row;">
+        <div class="col s12 m5">
+
             <a href="https://www.meetup.com/Cloud-Native-Austin/" class="waves-effect z-depth-0 
                waves-light darken-3" style="background-color:{{ site.layer5.gray }}; width: 100%;" >
               <div class="card-image">  
@@ -28,11 +32,10 @@
                 <h5 class="black-text">Cloud Native Austin</h5>
               </div>
             </a>
-          </div>
         </div>
-        <div class="col s12 m6">
-          <div class="card">
-            <a href="https://www.meetup.com/Docker-Austin/" class="waves-effect z-depth-4 
+
+        <div class="col s12 m5">
+            <a href="https://www.meetup.com/Docker-Austin/" class="waves-effect z-depth-0
                waves-light darken-3" style="background-color:{{ site.layer5.gray }}; width: 100%;" >
               <div class="card-image">  
                 <img class="light-shadow" src="/assets/images/events/meetup_white.svg" 
@@ -53,13 +56,20 @@
                 <h5 class="black-text">Docker Austin</h5>
               </div>
             </a>
-          </div>
         </div>
+
       </div>
   </div>
+</div>
+<h3 style="text-align:center;padding-top:2vh;" style="color:aliceblue;" class="l5-dark-grey-text">
+  <a href="/events" class="white-text" alt="Service Mesh Community Events">Events</a></h3>
     <div id="events" class="section scrollspy">
-      <h3 style="text-align:center;color:aliceblue;">
-        <a href="/events" alt="Service Mesh Community Events" style="color:aliceblue;">Events</a></h3>
+      <div class="card" style="padding-right: 1vw;padding-left: 1vw;">
+
+        <h5 class="black-text" style="padding: 1rem;">Upcoming Industry Events</h5>
+        <p style="padding-left: 1rem; padding-right: 1rem;"> Want to learn more about our projects? Find out which events 
+          the Layer5 team is speaking at in your area.</p>
       {% include collections/events.html %}
+    </div>
     </div>
 </div>
