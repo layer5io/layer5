@@ -40,6 +40,10 @@
     - name: Books
       link: /books
       new_window: false
+    - name: Events
+      link: /events
+      new_window: false
+      external: false
     - name: Workshops
       link: /workshops
       new_window: false
