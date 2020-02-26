@@ -3487,6 +3487,9 @@ td, th {
     display: block;
     position: relative;
     /* sort out borders */
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
   }
   table.responsive-table td:empty:before {
     content: '\00a0';
