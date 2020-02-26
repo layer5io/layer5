@@ -1735,11 +1735,11 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   background-color: var(--main-light-blue) !important;
 }
 
-.l5-light-green {
+.l5-light-blue {
   background-color: var(--main-light-blue) !important;
 }
 
-.l5-light-green-text {
+.l5-light-blue-text {
   color: var(--main-light-blue) !important;
 }
 

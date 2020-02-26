@@ -28,11 +28,68 @@ ul.bullet li ul {
   list-style-type: circle;
   margin-left:15px;
 }
+#logo {
+  display: inline-block;
+  position: relative;
+}
+#j {
+  width: 220px;
+  height: 220px;
+  border-radius: 100%;
+  border: 20px solid purple;
+  border-right: 20px solid white;
+  border-bottom: 20px solid white;
+  -webkit-transform: rotate(45deg);
+  display: inline-block;
+}
+
+#logo .speedometer {
+  width: 220px;
+  height: 220px;
+  border-radius: 100%;
+  border: 30px solid rgb(255, 129, 11);
+  border-right: 30px solid white;
+  border-bottom: 30px solid white;
+  -webkit-transform: rotate(45deg);
+  display: inline-block;
+}
+#logo .needle {
+  width: 10px;
+  height: 90px;
+  background: #39aefc;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  display: inline-block;
+  left: 105px;
+  position: absolute;
+  top: 10px;
+  -webkit-animation: move 5s infinite;
+  transform: rotate(0deg);
+  transform-origin: bottom;
+}
+@-webkit-keyframes move {
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
 </style>
 <div class="row" style="vertical-align: middle;">
   <p>
-    <img src="/assets/images/buttons/smps_black.svg" 
-      class="light-shadow" width="25%" style="display:inline;float:left;margin-right:5%;padding:10px;" />
+    <div style="display:inline;float:left;margin-right:5%;padding:10px;" >
+      <div id"j" align="center"></div>
+      <div id="logo">	<span class="speedometer"></span>
+<span class="needle"></span>
+
+</div>
+    </div>
     The Service Mesh Performance Specification (SMPS) is a vendor-neutral specification for capturing details of:
     
     <ul class="bullet" style="position: relative; left:40px;">
