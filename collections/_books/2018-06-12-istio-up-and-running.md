@@ -11,7 +11,7 @@ brief: "A must-read for anyone looking to get started with a Istio."
 By Lee Calcote and Zack Butcher
 
 <div style="float:right;padding:20px;text-align:center;"><a href="http://www.jdoqocy.com/click-100001276-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920203940.do%3Fcmp%3Daf-velocity-books-video-product_cj_0636920203940_%25zp&cjsku=0636920203940"><img class="card" width="300px" src="/assets/images/istio-up-and-running.png" align="right" /></a><div>&nbsp;</div>
-  <a id="book" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4" href="http://www.jdoqocy.com/click-100001276-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920203940.do%3Fcmp%3Daf-velocity-books-video-product_cj_0636920203940_%25zp&cjsku=0636920203940">Get the book</a>
+  <a id="book" class="waves-effect waves-dark btn white-text darken-2 l5-light-green z-depth-4" href="http://www.jdoqocy.com/click-100001276-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920203940.do%3Fcmp%3Daf-velocity-books-video-product_cj_0636920203940_%25zp&cjsku=0636920203940">Get the book</a>
 </div>
 <!-- <iframe src="http://www.oreilly.com/authors/widgets/802.html" height="500px" width="200px" scrolling="no" frameborder="0"></iframe> -->
 Istio is a service mesh announced in 2017 and supported by Google, IBM, and Lyft. It is open-source, incorporates Envoy Proxy, a component developed and battle hardened at Lyft, and is one of the fastest growing solutions for connecting, managing, and securing microservices. 
