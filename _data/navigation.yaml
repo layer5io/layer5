@@ -17,10 +17,9 @@
   highlight: false
   link: /community
   subitems: 
-    - name: Open Source
-      link: https://github.com/layer5io
-      new_window: true
-      external: true
+    - name: Join
+      link: /community
+      new_window: false
     - name: Partners
       link: /partners
       new_window: false
@@ -30,6 +29,10 @@
       external: true
     - name: Videos
       link: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1 
+      new_window: true
+      external: true
+    - name: Open Source
+      link: https://github.com/layer5io
       new_window: true
       external: true
 - name: Learn
