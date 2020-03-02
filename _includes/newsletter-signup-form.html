@@ -1,3 +1,4 @@
+{% if include.form-only!="yes" %}
 <div class="card medium" style="position:relative;z-index: 1;">
   <!-- <div class="card-image waves-effect waves-block waves-light">
     <img class="activator" src="assets/images/contact4.png">
@@ -42,20 +43,21 @@
 
 <div class="card-content"><a id="subscribe"></a>
     <span class="card-title grey-text text-darken-4">Stay meshy and subscribe</span>
-    
+{% endif %}
+
     <!-- Begin MailChimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
     <style type="text/css">
       #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
       /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-        #mc_embed_signup .button {width: 100%; margin:0px;background-color: rgba(255, 152, 0, 0.5); }
-        #mc_embed_signup .button:hover{background-color: rgba(255, 152, 0, 0.7);}
-        @media (max-width: 768px) {
-    #mc_embed_signup input.email {width:100%; margin-bottom:5px;}
-    #mc_embed_signup .clear {display: block; width: 100% }
-    #mc_embed_signup .button {width: 100%; margin:0; }
-}
+      #mc_embed_signup .button {width: 100%; margin:0px;background-color: rgba(255, 152, 0, 0.5); }
+      #mc_embed_signup .button:hover{background-color: rgba(255, 152, 0, 0.7);}
+      @media (max-width: 768px) {
+        #mc_embed_signup input.email {width:100%; margin-bottom:5px;}
+        #mc_embed_signup .clear {display: block; width: 100% }
+        #mc_embed_signup .button {width: 100%; margin:0; }
+      }
     </style>
 
     <!-- <div id="mc_embed_signup"> -->
@@ -95,6 +97,8 @@
     </div>
 
     <!--End mc_embed_signup-->
+    {% if include.form-only!="yes" %}
 
 </div>
 </div>
+{% endif %}
