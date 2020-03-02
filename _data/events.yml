@@ -5,7 +5,7 @@
   talk_link: https://kccnceu20.sched.com/event/Zetg/discreetly-studying-the-effects-of-individual-traffic-control-functions-lee-calcote-layer5?iframe=no&w=100%&sidebar=yes&bg=no
   event_video: ""
   event_deck: ""
-  thumbnail: /assets/images/kccnc-na-white.svg
+  thumbnail: /assets/images/events/kccnc-na-white.svg
 
 - title: O'Reilly Infrastructure & Ops
   desc: "Learn to maintain your existing legacy systems while migrating to a more responsive, predictive, scalable, and modern infrastructure."
@@ -30,6 +30,8 @@
   date: "April, 14th 2020"
   event_video: ""
   event_deck: ""
+  thumbnail: /assets/images/events/innotech.png
+  img_style: "padding-top:1vh;"
 
   name: Consul Connect
   desc: "Consul Connect - is a feature that enables encrpyted communication between services."
