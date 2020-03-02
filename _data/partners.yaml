@@ -45,7 +45,6 @@
   visibility: ""
   type: technology
 
-
 - name: Microsft
   link: https://www.microsoft.com/
   desc: Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.
@@ -53,7 +52,6 @@
   style: "width:80%"
   visibility: ""
   type: technology
-
 
 - name: Service Mesh Interface
   link: https://smi-spec.io/
@@ -63,4 +61,11 @@
   visibility: ""
   type: technology
 
+- name: Citrix
+  link: https://www.citrix.com/products/citrix-adc/
+  desc: Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.
+  img: /assets/images/partners/citrix.svg
+  style: "width:60%"
+  visibility: ""
+  type: technology
 
