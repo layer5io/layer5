@@ -4,7 +4,7 @@
   
   {% for project in sorted %}
   
-  {% if project.visibility != "hide" and project.type != "news" %}
+  {% if project.visibility != "hide" and project.type != "news" and project.permalink == {{ include.excluded_project }} %}
 
   <div class="col s12 m3">
     <div class="card">
