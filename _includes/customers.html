@@ -1,0 +1,21 @@
+<div id="particles-js" style="height:200px;background-color:rgba(60,73,79,1);
+
+
+padding-top:1%;">
+    <div class="row"><h5 class="center">Trusted by the World’s Top Companies</h5></div>
+    <div class="row" style="padding-top:0%;padding-bottom:2%;">
+        <div class="col m1">&nbsp;</div>
+        <div class="col m2">&nbsp;</div>
+    {% for partner in site.data.partners %}
+    {% if partner.visibility != "hide" and partner.gallery == "yes" %}
+        <div class="col m2" style="position:relative;text-align: center;
+        line-height: 70px; margin-left:2px;margin-right:2px">
+            <img src="{{partner.gallery_img}}" style="{{partner.gallery_style}}" 
+            alt="{{partner.name}}">
+        </div>
+        {% endif %}
+    {% endfor %}
+
+    </div>
+
+</div>"
