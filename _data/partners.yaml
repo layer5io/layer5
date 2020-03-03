@@ -75,7 +75,7 @@
   link: https://www.citrix.com/products/citrix-adc/
   desc: Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.
   img: /assets/images/partners/citrix.svg
-  style: "width:60%;vertical-align: middle;"
+  style: "width:50%;vertical-align: middle;"
   visibility: ""
   type: technology
   gallery: "yes"
