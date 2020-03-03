@@ -93,13 +93,13 @@
   gallery_img: /assets/images/partners/hpe_side_lightgray.svg
   gallery_style: "vertical-align: middle;min-height: 3vh;max-height: 4vh;height:100%"
 
-- name: HashiCorp
-  link: https://www.hashicorp.com
-  desc: Enabling the world's largest companies to deliver applications faster by helping transition from manual processes and ITIL practices to self-service automation and DevOps practices.
-  img: /assets/images/partners/hashicorp_vertical_black.svg
-  style: "width:60%;vertical-align: middle;"
-  visibility: ""
-  type: technology
-  gallery: "yes"
-  gallery_img: /assets/images/partners/hashicorp_vertical_lightgray.svg
-  gallery_style: "vertical-align: middle;min-height: 3.3vh;max-height: 6vh;height:100%"
+# - name: HashiCorp
+#   link: https://www.hashicorp.com
+#   desc: Enabling the world's largest companies to deliver applications faster by helping transition from manual processes and ITIL practices to self-service automation and DevOps practices.
+#   img: /assets/images/partners/hashicorp_vertical_black.svg
+#   style: "width:60%;vertical-align: middle;"
+#   visibility: ""
+#   type: technology
+#   gallery: "yes"
+#   gallery_img: /assets/images/partners/hashicorp_vertical_lightgray.svg
+#   gallery_style: "vertical-align: middle;min-height: 3.3vh;max-height: 6vh;height:100%"
