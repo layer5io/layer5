@@ -1760,6 +1760,10 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   color: var(--main-light-grey) !important;
 }
 
+.l5-light-gray-text {
+  color: var(--main-light-gray) !important;
+}
+
 .l5-bg-dark-grey {
   background-color: var(--main-dark-grey) !important;
   color: var(--main-dark-grey) !important;
@@ -2289,6 +2293,7 @@ html {
 
   --main-dark-grey: #3c494f;
   --main-light-grey: #9FBFCD;
+  --main-light-gray: #cccccc;
 
   --main-dark-green: #00b39f;
   --main-light-green: #00d3a9;
