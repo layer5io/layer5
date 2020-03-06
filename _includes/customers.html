@@ -12,9 +12,9 @@
             padding-bottom: 10px; padding-top: 8px; ">
             {% for partner in site.data.partners %}
                 {% if partner.visibility != "hide" and partner.gallery == "yes" %}
-                        <img src="{{partner.gallery_img}}" 
+                        <a href="/partners"><img src="{{partner.gallery_img}}" 
                         style="{{partner.gallery_style}}; display;inline; margin-right:2%; margin-left:2%" 
-                        alt="{{partner.name}}">
+                        alt="{{partner.name}}"></a>
                 {% endif %}
             {% endfor %}
         </div>
