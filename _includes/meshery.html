@@ -32,10 +32,10 @@
  waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div> -->
       <div class="card-content" style="margin-bottom: 0px;">
-        <h4 style="text-align:center;">Performance Benchmark</h4>
+        <h4 style="text-align:center;">Performance Management</h4>
         <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;">
         <i style="padding-left: 10px; padding-right: 10px;">What overhead does being on the service mesh incur?</i><br /><br /></p>
-        <p>Benchmark the performance of your application across different service meshes and compare their overhead.
+        <p>Benchmark and manage the performance of your application across different service meshes. Compare service mesh overhead.
         </p>
       </div>
     </div>
@@ -66,7 +66,7 @@
  waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div>-->
       <div class="card-content">
-        <h4 style="text-align:center;">Multi-Mesh Manager</h4>
+        <h4 style="text-align:center;">Lifecycle and Configuration Management</h4>
         <p style="text-align:center;">
           <span style="color: gray; text-transform: uppercase;">
             <i>Which service mesh should I use and how do I get started?</i>
@@ -85,41 +85,43 @@
   </div>
 </div>
 
-<div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
-  <!-- <div style="margin-left: 0 auto; display: flex;text-align: center; justify-content: center; "> -->
-      <div class="col s12 m3" style="text-align: center;position:relative;float:left;">
-          <a href="/assets/images/meshery/meshery_chart_2.png">
-            <img src="/assets/images/meshery/meshery_chart_2.png" width="100%" 
-            alt="Meshery screenshot"  style="box-shadow: .5px .5px 2px 2px gray;"
-          title="Service Mesh Playground"  />benchmark comparison</a>
-       </div>
+<div class="row" style="position: relative;overflow: auto;">
+  <div class="col s12 m6">
+    <div class="post-content">
+       
+       <div>
+        <h3 style="color:#111111;text-align: center;">Adopt, Benchmark, Configure, Operate</h3>
+        <p style="line-height:2em;text-align: center;left-margin:0px;padding-left:0px;">       
+          <ul style="line-height: 1.5em;height: auto;text-align: center;">
+            <li style="">- Compare apples-to-apples performance across service meshes.</li>
+            <li style="">- Track your service mesh performance from release to release.</li>
+            <li style="">- Understand behavioral differences between service meshes.</li>
+            <li style="">- Track your application performance from version to version.</li>
+          </ul>
+        </p>
+     </div>
 
-       <div class="col s12 m3" style="text-align: center;position:relative;float:left;">
-        <a href="/assets/images/meshery/meshery_chart_3.png">
-          <img src="/assets/images/meshery/meshery_chart_3.png" width="100%"
-            alt="Meshery screenshot" style=" box-shadow: .5px .5px 2px 2px gray; 
-              margin-right:20px; display: inline;"
-            title="Service Mesh Playground" />multiple benchmark comparison</a>
-        </div> 
-
-    <div class="col s12 m6">
-      <h3 style="color:#111111;text-align: center;">Benchmark, Configure, Adopt</h3>
-      <p style="line-height:2em;text-align: center;">       
-        <ul style="line-height: 1.5em;height: auto;text-align: center;">
-          <li style="">- Compare apples-to-apples performance across service meshes.</li>
-          <li style="">- Track your service mesh performance from release to release.</li>
-          <li style="">- Understand behavioral differences between service meshes.</li>
-          <li style="">- Track your application performance from version to version.</li>
-        </ul>
-      </p>
+     <div style="text-align: center;">
+      <a href="/assets/images/meshery/meshery_benchmark_screen.png">
+        <img src="/assets/images/meshery/meshery_benchmark_screen.png"  
+        alt="Meshery service mesh comparison"  style="box-shadow: .5px .5px 2px 2px gray;width: 90%"
+      title="Service mesh comparison"  />benchmark comparison</a>
    </div>
 
+      <!-- <div style="text-align: center;position:relative;">
+      <a href="/assets/images/meshery/meshery_chart_3.png">
+        <img src="/assets/images/meshery/meshery_chart_3.png" width="90%"
+          alt="Meshery screenshot" style=" box-shadow: .5px .5px 2px 2px gray; 
+            margin-right:20px; display: inline;"
+          title="Service Mesh Playground" />multiple benchmark comparison</a>
+      </div>  -->
+    </div>
+  </div>
 
-  <!-- </div> -->
-</div>
-
-  <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
-      <div class="col s12 m6">
+  <div class="col s12 m6">
+    <div class="post-content">
+      
+      <div>
           <h3 style="color:#111111;text-align: center;">Multi-Mesh Management</h3>
           <p style="margin-left:10px; padding-right:1em;">
             Service mesh adapters provision, configure, and manage their respective service meshes. 
@@ -135,8 +137,8 @@
               <li><a href="https://github.com/layer5io/meshery-kuma">Meshery adapter for Kuma</a> (alpha)</li>
           </ol>
           </p>
-      </div>
-      <div class="col s12 m6">
+        </div>
+      
         <!-- <ul>
           <li style="list-style-type: circle;">the user interface to authenticate users.</li>
           <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context.</li>
@@ -144,12 +146,13 @@
           <li style="list-style-type: circle;">collects the results of the performance tests from its load generator and stores in the cloud for historical viewing.</li>
           <li style="list-style-type: circle;">interfaces with the service mesh adapters dynamically and enables users to play with service mesh.</li>
         </ul> -->
-        <div style="text-align:center; vertical-align:middle; position:relative;float:right;">
-          <a href="https://raw.githubusercontent.com/layer5io/meshery/master/ui/static/img/dashboard-screenshot.png">
-            <img src="https://raw.githubusercontent.com/layer5io/meshery/master/ui/static/img/dashboard-screenshot.png" width="100%"
+        <div style="text-align:center; vertical-align:middle; position:relative;">
+          <a href="/assets/images/meshery/meshery_adapters_screen.png">
+            <img src="/assets/images/meshery/meshery_adapters_screen.png" width="100%" style="box-shadow: .5px .5px 2px 2px gray;width: 90%"
               alt="Meshery service mesh adapters screenshot"></a>
           </div> 
       </div>
+  </div>
 </div>
 
 <a name="smi"></a>
@@ -206,7 +209,7 @@
   <a name="getting-started"></a><h3 style="color:aliceblue;">Run Meshery</h3>
   <div class="post-content row" itemprop="articleBody">
 
-      <h3 style="color:#111111;">Step 1: Install and start</h3></br>
+      <h3 style="color:#111111;">Step 1: Install and start</h3>
 
 
       <h4>Bash user</h4>
@@ -375,7 +378,7 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
 
 </div>
 <a name="benchmark-spec"></a>
-<h3 style="color:aliceblue;">Benchmark Specification</h3>
+<h3 style="color:aliceblue;">Benchmark and Performance Specification</h3>
 <div class="post-content row" itemprop="articleBody" 
   style="z-index: 1; min-height: 149px; padding-right:149px; padding-bottom:0px;">
     <a href="https://github.com/layer5io/service-mesh-benchmark-spec">
