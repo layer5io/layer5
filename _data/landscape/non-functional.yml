@@ -128,16 +128,6 @@
   commercial: Houston (Turbine Labs)
   category: Service Mesh
 
-- name: SOFAMesh
-  opensource: "Yes"
-  link: https://github.com/alipay/sofa-mesh
-  governance: Ant Financial
-  primary-lang: Go
-  announce-date: July 2018
-  ga-1-date: "?"
-  commercial: Ant Financial
-  category: Service Mesh
-
 - name: Yggdrasil
   opensource: "Yes"
   link: https://github.com/uswitch/yggdrasil
