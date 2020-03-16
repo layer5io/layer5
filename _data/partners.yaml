@@ -60,7 +60,7 @@
 
 - name: HashiCorp
   link: https://www.hashicorp.com
-  desc: Enabling the world's largest companies to deliver applications faster by helping transition from manual processes and ITIL practices to self-service automation and DevOps practices.
+  desc: “HashiCorp is the leader in cloud infrastructure automation software. Our software stack enables the provisioning, securing, connecting, and running of apps and the infrastructure to support them. HashiCorp unlocks the cloud operating model for every business and enable their digital transformation strategies to succeed.”
   img: /assets/images/partners/hashicorp_vertical_black.svg
   style: "width:60%;vertical-align: middle;"
   visibility: ""
