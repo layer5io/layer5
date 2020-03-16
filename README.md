@@ -19,8 +19,8 @@ Meshery is a multi-service mesh management plane offering lifecycle management o
 ## [Service Mesh Landscape](https://layer5.io/landscape)
 The [service mesh landscape](https://layer5.io/landscape) is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
 
-## [Service Mesh Benchmark Specification](https://layer5.io/meshery/#benchmark-spec)
-The [Service Mesh Benchmark Specification](https://layer5.io/meshery/#benchmark-spec) is a common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and load test configuration.
+## [Service Mesh Benchmark Specification](https://layer5.io/performance)
+The [Service Mesh Benchmark Specification](https://layer5.io/performance) is a common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and load test configuration.
 
 ## <a name="contributing"></a><a name="community"></a> Community and Contributing
 Please do! Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
