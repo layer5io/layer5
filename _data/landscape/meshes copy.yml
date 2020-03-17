@@ -213,19 +213,6 @@
   tracing: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
   encryption: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
 
-- name: SOFAMesh
-  desc: A solution for large-scale Service Mesh based on Istio.
-  link: https://github.com/alipay/sofa-mesh
-  autoinject: "Yes"
-  h2: "Yes"
-  grpc: "Yes"
-  tcp-web: "Yes"
-  multi-cluster: "Cloud only"
-  multi-tenant: "Cloud only"
-  prometheus: "?"
-  tracing: "?"
-  encryption: "?"
-
 - name: Yggdrasil
   desc: "Yggdrasil is an Envoy control plane that configures listeners and clusters based off Kubernetes ingresses from multiple Kube Clusters."
   link: https://github.com/uswitch/yggdrasil
