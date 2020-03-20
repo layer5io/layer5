@@ -28,7 +28,7 @@ alt="Meshery - Service Mesh Management Plane" align="left" />
 style="float:left;margin:10px;" width="125px" 
 alt="Service Mesh Landscape Ecosystem" align="left"/>
 The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
-<br /><br /><br /><br /><br />
+<br /><br /><br /><br />
 </p>
 
 <p style="clear:both;">
@@ -38,7 +38,7 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Performance Specification Index" align="left" />
 The <a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a> is a common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and load test configuration.
-<br /><br />
+<br />
 </p>
 
 <p style="clear:both;">
