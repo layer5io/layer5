@@ -19,7 +19,7 @@
 style="margin:10px;" width="125px" 
 alt="Meshery - Service Mesh Management Plane" align="left" />
 <a href="https://meshery.io">Meshery</a> is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
-<br />
+<br /><br /><br />
 </p>
 
 <p style="clear:both;">
@@ -28,7 +28,7 @@ alt="Meshery - Service Mesh Management Plane" align="left" />
 style="float:left;margin:10px;" width="125px" 
 alt="Service Mesh Landscape Ecosystem" align="left"/>
 The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
-<br /><br /><br />
+<br /><br /><br /><br /><br />
 </p>
 
 <p style="clear:both;">
@@ -55,6 +55,7 @@ Jump into our <a href="http://slack.layer5.io"><img src="assets/images/buttons/s
 </p>
 <p>
 <i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+">help-wanted label</a>
+</p>
 </p>
 
 #### License
