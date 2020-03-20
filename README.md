@@ -16,14 +16,14 @@
 <div style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
 <img src="assets/images/meshery/meshery-logo.svg" 
-style="float:left;width:125px;margin:10px;" />
+style="float:left;margin:10px;" width="125px" />
 Meshery is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
 </div>
 
 <div style="clear:both;">
 <h2><a href="https://layer5.io/landscape">Service Mesh Landscape</a></h2>
-<img src="assets/images/buttons/landscape.png" 
-style="float:left;height:125px;margin:10px;" />
+<img src="assets/images/buttons/landscape.png"  
+style="float:left;margin:10px;" width="125px" />
 The <a href="https://layer5.io/landscape">service mesh landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
 </div>
 
@@ -31,7 +31,7 @@ The <a href="https://layer5.io/landscape">service mesh landscape</a> is a compre
 <h2><a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a></h2>
 
 <img src="assets/images/buttons/smps.png" 
-style="float:left;width:125px;margin:10px;" />
+style="float:left;margin:10px;" width="125px" />
 The <a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a> is a common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and load test configuration.
 </div><br />
 
@@ -41,10 +41,10 @@ Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</
 
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
 
-Jump into our <a href="http://slack.layer5.io"><img src="assets/images/buttons/slack_black_trans.svg" height="10px" />Slack</a>! Our projects are community-built and welcome collaboration. 👍Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Meshery Contributors Welcome Guide</a> for a tour of resources available to you.
+Jump into our <a href="http://slack.layer5.io"><img src="assets/images/buttons/slack_black_trans.svg" height="1em" />Slack</a>! Our projects are community-built and welcome collaboration. 👍Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Meshery Contributors Welcome Guide</a> for a tour of resources available to you.
 <p>
 ✔️ <em><strong>Join</strong></em> <a href="https://drive.google.com/open?id=1c07UO9dS7_tFD-ClCWHIrEzRnzUJoFQ10EzfJTpS7FY">weekly community meeting</a> on <a href="https://calendar.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">Fridays from 10am - 11am Central</a>.<br />
-✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0"><img src="assets/images/buttons/youtube_black.svg" height="10px" /> meeting recordings</a>.<br />
+✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0"><img src="assets/images/buttons/youtube_black.svg" height="1em" /> meeting recordings</a>.<br />
 ✔️ <em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">community drive</a>.<br />
 </p>
 
