@@ -9,7 +9,8 @@
 [![Slack](http://slack.layer5.io/badge.svg)](http://slack.layer5.io)
 ![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)
 
-The [Layer5](https://layer5.io) is:
+[Layer5](https://layer5.io) is:
+
 **Community First**
 <p>The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.</p>
 
@@ -51,7 +52,7 @@ The <a href="https://layer5.io/performance">Service Mesh Benchmark Specification
 <p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="http://contributor-covenant.org">Contributor Covenant</a> code of conduct.
 </p>
 <p>
-Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png" height="16px" />Slack</a>! Our projects are community-built and welcome collaboration. 👍Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Meshery Contributors Welcome Guide</a> for a tour of resources available to you.
+Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png" height="16px" align="bottom" />Slack</a>! Our projects are community-built and welcome collaboration. 👍Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Meshery Contributors Welcome Guide</a> for a tour of resources available to you.
 </p>
 <p>
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
@@ -63,7 +64,8 @@ Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png
 <p>
 <i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+">help-wanted label</a>
 </p>
-Find us on Twitter: <a href="https://twitter.com/layer5"><img src="assets/images/twitter.png" height="16px" />@layer5</a> and <a href="https://twitter.com/mesheryio">@mesheryio</a>
+Find us on Twitter: <a href="https://twitter.com/layer5"><img src="assets/images/twitter.png" height="16px"
+align="bottom" />@layer5</a> and <a href="https://twitter.com/mesheryio">@mesheryio</a>
 </p>
 
 #### License
