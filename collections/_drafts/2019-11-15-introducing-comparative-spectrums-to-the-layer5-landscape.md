@@ -5,7 +5,7 @@ date:   2019-11-15 5:43:00 +0000
 author: Rafi Ungar
 permalink: /blog/introducing-comparative-spectrums-to-the-layer5-landscape
 ---
-During [Hacktoberfest 2019](https://raungar.wordpress.com/tag/layer5/), I worked on the website of [Layer5](https://layer5.io/), _the_ service mesh community. More specifically, my contributions concerned one specific page of that website: its [Service Mesh Landscape page](https://layer5.io/landscape/).
+During [Hacktoberfest 2019](https://raungar.wordpress.com/tag/layer5/), I worked on the website of [Layer5](https://layer5.io/), _the_ service mesh community. More specifically, my contributions concerned one specific page of that website: its [Service Mesh Landscape page](https://layer5.io/landscape).
 
 Shortly after making these contributions, I was graciously welcomed into the Layer5 community by its lead developer [Lee Calcote](https://twitter.com/lcalcote?lang=en), who later directly approached me to assist him in furthering his vision for the Landscape page by implementing "comparative spectrums". Wishing to focus on my remaining two Hacktoberfest contributions at the time, I suggested surveying the interest of other potential contributors for this project. As such, an informative issue was opened:
 

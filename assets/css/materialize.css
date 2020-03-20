@@ -40,6 +40,17 @@
   transition: cubic-bezier(0, 1, 0, 1);
 
 }
+
+/* Projects */
+
+img.light-shadow{
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.4));
+}
+
+img.dark-shadow{
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 1));
+}
+
 .innerdiv {
   padding: 10px;
 }
@@ -62,7 +73,7 @@
 ul {
   margin-left:15px;
 }
- ul ul {
+ul ul {
   margin-left:15px;
 }
 li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
@@ -1720,7 +1731,7 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
 .l5-light-teal {
   background-color: var(--main-light-teal) !important;
 }
-.l5-dark- {
+.l5-dark-blue {
   background-color: var(--main-light-blue) !important;
 }
 
@@ -1737,11 +1748,20 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   color: var(--main-dark-blue) !important;
 }
 
+.l5-dark-green {
+  background-color: var(--main-dark-green) !important;
+  color: var(--main-dark-green) !important;
+}
+
 .l5-light-grey {
   background-color: var(--main-light-grey) !important;
 }
 .l5-light-grey-text {
   color: var(--main-light-grey) !important;
+}
+
+.l5-light-gray-text {
+  color: var(--main-light-gray) !important;
 }
 
 .l5-bg-dark-grey {
@@ -2273,6 +2293,7 @@ html {
 
   --main-dark-grey: #3c494f;
   --main-light-grey: #9FBFCD;
+  --main-light-gray: #cccccc;
 
   --main-dark-green: #00b39f;
   --main-light-green: #00d3a9;
@@ -2311,6 +2332,7 @@ background: linear-gradient(to right, #f5af19, #f12711); W3C, IE 10+/ Edge, Fire
 .post-content {
   background-color:#FFFFFF;
   padding:2em;
+  border-radius:15px;
    }
 
   .site-tagline {
@@ -3016,6 +3038,8 @@ ul.staggered-list li {
   background-color: white; 
   border-right-width: 1px; border-right-style: dashed;
   border-right-color: var(--main-dark-grey);
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(255,255,255,.7) 100%);
 } 
 
 .comparison-gradient {
@@ -3207,8 +3231,6 @@ ul.staggered-list li {
     line-height: 0em;
     padding-top: 5%;
     padding-bottom: 9px;
-
-
   }
   .site-tagline {
     font-size: 2em;
@@ -3446,7 +3468,7 @@ table.highlight > tbody > tr {
 }
 
 table.highlight > tbody > tr:hover {
-  background-color: #f2f2f2;
+  background: rgba(0,211,169,.35);
 }
 
 table.centered thead tr th, table.centered tbody tr td {
@@ -3473,6 +3495,9 @@ td, th {
     display: block;
     position: relative;
     /* sort out borders */
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
   }
   table.responsive-table td:empty:before {
     content: '\00a0';

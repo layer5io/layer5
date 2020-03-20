@@ -80,8 +80,13 @@
     }
   </style>
 
+<<<<<<< HEAD
   <h5 style="color:aliceblue;">Category</h5>
   
+=======
+  <h5 style="color:aliceblue;">Categories</h5>
+
+>>>>>>> master
   <div class="card-content comparison">
     <ul>Service Mesh
       {% for meshes in site.data.landscape.meshes %}
@@ -149,6 +154,20 @@
       {% include landscape/service-mesh-functionality.html %}
       <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
     </div>
+</div>
+
+<a name="smi"></a>
+<div class="row" >
+  <div class="col s8"><h5 style="color:aliceblue;">Service Mesh Interface Compatibility</h5>    
+
+    {% include landscape/service-mesh-smi.html %}
+    <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
+  </div>
+  <div class="col s4" style="height:200px;">
+  <a href="/blog/a-standard-interface-for-service-meshes">
+      <img src="/assets/images/landscape/smi-logo.png" style="margin:15%; margin-top:20%; height: 100%; text-align:center;" />
+    </a>
+</div>
 </div>
 
 <div class="row">

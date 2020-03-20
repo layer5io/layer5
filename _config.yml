@@ -50,6 +50,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
+  - jekyll-archives
+
+# This logic is included based on differences of the handling of trailing slashes between Jekyll and GitHub Pages
+# permalinks:
+#  - meshery: "/meshery"
 
 collections_dir: collections
 collections:
@@ -99,10 +104,12 @@ defaults:
     # Collection defaults
 
 # Colors
-layer5.gray: "#3c494f"
-layer5.lightgray: "#a0aaaa"
-layer5.darkgreen: "#00b39f"
-layer5.lightgreen: "#00d3a9"
+layer5:
+  gray: "#3c494f"
+  lightgray: "#a0aaaa"
+  darkgreen: "#00b39f"
+  lightgreen: "#00d3a9"
+
 
 ## Reference - OSS this site uses:
     # Particles - http://www.fabiolamanna.it

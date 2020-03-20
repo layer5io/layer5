@@ -1,72 +1,44 @@
-<div class="card medium" style="position:relative;z-index: 1;">
-  <!-- <div class="card-image waves-effect waves-block waves-light">
-    <img class="activator" src="assets/images/contact4.png">
-  </div> -->
-  <!-- <div class="card-content">
-    <span class="card-title activator" style="text-align:right;"><a class="btn-floating waves-effect waves-light red pulse"><i class="large material-icons">arrow_drop_up</i></a></span>
-    <div class="row" style="text-align:center">
-        <a class="waves-effect waves-light btn grey darken-1" target="_blank" href="{{site.github}}"><i class="material-icons right">code</i>Github</a>
-        <a class="waves-effect waves-light btn green darken-2" target="_blank" href="{{site.medium}}"><i class="material-icons right">library_books</i>Medium</a>
-    </div>
-  </div> -->
-  <!-- <div class="card-content">
-    <span class="card-title grey-text text-darken-4">Stay up-to-date on service mesh-related content...<i size="large" class="material-icons right">close</i></span>
-    <form class="col s12" action="https://formspree.io/{{site.email}}" method="POST">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          <input class="validate" id="icon_prefix" type="text" name="name">
-          <label for="icon_prefix">Name</label>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">email</i>
-          <input class="validate" id="email" type="email" name="_replyto">
-          <label for="email" data-error="Please enter a valid Email Address" data-success="Verified!">Email</label>
-        </div>
-      </div>
-      <div class="row">
-       <div class="input-field col s12">
-         <i class="material-icons prefix">message</i>
-         <textarea id="icon_prefix2" class="materialize-textarea" name="message"></textarea>
-         <label for="icon_prefix2">Message</label>
-       </div>
-     </div>
-      <button class="btn waves-effect orange waves-dark darken-3 white-text z-depth-4" type="submit" name="action">Submit
-         <i class="material-icons right">send</i>
-       </button>
-    </form>
-
-  </div>
-</div> -->
-
-
+{% if include.form-only!="yes" %}
+<div class="card" style="position:relative;z-index: 1;">
 <div class="card-content"><a id="subscribe"></a>
     <span class="card-title grey-text text-darken-4">Stay meshy and subscribe</span>
-    
+{% endif %}
+
     <!-- Begin MailChimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
     <style type="text/css">
       #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
       /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-        #mc_embed_signup .button {width: 100%; margin:0px;background-color: rgba(255, 152, 0, 0.5); }
-        #mc_embed_signup .button:hover{background-color: rgba(255, 152, 0, 0.7);}
-        @media (max-width: 768px) {
-    #mc_embed_signup input.email {width:100%; margin-bottom:5px;}
-    #mc_embed_signup .clear {display: block; width: 100% }
-    #mc_embed_signup .button {width: 100%; margin:0; }
-}
+      #mc_embed_signup .button {width: 100%; margin:0px;background-color: rgba(255, 152, 0, 0.5); }
+      #mc_embed_signup .button:hover{background-color: rgba(255, 152, 0, 0.7);}
+      #mc_embed_signup input.newsletter-name { width:35%; }
+      #mc_embed_signup input.newsletter-email { width:70%; }
+      @media (max-width: 768px) {
+        #mc_embed_signup input.email { margin-bottom:5px;}
+        #mc_embed_signup .clear {display: block; width: 100% }
+        #mc_embed_signup .button {width: 100%; margin:0; }
+        #mc_embed_signup input.newsletter-name { width:45%; }
+        #mc_embed_signup input.newsletter-email { width:90%; }
+        #mc_embed_signup div.newsletter-forklift { display: none !important; }
+      }
     </style>
 
     <!-- <div id="mc_embed_signup"> -->
     <div id="mc_embed_signup">
     <form action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb" 
           method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
-      <div id="mc_embed_signup_scroll">
+      <div id="mc_embed_signup_scroll"style="margin: 0;padding: 0;">
+        <div id="mc_embed_signup_scroll" >
+          {% if include.forklift!="no" %}
+          <div class="newsletter-forklift" style="float: left;width:130px;">
+            <img src="/assets/images/forklift.svg" style="width:20%; min-width: 100px;" />
+          </div>
+          {% endif %}
         <div style="white-space: nowrap;">
           <i class="material-icons material-icons--outline" style="font-size:32px;vertical-align: middle;color:var(--main-dark-grey);">account_box</i> 
-          <input type="text" value="" placeholder="First Name"name="FNAME" class="email" id="mce-FNAME" style="width:45%;">
-          <input type="text" value="" placeholder="Last Name" name="LNAME" class="email" id="mce-LNAME" style="width:45%;">
+          <input type="text" value="" placeholder="First Name"name="FNAME" class="email newsletter-name" id="mce-FNAME" >
+          <input type="text" value="" placeholder="Last Name" name="LNAME" class="email newsletter-name" id="mce-LNAME" >
         </div>
         <div id="mce-responses" class="clear" style="white-space: nowrap;">
           <div class="response" id="mce-error-response" style="display:none"></div>
@@ -75,7 +47,8 @@
       
         <div style="white-space: nowrap; vertical-align: bottom; margin-top:5px;">
           <i class="material-icons prefix" style="font-size:32px;vertical-align: middle;color:var(--main-dark-grey);">mail</i> 
-          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required style="white-space: nowrap;display: inline-block; width:90%;">
+          <input type="email" value="" name="EMAIL" class="email newsletter-email" id="mce-EMAIL" placeholder="Email Address" 
+          required style="white-space: nowrap;display: inline-block;">
           <!-- <span class="asterisk" style="white-space: nowrap;">*</span> -->
         </div>
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -86,14 +59,18 @@
             <h4 style="text-align:center;color:aliceblue;">
               <input style="padding-bottom:40px;padding-top:10px;font-size:.7em;
                  min-width:240px;max-width:300px; width:100%"  
-              class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4" 
+              class="waves-effect waves-dark btn white-text darken-2 l5-light-blue
+ z-depth-4" 
               type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
         </div>
       </div>
+    </div>
     </form>
     </div>
 
     <!--End mc_embed_signup-->
+    {% if include.form-only!="yes" %}
 
 </div>
 </div>
+{% endif %}

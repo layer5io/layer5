@@ -1,0 +1,22 @@
+
+
+<div style="background-color:rgba(60,73,79,1); height:13vh; min-height:135px;
+    padding-top:.5%; padding-bottom:.5%;
+    margin-bottom:2%; margin-bottom:3%;">
+    <div style="margin-bottom:.5%; padding-bottom:.5%; max-height: 25px;">
+        <h5 class="center l5-light-gray-text" style="text-transform:uppercase;font-size: 1.5vmax; ">
+            Trusted by the World’s Top Companies</h5></div>
+    
+        <div  style=" text-align: center; line-height: 6vh;
+            min-height:130px; margin-left:2px; margin-right:2px; 
+            padding-bottom: 10px; padding-top: 8px; ">
+            {% for partner in site.data.partners %}
+                {% if partner.visibility != "hide" and partner.gallery == "yes" %}
+                        <a href="/partners"><img src="{{partner.gallery_img}}" 
+                        style="{{partner.gallery_style}}; display;inline; margin-right:2%; margin-left:2%" 
+                        alt="{{partner.name}}"></a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    
+</div>

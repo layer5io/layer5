@@ -12,7 +12,7 @@ img: /assets/images/workshops/introduction-to-istio.jpg
 style: "position:relative;height:320px;overflow:hidden;"
 eurl: https://learning.oreilly.com/live-training/courses/introduction-to-istio/0636920282938/
 labs: https://github.com/leecalcote/istio-service-mesh-workshop
-slides: https://calcotestudios.com/talks/decks/slides-oreilly-introduction-to-istio.html
+slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-training-introduction-to-istio-february-2020.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
 date:   2019-08-01 12:15:05 +0000

@@ -28,7 +28,8 @@
 }
 
 .stellarnav li a {
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     display: block;
     text-decoration: none;
     color: #777;
@@ -50,12 +51,14 @@
 }
 
 .stellarnav>ul>li>a {
-    padding: 20px 40px
+    
 }
 
 .stellarnav ul ul {
     top: auto;
-    width: 220px;
+    width: auto;
+    min-width: 150px;
+    white-space: nowrap;
     position: absolute;
     z-index: 9900;
     text-align: left;
@@ -380,7 +383,7 @@ body.stellarnav-noscroll-x {
 
 .stellarnav.mobile.active>ul,
 .stellarnav.mobile>ul>li {
-    display: block
+    display: block;
 }
 
 .stellarnav.mobile.active {
@@ -413,24 +416,29 @@ body.stellarnav-noscroll-x {
 }
 
 .stellarnav.mobile li a {
-    border-bottom: 1px solid rgba(255, 255, 255, .15)
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+    color: #777;
 }
 
 .stellarnav.mobile>ul {
-    border-top: 1px solid rgba(255, 255, 255, .15)
+    border-top: 1px solid rgba(255, 255, 255, .15);
 }
 
 .stellarnav.mobile.light li a {
-    border-bottom: 1px solid rgba(0, 0, 0, .15)
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+    /* border-bottom: 1px solid rgba(0, 0, 0, .15) */
 }
 
 .stellarnav.mobile.light>ul {
-    border-top: 1px solid rgba(0, 0, 0, .15)
+    border-top: 1px solid rgba(255, 255, 255, .15);
+    /* border-top: 1px solid rgba(0, 0, 0, .15) */
 }
 
 .stellarnav.mobile li a.dd-toggle,
 .stellarnav.mobile.light li a.dd-toggle {
-    border: 0
+    border: 0;
+    background-color:#eee;
+
 }
 
 .stellarnav.mobile .call-btn-mobile,
