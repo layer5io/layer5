@@ -16,7 +16,7 @@
 <div style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
 <img src="assets/images/meshery/meshery-logo.svg" 
-style="float:left;width:20%;margin:10px;" />
+style="float:left;width:125px;margin:10px;" />
 Meshery is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
 </div>
 
@@ -31,7 +31,7 @@ The <a href="https://layer5.io/landscape">service mesh landscape</a> is a compre
 <h2><a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a></h2>
 
 <img src="assets/images/buttons/smps.png" 
-style="float:left;width:20%;margin:10px;" />
+style="float:left;width:125px;margin:10px;" />
 The <a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a> is a common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and load test configuration.
 </div><br />
 
