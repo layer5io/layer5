@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "CNCF SIG Network Set to Push Cloud Native Networking Forward"
+title:  "Enterprise Networking Planet: CNCF SIG Network Set to Push Cloud Native Networking Forward"
 date:   2019-11-23 12:15:05 +0000
 image: /assets/images/posts/2019-11-23-cncf-sig-network-set-to-push-cloud-native-networking-forward/enterprise_networking_planet_logo_700px-e1533637827914.png
-author: Lee Calcote
+author: the Newsroom
 type: news
 permalink: /company/news/cncf-sig-network-set-to-push-cloud-native-networking-forward
 ---
