@@ -19,7 +19,7 @@ Distributed systems are hard to do well, and microservices are even harder. As a
 <p class="center">
 -
 -
-- See the full, <a href="({{ post.eurl }})">original research</a> published on Forrester.
+- See the full, <a href="https://www.forrester.com/webinar/Plan+A+Service+Mesh+For+Your+Microservices+Future/-/E-WEB29705">original research</a> published on Forrester.
 -
 -
 -

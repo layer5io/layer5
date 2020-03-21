@@ -16,7 +16,7 @@ In tandem with growing adoption of service mesh, 2019 offered a burgeoning servi
 <p class="center">
 -
 -
-- See the full, <a href="({{ post.eurl }})">original article</a> published on The New Stack.
+- See the full, <a href="https://thenewstack.io/the-top-3-service-mesh-developments-in-2020/">original article</a> published on The New Stack.
 -
 -
 -
