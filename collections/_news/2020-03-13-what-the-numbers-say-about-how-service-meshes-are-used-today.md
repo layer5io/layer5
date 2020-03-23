@@ -22,7 +22,7 @@ Calcote notes how traffic management is seen as a key feature among the many dif
 <p class="center">
 -
 -
-- See the full, <a href="({{ post.eurl }})">original article</a> published on The New Stack.
+- See the full, <a href="https://thenewstack.io/what-the-numbers-say-about-how-service-meshes-are-used-today/">original article</a> published on The New Stack.
 -
 -
 -
