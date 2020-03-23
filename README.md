@@ -9,10 +9,10 @@
 [![Slack](http://slack.layer5.io/badge.svg)](http://slack.layer5.io)
 ![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)
 
-[Layer5](https://layer5.io) is:
+### About Layer5
 
 **Community First**
-<p>The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.</p>
+<p>The [Layer5](https://layer5.io) community represents the largest collection of service mesh projects and their maintainers in the world.</p>
 
 **Open Source First**
 <p>We build projects to provide learning environments, deployment and operational best practices, performance benchmarks, create documentation, share networking opportunities, and more. Our shared commitment to the open source spirit pushes Layer5 projects forward.</p>
