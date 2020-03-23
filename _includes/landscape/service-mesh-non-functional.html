@@ -1,0 +1,34 @@
+<table id="nonfunc-table" class="responsive-table highlight striped" style="color:var(--main-bg-color);">
+    <thead style="background-color: #a6b7be;color:#222; text-align:center; word-wrap: none;">
+    <tr style="cursor: pointer">
+        <th onclick="sortTable('nonfunc-table',0)">Category</th>
+        <th onclick="sortTable('nonfunc-table',1)">Name</th>
+        <th onclick="sortTable('nonfunc-table',2)">Open Source</th>
+        <th onclick="sortTable('nonfunc-table',3)">Governance</th>
+        <th onclick="sortTable('nonfunc-table',4)">Primary Language</th>
+        <th onclick="sortTable('nonfunc-table',5)">Project Announce</th>
+        <th onclick="sortTable('nonfunc-table',6)">GA / 1.0</th>
+        <th onclick="sortTable('nonfunc-table',7)">Commercial Offerings</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% assign nonfunc_by_category = site.data.landscape.non-functional | sort: "category" | reverse %}
+    {% for nonfunc in nonfunc_by_category %}
+    <tr style="border: 1px dashed #a6b7be; text-align:center;">
+        <td style="text-align:center;"> {{nonfunc.category}} </td>
+        <td><a href="{{nonfunc.link}}" title="{{nonfunc.link}}">{{nonfunc.name}}</a></td>
+        <td style="text-align:center;"> {{nonfunc.opensource}} </td>
+        <td style="text-align:center;"> {{nonfunc.governance}} </td>
+        <td style="text-align:center;"> {{nonfunc.primary-lang}} </td>
+        <td style="text-align:center;"> {{nonfunc.announce-date}} </td>
+        <td style="text-align:center;"> {{nonfunc.ga-1-date}} </td>
+        <td style="text-align:center;"> {{nonfunc.commercial}} </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<!-- tablesorter plugin -->
+<script src="/assets/js/table-colors-category.js"></script>
+<script src="/assets/js/table-sort.js"></script>

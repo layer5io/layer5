@@ -1,10 +1,9 @@
 {% include head.html %}
 
-<div class="container" >
+{% include banner.html %}
+
+<div class="container">
     <div class="col s10" style="">
-        <div class="row" style="padding:10px;">
-            <a id="home" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4" href="{{site.baseurl}}/#blog"><i class="material-icons">home</i></a>
-        </div>
         <h3 class="post-title" itemprop="name headline" style="text-align:center;color:aliceblue">{{ page.title | escape }}</h3>
 
         <p class="post-meta" style="color:#cfd8dc;">
@@ -19,21 +18,10 @@
         <div class="post-content" style="padding:2em;" itemprop="articleBody">
             {{ content }}
         </div>
-
     </div>
 </div>
+{% include collections/books-list.html %}
 
-<div class="container" >
-    <div class="col s10">
-        <div id="contact" class="section scrollspy" style="width:100%;">
-            <h3 style="text-align:center;color:aliceblue;">Mailing List</h3>
-            {% include contact.html %}
-        </div>
-
-        <div class="row" style="padding:10px;">
-            <a id="home" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4" href="{{site.baseurl}}/#home"><i class="material-icons">arrow_back</i></a>
-        </div>
-    </div>
-</div>
+{% include newsletter-signup.html %}
 
 {% include footer-plain.html %}

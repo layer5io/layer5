@@ -1,0 +1,59 @@
+<div style="position:relative;">
+
+<div class="stellarnav" style="display: none;">
+
+    <ul>
+    {% for link in site.data.navigation %}
+        {% assign class = "" %}
+        
+        {% comment %}
+        {% if link.highlight %}
+            {% assign class = class | append: " highlight" %}
+        {% endif %}
+        {% endcomment %}
+
+        {% if link.link == page.url %}
+            {% assign class = class | append: " active" %}
+        {% endif %}
+       
+        {% assign lInd = forloop.index %}
+        {% if link.subitems[0] %}
+            {% assign class = class | append: " dropdown-button" %}
+            {% assign dataTarget = "dropdown" | append: lInd %}
+        {% endif %}
+        
+        {% if link.link %}
+        <!-- Menu item with hyperlink -->
+        <li><a href="{% if link.subitems[0] %}{{link.link}}{% else %}{{link.link}}{% endif %}" class="{{ class }}" 
+            {% if link.new_window %}target="_blank"{% endif %}>
+            {{ link.name }}
+        </a>
+        {% else %} 
+        <!-- Menu item without hyperlink -->
+        <li>
+            <a class="dropdown-button">{{ link.name }}</a>
+        {% endif %}
+
+        {% if link.subitems[0] %}
+            <ul id="dropdown{{lInd}}">
+            {% for sublink in link.subitems %}
+                <li><a href="{{sublink.link}}" {% if sublink.new_window %}target="_blank"{% endif %}>{{sublink.name}} 
+                    {% if sublink.external %}
+                    <img src="/assets/images/buttons/external-link_gray.svg" 
+                    style="max-width: 10px;display:inline; vertical-align: text-top;" /></a>
+                     <!-- left: 0px; width: auto; height: auto; text-align: right;
+                    margin-left: auto;
+                    margin-right: auto; -->
+                {% endif %}
+                </a></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        </li>
+        
+    {% endfor %}
+        </ul>
+        
+    </div>
+    
+</div>

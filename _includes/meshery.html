@@ -1,23 +1,58 @@
-<h2 class="post-meta" style="color:#cfd8dc;font-size: 1.5em;text-align:center;"><i>
-    a multi-service mesh management plane</i></h2>
+<h2 style="color:#fff;font-size:2vw;text-align:center;padding-top:0px;margin-top:0px;"><i>
+    the multi-service mesh management plane</i></h2>
     <!-- <h3 style="text-align:center;color:aliceblue;">
-      <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
+      <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue
+ z-depth-4"
          href="https://github.com/layer5io/meshery/blob/master/README.md#running-meshery">Download</a> </h3> -->
 <!-- <h4 style="color:aliceblue;">Features</h4> -->
 <div class="row">
+    <div id="meshery" class="card-content row">
+        <div class="col s12 m12">
+          <h5 style="text-align:center;color:aliceblue;">
+          <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
+            class="waves-effect waves-dark btn white-text darken-2 l5-light-blue
+ z-depth-4"
+            href="#getting-started">Run Meshery</a> 
+          </h5>
+        </div>
+        <!-- <div class="col s12 m6">
+          <h5 style="text-align:center;color:aliceblue;">
+              <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
+                class="waves-effect waves-dark btn white-text darken-2 l5-light-blue
+ z-depth-4"
+                href="#smi">Service Mesh Interface</a> </h5>
+        </div> -->
+    </div>
   <div class="col s12 m6">
     <div class="card" style="z-index: 1;">
      <!--  <div class="card-image">
         <a href="{{ post.url | relative_url }}"><img src="{{post.image}}"></a>
         <span class="card-title"><a style="color:white">{{ post.title | escape }}</a></span>
-      <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+      <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue
+ waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div> -->
-      <div class="card-content">
-        <h4 style="text-align:center;">Performance Benchmark</h4>
+      <div class="card-content" style="margin-bottom: 0px;">
+        <h4 style="text-align:center;">Service Performance Management</h4>
         <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;">
         <i style="padding-left: 10px; padding-right: 10px;">What overhead does being on the service mesh incur?</i><br /><br /></p>
-        <p>Benchmark the performance of your application across different service meshes and compare their overhead.
+        <p>Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your application across different service meshes. Compare service mesh overhead.
         </p>
+      </div>
+    </div>
+      <!-- show number of total performance tests run by Meshery users -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script>
+          $(document).ready(function() {
+              $.get("https://meshery.layer5.io/result/total", function(data, status) {
+                  var testresults = JSON.parse(data);
+                  document.getElementById("testresults").innerHTML = "&nbsp;"+testresults.total_runs+"&nbsp;&nbsp;";
+              });
+          });
+      </script>
+      <div class="card" style="z-index: 1;">
+        <div class="performance">
+          <span class="testresults" id="testresults"></span>
+          performance tests run!
       </div>
     </div>
   </div>
@@ -27,101 +62,98 @@
      <!-- <div class="card-image">
         <a href="{{ post.url | relative_url }}"><img src="{{post.image}}"></a>
          <span class="card-title"><a style="color:white">{{ post.title | escape }}</a></span> 
-      <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+      <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue
+ waves-dark darken-3" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div>-->
       <div class="card-content">
-        <h4 style="text-align:center;">Playground</h4>
+        <h4 style="text-align:center;">Lifecycle and Configuration Management</h4>
         <p style="text-align:center;">
           <span style="color: gray; text-transform: uppercase;">
             <i>Which service mesh should I use and how do I get started?</i>
             <br /><br /></p>
-        <p>Learn about the functionality of different service meshes
-          and visually manipulate mesh configuration.<br />
+        <p>Provision service meshes, distributed applications. Understand and control the 
+          functionality of different service meshes. Validate your service mesh configuration.
+          against best practices.<br />
           </p>
+      </div>
+    </div>
+    <!-- add a link to the Meshery docs site -->      
+      <div class="card" style="z-index: 1;">
+        <div class="performance">
+          See the <a href = "https://meshery.layer5.io/docs">Meshery documentation</a>.
       </div>
     </div>
   </div>
 </div>
 
-<div id="meshery" class="card-content row">
-    <div class="col s12 m6">
-      <h5 style="text-align:center;color:aliceblue;">
-      <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
-        class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
-        href="#getting-started">Run Meshery</a> 
-      </h5>
-    </div>
-    <div class="col s12 m6">
-      <h5 style="text-align:center;color:aliceblue;">
-          <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
-            class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
-            href="#smi">Service Mesh Interface</a> </h5>
-    </div>
-</div>
+<div class="row" style="position: relative;overflow: auto;">
+  <div class="col s12 m6">
+    <div class="post-content">
+       
+       <div>
+        <h3 style="color:#111111;text-align: center;">Baseline, Measure, and Assess</h3>
+        <p style="line-height:2em;text-align: center;left-margin:0px;padding-left:0px;">       
+          <ul style="line-height: 1.5em;height: auto;text-align: center;">
+            <li style="">- Compare apples-to-apples performance across service meshes.</li>
+            <li style="">- Track your service mesh performance from release to release.</li>
+            <li style="">- Understand behavioral differences between service meshes.</li>
+            <li style="">- Track your application performance from version to version.</li>
+          </ul>
+        </p>
+     </div>
 
-<div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
-  <!-- <div style="margin-left: 0 auto; display: flex;text-align: center; justify-content: center; "> -->
-      <div class="col s12 m3" style="text-align: center;position:relative;float:left;">
-          <a href="/assets/images/meshery/meshery_chart_2.png">
-            <img src="/assets/images/meshery/meshery_chart_2.png" width="100%" 
-            alt="Meshery screenshot"  style="box-shadow: .5px .5px 2px 2px gray;"
-          title="Service Mesh Playground"  />comparison screenshot</a>
-       </div>
-
-       <div class="col s12 m3" style="text-align: center;position:relative;float:left;">
-        <a href="/assets/images/meshery/meshery_chart_3.png">
-          <img src="/assets/images/meshery/meshery_chart_3.png" width="100%"
-            alt="Meshery screenshot" style=" box-shadow: .5px .5px 2px 2px gray; 
-              margin-right:20px; display: inline;"
-            title="Service Mesh Playground" />multi-comparison screenshot</a>
-        </div> 
-
-    <div class="col s12 m6">
-      <h3 style="color:#111111;text-align: center;">Benchmark, Configure, Adopt</h3>
-      <p style="line-height:2em;text-align: center;">
-        <ul style="line-height: 1.5em;height: auto;text-align: center;">
-          <li style="">- Compare apples-to-apples performance across service meshes.</li>
-          <li style="">- Track your service mesh performance from release to release.</li>
-          <li style="">- Understand behavioral differences between service meshes.</li>
-          <li style="">- Track your application performance from version to version.</li>
-        </ul>
-      </p>
+     <div style="text-align: center;">
+      <a href="/assets/images/meshery/meshery_benchmark_screen.png">
+        <img src="/assets/images/meshery/meshery_benchmark_screen.png"  
+        alt="Meshery service mesh comparison"  style="box-shadow: .5px .5px 2px 2px gray;width: 90%"
+      title="Service mesh comparison"  /><br />service performance comparison</a>
    </div>
 
+      <!-- <div style="text-align: center;position:relative;">
+      <a href="/assets/images/meshery/meshery_chart_3.png">
+        <img src="/assets/images/meshery/meshery_chart_3.png" width="90%"
+          alt="Meshery screenshot" style=" box-shadow: .5px .5px 2px 2px gray; 
+            margin-right:20px; display: inline;"
+          title="Service Mesh Playground" />multiple benchmark comparison</a>
+      </div>  -->
+    </div>
+  </div>
 
-  <!-- </div> -->
-</div>
-  <a name="architecture"></a>
-  <!-- <h4 style="color:aliceblue;">Architecture</h4> -->
-  <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
-
-  <!-- <h3 style="color:#111111;clear: both;text-align: center;">Architecture</h3> -->
-    <div class="col s12 m6">
-        <h3 style="color:#111111;">Meshery provides</h3>
-        <ul>
-          <li style="list-style-type: circle;">the user interface to authenticate users.</li>
-          <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context.</li>
-          <li style="list-style-type: circle;">enables users to generate load against their applications.</li>
-          <li style="list-style-type: circle;">collects the results of the performance tests from its load generator and stores in the cloud for historical viewing.</li>
-          <li style="list-style-type: circle;">interfaces with the service mesh adapters dynamically and enables users to play with service mesh.</li>
-        </ul>
-      </div>
-      <div class="col s12 m6">
-          <h3 style="color:#111111;">Service Mesh Adapters</h3>
+  <div class="col s12 m6">
+    <div class="post-content">
+      
+      <div>
+          <h3 style="color:#111111;text-align: center;">Multi-Mesh Management</h3>
           <p style="margin-left:10px; padding-right:1em;">
             Service mesh adapters provision, configure, and manage their respective service meshes. 
             <ol>
               <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (stable)</li>
               <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (stable)</li>
               <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul</a> (stable)</li>
-              <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (beta)</li>
-              <li><a href="https://github.com/layer5io/meshery-nsm">Meshery adapter for Network Service Mesh</a> (beta)</li> 
-              <li><a href="https://github.com/layer5io/meshery-maesh">Meshery adapter for Maesh</a> (alpha)</li>
+              <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (stable)</li>
+              <li><a href="https://github.com/layer5io/meshery-nsm">Meshery adapter for Network Service Mesh</a> (stable)</li> 
+              <li><a href="https://github.com/layer5io/meshery-cpx">Meshery adapter for Citrix CPX</a> (beta)</li>
+                <li><a href="https://github.com/layer5io/meshery-maesh">Meshery adapter for Maesh</a> (alpha)</li>
               <li><a href="https://github.com/layer5io/meshery-app-mesh">Meshery adapter for App Mesh</a> (alpha)</li>
               <li><a href="https://github.com/layer5io/meshery-kuma">Meshery adapter for Kuma</a> (alpha)</li>
           </ol>
           </p>
+        </div>
+      
+        <!-- <ul>
+          <li style="list-style-type: circle;">the user interface to authenticate users.</li>
+          <li style="list-style-type: circle;">accepts and maintains the Kubernetes cluster config and context.</li>
+          <li style="list-style-type: circle;">enables users to generate load against their applications.</li>
+          <li style="list-style-type: circle;">collects the results of the performance tests from its load generator and stores in the cloud for historical viewing.</li>
+          <li style="list-style-type: circle;">interfaces with the service mesh adapters dynamically and enables users to play with service mesh.</li>
+        </ul> -->
+        <div style="text-align:center; vertical-align:middle; position:relative;">
+          <a href="/assets/images/meshery/meshery_adapters_screen.png">
+            <img src="/assets/images/meshery/meshery_adapters_screen.png" width="100%" style="box-shadow: .5px .5px 2px 2px gray;width: 90%"
+              alt="Meshery service mesh adapters screenshot"><br /> a world of multiple meshes</a>
+          </div> 
       </div>
+  </div>
 </div>
 
 <a name="smi"></a>
@@ -143,23 +175,34 @@
   
 
 </div>
+<a name="architecture"></a>
+    <h3 style="color:aliceblue;">Architecture</h3>
 <div class="post-content row">
-    <div class="iframe-container">
+  <img src="/assets/images/meshery/meshery-architecture.svg" />
+    <!-- <div class="iframe-container">
         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSj6eYr6AgZ4mBgOL_Gv9T4WyLBFkPv49asNtdw1_Gn_xCsk37QRhOjdBRB-3Jp1ehneFmm2dpgFie-/embed?start=false&loop=false&delayms=3000" 
               class="meshery-arch" frameborder="0" height="445px" width="739px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
               allowtransparency="true"></iframe>
-      </div> 
+      </div>  -->
 </div>
 
 <a name="demo"></a>
 <h3 style="color:aliceblue;">See Meshery at</h3>
 <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
-  <div class="col s12 m9">
+  <div class="row col m8"  style="min-width:440px;">
     <iframe width="100%" src="https://www.youtube.com/embed/CFj1O_uyhhs" frameborder="0" 
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="min-height: 315px;"></iframe>
   </div>
-  <div class="col s12 m3">
+  <div class="row col m4" style=" min-width: 220px; ">
     <ul>
+      <li style="list-style-type: circle;"><a href="https://conferences.oreilly.com/oscon/oscon-or">O'Reilly OSCON 2020</a></li>
+      <li style="list-style-type: circle;"><a href="https://conferences.oreilly.com/infrastructure-ops/io-ca/public/schedule/speaker/226795">O'Reilly Infrastructure & Ops 2020</a></li>
+      <li style="list-style-type: circle;"><a href="https://innotechdallas2020.sched.com/event/aN7E/a-management-plane-for-service-meshes">InnoTech Dallas 2020</a></li>
+      <li style="list-style-type: circle;"><a href="https://kccnceu20.sched.com/event/Zetg/discreetly-studying-the-effects-of-individual-traffic-control-functions-lee-calcote-layer5?iframe=no&w=100%&sidebar=yes&bg=no">KubeCon EU 2020</a></li>
+      <li style="list-style-type: circle;"><a href="https://calcotestudios.com/talks/decks/slides-docker-captains-2020-meshery-the-multi-service-mesh-manager.html">Docker Captains Roundtable 2020</a></li>
+      <li style="list-style-type: circle;"><a href="https://www.meetup.com/Cloud-Native-Austin/events/267784090/">Cloud Native Austin 2020</a></li>
+      <li style="list-style-type: circle;"><a href="https://networkservicemesh.io/events/nsmcon2019/">Network Service Mesh Con 2019</a></li>
+      <li style="list-style-type: circle;"><a href="https://www.lakeside-hackfest.com/speakers/#lee-calcote">Lakeside HackFest 2019</a></li>
       <li style="list-style-type: circle;"><a href="https://servicemeshday.com/schedule/">Service Mesh Day 2019</a></li>
       <li style="list-style-type: circle;"> <a href="https://innotechsanantonio2019.sched.com/event/Lmlb/the-enterprise-path-to-service-mesh-architectures?iframe=no&w=100%&sidebar=yes&bg=no">Innotech San Antonio 2019</a></li>
       <li style="list-style-type: circle;"> <a href="https://tmt.knect365.com/container-world/speakers/lee-calcote">Container World 2019</a></li>
@@ -170,55 +213,109 @@
 </div>
   <a name="getting-started"></a><h3 style="color:aliceblue;">Run Meshery</h3>
   <div class="post-content row" itemprop="articleBody">
-      <h4 style="color:#111111;">Step 1: Install and start</h4>
-      <p>Using Docker, install Meshery on your local machine by running the following:</p>        
 
+      <h3 style="color:#111111;">Step 1: Install and start</h3>
+
+
+      <h4>Bash user</h4>
+      <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Docker, install Meshery on your local machine by running the following:</p>
       <div id="start" class="highlight highlight-source-shell">
-          <div style="width:auto; height:120px; padding:0px; position:relative;">
+      <div style="width:auto; height:auto; padding:0px; position:relative;">
             <pre><code>
- sudo curl -L https://git.io/meshery -o /usr/local/bin/meshery
- sudo chmod a+x /usr/local/bin/meshery
- meshery start        
-            </code></pre>
+ $ curl -L https://git.io/meshery | bash -    
+        </code></pre>
             <!-- copy to clipboard -->
-            <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue z-depth-4"
+            <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue
+ z-depth-4"
               style="position: absolute; top: 0px; right: 0px; border: 0;"
               data-clipboard-target="#start"
-              data-clipboard-text="sudo curl -L https://git.io/meshery -o /usr/local/bin/meshery;
-sudo chmod a+x /usr/local/bin/meshery; 
-meshery start">
+              data-clipboard-text="curl -L https://git.io/meshery | bash -  ">
+              <img src="/assets/images/buttons/clippy.svg" width="18px" height="18px" style="vertical-align: middle;" />
+            </a>
+        </div> 
+      </div>
+      <h4>Brew user</h4>
+      <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Homebrew:</p>        
+
+      <div id="start-brew" class="highlight highlight-source-shell">
+          <div style="width:auto; height:auto; padding:0px; position:relative;">
+            <pre><code></br> $ brew tap layer5io/tap</br> $ brew install mesheryctl</br> $ mesheryctl start
+            </code></pre>
+            <!-- copy to clipboard -->
+            <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue
+ z-depth-4"
+              style="position: absolute; top: 0px; right: 0px; border: 0;"
+              data-clipboard-target="#start-brew"
+              data-clipboard-text="brew tap layer5io/tap
+              brew install mesheryctl
+              mesheryctl start">
               <img src="/assets/images/buttons/clippy.svg" width="18px" height="18px" style="vertical-align: middle;" />
             </a>
         </div>
       </div>
       
       <div class="toggle">
-        
-        <label for="k8s-instructions">Or to install on Kubernetes, <a>click here</a>.</label>
+        <h4>Kubernetes user</h4>
+        <label for="k8s-instructions">To install on Kubernetes, <a>click here</a></label> 
+        or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.
         <input type="checkbox" checked name="one" id="k8s-instructions">
         <div class="hidediv">
           <div class="innerdiv">
             
       <p>Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
       <div class="highlight highlight-source-shell">
-        <pre><code>
+        
+
+
+        <div style="width:auto; height:auto; padding:0px; position:relative;">
+            <pre><code>
  $ git clone https://github.com/layer5io/meshery.git; cd meshery        
         </code></pre>
+            <!-- copy to clipboard -->
+            <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue
+ z-depth-4"
+              style="position: absolute; top: 0px; right: 0px; border: 0;"
+              data-clipboard-target="#start"
+              data-clipboard-text="git clone https://github.com/layer5io/meshery.git; cd meshery">
+              <img src="/assets/images/buttons/clippy.svg" width="18px" height="18px" style="vertical-align: middle;" />
+            </a>
+        </div>
+
+
+
+
       </div>
     <p>Install Meshery on your cluster by running the following:</p>
     <div class="highlight highlight-source-shell">
-<pre><code>
+
+<div style="width:auto; height:auto; padding:0px; position:relative;">
+            <pre><code>
   $ kubectl create ns meshery
-  $ kubectl -n meshery apply -f deployment_yamls/k8s
+  $ kubectl -n meshery apply -f install/deployment_yamls/k8s
 
 </code></pre>
+            <!-- copy to clipboard -->
+            <a class="btn waves-effect waves-dark white-text darken-2 l5-light-blue
+ z-depth-4"
+              style="position: absolute; top: 0px; right: 0px; border: 0;"
+              data-clipboard-target="#start"
+              data-clipboard-text="kubectl create ns meshery
+              kubectl -n meshery apply -f install/deployment_yamls/k8s">
+              <img src="/assets/images/buttons/clippy.svg" width="18px" height="18px" style="vertical-align: middle;" />
+            </a>
+        </div>
+
 <!-- PROVIDE THE "ON THE MESH" VERSION IN FUTURE DOCUMENTATION
 # additional step for running on Istio
 $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
     </div>
     <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
+    
             </div>
           </div>
+          
+
+
     <h4 style="color:#111111;">Step 2: Login</h4>
     <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
   
@@ -230,32 +327,69 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
 
 <a name="contributing"></a><a name="community"></a>
 <h3  style="color:aliceblue;">Community</h3>
-<div class="post-content row" itemprop="articleBody">
-    <a href="https://github.com/layer5io/meshery">
-      <img style="position: relative; float:right; top: -2em; right: -2em; border: 0; width: 149px; height: 149px;" 
+<div class="post-content row" itemprop="articleBody" style="min-height: 155px; padding-right:149px; padding-bottom:0px;">
+  <div>This project is community-built and welcomes collaboration!</div>
+
+  <a href="https://github.com/layer5io/meshery">
+    <img style="position: absolute; top: 0px; right: 0px; border: 0; width: 149px; height: 149px;
+      padding-top: 0px;padding-right:0px;" 
       src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" 
       alt="Fork me on GitHub"></a>
-This project is community-built and welcomes collaboration! 
-<p>
-  <ul>
-    <li style="list-style-type: circle;"><em><strong>Join</strong></em> <a href="https://docs.google.com/document/d/1c07UO9dS7_tFD-ClCWHIrEzRnzUJoFQ10EzfJTpS7FY/edit?usp=sharing">weekly community meeting</a> on <a href="/assets/projects/meshery/Meshery-Community-Meeting.ics">Fridays from 10am to 11am Central</a>.</li>
-    <ul>
-        <li><em><strong>Watch</strong></em> community <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA">meeting recordings</a> and <i><b>subscribe</b></i> to the <a href="https://bit.ly/2SbrRhe">community calendar</a>.</li>
-    </ul>
-    <li style="list-style-type: circle;"><em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">community drive</a>.</li>
-      <ul>
-        <li><em><strong>Comment</strong></em> on the <a href="https://docs.google.com/document/d/1nV8TunLmVC8j5cBELT42YfEXYmhG3ZqFtHxeG3-w9t0/edit?usp=sharing">design document.</a></li>
-      </ul>
-    </ul>
-</p>
-</div>
 
+  <div class="comm">
+  <ul>
+    <div class="tooltip">
+    <li>
+      <a href="https://docs.google.com/document/d/1c07UO9dS7_tFD-ClCWHIrEzRnzUJoFQ10EzfJTpS7FY/edit?usp=sharing" target="_blank">
+        <img class="comm_icon_meeting"src="/assets/images/meshery/comments-regular.svg" alt="Meeting Minutes Link">
+      </a>
+    </li>
+    <span class="tooltiptext">Join the weekly community meeting on Fridays at 10am Central.</span>
+    </div>
+    <div class="tooltip">
+        <li>
+          <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1" target="_blank">
+            <img class="comm_icon_youtube" src="/assets/images/buttons/youtube_black.svg" alt="Youtube Link" >
+          </a>
+        </li>
+        <span class="tooltiptext">Watch community meeting recordings.</span>
+        </div>
+    <div class="tooltip">
+         <li>
+         <a href="https://bit.ly/2SbrRhe" target="_blank">
+          <img class="comm_icon_calendar" src="/assets/images/meshery/calendar-plus-regular.svg" alt="Google Calendar Link">
+         </a>
+         </li>
+         <span class="tooltiptext">Subscribe to the community calender.</span>
+         </div>
+    <div class="tooltip">
+         <li>
+         <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA" target="_blank">
+          <img class="comm_icon_drive" src="/assets/images/meshery/google-drive-brands.svg" alt="Google Drive Link">
+         </a>
+         </li>
+         <span class="tooltiptext">Access the community drive.</span>
+         </div>  
+   <div class="tooltip">
+         <li>
+         <a href="http://slack.layer5.io" target="_blank">
+          <img class="comm_icon_slack" src="/assets/images/buttons/slack_black_trans.svg" alt="Slack Link">
+         </a>
+         </li>
+         <span class="tooltiptext">Join the community on Slack.</span>
+         </div>      
+  </ul>
+  </div>
+
+</div>
 <a name="benchmark-spec"></a>
-<h3 style="color:aliceblue;">Benchmark Specification</h3>
-<div class="post-content row" itemprop="articleBody" style="height:149px">
+<h3 style="color:aliceblue;">Benchmark and Performance Specification</h3>
+<div class="post-content row" itemprop="articleBody" 
+  style="z-index: 1; min-height: 149px; padding-right:149px; padding-bottom:0px;">
     <a href="https://github.com/layer5io/service-mesh-benchmark-spec">
-      <img style="position: relative; float:right; top: -2em; right: -2em; border: 0; width: 149px; height: 149px;" 
-      src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" 
+      <img style="position: absolute; top: 0px; right: 0px; border: 0; width: 149px; height: 149px;
+        padding-top: 0px;padding-right:0px;" 
+      src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png"
       alt="Fork me on GitHub"></a>
   The <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Benchmark Specification</a> is a 
   common format for describing and capturing performance benchmark tests and results. This specification is 
@@ -264,7 +398,7 @@ This project is community-built and welcomes collaboration!
 
 <h3  style="color:aliceblue;">FAQ</h3>
 <div class="post-content row" itemprop="articleBody">
-    <p>  
+    <p>       
       <ul>
         <li style="list-style-type: circle;"><b>Does Meshery manage service meshes?</b>
           <ul>
@@ -300,11 +434,4 @@ This project is community-built and welcomes collaboration!
           </li>
 
     </p>
-</div>
-
-<div class="row">
-  <div id="contact" class="section scrollspy" style="width:100%;">
-      <h4 style="text-align:center;color:aliceblue;">Mailing List</h4>
-      {% include contact.html %}
-    </div>
 </div>

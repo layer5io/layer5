@@ -1,0 +1,54 @@
+.social {
+  $default-color: #fff;
+  $main-light-blue: #62ACCD;
+  $main-dark-grey: #3c494f;
+  $mail-color: #3c494e;
+  $slack-color: #4A154B;
+  $twitter-color: #1da1f2;
+  $github-color: #24292e;
+  $youtube-color: #ff0000;
+  $docker-color: #2496ed;
+
+  width: 23px;
+  height: 23px;
+  background: $default-color;
+  border-radius: 4px;
+  border-width: 3px;
+  border-color: $main-dark-grey;
+  z-index: 10;
+
+  @media only screen and (min-width: 601px) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__link {
+    display: block;
+    color: $main-dark-grey;
+    transition: color .25s;
+
+    &--mail:hover {
+      color: $mail-color;
+    }
+
+    &--slack:hover {
+      color: $slack-color;
+    }
+
+    &--twitter:hover {
+      color: $twitter-color;
+    }
+
+    &--github:hover {
+      color: $github-color;
+    }
+
+    &--youtube:hover {
+      color: $youtube-color;
+    }
+
+    &--docker:hover {
+      color: $docker-color;
+    }
+  }
+}

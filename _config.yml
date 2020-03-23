@@ -2,11 +2,14 @@ title: Layer5
 author: Lee Calcote
 email: community@layer5.io
 name:  Layer5
-description: the service mesh community
+description: "the service mesh community - making service meshes available to the rest of us.
+ Open source software for management of service meshes.
+ Allowing developers to focus on business logic, not infrastructure concerns.
+ Empowering operators to confidentally run modern infrastructure."
 url: "https://layer5.io"
 baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
 
-parallax_image_one: assets/images/cube.png #-header-large.jpg # These are the images used for the parallax background
+parallax_image_one: assets/images/layer5-logo.gif #-header-large.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
 
 portfolio_heading: Workshops
@@ -20,13 +23,14 @@ session: Session
 github: https://github.com/layer5io
 medium: https://layer5.io
 slack: http://slack.layer5.io/
-blog: https://layer5.io
+blog: https://layer5.io/blog
 docker: https://hub.docker.com/u/layer5/
 youtube: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1
 twitter:
   card: summary
   username: layer5
   url: "https://twitter.com/layer5"
+  image: "https://layer5.io/assets/images/layer5/5-dark-bg.png"
 
 # Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
 tag_manager_id: # This looks something like GTM-XXXXXXX
@@ -36,6 +40,7 @@ syntax_highlighting: true # include the css for syntax highlighting
 
 # Build settings
 # theme: minima
+paginate: 5
 markdown: kramdown
 permalink: pretty
 plugins:
@@ -45,6 +50,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
+  - jekyll-archives
+
+# This logic is included based on differences of the handling of trailing slashes between Jekyll and GitHub Pages
+# permalinks:
+#  - meshery: "/meshery"
 
 collections_dir: collections
 collections:
@@ -53,10 +63,14 @@ collections:
   books:
     output: true
     permalink: /books/:title
-  posts:
+  blogs:
     output: true
-    permalink: /posts/:title
-
+    permalink: /blog/:title
+  news:
+    output: true
+    permalink: /news/:title
+  pages:
+    output: true
   people:
     output: true
   projects:
@@ -70,26 +84,41 @@ collections:
     permalink: /workshops/:title
 defaults:
   - scope:
+      path: ""
+    values:
+      image: /assets/images/layer5/layer5-tag-linkedin.png
+  - scope:
       type: pages
+      path: ""
     values:
       layout: default
       body-class: left-sidebar
       sidebar: open
   - scope:
       type: books
+      path: ""
     values:
       layout: default
       body-class: left-sidebar
       sidebar: open
     # Collection defaults
 
+# Colors
+layer5:
+  gray: "#3c494f"
+  lightgray: "#a0aaaa"
+  darkgreen: "#00b39f"
+  lightgreen: "#00d3a9"
+
+
 ## Reference - OSS this site uses:
-    # http://www.fabiolamanna.it
-    # https://github.com/jameshamann/jekyll-material-theme
+    # Particles - http://www.fabiolamanna.it
+    # Nav menu - https://github.com/vinnymoreira/stellarnav
+    # Jekyll theme - https://github.com/jameshamann/jekyll-material-theme
     # https://github.com/VincentGarreau/particles.js
     # https://cssgradient.io
     # https://coolbackgrounds.io
-    # https://jekyllcodex.org/without-plugin/lightbox/
+    # Image view - https://jekyllcodex.org/without-plugin/lightbox/
 
 ## A message to have visitors acknowledge use of cookies (not currently used)
 # cookies_banner: none # The value "show" will show the cookies banner, the value "none" will hide the banner.

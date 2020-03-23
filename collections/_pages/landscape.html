@@ -1,0 +1,39 @@
+---
+layout: default
+title:  "Service Mesh Landscape"
+description: "Comparison of service meshes, API gateways, microservices libraries, and service proxies, answering what's the difference between Istio and Envoy?"
+author:
+  twitter: layer5
+image:
+  path: /assets/images/buttons/landscape.png
+  height: 1200
+lang: en
+permalink: /landscape
+redirect_from:
+  - landscape/
+---
+
+<div style="
+background-image: url('/assets/images/mesh-cubes-trans.svg');
+background-repeat: no-repeat; background-position: topright;
+background-size: contain;">
+<div class="container" style="position:relative;z-index:1;">
+  <div class="col s10">
+      
+     <div id="landscape" class="section scrollspy" style="width:100%;">
+      <!--  <div class="row">
+          <a style="position:relative;float:left;" id="home" class="waves-effect waves-dark btn white-text darken-2 l5-light-blue
+ z-depth-4" href="{{site.baseurl}}/#blog">
+            <i class="material-icons">home</i></a>
+          <div style="position:relative;float:right;">{% include partials/hori-social.html %}</div> 
+      </div> -->
+      <h2 style="text-align:center;color:aliceblue;padding-top:0px;margin-top:0px;">Service Mesh Landscape</h2>
+    </div>
+      <div class="section scrollspy" style="width:100%;">        
+        {% include landscape/service-meshes.html %}
+      </div>
+  </div>
+</div>
+
+</div>
+{% include newsletter-signup.html %}

@@ -10,9 +10,9 @@
 
 #particles-js{
   width: 100%;
-  height: 50%;
-  top:60%;
-  z-index: 0;
+  /* height: 50%;*/
+  bottom:20%;
+  z-index: 0; 
   position: absolute;
   background-image: url('');
   background-size: cover;
