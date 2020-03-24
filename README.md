@@ -44,12 +44,12 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Performance Specification Index" align="left" /></a>
 The <a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a> is a common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and load test configuration.
-<br /><br />
+<br /><br /><br />
 </p>
 
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributing</a></h1>
-<p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="http://contributor-covenant.org">Contributor Covenant</a> code of conduct.
+<p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 </p>
 <p>
 Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png" height="16px" align="bottom" />Slack</a>! Our projects are community-built and welcome collaboration. 👍Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Meshery Contributors Welcome Guide</a> for a tour of resources available to you.
@@ -64,7 +64,7 @@ Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png
 <p>
 <i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+">help-wanted label</a>
 </p>
-Find us on Twitter: <a href="https://twitter.com/layer5"><img src="assets/images/twitter.png" height="16px"
+<p>Find us on Twitter: <a href="https://twitter.com/layer5"><img src="assets/images/twitter.png" height="16px"
 align="bottom" />@layer5</a> and <a href="https://twitter.com/mesheryio">@mesheryio</a>
 </p>
 
