@@ -3,7 +3,7 @@
 <p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 </p>
 <p>
-Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png" height="16px" align="bottom" />Slack</a>! Our projects are community-built and welcome collaboration. 👍Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Meshery Contributors Welcome Guide</a> for a tour of resources available to you. Also, visit our more complete set of instructions for [contributing](https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#contributing).
+Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png" height="16px" align="bottom" />Slack</a>! Our projects are community-built and welcome collaboration. 👍Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Meshery Contributors Welcome Guide</a> for a tour of resources available to you. Also, visit our more complete set of instructions for <a href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#contributing">contributing</a>.
 </p>
 <p>
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
