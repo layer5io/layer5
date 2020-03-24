@@ -12,7 +12,7 @@
 ### About Layer5
 
 **Community First**
-<p>The [Layer5](https://layer5.io) community represents the largest collection of service mesh projects and their maintainers in the world.</p>
+<p>The <a href="https://layer5.io">Layer5</a> community represents the largest collection of service mesh projects and their maintainers in the world.</p>
 
 **Open Source First**
 <p>We build projects to provide learning environments, deployment and operational best practices, performance benchmarks, create documentation, share networking opportunities, and more. Our shared commitment to the open source spirit pushes Layer5 projects forward.</p>
@@ -48,7 +48,7 @@ The <a href="https://layer5.io/performance">Service Mesh Benchmark Specification
 </p>
 
 <p style="clear:both;">
-<h1><a name="contributing"></a><a name="community"></a> Community and Contributing</h1>
+<h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributing</a></h1>
 <p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="http://contributor-covenant.org">Contributor Covenant</a> code of conduct.
 </p>
 <p>
