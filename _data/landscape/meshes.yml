@@ -158,9 +158,9 @@
   grpc: "Yes"
   tcp-web: "Yes"
   multi-cluster: "Experimental"
-  multi-tenant: "?"
+  multi-tenant: "Yes"
   prometheus: "Yes"
-  tracing: "Jaeger"
+  tracing: "Pluggable"
   encryption: "Yes"
   smi: 
     tac: "No"
