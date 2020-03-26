@@ -157,10 +157,10 @@
   h2: "Yes"
   grpc: "Yes"
   tcp-web: "Yes"
-  multi-cluster: "?"
-  multi-tenant: "?"
+  multi-cluster: "Experimental"
+  multi-tenant: "Yes"
   prometheus: "Yes"
-  tracing: "None"
+  tracing: "Pluggable"
   encryption: "Yes"
   smi: 
     tac: "No"
