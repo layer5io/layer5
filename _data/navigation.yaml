@@ -58,3 +58,8 @@
   link: /blog
   new_window: false
   highlight: false   
+- name: Get Started
+  link: /meshery#getting-started
+  new_window: false
+  highlight: yes   
+  class: cta

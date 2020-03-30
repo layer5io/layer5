@@ -24,7 +24,7 @@
         
         {% if link.link %}
         <!-- Menu item with hyperlink -->
-        <li><a href="{% if link.subitems[0] %}{{link.link}}{% else %}{{link.link}}{% endif %}" class="{{ class }}" 
+        <li><a href="{% if link.subitems[0] %}{{link.link}}{% else %}{{link.link}}{% endif %}" class="{{ link.class }}" 
             {% if link.new_window %}target="_blank"{% endif %}>
             {{ link.name }}
         </a>
