@@ -38,15 +38,23 @@ Entries should be listed in alphabetical order. Edit other yaml files as needed.
 Please contribute! The service mesh landscape is powered by GitHub Pages (Jekyll). The process of contributing to documentation follows this flow:
 
 1. Get a local copy of the site.
-`git clone https://github.com/layer5io/layer5`
-1. Create and checkout a new branch to make changes within
-`git checkout -b <my-username>/<my-changes>` 
+```git clone https://github.com/layer5io/layer5```
+
+1. Create and checkout a new branch to make changes within.
+```git checkout -b <my-username>/<my-branch-name>```
+
+1. If you've been working on a local branch for some time, be sure to keep your local forks up to speed with the remote master.
+``git checkout master; git pull; git checkout <my-username>/<my-changes>; git merge master```
+
 1. Edit site/add content.
-`vi <specific page>.md` # or use your favorite IDE
+```vi <specific page>.md    # or use your favorite IDE``` 
+
 1. Run site locally to preview changes.
-`make site` # this will run a local web server with "live reload" conveniently enabled.
+```make site   # this will run a local web server with "live reload" conveniently enabled.```
+
 1. Commit and push changes to your remote branch.
-`git push origin <my-username>/<my-changes>`
+```git push origin <my-username>/<my-changes>```
+
 1. Open a [pull request](../../pulls) (in your web browser) against the master branch on https://github.com/layer5io/layer5.
 
 Build and preview your changes by running `make site` or `make docker`.
