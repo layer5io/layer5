@@ -47,7 +47,7 @@ Please contribute! The service mesh landscape is powered by GitHub Pages (Jekyll
 
 3. If you've been working on a local branch for some time, be sure to keep your local forks up to speed with the remote master.
 
-``git checkout master; git pull; git checkout <my-username>/<my-changes>; git merge master```
+```git checkout master; git pull; git checkout <my-username>/<my-changes>; git merge master```
 
 4. Edit site/add content.
 
