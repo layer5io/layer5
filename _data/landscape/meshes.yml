@@ -310,6 +310,19 @@
   tracing: "?"
   encryption: "?"
 
+- name: Project Hamlet
+  desc: "Project Hamlet Multi-Vendor Service Mesh Interoperation. Hamlet specifies a set of API standards for enabling service mesh federation."
+  link: https://github.com/vmware/hamlet
+  autoinject: "?"
+  tcp-web: "?"
+  grpc: "Yes"
+  h2: "?"
+  multi-cluster: "?"
+  multi-tenant: "?"
+  prometheus: "?"
+  tracing: "?"
+  encryption: "?"  
+
 # - name: Vamp
 #   desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."
 #   link: https://vamp.io

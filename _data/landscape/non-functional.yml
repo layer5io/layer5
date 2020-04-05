@@ -358,3 +358,13 @@
   ga-1-date: "?"
   commercial: "?"
   category: Service Mesh
+
+- name: Project Hamlet
+  opensource: "Yes"
+  link: https://github.com/vmware/hamlet
+  governance: VMware
+  primary-lang: Go
+  announce-date: "?"
+  ga-1-date: "?"
+  commercial: "?"
+  category: Service Mesh
