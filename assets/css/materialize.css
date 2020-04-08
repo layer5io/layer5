@@ -3036,6 +3036,7 @@ ul.staggered-list li {
 .comparison {
   float:left; display: inline; 
   background-color: white; 
+  width: 100%;
   border-right-width: 1px; border-right-style: dashed;
   border-right-color: var(--main-dark-grey);
   background: rgb(255,255,255);

@@ -19,18 +19,15 @@
 - name: Citrix ADC
   link: https://www.citrix.com/blogs/2019/06/12/citrix-solutions-for-api-protection-in-cloud-native-kubernetes-apps/
   desc: "Citrix ADC protects your applications and APIs"
-- name: 
+- name:  
+  link: 
+  desc: 
+- name:  
   link: 
   desc:
-- name: 
+- name:  
   link: 
-  desc:
-- name: 
+  desc: 
+- name:  
   link: 
-  desc:
-- name: 
-  link: 
-  desc:
-- name: 
-  link: 
-  desc:
+  desc: 
