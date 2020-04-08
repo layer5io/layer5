@@ -39,6 +39,7 @@
   tracing: "Jaeger"
   encryption: "Yes"
   multi-tenant-score: 10
+  netdev-persona-score: 6
 
 - name: Cilium
   desc: "Cilium - DaemonSet-based service mesh using Linux BPF."
@@ -53,6 +54,7 @@
   tracing: "?"
   encryption: "Yes"
   multi-tenant-score: 1
+  netdev-persona-score: 4
 
 - name: Citrix Service Mesh
   desc: "Service mesh based on Istio and served with Citrix ADC CPX sidecar proxies."
@@ -67,6 +69,7 @@
   tracing: "?"
   encryption: "Yes"
   multi-tenant-score: 1
+  netdev-persona-score: 9
 
 - name: Consul
   desc: "Consul - Connect is a feature that enables encrpyted communication between services."
@@ -81,6 +84,7 @@
   tracing: "Pluggable"
   encryption: "Yes"
   multi-tenant-score: 1
+  netdev-persona-score: 9
   smi: 
     tac: "Yes"
     taclink: "https://github.com/hashicorp/consul-smi-controller"
@@ -118,6 +122,7 @@
   tracing: "Jaeger"
   encryption: "Yes"
   multi-tenant-score: 5
+  netdev-persona-score: 1
   smi: 
     tac: "Yes"
     taclink: "https://github.com/deislabs/smi-adapter-istio"
@@ -141,6 +146,7 @@
   tracing: "?"
   encryption: "?"
   multi-tenant-score: 8
+  netdev-persona-score: 2
 
 - name: Linkerd 1.x
   desc: "Linkerd - hosted by the CNCF and built on top of Twitter Finagle. Linkerd includes both a proxying data plane and the Namerd (“namer-dee”) control plane all in one package. "
@@ -155,6 +161,7 @@
   tracing: "Zipkin"
   encryption: "Yes"
   multi-tenant-score: 1
+  netdev-persona-score: 5
 
 - name: Linkerd 2.x (Conduit)
   desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setu. Open Source. From Buoyant. Written in Rust and Go."
@@ -169,6 +176,7 @@
   tracing: "Pluggable"
   encryption: "Yes"
   multi-tenant-score: 1
+  netdev-persona-score: 5
   smi: 
     tac: "No"
     taclink: ""
@@ -192,6 +200,7 @@
   tracing: "Yes"
   encryption: "No"
   multi-tenant-score: 1
+  netdev-persona-score: 3
   smi: 
     tac: "Yes"
     taclink: "https://github.com/containous/maesh"
@@ -230,32 +239,6 @@
   encryption: "?"
   multi-tenant-score: 8
 
-- name: Octarine
-  desc: "Octarine is a security platform for k8s workloads that combines admission control with runtime network security leveraging an Envoy-based service mesh"
-  link: https://www.octarinesec.com/
-  h2: "Yes"
-  grpc: "Yes"
-  tcp-web: "Yes"
-  multi-cluster: "Yes"
-  multi-tenant: "Yes"
-  prometheus: "No"
-  tracing: "No"
-  encryption: "Yes"
-  multi-tenant-score: 10
-
-- name: Rotor
-  link: https://github.com/turbinelabs/
-  autoinject: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  tcp-web: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  grpc: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  h2: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  multi-cluster: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  multi-tenant: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  desc: "Rotor - a fast, lightweight bridge between your service discovery and Envoy’s configuration APIs. Turbine Labs has shutdown."
-  prometheus: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  tracing: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-  encryption: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
-
 - name: SOFAMesh
   desc: A solution for large-scale Service Mesh based on Istio.
   link: https://github.com/alipay/sofa-mesh
@@ -275,6 +258,7 @@
   tracing: "?"
   encryption: "?"
   multi-tenant-score: 8
+  netdev-persona-score: 7
 
 - name: Octarine
   desc: "Octarine is a security platform for k8s workloads that combines admission control with runtime network security leveraging an Envoy-based service mesh"
@@ -288,6 +272,7 @@
   tracing: "No"
   encryption: "Yes"
   multi-tenant-score: 10
+  netdev-persona-score: 8
 
 - name: Rotor
   link: https://github.com/turbinelabs/
