@@ -1,67 +1,11 @@
 <div class="row">
-  <div class="col s12">
-
-    <!-- Comparative Spectrum Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Service Meshes'
-      COLOR = 'blue'
-    %}
-
-    <!-- Comparative Spectrum Table -->
-    {% assign
-      PROJECTS = 'A10, Aspen, grey, cilium' | downcase | split: ', ' %}
-    {% assign
-      KEYS = 'multi-cluster, autoinject, tracing, prometheus' | downcase | split: ', ' %}
-    {% assign
-      GREAT = 'Jaeger' | downcase %}
-    {% assign
-      GOOD = 'Yes, Replaced' | downcase %}
-    {% assign
-      BAD = 'No, ?' | downcase %}
-    {% include partials/spectrum/table.html PROJECTS=PROJECTS KEYS=KEYS GREAT=GREAT GOOD=GOOD BAD=BAD %}
-
-    <!-- Comparative Spectrum Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Istio-compliant'
-      COLOR = 'grey'
-    %}
-
-    <br/><br/><br/><hr><br/><br/>
-
-    <!-- Comparative Spectrum Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Multi-Tenancy'
-      COLOR = 'red'
-    %}
-
-    <!-- Comparative Spectrum Cards -->
-    {% include partials/spectrum/cards.html
-      KEY = 'multi-tenant'
-      VALUE = 'Yes'
-    %}
-
-    <br/><hr><br/><br/>
-
-    <!-- Comparative Spectrum Grid -->
-    {% include partials/spectrum/grid.html
-      LVALUE = 'Network Engineers'
-      LCOLOR = 'blue'
-
-      RVALUE = 'Developers'
-      RCOLOR = 'red'
-
-      KEY = 'netdev-persona-score'
-    %}
-  <div>
-</div>
-<div class="row" >
 
   <style> 
     .card-content>ul {font-weight:bold;} 
     .card-content>ul>li {
       margin-left: 5px;
       font-weight: normal;
-      float: right;
+      display: inline-flex;
       width: 200px;
     }
     
@@ -82,62 +26,99 @@
     NAME = 'Categories'
     COLOR = 'grey'
   %} 
-  <div class="card-content comparison">
-  <h5 style="color:aliceblue;">Categories</h5>
+  <div class="card-content">
+  <!-- <h5 style="color:aliceblue;">Categories</h5> -->
 
   <div class="card-content comparison">
-    <ul>Service Mesh
-      {% assign sorted = (site.data.landscape.meshes | sort: 'name') | reverse %}
+    <ul>Service Mesh<br />
+      {% assign sorted = (site.data.landscape.meshes | sort: 'name') %}
       {% for meshes in sorted %}
+      {% if meshes.name %}
           <li><div class="tooltip"><a href="{{meshes.link}}">{{meshes.name}}</a>
             <span class="tooltiptext">{{meshes.desc}}</span></div>
           </li>
+          {% else %}
+          {% capture blanks %}{% increment _blanks %}{% endcapture %} 
+        {% endif %}
+      {% endfor %}
+      {% for i in blanks %}
+      <li> </li>
       {% endfor %}
     </ul>
   </div>
 
   <div class="card-content comparison">
-    <ul>Client Library
-      {% assign sorted = (site.data.landscape.clients | sort: 'name') | reverse %}
+    <ul>Client Library<br />
+      {% assign sorted = (site.data.landscape.clients | sort: 'name') %}
+      {% assign blanks = 1 %}
       {% for clients in sorted %}
+      {% if clients.name %}
           <li><div class="tooltip"><a href="{{clients.link}}">{{clients.name}}</a>
           <span class="tooltiptext">{{clients.desc}}</span></div>
         </li>
-        
+        {% else %}
+          {% capture blanks %}{% increment _blanks %}{% endcapture %} 
+        {% endif %}
+      {% endfor %}
+      {% for i in blanks %}
+      <li> </li>
       {% endfor %}
     </ul>
   </div>
 
   <div class="card-content comparison">
-      <ul>API Gateway
-        {% assign sorted = (site.data.landscape.gw | sort: 'name') | reverse %}
+      <ul>API Gateway<br />
+        {% assign sorted = (site.data.landscape.gw | sort: 'name') %}
+        {% assign blanks = 1 %}
         {% for gw in sorted %}
+        {% if gw.name %}
             <li><div class="tooltip"><a href="{{gw.link}}">{{gw.name}}</a>
               <span class="tooltiptext">{{gw.desc}}</span></div>
             </li>
-
+            {% else %}
+            {% capture blanks %}{% increment _blanks %}{% endcapture %} 
+          {% endif %}
+        {% endfor %}
+        {% for i in blanks %}
+        <li> </li>
         {% endfor %}
       </ul>
   </div>
   
   <div class="card-content comparison">
-      <ul>Service Proxy
-        {% assign sorted = (site.data.landscape.proxies | sort: 'name') | reverse %}
+      <ul>Service Proxy<br />
+        {% assign sorted = (site.data.landscape.proxies | sort: 'name') %}
+        {% assign blanks = 1 %}
         {% for proxies in sorted %}
+        {% if proxies.name %}
             <li><div class="tooltip"><a href="{{proxies.link}}">{{proxies.name}}</a>
-              <span class="tooltiptext">{{proxies.desc}}</span>
-            </div></li>
+              <span class="tooltiptext">{{proxies.desc}}</span></div>
+            </li>
+            {% else %}
+            {% capture blanks %}{% increment _blanks %}{% endcapture %} 
+          {% endif %}
+        {% endfor %}
+        {% for i in blanks %}
+        <li> </li>
         {% endfor %}
       </ul>
   </div>
 
   <div class="card-content comparison">
-    <ul>Load Balancer
-      {% assign sorted = (site.data.landscape.lb | sort: 'name') | reverse %}
+    <ul>Load Balancer<br />
+      {% assign sorted = (site.data.landscape.lb | sort: 'name') %}
+      {% assign blanks = 1 %}
       {% for lbs in sorted %}
+      {% if lbs.name %}
           <li><div class="tooltip"><a href="{{lbs.link}}">{{lbs.name}}</a>
             <span class="tooltiptext">{{lbs.desc}}</span>
           </div></li>
+          {% else %}
+          {% capture blanks %}{% increment _blanks %}{% endcapture %} 
+        {% endif %}
+      {% endfor %}
+      {% for i in blanks %}
+      <li> </li>
       {% endfor %}
     </ul>
   </div>
