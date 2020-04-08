@@ -5,7 +5,7 @@ date:   2019-12-04 18:10:00 +0000
 author: Rafi Ungar
 permalink: /blog/layer5-landscape-spectrums-revisited
 ---
-Several weeks ago, I wrote [a blog post](https://raungar.wordpress.com/2019/11/15/introducing-comparative-spectrums-to-the-layer5-landscape/) about introducing "comparative spectrum" tools to [the Layer5 landscape](https://layer5.io/landscape/)—a webpage which I have transformed multiple times, now!
+Several weeks ago, I wrote [a blog post](https://raungar.wordpress.com/2019/11/15/introducing-comparative-spectrums-to-the-layer5-landscape/) about introducing "comparative spectrum" tools to [the Layer5 landscape](https://layer5.io/landscape)—a webpage which I have transformed multiple times, now!
 
 Up until now, the contents of each blog post I have written were centered upon a freshly-opened pull request. Shortly before writing my last post, I did open [one such pull request (layer5#238)](https://github.com/layer5io/layer5/pull/238). However, since my PR remains open, and since I am still working on the same issue my PR addresses, I have opted to instead push [a new commit](https://github.com/layer5io/layer5/pull/238/commits/4d396aaa6d3ca46add71531daedc8c0e2a5d2495) to the aformentioned (but, now, renamed) PR instead of creating a whole new one. This newest commit introduces a major step towards resolving the issue at hand, and will be the subject of this blog post!
 

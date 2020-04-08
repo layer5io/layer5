@@ -1,0 +1,35 @@
+<div class="row">
+
+  {% assign sorted = (site.projects | sort: 'date') | reverse %}
+  
+  {% for project in sorted %}
+  
+  {% if project.visibility != "hide" and project.type != "news" and project.permalink == {{ include.excluded_project }} %}
+
+  <div class="col s12 m3">
+    <div class="card">
+      <a href="{{site.url}}{{ project.link }}" class="waves-effect z-depth-4 
+         waves-light darken-3" style="background-color:{{ site.layer5.gray }}; width: 100%;" >
+        <div class="card-image">  
+          <img class="light-shadow" src="{{project.thumbnail}}" style="max-width:90%; max-height: 180px; 
+          width: auto; height: auto; text-align: center; padding:5%; 
+          margin-left: auto; margin-right: auto;" />
+          <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
+          <!-- <a id="{{site.url}}{{ project.link }}" class="btn-floating halfway-fab waves-effect z-depth-4 
+          l5-light-blue
+ waves-dark darken-3"
+          href="{{site.url}}{{ project.link }}">
+          <i class="material-icons">more_horiz</i></a> -->
+        </div>
+        <div class="card-content center">
+          <h5 class="white-text">{{project.title}}</h5>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  {% endif %}
+
+  {% endfor %}
+
+</div>

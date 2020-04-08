@@ -1,47 +1,51 @@
-        <div class="row">
-            {% for post in site.news %}
-            
-            {% if post.visibility != "hide" and post.type == "news" %}
+<div class="row">
+  
+  {% assign sorted = (site.news | sort: 'date') | reverse %}
+  
+    {% for post in sorted %}  
+    
+    {% if post.visibility != "hide" and post.type == "news" %}
+  
+    <div class="col s12 m4">
+      <div class="card" style="z-index: 1; height:330px;">
+        <div class="card-image">
+          <a href="{{ post.url }}">
+            <img src="{{post.image}}" style="max-width:100%;  max-height: 180px; width: auto;
+            height: auto; text-align: center;
+            margin-left: auto;
+            margin-right: auto;"></a>
+          <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
           
-            <div class="col s12 m4">
-              <div class="card" style="z-index: 1; height:330px;">
-                <div class="card-image">
-                  <a href="{{ post.url | relative_url }}">
-                    <img src="{{post.image}}" style="max-width:100%;  max-height: 180px; width: auto;
-                    height: auto; text-align: center;
-                    margin-left: auto;
-                    margin-right: auto;"></a>
-                  <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
-                  
-                  {% if post.eurl %}
-                  <a id="{{post.eurl}}" class="btn-floating halfway-fab 
-                  waves-effect z-depth-4 l5-light-green waves-dark darken-3" href="{{post.eurl}}">
-                  <img src="/assets/images/buttons/external-link_white.svg" 
-                    style="position:absolute; max-width:100%;  max-height: 20px; width: auto;
-                    height: auto; text-align: center; top: 10px;
-                    margin-left: auto;
-                    margin-right: auto;" /></a>
-                  
-
-                  {% else %}
-                  <a id="{{post.url}}" class="btn-floating halfway-fab 
-                  waves-effect z-depth-4 l5-dark-green waves-dark darken-3"
-                  href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
-                  {% endif %}
-
-                  
-                </div>
-                <div class="card-content">
-                  <h5 class="black-text">{{post.title}}</h5>
-                  <p class="grey-text text-darken-2" style="padding-top:1em; padding-bottom: .75em;">
-
-                  {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-                  {{ post.date | date: date_format }}
-                  </p>
-                </div>
-              </div>
-            </div>
-            {% endif %}
+          {% if post.eurl %}
+          <a id="{{post.eurl}}" class="btn-floating halfway-fab 
+            waves-effect z-depth-4 l5-light-blue
+            waves-dark darken-3" href="{{post.eurl}}">
+          <img src="/assets/images/buttons/external-link_white.svg" 
+            style="position:absolute; max-width:100%;  max-height: 20px; width: auto;
+            height: auto; text-align: center; top: 10px;
+            margin-left: auto;
+            margin-right: auto;" /></a>
           
-            {% endfor %}
-          </div>
+
+          {% else %}
+          <a id="{{post.url}}" class="btn-floating halfway-fab 
+          waves-effect z-depth-4 l5-dark-green waves-dark darken-3"
+          href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+          {% endif %}
+
+          
+        </div>
+        <div class="card-content">
+          <h5 class="black-text">{{post.title}}</h5>
+          <p class="grey-text text-darken-2" style="padding-top:1em; padding-bottom: .75em;">
+
+          {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+          {{ post.date | date: date_format }}
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  
+    {% endfor %}
+  </div>

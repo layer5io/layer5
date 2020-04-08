@@ -1,5 +1,5 @@
 - name: A10 Secure Service Mesh
-  desc: “A10’s Secure Service Mesh - is a solution that utilizes a hub-spoke model to provide scalable east-west network security and automatic service discovery.”
+  desc: "A10’s Secure Service Mesh - is a solution that utilizes a hub-spoke model to provide scalable east-west network security and automatic service discovery."
   link: https://www.a10networks.com/products/secure-service-mesh/
   autoinject: "No"
   tcp-web: "Yes"
@@ -13,7 +13,7 @@
   multi-tenant-score: 10
 
 - name: App Mesh
-  desc: AWS App Mesh - a managed control plane offering using Envoy as the data plane.
+  desc: "AWS App Mesh - a managed control plane offering using Envoy as the data plane."
   link: https://github.com/aws/aws-app-mesh-examples
   autoinject: "No"
   tcp-web: "Yes"
@@ -41,7 +41,7 @@
   multi-tenant-score: 10
 
 - name: Cilium
-  desc: Cilium - DaemonSet-based service mesh using Linux BPF.
+  desc: "Cilium - DaemonSet-based service mesh using Linux BPF."
   link: https://cilium.io/
   autoinject: "?"
   tcp-web: "Yes"
@@ -55,7 +55,7 @@
   multi-tenant-score: 1
 
 - name: Citrix Service Mesh
-  desc: Service mesh based on Istio and served with Citrix ADC CPX sidecar proxies.
+  desc: "Service mesh based on Istio and served with Citrix ADC CPX sidecar proxies."
   link: https://github.com/citrix/citrix-istio-adaptor
   autoinject: "Yes"
   tcp-web: "Yes"
@@ -81,6 +81,15 @@
   tracing: "Pluggable"
   encryption: "Yes"
   multi-tenant-score: 1
+  smi: 
+    tac: "Yes"
+    taclink: "https://github.com/hashicorp/consul-smi-controller"
+    tmetrics: "No"
+    tmetricslink: ""
+    tsplit: "No"
+    tsplitlink: ""
+    tspec: "No"
+    tspeclink: ""
 
 - name: Grey Matter
   desc: "Grey Matter is an Istio-compliant, Envoy proxy-based, hybrid cloud service mesh platform for business insight and secure data control with your microservices."
@@ -109,6 +118,15 @@
   tracing: "Jaeger"
   encryption: "Yes"
   multi-tenant-score: 5
+  smi: 
+    tac: "Yes"
+    taclink: "https://github.com/deislabs/smi-adapter-istio"
+    tmetrics: "Yes"
+    tmetricslink: "https://github.com/deislabs/smi-metrics/tree/master/pkg/istio"
+    tsplit: "Yes"
+    tsplitlink: "https://github.com/deislabs/smi-adapter-istio"
+    tspec: "Yes"
+    tspeclink: "https://github.com/deislabs/smi-adapter-istio"
 
 - name: Kuma
   desc: "Kuma is a universal open source control-plane that can run and be operated natively across both Kubernetes and VM environments."
@@ -139,19 +157,27 @@
   multi-tenant-score: 1
 
 - name: Linkerd 2.x (Conduit)
-  desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setup.
-Open Source. From Buoyant. Written in Rust and Go."
+  desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setu. Open Source. From Buoyant. Written in Rust and Go."
   link: https://linkerd.io
   autoinject: "Yes"
   h2: "Yes"
   grpc: "Yes"
   tcp-web: "Yes"
-  multi-cluster: "?"
-  multi-tenant: "?"
+  multi-cluster: "Experimental"
+  multi-tenant: "Yes"
   prometheus: "Yes"
-  tracing: "None"
+  tracing: "Pluggable"
   encryption: "Yes"
   multi-tenant-score: 1
+  smi: 
+    tac: "No"
+    taclink: ""
+    tmetrics: "Yes"
+    tmetricslink: "https://github.com/deislabs/smi-metrics/tree/master/pkg/linkerd"
+    tsplit: "Yes"
+    tsplitlink: "https://linkerd.io/2/features/traffic-split/"
+    tspec: "No"
+    tspeclink: ""
 
 - name: Maesh
   desc: "Maesh is a simple, yet full-featured service mesh. It is container-native and fits as your de-facto service mesh in your Kubernetes cluster."
@@ -166,6 +192,15 @@ Open Source. From Buoyant. Written in Rust and Go."
   tracing: "Yes"
   encryption: "No"
   multi-tenant-score: 1
+  smi: 
+    tac: "Yes"
+    taclink: "https://github.com/containous/maesh"
+    tmetrics: "No"
+    tmetricslink: ""
+    tsplit: "Yes"
+    tsplitlink: "https://github.com/containous/maesh"
+    tspec: "Yes"
+    tspeclink: "https://github.com/containous/maesh"
 
 - name: Maistra
   desc: "Maistra is a security focused distribution of Istio designed to run on top of OpenShift."
@@ -224,16 +259,61 @@ Open Source. From Buoyant. Written in Rust and Go."
 - name: SOFAMesh
   desc: A solution for large-scale Service Mesh based on Istio.
   link: https://github.com/alipay/sofa-mesh
-  autoinject: "Yes"
-  h2: "Yes"
-  grpc: "Yes"
-  tcp-web: "Yes"
-  multi-cluster: "Cloud only"
-  multi-tenant: "Cloud only"
+  autoinject: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  tcp-web: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  grpc: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  h2: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  multi-cluster: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  multi-tenant: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  prometheus: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  tracing: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  encryption: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  tcp-web: "No"
+  multi-cluster: "Yes, powered by ServiceComb"
+  multi-tenant: "Huawei Cloud only"
   prometheus: "?"
   tracing: "?"
   encryption: "?"
   multi-tenant-score: 8
+
+- name: Octarine
+  desc: "Octarine is a security platform for k8s workloads that combines admission control with runtime network security leveraging an Envoy-based service mesh"
+  link: https://www.octarinesec.com/
+  h2: "Yes"
+  grpc: "Yes"
+  tcp-web: "Yes"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "No"
+  tracing: "No"
+  encryption: "Yes"
+  multi-tenant-score: 10
+
+- name: Rotor
+  link: https://github.com/turbinelabs/
+  autoinject: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  tcp-web: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  grpc: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  h2: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  multi-cluster: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  multi-tenant: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  desc: "Rotor - a fast, lightweight bridge between your service discovery and Envoy’s configuration APIs. Turbine Labs has shutdown."
+  prometheus: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  tracing: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  encryption: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+
+- name: SOFAMesh
+  desc: A solution for large-scale Service Mesh based on Istio.
+  link: https://github.com/alipay/sofa-mesh
+  autoinject: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  tcp-web: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  grpc: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  h2: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  multi-cluster: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  multi-tenant: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  prometheus: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  tracing: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  encryption: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
 
 - name: Yggdrasil
   desc: "Yggdrasil is an Envoy control plane that configures listeners and clusters based off Kubernetes ingresses from multiple Kube Clusters."
