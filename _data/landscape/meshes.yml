@@ -10,7 +10,7 @@
   prometheus: "No, Replaced by Harmony Controller"
   tracing: "Yes"
   encryption: "Yes"
-  score: 6
+  multi-tenant-score: 10
 
 - name: App Mesh
   desc: "AWS App Mesh - a managed control plane offering using Envoy as the data plane."
@@ -24,7 +24,7 @@
   prometheus: "No"
   tracing: "Yes"
   encryption: "Yes"
-  score: 6
+  multi-tenant-score: 6
 
 - name: Aspen Mesh
   desc: "Aspen Mesh - a commercial offering built on top of Istio with some open source components."
@@ -38,7 +38,8 @@
   prometheus: "Yes"
   tracing: "Jaeger"
   encryption: "Yes"
-  score: 4
+  multi-tenant-score: 10
+  netdev-persona-score: 6
 
 - name: Cilium
   desc: "Cilium - DaemonSet-based service mesh using Linux BPF."
@@ -52,7 +53,8 @@
   prometheus: "Yes"
   tracing: "?"
   encryption: "Yes"
-  score: 4
+  multi-tenant-score: 1
+  netdev-persona-score: 4
 
 - name: Citrix Service Mesh
   desc: "Service mesh based on Istio and served with Citrix ADC CPX sidecar proxies."
@@ -66,9 +68,11 @@
   prometheus: "Yes"
   tracing: "?"
   encryption: "Yes"
+  multi-tenant-score: 1
+  netdev-persona-score: 9
 
-- name: Consul Connect
-  desc: "Consul Connect - is a feature that enables encrpyted communication between services."
+- name: Consul
+  desc: "Consul - Connect is a feature that enables encrpyted communication between services."
   link: https://www.consul.io/mesh.html
   autoinject: "Yes"
   tcp-web: "Yes"
@@ -79,6 +83,8 @@
   prometheus: "Yes"
   tracing: "Pluggable"
   encryption: "Yes"
+  multi-tenant-score: 1
+  netdev-persona-score: 9
   smi: 
     tac: "Yes"
     taclink: "https://github.com/hashicorp/consul-smi-controller"
@@ -100,7 +106,8 @@
   multi-tenant: "Yes"
   prometheus: "Yes"
   tracing: "OpenTracing compatible"
-  encryption: "Yes"
+  encyrption: "Yes"
+  multi-tenant-score: 1
 
 - name: Istio
   link: https://istio.io
@@ -114,6 +121,8 @@
   prometheus: "Yes"
   tracing: "Jaeger"
   encryption: "Yes"
+  multi-tenant-score: 5
+  netdev-persona-score: 1
   smi: 
     tac: "Yes"
     taclink: "https://github.com/deislabs/smi-adapter-istio"
@@ -136,6 +145,8 @@
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+  multi-tenant-score: 8
+  netdev-persona-score: 2
 
 - name: Linkerd 1.x
   desc: "Linkerd - hosted by the CNCF and built on top of Twitter Finagle. Linkerd includes both a proxying data plane and the Namerd (“namer-dee”) control plane all in one package. "
@@ -149,6 +160,8 @@
   prometheus: "Yes"
   tracing: "Zipkin"
   encryption: "Yes"
+  multi-tenant-score: 1
+  netdev-persona-score: 5
 
 - name: Linkerd 2.x (Conduit)
   desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setu. Open Source. From Buoyant. Written in Rust and Go."
@@ -162,6 +175,8 @@
   prometheus: "Yes"
   tracing: "Pluggable"
   encryption: "Yes"
+  multi-tenant-score: 1
+  netdev-persona-score: 5
   smi: 
     tac: "No"
     taclink: ""
@@ -184,6 +199,8 @@
   prometheus: "Yes"
   tracing: "Yes"
   encryption: "No"
+  multi-tenant-score: 1
+  netdev-persona-score: 3
   smi: 
     tac: "Yes"
     taclink: "https://github.com/containous/maesh"
@@ -206,6 +223,7 @@
   prometheus: "Yes"
   tracing: "Jaeger/Grafana"
   encryption: "Yes"
+  multi-tenant-score: 10
 
 - name: Mesher
   desc: "Mesher is service mesh implementation based on go-chassis which can work together with ServiceComb Service center running on any infrastructure. Mesher can work with go-chassis in same service mesh control plane and it supports both linux and windows OS"
@@ -219,6 +237,28 @@
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+  multi-tenant-score: 8
+
+- name: SOFAMesh
+  desc: A solution for large-scale Service Mesh based on Istio.
+  link: https://github.com/alipay/sofa-mesh
+  autoinject: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  tcp-web: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  grpc: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  h2: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  multi-cluster: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  multi-tenant: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  prometheus: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  tracing: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  encryption: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
+  tcp-web: "No"
+  multi-cluster: "Yes, powered by ServiceComb"
+  multi-tenant: "Huawei Cloud only"
+  prometheus: "?"
+  tracing: "?"
+  encryption: "?"
+  multi-tenant-score: 8
+  netdev-persona-score: 7
 
 - name: Octarine
   desc: "Octarine is a security platform for k8s workloads that combines admission control with runtime network security leveraging an Envoy-based service mesh"
@@ -231,6 +271,8 @@
   prometheus: "No"
   tracing: "No"
   encryption: "Yes"
+  multi-tenant-score: 10
+  netdev-persona-score: 8
 
 - name: Rotor
   link: https://github.com/turbinelabs/
@@ -270,6 +312,7 @@
   prometheus: "Yes"
   tracing: "Pluggable"
   encryption: "Yes"
+  multi-tenant-score: 1
 
 - name: Zuul
   desc: "Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more."
@@ -283,6 +326,7 @@
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+  multi-tenant-score: 1
 
 - name: Vulcand
   desc: "Programmatic load balancer and service mesh backed by etcd"
@@ -296,6 +340,7 @@
   prometheus: "No"
   tracing: "No"
   encryption: "Yes"
+  multi-tenant-score: 1
 
 - name: Network Service Mesh
   desc: "Network Service Mesh (NSM) is a novel approach solving complicated L2/L3 use cases in Kubernetes that are tricky to address with the existing Kubernetes Network Mode"
@@ -309,6 +354,7 @@
   prometheus: "?"
   tracing: "?"
   encryption: "?"
+  multi-tenant-score: 1
 
 # - name: Vamp
 #   desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."

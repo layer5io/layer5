@@ -1,12 +1,11 @@
-<div ></div>
-<div class="row" >
+<div class="row">
 
   <style> 
     .card-content>ul {font-weight:bold;} 
     .card-content>ul>li {
       margin-left: 5px;
       font-weight: normal;
-      float: right;
+      display: inline-flex;
       width: 200px;
     }
     
@@ -22,61 +21,104 @@
     }
   </style>
 
-  <h5 style="color:aliceblue;">Categories</h5>
+  
+  {% include partials/spectrum/arrow.html
+    NAME = 'Categories'
+    COLOR = 'grey'
+  %} 
+  <div class="card-content">
+  <!-- <h5 style="color:aliceblue;">Categories</h5> -->
 
   <div class="card-content comparison">
-    <ul>Service Mesh
-      {% assign sorted = (site.data.landscape.meshes | sort: 'name') | reverse %}
+    <ul>Service Mesh<br />
+      {% assign sorted = (site.data.landscape.meshes | sort: 'name') %}
       {% for meshes in sorted %}
+      {% if meshes.name %}
           <li><div class="tooltip"><a href="{{meshes.link}}">{{meshes.name}}</a>
             <span class="tooltiptext">{{meshes.desc}}</span></div>
           </li>
+          {% else %}
+          {% capture blanks %}{% increment _blanks %}{% endcapture %} 
+        {% endif %}
+      {% endfor %}
+      {% for i in blanks %}
+      <li> </li>
       {% endfor %}
     </ul>
   </div>
 
   <div class="card-content comparison">
-    <ul>Client Library
-      {% assign sorted = (site.data.landscape.clients | sort: 'name') | reverse %}
+    <ul>Client Library<br />
+      {% assign sorted = (site.data.landscape.clients | sort: 'name') %}
+      {% assign blanks = 1 %}
       {% for clients in sorted %}
+      {% if clients.name %}
           <li><div class="tooltip"><a href="{{clients.link}}">{{clients.name}}</a>
           <span class="tooltiptext">{{clients.desc}}</span></div>
         </li>
-        
+        {% else %}
+          {% capture blanks %}{% increment _blanks %}{% endcapture %} 
+        {% endif %}
+      {% endfor %}
+      {% for i in blanks %}
+      <li> </li>
       {% endfor %}
     </ul>
   </div>
 
   <div class="card-content comparison">
-      <ul>API Gateway
-        {% assign sorted = (site.data.landscape.gw | sort: 'name') | reverse %}
+      <ul>API Gateway<br />
+        {% assign sorted = (site.data.landscape.gw | sort: 'name') %}
+        {% assign blanks = 1 %}
         {% for gw in sorted %}
+        {% if gw.name %}
             <li><div class="tooltip"><a href="{{gw.link}}">{{gw.name}}</a>
               <span class="tooltiptext">{{gw.desc}}</span></div>
             </li>
-
+            {% else %}
+            {% capture blanks %}{% increment _blanks %}{% endcapture %} 
+          {% endif %}
+        {% endfor %}
+        {% for i in blanks %}
+        <li> </li>
         {% endfor %}
       </ul>
   </div>
   
   <div class="card-content comparison">
-      <ul>Service Proxy
-        {% assign sorted = (site.data.landscape.proxies | sort: 'name') | reverse %}
+      <ul>Service Proxy<br />
+        {% assign sorted = (site.data.landscape.proxies | sort: 'name') %}
+        {% assign blanks = 1 %}
         {% for proxies in sorted %}
+        {% if proxies.name %}
             <li><div class="tooltip"><a href="{{proxies.link}}">{{proxies.name}}</a>
-              <span class="tooltiptext">{{proxies.desc}}</span>
-            </div></li>
+              <span class="tooltiptext">{{proxies.desc}}</span></div>
+            </li>
+            {% else %}
+            {% capture blanks %}{% increment _blanks %}{% endcapture %} 
+          {% endif %}
+        {% endfor %}
+        {% for i in blanks %}
+        <li> </li>
         {% endfor %}
       </ul>
   </div>
 
   <div class="card-content comparison">
-    <ul>Load Balancer
-      {% assign sorted = (site.data.landscape.lb | sort: 'name') | reverse %}
+    <ul>Load Balancer<br />
+      {% assign sorted = (site.data.landscape.lb | sort: 'name') %}
+      {% assign blanks = 1 %}
       {% for lbs in sorted %}
+      {% if lbs.name %}
           <li><div class="tooltip"><a href="{{lbs.link}}">{{lbs.name}}</a>
             <span class="tooltiptext">{{lbs.desc}}</span>
           </div></li>
+          {% else %}
+          {% capture blanks %}{% increment _blanks %}{% endcapture %} 
+        {% endif %}
+      {% endfor %}
+      {% for i in blanks %}
+      <li> </li>
       {% endfor %}
     </ul>
   </div>
@@ -84,6 +126,11 @@
 </div>
 
 <div class="row">
+    <div class="col s12">
+      {% include partials/spectrum/arrow.html
+        NAME = 'Non-Functional'
+        COLOR = 'blue'
+      %}  
     <div class="col s12"><h5 style="color:aliceblue;">Non-Functional</h5>
         {% include landscape/service-mesh-non-functional.html %}
         <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
