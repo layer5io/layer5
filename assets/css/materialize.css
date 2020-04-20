@@ -3205,7 +3205,7 @@ ul.staggered-list li {
   }
 } 
 
-@media only screen and (max-width: 801px) {
+@media only screen and (max-width: 855px) {
   .hide-on-med-and-down {
     display: none !important;
   }
@@ -3223,7 +3223,7 @@ ul.staggered-list li {
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 854px) {
   .show-on-med-and-down {
     display: none !important;
   }
