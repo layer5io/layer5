@@ -21,10 +21,11 @@
 
 
 <div class="section container"  style="z-index:1;">
+  <h3 class="white-text center">Academic Partners</h3>
   <div class="post-content" style="padding:1em;" itemprop="articleBody">
-    <h2 class="black-text center">Education Partners</h2>
+
     {% for partner in site.data.partners %}
-    {% if partner.visibility != "hide" and partner.type == "education" %}
+    {% if partner.visibility != "hide" and partner.type == "academic" %}
     <div class="row">
       {% capture parter_desc %}
         <div class="col m10" style="position:relative;">
@@ -60,9 +61,8 @@
   </div>
 </div>
 <div class="section container"  style="z-index:1;">
+  <h3 class="white-text center">Technology Partners</h3>
   <div class="post-content" style="padding:1em;" itemprop="articleBody">
-    <h2 class="black-text center">Technology Partners</h2>
-
       {% for partner in site.data.partners %}
       {% if partner.visibility != "hide" and partner.type == "technology" %}
       <div class="row">

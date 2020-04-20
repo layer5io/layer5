@@ -13,7 +13,7 @@
       link: /performance
       new_window: false
 - name: Community
-  new_window: true
+  new_window: false
   highlight: false
   link: /community
   subitems: 
@@ -58,7 +58,7 @@
   link: /blog
   new_window: false
   highlight: false   
-- name: Get Started
+- name: Run Meshery
   link: /meshery#getting-started
   new_window: false
   highlight: yes   
