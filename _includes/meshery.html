@@ -64,17 +64,17 @@
 </div>
 
 <div class="row" style="position: relative;overflow: auto;">
-  <div class="col s12 m6">
+  <div class="col s12 m6"  style="margin-bottom: 10px;">
     <div class="post-content">
        
        <div>
         <h3 style="color:#111111;text-align: center;">Baseline, Measure, and Assess</h3>
         <p style="line-height:2em;text-align: center;left-margin:0px;padding-left:0px;">       
           <ul style="line-height: 1.5em;height: auto;text-align: center;">
-            <li style="">- Compare apples-to-apples performance across service meshes.</li>
-            <li style="">- Track your service mesh performance from release to release.</li>
-            <li style="">- Understand behavioral differences between service meshes.</li>
-            <li style="">- Track your application performance from version to version.</li>
+            <li style="list-style-type: none;">- Compare apples-to-apples performance across service meshes.</li>
+            <li style="list-style-type: none;">- Track your service mesh performance from release to release.</li>
+            <li style="list-style-type: none;">- Understand behavioral differences between service meshes.</li>
+            <li style="list-style-type: none;">- Track your application performance from version to version.</li>
           </ul>
         </p>
      </div>
@@ -84,61 +84,145 @@
         <img src="/assets/images/meshery/meshery_benchmark_screen.png"  
         alt="Meshery service mesh comparison"  style="box-shadow: .5px .5px 2px 2px gray;width: 90%"
       title="Service mesh comparison"  /><br />service performance comparison</a>
-   </div>
-
-
     </div>
   </div>
 
-  <div class="col s12 m6">
-    <div class="post-content">
-      
-      <div>
-          <h3 style="color:#111111;text-align: center;">Multi-Mesh Management</h3>
-          <p style="margin-left:10px; padding-right:1em;">
-            Service mesh adapters provision, configure, and manage their respective service meshes. 
-            <ol>
-              <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (stable)</li>
-              <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (stable)</li>
-              <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul</a> (stable)</li>
-              <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (stable)</li>
-              <li><a href="https://github.com/layer5io/meshery-nsm">Meshery adapter for Network Service Mesh</a> (stable)</li> 
-              <li><a href="https://github.com/layer5io/meshery-cpx">Meshery adapter for Citrix CPX</a> (beta)</li>
-                <li><a href="https://github.com/layer5io/meshery-maesh">Meshery adapter for Maesh</a> (alpha)</li>
-              <li><a href="https://github.com/layer5io/meshery-app-mesh">Meshery adapter for App Mesh</a> (alpha)</li>
-              <li><a href="https://github.com/layer5io/meshery-kuma">Meshery adapter for Kuma</a> (alpha)</li>
-          </ol>
-          </p>
-        </div>
-
-        <div style="text-align:center; vertical-align:middle; position:relative;">
-          <a href="/assets/images/meshery/meshery_adapters_screen.png">
-            <img src="/assets/images/meshery/meshery_adapters_screen.png" width="100%" style="box-shadow: .5px .5px 2px 2px gray;width: 90%"
-              alt="Meshery service mesh adapters screenshot"><br /> a world of multiple meshes</a>
-          </div> 
-      </div>
+    <div class="post-content" style="margin-top: 10px;">
+      <h3>Configuration Best Practices and Service Mesh Patterns</h3>
+      <p>	Assess your service mesh configuration against deployment and 
+        operational best practices with Meshery's configuration validator.<div align="center">
+          <a href="/assets/images/meshery/meshery-configuration-management.png" data-caption="Service Mesh configuration Comparison">
+            <img src="/assets/images/meshery/meshery-configuration-management.png" 
+              alt="Service Mesh configuration Comparison" 
+              style="width:100%;" />
+        </a>
+        See the <a href = "https://meshery.layer5.io/docs">service mesh patterns</a>.
+      </p>
+    </div>
+					
   </div>
 </div>
 
-<a name="smi"></a>
-<div class="post-content row">
-
-  <div class="row s12 m12">
-    <a href="/blog/a-standard-interface-for-service-meshes">
-      <img src="/assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png" style="padding-left:10px; max-width: 125px;
-    height: auto;" align="right"></a>    <a href="http://smi-spec.io" target="_blank">Service Mesh Interface (SMI)</a> 
-    is a specification for service meshes that run on Kubernetes. SMI defines a common standard that can be implemented by
-     a variety of service mesh projects and vendors. SMI’s aim for consistent APIs facilitates Meshery’s same goals, 
-     allowing for users and tools to flourish. As SMI was unveiled at KubeCon + CloudNativeCon Europe 2019, so did Meshery’s compatibility. 
-     
-     <p style="text-align:center;">
-      <a href="/blog/a-standard-interface-for-service-meshes">Layer5 is pleased to partner with Microsoft in support of SMI</a>!</p>
-  </div> 
+<div class="col s12 m6">
+<div class="post-content">
   
-    
-  
+  <div>
+      <h3 style="color:#111111;text-align: center;">Multi-Mesh Management</h3>
+      <p style="margin-left:10px; padding-right:1em;">
+        Service mesh adapters provision, configure, and manage their respective service meshes. 
+        <div class="text editable" style="">
+          <h5 class="black-text center">Service Mesh Adapters</h5>
+              <table class="adapters">
+                  <thead style="display:none;">
+                      <th>Status</th>
+                      <th>Adapter</th>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td rowspan="7" class="stable-adapters">stable</td>
+                  </tr>
+                  <tr>
+                      <td><a href="https://github.com/layer5io/meshery-istio">
+                          <img src='/assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/istio.svg' alt='Istio Service Mesh adapter' class="adapter-logo">Meshery adapter for Istio</a> 
+                      </td>
+                  </tr>
+                  <tr>
+                      <td><a href="https://github.com/layer5io/meshery-linkerd">
+                          <img src='/assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/linkerd.svg' alt='Linkerd' class="adapter-logo">Meshery adapter for Linkerd</a> 
+                      </td>
+                  </tr>
+                  <tr>
+                      <td><a href="https://github.com/layer5io/meshery-consul">
+                          <img src='/assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/consul.svg' alt='Consul Connect' class="adapter-logo">Meshery adapter for Consul</a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td><a href="https://github.com/layer5io/meshery-octarine">
+                          <img width="30px" src='/assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/octarine.svg' alt='Octarine Service Mesh' class="adapter-logo">Meshery adapter for Octarine</a> 
+                      </td>
+                  </tr>
+                  <tr>
+                      <td><a href="https://github.com/layer5io/meshery-nsm">
+                          <img src='/assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/nsm.svg' alt='Network Mesh' class="adapter-logo">Meshery adapter for Network Service Mesh</a>
+                      </td>
+                  </tr>
+                  <tr><td class="stable-adapters"></td></tr>
+                  <tr>
+                      <td rowspan="2" class="beta-adapters">beta</td>
+                      <td><a href="https://github.com/layer5io/meshery-cpx">
+                          <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQksHj15DkID308qQw3cmkQrRULPxyzbVquSZVev-9dj1L6sPs-rQ&s' alt='Citrix CPX Service Mesh' class="adapter-logo">Meshery adapter for Citrix CPX</a>
+                      </td>
+                  </tr>
+                  <tr><td class="beta-adapters"></td></tr>
+                  <tr>
+                      <td rowspan="6" class="alpha-adapters">alpha</td>
+                  </tr>
+                  <tr>
+                      <td><a href="https://github.com/layer5io/meshery-maesh">
+                          <img src='https://raw.githubusercontent.com/containous/maesh/master/docs/content/assets/img/maesh.png' alt='Maesh Service Mesh' class="adapter-logo">Meshery adapter for Maesh</a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td><a href="https://github.com/layer5io/meshery-app-mesh">
+                          <img src='/assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/aws-app-mesh.png' alt='AWS App Mesh Service Mesh' class="adapter-logo">Meshery adapter for App Mesh </a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td><a href="https://github.com/layer5io/meshery-kuma">
+                          <img src='https://pbs.twimg.com/profile_images/1171109603158843392/bV2M7l39_400x400.jpg' alt='Kuma Service Mesh' class="adapter-logo">Meshery adapter for Kuma</a>
+                      </td>
+                  </tr><tr>
+                  </tr>
+                  <tr><td class="alpha-adapters"></td></tr>
+                  </tbody>
+              </table>
+          </div>
+          
+        <!-- <ol>
+          <li><a href="https://github.com/layer5io/meshery-istio">Meshery adapter for Istio</a> (stable)</li>
+          <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery adapter for Linkerd</a> (stable)</li>
+          <li><a href="https://github.com/layer5io/meshery-consul">Meshery adapter for Consul</a> (stable)</li>
+          <li><a href="https://github.com/layer5io/meshery-octarine">Meshery adapter for Octarine</a> (stable)</li>
+          <li><a href="https://github.com/layer5io/meshery-nsm">Meshery adapter for Network Service Mesh</a> (stable)</li> 
+          <li><a href="https://github.com/layer5io/meshery-cpx">Meshery adapter for Citrix CPX</a> (beta)</li>
+            <li><a href="https://github.com/layer5io/meshery-maesh">Meshery adapter for Maesh</a> (alpha)</li>
+          <li><a href="https://github.com/layer5io/meshery-app-mesh">Meshery adapter for App Mesh</a> (alpha)</li>
+          <li><a href="https://github.com/layer5io/meshery-kuma">Meshery adapter for Kuma</a> (alpha)</li>
+      </ol> -->
+      </p>
+    </div>
 
+    <!-- <div style="text-align:center; vertical-align:middle; position:relative;">
+      <a href="/assets/images/meshery/meshery_adapters_screen.png">
+        <img src="/assets/images/meshery/meshery_adapters_screen.png" width="100%" style="box-shadow: .5px .5px 2px 2px gray;width: 90%"
+          alt="Meshery service mesh adapters screenshot"><br /> a world of multiple meshes</a>
+      </div>  -->
+  </div>
+  
+  <div class="post-content" style="margin-top: 10px;">
+    <h3 style="color:#111111;text-align: center;">Service Mesh Abstractions</h3>
+    <h6 style="color:#111111;text-align: left;">Service Mesh Performance Specification</h6><a name="smps"></a>
+    <img src="/assets/images/buttons/smps_black.svg" 
+    class="light-shadow" width="25%" style="display:inline;float:left;margin-right:1%;padding:5px;" />
+    The <a href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance Specification (SMPS)</a>
+     is a vendor-neutral specification to aid operators in assessing the overhead of their service mesh in context of the value it provides.
+     Layer5's MeshDex provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
+    <p style="text-align:center;">Learn more about <a href="/performance">this open standard</a> as a partnership of Layer5, UT Austin, and Google.</p>
+  
+    <h6 style="color:#111111;text-align: right;">Service Mesh Interface</h6><a name="smi"></a>
+      <a href="/blog/a-standard-interface-for-service-meshes">
+        <img src="/assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png" 
+        width="22%" style="display:inline;float:right;margin-left:1%;padding:5px;"
+      height: auto;" align="right"></a>
+      <a href="http://smi-spec.io" target="_blank">Service Mesh Interface (SMI)</a> 
+      SMI defines a common standard that can be implemented by a variety of service mesh projects and vendors. SMI’s aim for consistent APIs facilitates Meshery’s same goals, 
+      allowing for users and tools to flourish. As SMI was unveiled at KubeCon + CloudNativeCon Europe 2019, so did Meshery’s compatibility.   
+      <p style="text-align:center;">Learn more about 
+        <a href="/blog/a-standard-interface-for-service-meshes">Layer5's partnership with Microsoft and the CNCF</a>.</p>
+    </div> 
+  </div>
 </div>
+
 <a name="architecture"></a>
     <h3 style="color:aliceblue;">Architecture</h3>
 <div class="post-content row">
@@ -154,20 +238,21 @@
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="min-height: 315px;"></iframe>
   </div>
   <div class="row col m4" style=" min-width: 220px; ">
+    These events:
     <ul>
-      <li style="list-style-type: circle;"><a href="https://conferences.oreilly.com/oscon/oscon-or">O'Reilly OSCON 2020</a></li>
-      <li style="list-style-type: circle;"><a href="https://conferences.oreilly.com/infrastructure-ops/io-ca/public/schedule/speaker/226795">O'Reilly Infrastructure & Ops 2020</a></li>
-      <li style="list-style-type: circle;"><a href="https://innotechdallas2020.sched.com/event/aN7E/a-management-plane-for-service-meshes">InnoTech Dallas 2020</a></li>
-      <li style="list-style-type: circle;"><a href="https://kccnceu20.sched.com/event/Zetg/discreetly-studying-the-effects-of-individual-traffic-control-functions-lee-calcote-layer5?iframe=no&w=100%&sidebar=yes&bg=no">KubeCon EU 2020</a></li>
-      <li style="list-style-type: circle;"><a href="https://calcotestudios.com/talks/decks/slides-docker-captains-2020-meshery-the-multi-service-mesh-manager.html">Docker Captains Roundtable 2020</a></li>
-      <li style="list-style-type: circle;"><a href="https://www.meetup.com/Cloud-Native-Austin/events/267784090/">Cloud Native Austin 2020</a></li>
-      <li style="list-style-type: circle;"><a href="https://networkservicemesh.io/events/nsmcon2019/">Network Service Mesh Con 2019</a></li>
-      <li style="list-style-type: circle;"><a href="https://www.lakeside-hackfest.com/speakers/#lee-calcote">Lakeside HackFest 2019</a></li>
-      <li style="list-style-type: circle;"><a href="https://servicemeshday.com/schedule/">Service Mesh Day 2019</a></li>
-      <li style="list-style-type: circle;"> <a href="https://innotechsanantonio2019.sched.com/event/Lmlb/the-enterprise-path-to-service-mesh-architectures?iframe=no&w=100%&sidebar=yes&bg=no">Innotech San Antonio 2019</a></li>
-      <li style="list-style-type: circle;"> <a href="https://tmt.knect365.com/container-world/speakers/lee-calcote">Container World 2019</a></li>
-      <li style="list-style-type: circle;"> <a href="https://dockercon19.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=309149&tclass=popup#.XJxH-TOcbjI.twitter">DockerCon 2019</a></li>
-      <li style="list-style-type: circle;"> <a href="https://kccnceu19.sched.com/event/MPf7/service-meshes-at-what-cost-lee-calcote-layer5-girish-ranganathan-solarwinds?iframe=no&w=100%&sidebar=yes&bg=no">KubeCon EU 2019</a></li>
+      <li><a href="https://conferences.oreilly.com/oscon/oscon-or">O'Reilly OSCON 2020</a></li>
+      <li><a href="https://conferences.oreilly.com/infrastructure-ops/io-ca/public/schedule/speaker/226795">O'Reilly Infrastructure & Ops 2020</a></li>
+      <li><a href="https://innotechdallas2020.sched.com/event/aN7E/a-management-plane-for-service-meshes">InnoTech Dallas 2020</a></li>
+      <li><a href="https://kccnceu20.sched.com/event/Zetg/discreetly-studying-the-effects-of-individual-traffic-control-functions-lee-calcote-layer5?iframe=no&w=100%&sidebar=yes&bg=no">KubeCon EU 2020</a></li>
+      <li><a href="https://calcotestudios.com/talks/decks/slides-docker-captains-2020-meshery-the-multi-service-mesh-manager.html">Docker Captains Roundtable 2020</a></li>
+      <li><a href="https://www.meetup.com/Cloud-Native-Austin/events/267784090/">Cloud Native Austin 2020</a></li>
+      <li><a href="https://networkservicemesh.io/events/nsmcon2019/">Network Service Mesh Con 2019</a></li>
+      <li><a href="https://www.lakeside-hackfest.com/speakers/#lee-calcote">Lakeside HackFest 2019</a></li>
+      <li><a href="https://servicemeshday.com/schedule/">Service Mesh Day 2019</a></li>
+      <li> <a href="https://innotechsanantonio2019.sched.com/event/Lmlb/the-enterprise-path-to-service-mesh-architectures?iframe=no&w=100%&sidebar=yes&bg=no">Innotech San Antonio 2019</a></li>
+      <li> <a href="https://tmt.knect365.com/container-world/speakers/lee-calcote">Container World 2019</a></li>
+      <li> <a href="https://dockercon19.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=309149&tclass=popup#.XJxH-TOcbjI.twitter">DockerCon 2019</a></li>
+      <li> <a href="https://kccnceu19.sched.com/event/MPf7/service-meshes-at-what-cost-lee-calcote-layer5-girish-ranganathan-solarwinds?iframe=no&w=100%&sidebar=yes&bg=no">KubeCon EU 2019</a></li>
     </ul>
   </div>
 </div>
@@ -357,14 +442,14 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
 <div class="post-content row" itemprop="articleBody">
     <p>       
       <ul>
-        <li style="list-style-type: circle;"><b>Does Meshery manage service meshes?</b>
+        <li><b>Does Meshery manage service meshes?</b>
           <ul>
           <div style="line-height: .4em;">&nbsp;</div>
             <li style="list-style-type: square;">Yes, Meshery acts as a management plane to provision and manage the lifecycle of service meshes.</li>
           </ul>
         </li>
         <br />
-        <li style="list-style-type: circle;"><b>Why do I need to authenticate my social account to use Meshery?</b>
+        <li><b>Why do I need to authenticate my social account to use Meshery?</b>
           <ul>
             <div style="line-height: .4em;">&nbsp;</div>
             <li style="list-style-type: square;"><em>Create your account</em> - avoid having to reconfigure Meshery each time you deploy it. 
@@ -382,7 +467,7 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
             </li>
           </ul>
         <ul>
-        <li style="list-style-type: circle;"><b>Why use Meshery?</b>
+        <li><b>Why use Meshery?</b>
             <ul>
                 <div style="line-height: .4em;">&nbsp;</div>
                 <li style="list-style-type: square;"> Meshery is an open source, vendor neutral projects that facilitates testing across meshes.</li>

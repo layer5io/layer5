@@ -2760,11 +2760,11 @@ html {
 
 ul:not(.browser-default) {
   padding-left: 0;
-  list-style-type: none;
+  list-style-type: disc;
 }
 
 ul:not(.browser-default) > li {
-  list-style-type: none;
+  list-style-type: disc;
 }
 
 a {
