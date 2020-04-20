@@ -40,3 +40,55 @@ See our <a href="/careers">careers</a> page for more about Layer5.
       </div> -->
       
 </div>
+<div class="row">
+  
+    {% assign sorted = (site.careers | sort: 'date') | reverse %}
+    
+      {% for career in sorted %}  
+      
+      {% if career.visibility != "hide" and career.type == "internship" %}
+    
+      <div class="col s12 m4">
+        <div class="card" style="z-index: 1; height:330px;">
+          <div class="card-image">
+            <a href="{{ career.url }}">
+              <img src="{{career.image}}" style="max-width:100%;  max-height: 180px; width: auto;
+              height: auto; text-align: center;
+              margin-left: auto;
+              margin-right: auto;"></a>
+            <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
+            
+            {% if career.eurl %}
+            <a id="{{career.eurl}}" class="btn-floating halfway-fab 
+              waves-effect z-depth-4 l5-light-blue
+              waves-dark darken-3" href="{{career.eurl}}">
+            <img src="/assets/images/buttons/external-link_white.svg" 
+              style="position:absolute; max-width:100%;  max-height: 20px; width: auto;
+              height: auto; text-align: center; top: 10px;
+              margin-left: auto;
+              margin-right: auto;" /></a>
+            
+  
+            {% else %}
+            <a id="{{career.url}}" class="btn-floating halfway-fab 
+            waves-effect z-depth-4 l5-dark-green waves-dark darken-3"
+            href="{{ career.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+            {% endif %}
+  
+            
+          </div>
+          <div class="card-content">
+            <h5 class="black-text">{{career.title}}</h5>
+            <p class="grey-text text-darken-2" style="padding-top:1em; padding-bottom: .75em;">
+  
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+            {{ career.excerpt }}
+            <!-- {{ career.date | date: date_format }} -->
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    
+      {% endfor %}
+    </div>
