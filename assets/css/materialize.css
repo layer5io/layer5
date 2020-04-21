@@ -2769,7 +2769,7 @@ html {
 }
 
 ul:not(.browser-default) {
-  padding-left: 0;
+  padding-left: 10px;
   list-style-type: disc;
 }
 
