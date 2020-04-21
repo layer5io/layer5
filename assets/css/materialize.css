@@ -41,6 +41,16 @@
 
 }
 
+/* Careers */
+
+.apply {
+border-width: 2px;
+border-color: var(--main-dark-green);
+border-radius: 5px;
+border-style: solid;
+padding-top:10px;
+}
+
 /* Projects */
 
 img.light-shadow{
