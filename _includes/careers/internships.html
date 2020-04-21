@@ -17,8 +17,8 @@ See our <a href="/careers">careers</a> page for more about Layer5.
     <p>
     <h5 class="black-text">Participating Partners</h5>
      <ul>
-       <ol><b>UT Austin Coding Boot Camp</b> - <a href="/assets/careers/internships/UT%20Austin%20Boot%20Camp%20-%20Meshery%20Flyer.pdf">Internship Flyer</a></ol>
-       <ol><b>UEM Computer Science and Engineering</b> - <a href="/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf">Internship Flyer</a></ol>
+       <li><b>UT Austin Coding Boot Camp</b> - <a href="/assets/careers/internships/UT%20Austin%20Boot%20Camp%20-%20Meshery%20Flyer.pdf">Internship Flyer</a></li>
+       <li><b>UEM Computer Science and Engineering</b> - <a href="/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf">Internship Flyer</a></li>
     </ul>
      </p>
 
@@ -42,14 +42,14 @@ See our <a href="/careers">careers</a> page for more about Layer5.
 </div>
 <div class="row">
   
-    {% assign sorted = (site.careers | sort: 'date') | reverse %}
+    {% assign sorted = (site.careers | sort: 'title') %}
     
       {% for career in sorted %}  
       
       {% if career.visibility != "hide" and career.type == "internship" %}
     
       <div class="col s12 m4">
-        <div class="card" style="z-index: 1; height:330px;">
+        <div class="card" style="z-index: 1; height:330px;overflow: hidden;">
           <div class="card-image">
             <a href="{{ career.url }}">
               <img src="{{career.image}}" style="max-width:100%;  max-height: 180px; width: auto;
@@ -80,10 +80,7 @@ See our <a href="/careers">careers</a> page for more about Layer5.
           <div class="card-content">
             <h5 class="black-text">{{career.title}}</h5>
             <p class="grey-text text-darken-2" style="padding-top:1em; padding-bottom: .75em;">
-  
-            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-            {{ career.excerpt }}
-            <!-- {{ career.date | date: date_format }} -->
+              {{ career.excerpt }}
             </p>
           </div>
         </div>
