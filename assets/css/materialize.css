@@ -49,6 +49,9 @@ border-color: var(--main-dark-green);
 border-radius: 5px;
 border-style: solid;
 padding-top:10px;
+width: 60%;
+margin:auto;
+
 }
 
 /* Projects */
@@ -1758,8 +1761,10 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   color: var(--main-dark-blue) !important;
 }
 
-.l5-dark-green {
+.l5-dark-green-bg {
   background-color: var(--main-dark-green) !important;
+}
+.l5-dark-green-text {
   color: var(--main-dark-green) !important;
 }
 

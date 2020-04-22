@@ -9,7 +9,7 @@
     
         <div  style=" text-align: center; line-height: 6vh;
             min-height:130px; margin-left:2px; margin-right:2px; 
-            padding-bottom: 10px; padding-top: 8px; ">
+            padding-bottom: 10px; padding-top: 8px; overflow: hidden;white-space: nowrap; ">
             {% for partner in site.data.partners %}
                 {% if partner.visibility != "hide" and partner.gallery == "yes" %}
                         <a href="/partners"><img src="{{partner.gallery_img}}" 
