@@ -17,7 +17,7 @@ Layer5 is a service mesh company which has technology partnerships with various 
 
 #### <span style="margin-left:.75em;font-size: 2em; align-content: center;">W</span>hat is Mesheryctl?
 
-Meshery provides you a clean, robust, streamlined command-line interface to manage and benchmark your service meshes, Mesheryctl. With mesheryctl, not only you can manage your adapters & containers but you can also benchmark your mesh using the command line.
+Meshery provides you with a clean, robust, streamlined command-line interface to manage and benchmark your service meshes, Mesheryctl. With mesheryctl, not only you can manage your adapters & containers but you can also benchmark your mesh using the command line.
 
 Mesheryctl provides support to a number of platforms so that we never miss out users.
 A list of platforms supported by Mesheryctl.
@@ -39,13 +39,13 @@ A list of platforms supported by Mesheryctl.
 | - [Scoop](https://meshery.layer5.io/docs/installation#windows) | ✔️ |
 | - [WSL2](https://meshery.layer5.io/docs/installation/wsl2) | ✔️ |
 
-I believe we have not missed any of the popular platforms for what it’s worth. We will be rolling out support for RaspberryPi & OpenShift soon 🎉🎉🎉.
+We believe we have not missed any of the popular platforms for what it’s worth. We will be rolling out support for RaspberryPi & OpenShift soon 🎉🎉🎉.
 
 There are a few requirements for your local development configuration before getting started with mesheryctl :
 
 - A running Docker Daemon.
 - GoLang installed on your local system.
-- GoPath setted correctly for smooth working of Go Deps.-
+- GoPath set correctly for smooth working of Go Deps.
 
 #### <span style="margin-left:.75em;font-size: 2em; align-content: center;">I</span>nto the MesheryCTL
 
@@ -82,7 +82,7 @@ Use "mesheryctl [command] --help" for more information about a command.
 
 Once you do `mesheryctl start`
 
-Meshery will pull it’s adapters & latest docker images. Meshery will also detect your kube configuration & will let you know if the kubernetes is running. 
+Meshery will pull its adapters & latest docker images. Meshery will also detect your Kube configuration & will let you know if the Kubernetes is running. 
 
 It will run it’s Client-UI on port-9081 and will let you select the providers before you can start managing your service meshes with this powerful little boy.
 
@@ -128,7 +128,7 @@ An example usage of `mesheryctl perf --[flags]` can be
 
 #### <span style="margin-left:.75em;font-size: 2em; align-content: center;">W</span>hat's next?
 
-Meshery is an ever-growing community with attracting contributors from across the globe. We always have a role for everyone whether be a code-writer, a community manager or a marketer. Layer5 community is always open to welcome you warmly.
+Meshery is an ever-growing community with attracting contributors from across the globe. We always have a role for everyone whether to be a code-writer, a community manager or a marketer. Layer5 community is always open to welcome you warmly.
 
 If this makes you excited, Join the Layer5 community with just a click & someone will be there to make sure you do not get missed.
 
