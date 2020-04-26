@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Getting started with MesheryCTL"
+title:  "Getting started with Mesheryctl"
 date:   2020-04-26 01:01:05 +0530
 image: /assets/images/posts/2020-04-26-getting-started-with-mesheryctl/mesheryctl.png
 author: Kush Trivedi
@@ -20,7 +20,42 @@ Layer5 is a service mesh company which has technology partnerships with various 
 Meshery provides you with a clean, robust, streamlined command-line interface to manage and benchmark your service meshes, Mesheryctl. With mesheryctl, not only you can manage your adapters & containers but you can also benchmark your mesh using the command line.
 
 Mesheryctl provides support to a number of platforms so that we never miss out users.
-A list of platforms supported by Mesheryctl.
+
+Mesheryctl can be installed with a single bash command. Just write up 
+```sh
+curl -L https://git.io/meshery | bash -
+```
+into your terminal & you will see meshery getting installed & fired up on port: 9081 .
+You will see the output as 
+
+<style>
+  code, kbd, pre, samp {
+    color: black;
+  }
+</style>
+```sh
+Extracting mesheryctl-v0.3.14...
+Archive:  /Users/kush/meshery.zip
+  inflating: LICENSE
+  inflating: README.md
+  inflating: mesheryctl
+
+Installing mesheryctl in /usr/local/bin.
+mesheryctl installed.
+permissions moved to kush
+Removing installation files and opening Meshery...Updating Meshery now...
+Pulling meshery          ... download complete
+Pulling meshery-istio    ... done
+Pulling meshery-linkerd  ... done
+Pulling meshery-consul   ... done
+Pulling meshery-octarine ... done
+Pulling meshery-nsm      ... done
+Pulling meshery-cpx      ... done
+Pulling watchtower       ... done
+```
+and you will be able to see Meshery UI on `https://localhost:9081`.
+
+If you are wondering if bash is only way to get mesheryctl, then here is the list of platforms which you can get mesheryctl describing all the different ways to get it.
 
 | Platform | Supported? |
 | --- | :---: |
@@ -39,13 +74,11 @@ A list of platforms supported by Mesheryctl.
 | - [Scoop](https://meshery.layer5.io/docs/installation#windows) | ✔️ |
 | - [WSL2](https://meshery.layer5.io/docs/installation/wsl2) | ✔️ |
 
-We believe we have not missed any of the popular platforms for what it’s worth. We will be rolling out support for RaspberryPi & OpenShift soon 🎉🎉🎉.
+We believe we have not missed any of the popular platforms for what it’s worth, we will be rolling out support for RaspberryPi & OpenShift soon 🎉🎉🎉.
 
-There are a few requirements for your local development configuration before getting started with mesheryctl :
+If you are thinking about the requirements you would have to run mesheryctl, so to your surprise, to successfully run mesheryctl you will only need :
 
 - A running Docker Daemon.
-- GoLang installed on your local system.
-- GoPath set correctly for smooth working of Go Deps.
 
 #### <span style="margin-left:.75em;font-size: 2em; align-content: center;">I</span>nto the MesheryCTL
 
