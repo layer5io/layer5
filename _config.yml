@@ -79,6 +79,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:title
+  programs:
+    output: true
+    permalink: /programs/:title
   topics:
     output: true
     permalink: /topics/:title

@@ -3422,6 +3422,11 @@ ul.staggered-list li {
    width: 100%;
 }
 
+.page-footer li > ul {
+  margin-left: 0px;
+  
+}
+
 .page-footer {
   padding-top: 10px;
   color: #fff;
