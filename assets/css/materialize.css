@@ -6066,6 +6066,10 @@ button.btn-floating {
   width: 24px;
 }
 
+#dropdown1, #dropdown2, #dropdown3 {
+  border: 0px;
+}
+
 .input-field.col .dropdown-content [type="checkbox"] + label {
   top: 1px;
   left: 0;
