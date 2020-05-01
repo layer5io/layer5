@@ -1,19 +1,32 @@
 <div class="row">
-
-  {% assign sorted = (site.data.events | sort: 'date') | reverse %}
-  
-  {% for event in sorted %}
-  
-  {% if event.visibility != "hide" and event.type != "news" %}
+  {% assign sorted = (site.data.events | sort: 'date') | reverse %} {% for event
+  in sorted %} {% if event.visibility != "hide" and event.type != "news" %}
 
   <div class="col s12 m3">
     <div class="card">
-      <a href="{{ event.talk_link }}" class="waves-effect z-depth-4 white-text
-         waves-light darken-3" style="background-color:{{ site.layer5.gray }}; width: 100%;" >
-        <div class="card-image" style="{{ event.img_style }} min-height: 130px;">  
-          <img class="light-shadow" src="{{event.thumbnail}}" style="max-width:90%; max-height: 180px; 
-          width: auto; height: auto; text-align: center; padding:5%; 
-          margin-left: auto; margin-right: auto;" />
+      <a
+        href="{{ event.talk_link }}"
+        class="waves-effect z-depth-4 white-text waves-light darken-3"
+        style="background-color:{{ site.layer5.gray }}; width: 100%;"
+      >
+        <div
+          class="card-image"
+          style="{{ event.img_style }} min-height: 130px;"
+        >
+          <img
+            class="light-shadow"
+            src="{{event.thumbnail}}"
+            style="
+              max-width: 90%;
+              max-height: 180px;
+              width: auto;
+              height: auto;
+              text-align: center;
+              padding: 5%;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          />
           <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
           <!-- <a id="{{site.url}}{{ event.link }}" class="btn-floating halfway-fab waves-effect z-depth-4 
           l5-light-blue
@@ -29,8 +42,5 @@
     </div>
   </div>
 
-  {% endif %}
-
-  {% endfor %}
-
+  {% endif %} {% endfor %}
 </div>
