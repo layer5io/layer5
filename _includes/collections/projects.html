@@ -6,7 +6,7 @@
   
   {% if project.visibility != "hide" and project.type != "news" and project.permalink == {{ include.excluded_project }} %}
 
-  <div class="col s12 m3">
+  <div class="col s12 m4">
     <div class="card">
       <a href="{{site.url}}{{ project.link }}" class="waves-effect z-depth-4 
          waves-light darken-3" style="background-color:{{ site.layer5.gray }}; width: 100%;" >
