@@ -1,7 +1,5 @@
 <div class="row">
-  {% for book in site.books %}
-  
-  {% if book.visibility != "hide" %}
+  {% for book in site.books %} {% if book.visibility != "hide" %}
 
   <div class="col s12 m4">
     <div class="card" style="z-index: 1; height: 500px;">
@@ -12,12 +10,11 @@
         href="{{ book.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div>
       <div class="card-content">
-        <h4>{{book.title}}</h4>{{book.brief}}
+        <h4>{{book.title}}</h4>
+        {{book.brief}}
       </div>
     </div>
   </div>
-  
-  {% endif %}
 
-  {% endfor %}
+  {% endif %} {% endfor %}
 </div>

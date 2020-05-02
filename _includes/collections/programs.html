@@ -1,10 +1,6 @@
 <div class="row">
-
-  {% assign sorted = (site.programs | sort: 'date') | reverse %}
-  
-  {% for program in sorted %}
-  
-  {% if program.visibility != "hide" %}
+  {% assign sorted = (site.programs | sort: 'date') | reverse %} {% for program
+  in sorted %} {% if program.visibility != "hide" %}
 
   <div class="col s12 m3">
     <div class="card">
@@ -27,8 +23,5 @@
     </div>
   </div>
 
-  {% endif %}
-
-  {% endfor %}
-
+  {% endif %} {% endfor %}
 </div>
