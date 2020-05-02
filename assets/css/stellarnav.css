@@ -416,7 +416,6 @@ body.stellarnav-noscroll-x {
 }
 
 .stellarnav.mobile li a {
-    border-bottom: 1px solid rgba(255, 255, 255, .15);
     color: #777;
 }
 
