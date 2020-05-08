@@ -2,12 +2,25 @@
   {% for book in site.books %} {% if book.visibility != "hide" %}
 
   <div class="col s12 m4">
-    <div class="card" style="z-index: 1; height: 500px;">
+    <style scoped>
+      .book-card {
+        height: 500px;
+        z-index: 1;
+      }
+      .book-img {
+        height: 240px;
+      }
+      @media ( max-width: 900px) and (min-width:600px) {
+        .card {
+          height: 600px;
+        }
+      }
+    </style>
+    <div class="card book-card">
       <div class="card-image">
-        <a href="{{ book.url | relative_url }}"><img style="height: 260px;" src="{{book.image}}"></a>
-      <a id="{{book.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue
- waves-dark darken-3" 
-        href="{{ book.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+        <a href="{{ book.url | relative_url }}"><img class="book-img" src="{{book.image}}"></a>
+        <a id="{{book.url}}" class="btn-floating halfway-fab waves-effect z-depth-4 l5-light-blue
+ waves-dark darken-3" href="{{ book.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div>
       <div class="card-content">
         <h4>{{book.title}}</h4>
