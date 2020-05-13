@@ -41,6 +41,19 @@
 
 }
 
+/* Careers */
+
+.apply {
+border-width: 2px;
+border-color: var(--main-dark-green);
+border-radius: 5px;
+border-style: solid;
+padding-top:10px;
+width: 60%;
+margin:auto;
+
+}
+
 /* Projects */
 
 img.light-shadow{
@@ -60,7 +73,7 @@ img.dark-shadow{
   display: block;
 }
 .toggle label {
-  font-family: sans-serif;
+  font-family: OpenSans;
   font-size: 1em;
   color: #000;
 }
@@ -1748,8 +1761,10 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   color: var(--main-dark-blue) !important;
 }
 
-.l5-dark-green {
+.l5-dark-green-bg {
   background-color: var(--main-dark-green) !important;
+}
+.l5-dark-green-text {
   color: var(--main-dark-green) !important;
 }
 
@@ -2277,7 +2292,7 @@ a:hover none {
 html {
   min-height: 100%;
 
-  font-family: sans-serif;
+  font-family: "OpenSans";
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -2759,12 +2774,12 @@ html {
 }
 
 ul:not(.browser-default) {
-  padding-left: 0;
-  list-style-type: none;
+  padding-left: 10px;
+  list-style-type: disc;
 }
 
 ul:not(.browser-default) > li {
-  list-style-type: none;
+  list-style-type: disc;
 }
 
 a {
@@ -3036,6 +3051,7 @@ ul.staggered-list li {
 .comparison {
   float:left; display: inline; 
   background-color: white; 
+  width: 100%;
   border-right-width: 1px; border-right-style: dashed;
   border-right-color: var(--main-dark-grey);
   background: rgb(255,255,255);
@@ -3204,7 +3220,7 @@ ul.staggered-list li {
   }
 } 
 
-@media only screen and (max-width: 801px) {
+@media only screen and (max-width: 855px) {
   .hide-on-med-and-down {
     display: none !important;
   }
@@ -3222,7 +3238,7 @@ ul.staggered-list li {
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 854px) {
   .show-on-med-and-down {
     display: none !important;
   }
@@ -3404,6 +3420,11 @@ ul.staggered-list li {
    position: absolute;
    top: 0;
    width: 100%;
+}
+
+.page-footer li > ul {
+  margin-left: 0px;
+  
 }
 
 .page-footer {
@@ -4994,13 +5015,43 @@ nav .input-field label.active i {
   font-weight: 700;
 }
 
+@font-face {
+  font-family: "OpenSans";
+  src: local(Roboto Light), url("../fonts/Open_Sans/OpenSans-Light.ttf") format("ttf"), url("../fonts/Open_Sans/OpenSans-Light.ttf") format("ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local(OpenSans Regular), url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("ttf"), url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local(OpenSans SemiBold), url("../fonts/Open_Sans/OpenSans-SemiBold.ttf") format("ttf"), url("../fonts/Open_Sans/OpenSans-SemiBold.ttf") format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local(OpenSans Bold), url("../fonts/Open_Sans/OpenSans-Bold.ttf") format("ttf"), url("../fonts/Open_Sans/OpenSans-Bold.ttf") format("ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local(OpenSans ExtraBold), url("../fonts/Open_Sans/OpenSans-ExtraBold.ttf") format("ttf"), url("../fonts/Open_Sans/OpenSans-ExtraBold.ttf") format("ttf");
+  font-weight: 700;
+}
+
 a {
   text-decoration: none;
 }
 
 html {
   line-height: 1.5;
-  font-family: "Roboto", sans-serif;
+  font-family: "OpenSans", "Roboto";
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -6043,6 +6094,10 @@ button.btn-floating {
   float: left;
   margin: 0 24px 0 0;
   width: 24px;
+}
+
+#dropdown1, #dropdown2, #dropdown3 {
+  border: 0px;
 }
 
 .input-field.col .dropdown-content [type="checkbox"] + label {
