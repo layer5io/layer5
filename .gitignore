@@ -5,3 +5,4 @@ _site/
 serve
 Gemfile.lock
 .DS_Store
+node_modules
