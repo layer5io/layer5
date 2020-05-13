@@ -1,38 +1,24 @@
-<div class="row">
+<div class="row flex">
   {% assign sorted = (site.programs | sort: 'date') | reverse %} {% for program
   in sorted %} {% if program.visibility != "hide" %}
 
-  <div class="col s12 m3">
-    <div class="card">
-      <a
-        href="{{site.url}}{{ program.link }}"
-        class="waves-effect z-depth-4 waves-light darken-3"
-        style="background-color:{{ site.layer5.gray }}; width: 100%;"
-      >
-        <div class="card-image">
-          <img
-            class="light-shadow"
-            src="{{program.thumbnail}}"
-            style="
-              max-width: 90%;
-              max-height: 180px;
-              width: auto;
-              height: auto;
-              text-align: center;
-              padding: 5%;
-              margin-left: auto;
-              margin-right: auto;
-            "
-          />
-          <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
-          <!-- <a id="{{site.url}}{{ program.link }}" class="btn-floating halfway-fab waves-effect z-depth-4 
-          l5-light-blue
- waves-dark darken-3"
-          href="{{site.url}}{{ program.link }}">
-          <i class="material-icons">more_horiz</i></a> -->
+  <div class="col s12 m3" style="margin-top: 20px">
+    <style scoped>
+      .program-card {
+        display: block;
+        height: 100%;
+        background-color: {{ site.layer5.gray }}; 
+      }
+
+    </style>
+    <div class="card hoverable program-card waves-effect z-depth-4 waves-light darken-3">
+      <a href="{{site.url}}{{ program.link }}" style="width: 100%;height: 300px;" >
+        <div class="card-image">  
+          <img class="light-shadow" src="{{program.thumbnail}}" style="max-width:90%; height: 180px; width: auto; text-align: center; padding:5%; 
+          margin-left: auto; margin-right: auto;" />
         </div>
         <div class="card-content center">
-          <h5 class="white-text">{{program.title}}</h5>
+          <h5 class="white-text" style="word-wrap: break-word;">{{program.title}}</h5>
         </div>
       </a>
     </div>
