@@ -424,18 +424,18 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
   </div>
 
 </div>
-<a name="benchmark-spec"></a>
-<h3 style="color:aliceblue;">Benchmark and Performance Specification</h3>
+<a name="performance-spec"></a>
+<h3 style="color:aliceblue;">Service Mesh Performance Specification</h3>
 <div class="post-content row" itemprop="articleBody" 
   style="z-index: 1; min-height: 149px; padding-right:149px; padding-bottom:0px;">
-    <a href="https://github.com/layer5io/service-mesh-benchmark-spec">
+    <a href="https://github.com/layer5io/service-mesh-performance-specification">
       <img style="position: absolute; top: 0px; right: 0px; border: 0; width: 149px; height: 149px;
         padding-top: 0px;padding-right:0px;" 
       src="https://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png"
       alt="Fork me on GitHub"></a>
-  The <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Benchmark Specification</a> is a 
-  common format for describing and capturing performance benchmark tests and results. This specification is 
-  currently being advanced through discussion in the Meshery project.</div>
+  The <a href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance Specification</a> is a 
+  common format for describing and capturing the performance of service meshes in context of the value they provide. This specification is 
+  currently being advanced through the CNCF Network SIG and the Meshery project.</div>
   
 
 <h3  style="color:aliceblue;">FAQ</h3>
@@ -445,7 +445,7 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
         <li><b>Does Meshery manage service meshes?</b>
           <ul>
           <div style="line-height: .4em;">&nbsp;</div>
-            <li style="list-style-type: square;">Yes, Meshery acts as a management plane to provision and manage the lifecycle of service meshes.</li>
+            <li style="list-style-type: square;">Yes, as the service management plane, Meshery, provisions and manage the lifecycle of service meshes.</li>
           </ul>
         </li>
         <br />
@@ -461,7 +461,7 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
             <br />
             <li style="list-style-type: square;"><em>Rank your deployment</em> 
               - results of performance tests are anonymously collected using the 
-              <a href="https://github.com/layer5io/service-mesh-benchmark-spec">Service Mesh Performance Benchmark</a>, so that 
+              <a href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance Specification</a>, so that 
               Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.
               </ul>
             </li>
