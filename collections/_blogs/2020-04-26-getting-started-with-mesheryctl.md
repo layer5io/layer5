@@ -97,7 +97,7 @@ Usage:
   mesheryctl [command]
 
 Available Commands:
-  cleanup     Clean up Meshery
+  reset     Clean up Meshery
   help        Help about any command
   logs        Print logs
   perf        Performance Management: testing and benchmarking
