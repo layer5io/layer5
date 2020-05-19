@@ -1,39 +1,46 @@
 ---
 layout: post
-title:  "Getting started with Mesheryctl"
+title:  "Getting started with mesheryctl"
 date:   2020-04-26 01:01:05 +0530
 image: /assets/images/posts/2020-04-26-getting-started-with-mesheryctl/mesheryctl.png
 author: Kush Trivedi
 permalink: /blog/getting-started-with-mesheryctl
 ---
-
+<style>
+   kbd, pre, samp {
+    background-color: black;
+    color: white;
+    padding:10px;
+  }
+  code {
+    color: blue;
+  }
+</style>
 
 #### <span style="margin-left:.75em;font-size: 2em; align-content: center;">I</span>ntroduction to Meshery 
 
-To all those who are unaware of Meshery, Meshery is a multi-service mesh management plane which not only interoperates between various service meshes but also tells you the benchmarks and performance standards of your service mesh.
+For all those who are unaware of Meshery, Meshery is a multi-service mesh management plane which not only interoperates between various service meshes but also tells you the benchmarks and performance standards of your service mesh.
 
 Meshery originated from an idea to be able to manage difference service meshes & tell you which service mesh to adapt from a single place. Meshery is created by the Layer5 organisation.
 Layer5 is a service mesh company which has technology partnerships with various tech giants like HashiCorp, CNCF, RedHat and many more to enlist. The community consists of open source leaders like Maintainers of trending open-source projects, ex-GSoCers, Docker Captains, CNCF community leaders and many more. 
 
-#### <span style="margin-left:.75em;font-size: 2em; align-content: center;">W</span>hat is Mesheryctl?
+#### <span style="margin-left:.75em;font-size: 2em; align-content: center;">W</span>hat is mesheryctl?
 
-Meshery provides you with a clean, robust, streamlined command-line interface to manage and benchmark your service meshes, Mesheryctl. With mesheryctl, not only you can manage your adapters & containers but you can also benchmark your mesh using the command line.
+Meshery provides you with a clean, robust, streamlined command-line interface to manage and benchmark your service meshes, `mesheryctl`. With `mesheryctl`, not only you can manage your adapters & containers but you can also benchmark your mesh using the command line.
 
-Mesheryctl provides support to a number of platforms so that we never miss out users.
+`mesheryctl` provides support to a number of platforms so that we never miss out users.
 
-Mesheryctl can be installed with a single bash command. Just write up 
-```sh
-curl -L https://git.io/meshery | bash -
-```
-into your terminal & you will see meshery getting installed & fired up on port: 9081 .
+`mesheryctl` can be installed with a single bash command by simply executing:
+
+<pre>
+$ curl -L https://git.io/meshery | bash -
+</pre>
+
+in your terminal. You will see Meshery getting installed & fired up on port: 9081.
 You will see the output as 
 
-<style>
-  code, kbd, pre, samp {
-    color: black;
-  }
-</style>
-```sh
+
+<pre>
 Extracting mesheryctl-v0.3.14...
 Archive:  /Users/kush/meshery.zip
   inflating: LICENSE
@@ -52,10 +59,11 @@ Pulling meshery-octarine ... done
 Pulling meshery-nsm      ... done
 Pulling meshery-cpx      ... done
 Pulling watchtower       ... done
-```
-and you will be able to see Meshery UI on `https://localhost:9081`.
+</pre>
 
-If you are wondering if bash is only way to get mesheryctl, then here is the list of platforms which you can get mesheryctl describing all the different ways to get it.
+and you will be able to see the Meshery UI on `https://localhost:9081`.
+
+If you are wondering if bash is only way to get `mesheryctl`, then here is the list of platforms which you can get `mesheryctl` describing all the different ways to get it.
 
 | Platform | Supported? |
 | --- | :---: |
@@ -76,7 +84,7 @@ If you are wondering if bash is only way to get mesheryctl, then here is the lis
 
 We believe we have not missed any of the popular platforms for what it’s worth, we will be rolling out support for RaspberryPi & OpenShift soon 🎉🎉🎉.
 
-If you are thinking about the requirements you would have to run mesheryctl, so to your surprise, to successfully run mesheryctl you will only need :
+If you are thinking about the requirements you would have to run `mesheryctl`, so to your surprise, to successfully run `mesheryctl` you will only need :
 
 - A running Docker Daemon.
 
@@ -84,12 +92,7 @@ If you are thinking about the requirements you would have to run mesheryctl, so 
 
 Once you have successfully installed, you will be having the power of a new CLI Command MesheryCTL. As you type `mesheryctl` into your terminal, you will be shown with the various sub-commands & flags `mesheryctl` can support.
 
-<style>
-  code, kbd, pre, samp {
-    color: mediumblue;
-  }
-</style>
-```sh
+<pre>
 Usage:
   mesheryctl [command]
 
@@ -111,26 +114,21 @@ Flags:
   -v, --version         Version of mesheryctl
 
 Use "mesheryctl [command] --help" for more information about a command.
-```
+</pre>
 
 Once you do `mesheryctl start`
 
 Meshery will pull its adapters & latest docker images. Meshery will also detect your Kube configuration & will let you know if the Kubernetes is running. 
 
-It will run it’s Client-UI on port-9081 and will let you select the providers before you can start managing your service meshes with this powerful little boy.
+It will run it’s Client-UI on port 9081 and will let you select the providers before you can start managing your service meshes with this powerful little boy.
 
-**One of the most interesting sub-command of meshery is `perf`.**
+**One of the most interesting sub-commands of `mesheryctl` is `perf`.**
 
-Perf subcommand lets you benchmark your service mesh without using the Meshery-UI from the command line interface itself.
+Perf subcommand lets you benchmark your service mesh without using the Meshery UI from the command line interface itself.
 
 Once you type `mesheryctl perf`, it will present you with all the powerful flags you can control with CLI.
 
-<style>
-  code, kbd, pre, samp {
-    color: mediumblue;
-  }
-</style>
-```sh
+<pre>
 Usage:
   mesheryctl perf --[flags]
 
@@ -144,29 +142,20 @@ Available Flags for Performance Command:
   concurrent-requests[string]   (required) Number of parallel requests to be used (Default "1")
   qps[string]                   (required) Queries per second (Default "0")
   help                          Help for perf subcommand
-```
+</pre>
 
 An example usage of `mesheryctl perf --[flags]` can be
 
-<style>
-  code, kbd, pre, samp {
-    color: mediumblue;
-  }
-</style>
-```sh
- mesheryctl perf --name "a quick stress test" --url http://192.168.1.15/productpage --qps 300 --concurrent-requests 2 --duration 30s --cookie "meshery-provider=None"
-```
-
-
+<pre>
+ $ mesheryctl perf --name "a quick stress test" --url http://192.168.1.15/productpage --qps 300 --concurrent-requests 2 --duration 30s --cookie "meshery-provider=None"
+</pre>
 
 #### <span style="margin-left:.75em;font-size: 2em; align-content: center;">W</span>hat's next?
 
 Meshery is an ever-growing community with attracting contributors from across the globe. We always have a role for everyone whether to be a code-writer, a community manager or a marketer. Layer5 community is always open to welcome you warmly.
 
-If this makes you excited, Join the Layer5 community with just a click & someone will be there to make sure you do not get missed.
+If this makes you excited, [join the Layer5 community](slack.layer5.io) with just a click & someone will be there to make sure you do not get missed.
 
-[Join the community](slack.layer5.io)
+Stay meshy and happy meshing!
 
-Stay Meshy & Happy Meshing!
-
-[Kush Trivedi](https://github.com/kushthedude)
+\- _[Kush Trivedi](https://github.com/kushthedude)_
