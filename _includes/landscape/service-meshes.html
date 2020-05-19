@@ -1,14 +1,15 @@
 <div class="row">
-
-  <style> 
-    .card-content>ul {font-weight:bold;} 
-    .card-content>ul>li {
+  <style>
+    .card-content > ul {
+      font-weight: bold;
+    }
+    .card-content > ul > li {
       margin-left: 5px;
       font-weight: normal;
       display: inline-flex;
       width: 200px;
     }
-    
+
     .card-content {
       padding: 0 0 5px 0 !important;
       border-right: none;
@@ -21,147 +22,187 @@
     }
   </style>
 
-  
-  {% include partials/spectrum/arrow.html
-    NAME = 'Categories'
-    COLOR = 'grey'
-  %} 
+  {% include partials/spectrum/arrow.html NAME = 'Categories' COLOR = 'grey' %}
   <div class="card-content">
-  <!-- <h5 style="color:aliceblue;">Categories</h5> -->
+    <!-- <h5 style="color:aliceblue;">Categories</h5> -->
 
-  <div class="card-content comparison">
-    <ul>Service Mesh<br />
-      {% assign sorted = (site.data.landscape.meshes | sort: 'name') %}
-      {% for meshes in sorted %}
-      {% if meshes.name %}
-          <li><div class="tooltip"><a href="{{meshes.link}}">{{meshes.name}}</a>
-            <span class="tooltiptext">{{meshes.desc}}</span></div>
-          </li>
-          {% else %}
-          {% capture blanks %}{% increment _blanks %}{% endcapture %} 
-        {% endif %}
-      {% endfor %}
-      {% for i in blanks %}
-      <li> </li>
-      {% endfor %}
-    </ul>
-  </div>
-
-  <div class="card-content comparison">
-    <ul>Client Library<br />
-      {% assign sorted = (site.data.landscape.clients | sort: 'name') %}
-      {% assign blanks = 1 %}
-      {% for clients in sorted %}
-      {% if clients.name %}
-          <li><div class="tooltip"><a href="{{clients.link}}">{{clients.name}}</a>
-          <span class="tooltiptext">{{clients.desc}}</span></div>
+    <div class="card-content comparison">
+      <ul>
+        Service Mesh<br />
+        {% assign sorted = (site.data.landscape.meshes | sort: 'name') %} {% for
+        meshes in sorted %} {% if meshes.name %}
+        <li>
+          <div class="tooltip">
+            <a href="{{meshes.link}}">{{meshes.name}}</a>
+            <span class="tooltiptext">{{meshes.desc}}</span>
+          </div>
         </li>
-        {% else %}
-          {% capture blanks %}{% increment _blanks %}{% endcapture %} 
-        {% endif %}
-      {% endfor %}
-      {% for i in blanks %}
-      <li> </li>
-      {% endfor %}
-    </ul>
-  </div>
-
-  <div class="card-content comparison">
-      <ul>API Gateway<br />
-        {% assign sorted = (site.data.landscape.gw | sort: 'name') %}
-        {% assign blanks = 1 %}
-        {% for gw in sorted %}
-        {% if gw.name %}
-            <li><div class="tooltip"><a href="{{gw.link}}">{{gw.name}}</a>
-              <span class="tooltiptext">{{gw.desc}}</span></div>
-            </li>
-            {% else %}
-            {% capture blanks %}{% increment _blanks %}{% endcapture %} 
-          {% endif %}
-        {% endfor %}
-        {% for i in blanks %}
-        <li> </li>
+        {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
+        {% endif %} {% endfor %} {% for i in blanks %}
+        <li></li>
         {% endfor %}
       </ul>
-  </div>
-  
-  <div class="card-content comparison">
-      <ul>Service Proxy<br />
-        {% assign sorted = (site.data.landscape.proxies | sort: 'name') %}
-        {% assign blanks = 1 %}
-        {% for proxies in sorted %}
-        {% if proxies.name %}
-            <li><div class="tooltip"><a href="{{proxies.link}}">{{proxies.name}}</a>
-              <span class="tooltiptext">{{proxies.desc}}</span></div>
-            </li>
-            {% else %}
-            {% capture blanks %}{% increment _blanks %}{% endcapture %} 
-          {% endif %}
-        {% endfor %}
-        {% for i in blanks %}
-        <li> </li>
+    </div>
+
+    <div class="card-content comparison">
+      <ul>
+        Client Library<br />
+        {% assign sorted = (site.data.landscape.clients | sort: 'name') %} {%
+        assign blanks = 1 %} {% for clients in sorted %} {% if clients.name %}
+        <li>
+          <div class="tooltip">
+            <a href="{{clients.link}}">{{clients.name}}</a>
+            <span class="tooltiptext">{{clients.desc}}</span>
+          </div>
+        </li>
+        {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
+        {% endif %} {% endfor %} {% for i in blanks %}
+        <li></li>
         {% endfor %}
       </ul>
-  </div>
+    </div>
 
-  <div class="card-content comparison">
-    <ul>Load Balancer<br />
-      {% assign sorted = (site.data.landscape.lb | sort: 'name') %}
-      {% assign blanks = 1 %}
-      {% for lbs in sorted %}
-      {% if lbs.name %}
-          <li><div class="tooltip"><a href="{{lbs.link}}">{{lbs.name}}</a>
+    <div class="card-content comparison">
+      <ul>
+        API Gateway<br />
+        {% assign sorted = (site.data.landscape.gw | sort: 'name') %} {% assign
+        blanks = 1 %} {% for gw in sorted %} {% if gw.name %}
+        <li>
+          <div class="tooltip">
+            <a href="{{gw.link}}">{{gw.name}}</a>
+            <span class="tooltiptext">{{gw.desc}}</span>
+          </div>
+        </li>
+        {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
+        {% endif %} {% endfor %} {% for i in blanks %}
+        <li></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="card-content comparison">
+      <ul>
+        Service Proxy<br />
+        {% assign sorted = (site.data.landscape.proxies | sort: 'name') %} {%
+        assign blanks = 1 %} {% for proxies in sorted %} {% if proxies.name %}
+        <li>
+          <div class="tooltip">
+            <a href="{{proxies.link}}">{{proxies.name}}</a>
+            <span class="tooltiptext">{{proxies.desc}}</span>
+          </div>
+        </li>
+        {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
+        {% endif %} {% endfor %} {% for i in blanks %}
+        <li></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="card-content comparison">
+      <ul>
+        Load Balancer<br />
+        {% assign sorted = (site.data.landscape.lb | sort: 'name') %} {% assign
+        blanks = 1 %} {% for lbs in sorted %} {% if lbs.name %}
+        <li>
+          <div class="tooltip">
+            <a href="{{lbs.link}}">{{lbs.name}}</a>
             <span class="tooltiptext">{{lbs.desc}}</span>
-          </div></li>
-          {% else %}
-          {% capture blanks %}{% increment _blanks %}{% endcapture %} 
-        {% endif %}
-      {% endfor %}
-      {% for i in blanks %}
-      <li> </li>
-      {% endfor %}
-    </ul>
+          </div>
+        </li>
+        {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
+        {% endif %} {% endfor %} {% for i in blanks %}
+        <li></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <span style="color: aliceblue;"
+      >Found a discrepancy, missing or out-dated information? Please
+      <a
+        href="https://github.com/layer5io/layer5/issues"
+        style="color: aliceblue;"
+        >submit an issue</a
+      >.</span
+    >
   </div>
-  <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
-</div>
 
-<div class="row">
+  <div class="row">
     <div class="col s12">
-      {% include partials/spectrum/arrow.html
-        NAME = 'Non-Functional'
-        COLOR = 'blue'
-      %}  
-    <div class="col s12"><h5 style="color:aliceblue;">Non-Functional</h5>
+      {% include partials/spectrum/arrow.html NAME = 'Non-Functional' COLOR =
+      'blue' %}
+      <div class="col s12">
+        <h5 style="color: aliceblue;">Non-Functional</h5>
         {% include landscape/service-mesh-non-functional.html %}
-        <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
+        <span style="color: aliceblue;"
+          >Found a discrepancy, missing or out-dated information? Please
+          <a
+            href="https://github.com/layer5io/layer5/issues"
+            style="color: aliceblue;"
+            >submit an issue</a
+          >.</span
+        >
+      </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col s12"><h5 style="color:aliceblue;">Functional</h5>    
-      {% include landscape/service-mesh-functionality.html %}
-      <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
+    <div class="row">
+      <div class="col s12">
+        <h5 style="color: aliceblue;">Functional</h5>
+        {% include landscape/service-mesh-functionality.html %}
+        <span style="color: aliceblue;"
+          >Found a discrepancy, missing or out-dated information? Please
+          <a
+            href="https://github.com/layer5io/layer5/issues"
+            style="color: aliceblue;"
+            >submit an issue</a
+          >.</span
+        >
+      </div>
     </div>
-</div>
 
-<a name="smi"></a>
-<div class="row" >
-  <div class="col s8"><h5 style="color:aliceblue;">Service Mesh Interface Compatibility</h5>    
+    <a name="smi"></a>
+    <div class="row">
+      <div class="col s8">
+        <h5 style="color: aliceblue;">Service Mesh Interface Compatibility</h5>
 
-    {% include landscape/service-mesh-smi.html %}
-    <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
+        {% include landscape/service-mesh-smi.html %}
+        <span style="color: aliceblue;"
+          >Found a discrepancy, missing or out-dated information? Please
+          <a
+            href="https://github.com/layer5io/layer5/issues"
+            style="color: aliceblue;"
+            >submit an issue</a
+          >.</span
+        >
+      </div>
+      <div class="col s4" style="height: 200px;">
+        <a href="/blog/a-standard-interface-for-service-meshes">
+          <img
+            src="/assets/images/landscape/smi-logo.png"
+            style="
+              margin: 15%;
+              margin-top: 20%;
+              height: 100%;
+              text-align: center;
+            "
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <h5 style="color: aliceblue;" id="tools">Tools</h5>
+        {% include landscape/service-mesh-tools.html %}
+        <!-- <iframe border="0" width="100%" height="200px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_rsfCriaUg3WWzfO5CGMizD-MIUF6GM46ZNGy-jxSYz1dIH6plLQBy7R0S3IE_9sqyhUN8sgYZBZ6/pubhtml?gid=1277883243&amp;single=true&amp;widget=true&amp;headers=false"></iframe> -->
+        <span style="color: aliceblue;"
+          >Found a discrepancy, missing or out-dated information? Please
+          <a
+            href="https://github.com/layer5io/layer5/issues"
+            style="color: aliceblue;"
+            >submit an issue</a
+          >.</span
+        >
+      </div>
+    </div>
   </div>
-  <div class="col s4" style="height:200px;">
-  <a href="/blog/a-standard-interface-for-service-meshes">
-      <img src="/assets/images/landscape/smi-logo.png" style="margin:15%; margin-top:20%; height: 100%; text-align:center;" />
-    </a>
 </div>
-</div>
-
-<div class="row">
-    <div class="col s12"><h5 style="color:aliceblue;" id="tools">Tools</h5>    
-      {% include landscape/service-mesh-tools.html %}
-      <!-- <iframe border="0" width="100%" height="200px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_rsfCriaUg3WWzfO5CGMizD-MIUF6GM46ZNGy-jxSYz1dIH6plLQBy7R0S3IE_9sqyhUN8sgYZBZ6/pubhtml?gid=1277883243&amp;single=true&amp;widget=true&amp;headers=false"></iframe> -->
-      <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
-    </div>
 </div>

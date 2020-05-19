@@ -23,6 +23,9 @@
     - name: Partners
       link: /partners
       new_window: false
+    - name: Programs
+      link: /programs
+      new_window: false
     - name: Slack
       link: http://slack.layer5.io/
       new_window: true
