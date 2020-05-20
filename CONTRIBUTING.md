@@ -6,7 +6,7 @@ You want to contribute to the project? Yay! We want you to! Visit our centralize
 Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
-### <a name="landscape">Updating the Landscape</a>
+### <a name="updating-the-service-mesh-landscape">Updating the Landscape</a>
 
 The service mesh landscape is powered by Jekyll. In order to add/update the landscape, fork this repository, clone it, create a branch and navigate to the **_data/categories** folder. Edit these yaml files (if appropriate):
 
