@@ -93,24 +93,21 @@ If you are thinking about the requirements you would have to run `mesheryctl`, s
 Once you have successfully installed, you will be having the power of a new CLI Command MesheryCTL. As you type `mesheryctl` into your terminal, you will be shown with the various sub-commands & flags `mesheryctl` can support.
 
 <pre>
+Meshery is the service mesh management plane, providing lifecycle, performance, and configuration management of service meshes and their workloads.
+
 Usage:
   mesheryctl [command]
 
 Available Commands:
-  reset     Clean up Meshery
   help        Help about any command
-  logs        Print logs
-  perf        Performance Management: testing and benchmarking
-  start       Start Meshery
-  status      Check Meshery status
-  stop        Stop Meshery
-  update      Pull new Meshery images from Docker Hub
-  version     Version of mesheryctl
+  perf        Performance Management
+  system      Meshery Lifecyle Management
+  version     Print mesheryctl version
+
 
 Flags:
-      --config string   config file (default location is: $HOME/.meshery/meshery.yaml)
+      --config string    config file (default location is: $HOME/.meshery//meshery.yaml)
   -h, --help            help for mesheryctl
-  -t, --toggle          Help message for toggle
   -v, --version         Version of mesheryctl
 
 Use "mesheryctl [command] --help" for more information about a command.
@@ -129,25 +126,32 @@ Perf subcommand lets you benchmark your service mesh without using the Meshery U
 Once you type `mesheryctl perf`, it will present you with all the powerful flags you can control with CLI.
 
 <pre>
+Performance Testing & Benchmarking using Meshery CLI.
+
 Usage:
   mesheryctl perf --[flags]
 
 Available Flags for Performance Command:
-  name[string]                  (optional) Name for the Test, if not provided random name will be used.
-  url[string]                   (required) URL Endpoint at which test is to be performed
-  duration[string]              (required) Duration for which test should be performed. See standard notation https://golang.org/pkg/time/#ParseDuration
-  load-generator[string]        (optional) Load-Generator to be used to perform test.(fortio/wrk2) (Default "fortio")
-  mesh[string]                  (optional) Name of the service mesh to be tested.
-  cookie[string]                (required) Choice of the cloud server provider (Default "Default Local Provider")
-  concurrent-requests[string]   (required) Number of parallel requests to be used (Default "1")
-  qps[string]                   (required) Queries per second (Default "0")
+  name[string]                  (optional) A short descriptor to serve as reference for this test. If not provided, a random name will be generate.
+  url[string]                   (required) URL endpoint to send requests.
+  duration[string]              (required) Length of time to perform test (e.g 30s, 15m, 1hr). See standard notation https://golang.org/pkg/time/#ParseDuration
+  load-generator[string]        (optional) Name of load generator to be used to perform test (default: "fortio")
+  mesh[string]                  (optional) Name of the service mesh to be tested (default: "None")
+  provider[string]              (required) Choice of Provider (default: "Meshery")
+  concurrent-requests[string]   (optional) Number of parallel requests to be sent (default: "1")
+  qps[string]                   (required) Queries per second (default: "0")
+  file[string]                  (optional) file containing SMPS-compatible test configuration. See https://github.com/layer5io/service-mesh-performance-specification
   help                          Help for perf subcommand
+
+url, duration, concurrent-requests, and qps can be considered optional flags if specified through an SMPS compatible yaml file using --file
+
+
 </pre>
 
 An example usage of `mesheryctl perf --[flags]` can be
 
 <pre>
- $ mesheryctl perf --name "a quick stress test" --url http://192.168.1.15/productpage --qps 300 --concurrent-requests 2 --duration 30s --cookie "meshery-provider=None"
+ mesheryctl perf --name "a quick stress test" --url http://192.168.1.15/productpage --qps 300 --concurrent-requests 2 --duration 30s --token "provider=Meshery"
 </pre>
 
 #### <span style="margin-left:.75em;font-size: 2em; align-content: center;">W</span>hat's next?
