@@ -6,10 +6,9 @@ You want to contribute to the project? Yay! We want you to! Visit our centralize
 Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
-
 ### <a name="landscape">Updating the Landscape</a>
 
-The service mesh landscape is powered by Jekyll. In order to add/update the landscape, clone this repository, create a branch and navigate to the **_data/categories** folder. Edit these yaml files (if appropriate):
+The service mesh landscape is powered by Jekyll. In order to add/update the landscape, fork this repository, clone it, create a branch and navigate to the **_data/categories** folder. Edit these yaml files (if appropriate):
 
 - [non-functional.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/non-functional.yml) - overview of various service meshes
 - [meshes.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/meshes.yml) - list of individual service mesh details
@@ -19,10 +18,18 @@ The service mesh landscape is powered by Jekyll. In order to add/update the land
 
 Entries should be listed in alphabetical order. Edit other yaml files as needed. 
 
+### <a name="news">Adding News</a>
+
+1. In order to add/update news items, fork this repository, clone it, create a branch and navigate to the `collections/_news` directory. 
+1. Create a copy of the [news template](https://github.com/layer5io/layer5/blob/master/collections/_news/0000-00-00-news-template.md).
+1. Follow the instructions included in the news template and name the new file after the title of the news article. 
+1. Entries will be listed in chronological order automatically.
+
 ### <a name="flow">Contribution Flow</a>
 Please contribute! The Layer5 site uses GitHub Pages (Jekyll) to host its site. The process of contributing to documentation follows this flow:
 
-1. Get a local copy of the site.
+1. Fork a copy of this repo.
+1. Get a local clone of your fork of the site.
 `git clone https://github.com/layer5io/layer5`
 1. Create and checkout a new branch to make changes within
 `git checkout -b <my-username>/<my-changes>` 
