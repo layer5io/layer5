@@ -24,7 +24,7 @@ align="bottom" />@layer5</a> and <a href="https://twitter.com/mesheryio">@mesher
 
 We encourage community curation of the landscape (all are encouraged to participate). We also encourage representatives of the projects/products in the landscape to curate and maintain their listings so as to guarantee their freshness and accuracy of representation. 
 
-### <a name="landscape">Updating the Landscape</a>
+### <a name="updating-the-service-mesh-landscape">Updating the Landscape</a>
 
 The service mesh landscape is powered by Jekyll. In order to add/update the landscape, fork this repository, clone it, create a branch and navigate to the **_data/categories** folder. Edit these yaml files (if appropriate):
 
