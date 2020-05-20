@@ -1,0 +1,17 @@
+<!-- <ul>
+    {% for project in site.projects %}
+    <li>
+        <a href="{{site.baseurl}}/{{ project.link }}">{{ project.title }}</a>
+        - {{ project.excerpt }}
+    </li>
+    {% endfor %}
+</ul> -->
+
+<div class="container no-pad-top">
+  <div id="workshops" class="section scrollspy">
+    <h3 style="text-align: center; color: aliceblue;">
+      <a href="/projects" alt="Service Mesh Tools" style="color: aliceblue;">Projects</a>
+    </h3>
+    {% include collections/projects.html %}
+  </div>
+</div>

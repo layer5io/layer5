@@ -40,6 +40,7 @@ syntax_highlighting: true # include the css for syntax highlighting
 
 # Build settings
 # theme: minima
+paginate: 5
 markdown: kramdown
 permalink: pretty
 plugins:
@@ -49,6 +50,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
+  - jekyll-archives
+
+# This logic is included based on differences of the handling of trailing slashes between Jekyll and GitHub Pages
+# permalinks:
+#  - meshery: "/meshery"
 
 collections_dir: collections
 collections:
@@ -60,6 +66,9 @@ collections:
   blogs:
     output: true
     permalink: /blog/:title
+  careers:
+    output: true
+    permalink: /careers/:title
   news:
     output: true
     permalink: /news/:title
@@ -70,6 +79,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:title
+  programs:
+    output: true
+    permalink: /programs/:title
   topics:
     output: true
     permalink: /topics/:title
@@ -83,12 +95,14 @@ defaults:
       image: /assets/images/layer5/layer5-tag-linkedin.png
   - scope:
       type: pages
+      path: ""
     values:
       layout: default
       body-class: left-sidebar
       sidebar: open
   - scope:
       type: books
+      path: ""
     values:
       layout: default
       body-class: left-sidebar
@@ -96,9 +110,12 @@ defaults:
     # Collection defaults
 
 # Colors
-layer5.gray: "#3c494f"
-layer5.darkgreen: "#00b39f"
-layer5.lightgreen: "#00d3a9"
+layer5:
+  gray: "#3c494f"
+  lightgray: "#a0aaaa"
+  darkgreen: "#00b39f"
+  lightgreen: "#00d3a9"
+
 
 ## Reference - OSS this site uses:
     # Particles - http://www.fabiolamanna.it

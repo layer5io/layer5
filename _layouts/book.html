@@ -1,27 +1,34 @@
-{% include head.html %}
+{% include head.html %} {% include banner.html %}
 
-{% include banner.html %}
+<div class="container">
+  <div class="col s10" style="">
+    <h3
+      class="post-title"
+      itemprop="name headline"
+      style="text-align: center; color: aliceblue;"
+    >
+      {{ page.title | escape }}
+    </h3>
 
-<div class="container" >
-    <div class="col s10" style="">
-        <h3 class="post-title" itemprop="name headline" style="text-align:center;color:aliceblue">{{ page.title | escape }}</h3>
+    <p class="post-meta" style="color: #cfd8dc;">
+      <time
+        datetime="{{ page.date | date_to_xmlschema }}"
+        itemprop="datePublished"
+      >
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y"
+        %} {{ page.date | date: date_format }}
+      </time>
+      {% if page.author %} •
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person"
+        ><span itemprop="name">{{ page.author }}</span></span
+      >
+      {% endif %}
+    </p>
 
-        <p class="post-meta" style="color:#cfd8dc;">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-                {{ page.date | date: date_format }}
-            </time>
-            {% if page.author %}
-            • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-            {% endif %}</p>
-
-        <div class="post-content" style="padding:2em;" itemprop="articleBody">
-            {{ content }}
-        </div>
+    <div class="post-content" style="padding: 2em;" itemprop="articleBody">
+      {{ content }}
     </div>
+  </div>
 </div>
-{% include books-list.html %}
-
-{% include newsletter-signup.html %}
-
+{% include collections/books-list.html %} {% include newsletter-signup.html %}
 {% include footer-plain.html %}

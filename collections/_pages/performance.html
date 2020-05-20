@@ -1,0 +1,82 @@
+---
+layout: project
+title:  "Service Mesh Performance Specification"
+description: "Measuring and indexing the performance, overhead, and value of the world's service mesh deployments."
+author:
+  twitter: layer5
+image:
+  path: /assets/images/buttons/smps.png
+  width: 1200
+thumbnail: /assets/images/buttons/smps_white.svg
+lang: en
+link: /performance
+permalink: /performance
+redirect_from: performance/
+---
+<style>
+ul.bullet li {
+  margin-left:15px;
+  position: relative;
+  text-align: left;
+}
+ul.bullet ul {
+  margin-left:25px;
+  list-style-position: inside;
+}
+ul.bullet li ul {
+  list-style-type: circle;
+  margin-left:15px;
+}
+</style>
+
+<div style="vertical-align: middle;">
+  <p>
+    <img src="/assets/images/buttons/smps_black.svg" 
+      class="light-shadow" width="25%" style="display:inline;float:left;margin-right:5%;padding:10px;" />
+    The Service Mesh Performance Specification (SMPS) is a vendor-neutral specification for capturing details of:
+
+    <ul class="bullet" style="position: relative; left:40px;">
+        <li>Environment and infrastructure details</li>
+        <ul class="bullet">
+            <li>Number and size of nodes, orchestrator</li>
+        </ul>
+        <li>Service mesh and its configuration</li>
+        <li>Service / application details</li>
+        <li>Bundled with test results.</li>
+    </ul>
+  </p>
+  <p>SMPS is a collaborative effort of Layer5, UT Austin, Google, and The Linux Foundation.</p>
+</div>
+<h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
+  Learn more about the <a href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance Specification</a></h5>
+<div class="row">
+  <div
+    class="col s12 m6"
+    style="
+      display: flex; height: auto; flex-direction: column;
+      flex-flow: column; vertical-align: top; text-align: center;
+      position: relative;">
+    <p>Learn more about service mesh performance</p>
+    <iframe 
+      width="100%" height="320px" src="https://www.youtube.com/embed/LxP-yHrKL4M" 
+      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="col s12 m6"
+  style="
+    display: flex; height: auto; flex-direction: column;
+    flex-flow: column; vertical-align: top; text-align: center;
+    position: relative;">
+    <p>Participate in the CNCF Service Mesh Performance Working Group</p>
+    <iframe 
+      src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000" 
+      frameborder="0" width="100%" height="320" allowfullscreen="true" mozallowfullscreen="true" 
+      webkitallowfullscreen="true"></iframe>
+      
+    </div>
+  </div>
+</div>
+<h3 style="text-align:center;color:aliceblue;"><a href="/projects" alt="Service Mesh Tools" style="color:aliceblue;">Other Projects</a></h3>
+
+{% include collections/projects.html excluded_project="/performance" %}
