@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Getting started with mesheryctl"
-date:   2020-04-26 01:01:05 +0530
+date:   2020-05-21 08:00:05 -0530
 image: /assets/images/posts/2020-04-26-getting-started-with-mesheryctl/mesheryctl.png
 author: Kush Trivedi
 permalink: /blog/getting-started-with-mesheryctl
@@ -17,7 +17,7 @@ permalink: /blog/getting-started-with-mesheryctl
   }
   table { padding: 0px; margin:auto;}
 </style>
-
+<i>no easier way to get started with a service mesh</i>
 <h4 style="text-transform: uppercase;">Introduction to Meshery</h4>
 <p style="margin-left:.5em;">
 For all those who are unaware of Meshery, Meshery is a multi-service mesh management plane which provides users with service mesh operational best practices, lifecycle and configuration management, but also interoperates between various service meshes, while enabling you with the tools and knowledge to glean the most of out your service mesh performance, while keeping your overhead to a minimum.
@@ -25,7 +25,7 @@ For all those who are unaware of Meshery, Meshery is a multi-service mesh manage
 <p style="margin-left:.5em;">
 Meshery's vision is to make the operating of any service mesh layer of cloud infrastructure simplified, and to hasten the inevitable, eventual, ubiquituous adoption service meshes as a pervasively present layer of any the way that any modern workload is designed and deployed. Meshery is created by the Layer5 organization.
 
-Layer5 is a community-first, service mesh company which has technology partnerships with various tech giants like Microsoft, HashiCorp, CNCF, RedHat and many more to enlist. The community consists of open source leaders like maintainers of trending open-source projects, ex-GSoCers, Docker Captains, service mesh maintainers, Cloud Native Ambassadors and many more.
+Layer5 is a community-first, service mesh company which has technology partnerships with various tech giants like Microsoft, HashiCorp, CNCF, RedHat and many more to enlist. The community consists of open source leaders like maintainers of trending open-source projects, Google SoCers, Docker Captains, service mesh maintainers, Cloud Native Ambassadors and many more.
 </p>
 
 <h4 style="text-transform: uppercase;">What is mesheryctl?</h4>
