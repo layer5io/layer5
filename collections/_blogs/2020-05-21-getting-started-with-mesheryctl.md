@@ -15,9 +15,9 @@ permalink: /blog/getting-started-with-mesheryctl
   code {
     color: #555;
   }
-  table { padding: 0px; margin:auto;}
+  table { padding: 0px; margin:auto; white-space: nowrap; }
 </style>
-<i>no easier way to get started with a service mesh</i>
+<div class="center" style="color:gray;position:relative;top:-10px;"><i>no easier way to get started with a service mesh</i></div>
 <h4 style="text-transform: uppercase;">Introduction to Meshery</h4>
 <p style="margin-left:.5em;">
 For all those who are unaware of Meshery, Meshery is a multi-service mesh management plane which provides users with service mesh operational best practices, lifecycle and configuration management, but also interoperates between various service meshes, while enabling you with the tools and knowledge to glean the most of out your service mesh performance, while keeping your overhead to a minimum.
