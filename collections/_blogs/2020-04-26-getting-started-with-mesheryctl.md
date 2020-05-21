@@ -13,25 +13,25 @@ permalink: /blog/getting-started-with-mesheryctl
     padding:10px;
   }
   code {
-    color: blue;
+    color: #555;
   }
+  table { padding: 0px; margin:auto;}
 </style>
 
-#### <span style="margin-left:.75em;font-size: 2em; align-content: center;">I</span>ntroduction to Meshery 
+<h4 style="text-transform: uppercase;">Introduction to Meshery</h4>
+<p style="margin-left:.5em;">
+For all those who are unaware of Meshery, Meshery is a multi-service mesh management plane which provides users with service mesh operational best practices, lifecycle and configuration management, but also interoperates between various service meshes, while enabling you with the tools and knowledge to glean the most of out your service mesh performance, while keeping your overhead to a minimum.
+</p>
+<p style="margin-left:.5em;">
+Meshery's vision is to make the operating of any service mesh layer of cloud infrastructure simplified, and to hasten the inevitable, eventual, ubiquituous adoption service meshes as a pervasively present layer of any the way that any modern workload is designed and deployed. Meshery is created by the Layer5 organization.
 
-For all those who are unaware of Meshery, Meshery is a multi-service mesh management plane which not only interoperates between various service meshes but also tells you the benchmarks and performance standards of your service mesh.
+Layer5 is a community-first, service mesh company which has technology partnerships with various tech giants like Microsoft, HashiCorp, CNCF, RedHat and many more to enlist. The community consists of open source leaders like maintainers of trending open-source projects, ex-GSoCers, Docker Captains, service mesh maintainers, Cloud Native Ambassadors and many more.
+</p>
 
-Meshery originated from an idea to be able to manage difference service meshes & tell you which service mesh to adapt from a single place. Meshery is created by the Layer5 organisation.
-Layer5 is a service mesh company which has technology partnerships with various tech giants like HashiCorp, CNCF, RedHat and many more to enlist. The community consists of open source leaders like Maintainers of trending open-source projects, ex-GSoCers, Docker Captains, CNCF community leaders and many more. 
-
-#### <span style="margin-left:.75em;font-size: 2em; align-content: center;">W</span>hat is mesheryctl?
-
-Meshery provides you with a clean, robust, streamlined command-line interface to manage and benchmark your service meshes, `mesheryctl`. With `mesheryctl`, not only you can manage your adapters & containers but you can also benchmark your mesh using the command line.
-
-`mesheryctl` provides support to a number of platforms so that we never miss out users.
-
-`mesheryctl` can be installed with a single bash command by simply executing:
-
+<h4 style="text-transform: uppercase;">What is mesheryctl?</h4>
+<p style="margin-left:.5em;">
+Meshery provides you with a clean, robust, streamlined command-line interface to manage and benchmark your service meshes, `mesheryctl`. With `mesheryctl`, not only you can manage your adapters & containers but you can also benchmark your mesh using the command line. `mesheryctl` provides support to a number of platforms so that we never miss out users. `mesheryctl` can be installed with a single bash command by simply executing:
+</p>
 <pre>
 $ curl -L https://git.io/meshery | bash -
 </pre>
@@ -65,32 +65,95 @@ and you will be able to see the Meshery UI on `https://localhost:9081`.
 
 If you are wondering if bash is only way to get `mesheryctl`, then here is the list of platforms which you can get `mesheryctl` describing all the different ways to get it.
 
-| Platform | Supported? |
-| --- | :---: |
-| [Docker](https://meshery.layer5.io/docs/installation/docker) | ✔️ |
-| - [Docker - Docker App](https://meshery.layer5.io/docs/installation/docker) | ✔️ |
-| [Kubernetes](https://meshery.layer5.io/docs/installation/kubernetes) | ✔️ |
-| - [Kubernetes - Docker Desktop](https://meshery.layer5.io/docs/installation#mac-or-linux) | ✔️ |
-| - [Kubernetes - EKS](https://meshery.layer5.io/docs/installation/eks) | ✔️ |
-| - [Kubernetes - GKE](https://meshery.layer5.io/docs/installation/gke) | ✔️ |
-| - [Kubernetes - Helm](https://meshery.layer5.io/docs/installation/kubernetes#helm) | ✔️ |
-| - [Kubernetes - Minikube](https://meshery.layer5.io/docs/installation/minikube) | ✔️ |
-| [Linux](https://meshery.layer5.io/docs/installation#mac-or-linux) | ✔️ |
-| [Mac](https://meshery.layer5.io/docs/installation#mac-or-linux) | ✔️ |
-| - [Mac - Homebrew](https://meshery.layer5.io/docs/installation#mac-or-linux) | ✔️ |
-| [Windows](https://meshery.layer5.io/docs/installation#windows) | ✔️ |
-| - [Scoop](https://meshery.layer5.io/docs/installation#windows) | ✔️ |
-| - [WSL2](https://meshery.layer5.io/docs/installation/wsl2) | ✔️ |
+<table style="width:50%;line-height: .15em;" align="center">
+<thead>
+<tr>
+<th>Platform</th>
+<th style="text-align:center">Supported?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://meshery.layer5.io/docs/installation/docker">Docker</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - <a href="https://meshery.layer5.io/docs/installation/docker">Docker - Docker App</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td><a href="https://meshery.layer5.io/docs/installation/kubernetes">Kubernetes</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - <a href="https://meshery.layer5.io/docs/installation/aks">Kubernetes - AKS</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - <a href="https://meshery.layer5.io/docs/installation#mac-or-linux">Kubernetes - Docker Desktop</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - <a href="https://meshery.layer5.io/docs/installation/eks">Kubernetes - EKS</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - <a href="https://meshery.layer5.io/docs/installation/gke">Kubernetes - GKE</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - <a href="https://meshery.layer5.io/docs/installation/kubernetes#helm">Kubernetes - Helm</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - <a href="https://meshery.layer5.io/docs/installation/minikube">Kubernetes - Minikube</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - Kubernetes - OpenShift</td>
+<td style="text-align:center">In Progress</td>
+</tr>
+<tr>
+<td><a href="https://meshery.layer5.io/docs/installation#mac-or-linux">Linux</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td><a href="https://meshery.layer5.io/docs/installation#mac-or-linux">Mac</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - <a href="https://meshery.layer5.io/docs/installation#mac-or-linux">Mac - Homebrew</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td><a href="https://meshery.layer5.io/docs/installation#windows">Windows</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - <a href="https://meshery.layer5.io/docs/installation#windows">Scoop</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td> - <a href="https://meshery.layer5.io/docs/installation/wsl2">WSL2</a></td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td>Raspberry Pi</td>
+<td style="text-align:center">In Progress</td>
+</tr>
+</tbody>
+</table>
 
-We believe we have not missed any of the popular platforms for what it’s worth, we will be rolling out support for RaspberryPi & OpenShift soon 🎉🎉🎉.
+
+We believe we have not missed any of the popular platforms for what it’s worth, we will be rolling out support for RaspberryPi and OpenShift soon 🎉🎉🎉.
 
 If you are thinking about the requirements you would have to run `mesheryctl`, so to your surprise, to successfully run `mesheryctl` you will only need :
 
-- A running Docker Daemon.
+<table align="center" style="margin-top:2em; margin-bottom:2em;width:50%;border: 2px solid gray;"><tr><td style="text-align:center;">a running Docker daemon</td></tr></table>
 
-#### <span style="margin-left:.75em;font-size: 2em; align-content: center;">I</span>nto the MesheryCTL
+<h4 style="text-transform: uppercase;">Into the MesheryCTL</h4>
 
-Once you have successfully installed, you will be having the power of a new CLI Command MesheryCTL. As you type `mesheryctl` into your terminal, you will be shown with the various sub-commands & flags `mesheryctl` can support.
+Once you have successfully installed, you will be having the power of a new CLI Command MesheryCTL. As you type `mesheryctl` into your terminal, you will be shown with the various sub-commands and flags `mesheryctl` can support.
 
 <pre>
 Meshery is the service mesh management plane, providing lifecycle, performance, and configuration management of service meshes and their workloads.
@@ -113,20 +176,14 @@ Flags:
 Use "mesheryctl [command] --help" for more information about a command.
 </pre>
 
-Once you do `mesheryctl start`
+Once you do `mesheryctl system start`, Meshery will pull its adapters and latest docker images. Meshery will also detect your Kubernetes configuration and will let you know if Kubernetes is running. Meshery will run it’s web-based user interface on localhost port <code>9081</code> and will let you select your choice of <a href="https://meshery.layer5.io/docs/extensibility#Providers">Provider</a> before you can start managing your service meshes with this powerful utility.
 
-Meshery will pull its adapters & latest docker images. Meshery will also detect your Kube configuration & will let you know if the Kubernetes is running. 
+<table align="center" style="margin-top:2em; margin-bottom:2em;width:50%;border: 2px solid gray;"><tr><td style="text-align:center;">One of the most interesting sub-commands of <code>mesheryctl</code> is <strong><code>perf</code></strong>.</td></tr></table>
 
-It will run it’s Client-UI on port 9081 and will let you select the providers before you can start managing your service meshes with this powerful little boy.
-
-**One of the most interesting sub-commands of `mesheryctl` is `perf`.**
-
-Perf subcommand lets you benchmark your service mesh without using the Meshery UI from the command line interface itself.
-
-Once you type `mesheryctl perf`, it will present you with all the powerful flags you can control with CLI.
+The <code>perf</code> subcommand enables you to being managing the performance of your service mesh deployment and your workloads running atop of them. It lets you benchmark your service mesh without using the Meshery UI from the command line interface itself. Once you type `mesheryctl perf`, it will present you with all the powerful flags you can control with CLI, includig providing it with a `--file` flag that points to any of a number of performance test profiles that you may have saved.
 
 <pre>
-Performance Testing & Benchmarking using Meshery CLI.
+Performance Management and Benchmarking using Meshery CLI.
 
 Usage:
   mesheryctl perf --[flags]
@@ -154,7 +211,7 @@ An example usage of `mesheryctl perf --[flags]` can be
  mesheryctl perf --name "a quick stress test" --url http://192.168.1.15/productpage --qps 300 --concurrent-requests 2 --duration 30s --token "provider=Meshery"
 </pre>
 
-#### <span style="margin-left:.75em;font-size: 2em; align-content: center;">W</span>hat's next?
+<h4 style="text-transform: uppercase;">What's next?</h4>
 
 Meshery is an ever-growing community with attracting contributors from across the globe. We always have a role for everyone whether to be a code-writer, a community manager or a marketer. Layer5 community is always open to welcome you warmly.
 
