@@ -15,7 +15,7 @@ permalink: /blog/getting-started-with-mesheryctl
   code {
     color: #555;
   }
-  table { padding: 0px; margin:auto; white-space: nowrap; }
+  table { padding: 0px; margin:auto; min-width:290px; }
 </style>
 <div class="center" style="color:gray;position:relative;top:-10px;"><i>no easier way to get started with a service mesh</i></div>
 <h4 style="text-transform: uppercase;">Introduction to Meshery</h4>
@@ -65,7 +65,7 @@ and you will be able to see the Meshery UI on `https://localhost:9081`.
 
 If you are wondering if bash is only way to get `mesheryctl`, then here is the list of platforms which you can get `mesheryctl` describing all the different ways to get it.
 
-<table style="width:50%;line-height: .15em;" align="center">
+<table style="line-height: .15em;white-space: nowrap;" align="center">
 <thead>
 <tr>
 <th>Platform</th>
