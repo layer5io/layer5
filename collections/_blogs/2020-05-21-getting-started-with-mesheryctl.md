@@ -211,6 +211,12 @@ An example usage of <code>mesheryctl perf --[flags]</code> can be
  mesheryctl perf --name "a quick stress test" --url http://192.168.1.15/productpage --qps 300 --concurrent-requests 2 --duration 30s --token "provider=Meshery"
 </pre>
 
+You can also provide a SMPS Configuration file with `perf` subcommand, with this file provided you will not have to specify url, duration, concurrent-requests & qps. However, if specified the value provided through file will be over-rided by value through CLI. For more info about file configuration, see [here](https://github.com/layer5io/service-mesh-performance-specification/blob/master/smps.yaml).
+
+<pre>
+ mesheryctl perf --name "a quick stress test" --file {path}/smps.yaml --token "provider=Meshery"
+</pre>
+
 <h4 style="text-transform: uppercase;">What's next?</h4>
 
 Meshery is an ever-growing community with attracting contributors from across the globe. We always have a role for everyone whether to be a code-writer, a community manager or a marketer. Layer5 community is always open to welcome you warmly.
