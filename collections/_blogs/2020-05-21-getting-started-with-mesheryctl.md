@@ -215,7 +215,7 @@ An example usage of `mesheryctl perf --[flags]` can be
 
 Meshery is an ever-growing community with attracting contributors from across the globe. We always have a role for everyone whether to be a code-writer, a community manager or a marketer. Layer5 community is always open to welcome you warmly.
 
-If this makes you excited, [join the Layer5 community](slack.layer5.io) with just a click & someone will be there to make sure you do not get missed.
+If this makes you excited, [join the Layer5 community](http://slack.layer5.io) with just a click & someone will be there to make sure you do not get missed.
 
 Stay meshy and happy meshing!
 
