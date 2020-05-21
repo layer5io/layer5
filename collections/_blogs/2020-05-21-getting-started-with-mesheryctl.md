@@ -13,9 +13,9 @@ permalink: /blog/getting-started-with-mesheryctl
     padding:10px;
   }
   code {
-    color: #555;
+    color: #666;
   }
-  table { padding: 0px; margin:auto; min-width:290px; }
+  table { padding: 0px; margin:auto; min-width:290px; text-align:center; }
 </style>
 <div class="center" style="color:gray;position:relative;top:-10px;"><i>no easier way to get started with a service mesh</i></div>
 <h4 style="text-transform: uppercase;">Introduction to Meshery</h4>
@@ -30,7 +30,7 @@ Layer5 is a community-first, service mesh company which has technology <a href="
 
 <h4 style="text-transform: uppercase;">What is mesheryctl?</h4>
 <p style="margin-left:.5em;">
-Meshery provides you with a clean, robust, streamlined command-line interface to manage and benchmark your service meshes, `mesheryctl`. With `mesheryctl`, not only you can manage your adapters & containers but you can also benchmark your mesh using the command line. `mesheryctl` provides support to a number of platforms so that we never miss out users. `mesheryctl` can be installed with a single bash command by simply executing:
+Meshery provides you with a clean, robust, streamlined command-line interface to manage and benchmark your service meshes, <code>mesheryctl</code>. With <code>mesheryctl</code>, not only you can manage your adapters & containers but you can also benchmark your mesh using the command line. <code>mesheryctl</code> provides support to a number of platforms so that we never miss out users. <code>mesheryctl</code> can be installed with a single bash command by simply executing:
 </p>
 <pre>
 $ curl -L https://git.io/meshery | bash -
@@ -61,11 +61,11 @@ Pulling meshery-cpx      ... done
 Pulling watchtower       ... done
 </pre>
 
-and you will be able to see the Meshery UI on `https://localhost:9081`.
+and you will be able to see the Meshery UI on <code>https://localhost:9081</code>.
 
-If you are wondering if bash is only way to get `mesheryctl`, then here is the list of platforms which you can get `mesheryctl` describing all the different ways to get it.
+If you are wondering if bash is only way to get <code>mesheryctl</code>, then here is the list of platforms which you can get <code>mesheryctl</code> describing all the different ways to get it.
 
-<table style="line-height: .15em;white-space: nowrap;" align="center">
+<table style="line-height: .15em;white-space: nowrap;max-width:290px;" align="center">
 <thead>
 <tr>
 <th>Platform</th>
@@ -147,13 +147,13 @@ If you are wondering if bash is only way to get `mesheryctl`, then here is the l
 
 We believe we have not missed any of the popular platforms for what it’s worth, we will be rolling out support for RaspberryPi and OpenShift soon 🎉🎉🎉.
 
-If you are thinking about the requirements you would have to run `mesheryctl`, so to your surprise, to successfully run `mesheryctl` you will only need :
+If you are thinking about the requirements you would have to run <code>mesheryctl</code>, so to your surprise, to successfully run <code>mesheryctl</code> you will only need :
 
 <table align="center" style="margin-top:2em; margin-bottom:2em;width:50%;border: 2px solid gray;"><tr><td style="text-align:center;">a running Docker daemon</td></tr></table>
 
 <h4 style="text-transform: uppercase;">Into the MesheryCTL</h4>
 
-Once you have successfully installed, you will be having the power of a new CLI Command MesheryCTL. As you type `mesheryctl` into your terminal, you will be shown with the various sub-commands and flags `mesheryctl` can support.
+Once you have successfully installed, you will be having the power of a new CLI Command MesheryCTL. As you type <code>mesheryctl</code> into your terminal, you will be shown with the various sub-commands and flags <code>mesheryctl</code> can support.
 
 <pre>
 Meshery is the service mesh management plane, providing lifecycle, performance, and configuration management of service meshes and their workloads.
@@ -176,11 +176,11 @@ Flags:
 Use "mesheryctl [command] --help" for more information about a command.
 </pre>
 
-Once you do `mesheryctl system start`, Meshery will pull its adapters and latest docker images. Meshery will also detect your Kubernetes configuration and will let you know if Kubernetes is running. Meshery will run it’s web-based user interface on localhost port <code>9081</code> and will let you select your choice of <a href="https://meshery.layer5.io/docs/extensibility#Providers">Provider</a> before you can start managing your service meshes with this powerful utility.
+Once you do <code>mesheryctl system start</code>, Meshery will pull its adapters and latest docker images. Meshery will also detect your Kubernetes configuration and will let you know if Kubernetes is running. Meshery will run it’s web-based user interface on localhost port <code>9081</code> and will let you select your choice of <a href="https://meshery.layer5.io/docs/extensibility#Providers">Provider</a> before you can start managing your service meshes with this powerful utility.
 
 <table align="center" style="margin-top:2em; margin-bottom:2em;width:50%;border: 2px solid gray;"><tr><td style="text-align:center;">One of the most interesting sub-commands of <code>mesheryctl</code> is <strong><code>perf</code></strong>.</td></tr></table>
 
-The <code>perf</code> subcommand enables you to being managing the performance of your service mesh deployment and your workloads running atop of them. It lets you benchmark your service mesh without using the Meshery UI from the command line interface itself. Once you type `mesheryctl perf`, it will present you with all the powerful flags you can control with CLI, includig providing it with a `--file` flag that points to any of a number of performance test profiles that you may have saved.
+The <code>perf</code> subcommand enables you to being managing the performance of your service mesh deployment and your workloads running atop of them. It lets you benchmark your service mesh without using the Meshery UI from the command line interface itself. Once you type <code>mesheryctl perf</code>, it will present you with all the powerful flags you can control with CLI, including providing it with a <code>--file</code> flag that points to any of a number of performance test profiles that you may have saved.
 
 <pre>
 Performance Management and Benchmarking using Meshery CLI.
@@ -205,7 +205,7 @@ url, duration, concurrent-requests, and qps can be considered optional flags if 
 
 </pre>
 
-An example usage of `mesheryctl perf --[flags]` can be
+An example usage of <code>mesheryctl perf --[flags]</code> can be
 
 <pre>
  mesheryctl perf --name "a quick stress test" --url http://192.168.1.15/productpage --qps 300 --concurrent-requests 2 --duration 30s --token "provider=Meshery"
