@@ -31,6 +31,6 @@ Layer5's [Meshery Project](https://https://meshery.io/) is participating in the 
 Meshery is the multi-service mesh management plane offering lifecycle, configuration and performance management of service meshes and their workloads. Service mesh operators are in desparate need of visualization of their cloud native infrastructure and workloads. Networking is complex and virtual networking even more complex. Interactive visual topologies of service meshes and their workloads are key to helping developers and operators take the blinders off when creating and running microservices and their infrastructure.
 
 <b>Recommended Skills:</b> 
-- ReactJS
+- ReactJS, javascript, D3js, cytoscape
 - Golang
 - (nice to have) Kubernetes, Service Mesh, Docker
