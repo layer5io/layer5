@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Layer5 and HashiCorp Launch Service Mesh Partnership"
-date:   2020-05-28 00:00:00 +0000
+date:   2020-05-28 00:00:00 +08000
 author: Lee Calcote
 permalink: /blog/layer5-hashicorp-launch-service-mesh-partnership
 ---
