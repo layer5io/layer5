@@ -5,6 +5,7 @@ date:   2020-05-28 00:00:00 +08000
 author: Lee Calcote
 type: news 
 permalink: /blog/layer5-hashicorp-launch-service-mesh-partnership
+image: /assets/images/news/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/layer5-hashicorp.png
 ---
 
 _Announced on May 28th, 2020 at DockerCon Live 2020._
@@ -22,7 +23,7 @@ Consul’s broad and prevalent use across [any runtime or infrastructure](https:
 
 The [Meshery Adapter for Consul](https://meshery.layer5.io/docs/service-meshes/adapters/consul) comes bundled with a handful of sample applications for evaluating, exploring, and learning how to operate Consul service mesh. Many operators are new to the ongoing administrative tasks of running a healthy and optimized Consul service mesh deployment. In advance of their production deployments, operators may utilize Meshery to quickly deploy Consul with sample applications to gain familiarity with the many features of Consul.
 
-Demonstrated at DockerCon 2020, is the “[Image Hub](https://github.com/layer5io/image-hub)”, a sample application built to allow users to explore Consul’s feature set, and specifically, an experimental area of Consul’s data plane: Envoy’s support for WebAssembly.
+Demonstrated at DockerCon 2020, is the “[Image Hub](https://github.com/layer5io/image-hub)”, a sample application built to allow users to explore Consul’s feature set, and specifically, an experimental area of Consul’s data plane: Envoy’s impending support for WebAssembly.
 
 ### Performance management of Consul and it’s workloads
 
@@ -43,7 +44,7 @@ Today, at [DockerCon 2020](https://docker.events.cube365.net/docker/dockercon/co
 
 <a href="/assets/images/news/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/layer5-image-hub-on-hashicorp-consul.png" alt="Layer5 Image Hub using WebAssembly on HashiCorp Consul"><img src="/assets/images/news/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/layer5-image-hub-on-hashicorp-consul.png" alt="Layer5 Image Hub using WebAssembly on HashiCorp Consul" width="100%" />
 
-_In this demonstration, Meshery takes advantage of Consul’s use of Envoy. Envoy recently incorporated support for WebAssembly._
+_In this demonstration, Meshery takes advantage of Consul’s use of Envoy. Envoy support for WebAssembly is impending._
 
 ### WebAssembly’s near-native performance
 
