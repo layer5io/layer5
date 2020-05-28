@@ -3,6 +3,7 @@ layout: post
 title: "Layer5 and HashiCorp Launch Service Mesh Partnership"
 date:   2020-05-28 00:00:00 +08000
 author: Lee Calcote
+type: news 
 permalink: /blog/layer5-hashicorp-launch-service-mesh-partnership
 ---
 
@@ -12,7 +13,7 @@ _Announced on May 28th, 2020 at DockerCon Live 2020._
 
 Today, we are pleased to announce the technology partnership of Layer5 and HashiCorp. Layer5’s [Meshery](https://layer5.io/meshery), the service mesh management plane, and HashiCorp’s [Consul](https://consul.io) integrate to provide advanced, cloud native infrastructure solutions for containerized and non-containerized workloads - strengths of Consul. The marriage of these technologies forms a layering of network planes: data, control, and management.
 
-<a href="/assets/images/posts/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/Layer5-HashiCorp-Service-Mesh-Partnership.png" alt="Layer5 HashiCorp Service Mesh Partnership"><img src="/assets/images/posts/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/Layer5-HashiCorp-Service-Mesh-Partnership.png" alt="Layer5 HashiCorp Service Mesh Partnership" alt="Layer5 HashiCorp Service Mesh Partnership" width="100%" />
+<a href="/assets/images/news/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/Layer5-HashiCorp-Service-Mesh-Partnership.png" alt="Layer5 HashiCorp Service Mesh Partnership"><img src="/assets/images/news/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/Layer5-HashiCorp-Service-Mesh-Partnership.png" alt="Layer5 HashiCorp Service Mesh Partnership" alt="Layer5 HashiCorp Service Mesh Partnership" width="100%" />
 _Service Mesh Planes: Consul and Meshery. Learn more about service mesh planes in [The Enterprise Path to Service Mesh Architectures](https://layer5.io/books/the-enterprise-path-to-service-mesh-architectures)._
 
 Consul’s broad and prevalent use across [any runtime or infrastructure](https://learn.hashicorp.com/consul/datacenter-deploy/reference-architecture) (bare metal servers, virtual machines, Kubernetes clusters, and any cloud) is a key facilitator of the modernization of IT infrastructure - a significant attractant for Layer5 to focus on this integration; to meet customers where they’re at. The lynchpin of the integration of Consul and Meshery is the Meshery Adapter for Consul. Through this adapter, Meshery facilitates lifecycle management of Consul service mesh deployments, evaluates and espouses configuration best practices published by HashiCorp. Meshery provides users with an interface to apply custom configuration to their Consul service mesh in an ad hoc fashion.
@@ -40,7 +41,7 @@ Meshery’s ability to connect to Prometheus instances to retrieve and account f
 
 Today, at [DockerCon 2020](https://docker.events.cube365.net/docker/dockercon/content/Videos/63TCCNpzDC7Xxnm8b), we demonstrate technology leadership in advanced data plane engineering for near-native performance of fine-grained traffic control facilitated by Meshery and Consul with the use of Envoy and WebAssembly. 
 
-<a href="/assets/images/posts/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/layer5-image-hub-on-hashicorp-consul.png" alt="Layer5 Image Hub using WebAssembly on HashiCorp Consul"><img src="/assets/images/posts/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/layer5-image-hub-on-hashicorp-consul.png" alt="Layer5 Image Hub using WebAssembly on HashiCorp Consul" width="100%" />
+<a href="/assets/images/news/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/layer5-image-hub-on-hashicorp-consul.png" alt="Layer5 Image Hub using WebAssembly on HashiCorp Consul"><img src="/assets/images/news/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/layer5-image-hub-on-hashicorp-consul.png" alt="Layer5 Image Hub using WebAssembly on HashiCorp Consul" width="100%" />
 
 _In this demonstration, Meshery takes advantage of Consul’s use of Envoy. Envoy recently incorporated support for WebAssembly._
 
