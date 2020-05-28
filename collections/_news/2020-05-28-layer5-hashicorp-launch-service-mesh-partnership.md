@@ -4,7 +4,7 @@ title: "Layer5 and HashiCorp Launch Service Mesh Partnership"
 date:   2020-05-28 00:00:00 +08000
 author: Lee Calcote
 type: news 
-permalink: /blog/layer5-hashicorp-launch-service-mesh-partnership
+permalink: /company/news/layer5-hashicorp-launch-service-mesh-partnership
 image: /assets/images/news/2020-05-28-layer5-hashicorp-launch-service-mesh-partnership/layer5-hashicorp.png
 ---
 
