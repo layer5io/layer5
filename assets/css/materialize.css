@@ -2262,6 +2262,7 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
 
 .black-text {
   color: #000000 !important;
+  font-size: medium;
 }
 
 .white {
