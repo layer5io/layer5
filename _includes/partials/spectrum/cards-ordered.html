@@ -1,7 +1,6 @@
 <div class="row spectrum-card-centered flex">
-  {% for meshes in site.data.landscape.meshes %} {% if meshes[include.KEY]
-  contains include.VALUE %}
-
+  {% assign valid_items = site.data.landscape.meshes | where: include.KEY, "Yes" | sort_natural: include.orderKey %}
+  {% for meshes in valid_items%}
   <div class="col s6 m4 l2">
     <div class="card-content center-align">
       <div class="spectrum-card-content card grey lighten-3">
@@ -20,6 +19,5 @@
         <span class="spectrum-card-description" style="display: inline-block; padding: 6px;">{{meshes.desc}}</span>
       </div>
     </div>
-  </div>
-  {% endif %} {% endfor %}
+  </div>{% endfor %}
 </div>

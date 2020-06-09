@@ -91,7 +91,7 @@
 }
 
 .spectrum-card-image img {
-  max-height: 75px;
+  // max-height: 75px;
 }
 
 .spectrum-card-image a {
@@ -106,10 +106,8 @@
 
 .spectrum-card-centered {
   display: flex;
-  align-items: center;
-  align-content: center;
-  flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
 /* TABLE */
