@@ -1,23 +1,16 @@
-<div class="row spectrum-card-centered flex">
-  {% assign valid_items = site.data.landscape.meshes | where: include.KEY, "Yes" | sort_natural: include.orderKey %}
-  {% for meshes in valid_items%}
-  <div class="col s6 m4 l2">
-    <div class="card-content center-align">
-      <div class="spectrum-card-content card grey lighten-3">
-        <div class="spectrum-card-image card blue-grey darken-1" style="height: 180px;">
-          <a href="{{meshes.link}}" style="height: 100%; width: 100%; display: inline-block">
-            <div class="card-image tooltip" style="position:relative; width: 100%; padding: 20px; height: 100%;">
-              <img
-                src="../assets/images/landscape/{{meshes.name}}.png"
-                alt="{{meshes.name}}"
-                style="width: 70%; max-height: 70%; object-fit: contain; position: absolute; top: 0; bottom: 0; margin: auto;"
-              />
-              <span class="tooltiptext">{{meshes.desc}}</span>
-            </div>
-          </a>
+<div class="spectrum-grid" >
+  {% assign meshes = site.data.landscape.meshes | where: include.KEY, "Yes" %}
+  {% for mesh in meshes%}
+<div class="spectrum-grid-cell" style="margin-left: auto; margin-right: auto;--col: {{ mesh[include.orderKey]}}">
+    <div class="spectrum-card-image card blue-grey darken-1" style="height: 80px; width: 80px;">
+      <a href="{{mesh.link}}" style="height: 100%; width: 100%; display: inline-block">
+        <div class="card-image tooltip" style="position:relative; width: 100%; padding: 20px; height: 100%;">
+          <img src="../assets/images/landscape/{{mesh.name}}.png" alt="{{mesh.name}}"
+            style="width: 70%; max-height: 70%; object-fit: contain; position: absolute; top: 0; bottom: 0; margin: auto;" />
+          <span class="tooltiptext">{{mesh.desc}}</span>
         </div>
-        <span class="spectrum-card-description" style="display: inline-block; padding: 6px;">{{meshes.desc}}</span>
-      </div>
+      </a>
     </div>
-  </div>{% endfor %}
+  </div>
+  {% endfor %}
 </div>

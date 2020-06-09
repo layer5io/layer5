@@ -2,10 +2,7 @@
   <div class="col s12">
 
     <!-- Comparative Spectrum Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Service Meshes'
-      COLOR = 'blue'
-    %}
+    <h2 class="white-text center landscape-category">Service Meshes</h2>
 
     <!-- Comparative Spectrum Table -->
     {% assign
@@ -21,21 +18,18 @@
     {% include partials/spectrum/table.html PROJECTS=PROJECTS KEYS=KEYS GREAT=GREAT GOOD=GOOD BAD=BAD %}
 
     {% comment %}
-      
+
     <!-- Comparative Spectrum Arrow -->
     {% include partials/spectrum/arrow.html
       NAME = 'Istio-compliant'
       COLOR = 'grey'
     %}
-      <!-- TODO: add Istio Compliant cards -->
+    <!-- TODO: add Istio Compliant cards -->
     {% endcomment %}
 
 
     <!-- Multi-Tenancy Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Multi-Tenancy'
-      COLOR = 'red'
-    %}
+    <h2 class="white-text center landscape-category">Multi-Tenancy</h2>
     <!-- Multi-Tenancy Cards -->
     {% include partials/spectrum/cards.html
       KEY = 'multi-tenant'
@@ -43,21 +37,15 @@
     %}
 
     <!-- Open Source Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Open Source'
-      COLOR = 'blue'
-    %}
+    <h2 class="white-text center landscape-category">Open Source</h2>
     <!-- Support for CNI Cards -->
     {% include partials/spectrum/cards.html
       KEY = 'open-source'
       VALUE = 'Yes'
     %}
-   
+
     <!-- Support for CNI Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Support for CNI'
-      COLOR = 'blue'
-    %}
+    <h2 class="white-text center landscape-category">Support for CNI</h2>
     <!-- Support for CNI Cards -->
     {% include partials/spectrum/cards.html
       KEY = 'cni-support'
@@ -67,31 +55,23 @@
 
     <!-- Arrow and Network Engineers grid -->
     {% 
-      include partials/spectrum/grid.html
+      include partials/spectrum/arrow.html
       LVALUE = 'Network Engineers'
-      LCOLOR = 'blue'
       
       RVALUE = 'Developers'
-      RCOLOR = 'red'
       
-      KEY = 'score'
-    %}
+      %}
     {% include partials/spectrum/cards-ordered.html
       KEY = 'network-engineer'
       VALUE = 'Yes'
       orderKey = 'engineer-order'
-    %}
-
+      %}
     <!-- Cloud grid -->
     {% 
-      include partials/spectrum/grid.html
+      include partials/spectrum/arrow.html
       LVALUE = 'Cloud'
-      LCOLOR = 'blue'
       
       RVALUE = 'Cloud'
-      RCOLOR = 'red'
-      
-      KEY = 'score'
     %}
     {% include partials/spectrum/cards-ordered.html
       KEY = 'cloud'
@@ -101,14 +81,11 @@
 
     <!-- Underlay - Overlay grid -->
     {% 
-      include partials/spectrum/grid.html
+      include partials/spectrum/arrow.html
       LVALUE = 'Underlay'
-      LCOLOR = 'blue'
       
       RVALUE = 'Overlay'
-      RCOLOR = 'red'
       
-      KEY = 'score'
     %}
     {% include partials/spectrum/cards-ordered.html
       KEY = 'underlay'
@@ -118,14 +95,11 @@
 
     <!-- Convenience grid -->
     {% 
-      include partials/spectrum/grid.html
+      include partials/spectrum/arrow.html
       LVALUE = 'Convenience'
-      LCOLOR = 'blue'
       
       RVALUE = 'Convenience'
-      RCOLOR = 'red'
       
-      KEY = 'score'
     %}
     {% include partials/spectrum/cards-ordered.html
       KEY = 'convenience'
@@ -135,14 +109,11 @@
 
     <!-- Arrow scale grid -->
     {% 
-      include partials/spectrum/grid.html
+      include partials/spectrum/arrow.html
       LVALUE = 'Scale'
-      LCOLOR = 'blue'
       
       RVALUE = 'Scale'
-      RCOLOR = 'red'
       
-      KEY = 'score'
     %}
     {% include partials/spectrum/cards-ordered.html
       KEY = 'scale'
@@ -179,7 +150,8 @@
   </style>
 
   <!-- Arrow (Categories) -->
-  {% include partials/spectrum/arrow.html NAME = 'Categories' COLOR = 'grey' %}
+  <h2 class="white-text center landscape-category">Categories</h2>
+
   <div class="card-content">
     <!-- <h5 style="color:aliceblue;">Categories</h5> -->
 
@@ -287,25 +259,25 @@
 <!-- NON Functional Arrow and table -->
 <div class="row">
   <div class="col s12">
-    {% include partials/spectrum/arrow.html NAME = 'Non-Functional' COLOR =
-      'blue' %}
+    
     <div class="col s12">
-      <h5 style="color: aliceblue;">Non-Functional</h5>
+      <h2 class="white-text center landscape-category">Non Functional</h2>
       {% include landscape/service-mesh-non-functional.html %}
     </div>
   </div>
-
+  
   <div class="row">
     <div class="col s12">
-      <h5 style="color: aliceblue;">Functional</h5>
+      <h2 class="white-text center landscape-category">Functional</h2>
       {% include landscape/service-mesh-functionality.html %}
     </div>
   </div>
 
   <a name="smi"></a>
+  
   <div class="row">
     <div class="col s8">
-      <h5 style="color: aliceblue;">Service Mesh Interface Compatibility</h5>
+      <h2 class="white-text center landscape-category">Service Mesh Interface Compatibility</h2>
 
       {% include landscape/service-mesh-smi.html %}
       <span style="color: aliceblue;">Found a discrepancy, missing or out-dated information? Please
@@ -325,7 +297,8 @@
 
   <div class="row">
     <div class="col s12">
-      <h5 style="color: aliceblue;" id="tools">Tools</h5>
+      <h2 class="white-text center landscape-category">Tools</h2>
+
       {% include landscape/service-mesh-tools.html %}
       <!-- <iframe border="0" width="100%" height="200px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_rsfCriaUg3WWzfO5CGMizD-MIUF6GM46ZNGy-jxSYz1dIH6plLQBy7R0S3IE_9sqyhUN8sgYZBZ6/pubhtml?gid=1277883243&amp;single=true&amp;widget=true&amp;headers=false"></iframe> -->
       <span style="color: aliceblue;">Found a discrepancy, missing or out-dated information? Please
@@ -334,4 +307,3 @@
   </div>
 </div>
 </div>
-
