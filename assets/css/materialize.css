@@ -5015,35 +5015,7 @@ nav .input-field label.active i {
   font-weight: 700;
 }
 
-@font-face {
-  font-family: "OpenSans";
-  src: local(Roboto Light), url("../fonts/Open_Sans/OpenSans-Light.ttf") format("ttf"), url("../fonts/Open_Sans/OpenSans-Light.ttf") format("ttf");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: "OpenSans";
-  src: local(OpenSans Regular), url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("ttf"), url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("ttf");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "OpenSans";
-  src: local(OpenSans SemiBold), url("../fonts/Open_Sans/OpenSans-SemiBold.ttf") format("ttf"), url("../fonts/Open_Sans/OpenSans-SemiBold.ttf") format("ttf");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "OpenSans";
-  src: local(OpenSans Bold), url("../fonts/Open_Sans/OpenSans-Bold.ttf") format("ttf"), url("../fonts/Open_Sans/OpenSans-Bold.ttf") format("ttf");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "OpenSans";
-  src: local(OpenSans ExtraBold), url("../fonts/Open_Sans/OpenSans-ExtraBold.ttf") format("ttf"), url("../fonts/Open_Sans/OpenSans-ExtraBold.ttf") format("ttf");
-  font-weight: 700;
-}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 a {
   text-decoration: none;
