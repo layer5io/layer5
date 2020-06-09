@@ -1,29 +1,67 @@
 ---
 layout: default
-title:  "Layer5 Community"
+title: "Layer5 Community"
 permalink: /community
 redirect_from: community/
 excerpt: "The Service Mesh Community at Layer5 - Learn, Share, Engage"
 image: /assets/images/layer5/layer5-tag-community-white-bg.png
 ---
+
 <div class="container">
-    <div id="community" class="section scrollspy">
-        <h3 style="text-align:center;color:aliceblue;"><a href="/news" class="white-text">The Service Mesh Community</a></h3>
-        <div class="row white-bg" style="padding:15px; vertical-align: middle;float:center;height:fit-content;" >
-
-            <div class="col s12 m6 " style="display: flex; 
-              height: auto; flex-direction: column; flex-flow: column; vertical-align: middle; position: relative; ">
-                {% include community/community.html %}
-            </div>
-            <div class="col s12 m6 " style="display: flex; 
-            height: auto; flex-direction: column; flex-flow: column; vertical-align: middle; 
-            text-align:center; position: relative; ">
-                <h3 style="text-align:center;color:aliceblue;"><a href="/news" class="black-text">Engage</a></h3>
-                <p>Learn from others using service meshes.</p>
-                {% include partials/vert-social.html %}
-                {% include newsletter-signup.html heading-class="black-text" forklift="no" %}
-            </div>
+  <div id="community" class="section scrollspy">
+    <h3 style="text-align: center; color: aliceblue;">
+      <a href="/news" class="white-text">The Service Mesh Community</a>
+    </h3>
+    <div
+      class="row white-bg"
+      style="
+        padding: 15px;
+        vertical-align: middle;
+        float: center;
+        height: fit-content;
+      "
+    >
+      <div
+        class="col s12 m6"
+        style="
+          display: flex;
+          height: auto;
+          flex-direction: column;
+          flex-flow: column;
+          vertical-align: middle;
+          position: relative;
+        "
+      >
+        {% include community/community.html %}
+      </div>
+      <div
+        class="col s12 m6"
+        style="
+          display: flex;
+          height: auto;
+          flex-direction: column;
+          flex-flow: column;
+          vertical-align: middle;
+          text-align: center;
+          position: relative;
+        "
+      >
+        <h3 style="text-align: center; color: aliceblue;">
+          <a href="/news" class="black-text">Engage</a>
+        </h3>
+        <p>Learn from others using service meshes.</p>
+        {% include partials/vert-social.html %}
+        <div>
+          <img
+            src="/assets/images/datacenter-crash.svg"
+            width="70%"
+            style="text-align: center;"
+          />
         </div>
-    </div>
-</div>
 
+        {% include newsletter-signup.html heading-class="black-text"
+        forklift="no" %}
+      </div>
+    </div>
+  </div>
+</div>

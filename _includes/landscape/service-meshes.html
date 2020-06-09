@@ -2,10 +2,7 @@
   <div class="col s12">
 
     <!-- Comparative Spectrum Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Service Meshes'
-      COLOR = 'blue'
-    %}
+    <h2 class="white-text center landscape-category">Service Meshes</h2>
 
     <!-- Comparative Spectrum Table -->
     {% assign
@@ -17,57 +14,129 @@
     {% assign
       GOOD = 'Yes, Replaced' | downcase %}
     {% assign
-      BAD = 'No, ?' | downcase %} 
+      BAD = 'No, ?' | downcase %}
     {% include partials/spectrum/table.html PROJECTS=PROJECTS KEYS=KEYS GREAT=GREAT GOOD=GOOD BAD=BAD %}
+
+    {% comment %}
 
     <!-- Comparative Spectrum Arrow -->
     {% include partials/spectrum/arrow.html
       NAME = 'Istio-compliant'
       COLOR = 'grey'
     %}
+    <!-- TODO: add Istio Compliant cards -->
+    {% endcomment %}
 
-    <br/><br/><br/><hr><br/><br/>
 
-    <!-- Comparative Spectrum Arrow -->
-    {% include partials/spectrum/arrow.html
-      NAME = 'Multi-Tenancy'
-      COLOR = 'red'
-    %}
-
-    <!-- Comparative Spectrum Cards -->
+    <!-- Multi-Tenancy Arrow -->
+    <h2 class="white-text center landscape-category">Multi-Tenancy</h2>
+    <!-- Multi-Tenancy Cards -->
     {% include partials/spectrum/cards.html
       KEY = 'multi-tenant'
       VALUE = 'Yes'
     %}
 
-    <br/><hr><br/><br/>
+    <!-- Open Source Arrow -->
+    <h2 class="white-text center landscape-category">Open Source</h2>
+    <!-- Support for CNI Cards -->
+    {% include partials/spectrum/cards.html
+      KEY = 'open-source'
+      VALUE = 'Yes'
+    %}
 
-    <!-- Comparative Spectrum Grid -->
-    {% include partials/spectrum/grid.html
+    <!-- Support for CNI Arrow -->
+    <h2 class="white-text center landscape-category">Support for CNI</h2>
+    <!-- Support for CNI Cards -->
+    {% include partials/spectrum/cards.html
+      KEY = 'cni-support'
+      VALUE = 'Yes'
+    %}
+
+
+    <!-- Arrow and Network Engineers grid -->
+    {% 
+      include partials/spectrum/arrow.html
       LVALUE = 'Network Engineers'
-      LCOLOR = 'blue'
-     
-      RVALUE = 'Developers'
-      RCOLOR = 'red'
       
-      KEY = 'score'
+      RVALUE = 'Developers'
+      
+      %}
+    {% include partials/spectrum/cards-ordered.html
+      KEY = 'network-engineer'
+      VALUE = 'Yes'
+      orderKey = 'engineer-order'
+      %}
+    <!-- Cloud grid -->
+    {% 
+      include partials/spectrum/arrow.html
+      LVALUE = 'Cloud'
+      
+      RVALUE = 'Cloud'
+    %}
+    {% include partials/spectrum/cards-ordered.html
+      KEY = 'cloud'
+      VALUE = 'Yes'
+      orderKey = 'cloud-order'
+    %}
+
+    <!-- Underlay - Overlay grid -->
+    {% 
+      include partials/spectrum/arrow.html
+      LVALUE = 'Underlay'
+      
+      RVALUE = 'Overlay'
+      
+    %}
+    {% include partials/spectrum/cards-ordered.html
+      KEY = 'underlay'
+      VALUE = 'Yes'
+      orderKey = 'underlay-order'
+    %}
+
+    <!-- Convenience grid -->
+    {% 
+      include partials/spectrum/arrow.html
+      LVALUE = 'Convenience'
+      
+      RVALUE = 'Convenience'
+      
+    %}
+    {% include partials/spectrum/cards-ordered.html
+      KEY = 'convenience'
+      VALUE = 'Yes'
+      orderKey = 'convenience-order'
+    %}
+
+    <!-- Arrow scale grid -->
+    {% 
+      include partials/spectrum/arrow.html
+      LVALUE = 'Scale'
+      
+      RVALUE = 'Scale'
+      
+    %}
+    {% include partials/spectrum/cards-ordered.html
+      KEY = 'scale'
+      VALUE = 'Yes'
+      orderKey = 'scale-order'
     %}
 
   </div>
 </div>
 <div class="row">
 
-  <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
+  <style scoped>
+    ul.category {
+      font-weight: bold;
+    }
 
-  <style> 
-    ul {font-weight:bold;} 
-    li {
+    ul.category li {
       margin-left: 5px;
       font-weight: normal;
-      float: right;
+      display: inline-flex;
       width: 200px;
     }
-    
+
     .card-content {
       padding: 0 0 5px 0 !important;
       border-right: none;
@@ -80,97 +149,161 @@
     }
   </style>
 
-  <h5 style="color:aliceblue;">Categories</h5>
+  <!-- Arrow (Categories) -->
+  <h2 class="white-text center landscape-category">Categories</h2>
 
-  <div class="card-content comparison">
-    <ul>Service Mesh
-      {% for meshes in site.data.landscape.meshes %}
-          <li><div class="tooltip"><a href="{{meshes.link}}">{{meshes.name}}</a>
+  <div class="card-content">
+    <!-- <h5 style="color:aliceblue;">Categories</h5> -->
+
+    <div class="card-content comparison">
+      <ul class="category">Service Mesh
+        {% for meshes in site.data.landscape.meshes %}
+        <li>
+          <div class="tooltip"><a href="{{meshes.link}}">{{meshes.name}}</a>
             <span class="tooltiptext">{{meshes.desc}}</span></div>
-          </li>
-      {% endfor %}
-    </ul>
-  </div>
-
-  <div class="card-content comparison">
-    <ul>Client Library
-      {% for clients in site.data.landscape.clients %}
-          <li><div class="tooltip"><a href="{{clients.link}}">{{clients.name}}</a>
-          <span class="tooltiptext">{{clients.desc}}</span></div>
         </li>
-        
-      {% endfor %}
-    </ul>
-  </div>
-
-  <div class="card-content comparison">
-      <ul>API Gateway
-        {% for gw in site.data.landscape.gw %}
-            <li><div class="tooltip"><a href="{{gw.link}}">{{gw.name}}</a>
-              <span class="tooltiptext">{{gw.desc}}</span></div>
-            </li>
-
         {% endfor %}
       </ul>
+    </div>
+
+    <div class="card-content comparison">
+      <ul class="category">Client Library
+        {% for clients in site.data.landscape.clients %}
+        <li>
+          <div class="tooltip"><a href="{{clients.link}}">{{clients.name}}</a>
+            <span class="tooltiptext">{{clients.desc}}</span></div>
+        </li>
+        {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
+        {% endfor %} {% for i in blanks %}
+        <li></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="card-content comparison">
+      <ul class="category">
+        Client Library<br />
+        {% assign sorted = (site.data.landscape.clients | sort: 'name') %} {%
+        assign blanks = 1 %} {% for clients in sorted %} {% if clients.name %}
+        <li>
+          <div class="tooltip">
+            <a href="{{clients.link}}">{{clients.name}}</a>
+            <span class="tooltiptext">{{clients.desc}}</span>
+          </div>
+        </li>
+        {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
+        {% endif %} {% endfor %} {% for i in blanks %}
+        <li></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="card-content comparison">
+      <ul class="category">
+        API Gateway<br />
+        {% assign sorted = (site.data.landscape.gw | sort: 'name') %} {% assign
+        blanks = 1 %} {% for gw in sorted %} {% if gw.name %}
+        <li>
+          <div class="tooltip">
+            <a href="{{gw.link}}">{{gw.name}}</a>
+            <span class="tooltiptext">{{gw.desc}}</span>
+          </div>
+        </li>
+        {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
+        {% endif %} {% endfor %} {% for i in blanks %}
+        <li></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="card-content comparison">
+      <ul class="category">
+        Service Proxy<br />
+        {% assign sorted = (site.data.landscape.proxies | sort: 'name') %} {%
+        assign blanks = 1 %} {% for proxies in sorted %} {% if proxies.name %}
+        <li>
+          <div class="tooltip">
+            <a href="{{proxies.link}}">{{proxies.name}}</a>
+            <span class="tooltiptext">{{proxies.desc}}</span>
+          </div>
+        </li>
+        {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
+        {% endif %} {% endfor %} {% for i in blanks %}
+        <li></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="card-content comparison">
+      <ul class="category">
+        Load Balancer<br />
+        {% assign sorted = (site.data.landscape.lb | sort: 'name') %} {% assign
+        blanks = 1 %} {% for lbs in sorted %} {% if lbs.name %}
+        <li>
+          <div class="tooltip">
+            <a href="{{lbs.link}}">{{lbs.name}}</a>
+            <span class="tooltiptext">{{lbs.desc}}</span>
+          </div>
+        </li>
+        {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
+        {% endif %} {% endfor %} {% for i in blanks %}
+        <li></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <!-- End Categories -->
+
+</div>
+
+<!-- NON Functional Arrow and table -->
+<div class="row">
+  <div class="col s12">
+    
+    <div class="col s12">
+      <h2 class="white-text center landscape-category">Non Functional</h2>
+      {% include landscape/service-mesh-non-functional.html %}
+    </div>
   </div>
   
-  <div class="card-content comparison">
-      <ul>Service Proxy
-        {% for proxies in site.data.landscape.proxies %}
-            <li><div class="tooltip"><a href="{{proxies.link}}">{{proxies.name}}</a>
-              <span class="tooltiptext">{{proxies.desc}}</span>
-            </div></li>
-        {% endfor %}
-      </ul>
-  </div>
-
-  <div class="card-content comparison">
-    <ul>Load Balancer
-      {% for lbs in site.data.landscape.lb %}
-          <li><div class="tooltip"><a href="{{lbs.link}}">{{lbs.name}}</a>
-            <span class="tooltiptext">{{lbs.desc}}</span>
-          </div></li>
-      {% endfor %}
-    </ul>
-  </div>
-    
-  <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
-</div>
-
-<div class="row">
-    <div class="col s12"><h5 style="color:aliceblue;">Non-Functional</h5>
-        {% include landscape/service-mesh-non-functional.html %}
-        <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col s12"><h5 style="color:aliceblue;">Functional</h5>    
+  <div class="row">
+    <div class="col s12">
+      <h2 class="white-text center landscape-category">Functional</h2>
       {% include landscape/service-mesh-functionality.html %}
-      <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
     </div>
-</div>
-
-<a name="smi"></a>
-<div class="row" >
-  <div class="col s8"><h5 style="color:aliceblue;">Service Mesh Interface Compatibility</h5>    
-
-    {% include landscape/service-mesh-smi.html %}
-    <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
   </div>
-  <div class="col s4" style="height:200px;">
-  <a href="/blog/a-standard-interface-for-service-meshes">
-      <img src="/assets/images/landscape/smi-logo.png" style="margin:15%; margin-top:20%; height: 100%; text-align:center;" />
-    </a>
-</div>
-</div>
 
-<div class="row">
-    <div class="col s12"><h5 style="color:aliceblue;" id="tools">Tools</h5>    
+  <a name="smi"></a>
+  
+  <div class="row">
+    <div class="col s8">
+      <h2 class="white-text center landscape-category">Service Mesh Interface Compatibility</h2>
+
+      {% include landscape/service-mesh-smi.html %}
+      <span style="color: aliceblue;">Found a discrepancy, missing or out-dated information? Please
+        <a href="https://github.com/layer5io/layer5/issues" style="color: aliceblue;">submit an issue</a>.</span>
+    </div>
+    <div class="col s4" style="height: 200px;">
+      <a href="/blog/a-standard-interface-for-service-meshes">
+        <img src="/assets/images/landscape/smi-logo.png" style="
+              margin: 15%;
+              margin-top: 20%;
+              height: 100%;
+              text-align: center;
+            " />
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <h2 class="white-text center landscape-category">Tools</h2>
+
       {% include landscape/service-mesh-tools.html %}
       <!-- <iframe border="0" width="100%" height="200px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_rsfCriaUg3WWzfO5CGMizD-MIUF6GM46ZNGy-jxSYz1dIH6plLQBy7R0S3IE_9sqyhUN8sgYZBZ6/pubhtml?gid=1277883243&amp;single=true&amp;widget=true&amp;headers=false"></iframe> -->
-      <span style="color:aliceblue;">Found a discrepancy, missing or out-dated information? Please <a href="https://github.com/layer5io/layer5/issues" style="color:aliceblue;">submit an issue</a>.</span>
+      <span style="color: aliceblue;">Found a discrepancy, missing or out-dated information? Please
+        <a href="https://github.com/layer5io/layer5/issues" style="color: aliceblue;">submit an issue</a>.</span>
     </div>
+  </div>
 </div>
-
-{% include newsletter-signup.html %}
+</div>

@@ -10,16 +10,18 @@ permalink: /blog/deploying-linkerd-with-meshery
 </style>
 
 <span style="margin-left:.75em;font-size: 2em;">I</span>t’s no secret that service mesh tech is boiling hot. Microservice architectures brought on as many challenges as they have advantages. With operational complexity being one of the most acute pains. Service meshes do offer solutions to a number of these operational concerns. Including but not limited to: resilience, improved observability, security and advanced service discovery.
-<div   style="float:left; width:60%; padding-right:1.5em; ">
+<div class="row">
+  <div class="col m8">
+
 <iframe width="100%" src="https://www.youtube.com/embed/MXQV-i-Hkf8" frameborder="0" 
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-    style="min-height: 315px; min-width: 390px;
+    style="min-height: 315px; min-width: 280px; 
     "></iframe>
 </div>
-But with so many mesh options around - how do we choose, evaluate and compare them? And once we’ve chosen a solution - how do we make it accessible to all our engineers? It is to provide an answer to these questions that the Layer5 community has created [Meshery](/meshery), the open-source, service mesh management plane. Meshery already supports a number of leading mesh providers with adapters for additional meshes on the way. In today’s video, I’ll show how to use Meshery for rolling out and evaluating Linkerd.
+But with so many mesh options around - how do we choose, evaluate and compare them? And once we’ve chosen a solution - how do we make it accessible to all our engineers? It is to provide an answer to these questions that the Layer5 community has created <a href="/meshery">Meshery</a>, the open-source, service mesh management plane. Meshery already supports a number of leading mesh providers with adapters for additional meshes on the way. In today’s video, I’ll show how to use Meshery for rolling out and evaluating Linkerd.
 
  Linkerd is a system that comes from the service mesh pioneers - the company called Buoyant. They were the first to realise the need for a distributed network of smart, centrally configured proxies and coin the term “service mesh” back in 2016. Today, we’ll be looking at Linkerd 2.x - the second generation of this now CNCF project.
-
+</div>
 <div class="text editable" style="width:40%;float:right;margin-left:1.8em;">
 <h5 class="black-text">Meshery Adapters</h5>
     <table class="adapters">

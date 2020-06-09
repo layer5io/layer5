@@ -13,7 +13,7 @@
       link: /performance
       new_window: false
 - name: Community
-  new_window: true
+  new_window: false
   highlight: false
   link: /community
   subitems: 
@@ -22,6 +22,9 @@
       new_window: false
     - name: Partners
       link: /partners
+      new_window: false
+    - name: Programs
+      link: /programs
       new_window: false
     - name: Slack
       link: http://slack.layer5.io/
@@ -58,3 +61,8 @@
   link: /blog
   new_window: false
   highlight: false   
+- name: Run Meshery
+  link: /meshery#getting-started
+  new_window: false
+  highlight: yes   
+  class: cta
