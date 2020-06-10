@@ -15,4 +15,20 @@ excerpt: "Layer5 - CommunityBridge 2020"
 
 The Linux Foundation's [CommunityBridge](https://communitybridge.org) is building a healthy ecosystem around the open source software by funding projects, securing code, and connecting with talented developers.
 
-Layer5 is planning to participate in the CommunityBridge's mentorship program in 2020. We'll announce more details pending our acceptance into the program.
+Layer5 is participating in the CommunityBridge's mentorship program in 2020. 
+
+### Projects 
+
+#### SMI Conformance Testing
+
+<b>Description:</b> 
+Ensure that a service mesh is properly configured and that its behavior conforms to official SMI specifications. Conformance consists of both capabilities and compliance status as outlined in the design specification.
+
+<b>Recommended Skills:</b> 
+Golang (nice to have: Kubernetes, Service Mesh)
+
+<b>Mentor(s):</b> 
+Lee Calcote (<a href="https://twitter.com/lcalcote">@lcalcote</a>), Vinayak Shinde (<a href="https://twitter.com/vinushnd">@vinushnd</a>)
+
+<b>Github Issue:</b> 
+https://github.com/servicemeshinterface/smi-spec/issues/70
