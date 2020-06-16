@@ -26,14 +26,14 @@ GEM
     execjs (2.7.0)
     fastimage (1.8.1)
       addressable (~> 2.3, >= 2.3.5)
-    ffi (1.12.2)
+    ffi (1.13.1)
     forwardable-extended (2.6.0)
     hike (1.2.3)
     htmlcompressor (0.4.0)
     http_parser.rb (0.6.0)
-    i18n (1.8.2)
+    i18n (1.8.3)
       concurrent-ruby (~> 1.0)
-    jekyll (4.0.0)
+    jekyll (4.0.1)
       addressable (~> 2.4)
       colorator (~> 1.0)
       em-websocket (~> 0.5)
@@ -108,7 +108,7 @@ GEM
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    public_suffix (4.0.4)
+    public_suffix (4.0.5)
     puma (4.3.3)
       nio4r (~> 2.0)
     rack (1.6.13)
@@ -118,12 +118,12 @@ GEM
       rack (~> 1.5)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rb-fsevent (0.10.3)
+    rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.0)
     rexml (3.2.4)
-    rouge (3.18.0)
+    rouge (3.20.0)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -144,7 +144,7 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sassc (2.3.0)
+    sassc (2.4.0)
       ffi (~> 1.9)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
@@ -191,7 +191,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.6.5p114
+   ruby 2.7.0p0
 
 BUNDLED WITH
    2.1.4
