@@ -33,7 +33,6 @@
   width: 80%;
   display: table;
   height: 150px; /* any arbitrary height but best at the minimum initial height you would want. */
-  overflow: hidden;
   background: #EEE;
   margin: 0px auto;
   transition-timing-function: linear;
@@ -2262,6 +2261,11 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
 
 .black-text {
   color: #000000 !important;
+}
+
+.mlh {
+  color: #000000 !important;
+  font-size: 14px;
 }
 
 .white {
@@ -6007,6 +6011,15 @@ button.btn-floating {
 
 .btn-block {
   display: block;
+}
+
+.clipboard-copy-btn {
+  position: absolute;
+  padding: 0px;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 28px;
 }
 
 .dropdown-content {
