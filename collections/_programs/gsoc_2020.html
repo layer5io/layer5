@@ -56,29 +56,6 @@ excerpt: "Layer5 - Google Summer of Code 2020"
   </div>
   <h5 class="black-text">Project Ideas</h5>
   <div style="margin-left: 25px;">
-    <b>Benchmarks for Network Service Mesh, Istio, Citrix</b>
-    <ul>
-      <li class="gsoc">
-        <b>Description</b>: Network Service Mesh, like other service meshes are
-        plagued by the question of adopters asking the question: "what's the
-        performance overhead of the service mesh?". Network Service Mesh,
-        Linkerd, Istio, Envoy and the list of other service meshes don't have a
-        consistent set of performance benchmarks between them. So, even if Envoy
-        were to publish performance results, users still wouldn't be able to
-        compare overhead between Linkerd and Envoy. The project idea here is to
-        build a multi-mesh performance benchmark tool.
-      </li>
-      <li class="gsoc">Recommended Skills: Golang, React, Kubernetes</li>
-      <li class="gsoc">
-        Mentor(s): Lee Calcote (<a href="https://twitter.com/lcalcote"
-          >@lcalcote</a
-        >), Sagar Utekar (<a href="https://twitter.com/named_uttu"
-          >@hnamed_uttu</a
-        >)
-      </li>
-    </ul>
-  </div>
-  <div style="margin-left: 25px;">
     <b>SMI Conformance Testing</b>
     <ul>
       <li class="gsoc">
@@ -105,6 +82,10 @@ excerpt: "Layer5 - Google Summer of Code 2020"
           >https://github.com/servicemeshinterface/smi-spec/issues/70
         </a>
       </li>
+      <li class="gsoc">
+      <b>Mentee:</b> 
+Naveen Jain (<a href="https://github.com/nveenjain">@nveenjain</a>)
+</li>
     </ul>
   </div>
   <div style="margin-left: 25px;">
@@ -139,93 +120,16 @@ excerpt: "Layer5 - Google Summer of Code 2020"
           >https://github.com/envoyproxy/envoy-perf/issues/72
         </a>
       </li>
+            <li class="gsoc">
+      <b>Mentee:</b> 
+Kush Trivedi (<a href="https://github.com/kushthedude">@kushthedude</a>)
+</li>
     </ul>
   </div>
-  <div style="margin-left: 25px;">
-    <b>Service Mesh Performance Specification and Index</b>
-    <ul>
-      <li class="gsoc">
-        <b>Description</b>: A formal specification for capturing the details of
-        a performance test, it’s results, environment and workload details.
-        Design an algorithm for calculating a MeshDex value - an
-        easy-to-comprehend number identifying the overhead to value ratio a
-        given service mesh deployment is operating at.
-      </li>
-      <li class="gsoc"><b>Recommended Skills</b>: Golang, Kubernetes</li>
-      <li class="gsoc">
-        <b>Mentor(s)</b>: Prateek Sahu (<a
-          href="https://twitter.com/prateeksahu22"
-          >@PrateekSahu22</a
-        >), , Shivay Lamba, Lee Calcote (<a href="https://twitter.com/lcalcote"
-          >@lcalcote</a
-        >)
-      </li>
-    </ul>
-  </div>
-  <div style="margin-left: 25px;">
-    <b>Kubernetes controller for Meshery</b>
-    <ul>
-      <li class="gsoc">
-        <b>Description</b>: A Kubernetes controller that provides Meshery Custom
-        Resource Definitions like perf wherein a user could manage scheduled
-        performance jobs like this: kubectl get meshperfand see a list of
-        scheduled performance tests. In this, they would have a
-        Kubernetes-native experience for leveraging Meshery’s functionality.
-        Other functionality like kubectl get meshevents, which should give them
-        a list of outstanding recommendations on best practice violations in a
-        format similar to kubectl get events.
-        <a
-          href="https://meshery.io/images/screens/meshery-configuration-management.png"
-        >
-          Example</a
-        >
-      </li>
-      <li class="gsoc"><b>Recommended Skills</b>:</li>
-      <li class="gsoc">
-        <b>Mentor(s)</b>: Vinayak Shinde, Lee Calcote (<a
-          href="https://twitter.com/lcalcote"
-          >@lcalcote</a
-        >)
-      </li>
-    </ul>
-  </div>
-  <div style="margin-left: 25px;">
-    <b>A Kubernetes Operator for Meshery</b>
-    <ul>
-      <li class="gsoc">
-        <b>Description</b>: Lifecycle management of Meshery as an application.
-        Operators are often written for this purpose - to care and feed for the
-        application under management. This could be activities that mesheryctl
-        does today about start/status/stop/update/logs/reset.
-      </li>
-      <li class="gsoc"><b>Recommended Skills</b>:</li>
-      <li class="gsoc">
-        <b>Mentor(s)</b>: Vinayak Shinde, Lee Calcote (<a
-          href="https://twitter.com/lcalcote"
-          >@lcalcote</a
-        >)
-      </li>
-    </ul>
-  </div>
-  <div style="margin-left: 25px;">
-    <b>Meshery Monkey</b>
-    <ul>
-      <li class="gsoc">
-        <b>Description</b>: Bring chaos engineering to the service mesh. Service
-        meshes are quite capable of facilitating fine-grained network chaos in
-        the form of latency, jitter, packet loss, mangled packets, and so on.
-        Provide a tool for defining, executing, scheduling service mesh
-        experiments. Leverage and incorporate
-        <a href="https://github.com/pingcap/chaos-mesh">Chaos Mesh</a>.
-      </li>
-      <li class="gsoc"><b>Recommended Skills</b>: Golang</li>
-      <li class="gsoc">
-        <b>Mentor(s)</b>: Sagar Utekar (<a href="https://twitter.com/named_uttu"
-          >@named_uttu</a
-        >), Lee Calcote (<a href="https://twitter.com/lcalcote">@lcalcote</a>)
-      </li>
-    </ul>
-  </div>
+  
+  
+
+
   <div style="flex-grow: 0.25;">&nbsp;</div>
   <hr />
   <div style="flex-grow: 0.25;">&nbsp;</div>

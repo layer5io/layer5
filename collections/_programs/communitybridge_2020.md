@@ -32,3 +32,6 @@ Lee Calcote (<a href="https://twitter.com/lcalcote">@lcalcote</a>), Vinayak Shin
 
 <b>Github Issue:</b> 
 https://github.com/servicemeshinterface/smi-spec/issues/70
+
+<b>Mentee:</b> 
+Kanishkar J (<a href="https://github.com/kanishkarj">@kanishkarj</a>)
