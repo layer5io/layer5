@@ -2263,6 +2263,11 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   color: #000000 !important;
 }
 
+.mlh {
+  color: #000000 !important;
+  font-size: 14px;
+}
+
 .white {
   background-color: #FFFFFF !important;
 }
