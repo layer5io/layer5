@@ -20,7 +20,7 @@ The Linux Foundation's [CommunityBridge](https://communitybridge.org) is buildin
 
 ### Projects 
 
-#### SMI Conformance Testing
+#### Service Mesh Interface Conformance Testing
 
 <b>Description:</b> 
 Ensure that a service mesh is properly configured and that its behavior conforms to official SMI specifications. Conformance consists of both capabilities and compliance status as outlined in the design specification.
