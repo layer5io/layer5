@@ -1,6 +1,11 @@
 <div class="col l4">
     <!----------multi language support----------->
+    {% if include.text == "white" %}
+    <p class="white-text" style="font-weight: bold;font-size:1.3em;">Language</p>
+    {% else %}
     <p class="black-text" style="font-weight: bold;font-size:1.3em;">Language</p>
+    {% endif %}
+    
     <div style="margin-top:-50px;margin-left:25px;">
 
       <a href="#" onclick="doGTranslate('en|en');return false;" title="English" class="gflag nturl" style="background-position:-200px -0px;-webkit-filter: grayscale(90%);filter: grayscale(90%);"></br><img src="/assets/images/flags/en.svg" alt="English" /></a>
