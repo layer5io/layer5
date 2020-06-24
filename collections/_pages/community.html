@@ -10,7 +10,8 @@ image: /assets/images/layer5/layer5-tag-community-white-bg.png
 <div class="container">
   <div id="community" class="section scrollspy">
     <h3 style="text-align: center; color: aliceblue;">
-      <a href="/news" class="white-text">The Service Mesh Community</a>
+      <a href="/news" class="white-text">The largest collection of
+        service mesh projects and their maintainers in the world</a>
     </h3>
     <div
       class="row white-bg"
@@ -33,9 +34,10 @@ image: /assets/images/layer5/layer5-tag-community-white-bg.png
         "
       >
         {% include community/community.html %}
-      </div>
-      <div
-        class="col s12 m6"
+        
+        
+        <div
+        
         style="
           display: flex;
           height: auto;
@@ -46,36 +48,28 @@ image: /assets/images/layer5/layer5-tag-community-white-bg.png
           position: relative;
         "
       >
-        <h3 style="text-align: center; color: aliceblue;">
-          <a href="http://slack.layer5.io" class="black-text">Engage</a>
-        </h3>
-        <p>Learn from others using service meshes.</p>
+      <h3 style="text-align: center; color: aliceblue;">
+        <a href="http://slack.layer5.io" class="black-text">Engage</a>
+      </h3>
+      <p>Learn from others using service meshes.</p>
         {% include partials/vert-social.html %}
-        <div>
-          <img
-            src="/assets/images/datacenter-crash.svg"
-            width="70%"
-            style="text-align: center;"
-          />
-        </div>
 
         {% include newsletter-signup.html heading-class="black-text"
-        forklift="no" %}
+        forklift="no" title="no" %}
       </div>
-
+      </div>
       <div 
-        class="col s12 m12"
-        style="
-          display: flex;
-          height: auto;
-          flex-direction: column;
-          flex-flow: column;
-          vertical-align: middle;
-          position: relative;
-        "
-        >
-        {% include community/mentor-program.html %}
-      </div>
+      class="col s12 m6"
+      style="
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        flex-flow: column;
+        vertical-align: middle;
+        position: relative;
+      "
+      >
+      {% include community/mentor-program.html %}
     </div>
   </div>
 </div>
