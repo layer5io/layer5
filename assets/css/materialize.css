@@ -1794,7 +1794,7 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   color: var(--main-light-gray) !important;
 }
 
-.l5-bg-dark-grey {
+.l5-dark-grey {
   background-color: var(--main-dark-grey) !important;
   color: var(--main-dark-grey) !important;
 }
