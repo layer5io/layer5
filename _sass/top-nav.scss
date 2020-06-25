@@ -165,11 +165,11 @@
     }
 
     .cta { 
-        border: 1px solid $main-light-green;
+        border: .15rem solid $main-light-green;
         border-radius: 5px;
         &:hover {
             font-weight: inherit;
-            border: 1px solid  $main-dark-green;
+            border: .15rem solid  $main-dark-green;
             background-color: $main-light-green;
             border-radius: 5px;
             color: #fff;
