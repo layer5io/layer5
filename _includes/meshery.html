@@ -5,8 +5,7 @@
         <div class="col s12 m12">
           <h5 style="text-align:center;color:aliceblue;">
           <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
-            class="waves-effect waves-dark btn white-text darken-2 l5-light-blue
- z-depth-4"
+            class="waves-effect waves-light btn white-text darken-2 l5-dark-yellow"
             href="#getting-started">Run Meshery</a> 
           </h5>
         </div>
@@ -284,21 +283,20 @@
       <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Homebrew:</p>        
 
       <div id="start-brew" class="highlight highlight-source-shell">
-          <div style="width:auto; height:auto; padding:0px; position:relative;">
-            <pre><code></br> $ brew tap layer5io/tap</br> $ brew install mesheryctl</br> $ mesheryctl start
-            </code></pre>
-            <!-- copy to clipboard -->
-            <a class="btn clipboard-copy-btn tooltip"
-              style="background:none; border: 0;"
-              data-clipboard-target="#start-brew"
-              data-clipboard-text="brew tap layer5io/tap
-              brew install mesheryctl
-              mesheryctl start" onmouseout="resetCopyText(this)">
-              <i class="far fa-copy"></i>
-              <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
-            </a>
-        </div>
+        <div style="width:auto; height:auto; padding:0px; position:relative;">
+          <pre><code></br> $ brew install layer5io/mesheryctl</br> $ mesheryctl system start
+          </code></pre>
+          <!-- copy to clipboard -->
+          <a class="btn clipboard-copy-btn tooltip"
+            style="background:none; border: 0;"
+            data-clipboard-target="#start-brew"
+            data-clipboard-text="brew install layer5io/mesheryctl
+            mesheryctl system start" onmouseout="resetCopyText(this)">
+            <i class="far fa-copy"></i>
+            <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
+          </a>
       </div>
+    </div>
       
       <div class="toggle">
         <h4>Kubernetes user</h4>
@@ -384,7 +382,7 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
     <div class="tooltip">
     <li>
       <a href="https://docs.google.com/document/d/1c07UO9dS7_tFD-ClCWHIrEzRnzUJoFQ10EzfJTpS7FY/edit?usp=sharing" target="_blank">
-        <img class="comm_icon_meeting"src="/assets/images/meshery/comments-regular.svg" alt="Meeting Minutes Link">
+        <img class="comm_icon_meeting" src="/assets/images/meshery/comments-regular.svg" alt="Meeting Minutes Link">
       </a>
     </li>
     <span class="tooltiptext">Join the weekly community meeting on Fridays at 10am Central.</span>
