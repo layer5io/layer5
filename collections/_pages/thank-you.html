@@ -1,21 +1,31 @@
 ---
 layout: default
 permalink: thank-you
+redirect_from: thank-you/
 ---
+
 <div id="home" class="section scrollspy">
-    <div id="index-banner" class="parallax-container" >
-      <div class="container">
-        <div class="post-content" style="padding-top:2em;padding-left:2em;padding-right:2em;" itemprop="articleBody">
-           <p style=" font-size: 2em;line-height:30px; text-align: center;" 
-           class="dark text-lighten-2">Your subscription is confirmed.</p>
-           <p style=" font-size: 1.25em;line-height:15px;text-align: center;" 
-           class="light text-lighten-1">
-           Thank you for <a class="black-text" href="/subscribe">subscribing</a>! </p>
-        </div>
-        
-        </div>
-      </div>
-      <div>
+  <div id="index-banner">
+    <div class="container">
+      <div
+        class="post-content"
+        style="padding-top: 2em; padding-left: 2em; padding-right: 2em;"
+        itemprop="articleBody"
+      >
+        <p
+          style="font-size: 2em; line-height: 30px; text-align: center;"
+          class="dark text-lighten-2"
+        >
+          Your subscription is confirmed.
+        </p>
+        <p
+          style="font-size: 1.25em; line-height: 15px; text-align: center;"
+          class="light text-lighten-1"
+        >
+          Thank you for <a class="black-text" href="/subscribe">subscribing</a>!
+        </p>
       </div>
     </div>
   </div>
+</div>
+{% include collections/projects-list.html %}

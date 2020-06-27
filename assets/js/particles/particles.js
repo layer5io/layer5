@@ -1509,8 +1509,8 @@ window.particlesJS = function(tag_id, params){
 
   /* set size canvas */
   canvas_el.style.width = "100%";
-  canvas_el.style.height = "50%";
-  canvas_el.height = "50%";
+  // canvas_el.style.height = "50%";
+  // canvas_el.height = "50%";
 
   //canvas_el.style.position = "absolute";
 
