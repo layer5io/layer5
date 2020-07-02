@@ -20,7 +20,7 @@ Find us on Twitter: <a href="https://twitter.com/layer5"><img src="assets/images
 align="bottom" />@layer5</a> and <a href="https://twitter.com/mesheryio">@mesheryio</a>
 </p>
 
-## <a name="landscape">Updating the Service Mesh Landscape</a>
+Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to our [Code of Conduct](.CODE_OF_CONDUCT.md).
 
 We encourage community curation of the landscape (all are encouraged to participate). We also encourage representatives of the projects/products in the landscape to curate and maintain their listings so as to guarantee their freshness and accuracy of representation. 
 
