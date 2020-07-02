@@ -3,7 +3,7 @@ You want to contribute to the project? Yay! We want you to! Visit our centralize
 
 ## Contribution
 
-Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to our [Code of Conduct](.CODE_OF_CONDUCT.md).
 
 
 ### <a name="updating-the-service-mesh-landscape">Updating the Landscape</a>
