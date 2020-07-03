@@ -28,6 +28,9 @@
     - name: Join
       link: /community
       new_window: false
+    - name: MeshMates
+      link: /community/meshmates
+      new_window: false
     - name: Partners
       link: /partners
       new_window: false

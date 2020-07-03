@@ -1,0 +1,47 @@
+<a name="meshmate"></a><h3 class="black-text">Our MeshMates</h3>
+<div class="row">
+  {% assign sorted = (site.members | sort: 'date') | reverse %} {% for member
+  in sorted %} {% if member.visibility != "hide" and member.meshmate %}
+
+  <div class="col s12 m3">
+    <div class="card">
+      <!-- <a
+        href="/community/member/{{ member.name}}"
+        class="waves-effect z-depth-4 white-text waves-light darken-3"
+        style="background-color:{{ site.layer5.gray }}; width: 100%;"
+      > -->
+        <div
+          class="card-image"
+          style="{{ member.img_style }} min-height: 130px;"
+        >
+          <img
+            class="light-shadow"
+            src="{{member.image_path}}"
+            style="
+              max-width: 90%;
+              max-height: 180px;
+              width: auto;
+              height: auto;
+              text-align: center;
+              padding: 5%;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          />
+          <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
+          <!-- <a id="{{site.url}}{{ event.link }}" class="btn-floating halfway-fab waves-effect z-depth-4 
+          l5-dark-yellow
+ waves-dark darken-3"
+          href="{{site.url}}{{ event.link }}">
+          <i class="material-icons">more_horiz</i></a> -->
+        </div>
+        <div class="card-content center">
+          <h5 class="white-text">{{member.name}}</h5>
+          <p>{{ member.github }}</p>
+        </div>
+      <!-- </a> -->
+    </div>
+  </div>
+
+  {% endif %} {% endfor %}
+</div>
