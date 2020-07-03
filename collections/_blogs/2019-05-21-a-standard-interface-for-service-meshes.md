@@ -5,7 +5,6 @@ date:   2019-05-21 12:15:05 +0000
 image: /assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png
 author: Lee Calcote
 permalink: /blog/a-standard-interface-for-service-meshes
-
 ---
 <div class="row" style="float:right;padding:20px;text-align:center;">
 <a href="https://smi-spec.io" rel="nofollow"><img src="/assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png" alt="" width="220"  /></a>
