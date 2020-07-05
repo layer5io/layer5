@@ -13,7 +13,7 @@
       link: /performance
       new_window: false
     - name: Service Mesh Interface Conformance
-      link: https://github.com/layer5io/smi-conformance
+      link: /service-mesh-interface
       new_window: true    
       external: true        
     - name: WebAssembly - Image Hub

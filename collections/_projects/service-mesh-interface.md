@@ -1,6 +1,6 @@
 ---
 layout: project
-title:  "Service Mesh Interface"
+title:  "Meshery - the SMI Conformance Tool"
 description: "Layer5 is a prominent maintainer and supporter of SMI, advancing its specifications and delivering conformance tooling through Meshery."
 author:
   twitter: layer5
@@ -14,44 +14,43 @@ link: /service-mesh-interface
 redirect_from: smi
 
 ---
-<style>
-ul.bullet li {
-  list-style-type: circle;
-  margin-left:15px;
-  position: relative;
-  text-align: left;
-}
-ul.bullet ul {
-  margin-left:25px;
-  list-style-position: inside;
-}
-ul.bullet li ul {
-  list-style-type: circle;
-  margin-left:15px;
-}
-</style>
-<div class="row" style="vertical-align: middle;">
-  <p>
-    <img src="/assets/images/buttons/smps_black.svg" 
-      class="light-shadow" width="25%" style="display:inline;float:left;margin-right:5%;padding:10px;" />
-    The Service Mesh Performance Specification (SMPS) is a vendor-neutral specification for capturing details of:
-    
-    <ul class="bullet" style="position: relative; left:40px;">
-        <li>Environment and infrastructure details</li>
-        <ul class="bullet">
-            <li>Number and size of nodes, orchestrator</li>
-        </ul>
-        <li>Service mesh and its configuration</li>
-        <li>Service / application details</li>
-        <li>Bundled with test results.</li>
+<div class="row" id="smi" >
+  <div class="col m6">
+    <h3>
+      Purpose and Overview
+    </h3>
+    <p>The scope of this initiative includes all service mesh projects participating in the Service Mesh Interface specification. It’s important to acknowledge that conformance consists of both capabilities and compliance status. 
+    </p>
+    <h4>Project Goals</h4>
+    <ul>
+      <li>Provide users with a compatibility matrix identifying the SMI features that are supported per service mesh.</li>
+      <li>An easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.</li>
     </ul>
-  </p>
-    <p>SMPS is a collaborative effort of Layer5, Google, and The Linux Foundation.</p>
-    <h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;"><a href="https://github.com/layer5io/service-mesh-performance-specification">Learn more</a> about the Service Mesh Performance Specification.</h5>
-    
-</div>
-</div>
+    <h4>Project Objectives
+    </h4>
+    <ul>
+      <li>Define what it means to be in conformance with the SMI specifications. </li>
+      <li>Define a set of conformance tests and  what behavior is expected of a conforming service mesh implementation.</li>
+      <li>Built into each participating service mesh project’s release tooling.</li>
+    </ul>
+    <h4>Validating Conformance</h4>
+<p>Conformance to SMI specifications will be done through use of a service mesh’s workload. A sample application is used as the workload to test.</p>
+<h5>Sample Application</h5>
+<p>To facilitate a common set of tests, a sample application has been developed for purposes of providing a consistent workload to apply SMI specs against. 
+  A deployment of the <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> sample application being fitted to each service mesh.</p>
+  </div>
+  <div class="col m6">
+    <div style="text-align: center; padding: 0; margin: 0;">
+      <img
+        src="/assets/images/buttons/servicemeshinterface-icon-color.svg"
+        width="50%"
+      />
+      <h5 style="text-align:center;color:aliceblue;">
+        <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
+          class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow"
+          href="/meshery/#getting-started">Run SMI Conformance</a> 
+        </h5>
+    </div>
 
-<h3 style="text-align:center;color:aliceblue;"><a href="/projects" alt="Service Mesh Tools" style="color:aliceblue;">Other Projects</a></h3>
-
-{% include collections/projects.html excluded_project="/performance" %}
+  </div>
+</div>
