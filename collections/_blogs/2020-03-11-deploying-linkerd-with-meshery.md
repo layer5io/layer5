@@ -22,7 +22,7 @@ But with so many mesh options around - how do we choose, evaluate and compare th
 
  Linkerd is a system that comes from the service mesh pioneers - the company called Buoyant. They were the first to realise the need for a distributed network of smart, centrally configured proxies and coin the term “service mesh” back in 2016. Today, we’ll be looking at Linkerd 2.x - the second generation of this now CNCF project.
 </div>
-<div class="text editable pull-right">
+<div class="text editable pull-right table-2">
 <h5 class="black-text">Meshery Adapters</h5>
     <table class="adapters">
         <thead class="hidden">
