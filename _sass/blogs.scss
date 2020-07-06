@@ -1,0 +1,41 @@
+kbd, pre, samp {
+  background-color: black;
+  color: white;
+  padding:10px;
+}
+
+code {
+  color: #666;
+}
+
+.sub-heading {
+  color:gray;
+  position:relative;
+  top:-10px;
+}
+
+.to-uppercase {
+  text-transform: uppercase;
+}
+
+.content-left-margin {
+  margin-left:.5em;
+}
+
+.table-1 {
+  line-height: .15em;
+  white-space: nowrap;
+  max-width:290px;
+}
+
+.table-box {
+  margin-top:2em;
+  margin-bottom:2em;
+  width:50%;
+  border: 2px solid gray;
+}
+.text-centre {
+  text-align:center
+}
+
+
