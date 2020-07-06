@@ -28,6 +28,11 @@ code {
   max-width:290px;
 }
 
+.table-2 {
+  width:40%;
+  margin-left:1.8em;
+}
+
 .table-box {
   margin-top:2em;
   margin-bottom:2em;
@@ -44,9 +49,7 @@ code {
 }
 
 .pull-right {
-  width:40%;
   float:right;
-  margin-left:1.8em;
 }
 
 .hidden {
@@ -60,4 +63,8 @@ code {
 .embed-dimension {
   min-height: 315px;
   min-width: 280px;
+}
+
+.pa-20{
+  padding: 20px;
 }
