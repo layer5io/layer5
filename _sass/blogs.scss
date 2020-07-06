@@ -38,4 +38,26 @@ code {
   text-align:center
 }
 
+.starting-letter {
+  margin-left:.75em;
+  font-size: 2em;
+}
 
+.pull-right {
+  width:40%;
+  float:right;
+  margin-left:1.8em;
+}
+
+.hidden {
+  display:none;
+}
+
+.fit-content {
+  width:fit-content;
+}
+
+.embed-dimension {
+  min-height: 315px;
+  min-width: 280px;
+}
