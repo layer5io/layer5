@@ -4,8 +4,8 @@ title: "MLH Fellowship"
 image:
 path: /assets/images/buttons/fellowship.png
 thumbnail: /assets/images/programs/fellowship_gray.png
-link: /mlhfellowship/2020
-permalink: /mlhfellowship/2020
+link: /programs/mlhfellowship/2020
+permalink: /programs/mlhfellowship/2020
 excerpt: "Layer5 - MLH Fellowship 2020"
 visibility: hide
 ---
