@@ -8,7 +8,17 @@ permalink: /blog/my-meshy-journey
 tags: community, open source
 category: contributor
 ---
-# My Meshy Journey
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+  height: 50%;
+}
+</style>
+
+<img src="/assets/images/posts/2020-07-06-my-meshy-journey/ishita-kumar.jpg" alt="Ishita Kumar" class="center" />
 
 As a graduate student at the Indiana University Bloomington, studying for my Masters in Computer Science, little did I consider that my thesis project would lead me on this amazing journey to becoming an open source contributor. My adventure with Layer5 has been a highly informative and invigorating experience, from coming aboard as a Meshery user to becoming an open source contributor.
 
