@@ -12,10 +12,12 @@
 ### About Layer5
 
 **Community First**
-<p>The <a href="https://layer5.io">Layer5</a> community represents the largest collection of service mesh projects and their maintainers in the world.</p>
+
+The [Layer5](https://layer5.io) community represents the largest collection of service mesh projects and their maintainers in the world.
 
 **Open Source First**
-<p>We build projects to provide learning environments, deployment and operational best practices, performance benchmarks, create documentation, share networking opportunities, and more. Our shared commitment to the open source spirit pushes Layer5 projects forward.</p>
+
+We create and steward initiatives that press on the service mesh-centric envelope of Cloud Native. Our shared commitment to the open source spirit compels our community members to push Layer5 projects forward.
 
 # Projects
 
@@ -34,12 +36,11 @@ alt="Meshery - Service Mesh Management Plane" align="left" /></a>
 style="float:left;margin:10px;" width="125px" 
 alt="Service Mesh Landscape Ecosystem" align="left"/></a>
 The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
-<br /><br /><br /><br />
+<br /><br /><br />
 </p>
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a></h2>
-
 <a href="https://layer5.io/performance"><img src="assets/images/buttons/smps.png"
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Performance Specification Index" align="left" /></a>
@@ -49,7 +50,6 @@ The <a href="https://layer5.io/performance">Service Mesh Benchmark Specification
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/image-hub">Image Hub</a></h2>
-
 <a href="https://layer5.io/projects/image-hub"><img src="assets/images/image-hub/layer5-image-hub.png"
 style="float:left;margin:10px;" width="125px"
 alt="Image Hub" align="left" /></a>
