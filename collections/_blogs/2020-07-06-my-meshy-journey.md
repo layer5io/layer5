@@ -1,26 +1,10 @@
----
-layout: post
-title:  "My Meshy Journey"
-date:   2020-07-03 12:15:05 +0000
-image: /assets/images/posts/2020-07-06-my-meshy-journey/ishita-kumar.png
-author: Ishita Kumar
+--- layout: post title: "My Meshy Journey" date: 2020-07-03 12:15:05 +0000 image: /assets/images/posts/2020-07-06-my-meshy-journey/ishita-kumar.png author: Ishita Kumar
 #permalink:
 tags: community, open source
 category: contributor
 ---
 
-<style type="text/css">
-.image-left {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  height: 50%;
-  float: right;
-}
-</style>
-
-<img src="/assets/images/posts/2020-07-06-my-meshy-journey/ishita-kumar-profile.jpg" class="image-left" />
+<div class="image-left"><img src="/assets/images/posts/2020-07-06-my-meshy-journey/ishita-kumar-profile.jpg" alt="Ishita Kumar Profile"></div>
 
 As a graduate student at the Indiana University Bloomington, studying for my Masters in Computer Science, little did I consider that my thesis project would lead me on this amazing journey to becoming an open source contributor. 
 <br /> <br />My adventure with Layer5 has been a highly informative and invigorating experience, from coming aboard as a Meshery user to becoming an open source contributor. My initial interest in Layer5 was sparked when, for a project in my Masters course, I was required to build a microservice architecture and develop a service layer on top of it.
