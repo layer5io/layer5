@@ -141,7 +141,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 4.0.0)
+  jekyll (~> 4.0.1)
   jekyll-archives
   jekyll-assets
   jekyll-feed (~> 0.6)
