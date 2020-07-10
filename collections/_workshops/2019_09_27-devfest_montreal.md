@@ -10,7 +10,7 @@ By the end of this live, hands-on, online course, you’ll understand:
 <li>- Approaches to canary deployments and securing communication with Istio.</li></ul>"
 img: /assets/images/workshops/devfest-montreal.svg
 style: "position:relative;height:320px;overflow:hidden; padding-top: 15%;padding-left:5%;padding-right:5%"
-eurl: https://devfest.cloud-montreal.ca/schedule/2019-09-28?sessionId=405
+#eurl: https://devfest.cloud-montreal.ca/schedule/2019-09-28?sessionId=405
 labs: https://github.com/leecalcote/istio-service-mesh-workshop
 slides: https://calcotestudios.com/talks/decks/slides-devfest-montreal-2019-introduction-to-istio.html
 slack: http://slack.layer5.io
