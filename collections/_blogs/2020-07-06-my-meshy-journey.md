@@ -1,5 +1,10 @@
---- layout: post title: "My Meshy Journey" date: 2020-07-03 12:15:05 +0000 image: /assets/images/posts/2020-07-06-my-meshy-journey/ishita-kumar.png author: Ishita Kumar
-#permalink:
+--- 
+layout: post 
+title: "My Meshy Journey" 
+date: 2020-07-03 12:15:05 +0000 
+image: /assets/images/posts/2020-07-06-my-meshy-journey/ishita-kumar.png 
+author: Ishita Kumar
+permalink: /blog/my-meshy-journey
 tags: community, open source
 category: contributor
 ---
