@@ -58,7 +58,7 @@ To ensure all your commits are signed, you may choose to add this alias to your 
 ```
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
-<a href="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" ><img src="https://user-images.githubusercontent.com/7570704/64490167-98906400-d25a-11e9-8b8a-5f465b854d49.png" width="50%"><a>
+<a href="./assets/images/git-signoff-vscode.png" ><img src="./assets/images/git-signoff-vscode.png" width="50%"><a>
 
 ### <a name="flow">Contribution Flow</a>
 Please contribute! The Layer5 site uses GitHub Pages (Jekyll) to host its site. The process of contributing to documentation follows this flow:
