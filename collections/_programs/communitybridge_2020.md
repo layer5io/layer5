@@ -4,8 +4,8 @@ title: "CommunityBridge 2020"
 image:
 path: /assets/images/programs/communitybridge-horizontal-white.svg
 thumbnail: /assets/images/programs/communitybridge-horizontal-white.svg
-link: /communitybridge/2020
-permalink: /communitybridge/2020
+link: /programs/communitybridge/2020
+permalink: /programs/communitybridge/2020
 excerpt: "Layer5 - CommunityBridge 2020"
 ---
 <img
