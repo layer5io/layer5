@@ -170,7 +170,11 @@
                       <td><a href="https://github.com/layer5io/meshery-kuma">
                           <img src='/assets/images/landscape/Kuma.svg' alt='Kuma Service Mesh' class="adapter-logo">Meshery adapter for Kuma</a>
                       </td>
-                  </tr><tr>
+                  </tr>
+                  <tr>
+                    <td><a href="https://github.com/layer5io/meshery-tanzu-sm">
+                      <img src='/assets/images/landscape/tanzu.png' alt='Tanzu Service Mesh' class="adapter-logo">Meshery adapter for Tanzu SM</a>
+                    </td>
                   </tr>
                   <tr><td class="alpha-adapters"></td></tr>
                   </tbody>
@@ -264,9 +268,9 @@
 
       <h4>Bash user</h4>
       <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Docker, install Meshery on your local machine by running the following:</p>
-      <div id="start" class="highlight highlight-source-shell">
+      <div id="start" class="highlight">
       <div style="width:auto; height:auto; padding:0px; position:relative;">
-            <pre><code>
+            <pre><code style="color:#eee;">
  $ curl -L https://git.io/meshery | bash -    
         </code></pre>
             <!-- copy to clipboard -->
@@ -282,9 +286,9 @@
       <h4>Brew user</h4>
       <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Homebrew:</p>        
 
-      <div id="start-brew" class="highlight highlight-source-shell">
+      <div id="start-brew">
         <div style="width:auto; height:auto; padding:0px; position:relative;">
-          <pre><code></br> $ brew install layer5io/mesheryctl</br> $ mesheryctl system start
+          <pre><code style="color:#eee;"></br> $ brew install layer5io/mesheryctl</br> $ mesheryctl system start
           </code></pre>
           <!-- copy to clipboard -->
           <a class="btn clipboard-copy-btn tooltip"
@@ -307,12 +311,12 @@
           <div class="innerdiv">
             
       <p>Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
-      <div class="highlight highlight-source-shell">
+      <div class="highlight">
         
 
 
         <div style="width:auto; height:auto; padding:0px; position:relative;">
-            <pre><code>
+            <pre><code style="color:#eee;">
  $ git clone https://github.com/layer5io/meshery.git; cd meshery        
         </code></pre>
             <!-- copy to clipboard -->
@@ -330,10 +334,10 @@
 
       </div>
     <p>Install Meshery on your cluster by running the following:</p>
-    <div class="highlight highlight-source-shell">
+    <div class="highlight">
 
 <div style="width:auto; height:auto; padding:0px; position:relative;">
-            <pre><code>
+            <pre><code style="color:#eee;">
   $ kubectl create ns meshery
   $ kubectl -n meshery apply -f install/deployment_yamls/k8s
 
