@@ -8,4 +8,4 @@ image: https://raw.githubusercontent.com/cncf/artwork/master/other/cncf-landscap
 #permalink:  https://landscape.cncf.io/category=service-mesh&format=card-mode&grouping=category&selected=meshery
 eurl:  https://landscape.cncf.io/category=service-mesh&format=card-mode&grouping=category&selected=meshery
 ---
-<img src="/assets/images/posts/2019-11-15-layer5-joins-the-cncf/Meshery accepted into the CNCF Landscape.png" />
+<img src="/assets/images/posts/2019-11-15-layer5-joins-the-cncf/Meshery accepted into the CNCF Landscape.png" width="8vw" />
