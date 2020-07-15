@@ -6,9 +6,10 @@ image: /assets/images/posts/2020-06-23-gsoc-with-layer5-and-cncf/gsoc.png
 author: Kush Trivedi
 #permalink: /blog/gsoc-with-layer5-and-cncf
 ---
-<div class="center" style="color:gray;position:relative;top:-10px;"><i>One of the greatest learning experience yet.</i></div>
+<div class="center" style="color:gray;position:relative;top:-10px;font-size:1.25em;"><i>One of the greatest learning experience yet.</i></div>
 
 <h4 style="text-transform: uppercase;">How it all started ?</h4>
+<img src="/assets/images/posts/2020-06-23-gsoc-with-layer5-and-cncf/gsoc.png" align="right" />
 <p style="margin-left:.5em;">
 I was introduced to the Layer5 community by our very own Lee Calcote, and since then I have been exploring the vast world of service meshes, and their performance specs. Before my acceptance into GSoC while working with Layer5 community, I had explored various new DevOps tooling like service meshes, sidecar concept & benchmarking of services. I was involved with kubernetes community before & thought Kubernetes is the final stage of DevOps, but to my surprise where the kubernetes ends the concept of service meshes starts.
 </p>
