@@ -1,6 +1,6 @@
 ---
 layout: post
-date:   2020-07-2 08:00:00 +0000
+date:   2020-07-20 08:00:00 +0000
 image: /assets/images/meshery/meshery-text-dark.png
 author: Kush Trivedi
 
