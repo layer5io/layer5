@@ -1,33 +1,48 @@
 ---
 layout: post
-date:   2020-05-26 08:00:00 +0000
+date:   2020-07-2 08:00:00 +0000
 image: /assets/images/meshery/meshery-text-dark.png
 author: Kush Trivedi
-permalink: /blog/announcing-meshery
----
-<div class="center">
-<img src="/assets/images/meshery/meshery-logo-light-text-side.png"
-        alt="The service mesh management plane"
-        style="width:40%;"
-         />
-</div>
 
+---
+<style>
+.meshery-list-item {
+        background-image:url('/assets/images/meshery/meshery-shadow.svg');
+        height:1.5em;
+        vertical-align: bottom;
+        background-repeat: no-repeat;
+        padding-left: 25px;
+        margin-left: 15px;
+        width: 20px;
+        float:left;
+}
+</style>
+<img src="/assets/images/meshery/meshery-dark-tag-text.png"
+        alt="The service mesh management plane"
+        style="width:35%;float:left;margin-right:10px;margin-bottom:10px;"/>
 
 [Meshery](https://meshery.io) is the multi-service mesh management plane offering lifecycle, configuration and performance management of service meshes and their workloads.
 
 Here at Layer5, the community members and developers are hard at work with a singular aim - providing our users with better and easy access to our analysis tools. 
 New releases for Meshery are published from time to time, with new and improved features, bug fixes, performance improvisations and much more. This is a short summary to shine a light on the latest developments and elucidate any new features.
 
-We present to you Meshery v0.4.0. This release introduces a plethora of new features and bug fixes across service mesh environments, including Meshery and it's various adapters.
+## What's New?
 
-## What's New ?
+We present to you Meshery v0.4.0. This release introduces a plethora of new features and bug fixes across service mesh environments, including Meshery and it's various adapters.
 
 #### Mesheryctl
 
-- Mesheryctl has a new and improved command structure. We have switched to a more categoric set of command groups to make mesheryctl functions and features more intuitive and consequently, easier to use. See the new command structure [here](https://github.com/layer5io/meshery/pull/1021#issuecomment-630257536).
-- Introduction of new performance sub-commands, now benchmark your service mesh at the tip of your fingers using our new CLI command **Performance**.
-- Support extended to Scoop Bucket. You can now install mesheryctl on your Windows machine with scoop bucket. To see more on installation guide, visit [here](https://meshery.layer5.io/docs/installation#scoop)
-- Cleanup command has been changed to reset.
+<div class="meshery-list-item"></div>
+Mesheryctl has a new and improved command structure. We have switched to a more categoric set of command groups to make mesheryctl functions and features more intuitive and consequently, easier to use. See the new <a href="https://github.com/layer5io/meshery/pull/1021#issuecomment-630257536">command structure</a>.
+
+<div class="meshery-list-item"></div>
+Introduction of new performance sub-commands, now benchmark your service mesh at the tip of your fingers using our new CLI command **Performance**.
+
+<div class="meshery-list-item"></div>
+Support extended to Scoop Bucket. You can now install mesheryctl on your Windows machine with scoop bucket. To see more on installation guide, visit [here](https://meshery.layer5.io/docs/installation#scoop)
+
+<div class="meshery-list-item"></div>
+Cleanup command has been changed to reset.
 
 #### Security & Authentication
 
