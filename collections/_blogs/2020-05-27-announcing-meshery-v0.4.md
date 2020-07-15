@@ -32,7 +32,7 @@ We present to you Meshery v0.4.0. This release introduces a plethora of new feat
 #### Security & Authentication
 
 - Meshery has moved from using session authentication to JWT authentication; Meshery's JWT authentication is powered by Hydra-Auth.
-- You can now opt to authenticate yourself on mesheryctl. While performing performance tests using mesheryctl, you can choose to authenticate yourself by getting the JWT Token from Meshery-UI.
+- You can now opt to authenticate yourself on mesheryctl while performing performance tests using mesheryctl, you can authenticate yourself by getting the JWT Token from Meshery-UI.
 
 #### Meshery Server
 
@@ -47,7 +47,7 @@ We present to you Meshery v0.4.0. This release introduces a plethora of new feat
 
 #### Meshery UI
 
-- ES-Lint has been added to the client side to ensure the quality of code and reduce maintainence support costs.
+- ES-Lint has been added to the client side to ensure the quality of code and increase maintainaiblity of code.
 - Cypress has been set-up to enable e2e and integration tests for meshery-ui.
 
 #### Other notable changes
