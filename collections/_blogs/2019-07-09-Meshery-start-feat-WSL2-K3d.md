@@ -7,7 +7,7 @@ author: Nuno do Carmo
 permalink: /blog/2019-07-09-getting-started-with-Meshery-WSL2-k3d
 ---
 During KubeCon EU 2019, I had the chance to discover two new softwares that simply amazed me:
-1. [Meshery](https://layer5.io/meshery), which is a multi-service mesh management plane.
+1. [Meshery](https://layer5.io/meshery), which is the multi-service mesh management plane.
 2. [k3d](https://github.com/rancher/k3d), which is used to create a dockerized [k3s](https://k3s.io) server.
 
 And, what really appealed to me about both of them is that everything from the installation to the usage was just *simple!*
@@ -22,15 +22,15 @@ Before we start having *real* fun with Meshery, I will quickly list the differen
  - k3d or any k3s/K8s cluster that you might have already configured.
 4. [WSL2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/)
  - For the (few) ones who know me, my "OS base" is WSL2, which means that without much/any change, it should run fine for any Linux/MacOS setup.
-5. [Graphana](https://grafana.com/) *(optional)*
- - Graphana is not mandatory however is strongly recommend. We will setup a dockerized instance, but feel free to plug Meshery with your existing instance.
+5. [Grafana](https://grafana.com/) *(optional)*
+ - Grafana is not mandatory however is strongly recommend. We will setup a dockerized instance, but feel free to plug Meshery with your existing instance.
 
-<h6> Nothing is granted </h6>
+<h6> Nothing is taken for granted </h6>
 For the sake of making the blog post around Meshery, I won't explain how to install each component and will focus only on getting k3d and Meshery working.
 
 That said, I do not take anything for granted and as Scott Hanselman once taught me: there is no "just have to ..." or "by simply doing ...".
 
-If you face any issue with your setup (hopefully WSL2), just let me know on [Twitter](https://twitter.com/nunixtech) or on the [Meshery Slack channel](http://slack.layer5.io).
+If you face any issue with your setup (hopefully WSL2), just let me know on [Twitter](https://twitter.com/nunixtech) or on the [Layer5 Slack channel](http://slack.layer5.io).
 
 <h4>Meshery Installation</h4>
 For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
@@ -38,7 +38,7 @@ For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
 <ol>
 <li> Start docker and confirm it's running:
 <div class="highlight highlight-source-shell">
-    <pre><code>
+    <pre><code  class="white-text">
  $ sudo service docker start
  $ docker version
     </code></pre>
@@ -46,7 +46,7 @@ For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
 </li>
 <li> Using Docker, install Meshery on your local machine by running the following:
 <div class="highlight highlight-source-shell">
-    <pre><code>
+    <pre><code  class="white-text">
  $ curl -L https://git.io/meshery | sh -
     </code></pre>
 </div>
@@ -57,7 +57,7 @@ For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
 </li>
 <li> Create a new k3d cluster with the <code> WSL2 IP </code>
 <div class="highlight highlight-source-shell">
-    <pre><code>
+    <pre><code class="white-text">
  $ export mainIP=`hostname -I | awk '{ print $1 }'`
  $ k3d list
  $ k3d create --workers 3 --api-port ${mainIP}:6443
@@ -67,19 +67,20 @@ For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
 </div>
 <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-k3d-start.png">
     <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-k3d-start.png" class="thumbnail" /></a>
+    <br />
 </li>
 <li> Start Meshery on the newly created cluster
-<div class="highlight highlight-source-shell">
-    <pre><code>
- $ mesheryctl start
+<div class="highlight">
+    <pre><code class="white-text">
+ $ mesheryctl system start
     </code></pre>
 </div>
 <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-start.png">
     <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-start.png" class="thumbnail" /></a>
 </li>
 <li> Once Meshery is fully started, login in your preferred browser using the <code>WSL2 IP</code> instead of <code>localhost</code>
-<div class="highlight highlight-source-shell">
-    <pre><code>
+<div class="highlight">
+    <pre><code class="white-text">
  $ export BROWSER=/mnt/c/Firefox/firefox.exe
  $ $BROWSER $mainIP:9081 &
     </code></pre>
@@ -101,17 +102,16 @@ For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
 </li>
 </ol>
 
-#### [Optional] More analytics with Graphana
-As stated above, Meshery can leverage the analytics provided by Graphana. For this blog post, as everything is built from scratch.
-<div class="toggle">
-    <label for="meshery-instructions"><a>Here is the setup</a> for a new Graphana dockerized instance.</label>
-    <input type="checkbox" checked name="one" id="meshery-instructions">
+#### [Optional] More analytics with Grafana
+As stated above, Meshery can leverage the analytics provided by Grafana. For this blog post, as everything is built from scratch. Here is the setup for a new Grafana dockerized instance.
+
+<div>
     <div class="hidediv">
         <div class="innerdiv">
             <ol>
             <li>Start a new Grafana on docker instance
             <div class="highlight highlight-source-shell">
-                <pre><code>
+                <pre><code class="white-text">
             $ docker run \
             -d \
             -p 3000:3000 \
@@ -127,13 +127,14 @@ As stated above, Meshery can leverage the analytics provided by Graphana. For th
             </li>
             <li>Access the new instance with the admin password that you set in the docker environment variable
             <div class="highlight highlight-source-shell">
-                <pre><code>
+                <pre><code class="white-text">
             $ $BROWSER $mainIP:3000 &
                 </code></pre>
             </div>
             <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-grafana-login.png">
                 <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-grafana-login.png" class="thumbnail" />
             </a>
+            <br />
             <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-grafana-login-success.png">
                 <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-grafana-login-success.png" class="thumbnail" />
             </a>
@@ -146,6 +147,7 @@ As stated above, Meshery can leverage the analytics provided by Graphana. For th
 While everything should run fine, it's always good to have a look at what has been deployed.
 
 In this case, we are almost exclusively working with Docker and the "inside look" should look something like this:
+
 <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-complete.png">
     <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-complete.png" class="thumbnail" />
 </a>
@@ -154,15 +156,8 @@ In this case, we are almost exclusively working with Docker and the "inside look
 As [Lee Calcote](https://twitter.com/lcalcote) put it, this is a lot of buzz words: Meshery > k3s (deployed via k3d) > Docker > WSL2 > Windows 10. And he's totally right, still the "beauty" here, is that it "simply works".
 
 Since the begin of the Docker era, new tooling has appeard for simplifying complex workflows.
-Even Kubernetes (K8s) as a much lighter version with k3s by [Rancher](https://rancher.com).
+Even Kubernetes (K8s) as a much lighter version with k3s by Rancher.
 
 And of course, Meshery which integrates and simplifies the installation and benchmarking of different service meshes. Hope you had fun assembling all these pieces and stay tunned for the "Bonuses", more fun to come!
 
 <span> > > > <i>Nunix out</i></span>
-
----
-#### Other posts in this series
-
-- Meshery configuration
-- Adding a Service Mesh to the mix
-- A CNAB Bundle to install them all
