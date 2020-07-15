@@ -9,9 +9,17 @@
     - name: Landscape
       link: /landscape
       new_window: false
-    - name: Performance Specification
+    - name: Service Mesh Performance Specification
       link: /performance
       new_window: false
+    - name: Service Mesh Interface Conformance
+      link: /service-mesh-interface
+      new_window: true    
+      external: true        
+    - name: WebAssembly - Image Hub
+      link: https://github.com/layer5io/image-hub
+      new_window: true    
+      external: true  
 - name: Community
   new_window: false
   highlight: false
@@ -19,6 +27,9 @@
   subitems: 
     - name: Join
       link: /community
+      new_window: false
+    - name: MeshMates
+      link: /community/meshmates
       new_window: false
     - name: Partners
       link: /partners
@@ -53,14 +64,18 @@
     - name: Workshops
       link: /workshops
       new_window: false
-    # - name: Videos
-    #   link: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1 
-    #   new_window: true
-    #   external: true
+    - name: Learn Layer5
+      link: https://github.com/layer5io/learn-layer5 
+      new_window: true
+      external: true
 - name: Blog
   link: /blog
   new_window: false
   highlight: false   
+  subitems:
+  - name: News
+    link: /news
+    new_window: false
 - name: Run Meshery
   link: /meshery#getting-started
   new_window: false

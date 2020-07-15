@@ -4,9 +4,10 @@ title: "MLH Fellowship"
 image:
 path: /assets/images/buttons/fellowship.png
 thumbnail: /assets/images/programs/fellowship_gray.png
-link: /mlhfellowship/2020
-permalink: /mlhfellowship/2020
+link: /programs/mlhfellowship/2020
+permalink: /programs/mlhfellowship/2020
 excerpt: "Layer5 - MLH Fellowship 2020"
+visibility: hide
 ---
 
 <div id="layer5-intro" class="card-content" style="position:relative;float:right;" ><iframe width="392" height="220.5" src="https://www.youtube.com/embed/0yN5T5LB9ps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
