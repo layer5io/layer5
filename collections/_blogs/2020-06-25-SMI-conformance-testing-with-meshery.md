@@ -59,4 +59,4 @@ This is where all the test cases along with the code will be placed. Currently t
 
 Excited? Please head on to our [Slack](http://slack.layer5.io) and join the #smi channel where everything related to conformance testing is discussed. We would love to hear your feedbacks. Also all the code will remain in [smi-conformance](https://github.com/layer5io/smi-conformance) repository and [Learn Layer5](https://github.com/layer5io/learn-layer5/). Please stay tuned for more blogs related to SMI Conformance and all things meshy!!!
 
- \-[Naveen Kumar](https://www.linkedin.com/in/nveenjain/)
+ \- [Naveen Kumar](https://www.linkedin.com/in/nveenjain/)
