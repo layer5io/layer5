@@ -2,7 +2,7 @@
 layout: post
 title:  "Getting started with Meshery, WLS2 and k3d"
 date:   2019-07-09 12:00:00 +0000
-image: /assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/cnab-logo.jpg
+image: /assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/cnab-logo.jpg
 author: Nuno do Carmo
 permalink: /blog/2019-07-09-getting-started-with-Meshery-WSL2-k3d
 ---
@@ -51,8 +51,8 @@ For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
     </code></pre>
 </div>
 <div class="thumbnail">
-    <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-docker-start.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-docker-start.png" class="thumbnail" /></a>
+    <a href="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-docker-start.png">
+    <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-docker-start.png" class="thumbnail" /></a>
 </div>
 </li>
 <li> Create a new k3d cluster with the <code> WSL2 IP </code>
@@ -65,8 +65,8 @@ For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
  $ kubectl cluster-info
     </code></pre>
 </div>
-<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-k3d-start.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-k3d-start.png" class="thumbnail" /></a>
+<a href="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-k3d-start.png">
+    <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-k3d-start.png" class="thumbnail" /></a>
     <br />
 </li>
 <li> Start Meshery on the newly created cluster
@@ -75,8 +75,8 @@ For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
  $ mesheryctl system start
     </code></pre>
 </div>
-<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-start.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-start.png" class="thumbnail" /></a>
+<a href="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-start.png">
+    <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-start.png" class="thumbnail" /></a>
 </li>
 <li> Once Meshery is fully started, login in your preferred browser using the <code>WSL2 IP</code> instead of <code>localhost</code>
 <div class="highlight">
@@ -87,14 +87,14 @@ For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
 </div>
 <div style="display: grid;  grid-template-columns: auto auto;">
 <div style="postion:relative; float:left; ">
-    <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-login.png">
-        <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-login.png"  
+    <a href="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-login.png">
+        <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-login.png"  
             style="display: block; margin-left: auto;  margin-right: auto; max-width: 70%;" />
     </a>
 </div>
 <div style="postion:relative; float:left; ">
-    <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-login-success.png">
-        <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-login-success.png" 
+    <a href="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-login-success.png">
+        <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-login-success.png" 
             style="display: block; margin-left: auto;  margin-right: auto;  max-width: 90%;"/>
     </a>
 </div>
@@ -121,8 +121,8 @@ As stated above, Meshery can leverage the analytics provided by Grafana. For thi
             grafana/grafana
                 </code></pre>
             </div>
-            <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-grafana-start.png">
-                <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-grafana-start.png" class="thumbnail">
+            <a href="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-grafana-start.png">
+                <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-grafana-start.png" class="thumbnail">
             </a>
             </li>
             <li>Access the new instance with the admin password that you set in the docker environment variable
@@ -131,12 +131,12 @@ As stated above, Meshery can leverage the analytics provided by Grafana. For thi
             $ $BROWSER $mainIP:3000 &
                 </code></pre>
             </div>
-            <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-grafana-login.png">
-                <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-grafana-login.png" class="thumbnail" />
+            <a href="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-grafana-login.png">
+                <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-grafana-login.png" class="thumbnail" />
             </a>
             <br />
-            <a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-grafana-login-success.png">
-                <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-grafana-login-success.png" class="thumbnail" />
+            <a href="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-grafana-login-success.png">
+                <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-grafana-login-success.png" class="thumbnail" />
             </a>
             </li>
             </ol>
@@ -148,8 +148,8 @@ While everything should run fine, it's always good to have a look at what has be
 
 In this case, we are almost exclusively working with Docker and the "inside look" should look something like this:
 
-<a href="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-complete.png">
-    <img src="/assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/wsl-meshery-complete.png" class="thumbnail" />
+<a href="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-complete.png">
+    <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-complete.png" class="thumbnail" />
 </a>
 
 #### Conclusion
