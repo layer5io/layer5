@@ -2,7 +2,7 @@
 layout: post
 title:  "Getting started with Meshery, WLS2 and k3d"
 date:   2019-07-09 12:00:00 +0000
-image: /assets/images/posts/2019-07-09-Meshery-start-feat-WSL2-k3d/cnab-logo.jpg
+image: /assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/cnab-logo.jpg
 author: Nuno do Carmo
 permalink: /blog/2019-07-09-getting-started-with-Meshery-WSL2-k3d
 ---
