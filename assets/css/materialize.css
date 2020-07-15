@@ -33,7 +33,6 @@
   width: 80%;
   display: table;
   height: 150px; /* any arbitrary height but best at the minimum initial height you would want. */
-  overflow: hidden;
   background: #EEE;
   margin: 0px auto;
   transition-timing-function: linear;
@@ -1748,12 +1747,28 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   background-color: var(--main-light-blue) !important;
 }
 
-.l5-light-blue {
-  background-color: var(--main-light-blue) !important;
+.l5-dark-grey {
+  background-color: var(--main-dark-grey) !important;
 }
 
-.l5-light-blue-text {
-  color: var(--main-light-blue) !important;
+.l5-dark-grey-text {
+  color: var(--main-dark-grey) !important;
+}
+
+.l5-dark-yellow{
+  background-color: var(--main-dark-yellow) !important;
+}
+
+.l5-dark-yellow-text {
+  color: var(--main-dark-yellow) !important;
+}
+
+.l5-light-yellow{
+  background-color: var(--main-light-yellow) !important;
+}
+
+.l5-light-yellow-text {
+  color: var(--main-light-yellow) !important;
 }
 
 .l5-dark-blue {
@@ -1779,7 +1794,7 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   color: var(--main-light-gray) !important;
 }
 
-.l5-bg-dark-grey {
+.l5-dark-grey {
   background-color: var(--main-dark-grey) !important;
   color: var(--main-dark-grey) !important;
 }
@@ -2264,6 +2279,11 @@ li.youtube {	list-style-image: url('/assets/images/youtube.svg'); }
   color: #000000 !important;
 }
 
+.mlh {
+  color: #000000 !important;
+  font-size: 14px;
+}
+
 .white {
   background-color: #FFFFFF !important;
 }
@@ -2301,12 +2321,17 @@ html {
 }
 
 
- :root {
+:root {
   --main-grey: #647881;
+
   --main-light-blue: #62ACCD;
   --main-dark-blue: #477E96;
 
-  --main-dark-grey: #3c494f;
+  --main-dark-yellow: #EBC017;
+  --main-light-yellow: #E9C46A;
+
+  /* --main-dark-grey: #3c494f; */
+  --main-dark-grey: #1E2117;
   --main-light-grey: #9FBFCD;
   --main-light-gray: #cccccc;
 
@@ -2317,6 +2342,7 @@ html {
   --main-light-teal: #34FFFF;
   --main-deep-red: #FF2525;
 }
+
 
 /**
  * Remove default margin.
@@ -3090,7 +3116,7 @@ ul.staggered-list li {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border: 3px solid rgb(95, 165, 192);
+  border: 3px solid var(--main-dark-yellow);
   z-index: 1;
 }
 
@@ -3123,7 +3149,7 @@ ul.staggered-list li {
 }
 
 .comm ul li:nth-child(1) a:before{
-  background:  rgb(95, 165, 192);
+  background:  var(--main-light-yellow);
 }
 
 .tooltip {
@@ -6007,6 +6033,15 @@ button.btn-floating {
 
 .btn-block {
   display: block;
+}
+
+.clipboard-copy-btn {
+  position: absolute;
+  padding: 0px;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 28px;
 }
 
 .dropdown-content {

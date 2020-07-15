@@ -1,7 +1,7 @@
 <!-- lower brow -->
 
 <!-- particles.js container -->
-<div id="particles-js" style="z-index: -1;"></div>
+<div id="particles-js"></div>
 <script type="text/javascript" src="{{site.baseurl}}/assets/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="{{site.baseurl}}/assets/js/stellarnav.min.js"></script>
 {% if jekyll.environment == 'production' %}
@@ -38,10 +38,9 @@
           <li><a class="black-text" href="/subscribe">Mailing list</a></li>
           <li><a class="black-text" href="/careers/internships">Internships</a></li>
           <ul>
-            <li><a class="black-text " href="/gsoc/2020">GSoC 2020</a></li>
-            <li><a class="black-text " href="/gsod/2020">GSoD 2020</a></li>
-            <li><a class="black-text " href="/communitybridge/2020">CommunityBridge 2020</a></li>
-            <li><a class="black-text " href="/mlhfellowship/2020">MLH Fellowship 2020</a></li>
+            <li><a class="black-text " href="/programs//gsoc/2020">GSoC 2020</a></li>
+            <li><a class="black-text " href="/programs/gsod/2020">GSoD 2020</a></li>
+            <li><a class="black-text " href="/programs/communitybridge/2020">CommunityBridge</a></li>
 
           </ul>
         </ul>
@@ -120,16 +119,23 @@
 {% endif %}     
 <script src="/assets/js/particles/particles.js"></script>
 <script src="/assets/js/particles/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
 <!-- <button onclick="positionParticles()">Footer</button> -->
 
 <!--Script for Copy to Clipboard-->
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
+  function resetCopyText(element) {
+    let childElements = element.childNodes
+    childElements[4].innerHTML="Copy to clipboard";
+  }
   var clipboard = new ClipboardJS('.btn');
   clipboard.on('success', function(e) {
       console.info('Action:', e.action);
       console.info('Text:', e.text);
       console.info('Trigger:', e.trigger);
+      let childElements = e.trigger.childNodes;
+      childElements[4].innerHTML = "Copied!";
       e.clearSelection();
   });
   clipboard.on('error', function(e) {

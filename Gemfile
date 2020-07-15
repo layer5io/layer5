@@ -3,10 +3,8 @@ source "https://rubygems.org"
 ruby '2.7.0'
 
 gem 'materialize-sass'
-gem "jekyll", "~> 4.0.0"
+gem "jekyll", "~> 4.0.1"
 gem "minima", "~> 2.0"
-gem 'rspec'
-gem 'capybara'
 gem "selenium-webdriver"
 gem "rack-jekyll"
 gem "pry"

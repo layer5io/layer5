@@ -61,16 +61,16 @@
   gallery_img: /assets/images/partners/hashicorp_vertical_lightgray.svg
   gallery_style: "vertical-align: middle;min-height: 3.3vh;max-height: 6vh;height:100%"
 
-# - name: HPE
-#   link: https://www.hpe.com
-#   desc: HPE GreenLake is an IT-as-a-service offering that brings the cloud experience to your on-premises infrastructure and unifies your edges, clouds, and data centers.
-#   img: /assets/images/partners/hpe_side_black.svg
-#   style: "width:105%;vertical-align: middle;"
-#   visibility: ""
-#   type: technology
-#   gallery: "no"
-#   gallery_img: /assets/images/partners/hpe_side_lightgray.svg
-#   gallery_style: "vertical-align: middle;min-height: 3vh;max-height: 4vh;height:100%"
+- name: HPE
+  link: https://www.hpe.com
+  desc: HPE GreenLake is an IT-as-a-service offering that brings the cloud experience to your on-premises infrastructure and unifies your edges, clouds, and data centers.
+  img: /assets/images/partners/hpe_side_black.svg
+  style: "width:105%;vertical-align: middle;"
+  visibility: ""
+  type: technology
+  gallery: "yes"
+  gallery_img: /assets/images/partners/hpe_side_lightgray.svg
+  gallery_style: "vertical-align: middle;min-height: 3vh;max-height: 4vh;height:100%"
 
 - name: Istio
   link: https://istio.io/about/community/partners/
@@ -113,7 +113,7 @@
 
 
 - name: University of Engineering & Management Jaipur
-  link: https://uem.edu.in/uem-jaipur/
+  link: https://uem.edu.in/blog/what-is-open-source/
   desc: |
     We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us.
     As part of the partnership program we have a wide variety of interns from the univeristy participating in our open source projects. 
