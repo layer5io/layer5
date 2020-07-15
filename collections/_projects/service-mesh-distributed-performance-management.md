@@ -1,0 +1,58 @@
+---
+layout: project
+title:  "Distributed Performance Management of Service Meshes"
+description: "Layer5 is an industry leader in the management of service meshes and their workloads.
+In collaboration with Google, Layer5 is advancing the state of the industry through novel projects like that of distributed performance management."
+author:
+  twitter: layer5
+image:
+  path: /assets/images/buttons/smps.png
+  width: 1200
+thumbnail: /assets/images/buttons/smps_white.svg
+lang: en
+permalink:
+visibility: hide
+link: /service-mesh-distributed-performance-management
+redirect_from: distributed-performance
+
+---
+<div class="row" id="smi" >
+  <div class="col m6">
+    <h3>
+      Purpose and Overview
+    </h3>
+    <p>The scope of this initiative includes all service mesh projects participating in the Service Mesh Interface specification. It’s important to acknowledge that conformance consists of both capabilities and compliance status. 
+    </p>
+    <h4>Project Goals</h4>
+    <ul>
+      <li>Provide users with a compatibility matrix identifying the SMI features that are supported per service mesh.</li>
+      <li>An easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.</li>
+    </ul>
+    <h4>Project Objectives
+    </h4>
+    <ul>
+      <li>Define what it means to be in conformance with the SMI specifications. </li>
+      <li>Define a set of conformance tests and  what behavior is expected of a conforming service mesh implementation.</li>
+      <li>Built into each participating service mesh project’s release tooling.</li>
+    </ul>
+    <h4>Validating Conformance</h4>
+<p>Conformance to SMI specifications will be done through use of a service mesh’s workload. A sample application is used as the workload to test.</p>
+<h5>Sample Application</h5>
+<p>To facilitate a common set of tests, a sample application has been developed for purposes of providing a consistent workload to apply SMI specs against. 
+  A deployment of the <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> sample application being fitted to each service mesh.</p>
+  </div>
+  <div class="col m6">
+    <div style="text-align: center; padding: 0; margin: 0;">
+      <img
+        src="/assets/images/buttons/servicemeshinterface-icon-color.svg"
+        width="50%"
+      />
+      <h5 style="text-align:center;color:aliceblue;">
+        <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
+          class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow"
+          href="/meshery/#getting-started">Run SMI Conformance</a> 
+        </h5>
+    </div>
+
+  </div>
+</div>
