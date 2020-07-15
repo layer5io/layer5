@@ -56,6 +56,9 @@ plugins:
 # permalinks:
 #  - meshery: "/meshery"
 
+exclude:
+  - layer5-ng
+
 collections_dir: collections
 collections:
   authors:
