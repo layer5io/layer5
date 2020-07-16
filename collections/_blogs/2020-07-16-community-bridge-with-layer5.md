@@ -15,9 +15,9 @@ My journey into service meshes began on April 27, 2020 when I was selected to be
 <h4> Stumbling into Service Mesh Interface (SMI) </h4>
 
 I began working on SMI Conformance testing under the guidance of Lee Calcote, Founder of Layer5, in February 2020. Since then, my path into the world of service meshes has brought me an avalanche of opportunities and has helped me grow by leaps and bounds as a developer.
-
 The Service Mesh Interface (SMI) is a standard interface that encapsulates various common service mesh functionalities. It explains several Custom Resource Definitions (CRDs), their configuration variables, and their corresponding effect on the service mesh underneath in full detail. What makes SMI vital is that these CRDs are generic, and the specifications are implemented and actively followed up by various service meshes. Some of these service meshes have developed adapters that define SMI CRDs as a wrapper over the APIs they already provide, instead of adhering to the SMI spec internally. SMI specifications address essential features for the most common service mesh use cases:
 
+<img class="image-right" src="/assets/images/partners/smi1.png" />
 
 - Traffic policy – To apply policies like identity and transport encryption across services
 - Traffic telemetry – To capture key metrics like error rate and latency between services
@@ -39,13 +39,13 @@ We are now enhancing Meshery to automate the process of verifying conformance ag
 
 The goals accomplished in my tenure at Layer5 are summarized as follows:
 
-1. **Meshery Providers** - Ported Meshery and its remote provider from using session based authentication to JWT based auth. This opened doors to:
+1. **[Meshery Providers](https://meshery.layer5.io/docs/extensibility)** - Ported Meshery and its remote provider from using session based authentication to JWT based auth. This opened doors to:
 - Usage of refresh tokens for longevity of sessions instead of asking user to re-login frequently.
 - CLI based authentication (not done yet, but is on the roadmap)
-1. **WebAssembly and Envoy Filters in Rust** - WASM based envoy network packet filters in Rust-lang. Built a demo app demonstrating its potentials; we also built a  WASM filter which performs custom user specific rate limiting. This app was demo’ed in Dockercon 2020 under the header “Service Meshing with Docker Desktop and WebAssembly”.
-1. **Implementing the Service Mesh Performance Specification** - Enhanced Meshery’s performance testing and profile management capabilities. Added support for customizing the requests made by the load generator, and added the capability of using performance test profiles in the tool.
+1. **[Image Hub](https://github.com/layer5io/image-hub)** - WASM based envoy network packet filters in Rust-lang. Built a demo app demonstrating its potentials; we also built a  WASM filter which performs custom user specific rate limiting. This app was demo’ed in Dockercon 2020 under the header “Service Meshing with Docker Desktop and WebAssembly”.
+1. **[Implementing the Service Mesh Performance Specification](/performance)** - Enhanced Meshery’s performance testing and profile management capabilities. Added support for customizing the requests made by the load generator, and added the capability of using performance test profiles in the tool.
 
-<h4> Shout out to the Community </h4>
+<h4> Love for the Community </h4>
 
 I have been actively involved in the Layer5 community for a number of months now and am proud of the contributions I have made to various projects under the Layer5 banner. The Layer5 community represents an eclectic mix of geeky developers, out of the box thinkers, sassy writers and some of the most amazing people I have met so far in the open source community.  We build projects to provide learning environments, deployment, and operational best practices, performance benchmarks, create documentation, and more. I am truly ecstatic to be a part of such an enthusiastic and welcoming community.<br>
 
