@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Community Bridge 2020"
+title:  "CommunityBridge 2020: Teaching service meshes to be compliant"
 date:   2020-07-16 10:30:05 -0530
 image: /assets/images/posts/2020-07-16-community-bridge-with-layer5/communitybridge.jpg
 author: Kanishkar J
 tags: community, open source, community bridge
 permalink: /blog/community-bridge-with-layer5
 ---
-<img class = "thumbnail" src = "/assets/images/posts/2020-07-16-community-bridge-with-layer5/cblogo.png">
+<img class = "image-left" src = "/assets/images/posts/2020-07-16-community-bridge-with-layer5/cblogo.png">
 <br><br>
 
 My journey into service meshes began on April 27, 2020 when I was selected to be a mentee under the banner of Community Bridge for the Summer of 2020. The Community Bridge Mentorship is a structured remote learning opportunity for aspiring open source software developers. The projects they host are mentored by experienced open source project developers and maintainers.
@@ -15,30 +15,30 @@ My journey into service meshes began on April 27, 2020 when I was selected to be
 <h4> Stumbling into Service Mesh Interface (SMI) </h4>
 
 I began working on SMI Conformance testing under the guidance of Lee Calcote, Founder of Layer5, in February 2020. Since then, my path into the world of service meshes has brought me an avalanche of opportunities and has helped me grow by leaps and bounds as a developer.
-<br>
+
 The Service Mesh Interface (SMI) is a standard interface that encapsulates various common service mesh functionalities. It explains several Custom Resource Definitions (CRDs), their configuration variables, and their corresponding effect on the service mesh underneath in full detail. What makes SMI vital is that these CRDs are generic, and the specifications are implemented and actively followed up by various service meshes. Some of these service meshes have developed adapters that define SMI CRDs as a wrapper over the APIs they already provide, instead of adhering to the SMI spec internally. SMI specifications address essential features for the most common service mesh use cases:
-<br>
+
 
 - Traffic policy – To apply policies like identity and transport encryption across services
 - Traffic telemetry – To capture key metrics like error rate and latency between services
 - Traffic management – To shift traffic between different services
 
 However, at the moment, no service meshes adhere to the SMI specifications completely. Service meshes are rapidly developing and making active efforts to extend their feature set. Simultaneously, SMI has also been working towards adding more features to its specifications.
-<br>
+
 Consequently, it becomes a necessity for continual validation of service mesh conformance with respect to SMI specifications and  the various versions of those specifications. The process of verifying conformance needs to be standardized and tooling made available.  Hence, our project efforts to create an SMI conformance tool.
 
-<h4> Meshery to the rescue </h4>
+<h4> Meshery to the Rescue </h4>
 
 Meshery is the multi-service mesh management plane, offering lifecycle, configuration, and performance management of service meshes and their workloads. It is closely connected to the Kubernetes cluster and allows easy deployment of various service meshes and sample applications onto those meshes. Meshery enables operators to run performance tests on workloads, collect, store, and manage the test results.
-<br>
+
+
 We had found our solution. By leveraging the features provided in Meshery, we would be able to focus on the conformance validation and testing instead of sweating over the complexity in deployments. We can also use the performance management infrastructure to manage the conformance tests and their results. And so,  the tool will be developed as an integral part of Meshery to aid and abate SMI conformance woes.
 We are now enhancing Meshery to automate the process of verifying conformance against a standard set of tests against a sample workload designed specifically for SMI conformance testing. By the time we’re through, this capability of Meshery will allow each service mesh project to validate its conformance to each version of the SMI specifications and will provide a detailed report.
 
 <h4> My Projects </h4>
-<div class="left" style="color:gray;position:relative;top:-10px;font-size:1.20em;"><i>Teaching service meshes to be compliant</i></div><br>
 
 The goals accomplished in my tenure at Layer5 are summarized as follows:
-<br>
+
 * Ported meshery and its remote provider from using session based authentication to JWT based auth. This opened doors to:
 
 1. Usage of refresh tokens for longevity of sessions instead of asking user to re-login frequently.
@@ -46,7 +46,6 @@ The goals accomplished in my tenure at Layer5 are summarized as follows:
 
 * WASM based envoy network packet filters in Rust-lang. Built a demo app demonstrating its potentials; we also built a  WASM filter which performs custom user specific rate limiting. This app was demo’ed in Dockercon 2020 under the header “Service Meshing with Docker Desktop and WebAssembly”.
 * Enhanced meshery’s performance testing and profile management capabilities. Added support for customizing the requests made by the load generator, and added the capability of using performance test profiles in the tool.
-
 
 <h4> Shout out to the Community </h4>
 
