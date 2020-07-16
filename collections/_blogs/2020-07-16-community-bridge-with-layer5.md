@@ -39,13 +39,11 @@ We are now enhancing Meshery to automate the process of verifying conformance ag
 
 The goals accomplished in my tenure at Layer5 are summarized as follows:
 
-* Ported meshery and its remote provider from using session based authentication to JWT based auth. This opened doors to:
-
-1. Usage of refresh tokens for longevity of sessions instead of asking user to re-login frequently.
-2. CLI based authentication (not done yet, but is on the roadmap)
-
-* WASM based envoy network packet filters in Rust-lang. Built a demo app demonstrating its potentials; we also built a  WASM filter which performs custom user specific rate limiting. This app was demo’ed in Dockercon 2020 under the header “Service Meshing with Docker Desktop and WebAssembly”.
-* Enhanced meshery’s performance testing and profile management capabilities. Added support for customizing the requests made by the load generator, and added the capability of using performance test profiles in the tool.
+1. **Meshery Providers** - Ported Meshery and its remote provider from using session based authentication to JWT based auth. This opened doors to:
+- Usage of refresh tokens for longevity of sessions instead of asking user to re-login frequently.
+- CLI based authentication (not done yet, but is on the roadmap)
+1. **WebAssembly and Envoy Filters in Rust** - WASM based envoy network packet filters in Rust-lang. Built a demo app demonstrating its potentials; we also built a  WASM filter which performs custom user specific rate limiting. This app was demo’ed in Dockercon 2020 under the header “Service Meshing with Docker Desktop and WebAssembly”.
+1. **Implementing the Service Mesh Performance Specification** - Enhanced Meshery’s performance testing and profile management capabilities. Added support for customizing the requests made by the load generator, and added the capability of using performance test profiles in the tool.
 
 <h4> Shout out to the Community </h4>
 
