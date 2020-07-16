@@ -45,6 +45,8 @@ The goals accomplished in my tenure at Layer5 are summarized as follows:
 1. **[Image Hub](https://github.com/layer5io/image-hub)** - WASM based envoy network packet filters in Rust-lang. Built a demo app demonstrating its potentials; we also built a  WASM filter which performs custom user specific rate limiting. This app was demo’ed in Dockercon 2020 under the header “Service Meshing with Docker Desktop and WebAssembly”.
 1. **[Implementing the Service Mesh Performance Specification](/performance)** - Enhanced Meshery’s performance testing and profile management capabilities. Added support for customizing the requests made by the load generator, and added the capability of using performance test profiles in the tool.
 
+You can find my code in the [**Learn Layer5 repository**](https://github.com/layer5io/learn-layer5/).
+
 <h4> Love for the Community </h4>
 
 I have been actively involved in the Layer5 community for a number of months now and am proud of the contributions I have made to various projects under the Layer5 banner. The Layer5 community represents an eclectic mix of geeky developers, out of the box thinkers, sassy writers and some of the most amazing people I have met so far in the open source community.  We build projects to provide learning environments, deployment, and operational best practices, performance benchmarks, create documentation, and more. I am truly ecstatic to be a part of such an enthusiastic and welcoming community.<br>
