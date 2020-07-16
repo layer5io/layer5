@@ -2,7 +2,7 @@
 layout: post
 title:  "Starting SMI Conformance Testing with Meshery"
 date:   2020-06-25 10:30:05 -0530
-image: /assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png
+image: /assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/landscape.jpg
 author: Naveen Kumar
 permalink: /blog/smi-conformance-testing-with-meshery
 ---
@@ -11,52 +11,52 @@ permalink: /blog/smi-conformance-testing-with-meshery
 
 ### About SMI
 
-The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It utilizes CRDs to modify the behavior of service mesh. The project is under development at [SMI Github Repository](https://github.com/servicemeshinterface/smi-spec). Please visit the github repository page to know latest advancements in the spec. The complete spec is written [here](https://github.com/servicemeshinterface/smi-spec/blob/master/SPEC.md). 
+The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It utilizes CRDs to modify the behavior of service meshes. The project is under development at [SMI Github Repository](https://github.com/servicemeshinterface/smi-spec). Please visit the github repository page to know the latest advancements in the characteristics. The complete spec can be found [here](https://github.com/servicemeshinterface/smi-spec/blob/master/SPEC.md).
 
-### APIs in SMI 
+### APIs in SMI
 
 Currently SMI supports 4 set of APIs:
 
-- [Traffic Specs](https://github.com/servicemeshinterface/smi-spec/blob/master/SPEC.md#traffic-specs) used to define traffic, currently only supports TCP, HTTP traffic.
-- [Traffic Access Control](https://github.com/servicemeshinterface/smi-spec/blob/master/SPEC.md#traffic-access-control) used to specify whether a particular form of traffic is allowed or not
-- [Traffic Split](https://github.com/servicemeshinterface/smi-spec/blob/master/SPEC.md#traffic-split) used to redirect/divide a request for a resource between 2 or more resources. Useful in canary testing
-- [Traffic Metrics](https://github.com/servicemeshinterface/smi-spec/blob/master/SPEC.md#traffic-metrics) used to expose common traffic metrics like p99 in a specific format that can be utilized by single dashboard for all the service meshes.
+- [Traffic Specs](https://github.com/servicemeshinterface/smi-spec/blob/master/SPEC.md#traffic-specs) - Used to define traffic, currently only supports TCP, HTTP traffic.
+- [Traffic Access Control](https://github.com/servicemeshinterface/smi-spec/blob/master/SPEC.md#traffic-access-control) - Used to specify whether a particular form of traffic is allowed or not
+- [Traffic Split](https://github.com/servicemeshinterface/smi-spec/blob/master/SPEC.md#traffic-split) - Used to redirect/divide a request for a resource between 2 or more resources. Useful in canary testing
+- [Traffic Metrics](https://github.com/servicemeshinterface/smi-spec/blob/master/SPEC.md#traffic-metrics) - Used to expose common traffic metrics like p99 in a specific format that can be utilized by single dashboard for all the service meshes.
 
 ### About SMI Conformance Tests
 
-***SMI Conformance Tests*** checks whether the service mesh that is installed in the kubernetes cluster, conforms to SMI or not? Does it have the required CRDs? Do these CRDs perform as they should when applied or not applied.
-Are we able to get metrics in a proper format? All these questions will be answered by SMI conformance tests.
+**SMI Conformance Tests** check whether the service mesh that is installed in the kubernetes cluster, conforms to SMI specs or not. This involves asking some major questions. Does it have the required CRDs? Do these CRDs perform as they should when applied or not applied? Are we able to get metrics in a proper format?
+All these questions will be answered by SMI conformance tests. The biggest benefit of your service mesh conforming to SMI is that it makes building tools an easier process.Also, one time development of any tool would in turn support all the meshes that conform to SMI.
 
-And the biggest beneifit of mesh conforming to SMI would be that:- Building tools for SMI compatible mesh would be easier, and one time development of the tool would in turn support all the meshes that conforms to SMI.
+Sounds fun, right? Let's dig deeper into the SMI conformance project and find out.
 
-Sounds fun, right? Well let's dig deeper into the SMI conformance project.
 
 ### Meshery'ing with Conformance Tests
 
-**[Meshery](/meshery)** is the **service mesh management plane**, it supports all the popular meshes, how to manage them, apply custom or recommended configuration, tests for checking whether meshes are compatible or not, performing performance tests for mesh and lots more. The SMI conformance testing required performance testing capabiliy, load generation (meshery is about to support distributed load generation as well), and other functionality such that these conformance tests can be easily used in pipeline of all the popular service mesh. Mesheryctl does have a perf command that can be used in pipeline of service meshes, I aim at making such capability for SMI conformance too. 
+**[Meshery](/meshery)** is a **service mesh management plane**. It supports all the popular meshes, teaches you how to manage them, assists you in applying custom or recommended configurations, tests for  compatibility, performs performance tests for meshes and a lot more. The SMI conformance testing requires performance testing capabilities, load generation (Meshery is about to support distributed load generation as well), and other functionalities such that these conformance tests can be easily used in the pipelines of all the popular service meshes. mesheryctl does have a perf command that can be used in the pipelines of service meshes. I aim at making such capabilities for SMI conformance as well.
 
-Ok, I hope by this time you know what SMI is, what SMI conformance mean, how meshery's amazing engineering can be utilized for conformance tests, but there might be questions like how these tests were written, how do we validate the traffic, what tools do we use, let's see everything in the bigger picture.
+As you have made your way halfway through the post (thank you for your patience), you should now be aware of SMI, its conformance practices and how Meshery’s incredible engineering can be utilized for conformance tests. We can now tackle the larger questions and hope to see the bigger picture.
+
 
 ### The Bigger Picture
 
-Do you know that almost all of the test cases that we would write in this project would be just raw YAML files? To those doing traditional unit and integration tests, this might sound crazy at first, maybe crazier than the Joker in Batman series, but wait we are sane, and hopefully average engineers😛 (we would like to think so).
+Do you know that almost all of the test cases that we would write in this project would be  raw YAML files? To those doing traditional unit and integration tests, we might sound unhinged at this point. We assure you that we are completely sober and serious (if you don’t count the temporary euphoria from geeky jokes).
 
-Presenting an awesome tool for testing all things related to Kubernetes:
+We present to you an incredibly powerful tool for testing all things related to Kubernetes:
 
-#### [kuttl](https://kuttl.dev/) 
+#### [kuttl](https://kuttl.dev/)
 
-kuttl is a tool for testing kubernetes operators using yaml, it can assert whether any kind of resource exist or not in the kubernetes cluster, it can sping up a kind cluster and do lots of awesome stuff. It's entirely declarative. We have a special use case where we wanted to run some go code just after each step in test case was executed, So we forked kuttl and modified it a little. You can see our modified version [here](https://github.com/kanishkarj/kuttl).
-
-We are planning to use kuttl for all the APIs in SMI. We are also planning to use the meshery load generator with the modified version of `kuttl`. 
+kuttl is a tool for testing kubernetes operators using yaml. It can ascertain whether any kind of resources exist or not in the kubernetes cluster,  spring up a kind cluster and do other convenient things. Another plus is that It's entirely declarative. Consider a scenario in which we have a special use case where we wanted to run some go code  after each individual step in the test case was executed. To accomplish this,we forked kuttl and modified it a little. You can see our modified version [here](https://github.com/kanishkarj/kuttl).
+We are planning to use kuttl for all the APIs in SMI. We are also planning to use the Meshery load generator with the modified version of `kuttl`.
 
 #### [Learn Layer5](https://github.com/layer5io/learn-layer5/)
 
-Learn Layer5 is a sample app which is very lightweight and simple to deploy. It is a simple sample app for learing about service meshes. We are planning to use the same app for testing for SMI conformance. The sample app is deployed when we test for SMI conformance and traffic is generated from one service/deployment/pod to another.
+Learn Layer5 is a sample app which is very lightweight and simple to deploy. It is a simple sample app for learning about service meshes. We are planning to use the same app for testing for SMI conformance. The app is deployed when we test for SMI conformance and traffic is generated from one service/deployment/pod to another. This is a great tool for playing around with service meshes and the tools provided by Layer5 and its projects without investing any personal resources.
 
-### [SMI Conformance Repository](https://github.com/layer5io/smi-conformance)
+#### [SMI Conformance Repository](https://github.com/layer5io/smi-conformance)
 
-This is where all the test cases along with the code will be placed. Currently there is much overlap in `learn-layer5` and `smi-conformance` testing files, all those changes will be transferred here.
+This is where all the test cases along with the code will be placed. Currently, there is a large overlap in the learn-layer5 and `smi-conformance` testing files. All those changes will be transferred here.
 
-Excited? Please head on to our [Slack](http://slack.layer5.io) and join the #smi channel where everything related to conformance testing is discussed. We would love to hear your feedbacks. Also all the code will remain in [smi-conformance](https://github.com/layer5io/smi-conformance) repository and [Learn Layer5](https://github.com/layer5io/learn-layer5/). Please stay tuned for more blogs related to SMI Conformance and all things meshy!!!
+If any of this sounds remotely exciting, I implore you to give this a chance. You won’t regret it.
+Head over to our [Slack Channel](http://slack.layer5.io) and join the #smi channel where everything related to conformance testing is discussed. We would love to hear your feedback. Stay tuned for more blogs related to SMI Conformance and all things meshy!!!
 
  \- [Naveen Kumar](https://www.linkedin.com/in/nveenjain/)
