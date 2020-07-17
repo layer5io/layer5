@@ -70,14 +70,15 @@ code {
 }
 
 .image-left {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  float: left;
+  padding-right: 10px;
+}
+
+.image-right {
+  width: 40%;
   float: right;
-  padding-left: 8px;
-  padding-right: 5px;
+  padding-left: 10px;
 }
 
 .image-center {
