@@ -80,3 +80,22 @@ code {
   float: right;
   padding-left: 10px;
 }
+
+.image-center {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.align-right{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 22%;
+  height: 22%;
+  float: right;
+  border-radius: 50%;
+}
