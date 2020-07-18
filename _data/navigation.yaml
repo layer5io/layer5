@@ -17,8 +17,8 @@
       new_window: true    
       external: true        
     - name: WebAssembly - Image Hub
-      link: https://github.com/layer5io/image-hub
-      new_window: true    
+      link: /image-hub
+      new_window: false    
       external: true  
 - name: Community
   new_window: false
