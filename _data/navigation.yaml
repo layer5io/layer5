@@ -15,6 +15,10 @@
     - name: Service Mesh Interface Conformance
       link: /service-mesh-interface
       new_window: true    
+      external: true
+    - name: Distributed Performance Management
+      link: /service-mesh-distributed-performance-management
+      new_window: false
       external: true        
     - name: WebAssembly - Image Hub
       link: https://github.com/layer5io/image-hub
