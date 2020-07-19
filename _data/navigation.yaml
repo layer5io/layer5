@@ -14,12 +14,12 @@
       new_window: false
     - name: Service Mesh Interface Conformance
       link: /service-mesh-interface
-      new_window: true    
-      external: true
+      new_window: false  
+      external: false
     - name: Distributed Performance Management
       link: /service-mesh-distributed-performance-management
       new_window: false
-      external: true        
+      external: false        
     - name: WebAssembly - Image Hub
       link: https://github.com/layer5io/image-hub
       new_window: true    
