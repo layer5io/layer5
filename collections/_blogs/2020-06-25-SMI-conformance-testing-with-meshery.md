@@ -34,21 +34,20 @@ Sounds fun, right? Let's dig deeper into the SMI conformance project and find ou
 
 <img src="/assets/images/posts/2020-06-25-SMI-conformance-testing-with-meshery/checklist.svg" align="left" width="250px" />
 
-**[Meshery](/meshery)** is a **service mesh management plane**. It supports all the popular meshes, teaches you how to manage them, assists you in applying custom or recommended configurations, tests for  compatibility, performs performance tests for meshes and a lot more. The SMI conformance testing requires performance testing capabilities, load generation (Meshery is about to support distributed load generation as well), and other functionalities such that these conformance tests can be easily used in the pipelines of all the popular service meshes. mesheryctl does have a perf command that can be used in the pipelines of service meshes. I aim at making such capabilities for SMI conformance as well.
+**[Meshery](/meshery)** is _the service mesh management plane__. It supports all the popular meshes, teaches you how to manage them, assists you in applying custom or recommended configurations, tests for  compatibility, performs performance tests for meshes and a lot more. The SMI conformance testing requires performance testing capabilities, load generation (Meshery is about to support distributed load generation as well), and other functionalities such that these conformance tests can be easily used in the pipelines of all the popular service meshes. mesheryctl does have a perf command that can be used in the pipelines of service meshes. I aim at making such capabilities for SMI conformance as well.
 
 As you have made your way halfway through the post (thank you for your patience), you should now be aware of SMI, its conformance practices and how Meshery’s incredible engineering can be utilized for conformance tests. We can now tackle the larger questions and hope to see the bigger picture.
-
 
 ### The Bigger Picture
 
 Do you know that almost all of the test cases that we would write in this project would be  raw YAML files? To those doing traditional unit and integration tests, we might sound unhinged at this point. We assure you that we are completely sober and serious (if you don’t count the temporary euphoria from geeky jokes).
 
-We present to you an incredibly powerful tool for testing all things related to Kubernetes:
+#### Forking [kuttl](https://kuttl.dev/)
 
-#### [kuttl](https://kuttl.dev/)
+`kuttl` is a tool for writing tests against Kubernetes operators and controllers. It can ascertain whether any kind of resources exist or not in the Kubernetes cluster, spring up a kind cluster and do other convenient things. Another plus is that It's entirely declarative. Consider a scenario in which we have a special use case where we wanted to run some go code  after each individual step in the test case was executed. To accomplish this, we forked `kuttl` and modified it a little. You can see our modified version [here](https://github.com/kanishkarj/kuttl).
 
-kuttl is a tool for testing kubernetes operators using yaml. It can ascertain whether any kind of resources exist or not in the kubernetes cluster,  spring up a kind cluster and do other convenient things. Another plus is that It's entirely declarative. Consider a scenario in which we have a special use case where we wanted to run some go code  after each individual step in the test case was executed. To accomplish this,we forked kuttl and modified it a little. You can see our modified version [here](https://github.com/kanishkarj/kuttl).
-We are planning to use kuttl for all the APIs in SMI. We are also planning to use the Meshery load generator with the modified version of `kuttl`.
+
+We are planning to use `kuttl` for all the APIs in SMI. We are also planning to use the Meshery load generator with the modified version of `kuttl`.
 
 #### [Learn Layer5](https://github.com/layer5io/learn-layer5/)
 
