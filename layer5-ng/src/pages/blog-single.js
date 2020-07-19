@@ -1,4 +1,6 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby";
+
 import { ThemeProvider } from "styled-components"
 
 import Layout from "../components/layout"
@@ -11,15 +13,29 @@ import Footer from "../sections/Footer"
 import { GlobalStyle } from "../sections/app.style"
 import theme from "../theme/blog/themeStyles"
 
-const BlogSinglePage = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Blog | Layer5 - The Service Mesh Company" />
-      <Navigation />
-      <BlogSingle />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-)
+const BlogSinglePage = ({data}) => {
+    return (
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <GlobalStyle />
+          <SEO title="Blog | Layer5 - The Service Mesh Company" />
+          <Navigation />
+          <BlogSingle data={data}/>
+          <Footer />
+        </Layout>
+      </ThemeProvider>
+)};
+
 export default BlogSinglePage
+
+export const query = graphql`
+    query PostsBySlug($slug: String!) {
+        mdx(fields: { slug: { eq: $slug } }) {
+            body
+            frontmatter {
+                title
+                date(formatString: "YYYY MMMM Do")
+            }
+        }
+    }
+`;
