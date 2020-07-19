@@ -19,7 +19,7 @@
     - name: WebAssembly - Image Hub
       link: /image-hub
       new_window: false    
-      external: true  
+      external: false  
 - name: Community
   new_window: false
   highlight: false
