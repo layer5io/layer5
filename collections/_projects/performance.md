@@ -9,7 +9,7 @@ image:
   width: 1200
 thumbnail: /assets/images/buttons/smps_white.svg
 lang: en
-link: /performance
+link: /projects/performance
 ---
 <style>
 ul.bullet li {

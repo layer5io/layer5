@@ -14,14 +14,10 @@
       new_window: false
     - name: Service Mesh Interface Conformance
       link: /service-mesh-interface
-      new_window: false  
-      external: false
-    - name: Distributed Performance Management
-      link: /service-mesh-distributed-performance-management
-      new_window: false
-      external: false        
-    - name: WebAssembly - Image Hub
-      link: /image-hub
+      new_window: true    
+      external: true        
+    - name: "Image Hub: WebAssembly w/Envoy"
+      link: /projects/image-hub
       new_window: false    
       external: false  
 - name: Community
