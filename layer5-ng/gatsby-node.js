@@ -23,12 +23,12 @@ exports.onCreatePage = ({ page, actions }) => {
   }
 }
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions;
   const blogPostTemplate = path.resolve(
-      'src/pages/blog-single.js'
+      'src/templates/blog-single.js'
   );
-  return graphql(`
+  const res = await graphql(`
     {
       allMdx {
         nodes {
@@ -41,12 +41,9 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      throw result.errors
-    }
-    const posts = result.data.allMdx.nodes;
-    // create page for each mdx file
+  `);
+    const posts = res.data.allMdx.nodes;
+
     posts.forEach(post => {
       createPage({
         path: post.fields.slug,
@@ -56,7 +53,6 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
-  })
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

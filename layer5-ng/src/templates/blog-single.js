@@ -13,6 +13,18 @@ import Footer from "../sections/Footer"
 import { GlobalStyle } from "../sections/app.style"
 import theme from "../theme/blog/themeStyles"
 
+export const query = graphql`
+    query PostsBySlug($slug: String!) {
+        mdx(fields: { slug: { eq: $slug } }) {
+            body
+            frontmatter {
+                title
+                date(formatString: "YYYY MMMM Do")
+            }
+        }
+    }
+`;
+
 const BlogSinglePage = ({data}) => {
     return (
       <ThemeProvider theme={theme}>
@@ -28,14 +40,3 @@ const BlogSinglePage = ({data}) => {
 
 export default BlogSinglePage
 
-export const query = graphql`
-    query PostsBySlug($slug: String!) {
-        mdx(fields: { slug: { eq: $slug } }) {
-            body
-            frontmatter {
-                title
-                date(formatString: "YYYY MMMM Do")
-            }
-        }
-    }
-`;
