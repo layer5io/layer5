@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Getting started with Meshery, WLS2 and k3d"
+title:  "Getting started with Meshery, WSL2 and k3d"
 date:   2019-07-09 12:00:00 +0000
 image: /assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/cnab-logo.jpg
 author: Nuno do Carmo
@@ -16,9 +16,9 @@ And cream on the top, both softwares are used with or inside containers, making 
 <h4>Environment Setup</h4>
 Before we start having *real* fun with Meshery, I will quickly list the different components I used for this blog post and ensure I define what could be optional for your own setup:
 1. [Meshery](https://layer5.io/meshery)
-2. [Docker](https://docs.docker.com/install/) 
+2. [Docker](https://docs.docker.com/install/)
  - Docker is of course mandatory and as Meshery is based on a Compose file, which means that [docker-compose](https://docs.docker.com/compose/install/) is also mandatory.
-3. [k3d](https://github.com/rancher/k3d) 
+3. [k3d](https://github.com/rancher/k3d)
  - k3d or any k3s/K8s cluster that you might have already configured.
 4. [WSL2](https://devblogs.microsoft.com/commandline/wsl-2-is-now-available-in-windows-insiders/)
  - For the (few) ones who know me, my "OS base" is WSL2, which means that without much/any change, it should run fine for any Linux/MacOS setup.
@@ -94,7 +94,7 @@ For the following steps, I will use the Ubuntu 18.04 WSL2 distro:
 </div>
 <div style="postion:relative; float:left; ">
     <a href="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-login-success.png">
-        <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-login-success.png" 
+        <img src="/assets/images/posts/2019-07-09-getting-started-with-Meshery-WSL2-k3d/wsl-meshery-login-success.png"
             style="display: block; margin-left: auto;  margin-right: auto;  max-width: 90%;"/>
     </a>
 </div>
