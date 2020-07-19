@@ -11,12 +11,10 @@ Before building the site, ensure that you have the following dependencies instal
 
 - [Nodejs](https://nodejs.org/en/): e.g., `brew install node`
 - [gatsby cli](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli): e.g., `npm install -g gatsby-cli`
-- [gatsby-dev-cli](https://www.gatsbyjs.org/contributing/setting-up-your-local-dev-environment/#gatsby-functional-changes) e.g., `yarn global add gatsby-dev-cli`
-  - Be sure to run `npm install` after initial installation of `gatsby`.
 
 ### Building the site
 
 Run the following:
 
-1. `npm install`
-1. `npm run start`
+1. `make setup-libs`-To install the dependencies for the running the site.
+1. `make site`-To run the website locally.
