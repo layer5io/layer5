@@ -30,6 +30,9 @@ const BlogPage = () => {
             title
             date
           }
+          fields {
+            slug
+          }
         }
       }
     }
@@ -45,11 +48,11 @@ const BlogPage = () => {
             <Col xs={12} lg={8}>
               <div className="blog-grid-wrapper">
                 <Row>
-                    {data.allMdx.nodes.map(({ excerpt, frontmatter }) => (
-                        <Col xs={12} sm={6}>
+                    {data.allMdx.nodes.map(({id, excerpt, frontmatter, fields }) => (
+                        <Col xs={12} sm={6} key={id}>
                           <div className="post-block">
                             <div className="post-thumb-block">
-                              <Link className="anchor" to="#">
+                              <Link className="anchor" to={fields.slug}>
                                 <img src={blogThumb1} alt="img" />
                               </Link>
                             </div>
@@ -63,14 +66,14 @@ const BlogPage = () => {
                                 <span>{frontmatter.date}</span>
                               </div>
                               <h2 className="post-title">
-                                <Link className="anchor" to="#">
+                                <Link className="anchor" to={fields.slug}>
                                   {frontmatter.title}
                                 </Link>
                               </h2>
                               <p className="post-entry">
                                 {excerpt}
                               </p>
-                              <Link className="readmore-btn" to="#">
+                              <Link className="readmore-btn" to={fields.slug}>
                                 see more <IoIosArrowRoundForward />
                               </Link>
                             </div>
