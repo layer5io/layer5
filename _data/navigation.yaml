@@ -16,8 +16,8 @@
       link: /service-mesh-interface
       new_window: true    
       external: true        
-    - name: WebAssembly - Image Hub
-      link: /image-hub
+    - name: "Image Hub: WebAssembly w/Envoy"
+      link: /projects/image-hub
       new_window: false    
       external: false  
 - name: Community
