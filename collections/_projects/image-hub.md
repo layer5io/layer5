@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "WebAssembly - Image Hub"
-description: "Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters. This demo application has been enabled by experimental works of Nic Jackson of HashiCorp, and Kanishkar J, Lee Calcote, and other contributors of Layer5."
+description: "Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters. This demo application has been enabled by the experimental work of Nic Jackson (HashiCorp), Kanishkar J, Lee Calcote, and other contributors of Layer5."
 author:
   twitter: layer5
 image:
@@ -23,7 +23,7 @@ redirect_from: webassembly
         <h3>
         Purpose and Overview
         </h3>
-        <p>Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters. This demo application has been enabled by experimental works of Nic Jackson of HashiCorp, and Kanishkar J, Lee Calcote, and other contributors of Layer5.
+        <p>Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters. This demo application has been enabled by the experimental work of Nic Jackson (HashiCorp), Kanishkar J, Lee Calcote, and other contributors of Layer5.
         </p>
         </div> 
     </div>
