@@ -2,7 +2,7 @@
 layout: post
 title:  "Starting SMI Conformance Testing with Meshery"
 date:   2020-06-25 10:30:05 -0530
-image: /assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/landscape.jpg
+image: /assets/images/posts/2020-06-25-SMI-conformance-testing-with-meshery/smi-conformance.svg
 author: Naveen Kumar
 permalink: /blog/smi-conformance-testing-with-meshery
 ---
@@ -25,12 +25,14 @@ Currently SMI supports 4 set of APIs:
 ### About SMI Conformance Tests
 
 **SMI Conformance Tests** check whether the service mesh that is installed in the kubernetes cluster, conforms to SMI specs or not. This involves asking some major questions. Does it have the required CRDs? Do these CRDs perform as they should when applied or not applied? Are we able to get metrics in a proper format?
+
 All these questions will be answered by SMI conformance tests. The biggest benefit of your service mesh conforming to SMI is that it makes building tools an easier process.Also, one time development of any tool would in turn support all the meshes that conform to SMI.
 
 Sounds fun, right? Let's dig deeper into the SMI conformance project and find out.
 
-
 ### Meshery'ing with Conformance Tests
+
+<img src="/assets/images/posts/2020-06-25-SMI-conformance-testing-with-meshery/checklist.svg" align="left" width="250px" />
 
 **[Meshery](/meshery)** is a **service mesh management plane**. It supports all the popular meshes, teaches you how to manage them, assists you in applying custom or recommended configurations, tests for  compatibility, performs performance tests for meshes and a lot more. The SMI conformance testing requires performance testing capabilities, load generation (Meshery is about to support distributed load generation as well), and other functionalities such that these conformance tests can be easily used in the pipelines of all the popular service meshes. mesheryctl does have a perf command that can be used in the pipelines of service meshes. I aim at making such capabilities for SMI conformance as well.
 
