@@ -25,7 +25,6 @@ const BlogPage = () => {
       ) {
         nodes {
           id
-          excerpt(pruneLength: 250)
           frontmatter {
             title
             date(formatString: "Do MMMM YYYY")
@@ -48,7 +47,7 @@ const BlogPage = () => {
             <Col xs={12} lg={8}>
               <div className="blog-grid-wrapper">
                 <Row>
-                    {data.allMdx.nodes.map(({id, excerpt, frontmatter, fields }) => (
+                    {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
                         <Col xs={12} sm={6} key={id}>
                           <div className="post-block">
                             <div className="post-thumb-block">
@@ -70,9 +69,6 @@ const BlogPage = () => {
                                   {frontmatter.title}
                                 </Link>
                               </h2>
-                              <p className="post-entry">
-                                {excerpt}
-                              </p>
                               <Link className="readmore-btn" to={fields.slug}>
                                 see more <IoIosArrowRoundForward />
                               </Link>
