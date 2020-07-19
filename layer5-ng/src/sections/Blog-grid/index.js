@@ -28,7 +28,7 @@ const BlogPage = () => {
           excerpt(pruneLength: 250)
           frontmatter {
             title
-            date
+            date(formatString: "Do MMMM YYYY")
           }
           fields {
             slug
