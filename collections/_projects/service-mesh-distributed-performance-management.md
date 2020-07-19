@@ -6,9 +6,9 @@ In collaboration with Google, Layer5 is advancing the state of the industry thro
 author:
   twitter: layer5
 image:
-  path: /assets/images/buttons/load.png
+  path: /assets/images/buttons/distributed-performance_white.svg
   width: 1200
-thumbnail: /assets/images/buttons/load.png
+thumbnail: /assets/images/buttons/distributed-performance_white.svg
 lang: en
 permalink:
 link: /service-mesh-distributed-performance-management
