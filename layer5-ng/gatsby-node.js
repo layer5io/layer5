@@ -3,6 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const { createFilePath } = require(`gatsby-source-filesystem`);
+
 
 // You can delete this file if you're not using it
 // Replacing '/' would result in empty string which is invalid
@@ -20,3 +22,15 @@ exports.onCreatePage = ({ page, actions }) => {
     createPage(page)
   }
 }
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `Mdx`) {
+    const value = createFilePath({ node, getNode });
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+};
