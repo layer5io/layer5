@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+
 import {
   TiSocialFacebook,
   TiSocialTwitter,
@@ -23,11 +25,13 @@ import AuthorThumb5 from "../../assets/images/app/testimonial/testimonial-thumb-
 
 import BlogPageWrapper from "./blogSingle.style";
 
-const BlogSingle = () => {
+const BlogSingle = ({data}) => {
+  const { frontmatter, body } = data.mdx;
+
   return (
     <BlogPageWrapper>
       <PageHeader
-        title="Rhetoric me avoid may lowest even quite first."
+        title={frontmatter.title}
         categories={["App,", "Landing"]}
         author={{ name: "Alexa", profile: "#" }}
       />
@@ -46,6 +50,7 @@ const BlogSingle = () => {
                         </span>
                       </div>
                     </div>
+                    <MDXRenderer>{body}</MDXRenderer>
                     <div className="post-content-block">
                       <p className="entry-one">
                         Coracoes costumes grandeza com observou horrivel mas.
