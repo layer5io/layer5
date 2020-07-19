@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { useStaticQuery, graphql ,Link } from "gatsby";
 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Container, Row, Col } from "../../reusecore/Layout";
@@ -17,6 +17,24 @@ import blogThumb6 from "../../assets/images/blog/post/blog-post-6.png";
 import { BlogPageWrapper } from "./blogGrid.style";
 
 const BlogPage = () => {
+  const data = useStaticQuery(graphql`
+    query SITE_INDEX_QUERY {
+      allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { published: { eq: true } } }
+      ) {
+        nodes {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            title
+            date
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <BlogPageWrapper>
       <PageHeader title="Blog Grid" author={{ name: "Alexa", profile: "#" }} />
@@ -27,192 +45,38 @@ const BlogPage = () => {
             <Col xs={12} lg={8}>
               <div className="blog-grid-wrapper">
                 <Row>
-                  <Col xs={12} sm={6}>
-                    <div className="post-block">
-                      <div className="post-thumb-block">
-                        <Link className="anchor" to="#">
-                          <img src={blogThumb1} alt="img" />
-                        </Link>
-                      </div>
-                      <div className="post-content-block">
-                        <div className="post-meta-block">
-                          <span>In: </span>
-                          <Link className="anchor" to="#">
-                            Discussion
-                          </Link>
-                          <span className="divider">/</span>
-                          <span>15 Sep 2020</span>
-                        </div>
-                        <h2 className="post-title">
-                          <Link className="anchor" to="#">
-                            Now led tedious shy.
-                          </Link>
-                        </h2>
-                        <p className="post-entry">
-                          Answer misery adieus add wooded how nay men before
-                          though. Pretended belonging contented mrs suffering.
-                        </p>
-                        <Link className="readmore-btn" to="#">
-                          see more <IoIosArrowRoundForward />
-                        </Link>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col xs={12} sm={6}>
-                    <div className="post-block">
-                      <div className="post-thumb-block">
-                        <Link className="anchor" to="#">
-                          <img src={blogThumb2} alt="img" />
-                        </Link>
-                      </div>
-                      <div className="post-content-block">
-                        <div className="post-meta-block">
-                          <span>In: </span>
-                          <Link className="anchor" to="#">
-                            Discussion
-                          </Link>
-                          <span className="divider">/</span>
-                          <span>15 Sep, 2020</span>
-                        </div>
-                        <h2 className="post-title">
-                          <Link className="anchor" to="#">
-                            Now led tedious shy.
-                          </Link>
-                        </h2>
-                        <p className="post-entry">
-                          Answer misery adieus add wooded how nay men before
-                          though. Pretended belonging contented mrs suffering.
-                        </p>
-                        <Link className="readmore-btn" to="#">
-                          see more <IoIosArrowRoundForward />
-                        </Link>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col xs={12} sm={6}>
-                    <div className="post-block">
-                      <div className="post-thumb-block">
-                        <Link className="anchor" to="#">
-                          <img src={blogThumb3} alt="img" />
-                        </Link>
-                      </div>
-                      <div className="post-content-block">
-                        <div className="post-meta-block">
-                          <span>In: </span>
-                          <Link className="anchor" to="#">
-                            Discussion
-                          </Link>
-                          <span className="divider">/</span>
-                          <span>15 Sep, 2020</span>
-                        </div>
-                        <h2 className="post-title">
-                          <Link className="anchor" to="#">
-                            Now led tedious shy.
-                          </Link>
-                        </h2>
-                        <p className="post-entry">
-                          Answer misery adieus add wooded how nay men before
-                          though. Pretended belonging contented mrs suffering.
-                        </p>
-                        <Link className="readmore-btn" to="#">
-                          see more <IoIosArrowRoundForward />
-                        </Link>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col xs={12} sm={6}>
-                    <div className="post-block">
-                      <div className="post-thumb-block">
-                        <Link className="anchor" to="#">
-                          <img src={blogThumb4} alt="img" />
-                        </Link>
-                      </div>
-                      <div className="post-content-block">
-                        <div className="post-meta-block">
-                          <span>In: </span>
-                          <Link className="anchor" to="#">
-                            Discussion
-                          </Link>
-                          <span className="divider">/</span>
-                          <span>15 Sep, 2020</span>
-                        </div>
-                        <h2 className="post-title">
-                          <Link className="anchor" to="#">
-                            Now led tedious shy.
-                          </Link>
-                        </h2>
-                        <p className="post-entry">
-                          Answer misery adieus add wooded how nay men before
-                          though. Pretended belonging contented mrs suffering.
-                        </p>
-                        <Link className="readmore-btn" to="#">
-                          see more <IoIosArrowRoundForward />
-                        </Link>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col xs={12} sm={6}>
-                    <div className="post-block">
-                      <div className="post-thumb-block">
-                        <Link className="anchor" to="#">
-                          <img src={blogThumb5} alt="img" />
-                        </Link>
-                      </div>
-                      <div className="post-content-block">
-                        <div className="post-meta-block">
-                          <span>In: </span>
-                          <Link className="anchor" to="#">
-                            Discussion
-                          </Link>
-                          <span className="divider">/</span>
-                          <span>15 Sep, 2020</span>
-                        </div>
-                        <h2 className="post-title">
-                          <Link className="anchor" to="#">
-                            Now led tedious shy.
-                          </Link>
-                        </h2>
-                        <p className="post-entry">
-                          Answer misery adieus add wooded how nay men before
-                          though. Pretended belonging contented mrs suffering.
-                        </p>
-                        <Link className="readmore-btn" to="#">
-                          see more <IoIosArrowRoundForward />
-                        </Link>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col xs={12} sm={6}>
-                    <div className="post-block">
-                      <div className="post-thumb-block">
-                        <Link className="anchor" to="#">
-                          <img src={blogThumb6} alt="img" />
-                        </Link>
-                      </div>
-                      <div className="post-content-block">
-                        <div className="post-meta-block">
-                          <span>In: </span>
-                          <Link className="anchor" to="#">
-                            Discussion
-                          </Link>
-                          <span className="divider">/</span>
-                          <span>15 Sep, 2020</span>
-                        </div>
-                        <h2 className="post-title">
-                          <Link className="anchor" to="#">
-                            Now led tedious shy.
-                          </Link>
-                        </h2>
-                        <p className="post-entry">
-                          Answer misery adieus add wooded how nay men before
-                          though. Pretended belonging contented mrs suffering.
-                        </p>
-                        <Link className="readmore-btn" to="#">
-                          see more <IoIosArrowRoundForward />
-                        </Link>
-                      </div>
-                    </div>
-                  </Col>
+                    {data.allMdx.nodes.map(({ excerpt, frontmatter }) => (
+                        <Col xs={12} sm={6}>
+                          <div className="post-block">
+                            <div className="post-thumb-block">
+                              <Link className="anchor" to="#">
+                                <img src={blogThumb1} alt="img" />
+                              </Link>
+                            </div>
+                            <div className="post-content-block">
+                              <div className="post-meta-block">
+                                <span>In: </span>
+                                <Link className="anchor" to="#">
+                                  Discussion
+                                </Link>
+                                <span className="divider">/</span>
+                                <span>{frontmatter.date}</span>
+                              </div>
+                              <h2 className="post-title">
+                                <Link className="anchor" to="#">
+                                  {frontmatter.title}
+                                </Link>
+                              </h2>
+                              <p className="post-entry">
+                                {excerpt}
+                              </p>
+                              <Link className="readmore-btn" to="#">
+                                see more <IoIosArrowRoundForward />
+                              </Link>
+                            </div>
+                          </div>
+                        </Col>
+                    ))}
                 </Row>
               </div>
             </Col>
