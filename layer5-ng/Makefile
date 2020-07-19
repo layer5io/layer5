@@ -1,5 +1,8 @@
+setup-libs:
+	npm install
+
 site:
-  npm run start
+	npm start
 
 build:
-  gatsby build
+	gatsby build
