@@ -1,7 +1,10 @@
 <div class="row flex">
-  {% assign sorted = (site.projects | sort: 'title') | reverse %} {% for project
-  in sorted %} {% if project.visibility != "hide" and project.type != "news" and
-  project.permalink == {{ include.excluded_project }} %}
+  {% assign sorted = (site.projects | sort: 'title') %} 
+  {% for project in sorted %} 
+    {% if project.visibility != "hide" %}
+
+    <!-- and project.permalink == {{ include.excluded_project }}  -->
+
   <style scoped>
     .project-card {
       display: block;

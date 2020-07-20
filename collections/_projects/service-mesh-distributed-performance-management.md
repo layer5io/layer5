@@ -11,7 +11,7 @@ image:
 thumbnail: /assets/images/buttons/distributed-performance_white.svg
 lang: en
 permalink:
-link: /service-mesh-distributed-performance-management
+link: /projects/service-mesh-distributed-performance-management
 redirect_from: distributed-performance
 
 ---
