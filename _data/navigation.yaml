@@ -9,17 +9,17 @@
     - name: Landscape
       link: /landscape
       new_window: false
-    - name: Service Mesh Performance Specification
-      link: /performance
-      new_window: false
-    - name: Service Mesh Interface Conformance
-      link: /service-mesh-interface
-      new_window: true    
-      external: true        
     - name: "Image Hub: Envoy Filters with WebAssembly"
       link: /projects/image-hub
       new_window: false    
       external: false  
+    - name: Service Mesh Interface Conformance
+      link: /projects/service-mesh-interface
+      new_window: false    
+      external: false      
+    - name: Service Mesh Performance Specification
+      link: /projects/performance
+      new_window: false
 - name: Community
   new_window: false
   highlight: false
