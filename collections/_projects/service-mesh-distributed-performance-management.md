@@ -12,7 +12,7 @@ thumbnail: /assets/images/buttons/smps_white.svg
 lang: en
 permalink:
 visibility: hide
-link: /service-mesh-distributed-performance-management
+link: /projects/service-mesh-distributed-performance-management
 redirect_from: distributed-performance
 
 ---
