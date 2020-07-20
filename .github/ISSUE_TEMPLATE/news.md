@@ -2,7 +2,7 @@
 name: News update
 about: News items to be listed on https://layer5.io/news
 title: '[News]'
-labels: 'news'
+labels: 'area/news'
 assignees: ''
 ---
 **Article:**
