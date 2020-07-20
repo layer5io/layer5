@@ -90,9 +90,9 @@ const BlogSingle = ({data}) => {
                     {/*<div className="post-info-block">*/}
                     {/*  <div className="tags">*/}
                     {/*    <span>Tags:</span>*/}
-                    {/*    <Link to="#">App</Link>*/}
-                    {/*    <Link to="#">Landing</Link>*/}
-                    {/*    <Link to="#">SASS</Link>*/}
+                    {/*    <Link to="#">Community</Link>*/}
+                    {/*    <Link to="#">Projects</Link>*/}
+                    {/*    <Link to="#">News</Link>*/}
                     {/*  </div>*/}
                     {/*  <div className="share">*/}
                     {/*    <Link to="#">*/}
