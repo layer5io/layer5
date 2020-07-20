@@ -2,7 +2,7 @@
 name: Bug/issue report
 about: Report an issue to help us improve
 title: ''
-labels: 'bug'
+labels: 'kind/bug'
 assignees: ''
 ---
 **Description**
