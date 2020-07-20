@@ -58,10 +58,6 @@ const Data = {
           {
             name: "Blog List",
             path: "/blog-list"
-          },
-          {
-            name: "Blog Single",
-            path: "/blog-single"
           }
         ]
       },
@@ -73,4 +69,3 @@ const Data = {
     ]
   };
   export default Data;
-  

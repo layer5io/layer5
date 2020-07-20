@@ -3,6 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require(`path`)
 
 // You can delete this file if you're not using it
 // Replacing '/' would result in empty string which is invalid
@@ -20,3 +22,47 @@ exports.onCreatePage = ({ page, actions }) => {
     createPage(page)
   }
 }
+
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions;
+  const blogPostTemplate = path.resolve(
+      'src/templates/blog-single.js'
+  );
+  const res = await graphql(`
+    {
+      allMdx {
+        nodes {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  `);
+    const posts = res.data.allMdx.nodes;
+
+    posts.forEach(post => {
+      createPage({
+        path: post.fields.slug,
+        component: blogPostTemplate,
+        context: {
+          slug: post.fields.slug,
+        },
+      })
+    })
+};
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `Mdx`) {
+    const value = createFilePath({ node, getNode });
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
+};

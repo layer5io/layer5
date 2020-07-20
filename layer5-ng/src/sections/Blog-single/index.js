@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+
 import {
   TiSocialFacebook,
   TiSocialTwitter,
@@ -23,11 +25,13 @@ import AuthorThumb5 from "../../assets/images/app/testimonial/testimonial-thumb-
 
 import BlogPageWrapper from "./blogSingle.style";
 
-const BlogSingle = () => {
+const BlogSingle = ({data}) => {
+  const { frontmatter, body } = data.mdx;
+
   return (
     <BlogPageWrapper>
       <PageHeader
-        title="Rhetoric me avoid may lowest even quite first."
+        title={frontmatter.title}
         categories={["App,", "Landing"]}
         author={{ name: "Alexa", profile: "#" }}
       />
@@ -38,73 +42,74 @@ const BlogSingle = () => {
               <Row>
                 <Col xs={12}>
                   <div className="single-post-block">
-                    <div className="post-thumb-block">
-                      <img src={BlogThumb} alt="prime blog page" />
-                      <div className="post-meta">
-                        <span>
-                          <em> 15 </em> SEP
-                        </span>
-                      </div>
-                    </div>
-                    <div className="post-content-block">
-                      <p className="entry-one">
-                        Coracoes costumes grandeza com observou horrivel mas.
-                        Amor tive fara de dado esse em. Ve es couberam oh
-                        garrafal mulheres. Dourados duzentos voz lustroso diz
-                        discutir ahi. Luzindo no do tremula na so fallava.
-                        Evitava tropheu curiosa.
-                      </p>
-                      <p className="entry-two">
-                        Coracoes costumes grandeza com observou horrivel mas.
-                        Amor tive fara de dado esse em. Ve es couberam oh
-                        garrafal mulheres. Dourados duzentos voz lustroso diz
-                        discutir ahi. Luzindo no do tremula na so fallava.
-                        Evitava tropheu curiosa ou agitado os acceite si
-                        assiste. Voz veio veja tez digo cres.
-                      </p>
-                      <blockquote>
-                        You never change things by fighting the existing
-                        reality.To change something, build a new model.
-                      </blockquote>
-                      <p className="entry-three">
-                        Ao corrida ar queriam reparae do imposta acoitar do.
-                        Qualidades intimativa aferventar ira acompanhar mau
-                        capitulada enfraquece. Em apavorar ficarmos cantante se
-                        ia blasonou eu comprido.
-                      </p>
+                    <MDXRenderer>{body}</MDXRenderer>
+                    {/*<div className="post-thumb-block">*/}
+                    {/*  <img src={BlogThumb} alt="prime blog page" />*/}
+                    {/*  <div className="post-meta">*/}
+                    {/*    <span>*/}
+                    {/*      <em> 15 </em> SEP*/}
+                    {/*    </span>*/}
+                    {/*  </div>*/}
+                    {/*</div>*/}
+                    {/*<div className="post-content-block">*/}
+                    {/*  <p className="entry-one">*/}
+                    {/*    Coracoes costumes grandeza com observou horrivel mas.*/}
+                    {/*    Amor tive fara de dado esse em. Ve es couberam oh*/}
+                    {/*    garrafal mulheres. Dourados duzentos voz lustroso diz*/}
+                    {/*    discutir ahi. Luzindo no do tremula na so fallava.*/}
+                    {/*    Evitava tropheu curiosa.*/}
+                    {/*  </p>*/}
+                    {/*  <p className="entry-two">*/}
+                    {/*    Coracoes costumes grandeza com observou horrivel mas.*/}
+                    {/*    Amor tive fara de dado esse em. Ve es couberam oh*/}
+                    {/*    garrafal mulheres. Dourados duzentos voz lustroso diz*/}
+                    {/*    discutir ahi. Luzindo no do tremula na so fallava.*/}
+                    {/*    Evitava tropheu curiosa ou agitado os acceite si*/}
+                    {/*    assiste. Voz veio veja tez digo cres.*/}
+                    {/*  </p>*/}
+                    {/*  <blockquote>*/}
+                    {/*    You never change things by fighting the existing*/}
+                    {/*    reality.To change something, build a new model.*/}
+                    {/*  </blockquote>*/}
+                    {/*  <p className="entry-three">*/}
+                    {/*    Ao corrida ar queriam reparae do imposta acoitar do.*/}
+                    {/*    Qualidades intimativa aferventar ira acompanhar mau*/}
+                    {/*    capitulada enfraquece. Em apavorar ficarmos cantante se*/}
+                    {/*    ia blasonou eu comprido.*/}
+                    {/*  </p>*/}
 
-                      <p className="entry-four">
-                        Coracoes costumes grandeza com observou horrivel mas.
-                        Amor tive fara de dado esse em. Ve es couberam oh
-                        garrafal mulheres. Dourados duzentos voz lustroso diz
-                        discutir ahi. Luzindo no do tremula na so fallava.
-                        Evitava tropheu curiosa ou agitado os acceite si
-                        assiste. Voz veio veja tez digo cres.
-                      </p>
-                    </div>
-                    <div className="post-info-block">
-                      <div className="tags">
-                        <span>Tags:</span>
-                        <Link to="#">App</Link>
-                        <Link to="#">Landing</Link>
-                        <Link to="#">SASS</Link>
-                      </div>
-                      <div className="share">
-                        <Link to="#">
-                          <TiSocialFacebook />
-                        </Link>
-                        <Link to="#">
-                          <TiSocialTwitter />
-                        </Link>
-                        <Link to="#">
-                          <TiSocialPinterest />
-                        </Link>
-                        <Link to="#">
-                          <TiSocialLinkedin />
-                        </Link>
-                        <span>:Share</span>
-                      </div>
-                    </div>
+                    {/*  <p className="entry-four">*/}
+                    {/*    Coracoes costumes grandeza com observou horrivel mas.*/}
+                    {/*    Amor tive fara de dado esse em. Ve es couberam oh*/}
+                    {/*    garrafal mulheres. Dourados duzentos voz lustroso diz*/}
+                    {/*    discutir ahi. Luzindo no do tremula na so fallava.*/}
+                    {/*    Evitava tropheu curiosa ou agitado os acceite si*/}
+                    {/*    assiste. Voz veio veja tez digo cres.*/}
+                    {/*  </p>*/}
+                    {/*</div>*/}
+                    {/*<div className="post-info-block">*/}
+                    {/*  <div className="tags">*/}
+                    {/*    <span>Tags:</span>*/}
+                    {/*    <Link to="#">Community</Link>*/}
+                    {/*    <Link to="#">Projects</Link>*/}
+                    {/*    <Link to="#">News</Link>*/}
+                    {/*  </div>*/}
+                    {/*  <div className="share">*/}
+                    {/*    <Link to="#">*/}
+                    {/*      <TiSocialFacebook />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link to="#">*/}
+                    {/*      <TiSocialTwitter />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link to="#">*/}
+                    {/*      <TiSocialPinterest />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link to="#">*/}
+                    {/*      <TiSocialLinkedin />*/}
+                    {/*    </Link>*/}
+                    {/*    <span>:Share</span>*/}
+                    {/*  </div>*/}
+                    {/*</div>*/}
 
                     <div className="post-comment-wrapper">
                       <h2 className="block-title">5 Comments</h2>
