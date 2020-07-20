@@ -9,7 +9,7 @@ image:
   width: 1200
 thumbnail: /assets/images/image-hub/layer5-image-hub-white.svg
 lang: en
-permalink: /projects/image-hub
+#permalink: /projects/image-hub
 link: /projects/image-hub
 redirect_from: projects/image-hub/
 ---
@@ -37,15 +37,16 @@ Learn how to use Docker Desktop and Kubernetes as your development platforms of 
   <div class="col s12 m6" style="display: flex; height: auto; flex-direction: column;
   flex-flow: column; vertical-align: top; text-align: center;
   position: relative;">
-      <a href="/assets/images/image-hub/service-mesh-architecture-consul.png">
+    <a href="/assets/images/image-hub/service-mesh-architecture-consul.png">
         <img src="/assets/images/image-hub/service-mesh-architecture-consul.png" width="100%">
-      </a>
+    </a>
     <i>Consul Service Mesh Architecture w/WebAssembly</i>
   </div>
   <div class="col s12 m6" style="display: flex; height: auto; flex-direction: column;
   flex-flow: column; vertical-align: top; text-align: center;
   position: relative;">
-  <a href="/assets/images/image-hub/image-hub-on-consul-with-wasm-and-meshery.png"><img src="/assets/images/image-hub/image-hub-on-consul-with-wasm-and-meshery.png" width="100%"></a>
+  <a href="/assets/images/image-hub/image-hub-on-consul-with-wasm-and-meshery.png">
+    <img src="/assets/images/image-hub/image-hub-on-consul-with-wasm-and-meshery.png" width="100%"></a>
       <i>Image Hub deployed on Consul</i>
   </div>
 </div>
@@ -53,5 +54,3 @@ Learn how to use Docker Desktop and Kubernetes as your development platforms of 
 <h5 class="black-text">Contributors</h5>
 
 This demo application has been enabled by experimental works of Nic Jackson of HashiCorp, and Kanishkar J, Lee Calcote, and other contributors of Layer5.
-
-<!-- {% include collections/projects.html excluded_project="/projects/image-hub" %} -->
