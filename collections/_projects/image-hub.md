@@ -54,3 +54,5 @@ Learn how to use Docker Desktop and Kubernetes as your development platforms of 
 <h5 class="black-text">Contributors</h5>
 
 This demo application has been enabled by experimental works of Nic Jackson of HashiCorp, and Kanishkar J, Lee Calcote, and other contributors of Layer5.
+<h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
+    Learn more about the <a href="/partners#hashicorp">Layer5 and HashiCorp Partnership</a>.</h5>
