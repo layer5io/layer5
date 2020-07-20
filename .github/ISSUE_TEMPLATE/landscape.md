@@ -2,7 +2,7 @@
 name: Service Mesh Landscape Update
 about: Issues related to the service mesh landscape.
 title: '[Landscape]'
-labels: 'landscape'
+labels: 'area/landscape'
 assignees: ''
 ---
 **Current State:**
