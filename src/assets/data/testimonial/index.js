@@ -1,5 +1,5 @@
 import image1 from '../../images/app/testimonial/intraserve.png';
-import image2 from '../../images/app/testimonial/hpe.png';
+import image2 from '../../images/app/testimonial/hpe-logo-text.png';
 import image3 from '../../images/app/testimonial/testimonial-thumb-3.jpg';
 import image4 from '../../images/app/testimonial/testimonial-thumb-4.jpg';
 import image5 from '../../images/app/testimonial/testimonial-thumb-5.jpg';

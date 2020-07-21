@@ -1,5 +1,8 @@
 dist
 .now
+_site
+.jekyll-cache
+
 # Logs
 logs
 *.log
