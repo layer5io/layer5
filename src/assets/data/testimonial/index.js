@@ -18,8 +18,8 @@ const data = {
     {
         quote:
           'Our Complex, Dynamic, and Intelligent system demands leverage different tools to efficiently manage service exchange and ecosystem at Global Scale; for instance, we need to identify right fit Service Mesh to address varying workload scenarios, distributed systems across locations, different security tiers, minimal latency etc. Meshery helps us curate Service Mesh for tailored need by helping us running simulations and identifying the right fit Service Mesh that works efficiently across diverse ecosystem of tools.',
-        author: 'Cloudless',
-        dsignation: 'HPE Labs',
+        author: 'Distinguished Technologist',
+        dsignation: 'Cloudless, HPE Labs',
         thumb: image2
     },
     {
