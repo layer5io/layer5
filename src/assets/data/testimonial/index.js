@@ -1,4 +1,4 @@
-import image1 from '../../images/app/testimonial/testimonial-thumb-1.jpg';
+import image1 from '../../images/app/testimonial/intraserve.png';
 import image2 from '../../images/app/testimonial/testimonial-thumb-2.jpg';
 import image3 from '../../images/app/testimonial/testimonial-thumb-3.jpg';
 import image4 from '../../images/app/testimonial/testimonial-thumb-4.jpg';
@@ -10,9 +10,9 @@ const data = {
   testimonials: [
     {
       quote:
-        'This app is on one assistant statement caught agency, the atprior from peace counter. A to is home, between history; With the headline is an the narrow size part. In ride ourselves,you to out',
-      author: 'Jhon Smith',
-      dsignation: 'Designer',
+        "Working with service mesh technology, I find one of the most useful tools is Meshery! I use Meshery to run POCs for our customers to help them adopt, and then, ongoing to check our mesh configuration. The most fantastic part about Meshery is it's performance management features.",
+      author: 'Mohsen Houshmand',
+      dsignation: 'Intraserve Systems',
       thumb: image1
     },
     {
