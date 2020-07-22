@@ -8,10 +8,16 @@
 </ul> -->
 
 <div class="container no-pad-top">
-  <div id="workshops" class="section scrollspy">
+  <div id="projects" class="section scrollspy">
+    {% if include.title %}
+    <h3 style="text-align: center;">
+      <a href="/projects" alt="{{include.title}}" class="white-text">{{include.title}}</a>
+    </h3>
+    {% elsif include.title != "no" %}
     <h3 style="text-align: center;">
       <a href="/projects" alt="Service Mesh Tools" class="white-text">Projects</a>
     </h3>
+    {% endif %} 
     {% include collections/projects.html %}
   </div>
 </div>

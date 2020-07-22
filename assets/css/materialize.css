@@ -2364,8 +2364,9 @@ background: linear-gradient(to right, #f5af19, #f12711); W3C, IE 10+/ Edge, Fire
   /* background: rgb(60,73,79); */
   background: linear-gradient(to left, 
   rgba(60,73,79,1) 10%, 
-  rgba(159,191,205,1) 35%, 
+  rgba(127,135,139,1) 35%, 
   rgba(60,73,79,1) 80%); 
+  /*  rgba(159,191,205,1) 35%, */
 
   /* background-color: var(--main-grey); */
   a: var(--main-light-blue);
