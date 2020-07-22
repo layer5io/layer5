@@ -4,7 +4,7 @@ title: Meshery lands in the CNCF Landscape!
 date:   2020-07-22 10:30:05 -0530
 image: /assets/images/posts/2020-07-22-meshery-on-the-cloud-native-landscape/cncf-meshery.png
 author: Anton Weiss
-permalink: /blog/meshery-on-the-cloud-native-landscape
+permalink: /blog/meshery-lands-in-the-cncf-landscape
 ---
 
 <div class="center" style="color:#00b39f;position:relative;top:-12px;font-size:1.00em;">This is a story about growing together as a community and building a project that matters.</div>
