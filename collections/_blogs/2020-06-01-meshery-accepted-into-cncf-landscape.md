@@ -6,10 +6,9 @@ image: /assets/images/posts/2020-06-01-meshery-on-the-cloud-native-landscape/cnc
 author: Anton Weiss
 permalink: /blog/meshery-lands-in-the-cncf-landscape
 ---
+<p class="center l5-dark-grey-text"><i>This is a story about growing together as a community and building a project that matters.</i></p>
 
 <img src="/assets/images/posts/2020-06-01-meshery-on-the-cloud-native-landscape/cncf-landscape-stacked-color.svg" class="image-right" />
-
-<p class="center l5-dark-grey-text"><i>This is a story about growing together as a community and building a project that matters.</i></p>
 
 <h5 class="l5-dark-grey-text">Digging into Service Meshes</h5>
 
