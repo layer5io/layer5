@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Meshery is on the Cloud Native Landscape!
-date:   2020-07-22 11:30:05 -0530
+date:   2020-07-22 10:30:05 -0530
 image: /assets/images/posts/2020-07-22-meshery-on-the-cloud-native-landscape/cncf-meshery.png
 author: Anton Weiss
 permalink: /blog/meshery-on-the-cloud-native-landscape
