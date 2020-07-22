@@ -50,6 +50,14 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
+  - jekyll-archives
+
+# This logic is included based on differences of the handling of trailing slashes between Jekyll and GitHub Pages
+# permalinks:
+#  - meshery: "/meshery"
+
+exclude:
+  - layer5-ng
 
 collections_dir: collections
 collections:
@@ -61,6 +69,12 @@ collections:
   blogs:
     output: true
     permalink: /blog/:title
+  careers:
+    output: true
+    permalink: /careers/:title
+  members:
+    output: true
+    permalink: /community/members/:name
   news:
     output: true
     permalink: /news/:title
@@ -71,6 +85,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:title
+  programs:
+    output: true
+    permalink: /programs/:title
   topics:
     output: true
     permalink: /topics/:title

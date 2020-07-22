@@ -1597,8 +1597,8 @@ if (Vel) {
   });
 })(jQuery);;(function ($) {
 
-  // Add posibility to scroll to selected option
-  // usefull for select for example
+  // Add possibility to scroll to selected option
+  // useful for select for example
   $.fn.scrollTo = function (elem) {
     $(this).scrollTop($(this).scrollTop() - $(this).offset().top + $(elem).offset().top);
     return this;
@@ -2430,7 +2430,7 @@ if (Vel) {
       }); // End click handler
 
 
-      // This function returns the modaled image to the original spot
+      // This function returns the modeled image to the original spot
       function returnToOriginal() {
 
         doneAnimating = false;
@@ -2965,7 +2965,7 @@ if (Vel) {
                   });
                 }
 
-            // Set tooptip css placement
+            // Set tooltip css placement
             tooltipEl.css({
               top: newCoordinates.y,
               left: newCoordinates.x
@@ -4842,7 +4842,7 @@ if (Vel) {
         $('ul#select-options-' + lastID).remove();
       }
 
-      // If destroying the select, remove the selelct-id and reset it to it's uninitialized state.
+      // If destroying the select, remove the select-id and reset it to it's uninitialized state.
       if (callback === 'destroy') {
         $select.removeAttr('data-select-id').removeClass('initialized');
         $(window).off('click.select');
@@ -5102,7 +5102,7 @@ if (Vel) {
           if (newOption) activateOption(options, newOption);
         }
 
-        // Automaticaly clean filter query so user can search again by starting letters
+        // Automatically clean filter query so user can search again by starting letters
         setTimeout(function () {
           filterQuery = [];
         }, 1000);

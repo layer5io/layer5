@@ -1,0 +1,34 @@
+<div
+  style="
+    background-color: rgba(60, 73, 79, 1);
+    max-height: 12vh;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin-bottom: 2%;
+    margin-bottom: 3%;
+  "
+>
+  <div
+    style="
+      text-align: center;
+      line-height: 6vh;
+      margin-left: 2px;
+      margin-right: 2px;
+      padding-bottom: 10px;
+      padding-top: 8px;
+      overflow: hidden;
+      white-space: nowrap;
+    "
+  >
+    {% for partner in site.data.partners %} {% if partner.visibility != "hide"
+    and partner.gallery == "yes" %}
+    <a href="/partners"
+      ><img
+        src="{{partner.gallery_img}}"
+        style="{{partner.gallery_style}}; display;inline; margin-right:2%; margin-left:2%;"
+        alt="{{partner.name}}"
+    /></a>
+
+    {% endif %} {% endfor %}
+  </div>
+</div>

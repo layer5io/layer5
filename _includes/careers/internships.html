@@ -1,6 +1,9 @@
 <div style="z-index:20;">
+    <img class="light-shadow" src="/assets/images/about/jobs_black.svg" style="min-width:15vw; min-height: 15vh; 
+        float:right; margin-right: 3vw; margin-left: 3vw; " />
 <h3 class="black-text">Available Opportunities</h3>
 See our <a href="/careers">careers</a> page for more about Layer5.
+
     <div>  
         <ul>
             <ol><b>Internships</b></ol>
@@ -14,8 +17,8 @@ See our <a href="/careers">careers</a> page for more about Layer5.
     <p>
     <h5 class="black-text">Participating Partners</h5>
      <ul>
-       <ol><b>UT Austin Coding Boot Camp</b> - <a href="/assets/careers/internships/UT%20Austin%20Boot%20Camp%20-%20Meshery%20Flyer.pdf">Internship Flyer</a></ol>
-       <ol><b>UEM Computer Science and Engineering</b> - <a href="/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf">Internship Flyer</a></ol>
+       <li><b>UT Austin Coding Boot Camp</b> - <a href="/assets/careers/internships/UT%20Austin%20Boot%20Camp%20-%20Meshery%20Flyer.pdf">Internship Flyer</a></li>
+       <li><b>UEM Computer Science and Engineering</b> - <a href="/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf">Internship Flyer</a>,<a href="https://uem.edu.in/blog/what-is-open-source/"> Learn More </a></li>
     </ul>
      </p>
 
@@ -24,14 +27,66 @@ See our <a href="/careers">careers</a> page for more about Layer5.
       <div id="gsoc-2019" class="card-content" style="position:relative;float:center;vertical-align: bottom;" >
           <h3 style="text-align:center;color:aliceblue;">
               <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:300px;" 
-                class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
+                class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow z-depth-2"
                  href="mailto:jobs@layer5.io">Join Today</a> </h3>
       </div>
       <!-- <div id="gsoc-2019" class="card-content" style="position:relative;float:center;vertical-align: bottom;" >
           <h3 style="text-align:center;color:aliceblue;">
               <a style="font-size:.7em;padding-bottom:40px;padding-top:10px;width:300px;" 
-                class="waves-effect waves-dark btn white-text darken-2 l5-light-blue z-depth-4"
+                class="waves-effect waves-dark btn white-text darken-2 l5-dark-yellow
+ z-depth-4"
                  href="https://summerofcode.withgoogle.com/get-started/">Join Today</a> </h3>
       </div> -->
       
+</div>
+<div class="row">
+  
+    {% assign sorted = (site.careers | sort: 'title') %}
+    
+      {% for career in sorted %}  
+      
+      {% if career.visibility != "hide" and career.type == "internship" %}
+    
+      <div class="col s12 m4">
+        <div class="card" style="z-index: 1; height:330px;overflow: hidden;">
+          <div class="card-image">
+            <a href="{{ career.url }}">
+              <img src="{{career.image}}" style="max-width:100%;  max-height: 180px; width: auto;
+              height: auto; text-align: center;
+              margin-left: auto;
+              margin-right: auto;"></a>
+            <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
+            
+            {% if career.eurl %}
+            <a id="{{career.eurl}}" class="btn-floating halfway-fab 
+              waves-effect z-depth-2 l5-dark-yellow
+              waves-light darken-3" href="{{career.eurl}}">
+            <img src="/assets/images/buttons/external-link_white.svg" 
+              style="position:absolute; max-width:100%;  max-height: 20px; width: auto;
+              height: auto; text-align: center; top: 10px;
+              margin-left: auto;
+              margin-right: auto;" /></a>
+            
+  
+            {% else %}
+            <a id="{{career.url}}" class="btn-floating halfway-fab 
+            waves-effect z-depth-2 l5-dark-grey waves-light darken-3"
+            href="{{ career.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
+            {% endif %}
+  
+            
+          </div>
+          <div class="card-content">
+            <h5 class="black-text">{{career.title}}</h5>
+            <p class="grey-text text-darken-2" style="padding-top:1em; padding-bottom: .75em;">
+              {{ career.excerpt }}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    
+      {% endfor %}
+    </div>
+  </div>
 </div>

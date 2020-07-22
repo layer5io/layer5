@@ -9,8 +9,8 @@
 <footer class="page-footer" id="footer">
     <div class="container">
       <div class="row">
-        <div class="col l3 ">
-          <span class="white-text" style="font-weight: bold;font-size:1.3em;">Resources</span>
+        <div class="col l3">
+          <a class="white-text" href="/learn"><span class="white-text" style="font-weight: bold;font-size:1.3em;">Resources</span></a>
           <ul>
             <li><a class="white-text" href="/landscape">Service Mesh Comparison</a></li>
             <li><a class="white-text" href="/landscape#tools">Service Mesh Tools</a></li>
@@ -18,32 +18,49 @@
             <li><a class="white-text" href="/workshops/">Service Mesh Workshops</a></li>
           </ul>
         </div>
- 
-
         <div class="col l3">
-          <span class="white-text" style="font-weight: bold;font-size:1.3em;">Community</span>
+          <span class="white-text" style="font-weight: bold;font-size:1.3em;">
+            <a class="white-text" href="/community">Community</a>
+          </span>          
           <ul>
             <li><a class="white-text" href="/blog">Blog</a></li>
+            <li><a class="white-text" href="/events">Events</a></li>
             <li><a class="white-text" href="/partners">Partners</a></li>
-            <li><a class="white-text " href="/careers/internships">Internships</a></li>
+            <li><a class="white-text " href="/careers/internships">Internships</a>
+              <ul>
+              <li><a class="white-text " href="/gsoc/2020">GSoC 2020</a></li>
+              <li><a class="white-text " href="/gsod/2020">GSoD 2020</a></li>
+              <li><a class="white-text " href="/communitybridge/2020">CommunityBridge 2020</a></li>
+
+              </ul>
           </ul>
+        </div>
+        <div class="col l3">
+          <span class="white-text" style="font-weight: bold;font-size:1.3em;">
+            <a class="white-text" href="/about">Company</a>
+          </span>
           <ul>
             <li><a class="white-text" href="/company/news">News</a></li>
-            <li><a class="white-text" href="/careers">Careers</a></li>
             <li><a class="white-text" href="/brand">Brand</a></li>
+            <li><a class="white-text" href="/careers">Careers</a></li>
+            <li><a class="white-text" href="/contact">Contact</a></li>
           </ul>
         </div>
 
         <div class="col l3" >
-          <span class="white-text" style="font-weight: bold;font-size:1.3em;">Projects</span>
-          <ul>
+          <span class="white-text" style="font-weight: bold;font-size:1.3em;">
+            <a class="white-text" href="/projects">Projects</a>
+          </span>          <ul>
               <li><a class="white-text" href="/meshery">Meshery</a></li>
               <li><a class="white-text" href="/landscape">Service Mesh Landscape</a></li>
               <li><a class="white-text" href="/blog/a-standard-interface-for-service-meshes">Service Mesh Interface</a></li>
-              <li><a class="white-text" href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance Specification</a></li>
+              <li><a class="white-text" href="/performance">Service Mesh Performance Specification</a></li>
           </ul>
         </div>
-        <div class="col l3">
+
+        {% include languages.html text="white" %}
+
+        <div class="col l4">
             <div class="white-text" style="font-weight: bold;font-size:1.3em;">Get Involved!</div>
             {% include partials/vert-social.html %}
           </div>       

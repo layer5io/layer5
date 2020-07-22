@@ -4,25 +4,35 @@ lang: en
 image:
   path: /assets/images/layer5/5-dark-bg.png
 ---
-<head>
-  <style>
-    html {
-      overflow:   scroll;
-    }
-    ::-webkit-scrollbar {
-        width: 0px;
-        background: transparent; /* make scrollbar transparent */
-    }
-   </style>
-   
-</head>
 <body>
-<div class="container no-pad-top">
+
+  <div class="container no-pad-top">
     <div id="ecosystem" class="section scrollspy">
-      <h3 style="text-align:center;color:aliceblue;">The Service Mesh Community</h3>
+      <h2 style="text-align: center; color:#fff">
+        The Service Mesh Community
+      </h2>
       {% include ecosystem.html %}
-      
+      <div style="flex-grow: 0.25;">&nbsp;</div>
     </div>
   </div>
-</body>
+
+  <div style="flex-grow: 0.25;">&nbsp;</div>
+
+  {% include customers.html %}
+  <div style="flex-grow: 0.25;">&nbsp;</div>
   
+  {% include programs.html %}
+
+  {% include collections/projects-list.html %}
+
+  <div style="flex-grow: 0.25;">&nbsp;</div>
+  <div style="flex-grow: 0.25;">&nbsp;</div>
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <div style="align-self: flex-start;"></div>
+    <div style="width: 600px;">
+      {% include newsletter-signup-form.html %}
+    </div>
+
+    <div style="align-self: flex-end;"></div>
+  </div>
+</body>

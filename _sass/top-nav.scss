@@ -163,4 +163,16 @@
         z-index: 2;
         border-left: 1px solid #3E4B51;
     }
+
+    .cta { 
+        border: .15rem solid $main-light-green;
+        border-radius: 5px;
+        &:hover {
+            font-weight: inherit;
+            border: .15rem solid  $main-dark-green;
+            background-color: $main-light-green;
+            border-radius: 5px;
+            color: #fff;
+        }
+    }
 }
