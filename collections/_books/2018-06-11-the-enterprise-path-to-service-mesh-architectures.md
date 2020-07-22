@@ -6,6 +6,8 @@ image: /assets/images/books/The-Enterprise-Path-to-Service-Mesh-Architectures.gi
 #author: Lee Calcote
 status: published
 brief: "Approaches to service mesh deployments and an explanation of service meshes in contrast to related technologies."
+description: "A must-read for anyone looking to understand service mesh deployments and get an explanation of service meshes in contrast to related technologies.
+Learn from the largest collection of service mesh projects and their maintainers in the world.Self-study service mesh workshops and tutorials for Istio, Envoy, Linkerd, Consul, App Mesh, Octarine, Kuma, VMware Tanzu Service Mesh"
 redirect_from: 
  - "/2018/06/08/the-enterprise-path-to-servcie-mesh/"
  - "/books/the-enterprise-path-to-service-mesh"

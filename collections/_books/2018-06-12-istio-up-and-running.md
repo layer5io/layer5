@@ -6,6 +6,8 @@ image: /assets/images/istio-up-and-running_top.png
 #author: Lee Calcote and Zack Butcher
 status: published
 brief: "A must-read for anyone looking to get started with Istio."
+description: "A must-read for anyone looking to get started with Istio.
+Learn from the largest collection of service mesh projects and their maintainers in the world.Self-study service mesh workshops and tutorials for Istio, Envoy, Linkerd, Consul, App Mesh, Octarine, Kuma, VMware Tanzu Service Mesh"
 ---
 <h4> Book: <i>Istio: Up and Running</i></h4>
 By Lee Calcote and Zack Butcher
