@@ -9,7 +9,8 @@ image:
   width: 1200
 thumbnail: /assets/images/buttons/smps_white.svg
 lang: en
-link: /projects/performance
+link: /projects/service-mesh-performance-specification
+
 ---
 <style>
 ul.bullet li {
