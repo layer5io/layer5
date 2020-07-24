@@ -2,14 +2,14 @@
 layout: post
 title:  "Google Summer of Code 2020: Service Mesh Performance with Envoy Nighthawk"
 date:   2020-06-23 10:30:05 -0530
-image: /assets/images/posts/2020-06-23-gsoc-with-layer5-and-cncf/gsoc.png
+image: /assets/images/posts/2020-06-23-google-summer-of-code-2020-service-mesh-performance-with-envoy-nighthawk/gsoc.png
 author: Kush Trivedi
-#permalink: /blog/gsoc-with-layer5-and-cncf
+permalink: /blog/google-summer-of-code-2020-service-mesh-performance-with-envoy-nighthawk
 ---
 <div class="center" style="color:gray;position:relative;top:-10px;font-size:1.25em;"><i>One of the greatest learning experience yet.</i></div>
 
 <h4 style="text-transform: uppercase;">How did it all start?</h4>
-<img src="/assets/images/posts/2020-06-23-gsoc-with-layer5-and-cncf/gsoc.png" align="right" />
+<img src="/assets/images/posts/2020-06-23-google-summer-of-code-2020-service-mesh-performance-with-envoy-nighthawk/gsoc.png" align="right" />
 <p style="margin-left:.5em;">
 I was introduced to the Layer5 community by our very own Lee Calcote, and since then I have been exploring the vast world of service meshes and their performance characteristics.
 In the pre-GSoC phase, I had been working with the Layer5 community as an active contributor, exploring various new DevOps tooling like service meshes, sidecar concept and benchmarking of services. I have had a run-in with the Kubernetes community before and initially believed Kubernetes to be the final stage of DevOps, but I was happily surprised when I found out that the kubernetes’ end merely marked the entry point to a whole new world of service meshes.
