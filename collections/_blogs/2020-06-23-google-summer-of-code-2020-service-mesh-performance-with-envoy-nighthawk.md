@@ -2,7 +2,7 @@
 layout: post
 title:  "Google Summer of Code 2020: Service Mesh Performance with Envoy Nighthawk"
 date:   2020-06-23 10:30:05 -0530
-image: /assets/images/posts/2020-06-23-google-summer-of-code-2020-service-mesh-performance-with-envoy-nighthawk/gsoc.png
+image: /assets/images/posts/2020-06-23-google-summer-of-code-2020-service-mesh-performance-with-envoy-nighthawk/gsoc-wide.png
 author: Kush Trivedi
 permalink: /blog/google-summer-of-code-2020-service-mesh-performance-with-envoy-nighthawk
 ---
