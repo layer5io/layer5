@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Google Summer of Code 2020 with Layer5 and CNCF"
+title:  "Google Summer of Code 2020: Service Mesh Performance with Envoy Nighthawk"
 date:   2020-06-23 10:30:05 -0530
 image: /assets/images/posts/2020-06-23-gsoc-with-layer5-and-cncf/gsoc.png
 author: Kush Trivedi
