@@ -1,11 +1,11 @@
-import React from "react";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
-import { Link } from "gatsby";
+import React from "react"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { Link } from "gatsby"
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
-  const addAllClasses = [""];
+  const addAllClasses = [""]
   if (props.className) {
-    addAllClasses.push(props.className);
+    addAllClasses.push(props.className)
   }
   return (
     <ul className={addAllClasses.join(" ")}>
@@ -16,30 +16,31 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
             menu.subItems !== undefined ? "nav-item has-dropdown" : "nav-item"
           }
         >
-         
-            <AnchorLink
-                to={menu.path}
-                >
-                {menu.name}
-            </AnchorLink>
+          <AnchorLink to={menu.path}>{menu.name}</AnchorLink>
           {menu.subItems !== undefined && (
             <ul key={index} className="dropdown">
-              {menu.subItems.map((subItem, i) => (
-                <li key={i}>
-                  <Link
-                        to={subItem.path}
-                        partiallyActive={true}
-                    >
+              {menu.name}
+              <div class="nav-grid">
+                <div>
+                  {menu.subItems.map((subItem, i) => (
+                    <li key={i}>
+                      <Link to={subItem.path} partiallyActive={true}>
                         {subItem.name}
-                    </Link>
-                </li>
-              ))}
+                      </Link>
+                    </li>
+                  ))}
+                </div>
+                <div>
+                  <div>Video 1</div>
+                </div>
+                <div>Video 2</div>
+              </div>
             </ul>
           )}
         </li>
       ))}
     </ul>
-  );
-};
+  )
+}
 
-export default ScrollspyMenu;
+export default ScrollspyMenu
