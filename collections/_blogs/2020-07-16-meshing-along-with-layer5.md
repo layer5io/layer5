@@ -11,7 +11,7 @@ permalink: /blog/meshing-along-with-layer5
 
 It all started 9 months ago when I stumbled across the following LinkedIn post, written by a college senior who had recently scored an internship with Redhat.
 
-<img class = "image-center" src="/assets/images/posts/2020-07-16-meshing-along-with-layer5/pic3.png">
+<img class = "image-center" src="/assets/images/posts/2020-07-16-meshing-along-with-layer5/pic3.jpg">
 
 This led me to a long-winding conversation with Subham Kumar Rai and Anand Kumar Singh about Layer5 and how amazing an opportunity it would be to be a part of this emerging community. I did some research on service meshes and made my way to the Layer5 Github repo. From there, it was a swift journey to the Layer5 Slack Channel where I truly understood what Subham had meant about the warm welcome. I was amazed by how helpful and willing the entire community was. Armed with the resources I needed, I delved into the projects and churned out a few PRs and I was hooked. I dove aggressively into the projects and handled any curve balls with the help of my mentors. My participation in the Layer5 community drove me to a well earned obsession with open source projects which led me to make my own contributions in the FOSSASIA and GATSBY projects and take part in many open-source contests such as Hacktoberfest, DevopsCember, Kharagpur Winter Of Code (KWOC), NJACK Winter Of Code (NWOC), Girlscript Summer Of Code (GSSOC).
 
