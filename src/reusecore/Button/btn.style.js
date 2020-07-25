@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, {css} from "styled-components";
 const ButtonStyle = styled.button` 
     cursor: pointer;
     display: inline-flex;
@@ -49,7 +49,7 @@ const ButtonStyle = styled.button`
             background: ${props.theme.secondaryColor}; 
         }
     `}
-`
-ButtonStyle.displayName = 'ButtonStyle';
+`;
+ButtonStyle.displayName = "ButtonStyle";
 
 export default ButtonStyle;

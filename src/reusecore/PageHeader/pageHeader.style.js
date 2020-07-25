@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 
 const PageHeaderWrapper = styled.div`
@@ -58,6 +58,6 @@ const PageHeaderWrapper = styled.div`
             }
        }
     }
-`
+`;
 
 export default PageHeaderWrapper;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const AboutSectionWrapper = styled.section`
      padding: 190px 0 60px 0;
@@ -18,7 +18,7 @@ const AboutSectionWrapper = styled.section`
                 position: absolute;
                 left: -2px;
                 top: 4px;
-                background: ${props => props.theme.secondaryLightColor ? props.theme.secondaryLightColor : '#FFEBEC'};
+                background: ${props => props.theme.secondaryLightColor ? props.theme.secondaryLightColor : "#FFEBEC"};
                 height: 55px;
                 width: 55px;
                 content: "";
@@ -49,5 +49,5 @@ const AboutSectionWrapper = styled.section`
         }
     }
     
-`
+`;
 export default AboutSectionWrapper;

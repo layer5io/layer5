@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const FeturesSectionWrapper = styled.section`
    padding: 70px 0 110px 0;
@@ -56,6 +56,6 @@ const FeturesSectionWrapper = styled.section`
             text-align: center;
         }
     }
-`
+`;
 
 export default FeturesSectionWrapper;

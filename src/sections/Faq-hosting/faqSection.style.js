@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const FaqSectionWrapper = styled.div`
   padding: 95px 0 140px 0;

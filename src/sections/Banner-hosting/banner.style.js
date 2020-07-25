@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const BannerSectionWrapper = styled.div`
     padding: 260px 0 120px 0;
@@ -342,6 +342,6 @@ const BannerSectionWrapper = styled.div`
         }
      }
      
-`
+`;
 
 export default BannerSectionWrapper;

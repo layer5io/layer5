@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const PricingSectionWrapper = styled.section`
     padding: 90px 0 108px 0;
@@ -133,6 +133,6 @@ const PricingSectionWrapper = styled.section`
     }
     
     
-`
+`;
 
 export default PricingSectionWrapper;

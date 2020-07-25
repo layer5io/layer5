@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const IntegrationItemWrapper = styled.section`
     padding: 100px 0 110px 0;
@@ -130,6 +130,6 @@ const IntegrationItemWrapper = styled.section`
      }
    
 
-`
+`;
 
-export default IntegrationItemWrapper
+export default IntegrationItemWrapper;

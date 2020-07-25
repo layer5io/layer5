@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import Icon1 from '../../assets/images/blog/icon1.svg';
+import Icon1 from "../../assets/images/blog/icon1.svg";
 
 export const BlogPageWrapper = styled.div`
     .blog-page-wrapper{
@@ -179,4 +179,4 @@ export const BlogPageWrapper = styled.div`
             }
         }
     }
-`
+`;

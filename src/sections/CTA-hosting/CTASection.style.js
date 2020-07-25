@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 
 const CTASectionWrapper = styled.div`
@@ -42,6 +42,6 @@ const CTASectionWrapper = styled.div`
         }
     }
     
-`
+`;
 
 export default CTASectionWrapper;

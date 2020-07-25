@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 
 const ClientsSectionWrapper =  styled.div`
@@ -14,6 +14,6 @@ const ClientsSectionWrapper =  styled.div`
             margin: 0 auto;
         }
     }
-`
+`;
 
 export default ClientsSectionWrapper;

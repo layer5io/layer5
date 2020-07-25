@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import Bg1 from '../../assets/images/app/features/bg-1.png';
-import Bg2 from '../../assets/images/app/features/bg-2.png';
+import Bg1 from "../../assets/images/app/features/bg-1.png";
+import Bg2 from "../../assets/images/app/features/bg-2.png";
 
-import Vintage1 from '../../assets/images/app/features/vintage-1.png';
-import Vintage2 from '../../assets/images/app/features/vintage-2.png';
+import Vintage1 from "../../assets/images/app/features/vintage-1.png";
+import Vintage2 from "../../assets/images/app/features/vintage-2.png";
 
 
 const FeturesSectionWrapper = styled.section`
@@ -95,6 +95,6 @@ const FeturesSectionWrapper = styled.section`
         }
     }
     
-`
+`;
 
 export default FeturesSectionWrapper;
