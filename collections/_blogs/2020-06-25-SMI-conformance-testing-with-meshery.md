@@ -2,9 +2,10 @@
 layout: post
 title:  "Starting SMI Conformance Testing with Meshery"
 date:   2020-06-25 10:30:05 -0530
-image: /assets/images/posts/2020-06-25-SMI-conformance-testing-with-meshery/smi-conformance.svg
+image: /assets/images/posts/2020-06-25-smi-conformance-testing-with-meshery/smi-conformance.svg
 author: Naveen Kumar
-permalink: /blog/smi-conformance-testing-with-meshery
+category: community
+permalink: /blog/:categories/:title
 ---
 
 <img src="/assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png" align="right" width="200px" />
