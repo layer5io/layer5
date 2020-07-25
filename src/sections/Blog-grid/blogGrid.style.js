@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 export const BlogPageWrapper = styled.div`
 
     .blog-list-wrapper{

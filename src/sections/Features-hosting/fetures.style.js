@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const FeturesSectionWrapper = styled.div`
     padding: 120px 0;
@@ -84,6 +84,6 @@ const FeturesSectionWrapper = styled.div`
         }
     }
     
-`
+`;
 
 export default FeturesSectionWrapper;

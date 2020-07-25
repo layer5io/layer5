@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const FotterWrapper = styled.section`
     padding-top: 195px;
@@ -21,7 +21,7 @@ const FotterWrapper = styled.section`
   p{
     font-size: 18px;
     line-height: 38px;
-    color: ${props => props.theme.headingColor ?  props.theme.headingColor : '#1D316C'};
+    color: ${props => props.theme.headingColor ?  props.theme.headingColor : "#1D316C"};
   }
   .copyright-text{
       margin-top: 30px;
@@ -30,7 +30,7 @@ const FotterWrapper = styled.section`
   a{
     transition: 450ms all; 
     &:hover {
-      color: ${props => props.theme.secondaryColor ?  props.theme.secondaryColor : '#FB7B81'};
+      color: ${props => props.theme.secondaryColor ?  props.theme.secondaryColor : "#FB7B81"};
     }
   }
   .footer-logo {
@@ -51,7 +51,7 @@ const FotterWrapper = styled.section`
             flex-basis: 100%;
             padding: 15px;
             border-radius: 5px;
-            border: 1px solid ${props => props.theme.headingColor ?  props.theme.headingColor : '#1D316C'};
+            border: 1px solid ${props => props.theme.headingColor ?  props.theme.headingColor : "#1D316C"};
         }
         button {
             position: absolute;
@@ -63,7 +63,7 @@ const FotterWrapper = styled.section`
             background: transparent;
             color: ${props => props.theme.headingColor};
             svg{
-                color: ${props => props.theme.headingColor ?  props.theme.headingColor : '#1D316C'};
+                color: ${props => props.theme.headingColor ?  props.theme.headingColor : "#1D316C"};
                 font-size: 22px;
                 line-height: 100%;
             }
@@ -84,12 +84,12 @@ const FotterWrapper = styled.section`
           width: 30px;
           line-height: 33px;
           border-radius: 50%;
-          border: 1px solid ${props => props.theme.headingColor ?  props.theme.headingColor : '#1D316C'};
+          border: 1px solid ${props => props.theme.headingColor ?  props.theme.headingColor : "#1D316C"};
           text-align: center;
           transition: 450ms all;
           &:hover {
-            color: ${props => props.theme.secondaryColor ?  props.theme.secondaryColor : '#FB7B81'};  
-            border-color: ${props => props.theme.secondaryColor ?  props.theme.secondaryColor : '#FB7B81'};
+            color: ${props => props.theme.secondaryColor ?  props.theme.secondaryColor : "#FB7B81"};  
+            border-color: ${props => props.theme.secondaryColor ?  props.theme.secondaryColor : "#FB7B81"};
           }
         }
       }

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import AppSecreenBG from '../../assets/images/app/get-app/get-app-bg.png';
+import AppSecreenBG from "../../assets/images/app/get-app/get-app-bg.png";
 
 const AppScreenSctionWrapper = styled.section`
   padding: 130px 0 110px 0;
@@ -73,7 +73,7 @@ const AppScreenSctionWrapper = styled.section`
 
     &:hover {
       opacity: 1;
-      color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : '#FB7B81'}
+      color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"}
     }
   }
 

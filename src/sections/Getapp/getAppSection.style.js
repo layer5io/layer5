@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import AppSecreenBG from '../../assets/images/app/get-app/get-app-bg.png';
+import AppSecreenBG from "../../assets/images/app/get-app/get-app-bg.png";
 
 const GetAppSectionWrap = styled.section`
     padding: 100px 0 90px 0;
@@ -219,7 +219,7 @@ const GetAppSectionWrap = styled.section`
            
         }
     }
-`
+`;
 
 export default GetAppSectionWrap;
 

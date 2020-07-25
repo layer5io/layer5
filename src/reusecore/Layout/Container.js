@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, {css} from 'styled-components';
+import React from "react";
+import styled, {css} from "styled-components";
 
 
 
@@ -26,7 +26,7 @@ const ContainerWrapper = styled.div`
     ${props => props.fluid && css`
         max-width: 100%; 
     `}
-`
+`;
 
 
 const Container = ({children}, props) => {
@@ -35,8 +35,8 @@ const Container = ({children}, props) => {
         <ContainerWrapper {...props}>
             {children}
         </ContainerWrapper>
-    )
-}
+    );
+};
 
 
 export default Container;

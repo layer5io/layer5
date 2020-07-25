@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Icon2 from '../../assets/images/blog/icon2.svg';
+import styled from "styled-components";
+import Icon2 from "../../assets/images/blog/icon2.svg";
 
 const BlogPageWrapper = styled.div`
     
@@ -17,7 +17,7 @@ const BlogPageWrapper = styled.div`
         margin-top: 30px;  
     }
     .entry-three{
-        color: ${props => props.theme.black ? props.theme.black : '#333333'};
+        color: ${props => props.theme.black ? props.theme.black : "#333333"};
         font-weight: 500;
     }
     &:hover{
@@ -40,7 +40,7 @@ const BlogPageWrapper = styled.div`
         font-size: 15px;
         line-height: 20px;
         text-align: center;
-        color: ${props => props.theme.black ? props.theme.black : '#333333'};
+        color: ${props => props.theme.black ? props.theme.black : "#333333"};
         width: 100px;
         background: rgba(255,255,255,0.15);
         position: absolute;
@@ -85,12 +85,12 @@ blockquote {
     position: relative;
     box-sizing: border-box;
     position: relative;
-    color: ${props => props.theme.black ? props.theme.black : '#333333'};
+    color: ${props => props.theme.black ? props.theme.black : "#333333"};
     &:before{
         content: '';
         width: 60px;
         height: 3px;
-        background: ${props => props.theme.black ? props.theme.black : '#333333'};
+        background: ${props => props.theme.black ? props.theme.black : "#333333"};
         position: absolute;
         top: 20px;
         left: 0;
@@ -127,7 +127,7 @@ blockquote {
 .tags{
     span{
         font-size: 20px;
-        color: ${props => props.theme.black ? props.theme.black : '#333333'};
+        color: ${props => props.theme.black ? props.theme.black : "#333333"};
     }
     a{
         margin-left: 10px;
@@ -146,19 +146,19 @@ blockquote {
 .share{
     span{
         font-size: 20px;
-        color: ${props => props.theme.black ? props.theme.black : '#333333'};
+        color: ${props => props.theme.black ? props.theme.black : "#333333"};
     }
     display: flex;
     align-items: center;
     a{
         line-height: 100%;
         &:hover svg{
-            color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : '#FB7B81'};
+            color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
         }
     }
     svg{
         font-size: 28px;
-        color: ${props => props.theme.primaryLightColor ? props.theme.primaryLightColor : '#EEE6FA'};
+        color: ${props => props.theme.primaryLightColor ? props.theme.primaryLightColor : "#EEE6FA"};
         margin-right: 10px;
         line-height: 100%;
         transition: all 0.3s linear;
@@ -166,7 +166,7 @@ blockquote {
 }
 .block-title{
     font-size: 36px;
-    color: ${props => props.theme.black ? props.theme.black : '#333333'};
+    color: ${props => props.theme.black ? props.theme.black : "#333333"};
     font-weight: 500;
     padding-bottom: 20px;
 }
@@ -194,7 +194,7 @@ blockquote {
 .post-comment-block{
     display: flex; 
     padding: 50px 0 40px;
-    border-bottom: 1px solid ${props => props.theme.primaryLightColor ? props.theme.primaryLightColor : '#EEE6FA'};
+    border-bottom: 1px solid ${props => props.theme.primaryLightColor ? props.theme.primaryLightColor : "#EEE6FA"};
 }
 .author-avatar {
     min-width: 95px;
@@ -209,7 +209,7 @@ blockquote {
     justify-content: space-between;
     h3 {
         font-size: 20px;
-        color: ${props => props.theme.black ? props.theme.black : '#333333'};
+        color: ${props => props.theme.black ? props.theme.black : "#333333"};
         font-weight: 400;
         padding-bottom: 5px;
         margin: 0;
@@ -230,7 +230,7 @@ blockquote {
             transition: all 0.3s linear;
         }
         &:hover{
-            color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : '#FB7B81'};
+            color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
             svg{
                 transform: translateX(5px);
             }
@@ -354,5 +354,5 @@ blockquote {
             font-size: 28px;
         }
     }
-`
+`;
 export default BlogPageWrapper;

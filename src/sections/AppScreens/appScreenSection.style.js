@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import AppSecreenBG from '../../assets/images/app/get-app/get-app-bg.png';
+import AppSecreenBG from "../../assets/images/app/get-app/get-app-bg.png";
 
-import AppSecreenBGTwo from '../../assets/images/app/app-screen/05.png';
+import AppSecreenBGTwo from "../../assets/images/app/app-screen/05.png";
 
 const AppScreenSectionWrapper = styled.div`
     .app-screen-one-block{
@@ -189,7 +189,7 @@ const AppScreenSectionWrapper = styled.div`
         }
     }
     
-`
+`;
 
 
 export default AppScreenSectionWrapper;
