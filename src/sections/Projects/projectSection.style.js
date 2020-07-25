@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ProjectItemWrapper = styled.section`
     padding: 100px 0 110px 0;
@@ -130,6 +130,6 @@ const ProjectItemWrapper = styled.section`
      }
    
 
-`
+`;
 
-export default ProjectItemWrapper
+export default ProjectItemWrapper;

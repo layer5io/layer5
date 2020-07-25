@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'; 
+import { createGlobalStyle } from "styled-components"; 
 
  
 
@@ -72,7 +72,7 @@ a{
 section{
     position: relative;
 }
-`
+`;
 
 
 export { GlobalStyle };

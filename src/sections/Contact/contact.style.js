@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ContactWrapper = styled.section`
     padding: 100px 0 200px 0;
@@ -74,6 +74,6 @@ const ContactWrapper = styled.section`
         }
     }
     
-`
+`;
 
 export default ContactWrapper;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const NewsSectionWrapper = styled.section`
     padding: 140px 0 70px 0;
@@ -119,6 +119,6 @@ const NewsSectionWrapper = styled.section`
         }
     }
     
-`
+`;
 
 export default NewsSectionWrapper;

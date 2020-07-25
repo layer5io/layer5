@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import React from "react";
+import styled, { css } from "styled-components";
 
 
 const RowWrapper = styled.div`
@@ -19,15 +19,15 @@ const RowWrapper = styled.div`
         }
     )};
  
-`
+`;
 
 const Row = ({children, ...props}) => {
     return(
         <RowWrapper {...props}>
             {children}
         </RowWrapper>
-    )
-}
+    );
+};
 
 
 export default Row;

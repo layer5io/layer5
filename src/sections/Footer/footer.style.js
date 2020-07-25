@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import FooterBG from '../../assets/images/app/footer/footer-bg.png';
+import styled from "styled-components";
+import FooterBG from "../../assets/images/app/footer/footer-bg.png";
 
 const FotterWrapper = styled.section`
   padding-top: 250px;

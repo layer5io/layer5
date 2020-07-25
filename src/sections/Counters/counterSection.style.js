@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 
 const CounterSectionWrapper = styled.section`
@@ -24,6 +24,6 @@ const CounterSectionWrapper = styled.section`
         padding: 0px;
      }
     
-`
+`;
 
 export default CounterSectionWrapper;

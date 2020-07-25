@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import imgHero from '../../assets/images/app/hero/hero-two.png';
+import imgHero from "../../assets/images/app/hero/hero-two.png";
 
 const BannerSectionWrapper = styled.section`
     padding: 120px 0 0 0;
@@ -149,6 +149,6 @@ const BannerSectionWrapper = styled.section`
         }
      }
      
-`
+`;
 
 export default BannerSectionWrapper;

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const NavigationWrap = styled.header`
   background: transparent;
@@ -80,9 +80,9 @@ const NavigationWrap = styled.header`
             padding: 5px 15px;
             &:hover {
               color: ${(props) =>
-                props.theme.menuHoverColor
-                  ? props.theme.menuHoverColor
-                  : "#FB7B81"} !important;
+        props.theme.menuHoverColor
+            ? props.theme.menuHoverColor
+            : "#FB7B81"} !important;
             }
             &:before {
               content: none;
@@ -95,7 +95,7 @@ const NavigationWrap = styled.header`
       .nav-active {
         position: relative;
         color: ${(props) =>
-          props.theme.menuColor ? props.theme.menuColor : "#1D316C"};
+        props.theme.menuColor ? props.theme.menuColor : "#1D316C"};
         font-size: 15px;
         transition: 450ms all;
         padding-bottom: 5px;
@@ -109,16 +109,16 @@ const NavigationWrap = styled.header`
           height: 1px;
           opacity: 0;
           background: ${(props) =>
-            props.theme.menuHoverColor
-              ? props.theme.menuHoverColor
-              : "#FB7B81"};
+        props.theme.menuHoverColor
+            ? props.theme.menuHoverColor
+            : "#FB7B81"};
           transition: 450ms all;
         }
         &:hover {
           color: ${(props) =>
-            props.theme.menuHoverColor
-              ? props.theme.menuHoverColor
-              : "#FB7B81"};
+        props.theme.menuHoverColor
+            ? props.theme.menuHoverColor
+            : "#FB7B81"};
           &:before {
             opacity: 1;
           }
@@ -146,9 +146,9 @@ const NavigationWrap = styled.header`
           color: #1d316c;
           &:hover {
             color: ${(props) =>
-              props.theme.menuHoverColor
-                ? props.theme.menuHoverColor
-                : "#FB7B81"};
+        props.theme.menuHoverColor
+            ? props.theme.menuHoverColor
+            : "#FB7B81"};
           }
         }
       }
@@ -257,6 +257,6 @@ const NavigationWrap = styled.header`
       }
     }
   }
-`
+`;
 
-export default NavigationWrap
+export default NavigationWrap;
