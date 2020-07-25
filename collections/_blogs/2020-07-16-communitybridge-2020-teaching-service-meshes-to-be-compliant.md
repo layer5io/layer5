@@ -2,13 +2,13 @@
 layout: post
 title:  "CommunityBridge 2020: Teaching service meshes to be compliant"
 date:   2020-07-16 10:30:05 -0530
-image: /assets/images/posts/2020-07-16-community-bridge-with-layer5/communitybridge.jpg
+image: /assets/images/posts/2020-07-16-communitybridge-2020-teaching-service-meshes-to-be-compliant/communitybridge.jpg
 author: Kanishkar J
-tags: community, open source, community bridge
-permalink: /blog/community-bridge-with-layer5
+category: community
+permalink: /blog/:categories/:title
 ---
-<img class = "image-left" src = "/assets/images/posts/2020-07-16-community-bridge-with-layer5/cblogo.png">
-<br><br>
+<img class="image-left" 
+    src="/assets/images/posts/2020-07-16-communitybridge-2020-teaching-service-meshes-to-be-compliant/cblogo.png" />
 
 My journey into service meshes began on April 27, 2020 when I was selected to be a mentee under the banner of Community Bridge for the Summer of 2020. The Community Bridge Mentorship is a structured remote learning opportunity for aspiring open source software developers. The projects they host are mentored by experienced open source project developers and maintainers.
 
