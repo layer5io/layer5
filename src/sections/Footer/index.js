@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import { TwitterTimelineEmbed } from 'react-twitter-embed' ;
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 
@@ -37,42 +38,11 @@ const Footer = () => {
                   </Link>
                 </li>
               </ul> */}
-
-              <ul className="social">
-                <li>
-                  <Link className="anchor" to="#">
-                    <FaFacebookF />
-                  </Link>
-                </li>
-                <li>
-                  <Link className="anchor" to="#">
-                    <FaTwitter />
-                  </Link>
-                </li>
-                <li>
-                  <Link className="anchor" to="#">
-                    <FaLinkedinIn />
-                  </Link>
-                </li>
-                <li>
-                  <Link className="anchor" to="#">
-                    <FaFacebookF />
-                  </Link>
-                </li>
-              </ul>
-              <br />
-              <ul className="social">
-                <li>
-                  <Link className="anchor" to="#">
-                    <FaTwitter />
-                  </Link>
-                </li>
-                <li>
-                  <Link className="anchor" to="#">
-                    <FaLinkedinIn />
-                  </Link>
-                </li>
-              </ul>
+              <TwitterTimelineEmbed
+              sourceType="layer5"
+              screenName="Layer5"
+              options={{height: 300}}
+              />
             </div>
           </Col>
           <Col xs={12} sm={6} lg={3}>
@@ -187,10 +157,31 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col xs={12} sm={12} lg={7}>
+        <Row className="footer-contact">
+          <Col xs={12} sm={12} lg={6}>
+            <p>Contact</p>
+            <Row className="contactf">
+              <Link className="social-icons" to="#">
+                <FaFacebookF />
+              </Link>
+              <Link className="social-icons" to="#">
+                <FaFacebookF />
+              </Link>
+              <Link className="social-icons" to="#">
+                <FaFacebookF />
+              </Link>
+              <Link className="social-icons" to="#">
+                <FaFacebookF />
+              </Link>
+              <Link className="social-icons" to="#">
+                <FaFacebookF />
+              </Link>
+              <Link className="social-icons" to="#">
+                <FaFacebookF />
+              </Link>
+              </Row>
           </Col>
-          <Col xs={12} sm={12} lg={5}>
+          <Col xs={12} sm={12} lg={6}>
             <Language />
           </Col>
         </Row>
