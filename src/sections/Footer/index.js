@@ -187,7 +187,13 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
-        <Language />
+        <Row>
+          <Col xs={12} sm={12} lg={7}>
+          </Col>
+          <Col xs={12} sm={12} lg={5}>
+            <Language />
+          </Col>
+        </Row>
         <div className="footer-bottom">
           <ul className="footer-menu">
             <li>
