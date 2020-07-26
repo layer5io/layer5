@@ -1,9 +1,26 @@
 ## Contributing to Layer5
-You want to contribute to the project? Yay! We want you to! Visit our centralized instructions for [contributing](https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#contributing).
+You want to contribute to the project? Yay! We want you to! Visit our centralized instructions for [contributing](https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#contributing). Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to our [Code of Conduct](.CODE_OF_CONDUCT.md).
 
-## Contribution
+# Layer5 Site
+This repository is for development of the next generation of layer5.io using Gatsby and Strapi.
 
-Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to our [Code of Conduct](.CODE_OF_CONDUCT.md).
+See the [design document](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) for more information and the [#layer5-ng](https://layer5io.slack.com/archives/C015QJKUMPU) channel.
+
+## Site Development
+
+Before building the site, ensure that you have the following dependencies installed on your system.
+
+### Dependencies:
+
+- [Nodejs](https://nodejs.org/en/): e.g., `brew install node`
+- [gatsby cli](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli): e.g., `npm install -g gatsby-cli`
+
+### Building the site
+
+Run the following:
+
+1. `make setup-libs`-To install the dependencies for the running the site.
+1. `make site`-To run the website locally.
 
 
 ### <a name="updating-the-service-mesh-landscape">Updating the Landscape</a>
