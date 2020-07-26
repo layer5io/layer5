@@ -42,6 +42,8 @@ const Footer = () => {
               sourceType="layer5"
               screenName="Layer5"
               options={{height: 300}}
+              noFooter
+              noScrollbar
               />
             </div>
           </Col>
@@ -51,12 +53,7 @@ const Footer = () => {
               <ul className="widget-catagory">
                 <li>
                   <Link className="anchor" to="#">
-                    Serivce Mesh
-                  </Link>
-                </li>
-                <li>
-                  <Link className="anchor" to="#">
-                    Comparison
+                    Serivce Mesh Comparison
                   </Link>
                 </li>
                 <li>
@@ -107,17 +104,17 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor-right" to="#">
+                  <Link className="anchor" to="#">
                     GSOC 2020
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor-right" to="#">
+                  <Link className="anchor" to="#">
                     GSOD 2020
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor-right" to="#">
+                  <Link className="anchor" to="#">
                     Community Bridge
                   </Link>
                 </li>

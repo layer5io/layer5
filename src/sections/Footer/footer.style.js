@@ -36,14 +36,6 @@ const FotterWrapper = styled.section`
       color: ${props => props.theme.headingColor};
     }
   }
-  .anchor-right{
-    margin-left: 40px;
-    transition: 450ms all;
-    color: ${props => props.theme.white};
-    &:hover {
-      color: ${props => props.theme.headingColor};
-    }
-  }
   .footer-contact{
     margin-top: 15px;
     .contactf{
@@ -126,15 +118,14 @@ const FotterWrapper = styled.section`
       }
     }
     .widget-catagory {
-      margin-left:15px;
       li {
         .anchor {
-          font-size: 18px;
+          font-size: 16px;
           line-height: 22px;
         }
       }
       li + li {
-        margin-top: 12px;
+        margin-top: 10px;
       }
     }
   }
@@ -161,14 +152,22 @@ const FotterWrapper = styled.section`
     }
   }
   @media only screen and (max-width: 1600px) {
+    .footer-widgets {
+      .widget-catagory {
+        margin-left:15px;
+      }
+    }
     .section__particle{
       &.one{
           display: none;
       }
-    } 
+    }
   }
   @media only screen and (max-width: 1280px) { 
     .footer-widgets {
+      .widget-catagory {
+        margin-left:15px;
+      }
       .social {
         li + li {
           margin-left: 15px;
