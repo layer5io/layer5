@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import FooterBG from "../../assets/images/app/footer/footer-bg.png";
+import styled from 'styled-components';
+import FooterBG from '../../assets/images/app/footer/footer-bg.png';
 
 const FotterWrapper = styled.section`
-  padding-top: 250px;
-  padding-bottom: 45px;
+  padding-top: 100px;
+  padding-bottom: 25px;
   background: url(${FooterBG});
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,9 +36,17 @@ const FotterWrapper = styled.section`
       color: ${props => props.theme.headingColor};
     }
   }
+  .anchor-right{
+    margin-left: 40px;
+    transition: 450ms all;
+    color: ${props => props.theme.white};
+    &:hover {
+      color: ${props => props.theme.headingColor};
+    }
+  }
   .footer-logo {
     margin-bottom: 15px;
-    display: block;
+    margin-left: -20px;
   }
   .footer-widgets {
     &.first {
@@ -104,6 +112,7 @@ const FotterWrapper = styled.section`
       }
     }
     .widget-catagory {
+      margin-left:15px;
       li {
         .anchor {
           font-size: 18px;
@@ -111,7 +120,7 @@ const FotterWrapper = styled.section`
         }
       }
       li + li {
-        margin-top: 15px;
+        margin-top: 12px;
       }
     }
   }
