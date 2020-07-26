@@ -178,6 +178,9 @@ const FotterWrapper = styled.section`
   @media only screen and (max-width: 912px) {
     background-position: -200px; 
     .footer-widgets {
+      .widget-catagory {
+        margin-left:0px;
+      }
       margin-bottom: 70px;
     }
     .footer-bottom {
