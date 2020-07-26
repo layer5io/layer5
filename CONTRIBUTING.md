@@ -1,26 +1,26 @@
-<p style="clear:both;">
-<h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributing</a> at Layer5</h1>
-<p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
-</p>
-<p>
-Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png" height="16px" align="bottom" />Slack</a>! Our projects are community-built and welcome collaboration. 👍Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Meshery Contributors Welcome Guide</a> for a tour of resources available to you. Also, visit our more complete set of instructions for <a href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#contributing">contributing</a>.
-</p>
-<p>
-<a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
-✔️ <em><strong>Join</strong></em> <a href="https://drive.google.com/open?id=1c07UO9dS7_tFD-ClCWHIrEzRnzUJoFQ10EzfJTpS7FY">weekly community meeting</a> on <a href="https://calendar.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">Fridays from 10am - 11am Central</a>.<br />
-✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.<br />
-✔️ <em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">community drive</a>.<br />
-<br />
-</p>
-<p align="center">
-<i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+">help-wanted label</a>
-</p>
+## Contributing to Layer5
+You want to contribute to the project? Yay! We want you to! Visit our centralized instructions for [contributing](https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#contributing). Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to our [Code of Conduct](.CODE_OF_CONDUCT.md).
 
-Find us on Twitter: <a href="https://twitter.com/layer5"><img src="assets/images/twitter.png" height="16px"
-align="bottom" />@layer5</a> and <a href="https://twitter.com/mesheryio">@mesheryio</a>
-</p>
+# Layer5 Site
+This repository is for development of the next generation of layer5.io using Gatsby and Strapi.
 
-Contributions, updates, [discrepancy reports](/../../issues) and [pull requests](/../../pulls) are welcome! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to our [Code of Conduct](.CODE_OF_CONDUCT.md).
+See the [design document](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) for more information and the [#layer5-ng](https://layer5io.slack.com/archives/C015QJKUMPU) channel.
+
+## Site Development
+
+Before building the site, ensure that you have the following dependencies installed on your system.
+
+### Dependencies:
+
+- [Nodejs](https://nodejs.org/en/): e.g., `brew install node`
+- [gatsby cli](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli): e.g., `npm install -g gatsby-cli`
+
+### Building the site
+
+Run the following:
+
+1. `make setup-libs`-To install the dependencies for the running the site.
+1. `make site`-To run the website locally.
 
 We encourage community curation of the landscape (all are encouraged to participate). We also encourage representatives of the projects/products in the landscape to curate and maintain their listings so as to guarantee their freshness and accuracy of representation. 
 
