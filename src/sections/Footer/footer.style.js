@@ -44,6 +44,20 @@ const FotterWrapper = styled.section`
       color: ${props => props.theme.headingColor};
     }
   }
+  .footer-contact{
+    margin-top: 15px;
+    .contactf{
+      margin-left:10px;
+    }
+    .social-icons{
+      padding-right: 20px;
+      transition: 450ms all;
+      color: ${props => props.theme.white};
+      &:hover {
+        color: ${props => props.theme.headingColor};
+      }
+    }
+  }
   .footer-logo {
     margin-bottom: 15px;
     margin-left: -20px;
