@@ -2,14 +2,26 @@ import React from "react";
 import { Link } from "gatsby";
 import { Row } from "../../reusecore/Layout";
 
+import flag from "../../assets/images/flags/de.svg";
+import Languagestyle from "./language.style";
+
 const Language = () => {
     return (
-        <div>
-            <p className="social">Languages</p>
+        <Languagestyle>
+            <p>Languages</p>
             <Row>
-                <Link className="anchor" to="#"></Link>
+                <Link className="flag" to="#"><img height="25px" src={flag}></img></Link>
+                <Link className="flag" to="#"><img height="25px" src={flag}></img></Link>
+                <Link className="flag" to="#"><img height="25px" src={flag}></img></Link>
+                <Link className="flag" to="#"><img height="25px" src={flag}></img></Link>
+                <Link className="flag" to="#"><img height="25px" src={flag}></img></Link>
+                <Link className="flag" to="#"><img height="25px" src={flag}></img></Link>
+                <Link className="flag" to="#"><img height="25px" src={flag}></img></Link>
+                <Link className="flag" to="#"><img height="25px" src={flag}></img></Link>
+                <Link className="flag" to="#"><img height="25px" src={flag}></img></Link>
+                <Link className="flag" to="#"><img height="25px" src={flag}></img></Link>
             </Row>
-        </div>
+        </Languagestyle>
     );
 };
 
