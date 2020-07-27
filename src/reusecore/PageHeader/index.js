@@ -25,7 +25,7 @@ const PageHeader = ({ categories, title, author }) => {
                 {!categories && title && (
                     <div className="breadcrumbs page">
                         <>
-                            <span> Home </span> <span> > </span> {title}
+                            <span> Home </span> <span> {">"} </span> {title}
                         </>
                     </div>
                 )}

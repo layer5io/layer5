@@ -8,13 +8,6 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
 
-import blogThumb1 from "../../assets/images/blog/post/blog-post-1.png";
-import blogThumb2 from "../../assets/images/blog/post/blog-post-2.png";
-import blogThumb3 from "../../assets/images/blog/post/blog-post-3.png";
-import blogThumb4 from "../../assets/images/blog/post/blog-post-4.png";
-import blogThumb5 from "../../assets/images/blog/post/blog-post-5.png";
-import blogThumb6 from "../../assets/images/blog/post/blog-post-6.png";
-
 import { BlogPageWrapper } from "./blogGrid.style";
 
 const BlogPage = () => {
