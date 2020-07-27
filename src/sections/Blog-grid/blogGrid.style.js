@@ -13,7 +13,7 @@ export const BlogPageWrapper = styled.div`
         &:hover{
             .post-thumb-block{
                 img{
-                    transform: scale3d(1.1,1.1,1);
+                    transform: scale3d(1.02,1.02,1);
                 }
             }
             .readmore-btn{

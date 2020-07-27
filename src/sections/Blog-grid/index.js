@@ -1,5 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql ,Link } from "gatsby";
+import Img from "gatsby-image";
 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Container, Row, Col } from "../../reusecore/Layout";
@@ -28,6 +29,14 @@ const BlogPage = () => {
           frontmatter {
             title
             date(formatString: "Do MMMM YYYY")
+            author
+            thumbnail{
+                childImageSharp{
+                    fluid(maxWidth: 500, maxHeight:300){
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }  
           }
           fields {
             slug
@@ -39,7 +48,7 @@ const BlogPage = () => {
 
     return (
         <BlogPageWrapper>
-            <PageHeader title="Blogs" author={{ name: "Alexa", profile: "#" }} />
+            <PageHeader title="Blogs" />
 
             <div className="blog-page-wrapper">
                 <Container>
@@ -52,15 +61,12 @@ const BlogPage = () => {
                                             <div className="post-block">
                                                 <div className="post-thumb-block">
                                                     <Link className="anchor" to={fields.slug}>
-                                                        <img src={blogThumb1} alt="img" />
+                                                        <Img fluid={frontmatter.thumbnail.childImageSharp.fluid} />
                                                     </Link>
                                                 </div>
                                                 <div className="post-content-block">
                                                     <div className="post-meta-block">
-                                                        <span>In: </span>
-                                                        <Link className="anchor" to="#">
-                                  Discussion
-                                                        </Link>
+                                                        <span>By: {frontmatter.author}</span>
                                                         <span className="divider">/</span>
                                                         <span>{frontmatter.date}</span>
                                                     </div>

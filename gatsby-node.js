@@ -29,7 +29,7 @@ exports.createPages = async ({ actions, graphql }) => {
       'src/templates/blog-single.js'
   );
   const res = await graphql(`
-    {
+  {
       allMdx {
         nodes {
           fields {
@@ -42,21 +42,20 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     }
   `);
-    const posts = res.data.allMdx.nodes;
-
-    posts.forEach(post => {
-      createPage({
-        path: post.fields.slug,
-        component: blogPostTemplate,
-        context: {
-          slug: post.fields.slug,
-        },
-      })
+  const posts = res.data.allMdx.nodes;
+  posts.forEach(post => {
+    createPage({
+      path: post.fields.slug,
+      component: blogPostTemplate,
+      context: {
+        slug: post.fields.slug,
+      },
     })
+  })
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode });
     createNodeField({
