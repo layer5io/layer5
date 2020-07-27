@@ -10,13 +10,12 @@ import BlogPageWrapper from "./blogSingle.style";
 
 const BlogSingle = ({data}) => {
     const { frontmatter, body } = data.mdx;
-
     return (
         <BlogPageWrapper>
             <PageHeader
                 title={frontmatter.title}
-                categories={["App,", "Landing"]}
-                author={{ name: "Alexa", profile: "#" }}
+                categories={[frontmatter.tags]}
+                author={{ name: frontmatter.author }}
             />
             <div className="single-post-wrapper">
                 <Container>
@@ -29,9 +28,9 @@ const BlogSingle = ({data}) => {
                                         <div className="post-info-block">
                                             <div className="tags">
                                                 <span>Tags:</span>
-                                                <Link to="#">Community</Link>
-                                                <Link to="#">Projects</Link>
-                                                <Link to="#">News</Link>
+                                                {frontmatter.tags && frontmatter.tags.split(", ").map(tag => (
+                                                    <Link key={`${frontmatter.title}-${tag}`} to="#">{tag}</Link>
+                                                ))}
                                             </div>
                                         </div>
                                     </div>
