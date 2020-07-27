@@ -39,7 +39,7 @@ const BlogPage = () => {
 
     return (
         <BlogPageWrapper>
-            <PageHeader title="Blog Grid" author={{ name: "Alexa", profile: "#" }} />
+            <PageHeader title="Blogs" author={{ name: "Alexa", profile: "#" }} />
 
             <div className="blog-page-wrapper">
                 <Container>
