@@ -7,7 +7,7 @@
             - 'v*'
       pull_request:
          branches:
-            - master
+            - layer5-ng
 
    jobs:
        lint-UI:
