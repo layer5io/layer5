@@ -58,16 +58,16 @@ const BlogPage = () => {
                                                     </Link>
                                                 </div>
                                                 <div className="post-content-block">
-                                                    <div className="post-meta-block">
-                                                        <span>By: {frontmatter.author}</span>
-                                                        <span className="divider">/</span>
-                                                        <span>{frontmatter.date}</span>
-                                                    </div>
                                                     <h2 className="post-title">
                                                         <Link className="anchor" to={fields.slug}>
                                                             {frontmatter.title}
                                                         </Link>
                                                     </h2>
+                                                    <div className="post-meta-block">
+                                                        <span>By: {frontmatter.author}</span>
+                                                        <span className="divider">/</span>
+                                                        <span>{frontmatter.date}</span>
+                                                    </div>
                                                     <Link className="readmore-btn" to={fields.slug}>
                                 see more <IoIosArrowRoundForward />
                                                     </Link>
