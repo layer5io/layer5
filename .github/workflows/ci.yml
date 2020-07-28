@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@layer5-ng
+        uses: actions/checkout@2
         with:
           fetch-depth: 1
       - uses: actions/setup-node@v1
