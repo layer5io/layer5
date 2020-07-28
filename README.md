@@ -22,6 +22,16 @@ We create and steward initiatives that press on the service mesh-centric envelop
 # Projects
 
 <p style="clear:both;">
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="img/readme/meshery-operator.svg" style="margin:10px;" width="110px" align="left" /></a>
+# Meshery Operator
+Meshery Operator is the multi-service mesh operator and implementation of MeshSync.
+<br />
+<br />
+<br />
+</p>
+
+
+<p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
 <a href="https://meshery.io"><img src="assets/images/meshery/meshery-logo.svg"
 style="margin:10px;" width="125px" 
