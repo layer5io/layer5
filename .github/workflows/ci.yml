@@ -1,27 +1,26 @@
- name: layer5-ng
-   on:
-      push:
-         branches:
-            - '*'
-         tags:
-            - 'v*'
-      pull_request:
-         branches:
-            - layer5-ng
+name: layer5-ng
+on:
+  push:
+    branches:
+      - '*'
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - layer5-ng
 
-   jobs:
-       lint-UI:
-           name: Layer5-ng UI Tests
-           runs-on: ubuntu-latest
-           steps:
-               - name: Check out code
-                 uses: actions/checkout@master
-                 with:
-                        fetch-depth: 1
-               - uses: actions/setup-node@v1
-                 with:
-                        node-version: 12
-
-               - run: |
-                       npm i
-                       npm run lint
+jobs:
+  lint-UI:
+    name: Layer5-ng UI Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@layer5-ng
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: |
+          npm i
+          npm run lint
