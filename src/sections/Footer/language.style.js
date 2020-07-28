@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Languagestyle = styled.section`
+const LanguageWrapper = styled.section`
     margin-left:20px;
     margin-right:20px;
     .flag{
@@ -8,4 +8,4 @@ const Languagestyle = styled.section`
     }
 `;
 
-export default Languagestyle;
+export default LanguageWrapper;
