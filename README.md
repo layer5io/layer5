@@ -22,16 +22,6 @@ We create and steward initiatives that press on the service mesh-centric envelop
 # Projects
 
 <p style="clear:both;">
-<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="img/readme/meshery-operator.svg" style="margin:10px;" width="110px" align="left" /></a>
-# Meshery Operator
-Meshery Operator is the multi-service mesh operator and implementation of MeshSync.
-<br />
-<br />
-<br />
-</p>
-
-
-<p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
 <a href="https://meshery.io"><img src="assets/images/meshery/meshery-logo.svg"
 style="margin:10px;" width="125px" 
@@ -66,11 +56,19 @@ alt="Image Hub" align="left" /></a>
 <a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application which runs on <a href="https://meshery.layer5.io/docs/service-meshes/adapters/consul">Consul</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
 <br /><br /><br />
 </p>
-
+</p>
+<p style="clear:both;">
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="img/readme/meshery-operator-dark.svg" style="margin:10px;" width="150px" align="left" /></a>
+# Meshery Operator
+Meshery Operator is the multi-service mesh operator and implementation of MeshSync.
+<br />
+<br />
+<br />
+<br />
+</p>
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributing</a></h1>
 <p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
-</p>
 <p>
 Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png" height="16px" align="bottom" />Slack</a>! Our projects are community-built and welcome collaboration. 👍Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you.
 </p>
