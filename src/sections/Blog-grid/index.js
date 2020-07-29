@@ -1,18 +1,12 @@
 import React from "react";
 import { useStaticQuery, graphql ,Link } from "gatsby";
+import Img from "gatsby-image";
 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Container, Row, Col } from "../../reusecore/Layout";
 
 import PageHeader from "../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
-
-import blogThumb1 from "../../assets/images/blog/post/blog-post-1.png";
-import blogThumb2 from "../../assets/images/blog/post/blog-post-2.png";
-import blogThumb3 from "../../assets/images/blog/post/blog-post-3.png";
-import blogThumb4 from "../../assets/images/blog/post/blog-post-4.png";
-import blogThumb5 from "../../assets/images/blog/post/blog-post-5.png";
-import blogThumb6 from "../../assets/images/blog/post/blog-post-6.png";
 
 import { BlogPageWrapper } from "./blogGrid.style";
 
@@ -28,6 +22,14 @@ const BlogPage = () => {
           frontmatter {
             title
             date(formatString: "Do MMMM YYYY")
+            author
+            thumbnail{
+                childImageSharp{
+                    fluid(maxWidth: 500, maxHeight:300){
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }  
           }
           fields {
             slug
@@ -39,7 +41,7 @@ const BlogPage = () => {
 
     return (
         <BlogPageWrapper>
-            <PageHeader title="Blog Grid" author={{ name: "Alexa", profile: "#" }} />
+            <PageHeader title="Blogs" />
 
             <div className="blog-page-wrapper">
                 <Container>
@@ -52,23 +54,20 @@ const BlogPage = () => {
                                             <div className="post-block">
                                                 <div className="post-thumb-block">
                                                     <Link className="anchor" to={fields.slug}>
-                                                        <img src={blogThumb1} alt="img" />
+                                                        <Img fluid={frontmatter.thumbnail.childImageSharp.fluid} />
                                                     </Link>
                                                 </div>
                                                 <div className="post-content-block">
-                                                    <div className="post-meta-block">
-                                                        <span>In: </span>
-                                                        <Link className="anchor" to="#">
-                                  Discussion
-                                                        </Link>
-                                                        <span className="divider">/</span>
-                                                        <span>{frontmatter.date}</span>
-                                                    </div>
                                                     <h2 className="post-title">
                                                         <Link className="anchor" to={fields.slug}>
                                                             {frontmatter.title}
                                                         </Link>
                                                     </h2>
+                                                    <div className="post-meta-block">
+                                                        <span>By: {frontmatter.author}</span>
+                                                        <span className="divider">/</span>
+                                                        <span>{frontmatter.date}</span>
+                                                    </div>
                                                     <Link className="readmore-btn" to={fields.slug}>
                                 see more <IoIosArrowRoundForward />
                                                     </Link>
