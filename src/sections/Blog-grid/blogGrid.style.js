@@ -71,6 +71,9 @@ export const BlogPageWrapper = styled.div`
             line-height: 30px;
             margin-bottom: 17px;
             display: block;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
             -webkit-transition: 450ms all;
             transition: 450ms all;
             &:hover{
