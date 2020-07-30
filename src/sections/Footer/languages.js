@@ -19,7 +19,7 @@ import LanguageWrapper from "./language.style";
 const Language = () => {
     return (
         <LanguageWrapper>
-            <p>Languages</p>
+            <h3 class="title">Languages</h3>
             <Row>
                 <Link className="flag" title="German" to="#"><img height="25px" src={flag1}></img></Link>
                 <Link className="flag" title="English" to="#"><img height="25px" src={flag2}></img></Link>

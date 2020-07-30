@@ -49,6 +49,11 @@ const FotterWrapper = styled.section`
         color: ${props => props.theme.headingColor};
       }
     }
+    .widget-title {
+      color: ${props => props.theme.white};
+      font-size: 24px;
+      margin-bottom: 35px;
+    }
   }
   .footer-logo {
     margin-bottom: 15px;
@@ -63,7 +68,7 @@ const FotterWrapper = styled.section`
     .widget-title {
       color: ${props => props.theme.white};
       font-size: 24px;
-      margin-bottom: 35px;
+      margin-bottom: 20px;
     }
     .info {
       font-size: 18px;
@@ -197,12 +202,16 @@ const FotterWrapper = styled.section`
   }
   @media only screen and (max-width: 568px) {
     background-position: 10%;
-    text-align: center;
+    // text-align: center;
     .footer-widgets {
+      margin-left: 10px;
       .info {
         li {
           justify-content: center;
         }
+      }
+      .widget-catagory{
+        margin-left: 20px;
       }
     }
   }

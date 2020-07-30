@@ -20,7 +20,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col xs={12} sm={6} lg={4}>
-            <div className="footer-widgets first">
+            <div className="first">
               <Link className="footer-logo" to="#">
                 <img src={logo} alt="logo" />
               </Link>
@@ -79,7 +79,7 @@ const Footer = () => {
               </ul>
             </div>
           </Col>
-          <Col xs={12} sm={6} lg={3}>
+          <Col xs={6} sm={6} lg={3}>
             <div className="footer-widgets">
               <h3 className="widget-title">Community</h3>
               <ul className="widget-catagory">
@@ -121,7 +121,7 @@ const Footer = () => {
               </ul>
             </div>
           </Col>
-          <Col xs={12} sm={6} lg={2}>
+          <Col xs={6} sm={6} lg={2}>
             <div className="footer-widgets">
               <h3 className="widget-title">Company</h3>
               <ul className="widget-catagory">
@@ -156,7 +156,7 @@ const Footer = () => {
         </Row>
         <Row className="footer-contact">
           <Col xs={12} sm={12} lg={6}>
-            <p>Contact</p>
+            <h3 class="widget-title">Contact</h3>
             <Row className="contactf">
               <Link className="social-icons" to="#">
                 <FaFacebookF />
