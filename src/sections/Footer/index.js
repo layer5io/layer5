@@ -10,6 +10,14 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import logo from "../../images/layer5/layer5-community-logo.png";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
 
+import mail_icon from "../../assets/images/icons/mail.svg";
+import slack_icon from "../../assets/images/icons/slack.svg";
+import twitter_icon from "../../assets/images/icons/twitter.svg";
+import github_icon from "../../assets/images/icons/github.svg";
+import youtube_icon from "../../assets/images/icons/youtube.svg";
+import docker_icon from "../../assets/images/icons/docker.svg";
+
+
 import FotterWrapper from "./footer.style";
 import Language from "./languages";
 
@@ -157,63 +165,35 @@ const Footer = () => {
           </Col>
           </Row>
           <Row className="footer-contact">
-          <Col xs={12} sm={6} lg={8}>
+          <Col className="footer-widgets" xs={12} sm={6} lg={7}>
             <Language />
           </Col>
-          <Col xs={12} sm={6} lg={4}>
+          <Col className="footer-widgets" xs={12} sm={6} lg={5}>
             <h3 class="widget-title">Contact</h3>
             <Row className="contactf">
               <Link className="social-icons" to="#">
-                <FaFacebookF />
+                <img height="40 px" src={mail_icon} />
               </Link>
               <Link className="social-icons" to="#">
-                <FaFacebookF />
+                <img height="40 px" src={slack_icon} />
               </Link>
               <Link className="social-icons" to="#">
-                <FaFacebookF />
+                <img height="40 px" src={twitter_icon} />
               </Link>
               <Link className="social-icons" to="#">
-                <FaFacebookF />
+                <img height="40 px" src={github_icon} />
               </Link>
               <Link className="social-icons" to="#">
-                <FaFacebookF />
+                <img height="40 px" src={youtube_icon} />
               </Link>
               <Link className="social-icons" to="#">
-                <FaFacebookF />
+                <img height="40 px" src={docker_icon} />
               </Link>
               </Row>
           </Col>
         </Row>
           </Col>
         </Row>
-        {/* <Row className="footer-contact">
-          <Col xs={12} sm={12} lg={4}> */}
-            {/* <h3 class="widget-title">Contact</h3>
-            <Row className="contactf">
-              <Link className="social-icons" to="#">
-                <FaFacebookF />
-              </Link>
-              <Link className="social-icons" to="#">
-                <FaFacebookF />
-              </Link>
-              <Link className="social-icons" to="#">
-                <FaFacebookF />
-              </Link>
-              <Link className="social-icons" to="#">
-                <FaFacebookF />
-              </Link>
-              <Link className="social-icons" to="#">
-                <FaFacebookF />
-              </Link>
-              <Link className="social-icons" to="#">
-                <FaFacebookF />
-              </Link>
-              </Row> */}
-          {/* </Col>
-          <Col xs={12} sm={12} lg={6}>
-            <Language />
-          </Col>
-        </Row> */}
         <div className="footer-bottom">
           <ul className="footer-menu">
             <li>
