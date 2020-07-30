@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 const LanguageWrapper = styled.section`
     .icons{
-        margin-left: 15px;
+        margin: 0px
+        padding-left: 15px;
+        padding-right: 15px;
         .flag{
             padding:2px
         }
