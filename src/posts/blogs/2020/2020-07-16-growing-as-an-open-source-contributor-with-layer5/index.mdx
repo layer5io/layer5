@@ -7,12 +7,14 @@ tags: Community, Projects, News
 published: true
 ---
 
+import { BlogWrapper } from '../../Blog.style.js'
 import pic1 from "./pic1.png";
 import pic2 from "./pic2.jpeg";
 import pic3 from "./pic3.png";
 import pic4 from "./pic4.png";
 import pic5 from "./pic5.png";
 
+<BlogWrapper>
 It all started 9 months ago when I stumbled across the following LinkedIn post, written by a college senior who had recently scored an internship with Redhat.
 
 <img src={pic3} alt="book"/>
@@ -30,13 +32,7 @@ Meshery is a multi-service mesh management plane that offers lifecycle, configur
 Meshery uses a common service mesh performance specification to describe and capture performance benchmarks and results. The spec contains general information about the performance test (e.g. start/end times), service mesh and proxy build numbers, Kubernetes cluster details (nodes, type of nodes, memory information), and the actual results. One of the ideas behind Meshery is to be a vendor and project-neutral tool that can benchmark the performance of different service meshes. <br/>
 It is a one stop for all your service meshing needs. Service meshes are still a novel concept for both, developers and users. Meshery steps in to bridge this gap and allows you to have a better understanding of what a service mesh can provide by helping you judge service mesh for your personal and professional needs. Meshery accomplishes this by providing you a thorough analysis of the options available so that you can make an informed choice.<br/>
 
-<img style={{ display: "block",
-               marginLeft: "auto",
-               marginRight: "auto",
-               width: "22%",
-               height: "22%",
-               float: "right",
-               borderRadius: "50%" }} src={pic2} alt="Lee Calcote" />
+<img className="align-right" src={pic2} alt="Lee Calcote" />
 
 #### Lee Calcote
 
@@ -52,3 +48,5 @@ In an effort to foster the open source community in my college, I along with fou
 
 The Layer5 community has welcomed me with patience and has given me a sense of purpose, which is more than I could have asked for at the beginning as a novice developer. The warm welcome and a sincere string of mentors can do wonders in building your confidence and enabling you to put in your best foot forward. Open source has introduced me to a horde of essential qualities, such as the importance of teamwork, candor and earnestness. <br/>
 It has been a prodigious journey so far and I don’t intend to stop here. The pace at which the projects under the Layer5 community are unwinding is awe-inspiring. It is my aim to be a witness and a partner in crime in its future endeavors. If you’re looking for an opportunity to be a part of the Layer5 family, check out our projects and head over to our [Slack](http://slack.layer5.io) channel!
+
+</BlogWrapper>
