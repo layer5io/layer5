@@ -65,6 +65,7 @@ const FotterWrapper = styled.section`
     }
   }
   .footer-widgets {
+    margin-bottom: 15px;
     .widget-title {
       color: ${props => props.theme.white};
       font-size: 24px;
@@ -130,7 +131,7 @@ const FotterWrapper = styled.section`
         }
       }
       li + li {
-        margin-top: 10px;
+        margin-top: 7px;
       }
     }
   }
