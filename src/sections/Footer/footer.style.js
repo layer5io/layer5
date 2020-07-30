@@ -140,8 +140,8 @@ const FotterWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 50px;
-    margin-top: 100px;
+    padding-top: 10px;
+    margin-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     .footer-menu{
       order: 2;

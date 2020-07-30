@@ -198,31 +198,17 @@ const Footer = () => {
           <ul className="footer-menu">
             <li>
               <Link className="anchor" to="#">
+                Privacy
+              </Link>
+            </li>
+            <li>
+              <Link className="anchor" to="#">
                 Terms
-              </Link>
-            </li>
-            <li>
-              <Link className="anchor" to="#">
-                Condition
-              </Link>
-            </li>
-            <li>
-              <Link className="anchor" to="#">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link className="anchor" to="#">
-                Help
               </Link>
             </li>
           </ul>
           <p className="copyright-text">
-            Copyright @
-            <Link className="anchor" to="#">
-              Devscorn 
-            </Link>
-             | All Right Reserved 2020
+            2020 Copyright @Layer5, Inc | All Rights Reserved
           </p>
         </div>
       </Container>
