@@ -19,19 +19,19 @@ import LanguageWrapper from "./language.style";
 const Language = () => {
     return (
         <LanguageWrapper>
-            <h3 class="title">Languages</h3>
-            <Row>
-                <Link className="flag" title="German" to="#"><img height="25px" src={flag1}></img></Link>
-                <Link className="flag" title="English" to="#"><img height="25px" src={flag2}></img></Link>
-                {/* <Link className="flag" to="#"><img height="25px" src={flag3}></img></Link> */}
-                <Link className="flag" title="Spanish" to="#"><img height="25px" src={flag4}></img></Link>
-                <Link className="flag" title="French" to="#"><img height="25px" src={flag5}></img></Link>
-                <Link className="flag" title="Tamil" to="#"><img height="25px" src={flag6}></img></Link>
-                <Link className="flag" title="Italian" to="#"><img height="25px" src={flag7}></img></Link>
-                <Link className="flag" title="Japanese" to="#"><img height="25px" src={flag8}></img></Link>
-                <Link className="flag" title="Portugese" to="#"><img height="25px" src={flag9}></img></Link>
-                <Link className="flag" title="Russiah" to="#"><img height="25px" src={flag10}></img></Link>
-                <Link className="flag" title="Chinese" to="#"><img height="25px" src={flag11}></img></Link>
+            <h3 className="title">Languages</h3>
+            <Row className="icons">
+                <Link className="flag" title="German" to="#"><img height="22px" src={flag1}></img></Link>
+                <Link className="flag" title="English" to="#"><img height="22px" src={flag2}></img></Link>
+                {/* <Link className="flag" to="#"><img height="22px" src={flag3}></img></Link> */}
+                <Link className="flag" title="Spanish" to="#"><img height="22px" src={flag4}></img></Link>
+                <Link className="flag" title="French" to="#"><img height="22px" src={flag5}></img></Link>
+                <Link className="flag" title="Tamil" to="#"><img height="22px" src={flag6}></img></Link>
+                <Link className="flag" title="Italian" to="#"><img height="22px" src={flag7}></img></Link>
+                <Link className="flag" title="Japanese" to="#"><img height="22px" src={flag8}></img></Link>
+                <Link className="flag" title="Portugese" to="#"><img height="22px" src={flag9}></img></Link>
+                <Link className="flag" title="Russiah" to="#"><img height="22px" src={flag10}></img></Link>
+                <Link className="flag" title="Chinese" to="#"><img height="22px" src={flag11}></img></Link>
             </Row>
         </LanguageWrapper>
     );
