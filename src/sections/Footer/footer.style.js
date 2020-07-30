@@ -209,7 +209,7 @@ const FotterWrapper = styled.section`
     // text-align: center;
     .footer-widgets {
       margin-bottom: 20px;
-      margin-left: 10px;
+      padding-left: 20px;
       .info {
         li {
           justify-content: center;
