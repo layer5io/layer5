@@ -6,6 +6,11 @@ const LanguageWrapper = styled.section`
     .flag{
         padding:2px
     }
+    .title{
+        color: ${props => props.theme.white};
+        font-size: 24px;
+        margin-bottom: 35px;
+    }
 `;
 
 export default LanguageWrapper;
