@@ -40,7 +40,9 @@ const FotterWrapper = styled.section`
     .footer-widgets{
       margin-top: 15px;
       .contactf{
-        margin-left:10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 0px;
         .social-icons{
           transition: 450ms all;
           color: ${props => props.theme.white};
