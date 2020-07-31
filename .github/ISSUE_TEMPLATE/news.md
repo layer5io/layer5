@@ -11,4 +11,4 @@ assignees: ''
 
 ---
 **Contributor Resources**
-- [Instructions for updating news items](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#news)
+- See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)

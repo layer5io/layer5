@@ -30,3 +30,7 @@ Steps to reproduce the behavior:
 
 [Optional] **Additional Context**
 Add any other context about the problem here.
+
+---
+**Contributor Resources**
+- See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)
