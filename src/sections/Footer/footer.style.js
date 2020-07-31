@@ -216,7 +216,7 @@ const FotterWrapper = styled.section`
         }
       }
       .widget-catagory{
-        margin-left: 20px;
+        padding-left: 20px;
       }
     }
   }

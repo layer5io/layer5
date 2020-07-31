@@ -63,7 +63,7 @@ const Footer = () => {
               <ul className="widget-catagory">
                 <li>
                   <Link className="anchor" to="#">
-                    Serivce Mesh Comparison
+                    Service Mesh Comparison
                   </Link>
                 </li>
                 <li>
