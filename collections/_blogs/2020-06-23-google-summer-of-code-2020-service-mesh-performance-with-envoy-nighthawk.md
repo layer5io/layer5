@@ -9,7 +9,8 @@ permalink: /blog/google-summer-of-code-2020-service-mesh-performance-with-envoy-
 <div class="center" style="color:gray;position:relative;top:-10px;font-size:1.25em;"><i>One of the greatest learning experiences yet.</i></div>
 
 <h4>How did it all start?</h4>
-<img src="/assets/images/posts/2020-06-23-google-summer-of-code-2020-service-mesh-performance-with-envoy-nighthawk/gsoc.png" align="right" />
+<img src="/assets/images/posts/2020-06-23-google-summer-of-code-2020-service-mesh-performance-with-envoy-nighthawk/gsoc.png" align="right" style="max-width: 100%;
+  height: auto;" />
 <p style="margin-left:.5em;">
 I was introduced to the Layer5 community by our very own Lee Calcote, and since then I have been exploring the vast world of service meshes and their performance characteristics. Before being accepted as a Google Summer of Code intern, I had been working with the Layer5 community as an active contributor, exploring various new DevOps tooling like service meshes, the sidecar concept, and performance benchmarking of services. I have had a run-in with the Kubernetes community before and initially believed Kubernetes to be the final stage of DevOps, but I was happily surprised when I found out that the end of Kubernetes merely marked the entrypoint to a whole new world of service meshes.
 </p>
