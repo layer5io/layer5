@@ -10,5 +10,6 @@ assignees: ''
 - Link:
 
 ---
-**Contributor Resources**
-- [Instructions for updating news items](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#news)
+**Resources**
+This issue pertains to the next-generation of the layer5.io website. The site uses Gatsby and Strapi.
+- See [`layer5-ng` contributing instructions] **[link here](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)**
