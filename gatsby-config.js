@@ -54,3 +54,10 @@ module.exports = {
     },
   ],
 }
+module.exports = {
+  siteMetadata: {
+    title: `Layer5 - The Service Mesh Company`,
+    siteUrl: `https://layer5ng.netlify.app/`,
+  },
+  plugins: [`gatsby-plugin-sitemap`],
+}
