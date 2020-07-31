@@ -32,6 +32,5 @@ Steps to reproduce the behavior:
 Add any other context about the problem here.
 
 ---
-**Resources**
-This issue pertains to the next-generation of the layer5.io website. The site uses Gatsby and Strapi.
-- See [`layer5-ng` contributing instructions] **[link here](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)**
+**Contributor Resources**
+- See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)
