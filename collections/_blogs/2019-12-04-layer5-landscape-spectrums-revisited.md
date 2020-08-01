@@ -2,6 +2,7 @@
 layout: post
 title: "Layer5: Landscape Spectrums Revisited"
 date:   2019-12-04 18:10:00 +0000
+image:  /assests/images/buttons/landscape.png
 author: Rafi Ungar
 permalink: /blog/layer5-landscape-spectrums-revisited
 ---
