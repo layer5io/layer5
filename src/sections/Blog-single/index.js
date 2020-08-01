@@ -14,6 +14,7 @@ const BlogSingle = ({data}) => {
         <BlogPageWrapper>
             <PageHeader
                 title={frontmatter.title}
+                subtitle={frontmatter.subtitle}
                 categories={[frontmatter.tags]}
                 author={{ name: frontmatter.author }}
             />
