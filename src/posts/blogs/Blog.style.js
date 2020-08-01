@@ -102,4 +102,9 @@ export const BlogWrapper = styled.div`
       float: right;
       border-radius: 50%;
     }
+    
+    .gsoc-image{
+        max-width: 100%; 
+        height: auto;
+    }
 `;
