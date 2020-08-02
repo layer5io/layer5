@@ -31,24 +31,24 @@ const Code = ({ codeString, language, ...props }) => {
             language={language}
             theme={theme}
         >
-            {({
-              className,
-              style,
-              tokens,
-              getLineProps,
-              getTokenProps,
-              }) => (
-                <Pre className={className} style={style}>
-                    {tokens.map((line, i) => (
-                        <div {...getLineProps({ line, key: i })}>
-                            <LineNo>{i + 1}</LineNo>
-                            {line.map((token, key) => (
-                                <span {...getTokenProps({ token, key })} />
-                            ))}
-                        </div>
-                    ))}
-                </Pre>
-            )}
+        {({
+          className,
+          style,
+          tokens,
+          getLineProps,
+          getTokenProps,
+          }) => (
+            <Pre className={className} style={style}>
+                {tokens.map((line, i) => (
+                    <div {...getLineProps({ line, key: i })}>
+                        <LineNo>{i + 1}</LineNo>
+                        {line.map((token, key) => (
+                            <span {...getTokenProps({ token, key })} />
+                        ))}
+                    </div>
+                ))}
+            </Pre>
+        )}
         </Highlight>
     )
 };
