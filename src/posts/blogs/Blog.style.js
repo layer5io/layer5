@@ -1,16 +1,6 @@
 import styled from "styled-components";
 export const BlogWrapper = styled.div`
-    
-    kbd, pre, samp {
-      background-color: black;
-      color: white;
-      padding:10px;
-    }
-    
-    code {
-      color: #666;
-    }
-    
+
     .sub-heading {
       color:gray;
       position:relative;
