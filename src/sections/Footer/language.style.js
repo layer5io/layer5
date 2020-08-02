@@ -6,7 +6,11 @@ const LanguageWrapper = styled.section`
         padding-left: 15px;
         padding-right: 15px;
         .flag{
-            padding:2px
+            padding:2px;
+            img{
+                height: 22px;
+                width: 33px;
+            }
         }
     }
     .title{
