@@ -16,7 +16,39 @@ import { BlogWrapper } from '../../Blog.style.js';
 `hello`
 
 ```jsx
-<MDXProvider components={components}>{element}</MDXProvider>
+const Code = ({ codeString, language }) => {
+    const handleClick = () => {
+        copyToClipboard(codeString)
+    };
+    return (
+        <Highlight
+            {...defaultProps}
+            code={codeString}
+            language={language}
+            theme={theme}
+        >
+        {({
+          className,
+          style,
+          tokens,
+          getLineProps,
+          getTokenProps,
+          }) => (
+            <Pre className={className} style={style}>
+                <CopyCode onClick={handleClick}>Copy</CopyCode>
+                {tokens.map((line, i) => (
+                    <div {...getLineProps({ line, key: i })}>
+                        <LineNo>{i + 1}</LineNo>
+                        {line.map((token, key) => (
+                            <span {...getTokenProps({ token, key })} />
+                        ))}
+                    </div>
+                ))}
+            </Pre>
+        )}
+        </Highlight>
+    )
+};
 ```
 
 

@@ -56,9 +56,8 @@ const Code = ({ codeString, language }) => {
           getLineProps,
           getTokenProps,
           }) => (
-            <div><CopyCode onClick={handleClick}>Copy</CopyCode>
             <Pre className={className} style={style}>
-
+                <CopyCode onClick={handleClick}>Copy</CopyCode>
                 {tokens.map((line, i) => (
                     <div {...getLineProps({ line, key: i })}>
                         <LineNo>{i + 1}</LineNo>
@@ -68,7 +67,6 @@ const Code = ({ codeString, language }) => {
                     </div>
                 ))}
             </Pre>
-            </div>
         )}
         </Highlight>
     )
