@@ -1,16 +1,6 @@
 import styled from "styled-components";
 export const BlogWrapper = styled.div`
-    
-    kbd, pre, samp {
-      background-color: black;
-      color: white;
-      padding:10px;
-    }
-    
-    code {
-      color: #666;
-    }
-    
+
     .sub-heading {
       color:gray;
       position:relative;
@@ -26,7 +16,6 @@ export const BlogWrapper = styled.div`
     }
     
     .table-1 {
-      line-height: .15em;
       white-space: nowrap;
       max-width:290px;
     }
@@ -43,7 +32,7 @@ export const BlogWrapper = styled.div`
       border: 2px solid gray;
     }
     .text-centre {
-      text-align:center
+      text-align:center;
     }
     
     .starting-letter {
