@@ -45,7 +45,6 @@ const FotterWrapper = styled.section`
         margin: 0px;
         .social-icons{
           transition: 450ms all;
-          color: ${props => props.theme.white};
           &:hover {
             color: ${props => props.theme.headingColor};
           }
@@ -209,7 +208,6 @@ const FotterWrapper = styled.section`
     // text-align: center;
     .footer-widgets {
       margin-bottom: 20px;
-      padding-left: 20px;
       .info {
         li {
           justify-content: center;
