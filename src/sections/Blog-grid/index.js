@@ -25,7 +25,7 @@ const BlogPage = () => {
             author
             thumbnail{
                 childImageSharp{
-                    fluid(maxWidth: 500, maxHeight:300){
+                    fluid(maxWidth: 500){
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -54,7 +54,7 @@ const BlogPage = () => {
                                             <div className="post-block">
                                                 <div className="post-thumb-block">
                                                     <Link className="anchor" to={fields.slug}>
-                                                        <Img fluid={frontmatter.thumbnail.childImageSharp.fluid} />
+                                                        <Img fluid={frontmatter.thumbnail.childImageSharp.fluid} imgStyle={{ objectFit: 'contain' }}/>
                                                     </Link>
                                                 </div>
                                                 <div className="post-content-block">
