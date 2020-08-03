@@ -7,15 +7,15 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
-import logo from "../../images/layer5/layer5-community-logo.png";
+import logo from "../../images/layer5/layer5.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
 
-import mail_icon from "../../assets/images/icons/mail.svg";
-import slack_icon from "../../assets/images/icons/slack.svg";
-import twitter_icon from "../../assets/images/icons/twitter.svg";
-import github_icon from "../../assets/images/icons/github.svg";
-import youtube_icon from "../../assets/images/icons/youtube.svg";
-import docker_icon from "../../assets/images/icons/docker.svg";
+import mail_icon from "../..//assets/images/app/footer/social/mail_white_trim.svg";
+import slack_icon from "../../assets/images/app/footer/social/slack_white_trim.svg";
+import twitter_icon from "../../assets/images/app/footer/social/twitter_white_trim.svg";
+import github_icon from "../../assets/images/app/footer/social/github_white_trim.svg";
+import youtube_icon from "../../assets/images/app/footer/social/youtube_white_trim.svg";
+import docker_icon from "../../assets/images/app/footer/social/docker_white_trim.svg";
 
 
 import FotterWrapper from "./footer.style";
