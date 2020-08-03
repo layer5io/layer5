@@ -2,7 +2,8 @@
 layout: book
 title:  "The Enterprise Path to Service Mesh Architectures"
 date:   2018-06-11 21:15:05 +0000
-image: /assets/images/books/The-Enterprise-Path-to-Service-Mesh-Architectures.gif
+image: /assets/images/books/The-Enterprise-Path-to-Service-Mesh-Architectures.png
+cover: /assets/images/books/The-Enterprise-Path-to-Service-Mesh-Architectures.gif
 #author: Lee Calcote
 status: published
 brief: "Approaches to service mesh deployments and an explanation of service meshes in contrast to related technologies."
