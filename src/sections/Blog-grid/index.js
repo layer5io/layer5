@@ -1,7 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql ,Link } from "gatsby";
-import Img from "gatsby-image";
-
+import Image from "../../components/image";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Container, Row, Col } from "../../reusecore/Layout";
 
@@ -29,6 +28,8 @@ const BlogPage = () => {
                         ...GatsbyImageSharpFluid
                     }
                 }
+                extension
+                publicURL
             }  
           }
           fields {
@@ -54,7 +55,7 @@ const BlogPage = () => {
                                             <div className="post-block">
                                                 <div className="post-thumb-block">
                                                     <Link className="anchor" to={fields.slug}>
-                                                        <Img fluid={frontmatter.thumbnail.childImageSharp.fluid} imgStyle={{ objectFit: 'contain' }}/>
+                                                        <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: 'contain' }}/>
                                                     </Link>
                                                 </div>
                                                 <div className="post-content-block">
