@@ -2,17 +2,17 @@ import React from "react";
 import { Link } from "gatsby";
 import { Row } from "../../reusecore/Layout";
 
-import flag1 from "../../assets/images/flags/de.svg";
-import flag2 from "../../assets/images/flags/en.svg";
-// import flag3 from "../../assets/images/flags/eng.svg";
-import flag4 from "../../assets/images/flags/es.svg";
-import flag5 from "../../assets/images/flags/fre.svg";
-import flag6 from "../../assets/images/flags/ind.svg";
-import flag7 from "../../assets/images/flags/it.svg";
-import flag8 from "../../assets/images/flags/ja.svg";
-import flag9 from "../../assets/images/flags/pt.svg";
-import flag10 from "../../assets/images/flags/ru.svg";
-import flag11 from "../../assets/images/flags/zh.svg";
+import flag1 from "../../assets/images/footer/flags/de.svg";
+import flag2 from "../../assets/images/footer/flags/en.svg";
+// import flag3 from "../../assets/images/footer/flags/eng.svg";
+import flag4 from "../../assets/images/footer/flags/es.svg";
+import flag5 from "../../assets/images/footer/flags/fre.svg";
+import flag6 from "../../assets/images/footer/flags/ind.svg";
+import flag7 from "../../assets/images/footer/flags/it.svg";
+import flag8 from "../../assets/images/footer/flags/ja.svg";
+import flag9 from "../../assets/images/footer/flags/pt.svg";
+import flag10 from "../../assets/images/footer/flags/ru.svg";
+import flag11 from "../../assets/images/footer/flags/zh.svg";
 
 import LanguageWrapper from "./language.style";
 
