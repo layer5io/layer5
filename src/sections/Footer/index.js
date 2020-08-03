@@ -171,22 +171,22 @@ const Footer = () => {
             <Col className="footer-widgets" xs={12} sm={6} lg={5}>
               <h3 class="widget-title">Contact</h3>
               <Row className="contactf">
-                <Link className="social-icons" to="#">
+                <Link className="social-icons" to="mailto:community@layer5.io">
                   <img height="40 px" src={mail_icon} />
                 </Link>
-                <Link className="social-icons" to="#">
+                <Link className="social-icons" to="http://slack.layer5.io/">
                   <img height="40 px" src={slack_icon} />
                 </Link>
-                <Link className="social-icons" to="#">
+                <Link className="social-icons" to="https://twitter.com/layer5">
                   <img height="40 px" src={twitter_icon} />
                 </Link>
-                <Link className="social-icons" to="#">
+                <Link className="social-icons" to="https://github.com/layer5io">
                   <img height="40 px" src={github_icon} />
                 </Link>
-                <Link className="social-icons" to="#">
+                <Link className="social-icons" to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
                   <img height="40 px" src={youtube_icon} />
                 </Link>
-                <Link className="social-icons" to="#">
+                <Link className="social-icons" to="https://hub.docker.com/u/layer5/">
                   <img height="40 px" src={docker_icon} />
                 </Link>
               </Row>
