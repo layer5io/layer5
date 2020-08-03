@@ -24,8 +24,15 @@ export const BlogPageWrapper = styled.div`
     .post-thumb-block{
         overflow: hidden;
         border-radius: 3px 3px 0 0;
+        height: 180px;
         img{
-            width: 100%;
+            max-width: 100%;
+            max-height: 180px;
+            width: auto;
+            height: auto;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
             transition: all 0.6s ease-in;
             border-radius: 3px 3px 0 0;
         }

@@ -74,10 +74,10 @@ export const BlogWrapper = styled.div`
     }
     
     .image-center {
-      display: block;
+        display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 60%;
+        width: 90%;
         padding-bottom: 10px;
         padding-top: 10px;
     }
@@ -90,5 +90,10 @@ export const BlogWrapper = styled.div`
       height: 22%;
       float: right;
       border-radius: 50%;
+    }
+    
+    .gsoc-image{
+        max-width: 100%; 
+        height: auto;
     }
 `;
