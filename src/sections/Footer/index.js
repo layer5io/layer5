@@ -78,12 +78,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link className="anchor" to="#">
-                    Service Mesh
-                  </Link>
-                </li>
-                <li>
-                  <Link className="anchor" to="#">
-                    Workshops
+                    Service Mesh Workshops
                   </Link>
                 </li>
               </ul>
@@ -115,7 +110,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link className="anchor" to="#">
-                    GSOC 2020
+                    GSoC 2020
                   </Link>
                 </li>
                 <li>
