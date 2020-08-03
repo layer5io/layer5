@@ -66,11 +66,23 @@ export const BlogWrapper = styled.div`
       float: left;
       padding-right: 10px;
     }
+
+    .card-left {
+      width: 50%;
+      float: left;
+      padding-right: 10px;
+    }
     
     .image-right {
       width: 40%;
       float: right;
       padding-left: 10px;
+    }
+
+    .card-right {
+      width: 50%;
+      float: right;
+      padding-right: 10px;
     }
     
     .image-center {
