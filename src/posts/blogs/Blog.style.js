@@ -34,6 +34,37 @@ export const BlogWrapper = styled.div`
     .text-centre {
       text-align:center;
     }
+
+    .table-adapters {
+      float: right;
+      width: auto;
+      vertical-align: middle;
+      border: 1px solid darkgray;
+      .adapter-logo {
+        vertical-align: middle;
+        margin-right: 5px;
+        height: 30px;
+        width: 30px;
+      }
+      .stable-adapters {
+        width: auto;
+        background-color: #3C494F;
+        text-align: center;
+        color: #fff;
+      }
+      .beta-adapters {
+        width: auto;
+        background-color: #00D3A9;
+        text-align: center;
+        color: #fff;
+      }
+      .alpha-adapters {
+        width: auto;
+        background-color: lightgray;
+        text-align: center;
+        color: black;
+      }
+    }
     
     .starting-letter {
       margin-left:.75em;
@@ -72,7 +103,7 @@ export const BlogWrapper = styled.div`
       float: right;
       padding-left: 10px;
     }
-    
+
     .image-center {
         display: block;
         margin-left: auto;
