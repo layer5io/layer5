@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import FooterBG from "../../assets/images/app/footer/footer-bg.png";
+import styled from 'styled-components';
+import FooterBG from '../../assets/images/app/footer/footer-bg.png';
 
 const FotterWrapper = styled.section`
-  padding-top: 250px;
-  padding-bottom: 45px;
+  padding-top: 100px;
+  padding-bottom: 25px;
   background: url(${FooterBG});
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,9 +36,30 @@ const FotterWrapper = styled.section`
       color: ${props => props.theme.headingColor};
     }
   }
+  .footer-contact{
+    .footer-widgets{
+      margin-top: 15px;
+      .contactf{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 0px;
+        .social-icons{
+          transition: 450ms all;
+          &:hover {
+            color: ${props => props.theme.headingColor};
+          }
+        }
+      }
+    }
+    .widget-title {
+      color: ${props => props.theme.white};
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
   .footer-logo {
     margin-bottom: 15px;
-    display: block;
+    margin-left: -20px;
   }
   .footer-widgets {
     &.first {
@@ -46,10 +67,11 @@ const FotterWrapper = styled.section`
     }
   }
   .footer-widgets {
+    margin-bottom: 25px;
     .widget-title {
       color: ${props => props.theme.white};
       font-size: 24px;
-      margin-bottom: 35px;
+      margin-bottom: 20px;
     }
     .info {
       font-size: 18px;
@@ -106,12 +128,12 @@ const FotterWrapper = styled.section`
     .widget-catagory {
       li {
         .anchor {
-          font-size: 18px;
+          font-size: 16px;
           line-height: 22px;
         }
       }
       li + li {
-        margin-top: 15px;
+        margin-top: 7px;
       }
     }
   }
@@ -119,8 +141,8 @@ const FotterWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 50px;
-    margin-top: 100px;
+    padding-top: 10px;
+    margin-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     .footer-menu{
       order: 2;
@@ -138,14 +160,22 @@ const FotterWrapper = styled.section`
     }
   }
   @media only screen and (max-width: 1600px) {
+    .footer-widgets {
+      .widget-catagory {
+        margin-left:15px;
+      }
+    }
     .section__particle{
       &.one{
           display: none;
       }
-    } 
+    }
   }
   @media only screen and (max-width: 1280px) { 
     .footer-widgets {
+      .widget-catagory {
+        margin-left:15px;
+      }
       .social {
         li + li {
           margin-left: 15px;
@@ -156,6 +186,9 @@ const FotterWrapper = styled.section`
   @media only screen and (max-width: 912px) {
     background-position: -200px; 
     .footer-widgets {
+      .widget-catagory {
+        margin-left:0px;
+      }
       margin-bottom: 70px;
     }
     .footer-bottom {
@@ -172,12 +205,16 @@ const FotterWrapper = styled.section`
   }
   @media only screen and (max-width: 568px) {
     background-position: 10%;
-    text-align: center;
+    // text-align: center;
     .footer-widgets {
+      margin-bottom: 20px;
       .info {
         li {
           justify-content: center;
         }
+      }
+      .widget-catagory{
+        padding-left: 20px;
       }
     }
   }

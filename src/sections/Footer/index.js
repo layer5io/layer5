@@ -1,170 +1,214 @@
 import React from "react";
 import { Link } from "gatsby";
+import { TwitterTimelineEmbed } from 'react-twitter-embed' ;
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
-import logo from "../../assets/images/app/footer/footer-logo.png";
+import logo from "../../images/layer5/layer5.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
 
+import mail_icon from "../..//assets/images/app/footer/social/mail_white_trim.svg";
+import slack_icon from "../../assets/images/app/footer/social/slack_white_trim.svg";
+import twitter_icon from "../../assets/images/app/footer/social/twitter_white_trim.svg";
+import github_icon from "../../assets/images/app/footer/social/github_white_trim.svg";
+import youtube_icon from "../../assets/images/app/footer/social/youtube_white_trim.svg";
+import docker_icon from "../../assets/images/app/footer/social/docker_white_trim.svg";
+
+
 import FotterWrapper from "./footer.style";
+import Language from "./languages";
 
 const Footer = () => {
-    return (
-        <FotterWrapper>
-            <img className="section__particle one" alt="img" src={particleOne} alt="appion app landing" />
-            <Container>
-                <Row>
-                    <Col xs={12} sm={6} lg={3}>
-                        <div className="footer-widgets first">
-                            <Link className="footer-logo" to="#">
-                                <img src={logo} alt="logo" />
-                            </Link>
-                            <ul className="info">
-                                <li>
-                                    <FiMail />
-                                    <Link className="anchor" to="#">
+  return (
+    <FotterWrapper>
+      <img className="section__particle one" alt="img" src={particleOne} alt="appion app landing" />
+      <Container>
+        <Row>
+          <Col xs={12} sm={5} lg={4}>
+            <div className="first">
+              <Link className="footer-logo" to="#">
+                <img src={logo} alt="logo" />
+              </Link>
+              {/* <ul className="info">
+                <li>
+                  <FiMail />
+                  <Link className="anchor" to="#">
                     contact@appion.com
-                                    </Link>
-                                </li>
-                                <li>
-                                    <FiPhoneCall />
-                                    <Link className="anchor" to="#">
+                  </Link>
+                </li>
+                <li>
+                  <FiPhoneCall />
+                  <Link className="anchor" to="#">
                     +88 12345 697858
-                                    </Link>
-                                </li>
-                            </ul>
-
-                            <ul className="social">
-                                <li>
-                                    <Link className="anchor" to="#">
-                                        <FaFacebookF />
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="anchor" to="#">
-                                        <FaTwitter />
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="anchor" to="#">
-                                        <FaLinkedinIn />
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={6} lg={3}>
-                        <div className="footer-widgets">
-                            <h3 className="widget-title">Services</h3>
-                            <ul className="widget-catagory">
-                                <li>
-                                    <Link className="anchor" to="#">
-                    Web Developments
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="anchor" to="#">
-                    UX/UI Design
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="anchor" to="#">
-                    Graphic Design
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="anchor" to="#">
-                    Software Development
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="anchor" to="#">
+                  </Link>
+                </li>
+              </ul> */}
+              <TwitterTimelineEmbed
+              sourceType="layer5"
+              screenName="Layer5"
+              options={{height: 300}}
+              noFooter
+              noScrollbar
+              />
+            </div>
+          </Col>
+          <Col xs={12} sm={7} lg={8}>
+          <Row>
+          <Col xs={12} sm={12} lg={5}>
+            <div className="footer-widgets">
+              <h3 className="widget-title">Resources</h3>
+              <ul className="widget-catagory">
+                <li>
+                  <Link className="anchor" to="/landscape">
+                    Service Mesh Comparison
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/landscape#tools">
+                    Service Mesh Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/learn/books">
+                    Service Mesh Books
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/learn/workshops">
+                    Service Mesh Workshops
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </Col>
+          <Col xs={6} sm={6} lg={4}>
+            <div className="footer-widgets">
+              <h3 className="widget-title">Community</h3>
+              <ul className="widget-catagory">
+                <li>
+                  <Link className="anchor" to="/blog">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/community/events">
+                    Events
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/subscribe">
+                    Mailing List
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/careers/programs/internships">
+                    Internships
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/careers/programs/gsoc/2020">
+                    GSoC 2020
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/careers/programs/gsod/2020">
+                    GSOD 2020
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/careers/programs/communitybridge/2020">
+                    Community Bridge
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </Col>
+          <Col xs={6} sm={6} lg={3}>
+            <div className="footer-widgets">
+              <h3 className="widget-title">Company</h3>
+              <ul className="widget-catagory">
+                <li>
+                  <Link className="anchor" to="company/news">
+                    News
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="company/brand">
+                    Brand
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/careers">
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/contact/partners">
+                    Partners
+                  </Link>
+                </li>
+                <li>
+                  <Link className="anchor" to="/contact">
                     Contact
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={6} lg={3}>
-                        <div className="footer-widgets">
-                            <h3 className="widget-title">About Us</h3>
-                            <ul className="widget-catagory">
-                                <li>
-                                    <Link className="anchor" to="#">
-                    About Us
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="anchor" to="#">
-                    Work Portfolio
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="anchor" to="#">
-                    Team
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="anchor" to="#">
-                    Plan & Pricing
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="anchor" to="#">
-                    Company News
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={6} lg={3}>
-                        <div className="footer-widgets">
-                            <h3 className="widget-title">Our Address</h3>
-                            <p>
-                1370 Roosevelt Street, <br />
-                Little York City, New Jersey <br />
-                08834
-                            </p>
-                        </div>
-                    </Col>
-                </Row>
-                <div className="footer-bottom">
-                    <ul className="footer-menu">
-                        <li>
-                            <Link className="anchor" to="#">
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </Col>
+          </Row>
+          <Row className="footer-contact">
+            <Col className="footer-widgets" xs={12} sm={6} lg={7}>
+              <Language />
+            </Col>
+            <Col className="footer-widgets" xs={12} sm={6} lg={5}>
+              <h3 class="widget-title">Contact</h3>
+              <Row className="contactf">
+                <Link className="social-icons" to="mailto:community@layer5.io">
+                  <img height="40 px" src={mail_icon} />
+                </Link>
+                <Link className="social-icons" to="http://slack.layer5.io/">
+                  <img height="40 px" src={slack_icon} />
+                </Link>
+                <Link className="social-icons" to="https://twitter.com/layer5">
+                  <img height="40 px" src={twitter_icon} />
+                </Link>
+                <Link className="social-icons" to="https://github.com/layer5io">
+                  <img height="40 px" src={github_icon} />
+                </Link>
+                <Link className="social-icons" to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
+                  <img height="40 px" src={youtube_icon} />
+                </Link>
+                <Link className="social-icons" to="https://hub.docker.com/u/layer5/">
+                  <img height="40 px" src={docker_icon} />
+                </Link>
+              </Row>
+          </Col>
+        </Row>
+          </Col>
+        </Row>
+        <div className="footer-bottom">
+          <ul className="footer-menu">
+            <li>
+              <Link className="anchor" to="https://meshery.layer5.io/privacy-policy.html">
+                Privacy
+              </Link>
+            </li>
+            <li>
+              <Link className="anchor" to="https://meshery.layer5.io/terms-of-service.html">
                 Terms
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className="anchor" to="#">
-                Condition
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className="anchor" to="#">
-                Contact
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className="anchor" to="#">
-                Help
-                            </Link>
-                        </li>
-                    </ul>
-                    <p className="copyright-text">
-            Copyright @
-                        <Link className="anchor" to="#">
-              Devscorn 
-                        </Link>
-             | All Right Reserved 2020
-                    </p>
-                </div>
-            </Container>
-        </FotterWrapper>
-    );
+              </Link>
+            </li>
+          </ul>
+          <p className="copyright-text">
+            2020 Copyright @Layer5, Inc | All Rights Reserved
+          </p>
+        </div>
+      </Container>
+    </FotterWrapper>
+  );
 };
 
 export default Footer;
