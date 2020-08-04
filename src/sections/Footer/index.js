@@ -62,22 +62,22 @@ const Footer = () => {
               <h3 className="widget-title">Resources</h3>
               <ul className="widget-catagory">
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/landscape">
                     Service Mesh Comparison
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/landscape#tools">
                     Service Mesh Tools
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/learn/books">
                     Service Mesh Books
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/learn/workshops">
                     Service Mesh Workshops
                   </Link>
                 </li>
@@ -89,37 +89,37 @@ const Footer = () => {
               <h3 className="widget-title">Community</h3>
               <ul className="widget-catagory">
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/blog">
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/community/events">
                     Events
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/subscribe">
                     Mailing List
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/careers/programs/internships">
                     Internships
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/careers/programs/gsoc/2020">
                     GSoC 2020
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/careers/programs/gsod/2020">
                     GSOD 2020
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/careers/programs/communitybridge/2020">
                     Community Bridge
                   </Link>
                 </li>
@@ -131,27 +131,27 @@ const Footer = () => {
               <h3 className="widget-title">Company</h3>
               <ul className="widget-catagory">
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="company/news">
                     News
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="company/brand">
                     Brand
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/careers">
                     Careers
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/contact/partners">
                     Partners
                   </Link>
                 </li>
                 <li>
-                  <Link className="anchor" to="#">
+                  <Link className="anchor" to="/contact">
                     Contact
                   </Link>
                 </li>
@@ -192,12 +192,12 @@ const Footer = () => {
         <div className="footer-bottom">
           <ul className="footer-menu">
             <li>
-              <Link className="anchor" to="#">
+              <Link className="anchor" to="https://meshery.layer5.io/privacy-policy.html">
                 Privacy
               </Link>
             </li>
             <li>
-              <Link className="anchor" to="#">
+              <Link className="anchor" to="https://meshery.layer5.io/terms-of-service.html">
                 Terms
               </Link>
             </li>
