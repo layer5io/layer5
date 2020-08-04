@@ -57,7 +57,7 @@ const Footer = () => {
           </Col>
           <Col xs={12} sm={7} lg={8}>
           <Row>
-          <Col xs={12} sm={4} lg={5}>
+          <Col xs={12} sm={12} lg={5}>
             <div className="footer-widgets">
               <h3 className="widget-title">Resources</h3>
               <ul className="widget-catagory">
@@ -84,7 +84,7 @@ const Footer = () => {
               </ul>
             </div>
           </Col>
-          <Col xs={6} sm={4} lg={4}>
+          <Col xs={6} sm={6} lg={4}>
             <div className="footer-widgets">
               <h3 className="widget-title">Community</h3>
               <ul className="widget-catagory">
@@ -126,7 +126,7 @@ const Footer = () => {
               </ul>
             </div>
           </Col>
-          <Col xs={6} sm={4} lg={3}>
+          <Col xs={6} sm={6} lg={3}>
             <div className="footer-widgets">
               <h3 className="widget-title">Company</h3>
               <ul className="widget-catagory">
