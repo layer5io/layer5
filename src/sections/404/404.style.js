@@ -8,19 +8,19 @@ const L404SectionWrapper = styled.section`
     .text-lighten {
         font-size: 3em;
         color: black;
-        margin: 1.46rem 0 0 0;
+        margin-top: 1.46rem;
         line-height: 110%;
     }
     .text-lighten-2 {
         font-size: 2em;
         color: black;
         font-style: italic;
-        margin: 2.5rem 0 0 0;
+        margin-top: 2.5rem;
     }
     .card-panel {
         transition: box-shadow .25s, -webkit-box-shadow .25s;
         margin: auto;  
-        margin-top: 2.5em;
+        margin-top: 2rem;
         padding: 24px;
         border-radius: 2px;
         background-color: #fff;
