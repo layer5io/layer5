@@ -40,4 +40,4 @@ This issue pertains to the current generation of the layer5.io website, which us
 - See [`layer5` contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
 
 This issue pertains to the next-generation of the layer5.io website, which uses Gatsby, Strapi, and GitHub Pages. Site content is found under the [`layer5-ng` branch](https://github.com/layer5io/layer5/tree/layer5-ng).
-- See [`layer5-ng` contributing instructions][link here](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)
+- See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)
