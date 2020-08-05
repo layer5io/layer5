@@ -9,7 +9,12 @@
   line-height: 2em;
   font-size: 2em;
   text-align: center;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), var(--spectrum-color), rgba(255, 255, 255, 0.2));
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.2),
+    var(--spectrum-color),
+    rgba(255, 255, 255, 0.2)
+  );
   z-index: 100;
   margin-bottom: 1em;
   margin-top: 1em;
@@ -18,7 +23,7 @@
 
 .spectrum-arrow::before,
 .spectrum-arrow::after {
-  content: '';
+  content: "";
   position: absolute;
   height: 0;
   width: 0;
@@ -50,27 +55,25 @@
 }
 
 .spectrum-grid {
-  height: auto;
   width: inherit;
   min-width: 50vw;
   display: grid;
   grid-gap: 2px;
   grid-auto-flow: column dense;
-  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
   grid-template-rows: auto;
   font-size: 0.8em;
   background-color: transparent;
 }
 
-.spectrum-grid > div {
-  background-color: transparent !important;
-  box-shadow: unset !important;
-}
+// .spectrum-grid > div {
+//   background-color: transparent !important;
+//   box-shadow: unset !important;
+// }
 
-.spectrum-grid > img {
-  width: 100%;
-  object-fit: contain;
-}
+// .spectrum-grid > img {
+//   width: 100%;
+//   object-fit: contain;
+// }
 
 .spectrum-grid-header {
   color: var(--main-dark-blue);
@@ -91,7 +94,7 @@
 }
 
 .spectrum-card-image img {
-  max-height: 75px;
+  // max-height: 75px;
 }
 
 .spectrum-card-image a {
@@ -99,17 +102,14 @@
   font-weight: bold;
 }
 
-
 .spectrum-grid-cell {
   grid-column-start: var(--col);
 }
 
 .spectrum-card-centered {
   display: flex;
-  align-items: center;
-  align-content: center;
-  flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
 /* TABLE */
@@ -125,7 +125,8 @@
   color: aliceblue !important;
 }
 
-.spectrum-table th:first-child, .spectrum-table td:first-child {
+.spectrum-table th:first-child,
+.spectrum-table td:first-child {
   // background-color: aliceblue !important;
   // color: var(--main-dark-blue);
   // font-size: 1.5em;
@@ -143,7 +144,8 @@
   // border-right: 2px aliceblue solid;
 }
 
-.spectrum-table th:last-child, .spectrum-table td:last-child {
+.spectrum-table th:last-child,
+.spectrum-table td:last-child {
   // border-right: 2px var(--main-dark-blue) solid;
 }
 
@@ -164,4 +166,16 @@
   max-height: 75px;
   max-width: 150px;
   padding-left: 5px;
+}
+
+.landscape-category {
+  margin: 55px 0;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 30px;
+}
+
+.row {
+  position: inherit;
 }
