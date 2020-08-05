@@ -5,19 +5,14 @@ include.NAME %}
 
 <div class="row card-content spectrum-grid valign-wrapper">
   {% for mesh in site.data.landscape.meshes %} {% if mesh[include.KEY] %}
-  <div
-    class="card tooltip center-align spectrum-grid-cell"
-    style="--col: {{mesh[include.KEY]}}"
-  >
+  <div class="card tooltip center-align spectrum-grid-cell" style="--col: {{mesh[include.orderKey]}}">
     <a href="{{mesh.link}}">
       <div class="card-image" style="padding: 5px;">
-        <img
-          src="../assets/images/landscape/{{mesh.name}}.png"
-          alt="{{mesh.name}}"
-        />
+        <img src="../assets/images/landscape/{{mesh.name}}.png" alt="{{mesh.name}}" style="width: 50px;" />
         <span class="tooltiptext">{{mesh.desc}}</span>
       </div>
     </a>
   </div>
-  {% endif %} {% endfor %}
+  {% endif %}
+  {% endfor %}
 </div>
