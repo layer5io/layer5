@@ -47,8 +47,8 @@ const Footer = () => {
                 </li>
               </ul> */}
               <TwitterTimelineEmbed
-              sourceType="layer5"
-              screenName="Layer5"
+              sourceType="profile"
+              screenName="layer5"
               options={{height: 300}}
               noFooter
               noScrollbar
@@ -164,7 +164,7 @@ const Footer = () => {
               <Language />
             </Col>
             <Col className="footer-widgets" xs={12} sm={6} lg={5}>
-              <h3 class="widget-title">Contact</h3>
+              <h3 className="widget-title">Contact</h3>
               <Row className="contactf">
                 <Link className="social-icons" to="mailto:community@layer5.io">
                   <img height="40 px" src={mail_icon} />
