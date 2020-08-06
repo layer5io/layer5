@@ -99,3 +99,20 @@ code {
   float: right;
   border-radius: 50%;
 }
+
+.align-right.larger{
+  width: 30%;
+  height: 35%;
+}
+
+.img-with-text {
+    text-align: center;
+    width: [50%];
+}
+
+.img-with-text img {
+    display: block;
+    width: 55%;
+    height: auto;
+    margin: 0 auto;
+}
