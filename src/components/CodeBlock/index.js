@@ -27,10 +27,11 @@ export const LineNo = styled.span`
 
 const CopyCode = styled.button`
   position: absolute;
-  right: 0.25rem;
+  right: 0;
+  z-index: 1;
   border: 0;
   border-radius: 3px;
-  margin: 0.25em;
+  margin: 2em;
   opacity: 0.3;
   &:hover {
     opacity: 1;
@@ -56,16 +57,19 @@ const Code = ({ codeString, language }) => {
                 getLineProps,
                 getTokenProps,
             }) => (
-                <Pre className={className} style={style}>
+                <Pre>
                     <CopyCode onClick={handleClick}>Copy</CopyCode>
-                    {tokens.map((line, i) => (
-                        <div {...getLineProps({ line, key: i })} key={i}>
-                            <LineNo>{i + 1}</LineNo>
-                            {line.map((token, key) => (
-                                <span {...getTokenProps({ token, key })} key={key}/>
-                            ))}
-                        </div>
-                    ))}
+                    <Pre className={className} style={style}>
+                        
+                        {tokens.map((line, i) => (
+                            <div {...getLineProps({ line, key: i })} key={i}>
+                                <LineNo>{i + 1}</LineNo>
+                                {line.map((token, key) => (
+                                    <span {...getTokenProps({ token, key })} key={key}/>
+                                ))}
+                            </div>
+                        ))}
+                    </Pre>
                 </Pre>
             )}
         </Highlight>
