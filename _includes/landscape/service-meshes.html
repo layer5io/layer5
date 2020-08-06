@@ -157,24 +157,16 @@
 
     <div class="card-content comparison">
       <ul class="category">Service Mesh
-        {% for meshes in site.data.landscape.meshes %}
+        <br>
+        {% assign sorted = (site.data.landscape.meshes | sort: 'name') %} {%
+          assign blanks = 1 %} {% for meshes in sorted %} {% if meshes.name %}
         <li>
-          <div class="tooltip"><a href="{{meshes.link}}">{{meshes.name}}</a>
+          <div class="tooltip">
+            <a href="{{meshes.link}}">{{meshes.name}}</a>
             <span class="tooltiptext">{{meshes.desc}}</span></div>
         </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div class="card-content comparison">
-      <ul class="category">Client Library
-        {% for clients in site.data.landscape.clients %}
-        <li>
-          <div class="tooltip"><a href="{{clients.link}}">{{clients.name}}</a>
-            <span class="tooltiptext">{{clients.desc}}</span></div>
-        </li>
         {% else %} {% capture blanks %}{% increment _blanks %}{% endcapture %}
-        {% endfor %} {% for i in blanks %}
+        {% endif %} {% endfor %} {% for i in blanks %}
         <li></li>
         {% endfor %}
       </ul>
@@ -252,6 +244,8 @@
       </ul>
     </div>
   </div>
+  <span style="color: aliceblue;">Found a discrepancy, missing or out-dated information? Please
+    <a href="https://github.com/layer5io/layer5/issues" style="color: aliceblue;">submit an issue</a>.</span>
   <!-- End Categories -->
 
 </div>
@@ -263,6 +257,8 @@
     <div class="col s12">
       <h2 class="white-text center landscape-category">Non Functional</h2>
       {% include landscape/service-mesh-non-functional.html %}
+      <span style="color: aliceblue;">Found a discrepancy, missing or out-dated information? Please
+        <a href="https://github.com/layer5io/layer5/issues" style="color: aliceblue;">submit an issue</a>.</span>
     </div>
   </div>
   
@@ -270,6 +266,8 @@
     <div class="col s12">
       <h2 class="white-text center landscape-category">Functional</h2>
       {% include landscape/service-mesh-functionality.html %}
+      <span style="color: aliceblue;">Found a discrepancy, missing or out-dated information? Please
+        <a href="https://github.com/layer5io/layer5/issues" style="color: aliceblue;">submit an issue</a>.</span>
     </div>
   </div>
 
@@ -278,7 +276,6 @@
   <div class="row">
     <div class="col s8">
       <h2 class="white-text center landscape-category">Service Mesh Interface Compatibility</h2>
-
       {% include landscape/service-mesh-smi.html %}
       <span style="color: aliceblue;">Found a discrepancy, missing or out-dated information? Please
         <a href="https://github.com/layer5io/layer5/issues" style="color: aliceblue;">submit an issue</a>.</span>
@@ -292,6 +289,8 @@
               text-align: center;
             " />
       </a>
+      <br>
+        <span style="color:aliceblue;">Based on <a href="https://servicemesh.es/" style="color:aliceblue;">servicemesh.es</a> by <a href="https://creativecommons.org/licenses/by/4.0/" style="color:aliceblue;">INNOQ / CC 4.0</a>.</span>
     </div>
   </div>
 

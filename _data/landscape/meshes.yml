@@ -362,8 +362,8 @@
 #   autoinject: "No"
 
 - name: Weavenet
-  desc: ""
-  link: ""
+  desc: "Operate and manage production ready Kubernetes with Weave Kubernetes Platform. GitOps unlocks cloud native agility, reliability and scalability."
+  link: "https://www.weave.works/"
   autoinject: ""
   tcp-web: ""
   grpc: ""
@@ -391,8 +391,8 @@
 
 
 - name: Canal
-  desc: ""
-  link: ""
+  desc: "Canal was the name of Tigera and CoreOS’s project to integrate Calico and flannel."
+  link: "https://github.com/projectcalico/canal"
   autoinject: ""
   tcp-web: ""
   grpc: ""
@@ -421,8 +421,8 @@
 
 
 - name: Project Calico
-  desc: ""
-  link: ""
+  desc: "Calico is an open source networking and network security solution for containers, virtual machines, and native host-based workloads."
+  link: "https://www.projectcalico.org/"
   autoinject: ""
   tcp-web: ""
   grpc: ""
@@ -450,8 +450,8 @@
 
 
 - name: Flannel
-  desc: ""
-  link: ""
+  desc: "Flannel is a simple and easy way to configure a layer 3 network fabric designed for Kubernetes."
+  link: "https://github.com/coreos/flannel"
   autoinject: ""
   tcp-web: ""
   grpc: ""

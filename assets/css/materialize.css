@@ -3208,7 +3208,7 @@ ul.staggered-list li {
 
   /* Position the tooltip */
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   top: 100%;
   left: 50%; 
   margin-left: -60px;
@@ -3530,7 +3530,7 @@ thead {
 td, th {
   padding: 15px 5px;
   display: table-cell;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
   border-radius: 2px;
 }
