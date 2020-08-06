@@ -251,3 +251,11 @@ Please note that in this scenario the Kiali is also accessed via the default con
 
 Shortly, we will go over the 3rd scenario which is to run multiple Istio Control Planes (Multiple Service Meshes) within the same Kubernetes Cluster. For that, we will need to build an open-shift setup and deploy the Maistra Istio Operator.
 Special thanks to the [Istio Community](https://istio.slack.com/) for helping me understand the concepts and also answering my queries and of course to [Lee Calcote](https://calcotestudios.com/talks/), who helped me embark on my Istio journey.
+
+\- _Sudeep Batra_
+
+<div class="center"><b>Connect with Sudeep Batra on
+<a href="https://www.linkedin.com/in/sudeep-batra">LinkedIn</a>, 
+<a href="https://github.com/sb1975">GitHub</a>, or 
+<a href="https://twitter/sudeepbatra">Twitter</a>
+</b></div>
