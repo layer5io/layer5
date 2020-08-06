@@ -84,7 +84,7 @@ Linkerd is a system that comes from the service mesh pioneers - the company call
         </tr>
         <tr>
             <td><a href="https://github.com/layer5io/meshery-kuma">
-                <img src='/assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/kuma.svg' alt='Kuma Service Mesh' class="adapter-logo">Meshery adapter for Kuma</a>
+                <img src='/assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/Kuma.svg' alt='Kuma Service Mesh' class="adapter-logo">Meshery adapter for Kuma</a>
             </td>
         </tr><tr>
         </tr>
