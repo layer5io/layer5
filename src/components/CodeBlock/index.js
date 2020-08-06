@@ -26,7 +26,6 @@ export const LineNo = styled.span`
 `;
 
 const CopyCode = styled.button`
-  position: -webkit-sticky;
   position: absolute;
   right: 0;
   z-index: 1;
