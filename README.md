@@ -62,7 +62,17 @@ alt="Image Hub" align="left" /></a>
 <a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg" style="margin:10px;" width="125px" align="left" /></a>
 <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> is the multi-service mesh operator and implementation of MeshSync.
 <br /><br /><br />
-</p><br /><br />
+</p>
+<br />
+<p style="clear:both;">
+<h2><a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a></h2>
+<a href="https://github.com/layer5io/learn-layer5"><img src="assets/images/layer5/5-light-bg.png"
+style="margin:10px;" width="125px"
+alt="Layer5" align="left" /></a>
+<a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> is a sample application for learning how service meshes work which also provides <a href="https://layer5.io/smi">SMI Conformance testing</a>.
+<br /><br /><br />
+</p>
+<br />
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributing</a></h1>
 <p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
