@@ -26,4 +26,27 @@ function sortTable(id, col) {
     asc = !asc;
     bubbleSort();
   }
+  var obj = [event.target];
+  var newElement = document.createElement("SPAN");
+  newElement.setAttribute("class",`show ${id}`);
+  
+  let arrowFunc = (elementObj) => {
+    var existingArrow = document.getElementsByClassName(`${id}`);
+    if(existingArrow.length > 0){
+      for(let i=0; i<existingArrow.length; i++)
+        console.log(existingArrow[i].classList.add("hiddn"));
+    }
+    var symbol = asc ? "&#9652;" : "&#9662";
+    if(elementObj[0].childNodes.length > 1)
+      elementObj[0].removeChild(elementObj[0].childNodes[1]);
+    newElement.innerHTML = symbol;
+    elementObj[0].appendChild(newElement);
+  }
+
+  if (obj[0].tagName == "TH")
+    arrowFunc(obj);
+  else if(obj[0].tagName == "SPAN"){
+    let newObj = [[obj[0]][0].parentNode];
+    arrowFunc(newObj);
+  }
 }

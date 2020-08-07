@@ -3218,6 +3218,16 @@ ul.staggered-list li {
     visibility: visible;
 }
 
+.show {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.hiddn {
+  display: none;
+}
+
 /*********************
   Media Query Classes
 **********************/
