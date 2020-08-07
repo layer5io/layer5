@@ -30,6 +30,7 @@ export const BlogPageWrapper = styled.div`
             max-height: 180px;
             width: auto;
             height: auto;
+            display: block;
             text-align: center;
             margin-left: auto;
             margin-right: auto;
