@@ -47,7 +47,7 @@ alt="Service Mesh Performance Specification Index" align="left" /></a>
 The <a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a> is a common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and load test configuration.
 <br /><br /><br />
 </p>
-
+<br />
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/image-hub">Image Hub</a></h2>
 <a href="https://layer5.io/projects/image-hub"><img src="assets/images/image-hub/layer5-image-hub.png"
@@ -59,7 +59,7 @@ alt="Image Hub" align="left" /></a>
 
 <p style="clear:both;">
 <h2><a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a></h2>
-<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg" style="margin:10px;" width="150px" align="left" /></a>
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg" style="margin:10px;" width="125px" align="left" /></a>
 <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> is the multi-service mesh operator and implementation of MeshSync.
 <br /><br /><br />
 </p><br /><br />
