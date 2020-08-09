@@ -10,7 +10,7 @@ image:
 thumbnail: /assets/images/buttons/smp_white.svg
 lang: en
 #permalink: /service-mesh-interface
-link: /projects/service-mesh-interface
+link: /projects/service-mesh-performance
 redirect_from:
   - /performance
   - performance/
