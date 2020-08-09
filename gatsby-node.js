@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const path = require(`path`)
+const path = require(`path`);
 
 // You can delete this file if you're not using it
 // Replacing '/' would result in empty string which is invalid
