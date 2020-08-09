@@ -29,7 +29,7 @@ const BlogSingle = ({data}) => {
                                         <div className="post-info-block">
                                             <div className="tags">
                                                 <span>Tags:</span>
-                                                {frontmatter.tags && frontmatter.tags.split(", ").map(tag => (
+                                                {frontmatter.tags && frontmatter.tags.map(tag => (
                                                     <Link key={`${frontmatter.title}-${tag}`} to="#">{tag}</Link>
                                                 ))}
                                             </div>
