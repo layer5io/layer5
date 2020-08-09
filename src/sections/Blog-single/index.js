@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import { slugify } from "../../utils"
+import kebabCase from "lodash/kebabCase"
+
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
@@ -32,7 +33,7 @@ const BlogSingle = ({data}) => {
                                                 <span>Tags:</span>
                                                 {frontmatter.tags && frontmatter.tags.map(tag => (
                                                     <Link key={`${frontmatter.title}-${tag}`}
-                                                          to={`/blogs/tag/${slugify(tag)}`}>{tag}
+                                                          to={`/blogs/tag/${kebabCase(tag)}`}>{tag}
                                                     </Link>
                                                 ))}
                                             </div>
