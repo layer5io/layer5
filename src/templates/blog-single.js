@@ -33,7 +33,7 @@ const BlogSinglePage = ({data}) => {
         <ThemeProvider theme={theme}>
             <Layout>
                 <GlobalStyle />
-                <SEO title="Blog | Layer5 - The Service Mesh Company" />
+                <SEO title={`${data.mdx.frontmatter.title}`} />
                 <Navigation />
                 <BlogSingle data={data}/>
                 <Footer />
