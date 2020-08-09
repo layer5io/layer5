@@ -14,7 +14,7 @@ const PageHeader = ({ categories, title, subtitle,  author }) => {
                     <div className="breadcrumbs post">
                         <h4>Tags:</h4>
                         {categories.map((category, index) => (
-                            <span key={index}> {category} </span>
+                            <span key={index}> {category}&nbsp;</span>
                         ))}
                         {author && (
                             <>

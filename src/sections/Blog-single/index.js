@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
+import { slugify } from "../../utils"
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
@@ -15,7 +16,7 @@ const BlogSingle = ({data}) => {
             <PageHeader
                 title={frontmatter.title}
                 subtitle={frontmatter.subtitle}
-                categories={[frontmatter.tags]}
+                categories={frontmatter.tags}
                 author={{ name: frontmatter.author }}
             />
             <div className="single-post-wrapper">
@@ -30,7 +31,9 @@ const BlogSingle = ({data}) => {
                                             <div className="tags">
                                                 <span>Tags:</span>
                                                 {frontmatter.tags && frontmatter.tags.map(tag => (
-                                                    <Link key={`${frontmatter.title}-${tag}`} to="#">{tag}</Link>
+                                                    <Link key={`${frontmatter.title}-${tag}`}
+                                                          to={`/blogs/tag/${slugify(tag)}`}>{tag}
+                                                    </Link>
                                                 ))}
                                             </div>
                                         </div>
