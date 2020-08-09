@@ -9,13 +9,11 @@ image:
   width: 1200
 thumbnail: /assets/images/buttons/smp_white.svg
 lang: en
-link: /projects/service-mesh-performance
-permalink: /projects/service-mesh-performance
-redirect_from: 
- - /projects/performance
- - /projects/performance/
- - /performance
- - performance/
+#permalink: /service-mesh-interface
+link: /projects/service-mesh-interface
+redirect_from:
+  - /performance
+  - performance/
 ---
 <style>
 ul.bullet li {
@@ -37,7 +35,7 @@ ul.bullet li ul {
   <p>
     <img src="/assets/images/buttons/smp_black.svg" 
       class="light-shadow" width="25%" style="display:inline;float:left;margin-right:5%;padding:10px;" />
-    Service Mesh Performance (SMP) is a vendor-neutral specification for capturing details of:
+    The Service Mesh Performance Specification (SMP) is a vendor-neutral specification for capturing details of:
 
     <ul class="bullet" style="position: relative; left:40px;">
         <li>Environment and infrastructure details</li>
@@ -52,7 +50,7 @@ ul.bullet li ul {
   <p>SMP is a collaborative effort of Layer5, UT Austin, Google, and The Linux Foundation.</p>
 </div>
 <h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
-  Learn more about the <a href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance</a> project</h5>
+  Learn more about <a href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance</a></h5>
 <div class="row">
   <br />
   <div
@@ -78,10 +76,10 @@ ul.bullet li ul {
       src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000" 
       frameborder="0" width="100%" height="320" allowfullscreen="true" mozallowfullscreen="true" 
       webkitallowfullscreen="true"></iframe>
-      <p><i>Participate in the CNCF Service Mesh Working Group</i></p>  
+      <p><i>Participate in the CNCF Service Mesh Performance Working Group</i></p>  
   </div>
   
-  <p>The Service Mesh Working Group is hosted within CNCF SIG Network. All are welcome to participate. This group is defining the Service Mesh Performance (SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
+  <p>The Service Mesh Performance Working Group is hosted within CNCF SIG Network. All are welcome to participate. This group is defining the Service Mesh Performance Specification (SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
   </p>
   <p>The group is also working in collaboration with the Envoy project to create easy-to-use tooling around <a href="https://docs.google.com/document/d/1_hhQ5w1iLClgf7RvboI6il-eMKKAVPwz50GHm2VN4Bg/edit?usp=sharing">distributed performance management</a> (distributed load generation and analysis) in context of Istio, Consul, Tanzu Service Mesh, Network Service Mesh, App Mesh, Linkerd, and so on.
    </p>

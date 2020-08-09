@@ -187,10 +187,10 @@ Available Flags for Performance Command:
   provider[string]              (required) Choice of Provider (default: "Meshery")
   concurrent-requests[string]   (optional) Number of parallel requests to be sent (default: "1")
   qps[string]                   (required) Queries per second (default: "0")
-  file[string]                  (optional) file containing SMP-compatible test configuration. See https://github.com/layer5io/service-mesh-performance-specification
+  file[string]                  (optional) file containing SMPS-compatible test configuration. See https://github.com/layer5io/service-mesh-performance-specification
   help                          Help for perf subcommand
 
-url, duration, concurrent-requests, and qps can be considered optional flags if specified through an SMP compatible yaml file using --file
+url, duration, concurrent-requests, and qps can be considered optional flags if specified through an SMPS compatible yaml file using --file
 
 
 </pre>
@@ -201,7 +201,7 @@ An example usage of <code>mesheryctl perf --[flags]</code> can be
  mesheryctl perf --name "a quick stress test" --url http://192.168.1.15/productpage --qps 300 --concurrent-requests 2 --duration 30s --token "provider=Meshery"
 </pre>
 
-You can also provide a SMP Configuration file with `perf` subcommand, with this file provided you will not have to specify url, duration, concurrent-requests & qps. However, if specified the value provided through file will be over-rided by value through CLI. For more info about file configuration, see [here](https://github.com/layer5io/service-mesh-performance-specification/blob/master/smp.yaml).
+You can also provide a SMPS Configuration file with `perf` subcommand, with this file provided you will not have to specify url, duration, concurrent-requests & qps. However, if specified the value provided through file will be over-rided by value through CLI. For more info about file configuration, see [here](https://github.com/layer5io/service-mesh-performance-specification/blob/master/smp.yaml).
 
 <pre>
  mesheryctl perf --name "a quick stress test" --file {path}/smp.yaml --token "provider=Meshery"
