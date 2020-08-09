@@ -10,7 +10,12 @@ image:
 thumbnail: /assets/images/buttons/smp_white.svg
 lang: en
 link: /projects/service-mesh-performance
-
+permalink: /projects/service-mesh-performance
+redirect_from: 
+ - /projects/performance
+ - /projects/performance/
+ - /performance
+ - performance/
 ---
 <style>
 ul.bullet li {
