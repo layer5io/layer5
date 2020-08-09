@@ -13,12 +13,12 @@
 - name: Go kit
   link: https://gokit.io
   desc: "Go kit - a collection of Go packages that help you build robust, reliable, maintainable microservices (or elegant monoliths)."
-- name: 
-  link: 
-  desc:
-- name: 
-  link: 
-  desc:
+- name: Spring Boot
+  link: https://spring.io/projects/spring-boot
+  desc: "Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can 'just run'."
+- name: DropWizard
+  link: https://www.dropwizard.io/en/stable/
+  desc: "Dropwizard pulls together stable, mature libraries from the Java ecosystem into a simple, light-weight package that lets you focus on getting things done."
 - name: 
   link: 
   desc:
