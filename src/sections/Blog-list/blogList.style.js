@@ -95,6 +95,9 @@ export const BlogPageWrapper = styled.div`
         font-weight: 300; 
         line-height: 28px; 
         margin-bottom: 25px;
+        .pull-right{
+            float: right
+        }
     }
     .post-title{
         a{ 

@@ -42,13 +42,13 @@ export const query = graphql`
     }
 `;
 
-const BlogListPage = ({data}) => (
+const BlogListPage = ({ pageContext, data }) => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
             <SEO title="Blog | Layer5 - The Service Mesh Company" />
             <Navigation />
-            <BlogList posts={data.allMdx.nodes} />
+            <BlogList posts={data.allMdx.nodes} tags={pageContext.allTags} />
             <Footer />
         </Layout>
     </ThemeProvider>

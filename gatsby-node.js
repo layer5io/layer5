@@ -40,6 +40,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ) {
         group(field: frontmatter___tags) {
           fieldValue
+          totalCount
         }
         nodes {
           fields {
@@ -77,6 +78,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: blogListTemplate,
       context: {
         tag: tag.fieldValue,
+        allTags: tags
       },
     })
   })
