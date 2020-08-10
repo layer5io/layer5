@@ -10,16 +10,22 @@ import Image from "../../components/image";
 
 import { BlogPageWrapper } from "./blogList.style";
 
-const BlogList = ({posts, tags}) => {
+const BlogList = ({data, pageContext}) => {
+    const { tag, allTags } = pageContext;
+    const {totalCount, nodes } = data.allMdx;
+    const header = `${totalCount} blog${
+        totalCount === 1 ? "" : "s"
+    } tagged with "${tag}"`;
+
     return (
         <BlogPageWrapper>
-            <PageHeader title="Blog List" />
+            <PageHeader title={header} />
             <div className="blog-list-wrapper">
                 <Container>
                     <Row>
                         <Col sm={12} md={8}>
                             <Row>
-                                {posts.map(({id, frontmatter, fields}) => (
+                                {nodes.map(({id, frontmatter, fields}) => (
                                     <Col xs={12} key={id}>
                                         <div className="post-block list">
                                             <div className="post-thumb-block">
@@ -43,7 +49,7 @@ const BlogList = ({posts, tags}) => {
                             </Row>
                         </Col>
                         <Col sm={12} md={4}>
-                            <Sidebar tags={tags}/>
+                            <Sidebar tags={allTags}/>
                         </Col>
                     </Row>
                 </Container>
