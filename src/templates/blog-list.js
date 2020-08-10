@@ -18,6 +18,7 @@ export const query = graphql`
             sort: { fields: [frontmatter___date], order: DESC }
             filter: { frontmatter: { tags: { in: [$tag] }, published: { eq: true } } }
         ) {
+            totalCount
             nodes {
                 id
                 frontmatter {
@@ -48,7 +49,7 @@ const BlogListPage = ({ pageContext, data }) => (
             <GlobalStyle />
             <SEO title="Blog | Layer5 - The Service Mesh Company" />
             <Navigation />
-            <BlogList posts={data.allMdx.nodes} tags={pageContext.allTags} />
+            <BlogList data={data} pageContext={pageContext} />
             <Footer />
         </Layout>
     </ThemeProvider>
