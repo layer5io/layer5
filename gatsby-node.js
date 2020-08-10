@@ -72,7 +72,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const tags = res.data.allMdx.group;
   tags.forEach(tag => {
-    console.log(tag);
     createPage({
       path: `/blogs/tag/${_.kebabCase(tag.fieldValue)}`,
       component: blogListTemplate,

@@ -6,7 +6,6 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
 
-import blogThumb2 from "../../assets/images/blog/post/blog-post-2.png";
 import Image from "../../components/image";
 
 import { BlogPageWrapper } from "./blogList.style";
