@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { useStaticQuery, graphql ,Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import kebabCase from "lodash/kebabCase"
@@ -12,6 +12,19 @@ import BlogPageWrapper from "./blogSingle.style";
 
 const BlogSingle = ({data}) => {
     const { frontmatter, body } = data.mdx;
+    const allTags = useStaticQuery(graphql`
+        query tagsQuery {
+            allMdx(
+                filter: { frontmatter: { published: { eq: true } } }
+            ) {
+                group(field: frontmatter___tags) {
+                    fieldValue
+                    totalCount
+                }
+            }
+        }
+    `);
+
     return (
         <BlogPageWrapper>
             <PageHeader
@@ -43,7 +56,7 @@ const BlogSingle = ({data}) => {
                             </Row>
                         </Col>
                         <Col sm={12} lg={4}>
-                            <Sidebar />
+                            <Sidebar tags={allTags.allMdx.group}/>
                         </Col>
                     </Row>
                 </Container>
