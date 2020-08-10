@@ -10,7 +10,7 @@ import Image from "../../components/image";
 
 import { BlogPageWrapper } from "./blogList.style";
 
-const BlogList = ({posts}) => {
+const BlogList = ({posts, tags}) => {
     return (
         <BlogPageWrapper>
             <PageHeader title="Blog List" />
@@ -24,11 +24,6 @@ const BlogList = ({posts}) => {
                                         <div className="post-block list">
                                             <div className="post-thumb-block">
                                                 <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: 'contain' }}/>
-                                                <div className="post-meta">
-                                                <span>
-                                                    <em> 15 </em> SEP
-                                                </span>
-                                                </div>
                                             </div>
                                             <h2 className="post-title">
                                                 <Link to={fields.slug}>
@@ -36,14 +31,9 @@ const BlogList = ({posts}) => {
                                                 </Link>
                                             </h2>
                                             <p className="post-entry">
-                                                Readable content of a page when looking at its layout. The
-                                                point of using Lorem Ipsum is that it has a more-or-less
-                                                normal distribution of letters, as opposed to using
-                                                'Content here, content here', making it look like readable
-                                                English. Many desktop publishing packages and web page
-                                                editors now use
+                                                <span>{frontmatter.date}</span>
+                                                <span className="pull-right">By: {frontmatter.author}</span>
                                             </p>
-
                                             <Link to={fields.slug} className="readmore-btn">
                                                 see more <IoIosArrowRoundForward />
                                             </Link>
@@ -53,7 +43,7 @@ const BlogList = ({posts}) => {
                             </Row>
                         </Col>
                         <Col sm={12} md={4}>
-                            <Sidebar />
+                            <Sidebar tags={tags}/>
                         </Col>
                     </Row>
                 </Container>
