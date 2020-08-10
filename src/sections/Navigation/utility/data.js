@@ -54,10 +54,6 @@ const Data = {
                 {
                     name: "Blog Grid",
                     path: "/blog-grid"
-                },
-                {
-                    name: "Blog List",
-                    path: "/blog-list"
                 }
             ]
         },
