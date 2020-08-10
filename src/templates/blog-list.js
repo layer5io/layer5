@@ -16,7 +16,7 @@ export const query = graphql`
     query PostsByTags($tag: String!) {
         allMdx(
             sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: { tags: { in: [$tag] } } }
+            filter: { frontmatter: { tags: { in: [$tag] }, published: { eq: true } } }
         ) {
             nodes {
                 id
@@ -26,7 +26,7 @@ export const query = graphql`
                     author
                     thumbnail{
                         childImageSharp{
-                            fluid(maxWidth: 500){
+                            fluid(maxWidth: 1000){
                                 ...GatsbyImageSharpFluid
                             }
                         }
