@@ -25,9 +25,10 @@ const NavigationWrap = styled.header`
     background: white;
     opacity: 0;
     border: 1px solid #f5f5f5;
-    margin: 0 2.5vw;
-    width: 95vw;
-    left: 0;
+    margin: 1vw 2.5vw;
+    width: 75%;
+    left: auto;
+    right: 0;
     padding: 1em;
     border-radius: 15px;
     display: none;
@@ -40,6 +41,22 @@ const NavigationWrap = styled.header`
   .nav-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .nav-img {
+    max-width: 90%;
+  }
+  .nav-div {
+    margin-top: -20px;
+    text-align: center;
+    &:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+      border-radius: 10px;
+      cursor: pointer;
+      color: ${(props) =>
+        props.theme.menuHoverColor
+            ? props.theme.menuHoverColor
+            : "#FB7B81"}
+    } 
   }
   @keyframes nav-bar-anim {
     0% {
