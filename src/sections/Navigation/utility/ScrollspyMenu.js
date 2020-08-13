@@ -21,7 +21,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                         <ul key={index} className="dropdown">
                             {menu.name}
                             <div className="nav-grid">
-                                <div>
+                                <div className="hr">
                                     {menu.subItems.map((subItem, i) => (
                                         <li key={i}>
                                             <Link to={subItem.path} partiallyActive={true}>
