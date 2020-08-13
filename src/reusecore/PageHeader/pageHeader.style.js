@@ -14,7 +14,17 @@ const PageHeaderWrapper = styled.div`
                 font-size: 36px;
                 line-height: 48px;
             }
-
+        
+        .feature-image{
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px; 
+            content: "";
+            position: absolute;
+            z-index: 1;
+            opacity: 0.15
+        }
         .breadcrumbs {
             display: flex;
             justify-content: center;
