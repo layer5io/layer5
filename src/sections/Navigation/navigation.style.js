@@ -40,28 +40,34 @@ const NavigationWrap = styled.header`
   }
   .nav-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 30% 70%;
       .hr {
         border-right: 2px solid #f1f1f1;
         height: 95%;
       } 
-    
+      .nav-display {
+        padding-left: 15px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+      }
   }
   .nav-img {
     max-width: 90%;
   }
   .nav-div {
     margin-top: -20px;
+    margin-right: 15px;
     text-align: center;
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.025), -1px -1px 3px 3px rgba(0, 0, 0, 0.025);
+    border-radius: 10px;
     &:hover {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
-      border-radius: 10px;
-      cursor: pointer;
+      box-shadow: none;
       color: ${(props) =>
         props.theme.menuHoverColor
             ? props.theme.menuHoverColor
             : "#FB7B81"}
-    } 
+      cursor: pointer;
+    }
   }
   @keyframes nav-bar-anim {
     0% {
