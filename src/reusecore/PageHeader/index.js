@@ -9,12 +9,14 @@ const PageHeader = ({ categories, title, subtitle,  author }) => {
         <PageHeaderWrapper>
             <ParticleComponent />
             <div className="page-header">
-                <div className="feature-image" 
-                    style ={{ backgroundImage: `url(${img})`,
-                            backgroundSize: 'contain',
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat'
-                        }}></div>
+                {author && (
+                    <div className="feature-image" 
+                        style ={{ backgroundImage: `url(${img})`,
+                                backgroundSize: 'contain',
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat'
+                            }}></div>
+                )}
                 <h1>{title}</h1>
                 {subtitle && (<span><i>{subtitle}</i></span>)}
                 {categories && (
