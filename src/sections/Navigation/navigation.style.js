@@ -41,6 +41,11 @@ const NavigationWrap = styled.header`
   .nav-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+      .hr {
+        border-right: 2px solid #f1f1f1;
+        height: 95%;
+      } 
+    
   }
   .nav-img {
     max-width: 90%;
