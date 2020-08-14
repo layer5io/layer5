@@ -6,13 +6,13 @@ labels: 'kind/bug'
 assignees: ''
 ---
 **Description**
-A brief description of the issue.
+<!-- A brief description of the issue. -->
 
 **Expected Behavior**
-A brief description of what you expected to happen.
+<!-- A brief description of what you expected to happen. -->
 
 **Screenshots**
-Add screenshots, if applicable, to help explain your problem.
+<!-- Add screenshots, if applicable, to help explain your problem. -->
 
 **Enviroment:**
  - OS: [e.g. Ubuntu]
@@ -21,7 +21,9 @@ Add screenshots, if applicable, to help explain your problem.
  - Device: [e.g. laptop, iPhone 8]
 
 ---
+
 [Optional] **To Reproduce**
+
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
@@ -29,7 +31,7 @@ Steps to reproduce the behavior:
 4. See error
 
 [Optional] **Additional Context**
-Add any other context about the problem here.
+<!-- Add any other context about the problem here. -->
 
 ---
 **Contributor Resources**
