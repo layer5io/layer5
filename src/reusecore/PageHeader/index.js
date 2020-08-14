@@ -18,16 +18,16 @@ const PageHeader = ({ categories, title, subtitle,  author }) => {
                             }}></div>
                 )}
                 <h1>{title}</h1>
-                {subtitle && (<span><i>{subtitle}</i></span>)}
+                {subtitle && (<h3><i>{subtitle}</i></h3>)}
                 {categories && (
                     <div className="breadcrumbs post">
-                        <h4>Tags:</h4>
+                        {/* <h4>Tags:</h4>
                         {categories.map((category, index) => (
                             <span key={index}> {category} </span>
-                        ))}
+                        ))} */}
                         {author && (
                             <>
-                                <h4>By:</h4> <span>{author.name}</span>
+                                <h4>By:</h4> <h3>{author.name}</h3>
                             </>
                         )}
                     </div>

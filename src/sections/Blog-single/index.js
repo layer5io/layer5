@@ -17,7 +17,6 @@ const BlogSingle = ({data}) => {
                 subtitle={frontmatter.subtitle}
                 categories={[frontmatter.tags]}
                 author={{ name: frontmatter.author }}
-                thumbnail={frontmatter.thumbnail}
             />
             <div className="single-post-wrapper">
                 <Container>

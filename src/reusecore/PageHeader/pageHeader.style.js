@@ -14,16 +14,27 @@ const PageHeaderWrapper = styled.div`
                 font-size: 36px;
                 line-height: 48px;
             }
+            h3{
+                color: inherit;
+            }
         
         .feature-image{
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px; 
-            content: "";
-            position: absolute;
-            z-index: 1;
-            opacity: 0.15
+
+            // image at background
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px; 
+                content: "";
+                position: absolute;
+                opacity: 0.12
+                z-index: 1;
+
+            // image at top
+                // margin-top: -120px;
+                // height: 300px;
+                // width: auto;
+
         }
         .breadcrumbs {
             display: flex;
