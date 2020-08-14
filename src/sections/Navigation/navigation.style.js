@@ -25,9 +25,10 @@ const NavigationWrap = styled.header`
     background: white;
     opacity: 0;
     border: 1px solid #f5f5f5;
-    margin: 0 2.5vw;
-    width: 95vw;
-    left: 0;
+    margin: 1vw 2.5vw;
+    width: 75%;
+    left: auto;
+    right: 0;
     padding: 1em;
     border-radius: 15px;
     display: none;
@@ -39,7 +40,34 @@ const NavigationWrap = styled.header`
   }
   .nav-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 30% 70%;
+      .hr {
+        border-right: 2px solid #f1f1f1;
+        height: 95%;
+      } 
+      .nav-display {
+        padding-left: 15px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+      }
+  }
+  .nav-img {
+    max-width: 90%;
+  }
+  .nav-div {
+    margin-top: -20px;
+    margin-right: 15px;
+    text-align: center;
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.025), -1px -1px 3px 3px rgba(0, 0, 0, 0.025);
+    border-radius: 10px;
+    &:hover {
+      box-shadow: none;
+      color: ${(props) =>
+        props.theme.menuHoverColor
+            ? props.theme.menuHoverColor
+            : "#FB7B81"}
+      cursor: pointer;
+    }
   }
   @keyframes nav-bar-anim {
     0% {

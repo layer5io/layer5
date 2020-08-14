@@ -1,3 +1,6 @@
+import img1 from "./img1.svg";
+import img2 from "./layer5-and-istio.png";
+
 const Data = {
     menuItems: [
         {
@@ -20,7 +23,15 @@ const Data = {
                     name: "Home Hosting",
                     path: "/hosting"
                 }
-            ]
+            ],
+            div1: {
+                src: img1,
+                des: "How I schooled my seniors"
+            },
+            div2: {
+                src: img2,
+                des: "Service Mesh Istio patterns for multilatency"
+            }
         },
         {
             name: "Projects",
@@ -28,23 +39,23 @@ const Data = {
             offset: "-50"
         },
         {
-            name: "Features",
-            path: "/#features",
+            name: "Learn",
+            path: "/learn",
             offset: "-50"
         },
         {
-            name: "Pricing",
-            path: "/#pricing",
+            name: "Community",
+            path: "/community",
             offset: "-50"
         },
         {
-            name: "Testimonial",
-            path: "/#testimonial",
+            name: "Careers",
+            path: "/careers",
             offset: "-50"
         },
         {
-            name: "Faq",
-            path: "/#faq",
+            name: "About",
+            path: "/about",
             offset: "-50"
         },
         {
@@ -55,13 +66,21 @@ const Data = {
                     name: "Blog Grid",
                     path: "/blog-grid"
                 }
-            ]
+            ],
+            div1: {
+                src: img1,
+                des: "How I schooled my seniors"
+            },
+            div2: {
+                src: img2,
+                des: "Service Mesh Istio patterns for multilatency"
+            }
         },
-        {
-            name: "Contact",
-            path: "/#contact",
-            offset: "-50"
-        }
+        // {
+        //     name: "Contact",
+        //     path: "/#contact",
+        //     offset: "-50"
+        // }
     ]
 };
 export default Data;
