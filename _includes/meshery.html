@@ -3,18 +3,16 @@
 <div class="row">
     <div id="meshery" class="card-content row">
         <div class="col s12 m12">
-          <h5 style="text-align:center;color:aliceblue;">
-          <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
-            class="waves-effect waves-light btn white-text darken-2 l5-dark-yellow"
-            href="#getting-started">Run Meshery</a> 
-          </h5>
+            <h5 style="text-align:center;color:aliceblue;">
+                <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" class="waves-effect waves-light btn white-text darken-2 l5-dark-yellow" href="#getting-started">Run Meshery</a>
+            </h5>
         </div>
     </div>
-  <div class="col s12 m6">
-    <div class="card" style="z-index: 1;">
-      <div class="card-content" style="margin-bottom: 0px;">
-        <h4 style="text-align:center;">Service Performance Management</h4>
-        <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;">
+    <div class="col s12 m6">
+        <div class="card" style="z-index: 1;">
+            <div class="card-content" style="margin-bottom: 0px;">
+                <h4 style="text-align:center;">Service Performance Management</h4>
+                <p style="text-align:center;"><span style="color: gray; text-transform: uppercase;">
         <i style="padding-left: 10px; padding-right: 10px;">What overhead does being on the service mesh incur?</i><br /><br /></p>
         <p>Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your application across different service meshes. Compare service mesh overhead.
         </p>
@@ -31,19 +29,18 @@
       </script>
       <div class="card" style="z-index: 1;">
         <div class="performance">
-          <span class="testresults" id="testresults"></span>
-          performance tests run!
-      </div>
+          <span class="testresults" id="testresults"></span> performance tests run!
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="col s12 m6">
-    
-    <div class="card" style="z-index: 1;">
-      <div class="card-content">
-        <h4 style="text-align:center;">Lifecycle and Configuration Management</h4>
-        <p style="text-align:center;">
-          <span style="color: gray; text-transform: uppercase;">
+    <div class="col s12 m6">
+
+        <div class="card" style="z-index: 1;">
+            <div class="card-content">
+                <h4 style="text-align:center;">Lifecycle and Configuration Management</h4>
+                <p style="text-align:center;">
+                    <span style="color: gray; text-transform: uppercase;">
             <i>Which service mesh should I use and how do I get started?</i>
             <br /><br /></p>
         <p>Provision service meshes, distributed applications. Understand and control the 
@@ -209,10 +206,10 @@
   
   <div class="post-content" style="margin-top: 10px;">
     <h3 style="color:#111111;text-align: center;">Service Mesh Standards</h3>
-    <h6 style="color:#111111;text-align: left;">Service Mesh Performance Specification</h6><a name="smp"></a>
-    <img src="/assets/images/buttons/smp_black.svg" 
+    <h6 style="color:#111111;text-align: left;">Service Mesh Performance </h6><a name="smp"></a>
+    <img src="/assets/images/buttons/smp-dark-text.png" 
     class="light-shadow" width="25%" style="display:inline;float:left;margin-right:1%;padding:5px;" />
-    The <a href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance Specification (SMPS)</a>
+    The <a href="https://github.com/layer5io/service-mesh-performance">Service Mesh Performance (SMP)</a>
      is a vendor-neutral specification to aid operators in assessing the overhead of their service mesh in context of the value it provides.
      Layer5's MeshDex provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
     <p style="text-align:center;">Learn more about <a href="/performance">this open standard</a> as a partnership of Layer5, UT Austin, and Google.</p>
@@ -285,204 +282,185 @@
               data-clipboard-text="curl -L https://git.io/meshery | bash -  " onmouseout="resetCopyText(this)">
               <i class="far fa-copy"></i>
               <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
-            </a>
-        </div> 
-      </div>
-      <h4>Brew user</h4>
-      <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Homebrew:</p>        
+                    </a>
+            </div>
+        </div>
+        <h4>Brew user</h4>
+        <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Homebrew:</p>
 
-      <div id="start-brew">
-        <div style="width:auto; height:auto; padding:0px; position:relative;">
-          <pre><code style="color:#eee;"></br> $ brew install layer5io/mesheryctl</br> $ mesheryctl system start
+        <div id="start-brew">
+            <div style="width:auto; height:auto; padding:0px; position:relative;">
+                <pre><code style="color:#eee;"></br> $ brew install layer5io/mesheryctl</br> $ mesheryctl system start
           </code></pre>
-          <!-- copy to clipboard -->
-          <a class="btn clipboard-copy-btn tooltip"
-            style="background:none; border: 0;"
-            data-clipboard-target="#start-brew"
-            data-clipboard-text="brew install layer5io/mesheryctl
+                <!-- copy to clipboard -->
+                <a class="btn clipboard-copy-btn tooltip" style="background:none; border: 0;" data-clipboard-target="#start-brew" data-clipboard-text="brew install layer5io/mesheryctl
             mesheryctl system start" onmouseout="resetCopyText(this)">
-            <i class="far fa-copy"></i>
-            <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
-          </a>
-      </div>
-    </div>
-      
-      <div class="toggle">
-        <h4>Kubernetes user</h4>
-        <label for="k8s-instructions">To install on Kubernetes, <a>click here</a></label> 
-        or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.
-        <input type="checkbox" checked name="one" id="k8s-instructions">
-        <div class="hidediv">
-          <div class="innerdiv">
-            
-      <p>Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
-      <div class="highlight">
-        
-
-
-        <div style="width:auto; height:auto; padding:0px; position:relative;">
-            <pre><code style="color:#eee;">
- $ git clone https://github.com/layer5io/meshery.git; cd meshery        
-        </code></pre>
-            <!-- copy to clipboard -->
-            <a class="btn clipboard-copy-btn tooltip"
-              style="background: none; border: 0;"
-              data-clipboard-target="#start"
-              data-clipboard-text="git clone https://github.com/layer5io/meshery.git; cd meshery" onmouseout="resetCopyText(this)">
-              <i class="far fa-copy"></i>
-              <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
-            </a>
+                    <i class="far fa-copy"></i>
+                    <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
+                </a>
+            </div>
         </div>
 
+        <div class="toggle">
+            <h4>Kubernetes user</h4>
+            <label for="k8s-instructions">To install on Kubernetes, <a>click here</a></label> or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.
+            <input type="checkbox" checked name="one" id="k8s-instructions">
+            <div class="hidediv">
+                <div class="innerdiv">
+
+                    <p>Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
+                    <div class="highlight">
 
 
 
-      </div>
-    <p>Install Meshery on your cluster by running the following:</p>
-    <div class="highlight">
+                        <div style="width:auto; height:auto; padding:0px; position:relative;">
+                            <pre><code style="color:#eee;">
+ $ git clone https://github.com/layer5io/meshery.git; cd meshery        
+        </code></pre>
+                            <!-- copy to clipboard -->
+                            <a class="btn clipboard-copy-btn tooltip" style="background: none; border: 0;" data-clipboard-target="#start" data-clipboard-text="git clone https://github.com/layer5io/meshery.git; cd meshery" onmouseout="resetCopyText(this)">
+                                <i class="far fa-copy"></i>
+                                <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
+                            </a>
+                        </div>
 
-<div style="width:auto; height:auto; padding:0px; position:relative;">
-            <pre><code style="color:#eee;">
+
+
+
+                    </div>
+                    <p>Install Meshery on your cluster by running the following:</p>
+                    <div class="highlight">
+
+                        <div style="width:auto; height:auto; padding:0px; position:relative;">
+                            <pre><code style="color:#eee;">
   $ kubectl create ns meshery
   $ kubectl -n meshery apply -f install/deployment_yamls/k8s
 
 </code></pre>
-            <!-- copy to clipboard -->
-            <a class="btn clipboard-copy-btn tooltip"
-              style="background: none; border: 0;"
-              data-clipboard-target="#start"
-              data-clipboard-text="kubectl create ns meshery
+                            <!-- copy to clipboard -->
+                            <a class="btn clipboard-copy-btn tooltip" style="background: none; border: 0;" data-clipboard-target="#start" data-clipboard-text="kubectl create ns meshery
               kubectl -n meshery apply -f install/deployment_yamls/k8s" onmouseout="resetCopyText(this)">
-              <i class="far fa-copy"></i>
-              <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
-            </a>
-        </div>
+                                <i class="far fa-copy"></i>
+                                <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
+                            </a>
+                        </div>
 
-<!-- PROVIDE THE "ON THE MESH" VERSION IN FUTURE DOCUMENTATION
+                        <!-- PROVIDE THE "ON THE MESH" VERSION IN FUTURE DOCUMENTATION
 # additional step for running on Istio
 $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
-    </div>
-    <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
-    
+                    </div>
+                    <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
+
+                </div>
             </div>
-          </div>
-          
 
 
-    <h4 style="color:#111111;">Step 2: Login</h4>
-    <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
 
-  </div>
-  </div>
+            <h4 style="color:#111111;">Step 2: Login</h4>
+            <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
 
-<a name="contributing"></a><a name="community"></a>
-<h3  style="color:aliceblue;">Community</h3>
-<div class="post-content row" 
-  style="z-index: 1; min-height: 19px; 
-  padding-top: 0px;padding-right:0px;">
-    <a href="https://github.com/layer5io/meshery">
-      <img align="right" style=" width: 109px; height: 109px;"
-        src="https://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" 
-        alt="Fork me on GitHub"></a>
-  <p style="padding-top:17px;">This project is community-built and welcomes collaboration!</p>
-  <div class="comm">
-  <ul>
-    <div class="tooltip">
-    <li>
-      <a href="https://docs.google.com/document/d/1c07UO9dS7_tFD-ClCWHIrEzRnzUJoFQ10EzfJTpS7FY/edit?usp=sharing" target="_blank">
-        <img class="comm_icon_meeting" src="/assets/images/meshery/comments-regular.svg" alt="Meeting Minutes Link">
-      </a>
-    </li>
-    <span class="tooltiptext">Join the weekly community meeting on Fridays at 10am Central.</span>
-    </div>
-    <div class="tooltip">
-        <li>
-          <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1" target="_blank">
-            <img class="comm_icon_youtube" src="/assets/images/buttons/youtube_black.svg" alt="Youtube Link" >
-          </a>
-        </li>
-        <span class="tooltiptext">Watch community meeting recordings.</span>
         </div>
-    <div class="tooltip">
-         <li>
-         <a href="https://bit.ly/2SbrRhe" target="_blank">
-          <img class="comm_icon_calendar" src="/assets/images/meshery/calendar-plus-regular.svg" alt="Google Calendar Link">
-         </a>
-         </li>
-         <span class="tooltiptext">Subscribe to the community calender.</span>
-         </div>
-    <div class="tooltip">
-         <li>
-         <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA" target="_blank">
-          <img class="comm_icon_drive" src="/assets/images/meshery/google-drive-brands.svg" alt="Google Drive Link">
-         </a>
-         </li>
-         <span class="tooltiptext">Access the community drive.</span>
-         </div>  
-   <div class="tooltip">
-         <li>
-         <a href="http://slack.layer5.io" target="_blank">
-          <img class="comm_icon_slack" src="/assets/images/buttons/slack_black_trans.svg" alt="Slack Link">
-         </a>
-         </li>
-         <span class="tooltiptext">Join the community on Slack.</span>
-         </div>      
-  </ul>
-  </div>
+    </div>
 
-</div>
-<a name="performance-spec"></a>
-<h3 style="color:aliceblue;">Service Mesh Performance Specification</h3>
-<div class="post-content row" 
-  style="z-index: 1; min-height: 19px; 
+    <a name="contributing"></a>
+    <a name="community"></a>
+    <h3 style="color:aliceblue;">Community</h3>
+    <div class="post-content row" style="z-index: 1; min-height: 19px; 
   padding-top: 0px;padding-right:0px;">
-    <a href="https://github.com/layer5io/service-mesh-performance-specification">
-      <img align="right" style=" width: 109px; height: 109px;"
-      src="https://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png"
-      alt="Fork me on GitHub"></a>
-  <p style="padding-top:20px;">
-  The <a href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance Specification</a> is a 
-  common format for describing and capturing the performance of service meshes in context of the value they provide. This specification is 
-  currently being advanced through the CNCF Network SIG and the Meshery project.
-</p>See <a href="https://smp-spec.io">smp-spec.io</a>.</div>
-  
-
-<h3  style="color:aliceblue;">FAQ</h3>
-<div class="post-content row" itemprop="articleBody">
-    <p>       
-      <ul>
-        <li><b>Does Meshery manage service meshes?</b>
-          <ul>
-          <div style="line-height: .4em;">&nbsp;</div>
-            <li style="list-style-type: square;">Yes, as the service management plane, Meshery, provisions and manage the lifecycle of service meshes.</li>
-          </ul>
-        </li>
-        <br />
-        <li><b>Why do I need to authenticate my social account to use Meshery?</b>
-          <ul>
-            <div style="line-height: .4em;">&nbsp;</div>
-            <li style="list-style-type: square;"><em>Create your account</em> - avoid having to reconfigure Meshery each time you deploy it. 
-              When you use a social account to authenticate to Meshery, your environment configuration persists from session to session.
-              <ul>
-                  <li style="list-style-type: disc;">Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.</li>
-              </ul>
-            </li>
-            <br />
-            <li style="list-style-type: square;"><em>Rank your deployment</em> 
-              - results of performance tests are anonymously collected using the 
-              <a href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance Specification</a>, so that 
-              Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.
-              </ul>
-            </li>
-          </ul>
-        <ul>
-        <li><b>Why use Meshery?</b>
+        <a href="https://github.com/layer5io/meshery">
+            <img align="right" style=" width: 109px; height: 109px;" src="https://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" alt="Fork me on GitHub"></a>
+        <p style="padding-top:17px;">This project is community-built and welcomes collaboration!</p>
+        <div class="comm">
             <ul>
-                <div style="line-height: .4em;">&nbsp;</div>
-                <li style="list-style-type: square;"> Meshery is an open source, vendor neutral projects that facilitates testing across meshes.</li>
-                <li style="list-style-type: square;"> Other performance benchmark tools are not packaged into a mesh testing utility, butare only a load-generators unto their own.</li>
+                <div class="tooltip">
+                    <li>
+                        <a href="https://docs.google.com/document/d/1c07UO9dS7_tFD-ClCWHIrEzRnzUJoFQ10EzfJTpS7FY/edit?usp=sharing" target="_blank">
+                            <img class="comm_icon_meeting" src="/assets/images/meshery/comments-regular.svg" alt="Meeting Minutes Link">
+                        </a>
+                    </li>
+                    <span class="tooltiptext">Join the weekly community meeting on Fridays at 10am Central.</span>
+                </div>
+                <div class="tooltip">
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1" target="_blank">
+                            <img class="comm_icon_youtube" src="/assets/images/buttons/youtube_black.svg" alt="Youtube Link">
+                        </a>
+                    </li>
+                    <span class="tooltiptext">Watch community meeting recordings.</span>
+                </div>
+                <div class="tooltip">
+                    <li>
+                        <a href="https://bit.ly/2SbrRhe" target="_blank">
+                            <img class="comm_icon_calendar" src="/assets/images/meshery/calendar-plus-regular.svg" alt="Google Calendar Link">
+                        </a>
+                    </li>
+                    <span class="tooltiptext">Subscribe to the community calender.</span>
+                </div>
+                <div class="tooltip">
+                    <li>
+                        <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA" target="_blank">
+                            <img class="comm_icon_drive" src="/assets/images/meshery/google-drive-brands.svg" alt="Google Drive Link">
+                        </a>
+                    </li>
+                    <span class="tooltiptext">Access the community drive.</span>
+                </div>
+                <div class="tooltip">
+                    <li>
+                        <a href="http://slack.layer5.io" target="_blank">
+                            <img class="comm_icon_slack" src="/assets/images/buttons/slack_black_trans.svg" alt="Slack Link">
+                        </a>
+                    </li>
+                    <span class="tooltiptext">Join the community on Slack.</span>
+                </div>
             </ul>
-          </li>
+        </div>
 
-    </p>
-</div>
+    </div>
+    <a name="performance-spec"></a>
+    <h3 style="color:aliceblue;">Service Mesh Performance</h3>
+    <div class="post-content row" style="z-index: 1; min-height: 19px; 
+  padding-top: 0px;padding-right:0px;">
+        <a href="https://github.com/layer5io/service-mesh-performance">
+            <img align="right" style=" width: 109px; height: 109px;" src="https://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" alt="Fork me on GitHub"></a>
+        <p style="padding-top:20px;">
+            The <a href="https://github.com/layer5io/service-mesh-performance">Service Mesh Performance </a> is a common format for describing and capturing the performance of service meshes in context of the value they provide. This specification is
+            currently being advanced through the CNCF Network SIG and the Meshery project.
+        </p>See <a href="https://smp-spec.io">smp-spec.io</a>.</div>
+
+
+    <h3 style="color:aliceblue;">FAQ</h3>
+    <div class="post-content row" itemprop="articleBody">
+        <p>
+            <ul>
+                <li><b>Does Meshery manage service meshes?</b>
+                    <ul>
+                        <div style="line-height: .4em;">&nbsp;</div>
+                        <li style="list-style-type: square;">Yes, as the service management plane, Meshery, provisions and manage the lifecycle of service meshes.</li>
+                    </ul>
+                </li>
+                <br />
+                <li><b>Why do I need to authenticate my social account to use Meshery?</b>
+                    <ul>
+                        <div style="line-height: .4em;">&nbsp;</div>
+                        <li style="list-style-type: square;"><em>Create your account</em> - avoid having to reconfigure Meshery each time you deploy it. When you use a social account to authenticate to Meshery, your environment configuration persists from session to session.
+                            <ul>
+                                <li style="list-style-type: disc;">Meshery sources from Mixer Prometheus adapter and uses Prometheus node-exporter.</li>
+                            </ul>
+                        </li>
+                        <br />
+                        <li style="list-style-type: square;"><em>Rank your deployment</em> - results of performance tests are anonymously collected using the
+                            <a href="https://github.com/layer5io/service-mesh-performance">Service Mesh Performance</a>, so that Meshery may provide the public service of ranking the speed of your deployment against that of the rest of the world's users.
+                    </ul>
+                    </li>
+            </ul>
+            <ul>
+                <li><b>Why use Meshery?</b>
+                    <ul>
+                        <div style="line-height: .4em;">&nbsp;</div>
+                        <li style="list-style-type: square;"> Meshery is an open source, vendor neutral projects that facilitates testing across meshes.</li>
+                        <li style="list-style-type: square;"> Other performance benchmark tools are not packaged into a mesh testing utility, butare only a load-generators unto their own.</li>
+                    </ul>
+                </li>
+
+        </p>
+    </div>
