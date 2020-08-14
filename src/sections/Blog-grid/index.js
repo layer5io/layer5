@@ -16,6 +16,10 @@ const BlogPage = () => {
         sort: { fields: [frontmatter___date], order: DESC }
         filter: { frontmatter: { published: { eq: true } } }
       ) {
+        group(field: frontmatter___tags) {
+            fieldValue
+            totalCount
+        }
         nodes {
           id
           frontmatter {
@@ -80,7 +84,7 @@ const BlogPage = () => {
                             </div>
                         </Col>
                         <Col xs={12} lg={4}>
-                            <Sidebar />
+                            <Sidebar tags={data.allMdx.group} />
                         </Col>
                     </Row>
                 </Container>

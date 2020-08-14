@@ -13,13 +13,13 @@ import theme from "../theme/blog/themeStyles";
 
 const BlogListPage = () => (
     <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Blog | Layer5 - The Service Mesh Company" />
-            <Navigation />
-            <BlogList />
-            <Footer />
-        </Layout>
+        {/*<Layout>*/}
+        {/*    <GlobalStyle />*/}
+        {/*    <SEO title="Blog | Layer5 - The Service Mesh Company" />*/}
+        {/*    <Navigation />*/}
+        {/*    <BlogList />*/}
+        {/*    <Footer />*/}
+        {/*</Layout>*/}
     </ThemeProvider>
 );
 export default BlogListPage;

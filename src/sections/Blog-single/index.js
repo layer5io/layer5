@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from "gatsby";
+import { useStaticQuery, graphql ,Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+
+import kebabCase from "lodash/kebabCase"
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
@@ -10,12 +12,25 @@ import BlogPageWrapper from "./blogSingle.style";
 
 const BlogSingle = ({data}) => {
     const { frontmatter, body } = data.mdx;
+    const allTags = useStaticQuery(graphql`
+        query tagsQuery {
+            allMdx(
+                filter: { frontmatter: { published: { eq: true } } }
+            ) {
+                group(field: frontmatter___tags) {
+                    fieldValue
+                    totalCount
+                }
+            }
+        }
+    `);
+
     return (
         <BlogPageWrapper>
             <PageHeader
                 title={frontmatter.title}
                 subtitle={frontmatter.subtitle}
-                categories={[frontmatter.tags]}
+                categories={frontmatter.tags}
                 author={{ name: frontmatter.author }}
             />
             <div className="single-post-wrapper">
@@ -29,8 +44,10 @@ const BlogSingle = ({data}) => {
                                         <div className="post-info-block">
                                             <div className="tags">
                                                 <span>Tags:</span>
-                                                {frontmatter.tags && frontmatter.tags.split(", ").map(tag => (
-                                                    <Link key={`${frontmatter.title}-${tag}`} to="#">{tag}</Link>
+                                                {frontmatter.tags && frontmatter.tags.map(tag => (
+                                                    <Link key={`${frontmatter.title}-${tag}`}
+                                                          to={`/blogs/tag/${kebabCase(tag)}`}>{tag}
+                                                    </Link>
                                                 ))}
                                             </div>
                                         </div>
@@ -39,7 +56,7 @@ const BlogSingle = ({data}) => {
                             </Row>
                         </Col>
                         <Col sm={12} lg={4}>
-                            <Sidebar />
+                            <Sidebar tags={allTags.allMdx.group}/>
                         </Col>
                     </Row>
                 </Container>

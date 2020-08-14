@@ -58,6 +58,7 @@ export const BlogPageWrapper = styled.div`
         margin-bottom: 30px;
         position: relative;
         border-radius:  6px;
+        max-height: 400px;
         .post-meta{
             padding: 15px 23px;
             border-radius: 6px;
@@ -79,7 +80,14 @@ export const BlogPageWrapper = styled.div`
             }
         }
         img{
-            width: 100%;
+            max-width: 100%;
+            max-height: 400px;
+            width: auto;
+            height: auto;
+            display: block;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
             transition: all 0.6s ease-in;
             border-radius: 6px;
         }
@@ -95,6 +103,9 @@ export const BlogPageWrapper = styled.div`
         font-weight: 300; 
         line-height: 28px; 
         margin-bottom: 25px;
+        .pull-right{
+            float: right
+        }
     }
     .post-title{
         a{ 

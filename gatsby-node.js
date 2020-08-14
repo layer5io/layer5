@@ -4,7 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const path = require(`path`)
+const path = require(`path`);
+const _ = require("lodash");
 
 // You can delete this file if you're not using it
 // Replacing '/' would result in empty string which is invalid
@@ -23,14 +24,24 @@ exports.onCreatePage = ({ page, actions }) => {
   }
 }
 
-exports.createPages = async ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
       'src/templates/blog-single.js'
   );
+  const blogListTemplate = path.resolve(
+      'src/templates/blog-list.js'
+  );
+
   const res = await graphql(`
-  {
-      allMdx {
+    {
+      allMdx(
+        filter: { frontmatter: { published: { eq: true } } }
+      ) {
+        group(field: frontmatter___tags) {
+          fieldValue
+          totalCount
+        }
         nodes {
           fields {
             slug
@@ -42,6 +53,13 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     }
   `);
+
+  // handle errors
+  if (res.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return
+  }
+
   const posts = res.data.allMdx.nodes;
   posts.forEach(post => {
     createPage({
@@ -51,7 +69,20 @@ exports.createPages = async ({ actions, graphql }) => {
         slug: post.fields.slug,
       },
     })
+  });
+
+  const tags = res.data.allMdx.group;
+  tags.forEach(tag => {
+    createPage({
+      path: `/blogs/tag/${_.kebabCase(tag.fieldValue)}`,
+      component: blogListTemplate,
+      context: {
+        tag: tag.fieldValue,
+        allTags: tags
+      },
+    })
   })
+
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

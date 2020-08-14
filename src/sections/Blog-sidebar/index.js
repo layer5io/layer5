@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 
+import kebabCase from "lodash/kebabCase"
+
 import { FaSearch } from "react-icons/fa";
 
 import Button from "../../reusecore/Button";
@@ -11,7 +13,8 @@ import WdThumb3 from "../../assets/images/blog/widgets-thumb/03.png";
 
 import BlogSideBarWrapper from "./blogSidebar.style";
 
-const SeideBar = () => {
+
+const Sidebar = ({tags}) => {
     return (
         <BlogSideBarWrapper>
             <div className="sidebar-widgets">
@@ -128,28 +131,15 @@ const SeideBar = () => {
                     <h3>Tags</h3>
                 </div>
                 <ul>
-                    <li>
-                        <Link to="#">Development</Link>
+                { tags && tags.map(tag => (
+                    <li key={tag.fieldValue}>
+                        <Link to={`/blogs/tag/${kebabCase(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
                     </li>
-                    <li>
-                        <Link to="#">Technology</Link>
-                    </li>
-                    <li>
-                        <Link to="#">Testing</Link>
-                    </li>
-                    <li>
-                        <Link to="#">App Landing</Link>
-                    </li>
-                    <li>
-                        <Link to="#">App Landing</Link>
-                    </li>
-                    <li>
-                        <Link to="#">Science</Link>
-                    </li>
+                ))}
                 </ul>
             </div>
         </BlogSideBarWrapper>
     );
 };
 
-export default SeideBar;
+export default Sidebar;
