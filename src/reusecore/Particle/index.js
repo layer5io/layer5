@@ -6,6 +6,8 @@ import particle2 from "../../assets/images/app/particle/02.png";
 import particle3 from "../../assets/images/app/particle/03.png";
 import particle4 from "../../assets/images/app/particle/04.png";
 import particle5 from "../../assets/images/app/particle/05.png";
+import meshery from "../../assets/images/app/projects/meshery-logo-white.png";
+import smp from "../../assets/images/app/projects/smp.png";
 
 export default () => (
     <div
@@ -30,29 +32,29 @@ export default () => (
                         type: ["images"],
                         images: [
                             {
-                                src: `${particle1}`,
-                                width: 170,
-                                height: 150,
+                                src: `${meshery}`,
+                                width: 20,
+                                height: 15,
                             },
                             {
-                                src: `${particle2}`,
-                                width: 45,
-                                height: 45,
+                                src: `${smp}`,
+                                width: 30,
+                                height: 15,
                             },
                             {
-                                src: `${particle3}`,
-                                width: 32,
-                                height: 32,
+                                src: `${meshery}`,
+                                width: 20,
+                                height: 15,
                             },
                             {
-                                src: `${particle4}`,
-                                width: 170,
-                                height: 150,
+                                src: `${smp}`,
+                                width: 30,
+                                height: 15,
                             },
                             {
-                                src: `${particle5}`,
-                                width: 170,
-                                height: 150,
+                                src: `${meshery}`,
+                                width: 20,
+                                height: 15,
                             }
                         ],
                     },
