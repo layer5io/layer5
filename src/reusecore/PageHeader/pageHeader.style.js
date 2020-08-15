@@ -20,8 +20,10 @@ const PageHeaderWrapper = styled.div`
         
         .feature-image{
             margin-top: -100px;
+            max-width: 90%;
             height: 300px;
             width: auto;
+            object-fit: contain;
         }
         .breadcrumbs {
             display: flex;
