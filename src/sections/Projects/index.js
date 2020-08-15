@@ -7,7 +7,7 @@ import Button from "../../reusecore/Button";
 import VintageBox from "../../reusecore/VintageBox";
 
 import projectImage1 from "../../assets/images/app/projects/landscape.png";
-import projectImage2 from "../../assets/images/app/projects/smps.png";
+import projectImage2 from "../../assets/images/app/projects/smp.png";
 import projectImage3 from "../../assets/images/app/projects/meshery-logo-light.png";
 import projectImage4 from "../../assets/images/app/projects/meshery-logo-light.png";
 import Icon from "../../assets/images/app/projects/arrow.svg";
