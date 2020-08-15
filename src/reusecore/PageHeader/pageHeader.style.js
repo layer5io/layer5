@@ -19,22 +19,9 @@ const PageHeaderWrapper = styled.div`
             }
         
         .feature-image{
-
-            // image at background
-                top: 0px;
-                right: 0px;
-                bottom: 0px;
-                left: 0px; 
-                content: "";
-                position: absolute;
-                opacity: 0.12
-                z-index: 1;
-
-            // image at top
-                // margin-top: -120px;
-                // height: 300px;
-                // width: auto;
-
+            margin-top: -100px;
+            height: 300px;
+            width: auto;
         }
         .breadcrumbs {
             display: flex;
