@@ -8,6 +8,7 @@ import particle4 from "../../assets/images/app/particle/04.png";
 import particle5 from "../../assets/images/app/particle/05.png";
 import meshery from "../../assets/images/app/projects/meshery-logo-white.png";
 import smp from "../../assets/images/app/projects/smp.png";
+import imagehub from "../../assets/images/app/projects/layer5-image-hub.png";
 
 export default () => (
     <div
@@ -16,7 +17,8 @@ export default () => (
             top: 0,
             left: 0,
             width: "100%",
-            height: "100%"
+            height: "100%",
+            opacity: 0.4
         }}
     >
         <Particles
@@ -24,7 +26,7 @@ export default () => (
             params={{
                 particles: {
                     number: {
-                        value: 2,
+                        value: 3,
                         density: { enable: true, value_area: 800 },
                     },
 
@@ -42,20 +44,20 @@ export default () => (
                                 height: 15,
                             },
                             {
-                                src: `${meshery}`,
+                                src: `${imagehub}`,
                                 width: 20,
                                 height: 15,
                             },
-                            {
-                                src: `${smp}`,
-                                width: 30,
-                                height: 15,
-                            },
-                            {
-                                src: `${meshery}`,
-                                width: 20,
-                                height: 15,
-                            }
+                            // {
+                            //     src: `${smp}`,
+                            //     width: 30,
+                            //     height: 15,
+                            // },
+                            // {
+                            //     src: `${meshery}`,
+                            //     width: 20,
+                            //     height: 15,
+                            // }
                         ],
                     },
                     opacity: {
