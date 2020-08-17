@@ -5,7 +5,7 @@ title: ''
 labels: 'kind/chore'
 assignees: ''
 ---
-**Current Behaviour**
+**Current Behavior**
 <!-- A brief description of what the current circumstance is. -->
 
 **Desired Situation**
