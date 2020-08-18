@@ -3097,7 +3097,6 @@ ul.staggered-list li {
   display: flex;
   flex-wrap: nowrap;
   position: absolute;
-  bottom: 14.5%;
   margin: auto;
 }
 
@@ -3106,8 +3105,8 @@ ul.staggered-list li {
 }
 
 .comm ul li a {
-  width: 80px;
-  height: 80px;
+  width: 55px;
+  height: 55px;
   background-color: rgb(255, 255, 255);
   text-align: center;
   line-height: 120px;
@@ -3160,41 +3159,41 @@ ul.staggered-list li {
 .comm_icon_meeting{
   position: relative;
   z-index: 10;
-  width: 45px;
+  width: 33px;
   vertical-align: top;
-  padding-top: 15px;
+  padding-top: 9px;
 }
 
 .comm_icon_youtube{
   position: relative;
   z-index: 10;
-  width: 45px;
+  width: 35px;
   vertical-align: top;
-  padding-top: 15px;
+  padding-top: 7px;
 }
 
 .comm_icon_calendar{
   position: relative;
   z-index: 10;
-  width: 35px;
+  width: 25px;
   vertical-align: top;
-  padding-top: 15px;
+  padding-top: 9px;
 }
 
 .comm_icon_drive{
   position: relative;
   z-index: 10;
-  width: 45px;
+  width: 30px;
   vertical-align: top; 
-  padding-top: 13px;
+  padding-top: 9px;
 }
 
 .comm_icon_slack{
   position: relative;
   z-index: 10;
-  width: 65px;
+  width: 47px;
   vertical-align: top;
-  padding-top: 5px;
+  padding-top: 1px;
 }
 
 .tooltip .tooltiptext {
