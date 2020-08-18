@@ -1,0 +1,154 @@
+<style scoped>
+    /* The actual timeline (the vertical ruler) */
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 1400px;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: white;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+    .up-arrow {
+      left: 48.2%;
+      position: relative;
+      bottom: 23px;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-bottom: 25px solid white;
+    }
+
+    .img-style0 {
+      width: 75px;
+      height: 70px;
+      float: left;
+      padding-top: 12px;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .img-style1 {
+      width: 75px;
+      height: 70px;
+      float: right;
+      padding-top: 12px;
+      display: inline-block;
+      margin-left: 5px;
+    }
+
+    /* data-cont around content */
+    .data-cont {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+    
+    /* The circles on the timeline */
+    .data-cont::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: white;
+      border: 4px solid #FF9F55;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    /* Place the data-cont to the left */
+    .arr1 {
+      left: -3px;
+      display: inline-block;
+    }
+    
+    /* Place the data-cont to the right */
+    .arr0 {
+      left: 5px;
+      top: 90px;
+      float: right;
+      display: inline-block;
+    }
+    
+    /* Add arrows to the left data-cont (pointing right) */
+    .arr1::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+    
+    /* Add arrows to the right data-cont (pointing left) */
+    .arr0::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+    
+    /* Fix the circle for data-conts on the right side */
+    .arr0::after {
+      left: -16px;
+    }
+    
+    /* The actual content */
+    .content0 {
+      padding: 1px 10px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      margin-right: 150px;
+    }
+
+    .content1 {
+      padding: 1px 10px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      margin-left: 150px;
+      text-align: right;
+    }
+</style>
+    
+<span class="up-arrow"></span>
+<div class="timeline">
+  {% assign sorted = (site.data.landscape.non-functional | sort: 'weight') %}
+  {% for meshes in sorted %} {% if meshes.weight %}
+      <div  class="data-cont arr{{ meshes.weight | modulo: 2 }}">
+        <div class="content{{ meshes.weight | modulo: 2 }}">
+          {% if meshes.icon %}
+            <div class="img-style{{ meshes.weight | modulo: 2 }}">
+              <img src="{{ meshes.icon }}" alt="{{meshes.name}}" style="width:inherit; height:inherit;">
+            </div>
+          {% endif %}
+          <h2 style="display: inline-block;">{{meshes.name}}</h2>
+          <h4>{{meshes.announce-date}}</h4>
+        </div>
+      </div>
+  {% endif %} {% endfor %}
+</div>
