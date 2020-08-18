@@ -68,9 +68,9 @@
         <p style="line-height:2em;text-align: center;left-margin:0px;padding-left:0px;">       
           <ul style="line-height: 1.5em;height: auto;text-align: center;">
             <li style="list-style-type: none;">- Compare apples-to-apples performance across service meshes.</li>
-            <li style="list-style-type: none;">- Track your service mesh performance from release to release.</li>
-            <li style="list-style-type: none;">- Understand behavioral differences between service meshes.</li>
-            <li style="list-style-type: none;">- Track your application performance from version to version.</li>
+            <li style="list-style-type: none;margin-right: 15px;">- Track your service mesh performance from release to release.</li>
+            <li style="list-style-type: none;margin-right: 26px;">- Understand behavioral differences between service meshes.</li>
+            <li style="list-style-type: none;margin-right: 30px;">- Track your application performance from version to version.</li>
           </ul>
         </p>
      </div>
@@ -214,7 +214,7 @@
      Layer5's MeshDex provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
     <p style="text-align:center;">Learn more about <a href="/performance">this open standard</a> as a partnership of Layer5, UT Austin, and Google.</p>
   
-    <h6 style="color:#111111;text-align: right;">Service Mesh Interface</h6><a name="smi"></a>
+    <h6 style="color:#111111;text-align: left;">Service Mesh Interface</h6><a name="smi"></a>
       <a href="/blog/a-standard-interface-for-service-meshes">
         <img src="/assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png" 
         width="22%" style="display:inline;float:right;margin-left:1%;padding:5px;"
@@ -238,7 +238,7 @@
 <a name="demo"></a>
 <h3 style="color:aliceblue;">See Meshery at</h3>
 <div class="post-content row" style="position: relative;overflow: auto;" itemprop="articleBody">
-  <div class="row col m8"  style="min-width:440px;">
+  <div class="row col m8"  style="min-width:440px;top: 30px;padding-bottom: 25px;">
     <iframe width="100%" src="https://www.youtube.com/embed/CFj1O_uyhhs" frameborder="0" 
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="min-height: 315px;"></iframe>
   </div>
@@ -362,13 +362,21 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
         </div>
     </div>
 
-    <a name="contributing"></a>
-    <a name="community"></a>
-    <h3 style="color:aliceblue;">Community</h3>
+    <a name="contributing"></a>    
+    <a name="performance-spec"></a>
+    <h3 style="color:aliceblue;">Service Mesh Performance</h3>
     <div class="post-content row" style="z-index: 1; min-height: 19px; 
   padding-top: 0px;padding-right:0px;">
-        <a href="https://github.com/layer5io/meshery">
+        <a href="https://github.com/layer5io/service-mesh-performance">
             <img align="right" style=" width: 109px; height: 109px;" src="https://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" alt="Fork me on GitHub"></a>
+        <p style="padding-top:30px;">
+            The <a href="https://github.com/layer5io/service-mesh-performance">Service Mesh Performance </a> is a common format for describing and capturing the performance of service meshes in context of the value they provide. This specification is
+            currently being advanced through the CNCF Network SIG and the Meshery project.
+        </p>See <a href="https://smp-spec.io">smp-spec.io</a>.</div>
+
+        <a name="community"></a>
+    <h3 style="color:aliceblue;">Community</h3>
+    <div class="post-content row" style="z-index: 1; min-height: 19px; padding-top: 0px;padding-right:0px;">
         <p style="padding-top:17px;">This project is community-built and welcomes collaboration!</p>
         <div class="comm">
             <ul>
@@ -414,19 +422,7 @@ $ kubectl -n meshery apply -f deployment_yamls/istio.yaml -->
                 </div>
             </ul>
         </div>
-
     </div>
-    <a name="performance-spec"></a>
-    <h3 style="color:aliceblue;">Service Mesh Performance</h3>
-    <div class="post-content row" style="z-index: 1; min-height: 19px; 
-  padding-top: 0px;padding-right:0px;">
-        <a href="https://github.com/layer5io/service-mesh-performance">
-            <img align="right" style=" width: 109px; height: 109px;" src="https://aral.github.com/fork-me-on-github-retina-ribbons/right-grey@2x.png" alt="Fork me on GitHub"></a>
-        <p style="padding-top:20px;">
-            The <a href="https://github.com/layer5io/service-mesh-performance">Service Mesh Performance </a> is a common format for describing and capturing the performance of service meshes in context of the value they provide. This specification is
-            currently being advanced through the CNCF Network SIG and the Meshery project.
-        </p>See <a href="https://smp-spec.io">smp-spec.io</a>.</div>
-
 
     <h3 style="color:aliceblue;">FAQ</h3>
     <div class="post-content row" itemprop="articleBody">
