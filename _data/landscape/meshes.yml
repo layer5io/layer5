@@ -138,13 +138,13 @@
   link: https://kuma.io
   autoinject: "No"
   tcp-web: "Yes"
-  grpc: "No"
+  grpc: "Yes"
   h2: "Yes"
-  multi-cluster: "Experimental"
+  multi-cluster: "Yes"
   multi-tenant: "Kong Enterprise only"
-  prometheus: "?"
-  tracing: "?"
-  encryption: "?"
+  prometheus: "Yes"
+  tracing: "Yes"
+  encryption: "Yes"
   multi-tenant-score: 8
   netdev-persona-score: 2
 
