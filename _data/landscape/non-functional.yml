@@ -94,7 +94,7 @@
   weight: 8
   icon: assets/images/service-mesh-icons/conduit.png
   
-  - name: Linkerd 2.x
+- name: Linkerd 2.x
   opensource: "Yes"
   link: https://linkerd.io
   governance: CNCF
