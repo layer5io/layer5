@@ -45,7 +45,7 @@ ul.bullet li ul {
   </div>
 </div>
   
-<p>The Service Mesh Performance Working Group is hosted within CNCF SIG Network. All are welcome to participate. This group is defining the Service Mesh Performance Specification (SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
+<p>The Service Mesh Performance Working Group is hosted within CNCF SIG Network. All are welcome to participate. This group is defining the Service Mesh Performance (SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
 </p>
 <h6 class="center">SMP is a collaborative effort of Layer5, UT Austin, Google, and The Linux Foundation.</h6>
 
