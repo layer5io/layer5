@@ -39,19 +39,19 @@ const Data = {
             subItems: [
                 {
                     name: "Meshery",
-                    path: "#"
+                    path: "/projects/meshery"
                 },
                 {
                     name: "Service Mesh Performance",
-                    path: "#"
+                    path: "/projects/service-mesh-performance"
                 },
                 {
                     name: "Service Mesh Interface",
-                    path: "#"
+                    path: "/projects/service-mesh-interface"
                 },
                 {
                     name: "Image Hub",
-                    path: "#"
+                    path: "/projects/image-hub"
                 }
             ],
             div1: {
@@ -69,11 +69,11 @@ const Data = {
             subItems: [
                 {
                     name: "Books",
-                    path: "#"
+                    path: "/books"
                 },
                 {
                     name: "Workshops",
-                    path: "#"
+                    path: "/workshops"
                 }
             ],
             div1: {
@@ -91,15 +91,15 @@ const Data = {
             subItems: [
                 {
                     name: "Meshmates",
-                    path: "#"
+                    path: "/community/meshmates"
                 },
                 {
                     name: "MeshMasters",
-                    path: "#"
+                    path: "/community/meshmasters"
                 },
                 {
                     name: "Events",
-                    path: "#"
+                    path: "/events"
                 },
             ],
             div1: {
@@ -126,7 +126,7 @@ const Data = {
                 },
                 {
                     name: "News",
-                    path: "/blog-grid"
+                    path: "/news"
                 }
             ],
             div1: {
