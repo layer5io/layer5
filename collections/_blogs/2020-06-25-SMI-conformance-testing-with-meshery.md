@@ -6,6 +6,7 @@ image: /assets/images/posts/2020-06-25-SMI-conformance-testing-with-meshery/smi-
 author: Naveen Kumar
 category: community
 permalink: /blog/:categories/:title
+redirect_from: /blog/smi-conformance-testing-with-meshery/
 ---
 
 <img src="/assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png" align="right" width="200px" />
