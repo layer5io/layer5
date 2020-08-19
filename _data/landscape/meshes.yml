@@ -141,7 +141,7 @@
   grpc: "Yes"
   h2: "Yes"
   multi-cluster: "Yes"
-  multi-tenant: "Kong Enterprise only"
+  multi-tenant: "Yes"
   prometheus: "Yes"
   tracing: "Yes"
   encryption: "Yes"
