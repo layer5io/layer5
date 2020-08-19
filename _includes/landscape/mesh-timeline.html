@@ -23,7 +23,7 @@
       height: 1880px;
     }
     .up-arrow {
-      left: 48.2%;
+      left: 47.7%;
       position: relative;
       bottom: 23px;
       border-left: 25px solid transparent;
@@ -64,7 +64,7 @@
       position: absolute;
       width: 25px;
       height: 25px;
-      right: -22px;
+      right: -18px;
       background-color: white;
       border: 4px solid #FF9F55;
       top: 15px;
@@ -115,7 +115,7 @@
     
     /* Fix the circle for data-conts on the right side */
     .arr0::after {
-      left: -19px;
+      left: -23px;
     }
     
     /* The actual content */
@@ -143,6 +143,19 @@
       font-size: 20px;
     }
 
+    @media screen and (max-width: 1450px) {
+      .arr0::after {
+        left: -19px;
+      }
+
+      .data-cont::after {
+        right: -22px;
+      }
+
+      .up-arrow {
+        left: 48.2%;
+      }
+    }
     @media screen and (max-width: 1300px) and (min-width: 1250px) {
       .arr1 {
         left: 15%;
@@ -199,13 +212,26 @@
     }
 
     @media screen and (max-width: 1049px) and (min-width: 1000px) {
+      
+      .data-cont::after {
+        right: -19px;
+      }
+      
+      .arr0::after {
+        left: -22px;
+      }
+
       .arr1 {
-        left: 5%;
+        left: 6.2%;
       }
       
       /* Place the data-cont to the right */
       .arr0 {
-        left: 6%;
+        left: 7.5%;
+      }
+
+      .up-arrow {
+        left: 47.6%;;
       }
     }
 
@@ -332,7 +358,7 @@
       }
       
       .data-cont {
-        width: 60%;
+        width: 70%;
         height: 100px;
       }
 
@@ -340,7 +366,7 @@
         width: 15px;
         height: 15px;
         top: 25px;
-        left: 28px;
+        left: 29px;
       }
       
       .arr0, .arr1 {
@@ -348,15 +374,15 @@
       }
 
       .mesh-name {
-        font-size: 10px;
+        font-size: 15px;
       }
 
       .mesh-ann-date  {
-        font-size: 8px;
+        font-size: 10px;
       }
       .img-style0, .img-style1 {
-        width: 25px;
-        height: 20px;
+        width: 30px;
+        height: 25px;
       }
 
       .up-arrow {
@@ -365,6 +391,38 @@
         border-left: 15px solid transparent;
         border-right: 15px solid transparent;
         border-bottom: 15px solid white;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      .mesh-name {
+        font-size: 12px;
+      }
+
+      .mesh-ann-date  {
+        font-size: 10px;
+      }
+
+      .data-cont::after {
+        left: 26px;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      .mesh-name {
+        font-size: 9px;
+      }
+
+      .mesh-ann-date  {
+        font-size: 9px;
+      }
+
+      .data-cont::after {
+        left: 22px;
+      }
+
+      .up-arrow {
+        left: 3%;
       }
     }
 </style>
