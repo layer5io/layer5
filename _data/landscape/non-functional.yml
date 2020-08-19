@@ -93,6 +93,18 @@
   category: Service Mesh
   weight: 8
   icon: assets/images/service-mesh-icons/conduit.png
+  
+  - name: Linkerd 2.x
+  opensource: "Yes"
+  link: https://linkerd.io
+  governance: CNCF
+  primary-lang: Rust, Go
+  announce-date: December 2017
+  ga-1-date: Sept 2018
+  commercial: Buoyant
+  category: Service Mesh
+  weight: 8
+  icon: assets/images/service-mesh-icons/linkerd.png
 
 - name: Maesh
   opensource: "Yes"
