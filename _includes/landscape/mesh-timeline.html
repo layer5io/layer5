@@ -4,7 +4,8 @@
       position: relative;
       max-width: 1200px;
       margin: 0 auto;
-      height: 1400px;
+      height: 800px;
+      overflow-y: auto;
     }
 
     .timeline::after {
@@ -19,6 +20,7 @@
       border: medium solid white;
       border-width: 10px 0 10px 10px;
       border-color: transparent transparent transparent white;
+      height: 1880px;
     }
     .up-arrow {
       left: 48.2%;
@@ -52,7 +54,8 @@
       padding: 10px 40px;
       position: relative;
       background-color: inherit;
-      width: 50%;
+      width: 400px;
+      height: 200px;
     }
     
     /* The circles on the timeline */
@@ -61,7 +64,7 @@
       position: absolute;
       width: 25px;
       height: 25px;
-      right: -17px;
+      right: -22px;
       background-color: white;
       border: 4px solid #FF9F55;
       top: 15px;
@@ -71,15 +74,14 @@
     
     /* Place the data-cont to the left */
     .arr1 {
-      left: -3px;
+      left: 16%;
       display: inline-block;
     }
     
     /* Place the data-cont to the right */
     .arr0 {
-      left: 5px;
+      left: 17%;
       top: 90px;
-      float: right;
       display: inline-block;
     }
     
@@ -113,7 +115,7 @@
     
     /* Fix the circle for data-conts on the right side */
     .arr0::after {
-      left: -16px;
+      left: -19px;
     }
     
     /* The actual content */
@@ -122,7 +124,6 @@
       background-color: white;
       position: relative;
       border-radius: 6px;
-      margin-right: 150px;
     }
 
     .content1 {
@@ -130,8 +131,241 @@
       background-color: white;
       position: relative;
       border-radius: 6px;
-      margin-left: 150px;
       text-align: right;
+    }
+
+    .mesh-name {
+      display: inline-block;
+      font-size: 30px;
+    }
+
+    .mesh-ann-date {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 1300px) and (min-width: 1250px) {
+      .arr1 {
+        left: 15%;
+      }
+      
+      /* Place the data-cont to the right */
+      .arr0 {
+        left: 16%;
+      }
+    }
+
+    @media screen and (max-width: 1249px) and (min-width: 1200px) {
+      .arr1 {
+        left: 14%;
+      }
+      
+      /* Place the data-cont to the right */
+      .arr0 {
+        left: 15%;
+      }
+    }
+
+    @media screen and (max-width: 1199px) and (min-width: 1150px) {
+      .arr1 {
+        left: 12%;
+      }
+      
+      /* Place the data-cont to the right */
+      .arr0 {
+        left: 13%;
+      }
+    }
+
+    @media screen and (max-width: 1149px) and (min-width: 1100px) {
+      .arr1 {
+        left: 9%;
+      }
+      
+      /* Place the data-cont to the right */
+      .arr0 {
+        left: 11%;
+      }
+    }
+
+    @media screen and (max-width: 1099px) and (min-width: 1050px) {
+      .arr1 {
+        left: 8%;
+      }
+      
+      /* Place the data-cont to the right */
+      .arr0 {
+        left: 10%;
+      }
+    }
+
+    @media screen and (max-width: 1049px) and (min-width: 1000px) {
+      .arr1 {
+        left: 5%;
+      }
+      
+      /* Place the data-cont to the right */
+      .arr0 {
+        left: 6%;
+      }
+    }
+
+    @media screen and (max-width: 999px) {
+      /* Place the timelime to the left */
+      .timeline::after {
+      left: 4%;
+      height: 2800px;
+      }
+      
+      /* Full-width containers */
+      .data-cont {
+      width: 50%;
+      padding-left: 70px;
+      padding-right: 25px;
+      height: 160px;
+      }
+      
+      /* Make sure that all arrows are pointing leftwards */
+      .data-cont::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+      }
+
+      /* Make sure all circles are at the same spot */
+      .arr0::after, .arr1::after {
+      left: 15px;
+      }
+      
+      /* Make all right containers behave like the left ones */
+      .arr0, .arr1 {
+      left: 10px;
+      }
+
+      .arr0 {
+        top: 0;;
+      }
+
+      .up-arrow {
+        left: 1%;
+      }
+
+      .img-style1 {
+        float: left;
+      }
+
+      .content1 {
+        text-align: left;
+      }
+
+      .mesh-name {
+        font-size: 24px;
+      }
+
+      .mesh-ann-date  {
+        font-size: 15px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      
+      .timeline::after {
+        height: 2155px;
+      }
+
+      .data-cont {
+        height: 125px;
+      }
+      
+      .arr0, .arr1 {
+        left: 4px;
+      }
+
+      .mesh-name {
+        font-size: 18px;
+      }
+
+      .mesh-ann-date  {
+        font-size: 12px;
+      }
+
+      .img-style0, .img-style1 {
+        width: 50px;
+        height: 45px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      
+      .data-cont {
+        height: 125px;
+      }
+      
+      .arr0, .arr1 {
+        left: -2px;
+      }
+      
+      .up-arrow {
+        left: 0%;
+      }
+
+      .mesh-name {
+        font-size: 14px;
+      }
+
+      .mesh-ann-date  {
+        font-size: 10px;
+      }
+
+      .img-style0, .img-style1 {
+        width: 35px;
+        height: 30px;
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      
+      .timeline::after {
+        border: thin solid white;
+        left: 8%;
+        height: 1740px;
+      }
+      
+      .data-cont {
+        width: 60%;
+        height: 100px;
+      }
+
+      .data-cont::after {
+        width: 15px;
+        height: 15px;
+        top: 25px;
+        left: 28px;
+      }
+      
+      .arr0, .arr1 {
+        left: -6px;
+      }
+
+      .mesh-name {
+        font-size: 10px;
+      }
+
+      .mesh-ann-date  {
+        font-size: 8px;
+      }
+      .img-style0, .img-style1 {
+        width: 25px;
+        height: 20px;
+      }
+
+      .up-arrow {
+        left: 4%;
+        bottom: 12px;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid white;
+      }
     }
 </style>
     
@@ -146,8 +380,8 @@
               <img src="{{ meshes.icon }}" alt="{{meshes.name}}" style="width:inherit; height:inherit;">
             </div>
           {% endif %}
-          <h2 style="display: inline-block;">{{meshes.name}}</h2>
-          <h4>{{meshes.announce-date}}</h4>
+          <p class="mesh-name">{{meshes.name}}</p>
+          <p class="mesh-ann-date">{{meshes.announce-date}}</p>
         </div>
       </div>
   {% endif %} {% endfor %}

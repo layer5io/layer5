@@ -19,7 +19,7 @@
   ga-1-date: 2019
   commercial: Aspen Mesh
   category: Service Mesh
-  weight: 9
+  weight: 11
   icon: assets/images/service-mesh-icons/aspenmesh.png
 
 - name: Cilium
@@ -31,7 +31,7 @@
   ga-1-date: November 2017
   commercial: "Isovalent"
   category: Service Mesh
-  weight: 14
+  weight: 15
   icon: assets/images/service-mesh-icons/cilium.png
 
 - name: Consul Connect
@@ -43,7 +43,7 @@
   ga-1-date: June 2018
   commercial: Consul Enterprise (HashiCorp)
   category: Service Mesh
-  weight: 15
+  weight: 16
   icon: assets/images/service-mesh-icons/consul.png
 
 - name: Grey Matter
@@ -55,7 +55,7 @@
   ga-1-date: February 2019
   commercial: Grey Matter
   category: Service Mesh
-  weight: 11
+  weight: 12
   icon: assets/images/service-mesh-icons/greymatter.jpg
 
 - name: Istio
@@ -67,7 +67,7 @@
   ga-1-date: July 2018
   commercial: AspenMesh
   category: Service Mesh
-  weight: 13
+  weight: 14
   icon: assets/images/service-mesh-icons/istio.png
 
 - name: Linkerd 1.x
@@ -79,7 +79,7 @@
   ga-1-date: April 2017
   commercial: Buoyant
   category: Service Mesh
-  weight: 16
+  weight: 17
   icon: assets/images/service-mesh-icons/linkerd.png
 
 - name: Conduit
@@ -91,7 +91,7 @@
   ga-1-date: Sept 2018
   commercial: Buoyant
   category: Service Mesh
-  weight: 8
+  weight: 9
   icon: assets/images/service-mesh-icons/conduit.png
   
 - name: Linkerd 2.x
@@ -103,7 +103,7 @@
   ga-1-date: Sept 2018
   commercial: Buoyant
   category: Service Mesh
-  weight: 8
+  weight: 10
   icon: assets/images/service-mesh-icons/linkerd.png
 
 - name: Maesh
@@ -139,7 +139,7 @@
   ga-1-date: November 2017
   commercial: Huawei
   category: Service Mesh
-  weight: 12
+  weight: 13
 
 - name: Network Service Mesh
   opensource: "Yes"
@@ -150,7 +150,7 @@
   ga-1-date: August 2019
   commercial: "?"
   category: Service Mesh
-  weight: 10
+  weight: 8
   
 - name: Octarine
   opensource: "No"
@@ -208,7 +208,7 @@
   ga-1-date: December 2014
   commercial: N/A
   category: Service Mesh
-  weight: 17
+  weight: 18
   icon: assets/images/service-mesh-icons/vulcan.png
 
 - name: Citrix ADC CPX
