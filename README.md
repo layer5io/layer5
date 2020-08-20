@@ -76,7 +76,7 @@ alt="Layer5" align="left" /></a>
 <br />
 <p style="clear:both;">
 <h2><a href="https://github.com/layer5io/smi-conformance">Service Mesh Interface Conformance </a></h2>
-<a href="https://github.com/layer5io/smi-conformance"><img src="assets/images/smi-conformance/smi-logo.svg"
+<a href="https://github.com/layer5io/smi-conformance"><img src="assets/images/smi-conformance/checklist.svg"
 style="margin:10px;" width="125px"
 alt="Layer5" align="left" /></a>
 <a href="https://github.com/layer5io/smi-conformance">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification.
