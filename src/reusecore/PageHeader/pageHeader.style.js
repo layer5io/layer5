@@ -7,8 +7,13 @@ const PageHeaderWrapper = styled.div`
         z-index:1;
         .page-header {
             text-align: center;
-            padding: 200px 0px 100px;
             position: relative;
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 125px;
             z-index: 99;
             h1{
                 font-size: 36px;
@@ -19,7 +24,6 @@ const PageHeaderWrapper = styled.div`
             }
         
         .feature-image{
-            margin-top: -100px;
             max-height: 300px;
             width: auto;
             object-fit: contain;
