@@ -36,22 +36,80 @@ const Data = {
         {
             name: "Projects",
             path: "/#projects",
-            offset: "-50"
+            subItems: [
+                {
+                    name: "Meshery",
+                    path: "/projects/meshery"
+                },
+                {
+                    name: "Service Mesh Performance",
+                    path: "/projects/service-mesh-performance"
+                },
+                {
+                    name: "Service Mesh Interface",
+                    path: "/projects/service-mesh-interface"
+                },
+                {
+                    name: "Image Hub",
+                    path: "/projects/image-hub"
+                }
+            ],
+            div1: {
+                src: img1,
+                des: "How I schooled my seniors"
+            },
+            div2: {
+                src: img2,
+                des: "Service Mesh Istio patterns for multilatency"
+            }
         },
         {
             name: "Learn",
             path: "/learn",
-            offset: "-50"
+            subItems: [
+                {
+                    name: "Books",
+                    path: "/books"
+                },
+                {
+                    name: "Workshops",
+                    path: "/workshops"
+                }
+            ],
+            div1: {
+                src: img1,
+                des: "How I schooled my seniors"
+            },
+            div2: {
+                src: img2,
+                des: "Service Mesh Istio patterns for multilatency"
+            }
         },
         {
             name: "Community",
             path: "/community",
-            offset: "-50"
-        },
-        {
-            name: "Careers",
-            path: "/careers",
-            offset: "-50"
+            subItems: [
+                {
+                    name: "Meshmates",
+                    path: "/community/meshmates"
+                },
+                {
+                    name: "MeshMasters",
+                    path: "/community/meshmasters"
+                },
+                {
+                    name: "Events",
+                    path: "/events"
+                },
+            ],
+            div1: {
+                src: img1,
+                des: "How I schooled my seniors"
+            },
+            div2: {
+                src: img2,
+                des: "Service Mesh Istio patterns for multilatency"
+            }
         },
         {
             name: "About",
@@ -65,6 +123,10 @@ const Data = {
                 {
                     name: "Blog Grid",
                     path: "/blog-grid"
+                },
+                {
+                    name: "News",
+                    path: "/news"
                 }
             ],
             div1: {
