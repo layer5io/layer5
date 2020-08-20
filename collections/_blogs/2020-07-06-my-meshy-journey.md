@@ -6,6 +6,7 @@ image: /assets/images/posts/2020-07-06-my-meshy-journey/ishita-kumar.png
 author: Ishita Kumar 
 category: community
 permalink: /blog/:categories/:title
+redirect_from: /blog/my-meshy-journey/
 ---
 
 <img class="image-left" src="/assets/images/posts/2020-07-06-my-meshy-journey/ishita-kumar-profile.jpg" alt="Ishita Kumar Profile">
