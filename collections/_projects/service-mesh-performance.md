@@ -14,6 +14,7 @@ link: /projects/service-mesh-performance
 redirect_from:
   - /performance
   - performance/
+  - projects/performance/
 ---
 <style>
 ul.bullet li {
@@ -94,12 +95,4 @@ justify-content: flex-start center">
       webkitallowfullscreen="true"></iframe>
       <p><i>Participate in the CNCF Service Mesh Performance Working Group</i></p>  
   </div>
-  <div class="row">
-<div class="col s8 m6">
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Learn more about the service mesh performance initiatives at <a href="https://twitter.com/layer5?ref_src=twsrc%5Etfw">@layer5</a> <a href="https://t.co/hNUM4pHDqi">https://t.co/hNUM4pHDqi</a></p>&mdash; Service Mesh Performance (@smp_spec) <a href="https://twitter.com/smp_spec/status/1290428583249354757?ref_src=twsrc%5Etfw">August 3, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-<div class="col s8 m6" style="vertical-align:bottom;margin:auto;padding-top:60px;">
-<h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
-Jump into the <a href="http://slack.layer5.io">#SMP channel</a> to learn more about these initatives.</h5>
-</div>
 </div>
