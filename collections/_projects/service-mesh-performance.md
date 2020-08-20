@@ -100,20 +100,21 @@ justify-content: flex-start center">
 </div>
 <div class="col s8 m6" style="vertical-align:bottom;margin:auto;padding-top:60px;"> 
 <img src="/assets/projects/smp/client-capacity.png" 
-      class="light-shadow" style="margin: auto;min-width:300px;height:300px;float: left;" /><br><br>
+      class="light-shadow" style="margin: auto;width: auto;max-width: 100%;height: 300px;float: left;" /><br><br>
 <h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
 Jump into the <a href="http://slack.layer5.io">#SMP channel</a> to learn more about these initatives.</h5>
 </div>
 </div>
 
 
+
 <div style="display: flex;
     justify-content: flex-start">
 <div class="col s8 m6" style="vertical-align:bottom;margin:auto;padding-top:60px;">
 <img src="/assets/projects/smp/native.png" 
-      class="light-shadow" style="margin: auto;min-width:300px;height:300px;" /><p><br> <b>Native-WASM at Cap:</b> <br>When every request goes via the rate-lim check and then the actual program logic, we see that the latency incurred for the WASM code is higher than the Native client. This is expected since the native client has processing for rate-limiting locally in a process whereas the rust module is invoked as an additional thread to do the processing and the communication involved with the module incurs an overhead. This is prominent in the minimum response time case which represents latency just due to rate-limiting logic where every other part of the request is already "warm". As we move towards average latency, the overhead gets slightly amortized but is still above the native rate-limiting case. Our max latency is slightly lower than native, but we attribute it to various other system effects like TLS handshake and network latencies that usually contribute to the maximum tail latency. </p>
+      class="light-shadow" style="margin: auto;width: auto;max-width: 100%;height: auto;" /><p><br> <b>Native-WASM at Cap:</b> <br>When every request goes via the rate-lim check and then the actual program logic, we see that the latency incurred for the WASM code is higher than the Native client. This is expected since the native client has processing for rate-limiting locally in a process whereas the rust module is invoked as an additional thread to do the processing and the communication involved with the module incurs an overhead. This is prominent in the minimum response time case which represents latency just due to rate-limiting logic where every other part of the request is already "warm". As we move towards average latency, the overhead gets slightly amortized but is still above the native rate-limiting case. Our max latency is slightly lower than native, but we attribute it to various other system effects like TLS handshake and network latencies that usually contribute to the maximum tail latency. </p><br />
 <img src="/assets/projects/smp/latency.png" 
-      class="light-shadow" style="margin: auto;min-width:300px;height:300px;" /><p><br><b>Latency at scale:</b><br>When we go beyond the application capacity (100 in our example), we start noticing the power of a in-line ight wasm module which starts terminating requests at the side-car and the core application logic is never invoked/loaded. We notice that even the minimum response time for a terminated request is about 15-20% faster than invoking of application logic since the wasm is a dynamic module in the sidecar and we start to avoid complex network redirection and invocation of a new container/instance.
+      class="light-shadow" style="margin: auto;width: auto;max-width: 100%;height: auto;" /><p><br><b>Latency at scale:</b><br>When we go beyond the application capacity (100 in our example), we start noticing the power of a in-line ight wasm module which starts terminating requests at the side-car and the core application logic is never invoked/loaded. We notice that even the minimum response time for a terminated request is about 15-20% faster than invoking of application logic since the wasm is a dynamic module in the sidecar and we start to avoid complex network redirection and invocation of a new container/instance.
 We also notice that the average latency of requests is lower than in the case of native client. Client Capacity figure also shows us that we are able to handle more requests than in the native case, although this infometric needs to be taken with a grain of salt, i.e. the difference might reduce if our application capacity was significantly larger than 100.</p>
 </div>
 </div>
