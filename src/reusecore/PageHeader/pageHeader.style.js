@@ -8,12 +8,10 @@ const PageHeaderWrapper = styled.div`
         .page-header {
             text-align: center;
             position: relative;
-            width: 90%;
-            max-width: 500px;
             height: auto;
-            margin-left: auto;
-            margin-right: auto;
             padding-top: 125px;
+            padding-left: 10px;
+            padding-right: 10px;
             z-index: 99;
             h1{
                 font-size: 36px;
@@ -24,9 +22,11 @@ const PageHeaderWrapper = styled.div`
             }
         
         .feature-image{
-            max-height: 300px;
-            width: auto;
-            object-fit: contain;
+            margin-left: auto;
+            margin-right: auto;
+            max-height: 1000px;
+            max-width: 500px;
+            object-fit: contain;    
         }
         .breadcrumbs {
             display: flex;
