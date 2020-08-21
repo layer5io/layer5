@@ -1,3 +1,12 @@
+- title: 2020 All Day DevOps
+  desc: "The world’s largest DevOps conference is back on November 12th, 2020"
+  date: "November 12th, 2020"
+  link: https://www.alldaydevops.com/register-2020
+  talk_link: https://www.alldaydevops.com/addo-speakers/lee-calcote
+  event_video: ""
+  event_deck: ""
+  thumbnail: /assets/images/events/all-day-devops.png
+
 - title: KubeCon EU 2020
   desc: "The Cloud Native Computing Foundation’s flagship conference gathers adopters and technologists from leading open source and cloud native communities in Amsterdam, "
   date: "April 2nd, 2020"
