@@ -8,7 +8,7 @@ const PageHeaderWrapper = styled.div`
         .page-header {
             text-align: center;
             position: relative;
-            width: 75%;
+            width: 90%;
             max-width: 500px;
             height: auto;
             margin-left: auto;
@@ -64,7 +64,7 @@ const PageHeaderWrapper = styled.div`
     }
     @media only screen and (max-width: 480px) {
        .page-header{
-            padding: 160px 0px 100px;
+            padding-top: 100px;
             h1{
                 font-size: 30px;
                 line-height: 44px;
