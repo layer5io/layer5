@@ -8,7 +8,7 @@ const PageHeaderWrapper = styled.div`
         .page-header {
             text-align: center;
             position: relative;
-            width: 90%;
+            width: 75%;
             max-width: 500px;
             height: auto;
             margin-left: auto;
