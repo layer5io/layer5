@@ -7,9 +7,10 @@ const PageHeader = ({ categories, title, subtitle,  author, thumbnail }) => {
     return (
         <PageHeaderWrapper>
             <div className="page-header">
+                <div className="feature-image">
                 {author && (
-                    <Image {...thumbnail} className="feature-image" imgStyle={{ objectFit: 'contain'}}/>
-                )}
+                    <Image {...thumbnail} imgStyle={{ objectFit: 'contain'}}/>
+                )}</div>
                 <h1>{title}</h1>
                 {subtitle && (<h3><i>{subtitle}</i></h3>)}
                 {categories && (
