@@ -7,14 +7,27 @@ const PageHeaderWrapper = styled.div`
         z-index:1;
         .page-header {
             text-align: center;
-            padding: 200px 0px 100px;
             position: relative;
+            height: auto;
+            padding-top: 125px;
+            padding-left: 10px;
+            padding-right: 10px;
             z-index: 99;
             h1{
                 font-size: 36px;
                 line-height: 48px;
             }
-
+            h3{
+                color: inherit;
+            }
+        
+        .feature-image{
+            margin-left: auto;
+            margin-right: auto;
+            max-height: 1000px;
+            max-width: 500px;
+            object-fit: contain;    
+        }
         .breadcrumbs {
             display: flex;
             justify-content: center;
@@ -51,7 +64,7 @@ const PageHeaderWrapper = styled.div`
     }
     @media only screen and (max-width: 480px) {
        .page-header{
-            padding: 160px 0px 100px;
+            padding-top: 100px;
             h1{
                 font-size: 30px;
                 line-height: 44px;

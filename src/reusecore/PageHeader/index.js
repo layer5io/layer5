@@ -1,15 +1,18 @@
 import React from "react";
 
-import ParticleComponent from "../Particle";
 import PageHeaderWrapper from "./pageHeader.style";
+import Image from "../../components/image";
 
-const PageHeader = ({ categories, title, subtitle,  author }) => {
+const PageHeader = ({ categories, title, subtitle,  author, thumbnail }) => {
     return (
         <PageHeaderWrapper>
-            <ParticleComponent />
             <div className="page-header">
+                <div className="feature-image">
+                {author && (
+                    <Image {...thumbnail} imgStyle={{ objectFit: 'contain'}}/>
+                )}</div>
                 <h1>{title}</h1>
-                {subtitle && (<span><i>{subtitle}</i></span>)}
+                {subtitle && (<h3><i>{subtitle}</i></h3>)}
                 {categories && (
                     <div className="breadcrumbs post">
                         <h4>Tags:</h4>
