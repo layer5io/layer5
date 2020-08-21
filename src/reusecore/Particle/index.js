@@ -6,6 +6,9 @@ import particle2 from "../../assets/images/app/particle/02.png";
 import particle3 from "../../assets/images/app/particle/03.png";
 import particle4 from "../../assets/images/app/particle/04.png";
 import particle5 from "../../assets/images/app/particle/05.png";
+import meshery from "../../assets/images/app/projects/meshery-logo-white.png";
+import smp from "../../assets/images/app/projects/smp.png";
+import imagehub from "../../assets/images/app/projects/layer5-image-hub.png";
 
 export default () => (
     <div
@@ -14,7 +17,8 @@ export default () => (
             top: 0,
             left: 0,
             width: "100%",
-            height: "100%"
+            height: "100%",
+            opacity: 0.4
         }}
     >
         <Particles
@@ -22,7 +26,7 @@ export default () => (
             params={{
                 particles: {
                     number: {
-                        value: 2,
+                        value: 3,
                         density: { enable: true, value_area: 800 },
                     },
 
@@ -30,30 +34,30 @@ export default () => (
                         type: ["images"],
                         images: [
                             {
-                                src: `${particle1}`,
-                                width: 170,
-                                height: 150,
+                                src: `${meshery}`,
+                                width: 20,
+                                height: 15,
                             },
                             {
-                                src: `${particle2}`,
-                                width: 45,
-                                height: 45,
+                                src: `${smp}`,
+                                width: 30,
+                                height: 15,
                             },
                             {
-                                src: `${particle3}`,
-                                width: 32,
-                                height: 32,
+                                src: `${imagehub}`,
+                                width: 20,
+                                height: 15,
                             },
-                            {
-                                src: `${particle4}`,
-                                width: 170,
-                                height: 150,
-                            },
-                            {
-                                src: `${particle5}`,
-                                width: 170,
-                                height: 150,
-                            }
+                            // {
+                            //     src: `${smp}`,
+                            //     width: 30,
+                            //     height: 15,
+                            // },
+                            // {
+                            //     src: `${meshery}`,
+                            //     width: 20,
+                            //     height: 15,
+                            // }
                         ],
                     },
                     opacity: {
