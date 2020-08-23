@@ -70,7 +70,7 @@ padding: 100px 0 110px 0;
         .project__block__inner{
             padding: 8%;
             img{
-                height: 45px;
+                height: 60px;
                 margin-bottom: 6px;
             }
             h3{
@@ -92,34 +92,12 @@ padding: 100px 0 110px 0;
             margin-bottom: 40px;
         }
      }
-     @media only screen and (max-width: 760px) {
-        .project__block__wrap{
-            margin-bottom: 60px;
-        }
-     }
      @media only screen and (max-width: 568px) {
+        margin-left: 5%;
+        margin-right: 5%;
         padding: 60px 0 40px 0;
-         .section-title,
-        .project-content-wrap{
-            text-align: center;
-        }
-        .section-title{
-            img{
-                display: none;
-            }
-            h4{
-                width: 100%;
-            }
-        }
-        
      }
      @media only screen and (max-width: 480px) {
-        .project__block{
-            flex-basis: 100%;
-            &.right{
-                margin-top: 10px;
-            }
-        }
         .project__block__inner{
             padding: 30px;
         }
