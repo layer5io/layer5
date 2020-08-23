@@ -18,44 +18,66 @@ const ProjectPage = () => {
             <PageHeader title="Projects" />
             <div className="project-page-wrapper">
                 <Container>
-                    <div className="project__block__wrap">
-                        <div className="project__block">
+                    <Row>
+                        <Col xs={12} sm={4}>
                             <div className="project__block__inner">
                                 <img src={projectImage1} alt="appion project" />
-                                <h3>Landscape</h3>
-                                <p>Ecosystem</p>
+                                <h2>Landscape</h2>
                                 <Link to="#">
                                     <img src={Icon} alt="appion app" />
                                 </Link>
                             </div>
+                        </Col>
+                        <Col xs={12} sm={4}>
                             <div className="project__block__inner">
-                                <img src={projectImage2} alt="appion project" />
-                                <h3>Performance</h3>
-                                <p>News Feed</p>
+                                <div><img src={projectImage2} alt="appion project" /></div>
+                                <div className="test">
+                                <h2>Performance</h2>
                                 <Link to="#">
                                     <img src={Icon} alt="appion app" />
                                 </Link>
+                                </div>
                             </div>
-                        </div>
-                        <div className="project__block right">
+                        </Col>
+                        <Col xs={12} sm={4}>
                             <div className="project__block__inner">
                                 <img src={projectImage3} alt="appion project" />
-                                <h3>Meshery</h3>
-                                <p>Management</p>
+                                <h2>Meshery</h2>
                                 <Link to="#">
                                     <img src={Icon} alt="appion app" />
                                 </Link>
                             </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={12} sm={4}>
                             <div className="project__block__inner">
-                                <img src={projectImage4} alt="appion project" />
-                                <h3>twitter</h3>
-                                <p>News Feed</p>
+                                <img src={projectImage1} alt="appion project" />
+                                <h2>Landscape</h2>
                                 <Link to="#">
                                     <img src={Icon} alt="appion app" />
                                 </Link>
                             </div>
-                        </div>
-                    </div>
+                        </Col>
+                        <Col xs={12} sm={4}>
+                            <div className="project__block__inner">
+                                <img src={projectImage2} alt="appion project" />
+                                <h2>Performance</h2>
+                                <Link to="#">
+                                    <img src={Icon} alt="appion app" />
+                                </Link>
+                            </div>
+                        </Col>
+                        <Col xs={12} sm={4}>
+                            <div className="project__block__inner">
+                                <img src={projectImage3} alt="appion project" />
+                                <h2>Meshery</h2>
+                                <Link to="#">
+                                    <img src={Icon} alt="appion app" />
+                                </Link>
+                            </div>
+                        </Col>
+                    </Row>
                 </Container>
             </div>
         </ProjectPageWrapper>
