@@ -11,28 +11,25 @@ padding: 100px 0 110px 0;
         flex-wrap: wrap;
     }
     .project__block{
-        flex-basis: 50%;
-    }
-    .project__block.right{
-        margin-top: 50px;
+        flex-basis: 33%;
     }
     .project__block__inner { 
-        box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
+        box-shadow: 0px 0px 15px ${props => props.theme.shadowLightColor};
         padding: 11%;
-        margin: 15px;
+        margin-top: 15px;
         border-radius: 4%;
         position: relative;
-        h3{
+        test{
+            &:hover{
+                background-color: black;
+            }
+        }
+        h2{
             margin-bottom: 20px; 
             font-weight: 400;
         }
-        p{
-            font-size: 16px;
-            font-weight: 300
-        }
-
         img{
-            height: 50px; 
+            height: 120px; 
             margin-bottom: 25px
         }
         a{
