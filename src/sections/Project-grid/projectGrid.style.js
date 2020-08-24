@@ -14,13 +14,14 @@ padding: 100px 0 110px 0;
         flex-basis: 33%;
     }
     .project__block__inner { 
-        box-shadow: 0px 0px 15px ${props => props.theme.shadowLightColor};
+        box-shadow: 0px 0px 15px gray;
         padding: 11%;
         margin-top: 15px;
         border-radius: 4%;
         position: relative;
         &:hover{
             background-color: #00d3a9;
+            box-shadow: 0px 0px 0px;
             img {
                 filter: brightness(0) invert(1);
             }
