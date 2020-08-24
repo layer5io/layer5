@@ -19,9 +19,13 @@ padding: 100px 0 110px 0;
         margin-top: 15px;
         border-radius: 4%;
         position: relative;
-        test{
-            &:hover{
-                background-color: black;
+        &:hover{
+            background-color: #00d3a9;
+            img {
+                filter: brightness(0) invert(1);
+            }
+            h2 {
+                color: white;
             }
         }
         h2{
@@ -32,10 +36,10 @@ padding: 100px 0 110px 0;
             height: 120px; 
             margin-bottom: 25px
         }
-        a{
+        .arrow{
             position: absolute;
             right: 15%;
-            bottom: 16%;
+            bottom: 0%;
             width: 30px;
             transition: all 0.8s cubic-bezier(0.3,0.8,0.2,1) 0s;
             img{
@@ -43,12 +47,10 @@ padding: 100px 0 110px 0;
                 width: 30px;
                 height: auto;
             }
-        }
-        &:hover{
-            a{
+            &:hover{
                 right: 10%;
             }
-        }
+        }    
     }
     .project__block__inner+.project__block__inner{
         margin-top: 30px;
