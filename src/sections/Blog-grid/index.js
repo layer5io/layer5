@@ -9,41 +9,7 @@ import Sidebar from "../Blog-sidebar";
 
 import { BlogPageWrapper } from "./blogGrid.style";
 
-const BlogPage = () => {
-    const data = useStaticQuery(graphql`
-    query SITE_INDEX_QUERY {
-      allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { published: { eq: true } } }
-      ) {
-        group(field: frontmatter___tags) {
-            fieldValue
-            totalCount
-        }
-        nodes {
-          id
-          frontmatter {
-            title
-            date(formatString: "Do MMMM YYYY")
-            author
-            thumbnail{
-                childImageSharp{
-                    fluid(maxWidth: 500){
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-                extension
-                publicURL
-            }  
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  `);
-
+const BlogPage = ({data}) => {
     return (
         <BlogPageWrapper>
             <PageHeader title="Blogs" />

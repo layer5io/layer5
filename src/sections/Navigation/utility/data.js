@@ -125,6 +125,10 @@ const Data = {
                     path: "/blog-grid"
                 },
                 {
+                    name: "Blog List",
+                    path: "/blog-list"
+                },
+                {
                     name: "News",
                     path: "/news"
                 }
