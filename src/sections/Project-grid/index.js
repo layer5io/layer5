@@ -20,62 +20,64 @@ const ProjectPage = () => {
                 <Container>
                     <Row>
                         <Col xs={12} sm={4}>
+                        <Link to="#">
                             <div className="project__block__inner">
                                 <img src={projectImage1} alt="appion project" />
                                 <h2>Landscape</h2>
-                                <Link to="#">
-                                    <img src={Icon} alt="appion app" />
-                                </Link>
+                                <img src={Icon} className="arrow" alt="appion app" />
                             </div>
+                        </Link>
                         </Col>
                         <Col xs={12} sm={4}>
+                        <Link to="#">  
                             <div className="project__block__inner">
                                 <div><img src={projectImage2} alt="appion project" /></div>
                                 <div className="test">
                                 <h2>Performance</h2>
-                                <Link to="#">
-                                    <img src={Icon} alt="appion app" />
-                                </Link>
+                                <img src={Icon} className="arrow" alt="appion app" />
                                 </div>
                             </div>
+                        </Link>
                         </Col>
                         <Col xs={12} sm={4}>
+                        <Link to="#">
                             <div className="project__block__inner">
                                 <img src={projectImage3} alt="appion project" />
                                 <h2>Meshery</h2>
-                                <Link to="#">
-                                    <img src={Icon} alt="appion app" />
-                                </Link>
+                                <img src={Icon} className="arrow" alt="appion app" />
                             </div>
+                        </Link>
                         </Col>
                     </Row>
                     <Row>
                         <Col xs={12} sm={4}>
+                        <Link to="#">
                             <div className="project__block__inner">
                                 <img src={projectImage1} alt="appion project" />
                                 <h2>Landscape</h2>
-                                <Link to="#">
-                                    <img src={Icon} alt="appion app" />
-                                </Link>
+                                <img src={Icon} className="arrow" alt="appion app" />
                             </div>
+                        </Link>
                         </Col>
                         <Col xs={12} sm={4}>
+                        <Link to="#">  
                             <div className="project__block__inner">
-                                <img src={projectImage2} alt="appion project" />
+                                <div><img src={projectImage2} alt="appion project" /></div>
+                                <div className="test">
                                 <h2>Performance</h2>
-                                <Link to="#">
-                                    <img src={Icon} alt="appion app" />
-                                </Link>
+                                <img src={Icon} className="arrow" alt="appion app" />
+                                </div>
                             </div>
+                        </Link>
                         </Col>
                         <Col xs={12} sm={4}>
+                        <Link to="#">
                             <div className="project__block__inner">
                                 <img src={projectImage3} alt="appion project" />
                                 <h2>Meshery</h2>
-                                <Link to="#">
-                                    <img src={Icon} alt="appion app" />
-                                </Link>
+                                <img src={Icon} className="arrow" alt="appion app" />
                             </div>
+                        </Link>
                         </Col>
                     </Row>
                 </Container>
