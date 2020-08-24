@@ -11,11 +11,12 @@ import Image from "../../components/image";
 import { BlogPageWrapper } from "./blogList.style";
 
 const BlogList = ({data, pageContext}) => {
-    const { tag, allTags } = pageContext;
+    const allTags = pageContext ? pageContext.allTags : data.allMdx.group;
+    const tag = pageContext ? pageContext.tag : null;
     const {totalCount, nodes } = data.allMdx;
-    const header = `${totalCount} blog${
+    const header = tag ? `${totalCount} blog${
         totalCount === 1 ? "" : "s"
-    } tagged with "${tag}"`;
+    } tagged with "${tag}"` : "Blogs";
 
     return (
         <BlogPageWrapper>
