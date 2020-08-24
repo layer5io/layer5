@@ -17,6 +17,17 @@ import BlogSideBarWrapper from "./blogSidebar.style";
 const Sidebar = ({tags}) => {
     return (
         <BlogSideBarWrapper>
+            <div className="sidebar-widgets views">
+                <ul>
+                    <li>
+                        <Link to='/blog-grid'>Grid View</Link>
+                    </li>
+                    <li>
+                        <Link to='/blog-list'>List View</Link>
+                    </li>
+                </ul>
+            </div>
+
             <div className="sidebar-widgets">
                 <div className="search-box">
                     <input type="text" placeholder="Search here..." />
