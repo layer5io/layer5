@@ -1,16 +1,13 @@
 title: Layer5
-author: Lee Calcote
+author: Layer5 Authors
 email: community@layer5.io
 name:  Layer5
-description: "the service mesh community - making service meshes available to the rest of us.
+description: "the service mesh company - making service meshes available to the rest of us.
  Open source software for management of service meshes.
  Allowing developers to focus on business logic, not infrastructure concerns.
  Empowering operators to confidentally run modern infrastructure."
 url: "https://layer5.io"
 baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
-
-parallax_image_one: assets/images/layer5-logo.gif #-header-large.jpg # These are the images used for the parallax background
-parallax_image_two: assets/images/startup3.jpg
 
 portfolio_heading: Workshops
 portfolio_type: cards
