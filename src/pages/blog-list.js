@@ -30,7 +30,7 @@ export const query = graphql`
                     author
                     thumbnail{
                         childImageSharp{
-                            fluid(maxWidth: 500){
+                            fluid(maxWidth: 1000){
                                 ...GatsbyImageSharpFluid
                             }
                         }
