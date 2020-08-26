@@ -8,9 +8,11 @@ export const BlogPageWrapper = styled.div`
     }
     .post-block{
         &.list{
+                padding: 15px;
                 margin-bottom: 70px;
                 border-radius: 6px;
                 &:hover{
+                    border: 1px solid gray;
                 .post-thumb-block{
                     img{
                         transform: scale3d(1.1,1.1,1);
@@ -126,6 +128,9 @@ export const BlogPageWrapper = styled.div`
        color: rgba(0,0,0,0.35);
        display: flex;
        align-items: center;
+       margin-top: -20px;
+       margin-right: 20px;
+       float: right;
        transition: all 0.3s linear;
        svg{
            margin-left: 0px;
