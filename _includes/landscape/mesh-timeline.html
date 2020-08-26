@@ -2,10 +2,18 @@
     /* The actual timeline (the vertical ruler) */
     .timeline {
       position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-      height: 800px;
-      overflow-y: auto;
+      max-width: 750px;
+      margin: 0 auto 50px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 46.7%;
+      top: -25px;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-bottom: 25px solid #39D3A9;
     }
 
     .timeline::after {
@@ -17,36 +25,21 @@
       bottom: 0;
       left: 50%;
       margin-left: -3px;
-      border: medium solid white;
-      border-width: 10px 0 10px 10px;
-      border-color: transparent transparent transparent white;
-      height: 1880px;
-    }
-    .up-arrow {
-      left: 47.7%;
-      position: relative;
-      bottom: 23px;
-      border-left: 25px solid transparent;
-      border-right: 25px solid transparent;
-      border-bottom: 25px solid white;
     }
 
-    .img-style0 {
+    .img-style0, .img-style1 {
       width: 75px;
       height: 70px;
-      float: left;
-      padding-top: 12px;
-      display: inline-block;
-      margin-right: 5px;
     }
 
     .img-style1 {
-      width: 75px;
-      height: 70px;
       float: right;
-      padding-top: 12px;
-      display: inline-block;
-      margin-left: 5px;
+      margin: -5px 0 0 5px;
+    }
+
+    .img-style0 {
+      float: left;
+      margin: -5px 5px 0 0;
     }
 
     /* data-cont around content */
@@ -54,8 +47,8 @@
       padding: 10px 40px;
       position: relative;
       background-color: inherit;
-      width: 400px;
-      height: 200px;
+      width: 50%;
+      margin-bottom: -75px;
     }
     
     /* The circles on the timeline */
@@ -65,8 +58,8 @@
       width: 25px;
       height: 25px;
       right: -18px;
-      background-color: white;
-      border: 4px solid #FF9F55;
+      background-color:#3B494F;
+      border: 4px solid #39D3A9;
       top: 15px;
       border-radius: 50%;
       z-index: 1;
@@ -74,214 +67,76 @@
     
     /* Place the data-cont to the left */
     .arr1 {
-      left: 16%;
-      display: inline-block;
+      left: -5px;
     }
     
     /* Place the data-cont to the right */
     .arr0 {
-      left: 17%;
-      top: 90px;
-      display: inline-block;
+      left: 50%;
     }
     
-    /* Add arrows to the left data-cont (pointing right) */
-    .arr1::before {
+    /* Add arrows to the left, right data-cont (pointing right) */
+    .arr1::before, .arr0::before {
       content: " ";
       height: 0;
       position: absolute;
-      top: 22px;
+      top: 18px;
       width: 0;
       z-index: 1;
-      right: 30px;
       border: medium solid white;
+    }
+    
+    .arr1::before {
+      right: 30px;
       border-width: 10px 0 10px 10px;
       border-color: transparent transparent transparent white;
     }
     
-    /* Add arrows to the right data-cont (pointing left) */
     .arr0::before {
-      content: " ";
-      height: 0;
-      position: absolute;
-      top: 22px;
-      width: 0;
-      z-index: 1;
       left: 30px;
-      border: medium solid white;
       border-width: 10px 10px 10px 0;
       border-color: transparent white transparent transparent;
     }
     
     /* Fix the circle for data-conts on the right side */
     .arr0::after {
-      left: -23px;
+      left: -12px;
     }
     
     /* The actual content */
-    .content0 {
-      padding: 1px 10px;
+    .content0, .content1 {
+      padding: 5px 15px;
       background-color: white;
       position: relative;
       border-radius: 6px;
     }
 
     .content1 {
-      padding: 1px 10px;
-      background-color: white;
-      position: relative;
-      border-radius: 6px;
       text-align: right;
     }
 
     .mesh-name {
-      display: inline-block;
       font-size: 30px;
+      margin: 10px 0 0;
     }
 
     .mesh-ann-date {
       font-size: 20px;
+      margin: 10px 0 5px;
     }
 
-    @media screen and (max-width: 1450px) {
-      .arr0::after {
-        left: -19px;
-      }
-
-      .data-cont::after {
-        right: -22px;
-      }
-
-      .up-arrow {
-        left: 48.2%;
-      }
-    }
-    @media screen and (max-width: 1300px) and (min-width: 1250px) {
-      .arr1 {
-        left: 15%;
-      }
-      
-      /* Place the data-cont to the right */
-      .arr0 {
-        left: 16%;
-      }
+    .meshname-img {
+      height: 90px;
     }
 
-    @media screen and (max-width: 1249px) and (min-width: 1200px) {
-      .arr1 {
-        left: 14%;
-      }
-      
-      /* Place the data-cont to the right */
-      .arr0 {
-        left: 15%;
-      }
-    }
+    @media screen and (max-width: 850px) {
 
-    @media screen and (max-width: 1199px) and (min-width: 1150px) {
-      .arr1 {
-        left: 12%;
-      }
-      
-      /* Place the data-cont to the right */
-      .arr0 {
-        left: 13%;
-      }
-    }
-
-    @media screen and (max-width: 1149px) and (min-width: 1100px) {
-      .arr1 {
-        left: 9%;
-      }
-      
-      /* Place the data-cont to the right */
-      .arr0 {
-        left: 11%;
-      }
-    }
-
-    @media screen and (max-width: 1099px) and (min-width: 1050px) {
-      .arr1 {
-        left: 8%;
-      }
-      
-      /* Place the data-cont to the right */
-      .arr0 {
-        left: 10%;
-      }
-    }
-
-    @media screen and (max-width: 1049px) and (min-width: 1000px) {
-      
-      .data-cont::after {
-        right: -19px;
-      }
-      
-      .arr0::after {
-        left: -22px;
-      }
-
-      .arr1 {
-        left: 6.2%;
-      }
-      
-      /* Place the data-cont to the right */
-      .arr0 {
-        left: 7.5%;
-      }
-
-      .up-arrow {
-        left: 47.6%;;
-      }
-    }
-
-    @media screen and (max-width: 999px) {
-      /* Place the timelime to the left */
-      .timeline::after {
-      left: 4%;
-      height: 2800px;
-      }
-      
-      /* Full-width containers */
       .data-cont {
-      width: 50%;
-      padding-left: 70px;
-      padding-right: 25px;
-      height: 160px;
-      }
-      
-      /* Make sure that all arrows are pointing leftwards */
-      .data-cont::before {
-      left: 60px;
-      border: medium solid white;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent white transparent transparent;
+        margin-bottom: -70px;
       }
 
-      /* Make sure all circles are at the same spot */
-      .arr0::after, .arr1::after {
-      left: 15px;
-      }
-      
-      /* Make all right containers behave like the left ones */
-      .arr0, .arr1 {
-      left: 10px;
-      }
-
-      .arr0 {
-        top: 0;;
-      }
-
-      .up-arrow {
-        left: 1%;
-      }
-
-      .img-style1 {
-        float: left;
-      }
-
-      .content1 {
-        text-align: left;
+      .meshname-img {
+        height: 65px;
       }
 
       .mesh-name {
@@ -289,52 +144,115 @@
       }
 
       .mesh-ann-date  {
-        font-size: 15px;
+        font-size: 16px;
       }
     }
 
     @media screen and (max-width: 768px) {
       
-      .timeline::after {
-        height: 2155px;
+      .timeline::before {
+        left: 46.4%;
       }
 
       .data-cont {
-        height: 125px;
+        margin-bottom: -65px;
       }
-      
-      .arr0, .arr1 {
-        left: 4px;
+
+      .meshname-img {
+        height: 60px;
       }
 
       .mesh-name {
-        font-size: 18px;
+        font-size: 20px;
       }
 
       .mesh-ann-date  {
-        font-size: 12px;
-      }
-
-      .img-style0, .img-style1 {
-        width: 50px;
-        height: 45px;
+        font-size: 14px;
       }
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 650px) {
       
+      .timeline {
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        left: 55px;
+      }
+
+      .timeline::before {
+        left: 30px;
+      }
       .data-cont {
-        height: 125px;
+        width: 70%;
+        padding-left: 100px;
+        padding-right: 25px;
+        margin-bottom: 0px;
+      }
+
+      .data-cont::before {
+        left: 90px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+      
+      .arr0::after, .arr1::after {
+        left: 42px;
       }
       
       .arr0, .arr1 {
-        left: -2px;
-      }
-      
-      .up-arrow {
-        left: 0%;
+        left: 0;
       }
 
+      .meshname-img {
+        height: 40px;
+      } 
+
+      .img-style0, .img-style1 {
+        width: 40px;
+        height: 35px;
+      }
+
+      .img-style1 {
+        float: left;
+        margin: -5px 5px 0 0;
+      }
+      
+      .mesh-name {
+        font-size: 18px;
+        text-align: left;
+      }
+
+      .mesh-ann-date  {
+        font-size: 14px;
+        text-align: left;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      
+      .data-cont {
+        width: 80%;
+      }
+    }
+
+    @media screen and (max-width: 430px) {
+      
+      .data-cont::after {
+        width: 20px;
+        height: 20px;
+      }
+
+      .arr0::after, .arr1::after {
+        left: 45px;
+      }
+
+      .meshname-img {
+        height: 30px;
+      } 
+      
       .mesh-name {
         font-size: 14px;
       }
@@ -342,103 +260,38 @@
       .mesh-ann-date  {
         font-size: 10px;
       }
-
-      .img-style0, .img-style1 {
-        width: 35px;
-        height: 30px;
-      }
     }
 
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 390px) {
       
-      .timeline::after {
-        border: thin solid white;
-        left: 8%;
-        height: 1740px;
-      }
-      
-      .data-cont {
-        width: 70%;
-        height: 100px;
-      }
-
-      .data-cont::after {
-        width: 15px;
-        height: 15px;
-        top: 25px;
-        left: 29px;
-      }
-      
-      .arr0, .arr1 {
-        left: -6px;
-      }
-
-      .mesh-name {
-        font-size: 15px;
-      }
-
-      .mesh-ann-date  {
-        font-size: 10px;
-      }
       .img-style0, .img-style1 {
         width: 30px;
         height: 25px;
       }
-
-      .up-arrow {
-        left: 4%;
-        bottom: 12px;
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-        border-bottom: 15px solid white;
-      }
-    }
-
-    @media screen and (max-width: 375px) {
+      
       .mesh-name {
         font-size: 12px;
       }
 
       .mesh-ann-date  {
-        font-size: 10px;
+        font-size: 8px;
       }
-
-      .data-cont::after {
-        left: 26px;
-      }
-    }
-
-    @media screen and (max-width: 320px) {
-      .mesh-name {
-        font-size: 9px;
-      }
-
-      .mesh-ann-date  {
-        font-size: 9px;
-      }
-
-      .data-cont::after {
-        left: 22px;
-      }
-
-      .up-arrow {
-        left: 3%;
-      }
-    }
+    }*/
 </style>
     
-<span class="up-arrow"></span>
 <div class="timeline">
   {% assign sorted = (site.data.landscape.non-functional | sort: 'weight') %}
   {% for meshes in sorted %} {% if meshes.weight %}
       <div  class="data-cont arr{{ meshes.weight | modulo: 2 }}">
         <div class="content{{ meshes.weight | modulo: 2 }}">
-          {% if meshes.icon %}
-            <div class="img-style{{ meshes.weight | modulo: 2 }}">
-              <img src="{{ meshes.icon }}" alt="{{meshes.name}}" style="width:inherit; height:inherit;">
-            </div>
-          {% endif %}
-          <p class="mesh-name">{{meshes.name}}</p>
+          <div class="meshname-img">
+            {% if meshes.icon %}
+              <div class="img-style{{ meshes.weight | modulo: 2 }}">
+                <img src="{{ meshes.icon }}" alt="{{meshes.name}}" style="width:inherit; height:inherit;">
+              </div>
+            {% endif %}
+            <p class="mesh-name">{{meshes.name}}</p>
+          </div>
           <p class="mesh-ann-date">{{meshes.announce-date}}</p>
         </div>
       </div>
