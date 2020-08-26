@@ -14,7 +14,7 @@ padding: 100px 0 110px 0;
         flex-basis: 33%;
     }
     .project__block__inner { 
-        box-shadow: 0px 0px 10px gray;
+        box-shadow: 0px 0px 15px gray;
         padding: 11%;
         margin-top: 15px;
         margin-bottom: 15px;
@@ -23,7 +23,7 @@ padding: 100px 0 110px 0;
         text-align: center;
         &:hover{
             background-color: #00b39f;
-            box-shadow: 0px 0px 30px #FFBD2E;
+            box-shadow: 0px 0px 10px #FFBD2E;
             img {
                 filter: brightness(0) invert(1);
             }
@@ -38,22 +38,7 @@ padding: 100px 0 110px 0;
         img{
             height: 120px; 
             margin-bottom: 25px;
-        }
-        .arrow{
-            position: absolute;
-            right: 15%;
-            bottom: 0%;
-            width: 30px;
-            transition: all 0.8s cubic-bezier(0.3,0.8,0.2,1) 0s;
-            img{
-                margin: 0;
-                width: 30px;
-                height: auto;
-            }
-            &:hover{
-                right: 10%;
-            }
-        }    
+        }  
     }
     .project__block__inner+.project__block__inner{
         margin-top: 30px;
