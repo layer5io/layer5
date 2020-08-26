@@ -105,31 +105,10 @@ const BlogSideBarWrapper = styled.div`
                 padding: 0;
                 list-style: none;
             }
-            &.views{
-                ul{
-                    margin-top: -5px;
-                    margin-left: -5px;
-                    margin-right: -5px;
-                }
-                li{
-                    display: inline-block;
-                    a{
-                        margin: 5px;
-                        margin-right: 20px;
-                        display: block;
-                        padding: 6px 18px;
-                        border-radius: 3px;
-                        background: #F0F0F0;
-                        font: 400 13px/26px "Open Sans", sans-serif; 
-                        transition: all 0.3s linear;
-                        &:hover{
-                            background: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
-                            color: #F0F0F0;
-                        }
-                    }
-                }
-                
+            .views{
+                margin: 1px;
             }
+            
             &.catagorie{
                
                 li{

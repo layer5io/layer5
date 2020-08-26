@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-
+import { AiOutlineUnorderedList } from "react-icons/ai"
+import { BsFillGrid3X3GapFill } from "react-icons/bs"
 import kebabCase from "lodash/kebabCase"
 
 import { FaSearch } from "react-icons/fa";
@@ -17,18 +18,13 @@ import BlogSideBarWrapper from "./blogSidebar.style";
 const Sidebar = ({tags}) => {
     return (
         <BlogSideBarWrapper>
-            <div className="sidebar-widgets views">
-                <ul>
-                    <li>
-                        <Link to='/blog-grid'>Grid View</Link>
-                    </li>
-                    <li>
-                        <Link to='/blog-list'>List View</Link>
-                    </li>
-                </ul>
-            </div>
-
             <div className="sidebar-widgets">
+                <Link className="views" to="/blog-list">
+                    <AiOutlineUnorderedList/>
+                </Link >
+                <Link className="views" to="/blog-grid">
+                    <BsFillGrid3X3GapFill/>
+                </Link>
                 <div className="search-box">
                     <input type="text" placeholder="Search here..." />
                     <Button>
