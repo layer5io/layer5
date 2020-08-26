@@ -9,8 +9,6 @@ import { ProjectPageWrapper } from "./projectGrid.style";
 import projectImage1 from "../../assets/images/app/projects/landscape.png";
 import projectImage2 from "../../assets/images/app/projects/smp.png";
 import projectImage3 from "../../assets/images/app/projects/meshery-logo-light.png";
-import projectImage4 from "../../assets/images/app/projects/meshery-logo-light.png";
-import Icon from "../../assets/images/app/projects/arrow.svg";
 
 const ProjectPage = () => {
     return (
@@ -24,7 +22,6 @@ const ProjectPage = () => {
                             <div className="project__block__inner">
                                 <img src={projectImage1} alt="appion project" />
                                 <h1>Landscape</h1>
-                                {/* <img src={Icon} className="arrow" alt="appion app" /> */}
                             </div>
                         </Link>
                         </Col>
@@ -32,10 +29,7 @@ const ProjectPage = () => {
                         <Link to="#">  
                             <div className="project__block__inner">
                                 <div><img src={projectImage2} alt="appion project" /></div>
-                                <div className="test">
                                 <h1>Performance</h1>
-                                {/* <img src={Icon} className="arrow" alt="appion app" /> */}
-                                </div>
                             </div>
                         </Link>
                         </Col>
@@ -44,7 +38,6 @@ const ProjectPage = () => {
                             <div className="project__block__inner">
                                 <img src={projectImage3} alt="appion project" />
                                 <h1>Meshery</h1>
-                                {/* <img src={Icon} className="arrow" alt="appion app" /> */}
                             </div>
                         </Link>
                         </Col>
@@ -55,7 +48,6 @@ const ProjectPage = () => {
                             <div className="project__block__inner">
                                 <img src={projectImage1} alt="appion project" />
                                 <h1>Landscape</h1>
-                                {/* <img src={Icon} className="arrow" alt="appion app" /> */}
                             </div>
                         </Link>
                         </Col>
@@ -65,7 +57,6 @@ const ProjectPage = () => {
                                 <div><img src={projectImage2} alt="appion project" /></div>
                                 <div className="test">
                                 <h1>Performance</h1>
-                                {/* <img src={Icon} className="arrow" alt="appion app" /> */}
                                 </div>
                             </div>
                         </Link>
@@ -75,7 +66,6 @@ const ProjectPage = () => {
                             <div className="project__block__inner">
                                 <img src={projectImage3} alt="appion project" />
                                 <h1>Meshery</h1>
-                                {/* <img src={Icon} className="arrow" alt="appion app" /> */}
                             </div>
                         </Link>
                         </Col>
