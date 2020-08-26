@@ -40,6 +40,7 @@ const BlogList = ({data, pageContext}) => {
                                                 <span>{frontmatter.date}</span>
                                                 <span className="pull-right">By: {frontmatter.author}</span>
                                             </p>
+                                            <p>{frontmatter.subtitle}</p>
                                             <Link to={fields.slug} className="readmore-btn">
                                                 see more <IoIosArrowRoundForward />
                                             </Link>
