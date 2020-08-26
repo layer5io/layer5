@@ -151,6 +151,7 @@
   commercial: "?"
   category: Service Mesh
   weight: 8
+  icon: assets/images/service-mesh-icons/nsm.png
   
 - name: Octarine
   opensource: "No"
