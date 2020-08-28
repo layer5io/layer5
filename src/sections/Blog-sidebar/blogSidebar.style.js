@@ -105,13 +105,7 @@ const BlogSideBarWrapper = styled.div`
                 padding: 0;
                 list-style: none;
             }
-            .views{
-                margin: 1px;
-                
-                &:hover{
-                     color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
-                     
-                }
+            
             }
             
             &.catagorie{
