@@ -1,6 +1,7 @@
 import React from "react";
-import { useStaticQuery, graphql ,Link } from "gatsby";
+import { Link } from "gatsby";
 import Image from "../../components/image";
+import BlogVIewToolTip from "../../components/blog-view-tooltip";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Container, Row, Col } from "../../reusecore/Layout";
 
@@ -18,7 +19,9 @@ const BlogPage = ({data}) => {
                 <Container>
                     <Row>
                         <Col xs={12} lg={8}>
+                            <BlogVIewToolTip/>
                             <div className="blog-grid-wrapper">
+
                                 <Row>
                                     {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
                                         <Col xs={12} sm={6} key={id}>
