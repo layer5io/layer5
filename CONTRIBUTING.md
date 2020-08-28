@@ -60,6 +60,9 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 <a href="./assets/images/git-signoff-vscode.png" ><img src="./assets/images/git-signoff-vscode.png" width="50%"><a>
 
+### Set Up Your Development Environment
+Note: Windows users can run Jekyll by following the [Windows Installation Guide](https://jekyllrb.com/docs/installation/windows/) and also install Ruby Version Manager [RVM](https://rvm.io) - a command-line tool which allows you to easily install, manage and work with multiple ruby environments on your local machine. Alternatively, if you're running Windows 10, update to version 1903 Build 18362 or higher. You can also shift to Windows Subsystem for Linux [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
 ### <a name="flow">Contribution Flow</a>
 Please contribute! The Layer5 site uses GitHub Pages (Jekyll) to host its site. The process of contributing to documentation follows this flow:
 
