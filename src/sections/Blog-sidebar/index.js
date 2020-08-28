@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import { AiOutlineUnorderedList } from "react-icons/ai"
 import { BsFillGrid3X3GapFill } from "react-icons/bs"
+import ReactTooltip from 'react-tooltip';
+
 import kebabCase from "lodash/kebabCase"
 
 import { FaSearch } from "react-icons/fa";
@@ -19,12 +21,14 @@ const Sidebar = ({tags}) => {
     return (
         <BlogSideBarWrapper>
             <div className="sidebar-widgets">
-                <Link className="views" to="/blog-list">
+                <Link className="views" data-tip="List View" to="/blog-list">
                     <AiOutlineUnorderedList/>
                 </Link >
-                <Link className="views" to="/blog-grid">
+                <ReactTooltip place="top" type="dark" effect="solid" />
+                <Link className="views" data-tip="Grid View" to="/blog-grid">
                     <BsFillGrid3X3GapFill/>
                 </Link>
+                <ReactTooltip place="top" type="dark" effect="solid" />
                 <div className="search-box">
                     <input type="text" placeholder="Search here..." />
                     <Button>
