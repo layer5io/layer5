@@ -10,7 +10,7 @@ import Sidebar from "../Blog-sidebar";
 
 import { BlogPageWrapper } from "./blogGrid.style";
 
-const BlogPage = ({data, setListView, setGridView}) => {
+const BlogPage = ({data, isListView, setListView, setGridView}) => {
     return (
         <BlogPageWrapper>
             <PageHeader title="Blogs" />
@@ -19,9 +19,10 @@ const BlogPage = ({data, setListView, setGridView}) => {
                 <Container>
                     <Row>
                         <Col xs={12} lg={8}>
-                            <BlogViewToolTip setListView={setListView} setGridView ={setGridView} />
+                            <BlogViewToolTip isListView={isListView} setListView={setListView}
+                                             setGridView ={setGridView}
+                            />
                             <div className="blog-grid-wrapper">
-
                                 <Row>
                                     {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
                                         <Col xs={12} sm={6} key={id}>

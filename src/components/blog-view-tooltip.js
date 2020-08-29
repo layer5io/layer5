@@ -2,7 +2,6 @@ import React from "react";
 import { AiOutlineUnorderedList } from "react-icons/ai"
 import { BsFillGrid3X3GapFill } from "react-icons/bs"
 import ReactTooltip from 'react-tooltip';
-import { Link } from "gatsby";
 import styled from "styled-components";
 
 export const ToolTipWrapper = styled.div`
@@ -11,18 +10,22 @@ export const ToolTipWrapper = styled.div`
         margin: 1px;     
         &:hover{
             color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
-            cursor: pointer;             
+            cursor: pointer;
+        }             
+      }
+      .active {
+        color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
       }
 `;
 
-const BlogViewToolTip = ({ setListView, setGridView}) =>{
+const BlogViewToolTip = ({ isListView, setListView, setGridView}) =>{
     return(
         <ToolTipWrapper>
-            <a data-tip="Grid View" onClick={setGridView}>
+            <a data-tip="Grid View" onClick={setGridView} className={`${isListView ? "": "active"}`}>
                 <BsFillGrid3X3GapFill size={18}/>
             </a>
             <ReactTooltip place="top" type="dark" effect="solid" />
-            <a data-tip="List View" onClick={setListView}>
+            <a data-tip="List View" onClick={setListView} className={`${isListView ? "active": ""}`}>
                 <AiOutlineUnorderedList size={18}/>
             </a>
             <ReactTooltip place="top" type="dark" effect="solid" />
