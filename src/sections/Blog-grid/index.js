@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import Image from "../../components/image";
-import BlogVIewToolTip from "../../components/blog-view-tooltip";
+import BlogViewToolTip from "../../components/blog-view-tooltip";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Container, Row, Col } from "../../reusecore/Layout";
 
@@ -10,7 +10,7 @@ import Sidebar from "../Blog-sidebar";
 
 import { BlogPageWrapper } from "./blogGrid.style";
 
-const BlogPage = ({data}) => {
+const BlogPage = ({data, setListView, setGridView}) => {
     return (
         <BlogPageWrapper>
             <PageHeader title="Blogs" />
@@ -19,7 +19,7 @@ const BlogPage = ({data}) => {
                 <Container>
                     <Row>
                         <Col xs={12} lg={8}>
-                            <BlogVIewToolTip/>
+                            <BlogViewToolTip setListView={setListView} setGridView ={setGridView} />
                             <div className="blog-grid-wrapper">
 
                                 <Row>

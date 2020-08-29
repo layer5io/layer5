@@ -10,25 +10,24 @@ export const ToolTipWrapper = styled.div`
       a {
         margin: 1px;     
         &:hover{
-            color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};             
-       }
+            color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
+            cursor: pointer;             
+      }
 `;
 
-const BlogVIewToolTip = () =>{
+const BlogViewToolTip = ({ setListView, setGridView}) =>{
     return(
         <ToolTipWrapper>
-            <div>
-            <Link data-tip="Grid View" to="/blog-grid">
+            <a data-tip="Grid View" onClick={setGridView}>
                 <BsFillGrid3X3GapFill size={18}/>
-            </Link>
+            </a>
             <ReactTooltip place="top" type="dark" effect="solid" />
-            <Link data-tip="List View" to="/blog-list">
+            <a data-tip="List View" onClick={setListView}>
                 <AiOutlineUnorderedList size={18}/>
-            </Link >
+            </a>
             <ReactTooltip place="top" type="dark" effect="solid" />
-            </div>
         </ToolTipWrapper>
     )
 };
 
-export default BlogVIewToolTip;
+export default BlogViewToolTip;

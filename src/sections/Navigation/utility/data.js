@@ -121,12 +121,8 @@ const Data = {
             path: "/blog-grid",
             subItems: [
                 {
-                    name: "Blog Grid",
-                    path: "/blog-grid"
-                },
-                {
-                    name: "Blog List",
-                    path: "/blog-list"
+                    name: "Blog",
+                    path: "/blog"
                 },
                 {
                     name: "News",
