@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import BlogVIewToolTip from "../../components/blog-view-tooltip";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
@@ -25,6 +26,7 @@ const BlogList = ({data, pageContext}) => {
                 <Container>
                     <Row>
                         <Col sm={12} md={8}>
+                            { !pageContext && <BlogVIewToolTip/>}
                             <Row>
                                 {nodes.map(({id, frontmatter, fields}) => (
                                     <Col xs={12} key={id}>
