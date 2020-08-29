@@ -106,7 +106,6 @@ const BlogSideBarWrapper = styled.div`
                 list-style: none;
             }
             
-            }
             
             &.catagorie{
                

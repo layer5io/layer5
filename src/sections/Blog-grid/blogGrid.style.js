@@ -6,7 +6,7 @@ export const BlogPageWrapper = styled.div`
     }
     .blog-grid-wrapper{
         padding-bottom: 60px;
-        margin-top: 100px;
+        margin-top: 80px;
     }
     .post-block{
         margin-bottom: 30px;
