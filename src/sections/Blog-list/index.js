@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import BlogVIewToolTip from "../../components/blog-view-tooltip";
+import BlogViewToolTip from "../../components/blog-view-tooltip";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
@@ -11,7 +11,7 @@ import Image from "../../components/image";
 
 import { BlogPageWrapper } from "./blogList.style";
 
-const BlogList = ({data, pageContext}) => {
+const BlogList = ({data, setListView, setGridView, pageContext}) => {
     const allTags = pageContext ? pageContext.allTags : data.allMdx.group;
     const tag = pageContext ? pageContext.tag : null;
     const {totalCount, nodes } = data.allMdx;
@@ -26,7 +26,7 @@ const BlogList = ({data, pageContext}) => {
                 <Container>
                     <Row>
                         <Col sm={12} md={8}>
-                            { !pageContext && <BlogVIewToolTip/>}
+                            { !pageContext && <BlogViewToolTip setListView={setListView} setGridView ={setGridView} />}
                             <Row>
                                 {nodes.map(({id, frontmatter, fields}) => (
                                     <Col xs={12} key={id}>
