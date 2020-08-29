@@ -56,20 +56,20 @@ class Blog extends Component {
     setListView = () => {
         this.setState({
             isListView : true
-        })
+        });
     };
 
     setGridView = () => {
         this.setState({
             isListView : false
-        })
+        });
     };
 
     render() {
         let BlogView = props => {
             if(this.state.isListView)
                 return (<BlogList {...props} />);
-            return (<BlogPage {...props} />)
+            return (<BlogPage {...props} />);
         };
 
         return(
@@ -79,12 +79,12 @@ class Blog extends Component {
                     <SEO title="Blog | Layer5 - The Service Mesh Company" />
                     <Navigation />
                     <BlogView data={this.props.data} isListView= {this.state.isListView}
-                              setListView={this.setListView} setGridView={this.setGridView}
+                        setListView={this.setListView} setGridView={this.setGridView}
                     />
                     <Footer />
                 </Layout>
             </ThemeProvider>
-        )
+        );
     }
 }
 

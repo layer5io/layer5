@@ -1,7 +1,7 @@
 import React from "react";
-import { AiOutlineUnorderedList } from "react-icons/ai"
-import { BsFillGrid3X3GapFill } from "react-icons/bs"
-import ReactTooltip from 'react-tooltip';
+import { AiOutlineUnorderedList } from "react-icons/ai";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
+import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 
 export const ToolTipWrapper = styled.div`
@@ -30,7 +30,7 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView}) =>{
             </a>
             <ReactTooltip place="top" type="dark" effect="solid" />
         </ToolTipWrapper>
-    )
+    );
 };
 
 export default BlogViewToolTip;
