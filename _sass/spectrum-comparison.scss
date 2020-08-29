@@ -179,3 +179,15 @@
 .row {
   position: inherit;
 }
+
+.smi-logo-sizing {
+  height: 200px;
+}
+
+@media screen and (max-width: 900px) {
+  
+  .smi-logo-sizing {
+    height: 25vw;
+    margin-top: 30px;
+  }
+}
