@@ -1,6 +1,6 @@
 import React from "react";
 
-import L404SectionWrapper from './404.style';
+import L404SectionWrapper from "./404.style";
 
 const messages = [
     "Oh, no. Please pardon our meshy site.",
@@ -9,7 +9,7 @@ const messages = [
     "Things tend to get a bit meshy around here.",
     "Please pardon our mesh.",
     "Yikes. Things are a mesh here."
-    ];
+];
 let message = messages[Math.floor(Math.random()*messages.length)];
 
 const L404 = () => {

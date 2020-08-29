@@ -34,7 +34,7 @@ const BlogList = ({data, isListView, setListView, setGridView, pageContext}) => 
                                     <Col xs={12} key={id}>
                                         <div className="post-block list">
                                             <div className="post-thumb-block">
-                                                <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: 'contain' }}/>
+                                                <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "contain" }}/>
                                             </div>
                                             <h2 className="post-title">
                                                 <Link to={fields.slug}>

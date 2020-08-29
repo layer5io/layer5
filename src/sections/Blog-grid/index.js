@@ -20,7 +20,7 @@ const BlogPage = ({data, isListView, setListView, setGridView}) => {
                     <Row>
                         <Col xs={12} lg={8}>
                             <BlogViewToolTip isListView={isListView} setListView={setListView}
-                                             setGridView ={setGridView}
+                                setGridView ={setGridView}
                             />
                             <div className="blog-grid-wrapper">
                                 <Row>
@@ -29,7 +29,7 @@ const BlogPage = ({data, isListView, setListView, setGridView}) => {
                                             <div className="post-block">
                                                 <div className="post-thumb-block">
                                                     <Link className="anchor" to={fields.slug}>
-                                                        <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: 'contain' }}/>
+                                                        <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "contain" }}/>
                                                     </Link>
                                                 </div>
                                                 <div className="post-content-block">
@@ -44,7 +44,7 @@ const BlogPage = ({data, isListView, setListView, setGridView}) => {
                                                         <span>{frontmatter.date}</span>
                                                     </div>
                                                     <Link className="readmore-btn" to={fields.slug}>
-                                see more <IoIosArrowRoundForward />
+                                                        see more <IoIosArrowRoundForward />
                                                     </Link>
                                                 </div>
                                             </div>
