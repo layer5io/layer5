@@ -11,7 +11,7 @@ import Image from "../../components/image";
 
 import { BlogPageWrapper } from "./blogList.style";
 
-const BlogList = ({data, setListView, setGridView, pageContext}) => {
+const BlogList = ({data, isListView, setListView, setGridView, pageContext}) => {
     const allTags = pageContext ? pageContext.allTags : data.allMdx.group;
     const tag = pageContext ? pageContext.tag : null;
     const {totalCount, nodes } = data.allMdx;
@@ -26,7 +26,9 @@ const BlogList = ({data, setListView, setGridView, pageContext}) => {
                 <Container>
                     <Row>
                         <Col sm={12} md={8}>
-                            { !pageContext && <BlogViewToolTip setListView={setListView} setGridView ={setGridView} />}
+                            { !pageContext && <BlogViewToolTip
+                                isListView={isListView} setListView={setListView} setGridView ={setGridView}
+                            />}
                             <Row>
                                 {nodes.map(({id, frontmatter, fields}) => (
                                     <Col xs={12} key={id}>

@@ -78,7 +78,9 @@ class Blog extends Component {
                     <GlobalStyle />
                     <SEO title="Blog | Layer5 - The Service Mesh Company" />
                     <Navigation />
-                    <BlogView data={this.props.data} setListView={this.setListView} setGridView={this.setGridView}/>
+                    <BlogView data={this.props.data} isListView= {this.state.isListView}
+                              setListView={this.setListView} setGridView={this.setGridView}
+                    />
                     <Footer />
                 </Layout>
             </ThemeProvider>
