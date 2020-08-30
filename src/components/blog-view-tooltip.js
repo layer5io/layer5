@@ -5,6 +5,10 @@ import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 
 export const ToolTipWrapper = styled.div`
+      @media screen and (max-width: 576px) {
+            display: none;
+      }
+      
       float:right;
       a {
         margin: 1px;     
