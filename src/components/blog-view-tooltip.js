@@ -21,14 +21,14 @@ export const ToolTipWrapper = styled.div`
 const BlogViewToolTip = ({ isListView, setListView, setGridView}) =>{
     return(
         <ToolTipWrapper>
-            <a data-tip="Grid View" onClick={setGridView} className={`${isListView ? "": "active"}`}>
+            <a data-tip="Grid View" data-for='grid-view' onClick={setGridView} className={`${isListView ? "": "active"}`}>
                 <BsFillGrid3X3GapFill size={18}/>
             </a>
-            <ReactTooltip place="top" type="dark" effect="solid" />
-            <a data-tip="List View" onClick={setListView} className={`${isListView ? "active": ""}`}>
+            <ReactTooltip id='grid-view' className='grid-view' backgroundColor="black" place="top" effect="solid" />
+            <a data-tip="List View" data-for='list-view' onClick={setListView} className={`${isListView ? "active": ""}`}>
                 <AiOutlineUnorderedList size={18}/>
             </a>
-            <ReactTooltip place="top" type="dark" effect="solid" />
+            <ReactTooltip id='list-view' className='list-view' backgroundColor="black" place="top" type="dark" effect="solid" />
         </ToolTipWrapper>
     );
 };
