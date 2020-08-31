@@ -23,7 +23,9 @@
           $(document).ready(function() {
               $.get("https://meshery.layer5.io/result/total", function(data, status) {
                   var testresults = JSON.parse(data);
-                  document.getElementById("testresults").innerHTML = "&nbsp;"+testresults.total_runs+"&nbsp;&nbsp;";
+
+                  //added code to make the total runs to include commas on thousands
+                  document.getElementById("testresults").innerHTML = "&nbsp;"+testresults.total_runs.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+"&nbsp;&nbsp;";
               });
           });
       </script>
