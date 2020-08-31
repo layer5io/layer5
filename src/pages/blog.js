@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import Navigation from "../sections/Navigation";
-import BlogPage from "../sections/Blog-grid";
+import BlogGrid from "../sections/Blog-grid";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
@@ -33,7 +33,7 @@ export const query = graphql`
                     thumbnail{
                         childImageSharp{
                             fluid(maxWidth: 1000){
-                                ...GatsbyImageSharpFluid
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                         extension
@@ -69,7 +69,7 @@ class Blog extends Component {
         let BlogView = props => {
             if(this.state.isListView)
                 return (<BlogList {...props} />);
-            return (<BlogPage {...props} />);
+            return (<BlogGrid {...props} />);
         };
 
         return(

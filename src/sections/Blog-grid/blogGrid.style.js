@@ -13,8 +13,8 @@ export const BlogPageWrapper = styled.div`
         border-radius: 3px;
         &:hover{
             .post-thumb-block{
-                img{
-                    transform: scale3d(1.02,1.02,1);
+                .gatsby-image-wrapper{
+                    transform: scale3d(1.1,1.1,1);
                 }
             }
             .readmore-btn{
@@ -26,16 +26,19 @@ export const BlogPageWrapper = styled.div`
         overflow: hidden;
         border-radius: 3px 3px 0 0;
         height: 180px;
+        .gatsby-image-wrapper{
+            height:100%;
+            transition: all 0.6s ease-in;
+        }
         img{
             max-width: 100%;
             max-height: 180px;
             width: auto;
-            height: auto;
+            height: inherit;
             display: block;
             text-align: center;
             margin-left: auto;
             margin-right: auto;
-            transition: all 0.6s ease-in;
             border-radius: 3px 3px 0 0;
         }
     }

@@ -10,7 +10,7 @@ import Sidebar from "../Blog-sidebar";
 
 import { BlogPageWrapper } from "./blogGrid.style";
 
-const BlogPage = ({data, isListView, setListView, setGridView}) => {
+const BlogGrid = ({data, isListView, setListView, setGridView}) => {
     return (
         <BlogPageWrapper>
             <PageHeader title="Blogs" />
@@ -63,4 +63,4 @@ const BlogPage = ({data, isListView, setListView, setGridView}) => {
     );
 };
 
-export default BlogPage;
+export default BlogGrid;
