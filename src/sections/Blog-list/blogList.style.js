@@ -14,7 +14,7 @@ export const BlogPageWrapper = styled.div`
                 &:hover{
                     border: 1px solid gray;
                 .post-thumb-block{
-                    img{
+                    .gatsby-image-wrapper{
                         transform: scale3d(1.1,1.1,1);
                     }
                 }
@@ -81,6 +81,10 @@ export const BlogPageWrapper = styled.div`
                 font-style: normal;
             }
         }
+        .gatsby-image-wrapper{
+            transition: all 0.6s ease-in;
+            border-radius: 6px;
+        }
         img{
             max-width: 100%;
             max-height: 400px;
@@ -90,8 +94,6 @@ export const BlogPageWrapper = styled.div`
             text-align: center;
             margin-left: auto;
             margin-right: auto;
-            transition: all 0.6s ease-in;
-            border-radius: 6px;
         }
     }
     .post-content-block{
