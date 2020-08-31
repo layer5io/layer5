@@ -32,8 +32,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogListTemplate = path.resolve(
       'src/templates/blog-list.js'
   );
+  const projectPostTemplate = path.resolve(
+    'src/templates/project-single.js'
+);
 
-  const res = await graphql(`
+  const blogposts = await graphql(`
     {
       allMdx(
         filter: { frontmatter: { published: { eq: true } } }
@@ -54,24 +57,56 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `);
 
+  const projectposts = await graphql(`
+    {
+      allMdx(
+        filter: { fileAbsolutePath: { regex: "//posts/projects/[0-9]+.*--/"}, frontmatter: { published: { eq: true } } }
+      ) {
+        group(field: frontmatter___tags) {
+          fieldValue
+          totalCount
+        }
+        nodes {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  `);
+
   // handle errors
-  if (res.errors) {
+  if (blogposts.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
     return
   }
 
-  const posts = res.data.allMdx.nodes;
-  posts.forEach(post => {
+  const blogs = blogposts.data.allMdx.nodes;
+  blogs.forEach(blog => {
     createPage({
-      path: post.fields.slug,
+      path: blog.fields.slug,
       component: blogPostTemplate,
       context: {
-        slug: post.fields.slug,
+        slug: blog.fields.slug,
       },
     })
   });
 
-  const tags = res.data.allMdx.group;
+  const projects = projectposts.data.allMdx.nodes;
+  projects.forEach(project => {
+    createPage({
+      path: project.fields.slug,
+      component: projectPostTemplate,
+      context: {
+        slug: project.fields.slug,
+      },
+    })
+  });
+
+  const tags = blogposts.data.allMdx.group;
   tags.forEach(tag => {
     createPage({
       path: `/blogs/tag/${_.kebabCase(tag.fieldValue)}`,

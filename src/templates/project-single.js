@@ -14,15 +14,12 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
 
 export const query = graphql`
-    query PostsBySlug($slug: String!) {
+    query ProjectsBySlug($slug: String!) {
         mdx(fields: { slug: { eq: $slug } }) {
             body
             frontmatter {
                 title
                 subtitle
-                date(formatString: "YYYY MMMM Do")
-                author
-                tags
                 thumbnail{
                     childImageSharp{
                         fluid(maxWidth: 500){

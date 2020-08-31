@@ -14,7 +14,7 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
 
 export const query = graphql`
-    query PostsBySlug($slug: String!) {
+    query BlogsBySlug($slug: String!) {
         mdx(fields: { slug: { eq: $slug } }) {
             body
             frontmatter {
