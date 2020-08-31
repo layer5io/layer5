@@ -1,6 +1,7 @@
 import React from "react";
-import { useStaticQuery, graphql ,Link } from "gatsby";
+import { Link } from "gatsby";
 import Image from "../../components/image";
+import BlogViewToolTip from "../../components/blog-view-tooltip";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Container, Row, Col } from "../../reusecore/Layout";
 
@@ -9,41 +10,7 @@ import Sidebar from "../Blog-sidebar";
 
 import { BlogPageWrapper } from "./blogGrid.style";
 
-const BlogPage = () => {
-    const data = useStaticQuery(graphql`
-    query SITE_INDEX_QUERY {
-      allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { published: { eq: true } } }
-      ) {
-        group(field: frontmatter___tags) {
-            fieldValue
-            totalCount
-        }
-        nodes {
-          id
-          frontmatter {
-            title
-            date(formatString: "Do MMMM YYYY")
-            author
-            thumbnail{
-                childImageSharp{
-                    fluid(maxWidth: 500){
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-                extension
-                publicURL
-            }  
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  `);
-
+const BlogPage = ({data, isListView, setListView, setGridView}) => {
     return (
         <BlogPageWrapper>
             <PageHeader title="Blogs" />
@@ -52,6 +19,9 @@ const BlogPage = () => {
                 <Container>
                     <Row>
                         <Col xs={12} lg={8}>
+                            <BlogViewToolTip isListView={isListView} setListView={setListView}
+                                setGridView ={setGridView}
+                            />
                             <div className="blog-grid-wrapper">
                                 <Row>
                                     {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
@@ -59,7 +29,7 @@ const BlogPage = () => {
                                             <div className="post-block">
                                                 <div className="post-thumb-block">
                                                     <Link className="anchor" to={fields.slug}>
-                                                        <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: 'contain' }}/>
+                                                        <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "contain" }}/>
                                                     </Link>
                                                 </div>
                                                 <div className="post-content-block">
@@ -74,7 +44,7 @@ const BlogPage = () => {
                                                         <span>{frontmatter.date}</span>
                                                     </div>
                                                     <Link className="readmore-btn" to={fields.slug}>
-                                see more <IoIosArrowRoundForward />
+                                                        see more <IoIosArrowRoundForward />
                                                     </Link>
                                                 </div>
                                             </div>

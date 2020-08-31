@@ -47,6 +47,7 @@
     "react-particles-js": "^2.7.1",
     "react-scroll": "^1.7.16",
     "react-slick": "^0.25.2",
+    "react-tooltip": "^4.2.9",
     "react-twitter-embed": "^3.0.3",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",
@@ -57,6 +58,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
+    "babel-eslint": "^10.1.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "cpx": "^1.5.0",
     "cross-env": "^7.0.0",

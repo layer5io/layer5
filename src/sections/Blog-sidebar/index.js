@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-
-import kebabCase from "lodash/kebabCase"
+import kebabCase from "lodash/kebabCase";
 
 import { FaSearch } from "react-icons/fa";
 
@@ -131,11 +130,11 @@ const Sidebar = ({tags}) => {
                     <h3>Tags</h3>
                 </div>
                 <ul>
-                { tags && tags.map(tag => (
-                    <li key={tag.fieldValue}>
-                        <Link to={`/blogs/tag/${kebabCase(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
-                    </li>
-                ))}
+                    { tags && tags.map(tag => (
+                        <li key={tag.fieldValue}>
+                            <Link to={`/blogs/tag/${kebabCase(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </BlogSideBarWrapper>

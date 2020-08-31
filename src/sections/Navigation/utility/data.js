@@ -118,11 +118,11 @@ const Data = {
         },
         {
             name: "Blog",
-            path: "/blog-grid",
+            path: "/blog",
             subItems: [
                 {
-                    name: "Blog Grid",
-                    path: "/blog-grid"
+                    name: "Blog",
+                    path: "/blog"
                 },
                 {
                     name: "News",

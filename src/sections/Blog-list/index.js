@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import BlogViewToolTip from "../../components/blog-view-tooltip";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
@@ -10,12 +11,13 @@ import Image from "../../components/image";
 
 import { BlogPageWrapper } from "./blogList.style";
 
-const BlogList = ({data, pageContext}) => {
-    const { tag, allTags } = pageContext;
+const BlogList = ({data, isListView, setListView, setGridView, pageContext}) => {
+    const allTags = pageContext ? pageContext.allTags : data.allMdx.group;
+    const tag = pageContext ? pageContext.tag : null;
     const {totalCount, nodes } = data.allMdx;
-    const header = `${totalCount} blog${
+    const header = tag ? `${totalCount} blog${
         totalCount === 1 ? "" : "s"
-    } tagged with "${tag}"`;
+    } tagged with "${tag}"` : "Blogs";
 
     return (
         <BlogPageWrapper>
@@ -24,12 +26,15 @@ const BlogList = ({data, pageContext}) => {
                 <Container>
                     <Row>
                         <Col sm={12} md={8}>
+                            { !pageContext && <BlogViewToolTip
+                                isListView={isListView} setListView={setListView} setGridView ={setGridView}
+                            />}
                             <Row>
                                 {nodes.map(({id, frontmatter, fields}) => (
                                     <Col xs={12} key={id}>
                                         <div className="post-block list">
                                             <div className="post-thumb-block">
-                                                <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: 'contain' }}/>
+                                                <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "contain" }}/>
                                             </div>
                                             <h2 className="post-title">
                                                 <Link to={fields.slug}>

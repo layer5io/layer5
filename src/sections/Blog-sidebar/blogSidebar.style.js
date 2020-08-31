@@ -105,6 +105,8 @@ const BlogSideBarWrapper = styled.div`
                 padding: 0;
                 list-style: none;
             }
+            
+            
             &.catagorie{
                
                 li{
