@@ -2877,6 +2877,20 @@ a {
           box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.hoverable-member {
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+}
+
+.hoverable-member:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #3b494f;
+}
+
 .divider {
   height: 1px;
   overflow: hidden;
@@ -5518,6 +5532,89 @@ small {
 .card .card-reveal .card-title {
   cursor: pointer;
   display: block;
+}
+
+.member-img {
+  max-width: 90%;
+  max-height: 180px;
+  width: auto;
+  height: auto;
+  text-align: center;
+  padding: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-card {
+  display: block;
+  height: 100%;
+  background-color: #00b39f;
+}
+
+.member-card {
+  display: block;
+  height: 100%;
+  background-color: #00b39f;
+  height: 275px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.img-link::before{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -105px;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+  background-color: rgba(0,0,0,0);
+}
+
+.person-view {
+  width: 35vw;
+  padding: 15px 40px 5px;
+  display: inline-block;
+}
+
+.person-name {
+  font-size: 2vw;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+.position-text {
+  color: #4a4444bf;
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 1.5vw;
+  margin-bottom: 5px;
+}
+
+@media only screen and (max-width:600px) {
+  .member-card {
+    height: 26vh;
+    width: 60%;
+  }
+
+  .img-link::before {
+    bottom: -75px;
+  }
+
+  .person-view {
+    width: 40vw;
+  }
+}
+
+@media only screen and (max-width:425px) {
+  .member-card {
+    width: 75%;
+  }
+
+  .person-view {
+    width: 50vw;
+  }
 }
 
 #toast-container {
