@@ -287,8 +287,8 @@
   tracing: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
   encryption: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
 
-- name: SOFAMesh
-  desc: A solution for large-scale Service Mesh based on Istio.
+- name: Open Service Mesh
+  desc: Open Service Mesh (OSM) is a lightweight and extensible cloud native service mesh.
   link: https://github.com/alipay/sofa-mesh
   autoinject: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
   tcp-web: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
