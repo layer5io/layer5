@@ -13,7 +13,7 @@ import theme from "../theme/blog/themeStyles";
 import {graphql} from "gatsby";
 
 export const query = graphql`
-    query PostsByTags($tag: String!) {
+    query BlogsByTags($tag: String!) {
         allMdx(
             sort: { fields: [frontmatter___date], order: DESC }
             filter: { frontmatter: { tags: { in: [$tag] }, published: { eq: true } } }
