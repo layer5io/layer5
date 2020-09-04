@@ -12,7 +12,7 @@ Before building the site, ensure that you have the following dependencies instal
 
 ### Dependencies:
 
-- [Nodejs](https://nodejs.org/en/): e.g., `brew install node`
+- [Nodejs and npm](https://nodejs.org/en/)
 - [gatsby cli](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli): e.g., `npm install -g gatsby-cli`
 
 ### Building the site
@@ -56,7 +56,7 @@ To ensure all your commits are signed, you may choose to add this alias to your 
 ```
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
-<a href="./assets/images/git-signoff-vscode.png" ><img src="./assets/images/git-signoff-vscode.png" width="50%"><a>
+<a href="./assets/images/git-signoff-vscode.png" ><img src="./assets/images/git-signoff-vscode.png" width="50%"/><a>
 
 ### <a name="flow">Contribution Flow</a>
 Please contribute! The Layer5-ng site uses Gatsby. The process of contributing to documentation follows this flow:
