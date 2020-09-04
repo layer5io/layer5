@@ -12,42 +12,38 @@ const NewsGrid = ({data}) => {
     return (
         <NewsPageWrapper>
             <PageHeader title="News" />
-            <div className="blog-page-wrapper">
+            <div className="news-page-wrapper">
                 <Container>
-                    <Row>
-                        <Col xs={12} lg={8}>
-                            <div className="blog-grid-wrapper">
-                                <Row>
-                                    {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
-                                        <Col xs={12} sm={6} key={id}>
-                                            <div className="post-block">
-                                                <div className="post-thumb-block">
-                                                    <Link className="anchor" to={fields.slug}>
-                                                        <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "contain" }}/>
-                                                    </Link>
-                                                </div>
-                                                <div className="post-content-block">
-                                                    <h2 className="post-title">
-                                                        <Link className="anchor" to={fields.slug}>
-                                                            {frontmatter.title}
-                                                        </Link>
-                                                    </h2>
-                                                    <div className="post-meta-block">
-                                                        <span>By: {frontmatter.author}</span>
-                                                        <span className="divider">/</span>
-                                                        <span>{frontmatter.date}</span>
-                                                    </div>
-                                                    <Link className="readmore-btn" to={fields.slug}>
-                                                        see more <IoIosArrowRoundForward />
-                                                    </Link>
-                                                </div>
+                    <div className="news-grid-wrapper">
+                        <Row>
+                            {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+                                <Col xs={12} sm={6} lg={4} key={id}>
+                                    <div className="post-block">
+                                        <div className="post-thumb-block">
+                                            <Link className="anchor" to={fields.slug}>
+                                                <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "contain" }}/>
+                                            </Link>
+                                        </div>
+                                        <div className="post-content-block">
+                                            <h2 className="post-title">
+                                                <Link className="anchor" to={fields.slug}>
+                                                    {frontmatter.title}
+                                                </Link>
+                                            </h2>
+                                            <div className="post-meta-block">
+                                                <span>By: {frontmatter.author}</span>
+                                                <span className="divider">/</span>
+                                                <span>{frontmatter.date}</span>
                                             </div>
-                                        </Col>
-                                    ))}
-                                </Row>
-                            </div>
-                        </Col>
-                    </Row>
+                                            <Link className="readmore-btn" to={fields.slug}>
+                                                see more <IoIosArrowRoundForward />
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </Col>
+                            ))}
+                        </Row>
+                    </div>
                 </Container>
             </div>
         </NewsPageWrapper>
