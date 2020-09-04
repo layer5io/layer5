@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
@@ -22,21 +21,11 @@ const NewsSingle = ({data}) => {
             <div className="single-post-wrapper">
                 <Container>
                     <Row>
-                        <Col xs={12} lg={8}>
+                        <Col xs={12} lg={12}>
                             <Row>
                                 <Col xs={12}>
                                     <div className="single-post-block">
                                         <MDXRenderer>{body}</MDXRenderer>
-                                        <div className="post-info-block">
-                                            {/*<div className="tags">*/}
-                                            {/*    <span>Tags:</span>*/}
-                                            {/*    {frontmatter.tags && frontmatter.tags.map(tag => (*/}
-                                            {/*        <Link key={`${frontmatter.title}-${tag}`}*/}
-                                            {/*            to={`/blog/tag/${kebabCase(tag)}`}>{tag}*/}
-                                            {/*        </Link>*/}
-                                            {/*    ))}*/}
-                                            {/*</div>*/}
-                                        </div>
                                     </div>
                                 </Col>
                             </Row>
