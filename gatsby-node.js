@@ -33,6 +33,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       'src/templates/blog-list.js'
   );
 
+  const NewsPostTemplate = path.resolve(
+      'src/templates/news-single.js'
+  );
+
   const res = await graphql(`
     {
      allPosts:  allMdx(
@@ -96,7 +100,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   });
 
-
+  news.forEach(singleNews => {
+    createPage({
+      path: singleNews.fields.slug,
+      component: NewsPostTemplate,
+      context: {
+        slug: singleNews.fields.slug,
+      },
+    })
+  });
 
 };
 
