@@ -18,7 +18,7 @@ export const query = graphql`
     query allBlogs {
         allMdx(
             sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: { published: { eq: true } } }
+            filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
         ) {
             group(field: frontmatter___tags) {
                 fieldValue
