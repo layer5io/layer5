@@ -132,7 +132,7 @@ const Sidebar = ({tags}) => {
                 <ul>
                     { tags && tags.map(tag => (
                         <li key={tag.fieldValue}>
-                            <Link to={`/blogs/tag/${kebabCase(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
+                            <Link to={`/blog/tag/${kebabCase(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
                         </li>
                     ))}
                 </ul>
