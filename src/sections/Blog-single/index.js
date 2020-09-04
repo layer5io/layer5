@@ -47,7 +47,7 @@ const BlogSingle = ({data}) => {
                                                 <span>Tags:</span>
                                                 {frontmatter.tags && frontmatter.tags.map(tag => (
                                                     <Link key={`${frontmatter.title}-${tag}`}
-                                                        to={`/blogs/tag/${kebabCase(tag)}`}>{tag}
+                                                        to={`/blog/tag/${kebabCase(tag)}`}>{tag}
                                                     </Link>
                                                 ))}
                                             </div>
