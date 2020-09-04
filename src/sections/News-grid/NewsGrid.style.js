@@ -1,10 +1,10 @@
 import styled from "styled-components";
 export const NewsPageWrapper = styled.div`
 
-    .blog-list-wrapper{
+    .news-list-wrapper{
         padding: 50px 0;
     }
-    .blog-grid-wrapper{
+    .news-grid-wrapper{
         padding-bottom: 60px;
         margin-top: 80px;
     }
