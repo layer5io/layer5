@@ -35,15 +35,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const res = await graphql(`
     {
-      allMdx(
+     allPosts:  allMdx(
         filter: { frontmatter: { published: { eq: true } } }
       ) {
-        group(field: frontmatter___tags) {
-          fieldValue
-          totalCount
-        }
         nodes {
           fields {
+            collection
             slug
           }
           frontmatter {
@@ -51,7 +48,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-    }
+      blogTags: allMdx(
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+        ){
+          group(field: frontmatter___tags) {
+            fieldValue
+            totalCount
+          }
+        }
+      }
   `);
 
   // handle errors
@@ -60,39 +65,55 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  const posts = res.data.allMdx.nodes;
-  posts.forEach(post => {
+  const allNodes = res.data.allPosts.nodes;
+
+  const blogs = allNodes.filter(
+      node => node.fields.collection === `blog`
+  );
+
+  const news = allNodes.filter(
+      node => node.fields.collection === `news`
+  );
+
+  blogs.forEach(blog => {
     createPage({
-      path: post.fields.slug,
+      path: blog.fields.slug,
       component: blogPostTemplate,
       context: {
-        slug: post.fields.slug,
+        slug: blog.fields.slug,
+      },
+    })
+  });
+  const BlogTags = res.data.blogTags.group;
+  BlogTags.forEach(tag => {
+    createPage({
+      path: `/blog/tag/${_.kebabCase(tag.fieldValue)}`,
+      component: blogListTemplate,
+      context: {
+        tag: tag.fieldValue,
+        allTags: BlogTags
       },
     })
   });
 
-  const tags = res.data.allMdx.group;
-  tags.forEach(tag => {
-    createPage({
-      path: `/blogs/tag/${_.kebabCase(tag.fieldValue)}`,
-      component: blogListTemplate,
-      context: {
-        tag: tag.fieldValue,
-        allTags: tags
-      },
-    })
-  })
+
 
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
-    const value = createFilePath({ node, getNode });
+    const collection = getNode(node.parent).sourceInstanceName;
+    const slug = `/${collection}/${_.kebabCase(node.frontmatter.title)}`;
+    createNodeField({
+      name: "collection",
+      node,
+      value: collection
+    });
     createNodeField({
       name: `slug`,
       node,
-      value,
-    })
+      value: slug,
+    });
   }
 };
