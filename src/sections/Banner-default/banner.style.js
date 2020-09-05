@@ -51,9 +51,6 @@ const BannerSectionWrapper = styled.section`
     .banner-btn+.banner-btn{
         margin-left: 30px;
     }
-    .vintage-box{
-        
-        }
     @media only screen and (max-width: 912px) {
         margin: 50px 0 0 0;
         background-size: 40%;

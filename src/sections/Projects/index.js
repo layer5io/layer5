@@ -25,15 +25,15 @@ const Projects = () => {
                                 <div className="project__block__inner">
                                     <img src={projectImage1} alt="appion project" />
                                     <h3>Landscape</h3>
-                                    <p>Ecosystem</p>
+                                    <p>Service Mesh Ecosystem</p>
                                     <Link to="#">
                                         <img src={Icon} alt="appion app" />
                                     </Link>
                                 </div>
                                 <div className="project__block__inner">
                                     <img src={projectImage2} alt="appion project" />
-                                    <h3>Performance</h3>
-                                    <p>News Feed</p>
+                                    <h3>Service Mesh Performance</h3>
+                                    <p>The Standard Measurement</p>
                                     <Link to="#">
                                         <img src={Icon} alt="appion app" />
                                     </Link>
@@ -43,16 +43,16 @@ const Projects = () => {
                                 <div className="project__block__inner">
                                     <img src={projectImage3} alt="appion project" />
                                     <h3>Meshery</h3>
-                                    <p>Management</p>
+                                    <p>Service Mesh Management</p>
                                     <Link to="#">
                                         <img src={Icon} alt="appion app" />
                                     </Link>
                                 </div>
                                 <div className="project__block__inner">
-                                    <img src={projectImage4} alt="appion project" />
-                                    <h3>twitter</h3>
-                                    <p>News Feed</p>
-                                    <Link to="#">
+                                    <img src={projectImage4} alt="Business logic in the service mesh data plane" />
+                                    <h3>Image Hub</h3>
+                                    <p>WebAssembly Filters</p>
+                                    <Link to="/projects/image-hub">
                                         <img src={Icon} alt="appion app" />
                                     </Link>
                                 </div>
@@ -65,16 +65,14 @@ const Projects = () => {
                             leftAlign={true}
                             UniWidth="100%"
                         >
-                            <h4>Project</h4>
+                            <h4>Projects</h4>
 
                             <h2>
-                                <span>Uses for this app </span> In the perfect project.
+                                Operate any service mesh <span>with confidence</span>.
                             </h2>
                         </SectionTitle>
                         <p className="project-text">
-              One differences leaders, management-science so, best treat. Still
-              problems upper and anger devoting out. With hiding their boss
-              phase drops. A strenuous in ticket get write it by proposal.
+                        Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. 
                         </p>
                         <VintageBox
                             right={true}

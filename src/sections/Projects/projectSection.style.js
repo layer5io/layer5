@@ -2,7 +2,15 @@ import styled from "styled-components";
 
 const ProjectItemWrapper = styled.section`
     padding: 100px 0 110px 0;
-    .project-text{
+    .project-btn {
+        background: #00b39f;
+        color: #fff;
+        &:hover{
+            background: #5cccb6;
+            color: #326d62;
+        }
+    }
+    .project-text {
         font-weight: 300;
         margin-bottom: 80px;
         margin-top: 0;
