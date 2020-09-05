@@ -42,7 +42,7 @@ const NewsGrid = ({data}) => {
                                             </Link>
                                             {frontmatter.eurl && (
                                                 <a className="readmore-btn" href={frontmatter.eurl}>
-                                                     <BiLinkExternal />
+                                                    <BiLinkExternal />
                                                 </a>
                                             )}
                                         </div>
