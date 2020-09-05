@@ -37,7 +37,6 @@ const BannerSectionWrapper = styled.section`
         &:hover{
             background: #EAD07D;
             color: #333;
-            
         }
     }
     .banner-btn.two{
