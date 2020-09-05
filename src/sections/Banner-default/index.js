@@ -22,15 +22,13 @@ const BannerDefault = () => {
                             leftAlign={true}
                             UniWidth="100%"
                         >
-                            <h4>30% off for new users for 1 month</h4>
+                            <h4>The Service Mesh Company</h4>
                             <h1>
-                Drive Customers Passing Your Appslife With <span>Appion</span>
+                            representing every <span>every</span> service mesh
                             </h1>
                         </SectionTitle>
                         <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad
-              minim veniam quis nostrud exercitation.
+                        The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
                         </p>
                         <VintageBox right={true} vintageOne={true}>
                             <Button className="banner-btn one">
