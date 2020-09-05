@@ -4,7 +4,7 @@ const theme = {
     primaryColor: "#3c494f",
     primaryLightColor: "#EEE6FA",
     primaryLightColorTwo: "#00d3a9",
-    secondaryColor: "#FB7B81", 
+    secondaryColor: "#828c8c", 
     secondaryLightColor: "#FFEBEC",
     tetriaryColor: "#00d3a9",
     headingColor: "#111111", 

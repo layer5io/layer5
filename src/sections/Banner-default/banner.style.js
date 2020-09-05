@@ -6,7 +6,7 @@ const BannerSectionWrapper = styled.section`
     padding: 190px 0 120px 0;
     margin: 80px 0 0 0;
     background: url(${imgHero}) no-repeat;
-    background-size: 50%;
+    background-size: 40%;
     background-position: center right 35px;
     p{
         font-size: 16px;
@@ -15,7 +15,7 @@ const BannerSectionWrapper = styled.section`
     }
     h4{
         margin-bottom: 8px;
-        font-size: 18px;
+        font-size: 1.5em;
         color: ${props => props.theme.secondaryColor};
         text-transform: uppercase;
     }
@@ -32,28 +32,31 @@ const BannerSectionWrapper = styled.section`
         
     }
     .banner-btn.one{
-        background: #8A57DE;
+        background: #EBC017;
         color: #fff;
         &:hover{
-            background: #EEE6FA;
-            color: #8A57DE;
+            background: #EAD07D;
+            color: #333;
+            
         }
     }
     .banner-btn.two{
-        background: #FFEBEC;
-        color: #FB7B81;
+        background: #5cccb6;
+        color: #326d62;
         &:hover{
-            background: #FB7B81;
+            background: #00b39f;
             color: #fff;
         }
     }
     .banner-btn+.banner-btn{
         margin-left: 30px;
     }
-    
+    .vintage-box{
+        
+        }
     @media only screen and (max-width: 912px) {
-        margin: 30px 0 0 0;
-        background-size: 57%;
+        margin: 50px 0 0 0;
+        background-size: 40%;
         padding: 120px 0 60px 0;
         .section-title{
             h1{
@@ -77,6 +80,7 @@ const BannerSectionWrapper = styled.section`
      }
      @media only screen and (max-width: 760px) {
         padding: 130px 0 60px 0;
+        background-size: 30%
      }
      @media only screen and (max-width: 568px) {
         background: none;
@@ -99,7 +103,7 @@ const BannerSectionWrapper = styled.section`
          }
      }
      @media only screen and (max-width: 380px) {
-       
+
         .section-title{
             h1{
                 font-size: 30px;
@@ -116,7 +120,7 @@ const BannerSectionWrapper = styled.section`
             padding: 14px 12px; 
         }
         .banner-btn+.banner-btn{
-            margin-left: 15px;
+            margin-left: 115px;
         }
      }
      @media only screen and (max-width: 330px) {
