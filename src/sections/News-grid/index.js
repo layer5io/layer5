@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import Image from "../../components/image";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { BiLinkExternal } from "react-icons/bi";
+
 import { Container, Row, Col } from "../../reusecore/Layout";
 
 import PageHeader from "../../reusecore/PageHeader";
@@ -38,6 +40,11 @@ const NewsGrid = ({data}) => {
                                             <Link className="readmore-btn" to={fields.slug}>
                                                 see more <IoIosArrowRoundForward />
                                             </Link>
+                                            {frontmatter.eurl && (
+                                                <a className="readmore-btn" href={frontmatter.eurl}>
+                                                     <BiLinkExternal />
+                                                </a>
+                                            )}
                                         </div>
                                     </div>
                                 </Col>
