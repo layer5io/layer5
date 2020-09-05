@@ -29,7 +29,6 @@ const BannerSectionWrapper = styled.section`
                 font-weight: 600;
             }
         }
-        
     }
     .banner-btn.one{
         background: #EBC017;
