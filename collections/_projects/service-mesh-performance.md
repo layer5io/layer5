@@ -104,5 +104,4 @@ justify-content: flex-start center">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/rgnb0-ntPko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p><i>Discreetly Studying the Effects of Individual Traffic Control Functions - Lee Calcote & Prateek Sahu</i></p>
   </div>
-
 </div>
