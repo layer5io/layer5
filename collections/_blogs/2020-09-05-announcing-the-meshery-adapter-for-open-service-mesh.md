@@ -9,9 +9,9 @@ permalink: /blog/:categories/:title
 ---
 <h2 class="center" style="color:#666;font-size:1.25em;"> Adding another service mesh to the landscape and another adapter to Meshery</h2>
 
-[Open Service Mesh (OSM)](https://openservicemesh.io/) was released on August 5th by Microsoft. <img class="image-right" src="/assets/images/posts/2020-09-05-announcing-the-meshery-adapter-for-open-service-mesh/meshery-adapter-for-open-service-mesh.png" />Boasting some highly recommendable features, including but not limited to being open-source, lightweight, and SMI conformant, OSM is a welcome addition to the meshiness going around in the service mesh community.
-With its own control plane and a data plane built by exacting Envoy APIs, OSM is aimed to be a holistic, community-led approach to service meshes, that can be seen as a direct implementation of the SMI specification. 
-Drawing lessons from existing service mesh projects, the central goal is providing an effortless way for Kubernetes operators to install, maintain and run service meshes without having to make the seemingly difficult choice of choosing one from the long list of available options in the market.
+[Open Service Mesh (OSM)](https://openservicemesh.io/) was released on August 5th by Microsoft. <img class="image-right" src="/assets/images/posts/2020-09-05-announcing-the-meshery-adapter-for-open-service-mesh/meshery-adapter-for-open-service-mesh.png" />Boasting some highly recommendable features, including but not limited to being open-source, lightweight, and SMI conformant, OSM is an exciting, contemporary addition to the service mesh community.
+With its own control plane and a data plane built by exacting Envoy APIs, OSM is aimed to be a holistic approach to service meshes, that can be seen as a direct implementation of the SMI specification. 
+Drawing lessons and code from existing service mesh projects, the central goal is providing an effortless way for Kubernetes operators to install, maintain and run service meshes without having to make the seemingly difficult choice of choosing one from the long list of available options in the market.
 
 First pronounced to be SMI compliant by [Meshery](https://meshery.io/), the service mesh management plane, the first release of OSM supports a myriad of basic features:
 
