@@ -24,6 +24,7 @@ export const query = graphql`
                     title
                     date(formatString: "Do MMMM YYYY")
                     author
+                    eurl
                     thumbnail{
                         childImageSharp{
                             fluid(maxWidth: 1000){
