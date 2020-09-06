@@ -11,27 +11,12 @@
 
 </div> -->
 
-    <div style="display: flex; justify-content: flex-start;">
+    <div style="display: flex; justify-content:center;">
         <h4 class="black-text center" style="font-size: 1.5rem;">
-            KubeCon EU 2020
-            <p />
-            <p style="padding: 10px; color: #333; font-size: 0.9em;">
-                Discreetly Studying the Effects of Individual Traffic Control
+            Discreetly Studying the Effects of Individual Traffic Control
                 Functions
-            </p>
-        </h4>
-
-        <div style="margin: auto;">
-            <img
-                src="/assets/projects/smp/kubecon-eu/Lee Calcote - Prateek Sahu - KubeCon EU 2020.jpg"
-                class="light-shadow"
-                style="margin: auto; min-width: 145px; height: 225px;"
-            />
-        </div>
-    </div>
-
-    <div style="display: flex; justify-content: flex-start; margin-top:20px">
-        <iframe
+            <p />
+            <iframe
             style="margin: auto;"
             width="560"
             height="315"
@@ -39,15 +24,27 @@
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-        ></iframe>
-    </div>
+        ></iframe>        
+                <p style="font-size: 1rem;"><i>KubeCon EU 2020 - Lee Calcote & Prateek Sahu</i></p>
+        </h4>
 
-    <div style="display: flex; justify-content: flex-start;">
+        <!-- <div style="margin: auto;">
+            <img
+                src="/assets/projects/smp/kubecon-eu/Lee Calcote - Prateek Sahu - KubeCon EU 2020.jpg"
+                class="light-shadow"
+                style="margin: auto; min-width: 145px; height: 225px;"
+            />
+        </div> -->
+    </div> 
+
+        <div style="display: flex; justify-content: flex-start;">
+            
         <div
             class="row"
-            style="vertical-align: bottom; margin: auto; padding-top: 60px;"
-        >
-            <p>
+            style="vertical-align: bottom; margin: auto;"
+        ><h5 class="black-text">Performance of Envoy Filters</h5>
+        The following analysis compares native Envoy filter performance to WebAssembly (WASM) filter performance using Rust.
+        <p>
                 <a
                     href="/assets/projects/smp/kubecon-eu/native-and-wasm-at-capacity-100rps.png"
                     ><img
@@ -59,8 +56,8 @@
                             height: 300px;
                         " /></a
                 ><br />
-                <b>Native-WASM at Cap:</b> <br />When every request goes via the
-                rate-lim check and then the actual program logic, we see that
+                <b>Native WASM at Capacity:</b> <br />When every request goes via the
+                rate-limit check and then the actual program logic, we see that
                 the latency incurred for the WASM code is higher than the Native
                 client. This is expected since the native client has processing
                 for rate-limiting locally in a process whereas the rust module

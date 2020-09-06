@@ -95,7 +95,7 @@ justify-content: flex-start center">
       webkitallowfullscreen="true"></iframe>
       <p><i>Participate in the CNCF Service Mesh Performance Working Group</i></p>
   </div>
-<div
+<!-- <div
     class="col s12 m6"
     style="
       display: flex; height: auto; flex-direction: column;
@@ -103,5 +103,5 @@ justify-content: flex-start center">
       position: relative;">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/rgnb0-ntPko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p><i>Discreetly Studying the Effects of Individual Traffic Control Functions - Lee Calcote & Prateek Sahu</i></p>
-  </div>
+  </div> -->
 </div>
