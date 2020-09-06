@@ -3,7 +3,8 @@ layout: post
 date:   2020-07-20 08:00:00 +0000
 image: /assets/images/meshery/meshery-text-dark.png
 author: Kush Trivedi
-
+title: Announcing Meshery v0.4.0
+categories: meshery
 ---
 <style>
 .meshery-list-item {
@@ -16,33 +17,61 @@ author: Kush Trivedi
         width: 20px;
         float:left;
 }
+.meshery-li-item {
+        margin-left: 25px;
+        font-style: italic;
+}
+.meshery-indent {
+        margin-left: 30px;
+}
 </style>
 <img src="/assets/images/meshery/meshery-dark-tag-text.png"
         alt="The service mesh management plane"
         style="width:35%;float:left;margin-right:10px;margin-bottom:10px;"/>
 
-[Meshery](https://meshery.io) is the multi-service mesh management plane offering lifecycle, configuration and performance management of service meshes and their workloads.
+[Meshery](https://meshery.io) is the service mesh management plane offering lifecycle, configuration and performance management of service meshes and their workloads.
 
-Here at Layer5, the community members and developers are hard at work with a singular aim - providing our users with better and easy access to our analysis tools. 
-New releases for Meshery are published from time to time, with new and improved features, bug fixes, performance improvisations and much more. This is a short summary to shine a light on the latest developments and elucidate any new features.
+Layer5 community members are hard at work providing our users with easy access to any service mesh and myriad management features. New releases for Meshery are published on a frequent cadence with new features and bug fixes. Today, we are announcing version 0.4.0 of Meshery. This summary highlights Meshery's latest developments and elucidates new features.
 
 ## What's New?
 
-We present to you Meshery v0.4.0. This release introduces a plethora of new features and bug fixes across service mesh environments, including Meshery and it's various adapters.
+The v0.4.0 release of Meshery introduces a plethora of new features and bug fixes across service mesh environments spanning Meshery and it's various adapters.
 
-#### Mesheryctl
-
-<div class="meshery-list-item"></div>
-Mesheryctl has a new and improved command structure. We have switched to a more categoric set of command groups to make mesheryctl functions and features more intuitive and consequently, easier to use. See the new <a href="https://github.com/layer5io/meshery/pull/1021#issuecomment-630257536">command structure</a>.
+#### Meshery's CLI: `mesheryctl`
 
 <div class="meshery-list-item"></div>
-Introduction of new performance sub-commands, now benchmark your service mesh at the tip of your fingers using our new CLI command **Performance**.
+
+**New Command Structure** 
+
+`mesheryctl` commands and subcommands have been restructured in v.4.0 into the categories:
+
+<ul>
+<li class="meshery-li-item">Global Commands and Flags</li>
+<li class="meshery-li-item">Meshery Lifecycle Management</li>
+<li class="meshery-li-item">Performance Management</li>
+<li class="meshery-li-item">Service Mesh Lifecycle Management</li>
+<li class="meshery-li-item">Workload Lifecycle Management</li>
+</ul>
+
+<p class=".meshery-indent">Organizing commnands <a href="https://meshery.layer5.io/docs/guides/mesheryctl">under these categories</a> is done with both the intention to make `mesheryctl` functions intuitively at your fingertips, but also to make room for forthcoming functionality.</p>
 
 <div class="meshery-list-item"></div>
-Support extended to Scoop Bucket. You can now install mesheryctl on your Windows machine with scoop bucket. To see more on installation guide, visit [here](https://meshery.layer5.io/docs/installation#scoop)
+
+**Exposing Performance Management in the CLI**
+
+<p class=".meshery-indent"><code>perf</code>: a new <code>mesheryctl</code> command. Introduction of new performance sub-commands, now benchmark your service mesh at the tip of your fingers using our new CLI command <code>perf</code>.</p>
 
 <div class="meshery-list-item"></div>
-Cleanup command has been changed to reset.
+
+**Support for Scoop** 
+
+Support extended to Scoop Bucket. You can now install mesheryctl on your Windows machine with scoop bucket. Visit the Meshery guideTo see more on installation guide, visit [here]()
+
+<div class="meshery-list-item"></div>
+
+**Rename `cleanup` to `reset`**
+
+The `cleanup` is used to reset your Meshery deployment configuration back to its default settings. This command has been renamed to `reset` to more appropriately reflect its purpose.
 
 #### Security & Authentication
 
