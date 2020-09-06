@@ -3,33 +3,32 @@ import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { graphql } from "gatsby";
 
 import Navigation from "../sections/Navigation";
-import BlogList from "../sections/Blog-list";
+import NewsPage from "../sections/News-grid";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
-import {graphql} from "gatsby";
 
 export const query = graphql`
-    query BlogsByTags($tag: String!) {
+    query allNews {
         allMdx(
             sort: { fields: [frontmatter___date], order: DESC }
-            filter: { fields: { collection: { eq: "blog" } }, frontmatter: { tags: { in: [$tag] }, published: { eq: true } } }
+            filter: { fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } } }
         ) {
-            totalCount
             nodes {
                 id
                 frontmatter {
                     title
-                    subtitle
                     date(formatString: "Do MMMM YYYY")
                     author
+                    eurl
                     thumbnail{
                         childImageSharp{
                             fluid(maxWidth: 1000){
-                                ...GatsbyImageSharpFluid
+                                ...GatsbyImageSharpFluid_withWebp
                             }
                         }
                         extension
@@ -44,15 +43,15 @@ export const query = graphql`
     }
 `;
 
-const BlogListPage = ({ pageContext, data }) => (
+const NewsGridPage = ({data}) => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="Blog | Layer5 - The Service Mesh Company" />
+            <SEO title="News | Layer5 - The Service Mesh Company" />
             <Navigation />
-            <BlogList data={data} pageContext={pageContext} />
-            <Footer />
+            <NewsPage data={data}/>
+            <Footer/>
         </Layout>
     </ThemeProvider>
 );
-export default BlogListPage;
+export default NewsGridPage;
