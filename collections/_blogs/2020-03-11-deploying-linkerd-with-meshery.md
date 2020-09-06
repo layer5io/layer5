@@ -1,15 +1,17 @@
 ---
 layout: post
-title:  "Deploying Linkerd with Meshery"
-date:   2020-03-11 08:15:05 +0000
+title: "Deploying Linkerd with Meshery"
+date: 2020-03-11 08:15:05 +0000
 image: /assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/Linkerd-with-Meshery.png
 author: Ant Weiss
 permalink: /blog/deploying-linkerd-with-meshery
 ---
+
 <style>ul, li { list-style-type: circle; }
 </style>
 
 <span class="starting-letter">I</span>t’s no secret that service mesh tech is boiling hot. Microservice architectures brought on as many challenges as they have advantages. With operational complexity being one of the most acute pains. Service meshes do offer solutions to a number of these operational concerns. Including but not limited to: resilience, improved observability, security and advanced service discovery.
+
 <div class="row">
   <div class="col m8">
 
@@ -20,7 +22,8 @@ permalink: /blog/deploying-linkerd-with-meshery
 </div>
 But with so many mesh options around - how do we choose, evaluate and compare them? And once we’ve chosen a solution - how do we make it accessible to all our engineers? It is to provide an answer to these questions that the Layer5 community has created <a href="/meshery">Meshery</a>, the open-source, service mesh management plane. Meshery already supports a number of leading mesh providers with adapters for additional meshes on the way. In today’s video, I’ll show how to use Meshery for rolling out and evaluating Linkerd.
 
- Linkerd is a system that comes from the service mesh pioneers - the company called Buoyant. They were the first to realise the need for a distributed network of smart, centrally configured proxies and coin the term “service mesh” back in 2016. Today, we’ll be looking at Linkerd 2.x - the second generation of this now CNCF project.
+Linkerd is a system that comes from the service mesh pioneers - the company called Buoyant. They were the first to realise the need for a distributed network of smart, centrally configured proxies and coin the term “service mesh” back in 2016. Today, we’ll be looking at Linkerd 2.x - the second generation of this now CNCF project.
+
 </div>
 <div class="text editable pull-right table-2">
 <h5 class="black-text">Meshery Adapters</h5>
@@ -81,7 +84,7 @@ But with so many mesh options around - how do we choose, evaluate and compare th
         </tr>
         <tr>
             <td><a href="https://github.com/layer5io/meshery-kuma">
-                <img src='https://pbs.twimg.com/profile_images/1171109603158843392/bV2M7l39_400x400.jpg' alt='Kuma Service Mesh' class="adapter-logo">Meshery adapter for Kuma</a>
+                <img src='/assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/Kuma.svg' alt='Kuma Service Mesh' class="adapter-logo">Meshery adapter for Kuma</a>
             </td>
         </tr><tr>
         </tr>

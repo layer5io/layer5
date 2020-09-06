@@ -2,6 +2,7 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+.cache
 serve
 Gemfile.lock
 .DS_Store

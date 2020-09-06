@@ -6,53 +6,55 @@ In collaboration with Google, Layer5 is advancing the state of the industry thro
 author:
   twitter: layer5
 image:
-  path: /assets/images/buttons/smps.png
+  path: /assets/projects/distributed-performance/distributed-performance_white.svg
   width: 1200
-thumbnail: /assets/images/buttons/smps_white.svg
+thumbnail: /assets/projects/distributed-performance/distributed-performance_white.svg
 lang: en
 permalink:
-visibility: hide
-link: /service-mesh-distributed-performance-management
+link: /projects/service-mesh-distributed-performance-management
 redirect_from: distributed-performance
 
 ---
-<div class="row" id="smi" >
-  <div class="col m6">
-    <h3>
-      Purpose and Overview
-    </h3>
-    <p>The scope of this initiative includes all service mesh projects participating in the Service Mesh Interface specification. It’s important to acknowledge that conformance consists of both capabilities and compliance status. 
-    </p>
-    <h4>Project Goals</h4>
-    <ul>
-      <li>Provide users with a compatibility matrix identifying the SMI features that are supported per service mesh.</li>
-      <li>An easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.</li>
-    </ul>
-    <h4>Project Objectives
-    </h4>
-    <ul>
-      <li>Define what it means to be in conformance with the SMI specifications. </li>
-      <li>Define a set of conformance tests and  what behavior is expected of a conforming service mesh implementation.</li>
-      <li>Built into each participating service mesh project’s release tooling.</li>
-    </ul>
-    <h4>Validating Conformance</h4>
-<p>Conformance to SMI specifications will be done through use of a service mesh’s workload. A sample application is used as the workload to test.</p>
-<h5>Sample Application</h5>
-<p>To facilitate a common set of tests, a sample application has been developed for purposes of providing a consistent workload to apply SMI specs against. 
-  A deployment of the <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> sample application being fitted to each service mesh.</p>
-  </div>
-  <div class="col m6">
-    <div style="text-align: center; padding: 0; margin: 0;">
-      <img
-        src="/assets/images/buttons/servicemeshinterface-icon-color.svg"
-        width="50%"
-      />
-      <h5 style="text-align:center;color:aliceblue;">
-        <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
-          class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow"
-          href="/meshery/#getting-started">Run SMI Conformance</a> 
-        </h5>
-    </div>
+<img src="/assets/projects/distributed-performance/distributed-performance_green.svg" 
+  style="float:left; width:30%;margin-right:15px;margin-bottom:15px;" />
 
-  </div>
-</div>
+<h3>Purpose and Overview</h3>
+
+Distributed load testing offers insight into system behaviors that arguably more accurately represent real world behaviors of services under load as that load comes from any number of sources. 
+
+<h4>Project Aim</h4>
+
+The main aim of this project is to enhance the current load generation and analysis technique of Nighthawk to include distributed load testing which may ultimately benefit the meshery to directly adopt the distributed load generation.
+
+<h4>Project Goals</h4>
+<ul>
+  <li>Identifying the use-cases of Nighthawk. Working with the nighthawk team to successfully enable distributed load generation in nighthawk..</li>
+  <li>Integrating the Nighthawk into the Meshery server and improving the load handling for Nighthawk using the same.</li>
+  <li>Handling of the report and displaying mechanisms at the client-side.</li>
+  <li>Testing & Debugging the Load Generator & finishing the implementation on Nighthawk.
+</li>
+</ul>
+<h4>Need for the Project</h4>
+
+<img src="/assets/projects/distributed-performance/envoy-stacked-color.svg"
+  align="right" style="width:30%;margin-left:10px;" />
+  
+  Currently, Meshery which is a multi-service mesh management plane which can operate & adapt to various different service meshes only supports a single way load testing. Understanding the need to support a variety of performance testing scenarios, Meshery has been equipped with a load generator interface as a point of extensibility to support the use of different load generators (see <a href="https://meshery.layer5.io/docs/extensibility">Meshery Extensibility</a> documentation). Meshery Load Generation currently has been equipped with support for both wrk2 and fortio, neither of which support distributed load testing.
+
+
+
+<h4>Why NightHawk</h4>
+
+Nighthawk is a versatile HTTP load testing tool built out of a need to drill HTTP services with a constant request rate. It can be used both as a command-line utility and a library.
+
+<h4>Contributors</h4>
+
+This project is being developed by Kush Trivedi as a Google Summer of Code project with the CNCF and in collaboration with Layer5 and Google.
+
+<strong>
+<a href="https://docs.google.com/document/d/1_hhQ5w1iLClgf7RvboI6il-eMKKAVPwz50GHm2VN4Bg/edit#">Here</a> is the design document which is under review for invoking distributed load generation & performance benchmarking using nighthawk.
+</strong>
+<h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
+  Jump into the <a href="http://slack.layer5.io">#performance channel</a> to learn more about this initative.
+</h5>
+

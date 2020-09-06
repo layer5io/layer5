@@ -9,17 +9,22 @@
     - name: Landscape
       link: /landscape
       new_window: false
-    - name: Service Mesh Performance Specification
-      link: /performance
+    - name: Service Mesh Performance
+      link: /projects/service-mesh-performance
       new_window: false
+      external: false      
+    - name: Distributed Performance Management
+      link: /projects/service-mesh-distributed-performance-management
+      new_window: false
+      external: false
     - name: Service Mesh Interface Conformance
-      link: /service-mesh-interface
-      new_window: true    
-      external: true        
-    - name: WebAssembly - Image Hub
-      link: https://github.com/layer5io/image-hub
-      new_window: true    
-      external: true  
+      link: /projects/service-mesh-interface
+      new_window: false
+      external: false
+    - name: "Image Hub: Envoy Filters with WebAssembly"
+      link: /projects/image-hub
+      new_window: false
+      external: false
 - name: Community
   new_window: false
   highlight: false

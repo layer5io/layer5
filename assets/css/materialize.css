@@ -2364,8 +2364,9 @@ background: linear-gradient(to right, #f5af19, #f12711); W3C, IE 10+/ Edge, Fire
   /* background: rgb(60,73,79); */
   background: linear-gradient(to left, 
   rgba(60,73,79,1) 10%, 
-  rgba(159,191,205,1) 35%, 
+  rgba(127,135,139,1) 35%, 
   rgba(60,73,79,1) 80%); 
+  /*  rgba(159,191,205,1) 35%, */
 
   /* background-color: var(--main-grey); */
   a: var(--main-light-blue);
@@ -2558,7 +2559,7 @@ sub {
  * Remove border when inside `a` element in IE 8/9/10.
  */
 img {
-  border: 0;
+  border: 1;
 }
 
 /**
@@ -3096,7 +3097,6 @@ ul.staggered-list li {
   display: flex;
   flex-wrap: nowrap;
   position: absolute;
-  bottom: 10%;
   margin: auto;
 }
 
@@ -3105,8 +3105,8 @@ ul.staggered-list li {
 }
 
 .comm ul li a {
-  width: 80px;
-  height: 80px;
+  width: 55px;
+  height: 55px;
   background-color: rgb(255, 255, 255);
   text-align: center;
   line-height: 120px;
@@ -3159,41 +3159,41 @@ ul.staggered-list li {
 .comm_icon_meeting{
   position: relative;
   z-index: 10;
-  width: 45px;
+  width: 33px;
   vertical-align: top;
-  padding-top: 15px;
+  padding-top: 9px;
 }
 
 .comm_icon_youtube{
   position: relative;
   z-index: 10;
-  width: 45px;
+  width: 35px;
   vertical-align: top;
-  padding-top: 15px;
+  padding-top: 7px;
 }
 
 .comm_icon_calendar{
   position: relative;
   z-index: 10;
-  width: 35px;
+  width: 25px;
   vertical-align: top;
-  padding-top: 15px;
+  padding-top: 9px;
 }
 
 .comm_icon_drive{
   position: relative;
   z-index: 10;
-  width: 45px;
+  width: 30px;
   vertical-align: top; 
-  padding-top: 13px;
+  padding-top: 9px;
 }
 
 .comm_icon_slack{
   position: relative;
   z-index: 10;
-  width: 65px;
+  width: 47px;
   vertical-align: top;
-  padding-top: 5px;
+  padding-top: 1px;
 }
 
 .tooltip .tooltiptext {
@@ -3207,7 +3207,7 @@ ul.staggered-list li {
 
   /* Position the tooltip */
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   top: 100%;
   left: 50%; 
   margin-left: -60px;
@@ -3215,6 +3215,16 @@ ul.staggered-list li {
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
+}
+
+.show {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.hiddn {
+  display: none;
 }
 
 /*********************
@@ -3529,7 +3539,7 @@ thead {
 td, th {
   padding: 15px 5px;
   display: table-cell;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
   border-radius: 2px;
 }
@@ -10034,3 +10044,285 @@ div.slack {
     background-repeat: no-repeat; 
     background-image: url(/assets/images/slack.svg); 
   }
+
+/* Mesh Timeline
+   ========================================================================== */
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 750px;
+  margin: 0 auto 50px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 46.7%;
+  top: -25px;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid #39D3A9;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.img-style0, .img-style1 {
+  width: 75px;
+  height: 70px;
+}
+
+.img-style1 {
+  float: right;
+  margin: -5px 0 0 5px;
+}
+
+.img-style0 {
+  float: left;
+  margin: -5px 5px 0 0;
+}
+
+/* data-cont around content */
+.data-cont {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  margin-bottom: -75px;
+}
+
+/* The circles on the timeline */
+.data-cont::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -18px;
+  background-color:#3B494F;
+  border: 4px solid #39D3A9;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the data-cont to the left */
+.arr1 {
+  left: -5px;
+}
+
+/* Place the data-cont to the right */
+.arr0 {
+  left: 50%;
+}
+
+/* Add arrows to the left, right data-cont (pointing right) */
+.arr1::before, .arr0::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 18px;
+  width: 0;
+  z-index: 1;
+  border: medium solid white;
+}
+
+.arr1::before {
+  right: 30px;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.arr0::before {
+  left: 30px;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for data-conts on the right side */
+.arr0::after {
+  left: -12px;
+}
+
+/* The actual content */
+.content0, .content1 {
+  padding: 5px 15px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+.content1 {
+  text-align: right;
+}
+
+.mesh-name {
+  font-size: 30px;
+  margin: 10px 0 0;
+}
+
+.mesh-ann-date {
+  font-size: 20px;
+  margin: 10px 0 5px;
+}
+
+.meshname-img {
+  height: 90px;
+}
+
+@media screen and (max-width: 850px) {
+
+  .data-cont {
+    margin-bottom: -70px;
+  }
+
+  .meshname-img {
+    height: 65px;
+  }
+
+  .mesh-name {
+    font-size: 24px;
+  }
+
+  .mesh-ann-date  {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .timeline::before {
+    left: 46.4%;
+  }
+
+  .data-cont {
+    margin-bottom: -65px;
+  }
+
+  .meshname-img {
+    height: 60px;
+  }
+
+  .mesh-name {
+    font-size: 20px;
+  }
+
+  .mesh-ann-date  {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  
+  .timeline {
+    margin: 0 auto;
+  }
+
+  .timeline::after {
+    left: 55px;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+  .data-cont {
+    width: 70%;
+    padding-left: 100px;
+    padding-right: 25px;
+    margin-bottom: 0px;
+  }
+
+  .data-cont::before {
+    left: 90px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  .arr0::after, .arr1::after {
+    left: 42px;
+  }
+  
+  .arr0, .arr1 {
+    left: 0;
+  }
+
+  .meshname-img {
+    height: 40px;
+  } 
+
+  .img-style0, .img-style1 {
+    width: 40px;
+    height: 35px;
+  }
+
+  .img-style1 {
+    float: left;
+    margin: -5px 5px 0 0;
+  }
+  
+  .mesh-name {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .mesh-ann-date  {
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  
+  .data-cont {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  
+  .data-cont::after {
+    width: 20px;
+    height: 20px;
+  }
+
+  .arr0::after, .arr1::after {
+    left: 45px;
+  }
+
+  .meshname-img {
+    height: 30px;
+  } 
+  
+  .mesh-name {
+    font-size: 14px;
+  }
+
+  .mesh-ann-date  {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  
+  .img-style0, .img-style1 {
+    width: 30px;
+    height: 25px;
+  }
+  
+  .mesh-name {
+    font-size: 12px;
+  }
+
+  .mesh-ann-date  {
+    font-size: 8px;
+  }
+}

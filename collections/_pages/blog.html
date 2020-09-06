@@ -1,9 +1,19 @@
 ---
 layout: default
+#title:  "Blog | Layer5"
+description: "Articles how to service mesh from the world's largest service mesh community.
+              Service mesh how-tos and cloud native ecosystem news."
+author: Lee Calcote
+twitter: layer5
+lang: en
+image:
+  path: /assets/images/layer5/layer5-logo-square.png
+  width: 1500 
+  height: 1500
 permalink: /blog
 redirect_from:
   - blog/
-image: /assets/images/layer5/layer5-tag-linkedin.png
+  - blogs/
 ---
 
-{% include collections/posts-list.html %} {% include newsletter-signup.html %}
+{% include collections/posts-list.html %} {% include newsletter-signup.html title = "no" %}
