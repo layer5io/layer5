@@ -1,8 +1,7 @@
 <br />
 <div class="post-content" style="padding: 2em;" itemprop="articleBody">
-
- <!-- <div class="col s8 m6" style="vertical-align:bottom;margin:auto;padding-top:60px;"> 
-    <img src="/assets/projects/smp/client-capacity.png" 
+    <!-- <div class="col s8 m6" style="vertical-align:bottom;margin:auto;padding-top:60px;">
+    <img src="/assets/projects/smp/client-capacity.png"
           class="light-shadow" style="margin: auto;min-width:300px;height:300px;float: left;" /><br><br>
     <img src="/assets/projects/smp/kubecon-eu/client-capacity.png" />
 
@@ -12,49 +11,149 @@
 
 </div> -->
 
-<div style="display: flex;
-    justify-content: flex-start">
+    <div style="display: flex; justify-content:center;">
+        <h4 class="black-text center" style="font-size: 1.5rem;">
+            Discreetly Studying the Effects of Individual Traffic Control
+                Functions
+            <p />
+            <iframe
+            style="margin: auto;"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/rgnb0-ntPko"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+        ></iframe>        
+                <p style="font-size: 1rem;"><i>KubeCon EU 2020 - Lee Calcote & Prateek Sahu</i></p>
+        </h4>
 
-<h4 class="black-text center" style="font-size:1.5rem">
-    KubeCon EU 2020<p />
-    <p style="padding:10px;color:#333;font-size:.9em;">Discreetly Studying the Effects of Individual Traffic Control Functions</p>
-</h4>
+        <!-- <div style="margin: auto;">
+            <img
+                src="/assets/projects/smp/kubecon-eu/Lee Calcote - Prateek Sahu - KubeCon EU 2020.jpg"
+                class="light-shadow"
+                style="margin: auto; min-width: 145px; height: 225px;"
+            />
+        </div> -->
+    </div> 
 
-  <div style="margin: auto;">
-    <img src="/assets/projects/smp/kubecon-eu/Lee Calcote - Prateek Sahu - KubeCon EU 2020.jpg" 
-    class="light-shadow" style="margin: auto;min-width:145px;height:225px;
-   " />
-  </div>
-</div>
+        <div style="display: flex; justify-content: flex-start;">
+            
+        <div
+            class="row"
+            style="vertical-align: bottom; margin: auto;"
+        ><h5 class="black-text">Performance of Envoy Filters</h5>
+        The following analysis compares native Envoy filter performance to WebAssembly (WASM) filter performance using Rust.
+        <p>
+                <a
+                    href="/assets/projects/smp/kubecon-eu/native-and-wasm-at-capacity-100rps.png"
+                    ><img
+                        src="/assets/projects/smp/kubecon-eu/native-and-wasm-at-capacity-100rps.png"
+                        class="light-shadow"
+                        style="
+                            margin: auto;
+                            min-width: 300px;
+                            height: 300px;
+                        " /></a
+                ><br />
+                <b>Native WASM at Capacity:</b> <br />When every request goes via the
+                rate-limit check and then the actual program logic, we see that
+                the latency incurred for the WASM code is higher than the Native
+                client. This is expected since the native client has processing
+                for rate-limiting locally in a process whereas the rust module
+                is invoked as an additional thread to do the processing and the
+                communication involved with the module incurs an overhead. This
+                is prominent in the minimum response time case which represents
+                latency just due to rate-limiting logic where every other part
+                of the request is already "warm". As we move towards average
+                latency, the overhead gets slightly amortized but is still above
+                the native rate-limiting case. Our max latency is slightly lower
+                than native, but we attribute it to various other system effects
+                like TLS handshake and network latencies that usually contribute
+                to the maximum tail latency.
+            </p>
+            <p>
+                <a href="/assets/projects/smp/kubecon-eu/latency-at-scale.png"
+                    ><img
+                        src="/assets/projects/smp/kubecon-eu/latency-at-scale.png"
+                        class="light-shadow"
+                        style="
+                            margin: auto;
+                            min-width: 300px;
+                            height: 300px;
+                        " /></a
+                ><br /><b>Latency at scale:</b><br />When we go beyond the
+                application capacity (100 in our example), we start noticing the
+                power of a in-line ight wasm module which starts terminating
+                requests at the side-car and the core application logic is never
+                invoked/loaded. We notice that even the minimum response time
+                for a terminated request is about 15-20% faster than invoking of
+                application logic since the wasm is a dynamic module in the
+                sidecar and we start to avoid complex network redirection and
+                invocation of a new container/instance. We also notice that the
+                average latency of requests is lower than in the case of native
+                client.
+            </p>
 
-
-<div style="display: flex; justify-content: flex-start">
-
- <div class="row" style="vertical-align:bottom;margin:auto;padding-top:60px;">
-<p> <a href="/assets/projects/smp/kubecon-eu/native-and-wasm-at-capacity-100rps.png"><img src="/assets/projects/smp/kubecon-eu/native-and-wasm-at-capacity-100rps.png" 
-    class="light-shadow" style="margin: auto;min-width:300px;height:300px;" /></a><br> <b>Native-WASM at Cap:</b> <br>When every request goes via the rate-lim check and then the actual program logic, we see that the latency incurred for the WASM code is higher than the Native client. This is expected since the native client has processing for rate-limiting locally in a process whereas the rust module is invoked as an additional thread to do the processing and the communication involved with the module incurs an overhead. This is prominent in the minimum response time case which represents latency just due to rate-limiting logic where every other part of the request is already "warm". As we move towards average latency, the overhead gets slightly amortized but is still above the native rate-limiting case. Our max latency is slightly lower than native, but we attribute it to various other system effects like TLS handshake and network latencies that usually contribute to the maximum tail latency. </p>
-<p> <a href="/assets/projects/smp/kubecon-eu/latency-at-scale.png"><img src="/assets/projects/smp/kubecon-eu/latency-at-scale.png" 
-    class="light-shadow" style="margin: auto;min-width:300px;height:300px;" /></a><br><b>Latency at scale:</b><br>When we go beyond the application capacity (100 in our example), we start noticing the power of a in-line ight wasm module which starts terminating requests at the side-car and the core application logic is never invoked/loaded. We notice that even the minimum response time for a terminated request is about 15-20% faster than invoking of application logic since the wasm is a dynamic module in the sidecar and we start to avoid complex network redirection and invocation of a new container/instance.  We also notice that the average latency of requests is lower than in the case of native client. 
-
-<p>
-    <a href="/assets/projects/smp/kubecon-eu//client-capacity.png"><img src="/assets/projects/smp/kubecon-eu//client-capacity.png" 
-        class="light-shadow" style="margin: auto;height:300px;" /></a><br><b>Client Capacity:</b><br>
-Client Capacity figure also shows us that we are able to handle more requests than in the native case, although this infometric needs to be taken with a grain of salt, i.e. the difference might reduce if our application capacity was significantly larger than 100.</p>
- </div>
-
-</div>
+            <p>
+                <a href="/assets/projects/smp/kubecon-eu//client-capacity.png"
+                    ><img
+                        src="/assets/projects/smp/kubecon-eu//client-capacity.png"
+                        class="light-shadow"
+                        style="margin: auto; height: 300px;" /></a
+                ><br /><b>Client Capacity:</b><br />
+                Client Capacity figure also shows us that we are able to handle
+                more requests than in the native case, although this infometric
+                needs to be taken with a grain of salt, i.e. the difference
+                might reduce if our application capacity was significantly
+                larger than 100.
+            </p>
+        </div>
+    </div>
 </div>
 <br />
 <div class="post-content" style="padding: 2em;" itemprop="articleBody">
+    <div class="row">
+        <div class="col s8 m6">
+            <blockquote class="twitter-tweet">
+                <p lang="en" dir="ltr">
+                    Learn more about the service mesh performance initiatives at
+                    <a href="https://twitter.com/layer5?ref_src=twsrc%5Etfw"
+                        >@layer5</a
+                    >
+                    <a href="https://t.co/hNUM4pHDqi"
+                        >https://t.co/hNUM4pHDqi</a
+                    >
+                </p>
+                &mdash; Service Mesh Performance (@smp_spec)
+                <a
+                    href="https://twitter.com/smp_spec/status/1290428583249354757?ref_src=twsrc%5Etfw"
+                    >August 3, 2020</a
+                >
+            </blockquote>
+            <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"
+            ></script>
+        </div>
 
-<div class="row">
-    <div class="col s8 m6">
-        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Learn more about the service mesh performance initiatives at <a href="https://twitter.com/layer5?ref_src=twsrc%5Etfw">@layer5</a> <a href="https://t.co/hNUM4pHDqi">https://t.co/hNUM4pHDqi</a></p>&mdash; Service Mesh Performance (@smp_spec) <a href="https://twitter.com/smp_spec/status/1290428583249354757?ref_src=twsrc%5Etfw">August 3, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div
+            class="post-content col s8 m6"
+            style="vertical-align: bottom; margin: auto; padding-top: 100px;"
+        >
+            <h5
+                class="l5-dark-grey-text"
+                style="
+                    padding-top: 25px;
+                    text-align: center;
+                    font-weight: bold;
+                "
+            >
+                Jump into the
+                <a href="http://slack.layer5.io">#SMP channel</a> to learn more
+                about these initatives.
+            </h5>
+        </div>
     </div>
-    
-    <div class="post-content col s8 m6" style="vertical-align:bottom;margin:auto;padding-top:100px;">
-        <h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
-        Jump into the <a href="http://slack.layer5.io">#SMP channel</a> to learn more about these initatives.</h5>
-    </div>
-</div>
 </div>
