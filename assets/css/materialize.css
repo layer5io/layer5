@@ -5534,28 +5534,19 @@ small {
   display: block;
 }
 
-.member-img {
-  max-width: 90%;
-  max-height: 180px;
-  width: auto;
-  height: auto;
-  text-align: center;
+.card .card-image .member-img {
+  width: 175px;
+  height: 170px;
   padding: 5%;
   margin-left: auto;
   margin-right: auto;
-}
-
-.project-card {
-  display: block;
-  height: 100%;
-  background-color: #00b39f;
 }
 
 .member-card {
   display: block;
   height: 100%;
   background-color: #00b39f;
-  height: 275px;
+  height: 270px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -5564,7 +5555,7 @@ small {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: -105px;
+  bottom: -100px;
   left: 0;
   z-index: 1;
   pointer-events: auto;
@@ -5572,8 +5563,40 @@ small {
   background-color: rgba(0,0,0,0);
 }
 
+@media only screen and (max-width:800px){
+  .card .card-image .member-img {
+    width: 160px;
+    height: 155px;
+  }
+
+  .img-link::before {
+    bottom: -115px;
+  }
+
+  .member-card {
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width:660px){
+  .card .card-image .member-img {
+    width: 140px;
+    height: 135px;
+  }
+
+  .img-link::before {
+    bottom: -135px;
+  }
+}
+
+.project-card {
+  display: block;
+  height: 100%;
+  background-color: #00b39f;
+}
+
 .person-view {
-  width: 35vw;
+  width: 30vw;
   padding: 15px 40px 5px;
   display: inline-block;
 }
@@ -5594,12 +5617,12 @@ small {
 
 @media only screen and (max-width:600px) {
   .member-card {
-    height: 26vh;
-    width: 60%;
+    height: 215px;
+    width: 55%;
   }
 
   .img-link::before {
-    bottom: -75px;
+    bottom: -80px;
   }
 
   .person-view {
@@ -5608,12 +5631,18 @@ small {
 }
 
 @media only screen and (max-width:425px) {
-  .member-card {
-    width: 75%;
-  }
-
   .person-view {
     width: 50vw;
+  }
+}
+
+@media only screen and (max-width:375px) {
+  .member-card {
+    height: 225px;
+  }
+
+  .img-link::before {
+    bottom: -90px;
   }
 }
 
