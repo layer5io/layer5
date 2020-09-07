@@ -73,6 +73,13 @@ Support extended to Scoop Bucket. You can now install mesheryctl on your Windows
 
 The `cleanup` is used to reset your Meshery deployment configuration back to its default settings. This command has been renamed to `reset` to more appropriately reflect its purpose.
 
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg" style="margin:10px;" width="125px" align="left" /></a>
+
+#### MeshSync
+
+- A component of the [Meshery Operator](https://github.com/layer5io/meshery-operator), MeshSync can scan the environment to get the deployment details of specific types of service meshes and the connected Kubernetes cluster. MeshSync is a new component addition to Meshery. Meshery needs to be constantly updated given that service meshes and their underlying infrastructure are dynamic, constantly changing.  Meshery operations should be resilient in the face of this change. 
+- MeshSync brings a service mesh agnostic object model that defines relationships between all objects under management.
+
 #### Security & Authentication
 
 - Meshery has moved from using session authentication to JWT authentication; Meshery's JWT authentication is powered by Hydra-Auth.
@@ -80,23 +87,21 @@ The `cleanup` is used to reset your Meshery deployment configuration back to its
 
 #### Meshery Server
 
-- Support provided for wrk2 as an alternative load generator.
-- Providers - A new project construct that allows users to select authentication, long-term storage etc.
-- Ad-hoc connectivity tests for Prometheus & Grafana are now supported.
+- Support provided for [wrk2 as an alternative load generator](https://meshery.layer5.io/docs/functionality/performance-management#load-generators).
+- [Providers](https://meshery.layer5.io/docs/extensibility) - A new project construct that allows users to select authentication, long-term storage etc.
+- Ad-hoc [connectivity tests for Prometheus and Grafana](https://meshery.layer5.io/docs/functionality/performance-management#grafana-and-meshery) are now supported.
 - Extraneous information beyond IP address and port in Grafana and Prometheus endpoints have been stripped off.
-
-#### MeshSync
-
-- Meshery can now scan the environment to get the deployment details of all known types of service meshes & Kubernetes cluster.
 
 #### Meshery UI
 
 - ES-Lint has been added to the client side to ensure the quality of code and increase maintainaiblity of code.
 - Cypress has been set-up to enable end-to-end tests and integration tests for Meshery UI.
 
+<div id="layer5-intro" class="card-content" style="position:relative;float:right;margin-left:35px;" ><iframe width="392" height="220.5" src="https://www.youtube.com/embed/ds9D2KgZKxo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 #### Other notable changes
 
-- We have strengthened our continuous integration (CI) actions & tests by introducing new workflows like `static check`, `vet check`, `security check` for our server code.
+- From within the [Meshery Continuous Integration Working Group](https://www.youtube.com/watch?v=ds9D2KgZKxo&list=PL3A-A6hPO2IM7rYiKxG4l3eQNc6X3IUex), we have strengthened our continuous integration (CI) actions & tests by introducing new workflows like `static check`, `vet check`, `security check` for our server code.
 - ReleaseDrafter & WelcomeBot has been added to the repository to enable automation of release notes and for welcoming new contributors, respectively.
 
 To get a more comprehensive list of the bug fixes and enhancements packaged in the v0.4.0 release, see the [Meshery Documentation](https://meshery.layer5.io/docs/project/releases).
