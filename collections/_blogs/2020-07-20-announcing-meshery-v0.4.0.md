@@ -73,7 +73,7 @@ Support extended to Scoop Bucket. You can now install mesheryctl on your Windows
 
 The `cleanup` is used to reset your Meshery deployment configuration back to its default settings. This command has been renamed to `reset` to more appropriately reflect its purpose.
 
-<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg" style="margin:10px;" width="125px" align="left" /></a>
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="/assets/images/posts/2020-07-20-announcing-meshery-v040/meshery-operator-dark.svg" style="margin:15px;" width="125px" align="left" /></a>
 
 #### MeshSync
 
