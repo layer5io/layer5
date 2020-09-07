@@ -9,10 +9,10 @@ categories: meshery
 <style>
 .meshery-list-item {
         background-image:url('/assets/images/posts/2020-08-07-announcing-meshery-v040/meshery-logo-light.svg');
-        height:1.5em;
+        height:1.75em;
         vertical-align: bottom;
         background-repeat: no-repeat;
-        padding-left: 25px;
+        padding-left: 30px;
         margin-left: 15px;
         width: 20px;
         float:left;
@@ -37,9 +37,9 @@ Layer5 community members are hard at work providing our users with easy access t
 
 The v0.4.0 release of Meshery introduces a plethora of new features and bug fixes across service mesh environments spanning Meshery and it's various adapters.
 
-#### Meshery's CLI: `mesheryctl`
+<div class="meshery-list-item"></div> 
 
-<div class="meshery-list-item"></div>
+#### Meshery's CLI: `mesheryctl`
 
 **New Command Structure** 
 
@@ -55,35 +55,45 @@ The v0.4.0 release of Meshery introduces a plethora of new features and bug fixe
 
 <p class=".meshery-indent">Organizing commnands <a href="https://meshery.layer5.io/docs/guides/mesheryctl">under these categories</a> is done with both the intention to make `mesheryctl` functions intuitively at your fingertips, but also to make room for forthcoming functionality.</p>
 
-<div class="meshery-list-item"></div>
-
 **Exposing Performance Management in the CLI**
 
 <p class=".meshery-indent"><code>perf</code>: a new <code>mesheryctl</code> command. Introduction of new performance sub-commands, now benchmark your service mesh at the tip of your fingers using our new CLI command <code>perf</code>.</p>
-
-<div class="meshery-list-item"></div>
 
 **Support for Scoop** 
 
 Support extended to Scoop Bucket. You can now install mesheryctl on your Windows machine with Scoop Bucket. Visit the [Meshery Scoop Bucket](https://github.com/layer5io/scoop-bucket) to install Meshery on Windows.
 
-<div class="meshery-list-item"></div>
-
 **Rename `cleanup` to `reset`**
 
 The `cleanup` is used to reset your Meshery deployment configuration back to its default settings. This command has been renamed to `reset` to more appropriately reflect its purpose.
 
-<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="/assets/images/posts/2020-08-07-announcing-meshery-v040/meshery-operator-dark.svg" style="margin:15px;" width="125px" align="left" /></a>
+<div class="meshery-list-item"></div>
 
 #### MeshSync
 
-- A component of the [Meshery Operator](https://github.com/layer5io/meshery-operator), MeshSync can scan the environment to get the deployment details of specific types of service meshes and the connected Kubernetes cluster. MeshSync is a new component addition to Meshery. Meshery needs to be constantly updated given that service meshes and their underlying infrastructure are dynamic, constantly changing.  Meshery operations should be resilient in the face of this change. 
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="/assets/images/posts/2020-08-07-announcing-meshery-v040/meshery-operator-dark.svg" style="margin:15px;" width="125px" align="left" /></a>
+
+- A component of the [Meshery Operator](https://github.com/layer5io/meshery-operator), MeshSync can scan the environment to get the deployment details of specific types of service meshes and the connected Kubernetes cluster. 
+- MeshSync is a new component addition to Meshery. Meshery needs to be constantly updated given that service meshes and their underlying infrastructure are dynamic, constantly changing.  Meshery operations should be resilient in the face of this change. 
 - MeshSync brings a service mesh agnostic object model that defines relationships between all objects under management.
+
+<div class="meshery-list-item"></div>
+
+#### Meshery Adapter for Citrix Service Mesh (beta)
+
+<a href="/assets/images/posts/2020-08-07-announcing-meshery-v040/Meshery-v040-Architecture.png"><img alt="Layer5 Meshery v0.4.0 Achitecture" src="/assets/images/posts/2020-08-07-announcing-meshery-v040/Meshery-v040-Architecture.png" style="margin:15px;" width="500px" align="right" /></a>
+
+- [Citrix Service Mesh](https://github.com/layer5io/meshery-cpx) is now a supported service mesh. Meshery incorporates support for the Citrix ADC CPX, which is a cloud-ready, container-based application delivery controller that can be provisioned on a Docker host.
+- CPX runs as the Istio Data Plane component, displacing Envoy as the default data plane service proxy.
+
+<div class="meshery-list-item"></div>
 
 #### Security & Authentication
 
-- Meshery has moved from using session authentication to JWT authentication; Meshery's JWT authentication is powered by Hydra-Auth.
-- You can now opt to authenticate yourself on mesheryctl while performing performance tests using mesheryctl, you can authenticate yourself by getting the JWT Token from Meshery-UI.
+- Meshery has moved from using session authentication to JWT authentication. Meshery's JWT authentication is powered by Hydra Auth.
+- You can now opt to authenticate yourself on mesheryctl while performing performance tests using `mesheryctl`, you can authenticate yourself by getting the JWT Token from Meshery UI.
+
+<div class="meshery-list-item"></div>
 
 #### Meshery Server
 
@@ -92,12 +102,16 @@ The `cleanup` is used to reset your Meshery deployment configuration back to its
 - Ad-hoc [connectivity tests for Prometheus and Grafana](https://meshery.layer5.io/docs/functionality/performance-management#grafana-and-meshery) are now supported.
 - Extraneous information beyond IP address and port in Grafana and Prometheus endpoints have been stripped off.
 
+<div class="meshery-list-item"></div>
+
 #### Meshery UI
 
 - ES-Lint has been added to the client side to ensure the quality of code and increase maintainaiblity of code.
 - Cypress has been set-up to enable end-to-end tests and integration tests for Meshery UI.
 
 <div id="layer5-intro" class="card-content" style="position:relative;float:right;margin-left:35px;" ><iframe width="392" height="220.5" src="https://www.youtube.com/embed/ds9D2KgZKxo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+<div class="meshery-list-item"></div>
 
 #### Other notable changes
 
