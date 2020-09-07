@@ -1,14 +1,14 @@
 ---
 layout: post
 date:   2020-07-20 08:00:00 +0000
-image: /assets/images/meshery/meshery-text-dark.png
+image: /assets/images/posts/2020-07-20-announcing-meshery-v040/meshery-v040.png
 author: Kush Trivedi
 title: Announcing Meshery v0.4.0
 categories: meshery
 ---
 <style>
 .meshery-list-item {
-        background-image:url('/assets/images/meshery/meshery-shadow.svg');
+        background-image:url('/assets/images/posts/2020-07-20-announcing-meshery-v040/meshery-logo-light.svg');
         height:1.5em;
         vertical-align: bottom;
         background-repeat: no-repeat;
@@ -25,15 +25,15 @@ categories: meshery
         margin-left: 30px;
 }
 </style>
-<img src="/assets/images/meshery/meshery-dark-tag-text.png"
+<img src="/assets/images/posts/2020-07-20-announcing-meshery-v040/meshery-v040-inverted.png"
         alt="The service mesh management plane"
-        style="width:35%;float:left;margin-right:10px;margin-bottom:10px;"/>
+        style="width:35%;float:left;margin-right:20px;margin-bottom:20px;"/>
 
 [Meshery](https://meshery.io) is the service mesh management plane offering lifecycle, configuration and performance management of service meshes and their workloads.
 
 Layer5 community members are hard at work providing our users with easy access to any service mesh and myriad management features. New releases for Meshery are published on a frequent cadence with new features and bug fixes. Today, we are announcing version 0.4.0 of Meshery. This summary highlights Meshery's latest developments and elucidates new features.
 
-## What's New?
+### What's New?
 
 The v0.4.0 release of Meshery introduces a plethora of new features and bug fixes across service mesh environments spanning Meshery and it's various adapters.
 
@@ -43,7 +43,7 @@ The v0.4.0 release of Meshery introduces a plethora of new features and bug fixe
 
 **New Command Structure** 
 
-`mesheryctl` commands and subcommands have been restructured in v.4.0 into the categories:
+`mesheryctl` commands and subcommands have been restructured in v0.4.0 into the categories:
 
 <ul>
 <li class="meshery-li-item">Global Commands and Flags</li>
@@ -87,16 +87,19 @@ The `cleanup` is used to reset your Meshery deployment configuration back to its
 
 #### MeshSync
 
-- Meshery can now scan the environment to get the deployment details of all known types of service meshes & kubernetes cluster.
+- Meshery can now scan the environment to get the deployment details of all known types of service meshes & Kubernetes cluster.
 
 #### Meshery UI
 
 - ES-Lint has been added to the client side to ensure the quality of code and increase maintainaiblity of code.
-- Cypress has been set-up to enable e2e and integration tests for meshery-ui.
+- Cypress has been set-up to enable end-to-end tests and integration tests for Meshery UI.
 
 #### Other notable changes
 
-- We have strengthened our CI actions & tests by introducing new workflows like `static check`, `vet check`, `security check` for our server code.
-- ReleaseDrafter & WelcomeBot has been added to the repository to enable automation of release notes and for welcoming new contributors respectively.
+- We have strengthened our continuous integration (CI) actions & tests by introducing new workflows like `static check`, `vet check`, `security check` for our server code.
+- ReleaseDrafter & WelcomeBot has been added to the repository to enable automation of release notes and for welcoming new contributors, respectively.
 
-To get a more comprehensive list of the many bug fixes and enhancements implemented across the Meshery ecosystem with the v0.4.0 release, visit [here.](https://meshery.layer5.io/docs/project/releases) 
+To get a more comprehensive list of the bug fixes and enhancements packaged in the v0.4.0 release, see the [Meshery Documentation](https://meshery.layer5.io/docs/project/releases).
+
+## Join the Layer5 community!
+If you like Meshery, you'll love the open source community that surrounds it. I encourage you to join me and others in the Layer5 community. [Jump into our Slack](http://slack.layer5.io) and start meshing around!
