@@ -1,14 +1,14 @@
 ---
 layout: post
-date:   2020-07-20 08:00:00 +0000
-image: /assets/images/posts/2020-07-20-announcing-meshery-v040/meshery-v040.png
+date:   2020-08-07 08:00:00 +0000
+image: /assets/images/posts/2020-08-07-announcing-meshery-v040/meshery-v040.png
 author: Kush Trivedi
 title: Announcing Meshery v0.4.0
 categories: meshery
 ---
 <style>
 .meshery-list-item {
-        background-image:url('/assets/images/posts/2020-07-20-announcing-meshery-v040/meshery-logo-light.svg');
+        background-image:url('/assets/images/posts/2020-08-07-announcing-meshery-v040/meshery-logo-light.svg');
         height:1.5em;
         vertical-align: bottom;
         background-repeat: no-repeat;
@@ -25,7 +25,7 @@ categories: meshery
         margin-left: 30px;
 }
 </style>
-<img src="/assets/images/posts/2020-07-20-announcing-meshery-v040/meshery-v040-inverted.png"
+<img src="/assets/images/posts/2020-08-07-announcing-meshery-v040/meshery-v040-inverted.png"
         alt="The service mesh management plane"
         style="width:35%;float:left;margin-right:20px;margin-bottom:20px;"/>
 
@@ -73,7 +73,7 @@ Support extended to Scoop Bucket. You can now install mesheryctl on your Windows
 
 The `cleanup` is used to reset your Meshery deployment configuration back to its default settings. This command has been renamed to `reset` to more appropriately reflect its purpose.
 
-<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="/assets/images/posts/2020-07-20-announcing-meshery-v040/meshery-operator-dark.svg" style="margin:15px;" width="125px" align="left" /></a>
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="/assets/images/posts/2020-08-07-announcing-meshery-v040/meshery-operator-dark.svg" style="margin:15px;" width="125px" align="left" /></a>
 
 #### MeshSync
 
