@@ -5540,6 +5540,7 @@ small {
   padding: 5%;
   margin-left: auto;
   margin-right: auto;
+  object-fit: cover;
 }
 
 .member-card {
