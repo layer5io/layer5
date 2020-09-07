@@ -65,7 +65,7 @@ The v0.4.0 release of Meshery introduces a plethora of new features and bug fixe
 
 **Support for Scoop** 
 
-Support extended to Scoop Bucket. You can now install mesheryctl on your Windows machine with scoop bucket. Visit the Meshery guideTo see more on installation guide, visit [here]()
+Support extended to Scoop Bucket. You can now install mesheryctl on your Windows machine with Scoop Bucket. Visit the [Meshery Scoop Bucket](https://github.com/layer5io/scoop-bucket) to install Meshery on Windows.
 
 <div class="meshery-list-item"></div>
 
