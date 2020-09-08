@@ -47,6 +47,13 @@ module.exports = {
         name: `news`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/collections/projects`,
+        name: `projects`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
