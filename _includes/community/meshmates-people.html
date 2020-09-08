@@ -3,14 +3,6 @@
   {% assign sorted = (site.members | sort: 'date') %} {% for member
   in sorted %} {% if member.visibility != "hide" and member.meshmate %}
 
-<style scoped>
-    .project-card {
-      display: block;
-      height: 100%;
-      background-color: {{site.layer5.darkgreen}};
-    }
-  </style>
-
   <div class="col s12 m3">
     <div class="card project-card hoverable waves-light darken-3">
       <!-- <a
