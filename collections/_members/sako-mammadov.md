@@ -6,4 +6,5 @@ image_path: /assets/images/community/members/sako-mammadov.png
 twitter: sakows
 github: sakomws
 blurb: Mesh Head
+status: Inactive
 ---
