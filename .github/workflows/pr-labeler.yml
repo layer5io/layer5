@@ -6,9 +6,9 @@ on:
 jobs:
   build:
 
-	runs-on: ubuntu-latest
-	
-	steps:
-	- uses: srvaroa/labeler@v0.3
-	  env:
-		GITHUB_TOKEN: "${{ secrets.GH_ACCESS_TOKEN }}"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: srvaroa/labeler@v0.3
+        env:
+          GITHUB_TOKEN: "${{ secrets.GH_ACCESS_TOKEN }}"
