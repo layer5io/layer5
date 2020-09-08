@@ -37,6 +37,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       'src/templates/news-single.js'
   );
 
+  const ProjectPostTemplate = path.resolve(
+    'src/templates/project-single.js'
+  );
+
   const res = await graphql(`
     {
      allPosts:  allMdx(
@@ -79,6 +83,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       node => node.fields.collection === `news`
   );
 
+  const projects = allNodes.filter(
+      node => node.fields.collection === `projects`
+  );
+
   blogs.forEach(blog => {
     createPage({
       path: blog.fields.slug,
@@ -106,6 +114,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: NewsPostTemplate,
       context: {
         slug: singleNews.fields.slug,
+      },
+    })
+  });
+
+  projects.forEach(singleProjects => {
+    createPage({
+      path: singleProjects.fields.slug,
+      component: ProjectPostTemplate,
+      context: {
+        slug: singleProjects.fields.slug,
       },
     })
   });
