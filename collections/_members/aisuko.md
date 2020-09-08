@@ -6,4 +6,5 @@ image_path: /assets/images/community/members/aisuko.png
 twitter: AisukoLi
 github: aisuko
 blurb: Mesh Head
+status: Active
 ---

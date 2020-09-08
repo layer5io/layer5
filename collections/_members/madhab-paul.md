@@ -6,4 +6,5 @@ image_path: /assets/images/community/members/madhab-paul.jpg
 twitter: MyMadhabPaul
 github: madhabpaul
 blurb: Mesh Head
+status: Inactive
 ---

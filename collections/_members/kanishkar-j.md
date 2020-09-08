@@ -1,10 +1,10 @@
 ---
 layout: person
 name: Kanishkar J
-position: Contributor, MeshMate
+position: MeshMate
 image_path: /assets/images/community/members/kanishkar-j.jpg
 twitter: _kanishkarj_
 github: kanishkarj
 blurb: Mesh Head
-meshmate: yes
+status: Active
 ---
