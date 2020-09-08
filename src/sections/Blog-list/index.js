@@ -32,24 +32,26 @@ const BlogList = ({data, isListView, setListView, setGridView, pageContext}) => 
                             <Row>
                                 {nodes.map(({id, frontmatter, fields}) => (
                                     <Col xs={12} key={id}>
-                                        <div className="post-block list">
-                                            <div className="post-thumb-block">
-                                                <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "contain" }}/>
+                                        <Link to={fields.slug}>
+                                            <div className="post-block list">
+                                                <div className="post-thumb-block">
+                                                    <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "contain" }}/>
+                                                </div>
+                                                <h2 className="post-title">
+                                                    <Link to={fields.slug}>
+                                                        {frontmatter.title}
+                                                    </Link>
+                                                </h2>
+                                                <p className="post-entry">
+                                                    <span>{frontmatter.date}</span>
+                                                    <span className="pull-right">By: {frontmatter.author}</span>
+                                                </p>
+                                                <p>{frontmatter.subtitle}</p>
+                                                <div className="readmore-btn">
+                                                    see more <IoIosArrowRoundForward />
+                                                </div>
                                             </div>
-                                            <h2 className="post-title">
-                                                <Link to={fields.slug}>
-                                                    {frontmatter.title}
-                                                </Link>
-                                            </h2>
-                                            <p className="post-entry">
-                                                <span>{frontmatter.date}</span>
-                                                <span className="pull-right">By: {frontmatter.author}</span>
-                                            </p>
-                                            <p>{frontmatter.subtitle}</p>
-                                            <Link to={fields.slug} className="readmore-btn">
-                                                see more <IoIosArrowRoundForward />
-                                            </Link>
-                                        </div>
+                                        </Link>
                                     </Col>
                                 ))}
                             </Row>

@@ -8,10 +8,11 @@ export const ToolTipWrapper = styled.div`
       @media screen and (max-width: 576px) {
             display: none;
       }
-      
+      border: 1px solid gray;
+      padding: 2px;
       float:right;
       a {
-        margin: 1px;     
+        padding: 2px;    
         &:hover{
             color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
             cursor: pointer;
@@ -28,11 +29,11 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView}) =>{
             <a data-tip="Grid View" data-for='grid-view' onClick={setGridView} className={`${isListView ? "": "active"}`}>
                 <BsFillGrid3X3GapFill size={18}/>
             </a>
-            <ReactTooltip id='grid-view' className='grid-view' backgroundColor="black" place="top" effect="solid" />
+                <ReactTooltip id='grid-view' border className='grid-view' backgroundColor="black" place="top" effect="solid" />
             <a data-tip="List View" data-for='list-view' onClick={setListView} className={`${isListView ? "active": ""}`}>
                 <AiOutlineUnorderedList size={18}/>
             </a>
-            <ReactTooltip id='list-view' className='list-view' backgroundColor="black" place="top" type="dark" effect="solid" />
+                <ReactTooltip id='list-view' className='list-view' backgroundColor="black" place="top" type="dark" effect="solid" />
         </ToolTipWrapper>
     );
 };
