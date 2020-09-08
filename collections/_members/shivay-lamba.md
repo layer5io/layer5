@@ -7,4 +7,5 @@ twitter: howdevelop
 github: shivaylamba
 blurb: Mesh Head
 status: Active
+meshmate: yes
 ---
