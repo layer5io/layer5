@@ -5594,6 +5594,11 @@ small {
   display: block;
   height: 100%;
   background-color: #00b39f;
+  transition: color 0.3 ease;
+}
+
+.project-card {
+  background-color: #3b494f;
 }
 
 .person-view {
