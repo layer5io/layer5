@@ -6,5 +6,6 @@ image_path: /assets/images/community/members/shivay-lamba.png
 twitter: howdevelop
 github: shivaylamba
 blurb: Mesh Head
+status: Active
 meshmate: yes
 ---

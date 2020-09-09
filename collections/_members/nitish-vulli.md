@@ -6,5 +6,5 @@ image_path: /assets/images/community/members/nitish-vulli.jpg
 twitter: vullinitish
 github: nitishvu
 blurb: Mesh Head
-meshmate: no
+status: Active
 ---

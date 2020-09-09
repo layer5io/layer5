@@ -2,11 +2,25 @@
     <div style="text-align: center;">
         <h4>A warm and welcoming collection of open sourcers.</h4>
     </div>
+    <div class="filter-btn-grp">
+        <div class="active-filter-button">
+            <div class="active-filter-color"></div>
+            <p class="filter-text">Active</p>
+        </div>
+        <div class="inactive-filter-button">
+            <div class="inactive-filter-color"></div>
+            <p class="filter-text">In-Active</p>
+        </div>
+    </div>
     {% assign sorted = (site.members | sort: 'name') %} {% for member
     in sorted %} {% if member.visibility != "hide" %}
 
     <div class="col s12 m4 l3 style="padding: 10px 30px">
-    <div class="card member-card hoverable-member waves-light darken-3">
+    {% if member.status=="Active" %}
+    <div class="card active-member-card hoverable-member waves-light darken-3">
+    {% else %}
+    <div class="card inactive-member-card hoverable-member waves-light darken-3">
+    {% endif %}
         <div
             class="card-image"
         >

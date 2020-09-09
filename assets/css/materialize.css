@@ -5543,10 +5543,52 @@ small {
   object-fit: cover;
 }
 
-.member-card {
+.filter-btn-grp {
+  text-align: end;
+}
+
+.active-filter-button, .inactive-filter-button {
+  display: inline-block;
+  border: 1px solid #dcdcdc;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: #e8e8e8;
+}
+
+.active-filter-color{
+  display: inline-block;
+  background-color: #00b39f;
+  width: 20px;
+  height: 20px;
+}
+
+.inactive-filter-color {
+  display: inline-block;
+  background-color: gray;
+  width: 20px;
+  height: 20px;
+}
+
+.filter-text {
+  display: inline-block;
+  vertical-align: super;
+  margin: 5px;
+}
+
+.active-member-card {
   display: block;
   height: 100%;
   background-color: #00b39f;
+  height: 270px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.inactive-member-card {
+  display: block;
+  height: 100%;
+  background-color: gray;
+  filter: grayscale(100%);
   height: 270px;
   margin-right: auto;
   margin-left: auto;
@@ -5574,7 +5616,7 @@ small {
     bottom: -115px;
   }
 
-  .member-card {
+  .active-member-card, .inactive-member-card {
     height: 250px;
   }
 }
@@ -5622,7 +5664,7 @@ small {
 }
 
 @media only screen and (max-width:600px) {
-  .member-card {
+  .active-member-card, .inactive-member-card {
     height: 215px;
     width: 55%;
   }
@@ -5634,6 +5676,15 @@ small {
   .person-view {
     width: 40vw;
   }
+
+  .filter-btn-grp {
+    text-align: left;
+    float: right;
+  }
+
+  .active-filter-button, .inactive-filter-button {
+    display: block;
+  }
 }
 
 @media only screen and (max-width:425px) {
@@ -5643,7 +5694,7 @@ small {
 }
 
 @media only screen and (max-width:375px) {
-  .member-card {
+  .active-member-card, .inactive-member-card {
     height: 225px;
   }
 

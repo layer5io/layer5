@@ -6,4 +6,5 @@ image_path: /assets/images/community/members/nuno-docarmo.jpg
 twitter: nunixtech
 github: nunix
 blurb: Mesh Head
+status: Active
 ---
