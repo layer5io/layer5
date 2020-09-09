@@ -6,5 +6,5 @@ image_path: /assets/images/community/members/subham-rai.jpg
 github: subhamkrai
 twitter: subhamkumarrai3
 blurb: Mesh Head
-meshmate: no
+status: Active
 ---

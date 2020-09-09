@@ -6,4 +6,5 @@ image_path: https://pbs.twimg.com/profile_images/880205475643441152/V_vhfnzb_400
 twitter: lcalcote
 github: leecalcote
 blurb: Cloud native and its management
+status: Active
 ---
