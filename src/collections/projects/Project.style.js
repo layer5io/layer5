@@ -3,27 +3,19 @@ import styled from "styled-components";
 export const ProjectWrapper = styled.div`
     color:#000;
     margin-top: 50px;
+
+    .heading {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
     .center{
-        margin-bottom: 50px;
         text-align: center;
         color: black;
     }
-    .image-left {
-        width: 40%;
-        float: left;
-        padding-right: 10px;
-    }
 
-    .row {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    .col {
-        float: left;
-        width: 50%;
-        padding: 10px;
+    .fixed-width {
+        align: center;
+        max-width: 700px;
     }
 
     .responsive-holder {
@@ -43,10 +35,11 @@ export const ProjectWrapper = styled.div`
         height: 100%;
     }
 
-    @media screen and (max-width: 600px) {
-        .col {
-            width: 100%;
-            flex: 100%;
-        }
+    .center-col {
+        margin: auto;
+    }
+    .flex-iframe {
+        display: flex; 
+        justify-content:center;
     }
 `;
