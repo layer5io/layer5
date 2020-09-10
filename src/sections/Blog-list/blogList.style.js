@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-import Icon1 from "../../assets/images/blog/icon1.svg"
+import Icon1 from "../../assets/images/blog/icon1.svg";
 
 export const BlogPageWrapper = styled.div`
   .blog-page-wrapper {
@@ -20,9 +20,9 @@ export const BlogPageWrapper = styled.div`
         }
         .readmore-btn {
           color: ${props =>
-            props.theme.secondaryColor
-              ? props.theme.secondaryColor
-              : "#FFEBEC"};
+        props.theme.secondaryColor
+            ? props.theme.secondaryColor
+            : "#FFEBEC"};
         }
       }
     }
@@ -52,7 +52,7 @@ export const BlogPageWrapper = styled.div`
       .post-title {
         a {
           color: ${props =>
-            props.theme.white ? props.theme.white : "#ffffff"};
+        props.theme.white ? props.theme.white : "#ffffff"};
           font-size: 30px;
           letter-spacing: 1px;
         }
@@ -128,7 +128,7 @@ export const BlogPageWrapper = styled.div`
       transition: 450ms all;
       &:hover {
         color: ${props =>
-          props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
+        props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
       }
     }
   }
@@ -203,4 +203,4 @@ export const BlogPageWrapper = styled.div`
       }
     }
   }
-`
+`;
