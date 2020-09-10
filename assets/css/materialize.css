@@ -5639,7 +5639,7 @@ small {
   transition: color 0.3 ease;
 }
 
-.project-card {
+.project-card:hover {
   background-color: #3b494f;
 }
 
