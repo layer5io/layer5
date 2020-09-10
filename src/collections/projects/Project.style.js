@@ -13,28 +13,17 @@ export const ProjectWrapper = styled.div`
         float: left;
         padding-right: 10px;
     }
-    .half-col {
-        padding: 5px;
-        width: 48%;
-        height: auto;
-        right: 0;
-        text-align: center;
-    }
 
     .row {
-        display: flex;
+        content: "";
+        display: table;
+        clear: both;
     }
 
     .col {
-        flex: 50%;
-    }
-
-    .col4 {
-        flex: 40%;
-    }
-
-    .col6 {
-        flex: 60%;
+        float: left;
+        width: 50%;
+        padding: 10px;
     }
 
     .responsive-holder {
@@ -56,6 +45,7 @@ export const ProjectWrapper = styled.div`
 
     @media screen and (max-width: 600px) {
         .col {
+            width: 100%;
             flex: 100%;
         }
     }
