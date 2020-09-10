@@ -14,7 +14,8 @@ export const ProjectWrapper = styled.div`
         padding-right: 10px;
     }
     .half-col {
-        width: 40%;
+        padding: 5px;
+        width: 48%;
         height: auto;
         right: 0;
         text-align: center;
