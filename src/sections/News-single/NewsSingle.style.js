@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Icon2 from "../../assets/images/blog/icon2.svg";
 
 const NewsPageWrapper = styled.div`
-    
+ color: #000;     
 .single-post-wrapper{
     padding: 50px 0 180px 0;
 }
