@@ -7,4 +7,5 @@ twitter: PluckyPrecious
 github: PluckyPrecious
 blurb: Mesh Head
 status: Active
+meshmate: yes
 ---
