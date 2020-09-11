@@ -7,6 +7,7 @@ published: true
 
 import { ProjectWrapper } from "../Project.style.js";
 import { Container, Row, Col } from "../../../reusecore/Layout";
+import { TwitterTweetEmbed } from "react-twitter-embed" ;
 import smp from "./smp-dark.svg";
 import img1 from "./native-and-wasm-at-capacity-100rps.png";
 import img2 from "./latency-at-scale.png";
@@ -60,7 +61,7 @@ import img3 from "./client-capacity.png";
   <br /><br />
   <Row>
     <Col sm={12} md={5}>
-      <a href="/assets/projects/smp/kubecon-eu/native-and-wasm-at-capacity-100rps.png">
+      <a href={img1}>
         <img src={img1} />
       </a>
     </Col>
@@ -86,7 +87,7 @@ import img3 from "./client-capacity.png";
   <br />< br/>
   <Row>
     <Col sm={12} md={5}>
-    <a href="/assets/projects/smp/kubecon-eu/latency-at-scale.png">
+    <a href={img2}>
       <img src={img2}/>
     </a>
     </Col>
@@ -108,7 +109,7 @@ import img3 from "./client-capacity.png";
   <br /><br />
   <Row>
     <Col className="center-col" sm={12} md={3}>
-      <a href="/assets/projects/smp/kubecon-eu//client-capacity.png">
+      <a href={img3}>
         <img src={img3}/>
       </a>
     </Col>
@@ -126,18 +127,10 @@ import img3 from "./client-capacity.png";
 <br />
 <Row>
   <Col className="center-col" sm={12} md={6}>
-    <blockquote className="twitter-tweet">
-      <p lang="en" dir="ltr">
-        Learn more about the service mesh performance initiatives at
-        <a href="https://twitter.com/layer5?ref_src=twsrc%5Etfw">@layer5</a>
-        <a href="https://t.co/hNUM4pHDqi">https://t.co/hNUM4pHDqi</a>
-      </p>
-      &mdash; Service Mesh Performance (@smp_spec)
-      <a href="https://twitter.com/smp_spec/status/1290428583249354757?ref_src=twsrc%5Etfw">August 3, 2020</a>
-    </blockquote>
-    <h3 style="text-align: center; font-weight: bold;">
+    <TwitterTweetEmbed tweetId={'1290428583249354757'} />
+    <h3 class="center">
       Jump into the
-      <a href="http://slack.layer5.io">#SMP channel</a> to learn more
+      <a href="http://slack.layer5.io"> #SMP channel</a> to learn more
       about these initatives.
     </h3>
   </Col>
