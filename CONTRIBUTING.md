@@ -86,7 +86,7 @@ Please contribute! The Layer5 site uses GitHub Pages (Jekyll) to host its site. 
 1. Run site locally to preview changes.
    `make site` # this will run a local web server with "live reload" conveniently enabled.
 
-- **Note:** _From the Makefile, this command is actually running `$ bundle exec jekyll serve --drafts --livereload`. There are two Jekyll configuration, `jekyll serve` for developing locally and `jekyll build` when deploying for production based on differences of the handling of trailing slashes between Jekyll and GitHub Pages._
+- **Note:** _From the Makefile, this command is actually running `$ bundle exec jekyll serve --drafts --livereload`. There are two Jekyll configuration, `jekyll serve` for developing locally and `jekyll build` when you need to generate the site artefacfs for production._
 
 1. Commit and push changes to your remote branch.
    `git push origin <my-username>/<my-changes>`
