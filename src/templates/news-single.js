@@ -22,7 +22,6 @@ export const query = graphql`
                 subtitle
                 date(formatString: "YYYY MMMM Do")
                 author
-                tags
                 thumbnail{
                     childImageSharp{
                         fluid(maxWidth: 500){
