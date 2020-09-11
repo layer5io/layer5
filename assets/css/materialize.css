@@ -5549,6 +5549,15 @@ small {
   object-fit: cover;
 }
 
+.card .card-image .member-img-emeritus {
+  width: 120px;
+  height: 120px;
+  padding: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+} 
+
 .filter-btn-grp {
   text-align: end;
 }
@@ -5616,7 +5625,7 @@ small {
   .card .card-image .member-img {
     width: 160px;
     height: 155px;
-  }
+  } 
 
   .img-link::before {
     bottom: -115px;

@@ -4,31 +4,22 @@
 	O​nce a MeshMate, always a MeshMate. We thank and salute our previous MeshMates. Each has served the Layer5 community selflessly. 
 </p>
 
-<p class="indent">
-	GitHub usernames listed under the emeritus_approvers key can no longer approve code (use the /approve command) and will be ignored by prow for assignment. 
-	However, it can still be referenced by a person looking at the OWNERS file for a possible second or more informed opinion.
-</p>
-
-<p class="indent">
-	When a contributor returns to being more active in that area, they may be promoted back to a regular approver at the discretion of the current approvers.
-</p>
-
 <div class="row">
   {% assign sorted = (site.members | sort: 'date') %} {% for member
   in sorted %} {% if member.emeritus %}
 
-  <div class="col s12 m4 l3">
+  <div class="col ">
     <div class="card inactive-member-card hoverable-member">
         <div class="card-image">
 					<a class="img-link" href="{{member.url}}">
 						<img
-							class="member-img light-shadow"
+							class="member-img-emeritus light-shadow"
 							src="{{member.image_path}}"
 						/>
 					</a>
         </div>
         <div class="center">
-          <h5 class="white-text">{{member.name}}</h5>
+          <h6 class="white-text">{{member.name}}</h6>
             <div class="social" style="display: inline-block; position: relative;">
               <a class="social__link social__link--github" href="https://github.com/{{member.github}}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
