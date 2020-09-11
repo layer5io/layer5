@@ -31,10 +31,19 @@ export const ProjectWrapper = styled.div`
         left: 0;
         bottom: 0;
         right: 0;
-        width: 100%;
-        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 80%;
+        height: 80%;
     }
 
+    .up {
+        margin-top: -5%;
+    }
+    .max500 {
+        max-width: 500px;
+    }
     .center-col {
         margin: auto;
     }
