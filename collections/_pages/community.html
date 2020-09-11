@@ -14,64 +14,22 @@ image: /assets/images/layer5/layer5-tag-community-white-bg.png
     <h3 style="text-align: center; color: aliceblue;">
       <a href="/news" class="white-text">The Layer5 Community</a>
     </h3>
-    <div
-      class="row white-bg"
-      style="
-        padding: 15px;
-        vertical-align: middle;
-        float: center;
-        height: fit-content;
-      "
-    >
-      <div
-        class="col s12 m12"
-        style="
-          display: flex;
-          height: auto;
-          flex-direction: column;
-          flex-flow: column;
-          vertical-align: middle;
-          position: relative;
-        "
-      >
+    <div class="row white-bg row-view">
+      <div class="col s12 m12 col-view">
         {% include community/community.html %}
       </div>
     </div>
-    <div
-    class="row white-bg"
-    style="
-      padding: 15px;
-      vertical-align: middle;
-      float: center;
-      height: fit-content;
-    "
-  >
-      <div 
-      class="col s12 m6"
-      style="
-        display: flex;
-        height: auto;
-        flex-direction: column;
-        flex-flow: column;
-        vertical-align: middle;
-        position: relative;
-      "
-      >
-      {% include community/community-members.html %}
-    </div>
-      <div 
-      class="col s12 m6"
-      style="
-        display: flex;
-        height: auto;
-        flex-direction: column;
-        flex-flow: column;
-        vertical-align: middle;
-        position: relative;
-      "
-      >
-      {% include community/meshmates-program.html %}
+    <div class="row white-bg row-view">
+      <div class="col s12 m6" >
+        <span>
+          <h3 style="display: inline-block;">Pair with a MeshMate
+          </h3>
+        </span>
+        {% include community/meshmates-program.html %}
+      </div>
+      <div class="col s12 m6">
+        {% include community/community-members.html %}
+      </div>
     </div>
   </div>
- </div>
 </div>

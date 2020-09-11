@@ -1,0 +1,70 @@
+<h3 class="black-text">Layer5 MeshMate Emeritus</h3>
+
+<p class="indent">
+	O​nce a MeshMate, always a MeshMate. We thank and salute our previous MeshMates. Each has served the Layer5 community selflessly. 
+</p>
+
+<p class="indent">
+	GitHub usernames listed under the emeritus_approvers key can no longer approve code (use the /approve command) and will be ignored by prow for assignment. 
+	However, it can still be referenced by a person looking at the OWNERS file for a possible second or more informed opinion.
+</p>
+
+<p class="indent">
+	When a contributor returns to being more active in that area, they may be promoted back to a regular approver at the discretion of the current approvers.
+</p>
+
+<div class="row">
+  {% assign sorted = (site.members | sort: 'date') %} {% for member
+  in sorted %} {% if member.emeritus %}
+
+  <div class="col s12 m4 l3">
+    <div class="card inactive-member-card hoverable-member">
+        <div class="card-image">
+					<a class="img-link" href="{{member.url}}">
+						<img
+							class="member-img light-shadow"
+							src="{{member.image_path}}"
+						/>
+					</a>
+        </div>
+        <div class="center">
+          <h5 class="white-text">{{member.name}}</h5>
+            <div class="social" style="display: inline-block; position: relative;">
+              <a class="social__link social__link--github" href="https://github.com/{{member.github}}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                  <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    clip-rule="#3c494f"
+                    d="M203.9,60c-75.6,0-137,61.3-137,137c0,60.5,39.2,111.9,93.7,130c6.8,1.3,9.3-3,9.3-6.6c0-3.3-0.1-11.9-0.2-23.3
+                 c-38.1,8.3-46.1-18.4-46.1-18.4c-6.2-15.8-15.2-20-15.2-20c-12.4-8.5,0.9-8.3,0.9-8.3c13.7,1,21,14.1,21,14.1
+                 c12.2,20.9,32.1,14.9,39.9,11.4c1.2-8.9,4.8-14.9,8.7-18.3c-30.4-3.5-62.4-15.2-62.4-67.7c0-15,5.3-27.2,14.1-36.8
+                 c-1.4-3.5-6.1-17.4,1.3-36.3c0,0,11.5-3.7,37.7,14c10.9-3,22.6-4.6,34.3-4.6c11.6,0.1,23.4,1.6,34.3,4.6c26.2-17.7,37.6-14,37.6-14
+                 c7.5,18.9,2.8,32.8,1.4,36.3c8.8,9.6,14.1,21.8,14.1,36.8c0,52.6-32,64.2-62.5,67.6c4.9,4.2,9.3,12.6,9.3,25.4
+                 c0,18.3-0.2,33.1-0.2,37.6c0,3.7,2.5,7.9,9.4,6.6c54.4-18.2,93.6-69.5,93.6-130C340.9,121.3,279.5,60,203.9,60z"
+                  />
+								</svg>
+							</a>
+						</div>
+						{% if member.twitter %}
+            <div class="social" style="display: inline-block; position: relative;">
+                <a class="social__link social__link--twitter" href="https://twitter.com/{{member.twitter}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                      <path
+                        fill="currentColor"
+                        d="M153.6,301.6c94.3,0,145.9-78.2,145.9-145.9c0-2.2,0-4.4-0.1-6.6c10-7.2,18.7-16.3,25.6-26.6
+                      c-9.2,4.1-19.1,6.8-29.5,8.1c10.6-6.3,18.7-16.4,22.6-28.4c-9.9,5.9-20.9,10.1-32.6,12.4c-9.4-10-22.7-16.2-37.4-16.2
+                      c-28.3,0-51.3,23-51.3,51.3c0,4,0.5,7.9,1.3,11.7c-42.6-2.1-80.4-22.6-105.7-53.6c-4.4,7.6-6.9,16.4-6.9,25.8
+                      c0,17.8,9.1,33.5,22.8,42.7c-8.4-0.3-16.3-2.6-23.2-6.4c0,0.2,0,0.4,0,0.7c0,24.8,17.7,45.6,41.1,50.3c-4.3,1.2-8.8,1.8-13.5,1.8
+                      c-3.3,0-6.5-0.3-9.6-0.9c6.5,20.4,25.5,35.2,47.9,35.6c-17.6,13.8-39.7,22-63.7,22c-4.1,0-8.2-0.2-12.2-0.7
+                      C97.7,293.1,124.7,301.6,153.6,301.6"
+                      />
+                    </svg>
+                </a>                    
+            </div>
+            {% endif %}
+        </div>
+    </div>
+  </div>
+  {% endif %} {% endfor %}
+</div>

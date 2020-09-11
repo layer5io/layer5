@@ -4029,6 +4029,12 @@ nav ul a span.badge {
   clear: both;
 }
 
+.row-view{
+  padding: 15px;
+  vertical-align: middle;
+  height: fit-content;
+}
+
 .row .col {
   float: left;
   -webkit-box-sizing: border-box;

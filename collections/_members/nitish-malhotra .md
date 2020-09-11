@@ -7,5 +7,5 @@ twitter: nitishmalhotra9
 github: nitishm
 blurb: meshygopher
 status: Active
-meshmate: yes
+emeritus: yes
 ---

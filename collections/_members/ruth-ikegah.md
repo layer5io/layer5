@@ -7,4 +7,5 @@ github: Ruth-ikegah
 twitter: ikegahruth
 blurb: Mesh Head
 status: Active
+meshmate: yes
 ---
