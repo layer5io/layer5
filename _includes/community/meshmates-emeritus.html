@@ -8,8 +8,8 @@
   {% assign sorted = (site.members | sort: 'date') %} {% for member
   in sorted %} {% if member.emeritus %}
 
-  <div class="col ">
-    <div class="card inactive-member-card hoverable-member">
+  <div class="col">
+    <div class="card inactive-member-card hoverable-member" style="width:auto;height:150px;">
         <div class="card-image">
 					<a class="img-link" href="{{member.url}}">
 						<img
@@ -19,8 +19,8 @@
 					</a>
         </div>
         <div class="center">
-          <h6 class="white-text">{{member.name}}</h6>
-            <div class="social" style="display: inline-block; position: relative;">
+          <span class="white-text">{{member.name}}</span>
+            <!-- <div class="social" style="display: inline-block; position: relative;">
               <a class="social__link social__link--github" href="https://github.com/{{member.github}}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
                   <path
@@ -52,7 +52,7 @@
                       />
                     </svg>
                 </a>                    
-            </div>
+            </div> -->
             {% endif %}
         </div>
     </div>
