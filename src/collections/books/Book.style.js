@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BookWrapper = styled.div`
     
-    .istio-book{
+    .book{
         float:right;
         padding:20px;
         text-align:center;
@@ -17,6 +17,22 @@ export const BookWrapper = styled.div`
         transition: box-shadow .25s;
         transition: box-shadow .25s, -webkit-box-shadow .25s;
         border-radius: 2px;
+    }
+    
+    .mr-l-25{
+        margin-left:25px;
+    }
+    
+    .mr-l-15{
+        margin-left:15px;
+    }
+    
+    .pa-8{
+        padding:8px;
+    }
+    
+    .mr-2{
+        margin: 2px;
     }
     
 `;
