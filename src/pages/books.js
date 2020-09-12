@@ -15,7 +15,7 @@ export const query = graphql`
     query allBooks {
         allMdx(
             filter: { fields: { collection: { eq: "books" } }, frontmatter: { published: { eq: true } } }
-            sort: { fields: [frontmatter___date], order: DESC }
+            sort: { fields: [frontmatter___date], order: ASC }
         ) {
             nodes {
                 id
