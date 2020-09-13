@@ -13,6 +13,7 @@
           class="card-image"
           style="{{ member.img_style }} min-height: 130px;"
         >
+        <a class="img-link" href="{{member.url}}">
           <img
             class="light-shadow"
             src="{{member.image_path}}"
@@ -27,6 +28,7 @@
               margin-right: auto;
             "
           />
+        </a>
         </div>
         <div class="center">
           <h5 class="white-text">{{member.name}}</h5>
