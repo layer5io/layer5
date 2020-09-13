@@ -1,15 +1,14 @@
-<a name="meshmate"></a><h3 class="black-text">Our MeshMates</h3>
+<h3 class="black-text">Layer5 MeshMates</h3>
+<p class="indent">
+  Layer5 MeshMates are committed to helping community members be successful contributors. MeshMates aid in identifying areas of projects to engage within, working groups to join, and in helping community members grow in their open source and cloud native knowledge. By connecting one-on-one, MeshMates will share tips on how to have the best community experience possible.
+</p>
+
 <div class="row">
   {% assign sorted = (site.members | sort: 'date') %} {% for member
   in sorted %} {% if member.visibility != "hide" and member.meshmate %}
 
   <div class="col s12 m3">
     <div class="card project-card hoverable waves-light darken-3">
-      <!-- <a
-        href="/community/member/{{ member.name}}"
-        class="waves-effect z-depth-4 white-text waves-light darken-3"
-        style="background-color:{{ site.layer5.gray }}; width: 100%;"
-      > -->
         <div
           class="card-image"
           style="{{ member.img_style }} min-height: 130px;"
@@ -28,12 +27,6 @@
               margin-right: auto;
             "
           />
-          <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
-          <!-- <a id="{{site.url}}{{ event.link }}" class="btn-floating halfway-fab waves-effect z-depth-4 
-          l5-dark-yellow
- waves-dark darken-3"
-          href="{{site.url}}{{ event.link }}">
-          <i class="material-icons">more_horiz</i></a> -->
         </div>
         <div class="center">
           <h5 class="white-text">{{member.name}}</h5>
@@ -56,9 +49,6 @@
                 <span class="tooltiptext">{{member.github}}</span></a
               >
             </div>
-
-
-
         </div>
       <!-- </a> -->
     </div>
@@ -66,3 +56,6 @@
 
   {% endif %} {% endfor %}
 </div>
+<p class="indent">
+  MeshMate is a distinction that Layer5 awards select members of the community that who innately align with the Layer5 culture of helping others, paying it forward, and have a commitment to sharing their knowledge of Layer5 projects with the community. MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing their expertise has a huge impact on the Layer5 community – don’t hesitate to reach out to them!
+</p>
