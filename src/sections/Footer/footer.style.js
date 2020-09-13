@@ -168,11 +168,6 @@ const FotterWrapper = styled.section`
     }
   }
   @media only screen and (max-width: 1600px) {
-    .footer-widgets {
-      .widget-catagory {
-        margin-left:15px;
-      }
-    }
     .section__particle{
       &.one{
           display: none;
@@ -181,9 +176,6 @@ const FotterWrapper = styled.section`
   }
   @media only screen and (max-width: 1280px) { 
     .footer-widgets {
-      .widget-catagory {
-        margin-left:15px;
-      }
       .social {
         li + li {
           margin-left: 15px;
