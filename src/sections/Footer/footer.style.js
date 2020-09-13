@@ -58,8 +58,16 @@ const FotterWrapper = styled.section`
     }
   }
   .footer-logo {
-    margin-bottom: 15px;
-    margin-left: -20px;
+    max-width: 200px;
+    height: auto;
+  }
+  .descript {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 15px;
+    line-height: 25px;
+    color: black;
   }
   .footer-widgets {
     &.first {
