@@ -4,9 +4,6 @@ import { TwitterTimelineEmbed } from "react-twitter-embed" ;
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 
-import { FiMail, FiPhoneCall } from "react-icons/fi";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-
 import logo from "../../images/layer5/layer5.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
 
@@ -29,23 +26,10 @@ const Footer = () => {
                 <Row>
                     <Col xs={12} sm={5} lg={4}>
                         <div className="first">
-                            <Link className="footer-logo" to="#">
-                                <img src={logo} alt="logo" />
+                            <Link to="#">
+                                <img src={logo} className="footer-logo" alt="logo" />
                             </Link>
-                            {/* <ul className="info">
-                <li>
-                  <FiMail />
-                  <Link className="anchor" to="#">
-                    contact@appion.com
-                  </Link>
-                </li>
-                <li>
-                  <FiPhoneCall />
-                  <Link className="anchor" to="#">
-                    +88 12345 697858
-                  </Link>
-                </li>
-              </ul> */}
+                            <div className="descript">representing <i>every</i> service mesh</div>
                             <TwitterTimelineEmbed
                                 sourceType="profile"
                                 screenName="layer5"
