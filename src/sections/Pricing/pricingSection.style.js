@@ -17,8 +17,12 @@ const PricingSectionWrapper = styled.section`
             right: -4%;
         }
     }
+    .liftup {
+        margin-top: -60px;
+        margin-bottom: 50px;
+    }
     .pricing-block{
-        padding: 60px 60px 55px 60px;
+        padding: 40px 30px 25px 30px;
         border: 1px solid ${props => props.theme.primaryLightColor};
         box-shadow: 0 0 40px ${props => props.theme.shadowColor};
         border-radius: 5px;
@@ -42,7 +46,7 @@ const PricingSectionWrapper = styled.section`
     }
     .price-block{
         text-align: center;
-        padding: 40px 0 23px 0;
+        padding: 0 0 23px 0;
         h3{
             font-size: 36px;
             font-weight: 600;
@@ -62,9 +66,14 @@ const PricingSectionWrapper = styled.section`
         text-align: left;
         span{
             color: ${props => props.theme.headingColor};
-            font-weight: 300;
             display: flex;
             align-items: center;
+            h5 {
+                font-weight: 400;
+            }
+            h5 + h5 {
+                margin-top: 50px;
+            }
             svg{
                 fill: ${props => props.theme.textColor};
                 margin-right: 20px;
