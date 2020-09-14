@@ -8,7 +8,7 @@ import { CardWrapper } from "./Card.style";
 
 const Card = ({ frontmatter, fields }) =>{
     return (
-        <CardWrapper>
+        <CardWrapper fixed={!!frontmatter.abstract}>
             <div className="post-block">
                 <div className="post-thumb-block">
                     <Link className="anchor" to={fields.slug}>

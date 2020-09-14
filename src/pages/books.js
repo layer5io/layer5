@@ -21,7 +21,6 @@ export const query = graphql`
                 id
                 frontmatter {
                     title
-                    date(formatString: "Do MMMM YYYY")
                     author
                     abstract
                     thumbnail{
