@@ -1,7 +1,7 @@
 ---
 layout: person
 name: Tanuj Agarwal
-position: Contributor
+position: Contributor, MeshMate
 image_path: /assets/images/community/members/tanuj-agarwal.jpg
 twitter: tanuj_agarwal22
 github: Tanuj22

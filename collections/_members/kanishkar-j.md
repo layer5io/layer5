@@ -1,7 +1,7 @@
 ---
 layout: person
 name: Kanishkar J
-position: Contributor
+position: Contributor, MeshMate Emeritus
 image_path: /assets/images/community/members/kanishkar-j.jpg
 twitter: _kanishkarj_
 github: kanishkarj
