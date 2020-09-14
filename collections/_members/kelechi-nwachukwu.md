@@ -1,7 +1,7 @@
 ---
 layout: person
 name: Kelechi Nwachukwu
-position: Contributor
+position: Contributor, MeshMate
 image_path: /assets/images/community/members/kelechi-nwachukwu.jpg
 twitter: PluckyPrecious
 github: PluckyPrecious
