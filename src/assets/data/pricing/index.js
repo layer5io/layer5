@@ -5,7 +5,7 @@ const data = {
             name: "Lifecycle",
             description: "Manage any service mesh",
             link: "#",
-            btnText: "Get Package",
+            btnText: "Get Started",
             services:[
                 {
                     content: "Consul, Istio, Linkerd, Network Service Mesh, Open Service Mesh, App Mesh, Kuma, Maesh, Citrix Service Mesh, Octarine",
@@ -24,7 +24,7 @@ const data = {
             name: "Configuration",
             description: "Operators with best practices",
             link: "#",
-            btnText: "Get Package",
+            btnText: "Get Started",
             services:[
                 {
                     content: "Built-in industry patterns and known best practices",
@@ -44,7 +44,7 @@ const data = {
             name: "Performance",
             description: "Assess the performance of your service mesh",
             link: "#",
-            btnText: "Get Package",
+            btnText: "Get Started",
             services:[
                 {
                     content: "Distributed performance analysis supporting 3 different types of load generators",

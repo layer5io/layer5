@@ -35,10 +35,12 @@ const Pricing = () => {
                                 <p>{pricing.description}</p>
                                 <div className="details-block">
                                     {pricing.services.map((service, index) => (
-                                        <span className={service.className} key={index}>
-                                            <IoMdCheckmark />
-                                            <h5>{service.content}</h5>    
-                                        </span>
+                                        <table className="table" key={index}>
+                                            <tr>
+                                                <td><IoMdCheckmark /></td>
+                                                <td><h5>{service.content}</h5></td>
+                                            </tr>  
+                                        </table>
                                     ))}
                                 </div>
                                 <Button className="pricing-btn">{pricing.btnText}</Button>

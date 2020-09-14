@@ -22,7 +22,7 @@ const PricingSectionWrapper = styled.section`
         margin-bottom: 50px;
     }
     .pricing-block{
-        padding: 40px 30px 25px 30px;
+        padding: 40px 30px 45px 30px;
         border: 1px solid ${props => props.theme.primaryLightColor};
         box-shadow: 0 0 40px ${props => props.theme.shadowColor};
         border-radius: 5px;
@@ -64,7 +64,7 @@ const PricingSectionWrapper = styled.section`
     }
     .details-block{
         text-align: left;
-        span{
+        .table{
             color: ${props => props.theme.headingColor};
             display: flex;
             align-items: center;
