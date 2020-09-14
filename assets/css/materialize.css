@@ -10519,3 +10519,24 @@ div.slack {
     font-size: 8px;
   }
 }
+/*Community Meetings Table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid #dcdcdc;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #00b39f;
+  text
+}
+
+tr:nth-child(even) {
+  background-color: #e8e8e8;
+}
