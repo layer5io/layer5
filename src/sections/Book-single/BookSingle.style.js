@@ -3,7 +3,7 @@ import styled from "styled-components";
 const BookSinglePageWrapper = styled.div`
  color: #000;   
 .single-post-wrapper{
-    padding: 50px 0 180px 0;
+    padding: 50px 0 80px 0;
 }
 .single-post-block{
     p{
