@@ -4,7 +4,7 @@ import FooterBG from "../../assets/images/app/footer/footer-bg.png";
 const FotterWrapper = styled.section`
   padding-top: 100px;
   padding-bottom: 25px;
-  background: url(${FooterBG});
+  background: #3c494f;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -62,12 +62,13 @@ const FotterWrapper = styled.section`
     height: auto;
   }
   .descript {
-    margin-top: -20px;
+    margin-top: -10px;
+    color: white;
     margin-bottom: 20px;
     padding-left: 10px;
     font-size: 15px;
     line-height: 25px;
-    color: black;
+    // color: black;
   }
   .footer-widgets {
     &.first {

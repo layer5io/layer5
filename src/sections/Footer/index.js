@@ -4,7 +4,7 @@ import { TwitterTimelineEmbed } from "react-twitter-embed" ;
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 
-import logo from "../../images/layer5/layer5.svg";
+import logo from "../../images/layer5/layer5-dark-bg.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
 
 import mail_icon from "../..//assets/images/app/footer/social/mail_white_trim.svg";
