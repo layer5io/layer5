@@ -6,6 +6,16 @@ export const BookWrapper = styled.div`
         float:right;
         padding:20px;
         text-align:center;
+        @media only screen and (max-width: 568px){
+             float: inherit;
+        }
+        
+        .two-buttons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        
     }
     
     .card{
