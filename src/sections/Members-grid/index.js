@@ -8,11 +8,17 @@ import { MembersGridWrapper } from "./membersGrid.style";
 const MembersGrid = ({data}) =>{
     return(
         <MembersGridWrapper>
-            <PageHeader title="Community > Members" />
+            <PageHeader title="Members" />
             <div className="members-page-wrapper">
                 <Container>
                     <div className="members-grid-wrapper">
                         <Row>
+                            <Col xs={12} sm={6} lg={4}>
+                                <ProfileCard />
+                            </Col>
+                            <Col xs={12} sm={6} lg={4}>
+                                <ProfileCard />
+                            </Col>
                             {/*{data.allMdx.nodes.map(({id, frontmatter, fields }) => (*/}
                             {/*    <Col xs={12} sm={6} lg={4} key={id}>*/}
                             {/*        <ProfileCard frontmatter={frontmatter} fields={fields}/>*/}
