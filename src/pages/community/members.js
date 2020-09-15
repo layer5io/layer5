@@ -1,13 +1,13 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import theme from "../../theme/app/themeStyles";
-import {GlobalStyle} from "../../sections/app.style";
+import theme from "../../theme/blog/themeStyles";
+import { GlobalStyle } from "../../sections/app.style";
+
 import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
-import NewsPage from "../../sections/News-grid";
 import Footer from "../../sections/Footer";
 import Layout from "../../components/layout";
-import Faq from "../../sections/Faq";
+import MembersGrid from "../../sections/Members-grid";
 
 
 const MembersPage = () => (
@@ -16,7 +16,7 @@ const MembersPage = () => (
             <GlobalStyle />
             <SEO title="Members | Layer5 - The Service Mesh Company" />
             <Navigation />
-            <Faq />
+            <MembersGrid />
             <Footer/>
         </Layout>
     </ThemeProvider>
