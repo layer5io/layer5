@@ -49,6 +49,7 @@ export const CardWrapper = styled.div`
     
     .post-meta-block{
         margin-bottom: 10px;
+        height: ${props => props.fixed ? "110px" : "auto"};
         .anchor{
             margin-right: 10px;
             -webkit-transition: 450ms all;
