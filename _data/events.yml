@@ -7,6 +7,15 @@
   event_deck: ""
   thumbnail: /assets/images/events/all-day-devops.png
 
+- title: Open Infrastructure Summit 2020
+  desc: "Join the people building and operating open infrastructure, with sessions and workshops on Container Infrastructure, CI/CD, 5G, NFV & Edge, Public Cloud, Private & Hybrid Cloud, Security and members of open source communities like Airship, Ansible, Ceph, Docker, Kata Containers, Kubernetes, ONAP, OpenStack, Open vSwitch, OPNFV, StarlingX, Zuul and more."
+  date: "October 21, 2020"
+  link: https://www.openstack.org/summit/2020/
+  talk_link: https://www.openstack.org/summit/2020/summit-schedule/events/24703/its-a-multi-mesh-world
+  event_video: ""
+  event_deck: ""
+  thumbnail: /assets/images/events/ois2020.png
+
 - title: KubeCon EU 2020
   desc: "The Cloud Native Computing Foundation’s flagship conference gathers adopters and technologists from leading open source and cloud native communities in Amsterdam, "
   date: "April 2nd, 2020"
@@ -54,7 +63,7 @@
   prometheus: "Yes"
   tracing: "Pluggable"
   encryption: "Yes"
-  smi: 
+  smi:
     tac: "Yes"
     taclink: "https://github.com/hashicorp/consul-smi-controller"
     tmetrics: "No"
