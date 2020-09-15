@@ -10,16 +10,15 @@ const Gsoc = () => {
     return (
         <GSOCSectionWrapper>
             <Container>
-            <div style={{zIndex: '20'}}>
+            <div>
             <h3 className="post-title" style={{textAlign: 'center',color: '#1D316C',fontSize: '2rem',margin:' 1.46rem 0 1.168rem 0'}}>
-    Google Summer of Code 2020
+            Google Summer of Code 2020 and Layer5
   </h3>
-  <h3 className="black-text">Google Summer of Code 2020 and Layer5</h3>
   <img
     src={logo}
     style={{width: '19vw', float: 'right', marginLeft: '20px'}}
   />
-  <h5 className="black-text">2020 Program Timeline</h5>
+  <h5 className="black-text">GSoC 2020 Program Timeline</h5>
   <div className="gsoc">
     <ul>
       <li className="gsoc">January 14 - Organization applications open</li>
@@ -34,7 +33,7 @@ const Gsoc = () => {
     </ul>
   </div>
   <h5 className="black-text">Statistics</h5>
-  <div style={{marginLeft: '25px'}}>
+  <div className="stats" style={{marginLeft: '0px'}}>
     <ul>
       <li className="gsoc">
         In 15 years 15,926 students from 109 countries have been accepted into
@@ -50,7 +49,7 @@ const Gsoc = () => {
     </ul>
   </div>
   <h5 className="black-text">Project Ideas</h5>
-  <div style={{marginLeft: '25px'}}>
+  <div style={{marginLeft: '0px'}}>
     <b>SMI Conformance Testing</b>
     <ul>
       <li className="gsoc">
@@ -73,7 +72,7 @@ const Gsoc = () => {
       <li className="gsoc">
         <b>Issue(s)</b>:
         <a href="https://github.com/servicemeshinterface/smi-spec/issues/70 "
-          >https://github.com/servicemeshinterface/smi-spec/issues/70
+          > Link
         </a>
       </li>
       <li className="gsoc">
@@ -82,7 +81,7 @@ Naveen Jain (<a href="https://github.com/nveenjain">@nveenjain</a>)
 </li>
     </ul>
   </div>
-  <div style={{marginLeft: '25px'}}>
+  <div style={{marginLeft: '0px'}}>
     <b>Distributed Load Testing of Service Meshes</b>
     <ul>
       <li className="gsoc">
@@ -109,7 +108,7 @@ Naveen Jain (<a href="https://github.com/nveenjain">@nveenjain</a>)
       <li className="gsoc">
         <b>Issue(s)</b>:
         <a href="https://github.com/envoyproxy/envoy-perf/issues/72"
-          >https://github.com/envoyproxy/envoy-perf/issues/72
+          > Link
         </a>
       </li>
             <li className="gsoc">
@@ -129,7 +128,7 @@ Kush Trivedi (<a href="https://github.com/kushthedude">@kushthedude</a>)
   <div
     id="layer5-intro"
     className="card-content"
-    style={{position: 'relative', float: 'right',marginLeft:'20px'}}
+    style={{position: 'relative', float: 'right'}}
   >
     <iframe
       width="392"
@@ -140,35 +139,31 @@ Kush Trivedi (<a href="https://github.com/kushthedude">@kushthedude</a>)
       allowfullscreen
     ></iframe>
   </div>
-  <ul>
-    <ol>
+  <p>
       <b>What is Layer5?</b>
-    </ol>
-    <ol>
+        </p>
+        <p>  
       While small, the Layer5 community represents the largest collection of
       service mesh projects and their maintainers in the world. We build
       projects to provide learning environments, deployment and operational best
       practices, performance benchmarks, create documentation, share networking
       opportunities, and more. Our shared commitment to the open source spirit
       pushes Layer5 projects forward. New members are always welcome.
-    </ol>
-  </ul>
-  <ul>
-    <ol>
+    
+  </p>
+  <p>  
       <b>Is it Open Source?</b>
-    </ol>
-    <ol>
+      </p>  
+      <p>  
       Layer5 projects are open source software. Anyone can download, use, work
       on, and share it with others. It's built on principles like collaboration,
       globalism, and innovation. Layer5 projects are distributed under the terms
       of Apache v2.
-    </ol>
-  </ul>
-  <ul>
-    <ol>
+      </p>  
+      <p>  
       <b>Google Summer of Code Participation?</b>
-    </ol>
-    <ol>
+      </p>  
+      <p>  
       The key component of these projects is our Community. This community,
       which you will join as an participant in Google Summer of Code, is
       improving the world of diverse cloud native systems. Your contributions
@@ -176,17 +171,14 @@ Kush Trivedi (<a href="https://github.com/kushthedude">@kushthedude</a>)
       software engineers, researchers, students, artists, system administrators,
       operators and web designers -- all of whom will be happy to help you get
       started.
-    </ol>
-  </ul>
-  <ul>
-    <ol>
+      </p>  
+      <p>  
       We believe that all contributors should expect and be part of a safe and
       friendly environment for constructive contribution. We can more
       effectively and successfully compare and challenge different ideas to find
       the best solutions for advancement, while building the size, diversity,
       and strength of our community.
-    </ol>
-  </ul>
+      </p>  
 
   <div
     id="gsoc-2020"

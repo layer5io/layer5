@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 
 const GSOCSectionWrapper = styled.div`
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 element.style {
     font-size: 0.7em;
     padding-bottom: 40px;
@@ -95,27 +99,22 @@ a {
     
   
     @media only screen and (max-width: 1024px) {
-        .CTA-content{
-            h2{
-                font-size: 35px;
-                line-height: 45px;
-            }
+        .stats{
+            margin-left: 0px
         }
+        
     }
     @media only screen and (max-width: 912px) {
-        padding: 140px 0 120px 0;
-        .CTA-content{
-            h2{
-                font-size: 28px;
-                line-height: 38px;
-            }
+        .stats{
+            margin-left: 0px
         }
+
     }
     @media only screen and (max-width: 568px) {
-        .CTA-content{
-           text-align: center;
-           margin-bottom: 70px;
+        .stats{
+            margin-left: 0px
         }
+
     }
     
 `;
