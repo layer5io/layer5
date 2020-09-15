@@ -10743,24 +10743,26 @@ div.slack {
 }
 
 /*Community Meetings Table */
-#table101 {
+#meetingstable {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-#table101 td {
+#meetingstable td {
   border: 1px solid #dcdcdc;
   text-align: left;
   padding: 8px;
   column-gap: 80px;
 }
 
-#table101 th {
-  background-color: #20BF9F;
-  text
+#meetingstable th {
+  background-color: #477E96;
+  font-weight: bold;
+  color: white;
+  border-radius: 0px;
 }
 
-#table101 tr:nth-child(even) {
+#meetingstable tr:nth-child(even) {
   background-color: #e8e8e8;
 }
