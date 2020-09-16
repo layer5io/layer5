@@ -1,7 +1,8 @@
 import React from "react";
 
-import { Container, Row, Col } from "../../reusecore/Layout";
+import { Container } from "../../reusecore/Layout";
 import logo from "../../images/layer5/gsoc.svg";
+import Button from "../../reusecore/Button";
 
 import GSOCSectionWrapper from "./gsoc.style";
 
@@ -11,13 +12,10 @@ const Gsoc = () => {
         <GSOCSectionWrapper>
             <Container>
             <div>
-            <h3 className="post-title" style={{textAlign: 'center',color: '#1D316C',fontSize: '2rem',margin:' 1.46rem 0 1.168rem 0',lineHeight: 'normal'}}>
+            <h3 className="post-title">
             Google Summer of Code 2020 and Layer5
   </h3>
-  <img
-    src={logo}
-    style={{width: '19vw', float: 'right', marginLeft: '20px'}}
-  />
+  <img src={logo}/>
   <b className="black-text">GSoC 2020 Program Timeline</b>
   <div className="gsoc">
     <ul>
@@ -27,13 +25,11 @@ const Gsoc = () => {
       <li className="gsoc">April 27 - Accepted students are announced</li>
       <li className="gsoc">April 27-May 18 - Community bonding period with orgs</li>
       <li className="gsoc">May 18-Aug 17 - Students code the summer away</li>
-      <li className="gsoc">
-        August 25 - Successful student projects are announced
-      </li>
+      <li className="gsoc">August 25 - Successful student projects are announced</li>
     </ul>
   </div>
   <b className="black-text">Statistics</b>
-  <div className="stats" style={{marginLeft: '0px'}}>
+  <div className="stats">
     <ul>
       <li className="gsoc">
         In 15 years 15,926 students from 109 countries have been accepted into
@@ -49,7 +45,7 @@ const Gsoc = () => {
     </ul>
   </div>
   <b className="black-text">Project Ideas</b>
-  <div style={{marginLeft: '0px'}}>
+  <div>
     <b>SMI Conformance Testing</b>
     <ul>
       <li className="gsoc">
@@ -81,7 +77,7 @@ Naveen Jain (<a href="https://github.com/nveenjain">@nveenjain</a>)
 </li>
     </ul>
   </div>
-  <div style={{marginLeft: '0px'}}>
+  <div>
     <b>Distributed Load Testing of Service Meshes</b>
     <ul>
       <li className="gsoc">
@@ -121,15 +117,13 @@ Kush Trivedi (<a href="https://github.com/kushthedude">@kushthedude</a>)
   
 
 
-  <div style={{flexGrow: '0.25'}}>&nbsp;</div>
+  <div className="felx-div">&nbsp;</div>
   <hr />
-  <div style={{flexGrow: '0.25'}}>&nbsp;</div>
+  <div className="felx-div">&nbsp;</div>
 
   <div
     id="layer5-intro"
-    className="card-content"
-    style={{position: 'relative', float: 'right'}}
-  >
+    className="card-content">
     <iframe
       width="392"
       height="220.5"
@@ -182,19 +176,11 @@ Kush Trivedi (<a href="https://github.com/kushthedude">@kushthedude</a>)
 
   <div
     id="gsoc-2020"
-    className="card-content"
-    style={{position: 'relative', float: 'center', verticalAlign: 'bottom'}}
-  >
-    <h3 style={{textAlign: 'center', color: 'aliceblue'}}>
-      <a
-        style={{
-          fontSize: '21px',
-          paddingBottom: '40px',
-          paddingTop: '10px',
-          width: '300px'}}
-        className="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow z-depth-2"
-        href="http://slack.layer5.io"
-        >Participate</a>
+    className="card-content1">
+    <h3>
+    <Button className="banner-btn one" >                           
+      <a className="link" href="http://slack.layer5.io">Participate</a>
+    </Button>
     </h3>
   </div>
 </div>
