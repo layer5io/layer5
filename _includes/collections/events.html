@@ -1,5 +1,5 @@
 <div class="row">
-  {% assign sorted = (site.data.events | sort: 'date') | reverse %} {% for event
+  {% assign sorted = (site.data.events | sort: 'date') %} {% for event
   in sorted %} {% if event.visibility != "hide" and event.type != "news" %}
 
   <div class="col s12 m3">
@@ -28,7 +28,7 @@
             "
           />
           <!-- <span class="card-title"><a style="color:white">{{ book.title | escape }}</a></span> -->
-          <!-- <a id="{{site.url}}{{ event.link }}" class="btn-floating halfway-fab waves-effect z-depth-4 
+          <!-- <a id="{{site.url}}{{ event.link }}" class="btn-floating halfway-fab waves-effect z-depth-4
           l5-dark-yellow
  waves-dark darken-3"
           href="{{site.url}}{{ event.link }}">
@@ -41,6 +41,5 @@
       </a>
     </div>
   </div>
-
   {% endif %} {% endfor %}
 </div>
