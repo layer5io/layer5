@@ -18,6 +18,8 @@ The service mesh landscape is powered by Jekyll. In order to add/update the land
 
 Entries should be listed in alphabetical order. Edit other yaml files as needed.
 
+- Aslo, to update the Service Mesh Timeline, add the new service mesh in the [non-functional.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/non-functional.yml) file. Add `announce-date` key for the service mesh then accordingly add the weight, to list the service mesh in the timeline correctly.
+
 ### <a name="news">Adding News</a>
 
 1. In order to add/update news items, fork this repository, clone it, create a branch and navigate to the `collections/_news` directory.
