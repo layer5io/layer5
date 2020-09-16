@@ -85,6 +85,51 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 a {
     text-decoration: none;
 }
+.post-title{
+    text-align: center;
+    color: #1D316C;
+    font-size: 2rem;
+    margin: 1.46rem 0 1.168rem 0;
+    line-height: normal
+}
+img{
+    width: 19vw;
+    float: right;
+    margin-left: 20px;
+}
+.banner-btn.one{
+    background: #EBC017;
+    color: #fff;
+    &:hover{
+        background: #EAD07D;
+        color: #333;
+    }
+}
+.flex-div{
+    flex-grow: 0.25;
+}
+.card-content{
+    position: relative;
+    float: right;
+}
+.card-content1{
+    position: relative;
+    float: center;
+    vertical-align: bottom;
+}
+h3{
+    text-align: center;
+    color: aliceblue;
+}
+.participate{
+    font-size: 21px;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    width: 300px;
+}
+.link{
+    color: white;
+}
     padding: 140px 0 60px 0;
     position: relative;
     .CTA-content{
