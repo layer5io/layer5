@@ -16,7 +16,7 @@ const Gsoc = () => {
             Google Summer of Code 2020 and Layer5
   </h3>
   <img src={logo}/>
-  <b className="black-text">GSoC 2020 Program Timeline</b>
+  <b className="blue">GSoC 2020 Program Timeline</b>
   <div className="gsoc">
     <ul>
       <li className="gsoc">January 14 - Organization applications open</li>
@@ -28,7 +28,7 @@ const Gsoc = () => {
       <li className="gsoc">August 25 - Successful student projects are announced</li>
     </ul>
   </div>
-  <b className="black-text">Statistics</b>
+  <b className="blue">Statistics</b>
   <div className="stats">
     <ul>
       <li className="gsoc">
@@ -44,7 +44,7 @@ const Gsoc = () => {
       </li>
     </ul>
   </div>
-  <b className="black-text">Project Ideas</b>
+  <b className="blue">Project Ideas</b>
   <div>
     <b>SMI Conformance Testing</b>
     <ul>
@@ -78,7 +78,7 @@ Naveen Jain (<a href="https://github.com/nveenjain">@nveenjain</a>)
     </ul>
   </div>
   <div>
-    <b>Distributed Load Testing of Service Meshes</b>
+    <b className="blue">Distributed Load Testing of Service Meshes</b>
     <ul>
       <li className="gsoc">
         <b>Description</b>: Many performance benchmarks are limited to single
