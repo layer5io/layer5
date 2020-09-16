@@ -1,5 +1,5 @@
 <div class="timeline">
-  {% assign sorted = (site.data.landscape.non-functional | sort: 'weight') %}
+  {% assign sorted = (site.data.landscape.non-functional | sort: 'weight' | reverse) %}
   {% for meshes in sorted %} {% if meshes.weight %}
       <div  class="data-cont arr{{ meshes.weight | modulo: 2 }}">
         <div class="content{{ meshes.weight | modulo: 2 }}">
