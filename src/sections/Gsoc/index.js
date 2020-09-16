@@ -11,14 +11,14 @@ const Gsoc = () => {
         <GSOCSectionWrapper>
             <Container>
             <div>
-            <h3 className="post-title" style={{textAlign: 'center',color: '#1D316C',fontSize: '2rem',margin:' 1.46rem 0 1.168rem 0'}}>
+            <h3 className="post-title" style={{textAlign: 'center',color: '#1D316C',fontSize: '2rem',margin:' 1.46rem 0 1.168rem 0',lineHeight: 'normal'}}>
             Google Summer of Code 2020 and Layer5
   </h3>
   <img
     src={logo}
     style={{width: '19vw', float: 'right', marginLeft: '20px'}}
   />
-  <h5 className="black-text">GSoC 2020 Program Timeline</h5>
+  <b className="black-text">GSoC 2020 Program Timeline</b>
   <div className="gsoc">
     <ul>
       <li className="gsoc">January 14 - Organization applications open</li>
@@ -32,7 +32,7 @@ const Gsoc = () => {
       </li>
     </ul>
   </div>
-  <h5 className="black-text">Statistics</h5>
+  <b className="black-text">Statistics</b>
   <div className="stats" style={{marginLeft: '0px'}}>
     <ul>
       <li className="gsoc">
@@ -48,7 +48,7 @@ const Gsoc = () => {
       </li>
     </ul>
   </div>
-  <h5 className="black-text">Project Ideas</h5>
+  <b className="black-text">Project Ideas</b>
   <div style={{marginLeft: '0px'}}>
     <b>SMI Conformance Testing</b>
     <ul>
@@ -59,7 +59,7 @@ const Gsoc = () => {
         outlined in the
         <a
           href="https://docs.google.com/document/d/1HL8Sk7NSLLj-9PRqoHYVIGyU6fZxUQFotrxbmfFtjwc/edit"
-          >design specification</a>
+          > design specification</a>
       </li>
       <li className="gsoc"><b>Recommended Skills</b>: Golang, Kubernetes</li>
       <li className="gsoc">
@@ -72,7 +72,7 @@ const Gsoc = () => {
       <li className="gsoc">
         <b>Issue(s)</b>:
         <a href="https://github.com/servicemeshinterface/smi-spec/issues/70 "
-          > Link
+          > https://github.com/<wbr/>servicemeshinterface/<wbr/>smi-spec/issues/70
         </a>
       </li>
       <li className="gsoc">
@@ -108,7 +108,7 @@ Naveen Jain (<a href="https://github.com/nveenjain">@nveenjain</a>)
       <li className="gsoc">
         <b>Issue(s)</b>:
         <a href="https://github.com/envoyproxy/envoy-perf/issues/72"
-          > Link
+          > https://github.com/<wbr/>envoyproxy/<wbr/>envoy-perf/issues/72
         </a>
       </li>
             <li className="gsoc">

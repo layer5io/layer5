@@ -6,6 +6,9 @@ body{
     max-width: 100%;
     overflow-x: hidden;
 }
+b{
+    color: rgb(29, 49, 108);
+}
 element.style {
     font-size: 0.7em;
     padding-bottom: 40px;
