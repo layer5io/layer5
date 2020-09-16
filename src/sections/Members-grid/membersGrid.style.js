@@ -7,7 +7,7 @@ export const MembersGridWrapper = styled.div`
     }
     .members-grid-wrapper{
         padding-bottom: 60px;
-        margin-top: 250px;
+        margin-top: 80px;
     }
     @media only screen and (max-width: 912px) {
         .members-page-wrapper{

@@ -20,10 +20,10 @@ export const ProfileCardWrapper = styled.div`
         margin: auto;
         background: #00B39F;
         top: 50%;
-        transform: translateY(-50%);
         
         &:hover{
-            color: #3C49FF;
+            background: #3C494F;
+            cursor: pointer;
         }
         
         header {
@@ -42,9 +42,9 @@ export const ProfileCardWrapper = styled.div`
             }
             
             h1 {
-                font-weight: 200;
+                font-weight: 300;
                 font-size: 30px;
-                color: #444;
+                color: white;
                 letter-spacing: -2px;
                 margin-top: 15px;
                 padding: 0;
@@ -61,19 +61,17 @@ export const ProfileCardWrapper = styled.div`
         }
         
         .profile-social-links {
-            display: table;
-            width: 70%;
-            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            width: 90%;
             
             li {
-                display: table-cell;
-                width: 33.3333333333333333%
+                
                 
                 a{
                     display: block;
                     text-align: center;
                     padding: 10px;
-                    margin: 0 10px;
                     border-radius: 100%;
                     -webkit-transition: box-shadow 0.2s;
                     -moz-transition: box-shadow 0.2s;
@@ -89,9 +87,7 @@ export const ProfileCardWrapper = styled.div`
                     }
                     
                     svg{
-                        color: #000;
-                        width: 100%;
-                        height: 50%
+                        color: white;
                         display: block;
                     }
                 }
