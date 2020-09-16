@@ -6,7 +6,7 @@ body{
     max-width: 100%;
     overflow-x: hidden;
 }
-b{
+.blue{
     color: rgb(29, 49, 108);
 }
 element.style {
