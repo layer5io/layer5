@@ -7,14 +7,13 @@ const Gsod = () => {
     return (
         <GSODSectionWrapper>
             <Container>
-                <div style={{zIndex: "20"}}>
+                <div>
                     <h3 className="post-title">
     Google Season of Docs 2020
                     </h3>
                     <h2>Google Season of Docs 2020 and Layer5</h2>
                     <p>Google <a href="https://developers.google.com/season-of-docs">Season of Docs</a> gives technical writers an opportunity to work with open source projects. Layer5 is participating in the Season of Docs in 2020. See below for a list of project ideas.</p>
-                    <div id="layer5-intro" className="card-content"><iframe width="392" height="220.5" src="https://www.youtube.com/embed/0yN5T5LB9ps" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
-
+                    <div id="layer5-intro" className="card-content"><iframe  src="https://www.youtube.com/embed/0yN5T5LB9ps" frameBorder="0" width="392" height="220.5" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy"></iframe></div>
                     <h3>Program Maintainers</h3>
                     <ul>
                         <li>Lee Calcote (<a href="https://github.com/leecalcote">@leecalcote</a>)</li>

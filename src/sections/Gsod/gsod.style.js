@@ -7,9 +7,6 @@ element.style {
     padding-top: 10px;
     width: 300px;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    font-weight: inherit;
-}
 a {
     text-decoration: none;
 }
@@ -23,8 +20,22 @@ a {
 .card-content{
     position:relative;
     float:right;
-    marginLeft:20px;
+    margin-left:20px;
 }
+@media (max-width:400px){
+.card-content{
+    position:relative;
+    float:none;
+    margin-left: 0px;
+     overflow: hidden;
+}
+.card-content iframe{
+   border: 0;
+   height: 100%;
+   width: 100%;
+   left:0;
+   top:0;
+}}
 .logo{
     width:  150px;
     float:  left;
@@ -34,6 +45,12 @@ a {
     position: relative;
     .CTA-content{
         h2{
+            font-size: 40px;
+            line-height: 56px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        h3{
             font-size: 40px;
             line-height: 56px;
             font-weight: 600;
