@@ -10743,12 +10743,8 @@ div.slack {
 }
 
 /*Community Meetings Table */
-.light-black-text {
-  color: #505050;
-}
 
 #meetingstable {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -10769,4 +10765,8 @@ div.slack {
 
 #meetingstable tr:nth-child(even) {
   background-color: #e8e8e8;
+}
+
+.light-black-text {
+  color: #505050;
 }
