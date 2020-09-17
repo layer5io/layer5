@@ -9,11 +9,10 @@ const Gsod = () => {
             <Container>
                 <div>
                     <h3 className="post-title">
-    Google Season of Docs 2020
+                    Google Season of Docs 2020 and Layer5
                     </h3>
-                    <h2>Google Season of Docs 2020 and Layer5</h2>
+                    <img src={logo} className="logo"/>
                     <p>Google <a href="https://developers.google.com/season-of-docs">Season of Docs</a> gives technical writers an opportunity to work with open source projects. Layer5 is participating in the Season of Docs in 2020. See below for a list of project ideas.</p>
-                    <div id="layer5-intro" className="card-content"><iframe  src="https://www.youtube.com/embed/0yN5T5LB9ps" frameBorder="0" width="392" height="220.5" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy"></iframe></div>
                     <h3>Program Maintainers</h3>
                     <ul>
                         <li>Lee Calcote (<a href="https://github.com/leecalcote">@leecalcote</a>)</li>
@@ -46,10 +45,6 @@ Developer / Contributor Framework</li>
                         <li>Use any open-source training track tool to create tutorial for Meshery and performance management.</li>
                         <li>Update the contribution documentation and create an user guide for <a href="https://meshery.io">Meshery</a>.</li>
                     </ul>
-                    <p><img
-                        src={logo}
-                        className="logo"
-                    /></p>
                     <h4>What you&#39;ll learn</h4>
                     <p>A writer who takes on this project will learn:</p>
                     <ul>
@@ -58,6 +53,60 @@ Developer / Contributor Framework</li>
                         <li>How to work with different service meshes &amp; service mesh architecture</li>
                         <li>How to create and render beautiful API docs</li>
                     </ul>
+                    <div className="flex-div">&nbsp;</div>
+      <hr />
+      <div className="flex-div">&nbsp;</div>
+      <div
+        id="layer5-intro"
+        className="card-content">
+        <iframe
+          width="392"
+          height="220.5"
+          src="https://www.youtube.com/embed/0yN5T5LB9ps"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p>
+        <b>What is Layer5?</b>
+      </p>
+      <p>  
+      While small, the Layer5 community represents the largest collection of
+      service mesh projects and their maintainers in the world. We build
+      projects to provide learning environments, deployment and operational best
+      practices, performance benchmarks, create documentation, share networking
+      opportunities, and more. Our shared commitment to the open source spirit
+      pushes Layer5 projects forward. New members are always welcome.
+      </p>
+      <p>  
+        <b>Is it Open Source?</b>
+      </p>  
+      <p>  
+      Layer5 projects are open source software. Anyone can download, use, work
+      on, and share it with others. It's built on principles like collaboration,
+      globalism, and innovation. Layer5 projects are distributed under the terms
+      of Apache v2.
+      </p>  
+      <p>  
+        <b>Google Season of Docs Participation?</b>
+      </p>  
+      <p>  
+      The key component of these projects is our Community. This community,
+      which you will join as an participant in Google Season of Docs, is
+      improving the world of diverse cloud native systems. Your contributions
+      will affect people you've never met. The Layer5 community includes
+      software engineers, researchers, students, artists, system administrators,
+      operators and web designers -- all of whom will be happy to help you get
+      started.
+      </p>  
+      <p>  
+      We believe that all contributors should expect and be part of a safe and
+      friendly environment for constructive contribution. We can more
+      effectively and successfully compare and challenge different ideas to find
+      the best solutions for advancement, while building the size, diversity,
+      and strength of our community.
+      </p>  
 
                 </div>
             </Container>
