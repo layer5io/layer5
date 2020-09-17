@@ -10741,3 +10741,36 @@ div.slack {
     font-size: 8px;
   }
 }
+
+/*Community Meetings Table */
+
+#meetingstable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#meetingstable td {
+  border: 1px solid #dcdcdc;
+  text-align: center;
+  padding: 8px;
+  column-gap: 80px;
+}
+#meetingstable td.first {
+    text-align: right;
+    font-weight: normal;
+    background-color: #647881;
+    color: white;
+    border-collapse: collapse;
+    border: 1px dashed aliceblue;
+}
+
+#meetingstable th {
+  background-color: #477E96;
+  font-weight: bold;
+  color: white;
+  border-radius: 0px;
+}
+
+#meetingstable tr:nth-child(even) {
+  background-color: #e8e8e8;
+}
