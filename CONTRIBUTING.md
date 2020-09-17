@@ -10,15 +10,15 @@ Contributions, updates, [discrepancy reports](/../../issues) and [pull requests]
 
 The service mesh landscape is powered by Jekyll. In order to add/update the landscape, fork this repository, clone it, create a branch and navigate to the **\_data/categories** folder. Edit these yaml files (if appropriate):
 
-- [non-functional.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/non-functional.yml) - overview of various service meshes
-- [meshes.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/meshes.yml) - list of individual service mesh details
-- [proxies.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/proxies.yml) - list of individual modern proxies
-- [gw.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/gw.yml) - list of API gateways
-- [lb.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/lb.yml) - list of load balancers
+- [non-functional.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/non-functional.yml) - overview of various service meshes
+- [meshes.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/meshes.yml) - list of individual service mesh details
+- [proxies.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/proxies.yml) - list of individual modern proxies
+- [gw.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/gw.yml) - list of API gateways
+- [lb.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/lb.yml) - list of load balancers
 
 Entries should be listed in alphabetical order. Edit other yaml files as needed.
 
-- Aslo, to update the Service Mesh Timeline, add the new service mesh in the [non-functional.yml](https://github.com/layer5io/layer5/blob/master/_data/categories/non-functional.yml) file. Add `announce-date` key for the service mesh then add a `weight` key having value 1+`maximum value of weight`, to list the service mesh in the timeline correctly.
+- Aslo, to update the Service Mesh Timeline, add the new service mesh in the [non-functional.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/non-functional.yml) file. Add `announce-date` key for the service mesh then add a `weight` key having value 1+`maximum value of weight`, to list the service mesh in the timeline correctly.
 
 ### <a name="news">Adding News</a>
 
