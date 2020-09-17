@@ -4,9 +4,9 @@ import { FaTwitter, FaGithub } from "react-icons/fa";
 import Image from "../image";
 
 const ProfileCard = (props) =>{
-    const {name, github, twitter, image_path} = props.frontmatter;
+    const {name, github, twitter, status, image_path} = props.frontmatter;
     return(
-        <ProfileCardWrapper>
+        <ProfileCardWrapper status={status}>
             <div className="profile-card">
                 <header>
                     <Image {...image_path} imgStyle={{ objectFit: "contain" }}/>

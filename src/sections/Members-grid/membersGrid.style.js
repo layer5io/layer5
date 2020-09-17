@@ -15,4 +15,14 @@ export const MembersGridWrapper = styled.div`
         }
     }
     
+    .color-legend{
+        float: right;
+        .active-filter-color{
+            display: inline-block;
+            background-color: #00b39f;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    
 `;

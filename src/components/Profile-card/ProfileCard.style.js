@@ -19,7 +19,9 @@ export const ProfileCardWrapper = styled.div`
         position: relative;
         margin: auto;
         background: #00B39F;
+        background: ${props => props.status === "Active" ? "#00B39F" : "gray"};
         top: 50%;
+        transition: 0.3s;
         
         &:hover{
             background: #3C494F;

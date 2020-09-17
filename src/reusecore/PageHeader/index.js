@@ -12,7 +12,7 @@ const PageHeader = ({ categories, title, subtitle,  author, thumbnail }) => {
                         <Image {...thumbnail} imgStyle={{ objectFit: "contain"}}/>
                     )}</div>
                 <h1>{title}</h1>
-                {subtitle && (<h4><i>{subtitle}</i></h4>)}
+                {subtitle && (<h4>{subtitle}</h4>)}
                 {categories && (
                     <div className="breadcrumbs post">
                         <h4>Tags:</h4>
