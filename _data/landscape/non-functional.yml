@@ -7,7 +7,7 @@
   ga-1-date: 2019
   commercial: AWS
   category: Service Mesh
-  weight: 17
+  timeline-order: 17
   icon: assets/images/service-mesh-icons/App Mesh.png
 
 - name: Aspen Mesh
@@ -19,7 +19,7 @@
   ga-1-date: 2019
   commercial: Aspen Mesh
   category: Service Mesh
-  weight: 8
+  timeline-order: 8
   icon: assets/images/service-mesh-icons/aspenmesh.png
 
 - name: Cilium
@@ -31,7 +31,7 @@
   ga-1-date: November 2017
   commercial: "Isovalent"
   category: Service Mesh
-  weight: 4
+  timeline-order: 4
   icon: assets/images/service-mesh-icons/cilium.png
 
 - name: Consul Connect
@@ -43,7 +43,7 @@
   ga-1-date: June 2018
   commercial: Consul Enterprise (HashiCorp)
   category: Service Mesh
-  weight: 3
+  timeline-order: 3
   icon: assets/images/service-mesh-icons/consul.png
 
 - name: Grey Matter
@@ -55,7 +55,7 @@
   ga-1-date: February 2019
   commercial: Grey Matter
   category: Service Mesh
-  weight: 7
+  timeline-order: 7
   icon: assets/images/service-mesh-icons/greymatter.jpg
 
 - name: Istio
@@ -67,7 +67,7 @@
   ga-1-date: July 2018
   commercial: AspenMesh
   category: Service Mesh
-  weight: 5
+  timeline-order: 5
   icon: assets/images/service-mesh-icons/istio.png
 
 - name: Linkerd 1.x
@@ -79,7 +79,7 @@
   ga-1-date: April 2017
   commercial: Buoyant
   category: Service Mesh
-  weight: 2
+  timeline-order: 2
   icon: assets/images/service-mesh-icons/linkerd.png
 
 - name: Conduit
@@ -91,7 +91,7 @@
   ga-1-date: Sept 2018
   commercial: Buoyant
   category: Service Mesh
-  weight: 10
+  timeline-order: 10
   icon: assets/images/service-mesh-icons/conduit.png
   
 - name: Linkerd 2.x
@@ -103,7 +103,7 @@
   ga-1-date: Sept 2018
   commercial: Buoyant
   category: Service Mesh
-  weight: 9
+  timeline-order: 9
   icon: assets/images/service-mesh-icons/linkerd.png
 
 - name: Maesh
@@ -115,7 +115,7 @@
   ga-1-date: "?"
   commercial: Containous
   category: Service Mesh
-  weight: 18
+  timeline-order: 18
   icon: assets/images/service-mesh-icons/maesh.png
   
 - name: Maistra
@@ -127,7 +127,7 @@
   ga-1-date: September 2019
   commercial: OpenShift Service Mesh (Red Hat)
   category: Service Mesh
-  weight: 13
+  timeline-order: 13
   icon: assets/images/service-mesh-icons/maistra.png
 
 - name: Mesher
@@ -139,7 +139,7 @@
   ga-1-date: November 2017
   commercial: Huawei
   category: Service Mesh
-  weight: 6
+  timeline-order: 6
 
 - name: Network Service Mesh
   opensource: "Yes"
@@ -150,7 +150,7 @@
   ga-1-date: August 2019
   commercial: "?"
   category: Service Mesh
-  weight: 11
+  timeline-order: 11
   icon: assets/images/service-mesh-icons/nsm.png
   
 - name: Octarine
@@ -162,7 +162,7 @@
   ga-1-date: November 2019
   commercial: Octarine
   category: Service Mesh
-  weight: 16
+  timeline-order: 16
   icon: assets/images/service-mesh-icons/octarine.png
 
 - name: Rotor
@@ -174,7 +174,7 @@
   ga-1-date: discontinued
   commercial: Houston (Turbine Labs)
   category: Service Mesh
-  weight: 12
+  timeline-order: 12
   icon: assets/images/service-mesh-icons/rotor.png
 
 - name: SOFAMesh
@@ -186,7 +186,7 @@
   ga-1-date: discontinued
   commercial: Ant Financial
   category: Service Mesh
-  weight: 14
+  timeline-order: 14
   icon: assets/images/service-mesh-icons/sofamesh.png
 
 - name: Yggdrasil
@@ -198,7 +198,7 @@
   ga-1-date: "?"
   commercial: "N/A"
   category: Service Mesh
-  weight: 15
+  timeline-order: 15
 
 - name: Vulcand
   opensource: "Yes"
@@ -209,7 +209,7 @@
   ga-1-date: December 2014
   commercial: N/A
   category: Service Mesh
-  weight: 1
+  timeline-order: 1
   icon: assets/images/service-mesh-icons/vulcan.png
 
 - name: Citrix ADC CPX

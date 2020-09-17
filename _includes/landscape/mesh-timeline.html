@@ -1,11 +1,11 @@
 <div class="timeline">
-  {% assign sorted = (site.data.landscape.non-functional | sort: 'weight' | reverse) %}
-  {% for meshes in sorted %} {% if meshes.weight %}
-      <div  class="data-cont arr{{ meshes.weight | modulo: 2 }}">
-        <div class="content{{ meshes.weight | modulo: 2 }}">
+  {% assign sorted = (site.data.landscape.non-functional | sort: 'timeline-order' | reverse) %}
+  {% for meshes in sorted %} {% if meshes.timeline-order %}
+      <div  class="data-cont arr{{ meshes.timeline-order | modulo: 2 }}">
+        <div class="content{{ meshes.timeline-order | modulo: 2 }}">
           <div class="meshname-img">
             {% if meshes.icon %}
-              <div class="img-style{{ meshes.weight | modulo: 2 }}">
+              <div class="img-style{{ meshes.timeline-order | modulo: 2 }}">
                 <img src="{{ meshes.icon }}" alt="{{meshes.name}}" style="width:inherit; height:inherit;">
               </div>
             {% endif %}
