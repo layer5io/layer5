@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-import Bg1 from "../../assets/images/app/features/bg-1.png";
-import Bg2 from "../../assets/images/app/features/bg-2.png";
-
-import Vintage1 from "../../assets/images/app/features/vintage-1.png";
-import Vintage2 from "../../assets/images/app/features/vintage-2.png";
-
 const CareersSectionWrapper = styled.div`
 .project{
     box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
@@ -97,141 +91,141 @@ position: relative;
        left:0;
        top:0;
     }}
-    padding: 95px 0 50px 0;
-  
-    .fetures-icon-block{
-         height: 170px;
-         width: 170px;
-         display: flex;
-         display: block;
-         margin: 0 auto;
-         align-items: center;
-         margin-bottom: 25px;
-         position: relative;
- 
-         img{
-             display: block;
-             margin: 0 auto;
-         }
-         
-    }
-     .fetures-block{
-         
-         .fetures-icon-block{
-             &:before{
-                 position: absolute;
-                 display: inline-block;
-                 top: -3px;
-                 right: 0px;
-                 height: 70px;
-                 width: 70px;
-                 content: '';
-                 border-radius: 50%;
-                 z-index: -1;
-                 opacity: 0;
-                 transition: all 0.3s linear;
-             }
-         } 
-         &:hover{
-             .fetures-icon-block{
-                 &:before{
-                     opacity: 1;
-                     right: -10px;
-                 }
-             }
-         }
-         
- 
-         
-         h3{
-             font-size: 22px; 
-             margin-bottom: 15px;
-             font-weight: 600;
-             line-height: 30px;
-         }
-         p{
-             margin: 0 0 50px 0;
-             font-weight: 300;
-         }
-     }
-     @media only screen and (max-width: 912px) {
-         padding: 80px 0 0px 0;
-     }
-     @media only screen and (max-width: 760px) {
-         padding: 80px 0 50px 0;
-     }
-     @media only screen and (max-width: 568px) {
-         .fetures-block{
-             text-align: center;
-         }
-         .fetures-icon-block{
-             margin: 0 auto 25px auto;
-         }
-     }
-     img{
+padding: 95px 0 50px 0;
+
+.fetures-icon-block{
+    height: 170px;
+    width: 170px;
+    display: flex;
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 25px;
+    position: relative;
+
+    img{
         display: block;
         margin: 0 auto;
     }
-    .grid{
-        margin-top: 30px;
+    
+}
+.fetures-block{
+    
+    .fetures-icon-block{
+        &:before{
+            position: absolute;
+            display: inline-block;
+            top: -3px;
+            right: 0px;
+            height: 70px;
+            width: 70px;
+            content: '';
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.3s linear;
+        }
+    } 
+    &:hover{
+        .fetures-icon-block{
+            &:before{
+                opacity: 1;
+                right: -10px;
+            }
+        }
     }
-    .project__block__inner { 
-        box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
-        padding-top: 4%;
-        padding-right: 4%;
-        padding-left: 4%;
-        margin: 15px;
-        min-height: 410px;
-        border-radius: 4%;
-        position: relative;
-        h3{
-            margin-bottom: 20px; 
-            font-weight: 400;
-        }
-        p{
-            font-size: 16px;
-            font-weight: 400
-        }
-        a{
-            position: absolute;
-            right: 15%;
-            bottom: 16%;
-            width: 30px;
-            transition: all 0.8s cubic-bezier(0.3,0.8,0.2,1) 0s;
-            img{
-                margin: 0;
-                width: 30px;
-                height: auto;
-            }
-        }
-        .project__block__inner { 
-        box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
-        padding: 4%;
-        margin: 15px;
-        min-height: 450px;
-        border-radius: 4%;
-        position: relative;
-        h3{
-            margin-bottom: 20px; 
-            font-weight: 400;
-        }
-        p{
-            font-size: 16px;
-            font-weight: 400
-        }
-        a{
-            position: absolute;
-            right: 15%;
-            bottom: 16%;
-            width: 30px;
-            transition: all 0.8s cubic-bezier(0.3,0.8,0.2,1) 0s;
-            img{
-                margin: 0;
-                width: 30px;
-                height: auto;
-            }
-        }
-        
+    
+
+    
+    h3{
+        font-size: 22px; 
+        margin-bottom: 15px;
+        font-weight: 600;
+        line-height: 30px;
+    }
+    p{
+        margin: 0 0 50px 0;
+        font-weight: 300;
+    }
+}
+@media only screen and (max-width: 912px) {
+    padding: 80px 0 0px 0;
+}
+@media only screen and (max-width: 760px) {
+    padding: 80px 0 50px 0;
+}
+@media only screen and (max-width: 568px) {
+    .fetures-block{
+        text-align: center;
+    }
+    .fetures-icon-block{
+        margin: 0 auto 25px auto;
+    }
+}
+img{
+    display: block;
+    margin: 0 auto;
+}
+.grid{
+    margin-top: 30px;
+}
+.project__block__inner { 
+    box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
+    padding-top: 4%;
+    padding-right: 4%;
+    padding-left: 4%;
+    margin: 15px;
+    min-height: 410px;
+    border-radius: 4%;
+    position: relative;
+h3{
+    margin-bottom: 20px; 
+    font-weight: 400;
+}
+p{
+    font-size: 16px;
+    font-weight: 400
+}
+a{
+    position: absolute;
+    right: 15%;
+    bottom: 16%;
+    width: 30px;
+    transition: all 0.8s cubic-bezier(0.3,0.8,0.2,1) 0s;
+    img{
+        margin: 0;
+        width: 30px;
+        height: auto;
+    }
+}
+.project__block__inner { 
+    box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
+    padding: 4%;
+    margin: 15px;
+    min-height: 450px;
+    border-radius: 4%;
+    position: relative;
+h3{
+    margin-bottom: 20px; 
+    font-weight: 400;
+}
+p{
+    font-size: 16px;
+    font-weight: 400
+}
+a{
+    position: absolute;
+    right: 15%;
+    bottom: 16%;
+    width: 30px;
+    transition: all 0.8s cubic-bezier(0.3,0.8,0.2,1) 0s;
+    img{
+        margin: 0;
+        width: 30px;
+        height: auto;
+    }
+}
+
 `;
 
 export default CareersSectionWrapper;
