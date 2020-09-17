@@ -5,7 +5,7 @@ export const ProfileCardWrapper = styled.div`
         list-style: none;
     }
     
-    .gatsby-image-wrapper {
+    img{
        -ms-interpolation-mode: bicubic;
        vertical-align: middle;
        border: 0;
@@ -35,6 +35,8 @@ export const ProfileCardWrapper = styled.div`
             overflow: hidden;
             
             .gatsby-image-wrapper {
+                display: block;
+                margin: auto;
                 border-radius: 100%;
                 overflow: hidden;
                 width: 150px;
@@ -91,10 +93,6 @@ export const ProfileCardWrapper = styled.div`
                     }
                 }
             }
-            
-            
         }
-        
-        
     }
 `;
