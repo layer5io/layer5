@@ -187,7 +187,7 @@ const Gsoc = () => {
                         <div className="grid">
                             <Row>
                                 <Col xs={12} sm={6} md={3}>
-                                    <Link to="/gsoc">
+                                    <Link to="/gsod">
                                         <div className="fetures-block v1 project">
                                             <div className="fetures-icon-block">
                                                 <img src={Icon5} alt="img" />
