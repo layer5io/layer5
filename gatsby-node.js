@@ -41,6 +41,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     'src/templates/project-single.js'
   );
 
+  const BookPostTemplate = path.resolve(
+      'src/templates/book-single.js'
+  );
+
   const res = await graphql(`
     {
      allPosts:  allMdx(
@@ -87,6 +91,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       node => node.fields.collection === `projects`
   );
 
+  const books = allNodes.filter(
+      node => node.fields.collection === `books`
+  );
+
   blogs.forEach(blog => {
     createPage({
       path: blog.fields.slug,
@@ -118,12 +126,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   });
 
-  projects.forEach(singleProjects => {
+  projects.forEach(project => {
     createPage({
-      path: singleProjects.fields.slug,
+      path: project.fields.slug,
       component: ProjectPostTemplate,
       context: {
-        slug: singleProjects.fields.slug,
+        slug: project.fields.slug,
+      },
+    })
+  });
+
+  books.forEach(book => {
+    createPage({
+      path: book.fields.slug,
+      component: BookPostTemplate,
+      context: {
+        slug: book.fields.slug,
       },
     })
   });

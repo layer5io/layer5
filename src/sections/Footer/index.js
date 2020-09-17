@@ -109,12 +109,12 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/careers/programs/gsoc/2020">
+                                            <Link className="anchor" to="/gsoc">
                     GSoC 2020
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/careers/programs/gsod/2020">
+                                            <Link className="anchor" to="/gsod">
                     GSOD 2020
                                             </Link>
                                         </li>
