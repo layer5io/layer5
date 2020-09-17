@@ -1,26 +1,33 @@
 import React from "react";
 import { ProfileCardWrapper } from "./ProfileCard.style";
 import { FaTwitter, FaGithub } from "react-icons/fa";
+import Img from "gatsby-image";
+import Image from "../image";
 
-const ProfileCard = () =>{
+const ProfileCard = ({name, github, twitter, status, image_path}) =>{
     return(
         <ProfileCardWrapper>
             <div className="profile-card">
                 <header>
-                    <img src="http://gravatar.com/avatar/eb2d48c7f2cf027bb4cb20483e27c9c9?size=200px"/>
-                    <h1>Tanuj Agarwal</h1>
+                    {/*<Image {...image_path} imgStyle={{ objectFit: "contain" }}/>*/}
+                    <Img fluid={image_path.childImageSharp.fluid} />
+                    <h1>{name}</h1>
                 </header>
                 <ul className="profile-social-links">
-                    <li>
-                        <a href="https://twitter.com/alishahab">
-                            <FaGithub size={32}/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://themeforest.net/user/alishahab">
-                            <FaTwitter size={32}/>
-                        </a>
-                    </li>
+                    { github && (
+                        <li>
+                            <a href={`https://github.com/${github}`}>
+                                <FaGithub size={32}/>
+                            </a>
+                        </li>
+                    )}
+                    { twitter && (
+                        <li>
+                            <a href={`https://twitter.com/${twitter}`}>
+                                <FaTwitter size={32}/>
+                            </a>
+                        </li>
+                    )}
                 </ul>
             </div>
         </ProfileCardWrapper>

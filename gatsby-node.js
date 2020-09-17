@@ -44,7 +44,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const res = await graphql(`
     {
      allPosts:  allMdx(
-        filter: { frontmatter: { published: { eq: true } } }
+        filter: { fields: { collection: { ne: "members" } }, frontmatter: { published: { eq: true } } }
       ) {
         nodes {
           fields {
@@ -134,16 +134,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
     const collection = getNode(node.parent).sourceInstanceName;
-    const slug = `/${collection}/${_.kebabCase(node.frontmatter.title)}`;
     createNodeField({
       name: "collection",
       node,
       value: collection
     });
-    createNodeField({
-      name: `slug`,
-      node,
-      value: slug,
-    });
+    if(collection !== `members`) {
+      const slug = `/${collection}/${_.kebabCase(node.frontmatter.title)}`;
+      createNodeField({
+        name: `slug`,
+        node,
+        value: slug,
+      });
+    }
   }
 };
