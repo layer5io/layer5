@@ -9,7 +9,7 @@ import Icon2 from "../../images/careers/product-engineering-internship.svg";
 import Icon3 from "../../images/careers/layer5-tag-linkedin.png";
 import Icon4 from "../../images/careers/ux-designer.svg";
 
-import Icon5 from "../../images/layer5/gsod.png";
+import Icon5 from "../../images/careers/gsod.png";
 import Icon6 from "../../images/layer5/gsoc.svg";
 import Icon8 from "../../images/layer5/cb.png";
 
