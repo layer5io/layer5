@@ -5,7 +5,7 @@ export const ProfileCardWrapper = styled.div`
         list-style: none;
     }
     
-    img {
+    .gatsby-image-wrapper {
        -ms-interpolation-mode: bicubic;
        vertical-align: middle;
        border: 0;
@@ -34,10 +34,11 @@ export const ProfileCardWrapper = styled.div`
             z-index: 1;
             overflow: hidden;
             
-            img {
+            .gatsby-image-wrapper {
                 border-radius: 100%;
                 overflow: hidden;
                 width: 150px;
+                height: 150px;
                 box-shadow: 0 1px 0 rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.1);
             }
             
@@ -66,8 +67,6 @@ export const ProfileCardWrapper = styled.div`
             width: 90%;
             
             li {
-                
-                
                 a{
                     display: block;
                     text-align: center;

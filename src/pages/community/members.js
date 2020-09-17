@@ -13,6 +13,7 @@ import { graphql } from "gatsby";
 export const query = graphql`
     query allMembers {
         allMdx(
+            sort: { fields: [frontmatter___name], order: ASC }
             filter: { fields: { collection: { eq: "members" } } }
         ) {
             nodes {
