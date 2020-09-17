@@ -10743,6 +10743,10 @@ div.slack {
 }
 
 /*Community Meetings Table */
+.light-black-text {
+  color: #505050;
+}
+
 #meetingstable {
   font-family: arial, sans-serif;
   border-collapse: collapse;
