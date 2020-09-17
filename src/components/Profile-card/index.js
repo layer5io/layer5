@@ -1,16 +1,15 @@
 import React from "react";
 import { ProfileCardWrapper } from "./ProfileCard.style";
 import { FaTwitter, FaGithub } from "react-icons/fa";
-import Img from "gatsby-image";
 import Image from "../image";
 
-const ProfileCard = ({name, github, twitter, status, image_path}) =>{
+const ProfileCard = (props) =>{
+    const {name, github, twitter, image_path} = props.frontmatter;
     return(
         <ProfileCardWrapper>
             <div className="profile-card">
                 <header>
-                    {/*<Image {...image_path} imgStyle={{ objectFit: "contain" }}/>*/}
-                    <Img fluid={image_path.childImageSharp.fluid} />
+                    <Image {...image_path} imgStyle={{ objectFit: "contain" }}/>
                     <h1>{name}</h1>
                 </header>
                 <ul className="profile-social-links">

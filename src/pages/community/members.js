@@ -25,7 +25,7 @@ export const query = graphql`
                     status
                     image_path{
                         childImageSharp{
-                            fluid(maxWidth: 400){
+                            fluid(maxWidth: 200){
                                 ...GatsbyImageSharpFluid
                             }
                         }
