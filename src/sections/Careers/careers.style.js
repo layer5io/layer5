@@ -6,6 +6,8 @@ const CareersSectionWrapper = styled.div`
     min-height: 280px;
     padding: 5px;
     transition: 0.2s ease;
+    border-radius: 4%;
+    position: relative;
 }
 .project:hover{
     transform: scale(1.1);
@@ -106,8 +108,7 @@ padding: 95px 0 50px 0;
     img{
         display: block;
         margin: 0 auto;
-    }
-    
+    }  
 }
 .fetures-block{
     
@@ -134,9 +135,6 @@ padding: 95px 0 50px 0;
             }
         }
     }
-    
-
-    
     h3{
         font-size: 22px; 
         margin-bottom: 15px;
@@ -225,7 +223,6 @@ a{
         height: auto;
     }
 }
-
 `;
 
 export default CareersSectionWrapper;
