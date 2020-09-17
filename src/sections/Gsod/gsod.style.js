@@ -36,10 +36,13 @@ a {
    left:0;
    top:0;
 }}
+.flex-div{
+    flex-grow: 0.25;
+}
 .logo{
-    width:  150px;
-    float:  left;
-    margin: 20px;
+    width: 19vw;
+    float: right;
+    margin-left: 20px;
 }
     padding: 140px 0 60px 0;
     position: relative;
