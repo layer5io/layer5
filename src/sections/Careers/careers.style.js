@@ -11,11 +11,19 @@ const CareersSectionWrapper = styled.div`
     background-color: white;
     margin-top: 20px;
     marging-bottom: 20px;
+    margin-left: 6px;
+    margin-right: 6px;
 }
 .project:hover{
-    transform: scale(1.1);
+    transform: scale(1.08);
     transition: 0.2s ease;
     z-index: 3000;
+}
+@media only screen and (max-width: 600px) {
+    .project{
+       margin-left: 15px;
+       margin-right: 15px;
+    }
 }
 .blue{
     color: rgb(29, 49, 108);
