@@ -8,10 +8,14 @@ const CareersSectionWrapper = styled.div`
     transition: 0.2s ease;
     border-radius: 4%;
     position: relative;
+    background-color: white;
+    margin-top: 20px;
+    marging-bottom: 20px;
 }
 .project:hover{
     transform: scale(1.1);
     transition: 0.2s ease;
+    z-index: 3000;
 }
 .blue{
     color: rgb(29, 49, 108);
@@ -165,7 +169,7 @@ img{
     margin: 0 auto;
 }
 .grid{
-    margin-top: 30px;
+    margin-top: 2px;
 }
 .project__block__inner { 
     box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
@@ -223,6 +227,7 @@ a{
         height: auto;
     }
 }
+
 `;
 
 export default CareersSectionWrapper;
