@@ -67,21 +67,18 @@ const Gsoc = () => {
                     <div className="felx-div">&nbsp;</div>
                     <hr />
                     <div className="felx-div">&nbsp;</div>
+                    <p>
                     <b className="blue">Available Opportunities</b>
-                    <div>
-                        <div>  
-                            <ul>
-                                <b>Internships</b>
-                                <p> 
+                    </p>
+                    <p> 
               The key component of these projects is our community of contributors. Some contributors intern under the Google Summer of Code program, while others intern unpaid directly with Layer5. Irrespective, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small. The Layer5 community includes software engineers, researchers, students, artists, system administrators, operators and web designers -- all of whom will be happy to help you get started.
-                                </p>
-                            </ul>
-                            <ul>
-                                <p> 
+                    </p>
+                    <p> 
               We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution. We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement, while building the size, diversity, and strength of our community.
-                                </p>
-                            </ul>
-                        </div>
+                    </p>
+                    <br></br>
+                    <div> 
+                        <b>Internships</b>
                         <div className="grid">
                         <Row>
                             <Col xs={12} sm={6} md={4}>
@@ -125,20 +122,9 @@ const Gsoc = () => {
                             </Col>
                         </Row>
                     </div>
+                    <br></br>
                     <div>
-                        <div>  
-                            <ul>
-                                <b>Full-Time Opportunities</b>
-                                {/* <p> 
-              The key component of these projects is our community of contributors. Some contributors intern under the Google Summer of Code program, while others intern unpaid directly with Layer5. Irrespective, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small. The Layer5 community includes software engineers, researchers, students, artists, system administrators, operators and web designers -- all of whom will be happy to help you get started.
-                                </p>
-                            </ul>
-                            <ul>
-                                <p> 
-              We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution. We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement, while building the size, diversity, and strength of our community.
-                                </p> */}
-                            </ul>
-                        </div>
+                        <b>Full-Time Opportunities</b>
                         <div className="grid">
                             <Row>
                                 <Col xs={12} sm={6} md={4}>
