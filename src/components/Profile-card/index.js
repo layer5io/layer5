@@ -16,14 +16,14 @@ const ProfileCard = (props) =>{
                     { github && (
                         <li>
                             <a href={`https://github.com/${github}`}>
-                                <FaGithub size={32}/>
+                                <FaGithub className="github" size={32}/>
                             </a>
                         </li>
                     )}
                     { twitter && (
                         <li>
                             <a href={`https://twitter.com/${twitter}`}>
-                                <FaTwitter size={32}/>
+                                <FaTwitter className="twitter" size={32}/>
                             </a>
                         </li>
                     )}

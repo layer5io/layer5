@@ -80,9 +80,19 @@ export const ProfileCardWrapper = styled.div`
                     -moz-transition: box-shadow 0.2s;
                     -o-transition: box-shadow 0.2s;
                     transition: box-shadow 0.2s;
+                    transition: 0.3s;
                     
                     &:hover{
                         box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
+                        background: white;
+                        
+                        .github{
+                            color: #211F1F;
+                        }
+                        
+                        .twitter{
+                            color: #1DA1F2;
+                        }
                     }
                     
                     &:active{
