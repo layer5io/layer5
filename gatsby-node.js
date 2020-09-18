@@ -6,6 +6,7 @@
 
 const path = require(`path`);
 const _ = require("lodash");
+const paginate = require('gatsby-awesome-pagination');
 
 // You can delete this file if you're not using it
 // Replacing '/' would result in empty string which is invalid
@@ -70,6 +71,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
   `);
+
+  paginate({
+    createPage, // The Gatsby `createPage` function
+    items: blogs, // An array of objects
+    itemsPerPage: 10, // How many items you want per page
+    pathPrefix: '/blog', // Creates pages like `/blog`, `/blog/2`, etc
+    component: blogListTemplate, // Just like `createPage()`
+  })
 
   // handle errors
   if (res.errors) {
