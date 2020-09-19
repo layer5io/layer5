@@ -214,9 +214,6 @@ const FotterWrapper = styled.section`
           justify-content: center;
         }
       }
-      .widget-catagory{
-        padding-left: 20px;
-      }
     }
   }
   @media only screen and (max-width: 375px) {
