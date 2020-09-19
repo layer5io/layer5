@@ -7,46 +7,18 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 import Layout from "../../components/layout";
-import MembersGrid from "../../sections/Members-grid";
-import { graphql } from "gatsby";
-
-export const query = graphql`
-    query allMembers {
-        allMdx(
-            sort: { fields: [frontmatter___name], order: ASC }
-            filter: { fields: { collection: { eq: "members" } } }
-        ) {
-            nodes {
-                id
-                frontmatter {
-                    name
-                    position
-                    github
-                    twitter
-                    status
-                    image_path{
-                        childImageSharp{
-                            fluid(maxWidth: 200){
-                                ...GatsbyImageSharpFluid
-                            }
-                        }
-                        extension
-                        publicURL
-                    }
-                }
-            }
-        }
-    }
-`;
+import AllMembers from "../../sections/Members-grid/AllMembers";
+import ActiveMembers from "../../sections/Members-grid/ActiveMembers";
+import InactiveMembers from "../../sections/Members-grid/InactiveMembers";
 
 
-const MembersPage = ({data}) => (
+const MembersPage = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
             <SEO title="Members | Layer5 - The Service Mesh Company" />
             <Navigation />
-            <MembersGrid data={data}/>
+            <ActiveMembers/>
             <Footer/>
         </Layout>
     </ThemeProvider>

@@ -4,6 +4,7 @@ import PageHeader from "../../reusecore/PageHeader";
 import ProfileCard from "../../components/Profile-card";
 
 import { MembersGridWrapper } from "./membersGrid.style";
+import Button from "../../reusecore/Button";
 
 const MembersGrid = ({data}) =>{
     return(
@@ -13,16 +14,14 @@ const MembersGrid = ({data}) =>{
             <div className="members-page-wrapper">
                 <Container>
                     <div className="members-grid-wrapper">
-                        {/*<Row>*/}
-                        {/*    <Col xs={12} sm={12} lg={12}>*/}
-                        {/*        <div className="color-legend">*/}
-                        {/*            <div className="active-filter-color"/>*/}
-                        {/*            Active*/}
-                        {/*            <div className="active-filter-color"/>*/}
-                        {/*            In-Active*/}
-                        {/*        </div>*/}
-                        {/*    </Col>*/}
-                        {/*</Row>*/}
+                        <Row>
+                            <Col xs={12} sm={12} lg={12}>
+                                <div className="color-legend">
+                                    <Button><div className="active-filter-color"/> Active</Button>
+                                    <Button><div className="inactive-filter-color"/> Inactive</Button>
+                                </div>
+                            </Col>
+                        </Row>
                         <Row>
                             {data.allMdx.nodes.map(({id, frontmatter }) => (
                                 <Col xs={12} sm={6} lg={4} key={id}>
