@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { ThemeProvider } from "styled-components";
 import theme from "../../theme/blog/themeStyles";
 import { GlobalStyle } from "../../sections/app.style";
@@ -12,16 +12,46 @@ import ActiveMembers from "../../sections/Members-grid/ActiveMembers";
 import InactiveMembers from "../../sections/Members-grid/InactiveMembers";
 
 
-const MembersPage = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Members | Layer5 - The Service Mesh Company" />
-            <Navigation />
-            <ActiveMembers/>
-            <Footer/>
-        </Layout>
-    </ThemeProvider>
-);
+class MembersPage extends Component {
+    state = {
+        active: false,
+        inActive: false
+    };
+
+    toggleActive = () =>{
+        let status = this.state.active;
+        this.setState({
+            active : !status,
+            inActive: false
+        })
+    };
+
+    toggleInactive = () =>{
+        let status = this.state.inActive;
+        this.setState({
+            active : false,
+            inActive: !status
+        })
+    };
+
+    render() {
+        let MembersView = props => {
+            if (this.state.active) return <ActiveMembers {...props}/>
+            else if(this.state.inActive) return <InactiveMembers {...props}/>
+            return <AllMembers {...props}/>
+        };
+        return(
+            <ThemeProvider theme={theme}>
+                <Layout>
+                    <GlobalStyle />
+                    <SEO title="Members | Layer5 - The Service Mesh Company" />
+                    <Navigation />
+                    <MembersView toggleActive={this.toggleActive} toggleInactive={this.toggleInactive}/>
+                    <Footer/>
+                </Layout>
+            </ThemeProvider>
+        )
+    }
+}
 
 export default MembersPage;

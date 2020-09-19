@@ -6,7 +6,7 @@ import ProfileCard from "../../components/Profile-card";
 import { MembersGridWrapper } from "./membersGrid.style";
 import Button from "../../reusecore/Button";
 
-const MembersGrid = ({data}) =>{
+const MembersGrid = props =>{
     return(
         <MembersGridWrapper>
             <PageHeader title="Community Members"
@@ -17,13 +17,13 @@ const MembersGrid = ({data}) =>{
                         <Row>
                             <Col xs={12} sm={12} lg={12}>
                                 <div className="color-legend">
-                                    <Button><div className="active-filter-color"/> Active</Button>
-                                    <Button><div className="inactive-filter-color"/> Inactive</Button>
+                                    <Button onClick={props.toggleActive}><div className="active-filter-color"/> Active</Button>
+                                    <Button onClick={props.toggleInactive}><div className="inactive-filter-color"/> Inactive</Button>
                                 </div>
                             </Col>
                         </Row>
                         <Row>
-                            {data.allMdx.nodes.map(({id, frontmatter }) => (
+                            {props.data.allMdx.nodes.map(({id, frontmatter }) => (
                                 <Col xs={12} sm={6} lg={4} key={id}>
                                     <ProfileCard frontmatter={frontmatter} />
                                 </Col>

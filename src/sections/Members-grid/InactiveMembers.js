@@ -2,7 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import MembersGrid from "./index";
 
-const InactiveMembers = () =>{
+const InactiveMembers = props =>{
     const data = useStaticQuery(
         graphql`
             query InactiveMembers {
@@ -34,7 +34,7 @@ const InactiveMembers = () =>{
         `
     );
 
-    return <MembersGrid data={data}/>
+    return <MembersGrid data={data} {...props} />
 };
 
 export default InactiveMembers;
