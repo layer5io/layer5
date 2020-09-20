@@ -79,7 +79,7 @@
     link: /news
     new_window: false
 - name: Run Meshery
-  link: /meshery#getting-started
+  link: /meshery
   new_window: false
   highlight: yes   
   class: cta
