@@ -2,7 +2,7 @@ import styled from "styled-components";
 import FooterBG from "../../assets/images/app/footer/footer-bg.png";
 
 const FotterWrapper = styled.section`
-  padding-top: 100px;
+  padding-top: 40px;
   padding-bottom: 25px;
   background: #3c494f;
   background-repeat: no-repeat;
@@ -38,7 +38,7 @@ const FotterWrapper = styled.section`
   }
   .footer-contact{
     .footer-widgets{
-      margin-top: 15px;
+      // margin-top: 15px;
       .contactf{
         padding-left: 15px;
         padding-right: 15px;
