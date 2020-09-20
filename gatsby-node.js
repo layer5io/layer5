@@ -45,6 +45,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       'src/templates/book-single.js'
   );
 
+  const MemberTemplate = path.resolve(
+      'src/templates/member-single.js'
+  );
+
   const res = await graphql(`
     {
      allPosts:  allMdx(
@@ -55,8 +59,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             collection
             slug
           }
-          frontmatter {
-            title
+        }
+      }
+      allMembers:  allMdx(
+        filter: { fields: { collection: { eq: "members" } } }
+      ) {
+        nodes {
+          fields {
+            slug
           }
         }
       }
@@ -94,6 +104,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const books = allNodes.filter(
       node => node.fields.collection === `books`
   );
+
+  const members = res.data.allMembers.nodes;
 
   blogs.forEach(blog => {
     createPage({
@@ -146,6 +158,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   });
 
+  members.forEach(member => {
+    createPage({
+      path: member.fields.slug,
+      component: MemberTemplate,
+      context: {
+        slug: member.fields.slug,
+      },
+    })
+  });
+
+
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -157,13 +180,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value: collection
     });
-    if(collection !== `members`) {
-      const slug = `/${collection}/${_.kebabCase(node.frontmatter.title)}`;
-      createNodeField({
-        name: `slug`,
-        node,
-        value: slug,
-      });
+    let slug = "";
+    if(collection === `members`) {
+      slug = `/community/members/${_.kebabCase(node.frontmatter.name)}`
     }
+    else{
+      slug = `/${collection}/${_.kebabCase(node.frontmatter.title)}`;
+    }
+    createNodeField({
+      name: `slug`,
+      node,
+      value: slug,
+    });
   }
 };

@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "gatsby";
+import kebabCase from "lodash/kebabCase";
+
 import { Container, Row, Col } from "../../reusecore/Layout";
+import Button from "../../reusecore/Button";
 import PageHeader from "../../reusecore/PageHeader";
 import ProfileCard from "../../components/Profile-card";
 
 import { MembersGridWrapper } from "./membersGrid.style";
-import Button from "../../reusecore/Button";
 
 const MembersGrid = props =>{
     return(
@@ -25,7 +28,9 @@ const MembersGrid = props =>{
                         <Row>
                             {props.data.allMdx.nodes.map(({id, frontmatter }) => (
                                 <Col xs={12} sm={6} lg={4} key={id}>
-                                    <ProfileCard frontmatter={frontmatter} />
+                                    <Link to={`${kebabCase(frontmatter.name)}`}>
+                                        <ProfileCard frontmatter={frontmatter} />
+                                    </Link>
                                 </Col>
                             ))}
                         </Row>
