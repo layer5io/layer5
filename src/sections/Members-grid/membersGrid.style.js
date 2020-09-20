@@ -16,8 +16,14 @@ export const MembersGridWrapper = styled.div`
     }
     
     .color-legend{
+        padding: 20px;
         display: flex;
         justify-content: flex-end;
+        
+        @media only screen and (max-width: 576px) {
+            justify-content: center;
+        }
+        
         button{
             margin: 10px;
         }  

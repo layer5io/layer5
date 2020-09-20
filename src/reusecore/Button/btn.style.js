@@ -32,8 +32,8 @@ const ButtonStyle = styled.button`
     }
 
     ${props => props.primary && css`
-        color: ${props.theme.primaryLightColor};
-        background: ${props.theme.primaryColor};
+        color: ${props.active ? props.theme.primaryColor: props.theme.primaryLightColor};
+        background: ${props.active ? props.theme.primaryLightColor: props.theme.primaryColor};
 
         &:hover{
             color: ${props.theme.primaryColor};
@@ -41,8 +41,8 @@ const ButtonStyle = styled.button`
         }
     `}
     ${props => props.secondary && css`
-        color: ${props.theme.secondaryColor};
-        background: ${props.theme.secondaryLightColor};
+        color: ${props.active ? props.theme.secondaryLightColor: props.theme.secondaryColor};
+        background: ${props.active ? props.theme.secondaryColor: props.theme.secondaryLightColor};
 
         &:hover{
             color: ${props.theme.secondaryLightColor};
