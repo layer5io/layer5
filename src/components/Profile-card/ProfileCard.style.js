@@ -25,7 +25,6 @@ export const ProfileCardWrapper = styled.div`
         
         &:hover{
             background: #3C494F;
-            cursor: pointer;
         }
         
         header {

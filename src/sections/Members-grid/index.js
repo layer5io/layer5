@@ -28,7 +28,7 @@ const MembersGrid = props =>{
                         <Row>
                             {props.data.allMdx.nodes.map(({id, frontmatter }) => (
                                 <Col xs={12} sm={6} lg={4} key={id}>
-                                    <Link to={`${kebabCase(frontmatter.name)}`}>
+                                    <Link to={kebabCase(frontmatter.name)}>
                                         <ProfileCard frontmatter={frontmatter} />
                                     </Link>
                                 </Col>
