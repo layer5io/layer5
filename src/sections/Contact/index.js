@@ -12,13 +12,13 @@ const Contact = () => {
             <SectionTitle className="section-title" UniWidth="55%">
                 <h4>Contact Us</h4>
                 <h2>
-                    <span>Drope your mail address </span> for next update.
+                    <span>Drop your email address </span> for updates from Layer5.
                 </h2>
             </SectionTitle>
             <Container>
                 <form name="contactform" method="post" action="#">
                     <input type="email" placeholder="Enter your Email" />
-                    <Button>Send Now</Button>
+                    <Button>Submit</Button>
                 </form>
             </Container>
         </ContactWrapper>

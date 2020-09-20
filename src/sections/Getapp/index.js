@@ -34,7 +34,7 @@ const GetApp = () => {
                                 <Link to="#" className="getapp-btn apl-btn">
                                     <DiAppstore />
                                     <p>
-                    Download iphone App
+                    Download the iOS App
                                         <span>App Store</span>
                                     </p>
                                 </Link>

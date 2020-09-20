@@ -67,7 +67,7 @@ const FooterClassic = () => {
                                     <Link to="#">FAQ</Link>
                                 </li>
                                 <li>
-                                    <Link to="#">Privecy</Link>
+                                    <Link to="#">Privacy</Link>
                                 </li>
                                 <li>
                                     <Link to="#">Reporting</Link>
@@ -80,7 +80,7 @@ const FooterClassic = () => {
                     </Col>
                     <Col xs={12} sm={6} lg={4}>
                         <div className="footer-widgets">
-                            <h3 className="widget-title">Follow US</h3>
+                            <h3 className="widget-title">Follow Us</h3>
                             <ul className="social">
                                 <li>
                                     <Link to="#">

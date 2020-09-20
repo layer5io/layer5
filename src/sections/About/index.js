@@ -34,7 +34,7 @@ const About = () => {
                             {" "}
                             <h4>About us</h4>
                             <h2>
-                                <span>Starting with Layer5</span> is easier than anything.
+                                <span>Starting with Layer5</span> is easier than before.
                             </h2>
                         </SectionTitle>
                         <p className="about-text text-one">
