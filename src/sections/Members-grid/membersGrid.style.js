@@ -16,7 +16,7 @@ export const MembersGridWrapper = styled.div`
     }
     
     .color-legend{
-        padding: 20px;
+        padding: 0px 20px 20px 20px;
         display: flex;
         justify-content: flex-end;
         
@@ -25,7 +25,7 @@ export const MembersGridWrapper = styled.div`
         }
         
         button{
-            margin: 10px;
+            margin: 0px 10px 10px 10px;
         }  
     }
     .active-filter-color{
