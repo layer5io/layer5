@@ -46,7 +46,8 @@ class MembersPage extends Component {
                     <GlobalStyle />
                     <SEO title="Members | Layer5 - The Service Mesh Company" />
                     <Navigation />
-                    <MembersView toggleActive={this.toggleActive} toggleInactive={this.toggleInactive}/>
+                    <MembersView toggleActive={this.toggleActive} toggleInactive={this.toggleInactive}
+                                 active={this.state.active} inActive={this.state.inActive} />
                     <Footer/>
                 </Layout>
             </ThemeProvider>

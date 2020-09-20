@@ -16,7 +16,8 @@ export const MembersGridWrapper = styled.div`
     }
     
     .color-legend{
-        float: right;
+        display: flex;
+        justify-content: flex-end;
         button{
             margin: 10px;
         }  
