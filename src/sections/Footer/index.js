@@ -115,12 +115,12 @@ const Footer = () => {
                                     <h3 className="widget-title">Company</h3>
                                     <ul className="widget-catagory">
                                         <li>
-                                            <Link className="anchor" to="company/news">
+                                            <Link className="anchor" to="/company/news">
                     News
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="company/brand">
+                                            <Link className="anchor" to="/company/brand">
                     Brand
                                             </Link>
                                         </li>
