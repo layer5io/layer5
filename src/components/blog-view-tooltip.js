@@ -13,21 +13,20 @@ export const ToolTipWrapper = styled.div`
       margin-right: 10px;
       margin-left: 10px;
       .border {
-        border: 2px solid gray;
         line-height: 18px;
       }
       a {
         padding: 5px;
-        color: #1D316C;
-        background-color: #00B39F; 
+        color: #3a4751;
+        background-color: #00d3a9; 
         &:hover{
             color: gray;
             cursor: pointer;
         }             
       }
       .active {
-        background-color: #1D316C;
-        color: #00B39F;
+        background-color: #3a4751;
+        color: #00d3a9;
       }
 `;
 
