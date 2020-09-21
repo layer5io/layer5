@@ -3,7 +3,7 @@ layout: post
 title: "Deploying Linkerd with Meshery"
 date: 2020-03-11 08:15:05 +0000
 image: /assets/images/posts/2020-03-11-deploying-linkerd-with-meshery/Linkerd-with-Meshery.png
-author: Ant Weiss
+author: Anton Weiss
 permalink: /blog/deploying-linkerd-with-meshery
 ---
 
