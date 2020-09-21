@@ -22,18 +22,12 @@ export const ToolTipWrapper = styled.div`
         background-color: #00B39F; 
         &:hover{
             color: gray;
-            //  ${props =>
-        props.theme.secondaryColor
-            ? props.theme.secondaryColor
-            : "#00B39F"};
             cursor: pointer;
         }             
       }
       .active {
         background-color: #1D316C;
         color: #00B39F;
-        //  ${props =>
-        props.theme.secondaryColor ? props.theme.secondaryColor : "#00B39F"};
       }
 `;
 
