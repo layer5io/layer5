@@ -1,10 +1,11 @@
 import React from "react";
 import { ProfileCardWrapper } from "./ProfileCard.style";
 import { FaTwitter, FaGithub } from "react-icons/fa";
+import meshmate_logo from "./meshmate-icon.svg"
 import Image from "../image";
 
 const ProfileCard = (props) =>{
-    const {name, github, twitter, status, image_path} = props.frontmatter;
+    const {name, github, twitter, status, image_path, meshmate} = props.frontmatter;
     return(
         <ProfileCardWrapper status={status}>
             <div className="profile-card">
@@ -24,6 +25,13 @@ const ProfileCard = (props) =>{
                         <li>
                             <a href={`https://twitter.com/${twitter}`}>
                                 <FaTwitter className="twitter" size={32}/>
+                            </a>
+                        </li>
+                    )}
+                    { meshmate && (
+                        <li>
+                            <a href={`https://twitter.com/${twitter}`}>
+                                <img src={meshmate_logo}/>
                             </a>
                         </li>
                     )}

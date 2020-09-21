@@ -18,6 +18,7 @@ const InactiveMembers = props =>{
                             github
                             twitter
                             status
+                            meshmate
                             image_path{
                                 childImageSharp{
                                     fluid(maxWidth: 200){
