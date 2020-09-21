@@ -5,8 +5,8 @@ import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-
 import Navigation from "../sections/Navigation";
+import MemberSingle from "../sections/Member-single";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
@@ -41,6 +41,7 @@ const MemberSinglePage = ({data}) => {
                 <GlobalStyle />
                 <SEO title={`${data.mdx.frontmatter.name} | Layer5`} />
                 <Navigation />
+                <MemberSingle frontmatter={data.mdx.frontmatter}/>
                 <Footer />
             </Layout>
         </ThemeProvider>

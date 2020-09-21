@@ -36,9 +36,9 @@ class MembersPage extends Component {
 
     render() {
         let MembersView = props => {
-            if (this.state.active) return <ActiveMembers {...props}/>
-            else if(this.state.inActive) return <InactiveMembers {...props}/>
-            return <AllMembers {...props}/>
+            if (this.state.active) return <ActiveMembers {...props}/>;
+            else if(this.state.inActive) return <InactiveMembers {...props}/>;
+            return <AllMembers {...props}/>;
         };
         return(
             <ThemeProvider theme={theme}>
