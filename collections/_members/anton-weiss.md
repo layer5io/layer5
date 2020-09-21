@@ -1,6 +1,6 @@
 ---
 layout: person
-name: Ant Weiss
+name: Anton Weiss
 position: Contributor
 image_path: https://i.stack.imgur.com/PgRJn.jpg
 twitter: antweiss
