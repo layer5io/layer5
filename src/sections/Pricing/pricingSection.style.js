@@ -100,11 +100,11 @@ const PricingSectionWrapper = styled.section`
         right: 0;
         opacity: 0;
         transition: all 0.3s ease-in;
-        background: rgb(251,123,129);
-        background: -moz-linear-gradient(left,  rgba(251,123,129,1) 0%, rgba(254,191,179,1) 100%);
-        background: -webkit-linear-gradient(left,  rgba(251,123,129,1) 0%,rgba(254,191,179,1) 100%);
-        background: linear-gradient(to right,  rgba(251,123,129,1) 0%,rgba(254,191,179,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb7b81', endColorstr='#febfb3',GradientType=1 );
+        background: rgb(0,179,159);
+        background: -moz-linear-gradient(left,  rgba(0,179,159,1) 0%, rgba(0,211,169,1) 100%);
+        background: -webkit-linear-gradient(left,  rgba(0,179,159,1) 0%,rgba(0,211,169,1) 100%);
+        background: linear-gradient(to right,  rgba(0,179,159,1) 0%,rgba(0,211,169,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b39f', endColorstr='#00d3a9',GradientType=1 );
 
     }
     @media only screen and (max-width: 1280px) {
