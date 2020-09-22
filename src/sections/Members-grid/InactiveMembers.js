@@ -14,7 +14,6 @@ const InactiveMembers = props =>{
                         id
                         frontmatter {
                             name
-                            position
                             github
                             twitter
                             status

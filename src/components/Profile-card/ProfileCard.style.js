@@ -56,10 +56,10 @@ export const ProfileCardWrapper = styled.div`
             
             h2 {
                 font-weight: 400;
-                font-size: 14px;
-                color: #666;
+                font-size: 20px;
+                color: white;
                 letter-spacing: .5px;
-                margin: 0;
+                margin-top: 10px;
                 padding: 0;
             }
         }
@@ -92,10 +92,6 @@ export const ProfileCardWrapper = styled.div`
                         .twitter{
                             color: #1DA1F2;
                         }
-                        
-                        .meshmate-logo{
-                            color : gray;
-                        }
                     }
                     
                     &:active{
@@ -106,11 +102,6 @@ export const ProfileCardWrapper = styled.div`
                         color: white;
                         display: block;
                         width: 32px;
-                    }
-                    
-                    img{
-                        width: 32px;
-                        display: block;
                     }
                 }
             }

@@ -1,17 +1,21 @@
 import React from "react";
+import { Link } from "gatsby";
 import { ProfileCardWrapper } from "./ProfileCard.style";
 import { FaTwitter, FaGithub } from "react-icons/fa";
 import MeshMateIcon from "../../svgs/meshmate-icon.svg"
 import Image from "../image";
 
 const ProfileCard = (props) =>{
-    const {name, github, twitter, status, image_path, meshmate} = props.frontmatter;
+    const {name, position,  github, twitter, status, image_path, meshmate} = props.frontmatter;
     return(
         <ProfileCardWrapper status={status}>
             <div className="profile-card">
                 <header>
                     <Image {...image_path} imgStyle={{ objectFit: "contain" }}/>
                     <h1>{name}</h1>
+                    { position && (
+                        <h2>{position}</h2>
+                    )}
                 </header>
                 <ul className="profile-social-links">
                     { github && (
@@ -30,9 +34,9 @@ const ProfileCard = (props) =>{
                     )}
                     { meshmate && (
                         <li>
-                            <a href={`https://twitter.com/${twitter}`}>
-                                <MeshMateIcon size={32}/>
-                            </a>
+                            <Link to={'/community/meshmates'}>
+                                <MeshMateIcon className="meshmate" size={32}/>
+                            </Link>
                         </li>
                     )}
                 </ul>

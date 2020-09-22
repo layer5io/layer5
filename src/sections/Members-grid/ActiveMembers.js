@@ -14,7 +14,6 @@ const ActiveMembers = props =>{
                         id
                         frontmatter {
                             name
-                            position
                             github
                             twitter
                             status
