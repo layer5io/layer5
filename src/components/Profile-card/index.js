@@ -1,7 +1,7 @@
 import React from "react";
 import { ProfileCardWrapper } from "./ProfileCard.style";
 import { FaTwitter, FaGithub } from "react-icons/fa";
-import meshmate_logo from "./meshmate-icon.svg"
+import MeshMateIcon from "../../svgs/meshmate-icon.svg"
 import Image from "../image";
 
 const ProfileCard = (props) =>{
@@ -31,7 +31,7 @@ const ProfileCard = (props) =>{
                     { meshmate && (
                         <li>
                             <a href={`https://twitter.com/${twitter}`}>
-                                <img src={meshmate_logo}/>
+                                <MeshMateIcon size={32}/>
                             </a>
                         </li>
                     )}

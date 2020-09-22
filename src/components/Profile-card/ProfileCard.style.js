@@ -92,6 +92,10 @@ export const ProfileCardWrapper = styled.div`
                         .twitter{
                             color: #1DA1F2;
                         }
+                        
+                        .meshmate-logo{
+                            color : gray;
+                        }
                     }
                     
                     &:active{
@@ -100,6 +104,12 @@ export const ProfileCardWrapper = styled.div`
                     
                     svg{
                         color: white;
+                        display: block;
+                        width: 32px;
+                    }
+                    
+                    img{
+                        width: 32px;
                         display: block;
                     }
                 }
