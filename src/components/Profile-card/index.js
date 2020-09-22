@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { ProfileCardWrapper } from "./ProfileCard.style";
 import { FaTwitter, FaGithub } from "react-icons/fa";
-import MeshMateIcon from "../../svgs/meshmate-icon.svg"
+import MeshMateIcon from "../../svgs/meshmate-icon.svg";
 import Image from "../image";
 
 const ProfileCard = (props) =>{
@@ -34,7 +34,7 @@ const ProfileCard = (props) =>{
                     )}
                     { meshmate && (
                         <li>
-                            <Link to={'/community/meshmates'}>
+                            <Link to={"/community/meshmates"}>
                                 <MeshMateIcon className="meshmate" size={32}/>
                             </Link>
                         </li>

@@ -1,5 +1,5 @@
 import React from "react";
-import { MemberSingleWrapper } from "./memberSingle.style"
+import { MemberSingleWrapper } from "./memberSingle.style";
 import ProfileCard from "../../components/Profile-card";
 import {Col, Container, Row} from "../../reusecore/Layout";
 

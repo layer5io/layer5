@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 import MembersGrid from "./index";
 
 const AllMembers = props =>{
@@ -34,7 +34,7 @@ const AllMembers = props =>{
         `
     );
 
-    return <MembersGrid data={data} {...props}/>
+    return <MembersGrid data={data} {...props}/>;
 };
 
 export default AllMembers;

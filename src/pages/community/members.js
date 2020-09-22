@@ -23,7 +23,7 @@ class MembersPage extends Component {
         this.setState({
             active : !status,
             inActive: false
-        })
+        });
     };
 
     toggleInactive = () =>{
@@ -31,7 +31,7 @@ class MembersPage extends Component {
         this.setState({
             active : false,
             inActive: !status
-        })
+        });
     };
 
     render() {
@@ -47,11 +47,11 @@ class MembersPage extends Component {
                     <SEO title="Members | Layer5 - The Service Mesh Company" />
                     <Navigation />
                     <MembersView toggleActive={this.toggleActive} toggleInactive={this.toggleInactive}
-                                 active={this.state.active} inActive={this.state.inActive} />
+                        active={this.state.active} inActive={this.state.inActive} />
                     <Footer/>
                 </Layout>
             </ThemeProvider>
-        )
+        );
     }
 }
 
