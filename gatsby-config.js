@@ -27,6 +27,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /svgs/
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -59,6 +67,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/books`,
         name: `books`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/collections/members`,
+        name: `members`,
       },
     },
     `gatsby-transformer-sharp`,
