@@ -62,10 +62,7 @@ const NavigationWrap = styled.header`
     border-radius: 10px;
     &:hover {
       box-shadow: none;
-      color: ${(props) =>
-        props.theme.menuHoverColor
-            ? props.theme.menuHoverColor
-            : "#FB7B81"}
+      color: #00b39f;
       cursor: pointer;
     }
   }
@@ -107,10 +104,7 @@ const NavigationWrap = styled.header`
             display: block;
             padding: 5px 15px;
             &:hover {
-              color: ${(props) =>
-        props.theme.menuHoverColor
-            ? props.theme.menuHoverColor
-            : "#FB7B81"} !important;
+              color: #00b39f; !important;
             }
             &:before {
               content: none;
@@ -136,17 +130,11 @@ const NavigationWrap = styled.header`
           width: 20px;
           height: 1px;
           opacity: 0;
-          background: ${(props) =>
-        props.theme.menuHoverColor
-            ? props.theme.menuHoverColor
-            : "#FB7B81"};
+          background: #00b39f;
           transition: 450ms all;
         }
         &:hover {
-          color: ${(props) =>
-        props.theme.menuHoverColor
-            ? props.theme.menuHoverColor
-            : "#FB7B81"};
+          color: #00b39f;
           &:before {
             opacity: 1;
           }

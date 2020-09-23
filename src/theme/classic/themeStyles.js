@@ -6,7 +6,7 @@ const theme = {
     primaryColor: "#52DE97",
     primaryLightColor: "#e0f5ea", 
     primaryLightColorTwo: "#f8f5fd",
-    secondaryColor: "#FB7B81",
+    secondaryColor: "#00B39F",
     secondaryLightColor: "#FFEBEC", 
     shadowColor: "rgba(0, 0, 0, 0.15)",
     headingColor: "#1D316C", 

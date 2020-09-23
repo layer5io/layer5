@@ -4,7 +4,7 @@ const theme = {
     primaryColor: "#8A57DE",
     primaryLightColor: "#EEE6FA",
     primaryLightColorTwo: "#f8f5fd",
-    secondaryColor: "#FB7B81", 
+    secondaryColor: "#00B39F", 
     secondaryLightColor: "#FFEBEC",
     tetriaryColor: "#E281CE",
     headingColor: "#2C0075", 
@@ -12,7 +12,7 @@ const theme = {
     shadowColor: "rgba(138, 87, 222, 0.15)",
     shadowLightColor: "#E6E6E6",
     menuColor: "#ffffff",
-    menuHoverColor: "#FB7B81"
+    menuHoverColor: "#00B39F"
 };
 export default theme;
   
