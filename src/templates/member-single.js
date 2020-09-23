@@ -20,6 +20,7 @@ export const query = graphql`
                 position
                 github
                 twitter
+                meshmate
                 image_path{
                     childImageSharp{
                         fluid(maxWidth: 500){
