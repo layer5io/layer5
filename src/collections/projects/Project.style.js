@@ -12,7 +12,7 @@ export const ProjectWrapper = styled.div`
         text-align: center;
         color: black;
     }
-
+   
     .fixed-width {
         align: center;
         max-width: 700px;
