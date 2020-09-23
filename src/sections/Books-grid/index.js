@@ -3,7 +3,7 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import Card from "../../components/Card";
 import PageHeader from "../../reusecore/PageHeader";
 
-import { BooksPageWrapper } from "./BooksGird.style";
+import { BooksPageWrapper } from "./BooksGrid.style";
 
 const BooksGrid = ({data}) => {
     return (
