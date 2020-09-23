@@ -202,7 +202,13 @@ exports.createSchemaCustomization = ({ actions }) => {
       frontmatter: Frontmatter
     }
     type Frontmatter {
-      meshmate: String
+      subtitle: String,
+      abstract: String,
+      eurl: String,
+      twitter: String,
+      github: String,
+      meshmate: String,
+      emeritus: String
     }
   `;
   createTypes(typeDefs)
