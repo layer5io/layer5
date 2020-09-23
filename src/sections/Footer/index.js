@@ -136,7 +136,7 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="company/brand">
+                                            <Link className="anchor" to="/brand">
                     Brand
                                             </Link>
                                         </li>
