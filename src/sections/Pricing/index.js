@@ -18,34 +18,29 @@ const Pricing = () => {
             <img className="section__particle one" src={particle1} alt="img" />
             <img className="section__particle two" src={particle2} alt="img" />
             <Container>
-                <SectionTitle UniWidth="65%">
-                    <h4>Pricing Table</h4>
+                <SectionTitle UniWidth="100%">
+                    <h4>Features</h4>
                     <h2>
-                        <span>Choose your best plan </span> For adorable pricing history.
+                        <span>Meshery is the service mesh management plane.</span>
                     </h2>
+                    <h4 className="liftup">Adopt and operate any service mesh with confidence using Meshery's management features.</h4>
                 </SectionTitle>
                 <Row>
                     {data.pricings.map((pricing, index) => (
                         <Col xs={12} sm={6} lg={4} key={index}>
                             <div className="pricing-block">
-                                <div className="thumb-block">
-                                    <img src={pricing.thumb} alt="appion app landing" />
-                                </div>
                                 <div className="price-block">
-                                    <h3>{pricing.price}</h3>
-                                    <p>{pricing.name}</p>
+                                    <h3>{pricing.name}</h3>
                                 </div>
                                 <p>{pricing.description}</p>
                                 <div className="details-block">
                                     {pricing.services.map((service, index) => (
-                                        <span className={service.className} key={index}>
-                                            {service.className == "on" ? (
-                                                <IoMdCheckmark />
-                                            ) : (
-                                                <IoMdClose />
-                                            )}
-                                            {service.content}
-                                        </span>
+                                        <table className="table" key={index}>
+                                            <tr>
+                                                <td><IoMdCheckmark /></td>
+                                                <td><h5>{service.content}</h5></td>
+                                            </tr>  
+                                        </table>
                                     ))}
                                 </div>
                                 <Button className="pricing-btn">{pricing.btnText}</Button>
