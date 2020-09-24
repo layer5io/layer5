@@ -65,7 +65,7 @@
   primary-lang: Go
   announce-date: May 2017
   ga-1-date: July 2018
-  commercial: AspenMesh
+  commercial: AspenMesh, Layer5, Solo.io, Tetrate
   category: Service Mesh
   timeline-order: 5
   icon: assets/images/service-mesh-icons/istio.png
