@@ -15,6 +15,12 @@ export const CardWrapper = styled.div`
             }
         } 
     }
+
+    .readmore-btn-wrapper{
+        display:flex;
+        justify-content: space-between;
+    }
+
     .post-thumb-block{
         overflow: hidden;
         border-radius: 3px 3px 0 0;
