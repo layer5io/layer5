@@ -37,18 +37,36 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       'src/templates/news-single.js'
   );
 
+  const ProjectPostTemplate = path.resolve(
+    'src/templates/project-single.js'
+  );
+
+  const BookPostTemplate = path.resolve(
+      'src/templates/book-single.js'
+  );
+
+  const MemberTemplate = path.resolve(
+      'src/templates/member-single.js'
+  );
+
   const res = await graphql(`
     {
      allPosts:  allMdx(
-        filter: { frontmatter: { published: { eq: true } } }
+        filter: { fields: { collection: { ne: "members" } }, frontmatter: { published: { eq: true } } }
       ) {
         nodes {
           fields {
             collection
             slug
           }
-          frontmatter {
-            title
+        }
+      }
+      allMembers:  allMdx(
+        filter: { fields: { collection: { eq: "members" } } }
+      ) {
+        nodes {
+          fields {
+            slug
           }
         }
       }
@@ -78,6 +96,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const news = allNodes.filter(
       node => node.fields.collection === `news`
   );
+
+  const projects = allNodes.filter(
+      node => node.fields.collection === `projects`
+  );
+
+  const books = allNodes.filter(
+      node => node.fields.collection === `books`
+  );
+
+  const members = res.data.allMembers.nodes;
 
   blogs.forEach(blog => {
     createPage({
@@ -110,22 +138,78 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   });
 
+  projects.forEach(project => {
+    createPage({
+      path: project.fields.slug,
+      component: ProjectPostTemplate,
+      context: {
+        slug: project.fields.slug,
+      },
+    })
+  });
+
+  books.forEach(book => {
+    createPage({
+      path: book.fields.slug,
+      component: BookPostTemplate,
+      context: {
+        slug: book.fields.slug,
+      },
+    })
+  });
+
+  members.forEach(member => {
+    createPage({
+      path: member.fields.slug,
+      component: MemberTemplate,
+      context: {
+        slug: member.fields.slug,
+      },
+    })
+  });
+
+
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
     const collection = getNode(node.parent).sourceInstanceName;
-    const slug = `/${collection}/${_.kebabCase(node.frontmatter.title)}`;
     createNodeField({
       name: "collection",
       node,
       value: collection
     });
+    let slug = "";
+    if(collection === `members`) {
+      slug = `/community/members/${_.kebabCase(node.frontmatter.name)}`
+    }
+    else{
+      slug = `/${collection}/${_.kebabCase(node.frontmatter.title)}`;
+    }
     createNodeField({
       name: `slug`,
       node,
       value: slug,
     });
   }
+};
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type Mdx implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      subtitle: String,
+      abstract: String,
+      eurl: String,
+      twitter: String,
+      github: String,
+      meshmate: String,
+      emeritus: String
+    }
+  `;
+  createTypes(typeDefs)
 };

@@ -2,9 +2,9 @@ import styled from "styled-components";
 import FooterBG from "../../assets/images/app/footer/footer-bg.png";
 
 const FotterWrapper = styled.section`
-  padding-top: 100px;
+  padding-top: 40px;
   padding-bottom: 25px;
-  background: url(${FooterBG});
+  background: #3c494f;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -38,7 +38,7 @@ const FotterWrapper = styled.section`
   }
   .footer-contact{
     .footer-widgets{
-      margin-top: 15px;
+      // margin-top: 15px;
       .contactf{
         padding-left: 15px;
         padding-right: 15px;
@@ -58,8 +58,17 @@ const FotterWrapper = styled.section`
     }
   }
   .footer-logo {
-    margin-bottom: 15px;
-    margin-left: -20px;
+    max-width: 200px;
+    height: auto;
+  }
+  .descript {
+    margin-top: -10px;
+    color: white;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    font-size: 15px;
+    line-height: 25px;
+    // color: black;
   }
   .footer-widgets {
     &.first {
@@ -160,11 +169,6 @@ const FotterWrapper = styled.section`
     }
   }
   @media only screen and (max-width: 1600px) {
-    .footer-widgets {
-      .widget-catagory {
-        margin-left:15px;
-      }
-    }
     .section__particle{
       &.one{
           display: none;
@@ -173,9 +177,6 @@ const FotterWrapper = styled.section`
   }
   @media only screen and (max-width: 1280px) { 
     .footer-widgets {
-      .widget-catagory {
-        margin-left:15px;
-      }
       .social {
         li + li {
           margin-left: 15px;
@@ -212,9 +213,6 @@ const FotterWrapper = styled.section`
         li {
           justify-content: center;
         }
-      }
-      .widget-catagory{
-        padding-left: 20px;
       }
     }
   }

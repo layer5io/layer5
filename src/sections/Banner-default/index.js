@@ -24,7 +24,7 @@ const BannerDefault = () => {
                         >
                             <h4>The Service Mesh Company</h4>
                             <h1>
-                            representing every <span>every</span> service mesh
+                            representing <span>every</span> service mesh
                             </h1>
                         </SectionTitle>
                         <p>

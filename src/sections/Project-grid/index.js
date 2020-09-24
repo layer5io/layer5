@@ -26,7 +26,7 @@ const ProjectPage = () => {
                             </Link>
                         </Col>
                         <Col xs={12} sm={4}>
-                            <Link to="#">  
+                            <Link to="/projects/service-mesh-performance">  
                                 <div className="project__block__inner">
                                     <div><img src={projectImage2} alt="appion project" /></div>
                                     <h1>Performance</h1>
@@ -52,7 +52,7 @@ const ProjectPage = () => {
                             </Link>
                         </Col>
                         <Col xs={12} sm={4}>
-                            <Link to="#">  
+                            <Link to="/projects/service-mesh-performance">   
                                 <div className="project__block__inner">
                                     <div><img src={projectImage2} alt="appion project" /></div>
                                     <div className="test">
