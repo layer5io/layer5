@@ -9,7 +9,7 @@ const theme = {
     secondaryColor: "#00B39F",
     secondaryLightColor: "#FFEBEC", 
     shadowColor: "rgba(0, 0, 0, 0.15)",
-    headingColor: "#477E96", 
+    headingColor: "#3c494f", 
     textColor: "#7A848E", 
     shadowLightColor: "#E6E6E6",
     menuHoverColor: "#00B39F"
