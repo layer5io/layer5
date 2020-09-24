@@ -115,11 +115,11 @@
   tcp-web: "Yes"
   grpc: "Yes"
   h2: "Yes"
-  multi-cluster: "Experimental"
-  multi-tenant: "Experimental"
-  desc: "An open platform to connect, monitor, and secure microservices. Governed by Google and IBM."
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  desc: "An open platform to connect, monitor, and secure microservices. Created by Google and IBM; now with maintainers from 14 companies and implementations from over 15 vendors."
   prometheus: "Yes"
-  tracing: "Jaeger"
+  tracing: "OpenTracing, Zipkin, Jaeger, Lightstep"
   encryption: "Yes"
   multi-tenant-score: 5
   netdev-persona-score: 1
