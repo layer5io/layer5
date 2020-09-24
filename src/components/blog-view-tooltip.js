@@ -20,7 +20,8 @@ export const ToolTipWrapper = styled.div`
         color: #3a4751;
         background-color: #00d3a9; 
         &:hover{
-            color: gray;
+            background-color: #3a4751;
+            color: #00d3a9;
             cursor: pointer;
         }             
       }
