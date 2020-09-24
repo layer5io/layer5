@@ -7,7 +7,7 @@ const theme = {
     secondaryColor: "#00B39F", 
     secondaryLightColor: "#FFEBEC",
     tetriaryColor: "#E281CE",
-    headingColor: "#2C0075", 
+    headingColor: "#3c494f", 
     textColor: "#7A848E",  
     shadowColor: "rgba(138, 87, 222, 0.15)",
     shadowLightColor: "#E6E6E6",
