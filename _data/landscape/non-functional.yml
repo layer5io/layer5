@@ -165,6 +165,18 @@
   weight: 3
   icon: assets/images/service-mesh-icons/octarine.png
 
+- name: Open Service Mesh
+  opensource: "Yes"
+  link: https://openservicemesh.io/
+  governance: CNCF
+  primary-lang: Go
+  announce-date: August 2020
+  ga-1-date: ?
+  commercial: Microsoft
+  category: Service Mesh
+  weight: 10
+  icon: assets/images/service-mesh-icons/osm.png
+
 - name: Rotor
   opensource: "Yes"
   link: http://github.com/turbinelabs/rotor
