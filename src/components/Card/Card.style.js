@@ -18,6 +18,7 @@ export const CardWrapper = styled.div`
 
     .readmore-btn-wrapper{
         display:flex;
+        justify-content: space-between;
     }
 
     .post-thumb-block{
