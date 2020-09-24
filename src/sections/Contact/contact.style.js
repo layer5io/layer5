@@ -7,17 +7,19 @@ const ContactWrapper = styled.section`
     form{
         text-align: center;
         text-align: center;
-        background: #fbfbfb;
-        display: flex;
+        background: #3c494f;
         align-items: center;
         justify-content: center;
         padding: 100px;
         border-radius: 10px;
     }
+    .inputrow{
+        margin-bottom: 10px;
+    }
     input{
         display: block;
         padding: 15px;
-        width: 80%;
+        width: 100%;
         height: 60px;
         font-size: 16px;
         border-radius: 5px;
