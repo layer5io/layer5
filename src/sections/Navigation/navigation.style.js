@@ -130,7 +130,7 @@ const NavigationWrap = styled.header`
           width: 20px;
           height: 1px;
           opacity: 0;
-          background: #00b39f;
+          background: ${props => props.theme.menuHoverColor};
           transition: 450ms all;
         }
         &:hover {
