@@ -12,7 +12,8 @@ const theme = {
     headingColor: "#1D316C", 
     textColor: "#7A848E", 
     shadowLightColor: "#E6E6E6",
-    tetriaryColor: "#00B39F"
+    tetriaryColor: "#00B39F",
+    menuHoverColor: "#00B39F"
 };
 
 export default theme;

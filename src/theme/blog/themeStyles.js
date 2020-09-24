@@ -9,6 +9,7 @@ const theme = {
     secondaryLightColor: "#FFEBEC",
     headingColor: "#1D316C", 
     textColor: "#7A848E", 
+    menuHoverColor: "#00B39F"
 };
 
 export default theme;

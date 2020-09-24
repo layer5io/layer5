@@ -11,7 +11,8 @@ const theme = {
     shadowColor: "rgba(0, 0, 0, 0.15)",
     headingColor: "#1D316C", 
     textColor: "#7A848E", 
-    shadowLightColor: "#E6E6E6"
+    shadowLightColor: "#E6E6E6",
+    menuHoverColor: "#00B39F"
 };
 
 export default theme;

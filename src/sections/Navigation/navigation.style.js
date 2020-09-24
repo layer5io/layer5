@@ -104,7 +104,7 @@ const NavigationWrap = styled.header`
             display: block;
             padding: 5px 15px;
             &:hover {
-              color: #00b39f; !important;
+              color: ${props => props.theme.menuHoverColor}; !important;
             }
             &:before {
               content: none;
@@ -134,7 +134,7 @@ const NavigationWrap = styled.header`
           transition: 450ms all;
         }
         &:hover {
-          color: #00b39f;
+          color: ${props => props.theme.menuHoverColor};
           &:before {
             opacity: 1;
           }
@@ -161,10 +161,7 @@ const NavigationWrap = styled.header`
         a {
           color: #1d316c;
           &:hover {
-            color: ${(props) =>
-        props.theme.menuHoverColor
-            ? props.theme.menuHoverColor
-            : "#FB7B81"};
+            color: ${props => props.theme.menuHoverColor};
           }
         }
       }
