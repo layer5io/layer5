@@ -9,7 +9,7 @@ import Footer from "../sections/Footer";
 import Careers from "../sections/Careers";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/hosting/themeStyles";
+import theme from "../theme/blog/themeStyles";
 
 const careers = () => (   
     <ThemeProvider theme={theme}>
