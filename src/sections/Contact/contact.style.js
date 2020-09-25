@@ -28,6 +28,16 @@ const ContactWrapper = styled.section`
     .inputrow{
         margin-bottom: 5px;
     }
+    .firstcol {
+        padding-right: 0px;
+    }
+    .lastcol {
+        padding-left: 5px;
+    }
+    .nopad {
+        padding-left: 10px;
+        padding-right: 0px;
+    }
     input{
         display: block;
         padding: 10px;

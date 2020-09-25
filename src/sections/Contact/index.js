@@ -20,16 +20,16 @@ const Contact = () => {
                         <Col md={3}><img src={img} /></Col>
                         <Col md={9}>
                             <Row>
-                                <Col md={1} xs={1}><MdPermContactCalendar className="contact-icon" size={30}></MdPermContactCalendar></Col>
+                                <Col className="nopad" md={1} xs={1}><MdPermContactCalendar className="contact-icon" size={30}></MdPermContactCalendar></Col>
                                 <Col md={11} xs={11}>
                                     <Row>
-                                        <Col md={6} xs={6}><input className="inputrow" type="First Name" placeholder="First Name" /></Col>
-                                        <Col md={6} xs={6}><input className="inputrow" type="Last Name" placeholder="Last Name" /></Col>
+                                        <Col className="firstcol" md={6} xs={6}><input className="inputrow" type="First Name" placeholder="First Name" /></Col>
+                                        <Col className="lastcol" md={6} xs={6}><input className="inputrow" type="Last Name" placeholder="Last Name" /></Col>
                                     </Row>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md={1} xs={1}><MdEmail className="contact-icon" size={30}></MdEmail></Col>
+                                <Col className="nopad" md={1} xs={1}><MdEmail className="contact-icon" size={30}></MdEmail></Col>
                                 <Col md={11} xs={11}><input className="inputrow" type="email" placeholder="Email Address" /></Col>
                             </Row>
                             <Button>Subscribe</Button>
