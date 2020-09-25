@@ -11,18 +11,21 @@ import smdp1 from "./distributed-performance_green.svg"
 import smdp2 from "./envoy-stacked-color.svg"
 
 <ProjectWrapper>
-<img src= {smdp1}
-  style="float:left; width:30%;margin-right:15px;margin-bottom:15px;" />
-
+<Row>
+<div>
+<img src= {smdp1} align = "left"
+ className = "smdp-top-left" />
 <h3>Purpose and Overview</h3>
 
 Distributed load testing offers insight into system behaviors that arguably more accurately represent real world behaviors of services under load as that load comes from any number of sources.
 
 <h4>Project Aim</h4>
-
 The main aim of this project is to enhance the current load generation and analysis technique of Nighthawk to include distributed load testing which may ultimately benefit the meshery to directly adopt the distributed load generation.
 
+<br/><br/>
 <h4>Project Goals</h4>
+</div>
+</Row>
 <ul>
   <li>
     Identifying the use-cases of Nighthawk. Working with the nighthawk team to
@@ -43,7 +46,7 @@ The main aim of this project is to enhance the current load generation and analy
 <img
   src=  {smdp2}
   align="right"
-  style="width:30%;margin-left:10px;"
+  className = "smdp-bottom-right"
 />
 Currently, Meshery which is a multi-service mesh management plane which can operate
 & adapt to various different service meshes only supports a single way load testing.
@@ -65,8 +68,8 @@ This project is being developed by Kush Trivedi as a Google Summer of Code proje
 <strong>
 <a href="https://docs.google.com/document/d/1_hhQ5w1iLClgf7RvboI6il-eMKKAVPwz50GHm2VN4Bg/edit#">Here</a> is the design document which is under review for invoking distributed load generation & performance benchmarking using nighthawk.
 </strong>
-<h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
+<h3 class = "bottom-tag">
   Jump into the <a href="http://slack.layer5.io">#performance channel</a> to learn more about this initative.
-</h5>
+</h3>
 </ProjectWrapper>
 
