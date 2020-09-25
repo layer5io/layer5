@@ -22,7 +22,7 @@ const ContactWrapper = styled.section`
         background: #828c8c;
         align-items: center;
         justify-content: center;
-        padding: 30px;
+        padding: 25px;
         border-radius: 10px;
     }
     .inputrow{
@@ -66,7 +66,7 @@ const ContactWrapper = styled.section`
     }
     .section-title{
         h2{
-            margin-bottom: 55px;
+            margin-bottom: 25px;
         }
     }
     @media only screen and (max-width: 912px) {
