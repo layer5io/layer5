@@ -4543,7 +4543,7 @@ nav ul a span.badge {
 	}
 	.row .col.l3 {
 		width: 25%;
-		margin-left: auto;
+		margin: auto;
 		left: auto;
 		right: auto;
 	}
@@ -5706,6 +5706,12 @@ small {
 	padding: 0 10px;
 	border-radius: 5px;
 	background-color: #e8e8e8;
+	margin-right: 10px;
+}
+
+.active-filter-button a,
+.inactive-filter-button a {
+	color: #000;
 }
 
 .active-filter-color {
@@ -5730,6 +5736,27 @@ small {
 	display: inline-block;
 	vertical-align: middle;
 	margin: 5px;
+}
+
+.active-btn-highlight,
+.inactive-btn-highlight {
+	background-color: #3b494f;
+}
+
+.active-btn-highlight a,
+.inactive-btn-highlight a {
+	color: white;
+}
+
+.active-title,
+.inactive-title {
+	display: block;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	color: #000;
+	cursor: pointer;
 }
 
 .active-member-card {
