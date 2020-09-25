@@ -3,7 +3,7 @@ import React from "react";
 import PageHeaderWrapper from "./pageHeader.style";
 import Image from "../../components/image";
 
-const PageHeader = ({ categories, title, subtitle,  author, thumbnail }) => {
+const PageHeader = ({ categories, title, subtitle,  author, thumbnail, hide_path }) => {
     return (
         <PageHeaderWrapper>
             <div className="page-header">
@@ -31,7 +31,7 @@ const PageHeader = ({ categories, title, subtitle,  author, thumbnail }) => {
                         <h4>By:</h4> <span>{author.name}</span>
                     </div>
                 )}
-                {!author && title && (
+                {!author && title && !hide_path && (
                     <div className="breadcrumbs page">
                         <>
                             <span> Home </span> <span> {">"} </span> {title}

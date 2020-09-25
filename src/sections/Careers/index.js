@@ -4,15 +4,11 @@ import CareersSectionWrapper from "./careers.style";
 import Button from "../../reusecore/Button";
 import PageHeader from "../../reusecore/PageHeader";
 import { Link } from "gatsby";
-
+import ProgramsGrid from "../Programs-grid";
 import Icon1 from "../../images/careers/digital-marketing.svg";
 import Icon2 from "../../images/careers/product-engineering-internship.svg";
 import Icon3 from "../../images/careers/layer5-tag-linkedin.png";
 import Icon4 from "../../images/careers/ux-designer.svg";
-
-import Icon5 from "../../images/careers/gsod.png";
-import Icon6 from "../../images/layer5/gsoc.svg";
-import Icon8 from "../../images/layer5/cb.png";
 
 const CareersPage = () => {
     return (
@@ -66,7 +62,7 @@ const CareersPage = () => {
                         <hr />
                         <div className="felx-div">&nbsp;</div>
                         <p>
-                        <b className="blue">Available Opportunities</b>
+                        <b>Available Opportunities</b>
                         </p>
                         <p>
                   The key component of these projects is our community of contributors. Some contributors intern under the Google Summer of Code program, while others intern unpaid directly with Layer5. Irrespective, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small. The Layer5 community includes software engineers, researchers, students, artists, system administrators, operators and web designers -- all of whom will be happy to help you get started.
@@ -79,39 +75,39 @@ const CareersPage = () => {
                             <b>Internships</b>
                             <div className="grid">
                             <Row>
-                                <Col xs={12} sm={6} md={4}>
+                                <Col xs={12} sm={6} lg={4}>
                                     <Link to="/careers/Digital-Marketing-Internship">
                                         <div className="fetures-block v1 project__block__inner">
                                             <div className="fetures-icon-block">
                                                 <img src={Icon1} alt="img" />
                                             </div>
-                                            <h3 className="blue">Digital Marketing Internship</h3>
+                                            <h3>Digital Marketing Internship</h3>
                                             <p>
                       Learn and exercise modern marketing strategies and automation as a Layer5 Digital Marketing Intern.
                                             </p>
                                         </div>
                                     </Link>
                                 </Col>
-                                <Col xs={12} sm={6} md={4}>
+                                <Col xs={12} sm={6} lg={4}>
                                     <Link to="/careers/Software-Engineering-Internship">
                                         <div className="fetures-block v1 project__block__inner">
                                             <div className="fetures-icon-block">
                                                 <img src={Icon3} alt="img" style={{ paddingTop: "20px" }}/>
                                             </div>
-                                            <h3 className="blue">Software Engineering Internship</h3>
+                                            <h3 >Software Engineering Internship</h3>
                                             <p>
                       Work with talented engineers in a challenging learning environment as a Layer5 Software Engineer Intern.
                                             </p>
                                         </div>
                                     </Link>
                                 </Col>
-                                <Col xs={12} sm={6} md={4}>
+                                <Col xs={12} sm={6} lg={4}>
                                     <Link to="/careers/UI-Visual-Designer-Internship">
                                         <div className="fetures-block v1 project__block__inner">
                                             <div className="fetures-icon-block">
                                                 <img src={Icon4} alt="img" />
                                             </div>
-                                            <h3 className="blue">UI Visual Designer Internship</h3>
+                                            <h3>UI Visual Designer Internship</h3>
                                             <p>
                       Put your eye for design to the test as a Layer5 UI Visual Designer Intern.
                                             </p>
@@ -120,44 +116,44 @@ const CareersPage = () => {
                                 </Col>
                             </Row>
                         </div>
-                        <br></br>
+                        <br/>
                         <div>
                             <b>Full-Time Opportunities</b>
                             <div className="grid">
                                 <Row>
-                                    <Col xs={12} sm={6} md={4}>
+                                    <Col xs={12} sm={6} lg={4}>
                                         <Link to="/careers/Software-Engineer">
                                             <div className="fetures-block v2 project__block__inner">
                                                 <div className="fetures-icon-block">
                                                     <img src={Icon2} alt="img" />
                                                 </div>
-                                                <h3 className="blue">Software Engineer</h3>
+                                                <h3>Software Engineer</h3>
                                                 <p>
                         Engage in distributed systems and the world of multipe service meshes as a Layer5 Software Engineer.
                                                 </p>
                                             </div>
                                         </Link>
                                     </Col>
-                                    <Col xs={12} sm={6} md={4}>
+                                    <Col xs={12} sm={6} lg={4}>
                                         <Link to="/careers/UI-Visual-Designer">
                                             <div className="fetures-block v2 project__block__inner">
                                                 <div className="fetures-icon-block">
                                                     <img src={Icon4} alt="img" />
                                                 </div>
-                                                <h3 className="blue">UI Visual Designer</h3>
+                                                <h3>UI Visual Designer</h3>
                                                 <p>
                         Put your eye for design to the test as a Layer5 UI Visual Designer Intern.
                                                 </p>
                                             </div>
                                         </Link>
                                     </Col>
-                                    <Col xs={12} sm={6} md={4}>
+                                    <Col xs={12} sm={6} lg={4}>
                                         <Link to="/careers/UX-Engineer">
                                             <div className="fetures-block v2 project__block__inner">
                                                 <div className="fetures-icon-block">
                                                     <img src={Icon4} alt="img" />
                                                 </div>
-                                                <h3 className="blue">UX Engineer</h3>
+                                                <h3 >UX Engineer</h3>
                                                 <p>
                         Intuitive design, flowing interaction, and delightfuling users are core components of the Layer5 user experience.
                                                 </p>
@@ -168,7 +164,7 @@ const CareersPage = () => {
                             </div>
                         </div>
                             <p>
-                                <b className="black-text blue">Participating Partners</b>
+                                <b className="black-text">Participating Partners</b>
                                 <ul>
                                     <li><b>UT Austin Coding Boot Camp</b> - <a href="https://layer5.io/assets/careers/internships/UT%20Austin%20Boot%20Camp%20-%20Meshery%20Flyer.pdf">Internship Flyer</a></li>
                                     <li><b>UEM Computer Science and Engineering</b> - <a href="https://layer5.io/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf">Internship Flyer</a>,<a href="https://uem.edu.in/blog/what-is-open-source/"> Learn More </a></li>
@@ -179,58 +175,14 @@ const CareersPage = () => {
                             id="gsoc-2020"
                             className="card-content1">
                             <h3>
-                                <Button primary>
-                                    <a className="link" href="mailto:jobs@layer5.io">Join Today</a>
-                                </Button>
+                                <a href="mailto:jobs@layer5.io">
+                                <Button primary> Join Today</Button>
+                                </a>
                             </h3>
                         </div>
                         <br/>
-                        <div>
-                            <h3 className="post-title">Programs</h3>
-                            <div className="grid">
-                                <Row>
-                                    <Col xs={12} sm={6} md={3}>
-                                        <Link to="/gsod">
-                                            <div className="fetures-block v1 project">
-                                                <div className="fetures-icon-block">
-                                                    <img src={Icon5} alt="img" />
-                                                </div>
-                                                <h3 className="blue">Google Season of Docs 2020</h3>
-                                            </div>
-                                        </Link>
-                                    </Col>
-                                    <Col xs={12} sm={6} md={3}>
-                                        <Link to="/gsoc">
-                                            <div className="fetures-block v2 project">
-                                                <div className="fetures-icon-block">
-                                                    <img src={Icon6} alt="img" />
-                                                </div>
-                                                <h3 className="blue">Google Summer of Code 2020</h3>
-                                            </div>
-                                        </Link>
-                                    </Col>
-                                    <Col xs={12} sm={6} md={3}>
-                                        <Link to="/careers/gsoc2019">
-                                            <div className="fetures-block v1 project">
-                                                <div className="fetures-icon-block">
-                                                    <img src={Icon6} alt="img"/>
-                                                </div>
-                                                <h3 className="blue">Google Summer of Code 2019</h3>
-                                            </div>
-                                        </Link>
-                                    </Col>
-                                    <Col xs={12} sm={6} md={3}>
-                                        <Link to="/careers/cb2020">
-                                            <div className="fetures-block v2 project">
-                                                <div className="fetures-icon-block">
-                                                    <img src={Icon8} alt="img" style={{ paddingTop: "45%", height: "65%"}}/>
-                                                </div>
-                                                <h3 className="blue">CommunityBridge 2020</h3>
-                                            </div>
-                                        </Link>
-                                    </Col>
-                                </Row>
-                            </div>
+                        <div className="programs-section">
+                            <ProgramsGrid/>
                         </div>
                     </div>
                 </Container>
