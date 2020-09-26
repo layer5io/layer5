@@ -13,7 +13,7 @@ const ContactWrapper = styled.section`
         color: #3c494f;
     }
     img {
-        max-width: 200px;
+        max-width: 100px;
         height: auto;
     }
     form{
