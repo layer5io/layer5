@@ -3,7 +3,7 @@ layout: post
 title:  "Starting SMI Conformance Testing with Meshery"
 date:   2020-06-25 10:30:05 -0530
 image: /assets/images/posts/2020-06-25-SMI-conformance-testing-with-meshery/smi-conformance.svg
-author: Naveen Kumar
+author: Naveen Jain
 category: community
 permalink: /blog/:categories/:title
 redirect_from: /blog/smi-conformance-testing-with-meshery/
@@ -62,4 +62,4 @@ This is where all the test cases along with the code will be placed. Currently, 
 If any of this sounds remotely exciting, I implore you to give this a chance. You won’t regret it.
 Head over to our [Slack Channel](http://slack.layer5.io) and join the #smi channel where everything related to conformance testing is discussed. We would love to hear your feedback. Stay tuned for more blogs related to SMI Conformance and all things meshy!!!
 
- \- [Naveen Kumar](https://www.linkedin.com/in/nveenjain/)
+ \- [Naveen Kumar](/community/members/naveen-jain)
