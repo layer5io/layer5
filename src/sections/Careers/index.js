@@ -68,7 +68,7 @@ const Gsoc = () => {
                     <hr />
                     <div className="felx-div">&nbsp;</div>
                     <p>
-                    <b className="blue">Available Opportunities</b>
+                        <b className="blue">Available Opportunities</b>
                     </p>
                     <p> 
               The key component of these projects is our community of contributors. Some contributors intern under the Google Summer of Code program, while others intern unpaid directly with Layer5. Irrespective, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small. The Layer5 community includes software engineers, researchers, students, artists, system administrators, operators and web designers -- all of whom will be happy to help you get started.
@@ -80,95 +80,95 @@ const Gsoc = () => {
                     <div> 
                         <b>Internships</b>
                         <div className="grid">
-                        <Row>
-                            <Col xs={12} sm={6} md={4}>
-                                <Link to="/careers/Digital-Marketing-Internship">
-                                    <div className="fetures-block v1 project__block__inner">
-                                        <div className="fetures-icon-block">
-                                            <img src={Icon1} alt="img" />
-                                        </div>
-                                        <h3 className="blue">Digital Marketing Internship</h3>
-                                        <p>
-                  Learn and exercise modern marketing strategies and automation as a Layer5 Digital Marketing Intern.
-                                        </p>
-                                    </div>
-                                </Link>
-                            </Col>
-                            <Col xs={12} sm={6} md={4}>
-                                <Link to="/careers/Software-Engineering-Internship">
-                                    <div className="fetures-block v1 project__block__inner">
-                                        <div className="fetures-icon-block">
-                                            <img src={Icon3} alt="img" style={{ paddingTop: "20px" }}/>
-                                        </div>
-                                        <h3 className="blue">Software Engineering Internship</h3>
-                                        <p>
-                  Work with talented engineers in a challenging learning environment as a Layer5 Software Engineer Intern.
-                                        </p>
-                                    </div>
-                                </Link>
-                            </Col>
-                            <Col xs={12} sm={6} md={4}>
-                                <Link to="/careers/UI-Visual-Designer-Internship">
-                                    <div className="fetures-block v1 project__block__inner">
-                                        <div className="fetures-icon-block">
-                                            <img src={Icon4} alt="img" />
-                                        </div>
-                                        <h3 className="blue">UI Visual Designer Internship</h3>
-                                        <p>
-                  Put your eye for design to the test as a Layer5 UI Visual Designer Intern.
-                                        </p>
-                                    </div>
-                                </Link>
-                            </Col>
-                        </Row>
-                    </div>
-                    <br></br>
-                    <div>
-                        <b>Full-Time Opportunities</b>
-                        <div className="grid">
                             <Row>
                                 <Col xs={12} sm={6} md={4}>
-                                    <Link to="/careers/Software-Engineer">
-                                        <div className="fetures-block v2 project__block__inner">
+                                    <Link to="/careers/Digital-Marketing-Internship">
+                                        <div className="fetures-block v1 project__block__inner">
                                             <div className="fetures-icon-block">
-                                                <img src={Icon2} alt="img" />
+                                                <img src={Icon1} alt="img" />
                                             </div>
-                                            <h3 className="blue">Software Engineer</h3>
+                                            <h3 className="blue">Digital Marketing Internship</h3>
                                             <p>
-                    Engage in distributed systems and the world of multipe service meshes as a Layer5 Software Engineer.
+                  Learn and exercise modern marketing strategies and automation as a Layer5 Digital Marketing Intern.
                                             </p>
                                         </div>
                                     </Link>
                                 </Col>
                                 <Col xs={12} sm={6} md={4}>
-                                    <Link to="/careers/UI-Visual-Designer">
-                                        <div className="fetures-block v2 project__block__inner">
+                                    <Link to="/careers/Software-Engineering-Internship">
+                                        <div className="fetures-block v1 project__block__inner">
                                             <div className="fetures-icon-block">
-                                                <img src={Icon4} alt="img" />
+                                                <img src={Icon3} alt="img" style={{ paddingTop: "20px" }}/>
                                             </div>
-                                            <h3 className="blue">UI Visual Designer</h3>
+                                            <h3 className="blue">Software Engineering Internship</h3>
                                             <p>
-                    Put your eye for design to the test as a Layer5 UI Visual Designer Intern.
+                  Work with talented engineers in a challenging learning environment as a Layer5 Software Engineer Intern.
                                             </p>
                                         </div>
                                     </Link>
                                 </Col>
                                 <Col xs={12} sm={6} md={4}>
-                                    <Link to="/careers/UX-Engineer">
-                                        <div className="fetures-block v2 project__block__inner">
+                                    <Link to="/careers/UI-Visual-Designer-Internship">
+                                        <div className="fetures-block v1 project__block__inner">
                                             <div className="fetures-icon-block">
                                                 <img src={Icon4} alt="img" />
                                             </div>
-                                            <h3 className="blue">UX Engineer</h3>
+                                            <h3 className="blue">UI Visual Designer Internship</h3>
                                             <p>
-                    Intuitive design, flowing interaction, and delightfuling users are core components of the Layer5 user experience.
+                  Put your eye for design to the test as a Layer5 UI Visual Designer Intern.
                                             </p>
                                         </div>
                                     </Link>
                                 </Col>
                             </Row>
                         </div>
-                    </div>
+                        <br></br>
+                        <div>
+                            <b>Full-Time Opportunities</b>
+                            <div className="grid">
+                                <Row>
+                                    <Col xs={12} sm={6} md={4}>
+                                        <Link to="/careers/Software-Engineer">
+                                            <div className="fetures-block v2 project__block__inner">
+                                                <div className="fetures-icon-block">
+                                                    <img src={Icon2} alt="img" />
+                                                </div>
+                                                <h3 className="blue">Software Engineer</h3>
+                                                <p>
+                    Engage in distributed systems and the world of multipe service meshes as a Layer5 Software Engineer.
+                                                </p>
+                                            </div>
+                                        </Link>
+                                    </Col>
+                                    <Col xs={12} sm={6} md={4}>
+                                        <Link to="/careers/UI-Visual-Designer">
+                                            <div className="fetures-block v2 project__block__inner">
+                                                <div className="fetures-icon-block">
+                                                    <img src={Icon4} alt="img" />
+                                                </div>
+                                                <h3 className="blue">UI Visual Designer</h3>
+                                                <p>
+                    Put your eye for design to the test as a Layer5 UI Visual Designer Intern.
+                                                </p>
+                                            </div>
+                                        </Link>
+                                    </Col>
+                                    <Col xs={12} sm={6} md={4}>
+                                        <Link to="/careers/UX-Engineer">
+                                            <div className="fetures-block v2 project__block__inner">
+                                                <div className="fetures-icon-block">
+                                                    <img src={Icon4} alt="img" />
+                                                </div>
+                                                <h3 className="blue">UX Engineer</h3>
+                                                <p>
+                    Intuitive design, flowing interaction, and delightfuling users are core components of the Layer5 user experience.
+                                                </p>
+                                            </div>
+                                        </Link>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </div>
                         <p>
                             <b className="black-text blue">Participating Partners</b>
                             <ul>
