@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
-import { IoMdCheckmark, IoMdClose } from "react-icons/io";
+import { IoMdCheckmark } from "react-icons/io";
 
 import particle1 from "../../assets/images/app/particle/14.png";
 import particle2 from "../../assets/images/app/particle/15.png";
