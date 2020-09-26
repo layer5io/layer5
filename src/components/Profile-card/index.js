@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { ProfileCardWrapper } from "./ProfileCard.style";
 import { FaTwitter, FaGithub } from "react-icons/fa";
 import MeshMateIcon from "../../svgs/meshmate-icon.svg";
-import MeshMateIconWhite from "../../svgs/meshmate-icon-white.svg"
+import MeshMateIconWhite from "../../svgs/meshmate-icon-white.svg";
 import Image from "../image";
 
 const ProfileCard = (props) =>{

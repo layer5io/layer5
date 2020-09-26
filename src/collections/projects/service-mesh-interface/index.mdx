@@ -1,0 +1,53 @@
+---
+title: "Service Mesh Interface Conformance"
+published: true
+---
+
+import { ProjectWrapper } from "../Project.style.js"
+import { Container, Row, Col } from "../../../reusecore/Layout"
+import smi1 from "./checklist.svg"
+import Button from "../../../reusecore/Button"
+
+<ProjectWrapper>
+  <div className="smi-float"><img className="smi-card" width="200px" src={smi1} align="centre" /><div>&nbsp;</div>
+    <div className="float-button">
+        <Button className="smi-button">
+        <a href="/">
+          <h4 className = "btn-title">Run SMI Conformance</h4>
+        </a>    
+        </Button>
+    </div>
+  </div>
+
+  <h3>Purpose and Overview</h3>
+
+  The scope of this initiative includes all service mesh projects participating in the Service Mesh Interface specification. It’s important to acknowledge that conformance consists of both capabilities and compliance status.
+
+  <h4>Project Goals</h4>
+  <ul>
+    <li>
+      Provide users with a compatibility matrix identifying the SMI features that
+      are supported per service mesh.
+    </li>
+    <li>
+      An easy-to-use, service mesh and SMI-specific tool to give service mesh
+      projects and users a suite of repeatable conformance tests.
+    </li>
+  </ul>
+  <h4>Project Objectives</h4>
+  <ul>
+    <li>
+      Define what it means to be in conformance with the SMI specifications.{" "}
+    </li>
+    <li>
+      Define a set of conformance tests and what behavior is expected of a
+      conforming service mesh implementation.
+    </li>
+    <li>Built into each participating service mesh project’s release tooling.</li>
+  </ul>
+  <h4>Validating Conformance</h4>
+
+  Conformance to SMI specifications will be done through use of a service mesh’s workload. A sample application is used as the workload to test. To facilitate a common set of tests, a sample application has been developed for purposes of providing a consistent workload to apply SMI specs against. A deployment of the <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> sample application being fitted to each service mesh.
+  <br/>
+</ProjectWrapper>
+

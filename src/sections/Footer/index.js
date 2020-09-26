@@ -4,7 +4,7 @@ import { TwitterTimelineEmbed } from "react-twitter-embed" ;
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 
-import logo from "../../images/layer5/layer5-dark-bg.svg";
+import logo from "../../images/layer5/layer5-only/svg/layer5-light-bg.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
 
 import mail_icon from "../..//assets/images/app/footer/social/mail_white_trim.svg";
@@ -56,12 +56,12 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/learn/books">
+                                            <Link className="anchor" to="/books">
                     Service Mesh Books
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/learn/workshops">
+                                            <Link className="anchor" to="/workshops">
                     Service Mesh Workshops
                                             </Link>
                                         </li>
@@ -103,7 +103,7 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/careers/programs/communitybridge/2020">
+                                            <Link className="anchor" to="/careers/community-bridge">
                     Community Bridge
                                             </Link>
                                         </li>
@@ -115,12 +115,12 @@ const Footer = () => {
                                     <h3 className="widget-title">Company</h3>
                                     <ul className="widget-catagory">
                                         <li>
-                                            <Link className="anchor" to="/company/news">
+                                            <Link className="anchor" to="/news">
                     News
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/company/brand">
+                                            <Link className="anchor" to="/brand">
                     Brand
                                             </Link>
                                         </li>
