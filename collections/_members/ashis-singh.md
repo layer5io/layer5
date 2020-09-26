@@ -1,10 +1,11 @@
 ---
 layout: person
 name: Ashis Kumar Singh
-position: Meshery Contributor, Landscape Maintainer
+position: Contributor, Landscape Maintainer, MeshMate Emeritus
 image_path: /assets/images/community/members/ashis-singh.jpg
 github: ashiscs
 twitter: AshisKumarSin20
 blurb: Mesh Head
-meshmate: yes
+status: Active
+emeritus: yes
 ---

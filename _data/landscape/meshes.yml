@@ -115,11 +115,11 @@
   tcp-web: "Yes"
   grpc: "Yes"
   h2: "Yes"
-  multi-cluster: "Experimental"
-  multi-tenant: "Experimental"
-  desc: "An open platform to connect, monitor, and secure microservices. Governed by Google and IBM."
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  desc: "An open platform to connect, monitor, and secure microservices. Created by Google and IBM; now with maintainers from 14 companies and implementations from over 15 vendors."
   prometheus: "Yes"
-  tracing: "Jaeger"
+  tracing: "OpenTracing, Zipkin, Jaeger, Lightstep"
   encryption: "Yes"
   multi-tenant-score: 5
   netdev-persona-score: 1
@@ -138,13 +138,13 @@
   link: https://kuma.io
   autoinject: "No"
   tcp-web: "Yes"
-  grpc: "No"
+  grpc: "Yes"
   h2: "Yes"
-  multi-cluster: "Experimental"
-  multi-tenant: "Kong Enterprise only"
-  prometheus: "?"
-  tracing: "?"
-  encryption: "?"
+  multi-cluster: "Yes"
+  multi-tenant: "Yes"
+  prometheus: "Yes"
+  tracing: "Yes"
+  encryption: "Yes"
   multi-tenant-score: 8
   netdev-persona-score: 2
 
@@ -287,19 +287,6 @@
   tracing: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
   encryption: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
 
-- name: SOFAMesh
-  desc: A solution for large-scale Service Mesh based on Istio.
-  link: https://github.com/alipay/sofa-mesh
-  autoinject: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
-  tcp-web: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
-  grpc: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
-  h2: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
-  multi-cluster: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
-  multi-tenant: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
-  prometheus: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
-  tracing: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
-  encryption: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>"
-
 - name: Yggdrasil
   desc: "Yggdrasil is an Envoy control plane that configures listeners and clusters based off Kubernetes ingresses from multiple Kube Clusters."
   link: https://github.com/uswitch/yggdrasil
@@ -360,3 +347,120 @@
 #   desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."
 #   link: https://vamp.io
 #   autoinject: "No"
+
+# - name: Weavenet
+#   desc: "Operate and manage production ready Kubernetes with Weave Kubernetes Platform. GitOps unlocks cloud native agility, reliability and scalability."
+#   link: "https://www.weave.works/"
+#   autoinject: ""
+#   tcp-web: ""
+#   grpc: ""
+#   h2: ""
+#   multi-cluster: ""
+#   multi-tenant: ""
+#   prometheus: ""
+#   tracing: ""
+#   encryption: ""
+#   multi-tenant-score: ""
+#   cni-support: "Yes"
+#   open-source: "Yes"
+#   network-engineer: "Yes"
+#   engineer-order: 3
+#   cloud: "Yes"
+#   cloud-order: 4
+#   underlay: "Yes"
+#   underlay-order: 2
+#   convenience: "Yes"
+#   convenience-order: 4
+#   scale: "Yes"
+#   scale-order: 1
+
+
+
+
+# - name: Canal
+#   desc: "Canal was the name of Tigera and CoreOS’s project to integrate Calico and flannel."
+#   link: "https://github.com/projectcalico/canal"
+#   autoinject: ""
+#   tcp-web: ""
+#   grpc: ""
+#   h2: ""
+#   multi-cluster: ""
+#   multi-tenant: ""
+#   prometheus: ""
+#   tracing: ""
+#   encryption: ""
+#   multi-tenant-score: ""
+#   cni-support: "Yes"
+#   open-source: "Yes"
+#   engineer-order: 2
+#   network-engineer: "Yes"
+#   cloud: "Yes"
+#   cloud-order: 3
+#   underlay-order: 
+#   convenience: "Yes"
+#   convenience-order: 1
+#   scale: "Yes"
+#   scale-order: 3
+
+
+  
+
+
+
+# - name: Project Calico
+#   desc: "Calico is an open source networking and network security solution for containers, virtual machines, and native host-based workloads."
+#   link: "https://www.projectcalico.org/"
+#   autoinject: ""
+#   tcp-web: ""
+#   grpc: ""
+#   h2: ""
+#   multi-cluster: ""
+#   multi-tenant: ""
+#   prometheus: ""
+#   tracing: ""
+#   encryption: ""
+#   multi-tenant-score: ""
+#   cni-support: "Yes"
+#   open-source: "Yes"
+#   engineer-order: 1
+#   network-engineer: "Yes"
+#   cloud: "Yes"
+#   cloud-order: 1
+#   underlay: "Yes"
+#   underlay-order: 1
+#   convenience: "Yes"
+#   convenience-order: 2
+#   scale: "Yes"
+#   scale-order: 4
+
+
+
+
+# - name: Flannel
+#   desc: "Flannel is a simple and easy way to configure a layer 3 network fabric designed for Kubernetes."
+#   link: "https://github.com/coreos/flannel"
+#   autoinject: ""
+#   tcp-web: ""
+#   grpc: ""
+#   h2: ""
+#   multi-cluster: ""
+#   multi-tenant: ""
+#   prometheus: ""
+#   tracing: ""
+#   encryption: ""
+#   multi-tenant-score: ""
+#   cni-support: "Yes"
+#   open-source: "Yes"
+#   engineer-order: 3
+#   network-engineer: "Yes"
+#   cloud: "Yes"
+#   cloud-order: 2
+#   underlay: "Yes"
+#   underlay-order: 3
+#   convenience: "Yes"
+#   convenience-order: 3
+#   scale: "Yes"
+#   scale-order: 2
+
+
+

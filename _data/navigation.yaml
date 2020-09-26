@@ -9,16 +9,16 @@
     - name: Landscape
       link: /landscape
       new_window: false
+    - name: Service Mesh Performance
+      link: /projects/service-mesh-performance
+      new_window: false
+      external: false      
     - name: Distributed Performance Management
       link: /projects/service-mesh-distributed-performance-management
       new_window: false
       external: false
     - name: Service Mesh Interface Conformance
       link: /projects/service-mesh-interface
-      new_window: false
-      external: false
-    - name: Service Mesh Performance Specification
-      link: /projects/performance
       new_window: false
       external: false
     - name: "Image Hub: Envoy Filters with WebAssembly"
@@ -32,9 +32,6 @@
   subitems: 
     - name: Join
       link: /community
-      new_window: false
-    - name: MeshMates
-      link: /community/meshmates
       new_window: false
     - name: Partners
       link: /partners
@@ -82,7 +79,7 @@
     link: /news
     new_window: false
 - name: Run Meshery
-  link: /meshery#getting-started
+  link: /meshery
   new_window: false
   highlight: yes   
   class: cta

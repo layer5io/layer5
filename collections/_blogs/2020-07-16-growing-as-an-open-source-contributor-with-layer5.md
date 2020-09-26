@@ -9,6 +9,7 @@ tags:
  - open source
 category: community
 permalink: /blog/:categories/:title
+redirect_from: /blog/growing-as-an-open-source-contributor-with-layer5/
 ---
 
 It all started 9 months ago when I stumbled across the following LinkedIn post, written by a college senior who had recently scored an internship with Red Hat.

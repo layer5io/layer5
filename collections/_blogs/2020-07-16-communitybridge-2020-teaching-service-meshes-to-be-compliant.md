@@ -6,6 +6,7 @@ image: /assets/images/posts/2020-07-16-communitybridge-2020-teaching-service-mes
 author: Kanishkar J
 category: community
 permalink: /blog/:categories/:title
+redirect_from: /blog/communitybridge-2020-teaching-service-meshes-to-be-compliant/
 ---
 <img class="image-left" 
     src="/assets/images/posts/2020-07-16-communitybridge-2020-teaching-service-meshes-to-be-compliant/cblogo.png" />

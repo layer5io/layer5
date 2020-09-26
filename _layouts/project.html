@@ -10,6 +10,11 @@
   <div class="post-content" style="padding: 2em;" itemprop="articleBody">
     {{ content }}
   </div>
+{% if page.title == "Service Mesh Performance" %}
+
+{% include performance.html %}
+
+{% endif %}
   <h3 style="text-align:center;">
     <a href="/projects" alt="Service Mesh Tools" class="white-text">Other Projects</a></h3>
   {% include collections/projects.html %}

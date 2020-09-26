@@ -50,5 +50,11 @@ Nighthawk is a versatile HTTP load testing tool built out of a need to drill HTT
 <h4>Contributors</h4>
 
 This project is being developed by Kush Trivedi as a Google Summer of Code project with the CNCF and in collaboration with Layer5 and Google.
-  <h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
-  Jump into the <a href="http://slack.layer5.io">#performance channel</a> to learn more about this initative.</h5>
+
+<strong>
+<a href="https://docs.google.com/document/d/1_hhQ5w1iLClgf7RvboI6il-eMKKAVPwz50GHm2VN4Bg/edit#">Here</a> is the design document which is under review for invoking distributed load generation & performance benchmarking using nighthawk.
+</strong>
+<h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
+  Jump into the <a href="http://slack.layer5.io">#performance channel</a> to learn more about this initative.
+</h5>
+

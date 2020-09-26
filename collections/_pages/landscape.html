@@ -14,14 +14,7 @@ redirect_from:
   - landscape/
 ---
 
-<div
-  style="
-    background-image: url('/assets/images/mesh-cubes-trans.svg');
-    background-repeat: no-repeat;
-    background-position: topright;
-    background-size: contain;
-  "
->
+<div>
   <div class="container" style="position: relative; z-index: 1;">
     <div class="col s10">
       <div id="landscape" class="section scrollspy" style="width: 100%;">
@@ -41,6 +34,9 @@ redirect_from:
         >
           Service Mesh Landscape
         </h2>
+        <h4 style="text-align: center; color:#ccc">
+          comparing and contrasing service meshes</i>
+        </h4>
       </div>
       <div class="section scrollspy" style="width: 100%;">
         {% include landscape/service-meshes.html %}
@@ -48,4 +44,4 @@ redirect_from:
     </div>
   </div>
 </div>
-{% include newsletter-signup.html %}
+{% include newsletter-signup.html title = "no" %}
