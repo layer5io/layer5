@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import FooterBG from "../../assets/images/app/footer/footer-bg.png";
 
 const FotterWrapper = styled.section`
   padding-top: 40px;
@@ -33,12 +32,11 @@ const FotterWrapper = styled.section`
     transition: 450ms all;
     color: ${props => props.theme.white};
     &:hover {
-      color: ${props => props.theme.headingColor};
+      color: ${props => props.theme.black};
     }
   }
   .footer-contact{
     .footer-widgets{
-      // margin-top: 15px;
       .contactf{
         padding-left: 15px;
         padding-right: 15px;
@@ -46,7 +44,7 @@ const FotterWrapper = styled.section`
         .social-icons{
           transition: 450ms all;
           &:hover {
-            color: ${props => props.theme.headingColor};
+            color: ${props => props.theme.headingColor}; 
           }
         }
       }
@@ -68,7 +66,6 @@ const FotterWrapper = styled.section`
     padding-left: 10px;
     font-size: 15px;
     line-height: 25px;
-    // color: black;
   }
   .footer-widgets {
     &.first {

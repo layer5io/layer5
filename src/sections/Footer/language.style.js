@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const LanguageWrapper = styled.section`
   .icons {
@@ -20,6 +20,6 @@ const LanguageWrapper = styled.section`
     font-size: 24px;
     margin-bottom: 20px;
   }
-`
+`;
 
-export default LanguageWrapper
+export default LanguageWrapper;
