@@ -16,8 +16,8 @@ redirect_from:
 
 <h4> Book: <i>The Enterprise Path to Service Mesh Architectures</i></h4>
 By Lee Calcote
-<div class="row" style="float:right;padding:50px;text-align:center;display:flex;position: relative;flex-direction:column;top: -80px;">
-<a href="/assets/images/books/The-Enterprise-Path-to-Service-Mesh-Architectures.png"><img class="card" src="/assets/images/books/The-Enterprise-Path-to-Service-Mesh-Architectures-small.png" alt="" width="270"  /></a><br />
+<div class="row" style="float:right;padding:40px;text-align:center;display:flex;position: relative;flex-direction:column;top: -80px;">
+<a href="/assets/images/books/The-Enterprise-Path-to-Service-Mesh-Architectures.png"><img class="card" src="/assets/images/books/The-Enterprise-Path-to-Service-Mesh-Architectures-small.png" alt="" width="270"  /></a>
   <a id="home" class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow z-depth-2" href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote">Get free ebook</a>
   <br>
    <a id="home" class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow z-depth-2" href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote">Read on Safari</a>
