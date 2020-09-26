@@ -37,9 +37,8 @@ export const ProgramsPageWrapper = styled.div`
                 display: block;
                 height: 170px;
                 width: 170px;
-                margin: 0 auto;
+                margin: 0 auto 25px auto;
                 align-items: center;
-                margin-bottom: 25px;
                 
                 @media only screen and (max-width: 568px){
                     margin: 0 auto 25px auto;
