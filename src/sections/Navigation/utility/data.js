@@ -98,6 +98,10 @@ const Data = {
             path: "/community",
             subItems: [
                 {
+                    name: "Members",
+                    path: "/community/members"
+                },
+                {
                     name: "Meshmates",
                     path: "/community/meshmates"
                 },
