@@ -22,13 +22,12 @@ const CareersPage = () => {
                             <b>What is Layer5?</b>
                         </p>
                         <p>
-          The quickly growing Layer5 community represents the largest collection of
-              service mesh projects and their maintainers in the world. Our projects establish
-              industry standards and enable service developers, owners, and operators
-              with repeatable patterns and best practices for managing all aspects of distributed services.
-
-              Our shared commitment to the open source spirit push the Layer5 community and its projects forward.
-              New members are always welcome.
+                        The quickly growing Layer5 community represents the largest collection of
+                        service mesh projects and their maintainers in the world. Our projects establish
+                        industry standards and enable service developers, owners, and operators
+                        with repeatable patterns and best practices for managing all aspects of distributed services.
+                        Our shared commitment to the open source spirit push the Layer5 community and its projects forward.
+                        New members are always welcome.
                         </p>
                         <div
                             id="layer5-intro"
@@ -46,17 +45,17 @@ const CareersPage = () => {
                             <b>Open Source Projects?</b>
                         </p>
                         <p>
-          Layer5 projects are open source software. Anyone can download, use, work
-          on, and share it with others. It's built on principles like collaboration,
-          globalism, and innovation. Layer5 projects are distributed under the terms
-          of Apache v2.
+                          Layer5 projects are open source software. Anyone can download, use, work
+                          on, and share it with others. It's built on principles like collaboration,
+                          globalism, and innovation. Layer5 projects are distributed under the terms
+                          of Apache v2.
                         </p>
                         <p>
-          We believe that all contributors should expect and be part of a safe and
-          friendly environment for constructive contribution. We can more
-          effectively and successfully compare and challenge different ideas to find
-          the best solutions for advancement, while building the size, diversity,
-          and strength of our community.
+                          We believe that all contributors should expect and be part of a safe and
+                          friendly environment for constructive contribution. We can more
+                          effectively and successfully compare and challenge different ideas to find
+                          the best solutions for advancement, while building the size, diversity,
+                          and strength of our community.
                         </p>
                         <div className="felx-div">&nbsp;</div>
                         <hr />

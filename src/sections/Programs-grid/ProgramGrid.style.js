@@ -12,6 +12,7 @@ export const ProgramsPageWrapper = styled.div`
             position: relative;
             background-color: white;
             margin: 20px 6px 20px 6px;
+            text-align: center;
             
             @media only screen and (max-width: 600px) {
                 margin-left: 15px;
