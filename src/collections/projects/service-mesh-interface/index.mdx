@@ -10,20 +10,15 @@ import smi1 from "./checklist.svg"
 import Button from "../../../reusecore/Button"
 
 <ProjectWrapper>
-  <Row className = "smi-item">
-    <div className="center smi-top-left">
-    <img
-      src= {smi1}
-      width="70%" 
-    />
+  <div className="smi-float"><img className="smi-card" width="200px" src={smi1} align="centre" /><div>&nbsp;</div>
+    <div className="float-button">
+        <Button className="smi-button">
+        <a href="/">
+          <h4 className = "btn-title">Run SMI Conformance</h4>
+        </a>    
+        </Button>
     </div>
-  
-    <Button className = "smi-button">
-      <a
-        href="/"><h4 className = "btn-title">Run SMI Conformance</h4></a>
-    </Button>
-  </Row>
-  <br/> 
+  </div>
 
   <h3>Purpose and Overview</h3>
 
