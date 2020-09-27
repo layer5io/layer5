@@ -1,14 +1,43 @@
 import React from "react";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
+import Image from "../../components/image";
 
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
-import {Link} from "gatsby";
-import Icon5 from "../../images/careers/gsod.png";
-import Icon6 from "../../images/layer5/gsoc.svg";
-import Icon8 from "../../images/layer5/cb.png";
 
-const ProgramsGrid = ({data}) => {
+
+
+const ProgramsGrid = () => {
+    const data = useStaticQuery(
+        graphql`
+            query allPrograms {
+                allMdx(
+                    sort: { fields: [frontmatter___title], order: ASC }
+                    filter: { fields: { collection: { eq: "programs" } }, frontmatter: { published: { eq: true } } }
+                ) {
+                    nodes {
+                        id
+                        frontmatter {
+                            title
+                            thumbnail{
+                                childImageSharp{
+                                    fluid(maxWidth: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                                extension
+                                publicURL
+                            }
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+            }
+        `
+    );
     return (
         <ProgramsPageWrapper>
             <PageHeader title="Programs" hide_path={true}/>
@@ -16,46 +45,21 @@ const ProgramsGrid = ({data}) => {
                 <Container>
                     <div className="program-grid-wrapper">
                         <Row>
-                            <Col xs={12} sm={6} lg={3}>
-                                <Link to="/gsod">
-                                    <div className="program">
-                                        <div className="icon">
-                                            <img src={Icon5} alt="img" />
+                            {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+                                <Col xs={12} sm={6} lg={3} key={id}>
+                                    <Link to={fields.slug}>
+                                        <div className="program">
+                                            <div className="icon">
+                                                <Image
+                                                    {...frontmatter.thumbnail}
+                                                    imgStyle={{ objectFit: "contain" }}
+                                                />
+                                            </div>
+                                            <h3>{frontmatter.title}</h3>
                                         </div>
-                                        <h3>Google Season of Docs 2020</h3>
-                                    </div>
-                                </Link>
-                            </Col>
-                            <Col xs={12} sm={6} lg={3}>
-                                <Link to="/gsoc">
-                                    <div className="program">
-                                        <div className="icon">
-                                            <img src={Icon6} alt="img" />
-                                        </div>
-                                        <h3>Google Summer of Code 2020</h3>
-                                    </div>
-                                </Link>
-                            </Col>
-                            <Col xs={12} sm={6} lg={3}>
-                                <Link to="/careers/gsoc2019">
-                                    <div className="program">
-                                        <div className="icon">
-                                            <img src={Icon6} alt="img"/>
-                                        </div>
-                                        <h3>Google Summer of Code 2019</h3>
-                                    </div>
-                                </Link>
-                            </Col>
-                            <Col xs={12} sm={6} lg={3}>
-                                <Link to="/careers/cb2020">
-                                    <div className="program">
-                                        <div className="icon">
-                                            <img src={Icon8} alt="img" />
-                                        </div>
-                                        <h3>CommunityBridge 2020</h3>
-                                    </div>
-                                </Link>
-                            </Col>
+                                    </Link>
+                                </Col>
+                            ))}
                         </Row>
                     </div>
                 </Container>
