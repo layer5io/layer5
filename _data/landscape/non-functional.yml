@@ -171,10 +171,10 @@
   governance: CNCF
   primary-lang: Go
   announce-date: August 2020
-  ga-1-date: ?
+  ga-1-date: "?"
   commercial: Microsoft
   category: Service Mesh
-  weight: 10
+  timeline-order: 19
   icon: assets/images/service-mesh-icons/osm.png
 
 - name: Rotor
