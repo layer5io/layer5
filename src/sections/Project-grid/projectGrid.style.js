@@ -18,6 +18,7 @@ padding: 100px 0 110px 0;
         padding: 11%;
         margin-top: 15px;
         margin-bottom: 15px;
+        height: 300px;
         border-radius: 4%;
         position: relative;
         text-align: center;

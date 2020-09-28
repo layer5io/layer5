@@ -22,7 +22,7 @@ const ProjectPage = ({data}) => {
                                         <Image 
                                             {...frontmatter.thumbnail}
                                             imgStyle={{ objectFit: "contain" }} />
-                                        <h1>{frontmatter.subtitle}</h1>
+                                        <h1>{frontmatter.title}</h1>
                                     </div>
                                 </Link>
                             </Col>

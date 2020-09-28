@@ -20,7 +20,7 @@ export const query = graphql`
             nodes {
                 id
                 frontmatter {
-                    subtitle
+                    title
                     thumbnail{
                         childImageSharp{
                             fluid(maxWidth: 1000){
