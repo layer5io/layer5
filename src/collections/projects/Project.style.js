@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const ProjectWrapper = styled.div`
   color: #000;
@@ -120,4 +120,4 @@ export const ProjectWrapper = styled.div`
       justify-content: space-evenly;
     }
   }
-`
+`;
