@@ -18,12 +18,10 @@ redirect_from:
 
   @media only screen and (min-width:1310px)
             {
-         
                 .row.bookImageGrp
                 {
                    top:-80px !important;   
-                }
-                
+                }   
         }
 
 </style>
