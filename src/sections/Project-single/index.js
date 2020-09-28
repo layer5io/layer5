@@ -12,7 +12,6 @@ const ProjectSingle = ({data}) => {
         <ProjectPageWrapper>
             <PageHeader
                 title={frontmatter.title}
-                subtitle={frontmatter.subtitle}
             />
             <div className="single-post-wrapper">
                 <Container>
