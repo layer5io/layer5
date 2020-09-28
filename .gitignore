@@ -8,3 +8,4 @@ Gemfile.lock
 .DS_Store
 .idea
 node_modules
+public/
