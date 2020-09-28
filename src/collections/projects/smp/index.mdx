@@ -8,15 +8,21 @@ published: true
 import { ProjectWrapper } from "../Project.style.js";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { TwitterTweetEmbed } from "react-twitter-embed" ;
+import smp from "./smp-dark.svg";
 import smpimg1 from "./native-and-wasm-at-capacity-100rps.png";
 import smpimg2 from "./latency-at-scale.png";
 import smpimg3 from "./client-capacity.png";
 
 <ProjectWrapper>
 
-<div className="heading">
-  <h2>Service Mesh Performance (SMP) is a vendor-neutral specification to standardize service mesh value measurement.</h2>
-</div>
+<Row>	<div className="heading">
+  <Col sm={12} md={5}>	  <h2>Service Mesh Performance (SMP) is a vendor-neutral specification to standardize service mesh value measurement.</h2>
+    <img src={smp} />
+  </Col>	
+  <Col sm={12} md={7} className="heading">	
+    <h2>Service Mesh Performance (SMP) is a vendor-neutral specification to standardize service mesh value measurement.</h2>	
+  </Col>	
+</Row>
 
 <p>The Service Mesh Performance Working Group is hosted within CNCF SIG Network. All are welcome to participate. This group is defining the Service Mesh Performance (SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.</p>
 <h3 className="center">SMP is a collaborative effort of Layer5, UT Austin, Google, and The Linux Foundation.</h3>
