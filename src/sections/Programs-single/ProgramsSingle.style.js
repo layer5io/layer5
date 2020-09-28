@@ -19,7 +19,7 @@ const ProgramsPageWrapper = styled.div`
 
 @media only screen and (max-width: 912px) {
      .single-post-block{
-         padding-bottom: 120px;
+         padding-bottom: 10px;
      }
 }
 `;
