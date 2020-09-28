@@ -15,7 +15,6 @@ import theme from "../theme/blog/themeStyles";
 export const query = graphql`
     query allProjects {
         allMdx(
-            sort: { fields: [frontmatter___date], order: DESC }
             filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: { eq: true } } }
         ) {
             nodes {
