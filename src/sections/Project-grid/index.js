@@ -10,14 +10,24 @@ import projectImage1 from "../../assets/images/app/projects/landscape.png";
 import projectImage2 from "../../assets/images/app/projects/smp.png";
 import projectImage3 from "../../assets/images/app/projects/meshery-logo-light.png";
 
-const ProjectPage = () => {
+const ProjectPage = ({data}) => {
     return (
         <ProjectPageWrapper>
             <PageHeader title="Projects" />
             <div className="project-page-wrapper">
                 <Container>
                     <Row>
-                        <Col xs={12} sm={4}>
+                        {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+                                <Col xs={12} sm={6} lg={4} key={id}>
+                                    <Link to="#">
+                                        <div className="project__block__inner">
+                                            <img src={frontmatter.thumbnail} alt="appion project" />
+                                            <h1>{frontmatter.title}</h1>
+                                        </div>
+                                    </Link>
+                                </Col>
+                            ))}
+                        {/* <Col xs={12} sm={4}>
                             <Link to="#">
                                 <div className="project__block__inner">
                                     <img src={projectImage1} alt="appion project" />
@@ -68,7 +78,7 @@ const ProjectPage = () => {
                                     <h1>Meshery</h1>
                                 </div>
                             </Link>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Container>
             </div>
