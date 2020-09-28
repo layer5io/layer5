@@ -8,7 +8,8 @@ const theme = {
     secondaryColor: "#00B39F",
     secondaryLightColor: "#5cccb6",
     headingColor: "#3c494f", 
-    textColor: "#7A848E", 
+    textColor: "#7A848E",
+    menuColor: "#3c494f",
     menuHoverColor: "#00B39F"
 };
 
