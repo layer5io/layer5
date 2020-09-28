@@ -14,21 +14,9 @@ redirect_from:
  - "/books/the-enterprise-path-to-service-mesh"
 ---
 
-<style>
-
-  @media only screen and (min-width:1310px)
-            {
-                .row.bookImageGrp
-                {
-                   top:-80px !important;   
-                }   
-        }
-
-</style>
-
 <h4> Book: <i>The Enterprise Path to Service Mesh Architectures</i></h4>
 By Lee Calcote
-<div class="row bookImageGrp" style="float:right;padding:10px 50px 0 50px;text-align:center;display:flex;position: relative;flex-direction:column;top: -10px;">
+<div class="row bookImageGrp">
 <a href="/assets/images/books/The-Enterprise-Path-to-Service-Mesh-Architectures.png"><img class="card" src="/assets/images/books/The-Enterprise-Path-to-Service-Mesh-Architectures-small.png" alt="" width="270"  /></a>
   <a id="home" class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow z-depth-2" href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote">Get free ebook</a> <br> <a id="home" class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow z-depth-2" href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote">Read on Safari</a>
 </div>As someone interested in modern software design, you have heard of service mesh architectures in context of microservices. Service meshes introduce a new layer into modern infrastructures, offering the potential for creating robust and scalable applications and granular control over them. Is a service mesh right for you? This book will help answer common questions on service mesh architectures through the lens of a large enterprise and addresses how to evaluate your organization’s readiness, factors to consider when building new applications and converting existing applications to best leverage a service mesh, and offers insight on deployment architectures used to get you there.
