@@ -35,7 +35,7 @@ const Data = {
         },
         {
             name: "Projects",
-            path: "/project-grid",
+            path: "/projects",
             subItems: [
                 {
                     name: "Meshery",
