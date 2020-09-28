@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -20,7 +21,6 @@ export const query = graphql`
             nodes {
                 id
                 frontmatter {
-                    title
                     subtitle
                     thumbnail{
                         childImageSharp{
@@ -44,7 +44,7 @@ const ProjectGridPage = ({data}) => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="Blog | Layer5 - The Service Mesh Company" />
+            <SEO title="Projects| Layer5 - The Service Mesh Company" />
             <Navigation />
             <ProjectPage data={data} />
             <Footer/>
