@@ -60,6 +60,7 @@ padding: 100px 0 110px 0;
     @media only screen and (max-width: 912px) {
         padding: 5px 0 0 0;
         .project__block__inner{
+            height: auto;
             padding: 5px;
             img{
                 height: 60px;
