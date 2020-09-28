@@ -32,7 +32,8 @@ padding: 100px 0 110px 0;
             }
         }
         h1{
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
+            font-size: 21px; 
             font-weight: 600;
         }
         img{
