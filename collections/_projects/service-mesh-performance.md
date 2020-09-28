@@ -35,17 +35,17 @@ ul.bullet li ul {
 <div style="display: flex;
     justify-content: flex-start">
 
-  <img src="/assets/projects/smp/stacked/smp-dark.svg" 
+  <img src="/assets/projects/smp/stacked/smp-dark.svg"
       class="light-shadow" style="margin: auto;min-width:145px;height:200px;
      " />
   <div style="margin: auto;">
     <h4 class="black-text center" style="font-size:1.5rem">
     Service Mesh Performance (SMP)<br /> is a vendor-neutral specification to <br />
-    <strong>standardize service mesh value meausurement</strong>. 
+    <strong>standardize service mesh value meausurement</strong>.
     </h4>
   </div>
 </div>
-  
+
 <p>The Service Mesh Performance Working Group is hosted within CNCF SIG Network. All are welcome to participate. This group is defining the Service Mesh Performance (SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
 </p>
 <h6 class="center">SMP is a collaborative effort of Layer5, UT Austin, Google, and The Linux Foundation.</h6>
@@ -76,9 +76,9 @@ justify-content: flex-start center">
       display: flex; height: auto; flex-direction: column;
       flex-flow: column; vertical-align: top; text-align: center;
       position: relative;">
-    <iframe 
-      width="100%" height="320px" src="https://www.youtube.com/embed/LxP-yHrKL4M" 
-      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+    <iframe
+      width="100%" height="320px" src="https://www.youtube.com/embed/LxP-yHrKL4M"
+      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
     <p><i>Learn more about the cost of a service mesh</i></p>
@@ -88,11 +88,20 @@ justify-content: flex-start center">
     display: flex; height: auto; flex-direction: column;
     flex-flow: column; vertical-align: top; text-align: center;
     position: relative;">
-    
-    <iframe 
-      src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000" 
-      frameborder="0" width="100%" height="320" allowfullscreen="true" mozallowfullscreen="true" 
+
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000"
+      frameborder="0" width="100%" height="320" allowfullscreen="true" mozallowfullscreen="true"
       webkitallowfullscreen="true"></iframe>
-      <p><i>Participate in the CNCF Service Mesh Performance Working Group</i></p>  
+      <p><i>Participate in the CNCF Service Mesh Performance Working Group</i></p>
   </div>
+<!-- <div
+    class="col s12 m6"
+    style="
+      display: flex; height: auto; flex-direction: column;
+      flex-flow: column; vertical-align: top; text-align: center;
+      position: relative;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/rgnb0-ntPko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p><i>Discreetly Studying the Effects of Individual Traffic Control Functions - Lee Calcote & Prateek Sahu</i></p>
+  </div> -->
 </div>

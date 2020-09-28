@@ -1,10 +1,8 @@
-
 <p style="text-align:center;" align="center">
   <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/assets/images/layer5/layer5-tag-white-bg.png" width="45%" /></p>
 
-
 ![GitHub contributors](https://img.shields.io/github/contributors/layer5io/layer5.svg)
-![GitHub](https://img.shields.io/github/license/layer5io/layer5.svg) 
+![GitHub](https://img.shields.io/github/license/layer5io/layer5.svg)
 ![GitHub issues by-label](https://img.shields.io/github/issues/layer5io/layer5/help%20wanted.svg?color=%23DDDD00)
 [![Slack](http://slack.layer5.io/badge.svg)](http://slack.layer5.io)
 ![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)
@@ -94,7 +92,7 @@ Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png
 </p>
 <p>
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
-✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calender.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendaropen</a>.<br />
+✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calender.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
 ✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.<br />
 ✔️ <em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">community drive</a>.<br />
 <br />

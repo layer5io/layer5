@@ -14,63 +14,21 @@ image: /assets/images/layer5/layer5-tag-community-white-bg.png
     <h3 style="text-align: center; color: aliceblue;">
       <a href="/news" class="white-text">The Layer5 Community</a>
     </h3>
-    <div
-      class="row white-bg"
-      style="
-        padding: 15px;
-        vertical-align: middle;
-        float: center;
-        height: fit-content;
-      "
-    >
-      <div
-        class="col s12 m6"
-        style="
-          display: flex;
-          height: auto;
-          flex-direction: column;
-          flex-flow: column;
-          vertical-align: middle;
-          position: relative;
-        "
-      >
+    <div class="row white-bg row-view">
+      <div class="col s12 m12 col-view">
         {% include community/community.html %}
-        
-        <div
-        
-        style="
-          display: flex;
-          height: auto;
-          flex-direction: column;
-          flex-flow: column;
-          vertical-align: middle;
-          text-align: center;
-          position: relative;
-        "
-      >
-        <h3 style="text-align: center; color: aliceblue;">
-          <a href="http://slack.layer5.io" class="black-text">Engage</a>
-        </h3>
-        <p>Learn from others using service meshes.</p>
-          {% include partials/vert-social.html %}
-
-          {% include newsletter-signup.html heading-class="black-text"
-          forklift="no" title="no" %}
       </div>
+    </div>
+    <div class="row white-bg row-view">
+      <div class="col s12 m6" >
+        {% include community/community-members.html %}
       </div>
-      <div 
-      class="col s12 m6"
-      style="
-        display: flex;
-        height: auto;
-        flex-direction: column;
-        flex-flow: column;
-        vertical-align: middle;
-        position: relative;
-      "
-      >
-      {% include community/meshmates-program.html %}
+      <div class="col s12 m6">
+        {% include community/meshmates-program-summary.html %}
+      </div>
+    </div>
+    <div class="row white-bg row-view">
+        {% include community/community-meetings-table.html %}
     </div>
   </div>
- </div>
 </div>
