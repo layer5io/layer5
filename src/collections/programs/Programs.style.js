@@ -14,11 +14,25 @@ export const ProgramsWrapper = styled.div`
     .iframe-container {
         position: relative;
         float: right;
+        
+        @media only screen and (max-width:572px){
+            float:none;
+            margin-left: 0px;
+            overflow: hidden;
+             
+             iframe{
+               border: 0;
+               height: 100%;
+               width: 100%;
+               left:0;
+               top:0;
+            }
+        } 
     }
     
     .apply-button{
         position: relative;
-        float: center;
+        text-align: center;
         vertical-align: bottom;
     }
     
