@@ -52,9 +52,22 @@ Nighthawk is a versatile HTTP load testing tool built out of a need to drill HTT
 This project is being developed by Kush Trivedi as a Google Summer of Code project with the CNCF and in collaboration with Layer5 and Google.
 
 <strong>
-<a href="https://docs.google.com/document/d/1_hhQ5w1iLClgf7RvboI6il-eMKKAVPwz50GHm2VN4Bg/edit#">Here</a> is the design document which is under review for invoking distributed load generation & performance benchmarking using nighthawk.
+<a href="https://docs.google.com/document/d/1_hhQ5w1iLClgf7RvboI6il-eMKKAVPwz50GHm2VN4Bg/edit#">Here</a> is the design document for invoking distributed load generation & performance benchmarking using nighthawk.
 </strong>
+
+<div class="row">
+  <div class="col s12 m6" style=" display: flex; height: auto; flex-direction: column;
+    flex-flow: column; vertical-align: top; text-align: center;
+    position: relative; margin: auto">
+  <iframe 
+    src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000" 
+    frameborder="0" width="100%" height="320" allowfullscreen="true" mozallowfullscreen="true" 
+    webkitallowfullscreen="true"></iframe>
+    <p><i>Participate in the CNCF Service Mesh Working Group</i></p>  
+  </div>
+</div>
+
 <h5 class="l5-dark-grey-text" style="padding-top:25px;text-align: center;font-weight: bold;">
-  Jump into the <a href="http://slack.layer5.io">#performance channel</a> to learn more about this initative.
+  Jump into the <a href="http://slack.layer5.io">#performance </a>channel to learn more about this initative.
 </h5>
 
