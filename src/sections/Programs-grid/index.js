@@ -6,8 +6,6 @@ import Image from "../../components/image";
 
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
 
-
-
 const ProgramsGrid = () => {
     const data = useStaticQuery(
         graphql`
@@ -38,6 +36,7 @@ const ProgramsGrid = () => {
             }
         `
     );
+
     return (
         <ProgramsPageWrapper>
             <PageHeader title="Programs" hide_path={true}/>
