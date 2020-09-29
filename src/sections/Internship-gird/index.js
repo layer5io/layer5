@@ -6,13 +6,81 @@ import Button from "../../reusecore/Button";
 import Image from "../../components/image";
 
 import InternshipSectionWrapper from "./InternshipPage.style";
-import Icon1 from "../../images/careers/digital-marketing.svg";
-import Icon3 from "../../images/careers/layer5-tag-linkedin.png";
-import Icon4 from "../../images/careers/ux-designer.svg";
-import Icon2 from "../../images/careers/product-engineering-internship.svg";
 
 
 const InternshipPage = ({ hide_heading })=>{
+    const opportunities = useStaticQuery(
+        graphql`
+            query allOppornuties{
+                internships: allMdx(
+                    sort: { fields: [frontmatter___title], order: ASC }
+                    filter: { fields: { collection: { eq: "careers" } }, frontmatter: { published: { eq: true }, type: { eq: "internship" } } }
+                ) {
+                    nodes {
+                        id
+                        frontmatter {
+                            title
+                            abstract
+                            thumbnail{
+                                childImageSharp{
+                                    fluid(maxWidth: 500){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                                extension
+                                publicURL
+                            }
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+                jobs: allMdx(
+                    sort: { fields: [frontmatter___title], order: ASC }
+                    filter: { fields: { collection: { eq: "careers" } }, frontmatter: { published: { eq: true }, type: { eq: "job" } } }
+                ) {
+                    nodes {
+                        id
+                        frontmatter {
+                            title
+                            abstract
+                            thumbnail{
+                                childImageSharp{
+                                    fluid(maxWidth: 500){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                                extension
+                                publicURL
+                            }
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+            }
+        `
+    );
+
+
+    let OpportunityCard = ({frontmatter, fields }) => (
+        <Col xs={12} sm={6} lg={4} >
+            <Link to={fields.slug}>
+                <div className="opportunity">
+                    <div className="opportunity_icon">
+                        <Image
+                            {...frontmatter.thumbnail}
+                            imgStyle={{ objectFit: "contain" }}
+                        />
+                    </div>
+                    <h3>{frontmatter.title}</h3>
+                    <p>{frontmatter.abstract}</p>
+                </div>
+            </Link>
+        </Col>
+    );
 
     return (
         <InternshipSectionWrapper>
@@ -42,45 +110,9 @@ const InternshipPage = ({ hide_heading })=>{
                     <b>Internships</b>
                     <div className="grid">
                         <Row>
-                            <Col xs={12} sm={6} lg={4}>
-                                <Link to="/careers/Digital-Marketing-Internship">
-                                    <div className="opportunity">
-                                        <div className="opportunity_icon">
-                                            <img src={Icon1} alt="img" />
-                                        </div>
-                                        <h3>Digital Marketing Internship</h3>
-                                        <p>
-                                            Learn and exercise modern marketing strategies and automation as a Layer5 Digital Marketing Intern.
-                                        </p>
-                                    </div>
-                                </Link>
-                            </Col>
-                            <Col xs={12} sm={6} lg={4}>
-                                <Link to="/careers/Software-Engineering-Internship">
-                                    <div className="opportunity">
-                                        <div className="opportunity_icon">
-                                            <img src={Icon3} alt="img"/>
-                                        </div>
-                                        <h3>Software Engineering Internship</h3>
-                                        <p>
-                                            Work with talented engineers in a challenging learning environment as a Layer5 Software Engineer Intern.
-                                        </p>
-                                    </div>
-                                </Link>
-                            </Col>
-                            <Col xs={12} sm={6} lg={4}>
-                                <Link to="/careers/UI-Visual-Designer-Internship">
-                                    <div className="opportunity">
-                                        <div className="opportunity_icon">
-                                            <img src={Icon4} alt="img" />
-                                        </div>
-                                        <h3>UI Visual Designer Internship</h3>
-                                        <p>
-                                            Put your eye for design to the test as a Layer5 UI Visual Designer Intern.
-                                        </p>
-                                    </div>
-                                </Link>
-                            </Col>
+                            {opportunities.internships.nodes.map((data) => (
+                               <OpportunityCard {...data } key={data.id}/>
+                            ))}
                         </Row>
                     </div>
                     <br/>
@@ -88,45 +120,9 @@ const InternshipPage = ({ hide_heading })=>{
                         <b>Full-Time Opportunities</b>
                         <div className="grid">
                             <Row>
-                                <Col xs={12} sm={6} lg={4}>
-                                    <Link to="/careers/Software-Engineer">
-                                        <div className="opportunity">
-                                            <div className="opportunity_icon">
-                                                <img src={Icon2} alt="img" />
-                                            </div>
-                                            <h3>Software Engineer</h3>
-                                            <p>
-                                                Engage in distributed systems and the world of multiple service meshes as a Layer5 Software Engineer.
-                                            </p>
-                                        </div>
-                                    </Link>
-                                </Col>
-                                <Col xs={12} sm={6} lg={4}>
-                                    <Link to="/careers/UI-Visual-Designer">
-                                        <div className="opportunity">
-                                            <div className="opportunity_icon">
-                                                <img src={Icon4} alt="img" />
-                                            </div>
-                                            <h3>UI Visual Designer</h3>
-                                            <p>
-                                                Put your eye for design to the test as a Layer5 UI Visual Designer Intern.
-                                            </p>
-                                        </div>
-                                    </Link>
-                                </Col>
-                                <Col xs={12} sm={6} lg={4}>
-                                    <Link to="/careers/UX-Engineer">
-                                        <div className="opportunity">
-                                            <div className="opportunity_icon">
-                                                <img src={Icon4} alt="img" />
-                                            </div>
-                                            <h3 >UX Engineer</h3>
-                                            <p>
-                                                Intuitive design, flowing interaction, and delightfuling users are core components of the Layer5 user experience.
-                                            </p>
-                                        </div>
-                                    </Link>
-                                </Col>
+                                {opportunities.jobs.nodes.map((data) => (
+                                    <OpportunityCard {...data } key={data.id}/>
+                                ))}
                             </Row>
                         </div>
                     </div>
