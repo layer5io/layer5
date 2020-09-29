@@ -26,28 +26,28 @@ const CareersPage = () => {
                     </p>
                     <div id="layer5-intro" className="card-content">
                         <iframe
-                        width="392"
-                        height="220.5"
-                        src="https://www.youtube.com/embed/0yN5T5LB9ps"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen />
+                            width="392"
+                            height="220.5"
+                            src="https://www.youtube.com/embed/0yN5T5LB9ps"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen />
                     </div>
                     <p>
                         <b>Open Source Projects?</b>
                     </p>
                     <p>
-                      Layer5 projects are open source software. Anyone can download, use, work
-                      on, and share it with others. It's built on principles like collaboration,
-                      globalism, and innovation. Layer5 projects are distributed under the terms
-                      of Apache v2.
+                        Layer5 projects are open source software. Anyone can download, use, work
+                        on, and share it with others. It's built on principles like collaboration,
+                        globalism, and innovation. Layer5 projects are distributed under the terms
+                        of Apache v2.
                     </p>
                     <p>
-                      We believe that all contributors should expect and be part of a safe and
-                      friendly environment for constructive contribution. We can more
-                      effectively and successfully compare and challenge different ideas to find
-                      the best solutions for advancement, while building the size, diversity,
-                      and strength of our community.
+                        We believe that all contributors should expect and be part of a safe and
+                        friendly environment for constructive contribution. We can more
+                        effectively and successfully compare and challenge different ideas to find
+                        the best solutions for advancement, while building the size, diversity,
+                        and strength of our community.
                     </p>
                     <div className="flex-div">&nbsp;</div>
                     <hr/>

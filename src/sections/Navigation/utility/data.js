@@ -35,11 +35,15 @@ const Data = {
         },
         {
             name: "Projects",
-            path: "/project-grid",
+            path: "/projects",
             subItems: [
                 {
                     name: "Meshery",
                     path: "/projects/meshery"
+                },
+                {
+                    name: "Landscape",
+                    path: "/projects/landscape"
                 },
                 {
                     name: "Service Mesh Performance",
@@ -52,6 +56,10 @@ const Data = {
                 {
                     name: "Image Hub",
                     path: "/projects/image-hub"
+                },
+                {
+                    name: "Distributed Performance",
+                    path: "/projects/distributed-performance-management"
                 }
             ],
             div1: {
@@ -90,6 +98,10 @@ const Data = {
             path: "/community",
             subItems: [
                 {
+                    name: "Members",
+                    path: "/community/members"
+                },
+                {
                     name: "Meshmates",
                     path: "/community/meshmates"
                 },
@@ -113,7 +125,7 @@ const Data = {
         },
         {
             name: "About",
-            path: "/about",
+            path: "#about",
             offset: "-50"
         },
         {
