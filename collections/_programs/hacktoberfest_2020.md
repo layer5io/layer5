@@ -43,7 +43,7 @@ excerpt: "Layer5 - Hacktoberfest"
     </ol>
     <ol>
       Layer5 is a warm and welcoming community of open source contributors. We are continuously welcoming new members and are looking for your input. 
-      </p>
+
       Please fill <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQmQv6Xrnb69qGUZjHcw6i92jNDXir6WN6sRAHDNRtKUzBUg/viewform">this questionnaire </a> so our community can be prepared for a harm welcome for you and other new members.
     </ol>
   </ul>
