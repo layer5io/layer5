@@ -41,7 +41,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: ${props => props.theme.textColor};
   overflow-x: hidden !important;
-  font-weight: 400;
+  font-weight: 300 !important;
   margin: 0;
   padding: 0;
 }
