@@ -36,7 +36,7 @@ excerpt: "Layer5 - Hacktoberfest"
       <b> Layer5 has a couple of issues ready for hacktoberfest's participants </b>
     </ol>
     <ol>
-      We're preparing an interesting list of issues that will be good for this event. You can found that list <a href="https://github.com/search?q=org%3Alayer5io+label%3Ahacktoberfest&type=issues"> here </a>
+      We're preparing an interesting list of issues that will be good for this event. You can find the list <a href="https://github.com/search?q=org%3Alayer5io+label%3Ahacktoberfest&type=issues"> here </a>
     </ol>
     <ol>
       <b> Fill the Questionnaire about Open Source </b>
