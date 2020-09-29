@@ -90,8 +90,13 @@ module.exports = {
         name: `members`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        checkSupportedExtensions: false, // suppress warning about childImageSharp being null
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -105,4 +110,4 @@ module.exports = {
       },
     },
   ],
-}
+};
