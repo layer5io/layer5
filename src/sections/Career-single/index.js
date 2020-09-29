@@ -11,7 +11,7 @@ const CareerSingle = ({data}) => {
 
     return (
         <CareerPageWrapper>
-            <PageHeader title={frontmatter.title} />
+            <PageHeader title={frontmatter.title}/>
             <div className="single-post-wrapper">
                 <Container>
                     <Row>

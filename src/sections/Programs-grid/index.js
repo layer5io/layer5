@@ -6,7 +6,7 @@ import Image from "../../components/image";
 
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
 
-const ProgramsGrid = () => {
+const ProgramsGrid = ({hide_path}) => {
     const data = useStaticQuery(
         graphql`
             query allPrograms {
@@ -37,9 +37,10 @@ const ProgramsGrid = () => {
         `
     );
 
+    let path = hide_path ? "" : "Programs";
     return (
         <ProgramsPageWrapper>
-            <PageHeader title="Programs" hide_path={true}/>
+            <PageHeader title="Programs" path={path} />
             <div className="programs-page-wrapper">
                 <Container>
                     <div className="program-grid-wrapper">

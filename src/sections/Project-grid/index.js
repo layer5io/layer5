@@ -11,7 +11,7 @@ import Image from "../../components/image";
 const ProjectPage = ({data}) => {
     return (
         <ProjectPageWrapper>
-            <PageHeader title="Projects" />
+            <PageHeader title="Projects" path="Projects"/>
             <div className="project-page-wrapper">
                 <Container>
                     <Row>

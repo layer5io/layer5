@@ -85,7 +85,7 @@ const InternshipPage = ({ hide_heading })=>{
     return (
         <InternshipSectionWrapper>
             { !hide_heading && (
-                <PageHeader title="Internships"/>
+                <PageHeader title="Internships" path="Careers > Internships"/>
             )}
             <div className="internships-page-wrapper">
                 <Container>

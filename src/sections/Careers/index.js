@@ -9,7 +9,7 @@ import CareersSectionWrapper from "./careers.style";
 const CareersPage = () => {
     return (
         <CareersSectionWrapper>
-            <PageHeader title="Come Work with us" />
+            <PageHeader title="Come Work with us" path="Careers"/>
             <div className="careers-section-wrapper">
                 <Container>
                     <p>If you’re a smart, curious person who can make contributions in and out of your areas of expertise, why not start now?</p>
@@ -58,7 +58,7 @@ const CareersPage = () => {
                 </div>
                 <br/>
                 <div className="programs-section">
-                    <ProgramsGrid/>
+                    <ProgramsGrid hide_path={true} />
                 </div>
             </div>
         </CareersSectionWrapper>
