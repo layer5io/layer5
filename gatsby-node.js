@@ -45,8 +45,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       'src/templates/book-single.js'
   );
 
-  const ProgramTemplate = path.resolve(
+  const ProgramPostTemplate = path.resolve(
       'src/templates/program-single.js'
+  );
+
+  const CareerPostTemplate = path.resolve(
+      'src/templates/career-single.js'
   );
 
   const MemberTemplate = path.resolve(
@@ -113,6 +117,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       node => node.fields.collection === `programs`
   );
 
+  const careers = allNodes.filter(
+      node => node.fields.collection === `careers`
+  );
+
   const members = res.data.allMembers.nodes;
 
   blogs.forEach(blog => {
@@ -169,9 +177,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   programs.forEach(program => {
     createPage({
       path: program.fields.slug,
-      component: ProgramTemplate,
+      component: ProgramPostTemplate,
       context: {
         slug: program.fields.slug,
+      },
+    })
+  });
+
+  careers.forEach(career => {
+    createPage({
+      path: career.fields.slug,
+      component: CareerPostTemplate,
+      context: {
+        slug: career.fields.slug,
       },
     })
   });

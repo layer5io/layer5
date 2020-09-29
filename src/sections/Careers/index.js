@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "../../reusecore/Layout";
+import { Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import ProgramsGrid from "../Programs-grid";
 import InternshipPage from "../Internship-gird";
