@@ -33,10 +33,10 @@ excerpt: "Layer5 - Hacktoberfest"
       pushes Layer5 projects forward. New members are always welcome.
     </ol>
     <ol>
-      <b> Layer5 has a couple of issues ready for hacktoberfest's participants </b>
+      <b> Layer5 has a long list of interesting issues coming up for our Hacktoberfest participants! </b>
     </ol>
     <ol>
-      We're preparing an interesting list of issues that will be good for this event. You can find the list <a href="https://github.com/search?q=org%3Alayer5io+label%3Ahacktoberfest&type=issues"> here </a>
+      Find a list of beginner friendly issues <a href="https://github.com/search?q=org%3Alayer5io+label%3Ahacktoberfest&type=issues"> here </a> to make your mark in open-source and move towards successfully completing the Hacktoberfest challenge.
     </ol>
     <ol>
       <b> Fill the Questionnaire about Open Source </b>
@@ -44,10 +44,10 @@ excerpt: "Layer5 - Hacktoberfest"
     <ol>
       Layer5 is a warm and welcoming community of open source contributors. We are continuously welcoming new members and are looking for your input. 
 
-      Please fill <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQmQv6Xrnb69qGUZjHcw6i92jNDXir6WN6sRAHDNRtKUzBUg/viewform">this questionnaire </a> so our community can be prepared for a harm welcome for you and other new members.
+      Help us better prepare to support you as you find your way into the world of Open Source by filling up this
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQmQv6Xrnb69qGUZjHcw6i92jNDXir6WN6sRAHDNRtKUzBUg/viewform"> questionnaire </a>. 
     </ol>
   </ul>
-Pull requests can be made in any GitHub-hosted repositories/projects.
-You can sign up anytime between October 1 and October 31. You can start hacking <a href="https://hacktoberfest.digitalocean.com">here</a>.
-
+Pull requests can be made in any of the Layer5 GitHub-hosted repositories/projects.
+You may sign up anytime between 1st to 31st October. Begin hacking <a href="https://hacktoberfest.digitalocean.com">here</a>!
 </div>
