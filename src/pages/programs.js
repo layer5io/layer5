@@ -6,21 +6,21 @@ import SEO from "../components/seo";
 
 import Navigation from "../sections/Navigation";
 import Footer from "../sections/Footer";
-import Gsod from "../sections/Gsod";
+import ProgramsGrid from "../sections/Programs-grid";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/hosting/themeStyles";
+import theme from "../theme/blog/themeStyles";
 
-const gsod = () => (   
+const programs = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="404: What a mesh!" />
+            <SEO title="Careers" />
             <Navigation />
-            <Gsod />
-            <Footer />  
+            <ProgramsGrid />
+            <Footer />
         </Layout>
     </ThemeProvider>
 );
 
-export default gsod;
+export default programs;

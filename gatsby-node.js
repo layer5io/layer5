@@ -45,6 +45,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       'src/templates/book-single.js'
   );
 
+  const ProgramPostTemplate = path.resolve(
+      'src/templates/program-single.js'
+  );
+
+  const CareerPostTemplate = path.resolve(
+      'src/templates/career-single.js'
+  );
+
   const MemberTemplate = path.resolve(
       'src/templates/member-single.js'
   );
@@ -105,6 +113,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       node => node.fields.collection === `books`
   );
 
+  const programs = allNodes.filter(
+      node => node.fields.collection === `programs`
+  );
+
+  const careers = allNodes.filter(
+      node => node.fields.collection === `careers`
+  );
+
   const members = res.data.allMembers.nodes;
 
   blogs.forEach(blog => {
@@ -158,6 +174,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   });
 
+  programs.forEach(program => {
+    createPage({
+      path: program.fields.slug,
+      component: ProgramPostTemplate,
+      context: {
+        slug: program.fields.slug,
+      },
+    })
+  });
+
+  careers.forEach(career => {
+    createPage({
+      path: career.fields.slug,
+      component: CareerPostTemplate,
+      context: {
+        slug: career.fields.slug,
+      },
+    })
+  });
+
   members.forEach(member => {
     createPage({
       path: member.fields.slug,
@@ -167,7 +203,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   });
-
 
 };
 
@@ -183,6 +218,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     let slug = "";
     if(collection === `members`) {
       slug = `/community/members/${_.kebabCase(node.frontmatter.name)}`
+    }
+    else if(collection === `programs`) {
+      slug = `/${collection}/${node.frontmatter.link}`
     }
     else{
       slug = `/${collection}/${_.kebabCase(node.frontmatter.title)}`;
@@ -208,7 +246,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       twitter: String,
       github: String,
       meshmate: String,
-      emeritus: String
+      emeritus: String,
+      link: String
     }
   `;
   createTypes(typeDefs)

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NewsPageWrapper = styled.div`
+const ProgramsPageWrapper = styled.div`
  color: #000;     
 .single-post-wrapper{
     padding: 50px 0 180px 0;
@@ -19,8 +19,8 @@ const NewsPageWrapper = styled.div`
 
 @media only screen and (max-width: 912px) {
      .single-post-block{
-         padding-bottom: 120px;
+         padding-bottom: 10px;
      }
 }
 `;
-export default NewsPageWrapper;
+export default ProgramsPageWrapper;

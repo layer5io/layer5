@@ -27,7 +27,7 @@ const BlogList = ({
 
     return (
         <BlogPageWrapper>
-            <PageHeader title={header} />
+            <PageHeader title={header} path="Blog"/>
             <div className="blog-list-wrapper">
                 <Container>
                     <Row>

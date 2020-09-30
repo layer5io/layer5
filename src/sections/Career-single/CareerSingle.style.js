@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NewsPageWrapper = styled.div`
+const CareerPageWrapper = styled.div`
  color: #000;     
 .single-post-wrapper{
     padding: 50px 0 180px 0;
@@ -23,4 +23,4 @@ const NewsPageWrapper = styled.div`
      }
 }
 `;
-export default NewsPageWrapper;
+export default CareerPageWrapper;

@@ -13,6 +13,7 @@ const MembersGrid = props =>{
     return(
         <MembersGridWrapper>
             <PageHeader title="Community Members"
+                        path="Community > Members"
                 subtitle="A warm and welcoming collection of open sourcers"/>
             <div className="members-page-wrapper">
                 <Container>

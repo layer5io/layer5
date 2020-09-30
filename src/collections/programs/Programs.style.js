@@ -1,23 +1,17 @@
 import styled from "styled-components";
 
-const CareersSectionWrapper = styled.div`
-    .careers-section-wrapper{
-        padding: 50px 0;
+export const ProgramsWrapper = styled.div`
+    img{
+        width: 19vw;
+        float: right;
+        margin-left: 20px;
     }
     
-    .programs-section{
-        margin-top: -100px;
+    .flex-div{
+        flex-grow: 0.25;
     }
     
-    .opportunity-section {
-        margin-top: -50px; 
-    }
-    
-    .grid{
-        margin-top: 2px;
-    }
-    
-    .card-content{
+    .iframe-container {
         position: relative;
         float: right;
         
@@ -36,8 +30,11 @@ const CareersSectionWrapper = styled.div`
         } 
     }
     
+    .apply-button{
+        position: relative;
+        text-align: center;
+        vertical-align: bottom;
+    }
     
     
 `;
-
-export default CareersSectionWrapper;
