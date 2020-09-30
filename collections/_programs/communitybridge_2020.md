@@ -1,12 +1,12 @@
 ---
 layout: project
-title: "CommunityBridge 2020"
+title: "CommunityBridge"
 image:
 path: /assets/images/programs/communitybridge-horizontal-white.svg
 thumbnail: /assets/images/programs/communitybridge-horizontal-white.svg
-link: /programs/communitybridge/2020
-permalink: /programs/communitybridge/2020
-excerpt: "Layer5 - CommunityBridge 2020"
+link: /programs/communitybridge
+permalink: /programs/communitybridge
+excerpt: "Layer5 - CommunityBridge"
 ---
 <img
     src="/assets/images/programs/communitybridge-blue.png"
@@ -16,7 +16,7 @@ excerpt: "Layer5 - CommunityBridge 2020"
 ## CommunityBridge
 
 
-The Linux Foundation's [CommunityBridge](https://communitybridge.org) is building a healthy ecosystem around the open source software by funding projects, securing code, and connecting with talented developers. Layer5 is participating in the CommunityBridge's mentorship program in 2020. 
+The Linux Foundation's [CommunityBridge](https://communitybridge.org) is building a healthy ecosystem around the open source software by funding projects, securing code, and connecting with talented developers. Layer5 is participating in the CommunityBridge's mentorship program since 2019. 
 
 ### Projects 
 
@@ -32,7 +32,7 @@ Golang (nice to have: Kubernetes, Service Mesh)
 Lee Calcote (<a href="https://twitter.com/lcalcote">@lcalcote</a>), Vinayak Shinde (<a href="https://twitter.com/vinushnd">@vinushnd</a>)
 
 <b>Github Issue:</b> 
-https://github.com/servicemeshinterface/smi-spec/issues/70
+<a href="https://github.com/servicemeshinterface/smi-spec/issues/70">https://github.com/servicemeshinterface/smi-spec/issues/70 </a>
 
 <b>Mentee:</b> 
 Kanishkar J (<a href="https://github.com/kanishkarj">@kanishkarj</a>)
