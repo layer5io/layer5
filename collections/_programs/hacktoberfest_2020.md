@@ -33,6 +33,14 @@ excerpt: "Layer5 - Hacktoberfest"
       pushes Layer5 projects forward. New members are always welcome.
     </ol>
     <ol>
+      <b> Participate in our Getting started @Layer5 Meetup </b>
+    </ol>
+    <ol>
+      We have prepared a meetup to give an introduction to various repositories across Layer5.
+      <br>
+      You can register here <a href="https://organize.mlh.io/participants/events/4796-getting-started-layer5">https://organize.mlh.io/participants/events/4796-getting-started-layer5</a>
+    </ol>
+    <ol>
       <b> Layer5 has a long list of interesting issues coming up for our Hacktoberfest participants! </b>
     </ol>
     <ol>
