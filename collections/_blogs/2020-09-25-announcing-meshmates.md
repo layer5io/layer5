@@ -1,7 +1,7 @@
 ---
 layout: post
 date:   2020-09-25 08:00:00 +0000
-image: /assets/images/posts/2020-09-25-announcing-meshmates/meshmates.svg
+image: /assets/images/posts/2020-09-25-announcing-meshmates/meshmate-announcement.png
 author: our MeshMates with 🤍
 title: Announcing the new line of MeshMates 
 categories: layer5
