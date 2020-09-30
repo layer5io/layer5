@@ -7,25 +7,30 @@ title: Announcing the new line of MeshMates
 categories: layer5
 ---
 
-<img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmates.svg" class="image-center" />
+<br />
+<h4> <a href="https://layer5.io/community/members/tanuj-agarwal"> Tanuj Agarwal </a></h4>
+ <img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-tanuj-agarwal.png" class="image-right" />
 
-<h4> <a href="https://layer5.io/community/members/tanuj-agarwal"> <img src="/assets/images/posts/2020-09-25-announcing-meshmates/tanuj.jpg" class="avatar" /> Tanuj Agarwal </a></h4>
-<div style="color: #808080"> I was introduced to the Layer5 community three months back. Being fairly new to the world of open source and looking for new communities and technology to delve into, I hopped onto the Layer5 bandwagon and was amazed by the warm welcome I received from the wholesome community. I had done video animation jobs on a small scale before, which is what led me to confidently take up the task of creating a short intro jingle for the various community meetings hosted on the Layer5 youtube channel. After iterating for about a week, I finally came up with something worthwhile. And to my elation, it was accepted! It still warms my heart to see the intro flash before every meeting.
+<p style="color: #808080"> I was introduced to the Layer5 community three months back. Being fairly new to the world of open source and looking for new communities and technology to delve into, I hopped onto the Layer5 bandwagon and was amazed by the warm welcome I received from the wholesome community. I had done video animation jobs on a small scale before, which is what led me to confidently take up the task of creating a short intro jingle for the various community meetings hosted on the Layer5 youtube channel. After iterating for about a week, I finally came up with something worthwhile. And to my elation, it was accepted! It still warms my heart to see the intro flash before every meeting.
 <br /> <br />
 Next up I started work on a next generation model of the layer5.io site. Being a new project based on Gatsby and heavily relying on React, Javascript and GraphQL, the site project was a perfect and challenging opportunity for me to expand on my skill set. Speed learning my way through Gatsby, with a continuous influx of help and helpful suggestions from my MeshMate, Kush Trivedi and others within the community, I soon mastered the platform and have spent weeks on creating countless issues and PRs in hopes of achieving the project goals. A few months down the line, I started reviewing PRs and began helping others contribute, something which I had never had the opportunity to do  before!  After months of continuous effort, I am proud to write that I recently joined as a maintainer on the project and was soon approached to be a MeshMate, which I happily accepted. My learning graph has seen a soaring positive tangent in the months I have been at Layer5 and I’m looking forward to an even more educative and rewarding journey ahead 😊
-</div> 
+</p> 
+<br />
 
-<h4><a href="https://layer5.io/community/members/kelechi-nwachukwu">
-<img src="/assets/images/posts/2020-09-25-announcing-meshmates/kelechi.jpg" class="avatar" /> Kelechi Precious Nwachukwu </a></h4>
+<h4><a href="https://layer5.io/community/members/kelechi-nwachukwu">Kelechi Precious Nwachukwu </a></h4>
+<img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-kelechi-precious.png" class="image-right" /> 
+
 <p style="color: #808080">
 It was the middle of the COVID-19 pandemic and being unproductive wasn't something I can stomach. Wanting to expand on my technical domain knowledge, I stumbled across an open-source challenge for women in tech with lists of projects to contribute to by the Women of Open Source Community Africa (WOSCA). My eyes landed on Layer5 and I haven’t looked back since. 
 <br /> 
 A quick look through the repositories left me quaking in my boots. To give you some much needed context and to give some hope to all the newbies out there, I recently transitioned to working in technical domains from accounting and managing construction site projects. Forever getting stuck trying to get my hands on new tech and trying to find a way into the bewildering and humongous tech domains , I didn't even understand some of the jargon, and was too ashamed to ask questions. Stumbling through my first contribution, I somehow made it to the finish line and to my happiness, was soon assigned  another task. Instead of complaining, I set out to study up on the issue and took a peek at the other assignees in the repository to ensure that I was not the only one taking inordinate amounts of time on an issue. To my surprise, I was not.
 <br /> 
 I got working on the assignment and soon encountered issues that would previously have made me quit. Thankfully, I decided to take a different approach this time. I shared my challenge with the Layer5 community, and was amazed at the immediate and abundant response I received. Since then, I have helped other contributors get through their challenges, and have received an invitation to join the organization as a member, and then as a MeshMate 😎 I have been wholly satisfied with the learning opportunities and the friendly environment that the Layer5 community has to offer. I have learned that I may not be perfect, but  by making full use of the resources provided to me, having a supportive community by my side and by being open to learning and showing determined courage in the face of difficulties, I can achieve anything!
-</p>
+</p><br />
 
-<h4> <a href="https://layer5.io/community/members/ruth-ikegah"> <img src="/assets/images/posts/2020-09-25-announcing-meshmates/ruth.jpeg" class="avatar" /> Ruth Ikegah </a></h4>
+<h4> <a href="https://layer5.io/community/members/ruth-ikegah"> Ruth Ikegah </a></h4>
+<img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-ruth-ikegah.png" class="image-right" />
+
 <p style="color: #808080">
 The field of open source had always been intriguing to me. The idea of a close-knit community working with an aim had me wanting to contribute myself. Considering the fact that I have a small skill set (Donned the coder hat only 6 months ago), Layer5 was a great community for me to start out with. I came to know about the Layer5 community from the She Code Africa slack channel, after which I visited the <a href="https://github.com/layer5io">GitHub repository</a> and hopped on to the Layer5 slack channel. <br />
 To my good luck, I received a warm welcome from the community and was able to attend a community meeting the day I joined. I made my way through the Github repos and stumbled across a beginner friendly issue. I started work but to my dismay, my PR failed to pass the DCO check at the final rung. Stuck and with low spirits,  I talked to Lee (Layer5 Maintainer) and related my problems with the DCO check fail. He patiently assured me that first-time checks can be hard to get right and assigned me a   Meshmate, Ashis Singh (read saviour 😳). I sent a message to Ashis and told him about the issues I was having in submitting my Pull Request.  He  led me through a step by step  tutorial on committing and signing off my changes, after which my first PR passed all the checks. I was thrilled at this point, waiting for my PR to be merged.
