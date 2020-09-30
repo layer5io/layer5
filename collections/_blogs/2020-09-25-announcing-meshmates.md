@@ -5,7 +5,9 @@ image: /assets/images/posts/2020-09-25-announcing-meshmates/meshmate-announcemen
 author: our MeshMates with 🤍
 title: Announcing a new line of MeshMates 
 categories: community
-redirect: /blog/announcing-meshmates
+redirect: 
+ - /blog/layer5/announcing-meshmates
+ - /blog/announcing-meshmates
 ---
 _[Layer5 MeshMates](/community/meshmates) are committed to helping community members be successful contributors. MeshMates aid in identifying areas of projects to engage within, working groups to join, and in helping community members grow in their open source and cloud native knowledge. By connecting one-on-one, MeshMates will share tips on how to have the best community experience possible._
 
