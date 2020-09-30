@@ -5,7 +5,7 @@ image: /assets/images/posts/2020-09-25-announcing-meshmates/meshmate-announcemen
 author: our MeshMates with 🤍
 title: Announcing a new line of MeshMates 
 categories: community
-redirect: 
+redirect_from: 
  - /blog/layer5/announcing-meshmates
  - /blog/announcing-meshmates
 ---
@@ -16,13 +16,9 @@ _[Layer5 MeshMates](/community/meshmates) are committed to helping community mem
 
 I was introduced to the Layer5 community three months back. Being fairly new to the world of open source and looking for new communities and technology to delve into, I hopped onto the Layer5 bandwagon and was amazed by the warm welcome I received from the wholesome community. I had done video animation jobs on a small scale before, which is what led me to confidently take up the task of creating a short intro jingle for the various community meetings hosted on the Layer5 youtube channel. After iterating for about a week, I finally came up with something worthwhile. And to my elation, it was accepted! It still warms my heart to see the intro flash before every meeting.
 
-
 Next up I started work on a next generation model of the layer5.io site. Being a new project based on Gatsby and heavily relying on React, Javascript and GraphQL, the site project was a perfect and challenging opportunity for me to expand on my skill set. Speed learning my way through Gatsby, with a continuous influx of help and helpful suggestions from my MeshMate, Kush Trivedi and others within the community, I soon mastered the platform and have spent weeks on creating countless issues and PRs in hopes of achieving the project goals. A few months down the line, I started reviewing PRs and began helping others contribute, something which I had never had the opportunity to do  before!  After months of continuous effort, I am proud to write that I recently joined as a maintainer on the project and was soon approached to be a MeshMate, which I happily accepted. My learning graph has seen a soaring positive tangent in the months I have been at Layer5 and I’m looking forward to an even more educative and rewarding journey ahead 😊
 
-
-
-<h4><a href="https://layer5.io/community/members/kelechi-nwachukwu">Kelechi Precious Nwachukwu </a></h4>
-<img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-kelechi-precious.png" class="image-right" /> 
+<h4><a href="https://layer5.io/community/members/kelechi-nwachukwu">Kelechi Precious Nwachukwu </a></h4><img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-kelechi-precious.png" class="image-right" /> 
 
 It was the middle of the COVID-19 pandemic and being unproductive wasn't something I can stomach. Wanting to expand on my technical domain knowledge, I stumbled across an open-source challenge for women in tech with lists of projects to contribute to by the Women of Open Source Community Africa (WOSCA). My eyes landed on Layer5 and I haven’t looked back since.
 
