@@ -6,7 +6,6 @@
 
 
 const path = require(`path`);
-const _ = require("lodash");
 const slugify = require("./src/utils/slugify");
 
 // You can delete this file if you're not using it
