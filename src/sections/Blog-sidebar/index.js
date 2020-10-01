@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import kebabCase from "lodash/kebabCase";
+import slugify from "../../utils/slugify";
 
 import { FaSearch } from "react-icons/fa";
 
@@ -11,6 +11,7 @@ import WdThumb2 from "../../assets/images/blog/widgets-thumb/02.png";
 import WdThumb3 from "../../assets/images/blog/widgets-thumb/03.png";
 
 import BlogSideBarWrapper from "./blogSidebar.style";
+
 
 
 const Sidebar = ({tags}) => {
@@ -132,7 +133,7 @@ const Sidebar = ({tags}) => {
                 <ul>
                     { tags && tags.map(tag => (
                         <li key={tag.fieldValue}>
-                            <Link to={`/blog/tag/${kebabCase(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
+                            <Link to={`/blog/tag/${slugify(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
                         </li>
                     ))}
                 </ul>

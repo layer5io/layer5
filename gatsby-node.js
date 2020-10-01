@@ -4,8 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+
 const path = require(`path`);
 const _ = require("lodash");
+const slugify = require("./src/utils/slugify");
 
 // You can delete this file if you're not using it
 // Replacing '/' would result in empty string which is invalid
@@ -135,7 +137,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const BlogTags = res.data.blogTags.group;
   BlogTags.forEach(tag => {
     createPage({
-      path: `/blog/tag/${_.kebabCase(tag.fieldValue)}`,
+      path: `/blog/tag/${slugify(tag.fieldValue)}`,
       component: blogListTemplate,
       context: {
         tag: tag.fieldValue,
@@ -217,13 +219,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
     let slug = "";
     if(collection === `members`) {
-      slug = `/community/members/${_.kebabCase(node.frontmatter.name)}`
+      slug = `/community/members/${slugify(node.frontmatter.name)}`
     }
     else if(collection === `programs`) {
       slug = `/${collection}/${node.frontmatter.link}`
     }
     else{
-      slug = `/${collection}/${_.kebabCase(node.frontmatter.title)}`;
+      slug = `/${collection}/${slugify(node.frontmatter.title)}`;
     }
     createNodeField({
       name: `slug`,
