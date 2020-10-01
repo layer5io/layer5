@@ -7,7 +7,7 @@
 [![Slack](http://slack.layer5.io/badge.svg)](http://slack.layer5.io)
 ![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)
 
-### About Layer5
+### About Layer5 - MPM(Mesh Projects & Maintainers)
 
 **Community First**
 
