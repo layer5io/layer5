@@ -15,7 +15,7 @@ const NavigationWrap = styled.header`
   }
   .mobile-menu-icon {
     display: none;
-    color: #1d316c;
+    color: ${props => props.theme.menuColor};
     font-size: 24px;
   }
 
@@ -95,12 +95,12 @@ const NavigationWrap = styled.header`
     }
     li {
       position: relative;
-      padding: 48px 0px 48px 40px;
+      padding: 48px 0px;
       .dropdown {
         li {
           padding: 0;
           a {
-            color: #1d316c;
+            color: ${props => props.theme.menuColor};
             display: block;
             padding: 5px 15px;
             &:hover {
@@ -116,16 +116,15 @@ const NavigationWrap = styled.header`
       a,
       .nav-active {
         position: relative;
-        color: ${(props) =>
-        props.theme.menuColor ? props.theme.menuColor : "#1D316C"};
+        color: ${props => props.theme.menuColor};
         font-size: 15px;
         transition: 450ms all;
-        padding-bottom: 5px;
+        padding: 0px 20px 5px 20px;
         cursor: pointer;
         &:before {
           content: "";
           position: absolute;
-          left: 0;
+          left: 20;
           bottom: 0;
           width: 20px;
           height: 1px;
@@ -157,9 +156,9 @@ const NavigationWrap = styled.header`
     }
     .nav {
       li {
-        padding: 28px 0px 28px 40px;
+        padding: 28px 0px;
         a {
-          color: #1d316c;
+          color:${props => props.theme.menuColor};
           &:hover {
             color: ${props => props.theme.menuHoverColor};
           }
@@ -254,14 +253,14 @@ const NavigationWrap = styled.header`
           .dropdown {
             li {
               a {
-                color: #1d316c;
+                color: ${props => props.theme.menuColor};
               }
             }
           }
           a {
             padding: 8px 10px;
             display: block;
-            color: #1d316c;
+            color:${props => props.theme.menuColor};
             &:before {
               content: none;
             }

@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { FaBars } from "react-icons/fa";
 
 import { Container } from "../../reusecore/Layout";
-import logo from "../../assets/images/app/layer5.svg";
+import layer5_logo from "../../assets/images/app/layer5.svg";
 
 import Data from "./utility/data.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
@@ -22,8 +22,8 @@ const Navigation = () => {
         <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
             <Container>
                 <div className="navbar-wrap">
-                    <Link to="#" className="logo">
-                        <img src={logo} alt="Layer5 logo" />
+                    <Link to="/" className="logo">
+                        <img src={layer5_logo} alt="Layer5 logo" />
                     </Link>
                     <nav className="nav">
                         <FaBars
