@@ -13,7 +13,7 @@ _[Layer5 MeshMates](/community/meshmates) are committed to helping community mem
 
 <h4> <a href="https://layer5.io/community/members/tanuj-agarwal"> Tanuj Agarwal </a></h4>
 
- <img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-tanuj-agarwal.png" class="image-right" height="50%" />
+ <img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-tanuj-agarwal.png" class="image-right"  />
 <p>
 I was introduced to the Layer5 community three months back. Being fairly new to the world of open source and looking for new communities and technology to delve into, I hopped onto the Layer5 bandwagon and was amazed by the warm welcome I received from the wholesome community. I had done video animation jobs on a small scale before, which is what led me to confidently take up the task of creating a short intro jingle for the various community meetings hosted on the Layer5 youtube channel. After iterating for about a week, I finally came up with something worthwhile. And to my elation, it was accepted! It still warms my heart to see the intro flash before every meeting.
 </p>
@@ -24,7 +24,7 @@ Next up I started work on a next generation model of the layer5.io site. Being a
 <br />
 
 <h4><a href="https://layer5.io/community/members/kelechi-nwachukwu">Kelechi Precious Nwachukwu </a></h4>
-<img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-kelechi-precious.png" class="image-right" height="50%" /> 
+<img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-kelechi-precious.png" class="image-right" /> 
 <p>
 It was the middle of the COVID-19 pandemic and being unproductive wasn't something I can stomach. Wanting to expand on my technical domain knowledge, I stumbled across an open-source challenge for women in tech with lists of projects to contribute to by the Women of Open Source Community Africa (WOSCA). My eyes landed on Layer5 and I haven’t looked back since.
 </p>
@@ -36,7 +36,7 @@ I got working on the assignment and soon encountered issues that would previousl
 </p>
 
 <h4> <a href="https://layer5.io/community/members/ruth-ikegah"> Ruth Ikegah </a></h4>
-<img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-ruth-ikegah.png" class="image-right" height="50%" />
+<img src="/assets/images/posts/2020-09-25-announcing-meshmates/meshmate-ruth-ikegah.png" class="image-right" />
 
 <p>
 The field of open source had always been intriguing to me. The idea of a close-knit community working with an aim had me wanting to contribute myself. Considering the fact that I have a small skill set (Donned the coder hat only 6 months ago), Layer5 was a great community for me to start out with. I came to know about the Layer5 community from the She Code Africa slack channel, after which I visited the <a href="https://github.com/layer5io">GitHub repository</a> and hopped on to the Layer5 slack channel.
