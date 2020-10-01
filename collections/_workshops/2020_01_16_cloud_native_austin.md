@@ -9,7 +9,7 @@ By the end of this live, hands-on, online course, you’ll understand:
 <li>- Istio's methods for managing telemetry, monitoring and reporting.</li>
 <li>- Approaches to canary deployments and securing communication with Istio.</li></ul>"
 img: /assets/images/workshops/cloud-native-austin-meetup.png
-style: "position:relative;height:320px;overflow:hidden;margin-bottom:50px"
+style: "position:relative;height:320px;overflow:hidden;"
 eurl: https://allthingsopen.org/talk/using-service-meshes-workshop-extended-session/
 labs: https://github.com/layer5io/istio-service-mesh-workshop
 slides: https://calcotestudios.com/talks/decks/slides-cloud-native-austin-2020-introduction-to-istio.html

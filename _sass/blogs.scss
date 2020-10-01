@@ -70,7 +70,7 @@ code {
 }
 
 .image-left {
-  width: 40%;
+  width: 35%;
   float: left;
   padding-right: 10px;
 }
@@ -78,14 +78,14 @@ code {
 .image-right {
   width: 40%;
   float: right;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 .image-center {
   display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 40%;
     padding-bottom: 10px;
     padding-top: 10px;
 }
@@ -98,6 +98,8 @@ code {
   height: 22%;
   float: right;
   border-radius: 50%;
+  padding-left: 20px;
+  padding-bottom: 10px;
 }
 
 .align-right.larger{

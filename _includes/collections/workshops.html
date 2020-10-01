@@ -1,13 +1,7 @@
 <div class="row">
-  <div class="col s6 m4">
-    <img
-      src="/assets/images/workshops/workshops.svg"
-      style="overflow: hidden;"
-    />
-  </div>
   {% assign sorted = (site.workshops | sort: 'date') | reverse %} {% for
   workshop in sorted %}
-  <div class="col s12 m4">
+  <div class="col s12 m4" style="display:block">
     <div class="card medium sticky-action">
       <div
         class="card-image waves-effect waves-block waves-light"
@@ -16,13 +10,8 @@
         <img
           class="activator"
           src="{{workshop.img}}"
-          style="
-            display: block;
-            width: 100%;
-            vertical-align: middle;
-            margin: auto;
-          "
         />
+              
       </div>
       <style>
         .card
@@ -65,11 +54,14 @@
     </div>
   </div>
   {% if forloop.last == true %} {% endif %} {% endfor %}
-  <div class="col s12 m8" style="text-align: center;">
+  
+
+
+  <div class="col s12 m12" style="text-align: center;">
     <div style="text-align: center; display: inline;">
-      <img
+      <img 
         src="/assets/images/workshops/workshops.svg"
-        style="display: inline;"
+        style="display: inline;max-height:80vh;margin-top: 25px;"
         width="80%"
       />
       <div style="flex-grow: 0.25;">&nbsp;</div>
