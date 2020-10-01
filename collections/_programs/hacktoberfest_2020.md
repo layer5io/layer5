@@ -20,7 +20,7 @@ excerpt: "Layer5 - Hacktoberfest"
 
   <img src="/assets/images/programs/hacktoberfest2020/hacktober.svg" class="image-center"><br />
   
-<h4 class="black-text"><b>Hacktoberfest 2020 with Layer5</b></h4>
+<h4 class="black-text" style='font-weight: bold;'>Hacktoberfest 2020 with Layer5</h4>
 Hacktoberfest is open to everyone in the global community. Whether you’re a developer, student learning to code, event host, or a company of any size, you can help drive growth of open source and make positive contributions to an ever-growing community. All backgrounds and skill levels are encouraged to complete the challenge. Read more about <a href="https://hacktoberfest.digitalocean.com">Hacktoberfest</a>.<br />   
 <b> Hacktoberfest is a celebration open to everyone in our global community.</b><br /> 
 While small, the Layer5 community represents the largest collection of
@@ -36,7 +36,7 @@ Here is a list of <a href="https://github.com/search?q=org%3Alayer5io+label%3Aha
  <b> Live the Open Source way. Help us understand your needs better! </b><br />
 Layer5 is a warm and welcoming community of open source contributors. We are continuously welcoming new members and are looking for your input. Help us better prepare to support you as you find your way into the world of Open Source by filling up this <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQmQv6Xrnb69qGUZjHcw6i92jNDXir6WN6sRAHDNRtKUzBUg/viewform">questionnaire</a>.<br />
 
-<h6><b> Tutorials </b></h6>
+<h6 style='font-weight: bold;'> Tutorials </h6>
 
 - An introduction to [Meshery](https://layer5.io/meshery) and [mesheryctl](https://meshery.layer5.io/docs/installation#using-mesheryctl) by [Vijay Cherukuri](https://layer5.io/community/members/vijay-cherukuri): Take a look at the [presentation deck](https://docs.google.com/presentation/d/1Wc5ALdn-G3fADJ8I6nJlyOGhV2XHVprYPqDvkZ1MEqY/edit#slide=id.g9d94e76861_9_608)!
  
