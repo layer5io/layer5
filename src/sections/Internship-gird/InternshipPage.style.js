@@ -49,6 +49,6 @@ const InternshipSectionWrapper = styled.div`
             margin: auto;
         }  
     }
-`
+`;
 
 export default InternshipSectionWrapper;
