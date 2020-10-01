@@ -2,7 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql ,Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import kebabCase from "lodash/kebabCase";
+import slugify from "../../utils/slugify";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
@@ -47,7 +47,7 @@ const BlogSingle = ({data}) => {
                                                 <span>Tags:</span>
                                                 {frontmatter.tags && frontmatter.tags.map(tag => (
                                                     <Link key={`${frontmatter.title}-${tag}`}
-                                                        to={`/blog/tag/${kebabCase(tag)}`}>{tag}
+                                                        to={`/blog/tag/${slugify(tag)}`}>{tag}
                                                     </Link>
                                                 ))}
                                             </div>

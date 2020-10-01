@@ -28,6 +28,9 @@ const ActiveMembers = props =>{
                                 publicURL
                             }
                         }
+                        fields{
+                            slug
+                        }
                     }
                 }
             }
