@@ -104,6 +104,7 @@ const AboutSectionWrapper = styled.section`
     vertical-align: middle;
     text-align: center;
     position: relative;
+    color:#fff;
   }
   .community {
     color: blue;

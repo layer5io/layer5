@@ -62,37 +62,45 @@ const About = () => {
               <Col className="social-widgets" xs={12} sm={7}>
                 <Row className="contactf">
                   <Link
-                    className="social-icons"
-                    to="mailto:community@layer5.io"
+                    className="social-icons mail"
+                    href="mailto:community@layer5.io"
                   >
                     <img height="40 px" src={mail_icon} />
                   </Link>
                   <Link className="social-icons" to="http://slack.layer5.io/">
-                    <img height="40 px" src={slack_icon} />
+                    <img className="slack" height="40 px" src={slack_icon} />
                   </Link>
                   <Link
                     className="social-icons"
                     to="https://twitter.com/layer5"
                   >
-                    <img height="40 px" src={twitter_icon} />
+                    <img
+                      className="twitter"
+                      height="40 px"
+                      src={twitter_icon}
+                    />
                   </Link>
                   <Link
                     className="social-icons"
                     to="https://github.com/layer5io"
                   >
-                    <img height="40 px" src={github_icon} />
+                    <img className="github" height="40 px" src={github_icon} />
                   </Link>
                   <Link
                     className="social-icons"
                     to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"
                   >
-                    <img height="40 px" src={youtube_icon} />
+                    <img
+                      className="youtube"
+                      height="40 px"
+                      src={youtube_icon}
+                    />
                   </Link>
                   <Link
                     className="social-icons"
                     to="https://hub.docker.com/u/layer5/"
                   >
-                    <img height="40 px" src={docker_icon} />
+                    <img className="docker" height="40 px" src={docker_icon} />
                   </Link>
                 </Row>
               </Col>
