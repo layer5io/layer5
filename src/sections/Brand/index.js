@@ -56,7 +56,7 @@ const Brand = () => {
             </h1>
           </Col>
           <Col xs={12} sm={6} lg={6} xl={6}>
-            <div className="post-content buttonPara">
+            <div className="buttonPara">
               <a
                 className="waves-effect waves-light btn darken-2 l5-dark-yellow z-depth-2"
                 href="#"
@@ -112,12 +112,88 @@ const Brand = () => {
             <Col xs={12} sm={12} lg={12} xl={12}>
               <h4 className="layerH3">Web</h4>
             </Col>
-            <Col xs={12} sm={12} lg={12} xl={12}>
-              <p className="layerH3">For use online:</p>
+            <Col xs={12} sm={6} lg={6} xl={6}>
+              <p className="layerH3">Color</p>
             </Col>
-            <Col xs={12} sm={8} lg={8} xl={8}>
-              <div>
-                <img src={ColorScheme} />
+            <Col xs={12} sm={6} lg={6} xl={6}>
+              <p className="layerH3">Grayscale</p>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox Dark">
+                R: 60
+                <br />
+                G: 73
+                <br />
+                B: 79
+                <br />
+                #3c494f
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox dark5">
+                R: 0
+                <br />
+                G: 179
+                <br />
+                B: 159
+                <br />
+                #00b39f
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox light5">
+                R: 0
+                <br />
+                G: 211
+                <br />
+                B: 169
+                <br />
+                #00d3a9
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox Dark">
+                R: 60
+                <br />
+                G: 73
+                <br />
+                B: 79
+                <br />
+                #3c494f
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox darkGrey">
+                R: 130
+                <br />
+                G: 140
+                <br />
+                B: 140
+                <br />
+                #828c8c
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox lightGrey">
+                R: 160
+                <br />
+                G: 170
+                <br />
+                B: 170
+                <br />
+                #a0aaaa
+                <br />
+                <br />
               </div>
             </Col>
           </Row>
@@ -125,12 +201,88 @@ const Brand = () => {
             <Col xs={12} sm={12} lg={12} xl={12}>
               <h4 className="layerH3">Print</h4>
             </Col>
-            <Col xs={12} sm={12} lg={12} xl={12}>
-              <p className="layerH3">For use on printed media:</p>
+            <Col xs={12} sm={6} lg={6} xl={6}>
+              <p className="layerH3">Color</p>
             </Col>
-            <Col xs={12} sm={8} lg={8} xl={8}>
-              <div>
-                <img src={PrintScheme} />
+            <Col xs={12} sm={6} lg={6} xl={6}>
+              <p className="layerH3">Grayscale</p>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox Dark">
+                c: 20
+                <br />
+                M: 0
+                <br />
+                Y: 0
+                <br />
+                K: 80
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox dark5">
+                C: 80
+                <br />
+                M: 0
+                <br />
+                Y: 50
+                <br />
+                K: 0
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox light5">
+                C: 65
+                <br />
+                M: 0
+                <br />
+                Y: 45
+                <br />
+                K: 0
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox Dark">
+                C: 0
+                <br />
+                M: 0
+                <br />
+                Y: 0
+                <br />
+                K: 85
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox darkGrey">
+                C: 0
+                <br />
+                M: 0
+                <br />
+                Y: 0
+                <br />
+                K: 55
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox lightGrey">
+                C: 0
+                <br />
+                M: 0
+                <br />
+                Y: 0
+                <br />
+                K:40
+                <br />
+                <br />
               </div>
             </Col>
           </Row>
@@ -160,7 +312,7 @@ const Brand = () => {
             </h1>
           </Col>
           <Col xs={12} sm={6} lg={6} xl={6}>
-            <div className="post-content buttonPara">
+            <div className="buttonPara">
               <a
                 className="waves-effect waves-light btn darken-2 l5-dark-yellow z-depth-2"
                 href="#"
@@ -196,9 +348,50 @@ const Brand = () => {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} sm={8} lg={8} xl={8}>
-              <div>
-                <img src={ColorScheme} />
+            <Col xs={12} sm={12} lg={12} xl={12}>
+              <p className="layerH3">Color</p>
+            </Col>
+            {/* <Col xs={12} sm={6} lg={6} xl={6}>
+              <p className="layerH3">
+              </p>
+            </Col> */}
+            <Col xs={12} sm={3} lg={3} xl={3}>
+              <div className="palBox Dark">
+                R: 60
+                <br />
+                G: 73
+                <br />
+                B: 79
+                <br />
+                #3c494f
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={3} lg={3} xl={3}>
+              <div className="palBox dark5">
+                R: 0
+                <br />
+                G: 179
+                <br />
+                B: 159
+                <br />
+                #00b39f
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={3} lg={3} xl={3}>
+              <div className="palBox light5">
+                R: 0
+                <br />
+                G: 211
+                <br />
+                B: 169
+                <br />
+                #00d3a9
+                <br />
+                <br />
               </div>
             </Col>
           </Row>
@@ -250,7 +443,7 @@ const Brand = () => {
             </h1>
           </Col>
           <Col xs={12} sm={6} lg={6} xl={6}>
-            <div className="post-content buttonPara">
+            <div className="buttonPara">
               <a
                 className="waves-effect waves-light btn darken-2 l5-dark-yellow z-depth-2"
                 href="#"
@@ -318,7 +511,7 @@ const Brand = () => {
             </h1>
           </Col>
           <Col xs={12} sm={6} lg={6} xl={6}>
-            <div className="post-content buttonPara">
+            <div className="buttonPara">
               <a
                 className="waves-effect waves-light btn darken-2 l5-dark-yellow z-depth-2"
                 href="#"
@@ -378,13 +571,71 @@ const Brand = () => {
             <Col xs={12} sm={12} lg={12} xl={12}>
               <h4 className="layerH3">Web</h4>
             </Col>
-            <Row>
-              <Col xs={12} sm={8} lg={8} xl={8}>
-                <div>
-                  <img src={SmpColor} />
-                </div>
-              </Col>
-            </Row>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox light5">
+                R: 0
+                <br />
+                G: 211
+                <br />
+                B: 169
+                <br />
+                #00D3A9
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox dark5">
+                R: 0
+                <br />
+                G: 179
+                <br />
+                B: 159
+                <br />
+                #00b39f
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox blueGrey">
+                R: 71
+                <br />
+                G: 126
+                <br />
+                B: 150
+                <br />
+                #477E96
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox smplightGrey">
+                R: 100
+                <br />
+                G: 120
+                <br />
+                B: 129
+                <br />
+                #647881
+                <br />
+                <br />
+              </div>
+            </Col>
+            <Col xs={12} sm={2} lg={2} xl={2}>
+              <div className="palBox smpDark">
+                R: 60
+                <br />
+                G: 73
+                <br />
+                B: 78
+                <br />
+                #3C494E
+                <br />
+                <br />
+              </div>
+            </Col>
             <Col xs={12} sm={12} lg={12} xl={12}>
               <p className="layerH3">Logos to use online:</p>
             </Col>
