@@ -93,7 +93,19 @@
   category: Service Mesh
   timeline-order: 10
   icon: assets/images/service-mesh-icons/conduit.png
-  
+
+- name: Kuma
+  opensource: "Yes"
+  link: https://kuma.io/
+  governance: CNCF
+  primary-lang: Go
+  announce-date: September 2019
+  ga-1-date: "?"
+  commercial: Kuma
+  category: Service Mesh
+  timeline-order: 19
+  icon: assets/images/service-mesh-icons/Kuma.svg
+
 - name: Linkerd 2.x
   opensource: "Yes"
   link: https://linkerd.io
@@ -174,7 +186,7 @@
   ga-1-date: "?"
   commercial: Microsoft
   category: Service Mesh
-  timeline-order: 19
+  timeline-order: 20
   icon: assets/images/service-mesh-icons/osm.png
 
 - name: Rotor
