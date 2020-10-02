@@ -3,7 +3,7 @@ import styled from "styled-components";
 const MesheryWrapper = styled.section`
     padding: 100px 0 100px 0;
     .content {
-        padding: 50px 50px 100px 100px;
+        padding: 80px;
     }
 
     .table_content {
@@ -60,6 +60,12 @@ const MesheryWrapper = styled.section`
             width: 30px;
         }
 
+    }
+
+    @media only screen and (max-width: 912px) {
+        .content {
+        padding: 50px;   
+        }
     }
 `;
 

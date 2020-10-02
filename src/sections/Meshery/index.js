@@ -8,7 +8,7 @@ import Pricing from "../Pricing";
 
 import meshery_benchmark_screen from "./meshery_benchmark_screen.png";
 import meshery_configuration_management from "./meshery-configuration-management.png";
-import awsappmesh from "./aws-app-mesh.png";
+import aws_app_mesh from "./aws-app-mesh.png";
 import consul from "./consul.svg";
 import istio from "./istio.svg";
 import linkerd from "./linkerd.svg";
@@ -18,6 +18,9 @@ import octarine from "./octarine.svg";
 import kuma from "./kuma.svg";
 import maesh from "./maesh.png";
 import tanzu from "./tanzu.png";
+import smi_logo from "./smi-logo.png";
+import smp_logo from "./smp-dark-text.png";
+import meshery_architecture from "./meshery-architecture.svg";
 
 import MesheryWrapper from "./meshery.style";
 
@@ -114,7 +117,7 @@ const MesheryPage = () => {
                             </tr>
                             <tr>
                                 <td><a href="https://github.com/layer5io/meshery-app-mesh">
-                                    <img src={awsappmesh} alt='AWS App Mesh Service Mesh' class="adapter-logo" />Meshery adapter for App Mesh </a>
+                                    <img src={aws_app_mesh} alt='AWS App Mesh Service Mesh' class="adapter-logo" />Meshery adapter for App Mesh </a>
                                 </td>
                             </tr>
                             <tr>
@@ -138,25 +141,24 @@ const MesheryPage = () => {
                             <a href="/assets/images/meshery/meshery-configuration-management.png" data-caption="Service Mesh configuration Comparison">
                                 <img src={meshery_configuration_management}
                                 alt="Service Mesh configuration Comparison" />
-                            </a>
+                            </a><br />
                             See the <a href = "https://meshery.layer5.io/docs">service mesh patterns</a>.
                         </p>
                     </div>
                 </Col>
-                <Col lg={6} className="content">
-                    <div class="post-content">
+                <Col lg={6}>
+                    <div className="content">
                         <h3>Service Mesh Standards</h3>
-                        <h6>Service Mesh Performance </h6><a name="smp"></a>
-                        <img src="/assets/images/buttons/smp-dark-text.png" 
-                        class="light-shadow" width="25%" />
+                        <h5>Service Mesh Performance </h5><a name="smp"></a>
+                        <img src={smp_logo} align="left" width="25%" />
                         The <a href="https://github.com/layer5io/service-mesh-performance">Service Mesh Performance (SMP)</a>
                         is a vendor-neutral specification to aid operators in assessing the overhead of their service mesh in context of the value it provides.
                         Layer5's MeshDex provides a universal performance index to gauge your mesh’s efficiency against deployments in other organizations’ environments.
                         <p>Learn more about <a href="/performance">this open standard</a> as a partnership of Layer5, UT Austin, and Google.</p>
                     
-                        <h6>Service Mesh Interface</h6><a name="smi"></a>
+                        <h5>Service Mesh Interface</h5><a name="smi"></a>
                         <a href="/blog/a-standard-interface-for-service-meshes">
-                            <img src="/assets/images/posts/2019-05-21-a-standard-interface-for-service-meshes/smi-logo.png" 
+                            <img src={smi_logo} 
                             width="22%" align="right" /></a>
                         <a href="http://smi-spec.io" target="_blank">Service Mesh Interface (SMI)</a> 
                         SMI defines a common standard that can be implemented by a variety of service mesh projects and vendors. SMI’s aim for consistent APIs facilitates Meshery’s same goals, 
@@ -166,6 +168,13 @@ const MesheryPage = () => {
                     </div> 
                 </Col>
             </Row>
+            <div className="content">
+            <a name="architecture"></a>
+            <h3>Architecture</h3>
+            <a href={meshery_architecture}>
+                <img src={meshery_architecture} />
+            </a>
+            </div>
         </MesheryWrapper>
     );
 };
