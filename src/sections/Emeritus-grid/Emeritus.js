@@ -1,14 +1,14 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import MembersGrid from "./index";
+import EmeritusGrid from './index'
 
-const Meshmates=props => {
+const Emeritus=props => {
     const data=useStaticQuery(
         graphql`
-            query meshmates {
+            query emeritus {
                 allMdx(
                     sort: { fields: [frontmatter___name], order: ASC }
-                    filter: { fields: { collection: { eq: "members" } }, frontmatter: { meshmate: { eq: "true" } } }
+                    filter: { fields: { collection: { eq: "members" } }, frontmatter: { emeritus: { eq: "yes" } } }
                 ) {
                     nodes {
                         id
@@ -18,6 +18,7 @@ const Meshmates=props => {
                             twitter
                             status
                             meshmate
+                            emeritus
                             image_path{
                                 childImageSharp{
                                     fluid(maxWidth: 200){
@@ -37,8 +38,8 @@ const Meshmates=props => {
         `
     );
 
-    return <MembersGrid data={data} {...props} />;
+    return <EmeritusGrid data={data} {...props} />;
 };
 
-export default Meshmates;
+export default Emeritus;
 

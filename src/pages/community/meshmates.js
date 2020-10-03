@@ -6,10 +6,10 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 import Layout from "../../components/layout";
-import Meshmates from "../../sections/Members-grid/Meshmates";
+import Meshmates from "../../sections/Meshmates-grid/Meshmates";
 
 
-const MeshmatePage=({ frontmatter }) => {
+const MeshmatePage=() => {
     return (
         <ThemeProvider theme={theme}>
             <Layout>
