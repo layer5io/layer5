@@ -125,7 +125,7 @@ const Data = {
         },
         {
             name: "About",
-            path: "#about",
+            path: "/about",
             offset: "-50"
         },
         {
