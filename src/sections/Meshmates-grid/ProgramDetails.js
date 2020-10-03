@@ -1,7 +1,7 @@
 import React from 'react'
 import Program from '../../assets/images/programs/Layer5-mentor-program.png'
 
-export default function ProgramDetails() {
+const ProgramDetails=() => {
     return (
         <div>
             <h3>Engaging with a MeshMate</h3>
@@ -19,21 +19,21 @@ export default function ProgramDetails() {
                 engage within, working groups to join, growing their Cloud Native knowledge,
                 and network of relationships. By connecting one-on-one, MeshMates will share
                 tips on how to have the best community experience possible.
-  </p>
+            </p>
             <p>
                 Meshtees are encouraged to get to know their MeshMate as soon as they are
                 assigned (MeshMates and Mentees will be introduced in the Layer5 Slack).
                 Help your MeshMate understand your current skills, ideal topics of learning,
                 and areas of passion. Doing so will help them to point out various aspects
                 of projects that you might find your first foothold.
-  </p>
+            </p>
             <h4>Meeting Your MeshMate</h4>
-            <p class="indent">
+            <p>
                 Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted
                 and onboarding into the community, we suggest the following goals:
-  </p>
+            </p>
             <ul>
-                <li class="indent">
+                <li>
                     <p>
                         <b
                         ><a
@@ -47,7 +47,7 @@ export default function ProgramDetails() {
       </p>
                 </li>
 
-                <li class="indent">
+                <li>
                     <p>
                         <b>Identify your area of interest - </b>Use time with your MeshMate to
         familiarize with the architecture and technologies used in the projects.
@@ -56,7 +56,7 @@ export default function ProgramDetails() {
       </p>
                 </li>
 
-                <li class="indent">
+                <li>
                     <p>
                         <b><a href="https://meshery.io/#getting-started">Run Meshery</a></b> -
         Put on your user hat and walk-through all of Meshery’s features and
@@ -64,7 +64,7 @@ export default function ProgramDetails() {
       </p>
                 </li>
 
-                <li class="indent">
+                <li>
                     <p>
                         <b
                         ><a
@@ -76,7 +76,7 @@ export default function ProgramDetails() {
       </p>
                 </li>
 
-                <li class="indent">
+                <li>
                     <p>
                         <b
                         ><a
@@ -89,7 +89,7 @@ export default function ProgramDetails() {
                 </li>
             </ul>
             <h4>Code of Conduct</h4>
-            <p class="indent">
+            <p>
                 The comfort and safety of Layer5 community members is our priority. You must agree to the <a href="/terms/code-of-conduct">Code of Conduct</a> to participate in the Layer5 community, and any
     violations of the Code of Conduct will be taken seriously. To report any violations please fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform">this incident form</a>.
   </p>
@@ -97,3 +97,4 @@ export default function ProgramDetails() {
         </div>
     )
 }
+export default ProgramDetails;
