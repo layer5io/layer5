@@ -1,95 +1,65 @@
 
-import imgPricing1 from "../../images/app/pricing/01.png";
-import imgPricing2 from "../../images/app/pricing/02.png";
-import imgPricing3 from "../../images/app/pricing/03.png";
-
 const data = {
     pricings: [
         {
-            thumb: imgPricing1,
-            name: "Basic Plan",
-            price: "$50.25",
-            description: "Lorem ipsum dolor sit amet consectetur elit, sed.",
+            name: "Lifecycle",
+            description: "Manage any service mesh",
             link: "#",
-            btnText: "Get Package",
+            btnText: "Get Started",
             services:[
                 {
-                    content: "Push Notification.",
+                    content: "Consul, Istio, Linkerd, Network Service Mesh, Open Service Mesh, App Mesh, Kuma, Maesh, Citrix Service Mesh, Octarine",
                     className: "--on"
                 },
                 {
-                    content: "Offline Synchronization.",
+                    content: "Explore service mesh functionality with 10 different sample applications",
                     className: "--on"
                 },
                 {
-                    content: "SQL Database.",
+                    content: "Validate each service mesh's compliance with Service Mesh Interface (SMI) specifications",
                     className: "--on"
-                },
-                {
-                    content: "Speech & Text Analytics.",
-                    className: "--off"
-                },
-                {
-                    content: "24/7 Supports.",
-                    className: "--off"
                 }
             ]
         },{
-            thumb: imgPricing2,
-            name: "Standard Plan",
-            price: "$75.00",
-            description: "Lorem ipsum dolor sit amet consectetur elit, sed.",
+            name: "Configuration",
+            description: "Operators with best practices",
             link: "#",
-            btnText: "Get Package",
+            btnText: "Get Started",
             services:[
                 {
-                    content: "Push Notification.",
+                    content: "Built-in industry patterns and known best practices",
                     className: "--on"
                 },
                 {
-                    content: "Offline Synchronization.",
+                    content: "Apply custom configuration to your service mesh",
                     className: "--on"
                 },
                 {
-                    content: "SQL Database.",
+                    content: "Advanced reporting",
                     className: "--on"
-                },
-                {
-                    content: "Speech & Text Analytics.",
-                    className: "--on"
-                },
-                {
-                    content: "24/7 Supports.",
-                    className: "--off"
                 }
             ]
         },
         {
-            thumb: imgPricing3,
-            name: "Premium Plan",
-            price: "$99.99",
-            description: "Lorem ipsum dolor sit amet consectetur elit, sed.",
+            name: "Performance",
+            description: "Assess the performance of your service mesh",
             link: "#",
-            btnText: "Get Package",
+            btnText: "Get Started",
             services:[
                 {
-                    content: "Push Notification.",
+                    content: "Distributed performance analysis supporting 3 different types of load generators",
                     className: "--on"
                 },
                 {
-                    content: "Offline Synchronization.",
+                    content: "Built-in statistical analysis of service latency quartiles",
                     className: "--on"
                 },
                 {
-                    content: "SQL Database.",
+                    content: "Integration with Prometheus and Grafana",
                     className: "--on"
                 },
                 {
-                    content: "Speech & Text Analytics.",
-                    className: "--on"
-                },
-                {
-                    content: "24/7 Supports.",
+                    content: "Baseline and track deltas of workload performance over time.",
                     className: "--on"
                 }
             ]

@@ -1,0 +1,52 @@
+---
+title:  "Image Hub"
+thumbnail: ./layer5-image-hub.svg
+published: true
+---
+import { ProjectWrapper } from "../Project.style.js";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import  imagehub1  from "./layer5-image-hub.svg";
+import  imagehub2  from "./Lee-Calcote-WebAssembly-Envoy-filters-rust.gif";
+import  imagehub3  from "./service-mesh-architecture-consul.png";
+import  imagehub4  from "./image-hub-on-consul-with-wasm-and-meshery.png";
+
+<ProjectWrapper>
+  <Row>  	  
+    <div>	    
+      <Col sm = {12}>	    
+      <img src= {imagehub1} align = "left" className="image-hub-top" />	    
+      <h3>Purpose and Overview</h3>
+      Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters written in Rust. These modules can be used to implement multi-tenancy or to implement per user rate limiting in your application's endpoints. This application was first demonstrated at DockerCon 2020. <br/>	
+      Watch the demo to learn more about how WebAssembly (WASM) modules are dynamically loadable and reloadable in service mesh data planes, enabling them to be more intelligent and responsive in real-time. 	
+      </Col>	
+    </div>	
+  </Row>
+
+  <div className = "image-hub-iframe">
+    <div style="width:520px; max-width:100%;">
+      <a href="https://www.youtube.com/embed/5BrbbKZOctw">
+      <img src= {imagehub2}
+        style="width:100%;" />
+      </a>
+    </div>
+  </div>
+  <br/>
+  This project examines how to let application infrastructure concerns melt off your service mesh workloads and have your infrastructure implement multi-tenancy on your behalf.
+
+  Learn how to use Docker Desktop and Kubernetes as your development platforms of choice in combination with Meshery, the service mesh management plane, to easily deploy a service mesh. Using Consul and Envoy's latest capabilities, see how WASM can be used to move user authentication and authorization from your application to the infrastructure.
+  <Row>
+    <Col sm={12} md={6} className="image-hub-bottom">
+      <a href= {imagehub3}>
+          <img src= {imagehub3} width="100%" />
+      </a> 
+    </Col>
+    <Col sm={12} md={6} className = "image-hub-bottom">
+    <a href= { imagehub4 }>
+      <img src = { imagehub4 } width="100%" /></a>   
+    </Col>
+  </Row>
+  <h3 class="black-text">Contributors</h3>
+  This demo application has been enabled by experimental works of Nic Jackson of HashiCorp, and Kanishkar J, Lee Calcote, and other contributors of Layer5.
+  <h3 className = "bottom-tag">
+  Learn more about the <a href="/partners#hashicorp">Layer5 and HashiCorp Partnership</a>.</h3>
+</ProjectWrapper>

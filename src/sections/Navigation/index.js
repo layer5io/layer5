@@ -23,7 +23,7 @@ const Navigation = () => {
             <Container>
                 <div className="navbar-wrap">
                     <Link to="#" className="logo">
-                        <img src={logo} alt="prime app landing" />
+                        <img src={logo} alt="Layer5 logo" />
                     </Link>
                     <nav className="nav">
                         <FaBars

@@ -17,8 +17,12 @@ const PricingSectionWrapper = styled.section`
             right: -4%;
         }
     }
+    .liftup {
+        margin-top: -60px;
+        margin-bottom: 50px;
+    }
     .pricing-block{
-        padding: 60px 60px 55px 60px;
+        padding: 40px 30px 45px 30px;
         border: 1px solid ${props => props.theme.primaryLightColor};
         box-shadow: 0 0 40px ${props => props.theme.shadowColor};
         border-radius: 5px;
@@ -42,7 +46,7 @@ const PricingSectionWrapper = styled.section`
     }
     .price-block{
         text-align: center;
-        padding: 40px 0 23px 0;
+        padding: 0 0 23px 0;
         h3{
             font-size: 36px;
             font-weight: 600;
@@ -60,11 +64,16 @@ const PricingSectionWrapper = styled.section`
     }
     .details-block{
         text-align: left;
-        span{
+        .table{
             color: ${props => props.theme.headingColor};
-            font-weight: 300;
             display: flex;
             align-items: center;
+            h5 {
+                font-weight: 400;
+            }
+            h5 + h5 {
+                margin-top: 50px;
+            }
             svg{
                 fill: ${props => props.theme.textColor};
                 margin-right: 20px;
@@ -91,11 +100,11 @@ const PricingSectionWrapper = styled.section`
         right: 0;
         opacity: 0;
         transition: all 0.3s ease-in;
-        background: rgb(251,123,129);
-        background: -moz-linear-gradient(left,  rgba(251,123,129,1) 0%, rgba(254,191,179,1) 100%);
-        background: -webkit-linear-gradient(left,  rgba(251,123,129,1) 0%,rgba(254,191,179,1) 100%);
-        background: linear-gradient(to right,  rgba(251,123,129,1) 0%,rgba(254,191,179,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb7b81', endColorstr='#febfb3',GradientType=1 );
+        background: rgb(0,179,159);
+        background: -moz-linear-gradient(left,  rgba(0,179,159,1) 0%, rgba(0,211,169,1) 100%);
+        background: -webkit-linear-gradient(left,  rgba(0,179,159,1) 0%,rgba(0,211,169,1) 100%);
+        background: linear-gradient(to right,  rgba(0,179,159,1) 0%,rgba(0,211,169,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b39f', endColorstr='#00d3a9',GradientType=1 );
 
     }
     @media only screen and (max-width: 1280px) {

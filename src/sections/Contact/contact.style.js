@@ -4,21 +4,45 @@ const ContactWrapper = styled.section`
     padding: 100px 0 200px 0;
     overflow: hidden;
     align-items: center;
+    .parentcard{
+        max-width: 90%;
+        width: 600px;
+        margin: auto;
+    }
+    .contact-icon {
+        color: #3c494f;
+    }
+    img {
+        max-width: 100px;
+        height: auto;
+    }
     form{
         text-align: center;
         text-align: center;
-        background: #fbfbfb;
-        display: flex;
+        background: #828c8c;
         align-items: center;
         justify-content: center;
-        padding: 100px;
+        padding: 25px;
         border-radius: 10px;
+    }
+    .inputrow{
+        margin-bottom: 5px;
+    }
+    .firstcol {
+        padding-right: 0px;
+    }
+    .lastcol {
+        padding-left: 5px;
+    }
+    .nopad {
+        padding-left: 10px;
+        padding-right: 0px;
     }
     input{
         display: block;
-        padding: 15px;
-        width: 80%;
-        height: 60px;
+        padding: 10px;
+        width: 100%;
+        height: 35px;
         font-size: 16px;
         border-radius: 5px;
         margin: 0 auto 0px auto;
@@ -26,23 +50,23 @@ const ContactWrapper = styled.section`
         transition: 450ms all;
         border: 1px solid transparent;
         &:hover,&:focus{
-            border-color: rgba(251,123,129, 1);
+            border-color: #00b39f;
         }
     }
     button{
         transition: 450ms all;
-        background: #FFEBEC;
-        color: #FB7B81;
+        background: #ebc017;
+        color: #000000;
         font-size: 16px;
-        height: 58px;
+        height: 35px;
         &:hover{
-            background: #FB7B81;
-            color: #fff;
+            background: #ebc017;
+            color: #000000;
         }
     }
     .section-title{
         h2{
-            margin-bottom: 55px;
+            margin-bottom: 25px;
         }
     }
     @media only screen and (max-width: 912px) {

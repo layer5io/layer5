@@ -32,7 +32,7 @@ const BannerSectionWrapper = styled.section`
     p{
         font-size: 16px;
         font-weight: 300;
-        color: #7A848E;
+        color: #000000;
         margin: 0 0 70px 0;
     }
     h4{
