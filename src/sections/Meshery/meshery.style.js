@@ -3,7 +3,22 @@ import styled from "styled-components";
 const MesheryWrapper = styled.section`
     padding: 25px 0 100px 0;
     .content {
-        padding: 0 80px 80px 80px;  
+        padding: 0 80px 80px 80px; 
+        .extra {
+            padding-top: 50px;
+        } 
+    }
+
+    h2 {
+        padding-bottom: 20px;
+    }
+
+    iframe{
+        min-height: 375px;
+    }
+
+    .sub-content {
+        padding-top: 80px;
     }
 
     .meshery-img{
@@ -72,6 +87,10 @@ const MesheryWrapper = styled.section`
     @media only screen and (max-width: 912px) {
         .content {
         padding: 50px;   
+        }
+
+        iframe {
+            min-height: 240px;
         }
     }
 `;
