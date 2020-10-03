@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
 import PageHeader from "../../reusecore/PageHeader";
 import ProfileCard from "../../components/Profile-card";
 import { MembersGridWrapper } from "../../sections/Members-grid/membersGrid.style";
