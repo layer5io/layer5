@@ -6,6 +6,7 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Counters from "../Counters";
 import Pricing from "../Pricing";
 
+import meshery from "./meshery-logo-light-text-side.png";
 import meshery_benchmark_screen from "./meshery_benchmark_screen.png";
 import meshery_configuration_management from "./meshery-configuration-management.png";
 import aws_app_mesh from "./aws-app-mesh.png";
@@ -26,10 +27,9 @@ import MesheryWrapper from "./meshery.style";
 
 const MesheryPage = () => {
     return (
-        <MesheryWrapper>
-            <SectionTitle> 
-                <h1>Meshery</h1>
-            </SectionTitle>
+        <MesheryWrapper> 
+            <div className="meshery-img"><img src={meshery} /></div>
+            <Pricing />
             <Row>
                 <Col lg={6} className="content">
                     <Counters />
@@ -131,7 +131,6 @@ const MesheryPage = () => {
                     </div>
                 </Col>
             </Row>
-            <Pricing />
             <Row>
                 <Col lg={6} className="content">
                     <div class="post-content">

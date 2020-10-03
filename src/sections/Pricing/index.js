@@ -19,7 +19,6 @@ const Pricing = () => {
             <img className="section__particle two" src={particle2} alt="img" />
             <Container>
                 <SectionTitle UniWidth="100%">
-                    <h4>Features</h4>
                     <h2>
                         <span>Meshery is the service mesh management plane.</span>
                     </h2>
@@ -42,6 +41,10 @@ const Pricing = () => {
                                             </tr>  
                                         </table>
                                     ))}
+                                </div>
+                                <div className="count-block">
+                                    <h2 className="count">{pricing.count.value}</h2>
+                                    <p className="count-desc">{pricing.count.description}</p>
                                 </div>
                                 <Button className="pricing-btn">{pricing.btnText}</Button>
                             </div>

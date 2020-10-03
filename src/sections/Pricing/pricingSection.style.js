@@ -17,6 +17,22 @@ const PricingSectionWrapper = styled.section`
             right: -4%;
         }
     }
+    .count {
+        text-align: center;
+        margin-bottom: 50px;
+        span{
+            color: ${props => props.theme.tetriaryColor};
+            font-size: 52px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        p{
+            color: ${props => props.theme.black};
+            font-size: 15px;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
     .liftup {
         margin-top: -60px;
         margin-bottom: 50px;
@@ -38,6 +54,19 @@ const PricingSectionWrapper = styled.section`
                 opacity: 1;
             }
         }
+        .count-block{
+            margin-top: 50px;
+            .count{
+                font-size: 50px;
+                font-weight: 500;
+                margin-bottom: 10px;
+                color: black;
+            }
+            .count-desc{
+                font-size: 15px;
+            }
+        }
+
     }
     .thumb-block{
         padding-bottom: 30px;

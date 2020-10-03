@@ -10,13 +10,13 @@ const Counters = () => {
         <CounterSectionWrapper>
             <Container>
                 <Row>
-                    <Col xs={6} sm={6} lg={6}>
+                    <Col xs={12} sm={6} lg={6}>
                         <div className="counter__item">
                             <Counter end={16} suffix="k+" />
                             <p>GLobal Customers</p>
                         </div>
                     </Col>
-                    <Col xs={6} sm={6} lg={6}>
+                    <Col xs={12} sm={6} lg={6}>
                         <div className="counter__item">
                             <Counter end={1111} suffix="+" />
                             <p>Performance Tests run</p>

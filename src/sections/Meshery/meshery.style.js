@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
 const MesheryWrapper = styled.section`
-    padding: 100px 0 100px 0;
+    padding: 25px 0 100px 0;
     .content {
-        padding: 80px;
+        padding: 0 80px 80px 80px;  
+    }
+
+    .meshery-img{
+        max-width: 90%;
+        max-width: 400px;
+        margin: auto;  
     }
 
     .table_content {
@@ -13,11 +19,12 @@ const MesheryWrapper = styled.section`
         }
     }
     table.adapters {
-        // box-shadow: 1px 1px 2px grey;
+        box-shadow: 1px 1px 5px gray;
         border: 1px solid gray; 
 
         td {
             width: auto;
+            padding: 5px 10px 5px 10px;
             vertical-align: middle;
             border: 1px solid darkgray;
         }

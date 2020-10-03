@@ -19,7 +19,11 @@ const data = {
                     content: "Validate each service mesh's compliance with Service Mesh Interface (SMI) specifications",
                     className: "--on"
                 }
-            ]
+            ],
+            count: {
+                value: "11",
+                description: "service meshes supported"
+            }
         },{
             name: "Configuration",
             description: "Operators with best practices",
@@ -38,7 +42,11 @@ const data = {
                     content: "Advanced reporting",
                     className: "--on"
                 }
-            ]
+            ],
+            count: {
+                value: "1,000",
+                description: "tracked users"
+            }
         },
         {
             name: "Performance",
@@ -62,7 +70,11 @@ const data = {
                     content: "Baseline and track deltas of workload performance over time.",
                     className: "--on"
                 }
-            ]
+            ],
+            count: {
+                value: "1,113",
+                description: "performance tests run"
+            }
         }
       
     ]
