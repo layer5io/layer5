@@ -93,12 +93,12 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/gsoc">
+                                            <Link className="anchor" to="/programs/gsoc/2020">
                     GSoC 2020
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/gsod">
+                                            <Link className="anchor" to="/programs/gsod/2020">
                     GSOD 2020
                                             </Link>
                                         </li>

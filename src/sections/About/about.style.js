@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const AboutSectionWrapper = styled.section`
   padding: 120px 0 100px 0;
@@ -129,5 +129,5 @@ const AboutSectionWrapper = styled.section`
           }
         }
     }
-`
-export default AboutSectionWrapper
+`;
+export default AboutSectionWrapper;

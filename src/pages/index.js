@@ -2,7 +2,6 @@ import React from "react";
 import {ThemeProvider} from "styled-components";
 
 import Layout from "../components/layout"; 
-import SEO from "../components/seo"; 
 
 import Navigation from "../sections/Navigation";
 import Banner from "../sections/Banner-default";
@@ -26,7 +25,6 @@ const IndexPage = () => (
     <ThemeProvider theme={theme}> 
         <GlobalStyle />
         <Layout>
-            {/* <SEO title="Home" /> */}
             <Navigation />
             <Banner />
             <About />
