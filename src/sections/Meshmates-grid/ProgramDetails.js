@@ -10,7 +10,7 @@ export default function ProgramDetails() {
                 width="40%" align="right" style={{ margin: "5px" }}
             />
 
-            <h6>What to Expect</h6>
+            <h4>What to Expect</h4>
             <p>
                 The program pairs experienced Layer5 community members with community
                 newcomers to ensure a smooth onboarding experience. There is a lot going in
@@ -27,7 +27,7 @@ export default function ProgramDetails() {
                 and areas of passion. Doing so will help them to point out various aspects
                 of projects that you might find your first foothold.
   </p>
-            <h6>Meeting Your MeshMate</h6>
+            <h4>Meeting Your MeshMate</h4>
             <p class="indent">
                 Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted
                 and onboarding into the community, we suggest the following goals:
@@ -88,7 +88,7 @@ export default function ProgramDetails() {
       </p>
                 </li>
             </ul>
-            <h6>Code of Conduct</h6>
+            <h4>Code of Conduct</h4>
             <p class="indent">
                 The comfort and safety of Layer5 community members is our priority. You must agree to the <a href="/terms/code-of-conduct">Code of Conduct</a> to participate in the Layer5 community, and any
     violations of the Code of Conduct will be taken seriously. To report any violations please fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform">this incident form</a>.
