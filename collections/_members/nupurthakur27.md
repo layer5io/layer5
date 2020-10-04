@@ -8,4 +8,6 @@ twitter: nupurthakur27
 blurb: Engineering Student with fascination towards Technology
 status: Active
 meshmate: yes
+domain: Backend Engineering, DevOps, Community Ambassador
+timezone: Indian Standard Time (IST)
 ---

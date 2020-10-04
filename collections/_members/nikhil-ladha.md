@@ -8,4 +8,6 @@ github: Nikhil-Ladha
 blurb: Mesh Head
 status: Active
 meshmate: yes
+domain: Frontend Engineering, Backend Engineering, Community Ambassador
+timezone: Indian Standard Time (IST)
 ---

@@ -8,4 +8,6 @@ github: Tanuj22
 blurb: Mesh Head
 status: Active
 meshmate: yes
+domain: Frontend Engineering, Community Management
+timezone:  Indian Standard Time (IST)
 ---
