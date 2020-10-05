@@ -11,7 +11,7 @@
   desc: "The Cloud Native Computing Foundation’s flagship conference gathers adopters and technologists from leading open source and cloud native communities virtually from November 17 – 20, 2020."
   date: "November 17th, 2020"
   link: https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/
-  talk_link: 
+  talk_link: https://kccncna20.sched.com/event/ekEz/service-mesh-specifications-and-why-they-matter-in-your-deployment-lee-calcote-naveen-kumar-layer5 
   event_video: ""
   event_deck: ""
   thumbnail: /assets/images/events/kubeconNA2020.jpg
@@ -20,7 +20,7 @@
   desc: "The main purpose of CCOSS is to increase the number of people and organizations in Latin America that contribute to open source projects. Join us virtually on October 19-24, 2020!"
   date: "October 19th, 2020"
   link: https://ccoss.org/
-  talk_link: 
+  talk_link: https://ccoss.org/
   event_video: ""
   event_deck: ""
   thumbnail: /assets/images/events/ccoss.png
