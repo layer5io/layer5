@@ -30,13 +30,13 @@ const Faq = () => {
             <img className="section__particle one" src={particle1} alt="img" />
             <img className="section__particle two" src={particle2} alt="img" />
             <Container fullWidthSM>
-                <Row Vcenter={true}>
-                    <Col className="faq-thumb-block" xs={12} sm={6}>
+                {/* <Row Vcenter={true}>
+                    <Col className="faq-thumb-block" xs={12} sm={4}>
                         <div className="faq-thumb">
                             <img src={FaqImage} alt="appion-faq" />
                         </div>
                     </Col>
-                    <Col className="faq-content-block" xs={12} sm={6}>
+                    <Col className="faq-content-block" xs={12} sm={6}> */}
                         <SectionTitle
                             className="section-title"
                             leftAlign={true}
@@ -62,7 +62,10 @@ const Faq = () => {
                                         </IconWrapper>
                                     </AccordionTitle>
                                     <AccordionBody>
-                                        <p>{faq.content}</p>
+                                        <ul>
+                                            <li><p>{faq.content}</p></li>
+                                            {faq.content_2 && <li><p>{faq.content_2}</p></li>}
+                                        </ul>
                                     </AccordionBody>
                                 </AccordionItem>
                             ))}
@@ -74,8 +77,8 @@ const Faq = () => {
                         >
                             <Button>Learn More</Button>
                         </VintageBox>
-                    </Col>
-                </Row>
+                    {/* </Col>
+                </Row> */}
             </Container>
         </FaqSectionWrapper>
     );

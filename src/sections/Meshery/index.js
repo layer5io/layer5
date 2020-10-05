@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
 
+import {ThemeProvider} from "styled-components";
+
+import Layout from "../../components/layout"; 
+
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import Counters from "../Counters";
 import Pricing from "../Pricing";
 import Code from "../../components/CodeBlock";
+import Faq from "../Faq";
 
 import meshery from "./meshery-logo-light-text-side.png";
 import meshery_benchmark_screen from "./meshery_benchmark_screen.png";
@@ -25,9 +30,12 @@ import smp_logo from "./smp-dark-text.png";
 import meshery_architecture from "./meshery-architecture.svg";
 
 import MesheryWrapper from "./meshery.style";
+import theme from "../../theme/app/themeStyles";
 
 const MesheryPage = () => {
     return (
+        <ThemeProvider theme={theme}> 
+        <Layout>
         <MesheryWrapper> 
             <div className="meshery-img"><img src={meshery} /></div>
             <Pricing />
@@ -196,8 +204,8 @@ const MesheryPage = () => {
                     </ul>
                 </Col>
             </Row>
-            <a name="getting-started"></a><h3>Run Meshery</h3>
-            <div class="content">
+            <div className="content">
+            <a name="getting-started"></a><h2>Run Meshery</h2>
                 <h3>Step 1: Install and start</h3>
                 <h4>Bash user</h4>
                 <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Docker, install Meshery on your local machine by running the following:</p>
@@ -207,18 +215,21 @@ const MesheryPage = () => {
                 <Code codeString="$ brew install layer5io/mesheryctl
                 | $ mesheryctl system start" /> 
                 <h4>Kubernetes user</h4>
-                <p>To install on Kubernetes, follow the instructions below or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.</p>
-                <p>Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
+                <p>To install on Kubernetes, follow the instructions below or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.
+                Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
                 <Code codeString="$ git clone https://github.com/layer5io/meshery.git; cd meshery" />
                 <p>Install Meshery on your cluster by running the following:</p>
                 <Code codeString="$ kubectl create ns meshery 
                 |  $ kubectl -n meshery apply -f install/deployment_yamls/k8s" />
                 <p>If you want to use a different namespace, please change the name of the namespace in the ClusterRoleBinding section appropriately. </p>
                 <br />
-                <h4>Step 2: Login</h4>
+                <h3>Step 2: Login</h3>
                 <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
             </div>
+            <Faq />
         </MesheryWrapper>
+        </Layout>
+    </ThemeProvider>
     );
 };
 
