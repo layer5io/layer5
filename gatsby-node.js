@@ -7,23 +7,23 @@
 
 const path = require(`path`);
 const slugify = require("./src/utils/slugify");
+const { paginate } = require("gatsby-awesome-pagination");
 
-// You can delete this file if you're not using it
 // Replacing '/' would result in empty string which is invalid
-const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
+const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``));
 // Implement the Gatsby API “onCreatePage”. This is
 // called after every page is created.
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions
-  const oldPage = Object.assign({}, page)
+  const { createPage, deletePage } = actions;
+  const oldPage = Object.assign({}, page);
   // Remove trailing slash unless page is /
-  page.path = replacePath(page.path)
+  page.path = replacePath(page.path);
   if (page.path !== oldPage.path) {
     // Replace new page with old page
-    deletePage(oldPage)
+    deletePage(oldPage);
     createPage(page)
   }
-}
+};
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
@@ -32,6 +32,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
   const blogListTemplate = path.resolve(
       'src/templates/blog-list.js'
+  );
+  const blogViewTemplate = path.resolve(
+      'src/templates/blog.js'
   );
 
   const NewsPostTemplate = path.resolve(
@@ -123,6 +126,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
 
   const members = res.data.allMembers.nodes;
+
+  paginate({
+    createPage,
+    items: blogs,
+    itemsPerPage: 8,
+    pathPrefix: `/blog`,
+    component: blogViewTemplate
+  });
 
   blogs.forEach(blog => {
     createPage({
