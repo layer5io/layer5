@@ -37,47 +37,47 @@ const Faq = () => {
                         </div>
                     </Col>
                     <Col className="faq-content-block" xs={12} sm={6}> */}
-                        <SectionTitle
-                            className="section-title"
-                            leftAlign={true}
-                            UniWidth="100%"
-                        >
-                            <h4>Solution</h4>
-                            <h2>
-                                <span>Easy and perfect solution </span> for this app
-                            </h2>
-                        </SectionTitle>
-                        <Accordion>
-                            {data.faqs.map((faq, index) => (
-                                <AccordionItem key={index}>
-                                    <AccordionTitle>
-                                        <h5>{faq.title}</h5>
-                                        <IconWrapper>
-                                            <OpenIcon>
-                                                <IoIosArrowForward />
-                                            </OpenIcon>
-                                            <CloseIcon>
-                                                <IoIosArrowDown />
-                                            </CloseIcon>
-                                        </IconWrapper>
-                                    </AccordionTitle>
-                                    <AccordionBody>
-                                        <ul>
-                                            <li><p>{faq.content}</p></li>
-                                            {faq.content_2 && <li><p>{faq.content_2}</p></li>}
-                                        </ul>
-                                    </AccordionBody>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
-                        <VintageBox
-                            right={true}
-                            vintageTwo={true}
-                            position="relative"
-                        >
-                            <Button>Learn More</Button>
-                        </VintageBox>
-                    {/* </Col>
+                <SectionTitle
+                    className="section-title"
+                    leftAlign={true}
+                    UniWidth="100%"
+                >
+                    <h4>Solution</h4>
+                    <h2>
+                        <span>Easy and perfect solution </span> for this app
+                    </h2>
+                </SectionTitle>
+                <Accordion>
+                    {data.faqs.map((faq, index) => (
+                        <AccordionItem key={index}>
+                            <AccordionTitle>
+                                <h5>{faq.title}</h5>
+                                <IconWrapper>
+                                    <OpenIcon>
+                                        <IoIosArrowForward />
+                                    </OpenIcon>
+                                    <CloseIcon>
+                                        <IoIosArrowDown />
+                                    </CloseIcon>
+                                </IconWrapper>
+                            </AccordionTitle>
+                            <AccordionBody>
+                                <ul>
+                                    <li><p>{faq.content}</p></li>
+                                    {faq.content_2 && <li><p>{faq.content_2}</p></li>}
+                                </ul>
+                            </AccordionBody>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+                <VintageBox
+                    right={true}
+                    vintageTwo={true}
+                    position="relative"
+                >
+                    <Button>Learn More</Button>
+                </VintageBox>
+                {/* </Col>
                 </Row> */}
             </Container>
         </FaqSectionWrapper>
