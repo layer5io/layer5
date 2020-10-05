@@ -6,7 +6,7 @@ import BlogViewToolTip from "../../components/blog-view-tooltip";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
-
+import Pager from "../../components/pager";
 import Image from "../../components/image";
 
 import { BlogPageWrapper } from "./blogList.style";
@@ -67,6 +67,9 @@ const BlogList = ({
                                         </Link>
                                     </Col>
                                 ))}
+                                <Col>
+                                    <Pager pageContext={pageContext}/>
+                                </Col>
                             </Row>
                         </Col>
                         <Col sm={12} md={4}>
