@@ -5,6 +5,7 @@ import Jobs_White from "../../images/contact/jobs_white.svg";
 import Support_White from "../../images/contact/support_white.svg";
 import Partner_White from "../../images/contact/partner_white.svg";
 import Contact_White from "../../images/contact/contact_white.svg";
+import DataCenter from "../../images/contact/datacenter-crash.svg";
 
 import ContactCard from "../../components/ContactCard/ContactCard";
 import { Container, Col, Row} from "../../reusecore/Layout";
@@ -16,7 +17,7 @@ const ContactContent = () => {
   <ContactCardStyle>
     <Container>
       <Row Hcenter>
-        <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+        <Col xs={12} md={4}>
           <ContactCard 
             link="/careers" 
             Imgsrc={Jobs_White}
@@ -26,7 +27,7 @@ const ContactContent = () => {
           />
         </Col>
 
-        <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+        <Col xs={12} md={4}>
           <ContactCard 
             link="mailto:support@layer5.io"
             Imgsrc={Support_White}
@@ -36,7 +37,7 @@ const ContactContent = () => {
           />
         </Col>
 
-        <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+        <Col xs={12} md={4}>
           <ContactCard 
             link="/partners"
             Imgsrc={Partner_White}
@@ -46,7 +47,7 @@ const ContactContent = () => {
           />
         </Col>
 
-        <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+        <Col xs={12} md={4}>
           <ContactCard 
             link="/about"
             Imgsrc={Contact_White}
@@ -54,6 +55,10 @@ const ContactContent = () => {
             title="Contact"
             content="I have a general question or enquiry"
           />
+        </Col>
+
+        <Col xs={12} md={8}>
+          <img src={DataCenter} alt="datacenter" />
         </Col>
 
       </Row>

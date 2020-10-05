@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { BsThreeDots } from "react-icons/bs";
 
 import ContactSection from "../../sections/Contact/contact-content.style";
