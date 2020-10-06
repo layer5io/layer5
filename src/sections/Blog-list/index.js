@@ -6,7 +6,7 @@ import BlogViewToolTip from "../../components/blog-view-tooltip";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
-
+import Pager from "../../components/pager";
 import Image from "../../components/image";
 
 import { BlogPageWrapper } from "./blogList.style";
@@ -18,8 +18,7 @@ const BlogList = ({
     setGridView,
     pageContext,
 }) => {
-    const allTags = pageContext ? pageContext.allTags : data.allMdx.group;
-    const tag = pageContext ? pageContext.tag : null;
+    const tag = pageContext.tag ? pageContext.tag : null;
     const { totalCount, nodes } = data.allMdx;
     const header = tag
         ? `${totalCount} blog${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
@@ -32,7 +31,7 @@ const BlogList = ({
                 <Container>
                     <Row>
                         <Col sm={12} md={8}>
-                            {!pageContext && (
+                            {!pageContext.tag && (
                                 <BlogViewToolTip
                                     isListView={isListView}
                                     setListView={setListView}
@@ -56,21 +55,24 @@ const BlogList = ({
                                                 <p className="post-entry">
                                                     <span>{frontmatter.date}</span>
                                                     <span className="pull-right">
-                            By: {frontmatter.author}
+                                                        By: {frontmatter.author}
                                                     </span>
                                                 </p>
                                                 <p>{frontmatter.subtitle}</p>
                                                 <div className="readmore-btn">
-                          see more <IoIosArrowRoundForward />
+                                                    see more <IoIosArrowRoundForward />
                                                 </div>
                                             </div>
                                         </Link>
                                     </Col>
                                 ))}
+                                <Col>
+                                    <Pager pageContext={pageContext} isListView={isListView}/>
+                                </Col>
                             </Row>
                         </Col>
                         <Col sm={12} md={4}>
-                            <Sidebar tags={allTags} />
+                            <Sidebar />
                         </Col>
                     </Row>
                 </Container>

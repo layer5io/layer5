@@ -15,15 +15,13 @@ import {graphql} from "gatsby";
 import BlogList from "../sections/Blog-list";
 
 export const query = graphql`
-    query allBlogs {
+    query allBlogs($skip: Int!, $limit: Int!) {
         allMdx(
             sort: { fields: [frontmatter___date], order: DESC }
             filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+            skip: $skip
+            limit: $limit
         ) {
-            group(field: frontmatter___tags) {
-                fieldValue
-                totalCount
-            }
             nodes {
                 id
                 frontmatter {
@@ -65,9 +63,16 @@ class Blog extends Component {
         });
     };
 
+    componentDidMount() {
+        if (this.props.location.state){
+            if(this.props.location.state.isListView) this.setListView()
+        }
+    }
+
     render() {
+
         let BlogView = props => {
-            if(this.state.isListView)
+            if (this.state.isListView)
                 return (<BlogList {...props} />);
             return (<BlogGrid {...props} />);
         };
@@ -80,6 +85,7 @@ class Blog extends Component {
                     <Navigation />
                     <BlogView data={this.props.data} isListView= {this.state.isListView}
                         setListView={this.setListView} setGridView={this.setGridView}
+                        pageContext={this.props.pageContext}
                     />
                     <Footer />
                 </Layout>
