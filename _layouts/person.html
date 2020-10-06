@@ -10,8 +10,20 @@ layout: default
 			<div class="center">
 				<h2 class="person-name">{{page.name}}</h2>
 				<h4 class="position-text">{{page.position}}</h4>
-				<h4 class="position-text">{{page.domain}}</h4>
-				<h4 class="position-text">{{page.timezone}}</h4>
+				<div>
+					<div class="wrapper">
+						<div class="left-col">
+							<p class="details-grid">{{page.timezone}}</p>
+						</div>
+						<div class="right-col">
+							<ul class="details-grid">
+								<li style="list-style-type:none;">{{page.domain1}}</li>
+								<li style="list-style-type:none;">{{page.domain2}}</li>
+								<li style="list-style-type:none;">{{page.domain3}}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 				<div class="social" style="display: inline-block;">
 					<a class="social__link social__link--github" href="https://github.com/{{page.github}}">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">

@@ -7,6 +7,7 @@ github: vijcheru
 blurb: Mesh Head
 status: Active
 meshmate: yes
-domain: Backend Engineering, Community Management
+domain1: Backend Engineering
+domain2: Community Management 
 timezone: Central Time (CT)
 ---
