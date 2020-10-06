@@ -86,6 +86,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
         ){
           group(field: frontmatter___tags) {
+            nodes{
+              id
+            }
             fieldValue
             totalCount
           }
@@ -146,13 +149,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
   const BlogTags = res.data.blogTags.group;
   BlogTags.forEach(tag => {
-    createPage({
-      path: `/blog/tag/${slugify(tag.fieldValue)}`,
+    paginate({
+      createPage,
+      items:  tag.nodes,
+      itemsPerPage: 4,
+      pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
       component: blogListTemplate,
       context: {
         tag: tag.fieldValue,
       },
-    })
+    });
   });
 
   news.forEach(singleNews => {
