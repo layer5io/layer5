@@ -151,7 +151,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   BlogTags.forEach(tag => {
     paginate({
       createPage,
-      items:  tag.nodes,
+      items: tag.nodes,
       itemsPerPage: 4,
       pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
       component: blogListTemplate,
