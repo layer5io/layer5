@@ -8,4 +8,8 @@ github: PluckyPrecious
 blurb: Mesh Head
 status: Active
 meshmate: yes
+domain1: Documentation 
+domain2: Digital Marketing
+domain3: Community Management
+timezone: West African Time (WAT)
 ---

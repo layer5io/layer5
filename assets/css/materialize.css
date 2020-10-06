@@ -5850,6 +5850,26 @@ small {
 	margin-bottom: 5px;
 }
 
+.wrapper {
+	width: 100%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.left-col{
+	width: 50%;
+	float: left;	
+}
+
+.right-col  {
+	width: 50%;
+	float: right
+}
+.details-grid{
+	margin: 0;
+	padding: 0
+}
+
 @media only screen and (max-width: 600px) {
 	.active-member-card,
 	.inactive-member-card {

@@ -1,9 +1,13 @@
 <div class="row center">
   <h1 style="font-family: 'Open Sans'; display: inline-flex;" class="l5-dark-grey-text">Layer5</h1>
-  <img src="/assets/images/programs/layer5-meshmate/SVG/meshmate-text-no-trim.svg" style="height:60px; vertical-align:-50%; text-align: left;" />
+  <img src="/assets/images/programs/layer5-meshmate/SVG/meshmate-text-no-trim.svg"
+    style="height:60px; vertical-align:-50%; text-align: left;" />
 </div>
 <p class="indent">
-  Layer5 MeshMates are committed to helping community members be successful contributors. MeshMates aid in identifying areas of projects to engage within, working groups to join, and in helping community members grow in their open source and cloud native knowledge. By connecting one-on-one, MeshMates will share tips on how to have the best community experience possible.
+  Layer5 MeshMates are committed to helping community members be successful contributors. MeshMates aid in identifying
+  areas of projects to engage within, working groups to join, and in helping community members grow in their open source
+  and cloud native knowledge. By connecting one-on-one, MeshMates will share tips on how to have the best community
+  experience possible.
 </p>
 
 <div class="row">
@@ -12,15 +16,9 @@
 
   <div class="col s12 m3">
     <div class="card project-card hoverable waves-light darken-3">
-        <div
-          class="card-image"
-          style="{{ member.img_style }} min-height: 130px;"
-        >
+      <div class="card-image" style="{{ member.img_style }} min-height: 130px;">
         <a class="img-link" href="{{member.url}}">
-          <img
-            class="light-shadow"
-            src="{{member.image_path}}"
-            style="
+          <img class="light-shadow" src="{{member.image_path}}" style="
               max-width: 90%;
               max-height: 180px;
               width: auto;
@@ -29,32 +27,25 @@
               padding: 5%;
               margin-left: auto;
               margin-right: auto;
-            "
-          />
+            " />
         </a>
-        </div>
-        <div class="center">
-          <h5 class="white-text">{{member.name}}</h5>
-
-            <div class="tooltip social">
-              <a class="social__link social__link--github" href="https://github.com/{{member.github}}">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-                  <path
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                    clip-rule="#3c494f"
-                    d="M203.9,60c-75.6,0-137,61.3-137,137c0,60.5,39.2,111.9,93.7,130c6.8,1.3,9.3-3,9.3-6.6c0-3.3-0.1-11.9-0.2-23.3
+      </div>
+      <div class="center">
+        <h5 class="white-text">{{member.name}}</h5>
+        <div class="tooltip social">
+          <a class="social__link social__link--github" href="https://github.com/{{member.github}}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+              <path fill="currentColor" fill-rule="evenodd" clip-rule="#3c494f"
+                d="M203.9,60c-75.6,0-137,61.3-137,137c0,60.5,39.2,111.9,93.7,130c6.8,1.3,9.3-3,9.3-6.6c0-3.3-0.1-11.9-0.2-23.3
                  c-38.1,8.3-46.1-18.4-46.1-18.4c-6.2-15.8-15.2-20-15.2-20c-12.4-8.5,0.9-8.3,0.9-8.3c13.7,1,21,14.1,21,14.1
                  c12.2,20.9,32.1,14.9,39.9,11.4c1.2-8.9,4.8-14.9,8.7-18.3c-30.4-3.5-62.4-15.2-62.4-67.7c0-15,5.3-27.2,14.1-36.8
                  c-1.4-3.5-6.1-17.4,1.3-36.3c0,0,11.5-3.7,37.7,14c10.9-3,22.6-4.6,34.3-4.6c11.6,0.1,23.4,1.6,34.3,4.6c26.2-17.7,37.6-14,37.6-14
                  c7.5,18.9,2.8,32.8,1.4,36.3c8.8,9.6,14.1,21.8,14.1,36.8c0,52.6-32,64.2-62.5,67.6c4.9,4.2,9.3,12.6,9.3,25.4
-                 c0,18.3-0.2,33.1-0.2,37.6c0,3.7,2.5,7.9,9.4,6.6c54.4-18.2,93.6-69.5,93.6-130C340.9,121.3,279.5,60,203.9,60z"
-                  />
-                </svg>
-                <span class="tooltiptext">{{member.github}}</span></a
-              >
-            </div>
+                 c0,18.3-0.2,33.1-0.2,37.6c0,3.7,2.5,7.9,9.4,6.6c54.4-18.2,93.6-69.5,93.6-130C340.9,121.3,279.5,60,203.9,60z" />
+            </svg>
+            <span class="tooltiptext">{{member.github}}</span></a>
         </div>
+      </div>
       <!-- </a> -->
     </div>
   </div>
@@ -62,5 +53,8 @@
   {% endif %} {% endfor %}
 </div>
 <p class="indent">
-  MeshMate is a distinction that Layer5 awards select members of the community that who innately align with the Layer5 culture of helping others, paying it forward, and have a commitment to sharing their knowledge of Layer5 projects with the community. MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing their expertise has a huge impact on the Layer5 community – don’t hesitate to reach out to them!
+  MeshMate is a distinction that Layer5 awards select members of the community that who innately align with the Layer5
+  culture of helping others, paying it forward, and have a commitment to sharing their knowledge of Layer5 projects with
+  the community. MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing
+  their expertise has a huge impact on the Layer5 community – don’t hesitate to reach out to them!
 </p>
