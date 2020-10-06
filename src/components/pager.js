@@ -28,20 +28,20 @@ export const PagerWrapper = styled.div`
     }
 `;
 
-const Pager = ({ pageContext }) => {
+const Pager = ({ pageContext, isListView }) => {
     const { previousPagePath, nextPagePath } = pageContext;
     return (
         <PagerWrapper>
             <div>
                 {previousPagePath && (
-                    <Link to={previousPagePath}>
+                    <Link to={previousPagePath} state={{ isListView }}>
                         <h4><IoIosArrowRoundBack />Newer Posts</h4>
                     </Link>
                 )}
             </div>
             <div className="old-post">
                 {nextPagePath && (
-                    <Link to={nextPagePath}>
+                    <Link to={nextPagePath} state={{ isListView }}>
                         <h4>Older Posts<IoIosArrowRoundForward/></h4>
                     </Link>
                 )}

@@ -63,9 +63,16 @@ class Blog extends Component {
         });
     };
 
+    componentDidMount() {
+        if (this.props.location.state){
+            if(this.props.location.state.isListView) this.setListView()
+        }
+    }
+
     render() {
+
         let BlogView = props => {
-            if(this.state.isListView)
+            if (this.state.isListView)
                 return (<BlogList {...props} />);
             return (<BlogGrid {...props} />);
         };
