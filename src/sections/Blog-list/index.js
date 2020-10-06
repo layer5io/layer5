@@ -18,7 +18,6 @@ const BlogList = ({
     setGridView,
     pageContext,
 }) => {
-    const allTags = pageContext.allTags ? pageContext.allTags : data.allMdx.group;
     const tag = pageContext.tag ? pageContext.tag : null;
     const { totalCount, nodes } = data.allMdx;
     const header = tag
@@ -73,7 +72,7 @@ const BlogList = ({
                             </Row>
                         </Col>
                         <Col sm={12} md={4}>
-                            <Sidebar tags={allTags} />
+                            <Sidebar />
                         </Col>
                     </Row>
                 </Container>

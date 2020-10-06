@@ -151,7 +151,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: blogListTemplate,
       context: {
         tag: tag.fieldValue,
-        allTags: BlogTags
       },
     })
   });

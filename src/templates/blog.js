@@ -22,10 +22,6 @@ export const query = graphql`
             skip: $skip
             limit: $limit
         ) {
-            group(field: frontmatter___tags) {
-                fieldValue
-                totalCount
-            }
             nodes {
                 id
                 frontmatter {

@@ -34,7 +34,7 @@ const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => 
                             </div>
                         </Col>
                         <Col xs={12} lg={4}>
-                            <Sidebar tags={data.allMdx.group} />
+                            <Sidebar/>
                         </Col>
                     </Row>
                 </Container>
