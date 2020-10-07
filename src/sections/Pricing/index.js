@@ -46,7 +46,7 @@ const Pricing = () => {
                                     <h2 className="count">{pricing.count.value}</h2>
                                     <p className="count-desc">{pricing.count.description}</p>
                                 </div>
-                                <Button className="pricing-btn">{pricing.btnText}</Button>
+                                {/* <Button className="pricing-btn">{pricing.btnText}</Button> */}
                             </div>
                         </Col>
                     ))}

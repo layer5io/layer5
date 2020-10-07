@@ -7,6 +7,11 @@ const MesheryWrapper = styled.section`
         .extra {
             padding-top: 50px;
         } 
+        .code-tabs {
+            margin-top: 10px;
+            // border: 1px solid gray;
+            // padding: 5px;
+        }
     }
 
     h2 {

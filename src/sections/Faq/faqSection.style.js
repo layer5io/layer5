@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FaqSectionWrapper = styled.section`
-  padding: 95px 0 140px 0;
+  padding: 0 0 50px 0;
   position: relative;
   overflow: hidden;
   .section__particle {

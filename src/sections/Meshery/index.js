@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 import {ThemeProvider} from "styled-components";
 
@@ -204,28 +206,46 @@ const MesheryPage = () => {
                             </ul>
                         </Col>
                     </Row>
-                    <div className="content">
-                        <a name="getting-started"></a><h2>Run Meshery</h2>
-                        <h3>Step 1: Install and start</h3>
-                        <h4>Bash user</h4>
-                        <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Docker, install Meshery on your local machine by running the following:</p>
-                        <Code codeString="$ curl -L https://git.io/meshery | bash -" />
-                        <h4>Brew user</h4>
-                        <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Homebrew:</p>
-                        <Code codeString="$ brew install layer5io/mesheryctl
-                | $ mesheryctl system start" /> 
-                        <h4>Kubernetes user</h4>
-                        <p>To install on Kubernetes, follow the instructions below or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.
-                Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
-                        <Code codeString="$ git clone https://github.com/layer5io/meshery.git; cd meshery" />
-                        <p>Install Meshery on your cluster by running the following:</p>
-                        <Code codeString="$ kubectl create ns meshery 
-                |  $ kubectl -n meshery apply -f install/deployment_yamls/k8s" />
-                        <p>If you want to use a different namespace, please change the name of the namespace in the ClusterRoleBinding section appropriately. </p>
-                        <br />
-                        <h3>Step 2: Login</h3>
-                        <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
-                    </div>
+                    <Row>
+                        <Col lg={7}>
+                            <div className="content">
+                                <a name="getting-started"></a><h2>Run Meshery</h2>
+                                <h3>Step 1: Install and start</h3>
+                                <Tabs className="code-tabs">
+                                    <TabList>
+                                    <Tab>Bash user</Tab>
+                                    <Tab>Brew user</Tab>
+                                    <Tab>Kubernetes user</Tab>
+                                    </TabList>
+                                
+                                    <TabPanel>
+                                        <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Docker, install Meshery on your local machine by running the following:</p>
+                                        <Code codeString="$ curl -L https://git.io/meshery | bash -" />
+                                    </TabPanel>
+                                    <TabPanel>
+                                        <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Homebrew:</p>
+                                        <Code className="code" codeString="$ brew install layer5io/mesheryctl
+                                        | $ mesheryctl system start" /> 
+                                    </TabPanel>
+                                    <TabPanel>
+                                        <p>To install on Kubernetes, follow the instructions below or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.
+                                        Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
+                                        <Code  className="code"codeString="$ git clone https://github.com/layer5io/meshery.git; cd meshery" />
+                                        <p>Install Meshery on your cluster by running the following:</p>
+                                        <Code codeString="$ kubectl create ns meshery 
+                                        | $ kubectl -n meshery apply -f install/deployment_yamls/k8s" />
+                                        <p>If you want to use a different namespace, please change the name of the namespace in the ClusterRoleBinding section appropriately. </p>
+                                    </TabPanel>
+                                </Tabs>
+                                <h3>Step 2: Login</h3>
+                                <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
+                            </div>
+                        </Col>
+                        <Col lg={5}>
+
+                        </Col>
+                    </Row>
+                    
                     <Faq />
                 </MesheryWrapper>
             </Layout>
