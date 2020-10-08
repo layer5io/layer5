@@ -28,12 +28,12 @@
   tspec: "No"
   tspeclink: ""
 
-- name: Maesh
+- name: Traefik
   tac: "Yes"
-  taclink: "https://github.com/containous/maesh"
+  taclink: "https://github.com/traefik/mesh"
   tmetrics: "No"
   tmetricslink: ""
   tsplit: "Yes"
-  tsplitlink: "https://github.com/containous/maesh"
+  tsplitlink: "https://github.com/traefik/mesh"
   tspec: "Yes"
-  tspeclink: "https://github.com/containous/maesh"
+  tspeclink: "https://github.com/traefik/mesh"

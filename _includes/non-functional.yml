@@ -78,14 +78,14 @@
   commercial: Buoyant
   category: Service Mesh
 
-- name: Maesh
+- name: Traefik
   opensource: "Yes"
-  link: https://github.com/containous/maesh
-  governance: Containous
+  link: https://github.com/traefik/mesh
+  governance: Traefik Labs
   primary-lang: Go
   announce-date: September 2019
   ga-1-date: "?"
-  commercial: Containous
+  commercial: Traefik Labs
   category: Service Mesh
 
 - name: Maistra
