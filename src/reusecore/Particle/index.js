@@ -18,7 +18,7 @@ export default () => (
             left: 0,
             width: "100%",
             height: "100%",
-            opacity: 0.4
+            opacity: 0 // Previously -> 0.4
         }}
     >
         <Particles
@@ -61,7 +61,7 @@ export default () => (
                         ],
                     },
                     opacity: {
-                        value: 0.17626369048095938,
+                        value: 0, // Previously -> 0.17626369048095938
                         random: true,
                         anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
                     },
