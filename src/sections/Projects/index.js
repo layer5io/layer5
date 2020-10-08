@@ -25,7 +25,7 @@ const Projects = () => {
                                 <div className="project__block__inner">
                                     <img src={projectImage1} alt="appion project" />
                                     <h3>Landscape</h3>
-                                    <p>Service Mesh Ecosystem</p>
+                                    <p>Service Mesh <br />Ecosystem</p>
                                     <Link to="#">
                                         <img src={Icon} alt="appion app" />
                                     </Link>
@@ -51,7 +51,7 @@ const Projects = () => {
                                 <div className="project__block__inner">
                                     <img src={projectImage4} alt="Business logic in the service mesh data plane" />
                                     <h3>Image Hub</h3>
-                                    <p>WebAssembly Filters</p>
+                                    <p>WebAssembly <br />Filters</p>
                                     <Link to="/projects/image-hub">
                                         <img src={Icon} alt="appion app" />
                                     </Link>
