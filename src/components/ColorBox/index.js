@@ -6,7 +6,7 @@ const ColorBox = props => {
   const bgcolor = props.colorCode
   return (
     <ColorBoxWrapper bgcolor={bgcolor}>
-      <Col xs={12} sm={2} lg={2} xl={2}>
+      <Col xs={12} sm={12} lg={2} xl={2}>
         <div className="PalletBox">
           {props.R}
           <br />
