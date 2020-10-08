@@ -27,7 +27,6 @@ const IndexPage = () => (
         <Layout>
             <Navigation />
             <Banner />
-            <About />
             <Integrations />
             <Features />
             <AppScreens />
