@@ -190,7 +190,7 @@
   category: Service Mesh
   timeline-order: 16
 
-- name: Traefik
+- name: Traefik Mesh
   opensource: "Yes"
   link: https://github.com/traefik/mesh
   governance: Traefik Labs
