@@ -106,7 +106,6 @@
   timeline-order: 9
   icon: assets/images/service-mesh-icons/conduit.png
 
-
 - name: Network Service Mesh
   opensource: "Yes"
   link: https://github.com/networkservicemesh/networkservicemesh
@@ -118,7 +117,7 @@
   category: Service Mesh
   timeline-order: 10
   icon: assets/images/service-mesh-icons/nsm.png
-
+  
 - name: Rotor
   opensource: "Yes"
   link: http://github.com/turbinelabs/rotor
@@ -180,7 +179,6 @@
   timeline-order: 15
   icon: assets/images/service-mesh-icons/octarine.png
 
-
 - name: Yggdrasil
   opensource: "Yes"
   link: https://github.com/uswitch/yggdrasil
@@ -192,19 +190,17 @@
   category: Service Mesh
   timeline-order: 16
 
-
-
-- name: Maesh
+- name: Traefik
   opensource: "Yes"
-  link: https://github.com/containous/maesh
-  governance: Containous
+  link: https://github.com/traefik/mesh
+  governance: Traefik Labs
   primary-lang: Go
   announce-date: September 2019
   ga-1-date: "?"
-  commercial: Containous
+  commercial: Traefik Labs
   category: Service Mesh
   timeline-order: 17
-  icon: assets/images/service-mesh-icons/maesh.png
+  icon: assets/images/service-mesh-icons/traefik.svg
 
 - name: App Mesh
   opensource: "No"

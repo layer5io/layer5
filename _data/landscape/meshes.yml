@@ -106,7 +106,7 @@
   multi-tenant: "Yes"
   prometheus: "Yes"
   tracing: "OpenTracing compatible"
-  encyrption: "Yes"
+  encryption: "Yes"
   multi-tenant-score: 1
 
 - name: Istio
@@ -187,9 +187,9 @@
     tspec: "No"
     tspeclink: ""
 
-- name: Maesh
-  desc: "Maesh is a simple, yet full-featured service mesh. It is container-native and fits as your de-facto service mesh in your Kubernetes cluster."
-  link: https://github.com/containous/maesh
+- name: Traefik Mesh
+  desc: "Traefik Mesh is a simple, yet full-featured service mesh. It is container-native and fits as your de-facto service mesh in your Kubernetes cluster."
+  link: https://github.com/traefik/mesh
   autoinject: "No"
   h2: "Yes"
   grpc: "Yes"
@@ -203,13 +203,13 @@
   netdev-persona-score: 3
   smi: 
     tac: "Yes"
-    taclink: "https://github.com/containous/maesh"
+    taclink: "https://github.com/traefik/mesh"
     tmetrics: "No"
     tmetricslink: ""
     tsplit: "Yes"
-    tsplitlink: "https://github.com/containous/maesh"
+    tsplitlink: "https://github.com/traefik/mesh"
     tspec: "Yes"
-    tspeclink: "https://github.com/containous/maesh"
+    tspeclink: "https://github.com/traefik/mesh"
 
 - name: Maistra
   desc: "Maistra is a security focused distribution of Istio designed to run on top of OpenShift."
