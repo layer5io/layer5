@@ -90,6 +90,13 @@ module.exports = {
         name: `members`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/collections/workshops`,
+        name: `workshops`,
+      },
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-sharp`,
