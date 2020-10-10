@@ -229,8 +229,18 @@
   category: Service Mesh
   timeline-order: 19
   icon: assets/images/service-mesh-icons/Kuma.svg
-  
 
+- name: Citrix Service Mesh
+  opensource: "No"
+  link: https://www.citrix.com/en-in/networking/microservices.html
+  governance: Citrix
+  primary-lang: "C"
+  announce-date: "September 2019"
+  ga-1-date: "July 2016"
+  commercial: "Citrix Systems, Inc."
+  category: Service Proxy
+  timeline-order: 20
+  icon: assets/images/landscape/citrix.svg
 
 - name: Open Service Mesh
   opensource: "Yes"
@@ -241,9 +251,8 @@
   ga-1-date: "?"
   commercial: Microsoft
   category: Service Mesh
-  timeline-order: 20
+  timeline-order: 21
   icon: assets/images/service-mesh-icons/osm.png
-
 
 - name: Citrix ADC CPX
   opensource: "No"
@@ -254,8 +263,6 @@
   ga-1-date: "July 2016"
   commercial: "Citrix Systems, Inc."
   category: Service Proxy
-  timeline-order: 21
-  icon: assets/images/landscape/citrix.svg
 
 - name: Envoy
   opensource: "Yes"
