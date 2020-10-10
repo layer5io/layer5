@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "gatsby";
-import kebabCase from "lodash/kebabCase";
+import { graphql, Link, useStaticQuery} from "gatsby";
+import slugify from "../../utils/slugify";
 
 import { FaSearch } from "react-icons/fa";
 
@@ -12,8 +12,24 @@ import WdThumb3 from "../../assets/images/blog/widgets-thumb/03.png";
 
 import BlogSideBarWrapper from "./blogSidebar.style";
 
+const Sidebar = ( ) => {
+    const data = useStaticQuery(
+        graphql`
+            query allTags {
+                allMdx(
+                    filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+                ){
+                    group(field: frontmatter___tags) {
+                        fieldValue
+                        totalCount
+                    }
+                }
+            }
+        `
+    );
 
-const Sidebar = ({tags}) => {
+    const tags= data.allMdx.group;
+
     return (
         <BlogSideBarWrapper>
             <div className="sidebar-widgets">
@@ -132,7 +148,7 @@ const Sidebar = ({tags}) => {
                 <ul>
                     { tags && tags.map(tag => (
                         <li key={tag.fieldValue}>
-                            <Link to={`/blog/tag/${kebabCase(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
+                            <Link to={`/blog/tag/${slugify(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
                         </li>
                     ))}
                 </ul>

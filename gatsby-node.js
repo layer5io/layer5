@@ -4,25 +4,26 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require(`path`);
-const _ = require("lodash");
 
-// You can delete this file if you're not using it
+const path = require(`path`);
+const slugify = require("./src/utils/slugify");
+const { paginate } = require("gatsby-awesome-pagination");
+
 // Replacing '/' would result in empty string which is invalid
-const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
+const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``));
 // Implement the Gatsby API “onCreatePage”. This is
 // called after every page is created.
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions
-  const oldPage = Object.assign({}, page)
+  const { createPage, deletePage } = actions;
+  const oldPage = Object.assign({}, page);
   // Remove trailing slash unless page is /
-  page.path = replacePath(page.path)
+  page.path = replacePath(page.path);
   if (page.path !== oldPage.path) {
     // Replace new page with old page
-    deletePage(oldPage)
+    deletePage(oldPage);
     createPage(page)
   }
-}
+};
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
@@ -31,6 +32,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
   const blogListTemplate = path.resolve(
       'src/templates/blog-list.js'
+  );
+  const blogViewTemplate = path.resolve(
+      'src/templates/blog.js'
   );
 
   const NewsPostTemplate = path.resolve(
@@ -43,6 +47,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const BookPostTemplate = path.resolve(
       'src/templates/book-single.js'
+  );
+
+  const ProgramPostTemplate = path.resolve(
+      'src/templates/program-single.js'
+  );
+
+  const CareerPostTemplate = path.resolve(
+      'src/templates/career-single.js'
   );
 
   const MemberTemplate = path.resolve(
@@ -74,6 +86,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
         ){
           group(field: frontmatter___tags) {
+            nodes{
+              id
+            }
             fieldValue
             totalCount
           }
@@ -105,7 +120,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       node => node.fields.collection === `books`
   );
 
+  const programs = allNodes.filter(
+      node => node.fields.collection === `programs`
+  );
+
+  const careers = allNodes.filter(
+      node => node.fields.collection === `careers`
+  );
+
   const members = res.data.allMembers.nodes;
+
+  paginate({
+    createPage,
+    items: blogs,
+    itemsPerPage: 8,
+    pathPrefix: `/blog`,
+    component: blogViewTemplate
+  });
 
   blogs.forEach(blog => {
     createPage({
@@ -118,14 +149,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
   const BlogTags = res.data.blogTags.group;
   BlogTags.forEach(tag => {
-    createPage({
-      path: `/blog/tag/${_.kebabCase(tag.fieldValue)}`,
+    paginate({
+      createPage,
+      items: tag.nodes,
+      itemsPerPage: 4,
+      pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
       component: blogListTemplate,
       context: {
         tag: tag.fieldValue,
-        allTags: BlogTags
       },
-    })
+    });
   });
 
   news.forEach(singleNews => {
@@ -158,6 +191,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   });
 
+  programs.forEach(program => {
+    createPage({
+      path: program.fields.slug,
+      component: ProgramPostTemplate,
+      context: {
+        slug: program.fields.slug,
+      },
+    })
+  });
+
+  careers.forEach(career => {
+    createPage({
+      path: career.fields.slug,
+      component: CareerPostTemplate,
+      context: {
+        slug: career.fields.slug,
+      },
+    })
+  });
+
   members.forEach(member => {
     createPage({
       path: member.fields.slug,
@@ -167,7 +220,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   });
-
 
 };
 
@@ -182,10 +234,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
     let slug = "";
     if(collection === `members`) {
-      slug = `/community/members/${_.kebabCase(node.frontmatter.name)}`
+      slug = `/community/members/${slugify(node.frontmatter.name)}`
+    }
+    else if(collection === `programs`) {
+      slug = `/${collection}/${node.frontmatter.link}`
     }
     else{
-      slug = `/${collection}/${_.kebabCase(node.frontmatter.title)}`;
+      slug = `/${collection}/${slugify(node.frontmatter.title)}`;
     }
     createNodeField({
       name: `slug`,
@@ -208,7 +263,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       twitter: String,
       github: String,
       meshmate: String,
-      emeritus: String
+      emeritus: String,
+      link: String
     }
   `;
   createTypes(typeDefs)

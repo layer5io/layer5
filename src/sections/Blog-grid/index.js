@@ -1,6 +1,7 @@
 import React from "react";
 import BlogViewToolTip from "../../components/blog-view-tooltip";
 import Card from "../../components/Card";
+import Pager from "../../components/pager";
 import { Container, Row, Col } from "../../reusecore/Layout";
 
 import PageHeader from "../../reusecore/PageHeader";
@@ -8,10 +9,10 @@ import Sidebar from "../Blog-sidebar";
 
 import { BlogPageWrapper } from "./blogGrid.style";
 
-const BlogGrid = ({data, isListView, setListView, setGridView}) => {
+const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => {
     return (
         <BlogPageWrapper>
-            <PageHeader title="Blogs" />
+            <PageHeader title="Blogs" path="Blog"/>
             <div className="blog-page-wrapper">
                 <Container>
                     <Row>
@@ -26,11 +27,14 @@ const BlogGrid = ({data, isListView, setListView, setGridView}) => {
                                             <Card frontmatter={frontmatter} fields={fields}/>
                                         </Col>
                                     ))}
+                                    <Col>
+                                        <Pager pageContext={pageContext} isListView={isListView}/>
+                                    </Col>
                                 </Row>
                             </div>
                         </Col>
                         <Col xs={12} lg={4}>
-                            <Sidebar tags={data.allMdx.group} />
+                            <Sidebar/>
                         </Col>
                     </Row>
                 </Container>

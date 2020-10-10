@@ -8,7 +8,7 @@ import { BooksPageWrapper } from "./BooksGrid.style";
 const BooksGrid = ({data}) => {
     return (
         <BooksPageWrapper>
-            <PageHeader title="Books" />
+            <PageHeader title="Books" path="Books"/>
             <div className="books-page-wrapper">
                 <Container>
                     <div className="books-grid-wrapper">
