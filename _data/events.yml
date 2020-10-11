@@ -25,6 +25,14 @@
   event_deck: ""
   thumbnail: /assets/images/events/ccoss.png
 
+- title: Virtual Cloud Native Ambassador Day
+  desc: "Ambassadors discussing their work in community and in projects! 4 Ambassadors discussing community, projects and their work."
+  date: "October 14th, 2020"
+  link: https://community.cncf.io/events/details/cncf-cncf-ambassadors-presents-virtual-cloud-native-ambassador-day/
+  talk_link: https://community.cncf.io/events/details/cncf-cncf-ambassadors-presents-virtual-cloud-native-ambassador-day/
+  event_video: ""
+  event_deck: ""
+  thumbnail: /assets/images/events/cncf-ambassador-horizontal.png
 
 - title: Open Infrastructure Summit 2020
   desc: "Join the people building and operating open infrastructure, with sessions and workshops on Container Infrastructure, CI/CD, 5G, NFV & Edge, Public Cloud, Private & Hybrid Cloud, Security and members of open source communities like Airship, Ansible, Ceph, Docker, Kata Containers, Kubernetes, ONAP, OpenStack, Open vSwitch, OPNFV, StarlingX, Zuul and more."
