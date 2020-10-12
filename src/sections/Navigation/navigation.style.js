@@ -93,9 +93,9 @@ const NavigationWrap = styled.header`
       list-style: none;
       display: flex;
     }
-    li {
+    .nav-item {
       position: relative;
-      padding: 48px 0px;
+      margin: 48px 0px;
       .dropdown {
         li {
           padding: 0;
@@ -155,8 +155,8 @@ const NavigationWrap = styled.header`
       width: 100px;
     }
     .nav {
-      li {
-        padding: 28px 0px;
+      .nav-item{
+        margin: 28px 0px;
         a {
           color:${props => props.theme.menuColor};
           &:hover {
