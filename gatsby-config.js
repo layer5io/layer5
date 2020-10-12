@@ -109,5 +109,12 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-redirect-from',
+      options: {
+        query: 'allMdx'
+      }
+    },
+    'gatsby-plugin-meta-redirect' // make sure this is always the last one
   ],
 };

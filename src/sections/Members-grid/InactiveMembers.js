@@ -28,6 +28,9 @@ const InactiveMembers = props =>{
                                 publicURL
                             }
                         }
+                        fields{
+                            slug
+                        }
                     }
                 }
             }

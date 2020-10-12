@@ -1,9 +1,9 @@
 import React from "react";
-import {Link} from 'gatsby'
+import {Link} from "gatsby";
 import Button from "../../reusecore/Button";
 import styled from "styled-components";
-import job_icon from "./jobs_black.svg"
-import { AiOutlineArrowLeft } from "react-icons/ai"
+import job_icon from "./jobs_black.svg";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 export const PositionApplyWrapper = styled.div`
 text-align: center;
@@ -56,7 +56,7 @@ const PositionApply = ()=>{
                 <Button primary className="back-button"><AiOutlineArrowLeft/> Back to Open Positions</Button>
             </Link>
         </PositionApplyWrapper>
-    )
+    );
 };
 
 export default PositionApply;
