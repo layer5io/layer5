@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import 'react-tabs/style/react-tabs.css';
 
 import {ThemeProvider} from "styled-components";
 
@@ -9,12 +9,15 @@ import Layout from "../../components/layout";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
+import Button from "../../reusecore/Button";
 import Counters from "../Counters";
 import Pricing from "../Pricing";
 import Code from "../../components/CodeBlock";
 import Faq from "../Faq";
 
 import meshery from "./meshery-logo-light-text-side.png";
+import meshery_multi_mesh from "./meshery_multi_mesh.png";
+import meshes from "./meshes.png"
 import meshery_benchmark_screen from "./meshery_benchmark_screen.png";
 import meshery_configuration_management from "./meshery-configuration-management.png";
 import aws_app_mesh from "./aws-app-mesh.png";
@@ -40,10 +43,122 @@ const MesheryPage = () => {
             <Layout>
                 <MesheryWrapper> 
                     <div className="meshery-img"><img src={meshery} /></div>
-                    <Pricing />
+                    <Row className="description">
+                        <Col className="desc-text" lg={7} md={12} sm={12}>
+                            <Row>
+                                <Col lg={9}>
+                                    <p className="desc-p"> 
+                                        Meshery is the service mesh management plane.<br />
+                                        Adopt and operate any service mesh with confidence using Meshery's management features. 
+                                    </p>
+                                    <Button> Learn More </Button> &nbsp;
+                                    <Button> Run Meshery </Button>
+                                </Col>
+                                <Col lg={3}>
+                                    <Button>
+                                        <h3>1,113</h3>  
+                                    </Button>
+                                </Col>
+                            </Row>
+                        </Col>
+                        <Col lg={5} md={12} sm={12}>
+                            <img src={meshery_multi_mesh} />
+                        </Col>
+                    </Row>
+                    <div className="description">
+                        <div className="heading">
+                            <p> The only service mesh management plane to allow</p>
+                            <h2> Use your 12 service meshes under a single roof</h2>
+                        </div>
+                        <Row>
+                            <Col className="mesh_list" lg={3}>
+                                <Row>
+                                    <Col lg={6}>
+                                        Istio
+                                    </Col>
+                                    <Col lg={6}>
+                                        Linkerd
+                                    </Col>
+                                </Row>
+                            </Col>
+                            <Col lg={6} md={12} sm={12}>
+                                <img src={meshes} />
+                            </Col>
+                            <Col className="mesh_list" lg={3}>
+                                <Row>
+                                    <Col lg={6}>
+                                        Istio
+                                    </Col>
+                                    <Col lg={6}>
+                                        Linkerd
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </div>
+                    <div>
+                        <h1 className="heading"> USE CASES</h1>
+                        <Row className="use_row"> 
+                            <Col lg={6} md={12} sm={12}>
+                            <h2>Manage the performance of your service mesh and its workloads</h2>
+                            Baseline and track your service mesh performance from release to release.
+                            <ul>
+                                <li>Track your application performance from version to version.</li>
+                                <li>Understand behavioral differences between service meshes.</li>
+                                <li>Compare performance across service mesh deployments.</li>
+                            </ul>
+                            </Col>
+                            <Col lg={6} md={12} sm={12}>
+                                <img src={meshery_benchmark_screen} />
+                            </Col>
+                        </Row>
+                        <Row className="use_row"> 
+                            <Col lg={6} md={12} sm={12}>
+                                <img src={meshery_benchmark_screen} />
+                            </Col>
+                            <Col lg={6} md={12} sm={12}>
+                            <h2>Manage the performance of your service mesh and its workloads</h2>
+                            Baseline and track your service mesh performance from release to release.
+                            <ul>
+                                <li>Track your application performance from version to version.</li>
+                                <li>Understand behavioral differences between service meshes.</li>
+                                <li>Compare performance across service mesh deployments.</li>
+                            </ul>
+                            </Col>
+                        </Row>
+                        <Row className="use_row"> 
+                            <Col lg={6} md={12} sm={12}>
+                            <h2>Manage the performance of your service mesh and its workloads</h2>
+                            Baseline and track your service mesh performance from release to release.
+                            <ul>
+                                <li>Track your application performance from version to version.</li>
+                                <li>Understand behavioral differences between service meshes.</li>
+                                <li>Compare performance across service mesh deployments.</li>
+                            </ul>
+                            </Col>
+                            <Col lg={6} md={12} sm={12}>
+                                <img src={meshery_benchmark_screen} />
+                            </Col>
+                        </Row>
+                        <Row className="use_row"> 
+                            <Col lg={6} md={12} sm={12}>
+                                <img src={meshery_benchmark_screen} />
+                            </Col>
+                            <Col lg={6} md={12} sm={12}>
+                            <h2>Manage the performance of your service mesh and its workloads</h2>
+                            Baseline and track your service mesh performance from release to release.
+                            <ul>
+                                <li>Track your application performance from version to version.</li>
+                                <li>Understand behavioral differences between service meshes.</li>
+                                <li>Compare performance across service mesh deployments.</li>
+                            </ul>
+                            </Col>
+                        </Row>
+                    </div>
+                    {/* <Pricing />
                     <Row>
                         <Col lg={6} className="content">
-                            {/* <Counters /> */}
+                            <Counters />
                             <div className="extra">
                                 <h3>Baseline, Measure, and Assess</h3>
                                 <p>       
@@ -171,8 +286,8 @@ const MesheryPage = () => {
                                 </p>
                             </div>
                         </Col>
-                    </Row>
-                    <div className="content">
+                    </Row> */}
+                    {/* <div className="content">
                         <a name="architecture"></a>
                         <h3>Architecture</h3>
                         <a href={meshery_architecture}>
@@ -246,7 +361,7 @@ const MesheryPage = () => {
                         </Col>
                     </Row>
                     
-                    <Faq />
+                    <Faq /> */}
                 </MesheryWrapper>
             </Layout>
         </ThemeProvider>

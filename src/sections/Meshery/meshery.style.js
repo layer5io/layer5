@@ -2,6 +2,37 @@ import styled from "styled-components";
 
 const MesheryWrapper = styled.section`
     padding: 25px 0 100px 0;
+
+    h1 {
+        font-size: 50px;
+    }
+    h2 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .description {
+        margin: -40px 50px 100px 80px;
+        .desc-text {
+            margin-top: 50px;
+            padding-right: 80px;
+        }
+        .desc-p {
+            margin-bottom: 50px;
+        }
+    }
+
+    .heading {
+        text-align: center;
+    }
+
+    .mesh_list {
+        padding: 100px;
+    }
+
+    .use_row {
+        padding: 100px;
+    }
     .content {
         padding: 0 80px 80px 80px; 
         .extra {
