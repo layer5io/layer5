@@ -207,7 +207,7 @@ const MesheryPage = () => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col lg={7}>
+                        <Col lg={8}>
                             <div className="content">
                                 <a name="getting-started"></a><h2>Run Meshery</h2>
                                 <h3>Step 1: Install and start</h3>
@@ -224,7 +224,7 @@ const MesheryPage = () => {
                                     </TabPanel>
                                     <TabPanel>
                                         <p>Install on <a href="https://meshery.layer5.io/docs/installation#quick-start">Mac or Linux</a> using Homebrew:</p>
-                                        <Code className="code" codeString="$ brew install layer5io/mesheryctl
+                                        <Code className="code" codeString="$ brew install layer5io/mesheryctl;
                                         | $ mesheryctl system start" /> 
                                     </TabPanel>
                                     <TabPanel>
@@ -241,7 +241,7 @@ const MesheryPage = () => {
                                 <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
                             </div>
                         </Col>
-                        <Col lg={5}>
+                        <Col lg={4}>
 
                         </Col>
                     </Row>
