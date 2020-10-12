@@ -19,7 +19,7 @@ And you’ll be able to:
 <li>- Configure and operate Istio in context of an example workloads and their common use cases
 <li>- Take the third step in your cloud native journey with an initial deployment of a service mesh
 </ul>"
-img: /assets/images/workshops/oscon.png
+img: /assets/images/workshops/introduction-to-istio.jpg
 style: "position:relative;height:320px;overflow:hidden;"
 eurl: https://learning.oreilly.com/live-training/courses/introduction-to-istio/0636920422679/
 labs: 

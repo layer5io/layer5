@@ -20,7 +20,7 @@ And you’ll be able to:
 <li>- Enforce policies and rate limiting
 <li>- Be confident in the third step of your cloud native journey with ongoing management of your service mesh
 </ul>"
-img: /assets/images/workshops/oscon.png
+img: /assets/images/workshops/advanced-istio.jpg
 style: "position:relative;height:320px;overflow:hidden;"
 eurl: https://learning.oreilly.com/live-training/courses/advanced-istio/0636920418108/
 labs: 

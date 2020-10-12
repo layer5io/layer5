@@ -20,7 +20,7 @@ And you’ll be able to:
 <li>- Be confident in the third step of your cloud native journey with ongoing management of your service mesh
 </ul>
 "
-img: /assets/images/workshops/oscon.png
+img: /assets/images/workshops/service-mesh-fundamentals-with-linkerd.jpg
 style: "position:relative;height:320px;overflow:hidden;"
 eurl: https://learning.oreilly.com/live-training/courses/service-mesh-fundamentals-with-linkerd/0636920418085/
 labs: 
