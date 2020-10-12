@@ -7,7 +7,7 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 import Layout from "../../components/layout";
-import Conduct from "../../sections/Terms/index"
+import Conduct from "../../sections/Terms"
 
 const codeofconduct = () => (
     <ThemeProvider theme={theme}>
