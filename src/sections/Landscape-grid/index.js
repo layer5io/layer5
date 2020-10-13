@@ -3,9 +3,9 @@ import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
 import ServiceMeshComparison from "../../assets/images/landscape/comparison-of-service-mesh-strengths.svg";
-import LandscapeGridPage from "../../pages/landscape";
+import { serviceMeshes } from '../../collections/landscape/timeline'
 
-const LandscapeGrid=({ data }) => {
+const LandscapeGrid=() => {
     return (
         <LandscapePageWrapper>
             <PageHeader title="Landscape" path="Landscape" />
@@ -15,6 +15,10 @@ const LandscapeGrid=({ data }) => {
                         <Row>
                             <h2>Comparison of Service Mesh Strengths</h2>
                             <img src={ServiceMeshComparison} width="100%" alt="Service Mesh Comparison" />
+                            {serviceMeshes.map(mesh => <div key={mesh.timeline_order}>
+                                {/* <img src={require(`../../${mesh.icon}`)} alt={mesh.name} /> */}
+                                {mesh.name}
+                            </div>)}
                         </Row>
                     </div>
                 </Container>
