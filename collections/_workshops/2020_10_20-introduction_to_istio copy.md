@@ -1,6 +1,6 @@
 ---
 layout: workshop
-name: O'Reilly Live Online Training
+name: Introduction to Istio
 desc: "<strong>Introduction to Istio - O'Reilly Live Online Training</strong>
 By the end of this live, hands-on, online course, you’ll understand:
 <ul>
@@ -8,15 +8,15 @@ By the end of this live, hands-on, online course, you’ll understand:
 <li>- How to enforce policies and rate limiting.</li>
 <li>- Istio's methods for managing telemetry, monitoring and reporting.</li>
 <li>- Approaches to canary deployments and securing communication with Istio.</li></ul>"
-img: /assets/images/workshops/introduction-to-istio-small.jpg
+img: /assets/images/workshops/introduction-to-istio-dark-small.jpg
 style: "position:relative;height:320px;overflow:hidden;width:100%"
 eurl: https://learning.oreilly.com/live-training/courses/introduction-to-istio/0636920282938/
 labs: https://github.com/leecalcote/istio-service-mesh-workshop
-slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-training-introduction-to-istio-february-2020.html
+#slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-training-introduction-to-istio-february-2020.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
-date:   2019-08-01 12:15:05 +0000
-status: "delivered"
+date:   2020-10-20 12:15:05 +0000
+status: "upcoming"
 ---
 
 <h4>Introduction to Istio - O'Reilly Live Online Training</h4>

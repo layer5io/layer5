@@ -71,7 +71,7 @@ img.dark-shadow {
   display: block;
 }
 .toggle label {
-  font-family: OpenSans;
+  font-family: "Open Sans";
   font-size: 1em;
   color: #000;
 }
@@ -2313,7 +2313,7 @@ a:hover none {
 html {
   min-height: 100%;
 
-  font-family: "OpenSans";
+  font-family: "Open Sans";
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -5178,7 +5178,7 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: "OpenSans", "Roboto";
+  font-family: "Open Sans", "Roboto";
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
 }
