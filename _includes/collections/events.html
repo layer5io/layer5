@@ -2,12 +2,12 @@
   {% assign sorted = (site.data.events | sort: 'date') %} {% for event
   in sorted %} {% if event.visibility != "hide" and event.type != "news" %}
 
-  <div class="col s12 m3">
+  <div class="col s12 m4">
     <div class="card">
       <a
         href="{{ event.talk_link }}"
         class="waves-effect z-depth-4 white-text waves-light darken-3"
-        style="background-color:{{ site.layer5.gray }}; width: 100%;"
+        style="background-color:{{ site.layer5.gray }}; width: 100%; height:300px;"
       >
         <div
           class="card-image"
