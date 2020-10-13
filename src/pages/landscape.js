@@ -8,7 +8,7 @@ import Footer from "../sections/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
 
-const LandscapeGridPage=() => (
+const LandscapeGridPage=({ data }) => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
