@@ -20,7 +20,7 @@ const WorkshopsPage = ({data}) => {
                     <div className="workshop-grid-wrapper">
                         <Row>
                             {data.allMdx.nodes.map(({id, frontmatter, fields, body }) => (
-                                <Col xs={12} sm={12} lg={6} key={id}>
+                                <Col {...content && ID === id ? {xs:12, sm:12, lg:12} : {xs:12, sm:12, lg:6} } key={id}>
                                     <div className="workshop-grid-card">
                                         <WorkshopCard frontmatter={frontmatter} fields={fields} content={content} ID={ID} id={id} />
                                         <div className={content && ID === id ? "active" : "text-contents"}>
