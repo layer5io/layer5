@@ -187,6 +187,30 @@
     tspec: "No"
     tspeclink: ""
 
+- name: NGINX Service Mesh
+  desc: "NGINX Service Mesh (NSM) is a data plane-focused serviced mesh. NSM was built from the ground-up to support a unified data plane with NGINX Plus reverse proxy sidecars and NGINX Plus Ingress Controller for Kubernetes providing integrated E/W and N/S traffic management and security."
+  link: https://www.nginx.com/products/nginx-service-mesh/
+  autoinject: "Yes"
+  tcp-web: "Yes"
+  grpc: "Yes"
+  h2: "No"
+  multi-cluster: "No"
+  multi-tenant: "No"
+  prometheus: "Yes"
+  tracing: "Jaeger, Zipkin"
+  encryption: "Yes"
+  multi-tenant-score: ?
+  netdev-persona-score: ?
+  smi: 
+    tac: "Yes"
+    taclink: "https://docs.nginx.com/nginx-service-mesh/tutorials/accesscontrol-walkthrough/"
+    tmetrics: "Yes"
+    tmetricslink: "https://docs.nginx.com/nginx-service-mesh/usage/traffic-metrics/"
+    tsplit: "Yes"
+    tsplitlink: "https://docs.nginx.com/nginx-service-mesh/tutorials/trafficsplit-deployments/"
+    tspec: "Yes"
+    tspeclink: "https://docs.nginx.com/nginx-service-mesh/usage/traffic-policies/"
+
 - name: Traefik Mesh
   desc: "Traefik Mesh is a simple, yet full-featured service mesh. It is container-native and fits as your de-facto service mesh in your Kubernetes cluster."
   link: https://github.com/traefik/mesh
