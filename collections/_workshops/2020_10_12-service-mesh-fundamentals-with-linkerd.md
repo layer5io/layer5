@@ -11,8 +11,8 @@ By the end of this live, hands-on, online course, you’ll understand:
 img: /assets/images/workshops/service-mesh-fundamentals-with-linkerd-small.jpg
 style: "position:relative;height:320px;overflow:hidden;width:100%"
 eurl: https://learning.oreilly.com/live-training/courses/service-mesh-fundamentals-with-linkerd/0636920418085/
-labs: https://github.com/leecalcote/linkerd-service-mesh-workshop
-slides: https://calcotestudios.com/talks/
+labs: https://github.com/layer5io/linkerd-service-mesh-workshop
+#slides: https://calcotestudios.com/talks/
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
 date:   2020-10-12 12:15:05 +0000

@@ -11,7 +11,7 @@ By the end of this live, hands-on, online course, you’ll understand:
 img: /assets/images/workshops/introduction-to-istio-dark-small.jpg
 style: "position:relative;height:320px;overflow:hidden;width:100%"
 eurl: https://learning.oreilly.com/live-training/courses/introduction-to-istio/0636920282938/
-labs: https://github.com/leecalcote/istio-service-mesh-workshop
+labs: https://github.com/layer5io/istio-service-mesh-workshop
 #slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-training-introduction-to-istio-february-2020.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
