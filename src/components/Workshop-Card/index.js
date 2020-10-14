@@ -1,26 +1,30 @@
-import React from "react"
-import Image from "../image"
-import WorkshopCardWrapper from "./WorkshopsCardWrapper.style"
+import React from "react";
+import Image from "../image";
+import WorkshopCardWrapper from "./WorkshopsCardWrapper.style";
 
-const WorkshopCardContent = ({ frontmatter }) => {
-  console.log(frontmatter)
-  return (
+const WorkshopCardContent = ({ frontmatter, content, ID, id }) => {
+    return (
     <WorkshopCardWrapper>
-      <div className="image">
-        <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "contain" }} />
-      </div>
-      <div>
-        <h3 className="title">{frontmatter.title}</h3>
-      </div>
-      <div>
-        <p className="para">{frontmatter.abstract}</p>
-        {frontmatter.slack ? <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">Slack</a> : ""}
-        {frontmatter.slides ? <a href={frontmatter.slides} target = "_blank" rel="noreferrer" className="links">Slides</a> : ""}
-        {frontmatter.eurl ? <a href={frontmatter.eurl} target = "_blank" rel="noreferrer" className="links">EURL</a> : ""}
-        {frontmatter.labs ? <a href={frontmatter.labs} target = "_blank" rel="noreferrer" className="links">Labs</a> : ""}
-        {frontmatter.video ? <a href={frontmatter.video} target = "_blank" rel="noreferrer" className="links">Video</a> : ""}
-      </div>
+        <div className={content && ID === id ? "main-open" : "main"}>
+            <div className={content && ID === id ? "image-container-open" : "image-container"}>
+                <div className="image">
+                    <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "cover" }} />
+                </div>
+            </div>
+            <div className={content && ID === id ? "card-content-open" : "card-content"}>
+                <div>
+                    <h3 className="title">{frontmatter.title}</h3>
+                    <p className="para">{frontmatter.abstract}</p>
+                </div>
+            </div>
+        </div>
     </WorkshopCardWrapper>
-  )
+    )
 }
 export default WorkshopCardContent
+
+
+{/* <div className="btn-and-status">
+  {frontmatter.status === "delivered" ? "" : <p>Upcoming...</p>}
+  <button type="button" className="readme-btn" onClick={() => toggle(!isActive)}>{`${isActive ? "Show Less" : "Show More"}`}</button>
+</div> */}

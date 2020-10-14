@@ -1,58 +1,57 @@
-import React from "react";
-import { graphql } from "gatsby";
+// import React from "react"
+// import { graphql } from "gatsby"
 
-import { ThemeProvider } from "styled-components";
+// import { ThemeProvider } from "styled-components"
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+// import Layout from "../components/layout"
+// import SEO from "../components/seo"
 
-import Navigation from "../sections/Navigation";
-import Footer from "../sections/Footer";
+// import Navigation from "../sections/Navigation"
+// import Footer from "../sections/Footer"
 
-import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
-import WorkshopsPage from "../sections/Workshop-grid";
+// import { GlobalStyle } from "../sections/app.style"
+// import theme from "../theme/blog/themeStyles"
+// import WorkshopSingle from "../sections/Workshop-single"
 
-export const query = graphql`
-    query WorkshopsBySlug($slug: String!) {
-        mdx(fields: { slug: { eq: $slug } }) {
-            body
-            frontmatter {
-                title
-                slack
-                slides
-                eurl
-                labs
-                abstract
-                video
-                date(formatString: "YYYY MMMM Do")
-                thumbnail{
-                    childImageSharp{
-                        fluid(maxWidth: 500){
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                    extension
-                    publicURL
-                }
-            }
-        }
-    }
-`;
+// export const query = graphql`
+//   query WorkshopsBySlug {
+//     mdx(frontmatter: { status: { eq: "delivered" } }) {
+//       body
+//       frontmatter {
+//         title
+//         slack
+//         slides
+//         eurl
+//         labs
+//         abstract
+//         video
+//         date(formatString: "YYYY MMMM Do")
+//         thumbnail {
+//           extension
+//           publicURL
+//           childImageSharp {
+//             fluid(maxWidth: 500) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
-const WorkshopsSinglePage = ({data}) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={data.mdx.frontmatter.title} />
-                <Navigation />
-                <WorkshopsPage data={data} />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
-};
+// const WorkshopsSinglePage = ({ data }) => {
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Layout>
+//         <GlobalStyle />
+//         <SEO title={data.mdx.frontmatter.title} />
+//         <Navigation />
+//         <WorkshopSingle data={data} />
+//         <Footer />
+//       </Layout>
+//     </ThemeProvider>
+//   )
+// }
 
-export default WorkshopsSinglePage;
-
+// export default WorkshopsSinglePage
