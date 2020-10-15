@@ -18,8 +18,8 @@ const LandscapeGrid=() => {
                             <div className="timeline">
                                 <div className="meshname-img">
                                     {serviceMeshes.map(mesh =>
-                                        <div className={`content${mesh.timeline_order%2}`}>
-                                            <div className={`data-cont arr${mesh.timeline_order%2}`}>
+                                        <div key={mesh.timeline_order} className={`content${mesh.timeline_order%2}`}>
+                                            <div key={mesh.timeline_order} className={`data-cont arr${mesh.timeline_order%2}`}>
                                                 <div key={mesh.timeline_order} className={`img-style${mesh.timeline_order%2}`}>
                                                     <img src={mesh.icon} alt={mesh.name} style={{ width: "inherit", height: "inherit" }} />
                                                 </div>
