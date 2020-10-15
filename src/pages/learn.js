@@ -15,14 +15,15 @@ import theme from "../theme/blog/themeStyles";
 
 
 const WorkshopsGridPage = () => {
+    const hide_path = true;
     return (
         <ThemeProvider theme={theme}>
             <Layout>
                 <GlobalStyle />
                 <SEO title="Learn | Layer5 - The Service Mesh Company" />
                 <Navigation />
-                <BookPage />
-                <WorkshopsPage />
+                <BookPage hide_path={hide_path} />
+                <WorkshopsPage hide_path={hide_path} />
                 <WorkshopBottom />
                 <Footer />
             </Layout>

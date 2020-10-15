@@ -13,14 +13,14 @@ import WorkshopBottom from "../components/Workshop-Bottom";
 
 
 
-const WorkshopsGridPage = () => {
+const WorkshopsGridPage = ({hide_path}) => {
     return (
         <ThemeProvider theme={theme}>
             <Layout>
                 <GlobalStyle />
                 <SEO title="Workshops | Layer5 - The Service Mesh Company" />
                 <Navigation />
-                <WorkshopsPage />
+                <WorkshopsPage hide_path={hide_path} />
                 <WorkshopBottom />
                 <Footer />
             </Layout>

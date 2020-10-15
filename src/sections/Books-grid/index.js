@@ -6,7 +6,7 @@ import PageHeader from "../../reusecore/PageHeader";
 
 import { BooksPageWrapper } from "./BooksGrid.style";
 
-const BooksGrid = () => {
+const BooksGrid = ({hide_path}) => {
     const data = useStaticQuery(
         graphql`
             query allBooks {
@@ -38,9 +38,12 @@ const BooksGrid = () => {
             }
         `
     );
+    
+    let path = hide_path ? "" : "Books";
+
     return (
         <BooksPageWrapper>
-            <PageHeader title="Books" path="Books"/>
+            <PageHeader title="Books" path={path}/>
             <div className="books-page-wrapper">
                 <Container>
                     <div className="books-grid-wrapper">

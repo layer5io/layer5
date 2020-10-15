@@ -11,13 +11,13 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
 
 
-const BooksGridPage = () => (
+const BooksGridPage = ({hide_path}) => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
             <SEO title="Books | Layer5 - The Service Mesh Company" />
             <Navigation />
-            <BookPage />
+            <BookPage hide_path={hide_path} />
             <Footer/>
         </Layout>
     </ThemeProvider>

@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import WorkshopCard from "../../components/Workshop-Card";
+import PageHeader from "../../reusecore/PageHeader";
 
 import { WorkshopPageWrapper } from "./WorkshopsGrid.style";
 
@@ -14,7 +15,7 @@ import Youtube from "../../images/socialIcons/youtube_color.png";
 import Lab from "../../images/socialIcons/lab_color.png";
 
 
-const WorkshopsPage = () => {
+const WorkshopsPage = ({hide_path}) => {
 
     const [content, setContent] = useState(false);
     const [ID, setID] = useState("");
@@ -58,11 +59,11 @@ const WorkshopsPage = () => {
         `
     );
 
+    let path = hide_path ? "" : "Workshop";
+
     return (
         <WorkshopPageWrapper>
-            <div className="header">
-                <h2>Workshops</h2>
-            </div>
+            <PageHeader title="Workshop" path={path}/>
             <div className="workshop-page-wrapper">
                 <Container>
                     <div className="workshop-grid-wrapper">
