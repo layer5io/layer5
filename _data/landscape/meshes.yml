@@ -199,8 +199,8 @@
   prometheus: "Yes"
   tracing: "Jaeger, Zipkin"
   encryption: "Yes"
-  multi-tenant-score: ?
-  netdev-persona-score: ?
+  multi-tenant-score: "?"
+  netdev-persona-score: "?"
   smi: 
     tac: "Yes"
     taclink: "https://docs.nginx.com/nginx-service-mesh/tutorials/accesscontrol-walkthrough/"
