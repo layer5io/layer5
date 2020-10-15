@@ -264,7 +264,12 @@ exports.createSchemaCustomization = ({ actions }) => {
       github: String,
       meshmate: String,
       emeritus: String,
-      link: String
+      link: String,
+      labs: String,
+      slides: String,
+      slack: String,
+      status: String,
+      video: String,
     }
   `;
   createTypes(typeDefs)
