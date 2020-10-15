@@ -1,19 +1,16 @@
 import React from "react";
 // import { Link } from "gatsby";
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-// import 'react-tabs/style/react-tabs.css';
 
 import {ThemeProvider} from "styled-components";
-
 import Layout from "../../components/layout"; 
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 // import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
+import Features from "../Features";
 // import Counters from "../Counters";
 // import Pricing from "../Pricing";
-// import Code from "../../components/CodeBlock";
-// import Faq from "../Faq";
+import Faq from "../Faq";
 
 import meshery from "./meshery-logo-light-text-side.png";
 import meshery_multi_mesh from "./meshery_multi_mesh.png";
@@ -22,18 +19,6 @@ import meshery_benchmark_screen from "./meshery_benchmark_screen.png";
 import meshery_configuration_management from "./meshery-configuration-management.png";
 import smi_conformance from "./SMI-Conformance-in-Meshery.png";
 import smi_performance from "./service-mesh-performance-example.gif";
-// import aws_app_mesh from "./aws-app-mesh.png";
-// import consul from "./consul.svg";
-// import istio from "./istio.svg";
-// import linkerd from "./linkerd.svg";
-// import osm from "./osm.png";
-// import nsm from "./nsm.svg";
-// import octarine from "./octarine.svg";
-// import kuma from "./kuma.svg";
-// import maesh from "./maesh.png";
-// import tanzu from "./tanzu.png";
-// import smi_logo from "./smi-logo.png";
-// import smp_logo from "./smp-dark-text.png";
 import meshery_architecture from "./meshery-architecture.svg";
 
 import MesheryWrapper from "./meshery.style";
@@ -145,6 +130,7 @@ const MesheryPage = () => {
                             </Col>
                         </Row>
                     </div>
+                    <Features />
                     <div className="architecture content">
                         <a name="architecture"></a>
                         <h1 className="heading"> ARCHITECTURE</h1>
@@ -218,9 +204,9 @@ const MesheryPage = () => {
                         <Col lg={4}>
 
                         </Col>
-                    </Row>
+                    </Row>*/}
                     
-                    <Faq /> */}
+                    <Faq /> 
                 </MesheryWrapper>
             </Layout>
         </ThemeProvider>

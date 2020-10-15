@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FaqSectionWrapper = styled.section`
-  padding: 0 0 50px 0;
+  padding: 100px 0 50px 0;
   position: relative;
   overflow: hidden;
   .section__particle {
@@ -25,11 +25,13 @@ const FaqSectionWrapper = styled.section`
   }
   .accordion__item {
     .accordion__header {
-      padding: 20px;
+      padding: 10px 25px 10px 25px;
       background: ${props => props.theme.primaryLightColorTwo};
       h5 {
-        font-weight: 300;
+        font-weight: 400;
         font-size: 16px;
+        margin-left: 25px;
+        position: relative;
         color: ${props => props.theme.black};
       }
       > div {
@@ -40,16 +42,13 @@ const FaqSectionWrapper = styled.section`
     }
 
     .accordion__body {
-      padding: 20px;
+      padding: 0 10px 0 10px;
       p {
         font-size: 16px;
         font-weight: 300;
         margin: 0;
       }
     }
-  }
-  .accordion__item + .accordion__item {
-    margin-top: 20px;
   }
   .faq-thumb {
     transform: translateX(80px);
