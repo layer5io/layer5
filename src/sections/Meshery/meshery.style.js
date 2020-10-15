@@ -5,9 +5,14 @@ const MesheryWrapper = styled.section`
 
     h1 {
         font-size: 50px;
+        line-height: 60px;
     }
     h2 {
         font-size: 40px;
+        line-height: 50px;
+    }
+    h3 {
+        font-size: 30px;
         line-height: 40px;
     }
 
@@ -24,6 +29,7 @@ const MesheryWrapper = styled.section`
 
     .heading {
         text-align: center;
+        margin-bottom: 50px;
     }
 
     .mesh_list {
@@ -31,7 +37,10 @@ const MesheryWrapper = styled.section`
     }
 
     .use_row {
-        padding: 100px;
+        padding-left: 100px;
+        padding-right: 100px;
+        margin-bottom: 50px;
+        margin-top: 50px;
     }
     .content {
         padding: 0 80px 80px 80px; 
@@ -45,8 +54,8 @@ const MesheryWrapper = styled.section`
         }
     }
 
-    h2 {
-        padding-bottom: 20px;
+    .architecture {
+        background: gray;
     }
 
     iframe{
