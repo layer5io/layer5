@@ -7,7 +7,11 @@ const WorkshopBottom = () => {
   return (
     <WorkshopBottomWrapper>
       <img src={WorkshopImage} alt="WorkshopImage" className="bottom-image" />
-      <button type="button" className="request-btn">Request A Workshop</button>
+      <button type="button" className="request-btn">
+        <a href="mailto:support@layer5.io" target="_blank" rel="noreferrer" >
+          Request A Workshop
+        </a>
+      </button>
     </WorkshopBottomWrapper>
   )
 }

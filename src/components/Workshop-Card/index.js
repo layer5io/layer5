@@ -22,9 +22,3 @@ const WorkshopCardContent = ({ frontmatter, content, ID, id }) => {
     )
 }
 export default WorkshopCardContent
-
-
-{/* <div className="btn-and-status">
-  {frontmatter.status === "delivered" ? "" : <p>Upcoming...</p>}
-  <button type="button" className="readme-btn" onClick={() => toggle(!isActive)}>{`${isActive ? "Show Less" : "Show More"}`}</button>
-</div> */}

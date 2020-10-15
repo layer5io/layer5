@@ -32,7 +32,7 @@ export const WorkshopPageWrapper = styled.div`
     display: block;
     width: 100%;
     height: 100%;
-    padding-bottom: 55px;
+    padding-bottom: 65px;
 
     p {
       color: darkgrey;
@@ -77,8 +77,10 @@ export const WorkshopPageWrapper = styled.div`
     padding: 10px;
   }
 
-  .social-icons{
+  .social-icons {
     display: flex;
+    float: left;
+    margin-left: 20px;
   }
 
   .links {
@@ -86,7 +88,7 @@ export const WorkshopPageWrapper = styled.div`
     color: turquoise;
     border: none;
     align-items: center;
-    padding: 0 10px;
+    padding: 5px 15px;
     background-color: whitesmoke;
     margin-right: 10px;
     border-radius: 5px;
@@ -135,6 +137,23 @@ export const WorkshopPageWrapper = styled.div`
   @media only screen and (max-width: 912px) {
     .workshop-page-wrapper {
       padding-bottom: 80px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .links {
+      padding: 0px 10px;
+      margin-right: 5px;
+      font-size: 15px;
+
+      img {
+        height: 15px;
+      }
+    }
+
+    .readme-btn {
+      margin: 0 10px 10px 0;
+      padding: 5px 5px;
     }
   }
 `

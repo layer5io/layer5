@@ -44,7 +44,6 @@ export const query = graphql`
         }
         fields {
           slug
-          collection
         }
       }
     }

@@ -61,10 +61,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       'src/templates/member-single.js'
   );
 
-  const WorkshopPostTemplate = path.resolve(
-    'src/templates/workshop-single.js'
-  );
-
   const res = await graphql(`
     {
      allPosts:  allMdx(
@@ -130,10 +126,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const careers = allNodes.filter(
       node => node.fields.collection === `careers`
-  );
-
-  const workshops = allNodes.filter(
-    node => node.fields.collection === `workshops`
   );
 
   const members = res.data.allMembers.nodes;
@@ -225,16 +217,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: MemberTemplate,
       context: {
         slug: member.fields.slug,
-      },
-    })
-  });
-
-  workshops.forEach(singleWorkshop => {
-    createPage({
-      path: singleWorkshop.fields.slug,
-      component: WorkshopPostTemplate,
-      context: {
-        slug: singleWorkshop.fields.slug,
       },
     })
   });

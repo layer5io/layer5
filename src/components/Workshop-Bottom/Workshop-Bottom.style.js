@@ -20,11 +20,16 @@ const WorkshopBottomWrapper = styled.div`
     padding: 10px;
     border: none;
     background-color: orange;
-    font-size: 20px;
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
     transition: 0.5s ease-in-out all;
+
+    a {
+      color: #000;
+      text-decoration: none;
+      font-size: 20px;
+    }
 
     &:hover {
       background-color: darkcyan;
