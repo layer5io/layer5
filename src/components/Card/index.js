@@ -38,7 +38,7 @@ const Card = ({ frontmatter, fields }) => {
                     </div>
                     <div className="readmore-btn-wrapper">
                         <Link className="readmore-btn" to={fields.slug}>
-              see more <IoIosArrowRoundForward />
+                            see more <IoIosArrowRoundForward />
                         </Link>
                         {frontmatter.eurl && (
                             <a className="readmore-btn" href={frontmatter.eurl}>

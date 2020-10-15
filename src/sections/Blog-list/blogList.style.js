@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Icon1 from "../../assets/images/blog/icon1.svg";
 
 export const BlogPageWrapper = styled.div`
-  .blog-page-wrapper {
+  .blog-list-wrapper {
     padding-bottom: 50px;
   }
   .post-block {
