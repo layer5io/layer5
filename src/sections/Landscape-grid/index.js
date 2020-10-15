@@ -15,10 +15,22 @@ const LandscapeGrid=() => {
                         <Row>
                             <h2>Comparison of Service Mesh Strengths</h2>
                             <img src={ServiceMeshComparison} width="100%" alt="Service Mesh Comparison" />
-                            {serviceMeshes.map(mesh => <div key={mesh.timeline_order}>
-                                {/* <img src={require(`../../${mesh.icon}`)} alt={mesh.name} /> */}
-                                {mesh.name}
-                            </div>)}
+                            <div className="timeline">
+                                <div className="meshname-img">
+                                    {serviceMeshes.map(mesh =>
+                                        <div className={`content${mesh.timeline_order%2}`}>
+                                            <div className={`data-cont arr${mesh.timeline_order%2}`}>
+                                                <div key={mesh.timeline_order} className={`img-style${mesh.timeline_order%2}`}>
+                                                    <img src={mesh.icon} alt={mesh.name} style={{ width: "inherit", height: "inherit" }} />
+                                                </div>
+                                                <p className="mesh-name"> {mesh.name}</p>
+                                            </div>
+                                            <p className="mesh-ann-date">{mesh.announce_date}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+
                         </Row>
                     </div>
                 </Container>
