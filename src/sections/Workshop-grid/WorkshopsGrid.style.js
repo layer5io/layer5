@@ -77,9 +77,15 @@ export const WorkshopPageWrapper = styled.div`
     padding: 10px;
   }
 
+  .social-icons{
+    display: flex;
+  }
+
   .links {
+    display: flex;
     color: turquoise;
     border: none;
+    align-items: center;
     padding: 0 10px;
     background-color: whitesmoke;
     margin-right: 10px;
@@ -93,6 +99,13 @@ export const WorkshopPageWrapper = styled.div`
       background-color: gold;
       font-weight: 600;
       box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      height: 20px;
+      width: auto;
+      display: block;
+      padding-right: 10px;
     }
   }
 
