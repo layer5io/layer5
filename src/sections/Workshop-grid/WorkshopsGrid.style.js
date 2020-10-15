@@ -1,17 +1,6 @@
 import styled from "styled-components"
 
 export const WorkshopPageWrapper = styled.div`
-  .header {
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin-top: 200px;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 25px;
-    line-height: 48px;
-    font-weight: bold;
-  }
 
   .btn-and-status {
     position: absolute;
