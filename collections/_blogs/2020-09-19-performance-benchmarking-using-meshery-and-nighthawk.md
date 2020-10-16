@@ -33,7 +33,8 @@ Nighthawk is built using open-source builds and test tool Bazel and supports out
 On the other hand, Meshery, written and maintainer by Layer5 Community is the multi-service mesh management plane offering lifecycle, configuration and performance management of service meshes and their workloads. With Meshery,
 you can both, manage your service mesh's lifecycle, and benchmark them with industry-grade tools to let you know how much under or over-utilized your services are.
 
-Soon, Meshery is going to be a canonical implementation for [Service Mesh Performance Specification](https://github.com/layer5io/service-mesh-performance) which is a common and standardised format to describe :
+<img style="float:right;width:20%;" src="/assets/images/SMP(RGB)/stacked/smp-dark-text.png">
+Soon, Meshery is going to be a canonical implementation for [Service Mesh Performance](https://github.com/layer5io/service-mesh-performance) which is a common and standardised format to describe :
 - Performance test configuration
 - Service mesh configuration
 - Environment configuration
