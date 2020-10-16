@@ -8,12 +8,12 @@ export const StepsIndicatorWrapper = styled.ul`
     & li {
         font-size: 17px;
         line-height: 28px;
-        color: var(--gray-4);
+        color: gray;
         margin-bottom: 16px;
 
         &.active {
           font-weight: 600;
-          color: var(--gray-1);
+          color: black;
         }
     }
 `;
