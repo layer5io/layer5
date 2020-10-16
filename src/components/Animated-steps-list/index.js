@@ -4,7 +4,7 @@ import StepsList from "./Steps-list";
 import StepsIndicator from "./Steps-indicator";
 import AnimatedTerminal from "../Animated-terminal";
 import FramedTerminal from "../Animated-terminal/Framed-terminal";
-import { AnimatedStepsListWrapper } from "AnimatedStepsList.style";
+import { AnimatedStepsListWrapper } from "./AnimatedStepsList.style";
 
 // The breakpoints where the next step of each animation triggers
 const breakpoints = [0, 350, 1400, 2450, 2880];
