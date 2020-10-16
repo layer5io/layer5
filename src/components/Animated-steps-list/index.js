@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import useScrollPosition from "./scroll-position";
-import {StepsListWrapper } from "AnimatedStepsList.style"
+import { AnimatedStepsListWrapper } from "AnimatedStepsList.style";
+import StepsList from "./Steps-list";
 
 // The breakpoints where the next step of each animation triggers
 const breakpoints = [0, 350, 1400, 2450, 2880];
@@ -44,7 +45,7 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
     );
 
     return (
-        <StepsListWrapper>
+        <AnimatedStepsListWrapper>
             <div className="animated-steps-list">
                 <div className="indicator-wrapper">
                     <StepsIndicator steps={steps} activeIndex={indicatorIndex} />
@@ -73,7 +74,7 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
                     )}
                 </div>
             </div>
-        </StepsListWrapper>
+        </AnimatedStepsListWrapper>
     )
 };
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StepsListWrapper = styled.div`
+export const AnimatedStepsListWrapper = styled.div`
     .animated-steps-list {
         display: flex;
         & .indicator-wrapper {
