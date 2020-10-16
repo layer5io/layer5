@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import FramedTerminal from "./Framed-terminal";
 
-export default function AnimatedTerminal({ lines, frameLength, loop, paused }) {
+const AnimatedTerminal = ({ lines, frameLength, loop, paused }) =>{
     // Determine the total number of frames
-    let totalFrames = 0
+    let totalFrames = 0;
     lines.forEach((line) => {
         let frames = line.frames ? line.frames : 1;
         if (Array.isArray(line.code)) {
@@ -36,4 +36,6 @@ export default function AnimatedTerminal({ lines, frameLength, loop, paused }) {
     }, [lines]);
 
     return <FramedTerminal frame={frame} lines={lines} />
-}
+};
+
+export default AnimatedTerminal;
