@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import {TerminalWrapper} from "./Terminal.style"
+import React, { Fragment } from "react";
+import {TerminalWrapper} from "./Terminal.style";
 
 /**
  * A Terminal is a simple component representing the presentation
@@ -51,28 +51,28 @@ const Terminal = ({ lines, title, noScroll }) => {
             </div>
             <div className="content">
                 <div className={
-                        noScroll ? "no-scroll-overflow-wrapper overflow-wrapper" : "overflow-wrapper"
-                    }
+                    noScroll ? "no-scroll-overflow-wrapper overflow-wrapper" : "overflow-wrapper"
+                }
                 >
                     <div className="code-wrapper">
-                    {lines && lines.map((line, index) => (
-                      <Fragment key={index}>
-                          <pre className={`${line.short ? "short": ""} ${line.color ? line.color: "blue"}`} >
-                            {line.indent &&
+                        {lines && lines.map((line, index) => (
+                            <Fragment key={index}>
+                                <pre className={`${line.short ? "short": ""} ${line.color ? line.color: "blue"}`} >
+                                    {line.indent &&
                             new Array(line.indent * 2)
                                 .fill({})
                                 .map((_, index) => (
                                     <Fragment key={index}>&nbsp;</Fragment>
                                 ))}
-                              {line.code}
-                          </pre>
-                      </Fragment>
-                    ))}
+                                    {line.code}
+                                </pre>
+                            </Fragment>
+                        ))}
                     </div>
                 </div>
             </div>
         </TerminalWrapper>
-    )
+    );
 };
 
 export default Terminal;

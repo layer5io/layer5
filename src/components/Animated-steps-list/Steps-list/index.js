@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {StepsListWrapper} from "./StepsList.style"
+import {StepsListWrapper} from "./StepsList.style";
 import Step from "./Step";
 
 const StepsList = ({ steps, className, onFocusedIndexChanged }) => {
@@ -22,10 +22,10 @@ const StepsList = ({ steps, className, onFocusedIndexChanged }) => {
                             // Calculate the first element in focus, set that as
                             // our new focusedStepIndex. If it's been updated
                             // notify the subscriber.
-                            const newFocusIndex = newStatusArray.indexOf(true)
+                            const newFocusIndex = newStatusArray.indexOf(true);
                             if (focusedStepIndex != newFocusIndex && newFocusIndex != -1) {
                                 setFocusedStepIndex(newFocusIndex);
-                                onFocusedIndexChanged(newFocusIndex)
+                                onFocusedIndexChanged(newFocusIndex);
                             }
                         }}
                         {...step}
@@ -33,7 +33,7 @@ const StepsList = ({ steps, className, onFocusedIndexChanged }) => {
                 ))}
             </ul>
         </StepsListWrapper>
-    )
+    );
 };
 
 export default StepsList;

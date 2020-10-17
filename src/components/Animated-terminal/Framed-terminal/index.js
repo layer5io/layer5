@@ -61,9 +61,9 @@ const FramedTerminal = ({ frame, lines }) => {
     lines.forEach((line) => {
         let frames = line.frames ? line.frames : 1;
         if (Array.isArray(line.code)) {
-            totalFrames += line.code.length * frames
+            totalFrames += line.code.length * frames;
         } else {
-            totalFrames += frames
+            totalFrames += frames;
         }
     });
 
@@ -89,29 +89,29 @@ const FramedTerminal = ({ frame, lines }) => {
                         code: line.code,
                         indent: line.indent,
                         short: line.short,
-                    }
+                    };
                 } else {
                     let lineFrame = Math.floor(remainingFrames / line.frames);
                     result = {
                         color: line.color,
                         code: line.code.slice(0, lineFrame + 1).splice(-1, 1),
                         indent: line.indent,
-                    }
+                    };
                 }
             }
 
             // Increment our previousFrames
             let lineFrames = line.frames ? line.frames : 1;
             if (Array.isArray(line.code)) {
-                previousFrames += line.code.length * lineFrames
+                previousFrames += line.code.length * lineFrames;
             } else {
-                previousFrames += lineFrames
+                previousFrames += lineFrames;
             }
-            return result
+            return result;
         })
         .filter((el) => el != null);
 
-    return <Terminal lines={terminalLines} noScroll />
+    return <Terminal lines={terminalLines} noScroll />;
 };
 
 export default FramedTerminal;

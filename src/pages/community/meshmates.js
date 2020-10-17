@@ -20,6 +20,6 @@ const MeshmatePage=() => {
             </Layout>
         </ThemeProvider>
     );
-}
+};
 
 export default MeshmatePage;

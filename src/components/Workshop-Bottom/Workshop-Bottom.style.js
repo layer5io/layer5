@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const WorkshopBottomWrapper = styled.div`
   max-width: 1140px;
@@ -37,6 +37,6 @@ const WorkshopBottomWrapper = styled.div`
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
     }
   }
-`
+`;
 
-export default WorkshopBottomWrapper
+export default WorkshopBottomWrapper;

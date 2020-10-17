@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import FramedTerminal from "./Framed-terminal";
 
 const AnimatedTerminal = ({ lines, frameLength, loop, paused }) =>{
@@ -7,9 +7,9 @@ const AnimatedTerminal = ({ lines, frameLength, loop, paused }) =>{
     lines.forEach((line) => {
         let frames = line.frames ? line.frames : 1;
         if (Array.isArray(line.code)) {
-            totalFrames += line.code.length * frames
+            totalFrames += line.code.length * frames;
         } else {
-            totalFrames += frames
+            totalFrames += frames;
         }
     });
 
@@ -19,23 +19,23 @@ const AnimatedTerminal = ({ lines, frameLength, loop, paused }) =>{
         let interval = setInterval(() => {
             if (!paused) {
                 if (loop) {
-                    setFrame((frame) => frame + 1)
+                    setFrame((frame) => frame + 1);
                 } else {
                     if (frame + 1 < totalFrames) {
-                        setFrame((frame) => frame + 1)
+                        setFrame((frame) => frame + 1);
                     }
                 }
             }
         }, frameLength);
-        return () => clearInterval(interval)
+        return () => clearInterval(interval);
     }, [frame]);
 
     // Reset Frames if our lines change
     useEffect(() => {
-        setFrame(0)
+        setFrame(0);
     }, [lines]);
 
-    return <FramedTerminal frame={frame} lines={lines} />
+    return <FramedTerminal frame={frame} lines={lines} />;
 };
 
 export default AnimatedTerminal;

@@ -25,12 +25,12 @@ const calculateCurrentFrame = (terminalSteps, currentIndex, scrollPosition) =>{
     currentLines.forEach((line) => {
         let frames = line.frames ? line.frames : 1;
         if (Array.isArray(line.code)) {
-            totalFrames += line.code.length * frames
+            totalFrames += line.code.length * frames;
         } else {
-            totalFrames += frames
+            totalFrames += frames;
         }
     });
-    return Math.max(0, percentage * (totalFrames - 1))
+    return Math.max(0, percentage * (totalFrames - 1));
 };
 
 const AnimatedStepsList = ({ terminalHeroState, steps }) => {
@@ -58,7 +58,7 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
                     className="steps-list"
                     steps={steps}
                     onFocusedIndexChanged={(newStep) => {
-                        setIndicatorIndex(newStep)
+                        setIndicatorIndex(newStep);
                     }}
                 />
 
@@ -78,7 +78,7 @@ const AnimatedStepsList = ({ terminalHeroState, steps }) => {
                 </div>
             </div>
         </AnimatedStepsListWrapper>
-    )
+    );
 };
 
 export default AnimatedStepsList;

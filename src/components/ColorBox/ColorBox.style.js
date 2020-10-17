@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const ColorBoxWrapper = styled.div`
          .PalletBox {
@@ -6,7 +6,7 @@ export const ColorBoxWrapper = styled.div`
 
            height: 6.5rem;
            background-color: ${props =>
-             props.bgcolor ? props.bgcolor : "red"};
+        props.bgcolor ? props.bgcolor : "red"};
            margin-bottom: 15px;
            width: 6.5rem;
            font-size: 0.8rem;
@@ -15,4 +15,4 @@ export const ColorBoxWrapper = styled.div`
            font-weight: bold;
            text-align: center;
          }
-       `
+       `;

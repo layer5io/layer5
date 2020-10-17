@@ -4,7 +4,7 @@ import AnimatedTerminal from "../../Animated-terminal";
 const SteppedAnimatedTerminal = ({ activeIndex, steps }) => {
     const [currentIndex, setCurrentIndex] = useState(activeIndex);
     if (activeIndex != currentIndex) {
-        setCurrentIndex(activeIndex)
+        setCurrentIndex(activeIndex);
     }
 
     return (
@@ -13,7 +13,7 @@ const SteppedAnimatedTerminal = ({ activeIndex, steps }) => {
             loop={steps[activeIndex].loop}
             lines={steps[activeIndex].lines}
         />
-    )
+    );
 };
 
 export default SteppedAnimatedTerminal;

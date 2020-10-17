@@ -1,5 +1,5 @@
-import React from 'react'
-import Program from '../../assets/images/programs/Layer5-mentor-program.png'
+import React from "react";
+import Program from "../../assets/images/programs/Layer5-mentor-program.png";
 
 const ProgramDetails=() => {
     return (
@@ -37,14 +37,14 @@ const ProgramDetails=() => {
                     <p>
                         <b
                         ><a
-                            href="https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit?usp=sharing"
-                        >Get familiar with all of the projects</a
+                                href="https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit?usp=sharing"
+                            >Get familiar with all of the projects</a
                             >
           - </b
                         >Spend time understanding each of the Layer5 initiatives through high
         level overviews available in the community drive and in discussion with
         your MeshMate.
-      </p>
+                    </p>
                 </li>
 
                 <li>
@@ -53,7 +53,7 @@ const ProgramDetails=() => {
         familiarize with the architecture and technologies used in the projects.
         Inform your MeshMate of your current skills and what skills you would
         like to develop.
-      </p>
+                    </p>
                 </li>
 
                 <li>
@@ -61,40 +61,40 @@ const ProgramDetails=() => {
                         <b><a href="https://meshery.io/#getting-started">Run Meshery</a></b> -
         Put on your user hat and walk-through all of Meshery’s features and
         functions as a user.
-      </p>
+                    </p>
                 </li>
 
                 <li>
                     <p>
                         <b
                         ><a
-                            href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#general-contribution-flow"
-                        >Build Meshery</a
+                                href="https://github.com/layer5io/meshery/blob/master/CONTRIBUTING.md#general-contribution-flow"
+                            >Build Meshery</a
                             ></b
                         >
         - Confirm that you have a usable development environment.
-      </p>
+                    </p>
                 </li>
 
                 <li>
                     <p>
                         <b
                         ><a
-                            href="https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+"
-                        >Contribute</a
+                                href="https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+"
+                            >Contribute</a
                             ></b
                         >
         - Grab an open issue or suggest a new one.
-      </p>
+                    </p>
                 </li>
             </ul>
             <h4>Code of Conduct</h4>
             <p>
                 The comfort and safety of Layer5 community members is our priority. You must agree to the <a href="/terms/code-of-conduct">Code of Conduct</a> to participate in the Layer5 community, and any
     violations of the Code of Conduct will be taken seriously. To report any violations please fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform">this incident form</a>.
-  </p>
+            </p>
 
         </div>
-    )
-}
+    );
+};
 export default ProgramDetails;

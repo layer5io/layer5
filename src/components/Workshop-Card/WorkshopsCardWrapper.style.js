@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const WorkshopCardWrapper = styled.div`
   display: block;
@@ -71,5 +71,5 @@ const WorkshopCardWrapper = styled.div`
 
   @media only screen and (max-width: 480px) {
   }
-`
-export default WorkshopCardWrapper
+`;
+export default WorkshopCardWrapper;

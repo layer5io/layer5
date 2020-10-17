@@ -65,7 +65,7 @@ class Blog extends Component {
 
     componentDidMount() {
         if (this.props.location.state){
-            if(this.props.location.state.isListView) this.setListView()
+            if(this.props.location.state.isListView) this.setListView();
         }
     }
 

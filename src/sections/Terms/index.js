@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader"
+import PageHeader from "../../reusecore/PageHeader";
 
-import TermsWrapper from './terms.style'
+import TermsWrapper from "./terms.style";
 
 const Conduct = () => {
     return (
@@ -80,14 +80,14 @@ const Conduct = () => {
                             <li>If necessary, staff are empowered to take appropriate actions that may include, but are not limited to, warnings, expulsion from the conference without refund, and referrals to venue security or local law enforcement.</li>
                         </ul>
                         <p>Portions derived from the <a href="https://github.com/docker/code-of-conduct">Docker Community Code of Conduct</a>, <a href="https://api.slack.com/docs/community-code-of-conduct">Slack Developer Community Code of Conduct</a>, <a href="https://adainitiative.org/2014/02/18/howto-design-a-code-of-conduct-for-your-community/">The Ada Initiative</a>,
-                        <a href="https://geekfeminism.org/about/code-of-conduct/">geekfeminism.org</a> and <a href="https://events.drupal.org/dublin2016/code-conduct">Drupal Events Code of Conduct</a></p>
+                            <a href="https://geekfeminism.org/about/code-of-conduct/">geekfeminism.org</a> and <a href="https://events.drupal.org/dublin2016/code-conduct">Drupal Events Code of Conduct</a></p>
                         <p>This work is licensed under a Creative Commons Attribution 3.0 Unported License For attribution requirements:</p>
                         <p>“@Layer5 Code of Conduct” © 2020 Layer5, Inc, used under a Creative Commons Attribution Unported license: <a href="http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/licenses/by/3.0/ </a></p>
                     </Col>
                 </Row>
             </Container>
         </TermsWrapper>
-    )
-}
+    );
+};
 
-export default Conduct
+export default Conduct;
