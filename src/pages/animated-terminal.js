@@ -18,7 +18,7 @@ const temp = () => (
             <SEO title="About" />
             <Navigation />
             <Container>
-                <div style = {{ marginTop: "1000px", }}>
+                <div style = {{ marginTop: "1000px", marginBottom: "500px",}}>
                 <AnimatedStepsList
                     terminalHeroState={{
                         frameLength: 100,

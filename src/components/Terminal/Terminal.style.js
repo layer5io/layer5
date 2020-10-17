@@ -17,7 +17,7 @@ export const TerminalWrapper = styled.div`
 
   width: 837px;
 
-  & .title-bar {
+  .title-bar {
     display: flex;
     align-items: center;
     background: var(--terminal-title-color);
@@ -25,14 +25,14 @@ export const TerminalWrapper = styled.div`
     height: 46px;
     border-radius: var(--terminal-radius) var(--terminal-radius) 0 0;
 
-    & .title {
+    .title {
       color: var(--gray-4);
       font-family: 'Courier New', Courier, monospace;
       font-size: 13.5px;
       margin: 0 auto;
     }
 
-    & .window-controls {
+    .window-controls {
       position: absolute;
       display: block;
       list-style: none;
@@ -41,7 +41,7 @@ export const TerminalWrapper = styled.div`
       margin-bottom: 0;
       padding: 0;
 
-      & li {
+      li {
         display: inline-block;
         width: 14px;
         height: 14px;
@@ -52,7 +52,7 @@ export const TerminalWrapper = styled.div`
     }
   }
 
-  & .content {
+  .content {
     width: 100%;
     min-height: 525px;
     height: 100%;
@@ -64,9 +64,8 @@ export const TerminalWrapper = styled.div`
       height: 525px;
     }
   }
-}
 
-.overflowWrapper {
+.overflow-wrapper {
   width: 100%;
   height: 100%;
   position: relative;
@@ -82,8 +81,8 @@ export const TerminalWrapper = styled.div`
     height: 0;
   }
 
-  & .code-wrapper {
-    & pre {
+  .code-wrapper {
+     pre {
       padding: 0;
       margin: 0;
       width: 100%;
@@ -91,19 +90,19 @@ export const TerminalWrapper = styled.div`
       font-style: normal;
       font-weight: normal;
       font-size: 12px;
-      line-height: 27px;
+      line-height: 2px;
       white-space: pre-wrap;
       color: var(--blue);
-      &.short {
+      .short {
         line-height: 16px;
       }
-      &.navy {
+      .navy {
         color: var(--vagrant-l1);
       }
-      &.gray {
+      .gray {
         color: var(--gray-5);
       }
-      &.white {
+      .white {
         color: var(--white);
       }
 
@@ -116,11 +115,10 @@ export const TerminalWrapper = styled.div`
 }
 
 .no-scroll-overflow-wrapper {
-  composes: overflowWrapper;
 
-  & .codeWrapper {
+  .code-wrapper {
     bottom: 0;
     position: absolute;
     min-height: 100%;
   }
-`;
+}`;
