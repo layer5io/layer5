@@ -93,16 +93,16 @@ export const TerminalWrapper = styled.div`
       line-height: 2px;
       white-space: pre-wrap;
       color: var(--blue);
-      .short {
+      &.short {
         line-height: 16px;
       }
-      .navy {
+      &.navy {
         color: var(--vagrant-l1);
       }
-      .gray {
+      &.gray {
         color: var(--gray-5);
       }
-      .white {
+      &.white {
         color: var(--white);
       }
 
