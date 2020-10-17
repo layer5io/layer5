@@ -18,7 +18,7 @@ const temp = () => (
             <SEO title="About" />
             <Navigation />
             <Container>
-                <div style = {{ marginTop: "1000px", marginBottom: "500px",}}>
+                <div style = {{ marginTop: "970px", marginBottom: "500px",}}>
                 <AnimatedStepsList
                     terminalHeroState={{
                         frameLength: 100,
@@ -374,6 +374,11 @@ const temp = () => (
                                         accessible to the public. This works by updating load
                                         balancers, configuring DNS, etc. The exact behavior depends
                                         on your target platform.
+                                    </p>
+                                    <p>
+                                        The release step is pluggable, enabling you to drop in
+                                        custom release logic such as blue/green, service mesh usage,
+                                        and more.
                                     </p>
                                     <p>
                                         The release step is pluggable, enabling you to drop in

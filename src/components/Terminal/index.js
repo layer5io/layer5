@@ -43,9 +43,9 @@ const Terminal = ({ lines, title, noScroll }) => {
         <TerminalWrapper>
             <div className="title-bar">
                 <ul className="window-controls">
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li/>
+                    <li/>
+                    <li/>
                 </ul>
                 {title && <div className="title">{title}</div>}
             </div>
