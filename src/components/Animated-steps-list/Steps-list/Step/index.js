@@ -15,7 +15,7 @@ const Step =({ name, description, logos, onInViewStatusChanged }) => {
 
     return (
         <StepWrapper ref={ref}>
-            <h4>{name}</h4>
+            <h2>{name}</h2>
             <div className="description">{description}</div>
         </StepWrapper>
     )

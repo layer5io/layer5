@@ -15,7 +15,7 @@ const temp = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="About" />
+            <SEO title="Mesheryctl" />
             <Navigation />
             <Container>
                 <div style = {{ marginTop: "970px", marginBottom: "500px",}}>
@@ -26,7 +26,7 @@ const temp = () => (
                         lines: [
                             {
                                 frames: 5,
-                                code: ['$ waypoint up', '$ waypoint up |'],
+                                code: ['$ curl -L https://git.io/meshery | bash -', '$ curl -L https://git.io/meshery | bash -|'],
                             },
                         ],
                     }}
@@ -36,18 +36,17 @@ const temp = () => (
                             description: (
                                 <>
                                     <p>
-                                        Waypoint builds applications for any language or framework.
-                                        You can use Buildpacks for automatically building common
-                                        frameworks or custom Dockerfiles or other build tools for
-                                        more fine-grained control.
+                                        Meshery provides you with a clean, robust,
+                                        streamlined command-line interface to manage
+                                        and benchmark your service meshes, mesheryctl.
+
                                     </p>
                                     <p>
-                                        The build step is where your application and assets are
-                                        compiled, validated, and an artifact is created.
+                                        With mesheryctl, not only you can manage your adapters &
+                                        containers but you can also benchmark your mesh using the command line.
                                     </p>
                                     <p>
-                                        This artifact can be published to a remote registry or
-                                        simply passed to the deploy step.
+                                        mesheryctl provides support to a number of platforms so that we never miss out users.
                                     </p>
                                 </>
                             ),
@@ -93,134 +92,142 @@ const temp = () => (
                                         color: 'white',
                                         frames: 4,
                                         code: [
-                                            '» Building',
-                                            '» Building .',
-                                            '» Building . .',
-                                            '» Building . . .',
+                                            'Extracting mesheryctl-v0.3.14',
+                                            'Extracting mesheryctl-v0.3.14 .',
+                                            'Extracting mesheryctl-v0.3.14 . .',
+                                            'Extracting mesheryctl-v0.3.14 . . .',
                                         ],
                                     },
                                     {
-                                        frames: 10,
+                                        frames: 4,
                                         code:
-                                            'Creating new buildpack-based image using builder: buildpacks:18',
+                                            'Archive:  /Users/layer5/meshery.zip',
                                         color: 'gray',
                                     },
                                     {
-                                        frames: 5,
-                                        code: '✓ Creating pack client',
+                                        frames: 4,
+                                        code: 'inflating: LICENSE',
+                                        indent: 1,
+                                        short: true
                                     },
                                     {
                                         frames: 2,
+                                        code: 'inflating: README.md',
+                                        indent: 1,
+                                        short: true
+                                    },
+                                    {
+                                        frames: 2,
+                                        code: 'inflating: mesheryctl',
+                                        indent: 1,
+                                        short: true
+                                    },
+                                    { code: ' ' },
+                                    {
+                                        frames: 2,
+                                        code: 'Installing mesheryctl in /usr/local/bin.',
+                                        color: 'gray',
+                                    },
+                                    {
+                                        frames: 2,
+                                        code: 'mesheryctl installed.',
+                                        color: 'gray',
+                                    },
+                                    {
+                                        frames: 2,
+                                        code: 'permissions moved to layer5',
+                                        color: 'gray',
+                                    },
+                                    {
+                                        frames: 8,
                                         code: [
-                                            '⠋ Building image',
-                                            '⠙ Building image',
-                                            '⠹ Building image',
-                                            '⠸ Building image',
-                                            '⠼ Building image',
-                                            '⠴ Building image',
-                                            '⠦ Building image',
-                                            '⠧ Building image',
-                                            '⠇ Building image',
-                                            '⠏ Building image',
-                                            '⠋ Building image',
-                                            '⠙ Building image',
-                                            '⠹ Building image',
-                                            '⠸ Building image',
-                                            '⠼ Building image',
-                                            '⠴ Building image',
-                                            '⠦ Building image',
-                                            '⠧ Building image',
-                                            '⠇ Building image',
-                                            '⠏ Building image',
-                                            '  Building image',
+                                            'Removing installation files and opening Meshery',
+                                            'Removing installation files and opening Meshery.',
+                                            'Removing installation files and opening Meshery..',
+                                            'Removing installation files and opening Meshery...',
+                                            'Removing installation files and opening Meshery...Updating Meshery now',
+                                            'Removing installation files and opening Meshery...Updating Meshery now.',
+                                            'Removing installation files and opening Meshery...Updating Meshery now..',
+                                            'Removing installation files and opening Meshery...Updating Meshery now...',
                                         ],
-                                    },
-                                    {
-                                        frames: 5,
-                                        short: true,
-                                        color: 'navy',
-                                        code: "│ [exporter] Adding layer 'ruby:ruby'",
-                                    },
-                                    {
-                                        frames: 5,
-                                        short: true,
-                                        color: 'navy',
-                                        code: '│ [exporter] Adding 1/1 app layer(s)',
-                                    },
-                                    {
-                                        frames: 5,
-                                        short: true,
-                                        color: 'navy',
-                                        code: "│ [exporter] Reusing layer 'launcher'",
-                                    },
-                                    {
-                                        frames: 5,
-                                        short: true,
-                                        color: 'navy',
-                                        code: "│ [exporter] Reusing layer 'config'",
-                                    },
-                                    {
-                                        frames: 5,
-                                        short: true,
-                                        color: 'navy',
-                                        code:
-                                            "│ [exporter] Adding label 'io.buildpacks.lifecycle.metadata'",
-                                    },
-                                    {
-                                        frames: 5,
-                                        short: true,
-                                        color: 'navy',
-                                        code:
-                                            "│ [exporter] Adding label 'io.buildpacks.build.metadata'",
-                                    },
-                                    {
-                                        frames: 5,
-                                        short: true,
-                                        color: 'navy',
-                                        code:
-                                            "│ [exporter] Adding label 'io.buildpacks.project.metadata'",
-                                    },
-                                    {
-                                        frames: 5,
-                                        short: true,
-                                        color: 'navy',
-                                        code: '│ [exporter] *** Images (512c587cc97c):',
-                                    },
-                                    {
-                                        frames: 5,
-                                        short: true,
-                                        color: 'navy',
-                                        code:
-                                            '│ [exporter]       index.docker.io/library/example-ruby:latest',
-                                    },
-                                    {
-                                        frames: 5,
-                                        short: true,
-                                        color: 'navy',
-                                        code: "│ [exporter] Reusing cache layer 'ruby:gems'",
-                                    },
-                                    { code: '' },
-                                    {
-                                        frames: 5,
-                                        code: '✓ Injecting entrypoint binary to image',
-                                    },
-                                    { code: '' },
-                                    {
-                                        frames: 5,
-                                        code: 'Generated new Docker image: example-ruby:latest',
                                         color: 'gray',
                                     },
                                     {
-                                        frames: 5,
-                                        code:
-                                            'Tagging Docker image: example-ruby:latest => gcr.io/example/example-ruby:latest',
-                                        color: 'gray',
+                                        frames: 8,
+                                        code: [
+                                            'Pulling meshery',
+                                            'Pulling meshery          .',
+                                            'Pulling meshery          ..',
+                                            'Pulling meshery          ...',
+                                            'Pulling meshery          ... download complete',
+                                        ],
+                                        short: true
                                     },
                                     {
                                         frames: 5,
-                                        code:
-                                            'Docker image pushed: gcr.io/example/example-ruby:latest',
-                                        color: 'white',
+                                        code: [
+                                            'Pulling meshery-linkerd',
+                                            'Pulling meshery-linkerd  .',
+                                            'Pulling meshery-linkerd  ..',
+                                            'Pulling meshery-linkerd  ...',
+                                            'Pulling meshery-linkerd  ... done',
+                                        ],
+                                        short: true
+                                    },
+                                    {
+                                        frames: 5,
+                                        code: [
+                                            'Pulling meshery-consul',
+                                            'Pulling meshery-consul   .',
+                                            'Pulling meshery-consul   ..',
+                                            'Pulling meshery-consul   ...',
+                                            'Pulling meshery-consul   ... done',
+                                        ],
+                                        short: true
+                                    },
+                                    {
+                                        frames: 5,
+                                        code: [
+                                            'Pulling meshery-octarine',
+                                            'Pulling meshery-octarine .',
+                                            'Pulling meshery-octarine ..',
+                                            'Pulling meshery-octarine ...',
+                                            'Pulling meshery-octarine ... done',
+                                        ],
+                                        short: true
+                                    },
+                                    {
+                                        frames: 5,
+                                        code: [
+                                            'Pulling meshery-nsm',
+                                            'Pulling meshery-nsm      .',
+                                            'Pulling meshery-nsm      ..',
+                                            'Pulling meshery-nsm      ...',
+                                            'Pulling meshery-nsm      ... done',
+                                        ],
+                                        short: true
+                                    },
+                                    {
+                                        frames: 5,
+                                        code: [
+                                            'Pulling meshery-cpx',
+                                            'Pulling meshery-cpx      .',
+                                            'Pulling meshery-cpx      ..',
+                                            'Pulling meshery-cpx      ...',
+                                            'Pulling meshery-cpx      ... done',
+                                        ],
+                                        short: true
+                                    },
+                                    {
+                                        frames: 5,
+                                        code: [
+                                            'Pulling watchtower',
+                                            'Pulling watchtower       .',
+                                            'Pulling watchtower       ..',
+                                            'Pulling watchtower       ...',
+                                            'Pulling watchtower       ... done',
+                                        ],
+                                        short: true
                                     },
                                 ],
                             },
@@ -230,14 +237,12 @@ const temp = () => (
                             description: (
                                 <>
                                     <p>
-                                        Waypoint deploys artifacts created by the build step to a
-                                        variety of platforms, from Kubernetes to EC2 to static site
-                                        hosts.
-                                    </p>
-                                    <p>
-                                        It configures your target platform and prepares the new
-                                        application version to be publicly accessible. Deployments
-                                        are accessible via a preview URL prior to release.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                                     </p>
                                 </>
                             ),
@@ -352,14 +357,14 @@ const temp = () => (
                                     {
                                         frames: 2,
                                         code:
-                                            '\nThe deploy was successful! A Waypoint deployment URL is shown below. This can be used internally to check your deployment and is not meant for external traffic. You can manage this hostname using "waypoint hostname"',
+                                            '\nThe deploy was successful!',
                                         color: 'gray',
                                     },
                                     { code: '' },
                                     {
                                         frames: 1,
                                         code:
-                                            '\nDeployment URL: https://immensely-guided-stag--v5.waypoint.run',
+                                            '\nDeployment URL: http://meshery.io/',
                                         color: 'green',
                                     },
                                 ],
@@ -370,20 +375,12 @@ const temp = () => (
                             description: (
                                 <>
                                     <p>
-                                        Waypoint releases your staged deployments and makes them
-                                        accessible to the public. This works by updating load
-                                        balancers, configuring DNS, etc. The exact behavior depends
-                                        on your target platform.
-                                    </p>
-                                    <p>
-                                        The release step is pluggable, enabling you to drop in
-                                        custom release logic such as blue/green, service mesh usage,
-                                        and more.
-                                    </p>
-                                    <p>
-                                        The release step is pluggable, enabling you to drop in
-                                        custom release logic such as blue/green, service mesh usage,
-                                        and more.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                                     </p>
                                 </>
                             ),
@@ -426,7 +423,7 @@ const temp = () => (
                                 loop: false,
                                 lines: [
                                     {
-                                        frames: 4,
+                                        frames: 2,
                                         color: 'white',
                                         code: [
                                             '» Releasing',
@@ -436,7 +433,7 @@ const temp = () => (
                                         ],
                                     },
                                     {
-                                        frames: 5,
+                                        frames: 2,
                                         code:
                                             '✓ Kubernetes client connected to https://kubernetes.example.com:6443',
                                     },
@@ -479,13 +476,13 @@ const temp = () => (
                                         ],
                                     },
                                     {
-                                        frames: 5,
+                                        frames: 2,
                                         code: '  Deployment: 01EJCSFNDDD15P2BXBW2KCYVB2',
                                         color: 'navy',
                                     },
                                     { code: '' },
                                     {
-                                        frames: 5,
+                                        frames: 2,
                                         code: '\nThe release was successful!',
                                         color: 'green',
                                     },

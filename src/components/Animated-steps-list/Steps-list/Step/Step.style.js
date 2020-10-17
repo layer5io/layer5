@@ -7,7 +7,7 @@ export const StepWrapper = styled.li`
         width: unset;
     }
 
-      & h4 {
+      & h2 {
         margin-bottom: 12px;
         margin-top: 0;
       }
