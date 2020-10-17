@@ -16,19 +16,23 @@ const LandscapeGrid=() => {
                             <h2>Comparison of Service Mesh Strengths</h2>
                             <img src={ServiceMeshComparison} width="100%" alt="Service Mesh Comparison" />
                             <div className="timeline">
-                                <div className="meshname-img">
-                                    {serviceMeshes.map(mesh =>
+                                {serviceMeshes.reverse().map(mesh =>
+                                    <div key={mesh.timeline_order} className={`data-cont arr${mesh.timeline_order%2}`}>
                                         <div key={mesh.timeline_order} className={`content${mesh.timeline_order%2}`}>
-                                            <div key={mesh.timeline_order} className={`data-cont arr${mesh.timeline_order%2}`}>
-                                                <div key={mesh.timeline_order} className={`img-style${mesh.timeline_order%2}`}>
-                                                    <img src={mesh.icon} alt={mesh.name} style={{ width: "inherit", height: "inherit" }} />
-                                                </div>
-                                                <p className="mesh-name"> {mesh.name}</p>
+                                            <div className="meshname-img">
+                                                {mesh.icon?
+                                                    <div key={mesh.timeline_order} className={`img-style${mesh.timeline_order%2}`}>
+                                                        <img src={mesh.icon} alt={mesh.name} style={{ width: "inherit", height: "inherit" }} />
+                                                    </div>
+                                                    :<></>}
+                                                <p className="mesh-name">{mesh.name}</p>
                                             </div>
                                             <p className="mesh-ann-date">{mesh.announce_date}</p>
                                         </div>
-                                    )}
-                                </div>
+
+                                    </div>
+                                )}
+
                             </div>
 
                         </Row>
