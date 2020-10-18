@@ -1,12 +1,12 @@
 import React from "react";
-import image from "../../assets/images/community/Layer5-mentor-program.png";
+import mentorimg from "../../assets/images/community/Layer5-mentor-program.png";
 
 const CommunityMembers=()=>{
     return (
         <div>
             <h3 className="black-text">Our Community Members</h3>
             <img
-                src={image}
+                src={mentorimg}
                 width="40%" align="right" 
                 className="mentorimg"
             />
@@ -18,7 +18,7 @@ const CommunityMembers=()=>{
                 </p>    
                 <div width="100%" className="center">
                     <h3>
-                        <a href="/community/members" className="link">See our community members</a>
+                        <a href="/community/members">See our community members</a>
                     </h3>
                 </div>
             </div>

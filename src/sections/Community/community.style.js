@@ -8,7 +8,7 @@ const CommunitySectionWrapper = styled.div`
         margin-left: -0.75rem;
         margin-right: -0.75rem;
     }
-    row-view {
+    .row-view {
         padding: 15px;
         vertical-align: middle;
         height: fit-content;
@@ -17,54 +17,8 @@ const CommunitySectionWrapper = styled.div`
         justify-content:center;
         text-align: center;
     }
-    h3 {
-        font-size: 2rem;
-        line-height: 110%;
-        margin: 1.46rem 0 1.168rem 0;
-    }
-    h6 {
-        font-size: 1rem;
-        line-height: 110%;
-        margin: 0.5rem 0 0.4rem 0;
-        font-weight: 500;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: 400;
-        line-height: 1.1;
-    }
-    a {
-        color: #039be5;
-        text-decoration: none;
-        width: auto;
-    }
-    .h3link{
-       padding-left:25%;
-    }
-    .link{
-        font-size: 0.65em;
-    }
     .mentorimg{
         margin: 5px;
-    }
-    .btn{
-        background-color: #ebc017;
-        color: #3c494e;
-        font-size: 0.65em;
-        width: auto;
-        border: none;
-        border-radius: 2px;
-        display: inline-block;
-        height: 36px;
-        line-height: 36px;
-        padding: 0 2rem;
-        padding-bottom: 40px;
-        padding-top: 10px;
-        text-transform: uppercase;
-        transition: 0.3s ease-out;
-        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    }
-    .btn:hover{
-        transform: translateY(-1px);
     }
     #meetingstable {
         border-collapse: collapse;

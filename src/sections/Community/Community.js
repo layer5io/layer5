@@ -1,5 +1,6 @@
 import React from "react";
-import image from "../../assets/images/community/datacenter-crash.svg";
+import datacenterimg from "../../assets/images/community/datacenter-crash.svg";
+import Button from "../../reusecore/Button";
 
 const Community= () => {
     return (
@@ -8,7 +9,7 @@ const Community= () => {
   service mesh projects and their maintainers in the world</h3>
             <div>  
                 <img
-                    src={image}
+                    src={datacenterimg}
                     width="40%"
                     align="right"
                 />
@@ -24,9 +25,8 @@ const Community= () => {
                     <p>New members are always welcome.</p>
                     <h3>
                         <a
-                            className=" btn "
                             href="http://slack.layer5.io"
-                        >Join the Community</a>
+                        ><Button primary>Join the Community</Button></a>
                     </h3>
                 </div>
     
@@ -39,7 +39,7 @@ const Community= () => {
                 </p>
             </div>
             <div width="100%">
-                <h3 className="h3link">
+                <h3>
                     <a
                         href="https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit?usp=sharing"
                         className="link"
