@@ -1,5 +1,4 @@
 import React from "react"
-
 import { Container, Row, Col } from "../../reusecore/Layout"
 import SectionTitle from "../../reusecore/SectionTitle"
 import Button from "../../reusecore/Button"
@@ -7,7 +6,6 @@ import VintageBox from "../../reusecore/VintageBox"
 import SocialLinks from "../../components/SocialLinks"
 import particle1 from "../../assets/images/app/particle/05.png"
 import particle2 from "../../assets/images/app/particle/06.png"
-
 import AboutSectionWrapper from "./about.style"
 
 const About = () => {
