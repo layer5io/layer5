@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const SocialSectionWrapper = styled.div`
   .social-icons {
@@ -22,5 +22,5 @@ const SocialSectionWrapper = styled.div`
           }
         }
     }
-`
-export default SocialSectionWrapper
+`;
+export default SocialSectionWrapper;
