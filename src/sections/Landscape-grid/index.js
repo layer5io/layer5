@@ -1,10 +1,11 @@
 import React from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import { LandscapePageWrapper } from "./LandscapeGrid.style";
+import { LandscapePageWrapper } from "./landscapeGrid.style";
 import ServiceMeshComparison from "../../assets/images/landscape/comparison-of-service-mesh-strengths.svg";
-import { serviceMeshes } from '../../collections/landscape/timeline'
+import { serviceMeshes } from '../../collections/landscape/non-functional'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import Categories from './categories'
 import 'react-vertical-timeline-component/style.min.css';
 
 const LandscapeGrid=() => {
@@ -24,24 +25,30 @@ const LandscapeGrid=() => {
                                 <h4>Project Announcement</h4>
                             </div>
                             <VerticalTimeline>
-                                {serviceMeshes.reverse().map(mesh =>
-                                    <VerticalTimelineElement
-                                        key={mesh.timeline_order}
-                                        className="vertical-timeline-element--work"
-                                        contentStyle={{ background: 'rgb(33, 150, 243)', color: '#000' }}
-                                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                                        date={mesh.announce_date}
-                                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                    >
-                                        <div className="meshtitle-img">
-                                            {mesh.icon?
-                                                <img src={mesh.icon} alt={mesh.name} style={{ width: "100px", height: "inherit" }} />
+                                {serviceMeshes.reverse().map(mesh => (
+                                    mesh.timeline_order?
+                                        <VerticalTimelineElement
+                                            key={mesh.timeline_order}
+                                            className="vertical-timeline-element--work"
+                                            contentStyle={{ background: 'rgb(33, 150, 243)', color: '#000' }}
+                                            contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                                            date={mesh.announce_date}
+                                            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                        >
+                                            {mesh.timeline_order?
+                                                <div className="meshtitle-img">
+                                                    {mesh.icon?
+                                                        <img src={mesh.icon} alt={mesh.name} style={{ width: "100px", height: "inherit" }} />
+                                                        :<></>}
+                                                    <h3 className="vertical-timeline-element-title">{mesh.name}</h3>
+                                                </div>
                                                 :<></>}
-                                            <h3 className="vertical-timeline-element-title">{mesh.name}</h3>
-                                        </div>
-                                    </VerticalTimelineElement>
+                                        </VerticalTimelineElement>
+                                        :<></>
+                                )
                                 )}
                             </VerticalTimeline>
+                            <Categories />
                         </Row>
                     </div>
                 </Container>
