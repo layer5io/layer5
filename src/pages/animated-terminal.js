@@ -18,7 +18,7 @@ const temp = () => (
             <SEO title="mesheryctl | Command Line Management of Service Meshes" />
             <Navigation />
             <Container>
-                <div style = {{ marginTop: "970px", marginBottom: "200px",}}>
+                <div style = {{ marginTop: "970px", marginBottom: "500px",}}>
                     <AnimatedStepsList
                         terminalHeroState={{
                             frameLength: 100,
@@ -464,7 +464,7 @@ const temp = () => (
                                     loop: false,
                                     lines: [
                                         {
-                                            frames: 2,
+                                            frames: 1,
                                             color: "white",
                                             code: [
                                                 "» Analyzing",
@@ -502,7 +502,7 @@ const temp = () => (
                                                 "⠧ Analyzing service mesh",
                                                 "⠇ Analyzing service mesh",
                                                 "⠏ Analyzing service mesh",
-                                                "✓ Analysis complete. Recommendations ready!",
+                                                "✓ Analysis complete.",
                                             ],
                                         },
                                         { code: "" },
@@ -510,15 +510,15 @@ const temp = () => (
                                             frames: 4,
                                             color: "white",
                                             code: [
-                                                "» Pruning old deployments",
-                                                "» Pruning old deployments .",
-                                                "» Pruning old deployments . .",
-                                                "» Pruning old deployments . . .",
+                                                "» Preparing recommendations",
+                                                "» Preparing recommendations .",
+                                                "» Preparing recommendations . .",
+                                                "» Preparing recommendations . . .",
                                             ],
                                         },
                                         {
                                             frames: 2,
-                                            code: "  Deployment: 01EJCSFNDDD15P2BXBW2KCYVB2",
+                                            code: "  Patterns: 01EJCSFNDDD15P2BXBW2KCYVB2",
                                             color: "navy",
                                         },
                                         { code: "" },
