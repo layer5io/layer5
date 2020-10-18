@@ -14,7 +14,7 @@ function Categoris() {
                     Service Mesh<br />
                     {serviceMeshes.map(mesh => (
                         mesh.name?
-                            <li>
+                            <li key={mesh.name}>
                                 <div className="tooltip">
                                     <a href={`${mesh.link}`}>{mesh.name}</a>
                                     <span className="tooltiptext">{mesh.desc}</span></div>
@@ -29,7 +29,7 @@ function Categoris() {
                     Client Library<br />
                     {clients.map(client => (
                         client.name?
-                            <li>
+                            <li key={client.name}>
                                 <div className="tooltip">
                                     <a href={`${client.link}`}>{client.name}</a>
                                     <span className="tooltiptext">{client.desc}</span>
@@ -44,7 +44,7 @@ function Categoris() {
                     API Gateway<br />
                     {getways.map(getway => (
                         getway.name?
-                            <li>
+                            <li key={getway.name}>
                                 <div className="tooltip">
                                     <a href={`${getway.link}`}>{getway.name}</a>
                                     <span className="tooltiptext">{getway.desc}</span>
@@ -59,7 +59,7 @@ function Categoris() {
                     Service Proxy<br />
                     {proxies.map(proxy => (
                         proxy.name?
-                            <li>
+                            <li key={proxy.name}>
                                 <div className="tooltip">
                                     <a href={`${proxy.link}`}>{proxy.name}</a>
                                     <span className="tooltiptext">{proxy.desc}</span>
@@ -74,7 +74,7 @@ function Categoris() {
                     Load Balancer<br />
                     {load_balancer.map(balancer => (
                         balancer.name?
-                            <li>
+                            <li key={balancer.name}>
                                 <div className="tooltip">
                                     <a href={`${balancer.link}`}>{balancer.name}</a>
                                     <span className="tooltiptext">{balancer.desc}</span>
