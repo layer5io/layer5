@@ -15,10 +15,10 @@ const temp = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="Mesheryctl" />
+            <SEO title="mesheryctl | Command Line Management of Service Meshes" />
             <Navigation />
             <Container>
-                <div style = {{ marginTop: "970px", marginBottom: "500px",}}>
+                <div style = {{ marginTop: "970px", marginBottom: "200px",}}>
                     <AnimatedStepsList
                         terminalHeroState={{
                             frameLength: 100,
@@ -32,29 +32,25 @@ const temp = () => (
                         }}
                         steps={[
                             {
-                                name: "Build",
+                                name: "Install",
                                 description: (
                                     <>
                                         <p>
-                                        Meshery provides you with a clean, robust,
-                                        streamlined command-line interface to manage
-                                        and benchmark your service meshes, mesheryctl.
-
+                                            Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes: <code>mesheryctl</code>.
                                         </p>
                                         <p>
-                                        With mesheryctl, not only you can manage your adapters &
-                                        containers but you can also benchmark your mesh using the command line.
+                                            With <code>mesheryctl</code>, not only you can manage your service meshes, but you can also manage their workloads using the command line.
                                         </p>
                                         <p>
-                                        mesheryctl provides support to a number of platforms so that we never miss out users.
+                                            <code>mesheryctl</code> provides support for all of Meshery's features.
                                         </p>
                                     </>
                                 ),
                                 logos: [
-                                // {
-                                //     url: require('./img/step-logos/angular.svg'),
-                                //     alt: 'Angular',
-                                // },
+                                    {
+                                        url: require("../assets/images/mesheryctl/kubernetes.svg"),
+                                        alt: "Kubernetes",
+                                    }
                                 // {
                                 //     url: require('./img/step-logos/react.svg'),
                                 //     alt: 'React',
@@ -92,10 +88,10 @@ const temp = () => (
                                             color: "white",
                                             frames: 4,
                                             code: [
-                                                "Extracting mesheryctl-v0.3.14",
-                                                "Extracting mesheryctl-v0.3.14 .",
-                                                "Extracting mesheryctl-v0.3.14 . .",
-                                                "Extracting mesheryctl-v0.3.14 . . .",
+                                                "Extracting mesheryctl-latest",
+                                                "Extracting mesheryctl-latest .",
+                                                "Extracting mesheryctl-latest . .",
+                                                "Extracting mesheryctl-latest . . .",
                                             ],
                                         },
                                         {
@@ -125,7 +121,7 @@ const temp = () => (
                                         { code: " " },
                                         {
                                             frames: 2,
-                                            code: "Installing mesheryctl in /usr/local/bin.",
+                                            code: "Installing mesheryctl in /usr/local/bin",
                                             color: "gray",
                                         },
                                         {
@@ -134,100 +130,145 @@ const temp = () => (
                                             color: "gray",
                                         },
                                         {
-                                            frames: 2,
-                                            code: "permissions moved to layer5",
-                                            color: "gray",
-                                        },
-                                        {
                                             frames: 8,
                                             code: [
-                                                "Removing installation files and opening Meshery",
-                                                "Removing installation files and opening Meshery.",
-                                                "Removing installation files and opening Meshery..",
-                                                "Removing installation files and opening Meshery...",
-                                                "Removing installation files and opening Meshery...Updating Meshery now",
-                                                "Removing installation files and opening Meshery...Updating Meshery now.",
-                                                "Removing installation files and opening Meshery...Updating Meshery now..",
-                                                "Removing installation files and opening Meshery...Updating Meshery now...",
+                                                "Removing installation files and starting Meshery",
+                                                "Removing installation files and starting Meshery.",
+                                                "Removing installation files and starting Meshery..",
+                                                "Removing installation files and starting Meshery...",
+                                                "Removing installation files and starting Meshery....",
+                                                "Removing installation files and starting Meshery.....",
+                                                "Removing installation files and starting Meshery......",
+                                                "Removing installation files and starting Meshery.......",
                                             ],
-                                            color: "gray",
+                                            color: "navy",
                                         },
                                         {
                                             frames: 8,
                                             code: [
                                                 "Pulling meshery",
-                                                "Pulling meshery          .",
-                                                "Pulling meshery          ..",
-                                                "Pulling meshery          ...",
-                                                "Pulling meshery          ... download complete",
+                                                "Pulling meshery           .",
+                                                "Pulling meshery           ..",
+                                                "Pulling meshery           ...",
+                                                "Pulling meshery           ... download complete",
                                             ],
-                                            short: true
+                                            short: true,
+                                            color: "gray",
                                         },
                                         {
                                             frames: 5,
                                             code: [
-                                                "Pulling meshery-linkerd",
-                                                "Pulling meshery-linkerd  .",
-                                                "Pulling meshery-linkerd  ..",
-                                                "Pulling meshery-linkerd  ...",
-                                                "Pulling meshery-linkerd  ... done",
+                                                "Pulling meshery-istio",
+                                                "Pulling meshery-istio     .",
+                                                "Pulling meshery-istio     ..",
+                                                "Pulling meshery-istio     ...",
+                                                "Pulling meshery-istio     ... done",
                                             ],
-                                            short: true
+                                            short: true,
+                                            color: "gray",
+                                        },
+                                        {
+                                            frames: 5,
+                                            code: [
+                                                "Pulling meshery-kuma",
+                                                "Pulling meshery-kuma      .",
+                                                "Pulling meshery-kuma      ..",
+                                                "Pulling meshery-kuma      ...",
+                                                "Pulling meshery-kuma      ... done",
+                                            ],
+                                            short: true,
+                                            color: "gray",
                                         },
                                         {
                                             frames: 5,
                                             code: [
                                                 "Pulling meshery-consul",
-                                                "Pulling meshery-consul   .",
-                                                "Pulling meshery-consul   ..",
-                                                "Pulling meshery-consul   ...",
-                                                "Pulling meshery-consul   ... done",
+                                                "Pulling meshery-consul    .",
+                                                "Pulling meshery-consul    ..",
+                                                "Pulling meshery-consul    ...",
+                                                "Pulling meshery-consul    ... done",
                                             ],
-                                            short: true
-                                        },
+                                            short: true,
+                                            color: "gray",
+                                        }, 
                                         {
                                             frames: 5,
                                             code: [
-                                                "Pulling meshery-octarine",
-                                                "Pulling meshery-octarine .",
-                                                "Pulling meshery-octarine ..",
-                                                "Pulling meshery-octarine ...",
-                                                "Pulling meshery-octarine ... done",
+                                                "Pulling meshery-linkerd",
+                                                "Pulling meshery-linkerd   .",
+                                                "Pulling meshery-linkerd   ..",
+                                                "Pulling meshery-linkerd   ...",
+                                                "Pulling meshery-linkerd   ... done",
                                             ],
-                                            short: true
+                                            short: true,
+                                            color: "gray",
+                                        },
+
+                                        {
+                                            frames: 5,
+                                            code: [
+                                                "Pulling meshery-tanzu-sm",
+                                                "Pulling meshery-tanzu-sm  .",
+                                                "Pulling meshery-tanzu-sm  ..",
+                                                "Pulling meshery-tanzu-sm  ...",
+                                                "Pulling meshery-tanzu-sm  ... done",
+                                            ],
+                                            short: true,
+                                            color: "gray",
                                         },
                                         {
                                             frames: 5,
                                             code: [
                                                 "Pulling meshery-nsm",
-                                                "Pulling meshery-nsm      .",
-                                                "Pulling meshery-nsm      ..",
-                                                "Pulling meshery-nsm      ...",
-                                                "Pulling meshery-nsm      ... done",
+                                                "Pulling meshery-nsm       .",
+                                                "Pulling meshery-nsm       ..",
+                                                "Pulling meshery-nsm       ...",
+                                                "Pulling meshery-nsm       ... done",
                                             ],
-                                            short: true
+                                            short: true,
+                                            color: "gray",
                                         },
                                         {
                                             frames: 5,
                                             code: [
-                                                "Pulling meshery-cpx",
-                                                "Pulling meshery-cpx      .",
-                                                "Pulling meshery-cpx      ..",
-                                                "Pulling meshery-cpx      ...",
-                                                "Pulling meshery-cpx      ... done",
+                                                "Pulling meshery-nginx-sm",
+                                                "Pulling meshery-nginx-sm  .",
+                                                "Pulling meshery-nginx-sm  ..",
+                                                "Pulling meshery-nginx-sm  ...",
+                                                "Pulling meshery-nginx-sm  ... done",
                                             ],
-                                            short: true
+                                            short: true,
+                                            color: "gray",
                                         },
                                         {
                                             frames: 5,
                                             code: [
-                                                "Pulling watchtower",
-                                                "Pulling watchtower       .",
-                                                "Pulling watchtower       ..",
-                                                "Pulling watchtower       ...",
-                                                "Pulling watchtower       ... done",
+                                                "Pulling meshery-citrix-sm",
+                                                "Pulling meshery-citrix-sm .",
+                                                "Pulling meshery-citrix-sm ..",
+                                                "Pulling meshery-citrix-sm ...",
+                                                "Pulling meshery-citrix-sm ... done",
                                             ],
-                                            short: true
+                                            short: true,
+                                            color: "gray",
+                                        },
+
+                                        {
+                                            frames: 5,
+                                            code: [
+                                                "Pulling meshery-osm",
+                                                "Pulling meshery-osm       .",
+                                                "Pulling meshery-osm       ..",
+                                                "Pulling meshery-osm       ...",
+                                                "Pulling meshery-osm       ... done",
+                                            ],
+                                            short: true,
+                                            color: "gray",
+                                        },
+                                        {
+                                            frames: 1,
+                                            code: "\nManagement plane ready at: https://meshery.io/manage",
+                                            color: "green",
                                         },
                                     ],
                                 },
@@ -248,8 +289,8 @@ const temp = () => (
                                 ),
                                 logos: [
                                 // {
-                                //     url: require('./img/step-logos/kubernetes.svg'),
-                                //     alt: 'Kubernetes',
+                                //     url: require("../assets/images/image-hub/layer5-image-hub.svg"),
+                                //     alt: "Image Hub",
                                 // },
                                 // {
                                 //     url: require('./img/step-logos/nomad.svg'),
@@ -297,7 +338,7 @@ const temp = () => (
                                         {
                                             frames: 5,
                                             code:
-                                            "✓ Kubernetes client connected to https://kubernetes.example.com:6443",
+                                            "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
                                         },
                                         {
                                             frames: 2,
@@ -357,21 +398,21 @@ const temp = () => (
                                         {
                                             frames: 2,
                                             code:
-                                            "\nThe deploy was successful!",
+                                            "\nThe service mesh deployment was successful!",
                                             color: "gray",
                                         },
                                         { code: "" },
                                         {
                                             frames: 1,
                                             code:
-                                            "\nDeployment URL: http://meshery.io/",
+                                            "\nDeployment URL: http://meshery.io/mesh",
                                             color: "green",
                                         },
                                     ],
                                 },
                             },
                             {
-                                name: "Release",
+                                name: "Patterns",
                                 description: (
                                     <>
                                         <p>
@@ -426,42 +467,42 @@ const temp = () => (
                                             frames: 2,
                                             color: "white",
                                             code: [
-                                                "» Releasing",
-                                                "» Releasing .",
-                                                "» Releasing . .",
-                                                "» Releasing . . .",
+                                                "» Analyzing",
+                                                "» Analyzing .",
+                                                "» Analyzing . .",
+                                                "» Analyzing . . .",
                                             ],
                                         },
                                         {
                                             frames: 2,
                                             code:
-                                            "✓ Kubernetes client connected to https://kubernetes.example.com:6443",
+                                            "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
                                         },
                                         {
                                             frames: 2,
                                             color: "gray",
                                             code: [
-                                                "⠋ Preparing service",
-                                                "⠙ Preparing service",
-                                                "⠹ Preparing service",
-                                                "⠸ Preparing service",
-                                                "⠼ Preparing service",
-                                                "⠴ Preparing service",
-                                                "⠦ Preparing service",
-                                                "⠧ Preparing service",
-                                                "⠇ Preparing service",
-                                                "⠏ Preparing service",
-                                                "⠋ Preparing service",
-                                                "⠙ Preparing service",
-                                                "⠹ Preparing service",
-                                                "⠸ Preparing service",
-                                                "⠼ Preparing service",
-                                                "⠴ Preparing service",
-                                                "⠦ Preparing service",
-                                                "⠧ Preparing service",
-                                                "⠇ Preparing service",
-                                                "⠏ Preparing service",
-                                                "✓ Service is ready!",
+                                                "⠋ Analyzing service mesh",
+                                                "⠙ Analyzing service mesh",
+                                                "⠹ Analyzing service mesh",
+                                                "⠸ Analyzing service mesh",
+                                                "⠼ Analyzing service mesh",
+                                                "⠴ Analyzing service mesh",
+                                                "⠦ Analyzing service mesh",
+                                                "⠧ Analyzing service mesh",
+                                                "⠇ Analyzing service mesh",
+                                                "⠏ Analyzing service mesh",
+                                                "⠋ Analyzing service mesh",
+                                                "⠙ Analyzing service mesh",
+                                                "⠹ Analyzing service mesh",
+                                                "⠸ Analyzing service mesh",
+                                                "⠼ Analyzing service mesh",
+                                                "⠴ Analyzing service mesh",
+                                                "⠦ Analyzing service mesh",
+                                                "⠧ Analyzing service mesh",
+                                                "⠇ Analyzing service mesh",
+                                                "⠏ Analyzing service mesh",
+                                                "✓ Analysis complete. Recommendations ready!",
                                             ],
                                         },
                                         { code: "" },
@@ -483,13 +524,13 @@ const temp = () => (
                                         { code: "" },
                                         {
                                             frames: 2,
-                                            code: "\nThe release was successful!",
+                                            code: "\nBest practice recommendations ready!",
                                             color: "green",
                                         },
                                         { code: "" },
                                         {
                                             frames: 1,
-                                            code: "\nRelease URL: https://www.example.com",
+                                            code: "\nRecommendations URL: https://meshery.io/patterns",
                                             color: "green",
                                         },
                                     ],
