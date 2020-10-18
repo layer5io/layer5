@@ -52,5 +52,6 @@ The scope of this initiative includes all service mesh projects participating in
 <h4>Validating Conformance</h4>
 <p>Conformance to SMI specifications will be done through use of a service mesh’s workload. A sample application is used as the workload to test. To facilitate a common set of tests, a sample application has been developed for purposes of providing a consistent workload to apply SMI specs against. A deployment of the <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> sample application being fitted to each service mesh.</p>
 
+<h4>Checkout some blogs below, to learn more about SMI Conformance:</h4>
 <p><a href="https://layer5.io/blog/community/communitybridge-2020-teaching-service-meshes-to-be-compliant">CommunityBridge 2020: Teaching service meshes to be compliant</a> || <a href="https://layer5.io/blog/community/SMI-conformance-testing-with-meshery">Starting SMI Conformance Testing with Meshery</a></p>
 
