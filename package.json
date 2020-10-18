@@ -52,6 +52,7 @@
     "react-slick": "^0.25.2",
     "react-tooltip": "^4.2.9",
     "react-twitter-embed": "^3.0.3",
+    "react-vertical-timeline-component": "^3.3.0",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1"

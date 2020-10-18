@@ -4,6 +4,8 @@ import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
 import ServiceMeshComparison from "../../assets/images/landscape/comparison-of-service-mesh-strengths.svg";
 import { serviceMeshes } from '../../collections/landscape/timeline'
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 const LandscapeGrid=() => {
     return (
@@ -13,28 +15,33 @@ const LandscapeGrid=() => {
                 <Container>
                     <div className="landscape-grid-wrapper">
                         <Row>
-                            <h2>Comparison of Service Mesh Strengths</h2>
-                            <img src={ServiceMeshComparison} width="100%" alt="Service Mesh Comparison" />
-                            <div className="timeline">
-                                {serviceMeshes.reverse().map(mesh =>
-                                    <div key={mesh.timeline_order} className={`data-cont arr${mesh.timeline_order%2}`}>
-                                        <div key={mesh.timeline_order} className={`content${mesh.timeline_order%2}`}>
-                                            <div className="meshname-img">
-                                                {mesh.icon?
-                                                    <div key={mesh.timeline_order} className={`img-style${mesh.timeline_order%2}`}>
-                                                        <img src={mesh.icon} alt={mesh.name} style={{ width: "inherit", height: "inherit" }} />
-                                                    </div>
-                                                    :<></>}
-                                                <p className="mesh-name">{mesh.name}</p>
-                                            </div>
-                                            <p className="mesh-ann-date">{mesh.announce_date}</p>
-                                        </div>
-
-                                    </div>
-                                )}
-
+                            <div className="heading-container">
+                                <h2>Comparison of Service Mesh Strengths</h2>
                             </div>
-
+                            <img src={ServiceMeshComparison} width="100%" alt="Service Mesh Comparison" />
+                            <div className="heading-container">
+                                <h2>Service Mesh Timeline</h2><br />
+                                <h4>Project Announcement</h4>
+                            </div>
+                            <VerticalTimeline>
+                                {serviceMeshes.reverse().map(mesh =>
+                                    <VerticalTimelineElement
+                                        key={mesh.timeline_order}
+                                        className="vertical-timeline-element--work"
+                                        contentStyle={{ background: 'rgb(33, 150, 243)', color: '#000' }}
+                                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                                        date={mesh.announce_date}
+                                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                    >
+                                        <div className="meshtitle-img">
+                                            {mesh.icon?
+                                                <img src={mesh.icon} alt={mesh.name} style={{ width: "100px", height: "inherit" }} />
+                                                :<></>}
+                                            <h3 className="vertical-timeline-element-title">{mesh.name}</h3>
+                                        </div>
+                                    </VerticalTimelineElement>
+                                )}
+                            </VerticalTimeline>
                         </Row>
                     </div>
                 </Container>
