@@ -22,11 +22,15 @@ redirect_from:
     src="/assets/images/smi-conformance/checklist.svg"
     width="50%" 
   />
-  <h5 style="text-align:center;color:aliceblue;">
-    <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;" 
+   <h5 style="text-align:center;color:aliceblue;">
+    <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;margin:10px;" 
       class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow"
       href="/meshery/#getting-started">Run SMI Conformance</a> 
-    </h5>
+
+    <a style="font-size:.9em;padding-bottom:40px;padding-top:10px;width:300px;margin:10px;" 
+      class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow"
+      href="https://docs.google.com/document/d/1HL8Sk7NSLLj-9PRqoHYVIGyU6fZxUQFotrxbmfFtjwc/edit#heading=h.rkzc80m1a5sr"> Design Specifications</a>   
+  </h5>
 </div>
   
 <h3>Purpose and Overview</h3>
@@ -44,7 +48,10 @@ The scope of this initiative includes all service mesh projects participating in
   <li>Define a set of conformance tests and  what behavior is expected of a conforming service mesh implementation.</li>
   <li>Built into each participating service mesh project’s release tooling.</li>
 </ul>
-<h4>Validating Conformance</h4>
 
-Conformance to SMI specifications will be done through use of a service mesh’s workload. A sample application is used as the workload to test. To facilitate a common set of tests, a sample application has been developed for purposes of providing a consistent workload to apply SMI specs against. A deployment of the <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> sample application being fitted to each service mesh.
+<h4>Validating Conformance</h4>
+<p>Conformance to SMI specifications will be done through use of a service mesh’s workload. A sample application is used as the workload to test. To facilitate a common set of tests, a sample application has been developed for purposes of providing a consistent workload to apply SMI specs against. A deployment of the <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> sample application being fitted to each service mesh.</p>
+
+<h4>Checkout some blogs below, to learn more about SMI Conformance:</h4>
+<p><a href="https://layer5.io/blog/community/communitybridge-2020-teaching-service-meshes-to-be-compliant">CommunityBridge 2020: Teaching service meshes to be compliant</a> || <a href="https://layer5.io/blog/community/SMI-conformance-testing-with-meshery">Starting SMI Conformance Testing with Meshery</a></p>
 
