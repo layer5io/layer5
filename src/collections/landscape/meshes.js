@@ -1,5 +1,5 @@
 
-export const serviceMeshes=[
+export const meshes=[
     {
         name: "A10 Secure Service Mesh",
         desc: "A10’s Secure Service Mesh - is a solution that utilizes a hub-spoke model to provide scalable east-west network security and automatic service discovery.",
@@ -260,14 +260,6 @@ export const serviceMeshes=[
         desc: "A solution for large-scale Service Mesh based on Istio.",
         link: "https://github.com/alipay/sofa-mesh",
         autoinject: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>",
-        tcp_web: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>",
-        grpc: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>",
-        h2: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>",
-        multi_cluster: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>",
-        multi_tenant: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>",
-        prometheus: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>",
-        tracing: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>",
-        encryption: "<i><a class='blue-grey-text' href='https://github.com/sofastack/sofa-mesh/blob/master/README.md'>Project shutdown</a></i>",
         tcp_web: "No",
         multi_cluster: "Yes, powered by ServiceComb",
         multi_tenant: "Huawei Cloud only",

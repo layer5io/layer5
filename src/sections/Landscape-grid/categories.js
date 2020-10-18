@@ -1,6 +1,6 @@
 import React from 'react'
 import { clients } from '../../collections/landscape/clients'
-import { serviceMeshes } from '../../collections/landscape/meshes'
+import { meshes } from '../../collections/landscape/meshes'
 import { getways } from '../../collections/landscape/getways'
 import { proxies } from '../../collections/landscape/proxies'
 import { load_balancer } from '../../collections/landscape/load-balancer'
@@ -12,7 +12,7 @@ function Categoris() {
             <div className="card-content">
                 <ul className="category">
                     Service Mesh<br />
-                    {serviceMeshes.map(mesh => (
+                    {meshes.map(mesh => (
                         mesh.name?
                             <li key={mesh.name}>
                                 <div className="tooltip">
