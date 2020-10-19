@@ -5,10 +5,12 @@ import { getways } from '../../collections/landscape/getways'
 import { proxies } from '../../collections/landscape/proxies'
 import { load_balancer } from '../../collections/landscape/load-balancer'
 
-function Categoris() {
+function Categories() {
     return (
         <div>
-            <h2 className="white-text center landscape-category">Categories</h2>
+            <div className="heading-container">
+                <h2 className="white-text center landscape-category">Categories</h2>
+            </div>
             <div className="card-content">
                 <ul className="category">
                     Service Mesh<br />
@@ -84,8 +86,10 @@ function Categoris() {
                     ))}
                 </ul>
             </div>
+            <span style={{ color: "#000" }}>Found a discrepancy, missing or out-dated information? Please
+    <a href="https://github.com/layer5io/layer5/issues" style={{ color: "#A9A9A9" }}>submit an issue</a>.</span>
         </div>
     )
 }
 
-export default Categoris
+export default Categories

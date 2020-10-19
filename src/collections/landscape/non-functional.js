@@ -18,7 +18,7 @@ import Citrix from '../../assets/images/service-mesh-icons/citrix.svg';
 import Osm from '../../assets/images/service-mesh-icons/osm.png';
 
 
-export const serviceMeshes=[{
+export const non_functional=[{
     name: "Vulcand",
     opensource: "Yes",
     link: "https://github.com/vulcand/vulcand",

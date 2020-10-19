@@ -3,10 +3,14 @@ import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./landscapeGrid.style";
 import ServiceMeshComparison from "../../assets/images/landscape/comparison-of-service-mesh-strengths.svg";
-import { serviceMeshes } from '../../collections/landscape/non-functional'
+import { non_functional } from '../../collections/landscape/non-functional'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import Categories from './categories'
 import 'react-vertical-timeline-component/style.min.css';
+import NonFunctional from "./non-functional";
+import Functional from './functional'
+import Compatibilty from "./compatibility";
+import Tools from './tools'
 
 const LandscapeGrid=() => {
     return (
@@ -25,7 +29,7 @@ const LandscapeGrid=() => {
                                 <h4>Project Announcement</h4>
                             </div>
                             <VerticalTimeline>
-                                {serviceMeshes.reverse().map(mesh => (
+                                {non_functional.reverse().map(mesh => (
                                     mesh.timeline_order?
                                         <VerticalTimelineElement
                                             key={mesh.timeline_order}
@@ -49,6 +53,10 @@ const LandscapeGrid=() => {
                                 )}
                             </VerticalTimeline>
                             <Categories />
+                            <NonFunctional />
+                            <Functional />
+                            <Compatibilty />
+                            <Tools />
                         </Row>
                     </div>
                 </Container>
