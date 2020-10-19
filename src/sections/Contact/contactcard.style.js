@@ -9,6 +9,6 @@ const ContactCardStyle = styled.section`
     height: 250px;
     margin: 0 auto;
   }
-`
+`;
 
 export default ContactCardStyle;
