@@ -47,28 +47,27 @@ export const query = graphql`
 `;
 
 const Blog = props => {
-    const [isListView, setIsListView] = useState(false)
+    const [isListView, setIsListView] = useState(false);
 
     const setListView = () => {
         setIsListView(true)
-    }
+    };
 
     const setGridView = () => {
         setIsListView(false)
-    }
+    };
 
     useEffect(() => {
         if (props.location.state){
             if (props.location.state.isListView) setListView()
         }
-    }, [])
+    }, []);
 
     let BlogView = props => {
         if (isListView)
             return (<BlogList {...props} />);
         return (<BlogGrid {...props} />);
     };
-
 
     return (
         <ThemeProvider theme={theme}>
@@ -82,8 +81,8 @@ const Blog = props => {
                 />
                 <Footer />
             </Layout>
-        </ThemeProvider>       
+        </ThemeProvider>
     )
-}
+};
 
 export default Blog;
