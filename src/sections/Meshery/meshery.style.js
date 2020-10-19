@@ -11,16 +11,15 @@ const MesheryWrapper = styled.section`
         font-size: 40px;
         line-height: 50px;
     }
-    h3 {
-        font-size: 30px;
-        line-height: 40px;
+    h4 {
+
     }
 
     .description {
-        margin: -40px 50px 100px 80px;
+        margin-top: -40px; 
+        padding: 0 50px 100px 80px;
         .desc-text {
-            margin-top: 50px;
-            padding-right: 80px;
+            padding: 25px;
         }
         .desc-p {
             margin-bottom: 50px;
@@ -32,11 +31,47 @@ const MesheryWrapper = styled.section`
         margin-bottom: 50px;
     }
 
-    .mesh_list {
-        padding: 100px;
+    .check {
+        height: 25px;
+        width: auto;
+        color: green;
+    }
+
+    .meshes {
+        margin: 20px 0 20px 0;
+        .mesh_box {
+            text-align: center;
+            border: 2px solid black;
+        }
+    } 
+
+    .mesh_list_left {
+        padding: 50px 0 50px 50px;
+    }
+    
+    .mesh_list_right {
+        padding: 50px 50px 50px 0;
     }
 
     .use_row {
+        h3 {
+            color: black;
+            font-size: 35px;
+            font-weight: 500;
+            line-height: 40px;
+            margin-bottom: 20px;
+        }
+        h5 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+        .text_logo {
+            float: left;
+            height: 120px;
+            width: auto;
+            margin-right: 20px;
+        }
         padding-left: 100px;
         padding-right: 100px;
         margin-bottom: 50px;
@@ -69,73 +104,55 @@ const MesheryWrapper = styled.section`
     .meshery-img{
         max-width: 90%;
         max-width: 400px;
-        margin: auto;  
+        margin: auto; 
     }
 
-    .table_content {
-        padding-top: 50px;
-        h3 {
-            padding-bottom: 30px;
+    .number {
+        float: right;
+        .number-desc {
+            position: relative;
+            bottom: 0;
+        }
+        &:hover {
+            h3 {
+                color: #ffffff;
+            }
         }
     }
-    table.adapters {
-        box-shadow: 1px 1px 5px gray;
-        border: 1px solid gray; 
-
-        td {
-            width: auto;
-            padding: 5px 10px 5px 10px;
-            vertical-align: middle;
-            border: 1px solid darkgray;
-        }
-
-        td.no-adapters {
-            width: auto;  
-            text-align: center; 
-            color: #aaa;
-            font-style: italic;
-        }
-
-        td.alpha-adapters {
-            width: auto; 
-            background-color: #D3D3D3;
-            text-align: center; 
-        }
-
-        td.beta-adapters {
-            width: auto;  
-            background-color: #00D3A9;
-            text-align: center; 
-            color: #fff;
-        }
-
-        td.stable-adapters {
-            width: auto; 
-            background-color: #3C494F;
-            text-align: center; 
-            color: #fff;
-        }
-
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-
-        img.adapter-logo {
-            vertical-align: middle;
-            margin-right: 5px;
-            height: 30px;
-            width: 30px;
-        }
-
-    }
-
     @media only screen and (max-width: 912px) {
         .content {
         padding: 50px;   
         }
 
+        .use_row {
+            padding: 0 20px 0 20px;
+        }
+
+        .description {
+            padding: 0;
+        }
+
+        .mesh_list_left, .mesh_list_right {
+            display: none;
+        }
+
         iframe {
             min-height: 240px;
+        }
+
+        h1 {
+            font-size: 25px;
+            line-height: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+            line-height: 25px;
+        }
+
+        h3 {
+            font-size: 15px;
+            line-height: 20px;
         }
     }
 `;
