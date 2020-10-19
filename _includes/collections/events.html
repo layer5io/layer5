@@ -1,5 +1,5 @@
 <div class="row">
-  {% assign sorted = (site.data.events | sort: 'date') %} {% for event
+  {% assign sorted = (site.data.events | sort: 'date' | reverse) %} {% for event
   in sorted %} {% if event.visibility != "hide" and event.type != "news" %}
 
   <div class="col s12 m4">
