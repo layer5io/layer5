@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Row, Col } from "../../reusecore/Layout";
+import { Container} from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import VintageBox from "../../reusecore/VintageBox";
@@ -15,8 +15,8 @@ import {
 } from "../../reusecore/Accordion";
 
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
+import { FaPlus } from "react-icons/fa";
 
-import FaqImage from "../../assets/images/app/about.png";
 import particle1 from "../../assets/images/app/particle/07.png";
 import particle2 from "../../assets/images/app/particle/08.png";
 
@@ -30,52 +30,45 @@ const Faq = () => {
             <img className="section__particle one" src={particle1} alt="img" />
             <img className="section__particle two" src={particle2} alt="img" />
             <Container fullWidthSM>
-                <Row Vcenter={true}>
-                    <Col className="faq-thumb-block" xs={12} sm={6}>
-                        <div className="faq-thumb">
-                            <img src={FaqImage} alt="appion-faq" />
-                        </div>
-                    </Col>
-                    <Col className="faq-content-block" xs={12} sm={6}>
-                        <SectionTitle
-                            className="section-title"
-                            leftAlign={true}
-                            UniWidth="100%"
-                        >
-                            <h4>Solution</h4>
-                            <h2>
-                                <span>Easy and perfect solution </span> for this app
-                            </h2>
-                        </SectionTitle>
-                        <Accordion>
-                            {data.faqs.map((faq, index) => (
-                                <AccordionItem key={index}>
-                                    <AccordionTitle>
-                                        <h5>{faq.title}</h5>
-                                        <IconWrapper>
-                                            <OpenIcon>
-                                                <IoIosArrowForward />
-                                            </OpenIcon>
-                                            <CloseIcon>
-                                                <IoIosArrowDown />
-                                            </CloseIcon>
-                                        </IconWrapper>
-                                    </AccordionTitle>
-                                    <AccordionBody>
-                                        <p>{faq.content}</p>
-                                    </AccordionBody>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
-                        <VintageBox
-                            right={true}
-                            vintageTwo={true}
-                            position="relative"
-                        >
-                            <Button>Learn More</Button>
-                        </VintageBox>
-                    </Col>
-                </Row>
+                <SectionTitle
+                    className="section-title"
+                    leftAlign={true}
+                    UniWidth="100%"
+                >
+                    <h2>
+                        <span>FAQs</span>
+                    </h2>
+                </SectionTitle>
+                <Accordion allowZeroExpanded="true">
+                    {data.faqs.map((faq, index) => (
+                        <AccordionItem key={index}>
+                            <AccordionTitle>
+                                <IconWrapper>
+                                    <OpenIcon>
+                                        <IoIosArrowDown />
+                                    </OpenIcon>
+                                    <CloseIcon>
+                                        <FaPlus />
+                                    </CloseIcon>
+                                    <h5>{faq.title}</h5>
+                                </IconWrapper>
+                            </AccordionTitle>
+                            <AccordionBody>
+                                <ul>
+                                    <li><p>{faq.content}</p></li>
+                                    {faq.content_2 && <li><p>{faq.content_2}</p></li>}
+                                </ul>
+                            </AccordionBody>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+                <VintageBox
+                    right={true}
+                    vintageTwo={true}
+                    position="relative"
+                >
+                    <Button>Learn More</Button>
+                </VintageBox>
             </Container>
         </FaqSectionWrapper>
     );

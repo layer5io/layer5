@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 const CounterSectionWrapper = styled.section`
-    padding: 140px 0 60px 0;
+    padding: 60px 0 0 0;
     .counter__item {
         text-align: center;
         margin-bottom: 50px;

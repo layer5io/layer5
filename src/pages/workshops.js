@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+
 import Navigation from "../sections/Navigation";
 import WorkshopsPage from "../sections/Workshop-grid";
 import Footer from "../sections/Footer";
