@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
@@ -46,53 +46,43 @@ export const query = graphql`
     }
 `;
 
-class Blog extends Component {
-    state = {
-        isListView : false
+const Blog = props => {
+    const [isListView, setIsListView] = useState(false);
+
+    const setListView = () => {
+        setIsListView(true)
     };
 
-    setListView = () => {
-        this.setState({
-            isListView : true
-        });
+    const setGridView = () => {
+        setIsListView(false)
     };
 
-    setGridView = () => {
-        this.setState({
-            isListView : false
-        });
-    };
-
-    componentDidMount() {
-        if (this.props.location.state){
-            if(this.props.location.state.isListView) this.setListView();
+    useEffect(() => {
+        if (props.location.state){
+            if (props.location.state.isListView) setListView()
         }
-    }
+    }, []);
 
-    render() {
+    let BlogView = props => {
+        if (isListView)
+            return (<BlogList {...props} />);
+        return (<BlogGrid {...props} />);
+    };
 
-        let BlogView = props => {
-            if (this.state.isListView)
-                return (<BlogList {...props} />);
-            return (<BlogGrid {...props} />);
-        };
-
-        return(
-            <ThemeProvider theme={theme}>
-                <Layout>
-                    <GlobalStyle />
-                    <SEO title="Blog | Layer5 - The Service Mesh Company" />
-                    <Navigation />
-                    <BlogView data={this.props.data} isListView= {this.state.isListView}
-                        setListView={this.setListView} setGridView={this.setGridView}
-                        pageContext={this.props.pageContext}
-                    />
-                    <Footer />
-                </Layout>
-            </ThemeProvider>
-        );
-    }
-}
-
+    return (
+        <ThemeProvider theme={theme}>
+            <Layout>
+                <GlobalStyle />
+                <SEO title="Blog | Layer5 - The Service Mesh Company" />
+                <Navigation />
+                <BlogView data={props.data} isListView={isListView}
+                    setListView={setListView} setGridView={setGridView}
+                    pageContext={props.pageContext}
+                />
+                <Footer />
+            </Layout>
+        </ThemeProvider>
+    )
+};
 
 export default Blog;
