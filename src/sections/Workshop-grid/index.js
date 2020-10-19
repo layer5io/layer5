@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import WorkshopCard from "../../components/Workshop-Card";
+import PageHeader from "../../reusecore/PageHeader";
 
 import { WorkshopPageWrapper } from "./WorkshopsGrid.style";
 
@@ -12,16 +14,56 @@ import Link from "../../images/socialIcons/link_color.png";
 import Youtube from "../../images/socialIcons/youtube_color.png";
 import Lab from "../../images/socialIcons/lab_color.png";
 
-const WorkshopsPage = ({data}) => {
+
+const WorkshopsPage = ({hide_path}) => {
 
     const [content, setContent] = useState(false);
     const [ID, setID] = useState("");
 
+    const data = useStaticQuery(
+        graphql`
+            query allWorkshops {
+                allMdx(
+                    sort: { fields: [frontmatter___date], order: DESC }
+                    filter: { fields: { collection: { eq: "workshops" } } }
+                ) {
+                    nodes {
+                        id
+                        slug
+                        body
+                        frontmatter {
+                            title
+                            date(formatString: "Do MMMM YYYY")
+                            slack
+                            abstract
+                            status
+                            labs
+                            video
+                            eurl
+                            thumbnail {
+                                childImageSharp {
+                                    fluid(maxWidth: 1000) {
+                                    ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                            extension
+                            publicURL
+                        }
+                    }
+                    fields {
+                        slug
+                        }
+                    }
+                }
+            }
+        `
+    );
+
+    let path = hide_path ? "" : "Workshop";
+
     return (
         <WorkshopPageWrapper>
-            <div className="header">
-                <h2>Workshops</h2>
-            </div>
+            <PageHeader title="Workshop" path={path}/>
             <div className="workshop-page-wrapper">
                 <Container>
                     <div className="workshop-grid-wrapper">

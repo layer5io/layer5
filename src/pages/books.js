@@ -9,46 +9,15 @@ import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
-import {graphql} from "gatsby";
-
-export const query = graphql`
-    query allBooks {
-        allMdx(
-            filter: { fields: { collection: { eq: "books" } }, frontmatter: { published: { eq: true } } }
-            sort: { fields: [frontmatter___date], order: ASC }
-        ) {
-            nodes {
-                id
-                frontmatter {
-                    title
-                    author
-                    abstract
-                    thumbnail{
-                        childImageSharp{
-                            fluid(maxWidth: 1000){
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                        extension
-                        publicURL
-                    }
-                }
-                fields {
-                    slug
-                }
-            }
-        }
-    }
-`;
 
 
-const BooksGridPage = ({data}) => (
+const BooksGridPage = ({hide_path}) => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
             <SEO title="Books | Layer5 - The Service Mesh Company" />
             <Navigation />
-            <BookPage data={data}/>
+            <BookPage hide_path={hide_path} />
             <Footer/>
         </Layout>
     </ThemeProvider>
