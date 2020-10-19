@@ -78,8 +78,7 @@ function Tools() {
                         <td>Golang</td>
                         <td>Istio</td>
                         <td>Xiaomi</td>
-                        <td style={{ whiteSpace: "pre-wrap" }}>A web-based dashboard for Istio. It helps user manage their Istio tasks more easily. Using Naftis we can custom our own task templates, then build task from them and execute it.
-          	            </td>
+                        <td style={{ whiteSpace: "pre-wrap" }}>A web-based dashboard for Istio. It helps user manage their Istio tasks more easily. Using Naftis we can custom our own task templates, then build task from them and execute it.</td>
                     </tr>
                     <tr style={{ border: "1px dashed #a6b7be", textAlign: "center" }}>
                         <td><a href="https://github.com/JoeDog/siege">Siege</a></td>
