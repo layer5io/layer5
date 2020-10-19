@@ -11,7 +11,7 @@ import About from "../sections/About";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
 
-const programs = () => (
+const about = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
@@ -23,4 +23,4 @@ const programs = () => (
     </ThemeProvider>
 );
 
-export default programs;
+export default about;

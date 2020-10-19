@@ -28,6 +28,6 @@ position: relative;
     }
   }
 }
-`
+`;
 
-export default TermsWrapper
+export default TermsWrapper;
