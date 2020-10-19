@@ -23,7 +23,7 @@ function NonFunctional() {
                 </thead>
                 <tbody>
                     {non_functional.map(non_func =>
-                        <tr>
+                        <tr key={non_func.name}>
                             <td style={{ textAlign: "center" }}>{non_func.category}</td>
                             <td>
                                 <a href={`${non_func.link}`} title={`${non_func.link}`}>{non_func.name}</a>

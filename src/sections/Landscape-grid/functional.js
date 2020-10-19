@@ -1,6 +1,5 @@
 import React from 'react'
 import { meshes } from '../../collections/landscape/meshes'
-import { non_functional } from '../../collections/landscape/non-functional'
 
 function Functional() {
     return (
@@ -25,8 +24,7 @@ function Functional() {
                 </thead>
                 <tbody>
                     {meshes.map(mesh =>
-                        <tr style={{ border: "1px dashed #a6b7be" }}>
-
+                        <tr style={{ border: "1px dashed #a6b7be" }} key={mesh.name}>
                             <td>
                                 <a href={`${mesh.link}`} title={`${mesh.desc}`}>{mesh.name}</a>
                             </td>

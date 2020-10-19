@@ -20,33 +20,33 @@ function Compatibilty() {
                 </thead>
                 <tbody>
                     {compatibility.map(compatible =>
-                        <tr style={{ border: "1px dashed #a6b7be" }}>
+                        <tr style={{ border: "1px dashed #a6b7be" }} key={compatible.name}>
                             <th scope="row">{compatible.name}</th>
                             <td>
                                 {compatible.taclink?
 
-                                    <a href={`${compatible.taclink}`} target="_blank">{compatible.tac}</a>
+                                    <a href={`${compatible.taclink}`} target="_blank" rel="noreferrer">{compatible.tac}</a>
 
                                     :<></>}
                             </td>
                             <td>
                                 {compatible.tmetricslink?
 
-                                    <a href={`${compatible.tmetricslink}`} target="_blank">{compatible.tmetrics}</a>
+                                    <a href={`${compatible.tmetricslink}`} target="_blank" rel="noreferrer">{compatible.tmetrics}</a>
 
                                     :<></>}
                             </td>
                             <td>
                                 {compatible.tsplitlink?
 
-                                    <a href={`${compatible.tsplitlink}`} target="_blank">{compatible.tsplit}</a>
+                                    <a href={`${compatible.tsplitlink}`} target="_blank" rel="noreferrer">{compatible.tsplit}</a>
 
                                     :<></>}
                             </td>
                             <td>
                                 {compatible.tspeclink?
 
-                                    <a href={`${compatible.tspeclink}`} target="_blank">{compatible.tspec}</a>
+                                    <a href={`${compatible.tspeclink}`} target="_blank" rel="noreferrer">{compatible.tspec}</a>
 
                                     :<></>}
                             </td>

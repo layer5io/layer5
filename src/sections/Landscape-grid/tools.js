@@ -79,7 +79,7 @@ function Tools() {
                         <td>Istio</td>
                         <td>Xiaomi</td>
                         <td style={{ whiteSpace: "pre-wrap" }}>A web-based dashboard for Istio. It helps user manage their Istio tasks more easily. Using Naftis we can custom our own task templates, then build task from them and execute it.
-          	</td>
+          	            </td>
                     </tr>
                     <tr style={{ border: "1px dashed #a6b7be", textAlign: "center" }}>
                         <td><a href="https://github.com/JoeDog/siege">Siege</a></td>
@@ -96,7 +96,7 @@ function Tools() {
                         <td style={{ whiteSpace: "pre-wrap" }}>Microservice-oriented distributed benchmark framework:
                         &bull; Drive the load from many nodes.
                         &bull; Express complex scenarios either in YAML or through pluggable steps.
-&bull; All operations are async to avoid coordinated-omission fallacy (open model by default).</td>
+                        &bull; All operations are async to avoid coordinated-omission fallacy (open model by default).</td>
                     </tr>
                     <tr style={{ border: "1px dashed #a6b7be", textAlign: "center" }}>
                         <td><a href="https://github.com/cncf/cnf-testbed">CNF Testbed</a></td>
@@ -104,7 +104,7 @@ function Tools() {
                         <td>Testing network functions</td>
                         <td>CNCF, TLF </td>
                         <td style={{ whiteSpace: "pre-wrap" }}>The CNCF CNF Testbed provides reference code and test cases for running the same networking code packaged as containers (Cloud native Network Functions or CNFs) on Kubernetes and as virtual machines (Virtual Network Functions or VNFs) on OpenStack.
-            </td>
+                        </td>
                     </tr>
                     <tr style={{ border: "1px dashed #a6b7be", textAlign: "center" }}>
                         <td><a href="https://github.com/tsenart/vegeta">Vegeta</a></td>
@@ -119,7 +119,7 @@ function Tools() {
                         <td>Scalable user load testing tool</td>
                         <td>Locustio </td>
                         <td style={{ whiteSpace: "pre-wrap" }}>Locust is an easy-to-use, distributed, user load testing tool. It is intended for load-testing web sites (or other systems) and figuring out how many concurrent users a system can handle.
-            </td>
+                        </td>
                     </tr>
                     <tr style={{ border: "1px dashed #a6b7be", textAlign: "center" }}>
                         <td><a href="https://github.com/envoyproxy/nighthawk">Nighthawk</a></td>
@@ -127,7 +127,7 @@ function Tools() {
                         <td>L7 (HTTP/HTTPS/HTTP2) performance characterization tool</td>
                         <td>Envoy, CNCF</td>
                         <td style={{ whiteSpace: "pre-wrap" }}>A L7 (HTTP/HTTPS/HTTP2) performance characterization tool. Its design focuses on exact request release timing and aims to provide its users with the ability to dynamically customize the request headers and content during an experiment.
-            </td>
+                        </td>
                     </tr>
                 </tbody>
             </table>
