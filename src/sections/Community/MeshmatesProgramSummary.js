@@ -1,13 +1,14 @@
 import React from "react";
-import meshmateimg from "../../assets/images/community/meshmate-stack.svg"
+import meshmateimg from "../../assets/images/community/meshmate-stack.svg";
+import { Link } from "gatsby";
  
 export default function MeshmatesProgramSummary() {
     return (
         <div>
             <div>
-                <h3>Layer5 MeshMates</h3>
+                <h2>Layer5 MeshMates</h2>
                 <img src={meshmateimg} align="right" width="40%" />
-                <h6>An onboarding and mentoring program</h6>
+                <h5>An onboarding and mentoring program</h5>
                 <p className="indent">
     The Layer5 community is growing at a tremendous rate. We value our connections and that is what makes us unique. Whether it is your first Layer5 meeting or your tenth contribution, we want to make sure that you are supported and equipped to take advantage of all of that the Layer5 community has to offer. 
                 </p>
@@ -16,9 +17,9 @@ export default function MeshmatesProgramSummary() {
                 </p>
                 <div width="100%" className="center">
                     <h3>
-                        <a
-                            href="/community/meshmates"
-                        >Layer5 MeshMate Program</a>
+                        <Link
+                            to="/community/meshmates"
+                        >Layer5 MeshMate Program</Link>
                     </h3>
                 </div>
             </div>

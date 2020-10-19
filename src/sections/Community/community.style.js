@@ -60,6 +60,11 @@ const CommunitySectionWrapper = styled.div`
     .disable{
         color: #ddd !important;
     }
+    @media (max-width:510px){
+        .meetings{
+            overflow-x:auto;
+        }
+    }
 `;
 
 export default CommunitySectionWrapper;

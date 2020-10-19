@@ -5,7 +5,7 @@ const CommunityMeetingsTable=()=> {
         <div>
             <div align="center"><h3 className="first">Layer5 Meetings</h3></div>
 
-            <div>
+            <div className="meetings">
                 <table id="meetingstable">
                     <tr>
                         <th className="first" id="meeting">Meeting</th>

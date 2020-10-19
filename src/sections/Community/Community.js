@@ -5,8 +5,8 @@ import Button from "../../reusecore/Button";
 const Community= () => {
     return (
         <div>
-            <h3>Largest collection of
-  service mesh projects and their maintainers in the world</h3>
+            <h2 className="center">Largest collection of
+  service mesh projects and their maintainers in the world</h2>
             <div>  
                 <img
                     src={datacenterimg}
@@ -30,7 +30,7 @@ const Community= () => {
                     </h3>
                 </div>
     
-                <h6>Open Source Projects</h6>
+                <h4>Open Source Projects</h4>
                 <p className="indent">
     Layer5 projects are open source software. Anyone can download, use, work on,
     and share it with others. It's built on principles like collaboration,
@@ -38,11 +38,10 @@ const Community= () => {
     of Apache v2.
                 </p>
             </div>
-            <div width="100%">
+            <div width="100%" className="center" >
                 <h3>
                     <a
                         href="https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit?usp=sharing"
-                        className="link"
                     >Repository Overview</a>
                 </h3>
             </div>
