@@ -15,7 +15,7 @@ import Faq from "../Faq";
 
 import meshery from "./meshery-logo-light-text-side.png";
 import meshery_multi_mesh from "./meshery_multi_mesh.png";
-import meshes from "./meshes.png"
+import meshes from "./meshes.png";
 import meshery_benchmark_screen from "./meshery_benchmark_screen.png";
 import meshery_configuration_management from "./meshery-configuration-management.png";
 import smi_conformance from "./SMI-Conformance-in-Meshery.png";
@@ -36,19 +36,19 @@ const MesheryPage = () => {
                         <div className="meshery-img"><img src={meshery} /></div>
                         <Row className="description">
                             <Col className="desc-text" lg={7} md={12} sm={12}>
-                                        <Button className="number">
-                                            <h3>1,113</h3> <br />
-                                            {/* <p className="number-desc"> performance tests run </p>  */}
-                                        </Button>
-                                        <p className="desc-p"> 
+                                <Button className="number">
+                                    <h3>1,113</h3> <br />
+                                    {/* <p className="number-desc"> performance tests run </p>  */}
+                                </Button>
+                                <p className="desc-p"> 
                                             Meshery is the service mesh management plane.<br />
                                             Adopt and operate any service mesh with confidence using Meshery's management features. 
-                                        </p>
-                                        <Button> Learn More </Button> &nbsp;
-                                        <Button> Run Meshery </Button>
+                                </p>
+                                <Button> Learn More </Button> &nbsp;
+                                <Button> Run Meshery </Button>
                             </Col>
                             <Col lg={5} md={12} sm={12}>
-                            <div className="meshery-img"><img src={meshery_multi_mesh} /></div>
+                                <div className="meshery-img"><img src={meshery_multi_mesh} /></div>
                             </Col>
                         </Row>
                     </div>
@@ -77,7 +77,7 @@ const MesheryPage = () => {
                                     </Col>
                                 </Row>
                                 <Row>
-                                   <Col className="meshes" lg={6}>
+                                    <Col className="meshes" lg={6}>
                                         <div className="mesh_box"> Istio </div>
                                     </Col>
                                     <Col className="meshes" lg={6}>
@@ -89,7 +89,7 @@ const MesheryPage = () => {
                                 <img src={meshes} />
                             </Col>
                             <Col className="mesh_list_right" lg={3}>
-                            <Row>
+                                <Row>
                                     <IoMdCheckmark className="check" />6/6 service meshes present
                                     <Col className="meshes" lg={6}>
                                         <div className="mesh_box"> Istio </div>
@@ -121,13 +121,13 @@ const MesheryPage = () => {
                         <h1 className="heading"> USE CASES</h1>
                         <Row className="use_row"> 
                             <Col lg={6} md={12} sm={12}>
-                            <h3>Manage the <b>performance</b> of your service mesh and its workloads</h3>
-                            <h5>Baseline and track your service mesh performance from release to release.</h5>
-                            <ul>
-                                <li>Track your application performance from version to version.</li>
-                                <li>Understand behavioral differences between service meshes.</li>
-                                <li>Compare performance across service mesh deployments.</li>
-                            </ul>
+                                <h3>Manage the <b>performance</b> of your service mesh and its workloads</h3>
+                                <h5>Baseline and track your service mesh performance from release to release.</h5>
+                                <ul>
+                                    <li>Track your application performance from version to version.</li>
+                                    <li>Understand behavioral differences between service meshes.</li>
+                                    <li>Compare performance across service mesh deployments.</li>
+                                </ul>
                             </Col>
                             <Col lg={6} md={12} sm={12}>
                                 <img src={meshery_benchmark_screen} />
@@ -138,16 +138,16 @@ const MesheryPage = () => {
                                 <img src={meshery_configuration_management} />
                             </Col>
                             <Col lg={6} md={12} sm={12}>
-                            <h3>What are <b>configuration best practices</b> and patterns?</h3>
-                            <h5>Assess your service mesh configuration against deployment and operational best practices with Meshery's configuration validator.</h5><br />
-                            <p>See the service mesh patterns</p>
+                                <h3>What are <b>configuration best practices</b> and patterns?</h3>
+                                <h5>Assess your service mesh configuration against deployment and operational best practices with Meshery's configuration validator.</h5><br />
+                                <p>See the service mesh patterns</p>
                             </Col>
                         </Row>
                         <Row className="use_row"> 
                             <Col lg={6} md={12} sm={12}>
-                            <img className="text_logo" src={smi_logo} /><h3>Is your service mesh <b>SMI compliant</b>?</h3>
-                            <h5>Validate your service mesh's conformance to Service Mesh Interface (SMI) specifications.</h5><br />
-                            <p>See the testing SMI conformance</p>
+                                <img className="text_logo" src={smi_logo} /><h3>Is your service mesh <b>SMI compliant</b>?</h3>
+                                <h5>Validate your service mesh's conformance to Service Mesh Interface (SMI) specifications.</h5><br />
+                                <p>See the testing SMI conformance</p>
                             </Col>
                             <Col lg={6} md={12} sm={12}>
                                 <img src={smi_conformance} />
@@ -158,9 +158,9 @@ const MesheryPage = () => {
                                 <img src={smi_performance} />
                             </Col>
                             <Col lg={6} md={12} sm={12}>
-                            <img className="text_logo" src={smp_logo} /><h3>Use the <b>Service Mesh Performance</b> standard</h3>
-                            <h5>Weigh the value of your service mesh features in-context of it's overhead.</h5><br />
-                            <p>See Service Mesh Performance (SMP).</p>
+                                <img className="text_logo" src={smp_logo} /><h3>Use the <b>Service Mesh Performance</b> standard</h3>
+                                <h5>Weigh the value of your service mesh features in-context of it's overhead.</h5><br />
+                                <p>See Service Mesh Performance (SMP).</p>
                             </Col>
                         </Row>
                     </div>

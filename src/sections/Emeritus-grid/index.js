@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import { Link } from "gatsby";
 import { Row, Col } from "../../reusecore/Layout";
 import ProfileCard from "../../components/Profile-card";
 import { useStaticQuery, graphql } from "gatsby";
-import { EmeritusWrapper } from './emeritus.style'
+import { EmeritusWrapper } from "./emeritus.style";
 
 const Emeritus=() => {
     const data=useStaticQuery(
@@ -54,7 +54,7 @@ const Emeritus=() => {
                 </Row>
             </EmeritusWrapper>
         </div>
-    )
-}
+    );
+};
 
-export default Emeritus
+export default Emeritus;

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const WorkshopPageWrapper = styled.div`
   .header {
@@ -156,4 +156,4 @@ export const WorkshopPageWrapper = styled.div`
       padding: 5px 5px;
     }
   }
-`
+`;

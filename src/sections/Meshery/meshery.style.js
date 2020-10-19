@@ -69,7 +69,7 @@ const MesheryWrapper = styled.section`
         .text_logo {
             float: left;
             height: 120px;
-            width: auto;
+            width: auto;    
             margin-right: 20px;
         }
         padding-left: 100px;

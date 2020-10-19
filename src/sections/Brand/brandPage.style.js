@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const BrandPageWrapper = styled.section`
   padding: 150px 0 100px 0;
@@ -32,6 +32,6 @@ const BrandPageWrapper = styled.section`
     float: left;
     margin-bottom: 1em;
   }
-`
+`;
 
-export default BrandPageWrapper
+export default BrandPageWrapper;
