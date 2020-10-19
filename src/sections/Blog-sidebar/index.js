@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery} from "gatsby";
 import slugify from "../../utils/slugify";
 
 import { FaSearch } from "react-icons/fa";
@@ -12,9 +12,24 @@ import WdThumb3 from "../../assets/images/blog/widgets-thumb/03.png";
 
 import BlogSideBarWrapper from "./blogSidebar.style";
 
+const Sidebar = ( ) => {
+    const data = useStaticQuery(
+        graphql`
+            query allTags {
+                allMdx(
+                    filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+                ){
+                    group(field: frontmatter___tags) {
+                        fieldValue
+                        totalCount
+                    }
+                }
+            }
+        `
+    );
 
+    const tags= data.allMdx.group;
 
-const Sidebar = ({tags}) => {
     return (
         <BlogSideBarWrapper>
             <div className="sidebar-widgets">
