@@ -305,6 +305,31 @@
         </div>
 
         <h4>Kubernetes user</h4>
+        <p>Using Helm</p>
+        <p>1.Helm v3</p>
+        <p>Run the following:</p>
+        <div style="width:auto; height:auto; padding:0px; position:relative;">
+            <pre><code style="color:#eee;"></br> $ git clone https://github.com/layer5io/meshery.git; cd meshery</br> $ kubectl create namespace meshery </br> $ helm install meshery --namespace meshery install/kubernetes/helm/meshery
+      </code></pre>
+            <!-- copy to clipboard -->
+            <a class="btn clipboard-copy-btn tooltip" style="background: none; border: 0;" data-clipboard-target="#start" data-clipboard-text="kubectl create ns meshery
+      kubectl -n meshery apply -f install/deployment_yamls/k8s" onmouseout="resetCopyText(this)">
+                <i class="far fa-copy"></i>
+                <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
+            </a>
+        </div>  
+        <p>2.Helm v2</p>
+        <p>Run the following</p>
+        <div style="width:auto; height:auto; padding:0px; position:relative;">
+            <pre><code style="color:#eee;"></br> $ git clone https://github.com/layer5io/meshery.git; cd meshery</br> $ kubectl create namespace meshery </br> $ helm template meshery --namespace meshery install/kubernetes/helm/meshery | kubectl apply -f -
+      </code></pre>
+            <!-- copy to clipboard -->
+            <a class="btn clipboard-copy-btn tooltip" style="background: none; border: 0;" data-clipboard-target="#start" data-clipboard-text="kubectl create ns meshery
+      kubectl -n meshery apply -f install/deployment_yamls/k8s" onmouseout="resetCopyText(this)">
+                <i class="far fa-copy"></i>
+                <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
+            </a>
+        </div> 
         <p>To install on Kubernetes, follow the instructions below or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.</p>
         <p>Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
         <div id="start-kubernetes">
