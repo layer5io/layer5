@@ -18,6 +18,7 @@ import Lab from "../../images/socialIcons/lab_color.png";
 const WorkshopsPage = ({hide_path}) => {
 
     const [content, setContent] = useState(false);
+    const [open, setOpen] = useState(false);
     const [ID, setID] = useState("");
 
     const data = useStaticQuery(
@@ -106,10 +107,25 @@ const WorkshopsPage = ({hide_path}) => {
                                                     </a> : ""}
                                             </div>
                                             {frontmatter.status === "delivered" ? "" : <p>Upcoming...</p>}
-                                            <button type="button" className="readme-btn" onClick={() => {
-                                                setID(id);
-                                                setContent(!content);
-                                            }}>
+                                            <button type="button" className="readme-btn" onClick={open ? 
+                                                ID === id ? 
+                                                    () => {
+                                                        setOpen(false);
+                                                        setContent(false);
+                                                        setID("");
+                                                    } : 
+                                                    () => {
+                                                        setOpen(false);
+                                                        setContent(false);
+                                                        setID(id);
+                                                        setContent(true);
+                                                        setOpen(true);
+                                                    } : 
+                                                () => {
+                                                    setID(id);
+                                                    setContent(true);
+                                                    setOpen(true);
+                                                }}>
                                                 {content && ID === id ? "Show Less" : "Show More"}
                                             </button>
                                         </div>
