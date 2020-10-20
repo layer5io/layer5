@@ -14,7 +14,7 @@ import {
     CloseIcon
 } from "../../reusecore/Accordion";
 
-import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import { FaPlus } from "react-icons/fa";
 
 import particle1 from "../../assets/images/app/particle/07.png";
@@ -39,7 +39,7 @@ const Faq = () => {
                         <span>FAQs</span>
                     </h2>
                 </SectionTitle>
-                <Accordion allowZeroExpanded="true">
+                <Accordion allowZeroExpanded>
                     {data.faqs.map((faq, index) => (
                         <AccordionItem key={index}>
                             <AccordionTitle>
