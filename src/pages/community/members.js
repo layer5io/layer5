@@ -12,26 +12,26 @@ import ActiveMembers from "../../sections/Members-grid/ActiveMembers";
 import InactiveMembers from "../../sections/Members-grid/InactiveMembers";
 
 const MembersPage = () => {
-    const [active, setActive] = useState(false)
-    const [inActive, setinActive] = useState(false)
+    const [active, setActive] = useState(false);
+    const [inActive, setinActive] = useState(false);
 
     const toggleActive = () => {
-        let status = active
-        setActive(!status)
-        setinActive(false)
-    }
+        let status = active;
+        setActive(!status);
+        setinActive(false);
+    };
 
     const toggleInactive = () => {
-        let status = inActive
-        setActive(false)
-        setinActive(!status)
-    }
+        let status = inActive;
+        setActive(false);
+        setinActive(!status);
+    };
 
     let MembersView = props => {
-        if (active) return <ActiveMembers {...props} />
-        else if (inActive) return <InactiveMembers {...props} />
-        return <AllMembers {...props} />
-    }
+        if (active) return <ActiveMembers {...props} />;
+        else if (inActive) return <InactiveMembers {...props} />;
+        return <AllMembers {...props} />;
+    };
 
     return (
         <ThemeProvider theme={theme}>
@@ -44,7 +44,7 @@ const MembersPage = () => {
                 <Footer/>
             </Layout>
         </ThemeProvider>
-    )
-}
+    );
+};
 
 export default MembersPage;

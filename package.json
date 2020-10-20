@@ -42,7 +42,7 @@
     "prism-react-renderer": "^1.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
-    "react-accessible-accordion": "^3.0.1",
+    "react-accessible-accordion": "^3.3.3",
     "react-countup": "^4.2.3",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",

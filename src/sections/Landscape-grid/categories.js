@@ -1,9 +1,9 @@
-import React from 'react'
-import { clients } from '../../collections/landscape/clients'
-import { meshes } from '../../collections/landscape/meshes'
-import { getways } from '../../collections/landscape/getways'
-import { proxies } from '../../collections/landscape/proxies'
-import { load_balancer } from '../../collections/landscape/load-balancer'
+import React from "react";
+import { clients } from "../../collections/landscape/clients";
+import { meshes } from "../../collections/landscape/meshes";
+import { getways } from "../../collections/landscape/getways";
+import { proxies } from "../../collections/landscape/proxies";
+import { load_balancer } from "../../collections/landscape/load-balancer";
 
 function Categories() {
     return (
@@ -87,9 +87,9 @@ function Categories() {
                 </ul>
             </div>
             <span style={{ color: "#000" }}>Found a discrepancy, missing or out-dated information? Please
-    <a href="https://github.com/layer5io/layer5/issues" style={{ color: "#A9A9A9" }}>submit an issue</a>.</span>
+                <a href="https://github.com/layer5io/layer5/issues" style={{ color: "#A9A9A9" }}>submit an issue</a>.</span>
         </div>
-    )
+    );
 }
 
-export default Categories
+export default Categories;

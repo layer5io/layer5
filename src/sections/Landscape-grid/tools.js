@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function Tools() {
     return (
@@ -131,10 +131,10 @@ function Tools() {
                 </tbody>
             </table>
             <span style={{ color: "#000" }}>Found a discrepancy, missing or out-dated information? Please
-        <a href="https://github.com/layer5io/layer5/issues" style={{ color: "	#A9A9A9" }}>submit an issue</a>.</span>
+                <a href="https://github.com/layer5io/layer5/issues" style={{ color: "	#A9A9A9" }}>submit an issue</a>.</span>
         </div>
-    )
+    );
 }
 
-export default Tools
+export default Tools;
 

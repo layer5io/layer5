@@ -1,16 +1,16 @@
 import React from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import { LandscapePageWrapper } from "./landscapeGrid.style";
+import { LandscapePageWrapper } from "./LandscapeGrid.style";
 import ServiceMeshComparison from "../../assets/images/landscape/comparison-of-service-mesh-strengths.svg";
-import { non_functional } from '../../collections/landscape/non-functional'
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import Categories from './categories'
-import 'react-vertical-timeline-component/style.min.css';
+import { non_functional } from "../../collections/landscape/non-functional";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import Categories from "./categories";
+import "react-vertical-timeline-component/style.min.css";
 import NonFunctional from "./non-functional";
-import Functional from './functional'
+import Functional from "./functional";
 import Compatibilty from "./compatibility";
-import Tools from './tools'
+import Tools from "./tools";
 
 const LandscapeGrid=() => {
     return (
@@ -34,10 +34,10 @@ const LandscapeGrid=() => {
                                         <VerticalTimelineElement
                                             key={mesh.timeline_order}
                                             className="vertical-timeline-element--work"
-                                            contentStyle={{ background: 'rgb(33, 150, 243)', color: '#000' }}
-                                            contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                                            contentStyle={{ background: "rgb(33, 150, 243)", color: "#000" }}
+                                            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
                                             date={mesh.announce_date}
-                                            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
                                         >
                                             {mesh.timeline_order?
                                                 <div className="meshtitle-img">

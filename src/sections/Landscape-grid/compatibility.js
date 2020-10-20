@@ -1,5 +1,5 @@
-import React from 'react'
-import { compatibility } from '../../collections/landscape/compatibility'
+import React from "react";
+import { compatibility } from "../../collections/landscape/compatibility";
 
 function Compatibilty() {
     return (
@@ -58,10 +58,10 @@ function Compatibilty() {
                 </tbody>
             </table>
             <span style={{ color: "#000" }}>Found a discrepancy, missing or out-dated information? Please
-        <a href="https://github.com/layer5io/layer5/issues" style={{ color: "	#A9A9A9" }}>submit an issue</a>.</span>
+                <a href="https://github.com/layer5io/layer5/issues" style={{ color: "	#A9A9A9" }}>submit an issue</a>.</span>
         </div>
-    )
+    );
 }
 
-export default Compatibilty
+export default Compatibilty;
 
