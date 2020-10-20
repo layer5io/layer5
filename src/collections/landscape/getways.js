@@ -34,4 +34,4 @@ export const getways=[
         link: "https://www.citrix.com/blogs/2019/06/12/citrix-solutions-for-api-protection-in-cloud-native-kubernetes-apps/",
         desc: "Citrix ADC protects your applications and APIs"
     }
-]
+];

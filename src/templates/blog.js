@@ -50,16 +50,16 @@ const Blog = props => {
     const [isListView, setIsListView] = useState(false);
 
     const setListView = () => {
-        setIsListView(true)
+        setIsListView(true);
     };
 
     const setGridView = () => {
-        setIsListView(false)
+        setIsListView(false);
     };
 
     useEffect(() => {
         if (props.location.state){
-            if (props.location.state.isListView) setListView()
+            if (props.location.state.isListView) setListView();
         }
     }, []);
 
@@ -82,7 +82,7 @@ const Blog = props => {
                 <Footer />
             </Layout>
         </ThemeProvider>
-    )
+    );
 };
 
 export default Blog;

@@ -22,4 +22,4 @@ export const load_balancer=[
         link: "https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/",
         desc: "Runs on each Kubernetes node. Performs simple TCP, UDP, and SCTP stream forwarding or round robin TCP, UDP, and SCTP forwarding across a set of backends."
     }
-]
+];

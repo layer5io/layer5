@@ -42,4 +42,4 @@ export const proxies=[
         link: "https://www.citrix.com/en-in/networking/microservices.html",
         desc: "Citrix ADC CPX provides a DevOps-friendly, cloud-native and full of L4-7 capabilities ADC in a Docker container"
     }
-]
+];

@@ -9,7 +9,7 @@ import docker_icon from "../../assets/images/app/footer/social/docker_black.svg"
 import { Link } from "gatsby";
 import SocialSectionWrapper from "./SocialLinks.style";
 
-const SocialLinks = props => {
+const SocialLinks = () => {
     return (
         <SocialSectionWrapper>
             <Col className="social-widgets" xs={12} sm={7}>

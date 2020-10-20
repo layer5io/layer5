@@ -34,4 +34,4 @@ export const clients=[
         link: "https://www.dropwizard.io/en/stable/",
         desc: "Dropwizard pulls together stable, mature libraries from the Java ecosystem into a simple, light-weight package that lets you focus on getting things done."
     }
-]
+];

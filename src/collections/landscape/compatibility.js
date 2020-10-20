@@ -43,4 +43,4 @@ export const compatibility=[
         tspec: "Yes",
         tspeclink: "https://github.com/traefik/mesh"
     }
-]
+];

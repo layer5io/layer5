@@ -1,21 +1,21 @@
-import Valcand from '../../assets/images/service-mesh-icons/vulcan.png';
-import Linkerd from '../../assets/images/service-mesh-icons/linkerd.png';
-import Consul from '../../assets/images/service-mesh-icons/consul.png';
-import Cilium from '../../assets/images/service-mesh-icons/cilium.png';
-import Istio from '../../assets/images/service-mesh-icons/istio.png';
-import GreyMatter from '../../assets/images/service-mesh-icons/greymatter.jpg';
-import AspenMesh from '../../assets/images/service-mesh-icons/aspenmesh.png';
-import Conduit from '../../assets/images/service-mesh-icons/conduit.png';
-import NetworkServiceMesh from '../../assets/images/service-mesh-icons/nsm.png';
-import Rotor from '../../assets/images/service-mesh-icons/rotor.png';
-import Maistra from '../../assets/images/service-mesh-icons/maistra.png';
-import SofaMesh from '../../assets/images/service-mesh-icons/sofamesh.png';
-import Octarine from '../../assets/images/service-mesh-icons/Octarine.png';
-import TraefikMesh from '../../assets/images/service-mesh-icons/traefik.svg';
-import AppMesh from '../../assets/images/service-mesh-icons/App Mesh.png';
-import Kuma from '../../assets/images/service-mesh-icons/Kuma.svg';
-import Citrix from '../../assets/images/service-mesh-icons/citrix.svg';
-import Osm from '../../assets/images/service-mesh-icons/osm.png';
+import Valcand from "../../assets/images/service-mesh-icons/vulcan.png";
+import Linkerd from "../../assets/images/service-mesh-icons/linkerd.png";
+import Consul from "../../assets/images/service-mesh-icons/consul.png";
+import Cilium from "../../assets/images/service-mesh-icons/cilium.png";
+import Istio from "../../assets/images/service-mesh-icons/istio.png";
+import GreyMatter from "../../assets/images/service-mesh-icons/greymatter.jpg";
+import AspenMesh from "../../assets/images/service-mesh-icons/aspenmesh.png";
+import Conduit from "../../assets/images/service-mesh-icons/conduit.png";
+import NetworkServiceMesh from "../../assets/images/service-mesh-icons/nsm.png";
+import Rotor from "../../assets/images/service-mesh-icons/rotor.png";
+import Maistra from "../../assets/images/service-mesh-icons/maistra.png";
+import SofaMesh from "../../assets/images/service-mesh-icons/sofamesh.png";
+import Octarine from "../../assets/images/service-mesh-icons/Octarine.png";
+import TraefikMesh from "../../assets/images/service-mesh-icons/traefik.svg";
+import AppMesh from "../../assets/images/service-mesh-icons/App Mesh.png";
+import Kuma from "../../assets/images/service-mesh-icons/Kuma.svg";
+import Citrix from "../../assets/images/service-mesh-icons/citrix.svg";
+import Osm from "../../assets/images/service-mesh-icons/osm.png";
 
 
 export const non_functional=[{
@@ -509,4 +509,4 @@ export const non_functional=[{
     commercial: "?",
     category: "Load-Balancers"
 }
-]
+];
