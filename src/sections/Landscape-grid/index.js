@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import { LandscapePageWrapper } from "./landscapeGrid.style";
+import { LandscapePageWrapper } from "./LandscapeGrid.style";
 import ServiceMeshComparison from "../../assets/images/landscape/comparison-of-service-mesh-strengths.svg";
 import { non_functional } from '../../collections/landscape/non-functional'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
