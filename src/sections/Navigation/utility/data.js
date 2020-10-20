@@ -39,11 +39,11 @@ const Data = {
             subItems: [
                 {
                     name: "Meshery",
-                    path: "/projects/meshery"
+                    path: "/meshery"
                 },
                 {
                     name: "Landscape",
-                    path: "/projects/landscape"
+                    path: "/landscape"
                 },
                 {
                     name: "Service Mesh Performance",
