@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import LogoList from "../../../Logo-List";
 import { StepWrapper } from "./Step.style";
 
 const Step =({ name, description, logos, onInViewStatusChanged }) => {
@@ -17,6 +18,7 @@ const Step =({ name, description, logos, onInViewStatusChanged }) => {
         <StepWrapper ref={ref}>
             <h2>{name}</h2>
             <div className="description">{description}</div>
+            <LogoList className="logo-list" logos={logos} />
         </StepWrapper>
     );
 };

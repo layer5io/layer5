@@ -1,6 +1,6 @@
 import React from "react";
 import { MeetupStyle } from "./meetups.style";
-import Card from "../../components/EventCard"
+import Card from "../../components/EventCard";
 import {Col, Container, Row} from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 

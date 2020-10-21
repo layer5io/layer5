@@ -20,4 +20,8 @@ export const StepWrapper = styled.li`
           color: var(--gray-2);
         }
       }
+      
+      & > .logo-list {
+        margin-top: 38px;
+      }
 `;

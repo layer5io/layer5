@@ -47,10 +47,10 @@ const temp = () => (
                                     </>
                                 ),
                                 logos: [
-                                    // {
-                                    //     url: require("../assets/images/mesheryctl/kubernetes.svg"),
-                                    //     alt: "Kubernetes",
-                                    // }
+                                    {
+                                        url: require("../assets/images/mesheryctl/kubernetes.svg"),
+                                        alt: "Kubernetes",
+                                    }
                                 // {
                                 //     url: require('./img/step-logos/react.svg'),
                                 //     alt: 'React',
@@ -190,7 +190,7 @@ const temp = () => (
                                             ],
                                             short: true,
                                             color: "gray",
-                                        }, 
+                                        },
                                         {
                                             frames: 5,
                                             code: [

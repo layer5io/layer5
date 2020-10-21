@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-netlify-cache',
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
