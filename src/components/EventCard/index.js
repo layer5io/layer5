@@ -5,7 +5,7 @@ import Image from "../image";
 
 import { CardWrapper } from "./Card.style";
 
-const Card = ({ frontmatter, fields }) => {
+const Card = ({ frontmatter }) => {
     return (
         <CardWrapper fixed={!!frontmatter.abstract}>
             <div className="post-block">
