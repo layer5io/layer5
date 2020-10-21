@@ -27,7 +27,7 @@ const Card = ({ frontmatter }) => {
                                 <span>{frontmatter.date}</span>
                                 
                         )}
-                        {frontmatter.eurl && (
+                        {frontmatter.date && (
                             <a className="readmore-btn" rel="noreferrer" target="_blank" href={frontmatter.eurl}>
                                 <BiLinkExternal />
                             </a>
