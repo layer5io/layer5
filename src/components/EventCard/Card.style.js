@@ -95,8 +95,8 @@ export const CardWrapper = styled.div`
     }
     .readmore-btn {
        color: rgba(0,0,0,0.35);
-       display: flex;
-       align-items: center;
+       align-items: right;
+       float: right;
        transition: all 0.3s linear;
        svg{
            margin-left: 0px;
