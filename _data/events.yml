@@ -7,6 +7,15 @@
   event_deck: ""
   thumbnail: /assets/images/events/all-day-devops.png
 
+- title: "ServiceMeshCon NA 2020"
+  desc: "ServiceMeshCon is a vendor-neutral conference on service mesh technologies, featuring maintainers across different service mesh projects and also showcasing the lessons learned from running service meshes in production."
+  date: "November 17th, 2020"
+  link: https://events.linuxfoundation.org/servicemeshcon-north-america/
+  talk_link: https://events.linuxfoundation.org/servicemeshcon-north-america/
+  event_video: ""
+  event_deck: "" 
+  thumbnail: /assets/images/events/servicemeshcon.png
+
 - title: Kubecon NA 2020
   desc: "The Cloud Native Computing Foundation’s flagship conference gathers adopters and technologists from leading open source and cloud native communities virtually from November 17 – 20, 2020."
   date: "November 17th, 2020"
