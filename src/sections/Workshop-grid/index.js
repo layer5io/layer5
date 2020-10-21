@@ -18,6 +18,7 @@ import Lab from "../../images/socialIcons/lab_color.png";
 const WorkshopsPage = ({hide_path}) => {
 
     const [content, setContent] = useState(false);
+    const [open, setOpen] = useState(false);
     const [ID, setID] = useState("");
 
     const data = useStaticQuery(
@@ -58,6 +59,28 @@ const WorkshopsPage = ({hide_path}) => {
             }
         `
     );
+
+    const toggleActive = (id) => {
+        if(open){
+            if(ID === id){
+                setOpen(false);
+                setContent(false);
+                setID("");
+            }
+            else{
+                setOpen(false);
+                setContent(false);
+                setID(id);
+                setContent(true);
+                setOpen(true);
+            }
+        }
+        else{
+            setID(id);
+            setContent(true);
+            setOpen(true);
+        }
+    };
 
     let path = hide_path ? "" : "Workshop";
 
@@ -106,10 +129,7 @@ const WorkshopsPage = ({hide_path}) => {
                                                     </a> : ""}
                                             </div>
                                             {frontmatter.status === "delivered" ? "" : <p>Upcoming...</p>}
-                                            <button type="button" className="readme-btn" onClick={() => {
-                                                setID(id);
-                                                setContent(!content);
-                                            }}>
+                                            <button type="button" className="readme-btn" onClick={() => toggleActive(id)}>
                                                 {content && ID === id ? "Show Less" : "Show More"}
                                             </button>
                                         </div>
