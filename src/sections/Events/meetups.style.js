@@ -5,7 +5,7 @@ export const MeetupStyle = styled.div`
     h2{
         text-align: center;
         margin: 25px;
-        padding-top: 35px;
+        padding-top: 45px;
     }
     p{
         margin: 35px;
