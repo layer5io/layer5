@@ -23,7 +23,6 @@ query  {
             frontmatter {
                 title
                 date(formatString: "Do MMMM YYYY")
-                author
                 eurl
                 thumbnail{
                     childImageSharp{
@@ -49,7 +48,6 @@ query  {
             frontmatter {
                 title
                 date(formatString: "Do MMMM YYYY")
-                author
                 eurl
                 thumbnail{
                     childImageSharp{
