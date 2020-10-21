@@ -2,13 +2,12 @@ import React from "react";
 import { MeetupStyle } from "./meetups.style";
 import Card from "../../components/EventCard"
 import {Col, Container, Row} from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
 
 const Meetup = (data) =>{
     return(
         <MeetupStyle>
             <br></br>
-            <h2>Events</h2>
+            <h1>Events</h1>
             <p>Want to learn more about our projects? Find out which events the layer5 team is speaking at in your area!</p>
             <div>
                 <Container>
@@ -23,7 +22,7 @@ const Meetup = (data) =>{
                     </div>
                 </Container>
             </div>
-            <h2>Meetups</h2>
+            <h1>Meetups</h1>
             <div>
                 <Container>
                     <div>
