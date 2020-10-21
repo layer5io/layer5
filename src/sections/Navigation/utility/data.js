@@ -111,7 +111,7 @@ const Data = {
                 },
                 {
                     name: "Events",
-                    path: "/events"
+                    path: "/community/events"
                 },
             ],
             div1: {
