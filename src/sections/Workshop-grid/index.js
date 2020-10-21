@@ -60,6 +60,28 @@ const WorkshopsPage = ({hide_path}) => {
         `
     );
 
+    const toggleActive = (id) => {
+        if(open){
+            if(ID === id){
+                setOpen(false);
+                setContent(false);
+                setID("");
+            }
+            else{
+                setOpen(false);
+                setContent(false);
+                setID(id);
+                setContent(true);
+                setOpen(true);
+            }
+        }
+        else{
+            setID(id);
+            setContent(true);
+            setOpen(true);
+        }
+    };
+
     let path = hide_path ? "" : "Workshop";
 
     return (
@@ -107,25 +129,7 @@ const WorkshopsPage = ({hide_path}) => {
                                                     </a> : ""}
                                             </div>
                                             {frontmatter.status === "delivered" ? "" : <p>Upcoming...</p>}
-                                            <button type="button" className="readme-btn" onClick={open ? 
-                                                ID === id ? 
-                                                    () => {
-                                                        setOpen(false);
-                                                        setContent(false);
-                                                        setID("");
-                                                    } : 
-                                                    () => {
-                                                        setOpen(false);
-                                                        setContent(false);
-                                                        setID(id);
-                                                        setContent(true);
-                                                        setOpen(true);
-                                                    } : 
-                                                () => {
-                                                    setID(id);
-                                                    setContent(true);
-                                                    setOpen(true);
-                                                }}>
+                                            <button type="button" className="readme-btn" onClick={() => toggleActive(id)}>
                                                 {content && ID === id ? "Show Less" : "Show More"}
                                             </button>
                                         </div>
