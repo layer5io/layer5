@@ -28,7 +28,6 @@ const Card = ({ frontmatter, fields }) => {
                         {frontmatter.author && <span>By: {frontmatter.author}</span>}
                         {frontmatter.date && (
                             <>
-                                <span className="divider">/</span>
                                 <span>{frontmatter.date}</span>
                             </>
                         )}
