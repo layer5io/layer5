@@ -1,7 +1,8 @@
 {
      "env": {
-         "browser": true,
-         "es2020": true
+        "browser": true,
+        "es2020": true,
+        "amd": true
      },
      "settings": {
          "react": {
@@ -22,7 +23,7 @@
      },
      "plugins": [
          "react"
- 
+
      ],
      "rules": {
          "no-unused-vars": [
