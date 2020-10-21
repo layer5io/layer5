@@ -10,7 +10,7 @@ const Card = ({ frontmatter }) => {
         <CardWrapper fixed={!!frontmatter.abstract}>
             <div className="post-block">
                 <div className="post-thumb-block">
-                    <a className="anchor" href={frontmatter.eurl}>
+                    <a className="anchor" target="_blank" href={frontmatter.eurl}>
                         <Image
                             {...frontmatter.thumbnail}
                             imgStyle={{ objectFit: "contain" }}
@@ -19,7 +19,7 @@ const Card = ({ frontmatter }) => {
                 </div>
                 <div className="post-content-block">
                     <h2 className="post-title">
-                        <a className="anchor" href={frontmatter.eurl}>
+                        <a className="anchor" target="_blank" href={frontmatter.eurl}>
                             {frontmatter.title}
                         </a>
                     </h2>
@@ -35,11 +35,11 @@ const Card = ({ frontmatter }) => {
                         )}
                     </div>
                     <div className="readmore-btn-wrapper">
-                        <a className="readmore-btn" href={frontmatter.eurl}>
+                        <a className="readmore-btn" target="_blank" href={frontmatter.eurl}>
                             see more <IoIosArrowRoundForward />
                         </a>
                         {frontmatter.eurl && (
-                            <a className="readmore-btn" href={frontmatter.eurl}>
+                            <a className="readmore-btn" target="_blank" href={frontmatter.eurl}>
                                 <BiLinkExternal />
                             </a>
                         )}
