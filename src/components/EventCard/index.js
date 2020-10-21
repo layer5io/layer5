@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { BiLinkExternal } from "react-icons/bi";
 import Image from "../image";
