@@ -14,7 +14,8 @@ import Bookmarks from "../../images/layer5/bookmarks.png";
 const Layer5Wrapper = styled.section`
   .brandHeader {
     height: auto;
-    vertical-align: middle;
+    padding-left:0px;
+    padding-right:25%;
     padding-top: 3rem;
   }
   .Layer5TagDark {
