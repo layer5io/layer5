@@ -259,8 +259,8 @@
   ga-1-date: "?"
   commercial: NGINX
   category: Service Mesh
-  timeline-order: 21
-  icon: assets/images/service-mesh-icons/osm.png
+  timeline-order: 22
+  icon: assets/images/service-mesh-icons/nginx-service-mesh.svg
 
 - name: Citrix ADC CPX
   opensource: "No"
