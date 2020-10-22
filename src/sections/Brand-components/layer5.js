@@ -22,6 +22,15 @@ const Layer5Wrapper = styled.section`
     background: #000000;
   }
 
+  @media (max-width:575px){
+     .brandHeader{
+         padding-bottom:30px;
+         padding-left:0px;
+         padding-right:30%;
+         padding-top: 0;
+     }
+  }
+
   ${media.grandpabear`
         .mediaLayer5 {
           padding-left: 2.5em;
@@ -51,12 +60,12 @@ const Layer5 = () => {
     return (
         <Layer5Wrapper>
             <Row>
-                <Col xs={4} sm={4} lg={4} xl={4}>
+                <Col xs={12} sm={4} lg={4} xl={4}>
                     <div className="brandHeader">
                         <h2>Layer5 Brand Kits</h2>
                     </div>
                 </Col>
-                <Col xs={8} sm={8} lg={8} xl={8}>
+                <Col xs={12} sm={8} lg={8} xl={8}>
                     <div className="post-content">
                         <p>
               We’ve created some guidelines to help you use our brand and
@@ -125,82 +134,91 @@ const Layer5 = () => {
                         </p>
                     </Col>
                 </Row>
-                <Row>
                     <Col xs={12} sm={12} lg={12} xl={12}>
                         <h4 className="layerH3">Web</h4>
                     </Col>
-                    <Col xs={4} sm={4} lg={4} xl={4}>
+                 <Row>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+                    <Row>   
+                    <Col xs={12} sm={12} lg={12} xl={12}>
                         <p className="layerH3">Color</p>
-                    </Col>
-                    <Col xs={8} sm={8} lg={8} xl={8}>
-                        <p className="mediaLayer5 layerH3">Grayscale</p>
                     </Col>
                     <ColorBox R="R: 60" G="G: 73" B="B: 79" colorCode="#3c494f" />
                     <ColorBox R="R: 0" G="G: 179" B="B: 159" colorCode="#00b39f" />
                     <ColorBox R="R: 0" G="G: 211" B="B: 169" colorCode="#00d3a9" />
-
+                    </Row>
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+                    <Row>
+                    <Col xs={12} sm={12} lg={12} xl={12}>
+                        <p className="layerH3">Grayscale</p>
+                    </Col>
                     <ColorBox R="R: 60" G="G: 73" B="B: 79" colorCode="#3c494f" />
                     <ColorBox R="R: 130" G="G: 140" B="B: 140" colorCode=" #828c8c" />
                     <ColorBox R="R: 160" G="G: 170" B="B: 170" colorCode="#a0aaaa" />
+                    </Row>
+                    </Col>
                 </Row>
-                <Row>
-                    <Col xs={12} sm={12} lg={12} xl={12}>
+                <Col xs={12} sm={12} lg={12} xl={12}>
                         <h4 className="layerH3">Print</h4>
                     </Col>
-                    <Col xs={4} sm={4} lg={4} xl={4}>
+                 <Row>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+                    <Row>   
+                    <Col xs={12} sm={12} lg={12} xl={12}>
                         <p className="layerH3">Color</p>
                     </Col>
-                    <Col xs={8} sm={8} lg={8} xl={8}>
-                        <p className="mediaLayer5 layerH3">Grayscale</p>
-                    </Col>
-                    <ColorBox
+                    <ColorBox                         
                         R="c: 20"
                         G="M: 0"
                         B="Y: 0"
                         K="K: 80"
                         colorCode="#3c494f"
-                        CMY
-                    />
-                    <ColorBox
+                        CMY />
+                    <ColorBox 
                         R="C: 80"
                         G="M: 0"
                         B="Y: 50"
                         K="K: 0"
                         colorCode="#00b39f"
-                        CMY
-                    />
-                    <ColorBox
+                        CMY />
+                    <ColorBox 
                         R="C: 65"
                         G="M: 0"
-                        B="Y: 45"
+                        B="Y: 45"                             
                         K="K: 0"
                         colorCode="#00d3a9"
-                        CMY
-                    />
-                    <ColorBox
+                        CMY />
+                    </Row>
+                    </Col>
+                    <Col xs={12} sm={12} md={6} lg={6} xl={6}>
+                    <Row>
+                    <Col xs={12} sm={12} lg={12} xl={12}>
+                        <p className="layerH3">Grayscale</p>
+                    </Col>
+                    <ColorBox                         
                         R="C: 0"
                         G="M: 0"
                         B="Y: 0"
                         K="K: 85"
                         colorCode="#3c494f"
-                        CMY
-                    />
-                    <ColorBox
+                        CMY />
+                    <ColorBox 
                         R="C: 0"
                         G="M: 0"
                         B="Y: 0"
                         K="K: 55"
                         colorCode=" #828c8c"
-                        CMY
-                    />
-                    <ColorBox
+                        CMY />
+                    <ColorBox                          
                         R="C: 0"
                         G="M: 0"
                         B="Y: 0"
                         K="K: 40"
                         colorCode="#a0aaaa"
-                        CMY
-                    />
+                        CMY/>
+                    </Row>
+                    </Col>
                 </Row>
                 <Row>
                     <Col xs={12} sm={12} lg={12} xl={12}>
