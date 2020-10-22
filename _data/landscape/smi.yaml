@@ -28,6 +28,16 @@
   tspec: "No"
   tspeclink: ""
 
+- name: NGINX Service Mesh
+  tac: "Yes"
+  taclink: "https://docs.nginx.com/nginx-service-mesh/tutorials/accesscontrol-walkthrough/"
+  tmetrics: "Yes"
+  tmetricslink: "https://docs.nginx.com/nginx-service-mesh/usage/traffic-metrics/"
+  tsplit: "Yes"
+  tsplitlink: "https://docs.nginx.com/nginx-service-mesh/tutorials/trafficsplit-deployments/"
+  tspec: "Yes"
+  tspeclink: "https://docs.nginx.com/nginx-service-mesh/usage/traffic-policies/"
+
 - name: Traefik
   tac: "Yes"
   taclink: "https://github.com/traefik/mesh"

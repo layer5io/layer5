@@ -78,6 +78,16 @@
   commercial: Buoyant
   category: Service Mesh
 
+- name: NGINX Service Mesh
+  opensource: "Partial"
+  link: https://www.nginx.com/products/nginx-service-mesh/
+  governance: NGINX
+  primary-lang: Go, C
+  announce-date: Sept 2020
+  ga-1-date: "?"
+  commercial: NGINX
+  category: Service Mesh
+
 - name: Traefik
   opensource: "Yes"
   link: https://github.com/traefik/mesh
@@ -171,11 +181,11 @@
 - name: nginMesh
   opensource: "Yes"
   link: https://github.com/nginxinc/nginmesh
-  governance: Nginx
+  governance: NGINX
   primary-lang: Rust, Go, C
   announce-date: September 2017
   ga-1-date: discontinued
-  commercial: Nginx
+  commercial: NGINX
   category: Service Proxy
 
 - name: MOSN
@@ -299,14 +309,14 @@
   commercial: Kong Inc.
   category: Load-Balancers
 
-- name: Nginx
+- name: NGINX
   opensource: "Yes"
   link: http://nginx.org/
-  governance: Nginx
+  governance: NGINX
   primary-lang: Go
   announce-date: "?"
   ga-1-date: "?"
-  commercial: Nginx Plus
+  commercial: NGINX Plus
   category: Load-Balancers
 
 - name: Proxygen
