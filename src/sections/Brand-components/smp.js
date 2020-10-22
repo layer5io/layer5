@@ -10,6 +10,7 @@ import SmpWhite from "../../assets/images/smp/icon/smp-white.png";
 import SmPLightTextSide from "../../assets/images/smp/horizontal/smp-light-text-side.png";
 import SmPDarkTextSide from "../../assets/images/smp/horizontal/smp-dark-text-side.png";
 import SmPWhiteTextSide from "../../assets/images/smp/horizontal/smp-white-text-side.png";
+import { Link } from "gatsby";
 
 const SMPWrap = styled.section`
   .SmpWhite {
@@ -36,7 +37,7 @@ const SMPBrand = () => {
                     </h1>
                 </Col>
                 <Col xs={12} sm={6} lg={6} xl={6}>
-                    <Button className="l5-dark-yellow">DOWNLOAD LOGO ASSETS</Button>
+                    <Link to="https://layer5.io/assets/resources/brand/smp-brand-kit.zip"><Button className="l5-dark-yellow">DOWNLOAD LOGO ASSETS</Button></Link>
                 </Col>
                 <Col xs={12} sm={12} lg={12} xl={12}>
                     <Row>

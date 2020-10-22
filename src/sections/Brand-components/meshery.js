@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import ColorBox from "../../components/ColorBox";
-
+import {Link} from "gatsby";
 import MeshLogoLightText from "../../assets/images/meshery/meshery-logo-light-text.png";
 import MeshLogoTagLightTextSide from "../../assets/images/meshery/meshery-logo-tag-light-text-side.png";
 import MeshLogoLightTextSide from "../../assets/images/meshery/meshery-logo-light-text-side.png";
@@ -28,7 +28,7 @@ const MesheryBrand = () => {
                     </h1>
                 </Col>
                 <Col xs={12} sm={6} lg={6} xl={6}>
-                    <Button className="l5-dark-yellow">DOWNLOAD LOGO ASSETS</Button>
+                    <Link to="https://layer5.io/assets/resources/brand/meshery-brand-kit.zip"><Button className="l5-dark-yellow">DOWNLOAD LOGO ASSETS</Button></Link>
                 </Col>
                 <Col xs={12} sm={12} lg={12} xl={12}>
                     <Row>
