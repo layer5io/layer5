@@ -11,7 +11,11 @@ import MeshDarkText from "../../assets/images/meshery/meshery-dark-text.png";
 import MeshDarkTagText from "../../assets/images/meshery/meshery-dark-tag-text.png";
 
 const MesheryWrapper = styled.section`
-@media (max-width:375px){
+.colors{
+    padding-left:25px;
+  }
+
+@media (max-width:425px){
     .colors{
       padding-left:50px;
     }

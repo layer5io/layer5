@@ -19,8 +19,11 @@ const SMPWrap = styled.section`
   .smpDark {
     background-color: #3c494e;
   }
+  .colors{
+    padding-left:25px;
+  }
   
-  @media (max-width:375px){
+  @media (max-width:425px){
     .colors{
       padding-left:50px;
     }

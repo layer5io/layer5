@@ -15,8 +15,10 @@ const Layer5Wrapper = styled.section`
   .brandHeader {
     height: auto;
     padding-left:0px;
-    padding-right:25%;
     padding-top: 3rem;
+  }
+  .brandHeader h2{
+    font-size:2rem;
   }
   .Layer5TagDark {
     background: #000000;
@@ -25,8 +27,6 @@ const Layer5Wrapper = styled.section`
   @media (max-width:575px){
      .brandHeader{
          padding-bottom:30px;
-         padding-left:0px;
-         padding-right:30%;
          padding-top: 0;
      }
   }
