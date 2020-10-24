@@ -27,28 +27,28 @@ function Compatibilty() {
 
                                     <a href={`${compatible.taclink}`} target="_blank" rel="noreferrer">{compatible.tac}</a>
 
-                                    :<></>}
+                                    :compatible.tac}
                             </td>
                             <td>
                                 {compatible.tmetricslink?
 
                                     <a href={`${compatible.tmetricslink}`} target="_blank" rel="noreferrer">{compatible.tmetrics}</a>
 
-                                    :<></>}
+                                    :compatible.tmetrics}
                             </td>
                             <td>
                                 {compatible.tsplitlink?
 
                                     <a href={`${compatible.tsplitlink}`} target="_blank" rel="noreferrer">{compatible.tsplit}</a>
 
-                                    :<></>}
+                                    :compatible.tsplit}
                             </td>
                             <td>
                                 {compatible.tspeclink?
 
                                     <a href={`${compatible.tspeclink}`} target="_blank" rel="noreferrer">{compatible.tspec}</a>
 
-                                    :<></>}
+                                    :compatible.tspec}
                             </td>
 
 

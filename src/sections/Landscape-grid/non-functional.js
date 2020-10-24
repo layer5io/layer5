@@ -1,5 +1,6 @@
 import React from "react";
 import { non_functional } from "../../collections/landscape/non-functional";
+import { TiTick, TiTimes } from 'react-icons/ti'
 
 function NonFunctional() {
     return (
@@ -28,7 +29,12 @@ function NonFunctional() {
                             <td>
                                 <a href={`${non_func.link}`} title={`${non_func.link}`}>{non_func.name}</a>
                             </td>
-                            <td style={{ textAlign: "center" }}>{non_func.opensource}</td>
+
+                            <td style={{ textAlign: "center" }}>
+                                {
+                                    non_func.opensource==="Yes"? <TiTick color="#00FF00" />:<TiTimes color="#FF0000" />
+                                }
+                            </td>
                             <td style={{ textAlign: "center" }}>{non_func.governance}</td>
                             <td style={{ textAlign: "center" }}>{non_func.primary_lang}</td>
                             <td style={{ textAlign: "center" }}>{non_func.announce_date}</td>

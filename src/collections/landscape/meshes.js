@@ -315,7 +315,7 @@ export const meshes=[
         tcp_web: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>",
         grpc: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>",
         h2: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>",
-        multi_cluster: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>",
+        multi_cluster: `<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>`,
         multi_tenant: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>",
         desc: "Rotor - a fast, lightweight bridge between your service discovery and Envoy’s configuration APIs. Turbine Labs has shutdown.",
         prometheus: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>",

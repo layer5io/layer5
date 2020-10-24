@@ -1,5 +1,6 @@
 import React from "react";
 import { meshes } from "../../collections/landscape/meshes";
+import { TiTick, TiTimes } from 'react-icons/ti'
 
 function Functional() {
     return (
@@ -28,16 +29,58 @@ function Functional() {
                             <td>
                                 <a href={`${mesh.link}`} title={`${mesh.desc}`}>{mesh.name}</a>
                             </td>
-                            <td>{mesh.autoinject}</td>
-                            <td>{mesh.tcp_web}</td>
-                            <td>{mesh.h2}</td>
-                            <td>{mesh.grpc}</td>
-                            <td>{mesh.multi_cluster}</td>
-                            <td>{mesh.multi_tenant}</td>
-                            <td>{mesh.prometheus}</td>
-                            <td>{mesh.tracing}</td>
-                            <td>{mesh.tracing}</td>
-                            <td>{mesh.encryption}</td>
+
+                            <td>
+                                {
+                                    mesh.autoinject==="Yes"? <TiTick color="#00FF00" />:mesh.autoinject="No"? <TiTimes color="#FF0000" />:mesh.autoinject
+                                }
+                            </td>
+
+                            <td>
+                                {
+                                    mesh.tcp_web==="Yes"? <TiTick color="#00FF00" />:mesh.tcp_web==="No"? <TiTimes color="#FF0000" />:mesh.tcp_web
+                                }
+                            </td>
+                            <td>
+                                {
+                                    mesh.h2==="Yes"? <TiTick color="#00FF00" />:mesh.h2==="No"? <TiTimes color="#FF0000" />:mesh.h2
+                                }
+                            </td>
+                            <td>
+                                {
+                                    mesh.grpc==="Yes"? <TiTick color="#00FF00" />:mesh.grpc==="No"? <TiTimes color="#FF0000" />:mesh.grpc
+                                }
+                            </td>
+                            <td>
+
+                                {
+                                    mesh.multi_cluster==="Yes"? <TiTick color="#00FF00" />:mesh.multi_cluster==="No"? <TiTimes color="#FF0000" />:mesh.multi_cluster
+                                }
+
+
+
+                            </td>
+                            <td>
+                                {
+                                    mesh.multi_tenant==="Yes"? <TiTick color="#00FF00" />:mesh.multi_tenant==="No"? <TiTimes color="#FF0000" />:mesh.multi_tenant
+                                }
+                            </td>
+                            <td>
+                                {
+                                    mesh.prometheus==="Yes"? <TiTick color="#00FF00" />:mesh.prometheus==="No"? <TiTimes color="#FF0000" />:mesh.prometheus
+                                }
+                            </td>
+                            <td>
+                                {
+                                    mesh.tracing==="Yes"? <TiTick color="#00FF00" />:mesh.tracing==="No"? <TiTimes color="#FF0000" />:mesh.tracing
+                                }
+                            </td>
+
+                            <td>
+                                {
+                                    mesh.encryption==="Yes"? <TiTick color="#00FF00" />:mesh.encryption==="No"? <TiTimes color="#FF0000" />:mesh.encryption
+                                }
+                            </td>
 
                         </tr>
                     )}

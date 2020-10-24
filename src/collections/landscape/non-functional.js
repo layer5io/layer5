@@ -16,6 +16,7 @@ import AppMesh from "../../assets/images/service-mesh-icons/App Mesh.png";
 import Kuma from "../../assets/images/service-mesh-icons/Kuma.svg";
 import Citrix from "../../assets/images/service-mesh-icons/citrix.svg";
 import Osm from "../../assets/images/service-mesh-icons/osm.png";
+import Nginx from "../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
 
 
 export const non_functional=[{
@@ -295,6 +296,19 @@ export const non_functional=[{
     category: "Service Mesh",
     timeline_order: 21,
     icon: Osm
+},
+{
+    name: "NGINX Service Mesh",
+    opensource: "Partial",
+    link: "https://www.nginx.com/products/nginx-service-mesh/",
+    governance: "NGINX",
+    primary_lang: "Go, C",
+    announce_date: "Sept 2020",
+    ga_1_date: "?",
+    commercial: "NGINX",
+    category: "Service Mesh",
+    timeline_order: 22,
+    icon: Nginx
 },
 {
     name: "Citrix ADC CPX",
