@@ -49,9 +49,9 @@ const FeaturesCarousel = ({ features }) => {
                     renderCenterRightControls={() => null}
                     renderCenterLeftControls={() => null}
                     wrapAround
-                    // defaultControlsConfig={{
-                    //     pagingDotsContainerClassName: styles.pagingDots,
-                    // }}
+                    defaultControlsConfig={{
+                        pagingDotsContainerClassName: 'pagingDots',
+                    }}
                     cellSpacing={40}
                     getControlsContainerStyles={(key) => {
                         switch (key) {
@@ -80,7 +80,7 @@ const FeaturesCarousel = ({ features }) => {
 
 const Feature = ({children, title, active, onClick, learnMoreLink, id, Element = "li"}) =>{
     return(
-        <Element className={active ? "active-feature" : "feature"}>
+        <Element className={active ? "feature active-feature" : "feature"}>
             {onClick ? (
                 <button
                     className="heading"

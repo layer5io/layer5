@@ -66,7 +66,6 @@ export const FeaturesWrapper = styled.div`
     }
     
     .active-feature {
-      composes: feature;
       border-color: var(--blue);
     
       & .body {
@@ -133,9 +132,25 @@ export const FeaturesWrapper = styled.div`
     .learn-more-link {
       display: none;
       text-align: left;
+      transition: all 0.3s linear;
+      
+      svg{
+           margin-left: 0px;
+           font-size: 27px;
+           transition: all 0.3s linear;
+       }
+      
+      &:hover{
+        color: ${props => props.theme.secondaryColor};
+        svg{
+            margin-left: 3px;
+            transform: scale(1.2);
+        }
+      }
     
       @media (min-width: 768px) {
-        display: block;
+        display: flex;
+        align-items: center;
       }
     }
 
