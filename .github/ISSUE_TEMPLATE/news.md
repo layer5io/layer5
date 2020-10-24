@@ -1,13 +1,13 @@
 ---
-name: Layer5 News update
+name: 📰 Layer5 News Update
 about: News items to be listed on https://layer5.io/news
 title: '[News]'
 labels: 'area/news'
 assignees: ''
 ---
 **Article:**
-- Title:
-- Link:
+- Title: 
+- Link: 
 
 ---
 **Contributor Resources**

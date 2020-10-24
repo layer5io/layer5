@@ -1,5 +1,5 @@
 ---
-name: Feature request
+name: 💡 Feature request
 about: Suggest an enhancement to this project
 title: ''
 labels: 'kind/enhancement'
@@ -10,7 +10,6 @@ assignees: ''
 
 **Desired Behavior**
 <!-- A brief description of the enhancement. -->
-
 
 ---
 [Optional] **Alternatives**

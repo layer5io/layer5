@@ -1,12 +1,11 @@
 ---
-name: Service Mesh Landscape Update
+name: 🏞 Service Mesh Landscape Update
 about: Issues related to the service mesh landscape.
 title: '[Landscape]'
 labels: 'area/landscape'
 assignees: ''
 ---
 **Current State:**
-
 
 **Desired State:**
 
