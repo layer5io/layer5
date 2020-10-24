@@ -1,7 +1,7 @@
 ---
 layout: book
 title:  "The Enterprise Path to Service Mesh Architectures 2nd Edition"
-date:   2018-06-11 21:15:05 +0000
+date:   2020-10-23 21:15:05 +0000
 image: /assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png
 cover: /assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition-small.png
 #author: Lee Calcote
@@ -9,9 +9,7 @@ status: published
 brief: "Planning to build a microservice-driven cloud native application or looking to modernize existing application services?"
 description: "A must-read for anyone looking to understand service mesh deployments and get an explanation of service meshes in contrast to related technologies.
 Learn from the largest collection of service mesh projects and their maintainers in the world.Self-study service mesh workshops and tutorials for Istio, Envoy, Linkerd, Consul, App Mesh, Octarine, Kuma, VMware Tanzu Service Mesh"
-redirect_from: 
- - "/2018/06/08/the-enterprise-path-to-servcie-mesh/"
- - "/books/the-enterprise-path-to-service-mesh"
+
 ---
 
 <h4> Book: <i>The Enterprise Path to Service Mesh Architectures 2nd Edition</i></h4>
