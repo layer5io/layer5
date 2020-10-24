@@ -32,7 +32,7 @@ function Functional() {
 
                             <td>
                                 {
-                                    mesh.autoinject==="Yes"? <TiTick color="#00FF00" />:mesh.autoinject="No"? <TiTimes color="#FF0000" />:mesh.autoinject
+                                    mesh.autoinject==="Yes"? <TiTick color="#00FF00" />:mesh.autoinject==="No"? <TiTimes color="#FF0000" />:mesh.autoinject
                                 }
                             </td>
 
