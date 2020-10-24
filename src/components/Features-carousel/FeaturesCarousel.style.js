@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const FeaturesWrapper = styled.div`
-    --gray-6: #dcdde0;
-    --blue: #14c6cb;
-
     .features-carousel {
       @media (min-width: 768px) {
         display: none;
@@ -55,7 +52,7 @@ export const FeaturesWrapper = styled.div`
     
     .feature {
       border-left: 2px solid;
-      border-color: var(--gray-6);
+      border-color: ${props => props.theme.headingColor};
       padding-left: 44px;
       margin: 28px 0;
       min-height: auto;
@@ -66,7 +63,7 @@ export const FeaturesWrapper = styled.div`
     }
     
     .active-feature {
-      border-color: var(--blue);
+      border-color: ${props => props.theme.secondaryColor};
     
       & .body {
         opacity: 1;
@@ -99,9 +96,8 @@ export const FeaturesWrapper = styled.div`
       padding: 0;
       font-size: 18px;
       line-height: 28px;
-      // font-family: var(--font-display);
       font-weight: bold;
-      color: var(--gray-4);
+      color: ${props => props.theme.headingColor};
       cursor: pointer;
     }
     
