@@ -20,7 +20,6 @@ function NonFunctional() {
                         <th>GA / 1.0</th>
                         <th>Commercial Offerings</th>
                     </tr>
-
                 </thead>
                 <tbody>
                     {non_functional.map(non_func =>

@@ -15,7 +15,6 @@ function Compatibilty() {
                         <th>Traffic Metrics</th>
                         <th>Traffic Split</th>
                         <th>Traffic Specs</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -50,9 +49,6 @@ function Compatibilty() {
 
                                     :compatible.tspec}
                             </td>
-
-
-
                         </tr>
                     )}
                 </tbody>

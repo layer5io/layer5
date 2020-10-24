@@ -56,9 +56,6 @@ function Functional() {
                                 {
                                     mesh.multi_cluster==="Yes"? <TiTick color="#00FF00" />:mesh.multi_cluster==="No"? <TiTimes color="#FF0000" />:mesh.multi_cluster
                                 }
-
-
-
                             </td>
                             <td>
                                 {
@@ -81,7 +78,6 @@ function Functional() {
                                     mesh.encryption==="Yes"? <TiTick color="#00FF00" />:mesh.encryption==="No"? <TiTimes color="#FF0000" />:mesh.encryption
                                 }
                             </td>
-
                         </tr>
                     )}
                 </tbody>
