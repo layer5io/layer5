@@ -547,11 +547,11 @@ const temp = () => (
                             title: 'Application Logs',
                             description:
                                 'View log output for running applications and deployments',
-                            learnMoreLink: '/docs/logs',
+                            learnMoreLink: '/',
                             content: (
                                 <Terminal
                                     lines={[
-                                        { code: '$ waypoint logs' },
+                                        { code: '$ meshery logs' },
                                         {
                                             code: '[11] Puma starting in cluster mode...',
                                             color: 'gray',
@@ -589,7 +589,7 @@ const temp = () => (
                             content: (
                                 <Terminal
                                     lines={[
-                                        { code: '$ waypoint exec bash' },
+                                        { code: '$ meshery exec bash' },
                                         {
                                             code: 'Connected to deployment v18',
                                             color: 'gray',
@@ -610,7 +610,7 @@ const temp = () => (
                             content: (
                                 <Terminal
                                     lines={[
-                                        { code: '$ waypoint deploy' },
+                                        { code: '$ meshery deploy' },
                                         { code: '' },
                                         { code: '» Deploying...', color: 'white' },
                                         {
@@ -626,18 +626,18 @@ const temp = () => (
                                         { code: '\n' },
                                         {
                                             code:
-                                                'The deploy was successful! A Waypoint URL is shown below.',
+                                                'The deploy was successful! A meshery URL is shown below.',
                                             color: 'white',
                                         },
                                         { code: '\n' },
                                         {
                                             code:
-                                                '   Release URL: https://admittedly-poetic-joey.waypoint.run',
+                                                '   Release URL: https://admittedly-poetic-joey.meshery.run',
                                             color: 'white',
                                         },
                                         {
                                             code:
-                                                'Deployment URL: https://admittedly-poetic-joey--v18.waypoint.run',
+                                                'Deployment URL: https://admittedly-poetic-joey--v18.meshery.run',
                                             color: 'white',
                                         },
                                     ]}
@@ -648,7 +648,7 @@ const temp = () => (
                         {
                             title: 'Web UI',
                             description:
-                                'View projects and applications being deployed by Waypoint in a web interface',
+                                'View projects and applications being deployed by meshery in a web interface',
                             content: (
                                 <img
                                     style={{ border: '1px solid rgba(174,176,183,.45)' }}
@@ -661,7 +661,7 @@ const temp = () => (
                             title: 'CI/CD and Version Control Integration',
                             description:
                                 'Integrate with existing CI/CD providers and version control providers like GitHub, CircleCI, Jenksins, and more',
-                            learnMoreLink: '/docs/automating-execution',
+                            learnMoreLink: '/',
                             content: (
                                 <Terminal
                                     title="config.yaml"
@@ -673,12 +673,12 @@ const temp = () => (
                                         {
                                             indent: 1,
                                             code:
-                                                'WAYPOINT_SERVER_TOKEN: ${{ secrets.WAYPOINT_SERVER_TOKEN }}',
+                                                'SERVER_TOKEN: ${{ secrets.SERVER_TOKEN }}',
                                             color: 'white',
                                         },
                                         {
                                             indent: 1,
-                                            code: 'WAYPOINT_SERVER_ADDR: waypoint.example.com:9701',
+                                            code: 'SERVER_ADDR: meshery.example.com:9701',
                                             color: 'white',
                                         },
                                         {
@@ -692,7 +692,7 @@ const temp = () => (
                                         },
                                         {
                                             indent: 1,
-                                            code: '- uses: hashicorp/action-setup-waypoint',
+                                            code: '- uses: layer5/action-setup-layer5',
                                             color: 'white',
                                         },
                                         {
@@ -706,11 +706,11 @@ const temp = () => (
                                             color: 'white',
                                         },
                                         {
-                                            code: '- run: waypoint init',
+                                            code: '- run: meshery init',
                                             color: 'white',
                                         },
                                         {
-                                            code: '- run: waypoint up',
+                                            code: '- run: meshery up',
                                             color: 'white',
                                         },
                                     ]}
@@ -720,8 +720,8 @@ const temp = () => (
                         {
                             title: 'Extensible Plugin Interface',
                             description:
-                                'Easily extend Waypoint with custom support for platforms, build processes, and release systems.',
-                            learnMoreLink: '/docs/extending-waypoint',
+                                'Easily extend Meshery with custom support for platforms, build processes, and release systems.',
+                            learnMoreLink: '/',
                             content: (
                                 <Terminal
                                     title="plugin.go"
