@@ -3,6 +3,11 @@ import styled from "styled-components";
 const MesheryWrapper = styled.section`
     padding: 25px 0 100px 0;
 
+    .info {
+        background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,179,159,0.9780287114845938) 100%, rgba(0,211,169,1) 100%);
+    }
+
     h1 {
         font-size: 50px;
         line-height: 60px;
@@ -16,10 +21,15 @@ const MesheryWrapper = styled.section`
     }
 
     .description {
-        margin-top: -40px; 
+        // margin-top: -40px; 
         padding: 0 50px 100px 80px;
         .desc-text {
-            padding: 25px;
+            padding: 5px;
+            .desc-bg {
+                padding: 20px;
+                // box-shadow: 15px 20px 8px #828c8c;
+            // background: #a0aaaa;
+            }
         }
         .desc-p {
             margin-bottom: 50px;
@@ -108,15 +118,15 @@ const MesheryWrapper = styled.section`
     }
 
     .number {
+        // border: 1px solid black;
+        padding: 5px 5px 0 5px;
+        text-align: center;
         float: right;
+        display: block;
+        position: relative;
         .number-desc {
             position: relative;
             bottom: 0;
-        }
-        &:hover {
-            h3 {
-                color: #ffffff;
-            }
         }
     }
     @media only screen and (max-width: 912px) {
