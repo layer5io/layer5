@@ -59,7 +59,7 @@ const Data = {
                 },
                 {
                     name: "Distributed Performance",
-                    path: "/projects/distributed-performance-management"
+                    path: "/projects/distributed-performance-management-of-service-meshes"
                 }
             ],
             div1: {
