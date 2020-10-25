@@ -37,7 +37,8 @@ const ProjectItemWrapper = styled.section`
         }
         p{
             font-size: 16px;
-            font-weight: 300
+            font-weight: 300;
+            max-width: 80%;
         }
 
         img{
