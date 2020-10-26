@@ -2390,6 +2390,21 @@ background: linear-gradient(to right, #f5af19, #f12711); W3C, IE 10+/ Edge, Fire
   justify-content: center;
 }
 
+.smp-twitter-widget {
+  margin: auto;
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .smp-twitter-widget {
+    width: 100%;
+  }
+
+  .perf-imgs {
+    width: 100%;
+  }
+}
+
 .darkgreenflare {
   /* Flare 
   background: #fff;  /* fallback for old browsers */
