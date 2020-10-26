@@ -38,10 +38,10 @@ ul li:last-child {
     @media (--small) {
       flex-direction: column;
     }
-  
+
     & > ul {
       max-width: 470px;
-      margin-left: 128px;
+      margin-left: 50px;
       padding: 0;
   
       @media (width < 1120px) {
@@ -72,12 +72,12 @@ ul li:last-child {
   
       & > div {
         list-style: none;
-        padding-bottom: 285px;
+        padding-bottom: 150px;
   
         @media (--small) {
           padding-top: 0;
           margin-bottom: 0;
-          padding-bottom: 100px;
+          padding-bottom: 50px;
         }
       }
   
