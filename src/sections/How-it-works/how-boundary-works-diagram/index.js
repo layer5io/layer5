@@ -1,6 +1,5 @@
 import React from "react";
 import Howitworks from './howitworks.style'
-import logo from '../../../images/favicon.png'
 
 export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
   return (
@@ -75,17 +74,17 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
             <g
               className={activeExampleIndex !== 0 ? ' ' : 'inactive arrowOne'}
             >
-                {/* {
+                 {
                     activeExampleIndex === 0 &&
 <circle className='spacer' cx="367.07" cy="319.22" r="11.19" />
-                } */}
+                } 
                     <path
-                    className={activeExampleIndex === 0 ? 'show arrowHead' : 'render arrowHead'}
+                    className={activeExampleIndex !== 0 ? 'render arrowHead' : 'show arrowHead'}
                 d="M375.62 319.52l-11.39 3.66 2.51-11.69 8.88 8.03z"
               />
                     <path
                 d="M370.08 316.86a108.68 108.68 0 0023.67-47.78"
-                className={activeExampleIndex === 0 ? 'show arrowSegment' : 'render arrowSegment'}
+                className={activeExampleIndex !== 0 ? 'render arrowSegment' : 'show arrowSegment'}
               />
             </g>
 
@@ -93,21 +92,21 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
             <g
               className={ activeExampleIndex !== 1 ? ' ' : 'inactive arrowTwo'}
             >
-                {/* {
+                {
                     activeExampleIndex === 1 &&
                     <circle className='spacer' cx="209.12" cy="323.72" r="11.19" />
                 }
-              */}
+              
                     <path
-                    className={activeExampleIndex === 1 ? 'show arrowHead' : 'render arrowHead'}
+                    className={activeExampleIndex !== 1 ? 'render arrowHead' : 'show arrowHead'}
                 d="M209.37 332.4l-3.1-11.56 11.56 3.09-8.46 8.47z"
               />
                <path
                 d="M212.3 327a108.51 108.51 0 0046.56 26"
-                className={activeExampleIndex === 1 ? 'show arrowSegment' : 'render arrowSegment'}
+                className={activeExampleIndex !== 1 ? 'render arrowSegment' : 'show arrowSegment'}
               />
                     <path
-                    className={activeExampleIndex === 1 ? 'show arrowSegment' : 'render arrowSegment'}
+                    className={activeExampleIndex !== 1 ? 'render arrowSegment' : 'show arrowSegment'}
                 d="M307.46 355.47A115.53 115.53 0 00394 269M395 226.76a115.51 115.51 0 00-84-88.92"
               />
             </g>
@@ -116,22 +115,22 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
             <g
               className={activeExampleIndex !== 2 ? ' ' : 'inactive arrowThree'}
             >
-                {/* {
+                {
                     activeExampleIndex === 2 &&
                     <circle className='spacer' cx="206.57" cy="172.98" r="11.19" />
-                } */}
+                } 
        
                     <path
-                    className={activeExampleIndex === 2 ? 'show arrowHead' : 'render arrowHead'}
+                    className={activeExampleIndex !== 2 ? 'render arrowHead' : 'show  arrowHead'}
                 d="M198.03 172.68l11.39-3.67-2.52 11.7-8.87-8.03z"
               />
                     <path
                 d="M203.57 175.33a108.58 108.58 0 00-23.67 47.78"
-                className={activeExampleIndex === 2 ? 'show arrowSegment' : 'render arrowSegment'}
+                className={activeExampleIndex !== 2 ? 'render arrowSegment' : 'show arrowSegment'}
               />
                     <path
                 d="M396.22 246.69a109.35 109.35 0 11-187.39-76.58"
-                className={activeExampleIndex === 2 ? 'show arrowSegment' : 'render arrowSegment'}
+                className={activeExampleIndex !== 2 ? 'render arrowSegment' : 'show arrowSegment'}
               />
                
             </g>
@@ -149,28 +148,67 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                 className='boundaryFill'
                 x="251.05"
                 y="211.38"
-                width="72"
-                height="72"
+                width="40"
+                height="28"
                 rx="4.5"
               />
-              <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="55.000000pt" x="251.05"
- y="211.38" height="55.000000pt" viewBox="0 0 568.000000 568.000000"
- preserveAspectRatio="xMidYMid meet">
-<g transform="translate(0.000000,568.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-<path d="M0 2840 l0 -2840 2840 0 2840 0 0 2840 0 2840 -2840 0 -2840 0 0
--2840z m2950 1515 l0 -355 -585 0 -585 0 0 -175 0 -175 -435 0 -435 0 0 530 0
-530 1020 0 1020 0 0 -355z m1720 0 l0 -355 -740 0 -740 0 0 355 0 355 740 0
-740 0 0 -355z m-2890 -1035 l0 -100 1238 0 c1372 0 1296 3 1442 -67 102 -49
-222 -168 274 -272 54 -106 66 -176 66 -383 l0 -178 -435 0 -435 0 0 130 0 130
--1510 0 -1510 0 0 420 0 420 435 0 435 0 0 -100z m3020 -1547 c0 -349 -3 -374
--61 -493 -45 -92 -159 -203 -259 -252 -139 -68 -142 -68 -975 -68 l-745 0 0
-355 0 355 585 0 585 0 0 210 0 210 435 0 435 0 0 -317z m-3090 87 l0 -190 405
-0 405 0 0 -356 0 -355 -572 4 c-511 3 -579 5 -633 21 -95 28 -192 84 -260 151
--69 69 -106 126 -144 224 -25 65 -25 72 -29 379 l-4 312 416 0 416 0 0 -190z"/>
-</g>
-</svg>
+              <rect
+                className='boundaryFill'
+                x="286.05"
+                y="256.38"
+                width="35"
+                height="28"
+                rx="4.5"
+              />
+              <rect
+                className='layerFill'
+                x="251.05"
+                y="240.38"
+                width="72"
+                height="16"
+                rx="4.5"
+              />
+              <rect
+                className='layerFill'
+                x="291.05"
+                y="211.38"
+                width="23"
+                height="30"
+                rx="4.5"
+              />
+              <rect
+                className='layerFill'
+                x="251.05"
+                y="240.38"
+                width="36"
+                height="40"
+                rx="4.5"
+              />
+              <svg 
+                version="1.0" 
+                xmlns="http://www.w3.org/2000/svg"
+                width="55.000000pt" 
+                x="251.05"
+                y="211.38" height="55.000000pt" 
+                viewBox="0 0 568.000000 568.000000"
+                preserveAspectRatio="xMidYMid meet">
+                  <g 
+                    transform="translate(0.000000,568.000000) scale(0.100000,-0.100000)"
+                    fill="#3c494f" 
+                    stroke="#3c494f">
+                    <path 
+                    d="M0 2840 l0 -2840 2840 0 2840 0 0 2840 0 2840 -2840 0 -2840 0 0
+                    -2840z m2950 1515 l0 -355 -585 0 -585 0 0 -175 0 -175 -435 0 -435 0 0 530 0
+                    530 1020 0 1020 0 0 -355z m1720 0 l0 -355 -740 0 -740 0 0 355 0 355 740 0
+                    740 0 0 -355z m-2890 -1035 l0 -100 1238 0 c1372 0 1296 3 1442 -67 102 -49
+                    222 -168 274 -272 54 -106 66 -176 66 -383 l0 -178 -435 0 -435 0 0 130 0 130
+                    -1510 0 -1510 0 0 420 0 420 435 0 435 0 0 -100z m3020 -1547 c0 -349 -3 -374
+                    -61 -493 -45 -92 -159 -203 -259 -252 -139 -68 -142 -68 -975 -68 l-745 0 0
+                    355 0 355 585 0 585 0 0 210 0 210 435 0 435 0 0 -317z m-3090 87 l0 -190 405
+                    0 405 0 0 -356 0 -355 -572 4 c-511 3 -579 5 -633 21 -95 28 -192 84 -260 151
+                    -69 69 -106 126 -144 224 -25 65 -25 72 -29 379 l-4 312 416 0 416 0 0 -190z"/>
+                  </g>
+              </svg>
               
             </g>
 
