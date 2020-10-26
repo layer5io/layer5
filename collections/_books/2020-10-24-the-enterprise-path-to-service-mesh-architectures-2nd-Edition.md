@@ -32,4 +32,4 @@ This updated edition discusses several service meshes available and the tools yo
   <li>The intelligence of the service mesh management plane and the power of the data plane</li>
 
 </div>
-<i>Author: Lee Calcote, Publisher: O'Reilly, Publish Date: October 2020</i>
+<i>Author: Lee Calcote, Publisher: O'Reilly, Publish Date: November 2020</i>
