@@ -10,6 +10,7 @@ import SmpWhite from "../../assets/images/smp/icon/smp-white.png";
 import SmPLightTextSide from "../../assets/images/smp/horizontal/smp-light-text-side.png";
 import SmPDarkTextSide from "../../assets/images/smp/horizontal/smp-dark-text-side.png";
 import SmPWhiteTextSide from "../../assets/images/smp/horizontal/smp-white-text-side.png";
+import { Link } from "gatsby";
 
 const SMPWrap = styled.section`
   .SmpWhite {
@@ -18,6 +19,15 @@ const SMPWrap = styled.section`
   .smpDark {
     background-color: #3c494e;
   }
+  .colors{
+    padding-left:25px;
+  }
+  
+  @media (max-width:425px){
+    .colors{
+      padding-left:50px;
+    }
+}
 `;
 
 const SMPBrand = () => {
@@ -30,7 +40,7 @@ const SMPBrand = () => {
                     </h1>
                 </Col>
                 <Col xs={12} sm={6} lg={6} xl={6}>
-                    <Button className="l5-dark-yellow">DOWNLOAD LOGO ASSETS</Button>
+                    <Link to="https://layer5.io/assets/resources/brand/smp-brand-kit.zip"><Button className="l5-dark-yellow">DOWNLOAD LOGO ASSETS</Button></Link>
                 </Col>
                 <Col xs={12} sm={12} lg={12} xl={12}>
                     <Row>
@@ -83,13 +93,15 @@ const SMPBrand = () => {
                     <Col xs={12} sm={12} lg={12} xl={12}>
                         <h4 className="layerH3">Web</h4>
                     </Col>
-
+                    <div className="colors">
+                    <Row>
                     <ColorBox R="R: 0" G="G: 211" B="B: 169" colorCode="#00d3a9" />
                     <ColorBox R="R: 0" G="G: 179" B="B: 159" colorCode="#00b39f" />
                     <ColorBox R="R: 71" G="G: 126" B="B: 150" colorCode="#477E96" />
                     <ColorBox R="R: 100" G="G: 120" B="B: 129" colorCode="#647881" />
                     <ColorBox R="R: 60" G="G: 73" B="B: 78" colorCode="#3C494E" />
-
+                    </Row>
+                    </div>
                     <Col xs={12} sm={12} lg={12} xl={12}>
                         <p className="layerH3">Logos to use online:</p>
                     </Col>
