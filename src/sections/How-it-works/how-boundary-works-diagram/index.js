@@ -15,7 +15,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
               strokeWidth="1.5"
               strokeMiterlimit="10"
               strokeLinecap="round"
-              stroke="#f04e54"
+              stroke="#00d3a9"
               fill="none"
             />
 
@@ -23,91 +23,47 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
             <g
               className={activeExampleIndex !== 2 ? ' ' : 'inactive hostsAndServices'}
             >
-                {
-                    activeExampleIndex === 2 &&
-<path d="M31.92 169.08v8.4h-2.07v-3.37h-3.44v3.37h-2.07v-8.4h2.07v3.23h3.44v-3.23zM33.08 173.28a4.39 4.39 0 014.63-4.36 4.37 4.37 0 110 8.73 4.39 4.39 0 01-4.63-4.37zm7.16 0a2.53 2.53 0 10-2.53 2.53 2.43 2.43 0 002.53-2.53zM42.81 175.1l2-.58a2.35 2.35 0 002.19 1.39c.84 0 1.36-.37 1.36-.79s-.27-.6-.94-.81l-2.24-.67a2.4 2.4 0 01-2-2.22c0-1.38 1.34-2.5 3.23-2.5a4 4 0 013.85 2.2l-1.91.54a2.23 2.23 0 00-1.92-1c-.71 0-1.16.31-1.16.69s.21.49.59.6l2.19.67c1.31.4 2.39.95 2.39 2.36s-1.42 2.67-3.57 2.67a4.19 4.19 0 01-4.06-2.55zM58.18 170.88H55.4v6.6h-2.07v-6.6h-2.78v-1.8h7.63zM58.11 175.1l2-.58a2.35 2.35 0 002.26 1.39c.83 0 1.36-.37 1.36-.79s-.28-.6-.94-.81l-2.24-.67a2.42 2.42 0 01-2-2.22c0-1.38 1.35-2.5 3.23-2.5a4.08 4.08 0 013.86 2.2l-1.91.54a2.24 2.24 0 00-1.92-1c-.71 0-1.16.31-1.16.69s.21.49.58.6l2.2.67c1.31.4 2.39.95 2.39 2.36s-1.42 2.67-3.58 2.67a4.21 4.21 0 01-4.13-2.55zM75.84 177.48l-.66-.67a4.21 4.21 0 01-2.51.85 2.66 2.66 0 01-2.89-2.52 2.81 2.81 0 011.52-2.39 2.21 2.21 0 01-.6-1.41c0-1.56 1.16-2.42 2.9-2.42a2.59 2.59 0 012.69 2l-1.78.49a1 1 0 00-1-.85.79.79 0 00-.88.76c0 .37.33.67.5.87l1.92 2a4.59 4.59 0 00.45-1.14l1.75.48a5.79 5.79 0 01-.9 2l1.86 1.93zM74 175.55L72.44 174a1.21 1.21 0 00-.66 1 1 1 0 001.12.95 1.92 1.92 0 001.1-.4zM81.55 175.1l2-.58a2.33 2.33 0 002.25 1.39c.84 0 1.36-.37 1.36-.79s-.27-.6-.93-.81l-2.23-.67a2.42 2.42 0 01-2-2.22c0-1.38 1.35-2.5 3.23-2.5a4 4 0 013.85 2.2l-1.91.54a2.22 2.22 0 00-1.92-1c-.71 0-1.16.31-1.16.69s.22.49.59.6l2.19.67c1.31.4 2.4.95 2.4 2.36s-1.42 2.67-3.58 2.67a4.2 4.2 0 01-4.14-2.55zM92.37 170.88v1.47h3.91v1.74h-3.91v1.59h4.54v1.8h-6.56v-8.4h6.57v1.8zM101.71 174.72h-1.5v2.76h-2v-8.4h4.37a2.93 2.93 0 013.09 2.83 2.72 2.72 0 01-1.78 2.56l2.1 3h-2.38zm-1.5-1.74h2.17a1.13 1.13 0 001.23-1.07 1.1 1.1 0 00-1.14-1h-2.26zM115 169.08l-3.4 8.4h-2.27l-3.41-8.4h2.3l2.24 5.85 2.26-5.85zM115.77 169.08h2.09v8.4h-2.09zM119 173.28a4.37 4.37 0 014.57-4.36 4.19 4.19 0 014.28 2.81l-2 .48a2.28 2.28 0 00-2.24-1.42 2.39 2.39 0 00-2.47 2.48 2.43 2.43 0 002.47 2.51 2.25 2.25 0 002.24-1.41l2 .49a4.15 4.15 0 01-4.24 2.79 4.38 4.38 0 01-4.61-4.37zM131 170.88v1.47h3.91v1.74H131v1.59h4.54v1.8h-6.56v-8.4h6.57v1.8zM136.06 175.1l2-.58a2.35 2.35 0 002.26 1.39c.83 0 1.36-.37 1.36-.79s-.28-.6-.94-.81l-2.24-.67a2.42 2.42 0 01-2-2.22c0-1.38 1.35-2.5 3.23-2.5a4 4 0 013.85 2.2l-1.9.54a2.24 2.24 0 00-1.92-1c-.72 0-1.16.31-1.16.69s.21.49.58.6l2.2.67c1.31.4 2.39.95 2.39 2.36s-1.42 2.67-3.58 2.67a4.21 4.21 0 01-4.13-2.55z" />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
-                    <path className='leadingLine' d="M156.62 129.73h.75" />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
-                    <path
+              <path className={activeExampleIndex === 2 ? 'show' : 'render'} d="M31.92 169.08v8.4h-2.07v-3.37h-3.44v3.37h-2.07v-8.4h2.07v3.23h3.44v-3.23zM33.08 173.28a4.39 4.39 0 014.63-4.36 4.37 4.37 0 110 8.73 4.39 4.39 0 01-4.63-4.37zm7.16 0a2.53 2.53 0 10-2.53 2.53 2.43 2.43 0 002.53-2.53zM42.81 175.1l2-.58a2.35 2.35 0 002.19 1.39c.84 0 1.36-.37 1.36-.79s-.27-.6-.94-.81l-2.24-.67a2.4 2.4 0 01-2-2.22c0-1.38 1.34-2.5 3.23-2.5a4 4 0 013.85 2.2l-1.91.54a2.23 2.23 0 00-1.92-1c-.71 0-1.16.31-1.16.69s.21.49.59.6l2.19.67c1.31.4 2.39.95 2.39 2.36s-1.42 2.67-3.57 2.67a4.19 4.19 0 01-4.06-2.55zM58.18 170.88H55.4v6.6h-2.07v-6.6h-2.78v-1.8h7.63zM58.11 175.1l2-.58a2.35 2.35 0 002.26 1.39c.83 0 1.36-.37 1.36-.79s-.28-.6-.94-.81l-2.24-.67a2.42 2.42 0 01-2-2.22c0-1.38 1.35-2.5 3.23-2.5a4.08 4.08 0 013.86 2.2l-1.91.54a2.24 2.24 0 00-1.92-1c-.71 0-1.16.31-1.16.69s.21.49.58.6l2.2.67c1.31.4 2.39.95 2.39 2.36s-1.42 2.67-3.58 2.67a4.21 4.21 0 01-4.13-2.55zM75.84 177.48l-.66-.67a4.21 4.21 0 01-2.51.85 2.66 2.66 0 01-2.89-2.52 2.81 2.81 0 011.52-2.39 2.21 2.21 0 01-.6-1.41c0-1.56 1.16-2.42 2.9-2.42a2.59 2.59 0 012.69 2l-1.78.49a1 1 0 00-1-.85.79.79 0 00-.88.76c0 .37.33.67.5.87l1.92 2a4.59 4.59 0 00.45-1.14l1.75.48a5.79 5.79 0 01-.9 2l1.86 1.93zM74 175.55L72.44 174a1.21 1.21 0 00-.66 1 1 1 0 001.12.95 1.92 1.92 0 001.1-.4zM81.55 175.1l2-.58a2.33 2.33 0 002.25 1.39c.84 0 1.36-.37 1.36-.79s-.27-.6-.93-.81l-2.23-.67a2.42 2.42 0 01-2-2.22c0-1.38 1.35-2.5 3.23-2.5a4 4 0 013.85 2.2l-1.91.54a2.22 2.22 0 00-1.92-1c-.71 0-1.16.31-1.16.69s.22.49.59.6l2.19.67c1.31.4 2.4.95 2.4 2.36s-1.42 2.67-3.58 2.67a4.2 4.2 0 01-4.14-2.55zM92.37 170.88v1.47h3.91v1.74h-3.91v1.59h4.54v1.8h-6.56v-8.4h6.57v1.8zM101.71 174.72h-1.5v2.76h-2v-8.4h4.37a2.93 2.93 0 013.09 2.83 2.72 2.72 0 01-1.78 2.56l2.1 3h-2.38zm-1.5-1.74h2.17a1.13 1.13 0 001.23-1.07 1.1 1.1 0 00-1.14-1h-2.26zM115 169.08l-3.4 8.4h-2.27l-3.41-8.4h2.3l2.24 5.85 2.26-5.85zM115.77 169.08h2.09v8.4h-2.09zM119 173.28a4.37 4.37 0 014.57-4.36 4.19 4.19 0 014.28 2.81l-2 .48a2.28 2.28 0 00-2.24-1.42 2.39 2.39 0 00-2.47 2.48 2.43 2.43 0 002.47 2.51 2.25 2.25 0 002.24-1.41l2 .49a4.15 4.15 0 01-4.24 2.79 4.38 4.38 0 01-4.61-4.37zM131 170.88v1.47h3.91v1.74H131v1.59h4.54v1.8h-6.56v-8.4h6.57v1.8zM136.06 175.1l2-.58a2.35 2.35 0 002.26 1.39c.83 0 1.36-.37 1.36-.79s-.28-.6-.94-.81l-2.24-.67a2.42 2.42 0 01-2-2.22c0-1.38 1.35-2.5 3.23-2.5a4 4 0 013.85 2.2l-1.9.54a2.24 2.24 0 00-1.92-1c-.72 0-1.16.31-1.16.69s.21.49.58.6l2.2.67c1.31.4 2.39.95 2.39 2.36s-1.42 2.67-3.58 2.67a4.21 4.21 0 01-4.13-2.55z" />  
+              <path className={activeExampleIndex === 2 ? 'show leadingLine' : 'render leadingLine'} d="M156.62 129.73h.75" />
+              <path
+                className={activeExampleIndex === 2 ? 'show leadingLine' : 'render leadingLine'}
                 strokeDasharray="1.62 5.39"
-                className='leadingLine'
                 d="M162.76 129.73h11.33"
               />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
-                    <path className='leadingLine' d="M176.78 129.73h.75v.75" />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
-                    <path
+              <path className={activeExampleIndex === 2 ? 'show leadingLine' : 'render leadingLine'} d="M176.78 129.73h.75v.75" />
+              <path
                 strokeDasharray="1.55 5.15"
-                className='leadingLine'
+                className={activeExampleIndex === 2 ? 'show leadingLine' : 'render leadingLine'}
                 d="M177.53 135.64v77.8"
               />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
-                    <image
-                className='dropShadow'
+              <image
+                className={activeExampleIndex === 2 ? 'show dropShadow' : 'render dropShadow'}
                 width="75"
                 height="75"
                 transform="translate(10.32 94.14)"
                 xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAACXBIWXMAAAsSAAALEgHS3X78AAAEq0lEQVR4Xu2cW3LbRhBFDylSFqnE8iup7MCL83q0OC0ikUPZepAikY+Zy2k0BgTHX0A0t2oKEESAnMPbjYFK3bOmaag6T4uhF5zS7Ou32dBrxqbm7vaX3TE7x1kOigc0JWB+ssefz4F4EpaBNHMDtz8lNWbrx0lovbAiKI15Znh4U5AFc3BDx5o+YFlYBtQcuIhj4bYXJGit0xmPcmEnOHvgNY69GQfgkAPWgWVACcgyjkvgXdwuSdC8u8YKS46ykLZu7OLxLLAWLOeoBQnQKo513AqagI49HG3ovRKgvADPwCPwFMczAZrc1grJ3NJBrloSoFwDvwHvgd/j/jr+bkkKR3v+WGSdYUPvhQDnJ/AAbAjzsOcdc5gOHp3lwm8JXJEgfQQ+xe1NPL4ihWMud41Jmvie4Kpn4AcB0nfgH+Ae+DcefyI57Ogu7ywfgisCrE/An8CXuP+eFI4Lxn1ntHdAheATwVH3hHnOSCBt7prH40A/rAsCiDUh9D4SQP0FfCa465rwRnKWzh+bFEZy1paQpzYkUK8Etyl3vdBOLUAbVi65rwghd0Nw1GfgD+ADKW/1LSHGJHsnFKx3hM+8I+SuDSH16MZl15LZMITkLCX4NSl33RBACZa9MIwTWGO2grWMx7aEHKUcrLSSNUAuDJXkc0uHawIkDcHSRacASzl2R1oKXdG9ux9z8Ozrt1lzd9ss9EO8oA1FvyjV2kpbLU4trDGrIUXAK2kOyrv2ycTOJxuGHpgcJpf5C5565BmjbKL3c9A8Tj7znvp7lnXZ3O37i04BFrQ/b/EcOrdHJ+82e2yq8nM5e25DsKxyb/J/0uDc+mCdTfstqcRZb14VVoEqrAJVWAWqsApUYRWowipQhVWgCqtAFVaBKqwCVVgFqrAKVGEVqMIqUIVVoAqrQBVWgSqsAlVYBaqwClRhFajCKlCFVaAKq0AVVoEqrAJVWAWqsApUYRWowipQhVWgCqtAFVaBKqwC9cFSrQtm++Z1rrNsGRpuf2rq++yDcxtqgtGcOaYg/1lzczg5lxwsewFbyr93Ww2Yxr9/+/n4NgWDX7qF5an7cn5b5bk1584ZfxGB5nYgfH5VqvpWBRZcB94CoLm7bWJlmHWUQKmmWJWej6R6vUumCctX26se+lh1nzm3E4YWlMr5BUgF2JfxtTumV0KnVgWqkf5BqGJVqe+OdpppAHIF5d5VctRPQlW6aqIhfBMrpuMsaMNS9f09ofr+gWAIC6wTirkErwvKVQ8kMJBKZa9oO2tKsLYEE3wH/iYBsy0KOom/Lwx1QVWpq0GE3mRNgGV7OkwBVkOqk5YR1NdhQ3KXYLV0hBWTvA1DwdLCdU94gw39DTDGCqwxW9s15JHUMUSwrLNawHLOsvQ1+QPJVSq+7q1SH6nsHdH2o9ENTD1ptqQkT28vmugubz/B0zehAvMcqLFC80sBrau0Znyh3enIrrmO6nvc0QW1rxz2TLeQfIqwbLrpXZyebAl1PJhaFwjIPDPGnqf6ZMNR0DqPP2c1G2v9st3KzsKZwt1vSI0ZkJJ5WRu7zov6u0lOFZgPy7Az0FHyLFg5TbFHqdUQmJx+GdZb1H8SnBKn/RuDWgAAAABJRU5ErkJggg=="
               />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
-                    <image
-                className='dropShadow'
+              <image
+                className={activeExampleIndex === 2 ? 'show dropShadow' : 'render dropShadow'}
                 width="75"
                 height="75"
                 transform="translate(85 94.14)"
                 xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAACXBIWXMAAAsSAAALEgHS3X78AAAEq0lEQVR4Xu2cW3LbRhBFDylSFqnE8iup7MCL83q0OC0ikUPZepAikY+Zy2k0BgTHX0A0t2oKEESAnMPbjYFK3bOmaag6T4uhF5zS7Ou32dBrxqbm7vaX3TE7x1kOigc0JWB+ssefz4F4EpaBNHMDtz8lNWbrx0lovbAiKI15Znh4U5AFc3BDx5o+YFlYBtQcuIhj4bYXJGit0xmPcmEnOHvgNY69GQfgkAPWgWVACcgyjkvgXdwuSdC8u8YKS46ykLZu7OLxLLAWLOeoBQnQKo513AqagI49HG3ovRKgvADPwCPwFMczAZrc1grJ3NJBrloSoFwDvwHvgd/j/jr+bkkKR3v+WGSdYUPvhQDnJ/AAbAjzsOcdc5gOHp3lwm8JXJEgfQQ+xe1NPL4ihWMud41Jmvie4Kpn4AcB0nfgH+Ae+DcefyI57Ogu7ywfgisCrE/An8CXuP+eFI4Lxn1ntHdAheATwVH3hHnOSCBt7prH40A/rAsCiDUh9D4SQP0FfCa465rwRnKWzh+bFEZy1paQpzYkUK8Etyl3vdBOLUAbVi65rwghd0Nw1GfgD+ADKW/1LSHGJHsnFKx3hM+8I+SuDSH16MZl15LZMITkLCX4NSl33RBACZa9MIwTWGO2grWMx7aEHKUcrLSSNUAuDJXkc0uHawIkDcHSRacASzl2R1oKXdG9ux9z8Ozrt1lzd9ss9EO8oA1FvyjV2kpbLU4trDGrIUXAK2kOyrv2ycTOJxuGHpgcJpf5C5565BmjbKL3c9A8Tj7znvp7lnXZ3O37i04BFrQ/b/EcOrdHJ+82e2yq8nM5e25DsKxyb/J/0uDc+mCdTfstqcRZb14VVoEqrAJVWAWqsApUYRWowipQhVWgCqtAFVaBKqwCVVgFqrAKVGEVqMIqUIVVoAqrQBVWgSqsAlVYBaqwClRhFajCKlCFVaAKq0AVVoEqrAJVWAWqsApUYRWowipQhVWgCqtAFVaBKqwC9cFSrQtm++Z1rrNsGRpuf2rq++yDcxtqgtGcOaYg/1lzczg5lxwsewFbyr93Ww2Yxr9/+/n4NgWDX7qF5an7cn5b5bk1584ZfxGB5nYgfH5VqvpWBRZcB94CoLm7bWJlmHWUQKmmWJWej6R6vUumCctX26se+lh1nzm3E4YWlMr5BUgF2JfxtTumV0KnVgWqkf5BqGJVqe+OdpppAHIF5d5VctRPQlW6aqIhfBMrpuMsaMNS9f09ofr+gWAIC6wTirkErwvKVQ8kMJBKZa9oO2tKsLYEE3wH/iYBsy0KOom/Lwx1QVWpq0GE3mRNgGV7OkwBVkOqk5YR1NdhQ3KXYLV0hBWTvA1DwdLCdU94gw39DTDGCqwxW9s15JHUMUSwrLNawHLOsvQ1+QPJVSq+7q1SH6nsHdH2o9ENTD1ptqQkT28vmugubz/B0zehAvMcqLFC80sBrau0Znyh3enIrrmO6nvc0QW1rxz2TLeQfIqwbLrpXZyebAl1PJhaFwjIPDPGnqf6ZMNR0DqPP2c1G2v9st3KzsKZwt1vSI0ZkJJ5WRu7zov6u0lOFZgPy7Az0FHyLFg5TbFHqdUQmJx+GdZb1H8SnBKn/RuDWgAAAABJRU5ErkJggg=="
               />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
-                    <rect x="20.07" y="101.04" width="56" height="56" rx="3.5" />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
-                    <rect x="92.03" y="101.04" width="56" height="56" rx="3.5" />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
-                    <rect
-                className='iconLines'
+              <rect  className={activeExampleIndex === 2 ? 'show ' : 'render '} x="20.07" y="101.04" width="56" height="56" rx="3.5" />
+              <rect className={activeExampleIndex === 2 ? 'show ' : 'render '} x="92.03" y="101.04" width="56" height="56" rx="3.5" />
+              <rect
+                className={activeExampleIndex === 2 ? 'show iconLines' : 'render iconLines'}
                 x="38.37"
                 y="119.34"
                 width="19.4"
                 height="19.4"
                 rx="2.16"
               />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
-                    <path
-                className='iconLines'
+              <path
+                className={activeExampleIndex === 2 ? 'show iconLines' : 'render iconLines'}
                 d="M38.37 125.8h19.4M44.83 138.73V125.8M111.51 119h16.83a2 2 0 012.13 2v4.21a2.18 2.18 0 01-2.08 2.21H111.6a2 2 0 01-2.13-2v-4.21a2.17 2.17 0 012.04-2.21zM111.67 130.64h16.84a2.09 2.09 0 012.11 2.07v4.21a2.14 2.14 0 01-2.1 2.14H111.7a2.08 2.08 0 01-2.11-2.08v-4.21a2.11 2.11 0 012.08-2.13zM116.95 134.88"
               />
-                }
-              
             </g>
 
             {/* Top-right arrow segment, always active */}
@@ -115,106 +71,73 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
               d="M395 226.76a115.51 115.51 0 00-84-88.92"
               className='arrowSegment'
             />
-
             {/* Arrow (Example 1) */}
             <g
               className={activeExampleIndex !== 0 ? ' ' : 'inactive arrowOne'}
             >
-                {
+                {/* {
                     activeExampleIndex === 0 &&
 <circle className='spacer' cx="367.07" cy="319.22" r="11.19" />
-                }
-              
-              {
-                    activeExampleIndex === 0 &&
+                } */}
                     <path
-                className='arrowHead'
+                    className={activeExampleIndex === 0 ? 'show arrowHead' : 'render arrowHead'}
                 d="M375.62 319.52l-11.39 3.66 2.51-11.69 8.88 8.03z"
               />
-                }
-              
-              {
-                    activeExampleIndex === 0 &&
                     <path
                 d="M370.08 316.86a108.68 108.68 0 0023.67-47.78"
-                className='arrowSegment'
+                className={activeExampleIndex === 0 ? 'show arrowSegment' : 'render arrowSegment'}
               />
-                }
-              
             </g>
 
             {/* Arrow (Example 2) */}
             <g
               className={ activeExampleIndex !== 1 ? ' ' : 'inactive arrowTwo'}
             >
-                {
+                {/* {
                     activeExampleIndex === 1 &&
                     <circle className='spacer' cx="209.12" cy="323.72" r="11.19" />
                 }
-             
-              {
-                    activeExampleIndex === 1 &&
+              */}
                     <path
-                className='arrowHead'
+                    className={activeExampleIndex === 1 ? 'show arrowHead' : 'render arrowHead'}
                 d="M209.37 332.4l-3.1-11.56 11.56 3.09-8.46 8.47z"
               />
-                }
-              
-               {
-                    activeExampleIndex === 1 &&
-                    <path
+               <path
                 d="M212.3 327a108.51 108.51 0 0046.56 26"
-                className='arrowSegment'
+                className={activeExampleIndex === 1 ? 'show arrowSegment' : 'render arrowSegment'}
               />
-                }
-              
-               {
-                    activeExampleIndex === 1 &&
                     <path
-                className='arrowSegment'
+                    className={activeExampleIndex === 1 ? 'show arrowSegment' : 'render arrowSegment'}
                 d="M307.46 355.47A115.53 115.53 0 00394 269M395 226.76a115.51 115.51 0 00-84-88.92"
               />
-                }
-              
             </g>
 
             {/* Arrow (Example 3) */}
             <g
               className={activeExampleIndex !== 2 ? ' ' : 'inactive arrowThree'}
             >
-                {
+                {/* {
                     activeExampleIndex === 2 &&
                     <circle className='spacer' cx="206.57" cy="172.98" r="11.19" />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
+                } */}
+       
                     <path
-                className='arrowHead'
+                    className={activeExampleIndex === 2 ? 'show arrowHead' : 'render arrowHead'}
                 d="M198.03 172.68l11.39-3.67-2.52 11.7-8.87-8.03z"
               />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
                     <path
                 d="M203.57 175.33a108.58 108.58 0 00-23.67 47.78"
-                className='arrowSegment'
+                className={activeExampleIndex === 2 ? 'show arrowSegment' : 'render arrowSegment'}
               />
-                }
-              
-              {
-                    activeExampleIndex === 2 &&
                     <path
                 d="M396.22 246.69a109.35 109.35 0 11-187.39-76.58"
-                className='arrowSegment'
+                className={activeExampleIndex === 2 ? 'show arrowSegment' : 'render arrowSegment'}
               />
-                }
-              
+               
             </g>
 
             {/* Layer5 logo */}
-            {/* <g>
+            <g>
               <image
                 className='dropShadow'
                 width="91"
@@ -230,15 +153,26 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                 height="72"
                 rx="4.5"
               />
-              <path
-                className='boundaryLetter'
-                d="M277.89 263.7v-2.53h5.26v-1.56h-2.55v-2.55h12.04l-5.59-9.68 5.59-9.69H280.3v13.43h-6.64v-20.07h22.85l3.81 6.61-5.61 9.72 5.73 9.91-3.7 6.41h-18.85z"
-              />
-              <path
-                className='boundaryLetter'
-                d="M276.37 257.06h2.55v2.55h-2.55zM273.66 261.15h2.55v2.55h-2.55z"
-              />
-            </g> */}
+              <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="55.000000pt" x="251.05"
+ y="211.38" height="55.000000pt" viewBox="0 0 568.000000 568.000000"
+ preserveAspectRatio="xMidYMid meet">
+<g transform="translate(0.000000,568.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M0 2840 l0 -2840 2840 0 2840 0 0 2840 0 2840 -2840 0 -2840 0 0
+-2840z m2950 1515 l0 -355 -585 0 -585 0 0 -175 0 -175 -435 0 -435 0 0 530 0
+530 1020 0 1020 0 0 -355z m1720 0 l0 -355 -740 0 -740 0 0 355 0 355 740 0
+740 0 0 -355z m-2890 -1035 l0 -100 1238 0 c1372 0 1296 3 1442 -67 102 -49
+222 -168 274 -272 54 -106 66 -176 66 -383 l0 -178 -435 0 -435 0 0 130 0 130
+-1510 0 -1510 0 0 420 0 420 435 0 435 0 0 -100z m3020 -1547 c0 -349 -3 -374
+-61 -493 -45 -92 -159 -203 -259 -252 -139 -68 -142 -68 -975 -68 l-745 0 0
+355 0 355 585 0 585 0 0 210 0 210 435 0 435 0 0 -317z m-3090 87 l0 -190 405
+0 405 0 0 -356 0 -355 -572 4 c-511 3 -579 5 -633 21 -95 28 -192 84 -260 151
+-69 69 -106 126 -144 224 -25 65 -25 72 -29 379 l-4 312 416 0 416 0 0 -190z"/>
+</g>
+</svg>
+              
+            </g>
 
             {/* Users */}
             <g>

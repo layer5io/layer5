@@ -1,6 +1,17 @@
 import styled from "styled-components";
 
 const Howitworks = styled.section`
+.render {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.7s ease-out;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.7s ease-in;
+}
 position: sticky;
     top: calc(50vh - 249px);
 .root {
@@ -29,7 +40,7 @@ position: sticky;
   
     & .boundaryFill,
     & .arrowHead {
-      fill: #f04e54;
+      fill: #00d3a9;
     }
   
     & .arrowHead,
@@ -41,7 +52,7 @@ position: sticky;
   
     & .arrowSegment {
       stroke-width: 2px;
-      stroke: #f04e54;
+      stroke: #00d3a9;
       stroke-miterlimit: 10;
       stroke-linecap: round;
       fill: none;
@@ -64,7 +75,7 @@ position: sticky;
     }
   
     & .iconBg {
-      stroke: #e5e6ec;
+      stroke: #00d3a9;
       stroke-width: 1px;
       transition: 0.7s ease;
       transition-property: fill, stroke;
@@ -76,7 +87,7 @@ position: sticky;
       }
   
       & .iconLines {
-        stroke: #e5e6ec;
+        stroke: #b6b8c3;
         stroke-width: 1px;
       }
     }
@@ -92,7 +103,7 @@ position: sticky;
       }
   
       & .iconLines {
-        stroke: #e5e6ec;
+        stroke: #b6b8c3;
       }
     }
   
@@ -122,7 +133,7 @@ position: sticky;
         stroke-linecap: round;
         stroke-miterlimit: 10;
         stroke-width: 1.5px;
-        stroke: black;
+        stroke: #00d3a9;
       }
     }
   
@@ -152,7 +163,7 @@ position: sticky;
         & .iconBg {
           @media (--medium-up) {
             fill: white;
-            stroke: #e5e6ec;
+            stroke: #00d3a9;
           }
         }
   
