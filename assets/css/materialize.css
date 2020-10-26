@@ -10860,3 +10860,11 @@ div.slack {
     top: -80px !important;
   }
 }
+@media only screen and (max-width: 486px) {
+  .book-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
