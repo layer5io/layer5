@@ -15,7 +15,7 @@ Learn from the largest collection of service mesh projects and their maintainers
 <h4> Book: <i>The Enterprise Path to Service Mesh Architectures 2nd Edition</i></h4>
 By Lee Calcote
 <div class="row bookImageGrp">
-<a href="/assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png"><img class="card" src="/assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png" alt="" width="270"  /></a>
+<a href="/assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png"><img class="card book-image" src="/assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png" alt="" width="270"  /></a>
   <a id="home" class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow z-depth-2" href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote">Get free ebook</a> <br> <a id="home" class="waves-effect waves-light btn l5-dark-grey-text darken-2 l5-dark-yellow z-depth-2" href="https://www.nginx.com/resources/library/the-enterprise-path-to-service-mesh-architectures?utm_source=calcote">Read on Safari</a>
 </div>Planning to build a microservice-driven cloud native application or looking to modernize existing application services? Consider using a service mesh. A service mesh approach can help you create robust and scalable applications, but it also introduces new challenges. This updated report answers common questions regarding service mesh architectures through the lens of a large enterprise.
 
