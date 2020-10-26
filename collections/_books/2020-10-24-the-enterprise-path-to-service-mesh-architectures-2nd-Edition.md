@@ -1,6 +1,6 @@
 ---
 layout: book
-title:  "The Enterprise Path to Service Mesh Architectures 2nd Edition"
+title:  "The Enterprise Path to Service Mesh Architectures, 2nd Edition"
 date:   2020-10-23 21:15:05 +0000
 image: /assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png
 cover: /assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition-small.png
@@ -12,7 +12,7 @@ Learn from the largest collection of service mesh projects and their maintainers
 
 ---
 
-<h4> Book: <i>The Enterprise Path to Service Mesh Architectures 2nd Edition</i></h4>
+<h4> Book: <i>The Enterprise Path to Service Mesh Architectures, 2nd Edition</i></h4>
 By Lee Calcote
 <div class="row bookImageGrp">
 <a href="/assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png"><img class="card book-image" src="/assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png" alt="" width="270"  /></a>
