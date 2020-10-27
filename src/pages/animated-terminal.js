@@ -7,6 +7,7 @@ import SEO from "../components/seo";
 import Navigation from "../sections/Navigation";
 import Footer from "../sections/Footer";
 import AnimatedStepsList from "../components/Animated-steps-list";
+import Hero from "../components/Animated-steps-list/hero";
 import Features from "../components/Features-carousel";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
@@ -20,7 +21,19 @@ const temp = () => (
             <SEO title="mesheryctl | Command Line Management of Service Meshes" />
             <Navigation />
             <Container>
-                <div style = {{ marginTop: "970px", marginBottom: "400px",}}>
+                <Hero
+                    title="Install. Deploy. Patters."
+                    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, adipiscing"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    links={[
+                        {
+                            text: 'Get Started',
+                            url: '/',
+                            type: 'inbound',
+                        },
+                    ]}
+                />
+                <div style = {{  marginBottom: "400px",}}>
                     <AnimatedStepsList
                         terminalHeroState={{
                             frameLength: 100,
