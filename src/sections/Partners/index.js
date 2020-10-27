@@ -41,17 +41,17 @@ const Partner = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} sm={3} lg={3}>
+                    <Col xs={12} sm={4} lg={4}>
                     </Col>
 
                     <Col xs={12} sm={4} lg={4}>
                         <div>
-                            <div className="card-content">
+                            <div style={{textAlign:'center'}}>
                                 <Button><a href="mailto:partners@layer5.io"><h3>BECOME A PARTNER</h3></a></Button>
                             </div>
                         </div>
                     </Col>
-                    <Col xs={12} sm={5} lg={5}>
+                    <Col xs={12} sm={4} lg={4}>
                     </Col>
                 </Row>
                 <h1 className="heading">Academic Partners</h1>
