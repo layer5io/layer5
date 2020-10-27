@@ -22,9 +22,9 @@ const Button = ({
     return (
         <React.Fragment>
             { props.url && props.external &&       
-            <Link href={props.url} target="_blank" rel="noreferrer">{initalButton}</Link>}
+            <a href={props.url} target="_blank" rel="noreferrer">{initalButton}</a>}
             {props.url && !props.external && 
-             <Link href={props.url}>{initalButton}</Link>}
+             <Link to={props.url}>{initalButton}</Link>}
             {
                 !props.url &&
               initalButton
