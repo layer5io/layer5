@@ -1,6 +1,7 @@
 import React from "react"; 
 import PropTypes from "prop-types";
-import BtnStyle from "./btn.style"; 
+import BtnStyle from "./btn.style";
+import {Link} from "gatsby"; 
 
 
 
@@ -21,9 +22,9 @@ const Button = ({
     return (
         <React.Fragment>
             { props.url && props.external &&       
-            <a href={props.url} target="_blank" rel="noreferrer">{initalButton}</a>}
+            <Link href={props.url} target="_blank" rel="noreferrer">{initalButton}</Link>}
             {props.url && !props.external && 
-             <a href={props.url}>{initalButton}</a>}
+             <Link href={props.url}>{initalButton}</Link>}
             {
                 !props.url &&
               initalButton
