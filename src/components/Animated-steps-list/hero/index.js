@@ -1,7 +1,7 @@
 import React from "react";
-import {Link} from 'gatsby'
+import {Link} from "gatsby";
 import Button from "../../../reusecore/Button";
-import { HeroWrapper } from "./hero.style"
+import { HeroWrapper } from "./hero.style";
 
 
 const Hero = ({ title, description, subtitle, links }) => {
@@ -14,15 +14,15 @@ const Hero = ({ title, description, subtitle, links }) => {
                 <div className="links">
                     {links.map((link) => {
                         return (
-                            <Link to={link.url}>
+                            <Link key={link.text} to={link.url}>
                                 <Button secondary>{link.text}</Button>
                             </Link>
-                        )
+                        );
                     })}
                 </div>
             </div>
         </HeroWrapper>
-    )
+    );
 };
 
-export default Hero
+export default Hero;

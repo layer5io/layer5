@@ -62,11 +62,11 @@ const MesheryBrand = () => {
                 </Row>
                 <Row>
                     <div className="colors">
-                     <Row>
-                      <ColorBox R="R: 60" G="G: 73" B="B: 79" colorCode="#3c494f" />
-                      <ColorBox R="R: 0" G="G: 179" B="B: 159" colorCode="#00b39f" />
-                      <ColorBox R="R: 0" G="G: 211" B="B: 169" colorCode="#00d3a9" />
-                     </Row>
+                        <Row>
+                            <ColorBox R="R: 60" G="G: 73" B="B: 79" colorCode="#3c494f" />
+                            <ColorBox R="R: 0" G="G: 179" B="B: 159" colorCode="#00b39f" />
+                            <ColorBox R="R: 0" G="G: 211" B="B: 169" colorCode="#00d3a9" />
+                        </Row>
                     </div>
                 </Row>
                 <Row>

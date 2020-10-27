@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import {Link} from "gatsby";
 import Carousel from "nuka-carousel";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import {FeaturesWrapper} from "./FeaturesCarousel.style"
+import {FeaturesWrapper} from "./FeaturesCarousel.style";
 
 
 const Features = ({features}) =>(
@@ -38,7 +38,7 @@ const FeaturesList = ({ features }) =>{
                 </div>
             </div>
         </FeaturesWrapper>
-    )
+    );
 };
 
 const FeaturesCarousel = ({ features }) => {
@@ -50,15 +50,15 @@ const FeaturesCarousel = ({ features }) => {
                     renderCenterLeftControls={() => null}
                     wrapAround
                     defaultControlsConfig={{
-                        pagingDotsContainerClassName: 'pagingDots',
+                        pagingDotsContainerClassName: "pagingDots",
                     }}
                     cellSpacing={40}
                     getControlsContainerStyles={(key) => {
                         switch (key) {
-                            case 'BottomCenter':
-                                return {
-                                    top: 0,
-                                }
+                        case "BottomCenter":
+                            return {
+                                top: 0,
+                            };
                         }
                     }}
                 >
@@ -75,7 +75,7 @@ const FeaturesCarousel = ({ features }) => {
                 </Carousel>
             </div>
         </FeaturesWrapper>
-    )
+    );
 };
 
 const Feature = ({children, title, active, onClick, learnMoreLink, id, Element = "li"}) =>{
@@ -102,7 +102,7 @@ const Feature = ({children, title, active, onClick, learnMoreLink, id, Element =
                 )}
             </div>
         </Element>
-    )
+    );
 };
 
 export default Features;
