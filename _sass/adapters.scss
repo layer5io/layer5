@@ -10,7 +10,11 @@ table.adapters {
     td {
         width: auto;
         vertical-align: middle;
-        border: 1px solid darkgray;
+        border: 1px dashed #cccccc;
+        border-left-width: 0px;
+    }
+    td:hover {
+        background-color: #f5f5f5;
     }
 
     td.no-adapters {
@@ -18,12 +22,17 @@ table.adapters {
         text-align: center; 
         color: #aaa;
         font-style: italic;
+        border: 0px;
     }
 
     td.alpha-adapters {
         width: auto; 
         background-color: lightgray;
         text-align: center; 
+        border: 0px;
+    }
+    td.alpha-adapters:hover {
+        background-color: lightgray; 
     }
 
     td.beta-adapters {
@@ -31,6 +40,10 @@ table.adapters {
         background-color: $lightgreen;
         text-align: center; 
         color: #fff;
+        border: 0px;
+    }
+    td.stable-adapters:hover {
+        background-color: $lightgreen; 
     }
 
     td.stable-adapters {
@@ -38,10 +51,10 @@ table.adapters {
         background-color: $coolgray;
         text-align: center; 
         color: #fff;
-    }
-
-    tr:hover {
-        background-color: #f5f5f5;
+        border: 0px;
+    } 
+    td.stable-adapters:hover {
+        background-color: $coolgray; 
     }
 
     img.adapter-logo {
