@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Announcing the Meshery Adapter for Open Service Mesh"
-date: 2020-08-04 10:17:05 +0000
-image: /assets/images/posts/2020-09-05-announcing-the-meshery-adapter-for-open-service-mesh/meshery-adapter-for-open-service-mesh.png
+date: 2020-08-20 10:17:05 +0000
+image: /assets/images/posts/2020-08-20-announcing-the-meshery-adapter-for-open-service-mesh/meshery-adapter-for-open-service-mesh.png
 author: Lee Calcote
 categories: meshery
 permalink: /blog/:categories/:title
