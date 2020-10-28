@@ -3,7 +3,7 @@ layout: book
 title:  "The Enterprise Path to Service Mesh Architectures, 2nd Edition"
 date:   2020-10-23 21:15:05 +0000
 image: /assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png
-cover: /assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition-small.png
+cover: /assets/images/books/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition-small.pdf
 #author: Lee Calcote
 status: published
 brief: "Planning to build a microservice-driven cloud native application or looking to modernize existing application services?"
