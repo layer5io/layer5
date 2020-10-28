@@ -297,21 +297,19 @@
 
         <div id="start-brew">
             <div style="width:auto; height:auto; padding:0px; position:relative;">
-                <pre><code style="color:#eee;"></br> $ brew tap layer5io/tap</br> $ brew install mesheryctl</br> $ mesheryctl system start
+                <pre><code style="color:#eee;"></br> $ brew install layer5io/mesheryctl</br> $ mesheryctl system start
           </code></pre>
                 <!-- copy to clipboard -->
-                <a class="btn clipboard-copy-btn tooltip" style="background:none; border: 0;" data-clipboard-target="#start-brew" data-clipboard-text="brew tap layer5io/tap
-                brew install mesheryctl
+                <a class="btn clipboard-copy-btn tooltip" style="background:none; border: 0;" data-clipboard-target="#start-brew" data-clipboard-text="brew install layer5io/mesheryctl
                 mesheryctl system start" onmouseout="resetCopyText(this)">
                     <i class="far fa-copy"></i>
-                    <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
+                    <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 30px; padding: 0;">Copy to clipboard</span>
                 </a>
             </div>
         </div>
 
         <h4>Kubernetes user</h4>
-        <p>Using Helm</p>
-        <p>1.Helm v3</p>
+        <h5 class="black-text">Using Helm v3</h5>
         <p>Run the following:</p>
         <div style="width:auto; height:auto; padding:0px; position:relative;">
             <pre><code style="color:#eee;"></br> $ git clone https://github.com/layer5io/meshery.git; cd meshery</br> $ kubectl create namespace meshery </br> $ helm install meshery --namespace meshery install/kubernetes/helm/meshery
@@ -322,49 +320,7 @@
                 <i class="far fa-copy"></i>
                 <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
             </a>
-        </div>  
-        <p>2.Helm v2</p>
-        <p>Run the following</p>
-        <div style="width:auto; height:auto; padding:0px; position:relative;">
-            <pre><code style="color:#eee;"></br> $ git clone https://github.com/layer5io/meshery.git; cd meshery</br> $ kubectl create namespace meshery </br> $ helm template meshery --namespace meshery install/kubernetes/helm/meshery | kubectl apply -f -
-      </code></pre>
-            <!-- copy to clipboard -->
-            <a class="btn clipboard-copy-btn tooltip" style="background: none; border: 0;" data-clipboard-target="#start" data-clipboard-text="kubectl create ns meshery
-      kubectl -n meshery apply -f install/deployment_yamls/k8s" onmouseout="resetCopyText(this)">
-                <i class="far fa-copy"></i>
-                <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
-            </a>
-        </div> 
-        <p>To install on Kubernetes, follow the instructions below or see Meshery documentation to <a href="https://meshery.layer5.io/docs/installation#using-docker-on-windows">install on Windows</a>.</p>
-        <p>Using Kubernetes, install Meshery on your cluster by cloning the Meshery repo:</p>
-        <div id="start-kubernetes">
-            <div style="width:auto; height:auto; padding:0px; position:relative;">
-                <pre><code style="color:#eee;"></br> $ git clone https://github.com/layer5io/meshery.git; cd meshery
-          </code></pre>
-                <!-- copy to clipboard -->
-                <a class="btn clipboard-copy-btn tooltip" style="background: none; border: 0;" data-clipboard-target="#start" data-clipboard-text="git clone https://github.com/layer5io/meshery.git; cd meshery" onmouseout="resetCopyText(this)">
-                    <i class="far fa-copy"></i>
-                    <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
-                </a>
-            </div>
-            <p>Install Meshery on your cluster by running the following:</p>
-            <div id="start-brew">
-                <div style="width:auto; height:auto; padding:0px; position:relative;">
-                    <pre><code style="color:#eee;"></br> $ kubectl create ns meshery</br> $ kubectl -n meshery apply -f install/deployment_yamls/k8s
-              </code></pre>
-                    <!-- copy to clipboard -->
-                    <a class="btn clipboard-copy-btn tooltip" style="background: none; border: 0;" data-clipboard-target="#start" data-clipboard-text="kubectl create ns meshery
-              kubectl -n meshery apply -f install/deployment_yamls/k8s" onmouseout="resetCopyText(this)">
-                        <i class="far fa-copy"></i>
-                        <span class="tooltiptext" style="font-size: 10px; width: 130px; height: 35px; padding: 0;">Copy to clipboard</span>
-                    </a>
-                </div>    
-            </div>
-            <p>If you want to use a different namespace, please change the name of the namespace in the <code>ClusterRoleBinding</code> section appropriately. </p>
-
-            <br>
-            <h4 style="color:#111111;">Step 2: Login</h4>
-            <p>Access Meshery in your browser at <a href="http://localhost:9081">http://localhost:9081</a>.</p>
+        </div>     
 
         </div>
     </div>
@@ -382,7 +338,8 @@
         <p style="padding-top:30px;white-space: wrap;margin-left: 0px;">
             The <a href="https://github.com/layer5io/service-mesh-performance">Service Mesh Performance </a> is a common format for describing and capturing the performance of service meshes in context of the value they provide. This specification is
             currently being advanced through the CNCF Network SIG and the Meshery project.
-        </p>See <a href="https://smp-spec.io">smp-spec.io</a>.</div>
+        </p>
+        <br /><h5 class="center black-text">See <a href="https://smp-spec.io">smp-spec.io</a></h5></div>
 
         <a name="community"></a>
     <h3 style="color:aliceblue;">Community</h3>
