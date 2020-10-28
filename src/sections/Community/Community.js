@@ -1,6 +1,6 @@
 import React from "react";
 import datacenterimg from "../../assets/images/community/datacenter-crash.svg";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 
 const Community= () => {
     return (
@@ -24,9 +24,7 @@ const Community= () => {
                 <div width="100%" className="center">
                     <p>New members are always welcome.</p>
                     <h3>
-                        <a
-                            href="http://slack.layer5.io"
-                        ><Button primary>Join the Community</Button></a>
+                        <Button primary title="Join the Community" url="http://slack.layer5.io" external="True"/>
                     </h3>
                 </div>
     
