@@ -10,7 +10,7 @@ import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
-import { Container, Row, Col } from "../reusecore/Layout";
+import { Container } from "../reusecore/Layout";
 
 const Howitworks = () => (
     <ThemeProvider theme={theme}>
@@ -20,7 +20,7 @@ const Howitworks = () => (
             <Navigation />
             <Container>
                 <br></br>
-                <Works 
+                <Works
                     title="Secure access to hosts and services"
                     description="Traditional approaches like SSH bastion hosts or VPNs require distributing and managing credentials, configuring network controls like firewalls, and exposing the private network. Boundary provides a secure way to access hosts and critical systems without having to manage credentials or expose your network, and is entirely open source."
                     features={[

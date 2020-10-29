@@ -2,7 +2,6 @@ import React from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
 import { IoMdCheckmark } from "react-icons/io";
 
 import particle1 from "../../assets/images/app/particle/14.png";
@@ -38,7 +37,7 @@ const Pricing = () => {
                                             <tr>
                                                 <td><IoMdCheckmark /></td>
                                                 <td><h5>{service.content}</h5></td>
-                                            </tr>  
+                                            </tr>
                                         </table>
                                     ))}
                                 </div>
