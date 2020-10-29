@@ -5,7 +5,7 @@
  title:  "Market Landscape – Kubernetes Evolves into an Enterprise Platform"     // title of the news article		
  image: /assets/images/news/kubernetes-platform.png   // main image from news article	
  author: Tom Petrocelli
- #permalink: https://www.forrester.com/webinar/Plan+A+Service+Mesh+For+Your+Microservices+Future/-/E-WEB29705
- eurl: https://www.forrester.com/webinar/Plan+A+Service+Mesh+For+Your+Microservices+Future/-/E-WEB29705	
+ #permalink: https://amalgaminsights.com/product/market-landscape-kubernetes-evolves-into-an-enterprise-platform/
+ eurl: https://amalgaminsights.com/product/market-landscape-kubernetes-evolves-into-an-enterprise-platform/
 --- 		
  
