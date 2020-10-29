@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
-import ColorBox from "../../components/ColorBox";
+import { Row, Col } from "../../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
+import ColorBox from "../../../components/ColorBox";
 import {Link} from "gatsby";
-import MeshLogoLightText from "../../assets/images/meshery/meshery-logo-light-text.png";
-import MeshLogoTagLightTextSide from "../../assets/images/meshery/meshery-logo-tag-light-text-side.png";
-import MeshLogoLightTextSide from "../../assets/images/meshery/meshery-logo-light-text-side.png";
-import MeshDarkText from "../../assets/images/meshery/meshery-dark-text.png";
-import MeshDarkTagText from "../../assets/images/meshery/meshery-dark-tag-text.png";
+import MeshLogoLightText from "../../../assets/images/meshery/meshery-logo-light-text.png";
+import MeshLogoTagLightTextSide from "../../../assets/images/meshery/meshery-logo-tag-light-text-side.png";
+import MeshLogoLightTextSide from "../../../assets/images/meshery/meshery-logo-light-text-side.png";
+import MeshDarkText from "../../../assets/images/meshery/meshery-dark-text.png";
+import MeshDarkTagText from "../../../assets/images/meshery/meshery-dark-tag-text.png";
 
 const MesheryWrapper = styled.section`
 .colors{

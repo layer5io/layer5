@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
+import { Row, Col } from "../../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
 import {Link} from "gatsby";
-import ImageHub from "../../assets/images/image-hub/layer5-image-hub.png";
-import ImageHubWhite from "../../assets/images/image-hub/layer5-image-hub-white.png";
+import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.png";
+import ImageHubWhite from "../../../assets/images/image-hub/layer5-image-hub-white.png";
 
 const ImageHubWrap = styled.section`
   .ImageHubWhite {

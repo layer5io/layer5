@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";

@@ -11,7 +11,7 @@ import Hero from "../components/Animated-steps-list/hero";
 import Features from "../components/Features-carousel";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
-import { Container, Row, Col } from "../reusecore/Layout";
+import { Container } from "../reusecore/Layout";
 import Terminal from "../components/Terminal";
 
 const temp = () => (

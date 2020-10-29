@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
-import ColorBox from "../../components/ColorBox";
+import { Row, Col } from "../../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
+import ColorBox from "../../../components/ColorBox";
 
-import SmpDark from "../../assets/images/smp/icon/smp-dark.png";
-import SmpLight from "../../assets/images/smp/icon/smp-light.png";
-import SmpWhite from "../../assets/images/smp/icon/smp-white.png";
-import SmPLightTextSide from "../../assets/images/smp/horizontal/smp-light-text-side.png";
-import SmPDarkTextSide from "../../assets/images/smp/horizontal/smp-dark-text-side.png";
-import SmPWhiteTextSide from "../../assets/images/smp/horizontal/smp-white-text-side.png";
+import SmpDark from "../../../assets/images/smp/icon/smp-dark.png";
+import SmpLight from "../../../assets/images/smp/icon/smp-light.png";
+import SmpWhite from "../../../assets/images/smp/icon/smp-white.png";
+import SmPLightTextSide from "../../../assets/images/smp/horizontal/smp-light-text-side.png";
+import SmPDarkTextSide from "../../../assets/images/smp/horizontal/smp-dark-text-side.png";
+import SmPWhiteTextSide from "../../../assets/images/smp/horizontal/smp-white-text-side.png";
 import { Link } from "gatsby";
 
 const SMPWrap = styled.section`
