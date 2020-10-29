@@ -1,49 +1,81 @@
-<table id="smi-table" class="responsive-table highlight striped">
+<table
+  id="nonfunc-table"
+  class="responsive-table highlight striped"
+  style="color: var(--main-bg-color);"
+>
   <thead
     style="
       background-color: #a6b7be;
       color: #222;
-      text-align: center;
+      text-align: justify;
       word-wrap: none;
       width: 100%;
     "
   >
-    <tr style="cursor: pointer;">
-      <th onclick="sortTable('smi-table',0)">Service Mesh</th>
-      <th onclick="sortTable('smi-table',1)">Traffic Access Control</th>
-      <th onclick="sortTable('smi-table',2)">Traffic Metrics</th>
-      <th onclick="sortTable('smi-table',3)">Traffic Split</th>
-      <th onclick="sortTable('smi-table',4)">Traffic Specs</th>
+    <tr style="cursor: pointer">
+      <th onclick="sortTable('smi-table',0)">ID</th>
+      <th onclick="sortTable('smi-table',1)">Date</th>
+      <th onclick="sortTable('smi-table',2)">Service Mesh</th>
+      <th onclick="sortTable('smi-table',3)">Service Mesh Version</th>
+      <th onclick="sortTable('smi-table',4)">% Passed</th>
+      <th onclick="sortTable('smi-table',4)">Status</th>
     </tr>
   </thead>
   <tbody>
-    {% assign meshes_by_category = site.data.landscape.smi | sort: "smi" |
-    reverse %} {% for meshes in meshes_by_category %} {% if meshes %}
+    {% assign smi = site.data.landscape.smi %} {% for result in smi %}
     <tr>
-      <th scope="row">{{meshes.name}}</th>
-      <td>
-        {% if meshes.taclink != "" %}
-        <a href="{{meshes.taclink}}" target="_blank">{{meshes.tac}}</a>
-        {% elsif !meshes.tac %} {{meshes.tac}} {% endif %}
-      </td>
-      <td>
-        {% if meshes.tmetricslink != "" %}
-        <a href="{{meshes.tmetricslink}}" target="_blank"
-          >{{meshes.tmetrics}}</a
-        >
-        {% elsif !meshes.tmetrics %} {{meshes.tmetrics}} {% endif %}
-      </td>
-      <td>
-        {% if meshes.tsplitlink != "" %}
-        <a href="{{meshes.tsplitlink}}" target="_blank">{{meshes.tsplit}}</a>
-        {% elsif !meshes.tsplit %} {{meshes.tsplit}} {% endif %}
-      </td>
-      <td>
-        {% if meshes.tspeclink != "" %}
-        <a href="{{meshes.tspeclink}}" target="_blank">{{meshes.tspec}}</a>
-        {% elsif !meshes.tspec %} {{meshes.tspec}} {% endif %}
-      </td>
+      <td scope="row">{{result.id}}</td>
+      <td scope="row">{{result.date}}</td>
+      <td scope="row">{{result.mesh_name}}</td>
+      <td scope="row">{{result.mesh_version}}</td>
+      <td scope="row">{{result.passing_percentage}}</td>
+      <td scope="row">{{result.status}}</td>
+      <tr >
+        <table
+        style="background: #F8F8F8">
+          <thead>
+            <tr>
+              <td>Specification</td>
+              <td>Assertions</td>
+              <td>Time</td>
+              <td>Version</td>
+              <td>Capability</td>
+              <td>Result</td>
+              <td>Reason</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{result.more_details[0].smi_specification}}</td>
+              <td>{{result.more_details[0].time}}</td>
+              <td>{{result.more_details[0].assertions}}</td>
+              <td>{{result.more_details[0].Version}}</td>
+              <td>{{result.more_details[0].capability}}</td>
+              <td>{{result.more_details[0].result}}</td>
+              <td>{{result.more_details[0].reason}}</td>
+            </tr>    
+            <tr>
+              <td>{{result.more_details[1].smi_specification}}</td>
+              <td>{{result.more_details[1].time}}</td>
+              <td>{{result.more_details[1].assertions}}</td>
+              <td>{{result.more_details[1].Version}}</td>
+              <td>{{result.more_details[1].capability}}</td>
+              <td>{{result.more_details[1].result}}</td>
+              <td>{{result.more_details[1].reason}}</td>
+            </tr>    
+            <tr>
+              <td>{{result.more_details[2].smi_specification}}</td>
+              <td>{{result.more_details[2].time}}</td>
+              <td>{{result.more_details[2].assertions}}</td>
+              <td>{{result.more_details[2].Version}}</td>
+              <td>{{result.more_details[2].capability}}</td>
+              <td>{{result.more_details[2].result}}</td>
+              <td>{{result.more_details[2].reason}}</td>
+            </tr>  
+          </tbody>
+        </table>
+      </tr>
     </tr>
-    {% endif %} {% endfor %}
+    {% endfor %}
   </tbody>
 </table>

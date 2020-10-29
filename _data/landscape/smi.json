@@ -1,0 +1,39 @@
+
+    [
+        {
+            "id": "0dd368be-745f-4433-a356-f717aac40457",
+            "date": "2020-10-14T20:14:48+05:30",
+            "mesh_name": "Open Service Mesh",
+            "mesh_version": "v0.3.0",
+            "cases_passed": "0",
+            "passing_percentage": "0",
+            "status": "completed",
+            "more_details": [
+                {
+                    "smi_specification": "traffic-access",
+                    "time": "2m5.607711181s",
+                    "assertions": "10",
+                    "result": "failed in step 2-install",
+                    "reason": "resource Deployment:kudo-test-beloved-alpaca/app-c-deployment: .status.readyReplicas: key is missing from map",
+                    "capability": "Half",
+                    "status": "Failing"
+                }, {
+                    "smi_specification": "traffic-split",
+                    "time": "4m10.378728809s",
+                    "assertions": "8",
+                    "result": "failed in step 2-install",
+                    "reason": "resource Deployment:kudo-test-dominant-tuna/app-c-deployment: .status.readyReplicas: key is missing from map",
+                    "capability": "Half",
+                    "status": "Failing"
+                }, {
+                    "smi_specification": "traffic-spec",
+                    "time": "6m16.323837714s",
+                    "assertions": "10",
+                    "result": "failed in step 2-install",
+                    "reason": "resource Deployment:kudo-test-honest-mallard/app-c-deployment: .status.readyReplicas: key is missing from map",
+                    "capability": "Half",
+                    "status": "Failing"
+                }
+            ]
+        }
+    ]
