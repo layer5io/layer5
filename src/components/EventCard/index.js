@@ -24,7 +24,7 @@ const Card = ({ frontmatter }) => {
                     </h2>
                     <div className="post-meta-block">
                         {frontmatter.date && (
-                                <span>{frontmatter.date}</span>
+                            <span>{frontmatter.date}</span>
                                 
                         )}
                         {frontmatter.date && (

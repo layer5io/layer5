@@ -1,24 +1,24 @@
 import React from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader"
+import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
 
-import partner1 from "../../images/partners/University_of_Texas_at_Austin_seal.png"
-import partner2 from "../../images/partners/gsoc.svg"
-import partner3 from "../../images/partners/UEM_Logo.jpg"
-import partner4 from "../../images/partners/citrix.svg"
-import partner5 from "../../images/partners/cncf-stacked-color.svg"
-import partner6 from "../../images/partners/hashicorp_vertical_black.svg"
-import partner7 from "../../images/partners/hpe_side_black.svg"
-import partner8 from "../../images/partners/microsft.svg"
-import partner9 from "../../images/partners/redhat.svg"
-import partner10 from "../../images/partners/smi1.png"
-import partner11 from "../../images/partners/forklift.svg"
+import partner1 from "../../images/partners/University_of_Texas_at_Austin_seal.png";
+import partner2 from "../../images/partners/gsoc.svg";
+import partner3 from "../../images/partners/UEM_Logo.jpg";
+import partner4 from "../../images/partners/citrix.svg";
+import partner5 from "../../images/partners/cncf-stacked-color.svg";
+import partner6 from "../../images/partners/hashicorp_vertical_black.svg";
+import partner7 from "../../images/partners/hpe_side_black.svg";
+import partner8 from "../../images/partners/microsft.svg";
+import partner9 from "../../images/partners/redhat.svg";
+import partner10 from "../../images/partners/smi1.png";
+import partner11 from "../../images/partners/forklift.svg";
 
-import { MdAccountBox, MdMail } from "react-icons/md"
+import { MdAccountBox, MdMail } from "react-icons/md";
 
-import PartnerWrapper from "./partner.style"
+import PartnerWrapper from "./partner.style";
 
 const Partner = () => {
     return (
@@ -274,8 +274,8 @@ const Partner = () => {
                 </Row>
             </Container>
         </PartnerWrapper >
-    )
-}
+    );
+};
 
 
-export default Partner
+export default Partner;

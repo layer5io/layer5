@@ -118,6 +118,6 @@ const PartnerWrapper = styled.section`
             text-align: center;
         }
     }
-`
+`;
 
-export default PartnerWrapper
+export default PartnerWrapper;

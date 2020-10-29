@@ -19,5 +19,5 @@ const Partners = () => (
             <Footer />
         </Layout>
     </ThemeProvider>
-)
-export default Partners
+);
+export default Partners;

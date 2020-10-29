@@ -90,7 +90,7 @@ export const TerminalWrapper = styled.div`
       font-style: normal;
       font-weight: normal;
       font-size: 12px;
-      line-height: 2px;
+      line-height: 27px;
       white-space: pre-wrap;
       color: ${props => props.theme.secondaryColor};
       &.short {

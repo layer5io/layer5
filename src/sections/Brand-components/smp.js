@@ -94,13 +94,13 @@ const SMPBrand = () => {
                         <h4 className="layerH3">Web</h4>
                     </Col>
                     <div className="colors">
-                    <Row>
-                    <ColorBox R="R: 0" G="G: 211" B="B: 169" colorCode="#00d3a9" />
-                    <ColorBox R="R: 0" G="G: 179" B="B: 159" colorCode="#00b39f" />
-                    <ColorBox R="R: 71" G="G: 126" B="B: 150" colorCode="#477E96" />
-                    <ColorBox R="R: 100" G="G: 120" B="B: 129" colorCode="#647881" />
-                    <ColorBox R="R: 60" G="G: 73" B="B: 78" colorCode="#3C494E" />
-                    </Row>
+                        <Row>
+                            <ColorBox R="R: 0" G="G: 211" B="B: 169" colorCode="#00d3a9" />
+                            <ColorBox R="R: 0" G="G: 179" B="B: 159" colorCode="#00b39f" />
+                            <ColorBox R="R: 71" G="G: 126" B="B: 150" colorCode="#477E96" />
+                            <ColorBox R="R: 100" G="G: 120" B="B: 129" colorCode="#647881" />
+                            <ColorBox R="R: 60" G="G: 73" B="B: 78" colorCode="#3C494E" />
+                        </Row>
                     </div>
                     <Col xs={12} sm={12} lg={12} xl={12}>
                         <p className="layerH3">Logos to use online:</p>
