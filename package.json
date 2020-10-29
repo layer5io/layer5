@@ -80,7 +80,7 @@
     }
   },
   "lint-staged": {
-    "src/*.js": [
+    "./src/*.js": [
       "eslint --fix",
       "git add ."
     ]

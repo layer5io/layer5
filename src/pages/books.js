@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout"
+
 import SEO from "../components/seo";
 import BookPage from "../sections/Books-grid";
 import Navigation from "../sections/Navigation";
