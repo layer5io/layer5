@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
-import ColorBox from "../../components/ColorBox";
-import media from "../../components/mediaQuery";
+import { Row, Col } from "../../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
+import ColorBox from "../../../components/ColorBox";
+import media from "../../../components/mediaQuery";
 
-import Layer5CommunityWhite from "../../images/layer5/layer5-tagline/png/layer5-tag-white-bg.png";
-import Layer5WhiteBg from "../../images/layer5/layer5-only/png/layer5-white-bg.png";
-import Layer5TagDark from "../../images/layer5/layer5-tagline/png/layer5-tag-community-white.png";
-import Bookmarks from "../../images/layer5/bookmarks.png";
+import Layer5CommunityWhite from "../../../images/layer5/layer5-tagline/png/layer5-tag-white-bg.png";
+import Layer5WhiteBg from "../../../images/layer5/layer5-only/png/layer5-white-bg.png";
+import Layer5TagDark from "../../../images/layer5/layer5-tagline/png/layer5-tag-community-white.png";
+import Bookmarks from "../../../images/layer5/bookmarks.png";
 
 const Layer5Wrapper = styled.section`
   .brandHeader {
@@ -139,7 +139,7 @@ const Layer5 = () => {
                 </Col>
                 <Row>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6}>
-                        <Row>   
+                        <Row>
                             <Col xs={12} sm={12} lg={12} xl={12}>
                                 <p className="layerH3">Color</p>
                             </Col>
@@ -164,28 +164,28 @@ const Layer5 = () => {
                 </Col>
                 <Row>
                     <Col xs={12} sm={12} md={6} lg={6} xl={6}>
-                        <Row>   
+                        <Row>
                             <Col xs={12} sm={12} lg={12} xl={12}>
                                 <p className="layerH3">Color</p>
                             </Col>
-                            <ColorBox                         
+                            <ColorBox
                                 R="c: 20"
                                 G="M: 0"
                                 B="Y: 0"
                                 K="K: 80"
                                 colorCode="#3c494f"
                                 CMY />
-                            <ColorBox 
+                            <ColorBox
                                 R="C: 80"
                                 G="M: 0"
                                 B="Y: 50"
                                 K="K: 0"
                                 colorCode="#00b39f"
                                 CMY />
-                            <ColorBox 
+                            <ColorBox
                                 R="C: 65"
                                 G="M: 0"
-                                B="Y: 45"                             
+                                B="Y: 45"
                                 K="K: 0"
                                 colorCode="#00d3a9"
                                 CMY />
@@ -196,21 +196,21 @@ const Layer5 = () => {
                             <Col xs={12} sm={12} lg={12} xl={12}>
                                 <p className="layerH3">Grayscale</p>
                             </Col>
-                            <ColorBox                         
+                            <ColorBox
                                 R="C: 0"
                                 G="M: 0"
                                 B="Y: 0"
                                 K="K: 85"
                                 colorCode="#3c494f"
                                 CMY />
-                            <ColorBox 
+                            <ColorBox
                                 R="C: 0"
                                 G="M: 0"
                                 B="Y: 0"
                                 K="K: 55"
                                 colorCode=" #828c8c"
                                 CMY />
-                            <ColorBox                          
+                            <ColorBox
                                 R="C: 0"
                                 G="M: 0"
                                 B="Y: 0"
