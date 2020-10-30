@@ -1,10 +1,10 @@
 ---
 layout: person
 name: Michael Gfeller
-position: Contributor
+position: Maintainer
 image_path: /assets/images/community/members/michael-gfeller.jpeg
 twitter: michaelgfeller
 github: mgfeller
-blurb: Mesh Head
+blurb: Meshery Maintainer, Adapters
 status: Active
 ---
