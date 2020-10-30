@@ -1,5 +1,5 @@
 import React from "react";
-import LogoList from "./logo-list";
+import LogoList from "../../../components/Logo-List/index";
 import Howitworks from "./feature.style";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
@@ -22,6 +22,7 @@ export default function Feature({
             <div className='root' ref={ref}>
                 <h4 className="g-type-display-4">{title}</h4>
                 <p className="g-type-body">{description}</p>
+                <br></br>
                 {logos ? <LogoList logos={logos} /> : null}
             </div>
         </Howitworks>
