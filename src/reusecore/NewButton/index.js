@@ -21,13 +21,11 @@ const Button = ({
 
     return (
         <React.Fragment>
-            { props.url && props.external &&       
-            <a href={props.url} target="_blank" rel="noreferrer">{initalButton}</a>}
-            {props.url && !props.external && 
-             <Link to={props.url}>{initalButton}</Link>}
             {
-                !props.url &&
-              initalButton
+                props.url ? 
+                    (props.external?
+                        <a href={props.url} target="_blank" rel="noreferrer">{initalButton}</a>:<Link to={props.url}>{initalButton}</Link>)
+                    :initalButton
             }
         </React.Fragment>
     );

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import VintageBox from "../../reusecore/VintageBox";
 import ParticleComponent from "../../reusecore/Particle";
 
@@ -31,12 +31,11 @@ const BannerDefault = () => {
                         The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
                         </p>
                         <VintageBox right={true} vintageOne={true}>
-                            <Button className="banner-btn one">
+                            <Button className="banner-btn one" title="Run Meshery">
                                 <FaDownload className="icon-left" />
-                Run Meshery
                             </Button>
-                            <Button className="banner-btn two">
-                                <FaPlay className="icon-left" /> Watch Now
+                            <Button className="banner-btn two" title="Watch Now">
+                                <FaPlay className="icon-left" /> 
                             </Button>
                         </VintageBox>
                     </Col>

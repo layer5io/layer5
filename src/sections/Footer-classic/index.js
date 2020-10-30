@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import ParticleComponent from "../../reusecore/Particle";
 
 import logo from "../../assets/images/app/footer/footer-logo-two.svg";

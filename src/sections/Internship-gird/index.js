@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import Image from "../../components/image";
 
 import InternshipSectionWrapper from "./InternshipPage.style";
@@ -137,7 +137,7 @@ const InternshipPage = ({ hide_heading })=>{
                     <div className="apply-button">
                         <h3>
                             <a href="mailto:jobs@layer5.io">
-                                <Button primary> Join Today</Button>
+                                <Button primary title="Join Today" /> 
                             </a>
                         </h3>
                     </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container} from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import VintageBox from "../../reusecore/VintageBox";
 import {
     Accordion,
@@ -67,7 +67,7 @@ const Faq = () => {
                     vintageTwo={true}
                     position="relative"
                 >
-                    <Button>Learn More</Button>
+                    <Button title="Learn More" />
                 </VintageBox>
             </Container>
         </FaqSectionWrapper>

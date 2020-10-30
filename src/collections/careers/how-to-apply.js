@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import styled from "styled-components";
 import job_icon from "./jobs_black.svg";
 import { AiOutlineArrowLeft } from "react-icons/ai";

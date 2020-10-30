@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import VintageBox from "../../reusecore/VintageBox";
 
 import projectImage1 from "../../assets/images/app/projects/landscape.png";
@@ -79,7 +79,7 @@ const Projects = () => {
                             vintageTwo={true}
                             position="relative"
                         >
-                            <Button className="project-btn">Learn More</Button>
+                            <Button className="project-btn" title="Learn More" />
                         </VintageBox>
                     </Col>
                 </Row>

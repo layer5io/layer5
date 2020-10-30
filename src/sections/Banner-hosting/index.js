@@ -3,7 +3,7 @@ import {FaSearch } from "react-icons/fa";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import ParticleComponent from "../../reusecore/Particle";
 
 import BannerSectionWrapper from "./banner.style";

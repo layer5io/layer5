@@ -1,8 +1,7 @@
 import React from "react";
-
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import { SlickSlider, SliderItem } from "../../reusecore/SlickSlider";
 
 import image1 from "../../assets/images/app/app-screen/01.png";
@@ -85,7 +84,7 @@ const AppScreens = () => {
                                         <span>See screenshot </span> & engage in this app.
                                     </h2>
                                 </SectionTitle>
-                                <Button>View on Goole Play</Button>
+                                <Button title="View on Google Play" />
                             </div>
                         </Col>
                         <Col className="app-screen-slider-block" xs={12} lg={6}>
@@ -123,12 +122,8 @@ const AppScreens = () => {
                                 </h2>
                             </SectionTitle>
                             <div className="btn-group">
-                                <Button className="btn-outline one">
-                    View on Google Play
-                                </Button>
-                                <Button className="btn-outline two">
-                    View on App Store
-                                </Button>
+                                <Button className="btn-outline one" title="View on Google Play" />
+                                <Button className="btn-outline two" title="View on App Store" />
                             </div>
                         </Col>
                     </Row>

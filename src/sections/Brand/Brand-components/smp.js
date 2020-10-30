@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Col } from "../../../reusecore/Layout";
-import Button from "../../../reusecore/Button";
+import Button from "../../../reusecore/NewButton";
 import ColorBox from "../../../components/ColorBox";
 
 import SmpDark from "../../../assets/images/smp/icon/smp-dark.png";
@@ -40,7 +40,7 @@ const SMPBrand = () => {
                     </h1>
                 </Col>
                 <Col xs={12} sm={6} lg={6} xl={6}>
-                    <Link to="https://layer5.io/assets/resources/brand/smp-brand-kit.zip"><Button className="l5-dark-yellow">DOWNLOAD LOGO ASSETS</Button></Link>
+                    <Button className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/smp-brand-kit.zip" external="true" />
                 </Col>
                 <Col xs={12} sm={12} lg={12} xl={12}>
                     <Row>

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import img from "./forklift.svg";
 import { MdPermContactCalendar, MdEmail } from "react-icons/md";
 
@@ -32,7 +32,7 @@ const Contact = () => {
                                 <Col className="nopad" md={1} xs={1}><MdEmail className="contact-icon" size={30}></MdEmail></Col>
                                 <Col md={11} xs={11}><input className="inputrow" type="email" placeholder="Email Address" /></Col>
                             </Row>
-                            <Button>Subscribe</Button>
+                            <Button title="Subscribe" />
                         </Col>
                     </Row>
                 </form>

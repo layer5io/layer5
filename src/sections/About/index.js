@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import VintageBox from "../../reusecore/VintageBox";
 import SocialLinks from "../../components/SocialLinks";
 import particle1 from "../../assets/images/app/particle/05.png";
@@ -91,9 +91,7 @@ const About = () => {
                                 </Col>
                             </Row>
                             <VintageBox right={false} vintageTwo={true} position="relative">
-                                <Button className="about-button">
-                                    <a href="mailto:hello@layer5.io">Contact Us</a>
-                                </Button>
+                                <Button className="about-button" url="mailto:hello@layer5.io" title="Contact Us" external="true" />
                             </VintageBox>
                         </div>
                     </Col>

@@ -4,7 +4,7 @@ import slugify from "../../utils/slugify";
 
 import { FaSearch } from "react-icons/fa";
 
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 
 import WdThumb1 from "../../assets/images/blog/widgets-thumb/01.png";
 import WdThumb2 from "../../assets/images/blog/widgets-thumb/02.png";

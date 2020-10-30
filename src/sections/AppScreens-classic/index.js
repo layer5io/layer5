@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import { SlickSlider, SliderItem } from "../../reusecore/SlickSlider";
 
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
@@ -93,7 +93,7 @@ const AppScreensClassic = () => {
                     </Col>
                     <Col xs={12} sm={6}>
                         <div className="view-more-button">
-                            <Button>View on Goole Play</Button>
+                            <Button title="View on Google Play" />
                         </div>
                     </Col>
                 </Row>

@@ -9,7 +9,7 @@ redirect_from:
 
 import { ProjectWrapper } from "../Project.style.js"
 import { Container, Row, Col } from "../../../reusecore/Layout"
-import Button from "../../../reusecore/Button"
+import Button from "../../../reusecore/NewButton"
 import smi1 from "./checklist.svg"
 
 <ProjectWrapper>
@@ -17,11 +17,7 @@ import smi1 from "./checklist.svg"
     <img className="smi-card" width="200px" src={smi1} align="centre" />
     <div>&nbsp;</div>
     <div className="float-button">
-        <Button className="smi-button">
-        <a href="/">
-          <h4 className = "btn-title">Run SMI Conformance</h4>
-        </a>    
-        </Button>
+        <Button className="smi-button" title={<h4 className = "btn-title">Run SMI Conformance</h4>} url="/" />
     </div>
   </div>
 

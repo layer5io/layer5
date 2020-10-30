@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
+import Button from "../../reusecore/NewButton";
 import VintageBox from "../../reusecore/VintageBox";
 
 import CTASectionWrapper from "./CTASection.style";
@@ -31,7 +31,7 @@ const CTAHosting = () => {
                                 vintageTwo={true}
                                 position="relative"
                             >
-                                <Button>Learn More</Button>
+                                <Button title="Learn More" />
                             </VintageBox>
                         </div>
                     </Col>
