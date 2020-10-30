@@ -23,7 +23,7 @@ export default function HowItWorks({ title, description, features }) {
                     </div>
                     <ul className='features'>
                         {features.map((feature, index) => (
-                            <li key={feature.title}>
+                            <li key={index}>
                                 <Feature
                                     {...feature}
                                     onInViewStatusChanged={(state) => {

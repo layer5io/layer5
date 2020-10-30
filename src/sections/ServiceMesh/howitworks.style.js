@@ -12,7 +12,7 @@ const Howitworks = styled.section`
     top: calc(50vh - 249px);
 }
 .root {
-    padding: 88px 0;
+    padding: 0px 0;
   
     & .headerWrapper {
       & h2 {
