@@ -76,7 +76,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             >
                                 {
                                     activeExampleIndex === 0 &&
-<circle className='spacer' cx="367.07" cy="319.22" r="11.19" />
+                                <circle className='spacer' cx="367.07" cy="319.22" r="11.19" />
                                 } 
                                 <path
                                     className={activeExampleIndex !== 0 ? "render arrowHead" : "show arrowHead"}
@@ -84,7 +84,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 />
                                 <path
                                     d="M370.08 316.86a108.68 108.68 0 0023.67-47.78"
-                                    className={activeExampleIndex !== 0 ? "render arrowSegment" : "show arrowSegment"}
+                                    className={activeExampleIndex !== 0 ? "render-arrow arrowSegment" : "show-arrow arrowSegment"}
                                 />
                             </g>
 
@@ -103,10 +103,10 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 />
                                 <path
                                     d="M212.3 327a108.51 108.51 0 0046.56 26"
-                                    className={activeExampleIndex !== 1 ? "render arrowSegment" : "show arrowSegment"}
+                                    className={activeExampleIndex !== 1 ? "render-arrow arrowSegment" : "show-arrow arrowSegment"}
                                 />
                                 <path
-                                    className={activeExampleIndex !== 1 ? "render arrowSegment" : "show arrowSegment"}
+                                    className={activeExampleIndex !== 1 ? "render-arrow arrowSegment" : "show-arrow arrowSegment"}
                                     d="M307.46 355.47A115.53 115.53 0 00394 269M395 226.76a115.51 115.51 0 00-84-88.92"
                                 />
                             </g>
@@ -126,11 +126,11 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 />
                                 <path
                                     d="M203.57 175.33a108.58 108.58 0 00-23.67 47.78"
-                                    className={activeExampleIndex !== 2 ? "render arrowSegment" : "show arrowSegment"}
+                                    className={activeExampleIndex !== 2 ? "render-arrow arrowSegment" : "show-arrow arrowSegment"}
                                 />
                                 <path
                                     d="M396.22 246.69a109.35 109.35 0 11-187.39-76.58"
-                                    className={activeExampleIndex !== 2 ? "render arrowSegment" : "show arrowSegment"}
+                                    className={activeExampleIndex !== 2 ? "render-arrow arrowSegment" : "show-arrow arrowSegment"}
                                 />
                
                             </g>
