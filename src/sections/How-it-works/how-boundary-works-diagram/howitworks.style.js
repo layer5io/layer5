@@ -4,18 +4,27 @@ const Howitworks = styled.section`
 .render {
   visibility: hidden;
   opacity: 0;
-  transition: all 1.1s ease-out;
+  transition: all 0.7s ease-out;
 }
 
 .show {
   visibility: visible;
   opacity: 1;
-  transition: all 1.1s ease-in;
+  transition: all 0.7s ease-in;
+}
+.render-arrow {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show-arrow {
+  visibility: visible;
+  opacity: 1;
 }
 position: sticky;
     top: calc(50vh - 249px);
 .root {
-    --transition-time: 1.1s;
+    --transition-time: 0.7s;
     @media (min-width: 768px) {
         position: sticky;
         top: calc(50vh - 249px);
@@ -50,7 +59,6 @@ position: sticky;
     & .arrowHead,
     & .arrowSegment,
     & .spacer {
-      transition: 1.1s ease;
       transition-property: opacity;
     }
   
@@ -70,7 +78,7 @@ position: sticky;
     & .iconLines {
       stroke: grey;
       fill: none;
-      transition: 1.1s ease;
+      transition: 0.7s ease;
       transition-property: stroke;
     }
   
@@ -81,7 +89,7 @@ position: sticky;
     & .iconBg {
       stroke: #00d3a9;
       stroke-width: 1px;
-      transition: 1.1s ease;
+      transition: 0.7s ease;
       transition-property: fill, stroke;
     }
   
@@ -129,7 +137,7 @@ position: sticky;
     & .hostsAndServices {
       opacity: 1;
       transform: translate(0, 0);
-      transition: 1.1s ease;
+      transition: 0.7s ease;
       transition-property: opacity, transform;
   
       & .leadingLine {
