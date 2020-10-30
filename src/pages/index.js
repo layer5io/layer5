@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import Navigation from "../sections/Navigation";
 import Banner from "../sections/Banner-default";
 import Features from "../sections/Features";
+import Services from "../sections/Services-crypto";
 import Faq from "../sections/Faq";
 import Integrations from "../sections/Projects";
 import AppScreens from "../sections/AppScreens";
@@ -27,7 +28,8 @@ const IndexPage = () => (
             <Navigation />
             <Banner />
             <Integrations />
-            <Features />
+            {/* <Features /> */}
+            <Services />
             <AppScreens />
             <Counters /> 
             <Pricing />
