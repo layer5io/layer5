@@ -21,7 +21,7 @@ import Language from "./languages";
 const Footer = () => {
     return (
         <FotterWrapper>
-            <img className="section__particle one" alt="img" src={particleOne} alt="appion app landing" />
+            <img className="section__particle one" src={particleOne} alt="appion app landing" />
             <Container>
                 <Row>
                     <Col xs={12} sm={5} lg={4}>

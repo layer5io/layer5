@@ -16,7 +16,7 @@ const Button = ({
         addClasses.push(className);
     }
 
-    const initalButton = <BtnStyle className={addClasses.join(" ")}{...props} onClick={props.onClick}>{children}<img src={props.icon} />{props.title}</BtnStyle>;
+    const initalButton = <BtnStyle className={addClasses.join(" ")}{...props} onClick={props.onClick}>{children}<img src={props.icon} alt="image" />{props.title}</BtnStyle>;
 
 
     return (

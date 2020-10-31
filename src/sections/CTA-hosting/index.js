@@ -16,15 +16,15 @@ const CTAHosting = () => {
                     <Col xs={12} sm={6} lg={5}>
                         <div className="CTA-content">
                             <h2>
-                Grow Your Bussiness <br/>
-                 With us
+                                Grow Your Bussiness <br/>
+                                With us
                             </h2>
                             <p>
-                Lorem ipsum, or lipsum as it is sometimes known, is dummy text
-                placeholder text commonly used to demonstrate the visual form 
-                of a document or a typeface without replying out print, graphic
-                or web designs. The passage is attributed to typesetter in the
-                15th century.
+                                Lorem ipsum, or lipsum as it is sometimes known, is dummy text
+                                placeholder text commonly used to demonstrate the visual form 
+                                of a document or a typeface without replying out print, graphic
+                                or web designs. The passage is attributed to typesetter in the
+                                15th century.
                             </p>
                             <VintageBox
                                 right={true}

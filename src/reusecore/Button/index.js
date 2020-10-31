@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import BtnStyle from "./btn.style"; 
 
-
-
 const Button = ({
     className,
     children,
@@ -14,8 +12,6 @@ const Button = ({
     if (className) {
         addClasses.push(className);
     }
-
-  
 
     return (
         <BtnStyle 

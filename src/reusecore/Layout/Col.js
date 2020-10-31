@@ -3,16 +3,11 @@ import styled from "styled-components";
 
 const Dimensions = ["", "8.333333%", "16.666667%", "25%", "33.333333%", "41.666667%", "50%", "58.333333%", "66.666667%", "75%", "83.333333%", "91.666667%", "100%" ]; 
 
-
 const ColWrapper = styled.div`
     position: relative;
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-
- 
-
-
 
     @media (min-width: 315px) {
         flex: ${({xs}) => 
@@ -259,10 +254,7 @@ const ColWrapper = styled.div`
             : `${Dimensions[0]}`}
 
     } /*  @media (min-width: 1200px)  */
-
- 
 `;
-
 
 const Col = ({children, ...props}) => { 
     const addAllClasses = ["col"];
@@ -275,6 +267,5 @@ const Col = ({children, ...props}) => {
         </ColWrapper>
     );
 };
-
 
 export default Col;

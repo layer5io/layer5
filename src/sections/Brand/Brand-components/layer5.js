@@ -12,48 +12,47 @@ import Layer5TagDark from "../../../images/layer5/layer5-tagline/png/layer5-tag-
 import Bookmarks from "../../../images/layer5/bookmarks.png";
 
 const Layer5Wrapper = styled.section`
-  .brandHeader {
-    height: auto;
-    padding-left:0px;
-    padding-top: 3rem;
-  }
-  .brandHeader h2{
-    font-size:2rem;
-  }
-  .Layer5TagDark {
-    background: #000000;
-  }
+    .brandHeader {
+        height: auto;
+        padding-left:0px;
+        padding-top: 3rem;
+    }
+    .brandHeader h2{
+        font-size:2rem;
+    }
+    .Layer5TagDark {
+        background: #000000;
+    }
 
-  @media (max-width:575px){
-     .brandHeader{
-         padding-bottom:30px;
-         padding-top: 0;
-     }
-  }
+    @media (max-width:575px){
+        .brandHeader{
+            padding-bottom:30px;
+            padding-top: 0;
+        }
+    }
 
-  ${media.grandpabear`
-        .mediaLayer5 {
-          padding-left: 2.5em;
-      }
-  `}
+    ${media.grandpabear`
+            .mediaLayer5 {
+            padding-left: 2.5em;
+        }
+    `}
 
-  ${media.papabear`
-        .mediaLayer5 {
-          padding-left: 5.8em;
-      }
-  `}
+    ${media.papabear`
+            .mediaLayer5 {
+            padding-left: 5.8em;
+        }
+    `}
 
-  ${media.mamabear`
-        .mediaLayer5 {
-          padding-left: .5em;
-      }
-   `}
-  ${media.babybear`
-        .mediaLayer5 {
-          padding-left: 1.3em;
-      }
-   `}
-
+    ${media.mamabear`
+            .mediaLayer5 {
+            padding-left: .5em;
+        }
+    `}
+    ${media.babybear`
+            .mediaLayer5 {
+            padding-left: 1.3em;
+        }
+    `}
 `;
 
 const Layer5 = () => {
@@ -68,11 +67,11 @@ const Layer5 = () => {
                 <Col xs={12} sm={8} lg={8} xl={8}>
                     <div className="post-content">
                         <p>
-              We’ve created some guidelines to help you use our brand and
-              assets, including our logo, content and trademarks, without having
-              to negotiate legal agreements for each use. To make any use of our
-              marks in a way not covered by these guidelines, please contact us
-              and include a visual mockup of intended use.
+                            We’ve created some guidelines to help you use our brand and
+                            assets, including our logo, content and trademarks, without having
+                            to negotiate legal agreements for each use. To make any use of our
+                            marks in a way not covered by these guidelines, please contact us
+                            and include a visual mockup of intended use.
                         </p>
                         <p>
                             <a href="mailto:community@layer5.io">
@@ -94,29 +93,29 @@ const Layer5 = () => {
                 <Col xs={12} sm={12} lg={12} xl={12}>
                     <Row>
                         <p>
-              The Layer5 mark includes the Layer5 name & logo, and any word,
-              phrase, image, or other designation that identifies the source or
-              origin of any Layer5 projects. Please don’t modify the marks or
-              use them in a confusing way, including suggesting sponsorship or
-              endorsement by Layer5, or in a way that confuses Layer5 with
-              another brand (including your own).
+                            The Layer5 mark includes the Layer5 name & logo, and any word,
+                            phrase, image, or other designation that identifies the source or
+                            origin of any Layer5 projects. Please don’t modify the marks or
+                            use them in a confusing way, including suggesting sponsorship or
+                            endorsement by Layer5, or in a way that confuses Layer5 with
+                            another brand (including your own).
                         </p>
                     </Row>
                 </Col>
                 <Row className="ImgDiv">
                     <Col xs={12} sm={4} lg={4} xl={4}>
                         <a href="#">
-                            <img src={Layer5CommunityWhite} />
+                            <img src={Layer5CommunityWhite} alt="Layer5CommunityWhite" />
                         </a>
                     </Col>
                     <Col xs={12} sm={4} lg={4} xl={4}>
                         <a href="#">
-                            <img className="Layer5TagDark" src={Layer5TagDark} />
+                            <img className="Layer5TagDark" src={Layer5TagDark} alt="Layer5TagDark" />
                         </a>
                     </Col>
                     <Col xs={12} sm={4} lg={4} xl={4}>
                         <a href="#">
-                            <img src={Layer5WhiteBg} />
+                            <img src={Layer5WhiteBg} alt="Layer5WhiteBg" />
                         </a>
                     </Col>
                 </Row>
@@ -128,9 +127,9 @@ const Layer5 = () => {
                     </Col>
                     <Col xs={12} sm={12} lg={12} xl={12}>
                         <p>
-              Our community color palette consists of gray, green and colors
-              representing each of our projects. The Layer5 logo should be white
-              when using project colors as the background.
+                            Our community color palette consists of gray, green and colors
+                            representing each of our projects. The Layer5 logo should be white
+                            when using project colors as the background.
                         </p>
                     </Col>
                 </Row>
@@ -226,12 +225,12 @@ const Layer5 = () => {
                     </Col>
                     <Col xs={12} sm={12} lg={12} xl={12}>
                         <p className="layerH3">
-              Media available for print in the form of bookmarks.
+                            Media available for print in the form of bookmarks.
                         </p>
                     </Col>
                     <Col xs={8} sm={2} lg={2} xl={2}>
                         <Link to="#">
-                            <img src={Bookmarks} />
+                            <img src={Bookmarks} alt="Bookmarks" />
                         </Link>
                     </Col>
                 </Row>

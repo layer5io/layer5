@@ -5,7 +5,6 @@ import Image from "../image";
 import { CardWrapper } from "./Card.style";
 
 const Card = ({ frontmatter }) => {
-    console.log(frontmatter);
     return (
         <CardWrapper fixed={!!frontmatter.abstract}>
             <div className="post-block">
