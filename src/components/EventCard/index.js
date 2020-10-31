@@ -5,6 +5,7 @@ import Image from "../image";
 import { CardWrapper } from "./Card.style";
 
 const Card = ({ frontmatter }) => {
+    console.log(frontmatter);
     return (
         <CardWrapper fixed={!!frontmatter.abstract}>
             <div className="post-block">
@@ -13,6 +14,7 @@ const Card = ({ frontmatter }) => {
                         <Image
                             {...frontmatter.thumbnail}
                             imgStyle={{ objectFit: "contain" }}
+                            alt={frontmatter.title}
                         />
                     </a>
                 </div>

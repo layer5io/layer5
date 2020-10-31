@@ -4,7 +4,7 @@ import React from "react";
 import {ThemeProvider} from "styled-components";
 import Layout from "../../components/layout"; 
 
-import { Container, Row, Col } from "../../reusecore/Layout";
+import { Row, Col } from "../../reusecore/Layout";
 // import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import Features from "../Features";

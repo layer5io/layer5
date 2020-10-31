@@ -8,14 +8,16 @@ const CommunityMembers=()=>{
             <h2 className="black-text">Our Community Members</h2>
             <img
                 src={mentorimg}
-                width="40%" align="right" 
+                width="40%" 
+                align="right" 
                 className="mentorimg"
+                alt="mentoring"
             />
             <div>
                 <h5>Jump in! The community is warm</h5>
-  The Layer5 community is diverse with members from around the globe, who have shown consistent commitment in advancing our open source initiatives.
+                    The Layer5 community is diverse with members from around the globe, who have shown consistent commitment in advancing our open source initiatives.
                 <p className="indent">
-  We believe that every contributor deserves a safe and friendly environment, enabling them to effectively compare different ideas and find the best solutions for advancement, while building the size, diversity, and strength of the community.
+                    We believe that every contributor deserves a safe and friendly environment, enabling them to effectively compare different ideas and find the best solutions for advancement, while building the size, diversity, and strength of the community.
                 </p>    
                 <div width="100%" className="center">
                     <h3>

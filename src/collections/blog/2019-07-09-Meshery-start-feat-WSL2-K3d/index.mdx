@@ -71,7 +71,7 @@ docker version
 curl -L https://git.io/meshery | sh -
 ```
 <a href={wsldockerstart}>
-    <img src={wsldockerstart} class="thumbnail" />
+    <img src={wsldockerstart} class="thumbnail" alt="wsl-docker-start" />
 </a>
 
 - Create a new k3d cluster with the <code> WSL2 IP </code>
@@ -85,7 +85,7 @@ kubectl cluster-info
 ```
 
 <a href={wslk3dstart}>
-    <img src={wslk3dstart} class="thumbnail" />
+    <img src={wslk3dstart} class="thumbnail" alt="wslk3dstart" />
 </a>
 <br/>
 - Start Meshery on the newly created cluster
@@ -95,7 +95,7 @@ mesheryctl system start
 ```
 
 <a href={wslmesherystart}>
-    <img src={wslmesherystart} class="thumbnail" />
+    <img src={wslmesherystart} class="thumbnail" alt="wslmesherystart" />
 </a>
 - Once Meshery is fully started, login in your preferred browser using the <code>WSL2 IP</code> instead of <code>localhost</code>
 
@@ -105,10 +105,10 @@ $BROWSER $mainIP:9081 &
 ```
 
 <a href={wslmesherylogin}>
-        <img src={wslmesherylogin} />
+        <img src={wslmesherylogin} alt="wslmesherylogin" />
 </a>
 <a href={wslmesheryloginsuccess}>
-    <img src={wslmesheryloginsuccess}/>
+    <img src={wslmesheryloginsuccess} alt="wslmesheryloginsuccess" />
 </a>
 
 
@@ -128,7 +128,7 @@ grafana/grafana
 ```
 
 <a href={wslgrafanastart}>
-    <img src={wslgrafanastart} class="thumbnail"/>
+    <img src={wslgrafanastart} class="thumbnail" alt="wslgrafanastart" />
 </a>
 
 - Access the new instance with the admin password that you set in the docker environment variable
@@ -137,11 +137,11 @@ $BROWSER $mainIP:3000 &
 ```
 
 <a href={wslgrafanalogin}>
-    <img src={wslgrafanalogin} class="thumbnail" />
+    <img src={wslgrafanalogin} class="thumbnail" alt="wslgrafanalogin" />
 </a>
 <br />
 <a href={wslgrafanaloginsuccess}>
-    <img src={wslgrafanaloginsuccess} class="thumbnail" />
+    <img src={wslgrafanaloginsuccess} class="thumbnail" alt="wslgrafanaloginsuccess" />
 </a>
 
 ### An inside look
@@ -150,7 +150,7 @@ While everything should run fine, it's always good to have a look at what has be
 In this case, we are almost exclusively working with Docker and the "inside look" should look something like this:
 
 <a href={wslmesherycomplete}>
-    <img src={wslmesherycomplete}class="thumbnail" />
+    <img src={wslmesherycomplete}class="thumbnail" alt="wslmesherycomplete" />
 </a>
 
 #### Conclusion

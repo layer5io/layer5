@@ -53,6 +53,7 @@ const ProgramsGrid = ({hide_path}) => {
                                                 <Image
                                                     {...frontmatter.thumbnail}
                                                     imgStyle={{ objectFit: "contain" }}
+                                                    alt={frontmatter.title}
                                                 />
                                             </div>
                                             <h3>{frontmatter.title}</h3>

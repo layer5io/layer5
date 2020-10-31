@@ -5,21 +5,23 @@ import Button from "../../reusecore/NewButton";
 const Community= () => {
     return (
         <div>
-            <h2 className="center">Largest collection of
-  service mesh projects and their maintainers in the world</h2>
+            <h2 className="center">
+                Largest collection of service mesh projects and their maintainers in the world
+            </h2>
             <div>  
                 <img
                     src={datacenterimg}
                     width="40%"
                     align="right"
+                    alt="datacenterimg"
                 />
 
                 <p className="indent">
-    We build projects
-    to provide learning environments, deployment and operational best practices,
-    performance benchmarks, create documentation, share networking
-    opportunities, and more. Our shared commitment to the open source spirit
-    pushes Layer5 projects forward. 
+                    We build projects
+                    to provide learning environments, deployment and operational best practices,
+                    performance benchmarks, create documentation, share networking
+                    opportunities, and more. Our shared commitment to the open source spirit
+                    pushes Layer5 projects forward. 
                 </p>
                 <div width="100%" className="center">
                     <p>New members are always welcome.</p>
@@ -30,10 +32,10 @@ const Community= () => {
     
                 <h4>Open Source Projects</h4>
                 <p className="indent">
-    Layer5 projects are open source software. Anyone can download, use, work on,
-    and share it with others. It's built on principles like collaboration,
-    globalism, and innovation. Layer5 projects are distributed under the terms
-    of Apache v2.
+                    Layer5 projects are open source software. Anyone can download, use, work on,
+                    and share it with others. It's built on principles like collaboration,
+                    globalism, and innovation. Layer5 projects are distributed under the terms
+                    of Apache v2.
                 </p>
             </div>
             <div width="100%" className="center" >
