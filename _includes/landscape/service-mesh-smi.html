@@ -1,81 +1,252 @@
-<table
-  id="nonfunc-table"
-  class="responsive-table highlight striped"
-  style="color: var(--main-bg-color);"
->
-  <thead
-    style="
-      background-color: #a6b7be;
-      color: #222;
-      text-align: justify;
-      word-wrap: none;
-      width: 100%;
-    "
-  >
-    <tr style="cursor: pointer">
-      <th onclick="sortTable('smi-table',0)">ID</th>
-      <th onclick="sortTable('smi-table',1)">Date</th>
-      <th onclick="sortTable('smi-table',2)">Service Mesh</th>
-      <th onclick="sortTable('smi-table',3)">Service Mesh Version</th>
-      <th onclick="sortTable('smi-table',4)">% Passed</th>
-      <th onclick="sortTable('smi-table',4)">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% assign smi = site.data.landscape.smi %} {% for result in smi %}
-    <tr>
-      <td scope="row">{{result.id}}</td>
-      <td scope="row">{{result.date}}</td>
-      <td scope="row">{{result.mesh_name}}</td>
-      <td scope="row">{{result.mesh_version}}</td>
-      <td scope="row">{{result.passing_percentage}}</td>
-      <td scope="row">{{result.status}}</td>
-      <tr >
-        <table
-        style="background: #F8F8F8">
-          <thead>
-            <tr>
-              <td>Specification</td>
-              <td>Assertions</td>
-              <td>Time</td>
-              <td>Version</td>
-              <td>Capability</td>
-              <td>Result</td>
-              <td>Reason</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{{result.more_details[0].smi_specification}}</td>
-              <td>{{result.more_details[0].time}}</td>
-              <td>{{result.more_details[0].assertions}}</td>
-              <td>{{result.more_details[0].Version}}</td>
-              <td>{{result.more_details[0].capability}}</td>
-              <td>{{result.more_details[0].result}}</td>
-              <td>{{result.more_details[0].reason}}</td>
-            </tr>    
-            <tr>
-              <td>{{result.more_details[1].smi_specification}}</td>
-              <td>{{result.more_details[1].time}}</td>
-              <td>{{result.more_details[1].assertions}}</td>
-              <td>{{result.more_details[1].Version}}</td>
-              <td>{{result.more_details[1].capability}}</td>
-              <td>{{result.more_details[1].result}}</td>
-              <td>{{result.more_details[1].reason}}</td>
-            </tr>    
-            <tr>
-              <td>{{result.more_details[2].smi_specification}}</td>
-              <td>{{result.more_details[2].time}}</td>
-              <td>{{result.more_details[2].assertions}}</td>
-              <td>{{result.more_details[2].Version}}</td>
-              <td>{{result.more_details[2].capability}}</td>
-              <td>{{result.more_details[2].result}}</td>
-              <td>{{result.more_details[2].reason}}</td>
-            </tr>  
-          </tbody>
-        </table>
-      </tr>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="col-sm-12">
+  <div class="panel panel-default">
+    <table id="nonfunc-table" style="color: var(--main-bg-color)">
+      <thead
+        style="
+          background-color: #a6b7be;
+          color: #222;
+          text-align: justify;
+          word-wrap: none;
+          width: 100%;
+        "
+      >
+        <tr style="cursor: pointer">
+          <th onclick="sortTable('smi-table',0)">Service Mesh</th>
+          <th onclick="sortTable('smi-table',1)">Mesh Version</th>
+          <th onclick="sortTable('smi-table',2)">Traffic Access</th>
+          <th onclick="sortTable('smi-table',3)">Traffic Split</th>
+          <th onclick="sortTable('smi-table',4)">Traffic Spec</th>
+          <th onclick="sortTable('smi-table',4)">% Passed</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign smi = site.data.landscape.smi %} {% for result in smi %}
+        <tr data-toggle="collapse" id="table1" data-target=".table1">
+          <td>
+            <img
+              src="{{result.logo}}"
+              width="50px"
+              alt="{{result.mesh_name}}"
+            />
+          </td>
+          <td>{{result.mesh_version}}</td>
+          <td data-toggle="tooltip" title="{{result.reason}}">
+            {{result.traffic_access}}
+          </td>
+          <td data-toggle="tooltip" title="{{result.reason}}">
+            {{result.traffic_split}}
+          </td>
+          <td data-toggle="tooltip" title="{{result.reason}}">
+            {{result.traffic_spec}}
+          </td>
+          <td>{{result.passing_percentage}}</td>
+        </tr>
+        <tr class="collapse table1">
+          <td colspan="999">
+            <div>
+              <table style="background: #f8f8f8" class="table table-striped">
+                <tbody>
+                  <tr>
+                    <td>{{result.more_details[0].mesh_name}}</td>
+                    <td>{{result.more_details[0].mesh_version}}</td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {{result.more_details[0].traffic_access}}
+                    </td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {{result.more_details[0].traffic_split}}
+                    </td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {{result.more_details[0].traffic_spec}}
+                    </td>
+                    <td>{{result.more_details[0].passing_percentage}}</td>
+                  </tr>
+                  <tr>
+                    <td>{{result.more_details[1].mesh_name}}</td>
+                    <td>{{result.more_details[1].mesh_version}}</td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {{result.more_details[1].traffic_access}}
+                    </td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {{result.more_details[1].traffic_split}}
+                    </td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {{result.more_details[1].traffic_spec}}
+                    </td>
+                    <td>{{result.more_details[1].passing_percentage}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- <div class="col-sm-12">
+  <div class="panel panel-default">
+    <table class="table table-responsive table-hover">
+      <thead>
+        <tr>
+          <th>Mesh Logo</th>
+          <th>Mesh Version</th>
+          <th>Traffic Access (Reason as tooltip)</th>
+          <th>Traffic Control (Reason as tooltip)</th>
+          <th>Traffic Metrics (Reason as tooltip)</th>
+          <th>% Passed</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-toggle="collapse" id="table1" data-target=".table1">
+          <td>OSM</td>
+          <td>v0.3</td>
+          <td>Full/Partial/None logo</td>
+          <td>Full/Partial/None logo</td>
+          <td>Full/Partial/None logo</td>
+          <td>60%</td>
+        </tr>
+        <tr class="collapse table1">
+          <td colspan="999">
+            <div>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Spec</th>
+                    <th>Assertions</th>
+                    <th>Time</th>
+                    <th></th>
+                    <th>SMI Version</th>
+                    <th>Status</th>
+                    <th>Reason</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>traffic-access</td>
+                    <td>10</td>
+                    <td>10m 1s</td>
+                    <td></td>
+                    <td>alpha1/v1</td>
+                    <td>Passing/ Failing Logo</td>
+                    <td>Reasons</td>
+                  </tr>
+                  <tr>
+                    <td>traffic-split</td>
+                    <td>10</td>
+                    <td>10m 1s</td>
+                    <td></td>
+                    <td>alpha1/v1</td>
+                    <td>Passing/ Failing Logo</td>
+                    <td>Reasons</td>
+                  </tr>
+                  <tr>
+                    <td>traffic-spec</td>
+                    <td>10</td>
+                    <td>10m 1s</td>
+                    <td></td>
+                    <td>alpha1/v1</td>
+                    <td>Passing/ Failing Logo</td>
+                    <td>Reasons</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr data-toggle="collapse" id="table2" data-target=".table2">
+          <td>Istio</td>
+          <td>v1.6</td>
+          <td>Full/Partial/None logo</td>
+          <td>Full/Partial/None logo</td>
+          <td>Full/Partial/None logo</td>
+          <td>60%</td>
+        </tr>
+        <tr class="collapse table2">
+          <td colspan="999">
+            <div>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Spec</th>
+                    <th>Assertions</th>
+                    <th>Time</th>
+                    <th></th>
+                    <th>SMI Version</th>
+                    <th>Status</th>
+                    <th>Reason</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>traffic-access</td>
+                    <td>10</td>
+                    <td>10m 1s</td>
+                    <td></td>
+                    <td>alpha1/v1</td>
+                    <td>Passing/ Failing Logo</td>
+                    <td>Reasons</td>
+                  </tr>
+                  <tr>
+                    <td>traffic-split</td>
+                    <td>10</td>
+                    <td>10m 1s</td>
+                    <td></td>
+                    <td>alpha1/v1</td>
+                    <td>Passing/ Failing Logo</td>
+                    <td>Reasons</td>
+                  </tr>
+                  <tr>
+                    <td>traffic-spec</td>
+                    <td>10</td>
+                    <td>10m 1s</td>
+                    <td></td>
+                    <td>alpha1/v1</td>
+                    <td>Passing/ Failing Logo</td>
+                    <td>Reasons</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
