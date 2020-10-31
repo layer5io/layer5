@@ -12,48 +12,41 @@ import ActiveMembers from "../../sections/Members-grid/ActiveMembers";
 import InactiveMembers from "../../sections/Members-grid/InactiveMembers";
 import Maintainers from "../../sections/Members-grid/Maintainers";
 
+
 const MembersPage = () => {
-    const [active, setActive] = useState(false);
-    const [inActive, setinActive] = useState(false);
-    const [maintainers, setMaintainers] = useState(false);
 
-    const toggleActive = () => {
-        let status = active;
-        setActive(!status);
-        setinActive(false);
-        setMaintainers(false);
+    const options = [
+        { label: "All Members", value: "all" },
+        { label: "Active Members", value: "active" },
+        { label: "Inactive Members", value: "inactive" },
+        { label: "Maintainers", value: "maintainers" }
+    ];
 
+    const [state, setState] = React.useState({ 
+        label: "All Members", value: "all" ,
+    });
+
+    const handleChange = value => {
+        setState({ value: value });
     };
-
-    const toggleInactive = () => {
-        let status = inActive;
-        setActive(false);
-        setinActive(!status);
-        setMaintainers(false);
-    };
-
-    const toggleMaintainers = () => {
-        let status = Maintainers;
-        setActive(false);
-        setinActive(false);
-        setMaintainers(!status);
-    };
+    
 
     let MembersView = props => {
-        if (active) return <ActiveMembers {...props} />;
-        else if (inActive) return <InactiveMembers {...props} />;
-        else if (Maintainers) return <Maintainers {...props} />;
+        let status = state.value.value;
+        if (status=="active") return <ActiveMembers {...props} />;
+        else if (status=="inactive") return <InactiveMembers {...props} />;
+        else if (status=="maintainers") return <Maintainers {...props} />;
         return <AllMembers {...props} />;
     };
-
+    const selectStyles = { menu: styles => ({ ...styles, zIndex: 999 }) };
     return (
         <ThemeProvider theme={theme}>
-            <Layout>
+            <Layout>    
                 <GlobalStyle />
                 <SEO title="Members | Layer5 - The Service Mesh Company" />
                 <Navigation />
-                <MembersView toggleActive={toggleActive} toggleInactive={toggleInactive} toggleMaintainers={toggleMaintainers}
-                    active={active} inActive={inActive} maintainers={maintainers}/>
+                <MembersView options={options} handleChange = {handleChange} 
+                    currMember={state.value} selectStyles={selectStyles}/>
                 <Footer/>
             </Layout>
         </ThemeProvider>

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
+import Select from "react-select";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
 import PageHeader from "../../reusecore/PageHeader";
 import ProfileCard from "../../components/Profile-card";
 
@@ -17,12 +18,16 @@ const MembersGrid=props => {
                 <Container>
                     <div className="members-grid-wrapper">
                         <Row>
-                            <Col xs={12} sm={12} lg={12}>
-                                <div className="color-legend">
-                                    <Button active={props.active} onClick={props.toggleActive}><div className="active-filter-color" /> Active</Button>
-                                    <Button active={props.inActive} onClick={props.toggleInactive}><div className="inactive-filter-color" /> Inactive</Button>
-                                    <Button active={props.Maintainers} onClick={props.toggleMaintainers}>Maintainers</Button>
-                                </div>
+                            <Col xs={12} sm={9} lg={9}></Col>
+                            <Col xs={12} sm={3} lg={3}>
+                                <Select
+                                    styles = {props.selectStyles}
+                                    defaultValue={props.options[0]}
+                                    onChange={props.handleChange}
+                                    options={props.options}
+                                    value={props.currMember}
+                                />
+                                <br />
                             </Col>
                         </Row>
                         <Row>
