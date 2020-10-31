@@ -37,7 +37,7 @@ const MembersPage = () => {
         <ThemeProvider theme={theme}>
             <Layout>
                 <GlobalStyle />
-                <SEO title="Members | Layer5 - The Service Mesh Company" />
+                <SEO title="Members" />
                 <Navigation />
                 <MembersView toggleActive={toggleActive} toggleInactive={toggleInactive}
                     active={active} inActive={inActive} />
