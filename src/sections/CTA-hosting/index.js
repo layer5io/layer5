@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/NewButton";
+import Button from "../../reusecore/Button";
 import VintageBox from "../../reusecore/VintageBox";
 
 import CTASectionWrapper from "./CTASection.style";

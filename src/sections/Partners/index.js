@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import Button from "../../reusecore/NewButton";
+import Button from "../../reusecore/Button";
 
 import partner1 from "../../images/partners/University_of_Texas_at_Austin_seal.png";
 import partner2 from "../../images/partners/gsoc.svg";

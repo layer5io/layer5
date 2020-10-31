@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
-import Button from "../../../reusecore/NewButton";
+import Button from "../../../reusecore/Button";
 import { HeroWrapper } from "./hero.style";
 
 

@@ -1,6 +1,7 @@
 import React from "react"; 
 import PropTypes from "prop-types";
-import BtnStyle from "./btn.style"; 
+import BtnStyle from "./btn.style";
+import {Link} from "gatsby"; 
 
 
 
@@ -15,21 +16,30 @@ const Button = ({
         addClasses.push(className);
     }
 
-  
+    const initalButton = <BtnStyle className={addClasses.join(" ")}{...props} onClick={props.onClick}>{children}<img src={props.icon} />{props.title}</BtnStyle>;
+
 
     return (
-        <BtnStyle 
-            className={addClasses.join(" ")}
-            {...props}
-        >
-            {children}
-        </BtnStyle>
+        <React.Fragment>
+            {
+                props.url ? 
+                    (props.external?
+                        <a href={props.url} target="_blank" rel="noreferrer">{initalButton}</a>:<Link to={props.url}>{initalButton}</Link>)
+                    :initalButton
+            }
+        </React.Fragment>
     );
 };
 
 Button.propTypes = {
     as: PropTypes.oneOf(["button", "a",]), //--
-    upperCase: PropTypes.bool, //--
+    upperCase: PropTypes.bool,
+    title: PropTypes.string,
+    url: PropTypes.string,
+    className: PropTypes.string,
+    external: PropTypes.bool,
+    icon: PropTypes.string,
+    onClick: PropTypes.func
 };
 
 export default Button;

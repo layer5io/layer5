@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Col } from "../../../reusecore/Layout";
-import Button from "../../../reusecore/NewButton";
+import Button from "../../../reusecore/Button";
 import ColorBox from "../../../components/ColorBox";
 import MeshLogoLightText from "../../../assets/images/meshery/meshery-logo-light-text.png";
 import MeshLogoTagLightTextSide from "../../../assets/images/meshery/meshery-logo-tag-light-text-side.png";

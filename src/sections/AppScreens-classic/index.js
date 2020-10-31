@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/NewButton";
+import Button from "../../reusecore/Button";
 import { SlickSlider, SliderItem } from "../../reusecore/SlickSlider";
 
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";

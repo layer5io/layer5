@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { Row, Col } from "../../../reusecore/Layout";
-import Button from "../../../reusecore/NewButton";
+import Button from "../../../reusecore/Button";
 import ColorBox from "../../../components/ColorBox";
 import media from "../../../components/mediaQuery";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Col } from "../../../reusecore/Layout";
-import Button from "../../../reusecore/NewButton";
+import Button from "../../../reusecore/Button";
 import ColorBox from "../../../components/ColorBox";
 
 import SmpDark from "../../../assets/images/smp/icon/smp-dark.png";

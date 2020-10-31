@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import Button from "../../reusecore/NewButton";
+import Button from "../../reusecore/Button";
 import Image from "../../components/image";
 
 import InternshipSectionWrapper from "./InternshipPage.style";

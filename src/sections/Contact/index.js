@@ -2,7 +2,7 @@ import React from "react";
 
 import { Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/NewButton";
+import Button from "../../reusecore/Button";
 import img from "./forklift.svg";
 import { MdPermContactCalendar, MdEmail } from "react-icons/md";
 

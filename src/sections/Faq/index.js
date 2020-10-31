@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container} from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/NewButton";
+import Button from "../../reusecore/Button";
 import VintageBox from "../../reusecore/VintageBox";
 import {
     Accordion,
