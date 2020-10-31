@@ -43,5 +43,9 @@ export const MembersGridWrapper = styled.div`
             height: 20px;
             margin-right: 10px;
     }
+    .dropdown-overlay{
+        z-index: 999;
+        color: #00b39f;
+    }
     
 `;

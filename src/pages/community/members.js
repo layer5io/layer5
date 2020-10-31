@@ -21,24 +21,23 @@ const MembersPage = () => {
         { label: "Inactive Members", value: "inactive" },
         { label: "Maintainers", value: "maintainers" }
     ];
-
-    const [state, setState] = React.useState({ 
+    const [members, setMembers] = useState({ 
         label: "All Members", value: "all" ,
     });
 
     const handleChange = value => {
-        setState({ value: value });
+        setMembers({ value: value });
     };
     
 
     let MembersView = props => {
-        let status = state.value.value;
+        let status = members.value.value;
         if (status=="active") return <ActiveMembers {...props} />;
         else if (status=="inactive") return <InactiveMembers {...props} />;
         else if (status=="maintainers") return <Maintainers {...props} />;
         return <AllMembers {...props} />;
     };
-    const selectStyles = { menu: styles => ({ ...styles, zIndex: 999 }) };
+    console.log(members.value);
     return (
         <ThemeProvider theme={theme}>
             <Layout>    
@@ -46,7 +45,7 @@ const MembersPage = () => {
                 <SEO title="Members | Layer5 - The Service Mesh Company" />
                 <Navigation />
                 <MembersView options={options} handleChange = {handleChange} 
-                    currMember={state.value} selectStyles={selectStyles}/>
+                    currMember={members.value} />
                 <Footer/>
             </Layout>
         </ThemeProvider>

@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import Select from "react-select";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
@@ -21,11 +20,12 @@ const MembersGrid=props => {
                             <Col xs={12} sm={9} lg={9}></Col>
                             <Col xs={12} sm={3} lg={3}>
                                 <Select
-                                    styles = {props.selectStyles}
-                                    defaultValue={props.options[0]}
-                                    onChange={props.handleChange}
+                                    isSearchable={false}
+                                    className="dropdown-overlay"
                                     options={props.options}
                                     value={props.currMember}
+                                    onChange={props.handleChange}
+                                    defaultValue= {{ label: "All Members", value: "all" }}
                                 />
                                 <br />
                             </Col>
