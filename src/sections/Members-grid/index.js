@@ -5,7 +5,8 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import ProfileCard from "../../components/Profile-card";
 
-import { MembersGridWrapper } from "./membersGrid.style";
+import { MembersGridWrapper,selectStyles, dropdownTheme} from "./membersGrid.style";
+
 
 const MembersGrid=props => {
     return (
@@ -21,11 +22,12 @@ const MembersGrid=props => {
                             <Col xs={12} sm={3} lg={3}>
                                 <Select
                                     isSearchable={false}
-                                    className="dropdown-overlay"
+                                    styles = {selectStyles}
                                     options={props.options}
                                     value={props.currMember}
                                     onChange={props.handleChange}
-                                    defaultValue= {{ label: "All Members", value: "all" }}
+                                    defaultValue= {props.options[0]}
+                                    theme={dropdownTheme}
                                 />
                                 <br />
                             </Col>

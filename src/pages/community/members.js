@@ -37,7 +37,6 @@ const MembersPage = () => {
         else if (status=="maintainers") return <Maintainers {...props} />;
         return <AllMembers {...props} />;
     };
-    console.log(members.value);
     return (
         <ThemeProvider theme={theme}>
             <Layout>    
