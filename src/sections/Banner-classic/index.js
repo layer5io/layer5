@@ -39,12 +39,11 @@ const BannerClassic = () => {
                         </p>
 
                         <VintageBox right={true} vintageOne={true}>
-                            <Button className="banner-btn one">
+                            <Button className="banner-btn one" title="View on Google Play">
                                 <FaDownload className="icon-left" />
-                Run Meshery
                             </Button>
-                            <Button className="banner-btn two">
-                                <FaPlay className="icon-left" /> Watch Now
+                            <Button className="banner-btn two" title="Watch Now">
+                                <FaPlay className="icon-left" />
                             </Button>
                         </VintageBox>
                     </Col>

@@ -81,7 +81,7 @@ const Integrations = () => {
                             vintageTwo={true}
                             position="relative"
                         >
-                            <Button className="integration-btn">Learn More</Button>
+                            <Button className="integration-btn" title="Learn More" />
                         </VintageBox>
                     </Col>
                 </Row>

@@ -19,8 +19,8 @@ const MembersGrid=props => {
                         <Row>
                             <Col xs={12} sm={12} lg={12}>
                                 <div className="color-legend">
-                                    <Button active={props.active} onClick={props.toggleActive}><div className="active-filter-color" /> Active</Button>
-                                    <Button active={props.inActive} onClick={props.toggleInactive}><div className="inactive-filter-color" /> Inactive</Button>
+                                    <Button active={props.active} onClick={props.toggleActive} title="Active"><div className="active-filter-color" /></Button>
+                                    <Button active={props.inActive} onClick={props.toggleInactive} title="Inactive"><div className="inactive-filter-color" /></Button>
                                 </div>
                             </Col>
                         </Row>
