@@ -8,7 +8,7 @@ import ProfileCard from "../../components/Profile-card";
 import { MembersGridWrapper,selectStyles, dropdownTheme} from "./membersGrid.style";
 
 
-const MembersGrid=props => {
+const MembersGrid = props => {
     return (
         <MembersGridWrapper>
             <PageHeader title="Community Members"
@@ -18,15 +18,16 @@ const MembersGrid=props => {
                 <Container>
                     <div className="members-grid-wrapper">
                         <Row>
-                            <Col xs={12} sm={9} lg={9}></Col>
-                            <Col xs={12} sm={3} lg={3}>
+                            <Col xs={12} sm={6} lg={9}/>
+                            <Col xs={12} sm={6} lg={3}>
                                 <Select
+                                    name="Filter Members"
+                                    defaultValue={props.options[0]}
                                     isSearchable={false}
-                                    styles = {selectStyles}
+                                    styles={selectStyles}
                                     options={props.options}
-                                    value={props.currMember}
+                                    value={props.members}
                                     onChange={props.handleChange}
-                                    defaultValue= {props.options[0]}
                                     theme={dropdownTheme}
                                 />
                                 <br />
