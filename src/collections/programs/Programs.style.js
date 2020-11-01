@@ -35,6 +35,30 @@ export const ProgramsWrapper = styled.div`
         text-align: center;
         vertical-align: bottom;
     }
+
+    .tutorials-table {
+        border-spacing: 0;
+        th {
+            padding: 14px 0 14px 12px;
+            border-top: 1px solid #e3e3e3;
+            border-bottom: 1px solid #e3e3e3;
+        }
+        td {
+            padding: 14px 0 14px 12px;
+            border-bottom: 1px solid #e3e3e3;
+        }
+        tbody tr {
+            transition: .2s ease;
+            :hover {
+                background-color: #f5f5f5;
+            }
+            
+        }
+    }
+
+    
+
+    
     
     
 `;
