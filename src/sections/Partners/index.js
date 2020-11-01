@@ -47,7 +47,7 @@ const Partner = () => {
                     <Col xs={12} sm={4} lg={4}>
                         <div>
                             <div style={{textAlign:"center"}}>
-                                <Button><a href="mailto:partners@layer5.io"><h3>BECOME A PARTNER</h3></a></Button>
+                                <Button title={<h3>BECOME A PARTNER</h3>} url="mailto:partners@layer5.io" external="true" />
                             </div>
                         </div>
                     </Col>

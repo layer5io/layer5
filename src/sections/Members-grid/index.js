@@ -1,11 +1,12 @@
 import React from "react";
+import Select from "react-select";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
 import PageHeader from "../../reusecore/PageHeader";
 import ProfileCard from "../../components/Profile-card";
 
-import { MembersGridWrapper } from "./membersGrid.style";
+import { MembersGridWrapper,selectStyles, dropdownTheme} from "./membersGrid.style";
+
 
 const MembersGrid=props => {
     return (
@@ -17,11 +18,18 @@ const MembersGrid=props => {
                 <Container>
                     <div className="members-grid-wrapper">
                         <Row>
-                            <Col xs={12} sm={12} lg={12}>
-                                <div className="color-legend">
-                                    <Button active={props.active} onClick={props.toggleActive}><div className="active-filter-color" /> Active</Button>
-                                    <Button active={props.inActive} onClick={props.toggleInactive}><div className="inactive-filter-color" /> Inactive</Button>
-                                </div>
+                            <Col xs={12} sm={9} lg={9}></Col>
+                            <Col xs={12} sm={3} lg={3}>
+                                <Select
+                                    isSearchable={false}
+                                    styles = {selectStyles}
+                                    options={props.options}
+                                    value={props.currMember}
+                                    onChange={props.handleChange}
+                                    defaultValue= {props.options[0]}
+                                    theme={dropdownTheme}
+                                />
+                                <br />
                             </Col>
                         </Row>
                         <Row>

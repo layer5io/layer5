@@ -67,7 +67,7 @@ const Faq = () => {
                     vintageTwo={true}
                     position="relative"
                 >
-                    <Button>Learn More</Button>
+                    <Button title="Learn More" />
                 </VintageBox>
             </Container>
         </FaqSectionWrapper>
