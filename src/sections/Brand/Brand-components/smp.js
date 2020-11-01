@@ -13,21 +13,21 @@ import SmPWhiteTextSide from "../../../assets/images/smp/horizontal/smp-white-te
 import { Link } from "gatsby";
 
 const SMPWrap = styled.section`
-    .SmpWhite {
-        background-color: #000000;
-    }
-    .smpDark {
-        background-color: #3c494e;
-    }
+  .SmpWhite {
+    background-color: #000000;
+  }
+  .smpDark {
+    background-color: #3c494e;
+  }
+  .colors{
+    padding-left:25px;
+  }
+  
+  @media (max-width:425px){
     .colors{
-        padding-left:25px;
+      padding-left:50px;
     }
-    
-    @media (max-width:425px){
-        .colors{
-        padding-left:50px;
-        }
-    }
+}
 `;
 
 const SMPBrand = () => {
@@ -40,39 +40,37 @@ const SMPBrand = () => {
                     </h1>
                 </Col>
                 <Col xs={12} sm={6} lg={6} xl={6}>
-                    <Link to="https://layer5.io/assets/resources/brand/smp-brand-kit.zip">
-                        <Button className="l5-dark-yellow">DOWNLOAD LOGO ASSETS</Button>
-                    </Link>
+                    <Button className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/smp-brand-kit.zip" external="true" />
                 </Col>
                 <Col xs={12} sm={12} lg={12} xl={12}>
                     <Row>
                         <p>
-                            The Service Mesh Performance mark includes SMP name & logo and any
-                            word, phrase, image, or other designation that identifies the
-                            source or origin of any Layer5 projects. PLease don't modify the
-                            marks or use them in a confusing way, including suggesting
-                            sponsorship or endorsement by Layer5 with another brand(including
-                            your own)
+              The Service Mesh Performance mark includes SMP name & logo and any
+              word, phrase, image, or other designation that identifies the
+              source or origin of any Layer5 projects. PLease don't modify the
+              marks or use them in a confusing way, including suggesting
+              sponsorship or endorsement by Layer5 with another brand(including
+              your own)
                         </p>
                     </Row>
                 </Col>
                 <Row className="ImgDiv">
                     <Col xs={12} sm={4} lg={4} xl={4}>
                         <a href="#">
-                            <img src={SmpDark} alt="SmpDark" />
+                            <img src={SmpDark} />
                         </a>
                     </Col>
                     <Col xs={12} sm={4} lg={4} xl={4}>
                         <div className="SmpWhite">
                             <a href="#">
-                                <img src={SmpWhite} alt="SmpWhite" />
+                                <img src={SmpWhite} />
                             </a>
                         </div>
                     </Col>
                     <Col xs={12} sm={4} lg={4} xl={4}>
                         <div className="SmpWhite">
                             <a href="#">
-                                <img src={SmpLight} alt="SmpLight" />
+                                <img src={SmpLight} />
                             </a>
                         </div>
                     </Col>
@@ -85,9 +83,9 @@ const SMPBrand = () => {
                     </Col>
                     <Col xs={12} sm={12} lg={12} xl={12}>
                         <p>
-                            The SMP color palette consists of gray, green and colors and
-                            additional shades. The SMP logo should be white or monochrome when
-                            using project colors as the background.
+              The SMP color palette consists of gray, green and colors and
+              additional shades. The SMP logo should be white or monochrome when
+              using project colors as the background.
                         </p>
                     </Col>
                 </Row>
@@ -110,20 +108,20 @@ const SMPBrand = () => {
                     <Row className="ImgDiv">
                         <Col xs={12} sm={4} lg={4} xl={4}>
                             <a href="#">
-                                <img src={SmPDarkTextSide} alt="SmPDarkTextSide" />
+                                <img src={SmPDarkTextSide} />
                             </a>
                         </Col>
                         <Col xs={12} sm={4} lg={4} xl={4}>
                             <div className="SmpWhite">
                                 <a href="#">
-                                    <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide" />
+                                    <img src={SmPWhiteTextSide} />
                                 </a>
                             </div>
                         </Col>
                         <Col xs={12} sm={4} lg={4} xl={4}>
                             <div className="SmpWhite">
                                 <a href="#">
-                                    <img src={SmPLightTextSide} alt="SmPLightTextSide" />
+                                    <img src={SmPLightTextSide} />
                                 </a>
                             </div>
                         </Col>

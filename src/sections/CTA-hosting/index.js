@@ -31,7 +31,7 @@ const CTAHosting = () => {
                                 vintageTwo={true}
                                 position="relative"
                             >
-                                <Button>Learn More</Button>
+                                <Button title="Learn More" />
                             </VintageBox>
                         </div>
                     </Col>

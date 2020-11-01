@@ -7,11 +7,11 @@ import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.png";
 import ImageHubWhite from "../../../assets/images/image-hub/layer5-image-hub-white.png";
 
 const ImageHubWrap = styled.section`
-    .ImageHubWhite {
-        float: left;
-        padding: 3px;
-        background-color: #3c494f;
-    }
+  .ImageHubWhite {
+    float: left;
+    padding: 3px;
+    background-color: #3c494f;
+  }
 `;
 
 const ImageHubBrand = () => {
@@ -24,19 +24,17 @@ const ImageHubBrand = () => {
                     </h1>
                 </Col>
                 <Col xs={12} sm={6} lg={6} xl={6}>
-                    <Link to="https://layer5.io/assets/resources/brand/image-hub-brand-kit.zip">
-                        <Button className="l5-dark-yellow">DOWNLOAD LOGO ASSETS</Button>
-                    </Link>
+                    <Button className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/image-hub-brand-kit.zip" external="true" />
                 </Col>
                 <Col xs={12} sm={12} lg={12} xl={12}>
                     <Row>
                         <p>
-                            The Image-Hub mark includes the Image-Hub name & logo, and any
-                            word, phrase, image, or other designation that identifies the
-                            source or origin of any Layer5 projects. Please don’t modify the
-                            marks or use them in a confusing way, including suggesting
-                            sponsorship or endorsement by Layer5, or in a way that confuses
-                            Layer5 with another brand (including your own).
+              The Image-Hub mark includes the Image-Hub name & logo, and any
+              word, phrase, image, or other designation that identifies the
+              source or origin of any Layer5 projects. Please don’t modify the
+              marks or use them in a confusing way, including suggesting
+              sponsorship or endorsement by Layer5, or in a way that confuses
+              Layer5 with another brand (including your own).
                         </p>
                     </Row>
                 </Col>
@@ -48,9 +46,9 @@ const ImageHubBrand = () => {
                     </Col>
                     <Col xs={12} sm={12} lg={12} xl={12}>
                         <p>
-                            The Image-Hub color palette consists of the primary Image-Hub
-                            color and additional shades. The Image-Hub logo should be white or
-                            monochrome tonal when using a color background.
+              The Image-Hub color palette consists of the primary Image-Hub
+              color and additional shades. The Image-Hub logo should be white or
+              monochrome tonal when using a color background.
                         </p>
                     </Col>
                 </Row>
@@ -64,13 +62,13 @@ const ImageHubBrand = () => {
                     <Row className="ImgDiv">
                         <Col xs={12} sm={2} lg={2} xl={2}>
                             <a href="#">
-                                <img src={ImageHub} alt="ImageHub" />
+                                <img src={ImageHub} />
                             </a>
                         </Col>
                         <Col xs={12} sm={2} lg={2} xl={2}>
                             <div className="ImageHubWhite">
                                 <a href="#">
-                                    <img src={ImageHubWhite} alt="ImageHubWhite" />
+                                    <img src={ImageHubWhite} />
                                 </a>
                             </div>
                         </Col>

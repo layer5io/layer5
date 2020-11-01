@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import ColorBox from "../../../components/ColorBox";
-import {Link} from "gatsby";
 import MeshLogoLightText from "../../../assets/images/meshery/meshery-logo-light-text.png";
 import MeshLogoTagLightTextSide from "../../../assets/images/meshery/meshery-logo-tag-light-text-side.png";
 import MeshLogoLightTextSide from "../../../assets/images/meshery/meshery-logo-light-text-side.png";
@@ -11,15 +10,15 @@ import MeshDarkText from "../../../assets/images/meshery/meshery-dark-text.png";
 import MeshDarkTagText from "../../../assets/images/meshery/meshery-dark-tag-text.png";
 
 const MesheryWrapper = styled.section`
-    .colors{
-        padding-left:25px;
-    }
+.colors{
+    padding-left:25px;
+  }
 
-    @media (max-width:425px){
-        .colors{
-        padding-left:50px;
-        }
+@media (max-width:425px){
+    .colors{
+      padding-left:50px;
     }
+}
 `;
 
 const MesheryBrand = () => {
@@ -32,19 +31,17 @@ const MesheryBrand = () => {
                     </h1>
                 </Col>
                 <Col xs={12} sm={6} lg={6} xl={6}>
-                    <Link to="https://layer5.io/assets/resources/brand/meshery-brand-kit.zip">
-                        <Button className="l5-dark-yellow">DOWNLOAD LOGO ASSETS</Button>
-                    </Link>
+                    <Button className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/meshery-brand-kit.zip" external="true" />
                 </Col>
                 <Col xs={12} sm={12} lg={12} xl={12}>
                     <Row>
                         <p>
-                            The Meshery mark includes the Meshery name & logo, and any word,
-                            phrase, image, or other designation that identifies the source or
-                            origin of any Layer5 projects. Please don’t modify the marks or
-                            use them in a confusing way, including suggesting sponsorship or
-                            endorsement by Layer5, or in a way that confuses Layer5 with
-                            another brand (including your own).
+              The Meshery mark includes the Meshery name & logo, and any word,
+              phrase, image, or other designation that identifies the source or
+              origin of any Layer5 projects. Please don’t modify the marks or
+              use them in a confusing way, including suggesting sponsorship or
+              endorsement by Layer5, or in a way that confuses Layer5 with
+              another brand (including your own).
                         </p>
                     </Row>
                 </Col>
@@ -56,9 +53,9 @@ const MesheryBrand = () => {
                     </Col>
                     <Col xs={12} sm={12} lg={12} xl={12}>
                         <p>
-                            The Meshery color palette consists of the primary Meshery color
-                            and additional shades. The Meshery logo should be white or
-                            monochrome tonal when using a color background.
+              The Meshery color palette consists of the primary Meshery color
+              and additional shades. The Meshery logo should be white or
+              monochrome tonal when using a color background.
                         </p>
                     </Col>
                 </Row>
@@ -81,29 +78,29 @@ const MesheryBrand = () => {
                     <Row className="ImgDiv">
                         <Col xs={12} sm={4} lg={4} xl={4}>
                             <a href="#">
-                                <img src={MeshDarkText} alt="MeshDarkText" />
+                                <img src={MeshDarkText} />
                             </a>
                         </Col>
                         <Col xs={12} sm={4} lg={4} xl={4}>
                             <a href="#">
-                                <img src={MeshDarkTagText} alt="MeshDarkTagText" />
+                                <img src={MeshDarkTagText} />
                             </a>
                         </Col>
                     </Row>
                     <Row className="ImgDiv">
                         <Col xs={12} sm={4} lg={4} xl={4}>
                             <a href="#">
-                                <img src={MeshLogoLightText} alt="MeshLogoLightText" />
+                                <img src={MeshLogoLightText} />
                             </a>
                         </Col>
                         <Col xs={12} sm={4} lg={4} xl={4}>
                             <a href="#">
-                                <img src={MeshLogoTagLightTextSide} alt="MeshLogoTagLightTextSide" />
+                                <img src={MeshLogoTagLightTextSide} />
                             </a>
                         </Col>
                         <Col xs={12} sm={4} lg={4} xl={4}>
                             <a href="#">
-                                <img src={MeshLogoLightTextSide} alt="MeshLogoLightTextSide" />
+                                <img src={MeshLogoLightTextSide} />
                             </a>
                         </Col>
                     </Row>

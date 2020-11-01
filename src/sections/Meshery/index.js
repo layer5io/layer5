@@ -37,16 +37,13 @@ const MesheryPage = () => {
                         <div className="meshery-img"><img src={meshery} alt="meshery" /></div>
                         <Row className="description">
                             <Col className="desc-text" lg={7} md={12} sm={12}>
-                                <Button className="number">
-                                    <h3>1,113</h3> <br />
-                                    {/* <p className="number-desc"> performance tests run </p>  */}
-                                </Button>
+                                <Button className="number" title={<h3>1,113</h3>} />
                                 <p className="desc-p"> 
                                             Meshery is the service mesh management plane.<br />
                                             Adopt and operate any service mesh with confidence using Meshery's management features. 
                                 </p>
-                                <Button> Learn More </Button> &nbsp;
-                                <Button> Run Meshery </Button>
+                                <Button title="Learn More" /> &nbsp;
+                                <Button title="Run Meshery" /> 
                             </Col>
                             <Col lg={5} md={12} sm={12}>
                                 <div className="meshery-img"><img src={meshery_multi_mesh} alt="meshery_multi_mesh" /></div>

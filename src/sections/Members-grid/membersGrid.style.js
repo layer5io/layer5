@@ -1,5 +1,20 @@
 import styled from "styled-components";
 
+export const selectStyles = { 
+    menu: styles => ({ ...styles, zIndex: 999, })
+};
+export const dropdownTheme = theme => ({
+    ...theme,
+    borderRadius: 0,
+    colors: {
+        ...theme.colors,
+        primary50:"#b0e8e2",
+        primary25: "#b0e8e2",
+        primary: "#00b39f",
+    }
+});
+
+
 export const MembersGridWrapper = styled.div`
 
     .members-list-wrapper{
@@ -43,5 +58,4 @@ export const MembersGridWrapper = styled.div`
             height: 20px;
             margin-right: 10px;
     }
-    
 `;

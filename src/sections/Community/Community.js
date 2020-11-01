@@ -1,6 +1,6 @@
 import React from "react";
 import datacenterimg from "../../assets/images/community/datacenter-crash.svg";
-import Button from "../../reusecore/NewButton";
+import Button from "../../reusecore/Button";
 
 const Community= () => {
     return (
