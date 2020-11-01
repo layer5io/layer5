@@ -145,24 +145,24 @@ const Footer = () => {
                             <Col className="footer-widgets" xs={12} sm={6} lg={5}>
                                 <h3 className="widget-title">Contact</h3>
                                 <Row className="contactf">
-                                    <Link className="social-icons" to="mailto:community@layer5.io">
+                                    <a className="social-icons" href="mailto:community@layer5.io">
                                         <img height="40 px" src={mail_icon} alt="mail" />
-                                    </Link>
-                                    <Link className="social-icons" to="http://slack.layer5.io/">
+                                    </a>
+                                    <a className="social-icons" href="http://slack.layer5.io/">
                                         <img height="40 px" src={slack_icon} alt="slack" />
-                                    </Link>
-                                    <Link className="social-icons" to="https://twitter.com/layer5">
+                                    </a>
+                                    <a className="social-icons" href="https://twitter.com/layer5">
                                         <img height="40 px" src={twitter_icon} alt="twitter" />
-                                    </Link>
-                                    <Link className="social-icons" to="https://github.com/layer5io">
+                                    </a>
+                                    <a className="social-icons" href="https://github.com/layer5io">
                                         <img height="40 px" src={github_icon} alt="github" />
-                                    </Link>
-                                    <Link className="social-icons" to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
+                                    </a>
+                                    <a className="social-icons" href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
                                         <img height="40 px" src={youtube_icon} alt="youtube" />
-                                    </Link>
-                                    <Link className="social-icons" to="https://hub.docker.com/u/layer5/">
+                                    </a>
+                                    <a className="social-icons" href="https://hub.docker.com/u/layer5/">
                                         <img height="40 px" src={docker_icon} alt="docker" />
-                                    </Link>
+                                    </a>
                                 </Row>
                             </Col>
                         </Row>
@@ -171,14 +171,14 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <ul className="footer-menu">
                         <li>
-                            <Link className="anchor" to="https://meshery.layer5.io/privacy-policy.html">
+                            <a className="anchor" href="https://meshery.layer5.io/privacy-policy.html">
                 Privacy
-                            </Link>
+                            </a>
                         </li>
                         <li>
-                            <Link className="anchor" to="https://meshery.layer5.io/terms-of-service.html">
+                            <a className="anchor" href="https://meshery.layer5.io/terms-of-service.html">
                 Terms
-                            </Link>
+                            </a>
                         </li>
                     </ul>
                     <p className="copyright-text">
