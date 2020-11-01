@@ -13,38 +13,35 @@ import InactiveMembers from "../../sections/Members-grid/InactiveMembers";
 import Maintainers from "../../sections/Members-grid/Maintainers";
 
 
-const MembersPage = () => {
+const options = [
+    { label: "All Members", value: "all" },
+    { label: "Active Members", value: "active" },
+    { label: "Inactive Members", value: "inactive" },
+    { label: "Maintainers", value: "maintainers" }
+];
 
-    const options = [
-        { label: "All Members", value: "all" },
-        { label: "Active Members", value: "active" },
-        { label: "Inactive Members", value: "inactive" },
-        { label: "Maintainers", value: "maintainers" }
-    ];
-    const [members, setMembers] = useState({ 
-        label: "All Members", value: "all" ,
-    });
+const MembersPage = () => {
+    const [members, setMembers] = useState(options[0]);
 
     const handleChange = value => {
-        setMembers({ value: value });
+        setMembers(value);
     };
-    
 
     let MembersView = props => {
-        let status = members.value.value;
-        if (status=="active") return <ActiveMembers {...props} />;
-        else if (status=="inactive") return <InactiveMembers {...props} />;
-        else if (status=="maintainers") return <Maintainers {...props} />;
+        let status = members.value;
+        if (status==="active") return <ActiveMembers {...props} />;
+        else if (status==="inactive") return <InactiveMembers {...props} />;
+        else if (status==="maintainers") return <Maintainers {...props} />;
         return <AllMembers {...props} />;
     };
     return (
         <ThemeProvider theme={theme}>
-            <Layout>    
+            <Layout>
                 <GlobalStyle />
                 <SEO title="Members | Layer5 - The Service Mesh Company" />
                 <Navigation />
-                <MembersView options={options} handleChange = {handleChange} 
-                    currMember={members.value} />
+                <MembersView options={options} handleChange={handleChange}
+                    members={members} />
                 <Footer/>
             </Layout>
         </ThemeProvider>
