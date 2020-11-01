@@ -12,7 +12,7 @@ const LandscapeGridPage=({ data }) => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="Landscape | Layer5 - The Service Mesh Company" />
+            <SEO title="Landscape" />
             <Navigation />
             <LandscapeGrid />
             <Footer />
