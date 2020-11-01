@@ -17,7 +17,7 @@ const Contact = () => {
                         <h2><span>Subscribe to stay meshy</span></h2>
                     </SectionTitle>
                     <Row>
-                        <Col md={3}><img src={img} /></Col>
+                        <Col md={3}><img src={img} alt="forklift" /></Col>
                         <Col md={9}>
                             <Row>
                                 <Col className="nopad" md={1} xs={1}><MdPermContactCalendar className="contact-icon" size={30}></MdPermContactCalendar></Col>

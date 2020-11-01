@@ -1,16 +1,12 @@
 import React from "react";
-// import { Link } from "gatsby";
 
 import {ThemeProvider} from "styled-components";
 import Layout from "../../components/layout"; 
 
-import { Container, Row, Col } from "../../reusecore/Layout";
-// import SectionTitle from "../../reusecore/SectionTitle";
+import { Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import Features from "../Features";
 import { IoMdCheckmark } from "react-icons/io";
-// import Counters from "../Counters";
-// import Pricing from "../Pricing";
 import Faq from "../Faq";
 
 import meshery from "./meshery-logo-light-text-side.png";
@@ -27,13 +23,18 @@ import smp_logo from "./smp-dark-text.png";
 import MesheryWrapper from "./meshery.style";
 import theme from "../../theme/app/themeStyles";
 
+// import Counters from "../Counters";
+// import { Link } from "gatsby";
+// import SectionTitle from "../../reusecore/SectionTitle";
+// import Pricing from "../Pricing";
+
 const MesheryPage = () => {
     return (
         <ThemeProvider theme={theme}> 
             <Layout>
                 <MesheryWrapper> 
                     <div className="info">
-                        <div className="meshery-img"><img src={meshery} /></div>
+                        <div className="meshery-img"><img src={meshery} alt="meshery" /></div>
                         <Row className="description">
                             <Col className="desc-text" lg={7} md={12} sm={12}>
                                 <Button className="number" title={<h3>1,113</h3>} />
@@ -45,7 +46,7 @@ const MesheryPage = () => {
                                 <Button title="Run Meshery" /> 
                             </Col>
                             <Col lg={5} md={12} sm={12}>
-                                <div className="meshery-img"><img src={meshery_multi_mesh} /></div>
+                                <div className="meshery-img"><img src={meshery_multi_mesh} alt="meshery_multi_mesh" /></div>
                             </Col>
                         </Row>
                     </div>
@@ -83,7 +84,7 @@ const MesheryPage = () => {
                                 </Row>
                             </Col>
                             <Col lg={6} md={12} sm={12}>
-                                <img src={meshes} />
+                                <img src={meshes} alt="meshes" />
                             </Col>
                             <Col className="mesh_list_right" lg={3}>
                                 <Row>
@@ -127,12 +128,12 @@ const MesheryPage = () => {
                                 </ul>
                             </Col>
                             <Col lg={6} md={12} sm={12}>
-                                <img src={meshery_benchmark_screen} />
+                                <img src={meshery_benchmark_screen} alt="meshery_benchmark_screen" />
                             </Col>
                         </Row>
                         <Row className="use_row"> 
                             <Col lg={6} md={12} sm={12}>
-                                <img src={meshery_configuration_management} />
+                                <img src={meshery_configuration_management} alt="meshery_configuration_management" />
                             </Col>
                             <Col lg={6} md={12} sm={12}>
                                 <h3>What are <b>configuration best practices</b> and patterns?</h3>
@@ -142,20 +143,22 @@ const MesheryPage = () => {
                         </Row>
                         <Row className="use_row"> 
                             <Col lg={6} md={12} sm={12}>
-                                <img className="text_logo" src={smi_logo} /><h3>Is your service mesh <b>SMI compliant</b>?</h3>
+                                <img className="text_logo" src={smi_logo} alt="smi_logo" />
+                                <h3>Is your service mesh <b>SMI compliant</b>?</h3>
                                 <h5>Validate your service mesh's conformance to Service Mesh Interface (SMI) specifications.</h5><br />
                                 <p>See the testing SMI conformance</p>
                             </Col>
                             <Col lg={6} md={12} sm={12}>
-                                <img src={smi_conformance} />
+                                <img src={smi_conformance} alt="smi_conformance" />
                             </Col>
                         </Row>
                         <Row className="use_row"> 
                             <Col lg={6} md={12} sm={12}>
-                                <img src={smi_performance} />
+                                <img src={smi_performance} alt="smi_performance" />
                             </Col>
                             <Col lg={6} md={12} sm={12}>
-                                <img className="text_logo" src={smp_logo} /><h3>Use the <b>Service Mesh Performance</b> standard</h3>
+                                <img className="text_logo" src={smp_logo} alt="smp_logo" />
+                                <h3>Use the <b>Service Mesh Performance</b> standard</h3>
                                 <h5>Weigh the value of your service mesh features in-context of it's overhead.</h5><br />
                                 <p>See Service Mesh Performance (SMP).</p>
                             </Col>
@@ -166,7 +169,7 @@ const MesheryPage = () => {
                         <a name="architecture"></a>
                         <h1 className="heading"> ARCHITECTURE</h1>
                         <a href={meshery_architecture}>
-                            <img src={meshery_architecture} />
+                            <img src={meshery_architecture} alt="meshery_architecture" />
                         </a>
                     </div>
                     <Faq /> 
