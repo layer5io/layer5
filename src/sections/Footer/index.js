@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { TwitterTimelineEmbed } from "react-twitter-embed" ;
 
 import { Container, Row, Col } from "../../reusecore/Layout";
@@ -26,9 +25,9 @@ const Footer = () => {
                 <Row>
                     <Col xs={12} sm={5} lg={4}>
                         <div className="first">
-                            <Link to="#">
+                            <a href="#">
                                 <img src={logo} className="footer-logo" alt="logo" />
-                            </Link>
+                            </a>
                             <div className="descript">representing <i>every</i> service mesh</div>
                             <TwitterTimelineEmbed
                                 sourceType="profile"
@@ -46,24 +45,24 @@ const Footer = () => {
                                     <h3 className="widget-title">Resources</h3>
                                     <ul className="widget-catagory">
                                         <li>
-                                            <Link className="anchor" to="/landscape">
+                                            <a className="anchor" href="/landscape">
                     Service Mesh Comparison
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/landscape#tools">
+                                            <a className="anchor" href="/landscape#tools">
                     Service Mesh Tools
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/books">
+                                            <a className="anchor" href="/books">
                     Service Mesh Books
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/workshops">
+                                            <a className="anchor" href="/workshops">
                     Service Mesh Workshops
-                                            </Link>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -73,34 +72,34 @@ const Footer = () => {
                                     <h3 className="widget-title">Community</h3>
                                     <ul className="widget-catagory">
                                         <li>
-                                            <Link className="anchor" to="/blog">
+                                            <a className="anchor" href="/blog">
                     Blog
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/community/events">
+                                            <a className="anchor" href="/community/events">
                     Events
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/subscribe">
+                                            <a className="anchor" href="/subscribe">
                     Mailing List
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/programs/gsoc/2020">
+                                            <a className="anchor" href="/programs/gsoc/2020">
                     GSoC 2020
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/programs/gsod/2020">
+                                            <a className="anchor" href="/programs/gsod/2020">
                     GSOD 2020
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/programs/communitybridge">
+                                            <a className="anchor" href="/programs/communitybridge">
                     Community Bridge
-                                            </Link>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -110,29 +109,29 @@ const Footer = () => {
                                     <h3 className="widget-title">Company</h3>
                                     <ul className="widget-catagory">
                                         <li>
-                                            <Link className="anchor" to="/news">
+                                            <a className="anchor" href="/news">
                     News
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/brand">
+                                            <a className="anchor" href="/brand">
                     Brand
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/careers">
+                                            <a className="anchor" href="/careers">
                     Careers
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/partners">
+                                            <a className="anchor" href="/partners">
                     Partners
-                                            </Link>
+                                            </a>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/contact">
+                                            <a className="anchor" href="/contact">
                     Contact
-                                            </Link>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -145,24 +144,24 @@ const Footer = () => {
                             <Col className="footer-widgets" xs={12} sm={6} lg={5}>
                                 <h3 className="widget-title">Contact</h3>
                                 <Row className="contactf">
-                                    <Link className="social-icons" to="mailto:community@layer5.io">
+                                    <a className="social-icons" href="mailto:community@layer5.io">
                                         <img height="40 px" src={mail_icon} alt="mail" />
-                                    </Link>
-                                    <Link className="social-icons" to="http://slack.layer5.io/">
+                                    </a>
+                                    <a className="social-icons" href="http://slack.layer5.io/">
                                         <img height="40 px" src={slack_icon} alt="slack" />
-                                    </Link>
-                                    <Link className="social-icons" to="https://twitter.com/layer5">
+                                    </a>
+                                    <a className="social-icons" href="https://twitter.com/layer5">
                                         <img height="40 px" src={twitter_icon} alt="twitter" />
-                                    </Link>
-                                    <Link className="social-icons" to="https://github.com/layer5io">
+                                    </a>
+                                    <a className="social-icons" href="https://github.com/layer5io">
                                         <img height="40 px" src={github_icon} alt="github" />
-                                    </Link>
-                                    <Link className="social-icons" to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
+                                    </a>
+                                    <a className="social-icons" href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
                                         <img height="40 px" src={youtube_icon} alt="youtube" />
-                                    </Link>
-                                    <Link className="social-icons" to="https://hub.docker.com/u/layer5/">
+                                    </a>
+                                    <a className="social-icons" href="https://hub.docker.com/u/layer5/">
                                         <img height="40 px" src={docker_icon} alt="docker" />
-                                    </Link>
+                                    </a>
                                 </Row>
                             </Col>
                         </Row>
@@ -171,14 +170,14 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <ul className="footer-menu">
                         <li>
-                            <Link className="anchor" to="https://meshery.layer5.io/privacy-policy.html">
+                            <a className="anchor" href="https://meshery.layer5.io/privacy-policy.html">
                 Privacy
-                            </Link>
+                            </a>
                         </li>
                         <li>
-                            <Link className="anchor" to="https://meshery.layer5.io/terms-of-service.html">
+                            <a className="anchor" href="https://meshery.layer5.io/terms-of-service.html">
                 Terms
-                            </Link>
+                            </a>
                         </li>
                     </ul>
                     <p className="copyright-text">
