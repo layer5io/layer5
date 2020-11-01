@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import BtnStyle from "./btn.style";
 import {Link} from "gatsby"; 
 
-
-
 const Button = ({
     className,
     children,
@@ -16,7 +14,13 @@ const Button = ({
         addClasses.push(className);
     }
 
-    const initalButton = <BtnStyle className={addClasses.join(" ")}{...props} onClick={props.onClick}>{children}<img src={props.icon} alt="image" />{props.title}</BtnStyle>;
+    const initalButton = 
+    <BtnStyle 
+        className={addClasses.join(" ")}{...props} 
+        onClick={props.onClick}>{children}
+        {props.icon ? <img src={props.icon} alt={props.title} /> : <img src={props.icon} />}
+        {props.title}
+    </BtnStyle>;
 
 
     return (
@@ -24,10 +28,10 @@ const Button = ({
             { props.url && props.external &&       
             <a href={props.url} target="_blank" rel="noreferrer">{initalButton}</a>}
             {props.url && !props.external && 
-             <Link to={props.url}>{initalButton}</Link>}
+                <Link to={props.url}>{initalButton}</Link>}
             {
                 !props.url &&
-              initalButton
+                initalButton
             }
         </React.Fragment>
     );

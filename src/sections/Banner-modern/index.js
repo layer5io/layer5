@@ -38,7 +38,8 @@ const BannerModern = () => {
                                 Run Meshery
                             </Button>
                             <Button className="banner-btn two">
-                                <FaPlay className="icon-left" /> Watch Now
+                                <FaPlay className="icon-left" /> 
+                                Watch Now
                             </Button>
                         </VintageBox>
                     </Col>
@@ -46,7 +47,7 @@ const BannerModern = () => {
                         <img
                             src={imgHero}
                             className="hero-img"
-                            alt="prime-app hero image"
+                            alt="hero-image"
                         />
                     </Col>
                 </Row>

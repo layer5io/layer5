@@ -146,22 +146,22 @@ const Footer = () => {
                                 <h3 className="widget-title">Contact</h3>
                                 <Row className="contactf">
                                     <Link className="social-icons" to="mailto:community@layer5.io">
-                                        <img height="40 px" src={mail_icon} />
+                                        <img height="40 px" src={mail_icon} alt="mail" />
                                     </Link>
                                     <Link className="social-icons" to="http://slack.layer5.io/">
-                                        <img height="40 px" src={slack_icon} />
+                                        <img height="40 px" src={slack_icon} alt="slack" />
                                     </Link>
                                     <Link className="social-icons" to="https://twitter.com/layer5">
-                                        <img height="40 px" src={twitter_icon} />
+                                        <img height="40 px" src={twitter_icon} alt="twitter" />
                                     </Link>
                                     <Link className="social-icons" to="https://github.com/layer5io">
-                                        <img height="40 px" src={github_icon} />
+                                        <img height="40 px" src={github_icon} alt="github" />
                                     </Link>
                                     <Link className="social-icons" to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
-                                        <img height="40 px" src={youtube_icon} />
+                                        <img height="40 px" src={youtube_icon} alt="youtube" />
                                     </Link>
                                     <Link className="social-icons" to="https://hub.docker.com/u/layer5/">
-                                        <img height="40 px" src={docker_icon} />
+                                        <img height="40 px" src={docker_icon} alt="docker" />
                                     </Link>
                                 </Row>
                             </Col>
