@@ -12,7 +12,7 @@ const ProfileCard = (props) =>{
         <ProfileCardWrapper status={status}>
             <div className="profile-card">
                 <header>
-                    <Image {...image_path} imgStyle={{ objectFit: "contain" }}/>
+                    <Image {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
                     <h1>{name}</h1>
                     { position && (
                         <h2>{position}</h2>

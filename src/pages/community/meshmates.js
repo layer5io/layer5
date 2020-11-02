@@ -13,7 +13,7 @@ const MeshmatePage=() => {
         <ThemeProvider theme={theme}>
             <Layout>
                 <GlobalStyle />
-                <SEO title="Meshmates | Layer5 - The Service Mesh Company" />
+                <SEO title="Meshmates" />
                 <Navigation />
                 <MeshmatesGrid />
                 <Footer />

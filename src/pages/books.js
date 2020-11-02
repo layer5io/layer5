@@ -15,7 +15,7 @@ const BooksGridPage = ({hide_path}) => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="Books | Layer5 - The Service Mesh Company" />
+            <SEO title="Books" />
             <Navigation />
             <BookPage hide_path={hide_path} />
             <Footer/>

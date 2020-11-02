@@ -15,7 +15,7 @@ const BrandPage = () => (
     <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Layout>
-            <SEO title="Layer5 | Layer5 Brand Kit" />
+            <SEO title="Layer5 Brand Kit" />
             <Navigation />
             <Brand />
             <Footer />

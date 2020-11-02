@@ -37,16 +37,19 @@ export default () => (
                                 src: `${meshery}`,
                                 width: 20,
                                 height: 15,
+                                alt: "meshery-image",
                             },
                             {
                                 src: `${smp}`,
                                 width: 30,
                                 height: 15,
+                                alt: "smp-image",
                             },
                             {
                                 src: `${imagehub}`,
                                 width: 20,
                                 height: 15,
+                                alt: "imageHub Image"
                             },
                             // {
                             //     src: `${smp}`,

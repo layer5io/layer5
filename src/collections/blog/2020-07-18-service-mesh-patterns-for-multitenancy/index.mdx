@@ -85,7 +85,7 @@ a. Ingress Gateway in Control Plane for traffic entry point to the Control plane
 b. Ingress Gateway in the Worskpace 1 namespace for traffic entry point to the workspace 1 microservices.
 c. Ingress Gateway in the Worskpace 2 namespace for traffic entry point to the workspace 2 microservices.
 
-<img src={img1} />
+<img src={img1} alt="kubernetes-cluster" />
 <p align="center">Single Control Plane with Multiple Data Plane each with separate Ingress Gateway</p>
 
 
@@ -166,7 +166,7 @@ Its a good idea to run another window and execute the below command to observe t
   $(kubectl get pods -n istio-operator -lname=istio-operator -o jsonpath=’{.items[0].metadata.name}’)
   ```
 
-<img src={img2} />  
+<img src={img2} alt="image" />  
 
 - Observe the created objects in istio-system and the workspace namespaces for all pods to be in running state.
 
@@ -245,10 +245,10 @@ Essentially what is happening is the Gateway CR is configuring the traffic to co
 Once this is done the traffic will start flowing the intended gateway and it could be observed on the Kiali dashboard.
 Please note that in this scenario the Kiali is also accessed via the default control plane ingress-gateway running in the istio-system control plane namespace.
 
-<img src={img3} />
+<img src={img3} alt="image" />
 <p align="center">Kiali view for Workspace-1</p>
 
-<img src={img4} />
+<img src={img4} alt="image" />
 <p align="center">Kiali view for Workspace-2</p>
 
 Shortly, we will go over the 3rd scenario which is to run multiple Istio Control Planes (Multiple Service Meshes) within the same Kubernetes Cluster. For that, we will need to build an open-shift setup and deploy the Maistra Istio Operator.

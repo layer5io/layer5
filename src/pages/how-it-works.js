@@ -16,7 +16,7 @@ const Howitworks = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="How the service mesh management plane, Meshery works | Layer5 - The Service Mesh Company" />
+            <SEO title="How the service mesh management plane, Meshery works" />
             <Navigation />
             <Container>
                 <br></br>

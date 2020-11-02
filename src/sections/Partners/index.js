@@ -253,7 +253,7 @@ const Partner = () => {
                                 <h1 className="heading">Stay meshy and subscribe</h1>
                                 <div className="subscribe-from">
                                     <div className="forklift-section">
-                                        <img src={partner11} className="img2" />
+                                        <img src={partner11} className="img2" alt="partner11" />
                                     </div>
                                     <div>
                                         <i className="icon1"><MdAccountBox /></i>

@@ -3,6 +3,7 @@ import {ThemeProvider} from "styled-components";
 
 import Layout from "../components/layout"; 
 
+import SEO from "../components/seo";
 import Navigation from "../sections/Navigation";
 import Banner from "../sections/Banner-default";
 import Features from "../sections/Features";
@@ -23,6 +24,7 @@ import theme from "../theme/app/themeStyles";
 const IndexPage = () => (
     <ThemeProvider theme={theme}> 
         <GlobalStyle />
+        <SEO meta="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure."></SEO>
         <Layout>
             <Navigation />
             <Banner />

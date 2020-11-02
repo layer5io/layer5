@@ -15,6 +15,7 @@ const Card = ({ frontmatter, fields }) => {
                         <Image
                             {...frontmatter.thumbnail}
                             imgStyle={{ objectFit: "contain" }}
+                            alt={frontmatter.title}
                         />
                     </Link>
                 </div>
