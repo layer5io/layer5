@@ -4,7 +4,27 @@ export const ProgramsWrapper = styled.div`
     img{
         width: 19vw;
         float: right;
-        margin-left: 20px;
+        margin-left: 40px;
+        margin-bottom: 30px;
+
+        &.hacktoberfest-img {
+            width: 22vw;
+            
+            @media only screen and (max-width: 768px) {
+                width: 27vw;
+            }
+        }
+
+        @media only screen and (max-width:572px) {
+            display: block;
+            float: none;
+            width: 35vw;
+            margin: 0 auto 40px auto;
+
+            &.hacktoberfest-img {
+                width: 50vw;
+            }
+        }
     }
     
     .flex-div{
