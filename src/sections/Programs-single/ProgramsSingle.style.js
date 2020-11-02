@@ -5,6 +5,9 @@ const ProgramsPageWrapper = styled.div`
 .single-post-wrapper{
     padding: 50px 0 180px 0;
 }
+#programs {
+    padding: 50px 0 0 0;
+}
 .single-post-block{
     p{
         font-size: 16px;
