@@ -15,8 +15,8 @@ import Maintainers from "../../sections/Members-grid/Maintainers";
 
 const options = [
     { label: "All Members", value: "all" },
-    { label: "Active Members", value: "active" },
-    { label: "Inactive Members", value: "inactive" },
+    { label: <><div className="filter-color active"/>Active Members</>, value: "active" },
+    { label:  <><div className="filter-color inactive"/>Inactive Members</>, value: "inactive" },
     { label: "Maintainers", value: "maintainers" }
 ];
 
