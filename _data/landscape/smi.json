@@ -1,0 +1,63 @@
+[
+    {
+        "id": "0dd368be-745f-4433-a356-f717aac40457",
+        "date": "2020-10-14T20:14:48+05:30",
+        "mesh_name": "Open Service Mesh",
+        "mesh_version": "v0.3.0",
+        "cases_passed": "0",
+        "passing_percentage": "0",
+        "logo": "assets/images/landscape/osm.svg",
+        "traffic_access": "Full",
+        "traffic_spec": "None",
+        "traffic_split": "Half",
+        "smi_specification": "traffic-spec",
+        "time": "6m16.323837714s",
+        "assertions": "10",
+        "result": "failed in step 2-install",
+        "reason": "resource Deployment:kudo-test-honest-mallard/app-c-deployment: .status.readyReplicas: key is missing from map",
+        "capability": "Half",
+        "status": "Failing",
+        "more_details": [
+            {
+                "id": "0dd368be-745f-4433-a356-f717aac40457",
+                "date": "2020-10-14T20:14:48+05:30",
+                "mesh_name": "Open Service Mesh",
+                "mesh_version": "v0.2.0",
+                "cases_passed": "0",
+                "passing_percentage": "0",
+                "logo": "assets/images/landscape/osm.svg",
+                "traffic_access": "Half",
+                "traffic_spec": "Full",
+                "traffic_split": "None",
+                "smi_specification": "traffic-spec",
+                "time": "6m16.323837714s",
+                "assertions": "10",
+                "result": "failed in step 2-install",
+                "reason": "resource Deployment:kudo-test-honest-mallard/app-c-deployment: .status.readyReplicas: key is missing from map",
+                "capability": "Half",
+                "status": "Failing"
+            }, {
+                "id": "0dd368be-745f-4433-a356-f717aac40457",
+                "date": "2020-10-14T20:14:48+05:30",
+                "mesh_name": "Open Service Mesh",
+                "mesh_version": "v0.1.0",
+                "cases_passed": "0",
+                "passing_percentage": "0",
+                "logo": "assets/images/landscape/osm.svg",
+                "traffic_access": "None",
+                "traffic_spec": "Full",
+                "traffic_split": "Half",
+                "smi_specification": "traffic-spec",
+                "time": "6m16.323837714s",
+                "assertions": "10",
+                "result": "failed in step 2-install",
+                "reason": "resource Deployment:kudo-test-honest-mallard/app-c-deployment: .status.readyReplicas: key is missing from map",
+                "capability": "Half",
+                "status": "Failing"
+            }, {
+
+            }
+        ]
+    }
+
+]

@@ -1,49 +1,296 @@
-<table id="smi-table" class="responsive-table highlight striped">
-  <thead
-    style="
-      background-color: #a6b7be;
-      color: #222;
-      text-align: center;
-      word-wrap: none;
-      width: 100%;
-    "
-  >
-    <tr style="cursor: pointer;">
-      <th onclick="sortTable('smi-table',0)">Service Mesh</th>
-      <th onclick="sortTable('smi-table',1)">Traffic Access Control</th>
-      <th onclick="sortTable('smi-table',2)">Traffic Metrics</th>
-      <th onclick="sortTable('smi-table',3)">Traffic Split</th>
-      <th onclick="sortTable('smi-table',4)">Traffic Specs</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% assign meshes_by_category = site.data.landscape.smi | sort: "smi" |
-    reverse %} {% for meshes in meshes_by_category %} {% if meshes %}
-    <tr>
-      <th scope="row">{{meshes.name}}</th>
-      <td>
-        {% if meshes.taclink != "" %}
-        <a href="{{meshes.taclink}}" target="_blank">{{meshes.tac}}</a>
-        {% elsif !meshes.tac %} {{meshes.tac}} {% endif %}
-      </td>
-      <td>
-        {% if meshes.tmetricslink != "" %}
-        <a href="{{meshes.tmetricslink}}" target="_blank"
-          >{{meshes.tmetrics}}</a
-        >
-        {% elsif !meshes.tmetrics %} {{meshes.tmetrics}} {% endif %}
-      </td>
-      <td>
-        {% if meshes.tsplitlink != "" %}
-        <a href="{{meshes.tsplitlink}}" target="_blank">{{meshes.tsplit}}</a>
-        {% elsif !meshes.tsplit %} {{meshes.tsplit}} {% endif %}
-      </td>
-      <td>
-        {% if meshes.tspeclink != "" %}
-        <a href="{{meshes.tspeclink}}" target="_blank">{{meshes.tspec}}</a>
-        {% elsif !meshes.tspec %} {{meshes.tspec}} {% endif %}
-      </td>
-    </tr>
-    {% endif %} {% endfor %}
-  </tbody>
-</table>
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="col-sm-12">
+  <div class="panel panel-default">
+    <table class="table table-responsive table-hover">
+      <thead
+        style="
+          background-color: #a6b7be;
+          color: #222;
+          word-wrap: none;
+          width: 100%;
+        "
+      >
+        <tr>
+          <th>Service Mesh</th>
+          <th>Mesh Version</th>
+          <th>Traffic Access</th>
+          <th>Traffic Split</th>
+          <th>Traffic Spec</th>
+          <th>% Passed</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign smi = site.data.landscape.smi %} {% for result in smi %}
+        <tr data-toggle="collapse" id="row1" data-target=".row1">
+          <td>
+            <img
+              src="{{result.logo}}"
+              width="50px"
+              alt="{{result.mesh_name}}"
+              data-toggle="tooltip"
+              title="{{result.more_details[0].mesh_name}}"
+            />
+          </td>
+          <td>{{result.mesh_version}}</td>
+          <td data-toggle="tooltip" title="{{result.reason}}">
+            {% if result.traffic_access == "None" %}
+            <span class="material-icons"> highlight_off </span>
+            {% elsif result.traffic_access == "Full" %}
+            <span class="material-icons"> check_circle_outline </span>
+            {% elsif result.traffic_access == "Half" %}
+            <span class="material-icons"> unpublished </span>
+            {% endif %}
+          </td>
+          <td data-toggle="tooltip" title="{{result.reason}}">
+            {% if result.traffic_split == "None" %}
+            <span class="material-icons"> highlight_off </span>
+            {% elsif result.traffic_split == "Full" %}
+            <span class="material-icons"> check_circle_outline </span>
+            {% elsif result.traffic_split == "Half" %}
+            <span class="material-icons"> unpublished </span>
+            {% endif %}
+          </td>
+          <td data-toggle="tooltip" title="{{result.reason}}">
+            {% if result.traffic_spec == "None" %}
+            <span class="material-icons"> highlight_off </span>
+            {% elsif result.traffic_spec == "Full" %}
+            <span class="material-icons"> check_circle_outline </span>
+            {% elsif result.traffic_spec == "Half" %}
+            <span class="material-icons"> unpublished </span>
+            {% endif %}
+          </td>
+          <td>{{result.passing_percentage}}</td>
+        </tr>
+        <tr class="collapse row1">
+          <td></td>
+          <td>{{result.more_details[0].mesh_version}}</td>
+          <td
+            scope="row"
+            data-toggle="tooltip"
+            title="{{result.more_details[0].reason}}"
+          >
+            {% if result.more_details[0].traffic_access == "None" %}
+            <span class="material-icons"> highlight_off </span>
+            {% elsif result.more_details[0].traffic_access == "Full" %}
+            <span class="material-icons"> check_circle_outline </span>
+            {% elsif result.more_details[0].traffic_access == "Half" %}
+            <span class="material-icons"> unpublished </span>
+            {% endif %}
+          </td>
+          <td
+            scope="row"
+            data-toggle="tooltip"
+            title="{{result.more_details[0].reason}}"
+          >
+            {% if result.more_details[0].traffic_split == "None" %}
+            <span class="material-icons"> highlight_off </span>
+            {% elsif result.more_details[0].traffic_split == "Full" %}
+            <span class="material-icons"> check_circle_outline </span>
+            {% elsif result.more_details[0].traffic_split == "Half" %}
+            <span class="material-icons"> unpublished </span>
+            {% endif %}
+          </td>
+          <td
+            scope="row"
+            data-toggle="tooltip"
+            title="{{result.more_details[0].reason}}"
+          >
+            {% if result.more_details[0].traffic_spec == "None" %}
+            <span class="material-icons"> highlight_off </span>
+            {% elsif result.more_details[0].traffic_spec == "Full" %}
+            <span class="material-icons"> check_circle_outline </span>
+            {% elsif result.more_details[0].traffic_spec == "Half" %}
+            <span class="material-icons"> unpublished </span>
+            {% endif %}
+          </td>
+          <td>{{result.more_details[1].passing_percentage}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- <div class="col-sm-12">
+  <div class="panel panel-default">
+    <table
+      id="nonfunc-table"
+      style="color: var(--main-bg-color)"
+      class="table table-responsive table-hover"
+    >
+      <thead
+        style="
+          background-color: #a6b7be;
+          color: #222;
+          word-wrap: none;
+          width: 100%;
+        "
+      >
+        <tr>
+          <th>Service Mesh</th>
+          <th>Mesh Version</th>
+          <th>Traffic Access</th>
+          <th>Traffic Split</th>
+          <th>Traffic Spec</th>
+          <th>% Passed</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign smi = site.data.landscape.smi %} {% for result in smi %}
+        <tr data-toggle="collapse" id="row1" data-target=".row1">
+          <td>
+            <img
+              src="{{result.logo}}"
+              width="50px"
+              alt="{{result.mesh_name}}"
+              data-toggle="tooltip"
+              title="{{result.more_details[0].mesh_name}}"
+            />
+          </td>
+          <td>{{result.mesh_version}}</td>
+          <td data-toggle="tooltip" title="{{result.reason}}">
+            {% if result.traffic_access == "None" %}
+            <span class="material-icons"> highlight_off </span>
+            {% elsif result.traffic_access == "Full" %}
+            <span class="material-icons"> check_circle_outline </span>
+            {% elsif result.traffic_access == "Half" %}
+            <span class="material-icons"> unpublished </span>
+            {% endif %}
+          </td>
+          <td data-toggle="tooltip" title="{{result.reason}}">
+            {% if result.traffic_split == "None" %}
+            <span class="material-icons"> highlight_off </span>
+            {% elsif result.traffic_split == "Full" %}
+            <span class="material-icons"> check_circle_outline </span>
+            {% elsif result.traffic_split == "Half" %}
+            <span class="material-icons"> unpublished </span>
+            {% endif %}
+          </td>
+          <td data-toggle="tooltip" title="{{result.reason}}">
+            {% if result.traffic_spec == "None" %}
+            <span class="material-icons"> highlight_off </span>
+            {% elsif result.traffic_spec == "Full" %}
+            <span class="material-icons"> check_circle_outline </span>
+            {% elsif result.traffic_spec == "Half" %}
+            <span class="material-icons"> unpublished </span>
+            {% endif %}
+          </td>
+          <td>{{result.passing_percentage}}</td>
+        </tr>
+        <tr class="collapse row1">
+          <td colspan="999">
+            <div>
+              <table style="background: #f8f8f8" class="table table-striped">
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>{{result.more_details[0].mesh_version}}</td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {% if result.more_details[0].traffic_access == "None" %}
+                      <span class="material-icons"> highlight_off </span>
+                      {% elsif result.more_details[0].traffic_access == "Full"
+                      %}
+                      <span class="material-icons"> check_circle_outline </span>
+                      {% elsif result.more_details[0].traffic_access == "Half"
+                      %}
+                      <span class="material-icons"> unpublished </span>
+                      {% endif %}
+                    </td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {% if result.more_details[0].traffic_split == "None" %}
+                      <span class="material-icons"> highlight_off </span>
+                      {% elsif result.more_details[0].traffic_split == "Full" %}
+                      <span class="material-icons"> check_circle_outline </span>
+                      {% elsif result.more_details[0].traffic_split == "Half" %}
+                      <span class="material-icons"> unpublished </span>
+                      {% endif %}
+                    </td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {% if result.more_details[0].traffic_spec == "None" %}
+                      <span class="material-icons"> highlight_off </span>
+                      {% elsif result.more_details[0].traffic_spec == "Full" %}
+                      <span class="material-icons"> check_circle_outline </span>
+                      {% elsif result.more_details[0].traffic_spec == "Half" %}
+                      <span class="material-icons"> unpublished </span>
+                      {% endif %}
+                    </td>
+                    <td>{{result.more_details[1].passing_percentage}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>{{result.more_details[1].mesh_version}}</td>
+
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {% if result.more_details[1].traffic_access == "None" %}
+                      <span class="material-icons"> highlight_off </span>
+                      {% elsif result.more_details[1].traffic_access == "Full"
+                      %}
+                      <span class="material-icons"> check_circle_outline </span>
+                      {% elsif result.more_details[1].traffic_access == "Half"
+                      %}
+                      <span class="material-icons"> unpublished </span>
+                      {% endif %}
+                    </td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {% if result.more_details[1].traffic_split == "None" %}
+                      <span class="material-icons"> highlight_off </span>
+                      {% elsif result.more_details[1].traffic_split == "Full" %}
+                      <span class="material-icons"> check_circle_outline </span>
+                      {% elsif result.more_details[1].traffic_split_outline ==
+                      "Half" %}
+                      <span class="material-icons"> unpublished </span>
+                      {% endif %}
+                    </td>
+                    <td
+                      scope="row"
+                      data-toggle="tooltip"
+                      title="{{result.more_details[0].reason}}"
+                    >
+                      {% if result.more_details[1].traffic_split == "None" %}
+                      <span class="material-icons"> highlight_off </span>
+                      {% elsif result.more_details[1].traffic_split == "Full" %}
+                      <span class="material-icons"> check_circle_outline </span>
+                      {% elsif result.more_details[1].traffic_split == "Half" %}
+                      <span class="material-icons"> unpublished </span>
+                      {% endif %}
+                    </td>
+                    <td>{{result.more_details[1].passing_percentage}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div> -->
