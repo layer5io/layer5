@@ -22,6 +22,8 @@
       <th onclick="sortTable('meshes-table',7)">Prometheus Integration</th>
       <th onclick="sortTable('meshes-table',8)">Tracing Integration</th>
       <th onclick="sortTable('meshes-table',9)">Encryption</th>
+      <th onclick="sortTable('meshes-table',9)">SPIFFE</th>
+      <th onclick="sortTable('meshes-table',9)">SPIRE</th>
     </tr>
   </thead>
 
@@ -46,7 +48,11 @@
       COL=meshes.prometheus %} {% include service-mesh-functionality-column.html
       GREAT=GREAT GOOD=GOOD BAD=BAD COL=meshes.tracing %} {% include
       service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD
-      COL=meshes.encryption %}
+      COL=meshes.encryption %}{% include
+      service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD
+      COL=meshes.spiffe %}{% include
+      service-mesh-functionality-column.html GREAT=GREAT GOOD=GOOD BAD=BAD
+      COL=meshes.spire %}
     </tr>
     {% endfor %}
   </tbody>
