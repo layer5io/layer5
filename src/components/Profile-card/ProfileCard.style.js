@@ -10,9 +10,26 @@ export const ProfileCardWrapper = styled.div`
        vertical-align: middle;
        border: 0;
     }
+    .half-circle {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 48px;
+        fill: none;
+        stroke: #ff8a00;
+        stroke-width: 8;
+        stroke-linecap: round;
+    }
+    .profile-card:hover {
+        transform: translateY(-1rem);
+    }
     
+    .profile-card:hover~.card {
+        transform: translateX(130px);
+    }
     .profile-card{
-        width: 300px;
+        width: 250px;
         border-radius: 2px;
         overflow: hidden;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
@@ -88,7 +105,9 @@ export const ProfileCardWrapper = styled.div`
                         .github{
                             color: #211F1F;
                         }
-                        
+                        .linkedin{
+                            color: #0E76A8;
+                        }
                         .twitter{
                             color: #1DA1F2;
                         }

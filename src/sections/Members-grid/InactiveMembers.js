@@ -18,6 +18,7 @@ const InactiveMembers = props =>{
                             twitter
                             status
                             meshmate
+                            Linkedin
                             image_path{
                                 childImageSharp{
                                     fluid(maxWidth: 200){
