@@ -73,11 +73,11 @@ alt="Layer5" align="left" /></a>
 </p>
 <br />
 <p style="clear:both;">
-<h2><a href="https://github.com/layer5io/smi-conformance">Service Mesh Interface Conformance </a></h2>
-<a href="https://github.com/layer5io/smi-conformance"><img src="assets/images/smi-conformance/checklist.svg"
+<h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
+<a href="https://layer5.io/smi"><img src="assets/images/smi-conformance/checklist.svg"
 style="margin:10px;" width="125px"
 alt="Layer5" align="left" /></a>
-<a href="https://github.com/layer5io/smi-conformance">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification.
+<a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification.
 <br>
 It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
 <br /><br /><br />
