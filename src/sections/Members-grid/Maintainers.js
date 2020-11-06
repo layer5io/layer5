@@ -18,7 +18,7 @@ const Maintainer = props =>{
                             twitter
                             status
                             meshmate
-                            Linkedin
+                            linkedin
                             image_path{
                                 childImageSharp{
                                     fluid(maxWidth: 200){
