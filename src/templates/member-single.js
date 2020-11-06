@@ -21,7 +21,7 @@ export const query = graphql`
                 github
                 twitter
                 meshmate
-                Linkedin
+                linkedin
                 image_path{
                     childImageSharp{
                         fluid(maxWidth: 500){

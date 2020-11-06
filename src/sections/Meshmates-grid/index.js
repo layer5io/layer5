@@ -23,7 +23,7 @@ const MeshmatesGrid=() => {
                             github
                             twitter
                             status
-                            Linkedin
+                            linkedin
                             image_path{
                                 childImageSharp{
                                     fluid(maxWidth: 200){
