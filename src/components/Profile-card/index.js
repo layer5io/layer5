@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
 import { ProfileCardWrapper } from "./ProfileCard.style";
-import { FaTwitter, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import MeshMateIcon from "../../svgs/meshmate-icon.svg";
 import MeshMateIconWhite from "../../svgs/meshmate-icon-white.svg";
 import Image from "../image";
 
 const ProfileCard = (props) =>{
-    const {name, position,  github, twitter, status, image_path, meshmate} = props.frontmatter;
+    const {name, position,  github, twitter, status, image_path, meshmate, linkedin} = props.frontmatter;
     return(
         <ProfileCardWrapper status={status}>
             <div className="profile-card">
@@ -30,6 +30,13 @@ const ProfileCard = (props) =>{
                         <li>
                             <a href={`https://twitter.com/${twitter}`}>
                                 <FaTwitter className="twitter" size={32}/>
+                            </a>
+                        </li>
+                    )}
+                    { Linkedin && (
+                        <li>
+                            <a href={`https://Linkedin.com/in/${linkedin}`}>
+                                <FaLinkedin className="linkedin" size={32}/>
                             </a>
                         </li>
                     )}
