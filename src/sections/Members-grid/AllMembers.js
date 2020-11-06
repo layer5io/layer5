@@ -18,7 +18,7 @@ const AllMembers = props =>{
                             twitter
                             status
                             meshmate
-                            Linkedin
+                            linkedin
                             image_path{
                                 childImageSharp{
                                     fluid(maxWidth: 200){
@@ -42,4 +42,3 @@ const AllMembers = props =>{
 };
 
 export default AllMembers;
-
