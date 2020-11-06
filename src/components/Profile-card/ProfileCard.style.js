@@ -22,7 +22,7 @@ export const ProfileCardWrapper = styled.div`
         stroke-linecap: round;
     }
     .profile-card:hover {
-        transform: translateY(-1rem);
+        transform: translateY(.4rem);
     }
     
     .profile-card:hover~.card {
