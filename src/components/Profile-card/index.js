@@ -35,7 +35,7 @@ const ProfileCard = (props) =>{
                     )}
                     { Linkedin && (
                         <li>
-                            <a href={`https://Linkedin.com/${Linkedin}`}>
+                            <a href={`https://Linkedin.com/in/${linkedin}`}>
                                 <FaLinkedin className="linkedin" size={32}/>
                             </a>
                         </li>
