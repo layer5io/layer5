@@ -41,16 +41,9 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 <p style="clear:both;">
 <h2><a href="https://layer5.io/performance">Service Mesh Performance</a></h2>
 <a href="https://layer5.io/performance"><img src="assets/images/buttons/new-smp-logo_square.png"
-style="float:left;margin:10px;padding-right:10px;" width="125px"
+style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Performance Specification Index" align="left" /></a>
-The <a href="https://layer5.io/performance">Service Mesh Performance</a> (SMP) is a vendor-neutral specification for capturing details of: 
-<ul>
-  <li>Environment and infrastructure details</li>
-  <li>Number and size of nodes, orchestrator</li>
-  <li>Service mesh and its configuration</li>
-  <li>Service / application details</li>
-  <li>Bundled with test results</li>
-</ul>
+The <a href="https://layer5.io/performance">Service Mesh Performance</a> (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and its configuration, service / application details, and bundling of statistical analysis of results.
 <br /><br /><br />
 </p>
 <br />
