@@ -52,7 +52,7 @@ The <a href="https://layer5.io/performance">Service Mesh Performance</a> (SMP) i
 <a href="https://layer5.io/projects/image-hub"><img src="assets/images/image-hub/layer5-image-hub.png"
 style="float:left;margin:10px;" width="125px"
 alt="Image Hub" align="left" /></a>
-<a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application which runs on <a href="https://meshery.layer5.io/docs/service-meshes/adapters/consul">Consul</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
+<a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application which runs on <a href="https://meshery.layer5.io/docs/service-meshes/adapters/consul">Consul</a> or <a href="https://meshery.layer5.io/docs/service-meshes/adapters/istio">Istio</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
 <br /><br /><br />
 </p>
 <br />
