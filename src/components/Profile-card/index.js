@@ -7,7 +7,7 @@ import MeshMateIconWhite from "../../svgs/meshmate-icon-white.svg";
 import Image from "../image";
 
 const ProfileCard = (props) =>{
-    const {name, position,  github, twitter, status, image_path, meshmate, Linkedin} = props.frontmatter;
+    const {name, position,  github, twitter, status, image_path, meshmate, linkedin} = props.frontmatter;
     return(
         <ProfileCardWrapper status={status}>
             <div className="profile-card">
