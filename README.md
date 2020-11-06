@@ -39,11 +39,18 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 </p>
 <br />
 <p style="clear:both;">
-<h2><a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a></h2>
+<h2><a href="https://layer5.io/performance">Service Mesh Performance</a></h2>
 <a href="https://layer5.io/performance"><img src="assets/images/buttons/new-smp-logo_square.png"
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Performance Specification Index" align="left" /></a>
-The <a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a> is a common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and load test configuration.
+The <a href="https://layer5.io/performance">Service Mesh Performance</a> (SMP) is a vendor-neutral specification for capturing details of: 
+
+- Environment and infrastructure details
+- Number and size of nodes, orchestrator
+- Service mesh and its configuration
+- Service / application details
+- Bundled with test results.
+
 <br /><br /><br />
 </p>
 <br />
