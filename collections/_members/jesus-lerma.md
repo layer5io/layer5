@@ -3,8 +3,9 @@ layout: person
 name: Jesus Lerma
 position: Community Ambassador / Contributor
 image_path: /assets/images/community/members/jesus-lerma.jpeg
-# twitter: 
+# twitter:
 github: jesuslerma
+linkedin: jesús-lerma-sánchez-a3b8a249
 blurb: Mesh Head
 status: Active
 ---
