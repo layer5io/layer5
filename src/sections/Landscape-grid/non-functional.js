@@ -25,7 +25,7 @@ function NonFunctional() {
                     {non_functional.map(non_func =>
                         <tr key={non_func.name}>
                             <td style={{ textAlign: "center" }}>{non_func.category}</td>
-                            <td>
+                            <td style={{ textAlign: "center" }}>
                                 <a href={`${non_func.link}`} title={`${non_func.link}`}>{non_func.name}</a>
                             </td>
                             <td style={{ textAlign: "center" }}>{non_func.opensource}</td>
@@ -39,7 +39,7 @@ function NonFunctional() {
                 </tbody>
             </table>
             <span style={{ color: "#000" }}>Found a discrepancy, missing or out-dated information? Please
-                <a href="https://github.com/layer5io/layer5/issues" style={{ color: "	#A9A9A9" }}>submit an issue</a>.</span>
+                <a href="https://github.com/layer5io/layer5/issues" style={{ color: "	#A9A9A9" }}> submit an issue</a>.</span>
         </div>
     );
 }
