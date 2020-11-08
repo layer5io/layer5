@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
 import styled from "styled-components";
 import ReactPaginate from "react-paginate";
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 
 export const PagerWrapper = styled.div`
-     
     .pagination {
       display: flex;
       justify-content: space-between;
@@ -47,12 +46,17 @@ export const PagerWrapper = styled.div`
 `;
 
 const Pager = ({ pageContext, isListView }) => {
-    const { numberOfPages, previousPagePath, nextPagePath } = pageContext;
+    const { numberOfPages, pathPrefix} = pageContext;
 
     const handlePageClick = ({ selected: selectedPage }) =>{
-        console.log(pageContext);
+        const path =  `${pathPrefix}${selectedPage ? `/${selectedPage + 1}` : ""}`;
+        navigate(
+            path,
+            {
+                state : { isListView }
+            }
+        );
     };
-
 
     return (
         <PagerWrapper>

@@ -135,7 +135,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     items: blogs,
     itemsPerPage: 8,
     pathPrefix: `/blog`,
-    component: blogViewTemplate
+    component: blogViewTemplate,
+    context: {
+      pathPrefix: `/blog`
+    },
   });
 
   blogs.forEach(blog => {
@@ -149,14 +152,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
   const BlogTags = res.data.blogTags.group;
   BlogTags.forEach(tag => {
+    const path = `/blog/tag/${slugify(tag.fieldValue)}`;
     paginate({
       createPage,
       items: tag.nodes,
       itemsPerPage: 4,
-      pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
+      pathPrefix: path,
       component: blogListTemplate,
       context: {
         tag: tag.fieldValue,
+        pathPrefix: path
       },
     });
   });
