@@ -24,6 +24,10 @@ const MeshmatesGrid=() => {
                             twitter
                             status
                             linkedin
+                            location
+                            skills
+                            technologies
+                            bio
                             image_path{
                                 childImageSharp{
                                     fluid(maxWidth: 200){

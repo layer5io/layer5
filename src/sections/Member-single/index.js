@@ -1,6 +1,6 @@
 import React from "react";
 import { MemberSingleWrapper } from "./memberSingle.style";
-import ProfileCard from "../../components/Profile-card";
+import ProfileCard from "../../components/Profile-Page";
 import {Col, Container, Row} from "../../reusecore/Layout";
 
 const MemberSingle = ({frontmatter}) =>{
