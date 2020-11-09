@@ -19,6 +19,10 @@ const InactiveMembers = props =>{
                             status
                             meshmate
                             linkedin
+                            location
+                            skills
+                            technologies
+                            bio
                             image_path{
                                 childImageSharp{
                                     fluid(maxWidth: 200){
