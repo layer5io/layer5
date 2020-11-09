@@ -1,6 +1,14 @@
 import React from "react";
 import { meshes } from "../../collections/landscape/meshes";
 
+function generate_col(url, value) {
+    if (url) {
+        return <td style={{ textAlign: "center" }}><a href={`${url}`}><i>{value}</i></a></td>
+    } else {
+        return <td style={{ textAlign: "center" }}>{value}</td>
+    }
+}
+
 function Functional() {
     return (
         <div>
@@ -27,24 +35,24 @@ function Functional() {
                         <tr style={{ border: "1px dashed #a6b7be" }} key={mesh.name}>
                             <td>
                                 <a href={`${mesh.link}`} title={`${mesh.desc}`}>{mesh.name}</a>
-                            </td>
-                            <td>{mesh.autoinject}</td>
-                            <td>{mesh.tcp_web}</td>
-                            <td>{mesh.h2}</td>
-                            <td>{mesh.grpc}</td>
-                            <td>{mesh.multi_cluster}</td>
-                            <td>{mesh.multi_tenant}</td>
-                            <td>{mesh.prometheus}</td>
-                            <td>{mesh.tracing}</td>
-                            <td>{mesh.tracing}</td>
-                            <td>{mesh.encryption}</td>
-
+                            </td>  
+                                          
+                            {generate_col(mesh.expired_url, mesh.autoinject)}
+                            {generate_col(mesh.expired_url, mesh.tcp_web)}
+                            {generate_col(mesh.expired_url, mesh.h2)}
+                            {generate_col(mesh.expired_url, mesh.grpc)}
+                            {generate_col(mesh.expired_url, mesh.multi_cluster)}
+                            {generate_col(mesh.expired_url, mesh.multi_tenant)}
+                            {generate_col(mesh.expired_url, mesh.prometheus)}
+                            {generate_col(mesh.expired_url, mesh.tracing)}
+                            {generate_col(mesh.expired_url, mesh.encryption)}
+                            
                         </tr>
                     )}
                 </tbody>
             </table>
             <span style={{ color: "#000" }}>Found a discrepancy, missing or out-dated information? Please
-                <a href="https://github.com/layer5io/layer5/issues" style={{ color: "	#A9A9A9" }}>submit an issue</a>.</span>
+                <a href="https://github.com/layer5io/layer5/issues" style={{ color: "	#A9A9A9" }}> submit an issue</a>.</span>
         </div>
     );
 }
