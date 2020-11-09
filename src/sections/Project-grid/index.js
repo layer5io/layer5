@@ -21,7 +21,9 @@ const ProjectPage = ({data}) => {
                                     <div className="project__block__inner">
                                         <Image 
                                             {...frontmatter.thumbnail}
-                                            imgStyle={{ objectFit: "contain" }} />
+                                            imgStyle={{ objectFit: "contain" }}
+                                            alt={frontmatter.title}
+                                        />
                                         <h1>{frontmatter.title}</h1>
                                     </div>
                                 </Link>

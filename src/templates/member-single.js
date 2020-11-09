@@ -21,6 +21,7 @@ export const query = graphql`
                 github
                 twitter
                 meshmate
+                linkedin
                 image_path{
                     childImageSharp{
                         fluid(maxWidth: 500){
@@ -40,7 +41,7 @@ const MemberSinglePage = ({data}) => {
         <ThemeProvider theme={theme}>
             <Layout>
                 <GlobalStyle />
-                <SEO title={`${data.mdx.frontmatter.name} | Layer5`} />
+                <SEO title={data.mdx.frontmatter.name} />
                 <Navigation />
                 <MemberSingle frontmatter={data.mdx.frontmatter}/>
                 <Footer />

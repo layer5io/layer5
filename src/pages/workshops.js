@@ -19,7 +19,7 @@ const WorkshopsGridPage = ({hide_path}) => {
         <ThemeProvider theme={theme}>
             <Layout>
                 <GlobalStyle />
-                <SEO title="Workshops | Layer5 - The Service Mesh Company" />
+                <SEO title="Workshops" />
                 <Navigation />
                 <WorkshopsPage hide_path={hide_path} />
                 <WorkshopBottom />

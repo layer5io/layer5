@@ -10,7 +10,7 @@ import Button from "../../../reusecore/Button";
 import gsoc_logo from "./gsoc.svg";
 
 <ProgramsWrapper>
-<img src={gsoc_logo}/>
+<img src={gsoc_logo} alt="gsoc_logo" />
 <b>Layer5 Community and GSoC</b>
 
 <div>
@@ -73,9 +73,7 @@ import gsoc_logo from "./gsoc.svg";
     </div>
     <div id="gsoc-2020" className="apply-button">
     <h3>
-        <Button primary>
-            <a className="link" href="http://slack.layer5.io">Participate</a>
-        </Button>
+        <Button primary title="Participate" url="http://slack.layer5.io" external="true" />
     </h3>
     </div>
 </div>

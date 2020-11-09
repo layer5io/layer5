@@ -129,4 +129,9 @@ export const BlogWrapper = styled.div`
         max-width: 100%; 
         height: auto;
     }
+
+    .smp-image{
+      height:40%;
+      width:40%;
+    }
 `;

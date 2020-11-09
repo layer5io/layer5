@@ -71,7 +71,7 @@ const EventsGrid = ({data}) => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="Events | Layer5 - The Service Mesh Company" />
+            <SEO title="Events" />
             <Navigation />
             <Meetups data={data}/>
             <Footer/>

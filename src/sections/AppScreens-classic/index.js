@@ -93,7 +93,7 @@ const AppScreensClassic = () => {
                     </Col>
                     <Col xs={12} sm={6}>
                         <div className="view-more-button">
-                            <Button>View on Goole Play</Button>
+                            <Button title="View on Google Play" />
                         </div>
                     </Col>
                 </Row>

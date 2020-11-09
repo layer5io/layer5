@@ -52,7 +52,7 @@ const Sidebar = ( ) => {
                             <h3> Now led tedious shy. </h3>
                         </Link>
                         <div className="post-meta-block">
-              By: <Link to="#">Admin</Link>
+                            By: <Link to="#">Admin</Link>
                             <Link to="#">Aug 07, 2020</Link>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ const Sidebar = ( ) => {
                             <h3> Now led tedious shy. </h3>
                         </Link>
                         <div className="post-meta-block">
-              By: <Link to="#">Admin</Link>
+                            By: <Link to="#">Admin</Link>
                             <Link to="#">Aug 07, 2020</Link>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ const Sidebar = ( ) => {
                             <h3> Now led tedious shy. </h3>
                         </Link>
                         <div className="post-meta-block">
-              By: <Link to="#">Admin</Link>
+                            By: <Link to="#">Admin</Link>
                             <Link to="#">Aug 07, 2020</Link>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ const Sidebar = ( ) => {
                             <h3> Now led tedious shy. </h3>
                         </Link>
                         <div className="post-meta-block">
-              By: <Link to="#">Admin</Link>
+                            By: <Link to="#">Admin</Link>
                             <Link to="#">Aug 07, 2020</Link>
                         </div>
                     </div>

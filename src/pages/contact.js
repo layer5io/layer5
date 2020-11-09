@@ -17,7 +17,7 @@ class Contact extends Component {
             <ThemeProvider theme={theme}>
                 <Layout>
                     <GlobalStyle />
-                    <SEO title="Contact | Layer5" />
+                    <SEO title="Contact" />
                     <Navigation />
                     <ContactContent />
                     <Footer />

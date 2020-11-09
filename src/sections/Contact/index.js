@@ -17,7 +17,7 @@ const Contact = () => {
                         <h2><span>Subscribe to stay meshy</span></h2>
                     </SectionTitle>
                     <Row>
-                        <Col md={3}><img src={img} /></Col>
+                        <Col md={3}><img src={img} alt="forklift" /></Col>
                         <Col md={9}>
                             <Row>
                                 <Col className="nopad" md={1} xs={1}><MdPermContactCalendar className="contact-icon" size={30}></MdPermContactCalendar></Col>
@@ -32,7 +32,7 @@ const Contact = () => {
                                 <Col className="nopad" md={1} xs={1}><MdEmail className="contact-icon" size={30}></MdEmail></Col>
                                 <Col md={11} xs={11}><input className="inputrow" type="email" placeholder="Email Address" /></Col>
                             </Row>
-                            <Button>Subscribe</Button>
+                            <Button title="Subscribe" />
                         </Col>
                     </Row>
                 </form>

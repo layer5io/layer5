@@ -73,7 +73,7 @@ const Blog = props => {
         <ThemeProvider theme={theme}>
             <Layout>
                 <GlobalStyle />
-                <SEO title="Blog | Layer5 - The Service Mesh Company" />
+                <SEO title="Blog" />
                 <Navigation />
                 <BlogView data={props.data} isListView={isListView}
                     setListView={setListView} setGridView={setGridView}

@@ -47,6 +47,7 @@ const BlogList = ({
                                                     <Image
                                                         {...frontmatter.thumbnail}
                                                         imgStyle={{ objectFit: "contain" }}
+                                                        alt={frontmatter.title}
                                                     />
                                                 </div>
                                                 <h2 className="post-title">

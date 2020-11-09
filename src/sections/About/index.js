@@ -91,9 +91,7 @@ const About = () => {
                                 </Col>
                             </Row>
                             <VintageBox right={false} vintageTwo={true} position="relative">
-                                <Button className="about-button">
-                                    <a href="mailto:hello@layer5.io">Contact Us</a>
-                                </Button>
+                                <Button className="about-button" url="mailto:hello@layer5.io" title="Contact Us" external="true" />
                             </VintageBox>
                         </div>
                     </Col>
