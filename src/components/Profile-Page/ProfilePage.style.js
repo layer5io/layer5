@@ -79,7 +79,7 @@ export const ProfileCardWrapper = styled.div`
                 a{
                     display: block;
                     text-align: left;
-                    padding-right: 10px;
+                    padding: 10px;
                     border-radius: 100%;
                     -webkit-transition: box-shadow 0.2s;
                     -moz-transition: box-shadow 0.2s;
