@@ -5,6 +5,7 @@ position: Contributor
 image_path: /assets/images/community/members/chris-mazur.jpeg
 twitter: chmazur
 github: chaltenio
+linkedin: cloud-native
 blurb: Mesh Head
 status: Active
 ---
