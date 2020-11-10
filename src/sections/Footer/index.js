@@ -6,17 +6,13 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 
 import logo from "../../images/layer5/layer5-only/svg/layer5-light-bg.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
-
 import mail_icon from "../..//assets/images/app/footer/social/mail_white_trim.svg";
 import slack_icon from "../../assets/images/app/footer/social/slack_white_trim.svg";
 import twitter_icon from "../../assets/images/app/footer/social/twitter_white_trim.svg";
 import github_icon from "../../assets/images/app/footer/social/github_white_trim.svg";
 import youtube_icon from "../../assets/images/app/footer/social/youtube_white_trim.svg";
 import docker_icon from "../../assets/images/app/footer/social/docker_white_trim.svg";
-
-
 import FotterWrapper from "./footer.style";
-import Language from "./languages";
 
 const Footer = () => {
     return (
@@ -88,18 +84,8 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/programs/gsoc/2020">
-                    GSoC 2020
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className="anchor" to="/programs/gsod/2020">
-                    GSOD 2020
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className="anchor" to="/programs/communitybridge">
-                    Community Bridge
+                                            <Link className="anchor" to="/programs">
+                    Programs
                                             </Link>
                                         </li>
                                     </ul>
@@ -139,9 +125,6 @@ const Footer = () => {
                             </Col>
                         </Row>
                         <Row className="footer-contact">
-                            <Col className="footer-widgets" xs={12} sm={6} lg={7}>
-                                <Language />
-                            </Col>
                             <Col className="footer-widgets" xs={12} sm={6} lg={5}>
                                 <h3 className="widget-title">Contact</h3>
                                 <Row className="contactf">
