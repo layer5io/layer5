@@ -18,7 +18,7 @@ redirect_from: projects/image-hub/
 
 <h3>Purpose and Overview</h3>
 
-Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters. Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters written in Rust. This application was first demonstrated at DockerCon 2020.
+Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters written in Rust. This application was first demonstrated at DockerCon 2020.
 
 <div style="float:right; width:50%;">
   <a href="https://www.youtube.com/embed/5BrbbKZOctw">
