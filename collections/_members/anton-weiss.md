@@ -5,6 +5,7 @@ position: Contributor
 image_path: https://i.stack.imgur.com/PgRJn.jpg
 twitter: antweiss
 github: antweiss
+linkedin: antonweiss
 blurb: Software Delivery Futurist
 status: Active
 ---
