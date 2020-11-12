@@ -31,19 +31,18 @@
         {% assign smi = site.data.landscape.smi %} {% for result in smi %}
         <tr data-toggle="collapse" id="{{result.id}}" data-target=".{{result.id}}">
           <td>
-            <!-- <div class="tooltip"> -->
             {% if result.mesh_name == "Open Service Mesh" %}
             <img
               src="assets/images/service-mesh-icons/osm.png"
-              width="50px"
+              height="30px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
               title="{{result.mesh_name}}"
             />
             {% elsif result.mesh_name == "Traefik" %}
             <img
-              src="https://5fadaf1710e5c6000891af0c--layer5io.netlify.app/assets/images/service-mesh-icons/traefik.svg"
-              width="50px"
+              src="assets/images/service-mesh-icons/traefik.svg"
+              height="30px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
               title="{{result.mesh_name}}"
@@ -51,7 +50,7 @@
             {% elsif result.mesh_name == "Istio" %}
             <img
               src="assets/images/service-mesh-icons/istio.png"
-              width="50px"
+              width="30px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
               title="{{result.mesh_name}}"
@@ -59,15 +58,15 @@
             {% elsif result.mesh_name == "Linkerd" %}
             <img
               src="assets/images/service-mesh-icons/linkerd.png"
-              width="50px"
+              width="30px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
               title="{{result.more_details[0].mesh_name}}"
             />
             {% elsif result.mesh_name == "Kuma" %}
             <img
-              src="assets/images/service-mesh-icons/Kuma.svg"
-              width="50px"
+              src="assets/images/service-mesh-icons/Kuma.png"
+              width="30px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
               title="{{result.mesh_name}}"
@@ -75,7 +74,7 @@
             {% elsif result.mesh_name == "Consul" %}
             <img
               src="assets/images/service-mesh-icons/consul.png"
-              width="50px"
+              width="30px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
               title="{{result.mesh_name}}"
@@ -83,19 +82,16 @@
             {% elsif result.mesh_name == "App Mesh" %}
             <img
               src="assets/images/service-mesh-icons/App Mesh.png"
-              width="50px"
+              width="30px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
               title="{{result.mesh_name}}"
             />
             {% endif %}
-           <!-- <span class="tooltiptext">{{result.mesh_name}}</span></div> -->
           </td>
 
           <td>
-            <div class="tooltip">
             <p>{{result.mesh_version}}</p>
-            <span class="tooltiptext">{{result.mesh_version}}</span>
             </div>
           </td>
 
@@ -117,7 +113,7 @@
         </tr>
 
         {% for prev_result in result.previous_versions %}
-          <tr class="collapse {{result.id}}">
+          <tr class="collapse {{result.id}}" style="background-color: whitesmoke;">
             <td></td>
             <td>{{prev_result.mesh_version}}</td>
             
