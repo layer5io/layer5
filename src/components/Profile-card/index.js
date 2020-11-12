@@ -8,16 +8,19 @@ import Image from "../image";
 
 const ProfileCard = (props) =>{
     const {name, position,  github, twitter, status, image_path, meshmate, linkedin} = props.frontmatter;
+    const links = props.cardlink;
     return(
         <ProfileCardWrapper status={status}>
             <div className="profile-card">
-                <header>
-                    <Image {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
-                    <h1>{name}</h1>
-                    { position && (
-                        <h2>{position}</h2>
-                    )}
-                </header>
+                <Link to={links}>
+                    <header>
+                        <Image {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
+                        <h1>{name}</h1>
+                        { position && (
+                            <h2>{position}</h2>
+                        )}
+                    </header>
+                </Link>
                 <ul className="profile-social-links">
                     { github && (
                         <li>
