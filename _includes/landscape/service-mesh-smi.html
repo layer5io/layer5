@@ -35,31 +35,31 @@
             {% if result.mesh_name == "Open Service Mesh" %}
             <img
               src="assets/images/service-mesh-icons/osm.png"
-              height="50px"
+              width="50px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
-              title="{{result.more_details[0].mesh_name}}"
+              title="{{result.mesh_name}}"
             />
             {% elsif result.mesh_name == "Traefik" %}
             <img
-              src="assets/images/service-mesh-icons/traefik.svg"
-              height="50px"
+              src="https://5fadaf1710e5c6000891af0c--layer5io.netlify.app/assets/images/service-mesh-icons/traefik.svg"
+              width="50px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
-              title="{{result.more_details[0].mesh_name}}"
+              title="{{result.mesh_name}}"
             />
             {% elsif result.mesh_name == "Istio" %}
             <img
               src="assets/images/service-mesh-icons/istio.png"
-              height="50px"
+              width="50px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
-              title="{{result.more_details[0].mesh_name}}"
+              title="{{result.mesh_name}}"
             />
             {% elsif result.mesh_name == "Linkerd" %}
             <img
               src="assets/images/service-mesh-icons/linkerd.png"
-              height="50px"
+              width="50px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
               title="{{result.more_details[0].mesh_name}}"
@@ -67,36 +67,36 @@
             {% elsif result.mesh_name == "Kuma" %}
             <img
               src="assets/images/service-mesh-icons/Kuma.svg"
-              height="50px"
+              width="50px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
-              title="{{result.more_details[0].mesh_name}}"
+              title="{{result.mesh_name}}"
             />
             {% elsif result.mesh_name == "Consul" %}
             <img
               src="assets/images/service-mesh-icons/consul.png"
-              height="50px"
+              width="50px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
-              title="{{result.more_details[0].mesh_name}}"
+              title="{{result.mesh_name}}"
             />
             {% elsif result.mesh_name == "App Mesh" %}
             <img
               src="assets/images/service-mesh-icons/App Mesh.png"
-              height="50px"
+              width="50px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
-              title="{{result.more_details[0].mesh_name}}"
+              title="{{result.mesh_name}}"
             />
             {% endif %}
            <!-- <span class="tooltiptext">{{result.mesh_name}}</span></div> -->
           </td>
 
           <td>
-            <!-- <div class="tooltip"> -->
+            <div class="tooltip">
             <p>{{result.mesh_version}}</p>
-            <!-- <span class="tooltiptext"> Hello</span>
-            </div> -->
+            <span class="tooltiptext">{{result.mesh_version}}</span>
+            </div>
           </td>
 
           {% for spec in result.more_details %}
