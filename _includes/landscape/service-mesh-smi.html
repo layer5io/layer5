@@ -29,91 +29,115 @@
       </thead>
       <tbody>
         {% assign smi = site.data.landscape.smi %} {% for result in smi %}
-        <tr data-toggle="collapse" id="row1" data-target=".row1">
+        <tr data-toggle="collapse" id="{{result.id}}" data-target=".{{result.id}}">
           <td>
+            <!-- <div class="tooltip"> -->
+            {% if result.mesh_name == "Open Service Mesh" %}
             <img
-              src="{{result.logo}}"
-              width="50px"
+              src="assets/images/service-mesh-icons/osm.png"
+              height="50px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
               title="{{result.more_details[0].mesh_name}}"
             />
+            {% elsif result.mesh_name == "Traefik" %}
+            <img
+              src="assets/images/service-mesh-icons/traefik.svg"
+              height="50px"
+              alt="{{result.mesh_name}}"
+              data-toggle="tooltip"
+              title="{{result.more_details[0].mesh_name}}"
+            />
+            {% elsif result.mesh_name == "Istio" %}
+            <img
+              src="assets/images/service-mesh-icons/istio.png"
+              height="50px"
+              alt="{{result.mesh_name}}"
+              data-toggle="tooltip"
+              title="{{result.more_details[0].mesh_name}}"
+            />
+            {% elsif result.mesh_name == "Linkerd" %}
+            <img
+              src="assets/images/service-mesh-icons/linkerd.png"
+              height="50px"
+              alt="{{result.mesh_name}}"
+              data-toggle="tooltip"
+              title="{{result.more_details[0].mesh_name}}"
+            />
+            {% elsif result.mesh_name == "Kuma" %}
+            <img
+              src="assets/images/service-mesh-icons/Kuma.svg"
+              height="50px"
+              alt="{{result.mesh_name}}"
+              data-toggle="tooltip"
+              title="{{result.more_details[0].mesh_name}}"
+            />
+            {% elsif result.mesh_name == "Consul" %}
+            <img
+              src="assets/images/service-mesh-icons/consul.png"
+              height="50px"
+              alt="{{result.mesh_name}}"
+              data-toggle="tooltip"
+              title="{{result.more_details[0].mesh_name}}"
+            />
+            {% elsif result.mesh_name == "App Mesh" %}
+            <img
+              src="assets/images/service-mesh-icons/App Mesh.png"
+              height="50px"
+              alt="{{result.mesh_name}}"
+              data-toggle="tooltip"
+              title="{{result.more_details[0].mesh_name}}"
+            />
+            {% endif %}
+           <!-- <span class="tooltiptext">{{result.mesh_name}}</span></div> -->
           </td>
-          <td>{{result.mesh_version}}</td>
-          <td data-toggle="tooltip" title="{{result.reason}}">
-            {% if result.traffic_access == "None" %}
+
+          <td>
+            <!-- <div class="tooltip"> -->
+            <p>{{result.mesh_version}}</p>
+            <!-- <span class="tooltiptext"> Hello</span>
+            </div> -->
+          </td>
+
+          {% for spec in result.more_details %}
+            
+          <td data-toggle="tooltip" title="{{spec.reason}}">
+            {% if spec.capability == "None" %}
             <span class="material-icons"> highlight_off </span>
-            {% elsif result.traffic_access == "Full" %}
+            {% elsif spec.capability == "Full" %}
             <span class="material-icons"> check_circle_outline </span>
-            {% elsif result.traffic_access == "Half" %}
+            {% elsif result.capability == "Half" %}
             <span class="material-icons"> unpublished </span>
             {% endif %}
           </td>
-          <td data-toggle="tooltip" title="{{result.reason}}">
-            {% if result.traffic_split == "None" %}
-            <span class="material-icons"> highlight_off </span>
-            {% elsif result.traffic_split == "Full" %}
-            <span class="material-icons"> check_circle_outline </span>
-            {% elsif result.traffic_split == "Half" %}
-            <span class="material-icons"> unpublished </span>
-            {% endif %}
-          </td>
-          <td data-toggle="tooltip" title="{{result.reason}}">
-            {% if result.traffic_spec == "None" %}
-            <span class="material-icons"> highlight_off </span>
-            {% elsif result.traffic_spec == "Full" %}
-            <span class="material-icons"> check_circle_outline </span>
-            {% elsif result.traffic_spec == "Half" %}
-            <span class="material-icons"> unpublished </span>
-            {% endif %}
-          </td>
+          {% endfor %}
+
           <td>{{result.passing_percentage}}</td>
+
         </tr>
-        <tr class="collapse row1">
-          <td></td>
-          <td>{{result.more_details[0].mesh_version}}</td>
-          <td
-            scope="row"
-            data-toggle="tooltip"
-            title="{{result.more_details[0].reason}}"
-          >
-            {% if result.more_details[0].traffic_access == "None" %}
-            <span class="material-icons"> highlight_off </span>
-            {% elsif result.more_details[0].traffic_access == "Full" %}
-            <span class="material-icons"> check_circle_outline </span>
-            {% elsif result.more_details[0].traffic_access == "Half" %}
-            <span class="material-icons"> unpublished </span>
-            {% endif %}
-          </td>
-          <td
-            scope="row"
-            data-toggle="tooltip"
-            title="{{result.more_details[0].reason}}"
-          >
-            {% if result.more_details[0].traffic_split == "None" %}
-            <span class="material-icons"> highlight_off </span>
-            {% elsif result.more_details[0].traffic_split == "Full" %}
-            <span class="material-icons"> check_circle_outline </span>
-            {% elsif result.more_details[0].traffic_split == "Half" %}
-            <span class="material-icons"> unpublished </span>
-            {% endif %}
-          </td>
-          <td
-            scope="row"
-            data-toggle="tooltip"
-            title="{{result.more_details[0].reason}}"
-          >
-            {% if result.more_details[0].traffic_spec == "None" %}
-            <span class="material-icons"> highlight_off </span>
-            {% elsif result.more_details[0].traffic_spec == "Full" %}
-            <span class="material-icons"> check_circle_outline </span>
-            {% elsif result.more_details[0].traffic_spec == "Half" %}
-            <span class="material-icons"> unpublished </span>
-            {% endif %}
-          </td>
-          <td>{{result.more_details[1].passing_percentage}}</td>
-        </tr>
+
+        {% for prev_result in result.previous_versions %}
+          <tr class="collapse {{result.id}}">
+            <td></td>
+            <td>{{prev_result.mesh_version}}</td>
+            
+            {% for spec in result.more_details %}
+              <td scope="row" data-toggle="tooltip" title="{{spec.reason}}">
+                {% if spec.capability == "None" %}
+                <span class="material-icons"> highlight_off </span>
+                {% elsif spec.capability == "Full" %}
+                <span class="material-icons"> check_circle_outline </span>
+                {% elsif result.capability == "Half" %}
+                <span class="material-icons"> unpublished </span>
+                {% endif %}
+              </td>
+            {% endfor %}
+
+            <td>{{prev_result.passing_percentage}}</td>
+          </tr>
         {% endfor %}
+      
+      {% endfor %}
       </tbody>
     </table>
   </div>

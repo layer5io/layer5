@@ -3,60 +3,309 @@
         "id": "0dd368be-745f-4433-a356-f717aac40457",
         "date": "2020-10-14T20:14:48+05:30",
         "mesh_name": "Open Service Mesh",
-        "mesh_version": "v0.3.0",
+        "mesh_version": "v0.3",
         "cases_passed": "0",
-        "passing_percentage": "0",
-        "logo": "assets/images/landscape/osm.svg",
-        "traffic_access": "Full",
-        "traffic_spec": "None",
-        "traffic_split": "Half",
-        "smi_specification": "traffic-spec",
-        "time": "6m16.323837714s",
-        "assertions": "10",
-        "result": "failed in step 2-install",
-        "reason": "resource Deployment:kudo-test-honest-mallard/app-c-deployment: .status.readyReplicas: key is missing from map",
-        "capability": "Half",
-        "status": "Failing",
+        "passing_percentage": "100%",
+        "status": "completed",
         "more_details": [
             {
-                "id": "0dd368be-745f-4433-a356-f717aac40457",
-                "date": "2020-10-14T20:14:48+05:30",
-                "mesh_name": "Open Service Mesh",
-                "mesh_version": "v0.2.0",
-                "cases_passed": "0",
-                "passing_percentage": "0",
-                "logo": "assets/images/landscape/osm.svg",
-                "traffic_access": "Half",
-                "traffic_spec": "Full",
-                "traffic_split": "None",
-                "smi_specification": "traffic-spec",
-                "time": "6m16.323837714s",
+                "smi_specification": "traffic-access",
+                "time": "2m5s",
                 "assertions": "10",
-                "result": "failed in step 2-install",
-                "reason": "resource Deployment:kudo-test-honest-mallard/app-c-deployment: .status.readyReplicas: key is missing from map",
-                "capability": "Half",
-                "status": "Failing"
+                "result": "Passed",
+                "reason": "",
+                "capability": "Full",
+                "status": "Passing"
             }, {
-                "id": "0dd368be-745f-4433-a356-f717aac40457",
-                "date": "2020-10-14T20:14:48+05:30",
-                "mesh_name": "Open Service Mesh",
-                "mesh_version": "v0.1.0",
-                "cases_passed": "0",
-                "passing_percentage": "0",
-                "logo": "assets/images/landscape/osm.svg",
-                "traffic_access": "None",
-                "traffic_spec": "Full",
-                "traffic_split": "Half",
-                "smi_specification": "traffic-spec",
-                "time": "6m16.323837714s",
+                "smi_specification": "traffic-split",
+                "time": "2m5s",
                 "assertions": "10",
-                "result": "failed in step 2-install",
-                "reason": "resource Deployment:kudo-test-honest-mallard/app-c-deployment: .status.readyReplicas: key is missing from map",
-                "capability": "Half",
-                "status": "Failing"
+                "result": "Passed",
+                "reason": "",
+                "capability": "Full",
+                "status": "Passing"
             }, {
-
+                "smi_specification": "traffic-spec",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "Full",
+                "status": "Passing"
             }
+        ],
+        "previous_versions": [
+            {
+                "id": "2",
+                "date": "2020-10-14T20:14:48+05:30",
+                "mesh_name": "Open Service Mesh",
+                "mesh_version": "v0.2",
+                "cases_passed": "10",
+                "passing_percentage": "100%",
+                "status": "completed",
+                "more_details": [
+                    {
+                        "smi_specification": "traffic-access",
+                        "time": "2m5s",
+                        "assertions": "10",
+                        "result": "Passed",
+                        "reason": "",
+                        "capability": "Full",
+                        "status": "Passing"
+                    }, {
+                        "smi_specification": "traffic-split",
+                        "time": "2m5s",
+                        "assertions": "10",
+                        "result": "Passed",
+                        "reason": "",
+                        "capability": "Full",
+                        "status": "Passing"
+                    }, {
+                        "smi_specification": "traffic-spec",
+                        "time": "2m5s",
+                        "assertions": "10",
+                        "result": "Passed",
+                        "reason": "",
+                        "capability": "Full",
+                        "status": "Passing"
+                    }
+                ]
+            }           
+        ]
+    },
+
+    {
+        "id": "2",
+        "date": "2020-10-14T20:14:48+05:30",
+        "mesh_name": "Istio",
+        "mesh_version": "v1.7",
+        "cases_passed": "10",
+        "passing_percentage": "100%",
+        "status": "completed",
+        "more_details": [
+            {
+                "smi_specification": "traffic-access",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "Full",
+                "status": "Passing"
+            }, {
+                "smi_specification": "traffic-split",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "Full",
+                "status": "Passing"
+            }, {
+                "smi_specification": "traffic-spec",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "Full",
+                "status": "Passing"
+            }
+        ],
+        "previous_versions": [
+
+        ]
+    },
+    {
+        "id": "3",
+        "date": "2020-10-14T20:14:48+05:30",
+        "mesh_name": "Linkerd",
+        "mesh_version": "v2",
+        "cases_passed": "10",
+        "passing_percentage": "66%",
+        "status": "completed",
+        "more_details": [
+            {
+                "smi_specification": "traffic-access",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Failed",
+                "reason": "No envoy proxy",
+                "capability": "None",
+                "status": "Failing"
+            }, {
+                "smi_specification": "traffic-split",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "Full",
+                "status": "Passing"
+            }, {
+                "smi_specification": "traffic-spec",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "Full",
+                "status": "Passing"
+            }
+        ],
+        "previous_versions": [
+                       
+        ]
+    },
+    {
+        "id": "5",
+        "date": "2020-10-14T20:14:48+05:30",
+        "mesh_name": "Traefik",
+        "mesh_version": "v2",
+        "cases_passed": "10",
+        "passing_percentage": "66%",
+        "status": "completed",
+        "more_details": [
+            {
+                "smi_specification": "traffic-access",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Failed",
+                "reason": "No envoy proxy",
+                "capability": "Full",
+                "status": "Passing"
+            }, {
+                "smi_specification": "traffic-split",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "Full",
+                "status": "Passing"
+            }, {
+                "smi_specification": "traffic-spec",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "None",
+                "status": "Failing"
+            }
+        ],
+        "previous_versions": [
+                       
+        ]
+    },
+    {
+        "id": "4",
+        "date": "2020-10-14T20:14:48+05:30",
+        "mesh_name": "Kuma",
+        "mesh_version": "v2",
+        "cases_passed": "10",
+        "passing_percentage": "0%",
+        "status": "completed",
+        "more_details": [
+            {
+                "smi_specification": "traffic-access",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Failed",
+                "reason": "No envoy proxy",
+                "capability": "None",
+                "status": "Failing"
+            }, {
+                "smi_specification": "traffic-split",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "None",
+                "status": "Failing"
+            }, {
+                "smi_specification": "traffic-spec",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "None",
+                "status": "Failing"
+            }
+        ],
+        "previous_versions": [
+                       
+        ]
+    },
+    {
+        "id": "6",
+        "date": "2020-10-14T20:14:48+05:30",
+        "mesh_name": "Consul",
+        "mesh_version": "v2",
+        "cases_passed": "10",
+        "passing_percentage": "0%",
+        "status": "completed",
+        "more_details": [
+            {
+                "smi_specification": "traffic-access",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Failed",
+                "reason": "No envoy proxy",
+                "capability": "None",
+                "status": "Passing"
+            }, {
+                "smi_specification": "traffic-split",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "None",
+                "status": "Passing"
+            }, {
+                "smi_specification": "traffic-spec",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "None",
+                "status": "Passing"
+            }
+        ],
+        "previous_versions": [
+                       
+        ]
+    },
+    {
+        "id": "7",
+        "date": "2020-10-14T20:14:48+05:30",
+        "mesh_name": "App Mesh",
+        "mesh_version": "v2",
+        "cases_passed": "10",
+        "passing_percentage": "0%",
+        "status": "completed",
+        "more_details": [
+            {
+                "smi_specification": "traffic-access",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Failed",
+                "reason": "No envoy proxy",
+                "capability": "None",
+                "status": "Passing"
+            }, {
+                "smi_specification": "traffic-split",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "None",
+                "status": "Passing"
+            }, {
+                "smi_specification": "traffic-spec",
+                "time": "2m5s",
+                "assertions": "10",
+                "result": "Passed",
+                "reason": "",
+                "capability": "None",
+                "status": "Passing"
+            }
+        ],
+        "previous_versions": [
+                       
         ]
     }
 
