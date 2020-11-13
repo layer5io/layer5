@@ -18,6 +18,7 @@ padding: 100px 0 110px 0;
         padding: 11%;
         margin-top: 15px;
         margin-bottom: 15px;
+        height: 300px;
         border-radius: 4%;
         position: relative;
         text-align: center;
@@ -32,7 +33,8 @@ padding: 100px 0 110px 0;
             }
         }
         h1{
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
+            font-size: 21px; 
             font-weight: 600;
         }
         img{
@@ -58,6 +60,7 @@ padding: 100px 0 110px 0;
     @media only screen and (max-width: 912px) {
         padding: 5px 0 0 0;
         .project__block__inner{
+            height: auto;
             padding: 5px;
             img{
                 height: 60px;

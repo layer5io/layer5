@@ -6,8 +6,6 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import ParticleComponent from "../../reusecore/Particle";
 
-import { FaPlay, FaDownload } from "react-icons/fa";
-
 import BannerSectionWrapper from "./banner.style";
 import imgHero1 from "../../assets/images/hosting/hosting/banner/01.png";
 import imgHero2 from "../../assets/images/hosting/hosting/banner/02.png";

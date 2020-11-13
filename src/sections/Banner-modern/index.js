@@ -33,12 +33,11 @@ const BannerModern = () => {
               minim veniam quis nostrud exercitation.
                         </p>
                         <VintageBox right={true} vintageOne={true}>
-                            <Button className="banner-btn one">
+                            <Button className="banner-btn one" title="Run Meshery">
                                 <FaDownload className="icon-left" />
-                Run Meshery
                             </Button>
-                            <Button className="banner-btn two">
-                                <FaPlay className="icon-left" /> Watch Now
+                            <Button className="banner-btn two" title="Watch Now">
+                                <FaPlay className="icon-left" />
                             </Button>
                         </VintageBox>
                     </Col>

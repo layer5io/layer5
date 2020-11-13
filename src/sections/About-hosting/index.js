@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
@@ -51,7 +49,7 @@ const About = () => {
                             vintageTwo={true}
                             position="relative"
                         >
-                            <Button>Learn More</Button>
+                            <Button title="Learn More" />
                         </VintageBox>
                     </Col>
                 </Row>

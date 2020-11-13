@@ -15,8 +15,8 @@ const ButtonStyle = styled.button`
     -webkit-transition: 450ms all;
     transition: 450ms all;
     position: relative;
-    color: ${props => props.theme.primaryColor};
-    background-color: ${props => props.theme.primaryLightColor};
+    color: ${props => props.active ? props.theme.white: props.theme.headingColor};
+    background-color: ${props => props.active ?  props.theme.primaryColor: props.theme.primaryLightColor};
     z-index: 999;
     &:hover,
     &:focus {
@@ -32,20 +32,20 @@ const ButtonStyle = styled.button`
     }
 
     ${props => props.primary && css`
-        color: ${props.theme.primaryLightColor};
-        background: ${props.theme.primaryColor};
+        color: ${props.active ? props.theme.headingColor: props.theme.white};
+        background: ${props.active ? props.theme.primaryLightColor: props.theme.primaryColor};
 
         &:hover{
-            color: ${props.theme.primaryColor};
+            color: ${props.theme.headingColor};
             background: ${props.theme.primaryLightColor}; 
         }
     `}
     ${props => props.secondary && css`
-        color: ${props.theme.secondaryColor};
-        background: ${props.theme.secondaryLightColor};
+        color: ${props.active ? props.theme.white: props.theme.headingColor};
+        background: ${props.active ? props.theme.secondaryColor: props.theme.secondaryLightColor};
 
         &:hover{
-            color: ${props.theme.secondaryLightColor};
+            color: ${props.theme.white};
             background: ${props.theme.secondaryColor}; 
         }
     `}

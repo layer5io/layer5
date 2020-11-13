@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-
 const RowWrapper = styled.div`
 
     display: flex;
@@ -18,7 +17,6 @@ const RowWrapper = styled.div`
             "justify-content": "center"
         }
     )};
- 
 `;
 
 const Row = ({children, ...props}) => {
@@ -28,6 +26,5 @@ const Row = ({children, ...props}) => {
         </RowWrapper>
     );
 };
-
 
 export default Row;

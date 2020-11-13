@@ -4,10 +4,7 @@ import { TwitterTimelineEmbed } from "react-twitter-embed" ;
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 
-import { FiMail, FiPhoneCall } from "react-icons/fi";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-
-import logo from "../../images/layer5/layer5.svg";
+import logo from "../../images/layer5/layer5-only/svg/layer5-light-bg.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
 
 import mail_icon from "../..//assets/images/app/footer/social/mail_white_trim.svg";
@@ -24,28 +21,15 @@ import Language from "./languages";
 const Footer = () => {
     return (
         <FotterWrapper>
-            <img className="section__particle one" alt="img" src={particleOne} alt="appion app landing" />
+            <img className="section__particle one" src={particleOne} alt="appion app landing" />
             <Container>
                 <Row>
                     <Col xs={12} sm={5} lg={4}>
                         <div className="first">
-                            <Link className="footer-logo" to="#">
-                                <img src={logo} alt="logo" />
+                            <Link to="#">
+                                <img src={logo} className="footer-logo" alt="logo" />
                             </Link>
-                            {/* <ul className="info">
-                <li>
-                  <FiMail />
-                  <Link className="anchor" to="#">
-                    contact@appion.com
-                  </Link>
-                </li>
-                <li>
-                  <FiPhoneCall />
-                  <Link className="anchor" to="#">
-                    +88 12345 697858
-                  </Link>
-                </li>
-              </ul> */}
+                            <div className="descript">representing <i>every</i> service mesh</div>
                             <TwitterTimelineEmbed
                                 sourceType="profile"
                                 screenName="layer5"
@@ -72,12 +56,12 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/learn/books">
+                                            <Link className="anchor" to="/books">
                     Service Mesh Books
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/learn/workshops">
+                                            <Link className="anchor" to="/workshops">
                     Service Mesh Workshops
                                             </Link>
                                         </li>
@@ -104,22 +88,17 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/careers/programs/internships">
-                    Internships
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className="anchor" to="/careers/programs/gsoc/2020">
+                                            <Link className="anchor" to="/programs/gsoc/2020">
                     GSoC 2020
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/careers/programs/gsod/2020">
+                                            <Link className="anchor" to="/programs/gsod/2020">
                     GSOD 2020
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/careers/programs/communitybridge/2020">
+                                            <Link className="anchor" to="/programs/communitybridge">
                     Community Bridge
                                             </Link>
                                         </li>
@@ -131,12 +110,12 @@ const Footer = () => {
                                     <h3 className="widget-title">Company</h3>
                                     <ul className="widget-catagory">
                                         <li>
-                                            <Link className="anchor" to="company/news">
+                                            <Link className="anchor" to="/news">
                     News
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="company/brand">
+                                            <Link className="anchor" to="/brand">
                     Brand
                                             </Link>
                                         </li>
@@ -146,7 +125,7 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/contact/partners">
+                                            <Link className="anchor" to="/partners">
                     Partners
                                             </Link>
                                         </li>
@@ -166,24 +145,24 @@ const Footer = () => {
                             <Col className="footer-widgets" xs={12} sm={6} lg={5}>
                                 <h3 className="widget-title">Contact</h3>
                                 <Row className="contactf">
-                                    <Link className="social-icons" to="mailto:community@layer5.io">
-                                        <img height="40 px" src={mail_icon} />
-                                    </Link>
-                                    <Link className="social-icons" to="http://slack.layer5.io/">
-                                        <img height="40 px" src={slack_icon} />
-                                    </Link>
-                                    <Link className="social-icons" to="https://twitter.com/layer5">
-                                        <img height="40 px" src={twitter_icon} />
-                                    </Link>
-                                    <Link className="social-icons" to="https://github.com/layer5io">
-                                        <img height="40 px" src={github_icon} />
-                                    </Link>
-                                    <Link className="social-icons" to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
-                                        <img height="40 px" src={youtube_icon} />
-                                    </Link>
-                                    <Link className="social-icons" to="https://hub.docker.com/u/layer5/">
-                                        <img height="40 px" src={docker_icon} />
-                                    </Link>
+                                    <a className="social-icons" href="mailto:community@layer5.io">
+                                        <img height="40 px" src={mail_icon} alt="mail" />
+                                    </a>
+                                    <a className="social-icons" href="http://slack.layer5.io/">
+                                        <img height="40 px" src={slack_icon} alt="slack" />
+                                    </a>
+                                    <a className="social-icons" href="https://twitter.com/layer5">
+                                        <img height="40 px" src={twitter_icon} alt="twitter" />
+                                    </a>
+                                    <a className="social-icons" href="https://github.com/layer5io">
+                                        <img height="40 px" src={github_icon} alt="github" />
+                                    </a>
+                                    <a className="social-icons" href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
+                                        <img height="40 px" src={youtube_icon} alt="youtube" />
+                                    </a>
+                                    <a className="social-icons" href="https://hub.docker.com/u/layer5/">
+                                        <img height="40 px" src={docker_icon} alt="docker" />
+                                    </a>
                                 </Row>
                             </Col>
                         </Row>
@@ -192,14 +171,14 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <ul className="footer-menu">
                         <li>
-                            <Link className="anchor" to="https://meshery.layer5.io/privacy-policy.html">
+                            <a className="anchor" href="https://meshery.layer5.io/privacy-policy.html">
                 Privacy
-                            </Link>
+                            </a>
                         </li>
                         <li>
-                            <Link className="anchor" to="https://meshery.layer5.io/terms-of-service.html">
+                            <a className="anchor" href="https://meshery.layer5.io/terms-of-service.html">
                 Terms
-                            </Link>
+                            </a>
                         </li>
                     </ul>
                     <p className="copyright-text">

@@ -31,7 +31,7 @@ const Integrations = () => {
                                     </Link>
                                 </div>
                                 <div className="integration__block__inner">
-                                    <img src={integrationImage2} alt="appion integration" />
+                                    <img src={integrationImage3} alt="appion integration" />
                                     <h3>Instagram</h3>
                                     <p>News Feed</p>
                                     <Link to="#">
@@ -41,7 +41,7 @@ const Integrations = () => {
                             </div>
                             <div className="integration__block right">
                                 <div className="integration__block__inner">
-                                    <img src={integrationImage3} alt="appion integration" />
+                                    <img src={integrationImage2} alt="appion integration" />
                                     <h3>Slack</h3>
                                     <p>Messaging</p>
                                     <Link to="#">
@@ -72,16 +72,16 @@ const Integrations = () => {
                             </h2>
                         </SectionTitle>
                         <p className="integration-text">
-              One differences leaders, management-science so, best treat. Still
-              problems upper and anger devoting out. With hiding their boss
-              phase drops. A strenuous in ticket get write it by proposal.
+                            One differences leaders, management-science so, best treat. Still
+                            problems upper and anger devoting out. With hiding their boss
+                            phase drops. A strenuous in ticket get write it by proposal.
                         </p>
                         <VintageBox
                             right={true}
                             vintageTwo={true}
                             position="relative"
                         >
-                            <Button className="integration-btn">Learn More</Button>
+                            <Button className="integration-btn" title="Learn More" />
                         </VintageBox>
                     </Col>
                 </Row>

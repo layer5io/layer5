@@ -29,8 +29,8 @@ const FeaturesClassic = () => {
                             </div>
                             <h3>Business Opurtunity</h3>
                             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
+                                eiusmod tempor incididunt.
                             </p>
                         </div>
                     </Col>
@@ -41,8 +41,8 @@ const FeaturesClassic = () => {
                             </div>
                             <h3>Data Analysis</h3>
                             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
+                                eiusmod tempor incididunt.
                             </p>
                         </div>
                     </Col>
@@ -53,8 +53,8 @@ const FeaturesClassic = () => {
                             </div>
                             <h3>Engaging Content</h3>
                             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
+                                eiusmod tempor incididunt.
                             </p>
                         </div>
                     </Col>
@@ -65,8 +65,8 @@ const FeaturesClassic = () => {
                             </div>
                             <h3>Web Expertise</h3>
                             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
+                                eiusmod tempor incididunt.
                             </p>
                         </div>
                     </Col>
@@ -77,8 +77,8 @@ const FeaturesClassic = () => {
                             </div>
                             <h3>App Development</h3>
                             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
+                                eiusmod tempor incididunt.
                             </p>
                         </div>
                     </Col>
@@ -89,8 +89,8 @@ const FeaturesClassic = () => {
                             </div>
                             <h3>Easy Customized</h3>
                             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
+                                eiusmod tempor incididunt.
                             </p>
                         </div>
                     </Col>
