@@ -7,6 +7,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   if (props.className) {
     addAllClasses.push(props.className)
   }
+
   return (
     <ul className={addAllClasses.join(" ")}>
       {menuItems.map((menu, index) => (
