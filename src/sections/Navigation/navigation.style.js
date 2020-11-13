@@ -36,7 +36,7 @@ const NavigationWrap = styled.header`
     -webkit-transform: translateY(20px);
     -ms-transform: translateY(20px);
     transition: all 0.3s ease-in-out;
-    animation: nav-bar-anim 0.1s ease-in-out forwards;
+    animation: nav-bar-anim 0.2s ease-in-out forwards;
   }
   .nav-grid {
     display: grid;
@@ -62,10 +62,13 @@ const NavigationWrap = styled.header`
     border-radius: 10px;
     &:hover {
       box-shadow: none;
-      color: #00b39f;
+      color: ${(props) =>
+				props.theme.menuHoverColor ? props.theme.menuHoverColor : "#FB7B81"}
       cursor: pointer;
     }
   }
+
+
   @keyframes nav-bar-anim {
     0% {
       opacity: 0;
@@ -95,7 +98,8 @@ const NavigationWrap = styled.header`
     }
     li {
       position: relative;
-      padding: 48px 0px 48px 40px;
+      padding: 48px 0px;
+      margin-left: 40px;
       .dropdown {
         li {
           padding: 0;
@@ -104,7 +108,10 @@ const NavigationWrap = styled.header`
             display: block;
             padding: 5px 15px;
             &:hover {
-              color: ${props => props.theme.menuHoverColor}; !important;
+              color: ${(props) =>
+								props.theme.menuHoverColor
+									? props.theme.menuHoverColor
+									: "#FB7B81"} !important;
             }
             &:before {
               content: none;
@@ -117,7 +124,7 @@ const NavigationWrap = styled.header`
       .nav-active {
         position: relative;
         color: ${(props) =>
-        props.theme.menuColor ? props.theme.menuColor : "#1D316C"};
+					props.theme.menuColor ? props.theme.menuColor : "#1D316C"};
         font-size: 15px;
         transition: 450ms all;
         padding-bottom: 5px;
@@ -130,11 +137,17 @@ const NavigationWrap = styled.header`
           width: 20px;
           height: 1px;
           opacity: 0;
-          background: ${props => props.theme.menuHoverColor};
+          background: ${(props) =>
+						props.theme.menuHoverColor
+							? props.theme.menuHoverColor
+							: "#FB7B81"};
           transition: 450ms all;
         }
         &:hover {
-          color: ${props => props.theme.menuHoverColor};
+          color: ${(props) =>
+						props.theme.menuHoverColor
+							? props.theme.menuHoverColor
+							: "#FB7B81"};
           &:before {
             opacity: 1;
           }
@@ -161,7 +174,10 @@ const NavigationWrap = styled.header`
         a {
           color: #1d316c;
           &:hover {
-            color: ${props => props.theme.menuHoverColor};
+            color: ${(props) =>
+							props.theme.menuHoverColor
+								? props.theme.menuHoverColor
+								: "#FB7B81"};
           }
         }
       }
@@ -194,6 +210,9 @@ const NavigationWrap = styled.header`
           padding-left: 0;
         }
       }
+    }
+    .nav-div {
+      display : none;
     }
     .nav-grid {
       display: block;
