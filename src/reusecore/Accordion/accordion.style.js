@@ -30,7 +30,7 @@ export const CloseIcon = styled.div`
 export const AccordionTitleWrapper = styled(AccordionItemHeading)`
   > div {
     display: flex;
-    align-items: center;
+    text-align: left;
     cursor: pointer;
     position: relative;
     &[aria-expanded='false'] {
@@ -59,16 +59,14 @@ export const AccordionBodyWrapper = styled(AccordionItemPanel)`
 `;
 
 export const IconWrapper = styled.div`
-  margin-left: 30px;
-  width: 40px;
   position: relative;
   ${OpenIcon},
   ${CloseIcon}{
     position: absolute;
-    top: 50%;
-    right: 0;
+    top: 60%;
+    left: 0;
     transform: translateY(-50%);
     transition: 0.25s ease-in-out;
-    color: #FB7B81;
+    color: black;
   }
 `;

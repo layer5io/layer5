@@ -13,10 +13,12 @@ import theme from "../theme/blog/themeStyles";
 import {graphql} from "gatsby";
 
 export const query = graphql`
-    query PostsByTags($tag: String!) {
+    query BlogsByTags($tag: String!, $skip: Int!, $limit: Int!) {
         allMdx(
             sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: { tags: { in: [$tag] }, published: { eq: true } } }
+            filter: { fields: { collection: { eq: "blog" } }, frontmatter: { tags: { in: [$tag] }, published: { eq: true } } }
+            skip: $skip
+            limit: $limit
         ) {
             totalCount
             nodes {
@@ -48,7 +50,7 @@ const BlogListPage = ({ pageContext, data }) => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="Blog | Layer5 - The Service Mesh Company" />
+            <SEO title="Blog" />
             <Navigation />
             <BlogList data={data} pageContext={pageContext} />
             <Footer />
