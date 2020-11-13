@@ -10843,28 +10843,3 @@ div.slack {
 #meetingstable tr:nth-child(even) {
   background-color: #e8e8e8;
 }
-
-/* Path to service mesh architectures page */
-.row.bookImageGrp {
-  float: right;
-  padding: 10px 50px 0 50px;
-  text-align: center;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  top: -10px;
-}
-
-@media only screen and (min-width: 1310px) {
-  .row.bookImageGrp {
-    top: -80px !important;
-  }
-}
-@media only screen and (max-width: 486px) {
-  .book-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-}
