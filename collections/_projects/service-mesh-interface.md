@@ -1,6 +1,6 @@
 ---
 layout: project
-title:  "Service Mesh Interface Conformance"
+title: "Service Mesh Interface Conformance"
 description: "Layer5 is a prominent maintainer and supporter of SMI, advancing its specifications and delivering conformance tooling through Meshery."
 author:
   twitter: layer5
@@ -15,7 +15,9 @@ redirect_from:
   - /SMI
   - /SMI/
   - smi/
+  - service-mesh-interface
 ---
+
 <div class="row">
     <div class="col s12 m6">
         <div style="z-index: 1;">
@@ -45,6 +47,7 @@ redirect_from:
 </div>
 
 The scope of this initiative includes all service mesh projects participating in the Service Mesh Interface specification. It’s important to acknowledge that conformance consists of both capabilities and compliance status.
+
 <h5 class="black-text">Goals</h5>
 
 <ul>
@@ -66,7 +69,7 @@ The scope of this initiative includes all service mesh projects participating in
 <h4>How conformance is verfied</h4>
 <p>Conformance to SMI specifications will be done through use of a service mesh’s workload. A sample application is used as the workload to test. To facilitate a common set of tests, a sample application has been developed for purposes of providing a consistent workload to apply SMI specs against. A deployment of the <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> sample application being fitted to each service mesh.</p>
 
-Learn more about how Meshery validates Istio, Linkerd, Consul, Maesh, and Kuma's conformance to SMI. 
+Learn more about how Meshery validates Istio, Linkerd, Consul, Maesh, and Kuma's conformance to SMI.
 
 - <a href="https://layer5.io/blog/community/communitybridge-2020-teaching-service-meshes-to-be-compliant">CommunityBridge 2020: Teaching service meshes to be compliant</a>
 - <a href="https://layer5.io/blog/community/SMI-conformance-testing-with-meshery">Starting SMI Conformance Testing with Meshery</a>
