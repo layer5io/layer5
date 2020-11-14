@@ -70,7 +70,7 @@ const Sidebar = ( ) => {
                             <div className="recent-post-block" key={post.fields.slug}>
                                 <img src={post.frontmatter.thumbnail.publicURL} 
                                     alt="prime-app" 
-                                    height="80" width="80"/>
+                                    width="80px"/>
                                 <div className="recent-post-content-block">
                                     <Link to={post.fields.slug}>
                                         <h3> {post.frontmatter.title} </h3>
