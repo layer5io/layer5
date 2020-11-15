@@ -1,6 +1,5 @@
 import React from "react";
 import Select from "react-select";
-import { Link } from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import ProfileCard from "../../components/Profile-card";
