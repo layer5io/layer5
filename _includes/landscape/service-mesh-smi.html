@@ -1,15 +1,17 @@
-<link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-/>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  $(".collapse-head").click(function () {
+    $(".collapse-" + $(this).attr("id")).find(".collapse-body").slideToggle();
+  });
+});
+</script>
 
 <div class="col-sm-12">
   <div class="panel panel-default">
-    <table class="table table-responsive table-hover">
+    <table
+    class="table highlighted table-responsive table-hover"
+    style="color: var(--main-bg-color); background-color: #ffffff;">
       <thead
         style="
           background-color: #a6b7be;
@@ -29,7 +31,7 @@
       </thead>
       <tbody>
         {% assign smi = site.data.landscape.smi %} {% for result in smi %}
-        <tr data-toggle="collapse" id="{{result.id}}" data-target=".{{result.id}}">
+        <tr class="collapse-head" id="{{result.id}}" data-toggle="tooltip" data-target=".{{result.id}}">
           <td>
             {% if result.mesh_name == "Open Service Mesh" %}
             <img
@@ -61,7 +63,7 @@
               height="30px"
               alt="{{result.mesh_name}}"
               data-toggle="tooltip"
-              title="{{result.more_details[0].mesh_name}}"
+              title="{{result.mesh_name}}"
             />
             {% elsif result.mesh_name == "Kuma" %}
             <img
@@ -92,8 +94,7 @@
 
           <td>
             <p>{{result.mesh_version}}</p>
-            </div>
-          </td>
+            </td>
 
           {% for spec in result.more_details %}
             
@@ -109,16 +110,16 @@
           {% endfor %}
 
           <td>{{result.passing_percentage}}</td>
-
         </tr>
 
         {% for prev_result in result.previous_versions %}
-          <tr class="collapse {{result.id}}" style="background-color: whitesmoke;">
-            <td></td>
-            <td>{{prev_result.mesh_version}}</td>
+          <tr class = "collapse-{{result.id}}" style="background-color: #f2f2f2;padding: 0">
+            <td style="padding: 0"><div class="collapse-body" style="display: none;padding: 10px"></div></td>
+            <td style="padding: 0"><div class="collapse-body" style="display: none;padding: 10px"> {{prev_result.mesh_version}} </div></td>
             
             {% for spec in result.more_details %}
-              <td scope="row" data-toggle="tooltip" title="{{spec.reason}}">
+              <td style="padding: 0" scope="row" data-toggle="tooltip" title="{{spec.reason}}">
+                <div class="collapse-body" style="display: none;padding: 10px">
                 {% if spec.capability == "None" %}
                 <span class="material-icons"> highlight_off </span>
                 {% elsif spec.capability == "Full" %}
@@ -126,13 +127,14 @@
                 {% elsif result.capability == "Half" %}
                 <span class="material-icons"> unpublished </span>
                 {% endif %}
+                </div>
               </td>
             {% endfor %}
 
-            <td>{{prev_result.passing_percentage}}</td>
+            <td style="padding: 0;"><div class="collapse-body" style="display: none;padding: 10px">{{prev_result.passing_percentage}}</div></td>
           </tr>
         {% endfor %}
-      
+
       {% endfor %}
       </tbody>
     </table>
