@@ -22,10 +22,6 @@ const Footer = () => {
                 <Row>
                     <Col xs={12} sm={5} lg={4}>
                         <div className="first">
-                            <Link to="#">
-                                <img src={logo} className="footer-logo" alt="logo" />
-                            </Link>
-                            <div className="descript">representing <i>every</i> service mesh</div>
                             <TwitterTimelineEmbed
                                 sourceType="profile"
                                 screenName="layer5"
@@ -125,7 +121,7 @@ const Footer = () => {
                             </Col>
                         </Row>
                         <Row className="footer-contact">
-                            <Col className="footer-widgets" xs={12} sm={6} lg={5}>
+                            <Col className="footer-widgets" xs={12} sm={6} lg={6}>
                                 <h3 className="widget-title">Contact</h3>
                                 <Row className="contactf">
                                     <a className="social-icons" href="mailto:community@layer5.io">
@@ -147,6 +143,12 @@ const Footer = () => {
                                         <img height="40 px" src={docker_icon} alt="docker" />
                                     </a>
                                 </Row>
+                            </Col>
+                            <Col className="footer-widgets" xs={12} sm={6} lg={6}>
+                                <Link to="#">
+                                    <img src={logo} className="footer-logo" alt="logo" />
+                                </Link>
+                                <div className="descript">representing <i>every</i> service mesh</div>
                             </Col>
                         </Row>
                     </Col>

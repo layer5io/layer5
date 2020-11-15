@@ -38,10 +38,11 @@ const FotterWrapper = styled.section`
   .footer-contact{
     .footer-widgets{
       .contactf{
-        padding-left: 15px;
         padding-right: 15px;
         margin: 0px;
         .social-icons{
+          margin-left: 5px;
+          margin-right: 5px;
           transition: 450ms all;
           &:hover {
             color: ${props => props.theme.headingColor}; 
@@ -100,8 +101,6 @@ const FotterWrapper = styled.section`
           height: 60px;
           width: 60px;
           line-height: 60px;
-          border-radius: 8px;
-          border: 1px solid ${props => props.theme.white};
           text-align: center;
           transition: 450ms all;
           &:hover {
