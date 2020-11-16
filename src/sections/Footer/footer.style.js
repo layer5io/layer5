@@ -38,17 +38,71 @@ const FotterWrapper = styled.section`
   .footer-contact{
     .footer-widgets{
       .contactf{
-        padding-left: 15px;
         padding-right: 15px;
         margin: 0px;
         .social-icons{
+          color: #3c494f;
+          transition:color .25s
+          margin-left: 5px;
+          margin-right: 5px;
           transition: 450ms all;
-          &:hover {
-            color: ${props => props.theme.headingColor}; 
+          filter: opacity(90%);
+          //  color: ${props => props.theme.headingColor}; 
+            .twitter:hover {
+              filter: brightness(0.5) sepia(1) hue-rotate(150deg) saturate(5);
+            }
+            .github:hover {
+              filter: brightness(1) invert(50)
+            }
+            .docker:hover {
+              filter: brightness(0.4) sepia(1) hue-rotate(150deg) saturate(5);
+            }
+            .youtube:hover {
+              filter: brightness(0.3) sepia(1) hue-rotate(355deg) saturate(30);
+            }
+            .slack:hover {
+              filter: brightness(.15) sepia(1) hue-rotate(255deg) saturate(15);
+            }
+            .mail:hover {
+              filter: opacity(100) brightness(.6) sepia(.5) hue-rotate(150deg) saturate(1);
+            }
+            }
           }
         }
       }
     }
+    .social__link {
+      display: block;
+      color: #3c494f;
+ 
+  }
+  .twitter:hover {
+
+  }
+  }
+  .social__link--mail:hover {
+      color:#3c494e
+  }
+  
+  .social__link--slack:hover {
+      color:#4A154B
+  }
+  
+  // .social__link--twitter:hover {
+  //     color:#1da1f2
+  // }
+  
+  .social__link--github:hover {
+      color:#24292e
+  }
+  
+  .social__link--youtube:hover {
+      color:red
+  }
+  
+  .social__link--docker:hover {
+      color:#2496ed
+  }
     .widget-title {
       color: ${props => props.theme.white};
       font-size: 24px;
@@ -100,8 +154,6 @@ const FotterWrapper = styled.section`
           height: 60px;
           width: 60px;
           line-height: 60px;
-          border-radius: 8px;
-          border: 1px solid ${props => props.theme.white};
           text-align: center;
           transition: 450ms all;
           &:hover {
@@ -124,6 +176,7 @@ const FotterWrapper = styled.section`
             );
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb7b81', endColorstr='#febfb3',GradientType=1 );
             border-color: #febfb3;
+            
           }
         }
       }

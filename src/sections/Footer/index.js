@@ -6,17 +6,13 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 
 import logo from "../../images/layer5/layer5-only/svg/layer5-light-bg.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
-
 import mail_icon from "../..//assets/images/app/footer/social/mail_white_trim.svg";
 import slack_icon from "../../assets/images/app/footer/social/slack_white_trim.svg";
 import twitter_icon from "../../assets/images/app/footer/social/twitter_white_trim.svg";
 import github_icon from "../../assets/images/app/footer/social/github_white_trim.svg";
 import youtube_icon from "../../assets/images/app/footer/social/youtube_white_trim.svg";
 import docker_icon from "../../assets/images/app/footer/social/docker_white_trim.svg";
-
-
 import FotterWrapper from "./footer.style";
-import Language from "./languages";
 
 const Footer = () => {
     return (
@@ -26,10 +22,6 @@ const Footer = () => {
                 <Row>
                     <Col xs={12} sm={5} lg={4}>
                         <div className="first">
-                            <Link to="#">
-                                <img src={logo} className="footer-logo" alt="logo" />
-                            </Link>
-                            <div className="descript">representing <i>every</i> service mesh</div>
                             <TwitterTimelineEmbed
                                 sourceType="profile"
                                 screenName="layer5"
@@ -88,18 +80,8 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link className="anchor" to="/programs/gsoc/2020">
-                    GSoC 2020
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className="anchor" to="/programs/gsod/2020">
-                    GSOD 2020
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className="anchor" to="/programs/communitybridge">
-                    Community Bridge
+                                            <Link className="anchor" to="/programs">
+                    Programs
                                             </Link>
                                         </li>
                                     </ul>
@@ -139,31 +121,34 @@ const Footer = () => {
                             </Col>
                         </Row>
                         <Row className="footer-contact">
-                            <Col className="footer-widgets" xs={12} sm={6} lg={7}>
-                                <Language />
-                            </Col>
-                            <Col className="footer-widgets" xs={12} sm={6} lg={5}>
-                                <h3 className="widget-title">Contact</h3>
+                            <Col className="footer-widgets" xs={12} sm={6} lg={6}>
+                                {/* <h3 className="widget-title">Contact</h3> */}
                                 <Row className="contactf">
                                     <a className="social-icons" href="mailto:community@layer5.io">
-                                        <img height="40 px" src={mail_icon} alt="mail" />
+                                        <img className="mail" height="40 px" src={mail_icon} alt="mail" />
                                     </a>
                                     <a className="social-icons" href="http://slack.layer5.io/">
-                                        <img height="40 px" src={slack_icon} alt="slack" />
+                                        <img className="slack" height="40 px" src={slack_icon} alt="slack" />
                                     </a>
                                     <a className="social-icons" href="https://twitter.com/layer5">
-                                        <img height="40 px" src={twitter_icon} alt="twitter" />
+                                        <img className="twitter" height="40 px" src={twitter_icon} alt="twitter" />
                                     </a>
                                     <a className="social-icons" href="https://github.com/layer5io">
-                                        <img height="40 px" src={github_icon} alt="github" />
+                                        <img className="github" height="40 px" src={github_icon} alt="github" />
                                     </a>
                                     <a className="social-icons" href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
-                                        <img height="40 px" src={youtube_icon} alt="youtube" />
+                                        <img className="youtube" height="40 px" src={youtube_icon} alt="youtube" />
                                     </a>
                                     <a className="social-icons" href="https://hub.docker.com/u/layer5/">
-                                        <img height="40 px" src={docker_icon} alt="docker" />
+                                        <img className="docker" height="40 px" src={docker_icon} alt="docker" />
                                     </a>
                                 </Row>
+                            </Col>
+                            <Col className="footer-widgets" xs={12} sm={6} lg={6}>
+                                <Link to="#">
+                                    <img src={logo} className="footer-logo" alt="logo" />
+                                </Link>
+                                <div className="descript">representing <i>every</i> service mesh</div>
                             </Col>
                         </Row>
                     </Col>
