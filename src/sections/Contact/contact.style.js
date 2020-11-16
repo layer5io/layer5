@@ -19,7 +19,9 @@ const ContactWrapper = styled.section`
     form{
         text-align: center;
         text-align: center;
-        background: #828c8c;
+        background: linear-gradient(122.25deg, #eee -2.45%, #fff 52.7%, #eee 96.5%);
+        border-radius: 10px 10px 0px 0px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         align-items: center;
         justify-content: center;
         padding: 25px;

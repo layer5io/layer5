@@ -14,7 +14,7 @@ const Contact = () => {
             <div className="parentcard">
                 <form name="contactform" method="post" action="#">
                     <SectionTitle className="section-title" UniWidth="100%">
-                        <h2><span>Subscribe to stay meshy</span></h2>
+                        <h2><span>Stay meshy and subscribe</span></h2>
                     </SectionTitle>
                     <Row>
                         <Col md={3}><img src={img} alt="forklift" /></Col>
