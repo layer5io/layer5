@@ -11,8 +11,8 @@ import AboutSectionWrapper from "./about.style";
 const About = () => {
     return (
         <AboutSectionWrapper id="about">
-            <img className="section__particle one" src={particle1} alt="img" />
-            <img className="section__particle two" src={particle2} alt="img" />
+            {/* <img className="section__particle one" src={particle1} alt="img" />
+            <img className="section__particle two" src={particle2} alt="img" /> */}
             <Container fullWidthSM>
                 <Row Vcenter={true}>
                     <Col xs={12} sm={6}>
@@ -46,7 +46,7 @@ const About = () => {
                                 <a href="http://slack.layer5.io">Collaborate</a>
                             </h4>
                             <p>
-                                <a className="community" href="http://slack.layer5.io">
+                                <a className="anchor" href="/community">
                   Join the community
                                 </a>{" "}
                 and collaborate on our projects.

@@ -4,7 +4,9 @@ import Bg1 from "../../assets/images/app/features/bg-1.png";
 import Bg2 from "../../assets/images/app/features/bg-2.png";
 
 import Vintage1 from "../../assets/images/app/features/vintage-1.png";
-import Vintage2 from "../../assets/images/app/features/vintage-2.png";
+import MesheryLogo from "./img/meshery-logo-light.svg";
+import MeshSyncLogo from "./img/meshsync.svg";
+
 
 
 const FeturesSectionWrapper = styled.section`
@@ -44,14 +46,14 @@ const FeturesSectionWrapper = styled.section`
         &:hover{
             .fetures-icon-block{
                 &:before{
-                    opacity: 1;
+                    opacity: .3;
                     right: -10px;
                 }
             }
         }
         &.v1{
             .fetures-icon-block{
-                background: url(${Bg1}) no-repeat;
+               // background: url(${Bg1}) no-repeat;
                 background-size: contain;
                 &:before{
                     background: url(${Vintage1});
@@ -60,10 +62,10 @@ const FeturesSectionWrapper = styled.section`
         }
         &.v2{
             .fetures-icon-block{
-                background: url(${Bg2}) no-repeat;
+               // background: url(${Bg2}) no-repeat;
                 background-size: contain;
                 &:before{
-                    background: url(${Vintage2});
+                    background: url(${MeshSyncLogo});
                 }
             }
         }
