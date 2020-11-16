@@ -3,9 +3,9 @@ import { meshes } from "../../collections/landscape/meshes";
 
 function generate_col(url, value) {
     if (url) {
-        return <td style={{ textAlign: "center" }}><a href={`${url}`}><i>{value}</i></a></td>
+        return <td style={{ textAlign: "center" }}><a href={`${url}`}><i>{value}</i></a></td>;
     } else {
-        return <td style={{ textAlign: "center" }}>{value}</td>
+        return <td style={{ textAlign: "center" }}>{value}</td>;
     }
 }
 
