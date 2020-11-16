@@ -31,7 +31,7 @@ $(document).ready(function() {
       </thead>
       <tbody>
         {% assign smi = site.data.landscape.smi %} {% for result in smi %}
-        <tr class="collapse-head" id="{{result.id}}" data-toggle="tooltip" data-target=".{{result.id}}">
+        <tr class="collapse-head" style="border: 1px dashed #a6b7be;" id="{{result.id}}" data-toggle="tooltip" data-target=".{{result.id}}">
           <td>
             {% if result.mesh_name == "Open Service Mesh" %}
             <img
@@ -113,7 +113,7 @@ $(document).ready(function() {
         </tr>
 
         {% for prev_result in result.previous_versions %}
-          <tr class = "collapse-{{result.id}}" style="background-color: #f2f2f2;padding: 0">
+          <tr class = "collapse-{{result.id}}" style="background-color: #f2f2f2;padding: 0;border: 1px dashed #a6b7be;">
             <td style="padding: 0"><div class="collapse-body" style="display: none;padding: 10px"></div></td>
             <td style="padding: 0"><div class="collapse-body" style="display: none;padding: 10px"> {{prev_result.mesh_version}} </div></td>
             
