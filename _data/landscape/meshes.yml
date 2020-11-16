@@ -11,6 +11,9 @@
   tracing: "Yes"
   encryption: "Yes"
   multi-tenant-score: 10
+  spiffe: "?"
+  spire: "?"
+
 
 - name: App Mesh
   desc: "AWS App Mesh - a managed control plane offering using Envoy as the data plane."
@@ -25,6 +28,8 @@
   tracing: "Yes"
   encryption: "Yes"
   multi-tenant-score: 6
+  spiffe: "<i><a class='blue-grey-text' href='https://github.com/aws/aws-app-mesh-roadmap/issues/68'>In progress</a></i>"
+  spire: "<i><a class='blue-grey-text' href='https://github.com/aws/aws-app-mesh-roadmap/issues/68'>In progress</a></i>"
 
 - name: Aspen Mesh
   desc: "Aspen Mesh - a commercial offering built on top of Istio with some open source components."
@@ -40,6 +45,8 @@
   encryption: "Yes"
   multi-tenant-score: 10
   netdev-persona-score: 6
+  spiffe: "?"
+  spire: "?"
 
 - name: Cilium
   desc: "Cilium - DaemonSet-based service mesh using Linux BPF."
@@ -55,6 +62,8 @@
   encryption: "Yes"
   multi-tenant-score: 1
   netdev-persona-score: 4
+  spiffe: "?"
+  spire: "?"
 
 - name: Citrix Service Mesh
   desc: "Service mesh based on Istio and served with Citrix ADC CPX sidecar proxies."
@@ -70,6 +79,8 @@
   encryption: "Yes"
   multi-tenant-score: 1
   netdev-persona-score: 9
+  spiffe: "Partial"
+  spire: "No"
 
 - name: Consul
   desc: "Consul - Connect is a feature that enables encrpyted communication between services."
@@ -85,6 +96,8 @@
   encryption: "Yes"
   multi-tenant-score: 1
   netdev-persona-score: 9
+  spiffe: "Yes"
+  spire: "No"
   smi: 
     tac: "Yes"
     taclink: "https://github.com/hashicorp/consul-smi-controller"
@@ -108,6 +121,8 @@
   tracing: "OpenTracing compatible"
   encryption: "Yes"
   multi-tenant-score: 1
+  spiffe: "?"
+  spire: "?"
 
 - name: Istio
   link: https://istio.io
@@ -123,6 +138,8 @@
   encryption: "Yes"
   multi-tenant-score: 5
   netdev-persona-score: 1
+  spiffe: "Partial"
+  spire: "No"
   smi: 
     tac: "Yes"
     taclink: "https://github.com/deislabs/smi-adapter-istio"
@@ -147,6 +164,8 @@
   encryption: "Yes"
   multi-tenant-score: 8
   netdev-persona-score: 2
+  spiffe: "Yes"
+  spire: "No"
 
 - name: Linkerd 1.x
   desc: "Linkerd - hosted by the CNCF and built on top of Twitter Finagle. Linkerd includes both a proxying data plane and the Namerd (“namer-dee”) control plane all in one package. "
@@ -162,6 +181,8 @@
   encryption: "Yes"
   multi-tenant-score: 1
   netdev-persona-score: 5
+  spiffe: "No"
+  spire: "No"
 
 - name: Linkerd 2.x (Conduit)
   desc: "Conduit - A Kubernetes-native (only) service mesh announced as a project in December 2017. In contrast to Istio and in learning from Linkerd, Conduit’s design principles revolve around a minimalist architecture and zero config philosophy, optimizing for streamlined setu. Open Source. From Buoyant. Written in Rust and Go."
@@ -177,6 +198,8 @@
   encryption: "Yes"
   multi-tenant-score: 1
   netdev-persona-score: 5
+  spiffe: "No"
+  spire: "No"
   smi: 
     tac: "No"
     taclink: ""
@@ -201,6 +224,8 @@
   encryption: "Yes"
   multi-tenant-score: "?"
   netdev-persona-score: "?"
+  spiffe: "Yes"
+  spire: "Yes"
   smi: 
     tac: "Yes"
     taclink: "https://docs.nginx.com/nginx-service-mesh/tutorials/accesscontrol-walkthrough/"
@@ -225,6 +250,8 @@
   encryption: "No"
   multi-tenant-score: 1
   netdev-persona-score: 3
+  spiffe: "No"
+  spire: "No"
   smi: 
     tac: "Yes"
     taclink: "https://github.com/traefik/mesh"
@@ -248,6 +275,8 @@
   tracing: "Jaeger/Grafana"
   encryption: "Yes"
   multi-tenant-score: 10
+  spiffe: "Partial"
+  spire: "No"
 
 - name: Mesher
   desc: "Mesher is service mesh implementation based on go-chassis which can work together with ServiceComb Service center running on any infrastructure. Mesher can work with go-chassis in same service mesh control plane and it supports both linux and windows OS"
@@ -262,6 +291,8 @@
   tracing: "?"
   encryption: "?"
   multi-tenant-score: 8
+  spiffe: "No"
+  spire: "No"
 
 - name: SOFAMesh
   desc: A solution for large-scale Service Mesh based on Istio.
@@ -283,10 +314,13 @@
   encryption: "?"
   multi-tenant-score: 8
   netdev-persona-score: 7
+  spiffe: "Partial"
+  spire: "No"
 
 - name: Octarine
   desc: "Octarine is a security platform for k8s workloads that combines admission control with runtime network security leveraging an Envoy-based service mesh"
   link: https://www.octarinesec.com/
+  autoinject: "?"
   h2: "Yes"
   grpc: "Yes"
   tcp-web: "Yes"
@@ -297,10 +331,13 @@
   encryption: "Yes"
   multi-tenant-score: 10
   netdev-persona-score: 8
+  spiffe: "No"
+  spire: "No"
 
 - name: Open Service Mesh
   desc: "Open Service Mesh (OSM) is a lightweight and extensible cloud native service mesh."
   link: https://openservicemesh.io/
+  autoinject: "?"
   h2: "Yes"
   grpc: "Yes"
   tcp-web: "Yes"
@@ -311,6 +348,8 @@
   encryption: "Yes"
   multi-tenant-score: 1
   netdev-persona-score: 5
+  spiffe: "<i><a class='blue-grey-text' href='https://github.com/openservicemesh/osm/issues/1681'>In progress</a></i>"
+  spire: "No"
   smi: 
     tac: "Yes"
     taclink: "https://github.com/openservicemesh/osm#smi-specification-support"
@@ -333,11 +372,13 @@
   prometheus: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
   tracing: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
   encryption: "<i><a class='blue-grey-text' href='https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c'>Project shutdown</a></i>"
+  spiffe: "No"
+  spire: "No"
 
 - name: Yggdrasil
   desc: "Yggdrasil is an Envoy control plane that configures listeners and clusters based off Kubernetes ingresses from multiple Kube Clusters."
   link: https://github.com/uswitch/yggdrasil
-  autoinject: "N/A"
+  autoinject: "?"
   tcp-web: "?"
   grpc: "Yes"
   h2: "Yes"
@@ -347,6 +388,8 @@
   tracing: "Pluggable"
   encryption: "Yes"
   multi-tenant-score: 1
+  spiffe: "No"
+  spire: "No"
 
 - name: Zuul
   desc: "Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more."
@@ -361,6 +404,8 @@
   tracing: "?"
   encryption: "?"
   multi-tenant-score: 1
+  spiffe: "No"
+  spire: "No"
 
 - name: Vulcand
   desc: "Programmatic load balancer and service mesh backed by etcd"
@@ -375,6 +420,8 @@
   tracing: "No"
   encryption: "Yes"
   multi-tenant-score: 1
+  spiffe: "No"
+  spire: "No"
 
 - name: Network Service Mesh
   desc: "Network Service Mesh (NSM) is a novel approach solving complicated L2/L3 use cases in Kubernetes that are tricky to address with the existing Kubernetes Network Mode"
@@ -389,6 +436,8 @@
   tracing: "?"
   encryption: "?"
   multi-tenant-score: 1
+  spiffe: "Yes"
+  spire: "Yes"
 
 # - name: Vamp
 #   desc: "Very Awesome Microservice Platform - canary releasing and autoscaling for microservice systems."

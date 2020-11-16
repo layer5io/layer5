@@ -10769,12 +10769,20 @@ div.slack {
   .data-cont {
     width: 80%;
   }
+
+  .mesh-ann-date {
+    padding-top: 5px;
+  }
 }
 
 @media screen and (max-width: 430px) {
   .data-cont::after {
     width: 20px;
     height: 20px;
+  }
+
+  .content0, .content1 {
+    height: 80px;
   }
 
   .arr0::after,
@@ -10787,11 +10795,12 @@ div.slack {
   }
 
   .mesh-name {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 
   .mesh-ann-date {
     font-size: 0.8rem;
+    padding-top: 16px;
   }
 }
 
