@@ -31,39 +31,39 @@ const Howitworks = () => (
                             logos: [
                                 {
                                     alt: "Consul",
-                                    url: require("../images/How-it-works/consul.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Istio",
-                                    url: require("../images/How-it-works/istio.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Linkerd",
-                                    url: require("../images/How-it-works/linkerd.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Octarine",
-                                    url: require("../images/How-it-works/octarine.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Network Service Mesh",
-                                    url: require("../images/How-it-works/nsm.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Traefik Mesh",
-                                    url: require("../images/How-it-works/maesh.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Citrix Service Mesh",
-                                    url: require("../images/How-it-works/citrix.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "NGINX Service Mesh",
-                                    url: require("../images/How-it-works/nginx-sm.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "VMware Service Mesh",
-                                    url: require("../images/How-it-works/tanzu.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Open Service Mesh",
@@ -78,39 +78,39 @@ const Howitworks = () => (
                             logos: [
                                 {
                                     alt: "Consul",
-                                    url: require("../images/How-it-works/consul.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Istio",
-                                    url: require("../images/How-it-works/istio.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Linkerd",
-                                    url: require("../images/How-it-works/linkerd.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Octarine",
-                                    url: require("../images/How-it-works/octarine.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Network Service Mesh",
-                                    url: require("../images/How-it-works/nsm.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Traefik Mesh",
-                                    url: require("../images/How-it-works/maesh.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Citrix Service Mesh",
-                                    url: require("../images/How-it-works/citrix.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "NGINX Service Mesh",
-                                    url: require("../images/How-it-works/nginx-sm.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "VMware Service Mesh",
-                                    url: require("../images/How-it-works/tanzu.svg"),
+                                    url: require("../images/How-it-works/osm.svg"),
                                 },
                                 {
                                     alt: "Open Service Mesh",

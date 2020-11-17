@@ -13,6 +13,7 @@ export default function Feature({
     const [ref, inView] = useInView({ threshold: 0.8 });
     const [inViewStatus, setInViewStatus] = useState(false);
     if (inView != inViewStatus) {
+        
         setInViewStatus(inView);
         onInViewStatusChanged(inView);
     }
