@@ -6,7 +6,7 @@
           <div class="meshname-img">
             {% if meshes.icon %}
               <div class="img-style{{ meshes.timeline-order | modulo: 2 }}">
-                <img src="{{ meshes.icon }}" alt="{{meshes.name}}" style="width:inherit; height:inherit;">
+                <img src="{{ meshes.icon }}" alt="{{meshes.name}}" style="width:auto; height:inherit;">
               </div>
             {% endif %}
             <p class="mesh-name">{{meshes.name}}</p>

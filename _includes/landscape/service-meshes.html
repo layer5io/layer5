@@ -35,6 +35,12 @@
       background-position: center right;
       background-size: contain;
     }
+    /* .smi-bg {
+      background-image: url('/assets/images/smi-conformance/smi-logo.svg');
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-size: contain;
+    } */
   </style>
 
   <!-- Arrow (Categories) -->
@@ -114,7 +120,7 @@
       </ul>
     </div>
 
-    <div class="card-content comparison">
+    <div class="card-content">
       <ul class="category">
         Load Balancer<br />
         {% assign sorted = (site.data.landscape.lb | sort: 'name') %} {% assign
@@ -162,22 +168,19 @@
 
   <a name="smi"></a>
   
-  <div class="row">
+  <div class="row smi-bg">
     <div class="col s8">
       <h2 class="white-text center landscape-category">Service Mesh Interface Compatibility</h2>
       {% include landscape/service-mesh-smi.html %}
       <span style="color: aliceblue;">Found a discrepancy, missing or out-dated information? Please
         <a href="https://github.com/layer5io/layer5/issues" style="color: aliceblue;">submit an issue</a>.</span>
     </div>
-    <div class="col s4 smi-logo-sizing">
+    <div class="col s4 ">
       <a href="/blog/a-standard-interface-for-service-meshes">
-        <img src="/assets/images/landscape/smi-logo.png" style="
-              margin: 15%;
-              height: 100%;"
+        <img src="/assets/images/landscape/smi-logo.png" class="smi-logo-sizing"
           />
         </a>
         <br>
-        <span style="color:aliceblue;">Based on <a href="https://servicemesh.es/" style="color:aliceblue;">servicemesh.es</a> by <a href="https://creativecommons.org/licenses/by/4.0/" style="color:aliceblue;">INNOQ</a>.</span>
       </div>
     </div>
   </div>
