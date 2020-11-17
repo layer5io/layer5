@@ -212,7 +212,7 @@
   commercial: AWS
   category: Service Mesh
   timeline-order: 18
-  icon: assets/images/service-mesh-icons/App Mesh.png
+  icon: assets/images/service-mesh-icons/aws-app-mesh.svg
 
 - name: Kuma
   opensource: "Yes"
@@ -224,7 +224,7 @@
   commercial: Kuma
   category: Service Mesh
   timeline-order: 19
-  icon: assets/images/service-mesh-icons/Kuma.svg
+  icon: assets/images/service-mesh-icons/kuma.svg
 
 - name: Citrix Service Mesh
   opensource: "No"
