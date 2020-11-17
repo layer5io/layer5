@@ -31,12 +31,52 @@
       <td>
         <a href="{{nonfunc.link}}" title="{{nonfunc.link}}">{{nonfunc.name}}</a>
       </td>
-      <td style="text-align: center;">{{nonfunc.opensource}}</td>
-      <td style="text-align: center;">{{nonfunc.governance}}</td>
-      <td style="text-align: center;">{{nonfunc.primary-lang}}</td>
-      <td style="text-align: center;">{{nonfunc.announce-date}}</td>
-      <td style="text-align: center;">{{nonfunc.ga-1-date}}</td>
-      <td style="text-align: center;">{{nonfunc.commercial}}</td>
+      <td style="text-align: center;">
+        {% if nonfunc.opensource=="Yes" %}
+          <i class="fa fa-check-circle" style="font-size:20px;color:green"></i>
+        {% elsif nonfunc.opensource=="No" %}
+          <i class="fa fa-times-circle" style="font-size:18px;color:red"></i>
+        {% elsif nonfunc.opensource=="?" %}
+          <i class="fa fa-question-circle" style="font-size:18px;color:gray"></i>
+        {% else %}
+          {{nonfunc.opensource}}
+        {% endif %}
+      </td>
+      <td style="text-align: center;">
+        {% if nonfunc.governance=="?" %}
+          <i class="fa fa-question-circle" style="font-size:18px;color:gray"></i>
+        {% else %}
+          {{nonfunc.governance}}
+        {% endif %}
+      </td>
+      <td style="text-align: center;">
+        {% if nonfunc.primary-lang=="?" %}
+          <i class="fa fa-question-circle" style="font-size:18px;color:gray"></i>
+        {% else %}
+          {{nonfunc.primary-lang}}
+        {% endif %}
+      </td>
+      <td style="text-align: center;">
+        {% if nonfunc.announce-date=="?" %}
+          <i class="fa fa-question-circle" style="font-size:18px;color:gray"></i>
+        {% else %}
+          {{nonfunc.announce-date}}
+        {% endif %}
+      </td>
+      <td style="text-align: center;">
+        {% if nonfunc.ga-1-date=="?" %}
+          <i class="fa fa-question-circle" style="font-size:18px;color:gray"></i>
+        {% else %}
+          {{nonfunc.ga-1-date}}
+        {% endif %}
+      </td>
+      <td style="text-align: center;">
+        {% if nonfunc.commercial=="?" %}
+          <i class="fa fa-question-circle" style="font-size:18px;color:gray"></i>
+        {% else %}
+          {{nonfunc.commercial}}
+        {% endif %}
+      </td>
     </tr>
     {% endfor %}
   </tbody>

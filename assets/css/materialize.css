@@ -10769,12 +10769,20 @@ div.slack {
   .data-cont {
     width: 80%;
   }
+
+  .mesh-ann-date {
+    padding-top: 5px;
+  }
 }
 
 @media screen and (max-width: 430px) {
   .data-cont::after {
     width: 20px;
     height: 20px;
+  }
+
+  .content0, .content1 {
+    height: 80px;
   }
 
   .arr0::after,
@@ -10787,11 +10795,12 @@ div.slack {
   }
 
   .mesh-name {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 
   .mesh-ann-date {
     font-size: 0.8rem;
+    padding-top: 16px;
   }
 }
 
@@ -10842,29 +10851,4 @@ div.slack {
 
 #meetingstable tr:nth-child(even) {
   background-color: #e8e8e8;
-}
-
-/* Path to service mesh architectures page */
-.row.bookImageGrp {
-  float: right;
-  padding: 10px 50px 0 50px;
-  text-align: center;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  top: -10px;
-}
-
-@media only screen and (min-width: 1310px) {
-  .row.bookImageGrp {
-    top: -80px !important;
-  }
-}
-@media only screen and (max-width: 486px) {
-  .book-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
 }

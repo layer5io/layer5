@@ -5,7 +5,7 @@
   primary-lang: Go
   announce-date: December 2014
   ga-1-date: December 2014
-  commercial: N/A
+  commercial: "?"
   category: Service Mesh
   timeline-order: 1
   icon: assets/images/service-mesh-icons/vulcan.png
@@ -186,7 +186,7 @@
   primary-lang: Go
   announce-date: August 2018
   ga-1-date: "?"
-  commercial: "N/A"
+  commercial: "?"
   category: Service Mesh
   timeline-order: 16
 
@@ -430,7 +430,7 @@
   primary-lang: C++
   announce-date: November 2014
   ga-1-date: November 2014
-  commercial: N/A
+  commercial: "?"
   category: Load-Balancers
 
 - name: Traefik
