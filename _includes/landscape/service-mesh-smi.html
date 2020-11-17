@@ -100,11 +100,11 @@ $(document).ready(function() {
             
           <td data-toggle="tooltip" title="{{spec.reason}}">
             {% if spec.capability == "None" %}
-            <span class="material-icons"> highlight_off </span>
+            <i class="fa fa-times-circle" style="font-size:18px;color:red"></i>
             {% elsif spec.capability == "Full" %}
-            <span class="material-icons"> check_circle_outline </span>
+            <i class="fa fa-check-circle" style="font-size:20px;color:green"></i>
             {% elsif result.capability == "Half" %}
-            <span class="material-icons"> unpublished </span>
+            <i class="fa fa-check-circle" style="font-size:20px;color:yellow"></i>
             {% endif %}
           </td>
           {% endfor %}
@@ -121,11 +121,11 @@ $(document).ready(function() {
               <td style="padding: 0" scope="row" data-toggle="tooltip" title="{{spec.reason}}">
                 <div class="collapse-body" style="display: none;padding: 10px">
                 {% if spec.capability == "None" %}
-                <span class="material-icons"> highlight_off </span>
+                <i class="fa fa-times-circle" style="font-size:18px;color:red"></i>
                 {% elsif spec.capability == "Full" %}
-                <span class="material-icons"> check_circle_outline </span>
+                <i class="fa fa-check-circle" style="font-size:20px;color:green"></i>
                 {% elsif result.capability == "Half" %}
-                <span class="material-icons"> unpublished </span>
+                <i class="fa fa-check-circle" style="font-size:20px;color:yellow"></i>
                 {% endif %}
                 </div>
               </td>
