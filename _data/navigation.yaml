@@ -39,21 +39,6 @@
     - name: Programs
       link: /programs
       new_window: false
-    - name: Newcomers
-      link: /community/newcomers
-      new_window: false
-    - name: Slack
-      link: http://slack.layer5.io/
-      new_window: true
-      external: true
-    - name: Videos
-      link: https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1 
-      new_window: true
-      external: true
-    - name: Open Source
-      link: https://github.com/layer5io
-      new_window: true
-      external: true
 - name: Learn
   new_window: false
   highlight: true
