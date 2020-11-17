@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col s12">
     <h2 class="white-text center landscape-category">Comparison of Service Mesh Strengths</h2>
-    <img src="/assets/images/landscape/comparison-of-service-mesh-strengths.svg" width="100%" />
+<img src="/assets/images/landscape/comparison-of-service-mesh-strengths.svg" width="100%" />
     <h2 class="white-text center landscape-category">Service Mesh Timeline<br /><span style="font-size:.65em;">Project Announcement</span></h2>
     {% include landscape/mesh-timeline.html %}
   </div>
@@ -35,12 +35,6 @@
       background-position: center right;
       background-size: contain;
     }
-    /* .smi-bg {
-      background-image: url('/assets/images/smi-conformance/smi-logo.svg');
-      background-repeat: no-repeat;
-      background-position: center right;
-      background-size: contain;
-    } */
   </style>
 
   <!-- Arrow (Categories) -->
@@ -120,7 +114,7 @@
       </ul>
     </div>
 
-    <div class="card-content">
+    <div class="card-content comparison">
       <ul class="category">
         Load Balancer<br />
         {% assign sorted = (site.data.landscape.lb | sort: 'name') %} {% assign
@@ -168,16 +162,18 @@
 
   <a name="smi"></a>
   
-  <div class="row smi-bg">
+  <div class="row">
     <div class="col s8">
       <h2 class="white-text center landscape-category">Service Mesh Interface Compatibility</h2>
       {% include landscape/service-mesh-smi.html %}
-      <span style="color: aliceblue;">Found a discrepancy, missing or out-dated information? Please
-        <a href="https://github.com/layer5io/layer5/issues" style="color: aliceblue;">submit an issue</a>.</span>
+      <span style="color: aliceblue;">The SMI conformance effort is still work-in-progress. Refer 
+        <a href="http://layer5.io/smi" style="color: aliceblue;">layer5.io/smi</a> for more details.</span>
     </div>
-    <div class="col s4 ">
-      <a href="/smi">
-        <img src="/assets/images/landscape/smi-logo.png" class="smi-logo-sizing"
+    <div class="col s4 smi-logo-sizing">
+      <a href="/blog/a-standard-interface-for-service-meshes">
+        <img src="/assets/images/landscape/smi-logo.png" style="
+              margin: 15%;
+              height: 100%;"
           />
         </a>
         <br>
