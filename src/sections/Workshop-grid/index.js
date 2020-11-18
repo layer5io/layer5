@@ -8,11 +8,11 @@ import PageHeader from "../../reusecore/PageHeader";
 import { WorkshopPageWrapper } from "./WorkshopsGrid.style";
 
 // Social Icons
-import Slack from "../../images/socialIcons/slack_color.png";
-import Slide from "../../images/socialIcons/slide_color.png";
-import Link from "../../images/socialIcons/link_color.png";
-import Youtube from "../../images/socialIcons/youtube_color.png";
-import Lab from "../../images/socialIcons/lab_color.png";
+import Slack from "../../assets/images/socialIcons/slack_color.png";
+import Slide from "../../assets/images/socialIcons/slide_color.png";
+import Link from "../../assets/images/socialIcons/link_color.png";
+import Youtube from "../../assets/images/socialIcons/youtube_color.png";
+import Lab from "../../assets/images/socialIcons/lab_color.png";
 
 
 const WorkshopsPage = ({hide_path}) => {
@@ -102,29 +102,29 @@ const WorkshopsPage = ({hide_path}) => {
                                         </div>
                                         <div className={content && ID === id ? "btn-and-status-open" : "btn-and-status"}>
                                             <div className="social-icons">
-                                                {frontmatter.slack && frontmatter.status === "delivered" && content && ID === id ? 
+                                                {frontmatter.slack && frontmatter.status === "delivered" && content && ID === id ?
                                                     <a href={frontmatter.slack} target = "_blank" rel="noreferrer" className="links">
                                                         <img src={Slack} alt="Slack"/>
                                                         Slack
                                                     </a> : ""}
-                                                {frontmatter.slides && frontmatter.status === "delivered" && content && ID === id ? 
+                                                {frontmatter.slides && frontmatter.status === "delivered" && content && ID === id ?
                                                     <a href={frontmatter.slides} target = "_blank" rel="noreferrer" className="links">
-                                                        <img src={Slide} alt="Slide"/> 
+                                                        <img src={Slide} alt="Slide"/>
                                                         Slides
                                                     </a> : ""}
-                                                {frontmatter.eurl && frontmatter.status === "delivered" && content && ID === id ? 
+                                                {frontmatter.eurl && frontmatter.status === "delivered" && content && ID === id ?
                                                     <a href={frontmatter.eurl} target = "_blank" rel="noreferrer" className="links">
-                                                        <img src={Link} alt="Link"/> 
+                                                        <img src={Link} alt="Link"/>
                                                         EURL
                                                     </a> : ""}
-                                                {frontmatter.labs && frontmatter.status === "delivered" && content && ID === id ? 
+                                                {frontmatter.labs && frontmatter.status === "delivered" && content && ID === id ?
                                                     <a href={frontmatter.labs} target = "_blank" rel="noreferrer" className="links">
-                                                        <img src={Lab} alt="Lab"/> 
+                                                        <img src={Lab} alt="Lab"/>
                                                         Labs
                                                     </a> : ""}
-                                                {frontmatter.video && frontmatter.status === "delivered" && content && ID === id ? 
+                                                {frontmatter.video && frontmatter.status === "delivered" && content && ID === id ?
                                                     <a href={frontmatter.video} target = "_blank" rel="noreferrer" className="links">
-                                                        <img src={Youtube} alt="Youtube video"/> 
+                                                        <img src={Youtube} alt="Youtube video"/>
                                                         Video
                                                     </a> : ""}
                                             </div>

@@ -1,11 +1,11 @@
 import React from "react";
 
 // Images
-import Jobs_White from "../../images/contact/jobs_white.svg";
-import Support_White from "../../images/contact/support_white.svg";
-import Partner_White from "../../images/contact/partner_white.svg";
-import Contact_White from "../../images/contact/contact_white.svg";
-import DataCenter from "../../images/contact/datacenter-crash.svg";
+import Jobs_White from "../../assets/images/contact/jobs_white.svg";
+import Support_White from "../../assets/images/contact/support_white.svg";
+import Partner_White from "../../assets/images/contact/partner_white.svg";
+import Contact_White from "../../assets/images/contact/contact_white.svg";
+import DataCenter from "../../assets/images/contact/datacenter-crash.svg";
 
 import ContactCard from "../../components/ContactCard/ContactCard";
 import { Container, Col, Row} from "../../reusecore/Layout";
@@ -18,8 +18,8 @@ const ContactContent = () => {
             <Container>
                 <Row Hcenter>
                     <Col xs={12} md={4}>
-                        <ContactCard 
-                            link="/careers" 
+                        <ContactCard
+                            link="/careers"
                             Imgsrc={Jobs_White}
                             alt="jobs_white"
                             title="Careers"
@@ -28,7 +28,7 @@ const ContactContent = () => {
                     </Col>
 
                     <Col xs={12} md={4}>
-                        <ContactCard 
+                        <ContactCard
                             link="mailto:support@layer5.io"
                             Imgsrc={Support_White}
                             alt="support_white"
@@ -38,7 +38,7 @@ const ContactContent = () => {
                     </Col>
 
                     <Col xs={12} md={4}>
-                        <ContactCard 
+                        <ContactCard
                             link="/partners"
                             Imgsrc={Partner_White}
                             alt="partner_white"
@@ -48,7 +48,7 @@ const ContactContent = () => {
                     </Col>
 
                     <Col xs={12} md={4}>
-                        <ContactCard 
+                        <ContactCard
                             link="/about"
                             Imgsrc={Contact_White}
                             alt="Contact_White"

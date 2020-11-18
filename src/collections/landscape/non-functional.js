@@ -12,8 +12,8 @@ import Maistra from "../../assets/images/service-mesh-icons/maistra.png";
 import SofaMesh from "../../assets/images/service-mesh-icons/sofamesh.png";
 import Octarine from "../../assets/images/service-mesh-icons/octarine.png";
 import TraefikMesh from "../../assets/images/service-mesh-icons/traefik.svg";
-import AppMesh from "../../assets/images/service-mesh-icons/App Mesh.png";
-import Kuma from "../../assets/images/service-mesh-icons/Kuma.svg";
+import AppMesh from "../../assets/images/service-mesh-icons/aws-app-mesh.png";
+import Kuma from "../../assets/images/service-mesh-icons/kuma.svg";
 import Citrix from "../../assets/images/service-mesh-icons/citrix.svg";
 import Osm from "../../assets/images/service-mesh-icons/osm.png";
 
