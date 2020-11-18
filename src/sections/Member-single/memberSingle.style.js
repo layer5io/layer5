@@ -120,6 +120,11 @@ export const MemberSingleWrapper = styled.div`
                         display: block;
                         width: 32px;
                     }
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        max-width: none;
+                    }
                     .meshmate-color{
                         display: none;
                     }

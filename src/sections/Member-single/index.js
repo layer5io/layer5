@@ -4,8 +4,8 @@ import { MemberSingleWrapper } from "./memberSingle.style";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import {Col, Container, Row} from "../../reusecore/Layout";
 import Image from "../../components/image";
-import MeshMateIconWhite from "../../svgs/meshmate-icon.svg";
-import MeshMateIcon from "../../svgs/meshmate-icon.svg";
+import MeshMateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
+import MeshMateIconWhite from "../../assets/images/meshmate/meshmate-icon-white.svg";
 
 const MemberSingle = ({frontmatter}) =>{
     const {name, position,  github, twitter, image_path, meshmate, linkedin, location, skills, technologies, bio} = frontmatter;
@@ -67,14 +67,13 @@ const MemberSingle = ({frontmatter}) =>{
                                     { meshmate && (
                                         <li>
                                             <Link to={"/community/meshmates"}>
-                                                <MeshMateIconWhite className="meshmate-white" size={32}/>
-                                                <MeshMateIcon className="meshmate-color" size={32}/>
+                                                <img src={MeshMateIconWhite} className="meshmate-white" alt="meshmate-white-icon" />
+                                                <img src={MeshMateIcon} className="meshmate-color" alt="meshmate-color-icon" />
                                             </Link>
                                         </li>
                                     )}
                                 </ul>
                             </div>
-
                         </Col>
                     </Row>
                 </div>
