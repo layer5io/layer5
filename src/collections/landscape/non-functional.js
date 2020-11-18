@@ -10,7 +10,7 @@ import NetworkServiceMesh from "../../assets/images/service-mesh-icons/nsm.png";
 import Rotor from "../../assets/images/service-mesh-icons/rotor.png";
 import Maistra from "../../assets/images/service-mesh-icons/maistra.png";
 import SofaMesh from "../../assets/images/service-mesh-icons/sofamesh.png";
-import Octarine from "../../assets/images/service-mesh-icons/Octarine.png";
+import Octarine from "../../assets/images/service-mesh-icons/octarine.png";
 import TraefikMesh from "../../assets/images/service-mesh-icons/traefik.svg";
 import AppMesh from "../../assets/images/service-mesh-icons/App Mesh.png";
 import Kuma from "../../assets/images/service-mesh-icons/Kuma.svg";

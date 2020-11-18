@@ -10,7 +10,6 @@ import SmpWhite from "../../../assets/images/smp/icon/smp-white.png";
 import SmPLightTextSide from "../../../assets/images/smp/horizontal/smp-light-text-side.png";
 import SmPDarkTextSide from "../../../assets/images/smp/horizontal/smp-dark-text-side.png";
 import SmPWhiteTextSide from "../../../assets/images/smp/horizontal/smp-white-text-side.png";
-import { Link } from "gatsby";
 
 const SMPWrap = styled.section`
   .SmpWhite {

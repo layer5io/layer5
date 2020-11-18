@@ -6,10 +6,10 @@ import Button from "../../../reusecore/Button";
 import ColorBox from "../../../components/ColorBox";
 import media from "../../../components/mediaQuery";
 
-import Layer5CommunityWhite from "../../../images/layer5/layer5-tagline/png/layer5-tag-white-bg.png";
-import Layer5WhiteBg from "../../../images/layer5/layer5-only/png/layer5-white-bg.png";
-import Layer5TagDark from "../../../images/layer5/layer5-tagline/png/layer5-tag-community-white.png";
-import Bookmarks from "../../../images/layer5/bookmarks.png";
+import Layer5CommunityWhite from "../../../assets/images/layer5/layer5-tagline/png/layer5-tag-white-bg.png";
+import Layer5WhiteBg from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
+import Layer5TagDark from "../../../assets/images/layer5/layer5-tagline/png/layer5-tag-community-white.png";
+import Bookmarks from "../../../assets/images/layer5/bookmarks.png";
 
 const Layer5Wrapper = styled.section`
     .brandHeader {

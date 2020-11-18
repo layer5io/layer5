@@ -4,17 +4,17 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
 
-import partner1 from "../../images/partners/University_of_Texas_at_Austin_seal.png";
-import partner2 from "../../images/partners/gsoc.svg";
-import partner3 from "../../images/partners/UEM_Logo.jpg";
-import partner4 from "../../images/partners/citrix.svg";
-import partner5 from "../../images/partners/cncf-stacked-color.svg";
-import partner6 from "../../images/partners/hashicorp_vertical_black.svg";
-import partner7 from "../../images/partners/hpe_side_black.svg";
-import partner8 from "../../images/partners/microsft.svg";
-import partner9 from "../../images/partners/redhat.svg";
-import partner10 from "../../images/partners/smi1.png";
-import partner11 from "../../images/partners/forklift.svg";
+import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.png";
+import partner2 from "../../assets/images/partners/gsoc.svg";
+import partner3 from "../../assets/images/partners/UEM_Logo.jpg";
+import partner4 from "../../assets/images/partners/citrix.svg";
+import partner5 from "../../assets/images/partners/cncf-stacked-color.svg";
+import partner6 from "../../assets/images/partners/hashicorp_vertical_black.svg";
+import partner7 from "../../assets/images/partners/hpe_side_black.svg";
+import partner8 from "../../assets/images/partners/microsft.svg";
+import partner9 from "../../assets/images/partners/redhat.svg";
+import partner10 from "../../assets/images/partners/smi1.png";
+import partner11 from "../../assets/images/partners/forklift.svg";
 
 import { MdAccountBox, MdMail } from "react-icons/md";
 
@@ -89,7 +89,7 @@ const Partner = () => {
                             </div>
                         </div>
                     </Col>
-                    
+
                 </Row>
                 <Row>
                     <Col xs={12} sm={2} lg={2}>
@@ -110,7 +110,7 @@ const Partner = () => {
                     </Col>
                 </Row>
                 <h1 className="heading">Technology Partners</h1>
-                <Row>   
+                <Row>
                     <Col xs={12} sm={2} lg={2}>
                         <div className="img1" style={{paddingTop:"1.625em"}}>
                             <a href="https://www.citrix.com/products/citrix-adc/" target="_blank" rel="noopener noreferrer">
