@@ -5,15 +5,13 @@ image: /assets/images/posts/2020-11-17-layer5-at-kubecon-2020/kubecon-layer5.png
 author: Lee Calcote
 title: Layer5 at KubeCon NA
 tags:
- - community
+ - smi
  - opensource
 categories: community
-permalink: /blog/layer5-at-kubecon-2020
-redirect_from: 
- - /blog/layer5-at-kubecon-2020
+permalink: /blog/layer5-at-kubecon-na-2020
 ---
 
-<p style="color:#3c494f;text-align:center;">Thanks to our open source contributors, Layer5 projects are well represented at KubeCon NA 2020. Attend our three talks to help you get started with managing your own service mesh!</p>
+<p style="color:#3c494f;text-align:center;">Thanks to our open source contributors, Layer5 projects are well represented at KubeCon. Attend our talks to help you get started with managing your own service mesh!</p>
 
 <h4 style="color:#00b39f;">KubeCon + CloudNativeCon NA 2020 is here and Layer5 is in the spotlight!</h4>
 
