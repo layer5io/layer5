@@ -31,31 +31,31 @@ const Howitworks = () => (
                             logos: [
                                 {
                                     alt: "GitHub",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "AWS",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "Microsoft Azure",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "Google Cloud Platform",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "Okta",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "Ping",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "More integrations",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                             ],
                         },
@@ -66,30 +66,30 @@ const Howitworks = () => (
                             logos: [
                                 {
                                     alt: "Consul",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "AWS",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "Microsoft Azure",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "Terraform",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "Google Cloud Platform",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
                                     alt: "Kubernetes",
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                 },
                                 {
-                                    url: require("../images/How-It-works/aws.svg"),
+                                    url: require("../assets/images/How-It-works/aws.svg"),
                                     alt: "More integrations",
                                 },
                             ],

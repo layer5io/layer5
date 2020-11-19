@@ -4,15 +4,11 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import VintageBox from "../../reusecore/VintageBox";
 import SocialLinks from "../../components/SocialLinks";
-import particle1 from "../../assets/images/app/particle/05.png";
-import particle2 from "../../assets/images/app/particle/06.png";
 import AboutSectionWrapper from "./about.style";
 
 const About = () => {
     return (
         <AboutSectionWrapper id="about">
-            {/* <img className="section__particle one" src={particle1} alt="img" />
-            <img className="section__particle two" src={particle2} alt="img" /> */}
             <Container fullWidthSM>
                 <Row Vcenter={true}>
                     <Col xs={12} sm={6}>

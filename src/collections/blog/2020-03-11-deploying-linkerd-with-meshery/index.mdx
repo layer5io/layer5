@@ -12,14 +12,14 @@ published: true
 ---
 
 import { BlogWrapper } from '../Blog.style.js';
-import awsappmesh from '../../../images/service_mesh_icons/aws-app-mesh.png';
-import consul from '../../../images/service_mesh_icons/consul.svg';
-import istio from '../../../images/service_mesh_icons/istio.svg';
-import linkerd from '../../../images/service_mesh_icons/linkerd.svg';
-import maesh from '../../../images/service_mesh_icons/maesh.png';
-import nsm from '../../../images/service_mesh_icons/nsm.svg';
-import octarine from '../../../images/service_mesh_icons/octarine.svg';
-import kuma from '../../../images/service_mesh_icons/kuma.svg';
+import awsappmesh from '../../../assets/images/service-mesh-icons/aws-app-mesh.png';
+import consul from '../../../assets/images/service-mesh-icons/consul.svg';
+import istio from '../../../assets/images/service-mesh-icons/istio.svg';
+import linkerd from '../../../assets/images/service-mesh-icons/linkerd.svg';
+import maesh from '../../../assets/images/service-mesh-icons/maesh.png';
+import nsm from '../../../assets/images/service-mesh-icons/nsm.svg';
+import octarine from '../../../assets/images/service-mesh-icons/octarine.svg';
+import kuma from '../../../assets/images/service-mesh-icons/kuma.svg';
 
 <BlogWrapper>
 
@@ -27,9 +27,9 @@ import kuma from '../../../images/service_mesh_icons/kuma.svg';
 <div>
   <div>
 
-<iframe width="100%" src="https://www.youtube.com/embed/MXQV-i-Hkf8" frameborder="0" 
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-    style="min-height: 315px; min-width: 280px; 
+<iframe width="100%" src="https://www.youtube.com/embed/MXQV-i-Hkf8" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    style="min-height: 315px; min-width: 280px;
     "></iframe>
 </div>
 But with so many mesh options around - how do we choose, evaluate and compare them? And once we’ve chosen a solution - how do we make it accessible to all our engineers? It is to provide an answer to these questions that the Layer5 community has created <a href="/meshery">Meshery</a>, the open-source, service mesh management plane. Meshery already supports a number of leading mesh providers with adapters for additional meshes on the way. In today’s video, I’ll show how to use Meshery for rolling out and evaluating Linkerd.
@@ -49,12 +49,12 @@ But with so many mesh options around - how do we choose, evaluate and compare th
         </tr>
         <tr>
             <td><a href="https://github.com/layer5io/meshery-istio">
-                <img src={istio} alt='Istio Service Mesh adapter' class="adapter-logo" />Meshery adapter for Istio</a> 
+                <img src={istio} alt='Istio Service Mesh adapter' class="adapter-logo" />Meshery adapter for Istio</a>
             </td>
         </tr>
         <tr>
             <td><a href="https://github.com/layer5io/meshery-linkerd">
-                <img src={linkerd} alt='Linkerd' class="adapter-logo" />Meshery adapter for Linkerd</a> 
+                <img src={linkerd} alt='Linkerd' class="adapter-logo" />Meshery adapter for Linkerd</a>
             </td>
         </tr>
         <tr>
@@ -64,7 +64,7 @@ But with so many mesh options around - how do we choose, evaluate and compare th
         </tr>
         <tr>
             <td><a href="https://github.com/layer5io/meshery-octarine">
-                <img src={octarine} alt='Octarine Service Mesh' class="adapter-logo" />Meshery adapter for Octarine</a> 
+                <img src={octarine} alt='Octarine Service Mesh' class="adapter-logo" />Meshery adapter for Octarine</a>
             </td>
         </tr>
         <tr>
@@ -120,10 +120,10 @@ So what is covered in the video? More or less the following:
 <li>What Layer5 is about (<i>Lookout - it may surprise you!</i> 😯)</li>
 <li>What Meshery is. What Linkerd is.</li>
 <li>How easy it is to install Meshery on your PC (be it Linux, Mac or Windows)</li>
-<ul><li>All it takes is: 
+<ul><li>All it takes is:
 
 ```sh
-$ curl -L https://git.io/meshery | bash - 
+$ curl -L https://git.io/meshery | bash -
 ```
 
 </li></ul>

@@ -665,7 +665,7 @@ const temp = () => (
                                     "View projects and applications being deployed by meshery in a web interface",
                                 content: (
                                     <img
-                                        src={require("../images/workshops/workshops.png")}
+                                        src={require("../assets/images/workshops/workshops.png")}
                                         alt="Web UI"
                                     />
                                 ),

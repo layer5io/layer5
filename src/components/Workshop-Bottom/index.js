@@ -1,6 +1,6 @@
 import React from "react";
 
-import WorkshopImage from "../../images/workshops/workshops.svg";
+import WorkshopImage from "../../assets/images/workshops/workshops.svg";
 import WorkshopBottomWrapper from "./Workshop-Bottom.style";
 
 const WorkshopBottom = () => {
