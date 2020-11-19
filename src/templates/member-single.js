@@ -24,7 +24,6 @@ export const query = graphql`
                 linkedin
                 location
                 skills
-                technologies
                 bio
                 image_path{
                     childImageSharp{

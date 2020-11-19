@@ -8,7 +8,7 @@ import MeshMateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
 import MeshMateIconWhite from "../../assets/images/meshmate/meshmate-icon-white.svg";
 
 const MemberSingle = ({frontmatter}) =>{
-    const {name, position,  github, twitter, image_path, meshmate, linkedin, location, skills, technologies, bio} = frontmatter;
+    const {name, position,  github, twitter, image_path, meshmate, linkedin, location, skills, bio} = frontmatter;
     return(
         <MemberSingleWrapper>
             <Container>
@@ -23,6 +23,8 @@ const MemberSingle = ({frontmatter}) =>{
                                 { position && (
                                     <h2>{position}</h2>
                                 )}
+                            </header>
+                            <div className="body">
                                 {
                                     location &&
                                     <h4>Location: {location}</h4>
@@ -30,17 +32,15 @@ const MemberSingle = ({frontmatter}) =>{
 
                                 {
                                     bio &&
-                                    <h6>{bio}</h6>
+                                    <h4>{bio}</h4>
                                 }
                                 {
                                     skills &&
                                     <h4>skills: {skills}</h4>
                                 }
-                                {
-                                    technologies &&
-                                    <h4>technologies: {technologies}</h4>
-                                }
-                            </header>
+                            </div>
+                                
+                           
                             <div className="social-bg">
                                 <ul className="profile-social-links">
                                     { github && (
@@ -67,8 +67,8 @@ const MemberSingle = ({frontmatter}) =>{
                                     { meshmate && (
                                         <li>
                                             <Link to={"/community/meshmates"}>
-                                                <img src={MeshMateIconWhite} className="meshmate-white" alt="meshmate-white-icon" />
-                                                <img src={MeshMateIcon} className="meshmate-color" alt="meshmate-color-icon" />
+                                                <img src={MeshMateIcon} className="meshmate-white" alt="meshmate-white-icon" />
+                                                <img src={MeshMateIconWhite} className="meshmate-color" alt="meshmate-color-icon" />
                                             </Link>
                                         </li>
                                     )}

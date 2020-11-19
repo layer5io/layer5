@@ -21,7 +21,6 @@ const AllMembers = props =>{
                             linkedin
                             location
                             skills
-                            technologies
                             bio
                             image_path{
                                 childImageSharp{

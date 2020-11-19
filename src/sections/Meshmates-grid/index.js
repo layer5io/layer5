@@ -26,7 +26,6 @@ const MeshmatesGrid=() => {
                             linkedin
                             location
                             skills
-                            technologies
                             bio
                             image_path{
                                 childImageSharp{

@@ -21,7 +21,6 @@ const Maintainer = props =>{
                             linkedin
                             location
                             skills
-                            technologies
                             bio
                             image_path{
                                 childImageSharp{

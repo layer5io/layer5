@@ -10,11 +10,29 @@ export const MemberSingleWrapper = styled.div`
         border-radius: 5px;
         transition: 0.9s;
     }
+    .body{
+        display: block;
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+
+            h4{
+                font-weight: 400;
+                font-size: 14px;
+                color: black;
+                letter-spacing: .5px;
+                margin-top: 10px;
+                padding: 0;
+                text-align: left;
+            }
+    }
     .profile-image:hover{
         transition: 0.9s;
         border-radius: 5px 50px 5px 50px;
     }
         header {
+            font-family: 'Open Sans', sans-serif;
             display: block;
             position: relative;
             text-align: center;
@@ -33,6 +51,7 @@ export const MemberSingleWrapper = styled.div`
             }
             
             h1 {
+                font-family: 'Open Sans', sans-serif;
                 font-weight: 300;
                 font-size: 30px;
                 color: black;
@@ -49,6 +68,9 @@ export const MemberSingleWrapper = styled.div`
                 letter-spacing: .5px;
                 margin-top: 10px;
                 padding: 0;
+                border-bottom: 3px solid #00b4a0;
+                
+                width: 50%;
                 text-align: left;
             }
             h6{
