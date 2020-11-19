@@ -67,8 +67,8 @@ const MemberSingle = ({frontmatter}) =>{
                                     { meshmate && (
                                         <li>
                                             <Link to={"/community/meshmates"}>
-                                                <img src={MeshMateIcon} className="meshmate-white" alt="meshmate-white-icon" />
-                                                <img src={MeshMateIconWhite} className="meshmate-color" alt="meshmate-color-icon" />
+                                                <img src={MeshMateIconWhite} className="meshmate-color" alt="meshmate-white-icon" />
+                                                <img src={MeshMateIcon} className="meshmate-white" alt="meshmate-color-icon" />
                                             </Link>
                                         </li>
                                     )}

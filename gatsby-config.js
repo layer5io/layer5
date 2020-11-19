@@ -28,6 +28,7 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
       },
     },
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
