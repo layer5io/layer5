@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MemberSingleWrapper = styled.div`
-    padding: 250px 0 180px 0;
+    padding: 100px 0 50px 0;
     margin-bottom: 25px;
     ul{
         list-style: none;
@@ -10,6 +10,7 @@ export const MemberSingleWrapper = styled.div`
         border-radius: 5px;
         transition: 0.9s;
     }
+    
     .body{
         display: block;
             position: relative;
@@ -25,13 +26,17 @@ export const MemberSingleWrapper = styled.div`
                 margin-top: 10px;
                 padding: 0;
                 text-align: left;
+               
+            }
+            .bold{
+                font-weight: 600;
             }
     }
     .profile-image:hover{
         transition: 0.9s;
         border-radius: 5px 50px 5px 50px;
     }
-        header {
+        .header {
             font-family: 'Open Sans', sans-serif;
             display: block;
             position: relative;

@@ -18,16 +18,16 @@ const MemberSingle = ({frontmatter}) =>{
                             <Image className="profile-image" {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
                         </Col>
                         <Col xs={12} sm={6} lg={6} >
-                            <header>
+                            <div className="header">
                                 <h1>{name}</h1>
                                 { position && (
                                     <h2>{position}</h2>
                                 )}
-                            </header>
+                            </div>
                             <div className="body">
                                 {
                                     location &&
-                                    <h4>Location: {location}</h4>
+                                    <h4 className="bold">Location: {location}</h4>
                                 }
 
                                 {
@@ -36,7 +36,7 @@ const MemberSingle = ({frontmatter}) =>{
                                 }
                                 {
                                     skills &&
-                                    <h4>skills: {skills}</h4>
+                                    <h4 className="bold">skills: {skills}</h4>
                                 }
                             </div>
                                 
