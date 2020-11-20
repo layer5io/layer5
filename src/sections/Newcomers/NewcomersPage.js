@@ -116,10 +116,10 @@ const NewcomersPage = () => {
 
                 <p>
                     The following set of steps outlines the process by which you can openly engage, learn, and participate in the broad
-                    set of open source projects at Layer5. If at any time you get stuck, please seek help in the <a
-                        href="https://layer5io.slack.com/archives/C019426UBNY" target="_blank" rel="noreferrer">#newcomers</a> channel
-                    in the Layer5 (joining instructions below). Our <a target="_blank" rel="noreferrer"
-                        href="https://layer5.io/community/meshmates">MeshMates</a> and community members are here to help!
+                    set of open source projects at Layer5. If at any time you get stuck, please seek help in the 
+                    <a href="https://layer5io.slack.com/archives/C019426UBNY" target="_blank" rel="noreferrer">{" "}#newcomers</a> channel
+                    in the Layer5 (joining instructions below). Our {" "}
+                    <a target="_blank" rel="noreferrer" href="https://layer5.io/community/meshmates">MeshMates</a> and community members are here to help!
                 </p>
 
                 <h4>Finding an issue to work on</h4>
@@ -181,7 +181,7 @@ const NewcomersPage = () => {
                         Contributions of all sizes are welcome.
                     </li>
                     <li>
-                        If you need some additional help, please join Layer5 Slack workspace at 
+                        If you need some additional help, please join Layer5 Slack workspace at {" "}
                         <a 
                             href="http://slack.layer5.io"
                             target="_blank" 
