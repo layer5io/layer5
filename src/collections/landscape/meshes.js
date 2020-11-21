@@ -259,18 +259,6 @@ export const meshes=[
         name: "SOFAMesh",
         desc: "A solution for large-scale Service Mesh based on Istio.",
         link: "https://github.com/alipay/sofa-mesh",
-<<<<<<< HEAD
-        expired_url: "https://github.com/sofastack/sofa-mesh/blob/master/README.md",
-        autoinject: "Project shutdown",
-        tcp_web: "Project shutdown",
-        multi_cluster: "Project shutdown",
-        multi_tenant: "Project shutdown",
-        prometheus: "Project shutdown",
-        grpc: "Project shutdown",
-        h2: "Project shutdown",
-        tracing: "Project shutdown",
-        encryption: "Project shutdown",
-=======
         autoinject: "Project shutdown",
         tmp_link: "https://github.com/sofastack/sofa-mesh/blob/master/README.md",
         tcp_web: "No",
@@ -279,7 +267,6 @@ export const meshes=[
         prometheus: "?",
         tracing: "?",
         encryption: "?",
->>>>>>> 1962b94f... Updates to landscape page
         multi_tenant_score: 8,
         netdev_persona_score: 7
     },
@@ -325,13 +312,8 @@ export const meshes=[
     {
         name: "Rotor",
         link: "https://github.com/turbinelabs/",
-<<<<<<< HEAD
-        expired_url: "https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c",
-        autoinject: "Project shutdown",
-=======
         autoinject: "Project shutdown",
         tmp_link: "https://blog.turbinelabs.io/turbine-labs-is-shutting-down-and-our-team-is-joining-slack-2ad41554920c",
->>>>>>> 1962b94f... Updates to landscape page
         tcp_web: "Project shutdown",
         grpc: "Project shutdown",
         h2: "Project shutdown",
