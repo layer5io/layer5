@@ -14,7 +14,7 @@ const RelatedPosts = ( ) => {
                 allMdx(
                     sort: { fields: [frontmatter___date], order: DESC}
                     filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-                    limit: 4      
+                    limit: 3     
                 ) {
                     nodes {
                         frontmatter {
@@ -48,13 +48,14 @@ const RelatedPosts = ( ) => {
                 <div className="widgets-title">
                     <h3>Related Posts</h3>
                 </div>
+                <br/>
                 <Row>
                     <Col xs={12} lg={12}>
                         <Row>
                             { 
                                 relatedPosts.map(post => {
                                     return (
-                                        <Col xs={12} lg={3} key={post.fields.slug}>
+                                        <Col xs={12} lg={4} key={post.fields.slug}>
                                             <Card frontmatter={post.frontmatter} fields={post.fields}/>
                                         </Col>
                                     );
