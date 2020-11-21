@@ -1,4 +1,4 @@
-export const getways=[
+export const gateways=[
     {
         name: "Ambassador",
         link: "https://getambassador.io",

@@ -2,59 +2,91 @@ import styled from "styled-components";
 export const LandscapePageWrapper=styled.div`
 
 .timeline-heading {
-  padding: 20px;
+	padding: 20px;
 }
 .meshtitle-img {
-  display: flex;
+	display: flex;
 }
 .meshtitle-img > h3 {
-  padding: 20px;
+	padding: 20px;
+	color: #00d3a9;
 } 
+.meshtitle-img > img {
+	width: 100px;
+	height: inherit;
+}
 .heading-container{
-  padding: 40px 0 40px 0;
-} 
+	margin: 40px 0;
+	padding: 35px;
+	width:100%;
+	text-align: center;
+}
+.timeline {
+	margin-bottom: 40px;
+}
+.vertical-timeline::before {
+	background: rgb(60, 73, 79)
+}
+.vertical-timeline-element-icon {
+	box-shadow: 0 0 0 4px #00d3a9, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)
+}
+.vertical-timeline-element-content {
+	border-radius: 1.25em;
+}
+.timeline-element {
+	margin: 1em 0;
+}
+.landscape-table {
+	width: 100%;
+	margin-bottom: 75px; 
+}
 ul.category {
-  font-weight: bold;
+	margin: 0px;
+	padding: 10px;
+	column-count: 5;
+	font-size: 14px;
+	font-weight: 600;
 }
-
 ul.category li {
-  margin-left: 5px;
-  font-weight: normal;
-  display: inline-flex;
-  width: 200px;
+	display: block;
 }
-
+.react-tabs__tab {
+	bottom: 0px;
+	padding: 20px;
+}
+.react-tabs__tab-list{
+	margin: 0px;
+	padding: 0px;
+	font-size: 20px;
+	font-weight: 600;
+	border-bottom: none;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+	color: #ffffff;
+	background: #000000;
+}
+.react-tabs__tab--selected {
+	background: #3c494f;
+    border-color: #000;
+	color: white;
+	border-radius: 0px;
+}
 .card-content {
-  border-right: none;
+	border-right: none;
 }
-
-.card-content:not(:last-child) {
-  border-bottom-width: 1px;
-  border-bottom-style: dashed;
-  border-bottom-color: var(--main-dark-grey);
+.odd-row {
+	background: #c0cccc;
 }
-.landscape-bg{
-  background-image: url('/assets/images/mesh-cubes-trans.svg');
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: contain;
+.even-row {
+	background: #e2e8e8;
 }
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 200px;
-  background-color: var(--main-dark-grey);
-  color: aliceblue;
-  text-align: center;
-  border-radius: 6px;
-  padding: 10px;
-  position: absolute;
-  z-index: 5;
-  top: 100%;
-  left: 50%;
-  margin-left: -60px;
+.category-row-heading {
+	padding-left: 10px;
 }
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+.mesh-tooltip {
+	width: 250px;
+}
+.categories-table {
+	border: 1px solid #3c494f;
 }
 `;

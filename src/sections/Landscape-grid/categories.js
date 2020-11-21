@@ -1,94 +1,127 @@
 import React from "react";
 import { clients } from "../../collections/landscape/clients";
 import { meshes } from "../../collections/landscape/meshes";
-import { getways } from "../../collections/landscape/getways";
+import { gateways } from "../../collections/landscape/gateways";
 import { proxies } from "../../collections/landscape/proxies";
 import { load_balancer } from "../../collections/landscape/load-balancer";
+import ReactTooltip from "react-tooltip";
 
 function Categories() {
     return (
-        <div>
-            <div className="heading-container">
-                <h2 className="white-text center landscape-category">Categories</h2>
+        <React.Fragment>
+            <div className="categories-table">
+                <div className="odd-row">
+                    <h4 className="category-row-heading">Service Mesh</h4>
+                    <ul className="category">
+                        {meshes.map(mesh => (
+                            mesh.name?
+                                <li key={mesh.name}>
+                                    <div className="tooltip">
+                                        <a href={mesh.link} data-tip={mesh.desc} data-for="mesh-name">{mesh.name}</a>
+                                        <ReactTooltip 
+                                            id="mesh-name"
+                                            place="bottom"
+                                            effect="solid"
+                                            backgroundColor="rgb(60,73,79)"
+                                            className="mesh-tooltip"
+                                        />
+                                    </div>
+                                </li>
+                                :<></>
+                        )
+                        )}
+                    </ul>
+                </div>
+                <div className="even-row">
+                    <h4 className="category-row-heading">Client Library</h4>
+                    <ul className="category">
+                        {clients.map(client => (
+                            client.name?
+                                <li key={client.name}>
+                                    <div className="tooltip">
+                                        <a href={client.link} data-tip={client.desc} data-for="client-name">{client.name}</a>
+                                        <ReactTooltip 
+                                            id="client-name"
+                                            place="bottom"
+                                            effect="solid"
+                                            backgroundColor="rgb(60,73,79)"
+                                            className="mesh-tooltip"
+                                        />
+                                    </div>
+                                </li>
+                                :<></>
+                        ))}
+                    </ul>
+                </div>
+                <div className="odd-row">
+                    <h4 className="category-row-heading">API Gateway</h4>
+                    <ul className="category">
+                        {gateways.map(gateway => (
+                            gateway.name?
+                                <li key={gateway.name}>
+                                    <div className="tooltip">
+                                        <a href={gateway.link} data-tip={gateway.desc} data-for="gateway-name">{gateway.name}</a>
+                                        <ReactTooltip 
+                                            id="gateway-name"
+                                            place="bottom"
+                                            effect="solid"
+                                            backgroundColor="rgb(60,73,79)"
+                                            className="mesh-tooltip"
+                                        />
+                                    </div>
+                                </li>
+                                :<></>
+                        ))}
+                    </ul>
+                </div>
+                <div className="even-row">
+                    <h4 className="category-row-heading">Service Proxy</h4>
+                    <ul className="category">
+                        {proxies.map(proxy => (
+                            proxy.name?
+                                <li key={proxy.name}>
+                                    <div className="tooltip">
+                                        <a href={proxy.link} data-tip={proxy.desc} data-for="proxy-name">{proxy.name}</a>
+                                        <ReactTooltip 
+                                            id="proxy-name"
+                                            place="bottom"
+                                            effect="solid"
+                                            backgroundColor="rgb(60,73,79)"
+                                            className="mesh-tooltip"
+                                        />
+                                    </div>
+                                </li>
+                                :<></>
+                        ))}
+                    </ul>
+                </div>
+                <div className="odd-row">
+                    <h4 className="category-row-heading">Load Balancer</h4>
+                    <ul className="category">
+                        {load_balancer.map(balancer => (
+                            balancer.name?
+                                <li key={balancer.name}>
+                                    <div className="tooltip">
+                                        <a href={balancer.link} data-tip={balancer.desc} data-for="balancer-name">{balancer.name}</a>
+                                        <ReactTooltip 
+                                            id="balancer-name"
+                                            place="bottom"
+                                            effect="solid"
+                                            backgroundColor="rgb(60,73,79)"
+                                            className="mesh-tooltip"
+                                        />
+                                    </div>
+                                </li>
+                                :<></>
+                        ))}
+                    </ul>
+                </div>
             </div>
-            <div className="card-content">
-                <ul className="category">
-                    Service Mesh<br />
-                    {meshes.map(mesh => (
-                        mesh.name?
-                            <li key={mesh.name}>
-                                <div className="tooltip">
-                                    <a href={`${mesh.link}`}>{mesh.name}</a>
-                                    <span className="tooltiptext">{mesh.desc}</span></div>
-                            </li>
-                            :<></>
-                    )
-                    )}
-                </ul>
-            </div>
-            <div className="card-content comparison">
-                <ul className="category">
-                    Client Library<br />
-                    {clients.map(client => (
-                        client.name?
-                            <li key={client.name}>
-                                <div className="tooltip">
-                                    <a href={`${client.link}`}>{client.name}</a>
-                                    <span className="tooltiptext">{client.desc}</span>
-                                </div>
-                            </li>
-                            :<></>
-                    ))}
-                </ul>
-            </div>
-            <div className="card-content comparison">
-                <ul className="category">
-                    API Gateway<br />
-                    {getways.map(getway => (
-                        getway.name?
-                            <li key={getway.name}>
-                                <div className="tooltip">
-                                    <a href={`${getway.link}`}>{getway.name}</a>
-                                    <span className="tooltiptext">{getway.desc}</span>
-                                </div>
-                            </li>
-                            :<></>
-                    ))}
-                </ul>
-            </div>
-            <div className="card-content comparison">
-                <ul className="category">
-                    Service Proxy<br />
-                    {proxies.map(proxy => (
-                        proxy.name?
-                            <li key={proxy.name}>
-                                <div className="tooltip">
-                                    <a href={`${proxy.link}`}>{proxy.name}</a>
-                                    <span className="tooltiptext">{proxy.desc}</span>
-                                </div>
-                            </li>
-                            :<></>
-                    ))}
-                </ul>
-            </div>
-            <div className="card-content comparison">
-                <ul className="category">
-                    Load Balancer<br />
-                    {load_balancer.map(balancer => (
-                        balancer.name?
-                            <li key={balancer.name}>
-                                <div className="tooltip">
-                                    <a href={`${balancer.link}`}>{balancer.name}</a>
-                                    <span className="tooltiptext">{balancer.desc}</span>
-                                </div>
-                            </li>
-                            :<></>
-                    ))}
-                </ul>
-            </div>
-            <span style={{ color: "#000" }}>Found a discrepancy, missing or out-dated information? Please
-                <a href="https://github.com/layer5io/layer5/issues" style={{ color: "#A9A9A9" }}> submit an issue</a>.</span>
-        </div>
+            <span style={{ color: "#000" }}>
+                Found a discrepancy, missing or out-dated information? Please
+                <a href="https://github.com/layer5io/layer5/issues"> submit an issue.</a>
+            </span>
+        </React.Fragment>
     );
 }
 
