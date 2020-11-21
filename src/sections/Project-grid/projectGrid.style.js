@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const ProjectPageWrapper = styled.div`
+export const ProjectWrapper = styled.div`
 padding: 100px 0 110px 0;
     .project-text{
         font-weight: 300;
