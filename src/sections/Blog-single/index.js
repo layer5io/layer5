@@ -6,7 +6,7 @@ import slugify from "../../utils/slugify";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import Sidebar from "../Blog-sidebar";
+import RelatedPosts from "../Related-Posts";
 
 import BlogPageWrapper from "./blogSingle.style";
 
@@ -56,11 +56,9 @@ const BlogSingle = ({data}) => {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col sm={12} lg={4}>
-                            <Sidebar tags={allTags.allMdx.group}/>
-                        </Col>
                     </Row>
                 </Container>
+                <RelatedPosts/>    
             </div>
         </BlogPageWrapper>
     );
