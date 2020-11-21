@@ -18,7 +18,7 @@ export const MemberSingleWrapper = styled.div`
             z-index: 1;
             overflow: hidden;
 
-            h4{
+            .h4{
                 font-weight: 400;
                 font-size: 14px;
                 color: black;
@@ -55,7 +55,7 @@ export const MemberSingleWrapper = styled.div`
                 box-shadow: 0 1px 0 rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.1);
             }
             
-            h1 {
+            .h1 {
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 300;
                 font-size: 30px;
@@ -66,7 +66,7 @@ export const MemberSingleWrapper = styled.div`
                 text-align: left;
             }
             
-            h2 {
+            .h2 {
                 font-weight: 400;
                 font-size: 20px;
                 color: black;
@@ -78,16 +78,8 @@ export const MemberSingleWrapper = styled.div`
                 width: 50%;
                 text-align: left;
             }
-            h6{
-                font-weight: 400;
-                font-size: 11px;
-                color: black;
-                letter-spacing: .5px;
-                margin-top: 10px;
-                padding: 0;
-                text-align: left;
-            }
-            h4{
+            
+            .h4{
                 font-weight: 400;
                 font-size: 14px;
                 color: black;
@@ -143,7 +135,7 @@ export const MemberSingleWrapper = styled.div`
                     }
                     
                     svg{
-                        color: #00d4ab;
+                        color: greyscale;
                         display: block;
                         width: 32px;
                     }

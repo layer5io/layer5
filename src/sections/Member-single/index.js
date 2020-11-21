@@ -19,24 +19,24 @@ const MemberSingle = ({frontmatter}) =>{
                         </Col>
                         <Col xs={12} sm={6} lg={6} >
                             <div className="header">
-                                <h1>{name}</h1>
+                                <div className="h1">{name}</div>
                                 { position && (
-                                    <h2>{position}</h2>
+                                    <div className="h2">{position}</div>
                                 )}
                             </div>
                             <div className="body">
                                 {
                                     location &&
-                                    <h4 className="bold">Location: {location}</h4>
+                                    <div className="bold h4">Location: {location}</div>
                                 }
 
                                 {
                                     bio &&
-                                    <h4>{bio}</h4>
+                                    <div className="h4">{bio}</div>
                                 }
                                 {
                                     skills &&
-                                    <h4 className="bold">skills: {skills}</h4>
+                                    <div className="bold h4">skills: {skills}</div>
                                 }
                             </div>
                                 
