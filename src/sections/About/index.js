@@ -18,7 +18,7 @@ const About = () => {
                             UniWidth="100%"
                         >
                             {" "}
-                            <h2>About us</h2>
+                            <h2>About Us</h2>
                         </SectionTitle>
                         <div className="about-text text-one">
                             <h4>Community First</h4>

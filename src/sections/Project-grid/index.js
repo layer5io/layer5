@@ -4,7 +4,7 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 
 import PageHeader from "../../reusecore/PageHeader";
 
-import { ProjectPageWrapper } from "./projectGrid.style";
+import { ProjectWrapper } from "./projectGrid.style";
 
 import Image from "../../components/image";
 import meshery from "../../assets/images/app/projects/meshery-logo-light.png";
@@ -12,7 +12,7 @@ import landscape from "../../assets/images/app/projects/landscape.png";
 
 const ProjectPage = ({data}) => {
     return (
-        <ProjectPageWrapper>
+        <ProjectWrapper>
             <PageHeader title="Projects" path="Projects"/>
             <div className="project-page-wrapper">
                 <Container>
@@ -31,7 +31,8 @@ const ProjectPage = ({data}) => {
                             <Link to="/landscape">
                                 <div className="project__block__inner">
                                     <img src={landscape}
-                                        alt="Meshery" />
+                                        alt="Landscape" 
+                                    />
                                     <h1>Landscape</h1>
                                 </div>
                             </Link>
@@ -53,7 +54,7 @@ const ProjectPage = ({data}) => {
                     </Row>
                 </Container>
             </div>
-        </ProjectPageWrapper>
+        </ProjectWrapper>
     );
 };
 

@@ -19,7 +19,6 @@ const WorkshopBottomWrapper = styled.div`
     margin: 80px auto;
     padding: 10px;
     border: none;
-    background-color: orange;
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
@@ -32,7 +31,6 @@ const WorkshopBottomWrapper = styled.div`
     }
 
     &:hover {
-      background-color: darkcyan;
       color: white;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
     }
