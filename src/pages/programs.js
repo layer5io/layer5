@@ -15,7 +15,7 @@ const programs = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="Careers" />
+            <SEO title="Programs" />
             <Navigation />
             <ProgramsGrid />
             <Footer />
