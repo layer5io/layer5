@@ -111,7 +111,7 @@ export const MemberSingleWrapper = styled.div`
                     
                     &:hover{
                         box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
-                        background: #00b4a0;
+                        background: white;
                         
                         .github{
                             color: #211F1F;
