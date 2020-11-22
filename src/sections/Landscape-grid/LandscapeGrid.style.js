@@ -40,6 +40,11 @@ export const LandscapePageWrapper=styled.div`
 	width: 100%;
 	margin-bottom: 75px; 
 }
+@media screen and (max-width: 767px) {
+	.landscape-table {
+		padding: 10px;
+	}
+}
 ul.category {
 	margin: 0px;
 	padding: 10px;
