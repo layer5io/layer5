@@ -30,31 +30,13 @@ const RelatedPostsWrapper = styled.div`
         .sidebar-widgets{
             &+.sidebar-widgets{
                 margin-top: 52px;
-            }
-            ul{
-                margin: 0;
-                padding: 0;
-                list-style: none;
-            }
-            
-            &.tags{
-                ul{
-                    margin-top: -5px;
-                    margin-left: -5px;
-                    margin-right: -5px;
-                }
-                li{
-                    display: inline-block;
-                }
-                
-            }
+            }            
         }
 
     @media only screen and (max-width: 1024px) {
         .sidebar-widgets {
             padding: 0;
         }
-       
     }
        
 `;
