@@ -87,7 +87,7 @@ export const WorkshopPageWrapper = styled.div`
 
     &:hover {
       color: darkturquoise;
-      background-color: gold;
+      // background-color: gold;
       font-weight: 600;
       box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
     }
@@ -119,6 +119,7 @@ export const WorkshopPageWrapper = styled.div`
     transition: 0.5s ease-in-out all;
 
     &:hover {
+      cursor: pointer;
       box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
     }
   }
