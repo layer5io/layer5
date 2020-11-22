@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 import { ProfileCardWrapper } from "./ProfileCard.style";
 import MeshMateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
-import MeshMateIconWhite from "../../assets/images/meshmate/meshmate-icon-white.svg";
 import Image from "../image";
 
 const ProfileCard = (props) =>{

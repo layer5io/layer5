@@ -55,7 +55,7 @@ export const ProfileCardWrapper = styled.div`
             }
         }
        
-        .meshmate{
+        .meshmate {
             position: absolute;
             text-align: center;
             padding: 5px;

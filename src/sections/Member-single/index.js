@@ -27,7 +27,7 @@ const MemberSingle = ({frontmatter}) =>{
                             <div className="body">
                                 {
                                     location &&
-                                    <div className="bold h4">Location: {location}</div>
+                                    <div className="h4">Location: <span className="bold">{location}</span></div>
                                 }
 
                                 {
@@ -36,11 +36,11 @@ const MemberSingle = ({frontmatter}) =>{
                                 }
                                 {
                                     skills &&
-                                    <div className="bold h4">skills: {skills}</div>
+                                    <div className="h4">Skills: {skills}</div>
                                 }
                             </div>
-                                
-                           
+
+
                             <div className="social-bg">
                                 <ul className="profile-social-links">
                                     { github && (
