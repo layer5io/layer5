@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery, graphql ,Link } from "gatsby";
+import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import slugify from "../../utils/slugify";
@@ -12,19 +12,7 @@ import BlogPageWrapper from "./blogSingle.style";
 
 const BlogSingle = ({data}) => {
     const { frontmatter, body } = data.mdx;
-    const allTags = useStaticQuery(graphql`
-        query tagsQuery {
-            allMdx(
-                filter: { frontmatter: { published: { eq: true } } }
-            ) {
-                group(field: frontmatter___tags) {
-                    fieldValue
-                    totalCount
-                }
-            }
-        }
-    `);
-
+    
     return (
         <BlogPageWrapper>
             <PageHeader
