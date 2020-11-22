@@ -18,7 +18,6 @@ export const ProfileCardWrapper = styled.div`
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
         position: relative;
         margin: auto;
-        background: #00B39F;
         background: ${props => props.status === "Active" ? props.theme.secondaryColor : "gray"};
         top: 50%;
         transition: 0.3s;
@@ -31,18 +30,18 @@ export const ProfileCardWrapper = styled.div`
             display: block;
             position: relative;
             text-align: center;
-            padding: 30px 0 20px;
+            padding: 20px 0 20px;
             z-index: 1;
             overflow: hidden;
             
             .gatsby-image-wrapper {
                 display: block;
                 margin: auto;
-                border-radius: 100%;
+                border-radius: 90%;
                 overflow: hidden;
-                width: 150px;
-                height: 150px;
-                box-shadow: 0 1px 0 rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.1);
+                width: 140px;
+                height: 140px;
+                box-shadow: 0 1px 0 rgba(0,0,0,.1);
                 opacity: 90%;
             }
             
@@ -63,8 +62,8 @@ export const ProfileCardWrapper = styled.div`
             border-radius: 100%;
             background: white;
             width: 44px;
-            top: 140px;
-            right: 38px;
+            top: 130px;
+            right: 50px;
             img {
                 width: 28px;
                 height: 28px;
