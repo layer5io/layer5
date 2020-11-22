@@ -4,15 +4,13 @@ const NewcomersPageWrapper = styled.section`
 	max-width: 1170px;
 	display: block;
 	height: auto;
+	padding: 0px 20px;
 	margin: 200px auto;
 
-	a {
-		color: lightseagreen;
-		font-weight: 500;
-
-		&:hover {
-			font-weight: 600;
-		}
+	table {
+		display: block;
+		width: auto;
+		overflow-x: auto;
 	}
 
 	.title {
@@ -34,13 +32,6 @@ const NewcomersPageWrapper = styled.section`
 		float: right;
 	}
 
-	.newcomersYoutube {
-		display: block;
-		max-width: 90%;
-		height: 500px;
-		margin: 60px auto;
-	}
-
 	.newcomersTable {
 		display: table;
 		width: 100%;
@@ -53,17 +44,38 @@ const NewcomersPageWrapper = styled.section`
 			text-align: center;
 			height: 60px;
 			vertical-align: middle;
+
+			&:hover {
+				background-color: #f5f5f5;
+			}
 		}
 
 		th,
 		td {
-			border: 1px solid black;
+			border-bottom: 1px solid #ddd;
+			padding: 0px 10px;
 		}
 	}
 
 	h3,
 	h4 {
 		margin-bottom: 20px;
+	}
+
+	@media (max-width: 920px) {
+		.newcomersImage {
+			max-width: 300px;
+		}
+
+		.title {
+			font-size: 35px;
+		}
+	}
+
+	@media (max-width: 670px) {
+		.newcomersIntro {
+			flex-wrap: wrap;
+		}
 	}
 `;
 
