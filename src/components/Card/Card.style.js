@@ -27,7 +27,7 @@ export const CardWrapper = styled.div`
         height: 180px;
         .gatsby-image-wrapper{
             height:100%;
-            transition: all 0.6s ease-in;
+            transition: all 0.3s ease-in;
         }
         img{
             max-width: 100%;
@@ -65,7 +65,7 @@ export const CardWrapper = styled.div`
             }
         }
         .anchor,span{
-            color: ${props => props.theme.textColor ? props.theme.textColor : "#7A848E"};;
+            color: ${props => props.theme.textColor ? props.theme.textColor : "#7A848E"};
             font-size: 14px;
             font-weight: 300;
         }
@@ -82,6 +82,7 @@ export const CardWrapper = styled.div`
             font-weight: 500;
             line-height: 30px;
             margin-bottom: 17px;
+            color: black;
             display: block;
             white-space: nowrap; 
             overflow: hidden;

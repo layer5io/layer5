@@ -65,6 +65,7 @@ export const BlogPageWrapper = styled.div`
       font-size: 24px;
       font-weight: 600;
       line-height: 40px;
+      color: black;
       letter-spacing: 1.5px;
       margin-bottom: 25px;
       display: block;
