@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MemberSingleWrapper = styled.div`
-    padding: 250px 0 180px 0;
+    padding: 100px 0 50px 0;
     margin-bottom: 25px;
     ul{
         list-style: none;
@@ -10,11 +10,34 @@ export const MemberSingleWrapper = styled.div`
         border-radius: 5px;
         transition: 0.9s;
     }
+    
+    .body{
+        display: block;
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+
+            .h4{
+                font-weight: 400;
+                font-size: 14px;
+                color: black;
+                letter-spacing: .5px;
+                margin-top: 10px;
+                padding: 0;
+                text-align: left;
+               
+            }
+            .bold{
+                font-weight: 600;
+            }
+    }
     .profile-image:hover{
         transition: 0.9s;
         border-radius: 5px 50px 5px 50px;
     }
-        header {
+        .header {
+            font-family: 'Open Sans', sans-serif;
             display: block;
             position: relative;
             text-align: center;
@@ -32,7 +55,8 @@ export const MemberSingleWrapper = styled.div`
                 box-shadow: 0 1px 0 rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.1);
             }
             
-            h1 {
+            .h1 {
+                font-family: 'Open Sans', sans-serif;
                 font-weight: 300;
                 font-size: 30px;
                 color: black;
@@ -42,25 +66,20 @@ export const MemberSingleWrapper = styled.div`
                 text-align: left;
             }
             
-            h2 {
+            .h2 {
                 font-weight: 400;
                 font-size: 20px;
                 color: black;
                 letter-spacing: .5px;
                 margin-top: 10px;
                 padding: 0;
+                border-bottom: 3px solid #00b4a0;
+                
+                width: 50%;
                 text-align: left;
             }
-            h6{
-                font-weight: 400;
-                font-size: 11px;
-                color: black;
-                letter-spacing: .5px;
-                margin-top: 10px;
-                padding: 0;
-                text-align: left;
-            }
-            h4{
+            
+            .h4{
                 font-weight: 400;
                 font-size: 14px;
                 color: black;
@@ -92,7 +111,7 @@ export const MemberSingleWrapper = styled.div`
                     
                     &:hover{
                         box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
-                        background: #00b4a0;
+                        background: white;
                         
                         .github{
                             color: #211F1F;
@@ -116,7 +135,7 @@ export const MemberSingleWrapper = styled.div`
                     }
                     
                     svg{
-                        color: #00d4ab;
+                        color: greyscale;
                         display: block;
                         width: 32px;
                     }

@@ -20,8 +20,7 @@ const InactiveMembers = props =>{
                             meshmate
                             linkedin
                             location
-                            skills
-                            technologies
+                            skills                           
                             bio
                             image_path{
                                 childImageSharp{
