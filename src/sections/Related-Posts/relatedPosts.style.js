@@ -2,33 +2,6 @@ import styled from "styled-components";
 
 
 const RelatedPostsWrapper = styled.div`
-        .search-box {
-            position: relative;
-            display: flex;
-            input{
-                flex-basis: 100%;
-                padding: 15px;
-                border-radius: 5px;
-                border: 1px solid ${props => props.theme.headingColor ? props.theme.headingColor : "#1D316C"};
-
-                &:focus{
-                    border-color: ${props => props.theme.primaryColor ? props.theme.primaryColor : "#8A57DE"};
-                }
-            }
-            button {
-                position: absolute;
-                right: 0px;
-                top: 0;
-                height: 100%;
-                min-width: 20px;
-                border-radius: 5px;
-                background: transparent;
-                font-size: 22px;
-                color: ${props => props.theme.headingColor ? props.theme.headingColor : "#1D316C"}; 
-            }
-        }
-
-
         .sidebar-widgets {
             padding: 0 30px;
         }
@@ -49,49 +22,6 @@ const RelatedPostsWrapper = styled.div`
                     content: '';
                     width: 70px;
                     height: 1px; 
-                }
-            }
-            
-        }
-        .recent-post-block{
-            display: flex;
-            align-items: center;
-            &+.recent-post-block{
-                margin-top: 30px;
-            }
-            img{
-                margin-right: 20px;
-            }
-            a{
-                h3{
-                    font-size: 16px;
-                    font-weight: 400;
-                    color: ${props => props.theme.black ? props.theme.black : "#333333"};
-                    margin-bottom: 8px;
-                    transition: all 0.3s ease-in;
-                    &:hover{
-                        color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
-                    }
-                }
-            }
-            .post-meta-block{
-                margin-bottom: 0;
-                font-size: 14px;
-                color: ${props => props.theme.textColor ? props.theme.textColor : "#7A848E"};
-                a{
-                    font: 400 13px/20px "Open Sans", sans-serif;
-                    color: ${props => props.theme.textColor ? props.theme.textColor : "#7A848E"};
-                    &:hover{
-                        color: ${props => props.theme.textColor ? props.theme.textColor : "#7A848E"};
-                    }
-                }
-                a+a{
-                    position: relative;
-                    &:before{
-                        content: "/";
-                        display: inline-block;
-                        margin: 0px 5px 0px 0px;
-                    }
                 }
             }
             
@@ -166,8 +96,6 @@ const RelatedPostsWrapper = styled.div`
         }
        
     }
-   
-      
        
 `;
 

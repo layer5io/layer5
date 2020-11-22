@@ -37,7 +37,7 @@ const BlogSingle = ({data}) => {
             <div className="single-post-wrapper">
                 <Container>
                     <Row>
-                        <Col xs={12} lg={8}>
+                        <Col xs={12} lg={12}>
                             <Row>
                                 <Col xs={12}>
                                     <div className="single-post-block">
@@ -57,8 +57,8 @@ const BlogSingle = ({data}) => {
                             </Row>
                         </Col>
                     </Row>
-                </Container>
-                <RelatedPosts/>    
+                    <RelatedPosts/>
+                </Container> 
             </div>
         </BlogPageWrapper>
     );
