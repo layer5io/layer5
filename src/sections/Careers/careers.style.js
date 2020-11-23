@@ -14,7 +14,11 @@ const CareersSectionWrapper = styled.div`
     }
     
     .grid{
-        margin-top: 2px;
+        margin: 25px 0 35px 0;
+    }
+
+    h2{
+        color: black;
     }
     
     .card-content{

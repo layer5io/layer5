@@ -14,7 +14,7 @@ const CareersPage = () => {
                 <Container>
                     <p>If you’re a smart, curious person who can make contributions in and out of your areas of expertise, why not start now?</p>
                     <p>
-                        <b>What is Layer5?</b>
+                        <h2>What is Layer5?</h2>
                     </p>
                     <p>
                         The quickly growing Layer5 community represents the largest collection of
@@ -34,7 +34,7 @@ const CareersPage = () => {
                             allowFullScreen />
                     </div>
                     <p>
-                        <b>Open Source Projects?</b>
+                        <h2>Open Source Projects?</h2>
                     </p>
                     <p>
                         Layer5 projects are open source software. Anyone can download, use, work

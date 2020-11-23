@@ -66,7 +66,7 @@ const InternshipPage = ({ hide_heading })=>{
 
 
     let OpportunityCard = ({frontmatter, fields }) => (
-        <Col xs={12} sm={6} lg={4} >
+        <Col xs={12} sm={6} lg={3} >
             <Link to={fields.slug}>
                 <div className="opportunity">
                     <div className="opportunity_icon">
@@ -91,7 +91,7 @@ const InternshipPage = ({ hide_heading })=>{
             <div className="internships-page-wrapper">
                 <Container>
                     <p>
-                        <b>Available Opportunities</b>
+                        <h2>Available Opportunities</h2>
                     </p>
                     <p>
                     The key component of these projects is our community of contributors.
@@ -108,7 +108,7 @@ const InternshipPage = ({ hide_heading })=>{
                     </p>
                     <br/>
                     <div>
-                        <b>Internships</b>
+                        <h2>Internships</h2>
                         <div className="grid">
                             <Row>
                                 {opportunities.internships.nodes.map((data) => (
@@ -118,7 +118,7 @@ const InternshipPage = ({ hide_heading })=>{
                         </div>
                         <br/>
                         <div>
-                            <b>Full-Time Opportunities</b>
+                            <h2>Full-Time Opportunities</h2>
                             <div className="grid">
                                 <Row>
                                     {opportunities.jobs.nodes.map((data) => (
