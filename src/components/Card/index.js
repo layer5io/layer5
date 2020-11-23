@@ -9,8 +9,8 @@ import { CardWrapper } from "./Card.style";
 const Card = ({ frontmatter, fields }) => {
     return (
         <CardWrapper fixed={!!frontmatter.abstract}>
-            <div className="post-block">
-                <Link className="anchor" to={fields.slug}>
+            <Link className="anchor" to={fields.slug}>
+                <div className="post-block">
                     <div className="post-thumb-block">
                         <Image
                             {...frontmatter.thumbnail}
@@ -20,9 +20,7 @@ const Card = ({ frontmatter, fields }) => {
                     </div>
                     <div className="post-content-block">
                         <h2 className="post-title">
-                            <Link className="anchor" to={fields.slug}>
-                                {frontmatter.title}
-                            </Link>
+                            {frontmatter.title}
                         </h2>
                         <div className="post-meta-block">
                             {frontmatter.author && <span>By: {frontmatter.author}</span>}
@@ -47,8 +45,8 @@ const Card = ({ frontmatter, fields }) => {
                             )}
                         </div>
                     </div>
-                </Link>
-            </div>
+                </div>
+            </Link>
         </CardWrapper>
     );
 };

@@ -77,21 +77,19 @@ export const CardWrapper = styled.div`
         }
     }
     .post-title{
-        .anchor{ 
-            font-size: 21px;
-            font-weight: 500;
-            line-height: 30px;
-            margin-bottom: 17px;
-            color: black;
-            display: block;
-            white-space: nowrap; 
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-transition: 450ms all;
-            transition: 450ms all;
-            &:hover{
-                color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};;
-            }
+        font-size: 21px;
+        font-weight: 500;
+        line-height: 30px;
+        margin-bottom: 17px;
+        color: black;
+        display: block;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-transition: 450ms all;
+        transition: 450ms all;
+        &:hover{
+            color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};;
         }
     }
     .readmore-btn {
