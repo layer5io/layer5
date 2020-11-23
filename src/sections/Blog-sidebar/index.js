@@ -30,7 +30,7 @@ const Sidebar = ( ) => {
                     nodes {
                         frontmatter {
                             title
-                            date(formatString: "Do MMMM YYYY")
+                            date(formatString: "MMMM Do, YYYY")
                             author
                             thumbnail{
                                 extension

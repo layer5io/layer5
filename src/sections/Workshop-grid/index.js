@@ -34,7 +34,7 @@ const WorkshopsPage = ({hide_path}) => {
                         body
                         frontmatter {
                             title
-                            date(formatString: "Do MMMM YYYY")
+                            date(formatString: "MMMM Do, YYYY")
                             slack
                             abstract
                             status

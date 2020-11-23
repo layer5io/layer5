@@ -22,7 +22,7 @@ query  {
             id
             frontmatter {
                 title
-                date(formatString: "Do MMMM YYYY")
+                date(formatString: "MMMM Do, YYYY")
                 eurl
                 thumbnail{
                     childImageSharp{
@@ -47,7 +47,7 @@ query  {
             id
             frontmatter {
                 title
-                date(formatString: "Do MMMM YYYY")
+                date(formatString: "MMMM Do, YYYY")
                 eurl
                 thumbnail{
                     childImageSharp{
