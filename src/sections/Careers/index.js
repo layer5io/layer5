@@ -3,6 +3,7 @@ import { Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import ProgramsGrid from "../Programs-grid";
 import InternshipPage from "../Internship-gird";
+import Button from "../../reusecore/Button";
 
 import CareersSectionWrapper from "./careers.style";
 
@@ -57,9 +58,15 @@ const CareersPage = () => {
                     <InternshipPage hide_heading={true}/>
                 </div>
                 <br/>
-                <div className="programs-section">
-                    <ProgramsGrid hide_path={true} />
+                <div className="prog-desc"> 
+                    <h3>Layer5 also participates in a number of programs.</h3>
+                    <a href="/programs">
+                        <Button primary title="See More" /> 
+                    </a>    
                 </div>
+                {/* <div className="programs-section">
+                    <ProgramsGrid hide_path={true} />
+                </div> */}
             </div>
         </CareersSectionWrapper>
     );

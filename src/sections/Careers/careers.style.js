@@ -5,6 +5,14 @@ const CareersSectionWrapper = styled.div`
         padding: 50px 0;
     }
     
+    .prog-desc{
+        padding: 0 10px 0 10px;
+        text-align: center;
+        h3{
+            margin-bottom: 10px;
+        }
+    }
+
     .programs-section{
         margin-top: -100px;
     }
