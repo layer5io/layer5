@@ -64,6 +64,9 @@ export const CardWrapper = styled.div`
                 color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};;
             }
         }
+        .date{
+            float: right;
+        }
         .anchor,span{
             color: ${props => props.theme.textColor ? props.theme.textColor : "#7A848E"};
             font-size: 14px;

@@ -23,11 +23,10 @@ const Card = ({ frontmatter, fields }) => {
                             {frontmatter.title}
                         </h2>
                         <div className="post-meta-block">
-                            {frontmatter.author && <span>By: {frontmatter.author}</span>}
+                            {frontmatter.author && <span>{frontmatter.author}</span>}
                             {frontmatter.date && (
                                 <>
-                                    <span className="divider">/</span>
-                                    <span>{frontmatter.date}</span>
+                                    <span className="date">{frontmatter.date}</span>
                                 </>
                             )}
                             {frontmatter.abstract && (
