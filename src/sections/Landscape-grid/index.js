@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
-import ServiceMeshComparison from "../../assets/images/landscape/comparison-of-service-mesh-strengths.svg";
+import ServiceMeshComparison from "../../assets/images/landscape/comparison-of-service-mesh-strengths-light.png";
 import { non_functional } from "../../collections/landscape/non-functional";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import Categories from "./categories";
@@ -25,7 +25,7 @@ const LandscapeGrid=() => {
                             <div className="heading-container">
                                 <h2>Comparison of Service Mesh Strengths</h2>
                             </div>
-                            <img src={ServiceMeshComparison} width="100%" alt="Service Mesh Comparison" />
+                            <img src={ServiceMeshComparison} width="100%" height="100%" alt="Service Mesh Comparison" />
                             <div className="heading-container">
                                 <h2>Service Mesh Timeline</h2><br />
                                 <h3>Project Announcement</h3>
