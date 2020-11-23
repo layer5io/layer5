@@ -64,7 +64,7 @@ export const CardWrapper = styled.div`
                 color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};;
             }
         }
-        .date{
+        .author{
             float: right;
         }
         .anchor,span{
