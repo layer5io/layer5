@@ -60,9 +60,7 @@ const MeshmatesGrid=() => {
                         <Row>
                             {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
                                 <Col xs={12} sm={6} lg={4} key={id}>
-                                    <Link to={fields.slug}>
-                                        <ProfileCard frontmatter={frontmatter} />
-                                    </Link>
+                                    <ProfileCard frontmatter={frontmatter} cardlink = {fields.slug}/>
                                 </Col>
                             ))}
                         </Row>
