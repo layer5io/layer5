@@ -113,6 +113,10 @@ const Data = {
                     name: "Events",
                     path: "/community/events"
                 },
+                {
+                    name: "Newcomers",
+                    path: "/community/newcomers"
+                },
             ],
             div1: {
                 src: img1,
