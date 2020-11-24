@@ -14,7 +14,7 @@ export const ProfileCardWrapper = styled.div`
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
         position: relative;
         margin: auto;
-        background: ${props => props.status === "Active" ? props.theme.secondaryColor : "gray"};
+        background: ${props => props.status === "Active" ? props.theme.menuColor : "gray"};
         filter: ${props => props.status === "Inactive" ? "grayscale(1)" : ""};
         top: 50%;
         transition: 0.3s;
