@@ -1,10 +1,6 @@
 import styled from "styled-components";
 export const ProfileCardWrapper = styled.div`
     margin-bottom: 25px;
-    ul{
-        list-style: none;
-    }
-    
     img{
        -ms-interpolation-mode: bicubic;
        vertical-align: middle;
@@ -37,7 +33,7 @@ export const ProfileCardWrapper = styled.div`
             .gatsby-image-wrapper {
                 display: block;
                 margin: auto;
-                border-radius: 90%;
+                border-radius: 100%;
                 overflow: hidden;
                 width: 140px;
                 height: 140px;

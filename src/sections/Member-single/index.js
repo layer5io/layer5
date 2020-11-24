@@ -5,7 +5,6 @@ import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import {Col, Container, Row} from "../../reusecore/Layout";
 import Image from "../../components/image";
 import MeshMateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
-import MeshMateIconWhite from "../../assets/images/meshmate/meshmate-icon-white.svg";
 
 const MemberSingle = ({frontmatter}) =>{
     const {name, position,  github, twitter, image_path, meshmate, linkedin, location, skills, bio} = frontmatter;
@@ -29,18 +28,15 @@ const MemberSingle = ({frontmatter}) =>{
                                     location &&
                                     <div className="h4">Location: <span className="bold">{location}</span></div>
                                 }
-
-                                {
-                                    bio &&
-                                    <div className="h4">{bio}</div>
-                                }
                                 {
                                     skills &&
-                                    <div className="h4">Skills: {skills}</div>
+                                    <div className="h4">Skills: <span className="bold">{skills}</span></div>
+                                }
+                                {
+                                    bio &&
+                                    <div className="h4 bio">{bio}</div>
                                 }
                             </div>
-
-
                             <div className="social-bg">
                                 <ul className="profile-social-links">
                                     { github && (
@@ -66,9 +62,8 @@ const MemberSingle = ({frontmatter}) =>{
                                     )}
                                     { meshmate && (
                                         <li>
-                                            <Link to={"/community/meshmates"}>
-                                                <img src={MeshMateIconWhite} className="meshmate-color" alt="meshmate-white-icon" />
-                                                <img src={MeshMateIcon} className="meshmate-white" alt="meshmate-color-icon" />
+                                            <Link to="/community/meshmates">
+                                                <img src={MeshMateIcon} className="meshmate-white" alt="meshmate-icon" />
                                             </Link>
                                         </li>
                                     )}
