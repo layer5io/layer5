@@ -6,16 +6,16 @@ import Image from "../image";
 
 const ProfileCard = (props) =>{
     const {name, status, image_path, meshmate } = props.frontmatter;
-    const links = props.cardlink;
+    const link = props.cardlink;
     return(
         <ProfileCardWrapper status={status}>
             <div className="profile-card">
-                <Link to={links}>
+                <Link to={link}>
                     <header>
                         <Image {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
                         { meshmate && (
                             <Link className="meshmate" to="/community/meshmates">
-                                <img src={MeshMateIcon}  alt="meshmate-color-icon" />
+                                <img src={MeshMateIcon} alt="meshmate-color-icon" />
                             </Link>
                         )}
                         <h1>{name}</h1>

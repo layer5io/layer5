@@ -27,6 +27,7 @@ const MeshmatesGrid=() => {
                             location
                             skills
                             bio
+                            meshmate
                             image_path{
                                 childImageSharp{
                                     fluid(maxWidth: 200){
