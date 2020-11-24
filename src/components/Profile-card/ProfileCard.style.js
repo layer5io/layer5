@@ -15,11 +15,12 @@ export const ProfileCardWrapper = styled.div`
         position: relative;
         margin: auto;
         background: ${props => props.status === "Active" ? props.theme.secondaryColor : "gray"};
+        filter: ${props => props.status === "Inactive" ? "grayscale(1)" : ""};
         top: 50%;
         transition: 0.3s;
         
         &:hover{
-            background: ${props => props.status === "Active" ? props.theme.secondaryLightColor : props.theme.menuColor};
+            background: ${props => props.status === "Active" ? props.theme.secondaryLightColor : "#c7c7c7"};
         }
         
         header {
