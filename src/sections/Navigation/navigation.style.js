@@ -15,7 +15,7 @@ const NavigationWrap = styled.header`
   }
   .mobile-menu-icon {
     display: none;
-    color: #1d316c;
+    color: ${props => props.theme.menuColor};
     font-size: 24px;
   }
 
@@ -32,11 +32,10 @@ const NavigationWrap = styled.header`
     padding: 1em;
     border-radius: 15px;
     display: none;
-    box-shadow: 0px 30px 70px 0px rgba(137, 139, 142, 0.15);
+    box-shadow: 0px 10px 10px 0px rgba(0, 211, 169, 0.10);
     -webkit-transform: translateY(20px);
     -ms-transform: translateY(20px);
-    transition: all 0.3s ease-in-out;
-    animation: nav-bar-anim 0.1s ease-in-out forwards;
+    animation: bobble ease .5s forwards;
   }
   .nav-grid {
     display: grid;
@@ -57,6 +56,7 @@ const NavigationWrap = styled.header`
   .nav-div {
     margin-top: -20px;
     margin-right: 15px;
+    padding-top: 10px;
     text-align: center;
     box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.025), -1px -1px 3px 3px rgba(0, 0, 0, 0.025);
     border-radius: 10px;
@@ -69,11 +69,27 @@ const NavigationWrap = styled.header`
   @keyframes nav-bar-anim {
     0% {
       opacity: 0;
-      transform: translate3d(0px, 0px, 0px) scale(1, 0);
+      transform: translate3d(0px, 0px, 0px) scale(.5, .5);
+    }
+
+    100% {
+      transform: translate3d(0px, 0px, 200px) scale(1, 1);
+      opacity: 1;
+    }
+  }
+  @keyframes bobble {
+    0% {
+        /* animation-timing-function: ease 2s; */
+        transform: translate3d(0px, -15px, 0px) scale(.75, .75); opacity: 0; visibility: hidden; 
+    }
+
+    50% {
+        transform: translate3d(0px, 11px, 8px) perspective(800px) ;
+        opacity: 70%
     }
     100% {
-      transform: translate3d(0px, 0px, 0px) scale(1, 1);
-      opacity: 1;
+        transform: translate3d(0px, 8px, 2px) scale(1, 1);
+        opacity: 100%
     }
   }
   ul li:hover > ul,
@@ -93,14 +109,15 @@ const NavigationWrap = styled.header`
       list-style: none;
       display: flex;
     }
-    li {
+    .nav-item {
       position: relative;
-      padding: 48px 0px 48px 40px;
+      margin: 48px 0px 0px 0px;
+      padding-bottom: 48px;
       .dropdown {
         li {
           padding: 0;
           a {
-            color: #1d316c;
+            color: ${props => props.theme.menuColor};
             display: block;
             padding: 5px 15px;
             &:hover {
@@ -116,16 +133,15 @@ const NavigationWrap = styled.header`
       a,
       .nav-active {
         position: relative;
-        color: ${(props) =>
-        props.theme.menuColor ? props.theme.menuColor : "#1D316C"};
+        color: ${props => props.theme.menuColor};
         font-size: 15px;
         transition: 450ms all;
-        padding-bottom: 5px;
+        padding: 0px 20px 5px 20px;
         cursor: pointer;
         &:before {
           content: "";
           position: absolute;
-          left: 0;
+          left: 20;
           bottom: 0;
           width: 20px;
           height: 1px;
@@ -156,10 +172,11 @@ const NavigationWrap = styled.header`
       width: 100px;
     }
     .nav {
-      li {
-        padding: 28px 0px 28px 40px;
+      .nav-item{
+        margin: 28px 0px 0px 0px;
+        padding-bottom: 28px;
         a {
-          color: #1d316c;
+          color:${props => props.theme.menuColor};
           &:hover {
             color: ${props => props.theme.menuHoverColor};
           }
@@ -254,14 +271,14 @@ const NavigationWrap = styled.header`
           .dropdown {
             li {
               a {
-                color: #1d316c;
+                color: ${props => props.theme.menuColor};
               }
             }
           }
           a {
             padding: 8px 10px;
             display: block;
-            color: #1d316c;
+            color:${props => props.theme.menuColor};
             &:before {
               content: none;
             }

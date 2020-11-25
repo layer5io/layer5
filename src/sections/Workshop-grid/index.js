@@ -8,6 +8,8 @@ import PageHeader from "../../reusecore/PageHeader";
 import { WorkshopPageWrapper } from "./WorkshopsGrid.style";
 
 // Social Icons
+import { BsArrowDown } from "react-icons/bs";
+import { BsArrowUp } from "react-icons/bs";
 import Slack from "../../assets/images/socialIcons/slack_color.png";
 import Slide from "../../assets/images/socialIcons/slide_color.png";
 import Link from "../../assets/images/socialIcons/link_color.png";
@@ -34,7 +36,7 @@ const WorkshopsPage = ({hide_path}) => {
                         body
                         frontmatter {
                             title
-                            date(formatString: "Do MMMM YYYY")
+                            date(formatString: "MMMM Do, YYYY")
                             slack
                             abstract
                             status
@@ -92,7 +94,7 @@ const WorkshopsPage = ({hide_path}) => {
                     <div className="workshop-grid-wrapper">
                         <Row>
                             {data.allMdx.nodes.map(({id, frontmatter, fields, body }) => (
-                                <Col {...content && ID === id ? {xs:12, sm:12, lg:12} : {xs:12, sm:12, lg:6} } key={id}>
+                                <Col {...content && ID === id ? {xs:12, sm:12, lg:12} : {xs:12, sm:12, lg:6} } key={id} onClick={() => toggleActive(id)}>
                                     <div className="workshop-grid-card">
                                         <WorkshopCard frontmatter={frontmatter} fields={fields} content={content} ID={ID} id={id} />
                                         <div className={content && ID === id ? "active" : "text-contents"}>
@@ -129,9 +131,14 @@ const WorkshopsPage = ({hide_path}) => {
                                                     </a> : ""}
                                             </div>
                                             {frontmatter.status === "delivered" ? "" : <p>Upcoming...</p>}
-                                            <button type="button" className="readme-btn" onClick={() => toggleActive(id)}>
+                                            <div className="expand">
+                                                {content && ID === id ? 
+                                                    <div> Read Less <BsArrowUp className="icon" size={30} /> </div> : 
+                                                    <div> Read More <BsArrowDown className="icon" size={30} /> </div> }
+                                            </div>
+                                            {/* <button type="button" className="readme-btn" >
                                                 {content && ID === id ? "Show Less" : "Show More"}
-                                            </button>
+                                            </button> */}
                                         </div>
                                     </div>
                                 </Col>

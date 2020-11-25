@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MemberSingleWrapper = styled.div`
-    padding: 100px 0 50px 0;
+    padding: 120px 0 50px 0;
     margin-bottom: 25px;
     ul{
         list-style: none;
@@ -13,24 +13,27 @@ export const MemberSingleWrapper = styled.div`
     
     .body{
         display: block;
-            position: relative;
-            text-align: center;
-            z-index: 1;
-            overflow: hidden;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        overflow: hidden;
 
-            .h4{
-                font-weight: 400;
-                font-size: 14px;
-                color: black;
-                letter-spacing: .5px;
-                margin-top: 10px;
-                padding: 0;
-                text-align: left;
-               
-            }
-            .bold{
-                font-weight: 600;
-            }
+        .h4{
+            font-weight: 400;
+            font-size: 15px;
+            color: black;
+            letter-spacing: .5px;
+            margin-top: 10px;
+            padding: 0;
+            text-align: left;
+        }
+        .bio{
+            margin-top: 20px;
+        }
+        
+        .bold{
+            font-weight: 600;
+        }
     }
     .profile-image:hover{
         transition: 0.9s;
@@ -57,8 +60,8 @@ export const MemberSingleWrapper = styled.div`
             
             .h1 {
                 font-family: 'Open Sans', sans-serif;
-                font-weight: 300;
-                font-size: 30px;
+                font-weight: 600;
+                font-size: 40px;
                 color: black;
                 letter-spacing: -2px;
                 margin-top: 15px;
@@ -68,24 +71,14 @@ export const MemberSingleWrapper = styled.div`
             
             .h2 {
                 font-weight: 400;
-                font-size: 20px;
-                color: black;
+                font-size: 22px;
+                font-style: italic;
+                color: ${props => props.theme.menuColor};
                 letter-spacing: .5px;
-                margin-top: 10px;
+                margin-top: 15px;
                 padding: 0;
-                border-bottom: 3px solid #00b4a0;
-                
+                border-bottom: 3px solid ${props => props.theme.secondaryColor};
                 width: 50%;
-                text-align: left;
-            }
-            
-            .h4{
-                font-weight: 400;
-                font-size: 14px;
-                color: black;
-                letter-spacing: .5px;
-                margin-top: 10px;
-                padding: 0;
                 text-align: left;
             }
         }
@@ -122,12 +115,6 @@ export const MemberSingleWrapper = styled.div`
                         .twitter{
                             color: #1DA1F2;
                         }
-                        .meshmate-color{
-                            display: block;
-                        }
-                        .meshmate-white{
-                            display: none;
-                        }
                     }
                     
                     &:active{
@@ -140,12 +127,10 @@ export const MemberSingleWrapper = styled.div`
                         width: 32px;
                     }
                     img {
+                        display: block;
                         width: 32px;
                         height: 32px;
                         max-width: none;
-                    }
-                    .meshmate-color{
-                        display: none;
                     }
                 }
             }

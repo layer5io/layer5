@@ -20,7 +20,7 @@ const Sidebar = ( ) => {
                         fieldValue
                         totalCount
                     }
-                }    
+                } 
             }
         `
     );

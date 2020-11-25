@@ -26,6 +26,13 @@ exports.onCreatePage = ({ page, actions }) => {
 };
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
+
+  // Create client-side redirects (these only work in prod deployment)
+  const { createRedirect } = actions
+  createRedirect({ fromPath: '/books', toPath: '/learn/books', redirectInBrowser: true, isPermanent: true })
+  createRedirect({ fromPath: '/workshops', toPath: '/learn/workshops', redirectInBrowser: true, isPermanent: true })
+
+  // Create Pages
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
       'src/templates/blog-single.js'

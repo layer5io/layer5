@@ -4,7 +4,10 @@ export const ProgramsPageWrapper = styled.div`
         padding: 50px 0;
         
         .program{
-            box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
+            box-shadow: 0px 0px 3px ${props => props.theme.shadowLightColor};
+            &:hover{
+                box-shadow: 0px 0px 10px ${props => props.theme.shadowLightColor};
+            }
             min-height: 280px;
             padding: 5px;
             transition: 0.2s ease;

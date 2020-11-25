@@ -12,7 +12,8 @@ const theme = {
     shadowColor: "rgba(0, 0, 0, 0.05)",
     shadowLightColor: "#E6E6E6",
     menuColor: "#3c494f",
-    menuHoverColor: "#00b39f"
+    menuHoverColor: "#00b39f",
+    linkColor: "#111111"
 };
 export default theme;
 
