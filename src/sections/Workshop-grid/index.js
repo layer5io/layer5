@@ -8,8 +8,8 @@ import PageHeader from "../../reusecore/PageHeader";
 import { WorkshopPageWrapper } from "./WorkshopsGrid.style";
 
 // Social Icons
-import { BsArrowDownRight } from "react-icons/bs";
-import { BsArrowUpLeft } from "react-icons/bs";
+import { BsArrowDown } from "react-icons/bs";
+import { BsArrowUp } from "react-icons/bs";
 import Slack from "../../assets/images/socialIcons/slack_color.png";
 import Slide from "../../assets/images/socialIcons/slide_color.png";
 import Link from "../../assets/images/socialIcons/link_color.png";
@@ -132,7 +132,9 @@ const WorkshopsPage = ({hide_path}) => {
                                             </div>
                                             {frontmatter.status === "delivered" ? "" : <p>Upcoming...</p>}
                                             <div className="expand">
-                                                {content && ID === id ? <BsArrowUpLeft size={30} /> : <BsArrowDownRight size={30} /> }
+                                                {content && ID === id ? 
+                                                    <div> Read Less <BsArrowUp className="icon" size={30} /> </div> : 
+                                                    <div> Read More <BsArrowDown className="icon" size={30} /> </div> }
                                             </div>
                                             {/* <button type="button" className="readme-btn" >
                                                 {content && ID === id ? "Show Less" : "Show More"}

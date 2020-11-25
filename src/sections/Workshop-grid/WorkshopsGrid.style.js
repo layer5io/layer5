@@ -103,7 +103,9 @@ export const WorkshopPageWrapper = styled.div`
   .expand{ 
     padding-right: 15px;
     float: right;
-
+    .icon {
+      margin-bottom: -10px;
+    }
   }
 
   .workshop-list-wrapper {
