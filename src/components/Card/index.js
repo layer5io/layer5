@@ -9,46 +9,43 @@ import { CardWrapper } from "./Card.style";
 const Card = ({ frontmatter, fields }) => {
     return (
         <CardWrapper fixed={!!frontmatter.abstract}>
-            <div className="post-block">
-                <div className="post-thumb-block">
-                    <Link className="anchor" to={fields.slug}>
+            <Link className="anchor" to={fields.slug}>
+                <div className="post-block">
+                    <div className="post-thumb-block">
                         <Image
                             {...frontmatter.thumbnail}
                             imgStyle={{ objectFit: "contain" }}
                             alt={frontmatter.title}
                         />
-                    </Link>
-                </div>
-                <div className="post-content-block">
-                    <h2 className="post-title">
-                        <Link className="anchor" to={fields.slug}>
+                    </div>
+                    <div className="post-content-block">
+                        <h2 className="post-title">
                             {frontmatter.title}
-                        </Link>
-                    </h2>
-                    <div className="post-meta-block">
-                        {frontmatter.author && <span>By: {frontmatter.author}</span>}
-                        {frontmatter.date && (
-                            <>
-                                <span className="divider">/</span>
-                                <span>{frontmatter.date}</span>
-                            </>
-                        )}
-                        {frontmatter.abstract && (
-                            <p className="post-entry">{frontmatter.abstract}</p>
-                        )}
-                    </div>
-                    <div className="readmore-btn-wrapper">
-                        <Link className="readmore-btn" to={fields.slug}>
-                            see more <IoIosArrowRoundForward />
-                        </Link>
-                        {frontmatter.eurl && (
-                            <a className="readmore-btn" href={frontmatter.eurl}>
-                                <BiLinkExternal />
-                            </a>
-                        )}
+                        </h2>
+                        <div className="post-meta-block">
+                            {frontmatter.date && (
+                                <>
+                                    <span>{frontmatter.date}</span>
+                                </>
+                            )}
+                            {frontmatter.author && <span className="author">{frontmatter.author}</span>}
+                            {frontmatter.abstract && (
+                                <p className="post-entry">{frontmatter.abstract}</p>
+                            )}
+                        </div>
+                        <div className="readmore-btn-wrapper">
+                            <Link className="readmore-btn" to={fields.slug}>
+                                see more <IoIosArrowRoundForward />
+                            </Link>
+                            {frontmatter.eurl && (
+                                <a className="readmore-btn" href={frontmatter.eurl}>
+                                    <BiLinkExternal />
+                                </a>
+                            )}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </CardWrapper>
     );
 };

@@ -26,7 +26,7 @@ export const query = graphql`
                 frontmatter {
                     title
                     subtitle
-                    date(formatString: "Do MMMM YYYY")
+                    date(formatString: "MMMM Do, YYYY")
                     author
                     thumbnail{
                         childImageSharp{
