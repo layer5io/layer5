@@ -26,6 +26,12 @@ exports.onCreatePage = ({ page, actions }) => {
 };
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
+
+  // Create Redirects
+  const { createRedirect } = actions
+  createRedirect({ fromPath: '/books', toPath: '/learn/books', redirectInBrowser: true, isPermanent: true })
+
+  // Create Pages
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
       'src/templates/blog-single.js'

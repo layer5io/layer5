@@ -30,7 +30,7 @@ const Data = {
             },
             div2: {
                 src: img2,
-                des: "Service Mesh Istio patterns for multilatency"
+                des: "Service Mesh Istio patterns for multitenancy"
             }
         },
         {
@@ -77,11 +77,11 @@ const Data = {
             subItems: [
                 {
                     name: "Books",
-                    path: "/books"
+                    path: "/learn/books"
                 },
                 {
                     name: "Workshops",
-                    path: "/workshops"
+                    path: "/learn/workshops"
                 }
             ],
             div1: {
@@ -90,7 +90,7 @@ const Data = {
             },
             div2: {
                 src: img2,
-                des: "Service Mesh Istio patterns for multilatency"
+                des: "Service Mesh Istio patterns for multitenancy"
             }
         },
         {
