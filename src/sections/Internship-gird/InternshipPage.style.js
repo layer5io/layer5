@@ -5,6 +5,10 @@ const InternshipSectionWrapper = styled.div`
     .internships-page-wrapper{
         padding: 50px 0;
     }
+
+    h2{
+        color: black;
+    }
     
     .apply-button{
         position: relative;
@@ -13,11 +17,13 @@ const InternshipSectionWrapper = styled.div`
     }
     
     .opportunity { 
-        box-shadow: 0px 0px 20px ${props => props.theme.shadowLightColor};
+        box-shadow: 0px 0px 2px ${props => props.theme.shadowLightColor};
+        &:hover{
+            box-shadow: 0px 0px 10px ${props => props.theme.shadowLightColor};
+        }
         padding-top: 4%;
-        padding-right: 4%;
-        padding-left: 4%;
-        margin: 15px;
+        padding-right: 3%;
+        padding-left: 3%;
         min-height: 410px;
         border-radius: 4%;
         position: relative;
