@@ -100,6 +100,12 @@ export const WorkshopPageWrapper = styled.div`
     }
   }
 
+  .expand{ 
+    padding-right: 15px;
+    float: right;
+
+  }
+
   .workshop-list-wrapper {
     padding: 50px 0;
   }
