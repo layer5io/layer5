@@ -56,7 +56,7 @@ const NavigationWrap = styled.header`
   .nav-div {
     margin-top: -20px;
     margin-right: 15px;
-    padding: 10px;
+    padding-top: 10px;
     text-align: center;
     box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.025), -1px -1px 3px 3px rgba(0, 0, 0, 0.025);
     border-radius: 10px;
