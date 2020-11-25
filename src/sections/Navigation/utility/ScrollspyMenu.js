@@ -32,12 +32,12 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                                 </div>
                                 <div className="nav-display">
                                     <div className="nav-div">
-                                        <a href="#"><img src={menu.div1.src} className="nav-img" /></a>
-                                        <div> {menu.div1.des} </div>
+                                        <a href={menu.div1.path}><img src={menu.div1.src} className="nav-img" /></a>
+                                        <div> {menu.div1.descr} </div>
                                     </div>
                                     <div className="nav-div">
-                                        <a href="#"><img src={menu.div2.src} className="nav-img" /></a>
-                                        <div> {menu.div2.des} </div>
+                                        <a href={menu.div2.path}><img src={menu.div2.src} className="nav-img" /></a>
+                                        <div> {menu.div2.descr} </div>
                                     </div>
                                 </div>
                             </div>
