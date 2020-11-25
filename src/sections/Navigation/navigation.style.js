@@ -100,7 +100,7 @@ const NavigationWrap = styled.header`
         li {
           padding: 0;
           a {
-            color: #1d316c;
+            color: ${props => props.theme.linkColor}; !important;
             display: block;
             padding: 5px 15px;
             &:hover {

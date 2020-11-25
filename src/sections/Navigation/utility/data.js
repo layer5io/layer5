@@ -1,5 +1,6 @@
 import img1 from "./img1.svg";
 import img2 from "./layer5-and-istio.png";
+import meshmateLogo from "../../../assets/images/community/meshmate-stack.svg";
 
 const Data = {
     menuItems: [
@@ -8,19 +9,19 @@ const Data = {
             path: "/",
             subItems: [
                 {
-                    name: "Home Default",
+                    name: "Current Home",
                     path: "/"
                 },
                 {
-                    name: "Home Classic",
+                    name: "Temp Example: Classic",
                     path: "/classic"
                 },
                 {
-                    name: "Home Modern",
+                    name: "Temp Example: Modern",
                     path: "/modern"
                 },
                 {
-                    name: "Home Hosting",
+                    name: "Temp Example: Hosting",
                     path: "/hosting"
                 }
             ],
@@ -98,6 +99,10 @@ const Data = {
             path: "/community",
             subItems: [
                 {
+                    name: "Join!",
+                    path: "/community"
+                },
+                {
                     name: "Members",
                     path: "/community/members"
                 },
@@ -105,32 +110,29 @@ const Data = {
                     name: "Meshmates",
                     path: "/community/meshmates"
                 },
-                {
-                    name: "MeshMasters",
-                    path: "/community/meshmasters"
-                },
+                // {
+                //     name: "MeshMasters",
+                //     path: "/community/meshmasters"
+                // },
+                // {
+                //     name: "Newcomers",
+                //     path: "/community/newcomers"
+                // },
                 {
                     name: "Events",
                     path: "/community/events"
                 },
-                {
-                    name: "Newcomers",
-                    path: "/community/newcomers"
-                },
+
             ],
             div1: {
-                src: img1,
-                des: "How I schooled my seniors"
+                src: meshmateLogo,
+                des: "Meet our MeshMates",
+                path: "/community/meshmates"
             },
             div2: {
                 src: img2,
                 des: "Service Mesh Istio patterns for multilatency"
             }
-        },
-        {
-            name: "About",
-            path: "/about",
-            offset: "-50"
         },
         {
             name: "Blog",
@@ -153,6 +155,11 @@ const Data = {
                 src: img2,
                 des: "Service Mesh Istio patterns for multilatency"
             }
+        },
+        {
+            name: "About",
+            path: "/about",
+            offset: "-50"
         },
         // {
         //     name: "Contact",
