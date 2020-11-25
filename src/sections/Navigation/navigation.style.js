@@ -35,7 +35,7 @@ const NavigationWrap = styled.header`
     box-shadow: 0px 10px 10px 0px rgba(0, 211, 169, 0.10);
     -webkit-transform: translateY(20px);
     -ms-transform: translateY(20px);
-    animation: bobble ease .45s forwards;
+    animation: bobble ease .5s forwards;
   }
   .nav-grid {
     display: grid;
@@ -79,21 +79,17 @@ const NavigationWrap = styled.header`
   }
   @keyframes bobble {
     0% {
-        /* animation-timing-function: ease-in; */
-
-        transform: perspective(700px) scale(.5, .5); opacity: 0; visibility: hidden; 
+        /* animation-timing-function: ease 2s; */
+        transform: translate3d(0px, -15px, 0px) scale(.75, .75); opacity: 0; visibility: hidden; 
     }
+
     50% {
-        transform: translate3d(0px, 11px, 8px);
-        opacity: 60%
-        
-
-
+        transform: translate3d(0px, 11px, 8px) perspective(800px) ;
+        opacity: 70%
     }
     100% {
-        transform: translate3d(0px, 8px, 2px);
+        transform: translate3d(0px, 8px, 2px) scale(1, 1);
         opacity: 100%
-        animation-timing-function: ease .5s;
     }
   }
   ul li:hover > ul,
