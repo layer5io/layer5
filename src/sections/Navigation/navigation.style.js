@@ -32,11 +32,10 @@ const NavigationWrap = styled.header`
     padding: 1em;
     border-radius: 15px;
     display: none;
-    box-shadow: 0px 30px 70px 0px rgba(137, 139, 142, 0.15);
+    box-shadow: 0px 10px 10px 0px rgba(0, 211, 169, 0.10);
     -webkit-transform: translateY(20px);
     -ms-transform: translateY(20px);
-    transition: all 0.3s ease-in-out;
-    animation: nav-bar-anim 0.1s ease-in-out forwards;
+    animation: bobble ease .45s forwards;
   }
   .nav-grid {
     display: grid;
@@ -57,6 +56,7 @@ const NavigationWrap = styled.header`
   .nav-div {
     margin-top: -20px;
     margin-right: 15px;
+    padding: 10px;
     text-align: center;
     box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.025), -1px -1px 3px 3px rgba(0, 0, 0, 0.025);
     border-radius: 10px;
@@ -69,11 +69,31 @@ const NavigationWrap = styled.header`
   @keyframes nav-bar-anim {
     0% {
       opacity: 0;
-      transform: translate3d(0px, 0px, 0px) scale(1, 0);
+      transform: translate3d(0px, 0px, 0px) scale(.5, .5);
+    }
+
+    100% {
+      transform: translate3d(0px, 0px, 200px) scale(1, 1);
+      opacity: 1;
+    }
+  }
+  @keyframes bobble {
+    0% {
+        /* animation-timing-function: ease-in; */
+
+        transform: perspective(700px) scale(.5, .5); opacity: 0; visibility: hidden; 
+    }
+    50% {
+        transform: translate3d(0px, 11px, 8px);
+        opacity: 60%
+        
+
+
     }
     100% {
-      transform: translate3d(0px, 0px, 0px) scale(1, 1);
-      opacity: 1;
+        transform: translate3d(0px, 8px, 2px);
+        opacity: 100%
+        animation-timing-function: ease .5s;
     }
   }
   ul li:hover > ul,

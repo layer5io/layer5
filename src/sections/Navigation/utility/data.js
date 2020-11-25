@@ -1,6 +1,7 @@
 import img1 from "./img1.svg";
 import img2 from "./layer5-and-istio.png";
 import meshmateLogo from "../../../assets/images/community/meshmate-stack.svg";
+import communityGreen from "../../../assets/images/community/community-green.svg";
 
 const Data = {
     menuItems: [
@@ -27,11 +28,11 @@ const Data = {
             ],
             div1: {
                 src: img1,
-                des: "How I schooled my seniors"
+                descr: "How I schooled my seniors"
             },
             div2: {
                 src: img2,
-                des: "Service Mesh Istio patterns for multitenancy"
+                descr: "Service Mesh Istio patterns for multitenancy"
             }
         },
         {
@@ -65,11 +66,11 @@ const Data = {
             ],
             div1: {
                 src: img1,
-                des: "How I schooled my seniors"
+                descr: "How I schooled my seniors"
             },
             div2: {
                 src: img2,
-                des: "Service Mesh Istio patterns for multilatency"
+                descr: "Service Mesh Istio patterns for multilatency"
             }
         },
         {
@@ -87,11 +88,11 @@ const Data = {
             ],
             div1: {
                 src: img1,
-                des: "How I schooled my seniors"
+                descr: "How I schooled my seniors"
             },
             div2: {
                 src: img2,
-                des: "Service Mesh Istio patterns for multitenancy"
+                descr: "Service Mesh Istio patterns for multitenancy"
             }
         },
         {
@@ -126,12 +127,13 @@ const Data = {
             ],
             div1: {
                 src: meshmateLogo,
-                des: "Meet our MeshMates",
+                descr: "Meet our MeshMates",
                 path: "/community/meshmates"
             },
             div2: {
-                src: img2,
-                des: "Service Mesh Istio patterns for multilatency"
+                src: communityGreen,
+                descr: "Join the service mesh community",
+                path: "/community"
             }
         },
         {
@@ -149,11 +151,11 @@ const Data = {
             ],
             div1: {
                 src: img1,
-                des: "How I schooled my seniors"
+                descr: "How I schooled my seniors"
             },
             div2: {
                 src: img2,
-                des: "Service Mesh Istio patterns for multilatency"
+                descr: "Service Mesh Istio patterns for multilatency"
             }
         },
         {
