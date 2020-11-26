@@ -34,7 +34,7 @@ const RelatedPostsWrapper = styled.div`
                 transition: all 0.3s linear;
                 svg{
                     margin-left: 0px;
-                    font-size: 27px;
+                    font-size: 35px;
                     transition: all 0.3s linear;
                 }
                 &:hover{
