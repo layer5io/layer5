@@ -13,58 +13,108 @@ import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/blog/themeStyles";
 
 export const query = graphql`
-query  {
-    meetups: allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { fields: { collection: { eq: "meetups" } } }
-    ) {
-        nodes {
-            id
-            frontmatter {
-                title
-                date(formatString: "MMMM Do, YYYY")
-                eurl
-                thumbnail{
-                    childImageSharp{
-                        fluid(maxWidth: 1000){
-                            ...GatsbyImageSharpFluid_withWebp
+    {
+        allCategories: allMdx(
+                filter: {fields: {collection: {eq: "events"}}},
+                sort: {fields: frontmatter___date, order: DESC},
+                limit: 12
+            ) {
+            nodes {
+                id
+                fields {
+                    slug
+                }
+                frontmatter {
+                    abstract
+                    eurl
+                    title
+                    date(formatString: "DD MMMM YYYY")
+                    thumbnail {
+                        publicURL
+                        relativePath
+                        extension
+                        childImageSharp {
+                            fluid(maxWidth: 1000) {
+                                ...GatsbyImageSharpFluid_withWebp
+                            }
                         }
                     }
-                    extension
-                    publicURL
                 }
             }
-            fields {
-                slug
+        }
+        allMeetups: allMdx(filter: {frontmatter: {topic: {eq: "meetups"}}}) {
+            nodes {
+                id
+                fields {
+                    slug
+                }
+                frontmatter {
+                    abstract
+                    eurl
+                    title
+                    date(formatString: "Do MMMM YYYY")
+                    thumbnail {
+                        publicURL
+                        relativePath
+                        extension
+                        childImageSharp {
+                            fluid(maxWidth: 1000) {
+                                ...GatsbyImageSharpFluid_withWebp
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        allWorkshops: allMdx(filter: {frontmatter: {topic: {eq: "workshop"}}}) {
+            nodes {
+                id
+                fields {
+                    slug
+                }
+                frontmatter {
+                    abstract
+                    eurl
+                    title
+                    date(formatString: "Do MMMM YYYY")
+                    thumbnail {
+                        publicURL
+                        relativePath
+                        extension
+                        childImageSharp {
+                            fluid(maxWidth: 1000) {
+                                ...GatsbyImageSharpFluid_withWebp
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        allEvents: allMdx(filter: {frontmatter: {topic: {eq: "event"}}}) {
+            nodes {
+                id
+                fields {
+                    slug
+                }
+                frontmatter {
+                    abstract
+                    eurl
+                    title
+                    date(formatString: "Do MMMM YYYY")
+                    thumbnail {
+                        publicURL
+                        relativePath
+                        extension
+                        childImageSharp {
+                            fluid(maxWidth: 1000) {
+                                ...GatsbyImageSharpFluid_withWebp
+                            }
+                        }
+                    }
+                }
             }
         }
     }
-    events: allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { fields: { collection: { eq: "events" } } }
-    ) {
-        nodes {
-            id
-            frontmatter {
-                title
-                date(formatString: "MMMM Do, YYYY")
-                eurl
-                thumbnail{
-                    childImageSharp{
-                        fluid(maxWidth: 1000){
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                    extension
-                    publicURL
-                }
-            }
-            fields {
-                slug
-            }
-        }
-    }
-}
 `;
 
 const EventsGrid = ({data}) => (
