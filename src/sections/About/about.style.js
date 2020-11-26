@@ -110,14 +110,8 @@ const AboutSectionWrapper = styled.section`
     color: blue;
   }
   .about-button {
-    background: #ebc017;
-    color: #fff;
     height: 40px;
     margin-top: 20px;
-    &:hover {
-      background: #ead07d;
-      color: #333;
-    }
   }
   .social-widgets {     
     .contactf{

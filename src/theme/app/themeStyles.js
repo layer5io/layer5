@@ -13,7 +13,9 @@ const theme = {
     shadowLightColor: "#E6E6E6",
     menuColor: "#3c494f",
     menuHoverColor: "#00b39f",
-    linkColor: "#111111"
+    linkColor: "#111111",
+    highlightColor: "#EBC017",
+    highlightLightColor: "#EAD07D"
 };
 export default theme;
 

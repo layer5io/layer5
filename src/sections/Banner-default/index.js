@@ -31,7 +31,7 @@ const BannerDefault = () => {
                         The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
                         </p>
                         <VintageBox right={true} vintageOne={true}>
-                            <Button className="banner-btn one" title="Run Meshery">
+                            <Button primary className="banner-btn one" title="Run Meshery">
                                 <FaDownload className="icon-left" />
                             </Button>
                             <Button className="banner-btn two" title="Watch Now">
