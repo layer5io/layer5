@@ -13,6 +13,11 @@ export const CardWrapper = styled.div`
             .readmore-btn{
                 color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};
             }
+            .post-title{
+                .anchor{
+                    color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};
+                }
+            }
         } 
     }
 
