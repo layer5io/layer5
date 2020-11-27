@@ -10,8 +10,8 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
 
     let handleMouseHover = (index) => {
         if (active === menuItems[index]) return;
-        setActive(menuItems[index])
-    }
+        setActive(menuItems[index]);
+    };
     if (props.className) {
         addAllClasses.push(props.className);
     }
