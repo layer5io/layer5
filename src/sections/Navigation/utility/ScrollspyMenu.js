@@ -19,7 +19,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
     return (
         <ul className={addAllClasses.join(" ")}>
             {menuItems.map((menu, index) => (
-                <React.Fragment>
+                <React.Fragment key={index}>
                     <li
                         key={index}
                         className={
@@ -31,7 +31,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                     </li>
                     <div className="fakediv">
                         {active.subItems !== undefined && (
-                            <ul key={index} className="dropdown">
+                            <ul className="dropdown">
                                 {active.name}
                                 <div className="nav-grid">
                                     <div className="hr">
