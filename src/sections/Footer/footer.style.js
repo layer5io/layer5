@@ -7,6 +7,11 @@ const FotterWrapper = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+  .links{
+    float: right;
+  }
+
   .section__particle{
       position: absolute;
       &.one{
