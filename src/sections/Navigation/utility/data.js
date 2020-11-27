@@ -53,7 +53,7 @@ const Data = {
                 },
                 {
                     name: "Service Mesh Interface",
-                    path: "/projects/service-mesh-interface"
+                    path: "/projects/service-mesh-interface-conformance"
                 },
                 {
                     name: "Image Hub",
