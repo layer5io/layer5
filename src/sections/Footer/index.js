@@ -15,7 +15,7 @@ const Footer = () => {
             <img className="section__particle one" src={particleOne} alt="appion app landing" />
             <Container>
                 <Row className="footer-head">
-                    <Col className="footer-widgets" lg={3}>
+                    <Col className="footer-logo-pos" lg={3}>
                         <Link to="#">
                             <img src={logo} className="footer-logo" alt="logo" />
                         </Link>

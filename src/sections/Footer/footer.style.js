@@ -15,6 +15,13 @@ const FotterWrapper = styled.section`
   
   .footer-head{
     margin: 0 40px 20px 0;
+    .footer-logo-pos{
+      padding: 0px;
+      .footer-logo {
+        max-width: 200px;
+        height: auto;
+      }
+    }
   }
   .section__particle{
       position: absolute;
@@ -35,6 +42,7 @@ const FotterWrapper = styled.section`
       border: 1px solid white;
       background-color: #1D1F25;
       border-radius: 4px;
+      color: white;
     }
     float: right;
     margin-right: 40px; 
@@ -42,6 +50,7 @@ const FotterWrapper = styled.section`
 
   .desc-info{
     padding-right: 25px;
+    font-style: italic;
   }
 
   ul{
@@ -59,7 +68,7 @@ const FotterWrapper = styled.section`
     transition: 450ms all;
     color: ${props => props.theme.white};
     &:hover {
-      color: ${props => props.theme.black};
+      color: ${props => props.theme.secondaryColor};
     }
   }
   .footer-contact{
@@ -130,10 +139,6 @@ const FotterWrapper = styled.section`
   .social__link--docker:hover {
       color:#2496ed
   }
-  }
-  .footer-logo {
-    max-width: 200px;
-    height: auto;
   }
   .descript {
     margin-top: -10px;
