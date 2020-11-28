@@ -12,7 +12,6 @@ import BlogPageWrapper from "./blogSingle.style";
 
 const BlogSingle = ({data}) => {
     const { frontmatter, body } = data.mdx;
-    
     return (
         <BlogPageWrapper>
             <PageHeader
@@ -45,7 +44,7 @@ const BlogSingle = ({data}) => {
                             </Row>
                         </Col>
                     </Row>
-                    <RelatedPosts/>
+                    <RelatedPosts tags={frontmatter.tags}/>
                 </Container> 
             </div>
         </BlogPageWrapper>
