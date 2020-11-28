@@ -54,10 +54,12 @@ const RelatedPosts = ( {tags} ) => {
                 <h3>Related Blogs</h3>
             </div>
             <Carousel  
-                itemsToScroll = {2}
+                easing="ease"
+                itemsToScroll = {1}
+                className="carouselStyling"
                 showArrows = {true}  
                 breakPoints = {[
-                    { width: 1, itemsToShow: 1, itemsToScroll:1},
+                    { width: 1, itemsToShow: 1},
                     { width: 550, itemsToShow: 2},
                     { width: 850, itemsToShow: 3},
                     { width: 1000, itemsToShow: 3}

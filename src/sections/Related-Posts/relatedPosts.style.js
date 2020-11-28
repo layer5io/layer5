@@ -47,6 +47,27 @@ const RelatedPostsWrapper = styled.div`
                 
             }
         }
+        .carouselStyling{
+            .rec.rec-arrow:hover {
+                background-color: rgba(0,179,159,1);
+            }
+            .rec.rec-arrow:focus:enabled {
+                color: #fff;
+                background-color: rgba(0, 179, 159, 1);
+                box-shadow: 0 0 2px 0 #333;
+              }
+            .rec.rec-arrow:disabled {
+                visibility: hidden;
+            }            
+            .rec.rec-dot{
+                background-color: rgba(225, 247, 245, 1);
+            }
+            .rec.rec-dot_active {
+                background-color: rgba(117, 255, 239, 1);
+                box-shadow: 0 0 1px 3px rgba(0, 179, 159, 1);
+            }
+
+        }
         
 `;
 
