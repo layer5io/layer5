@@ -3,15 +3,19 @@ import styled from "styled-components";
 const FotterWrapper = styled.section`
   padding-top: 40px;
   padding-bottom: 25px;
-  background: #3c494f;
+  background: black;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 
   .links{
     float: right;
+    filter: invert();
   }
-
+  
+  .footer-head{
+    margin: 0 40px 20px 0;
+  }
   .section__particle{
       position: absolute;
       &.one{
@@ -20,6 +24,26 @@ const FotterWrapper = styled.section`
           width: 270px;
       }
   }
+
+  .subscribe{
+    margin: 30px 0 50px 0;
+    display: inline-flex;
+    input{
+      padding: 16px;
+      margin-right: 5px;
+      width: 300px;
+      border: 1px solid white;
+      background-color: #1D1F25;
+      border-radius: 4px;
+    }
+    float: right;
+    margin-right: 40px; 
+  }
+
+  .desc-info{
+    padding-right: 25px;
+  }
+
   ul{
     padding: 0;
     list-style: none;
@@ -29,8 +53,6 @@ const FotterWrapper = styled.section`
     }
   }
   p{
-    font-size: 18px;
-    line-height: 38px;
     color: ${props => props.theme.white};
   }
   .anchor{
@@ -108,11 +130,6 @@ const FotterWrapper = styled.section`
   .social__link--docker:hover {
       color:#2496ed
   }
-    .widget-title {
-      color: ${props => props.theme.white};
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
   }
   .footer-logo {
     max-width: 200px;
@@ -135,7 +152,8 @@ const FotterWrapper = styled.section`
     margin-bottom: 25px;
     .widget-title {
       color: ${props => props.theme.white};
-      font-size: 24px;
+      font-size: 25px;
+      font-weight: 600;
       margin-bottom: 20px;
     }
     .info {
@@ -219,8 +237,9 @@ const FotterWrapper = styled.section`
       }
     }
     p{
-      order: 1;
-      margin: 0;
+      font-size: 18px;
+      line-height: 38px;
+      color: ${props => props.theme.white};
     }
   }
   @media only screen and (max-width: 1600px) {

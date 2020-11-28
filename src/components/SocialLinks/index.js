@@ -12,7 +12,7 @@ import SocialSectionWrapper from "./SocialLinks.style";
 const SocialLinks = () => {
     return (
         <SocialSectionWrapper>
-            <Col className="social-widgets" xs={12} sm={7}>
+            <Col className="social-widgets" xs={12}>
                 <Row className="contactf">
                     <Link className="social-icons mail" href="mailto:community@layer5.io">
                         <img height="40 px" src={mail_icon} alt="mail" />
