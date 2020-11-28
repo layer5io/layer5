@@ -11,21 +11,27 @@ const Data = {
             subItems: [
                 {
                     name: "Current Home",
-                    path: "/"
+                    path: "/",
+                    sepLine: true
                 },
                 {
                     name: "Temp Example: Classic",
-                    path: "/classic"
+                    path: "/classic",
+                    sepLine: true
                 },
                 {
                     name: "Temp Example: Modern",
-                    path: "/modern"
+                    path: "/modern",
+                    sepLine: true
                 },
                 {
                     name: "Temp Example: Hosting",
-                    path: "/hosting"
+                    path: "/hosting",
+                    sepLine: true
                 }
             ],
+            actionName: "Home",
+            actionLink: "/",
             div1: {
                 src: img1,
                 descr: "How I schooled my seniors"
@@ -41,29 +47,37 @@ const Data = {
             subItems: [
                 {
                     name: "Meshery",
-                    path: "/meshery"
+                    path: "/meshery",
+                    sepLine: true
                 },
                 {
                     name: "Landscape",
-                    path: "/landscape"
+                    path: "/landscape",
+                    sepLine: true
                 },
                 {
                     name: "Service Mesh Performance",
-                    path: "/projects/service-mesh-performance"
+                    path: "/projects/service-mesh-performance",
+                    sepLine: true
                 },
                 {
                     name: "Service Mesh Interface",
-                    path: "/projects/service-mesh-interface"
+                    path: "/projects/service-mesh-interface",
+                    sepLine: true
                 },
                 {
                     name: "Image Hub",
-                    path: "/projects/image-hub"
+                    path: "/projects/image-hub",
+                    sepLine: true
                 },
                 {
                     name: "Distributed Performance",
-                    path: "/projects/distributed-performance-management-of-service-meshes"
+                    path: "/projects/distributed-performance-management-of-service-meshes",
+                    sepLine: true
                 }
             ],
+            actionName: "Projects",
+            actionLink: "/projects",
             div1: {
                 src: img1,
                 descr: "How I schooled my seniors"
@@ -79,13 +93,17 @@ const Data = {
             subItems: [
                 {
                     name: "Books",
-                    path: "/learn/books"
+                    path: "/learn/books",
+                    sepLine: true
                 },
                 {
                     name: "Workshops",
-                    path: "/learn/workshops"
+                    path: "/learn/workshops",
+                    sepLine: true
                 }
             ],
+            actionName: "Learn",
+            actionLink: "/learn",
             div1: {
                 src: img1,
                 descr: "How I schooled my seniors"
@@ -101,15 +119,18 @@ const Data = {
             subItems: [
                 {
                     name: "Join!",
-                    path: "/community"
+                    path: "/community",
+                    sepLine: true
                 },
                 {
                     name: "Members",
-                    path: "/community/members"
+                    path: "/community/members",
+                    sepLine: true
                 },
                 {
                     name: "Meshmates",
-                    path: "/community/meshmates"
+                    path: "/community/meshmates",
+                    sepLine: true
                 },
                 // {
                 //     name: "MeshMasters",
@@ -121,10 +142,13 @@ const Data = {
                 // },
                 {
                     name: "Events",
-                    path: "/community/events"
+                    path: "/community/events",
+                    sepLine: true
                 },
 
             ],
+            actionName: "Meet the community",
+            actionLink: "/community",
             div1: {
                 src: meshmateLogo,
                 descr: "Meet our MeshMates",
@@ -142,13 +166,17 @@ const Data = {
             subItems: [
                 {
                     name: "Blog",
-                    path: "/blog"
+                    path: "/blog",
+                    sepLine: true
                 },
                 {
                     name: "News",
-                    path: "/news"
+                    path: "/news",
+                    sepLine: true
                 }
             ],
+            actionName: "Blogs",
+            actionLink: "/blog",
             div1: {
                 src: img1,
                 descr: "How I schooled my seniors"
