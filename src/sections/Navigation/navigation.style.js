@@ -25,7 +25,7 @@ const NavigationWrap = styled.header`
     background: white;
     opacity: 0;
     border: 1px solid #f5f5f5;
-    margin: 1vw 2.5vw;
+    margin: 100px 2.5vw;
     width: 75%;
     left: auto;
     right: 0;
@@ -43,7 +43,46 @@ const NavigationWrap = styled.header`
       .hr {
         border-right: 2px solid #f1f1f1;
         height: 95%;
-      } 
+        position: relative;
+        .sub-item {
+          &:after {
+            border-bottom: 2px solid lightgray;
+            content: "";
+            display: block;
+            margin-left: -10px;
+            width: 10%;
+          }
+          &:hover {
+            &:after {
+              border-bottom: 2px solid ${props => props.theme.menuColor};
+              margin-left: 0px;
+              transition: 450ms all ease-in-out;
+            }
+          }
+        }
+        .action-item {
+          position: absolute;
+          bottom: 15px;
+          margin-left: 10px;
+          a {
+            span{
+              width: 40%;
+              font-size: 17px;
+            }
+            img {
+              margin-left: 10px;
+              width: 17px;
+              height: auto;
+              transition: .3s all ease;
+            }
+            :hover{
+              img{
+                margin-left: 15px;
+              }
+            }
+          }
+        }
+      }
       .nav-display {
         padding-left: 15px;
         display: grid;
@@ -51,7 +90,8 @@ const NavigationWrap = styled.header`
       }
   }
   .nav-img {
-    max-width: 90%;
+    width: 300px;
+    height: 300px;
   }
   .nav-div {
     margin-top: -20px;
@@ -60,6 +100,7 @@ const NavigationWrap = styled.header`
     text-align: center;
     box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.025), -1px -1px 3px 3px rgba(0, 0, 0, 0.025);
     border-radius: 10px;
+    min-height: 300px;
     &:hover {
       box-shadow: none;
       color: #00b39f;
@@ -92,8 +133,8 @@ const NavigationWrap = styled.header`
         opacity: 100%
     }
   }
-  ul li:hover > ul,
-  ul li ul:hover {
+  ul:hover div > ul,
+  ul div ul:hover{
     opacity: 1;
     visibility: visible;
     -webkit-transform: translateY(0px);
@@ -113,47 +154,48 @@ const NavigationWrap = styled.header`
       position: relative;
       margin: 48px 0px 0px 0px;
       padding-bottom: 48px;
-      .dropdown {
-        li {
-          padding: 0;
-          a {
-            color: ${props => props.theme.menuColor};
-            display: block;
-            padding: 5px 15px;
-            &:hover {
-              color: ${props => props.theme.menuHoverColor}; !important;
-            }
-            &:before {
-              content: none;
-            }
+    }
+    .dropdown {
+      li {
+        padding: 0;
+        a {
+          color: ${props => props.theme.menuColor};
+          display: block;
+          padding: 5px 15px;
+          &:hover {
+            color: ${props => props.theme.menuHoverColor}; !important;
+            margin-left: -10px;
+          }
+          &:before {
+            content: none;
           }
         }
       }
+    }
 
-      a,
-      .nav-active {
-        position: relative;
-        color: ${props => props.theme.menuColor};
-        font-size: 15px;
+    a,
+    .nav-active {
+      position: relative;
+      color: ${props => props.theme.menuColor};
+      font-size: 15px;
+      transition: 450ms all;
+      padding: 0px 20px 5px 20px;
+      cursor: pointer;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 20;
+        bottom: 0;
+        width: 20px;
+        height: 1px;
+        opacity: 0;
+        background: ${props => props.theme.menuHoverColor};
         transition: 450ms all;
-        padding: 0px 20px 5px 20px;
-        cursor: pointer;
+      }
+      &:hover {
+        color: ${props => props.theme.menuHoverColor};
         &:before {
-          content: "";
-          position: absolute;
-          left: 20;
-          bottom: 0;
-          width: 20px;
-          height: 1px;
-          opacity: 0;
-          background: ${props => props.theme.menuHoverColor};
-          transition: 450ms all;
-        }
-        &:hover {
-          color: ${props => props.theme.menuHoverColor};
-          &:before {
-            opacity: 1;
-          }
+          opacity: 1;
         }
       }
     }

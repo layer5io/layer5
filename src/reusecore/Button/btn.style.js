@@ -42,12 +42,12 @@ const ButtonStyle = styled.button`
         }
     `}
     ${props => props.secondary && css`
-        color: ${props.active ? props.theme.white: props.theme.headingColor};
-        background: ${props.active ? props.theme.secondaryColor: props.theme.secondaryLightColor};
+        color: white; 
+        background: #00b39f; 
 
         &:hover{
-            color: ${props.theme.white};
-            background: ${props.theme.secondaryColor}; 
+            color: #111111; 
+            background: #00b39f; 
         }
     `}
 `;

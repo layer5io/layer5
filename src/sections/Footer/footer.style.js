@@ -3,10 +3,25 @@ import styled from "styled-components";
 const FotterWrapper = styled.section`
   padding-top: 40px;
   padding-bottom: 25px;
-  background: #3c494f;
+  background: black;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  
+  .footer-head{
+    margin: 0 40px 20px 0;
+    .footer-logo-pos{
+      padding: 0px;
+      .footer-logo {
+        max-width: 200px;
+        height: auto;
+      }
+    }
+    .links{
+      float: right;
+      filter: invert();
+    }
+  }
   .section__particle{
       position: absolute;
       &.one{
@@ -15,6 +30,28 @@ const FotterWrapper = styled.section`
           width: 270px;
       }
   }
+
+  .subscribe{
+    margin: 30px 0 50px 0;
+    display: inline-flex;
+    input{
+      padding: 16px;
+      margin-right: 5px;
+      width: 300px;
+      border: 1px solid white;
+      background-color: #1D1F25;
+      border-radius: 4px;
+      color: white;
+    }
+    float: right;
+    margin-right: 40px; 
+  }
+
+  .desc-info{
+    padding-right: 25px;
+    font-style: italic;
+  }
+
   ul{
     padding: 0;
     list-style: none;
@@ -24,102 +61,14 @@ const FotterWrapper = styled.section`
     }
   }
   p{
-    font-size: 18px;
-    line-height: 38px;
     color: ${props => props.theme.white};
   }
   .anchor{
     transition: 450ms all;
     color: ${props => props.theme.white};
     &:hover {
-      color: ${props => props.theme.black};
+      color: ${props => props.theme.secondaryColor};
     }
-  }
-  .footer-contact{
-    .footer-widgets{
-      .contactf{
-        padding-right: 15px;
-        margin: 0px;
-        .social-icons{
-          color: #3c494f;
-          transition:color .25s
-          margin-left: 5px;
-          margin-right: 5px;
-          transition: 450ms all;
-          filter: opacity(90%);
-          //  color: ${props => props.theme.headingColor}; 
-            .twitter:hover {
-              filter: brightness(0.5) sepia(1) hue-rotate(150deg) saturate(5);
-            }
-            .github:hover {
-              filter: brightness(1) invert(50)
-            }
-            .docker:hover {
-              filter: brightness(0.4) sepia(1) hue-rotate(150deg) saturate(5);
-            }
-            .youtube:hover {
-              filter: brightness(0.3) sepia(1) hue-rotate(355deg) saturate(30);
-            }
-            .slack:hover {
-              filter: brightness(.15) sepia(1) hue-rotate(255deg) saturate(15);
-            }
-            .mail:hover {
-              filter: opacity(100) brightness(.6) sepia(.5) hue-rotate(150deg) saturate(1);
-            }
-            }
-          }
-        }
-      }
-    }
-    .social__link {
-      display: block;
-      color: #3c494f;
- 
-  }
-  .twitter:hover {
-
-  }
-  }
-  .social__link--mail:hover {
-      color:#3c494e
-  }
-  
-  .social__link--slack:hover {
-      color:#4A154B
-  }
-  
-  // .social__link--twitter:hover {
-  //     color:#1da1f2
-  // }
-  
-  .social__link--github:hover {
-      color:#24292e
-  }
-  
-  .social__link--youtube:hover {
-      color:red
-  }
-  
-  .social__link--docker:hover {
-      color:#2496ed
-  }
-    .widget-title {
-      color: ${props => props.theme.white};
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-  }
-  .footer-logo {
-    max-width: 200px;
-    height: auto;
-  }
-  .descript {
-    margin-top: -10px;
-    color: white;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    font-size: 15px;
-    line-height: 25px;
   }
   .footer-widgets {
     &.first {
@@ -130,59 +79,9 @@ const FotterWrapper = styled.section`
     margin-bottom: 25px;
     .widget-title {
       color: ${props => props.theme.white};
-      font-size: 24px;
+      font-size: 25px;
+      font-weight: 600;
       margin-bottom: 20px;
-    }
-    .info {
-      font-size: 18px;
-      line-height: 38px;
-      margin-bottom: 32px;
-      li {
-        display: flex;
-        align-items: center;
-        svg {
-          margin-right: 10px;
-          color: ${props => props.theme.white};
-        }
-      }
-    }
-    .social{
-      li {
-        display: inline-block;
-        .anchor {
-          display: block;
-          height: 60px;
-          width: 60px;
-          line-height: 60px;
-          text-align: center;
-          transition: 450ms all;
-          &:hover {
-            color: ${props => props.theme.white};
-            background: rgb(251, 123, 129);
-            background: -moz-linear-gradient(
-              left,
-              rgba(251, 123, 129, 1) 0%,
-              rgba(254, 191, 179, 1) 100%
-            );
-            background: -webkit-linear-gradient(
-              left,
-              rgba(251, 123, 129, 1) 0%,
-              rgba(254, 191, 179, 1) 100%
-            );
-            background: linear-gradient(
-              to right,
-              rgba(251, 123, 129, 1) 0%,
-              rgba(254, 191, 179, 1) 100%
-            );
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb7b81', endColorstr='#febfb3',GradientType=1 );
-            border-color: #febfb3;
-            
-          }
-        }
-      }
-      li + li {
-        margin-left: 30px;
-      }
     }
     .widget-catagory {
       li {
@@ -214,8 +113,9 @@ const FotterWrapper = styled.section`
       }
     }
     p{
-      order: 1;
-      margin: 0;
+      font-size: 18px;
+      line-height: 38px;
+      color: ${props => props.theme.white};
     }
   }
   @media only screen and (max-width: 1600px) {
