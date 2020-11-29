@@ -62,8 +62,7 @@ const Data = {
                 },
                 {
                     name: "Service Mesh Interface",
-                    path: "/projects/service-mesh-interface",
-                    sepLine: true
+                    path: "/projects/service-mesh-interface-conformance"
                 },
                 {
                     name: "Image Hub",

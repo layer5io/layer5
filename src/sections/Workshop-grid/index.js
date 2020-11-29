@@ -136,9 +136,6 @@ const WorkshopsPage = ({hide_path}) => {
                                                     <div> Read Less <BsArrowUp className="icon" size={30} /> </div> : 
                                                     <div> Read More <BsArrowDown className="icon" size={30} /> </div> }
                                             </div>
-                                            {/* <button type="button" className="readme-btn" >
-                                                {content && ID === id ? "Show Less" : "Show More"}
-                                            </button> */}
                                         </div>
                                     </div>
                                 </Col>
