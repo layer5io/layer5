@@ -27,7 +27,7 @@ const BlogList = ({
     return (
         <BlogPageWrapper>
             <PageHeader title={header} path="Blog"/>
-            <div className="blog-list-wrapper">
+            <div >
                 <Container>
                     <Row>
                         <Col sm={12} md={8}>
@@ -38,39 +38,41 @@ const BlogList = ({
                                     setGridView={setGridView}
                                 />
                             )}
-                            <Row>
-                                {nodes.map(({ id, frontmatter, fields }) => (
-                                    <Col xs={12} key={id}>
-                                        <Link to={fields.slug}>
-                                            <div className="post-block list">
-                                                <div className="post-thumb-block">
-                                                    <Image
-                                                        {...frontmatter.thumbnail}
-                                                        imgStyle={{ objectFit: "contain" }}
-                                                        alt={frontmatter.title}
-                                                    />
+                            <div className="blog-list-wrapper">
+                                <Row>
+                                    {nodes.map(({ id, frontmatter, fields }) => (
+                                        <Col xs={12} key={id}>
+                                            <Link to={fields.slug}>
+                                                <div className="post-block list">
+                                                    <div className="post-thumb-block">
+                                                        <Image
+                                                            {...frontmatter.thumbnail}
+                                                            imgStyle={{ objectFit: "contain" }}
+                                                            alt={frontmatter.title}
+                                                        />
+                                                    </div>
+                                                    <h2 className="post-title">
+                                                        <Link to={fields.slug}>{frontmatter.title}</Link>
+                                                    </h2>
+                                                    <p className="post-entry">
+                                                        <span>{frontmatter.date}</span>
+                                                        <span className="pull-right">
+                                                            By: {frontmatter.author}
+                                                        </span>
+                                                    </p>
+                                                    <p>{frontmatter.subtitle}</p>
+                                                    <div className="readmore-btn">
+                                                        see more <IoIosArrowRoundForward />
+                                                    </div>
                                                 </div>
-                                                <h2 className="post-title">
-                                                    <Link to={fields.slug}>{frontmatter.title}</Link>
-                                                </h2>
-                                                <p className="post-entry">
-                                                    <span>{frontmatter.date}</span>
-                                                    <span className="pull-right">
-                                                        By: {frontmatter.author}
-                                                    </span>
-                                                </p>
-                                                <p>{frontmatter.subtitle}</p>
-                                                <div className="readmore-btn">
-                                                    see more <IoIosArrowRoundForward />
-                                                </div>
-                                            </div>
-                                        </Link>
+                                            </Link>
+                                        </Col>
+                                    ))}
+                                    <Col>
+                                        <Pager pageContext={pageContext} isListView={isListView}/>
                                     </Col>
-                                ))}
-                                <Col>
-                                    <Pager pageContext={pageContext} isListView={isListView}/>
-                                </Col>
-                            </Row>
+                                </Row>
+                            </div>
                         </Col>
                         <Col sm={12} md={4}>
                             <Sidebar />

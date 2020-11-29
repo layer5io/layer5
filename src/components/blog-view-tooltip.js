@@ -9,24 +9,24 @@ export const ToolTipWrapper = styled.div`
       @media screen and (max-width: 576px) {
             display: none;
       }
-      float:right;
-      margin-right: 10px;
-      margin-left: 10px;
+      margin: 10px 0 -50px 60px;
       .border {
         line-height: 18px;
       }
       a {
-        padding: 5px;
-        color: #3a4751;
-        background-color: #00d3a9; 
+        padding: 8px;
+        margin: 0 15px 0 0;
+        border: 1px solid #3a4751;
+        // color: #3a4751;
+        // background-color: #00d3a9; 
         &:hover{
-            background-color: #3a4751;
+            // background-color: #3a4751;
             color: #00d3a9;
             cursor: pointer;
         }             
       }
       .active {
-        background-color: #3a4751;
+        // background-color: #3a4751;
         color: #00d3a9;
       }
 `;
@@ -41,7 +41,7 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
                     onClick={setGridView}
                     className={`${isListView ? "" : "active"}`}
                 >
-                    <RiLayoutGridFill size={22} />
+                    <RiLayoutGridFill size={25} />
                 </a>
                 <ReactTooltip
                     id="grid-view"
@@ -57,7 +57,7 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
                     onClick={setListView}
                     className={`${isListView ? "active" : ""}`}
                 >
-                    <FaThList size={22} />
+                    <FaThList size={25} />
                 </a>
                 <ReactTooltip
                     id="list-view"

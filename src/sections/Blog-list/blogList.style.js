@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const BlogPageWrapper = styled.div`
   .blog-list-wrapper {
+    margin-top: 80px;
     padding-bottom: 50px;
   }
   .post-block {
