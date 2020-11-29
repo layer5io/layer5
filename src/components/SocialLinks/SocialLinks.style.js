@@ -24,6 +24,25 @@ const SocialSectionWrapper = styled.div`
     }
   }
 
+  .twitter:hover {
+    filter: invert(55%);
+  }
+  .github:hover {
+    filter: invert(55%);
+  }
+  .docker:hover {
+    filter: invert(55%);
+  }
+  .youtube:hover {
+    filter: invert(55%);
+  }
+  .slack:hover {
+    filter: invert(55%);
+  }
+  .mail:hover {
+    filter: invert(55%);
+  }
+
   // .social-icons{
   //   color: #3c494f;
   //   transition:color .25s
