@@ -40,20 +40,7 @@ const Partner = () => {
                     <Col xs={12} sm={1} lg={1}>
                     </Col>
                 </Row>
-                <Row>
-                    <Col xs={12} sm={4} lg={4}>
-                    </Col>
 
-                    <Col xs={12} sm={4} lg={4}>
-                        <div>
-                            <div style={{textAlign:"center"}}>
-                                <Button title={<h3>BECOME A PARTNER</h3>} url="mailto:partners@layer5.io" external="true" />
-                            </div>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={4} lg={4}>
-                    </Col>
-                </Row>
                 <h1 className="heading">Academic Partners</h1>
                 <Row>
                     <Col xs={12} sm={2} lg={2}>
@@ -89,7 +76,6 @@ const Partner = () => {
                             </div>
                         </div>
                     </Col>
-
                 </Row>
                 <Row>
                     <Col xs={12} sm={2} lg={2}>
@@ -243,6 +229,13 @@ const Partner = () => {
                             <div>
                                 The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.
                             </div>
+                        </div>
+                    </Col>
+                </Row>
+                <Row className='partner-button-row'>
+                    <Col xs={12} sm={4} lg={4}>
+                        <div className="container partner-button">
+                            <Button title={<h3>BECOME A PARTNER</h3>} url="mailto:partners@layer5.io" external="true" />
                         </div>
                     </Col>
                 </Row>
