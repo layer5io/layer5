@@ -108,6 +108,12 @@ const PartnerWrapper = styled.section`
         max-width: 300px;
         width: 100%;
     }
+    .partner-button-row {
+        justify-content: center;
+    }
+    .partner-button {
+        text-align: center;
+    }
 
     @media only screen and (max-width: 420px) {
         .img1 {
