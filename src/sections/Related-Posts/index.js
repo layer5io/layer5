@@ -1,20 +1,27 @@
 import React from "react";
-import { graphql, useStaticQuery} from "gatsby";
+import { graphql, useStaticQuery, Link} from "gatsby";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 import Card from "../../components/Card";
 
 import RelatedPostsWrapper from "./relatedPosts.style";
 import { Row, Col } from "../../reusecore/Layout";
 
-const RelatedPosts = ( ) => {
+import Carousel from "react-elastic-carousel";
+
+
+
+const RelatedPosts = ( {tags} ) => {
+    console.log(tags);
     const data = useStaticQuery(
-        // This query fetches latest posts now, change it in future by adding prop with tag for query
         graphql`
-            query relatedPosts {
+            query relatedPosts{
                 allMdx(
                     sort: { fields: [frontmatter___date], order: DESC}
-                    filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-                    limit: 3     
+                    filter: { 
+                        fields: { collection: { eq: "blog" } }
+                    }
+                    limit: 6     
                 ) {
                     nodes {
                         frontmatter {
@@ -41,30 +48,39 @@ const RelatedPosts = ( ) => {
     );
 
     const relatedPosts = data.allMdx.nodes;
-
     return (
         <RelatedPostsWrapper>
-            <div className="sidebar-widgets recent-post">
-                <div className="widgets-title">
-                    <h3>Related Posts</h3>
-                </div>
-                <br/>
-                <Row>
-                    <Col xs={12} lg={12}>
-                        <Row>
-                            { 
-                                relatedPosts.map(post => {
-                                    return (
-                                        <Col xs={12} lg={4} key={post.fields.slug}>
-                                            <Card frontmatter={post.frontmatter} fields={post.fields}/>
-                                        </Col>
-                                    );
-                                })
-                            }
-                        </Row>
-                    </Col>
-                </Row>
+            <div className="widgets-title">
+                <h3>Related Blogs</h3>
             </div>
+            <Carousel  
+                easing="ease"
+                itemsToScroll = {1}
+                className="carouselStyling"
+                showArrows = {true}  
+                breakPoints = {[
+                    { width: 1, itemsToShow: 1},
+                    { width: 550, itemsToShow: 2},
+                    { width: 850, itemsToShow: 3},
+                    { width: 1000, itemsToShow: 3}
+                ]}
+            >                
+                { 
+                    relatedPosts.map(post => {
+                        return (
+                            <Col xs={12} lg={12} key={post.fields.slug}>
+                                <Card frontmatter={post.frontmatter} fields={post.fields}/>
+                            </Col>
+                        );
+                    })
+                }
+                    
+                <Col xs={12} lg={12} className="allBlogsCard">
+                    <a href="/blog">
+                            All Blogs <IoIosArrowRoundForward/>
+                    </a>
+                </Col>
+            </Carousel>
         </RelatedPostsWrapper>
     );
 };
