@@ -1,24 +1,26 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
-import Layout from "../../components/layout";
-import SEO from "../../components/seo";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+
+import Navigation from "../sections/Navigation";
+import Footer from "../sections/Footer";
+
+import { GlobalStyle } from "../sections/app.style";
+import theme from "../theme/blog/themeStyles";
+
 import { graphql } from "gatsby";
-
-import Navigation from "../../sections/Navigation";
-import Meetups from "../../sections/Events";
-import Footer from "../../sections/Footer";
-
-import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/blog/themeStyles";
+import Meetups from "../sections/Events/index";
 
 export const query = graphql`
-    {
-        allCategories: allMdx(
-                filter: {fields: {collection: {eq: "events"}}},
-                sort: {fields: frontmatter___date, order: DESC},
-                limit: 12
-            ) {
+    query allCategories($skip: Int!, $limit: Int!) {
+        allCategories:allMdx(
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: { fields: { collection: { eq: "events" } } }
+            skip: $skip
+            limit: $limit
+        ){
             nodes {
                 id
                 fields {
@@ -117,15 +119,18 @@ export const query = graphql`
     }
 `;
 
-const EventsGrid = ({data}) => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Events" />
-            <Navigation />
-            <Meetups data={data}/>
-            <Footer/>
-        </Layout>
-    </ThemeProvider>
-);
-export default EventsGrid;
+const Events = ({data, pageContext}) => {
+    return (
+        <ThemeProvider theme={theme}>
+            <Layout>
+                <GlobalStyle />
+                <SEO title="Events" />
+                <Navigation />
+                <Meetups data={data} pageContext={pageContext} />
+                <Footer />
+            </Layout>
+        </ThemeProvider>
+    );
+};
+
+export default Events;

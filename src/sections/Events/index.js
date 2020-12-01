@@ -1,10 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { MeetupStyle } from "./meetups.style";
 import Card from "../../components/EventCard";
-import {Col, Container, Row} from "../../reusecore/Layout";
+import { Col, Container, Row } from "../../reusecore/Layout";
+import Pagination from "../../reusecore/Pagination";
 
-const Meetup = ({data}) =>{
+const Meetups = ({ data, pageContext }) =>{
     const [active, setActive] = useState("all");
+
     return(
         <MeetupStyle>
             <br></br>
@@ -26,7 +28,7 @@ const Meetup = ({data}) =>{
                                         <Card frontmatter={category.frontmatter} fields={category.fields} />
                                     </Col>
                                 );
-                            }) : <></>}
+                            }) : <></> }
                             {active == "events" ? data.allEvents.nodes.map(event => {
                                 return(
                                     <Col xs={12} sm={6} lg={4} key={event.id}>
@@ -50,10 +52,11 @@ const Meetup = ({data}) =>{
                             }) : <></>}
                         </Row>
                     </div>
+                    {active == "all" ? <Pagination pageContext={pageContext} /> : <></>}
                 </Container>
             </div>
         </MeetupStyle>
     );
 };
 
-export default Meetup;
+export default Meetups;
