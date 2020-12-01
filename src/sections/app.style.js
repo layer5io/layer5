@@ -1,8 +1,12 @@
-import { createGlobalStyle } from "styled-components"; 
+import { createGlobalStyle } from "styled-components";
 
- 
+
 
 const GlobalStyle = createGlobalStyle`
+
+@font-face {
+    font-family: "Q"
+}
 
 ::selection {
     background: #3c494f;
