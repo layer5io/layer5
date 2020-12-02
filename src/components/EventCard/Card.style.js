@@ -10,7 +10,7 @@ export const CardWrapper = styled.div`
         transform: scale(1);
 
         &:hover{
-            box-shadow: 0px 10px 10px rgba(12, 0, 46,0.3);
+            box-shadow: 0px 3px 10px rgba(12, 0, 46,0.2);
             transform: scale(1.1);
             .readmore-btn{
                 color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};
@@ -18,6 +18,13 @@ export const CardWrapper = styled.div`
             .post-title{
                 .anchor{
                     color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};
+                }
+            }
+            .abstract{
+                span{
+                    a{
+                        color: #00b39f;
+                    }
                 }
             }
         } 
@@ -51,7 +58,7 @@ export const CardWrapper = styled.div`
     .post-content-block{
         border-radius: 0 0 3px 3px;
         /* box-shadow: 0px 2px 4px 0px rgba(12, 0, 46, 0.06); */
-        padding: 25px 35px;
+        padding: 25px 35px 10px 35px;
         position: relative;
     }
     .post-entry{
@@ -117,4 +124,26 @@ export const CardWrapper = styled.div`
             }
         }
     } 
+
+    .abstract{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        span{ 
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            
+            a {
+                text-decoration: none;
+                transition: 0.5s ease-in-out all;
+                
+                &:hover{
+                    color: #00b39f;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
 `;
