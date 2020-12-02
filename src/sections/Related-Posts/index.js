@@ -11,8 +11,7 @@ import Carousel from "react-elastic-carousel";
 
 
 
-const RelatedPosts = ( {tags} ) => {
-    console.log(tags);
+const RelatedPosts = () => {
     const data = useStaticQuery(
         graphql`
             query relatedPosts{
