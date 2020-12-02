@@ -1,7 +1,12 @@
 ---
 layout: project
+<<<<<<< HEAD
 title: 'Service Mesh Interface Conformance'
 description: 'Layer5 is a prominent maintainer and supporter of SMI, advancing its specifications and delivering conformance tooling through Meshery.'
+=======
+title: "Service Mesh Interface Conformance"
+description: "Layer5 is a prominent maintainer and supporter of SMI, advancing its specifications and delivering conformance tooling through Meshery."
+>>>>>>> 9f47342f31171a7619487e20ffe3627ae151b294
 author:
     twitter: layer5
 image:
@@ -12,9 +17,16 @@ lang: en
 #permalink: /service-mesh-interface
 link: /projects/service-mesh-interface
 redirect_from:
+<<<<<<< HEAD
     - /SMI
     - /SMI/
     - smi/
+=======
+  - /SMI
+  - /SMI/
+  - smi/
+  - service-mesh-interface
+>>>>>>> 9f47342f31171a7619487e20ffe3627ae151b294
 ---
 
 <div class="row">

@@ -29,6 +29,7 @@
   new_window: false
   highlight: false
   link: /community
+<<<<<<< HEAD
   subitems:
       - name: Join
         link: /community
@@ -54,6 +55,18 @@
         link: https://github.com/layer5io
         new_window: true
         external: true
+=======
+  subitems: 
+    - name: Join
+      link: /community
+      new_window: false
+    - name: Partners
+      link: /partners
+      new_window: false
+    - name: Programs
+      link: /programs
+      new_window: false
+>>>>>>> 9f47342f31171a7619487e20ffe3627ae151b294
 - name: Learn
   new_window: false
   highlight: true
