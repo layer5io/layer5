@@ -134,4 +134,31 @@ export const BlogWrapper = styled.div`
       height:40%;
       width:40%;
     }
+
+    .date{
+      color:gray;
+    }
+    
+    .centered-text{
+      color:#3c494f;
+      text-align:center;
+    }
+
+    .kubecon-header{
+      color:#00b39f;
+    }
+
+    .kubecon-img1{
+      width:28%;
+    }
+
+    .kubecon-img2{
+      padding-top:8px;
+      width:28%;
+    }
+
+    .kubecon-img3{
+      padding-top:15px;
+      width:28%;
+    }
 `;
