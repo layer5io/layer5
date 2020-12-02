@@ -88,7 +88,7 @@ const Layer5 = () => {
                     </h1>
                 </Col>
                 <Col xs={12} sm={6} lg={6} xl={6}>
-                    <Button className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/layer5-brand-kit.zip" external="true" />
+                    <Button primary className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/layer5-brand-kit.zip" external="true" />
                 </Col>
                 <Col xs={12} sm={12} lg={12} xl={12}>
                     <Row>

@@ -32,12 +32,13 @@ const ButtonStyle = styled.button`
     }
 
     ${props => props.primary && css`
-        color: ${props.active ? props.theme.headingColor: props.theme.white};
-        background: ${props.active ? props.theme.primaryLightColor: props.theme.primaryColor};
+        color: ${props.active ? props.theme.headingColor: props.theme.black};
+        background: ${props.active ? props.theme.highlightLightColor: props.theme.highlightLightColor};
 
         &:hover{
-            color: ${props.theme.headingColor};
-            background: ${props.theme.primaryLightColor}; 
+            color: ${props.theme.black};
+            background: ${props.theme.highlightColor}; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
         }
     `}
     ${props => props.secondary && css`

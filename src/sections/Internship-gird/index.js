@@ -136,11 +136,7 @@ const InternshipPage = ({ hide_heading })=>{
                         </p>
                     </div>
                     <div className="apply-button">
-                        <h3>
-                            <a href="mailto:jobs@layer5.io">
-                                <Button primary title="Join Today" /> 
-                            </a>
-                        </h3>
+                        <Button primary title="Join Today" url="mailto:jobs@layer5.io" external="true" /> 
                     </div>
                 </Container>
             </div>

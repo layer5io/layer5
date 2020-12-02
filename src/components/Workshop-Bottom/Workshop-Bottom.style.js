@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const WorkshopBottomWrapper = styled.div`
   max-width: 1140px;
-  margin: auto;
+  margin: 80px auto;
 
   .bottom-image {
     width: 100%;
@@ -13,27 +13,8 @@ const WorkshopBottomWrapper = styled.div`
 
   .request-btn {
     display: block;
-    max-width: 215px;
-    width: 100%;
+    margin: auto;
     text-align: center;
-    margin: 80px auto;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
-    transition: 0.5s ease-in-out all;
-
-    a {
-      color: #000;
-      text-decoration: none;
-      font-size: 20px;
-    }
-
-    &:hover {
-      color: white;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
-    }
   }
 `;
 

@@ -19,7 +19,6 @@ const BrandPageWrapper = styled.section`
     margin-bottom: 20px;
   }
   .l5-dark-yellow {
-    background-color: #ebc017 !important;
     text-align: center;
     float: right;
     margin: 0px 0px 1rem 0px;
