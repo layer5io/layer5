@@ -7,6 +7,7 @@ import VintageBox from "../../reusecore/VintageBox";
 import ParticleComponent from "../../reusecore/Particle";
 
 import { FaPlay, FaDownload } from "react-icons/fa";
+import { FiDownloadCloud } from "react-icons/fi";
 
 import BannerSectionWrapper from "./banner.style";
 
@@ -24,7 +25,7 @@ const BannerDefault = () => {
                         >
                             <h4>The Service Mesh Company</h4>
                             <h1>
-                            representing <span>every</span> service mesh
+                            Representing <span>every</span> service mesh
                             </h1>
                         </SectionTitle>
                         <p>
@@ -32,10 +33,10 @@ const BannerDefault = () => {
                         </p>
                         <VintageBox right={true} vintageOne={true}>
                             <Button primary className="banner-btn one" title="Run Meshery">
-                                <FaDownload className="icon-left" />
+                                <FiDownloadCloud size={21} className="icon-left" />
                             </Button>
                             <Button className="banner-btn two" title="Watch Now">
-                                <FaPlay className="icon-left" /> 
+                                <FaPlay size={21} className="icon-left" /> 
                             </Button>
                         </VintageBox>
                     </Col>

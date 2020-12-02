@@ -11,7 +11,7 @@ const ButtonStyle = styled.button`
     border: 0; 
     min-width: 170px;
     padding: 14px;
-    border-radius: 3px;
+    border-radius: 5px;
     -webkit-transition: 450ms all;
     transition: 450ms all;
     position: relative;
