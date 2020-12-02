@@ -27,9 +27,13 @@ export const query = graphql`
                     slug
                 }
                 frontmatter {
-                    abstract
+                    attribute{
+                        name
+                        url
+                    }
                     eurl
                     title
+                    topic
                     date(formatString: "DD MMMM YYYY")
                     thumbnail {
                         publicURL
@@ -44,23 +48,28 @@ export const query = graphql`
                 }
             }
         }
-        allMeetups: allMdx(filter: {frontmatter: {topic: {eq: "meetups"}}}) {
-            nodes {
-                id
-                fields {
-                    slug
+        allMeetups: allMdx(
+            sort: { fields: frontmatter___date, order: DESC }
+            filter: { frontmatter: { topic: { eq: "meetups" } } }
+        ) {
+        totalCount
+        nodes {
+            id
+            fields {
+                slug
+            }
+            frontmatter {
+                attribute{
+                    name
+                    url
                 }
-                frontmatter {
-                    abstract
-                    eurl
-                    title
-                    date(formatString: "Do MMMM YYYY")
-                    thumbnail {
-                        publicURL
-                        relativePath
-                        extension
+                title
+                eurl
+                topic
+                date(formatString: "DD MMMM YYYY")
+                thumbnail {
                         childImageSharp {
-                            fluid(maxWidth: 1000) {
+                            fluid {
                                 ...GatsbyImageSharpFluid_withWebp
                             }
                         }
