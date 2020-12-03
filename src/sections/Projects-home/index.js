@@ -77,7 +77,7 @@ const Projects = () => {
                     </div>
                 </Row>  
                 <div className="button">  
-                    <Button secondary title="Learn More" />
+                    <Button secondary url="/projects" title="Learn More" />
                 </div>
             </Container>
         </ProjectItemWrapper>
