@@ -11,6 +11,7 @@ const BannerSectionWrapper = styled.section`
     p{
         font-size: 21px;
         font-weight: 300; 
+        color: ${props => props.theme.primaryColor};
         margin: 0 0 70px 0;
         width: 70%;
     }

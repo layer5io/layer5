@@ -18,14 +18,14 @@ const Projects = () => {
     return (
         <ProjectItemWrapper id="projects">
             <Container>
-                <Row Vcenter={true}>
+                <Row>
                     <div className="project-title">
                         <SectionTitle
                             className="section-title"
                             leftAlign={true}
                             UniWidth="75%"
                         >
-                            <h4>Projects</h4>
+                            <h4>PROJECTS</h4>
 
                             <h2>
                                 Operate any service mesh <span>with confidence</span>.
@@ -35,57 +35,50 @@ const Projects = () => {
                         Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. 
                         </p>
                     </div>
-                    <Col xs={12} sm={6}>
-                        <div className="project__block__wrap">
-                            <div className="project__block">
+                </Row>
+                <Row>
+                    <div className="project__block__wrap">
+                        <Col sm={12} md={6} lg={3}>
+                            <Link className="project-card" to="/landscape">
                                 <div className="project__block__inner">
                                     <img src={projectImage1} alt="appion project" />
                                     <h3>Landscape</h3>
                                     <p>Service Mesh Ecosystem</p>
-                                    <Link to="#">
-                                        <img src={Icon} alt="appion app" />
-                                    </Link>
                                 </div>
-                                <div className="project__block__inner">
-                                    <img src={projectImage2} alt="appion project" />
-                                    <h3>Service Mesh Performance</h3>
-                                    <p>The Standard Measurement</p>
-                                    <Link to="#">
-                                        <img src={Icon} alt="appion app" />
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className="project__block right">
+                            </Link>
+                        </Col>
+                        <Col sm={12} md={6} lg={3}>
+                            <Link className="project-card" to="/meshery">
                                 <div className="project__block__inner">
                                     <img src={projectImage3} alt="appion project" />
                                     <h3>Meshery</h3>
                                     <p>Service Mesh Management</p>
-                                    <Link to="#">
-                                        <img src={Icon} alt="appion app" />
-                                    </Link>
                                 </div>
+                            </Link>
+                        </Col>
+                        <Col sm={12} md={6} lg={3}>
+                            <Link className="project-card" to="/projects/service-mesh-performance">
+                                <div className="project__block__inner">
+                                    <img src={projectImage2} alt="appion project" />
+                                    <h3>Service Mesh Performance</h3>
+                                    <p>The Standard Measurement</p>
+                                </div>
+                            </Link>
+                        </Col>
+                        <Col sm={12} md={6} lg={3}>
+                            <Link className="project-card" to="/projects/image-hub">
                                 <div className="project__block__inner">
                                     <img src={projectImage4} alt="Business logic in the service mesh data plane" />
                                     <h3>Image Hub</h3>
                                     <p>WebAssembly Filters</p>
-                                    <Link to="/projects/image-hub">
-                                        <img src={Icon} alt="appion app" />
-                                    </Link>
                                 </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={6} className="project-content-wrap">
-                        
-                        <VintageBox
-                            right={true}
-                            vintageTwo={true}
-                            position="relative"
-                        >
-                            <Button secondary title="Learn More" />
-                        </VintageBox>
-                    </Col>
-                </Row>
+                            </Link>
+                        </Col>
+                    </div>
+                </Row>  
+                <div className="button">  
+                    <Button secondary title="Learn More" />
+                </div>
             </Container>
         </ProjectItemWrapper>
     );
