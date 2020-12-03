@@ -5,6 +5,8 @@ title: '[News]'
 labels: 'area/news'
 assignees: ''
 ---
+We're in the news! Using the contributing instructions for [adding news](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-news), please add the following article to the Layer5 Newsroom.
+
 **Article:**
 - Title: 
 - Link: 
