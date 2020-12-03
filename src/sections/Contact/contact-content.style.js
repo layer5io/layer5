@@ -18,13 +18,18 @@ const ContactSection = styled.section`
 
   .cardsContainer{
     .image-container{
-      background-color: #3c494f;
       width: 100%;
-      height: 120px;
+      height: 100%;
       display: inline-block;
       text-align: center;
       border-radius: 5px 5px 0 0;
+      position: absolute;
+    }
 
+    .contact-image{
+      height: 120px;
+      background: #3c494f;
+      
       .image {
         width: 80px;
         height: 100%;
@@ -32,36 +37,24 @@ const ContactSection = styled.section`
     }
 
     .text-and-button{
-      display: inline-flex;
-      justify-content: center;
       align-items: center;
-      position: relative;
       width: 100%;
       height: 100%;
-      cursor: text;
-
-      a{
-        position: absolute;
-        right: 20px;
-      }
     }
 
     .title{
-      color: black;
+      padding: 15px;
       text-align: center;
-      webkit-text-decoration: none;
       text-decoration: none;
       font-size: 25px;
       font-weight: 500;
-      cursor: text;
     }
 
     .para{
       width: 100%;
       font-size: 15px;
-      padding: 20px 10px;
+      padding: 0 10px;
       text-align: center;
-      cursor: text;
     }
 
     .three-dots{

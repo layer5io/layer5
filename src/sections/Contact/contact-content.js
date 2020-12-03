@@ -17,17 +17,17 @@ const ContactContent = () => {
         <ContactCardStyle>
             <Container>
                 <Row Hcenter>
-                    <Col xs={12} md={4}>
+                    <Col xs={12} sm={6} md={4}>
                         <ContactCard
                             link="/careers"
                             Imgsrc={Jobs_White}
                             alt="jobs_white"
                             title="Careers"
-                            content="I'm interested in career opportunities in Layer5"
+                            content="I'm interested in career opportunities at Layer5"
                         />
                     </Col>
 
-                    <Col xs={12} md={4}>
+                    <Col xs={12} sm={6} md={4}>
                         <ContactCard
                             link="mailto:support@layer5.io"
                             Imgsrc={Support_White}
@@ -37,7 +37,7 @@ const ContactContent = () => {
                         />
                     </Col>
 
-                    <Col xs={12} md={4}>
+                    <Col xs={12} sm={6} md={4}>
                         <ContactCard
                             link="/partners"
                             Imgsrc={Partner_White}
@@ -47,9 +47,9 @@ const ContactContent = () => {
                         />
                     </Col>
 
-                    <Col xs={12} md={4}>
+                    <Col xs={12} sm={6} md={4}>
                         <ContactCard
-                            link="/about"
+                            link="mailto:hello@layer5.io"
                             Imgsrc={Contact_White}
                             alt="Contact_White"
                             title="Contact"
@@ -57,7 +57,7 @@ const ContactContent = () => {
                         />
                     </Col>
 
-                    <Col xs={12} md={8}>
+                    <Col xs={12} sm={6} md={8}>
                         <img src={DataCenter} alt="datacenter" />
                     </Col>
 
