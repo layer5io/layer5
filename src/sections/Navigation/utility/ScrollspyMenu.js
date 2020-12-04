@@ -6,30 +6,44 @@ import Icon from "../../../assets/images/app/projects/arrow.svg";
 const ScrollspyMenu = ({ menuItems, ...props }) => {
     const addAllClasses = [""];
 
-    const [active, setActive] = useState(menuItems[0]);
+    const [state, setState] = useState({
+        active: menuItems[5]
+    });
 
-    let handleMouseHover = (index) => {
-        if (active === menuItems[index]) return;
-        setActive(menuItems[index]);
+    let handleMouseEnter = (index) => {
+        setState({
+            active: menuItems[index]
+        });
     };
+
+    let handleMouseLeave = () => {
+        setState({ 
+            active: menuItems[5]
+        });
+    };
+
     if (props.className) {
         addAllClasses.push(props.className);
     }
 
+    const { active } = state;
+    const blogData = props.blogData;
+
     return (
         <ul className={addAllClasses.join(" ")}>
+            <span className="margin-space" onMouseEnter={() => handleMouseLeave()}></span>
             {menuItems.map((menu, index) => (
                 <li
                     key={index}
                     className={
                         menu.subItems !== undefined ? "nav-item has-dropdown" : "nav-item"
                     }
-                    onMouseOver={() => handleMouseHover(index)}
+                    onMouseEnter={() => handleMouseEnter(index)}
                 >
                     <AnchorLink to={menu.path}>{menu.name}</AnchorLink>
                 </li>
             ))}
-            <div className="fakediv">
+            <div className="dropdown-container">
                 {active.subItems !== undefined && (
                     <ul className="dropdown">
                         {active.name}
@@ -51,12 +65,12 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                             </div>
                             <div className="nav-display">
                                 <div className="nav-div">
-                                    <a href={active.div1.path}><img src={active.div1.src} className="nav-img" /></a>
-                                    <div> {active.div1.descr} </div>
+                                    <Link href={blogData[active.name].nodes[0].fields.slug}><img src={blogData[active.name].nodes[0].frontmatter.thumbnail.publicURL} className="nav-img" /></Link>
+                                    <div> {blogData[active.name].nodes[0].frontmatter.title} </div>
                                 </div>
                                 <div className="nav-div">
-                                    <a href={active.div2.path}><img src={active.div2.src} className="nav-img" /></a>
-                                    <div> {active.div2.descr} </div>
+                                    <Link href={blogData[active.name].nodes[1].fields.slug}><img src={blogData[active.name].nodes[1].frontmatter.thumbnail.publicURL} className="nav-img" /></Link>
+                                    <div> {blogData[active.name].nodes[1].frontmatter.title} </div>
                                 </div>
                             </div>
                         </div>
