@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const ProgramsPageWrapper = styled.div`
  color: #000;     
+ margin-bottom: 30px;
 .single-post-wrapper{
     padding: 50px 0 180px 0;
 }

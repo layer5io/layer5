@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import ProgramsGrid from "../Programs-grid";
 import InternshipPage from "../Internship-gird";
+import Button from "../../reusecore/Button";
 
 import CareersSectionWrapper from "./careers.style";
 
@@ -14,7 +14,7 @@ const CareersPage = () => {
                 <Container>
                     <p>If you’re a smart, curious person who can make contributions in and out of your areas of expertise, why not start now?</p>
                     <p>
-                        <b>What is Layer5?</b>
+                        <h2>What is Layer5?</h2>
                     </p>
                     <p>
                         The quickly growing Layer5 community represents the largest collection of
@@ -34,7 +34,7 @@ const CareersPage = () => {
                             allowFullScreen />
                     </div>
                     <p>
-                        <b>Open Source Projects?</b>
+                        <h2>Open Source Projects?</h2>
                     </p>
                     <p>
                         Layer5 projects are open source software. Anyone can download, use, work
@@ -57,8 +57,9 @@ const CareersPage = () => {
                     <InternshipPage hide_heading={true}/>
                 </div>
                 <br/>
-                <div className="programs-section">
-                    <ProgramsGrid hide_path={true} />
+                <div className="prog-desc"> 
+                    <h3>Layer5 also participates in a number of programs.</h3>
+                    <Button primary title="See More" url="/programs" /> 
                 </div>
             </div>
         </CareersSectionWrapper>

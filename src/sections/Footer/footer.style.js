@@ -3,10 +3,25 @@ import styled from "styled-components";
 const FotterWrapper = styled.section`
   padding-top: 40px;
   padding-bottom: 25px;
-  background: #3c494f;
+  background: black;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  
+  .footer-head{
+    margin: 0 40px 20px 0;
+    .footer-logo-pos{
+      padding: 0px;
+      .footer-logo {
+        max-width: 200px;
+        height: auto;
+      }
+    }
+    .links{
+      float: right;
+      filter: invert();
+    }
+  }
   .section__particle{
       position: absolute;
       &.one{
@@ -15,6 +30,28 @@ const FotterWrapper = styled.section`
           width: 270px;
       }
   }
+
+  .subscribe{
+    margin: 30px 0 50px 0;
+    display: inline-flex;
+    input{
+      padding: 16px;
+      margin-right: 5px;
+      width: 300px;
+      border: 1px solid white;
+      background-color: #1D1F25;
+      border-radius: 4px;
+      color: white;
+    }
+    float: right;
+    margin-right: 40px; 
+  }
+
+  .desc-info{
+    padding-right: 25px;
+    font-style: italic;
+  }
+
   ul{
     padding: 0;
     list-style: none;
@@ -24,48 +61,14 @@ const FotterWrapper = styled.section`
     }
   }
   p{
-    font-size: 18px;
-    line-height: 38px;
     color: ${props => props.theme.white};
   }
   .anchor{
     transition: 450ms all;
     color: ${props => props.theme.white};
     &:hover {
-      color: ${props => props.theme.black};
+      color: ${props => props.theme.secondaryColor};
     }
-  }
-  .footer-contact{
-    .footer-widgets{
-      .contactf{
-        padding-left: 15px;
-        padding-right: 15px;
-        margin: 0px;
-        .social-icons{
-          transition: 450ms all;
-          &:hover {
-            color: ${props => props.theme.headingColor}; 
-          }
-        }
-      }
-    }
-    .widget-title {
-      color: ${props => props.theme.white};
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-  }
-  .footer-logo {
-    max-width: 200px;
-    height: auto;
-  }
-  .descript {
-    margin-top: -10px;
-    color: white;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    font-size: 15px;
-    line-height: 25px;
   }
   .footer-widgets {
     &.first {
@@ -76,60 +79,9 @@ const FotterWrapper = styled.section`
     margin-bottom: 25px;
     .widget-title {
       color: ${props => props.theme.white};
-      font-size: 24px;
+      font-size: 25px;
+      font-weight: 600;
       margin-bottom: 20px;
-    }
-    .info {
-      font-size: 18px;
-      line-height: 38px;
-      margin-bottom: 32px;
-      li {
-        display: flex;
-        align-items: center;
-        svg {
-          margin-right: 10px;
-          color: ${props => props.theme.white};
-        }
-      }
-    }
-    .social{
-      li {
-        display: inline-block;
-        .anchor {
-          display: block;
-          height: 60px;
-          width: 60px;
-          line-height: 60px;
-          border-radius: 8px;
-          border: 1px solid ${props => props.theme.white};
-          text-align: center;
-          transition: 450ms all;
-          &:hover {
-            color: ${props => props.theme.white};
-            background: rgb(251, 123, 129);
-            background: -moz-linear-gradient(
-              left,
-              rgba(251, 123, 129, 1) 0%,
-              rgba(254, 191, 179, 1) 100%
-            );
-            background: -webkit-linear-gradient(
-              left,
-              rgba(251, 123, 129, 1) 0%,
-              rgba(254, 191, 179, 1) 100%
-            );
-            background: linear-gradient(
-              to right,
-              rgba(251, 123, 129, 1) 0%,
-              rgba(254, 191, 179, 1) 100%
-            );
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb7b81', endColorstr='#febfb3',GradientType=1 );
-            border-color: #febfb3;
-          }
-        }
-      }
-      li + li {
-        margin-left: 30px;
-      }
     }
     .widget-catagory {
       li {
@@ -161,8 +113,9 @@ const FotterWrapper = styled.section`
       }
     }
     p{
-      order: 1;
-      margin: 0;
+      font-size: 18px;
+      line-height: 38px;
+      color: ${props => props.theme.white};
     }
   }
   @media only screen and (max-width: 1600px) {

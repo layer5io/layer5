@@ -22,7 +22,7 @@ export const query = graphql`
                 id
                 frontmatter {
                     title
-                    date(formatString: "Do MMMM YYYY")
+                    date(formatString: "MMMM Do, YYYY")
                     author
                     eurl
                     thumbnail{

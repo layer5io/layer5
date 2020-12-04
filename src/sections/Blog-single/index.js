@@ -1,30 +1,17 @@
 import React from "react";
-import { useStaticQuery, graphql ,Link } from "gatsby";
+import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import slugify from "../../utils/slugify";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import Sidebar from "../Blog-sidebar";
+import RelatedPosts from "../Related-Posts";
 
 import BlogPageWrapper from "./blogSingle.style";
 
 const BlogSingle = ({data}) => {
     const { frontmatter, body } = data.mdx;
-    const allTags = useStaticQuery(graphql`
-        query tagsQuery {
-            allMdx(
-                filter: { frontmatter: { published: { eq: true } } }
-            ) {
-                group(field: frontmatter___tags) {
-                    fieldValue
-                    totalCount
-                }
-            }
-        }
-    `);
-
     return (
         <BlogPageWrapper>
             <PageHeader
@@ -37,7 +24,7 @@ const BlogSingle = ({data}) => {
             <div className="single-post-wrapper">
                 <Container>
                     <Row>
-                        <Col xs={12} lg={8}>
+                        <Col xs={12} lg={12}>
                             <Row>
                                 <Col xs={12}>
                                     <div className="single-post-block">
@@ -56,11 +43,9 @@ const BlogSingle = ({data}) => {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col sm={12} lg={4}>
-                            <Sidebar tags={allTags.allMdx.group}/>
-                        </Col>
                     </Row>
-                </Container>
+                    <RelatedPosts tags={frontmatter.tags}/>
+                </Container> 
             </div>
         </BlogPageWrapper>
     );

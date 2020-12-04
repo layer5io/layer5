@@ -28,11 +28,12 @@ const MembersPage = () => {
     };
 
     let MembersView = props => {
-        let status = members.value;
-        if (status==="active") return <ActiveMembers {...props} />;
-        else if (status==="inactive") return <InactiveMembers {...props} />;
-        else if (status==="maintainers") return <Maintainers {...props} />;
-        return <AllMembers {...props} />;
+        switch (members.value) {
+        case "active" : return <ActiveMembers {...props} />;
+        case "inactive" : return <InactiveMembers {...props}/>;
+        case "maintainers" : return <Maintainers {...props}/>;
+        default: return <AllMembers {...props}/>;
+        }
     };
     return (
         <ThemeProvider theme={theme}>

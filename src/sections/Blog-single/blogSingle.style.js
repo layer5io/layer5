@@ -3,7 +3,7 @@ import styled from "styled-components";
 const BlogPageWrapper = styled.div`
     
 .single-post-wrapper{
-    padding: 50px 0 180px 0;
+    padding: 50px 0 90px 0;
 }
 .single-post-block{
     p{
@@ -32,8 +32,8 @@ const BlogPageWrapper = styled.div`
     display: flex;
     align-items:center;
     justify-content: space-between;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 60px;
+    margin-bottom: 30px;
     border-bottom: 1px solid #e5e5e5;
     padding-bottom: 30px;
 }

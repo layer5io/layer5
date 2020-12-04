@@ -8,18 +8,23 @@ import Icon2 from "../../assets/images/app/features/02.svg";
 import Icon3 from "../../assets/images/app/features/03.svg";
 import Icon4 from "../../assets/images/app/features/04.svg";
 import Icon5 from "../../assets/images/app/features/05.svg";
-import Icon6 from "../../assets/images/app/features/06.svg";
+import mesheryOperatorDark from "./img/meshery-operator_dark.svg";
+import policyEngineGreen from "./img/policy-engine_green.svg";
+import distributedPerformance from "./img/distributed-performance_green.svg";
+import visualToplogy from "./img/visual-topology.svg";
+import performanceManagement from "./img/performance-management.svg";
 
-import FeturesSectionWrapper from "./fetures.style";
+
+import FeturesSectionWrapper from "./features.style";
 
 const Features = () => {
     return (
         <FeturesSectionWrapper id="features">
             <Container fullWidthSM>
                 <SectionTitle UniWidth="65%">
-                    <h4>Amazing Features</h4>
+                    <h4><i>Service Mesh Management</i></h4>
                     <h2>
-                        <span>Some of the best features </span> you find in one application.
+                        Manage your service mesh with features<span> you won't find anywhere else</span>.
                     </h2>
                 </SectionTitle>
                 <Row>
@@ -28,7 +33,7 @@ const Features = () => {
                             <div className="fetures-icon-block">
                                 <img src={Icon1} alt="img" />
                             </div>
-                            <h3>Business Opurtunity</h3>
+                            <h3>Lifecycle Management</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
                                 eiusmod tempor incididunt.
@@ -38,9 +43,9 @@ const Features = () => {
                     <Col xs={12} sm={6} md={4}>
                         <div className="fetures-block v2">
                             <div className="fetures-icon-block">
-                                <img src={Icon2} alt="img" />
+                                <img src={performanceManagement} alt="img" />
                             </div>
-                            <h3>Data Analysis</h3>
+                            <h3>Performance Management</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
                                 eiusmod tempor incididunt.
@@ -50,9 +55,9 @@ const Features = () => {
                     <Col xs={12} sm={6} md={4}>
                         <div className="fetures-block v1">
                             <div className="fetures-icon-block">
-                                <img src={Icon3} alt="img" />
+                                <img src={policyEngineGreen} alt="img" />
                             </div>
-                            <h3>Engaging Content</h3>
+                            <h3>Configuration Management</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
                                 eiusmod tempor incididunt.
@@ -62,36 +67,33 @@ const Features = () => {
                     <Col xs={12} sm={6} md={4}>
                         <div className="fetures-block v2">
                             <div className="fetures-icon-block">
-                                <img src={Icon4} alt="img" />
+                                <img src={distributedPerformance} alt="img" />
                             </div>
-                            <h3>Web Expertise</h3>
+                            <h3>Data Plane Intelligence</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                                eiusmod tempor incididunt.
+                                Harness the power of WebAssembly filters to implement application and offload your service development teams from lengthy engineering cycles. Expect and receive more from your infrastructure.
                             </p>
                         </div>
                     </Col>
                     <Col xs={12} sm={6} md={4}>
                         <div className="fetures-block v1">
                             <div className="fetures-icon-block">
-                                <img src={Icon5} alt="img" />
+                                <img src={visualToplogy} alt="img" />
                             </div>
-                            <h3>App Development</h3>
+                            <h3>Visual Topology</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                                eiusmod tempor incididunt.
+                                Use <a href="/meshery/service-mesh-map" alt="Service Mesh Visual Map">MeshMap</a> to quickly understand how your service mesh is functioning and to intuitively reconfigure and tune your mesh in accordance with the needs of your workloads.
                             </p>
                         </div>
                     </Col>
                     <Col xs={12} sm={6} md={4}>
                         <div className="fetures-block v2">
                             <div className="fetures-icon-block">
-                                <img src={Icon6} alt="img" />
+                                <img src={mesheryOperatorDark} alt="Meshery Operator" />
                             </div>
-                            <h3>Easy Customized</h3>
+                            <h3>Automated Operation</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                                eiusmod tempor incididunt.
+                                <a href="/meshery/service-mesh-operator" alt="Service Mesh Operator">Meshery Operator</a>
                             </p>
                         </div>
                     </Col>

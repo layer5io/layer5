@@ -12,6 +12,9 @@ const CareerPageWrapper = styled.div`
         line-height: 29px;
         letter-spacing: 0.2px;
     }
+    h2, h3{
+        margin: 15px 0 10px 0;
+    }
     p+p{
         margin-top: 30px;  
     }

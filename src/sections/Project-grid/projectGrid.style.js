@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const ProjectPageWrapper = styled.div`
+export const ProjectWrapper = styled.div`
 padding: 100px 0 110px 0;
     .project-text{
         font-weight: 300;
@@ -22,15 +22,17 @@ padding: 100px 0 110px 0;
         border-radius: 4%;
         position: relative;
         text-align: center;
+        transition: 0.6s;
         &:hover{
             background-color: #00b39f;
-            box-shadow: 0px 0px 10px #FFBD2E;
             img {
                 filter: brightness(0) invert(1);
             }
             h1 {
                 color: white;
             }
+            transition: 0.4s;
+            transform: scale(1.05);
         }
         h1{
             margin-bottom: 20px;

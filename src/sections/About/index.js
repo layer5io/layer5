@@ -4,15 +4,11 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import VintageBox from "../../reusecore/VintageBox";
 import SocialLinks from "../../components/SocialLinks";
-import particle1 from "../../assets/images/app/particle/05.png";
-import particle2 from "../../assets/images/app/particle/06.png";
 import AboutSectionWrapper from "./about.style";
 
 const About = () => {
     return (
         <AboutSectionWrapper id="about">
-            <img className="section__particle one" src={particle1} alt="img" />
-            <img className="section__particle two" src={particle2} alt="img" />
             <Container fullWidthSM>
                 <Row Vcenter={true}>
                     <Col xs={12} sm={6}>
@@ -22,7 +18,7 @@ const About = () => {
                             UniWidth="100%"
                         >
                             {" "}
-                            <h2>About us</h2>
+                            <h2>About Us</h2>
                         </SectionTitle>
                         <div className="about-text text-one">
                             <h4>Community First</h4>
@@ -46,7 +42,7 @@ const About = () => {
                                 <a href="http://slack.layer5.io">Collaborate</a>
                             </h4>
                             <p>
-                                <a className="community" href="http://slack.layer5.io">
+                                <a className="anchor" href="/community">
                   Join the community
                                 </a>{" "}
                 and collaborate on our projects.
@@ -91,7 +87,7 @@ const About = () => {
                                 </Col>
                             </Row>
                             <VintageBox right={false} vintageTwo={true} position="relative">
-                                <Button className="about-button" url="mailto:hello@layer5.io" title="Contact Us" external="true" />
+                                <Button primary className="about-button" url="mailto:hello@layer5.io" title="Contact Us" external="true" />
                             </VintageBox>
                         </div>
                     </Col>

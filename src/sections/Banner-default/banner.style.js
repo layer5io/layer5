@@ -31,11 +31,12 @@ const BannerSectionWrapper = styled.section`
         }
     }
     .banner-btn.one{
-        background: #EBC017;
-        color: #fff;
+        // background: #EAD07D;
+        a{
+            color: black;
+        }
         &:hover{
-            background: #EAD07D;
-            color: #333;
+            // background: #EBC017; 
         }
     }
     .banner-btn.two{
