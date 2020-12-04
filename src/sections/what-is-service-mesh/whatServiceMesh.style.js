@@ -9,7 +9,7 @@ const ServiceMeshWrapper = styled.div`
         width: 100%;
         margin: 0;
         padding: 0;
-        padding-top: 95px;
+        padding-top: 80px;
 
         *{
             font-family: "Qanelas Soft","Open Sans", sans-serif;
@@ -20,10 +20,12 @@ const ServiceMeshWrapper = styled.div`
         .description{
             font-size: 20px;
             line-height: 1.5;
+            font-weight: 150;
         }
         h1{
             font-size: 45px;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
+            line-height: 1.5;
         }
 
         .bookImage{
@@ -31,6 +33,14 @@ const ServiceMeshWrapper = styled.div`
             margin: auto;
             height: 430px;
             object-fit: contain;
+            max-width: 95%;
+        }
+
+        @media only screen and (max-width: 720px) {
+            padding-top: 50px;
+            *{
+                padding: 10px;
+            }
         }
 `;
 
