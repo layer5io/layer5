@@ -17,7 +17,6 @@ import News from "../sections/News";
 import Getapp from "../sections/Getapp";
 import Contact from "../sections/Contact";
 import Footer from "../sections/Footer";
-import WhatServiceMesh from "../sections/what-is-service-mesh";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
@@ -29,7 +28,6 @@ const IndexPage = () => (
         <Layout>
             <Navigation />
             <Banner />
-            <WhatServiceMesh gradient={true}/>
             <Integrations />
             <Features />
             <AppScreens />
