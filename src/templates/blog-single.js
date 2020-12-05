@@ -33,6 +33,9 @@ export const query = graphql`
                     publicURL
                 }
             }
+            fields {
+                slug
+            }
         }
     }
 `;
