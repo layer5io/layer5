@@ -5,28 +5,28 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import Card from "../../components/Card";
 
 import RelatedPostsWrapper from "./relatedPosts.style";
-import { Row, Col } from "../../reusecore/Layout";
+import { Col } from "../../reusecore/Layout";
 
 import Carousel from "react-elastic-carousel";
+import RelatedPostsFactory from "./relatedPostsFactory";
 
 
-
-const RelatedPosts = () => {
+const RelatedPosts = props => {
     const data = useStaticQuery(
         graphql`
             query relatedPosts{
                 allMdx(
                     sort: { fields: [frontmatter___date], order: DESC}
                     filter: { 
-                        fields: { collection: { eq: "blog" } }
+                        fields: { collection: { eq: "blog" } }, , frontmatter: { published: { eq: true } }
                     }
-                    limit: 6     
                 ) {
                     nodes {
                         frontmatter {
                             title
                             date(formatString: "Do MMMM YYYY")
                             author
+                            tags
                             thumbnail{
                                 childImageSharp{
                                     fluid(maxWidth: 1000){
@@ -45,27 +45,33 @@ const RelatedPosts = () => {
             }
         `
     );
+    const { tags, currentPostSlug } = props;
+    const posts = data.allMdx.nodes;
+    const relatedPosts = new RelatedPostsFactory (
+        posts, currentPostSlug
+    ).setMaxPosts(6)
+        .setTags(tags)
+        .getPosts();
 
-    const relatedPosts = data.allMdx.nodes;
     return (
         <RelatedPostsWrapper>
             <div className="widgets-title">
                 <h3>Related Blogs</h3>
             </div>
-            <Carousel  
+            <Carousel
                 easing="ease"
                 itemsToScroll = {1}
                 className="carouselStyling"
-                showArrows = {true}  
+                showArrows = {true}
                 breakPoints = {[
                     { width: 1, itemsToShow: 1},
                     { width: 550, itemsToShow: 2},
                     { width: 850, itemsToShow: 3},
                     { width: 1000, itemsToShow: 3}
                 ]}
-            >                
-                { 
-                    relatedPosts.map(post => {
+            >
+                {
+                    relatedPosts.map(({post}) => {
                         return (
                             <Col xs={12} lg={12} key={post.fields.slug}>
                                 <Card frontmatter={post.frontmatter} fields={post.fields}/>
@@ -73,11 +79,11 @@ const RelatedPosts = () => {
                         );
                     })
                 }
-                    
+
                 <Col xs={12} lg={12} className="allBlogsCard">
-                    <a href="/blog">
-                            All Blogs <IoIosArrowRoundForward/>
-                    </a>
+                    <Link to="/blog">
+                        All Blogs <IoIosArrowRoundForward/>
+                    </Link>
                 </Col>
             </Carousel>
         </RelatedPostsWrapper>
