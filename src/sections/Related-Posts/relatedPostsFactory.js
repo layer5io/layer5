@@ -53,14 +53,14 @@ class RelatedPostsFactory {
             }
         };
 
-        const addCategoryPoints = (post, category) => {
-            const categoryPoints = 2;
-            const slug = getSlug(post);
-
-            if(post.frontmatter.category ===category){
-                identityMap[slug].points += categoryPoints;
-            }
-        };
+        // const addCategoryPoints = (post, category) => {
+        //     const categoryPoints = 2;
+        //     const slug = getSlug(post);
+        //
+        //     if(post.frontmatter.category ===category){
+        //         identityMap[slug].points += categoryPoints;
+        //     }
+        // };
 
         const addTagsPoints = (post, tags) => {
             const tagPoint = 1;

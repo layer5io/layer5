@@ -50,6 +50,7 @@ const RelatedPosts = props => {
     const relatedPosts = new RelatedPostsFactory (
         posts, currentPostSlug
     ).setMaxPosts(6)
+        // .setCategory(category)
         .setTags(tags)
         .getPosts();
 
