@@ -35,7 +35,7 @@ export const MembersGridWrapper = styled.div`
         height: 20px;
         margin-right: 10px;
         &.active {
-            background-color: ${props => props.theme.secondaryColor};
+            background-color: ${props => props.theme.headingColor};
         }
         &.inactive {
             background-color: gray;

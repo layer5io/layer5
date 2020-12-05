@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { navigate } from "gatsby";
 import styled from "styled-components";
 import ReactPaginate from "react-paginate";
@@ -45,18 +45,29 @@ export const PagerWrapper = styled.div`
     }
 `;
 
-const Pager = ({ pageContext, isListView }) => {
-    const { numberOfPages, pathPrefix} = pageContext;
+const Pager = props => {
+    const { numberOfPages, pathPrefix} = props.pageContext;
+    const { isListView } = props.isListView;
+    const [page, setPage] = useState(0);
 
     const handlePageClick = ({ selected: selectedPage }) =>{
+        console.log(page);
         const path =  `${pathPrefix}${selectedPage ? `/${selectedPage + 1}` : ""}`;
         navigate(
             path,
             {
-                state : { isListView }
+                state : { selectedPage, isListView }
             }
         );
     };
+
+    useEffect(() =>{
+        // if (props.location.state){
+        //     if (props.location.state.selectedPage) setPage(props.location.state.selectedPage);
+        // }
+        console.log(props);
+    },[]);
+
 
     return (
         <PagerWrapper>
