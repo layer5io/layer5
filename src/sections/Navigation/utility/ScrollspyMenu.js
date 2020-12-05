@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from "gatsby";
 import Icon from "../../../assets/images/app/projects/arrow.svg";
+import Image from "../../../components/image";
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
     const addAllClasses = [""];
@@ -16,12 +17,6 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
         });
     };
 
-    let handleMouseLeave = () => {
-        setState({ 
-            active: menuItems[5]
-        });
-    };
-
     if (props.className) {
         addAllClasses.push(props.className);
     }
@@ -31,7 +26,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
 
     return (
         <ul className={addAllClasses.join(" ")}>
-            <span className="margin-space" onMouseEnter={() => handleMouseLeave()}></span>
+            <span className="margin-space first"></span>
             {menuItems.map((menu, index) => (
                 <li
                     key={index}
@@ -43,6 +38,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                     <AnchorLink to={menu.path}>{menu.name}</AnchorLink>
                 </li>
             ))}
+            <span className="margin-space second"></span>
             <div className="dropdown-container">
                 {active.subItems !== undefined && (
                     <ul className="dropdown">
@@ -65,11 +61,23 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                             </div>
                             <div className="nav-display">
                                 <div className="nav-div">
-                                    <Link href={blogData[active.name].nodes[0].fields.slug}><img src={blogData[active.name].nodes[0].frontmatter.thumbnail.publicURL} className="nav-img" /></Link>
+                                    <Link href={blogData[active.name].nodes[0].fields.slug}>
+                                        <Image
+                                            {...blogData[active.name].nodes[0].frontmatter.thumbnail}
+                                            imgStyle={{ objectFit: "contain" }}
+                                            alt={blogData[active.name].nodes[0].frontmatter.title} className="nav-img"
+                                        />
+                                    </Link>
                                     <div> {blogData[active.name].nodes[0].frontmatter.title} </div>
                                 </div>
                                 <div className="nav-div">
-                                    <Link href={blogData[active.name].nodes[1].fields.slug}><img src={blogData[active.name].nodes[1].frontmatter.thumbnail.publicURL} className="nav-img" /></Link>
+                                    <Link href={blogData[active.name].nodes[1].fields.slug}>
+                                        <Image
+                                            {...blogData[active.name].nodes[1].frontmatter.thumbnail}
+                                            imgStyle={{ objectFit: "contain" }}
+                                            alt={blogData[active.name].nodes[1].frontmatter.title} className="nav-img"
+                                        />
+                                    </Link>
                                     <div> {blogData[active.name].nodes[1].frontmatter.title} </div>
                                 </div>
                             </div>

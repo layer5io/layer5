@@ -18,9 +18,16 @@ const NavigationWrap = styled.header`
     color: ${props => props.theme.menuColor};
     font-size: 24px;
   }
-  .margin-space {
+  .margin-space.first{
     position: fixed;
-    background: white;
+    opacity: 1;
+    width: 75%;
+    height: 48px;
+    display: block;
+  }
+  .margin-space.second{
+    position: fixed;
+    top: 80px;
     opacity: 1;
     width: 75%;
     height: 48px;
@@ -31,7 +38,7 @@ const NavigationWrap = styled.header`
     background: white;
     opacity: 0;
     border: 1px solid #f5f5f5;
-    margin: 75px 2.5vw;
+    margin: 70px 2.5vw;
     width: 75%;
     left: auto;
     right: 0;
@@ -94,8 +101,8 @@ const NavigationWrap = styled.header`
       }
   }
   .nav-img {
-    width: 300px;
-    height: 300px;
+    max-width: 100%;
+    max-height: 300px;
   }
   .nav-div {
     margin-top: -20px;
@@ -158,6 +165,9 @@ const NavigationWrap = styled.header`
   ul div ul:hover {
     animation: bobble ease .3s forwards;
     visibility: visible;
+  }
+  ul:hover > span:hover ~ div > ul{
+    animation: bobbleout ease .3s forwards;
   }
   nav {
     ul {
@@ -229,6 +239,13 @@ const NavigationWrap = styled.header`
       width: 100px;
     }
     .nav {
+      .margin-space.first{
+        height: 28px;
+      }
+      .margin-space.second{
+        top: 56px;
+        height: 28px;
+      }
       .nav-item{
         margin: 28px 0px 0px 0px;
         padding-bottom: 28px;
@@ -239,12 +256,8 @@ const NavigationWrap = styled.header`
           }
         }
       }
-      li {
-        .dropdown {
-          li {
-            padding: 0;
-          }
-        }
+      ul .dropdown {
+        margin: 50px 2.5vw;
       }
     }
   }

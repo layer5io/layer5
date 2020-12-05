@@ -17,7 +17,7 @@ const Navigation = () => {
             query  {
                 Projects: allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "projects" } } }
+                    filter: { fields: { collection: { eq: "events" } } }
                     limit: 2
                 ) {
                     nodes {
@@ -25,6 +25,11 @@ const Navigation = () => {
                         frontmatter {
                             title
                             thumbnail{
+                                childImageSharp{
+                                    fluid(maxHeight: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
                                 publicURL
                             }
                         }
@@ -43,6 +48,11 @@ const Navigation = () => {
                         frontmatter {
                             title
                             thumbnail{
+                                childImageSharp{
+                                    fluid(maxWidth: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
                                 publicURL
                             }
                         }
@@ -61,6 +71,11 @@ const Navigation = () => {
                         frontmatter {
                             title
                             thumbnail{
+                                childImageSharp{
+                                    fluid(maxWidth: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
                                 publicURL
                             }
                         }
@@ -79,6 +94,11 @@ const Navigation = () => {
                         frontmatter {
                             title
                             thumbnail{
+                                childImageSharp{
+                                    fluid(maxWidth: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
                                 publicURL
                             }
                         }
@@ -89,7 +109,7 @@ const Navigation = () => {
                 }
                 Home: allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "projects" } } }
+                    filter: { fields: { collection: { eq: "events" } } }
                     limit: 2
                 ) {
                     nodes {
@@ -97,6 +117,11 @@ const Navigation = () => {
                         frontmatter {
                             title
                             thumbnail{
+                                childImageSharp{
+                                    fluid(maxHeight: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
                                 publicURL
                             }
                         }
