@@ -26,7 +26,6 @@ const Projects = () => {
                             UniWidth="75%"
                         >
                             <h4>PROJECTS</h4>
-
                             <h2>
                                 Operate any service mesh <span>with confidence</span>.
                             </h2>

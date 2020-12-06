@@ -35,6 +35,9 @@ const ProjectItemWrapper = styled.section`
     }
     .project__block__inner { 
         box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
+        &:hover{
+            box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
+        }
         padding: 12% 6% 12% 6%;
         height: 220px;
         border-radius: 4%;

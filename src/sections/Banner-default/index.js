@@ -6,7 +6,7 @@ import Button from "../../reusecore/Button";
 import VintageBox from "../../reusecore/VintageBox";
 import ParticleComponent from "../../reusecore/Particle";
 
-import { FaPlay, FaDownload } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
 import { FiDownloadCloud } from "react-icons/fi";
 
 import BannerSectionWrapper from "./banner.style";
