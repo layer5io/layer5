@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
 import { FaBars } from "react-icons/fa";
 
@@ -11,6 +12,127 @@ import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import NavigationWrap from "./navigation.style";
 
 const Navigation = () => {
+    const data = useStaticQuery(
+        graphql`
+            query  {
+                Projects: allMdx(
+                    sort: { fields: [frontmatter___date], order: DESC }
+                    filter: { fields: { collection: { eq: "events" } } }
+                    limit: 2
+                ) {
+                    nodes {
+                        id
+                        frontmatter {
+                            title
+                            thumbnail{
+                                childImageSharp{
+                                    fluid(maxHeight: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                                publicURL
+                            }
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+                Learn: allMdx(
+                    sort: { fields: [frontmatter___date], order: DESC }
+                    filter: { fields: { collection: { eq: "books" } } }
+                    limit: 2
+                ) {
+                    nodes {
+                        id
+                        frontmatter {
+                            title
+                            thumbnail{
+                                childImageSharp{
+                                    fluid(maxWidth: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                                publicURL
+                            }
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+                Community: allMdx(
+                    sort: { fields: [frontmatter___date], order: DESC }
+                    filter: { fields: { collection: { eq: "events" } } }
+                    limit: 2
+                ) {
+                    nodes {
+                        id
+                        frontmatter {
+                            title
+                            thumbnail{
+                                childImageSharp{
+                                    fluid(maxWidth: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                                publicURL
+                            }
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+                Blog: allMdx(
+                    sort: { fields: [frontmatter___date], order: DESC }
+                    filter: { fields: { collection: { eq: "blog" } } }
+                    limit: 2
+                ) {
+                    nodes {
+                        id
+                        frontmatter {
+                            title
+                            thumbnail{
+                                childImageSharp{
+                                    fluid(maxWidth: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                                publicURL
+                            }
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+                Home: allMdx(
+                    sort: { fields: [frontmatter___date], order: DESC }
+                    filter: { fields: { collection: { eq: "events" } } }
+                    limit: 2
+                ) {
+                    nodes {
+                        id
+                        frontmatter {
+                            title
+                            thumbnail{
+                                childImageSharp{
+                                    fluid(maxHeight: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                                publicURL
+                            }
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+            }
+        `
+    );
     const [expand, setExpand] = useState(false);
     const [scroll, setScroll] = useState(false);
     useEffect(() => {
@@ -33,6 +155,7 @@ const Navigation = () => {
                         <ScrollspyMenu
                             className={`collapsed ${expand ? "is-expanded" : ""}`}
                             menuItems={Data.menuItems}
+                            blogData={data}
                         />
                     </nav>
                 </div>

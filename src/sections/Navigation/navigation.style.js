@@ -18,24 +18,35 @@ const NavigationWrap = styled.header`
     color: ${props => props.theme.menuColor};
     font-size: 24px;
   }
-
-  /*Drop down style*/
+  .margin-space.first{
+    position: fixed;
+    opacity: 1;
+    width: 75%;
+    height: 48px;
+    display: block;
+  }
+  .margin-space.second{
+    position: fixed;
+    top: 80px;
+    opacity: 1;
+    width: 75%;
+    height: 48px;
+    display: block;
+  }
   .dropdown {
     position: fixed;
     background: white;
     opacity: 0;
     border: 1px solid #f5f5f5;
-    margin: 100px 2.5vw;
+    margin: 70px 2.5vw;
     width: 75%;
     left: auto;
     right: 0;
     padding: 1em;
     border-radius: 15px;
-    display: none;
+    display: block;
     box-shadow: 0px 10px 10px 0px rgba(0, 211, 169, 0.10);
-    -webkit-transform: translateY(20px);
-    -ms-transform: translateY(20px);
-    animation: bobble ease .5s forwards;
+    animation: bobbleout ease .3s forwards;
   }
   .nav-grid {
     display: grid;
@@ -90,8 +101,8 @@ const NavigationWrap = styled.header`
       }
   }
   .nav-img {
-    width: 300px;
-    height: 300px;
+    max-width: 100%;
+    max-height: 300px;
   }
   .nav-div {
     margin-top: -20px;
@@ -101,10 +112,16 @@ const NavigationWrap = styled.header`
     box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.025), -1px -1px 3px 3px rgba(0, 0, 0, 0.025);
     border-radius: 10px;
     min-height: 300px;
+    color: ${props => props.theme.menuColor};
     &:hover {
       box-shadow: none;
       color: #00b39f;
       cursor: pointer;
+    }
+    a:hover {
+      &:before {
+        opacity: 0;
+      }
     }
   }
   @keyframes nav-bar-anim {
@@ -120,10 +137,8 @@ const NavigationWrap = styled.header`
   }
   @keyframes bobble {
     0% {
-        /* animation-timing-function: ease 2s; */
         transform: translate3d(0px, -15px, 0px) scale(.75, .75); opacity: 0; visibility: hidden; 
     }
-
     50% {
         transform: translate3d(0px, 11px, 8px) perspective(800px) ;
         opacity: 70%
@@ -133,16 +148,27 @@ const NavigationWrap = styled.header`
         opacity: 100%
     }
   }
-  ul:hover div > ul,
-  ul div ul:hover{
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translateY(0px);
-    -ms-transform: translateY(0px);
-    transform: translateY(0px);
-    display: block;
+  @keyframes bobbleout {
+    0% {
+        transform: translate3d(0px, 8px, 2px) scale(1, 1);
+        opacity: 100%
+    }
+    50% {
+        transform: translate3d(0px, 11px, 8px) perspective(800px) ;
+        opacity: 70%
+    }
+    100% {
+        transform: translate3d(0px, -15px, 0px) scale(.75, .75); opacity: 0; visibility: hidden;
+    }
   }
-
+  ul:hover div > ul,
+  ul div ul:hover {
+    animation: bobble ease .3s forwards;
+    visibility: visible;
+  }
+  ul:hover > span:hover ~ div > ul{
+    animation: bobbleout ease .3s forwards;
+  }
   nav {
     ul {
       margin: 0;
@@ -172,7 +198,6 @@ const NavigationWrap = styled.header`
         }
       }
     }
-
     a,
     .nav-active {
       position: relative;
@@ -214,6 +239,13 @@ const NavigationWrap = styled.header`
       width: 100px;
     }
     .nav {
+      .margin-space.first{
+        height: 28px;
+      }
+      .margin-space.second{
+        top: 56px;
+        height: 28px;
+      }
       .nav-item{
         margin: 28px 0px 0px 0px;
         padding-bottom: 28px;
@@ -224,12 +256,8 @@ const NavigationWrap = styled.header`
           }
         }
       }
-      li {
-        .dropdown {
-          li {
-            padding: 0;
-          }
-        }
+      ul .dropdown {
+        margin: 50px 2.5vw;
       }
     }
   }
