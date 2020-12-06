@@ -1,21 +1,21 @@
-import Valcand from "../../assets/images/service-mesh-icons/vulcan.png";
-import Linkerd from "../../assets/images/service-mesh-icons/linkerd.png";
-import Consul from "../../assets/images/service-mesh-icons/consul.png";
-import Cilium from "../../assets/images/service-mesh-icons/cilium.png";
-import Istio from "../../assets/images/service-mesh-icons/istio.png";
-import GreyMatter from "../../assets/images/service-mesh-icons/greymatter.jpg";
-import AspenMesh from "../../assets/images/service-mesh-icons/aspenmesh.png";
-import Conduit from "../../assets/images/service-mesh-icons/conduit.png";
-import NetworkServiceMesh from "../../assets/images/service-mesh-icons/nsm.png";
-import Rotor from "../../assets/images/service-mesh-icons/rotor.png";
-import Maistra from "../../assets/images/service-mesh-icons/maistra.png";
-import SofaMesh from "../../assets/images/service-mesh-icons/sofamesh.png";
-import Octarine from "../../assets/images/service-mesh-icons/octarine.png";
+import Vulcand from "../../assets/images/service-mesh-icons/vulcan.svg";
+import Linkerd from "../../assets/images/service-mesh-icons/linkerd.svg";
+import Consul from "../../assets/images/service-mesh-icons/consul.svg";
+import Cilium from "../../assets/images/service-mesh-icons/cilium.svg";
+import Istio from "../../assets/images/service-mesh-icons/istio.svg";
+import GreyMatter from "../../assets/images/service-mesh-icons/grey-matter.svg";
+import AspenMesh from "../../assets/images/service-mesh-icons/aspen-mesh.svg";
+import Conduit from "../../assets/images/service-mesh-icons/conduit-logo.svg";
+import NetworkServiceMesh from "../../assets/images/service-mesh-icons/nsm.svg";
+import Rotor from "../../assets/images/service-mesh-icons/rotor.svg";
+import Maistra from "../../assets/images/service-mesh-icons/maistra.svg";
+import SofaMesh from "../../assets/images/service-mesh-icons/sofa-mesh.svg";
+import Octarine from "../../assets/images/service-mesh-icons/octarine.svg";
 import TraefikMesh from "../../assets/images/service-mesh-icons/traefik.svg";
-import AppMesh from "../../assets/images/service-mesh-icons/aws-app-mesh.png";
+import AppMesh from "../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import Kuma from "../../assets/images/service-mesh-icons/kuma.svg";
 import Citrix from "../../assets/images/service-mesh-icons/citrix.svg";
-import Osm from "../../assets/images/service-mesh-icons/osm.png";
+import Osm from "../../assets/images/service-mesh-icons/osm.svg";
 
 
 export const non_functional=[{
@@ -29,7 +29,7 @@ export const non_functional=[{
     commercial: "N/A",
     category: "Service Mesh",
     timeline_order: 1,
-    icon: Valcand
+    icon: Vulcand
 }, {
     name: "Linkerd 1.x",
     opensource: "Yes",

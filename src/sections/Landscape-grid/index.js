@@ -15,6 +15,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 const LandscapeGrid=() => {
+    let icon_class = "";
     return (
         <LandscapePageWrapper>
             <PageHeader title="Landscape" path="Landscape" />
@@ -38,18 +39,20 @@ const LandscapeGrid=() => {
                                         <VerticalTimelineElement
                                             key={mesh.timeline_order}
                                             className="timeline-element"
-                                            contentStyle={{ background: "rgb(60, 73, 79)", color: "#3c494f" }}
-                                            contentArrowStyle={{ borderRight: "7px solid  rgb(60, 70, 70)" }}
+                                            contentStyle={{ background: "rgb(255, 255, 255)", color: "#3c494f" }}
+                                            contentArrowStyle={{ display: "none" }}
                                             date={mesh.announce_date}
-                                            iconStyle={{ background: "rgb(60, 73, 79)", color: "#fff" }}
+                                            iconStyle={{ background: "rgb(60, 73, 79)", width: "20px", height: "20px", marginTop: "20px"}}
                                         >
                                             {mesh.timeline_order?
-                                                <div className="meshtitle-img">
-                                                    {mesh.icon?
-                                                        <img src={mesh.icon} alt={mesh.name} />
-                                                        :<></>}
-                                                    <h3 className="vertical-timeline-element-title">{mesh.name}</h3>
-                                                </div>
+                                                <>
+                                                    <div className={`meshtitle-img-${mesh.timeline_order%2}`}>
+                                                        {mesh.icon?
+                                                            <img src={mesh.icon} alt={mesh.name} />
+                                                            :<></>}
+                                                        <h3 className="vertical-timeline-element-title">{mesh.name}</h3>
+                                                    </div>
+                                                </>
                                                 :<></>}
                                         </VerticalTimelineElement>
                                         :<></>
