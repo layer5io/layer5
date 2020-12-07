@@ -15,8 +15,8 @@ labs: https://github.com/layer5io/istio-service-mesh-workshop
 #slides: https://calcotestudios.com/talks/decks/slides-oreilly-live-online-training-introduction-to-istio-february-2020.html
 slack: http://slack.layer5.io
 #rurl: https://docs.google.com/spreadsheets/d/10IvvNBiRUimFy2IDpLGzGwuiiVl3vFstN7Bx8fJDB0c/edit?usp=sharing
-date:   2020-10-20 12:15:05 +0000
-status: "upcoming"
+date:   2020-10-200 00:00:00 +0000
+status: "delivered"
 ---
 
 <h4>Introduction to Istio - O'Reilly Live Online Training</h4>
