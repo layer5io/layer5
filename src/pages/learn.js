@@ -6,7 +6,6 @@ import SEO from "../components/seo";
 import Navigation from "../sections/Navigation";
 import BookPage from "../sections/Books-grid";
 import WorkshopsPage from "../sections/Workshop-grid";
-import WorkshopBottom from "../components/Workshop-Bottom";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
