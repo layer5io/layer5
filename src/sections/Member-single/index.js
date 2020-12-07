@@ -11,6 +11,8 @@ import smpLogo from "./smp-dark-text.svg";
 import landscapeLogo from "./landscape-green.png";
 import getNighthawkLogo from "../../assets/images/meshmate/meshmate-icon.svg";
 import communityLogo from "./community-green.svg";
+import imageHubLogo from "./layer5-image-hub.svg";
+
 
 const MemberSingle = ({frontmatter}) =>{
     const {name, position,  github, twitter, image_path, meshmate, linkedin, location, badges, bio} = frontmatter;
@@ -50,6 +52,13 @@ const MemberSingle = ({frontmatter}) =>{
                                             <li>
                                                 <Link to="/projects/service-mesh-performance">
                                                     <img className="profile-social-links" src={smpLogo} alt="Service Mesh Peformance logo"/>
+                                                </Link>
+                                            </li>
+                                        }
+                                        {badges.includes("image-hub") &&
+                                            <li>
+                                                <Link to="/projects/image-hub">
+                                                    <img className="profile-social-links" src={imageHubLogo} alt="Image Hublogo"/>
                                                 </Link>
                                             </li>
                                         }
