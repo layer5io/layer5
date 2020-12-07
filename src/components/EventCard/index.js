@@ -46,6 +46,11 @@ const Card = ({ frontmatter }) => {
                         })}
                     </div>
                 ) : <></>}
+                {frontmatter.upcoming && (
+                    <div>
+                        <p>Upcoming</p>
+                    </div>
+                )}
             </div>
         </CardWrapper>
     );

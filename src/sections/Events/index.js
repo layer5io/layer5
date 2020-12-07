@@ -3,6 +3,7 @@ import { MeetupStyle } from "./meetups.style";
 import Card from "../../components/EventCard";
 import { Col, Container, Row } from "../../reusecore/Layout";
 import Pagination from "../../reusecore/Pagination";
+import UpcomingEvents from "../../components/UpcomingEventCard";
 
 const Meetups = ({ data, pageContext }) =>{
     const [active, setActive] = useState("all");
@@ -12,6 +13,7 @@ const Meetups = ({ data, pageContext }) =>{
             <br></br>
             <h1>Events</h1>
             <p>Want to learn more about our projects? Find out which events the layer5 team is speaking at in your area!</p>
+            <UpcomingEvents data={data.allUpcoming} />
             <div>
                 <Container>
                     <div className="filterBtns">
