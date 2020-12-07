@@ -1,11 +1,11 @@
- ---		
- layout: post	
- type: news	
- date:   2020-12-02 06:00:00 +0000 		
- title:  "KubeCon+CloudNativeCon: Service Mesh Battle Stories and Fixes" 
- image: /assets/images/news/2020-12-02-kubecon+cloudnativecon-service-mesh-battle-stories-and-fixes/service-mesh-implementations.png
- eurl: https://thenewstack.io/kubeconcloudnativecon-service-mesh-battle-stories-and-fixes/ 
- --- 
+---		
+layout: post
+type: news
+date: 2020-12-02 06:00:00 +0000
+title: "KubeCon+CloudNativeCon: Service Mesh Battle Stories and Fixes"
+image: /assets/images/news/2020-12-02-kubecon+cloudnativecon-service-mesh-battle-stories-and-fixes/service-mesh-implementations.png
+eurl: https://thenewstack.io/kubeconcloudnativecon-service-mesh-battle-stories-and-fixes/
+---
 
  As more organizations implement service meshes, they are finding what works and what needs more work, and they are creating new management practices around this knowledge. A few tried-and-tested best practices were detailed last month during KubeCon+CloudNativeCon.
 
