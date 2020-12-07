@@ -22,9 +22,8 @@ const WorkshopsGridPage = () => {
                 <GlobalStyle />
                 <SEO title="Learn" />
                 <Navigation />
-                <BookPage hide_path={hide_path} />
-                <WorkshopsPage hide_path={hide_path} />
-                <WorkshopBottom />
+                <BookPage limit={3} hide_path={hide_path} />
+                <WorkshopsPage limit={4} hide_path={hide_path} />
                 <Footer />
             </Layout>
         </ThemeProvider>

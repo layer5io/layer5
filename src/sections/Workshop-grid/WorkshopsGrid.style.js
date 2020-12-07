@@ -125,6 +125,7 @@ export const WorkshopPageWrapper = styled.div`
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
     -webkit-transition: 0.5s ease-in-out all;
     transition: 0.5s ease-in-out all;
+    
 
     &:hover {
       cursor: pointer;
@@ -154,4 +155,7 @@ export const WorkshopPageWrapper = styled.div`
       padding: 5px 5px;
     }
   }
+  .see-more-button{
+     margin: 0 auto;
+   }
 `;
