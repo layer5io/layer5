@@ -13,7 +13,6 @@ import getNighthawkLogo from "../../assets/images/meshmate/meshmate-icon.svg";
 import communityLogo from "./community-green.svg";
 import imageHubLogo from "./layer5-image-hub.svg";
 
-
 const MemberSingle = ({frontmatter}) =>{
     const {name, position,  github, twitter, image_path, meshmate, linkedin, location, badges, bio} = frontmatter;
     return(
