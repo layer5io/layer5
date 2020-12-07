@@ -30,6 +30,9 @@ export const MemberSingleWrapper = styled.div`
         .bio{
             margin-top: 20px;
         }
+        .location {
+            margin-top: 0px;
+        }
         
         .bold{
             font-weight: 600;
@@ -76,7 +79,8 @@ export const MemberSingleWrapper = styled.div`
                 color: ${props => props.theme.menuColor};
                 letter-spacing: .5px;
                 margin-top: 15px;
-                padding: 0;
+                padding-top: 1px;
+                padding-bottom: 3px;
                 border-bottom: 3px solid ${props => props.theme.secondaryColor};
                 width: 50%;
                 text-align: left;
