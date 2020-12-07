@@ -11,14 +11,14 @@ export const CardWrapper = styled.div`
                 }
             }
             .readmore-btn{
-                color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};
+                color: ${props => props.theme.secondaryColor};
                 svg{
                     margin-left: 3px;
                      transform: scale(1.2);
                 }
             }
             .post-title{
-                color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};
+                color: ${props => props.theme.secondaryColor};
             }
         } 
     }
@@ -68,14 +68,14 @@ export const CardWrapper = styled.div`
             -webkit-transition: 450ms all;
              transition: 450ms all;
             &:hover{
-                color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FFEBEC"};;
+                color: ${props => props.theme.secondaryColor};
             }
         }
         .author{
-            float: right;
+            float: ${props => props.fixed ? "none" : "right"};
         }
         .anchor,span{
-            color: ${props => props.theme.textColor ? props.theme.textColor : "#7A848E"};
+            color: ${props => props.theme.textColor};
             font-size: 14px;
             font-weight: 300;
         }

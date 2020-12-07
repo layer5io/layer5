@@ -6,7 +6,6 @@ import SEO from "../components/seo";
 import Navigation from "../sections/Navigation";
 import BookPage from "../sections/Books-grid";
 import WorkshopsPage from "../sections/Workshop-grid";
-import WorkshopBottom from "../components/Workshop-Bottom";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
@@ -22,9 +21,8 @@ const WorkshopsGridPage = () => {
                 <GlobalStyle />
                 <SEO title="Learn" />
                 <Navigation />
-                <BookPage hide_path={hide_path} />
-                <WorkshopsPage hide_path={hide_path} />
-                <WorkshopBottom />
+                <BookPage limit={3} hide_path={hide_path} />
+                <WorkshopsPage limit={4} hide_path={hide_path} />
                 <Footer />
             </Layout>
         </ThemeProvider>
