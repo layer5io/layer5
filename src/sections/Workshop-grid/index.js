@@ -15,9 +15,10 @@ import Slide from "../../assets/images/socialIcons/slide_color.png";
 import Link from "../../assets/images/socialIcons/link_color.png";
 import Youtube from "../../assets/images/socialIcons/youtube_color.png";
 import Lab from "../../assets/images/socialIcons/lab_color.png";
+import Button from "../../reusecore/Button";
 
 
-const WorkshopsPage = ({hide_path}) => {
+const WorkshopsPage = ({hide_path, limit}) => {
 
     const [content, setContent] = useState(false);
     const [open, setOpen] = useState(false);
@@ -85,6 +86,7 @@ const WorkshopsPage = ({hide_path}) => {
     };
 
     let path = hide_path ? "" : "Workshop";
+    let no_of_items = limit ? limit : data.length;
 
     return (
         <WorkshopPageWrapper>
@@ -93,7 +95,7 @@ const WorkshopsPage = ({hide_path}) => {
                 <Container>
                     <div className="workshop-grid-wrapper">
                         <Row>
-                            {data.allMdx.nodes.map(({id, frontmatter, fields, body }) => (
+                            {data.allMdx.nodes.slice(0, no_of_items).map(({id, frontmatter, fields, body }) => (
                                 <Col {...content && ID === id ? {xs:12, sm:12, lg:12} : {xs:12, sm:12, lg:6} } key={id} onClick={() => toggleActive(id)}>
                                     <div className="workshop-grid-card">
                                         <WorkshopCard frontmatter={frontmatter} fields={fields} content={content} ID={ID} id={id} />
@@ -132,14 +134,19 @@ const WorkshopsPage = ({hide_path}) => {
                                             </div>
                                             {frontmatter.status === "delivered" ? "" : <p>Upcoming...</p>}
                                             <div className="expand">
-                                                {content && ID === id ? 
-                                                    <div> Read Less <BsArrowUp className="icon" size={30} /> </div> : 
+                                                {content && ID === id ?
+                                                    <div> Read Less <BsArrowUp className="icon" size={30} /> </div> :
                                                     <div> Read More <BsArrowDown className="icon" size={30} /> </div> }
                                             </div>
                                         </div>
                                     </div>
                                 </Col>
                             ))}
+                            { limit && (
+                                <div className="see-more-button">
+                                    <Button primary title="see more" url="workshops"/>
+                                </div>
+                            )}
                         </Row>
                     </div>
                 </Container>

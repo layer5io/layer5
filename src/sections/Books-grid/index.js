@@ -5,8 +5,9 @@ import Card from "../../components/Card";
 import PageHeader from "../../reusecore/PageHeader";
 
 import { BooksPageWrapper } from "./BooksGrid.style";
+import Button from "../../reusecore/Button";
 
-const BooksGrid = ({hide_path}) => {
+const BooksGrid = ({hide_path, limit}) => {
     const data = useStaticQuery(
         graphql`
             query allBooks {
@@ -38,8 +39,9 @@ const BooksGrid = ({hide_path}) => {
             }
         `
     );
-    
+
     let path = hide_path ? "" : "Books";
+    let no_of_items = limit ? limit : data.length;
 
     return (
         <BooksPageWrapper>
@@ -48,11 +50,16 @@ const BooksGrid = ({hide_path}) => {
                 <Container>
                     <div className="books-grid-wrapper">
                         <Row>
-                            {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+                            {data.allMdx.nodes.slice(0, no_of_items).map(({id, frontmatter, fields }) => (
                                 <Col xs={12} sm={6} lg={4} key={id}>
                                     <Card frontmatter={frontmatter} fields={fields}/>
                                 </Col>
                             ))}
+                            { limit && (
+                                <div className="see-more-button">
+                                    <Button primary title="see more" url="books"/>
+                                </div>
+                            )}
                         </Row>
                     </div>
                 </Container>
