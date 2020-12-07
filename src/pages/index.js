@@ -8,7 +8,7 @@ import Navigation from "../sections/Navigation";
 import Banner from "../sections/Banner-default";
 import Features from "../sections/Features";
 import Faq from "../sections/Faq";
-import Integrations from "../sections/Projects";
+import Integrations from "../sections/Projects-home";
 import AppScreens from "../sections/AppScreens";
 import Counters from "../sections/Counters";
 import Pricing from "../sections/Pricing";
