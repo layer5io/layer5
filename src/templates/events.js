@@ -17,7 +17,8 @@ export const query = graphql`
     query allCategories($skip: Int!, $limit: Int!) {
         allCategories:allMdx(
             sort: { fields: [frontmatter___date], order: DESC }
-            filter: { fields: { collection: { eq: "events" } } }
+            filter: { fields: { collection: { eq: "events" } },
+            frontmatter: { published: {eq: true } } }
             skip: $skip
             limit: $limit
         ){
@@ -77,7 +78,10 @@ export const query = graphql`
                 }
             }
         }
-        allWorkshops: allMdx(filter: {frontmatter: {topic: {eq: "workshop"}}}) {
+        allWorkshops: allMdx(
+            filter: { frontmatter: { topic: { eq: "workshop" }, 
+            published: { eq: true } } }
+            ) {
             nodes {
                 id
                 fields {
@@ -101,7 +105,7 @@ export const query = graphql`
                 }
             }
         }
-        allEvents: allMdx(filter: {frontmatter: {topic: {eq: "event"}}}) {
+        allEvents: allMdx( filter: { frontmatter: { topic: { eq: "event" } } } ) {
             nodes {
                 id
                 fields {
@@ -118,6 +122,30 @@ export const query = graphql`
                         extension
                         childImageSharp {
                             fluid(maxWidth: 1000) {
+                                ...GatsbyImageSharpFluid_withWebp
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        allUpcoming: allMdx(
+            filter: { frontmatter: { upcoming: { eq: true } }, 
+            fields: { collection: { eq: "events" } } }, 
+            sort: { fields: frontmatter___date, order: DESC }
+        ) {
+            nodes {
+                id
+                body
+                frontmatter {
+                    title
+                    topic
+                    upcoming
+                    eurl
+                    date(formatString: "DD MMMM YYYY")
+                    thumbnail {
+                        childImageSharp {
+                            fluid {
                                 ...GatsbyImageSharpFluid_withWebp
                             }
                         }
