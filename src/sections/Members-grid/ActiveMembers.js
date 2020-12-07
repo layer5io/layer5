@@ -20,7 +20,7 @@ const ActiveMembers = props =>{
                             meshmate
                             linkedin
                             location
-                            skills
+                            badges
                             bio
                             image_path{
                                 childImageSharp{

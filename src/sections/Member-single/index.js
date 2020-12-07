@@ -5,9 +5,15 @@ import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import {Col, Container, Row} from "../../reusecore/Layout";
 import Image from "../../components/image";
 import MeshMateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
+import mesheryLogo from "./meshery-logo-light.svg";
+import mesheryOperatorLogo from "./meshery-operator-dark.svg";
+import smpLogo from "./smp-dark-text.svg";
+import landscapeLogo from "./landscape-green.png";
+import getNighthawkLogo from "../../assets/images/meshmate/meshmate-icon.svg";
+import communityLogo from "./community-green.svg";
 
 const MemberSingle = ({frontmatter}) =>{
-    const {name, position,  github, twitter, image_path, meshmate, linkedin, location, skills, bio} = frontmatter;
+    const {name, position,  github, twitter, image_path, meshmate, linkedin, location, badges, bio} = frontmatter;
     return(
         <MemberSingleWrapper>
             <Container>
@@ -26,11 +32,56 @@ const MemberSingle = ({frontmatter}) =>{
                             <div className="body">
                                 {
                                     location &&
-                                    <div className="h4">Location: <span className="bold">{location}</span></div>
+                                    <div className="h4 location">
+                                        <span className="bold">{location}</span></div>
                                 }
                                 {
-                                    skills &&
-                                    <div className="h4">Skills: <span className="bold">{skills}</span></div>
+                                    badges &&
+                                <div className="social-bg">
+                                    <ul className="profile-social-links">
+                                        {badges.includes("meshery") &&
+                                            <li>
+                                                <Link to="/meshery">
+                                                    <img className="profile-social-links" src={mesheryLogo} alt="Meshery logo"/>
+                                                </Link>
+                                            </li> 
+                                        }
+                                        {badges.includes("smp") &&
+                                            <li>
+                                                <Link to="/projects/service-mesh-performance">
+                                                    <img className="profile-social-links" src={smpLogo} alt="Service Mesh Peformance logo"/>
+                                                </Link>
+                                            </li>
+                                        }
+                                        {badges.includes("landscape") &&
+                                            <li>
+                                                <Link to="/landscape">
+                                                    <img className="profile-social-links" src={landscapeLogo} alt="Service Mesh Landscape logo"/>
+                                                </Link>
+                                            </li> 
+                                        }
+                                        {badges.includes("community") &&
+                                            <li>
+                                                <Link to="/community">
+                                                    <img className="profile-social-links" src={communityLogo} alt="Service Mesh Community logo"/>
+                                                </Link>
+                                            </li> 
+                                        }
+                                        {badges.includes("getnighthawk") &&
+                                            <li>
+                                                <Link to="/projects/getnighthawk">
+                                                    <img className="profile-social-links" src={getNighthawkLogo} alt="GetNighthawk logo"/>
+                                                </Link>
+                                            </li> 
+                                        }                                       {badges.includes("meshery-operator") &&
+                                            <li>
+                                                <Link to="/projects/meshery-operator">
+                                                    <img className="profile-social-links" src={mesheryOperatorLogo} alt="Meshery Operator logo"/>
+                                                </Link>
+                                            </li> 
+                                        }
+                                    </ul>
+                                </div>    
                                 }
                                 {
                                     bio &&

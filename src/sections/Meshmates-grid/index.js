@@ -25,7 +25,7 @@ const MeshmatesGrid=() => {
                             status
                             linkedin
                             location
-                            skills
+                            badges
                             bio
                             meshmate
                             image_path{
