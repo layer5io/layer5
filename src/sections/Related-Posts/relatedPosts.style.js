@@ -47,28 +47,66 @@ const RelatedPostsWrapper = styled.div`
                 
             }
         }
-        .carouselStyling{
-            .rec.rec-arrow:hover {
-                background-color: rgba(0,179,159,1);
-            }
-            .rec.rec-arrow:focus:enabled {
-                color: #fff;
-                background-color: rgba(0, 179, 159, 1);
-                box-shadow: 0 0 2px 0 #333;
-              }
-            .rec.rec-arrow:disabled {
-                visibility: hidden;
-            }            
-            .rec.rec-dot{
-                background-color: rgba(225, 247, 245, 1);
-            }
-            .rec.rec-dot_active {
-                background-color: rgba(117, 255, 239, 1);
-                box-shadow: 0 0 1px 3px rgba(0, 179, 159, 1);
-            }
-
+        .slick-arrow{
+            transition: all 0.3s ease;
+            background-color: rgba(103,58,183,0.1);
+            color: #999;
+            box-shadow: 0 0 2px 0px #333;
+            border-radius: 50%;
+            border: none;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            outline: none;
         }
-        
+
+        .slick-arrow:hover {
+            background-color: rgba(0,179,159,1);
+        }
+        .slick-arrow:focus:enabled {
+            color: #fff;
+            background-color: rgba(0, 179, 159, 1);
+            box-shadow: 0 0 2px 0 #333;
+        }
+        .slick-disabled{
+            visibility: hidden;
+        }
+        .slick-arrow:before{
+            color: black;
+            font-size: 43px;
+            margin: auto;
+            color: #000;
+        }
+        .slick-arrow:focus:before{
+            color: white;
+        }
+        .slick-prev:before{
+            content: "❮";
+        }
+        .slick-next:before{
+            content: "❯";
+        }
+        .slick-list{
+            margin: 25px;
+        }
+
+
+        .swiper-button-prev, .swiper-button-next{
+            right: -3px;
+        }
+        .swiper-wrapper{
+            margin-left: 27px;
+            margin-right: 27px;
+        }
+
+        .cardCol{
+            padding-left: 2px;
+            padding-right: 2px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
 `;
+
 
 export default RelatedPostsWrapper;
