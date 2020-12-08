@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from "gatsby";
 import Icon from "../../../assets/images/app/projects/arrow.svg";
-import Image from "../../../components/image";
+import Card from "./Card";
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
     const addAllClasses = [""];
@@ -60,26 +60,8 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                                 </div>
                             </div>
                             <div className="nav-display">
-                                <div className="nav-div">
-                                    <Link href={blogData[active.name].nodes[0].fields.slug}>
-                                        <Image
-                                            {...blogData[active.name].nodes[0].frontmatter.thumbnail}
-                                            imgStyle={{ objectFit: "contain" }}
-                                            alt={blogData[active.name].nodes[0].frontmatter.title} className="nav-img"
-                                        />
-                                    </Link>
-                                    <div> {blogData[active.name].nodes[0].frontmatter.title} </div>
-                                </div>
-                                <div className="nav-div">
-                                    <Link href={blogData[active.name].nodes[1].fields.slug}>
-                                        <Image
-                                            {...blogData[active.name].nodes[1].frontmatter.thumbnail}
-                                            imgStyle={{ objectFit: "contain" }}
-                                            alt={blogData[active.name].nodes[1].frontmatter.title} className="nav-img"
-                                        />
-                                    </Link>
-                                    <div> {blogData[active.name].nodes[1].frontmatter.title} </div>
-                                </div>
+                                <Card frontmatter={blogData[active.name].nodes[0].frontmatter} fields={blogData[active.name].nodes[0].fields}></Card>
+                                <Card frontmatter={blogData[active.name].nodes[1].frontmatter} fields={blogData[active.name].nodes[1].fields}></Card>
                             </div>
                         </div>
                     </ul>
