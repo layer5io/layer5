@@ -28,16 +28,32 @@ const Card = ({ frontmatter }) => {
                             <span>{frontmatter.date}</span>
                                 
                         )}
-                        {frontmatter.date && (
+                        {frontmatter.eurl && (
                             <a className="readmore-btn" rel="noreferrer" target="_blank" href={frontmatter.eurl}>
                                 <BiLinkExternal />
                             </a>
                         )}
                     </div>
                 </div>
+                {frontmatter.topic == "meetups" ? (
+                    <div className="abstract">
+                        {frontmatter.attribute.map((item,index) => {
+                            return(
+                                <span key={index}>
+                                    <a href={item.url} target="_blank" rel="noreferrer">{item.name}</a>
+                                </span>
+                            );
+                        })}
+                    </div>
+                ) : <></>}
+                {frontmatter.upcoming && (
+                    <div>
+                        <p>Upcoming</p>
+                    </div>
+                )}
             </div>
         </CardWrapper>
     );
-};
+};  
 
 export default Card;

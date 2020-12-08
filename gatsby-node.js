@@ -44,6 +44,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       'src/templates/blog.js'
   );
 
+  const EventsTemplate = path.resolve(
+    'src/templates/events.js'
+  );
+
   const NewsPostTemplate = path.resolve(
       'src/templates/news-single.js'
   );
@@ -70,7 +74,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const res = await graphql(`
     {
-     allPosts:  allMdx(
+      allPosts:  allMdx(
         filter: { fields: { collection: { ne: "members" } }, frontmatter: { published: { eq: true } } }
       ) {
         nodes {
@@ -100,7 +104,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             totalCount
           }
         }
+      allCollections: allMdx(
+        filter: {fields: {collection: {eq: "events"}}}
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+        }
       }
+    }
   `);
 
   // handle errors
@@ -136,6 +150,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
 
   const members = res.data.allMembers.nodes;
+  const events = res.data.allCollections.nodes;
 
   paginate({
     createPage,
@@ -143,6 +158,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     itemsPerPage: 8,
     pathPrefix: `/blog`,
     component: blogViewTemplate
+  });
+  
+  paginate({
+    createPage,
+    items: events,
+    itemsPerPage: 9,
+    pathPrefix: `/community/events`,
+    component: EventsTemplate
   });
 
   blogs.forEach(blog => {

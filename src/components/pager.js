@@ -14,21 +14,22 @@ export const PagerWrapper = styled.div`
         display: flex;
         align-items: center;
         svg{
-           margin-left: 0px;
-           font-size: 32px;
-           transition: all 0.3s linear;
-       } 
+            margin-left: 0px;
+            font-size: 32px;
+            transition: all 0.3s linear;
+        } 
         &:hover{
-             color: ${props => props.theme.secondaryColor};
-             svg{
+                color: ${props => props.theme.secondaryColor};
+                svg{
                 margin-left: 3px;
                 transform: scale(1.2);
-           }
+            }
         }
     }
 `;
 
 const Pager = ({ pageContext, isListView }) => {
+    console.log(pageContext);
     const { previousPagePath, nextPagePath } = pageContext;
     return (
         <PagerWrapper>
