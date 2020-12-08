@@ -63,7 +63,8 @@
     "react-vertical-timeline-component": "^3.3.0",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "swiper": "^6.3.5"
   },
   "peerDependencies": {
     "styled-components": "^4.4.1"
