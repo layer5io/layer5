@@ -68,7 +68,7 @@ const RelatedPosts = props => {
             {
                 typeof window !== "undefined" && 
                 <Slider 
-                    dots= { window.innerWidth <= 992 }
+                    dots= { window.innerWidth < 992 }
                     arrows={ window.innerWidth >= 992 }
                     infinite= {false}
                     speed= "500"
@@ -93,6 +93,8 @@ const RelatedPosts = props => {
                     </Col>
                 </Slider>
             }
+
+            <br/><br/>
             
             {   typeof window !== "undefined" && 
                 <Swiper

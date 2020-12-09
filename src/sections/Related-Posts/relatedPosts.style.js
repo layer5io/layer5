@@ -47,50 +47,59 @@ const RelatedPostsWrapper = styled.div`
                 
             }
         }
+        @media screen and (max-width: 992px) {
+            .allBlogsCard a {
+              margin-top: 60%;
+            }
+        }          
         
 
+        .slick-list{	
+            margin: 25px;	
+        }
+        @media screen and (max-width: 992px) {
+            .slick-list{
+                margin: 0px;	
+            }
+        }
         .slick-arrow{	
-            transition: all 0.3s ease;	
-            background-color: rgba(103,58,183,0.1);	
-            color: #999;	
-            box-shadow: 0 0 2px 0px #333;	
-            border-radius: 50%;	
-            border: none;	
+            margin-top: -25px;
+            transition: all 1s ease;	
             width: 50px;	
             height: 50px;	
             line-height: 50px;	
             outline: none;	
         }	
-        .slick-arrow:hover {	
-            background-color: rgba(0,179,159,1);	
-        }	
-        .slick-arrow:focus:enabled {	
-            color: #fff;	
-            background-color: rgba(0, 179, 159, 1);	
-            box-shadow: 0 0 2px 0 #333;	
-        }	
-        .slick-disabled{	
-            visibility: hidden;	
-        }	
         .slick-arrow:before{	
-            color: black;	
-            font-size: 43px;	
+            color: rgba(1, 179, 159, 1);
+            font-size: 90px;
             margin: auto;	
-            color: #000;	
-        }	
-        .slick-arrow:focus:before{	
-            color: white;	
         }	
         .slick-prev:before{	
-            content: "❮";	
+            content: "‹";	
         }	
         .slick-next:before{	
-            content: "❯";	
+            content: "›";	
         }	
-        .slick-list{	
-            margin: 25px;	
+        .slick-arrow:hover:before{	
+            color: rgba(0,179,159,1);	
+        }	
+        .slick-disabled::before{	
+            color: rgba(168, 255, 245 0.5);	
+        }	
+        .slick-disabled:hover:before{
+            
+            color: rgba(168, 255, 245 0.3);	
         }
-
+        .slick-dots li button:before {
+            opacity: 0.5;
+            font-size: 10px;
+            color: rgba(0,179,159,1);
+        }
+        .slick-dots li.slick-active button:before {
+            opacity: 1;
+            color: rgba(0, 153, 136,1);
+        }
 
 
         .swiper-button-prev, .swiper-button-next{
