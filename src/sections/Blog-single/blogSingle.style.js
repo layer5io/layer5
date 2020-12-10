@@ -3,7 +3,7 @@ import styled from "styled-components";
 const BlogPageWrapper = styled.div`
     
 .single-post-wrapper{
-    padding: 50px 0 90px 0;
+    padding: 50px 0 50px 0;
 }
 .single-post-block{
     p{

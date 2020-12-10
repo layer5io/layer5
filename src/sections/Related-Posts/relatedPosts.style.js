@@ -62,16 +62,35 @@ const RelatedPostsWrapper = styled.div`
                 margin: 0px;	
             }
         }
+        .cardCol{
+            padding-left: 2px;
+            padding-right: 2px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        @media screen and (max-width: 992px) {
+            .cardCol{
+                padding: 0;
+                margin: auto;   
+            }
+        }
+            
+        @media screen and (max-width: 992px) {
+            .slick-list{
+                margin: 0px;	
+            }
+        }
+    
+
         .slick-arrow{	
-            margin-top: -25px;
-            transition: all 1s ease;	
+            margin-top: -55px;	
             width: 50px;	
             height: 50px;	
             line-height: 50px;	
             outline: none;	
         }	
         .slick-arrow:before{	
-            color: rgba(1, 179, 159, 1);
+            color: rgba(108, 118, 123, 1);
             font-size: 90px;
             margin: auto;	
         }	
@@ -84,13 +103,9 @@ const RelatedPostsWrapper = styled.div`
         .slick-arrow:hover:before{	
             color: rgba(0,179,159,1);	
         }	
-        .slick-disabled::before{	
-            color: rgba(168, 255, 245 0.5);	
+        .slick-disabled{	
+            visibility: hidden;
         }	
-        .slick-disabled:hover:before{
-            
-            color: rgba(168, 255, 245 0.3);	
-        }
         .slick-dots li button:before {
             opacity: 0.5;
             font-size: 10px;
@@ -102,20 +117,6 @@ const RelatedPostsWrapper = styled.div`
         }
 
 
-        .swiper-button-prev, .swiper-button-next{
-            right: -3px;
-        }
-        .swiper-wrapper{
-            margin-left: 27px;
-            margin-right: 27px;
-        }
-
-        .cardCol{
-            padding-left: 2px;
-            padding-right: 2px;
-            margin-left: 15px;
-            margin-right: 15px;
-        }
 
 `;
 
