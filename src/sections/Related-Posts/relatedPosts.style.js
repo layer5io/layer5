@@ -54,14 +54,6 @@ const RelatedPostsWrapper = styled.div`
         }          
         
 
-        .slick-list{	
-            margin: 25px;	
-        }
-        @media screen and (max-width: 992px) {
-            .slick-list{
-                margin: 0px;	
-            }
-        }
         .cardCol{
             padding-left: 2px;
             padding-right: 2px;
@@ -74,13 +66,15 @@ const RelatedPostsWrapper = styled.div`
                 margin: auto;   
             }
         }
-            
+
+        .slick-list{	
+            margin: 25px;	
+        }
         @media screen and (max-width: 992px) {
             .slick-list{
                 margin: 0px;	
             }
         }
-    
 
         .slick-arrow{	
             margin-top: -55px;	
@@ -94,15 +88,17 @@ const RelatedPostsWrapper = styled.div`
             font-size: 90px;
             margin: auto;	
         }	
+        .slick-arrow:hover:before{	
+            color: rgba(0,179,159,1);	
+        }	
+        
         .slick-prev:before{	
             content: "‹";	
         }	
         .slick-next:before{	
             content: "›";	
         }	
-        .slick-arrow:hover:before{	
-            color: rgba(0,179,159,1);	
-        }	
+        
         .slick-disabled{	
             visibility: hidden;
         }	
