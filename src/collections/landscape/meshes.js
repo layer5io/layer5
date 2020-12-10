@@ -147,7 +147,7 @@ export const meshes=[
         name: "Kuma",
         desc: "Kuma is a universal open source control-plane that can run and be operated natively across both Kubernetes and VM environments.",
         link: "https://kuma.io",
-        autoinject: "No",
+        autoinject: "Yes",
         tcp_web: "Yes",
         grpc: "Yes",
         h2: "Yes",
