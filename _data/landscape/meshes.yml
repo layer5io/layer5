@@ -153,7 +153,7 @@
 - name: Kuma
   desc: "Kuma is a universal open source control-plane that can run and be operated natively across both Kubernetes and VM environments."
   link: https://kuma.io
-  autoinject: "No"
+  autoinject: "Yes"
   tcp-web: "Yes"
   grpc: "Yes"
   h2: "Yes"
@@ -191,7 +191,7 @@
   h2: "Yes"
   grpc: "Yes"
   tcp-web: "Yes"
-  multi-cluster: "Experimental"
+  multi-cluster: "Yes"
   multi-tenant: "Yes"
   prometheus: "Yes"
   tracing: "Pluggable"
