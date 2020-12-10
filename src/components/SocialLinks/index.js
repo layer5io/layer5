@@ -6,7 +6,6 @@ import twitter_icon from "../../assets/images/app/footer/social/twitter_black.sv
 import github_icon from "../../assets/images/app/footer/social/github_black.svg";
 import youtube_icon from "../../assets/images/app/footer/social/youtube_black.svg";
 import docker_icon from "../../assets/images/app/footer/social/docker_black.svg";
-import { Link } from "gatsby";
 import SocialSectionWrapper from "./SocialLinks.style";
 
 const SocialLinks = () => {
@@ -14,27 +13,54 @@ const SocialLinks = () => {
         <SocialSectionWrapper>
             <Col className="social-widgets" xs={12}>
                 <Row className="contactf">
-                    <Link className="social-icons mail" href="mailto:community@layer5.io">
+                    <a 
+                        className="social-icons mail" 
+                        href="mailto:community@layer5.io" 
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img height="40 px" src={mail_icon} alt="mail" />
-                    </Link>
-                    <Link className="social-icons" to="http://slack.layer5.io/">
+                    </a>
+                    <a 
+                        className="social-icons" 
+                        href="http://slack.layer5.io/" 
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img className="slack" height="40 px" src={slack_icon} alt="slack" />
-                    </Link>
-                    <Link className="social-icons" to="https://twitter.com/layer5">
+                    </a>
+                    <a 
+                        className="social-icons" 
+                        href="https://twitter.com/layer5" 
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img className="twitter" height="40 px" src={twitter_icon} alt="twitter" />
-                    </Link>
-                    <Link className="social-icons" to="https://github.com/layer5io">
+                    </a>
+                    <a 
+                        className="social-icons" 
+                        href="https://github.com/layer5io" 
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img className="github" height="40 px" src={github_icon} alt="github" />
-                    </Link>
-                    <Link
+                    </a>
+                    <a
                         className="social-icons"
-                        to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"
+                        href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         <img className="youtube" height="40 px" src={youtube_icon} alt="youtube" />
-                    </Link>
-                    <Link className="social-icons" to="https://hub.docker.com/u/layer5/">
+                    </a>
+                    <a 
+                        className="social-icons" 
+                        href="https://hub.docker.com/u/layer5/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img className="docker" height="40 px" src={docker_icon} alt="docker" />
-                    </Link>
+                    </a>
                 </Row>
             </Col>
         </SocialSectionWrapper>
