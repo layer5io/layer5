@@ -3,7 +3,7 @@ import styled from "styled-components";
 const BlogPageWrapper = styled.div`
     
 .single-post-wrapper{
-    padding: 50px 0 90px 0;
+    padding: 50px 0 50px 0;
 }
 .single-post-block{
     p{
@@ -59,7 +59,7 @@ const BlogPageWrapper = styled.div`
 
 @media only screen and (max-width: 912px) {
      .single-post-block{
-         padding-bottom: 120px;
+         padding-bottom: 20px;
      }
 }
 @media only screen and (max-width: 480px) {

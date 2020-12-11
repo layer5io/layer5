@@ -47,28 +47,74 @@ const RelatedPostsWrapper = styled.div`
                 
             }
         }
-        .carouselStyling{
-            .rec.rec-arrow:hover {
-                background-color: rgba(0,179,159,1);
+        @media screen and (max-width: 992px) {
+            .allBlogsCard a {
+              margin-top: 60%;
             }
-            .rec.rec-arrow:focus:enabled {
-                color: #fff;
-                background-color: rgba(0, 179, 159, 1);
-                box-shadow: 0 0 2px 0 #333;
-              }
-            .rec.rec-arrow:disabled {
-                visibility: hidden;
-            }            
-            .rec.rec-dot{
-                background-color: rgba(225, 247, 245, 1);
-            }
-            .rec.rec-dot_active {
-                background-color: rgba(117, 255, 239, 1);
-                box-shadow: 0 0 1px 3px rgba(0, 179, 159, 1);
-            }
-
-        }
+        }          
         
+
+        .cardCol{
+            padding-left: 2px;
+            padding-right: 2px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        @media screen and (max-width: 992px) {
+            .cardCol{
+                padding: 0;
+                margin: auto;   
+            }
+        }
+
+        .slick-list{	
+            margin: 25px;	
+        }
+        @media screen and (max-width: 992px) {
+            .slick-list{
+                margin: 0px;	
+            }
+        }
+
+        .slick-arrow{	
+            margin-top: -55px;	
+            width: 50px;	
+            height: 50px;	
+            line-height: 50px;	
+            outline: none;	
+        }	
+        .slick-arrow:before{	
+            color: rgba(108, 118, 123, 1);
+            font-size: 90px;
+            margin: auto;	
+        }	
+        .slick-arrow:hover:before{	
+            color: rgba(0,179,159,1);	
+        }	
+        
+        .slick-prev:before{	
+            content: "‹";	
+        }	
+        .slick-next:before{	
+            content: "›";	
+        }	
+        
+        .slick-disabled{	
+            visibility: hidden;
+        }	
+        .slick-dots li button:before {
+            opacity: 0.5;
+            font-size: 10px;
+            color: rgba(0,179,159,1);
+        }
+        .slick-dots li.slick-active button:before {
+            opacity: 1;
+            color: rgba(0, 153, 136,1);
+        }
+
+
+
 `;
+
 
 export default RelatedPostsWrapper;
