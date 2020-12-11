@@ -8,7 +8,7 @@ const InactiveMembers = props =>{
             query InactiveMembers {
                 allMdx(
                     sort: { fields: [frontmatter___name], order: ASC }
-                    filter: { fields: { collection: { eq: "members" } }, frontmatter: { status: { eq: "Inactive" } } }
+                    filter: { fields: { collection: { eq: "members" } }, frontmatter: { published: { eq: true }, status: { eq: "Inactive" } } }
                 ) {
                     nodes {
                         id
