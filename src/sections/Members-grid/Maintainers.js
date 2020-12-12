@@ -8,7 +8,7 @@ const Maintainer = props =>{
             query Maintainer {
                 allMdx(
                     sort: { fields: [frontmatter___name], order: ASC }
-                    filter: { fields: { collection: { eq: "members" } }, frontmatter: { maintainer: { eq: "yes" } } }
+                    filter: { fields: { collection: { eq: "members" } }, frontmatter: { published: { eq: true }, maintainer: { eq: "yes" } } }
                 ) {
                     nodes {
                         id
