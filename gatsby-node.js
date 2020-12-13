@@ -77,20 +77,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const res = await graphql(`
     {
       allPosts:  allMdx(
-        filter: { fields: { collection: { ne: "members" } }, frontmatter: { published: { eq: true } } }
+        filter: { frontmatter: { published: { eq: true } } }
       ) {
         nodes {
           fields {
             collection
-            slug
-          }
-        }
-      }
-      allMembers:  allMdx(
-        filter: { fields: { collection: { eq: "members" } } }
-      ) {
-        nodes {
-          fields {
             slug
           }
         }
@@ -151,7 +142,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       node => node.fields.collection === `careers`
   );
 
-  const members = res.data.allMembers.nodes;
+  const members = allNodes.filter(
+      node => node.fields.collection === `members`
+  );
+
   const events = res.data.allCollections.nodes;
 
   paginate({
@@ -161,7 +155,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     pathPrefix: `/blog`,
     component: blogViewTemplate
   });
-  
+
   paginate({
     createPage,
     items: events,
@@ -265,14 +259,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: collection
     });
     let slug = "";
-    if(collection === `members`) {
-      slug = `/community/members/${slugify(node.frontmatter.name)}`
-    }
-    else if(collection === `programs`) {
-      slug = `/${collection}/${node.frontmatter.link}`
+    if(node.frontmatter.permalink) {
+      slug = `/${collection}/${node.frontmatter.permalink}`;
     }
     else{
-      slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+      switch(collection){
+        case `blog`:
+          slug = `/${collection}/${node.frontmatter.category}/${slugify(node.frontmatter.title)}`;
+          break;
+        case `members`:
+          slug = `/community/members/${slugify(node.frontmatter.name)}`;
+          break;
+        default:
+          slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+      }
     }
     createNodeField({
       name: `slug`,
