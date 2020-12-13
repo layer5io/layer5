@@ -28,6 +28,316 @@ A service mesh is a layer in your infrastructure that facilitates communication 
 
 Identifying who this book is for has been one of the hardest challenges in writing it. The power of a service mesh is vast, and therefore, empowers individuals of many different roles. In short, this book is for anyone delivering workloads enabled by a service mesh and who wants to ensure their use of a service mesh provides the most possible value to the workloads and teams that rely on it. 
 
+<br />
+<br/>
+<table border="1">
+<tr>
+<th> Authors: <a href="https://twitter.com/lcalcote" classname="author"> Lee Calcote,</a> <a href="https://twitter.com/sheriffjackson" classname="author">Nic Jackson</a></th>
+<th><a href="https://layer5.io/"><img src="" alt=""/></a></th>
+</tr>
+
+<tr className="area">
+<td><b>Area I: It's a Mesh Out There</b></td>
+<td><b>Category</b></td>
+</tr>
+
+<tr>
+<td>A world of multiple service meshes</td>
+<td>Foundational</td>
+</tr>
+
+<tr>
+<td>Pattern: How a service mesh empowers an Operator: Retry Budgets</td>
+<td>Foundational</td>
+</tr>
+
+<tr>
+<td>Pattern: How a service mesh empowers a Developer
+</td>
+<td>Foundational</td>
+</tr>
+
+<tr>
+<td>Pattern: Employing planes of a service mesh</td>
+<td>Foundational</td>
+</tr>
+
+<tr className="area">
+<td><b>Area II: Patterns of Initialization and Deployment</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Pattern: How to get started with any service mesh; Local Deployment</td>
+<td>Deployment</td>
+</tr>
+
+<tr>
+<td>Pattern: Sidecar Proxies</td>
+<td>Deployment</td>
+</tr>
+
+<tr>
+<td>Pattern: Node Agents</td>
+<td>Deployment</td>
+</tr>
+
+<tr>
+<td>Pattern: Proxyless Service Mesh</td>
+<td>Deployment</td>
+</tr>
+
+<tr>
+<td>Pattern: Passive and Active Health Checking</td>
+<td>Deployment</td>
+</tr>
+
+<tr>
+<td>Pattern: Workload Onboarding and Service Mesh Adoption </td>
+<td>workloads</td>
+</tr>
+
+<tr>
+<td>Pattern: Expanding the Mesh to Brownfield Environments</td>
+<td>workloads</td>
+</tr>
+
+<tr>
+<td>Pattern: Segmenting the Monolith (Strangler)</td>
+<td>workloads</td>
+</tr>
+
+<tr className="area">
+<td><b>Area III: Patterns of Configuration</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Pattern: Data plane extensibility</td>
+<td>Observability</td>
+</tr>
+
+<tr>
+<td>Pattern: Transparently Proxying TLS</td>
+<td>Traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Foundational Traffic Routing</td>
+<td>traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Local and Global Rate Limiting</td>
+<td>Traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Timeouts</td>
+<td>Trafic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Retries</td>
+<td>Traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Circuit Breaking</td>
+<td>Traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Bulkheading with Resiliency</td>
+<td>Resiliency</td>
+</tr>
+
+<tr>
+<td>Pattern: Canary Deployments</td>
+<td>Traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Ingress</td>
+<td>Traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Advanced Traffic Routing</td>
+<td>traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Protocol Aware Meshing</td>
+<td>Traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Load balancing Algs</td>
+<td>Traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Incorporating Business Logic in your data plane (WASM)</td>
+<td>Traffic Manangement</td>
+</tr>
+
+<tr>
+<td>Pattern: Chaos Engineering with a Service Mesh</td>
+<td>Resiliency</td>
+</tr>
+
+<tr>
+<td>Pattern: Service Meshing at the Edge</td>
+<td>Traffic Manangement</td>
+</tr>
+
+<tr className="area">
+<td><b>Area IV: Patterns of Operation</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Pattern: Visualizing services</td>
+<td>Observability</td>
+</tr>
+
+<tr>
+<td>Pattern: Using Envoy metrics</td>
+<td>Observability</td>
+</tr>
+
+<tr>
+<td>Pattern: Using Request Logs</td>
+<td>Observability</td>
+</tr>
+
+<tr>
+<td>Pattern: Using Traces</td>
+<td>Observability</td>
+</tr>
+
+<tr>
+<td>Pattern: Managing configuration change</td>
+<td>Troubleshooting</td>
+</tr>
+
+<tr>
+<td>Pattern: Advanced Data Plane Extensbility and Intelligence</td>
+<td>Troubleshooting</td>
+</tr>
+
+<tr>
+<td>Pattern: Cloud bursting</td>
+<td>Scaling</td>
+</tr>
+
+<tr>
+<td>Pattern: Multi-cluster failover</td>
+<td>Scaling</td>
+</tr>
+
+<tr>
+<td>Pattern: Federation</td>
+<td>Scaling</td>
+</tr>
+
+<tr>
+<td>Pattern: Egress Gateways</td>
+<td>Security</td>
+</tr>
+
+<tr>
+<td>Pattern: Zero Trust: Securing in-cluster communication (mTLS) - Encryption</td>
+<td>Security</td>
+</tr>
+
+<tr>
+<td>Pattern: Applying Connection-level Authorization</td>
+<td>Security</td>
+</tr>
+
+<tr>
+<td>Pattern: Applying Request-level Authorization</td>
+<td>Security</td>
+</tr>
+
+<tr className="area">
+<td><b>Area IV: Performance, Testing, and Debugging, Tuning, Troubleshooting</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Pattern: Debugging the Control Plane</td>
+<td>Troubleshooting</td>
+</tr>
+
+<tr>
+<td>Pattern: Debugging the Data Plane</td>
+<td>Troubleshooting</td>
+</tr>
+
+<tr>
+<td>Pattern: Methodologies of Performance Tuning and Testing</td>
+<td>Tuning / Performance</td>
+</tr>
+
+<tr>
+<td>Pattern: Managing the Performance of the Service Mesh</td>
+<td>Tuning / Performance</td>
+</tr>
+
+<tr>
+<td>Pattern: Managing the Performance of the Workloads</td>
+<td>Tuning / Performance</td>
+</tr>
+
+<tr>
+<td>Pattern: Using the Service Mesh for Functional Testing</td>
+<td>Validating</td>
+</tr>
+
+<tr>
+<td>Pattern: How to use the Service Mesh as a Debugger</td>
+<td>Debugging</td>
+</tr>
+
+<tr>
+<td>Pattern: TAPing into your requests</td>
+<td>Debugging</td>
+</tr>
+
+<tr className="area">
+<td><b>Area V: Patterns in Practice: Employing Standards</b></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Pattern: The need for abstracting the service mesh</td>
+<td>Service Mesh Interface (SMI)</td>
+</tr>
+
+<tr>
+<td>Pattern: Baselining your workload performance</td>
+<td>Service Mesh Performance (SMP)</td>
+</tr>
+
+<tr>
+<td>Pattern: Gauging the value of your service mesh deployment</td>
+<td>Service Mesh Performance (SMP)</td>
+</tr>
+
+<tr>
+<td>Pattern: Federating Service Catalogs</td>
+<td>Multi-Vendor Service Mesh Interoperation (Hamlet)</td>
+</tr>
+
+<tr>
+<td>Pattern: Common interface for integrating with service mesh functionality</td>
+<td>Service Mesh Interface (SMI)</td>
+</tr>
+</table>
+
 <p><i>Subscribe below for updates on this book.</i></p>
 
 {% include newsletter-signup-form.html title = "no" %}
