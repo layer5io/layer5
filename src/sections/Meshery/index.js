@@ -8,6 +8,7 @@ import Button from "../../reusecore/Button";
 import Features from "../Features";
 import { IoMdCheckmark } from "react-icons/io";
 import Faq from "../Faq";
+import FeaturesTable from "../Pricing";
 
 import meshery from "./meshery-logo-light-text-side.png";
 import meshery_multi_mesh from "./meshery_multi_mesh.png";
@@ -50,6 +51,7 @@ const MesheryPage = () => {
                             </Col>
                         </Row>
                     </div>
+                    <FeaturesTable />
                     <div className="description">
                         <div className="heading">
                             <p> The only service mesh management plane to allow</p>

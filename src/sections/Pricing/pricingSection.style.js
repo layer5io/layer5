@@ -39,11 +39,11 @@ const PricingSectionWrapper = styled.section`
     }
     .pricing-block{
         padding: 40px 30px 45px 30px;
-        border: 1px solid ${props => props.theme.primaryLightColor};
-        box-shadow: 0 0 40px ${props => props.theme.shadowColor};
-        border-radius: 5px;
+        border-radius: 20px;
+        box-shadow: 15px 15px 40px ${props => props.theme.shadowColor};
         position: relative;
         text-align: center;
+        height: 725px;
         transition: all 0.3s ease-in;
         &:hover{
             border-color: ${props => props.theme.primaryColor};
@@ -55,15 +55,18 @@ const PricingSectionWrapper = styled.section`
             }
         }
         .count-block{
-            margin-top: 50px;
+            position: absolute;
+            margin-left: 80px;
+            bottom: 20px;
             .count{
                 font-size: 50px;
-                font-weight: 500;
+                font-weight: 700;
                 margin-bottom: 10px;
-                color: black;
+                color: ${props => props.theme.black};
             }
             .count-desc{
                 font-size: 15px;
+                color: ${props => props.theme.primaryColor};
             }
         }
 
@@ -75,11 +78,12 @@ const PricingSectionWrapper = styled.section`
     }
     .price-block{
         text-align: center;
-        padding: 0 0 23px 0;
+        margin: 0 0 5px 0;
         h3{
             font-size: 36px;
             font-weight: 600;
             margin: 0 0 10px 0; 
+            color: ${props => props.theme.black};
         }
         p{
             font-size: 18px;
@@ -89,23 +93,28 @@ const PricingSectionWrapper = styled.section`
     .price-block ~ p{
         margin-top: 0;
         margin-bottom: 22px;
+        color: ${props => props.theme.primaryColor};
         text-align: center;
     }
     .details-block{
         text-align: left;
         .table{
-            color: ${props => props.theme.headingColor};
-            display: flex;
-            align-items: center;
-            h5 {
+            color: ${props => props.theme.black};  
+            h4 {
+                color: ${props => props.theme.black};
                 font-weight: 400;
+                margin-bottom: 30px;
             }
-            h5 + h5 {
-                margin-top: 50px;
+            h4 + h4 {
+            }
+            td{
+                
+                vertical-align: top;
             }
             svg{
-                fill: ${props => props.theme.textColor};
-                margin-right: 20px;
+                fill: #FFF7D8; 
+                // ${props => props.theme.textColor};
+                margin-right: 15px;
             }
         }
         .off{
