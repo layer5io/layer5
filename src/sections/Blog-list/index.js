@@ -18,11 +18,12 @@ const BlogList = ({
     setGridView,
     pageContext,
 }) => {
+    const category = pageContext.category ? pageContext.category : null;
     const tag = pageContext.tag ? pageContext.tag : null;
     const { totalCount, nodes } = data.allMdx;
     const header = tag
         ? `${totalCount} blog${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
-        : "Blogs";
+        : category ? `${totalCount} blog${totalCount === 1 ? "" : "s"} tagged with "${category}"`: "Blogs";
 
     return (
         <BlogPageWrapper>
@@ -31,7 +32,7 @@ const BlogList = ({
                 <Container>
                     <Row>
                         <Col sm={12} md={8}>
-                            {!pageContext.tag && (
+                            {!pageContext.tag && !pageContext.category && (
                                 <BlogViewToolTip
                                     isListView={isListView}
                                     setListView={setListView}

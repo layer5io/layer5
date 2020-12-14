@@ -39,8 +39,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogPostTemplate = path.resolve(
       'src/templates/blog-single.js'
   );
-  const blogListTemplate = path.resolve(
-      'src/templates/blog-list.js'
+  const blogCategoryListTemplate = path.resolve(
+      'src/templates/blog-category-list.js'
+  );
+  const blogTagListTemplate = path.resolve(
+      'src/templates/blog-tag-list.js'
   );
   const blogViewTemplate = path.resolve(
       'src/templates/blog.js'
@@ -94,9 +97,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               id
             }
             fieldValue
-            totalCount
           }
-        }
+      }
+      blogCategory: allMdx(
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+        ){
+          group(field: frontmatter___category) {
+            nodes{
+              id
+            }
+            fieldValue
+          }
+      }
       allCollections: allMdx(
         filter: {fields: {collection: {eq: "events"}}}
       ){
@@ -173,19 +185,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   });
-  const BlogTags = res.data.blogTags.group;
-  BlogTags.forEach(tag => {
+  const blogCategory = res.data.blogCategory.group;
+    blogCategory.forEach(category => {
     paginate({
       createPage,
-      items: tag.nodes,
+      items: category.nodes,
       itemsPerPage: 4,
-      pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
-      component: blogListTemplate,
+      pathPrefix: `/blog/category/${slugify(category.fieldValue)}`,
+      component: blogCategoryListTemplate,
       context: {
-        tag: tag.fieldValue,
+          category: category.fieldValue,
       },
     });
   });
+
+    const BlogTags = res.data.blogTags.group;
+    BlogTags.forEach(tag => {
+        paginate({
+            createPage,
+            items: tag.nodes,
+            itemsPerPage: 4,
+            pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
+            component: blogTagListTemplate,
+            context: {
+                tag: tag.fieldValue,
+            },
+        });
+    });
 
   news.forEach(singleNews => {
     createPage({
