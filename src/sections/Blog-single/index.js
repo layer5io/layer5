@@ -44,7 +44,11 @@ const BlogSingle = ({data}) => {
                             </Row>
                         </Col>
                     </Row>
-                    <RelatedPosts tags={frontmatter.tags} currentPostSlug={fields.slug}/>
+                    <RelatedPosts
+                        category={frontmatter.category}
+                        tags={frontmatter.tags}
+                        currentPostSlug={fields.slug}
+                    />
                 </Container>
             </div>
         </BlogPageWrapper>
