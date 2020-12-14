@@ -23,7 +23,7 @@ const BlogList = ({
     const { totalCount, nodes } = data.allMdx;
     const header = tag
         ? `${totalCount} blog${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
-        : category ? `${totalCount} blog${totalCount === 1 ? "" : "s"} tagged with "${category}"`: "Blogs";
+        : category ? `${totalCount} blog${totalCount === 1 ? "" : "s"} categorised with "${category}"`: "Blogs";
 
     return (
         <BlogPageWrapper>
