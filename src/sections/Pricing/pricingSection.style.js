@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const PricingSectionWrapper = styled.section`
     padding: 10px 0 50px 0;
+    margin-top: 50px;
     overflow: hidden;
     position: relative;
     .section__particle{

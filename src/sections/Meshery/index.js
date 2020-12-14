@@ -10,7 +10,7 @@ import { IoMdCheckmark } from "react-icons/io";
 import Faq from "../Faq";
 import FeaturesTable from "../Pricing";
 
-import meshery from "./meshery-logo-light-text-side.png";
+import meshery from "./meshery-logo-tag-light-white-text-side.png";
 import meshery_multi_mesh from "./meshery_multi_mesh.png";
 import meshes from "./meshes.png";
 import meshery_benchmark_screen from "./meshery_benchmark_screen.png";
@@ -37,17 +37,17 @@ const MesheryPage = () => {
                     <div className="info">
                         <div className="meshery-img"><img src={meshery} alt="meshery" /></div>
                         <Row className="description">
-                            <Col className="desc-text" lg={7} md={12} sm={12}>
-                                <Button className="number" title={<h3>1,113</h3>} />
+                            <Col className="desc-text" lg={6} md={12} sm={12}>
+                                <h2 className="heading-1"> The <span className="heading-2"> Service Mesh </span> </h2>
+                                <h2 className="heading-1"> Management Plane</h2>
                                 <p className="desc-p"> 
-                                            Meshery is the service mesh management plane.<br />
-                                            Adopt and operate any service mesh with confidence using Meshery's management features. 
+                                    Adopt and operate any service mesh with confidence using Meshery's management features. 
                                 </p>
-                                <Button title="Learn More" /> &nbsp;
-                                <Button title="Run Meshery" /> 
+                                <Button secondary title="Learn More" /> &nbsp;
+                                <Button secondary title="Run Meshery" /> 
                             </Col>
-                            <Col lg={5} md={12} sm={12}>
-                                <div className="meshery-img"><img src={meshery_multi_mesh} alt="meshery_multi_mesh" /></div>
+                            <Col lg={6} md={12} sm={12}>
+                                <div><img className="meshery-sup-img" src={meshery_multi_mesh} alt="meshery_multi_mesh" /></div>
                             </Col>
                         </Row>
                     </div>

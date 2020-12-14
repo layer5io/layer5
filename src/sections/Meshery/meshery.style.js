@@ -3,6 +3,9 @@ import styled from "styled-components";
 const MesheryWrapper = styled.section`
     padding: 25px 0 100px 0;
 
+    .info {
+        background: ${props => props.theme.primaryColor};
+    }
     h1 {
         font-size: 50px;
         line-height: 60px;
@@ -11,18 +14,26 @@ const MesheryWrapper = styled.section`
         font-size: 40px;
         line-height: 50px;
     }
-    h4 {
-
+    .heading-1 {
+        font-weight: 400;
+        line-height: 40px;
+        color: ${props => props.theme.white};
+    }
+    .heading-2 {
+        font-weight: 700;
+        color: ${props => props.theme.secondaryColor};
     }
 
     .description {
-        margin-top: -40px; 
+        margin-top: 40px; 
         padding: 0 50px 100px 80px;
         .desc-text {
             padding: 25px;
         }
         .desc-p {
-            margin-bottom: 50px;
+            font-size: 22px;           
+            color: #a0aaaa;
+            margin: 30px 0 50px 0;
         }
     }
 
@@ -104,7 +115,12 @@ const MesheryWrapper = styled.section`
     .meshery-img{
         max-width: 90%;
         max-width: 400px;
-        margin: auto; 
+        padding-top: 60px;
+        margin: 75px auto 50px auto; 
+    }
+
+    .meshery-sup-img{
+        max-height: 350px
     }
 
     .number {
