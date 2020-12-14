@@ -22,6 +22,7 @@ export const query = graphql`
                 subtitle
                 date(formatString: "MMMM Do, YYYY")
                 author
+                category
                 tags
                 thumbnail{
                     childImageSharp{

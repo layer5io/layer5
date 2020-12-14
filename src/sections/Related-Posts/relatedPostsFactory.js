@@ -36,10 +36,10 @@ class RelatedPostsFactory {
             return [];
         }
 
-        // if (!!category === false) {
-        //     console.error('RelatedPostsFactory: Category not provided, use setCategory().');
-        //     return [];
-        // }
+        if (!!category === false) {
+            console.error("RelatedPostsFactory: Category not provided, use setCategory().");
+            return [];
+        }
 
         const getSlug = post => post.fields.slug;
 
@@ -53,14 +53,14 @@ class RelatedPostsFactory {
             }
         };
 
-        // const addCategoryPoints = (post, category) => {
-        //     const categoryPoints = 2;
-        //     const slug = getSlug(post);
-        //
-        //     if(post.frontmatter.category ===category){
-        //         identityMap[slug].points += categoryPoints;
-        //     }
-        // };
+        const addCategoryPoints = (post, category) => {
+            const categoryPoints = 2;
+            const slug = getSlug(post);
+
+            if(post.frontmatter.category ===category){
+                identityMap[slug].points += categoryPoints;
+            }
+        };
 
         const addTagsPoints = (post, tags) => {
             const tagPoint = 1;
@@ -79,7 +79,7 @@ class RelatedPostsFactory {
 
         for (let post of posts) {
             addToMap(post);
-            // addCategoryPoints(post, category);
+            addCategoryPoints(post, category);
             addTagsPoints(post, tags);
         }
 

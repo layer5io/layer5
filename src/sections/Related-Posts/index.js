@@ -19,7 +19,7 @@ const RelatedPosts = props => {
                 allMdx(
                     sort: { fields: [frontmatter___date], order: DESC}
                     filter: { 
-                        fields: { collection: { eq: "blog" } }, , frontmatter: { published: { eq: true } }
+                        fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } }
                     }
                 ) {
                     nodes {
@@ -27,6 +27,7 @@ const RelatedPosts = props => {
                             title
                             date(formatString: "MMM Do YYYY")
                             author
+                            category
                             tags
                             thumbnail{
                                 childImageSharp{
@@ -46,12 +47,12 @@ const RelatedPosts = props => {
             }
         `
     );
-    const { tags, currentPostSlug } = props;
+    const { category, tags, currentPostSlug } = props;
     const posts = data.allMdx.nodes;
     const relatedPosts = new RelatedPostsFactory (
         posts, currentPostSlug
     ).setMaxPosts(6)
-        // .setCategory(category)
+        .setCategory(category)
         .setTags(tags)
         .getPosts();
 
@@ -61,8 +62,8 @@ const RelatedPosts = props => {
                 <h3>Related Blogs</h3>
             </div>
             {
-                typeof window !== "undefined" && 
-                <Slider 
+                typeof window !== "undefined" &&
+                <Slider
                     dots= { window.innerWidth < 992 }
                     arrows={ window.innerWidth >= 992 }
                     infinite= {false}

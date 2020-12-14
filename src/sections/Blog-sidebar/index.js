@@ -12,20 +12,29 @@ import BlogSideBarWrapper from "./blogSidebar.style";
 const Sidebar = ( ) => {
     const data = useStaticQuery(
         graphql`
-            query allTagsAndLatestPosts {
-                allMdx(
+            query allTagsAndCategories {
+                tags: allMdx(
                     filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
                 ){
                     group(field: frontmatter___tags) {
                         fieldValue
                         totalCount
                     }
-                } 
+                }
+                categories: allMdx(
+                    filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+                ){
+                    group(field: frontmatter___category) {
+                        fieldValue
+                        totalCount
+                    }
+                }
             }
         `
     );
 
-    const tags = data.allMdx.group;
+    const tags = data.tags.group;
+    const categories = data.categories.group;
 
     return (
         <BlogSideBarWrapper>
@@ -43,42 +52,14 @@ const Sidebar = ( ) => {
                     <h3>Categories</h3>
                 </div>
                 <ul>
-                    <li>
-                        <Link to="#">
-                            <span>Development</span>
-                            <em>(20)</em>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="#">
-                            <span>Technology</span>
-                            <em>(12)</em>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="#">
-                            <span>Testing</span>
-                            <em>(7)</em>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="#">
-                            <span>Tech</span>
-                            <em>(11)</em>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="#">
-                            <span>Block</span>
-                            <em>(14)</em>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="#">
-                            <span>App</span>
-                            <em>(18)</em>
-                        </Link>
-                    </li>
+                    { categories && categories.map(category => (
+                        <li key={category.fieldValue}>
+                            <Link to={`/blog/category/${slugify(category.fieldValue)}`}>
+                                <span>{category.fieldValue}</span>
+                                <em>({category.totalCount})</em>
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </div>
 
