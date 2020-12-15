@@ -291,7 +291,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     else{
       switch(collection){
         case `blog`:
-          slug = `/${collection}/${node.frontmatter.category}/${slugify(node.frontmatter.title)}`;
+          slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
           break;
         case `members`:
           slug = `/community/members/${slugify(node.frontmatter.name)}`;
