@@ -5,20 +5,19 @@ overflow-x: auto;
 
 table {
     border-spacing: 0;
-    border: 1px solid black;
+    border: 1px solid #3c494f;
     width: 100%;
   
     td {
         padding: 5px;
         height: 60px;
-        color: rgb(60,73,79);
+        color: black;
         text-align: center;
         font-size: 14px;
-        font-weight: 600;
-        border-bottom: 1px solid #c0cccc
+        font-weight: 400;
+        border-bottom: 1px solid #efefef;
     }
     th {
-        border: 1px solid #3c494f
         background: rgb(60, 73, 79);
         color: #ffffff;
         height: 60px;
@@ -27,15 +26,15 @@ table {
   
     tr {
 		:nth-child(odd) {
-			background: #e2e8e8;
+			background: #ffffff;
 			td {
-				border-right: 1px solid #e2e8e8;
+				border-right: 1px solid #ffffff;
 			}
 		}
 		:nth-child(even) {
-			background: #c0cccc;
+			background: #efefef;
 			td {
-				border-right: 1px solid #c0cccc;
+				border-right: 1px solid #efefef;
 			}
 		}
 		:last-child {

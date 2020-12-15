@@ -2,14 +2,6 @@ import React from "react";
 import { meshes } from "../../collections/landscape/meshes";
 import Table from "../../components/Landscape-Table";
 
-function generate_col(url, value) {
-    if (url) {
-        return <td style={{ textAlign: "center" }}><a href={`${url}`}><i>{value}</i></a></td>;
-    } else {
-        return <td style={{ textAlign: "center" }}>{value}</td>;
-    }
-}
-
 function Functional() {
 
     const columns = React.useMemo(
@@ -61,13 +53,7 @@ function Functional() {
     const data = React.useMemo(() => meshes);
 
     return (
-        <React.Fragment>
-            <Table columns={columns} data={data} />
-            <span style={{ color: "#000" }}>
-				Found a discrepancy, missing or out-dated information? Please
-                <a href="https://github.com/layer5io/layer5/issues"> submit an issue.</a>
-            </span>
-        </React.Fragment>
+        <Table columns={columns} data={data} />
     );
 }
 

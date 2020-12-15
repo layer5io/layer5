@@ -117,10 +117,6 @@ function Categories() {
                     </ul>
                 </div>
             </div>
-            <span style={{ color: "#000" }}>
-                Found a discrepancy, missing or out-dated information? Please
-                <a href="https://github.com/layer5io/layer5/issues"> submit an issue.</a>
-            </span>
         </React.Fragment>
     );
 }

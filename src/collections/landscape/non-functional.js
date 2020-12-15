@@ -16,6 +16,7 @@ import AppMesh from "../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import Kuma from "../../assets/images/service-mesh-icons/kuma.svg";
 import Citrix from "../../assets/images/service-mesh-icons/citrix.svg";
 import Osm from "../../assets/images/service-mesh-icons/osm.svg";
+import Nginx from "../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
 
 
 export const non_functional=[{
@@ -42,7 +43,6 @@ export const non_functional=[{
     category: "Service Mesh",
     timeline_order: 2,
     icon: Linkerd
-
 },
 {
     name: "Consul",
@@ -120,7 +120,6 @@ export const non_functional=[{
     category: "Service Mesh",
     timeline_order: 8,
     icon: AspenMesh
-
 },
 {
     name: "Conduit",
@@ -160,7 +159,6 @@ export const non_functional=[{
     category: "Service Mesh",
     timeline_order: 11,
     icon: Rotor
-
 },
 {
     name: "Maistra",
@@ -213,7 +211,6 @@ export const non_functional=[{
     category: "Service Mesh",
     timeline_order: 15,
     icon: Octarine
-
 },
 {
     name: "Yggdrasil",
@@ -225,8 +222,7 @@ export const non_functional=[{
     ga_1_date: "?",
     commercial: "N/A",
     category: "Service Mesh",
-    timeline_order: 16
-
+    timeline_order: 16,
 },
 {
     name: "Traefik Mesh",
@@ -240,7 +236,6 @@ export const non_functional=[{
     category: "Service Mesh",
     timeline_order: 17,
     icon: TraefikMesh
-
 },
 {
     name: "App Mesh",
@@ -267,7 +262,6 @@ export const non_functional=[{
     category: "Service Mesh",
     timeline_order: 19,
     icon: Kuma
-
 },
 {
     name: "Citrix Service Mesh",
@@ -281,7 +275,6 @@ export const non_functional=[{
     category: "Service Proxy",
     timeline_order: 20,
     icon: Citrix
-
 },
 {
     name: "Open Service Mesh",
@@ -295,6 +288,19 @@ export const non_functional=[{
     category: "Service Mesh",
     timeline_order: 21,
     icon: Osm
+},
+{
+    name: "NGINX Service Mesh",
+    opensource: "Partial",
+    link: "https://www.nginx.com/products/nginx-service-mesh/",
+    governance: "NGINX",
+    primary_lang: "Go, C",
+    announce_date: "September 2020",
+    ga_1_date: "?",
+    commercial: "NGINX",
+    category: "Service Mesh",
+    timeline_order: 22,
+    icon: Nginx,
 },
 {
     name: "Citrix ADC CPX",
@@ -322,11 +328,11 @@ export const non_functional=[{
     name: "nginMesh",
     opensource: "Yes",
     link: "https://github.com/nginxinc/nginmesh",
-    governance: "Nginx",
+    governance: "NGINX",
     primary_lang: "Rust, Go, C",
     announce_date: "September 2017",
     ga_1_date: "discontinued",
-    commercial: "Nginx",
+    commercial: "NGINX",
     category: "Service Proxy"
 },
 {
@@ -466,14 +472,14 @@ export const non_functional=[{
     category: "Load-Balancers"
 },
 {
-    name: "Nginx",
+    name: "NGINX",
     opensource: "Yes",
     link: "http://nginx.org/",
-    governance: "Nginx",
+    governance: "NGINX",
     primary_lang: "Go",
     announce_date: "?",
     ga_1_date: "?",
-    commercial: "Nginx Plus",
+    commercial: "NGINX Plus",
     category: "Load-Balancers"
 },
 {
