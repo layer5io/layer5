@@ -31,13 +31,13 @@ const PageHeader = ({ categories, title, subtitle,  author, thumbnail, path }) =
                         <h4>By:</h4> <span>{author.name}</span>
                     </div>
                 )}
-                {!author && path && (
-                    <div className="breadcrumbs page">
-                        <>
-                            <span> Home </span> <span> {">"} </span> {path}
-                        </>
-                    </div>
-                )}
+                {/*{!author && path && (*/}
+                {/*    <div className="breadcrumbs page">*/}
+                {/*        <>*/}
+                {/*            <span> Home </span> <span> {">"} </span> {path}*/}
+                {/*        </>*/}
+                {/*    </div>*/}
+                {/*)}*/}
             </div>
         </PageHeaderWrapper>
     );

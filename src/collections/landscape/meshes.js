@@ -183,7 +183,7 @@ export const meshes=[
         h2: "Yes",
         grpc: "Yes",
         tcp_web: "Yes",
-        multi_cluster: "Experimental",
+        multi_cluster: "Yes",
         multi_tenant: "Yes",
         prometheus: "Yes",
         tracing: "Pluggable",
