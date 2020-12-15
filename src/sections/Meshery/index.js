@@ -52,6 +52,7 @@ const MesheryPage = () => {
                         </Row>
                     </div>
                     <FeaturesTable />
+                    <Features />
                     <div className="description">
                         <div className="heading">
                             <p> The only service mesh management plane to allow</p>
@@ -166,7 +167,7 @@ const MesheryPage = () => {
                             </Col>
                         </Row>
                     </div>
-                    <Features />
+                    
                     <div className="architecture content">
                         <a name="architecture"></a>
                         <h1 className="heading"> ARCHITECTURE</h1>
