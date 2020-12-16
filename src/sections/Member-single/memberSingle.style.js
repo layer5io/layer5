@@ -65,6 +65,7 @@ export const MemberSingleWrapper = styled.div`
                 font-family: 'Open Sans', sans-serif;
                 font-weight: 600;
                 font-size: 40px;
+                line-height: 1;
                 color: black;
                 letter-spacing: -2px;
                 margin-top: 15px;
