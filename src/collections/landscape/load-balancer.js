@@ -5,9 +5,9 @@ export const load_balancer=[
         desc: "A10's Thunder ADC - is a high performance solution providing L4-7 load balancing, DDoS protection, and advanced SSL/TLS offloading."
     },
     {
-        name: "Nginx",
+        name: "NGINX",
         link: "https://nginx.org/en/",
-        desc: "Nginx -  is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.",
+        desc: "NGINX -  is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.",
     },
     {
         name: "Proxygen",
