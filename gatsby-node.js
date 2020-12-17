@@ -33,6 +33,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: '/workshops', toPath: '/learn/workshops', redirectInBrowser: true, isPermanent: true })
   createRedirect({ fromPath: '/meshery', toPath: '/projects/meshery', redirectInBrowser: true, isPermanent: true })
   createRedirect({ fromPath: '/landscape', toPath: '/projects/landscape', redirectInBrowser: true, isPermanent: true })
+  createRedirect({ fromPath: '/events', toPath: '/community/events', redirectInBrowser: true, isPermanent: true })
 
   // Create Pages
   const { createPage } = actions;
