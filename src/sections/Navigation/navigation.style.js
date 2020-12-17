@@ -27,10 +27,10 @@ const NavigationWrap = styled.header`
   }
   .margin-space.second{
     position: fixed;
-    top: 80px;
+    top: 81px;
     opacity: 1;
     width: 75%;
-    height: 48px;
+    height: 46px;
     display: block;
   }
   .dropdown {
@@ -38,7 +38,7 @@ const NavigationWrap = styled.header`
     background: white;
     opacity: 0;
     border: 1px solid #f5f5f5;
-    margin: 70px 2.5vw;
+    margin: 72px 2.5vw;
     width: 75%;
     left: auto;
     right: 0;
@@ -47,6 +47,7 @@ const NavigationWrap = styled.header`
     display: block;
     box-shadow: 0px 10px 10px 0px rgba(0, 211, 169, 0.10);
     animation: bobbleout ease .3s forwards;
+    pointer-events:none;
   }
   .nav-grid {
     display: grid;
@@ -73,7 +74,7 @@ const NavigationWrap = styled.header`
         }
         .action-item {
           position: absolute;
-          bottom: 15px;
+          bottom: 0;
           margin-left: 10px;
           a {
             span{
@@ -99,30 +100,6 @@ const NavigationWrap = styled.header`
         display: grid;
         grid-template-columns: 50% 50%;
       }
-  }
-  .nav-img {
-    max-width: 100%;
-    max-height: 300px;
-  }
-  .nav-div {
-    margin-top: -20px;
-    margin-right: 15px;
-    padding-top: 10px;
-    text-align: center;
-    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.025), -1px -1px 3px 3px rgba(0, 0, 0, 0.025);
-    border-radius: 10px;
-    min-height: 300px;
-    color: ${props => props.theme.menuColor};
-    &:hover {
-      box-shadow: none;
-      color: #00b39f;
-      cursor: pointer;
-    }
-    a:hover {
-      &:before {
-        opacity: 0;
-      }
-    }
   }
   @keyframes nav-bar-anim {
     0% {
@@ -164,6 +141,7 @@ const NavigationWrap = styled.header`
   ul:hover div > ul,
   ul div ul:hover {
     animation: bobble ease .3s forwards;
+    pointer-events: auto;
     visibility: visible;
   }
   ul:hover > span:hover ~ div > ul{
@@ -187,7 +165,6 @@ const NavigationWrap = styled.header`
         a {
           color: ${props => props.theme.menuColor};
           display: block;
-          padding: 5px 15px;
           &:hover {
             color: ${props => props.theme.menuHoverColor}; !important;
             margin-left: -10px;
@@ -257,7 +234,7 @@ const NavigationWrap = styled.header`
         }
       }
       ul .dropdown {
-        margin: 50px 2.5vw;
+        margin: 52px 2.5vw;
       }
     }
   }
@@ -355,6 +332,89 @@ const NavigationWrap = styled.header`
           }
         }
       }
+    }
+  }
+  .anchor:before {
+    content: none;
+  }
+  .post-block{
+    border-radius: 3px;
+    &:hover{
+        .post-thumb-block{
+            .gatsby-image-wrapper{
+                transform: scale3d(1.1,1.1,1);
+            }
+        }
+        .readmore-btn{
+            color: ${props => props.theme.menuHoverColor};
+            svg{
+                margin-left: 3px;
+                 transform: scale(1.2);
+            }
+        }
+        .post-title{
+            color: ${props => props.theme.menuHoverColor};
+        }
+    }
+    a:before {
+      content: none;
+    }
+  }
+
+  .readmore-btn-wrapper{
+    display:flex;
+    justify-content: space-between;
+  }
+
+  .post-thumb-block{
+    overflow: hidden;
+    border-radius: 3px 3px 0 0;
+    height: 180px;
+    .gatsby-image-wrapper{
+        height:100%;
+        transition: all 0.3s ease-in;
+    }
+    img{
+        max-width: 100%;
+        max-height: 180px;
+        width: auto;
+        height: inherit;
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 3px 3px 0 0;
+    }
+  }
+  .post-content-block{
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0px 2px 4px 0px rgba(12, 0, 46, 0.06);
+    padding: 10px 35px;
+    position: relative;
+  }
+  .post-title{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgb(122, 132, 142);
+    margin-bottom: 10px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-transition: 450ms all;
+    transition: 450ms all;
+  }
+  .readmore-btn {
+    color: rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s linear;
+    padding-left: 0px;
+    svg{
+      margin-left: 0px;
+      font-size: 27px;
+      transition: all 0.3s linear;
     }
   }
 `;

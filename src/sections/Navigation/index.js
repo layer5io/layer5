@@ -17,7 +17,7 @@ const Navigation = () => {
             query  {
                 Projects: allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "events" } } }
+                    filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: { eq: true } } }
                     limit: 2
                 ) {
                     nodes {
@@ -26,10 +26,11 @@ const Navigation = () => {
                             title
                             thumbnail{
                                 childImageSharp{
-                                    fluid(maxHeight: 1000){
+                                    fluid(maxWidth: 1000){
                                         ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
+                                extension
                                 publicURL
                             }
                         }
@@ -109,7 +110,7 @@ const Navigation = () => {
                 }
                 Home: allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "events" } } }
+                    filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: { eq: true } } }
                     limit: 2
                 ) {
                     nodes {
@@ -118,10 +119,11 @@ const Navigation = () => {
                             title
                             thumbnail{
                                 childImageSharp{
-                                    fluid(maxHeight: 1000){
+                                    fluid(maxWidth: 1000){
                                         ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
+                                extension
                                 publicURL
                             }
                         }
