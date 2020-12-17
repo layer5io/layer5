@@ -6,7 +6,7 @@ const MesheryWrapper = styled.section`
     .info {
         position: relative;
         overflow: hidden;
-    display: block;
+        display: block;
         .meshery-img{
             max-width: 90%;
             max-width: 400px;
@@ -54,6 +54,70 @@ const MesheryWrapper = styled.section`
         bottom: 0;
         right: 0;
         background: #a1ffc8
+    }
+
+    @media (min-width: 670px) {
+        #stripes span {
+            height: 150px
+        }
+    
+        #stripes :first-child {
+            top: 0;
+            background: #4750ff
+        }
+    
+        #stripes :nth-child(2) {
+            width: 16.66667%;
+            top: 300px;
+            bottom: auto;
+            background: #0dcfff
+        }
+    
+        #stripes :nth-child(3) {
+            width: 33.33333%;
+            right: auto;
+            background: #11bdff
+        }
+    }
+    
+    @media (min-width: 880px) {
+        #stripes span {
+            height: 190px
+        }
+    
+        #stripes :first-child {
+            width: 33.33333%;
+            left: -16.66666%;
+            background: #53f
+        }
+    
+        #stripes :nth-child(2) {
+            width: 33.33333%;
+            top: 0;
+            left: 16.66666%;
+            right: auto;
+            background: #4553ff
+        }
+    
+        #stripes :nth-child(3) {
+            width: 33.33333%;
+            left: 49.99999%;
+            bottom: auto;
+            background: #4f40ff
+        }
+    
+        #stripes :nth-child(4) {
+            width: 33.33333%;
+            top: 380px;
+            right: -16.66666%;
+            background: #25ddf5
+        }
+    
+        #stripes :nth-child(5) {
+            width: 33.33333%;
+            bottom: 0;
+            background: #1fa2ff
+        }
     }
 
     h1 {
