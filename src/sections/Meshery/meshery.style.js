@@ -1,11 +1,61 @@
 import styled from "styled-components";
 
 const MesheryWrapper = styled.section`
-    padding: 25px 0 100px 0;
+    padding: 0 0 100px 0;
 
     .info {
-        background: ${props => props.theme.primaryColor};
+        position: relative;
+        overflow: hidden;
+    display: block;
+        .meshery-img{
+            max-width: 90%;
+            max-width: 400px;
+            position: relative;
+            padding-top: 100px;      
+            margin: auto auto 50px auto; 
+        }
     }
+
+    #stripes, #stripes span {
+        position: absolute
+    }
+    
+    #stripes {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        -webkit-transform: skewY(-12deg);
+        transform: skewY(-12deg);
+        -webkit-transform-origin: 0;
+        transform-origin: 0;
+        background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%)
+    }
+    
+    #stripes span {
+        height: 40px
+    }
+    
+    #stripes :first-child {
+        width: 50%;
+        left: 50%;
+        top: 40px;
+        background: #4c29ff
+    }
+    
+    #stripes :nth-child(2) {
+        width: 14%;
+        right: 0;
+        bottom: 40px;
+        background: #2be7ff
+    }
+    
+    #stripes :nth-child(3) {
+        width: 25%;
+        bottom: 0;
+        right: 0;
+        background: #a1ffc8
+    }
+
     h1 {
         font-size: 50px;
         line-height: 60px;
@@ -112,12 +162,7 @@ const MesheryWrapper = styled.section`
         padding-top: 80px;
     }
 
-    .meshery-img{
-        max-width: 90%;
-        max-width: 400px;
-        padding-top: 60px;
-        margin: 75px auto 50px auto; 
-    }
+
 
     .meshery-sup-img{
         max-height: 350px

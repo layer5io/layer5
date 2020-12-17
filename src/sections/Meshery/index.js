@@ -35,6 +35,13 @@ const MesheryPage = () => {
             <Layout>
                 <MesheryWrapper> 
                     <div className="info">
+                        <div id="stripes" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                         <div className="meshery-img"><img src={meshery} alt="meshery" /></div>
                         <Row className="description">
                             <Col className="desc-text" lg={6} md={12} sm={12}>
