@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 const Howitworks = styled.section`
+.cls-1{
+    fill:#00d3a9;
+}
+
+.cls-2{
+    fill:#00b39f;
+}
+
 .render {
   visibility: hidden;
   opacity: 0;

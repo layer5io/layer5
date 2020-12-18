@@ -47,7 +47,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 {
                                     activeExampleIndex === 0 &&
                                 <circle className='spacer' cx="367.07" cy="319.22" r="11.19" />
-                                } 
+                                }
                                 <path
                                     className={activeExampleIndex !== 0 ? "render arrowHead" : "show arrowHead"}
                                     d="M375.62 319.52l-11.39 3.66 2.51-11.69 8.88 8.03z"
@@ -66,7 +66,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                     activeExampleIndex === 1 &&
                     <circle className='spacer' cx="209.12" cy="323.72" r="11.19" />
                                 }
-              
+
                                 <path
                                     className={activeExampleIndex !== 1 ? "render arrowHead" : "show arrowHead"}
                                     d="M209.37 332.4l-3.1-11.56 11.56 3.09-8.46 8.47z"
@@ -88,8 +88,8 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 {
                                     activeExampleIndex >= 2 &&
                     <circle className='spacer' cx="206.57" cy="172.98" r="11.19" />
-                                } 
-       
+                                }
+
                                 <path
                                     className={activeExampleIndex >= 2 ? "show arrowHead" : "render  arrowHead"}
                                     d="M198.03 172.68l11.39-3.67-2.52 11.7-8.87-8.03z"
@@ -102,99 +102,145 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                     d="M396.22 246.69a109.35 109.35 0 11-187.39-76.58"
                                     className={activeExampleIndex >= 2 ? "show-arrow arrowSegment" : "render-arrow arrowSegment"}
                                 />
-               
+
                             </g>
 
-                            {/* Layer5 logo */}
-                            <g>
-                                <image
-                                    className='dropShadow'
-                                    width="91"
-                                    height="91"
-                                    transform="translate(241.32 204.91)"
-                                    xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFsAAABbCAYAAAAcNvmZAAAACXBIWXMAAAsSAAALEgHS3X78AAAEjklEQVR4Xu2dW1LbQBBFj8FOgDzIu7KDLC7rYXHsIS+eBmOsfMw002qNLDtU+kPqUzUlIdtycXTdHvljetY0DYEP86EnbGP27fts6DljpDk/+6eEznZJtpFqBU9NuBb2tL/LBdgqW0memYHZnxqNGq2/t0nvlZ1FyzioDCt/Cmi5m8qQ49WkV2Ur0QfAYR5zsz2kSG+9nHFhy4YIfcxjncejGtWUd74glWgRusjjBfAybxcU6TbdY5ctoh/yuAdWakAR3qKVbJPoOUXwcR4neSvS5YJMoZxo0WuS5DtgCdzmcZePS9I3Ot21qZ+kekGS+gp4DbwF3uT9k/zYglJO9OvHhK3Ta1Kil8ANcAVcUhzoUjNTry/JNuVjARxRJL8HPuTtaT5+TCkntdo9JrTANSnBt8AF8Af4CfzO+1f5sRUm3TbZtoQck2R/AL4An/L+W0o5mTP+mYnIllp9B1yTPvUv8nMeSYKlhq/JMxOhT/YhSeQJqXS8J4n+CnwkpVveSJItrx8jOtkrUgm5pIiWYzeU2q1LK9CWXftyPCaVjFNSoj8Cn4F3lLrdNwUcGzrZt7RF35DkH9H+HhOn1TICJdnyBXlCqd2nJNEiW2YkU0v2Ih9fkcqJnqVZ2U/Uyoh8Sdamfq9IJ5YhsuWkU5Atzh5ITo4oiZZ7D51qZt++z5rzs2Yuf+QT6FJib2pkbi1bubnRsseMyIbyv+sbPCtaqJYRK1wSLinXJ9RjCvUaynxZfhs6NNvB34y2/Z6tU35g9u1JpyAbuv9zbfTSmZ4YbNr1saliXQxKFoZka2pvEhQG3fTJjiT/B/ZJdvBMQrYjIduRkO1IyHYkZDsSsh0J2Y6EbEdCtiMh25GQ7UjIdiRkOxKyHQnZjoRsR0K2IyHbkZDtSMh2JGQ7ErIdCdmOhGxHQrYjIduRkO1IyHYkZDsSsh0J2Y6EbEdCtiMh25GQ7UjIdiRkOxKyHQnZjoRsR0K2IyHbkZDtSMh2JGQ7ErIdCdmOhGxHQrYjfbJl0UDUNngm+yTbXoC4CG0G3QzJrp1g6pJrodvJybZFFPX6oxuzv2HPNxoBzY6jFy27drVsxwrbtUI+GVNYjs6G7dFsB0M4B2jOz5q8+K1Oswi1XStkKxdK1vaH8UrXXh5I/7/e6iCKcP1aoFtGdKLXFLlLysrneun5NdNcP1s6eCxJq8DfUaRr4Q1AX88DaPdhuSed9Jq08rkWvWLaK8NfkJxcU8Tf58drCe/UbLl6kuplPtkFZXFy8mPR8wB+kbp4XJA+9ZLwTrqhXkYk2ZLqK8rK51DW+I9uHkn0D0rLFEl3p5MH9MvWyb4klQooH6HoU9PtU3NJ6U8jsltlpNbu6oDS7+CI6MDUqK3IrnVgkvqta/emOT97SnjtC1J/XEScTHmWpJNHb7H+3mLSealVr4Fui8LomtfBzpn1bK3WNa/axA0qyc43ONC+Ovpq6iYTtVo9dtlauL671nfW7QRnotPpftj6bYcc373T6dOD0cO3j0aN1t//1MO39aToTq2xZSXtPLc79RDRd30/niU72I+/dqcU9Cr+vjoAAAAASUVORK5CYII="
-                                />
-                                <rect
-                                    className='boundaryFill'
-                                    x="251.05"
-                                    y="211.38"
-                                    width="40"
-                                    height="28"
-                                    rx="4.5"
-                                />
-                                <rect
-                                    className='boundaryFill'
-                                    x="286.05"
-                                    y="256.38"
-                                    width="35"
-                                    height="28"
-                                    rx="4.5"
-                                />
-                                <rect
-                                    className='layerFill'
-                                    x="251.05"
-                                    y="240.38"
-                                    width="72"
-                                    height="16"
-                                    rx="4.5"
-                                />
-                                <rect
-                                    className='layerFill'
-                                    x="291.05"
-                                    y="211.38"
-                                    width="23"
-                                    height="30"
-                                    rx="4.5"
-                                />
-                                <rect
-                                    className='layerFill'
-                                    x="251.05"
-                                    y="240.38"
-                                    width="36"
-                                    height="40"
-                                    rx="4.5"
-                                />
-                                <svg 
-                                    version="1.0" 
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="55.000000pt" 
-                                    x="251.05"
-                                    y="211.38" height="55.000000pt" 
-                                    viewBox="0 0 568.000000 568.000000"
-                                    preserveAspectRatio="xMidYMid meet">
-                                    <g 
-                                        transform="translate(0.000000,568.000000) scale(0.100000,-0.100000)"
-                                        fill="#3c494f" 
-                                        stroke="#3c494f">
-                                        <path 
-                                            d="M0 2840 l0 -2840 2840 0 2840 0 0 2840 0 2840 -2840 0 -2840 0 0
-                    -2840z m2950 1515 l0 -355 -585 0 -585 0 0 -175 0 -175 -435 0 -435 0 0 530 0
-                    530 1020 0 1020 0 0 -355z m1720 0 l0 -355 -740 0 -740 0 0 355 0 355 740 0
-                    740 0 0 -355z m-2890 -1035 l0 -100 1238 0 c1372 0 1296 3 1442 -67 102 -49
-                    222 -168 274 -272 54 -106 66 -176 66 -383 l0 -178 -435 0 -435 0 0 130 0 130
-                    -1510 0 -1510 0 0 420 0 420 435 0 435 0 0 -100z m3020 -1547 c0 -349 -3 -374
-                    -61 -493 -45 -92 -159 -203 -259 -252 -139 -68 -142 -68 -975 -68 l-745 0 0
-                    355 0 355 585 0 585 0 0 210 0 210 435 0 435 0 0 -317z m-3090 87 l0 -190 405
-                    0 405 0 0 -356 0 -355 -572 4 c-511 3 -579 5 -633 21 -95 28 -192 84 -260 151
-                    -69 69 -106 126 -144 224 -25 65 -25 72 -29 379 l-4 312 416 0 416 0 0 -190z"/>
-                                    </g>
+                            {/* Meshery logo */}
+                            <g transform="translate(261.52 222.91)">
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                                    width="51"
+                                    height="51" viewBox="0 0 134.95 135.02">
+                                    <polygon className="cls-1"
+                                        points="69.49 31.82 69.49 64.07 97.44 47.89 69.49 31.82"/>
+                                    <polygon className="cls-1"
+                                        points="69.49 70.81 69.49 103.22 97.7 87.09 69.49 70.81"/>
+                                    <polygon className="cls-2"
+                                        points="65.47 63.85 65.47 32.09 37.87 47.92 65.47 63.85"/>
+                                    <path className="cls-2" d="M10.1,103.1a67.79,67.79,0,0,0,21.41,21.55V90.71Z"/>
+                                    <polygon className="cls-2"
+                                        points="65.47 103.06 65.47 71.05 37.8 87.07 65.47 103.06"/>
+                                    <polygon className="cls-1"
+                                        points="35.54 122.63 63.56 106.61 35.54 90.41 35.54 122.63"/>
+                                    <polygon className="cls-2"
+                                        points="99.61 122.8 99.61 90.63 71.63 106.63 99.61 122.8"/>
+                                    <path className="cls-2" d="M127,99.37a67.22,67.22,0,0,0,7.91-28.94L105.78,87.11Z"/>
+                                    <polygon className="cls-1"
+                                        points="103.64 83.69 131.76 67.61 103.64 51.45 103.64 83.69"/>
+                                    <polygon className="cls-2" points="99.61 44.5 99.61 12.52 71.76 28.49 99.61 44.5"/>
+                                    <polygon className="cls-2" points="99.61 83.55 99.61 51.28 71.7 67.44 99.61 83.55"/>
+                                    <polygon className="cls-2"
+                                        points="67.48 135.02 67.49 135.02 67.48 135.02 67.48 135.02"/>
+                                    <polygon className="cls-1"
+                                        points="35.54 51.22 35.54 83.73 63.66 67.45 35.54 51.22"/>
+                                    <path className="cls-2" d="M65.47,0A67.2,67.2,0,0,0,35.83,7.83l29.64,17Z"/>
+                                    <polygon className="cls-1" points="35.54 12.3 35.54 44.62 63.68 28.48 35.54 12.3"/>
+                                    <path className="cls-2" d="M31.51,10.34A67.89,67.89,0,0,0,10.1,31.89L31.51,44.25Z"/>
+                                    <path className="cls-1" d="M99.43,8A67.23,67.23,0,0,0,69.49,0V25.15Z"/>
+                                    <path className="cls-1" d="M0,69.87A67.27,67.27,0,0,0,8.07,99.63L29.76,87.07Z"/>
+                                    <path className="cls-1" d="M8.07,35.37A67.16,67.16,0,0,0,0,65L29.79,47.91Z"/>
+                                    <path className="cls-2" d="M35.78,127.13A67.13,67.13,0,0,0,65.47,135V110.15Z"/>
+                                    <path className="cls-1" d="M124.92,32a67.9,67.9,0,0,0-21.28-21.52V44.3Z"/>
+                                    <path className="cls-1" d="M103.64,124.54A68,68,0,0,0,125,102.86L103.64,90.52Z"/>
+                                    <path className="cls-2" d="M135,64.81a67.06,67.06,0,0,0-8-29.35L105.49,47.88Z"/>
+                                    <path className="cls-1" d="M69.49,135a67.12,67.12,0,0,0,29.63-7.83L69.49,110Z"/>
+                                    <polygon className="cls-2" points="31.51 83.44 31.51 51.56 3.83 67.43 31.51 83.44"/>
                                 </svg>
-              
+
                             </g>
 
-                            {/* Users */}
-                            <g>
-                                <rect x="259.05" y="107.99" width="56" height="56" rx="3.5" />
-                                <path
-                                    className='iconLines'
-                                    d="M292.05 146v-2a4 4 0 00-4-4h-8a4 4 0 00-4 4v2"
-                                />
-                                <circle className='iconLines' cx="284.05" cy="131.99" r="4" />
-                                <path
-                                    className='iconLines'
-                                    d="M298.05 146v-2a4 4 0 00-3-3.87M291.05 128.12a4 4 0 010 7.75"
-                                />
-                                
+                            {/* Istio */}
+                            <g transform="translate(259.05 107.99)">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="66px" height="66px" viewBox="0 0 465 694" enableBackground="new 0 0 465 694" >
+                                    <image id="image0" width="465" height="694" x="0" y="0"
+                                        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdEAAAK2CAMAAAAmBFbWAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                                                AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAArlBMVEX////z9vru8vijtddX
+                                                eLdGa7Czwt9nhr7E0OZ4k8XV3e2Joc3m6/SartROcrP3+PyrvNtff7u8yeJwjcLN1+qBmsne5PGS
+                                                p9Dq7vb19/tdfbpQc7SSqNBHbLFmhL6Encvy9fqitdeOpc96lMZlhL1RdLXBzeTf5vH+/v709vrg
+                                                5vLL1um3xeCuvtzr7/aYrdN0kMSputre5fFRc7WGnsu7yOLw8/ligryXrNPN1+le/DCBAAAAAWJL
+                                                R0QAiAUdSAAAAAd0SU1FB+QMDBMiK9tJA8QAABGrSURBVHja7ZvXclzJEQWXokbeUF7Uynu7K2/+
+                                                /8e0MISZuaZNddep6sxXPLADGacwQCQ/+ggAAAAAAAAAenjzOe8XgC1v3nq/AGx583nvF4Atby5f
+                                                8H4CmPLm8kXvJ4Apby6XL3m/ASz5zOiXvd8Alnxm9PIV70eAIXdGv+r9CDDkzujla96vADvujX7d
+                                                +xVgx73Rb3zT+xlgxr3RyzvvZ4AZD0a/5f0MMOPB6OXb3u8AKx6Nfsf7HWDFo9HLd70fAkZ8MPo9
+                                                74eAER+MXr7v/RKw4cnoD7xfAjY8Gb0QHOXg2SjBUQ6ejRIc5eDZKMFRDl4YJThKwQujBEcpeGmU
+                                                4CgDL40SHGXglVGCowS8MkpwlIDXRgmO4vPaKMFRfF4bJTiKz5VRgqPwXBklOArPtVGCo+hcGyU4
+                                                is6NUYKj4NwYJTgKzq1RgqPY3BolOIrNhlGCo9BsGCU4Cs2GUYKj0GwZJTiKzJZRgqPIbBolOArM
+                                                plGCo8BsGyU4isu2UYKjuOwYJTgKy45RgqOw7BglOArLnlGCo6jsGSU4isquUYKjoOwaJTgKyr5R
+                                                gqOY7BslOIrJgVGCo5AcGCU4CsmRUYKjiBwZJTiKyJFRgqOIHBolOArIoVGCo4AcGyU4isexUYKj
+                                                eJwYJTgKx4lRgqNwnBklOIrGmVGCo2icGSU4isapUYKjYJwaJTgKxrlRgqNYnBslOIpFgVGCo1AU
+                                                GCU4CkWJUYKjSJQYJTiKRJFRgqNAFBklOApEkVGCo0CUGSU4ikOZUYKjOBQaJTgKQ6FRgqMwlBol
+                                                OIpCqVGCoygUGyU4CkKxUYKjIBQbJTgKQrlRgqMYlBslOIpBhVGCoxBUGCU4CkGNUYKjCNQYJTiK
+                                                QJVRgqMAVBklOApAnVGCI33qjBIc6VNnlOBIn0qjBEfyVBolOJKn1ijBkTq1RgmO1Kk2SnAkTrVR
+                                                giNx6o0SHGlTb5TgSJt6owRH2jQYJTiSpsEowZE0LUYJjpRpMUpwpEyTUYIjYZqMEhwJ02aU4EiX
+                                                NqMER7o0GiU4kqXRKMGRLI1GCY5kaTVKcKRKq1GCI1WajRIcidJslOBIlHajBEeatBslONKkwyjB
+                                                kSQdRgmOJOkwSnAkSY9RgiNFeowSHCnSZZTgSJAuowRHgvQZJTjSo88owZEenUYJjuToNEpwJEev
+                                                UYIjNXqNEhyp0WuU4EiNbqMER2J0GyU4EqPfKMGRFv1GCY60MDBKcCSFgVGCIyksjBIcKWFhlOBI
+                                                CQujBEdKmBglOBLCxCjBkRA2RgmOdLAxSnCkg5FRgiMZjIwSHMlgZZTgSAUrowRHKpgZJTgSwcwo
+                                                wZEIZkYJjkSwM0pwpIGdUYIjDQyNEhxJYGiU4EgCS6MERwpYGiU4UsDUKMGRAKZGCY4EMDVKcCSA
+                                                rVGCI39sjRIc+WNslODIHWOjBEfuWBslOPLG2ijBkTfmRgmOnDE3SnDkjL1RgiNf7I0SHPlib5Tg
+                                                yJcBRgmOXBlglODIlRFGCY48GWGU4MiTIUYJjhwZYpTgyJExRgmO/BhjlODIjzFGCY78GGSU4MiN
+                                                QUYJjtwYZZTgyItRRgmOvBhmlODIiWFGCY6cGGeU4MiHcUYJjnwYaJTgyIWBRgmOXBholODIhZFG
+                                                CY48GGmU4MiDoUYJjhwYapTgyIGxRgmO5jPWKMHRfAYbJTiazmCjBEfTGWyU4Gg6o40SHM1mtFGC
+                                                o9kMN0pwNJnhRgmOJjPeKMHRXMYbJTiaywSjBEdTmWCU4GgqM4wSHM1khlGCo5nMMEpwZM0PD742
+                                                xSjBkTFHP8emGCU4suX9jw6+OMcowZEpb/2NEhxZ8v5jAaMER4a8vQgYJTiy4/3HEkYJjsx4e5Ew
+                                                SnBkxWcTlTBKcGTFZxPVMEpwZMPdRDWMEhzZcDdREaMERxbcT1TEKMGRBfcTVTFKcNTPw0RVjBIc
+                                                9fMwURmjBEe9PE5UxijBUS+PE9UxSnDUx4eJ6hglOOrjw0R1jBIcdfE0USGjBEc9PE1UyCjBUQfP
+                                                E1UySnDUzvNElYwSHDXzYqJSRgmOWnkxUSmjBEeNvJyollGCozZeTlTLKMFRE68mqmWU4KiJVxMV
+                                                M0pw1MDriYoZJThq4PVE1YwSHFVzNVE1owRH1VxNVM4owVEl1xOVM0pwVMn1RPWMEhxVcTNRPaME
+                                                R1XcTFTQKMFRBbcTFTRKcFTB7UQFjRIclbMxUUWjBEfFbExU0SjBUSlbE5U0SnBUyNZEJY0SHJWx
+                                                OVFNowRHRWxOVNMowVEJ2xMVNUpwVMD2REWNEhydszNRUaMER+fsTFTVKMHRGXsTVTVKcHTG3kRl
+                                                jRIcHbM7UVmjBEfH7E5U1yjB0RH7E9U1SnB0xP5EhY3+2Pu7JszBRIWNEhztczBRZaMER3scTVTZ
+                                                KMHRHkcTVTZKcLTD4USljRIcbXM4UWmjBEebHE9U2yjB0RbHE9U2SnC0wclExY0SHN1yMlFxowRH
+                                                N5xNVN0owdE1ZxNVN0pwdMXpRNWNEhxdcTpReaMER684n6i8UYKjV5xPVN8owdELCiaqb5Tg6AUF
+                                                Ew1glODoiZKJBjBKcPREyUQjGCU4eqRoohGMEhw9UjTREEYJju4pm2gIowRH95RNNIRRgqM7Cica
+                                                wyjB0UfFE41hlOCofKJBjBIcFU80iFGCo+KJRjG6fHBUPNEoRlcPjsonGsbo4sFR+UTDGF07OKqY
+                                                aBijawdHFRONY3Tl4KhmonGMrhwc1Uw0kNF1g6OqiQYyum5wVDXRSEZXDY7qJhrJ6KrBUd1EQxld
+                                                MziqnGgoo2sGR5UTjWV0xeCodqKxjK4YHNVONJbRBYOj6okGM7pecFQ90WBGlwuO6icazehqwVH9
+                                                RKMZXSw4aphoOKNrBUcNEw1ndKngqGWi8YyuFBy1TDSe0YWCo6aJxjO6UHDUNNGARpcJjtomGtDo
+                                                MsFR20QjGl0kOGqcaESjiwRHjRMNaXSJ4Kh1oiGNLhEctU40ptEFgqPmicY0ukBw1DzRoEbTB0ft
+                                                Ew1qNH1w1D7RoEazB0cdE41qNHlw1DHRqEZzB0c9Ew1rNHVw1DPRsEYzB0ddE41rNHFw1DXRuEbz
+                                                Bkd9Ew1sNG1w1DfRwEazBkedEw1sNGtw1DnRyEZzBke9E41sNGdw1DvR0EYzBkfdEw1tNGNw1D3R
+                                                2EbzBUf9E41tNF9w1D/R4EazBUcGEw1uNFtwZDDR6EZzBUcWE41uNFdwZDHR6EZTBUcmEw1vNFNw
+                                                ZDLR8EYTBUc2E41vNE9wZDPR+EbTBEdGE01gNEtwZDTRBEaTBEdWE81gNEdwZDXRDEZTBEdmE81g
+                                                NEVwZDbRFEYTBEd2E01hNEFwZDfRHEbDB0eGE81hNHxwZDjRJEaDB0eWE01iNHhwZDnRLEZDB0em
+                                                E81iNHRwZDrRNEYDB0e2E01jNHBwZDvRNEbjBkfGE81jNGxwZDzRPEajBkfWE01kNGhwZD3RREZj
+                                                BkfmE81kNGRwZD7RTEYjBkf2E01lNGBwZD/RVEbjBUcDJprKaLzgaMBEcxmNFhyNmGguo9GCoxET
+                                                TWY0VnA0ZKLJjMYKjoZMNJvRSMHRmIlmMxopOBoz0XRG4wRHgyaazmic4GjQRPMZjRIcjZpoPqNR
+                                                gqNRE81nNEhwNGyiCY3GCI6GTTSh0RDB0biJZjQaITgaN9GMRgMERwMnmtKofnA0cKIpjcoHRyMn
+                                                mtOoenA0cqI5jYoHR0MnmtOoeHA0dKJJjUoHR2MnmtSodHA0dqJZjQoHR4MnmtWocHA0eKJpjcoG
+                                                R6MnmtaobHA0eqJ5jYoGR8MnmteoaHA0fKKJjUoGR+MnmtioZHA0fqKJjSoGRxMmmtmoYHA0YaKZ
+                                                jeoFRzMmmtqoXHA0Y6KpjaoFR1MmmtuoWHA0ZaK5jWoFR3MmmtyoVHA0Z6LJjSoFR5MmmtyoUnA0
+                                                aaLZjeoER7Mmmt2oTnA0a6LpjaoER9Mmmt6oSnA0baL5jWoER/Mmmt+oRnA0b6ILGFUIjiZOdAGj
+                                                CsHRxImuYNQ/OJo50RWM+gdHMye6glH34GjqRJcw6h0cTZ3oEkadg6O5E13DqG9wNHeiaxh1DY4m
+                                                T3QRo57B0eSJLmLUMTiaPdFVjPoFR7MnuopRt+Bo+kRXMeoWHE2f6DJGnYKj+RNdxqhTcDR/ousY
+                                                dQmOHCa6jlGX4MhhogsZdQiOPCa6kFGH4MhjoisZnR4cuUx0JaPTgyOXiS5ldHJw5DPRpYxODo58
+                                                JrqU0bnBkdNE1zI6NThymuhaRmcGR14TXczoxODIa6KLGZ0XHLlNdDWj04Ijt4muZnRWcOQ30eWM
+                                                TgqO/Ca6nNE5wZHjRJczOic4cpzoekZnBEeeE13P6IzgyHOiCxodHxy5TnRBo+ODI9eJrmh0dHDk
+                                                O9EVjY4OjnwnuqTRscGR80SXNDo2OHKe6JpGRwZH3hNd0+jI4Mh7omsaHRgcuU90UaPjgiP3iS5q
+                                                dFhw5D/RVY2OCo78J7qq0UHBkcBElzU6JjgSmOiyRocERwoTXdfoiOBIYaLrGh0QHElMdF2jA4Ij
+                                                iYkubNQ8ONKY6MJGzYMjjYmubNQ4OBKZ6MpGjYMjkYkubdQ0OFKZ6NJGTYMjlYmubdQwOJKZ6NpG
+                                                DYMjmYkubtQsONKZ6OJGzYIjnYkubtQqOBKa6OpGjYIjoYmubtQmOFKa6PJGTYIjpYkub9QiOJKa
+                                                KEYNgiOpiWK0PzjSmihG+4MjrYlitDs4EpsoRruDI7GJYrQ3OFKbKEYvncGR2kQxeukLjuQmitE7
+                                                OoIjuYli9I724Ehvohi9pzk40psoRu9pDY4EJ4rRBxqDI8GJYvSBtuBIcaIYfaAtOFKcKEYfaQmO
+                                                JCeK0UdagiPJiWL0A/XBkeZEMfqB+uBIc6IYfaI2OBKdKEafqA2ORCeK0WfqgiPViWL0mbrgSHWi
+                                                GH2mKjiSnShGX/Au/kR/8tOfHf1B8+e/+OWvfv0b70fOoyI40pvoncvf/u73JY//wx//9Oe3a6gt
+                                                D46UJlrhcjm1xcGRyETbXS6jtjQ4cp+omcvsaguDI8+JjnK5oTbFx6iy4MhnopNcbqiNvNqi4Gj6
+                                                RH1cJlFbEhxNnKiEy9hqC4KjORNVdBlSbUFwNHqiAVxuqNX9GHUaHA2caDyXG2rlVnsaHA2ZaHiX
+                                                ympPgiPriWZzKaj2JDiym2hyl1d4qj0MjkwmupbLKxzUHgZHnRNd2uUVE9UeBEftE8XlLuN/+TkI
+                                                jlomistShq12PziqnCguGzFX+27vXyqeKC5tsFK7FxyVTBSXQ+hVuxMcHU8UlzNo/Bi1HRztThSX
+                                                DlSudjM4eotLRcrUbgVHryeKSzmO1W4ER29xGYRNtbfB0XtchuOV2pvgCJeBuVfr/QgAAAAAAAAA
+                                                AAAAAAAAAAAAAAAAAAAAAIAx/AVi8+5G6Sef1v1HcdDhr3/7++ZMcRqRf/zzX//eP704DcZ//vu/
+                                                sx+nOI3D3q3FaUSOby1Og1Fwa3Eah9Jbi9MI1N1anIrTcGtxqkvrrcWpIn23FqdiGNxanOpgdWtx
+                                                qoDtrcWpMwNuLU79GHVrcerB2FuL08lMuLU4ncesW4vTGcy9tTgdjMOtxek4vG4tTkfge2txaozA
+                                                rcWpHSq3FqcWaN1anHYieGtx2o7qrcVpC9q3FqeVBLi1OC0nyq3FaQmxbi1OTwh4a3G6T9Rbi9Mt
+                                                Yt9anF6R4Nbi9Jkstxand+S6tcs7TXhrV3aa9dau6TT3rV3O6QK3diWnq9zaNZyudWvTO13w1mZ2
+                                                uuqtvSaH07Vv7TXhnXJrb4jslFu7TUyn3Nojwjnl1p4SySm3towYTrm1Ncg75dZWo+yUW9uGplNu
+                                                bQ9yTrm13Sg55dbaoOGUW2uJu1NurTmeTrm1Y/Bxyq0dyXSn3NrhzHTKrZ3DHKfc2pkMd8qtnc5I
+                                                p9xaH8Y45dZ6Yu6UW+uOpVNurQY2Trm1SnQ75dbK0eOUW6tJm1NurTLVTrm18tQ45dbGoMwptzYS
+                                                p065teE4csqtjcm2U25tZG6ccmvD89IptzYHD065tZn45FNuLQAAAAAAAAAAAACk4v8dJLe2Uj/G
+                                                xwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMC0xMi0xMlQxOTozNDo0MyswMDowMCJ4jOcAAAAldEVY
+                                                dGRhdGU6bW9kaWZ5ADIwMjAtMTItMTJUMTk6MzQ6NDMrMDA6MDBTJTRbAAAAAElFTkSuQmCC"
+                                    />
+                                </svg>
                             </g>
 
                             {/* Authenticate */}
@@ -208,7 +254,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 />
                                 <rect x="372.79" y="219.38" width="56" height="56" rx="3.5" />
 
-                                
+
                                 <path
                                     className='iconLines'
                                     d="M389.93 255.31a3.74 3.74 0 013.73-3.74 3.74 3.74 0 013.74 3.74v1.49h-7.47z"
@@ -288,13 +334,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                     className='vaultIcon'
                                     d="M162.45 234.8L175 260l12.63-25.16zm14 5h1.46v1.45h-1.46zm-2.9 5.83h-1.46v-1.46h1.46zm0-2.19h-1.46V242h1.46zm0-2.19h-1.46v-1.45h1.46zm2.19 6.57h-1.44v-1.46h1.46zm0-2.19h-1.44v-1.46h1.46zm0-2.19h-1.44V242h1.46zm0-2.19h-1.44v-1.45h1.46zm.71.73h1.46v1.46h-1.46zm0 3.65v-1.46H178v1.46z"
                                 />
-                                <image
-                                    className='dropShadow'
-                                    width="75"
-                                    height="75"
-                                    transform="translate(249.32 101.91)"
-                                    xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAACXBIWXMAAAsSAAALEgHS3X78AAAErklEQVR4Xu2c63LbNhCFPymy5PiSNI2nfQQ/nJ/HD+d3aJvGSazoYrE/gEMsIVDiTv6QNc7MDkhdaOHzWYDyeHfWNA1Vw7Q494I+ze4fZudeM2Y1T49ul8yGOCsD03c8JdlJt8fnAJ6EFSHZoHA+VTUmAA56vA9aEZZx0pwAZV4IC29KsnCaOOZRBHYEK3PTOxOLGDoXsCmkZZ52gvQK7E28xjgAhxxY3wIvUAtgaWIFXMSwwOz7xqgclqDsgC2wieM2PrYHmtn9Q2cd68CKrpqTQK2AS+Aqxvt4viK5LAc2Vtn02xOgbIA18BJjbl4r95Vh0U2/JQHMDfAhxi1wTYB2Ed8/hfWrMaNSb0MA9A14JswZUnoegMPs/mEmd7WwzFolZy0JbvoAfAI+A78BH+Pjl3RhjRWUJLe8EtJtTQD1L+EXDyk1d/F4Hkeg7Kw5aa0SrM/AH8AdAdwNAZbWrqnAUgpugR8EUMv4vNLyZxx3+QVKC7xgrQjpdktw1B3wJ/A7AeB7wg+akrME6yfwnTBHCPBe4mNLjjOmm4bmCaXhBcE914TU+0QAdUdKReusscvCWpNAbQiQrki7fTFb+tJQsOSuK9JC/zHGlJxld8IdaY3akDYsC6pz461FfqGT+ObcXQuSwy5J4DReMD1YMsiOMCfdQ9qbbjuX3jS0xxaYoC2z0cIau5SGEFJxQRdQ/q3kaE6lBd6+2H4XfJeNpe+JY5bclX/2wZlx7u9ZM0dMQXn25J//5DzmDFPpolMBlKvvs5+dWx+swbTfkoY6q4oKy6UKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6EKy6E+WKqgwoxvXh5n5QD/bxDPzu0crNIFpg6p9EsfNLdTRQO6SFuRbo4PHP+gsavJIp/D2XlYWCXaKrwuVair0hOm8b/ydj6lOGuCBUDz9NjEyjBL3Vaoq8rTVqoL9IFxFxhYE9j5bE3kRrCg2uM8Da2jVB6rCvU1oVT2mlQquycVPsE0YKlqVbGmW+orl7XuOiooN5Kr5CaVwz7TBbUlFDROoV2BNYFgfSXM6RthfmvCfOWwTpsCOF6zlIJy1Tpe6CuhGNOCEjjVE8M4gWnCMoFgPQN/A1/i8Q+Cw7YU3AXlNNRFbd8DVdpDqlxXqeyCcZfS2QVbzS/UpuAL8BcJ2AvJXSrkbNUHyzrLNojYES54Q38jjDHKmmBHqr5/JrQr+IcESwu+dsdWncY9pr2K+jqo+l7F5LfxOK9Utze3Y4Jm1xzBUrcQbVjqGPI9hhb7PXBonh5bYKUF3m6xmriq1mXfFQGmaovHmoJSvh7bhhfaEbUr5mtWq1MtoQRChePqcqRiclupbkGNCVp+v2Rvi7TU2FCHowMct4Q61WxMKSloi2zsu2UYKyyday2y0I7u5Ac1G2uf6DYdmxdizDtgn+zOeMhCj/na2LVPHjfHsHCmBkpqzJjHySaJv9pNsnQ+ZpXSMhwMaMU5CFafptirdAiUPv0SrLem/wD+zwF/YqGwSwAAAABJRU5ErkJggg=="
-                                />
+
                             </g>
                         </g>
                     </g>
