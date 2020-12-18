@@ -3,14 +3,17 @@ import React from "react";
 import PageHeaderWrapper from "./pageHeader.style";
 import Image from "../../components/image";
 
-const PageHeader = ({ categories, title, subtitle,  author, thumbnail, path }) => {
+const PageHeader = ({ categories, title, subtitle,  author, thumbnail, path, sub_header }) => {
     return (
         <PageHeaderWrapper>
-            <div className="page-header">
-                <div className="feature-image">
-                    {thumbnail && (
-                        <Image {...thumbnail} imgStyle={{ objectFit: "contain"}} alt={title}/>
-                    )}</div>
+            {/* NOTE: 
+                    className 'page_header' is used if the haeding is displayed as the Page heading
+                    className 'sub_header' is used if the heading is displayed in the subsection of any page 
+            */}
+            <div className={sub_header ? "sub_header" : "page-header"}>
+                { thumbnail && <div className="feature-image">
+                    <Image {...thumbnail} imgStyle={{ objectFit: "contain"}} alt={title}/>
+                </div>}
                 <h1>{title}</h1>
                 {subtitle && (<h4>{subtitle}</h4>)}
                 {categories && (

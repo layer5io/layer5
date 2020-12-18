@@ -6,7 +6,7 @@ import Image from "../../components/image";
 
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
 
-const ProgramsGrid = ({hide_path}) => {
+const ProgramsGrid = ({hide_path, sub_section}) => {
     const data = useStaticQuery(
         graphql`
             query allPrograms {
@@ -40,16 +40,16 @@ const ProgramsGrid = ({hide_path}) => {
     let path = hide_path ? "" : "Programs";
     return (
         <ProgramsPageWrapper>
-            <PageHeader title="Programs" path={path} />
-            <div className="programs-page-wrapper">
+            <PageHeader title="Programs" path={path} sub_header={sub_section} />
+            <div className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}>
                 <Container>
                     <div className="program-grid-wrapper">
                         <Row>
                             {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
-                                <Col xs={12} sm={6} lg={3} key={id}>
+                                <Col key={id} className="programs-col">
                                     <Link to={fields.slug}>
-                                        <div className="program">
-                                            <div className="icon">
+                                        <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
+                                            <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
                                                 <Image
                                                     {...frontmatter.thumbnail}
                                                     imgStyle={{ objectFit: "contain" }}
