@@ -36,6 +36,17 @@ const Howitworks = styled.section`
     .st13{stroke - width:.5}
 }
 
+    .nsm {
+        .st0{fill:#009639;}
+        .st1{fill:none;stroke:#FFFFFF;stroke-width:6.0241;stroke-miterlimit:10;}
+        .st2{fill:#FFFFFF;}
+         .st3{fill:#989898;}
+    }
+    
+    .citrix{
+        .st0{fill:#fff}
+    }
+
 .render {
   visibility: hidden;
   opacity: 0;
