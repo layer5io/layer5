@@ -9,6 +9,33 @@ const Howitworks = styled.section`
     fill:#00b39f;
 }
 
+.st0{fill:url(#SVGID_1_)}
+.st1{fill:url(#SVGID_2_)}
+.st2{fill:#2beda7}
+.st3{fill:url(#SVGID_3_)}
+.st4{fill:url(#SVGID_4_)}
+.st5{fill:url(#SVGID_5_)}
+.st6{fill:url(#SVGID_6_)}
+.st7{fill:url(#SVGID_7_)}
+.st8{fill:url(#SVGID_8_)}
+
+.octarine {
+    .st0{fill:#4d3d75}
+    .st1{fill:#604c87}
+    .st2{fill:#795ca0}
+    .st3{fill:#8e6eaf}
+    .st4{fill:#faba2f}
+    .st5{fill:#60b74b}
+    .st6{fill:#83ce5b}
+    .st7{fill:#169c4d}
+    .st8{fill:#f99932}
+    .st9{fill:#d87319}
+    .st10{fill:#0e784a}
+    .st11{fill:#ea852a}
+    .st12,.st13{fill:none;stroke:rgba(255,255,255,.7);stroke-miterlimit:10}
+    .st13{stroke - width:.5}
+}
+
 .render {
   visibility: hidden;
   opacity: 0;
