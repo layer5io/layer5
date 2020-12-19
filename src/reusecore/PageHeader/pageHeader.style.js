@@ -71,6 +71,10 @@ const PageHeaderWrapper = styled.div`
             }
        }
     }
+
+    .sub_header h1{
+        font-size: 2rem;
+    }
 `;
 
 export default PageHeaderWrapper;
