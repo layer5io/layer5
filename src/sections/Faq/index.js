@@ -39,7 +39,7 @@ const Faq = () => {
                         <span>FAQs</span>
                     </h2>
                 </SectionTitle>
-                <Accordion allowZeroExpanded>
+                <Accordion allowMultipleExpanded="true" allowZeroExpanded="true">
                     {data.faqs.map((faq, index) => (
                         <AccordionItem key={index}>
                             <AccordionTitle>
