@@ -42,11 +42,13 @@ export const LandscapePageWrapper=styled.div`
 	border-bottom: 1px dashed #a0a0a0;
 }
 .first-heading{
+	font-size: 2rem;
 	margin: 3rem auto;
 	width: 100%;
 	text-align: center;
 }
 .subsequent-heading{
+	font-size: 2rem;
 	margin: 8rem auto 3rem;
 	width: 100%;
 	text-align: center;
@@ -225,15 +227,16 @@ span.moreIcon.vertical-timeline-element-icon:hover {
 .landscape-table {
 	width: 100%;
 	margin-bottom: 2rem;
+	box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
 }
-@media screen and (max-width: 767px) {
-	.landscape-table {
-		padding: 0.6rem;
-	}
+
+.category-row-heading {
+	font-size: 1.15rem;
+	padding: 0.75rem 0 0 0.75rem;
 }
 ul.category {
 	margin: 0;
-	padding: 0.6rem;
+	padding: 0.5rem 1rem;
 	font-size: 1rem;
 	font-weight: 400;
 }
@@ -266,27 +269,27 @@ ul.category li {
 	background: #1E2117;
     border-color: #1E2117;
 	color: white;
-	border-radius: 0;
+	border-radius: 0.3rem;
 }
 .card-content {
 	border-right: none;
 }
 .odd-row {
 	background: #ffffff;
+	&:hover{
+		box-shadow: 0px 2px 15px -10px black;
+		transform: translateY(0px);
+	}
 }
 .even-row {
 	background: #efefef;
-}
-.category-row-heading {
-	padding-left: 0.6rem;
+	&:hover{
+		box-shadow: 0px 2px 15px -10px black;
+		transform: translateY(0px);
+	}
 }
 .mesh-tooltip {
 	width: 15rem;
-}
-.categories-table {
-	border-left: 1px solid #1E2117;
-	border-right: 1px solid #1E2117;
-	border-bottom: 1px solid #1E2117;
 }
 .missingText {
 	padding: 2.5rem;

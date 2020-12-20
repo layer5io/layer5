@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const CardWrapper = styled.div`
     .post-block{
         margin-bottom: 2rem;
-        box-shadow: 0px 1px 10px -6px ${props => props.theme.shadowLightColor};
-        transition: box-shadow 0.3s ease-in;
+        border-radius: 0.5rem;
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in;
         &:hover{
-            box-shadow: 0px 1px 10px -2px ${props => props.theme.shadowLightColor};
+            box-shadow: 0px 2px 15px 4px rgba(0,0,0,0.2);
             .post-thumb-block{
                 .gatsby-image-wrapper{
                     transform: scale3d(1.1,1.1,1);
@@ -15,8 +16,8 @@ export const CardWrapper = styled.div`
             .readmore-btn{
                 color: ${props => props.theme.secondaryColor};
                 svg{
-                    margin-left: 3px;
-                     transform: scale(1.2);
+                    margin-left: 0.25rem;
+                    transform: scale(1.2);
                 }
             }
         } 
@@ -31,12 +32,16 @@ export const CardWrapper = styled.div`
 
     .post-thumb-block{
         overflow: hidden;
-        height: 180px;
+        height: 11.5rem;
+        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
+
         .gatsby-image-wrapper{
             height:100%;
             transition: all 0.3s ease-in;
         }
         img{
+            height: inherit;
             max-height: 180px;
             display: block;
             text-align: center;
@@ -47,6 +52,22 @@ export const CardWrapper = styled.div`
     .post-content-block{
         padding: 1rem 2rem;
         height: 8rem;
+    }
+
+    @media screen and (max-width: 1200px) and (min-width: 992px){
+        .post-thumb-block{
+            height: 12rem;
+        }
+
+        .post-content-block{
+            height: 10rem;
+        }
+    }
+
+    @media screen and (max-width: 670px) and (min-width: 560px){
+        .post-content-block{
+            height: 10rem;
+        }
     }
 
     @media screen and (max-width: 350px){
@@ -65,7 +86,7 @@ export const CardWrapper = styled.div`
     }
 
     .post-meta-block{
-        height: ${props => props.fixed ? "110px" : "auto"};
+        height: auto;
         display: flex;
 
         .author{
@@ -84,14 +105,41 @@ export const CardWrapper = styled.div`
         justify-content: flex-start;
     }
 
-    .readmore-btn {
+    .readmore-btn::after{
+        content: '';
+        position: absolute;
+        margin: 0 1rem 2rem;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .readmore-btn, .external-link-btn{
        color: rgba(0,0,0,0.4);
        display: flex;
+       flex: auto;
        align-items: center;
        transition: all 0.3s ease-in;
        svg{
            font-size: 1.5rem;
            transition: all 0.3s;
        }
+    }
+
+    .external-link-btn{
+        justify-content: flex-end;
+        svg{
+            font-size: 2rem;
+            padding: 0.25rem;
+            position: relative;
+        }
+
+        &:hover{
+            color: ${props => props.theme.secondaryColor};
+            svg{
+                transform: scale(1.25);
+            }
+        }
     }
 `;

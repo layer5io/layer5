@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import { IoMdCheckmark } from "react-icons/io";
+import { IoMdCheckbox } from "react-icons/io";
 
 import particle1 from "../../assets/images/app/particle/14.png";
 import particle2 from "../../assets/images/app/particle/15.png";
@@ -23,7 +23,7 @@ const Pricing = () => {
                     </h2>
                     <h4 className="liftup">Adopt and operate any service mesh with confidence using Meshery's management features.</h4>
                 </SectionTitle>
-                <Row>
+                <Row className="feature-tables">
                     {data.pricings.map((pricing, index) => (
                         <Col xs={12} sm={6} lg={4} key={index}>
                             <div className="pricing-block">
@@ -35,8 +35,8 @@ const Pricing = () => {
                                     {pricing.services.map((service, index) => (
                                         <table className="table" key={index}>
                                             <tr>
-                                                <td><IoMdCheckmark /></td>
-                                                <td><h5>{service.content}</h5></td>
+                                                <td><IoMdCheckbox size={40} /></td>
+                                                <td><h4>{service.content}</h4></td>
                                             </tr>
                                         </table>
                                     ))}

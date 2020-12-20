@@ -17,7 +17,7 @@ import Button from "../../reusecore/Button";
 const LandscapeGrid=() => {
     return (
         <LandscapePageWrapper>
-            <PageHeader title="Landscape" path="Landscape" />
+            <PageHeader title="Service Mesh Landscape" path="Landscape" />
             <div className="landscape-page-wrapper">
                 <Container>
                     <div>

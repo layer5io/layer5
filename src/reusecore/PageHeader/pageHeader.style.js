@@ -9,7 +9,7 @@ const PageHeaderWrapper = styled.div`
             text-align: center;
             position: relative;
             height: auto;
-            margin: 8rem auto 4rem auto;
+            margin: 10rem auto 5rem;
             padding: 0 1rem 0;
             z-index: 99;
             h1{
@@ -39,17 +39,27 @@ const PageHeaderWrapper = styled.div`
                 }
             }
             h4 {
+                display: inline-block;
                 margin:0 0.4rem;
                 opacity: .7;
+            }
+            p{
+                margin: 0;
+                display: inline-block;
             }
         } 
     }
     @media only screen and (max-width: 480px) {
-       .page-header{
+        .page-header{
             h1{
                 font-size: 2rem;
             }
-       }
+        }
+
+        .breadcrumbs{
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .sub_header h1{

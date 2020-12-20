@@ -25,7 +25,7 @@ export const BooksPageWrapper = styled.div`
     .post-meta-block{
         height: auto;
         .author{
-            margin-left: 0;
+            text-align: left;
         }
     }
 `;

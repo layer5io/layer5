@@ -11,7 +11,7 @@ import {
     CloseIcon,
 } from "./accordion.style";
 
-const Accordion = ({ className, children, allowZeroExpanded }) => {
+const Accordion = ({ className, children, allowZeroExpanded, allowMultipleExpanded }) => {
     // Add all classs to an array
     const addAllClasses = ["reusecore__accordion"];
 
@@ -23,6 +23,7 @@ const Accordion = ({ className, children, allowZeroExpanded }) => {
     return (
         <AccordionWrapper
             allowZeroExpanded={allowZeroExpanded}
+            allowMultipleExpanded={allowMultipleExpanded}
             className={addAllClasses.join(" ")}
         >
             {children}

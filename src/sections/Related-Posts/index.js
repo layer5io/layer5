@@ -70,7 +70,7 @@ const RelatedPosts = props => {
                     {
                         relatedPosts.map(({post}) => {
                             return (
-                                <Col className="cardCol" xs={12} lg={10} key={post.fields.slug}>
+                                <Col className="cardCol" xs={12} key={post.fields.slug}>
                                     <Card frontmatter={post.frontmatter} fields={post.fields}/>
                                 </Col>
                             );

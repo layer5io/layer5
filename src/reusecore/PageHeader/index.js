@@ -18,11 +18,16 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail, path, sub_h
                 {subtitle && (<h4>{subtitle}</h4>)}
                 {category && (
                     <div className="breadcrumbs">
-                        <h4>Category:</h4>
-                        <span key={category}>{category}</span>
+                        <span>
+                            <h4>Category:</h4>
+                            <p key={category}>{category}</p>
+                        </span>
                         {author && (
                             <>
-                                <h4>By:</h4> <span>{author.name}</span>
+                                <span>
+                                    <h4>By:</h4>
+                                    <p>{author.name}</p>
+                                </span>
                             </>
                         )}
                     </div>

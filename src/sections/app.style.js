@@ -181,7 +181,7 @@ h4,
 h5,
 h6 {
     font-family: 'Qanelas Soft', sans-serif;
-    color: black; 
+    color: #1E2117; 
     margin: 0;
 }
 

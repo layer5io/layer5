@@ -3,6 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeli
 import "react-vertical-timeline-component/style.min.css";
 import { non_functional } from "../../collections/landscape/non-functional";
 import { MdExpandMore } from "react-icons/md";
+import ServiceMeshIcon from "../../assets/images/service-mesh-icons/service-mesh.svg";
 
 const meshes = [];
 const initialMeshes = [];
@@ -44,7 +45,9 @@ const ServiceMeshTimeline = () => {
                     <div className={`meshtitle-img-${mesh.timeline_order%2}`}>
                         <img src={mesh.icon} alt={mesh.name} />
                     </div>
-                    :<></>
+                    :   <div className={`meshtitle-img-${mesh.timeline_order%2}`}>
+                        <img src={ServiceMeshIcon} alt={mesh.name} />
+                    </div>
                 }
                 <h3 className={`vertical-timeline-element-title title-${mesh.timeline_order%2}`}>{mesh.name}</h3>
                 <h4 className={`vertical-timeline-element-subtitle subtitle-${mesh.timeline_order%2}`}>{mesh.announce_date}</h4>
