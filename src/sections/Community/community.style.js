@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 const CommunitySectionWrapper = styled.div`
-    .community-section-wrapper{
-        padding: 50px 0;
-    }
     .container .row {
         margin-left: -0.75rem;
         margin-right: -0.75rem;

@@ -113,7 +113,6 @@ export const WorkshopPageWrapper = styled.div`
   }
   .workshop-grid-wrapper {
     padding-bottom: 60px;
-    margin-top: 80px;
   }
 
   .workshop-grid-card {

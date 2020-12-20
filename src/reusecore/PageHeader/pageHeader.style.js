@@ -8,10 +8,8 @@ const PageHeaderWrapper = styled.div`
         .page-header {
             text-align: center;
             position: relative;
+            margin: 125px 10px 50px 10px;
             height: auto;
-            padding-top: 125px;
-            padding-left: 10px;
-            padding-right: 10px;
             z-index: 99;
             h1{
                 font-size: 36px;

@@ -5,10 +5,6 @@ export const MeetupStyle = styled.div`
     margin: auto;
     height: auto;
     
-    h1{
-        text-align: center;
-        padding: 100px 0px 40px 0px;
-    }
     h2{
         text-align: center;
     }

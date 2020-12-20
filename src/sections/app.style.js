@@ -181,7 +181,7 @@ h4,
 h5,
 h6 {
     font-family: 'Qanelas Soft', sans-serif;
-    color: ${props => props.theme.headingColor}; 
+    color: ${props => props.theme.black}; 
     margin: 0;
 }
 

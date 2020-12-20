@@ -6,7 +6,6 @@ export const NewsPageWrapper = styled.div`
     }
     .news-grid-wrapper{
         padding-bottom: 60px;
-        margin-top: 80px;
     }
     @media only screen and (max-width: 912px) {
         .news-page-wrapper{

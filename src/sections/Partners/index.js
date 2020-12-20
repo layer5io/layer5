@@ -23,22 +23,17 @@ import PartnerWrapper from "./partner.style";
 const Partner = () => {
     return (
         <PartnerWrapper>
-            <PageHeader title="Layer5 Partner Program"
-                path="Partners"
-            />
+            <PageHeader title="Layer5 Partner Program" path="Partners" />
             <Container>
                 <Row>
-                    <Col xs={12} sm={1} lg={1}>
-                    </Col>
+                    <Col xs={12} sm={1} lg={1} />
                     <Col xs={12} sm={10} lg={10}>
-                        <br />
                         <div className="container">
                             <p>Layer5 is dedicated to partnering with leading educational institutions, technology vendors, solution providers and industry experts to drive the adoption of cloud native technologies focused on the evolution of how developers write modern applications, how operators run infrastructure and how product owners manage service offerings.</p>
                             <p>Layer5, the service mesh community, established the Layer5 Partner Program to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers to accelerate customers’ digital transformations, helping them move into the new era of DevOps and cloud native applications.</p>
                         </div>
                     </Col>
-                    <Col xs={12} sm={1} lg={1}>
-                    </Col>
+                    <Col xs={12} sm={1} lg={1} />
                 </Row>
 
                 <h1 className="heading">Academic Partners</h1>

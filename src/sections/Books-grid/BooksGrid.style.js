@@ -6,7 +6,6 @@ export const BooksPageWrapper = styled.div`
     }
     .books-grid-wrapper{
         padding-bottom: 60px;
-        margin-top: 80px;
         .see-more-button{
             margin: 0 auto;
         }

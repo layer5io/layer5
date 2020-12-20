@@ -42,7 +42,6 @@ export const LandscapePageWrapper=styled.div`
 	border-bottom: 1px dashed #a0a0a0;
 }
 .heading-container{
-	margin-top: 40px;
 	padding: 30px;
 	width:100%;
 	text-align: center;

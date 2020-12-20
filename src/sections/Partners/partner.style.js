@@ -9,7 +9,7 @@ const PartnerWrapper = styled.section`
         margin: 0 auto;
         max-width: 1280px;
         z-index: 1;
-        padding: 1em;
+        padding: 0 1em;
         h1 {
             font-weight: 300;
         }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MeetupStyle } from "./meetups.style";
 import Card from "../../components/EventCard";
 import { Col, Container, Row } from "../../reusecore/Layout";
+import PageHeader from "../../reusecore/PageHeader";
 import Pagination from "../../reusecore/Pagination";
 import UpcomingEvents from "../../components/UpcomingEventCard";
 
@@ -10,8 +11,7 @@ const Meetups = ({ data, pageContext }) =>{
 
     return(
         <MeetupStyle>
-            <br></br>
-            <h1>Events</h1>
+            <PageHeader title="Events" path="Events" />
             <p>Want to learn more about our projects? Find out which events the layer5 team is speaking at in your area!</p>
             <UpcomingEvents data={data.allUpcoming} />
             <div>

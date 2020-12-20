@@ -11,9 +11,7 @@ import Footer from "../sections/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/blog/themeStyles";
 
-
-
-const WorkshopsGridPage = () => {
+const LearnPage = () => {
     const hide_path = true;
     return (
         <ThemeProvider theme={theme}>
@@ -28,4 +26,4 @@ const WorkshopsGridPage = () => {
         </ThemeProvider>
     );
 };
-export default WorkshopsGridPage;
+export default LearnPage;

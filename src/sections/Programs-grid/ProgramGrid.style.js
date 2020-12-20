@@ -1,8 +1,6 @@
 import styled from "styled-components";
 export const ProgramsPageWrapper = styled.div`
     .programs-page-wrapper{
-        margin: 4rem 0;
-
         h3{
             font-size: 1.5rem; 
             font-weight: 600;
@@ -11,7 +9,6 @@ export const ProgramsPageWrapper = styled.div`
     }
     .sub-header_wrapper{
         margin: 1rem 0;
-
         h3{
             font-size: 1.1rem; 
             font-weight: 600;
