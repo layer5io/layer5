@@ -1,14 +1,10 @@
 import React from "react";
 import { graphql, useStaticQuery, Link} from "gatsby";
 import { IoIosArrowRoundForward } from "react-icons/io";
-
 import Card from "../../components/Card";
-
 import RelatedPostsWrapper from "./relatedPosts.style";
 import { Col } from "../../reusecore/Layout";
-
 import Slider from "react-slick";
-
 import RelatedPostsFactory from "./relatedPostsFactory";
 
 
@@ -80,10 +76,13 @@ const RelatedPosts = props => {
                             );
                         })
                     }
-                    <Col xs={12} lg={12} className="allBlogsCard">
-                        <Link to="/blog">
-                            All Blogs <IoIosArrowRoundForward/>
-                        </Link>
+                    <Col xs={12} lg={12} className="allBlogs">
+                        <div className="allBlogs_card">
+                            <Link to="/blog">
+                                <h2>All Blogs</h2>
+                                <IoIosArrowRoundForward/>
+                            </Link>
+                        </div>
                     </Col>
                 </Slider>
             }

@@ -25,13 +25,13 @@ const Card = ({ frontmatter, fields }) => {
                         <div className="post-meta-block">
                             {frontmatter.date && (
                                 <>
-                                    <span>{frontmatter.date}</span>
+                                    <p>{frontmatter.date}</p>
                                 </>
                             )}
-                            {frontmatter.author && <span className="author">{frontmatter.author}</span>}
-                            {frontmatter.abstract && (
+                            {frontmatter.author && <p className="author">{frontmatter.author}</p>}
+                            {/* {frontmatter.abstract && (
                                 <p className="post-entry">{frontmatter.abstract}</p>
-                            )}
+                            )} */}
                         </div>
                         <div className="readmore-btn-wrapper">
                             <Link className="readmore-btn" to={fields.slug}>
