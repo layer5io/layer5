@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from "gatsby";
-import Icon from "../../../assets/images/app/projects/arrow.svg";
 import Card from "./Card";
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
@@ -10,6 +9,9 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
     const [state, setState] = useState({
         active: menuItems[5]
     });
+
+    const wrapRef = useRef(null);
+    const dropDownRef = useRef(null);
 
     let handleMouseEnter = (index) => {
         setState({
@@ -21,12 +23,23 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
         addAllClasses.push(props.className);
     }
 
+    let wrapDisplay = () => {
+        if (wrapRef.current) {
+            wrapRef.current.style.display = "block";
+        }
+    };
+
+    let wrapNone = () => {
+        if (wrapRef.current) {
+            wrapRef.current.style.display = "none";
+        }
+    };
+
     const { active } = state;
     const blogData = props.blogData;
 
     return (
-        <ul className={addAllClasses.join(" ")}>
-            <span className="margin-space first"></span>
+        <ul className={addAllClasses.join(" ")} ref={dropDownRef} onMouseEnter={wrapDisplay} onMouseLeave={wrapNone}>
             {menuItems.map((menu, index) => (
                 <li
                     key={index}
@@ -38,13 +51,14 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                     <AnchorLink to={menu.path}>{menu.name}</AnchorLink>
                 </li>
             ))}
-            <span className="margin-space second"></span>
-            <div className="dropdown-container">
-                {active.subItems !== undefined && (
+            {active.subItems !== undefined && (
+                <React.Fragment>
                     <ul className="dropdown">
-                        {active.name}
                         <div className="nav-grid">
                             <div className="hr">
+                                <div className="title">
+                                    {active.name}
+                                </div>
                                 {active.subItems.map((subItem, i) => (
                                     <li key={i}>
                                         <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"}>
@@ -52,12 +66,6 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                                         </Link>
                                     </li>
                                 ))}
-                                <div className="action-item">
-                                    <Link to={active.actionLink}>
-                                        <span>{active.actionName}</span>
-                                        <img src={Icon} alt="appion app" />
-                                    </Link>
-                                </div>
                             </div>
                             <div className="nav-display">
                                 <Card frontmatter={blogData[active.name].nodes[0].frontmatter} fields={blogData[active.name].nodes[0].fields}></Card>
@@ -65,8 +73,9 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                             </div>
                         </div>
                     </ul>
-                )}
-            </div>
+                    <div className="wrap" ref={wrapRef} />
+                </React.Fragment>
+            )}
         </ul>
     );
 };
