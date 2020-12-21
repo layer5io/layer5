@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
-
+import "../app.style.css";
 import logo from "../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
 import SocialLinks from "../../components/SocialLinks";
@@ -16,7 +16,7 @@ const Footer = () => {
             <Container>
                 <Row className="footer-head">
                     <Col className="footer-logo-pos" lg={3}>
-                        <Link to="#">
+                        <Link to="/">
                             <img src={logo} className="footer-logo" alt="logo" />
                         </Link>
                     </Col>
@@ -42,8 +42,8 @@ const Footer = () => {
                                 <Row>
                                     <Col lg={7}>
                                         <div className="footer-widgets">
-                                            <h3 className="widget-title">RESOURCES</h3>
-                                            <ul className="widget-catagory">
+                                            <h3 className="widget-title"><Link className="widget-title" to="/learn">RESOURCES</Link></h3>
+                                            <ul className="widget-category">
                                                 <li>
                                                     <Link className="anchor" to="/landscape#tools">
                             Service Mesh Tools
@@ -69,8 +69,8 @@ const Footer = () => {
                                     </Col>
                                     <Col lg={5}>
                                         <div className="footer-widgets">
-                                            <h3 className="widget-title">COMMUNITY</h3>
-                                            <ul className="widget-catagory">
+                                            <h3 className="widget-title"><Link className="anchor" to="/community">COMMUNITY</Link></h3>
+                                            <ul className="widget-category">
                                                 <li>
                                                     <Link className="anchor" to="/blog">
                             Blog
@@ -95,8 +95,8 @@ const Footer = () => {
                                 <Row>
                                     <Col lg={7}>
                                         <div className="footer-widgets">
-                                            <h3 className="widget-title">PROJECTS</h3>
-                                            <ul className="widget-catagory">
+                                            <h3 className="widget-title"><Link className="anchor" to="/projects">PROJECTS</Link></h3>
+                                            <ul className="widget-category">
                                                 <li>
                                                     <Link className="anchor" to="/meshery">
                             Meshery
@@ -122,8 +122,8 @@ const Footer = () => {
                                     </Col>
                                     <Col lg={5}>
                                         <div className="footer-widgets">
-                                            <h3 className="widget-title">COMPANY</h3>
-                                            <ul className="widget-catagory">
+                                            <h3 className="widget-title "><Link className="anchor" to="/company/about">COMPANY</Link></h3>
+                                            <ul className="widget-category">
                                                 <li>
                                                     <Link className="anchor" to="/news">
                             News
@@ -156,9 +156,9 @@ const Footer = () => {
                             </Col>
                         </Row>
                         <Row className="subscribe">
-                            <div>
+                            <div><span>Subscribe to our Newsletter</span>
                                 <input type="text" placeholder="Email Address"></input>
-                                <Button secondary title="Subscribe to Newsletter"></Button>
+                                <Button secondary title="Subscribe"></Button>
                             </div>
                         </Row>
                     </Col>
@@ -166,18 +166,18 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <ul className="footer-menu">
                         <li>
-                            <a className="anchor" href="https://meshery.layer5.io/privacy-policy.html">
+                            <a className="copyright-text" href="https://meshery.layer5.io/privacy-policy.html">
                 Privacy
                             </a>
                         </li>
                         <li>
-                            <a className="anchor" href="https://meshery.layer5.io/terms-of-service.html">
+                            <a className="copyright-text" href="https://meshery.layer5.io/terms-of-service.html">
                 Terms
                             </a>
                         </li>
                     </ul>
                     <p className="copyright-text">
-            2020 Copyright @Layer5, Inc | All Rights Reserved
+            2020 Copyright ©Layer5, Inc | All Rights Reserved
                     </p>
                 </div>
             </Container>

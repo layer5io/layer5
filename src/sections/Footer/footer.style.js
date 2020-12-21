@@ -19,7 +19,7 @@ const FotterWrapper = styled.section`
     }
     .links{
       float: right;
-      filter: invert();
+      filter: invert(70%);
     }
   }
   .section__particle{
@@ -32,7 +32,9 @@ const FotterWrapper = styled.section`
   }
 
   .subscribe{
-    margin: 30px 0 50px 0;
+    font-family: "qanelas_softregular";
+
+    margin: 0px 0 30px 0;
     display: inline-flex;
     input{
       padding: 16px;
@@ -45,6 +47,11 @@ const FotterWrapper = styled.section`
     }
     float: right;
     margin-right: 40px; 
+  }, span {
+    display: block;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
   }
 
   .desc-info{
@@ -57,14 +64,24 @@ const FotterWrapper = styled.section`
     list-style: none;
     margin: 0;
     li .anchor {
-      color: ${props => props.theme.white};
+      color: ${props => props.theme.primaryLightColor};
     }
   }
   p{
     color: ${props => props.theme.white};
   }
+  .widget-title{
+    font-family: "qanelas_softregular";
+    margin-bottom: 20px;
+    color: ${props => props.theme.white};
+
+    &:hover {
+      color: ${props => props.theme.secondaryColor};
+    }
+  }
   .anchor{
-    transition: 450ms all;
+    font-family: 'Open Sans', sans-serif;
+    transition: 400ms all;
     color: ${props => props.theme.white};
     &:hover {
       color: ${props => props.theme.secondaryColor};
@@ -77,13 +94,19 @@ const FotterWrapper = styled.section`
   }
   .footer-widgets {
     margin-bottom: 25px;
+
+    
+      },    
+      .githitle {
+        color: ${props => props.theme.white};
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        },
     .widget-title {
-      color: ${props => props.theme.white};
-      font-size: 25px;
-      font-weight: 600;
-      margin-bottom: 20px;
+      color: ${props => props.theme.primaryLightColor};
     }
-    .widget-catagory {
+    .widget-category {
       li {
         .anchor {
           font-size: 16px;
@@ -112,6 +135,15 @@ const FotterWrapper = styled.section`
         margin-left: 40px;
       }
     }
+    .copyright-text {
+      font-size: 14px;
+      color: #ccc;
+      text-align: center;
+    
+      transition: 450ms all;
+      &:hover {
+        color: ${props => props.theme.secondaryColor};
+      }
     p{
       font-size: 18px;
       line-height: 38px;
@@ -137,7 +169,7 @@ const FotterWrapper = styled.section`
   @media only screen and (max-width: 912px) {
     background-position: -200px; 
     .footer-widgets {
-      .widget-catagory {
+      .widget-category {
         margin-left:0px;
       }
       margin-bottom: 70px;
@@ -148,8 +180,7 @@ const FotterWrapper = styled.section`
      .footer-menu {
         margin-bottom: 40px;
       }
-      .footer-menu,
-      .copyright-text {
+      .footer-menu {
         text-align: center;
       }
     }
