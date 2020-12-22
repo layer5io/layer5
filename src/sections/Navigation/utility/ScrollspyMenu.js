@@ -11,7 +11,6 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
     });
 
     const wrapRef = useRef(null);
-    const dropDownRef = useRef(null);
 
     let handleMouseEnter = (index) => {
         setState({
@@ -39,7 +38,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
     const blogData = props.blogData;
 
     return (
-        <ul className={addAllClasses.join(" ")} ref={dropDownRef} onMouseEnter={wrapDisplay} onMouseLeave={wrapNone}>
+        <ul className={addAllClasses.join(" ")} onMouseEnter={wrapDisplay} onMouseLeave={wrapNone}>
             {menuItems.map((menu, index) => (
                 <li
                     key={index}
@@ -48,7 +47,11 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                     }
                     onMouseEnter={() => handleMouseEnter(index)}
                 >
-                    <AnchorLink to={menu.path}>{menu.name}</AnchorLink>
+                    <AnchorLink to={menu.path} className="menu-link">
+                        <span>
+                            {menu.name}
+                        </span>
+                    </AnchorLink>
                 </li>
             ))}
             {active.subItems !== undefined && (
