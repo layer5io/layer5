@@ -6,7 +6,7 @@ const DoYouNeedWrapper = styled.div`
     align-items: center;
     width: auto;
     height: auto;
-    padding: 30px 0;
+    padding: 0;
     min-height: 400px;
     margin: 3rem 13%;
     border-radius: 50px;
@@ -64,9 +64,11 @@ const DoYouNeedWrapper = styled.div`
         }
     }
     @media only screen and (max-width: 1000px) {
-        margin: 3rem 5%;
+        margin: 3rem 3%;
     }
     @media only screen and (max-width: 720px) {
+        border-radius: 30px;
+        padding: 50px 20px;
         #content{
             #text{
                 width: 100%;
@@ -78,6 +80,8 @@ const DoYouNeedWrapper = styled.div`
             }
             #action{
                 margin-top: 25px;
+                height: 170px;
+                width: 170px;
             }
         }
     }
