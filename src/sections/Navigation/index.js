@@ -26,8 +26,8 @@ const Navigation = () => {
                             title
                             thumbnail{
                                 childImageSharp{
-                                    fluid(maxWidth: 1000){
-                                        ...GatsbyImageSharpFluid_withWebp
+                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
+                                        ...GatsbyImageSharpFixed_withWebp
                                     }
                                 }
                                 extension
@@ -50,8 +50,8 @@ const Navigation = () => {
                             title
                             thumbnail{
                                 childImageSharp{
-                                    fluid(maxWidth: 1000){
-                                        ...GatsbyImageSharpFluid_withWebp
+                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
+                                        ...GatsbyImageSharpFixed_withWebp
                                     }
                                 }
                                 publicURL
@@ -73,8 +73,8 @@ const Navigation = () => {
                             title
                             thumbnail{
                                 childImageSharp{
-                                    fluid(maxWidth: 1000){
-                                        ...GatsbyImageSharpFluid_withWebp
+                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
+                                        ...GatsbyImageSharpFixed_withWebp
                                     }
                                 }
                                 publicURL
@@ -96,8 +96,8 @@ const Navigation = () => {
                             title
                             thumbnail{
                                 childImageSharp{
-                                    fluid(maxWidth: 1000){
-                                        ...GatsbyImageSharpFluid_withWebp
+                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
+                                        ...GatsbyImageSharpFixed_withWebp
                                     }
                                 }
                                 publicURL
@@ -119,8 +119,8 @@ const Navigation = () => {
                             title
                             thumbnail{
                                 childImageSharp{
-                                    fluid(maxWidth: 1000){
-                                        ...GatsbyImageSharpFluid_withWebp
+                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
+                                        ...GatsbyImageSharpFixed_withWebp
                                     }
                                 }
                                 extension
@@ -141,7 +141,11 @@ const Navigation = () => {
         window.addEventListener("scroll", () =>
             window.pageYOffset > 50 ? setScroll(true) : setScroll(false)
         );
-    }, [ ]);
+    }, []);
+
+    const changeDropdownState = () => {
+        setExpand(!expand);
+    };
     return (
         <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
             <Container>
@@ -154,6 +158,34 @@ const Navigation = () => {
                             className="mobile-menu-icon"
                             onClick={() => setExpand(!expand)}
                         />
+                        {expand &&
+                            <div className="mobile-dropdown-container">
+                                <div className="mobile-dropdown">
+                                    <ul className="mobile-collapsed">
+                                        {Data.menuItems.map((menu, index) => (
+                                            <li
+                                                key={index}
+                                                className={
+                                                    menu.subItems !== undefined ? "mobile-nav-item has-dropdown" : "mobile-nav-item"
+                                                }
+                                            >
+                                                <Link to={menu.path} onClick={changeDropdownState} className="menu-item">{menu.name}</Link>
+                                                <ul>
+                                                    {menu.subItems !== undefined && menu.subItems.map((subItems, index) => (
+                                                        <li
+                                                            key={index}
+                                                            className="mobile-nav-subitem"
+                                                        >
+                                                            <Link to={subItems.path} onClick={changeDropdownState} className="sub-menu-item">{subItems.name}</Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        }
                         <ScrollspyMenu
                             className={`collapsed ${expand ? "is-expanded" : ""}`}
                             menuItems={Data.menuItems}

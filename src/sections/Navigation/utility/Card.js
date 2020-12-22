@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { BiLinkExternal } from "react-icons/bi";
-import Image from "../../../components/image";
+import Image from "./image";
 
 const Card = ({ frontmatter, fields }) => {
     return (
@@ -11,7 +11,7 @@ const Card = ({ frontmatter, fields }) => {
                 <div className="post-thumb-block">
                     <Image
                         {...frontmatter.thumbnail}
-                        imgStyle={{ objectFit: "contain" }}
+                        imgStyle={{ objectFit: "cover" }}
                         alt={frontmatter.title}
                     />
                 </div>
