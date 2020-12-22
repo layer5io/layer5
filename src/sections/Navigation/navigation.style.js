@@ -22,7 +22,7 @@ const NavigationWrap = styled.header`
   .dropdown {
     position: absolute;
     background: white;
-    opacity: 1;
+    opacity: 0;
     border: 1px solid #f5f5f5;
     border-radius: 50px;
     top: 100%;
@@ -31,7 +31,7 @@ const NavigationWrap = styled.header`
     display: block;
     box-shadow: 0px 10px 10px 0px rgba(0, 211, 169, 0.10);
     animation: bobbleout ease .3s forwards;
-    pointer-events:none;
+    pointer-events: none;
   }
   .wrap {
     display: block;
@@ -39,7 +39,7 @@ const NavigationWrap = styled.header`
     top: 100%;
     left: 0;
     width: 100%;
-    height: 48px;
+    height: 350px;
     margin-top: -48px; 
     visibility: visible;
   }
@@ -89,7 +89,7 @@ const NavigationWrap = styled.header`
   }
   @keyframes bobble {
     0% {
-        transform: translate3d(0px, -15px, 0px) scale(.75, .75); opacity: 0; visibility: hidden; 
+        transform: translate3d(0px, -15px, 0px) scale(.75, .75); opacity: 0;
     }
     50% {
         transform: translate3d(0px, 0px, 4px) perspective(800px) ;
@@ -244,7 +244,7 @@ const NavigationWrap = styled.header`
       margin: 28px 0 28px 0;
     }
     .wrap {
-      height: 28px;
+      height: 300px;
       margin-top: -28px;
     }
   }

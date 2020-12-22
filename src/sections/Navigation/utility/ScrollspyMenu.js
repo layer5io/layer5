@@ -56,7 +56,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
             ))}
             {active.subItems !== undefined && (
                 <React.Fragment>
-                    <ul className="dropdown">
+                    <ul className="dropdown" style={{zIndex: "101"}}>
                         <div className="nav-grid">
                             <div className="hr">
                                 <div className="title">
@@ -76,7 +76,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                             </div>
                         </div>
                     </ul>
-                    <div className="wrap" ref={wrapRef} />
+                    <div className="wrap" ref={wrapRef} style={{zIndex: "100"}}/>
                 </React.Fragment>
             )}
         </ul>
