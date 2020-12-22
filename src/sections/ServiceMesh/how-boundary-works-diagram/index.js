@@ -21,33 +21,33 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
 
                             {/*  Line */}
                             <g className={activeExampleIndex >= 0 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="286.52" y2="163.99" stroke="#00d3a9" />
+                                <line x1="286.52" y1="248.91" x2="286.52" y2="163.99" stroke="#3c494f" />
                             </g>
                             <g className={activeExampleIndex >= 1 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="393.32" y2="248.91" stroke="#00d3a9" />
+                                <line x1="286.52" y1="248.91" x2="393.32" y2="248.91" stroke="#3c494f" />
                             </g>
                             <g className={activeExampleIndex >= 2 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="286.52" y2="333.83" stroke="#00d3a9" />
+                                <line x1="286.52" y1="248.91" x2="286.52" y2="333.83" stroke="#3c494f" />
                             </g>
 
                             <g className={activeExampleIndex >= 3 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="179.72" y2="248.91" stroke="#00d3a9" />
+                                <line x1="286.52" y1="248.91" x2="179.72" y2="248.91" stroke="#3c494f" />
                             </g>
                             {/* line to kuma */}
                             <g className={activeExampleIndex >= 4 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="115.07" y2="365.04" stroke="#00d3a9" />
+                                <line x1="286.52" y1="248.91" x2="115.07" y2="365.04" stroke="#3c494f" />
                             </g>
                             {/* line to citrix*/}
                             <g className={activeExampleIndex >= 5 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="115.07" y2="135.04" stroke="#00d3a9" />
+                                <line x1="286.52" y1="248.91" x2="115.07" y2="135.04" stroke="#3c494f" />
                             </g>
                             {/* line to osm*/}
                             <g className={activeExampleIndex >= 6 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="455.07" y2="365.04" stroke="#00d3a9" />
+                                <line x1="286.52" y1="248.91" x2="455.07" y2="365.04" stroke="#3c494f" />
                             </g>
                             {/* line to network sm*/}
                             <g className={activeExampleIndex >= 7 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="455.07" y2="150.04" stroke="#00d3a9" />
+                                <line x1="286.52" y1="248.91" x2="455.07" y2="150.04" stroke="#3c494f" />
                             </g>
 
                             {/* Hosts & Services */}
@@ -403,10 +403,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                             OjQzKzAwOjAwUyU0WwAAAABJRU5ErkJggg==" />
                                     </svg>
                                 </g>
-                                {/* service Mesh - 9 */}
-                                {/*<rect className={activeExampleIndex >= 7 ? "show " : "render "} x="420.03" y="110.04" width="56" height="56" rx="3.5" />*/}
                                 {/* Network SM */}
-                                <rect  className={activeExampleIndex >= 8 ? "show " : "render "} x="259.05" y="0.04" width="56" height="56" rx="3.5" />
                                 <g className={activeExampleIndex >= 7 ? "show " : "render "} transform="translate(420.03 110.04)">
                                     <svg className="network" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
                                         viewBox="0 0 360 360" width="66" height="66">
@@ -2848,6 +2845,18 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                             className="cls-154"/>
                                     </svg>
                                 </g>
+                            </g>
+                            {/* Traefik */}
+                            <g className={activeExampleIndex >= 8 ? "show " : "render "} transform="translate(259.05 0.04)">
+                                <svg className="traefik" xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 -190.89 988 988">
+                                    <title>traefik</title>
+                                    <g id="Layer_2" data-name="Layer 2">
+                                        <g id="Layer_1-2" data-name="Layer 1">
+                                            <path className="cls-1"
+                                                d="M356.21,4.49l1.43.76L478.93,73.64a27.23,27.23,0,0,0,26.73,0L626,6a40.82,40.82,0,0,1,41.42,70.34l-1.38.81-69.46,39.11a13.62,13.62,0,0,0,0,23.72l187.52,105.7a27.15,27.15,0,0,0,26.73,0l116-65.37a40.82,40.82,0,0,1,41.48,70.31l-1.39.82L901.6,288.18a13.61,13.61,0,0,0,0,23.71l65.62,37a40.83,40.83,0,0,1-38.69,71.9l-1.42-.78L810.79,354.44a27.18,27.18,0,0,0-26.72,0L594.46,461.31a13.6,13.6,0,0,0,0,23.7l78.33,44.16a40.83,40.83,0,0,1-38.68,71.89l-1.42-.77-129-72.75a27.25,27.25,0,0,0-26.73,0L346.79,601a40.82,40.82,0,0,1-41.47-70.31l1.38-.82L386.13,485a13.6,13.6,0,0,0,5.17-18.53,13.38,13.38,0,0,0-5.17-5.17L198.22,355.41a27.25,27.25,0,0,0-26.73,0L60.85,417.66a40.82,40.82,0,0,1-41.41-70.35l1.37-.8,59.83-33.67a13.59,13.59,0,0,0,0-23.71L20.92,255.44A40.83,40.83,0,0,1,59.6,183.55l1.43.77,110.53,62.31a27.16,27.16,0,0,0,26.71,0L388,139.87a13.62,13.62,0,0,0,0-23.72L317.53,76.4A40.83,40.83,0,0,1,356.21,4.51ZM478.9,182.41,289.14,289.18a13.61,13.61,0,0,0,0,23.72L476.94,418.76a27.2,27.2,0,0,0,26.73,0L693.26,311.89a13.61,13.61,0,0,0,0-23.71L505.6,182.41a27.21,27.21,0,0,0-26.71,0Z"/>
+                                        </g>
+                                    </g>
+                                </svg>
                             </g>
 
                             {/* Top-right arrow segment, always active */}
