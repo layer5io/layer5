@@ -14,7 +14,7 @@ const NewsSingle = ({data}) => {
             <PageHeader
                 title={frontmatter.title}
                 subtitle={frontmatter.subtitle}
-                categories={frontmatter.tags}
+                category={frontmatter.category}
                 author={{ name: frontmatter.author }}
                 thumbnail={frontmatter.thumbnail}
             />

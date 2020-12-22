@@ -1,13 +1,11 @@
 import React from "react";
-import { Link } from "gatsby";
-import { IoIosArrowRoundForward } from "react-icons/io";
 import BlogViewToolTip from "../../components/blog-view-tooltip";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
 import Pager from "../../components/pager";
-import Image from "../../components/image";
+import Card from "../../components/Card";
 
 import { BlogPageWrapper } from "./blogList.style";
 
@@ -39,37 +37,14 @@ const BlogList = ({
                                     setGridView={setGridView}
                                 />
                             )}
-                            <Row>
+                            <Row className="blog-lists">
                                 {nodes.map(({ id, frontmatter, fields }) => (
                                     <Col xs={12} key={id}>
-                                        <Link to={fields.slug}>
-                                            <div className="post-block list">
-                                                <div className="post-thumb-block">
-                                                    <Image
-                                                        {...frontmatter.thumbnail}
-                                                        imgStyle={{ objectFit: "contain" }}
-                                                        alt={frontmatter.title}
-                                                    />
-                                                </div>
-                                                <h2 className="post-title">
-                                                    <Link to={fields.slug}>{frontmatter.title}</Link>
-                                                </h2>
-                                                <p className="post-entry">
-                                                    <span>{frontmatter.date}</span>
-                                                    <span className="pull-right">
-                                                        By: {frontmatter.author}
-                                                    </span>
-                                                </p>
-                                                <p>{frontmatter.subtitle}</p>
-                                                <div className="readmore-btn">
-                                                    see more <IoIosArrowRoundForward />
-                                                </div>
-                                            </div>
-                                        </Link>
+                                        <Card frontmatter={frontmatter} fields={fields}/>
                                     </Col>
                                 ))}
                                 <Col>
-                                    <Pager pageContext={pageContext} isListView={isListView}/>
+                                    <Pager pageContext={pageContext} text={"Posts"} isListView={isListView}/>
                                 </Col>
                             </Row>
                         </Col>

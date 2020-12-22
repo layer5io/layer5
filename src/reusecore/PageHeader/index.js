@@ -3,7 +3,7 @@ import React from "react";
 import PageHeaderWrapper from "./pageHeader.style";
 import Image from "../../components/image";
 
-const PageHeader = ({ categories, title, subtitle,  author, thumbnail, path, sub_header }) => {
+const PageHeader = ({ category, title, subtitle,  author, thumbnail, path, sub_header }) => {
     return (
         <PageHeaderWrapper>
             {/* NOTE: 
@@ -16,20 +16,23 @@ const PageHeader = ({ categories, title, subtitle,  author, thumbnail, path, sub
                 </div>}
                 <h1>{title}</h1>
                 {subtitle && (<h4>{subtitle}</h4>)}
-                {categories && (
-                    <div className="breadcrumbs post">
-                        <h4>Tags:</h4>
-                        {categories.map((category, index) => (
-                            <span key={index}> {category}&nbsp;</span>
-                        ))}
+                {category && (
+                    <div className="breadcrumbs">
+                        <span>
+                            <h4>Category:</h4>
+                            <p key={category}>{category}</p>
+                        </span>
                         {author && (
                             <>
-                                <h4>By:</h4> <span>{author.name}</span>
+                                <span>
+                                    <h4>By:</h4>
+                                    <p>{author.name}</p>
+                                </span>
                             </>
                         )}
                     </div>
                 )}
-                {!categories && author && (
+                {!category && author && (
                     <div className="breadcrumbs post">
                         <h4>By:</h4> <span>{author.name}</span>
                     </div>

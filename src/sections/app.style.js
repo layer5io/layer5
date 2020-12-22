@@ -181,12 +181,12 @@ h4,
 h5,
 h6 {
     font-family: 'Qanelas Soft', sans-serif;
-    color: ${props => props.theme.headingColor}; 
+    color: #1E2117; 
     margin: 0;
 }
 
 p{
-    margin: 0 0 15px 0;
+    margin: 0 0 1rem 0;
     font-weight: 400 !important;
 }
 
