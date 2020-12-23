@@ -29,7 +29,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             </g>
                             {/*  Line to consul */}
                             <g className={activeExampleIndex >= 2 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="286.52" y2="333.83" stroke="#3c494f" />
+                                <line x1="272.52" y1="282.91" x2="244.52" y2="333.83" stroke="#3c494f" />
                             </g>
                             {/* Line to octarine*/}
                             <g className={activeExampleIndex >= 3 ? "show " : "render "}>
@@ -42,6 +42,10 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             {/* line to citrix*/}
                             <g className={activeExampleIndex >= 4 ? "show " : "render "}>
                                 <line x2="262.52" y2="228.91" x1="145.07" y1="160.04" stroke="#3c494f" />
+                            </g>
+                            {/*  Line to NSM */}
+                            <g className={activeExampleIndex >= 4 ? "show " : "render "}>
+                                <line x1="296.52" y1="280.91" x2="331.50" y2="394.90" stroke="#3c494f" />
                             </g>
                             {/* line to osm*/}
                             <g className={activeExampleIndex >= 6 ? "show " : "render "}>
