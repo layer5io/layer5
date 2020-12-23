@@ -39,6 +39,7 @@ const WorkshopCardWrapper = styled.div`
     display: block;
     width: 100%;
     height: auto;
+    margin-bottom: 20px;
   }
 
   .image {
@@ -69,7 +70,10 @@ const WorkshopCardWrapper = styled.div`
     text-align: start;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 992px) {
+    .workshop-grid-card{
+      padding-bottom: 20px;
+    }
   }
 `;
 export default WorkshopCardWrapper;
