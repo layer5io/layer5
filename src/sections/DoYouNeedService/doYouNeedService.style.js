@@ -30,7 +30,9 @@ const DoYouNeedWrapper = styled.div`
             float: left;
             text-align: left;
             .heading{
+                display: inline-block;
                 font-size: 50px;
+                max-width: 370px;
                 font-weight: 600;
                 line-height: 55px;
             }
@@ -72,6 +74,7 @@ const DoYouNeedWrapper = styled.div`
         #content{
             #text{
                 width: 100%;
+                max-width: 100%;
                 text-align: center;
                 .heading{
                     font-size: 40px;
