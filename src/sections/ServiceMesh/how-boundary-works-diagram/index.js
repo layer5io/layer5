@@ -20,12 +20,14 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             {/*/>*/}
 
                             {/*  Line to istio */}
-                            <g className={activeExampleIndex >= 0 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="336.52" y2="107.99" stroke="#3c494f" />
+                            <g className={activeExampleIndex >= 2 ? "show " : "render "}>
+                                <line x1="286.52" y1="248.91" x2="360.52" y2="107.99" stroke="#3c494f" />
                             </g>
-                            <g className={activeExampleIndex >= 1 ? "show " : "render "}>
+                            {/*  Line to linkerd */}
+                            <g className={activeExampleIndex >= 3 ? "show " : "render "}>
                                 <line x1="286.52" y1="248.91" x2="393.32" y2="248.91" stroke="#3c494f" />
                             </g>
+                            {/*  Line to consul */}
                             <g className={activeExampleIndex >= 2 ? "show " : "render "}>
                                 <line x1="286.52" y1="248.91" x2="286.52" y2="333.83" stroke="#3c494f" />
                             </g>
@@ -34,11 +36,11 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 <line x1="286.52" y1="248.91" x2="179.72" y2="248.91" stroke="#3c494f" />
                             </g>
                             {/* line to kuma */}
-                            <g className={activeExampleIndex >= 4 ? "show " : "render "}>
+                            <g className={activeExampleIndex >= 5 ? "show " : "render "}>
                                 <line x1="286.52" y1="248.91" x2="115.07" y2="365.04" stroke="#3c494f" />
                             </g>
                             {/* line to citrix*/}
-                            <g className={activeExampleIndex >= 5 ? "show " : "render "}>
+                            <g className={activeExampleIndex >= 4 ? "show " : "render "}>
                                 <line x2="262.52" y2="228.91" x1="145.07" y1="160.04" stroke="#3c494f" />
                             </g>
                             {/* line to osm*/}
@@ -53,7 +55,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             {/* Hosts & Services */}
                             <g>
                                 {/* NSM*/}
-                                <g className={activeExampleIndex >= 3 ? "show " : "render "} transform="translate(305.05 390.04)" >
+                                <g className={activeExampleIndex >= 4 ? "show " : "render "} transform="translate(305.05 390.04)" >
                                     <svg width="56px" height="56px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                                         x="0px" y="0px"
                                         viewBox="0 0 318 361" className="nsm">
@@ -96,7 +98,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 </g>
 
                                 {/* KUMA */}
-                                <g className={activeExampleIndex >= 4 ? "show " : "render "} transform="translate(100.07 330.04)">
+                                <g className={activeExampleIndex >= 5 ? "show " : "render "} transform="translate(100.07 330.04)">
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="56px" height="56px" viewBox="0 0 395 435" enableBackground="new 0 0 395 435">
                                         <image id="image0" width="395" height="435" x="0" y="0"
                                             href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYsAAAGzCAMAAADpF8t5AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
@@ -184,7 +186,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                     </svg>
                                 </g>
                                 {/* Citrix */}
-                                <g className={activeExampleIndex >= 5 ? "show " : "render "} transform="translate(100.07 115.04)">
+                                <g className={activeExampleIndex >= 4 ? "show " : "render "} transform="translate(100.07 115.04)">
                                     <svg className="citrix" xmlns="http://www.w3.org/2000/svg"
                                         id="Layer_1" x="0" y="0" enableBackground="new 0 0 144 144" version="1.1"
                                         width="56px" height="56px"
@@ -2974,7 +2976,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             </g>
 
                             {/* Istio */}
-                            <g transform="translate(305.05 107.99)">
+                            <g className={activeExampleIndex >= 2 ? "show " : "render "} transform="translate(305.05 107.99)">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="56px" height="56px" viewBox="0 0 465 694" enableBackground="new 0 0 465 694" >
                                     <image id="image0" width="465" height="694" x="0" y="0"
                                         href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdEAAAK2CAMAAAAmBFbWAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
@@ -3069,7 +3071,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             </g>
 
                             {/* Linkerd */}
-                            <g className='authenticate' transform="translate(400.32 217.91)">
+                            <g className={activeExampleIndex >= 3 ? "show " : "render "} transform="translate(400.32 217.91)">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     width="56px"
                                     height="56px"
@@ -3129,9 +3131,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             </g>
 
                             {/* Consul */}
-                            <g transform="translate(205.32 322.91)"
-                                className={activeExampleIndex === 0 ? "" : " inactive authorize"}
-                            >
+                            <g transform="translate(205.32 322.91)" className={activeExampleIndex >= 2 ? "show " : "render "}>
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="56px" height="56px" viewBox="0 0 172 167" enableBackground="new 0 0 172 167">
                                     <image id="image0" width="172" height="167" x="0" y="0"
                                         href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKwAAACnCAYAAACM9rcbAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
@@ -3447,7 +3447,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
 
                             {/* Octarine */}
                             <g  transform="translate(147.32 217.91)"
-                                className={activeExampleIndex <= 1 ? " " : "inactive access"}
+                                className={activeExampleIndex >= 3 ? "show " : "render "}
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="56px" height="56px" className="octarine"
                                     id="Layer_1" x="0" y="0" enableBackground="new 0 0 174 201" version="1.1"
