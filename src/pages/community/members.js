@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import theme from "../../theme/blog/themeStyles";
 import { GlobalStyle } from "../../sections/app.style";
-
 import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
@@ -11,13 +10,14 @@ import AllMembers from "../../sections/Members-grid/AllMembers";
 import ActiveMembers from "../../sections/Members-grid/ActiveMembers";
 import InactiveMembers from "../../sections/Members-grid/InactiveMembers";
 import Maintainers from "../../sections/Members-grid/Maintainers";
-
+import Meshmate from "../../sections/Members-grid/Meshmate";
 
 const options = [
     { label: "All Members", value: "all" },
     { label: "Active Members", value: "active" },
     { label: "Inactive Members", value: "inactive" },
-    { label: "Maintainers", value: "maintainers" }
+    { label: "Maintainers", value: "maintainers" },
+    { label: "MeshMates", value: "meshmates" }
 ];
 
 const MembersPage = () => {
@@ -32,6 +32,7 @@ const MembersPage = () => {
         case "active" : return <ActiveMembers {...props} />;
         case "inactive" : return <InactiveMembers {...props}/>;
         case "maintainers" : return <Maintainers {...props}/>;
+        case "meshmates" : return <Meshmate {...props}/>;
         default: return <AllMembers {...props}/>;
         }
     };
