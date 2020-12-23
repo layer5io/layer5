@@ -19,9 +19,9 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             {/*    fill="none"*/}
                             {/*/>*/}
 
-                            {/*  Line */}
+                            {/*  Line to istio */}
                             <g className={activeExampleIndex >= 0 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="286.52" y2="163.99" stroke="#3c494f" />
+                                <line x1="286.52" y1="248.91" x2="336.52" y2="107.99" stroke="#3c494f" />
                             </g>
                             <g className={activeExampleIndex >= 1 ? "show " : "render "}>
                                 <line x1="286.52" y1="248.91" x2="393.32" y2="248.91" stroke="#3c494f" />
@@ -39,7 +39,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             </g>
                             {/* line to citrix*/}
                             <g className={activeExampleIndex >= 5 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="115.07" y2="135.04" stroke="#3c494f" />
+                                <line x2="262.52" y2="228.91" x1="145.07" y1="160.04" stroke="#3c494f" />
                             </g>
                             {/* line to osm*/}
                             <g className={activeExampleIndex >= 6 ? "show " : "render "}>
@@ -53,8 +53,8 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             {/* Hosts & Services */}
                             <g>
                                 {/* NSM*/}
-                                <g className={activeExampleIndex >= 3 ? "show " : "render "} transform="translate(255.05 430.04)" >
-                                    <svg width="66" height="66" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                <g className={activeExampleIndex >= 3 ? "show " : "render "} transform="translate(305.05 390.04)" >
+                                    <svg width="56px" height="56px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                                         x="0px" y="0px"
                                         viewBox="0 0 318 361" className="nsm">
                                         <g>
@@ -97,7 +97,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
 
                                 {/* KUMA */}
                                 <g className={activeExampleIndex >= 4 ? "show " : "render "} transform="translate(100.07 330.04)">
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="66px" height="66px" viewBox="0 0 395 435" enableBackground="new 0 0 395 435">
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="56px" height="56px" viewBox="0 0 395 435" enableBackground="new 0 0 395 435">
                                         <image id="image0" width="395" height="435" x="0" y="0"
                                             href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYsAAAGzCAMAAADpF8t5AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
                                         AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAANlBMVEX///8pC1MpC1MpC1Mp
@@ -184,10 +184,10 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                     </svg>
                                 </g>
                                 {/* Citrix */}
-                                <g className={activeExampleIndex >= 5 ? "show " : "render "} transform="translate(100.07 110.04)">
+                                <g className={activeExampleIndex >= 5 ? "show " : "render "} transform="translate(100.07 115.04)">
                                     <svg className="citrix" xmlns="http://www.w3.org/2000/svg"
                                         id="Layer_1" x="0" y="0" enableBackground="new 0 0 144 144" version="1.1"
-                                        width="56" height="56"
+                                        width="56px" height="56px"
                                         viewBox="0 0 144 144">
                                         <g id="black"><g id="Ciricle_copy_10"><path d="M144,72c0,39.8-32.2,72-72,72c-39.8,0-72-32.2-72-72S32.2,0,72,0C111.8,0,144,32.2,144,72"/></g>
                                             <g id="Logo_symbol_copy_10"><g><path d="M45.5,59c2.1,0,3.9-1.7,3.9-3.9s-1.7-3.9-3.9-3.9c-2.1,0-3.9,1.7-3.9,3.9S43.3,59,45.5,59" className="st0"/><rect
@@ -210,7 +210,7 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 </g>
                                 {/* OSM */}
                                 <g className={activeExampleIndex >= 6 ? "show " : "render "} transform="translate(420.07 330.04)">
-                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="66px" height="66px" viewBox="0 0 150 165" enableBackground="new 0 0 150 165">
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="56px" height="56px" viewBox="0 0 150 165" enableBackground="new 0 0 150 165">
                                         <image id="image0" width="150" height="165" x="0" y="0"
                                             href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAAClCAYAAAC+7wThAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
                                             AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAp
@@ -404,9 +404,9 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                     </svg>
                                 </g>
                                 {/* Network SM */}
-                                <g className={activeExampleIndex >= 7 ? "show " : "render "} transform="translate(420.03 110.04)">
+                                <g className={activeExampleIndex >= 7 ? "show " : "render "} transform="translate(440.03 110.04)">
                                     <svg className="network" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
-                                        viewBox="0 0 360 360" width="66" height="66">
+                                        viewBox="0 0 360 360" width="56px" height="56px">
                                         <title>network-service-mesh-icon-color</title>
                                         <path
                                             d="M354.90036,183.35045a5.09669,5.09669,0,0,0-.537,1.67,10.31888,10.31888,0,0,1-3.05683,4.70864c-.71479.15469-.75881-.4163-.71145-.80818.2736-2.26512.0172-4.54486.22869-6.80788a25.82324,25.82324,0,0,0-.00477-5.17328,13.72653,13.72653,0,0,1-.04968-2.3966c.0235-.3472-.04205-.81648.53112-.84784a10.37581,10.37581,0,0,1,3.40531,6.09163c.03389.17249-.04667.39343.19462.48319v.19252a6.58981,6.58981,0,0,0,0,2.50279Z"
@@ -2847,8 +2847,8 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 </g>
                             </g>
                             {/* Traefik */}
-                            <g className={activeExampleIndex >= 8 ? "show " : "render "} transform="translate(259.05 0.04)">
-                                <svg className="traefik" xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 -190.89 988 988">
+                            <g className={activeExampleIndex >= 8 ? "show " : "render "} transform="translate(209.05 40.04)">
+                                <svg className="traefik" xmlns="http://www.w3.org/2000/svg" width="56px" height="56px" viewBox="0 -190.89 988 988">
                                     <title>traefik</title>
                                     <g id="Layer_2" data-name="Layer 2">
                                         <g id="Layer_1-2" data-name="Layer 1">
@@ -2974,8 +2974,8 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             </g>
 
                             {/* Istio */}
-                            <g transform="translate(259.05 107.99)">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="66px" height="66px" viewBox="0 0 465 694" enableBackground="new 0 0 465 694" >
+                            <g transform="translate(305.05 107.99)">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="56px" height="56px" viewBox="0 0 465 694" enableBackground="new 0 0 465 694" >
                                     <image id="image0" width="465" height="694" x="0" y="0"
                                         href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdEAAAK2CAMAAAAmBFbWAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
                                                 AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAArlBMVEX////z9vru8vijtddX
@@ -3069,10 +3069,10 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             </g>
 
                             {/* Linkerd */}
-                            <g className='authenticate' transform="translate(363.32 212.91)">
+                            <g className='authenticate' transform="translate(400.32 217.91)">
                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                    width="66"
-                                    height="66"
+                                    width="56px"
+                                    height="56px"
                                     id="linkerd-logo" x="0" y="0" enableBackground="new 0 0 138.9 129.2" version="1.1"
                                     viewBox="0 0 138.9 129.2" >
                                     <g><g><g><linearGradient id="SVGID_1_" x1="130.52" x2="130.52" y1="24.532" y2="79.491" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#2BEDA7"/><stop
@@ -3129,10 +3129,10 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             </g>
 
                             {/* Consul */}
-                            <g transform="translate(249.32 322.91)"
+                            <g transform="translate(205.32 322.91)"
                                 className={activeExampleIndex === 0 ? "" : " inactive authorize"}
                             >
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="66px" height="66px" viewBox="0 0 172 167" enableBackground="new 0 0 172 167">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="56px" height="56px" viewBox="0 0 172 167" enableBackground="new 0 0 172 167">
                                     <image id="image0" width="172" height="167" x="0" y="0"
                                         href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKwAAACnCAYAAACM9rcbAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
                                     AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAA
@@ -3445,31 +3445,11 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                                 </svg>
                             </g>
 
-                            {/* Access */}
-                            <g  transform="translate(137.32 212.91)"
+                            {/* Octarine */}
+                            <g  transform="translate(147.32 217.91)"
                                 className={activeExampleIndex <= 1 ? " " : "inactive access"}
                             >
-                                {/*<path className='spacer' d="M140.24 213.11h68.6v66.62h-68.6z" />*/}
-                                {/*<image*/}
-                                {/*    className='dropShadow'*/}
-                                {/*    width="75"*/}
-                                {/*    height="75"*/}
-                                {/*    transform="translate(137.32 212.91)"*/}
-                                {/*    xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAACXBIWXMAAAsSAAALEgHS3X78AAAEWklEQVR4Xu2cW1LjSBBFj93G0PRrepqYWQKLYz0sjj3Mo7sxxg9szUdWulLlElbOl6vJG5FRkmwJ5+FmSSbImnRdR2icZqfeMKTJ7d3k1HvOWd3DvdslkzHOKsAMbbckm/Rh+xTAV2ElSDao7LeqzgTAXo8PQavCMk6aIlCmlbDwWpKF06WxjCqwI1iFm96ZmKXQfQXWQlmWZaeQdsCLiV2KPbAvgQ1N8ApqBsxNXAIXKSwwe945qoSlULbABlincZOOvQDd5PauN4/1YCVXTcmgLoEr4DrF+7R/SXZZCexcZcvvBYGyBp6BZYqpea+6rw6LfvnNETAfgc8pPgEfEGgX6fwW5q/OjFp6awTQI/ATyRlyee6B/eT2bqLuOsAyc5U6a4646TPwFfgG/AZ8Scev6MM6V1AqdcsOKbdnBNR35BcPuTS3aXuaRqDurCl5rlJY34A/gBsE3EcEls5drcDSEtwATwioeXpdy3KVxm15gdoEr7AukXL7hDjqBvgT+B0B+B75QS05S2GtgAWSIwi8ZTo257hi+mVoXtAyvEDc8wEpva8IqBtyKVpnnbssrGcyqDUC6Zp8t69Wy1AZKix11zV5ov+SoiVn2TvhljxHrck3LAuq9+Ctk/xMd9LJpbtmZIddkcHpeEF7sNQgWyQnfYa0D902l8EytNsWmEKbF6OFde7SMgQpxRl9QOW3kqOcahO8fbP9LviuGGvfE89Z6q7ys4+ujFN/z5o4ogWV1VN+/lfzmDJOtYu2AqjU0Gc/mdsQrNG035LGOitEwHIpYDkUsBwKWA4FLIcClkMBy6GA5VDAcihgORSwHApYDgUshwKWQwHLoYDlUMByKGA5FLAcClgOBSyHApZDAcuhgOVQwHIoYDkUsBwKWA4FLIcClkMBy6GA5VDAcihgORSwHBqCpe1mmPFXl823mvNYZ3UcA2wVYi2PUbmcahroRkYLOpXDyVxqsOyJtn1/V4wa0Mb/yo/NZxCchWVf1AvbVn7tVNdRz51y/h0X9pdf5qHd9rpUQa+J3G7PALqH+y610dmLKqgt0vm5Ineqa79eS/2Gmpf2Ry/TqLkpNAusAzhqKDcXVVBlK/8C6VK3PcWtdbJqXkvgB5LPggxOe6NrDjsqwxLWCmm8/oF0fCqoDe11spbO+gn8A/yL5PdEdtiRu6A+wWsfsbrqkQwG5IctaKv7XpO2JlggoP5CuvAfye56Id+8DhoqQ23nX9JfIEJb/Ftb18E6S7vvtRS/A38jeS6RHBVWrwx7C/dMbu+mSPK2mbz1FUM6MyqsLeKiJ/KKITp/2blr3z3cHxxWc5badUNOXmv9ibbXorF3eV3wwq5Fs0Ly3FHMV8DgklBTfp1VjmyC5Q1M7/gbE4fHh7FLQqm7dFvnsBXtrZ9VwrLA7EP3zkTfQUlvbWW2cv4qQ49X1/97q2v+dSZ6+68tkvgWV5Msy1I2RizFOQpWTS2vUzoGTE3/G9Zb1H9jnvZy1NR71wAAAABJRU5ErkJggg=="*/}
-                                {/*/>*/}
-                                {/*<rect*/}
-                                {/*    className='iconBg'*/}
-                                {/*    x="147.53"*/}
-                                {/*    y="219.88"*/}
-                                {/*    width="55"*/}
-                                {/*    height="55"*/}
-                                {/*    rx="3"*/}
-                                {/*/>*/}
-                                {/*<path*/}
-                                {/*    className='vaultIcon'*/}
-                                {/*    d="M162.45 234.8L175 260l12.63-25.16zm14 5h1.46v1.45h-1.46zm-2.9 5.83h-1.46v-1.46h1.46zm0-2.19h-1.46V242h1.46zm0-2.19h-1.46v-1.45h1.46zm2.19 6.57h-1.44v-1.46h1.46zm0-2.19h-1.44v-1.46h1.46zm0-2.19h-1.44V242h1.46zm0-2.19h-1.44v-1.45h1.46zm.71.73h1.46v1.46h-1.46zm0 3.65v-1.46H178v1.46z"*/}
-                                {/*/>*/}
-                                <svg xmlns="http://www.w3.org/2000/svg"  width="66" height="66" className="octarine"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56px" height="56px" className="octarine"
                                     id="Layer_1" x="0" y="0" enableBackground="new 0 0 174 201" version="1.1"
                                     viewBox="0 0 174 201">
                                     <title>octarine</title>
