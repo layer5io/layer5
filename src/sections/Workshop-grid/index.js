@@ -60,8 +60,6 @@ const WorkshopsPage = ({hide_path, limit}) => {
         `
     );
 
-    console.log(data.allMdx);
-
     const toggleActive = (id) => {
         if(open){
             if(ID === id){

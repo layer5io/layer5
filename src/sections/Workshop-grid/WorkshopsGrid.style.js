@@ -9,24 +9,24 @@ export const WorkshopPageWrapper = styled.div`
 
 		p {
 			color: darkgrey;
-			font-size: 20px;
-			margin-left: 20px;
+			font-size: 1.25rem;
+			margin-left: 1.25rem;
 			float: left;
-			padding-left: 25px;
+			padding-left: 1.5625rem;
 		}
 	}
 
 	.btn-and-status-open {
 		display: flex;
 		align-items: center;
-		bottom: 35px;
+		bottom: 2.1875rem;
 		position: absolute;
 		width: 95%;
 
 		p {
 			color: darkgrey;
-			font-size: 20px;
-			margin-left: 20px;
+			font-size: 1.25rem;
+			margin-left: 1.25rem;
 			float: left;
 		}
 	}
@@ -35,16 +35,16 @@ export const WorkshopPageWrapper = styled.div`
 		display: block;
 		width: auto;
 		margin-left: auto;
-		margin-right: 20px;
-		padding: 6px 10px;
-		font-size: 12px;
+		margin-right: 1.25rem;
+		padding: 0.375rem 0.625rem;
+		font-size: 0.75rem;
 		font-weight: 600;
 		color: #fff;
 		background-color: #00b39f;
 		border: none;
-		border-radius: 15px;
+		border-radius: 0.9375rem;
 		outline: none;
-		box-shadow: 0px 5px 10px rgba(0, 179, 159, 0.3);
+		box-shadow: 0rem 0.3125rem 0.625rem rgba(0, 179, 159, 0.3);
 	}
 
 	.linkAndReadBtns {
@@ -53,7 +53,7 @@ export const WorkshopPageWrapper = styled.div`
 		flex-direction: row-reverse;
 		justify-content: space-between;
 		position: absolute;
-		bottom: 0px;
+		bottom: 0rem;
 	}
 
 	.linkAndReadBtns-open {
@@ -69,7 +69,7 @@ export const WorkshopPageWrapper = styled.div`
 		border: none;
 		justify-content: center;
 		align-items: center;
-		font-size: 18px;
+		font-size: 1.125rem;
 		cursor: pointer;
 		transition: 0.5s ease-in all;
 
@@ -79,7 +79,7 @@ export const WorkshopPageWrapper = styled.div`
 	}
 
 	a.siteLink {
-		margin-left: 20px;
+		margin-left: 1.25rem;
 		filter: grayscale(1);
 		transition: 0.5s ease-in-out all;
 
@@ -91,23 +91,23 @@ export const WorkshopPageWrapper = styled.div`
 
 	.readme-btn {
 		float: right;
-		margin: 0 20px 20px 0;
-		padding: 10px 15px;
+		margin: 0 1.25rem 1.25rem 0;
+		padding: 0.625rem 0.9375rem;
 		border: none;
 		background-color: turquoise;
-		font-size: 20px;
+		font-size: 1.25rem;
 		font-weight: 500;
 		color: white;
-		border-radius: 5px;
+		border-radius: 0.3125rem;
 		cursor: pointer;
-		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+		box-shadow: 0rem 0.125rem 0.625rem rgba(0, 0, 0, 0.2);
 		-webkit-transition: 0.5s ease-in-out all;
 		transition: 0.5s ease-in-out all;
 
 		&:hover {
 			color: turquoise;
 			background-color: white;
-			box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+			box-shadow: 0rem 0.125rem 1.25rem rgba(0, 0, 0, 0.2);
 		}
 	}
 
@@ -121,12 +121,12 @@ export const WorkshopPageWrapper = styled.div`
 		display: block;
 		width: 100%;
 		height: 100%;
-		padding: 20px 20px 60px 20px;
+		padding: 1.25rem 1.25rem 3.75rem 1.25rem;
 	}
 
 	.social-icons {
 		display: flex;
-		margin-left: 20px;
+		margin-left: 1.25rem;
 		width: 70%;
 	}
 
@@ -135,18 +135,18 @@ export const WorkshopPageWrapper = styled.div`
 		color: #00d3a9;
 		border: none;
 		align-items: center;
-		padding: 5px 15px;
+		padding: 0.3125rem 0.9375rem;
 		background-color: whitesmoke;
-		margin-right: 10px;
-		border-radius: 5px;
-		font-size: 18px;
+		margin-right: 0.625rem;
+		border-radius: 0.3125rem;
+		font-size: 1.125rem;
 		font-weight: 400;
-		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+		box-shadow: 0rem 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
 		transition: 0.5s ease-in-out all;
 
 		&:hover {
 			color: #00b39f;
-			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			box-shadow: 0rem 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);
 
 			img {
 				filter: none;
@@ -154,61 +154,61 @@ export const WorkshopPageWrapper = styled.div`
 		}
 
 		img {
-			height: 20px;
+			height: 1.25rem;
 			width: auto;
 			display: block;
-			padding-right: 10px;
+			padding-right: 0.625rem;
 			filter: grayscale(1);
 		}
 	}
 
 	.workshop-list-wrapper {
-		padding: 50px 0;
+		padding: 3.125rem 0rem;
 	}
 	.workshop-grid-wrapper {
-		padding-bottom: 60px;
-		margin-top: 80px;
+		padding-bottom: 3.75rem;
+		margin-top: 5rem;
 	}
 
 	.workshop-grid-card {
 		width: 100%;
 		display: block;
 		height: auto;
-		border-radius: 5px;
-		margin-bottom: 20px;
-		box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+		border-radius: 0.3125rem;
+		margin-bottom: 1.25rem;
+		box-shadow: 0rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.2);
 		-webkit-transition: 0.5s ease-in-out all;
 		transition: 0.5s ease-in-out all;
 
 		&:hover {
-			box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+			box-shadow: 0rem 1.25rem 2.5rem rgba(0, 0, 0, 0.15);
 		}
 	}
 
-	@media only screen and (max-width: 912px) {
+	@media only screen and (max-width: 57rem) {
 		.workshop-page-wrapper {
-			padding-bottom: 80px;
+			padding-bottom: 5rem;
 		}
 	}
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: 37.5rem) {
 		.links {
-			padding: 0px 10px;
-			margin-right: 5px;
-			font-size: 15px;
+			padding: 0rem 0.625rem;
+			margin-right: 0.3125rem;
+			font-size: 0.9375rem;
 
 			img {
-				height: 15px;
+				height: 0.9375rem;
 			}
 		}
 
 		.readme-btn {
-			margin: 0 10px 10px 0;
-			padding: 5px 5px;
+			margin: 0rem 0.625rem 0.625rem 0rem;
+			padding: 0.3125rem 0.3125rem;
 		}
 	}
 	.see-more-button {
-		margin: 0 auto;
+		margin: 0rem auto;
 	}
 
 	.para {
