@@ -51,6 +51,10 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             <g className={activeExampleIndex >= 7 ? "show " : "render "}>
                                 <line x1="310.52" y1="228.91" x2="455.07" y2="150.04" stroke="#3c494f" />
                             </g>
+                            {/*  Line to traefik */}
+                            <g className={activeExampleIndex >= 8 ? "show " : "render "}>
+                                <line x1="286.52" y1="248.91" x2="237.52" y2="75.83" stroke="#3c494f" />
+                            </g>
 
                             {/* Hosts & Services */}
                             <g>
