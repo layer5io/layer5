@@ -21,23 +21,23 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
 
                             {/*  Line to istio */}
                             <g className={activeExampleIndex >= 2 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="360.52" y2="107.99" stroke="#3c494f" />
+                                <line x1="298.52" y1="230.91" x2="328.52" y2="157.99" stroke="#3c494f" />
                             </g>
                             {/*  Line to linkerd */}
                             <g className={activeExampleIndex >= 3 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="393.32" y2="248.91" stroke="#3c494f" />
+                                <line x1="314.52" y1="248.91" x2="400.32" y2="248.91" stroke="#3c494f" />
                             </g>
                             {/*  Line to consul */}
                             <g className={activeExampleIndex >= 2 ? "show " : "render "}>
                                 <line x1="286.52" y1="248.91" x2="286.52" y2="333.83" stroke="#3c494f" />
                             </g>
-
+                            {/* Line to octarine*/}
                             <g className={activeExampleIndex >= 3 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="179.72" y2="248.91" stroke="#3c494f" />
+                                <line x1="258.52" y1="248.91" x2="195.72" y2="248.91" stroke="#3c494f" />
                             </g>
                             {/* line to kuma */}
                             <g className={activeExampleIndex >= 5 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="115.07" y2="365.04" stroke="#3c494f" />
+                                <line x1="264.52" y1="270.91" x2="144.07" y2="336.04" stroke="#3c494f" />
                             </g>
                             {/* line to citrix*/}
                             <g className={activeExampleIndex >= 4 ? "show " : "render "}>
@@ -45,11 +45,11 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
                             </g>
                             {/* line to osm*/}
                             <g className={activeExampleIndex >= 6 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="455.07" y2="365.04" stroke="#3c494f" />
+                                <line x1="310.52" y1="268.91" x2="455.07" y2="365.04" stroke="#3c494f" />
                             </g>
                             {/* line to network sm*/}
                             <g className={activeExampleIndex >= 7 ? "show " : "render "}>
-                                <line x1="286.52" y1="248.91" x2="455.07" y2="150.04" stroke="#3c494f" />
+                                <line x1="310.52" y1="228.91" x2="455.07" y2="150.04" stroke="#3c494f" />
                             </g>
 
                             {/* Hosts & Services */}
