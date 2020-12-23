@@ -17,7 +17,7 @@ const BlogSingle = ({data}) => {
             <PageHeader
                 title={frontmatter.title}
                 subtitle={frontmatter.subtitle}
-                categories={frontmatter.tags}
+                category={frontmatter.category}
                 author={{ name: frontmatter.author }}
                 thumbnail={frontmatter.thumbnail}
             />
@@ -27,16 +27,18 @@ const BlogSingle = ({data}) => {
                         <Col xs={12} lg={12}>
                             <Row>
                                 <Col xs={12}>
-                                    <div className="single-post-block">
+                                    <div>
                                         <MDXRenderer>{body}</MDXRenderer>
                                         <div className="post-info-block">
                                             <div className="tags">
                                                 <span>Tags:</span>
-                                                {frontmatter.tags && frontmatter.tags.map(tag => (
-                                                    <Link key={`${frontmatter.title}-${tag}`}
-                                                        to={`/blog/tag/${slugify(tag)}`}>{tag}
-                                                    </Link>
-                                                ))}
+                                                <div>
+                                                    {frontmatter.tags && frontmatter.tags.map(tag => (
+                                                        <Link key={`${frontmatter.title}-${tag}`}
+                                                            to={`/blog/tag/${slugify(tag)}`}>{tag}
+                                                        </Link>
+                                                    ))}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -9,67 +9,57 @@ const PageHeaderWrapper = styled.div`
             text-align: center;
             position: relative;
             height: auto;
-            padding-top: 125px;
-            padding-left: 10px;
-            padding-right: 10px;
+            margin: 10rem auto 5rem;
+            padding: 0 1rem 0;
             z-index: 99;
             h1{
-                font-size: 36px;
-                line-height: 48px;
+                font-size: 2.5rem;
+                margin: 1rem auto;
             }
             h3{
                 color: inherit;
+                margin: 1rem auto;
             }
         
         .feature-image{
-            margin-left: auto;
-            margin-right: auto;
-            max-height: 1000px;
-            max-width: 500px;
+            margin: 2rem auto;
+            max-height: 62.5rem;
+            max-width: 31rem;
             object-fit: contain;    
         }
         .breadcrumbs {
             display: flex;
             justify-content: center;
-            align-items: center;
-            margin-top: 30px;  
+            margin-top: 1.5rem;  
             a {
                 color: inherit;
 
                 &:hover{
                     opacity: .8;
                 }
-            } 
-            a+a {
-                margin: 0 15px 0px 7px;
             }
             h4 {
-                margin:0 7px;
+                display: inline-block;
+                margin:0 0.4rem;
                 opacity: .7;
             }
-            &.page {
-                a {
-                   font-weight: 600;
-                }
-                span {
-                    margin: 0 7px;
-                }
-                span+span{
-                    margin-left: 0;
-                }
+            p{
+                margin: 0;
+                display: inline-block;
             }
-
-
         } 
     }
     @media only screen and (max-width: 480px) {
-       .page-header{
-            padding-top: 100px;
+        .page-header{
             h1{
-                font-size: 30px;
-                line-height: 44px;
+                font-size: 2rem;
             }
-       }
+        }
+
+        .breadcrumbs{
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .sub_header h1{
