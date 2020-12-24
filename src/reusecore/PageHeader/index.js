@@ -1,9 +1,47 @@
 import React from "react";
+import {Link, graphql, useStaticQuery} from "gatsby";
 
+import slugify from "../../utils/slugify";
 import PageHeaderWrapper from "./pageHeader.style";
 import Image from "../../components/image";
 
+const authorField = (author, isSlugAvailable) =>{
+    return(
+        <>
+            { 
+                isSlugAvailable ? 
+                    <Link className="authorLink"
+                        to={`/community/members/${slugify(author.name)}`}>
+                        <span>{author.name}</span>
+                    </Link> 
+                    : <span>{author.name}</span> 
+            }
+        </>
+    );
+};
+
 const PageHeader = ({ category, title, subtitle,  author, thumbnail, path, sub_header }) => {
+    let isSlugAvailable = false;
+    if(author){
+        const validMembers = useStaticQuery(
+            graphql`
+                query validMemberss{
+                    allMdx(
+                        filter:{ 
+                            fields:{ collection:{eq:"members"} }
+                        }
+                    ) {
+                        nodes {
+                            frontmatter {
+                                name
+                            }
+                        }
+                    }
+                }
+            `
+        );
+        isSlugAvailable = validMembers.allMdx.nodes.some(matter=> matter.frontmatter.name == author.name);
+    }
     return (
         <PageHeaderWrapper>
             {/* NOTE: 
@@ -26,7 +64,7 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail, path, sub_h
                             <>
                                 <span>
                                     <h4>By:</h4>
-                                    <p>{author.name}</p>
+                                    <p>{authorField(author, isSlugAvailable)}</p>
                                 </span>
                             </>
                         )}
@@ -34,7 +72,8 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail, path, sub_h
                 )}
                 {!category && author && (
                     <div className="breadcrumbs post">
-                        <h4>By:</h4> <span>{author.name}</span>
+                        <h4>By:</h4>
+                        <span>{authorField(author, isSlugAvailable)}</span>
                     </div>
                 )}
                 {/*{!author && path && (*/}
