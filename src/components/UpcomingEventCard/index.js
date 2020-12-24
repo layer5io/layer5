@@ -5,6 +5,7 @@ import UpcomingEventsWrapper from "./EventCard.style";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Mousewheel } from "swiper";
 import "swiper/swiper-bundle.css";
+import Button from "../../reusecore/Button";
 
 SwiperCore.use([Pagination, Mousewheel]);
 
@@ -23,21 +24,21 @@ const UpcomingEvents = ({ data }) => {
                         {data.nodes.map(item => {
                             return(
                                 <SwiperSlide key={item.id}>
-                                    <div className="blog-slider__item swiper-slide">
-                                        <div className="blog-slider__img">
+                                    <div className="blog-slider_item swiper-slide">
+                                        <div className="blog-slider_img">
                                             <Image {...item.frontmatter.thumbnail} alt={item.frontmatter.title} />
                                         </div>
-                                        <div className="blog-slider__content">
-                                            <h3 className="blog-slider__title">{item.frontmatter.title}</h3>
-                                            <span className="blog-slider__code">{item.frontmatter.date}</span>
-                                            <div className="blog-slider__text">
+                                        <div className="blog-slider_content">
+                                            <h3 className="blog-slider_title">{item.frontmatter.title}</h3>
+                                            <p className="blog-slider_date">{item.frontmatter.date}</p>
+                                            <div className="blog-slider_text">
                                                 <MDXRenderer>
                                                     {item.body}
                                                 </MDXRenderer>
                                             </div>
-                                            <div className="blog-slider__button">
-                                                <a href={item.frontmatter.eurl} rel="noreferrer" target="_blank">Join Now</a>
-                                            </div>
+                                            {/* <div className="blog-slider__button"> */}
+                                            <Button className="blog-slider_button" url={item.frontmatter.eurl} title="Join Now" />
+                                            {/* </div> */}
                                         </div>
                                     </div>
                                 </SwiperSlide>

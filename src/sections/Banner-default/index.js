@@ -1,5 +1,4 @@
 import React from "react";
-import "../app.style.css";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";

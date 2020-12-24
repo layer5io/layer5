@@ -9,7 +9,7 @@ import ReactTooltip from "react-tooltip";
 function Categories() {
     return (
         <React.Fragment>
-            <div className="categories-table">
+            <div>
                 <div className="odd-row">
                     <h4 className="category-row-heading">Service Mesh</h4>
                     <ul className="category">

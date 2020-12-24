@@ -5,7 +5,6 @@ overflow-x: auto;
 
 table {
     border-spacing: 0;
-    border: 1px solid #3c494f;
     width: 100%;
   
     td {
@@ -18,7 +17,7 @@ table {
         border-bottom: 1px solid #efefef;
     }
     th {
-        background: rgb(60, 73, 79);
+        background: #1E2117;
         color: #ffffff;
         height: 60px;
         font-weight: 600;
@@ -48,6 +47,13 @@ table {
 		:last-child {
 			border-right: 0;
 		}
-    }
+	}
+	
+	th, tr{
+		&:hover{
+			box-shadow: 0px 2px 15px -10px black;
+			transform: translateY(0px);
+		}
+	}
   }
 `;

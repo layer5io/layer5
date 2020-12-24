@@ -2,115 +2,60 @@ import styled from "styled-components";
 
 const UpcomingEventsWrapper = styled.div`
 	.blog-slider {
-		width: 95%;
+		width: 100%;
 		position: relative;
-		max-width: 800px;
+		max-width: 50rem;
 		margin: auto;
 		background: #fff;
-		box-shadow: 0px 5px 10px rgba(34, 35, 58, 0.1);
-		padding: 15px;
-		border-radius: 10px;
-		height: 450px;
+		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+		padding: 1rem;
+		border-radius: 0.5rem;
+		height: 34rem;
 		transition: all 0.3s;
 	}
 
-	.blog-slider__item {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transform: translate3d(0px, -10px, 0px);
-	}
-
-	.blog-slider__img {
-		display: block;
-		width: 300px;
-		border-radius: 10px;
-		height: 250px;
-		border: none;
-		margin: auto 10px;
-	}
-
-	.blog-slider__title {
+	.blog-slider_content{
 		text-align: center;
-		font-size: 35px;
-		margin-bottom: 10px;
 	}
 
-	.blog-slider__code {
+	.blog-slider_title {
+		text-align: center;
+		font-size: 2rem;
+		margin: 1rem auto 0.2rem;
+	}
+
+	.blog-slider_date {
 		display: flex;
+		color: rgba(0, 0, 0, 0.5);
 		justify-content: flex-end;
-		align-items: center;
-		margin-bottom: 10px;
+		margin: 0;
 	}
 
-	.blog-slider__text {
+	.blog-slider_text {
 		h2 {
 			text-align: start;
-			font-size: 20px;
+			font-size: 1.25rem;
 		}
 
 		ul > li {
-			list-style: none;
-		}
-	}
-
-	.blog-slider__button {
-		display: block;
-		width: 100%;
-		height: auto;
-		text-align: center;
-
-		a {
-			text-decoration: none;
-			font-size: 20px;
-			border-radius: 10px;
-			color: aliceblue;
-			background: linear-gradient(90deg, #00b39f -140%, #00d3a9 100%);
-			padding: 10px 20px;
-			box-shadow: 0px 2px 8px rgba(0, 179, 159, 0.3);
-			transition: 0.5s ease all;
-
-			&:hover {
-				box-shadow: 0px 5px 10px rgba(0, 179, 159, 0.5);
-			}
+			text-align: start;
+			list-style: disc;
 		}
 	}
 
 	@media (max-width: 720px) {
-		.blog-slider {
-			height: auto;
-		}
-
-		.blog-slider__item {
-			display: block;
-		}
-
-		.blog-slider__img {
-			width: 100%;
-			margin: 0px;
-			height: auto;
-		}
-
-		.blog-slider__button {
-			margin-bottom: 35px;
+		.blog-slider_button {
+			margin-bottom: 2rem;
 		}
 	}
 
 	@media (max-width: 420px) {
-		.blog-slider__title {
-			font-size: 28px;
+		.blog-slider_title {
+			font-size: 1.75rem;
 		}
 
-		.blog-slider__code {
-			font-size: 15px;
-		}
-
-		.blog-slider__text > h2 {
-			font-size: 18px;
-		}
-
-		.isjPCk .blog-slider__text ul > li {
-			font-size: 15px;
+		.blog-slider_text > h2 {
+			font-size: 1.15rem;
 		}
 	}
 `;

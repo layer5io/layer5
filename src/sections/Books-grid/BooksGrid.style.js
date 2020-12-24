@@ -17,4 +17,15 @@ export const BooksPageWrapper = styled.div`
             padding-bottom: 80px;
         }
     }
+
+    .post-content-block{
+        height: 8rem;
+    }
+
+    .post-meta-block{
+        height: auto;
+        .author{
+            text-align: left;
+        }
+    }
 `;

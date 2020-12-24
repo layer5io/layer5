@@ -28,7 +28,7 @@ const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => 
                                         </Col>
                                     ))}
                                     <Col>
-                                        <Pager pageContext={pageContext} isListView={isListView}/>
+                                        <Pager pageContext={pageContext} text={"Posts"} isListView={isListView}/>
                                     </Col>
                                 </Row>
                             </div>

@@ -59,7 +59,7 @@ const InternshipSectionWrapper = styled.div`
         background: rgba(247,247,247,1);
         justify-content: center;
         border-radius: 1rem;
-        transition: box-shadow 0.2s;
+        transition: all 0.2s;
         transition-timing-function: ease-in-out;
         h3{
             font-size: 1.1rem;
@@ -67,15 +67,21 @@ const InternshipSectionWrapper = styled.div`
             font-weight: 600;
             align-self: center;
             margin: auto 0.5rem;
+            transition: all 0.2s;
         }
         &:hover{
             box-shadow: 0px 0px 10px -4px ${props => props.theme.shadowLightColor};
-        }
-        &:hover .oppurtunity_icon{
-            background: #EBC017;
-            box-shadow: none;
-            position: relative;
-            left: 7px;
+            
+            h3{
+                transform: translateX(0.5rem);
+            }
+
+            .oppurtunity_icon{
+                background: #00D3A9;
+                box-shadow: none;
+                position: relative;
+                left: 0.5rem;
+            }
         }
     }
 
@@ -89,6 +95,8 @@ const InternshipSectionWrapper = styled.div`
         font-size: 1.25rem;
         border-radius: 1rem;        
         left: 0;
+        background: #00B39F;
+        color: white;
         transition: left 0.2s;
     }
 

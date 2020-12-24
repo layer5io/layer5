@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
-import { GlobalStyle } from "../sections/app.style";
-
 import logo from "../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
 import SocialLinks from "../../components/SocialLinks";
@@ -12,7 +10,7 @@ import FooterWrapper from "./footer.style";
 
 const Footer = () => {
     return (
-        FooterWrapper>
+        <FooterWrapper>
             <img className="section__particle one" src={particleOne} alt="Layer5, the service mesh company" />
             <Container>
                 <Row className="footer-head">

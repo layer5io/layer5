@@ -1,119 +1,131 @@
 import styled from "styled-components";
 
-
 const RelatedPostsWrapper = styled.div`
+
+    .widgets-title{
+        margin: 1rem 0 2rem 0.5rem;
+        h3{
+            font-size: 1.5rem;
+        }
+    }
+    @media screen and (max-width:500px){
         .widgets-title{
-            margin-bottom: 20px;
-            margin-left: 5px;
             h3{
-                display: inline-block;
-                font-size: 25px;
-                font-weight: 500;
-                line-height: 30px;
-                position: relative;
-                &:before{
-                    position: absolute;
-                    top: 50%;
-                    right: -80px;
-                    content: '';
-                    width: 70px;
-                    height: 1px; 
-                }
-            }
-            
-        }
-        .allBlogsCard{
-            height:100%;      
-            a{
-                justify-content: center;
-                margin-top: 48%;
-                font: 400 25px "Open Sans", sans-serif;
-                color: rgb(0,0,0);
-                display: flex;
-                align-items: center;
-                transition: all 0.3s linear;
-                svg{
-                    margin-left: 0px;
-                    font-size: 35px;
-                    transition: all 0.3s linear;
-                }
-                &:hover{
-                    color: #00D5A7;
-                    svg{
-                        margin-left: 3px;
-                            transform: scale(1.2);
-                    }
-                }
-                
+                text-align: center;
             }
         }
-        @media screen and (max-width: 992px) {
-            .allBlogsCard a {
-              margin-top: 60%;
-            }
-        }          
-        
+    }
 
+    .cardCol{
+        padding: 0 1rem;
+    }
+    @media screen and (max-width: 992px) {
         .cardCol{
-            padding-left: 2px;
-            padding-right: 2px;
-            margin-left: 15px;
-            margin-right: 15px;
+            padding: 0 1rem;
+            margin: auto;
         }
-        @media screen and (max-width: 992px) {
-            .cardCol{
-                padding: 0;
-                margin: auto;   
+    }
+
+    .slick-list{
+        padding-top: 2px;
+        text-align: center;
+    }
+    @media screen and (max-width: 992px) {
+        .slick-list{
+            margin: 0;	
+        }
+    }
+
+    .slick-arrow{
+        width: 2rem;	
+        height: 3rem;	
+    }	
+    .slick-arrow:before{	
+        color: rgba(108, 118, 123, 1);
+        font-size: 6rem;
+        display: inline-block;
+        height: 3rem;
+    }
+    .slick-arrow:hover:before{	
+        color: #00B39F;	
+    }
+    .slick-prev:before{	
+        content: "‹";	
+        line-height: 0;
+    }
+    .slick-next:before{	
+        content: "›";
+        line-height: 0;
+    }
+    .slick-disabled{	
+        visibility: hidden;
+    }
+    .slick-dots li button:before {
+        font-size: 10px;
+        color:rgb(0 179 159);
+    }
+    .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: #00B39F;
+    }
+
+    .post-meta-block{
+        text-align: left;
+    }
+
+    .post-content-block{
+        height: 10rem;
+    }
+
+    @media screen and (max-width: 720px) and (min-width: 385px){
+        .post-content-block{
+            height: 8rem;
+        }
+    }
+
+    .allBlogs{
+        height: 21.5rem;
+    }
+
+    .allBlogs_card{
+        display: inline-block;
+        height: inherit;
+        width: inherit;
+        border-radius: 0.5rem;
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s;
+
+        h2{
+            padding: 0.5rem 0;
+        }
+
+        a{
+            height: inherit;
+            width: inherit;
+            font-size: 1.8rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg{
+                margin-left: 0px;
+                padding: 0.5rem 0 0.3rem;
+                font-size: 4rem;
+                transition: all 0.3s;
             }
         }
-
-        .slick-list{	
-            margin: 25px;	
-        }
-        @media screen and (max-width: 992px) {
-            .slick-list{
-                margin: 0px;	
+        &:hover{
+            box-shadow: 0px 2px 15px 4px rgba(0,0,0,0.2);
+            h2{
+                color: #00B39F;
+            }
+            svg{
+                color: #00B39F;
+                margin-left: 3px;
+                transform: scale(1.3);
             }
         }
-
-        .slick-arrow{	
-            margin-top: -55px;	
-            width: 50px;	
-            height: 50px;	
-            line-height: 50px;	
-            outline: none;	
-        }	
-        .slick-arrow:before{	
-            color: rgba(108, 118, 123, 1);
-            font-size: 90px;
-            margin: auto;	
-        }	
-        .slick-arrow:hover:before{	
-            color: rgba(0,179,159,1);	
-        }	
-        
-        .slick-prev:before{	
-            content: "‹";	
-        }	
-        .slick-next:before{	
-            content: "›";	
-        }	
-        
-        .slick-disabled{	
-            visibility: hidden;
-        }	
-        .slick-dots li button:before {
-            opacity: 0.5;
-            font-size: 10px;
-            color: rgba(0,179,159,1);
-        }
-        .slick-dots li.slick-active button:before {
-            opacity: 1;
-            color: rgba(0, 153, 136,1);
-        }
-
-
-
+    }
 `;
 
 
