@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FotterWrapper = styled.section`
+const FooterWrapper = styled.section`
   padding-top: 40px;
   padding-bottom: 25px;
   background: black;
@@ -212,4 +212,4 @@ const FotterWrapper = styled.section`
   }
 `;
 
-export default FotterWrapper;
+export default FooterWrapper;
