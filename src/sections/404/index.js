@@ -1,6 +1,8 @@
 import React from "react";
 
 import L404SectionWrapper from "./404.style";
+import serviceMesh from "./service-mesh.svg";
+import Button from "../../reusecore/Button";
 
 const messages = [
     "Oh, no. Please pardon our meshy site.",
@@ -8,6 +10,8 @@ const messages = [
     "Looks like this page doesn't exists. What a mesh!",
     "Things tend to get a bit meshy around here.",
     "Please pardon our mesh.",
+    "How did this mesh happen?",
+    "Well, isn't this a mesh?",
     "Yikes. Things are a mesh here."
 ];
 let message = messages[Math.floor(Math.random()*messages.length)];
@@ -15,11 +19,12 @@ let message = messages[Math.floor(Math.random()*messages.length)];
 const L404 = () => {
     return (
         <L404SectionWrapper>
-            <h3 className="strong text-lighten"> {message} </h3>
-            <p className="text-lighten-2">Page does not exist.</p>
-            <p className="card-panel">Please 
-                <a  href="https://github.com/layer5io/layer5/issues/new"> report this error</a> <em>(thank you!) </em>
-                and return to <a href="/">layer5.io</a>.</p>
+            <h1 className="message"> {message} </h1>
+            <h3 className="subtitle">Page does not exist.</h3>
+            <div className="button-row">
+                <img src={serviceMesh} alt="service meshed" className="mesh" />
+                <Button primary url="/" external="false">Return to Layer5</Button>
+            </div>
         </L404SectionWrapper>
     );
 };
