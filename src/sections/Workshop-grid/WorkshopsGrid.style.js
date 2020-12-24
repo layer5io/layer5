@@ -112,7 +112,7 @@ export const WorkshopPageWrapper = styled.div`
 
 	.links {
 		display: flex;
-		color: #00d3a9;
+		color: ${props => props.theme.primaryLightColorTwo};
 		border: none;
 		align-items: center;
 		padding: 0.3125rem 0.9375rem;
@@ -122,7 +122,7 @@ export const WorkshopPageWrapper = styled.div`
 		font-size: 1.125rem;
 		font-weight: 400;
 		box-shadow: 0rem 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
-		transition: 0.5s ease-in-out all;
+		transition: 0.25s ease-in-out all;
 
 		&:hover {
 			color: #00b39f;
@@ -155,11 +155,11 @@ export const WorkshopPageWrapper = styled.div`
 		border-radius: 0.3125rem;
 		margin-bottom: 1.25rem;
 		box-shadow: 0rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.2);
-		-webkit-transition: 0.5s ease-in-out all;
-		transition: 0.5s ease-in-out all;
+		-webkit-transition: 0.25s ease-in-out all;
+		transition: 0.25s ease-in-out all;
 
 		&:hover {
-			box-shadow: 0rem 1.25rem 2.5rem rgba(0, 0, 0, 0.15);
+			box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.15);
 		}
 	}
 
