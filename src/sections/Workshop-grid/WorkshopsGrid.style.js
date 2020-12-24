@@ -39,7 +39,7 @@ export const WorkshopPageWrapper = styled.div`
 		padding: 0.375rem 0.625rem;
 		font-size: 0.75rem;
 		font-weight: 600;
-		color: #fff;
+		color: #eee;
 		background-color: #00b39f;
 		border: none;
 		font-family: 'Open Sans';
@@ -80,7 +80,7 @@ export const WorkshopPageWrapper = styled.div`
 
 	a.siteLink {
 		margin-left: 1.25rem;
-		filter: grayscale(1);
+		filter: grayscale(90%);
 		transition: 0.25s ease-in-out all;
 
 		&:hover {
@@ -95,6 +95,7 @@ export const WorkshopPageWrapper = styled.div`
 		display: none;
 		width: 100%;
 		height: 100%;
+		font-family: 'Open Sans';
 	}
 
 	.active {
@@ -125,7 +126,7 @@ export const WorkshopPageWrapper = styled.div`
 		transition: 0.25s ease-in-out all;
 
 		&:hover {
-			color: #00b39f;
+			color: ${props => props.theme.primaryLightColorTwo};
 			img {
 				filter: none;
 			}
