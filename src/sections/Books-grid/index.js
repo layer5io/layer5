@@ -50,9 +50,9 @@ const BooksGrid = ({hide_path}) => {
         centerMode: true,
         focusOnSelect: true,
         lazyLoad: true,
-        infinite: true,
+        infinite: false,
         speed: 400,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         responsive: [
             {
@@ -82,7 +82,7 @@ const BooksGrid = ({hide_path}) => {
     return (
         <BooksPageWrapper>
             <PageHeader title="Service mesh with the best" path={path}/>
-            <h3 className="sub-head">Learn to service mesh from the world’s authority </h3>
+            <h2 className="sub-heading">Learn to service mesh from the world’s authority </h2>
             <div className="book_list">
                 <Slider {...settings}>
                     {data.allMdx.nodes.map(({id, frontmatter, fields }) => (

@@ -1,11 +1,6 @@
 import styled from "styled-components";
 export const BooksPageWrapper = styled.div`
 
-    .sub-head{
-        margin: -4rem auto auto;
-        text-align: center;
-    }
-
     .slick-list{
         text-align: center;
         padding: 6rem 3rem !important;

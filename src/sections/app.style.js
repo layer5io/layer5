@@ -180,12 +180,19 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Qanelas Soft', sans-serif;
+    font-family: 'Qanelas Soft', 'Open Sans';
     color: #1E2117; 
     margin: 0;
 }
 
-p{
+h2.sub-heading {
+    color: gray;
+    font-weight: 500;
+    margin: -4rem auto auto;
+    text-align: center;
+}
+
+p {
     margin: 0 0 1rem 0;
     font-weight: 400 !important;
 }
