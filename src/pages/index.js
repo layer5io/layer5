@@ -17,7 +17,6 @@ import News from "../sections/News";
 import Getapp from "../sections/Getapp";
 import Contact from "../sections/Contact";
 import Footer from "../sections/Footer";
-import DoYouNeedService from "../sections/DoYouNeedService";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
@@ -30,7 +29,6 @@ const IndexPage = () => (
             <Navigation />
             <Banner />
             <Integrations />
-            <DoYouNeedService onClick={()=>console.log("Act upon")}/>
             <Features />
             <AppScreens />
             <Counters /> 
