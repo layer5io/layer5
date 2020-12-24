@@ -113,7 +113,42 @@ export const smi_data=[
             }
         ],
         "previous_versions": [
-
+            {
+                "id": "2",
+                "date": "2020-10-14T20:14:48+05:30",
+                "mesh_name": "Open Service Mesh",
+                "mesh_version": "v1.6",
+                "cases_passed": "10",
+                "passing_percentage": "100%",
+                "status": "completed",
+                "more_details": [
+                    {
+                        "smi_specification": "traffic-access",
+                        "time": "2m5s",
+                        "assertions": "10",
+                        "result": "Passed",
+                        "reason": "Passing",
+                        "capability": "Half",
+                        "status": "Passing"
+                    }, {
+                        "smi_specification": "traffic-split",
+                        "time": "2m5s",
+                        "assertions": "10",
+                        "result": "Passed",
+                        "reason": "Passing",
+                        "capability": "Full",
+                        "status": "Passing"
+                    }, {
+                        "smi_specification": "traffic-spec",
+                        "time": "2m5s",
+                        "assertions": "10",
+                        "result": "Passed",
+                        "reason": "Passing",
+                        "capability": "Full",
+                        "status": "Passing"
+                    }
+                ]
+            }           
         ],
         "traffic-access": "Full",   // Only for visual representation
         "traffic-split": "Full",    // Only for visual representation
