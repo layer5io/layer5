@@ -22,15 +22,12 @@ const BannerSectionWrapper = styled.section`
     }
     .section-title{
         h1{
-            font-family: "qanelas_softregular";
-
             font-weight: 400;
             font-size: 60px;
             line-height: 75px;
             margin: 0 0 38px 0; 
             span{
                 font-weight: 700;
-                font-family: "qanelas_softsemibold";
                 color: ${props => props.theme.secondaryColor};
             }
         }
