@@ -5,7 +5,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
-    font-family: "Qanelas Soft";
+    font-family: "QanelasSoft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftBlack.otf');
     font-weight: normal;
 }

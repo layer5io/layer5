@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FotterWrapper = styled.section`
+const FooterWrapper = styled.section`
   padding-top: 40px;
   padding-bottom: 25px;
   background: black;
@@ -8,7 +8,7 @@ const FotterWrapper = styled.section`
   background-size: cover;
   position: relative;
   
-  .footer-head{
+  .footer-head {
     margin: 0 40px 20px 0;
     .footer-logo-pos{
       padding: 0px;
@@ -17,24 +17,25 @@ const FotterWrapper = styled.section`
         height: auto;
       }
     }
-    .links{
+    .links {
       float: right;
-      filter: invert();
+      filter: invert(70%);
     }
   }
-  .section__particle{
+  .section__particle {
       position: absolute;
-      &.one{
+      &.one {
           left: 0;
           top: 20%;
           width: 270px;
       }
   }
 
-  .subscribe{
-    margin: 30px 0 50px 0;
+  .subscribe {
+    font-family: "Qanelas Soft";
+    margin: 0px 0 30px 0;
     display: inline-flex;
-    input{
+    input {
       padding: 16px;
       margin-right: 5px;
       width: 300px;
@@ -45,26 +46,41 @@ const FotterWrapper = styled.section`
     }
     float: right;
     margin-right: 40px; 
+  }, span {
+    display: block;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
   }
 
-  .desc-info{
+  .desc-info {
     padding-right: 25px;
     font-style: italic;
   }
 
-  ul{
+  ul {
     padding: 0;
     list-style: none;
     margin: 0;
     li .anchor {
-      color: ${props => props.theme.white};
+      color: ${props => props.theme.primaryLightColor};
     }
   }
   p{
     color: ${props => props.theme.white};
   }
-  .anchor{
-    transition: 450ms all;
+  .widget-title{
+    font-family: "Qanelas Soft";
+    margin-bottom: 20px;
+    color: ${props => props.theme.white};
+
+    &:hover {
+      color: ${props => props.theme.secondaryColor};
+    }
+  }
+  .anchor {
+    font-family: "Qanelas Soft";
+    transition: 400ms all;
     color: ${props => props.theme.white};
     &:hover {
       color: ${props => props.theme.secondaryColor};
@@ -77,15 +93,19 @@ const FotterWrapper = styled.section`
   }
   .footer-widgets {
     margin-bottom: 25px;
-    .widget-title {
-      color: ${props => props.theme.white};
-      font-size: 25px;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-    .widget-catagory {
+    
+      },    
+      .githitle {
+        color: ${props => props.theme.white};
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        },
+    
+    .widget-category {
       li {
         .anchor {
+          font-family: "Open Sans";
           font-size: 16px;
           line-height: 22px;
         }
@@ -112,6 +132,15 @@ const FotterWrapper = styled.section`
         margin-left: 40px;
       }
     }
+    .copyright-text {
+      font-size: 14px;
+      color: #ccc;
+      text-align: center;
+    
+      transition: 450ms all;
+      &:hover {
+        color: ${props => props.theme.secondaryColor};
+      }
     p{
       font-size: 18px;
       line-height: 38px;
@@ -137,7 +166,7 @@ const FotterWrapper = styled.section`
   @media only screen and (max-width: 912px) {
     background-position: -200px; 
     .footer-widgets {
-      .widget-catagory {
+      .widget-category {
         margin-left:0px;
       }
       margin-bottom: 70px;
@@ -148,8 +177,7 @@ const FotterWrapper = styled.section`
      .footer-menu {
         margin-bottom: 40px;
       }
-      .footer-menu,
-      .copyright-text {
+      .footer-menu {
         text-align: center;
       }
     }
@@ -181,4 +209,4 @@ const FotterWrapper = styled.section`
   }
 `;
 
-export default FotterWrapper;
+export default FooterWrapper;
