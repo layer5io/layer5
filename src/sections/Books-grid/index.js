@@ -1,13 +1,12 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import Card from "../../components/Card";
 import PageHeader from "../../reusecore/PageHeader";
-
+import { Link } from "gatsby";
+import Slider from "react-slick";
+import "swiper/swiper-bundle.css";
 import { BooksPageWrapper } from "./BooksGrid.style";
-import Button from "../../reusecore/Button";
 
-const BooksGrid = ({hide_path, limit}) => {
+const BooksGrid = ({hide_path}) => {
     const data = useStaticQuery(
         graphql`
             query allBooks {
@@ -23,7 +22,7 @@ const BooksGrid = ({hide_path, limit}) => {
                             abstract
                             thumbnail{
                                 childImageSharp{
-                                    fluid(maxWidth: 1000){
+                                    fluid(maxWidth: 480, maxHeight: 600){
                                         ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
@@ -41,28 +40,60 @@ const BooksGrid = ({hide_path, limit}) => {
     );
 
     let path = hide_path ? "" : "Books";
-    let no_of_items = limit ? limit : data.length;
+    let thumb_imgs = [];
+    {data.allMdx.nodes.map(({frontmatter}) => (
+        thumb_imgs.push(frontmatter.thumbnail.publicURL)
+    ));}
+
+    var settings = {
+        className: "center",
+        centerMode: true,
+        focusOnSelect: true,
+        lazyLoad: true,
+        infinite: true,
+        speed: 400,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 1050,
+                settings: {
+                    slidesToShow: 1,
+                    customPaging: function(index) {
+                        return (
+                            <a>
+                                <img src={thumb_imgs[index]} />
+                            </a>
+                        );
+                    },
+                    dots: true,
+                    dotsClass: "slick-dots slick-thumb",
+                }
+            },
+        ]
+    };
 
     return (
         <BooksPageWrapper>
-            <PageHeader title="Books" path={path}/>
-            <div className="books-page-wrapper">
-                <Container>
-                    <div className="books-grid-wrapper">
-                        <Row>
-                            {data.allMdx.nodes.slice(0, no_of_items).map(({id, frontmatter, fields }) => (
-                                <Col xs={12} sm={6} lg={4} key={id}>
-                                    <Card frontmatter={frontmatter} fields={fields}/>
-                                </Col>
-                            ))}
-                            { limit && (
-                                <div className="see-more-button">
-                                    <Button primary title="see more" url="books"/>
-                                </div>
-                            )}
-                        </Row>
-                    </div>
-                </Container>
+            <PageHeader title="Service mesh with the best" path={path}/>
+            <h3 className="sub-head">Learn to service mesh from the world’s authority </h3>
+            <div className="book_list">
+                <Slider {...settings}>
+                    {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+                        <div className="book_image" key={id}>
+                            <div className="blog-slider_img">
+                                <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
+                            </div>
+                            <Link className="book-page_link" to={fields.slug}></Link>
+                        </div>
+                    ))}
+                </Slider>
             </div>
         </BooksPageWrapper>
     );
