@@ -5,10 +5,10 @@ export const WorkshopPageWrapper = styled.div`
 		display: flex;
 		width: 97%;
 		position: absolute;
-		top: 90%;
+		top: 92%;
 
 		p {
-			color: darkgrey;
+			color: ${props => props.theme.primaryLightColor};
 			font-size: 1.25rem;
 			margin-left: 1.25rem;
 			float: left;
@@ -42,9 +42,9 @@ export const WorkshopPageWrapper = styled.div`
 		color: #fff;
 		background-color: #00b39f;
 		border: none;
+		font-family: 'Open Sans';
 		border-radius: 0.9375rem;
 		outline: none;
-		box-shadow: 0rem 0.3125rem 0.625rem rgba(0, 179, 159, 0.3);
 	}
 
 	.linkAndReadBtns {
@@ -71,45 +71,25 @@ export const WorkshopPageWrapper = styled.div`
 		align-items: center;
 		font-size: 1.125rem;
 		cursor: pointer;
-		transition: 0.5s ease-in all;
+		transition: 0.25s ease-in all;
 
 		&:hover {
-			color: #00d3a9;
+			color: ${props => props.theme.primaryLightColorTwo};
 		}
 	}
 
 	a.siteLink {
 		margin-left: 1.25rem;
 		filter: grayscale(1);
-		transition: 0.5s ease-in-out all;
+		transition: 0.25s ease-in-out all;
 
 		&:hover {
-			color: #00d3a9;
+			color: ${props => props.theme.primaryLightColorTwo};
 			filter: none;
 		}
 	}
 
-	.readme-btn {
-		float: right;
-		margin: 0 1.25rem 1.25rem 0;
-		padding: 0.625rem 0.9375rem;
-		border: none;
-		background-color: turquoise;
-		font-size: 1.25rem;
-		font-weight: 500;
-		color: white;
-		border-radius: 0.3125rem;
-		cursor: pointer;
-		box-shadow: 0rem 0.125rem 0.625rem rgba(0, 0, 0, 0.2);
-		-webkit-transition: 0.5s ease-in-out all;
-		transition: 0.5s ease-in-out all;
 
-		&:hover {
-			color: turquoise;
-			background-color: white;
-			box-shadow: 0rem 0.125rem 1.25rem rgba(0, 0, 0, 0.2);
-		}
-	}
 
 	.text-contents {
 		display: none;
@@ -146,8 +126,6 @@ export const WorkshopPageWrapper = styled.div`
 
 		&:hover {
 			color: #00b39f;
-			box-shadow: 0rem 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);
-
 			img {
 				filter: none;
 			}
