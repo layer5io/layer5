@@ -4,7 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { RiCloseCircleFill } from "react-icons/ri";
 import { IoMdHelpCircle } from "react-icons/io";
 import { IconContext } from "react-icons";
-import { TableWrapper } from "./LandscapeTable.style";
+import { TableWrapper } from "./SMITable.style";
 
 const Table = ({ columns, data }) => {
     // Use the state and functions returned from useTable to build the UI

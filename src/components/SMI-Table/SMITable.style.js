@@ -8,18 +8,18 @@ table {
     width: 100%;
   
     td {
-        padding: 5px;
-        height: 60px;
+        padding: 0.3rem;
+        height: 4rem;
         color: black;
         text-align: center;
-        font-size: 14px;
+        font-size: 0.9rem;
         font-weight: 400;
         border-bottom: 1px solid #efefef;
     }
     th {
         background: #1E2117;
         color: #ffffff;
-        height: 60px;
+        height: 4rem;
         font-weight: 600;
     }
   
