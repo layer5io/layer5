@@ -32,7 +32,6 @@ const LandscapeGrid=() => {
                                     <Tab>Categories</Tab>
                                     <Tab>Non-Functional</Tab>
                                     <Tab>Functional</Tab>
-                                    <Tab>SMI Compatibilty</Tab>
                                     <Tab>Tools</Tab>
                                 </TabList>
                                 <TabPanel>
