@@ -5,26 +5,21 @@ const L404SectionWrapper = styled.section`
     position: relative;
     overflow: hidden;
     text-align: center;
-    .text-lighten {
-        font-size: 3em;
-        color: black;
-        margin-top: 1.46rem;
-        line-height: 110%;
+
+    h1.message {
+        font-size: 2rem;
+        line-height: 1.5rem;
     }
-    .text-lighten-2 {
-        font-size: 2em;
-        color: black;
+    h3.subtitle {      
+        font-family: "Qanelas Soft Ultralight";        
+        font-size: 1.5rem;
+        color: gray;
         font-style: italic;
         margin-top: 2.5rem;
     }
-    .card-panel {
-        transition: box-shadow .25s, -webkit-box-shadow .25s;
-        margin: auto;  
-        margin-top: 2rem;
-        padding: 24px;
-        border-radius: 2px;
-        background-color: #fff;
-        width: 90%;
+    img.mesh {
+        margin-top: 50px
+        max-width: 40%;
     }
 `;
 
