@@ -45,12 +45,13 @@ const LandscapeGrid=() => {
                                     <Functional />
                                 </TabPanel>
                                 <TabPanel>
-                                    <SMI_Compatibility />
-                                </TabPanel>
-                                <TabPanel>
                                     <Tools />
                                 </TabPanel>
                             </Tabs>
+                            <h2 className="subsequent-heading">SMI Compliance</h2>
+                            <div className="landscape-table">
+                                <SMI_Compatibility />
+                            </div>
                             <div className="missingText">
                                 <div>
                                     <img src={landscape}
