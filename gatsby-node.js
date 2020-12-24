@@ -78,6 +78,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       'src/templates/member-single.js'
   );
 
+  const WorkshopTemplate = path.resolve(
+      'src/templates/workshop-single.js'
+  );
+
   const res = await graphql(`
     {
       allPosts:  allMdx(
@@ -112,6 +116,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
       allCollections: allMdx(
         filter: {fields: {collection: {eq: "events"}}}
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+        }
+      }
+      singleWorkshop: allMdx(
+        filter: {fields: {collection: {eq: "workshops"}}}
       ){
         nodes{
           fields{
@@ -159,6 +173,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       node => node.fields.collection === `members`
   );
 
+  const singleWorkshop = res.data.singleWorkshop.nodes;
   const events = res.data.allCollections.nodes;
 
   paginate({
@@ -270,6 +285,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: MemberTemplate,
       context: {
         slug: member.fields.slug,
+      },
+    })
+  });
+
+  singleWorkshop.forEach(workshop => {
+    createPage({
+      path: workshop.fields.slug,
+      component: WorkshopTemplate,
+      context: {
+        slug: workshop.fields.slug,
       },
     })
   });

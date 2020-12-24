@@ -22,7 +22,7 @@ const WorkshopsGridPage = () => {
                 <SEO title="Learn" />
                 <Navigation />
                 <BookPage limit={3} hide_path={hide_path} />
-                <WorkshopsPage limit={4} hide_path={hide_path} />
+                <WorkshopsPage limit={3} hide_path={hide_path} />
                 <Footer />
             </Layout>
         </ThemeProvider>

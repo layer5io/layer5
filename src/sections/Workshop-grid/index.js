@@ -1,21 +1,17 @@
 import React, { useState } from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import WorkshopCard from "../../components/Workshop-Card";
 import PageHeader from "../../reusecore/PageHeader";
-
 import { WorkshopPageWrapper } from "./WorkshopsGrid.style";
 
 // Social Icons
 import { BsArrowDown } from "react-icons/bs";
 import { BsArrowUp } from "react-icons/bs";
 import Slack from "../../assets/images/socialIcons/slack_color.png";
-import Slide from "../../assets/images/socialIcons/slide_color.png";
-import Link from "../../assets/images/socialIcons/link_color.png";
-import Youtube from "../../assets/images/socialIcons/youtube_color.png";
-import Lab from "../../assets/images/socialIcons/lab_color.png";
 import Button from "../../reusecore/Button";
+import { FaRegWindowMaximize } from "react-icons/fa";
 
 
 const WorkshopsPage = ({hide_path, limit}) => {
@@ -39,6 +35,7 @@ const WorkshopsPage = ({hide_path, limit}) => {
                             title
                             date(formatString: "MMMM Do, YYYY")
                             slack
+                            slides
                             abstract
                             status
                             labs
@@ -85,6 +82,8 @@ const WorkshopsPage = ({hide_path, limit}) => {
         }
     };
 
+    console.log(data);
+
     let path = hide_path ? "" : "Workshop";
     let no_of_items = limit ? limit : data.length;
 
@@ -96,7 +95,7 @@ const WorkshopsPage = ({hide_path, limit}) => {
                     <div className="workshop-grid-wrapper">
                         <Row>
                             {data.allMdx.nodes.slice(0, no_of_items).map(({id, frontmatter, fields, body }) => (
-                                <Col {...content && ID === id ? {xs:12, sm:12, lg:12} : {xs:12, sm:12, lg:6} } key={id} onClick={() => toggleActive(id)}>
+                                <Col {...content && ID === id ? {xs:12, sm:12, lg:12} : {xs:12, sm:6, lg:4} } key={id}>
                                     <div className="workshop-grid-card">
                                         <WorkshopCard frontmatter={frontmatter} fields={fields} content={content} ID={ID} id={id} />
                                         <div className={content && ID === id ? "active" : "text-contents"}>
@@ -111,32 +110,16 @@ const WorkshopsPage = ({hide_path, limit}) => {
                                                         <img src={Slack} alt="Slack"/>
                                                         Slack
                                                     </a> : ""}
-                                                {frontmatter.slides && frontmatter.status === "delivered" && content && ID === id ?
-                                                    <a href={frontmatter.slides} target = "_blank" rel="noreferrer" className="links">
-                                                        <img src={Slide} alt="Slide"/>
-                                                        Slides
-                                                    </a> : ""}
-                                                {frontmatter.eurl && frontmatter.status === "delivered" && content && ID === id ?
-                                                    <a href={frontmatter.eurl} target = "_blank" rel="noreferrer" className="links">
-                                                        <img src={Link} alt="Link"/>
-                                                        EURL
-                                                    </a> : ""}
-                                                {frontmatter.labs && frontmatter.status === "delivered" && content && ID === id ?
-                                                    <a href={frontmatter.labs} target = "_blank" rel="noreferrer" className="links">
-                                                        <img src={Lab} alt="Lab"/>
-                                                        Labs
-                                                    </a> : ""}
-                                                {frontmatter.video && frontmatter.status === "delivered" && content && ID === id ?
-                                                    <a href={frontmatter.video} target = "_blank" rel="noreferrer" className="links">
-                                                        <img src={Youtube} alt="Youtube video"/>
-                                                        Video
-                                                    </a> : ""}
                                             </div>
-                                            {frontmatter.status === "delivered" ? "" : <p>Upcoming...</p>}
-                                            <div className="expand">
-                                                {content && ID === id ?
-                                                    <div> Read Less <BsArrowUp className="icon" size={30} /> </div> :
-                                                    <div> Read More <BsArrowDown className="icon" size={30} /> </div> }
+                                            <div className={content && ID === id ? "linkAndReadBtns-open" : "linkAndReadBtns"}>
+                                                <div className="expand">
+                                                    {content && ID === id ?
+                                                        <button onClick={() => toggleActive(id)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
+                                                        <button onClick={() => toggleActive(id)} className="readmeBtn"> Read More <BsArrowDown className="icon" size={30} /></button> }
+                                                </div>
+                                                <div className="externalLink">
+                                                    <Link to={fields.slug} className="siteLink"><FaRegWindowMaximize style={{ height: "25px", width: "auto" }} /></Link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
