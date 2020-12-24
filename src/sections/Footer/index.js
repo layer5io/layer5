@@ -41,7 +41,7 @@ const Footer = () => {
                                 <Row>
                                     <Col lg={7}>
                                         <div className="footer-widgets">
-                                            <h3 className="widget-title"><Link className="widget-title" to="/learn">RESOURCES</Link></h3>
+                                            <h3 className="widget-title"><Link to="/learn">RESOURCES</Link></h3>
                                             <ul className="widget-category">
                                                 <li>
                                                     <Link className="anchor" to="/landscape#tools">

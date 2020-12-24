@@ -8,7 +8,7 @@ const FooterWrapper = styled.section`
   background-size: cover;
   position: relative;
   
-  .footer-head{
+  .footer-head {
     margin: 0 40px 20px 0;
     .footer-logo-pos{
       padding: 0px;
@@ -17,26 +17,25 @@ const FooterWrapper = styled.section`
         height: auto;
       }
     }
-    .links{
+    .links {
       float: right;
       filter: invert(70%);
     }
   }
-  .section__particle{
+  .section__particle {
       position: absolute;
-      &.one{
+      &.one {
           left: 0;
           top: 20%;
           width: 270px;
       }
   }
 
-  .subscribe{
-    font-family: "qanelas_softregular";
-
+  .subscribe {
+    font-family: "Qanelas Soft";
     margin: 0px 0 30px 0;
     display: inline-flex;
-    input{
+    input {
       padding: 16px;
       margin-right: 5px;
       width: 300px;
@@ -54,12 +53,12 @@ const FooterWrapper = styled.section`
     margin-bottom: 5px;
   }
 
-  .desc-info{
+  .desc-info {
     padding-right: 25px;
     font-style: italic;
   }
 
-  ul{
+  ul {
     padding: 0;
     list-style: none;
     margin: 0;
@@ -71,7 +70,7 @@ const FooterWrapper = styled.section`
     color: ${props => props.theme.white};
   }
   .widget-title{
-    font-family: "qanelas_softregular";
+    font-family: "Qanelas Soft";
     margin-bottom: 20px;
     color: ${props => props.theme.white};
 
@@ -79,8 +78,8 @@ const FooterWrapper = styled.section`
       color: ${props => props.theme.secondaryColor};
     }
   }
-  .anchor{
-    font-family: 'Open Sans', sans-serif;
+  .anchor {
+    font-family: "Qanelas Soft";
     transition: 400ms all;
     color: ${props => props.theme.white};
     &:hover {
@@ -94,7 +93,6 @@ const FooterWrapper = styled.section`
   }
   .footer-widgets {
     margin-bottom: 25px;
-
     
       },    
       .githitle {
@@ -103,12 +101,11 @@ const FooterWrapper = styled.section`
         font-weight: 600;
         margin-bottom: 20px;
         },
-    .widget-title {
-      color: ${props => props.theme.primaryLightColor};
-    }
+    
     .widget-category {
       li {
         .anchor {
+          font-family: "Open Sans";
           font-size: 16px;
           line-height: 22px;
         }
