@@ -9,7 +9,7 @@ import Footer from "../sections/Footer";
 import Brand from "../sections/Brand";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/hosting/themeStyles";
+import theme from "../theme/app/themeStyles";
 
 const BrandPage = () => (
     <ThemeProvider theme={theme}>

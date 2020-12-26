@@ -11,7 +11,7 @@ import CareerSingle from "../sections/Career-single";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 
 export const query = graphql`
     query CareerBySlug($slug: String!) {

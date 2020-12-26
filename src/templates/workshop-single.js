@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 import Navigation from "../sections/Navigation";
 import Footer from "../sections/Footer";
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 import WorkshopSinglePage from "../sections/Workshop-single/index";
 
 export const query = graphql`

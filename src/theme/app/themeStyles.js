@@ -1,7 +1,7 @@
 const theme = {
     black: "#000000",
-    white: "#ffffff", 
-    
+    white: "#ffffff",
+
     // charcoal
     primaryColor: "#3c494f",
 
@@ -12,18 +12,18 @@ const theme = {
     primaryLightColorTwo: "#00d3a9",
 
     // caribbean green (light green)
-    secondaryColor: "#00b39f", 
+    secondaryColor: "#00b39f",
 
     // lavender blush (light pink)
     secondaryLightColor: "#FFEBEC",
-    
+
     // dark jungle green
     tertiaryColor: "#1e2117",
 
-    headingColor: "#111111", 
+    headingColor: "#111111",
 
     // light slate gray (medium gray)
-    textColor: "#7A848E",  
+    textColor: "#000000",
     shadowColor: "rgba(0, 0, 0, 0.05)",
 
     // platinum (light gray)
@@ -43,4 +43,3 @@ const theme = {
     highlightLightColor: "#EAD07D"
 };
 export default theme;
-

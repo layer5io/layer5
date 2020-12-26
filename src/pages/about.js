@@ -9,7 +9,7 @@ import Footer from "../sections/Footer";
 import About from "../sections/About";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 
 const about = () => (
     <ThemeProvider theme={theme}>

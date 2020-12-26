@@ -11,7 +11,7 @@ import NewsSingle from "../sections/News-single";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 
 export const query = graphql`
     query NewsBySlug($slug: String!) {

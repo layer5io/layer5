@@ -6,7 +6,7 @@ import LandscapeGrid from "../../sections/Landscape-grid";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/blog/themeStyles";
+import theme from "../../theme/app/themeStyles";
 
 const LandscapeGridPage=({ data }) => (
     <ThemeProvider theme={theme}>

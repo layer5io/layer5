@@ -20,7 +20,7 @@ export const ProfileCardWrapper = styled.div`
         transition: 0.3s;
         
         &:hover{
-            background: ${props => props.status === "Active" ? props.theme.secondaryLightColor : "#c7c7c7"};
+            background: ${props => props.status === "Active" ? props.theme.secondaryColor : "#c7c7c7"};
         }
         
         header {
