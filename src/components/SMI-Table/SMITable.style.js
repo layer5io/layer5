@@ -23,19 +23,24 @@ table {
         font-weight: 600;
     }
   
+	tr.primaryRow {
+		background: #ffffff;
+		td {
+			border-right: 1px solid #ffffff;
+		}
+	}
+	tr.secondaryRow {
+		background: #efefef;
+		td {
+			border-right: 1px solid #efefef;
+		}
+	}
+
+	tr.secondaryRow-hidden {
+		display: none;
+	}
+
     tr {
-		:nth-child(odd) {
-			background: #ffffff;
-			td {
-				border-right: 1px solid #ffffff;
-			}
-		}
-		:nth-child(even) {
-			background: #efefef;
-			td {
-				border-right: 1px solid #efefef;
-			}
-		}
 		:last-child {
 			td {
 				border-bottom: 0;

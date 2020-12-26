@@ -1,6 +1,6 @@
 import React from "react";
 import { smi_data } from "../../collections/landscape/smi";
-import Table from "../../components/Landscape-Table";
+import Table from "../../components/SMI-Table";
 
 function SMI_Compatibility() {
 

@@ -15,6 +15,8 @@ const WorkshopBottomWrapper = styled.div`
     display: block;
     margin: auto;
     text-align: center;
+    color: #fff;
+    font-weight: 600;
   }
 `;
 

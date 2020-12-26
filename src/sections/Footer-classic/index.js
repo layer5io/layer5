@@ -18,11 +18,11 @@ import logo from "../../assets/images/app/footer/footer-logo-two.svg";
 
 import FooterBGTwo from "../../assets/images/app/footer/footer-particle-two.png";
 
-import FotterWrapper from "./footer.style";
+import FooterWrapper from "./footer.style";
 
 const FooterClassic = () => {
     return (
-        <FotterWrapper>
+        <FooterWrapper>
             <img src={FooterBGTwo} alt="img" className="section__particle one" />
             <ParticleComponent />
             <Container>
@@ -116,7 +116,7 @@ const FooterClassic = () => {
                     </Col>
                 </Row>
             </Container>
-        </FotterWrapper>
+        </FooterWrapper>
     );
 };
 

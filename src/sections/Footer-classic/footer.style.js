@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FotterWrapper = styled.section`
+const FooterWrapper = styled.section`
     padding-top: 195px;
     padding-bottom: 45px;
     overflow: hidden;
@@ -146,4 +146,4 @@ const FotterWrapper = styled.section`
   }
 `;
 
-export default FotterWrapper;
+export default FooterWrapper;
