@@ -18,6 +18,7 @@ const Layer5Wrapper = styled.section`
         padding-top: 3rem;
     }
     .brandHeader h2{
+        color: ${props => props.theme.black};
         font-size:2rem;
     }
     .Layer5TagDark {
