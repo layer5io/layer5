@@ -9,16 +9,16 @@ import L404 from "../sections/404";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/hosting/themeStyles";
+import theme from "../theme/app/themeStyles";
 
-const NotFoundPage = () => (   
+const NotFoundPage = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
             <SEO title="404: What a mesh!" />
             <Navigation />
             <L404 />
-            <Footer />  
+            <Footer />
         </Layout>
     </ThemeProvider>
 );

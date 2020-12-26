@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, {useEffect, useState} from "react";
+import { Container} from "../../reusecore/Layout";
 import L404SectionWrapper from "./404.style";
 import serviceMesh from "./service-mesh.svg";
 import Button from "../../reusecore/Button";
@@ -14,17 +14,23 @@ const messages = [
     "Well, isn't this a mesh?",
     "Yikes. Things are a mesh here."
 ];
-let message = messages[Math.floor(Math.random()*messages.length)];
 
 const L404 = () => {
+    const [message, setMessage] = useState(messages[0]);
+    useEffect( () =>{
+        setMessage(messages[Math.floor(Math.random()*messages.length)]);
+    },[]);
+
     return (
         <L404SectionWrapper>
-            <h1 className="message"> {message} </h1>
-            <h3 className="subtitle">Page does not exist.</h3>
-            <div className="button-row">
-                <img src={serviceMesh} alt="service meshed" className="mesh" />
-                <Button primary url="/" external="false">Return to Layer5</Button>
-            </div>
+            <Container>
+                <h1 className="message"> {message} </h1>
+                <h3 className="subtitle">Page does not exist.</h3>
+                <div className="button-row">
+                    <img src={serviceMesh} alt="service meshed" className="mesh" />
+                    <Button secondary url="/" external="false">Return to Layer5</Button>
+                </div>
+            </Container>
         </L404SectionWrapper>
     );
 };

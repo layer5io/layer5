@@ -8,7 +8,7 @@ const L404SectionWrapper = styled.section`
 
     h1.message {
         font-size: 2rem;
-        line-height: 1.5rem;
+        line-height: 2rem;
     }
     h3.subtitle {      
         font-family: "Qanelas Soft Ultralight";        
@@ -17,9 +17,22 @@ const L404SectionWrapper = styled.section`
         font-style: italic;
         margin-top: 2.5rem;
     }
-    img.mesh {
-        margin-top: 50px
-        max-width: 40%;
+    .button-row{
+        display: flex;
+        flex-direction: column;
+        img{
+            display:block;
+            margin:auto;
+            margin-top: 50px
+            max-width: 50%;
+            @media only screen and (max-width:700px){
+                max-width: 100%;
+            }
+        }
+        
+        button{
+            margin-top: 2.5rem;
+        }
     }
 `;
 
