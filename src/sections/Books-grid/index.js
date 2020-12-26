@@ -46,34 +46,29 @@ const BooksGrid = ({hide_path}) => {
     ));}
 
     var settings = {
-        className: "center",
-        centerMode: true,
         focusOnSelect: true,
         lazyLoad: true,
-        infinite: true,
+        infinite: false,
         speed: 400,
-        slidesToShow: 3,
+        slidesToShow: 3.5,
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 1500,
+                breakpoint: 1400,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                 }
             },
             {
-                breakpoint: 1050,
+                breakpoint: 700,
                 settings: {
-                    slidesToShow: 1,
-                    customPaging: function(index) {
-                        return (
-                            <a>
-                                <img src={thumb_imgs[index]} />
-                            </a>
-                        );
-                    },
-                    dots: true,
-                    dotsClass: "slick-dots slick-thumb",
+                    slidesToShow: 2.25,
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1.5,
                 }
             },
         ]
@@ -82,7 +77,7 @@ const BooksGrid = ({hide_path}) => {
     return (
         <BooksPageWrapper>
             <PageHeader title="Service mesh with the best" path={path}/>
-            <h3 className="sub-head">Learn to service mesh from the world’s authority </h3>
+            <h2 className="sub-heading">Learn to service mesh from the world’s authority </h2>
             <div className="book_list">
                 <Slider {...settings}>
                     {data.allMdx.nodes.map(({id, frontmatter, fields }) => (

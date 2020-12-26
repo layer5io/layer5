@@ -1,22 +1,17 @@
 import styled from "styled-components";
 export const BooksPageWrapper = styled.div`
 
-    .sub-head{
-        margin: -4rem auto auto;
-        text-align: center;
-    }
-
     .slick-list{
         text-align: center;
-        padding: 6rem 3rem !important;
+        padding: 6rem 2rem !important;
     }
 
     .slick-arrow{
         display: none !important;
     }
 
-    .slick-active{
-        filter: drop-shadow(0px 0px 15px gray) brightness(0.75);
+    .slick-slide{
+        filter: drop-shadow(0px 0px 8px gray) brightness(0.75);
         .book_image{
             cursor: grab;
         }
@@ -25,10 +20,17 @@ export const BooksPageWrapper = styled.div`
         }
     }
 
-    .slick-center{
+    .slick-current{
+        display: inline-flex !important;
+        z-index: 1;
         filter: none;
+        justify-content: center;
+        > div {
+            display: inherit;
+        }
         .book_image{
-            box-shadow: 0px 1px 50px 10px rgba(0,0,0,0.4);
+            z-index: 1;
+            box-shadow: 0px 1px 52px 8px rgba(0,0,0,0.3);
             transform: scale(1.1);
         }
         a{
@@ -38,7 +40,6 @@ export const BooksPageWrapper = styled.div`
             left: 0;
             bottom: 0;
             right: 0;
-            margin: 0 4rem;
         }
     }
 
