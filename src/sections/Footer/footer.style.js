@@ -32,7 +32,7 @@ const FooterWrapper = styled.section`
   }
 
   .subscribe {
-    font-family: "Qanelas Soft";
+    font-family: 'Qanelas Soft', sans-serif;
     margin: 0px 0 30px 0;
     display: inline-flex;
     input {
@@ -70,7 +70,7 @@ const FooterWrapper = styled.section`
     color: ${props => props.theme.white};
   }
   .widget-title{
-    font-family: "Qanelas Soft";
+    font-family: 'Qanelas Soft', sans-serif;
     margin-bottom: 20px;
     color: ${props => props.theme.white};
 
@@ -79,7 +79,7 @@ const FooterWrapper = styled.section`
     }
   }
   .anchor {
-    font-family: "Qanelas Soft";
+    font-family: 'Qanelas Soft', sans-serif;
     transition: 400ms all;
     color: ${props => props.theme.white};
     &:hover {

@@ -28,12 +28,12 @@ const Footer = () => {
                 <Row>
                     <Col lg={3}>
                         <p className="desc-info">
-                        Representing the largest collection of service meshes and their maintainers in the world, Layer5 is the service mesh company. 
+                        Representing the largest collection of service meshes and their maintainers in the world, Layer5 is the service mesh company.
                             <br /><br />
                         Creator and maintainer of service mesh standards.
                             <br /><br />
                         Maker of Meshery, the service mesh management plane.
-                        </p>    
+                        </p>
                     </Col>
                     <Col lg={9}>
                         <Row>
@@ -41,26 +41,26 @@ const Footer = () => {
                                 <Row>
                                     <Col lg={7}>
                                         <div className="footer-widgets">
-                                            <h3 className="widget-title"><Link to="/learn">RESOURCES</Link></h3>
+                                            <h3 className="widget-title"><Link className="anchor" to="/learn">RESOURCES</Link></h3>
                                             <ul className="widget-category">
                                                 <li>
                                                     <Link className="anchor" to="/landscape#tools">
-                            Service Mesh Tools
+                                                        Service Mesh Tools
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/landscape">
-                            Service Mesh Comparison
+                                                        Service Mesh Comparison
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/books">
-                            Service Mesh Books
+                                                        Service Mesh Books
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/workshops">
-                            Service Mesh Workshops
+                                                        Service Mesh Workshops
                                                     </Link>
                                                 </li>
                                             </ul>
@@ -72,17 +72,17 @@ const Footer = () => {
                                             <ul className="widget-category">
                                                 <li>
                                                     <Link className="anchor" to="/blog">
-                            Blog
+                                                        Blog
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/community/events">
-                            Events
+                                                        Events
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/programs">
-                            Programs
+                                                        Programs
                                                     </Link>
                                                 </li>
                                             </ul>
@@ -98,22 +98,22 @@ const Footer = () => {
                                             <ul className="widget-category">
                                                 <li>
                                                     <Link className="anchor" to="/meshery">
-                            Meshery
+                                                        Meshery
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/landscape">
-                            Service Mesh Landscape
+                                                        Service Mesh Landscape
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/books">
-                            Service Mesh Interface
+                                                        Service Mesh Interface
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/workshops">
-                            Service Mesh Conformace
+                                                        Service Mesh Conformance
                                                     </Link>
                                                 </li>
                                             </ul>
@@ -125,27 +125,27 @@ const Footer = () => {
                                             <ul className="widget-category">
                                                 <li>
                                                     <Link className="anchor" to="/news">
-                            News
+                                                        News
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/brand">
-                            Brand
+                                                        Brand
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/careers">
-                            Careers
+                                                        Careers
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/partners">
-                            Partners
+                                                        Partners
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link className="anchor" to="/contact">
-                            Contact
+                                                        Contact
                                                     </Link>
                                                 </li>
                                             </ul>
@@ -156,8 +156,8 @@ const Footer = () => {
                         </Row>
                         <Row className="subscribe">
                             <div><span>Subscribe to our Newsletter</span>
-                                <input type="text" placeholder="Email Address"></input>
-                                <Button secondary title="Subscribe"></Button>
+                                <input type="text" placeholder="Email Address"/>
+                                <Button secondary title="Subscribe"/>
                             </div>
                         </Row>
                     </Col>
@@ -166,12 +166,12 @@ const Footer = () => {
                     <ul className="footer-menu">
                         <li>
                             <a className="copyright-text" href="https://meshery.layer5.io/privacy-policy.html">
-                Privacy
+                                Privacy
                             </a>
                         </li>
                         <li>
                             <a className="copyright-text" href="https://meshery.layer5.io/terms-of-service.html">
-                Terms
+                                Terms
                             </a>
                         </li>
                     </ul>
