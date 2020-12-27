@@ -9,16 +9,16 @@ import Footer from "../../sections/Footer";
 import Careers from "../../sections/Careers";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/blog/themeStyles";
+import theme from "../../theme/app/themeStyles";
 
-const careers = () => (   
+const careers = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
             <SEO title="Careers" />
             <Navigation />
             <Careers />
-            <Footer />  
+            <Footer />
         </Layout>
     </ThemeProvider>
 );

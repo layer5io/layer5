@@ -9,7 +9,7 @@ import Footer from "../../sections/Footer";
 import InternshipPage from "../../sections/Internship-gird";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/blog/themeStyles";
+import theme from "../../theme/app/themeStyles";
 
 const Internships = () => (
     <ThemeProvider theme={theme}>

@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 import { GlobalStyle } from "../sections/app.style";
 
 import SEO from "../components/seo";

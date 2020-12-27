@@ -9,8 +9,7 @@ import WorkshopsPage from "../sections/Workshop-grid";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
-
+import theme from "../theme/app/themeStyles";
 
 
 const WorkshopsGridPage = () => {

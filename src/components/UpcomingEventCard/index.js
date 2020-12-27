@@ -37,7 +37,7 @@ const UpcomingEvents = ({ data }) => {
                                                 </MDXRenderer>
                                             </div>
                                             {/* <div className="blog-slider__button"> */}
-                                            <Button className="blog-slider_button" url={item.frontmatter.eurl} title="Join Now" />
+                                            <Button secondary className="blog-slider_button" url={item.frontmatter.eurl} title="Join Now" />
                                             {/* </div> */}
                                         </div>
                                     </div>
