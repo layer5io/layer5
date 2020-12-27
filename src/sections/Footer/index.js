@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-
 import { Container, Row, Col } from "../../reusecore/Layout";
 import logo from "../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg";
 import particleOne from "../../assets/images/app/footer/footer-particle.png";
@@ -11,174 +10,175 @@ import FooterWrapper from "./footer.style";
 const Footer = () => {
     return (
         <FooterWrapper>
-            <img className="section__particle one" src={particleOne} alt="Layer5, the service mesh company" />
+            <img className="section__particle" src={particleOne} alt="Layer5, the service mesh company" />
             <Container>
                 <Row className="footer-head">
-                    <Col className="footer-logo-pos" lg={3}>
+                    <Col className="footer_logo-icons" sm={3}>
                         <Link to="/">
                             <img src={logo} className="footer-logo" alt="logo" />
                         </Link>
                     </Col>
-                    <Col lg={9}>
-                        <div className="links">
-                            <SocialLinks />
-                        </div>
+                    <Col className="footer_logo-icons" sm={9}>
+                        <SocialLinks />
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={3}>
+                    <Col xs={12} lg={3}>
                         <p className="desc-info">
-                        Representing the largest collection of service meshes and their maintainers in the world, Layer5 is the service mesh company. 
-                            <br /><br />
-                        Creator and maintainer of service mesh standards.
-                            <br /><br />
-                        Maker of Meshery, the service mesh management plane.
+                            Representing the largest collection of service meshes and their maintainers in the world, Layer5 is the service mesh company.
+                            Creator and maintainer of service mesh standards.
+                            Maker of Meshery, the service mesh management plane.
                         </p>    
                     </Col>
-                    <Col lg={9}>
+                    <Col className="sections_col" xs={12} lg={9}>
                         <Row>
-                            <Col lg={6}>
-                                <Row>
-                                    <Col lg={7}>
-                                        <div className="footer-widgets">
-                                            <h3 className="widget-title"><Link to="/learn">RESOURCES</Link></h3>
-                                            <ul className="widget-category">
-                                                <li>
-                                                    <Link className="anchor" to="/landscape#tools">
-                            Service Mesh Tools
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/landscape">
-                            Service Mesh Comparison
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/books">
-                            Service Mesh Books
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/workshops">
-                            Service Mesh Workshops
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </Col>
-                                    <Col lg={5}>
-                                        <div className="footer-widgets">
-                                            <h3 className="widget-title"><Link className="anchor" to="/community">COMMUNITY</Link></h3>
-                                            <ul className="widget-category">
-                                                <li>
-                                                    <Link className="anchor" to="/blog">
-                            Blog
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/community/events">
-                            Events
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/programs">
-                            Programs
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Col>
-                            <Col lg={6}>
-                                <Row>
-                                    <Col lg={7}>
-                                        <div className="footer-widgets">
-                                            <h3 className="widget-title"><Link className="anchor" to="/projects">PROJECTS</Link></h3>
-                                            <ul className="widget-category">
-                                                <li>
-                                                    <Link className="anchor" to="/meshery">
-                            Meshery
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/landscape">
-                            Service Mesh Landscape
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/books">
-                            Service Mesh Interface
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/workshops">
-                            Service Mesh Conformace
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </Col>
-                                    <Col lg={5}>
-                                        <div className="footer-widgets">
-                                            <h3 className="widget-title "><Link className="anchor" to="/company/about">COMPANY</Link></h3>
-                                            <ul className="widget-category">
-                                                <li>
-                                                    <Link className="anchor" to="/news">
-                            News
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/brand">
-                            Brand
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/careers">
-                            Careers
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/partners">
-                            Partners
-                                                    </Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="anchor" to="/contact">
-                            Contact
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Col>
+                            <div className="footer-sections odd-col">
+                                <h3 className="section-title">
+                                    <Link className="title-link" to="/learn">
+                                        RESOURCES
+                                    </Link>
+                                </h3>
+                                <ul className="section-categories">
+                                    <li>
+                                        <Link className="category-link" to="/projects/landscape#service-mesh-comaprison-matrix">
+                                            Service Mesh Feature Comparison
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/projects/landscape#service-mesh-comparison-strength">
+                                            Service Mesh Strength Comparison
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/learn/books">
+                                            Service Mesh Books
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/learn/workshops">
+                                            Service Mesh Workshops
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="footer-sections even-col">
+                                <h3 className="section-title">
+                                    <Link className="title-link" to="/community">
+                                        COMMUNITY
+                                    </Link>
+                                </h3>
+                                <ul className="section-categories">
+                                    <li>
+                                        <Link className="category-link" to="/blog">
+                                            Blog
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/community/events">
+                                            Events
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/careers/programs">
+                                            Programs
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="footer-sections odd-col">
+                                <h3 className="section-title">
+                                    <Link className="title-link" to="/projects">
+                                        PROJECTS
+                                    </Link>
+                                </h3>
+                                <ul className="section-categories">
+                                    <li>
+                                        <Link className="category-link" to="/meshery">
+                                            Meshery
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/landscape">
+                                            Service Mesh Landscape
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/projects/service-mesh-interface-conformance">
+                                            Service Mesh Interface
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/projects/service-mesh-performance">
+                                            Service Mesh Performace
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="footer-sections even-col">
+                                <h3 className="section-title">
+                                    <Link className="title-link" to="/company/about">
+                                        COMPANY
+                                    </Link>
+                                </h3>
+                                <ul className="section-categories">
+                                    <li>
+                                        <Link className="category-link" to="/news">
+                                            News
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/brand">
+                                            Brand
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/careers">
+                                            Careers
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/partners">
+                                            Partners
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="category-link" to="/contact">
+                                            Contact
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </Row>
                         <Row className="subscribe">
-                            <div><span>Subscribe to our Newsletter</span>
-                                <input type="text" placeholder="Email Address"></input>
-                                <Button secondary title="Subscribe"></Button>
+                            <div>
+                                <span>
+                                    Subscribe to our Newsletter
+                                </span>
+                                <input type="text" placeholder="Email Address" />
+                                <Button secondary title="Subscribe" />
                             </div>
                         </Row>
                     </Col>
                 </Row>
-                <div className="footer-bottom">
-                    <ul className="footer-menu">
-                        <li>
-                            <a className="copyright-text" href="https://meshery.layer5.io/privacy-policy.html">
-                Privacy
-                            </a>
-                        </li>
-                        <li>
-                            <a className="copyright-text" href="https://meshery.layer5.io/terms-of-service.html">
-                Terms
-                            </a>
-                        </li>
-                    </ul>
-                    <p className="copyright-text">
-            2020 Copyright ©Layer5, Inc | All Rights Reserved
-                    </p>
-                </div>
+                <Row>
+                    <div className="footer-bottom">
+                        <p className="copyright-text">
+                            2020 Copyright ©Layer5, Inc | All Rights Reserved
+                        </p>
+                        <ul className="policies">
+                            <li>
+                                <a href="https://meshery.layer5.io/privacy-policy.html" target="_blank" rel="noreferrer">
+                                    Privacy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://meshery.layer5.io/terms-of-service.html" target="_blank" rel="noreferrer">
+                                    Terms
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </Row>
             </Container>
         </FooterWrapper>
     );
