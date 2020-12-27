@@ -11,7 +11,7 @@ const L404SectionWrapper = styled.section`
         line-height: 2rem;
     }
     h3.subtitle {      
-        font-weight: 200;       
+        font-family: "Qanelas Soft Ultralight";        
         font-size: 1.5rem;
         color: gray;
         font-style: italic;
@@ -23,7 +23,7 @@ const L404SectionWrapper = styled.section`
         img{
             display:block;
             margin:auto;
-            margin-top: 3.125rem;
+            margin-top: 50px
             max-width: 50%;
             @media only screen and (max-width:700px){
                 max-width: 100%;

@@ -121,7 +121,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 @font-face {
-    font-family: "Qanelas Soft";
+    font-family: "Qanelas Soft UltraLight";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftUltraLight.otf');
     font-weight: 200;
 }
