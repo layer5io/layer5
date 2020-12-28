@@ -23,6 +23,7 @@ const BlogPageWrapper = styled.div`
             align-self: center;
         }
         a{
+            color: ${props => props.theme.black};
             margin: 0.2rem;
             display: inline-block;
             padding: 0.3rem 0.8rem;
@@ -30,8 +31,8 @@ const BlogPageWrapper = styled.div`
             background: #F0F0F0;
             transition: all 0.3s linear;
             &:hover{
-                background: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
-                color: #F0F0F0;
+                background: ${props => props.theme.secondaryColor};
+                color: ${props => props.theme.white};
             }
         }
         div{
