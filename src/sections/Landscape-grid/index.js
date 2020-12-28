@@ -22,11 +22,17 @@ const LandscapeGrid=() => {
                 <Container>
                     <div>
                         <Row>
-                            <h2 className="first-heading">Comparison of Service Mesh Strengths</h2>
+                            <h2 id="service-mesh-comparison-strength" className="headings">
+                                Comparison of Service Mesh Strengths
+                            </h2>
                             <img src={ServiceMeshComparison} width="100%" height="100%" alt="Service Mesh Comparison" />
-                            <h2 className="subsequent-heading">Service Mesh Timeline</h2>
+                            <h2 className="headings subsequent-heading">
+                                Service Mesh Timeline
+                            </h2>
                             <ServiceMeshTimeline />
-                            <h2 className="subsequent-heading">Service Mesh Comparison Matrix</h2>
+                            <h2 id="service-mesh-comaprison-matrix" className="headings subsequent-heading">
+                                Service Mesh Comparison Matrix
+                            </h2>
                             <Tabs className="landscape-table">
                                 <TabList>
                                     <Tab>Categories</Tab>
@@ -47,7 +53,7 @@ const LandscapeGrid=() => {
                                     <Tools />
                                 </TabPanel>
                             </Tabs>
-                            <h2 className="subsequent-heading">SMI Compliance</h2>
+                            <h2 className="headings subsequent-heading">SMI Compliance</h2>
                             <div className="landscape-table">
                                 <SMI_Compatibility />
                             </div>
