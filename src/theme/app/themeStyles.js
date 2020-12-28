@@ -34,7 +34,7 @@ const theme = {
 
     // caribbean green (light green)
     menuHoverColor: "#00b39f",
-    linkColor: "#111111",
+    linkColor: "#00d3a9",
 
     // saffron (dark yellow)
     highlightColor: "#EBC017",
