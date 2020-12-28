@@ -8,13 +8,12 @@ import Image from "../../components/image";
 const authorField = (author, isSlugAvailable) =>{
     return(
         <>
-            { 
-                isSlugAvailable ? 
-                    <Link className="authorLink"
-                        to={`/community/members/${slugify(author.name)}`}>
+            {
+                isSlugAvailable ?
+                    <Link to={`/community/members/${slugify(author.name)}`}>
                         <span>{author.name}</span>
-                    </Link> 
-                    : <span>{author.name}</span> 
+                    </Link>
+                    : <span>{author.name}</span>
             }
         </>
     );
@@ -44,9 +43,9 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail, path, sub_h
     }
     return (
         <PageHeaderWrapper>
-            {/* NOTE: 
+            {/* NOTE:
                     className 'page_header' is used if the haeding is displayed as the Page heading
-                    className 'sub_header' is used if the heading is displayed in the subsection of any page 
+                    className 'sub_header' is used if the heading is displayed in the subsection of any page
             */}
             <div className={sub_header ? "sub_header" : "page-header"}>
                 { thumbnail && <div className="feature-image">

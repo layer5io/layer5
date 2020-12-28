@@ -31,13 +31,6 @@ const PageHeaderWrapper = styled.div`
             display: flex;
             justify-content: center;
             margin-top: 1.5rem;  
-            a {
-                color: inherit;
-
-                &:hover{
-                    opacity: .8;
-                }
-            }
             h4 {
                 display: inline-block;
                 margin:0 0.4rem;
