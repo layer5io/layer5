@@ -97,6 +97,7 @@ export const MemberSingleWrapper = styled.div`
             li {
                 a{
                     display: block;
+                    color: black;
                     text-align: left;
                     padding: 10px;
                     border-radius: 100%;
