@@ -1,13 +1,12 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import Card from "../../components/Card";
 import PageHeader from "../../reusecore/PageHeader";
-
+import { Link } from "gatsby";
+import Slider from "react-slick";
+import "swiper/swiper-bundle.css";
 import { BooksPageWrapper } from "./BooksGrid.style";
-import Button from "../../reusecore/Button";
 
-const BooksGrid = ({hide_path, limit}) => {
+const BooksGrid = ({hide_path}) => {
     const data = useStaticQuery(
         graphql`
             query allBooks {
@@ -23,7 +22,7 @@ const BooksGrid = ({hide_path, limit}) => {
                             abstract
                             thumbnail{
                                 childImageSharp{
-                                    fluid(maxWidth: 1000){
+                                    fluid(maxWidth: 480, maxHeight: 600){
                                         ...GatsbyImageSharpFluid_withWebp
                                     }
                                 }
@@ -41,28 +40,55 @@ const BooksGrid = ({hide_path, limit}) => {
     );
 
     let path = hide_path ? "" : "Books";
-    let no_of_items = limit ? limit : data.length;
+    let thumb_imgs = [];
+    {data.allMdx.nodes.map(({frontmatter}) => (
+        thumb_imgs.push(frontmatter.thumbnail.publicURL)
+    ));}
+
+    var settings = {
+        focusOnSelect: true,
+        lazyLoad: true,
+        infinite: false,
+        speed: 400,
+        slidesToShow: 3.5,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToShow: 2.25,
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 1.5,
+                }
+            },
+        ]
+    };
 
     return (
         <BooksPageWrapper>
-            <PageHeader title="Books" path={path}/>
-            <div className="books-page-wrapper">
-                <Container>
-                    <div className="books-grid-wrapper">
-                        <Row>
-                            {data.allMdx.nodes.slice(0, no_of_items).map(({id, frontmatter, fields }) => (
-                                <Col xs={12} sm={6} lg={4} key={id}>
-                                    <Card frontmatter={frontmatter} fields={fields}/>
-                                </Col>
-                            ))}
-                            { limit && (
-                                <div className="see-more-button">
-                                    <Button primary title="see more" url="books"/>
-                                </div>
-                            )}
-                        </Row>
-                    </div>
-                </Container>
+            <PageHeader title="Service mesh with the best" path={path}/>
+            <h2 className="sub-heading">Learn to service mesh from the world’s authority </h2>
+            <div className="book_list">
+                <Slider {...settings}>
+                    {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+                        <div className="book_image" key={id}>
+                            <div className="blog-slider_img">
+                                <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
+                            </div>
+                            <Link className="book-page_link" to={fields.slug}></Link>
+                        </div>
+                    ))}
+                </Slider>
             </div>
         </BooksPageWrapper>
     );

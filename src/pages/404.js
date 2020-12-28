@@ -15,7 +15,7 @@ const NotFoundPage = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="404: What a mesh!" />
+            <SEO title="What a mesh!" />
             <Navigation />
             <L404 />
             <Footer />

@@ -1,31 +1,119 @@
 import styled from "styled-components";
 export const BooksPageWrapper = styled.div`
 
-    .books-list-wrapper{
-        padding: 50px 0;
+    .slick-list{
+        text-align: center;
+        padding: 6rem 2rem !important;
     }
-    .books-grid-wrapper{
-        padding-bottom: 60px;
-        margin-top: 80px;
-        .see-more-button{
-            margin: 0 auto;
+
+    .slick-arrow{
+        display: none !important;
+    }
+
+    .slick-slide{
+        filter: drop-shadow(0px 0px 8px gray) brightness(0.75);
+        .book_image{
+            cursor: grab;
         }
-    }
-    
-    @media only screen and (max-width: 912px) {
-        .books-page-wrapper{
-            padding-bottom: 80px;
+        .book_image:active{
+            cursor: grabbing;
         }
     }
 
-    .post-content-block{
-        height: 8rem;
+    .slick-current{
+        display: inline-flex !important;
+        z-index: 1;
+        filter: none;
+        justify-content: center;
+        > div {
+            display: inherit;
+        }
+        .book_image{
+            z-index: 1;
+            box-shadow: 0px 1px 52px 8px rgba(0,0,0,0.3);
+            transform: scale(1.1);
+        }
+        a{
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
     }
 
-    .post-meta-block{
-        height: auto;
-        .author{
-            text-align: left;
+    .book_image{
+        width: 30rem !important;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .blog-slider_img{
+        img{
+            width: 30rem;
+            height: inherit;
+            max-height: 37.5rem;
+            display: block;
+            text-align: center;
+            margin: auto;
+        }
+    }
+
+    .slick-dots{
+        bottom: -5rem;
+
+        li{
+            filter: brightness(0.6);
+        }
+        li, img{
+            width: 5rem;
+            height: 7rem;
+        }
+
+        .slick-active{
+            filter: brightness(1);
+        }
+
+    }
+
+    @media screen and (max-width: 1050px){
+        .book_list{
+            margin-bottom: 6rem;
+        }
+
+        .book_image{
+            width: 20rem !important;
+        }
+
+        .blog-slider_img{
+            img{
+                width: 20rem;
+                max-height: 26rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: 700px){
+        .book_list{
+            margin-bottom: 6rem;
+        }
+
+        .book_image{
+            width: 15rem !important;
+        }
+
+        .blog-slider_img{
+            img{
+                width: 15rem;
+                max-height: 20rem;
+            }
+        }
+
+        .slick-dots{
+            li, img{
+                width: 3.5rem;
+                height: 5rem;
+            }
         }
     }
 `;
