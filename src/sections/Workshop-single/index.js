@@ -11,6 +11,7 @@ import Youtube from "../../assets/images/socialIcons/youtube_color.png";
 import Lab from "../../assets/images/socialIcons/lab_color.png";
 import PageHeader from "../../reusecore/PageHeader";
 import { Container } from "../../reusecore/Layout";
+import Button from "../../reusecore/Button";
 
 const WorkshopSinglePage = ({ frontmatter, body }) => {
 
@@ -28,9 +29,7 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
             />
             <Container>
                 <div className="cardContent">
-                    <div className="contentBody">
-                        <MDXRenderer>{body}</MDXRenderer>
-                    </div>
+                    <MDXRenderer>{body}</MDXRenderer>
                 </div>
                 <div className="btn-and-status">
                     <div className="social-icons">
@@ -62,12 +61,8 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
                     </div>
                 </div>
                 <div className="bottomBtn">
-                    <button className="requestBtn">
-                        <a href="mailto:training@layer5.io" target="_blank" rel="noreferrer">Request a Workshop</a>
-                    </button>
-                    <button className="joinBtn">
-                        <a href={frontmatter.eurl} target="_blank" rel="noreferrer">Join this Workshop</a>
-                    </button>
+                    <Button secondary title="Request a Workshop" url="mailto:training@layer5.io" external={true}/>
+                    <Button primary title="Join this Workshop" url={frontmatter.eurl}/>
                 </div>
             </Container>
         </WorkshopSinglePageWrapper>

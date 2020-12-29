@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 const WorkshopSinglePageWrapper = styled.div`
-	max-width: 81.25rem;
-	height: auto;
-	margin: 0 auto 3.75rem auto;
+    padding-bottom: 4rem;
 	display: block;
 
 	.backBtn {
+	    z-index: 2;
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
@@ -17,30 +16,13 @@ const WorkshopSinglePageWrapper = styled.div`
 		font-size: 1.25rem;
 		left: 3.75rem;
 		font-weight: 600;
-	}
-
-	.contentContainer {
-		display: block;
-		margin: auto;
-	}
-
-	.cardContent {
-		display: block;
-		margin: 2.5rem auto;
-	}
-
-	.contentBody {
-		p {
-			font-weight: 400;
-			font-size: 1.125rem;
-			line-height: 2.125rem;
-			text-align: justify;
-			margin-bottom: 2.5rem;
+		a{
+		    color: ${props=> props.theme.primaryColor};
+		    &:hover{
+		        color: ${props=> props.theme.linkColor};
+		    }
 		}
-		ul > li {
-			list-style: none;
-			line-height: 1.75rem;
-		}
+		
 	}
 
 	.bottomBtn {
@@ -48,108 +30,13 @@ const WorkshopSinglePageWrapper = styled.div`
 		justify-content: space-evenly;
 		align-items: center;
 		flex-wrap: wrap;
-	}
-
-	.requestBtn {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 1.1875rem 2.0625rem;
-		background-color: rgba(0, 179, 159, 0.7);
-		border-radius: 0.3125rem;
-		text-transform: capitalize;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		transition: 0.5s ease-in-out all;
-
-		a {
-			font-style: none;
-			font-weight: 600;
-			color: #ffffff;
-			font-size: 1.0625rem;
-		}
-
-		&:hover {
-			box-shadow: 0rem 0.625rem 1.25rem rgba(0, 179, 159, 0.3);
-			background-color: rgba(0, 179, 159, 1);
-		}
-	}
-
-	.joinBtn {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 1.1875rem 2.0625rem;
-		background: rgba(235, 192, 23, 0.7);
-		border-radius: 0.3125rem;
-		font-weight: 600;
-		font-size: 1.0625rem;
-		text-transform: capitalize;
-		color: #ffffff;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		transition: 0.5s ease-in-out all;
-
-		a {
-			font-style: none;
-			font-weight: 600;
-			color: #ffffff;
-			font-size: 1.0625rem;
-		}
-
-		&:hover {
-			box-shadow: 0rem 0.625rem 1.25rem rgba(235, 192, 23, 0.3);
-			background-color: rgba(235, 192, 23, 1);
-		}
-	}
-
-	@media only screen and (max-width: 46.25rem) {
-		.cardContent {
-			padding: 1.25rem;
-		}
-		.title {
-			font-size: 2.5rem;
-		}
-		.abstract {
-			font-size: 1.25rem;
-		}
-		.contentBody > h3 {
-			font-size: 1.5625rem;
-		}
-		.requestBtn {
-			padding: 0.9375rem 1.25rem;
-			margin-bottom: 1.25rem;
-		}
-		.joinBtn {
-			padding: 0.9375rem 1.25rem;
+		
+		button{
+		    margin-bottom: 1rem;
 		}
 	}
 
 	@media only screen and (max-width: 25rem) {
-		.requestBtn {
-			margin-bottom: 1.25rem;
-		}
-
-		.title {
-			font-size: 1.875rem;
-		}
-
-		.abstract {
-			font-size: 0.9375rem;
-		}
-
-		.contentBody > h3 {
-			font-size: 1.125rem;
-		}
-
-		.contentBody > h4 {
-			font-size: 1.25rem;
-		}
-
 		.backBtn {
 			left: 0rem;
 		}
