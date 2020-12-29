@@ -9,10 +9,10 @@ const BlogSideBarWrapper = styled.div`
                 flex-basis: 100%;
                 padding: 15px;
                 border-radius: 5px;
-                border: 1px solid ${props => props.theme.headingColor ? props.theme.headingColor : "#1D316C"};
+                border: 1px solid ${props => props.theme.headingColor};
 
                 &:focus{
-                    border-color: ${props => props.theme.primaryColor ? props.theme.primaryColor : "#8A57DE"};
+                    border-color: ${props => props.theme.primaryColor};
                 }
             }
             button {
@@ -24,7 +24,7 @@ const BlogSideBarWrapper = styled.div`
                 border-radius: 5px;
                 background: transparent;
                 font-size: 22px;
-                color: ${props => props.theme.headingColor ? props.theme.headingColor : "#1D316C"}; 
+                color: ${props => props.theme.headingColor}; 
             }
         }
 
@@ -52,49 +52,6 @@ const BlogSideBarWrapper = styled.div`
             }
             
         }
-        .recent-post-block{
-            display: flex;
-            align-items: center;
-            &+.recent-post-block{
-                margin-top: 30px;
-            }
-            img{
-                margin-right: 20px;
-            }
-            a{
-                h3{
-                    font-size: 16px;
-                    font-weight: 400;
-                    color: ${props => props.theme.black ? props.theme.black : "#333333"};
-                    margin-bottom: 8px;
-                    transition: all 0.3s ease-in;
-                    &:hover{
-                        color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
-                    }
-                }
-            }
-            .post-meta-block{
-                margin-bottom: 0;
-                font-size: 14px;
-                color: ${props => props.theme.textColor ? props.theme.textColor : "#7A848E"};
-                a{
-                    font: 400 13px/20px "Open Sans", sans-serif;
-                    color: ${props => props.theme.textColor ? props.theme.textColor : "#7A848E"};
-                    &:hover{
-                        color: ${props => props.theme.textColor ? props.theme.textColor : "#7A848E"};
-                    }
-                }
-                a+a{
-                    position: relative;
-                    &:before{
-                        content: "/";
-                        display: inline-block;
-                        margin: 0px 5px 0px 0px;
-                    }
-                }
-            }
-            
-        }
         
         .sidebar-widgets{
             &+.sidebar-widgets{
@@ -114,7 +71,7 @@ const BlogSideBarWrapper = styled.div`
                         margin-top: 3px;
                     }
                     a{
-                        color: ${props => props.theme.black ? props.theme.black : "#333333"};
+                        color: ${props => props.theme.black};
                         display: flex;
                         line-height: 25px;
                         justify-content: space-between;
@@ -126,8 +83,8 @@ const BlogSideBarWrapper = styled.div`
                         }
                         &:hover{
                             span, em{
-                                color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"}; 
-                                border-color: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"}; 
+                                color: ${props => props.theme.secondaryColor}; 
+                                border-color: ${props => props.theme.secondaryColor}; 
                             }
                         }
                     }
@@ -142,6 +99,7 @@ const BlogSideBarWrapper = styled.div`
                 li{
                     display: inline-block;
                     a{
+                        color: ${props => props.theme.black};
                         margin: 5px;
                         display: block;
                         padding: 6px 18px;
@@ -150,8 +108,8 @@ const BlogSideBarWrapper = styled.div`
                         font: 400 13px/26px "Open Sans", sans-serif; 
                         transition: all 0.3s linear;
                         &:hover{
-                            background: ${props => props.theme.secondaryColor ? props.theme.secondaryColor : "#FB7B81"};
-                            color: #F0F0F0;
+                            background: ${props => props.theme.secondaryColor};
+                            color: ${props => props.theme.white};
                         }
                     }
                 }

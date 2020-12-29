@@ -199,7 +199,10 @@ p {
 
 a{
     text-decoration: none;
-    color: ${props => props.theme.headingColor};
+    color: ${props => props.theme.linkColor};
+    &:hover{
+        color: ${props => props.theme.primaryColor};
+    }
   }
   img{
     max-width: 100%;
