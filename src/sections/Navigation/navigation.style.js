@@ -296,7 +296,7 @@ const NavigationWrap = styled.header`
       max-height: 400px;
       overflow-y: scroll;
     }
-    .animate {
+    .expand {
       visibility: visible;
       opacity: 1;
       .mobile-dropdown {
@@ -313,6 +313,11 @@ const NavigationWrap = styled.header`
       display: inline-block;
       position: relative;
       cursor: pointer;
+      animation: close-icon 0.3s ease-in;
+    }
+    @keyframes close-icon {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(180deg); }
     }
     .mobile-nav-item {
       padding: 1px;

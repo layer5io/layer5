@@ -150,11 +150,11 @@ const Navigation = () => {
     };
 
     const openDropDown = () => {
-        dropDownRef.current.classList.add("animate");
+        dropDownRef.current.classList.add("expand");
     };
 
     const closeDropDown = () => {
-        dropDownRef.current.classList.remove("animate");
+        dropDownRef.current.classList.remove("expand");
     };
 
     return (
