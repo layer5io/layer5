@@ -96,16 +96,6 @@ const AboutSectionWrapper = styled.section`
   @media only screen and (max-width: 480px) {
     padding: 40px 0 60px 0;
   }
-  .social-icons {
-    display: flex;
-    height: auto;
-    flex-direction: column;
-    flex-flow: column;
-    vertical-align: middle;
-    text-align: center;
-    position: relative;
-    color:#fff;
-  }
   .community {
     color: blue;
   }
@@ -113,15 +103,5 @@ const AboutSectionWrapper = styled.section`
     height: 40px;
     margin-top: 20px;
   }
-  .social-widgets {     
-    .contactf{
-        margin: 0px;
-        .social-icons{
-          transition: 450ms all;
-          &:hover {
-            color: ${props => props.theme.headingColor}; 
-          }
-        }
-    }
 `;
 export default AboutSectionWrapper;

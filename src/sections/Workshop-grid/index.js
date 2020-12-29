@@ -5,11 +5,9 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import WorkshopCard from "../../components/Workshop-Card";
 import PageHeader from "../../reusecore/PageHeader";
 import { WorkshopPageWrapper } from "./WorkshopsGrid.style";
-
-// Social Icons
 import { BsArrowDown } from "react-icons/bs";
 import { BsArrowUp } from "react-icons/bs";
-import Slack from "../../assets/images/socialIcons/slack_color.png";
+import Slack from "../../assets/images/socialIcons/slack-light.svg";
 import Button from "../../reusecore/Button";
 import { FaRegWindowMaximize } from "react-icons/fa";
 

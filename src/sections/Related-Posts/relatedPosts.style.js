@@ -61,8 +61,8 @@ const RelatedPostsWrapper = styled.div`
         visibility: hidden;
     }
     .slick-dots li button:before {
-        font-size: 10px;
-        color:rgb(0 179 159);
+        font-size: 0.6rem;
+        color: #00B39F;
     }
     .slick-dots li.slick-active button:before {
         opacity: 1;
@@ -75,16 +75,34 @@ const RelatedPostsWrapper = styled.div`
 
     .post-content-block{
         height: 10rem;
+
+        .post-title {
+            text-align: left;
+        }
+    }
+
+    .allBlogs{
+        height: 22rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+        .post-content-block {
+            height: 8rem;
+        }
+
+        .allBlogs{
+            height: 19.5rem;
+        }
     }
 
     @media screen and (max-width: 720px) and (min-width: 385px){
         .post-content-block{
             height: 8rem;
         }
-    }
 
-    .allBlogs{
-        height: 21.5rem;
+        .allBlogs{
+            height: 19.5rem;
+        }
     }
 
     .allBlogs_card{
