@@ -40,7 +40,7 @@ export const WorkshopPageWrapper = styled.div`
 		font-size: 0.75rem;
 		font-weight: 600;
 		color: #eee;
-		background-color: #00b39f;
+		background-color: ${props => props.theme.secondaryColor};
 		border: none;
 		font-family: 'Open Sans';
 		border-radius: 0.9375rem;
@@ -146,7 +146,6 @@ export const WorkshopPageWrapper = styled.div`
 	}
 	.workshop-grid-wrapper {
 		padding-bottom: 3.75rem;
-		margin-top: 5rem;
 	}
 
 	.workshop-grid-card {

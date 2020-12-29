@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 const NavigationWrap = styled.header`
   background: transparent;
-  position: fixed;
+  position: sticky;
   width: 100%;
+  margin-top: 1rem;
   z-index: 9999;
   top: 0;
   transition: all 0.3s ease 0s;
@@ -40,7 +41,7 @@ const NavigationWrap = styled.header`
     left: 0;
     width: 100%;
     height: 350px;
-    margin-top: -48px; 
+    margin-top: -2rem; 
     visibility: visible;
   }
   .mobile-dropdown {
@@ -140,7 +141,7 @@ const NavigationWrap = styled.header`
       display: flex;
     }
     ul.collapsed {
-      margin: 48px 0 48px 0;
+      margin: 2rem 0 2rem 0;
     }
     .nav-item {
       position: relative;
@@ -199,8 +200,8 @@ const NavigationWrap = styled.header`
       }
     }
     .menu-link {
-      margin: 0 20px;
-      padding: 0;
+      margin: 0 1.25rem;
+      padding: 0.25rem 0 0.25rem;
       &:before {
         content: none;
       }
@@ -208,7 +209,7 @@ const NavigationWrap = styled.header`
         &:before {
           content: "";
           position: absolute;
-          bottom: -4px;
+          bottom: 0;
           width: 100%;
           height: 1px;
           opacity: 0;
@@ -227,9 +228,6 @@ const NavigationWrap = styled.header`
   &.scrolled {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 30px;
     background: white;
-    .logo {
-      width: 100px;
-    }
     .nav {
       .nav-item{
         a {
@@ -239,9 +237,6 @@ const NavigationWrap = styled.header`
           }
         }
       }
-    }
-    ul.collapsed {
-      margin: 28px 0 28px 0;
     }
     .wrap {
       height: 300px;

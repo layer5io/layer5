@@ -9,7 +9,7 @@ const ImageHubWrap = styled.section`
   .ImageHubWhite {
     float: left;
     padding: 3px;
-    background-color: #3c494f;
+    background-color: ${props => props.theme.primaryColor};
   }
 `;
 

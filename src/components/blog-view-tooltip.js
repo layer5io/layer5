@@ -18,20 +18,20 @@ export const ToolTipWrapper = styled.div`
 
     a {
         padding: 5px;
-        color: #00d3a9;
+        color: ${props => props.theme.primaryLightColorTwo};
         background-color: white;
-        border: 1.5px solid #00D3A9;
+        border: 1.5px solid ${props => props.theme.primaryLightColorTwo};
         &:hover{
-            background-color: #3C494F;
-            color: #00d3a9;
+            background-color: ${props => props.theme.primaryColor};
+            color: ${props => props.theme.primaryLightColorTwo};
             cursor: pointer;
-            border: 1.5px solid #3C494F;
+            border: 1.5px solid ${props => props.theme.primaryColor};
         }             
     }
     .active {
-        background-color: #3C494F;
-        color: #00D3A9;
-        border: 1.5px solid #3C494F;
+        background-color: ${props => props.theme.primaryColor};
+        color: ${props => props.theme.primaryLightColorTwo};
+        border: 1.5px solid ${props => props.theme.primaryColor};
     }
 `;
 
