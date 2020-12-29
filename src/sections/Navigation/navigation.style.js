@@ -280,7 +280,7 @@ const NavigationWrap = styled.header`
       position: fixed;
       top: auto;
       left: 0;
-      height: 100%;
+      height: auto;
       width: 100%;
       padding: 0 10px;
       visibility: hidden;
