@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const ProjectWrapper = styled.div`
-padding: 100px 0 110px 0;
+    padding-bottom: 5rem;
     .project-text{
         font-weight: 300;
         margin-bottom: 80px;

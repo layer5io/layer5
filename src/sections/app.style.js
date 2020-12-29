@@ -188,7 +188,7 @@ h6 {
 h2.sub-heading {
     color: gray;
     font-weight: 500;
-    margin: -4rem auto auto;
+    margin: -1rem auto auto;
     text-align: center;
 }
 

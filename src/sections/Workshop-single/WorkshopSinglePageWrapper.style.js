@@ -3,7 +3,7 @@ import styled from "styled-components";
 const WorkshopSinglePageWrapper = styled.div`
 	max-width: 81.25rem;
 	height: auto;
-	margin: 20.5rem auto 3.75rem auto;
+	margin: 0 auto 3.75rem auto;
 	display: block;
 
 	.backBtn {
@@ -19,17 +19,6 @@ const WorkshopSinglePageWrapper = styled.div`
 		font-weight: 600;
 	}
 
-	.imageContainer {
-		display: block;
-		max-width: 81.25rem;
-		height: auto;
-		margin: auto;
-
-		.image {
-			text-align: center;
-		}
-	}
-
 	.contentContainer {
 		display: block;
 		margin: auto;
@@ -40,19 +29,6 @@ const WorkshopSinglePageWrapper = styled.div`
 		margin: 2.5rem auto;
 	}
 
-	.abstract {
-		font-size: 1.3125rem;
-		text-align: center;
-	}
-
-	.title {
-		font-family: "Qanelas Soft", sans-serif;
-		font-size: 3.125rem;
-		font-weight: 700;
-		text-align: center;
-		margin-bottom: 1.25rem;
-	}
-
 	.contentBody {
 		p {
 			font-weight: 400;
@@ -61,16 +37,6 @@ const WorkshopSinglePageWrapper = styled.div`
 			text-align: justify;
 			margin-bottom: 2.5rem;
 		}
-
-		h3,
-		h4 {
-			font-family: "Qanelas Soft", sans-serif;
-			font-weight: 600;
-			font-size: 1.75rem;
-			line-height: 1.75rem;
-			margin-bottom: 2.5rem;
-		}
-
 		ul > li {
 			list-style: none;
 			line-height: 1.75rem;
