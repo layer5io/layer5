@@ -12,7 +12,7 @@ Before building the site, ensure that you have the following dependencies instal
 
 ### Dependencies:
 
-- [Nodejs and npm](https://nodejs.org/en/): verify `node -v` & `npm -v`
+- [Nodejs and npm](https://nodejs.org/en/): To verify run `node -v` & `npm -v`
 - [gatsby cli](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli): e.g., `npm install -g gatsby-cli`
 
 ### Building the site
