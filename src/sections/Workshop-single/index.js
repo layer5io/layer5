@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "../../components/image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import WorkshopSinglePageWrapper from "./WorkshopSinglePageWrapper.style";
 import { MdArrowBack } from "react-icons/md";
@@ -10,7 +9,9 @@ import Slide from "../../assets/images/socialIcons/slide_color.png";
 import LinkIcon from "../../assets/images/socialIcons/link_color.png";
 import Youtube from "../../assets/images/socialIcons/youtube_color.png";
 import Lab from "../../assets/images/socialIcons/lab_color.png";
-
+import PageHeader from "../../reusecore/PageHeader";
+import { Container } from "../../reusecore/Layout";
+import Button from "../../reusecore/Button";
 
 const WorkshopSinglePage = ({ frontmatter, body }) => {
 
@@ -21,20 +22,14 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
                     <MdArrowBack /> All Workshops
                 </Link>
             </div>
-            <div className="main">
-                <div className="imageContainer">
-                    <div className="image">
-                        <Image {...frontmatter.thumbnail} alt={frontmatter.title} />
-                    </div>
-                </div>
+            <PageHeader
+                title={frontmatter.title}
+                subtitle={frontmatter.abstract}
+                thumbnail={frontmatter.thumbnail}
+            />
+            <Container>
                 <div className="cardContent">
-                    <div className="contentContainer">
-                        <h3 className="title">{frontmatter.title}</h3>
-                        <p className="abstract">{frontmatter.abstract}</p>
-                    </div>
-                    <div className="contentBody">
-                        <MDXRenderer>{body}</MDXRenderer>
-                    </div>
+                    <MDXRenderer>{body}</MDXRenderer>
                 </div>
                 <div className="btn-and-status">
                     <div className="social-icons">
@@ -66,14 +61,10 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
                     </div>
                 </div>
                 <div className="bottomBtn">
-                    <button className="requestBtn">
-                        <a href="mailto:training@layer5.io" target="_blank" rel="noreferrer">Request a Workshop</a>
-                    </button>
-                    <button className="joinBtn">
-                        <a href={frontmatter.eurl} target="_blank" rel="noreferrer">Join this Workshop</a>
-                    </button>
+                    <Button secondary title="Request a Workshop" url="mailto:training@layer5.io" external={true}/>
+                    <Button primary title="Join this Workshop" url={frontmatter.eurl}/>
                 </div>
-            </div>
+            </Container>
         </WorkshopSinglePageWrapper>
     );
 };
