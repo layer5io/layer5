@@ -21,6 +21,10 @@
     "preload-fonts": "gatsby-preload-fonts"
   },
   "dependencies": {
+    "@fullcalendar/daygrid": "^5.5.0",
+    "@fullcalendar/google-calendar": "^5.5.0",
+    "@fullcalendar/interaction": "^5.5.0",
+    "@fullcalendar/react": "^5.5.0",
     "@mdx-js/mdx": "^1.6.11",
     "@mdx-js/react": "^1.6.11",
     "babel-plugin-styled-components": "^1.10.7",
