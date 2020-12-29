@@ -318,6 +318,7 @@ const NavigationWrap = styled.header`
       padding: 1px;
       .menu-item {
         font-size: 16px;
+        font-weight: 600;
       }
       a:before {
         content: none;
