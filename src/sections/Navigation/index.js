@@ -167,7 +167,7 @@ const Navigation = () => {
                     <nav className="nav">
                         {expand ?
                             <IoMdClose
-                                className="mobile-menu-icon"
+                                className="mobile-menu-icon open"
                                 onClick={function() {setExpand(!expand); closeDropDown();}}
                             /> : <FaBars
                                 className="mobile-menu-icon"

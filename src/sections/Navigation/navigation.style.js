@@ -313,6 +313,8 @@ const NavigationWrap = styled.header`
       display: inline-block;
       position: relative;
       cursor: pointer;
+    }
+    .mobile-menu-icon.open {
       animation: close-icon 0.3s ease-in;
     }
     @keyframes close-icon {
