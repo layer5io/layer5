@@ -18,7 +18,7 @@ export const MeetupStyle = styled.div`
 
         button{
             font-size: 1.25rem;
-            color: #00B39F;
+            color: ${props => props.theme.secondaryColor};
             min-width: auto;
             border: none;
             border-bottom: 2px solid transparent;

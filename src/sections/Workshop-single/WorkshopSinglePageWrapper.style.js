@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const WorkshopSinglePageWrapper = styled.div`
-    padding-bottom: 4rem;
+    margin-bottom: 4rem;
 	display: block;
 
 	.backBtn {
@@ -44,7 +44,7 @@ const WorkshopSinglePageWrapper = styled.div`
 
 	.links {
 		display: flex;
-		color: #00d3a9;
+		color: ${props => props.theme.primaryLightColorTwo};
 		border: none;
 		align-items: center;
 		padding: 0.3125rem 0.9375rem;
@@ -57,7 +57,7 @@ const WorkshopSinglePageWrapper = styled.div`
 		transition: 0.5s ease-in-out all;
 
 		&:hover {
-			color: #00b39f;
+			color: ${props => props.theme.secondaryColor};
 			box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.1);
 
 			img {

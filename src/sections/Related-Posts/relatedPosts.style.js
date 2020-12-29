@@ -41,32 +41,36 @@ const RelatedPostsWrapper = styled.div`
         height: 3rem;	
     }	
     .slick-arrow:before{	
-        color: rgba(108, 118, 123, 1);
+        color: ${props => props.theme.primaryColor};
         font-size: 6rem;
         display: inline-block;
         height: 3rem;
     }
     .slick-arrow:hover:before{	
-        color: #00B39F;	
+        color: ${props => props.theme.secondaryColor};	
     }
     .slick-prev:before{	
         content: "‹";	
         line-height: 0;
+        opacity: 1;
+        color: ${props => props.theme.primaryColor};
     }
     .slick-next:before{	
         content: "›";
         line-height: 0;
+        opacity: 1;
+        color: ${props => props.theme.primaryColor};
     }
     .slick-disabled{	
         visibility: hidden;
     }
     .slick-dots li button:before {
-        font-size: 10px;
-        color:rgb(0 179 159);
+        font-size: 0.6rem;
+        color: ${props => props.theme.secondaryColor};
     }
     .slick-dots li.slick-active button:before {
         opacity: 1;
-        color: #00B39F;
+        color: ${props => props.theme.secondaryColor};
     }
 
     .post-meta-block{
@@ -75,16 +79,34 @@ const RelatedPostsWrapper = styled.div`
 
     .post-content-block{
         height: 10rem;
+
+        .post-title {
+            text-align: left;
+        }
+    }
+
+    .allBlogs{
+        height: 22rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+        .post-content-block {
+            height: 8rem;
+        }
+
+        .allBlogs{
+            height: 19.5rem;
+        }
     }
 
     @media screen and (max-width: 720px) and (min-width: 385px){
         .post-content-block{
             height: 8rem;
         }
-    }
 
-    .allBlogs{
-        height: 21.5rem;
+        .allBlogs{
+            height: 19.5rem;
+        }
     }
 
     .allBlogs_card{
@@ -117,10 +139,10 @@ const RelatedPostsWrapper = styled.div`
         &:hover{
             box-shadow: 0px 2px 15px 4px rgba(0,0,0,0.2);
             h2{
-                color: #00B39F;
+                color: ${props => props.theme.secondaryColor};
             }
             svg{
-                color: #00B39F;
+                color: ${props => props.theme.secondaryColor};
                 margin-left: 3px;
                 transform: scale(1.3);
             }

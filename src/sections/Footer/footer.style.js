@@ -7,7 +7,7 @@ const FooterWrapper = styled.section`
 	.section__particle {
 		position: absolute;
 		left: 0;
-		top: 35%;
+		top: 22%;
 		width: 18rem;
 	}
 

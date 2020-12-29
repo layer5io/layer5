@@ -44,7 +44,7 @@ export const MembersGridWrapper = styled.div`
     }
     .active-filter-color{
             display: inline-block;
-            background-color: #00b39f;
+            background-color: ${props => props.theme.secondaryColor};
             width: 20px;
             height: 20px;
             margin-right: 10px;

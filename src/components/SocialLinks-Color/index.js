@@ -1,21 +1,21 @@
 import React from "react";
 import { Col, Row } from "../../reusecore/Layout";
-import mail_icon from "../../assets/images/socialIcons/mail-dark.svg";
-import slack_icon from "../../assets/images/socialIcons/slack-dark.svg";
-import twitter_icon from "../../assets/images/socialIcons/twitter-dark.svg";
+import mail_icon from "../../assets/images/socialIcons/mail-light.svg";
+import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
+import twitter_icon from "../../assets/images/socialIcons/twitter-light.svg";
 import github_icon from "../../assets/images/socialIcons/github-dark.svg";
-import youtube_icon from "../../assets/images/socialIcons/youtube-dark.svg";
-import docker_icon from "../../assets/images/socialIcons/docker-dark.svg";
-import SocialIconWrapper from "./socialicon.style";
+import youtube_icon from "../../assets/images/socialIcons/youtube-light.svg";
+import docker_icon from "../../assets/images/socialIcons/docker-light.svg";
+import SocialLinksWrapper from "./sociallinkscolor.style";
 
-const SocialLinks = () => {
+const SocialLinksColor = () => {
     return (
-        <SocialIconWrapper>
+        <SocialLinksWrapper>
             <Col xs={12}>
                 <Row className="social_icons">
                     <a
                         className="mail_icon"
-                        href="mailto:community@layer5.io" 
+                        href="mailto:community@layer5.io"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -60,8 +60,8 @@ const SocialLinks = () => {
                     </a>
                 </Row>
             </Col>
-        </SocialIconWrapper>
+        </SocialLinksWrapper>
     );
 };
 
-export default SocialLinks;
+export default SocialLinksColor;

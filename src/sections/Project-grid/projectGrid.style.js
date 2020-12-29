@@ -24,7 +24,7 @@ export const ProjectWrapper = styled.div`
         text-align: center;
         transition: 0.6s;
         &:hover{
-            background-color: #00b39f;
+            background-color: ${props => props.theme.secondaryColor};
             img {
                 filter: brightness(0) invert(1);
             }
