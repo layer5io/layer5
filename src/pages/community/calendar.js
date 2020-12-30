@@ -6,7 +6,14 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 import Layout from "../../components/layout";
-import Calendar from "../../sections/Calendar";
+import Loadable from "react-loadable";
+
+const LoadableCalendar = Loadable({
+    loader: () => import("../../sections/Calendar"),
+    loading() {
+        return <div>Loading...</div>;
+    }
+});
 
 const CalendarPage = () => {
     return (
@@ -15,7 +22,7 @@ const CalendarPage = () => {
                 <GlobalStyle />
                 <SEO title="Calendar" />
                 <Navigation />
-                <Calendar />
+                <LoadableCalendar />
                 <Footer />
             </Layout>
         </ThemeProvider>
