@@ -6,6 +6,7 @@ import Button from "../../../reusecore/Button";
 import ColorBox from "../../../components/ColorBox";
 import media from "../../../components/mediaQuery";
 
+import { FiDownloadCloud } from "react-icons/fi";
 import Layer5CommunityWhite from "../../../assets/images/layer5/layer5-tagline/png/layer5-tag-white-bg.png";
 import Layer5WhiteBg from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
 import Layer5TagDark from "../../../assets/images/layer5/layer5-tagline/png/layer5-tag-community-white.png";
@@ -13,13 +14,23 @@ import Bookmarks from "../../../assets/images/layer5/bookmarks.png";
 
 const Layer5Wrapper = styled.section`
     .brandHeader {
+        padding: 75px 0 105px 0;
         height: auto;
-        padding-left:0px;
-        padding-top: 3rem;
-    }
-    .brandHeader h2{
-        color: ${props => props.theme.black};
-        font-size:2rem;
+        background: #1E2117;
+        h1{
+            color: ${props => props.theme.white};
+            font-size: 50px;
+            line-height: 60px;
+            padding: 20px 0 20px 0;
+        }
+        h6{
+            margin: 20px auto 60px auto;
+            width: 70%;
+            color: ${props => props.theme.white};
+            font-size: 21px;
+            line-height: 32px;
+            font-weight: 100;
+        }
     }
     .Layer5TagDark {
         background: #000000;
@@ -27,8 +38,10 @@ const Layer5Wrapper = styled.section`
 
     @media (max-width:575px){
         .brandHeader{
-            padding-bottom:30px;
-            padding-top: 0;
+            padding: 30px 0 50px 0;
+            h6{
+                width: 90%;
+            }
         }
     }
 
@@ -59,29 +72,19 @@ const Layer5Wrapper = styled.section`
 const Layer5 = () => {
     return (
         <Layer5Wrapper>
-            <Row>
-                <Col xs={12} sm={4} lg={4} xl={4}>
-                    <div className="brandHeader">
-                        <h2>Layer5 Brand Kits</h2>
-                    </div>
-                </Col>
-                <Col xs={12} sm={8} lg={8} xl={8}>
-                    <div className="post-content">
-                        <p>
-                            We’ve created some guidelines to help you use our brand and
-                            assets, including our logo, content and trademarks, without having
-                            to negotiate legal agreements for each use. To make any use of our
-                            marks in a way not covered by these guidelines, please contact us
-                            and include a visual mockup of intended use.
-                        </p>
-                        <p>
-                            <a href="mailto:community@layer5.io">
-                Questions about our brand? Contact us.
-                            </a>
-                        </p>
-                    </div>
-                </Col>
-            </Row>
+            <div className="brandHeader">
+                <h1> Layer5 Brand Kits</h1>
+                <h6>
+                    We’ve created some guidelines to help you use our brand and
+                    assets, including our logo, content and trademarks, without having
+                    to negotiate legal agreements for each use. To make any use of our
+                    marks in a way not covered by these guidelines, please contact us
+                    and include a visual mockup of intended use.
+                </h6>
+                <Button primary title="Download Brand Kit">
+                    <FiDownloadCloud size={21} className="icon-left" />
+                </Button>
+            </div>
             <Row className="post-content">
                 <Col xs={12} sm={6} lg={6} xl={6}>
                     <h1 className="layerH3">

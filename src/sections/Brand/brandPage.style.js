@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const BrandPageWrapper = styled.section`
-  padding: 150px 0 100px 0;
+  padding: 0 0 100px 0;
   position: relative;
   overflow: hidden;
   text-align: center;
