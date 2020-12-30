@@ -4,6 +4,89 @@ const CommunitySectionWrapper = styled.div`
     .community-section-wrapper{
         padding: 50px 0;
     }
+    
+    .centerTexts{
+        margin-top: -2.5rem;
+        text-align: center;
+    }
+    
+    .service-mesh-projects{
+        margin-top: 2rem;
+        h1{
+            line-height: 51px;
+            margin-bottom: 1rem;
+        }
+        
+        img{
+            margin-left: 5rem;
+            max-height: 300px;
+        }
+    }
+    
+    .open-source-projects{
+        margin-top: 2rem;
+        text-align: center;
+        
+        h1{
+            margin:auto;
+            margin-bottom: 1rem;
+        }
+        p{
+            max-width: 60rem;
+            margin: auto;
+        }
+    }
+    
+    .our-community-members{
+        margin-top: 2rem;
+    }
+    
+    .community{
+        background: ${props => props.theme.secondaryColor};
+        color: white;
+        .content{
+            margin: 180px 80px 224px 380px;
+        }
+        h5{
+            color: white;
+            margin-bottom : 24px;
+        }
+        h1{
+            margin-bottom: 40px;
+            color: white;
+        }
+        button{
+            margin-top: 40px;
+        }
+        
+        
+    }
+
+    .slider{
+        background: ${props => props.theme.black};
+        color: white;
+    }
+    
+    .meshmate{
+        margin-top: 80px;
+        .content{
+            h1{
+                margin-top: 24px;
+                margin-bottom: 40px;
+            }
+        }
+        img{
+            max-height: 250px;
+            margin-top: 95px;
+            margin-bottom: 40px;
+        }
+    }
+    
+    .newcomers-button{
+        margin: 80px auto;
+    }
+    
+    
     .container .row {
         margin-left: -0.75rem;
         margin-right: -0.75rem;
