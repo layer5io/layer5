@@ -20,7 +20,7 @@ const CalendarPage = () => {
         <ThemeProvider theme={theme}>
             <Layout>
                 <GlobalStyle />
-                <SEO title="Calendar" />
+                <SEO title="Service Mesh Events Calendar" />
                 <Navigation />
                 <LoadableCalendar />
                 <Footer />

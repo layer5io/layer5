@@ -11,7 +11,7 @@ const Calendar = () => {
         <CalendarStyleWrapper>
             <div>
                 <h1>Community Calendar</h1>
-                <p>Join any or all of the weekly meetings</p>
+                <p className="sub-heading">Join any or all of the weekly meetings</p>
                 <div className="calendar-wrapper">
                     <div className="calendar-grid">
                         <FullCalendar
