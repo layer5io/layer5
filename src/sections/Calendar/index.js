@@ -45,7 +45,6 @@ const Calendar = () => {
                                 }}
                                 showNonCurrentDates={false}
                                 contentHeight={700}
-                                className="full-calendar"
                             />
                         </div>
                     </div>
