@@ -30,6 +30,7 @@ const NavigationWrap = styled.header`
     left: 0;
     width: 100%;
     display: block;
+    visibility: hidden;
     box-shadow: 0px 10px 10px 0px rgba(0, 211, 169, 0.10);
     animation: bobbleout ease .3s forwards;
     pointer-events: none;
@@ -249,6 +250,9 @@ const NavigationWrap = styled.header`
     min-height: 50px;
     padding: 15px 20px;
     background: #fff;
+    .nav {
+      margin-top: 7px;
+    }
     &.scrolled {
       padding: 8px 20px;
     }
@@ -262,7 +266,7 @@ const NavigationWrap = styled.header`
     .logo {
       width: 100%;
       display: block;
-      margin: 7px 0 0 0;
+      margin-top: 7px;
       img {
         width: 110px;
       }
@@ -271,9 +275,11 @@ const NavigationWrap = styled.header`
       position: fixed;
       top: auto;
       left: 0;
-      height: 100%;
+      height: auto;
       width: 100%;
       padding: 0 10px;
+      visibility: hidden;
+      opacity: 0;
     }
     .mobile-dropdown {
       position: relative;
@@ -281,8 +287,19 @@ const NavigationWrap = styled.header`
       display: block;
       background: white;
       border-radius: 10px;
-      box-shadow: 0px 10px 10px 0px rgba(0, 211, 169, 0.10);
+      box-shadow: 0px 10px 10px 10px rgba(0, 211, 169, 0.10);
+      max-height: 400px;
+      overflow-y: scroll;
     }
+    .expand {
+      visibility: visible;
+      opacity: 1;
+      .mobile-dropdown {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
     .mobile-collapsed {
       display: flex;
       flex-direction: column;
@@ -292,10 +309,18 @@ const NavigationWrap = styled.header`
       position: relative;
       cursor: pointer;
     }
+    .mobile-menu-icon.open {
+      animation: close-icon 0.3s ease-in;
+    }
+    @keyframes close-icon {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(180deg); }
+    }
     .mobile-nav-item {
       padding: 1px;
       .menu-item {
         font-size: 16px;
+        font-weight: 600;
       }
       a:before {
         content: none;
