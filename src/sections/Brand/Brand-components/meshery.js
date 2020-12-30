@@ -30,7 +30,7 @@ const MesheryBrand = () => {
                     <h1 className="layerH3">
                         <strong>Meshery</strong>
                     </h1>
-                    <Button primary className="l5-dark-yellow" title="Donwload Logo Assets" url="https://layer5.io/assets/resources/brand/layer5-brand-kit.zip" external="true">
+                    <Button primary className="l5-dark-yellow" title="Donwload Logo Assets" url="https://layer5.io/assets/resources/brand/meshery-brand-kit.zip" external="true">
                         <FiDownloadCloud size={21} className="icon-left" />
                     </Button>
                 </Row>

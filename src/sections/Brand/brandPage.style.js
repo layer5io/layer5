@@ -10,7 +10,7 @@ const BrandPageWrapper = styled.section`
     text-align: center;
   }
   .post-content {
-    margin: 50px auto 30px auto;
+    margin: 60px auto 30px auto;
     width: 90%;
     color: #000000;
     .button-right {
