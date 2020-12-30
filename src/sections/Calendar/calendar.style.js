@@ -5,8 +5,9 @@ const CalendarStyleWrapper = styled.div`
     position: relative;
     overflow: hidden;
     text-align: center;
-
-    p {
+    .sub-heading {
+        color:gray;
+        position:relative;
         margin: 20px 0px;
         font-size: 16px;
         line-height: 16px;
@@ -15,28 +16,62 @@ const CalendarStyleWrapper = styled.div`
         margin: 5% 10%;
     }
     .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
     }
     .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
-        margin-left: 20px;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        margin-left: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
     }
     .fc .fc-button-group > .fc-button {
         background: ${props => props.theme.tertiaryColor};
-        border-radius: 10px;
-        padding: 3px;
+        padding: 14px;
+        margin: 0px;
+        min-width: 40px;
+        color: ${props => props.theme.shadowLightColor};
+
     }
     .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
         background: ${props => props.theme.secondaryColor};
+        min-width: 120px;
+        padding: 14px;
+        &:hover{
+            color: #111111; 
+            background: ${props => props.theme.primaryLightColorTwo}; 
+        }
+
     }
     .fc .fc-button-primary,
     .fc .fc-button-primary:disabled {
-        border: none;
+        cursor: pointer;
+        font-family: inherit; 
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: capitalize; 
+        border: 0; 
+        
+        padding: 14px;
+        border-radius: 5px;
+        -webkit-transition: 450ms all;
+        transition: 450ms all;
+
+
     }
     .fc-addToCalendar-button.fc-button.fc-button-primary {
         background: ${props => props.theme.highlightColor};
+        min-width: 170px;
+        &:hover{
+            color: ${props => props.theme.black};
+            background: ${props => props.theme.highlightColor}; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
     }
     .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
         min-height: auto;
