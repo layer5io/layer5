@@ -4,19 +4,24 @@ const BrandPageWrapper = styled.section`
   padding: 0 0 100px 0;
   position: relative;
   overflow: hidden;
-  text-align: center;
 
   h2 {
     color: grey;
     text-align: center;
   }
   .post-content {
-    margin: 0 0.1rem;
-    box-shadow: 2px 1px 10px #8f8f8f;
+    margin: 50px auto 30px auto;
+    width: 90%;
     color: #000000;
-    padding: 1em;
-    border-radius: 15px;
-    margin-bottom: 20px;
+    .button-right {
+      right: 0;
+  }
+  h1{
+    font-size: 40px;
+  }
+  p{
+    font-size: 18px;
+  }
   }
   .l5-dark-yellow {
     text-align: center;
@@ -25,11 +30,14 @@ const BrandPageWrapper = styled.section`
   }
   .ImgDiv {
     text-align: center;
-    margin: 2rem 0rem;
+    // margin: 2rem 0rem;
   }
   .layerH3 {
     float: left;
     margin-bottom: 1em;
+  }\
+  .in{
+    margin-top: 60px;
   }
 `;
 

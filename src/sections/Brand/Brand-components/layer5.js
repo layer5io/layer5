@@ -17,6 +17,7 @@ const Layer5Wrapper = styled.section`
         padding: 75px 0 105px 0;
         height: auto;
         background: #1E2117;
+        text-align: center;
         h1{
             color: ${props => props.theme.white};
             font-size: 50px;
@@ -35,6 +36,11 @@ const Layer5Wrapper = styled.section`
     .Layer5TagDark {
         background: #000000;
     }
+    .bookmarks{
+        width: 80%;
+        margin: auto;
+    }
+    
 
     @media (max-width:575px){
         .brandHeader{
@@ -85,27 +91,30 @@ const Layer5 = () => {
                     <FiDownloadCloud size={21} className="icon-left" />
                 </Button>
             </div>
-            <Row className="post-content">
-                <Col xs={12} sm={6} lg={6} xl={6}>
+            <div className="post-content">
+                <Row>
                     <h1 className="layerH3">
-                        <strong>Layer5</strong>
+                            Layer5
                     </h1>
-                </Col>
-                <Col xs={12} sm={6} lg={6} xl={6}>
-                    <Button primary className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/layer5-brand-kit.zip" external="true" />
-                </Col>
-                <Col xs={12} sm={12} lg={12} xl={12}>
-                    <Row>
-                        <p>
+                    <Button primary className="l5-dark-yellow" title="Donwload Logo Assets" url="https://layer5.io/assets/resources/brand/layer5-brand-kit.zip" external="true">
+                        <FiDownloadCloud size={21} className="icon-left" />
+                    </Button>
+                </Row>
+                <Row>
+                    <p>
                             The Layer5 mark includes the Layer5 name & logo, and any word,
                             phrase, image, or other designation that identifies the source or
                             origin of any Layer5 projects. Please don’t modify the marks or
                             use them in a confusing way, including suggesting sponsorship or
                             endorsement by Layer5, or in a way that confuses Layer5 with
                             another brand (including your own).
-                        </p>
-                    </Row>
-                </Col>
+                    </p>
+                </Row>
+                <Row>
+                    <h1 className="layerH3 in">
+                            Logos
+                    </h1>
+                </Row>
                 <Row className="ImgDiv">
                     <Col xs={12} sm={4} lg={4} xl={4}>
                         <a href="#">
@@ -124,18 +133,16 @@ const Layer5 = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} sm={6} lg={6} xl={6}>
-                        <h3 className="layerH3">
-                            <strong>Colors</strong>
-                        </h3>
-                    </Col>
-                    <Col xs={12} sm={12} lg={12} xl={12}>
-                        <p>
+                    <h1 className="layerH3 in">
+                            Colors
+                    </h1>
+                </Row>
+                <Row>
+                    <p>
                             Our community color palette consists of gray, green and colors
                             representing each of our projects. The Layer5 logo should be white
                             when using project colors as the background.
-                        </p>
-                    </Col>
+                    </p>
                 </Row>
                 <Col xs={12} sm={12} lg={12} xl={12}>
                     <h4 className="layerH3">Web</h4>
@@ -224,21 +231,19 @@ const Layer5 = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} sm={12} lg={12} xl={12}>
-                        <h4 className="layerH3">Bookmarks</h4>
-                    </Col>
-                    <Col xs={12} sm={12} lg={12} xl={12}>
-                        <p className="layerH3">
-                            Media available for print in the form of bookmarks.
-                        </p>
-                    </Col>
-                    <Col xs={8} sm={2} lg={2} xl={2}>
-                        <Link to="#">
-                            <img src={Bookmarks} alt="Bookmarks" />
-                        </Link>
-                    </Col>
+                    <h1 className="layerH3 in">
+                        Bookmarks
+                    </h1>
                 </Row>
-            </Row>
+                <Row>
+                    <p className="layerH3">
+                        Media available for print in the form of bookmarks.
+                    </p>
+                    <Link className="bookmarks" to="#">
+                        <img src={Bookmarks} alt="Bookmarks" />
+                    </Link>
+                </Row>
+            </div>
         </Layer5Wrapper>
     );
 };
