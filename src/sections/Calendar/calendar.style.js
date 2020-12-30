@@ -5,13 +5,7 @@ const CalendarStyleWrapper = styled.div`
     position: relative;
     overflow: hidden;
     text-align: center;
-    h1 {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 40px;
-        line-height: 50px;
-        text-transform: capitalize;
-    }
+
     p {
         margin: 20px 0px;
         font-size: 16px;
@@ -39,7 +33,7 @@ const CalendarStyleWrapper = styled.div`
     }
     .fc .fc-button-primary,
     .fc .fc-button-primary:disabled {
-        border-color: inherit;
+        border: none;
     }
     .fc-addToCalendar-button.fc-button.fc-button-primary {
         background: ${props => props.theme.highlightColor};
