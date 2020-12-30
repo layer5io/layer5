@@ -1,25 +1,24 @@
 import styled from "styled-components";
 
 const FaqSectionWrapper = styled.section`
-  padding: 40px 0 50px 0;
+  padding: 2.5rem 0 3.125rem 0;
   position: relative;
   overflow: hidden;
   .accordion__item + .accordion__item {
     border-color: transparent;
   }
   .reusecore__accordion {
-    margin-bottom: 80px;
+    margin-bottom: 5rem;
   }
   .accordion__item {
     .accordion__header {
-      padding: 10px 25px 10px 25px;
-      background: ${props => props.theme.primaryLightColorTwo};
+      padding: 0.625rem 1.5rem 0.625rem 1.5rem;
+      background: ${props => props.theme.secondaryColor};
       h5 {
-        font-weight: 400;
-        font-size: 16px;
-        margin-left: 25px;
+        font-weight: 700;
+        font-size: 18px;
         position: relative;
-        color: ${props => props.theme.black};
+        color: ${props => props.theme.white};
       }
       > div {
         &:focus {
@@ -29,7 +28,7 @@ const FaqSectionWrapper = styled.section`
     }
 
     .accordion__body {
-      padding: 0 10px 0 10px;
+      padding: 0 0.625rem 0 0.625rem;
       p {
         font-size: 16px;
         font-weight: 300;
@@ -37,18 +36,15 @@ const FaqSectionWrapper = styled.section`
       }
     }
   }
-  .faq-thumb {
-    transform: translateX(80px);
-  }
   .section-title {
     text-align: center;
     h1 {
-      margin-bottom: 60px;
+      margin-bottom: 3.75rem;
       font-size: 40px;
+      line-height: 3.125rem;
     }
     .search {
-      margin-bottom: 50px;
-      // width: 50%;
+      margin-bottom: 3.125rem;
       input {
         font-size: 20px;
         width: 80%;
@@ -57,47 +53,18 @@ const FaqSectionWrapper = styled.section`
         background-color: #F0F0F0;
         border-radius: 1.25rem;
       }
-      button {
-        position: absolute;
-        left: 30px;
-        min-width: 20px;
-        background: transparent;
-        color: ${props => props.theme.headingColor}; 
-      }
+      // button {
+      //   position: absolute;
+      //   left: 30px;
+      //   min-width: 20px;
+      //   background: transparent;
+      //   color: ${props => props.theme.headingColor}; 
+      // }
     }
   }
-  .faq-thumb-block {
-    order: 2;
-  }
-  .faq-content-block {
-    order: 1;
-  }
-  @media only screen and (max-width: 1400px) {
-    .faq-thumb {
-      transform: translateX(0px);
-    }
-    .section__particle {
-      &.one {
-        left: 2%;
-      }
-    }
-  }
-  @media only screen and (max-width: 1024px) {
-    .section__particle {
-      &.one {
-        left: 3%;
-        top: 5%;
-      }
-      &.two {
-        top: auto;
-        bottom: 0;
-      }
-    }
-  }
-
   @media only screen and (max-width: 912px) {
     .reusecore__accordion {
-      margin-bottom: 50px;
+      margin-bottom: 3.125rem;
     }
   }
 
@@ -105,16 +72,7 @@ const FaqSectionWrapper = styled.section`
     .section-title {
       text-align: center;
     }
-    .faq-thumb-block {
-      order: 1;
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    .faq-content-block {
-      order: 2;
-    }
     .reusecore__accordion {
-      margin-bottom: 50px;
       text-align: left;
     }
   }

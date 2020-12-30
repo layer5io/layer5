@@ -2,8 +2,8 @@ import React from "react";
 
 import { Container} from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import { FiSearch } from "react-icons/fi";
-import Button from "../../reusecore/Button";
+// import { FiSearch } from "react-icons/fi";
+// import Button from "../../reusecore/Button";
 import {
     Accordion,
     AccordionItem,
@@ -14,8 +14,7 @@ import {
     CloseIcon
 } from "../../reusecore/Accordion";
 
-import { IoIosArrowDown } from "react-icons/io";
-import { FaPlus } from "react-icons/fa";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import data from "../../assets/data/faq";
 
@@ -45,13 +44,13 @@ const Faq = () => {
                         <AccordionItem key={index}>
                             <AccordionTitle>
                                 <IconWrapper>
+                                    <h5>{faq.title}</h5>
                                     <OpenIcon>
-                                        <IoIosArrowDown />
+                                        <IoIosArrowUp size={22} color="white" />
                                     </OpenIcon>
                                     <CloseIcon>
-                                        <FaPlus />
+                                        <IoIosArrowDown size={22} color="white" />
                                     </CloseIcon>
-                                    <h5>{faq.title}</h5>
                                 </IconWrapper>
                             </AccordionTitle>
                             <AccordionBody>
