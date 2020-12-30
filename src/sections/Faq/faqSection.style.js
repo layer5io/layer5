@@ -1,22 +1,9 @@
 import styled from "styled-components";
 
 const FaqSectionWrapper = styled.section`
-  padding: 100px 0 50px 0;
+  padding: 40px 0 50px 0;
   position: relative;
   overflow: hidden;
-  .section__particle {
-    position: absolute;
-    &.one {
-      width: 50px;
-      left: 8%;
-      top: 14%;
-    }
-    &.two {
-      width: 180px;
-      top: 43%;
-      right: -55px;
-    }
-  }
   .accordion__item + .accordion__item {
     border-color: transparent;
   }
@@ -54,8 +41,29 @@ const FaqSectionWrapper = styled.section`
     transform: translateX(80px);
   }
   .section-title {
-    h2 {
-      margin-bottom: 42px;
+    text-align: center;
+    h1 {
+      margin-bottom: 60px;
+      font-size: 40px;
+    }
+    .search {
+      margin-bottom: 50px;
+      // width: 50%;
+      input {
+        font-size: 20px;
+        width: 80%;
+        padding: 1rem;
+        border: 1px solid #FFFFFF;
+        background-color: #F0F0F0;
+        border-radius: 1.25rem;
+      }
+      button {
+        position: absolute;
+        left: 30px;
+        min-width: 20px;
+        background: transparent;
+        color: ${props => props.theme.headingColor}; 
+      }
     }
   }
   .faq-thumb-block {
