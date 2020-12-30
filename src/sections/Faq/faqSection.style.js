@@ -82,6 +82,7 @@ const FaqSectionWrapper = styled.section`
         h5 {
           font-size: 13px;
           line-height: 21px;
+          padding-right: 1.6rem;
         }
       }
     }
