@@ -1,19 +1,14 @@
 import styled from "styled-components";
 
 const CalendarStyleWrapper = styled.div`
-    padding: 150px 0 100px 0;
     position: relative;
     overflow: hidden;
     text-align: center;
-    .sub-heading {
-        color:gray;
-        position:relative;
-        margin: 20px 0px;
-        font-size: 16px;
-        line-height: 16px;
-    }
     .calendar-wrapper {
-        margin: 5% 10%;
+        margin-bottom: 5rem;
+    }
+    .calendar-grid {
+        overflow-x: auto;
     }
     .fc-direction-ltr .fc-button-group > .fc-button:not(:last-child) {
         border-top-right-radius: 0px;
@@ -77,6 +72,11 @@ const CalendarStyleWrapper = styled.div`
         min-height: auto;
         font-size: 14px;
         background: ${props => props.theme.secondaryColor};
+    }
+    @media only screen and (max-width: 912px) {
+        .fc.fc-media-screen.fc-direction-ltr.fc-theme-standard {
+            width: 912px;
+        }
     }
 `;
 
