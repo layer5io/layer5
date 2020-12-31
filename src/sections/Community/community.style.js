@@ -39,33 +39,42 @@ const CommunitySectionWrapper = styled.div`
     
     .our-community-members{
         margin-top: 2rem;
+        color: white;
+        background: linear-gradient(to right, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
+        @media (max-width: 992px) {
+            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
+        }
+        
+        .community{
+            margin: 180px auto 224px auto;
+            @media (max-width: 992px) {
+                margin-bottom: 200px;
+            }
+            @media (max-width: 576px) {
+                margin-top: 80px;
+                margin-bottom: auto;
+            }
+            
+            h5{
+                color: white;
+                margin-bottom : 24px;
+            }
+            h1{
+                margin-bottom: 40px;
+                color: white;
+            }
+            button{
+                margin-top: 40px;
+            }       
+        }
+        
+        .slider{
+            // margin-top;
+        }
+        
+        
     }
     
-    .community{
-        background: ${props => props.theme.secondaryColor};
-        color: white;
-        .content{
-            margin: 180px 80px 224px 380px;
-        }
-        h5{
-            color: white;
-            margin-bottom : 24px;
-        }
-        h1{
-            margin-bottom: 40px;
-            color: white;
-        }
-        button{
-            margin-top: 40px;
-        }
-        
-        
-    }
-
-    .slider{
-        background: ${props => props.theme.black};
-        color: white;
-    }
     
     .meshmate{
         margin-top: 80px;

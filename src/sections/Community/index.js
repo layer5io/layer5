@@ -1,16 +1,15 @@
 import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import Community from "./Community";
-import CommunityMembers from "./CommunityMembers";
-import MeshmatesProgramSummary from "./MeshmatesProgramSummary";
 import CommunityMeetingsTable from "./CommunityMeetingsTable";
 import CommunitySectionWrapper from "./community.style";
 import CommunityMemberImage from "./community-member.png";
 import Button from "../../reusecore/Button";
 import MehsmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
+import PictureSlider from "./slider";
 
 const CommunityPage = () => {
+
     return (
         <CommunitySectionWrapper>
             <PageHeader title="The Layer5 Community" path="Community"/>
@@ -42,37 +41,27 @@ const CommunityPage = () => {
                     </Row>
                 </Container>
                 <div className="our-community-members">
-                    <Row>
-                        <Col className="community" sm={12} lg={6}>
-                            <div className="content">
+                    <Container>
+                        <Row>
+                            <Col className="community" sm={12} lg={6}>
                                 <h5>Jump In! Our Community is warm</h5>
                                 <h1>Our Community Members</h1>
                                 <p>
-                                    The Layer5 community is diverse with members from around the globe,
-                                    who have shown consistent commitment in advancing our open source initiatives.
+                                The Layer5 community is diverse with members from around the globe,
+                                who have shown consistent commitment in advancing our open source initiatives.
                                 </p>
                                 <p>
-                                    We believe that every contributor deserves a safe and friendly environment,
-                                    enabling them to effectively compare different ideas and find the best solutions
-                                    for advancement, while building the size, diversity, and strength of the community.
+                                We believe that every contributor deserves a safe and friendly environment,
+                                enabling them to effectively compare different ideas and find the best solutions
+                                for advancement, while building the size, diversity, and strength of the community.
                                 </p>
                                 <Button primary title="See Our Community Members" url="/community/members"/>
-                            </div>
-                        </Col>
-                        <Col className="slider" sm={12} lg={6}>
-                            <h6>Jump In! Our Community is warm</h6>
-                            <h1>Our Community Members</h1>
-                            <p>
-                                    The Layer5 community is diverse with members from around the globe,
-                                    who have shown consistent commitment in advancing our open source initiatives.
-                            </p>
-                            <p>
-                                    We believe that every contributor deserves a safe and friendly environment,
-                                    enabling them to effectively compare different ideas and find the best solutions
-                                    for advancement, while building the size, diversity, and strength of the community.
-                            </p>
-                        </Col>
-                    </Row>
+                            </Col>
+                            <Col className="slider" sm={12} lg={6}>
+                                <PictureSlider/>
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
                 <Container>
                     <Row className="meshmate">
@@ -96,7 +85,7 @@ const CommunityPage = () => {
                         </Col>
                         <Col sm={12} lg={6}>
                             <img src={MehsmateIcon} alt="MeshMate Icon"/>
-                            <h1>Layer5 Meshmates Program</h1>
+                            <h2>Layer5 Meshmates Program</h2>
                         </Col>
                         <div className="newcomers-button">
                             <Button primary title="All newcomers welcome" url="/community/newcomers"/>
