@@ -114,7 +114,6 @@ const CommunitySectionWrapper = styled.div`
                 }
             }
         }
-        
     }
     
     .newcomers-button{

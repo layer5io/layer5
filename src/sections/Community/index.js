@@ -2,14 +2,14 @@ import React from "react";
 import {Link} from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import CommunitySectionWrapper from "./community.style";
-import CommunityMemberImage from "./community-member.png";
 import Button from "../../reusecore/Button";
-import MehsmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
+import JoinCommunity from "../Join-community";
 import PictureSlider from "./slider";
 import {FaArrowRight} from "react-icons/fa";
+import CommunitySectionWrapper from "./community.style";
 import Lee_workshop from "./Lee_Workshop.png";
-import JoinCommunity from "../Join-community";
+import CommunityMemberImage from "./community-member.png";
+import MehsmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
 
 const CommunityPage = () => {
 
