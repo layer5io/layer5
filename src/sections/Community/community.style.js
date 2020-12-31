@@ -119,9 +119,7 @@ const CommunitySectionWrapper = styled.div`
     .newcomers-button{
         margin: 5rem auto;
     }
-    
-    
-    
+   
 `;
 
 export default CommunitySectionWrapper;
