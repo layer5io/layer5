@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import CommunityMeetingsTable from "./CommunityMeetingsTable";
 import CommunitySectionWrapper from "./community.style";
 import CommunityMemberImage from "./community-member.png";
 import Button from "../../reusecore/Button";
@@ -12,10 +11,9 @@ const CommunityPage = () => {
 
     return (
         <CommunitySectionWrapper>
-            <PageHeader title="The Layer5 Community" path="Community"/>
+            <PageHeader title="The Layer5 Community" subtitle="New Members are always welcome" path="Community"/>
             <div className="community-section-wrapper">
                 <Container>
-                    <p className="centerTexts">New Members are always welcome</p>
                     <Row className="service-mesh-projects">
                         <Col sm={12} lg={6}>
                             <h1>Largest collection of service mesh projects and their maintainers in the world</h1>
