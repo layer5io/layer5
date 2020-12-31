@@ -13,9 +13,6 @@ const BrandPageWrapper = styled.section`
     margin: 60px auto 30px auto;
     width: 90%;
     color: #000000;
-    .button-right {
-      right: 0;
-  }
   h1{
     font-size: 40px;
   }

@@ -35,27 +35,35 @@ const SMPBrand = () => {
         <SMPWrap>
             <div className="post-content">
                 <Row>
-                    <h1 className="layerH3">
-                        <strong>Service Mesh Performance</strong>
-                    </h1>
-                    <Button primary className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/smp-brand-kit.zip" external="true">
-                        <FiDownloadCloud size={21} className="icon-left" />
-                    </Button>
+                    <Col lg={6} md={6} sm={6}>
+                        <h1 className="layerH3">
+                            <strong>Service Mesh Performance</strong>
+                        </h1>
+                    </Col>
+                    <Col lg={6} md={6} sm={6}>
+                        <Button primary className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/smp-brand-kit.zip" external="true">
+                            <FiDownloadCloud size={21} className="icon-left" />
+                        </Button>
+                    </Col>
                 </Row>
                 <Row>
-                    <p>
-            The Service Mesh Performance mark includes SMP name & logo and any
-            word, phrase, image, or other designation that identifies the
-            source or origin of any Layer5 projects. PLease don't modify the
-            marks or use them in a confusing way, including suggesting
-            sponsorship or endorsement by Layer5 with another brand(including
-            your own)
-                    </p>
+                    <Col>
+                        <p>
+                The Service Mesh Performance mark includes SMP name & logo and any
+                word, phrase, image, or other designation that identifies the
+                source or origin of any Layer5 projects. PLease don't modify the
+                marks or use them in a confusing way, including suggesting
+                sponsorship or endorsement by Layer5 with another brand(including
+                your own)
+                        </p>
+                    </Col>
                 </Row>
                 <Row>
-                    <h1 className="layerH3 in">
+                    <Col>
+                        <h1 className="layerH3 in">
                             Logos
-                    </h1>
+                        </h1>
+                    </Col>
                 </Row>
                 <Row className="ImgDiv">
                     <Col xs={12} sm={4} lg={4} xl={4}>
@@ -100,27 +108,26 @@ const SMPBrand = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <h1 className="layerH3 in">
+                    <Col>
+                        <h1 className="layerH3 in">
                             Colors
-                    </h1>
+                        </h1>
+                    </Col>
                 </Row>
                 <Row>
-                    <p>
-            The SMP color palette consists of gray, green and colors and
-            additional shades. The SMP logo should be white or monochrome when
-            using project colors as the background.
-                    </p>
+                    <Col>
+                        <p>
+                The SMP color palette consists of gray, green and colors and
+                additional shades. The SMP logo should be white or monochrome when
+                using project colors as the background.
+                        </p>
+                    </Col>
                 </Row>
                 <Row>
-                    <div className="colors">
-                        <Row>
-                            <ColorBox R="R: 0" G="G: 211" B="B: 169" colorCode="#00d3a9" />
-                            <ColorBox R="R: 0" G="G: 179" B="B: 159" colorCode="#00b39f" />
-                            <ColorBox R="R: 71" G="G: 126" B="B: 150" colorCode="#477E96" />
-                            <ColorBox R="R: 100" G="G: 120" B="B: 129" colorCode="#647881" />
-                            <ColorBox R="R: 60" G="G: 73" B="B: 78" colorCode="#3C494E" />
-                        </Row>
-                    </div>
+                    <ColorBox name="Charcoal" R="60" G="73" B="79" colorCode="#3C494F" />
+                    <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
+                    <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
+                    <ColorBox name="Teal Blue" R="71" G="126" B="150" colorCode="#477E96" />
                 </Row>
             </div>
         </SMPWrap>
