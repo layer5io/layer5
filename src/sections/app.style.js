@@ -183,11 +183,43 @@ h6 {
     font-family: 'Qanelas Soft', 'Open Sans';
     color: #1E2117; 
     margin: 0;
+    line-height: normal;
 }
+
+// h1 {
+//     font-size: 3.125rem;
+// }
+
+// h2 {
+//     font-size: 2.125rem;
+// }
+
+// h3 {
+//     font-size: 1.75rem;
+// }
+
+// h4 {
+//     font-size: 1.5rem;
+// }
+
+// h5 {
+//     font-size: 1.25rem;
+// }
+
+// h6 {
+//     font-size: 1rem;
+// }
+
+// h2, h3, h4, h5, h6 {
+//     color: gray;
+//     font-weight: 400;
+//     margin: -1rem auto auto;
+//     text-align: center;
+// }
 
 h2.sub-heading {
     color: gray;
-    font-weight: 500;
+    font-weight: 400;
     margin: -1rem auto auto;
     text-align: center;
 }

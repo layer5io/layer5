@@ -21,6 +21,10 @@
     "preload-fonts": "gatsby-preload-fonts"
   },
   "dependencies": {
+    "@fullcalendar/daygrid": "^5.5.0",
+    "@fullcalendar/google-calendar": "^5.5.0",
+    "@fullcalendar/interaction": "^5.5.0",
+    "@fullcalendar/react": "^5.5.0",
     "@mdx-js/mdx": "^1.6.11",
     "@mdx-js/react": "^1.6.11",
     "babel-plugin-styled-components": "^1.10.7",
@@ -51,6 +55,7 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.11.0",
     "react-intersection-observer": "^8.29.0",
+    "react-loadable": "^5.5.0",
     "react-particles-js": "^2.7.1",
     "react-scroll": "^1.7.16",
     "react-select": "^3.1.0",

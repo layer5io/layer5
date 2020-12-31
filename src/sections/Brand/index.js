@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "../../reusecore/Layout";
 import BrandPageWrapper from "./brandPage.style";
 
 import Layer5 from "./Brand-components/layer5";
@@ -10,12 +9,10 @@ import SMPBrand from "./Brand-components/smp";
 const Brand = () => {
     return (
         <BrandPageWrapper>
-            <Container>
-                <Layer5 />
-                <MesheryBrand />
-                <ImageHubBrand />
-                <SMPBrand />
-            </Container>
+            <Layer5 />
+            <MesheryBrand />
+            <ImageHubBrand />
+            <SMPBrand />
         </BrandPageWrapper>
     );
 };

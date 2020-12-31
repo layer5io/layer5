@@ -145,6 +145,11 @@ const Data = {
                     path: "/community/events",
                     sepLine: true
                 },
+                {
+                    name: "Calendar",
+                    path: "/community/calendar",
+                    sepLine: true
+                },
 
             ],
             actionName: "Meet the community",
@@ -188,7 +193,7 @@ const Data = {
         },
         {
             name: "About",
-            path: "/about",
+            path: "/company/about",
             offset: "-50"
         },
         // {

@@ -20,25 +20,19 @@ const BlogSingle = ({data}) => {
             />
             <div className="single-post-wrapper">
                 <Container>
-                    <Row>
-                        <Col xs={12}>
+                    <MDXRenderer>{body}</MDXRenderer>
+                    <div className="post-info-block">
+                        <div className="tags">
+                            <span>Tags:</span>
                             <div>
-                                <MDXRenderer>{body}</MDXRenderer>
-                                <div className="post-info-block">
-                                    <div className="tags">
-                                        <span>Tags:</span>
-                                        <div>
-                                            {frontmatter.tags && frontmatter.tags.map(tag => (
-                                                <Link key={`${frontmatter.title}-${tag}`}
-                                                    to={`/blog/tag/${slugify(tag)}`}>{tag}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
+                                {frontmatter.tags && frontmatter.tags.map(tag => (
+                                    <Link key={`${frontmatter.title}-${tag}`}
+                                        to={`/blog/tag/${slugify(tag)}`}>{tag}
+                                    </Link>
+                                ))}
                             </div>
-                        </Col>
-                    </Row>
+                        </div>
+                    </div>
                     <RelatedPosts
                         category={frontmatter.category}
                         tags={frontmatter.tags}

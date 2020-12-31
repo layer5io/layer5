@@ -1,22 +1,23 @@
 import styled from "styled-components";
 
 const BrandPageWrapper = styled.section`
-  padding: 150px 0 100px 0;
+  padding: 0 0 100px 0;
   position: relative;
   overflow: hidden;
-  text-align: center;
 
   h2 {
     color: grey;
     text-align: center;
   }
   .post-content {
-    margin: 0 0.1rem;
-    box-shadow: 2px 1px 10px #8f8f8f;
+    margin: 60px auto 30px auto;
+    width: 70%;
     color: #000000;
-    padding: 1em;
-    border-radius: 15px;
-    margin-bottom: 20px;
+  h1{
+    font-size: 40px;
+  }
+  p{
+    font-size: 18px;
   }
   .l5-dark-yellow {
     text-align: center;
@@ -24,12 +25,14 @@ const BrandPageWrapper = styled.section`
     margin: 0px 0px 1rem 0px;
   }
   .ImgDiv {
-    text-align: center;
-    margin: 2rem 0rem;
+    justify-content: flex-start;
   }
   .layerH3 {
     float: left;
     margin-bottom: 1em;
+  }
+  .in{
+    margin-top: 60px;
   }
 `;
 

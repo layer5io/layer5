@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavigationWrap = styled.header`
-  background: transparent;
+  background: ${props => props.theme.white};
   position: sticky;
   width: 100%;
   margin-top: 1rem;
@@ -241,7 +241,7 @@ const NavigationWrap = styled.header`
     }
     .wrap {
       height: 300px;
-      margin-top: -28px;
+      margin-top: -34px;
     }
   }
 

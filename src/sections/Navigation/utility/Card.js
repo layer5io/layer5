@@ -20,14 +20,9 @@ const Card = ({ frontmatter, fields }) => {
                         {frontmatter.title}
                     </h2>
                     <div className="readmore-btn-wrapper">
-                        <Link className="readmore-btn" to={fields.slug}>
+                        <span className="readmore-btn">
                             see more <IoIosArrowRoundForward />
-                        </Link>
-                        {frontmatter.eurl && (
-                            <a className="readmore-btn" href={frontmatter.eurl}>
-                                <BiLinkExternal />
-                            </a>
-                        )}
+                        </span>
                     </div>
                 </div>
             </div>

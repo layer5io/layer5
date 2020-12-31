@@ -1,44 +1,74 @@
-import React from "react";
+import React, { useRef } from "react";
+import { Container, Row } from "../../reusecore/Layout";
+import PageHeader from "../../reusecore/PageHeader";
+import Jobs_Icon from "../../assets/images/contact/job.svg";
+import Support_Icon from "../../assets/images/contact/support.svg";
+import Partner_Icon from "../../assets/images/contact/partner.svg";
+import Contact_Icon from "../../assets/images/contact/contact.svg";
+import CardOutline from "../../components/Card-Outline";
+import ContactPageWrapper from "./contactpage.style";
 
-import { Row, Col } from "../../reusecore/Layout";
-import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
-import img from "./forklift.svg";
-import { MdPermContactCalendar, MdEmail } from "react-icons/md";
+const ContactPage = () => {
 
-import ContactWrapper from "./contact.style";
+    const expandForm = useRef();
 
-const Contact = () => {
+    const toggleForm = () => {
+        expandForm.current.classList.toggle("showForm");
+    };
+
     return (
-        <ContactWrapper id="contact">
-            <div className="parentcard">
-                <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
-                    <SectionTitle className="section-title" UniWidth="100%">
-                        <h2><span>Stay meshy and subscribe</span></h2>
-                    </SectionTitle>
-                    <Row>
-                        <Col md={3}><img src={img} alt="forklift" /></Col>
-                        <Col md={9}>
-                            <Row>
-                                <Col className="nopad" md={1} xs={1}><MdPermContactCalendar className="contact-icon" size={30}></MdPermContactCalendar></Col>
-                                <Col md={11} xs={11}>
-                                    <Row>
-                                        <Col className="firstcol" md={6} xs={6}><input className="inputrow" type="text" placeholder="First Name" name="FNAME" id="mce-FNAME" /></Col>
-                                        <Col className="lastcol" md={6} xs={6}><input className="inputrow" type="text" placeholder="Last Name" name="LNAME" id="mce-LNAME" /></Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col className="nopad" md={1} xs={1}><MdEmail className="contact-icon" size={30}></MdEmail></Col>
-                                <Col md={11} xs={11}><input className="inputrow" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required /></Col>
-                            </Row>
-                            <Button title="Subscribe" id="mc-embedded-subscribe" />
-                        </Col>
+        <ContactPageWrapper>
+            <Container>
+                <PageHeader 
+                    title={"Get In Touch"}
+                    subtitle={`Do you have a general question or enquiry, would like to establish a partnership with Layer5, 
+                               need assistance with my cloud native infrastructure or interested in career opportunities at Layer5.`}
+                />
+                <Row>
+                    <CardOutline 
+                        link="/careers"
+                        img={Jobs_Icon}
+                        alt="Job"
+                        title="Careers"
+                        content="I'm interested in career opportunities at Layer5"
+                    />
+                    <CardOutline 
+                        link="mailto:support@layer5.io"
+                        img={Support_Icon}
+                        alt="Support"
+                        title="Support"
+                        content="I need assistance with my cloud native infrastructure"
+                    />
+                    <CardOutline 
+                        link="/partners"
+                        img={Partner_Icon}
+                        alt="Partner"
+                        title="Partnership"
+                        content="I would like to establish a partnership with Layer5"
+                    />
+                </Row>
+                <Row className="contact-form-row" >
+                    <Row
+                        onClick={function() {toggleForm();}}
+                    >
+                        <CardOutline 
+                            img={Contact_Icon}
+                            alt="Contact"
+                            title="Contact"
+                            content="Send us your enquiry through a form"
+                        />
                     </Row>
-                </form>
-            </div>
-        </ContactWrapper>
+                    <div className="contact-form" ref={expandForm}>
+                        <iframe
+                            scrolling="no"
+                            src="https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"
+                            className="form-frame"
+                        />
+                    </div>
+                </Row>
+            </Container>
+        </ContactPageWrapper>
     );
 };
 
-export default Contact;
+export default ContactPage;
