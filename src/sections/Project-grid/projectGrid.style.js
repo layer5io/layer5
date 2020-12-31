@@ -91,7 +91,7 @@ export const ProjectWrapper = styled.div`
      @media only screen and (max-width: 568px) {
         margin-left: 5%;
         margin-right: 5%;
-        padding: 60px 0 40px 0;
+        padding: 0 0 40px 0;
      }
      @media only screen and (max-width: 480px) {
         .project__block__inner{

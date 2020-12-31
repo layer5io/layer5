@@ -6,10 +6,6 @@ const BlogPageWrapper = styled.div`
         margin-bottom: 4rem;
     }
 
-    .page-header{
-        margin: 10rem auto 3rem auto;
-    }
-
     .post-info-block{
         margin-top: 3rem;
         border-bottom: 1px solid #e5e5e5;
