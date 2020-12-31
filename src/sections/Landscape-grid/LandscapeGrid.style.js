@@ -1,15 +1,14 @@
 import styled from "styled-components";
 export const LandscapePageWrapper=styled.div`
 
-	.headings{
-		font-size: 2rem;
+	h2.landscape-section-heading {
 		margin-bottom: 3rem;
 		padding-top: 3rem;
 		width: 100%;
 		text-align: center;
 	}
-	.subsequent-heading{
-		padding-top: 5rem;
+	.subsequent-heading {
+		padding-top: 8rem;
 	}
 
 	.timeline-heading {
@@ -327,11 +326,11 @@ export const LandscapePageWrapper=styled.div`
 				position: relative;
 				z-index: 1;
 				text-align: center;
-				box-shadow: 0px 2px 5px rgba(0, 179, 159, 0.5);
+				box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
 
 				img {
 					width: 4rem;
-					height: 4rem;
+					height: 3rem;
 					filter: grayscale(1) brightness(10);
 				}
 
@@ -354,7 +353,7 @@ export const LandscapePageWrapper=styled.div`
 				border-bottom-right-radius: 0.8rem;
 				border-bottom-left-radius: 0.8rem;
 				transform: translateY(-6rem);
-				transition: all 0.5s ease-in-out;
+				transition: all 0.5s ease;
 
 				p {
 					margin: 0;

@@ -12,21 +12,21 @@ import "react-tabs/style/react-tabs.css";
 import ServiceMeshTimeline from "./ServiceMeshTimeline";
 import landscape from "../../assets/images/app/projects/landscape.png";
 import Consul_Img from "../../assets/images/service-mesh-icons/consul-white.svg";
-import Nginx_Img from "../../assets/images//service-mesh-icons/nginx-white.svg";
-import Linkerd_Img from "../../assets/images//service-mesh-icons/linkerd-white.svg";
-import NSM_Img from "../../assets/images//service-mesh-icons/nsm-white.svg";
-import Istio_Img from "../../assets/images//service-mesh-icons/istio-white.svg";
+import Nginx_Img from "../../assets/images/service-mesh-icons/nginx-white.svg";
+import Linkerd_Img from "../../assets/images/service-mesh-icons/linkerd-white.svg";
+import NSM_Img from "../../assets/images/service-mesh-icons/nsm-white.svg";
+import Istio_Img from "../../assets/images/service-mesh-icons/istio-white.svg";
 import Button from "../../reusecore/Button";
 
 const LandscapeGrid=() => {
     return (
         <LandscapePageWrapper>
-            <PageHeader title="Service Mesh Landscape" path="Landscape" />
+            <PageHeader title="The Service Mesh Landscape" path="Landscape" />
             <div className="landscape-page-wrapper">
                 <Container>
                     <div>
                         <Row>
-                            <h2 id="service-mesh-comparison-strength" className="headings">
+                            <h2 id="service-mesh-comparison-strength" className="sub-heading landscape-section-heading">
                                 Comparison of Service Mesh Strengths
                             </h2>
                             <div className="strength-comparison-section">
@@ -36,7 +36,7 @@ const LandscapeGrid=() => {
                                         <h5>Linkerd</h5>
                                     </div>
                                     <div className="mesh-data">
-                                        <p>Time to value, Performance</p>
+                                        <p>Time to Value, Performance</p>
                                     </div>
                                 </div>
                                 <div className="comparison-mesh">
@@ -54,7 +54,7 @@ const LandscapeGrid=() => {
                                         <h5>Consul</h5>
                                     </div>
                                     <div className="mesh-data">
-                                        <p>Support for Non-kubernetes Workloads</p>
+                                        <p>Support for Non-Kubernetes Workloads</p>
                                     </div>
                                 </div>
                                 <div className="comparison-mesh">
@@ -63,7 +63,7 @@ const LandscapeGrid=() => {
                                         <h5>NGINX Service Mesh</h5>
                                     </div>
                                     <div className="mesh-data">
-                                        <p>Time to value, Performance</p>
+                                        <p>Interoperability with Existing Ingresses</p>
                                     </div>
                                 </div><div className="comparison-mesh">
                                     <div className="mesh-img">
@@ -75,7 +75,7 @@ const LandscapeGrid=() => {
                                     </div>
                                 </div>
                             </div>
-                            <h2 className="headings subsequent-heading">
+                            <h2 className="sub-heading landscape-section-heading">
                                 Service Mesh Timeline
                             </h2>
                             <ServiceMeshTimeline />
@@ -102,7 +102,8 @@ const LandscapeGrid=() => {
                                     <Tools />
                                 </TabPanel>
                             </Tabs>
-                            <h2 className="headings subsequent-heading">SMI Compliance</h2>
+                            <h2 className="sub-heading landscape-section-heading">Service Mesh Interface Compliance</h2>
+                            <p>learn more about SMI </p>
                             <div className="landscape-table">
                                 <SMI_Compatibility />
                             </div>

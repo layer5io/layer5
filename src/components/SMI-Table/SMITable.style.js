@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const TableWrapper = styled.div`
 overflow-x: auto;
 
+img.smiMark {
+	height: 70%;
+}
 table {
     border-spacing: 0;
     width: 100%;
