@@ -20,7 +20,7 @@ const CommunitySectionWrapper = styled.div`
                 margin:auto;
             }
         }
-        @media (max-width: 36rem) {
+        @media (max-width: 62rem) {
              text-align:center;
         }
     }
@@ -51,19 +51,18 @@ const CommunitySectionWrapper = styled.div`
             margin: 11.25rem auto 14rem auto;
             @media (max-width: 62rem) {
                 margin-bottom: 12.5rem;
+                 text-align:center;
             }
             @media (max-width: 36rem) {
                 margin-top: 5rem;
                 margin-bottom: auto;
-                text-align:center;
             }
             
             h5{
                 color: white;
-                margin-bottom : 1.5rem;
             }
             h1{
-                margin-bottom: 2.5rem;
+                margin: 1.5rem auto 2.5rem auto;
                 color: white;
             }
             button{
@@ -75,10 +74,9 @@ const CommunitySectionWrapper = styled.div`
         margin-top: 5rem;
         .content{
             h1{
-                margin-top: 1.5rem;
-                margin-bottom: 2.5rem;
+                margin: 1.5rem auto 2.5rem auto;
             }
-            @media (max-width: 36rem) {
+            @media (max-width: 62rem) {
               text-align:center;
             }
         }
