@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import CommunitySectionWrapper from "./community.style";
@@ -6,6 +7,9 @@ import CommunityMemberImage from "./community-member.png";
 import Button from "../../reusecore/Button";
 import MehsmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
 import PictureSlider from "./slider";
+import {FaArrowRight} from "react-icons/fa";
+import Lee_workshop from "./Lee_Workshop.png";
+import JoinCommunity from "../Join-community";
 
 const CommunityPage = () => {
 
@@ -83,13 +87,18 @@ const CommunityPage = () => {
                         </Col>
                         <Col sm={12} lg={6}>
                             <img src={MehsmateIcon} alt="MeshMate Icon"/>
-                            <h2>Layer5 Meshmates Program</h2>
+                            <Link className="meshmate-link" to="/community/meshmates">
+                                <h2>Layer5 MeshMates Program</h2>
+                                <button className="icon">
+                                    <FaArrowRight />
+                                </button>
+                            </Link>
                         </Col>
                         <div className="newcomers-button">
                             <Button primary title="All newcomers welcome" url="/community/newcomers"/>
                         </div>
                     </Row>
-
+                    <JoinCommunity image={Lee_workshop}/>
                 </Container>
             </div>
         </CommunitySectionWrapper>

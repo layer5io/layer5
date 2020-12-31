@@ -80,11 +80,49 @@ const CommunitySectionWrapper = styled.div`
             margin-top: 95px;
             margin-bottom: 40px;
         }
+        .meshmate-link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h2{
+                margin-right: 40px;
+            }
+            .icon{
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                min-width: auto;
+                align-self: center;
+                margin: auto 1rem auto 0.5rem;
+                padding: 0;
+                font-size: 1.25rem;
+                border: 0px;
+                border-radius: 1rem;        
+                left: 0;
+                background: ${props => props.theme.secondaryColor};
+                border-color: ${props => props.theme.secondaryColor};
+                color: white;
+            }
+            
+            &:hover{
+                h2{
+                    color: ${props => props.theme.primaryLightColorTwo};
+                }
+                .icon{
+                    background: ${props => props.theme.primaryLightColorTwo};
+                    border-color: ${props => props.theme.primaryLightColorTwo};
+                }
+            }
+        }
+        
     }
     
     .newcomers-button{
         margin: 80px auto;
     }
+    
+    
+    
 `;
 
 export default CommunitySectionWrapper;
