@@ -9,7 +9,7 @@ import BlogGrid from "../sections/Blog-grid";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 
 import {graphql} from "gatsby";
 import BlogList from "../sections/Blog-list";
@@ -26,7 +26,7 @@ export const query = graphql`
                 id
                 frontmatter {
                     title
-                    date(formatString: "MMMM Do, YYYY")
+                    date(formatString: "MMM Do, YYYY")
                     author
                     thumbnail{
                         childImageSharp{

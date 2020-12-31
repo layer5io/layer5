@@ -1,22 +1,25 @@
 import React from "react";
-import { Col } from "../../reusecore/Layout";
+import { Row, Col } from "../../reusecore/Layout";
 import { ColorBoxWrapper } from "./ColorBox.style";
 
 const ColorBox = props => {
     const bgcolor = props.colorCode;
+    const dark = props.dark;
     return (
         <ColorBoxWrapper bgcolor={bgcolor}>
-            <Col xs={12} sm={12} lg={2} xl={2}>
+            <Col>
                 <div className="PalletBox">
-                    {props.R}
-                    <br />
-                    {props.G}
-                    <br />
-                    {props.B}
-                    <br />
-                    {props.CMY ? props.K : bgcolor}
-                    <br />
-                    <br />
+                    <Row>
+                        <h3 className="color-name"> {props.name} </h3>
+                    </Row>
+                    <div className="color-data">
+                        <Row>
+                            RGB  {props.R},{props.G},{props.B}
+                            <br />
+                            {props.CMY ? props.K : bgcolor}
+                            <br />
+                        </Row>
+                    </div>
                 </div>
             </Col>
         </ColorBoxWrapper>

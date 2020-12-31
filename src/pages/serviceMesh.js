@@ -9,14 +9,14 @@ import Works from "../sections/ServiceMesh";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 import { Container } from "../reusecore/Layout";
 
 const Howitworks = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
-            <SEO title="How the service mesh management plane, Meshery works | Layer5 - The Service Mesh Company" />
+            <SEO title="How the service mesh management plane, Meshery works" />
             <Navigation />
             <Container>
                 <br></br>

@@ -1,6 +1,6 @@
 import React from "react";
 import { smi_data } from "../../collections/landscape/smi";
-import Table from "../../components/Landscape-Table";
+import Table from "../../components/SMI-Table";
 
 function SMI_Compatibility() {
 
@@ -37,13 +37,7 @@ function SMI_Compatibility() {
     const data = React.useMemo(() => smi_data);
 
     return (
-        <React.Fragment>
-            <Table columns={columns} data={data} />
-            <span style={{ color: "#000" }}>
-                Found a discrepancy, missing or out-dated information? Please
-                <a href="https://github.com/layer5io/layer5/issues"> submit an issue.</a>
-            </span>
-        </React.Fragment>
+        <Table columns={columns} data={data} />
     );
 }
 

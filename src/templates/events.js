@@ -8,7 +8,7 @@ import Navigation from "../sections/Navigation";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 
 import { graphql } from "gatsby";
 import Meetups from "../sections/Events/index";
@@ -35,7 +35,7 @@ export const query = graphql`
                     eurl
                     title
                     topic
-                    date(formatString: "DD MMMM YYYY")
+                    date(formatString: "MMM Do, YYYY")
                     thumbnail {
                         publicURL
                         relativePath
@@ -67,7 +67,7 @@ export const query = graphql`
                 title
                 eurl
                 topic
-                date(formatString: "DD MMMM YYYY")
+                date(formatString: "MMM Do, YYYY")
                 thumbnail {
                         childImageSharp {
                             fluid {
@@ -91,7 +91,7 @@ export const query = graphql`
                     abstract
                     eurl
                     title
-                    date(formatString: "Do MMMM YYYY")
+                    date(formatString: "MMM Do, YYYY")
                     thumbnail {
                         publicURL
                         relativePath
@@ -115,7 +115,7 @@ export const query = graphql`
                     abstract
                     eurl
                     title
-                    date(formatString: "Do MMMM YYYY")
+                    date(formatString: "MMM Do, YYYY")
                     thumbnail {
                         publicURL
                         relativePath
@@ -142,7 +142,7 @@ export const query = graphql`
                     topic
                     upcoming
                     eurl
-                    date(formatString: "DD MMMM YYYY")
+                    date(formatString: "MMM Do, YYYY")
                     thumbnail {
                         childImageSharp {
                             fluid {

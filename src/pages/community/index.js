@@ -9,16 +9,16 @@ import Footer from "../../sections/Footer";
 import Community from "../../sections/Community";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/blog/themeStyles";
+import theme from "../../theme/app/themeStyles";
 
-const community = () => (   
+const community = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
             <SEO title="Community" />
             <Navigation />
             <Community />
-            <Footer />  
+            <Footer />
         </Layout>
     </ThemeProvider>
 );

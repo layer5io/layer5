@@ -17,12 +17,12 @@ export const gateways=[
     {
         name: "Kong",
         link: "https://github.com/kong/kong",
-        desc: "Kong uses Nginx"
+        desc: "Kong uses NGINX"
     },
     {
         name: "OpenResty",
         link: "http://openresty.org",
-        desc: "OpenResty uses Nginx"
+        desc: "OpenResty uses NGINX"
     },
     {
         name: "3scale",

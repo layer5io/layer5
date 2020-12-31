@@ -3,10 +3,9 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
-import Image from "../../components/image";
-
+import {FaArrowRight} from "react-icons/fa";
 import InternshipSectionWrapper from "./InternshipPage.style";
-
+import ProgramsGrid from "../Programs-grid/index";
 
 const InternshipPage = ({ hide_heading })=>{
     const opportunities = useStaticQuery(
@@ -66,18 +65,11 @@ const InternshipPage = ({ hide_heading })=>{
 
 
     let OpportunityCard = ({frontmatter, fields }) => (
-        <Col xs={12} sm={6} lg={3} >
+        <Col className="opportunity-col">
             <Link to={fields.slug}>
-                <div className="opportunity">
-                    <div className="opportunity_icon">
-                        <Image
-                            {...frontmatter.thumbnail}
-                            imgStyle={{ objectFit: "contain" }}
-                            alt={frontmatter.title}
-                        />
-                    </div>
+                <div className="opportunity-card">
                     <h3>{frontmatter.title}</h3>
-                    <p>{frontmatter.abstract}</p>
+                    <Button primary title={<FaArrowRight />} className="oppurtunity_icon" />
                 </div>
             </Link>
         </Col>
@@ -88,58 +80,72 @@ const InternshipPage = ({ hide_heading })=>{
             { !hide_heading && (
                 <PageHeader title="Internships" path="Careers > Internships"/>
             )}
-            <div className="internships-page-wrapper">
-                <Container>
+            <Container>
+                <div className="oppurtunities-text">
+                    <h1>Available Opportunities</h1>
                     <p>
-                        <h2>Available Opportunities</h2>
+                        The key component of these projects is our community of contributors.
+                        Some contributors intern under the Google Summer of Code program, while others intern unpaid directly with Layer5.
+                        Irrespective, your contributions will affect people you've never met as the Layer5 projects are
+                        being broadly referenced and used in organizations large and small.
                     </p>
                     <p>
-                    The key component of these projects is our community of contributors.
-                    Some contributors intern under the Google Summer of Code program, while others intern unpaid directly with Layer5.
-                    Irrespective, your contributions will affect people you've never met as the Layer5 projects are
-                    being broadly referenced and used in organizations large and small.
-                    The Layer5 community includes software engineers, researchers, students, artists, system administrators,
-                    operators and web designers -- all of whom will be happy to help you get started.
+                        The Layer5 community includes software engineers, researchers, students, artists, system administrators,
+                        operators and web designers -- all of whom will be happy to help you get started.
+                        We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution.
+                        We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement,
+                        while building the size, diversity, and strength of our community.
                     </p>
-                    <p>
-                    We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution.
-                    We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement,
-                    while building the size, diversity, and strength of our community.
-                    </p>
-                    <br/>
+                </div>
+                <div className="oppurtunities">
                     <div>
-                        <h2>Internships</h2>
+                        <h1>Internships</h1>
                         <div className="grid">
-                            <Row>
+                            <Row className="oppurtunities_row">
                                 {opportunities.internships.nodes.map((data) => (
                                     <OpportunityCard {...data } key={data.id}/>
                                 ))}
                             </Row>
                         </div>
-                        <br/>
-                        <div>
-                            <h2>Full-Time Opportunities</h2>
-                            <div className="grid">
-                                <Row>
-                                    {opportunities.jobs.nodes.map((data) => (
-                                        <OpportunityCard {...data } key={data.id}/>
-                                    ))}
-                                </Row>
-                            </div>
+                    </div>
+                    <div>
+                        <h1>Full-Time Opportunities</h1>
+                        <div className="grid">
+                            <Row className="oppurtunities_row full_time">
+                                {opportunities.jobs.nodes.map((data) => (
+                                    <OpportunityCard {...data } key={data.id}/>
+                                ))}
+                            </Row>
                         </div>
-                        <p>
-                            <b className="black-text">Participating Partners</b>
-                            <ul>
-                                <li><b>UT Austin Coding Boot Camp</b> - <a href="https://layer5.io/assets/careers/internships/UT%20Austin%20Boot%20Camp%20-%20Meshery%20Flyer.pdf">Internship Flyer</a></li>
-                                <li><b>UEM Computer Science and Engineering</b> - <a href="https://layer5.io/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf">Internship Flyer</a>,<a href="https://uem.edu.in/blog/what-is-open-source/"> Learn More </a></li>
-                            </ul>
-                        </p>
                     </div>
-                    <div className="apply-button">
-                        <Button primary title="Join Today" url="mailto:jobs@layer5.io" external="true" /> 
+                    <div>
+                        <ProgramsGrid sub_section={true}/>
                     </div>
-                </Container>
-            </div>
+                    <div>
+                        <h1>Participating Partners</h1>
+                        <div className="grid">
+                            <Row className="oppurtunities_row">
+                                <Col className="opportunity-col">
+                                    <a href="https://layer5.io/assets/careers/internships/UT%20Austin%20Boot%20Camp%20-%20Meshery%20Flyer.pdf" target="_blank" rel="noreferrer">
+                                        <div className="opportunity-card">
+                                            <h3>UT Austin Coding Boot Camp</h3>
+                                            <Button primary title={<FaArrowRight />} className="oppurtunity_icon" />
+                                        </div>
+                                    </a>
+                                </Col>
+                                <Col className="opportunity-col">
+                                    <a href="https://layer5.io/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf" target="_blank" rel="noreferrer">
+                                        <div className="opportunity-card">
+                                            <h3>UEM Jaipur</h3>
+                                            <Button primary title={<FaArrowRight />} className="oppurtunity_icon" />
+                                        </div>
+                                    </a>
+                                </Col>
+                            </Row>
+                        </div>
+                    </div>
+                </div>
+            </Container>
         </InternshipSectionWrapper>
     );
 };

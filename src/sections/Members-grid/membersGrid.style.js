@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const selectStyles = { 
+export const selectStyles = {
     menu: styles => ({ ...styles, zIndex: 999, })
 };
 export const dropdownTheme = theme => ({
@@ -22,7 +22,6 @@ export const MembersGridWrapper = styled.div`
     }
     .members-grid-wrapper{
         padding-bottom: 60px;
-        margin-top: 80px;
     }
     @media only screen and (max-width: 912px) {
         .members-page-wrapper{
@@ -45,7 +44,7 @@ export const MembersGridWrapper = styled.div`
     }
     .active-filter-color{
             display: inline-block;
-            background-color: #00b39f;
+            background-color: ${props => props.theme.secondaryColor};
             width: 20px;
             height: 20px;
             margin-right: 10px;

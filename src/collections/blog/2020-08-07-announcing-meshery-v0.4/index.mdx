@@ -4,16 +4,19 @@ subtitle: ""
 date: 2020-08-07 08:00:00 +0000
 author: Kush Trivedi
 thumbnail: ./meshery-v040.png
+category: Announcements
 tags:
- - Community
+ - Meshery
  - Projects
  - News
 published: true
+redirect_from:
+ - /blog/meshery/announcing-meshery-v0.4.0/
 ---
 
 import { BlogWrapper } from "../Blog.style.js";
 import operator from "./meshery-operator-dark.svg";
-import architecture from "./meshery-architecture.png";
+import MesheryArchitecture from "./meshery-architecture.png";
 
 <BlogWrapper>
 
@@ -33,7 +36,7 @@ The v0.4.0 release of Meshery introduces a plethora of new features and bug fixe
 - Performance Management
 - Service Mesh Lifecycle Management
 - Workload Lifecycle Management
- 
+
 Organizing commnands [under these categories](https://meshery.layer5.io/docs/guides/mesheryctl) is done with both the intention to make `mesheryctl` functions intuitively at your fingertips, but also to make room for forthcoming functionality.
 
 **Exposing Performance Management in the CLI**<br/>
@@ -54,7 +57,7 @@ The `cleanup` is used to reset your Meshery deployment configuration back to its
 
 ### Meshery Adapter for Citrix Service Mesh (beta)<br/>
 
-<img src={architecture} class="image-right" alt="meshery-architecture" />
+<img src={MesheryArchitecture} class="image-right" alt="meshery-architecture" />
 
 - [Citrix Service Mesh](https://github.com/layer5io/meshery-cpx) is now a supported service mesh. Meshery incorporates support for the Citrix ADC CPX, which is a cloud-ready, container-based application delivery controller that can be provisioned on a Docker host.
 - CPX runs as the Istio Data Plane component, displacing Envoy as the default data plane service proxy.<br/>

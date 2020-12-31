@@ -11,6 +11,9 @@ const WorkshopCardContent = ({ frontmatter, content, ID, id }) => {
                         <Image {...frontmatter.thumbnail} imgStyle={{ objectFit: "cover" }} alt={frontmatter.title} />
                     </div>
                 </div>
+                <div className="upcomingContainer">
+                    {frontmatter.status === "delivered" ? "" : <button className="upcoming">Upcoming...</button>}
+                </div>
                 <div className={content && ID === id ? "card-content-open" : "card-content"}>
                     <div>
                         <h3 className="title">{frontmatter.title}</h3>

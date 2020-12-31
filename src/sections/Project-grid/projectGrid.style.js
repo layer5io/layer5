@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const ProjectWrapper = styled.div`
-padding: 100px 0 110px 0;
+    padding-bottom: 5rem;
     .project-text{
         font-weight: 300;
         margin-bottom: 80px;
@@ -24,7 +24,7 @@ padding: 100px 0 110px 0;
         text-align: center;
         transition: 0.6s;
         &:hover{
-            background-color: #00b39f;
+            background-color: ${props => props.theme.secondaryColor};
             img {
                 filter: brightness(0) invert(1);
             }

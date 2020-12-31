@@ -5,7 +5,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
-    font-family: "Qanelas Soft";
+    font-family: "QanelasSoft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftBlack.otf');
     font-weight: normal;
 }
@@ -180,19 +180,29 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Qanelas Soft', sans-serif;
-    color: ${props => props.theme.headingColor}; 
+    font-family: 'Qanelas Soft', 'Open Sans';
+    color: #1E2117; 
     margin: 0;
 }
 
-p{
-    margin: 0 0 15px 0;
+h2.sub-heading {
+    color: gray;
+    font-weight: 500;
+    margin: -1rem auto auto;
+    text-align: center;
+}
+
+p {
+    margin: 0 0 1rem 0;
     font-weight: 400 !important;
 }
 
 a{
     text-decoration: none;
-    color: ${props => props.theme.headingColor};
+    color: ${props => props.theme.linkColor};
+    &:hover{
+        color: ${props => props.theme.primaryColor};
+    }
   }
   img{
     max-width: 100%;

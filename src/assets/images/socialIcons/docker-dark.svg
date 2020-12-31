@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Docker</title><g id="Docker"><path d="M23.77,11.08a5.12,5.12,0,0,0-2.41-.77,2.7,2.7,0,0,0-.44,0,4.24,4.24,0,0,0-1.64-2.26.5.5,0,0,0-.64.07,4.06,4.06,0,0,0-.72,3.28.52.52,0,0,1-.13.41.45.45,0,0,1-.34.15H17V9.5a.5.5,0,0,0-.5-.5H14V3.5a.5.5,0,0,0-.5-.5h-3a.5.5,0,0,0-.5.5V6H4.5a.5.5,0,0,0-.5.5V9H1.5a.5.5,0,0,0-.5.5V12H.5a.5.5,0,0,0-.5.5C0,20.17,5.59,21,8,21a14.29,14.29,0,0,0,12.38-7.08,5.13,5.13,0,0,0,3.55-2.17A.5.5,0,0,0,23.77,11.08ZM16,12H14V10h2ZM5,12V10H7v2Zm3,0V10h2v2Zm5-5V9H11V7Zm-2,5V10h2v2Zm0-8h2V6H11ZM10,9H8V7h2ZM5,7H7V9H5ZM2,10H4v2H2Zm3,7a1,1,0,1,1,1-1A1,1,0,0,1,5,17Z" style="fill:#303c42"/></g>
+	<metadata>
+		<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+			<rdf:Description about="https://iconscout.com/legal#licenses" dc:title="social; media; social media; logo; docker" dc:description="social; media; social media; logo; docker" dc:publisher="Iconscout" dc:date="2017-02-21" dc:format="image/svg+xml" dc:language="en">
+				<dc:creator>
+					<rdf:Bag>
+						<rdf:li>Alpár - Etele Méder</rdf:li>
+					</rdf:Bag>
+				</dc:creator>
+			</rdf:Description>
+		</rdf:RDF>
+    </metadata></svg>

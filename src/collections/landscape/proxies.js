@@ -24,6 +24,11 @@ export const proxies=[
         desc: "nginMesh - launched in September 2017, the nginMesh project deploys Nginx as a sidecar proxy in Istio."
     },
     {
+        name: "NGINX Plus",
+        link: "https://www.nginx.com/products/nginx/",
+        desc: "NGINX Plus the enterprise reverse proxy within NGINX Service Mesh, managed as a sidecar for E/W and as an ingress controller for N/S traffic management and security.",
+    },
+    {
         name: "MOSN",
         link: "https://github.com/mosn/mosn",
         desc: "MOSN is a cloud-native proxy for edge or service mesh."

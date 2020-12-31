@@ -1,34 +1,38 @@
 import React from "react";
 import { Row } from "../reusecore/Layout";
-import { FaThList } from "react-icons/fa";
-import { RiLayoutGridFill } from "react-icons/ri";
+import { TiThList } from "react-icons/ti";
+import { BsGrid3X3GapFill } from "react-icons/bs";
 import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 
 export const ToolTipWrapper = styled.div`
-      @media screen and (max-width: 576px) {
-            display: none;
-      }
-      float:right;
-      margin-right: 10px;
-      margin-left: 10px;
-      .border {
+    @media screen and (max-width: 576px) {
+        display: none;
+    }
+    float:left;
+    margin: auto 1rem;
+
+    .border {
         line-height: 18px;
-      }
-      a {
+    }
+
+    a {
         padding: 5px;
-        color: #3a4751;
-        background-color: #00d3a9; 
+        color: ${props => props.theme.primaryLightColorTwo};
+        background-color: white;
+        border: 1.5px solid ${props => props.theme.primaryLightColorTwo};
         &:hover{
-            background-color: #3a4751;
-            color: #00d3a9;
+            background-color: ${props => props.theme.primaryColor};
+            color: ${props => props.theme.primaryLightColorTwo};
             cursor: pointer;
+            border: 1.5px solid ${props => props.theme.primaryColor};
         }             
-      }
-      .active {
-        background-color: #3a4751;
-        color: #00d3a9;
-      }
+    }
+    .active {
+        background-color: ${props => props.theme.primaryColor};
+        color: ${props => props.theme.primaryLightColorTwo};
+        border: 1.5px solid ${props => props.theme.primaryColor};
+    }
 `;
 
 const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
@@ -41,7 +45,7 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
                     onClick={setGridView}
                     className={`${isListView ? "" : "active"}`}
                 >
-                    <RiLayoutGridFill size={22} />
+                    <BsGrid3X3GapFill size={22} />
                 </a>
                 <ReactTooltip
                     id="grid-view"
@@ -57,7 +61,7 @@ const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {
                     onClick={setListView}
                     className={`${isListView ? "active" : ""}`}
                 >
-                    <FaThList size={22} />
+                    <TiThList size={22} />
                 </a>
                 <ReactTooltip
                     id="list-view"

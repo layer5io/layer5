@@ -10,7 +10,7 @@ import AnimatedStepsList from "../components/Animated-steps-list";
 import Hero from "../components/Animated-steps-list/hero";
 import Features from "../components/Features-carousel";
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 import { Container } from "../reusecore/Layout";
 import Terminal from "../components/Terminal";
 

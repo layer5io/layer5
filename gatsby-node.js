@@ -33,14 +33,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: '/workshops', toPath: '/learn/workshops', redirectInBrowser: true, isPermanent: true })
   createRedirect({ fromPath: '/meshery', toPath: '/projects/meshery', redirectInBrowser: true, isPermanent: true })
   createRedirect({ fromPath: '/landscape', toPath: '/projects/landscape', redirectInBrowser: true, isPermanent: true })
+  createRedirect({ fromPath: '/events', toPath: '/community/events', redirectInBrowser: true, isPermanent: true })
 
   // Create Pages
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
       'src/templates/blog-single.js'
   );
-  const blogListTemplate = path.resolve(
-      'src/templates/blog-list.js'
+  const blogCategoryListTemplate = path.resolve(
+      'src/templates/blog-category-list.js'
+  );
+  const blogTagListTemplate = path.resolve(
+      'src/templates/blog-tag-list.js'
   );
   const blogViewTemplate = path.resolve(
       'src/templates/blog.js'
@@ -74,23 +78,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       'src/templates/member-single.js'
   );
 
+  const WorkshopTemplate = path.resolve(
+      'src/templates/workshop-single.js'
+  );
+
   const res = await graphql(`
     {
       allPosts:  allMdx(
-        filter: { fields: { collection: { ne: "members" } }, frontmatter: { published: { eq: true } } }
+        filter: { frontmatter: { published: { eq: true } } }
       ) {
         nodes {
           fields {
             collection
-            slug
-          }
-        }
-      }
-      allMembers:  allMdx(
-        filter: { fields: { collection: { eq: "members" } } }
-      ) {
-        nodes {
-          fields {
             slug
           }
         }
@@ -103,11 +102,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               id
             }
             fieldValue
-            totalCount
           }
-        }
+      }
+      blogCategory: allMdx(
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+        ){
+          group(field: frontmatter___category) {
+            nodes{
+              id
+            }
+            fieldValue
+          }
+      }
       allCollections: allMdx(
         filter: {fields: {collection: {eq: "events"}}}
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+        }
+      }
+      singleWorkshop: allMdx(
+        filter: {fields: {collection: {eq: "workshops"}}}
       ){
         nodes{
           fields{
@@ -151,7 +169,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       node => node.fields.collection === `careers`
   );
 
-  const members = res.data.allMembers.nodes;
+  const members = allNodes.filter(
+      node => node.fields.collection === `members`
+  );
+
+  const singleWorkshop = res.data.singleWorkshop.nodes;
   const events = res.data.allCollections.nodes;
 
   paginate({
@@ -161,7 +183,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     pathPrefix: `/blog`,
     component: blogViewTemplate
   });
-  
+
   paginate({
     createPage,
     items: events,
@@ -179,19 +201,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   });
-  const BlogTags = res.data.blogTags.group;
-  BlogTags.forEach(tag => {
+  const blogCategory = res.data.blogCategory.group;
+    blogCategory.forEach(category => {
     paginate({
       createPage,
-      items: tag.nodes,
+      items: category.nodes,
       itemsPerPage: 4,
-      pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
-      component: blogListTemplate,
+      pathPrefix: `/blog/category/${slugify(category.fieldValue)}`,
+      component: blogCategoryListTemplate,
       context: {
-        tag: tag.fieldValue,
+          category: category.fieldValue,
       },
     });
   });
+
+    const BlogTags = res.data.blogTags.group;
+    BlogTags.forEach(tag => {
+        paginate({
+            createPage,
+            items: tag.nodes,
+            itemsPerPage: 4,
+            pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
+            component: blogTagListTemplate,
+            context: {
+                tag: tag.fieldValue,
+            },
+        });
+    });
 
   news.forEach(singleNews => {
     createPage({
@@ -253,6 +289,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   });
 
+  singleWorkshop.forEach(workshop => {
+    createPage({
+      path: workshop.fields.slug,
+      component: WorkshopTemplate,
+      context: {
+        slug: workshop.fields.slug,
+      },
+    })
+  });
+
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -265,14 +311,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: collection
     });
     let slug = "";
-    if(collection === `members`) {
-      slug = `/community/members/${slugify(node.frontmatter.name)}`
-    }
-    else if(collection === `programs`) {
-      slug = `/${collection}/${node.frontmatter.link}`
+    if(node.frontmatter.permalink) {
+      slug = `/${collection}/${node.frontmatter.permalink}`;
     }
     else{
-      slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+      switch(collection){
+        case `blog`:
+          slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
+          break;
+        case `members`:
+          slug = `/community/members/${slugify(node.frontmatter.name)}`;
+          break;
+        default:
+          slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+      }
     }
     createNodeField({
       name: `slug`,

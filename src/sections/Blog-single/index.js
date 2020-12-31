@@ -1,13 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-
 import slugify from "../../utils/slugify";
-
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import RelatedPosts from "../Related-Posts";
-
 import BlogPageWrapper from "./blogSingle.style";
 
 const BlogSingle = ({data}) => {
@@ -17,34 +14,36 @@ const BlogSingle = ({data}) => {
             <PageHeader
                 title={frontmatter.title}
                 subtitle={frontmatter.subtitle}
-                categories={frontmatter.tags}
+                category={frontmatter.category}
                 author={{ name: frontmatter.author }}
                 thumbnail={frontmatter.thumbnail}
             />
             <div className="single-post-wrapper">
                 <Container>
                     <Row>
-                        <Col xs={12} lg={12}>
-                            <Row>
-                                <Col xs={12}>
-                                    <div className="single-post-block">
-                                        <MDXRenderer>{body}</MDXRenderer>
-                                        <div className="post-info-block">
-                                            <div className="tags">
-                                                <span>Tags:</span>
-                                                {frontmatter.tags && frontmatter.tags.map(tag => (
-                                                    <Link key={`${frontmatter.title}-${tag}`}
-                                                        to={`/blog/tag/${slugify(tag)}`}>{tag}
-                                                    </Link>
-                                                ))}
-                                            </div>
+                        <Col xs={12}>
+                            <div>
+                                <MDXRenderer>{body}</MDXRenderer>
+                                <div className="post-info-block">
+                                    <div className="tags">
+                                        <span>Tags:</span>
+                                        <div>
+                                            {frontmatter.tags && frontmatter.tags.map(tag => (
+                                                <Link key={`${frontmatter.title}-${tag}`}
+                                                    to={`/blog/tag/${slugify(tag)}`}>{tag}
+                                                </Link>
+                                            ))}
                                         </div>
                                     </div>
-                                </Col>
-                            </Row>
+                                </div>
+                            </div>
                         </Col>
                     </Row>
-                    <RelatedPosts tags={frontmatter.tags} currentPostSlug={fields.slug}/>
+                    <RelatedPosts
+                        category={frontmatter.category}
+                        tags={frontmatter.tags}
+                        currentPostSlug={fields.slug}
+                    />
                 </Container>
             </div>
         </BlogPageWrapper>

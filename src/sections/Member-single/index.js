@@ -81,7 +81,8 @@ const MemberSingle = ({frontmatter}) =>{
                                                     <img className="profile-social-links" src={getNighthawkLogo} alt="GetNighthawk logo"/>
                                                 </Link>
                                             </li> 
-                                        }                                       {badges.includes("meshery-operator") &&
+                                        }
+                                        {badges.includes("meshery-operator") &&
                                             <li>
                                                 <Link to="/projects/meshery-operator">
                                                     <img className="profile-social-links" src={mesheryOperatorLogo} alt="Meshery Operator logo"/>

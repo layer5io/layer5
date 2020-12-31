@@ -3,6 +3,7 @@ import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
+import Contact from "../../sections/Contact";
 
 import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.png";
 import partner2 from "../../assets/images/partners/gsoc.svg";
@@ -72,7 +73,7 @@ const Partner = () => {
                         <div rightAlign={true} className="container">
                             <h1>Google Summer of Code</h1>
                             <div>
-                                Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school. Learn more about<a href="https://layer5.io/gsoc/2020">our mentoring</a>.
+                                Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school. Learn more about <a href="https://layer5.io/gsoc/2020">our mentoring</a>.
                             </div>
                         </div>
                     </Col>
@@ -90,7 +91,7 @@ const Partner = () => {
                             <h1>University of Engineering & Management Jaipur</h1>
                             <div>
                                 We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the univeristy participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.
-                            Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. To see the participating interns please checkout<a href="https://meshery.io/community/">our community members</a> page. .
+                            Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. To see the participating interns please checkout <a href="https://meshery.io/community/">our community members</a> page. .
                             </div>
                         </div>
                     </Col>
@@ -235,36 +236,11 @@ const Partner = () => {
                 <Row className='partner-button-row'>
                     <Col xs={12} sm={4} lg={4}>
                         <div className="container partner-button">
-                            <Button title={<h3>BECOME A PARTNER</h3>} url="mailto:partners@layer5.io" external="true" />
+                            <Button primary title="BECOME A PARTNER" url="mailto:partners@layer5.io" external="true" />
                         </div>
                     </Col>
                 </Row>
-                <Row>
-                    <Col xs={12} sm={12} lg={12}>
-                        <div className="container">
-                            <form>
-                                <h1 className="heading">Stay meshy and subscribe</h1>
-                                <div className="subscribe-from">
-                                    <div className="forklift-section">
-                                        <img src={partner11} className="img2" alt="partner11" />
-                                    </div>
-                                    <div>
-                                        <i className="icon1"><MdAccountBox /></i>
-                                        <input type="text" placeholder="First Name" className="input-text" value="" name="FNAME" />
-                                        <input type="text" placeholder="Last Name" className="input-text" value="" name="LNAME" />
-                                    </div>
-                                    <div>
-                                        <i className="icon1"><MdMail /></i>
-                                        <input type="email" placeholder="Email Address" className="input-email" value="" name="EMAIL" />
-                                    </div>
-                                    <div className="btn-section">
-                                        <h3><Button type="submit" className="btn">SUBSCRIBE</Button></h3>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </Col>
-                </Row>
+                <Contact/>
             </Container>
         </PartnerWrapper >
     );

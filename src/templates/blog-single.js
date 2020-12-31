@@ -11,7 +11,7 @@ import BlogSingle from "../sections/Blog-single";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 
 export const query = graphql`
     query BlogsBySlug($slug: String!) {
@@ -22,6 +22,7 @@ export const query = graphql`
                 subtitle
                 date(formatString: "MMMM Do, YYYY")
                 author
+                category
                 tags
                 thumbnail{
                     childImageSharp{

@@ -7,7 +7,7 @@ const Howitworks = styled.section`
   }
 
   & > p {
-    height: 360px
+    // height: 360px
     padding-bottom: 80px;
   }
 }

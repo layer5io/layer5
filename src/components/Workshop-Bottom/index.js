@@ -1,5 +1,4 @@
 import React from "react";
-
 import WorkshopImage from "../../assets/images/workshops/workshops.svg";
 import WorkshopBottomWrapper from "./Workshop-Bottom.style";
 import Button from "../../reusecore/Button";

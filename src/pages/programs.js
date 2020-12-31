@@ -9,7 +9,7 @@ import Footer from "../sections/Footer";
 import ProgramsGrid from "../sections/Programs-grid";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/blog/themeStyles";
+import theme from "../theme/app/themeStyles";
 
 const programs = () => (
     <ThemeProvider theme={theme}>

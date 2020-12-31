@@ -10,7 +10,7 @@ const ContactWrapper = styled.section`
         margin: auto;
     }
     .contact-icon {
-        color: #3c494f;
+        color: ${props => props.theme.primaryColor};
     }
     img {
         max-width: 100px;
@@ -52,7 +52,7 @@ const ContactWrapper = styled.section`
         transition: 450ms all;
         border: 1px solid transparent;
         &:hover,&:focus{
-            border-color: #00b39f;
+            border-color: ${props => props.theme.secondaryColor};
         }
     }
     button{

@@ -3,8 +3,7 @@ import styled from "styled-components";
 import imgHero from "../../assets/images/app/hero/forklift.svg";
 
 const BannerSectionWrapper = styled.section`
-    padding: 120px 0 120px 0;
-    margin: 80px 0 0 0;
+    padding: 6rem 0;
     background: url(${imgHero}) no-repeat;
     background-size: 40%;
     background-position: center right 35px;
