@@ -9,7 +9,7 @@ import {FaArrowRight} from "react-icons/fa";
 import CommunitySectionWrapper from "./community.style";
 import Lee_workshop from "./Lee_Workshop.png";
 import CommunityMemberImage from "./community-member.png";
-import MehsmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
+import MehsmateIcon from "../../assets/images/meshmate/meshmate-stack.png";
 
 const CommunityPage = () => {
 
@@ -88,14 +88,16 @@ const CommunityPage = () => {
                         <Col sm={12} lg={6}>
                             <img src={MehsmateIcon} alt="MeshMate Icon"/>
                             <Link className="meshmate-link" to="/community/meshmates">
-                                <h2>Layer5 MeshMates Program</h2>
+                                <h2>Open Source Mentorship Program</h2>
                                 <button className="icon">
                                     <FaArrowRight />
                                 </button>
                             </Link>
                         </Col>
-                        <div className="newcomers-button">
-                            <Button primary title="All newcomers welcome" url="/community/newcomers"/>
+                        <div className="newcomers-section">
+                            <h2>Are you new to the community?</h2>
+                            <h4>Don't worry we have got you covered</h4>
+                            <Button primary title="Hope In!" url="/community/newcomers"/>
                         </div>
                     </Row>
                     <JoinCommunity image={Lee_workshop}/>

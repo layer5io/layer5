@@ -20,6 +20,9 @@ const CommunitySectionWrapper = styled.div`
                 margin:auto;
             }
         }
+        @media (max-width: 36rem) {
+             text-align:center;
+        }
     }
     
     .open-source-projects{
@@ -52,6 +55,7 @@ const CommunitySectionWrapper = styled.div`
             @media (max-width: 36rem) {
                 margin-top: 5rem;
                 margin-bottom: auto;
+                text-align:center;
             }
             
             h5{
@@ -74,26 +78,26 @@ const CommunitySectionWrapper = styled.div`
                 margin-top: 1.5rem;
                 margin-bottom: 2.5rem;
             }
+            @media (max-width: 36rem) {
+              text-align:center;
+            }
         }
         img{
-            max-height: 15.625rem;
-            margin-top: 5.938rem;
-            margin-bottom: 2.5rem;
+            max-height: 25rem;
+            display:block;
+            margin: auto;
         }
         .meshmate-link{
             display: flex;
             align-items: center;
             justify-content: center;
-            h2{
-                margin-right: 2.5rem;
-            }
             .icon{
                 align-items: center;
                 width: 40px;
                 height: 40px;
                 min-width: auto;
                 align-self: center;
-                margin: auto 1rem auto 0.5rem;
+                margin: auto 1rem auto 1rem;
                 padding: 0;
                 font-size: 1.25rem;
                 border: 0px;
@@ -102,6 +106,11 @@ const CommunitySectionWrapper = styled.div`
                 background: ${props => props.theme.secondaryColor};
                 border-color: ${props => props.theme.secondaryColor};
                 color: white;
+            }
+            @media (max-width: 36rem) {
+               h2{
+                  font-size: 18px;
+               }
             }
             
             &:hover{
@@ -116,7 +125,11 @@ const CommunitySectionWrapper = styled.div`
         }
     }
     
-    .newcomers-button{
+    .newcomers-section{
+        h4{
+            margin: 1rem auto;
+        }
+        text-align:center;
         margin: 5rem auto;
     }
    
