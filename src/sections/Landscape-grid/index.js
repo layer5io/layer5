@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
-import ServiceMeshComparison from "../../assets/images/landscape/comparison-of-service-mesh-strengths-dark.svg";
 import Categories from "./categories";
 import NonFunctional from "./non-functional";
 import Functional from "./functional";
@@ -12,6 +11,11 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ServiceMeshTimeline from "./ServiceMeshTimeline";
 import landscape from "../../assets/images/app/projects/landscape.png";
+import Consul_Img from "../../assets/images/service-mesh-icons/consul-white.svg";
+import Nginx_Img from "../../assets/images//service-mesh-icons/nginx-white.svg";
+import Linkerd_Img from "../../assets/images//service-mesh-icons/linkerd-white.svg";
+import NSM_Img from "../../assets/images//service-mesh-icons/nsm-white.svg";
+import Istio_Img from "../../assets/images//service-mesh-icons/istio-white.svg";
 import Button from "../../reusecore/Button";
 
 const LandscapeGrid=() => {
@@ -25,7 +29,52 @@ const LandscapeGrid=() => {
                             <h2 id="service-mesh-comparison-strength" className="headings">
                                 Comparison of Service Mesh Strengths
                             </h2>
-                            <img src={ServiceMeshComparison} width="100%" height="100%" alt="Service Mesh Comparison" />
+                            <div className="strength-comparison-section">
+                                <div className="comparison-mesh">
+                                    <div className="mesh-img">
+                                        <img src={Linkerd_Img} />
+                                        <h5>Linkerd</h5>
+                                    </div>
+                                    <div className="mesh-data">
+                                        <p>Time to value, Performance</p>
+                                    </div>
+                                </div>
+                                <div className="comparison-mesh">
+                                    <div className="mesh-img">
+                                        <img src={Istio_Img} />
+                                        <h5>Istio</h5>
+                                    </div>
+                                    <div className="mesh-data">
+                                        <p>Powerful Feature Set, Extensibility</p>
+                                    </div>
+                                </div>
+                                <div className="comparison-mesh">
+                                    <div className="mesh-img">
+                                        <img src={Consul_Img} />
+                                        <h5>Consul</h5>
+                                    </div>
+                                    <div className="mesh-data">
+                                        <p>Support for Non-kubernetes Workloads</p>
+                                    </div>
+                                </div>
+                                <div className="comparison-mesh">
+                                    <div className="mesh-img">
+                                        <img src={Nginx_Img} />
+                                        <h5>NGINX Service Mesh</h5>
+                                    </div>
+                                    <div className="mesh-data">
+                                        <p>Time to value, Performance</p>
+                                    </div>
+                                </div><div className="comparison-mesh">
+                                    <div className="mesh-img">
+                                        <img src={NSM_Img} />
+                                        <h5>Network Service Mesh</h5>
+                                    </div>
+                                    <div className="mesh-data">
+                                        <p>Layer2 and Layer3 Functions</p>
+                                    </div>
+                                </div>
+                            </div>
                             <h2 className="headings subsequent-heading">
                                 Service Mesh Timeline
                             </h2>

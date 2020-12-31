@@ -9,7 +9,7 @@ export const LandscapePageWrapper=styled.div`
 		text-align: center;
 	}
 	.subsequent-heading{
-		padding-top: 8rem;
+		padding-top: 5rem;
 	}
 
 	.timeline-heading {
@@ -308,5 +308,72 @@ export const LandscapePageWrapper=styled.div`
 		padding: 0.6rem;
 		font-size: 1.2rem;
 		color: rgba(0, 0, 0, 0.5);
+	}
+
+	.strength-comparison-section {
+		display: flex;
+		flex: auto;
+		justify-content: center;
+		margin: 0 -1rem;
+
+		.comparison-mesh {
+			margin: 0 1rem;
+			.mesh-img {
+				width: 13rem;
+				height: 9rem;
+				padding: 0.8rem 1.5rem;
+				border-radius: 1rem;
+				background: ${props => props.theme.secondaryColor};
+				position: relative;
+				z-index: 1;
+				text-align: center;
+				box-shadow: 0px 2px 5px rgba(0, 179, 159, 0.5);
+
+				img {
+					width: 4rem;
+					height: 4rem;
+					filter: grayscale(1) brightness(10);
+				}
+
+				h5 {
+					font-size: 1.5rem;
+					color: ${props => props.theme.white};
+				}
+			}
+
+			.mesh-data {
+				width: 12.5rem;
+				height: 6rem;
+				margin: auto;
+				font-size: 1.125rem;
+				text-align: center;
+				padding: 1rem 0.25rem;
+				color: ${props => props.theme.white};
+				background: ${props => props.theme.tertiaryColor};
+				z-index: 0;
+				border-bottom-right-radius: 0.8rem;
+				border-bottom-left-radius: 0.8rem;
+				transform: translateY(-6rem);
+				transition: all 0.5s ease-in-out;
+
+				p {
+					margin: 0;
+				}
+			}
+
+			&:hover {
+				cursor: default;
+				.mesh-data {
+					transform: translateY(-0.5rem);
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1200px) {
+		.strength-comparison-section {
+			flex-wrap: wrap;
+			margin: auto;
+		}
 	}
 `;
