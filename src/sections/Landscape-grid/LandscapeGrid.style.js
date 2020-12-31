@@ -311,21 +311,21 @@ export const LandscapePageWrapper=styled.div`
 
 	.strength-comparison-section {
 		display: flex;
-		flex: auto;
 		justify-content: center;
-		margin: 0 -1rem;
 
 		.comparison-mesh {
 			margin: 0 1rem;
-			.mesh-img {
+			
+			.mesh-img {	
+				text-align: center;
 				width: 13rem;
 				height: 9rem;
-				padding: 0.8rem 1.5rem;
+				margin: auto;
+				padding: 1rem ;
 				border-radius: 1rem;
 				background: ${props => props.theme.secondaryColor};
 				position: relative;
 				z-index: 1;
-				text-align: center;
 				box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
 
 				img {
@@ -334,8 +334,9 @@ export const LandscapePageWrapper=styled.div`
 					filter: grayscale(1) brightness(10);
 				}
 
-				h5 {
+				h2 {
 					font-size: 1.5rem;
+					font-weight: 400;
 					color: ${props => props.theme.white};
 				}
 			}

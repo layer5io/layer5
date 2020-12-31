@@ -33,7 +33,7 @@ const LandscapeGrid=() => {
                                 <div className="comparison-mesh">
                                     <div className="mesh-img">
                                         <img src={Linkerd_Img} />
-                                        <h5>Linkerd</h5>
+                                        <h2>Linkerd</h2>
                                     </div>
                                     <div className="mesh-data">
                                         <p>Time to Value, Performance</p>
@@ -42,7 +42,7 @@ const LandscapeGrid=() => {
                                 <div className="comparison-mesh">
                                     <div className="mesh-img">
                                         <img src={Istio_Img} />
-                                        <h5>Istio</h5>
+                                        <h2>Istio</h2>
                                     </div>
                                     <div className="mesh-data">
                                         <p>Powerful Feature Set, Extensibility</p>
@@ -51,7 +51,7 @@ const LandscapeGrid=() => {
                                 <div className="comparison-mesh">
                                     <div className="mesh-img">
                                         <img src={Consul_Img} />
-                                        <h5>Consul</h5>
+                                        <h2>Consul</h2>
                                     </div>
                                     <div className="mesh-data">
                                         <p>Support for Non-Kubernetes Workloads</p>
@@ -60,7 +60,7 @@ const LandscapeGrid=() => {
                                 <div className="comparison-mesh">
                                     <div className="mesh-img">
                                         <img src={Nginx_Img} />
-                                        <h5>NGINX Service Mesh</h5>
+                                        <h2>NGINX Service Mesh</h2>
                                     </div>
                                     <div className="mesh-data">
                                         <p>Interoperability with Existing Ingresses</p>
@@ -68,7 +68,7 @@ const LandscapeGrid=() => {
                                 </div><div className="comparison-mesh">
                                     <div className="mesh-img">
                                         <img src={NSM_Img} />
-                                        <h5>Network Service Mesh</h5>
+                                        <h2>Network Service Mesh</h2>
                                     </div>
                                     <div className="mesh-data">
                                         <p>Layer2 and Layer3 Functions</p>
