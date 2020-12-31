@@ -1,10 +1,8 @@
 import React from "react";
-
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
-import Contact from "../../sections/Contact";
-
+import ContactCard from "../../components/ContactCard";
 import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.png";
 import partner2 from "../../assets/images/partners/gsoc.svg";
 import partner3 from "../../assets/images/partners/UEM_Logo.jpg";
@@ -15,10 +13,6 @@ import partner7 from "../../assets/images/partners/hpe_side_black.svg";
 import partner8 from "../../assets/images/partners/microsft.svg";
 import partner9 from "../../assets/images/partners/redhat.svg";
 import partner10 from "../../assets/images/partners/smi1.png";
-import partner11 from "../../assets/images/partners/forklift.svg";
-
-import { MdAccountBox, MdMail } from "react-icons/md";
-
 import PartnerWrapper from "./partner.style";
 
 const Partner = () => {
@@ -240,7 +234,7 @@ const Partner = () => {
                         </div>
                     </Col>
                 </Row>
-                <Contact/>
+                <ContactCard/>
             </Container>
         </PartnerWrapper >
     );

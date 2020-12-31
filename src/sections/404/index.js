@@ -28,7 +28,7 @@ const L404 = () => {
                 <h3 className="subtitle">Page does not exist.</h3>
                 <div className="button-row">
                     <img src={serviceMesh} alt="service meshed" className="mesh" />
-                    <Button secondary url="/" external="false">Return to Layer5</Button>
+                    <Button secondary url="/" external={false} >Return to Layer5</Button>
                 </div>
             </Container>
         </L404SectionWrapper>

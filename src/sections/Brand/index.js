@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "../../reusecore/Layout";
 import BrandPageWrapper from "./brandPage.style";
 
 import Layer5 from "./Brand-components/layer5";

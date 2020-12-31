@@ -9,8 +9,6 @@ import ImageHubWhite from "../../../assets/images/image-hub/layer5-image-hub-whi
 
 const ImageHubWrap = styled.section`
   .ImageHubWhite {
-    float: left;
-    padding: 3px;
     background-color: ${props => props.theme.primaryColor};
   }
 `;
@@ -20,13 +18,13 @@ const ImageHubBrand = () => {
         <ImageHubWrap>
             <div className="post-content">
                 <Row>
-                    <Col lg={6} md={6} sm={6}>
+                    <Col xs={12} sm={6}>
                         <h1 className="layerH3">
                                 Image-Hub
                         </h1>
                     </Col>
-                    <Col lg={6} md={6} sm={6}>
-                        <Button primary className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/image-hub-brand-kit.zip" external="true">
+                    <Col xs={12} sm={6}>
+                        <Button primary className="l5-dark-yellow" title="Download Logo Assets" url="../../../assets/brand/image-hub-brand-kit.zip" external="true">
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
@@ -51,17 +49,11 @@ const ImageHubBrand = () => {
                     </Col>
                 </Row>
                 <Row className="ImgDiv">
-                    <Col xs={12} sm={2} lg={2} xl={2}>
-                        <a href="#">
-                            <img src={ImageHub} />
-                        </a>
+                    <Col xs={12} sm={3}>
+                        <img src={ImageHub} />
                     </Col>
-                    <Col xs={12} sm={2} lg={2} xl={2}>
-                        <div className="ImageHubWhite">
-                            <a href="#">
-                                <img src={ImageHubWhite} />
-                            </a>
-                        </div>
+                    <Col xs={12} sm={3} className="ImageHubWhite">
+                        <img src={ImageHubWhite} />
                     </Col>
                 </Row>
                 <Row>

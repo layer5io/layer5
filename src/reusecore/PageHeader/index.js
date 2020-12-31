@@ -52,17 +52,17 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail, path, sub_h
                     <Image {...thumbnail} imgStyle={{ objectFit: "contain"}} alt={title}/>
                 </div>}
                 <h1>{title}</h1>
-                {subtitle && (<h4>{subtitle}</h4>)}
+                {subtitle && (<h3>{subtitle}</h3>)}
                 {category && (
                     <div className="breadcrumbs">
                         <span>
-                            <h4>Category:</h4>
+                            <h5>Category:</h5>
                             <p key={category}>{category}</p>
                         </span>
                         {author && (
                             <>
                                 <span>
-                                    <h4>By:</h4>
+                                    <h5>By:</h5>
                                     <p>{authorField(author, isSlugAvailable)}</p>
                                 </span>
                             </>
@@ -71,7 +71,7 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail, path, sub_h
                 )}
                 {!category && author && (
                     <div className="breadcrumbs post">
-                        <h4>By:</h4>
+                        <h5>By:</h5>
                         <span>{authorField(author, isSlugAvailable)}</span>
                     </div>
                 )}

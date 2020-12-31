@@ -13,7 +13,11 @@ import MeshDarkTagText from "../../../assets/images/meshery/meshery-dark-tag-tex
 const MesheryWrapper = styled.section`
 .colors{
     padding-left:25px;
-  }
+}
+
+.mesheryLogoTagLightTextSide {
+    margin: auto;
+}
 
 @media (max-width:425px){
     .colors{
@@ -33,7 +37,7 @@ const MesheryBrand = () => {
                         </h1>
                     </Col>
                     <Col lg={6} md={6} sm={6}>
-                        <Button primary className="l5-dark-yellow" title="Donwload Logo Assets" url="https://layer5.io/assets/resources/brand/meshery-brand-kit.zip" external="true">
+                        <Button primary className="l5-dark-yellow" title="Donwload Logo Assets" url="../../../assets/brand/meshery-brand-kit.zip" external="true">
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
@@ -53,37 +57,27 @@ const MesheryBrand = () => {
                 <Row>
                     <Col>
                         <h1 className="layerH3 in">
-                                Logos
+                            Logos
                         </h1>
                     </Col>
                 </Row>
                 <Row className="ImgDiv">
                     <Col xs={12} sm={4} lg={4} xl={4}>
-                        <a href="#">
-                            <img src={MeshDarkText} />
-                        </a>
+                        <img src={MeshDarkText} />
                     </Col>
                     <Col xs={12} sm={4} lg={4} xl={4}>
-                        <a href="#">
-                            <img src={MeshDarkTagText} />
-                        </a>
+                        <img src={MeshDarkTagText} />
                     </Col>
                 </Row>
                 <Row className="ImgDiv">
                     <Col xs={12} sm={4} lg={4} xl={4}>
-                        <a href="#">
-                            <img src={MeshLogoLightText} />
-                        </a>
+                        <img src={MeshLogoLightText} />
+                    </Col>
+                    <Col xs={12} sm={4} lg={4} xl={4} className="mesheryLogoTagLightTextSide">
+                        <img src={MeshLogoTagLightTextSide} />
                     </Col>
                     <Col xs={12} sm={4} lg={4} xl={4}>
-                        <a href="#">
-                            <img src={MeshLogoTagLightTextSide} />
-                        </a>
-                    </Col>
-                    <Col xs={12} sm={4} lg={4} xl={4}>
-                        <a href="#">
-                            <img src={MeshLogoLightTextSide} />
-                        </a>
+                        <img src={MeshLogoLightTextSide} />
                     </Col>
                 </Row>
                 <Row>

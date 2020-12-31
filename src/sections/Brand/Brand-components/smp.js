@@ -35,13 +35,13 @@ const SMPBrand = () => {
         <SMPWrap>
             <div className="post-content">
                 <Row>
-                    <Col lg={6} md={6} sm={6}>
+                    <Col sm={6} xs={12}>
                         <h1 className="layerH3">
                             <strong>Service Mesh Performance</strong>
                         </h1>
                     </Col>
-                    <Col lg={6} md={6} sm={6}>
-                        <Button primary className="l5-dark-yellow" title="DOWNLOAD LOGO ASSETS" url="https://layer5.io/assets/resources/brand/smp-brand-kit.zip" external="true">
+                    <Col sm={6} xs={12}>
+                        <Button primary className="l5-dark-yellow" title="Download Logo Assets" url="../../../assets/brand/smp-brand-kit.zip" external="true">
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
@@ -66,44 +66,32 @@ const SMPBrand = () => {
                     </Col>
                 </Row>
                 <Row className="ImgDiv">
-                    <Col xs={12} sm={4} lg={4} xl={4}>
-                        <a href="#">
-                            <img src={SmpDark} />
-                        </a>
+                    <Col xs={12} sm={4}>
+                        <img src={SmpDark} />
                     </Col>
-                    <Col xs={12} sm={4} lg={4} xl={4}>
+                    <Col xs={12} sm={4}>
                         <div className="SmpWhite">
-                            <a href="#">
-                                <img src={SmpWhite} />
-                            </a>
+                            <img src={SmpWhite} />
                         </div>
                     </Col>
-                    <Col xs={12} sm={4} lg={4} xl={4}>
+                    <Col xs={12} sm={4}>
                         <div className="SmpWhite">
-                            <a href="#">
-                                <img src={SmpLight} />
-                            </a>
+                            <img src={SmpLight} />
                         </div>
                     </Col>
                 </Row>
                 <Row className="ImgDiv">
-                    <Col xs={12} sm={4} lg={4} xl={4}>
-                        <a href="#">
-                            <img src={SmPDarkTextSide} />
-                        </a>
+                    <Col xs={12} sm={4}>
+                        <img src={SmPDarkTextSide} />
                     </Col>
-                    <Col xs={12} sm={4} lg={4} xl={4}>
+                    <Col xs={12} sm={4}>
                         <div className="SmpWhite">
-                            <a href="#">
-                                <img src={SmPWhiteTextSide} />
-                            </a>
+                            <img src={SmPWhiteTextSide} />
                         </div>
                     </Col>
-                    <Col xs={12} sm={4} lg={4} xl={4}>
+                    <Col xs={12} sm={4}>
                         <div className="SmpWhite">
-                            <a href="#">
-                                <img src={SmPLightTextSide} />
-                            </a>
+                            <img src={SmPLightTextSide} />
                         </div>
                     </Col>
                 </Row>

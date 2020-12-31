@@ -11,7 +11,7 @@ const BrandPageWrapper = styled.section`
   }
   .post-content {
     margin: 60px auto 30px auto;
-    width: 90%;
+    width: 70%;
     color: #000000;
   h1{
     font-size: 40px;
@@ -19,20 +19,18 @@ const BrandPageWrapper = styled.section`
   p{
     font-size: 18px;
   }
-  }
   .l5-dark-yellow {
     text-align: center;
     float: right;
     margin: 0px 0px 1rem 0px;
   }
   .ImgDiv {
-    text-align: center;
-    // margin: 2rem 0rem;
+    justify-content: flex-start;
   }
   .layerH3 {
     float: left;
     margin-bottom: 1em;
-  }\
+  }
   .in{
     margin-top: 60px;
   }
