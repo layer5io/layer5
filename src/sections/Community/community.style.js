@@ -2,20 +2,20 @@ import styled from "styled-components";
 
 const CommunitySectionWrapper = styled.div`
     .community-section-wrapper{
-        margin-bottom: 50px;
+        margin-bottom: 3.125rem;
     }
     
     .service-mesh-projects{
         margin-top: 2rem;
         h1{
-            line-height: 51px;
+            line-height: 3.1rem;
             margin-bottom: 1rem;
         }
         
         img{
             margin-left: 5rem;
-            max-height: 300px;
-             @media (max-width: 992px) {
+            max-height: 18.75rem;
+             @media (max-width: 62rem) {
                 display:block;
                 margin:auto;
             }
@@ -23,7 +23,7 @@ const CommunitySectionWrapper = styled.div`
     }
     
     .open-source-projects{
-        margin-top: 2rem;
+        margin-top: 3rem;
         text-align: center;
         
         h1{
@@ -40,52 +40,52 @@ const CommunitySectionWrapper = styled.div`
         margin-top: 2rem;
         color: white;
         background: linear-gradient(to right, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
-        @media (max-width: 992px) {
+        @media (max-width: 62rem) {
             background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
         }
         
         .community{
-            margin: 180px auto 224px auto;
-            @media (max-width: 992px) {
-                margin-bottom: 200px;
+            margin: 11.25rem auto 14rem auto;
+            @media (max-width: 62rem) {
+                margin-bottom: 12.5rem;
             }
-            @media (max-width: 576px) {
-                margin-top: 80px;
+            @media (max-width: 36rem) {
+                margin-top: 5rem;
                 margin-bottom: auto;
             }
             
             h5{
                 color: white;
-                margin-bottom : 24px;
+                margin-bottom : 1.5rem;
             }
             h1{
-                margin-bottom: 40px;
+                margin-bottom: 2.5rem;
                 color: white;
             }
             button{
-                margin-top: 40px;
+                margin-top: 2.5rem;
             }       
         }        
     }
     .meshmate{
-        margin-top: 80px;
+        margin-top: 5rem;
         .content{
             h1{
-                margin-top: 24px;
-                margin-bottom: 40px;
+                margin-top: 1.5rem;
+                margin-bottom: 2.5rem;
             }
         }
         img{
-            max-height: 250px;
-            margin-top: 95px;
-            margin-bottom: 40px;
+            max-height: 15.625rem;
+            margin-top: 5.938rem;
+            margin-bottom: 2.5rem;
         }
         .meshmate-link{
             display: flex;
             align-items: center;
             justify-content: center;
             h2{
-                margin-right: 40px;
+                margin-right: 2.5rem;
             }
             .icon{
                 align-items: center;
@@ -117,7 +117,7 @@ const CommunitySectionWrapper = styled.div`
     }
     
     .newcomers-button{
-        margin: 80px auto;
+        margin: 5rem auto;
     }
     
     

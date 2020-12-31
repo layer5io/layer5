@@ -1,20 +1,21 @@
 import React from "react";
 import Slider from "react-slick";
 import CommunityImage1 from "./community1.png";
-import CommunityMemberImage from "./community-member.png";
+import CommunityImage2 from "./community2.png";
+import CommunityImage3 from "./community-member.png";
 import styled from "styled-components";
 
 const PictureSliderWrapper = styled.div`
       .slick-slider {
-        margin-top: 180px;
-        margin-left: 50px;
-        max-width: 400px;
-        @media (max-width: 992px) {
-           margin: 60px auto;
+        margin-top: 11.25rem;
+        margin-left: 3.125rem;
+        max-width: 25rem;
+        @media (max-width: 62rem) {
+           margin: 3.75rem auto;
         }
-        @media (max-width: 576px) {
-            margin: 120px auto;
-            max-width: 300px;
+        @media (max-width: 36rem) {
+            margin: 7.5rem auto;
+            max-width: 18.75rem;
         }
       }
       .slick-track {
@@ -25,10 +26,6 @@ const PictureSliderWrapper = styled.div`
           align-items: center;
           justify-content: center;
         }
-      }
-      
-      .slick-arrow{
-        
       }
 `;
 
@@ -45,8 +42,9 @@ const PictureSlider = () => {
     return(
         <PictureSliderWrapper>
             <Slider {...settings}>
-                <img src={CommunityMemberImage}/>
-                <img src={CommunityImage1}/>
+                <img src={CommunityImage1} alt="Community Member"/>
+                <img src={CommunityImage2} alt="Community Member"/>
+                <img src={CommunityImage3} alt="Community Member"/>
             </Slider>
         </PictureSliderWrapper>
     );
