@@ -103,7 +103,6 @@ const LandscapeGrid=() => {
                                 </TabPanel>
                             </Tabs>
                             <h2 className="sub-heading landscape-section-heading">Service Mesh Interface Compliance</h2>
-                            <p>learn more about SMI </p>
                             <div className="landscape-table">
                                 <SMI_Compatibility />
                             </div>
