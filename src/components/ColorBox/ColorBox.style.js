@@ -2,18 +2,18 @@ import styled from "styled-components";
 
 export const ColorBoxWrapper = styled.div`
          .PalletBox {
-           height: 250px;
-           width: 250px;
+           height: 16rem;
+           width: 16rem;
            background-color: ${props =>
         props.bgcolor ? props.bgcolor : "red"};
-           margin-bottom: 15px;
+           margin-bottom: 1rem;
            line-height: 2rem;
            padding: 1.5rem 2.5rem;
            color: ${props => props.dark ? "black" : "white" };
            .color-name{
              font-size: 1.4rem;
              color: ${props => props.dark ? "black" : "white" };
-             margin-bottom: 100px;
+             margin-bottom: 6.25rem;
              font-weight: 400;
            }
            .color-data{
@@ -22,8 +22,8 @@ export const ColorBoxWrapper = styled.div`
          }
          @media (max-width:575px){
           .PalletBox{
-              width: 150px;
-              height: 150px;
+              width: 9.5rem;
+              height: 9.5rem;
               line-height: 2rem;
               padding: 1rem 2rem;
               .color-name{
