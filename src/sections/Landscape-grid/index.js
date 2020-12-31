@@ -79,7 +79,7 @@ const LandscapeGrid=() => {
                                 Service Mesh Timeline
                             </h2>
                             <ServiceMeshTimeline />
-                            <h2 id="service-mesh-comaprison-matrix" className="headings subsequent-heading">
+                            <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
                                 Service Mesh Comparison Matrix
                             </h2>
                             <Tabs className="landscape-table">

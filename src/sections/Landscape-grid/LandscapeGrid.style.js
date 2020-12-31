@@ -3,7 +3,7 @@ export const LandscapePageWrapper=styled.div`
 
 	h2.landscape-section-heading {
 		margin-bottom: 3rem;
-		padding-top: 3rem;
+		margin-top: 3rem;
 		width: 100%;
 		text-align: center;
 	}
