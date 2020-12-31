@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
 import JoinCommunity from "../Join-community";
 import PictureSlider from "./slider";
@@ -15,7 +14,10 @@ const CommunityPage = () => {
 
     return (
         <CommunitySectionWrapper>
-            <PageHeader title="The Layer5 Community" subtitle="New Members are always welcome" path="Community"/>
+            <div className="community-header">
+                <h1>The Layer5 Community</h1>
+                <p>New members are always welcome</p>
+            </div>
             <div className="community-section-wrapper">
                 <Container>
                     <Row className="service-mesh-projects">

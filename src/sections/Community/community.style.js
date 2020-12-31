@@ -1,6 +1,23 @@
 import styled from "styled-components";
+import BookmarkImage from "./bookmark.png";
 
 const CommunitySectionWrapper = styled.div`
+    
+    .community-header{
+        color: white;
+        height: 25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url(${BookmarkImage});
+        background-size: cover;
+        background-position: center;
+        h1{
+            color: white;
+        }
+    }
+
     .community-section-wrapper{
         margin-bottom: 3.125rem;
     }
@@ -57,7 +74,6 @@ const CommunitySectionWrapper = styled.div`
                 margin-top: 5rem;
                 margin-bottom: auto;
             }
-            
             h5{
                 color: white;
             }
