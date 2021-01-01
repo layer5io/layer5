@@ -1,15 +1,15 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Navigation from "../sections/Navigation";
-import BookPage from "../sections/Books-grid";
-import WorkshopsPage from "../sections/Workshop-grid";
-import Footer from "../sections/Footer";
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import Navigation from "../../sections/Navigation";
+import BookPage from "../../sections/Books-grid";
+import WorkshopsPage from "../../sections/Workshop-grid";
+import Footer from "../../sections/Footer";
 
-import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
+import { GlobalStyle } from "../../sections/app.style";
+import theme from "../../theme/app/themeStyles";
 
 
 const WorkshopsGridPage = () => {
@@ -20,7 +20,7 @@ const WorkshopsGridPage = () => {
                 <GlobalStyle />
                 <SEO title="Learn" />
                 <Navigation />
-                <BookPage limit={3} hide_path={hide_path} />
+                <BookPage hide_path={hide_path} />
                 <WorkshopsPage limit={3} hide_path={hide_path} />
                 <Footer />
             </Layout>
