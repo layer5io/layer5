@@ -7,8 +7,8 @@ import PictureSlider from "./slider";
 import {FaArrowRight} from "react-icons/fa";
 import CommunitySectionWrapper from "./community.style";
 import Lee_workshop from "./Lee_Workshop.png";
-import CommunityMemberImage from "./community-member.png";
-import MehsmateIcon from "../../assets/images/meshmate/meshmate-stack.png";
+import CommunityMemberImage from "./community-member.jpeg";
+import MehsmateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
 
 const CommunityPage = () => {
 

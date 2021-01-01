@@ -30,12 +30,9 @@ const CommunitySectionWrapper = styled.div`
         }
         
         img{
-            margin-left: 5rem;
+            display:block;
+            margin:auto;
             max-height: 18.75rem;
-             @media (max-width: 62rem) {
-                display:block;
-                margin:auto;
-            }
         }
         @media (max-width: 62rem) {
              text-align:center;

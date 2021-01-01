@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import CommunityImage1 from "./community1.png";
 import CommunityImage2 from "./community2.png";
-import CommunityImage3 from "./community-member.png";
+import CommunityImage3 from "./community-member.jpeg";
 
 const PictureSliderWrapper = styled.div`
       .slick-slider {
