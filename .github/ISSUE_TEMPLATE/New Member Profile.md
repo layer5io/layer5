@@ -11,27 +11,15 @@ assignees: ''
 <@github-username> has been a consistent contributor and community member.
 
 **Desired Situation**
+Let's recognizing <@github-username> as a contributor and community member by creating a profile on https://layer5.io/community/members.
 
-A profile for <@github-username> should be created and visible on /community/members on next generation layer5.io site.
-
-- Github:
-
-- Twitter:
-
-- LinkedIn:
-
-- Profile picture:
+- GitHub: <!-- username only -->
+- Twitter: <!-- handle only -->
+- LinkedIn: <!-- <profilename> only (https://www.linkedin.com/in/<profilename>)-->
+- Link to profile picture:
 
 ---
 
 **Contributor Resources**
 
-The `layer5` repo contains two websites. The current generation and the next-generation of the layer5.io site.
-
-If the `layer5-ng` label is absent on this issue, then this issue pertains to the current generation of the layer5.io website, which uses Jekyll and GitHub Pages. Site content is found under the <a href="https://github.com/layer5io/layer5/tree/master">`master` branch</a>.
-
-- See <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">`layer5` contributing instructions</a>
-
-If the `layer5-ng` label is present on this issue, then this issue pertains to the next-generation of the layer5.io website, which uses Gatsby, Strapi, and GitHub Pages. Site content is found under the <a  href="https://github.com/layer5io/layer5/tree/layer5-ng">`layer5-ng` branch</a>.
-
-- See <a href="https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md">`layer5-ng` contributing instructions</a>
+The layer5.io website, which uses GatsbyJS and GitHub Pages. Site content is found under the <a href="https://github.com/layer5io/layer5/tree/master">`master` branch</a>. See <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">`layer5` contributing instructions</a>.
