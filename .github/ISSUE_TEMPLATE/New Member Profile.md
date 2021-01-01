@@ -1,10 +1,18 @@
+---
+name: 👤 Community Member Profile
+about: Recognize a Layer5 contributor with a community member profile
+title: '[Community] Member Profile:'
+labels: 'area/community'
+assignees: ''
+---
+
 **Current Behaviour**
 
-`Your Github Username` has been a consistent contributor and community member.
+<@github-username> has been a consistent contributor and community member.
 
 **Desired Situation**
 
-A profile for `Your Github Username` should be created and visible on /community/members on next generation layer5.io site.
+A profile for <@github-username> should be created and visible on /community/members on next generation layer5.io site.
 
 - Github:
 
