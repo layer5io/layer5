@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ContactWrapper = styled.section`
-    padding: 100px 0 200px 0;
+    padding: 4rem 0 6rem;
     overflow: hidden;
     align-items: center;
     .parentcard{
@@ -18,12 +18,9 @@ const ContactWrapper = styled.section`
     }
     form{
         text-align: center;
-        text-align: center;
         background: linear-gradient(122.25deg, #eee -2.45%, #fff 52.7%, #eee 96.5%);
         border-radius: 10px 10px 0px 0px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        align-items: center;
-        justify-content: center;
         padding: 25px;
         border-radius: 10px;
     }
@@ -31,21 +28,21 @@ const ContactWrapper = styled.section`
         margin-bottom: 5px;
     }
     .firstcol {
-        padding-right: 0px;
+        padding-right: 0;
     }
     .lastcol {
         padding-left: 5px;
     }
     .nopad {
         padding-left: 10px;
-        padding-right: 0px;
+        padding-right: 0;
     }
     input{
         display: block;
         padding: 10px;
         width: 100%;
         height: 35px;
-        font-size: 16px;
+        font-size: 1rem;
         border-radius: 5px;
         margin: 0 auto 0px auto;
         box-shadow: none;
@@ -59,7 +56,6 @@ const ContactWrapper = styled.section`
         transition: 450ms all;
         background: #ebc017;
         color: #000000;
-        font-size: 16px;
         height: 35px;
         &:hover{
             background: #ebc017;

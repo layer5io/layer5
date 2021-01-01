@@ -1,8 +1,6 @@
 import React from "react";
 import { useTable } from "react-table";
 import ReactTooltip from "react-tooltip";
-import { FaCheckCircle } from "react-icons/fa";
-import { RiCloseCircleFill } from "react-icons/ri";
 import { IoMdHelpCircle } from "react-icons/io";
 import { IconContext } from "react-icons";
 import { TableWrapper } from "./LandscapeTable.style";

@@ -7,17 +7,14 @@ export const ColorBoxWrapper = styled.div`
            background-color: ${props =>
         props.bgcolor ? props.bgcolor : "red"};
            margin-bottom: 1rem;
-           line-height: 2rem;
            padding: 1.5rem 2.5rem;
            color: ${props => props.dark ? "black" : "white" };
            .color-name{
-             font-size: 1.4rem;
              color: ${props => props.dark ? "black" : "white" };
              margin-bottom: 6.25rem;
-             font-weight: 400;
            }
            .color-data{
-             font-size: 1.3rem;
+             font-size: 1.25rem;
            }
          }
          @media (max-width:575px){
@@ -27,11 +24,11 @@ export const ColorBoxWrapper = styled.div`
               line-height: 2rem;
               padding: 1rem 2rem;
               .color-name{
-                font-size: 1rem;
-                margin-bottom: 0px;
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
               }
               .color-data{
-                font-size: 0.9rem;
+                font-size: 1rem;
               }
           }
       }

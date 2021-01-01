@@ -37,9 +37,7 @@ const BlogSideBarWrapper = styled.div`
             margin-bottom: 20px;
             h3{
                 display: inline-block;
-                font-size: 21px;
                 font-weight: 500;
-                line-height: 30px;
                 position: relative;
                 &:before{
                     position: absolute;
@@ -73,7 +71,6 @@ const BlogSideBarWrapper = styled.div`
                     a{
                         color: ${props => props.theme.black};
                         display: flex;
-                        line-height: 25px;
                         justify-content: space-between;
                         font: 400 16px/35px "Open Sans", sans-serif;
                         em{font-style: normal;}

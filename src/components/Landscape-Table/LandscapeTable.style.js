@@ -25,9 +25,9 @@ table {
         background: #1E2117;
         color: #ffffff;
         height: 4rem;
-		font-weight: 350;
-		font-size: .95rem;
-		line-height: .95rem;
+		font-weight: 600;
+		font-size: 1rem;
+		line-height: 1rem;
     }
   
     tr {
