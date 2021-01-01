@@ -20,7 +20,6 @@ const UpcomingEventsWrapper = styled.div`
 
 	.blog-slider_title {
 		text-align: center;
-		font-size: 2rem;
 		margin: 1rem auto 0.2rem;
 	}
 
@@ -41,6 +40,10 @@ const UpcomingEventsWrapper = styled.div`
 			text-align: start;
 			list-style: disc;
 		}
+	}
+
+	.swiper-pagination-bullet {
+		background: ${props => props.theme.secondaryColor};
 	}
 
 	@media (max-width: 720px) {

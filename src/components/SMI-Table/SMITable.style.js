@@ -22,7 +22,8 @@ table {
     th {
         background: #1E2117;
         color: #ffffff;
-        height: 4rem;
+		height: 4rem;
+		font-size: 1rem;
         font-weight: 600;
     }
   

@@ -1,38 +1,45 @@
 import styled from "styled-components";
 
 const BrandPageWrapper = styled.section`
-  padding: 0 0 100px 0;
   position: relative;
   overflow: hidden;
 
-  h2 {
-    color: grey;
-    text-align: center;
-  }
   .post-content {
-    margin: 60px auto 30px auto;
+    margin: 5rem auto;
     width: 70%;
-    color: #000000;
-  h1{
-    font-size: 40px;
   }
-  p{
-    font-size: 18px;
+
+  .download-button {
+    text-align: end;
+    margin: 0 0 1rem 0;
   }
-  .l5-dark-yellow {
-    text-align: center;
-    float: right;
-    margin: 0px 0px 1rem 0px;
-  }
-  .ImgDiv {
-    justify-content: flex-start;
+  .ImgDiv, .color-code-wrapper {
+    width: 100%;
+    justify-content: space-around;
   }
   .layerH3 {
-    float: left;
+    text-align: start;
     margin-bottom: 1em;
   }
   .in{
-    margin-top: 60px;
+    margin-top: 2rem;
+  }
+
+  .white-color-box {
+    .PalletBox {
+        border: 1px solid black;
+        color: black;
+
+        .color-name {
+            color: black;
+        }
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .download-button {
+      text-align: start;
+    }
   }
 `;
 

@@ -18,7 +18,7 @@ const ProfileCard = (props) =>{
                                 <img src={MeshMateIcon} alt="meshmate-color-icon" />
                             </Link>
                         )}
-                        <h1>{name}</h1>
+                        <h3>{name}</h3>
                     </header>
                 </Link>
             </div>
