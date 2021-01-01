@@ -42,7 +42,7 @@ const ProjectItemWrapper = styled.section`
         height: 220px;
         border-radius: 4%;
         margin-bottom: 30px;
-        h3{
+        h5{
             margin-bottom: 10px; 
             font-weight: 700;
             color: ${props => props.theme.secondaryColor}
@@ -79,7 +79,7 @@ const ProjectItemWrapper = styled.section`
                 height: 45px;
                 margin-bottom: 6px;
             }
-            h3{
+            h5{
                 margin-bottom: 0px;
             }
         }
