@@ -99,7 +99,7 @@ const CommunityPage = () => {
                         <div className="newcomers-section">
                             <h2>Are you new to the community?</h2>
                             <h4>Don't worry we have got you covered</h4>
-                            <Button primary title="Hope In!" url="/community/newcomers"/>
+                            <Button primary title="Hop In!" url="/community/newcomers"/>
                         </div>
                     </Row>
                     <JoinCommunity image={Lee_workshop}/>
