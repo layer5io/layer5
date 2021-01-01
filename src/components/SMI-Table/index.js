@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import { useTable } from "react-table";
-import { FaCheckCircle } from "react-icons/fa";
-import { RiCloseCircleFill } from "react-icons/ri";
 import { IoMdHelpCircle } from "react-icons/io";
 import { IconContext } from "react-icons";
 import { TableWrapper } from "./SMITable.style";
+import halfMark from "../../assets/images/landscape/half.svg";
+import passingMark from "../../assets/images/landscape/passing.svg";
+import failingMark from "../../assets/images/landscape/failing.svg";
 
 const Table = ({ columns, data }) => {
     // Use the state and functions returned from useTable to build the UI
@@ -43,24 +44,17 @@ const Table = ({ columns, data }) => {
                                     <td>{row.original.mesh_version}</td>
                                     {row.original.more_details.map(spec => {
                                         if(spec["capability"] === "Full"){
-                                            return <td >
-                                                <IconContext.Provider value={{color: "green", size: "18px"}}>
-                                                    <FaCheckCircle />
-                                                </IconContext.Provider>
+                                            return <td>
+                                                <img className="smiMark" src={passingMark} />    
                                             </td>;
                                         }
                                         else if(spec["capability"] === "None"){
                                             return <td >
-                                                <IconContext.Provider value={{color: "red", size: "20px"}}>
-                                                    <RiCloseCircleFill />
-                                                </IconContext.Provider>
+                                                <img className="smiMark" src={failingMark} />
                                             </td>;
                                         }
                                         else if(spec["capability"] === "Half"){
-                                            return <td >
-                                                <IconContext.Provider value={{color: "gold", size: "20px" }}>
-                                                    <FaCheckCircle />
-                                                </IconContext.Provider>
+                                            return <td><img className="smiMark" src={halfMark} />
                                             </td>;
                                         }
                                         else {
@@ -83,24 +77,18 @@ const Table = ({ columns, data }) => {
                                                 <td>{prevResult.mesh_version}</td>
                                                 {prevResult.more_details.map(spec => {
                                                     if(spec["capability"] === "Full"){
-                                                        return <td >
-                                                            <IconContext.Provider value={{color: "green", size: "18px"}}>
-                                                                <FaCheckCircle />
-                                                            </IconContext.Provider>
+                                                        return <td>
+                                                            <img className="smiMark" src={passingMark} />
                                                         </td>;
                                                     }
                                                     else if(spec["capability"] === "None"){
-                                                        return <td >
-                                                            <IconContext.Provider value={{color: "red", size: "20px"}}>
-                                                                <RiCloseCircleFill />
-                                                            </IconContext.Provider>
+                                                        return <td>
+                                                            <img className="smiMark" src={failingMark} />
                                                         </td>;
                                                     }
                                                     else if(spec["capability"] === "Half"){
-                                                        return <td >
-                                                            <IconContext.Provider value={{color: "gold", size: "20px" }}>
-                                                                <FaCheckCircle />
-                                                            </IconContext.Provider>
+                                                        return <td>
+                                                            <img className="smiMark" src={halfMark} />
                                                         </td>;
                                                     }
                                                     else {

@@ -22,7 +22,7 @@ export const smi_data=[
                 "assertions": "10",
                 "result": "Passed",
                 "reason": "Passing",
-                "capability": "Full",
+                "capability": "Half",
                 "status": "Passing"
             }, {
                 "smi_specification": "traffic-spec",

@@ -1,14 +1,13 @@
 import styled from "styled-components";
 export const LandscapePageWrapper=styled.div`
 
-	.headings{
-		font-size: 2rem;
+	h2.landscape-section-heading {
 		margin-bottom: 3rem;
-		padding-top: 3rem;
+		margin-top: 3rem;
 		width: 100%;
 		text-align: center;
 	}
-	.subsequent-heading{
+	.subsequent-heading {
 		padding-top: 8rem;
 	}
 
@@ -227,6 +226,8 @@ export const LandscapePageWrapper=styled.div`
 		width: 100%;
 		margin-bottom: 2rem;
 		box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
+		border-top-left-radius: 1rem;
+		border-top-right-radius: 1rem;
 	}
 
 	.category-row-heading {
@@ -252,23 +253,28 @@ export const LandscapePageWrapper=styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
+		&:hover {
+			background-color: ${props => props.theme.tertiaryColor};
+			border-top-left-radius: .3rem;
+			border-top-right-radius: .3rem;
+		}
 	}
 	.react-tabs__tab-list {
 		margin: 0px;
 		padding: 0px;
 		font-size: 1.25rem;
-		font-weight: 600;
+		font-weight: 500;
 		border-bottom: none;
-		border-top-left-radius: 0.3rem;
-		border-top-right-radius: 0.3rem;
+		border-top-left-radius: 1rem;
+		border-top-right-radius: 1rem;
 		color: #ffffff;
 		background: #00B39F;
 	}
 	.react-tabs__tab--selected {
-		background: #1E2117;
-		border-color: #1E2117;
+		background: ${props => props.theme.tertiaryColor};
+		border-color: ${props => props.theme.tertiaryColor};
 		color: white;
-		border-radius: 0.3rem;
+		font-weight: 600;
 	}
 	.card-content {
 		border-right: none;
@@ -276,14 +282,14 @@ export const LandscapePageWrapper=styled.div`
 	.odd-row {
 		background: #ffffff;
 		&:hover{
-			box-shadow: 0px 2px 15px -10px black;
+			box-shadow: 0px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
 	.even-row {
 		background: #efefef;
 		&:hover{
-			box-shadow: 0px 2px 15px -10px black;
+			box-shadow: 0px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
@@ -308,5 +314,73 @@ export const LandscapePageWrapper=styled.div`
 		padding: 0.6rem;
 		font-size: 1.2rem;
 		color: rgba(0, 0, 0, 0.5);
+	}
+
+	.strength-comparison-section {
+		display: flex;
+		justify-content: center;
+
+		.comparison-mesh {
+			margin: 0 1rem;
+			
+			.mesh-img {	
+				text-align: center;
+				width: 13rem;
+				height: 9rem;
+				margin: auto;
+				padding: 1rem ;
+				border-radius: 1rem;
+				background: ${props => props.theme.secondaryColor};
+				position: relative;
+				z-index: 1;
+				box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+
+				img {
+					width: 4rem;
+					height: 3rem;
+					filter: grayscale(1) brightness(10);
+				}
+
+				h2 {
+					font-size: 1.5rem;
+					font-weight: 400;
+					color: ${props => props.theme.white};
+				}
+			}
+
+			.mesh-data {
+				width: 12.5rem;
+				height: 6rem;
+				margin: auto;
+				font-size: 1.125rem;
+				text-align: center;
+				padding: 1rem 0.25rem;
+				color: ${props => props.theme.white};
+				background: ${props => props.theme.tertiaryColor};
+				z-index: 0;
+				border-bottom-right-radius: 0.8rem;
+				border-bottom-left-radius: 0.8rem;
+				transform: translateY(-6rem);
+				transition: all 0.5s ease;
+
+				p {
+					margin: 0;
+				}
+			}
+
+			&:hover {
+				cursor: default;
+				.mesh-data {
+					transform: translateY(-0.5rem);
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1200px) {
+		.strength-comparison-section {
+			flex-wrap: wrap;
+			margin: auto;
+		}
 	}
 `;

@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
-import ServiceMeshComparison from "../../assets/images/landscape/comparison-of-service-mesh-strengths-dark.svg";
 import Categories from "./categories";
 import NonFunctional from "./non-functional";
 import Functional from "./functional";
@@ -12,25 +11,75 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ServiceMeshTimeline from "./ServiceMeshTimeline";
 import landscape from "../../assets/images/app/projects/landscape.png";
+import Consul_Img from "../../assets/images/service-mesh-icons/consul-white.svg";
+import Nginx_Img from "../../assets/images/service-mesh-icons/nginx-white.svg";
+import Linkerd_Img from "../../assets/images/service-mesh-icons/linkerd-white.svg";
+import NSM_Img from "../../assets/images/service-mesh-icons/nsm-white.svg";
+import Istio_Img from "../../assets/images/service-mesh-icons/istio-white.svg";
 import Button from "../../reusecore/Button";
 
 const LandscapeGrid=() => {
     return (
         <LandscapePageWrapper>
-            <PageHeader title="Service Mesh Landscape" path="Landscape" />
+            <PageHeader title="The Service Mesh Landscape" path="Landscape" />
             <div className="landscape-page-wrapper">
                 <Container>
                     <div>
                         <Row>
-                            <h2 id="service-mesh-comparison-strength" className="headings">
+                            <h2 id="service-mesh-comparison-strength" className="sub-heading landscape-section-heading">
                                 Comparison of Service Mesh Strengths
                             </h2>
-                            <img src={ServiceMeshComparison} width="100%" height="100%" alt="Service Mesh Comparison" />
-                            <h2 className="headings subsequent-heading">
+                            <div className="strength-comparison-section">
+                                <div className="comparison-mesh">
+                                    <div className="mesh-img">
+                                        <img src={Linkerd_Img} />
+                                        <h2>Linkerd</h2>
+                                    </div>
+                                    <div className="mesh-data">
+                                        <p>Time to Value, Performance</p>
+                                    </div>
+                                </div>
+                                <div className="comparison-mesh">
+                                    <div className="mesh-img">
+                                        <img src={Istio_Img} />
+                                        <h2>Istio</h2>
+                                    </div>
+                                    <div className="mesh-data">
+                                        <p>Powerful Feature Set, Extensibility</p>
+                                    </div>
+                                </div>
+                                <div className="comparison-mesh">
+                                    <div className="mesh-img">
+                                        <img src={Consul_Img} />
+                                        <h2>Consul</h2>
+                                    </div>
+                                    <div className="mesh-data">
+                                        <p>Support for Non-Kubernetes Workloads</p>
+                                    </div>
+                                </div>
+                                <div className="comparison-mesh">
+                                    <div className="mesh-img">
+                                        <img src={Nginx_Img} />
+                                        <h2>NGINX Service Mesh</h2>
+                                    </div>
+                                    <div className="mesh-data">
+                                        <p>Interoperability with Existing Ingresses</p>
+                                    </div>
+                                </div><div className="comparison-mesh">
+                                    <div className="mesh-img">
+                                        <img src={NSM_Img} />
+                                        <h2>Network Service Mesh</h2>
+                                    </div>
+                                    <div className="mesh-data">
+                                        <p>Layer2 and Layer3 Functions</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 className="sub-heading landscape-section-heading">
                                 Service Mesh Timeline
                             </h2>
                             <ServiceMeshTimeline />
-                            <h2 id="service-mesh-comaprison-matrix" className="headings subsequent-heading">
+                            <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
                                 Service Mesh Comparison Matrix
                             </h2>
                             <Tabs className="landscape-table">
@@ -53,7 +102,7 @@ const LandscapeGrid=() => {
                                     <Tools />
                                 </TabPanel>
                             </Tabs>
-                            <h2 className="headings subsequent-heading">SMI Compliance</h2>
+                            <h2 className="sub-heading landscape-section-heading">Service Mesh Interface Compliance</h2>
                             <div className="landscape-table">
                                 <SMI_Compatibility />
                             </div>
