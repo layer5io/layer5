@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const TableWrapper = styled.div`
 overflow-x: auto;
 
+img.Mark {
+	height: 70%;
+}
+
 table {
     border-spacing: 0;
     width: 100%;
@@ -12,7 +16,8 @@ table {
         height: 4rem;
         color: black;
         text-align: center;
-        font-size: 0.9rem;
+		font-size: 0.9rem;
+		line-height: .9rem;
         font-weight: 400;
         border-bottom: 1px solid #efefef;
     }
@@ -20,7 +25,9 @@ table {
         background: #1E2117;
         color: #ffffff;
         height: 4rem;
-        font-weight: 600;
+		font-weight: 350;
+		font-size: .95rem;
+		line-height: .95rem;
     }
   
     tr {
@@ -49,10 +56,9 @@ table {
 		}
 	}
 	
-	th, tr{
-		&:hover{
-			box-shadow: 0px 2px 15px -10px black;
-			transform: translateY(0px);
+	tr {
+		&:hover {
+			background-color:rgba(0,179,159,0.1);	
 		}
 	}
   }

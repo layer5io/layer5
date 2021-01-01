@@ -6,6 +6,8 @@ import { RiCloseCircleFill } from "react-icons/ri";
 import { IoMdHelpCircle } from "react-icons/io";
 import { IconContext } from "react-icons";
 import { TableWrapper } from "./LandscapeTable.style";
+import passingMark from "../../assets/images/landscape/passing.svg";
+import failingMark from "../../assets/images/landscape/failing.svg";
 
 const Table = ({ columns, data }) => {
     // Use the state and functions returned from useTable to build the UI
@@ -81,21 +83,17 @@ const Table = ({ columns, data }) => {
                                     }
                                     else if(cell["value"] === "Yes" || cell["value"] === "Full"){
                                         return <td {...cell.getCellProps()}>
-                                            <IconContext.Provider value={{color: "green", size: "18px"}}>
-                                                <FaCheckCircle />
-                                            </IconContext.Provider>
+                                            <img className="Mark" src={passingMark} /> 
                                         </td>;
                                     }
                                     else if(cell["value"] === "No" || cell["value"] === "None"){
                                         return <td {...cell.getCellProps()}>
-                                            <IconContext.Provider value={{color: "red", size: "20px"}}>
-                                                <RiCloseCircleFill />
-                                            </IconContext.Provider>
+                                            <img className="Mark" src={failingMark} /> 
                                         </td>;
                                     }
                                     else if(cell["value"] === "?"){
                                         return <td {...cell.getCellProps()}>
-                                            <IconContext.Provider value={{color: "gray", size: "20px" }}>
+                                            <IconContext.Provider value={{color: "gray", size: "70%" }}>
                                                 <IoMdHelpCircle />
                                             </IconContext.Provider>
                                         </td>;
