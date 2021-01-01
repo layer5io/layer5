@@ -14,7 +14,7 @@ const PictureSliderWrapper = styled.div`
            margin: 3.75rem auto;
         }
         @media (max-width: 36rem) {
-            margin: 7.5rem auto;
+            margin: 12.5rem auto;
             max-width: 18.75rem;
         }
       }

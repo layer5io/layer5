@@ -16,13 +16,13 @@ const CommunityPage = () => {
         <CommunitySectionWrapper>
             <div className="community-header">
                 <h1>The Layer5 Community</h1>
-                <p>New members are always welcome</p>
+                <h3>New members are always welcome</h3>
             </div>
             <div className="community-section-wrapper">
                 <Container>
                     <Row className="service-mesh-projects">
                         <Col sm={12} lg={6}>
-                            <h1>Largest collection of service mesh projects and their maintainers in the world</h1>
+                            <h2>Largest collection of service mesh projects and their maintainers in the world</h2>
                             <p>
                                 We build projects to provide learning environments,
                                 deployment and operational best practices, performance benchmarks,
@@ -48,8 +48,8 @@ const CommunityPage = () => {
                     <Container>
                         <Row>
                             <Col className="community" sm={12} lg={6}>
-                                <h5>Jump In! Our Community is warm</h5>
                                 <h1>Our Community Members</h1>
+                                <h5>Jump In! Our Community is warm</h5>
                                 <p>
                                 The Layer5 community is diverse with members from around the globe,
                                 who have shown consistent commitment in advancing our open source initiatives.
@@ -70,8 +70,8 @@ const CommunityPage = () => {
                 <Container>
                     <Row className="meshmate">
                         <Col className="content" sm={12} lg={6}>
-                            <h5>An onboarding and mentoring program</h5>
                             <h1>Layer5 MeshMates</h1>
+                            <h5>An onboarding and mentoring program</h5>
                             <p>
                                 The Layer5 community is growing at a tremendous rate.
                                 We value our connections and that is what makes us unique.
@@ -90,7 +90,7 @@ const CommunityPage = () => {
                         <Col sm={12} lg={6}>
                             <img src={MehsmateIcon} alt="MeshMate Icon"/>
                             <Link className="meshmate-link" to="/community/meshmates">
-                                <h2>Open Source Mentorship Program</h2>
+                                <h3>Open Source Mentorship Program</h3>
                                 <button className="icon">
                                     <FaArrowRight />
                                 </button>

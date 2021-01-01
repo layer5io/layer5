@@ -13,7 +13,7 @@ const CommunitySectionWrapper = styled.div`
         background: url(${BookmarkImage});
         background-size: cover;
         background-position: center;
-        h1{
+        h1,h3{
             color: white;
         }
     }
@@ -24,7 +24,7 @@ const CommunitySectionWrapper = styled.div`
     
     .service-mesh-projects{
         margin-top: 2rem;
-        h1{
+        h2{
             line-height: 3.1rem;
             margin-bottom: 1rem;
         }
@@ -72,10 +72,11 @@ const CommunitySectionWrapper = styled.div`
                 margin-bottom: auto;
             }
             h5{
+                margin: 1.5rem auto 2.5rem auto;
                 color: white;
+                font-weight: 600;
             }
             h1{
-                margin: 1.5rem auto 2.5rem auto;
                 color: white;
             }
             button{
@@ -86,8 +87,9 @@ const CommunitySectionWrapper = styled.div`
     .meshmate{
         margin-top: 5rem;
         .content{
-            h1{
+            h5{
                 margin: 1.5rem auto 2.5rem auto;
+                font-weight: 600;
             }
             @media (max-width: 62rem) {
               text-align:center;
@@ -119,13 +121,13 @@ const CommunitySectionWrapper = styled.div`
                 color: white;
             }
             @media (max-width: 36rem) {
-               h2{
+               h3{
                   font-size: 18px;
                }
             }
             
             &:hover{
-                h2{
+                h3{
                     color: ${props => props.theme.primaryLightColorTwo};
                 }
                 .icon{
