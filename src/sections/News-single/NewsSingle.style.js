@@ -7,8 +7,6 @@ const NewsPageWrapper = styled.div`
 }
 .single-post-block{
     p{
-        font-size: 16px;
-        font-weight: 300; 
         line-height: 29px;
         letter-spacing: 0.2px;
     }

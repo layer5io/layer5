@@ -10,6 +10,7 @@ const CommunitySectionWrapper = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
         background: url(${BookmarkImage});
         background-size: cover;
         background-position: center;
@@ -27,6 +28,9 @@ const CommunitySectionWrapper = styled.div`
         h2{
             line-height: 3.1rem;
             margin-bottom: 1rem;
+            @media (max-width: 62rem) {
+                line-height: 2.5rem;
+            }
         }
         
         img{

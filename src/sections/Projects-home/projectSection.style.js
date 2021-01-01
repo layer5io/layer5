@@ -43,13 +43,11 @@ const ProjectItemWrapper = styled.section`
         border-radius: 4%;
         margin-bottom: 30px;
         h3{
-            font-size: 18px;
             margin-bottom: 10px; 
             font-weight: 700;
             color: ${props => props.theme.secondaryColor}
         }
         p{
-            font-size: 18px;
             font-weight: 300;
             color: ${props => props.theme.black};
         }

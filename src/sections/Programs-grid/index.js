@@ -56,7 +56,7 @@ const ProgramsGrid = ({hide_path, sub_section}) => {
                                                     alt={frontmatter.title}
                                                 />
                                             </div>
-                                            <h3>{frontmatter.title}</h3>
+                                            <h5>{frontmatter.title}</h5>
                                         </div>
                                     </Link>
                                 </Col>

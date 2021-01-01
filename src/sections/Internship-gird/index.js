@@ -68,7 +68,7 @@ const InternshipPage = ({ hide_heading })=>{
         <Col className="opportunity-col">
             <Link to={fields.slug}>
                 <div className="opportunity-card">
-                    <h3>{frontmatter.title}</h3>
+                    <h5>{frontmatter.title}</h5>
                     <Button primary title={<FaArrowRight />} className="oppurtunity_icon" />
                 </div>
             </Link>
@@ -128,7 +128,7 @@ const InternshipPage = ({ hide_heading })=>{
                                 <Col className="opportunity-col">
                                     <a href="https://layer5.io/assets/careers/internships/UT%20Austin%20Boot%20Camp%20-%20Meshery%20Flyer.pdf" target="_blank" rel="noreferrer">
                                         <div className="opportunity-card">
-                                            <h3>UT Austin Coding Boot Camp</h3>
+                                            <h5>UT Austin Coding Boot Camp</h5>
                                             <Button primary title={<FaArrowRight />} className="oppurtunity_icon" />
                                         </div>
                                     </a>
@@ -136,7 +136,7 @@ const InternshipPage = ({ hide_heading })=>{
                                 <Col className="opportunity-col">
                                     <a href="https://layer5.io/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf" target="_blank" rel="noreferrer">
                                         <div className="opportunity-card">
-                                            <h3>UEM Jaipur</h3>
+                                            <h5>UEM Jaipur</h5>
                                             <Button primary title={<FaArrowRight />} className="oppurtunity_icon" />
                                         </div>
                                     </a>
