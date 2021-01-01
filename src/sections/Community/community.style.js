@@ -133,6 +133,7 @@ const CommunitySectionWrapper = styled.div`
                 .icon{
                     background: ${props => props.theme.primaryLightColorTwo};
                     border-color: ${props => props.theme.primaryLightColorTwo};
+                    cursor: pointer;
                 }
             }
         }
