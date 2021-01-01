@@ -7,7 +7,7 @@ import { IoMdClose } from "react-icons/io";
 import { Container } from "../../reusecore/Layout";
 import layer5_logo from "../../assets/images/app/layer5.svg";
 
-import Data from "./utility/data.js";
+import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 
 import NavigationWrap from "./navigation.style";

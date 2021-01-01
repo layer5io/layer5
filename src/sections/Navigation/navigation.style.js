@@ -31,7 +31,7 @@ const NavigationWrap = styled.header`
     width: 100%;
     display: block;
     visibility: hidden;
-    box-shadow: 0px 10px 10px 0px rgba(0, 211, 169, 0.10);
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
     animation: bobbleout ease .3s forwards;
     pointer-events: none;
   }
@@ -226,8 +226,8 @@ const NavigationWrap = styled.header`
       width: 135px;
     }
   }
-  &.scrolled {
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 30px;
+  &.scrolled {    
+    box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 30px;
     background: white;
     .nav {
       .nav-item{
