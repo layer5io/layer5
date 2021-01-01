@@ -226,6 +226,8 @@ export const LandscapePageWrapper=styled.div`
 		width: 100%;
 		margin-bottom: 2rem;
 		box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
+		border-top-left-radius: 1rem;
+		border-top-right-radius: 1rem;
 	}
 
 	.category-row-heading {
@@ -251,23 +253,28 @@ export const LandscapePageWrapper=styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
+		&:hover {
+			background-color: ${props => props.theme.tertiaryColor};
+			border-top-left-radius: .3rem;
+			border-top-right-radius: .3rem;
+		}
 	}
 	.react-tabs__tab-list {
 		margin: 0px;
 		padding: 0px;
 		font-size: 1.25rem;
-		font-weight: 600;
+		font-weight: 500;
 		border-bottom: none;
-		border-top-left-radius: 0.3rem;
-		border-top-right-radius: 0.3rem;
+		border-top-left-radius: 1rem;
+		border-top-right-radius: 1rem;
 		color: #ffffff;
 		background: #00B39F;
 	}
 	.react-tabs__tab--selected {
-		background: #1E2117;
-		border-color: #1E2117;
+		background: ${props => props.theme.tertiaryColor};
+		border-color: ${props => props.theme.tertiaryColor};
 		color: white;
-		border-radius: 0.3rem;
+		font-weight: 600;
 	}
 	.card-content {
 		border-right: none;
@@ -275,14 +282,14 @@ export const LandscapePageWrapper=styled.div`
 	.odd-row {
 		background: #ffffff;
 		&:hover{
-			box-shadow: 0px 2px 15px -10px black;
+			box-shadow: 0px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
 	.even-row {
 		background: #efefef;
 		&:hover{
-			box-shadow: 0px 2px 15px -10px black;
+			box-shadow: 0px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
