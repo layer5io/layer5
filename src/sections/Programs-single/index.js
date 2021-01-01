@@ -1,7 +1,7 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import { Container, Row, Col } from "../../reusecore/Layout";
+import { Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 
 import ProgramsPageWrapper from "./ProgramsSingle.style.js";
@@ -15,17 +15,9 @@ const ProgramsSingle = ({data}) => {
             />
             <div className="single-post-wrapper" id="programs">
                 <Container>
-                    <Row>
-                        <Col xs={12} lg={12}>
-                            <Row>
-                                <Col xs={12}>
-                                    <div className="single-post-block">
-                                        <MDXRenderer>{body}</MDXRenderer>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
+                    <div className="single-post-block">
+                        <MDXRenderer>{body}</MDXRenderer>
+                    </div>
                 </Container>
             </div>
         </ProgramsPageWrapper>

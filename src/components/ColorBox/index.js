@@ -4,7 +4,6 @@ import { ColorBoxWrapper } from "./ColorBox.style";
 
 const ColorBox = props => {
     const bgcolor = props.colorCode;
-    const dark = props.dark;
     return (
         <ColorBoxWrapper bgcolor={bgcolor}>
             <Col>
