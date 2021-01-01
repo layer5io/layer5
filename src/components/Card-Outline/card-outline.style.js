@@ -32,10 +32,6 @@ const CardOutlineWrapper = styled.div`
             right: 0;
         }
 
-        .card-title {
-            font-size: 2.125rem;
-        }
-
         .card-content {
             color: rgba( 0, 0, 0, 0.6);
         }

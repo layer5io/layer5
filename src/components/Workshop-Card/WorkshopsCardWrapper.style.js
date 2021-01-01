@@ -24,7 +24,7 @@ const WorkshopCardWrapper = styled.div`
 
 	.title {
 		text-align: center;
-		font-size: 1.5625rem;
+		font-size: 1.5rem;
 		padding-bottom: 0.625rem;
 	}
 

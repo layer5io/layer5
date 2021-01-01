@@ -12,12 +12,7 @@ const PageHeaderWrapper = styled.div`
             margin: 2rem auto 2rem;
             padding: 0 1rem 0;
             z-index: 99;
-            h1{
-                font-size: 3.125rem;
-            }
-            h3{
-                font-size: 1.75rem;
-            }
+        }
         
         .feature-image{
             margin: 2rem auto;
@@ -30,7 +25,6 @@ const PageHeaderWrapper = styled.div`
             justify-content: center;
             margin-top: 1.5rem;  
             h5 {
-                font-size: 1.25rem;
                 display: inline-block;
                 margin:0 0.4rem;
                 opacity: .7;
@@ -60,10 +54,6 @@ const PageHeaderWrapper = styled.div`
             flex-direction: column;
             align-items: center;
         }
-    }
-
-    .sub_header h1{
-        font-size: 3.125rem;
     }
 `;
 

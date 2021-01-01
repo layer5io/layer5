@@ -11,6 +11,73 @@ export const LandscapePageWrapper=styled.div`
 		padding-top: 8rem;
 	}
 
+	.strength-comparison-section {
+		display: flex;
+		justify-content: center;
+
+		.comparison-mesh {
+			margin: 0 1rem;
+			
+			.mesh-img {	
+				text-align: center;
+				width: 13rem;
+				height: 10rem;
+				margin: auto;
+				padding: 1rem ;
+				border-radius: 1rem;
+				background: ${props => props.theme.secondaryColor};
+				position: relative;
+				z-index: 1;
+				box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
+
+				img {
+					width: 4rem;
+					height: 4rem;
+					filter: grayscale(1) brightness(10);
+				}
+
+				h3 {
+					font-weight: 400;
+					color: ${props => props.theme.white};
+				}
+			}
+
+			.mesh-data {
+				width: 12.5rem;
+				height: 6rem;
+				margin: auto;
+				font-size: 1.125rem;
+				text-align: center;
+				padding: 1rem 0.25rem;
+				color: ${props => props.theme.white};
+				background: ${props => props.theme.tertiaryColor};
+				z-index: 0;
+				border-bottom-right-radius: 0.8rem;
+				border-bottom-left-radius: 0.8rem;
+				transform: translateY(-6rem);
+				transition: all 0.5s ease;
+
+				p {
+					margin: 0;
+				}
+			}
+
+			&:hover {
+				cursor: default;
+				.mesh-data {
+					transform: translateY(-0.5rem);
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1200px) {
+		.strength-comparison-section {
+			flex-wrap: wrap;
+			margin: auto;
+		}
+	}
+
 	.timeline-heading {
 		padding: 1.25rem;
 	}
@@ -38,9 +105,11 @@ export const LandscapePageWrapper=styled.div`
 		text-align: end;
 	}
 	.title-0, .title-1 {
+		font-size: 1.25rem;
 		color: #1E2117;
 	}
 	.subtitle-0, .subtitle-1 {
+		font-size: 1rem;
 		font-family: 'Open Sans';
 		font-weight: 400;
 		color: #a0a0a0;
@@ -305,82 +374,12 @@ export const LandscapePageWrapper=styled.div`
 		width: 6rem;
 		margin: auto;
 	}
-	.missingText h2 {
+	.missingText h3 {
 		font-weight: 600;
-		color: black;
-		max-width: 56rem;
+		max-width: 60rem;
 	}
-	.missingText p {
+	.missingText h4 {
 		padding: 0.6rem;
-		font-size: 1.2rem;
 		color: rgba(0, 0, 0, 0.5);
-	}
-
-	.strength-comparison-section {
-		display: flex;
-		justify-content: center;
-
-		.comparison-mesh {
-			margin: 0 1rem;
-			
-			.mesh-img {	
-				text-align: center;
-				width: 13rem;
-				height: 9rem;
-				margin: auto;
-				padding: 1rem ;
-				border-radius: 1rem;
-				background: ${props => props.theme.secondaryColor};
-				position: relative;
-				z-index: 1;
-				box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.5);
-
-				img {
-					width: 4rem;
-					height: 3rem;
-					filter: grayscale(1) brightness(10);
-				}
-
-				h2 {
-					font-size: 1.5rem;
-					font-weight: 400;
-					color: ${props => props.theme.white};
-				}
-			}
-
-			.mesh-data {
-				width: 12.5rem;
-				height: 6rem;
-				margin: auto;
-				font-size: 1.125rem;
-				text-align: center;
-				padding: 1rem 0.25rem;
-				color: ${props => props.theme.white};
-				background: ${props => props.theme.tertiaryColor};
-				z-index: 0;
-				border-bottom-right-radius: 0.8rem;
-				border-bottom-left-radius: 0.8rem;
-				transform: translateY(-6rem);
-				transition: all 0.5s ease;
-
-				p {
-					margin: 0;
-				}
-			}
-
-			&:hover {
-				cursor: default;
-				.mesh-data {
-					transform: translateY(-0.5rem);
-				}
-			}
-		}
-	}
-
-	@media screen and (max-width: 1200px) {
-		.strength-comparison-section {
-			flex-wrap: wrap;
-			margin: auto;
-		}
 	}
 `;

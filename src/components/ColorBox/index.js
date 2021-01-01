@@ -10,7 +10,7 @@ const ColorBox = props => {
             <Col>
                 <div className="PalletBox">
                     <Row>
-                        <h3 className="color-name"> {props.name} </h3>
+                        <h4 className="color-name"> {props.name} </h4>
                     </Row>
                     <div className="color-data">
                         <Row>
