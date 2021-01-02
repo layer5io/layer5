@@ -1,6 +1,7 @@
 import React from "react";
 import { smi_data } from "../../collections/landscape/smi";
 import Table from "../../components/SMI-Table";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 function SMI_Compatibility() {
 
@@ -37,7 +38,23 @@ function SMI_Compatibility() {
     const data = React.useMemo(() => smi_data);
 
     return (
-        <Table columns={columns} data={data} />
+        <Tabs style={{ overflow: "auto", whiteSpace: "nowrap"}} className="landscape-table">
+                                <TabList>
+                                    <Tab>V0.5.0</Tab>
+                                    <Tab>V0.6.0</Tab>
+                                    <Tab>V0.4.0</Tab>
+                                </TabList>
+                                <TabPanel>
+                                    
+                                    <Table columns={columns} data={data} spec={{"traffic-access":"v1alpha2", "traffic-split":"v1alpha3", "traffic-spec":"v1alpha3"}} />
+                                </TabPanel>
+                                <TabPanel>
+                                    <Table columns={columns} data={data} spec={{"traffic-access":"v1alpha3", "traffic-split":"v1alpha4", "traffic-spec":"v1alpha4"}} />
+                                </TabPanel>
+                                <TabPanel>
+                                    <Table columns={columns} data={data} spec={{"traffic-access":"v1alpha1", "traffic-split":"v1alpha3", "traffic-spec":"v1alpha2"}} />
+                                </TabPanel>
+                            </Tabs>
     );
 }
 
