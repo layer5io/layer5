@@ -9,16 +9,16 @@ import Footer from "../../sections/Footer";
 import KatacodaServiceMesh from "../../sections/Katacoda-Service-Mesh";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/blog/themeStyles";
+import theme from "../../theme/app/themeStyles";
 
 
 
-const ServiceMeshKatakodaPage = ({hide_path}) => {
+const ServiceMeshKatacodaPage = () => {
     return (
         <ThemeProvider theme={theme}>
             <Layout>
                 <GlobalStyle />
-                <SEO title="Katakoda" />
+                <SEO title="Katacoda" />
                 <Navigation />
                 <KatacodaServiceMesh />
                 <Footer />
@@ -26,4 +26,4 @@ const ServiceMeshKatakodaPage = ({hide_path}) => {
         </ThemeProvider>
     );
 };
-export default ServiceMeshKatakodaPage;
+export default ServiceMeshKatacodaPage;

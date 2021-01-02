@@ -1,9 +1,10 @@
 import React from "react";
 import { KatacodaWrapper } from "./KatacodaWrapper.style";
 import PageHeader from "../../reusecore/PageHeader";
-import Card from "./Card";
+import CourseCard from "../../components/CourseCard";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
+import cover from "./cover.svg";
 
 const data = [
     { title: "Meshery - Learn how to manage your service mesh", info: "Learn how to run Meshery, install service meshes and deploy sample apps", link: "https://www.katacoda.com/layer5/courses/meshery-adapters" },
@@ -20,7 +21,7 @@ const KatacodaServiceMesh = () => {
                     <Row>
                         {data.map(({ id, title, info, link }) => (
                             <Col key={id} xs={12} sm={6}>
-                                <Card title={title} info={info} link={link} />
+                                <CourseCard title={title} info={info} link={link} cover={cover}/>
                             </Col>
                         ))}
                     </Row>
