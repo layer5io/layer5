@@ -188,7 +188,7 @@ export const Data=[
         category:"Security"
     },
     {
-        service_mesh_pattern:"Area IV: Performance, Testing, and Debugging, Tuning, Troubleshooting",
+        service_mesh_pattern:"Area V: Performance, Testing, and Debugging, Tuning, Troubleshooting",
         category:"",
         subheading:"bold"
     },
@@ -225,7 +225,7 @@ export const Data=[
         category:"Debugging"
     },
     {
-        service_mesh_pattern:"Area V: Patterns in Practice: Employing Standards",
+        service_mesh_pattern:"Area VI: Patterns in Practice: Employing Standards",
         category:"",
         subheading:"bold"
     },
