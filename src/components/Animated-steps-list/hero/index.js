@@ -13,7 +13,7 @@ const Hero = ({ title, description, subtitle, links }) => {
                 <div className="links">
                     {links.map((link) => {
                         return (
-                            <Button secondary key={link.text} title={link.text} url={link.url}/>
+                            <Button secondary key={link.text} title={link.text} url={link.url} external={link.external}/>
                         );
                     })}
                 </div>

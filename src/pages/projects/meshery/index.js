@@ -27,9 +27,9 @@ const temp = () => (
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     links={[
                         {
-                            text: "Get Started",
+                            text: "Run Meshery",
                             url: "/",
-                            type: "inbound",
+                            external: false,
                         },
                     ]}
                 />
