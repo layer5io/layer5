@@ -32,14 +32,14 @@ const SMPBrand = () => {
     return (
         <SMPWrap>
             <div className="post-content">
-                <Row>
+                <Row className="brand-section">
                     <Col xs={12} sm={6}>
                         <h1 className="layerH3">
                             <strong>Service Mesh Performance</strong>
                         </h1>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Download Logo Assets" url="../../../assets/brand/smp-brand-kit.zip" external="true">
+                        <Button primary title="Download Logo Assets" url="../../../assets/brand/smp-brand-kit.zip" external={true}>
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
@@ -62,31 +62,31 @@ const SMPBrand = () => {
                     </Col>
                     <Row className="ImgDiv smp-logo">
                         <Col xs={12} sm={4}>
-                            <img src={SmpDark} />
+                            <img src={SmpDark} alt="SmpDark Logo"/>
                         </Col>
                         <Col xs={12} sm={4}>
                             <div className="SmpWhite">
-                                <img src={SmpWhite} />
+                                <img src={SmpWhite} alt="SmpWhite Logo"/>
                             </div>
                         </Col>
                         <Col xs={12} sm={4}>
                             <div className="SmpWhite">
-                                <img src={SmpLight} />
+                                <img src={SmpLight} alt="SmpLight Logo"/>
                             </div>
                         </Col>
                     </Row>
                     <Row className="ImgDiv smp-logo">
                         <Col xs={12} sm={4}>
-                            <img src={SmPDarkTextSide} />
+                            <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo"/>
                         </Col>
                         <Col xs={12} sm={4}>
                             <div className="SmpWhite">
-                                <img src={SmPWhiteTextSide} />
+                                <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo"/>
                             </div>
                         </Col>
                         <Col xs={12} sm={4}>
                             <div className="SmpWhite">
-                                <img src={SmPLightTextSide} />
+                                <img src={SmPLightTextSide} alt="SmPLightTextSide Logo"/>
                             </div>
                         </Col>
                     </Row>

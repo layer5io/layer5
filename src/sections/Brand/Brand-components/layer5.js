@@ -11,19 +11,6 @@ import Layer5TagDark from "../../../assets/images/layer5/layer5-tagline/png/laye
 import Bookmarks from "../../../assets/images/layer5/bookmarks.png";
 
 const Layer5Wrapper = styled.section`
-    .brandHeader {
-        padding: 6rem 0;
-        background: ${props => props.theme.tertiaryColor};
-        text-align: center;
-        h1{
-            color: ${props => props.theme.white};
-        }
-        p{
-            margin: 1.5rem auto 4rem;
-            max-width: 60%;
-            color: ${props => props.theme.white};
-        }
-    }
     .Layer5TagDark {
         background: ${props => props.theme.primaryColor};
     }
@@ -38,28 +25,15 @@ const Layer5Wrapper = styled.section`
 const Layer5Brand = () => {
     return (
         <Layer5Wrapper>
-            <div className="brandHeader">
-                <h1>Layer5 Brand Kits</h1>
-                <p>
-                    We’ve created some guidelines to help you use our brand and
-                    assets, including our logo, content and trademarks, without having
-                    to negotiate legal agreements for each use. To make any use of our
-                    marks in a way not covered by these guidelines, please contact us
-                    and include a visual mockup of intended use.
-                </p>
-                <Button primary title="Download Brand Kit" url="../../../assets/brand/brand-kit.zip">
-                    <FiDownloadCloud size={21} className="icon-left" />
-                </Button>
-            </div>
             <div className="post-content">
-                <Row>
+                <Row className="brand-section">
                     <Col xs={12} sm={6}>
                         <h1 className="layerH3">
                             Layer5
                         </h1>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Donwload Logo Assets" url="../../../assets/brand/layer5-brand-kit.zip" external="true">
+                        <Button primary title="Donwload Logo Assets" url="../../../assets/brand/layer5-brand-kit.zip" external={true}>
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
