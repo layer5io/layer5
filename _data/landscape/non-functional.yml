@@ -383,16 +383,6 @@
   commercial: HAProxy Technologies
   category: Service Proxy
 
-- name: Contour
-  opensource: "Yes"
-  link: https://github.com/heptio/contour
-  governance: Heptio
-  primary-lang: Go
-  announce-date: October 2017
-  ga-1-date: October 2017
-  commercial: Heptio
-  category: API Gateway
-
 - name: Citrix ADC
   opensource: "No"
   link: https://www.citrix.com/en-in/products/citrix-adc/
