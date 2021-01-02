@@ -3,7 +3,7 @@ import React from "react";
 import { Container} from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 // import { FiSearch } from "react-icons/fi";
-// import Button from "../../reusecore/Button";
+import Button from "../../reusecore/Button";
 import {
     Accordion,
     AccordionItem,
@@ -44,7 +44,7 @@ const Faq = () => {
                         <AccordionItem key={index}>
                             <AccordionTitle>
                                 <IconWrapper>
-                                    <h5>{faq.title}</h5>
+                                    <h5>{faq.question}</h5>
                                     <OpenIcon>
                                         <IoIosArrowUp size={22} color="white" />
                                     </OpenIcon>
@@ -55,9 +55,20 @@ const Faq = () => {
                             </AccordionTitle>
                             <AccordionBody>
                                 <ul>
-                                    <li><p>{faq.content}</p></li>
-                                    {faq.content_2 && <li><p>{faq.content_2}</p></li>}
+                                    <li><p>{faq.answer}</p></li>
+                                    {faq.answer_2 && <li><p>{faq.answer_2}</p></li>}
+                                    {faq.answer_3 && <li><p>{faq.answer_3}</p></li>}
+                                    {faq.answer_4 && <li><p>{faq.answer_4}</p></li>}
+                                    {faq.answer_5&& <li><p>{faq.answer_5}</p></li>}
                                 </ul>
+                                {/* 
+                                
+                                Jash, will you padding and center this button? 
+                                
+                                */}
+                                <div className="center">
+                                    {faq.link && <Button primary className="about-button" url={faq.link} title={faq.linktext} external="false" />}
+                                </div>
                             </AccordionBody>
                         </AccordionItem>
                     ))}
