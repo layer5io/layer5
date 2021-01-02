@@ -51,6 +51,7 @@ const FooterWrapper = styled.section`
 			padding: 0;
 			list-style: none;
 			margin: 0;
+			font-size: 1.063rem;
 
 			.category-link {
 				color: #CCCCCC;

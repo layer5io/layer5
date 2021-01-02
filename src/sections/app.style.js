@@ -163,7 +163,7 @@ body,html {
 
 }
 body {
-  font-size: 16px;
+  font-size: 1.125rem;
   line-height: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -173,6 +173,9 @@ body {
   font-weight: 400 !important;
   margin: 0;
   padding: 0;
+  @media (max-width: 62rem) {
+      font-size: 1rem;
+  }
 }
 h1,
 h2,
@@ -188,22 +191,37 @@ h6 {
 
 h1 {
     font-size: 3.125rem;
+    @media (max-width: 62rem) {
+      font-size: 2.125rem;
+    }
 }
 
 h2 {
     font-size: 2.125rem;
+    @media (max-width: 62rem) {
+      font-size: 1.75rem;
+    }
 }
 
 h3 {
     font-size: 1.75rem;
+    @media (max-width: 62rem) {
+      font-size: 1.5rem;
+    }
 }
 
 h4 {
     font-size: 1.5rem;
+    @media (max-width: 62rem) {
+      font-size: 1.25rem;
+    }
 }
 
 h5 {
     font-size: 1.25rem;
+    @media (max-width: 62rem) {
+      font-size: 1.1rem;
+    }
 }
 
 h6 {
@@ -219,6 +237,9 @@ p {
     margin: 0 0 1rem 0;
     font-size: 1.125rem;
     font-weight: 400;
+    @media (max-width: 62rem) {
+      font-size: 1rem;
+    }
 }
 
 a{

@@ -28,15 +28,14 @@ export const ProjectWrapper = styled.div`
             img {
                 filter: brightness(0) invert(1);
             }
-            h1 {
+            h5 {
                 color: white;
             }
             transition: 0.4s;
             transform: scale(1.05);
         }
-        h1{
+        h5{
             margin-bottom: 20px;
-            font-size: 21px; 
             font-weight: 600;
         }
         img{
@@ -68,9 +67,8 @@ export const ProjectWrapper = styled.div`
                 height: 60px;
                 margin-bottom: 6px;
             }
-            h1{
+            h5{
                 margin-bottom: 0px;
-                font-size: 20px;
             }
             a{
                 display: block;
