@@ -14,7 +14,7 @@ import Counters from "../sections/Counters";
 import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
 import News from "../sections/News";
-import Contact from "../sections/Contact";
+import ContactCard from "../components/ContactCard";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
@@ -35,7 +35,7 @@ const HostingPage = () => (
             <Testimonial />
             <Faq />
             <News />
-            <Contact />
+            <ContactCard />
             <Footer />
         </Layout>
     </ThemeProvider>

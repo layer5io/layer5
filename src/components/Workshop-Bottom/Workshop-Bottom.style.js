@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const WorkshopBottomWrapper = styled.div`
   max-width: 1140px;
-  margin: 80px auto;
+  margin: 0 auto 3rem;
 
   .bottom-image {
     width: 100%;
@@ -14,9 +14,6 @@ const WorkshopBottomWrapper = styled.div`
   .request-btn {
     display: block;
     margin: auto;
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
   }
 `;
 

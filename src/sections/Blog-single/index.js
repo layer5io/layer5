@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import slugify from "../../utils/slugify";
-import { Container, Row, Col } from "../../reusecore/Layout";
+import { Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import RelatedPosts from "../Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
@@ -20,25 +20,19 @@ const BlogSingle = ({data}) => {
             />
             <div className="single-post-wrapper">
                 <Container>
-                    <Row>
-                        <Col xs={12}>
+                    <MDXRenderer>{body}</MDXRenderer>
+                    <div className="post-info-block">
+                        <div className="tags">
+                            <span>Tags:</span>
                             <div>
-                                <MDXRenderer>{body}</MDXRenderer>
-                                <div className="post-info-block">
-                                    <div className="tags">
-                                        <span>Tags:</span>
-                                        <div>
-                                            {frontmatter.tags && frontmatter.tags.map(tag => (
-                                                <Link key={`${frontmatter.title}-${tag}`}
-                                                    to={`/blog/tag/${slugify(tag)}`}>{tag}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
+                                {frontmatter.tags && frontmatter.tags.map(tag => (
+                                    <Link key={`${frontmatter.title}-${tag}`}
+                                        to={`/blog/tag/${slugify(tag)}`}>{tag}
+                                    </Link>
+                                ))}
                             </div>
-                        </Col>
-                    </Row>
+                        </div>
+                    </div>
                     <RelatedPosts
                         category={frontmatter.category}
                         tags={frontmatter.tags}

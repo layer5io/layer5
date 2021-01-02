@@ -34,6 +34,7 @@ const FooterWrapper = styled.section`
 		margin-bottom: 1.5rem;
 
 		.section-title{
+			font-size: 1.25rem;
 			margin-bottom: 1rem;
 			color: rgba(255, 255, 255, 0.8);
 
@@ -91,15 +92,16 @@ const FooterWrapper = styled.section`
 	.footer-bottom{
 		display: flex;
 		flex: auto;
-		font-size: 0.8rem;
 		border-top: 1px solid #FFFFFF;
 
 		.copyright-text {
+			font-size: 0.8rem;
 			flex: auto;
 			color: #CCCCCC;
 		}
 
 		.policies{
+			font-size: 0.8rem;
 			margin: 0;
 			li {
 				display: inline-flex;

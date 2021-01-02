@@ -9,17 +9,10 @@ const PageHeaderWrapper = styled.div`
             text-align: center;
             position: relative;
             height: auto;
-            margin: 4rem auto 2rem;
+            margin: 2rem auto 2rem;
             padding: 0 1rem 0;
             z-index: 99;
-            h1{
-                font-size: 2.5rem;
-                margin: 1rem auto;
-            }
-            h3{
-                color: inherit;
-                margin: 1rem auto;
-            }
+        }
         
         .feature-image{
             margin: 2rem auto;
@@ -31,7 +24,7 @@ const PageHeaderWrapper = styled.div`
             display: flex;
             justify-content: center;
             margin-top: 1.5rem;  
-            h4 {
+            h5 {
                 display: inline-block;
                 margin:0 0.4rem;
                 opacity: .7;
@@ -42,21 +35,25 @@ const PageHeaderWrapper = styled.div`
             }
         } 
     }
-    @media only screen and (max-width: 480px) {
+
+    @media only screen and (max-width: 768px) {
         .page-header{
             h1{
-                font-size: 2rem;
+                font-size: 2.25rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
             }
         }
+    }
+
+    @media only screen and (max-width: 480px) {
 
         .breadcrumbs{
             flex-direction: column;
             align-items: center;
         }
-    }
-
-    .sub_header h1{
-        font-size: 2rem;
     }
 `;
 

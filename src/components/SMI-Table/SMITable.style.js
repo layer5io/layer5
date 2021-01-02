@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const TableWrapper = styled.div`
 overflow-x: auto;
 
+img.smiMark {
+	height: 70%;
+}
 table {
     border-spacing: 0;
     width: 100%;
@@ -19,7 +22,8 @@ table {
     th {
         background: #1E2117;
         color: #ffffff;
-        height: 4rem;
+		height: 4rem;
+		font-size: 1rem;
         font-weight: 600;
     }
   

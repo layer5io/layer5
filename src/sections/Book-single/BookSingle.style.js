@@ -1,26 +1,13 @@
 import styled from "styled-components";
 
 const BookSinglePageWrapper = styled.div`
- color: #000;   
-.single-post-wrapper{
-    padding: 50px 0 80px 0;
-}
-.single-post-block{
-    p{
-        font-size: 16px;
-        font-weight: 300; 
-        line-height: 29px;
-        letter-spacing: 0.2px;
+    .single-post-wrapper{
+        padding: 3rem 0 5rem;
     }
-    p+p{
-        margin-top: 30px;  
-    }  
-}
-
-@media only screen and (max-width: 912px) {
-     .single-post-block{
-         padding-bottom: 120px;
-     }
+    .single-post-block{
+        p+p{
+            margin-top: 1.75rem;  
+        }  
 }
 `;
 
