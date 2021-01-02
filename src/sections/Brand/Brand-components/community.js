@@ -31,7 +31,7 @@ const CommunityBrand = () => {
                         </h2>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Donwload Logo Assets" url="../../../assets/brand/meshmate-brand-kit.zip" external="true">
+                        <Button primary title="Download Logo Assets" url="../../../assets/brand/meshmate-brand-kit.zip" external="true">
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
