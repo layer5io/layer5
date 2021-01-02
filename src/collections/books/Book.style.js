@@ -44,27 +44,4 @@ export const BookWrapper = styled.div`
     .mr-2{
         margin: 2px;
     }
-
-    table,th, td{
-        border:1px solid black;
-        border-collapse:collapse; 
-    }
-
-    td{
-        padding:5px;
-    }
-
-    th{
-        background:#1C4587;
-        color:#fff;
-
-        .author{
-            color:#e0e0e0;
-        }
-    }
-
-    .area{
-            background:#CFE2F3;
-    }
-    
 `;
