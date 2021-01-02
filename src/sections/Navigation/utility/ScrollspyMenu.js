@@ -59,9 +59,8 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                     <ul className="dropdown" style={{zIndex: "101"}}>
                         <div className="nav-grid">
                             <div className="hr">
-                                <div className="title">
-                                    {active.name}
-                                </div>
+                                <Link className="section" to={active.path}  >{active.name}
+                                </Link>    
                                 {active.subItems.map((subItem, i) => (
                                     <li key={i}>
                                         <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"}>

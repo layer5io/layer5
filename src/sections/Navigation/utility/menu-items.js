@@ -51,7 +51,7 @@ const Data = {
                     sepLine: true
                 },
                 {
-                    name: "Landscape",
+                    name: "Service Mesh Landscape",
                     path: "/landscape",
                     sepLine: true
                 },
@@ -182,14 +182,14 @@ const Data = {
             ],
             actionName: "Blogs",
             actionLink: "/blog",
-            div1: {
-                src: img1,
-                descr: "How I schooled my seniors"
-            },
-            div2: {
-                src: img2,
-                descr: "Service Mesh Istio patterns for multilatency"
-            }
+            // div1: {
+            //     src: img1,
+            //     descr: "How I schooled my seniors"
+            // },
+            // div2: {
+            //     src: img2,
+            //     descr: "Service Mesh Istio patterns for multilatency"
+            // }
         },
         {
             name: "About",

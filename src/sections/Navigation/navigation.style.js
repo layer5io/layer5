@@ -68,6 +68,13 @@ const NavigationWrap = styled.header`
       .sub-item {
         padding: 0;
       }
+      .section {
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+        margin-left:0px;
+        padding-left:0px;
+      }
     }
     .nav-display {
       border-left: 2px solid #f1f1f1;
@@ -223,11 +230,11 @@ const NavigationWrap = styled.header`
     margin-top: 8px;
     transition: all 0.8s cubic-bezier(0.3, 0.8, 0.2, 1) 0s;
     img {
-      width: 135px;
+      width: 155px;
     }
   }
   &.scrolled {    
-    box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 30px;
+    box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px;
     background: white;
     .nav {
       .nav-item{
@@ -268,7 +275,7 @@ const NavigationWrap = styled.header`
       display: block;
       margin-top: 7px;
       img {
-        width: 110px;
+        width: 13px;
       }
     }
     .mobile-dropdown-container {
