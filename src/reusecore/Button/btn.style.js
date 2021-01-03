@@ -33,7 +33,7 @@ const ButtonStyle = styled.button`
 
     ${props => props.primary && css`
         color: ${props.active ? props.theme.headingColor: props.theme.black};
-        background: ${props.active ? props.theme.highlightLightColor: props.theme.highlightLightColor};
+        background: ${props.active ? props.theme.highlightColor: props.theme.highlightColor};
 
         &:hover{
             color: ${props.theme.black};

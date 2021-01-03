@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import ColorBox from "../../../components/ColorBox";
@@ -9,6 +10,7 @@ import Layer5CommunityWhite from "../../../assets/images/layer5/layer5-tagline/p
 import Layer5WhiteBg from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
 import Layer5TagDark from "../../../assets/images/layer5/layer5-tagline/png/layer5-tag-community-white.png";
 import Bookmarks from "../../../assets/images/layer5/bookmarks.png";
+import BookmarksPDF from "../../../assets/brand/bookmarks.pdf";
 
 const Layer5Wrapper = styled.section`
     .brandHeader {
@@ -59,7 +61,7 @@ const Layer5Brand = () => {
                         </h1>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Donwload Logo Assets" url="../../../assets/brand/layer5-brand-kit.zip" external="true">
+                        <Button primary title="Download Logo Assets" url="../../../assets/brand/layer5-brand-kit.zip" external="false">
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
@@ -109,7 +111,9 @@ const Layer5Brand = () => {
                         <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
                         <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
                         <ColorBox name="Saffron" R="235" G="192" B="23" colorCode="#EBC017" />
-                        <ColorBox name="Blond" R="255" G="243" B="197" dark colorCode="#FFF3C5" />
+                        <div className="blond-color-box">
+                            <ColorBox name="Blond" R="255" G="243" B="197" dark colorCode="#FFF3C5" />
+                        </div>
                         <ColorBox name="Light Slate Gray" R="122" G="132" B="142" colorCode="#7A848E" />
                         <ColorBox name="Dark Jungle Green" R="30" G="33" B="23" colorCode="#1E2117" />
                         <ColorBox name="Teal Blue" R="71" G="126" B="150" colorCode="#477E96" />
@@ -127,9 +131,12 @@ const Layer5Brand = () => {
                     </Col>
                     <Col xs={12}>
                         <p className="layerH3">
-                            Media available for print in the form of bookmarks.
+                            Media available for print.
                         </p>
-                        <img src={Bookmarks} alt="Bookmarks" />
+                        <Link to={BookmarksPDF}>
+                            <img className="bookmarks" src={Bookmarks} alt="Layer5 and Meshery Bookmarks" />
+                        </Link>
+
                     </Col>
                 </Row>
             </div>

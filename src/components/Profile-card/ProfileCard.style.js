@@ -42,7 +42,7 @@ export const ProfileCardWrapper = styled.div`
                 opacity: 90%;
             }
             
-            h3 {
+            h4 {
                 font-weight: 400;
                 color: white;
                 margin-top: 1rem;

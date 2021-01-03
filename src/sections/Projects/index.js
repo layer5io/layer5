@@ -23,29 +23,29 @@ const Projects = () => {
                         <div className="project__block__wrap">
                             <div className="project__block">
                                 <div className="project__block__inner">
-                                    <img src={projectImage1} alt="appion project" />
+                                    <img src={projectImage1} alt="service mesh comparison" />
                                     <h3>Landscape</h3>
                                     <p>Service Mesh Ecosystem</p>
                                     <Link to="#">
-                                        <img src={Icon} alt="appion app" />
+                                        <img src={Icon} alt="Compare service meshes" />
                                     </Link>
                                 </div>
                                 <div className="project__block__inner">
-                                    <img src={projectImage2} alt="appion project" />
+                                    <img src={projectImage2} alt="Service Mesh Performance" />
                                     <h3>Service Mesh Performance</h3>
                                     <p>The Standard Measurement</p>
                                     <Link to="#">
-                                        <img src={Icon} alt="appion app" />
+                                        <img src={Icon} alt="Service Mesh Overhead" />
                                     </Link>
                                 </div>
                             </div>
                             <div className="project__block right">
                                 <div className="project__block__inner">
-                                    <img src={projectImage3} alt="appion project" />
+                                    <img src={projectImage3} alt="Layer5 open source projects" />
                                     <h3>Meshery</h3>
                                     <p>Service Mesh Management</p>
                                     <Link to="#">
-                                        <img src={Icon} alt="appion app" />
+                                        <img src={Icon} alt="Meshery, the service mesh management plane" />
                                     </Link>
                                 </div>
                                 <div className="project__block__inner">
@@ -53,7 +53,7 @@ const Projects = () => {
                                     <h3>Image Hub</h3>
                                     <p>WebAssembly Filters</p>
                                     <Link to="/projects/image-hub">
-                                        <img src={Icon} alt="appion app" />
+                                        <img src={Icon} alt="Layer5 Image Hub" />
                                     </Link>
                                 </div>
                             </div>

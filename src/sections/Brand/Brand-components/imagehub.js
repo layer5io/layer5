@@ -20,7 +20,7 @@ const ImageHubBrand = () => {
                 <Row>
                     <Col xs={12} sm={6}>
                         <h1 className="layerH3">
-                            Image-Hub
+                            Image Hub
                         </h1>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
@@ -30,7 +30,7 @@ const ImageHubBrand = () => {
                     </Col>
                     <Col>
                         <p>
-                            The Image-Hub mark includes the Image-Hub name & logo, and any
+                            The Image Hub mark includes the Image Hub name & logo, and any
                             word, phrase, image, or other designation that identifies the
                             source or origin of any Layer5 projects. Please don’t modify the
                             marks or use them in a confusing way, including suggesting
@@ -62,8 +62,8 @@ const ImageHubBrand = () => {
                     </Col>
                     <Col>
                         <p>
-                            The Image-Hub color palette consists of the primary Image-Hub
-                            color and additional shades. The Image-Hub logo should be white or
+                            The Image Hub color palette consists of the primary Image Hub
+                            color and additional shades. The Image Hub logo should be white or
                             monochrome tonal when using a color background.
                         </p>
                     </Col>

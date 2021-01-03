@@ -64,7 +64,7 @@ export const IconWrapper = styled.div`
   ${CloseIcon}{
     position: absolute;
     top: 60%;
-    left: 0;
+    right: 0;
     transform: translateY(-50%);
     transition: 0.25s ease-in-out;
     color: black;
