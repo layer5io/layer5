@@ -8,12 +8,11 @@ const SocialLinksWrapper = styled.div`
         a {
             margin: 0 0.3rem;
             width: 2.5rem;
-            height: 2rem;
             filter: grayscale(1) invert(0.2);
 
             img {
-                width: 2.5rem;
-                height: 2rem;
+                width: 2rem;
+                
             }
 
             &:hover {
@@ -25,13 +24,6 @@ const SocialLinksWrapper = styled.div`
             img {
                 padding: 0.1rem;
                 border-radius: 0.25rem;
-            }
-        }
-
-        .youtube_icon, .docker_icon {
-            img {
-                height: 3rem;
-                margin-top: -0.5rem;
             }
         }
     }

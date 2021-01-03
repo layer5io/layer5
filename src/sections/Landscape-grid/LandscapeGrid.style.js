@@ -5,6 +5,7 @@ export const LandscapePageWrapper=styled.div`
 		margin-bottom: 3rem;
 		margin-top: 3rem;
 		width: 100%;
+		font-weight: 400;
 		text-align: center;
 	}
 	.subsequent-heading {
@@ -38,9 +39,15 @@ export const LandscapePageWrapper=styled.div`
 
 				h3 {
 					font-weight: 400;
+					line-height: 1.5rem;
 					color: ${props => props.theme.white};
 				}
+				.pad-top {
+					margin-top: 10px;
+				}
 			}
+
+			
 
 			.mesh-data {
 				width: 12.5rem;
@@ -295,8 +302,16 @@ export const LandscapePageWrapper=styled.div`
 		width: 100%;
 		margin-bottom: 2rem;
 		box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
-		border-top-left-radius: 1rem;
-		border-top-right-radius: 1rem;
+		border-top-left-radius: .5rem;
+		border-top-right-radius: .5rem;
+
+		a { 
+			color: ${props => props.theme.tertiaryColor};
+	
+			&:hover {
+				color: ${props => props.theme.secondaryColor};
+			}
+		}
 	}
 
 	.category-row-heading {
@@ -324,8 +339,8 @@ export const LandscapePageWrapper=styled.div`
 		padding: 1.25rem;
 		&:hover {
 			background-color: ${props => props.theme.tertiaryColor};
-			border-top-left-radius: .3rem;
-			border-top-right-radius: .3rem;
+			border-top-left-radius: .5rem;
+			border-top-right-radius: .5rem;
 		}
 	}
 	.react-tabs__tab-list {
@@ -334,8 +349,8 @@ export const LandscapePageWrapper=styled.div`
 		font-size: 1.25rem;
 		font-weight: 500;
 		border-bottom: none;
-		border-top-left-radius: 1rem;
-		border-top-right-radius: 1rem;
+		border-top-left-radius: .5rem;
+		border-top-right-radius: .5rem;
 		color: #ffffff;
 		background: #00B39F;
 	}
@@ -365,20 +380,41 @@ export const LandscapePageWrapper=styled.div`
 	.mesh-tooltip {
 		width: 15rem;
 	}
-	.missingText {
+	.AboutLandscape {
+		display: flex;
 		padding: 2.5rem;
 		text-align: center;
 		margin: auto;
+
+		.text-gray {
+			margin-top: 2rem;
+			color: gray;
+			font-style: italic;
+		}
+		img {
+			height: 100%;
+			margin-right: 30px;
+		}
+		@media screen and (max-width:767px) {
+			display: block;
+	
+			img {
+				width: 50%;
+				height: inherit;
+				margin-right: 0rem;
+				margin-bottom: .25rem;
+			}
 	}
-	.missingText div {
+
+	.Landscape div {
 		width: 6rem;
 		margin: auto;
 	}
-	.missingText h3 {
+	.Landscape h3 {
 		font-weight: 600;
 		max-width: 60rem;
 	}
-	.missingText h4 {
+	.Landscape h4 {
 		padding: 0.6rem;
 		color: rgba(0, 0, 0, 0.5);
 	}

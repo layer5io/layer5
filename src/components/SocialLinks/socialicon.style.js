@@ -20,20 +20,6 @@ const SocialIconWrapper = styled.div`
                 filter: grayscale(0) invert(0);
             }
         }
-
-        .mail_icon {
-            img {
-                padding: 0.1rem;
-                border-radius: 0.25rem;
-            }
-        }
-
-        .youtube_icon, .docker_icon {
-            img {
-                height: 3rem;
-                margin-top: -0.5rem;
-            }
-        }
     }
 
     @media screen and (max-width: 575px) {
