@@ -17,6 +17,7 @@ import MesheryOperator from "../../../assets/images/meshery-operator/meshery-ope
 const MesheryWrapper = styled.section`
     .mesheryLogoTagLightTextSide {
         margin: auto;
+        text-align: center;
     }
 
     .sub-project {
@@ -73,9 +74,6 @@ const MesheryBrand = () => {
                             <img src={MeshLogoLightText} />
                         </Col>
                         <Col xs={12} sm={4} className="mesheryLogoTagLightTextSide">
-                            <img src={MeshLogoTagLightTextSide} />
-                        </Col>
-                        <Col xs={12} sm={4}>
                             <img src={MeshLogoLightTextSide} />
                         </Col>
                     </Row>
@@ -128,10 +126,10 @@ const MesheryBrand = () => {
                         </h3>
                     </Col>
                     <Row className="ImgDiv">
-                        <Col xs={12} sm={4}>
+                        <Col xs={12} sm={4} className="logo">
                             <img src={MeshSync} />
                         </Col>
-                        <Col xs={12} sm={4} className="meshSyncLight">
+                        <Col xs={12} sm={4} className="meshSyncLight logo">
                             <img src={MeshSyncLight} />
                         </Col>
                     </Row>
