@@ -22,8 +22,7 @@ const temp = () => (
             <Navigation />
             <Container>
                 <Hero
-                    title="Install. Deploy. Patters."
-                    subtitle="Fast Install"
+                    title="Single Step Installation"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     links={[
                         {
@@ -33,7 +32,7 @@ const temp = () => (
                         },
                     ]}
                 />
-                <div style = {{  marginBottom: "400px",}}>
+                <div>
                     <AnimatedStepsList
                         terminalHeroState={{
                             frameLength: 100,
@@ -522,7 +521,7 @@ const temp = () => (
                                         },
                                         { code: "" },
                                         {
-                                            frames: 4,
+                                            frames: 2,
                                             color: "white",
                                             code: [
                                                 "» Preparing recommendations",
@@ -554,7 +553,7 @@ const temp = () => (
                         ]}
                     />
                 </div>
-                <div style = {{ marginBottom: "100px",}}>
+                <div style = {{ marginTop: "400px", marginBottom: "100px",}}>
                     <Features
                         features={[
                             {

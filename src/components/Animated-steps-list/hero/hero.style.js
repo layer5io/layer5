@@ -4,16 +4,17 @@ export const HeroWrapper = styled.div`
   h1 {
     line-height: 3.125rem;
     padding-bottom: 2rem;
+    font-weight: 600;
   }
 
-  padding: 12rem 0;
+  padding: 12rem 0 20rem 0;
 
-  @media (max-width: 850px) {
-    padding: 2rem 0;
+  @media (max-width: 800px) {
+    padding: 2rem 0 10rem 0;
   }
 
    .content {
-    max-width: 37.5rem;
+    max-width: 30rem;
 
     @media (max-width: 1119px) {
       max-width: 22rem;
