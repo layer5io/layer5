@@ -57,4 +57,66 @@ export const MembersGridWrapper = styled.div`
             height: 20px;
             margin-right: 10px;
     }
+    .AboutCommunity {
+		display: flex;
+		text-align: center;
+        margin: auto;
+        margin-bottom: 4rem;
+        align-items: center;
+
+
+        .sectionTitle{
+            width: 100%;
+            margin: auto;
+            margin-bottom: 1rem;
+            margin-right: 3rem;
+            text-align: center;
+        }
+		img {
+            width: 100%;
+            padding-right: 3rem;
+            padding-left: 3rem;
+            margin-right: 3rem;
+            margin-top: 3rem;
+        }
+        .detailsCommunity {
+            width: 60%;
+            flex-grow: 1;
+        }
+        .text-gray {
+            margin-top: 2rem;
+            color: gray;
+            font-style: italic;
+        }
+		@media screen and (max-width:767px) {
+            display: inline;
+            margin: auto;
+            text-align: center;
+            width: 70%;
+
+            .sectionTitle {
+                display: inline-block;
+                width: 90%;
+                font-size: 2.25rem;
+                margin: auto;
+                margin-top: 1rem;
+                margin-bottom: 1.5rem;
+                align-items: center;
+                text-align: center;
+            }
+
+			img {
+                text-align: center;
+                align-items: center;
+				width: 70%;
+				height: inherit;
+				margin-right: 0rem;
+                margin-bottom: .25rem;
+                margin-top: .25rem;
+            }
+            .detailsCommunity {
+                width:100%;
+                
+            }
+    }
 `;
