@@ -6,6 +6,7 @@ import twitter_icon from "../../assets/images/socialIcons/twitter-light.svg";
 import github_icon from "../../assets/images/socialIcons/github-dark.svg";
 import youtube_icon from "../../assets/images/app/footer/social/youtube.svg";
 import docker_icon from "../../assets/images/app/footer/social/docker.svg";
+import linkedin_icon from "../../assets/images/app/footer/social/linkedin-light.svg";
 import SocialLinksWrapper from "./sociallinkscolor.style";
 
 const SocialLinksColor = () => {
@@ -41,6 +42,13 @@ const SocialLinksColor = () => {
                         rel="noreferrer"
                     >
                         <img className="github" height="30px" src={github_icon} alt="github" />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/company/layer5" 
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <img className="linkedin" height="30px" src={linkedin_icon} alt="linkedin" />
                     </a>
                     <a
                         className="youtube_icon"
