@@ -8,8 +8,9 @@ import MeshMateLogoLight from "../../../assets/images/meshmate/meshmate-icon-whi
 import MeshMateLogo from "../../../assets/images/meshmate/meshmate-icon.png";
 
 const CommunityWrapper = styled.section`
-    .meshMateLight{
+    .meshMateLight {
         background: ${props => props.theme.primaryColor};
+        padding: 15px;
     }
 `;
 
@@ -31,7 +32,7 @@ const CommunityBrand = () => {
                         </h2>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Donwload Logo Assets" url="../../../assets/brand/meshmate-brand-kit.zip" external="true">
+                        <Button primary title="Download Logo Assets" url="../../../assets/brand/meshmate-brand-kit.zip" external="true">
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
@@ -53,7 +54,7 @@ const CommunityBrand = () => {
                         </h3>
                     </Col>
                     <Row className="ImgDiv">
-                        <Col xs={12} sm={3}>
+                        <Col xs={12} sm={3} className="logo">
                             <img src={MeshMateLogo} />
                         </Col>
                         <Col xs={12} sm={3} className="meshMateLight">

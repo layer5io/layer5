@@ -8,7 +8,12 @@ const BrandPageWrapper = styled.section`
     margin: 5rem auto;
     width: 70%;
   }
-
+  .bookmarks {
+    width:50%;
+  }
+  .logo {
+    padding: 15px;
+  }
   .download-button {
     text-align: end;
     margin: 0 0 1rem 0;
@@ -32,6 +37,15 @@ const BrandPageWrapper = styled.section`
 
         .color-name {
             color: black;
+        }
+    }
+  }
+  .blond-color-box {
+    .PalletBox {
+        color: ${props => props.theme.tertiaryColor};
+
+        .color-name {
+            color: ${props => props.theme.tertiaryColor};
         }
     }
   }
