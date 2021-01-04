@@ -7,6 +7,7 @@ import SEO from "../../../components/seo";
 import Navigation from "../../../sections/Navigation";
 import Footer from "../../../sections/Footer";
 import MesheryTerminal from "../../../sections/Meshery-terminal";
+import MesheryPlatforms from "../../../sections/Meshery-platforms";
 import Features from "../../../components/Features-carousel";
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
@@ -20,6 +21,7 @@ const temp = () => (
             <SEO title="Meshery"/>
             <Navigation />
             <MesheryTerminal/>
+            <MesheryPlatforms/>
             <Container>
                 <div style = {{ marginTop: "400px", marginBottom: "100px",}}>
                     <Features
