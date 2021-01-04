@@ -63,36 +63,33 @@ export const FeaturesWrapper = styled.div`
     
       & p {
         margin: 0 0 8px;
+        font-size: 1rem;
       }
     }
     
     .active-feature {
-      border-color: ${props => props.theme.tertiaryColorTwo};
-      background-color: ${props => props.theme.tertiaryColorTwo};
-      border-radius: 20px;
-      
-      @media (max-width: 768px){
-        border-color: ${props => props.theme.secondaryColor};
-        background-color: ${props => props.theme.white};
-        border-radius: 0;
+      border-color: ${props => props.theme.secondaryColor};
+      padding: 3rem 2.75rem 2rem 2.75rem;
+      @media (min-width: 768px){
+        border-color: ${props => props.theme.tertiaryColorTwo};
+        background-color: ${props => props.theme.tertiaryColorTwo};
+        border-radius: 20px;
       }
-    
+      
       & .body {
-        color: ${props => props.theme.white};
-        @media (max-width: 768px){
-            color: ${props => props.theme.black};
-        }
         opacity: 1;
         font-size: 1rem;
         max-height: 200px;
-        padding-bottom: 2rem;
+        
+        @media (min-width: 768px){
+            color: ${props => props.theme.white};
+        }
       }
     
       & .heading {
-        padding-top: 3rem;
-        color: ${props => props.theme.white};
-        @media (max-width: 768px){
-            color: ${props => props.theme.black};
+        
+        @media (min-width: 768px){
+            color: ${props => props.theme.white};
         }
       }
     }
