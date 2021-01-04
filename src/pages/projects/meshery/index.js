@@ -12,7 +12,7 @@ import MehseryFeatures from "../../../sections/Meshery-features";
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
-const temp = () => (
+const MesheryMainPage = () => (
     <ThemeProvider theme={theme}>
         <Layout>
             <GlobalStyle />
@@ -26,4 +26,4 @@ const temp = () => (
     </ThemeProvider>
 );
 
-export default temp;
+export default MesheryMainPage;
