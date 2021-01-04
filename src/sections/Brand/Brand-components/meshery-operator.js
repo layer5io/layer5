@@ -4,41 +4,37 @@ import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import ColorBox from "../../../components/ColorBox";
 import { FiDownloadCloud } from "react-icons/fi";
-import MeshMateLogoLight from "../../../assets/images/meshmate/meshmate-icon-white.png";
-import MeshMateLogo from "../../../assets/images/meshmate/meshmate-icon.png";
+import MesheryOperatorDark from "../../../assets/images/meshery-operator/meshery-operator-dark.png";
+import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator.png";
 
-const CommunityWrapper = styled.section`
-    .meshMateLight {
+const MesheryOperatorWrapper = styled.section`
+    .sub-project {
+        margin-top: -2rem;
+    }
+
+    .mesheryOperator{
         background: ${props => props.theme.primaryColor};
-        padding: 15px;
     }
 `;
 
-const CommunityBrand = () => {
+const MesheryOperatorBrand = () => {
     return (
-        <CommunityWrapper>
+        <MesheryOperatorWrapper>
             <div className="post-content">
-                <Row className="brand-section">
-                    <Col xs={12} sm={6}>
-                        <h1 className="layerH3">
-                            Community
-                        </h1>
-                    </Col>
-                </Row>
-                <Row>
+                <Row className="sub-project brand-section">
                     <Col xs={12} sm={6}>
                         <h2 className="layerH3">
-                            MeshMate
+                            Meshery Operator
                         </h2>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Donwload Logo Assets" url="../../../assets/brand/meshmate-brand-kit.zip" external={true}>
+                        <Button primary title="Donwload Logo Assets" url="../../../assets/brand/meshery-operator-brand-kit.zip" external={true}>
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
                     <Col>
                         <p>
-                            The MeshMate mark includes the MeshMate name & logo, and any word,
+                            The Meshery Operator mark includes the Meshery Operator name & logo, and any word,
                             phrase, image, or other designation that identifies the source or
                             origin of any Layer5 projects. Please don’t modify the marks or
                             use them in a confusing way, including suggesting sponsorship or
@@ -54,11 +50,11 @@ const CommunityBrand = () => {
                         </h3>
                     </Col>
                     <Row className="ImgDiv">
-                        <Col xs={12} sm={3}>
-                            <img src={MeshMateLogo} alt="MeshMate Logo"/>
+                        <Col xs={12} sm={4}>
+                            <img src={MesheryOperatorDark} alt="MesheryOperatorDark Logo"/>
                         </Col>
-                        <Col xs={12} sm={3} className="meshMateLight">
-                            <img src={MeshMateLogoLight} alt="MeshMate Logo Light"/>
+                        <Col xs={12} sm={4} className="mesheryOperator">
+                            <img src={MesheryOperator} alt="MesheryOperator Logo"/>
                         </Col>
                     </Row>
                 </Row>
@@ -70,23 +66,21 @@ const CommunityBrand = () => {
                     </Col>
                     <Col>
                         <p>
-                            The MeshMate color palette consists of the primary MeshMate color
-                            and additional shades. The MeshMate logo should be white or
+                            The Meshery Operator color palette consists of the primary Meshery Operator color
+                            and additional shades. The Meshery Operator logo should be white or
                             monochrome tonal when using a color background.
                         </p>
                     </Col>
                     <Row className="color-code-wrapper">
+                        <ColorBox name="Charcoal" R="60" G="73" B="79" colorCode="#3C494F" />
                         <ColorBox name="Keppel" R="0" G="179" B="159" colorCode="#00B39F" />
                         <ColorBox name="Caribbean Green" R="0" G="211" B="169" colorCode="#00D3A9" />
-                        <ColorBox name="Casper" R="177" G="182" B="184" colorCode="#B1B6B8" />
-                        <div className="white-color-box">
-                            <ColorBox name="White" R="255" G="255" B="255" dark colorCode="#FFFFFF" />
-                        </div>
+                        <ColorBox name="Blue Bayoux" R="100" G="120" B="129" colorCode="#647881" />
                     </Row>
                 </Row>
             </div>
-        </CommunityWrapper>
+        </MesheryOperatorWrapper>
     );
 };
 
-export default CommunityBrand;
+export default MesheryOperatorBrand;

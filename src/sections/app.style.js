@@ -191,6 +191,7 @@ h6 {
 
 h1 {
     font-size: 3.125rem;
+    font-weight: 700;
     @media (max-width: 62rem) {
       font-size: 2.125rem;
     }
@@ -198,6 +199,7 @@ h1 {
 
 h2 {
     font-size: 2.125rem;
+    font-weight: 600;
     @media (max-width: 62rem) {
       font-size: 1.75rem;
     }
@@ -205,6 +207,7 @@ h2 {
 
 h3 {
     font-size: 1.75rem;
+    font-weight: 500;
     @media (max-width: 62rem) {
       font-size: 1.5rem;
     }
@@ -212,6 +215,7 @@ h3 {
 
 h4 {
     font-size: 1.5rem;
+    font-weight: 400;
     @media (max-width: 62rem) {
       font-size: 1.25rem;
     }
@@ -219,12 +223,14 @@ h4 {
 
 h5 {
     font-size: 1.25rem;
+    font-weight: 300;
     @media (max-width: 62rem) {
       font-size: 1.1rem;
     }
 }
 
 h6 {
+    font-weight: 200;
     font-size: 1rem;
 }
 

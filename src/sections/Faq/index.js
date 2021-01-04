@@ -2,8 +2,8 @@ import React from "react";
 
 import { Container} from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
+// import { FiSearch } from "react-icons/fi";
 import Button from "../../reusecore/Button";
-import VintageBox from "../../reusecore/VintageBox";
 import {
     Accordion,
     AccordionItem,
@@ -14,11 +14,7 @@ import {
     CloseIcon
 } from "../../reusecore/Accordion";
 
-import { IoIosArrowDown } from "react-icons/io";
-import { FaPlus } from "react-icons/fa";
-
-import particle1 from "../../assets/images/app/particle/07.png";
-import particle2 from "../../assets/images/app/particle/08.png";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import data from "../../assets/data/faq";
 
@@ -27,48 +23,56 @@ import FaqSectionWrapper from "./faqSection.style";
 const Faq = () => {
     return (
         <FaqSectionWrapper id="faq">
-            <img className="section__particle one" src={particle1} alt="img" />
-            <img className="section__particle two" src={particle2} alt="img" />
             <Container fullWidthSM>
                 <SectionTitle
                     className="section-title"
                     leftAlign={true}
                     UniWidth="100%"
                 >
-                    <h2>
-                        <span>FAQs</span>
-                    </h2>
+                    <h1>
+                        <span>Frequently Asked Questions</span>
+                    </h1>
+                    <div className="search">
+                        {/* <Button>
+                            <FiSearch size={22} />
+                        </Button> */}
+                        <input type="text" placeholder="Search" />
+                    </div>
                 </SectionTitle>
                 <Accordion allowMultipleExpanded="true" allowZeroExpanded="true">
                     {data.faqs.map((faq, index) => (
                         <AccordionItem key={index}>
                             <AccordionTitle>
                                 <IconWrapper>
+                                    <h5>{faq.question}</h5>
                                     <OpenIcon>
-                                        <IoIosArrowDown />
+                                        <IoIosArrowUp size={22} color="white" />
                                     </OpenIcon>
                                     <CloseIcon>
-                                        <FaPlus />
+                                        <IoIosArrowDown size={22} color="white" />
                                     </CloseIcon>
-                                    <h5>{faq.title}</h5>
                                 </IconWrapper>
                             </AccordionTitle>
                             <AccordionBody>
                                 <ul>
-                                    <li><p>{faq.content}</p></li>
-                                    {faq.content_2 && <li><p>{faq.content_2}</p></li>}
+                                    <li><p>{faq.answer}</p></li>
+                                    {faq.answer_2 && <li><p>{faq.answer_2}</p></li>}
+                                    {faq.answer_3 && <li><p>{faq.answer_3}</p></li>}
+                                    {faq.answer_4 && <li><p>{faq.answer_4}</p></li>}
+                                    {faq.answer_5&& <li><p>{faq.answer_5}</p></li>}
                                 </ul>
+                                {/* 
+                                
+                                Jash, will you padding and center this button? 
+                                
+                                */}
+                                <div className="faqbutton">
+                                    {faq.link && <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external="false" />}
+                                </div>
                             </AccordionBody>
                         </AccordionItem>
                     ))}
                 </Accordion>
-                <VintageBox
-                    right={true}
-                    vintageTwo={true}
-                    position="relative"
-                >
-                    <Button title="Learn More" />
-                </VintageBox>
             </Container>
         </FaqSectionWrapper>
     );

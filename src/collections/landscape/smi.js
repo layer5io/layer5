@@ -157,7 +157,7 @@ export const smi_data=[
     {
         "id": "3",
         "date": "2020-10-14T20:14:48+05:30",
-        "mesh_name": "Linkerd",
+        "mesh_name": "Linkerd 1.x",
         "mesh_version": "v2.9",
         "cases_passed": "10",
         "passing_percentage": "66%",
@@ -199,7 +199,7 @@ export const smi_data=[
     {
         "id": "5",
         "date": "2020-10-14T20:14:48+05:30",
-        "mesh_name": "Traefik",
+        "mesh_name": "Traefik Mesh",
         "mesh_version": "v1.4",
         "cases_passed": "10",
         "passing_percentage": "66%",
