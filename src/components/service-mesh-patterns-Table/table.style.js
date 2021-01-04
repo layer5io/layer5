@@ -1,31 +1,54 @@
 import styled from "styled-components";
+import theme from "../../theme/app/themeStyles";
 
 export const TableWrapper = styled.div`
-    table,th, td{
-        border:1px solid black;
+    table{
         border-collapse:collapse; 
-    }
+        box-shadow:0px 2px 16px rgba(0,0,0,0.2);
 
-    td{
-        padding:5px;
-    }
+        td{
+            padding:0.5rem;
+            border-collapse:collapse;
+        }
 
-    th{
-        background:#1C4587;
-        color:#fff;
-        padding:10px;
+        th{
+            background:${theme["tertiaryColor"]};
+            color:${theme["white"]};
+            padding:10px;
+            border-collapse:collapse;
 
-        a{
-            color:#EBEBEB;
+            :first-child{
+                    border-top-left-radius:0.5rem;
+                }
 
-            &:hover{
-                color:#ccc;
+            :last-child{
+                border-top-right-radius:0.5rem;
+            }
+
+            a{
+                color:${theme["shadowLightColor"]};
+
+                &:hover{
+                    color:#ccc;
+                }
             }
         }
-    }
 
-    .bold{
-        font-weight:700;
-        background:#CFE2F3;
+        tbody{
+            tr{
+                border-bottom:1px solid #e0e0e0;
+
+                &:hover{
+                    box-shadow: 0px 2px 15px -10px black;
+			        transform: translateY(0px);
+                }
+            }
+
+            .bold{
+            font-weight:650;
+            background:${theme["secondaryColor"]};
+            color:${theme["tertiaryColor"]};
+            }
+        }
     }
 `;
