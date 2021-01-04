@@ -4,25 +4,41 @@ const SMIWrapper = styled.section`
     .description{
         margin: 100px 20px 120px 60px;
         h6{
-            color: #7A848E; 
+            font-size: 20px;
+            color: #1E2117;
+            font-weight: semi-bold;
             // ${props => props.theme.textColor};
         }
         h1{
             color: black;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
-        p{
+        h5{
             color: #1E2117;
+            opacity: 70%;
             margin-bottom: 30px;
+            font-weight: 400;
         }
         .section-title{
             text-align: center;
             margin: auto;
-            width: 70%;
+            width: 80%;
+            margin-bottom: 40px;
+            p{
+                font-size: 21px;
+                color: black;
+                opacity: 70%;
+            }
         }
     }
+    .hero-img{
+        margin: -100px -35px 0 0;
+        object-fit: cover;
+        height: 500px;
+        width: 800px;
+    }
     .feature-table{
-        margin: 0 100px 120px 100px;
+        margin: 0 100px 30px 100px;
     }
     .pricing-block{
         padding: 40px 30px 45px 30px;
@@ -46,23 +62,36 @@ const SMIWrapper = styled.section`
             color: ${props => props.theme.black};
         }
     }
+    .section-3{
+        background-color: #FAFAFA;
+        padding: 100px 0 100px 0;
+    }
+    .card{
+        background-color: white;
+        width: 70%;
+        margin: auto;
+        padding: 30px 75px 30px 75px;
+        border: 1px white;
+        border-radius: 20px;
+        h2{
+            margin-bottom: 30px;
+        }
+    }
     .details-block{
         .table{
             color: ${props => props.theme.black};  
             p {
-                margin-bottom: 20px;
+                margin: 0 0 15px 28px;
+                font-size: 17px;
+                line-height: 25px;
             }
             td{
                 vertical-align: top;
             }
-            svg{
-                fill: ${props => props.theme.secondaryColor};
-                margin-right: 15px;
-            }
-        }
-        .off{
-            svg{
-                fill: ${props => props.theme.secondaryColor};
+            .icon{
+                height: 32px;
+                width: 32px;
+                object-fit: cover;
             }
         }
     }

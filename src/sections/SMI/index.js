@@ -7,7 +7,9 @@ import { Row, Col, Container } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 
 import data from "./data";
+import c_icon from "./c-icon.svg";
 import { IoMdCheckbox } from "react-icons/io";
+import smi from "./smi.svg";
 import Faq from "../Faq";
 import FeaturesTable from "../Pricing";
 
@@ -19,10 +21,15 @@ const SMIPage = () => {
                     <Col className="desc-text" lg={6} md={12} sm={12}>
                         <h6> Why does conformance matter? </h6>
                         <h1> Service Mesh Interface Conformance</h1>
-                        <p className="desc-p"> 
+                        <h5 className="desc-p"> 
                         In order to confidently operate a service mesh without locking into the specific service mesh's APIs, you will adopt SMI. How do you know if the service mesh you are using is SMI compatible, though
-                        </p>
+                        </h5>
                         <Button primary title="Run SMI Conformance" /> 
+                    </Col>
+                    <Col lg={6} md={12} sm={12}>
+                        <div className="hero-img">
+                            <img src={smi}></img>
+                        </div>
                     </Col>
                 </Row>
                 <Row className="description">
@@ -41,7 +48,7 @@ const SMIPage = () => {
                                         {pricing.services.map((service, index) => (
                                             <table className="table" key={index}>
                                                 <tr>
-                                                    <td><IoMdCheckbox size={36} /></td>
+                                                    <td className="icon"><img src={c_icon} /></td>
                                                     <td><p>{service.content}</p></td>
                                                 </tr>
                                             </table>
@@ -52,7 +59,27 @@ const SMIPage = () => {
                         ))}
                     </Row>
                 </Row>
-                
+                <Row className="section-3">
+                    <div className="card">
+                        <h2> Validating Conformance</h2>
+                        <Row>
+                            <Col lg={8}>
+                                <p>
+                                Conformance to SMI specifications will be done through
+                                use of a service mesh’s workload. A sample application 
+                                is used as the workload to test. To facilitate a common 
+                                set of tests, a sample application has been developed
+                                for purposes of providing a consistent workload to apply 
+                                SMI specs against. A deployment of the Learn Layer5 
+                                sample application being fitted to each service mesh.
+                                </p>
+                            </Col>
+                            <Col lg={4}>
+                                <Button primary title="Run SMI Conformance"></Button>
+                            </Col>
+                        </Row>
+                    </div>
+                </Row>
             </SMIWrapper>
         </Layout>
     );
