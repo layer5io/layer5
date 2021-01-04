@@ -132,10 +132,30 @@ const BrandPageWrapper = styled.section`
 		margin: auto;
 		justify-content: space-around;
 	}
+	.Layer5Logos {
+		font-style: italic;
+		text-align: center;
+		
+		img.Layer5Icon {
+			width: auto;
+			height: 50px;
+			display: block;
+			margin: auto;
+			margin-bottom: 1rem;
+		}
+	}
 
 	@media screen and (max-width: 575px) {
 		.ImgDiv, .color-code-wrapper {
 			margin-left: 0px;
+		}
+		img.Layer5Icon {
+			width: auto;
+			height: 80px;
+			display: block;
+			margin: auto;
+			margin-bottom: 1rem;
+			margin-top: 1rem;
 		}
 	}
 

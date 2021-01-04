@@ -11,6 +11,7 @@ import Layer5WhiteBg from "../../../assets/images/layer5/layer5-only/png/layer5-
 import Layer5TagDark from "../../../assets/images/layer5/layer5-tagline/png/layer5-tag-community-white.png";
 import Bookmarks from "../../../assets/images/layer5/bookmarks.png";
 import BookmarksPDF from "../../../assets/brand/bookmarks.pdf";
+import Layer5Icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
 const Layer5Wrapper = styled.section`
     .Layer5TagDark {
@@ -56,15 +57,18 @@ const Layer5Brand = () => {
                             Logos
                         </h2>
                     </Col>
-                    <Row className="ImgDiv">
+                    <Row className="Layer5Logos">
                         <Col xs={12} sm={4}>
-                            <img src={Layer5CommunityWhite} alt="Layer5CommunityWhite" />
+                            <img src={Layer5WhiteBg} alt="Layer5 Logo" />
+                            Primary Logo: broadly, and majorly applicable
                         </Col>
                         <Col xs={12} sm={4}>
-                            <img className="Layer5TagDark" src={Layer5TagDark} alt="Layer5TagDark" />
+                            <img src={Layer5CommunityWhite} alt="Layer5 Logo with tagline" />
+                            Primary Logo with tagline: alternate horizontal layout
                         </Col>
                         <Col xs={12} sm={4}>
-                            <img src={Layer5WhiteBg} alt="Layer5WhiteBg" />
+                            <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
+                            Layer5 Icon: suited for square-shaped display
                         </Col>
                     </Row>
                 </Row>
