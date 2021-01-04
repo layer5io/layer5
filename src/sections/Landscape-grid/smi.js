@@ -39,22 +39,22 @@ function SMI_Compatibility() {
 
     return (
         <Tabs style={{ overflow: "auto", whiteSpace: "nowrap"}} className="landscape-table">
-                                <TabList>
-                                    <Tab>V0.5.0</Tab>
-                                    <Tab>V0.6.0</Tab>
-                                    <Tab>V0.4.0</Tab>
-                                </TabList>
-                                <TabPanel>
+            <TabList>
+                <Tab>V0.5.0</Tab>
+                <Tab>V0.6.0</Tab>
+                <Tab>V0.4.0</Tab>
+            </TabList>
+            <TabPanel>
                                     
-                                    <Table columns={columns} data={data} spec={{"traffic-access":"v1alpha2", "traffic-split":"v1alpha3", "traffic-spec":"v1alpha3"}} />
-                                </TabPanel>
-                                <TabPanel>
-                                    <Table columns={columns} data={data} spec={{"traffic-access":"v1alpha3", "traffic-split":"v1alpha4", "traffic-spec":"v1alpha4"}} />
-                                </TabPanel>
-                                <TabPanel>
-                                    <Table columns={columns} data={data} spec={{"traffic-access":"v1alpha1", "traffic-split":"v1alpha3", "traffic-spec":"v1alpha2"}} />
-                                </TabPanel>
-                            </Tabs>
+                <Table columns={columns} data={data} spec={{"traffic-access":"v1alpha2", "traffic-split":"v1alpha3", "traffic-spec":"v1alpha3"}} />
+            </TabPanel>
+            <TabPanel>
+                <Table columns={columns} data={data} spec={{"traffic-access":"v1alpha3", "traffic-split":"v1alpha4", "traffic-spec":"v1alpha4"}} />
+            </TabPanel>
+            <TabPanel>
+                <Table columns={columns} data={data} spec={{"traffic-access":"v1alpha1", "traffic-split":"v1alpha3", "traffic-spec":"v1alpha2"}} />
+            </TabPanel>
+        </Tabs>
     );
 }
 

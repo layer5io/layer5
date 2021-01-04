@@ -17,14 +17,14 @@ const ImageHubBrand = () => {
     return (
         <ImageHubWrap>
             <div className="post-content">
-                <Row>
+                <Row className="brand-section">
                     <Col xs={12} sm={6}>
                         <h1 className="layerH3">
                             Image Hub
                         </h1>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Download Logo Assets" url="../../../assets/brand/image-hub-brand-kit.zip" external="true">
+                        <Button primary title="Download Logo Assets" url="../../../assets/brand/image-hub-brand-kit.zip" external={true}>
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
@@ -47,10 +47,10 @@ const ImageHubBrand = () => {
                     </Col>
                     <Row className="ImgDiv">
                         <Col xs={12} sm={3}>
-                            <img src={ImageHub} />
+                            <img src={ImageHub} alt="ImageHub Logo"/>
                         </Col>
                         <Col xs={12} sm={3} className="ImageHubWhite">
-                            <img src={ImageHubWhite} />
+                            <img src={ImageHubWhite} alt="ImageHubWhite Logo"/>
                         </Col>
                     </Row>
                 </Row>
