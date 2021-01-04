@@ -20,6 +20,9 @@ const theme = {
     // dark jungle green
     tertiaryColor: "#1e2117",
 
+    // Teal Blue
+    tertiaryColorTwo: "#477E96",
+
     headingColor: "#111111",
 
     // light slate gray (medium gray)
