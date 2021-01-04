@@ -14,13 +14,27 @@ export const MesheryPlatformsWrapper = styled.div`
     }
   
   .content{
-      //transform: rotate(-10deg);
       text-align: center;
       h2 {
         color: ${props => props.theme.white};
-        padding-top: 18.5rem;
         font-weight: 700;
       }
-      
+      .step-1 {
+          padding-top: 18.5rem;
+          @media (max-width: 62rem) {
+            padding-top: 10rem;
+          }
+           @media (max-width: 32rem) {
+            padding-top: 6rem;
+          }
+      }
+      .supported-platforms{
+        padding-top: 2rem;
+        align-items: center;
+      }
+      .step-2{
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+      }
     }
 `;
