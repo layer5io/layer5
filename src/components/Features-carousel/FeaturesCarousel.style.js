@@ -5,6 +5,10 @@ export const FeaturesWrapper = styled.div`
       @media (min-width: 768px) {
         display: none;
       }
+      
+      .main-heading{
+        margin-bottom: 2rem;
+      }
     
       .feature {
         border-left: none;
@@ -66,9 +70,18 @@ export const FeaturesWrapper = styled.div`
       border-color: ${props => props.theme.tertiaryColorTwo};
       background-color: ${props => props.theme.tertiaryColorTwo};
       border-radius: 20px;
+      
+      @media (max-width: 768px){
+        border-color: ${props => props.theme.secondaryColor};
+        background-color: ${props => props.theme.white};
+        border-radius: 0;
+      }
     
       & .body {
         color: ${props => props.theme.white};
+        @media (max-width: 768px){
+            color: ${props => props.theme.black};
+        }
         opacity: 1;
         font-size: 1rem;
         max-height: 200px;
@@ -78,6 +91,9 @@ export const FeaturesWrapper = styled.div`
       & .heading {
         padding-top: 3rem;
         color: ${props => props.theme.white};
+        @media (max-width: 768px){
+            color: ${props => props.theme.black};
+        }
       }
     }
     

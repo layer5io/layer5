@@ -5,8 +5,10 @@ import Terminal from "../../components/Terminal";
 import Features from "../../components/Features-carousel";
 
 const MesheryFeaturesWrapper = styled.div`
-    margin-top: 400px;
-    margin-bottom: 100px;
+    margin: 6.25rem auto;
+    @media (max-width: 32rem){
+        margin-top: 10rem;
+    }
 `;
 
 
@@ -22,35 +24,9 @@ const MehseryFeatures = () => {
                                 "Benefit from the operational expertise of the world’s foremost service mesh operators.",
                             learnMoreLink: "/",
                             content: (
-                                <Terminal
-                                    lines={[
-                                        { code: "$ meshery logs" },
-                                        {
-                                            code: "[11] Puma starting in cluster mode...",
-                                            color: "gray",
-                                        },
-                                        {
-                                            code:
-                                                "[11] * Version 3.11.2 (ruby 2.6.6-p146), codename: Love Song",
-                                            color: "gray",
-                                        },
-                                        {
-                                            code: "[11] * Min threads: 5, max threads: 5",
-                                            color: "gray",
-                                        },
-                                        { code: "[11] * Environment: production", color: "gray" },
-                                        { code: "[11] * Process workers: 2", color: "gray" },
-                                        { code: "[11] * Preloading application", color: "gray" },
-                                        {
-                                            code: "[11] * Listening on tcp://0.0.0.0:3000",
-                                            color: "gray",
-                                        },
-                                        {
-                                            code:
-                                                "I, [2020-09-23T19:38:59.250971 #17] INFO -- : [936a952c-76b1-41f0-a4fe-ae2b77afc398] Started GET \"/\" for 10.36.5.1 at 2020-09-23 19:38:59 +0000",
-                                            color: "gray",
-                                        },
-                                    ]}
+                                <img
+                                    src={require("./feature-images/meshery-configuration-management.png")}
+                                    alt="Operational Best Practices"
                                 />
                             ),
                         },
@@ -58,20 +34,11 @@ const MehseryFeatures = () => {
                             title: "WebAssembly Filters for Envoy",
                             description:
                                 "Execute a command in the context of a running application",
-                            learnMoreLink: "/docs/exec",
+                            learnMoreLink: "/",
                             content: (
-                                <Terminal
-                                    lines={[
-                                        { code: "$ meshery exec bash" },
-                                        {
-                                            code: "Connected to deployment v18",
-                                            color: "gray",
-                                        },
-                                        {
-                                            code: "$ rake db:migrate",
-                                            color: "white",
-                                        },
-                                    ]}
+                                <img
+                                    src={require("./feature-images/meshery-wasm.png")}
+                                    alt="WebAssembly Filters for Envoy"
                                 />
                             ),
                         },
@@ -79,7 +46,7 @@ const MehseryFeatures = () => {
                             title: "Integration with Grafana and Prometheus",
                             description:
                                 "Get publicly accessible preview URLs per-deployment",
-                            learnMoreLink: "/docs/url",
+                            learnMoreLink: "/",
                             content: (
                                 <Terminal
                                     lines={[
