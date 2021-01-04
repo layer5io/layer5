@@ -4,13 +4,7 @@ const data = {
         {
             question: "Is Meshery open source?",
             category: "Meshery",
-            answer: "Yes, all of Layer5's projects are licensed under Apache v2.",
-            answer_2: "",
-            answer_3: "",
-            answer_4: "",
-            answer_5: "",
-            link: "",
-            linktext: "",
+            answer: "Yes, all of Layer5's projects are licensed under Apache v2."
         },
         {
             question: "What value does a service mesh provide?",
