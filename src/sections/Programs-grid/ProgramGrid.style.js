@@ -3,8 +3,7 @@ export const ProgramsPageWrapper = styled.div`
     .programs-page-wrapper{
         margin: 4rem 0;
 
-        h3{
-            font-size: 1.5rem; 
+        h5{
             font-weight: 600;
             text-align: center;
         }
@@ -12,7 +11,7 @@ export const ProgramsPageWrapper = styled.div`
     .sub-header_wrapper{
         margin: 1rem 0;
 
-        h3{
+        h5{
             font-size: 1.1rem; 
             font-weight: 600;
             color: black;

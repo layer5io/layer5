@@ -35,26 +35,6 @@ const PageHeaderWrapper = styled.div`
             }
         } 
     }
-
-    @media only screen and (max-width: 768px) {
-        .page-header{
-            h1{
-                font-size: 2.25rem;
-            }
-
-            h3 {
-                font-size: 1.5rem;
-            }
-        }
-    }
-
-    @media only screen and (max-width: 480px) {
-
-        .breadcrumbs{
-            flex-direction: column;
-            align-items: center;
-        }
-    }
 `;
 
 export default PageHeaderWrapper;

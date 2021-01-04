@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Lee_giveaway from "../../assets/images/careers/Lee-giving-away-free-t-shirts-at-UT-Austin.jpeg";
 
 const CareersSectionWrapper = styled.div`
     .careers-section-wrapper{
@@ -96,41 +95,7 @@ const CareersSectionWrapper = styled.div`
     .opportunity-section {
         margin-top: 13rem; 
     }
-
-    .join-community{
-        width: 50rem;
-        max-width: 100%;
-        height: 25rem;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${Lee_giveaway});
-        background-size: cover;
-        background-position: center;
-        margin: auto;
-        margin-bottom: 5rem;
-    }
-    .join-community_text-and_button{
-        position: relative;
-        top: 6.5rem;
-        text-align: center;
-        h1{
-            margin-top: 1rem;
-            color: white;
-        }
-        p{
-            margin: auto;
-            margin-top: 1rem;
-            max-width: 18rem;
-            color: white;
-        }
-        button{
-            background: #00B39F;
-            color: white;
-            margin-top: 1.5rem;
-
-            &:hover{
-                color: black;
-            }
-        }
-    }
+    
 `;
 
 export default CareersSectionWrapper;

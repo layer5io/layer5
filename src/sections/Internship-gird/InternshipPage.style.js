@@ -4,7 +4,6 @@ const InternshipSectionWrapper = styled.div`
 
     h1{
         margin-bottom: 1rem;
-        font-size: 2rem;
         color: black;
     }
 
@@ -61,8 +60,7 @@ const InternshipSectionWrapper = styled.div`
         border-radius: 1rem;
         transition: all 0.2s;
         transition-timing-function: ease-in-out;
-        h3{
-            font-size: 1.1rem;
+        h5{
             color: black; 
             font-weight: 600;
             align-self: center;
@@ -72,7 +70,7 @@ const InternshipSectionWrapper = styled.div`
         &:hover{
             box-shadow: 0px 0px 10px -4px ${props => props.theme.shadowLightColor};
             
-            h3{
+            h5{
                 transform: translateX(0.5rem);
             }
 

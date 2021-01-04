@@ -31,7 +31,7 @@ const NavigationWrap = styled.header`
     width: 100%;
     display: block;
     visibility: hidden;
-    box-shadow: 0px 10px 10px 0px rgba(0, 211, 169, 0.10);
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
     animation: bobbleout ease .3s forwards;
     pointer-events: none;
   }
@@ -67,6 +67,13 @@ const NavigationWrap = styled.header`
       border-radius: 50px 0 0 50px;
       .sub-item {
         padding: 0;
+      }
+      .section {
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+        margin-left:0px;
+        padding-left:0px;
       }
     }
     .nav-display {
@@ -223,11 +230,11 @@ const NavigationWrap = styled.header`
     margin-top: 8px;
     transition: all 0.8s cubic-bezier(0.3, 0.8, 0.2, 1) 0s;
     img {
-      width: 135px;
+      width: 155px;
     }
   }
-  &.scrolled {
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 30px;
+  &.scrolled {    
+    box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px;
     background: white;
     .nav {
       .nav-item{
@@ -268,7 +275,7 @@ const NavigationWrap = styled.header`
       display: block;
       margin-top: 7px;
       img {
-        width: 110px;
+        width: 13px;
       }
     }
     .mobile-dropdown-container {

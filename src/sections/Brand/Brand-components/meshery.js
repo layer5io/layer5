@@ -13,6 +13,7 @@ import MeshDarkTagText from "../../../assets/images/meshery/meshery-dark-tag-tex
 const MesheryWrapper = styled.section`
     .mesheryLogoTagLightTextSide {
         margin: auto;
+        text-align: center;
     }
 
     .mesheryOperator, .meshSyncLight{

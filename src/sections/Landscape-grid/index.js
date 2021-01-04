@@ -10,7 +10,7 @@ import Tools from "./tools";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ServiceMeshTimeline from "./ServiceMeshTimeline";
-import landscape from "../../assets/images/app/projects/landscape.png";
+import landscape from "../../assets/images/landscape/layer5_landscape_green.svg";
 import Consul_Img from "../../assets/images/service-mesh-icons/consul-white.svg";
 import Nginx_Img from "../../assets/images/service-mesh-icons/nginx-white.svg";
 import Linkerd_Img from "../../assets/images/service-mesh-icons/linkerd-white.svg";
@@ -32,7 +32,7 @@ const LandscapeGrid=() => {
                             <div className="strength-comparison-section">
                                 <div className="comparison-mesh">
                                     <div className="mesh-img">
-                                        <img src={Linkerd_Img} />
+                                        <img src={Linkerd_Img} className="pad-top" />
                                         <h3>Linkerd</h3>
                                     </div>
                                     <div className="mesh-data">
@@ -41,7 +41,7 @@ const LandscapeGrid=() => {
                                 </div>
                                 <div className="comparison-mesh">
                                     <div className="mesh-img">
-                                        <img src={Istio_Img} />
+                                        <img src={Istio_Img} className="pad-top" />
                                         <h3>Istio</h3>
                                     </div>
                                     <div className="mesh-data">
@@ -50,7 +50,7 @@ const LandscapeGrid=() => {
                                 </div>
                                 <div className="comparison-mesh">
                                     <div className="mesh-img">
-                                        <img src={Consul_Img} />
+                                        <img src={Consul_Img} className="pad-top" />
                                         <h3>Consul</h3>
                                     </div>
                                     <div className="mesh-data">
@@ -103,23 +103,21 @@ const LandscapeGrid=() => {
                                 </TabPanel>
                             </Tabs>
                             <h2 className="sub-heading landscape-section-heading">Service Mesh Interface Compliance</h2>
-                            <div className="landscape-table">
-                                <SMI_Compatibility />
-                            </div>
-                            <div className="missingText">
+                            <SMI_Compatibility />
+                            <div className="AboutLandscape">
+                                <img src={landscape} 
+                                    alt="Service Mesh Landscape" 
+                                />
                                 <div>
-                                    <img src={landscape}
-                                        alt="Landscape" 
-                                    />
+                                    <p>The Layer5 Service Mesh Landscape is a community-curated collection of service mesh projects.
+                                    We encourage project maintainers to directly update and represent their service mesh’s functional
+                                    and non-functional details.
+                                    </p>
+                                    <p className="text-gray">Found a discrepancy, missing or out-dated information?</p>
+                                    <Button primary url="https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D" external="true">
+                                        Let Us Know
+                                    </Button>
                                 </div>
-                                <h3>The Layer5 Service Mesh Landscape is a community-curated collection of service mesh projects.
-                                   We encourage project maintainers to directly update and represent their service mesh’s functional
-                                   and non-functional details.
-                                </h3>
-                                <h4>Found a discrepancy, missing or out-dated information?</h4>
-                                <Button primary url="https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D" external="true">
-                                    Let Us Know
-                                </Button>
                             </div>
                         </Row>
                     </div>

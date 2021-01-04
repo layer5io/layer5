@@ -8,8 +8,9 @@ import MeshMateLogoLight from "../../../assets/images/meshmate/meshmate-icon-whi
 import MeshMateLogo from "../../../assets/images/meshmate/meshmate-icon.png";
 
 const CommunityWrapper = styled.section`
-    .meshMateLight{
+    .meshMateLight {
         background: ${props => props.theme.primaryColor};
+        padding: 15px;
     }
 `;
 

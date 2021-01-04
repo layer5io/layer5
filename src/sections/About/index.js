@@ -21,14 +21,14 @@ const About = () => {
                             <h2>About Us</h2>
                         </SectionTitle>
                         <div className="about-text text-one">
-                            <h4>Community First</h4>
+                            <h3>Community First</h3>
                             <p className="indent">
                 The Layer5 community represents the largest collection of
                 service mesh projects and their maintainers in the world.
                             </p>
                         </div>
                         <div className="about-text text-two">
-                            <h4>Open Source First</h4>
+                            <h3>Open Source First</h3>
                             <p className="indent">
                 Our projects establish industry standards and enable service
                 developers, owners, and operators with repeatable patterns and
@@ -38,9 +38,9 @@ const About = () => {
                             </p>
                         </div>
                         <div className="about-text text-two">
-                            <h4>
+                            <h3>
                                 <a href="http://slack.layer5.io">Collaborate</a>
-                            </h4>
+                            </h3>
                             <p>
                                 <a className="anchor" href="/community">
                   Join the community
@@ -55,7 +55,7 @@ const About = () => {
                         <div>
                             <Row>
                                 <Col xs={12} sm={6}>
-                                    <h4>Locations</h4>
+                                    <h3>Locations</h3>
                                     <div className="section">
                                         <h4>USA</h4>
                                         <p>

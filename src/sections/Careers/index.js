@@ -3,8 +3,9 @@ import { Container } from "../../reusecore/Layout";
 import { Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import InternshipPage from "../Internship-gird";
-import Button from "../../reusecore/Button";
 import Lee_and_Rigs from "../../assets/images/careers/Lee-and-Rigs-Caballero-of-Google.jpeg";
+import Lee_giveaway from "../../assets/images/careers/Lee-giving-away-free-t-shirts-at-UT-Austin.jpeg";
+import JoinCommunity from "../Join-community";
 import CareersSectionWrapper from "./careers.style";
 
 const CareersPage = () => {
@@ -61,13 +62,7 @@ const CareersPage = () => {
                 <div className="opportunity-section">
                     <InternshipPage hide_heading={true}/>
                 </div>
-                <div className="join-community">
-                    <div className="join-community_text-and_button">
-                        <h1>Join the community!</h1>
-                        <p>Checkout the Layer5 community and join us on Slack</p>
-                        <Button primary title="Join Our Talented Community" url="http://slack.layer5.io/"/> 
-                    </div>
-                </div>
+                <JoinCommunity image={Lee_giveaway}/>
             </div>
         </CareersSectionWrapper>
     );
