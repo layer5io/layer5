@@ -4,20 +4,14 @@ import { Link } from "gatsby";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import ColorBox from "../../../components/ColorBox";
-
 import { FiDownloadCloud } from "react-icons/fi";
 import Layer5CommunityWhite from "../../../assets/images/layer5/layer5-tagline/png/layer5-tag-white-bg.png";
 import Layer5WhiteBg from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
-import Layer5TagDark from "../../../assets/images/layer5/layer5-tagline/png/layer5-tag-community-white.png";
 import Bookmarks from "../../../assets/images/layer5/bookmarks.png";
 import BookmarksPDF from "../../../assets/brand/bookmarks.pdf";
 import Layer5Icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
 const Layer5Wrapper = styled.section`
-    .Layer5TagDark {
-        background: ${props => props.theme.primaryColor};
-    }
-
     @media (max-width:575px){
         .brandHeader{
             padding: 3rem 0;
@@ -36,7 +30,7 @@ const Layer5Brand = () => {
                         </h1>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Donwload Logo Assets" url="../../../assets/brand/layer5-brand-kit.zip" external={true}>
+                        <Button primary title="Download Logo Assets" url="../../../assets/brand/layer5-brand-kit.zip" external={false}>
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
@@ -111,10 +105,11 @@ const Layer5Brand = () => {
                         <p className="layerH3">
                             Media available for print.
                         </p>
-                        <Link to={BookmarksPDF}>
-                            <img className="bookmarks" src={Bookmarks} alt="Layer5 and Meshery Bookmarks" />
-                        </Link>
-
+                        <Row className="bookmarks">
+                            <Link to={BookmarksPDF}>
+                                <img className="bookmarks" src={Bookmarks} alt="Layer5 and Meshery Bookmarks" />
+                            </Link>
+                        </Row>
                     </Col>
                 </Row>
             </div>

@@ -11,10 +11,6 @@ const MeshSyncWrapper = styled.section`
     .sub-project {
         margin-top: -2rem;
     }
-
-    .meshSyncLight{
-        background: ${props => props.theme.primaryColor};
-    }
 `;
 
 const MeshSyncBrand = () => {
@@ -28,7 +24,7 @@ const MeshSyncBrand = () => {
                         </h2>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Donwload Logo Assets" url="../../../assets/brand/meshsync-brand-kit.zip" external={true}>
+                        <Button primary title="Download Logo Assets" url="../../../assets/brand/meshsync-brand-kit.zip" external={true}>
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
@@ -50,10 +46,10 @@ const MeshSyncBrand = () => {
                         </h3>
                     </Col>
                     <Row className="ImgDiv">
-                        <Col xs={12} sm={4}>
+                        <Col xs={12} sm={4} className="logo">
                             <img src={MeshSync} alt="MeshSync Logo"/>
                         </Col>
-                        <Col xs={12} sm={4} className="meshSyncLight">
+                        <Col xs={12} sm={4} className="logo">
                             <img src={MeshSyncLight} alt="MeshSyncLight Logo"/>
                         </Col>
                     </Row>

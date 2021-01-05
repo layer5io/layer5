@@ -11,10 +11,6 @@ const MesheryOperatorWrapper = styled.section`
     .sub-project {
         margin-top: -2rem;
     }
-
-    .mesheryOperator{
-        background: ${props => props.theme.primaryColor};
-    }
 `;
 
 const MesheryOperatorBrand = () => {
@@ -28,7 +24,7 @@ const MesheryOperatorBrand = () => {
                         </h2>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Donwload Logo Assets" url="../../../assets/brand/meshery-operator-brand-kit.zip" external={true}>
+                        <Button primary title="Download Logo Assets" url="../../../assets/brand/meshery-operator-brand-kit.zip" external={true}>
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
@@ -53,7 +49,7 @@ const MesheryOperatorBrand = () => {
                         <Col xs={12} sm={4}>
                             <img src={MesheryOperatorDark} alt="MesheryOperatorDark Logo"/>
                         </Col>
-                        <Col xs={12} sm={4} className="mesheryOperator">
+                        <Col xs={12} sm={4} className="logo">
                             <img src={MesheryOperator} alt="MesheryOperator Logo"/>
                         </Col>
                     </Row>

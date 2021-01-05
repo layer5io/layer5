@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import ColorBox from "../../../components/ColorBox";
-
 import { FiDownloadCloud } from "react-icons/fi";
 import SmpDark from "../../../assets/images/smp/icon/smp-dark.png";
 import SmpLight from "../../../assets/images/smp/icon/smp-light.png";
@@ -13,19 +12,9 @@ import SmPDarkTextSide from "../../../assets/images/smp/horizontal/smp-dark-text
 import SmPWhiteTextSide from "../../../assets/images/smp/horizontal/smp-white-text-side.png";
 
 const SMPWrap = styled.section`
-  .SmpWhite, .smpDark {
-    background: ${props => props.theme.primaryColor};
-  }
-
-  .smp-logo {
-      margin: 0.5rem -15px;
-  }
-
-  @media (max-width:425px){
-    .colors{
-      padding-left:50px;
+    .smp-logo {
+        margin: 0.5rem;
     }
-}
 `;
 
 const SMPBrand = () => {
@@ -65,12 +54,12 @@ const SMPBrand = () => {
                             <img src={SmpDark} alt="SmpDark Logo"/>
                         </Col>
                         <Col xs={12} sm={4}>
-                            <div className="SmpWhite">
+                            <div className="logo">
                                 <img src={SmpWhite} alt="SmpWhite Logo"/>
                             </div>
                         </Col>
                         <Col xs={12} sm={4}>
-                            <div className="SmpWhite">
+                            <div className="logo">
                                 <img src={SmpLight} alt="SmpLight Logo"/>
                             </div>
                         </Col>
@@ -80,12 +69,12 @@ const SMPBrand = () => {
                             <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo"/>
                         </Col>
                         <Col xs={12} sm={4}>
-                            <div className="SmpWhite">
+                            <div className="logo">
                                 <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo"/>
                             </div>
                         </Col>
                         <Col xs={12} sm={4}>
-                            <div className="SmpWhite">
+                            <div className="logo">
                                 <img src={SmPLightTextSide} alt="SmPLightTextSide Logo"/>
                             </div>
                         </Col>
