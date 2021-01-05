@@ -37,8 +37,8 @@ const SMIPage = () => {
                             <h1>Purpose and Overview</h1>
                             <p>The scope of this initiative includes all service mesh projects participating in the Service Mesh Interface specification. It’s important to acknowledge that conformance consists of both capabilities and compliance status.</p>
                         </div>
+                        <div className="bg"></div>
                         <Row className="feature-table">
-                            <div className="bg"></div>
                             {data.pricings.map((pricing, index) => (
                                 <Col xs={12} sm={6} lg={6} key={index}>
                                     <div className="pricing-block">
@@ -61,7 +61,7 @@ const SMIPage = () => {
                         </Row>
                     </Row>
                 </Container>
-                <Row className="section-3">
+                <div className="section-3">
                     <div className="card">
                         <h2> Validating Conformance</h2>
                         <Row>
@@ -81,7 +81,8 @@ const SMIPage = () => {
                             </Col>
                         </Row>
                     </div>
-                </Row>
+                </div>
+                {/* </Container> */}
             </SMIWrapper>
         </Layout>
     );

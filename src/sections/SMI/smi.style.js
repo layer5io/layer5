@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const SMIWrapper = styled.section`
     .description{
-        margin: 100px -15px 120px -15px;
+        margin: 6.25rem -0.94rem 7.5rem -0.94rem;
         h6{
             font-size: 20px;
             color: #1E2117;
@@ -11,12 +11,12 @@ const SMIWrapper = styled.section`
         }
         h1{
             color: black;
-            margin-bottom: 25px;
+            margin-bottom: 1.56rem;
         }
         h5{
             color: #1E2117;
             opacity: 70%;
-            margin-bottom: 30px;
+            margin-bottom: 1.875rem;
             font-weight: 400;
             width: 80%;
         }
@@ -24,7 +24,7 @@ const SMIWrapper = styled.section`
             text-align: center;
             margin: auto;
             width: 80%;
-            margin-bottom: 40px;
+            margin-bottom: 2.5rem;
             p{
                 font-size: 21px;
                 color: black;
@@ -34,20 +34,19 @@ const SMIWrapper = styled.section`
     }
     .logo{
         position: absolute;
-        top: -100px;
-        left: -120px;
+        top: -6.25rem;
+        left: -7.5rem;
     }
     .hero-img{
-        margin: -100px 0 0 0;
-        object-fit: cover;
-        // height: 500px;
-        width: 600px;
+        margin: -6.25rem 0 0 0;
+        object-fit: none;
+        width: 36rem;
     }
     .feature-table{
-        margin: 0 80px 30px 80px;
+        margin: 0 5rem 1.875rem 5rem;
     }
     .pricing-block{
-        padding: 40px 30px 45px 30px;
+        padding: 2.5rem 1.875rem 2.8rem 1.875rem;
         border-radius: 20px;
         box-shadow: 15px 15px 40px ${props => props.theme.shadowColor};
         position: relative;
@@ -62,23 +61,24 @@ const SMIWrapper = styled.section`
         }
     }
     .price-block{
-        margin: 0 0 5px 0;
+        margin: 0 0 0.3rem 0;
         h2{
             font-size: 34px;
             font-weight: 700;
-            margin: 0 0 50px 10px; 
+            margin: 0 0 3.125rem 0.625rem; 
             color: ${props => props.theme.black};
         }
     }
     .section-3{
         background-color: #FAFAFA;
-        padding: 100px 0 100px 0;
+        padding: 6.25rem 0 6.25rem 0;
+        width: 100%;
     }
     .bg{
-        margin-top: 150px;
-        margin-left: -40px;
-        height: 350px;
-        width: 1100px;
+        height: 21.875rem;
+        width: 90%;
+        max-width: 73.75rem;
+        margin: 21.875rem auto 0 auto;
         background-color: #EBFCF8;
         position: absolute;
         z-index: 1;
@@ -87,18 +87,18 @@ const SMIWrapper = styled.section`
         background-color: white;
         width: 70%;
         margin: auto;
-        padding: 30px 75px 30px 75px;
+        padding: 1.875rem 4.7rem 1.875rem 4.7rem;
         border: 1px white;
         border-radius: 20px;
         h2{
-            margin-bottom: 30px;
+            margin-bottom: 1.875rem;
         }
     }
     .details-block{
         .table{
             color: ${props => props.theme.black};  
             p {
-                margin: 0 0 15px 28px;
+                margin: 0 0 1rem 1.75rem;
                 font-size: 17px;
                 line-height: 25px;
             }
@@ -106,10 +106,39 @@ const SMIWrapper = styled.section`
                 vertical-align: top;
             }
             .icon{
-                height: 32px;
-                width: 32px;
+                height: 2rem;
+                width: 2rem;
                 object-fit: cover;
             }
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        .logo{
+            margin-top: 3.125rem;
+        }
+        .description{
+            margin: 3.125rem -0.94rem 3.125rem -0.94rem;
+            h5{
+                width: 100%;
+            }
+        }
+        .hero-img{
+            width: 95%;
+            margin-top: 1.875rem;
+        }
+        .feature-table{
+            margin: 0 0 0.625rem 0;
+        }
+        .pricing-block{
+            margin: 0 0.94rem 1.875rem 0.94rem;
+            padding: 2.5rem 0.94rem 2.2rem 0.94rem;
+        }
+        .bg{
+            visibility: hidden;
+        }
+        .card{
+            width: 90%;
+            padding: 1.5rem;
         }
     }
 `;
