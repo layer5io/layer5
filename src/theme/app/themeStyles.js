@@ -40,6 +40,17 @@ const theme = {
     highlightColor: "#EBC017",
 
     // flax (light yellow)
-    highlightLightColor: "#EAD07D"
+    highlightLightColor: "#EAD07D",
+
+    backgroundColor: "#1e2117"
 };
+
 export default theme;
+
+export const darkTheme = {
+    backgroundColor: "#1e2117"
+};
+
+export const lightTheme = {
+    backgroundColor: "#ffffff"
+};

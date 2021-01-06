@@ -1,7 +1,6 @@
 import React from "react";
-import {ThemeProvider} from "styled-components";
 
-import Layout from "../components/layout"; 
+import Layout from "../components/layout";
 
 import SEO from "../components/seo";
 import Navigation from "../sections/Navigation";
@@ -18,12 +17,8 @@ import Getapp from "../sections/Getapp";
 import ContactCard from "../components/ContactCard";
 import Footer from "../sections/Footer";
 
-import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
-
 const IndexPage = () => (
-    <ThemeProvider theme={theme}> 
-        <GlobalStyle />
+    <>
         <SEO meta="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure."></SEO>
         <Layout>
             <Navigation />
@@ -31,7 +26,7 @@ const IndexPage = () => (
             <Integrations />
             <Features />
             <AppScreens />
-            <Counters /> 
+            <Counters />
             <Pricing />
             <Testimonial />
             <Faq />
@@ -40,7 +35,7 @@ const IndexPage = () => (
             <ContactCard />
             <Footer />
         </Layout>
-    </ThemeProvider>
+    </>
 );
 
 export default IndexPage;

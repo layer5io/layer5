@@ -1,7 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
-
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
@@ -169,6 +167,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Open Sans', sans-serif;
   color: ${props => props.theme.textColor};
+  background-color: ${props =>
+        props.theme === "dark" ? "#1e2117" : "#ffffff"};
   overflow-x: hidden !important;
   font-weight: 400 !important;
   margin: 0;
@@ -264,6 +264,5 @@ section{
     position: relative;
 }
 `;
-
 
 export { GlobalStyle };
