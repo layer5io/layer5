@@ -19,6 +19,19 @@ const BrandPageWrapper = styled.section`
 		}
 	}
 
+	.bookmarks {
+		text-align: center;
+
+		img {
+			width: 70%;
+		}
+	}
+
+	.logo {
+		background: ${props => props.theme.primaryColor};
+		padding: 0.95rem;
+	}
+
 	.brand-row {
 		margin: 0;
 	}
@@ -135,6 +148,7 @@ const BrandPageWrapper = styled.section`
 	.Layer5Logos {
 		font-style: italic;
 		text-align: center;
+		margin: auto;
 		
 		img.Layer5Icon {
 			width: auto;
@@ -167,14 +181,18 @@ const BrandPageWrapper = styled.section`
 		margin-top: 2rem;
 	}
 
+	.blond-color-box, .white-color-box {
+		.PalletBox {
+			color: ${props => props.theme.tertiaryColor};
+			.color-name {
+				color: ${props => props.theme.tertiaryColor};
+			}
+		}
+	}
+
 	.white-color-box {
 		.PalletBox {
-			border: 1px solid black;
-			color: black;
-
-			.color-name {
-				color: black;
-			}
+			border: 1px solid ${props => props.theme.tertiaryColor};
 		}
 	}
 
