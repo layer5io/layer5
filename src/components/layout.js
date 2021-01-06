@@ -23,7 +23,9 @@ const Layout = ({ children }) => {
     const [isDark, setIsDark] = useState(getInitialMode());
 
     useEffect(() => {
-        localStorage.setItem("mode", isDark);
+        if (typeof window !== "undefined") {
+            localStorage.setItem("mode", isDark);
+        }
     }, [isDark]);
 
     const darkModeHandler = () => {
@@ -31,8 +33,10 @@ const Layout = ({ children }) => {
     };
 
     function getInitialMode() {
-        const savedMode = localStorage.getItem("mode", isDark);
-        return savedMode || "light";
+        if (typeof window !== "undefined") {
+            const savedMode = localStorage.getItem("mode", isDark);
+            return savedMode || "light";
+        }
     }
     return (
         <ThemeProvider theme={isDark === "dark" ? darkTheme : lightTheme}>
