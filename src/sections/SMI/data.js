@@ -1,6 +1,6 @@
 
 const data = {
-    pricings: [
+    features: [
         {
             name: "Project Goals",
             link: "#",

@@ -5,16 +5,15 @@ const SMIWrapper = styled.section`
         margin: 6.25rem -0.94rem 7.5rem -0.94rem;
         h6{
             font-size: 20px;
-            color: #1E2117;
+            color: ${props => props.theme.tertiaryColor};;
             font-weight: semi-bold;
-            // ${props => props.theme.textColor};
         }
         h1{
-            color: black;
+            color: ${props => props.theme.black};
             margin-bottom: 1.56rem;
         }
-        h5{
-            color: #1E2117;
+        p{
+            color: ${props => props.theme.tertiaryColor};;
             opacity: 70%;
             margin-bottom: 1.875rem;
             font-weight: 400;
@@ -45,7 +44,7 @@ const SMIWrapper = styled.section`
     .feature-table{
         margin: 0 5rem 1.875rem 5rem;
     }
-    .pricing-block{
+    .feature-block{
         padding: 2.5rem 1.875rem 2.8rem 1.875rem;
         border-radius: 20px;
         box-shadow: 15px 15px 40px ${props => props.theme.shadowColor};
@@ -60,7 +59,7 @@ const SMIWrapper = styled.section`
             }
         }
     }
-    .price-block{
+    .feature-title{
         margin: 0 0 0.3rem 0;
         h2{
             font-size: 34px;

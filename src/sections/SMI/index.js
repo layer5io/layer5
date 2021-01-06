@@ -21,14 +21,14 @@ const SMIPage = () => {
                         <Col className="desc-text" lg={8} md={12} sm={12}>
                             <h6> Why does conformance matter? </h6>
                             <h1> Service Mesh Interface Conformance</h1>
-                            <h5 className="desc-p"> 
+                            <p className="desc-p"> 
                             In order to confidently operate a service mesh without locking into the specific service mesh's APIs, you will adopt SMI. How do you know if the service mesh you are using is SMI compatible, though
-                            </h5>
+                            </p>
                             <Button primary title="Run SMI Conformance" /> 
                         </Col>
                         <Col lg={4} md={12} sm={12}>
                             <div className="hero-img">
-                                <img src={smi}></img>
+                                <img src={smi} alt="SMI Table"></img>
                             </div>
                         </Col>
                     </Row>   
@@ -39,14 +39,14 @@ const SMIPage = () => {
                         </div>
                         <div className="bg"></div>
                         <Row className="feature-table">
-                            {data.pricings.map((pricing, index) => (
+                            {data.features.map((feature, index) => (
                                 <Col xs={12} sm={6} lg={6} key={index}>
-                                    <div className="pricing-block">
-                                        <div className="price-block">
-                                            <h2>{pricing.name}</h2>
+                                    <div className="feature-block">
+                                        <div className="feature-title">
+                                            <h2>{feature.name}</h2>
                                         </div>
                                         <div className="details-block">
-                                            {pricing.services.map((service, index) => (
+                                            {feature.services.map((service, index) => (
                                                 <table className="table" key={index}>
                                                     <tr>
                                                         <td className="icon"><img src={c_icon} /></td>
@@ -82,7 +82,6 @@ const SMIPage = () => {
                         </Row>
                     </div>
                 </div>
-                {/* </Container> */}
             </SMIWrapper>
         </Layout>
     );
