@@ -97,6 +97,7 @@ const SMIWrapper = styled.section`
         .table{
             color: ${props => props.theme.black};  
             p {
+                width: 90%;
                 margin: 0 0 1rem 1.75rem;
                 font-size: 17px;
                 line-height: 25px;
