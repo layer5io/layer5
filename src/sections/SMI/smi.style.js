@@ -9,7 +9,6 @@ const SMIWrapper = styled.section`
             font-weight: semi-bold;
         }
         h1{
-            color: ${props => props.theme.black};
             margin-bottom: 1.56rem;
         }
         p{
@@ -85,6 +84,7 @@ const SMIWrapper = styled.section`
     .card{
         background-color: white;
         width: 70%;
+        max-width: 62.5rem;
         margin: auto;
         padding: 1.875rem 4.7rem 1.875rem 4.7rem;
         border: 1px white;

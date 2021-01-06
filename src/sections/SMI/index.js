@@ -24,7 +24,7 @@ const SMIPage = () => {
                             <p className="desc-p"> 
                             In order to confidently operate a service mesh without locking into the specific service mesh's APIs, you will adopt SMI. How do you know if the service mesh you are using is SMI compatible, though
                             </p>
-                            <Button primary title="Run SMI Conformance" /> 
+                            <Button primary title="Run SMI Conformance" url="/projects/meshery/#getting-started" /> 
                         </Col>
                         <Col lg={4} md={12} sm={12}>
                             <div className="hero-img">
