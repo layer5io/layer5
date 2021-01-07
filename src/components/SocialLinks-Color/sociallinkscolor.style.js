@@ -18,7 +18,11 @@ const SocialLinksWrapper = styled.div`
             &:hover {
                 filter: grayscale(0) invert(0);
             }
+            .github:hover {
+                filter: grayscale(0) invert(.9);
+            }
         }
+
 
         .mail_icon {
             img {
@@ -26,7 +30,9 @@ const SocialLinksWrapper = styled.div`
                 border-radius: 0.25rem;
             }
         }
+
     }
+
 
     @media screen and (max-width: 575px) {
         .social_icons {
