@@ -64,7 +64,7 @@ const NewcomersGuide = () => {
                     </Row>
                     <Row className="step">
                         <Col sm={12} lg={6}>
-                            <h3>Working on a issue</h3>
+                            <h3>Working on Your Issue</h3>
                             <ol type="i">
                                 <li>
                                     Once an issue has been assigned to you, it’s time to get started! Make sure you take a look at the Contributing Guidelines .
@@ -91,7 +91,7 @@ const NewcomersGuide = () => {
                             <img src={CommunityImage3} alt="Community Image"/>
                         </Col>
                         <Col sm={12} lg={6}>
-                            <h3>While Your Issue Is under Review</h3>
+                            <h3>While Your Issue is under Review</h3>
                             <p>
                                 Be patient. There are a large number of contributors and only a small number of maintainers/reviewers.
                                 All contributors are equally important to us, and we'll be sure to get to you as soon as possible.
