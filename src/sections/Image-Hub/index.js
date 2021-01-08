@@ -3,7 +3,7 @@ import React from "react";
 import Layout from "../../components/layout"; 
 
 import ImageHubWrapper from "./imageHub.style";
-import { Row, Col, Container } from "../../reusecore/Layout";
+import { Container } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import Slider from "react-slick";
 
@@ -46,10 +46,14 @@ Learn how to use Docker Desktop and Kubernetes as your development platforms of 
                             slidesToScroll= {1}
                         >
                             <div>
-                                <img src={imagehubslider1} />
+                                <a href={imagehubslider1}>
+                                    <img src={imagehubslider1} alt="Consul Service Mesh Architecture" />
+                                </a>
                             </div>
                             <div>
-                                <img src={imagehubslider2} />
+                                <a href={imagehubslider2}>
+                                    <img src={imagehubslider2} alt="Image Hub on Consul with WASM and Meshery" />
+                                </a>
                             </div>
                         </Slider>
                         <p>Consul Service Mesh Architecture w/WebAssembly</p>

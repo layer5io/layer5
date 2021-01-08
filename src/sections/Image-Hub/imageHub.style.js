@@ -5,23 +5,23 @@ const ImageHubWrapper = styled.section`
         background-color: ${props => props.theme.black};
     }
     .banner{
-        padding: 100px 0 20px 0;
+        padding: 6.25rem 0 1.25rem 0;
         .title-text{
-            margin: 50px 0 100px 0;
+            margin: 3.125rem 0 6.25rem 0;
             h1{
                 color: ${props =>props.theme.white};
             }
             h4{
                 border: 1px solid gray;
-                padding: 0 10px 0 10px;
-                width: 275px;
+                padding: 0 0.625rem 0 0.625rem;
+                width: 17.19rem;
                 color: ${props =>props.theme.white};
             }
         }
         .logo{
             float: right;
-            margin-right: 30px;
-            height: 200px;
+            margin-right: 1.875rem;
+            height: 12.5rem;
             width: auto;
         }
         p{
@@ -30,19 +30,17 @@ const ImageHubWrapper = styled.section`
         }
         .iframe-div{
             display: block;
-            margin: 50px auto;
+            margin: 3.125rem auto;
         }
     }
     .showcase{
-        margin: 100px 0;
+        margin: 6.25rem 0;
         text-align: center;
         .slider{
             margin: auto;
             width: 70%;
             .slick-arrow{
-                margin: 0 -20px 0 -50px;
-                width: 5px;	
-                height: 80px;	
+                margin: 0 -1.25rem 0 -3.125rem;
             }	
             .slick-arrow:before{	
                 color: ${props => props.theme.primaryColor};
@@ -56,25 +54,25 @@ const ImageHubWrapper = styled.section`
     }
     .contributors{
         width: 70%;
-        margin: 100px auto;
+        margin: 6.25rem auto;
         text-align: center;
         p{
-            margin-bottom: 50px;
+            margin-bottom: 3.125rem;
         }
     }
     @media only screen and (max-width: 480px) {
         .banner{
-            padding: 50px 0 20px 0;
+            padding: 3.125rem 0 1.25rem 0;
             .title-text{
-                margin: 0 0 50px 0;
+                margin: 0 0 3.125rem 0;
                 h4{
                     font-size: 16px;
                     padding: 0;
-                    border: 0px;
+                    border: 0;
                 }
             }
             .logo{
-                height: 100px;
+                height: 6.25rem;
                 width: auto;
                 margin: 0;
             }
@@ -83,16 +81,16 @@ const ImageHubWrapper = styled.section`
             }
             .iframe-div{
                 max-width: 100%;
-                margin: 30px auto;
+                margin: 1.875rem auto;
             }
         }
         .showcase{
-            margin: 50px 0;
+            margin: 3.125rem 0;
             .slider{
                 margin: auto;
                 width: 85%;
                 .slick-arrow{
-                    margin: 0 15px 0 -5px;
+                    margin: 0 0.94rem 0 -0.3rem;
                 }	
                 .slick-arrow:before{	
                     font-size: 1.5rem;
@@ -101,9 +99,9 @@ const ImageHubWrapper = styled.section`
         }
         .contributors{
             width: 100%;
-            margin: 50px auto;
+            margin: 3.125rem auto;
             p{
-                margin-bottom: 30px;
+                margin-bottom: 1.875rem;
             }
         }
     }
