@@ -7,7 +7,7 @@ twitter: kush_1814
 github: kushthedude
 blurb: Mesh Head
 status: Inactive
-meshmate: emeritus
+emeritus: yes
 domain1: Frontend Engineering 
 domain2: Backend Engineering
 domain3: Community Ambassador
