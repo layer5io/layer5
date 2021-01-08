@@ -30,8 +30,7 @@ Watch the demo to learn more about how WebAssembly (WASM) modules are dynamicall
 This project examines how to let application infrastructure concerns melt off your service mesh workloads and have your infrastructure implement multi-tenancy on your behalf.
 Learn how to use Docker Desktop and Kubernetes as your development platforms of choice in combination with Meshery, the service mesh management plane, to easily deploy a service mesh. Using Consul and Envoy's latest capabilities, see how WASM can be used to move user authentication and authorization from your application to the infrastructure.
                             </p>
-                            
-                            <iframe width="600px" height="350px" src="https://www.youtube.com/embed/5BrbbKZOctw"	
+                            <iframe className="iframe-div" width="600px" height="350px" src="https://www.youtube.com/embed/5BrbbKZOctw"	
                                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"	allowFullScreen>	
                             </iframe>
                         </div>
