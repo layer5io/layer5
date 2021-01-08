@@ -6,7 +6,7 @@ import NewcomersJourney from "./newcomers.svg";
 import CommunityImage1 from "./community-image1.png";
 import CommunityImage2 from "./community-image2.png";
 import CommunityImage3 from "./community-image3.png";
-import data from "../../assets/data/tutorials/index";
+import TutorialsTable from "../Tutorials-table";
 
 
 const NewcomersGuide = () => {
@@ -99,6 +99,11 @@ const NewcomersGuide = () => {
                             </p>
                         </Col>
                     </Row>
+                </div>
+                <div className="table-wrapper">
+                    <h2>Tutorials</h2>
+                    <h5>Checkout some of the resources to get going</h5>
+                    <TutorialsTable/>
                 </div>
             </Container>
         </NewcomersGuideWrapper>

@@ -45,5 +45,9 @@ export const NewcomersGuideWrapper = styled.section`
         max-width: 21.875rem
       }
     }
+    
+    .table-wrapper{
+      text-align: center;
+    }
 `;
 
