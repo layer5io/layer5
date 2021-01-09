@@ -3,11 +3,13 @@ import {Link} from "gatsby";
 import {Col, Container, Row} from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
-import NewcomersJourney from "./newcomers.svg";
 import CommunityImage1 from "./community-image1.png";
 import CommunityImage2 from "./community-image2.png";
 import CommunityImage3 from "./community-image3.png";
+import CommunityImage4 from "./community-image4.png";
 import TutorialsTable from "../Tutorials-table";
+import NewcomersMap from "./newcomers-map";
+import JoinCommunity from "../Join-community";
 
 
 const NewcomersGuide = () => {
@@ -28,7 +30,7 @@ const NewcomersGuide = () => {
                             <h2>Contributor's Journey</h2>
                         </Col>
                         <Col sm={12} lg={6}>
-                            <img src={NewcomersJourney} alt="Newcomers Journey"/>
+                            <NewcomersMap/>
                         </Col>
                     </Row>
                     <Row className="how-to-contribute">
@@ -116,6 +118,7 @@ const NewcomersGuide = () => {
                     <h5>Checkout some of the resources to get going</h5>
                     <TutorialsTable/>
                 </div>
+                <JoinCommunity image={CommunityImage4}/>
             </Container>
         </NewcomersGuideWrapper>
     );
