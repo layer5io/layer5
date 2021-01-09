@@ -18,8 +18,8 @@ const TutorialsTable = () => {
                 accessor: data => {
                     return(
                         <p>
-                            {data.resources.slides ? <span><a href={data.resources.slides}>Slides</a></span>: ""}
-                            {data.resources.recording ? <span><a href={data.resources.recording}>Recording</a></span> : ""}
+                            {data.resources.slides ? <span><a href={data.resources.slides} target="_blank" rel="noreferrer">Slides</a></span>: ""}
+                            {data.resources.recording ? <span><a href={data.resources.recording} target="_blank" rel="noreferrer">Recording</a></span> : ""}
                         </p>
                     );
                 }
