@@ -16,6 +16,8 @@ const SMIWrapper = styled.section`
             opacity: 70%;
             margin-bottom: 1.875rem;
             font-weight: 400;
+        }
+        .desc-p{
             width: 80%;
         }
         .section-title{

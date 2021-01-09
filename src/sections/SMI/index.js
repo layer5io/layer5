@@ -18,13 +18,13 @@ const SMIPage = () => {
                 <Container>
                     <img className="logo" src={logo} />
                     <Row className="description">
-                        <Col className="desc-text" lg={8} md={12} sm={12}>
+                        <Col lg={8} md={12} sm={12}>
                             <h6> Why does conformance matter? </h6>
                             <h1> Service Mesh Interface Conformance</h1>
                             <p className="desc-p"> 
                             In order to confidently operate a service mesh without locking into the specific service mesh's APIs, you will adopt SMI. How do you know if the service mesh you are using is SMI compatible, though
                             </p>
-                            <Button primary title="Run SMI Conformance" url="/projects/meshery/#getting-started" /> 
+                            <Button primary title="Run SMI Conformance" url="/blog/programs/starting-smi-conformance-testing-with-meshery" /> 
                         </Col>
                         <Col lg={4} md={12} sm={12}>
                             <div className="hero-img">
@@ -77,7 +77,7 @@ const SMIPage = () => {
                                 </p>
                             </Col>
                             <Col lg={4}>
-                                <Button primary title="Run SMI Conformance"></Button>
+                                <Button primary title="Run SMI Conformance" url="/blog/programs/starting-smi-conformance-testing-with-meshery"></Button>
                             </Col>
                         </Row>
                     </div>
