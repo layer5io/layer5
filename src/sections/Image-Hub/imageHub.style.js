@@ -29,6 +29,8 @@ const ImageHubWrapper = styled.section`
             color: ${props =>props.theme.white};
         }
         .iframe-div{
+            height: 400px;
+            aspect-ratio: 2;
             display: block;
             margin: 3.125rem auto;
         }
@@ -80,7 +82,8 @@ const ImageHubWrapper = styled.section`
                 width: 100%;
             }
             .iframe-div{
-                max-width: 100%;
+                height: 80%;
+                width: 100%;
                 margin: 1.875rem auto;
             }
         }
@@ -90,7 +93,7 @@ const ImageHubWrapper = styled.section`
                 margin: auto;
                 width: 85%;
                 .slick-arrow{
-                    margin: 0 0.94rem 0 -0.3rem;
+                    margin: 0 -0.3rem 0 -0.3rem;
                 }	
                 .slick-arrow:before{	
                     font-size: 1.5rem;
