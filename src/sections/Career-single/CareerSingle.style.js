@@ -1,29 +1,91 @@
 import styled from "styled-components";
 
 const CareerPageWrapper = styled.div`
- color: #000;     
-.single-post-wrapper{
-    padding: 50px 0 180px 0;
-}
-.single-post-block{
-    p{
-        font-size: 16px;
-        font-weight: 300; 
-        line-height: 29px;
-        letter-spacing: 0.2px;
+    .single-post-wrapper{
+        padding: 2.5rem 0.75rem 1rem;
+        margin: 2rem auto;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 0.6rem;
+        max-width: 65%;
     }
-    h2, h3{
-        margin: 15px 0 10px 0;
-    }
-    p+p{
-        margin-top: 30px;  
-    }
-}
 
-@media only screen and (max-width: 912px) {
-     .single-post-block{
-         padding-bottom: 120px;
-     }
-}
+    .job-header-row {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    @media screen and (max-width: 767px) {
+        .job-header-row {
+            flex-direction: column-reverse;
+        }
+    }
+
+    .job-details {
+        h5 {
+            font-weight: 600;
+
+            svg {
+                vertical-align: top;
+                color: ${props => props.theme.primaryLightColorTwo};
+                width: 2rem;
+            }
+        }
+
+        p {
+            margin-left: 2.25rem;
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    @media screen and (min-width: 1370px) {
+        .job-details-col {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+    }
+
+    .layer5-logo {
+        width: 15rem;
+        margin: auto;
+    }
+
+    @media screen and (max-width: 1200px) and (min-width: 768px) {
+        .layer5-logo {
+            img {
+                margin-top: 8%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .layer5-logo {
+            img {
+                margin: 0 0 1.5rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .layer5-logo {
+            width: 10rem;
+        }
+    }
+
+    @media screen and (min-width: 2100px) {
+        .single-post-wrapper{
+            max-width: 55%;
+        }
+    }
+
+    @media screen and (max-width: 1850px) {
+        .single-post-wrapper{
+            max-width: 70%;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .single-post-wrapper{
+            max-width: 90%;
+        }
+    }
 `;
 export default CareerPageWrapper;
