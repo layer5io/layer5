@@ -62,7 +62,7 @@ Learn how to use Docker Desktop and Kubernetes as your development platforms of 
                         <h1>Contributors</h1>
                         <p>This demo application has been enabled by experimental works of Nic Jackson of HashiCorp, and Kanishkar J, Lee Calcote, and other contributors of Layer5.
         Learn more about the Layer5 and HashiCorp Partnership.</p>
-                        <Button primary title="Learn More"></Button>
+                        <Button primary title="Learn More" url="/partners"></Button>
                     </div>
                 </Container>
             </ImageHubWrapper>
