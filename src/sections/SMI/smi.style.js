@@ -114,6 +114,12 @@ const SMIWrapper = styled.section`
             }
         }
     }
+    @media only screen and (max-width: 990px) {
+        .hero-img{
+            width: 95%;
+            margin-top: 1.875rem;
+        }
+    }
     @media only screen and (max-width: 480px) {
         .logo{
             margin-top: 3.125rem;
