@@ -45,11 +45,17 @@ const Projects = () => {
                                     <h3>Meshery</h3>
                                     <p>Service Mesh Management</p>
                                     <Link to="#">
-                                        <img src={Icon} alt="Meshery, the service mesh management plane" />
+                                        <img
+                                            src={Icon}
+                                            alt="Meshery, the service mesh management plane"
+                                        />
                                     </Link>
                                 </div>
                                 <div className="project__block__inner">
-                                    <img src={projectImage4} alt="Business logic in the service mesh data plane" />
+                                    <img
+                                        src={projectImage4}
+                                        alt="Business logic in the service mesh data plane"
+                                    />
                                     <h3>Image Hub</h3>
                                     <p>WebAssembly Filters</p>
                                     <Link to="/projects/image-hub">
@@ -68,17 +74,15 @@ const Projects = () => {
                             <h4>Projects</h4>
 
                             <h2>
-                                Operate any service mesh <span>with confidence</span>.
+                Operate any service mesh <span>with confidence</span>.
                             </h2>
                         </SectionTitle>
                         <p className="project-text">
-                        Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. 
+              Layer5 projects establish industry standards and enable service
+              developers, owners, and operators with repeatable patterns and
+              best practices for managing all aspects of distributed services.
                         </p>
-                        <VintageBox
-                            right={true}
-                            vintageTwo={true}
-                            position="relative"
-                        >
+                        <VintageBox right={true} vintageTwo={true} position="relative">
                             <Button className="project-btn" title="Learn More" />
                         </VintageBox>
                     </Col>

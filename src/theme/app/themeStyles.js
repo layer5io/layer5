@@ -1,4 +1,4 @@
-const theme = {
+const lightTheme = {
     black: "#000000",
     white: "#ffffff",
 
@@ -42,15 +42,41 @@ const theme = {
     // flax (light yellow)
     highlightLightColor: "#EAD07D",
 
-    backgroundColor: "#1e2117"
+    //white
+    backgroundColor: "#ffffff",
+
+    //
+    navGridBackground: "#fafafa",
+
+    //
+    readMoreBtnColor: "rgba(0,0,0,0.35)"
+};
+const darkTheme = {
+    // caribbean green (light green)
+    menuColor: "#00b39f",
+
+    // charcoal
+    menuHoverColor: "#3c494f",
+
+    white: "#1e2117",
+    //white
+    textColor: "#ffffff",
+
+    // dark jungle green
+    backgroundColor: "#1e2117",
+
+    //
+    navGridBackground: "#1e2117",
+
+    //
+    readMoreBtnColor: "rgba(0, 179, 159,0.35)",
+    //rgba(0,255,0,0.3)
+
+    //
+    headingColor: "#ffffff"
 };
 
-export default theme;
-
-export const darkTheme = {
-    backgroundColor: "#1e2117"
-};
-
-export const lightTheme = {
-    backgroundColor: "#ffffff"
+module.exports = {
+    lightTheme,
+    darkTheme
 };

@@ -24,12 +24,14 @@ const Projects = () => {
                             UniWidth="75%"
                         >
                             <h4>PROJECTS</h4>
-                            <h2>
-                                Operate any service mesh <span>with confidence</span>.
+                            <h2 className="project-heading">
+                Operate any service mesh <span>with confidence</span>.
                             </h2>
                         </SectionTitle>
                         <p className="project-text">
-                        Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services.
+              Layer5 projects establish industry standards and enable service
+              developers, owners, and operators with repeatable patterns and
+              best practices for managing all aspects of distributed services.
                         </p>
                     </div>
                 </Row>
@@ -54,7 +56,10 @@ const Projects = () => {
                             </Link>
                         </Col>
                         <Col sm={12} md={6} lg={3}>
-                            <Link className="project-card" to="/projects/service-mesh-performance">
+                            <Link
+                                className="project-card"
+                                to="/projects/service-mesh-performance"
+                            >
                                 <div className="project__block__inner">
                                     <img src={projectImage2} alt="appion project" />
                                     <h5>Service Mesh Performance</h5>
@@ -65,7 +70,10 @@ const Projects = () => {
                         <Col sm={12} md={6} lg={3}>
                             <Link className="project-card" to="/projects/image-hub">
                                 <div className="project__block__inner">
-                                    <img src={projectImage4} alt="Business logic in the service mesh data plane" />
+                                    <img
+                                        src={projectImage4}
+                                        alt="Business logic in the service mesh data plane"
+                                    />
                                     <h5>Image Hub</h5>
                                     <p>WebAssembly Filters</p>
                                 </div>

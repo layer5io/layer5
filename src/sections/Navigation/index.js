@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
 import { FaBars } from "react-icons/fa";
@@ -11,130 +11,140 @@ import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 
 import NavigationWrap from "./navigation.style";
+import { DarkModeToggler } from "react-darkmode-toggler";
+import { ThemeManagerContext } from "gatsby-styled-components-dark-mode";
+import GlobalStyle from "../app.style";
 
 const Navigation = () => {
+    const themeContext = useContext(ThemeManagerContext);
     const data = useStaticQuery(
         graphql`
-            query  {
-                Projects: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: { eq: true } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
+      query {
+        Projects: allMdx(
+          sort: { fields: [frontmatter___date], order: DESC }
+          filter: {
+            fields: { collection: { eq: "projects" } }
+            frontmatter: { published: { eq: true } }
+          }
+          limit: 2
+        ) {
+          nodes {
+            id
+            frontmatter {
+              title
+              thumbnail {
+                childImageSharp {
+                  fixed(width: 240, height: 160, cropFocus: CENTER) {
+                    ...GatsbyImageSharpFixed_withWebp
+                  }
                 }
-                Learn: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "books" } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-                Community: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "events" } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-                Blog: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "blog" } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-                Home: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: { eq: true } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
+                extension
+                publicURL
+              }
             }
-        `
+            fields {
+              slug
+            }
+          }
+        }
+        Learn: allMdx(
+          sort: { fields: [frontmatter___date], order: DESC }
+          filter: { fields: { collection: { eq: "books" } } }
+          limit: 2
+        ) {
+          nodes {
+            id
+            frontmatter {
+              title
+              thumbnail {
+                childImageSharp {
+                  fixed(width: 240, height: 160, cropFocus: CENTER) {
+                    ...GatsbyImageSharpFixed_withWebp
+                  }
+                }
+                publicURL
+              }
+            }
+            fields {
+              slug
+            }
+          }
+        }
+        Community: allMdx(
+          sort: { fields: [frontmatter___date], order: DESC }
+          filter: { fields: { collection: { eq: "events" } } }
+          limit: 2
+        ) {
+          nodes {
+            id
+            frontmatter {
+              title
+              thumbnail {
+                childImageSharp {
+                  fixed(width: 240, height: 160, cropFocus: CENTER) {
+                    ...GatsbyImageSharpFixed_withWebp
+                  }
+                }
+                publicURL
+              }
+            }
+            fields {
+              slug
+            }
+          }
+        }
+        Blog: allMdx(
+          sort: { fields: [frontmatter___date], order: DESC }
+          filter: { fields: { collection: { eq: "blog" } } }
+          limit: 2
+        ) {
+          nodes {
+            id
+            frontmatter {
+              title
+              thumbnail {
+                childImageSharp {
+                  fixed(width: 240, height: 160, cropFocus: CENTER) {
+                    ...GatsbyImageSharpFixed_withWebp
+                  }
+                }
+                publicURL
+              }
+            }
+            fields {
+              slug
+            }
+          }
+        }
+        Home: allMdx(
+          sort: { fields: [frontmatter___date], order: DESC }
+          filter: {
+            fields: { collection: { eq: "projects" } }
+            frontmatter: { published: { eq: true } }
+          }
+          limit: 2
+        ) {
+          nodes {
+            id
+            frontmatter {
+              title
+              thumbnail {
+                childImageSharp {
+                  fixed(width: 240, height: 160, cropFocus: CENTER) {
+                    ...GatsbyImageSharpFixed_withWebp
+                  }
+                }
+                extension
+                publicURL
+              }
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    `
     );
     const [expand, setExpand] = useState(false);
     const [scroll, setScroll] = useState(false);
@@ -158,57 +168,86 @@ const Navigation = () => {
     };
 
     return (
-        <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
-            <Container>
-                <div className="navbar-wrap">
-                    <Link to="/" className="logo">
-                        <img src={layer5_logo} alt="Layer5 logo" />
-                    </Link>
-                    <nav className="nav">
-                        {expand ?
-                            <IoMdClose
-                                className="mobile-menu-icon open"
-                                onClick={function() {setExpand(!expand); closeDropDown();}}
-                            /> : <FaBars
-                                className="mobile-menu-icon"
-                                onClick={function() {setExpand(!expand); openDropDown();}}
-                            />
-                        }
-                        <div className="mobile-dropdown-container" ref={dropDownRef}>
-                            <div className="mobile-dropdown">
-                                <ul className="mobile-collapsed">
-                                    {Data.menuItems.map((menu, index) => (
-                                        <li
-                                            key={index}
-                                            className={
-                                                menu.subItems !== undefined ? "mobile-nav-item has-dropdown" : "mobile-nav-item"
-                                            }
-                                        >
-                                            <Link to={menu.path} onClick={changeDropdownState} className="menu-item">{menu.name}</Link>
-                                            <ul>
-                                                {menu.subItems !== undefined && menu.subItems.map((subItems, index) => (
-                                                    <li
-                                                        key={index}
-                                                        className="mobile-nav-subitem"
-                                                    >
-                                                        <Link to={subItems.path} onClick={changeDropdownState} className="sub-menu-item">{subItems.name}</Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </li>
-                                    ))}
-                                </ul>
+        <>
+            <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
+                <Container>
+                    <div className="navbar-wrap">
+                        <Link to="/" className="logo">
+                            <img src={layer5_logo} alt="Layer5 logo" />
+                        </Link>
+                        <nav className="nav">
+                            {expand ? (
+                                <IoMdClose
+                                    className="mobile-menu-icon open"
+                                    onClick={function () {
+                                        setExpand(!expand);
+                                        closeDropDown();
+                                    }}
+                                />
+                            ) : (
+                                <FaBars
+                                    className="mobile-menu-icon"
+                                    onClick={function () {
+                                        setExpand(!expand);
+                                        openDropDown();
+                                    }}
+                                />
+                            )}
+                            <div className="mobile-dropdown-container" ref={dropDownRef}>
+                                <div className="mobile-dropdown">
+                                    <ul className="mobile-collapsed">
+                                        {Data.menuItems.map((menu, index) => (
+                                            <li
+                                                key={index}
+                                                className={
+                                                    menu.subItems !== undefined
+                                                        ? "mobile-nav-item has-dropdown"
+                                                        : "mobile-nav-item"
+                                                }
+                                            >
+                                                <Link
+                                                    to={menu.path}
+                                                    onClick={changeDropdownState}
+                                                    className="menu-item"
+                                                >
+                                                    {menu.name}
+                                                </Link>
+                                                <ul>
+                                                    {menu.subItems !== undefined &&
+                            menu.subItems.map((subItems, index) => (
+                                <li key={index} className="mobile-nav-subitem">
+                                    <Link
+                                        to={subItems.path}
+                                        onClick={changeDropdownState}
+                                        className="sub-menu-item"
+                                    >
+                                        {subItems.name}
+                                    </Link>
+                                </li>
+                            ))}
+                                                </ul>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <ScrollspyMenu
-                            className={`collapsed ${expand ? "is-expanded" : ""}`}
-                            menuItems={Data.menuItems}
-                            blogData={data}
+                            <ScrollspyMenu
+                                className={`collapsed ${expand ? "is-expanded" : ""}`}
+                                menuItems={Data.menuItems}
+                                blogData={data}
+                            />
+                        </nav>
+                        <label htmlFor="darkMode"> toggle dark mode</label>
+                        <input
+                            id="darkMode"
+                            type="checkbox"
+                            onChange={() => themeContext.toggleDark()}
+                            checked={themeContext.isDark}
                         />
-                    </nav>
-                </div>
-            </Container>
-        </NavigationWrap>
+                    </div>
+                </Container>
+            </NavigationWrap>
+        </>
     );
 };
 
