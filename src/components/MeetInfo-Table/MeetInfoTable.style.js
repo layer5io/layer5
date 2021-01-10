@@ -41,6 +41,11 @@ export const TableWrapper = styled.div`
 			td {
 				border-right: 1px solid ${props => props.theme.white};
 			}
+			:nth-last-child(-n+2) {
+				td:first-child {
+					color: #ddd;
+				}
+			}
 		}
 	}
 `;
