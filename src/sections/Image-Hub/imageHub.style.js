@@ -62,6 +62,13 @@ const ImageHubWrapper = styled.section`
             margin-bottom: 3.125rem;
         }
     }
+    @media only screen and (max-width: 912px) {
+        .iframe-div{
+            height: 80%;
+            width: 100%;
+        }
+    }
+
     @media only screen and (max-width: 480px) {
         .banner{
             padding: 3.125rem 0 1.25rem 0;
