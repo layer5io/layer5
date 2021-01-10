@@ -23,9 +23,11 @@ const FooterWrapper = styled.section`
 	}
 
 	.desc-info {
-		color: #FFFFFF;
+		color: #ccc;
 		padding-right: 2.25rem;
 		font-style: italic;
+		font-weight: 200;
+		font-size: 1rem;
 	}
 
 	.footer-sections{
@@ -51,6 +53,7 @@ const FooterWrapper = styled.section`
 			padding: 0;
 			list-style: none;
 			margin: 0;
+			font-size: 1.063rem;
 
 			.category-link {
 				color: #CCCCCC;

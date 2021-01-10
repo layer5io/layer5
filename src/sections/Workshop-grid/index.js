@@ -123,6 +123,8 @@ const WorkshopsPage = ({hide_path, limit}) => {
                                     </div>
                                 </Col>
                             ))}
+                        </Row>
+                        <Row>
                             { limit && (
                                 <div className="see-more-button">
                                     <Button primary title="see more" url="workshops"/>

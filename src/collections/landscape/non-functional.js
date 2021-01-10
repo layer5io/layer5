@@ -439,17 +439,6 @@ export const non_functional=[{
     category: "Service Proxy"
 },
 {
-    name: "Contour",
-    opensource: "Yes",
-    link: "https://github.com/heptio/contour",
-    governance: "Heptio",
-    primary_lang: "Go",
-    announce_date: "October 2017",
-    ga_1_date: "October 2017",
-    commercial: "Heptio",
-    category: "API Gateway"
-},
-{
     name: "Citrix ADC",
     opensource: "No",
     link: "https://www.citrix.com/en-in/products/citrix-adc/",

@@ -97,6 +97,11 @@ const Data = {
                     sepLine: true
                 },
                 {
+                    name: "Service Mesh",
+                    path: "/learn/service-mesh",
+                    sepLine: true
+                },
+                {
                     name: "Workshops",
                     path: "/learn/workshops",
                     sepLine: true
