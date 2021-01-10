@@ -9,6 +9,7 @@ import { ProjectWrapper } from "./projectGrid.style";
 import Image from "../../components/image";
 import meshery from "../../assets/images/app/projects/meshery-logo-light.png";
 import landscape from "../../assets/images/app/projects/landscape.png";
+import smi from "../../assets/images/app/projects/smi.svg";
 import imagehub from "../../assets/images/image-hub/layer5-image-hub.png"; 
 
 const ProjectPage = ({data}) => {
@@ -45,6 +46,16 @@ const ProjectPage = ({data}) => {
                                         alt="Image Hub"
                                     />
                                     <h5>Image Hub</h5>
+                                </div>
+                            </Link>
+                        </Col>
+                        <Col xs={12} sm={6} lg={4}>
+                            <Link to="/projects/service-mesh-interface-conformance">
+                                <div className="project__block__inner">
+                                    <img src={smi}
+                                        alt="Service Mesh Interface Conformance" 
+                                    />
+                                    <h1>Service Mesh Interface Conformance</h1>
                                 </div>
                             </Link>
                         </Col>
