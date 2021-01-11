@@ -23,7 +23,6 @@ const About = () => {
                             leftAlign={false}
                             UniWidth="100%"
                         >
-                            {" "}
                             <h2>We are collaborators from around the globe</h2>
                             <img height="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
                             <h3>Join the community and collaborate on our projects</h3>

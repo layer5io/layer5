@@ -102,7 +102,6 @@ const InternshipSectionWrapper = styled.div`
             display: inline-flex;;
             font-weight: 400;
             line-height: 3.5rem;
-            vertical-align: middle;
         }
         &:hover{
             .arrow_icon{
