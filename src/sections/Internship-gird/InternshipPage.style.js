@@ -55,7 +55,7 @@ const InternshipSectionWrapper = styled.div`
         transition: all 0.2s;
         transition-timing-function: ease-in-out;
         h3{ 
-            font-weight: 600;
+            font-weight: 500;
         }
         p{
             margin: 0.5rem 0;
@@ -94,20 +94,20 @@ const InternshipSectionWrapper = styled.div`
         width: max-content;
         background: rgba(241,242,241,1);
         border-radius: 1rem;
-        text-align: left;
+        text-align: center;
+        justify-content: space-between;
         transition: all 0.2s;
         transition-timing-function: ease-in-out;
         h5{
             display: inline-flex;;
-            font-weight: 600;
-            line-height: 2.5rem;
-            vertical-align: top;
+            font-weight: 400;
+            line-height: 3.5rem;
+            vertical-align: middle;
         }
         &:hover{
             .arrow_icon{
                 background: #00D3A9;
                 left: 0.2rem;
-                color: black;
             }
         }
     }
@@ -118,8 +118,9 @@ const InternshipSectionWrapper = styled.div`
         margin: auto 0 auto 0.5rem;
         padding: 0;
         font-size: 1.25rem;
-        border-radius: 1rem;        
-        left: 0;
+        border-radius: 1rem; 
+        justify-content: center;       
+        right: 0;
         transition: all 0.2s;
     }
 

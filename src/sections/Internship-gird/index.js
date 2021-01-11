@@ -101,7 +101,7 @@ const InternshipPage = ({ hide_heading })=>{
                 </div>
                 <div className="oppurtunities">
                     <div>
-                        <h1>Internships</h1>
+                        <h2>Internships</h2>
                         <div className="grid">
                             <Row className="oppurtunities_row">
                                 {opportunities.internships.nodes.map((data) => (
@@ -111,7 +111,7 @@ const InternshipPage = ({ hide_heading })=>{
                         </div>
                     </div>
                     <div>
-                        <h1>Full-Time Opportunities</h1>
+                        <h2>Full-Time Opportunities</h2>
                         <div className="grid">
                             <Row className="oppurtunities_row full_time">
                                 {opportunities.jobs.nodes.map((data) => (
