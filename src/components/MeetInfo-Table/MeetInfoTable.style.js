@@ -21,14 +21,19 @@ export const TableWrapper = styled.div`
 			font-weight: 400;
 			border-bottom: 1px solid #efefef;
 			a {
-				color: rgb(98, 172, 205);
+				color: ${props => props.theme.primaryColor};
 				&:hover {
-					color: rgb(3, 155, 229);
+					color: ${props => props.theme.primaryLightColor};
 				}
+			}
+			:first-child {
+				background-color: ${props => props.theme.shadowColor};
+				font-weight: 600;
 			}
 		}
 		th {
-			background: rgb(71, 126, 150);
+			// background: rgb(71, 126, 150);
+			background: ${props => props.theme.primaryColor};
 			color: ${props => props.theme.white};
 			height: 4rem;
 			font-weight: 600;
@@ -39,12 +44,15 @@ export const TableWrapper = styled.div`
 		tr {
 			background: ${props => props.theme.white};
 			td {
-				border-right: 1px solid ${props => props.theme.white};
 			}
 			:nth-last-child(-n+2) {
 				td:first-child {
-					color: #ddd;
+					color: #888;
 				}
+			}
+			&:hover {
+				background-color: ${props => props.theme.shadowColor};
+				border-color:  ${props => props.theme.shadowColor};
 			}
 		}
 	}
