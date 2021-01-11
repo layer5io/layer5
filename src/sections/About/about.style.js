@@ -53,9 +53,11 @@ const AboutSectionWrapper = styled.section`
   }
   .section-title {
     h2 {
-      margin-bottom: 18px;
-      margin-top: 28px;
+      margin-bottom: 1rem;
     }
+  }
+  .section-bottom {
+    margin-bottom: 5rem;
   }
 
   @media only screen and (max-width: 1400px) {

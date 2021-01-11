@@ -17,6 +17,29 @@ const About = () => {
         <AboutSectionWrapper id="about">
             <Container fullWidthSM>
                 <Row Vcenter={true}>
+                    <Col xs={12} sm={12}>
+                        <SectionTitle
+                            className="section-title section-bottom"
+                            leftAlign={false}
+                            UniWidth="100%"
+                        >
+                            {" "}
+                            <h2>We are collaborators from around the globe</h2>
+                            <img height="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
+                            <h3>Join the community and collaborate on our projects</h3>
+                            <VintageBox left={true} vintageTwo={true} >
+                                <Button
+                                    primary
+                                    className="about-button"
+                                    url="/community"
+                                    title="Start Contributing"
+                                    external="false"
+                                />
+                            </VintageBox>
+                        </SectionTitle>
+                    </Col>
+                </Row>
+                <Row Vcenter={true}>
                     <Col xs={12} sm={6}>
                         <SectionTitle
                             className="section-title"
@@ -59,23 +82,23 @@ const About = () => {
                                             <br />
                                             
                         701 Brazos Street, Suite 1600
-                                                <br />
+                                            <br />
                         Austin, TX 78701
                                         </p>
                                     </div>
                                 </Col>
                                 <Col xs={12} sm={6}>
                                     <h4>
-                                    <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
-                                    <img src={location} className="location" alt="Layer5 locations" /></a>Scotland</h4>
+                                        <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
+                                            <img src={location} className="location" alt="Layer5 locations" /></a>Scotland</h4>
                                     <p>
                     Layer5, Inc., 
                     Engineering
                                         <br />
                       3 Queen Street 
-                      <br />
+                                        <br />
                       Edinburgh, EH2 1JE
-                      <br />
+                                        <br />
                       United Kingdom
                                     </p>
                                 </Col>
@@ -101,27 +124,6 @@ const About = () => {
                                     external="false"
                                 />
                             </VintageBox>
-                        </SectionTitle>
-                    </Col>
-                </Row>
-                <Row Vcenter={true}>
-                    <Col xs={12} sm={12}>
-                        <SectionTitle
-                            className="section-title"
-                            leftAlign={false}
-                            UniWidth="100%"
-                        >
-                            {" "}
-                            <h2>Collaborators from around the globe</h2>
-                            <img height="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
-                            <h3>Join the community and collaborate on our projects</h3>
-                            <Button
-                                primary
-                                className="about-button"
-                                url="/community"
-                                title="Start Contributing"
-                                external="false"
-                            />
                         </SectionTitle>
                     </Col>
                 </Row>
