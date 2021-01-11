@@ -32,6 +32,10 @@ const AboutSectionWrapper = styled.section`
     margin-bottom: 3.5rem;
     margin-top: 1rem;
   }
+  .location {
+    display: inline;
+    height: 1.75rem;
+  }
   .about-thumb {
     width: 100%;
     transform: translateX(-80px);

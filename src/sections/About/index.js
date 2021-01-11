@@ -8,6 +8,7 @@ import AboutSectionWrapper from "./about.style";
 import collabMap from "./images/layer5-collaboration-map.svg";
 import layer5BusCard from "./images/layer5-business-card-photo_med.jpg";
 import layer5BusCard2 from "./images/layer5-bus-card.jpg";
+import location from "./images/location.svg";
 
 
 
@@ -51,30 +52,31 @@ const About = () => {
                                 <Col xs={12} sm={6}>
                                     
                                     <div className="section">
-                                        <h4>USA</h4>
+                                        <h4><a href="https://goo.gl/maps/3oeuqrsMtHPQSTmQ8"><img src={location} className="location" alt="Layer5 locations" /></a>USA</h4>
                                         <p>
-                      Layer5, Inc.
-                                            <br />
+                      Layer5, Inc., 
                       Corporate Headquarters
                                             <br />
-                                            <a href="https://goo.gl/maps/3oeuqrsMtHPQSTmQ8">
+                                            
                         701 Brazos Street, Suite 1600
                                                 <br />
                         Austin, TX 78701
-                                            </a>
                                         </p>
                                     </div>
                                 </Col>
                                 <Col xs={12} sm={6}>
-                                    <h4>Scotland, UK</h4>
+                                    <h4>
+                                    <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
+                                    <img src={location} className="location" alt="Layer5 locations" /></a>Scotland</h4>
                                     <p>
-                    Layer5, Inc.
-                                        <br />
+                    Layer5, Inc., 
                     Engineering
                                         <br />
-                                        <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
-                      3 Queen Street Edinburgh, EH2 1JE
-                                        </a>
+                      3 Queen Street 
+                      <br />
+                      Edinburgh, EH2 1JE
+                      <br />
+                      United Kingdom
                                     </p>
                                 </Col>
                             </Row>
