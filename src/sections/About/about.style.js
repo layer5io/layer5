@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const AboutSectionWrapper = styled.section`
-  padding: 120px 0 100px 0;
+  margin: 1rem 0 5rem
   position: relative;
   overflow: hidden;
   .section__particle {
@@ -20,7 +20,22 @@ const AboutSectionWrapper = styled.section`
       left: -22px;
     }
   }
-
+  .busCard {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .busCard2 { 
+      margin:4rem; 
+      width:90%;
+  }
+  .contactButton {
+    margin-bottom: 3.5rem;
+    margin-top: 1rem;
+  }
+  .location {
+    display: inline;
+    height: 1.75rem;
+  }
   .about-thumb {
     width: 100%;
     transform: translateX(-80px);
@@ -38,9 +53,11 @@ const AboutSectionWrapper = styled.section`
   }
   .section-title {
     h2 {
-      margin-bottom: 18px;
-      margin-top: 28px;
+      margin-bottom: 1rem;
     }
+  }
+  .section-bottom {
+    margin-bottom: 5rem;
   }
 
   @media only screen and (max-width: 1400px) {
