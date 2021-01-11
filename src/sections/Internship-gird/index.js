@@ -6,6 +6,8 @@ import Button from "../../reusecore/Button";
 import {FaArrowRight} from "react-icons/fa";
 import InternshipSectionWrapper from "./InternshipPage.style";
 import ProgramsGrid from "../Programs-grid/index";
+import UEM_Img from "../../assets/images/partners/uem_partner.png";
+import Univ_Texas_Img from "../../assets/images/partners/texas_partner.png";
 
 const InternshipPage = ({ hide_heading })=>{
     const opportunities = useStaticQuery(
@@ -68,8 +70,8 @@ const InternshipPage = ({ hide_heading })=>{
         <Col className="opportunity-col">
             <Link to={fields.slug}>
                 <div className="opportunity-card">
-                    <h5>{frontmatter.title}</h5>
-                    <Button primary title={<FaArrowRight />} className="oppurtunity_icon" />
+                    <h3>{frontmatter.title}</h3>
+                    <p>{frontmatter.abstract}</p>
                 </div>
             </Link>
         </Col>
@@ -99,7 +101,7 @@ const InternshipPage = ({ hide_heading })=>{
                 </div>
                 <div className="oppurtunities">
                     <div>
-                        <h1>Internships</h1>
+                        <h2>Internships</h2>
                         <div className="grid">
                             <Row className="oppurtunities_row">
                                 {opportunities.internships.nodes.map((data) => (
@@ -109,7 +111,7 @@ const InternshipPage = ({ hide_heading })=>{
                         </div>
                     </div>
                     <div>
-                        <h1>Full-Time Opportunities</h1>
+                        <h2>Full-Time Opportunities</h2>
                         <div className="grid">
                             <Row className="oppurtunities_row full_time">
                                 {opportunities.jobs.nodes.map((data) => (
@@ -125,19 +127,25 @@ const InternshipPage = ({ hide_heading })=>{
                         <h1>Participating Partners</h1>
                         <div className="grid">
                             <Row className="oppurtunities_row">
-                                <Col className="opportunity-col">
+                                <Col className="partner-col">
                                     <a href="https://layer5.io/assets/careers/internships/UT%20Austin%20Boot%20Camp%20-%20Meshery%20Flyer.pdf" target="_blank" rel="noreferrer">
-                                        <div className="opportunity-card">
+                                        <div className="partners-card">
+                                            <div className="partner-image">
+                                                <img src={Univ_Texas_Img} alt="University of Texas, Austin" />
+                                            </div>
                                             <h5>UT Austin Coding Boot Camp</h5>
-                                            <Button primary title={<FaArrowRight />} className="oppurtunity_icon" />
+                                            <Button secondary title={<FaArrowRight />} className="arrow_icon" />
                                         </div>
                                     </a>
                                 </Col>
-                                <Col className="opportunity-col">
+                                <Col className="partner-col">
                                     <a href="https://layer5.io/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf" target="_blank" rel="noreferrer">
-                                        <div className="opportunity-card">
+                                        <div className="partners-card">
+                                            <div className="partner-image">
+                                                <img src={UEM_Img} alt="UEM Jaipur" />
+                                            </div>
                                             <h5>UEM Jaipur</h5>
-                                            <Button primary title={<FaArrowRight />} className="oppurtunity_icon" />
+                                            <Button secondary title={<FaArrowRight />} className="arrow_icon" />
                                         </div>
                                     </a>
                                 </Col>

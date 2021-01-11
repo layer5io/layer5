@@ -1,15 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
-
 import { ThemeProvider } from "styled-components";
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-
 import Navigation from "../sections/Navigation";
 import CareerSingle from "../sections/Career-single";
 import Footer from "../sections/Footer";
-
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
@@ -18,7 +14,12 @@ export const query = graphql`
         mdx(fields: { slug: { eq: $slug } }) {
             body
             frontmatter {
-                title
+                title,
+                type,
+                start_date,
+                duration,
+                salary,
+                apply_by
             }
         }
     }
