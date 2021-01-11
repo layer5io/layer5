@@ -18,6 +18,10 @@ const Calendar = () => {
                 accessor: "meeting",
             },
             {
+                Header: "Day",
+                accessor: "day",
+            },
+            {
                 Header: "Slack Channel",
                 id: "slack_channel",
                 accessor: meet_links_data => {

@@ -32,7 +32,6 @@ export const TableWrapper = styled.div`
 			}
 		}
 		th {
-			// background: rgb(71, 126, 150);
 			background: ${props => props.theme.primaryColor};
 			color: ${props => props.theme.white};
 			height: 4rem;
@@ -49,6 +48,10 @@ export const TableWrapper = styled.div`
 				td:first-child {
 					font-style: italic;
 				}
+			}
+			/* Highlight Community Calendar */
+			:nth-child(6) {
+				background: rgb(0, 179, 159, .2);
 			}
 			&:hover {
 				background-color: ${props => props.theme.shadowColor};
