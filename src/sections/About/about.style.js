@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const AboutSectionWrapper = styled.section`
-  padding: 120px 0 100px 0;
+  margin: 1rem 0 5rem
   position: relative;
   overflow: hidden;
   .section__particle {
