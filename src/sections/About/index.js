@@ -6,6 +6,10 @@ import VintageBox from "../../reusecore/VintageBox";
 import SocialLinks from "../../components/SocialLinks";
 import AboutSectionWrapper from "./about.style";
 import collabMap from "./images/layer5-collaboration-map.svg";
+import layer5BusCard from "./images/layer5-business-card-photo_med.jpg";
+import layer5BusCard2 from "./images/layer5-bus-card.jpg";
+
+
 
 const About = () => {
     return (
@@ -38,25 +42,14 @@ const About = () => {
                 community and its projects forward.
                             </p>
                         </div>
-                        <div className="about-text text-two">
-                            <h3>
-                                <a href="http://slack.layer5.io">Collaborate</a>
-                            </h3>
-                            <p>
-                                <a className="anchor" href="/community">
-                  Join the community
-                                </a>{" "}
-                and collaborate on our projects.
-                            </p>
-                            <SocialLinks />
-                        </div>
-                    </Col>
 
+                    </Col>
                     <Col xs={12} sm={6}>
+                        <img src={layer5BusCard} alt="Layer5 Business Cards" className="busCard" />
                         <div>
                             <Row>
                                 <Col xs={12} sm={6}>
-                                    <h3>Locations</h3>
+                                    
                                     <div className="section">
                                         <h4>USA</h4>
                                         <p>
@@ -72,9 +65,7 @@ const About = () => {
                                         </p>
                                     </div>
                                 </Col>
-
                                 <Col xs={12} sm={6}>
-                                    <br />
                                     <h4>Scotland, UK</h4>
                                     <p>
                     Layer5, Inc.
@@ -87,16 +78,28 @@ const About = () => {
                                     </p>
                                 </Col>
                             </Row>
-                            <VintageBox right={false} vintageTwo={true} position="relative">
+                            
+                        </div>
+                    </Col>           
+                </Row>
+                <Row className="contactButton">
+                    <Col xs={12} sm={12}>
+                        <SectionTitle
+                            className="section-title"
+                            leftAlign={false}
+                            UniWidth="100%"
+                        >
+                            {" "}
+                            <VintageBox right={true} vintageTwo={true} >
                                 <Button
                                     primary
                                     className="about-button"
-                                    url="mailto:hello@layer5.io"
+                                    url="/company/contact"
                                     title="Contact Us"
-                                    external="true"
+                                    external="false"
                                 />
                             </VintageBox>
-                        </div>
+                        </SectionTitle>
                     </Col>
                 </Row>
                 <Row Vcenter={true}>

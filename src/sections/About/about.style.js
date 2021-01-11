@@ -20,7 +20,18 @@ const AboutSectionWrapper = styled.section`
       left: -22px;
     }
   }
-
+  .busCard {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .busCard2 { 
+      margin:4rem; 
+      width:90%;
+  }
+  .contactButton {
+    margin-bottom: 3.5rem;
+    margin-top: 1rem;
+  }
   .about-thumb {
     width: 100%;
     transform: translateX(-80px);
