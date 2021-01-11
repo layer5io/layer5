@@ -33,44 +33,13 @@ const Table = ({ columns, data }) => {
                         prepareRow(row);
                         return (
                             <tr key={`row${i}`} {...row.getRowProps()}>
-                                {row.cells.map(cell => {
-                                    if( cell["column"]["id"] === "meeting" ){
-                                        return <td {...cell.getCellProps()}>
-                                            {cell.render("Cell")}
-                                        </td>;
-                                    }
-                                    else if(cell["column"]["id"] === "slack_channel"){
-                                        return <td {...cell.getCellProps()}>
-                                            <a href={row["original"]["slack_link"]}>
+                                {row.cells.map((cell, index) => {
+                                    {
+                                        return (
+                                            <td key={index} {...cell.getCellProps()}>
                                                 {cell.render("Cell")}
-                                            </a>
-                                        </td>;
-                                    }
-                                    else if(cell["column"]["id"] === "meeting_minutes"){
-                                        return <td {...cell.getCellProps()}>
-                                            <a href={row["original"]["meeting_minutes"]}>
-                                                {cell.render("Cell", {value: "Minutes"})}
-                                            </a>
-                                        </td>;
-                                    }
-                                    else if(cell["column"]["id"] === "meeting_link"){
-                                        return <td {...cell.getCellProps()}>
-                                            <a href={row["original"]["meeting_link"]}>
-                                                {cell.render("Cell", {value: "Zoom"})}
-                                            </a>
-                                        </td>;
-                                    }
-                                    else if(cell["column"]["id"] === "meeting_recordings"){
-                                        if(row["original"]["slack_channel"] === "#smi") {
-                                            return <td {...cell.getCellProps()}>
-                                                {cell.render("Cell", {value: "N/A"})}
-                                            </td>;
-                                        }
-                                        return <td {...cell.getCellProps()}>
-                                            <a href={row["original"]["meeting_recordings"]}>
-                                                {cell.render("Cell", {value: "Youtube"})}
-                                            </a>
-                                        </td>;
+                                            </td>
+                                        );
                                     }
                                 })}
                             </tr>

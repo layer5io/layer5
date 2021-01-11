@@ -19,19 +19,63 @@ const Calendar = () => {
             },
             {
                 Header: "Slack Channel",
-                accessor: "slack_channel",
+                id: "slack_channel",
+                accessor: meet_links_data => {
+                    return (
+                        <>
+                            {
+                                <a href={meet_links_data.slack_link}>
+                                    {meet_links_data.slack_channel}
+                                </a>
+                            }
+                        </>
+                    );
+                }
             },
             {
                 Header: "Meeting Minutes",
-                accessor: "meeting_minutes",
+                id: "meeting_minutes",
+                accessor: meet_links_data => {
+                    return (
+                        <>
+                            {
+                                <a href={meet_links_data.meeting_minutes}>
+                                    Minutes
+                                </a>
+                            }
+                        </>
+                    );
+                }
             },
             {
                 Header: "Meeting Link",
-                accessor: "meeting_link",
+                id: "meeting_link",
+                accessor: meet_links_data => {
+                    return (
+                        <>
+                            {
+                                <a href={meet_links_data.meeting_link}>
+                                    Zoom
+                                </a>
+                            }
+                        </>
+                    );
+                }
             },
             {
                 Header: "Meeting Recordings",
-                accessor: "meeting_recordings",
+                id: "meeting_recordings",
+                accessor: meet_links_data => {
+                    return (
+                        <>
+                            {meet_links_data.slack_channel !== "#smi" ?
+                                <a href={meet_links_data.meeting_recordings}>
+                                    Youtube
+                                </a>: "N/A"
+                            }
+                        </>
+                    );
+                }
             },
         ],
         []
@@ -79,7 +123,7 @@ const Calendar = () => {
                         </div>
                     </div>
                 </Container>
-                <Table columns={columns} data={data}/>
+                <Table columns={columns} data={data} />
             </div>
         </CalendarStyleWrapper>
     );
