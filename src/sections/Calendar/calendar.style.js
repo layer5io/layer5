@@ -77,51 +77,6 @@ const CalendarStyleWrapper = styled.div`
             width: 57rem;
         }
     }
-    .meetings-table-container {
-        padding: 1rem;
-        height: fit-content;
-        margin-bottom: 1.25rem;
-        background: ${props => props.theme.white};
-    }
-    .meetings-table-title {
-        margin-bottom: 1rem;
-    }
-    .meetings-table {
-        border-collapse: collapse;
-        width: 100%;
-        a {
-            color: #039be5;
-        }
-        td, th {
-            padding: 15px 5px;
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-            border-radius: 2px;
-        }
-    }
-    .meetings-table th {
-        background-color: #477e96;
-        font-weight: bold;
-        color: white;
-        border-radius: 0px;
-    }
-    .meetings-table tr:nth-child(even) {
-        background-color: #e8e8e8;
-    }
-    .meetings-table td.first {
-        text-align: right;
-        background-color: #647881;
-        color: white;
-        border-collapse: collapse;
-        border: 1px dashed aliceblue;
-    }
-    .meetings-table td {
-        outline: 1px solid #dcdcdc;
-        text-align: center;
-        padding: 0.625rem;
-        column-gap: 5rem;
-    }
 `;
 
 export default CalendarStyleWrapper;

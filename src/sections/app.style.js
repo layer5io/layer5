@@ -248,7 +248,7 @@ p {
     }
 }
 
-a{
+a {
     text-decoration: none;
     color: ${(props) => props.theme.linkColor};
     &:hover{

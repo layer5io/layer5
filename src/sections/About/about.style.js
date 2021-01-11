@@ -74,6 +74,17 @@ const AboutSectionWrapper = styled.section`
       }
     }
   }
+  @media screen and (max-width: 1200px) {
+    .section-bottom {
+      h2 {
+        margin-bottom: -4rem;
+      }
+
+      img {
+        margin-bottom: -5rem;
+      }
+    }
+  }
   @media only screen and (max-width: 1024px) {
     .section__particle {
       &.one {
@@ -82,12 +93,21 @@ const AboutSectionWrapper = styled.section`
     }
   }
   @media only screen and (max-width: 912px) {
-    padding: 100px 0 60px 0;
+    padding: 2rem 0 0;
     .section-title h2 {
       margin-bottom: 20px;
+      font-size: 2.125rem;
+      line-height: normal;
     }
     .about-text.text-two {
       margin-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 911px) and (min-width: 569px) {
+    .section-bottom {
+      h2 {
+        margin-bottom: -8rem;
+      }
     }
   }
   @media only screen and (max-width: 760px) {
