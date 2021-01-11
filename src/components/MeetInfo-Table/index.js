@@ -39,6 +39,11 @@ const Table = ({ columns, data }) => {
                                             {cell.render("Cell")}
                                         </td>;
                                     }
+                                    else if( cell["column"]["id"] === "day" ){
+                                        return <td {...cell.getCellProps()}>
+                                            {cell.render("Cell")}
+                                        </td>;
+                                    }
                                     else if(cell["column"]["id"] === "slack_channel"){
                                         return <td {...cell.getCellProps()}>
                                             <a href={row["original"]["slack_link"]}>

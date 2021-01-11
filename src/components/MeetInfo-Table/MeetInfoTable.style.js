@@ -47,7 +47,7 @@ export const TableWrapper = styled.div`
 			}
 			:nth-last-child(-n+2) {
 				td:first-child {
-					color: #888;
+					font-style: italic;
 				}
 			}
 			&:hover {
