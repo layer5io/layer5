@@ -93,21 +93,38 @@ As we move towards average latency, the overhead gets slightly amortized but is 
                             </Col>
                         </Row>
                     </div>
-                    <div className="smp-effects">
+                </Container>
+                <div className="smp-effects">
+                    <Container>
                         <div className="effects-title">
                             <h1> Discreetly Studying the Effects of Individual Traffic Control Functions</h1>
                             <h4> The group is also working in collaboration with the Envoy project to create easy-to-use tooling around distributed performance management (distributed load generation and analysis) in context of Istio, Consul, Tanzu Service Mesh, Network Service Mesh, App Mesh, Linkerd, and so on. </h4>
                         </div>
+                    </Container>
+                    <div>
+                        <Row>
+                            <iframe width="33%" height="300px" src="https://www.youtube.com/embed/rgnb0-ntPko"
+                                frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"allowFullScreen>
+                            </iframe>
+                            <iframe	width="33%" height="300px" src="https://www.youtube.com/embed/LxP-yHrKL4M"	
+                                frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"	allowFullScreen>	
+                            </iframe>
+                            <iframe	width="33%" height="300px" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000"	
+                                frameBorder="0" allowFullScreen mozallowfullscreen="true"	webkitallowfullscreen="true">	
+                            </iframe>	
+                        </Row>
                     </div>
-                    <div className="cncf-callout">
-                        <h1> Join the CNCF Service Mesh Working Group </h1>
-                        <h4> Learn more about these initiatives</h4>
-                        <Button primary title="Learn More"></Button>
-                    </div>
-                </Container>
+                </div>
+                <div className="cncf-callout">
+                    <h1> Join the CNCF Service Mesh Working Group </h1>
+                    <h4> Learn more about these initiatives</h4>
+                    <Button primary title="Learn More"></Button>
+                </div>
                 <div className="layer5-callout">
-                    <h2> Check Out the Layer5 community and join us on Slack</h2> 
-                    <Button primary title="Let's go"></Button>                   
+                    <div className="callout-text">
+                        <h2> Check Out the Layer5 community and join us on Slack</h2> 
+                        <Button primary title="Let's go"></Button>   
+                    </div>                
                 </div>
             </SMPWrapper>
         </Layout>

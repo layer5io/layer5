@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import smp_bg from "./smp-hero.png";
+import callout from "./callout.svg";
 
 const SMPWrapper = styled.section`
     .smp-hero{
@@ -63,14 +64,36 @@ const SMPWrapper = styled.section`
             h1{
                 margin-bottom: 30px;
             }
+            img{
+                max-height: 500px;
+            }
         }
     }
     .smp-effects{
         .effects-title{
-            margin: 50px auto 100px auto;
+            margin: 50px auto 50px auto;
             text-align: center;
             h1{
                 margin-bottom: 20px;
+            }
+        }
+    }
+    .cncf-callout{
+        margin: 120px auto;
+        text-align: center;
+        h1, h4{
+            margin-bottom: 30px;
+        }
+    }
+    .layer5-callout{
+        background-image: url(${callout});
+        height: 575px; 
+        .callout-text{
+            margin: auto;
+            vertical-align: middle;
+            text-align: center;
+            h1{
+                color: ${props => props.theme.white};
             }
         }
     }
