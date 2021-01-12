@@ -5,7 +5,7 @@ import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
 import {FaArrowRight} from "react-icons/fa";
 import InternshipSectionWrapper from "./InternshipPage.style";
-import ProgramsGrid from "../Programs-grid/index";
+import ProgramsGrid from "../Careers-Programs-grid/index";
 import UEM_Img from "../../assets/images/partners/uem_partner.png";
 import Univ_Texas_Img from "../../assets/images/partners/texas_partner.png";
 
@@ -80,25 +80,20 @@ const InternshipPage = ({ hide_heading })=>{
     return (
         <InternshipSectionWrapper>
             { !hide_heading && (
-                <PageHeader title="Internships" path="Careers > Internships"/>
+                <PageHeader title="Internships at Layer5" path="Careers > Internships" subtitle="Available Opportunities"/>
             )}
             <Container>
-                <div className="oppurtunities-text">
-                    <h1>Available Opportunities</h1>
-                    <p>
-                        The key component of these projects is our community of contributors.
-                        Some contributors intern under the Google Summer of Code program, while others intern unpaid directly with Layer5.
-                        Irrespective, your contributions will affect people you've never met as the Layer5 projects are
-                        being broadly referenced and used in organizations large and small.
-                    </p>
-                    <p>
-                        The Layer5 community includes software engineers, researchers, students, artists, system administrators,
-                        operators and web designers -- all of whom will be happy to help you get started.
-                        We believe that all contributors should expect and be part of a safe and friendly environment for constructive contribution.
-                        We can more effectively and successfully compare and challenge different ideas to find the best solutions for advancement,
-                        while building the size, diversity, and strength of our community.
-                    </p>
-                </div>
+                <p>
+                    At Layer5, we take our internships seriously. Interns are expected to work hard, learn much, and be recognized for doing so. Past interns have presented their projects at KubeCon, DockerCon, and similar technical conferences.
+                </p>
+                <p>
+                    Our community of contributors is the key ingredient to the success of every one of our projects. Interns engage as part of the community. Whether interning directly with Layer5 or through one of Layer5's partner programs, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small.
+                </p>
+                <p>
+                    The Layer5 community includes software engineers, researchers, students, artists, system administrators,
+                    operators and web designers -- all of whom will be happy to help you get started. We believe that all contributors should be afforded a safe and friendly environment for constructive learning. Our projects are improved through diversity and empathic community.
+                </p>
+
                 <div className="oppurtunities">
                     <div>
                         <h2>Internships</h2>

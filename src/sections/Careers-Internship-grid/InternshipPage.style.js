@@ -10,16 +10,7 @@ const InternshipSectionWrapper = styled.div`
     .grid{
         margin: 1rem 0;
     }
-
-    .oppurtunities-text{
-        margin: auto;
-        text-align: center;
-    }
-    .oppurtunities-text p{
-        color: rgba(30,33,23,0.6);
-        margin: 0;
-    }
-    
+  
     .oppurtunities{
         margin: 3rem auto;
         text-align: center;

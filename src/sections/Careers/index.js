@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "../../reusecore/Layout";
 import { Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import InternshipPage from "../Internship-gird";
+import InternshipPage from "../Careers-Internship-grid";
 import Lee_and_Rigs from "../../assets/images/careers/Lee-and-Rigs-Caballero-of-Google.jpeg";
 import Lee_giveaway from "../../assets/images/careers/Lee-giving-away-free-t-shirts-at-UT-Austin.jpeg";
 import JoinCommunity from "../Join-community";

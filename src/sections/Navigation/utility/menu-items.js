@@ -6,8 +6,8 @@ import communityGreen from "../../../assets/images/community/community-green.svg
 const Data = {
     menuItems: [
         {
-            // name: "Home",
-            // path: "/",
+            name: "Landscape",
+            path: "/service-mesh-landscape",
             // subItems: [
             //     {
             //         name: "Current Home",
@@ -46,6 +46,16 @@ const Data = {
             path: "/projects",
             subItems: [
                 {
+                    name: "Distributed Performance",
+                    path: "/projects/distributed-performance-management-of-service-meshes",
+                    sepLine: true
+                },
+                {
+                    name: "Image Hub",
+                    path: "/projects/image-hub",
+                    sepLine: true
+                },
+                {
                     name: "Meshery",
                     path: "/meshery",
                     sepLine: true
@@ -56,25 +66,15 @@ const Data = {
                     sepLine: true
                 },
                 {
-                    name: "Service Mesh Performance",
-                    path: "/projects/service-mesh-performance",
-                    sepLine: true
-                },
-                {
                     name: "Service Mesh Interface",
                     path: "/projects/service-mesh-interface-conformance",
                     sepLine: true
                 },
                 {
-                    name: "Image Hub",
-                    path: "/projects/image-hub",
+                    name: "Service Mesh Performance",
+                    path: "/projects/service-mesh-performance",
                     sepLine: true
-                },
-                {
-                    name: "Distributed Performance",
-                    path: "/projects/distributed-performance-management-of-service-meshes",
-                    sepLine: true
-                }
+                }               
             ],
             actionName: "Projects",
             actionLink: "/projects",
@@ -97,7 +97,7 @@ const Data = {
                     sepLine: true
                 },
                 {
-                    name: "Service Mesh",
+                    name: "Service Mesh Labs",
                     path: "/learn/service-mesh",
                     sepLine: true
                 },
@@ -122,6 +122,11 @@ const Data = {
             name: "Community",
             path: "/community",
             subItems: [
+                {
+                    name: "Calendar",
+                    path: "/community/calendar",
+                    sepLine: true
+                },
                 {
                     name: "Join!",
                     path: "/community",
@@ -150,12 +155,6 @@ const Data = {
                     path: "/community/events",
                     sepLine: true
                 },
-                {
-                    name: "Calendar",
-                    path: "/community/calendar",
-                    sepLine: true
-                },
-
             ],
             actionName: "Meet the community",
             actionLink: "/community",
