@@ -4,9 +4,9 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import googleCalendarPlugin from "@fullcalendar/google-calendar";
-import { Container } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
-import Table from "../../components/MeetInfo-Table";
+import { Container } from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
+import Table from "../../../components/MeetInfo-Table";
 import { meet_links_data } from "./meetLinksData";
 
 const Calendar = () => {

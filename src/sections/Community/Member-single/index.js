@@ -2,14 +2,14 @@ import React from "react";
 import {Link} from "gatsby";
 import { MemberSingleWrapper } from "./memberSingle.style";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
-import {Col, Container, Row} from "../../reusecore/Layout";
-import Image from "../../components/image";
-import MeshMateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
+import {Col, Container, Row} from "../../../reusecore/Layout";
+import Image from "../../../components/image";
+import MeshMateIcon from "../../../assets/images/meshmate/meshmate-icon.svg";
 import mesheryLogo from "./meshery-logo-light.svg";
 import mesheryOperatorLogo from "./meshery-operator-dark.svg";
 import smpLogo from "./smp-dark-text.svg";
 import landscapeLogo from "./landscape-green.png";
-import getNighthawkLogo from "../../assets/images/meshmate/meshmate-icon.svg";
+import getNighthawkLogo from "../../../assets/images/meshmate/meshmate-icon.svg";
 import communityLogo from "./community-green.svg";
 import imageHubLogo from "./layer5-image-hub.svg";
 

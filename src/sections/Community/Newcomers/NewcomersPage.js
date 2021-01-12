@@ -1,11 +1,11 @@
 import React from "react";
 import NewcomersPageWrapper from "./NewcomersPageWrapper.style";
-import Image1 from "../../assets/images/newcomers/Rectangle 399.svg";
-import Image2 from "../../assets/images/newcomers/Rectangle 401.svg";
-import Image3 from "../../assets/images/newcomers/Rectangle 402.svg";
-import Image4 from "../../assets/images/newcomers/Rectangle 403.svg";
-import data from "../../assets/data/tutorials/index";
-import Button from "../../reusecore/Button";
+import Image1 from "../../../assets/images/newcomers/Rectangle 399.svg";
+import Image2 from "../../../assets/images/newcomers/Rectangle 401.svg";
+import Image3 from "../../../assets/images/newcomers/Rectangle 402.svg";
+import Image4 from "../../../assets/images/newcomers/Rectangle 403.svg";
+import data from "../../../assets/data/tutorials/index";
+import Button from "../../../reusecore/Button";
 
 const NewcomersPage = () => {
     return (

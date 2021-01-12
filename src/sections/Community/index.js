@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
-import JoinCommunity from "../Join-community";
+import JoinCommunity from "../Community/Join-community";
 import PictureSlider from "./slider";
 import {FaArrowRight} from "react-icons/fa";
 import CommunitySectionWrapper from "./community.style";

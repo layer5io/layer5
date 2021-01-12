@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
-import ProfileCard from "../../components/Profile-card";
-import { MembersGridWrapper } from "../../sections/Members-grid/membersGrid.style";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
+import ProfileCard from "../../../components/Profile-card";
+import { MembersGridWrapper } from "../../../sections/Members-grid/membersGrid.style";
 import ProgramDetails from "./ProgramDetails";
-import EmeritusGrid from "../Emeritus-grid";
+import EmeritusGrid from "../Community/Emeritus-grid";
 import { useStaticQuery, graphql } from "gatsby";
 
 const MeshmatesGrid=() => {
