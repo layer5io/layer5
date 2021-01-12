@@ -4,8 +4,8 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import ProfileCard from "../../../components/Profile-card";
 import Button from "../../../reusecore/Button";
-import communityImg from "../../assets/images/community/community-green.svg";
-import MeshmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
+import communityImg from "../../../assets/images/community/community-green.svg";
+import MeshmateIcon from "../../../assets/images/meshmate/meshmate-icon.svg";
 import {Link} from "gatsby";
 
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Row, Col } from "../../../../reusecore/Layout";
-import ProfileCard from "../../../../components/Profile-card";
+import { Row, Col } from "../../../reusecore/Layout";
+import ProfileCard from "../../../components/Profile-card";
 import { useStaticQuery, graphql } from "gatsby";
 import { EmeritusWrapper } from "./emeritus.style";
 

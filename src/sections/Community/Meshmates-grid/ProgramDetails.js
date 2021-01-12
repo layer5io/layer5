@@ -1,5 +1,5 @@
 import React from "react";
-import Program from "../../assets/images/programs/Layer5-mentor-program.png";
+import Program from "../../../assets/images/programs/Layer5-mentor-program.png";
 
 const ProgramDetails=() => {
     return (

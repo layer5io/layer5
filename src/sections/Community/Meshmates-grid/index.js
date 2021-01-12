@@ -3,9 +3,9 @@ import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import ProfileCard from "../../../components/Profile-card";
-import { MembersGridWrapper } from "../../../sections/Members-grid/membersGrid.style";
+import { MembersGridWrapper } from "../Members-grid/membersGrid.style";
 import ProgramDetails from "./ProgramDetails";
-import EmeritusGrid from "../Community/Emeritus-grid";
+import EmeritusGrid from "../Emeritus-grid";
 import { useStaticQuery, graphql } from "gatsby";
 
 const MeshmatesGrid=() => {
