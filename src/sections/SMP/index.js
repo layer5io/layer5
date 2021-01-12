@@ -109,14 +109,14 @@ const SMPPage = () => {
                     </Container>
                     <div>
                         <Row>
-                            <iframe width="33%" height="400px" src="https://www.youtube.com/embed/rgnb0-ntPko"
+                            <iframe className="iframe" src="https://www.youtube.com/embed/rgnb0-ntPko"
                                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"allowFullScreen>
                             </iframe>
-                            <iframe	width="33%" height="400px" src="https://www.youtube.com/embed/LxP-yHrKL4M"	
+                            <iframe	className="iframe" src="https://www.youtube.com/embed/LxP-yHrKL4M"	
                                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"	allowFullScreen>	
                             </iframe>
-                            <iframe	width="33%" height="400px" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000"	
-                                frameBorder="0" allowFullScreen mozallowfullscreen="true"	webkitallowfullscreen="true">	
+                            <iframe	className="iframe" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000"	
+                                frameBorder="0" allowFullScreen>	
                             </iframe>	
                         </Row>
                     </div>

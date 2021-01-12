@@ -32,11 +32,12 @@ const SMPWrapper = styled.section`
         h1{
             margin-bottom: 30px;
         }
-        table{
-            margin-bottom: 30px;
-        }
+        
         .features{
             padding-left: 50px;
+            table{
+                margin-bottom: 30px;
+            }
             .icon{
                 object-fit: cover;
                 padding-right: 20px;
@@ -88,6 +89,10 @@ const SMPWrapper = styled.section`
                 margin-bottom: 20px;
             }
         }
+        .iframe{
+            width: 33%;
+            height: 400px;
+        }
     }
     .cncf-callout{
         margin: 120px auto;
@@ -112,6 +117,52 @@ const SMPWrapper = styled.section`
             h1{
                 margin-bottom: 40px;
                 color: ${props => props.theme.white};
+            }
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        .smp-hero{
+            .hero-text{
+                padding: 50px 0 50px 0;
+            }
+        }
+        .smp-details{
+            margin: 50px auto;
+            h2{
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            .features{
+                padding: 20px 0 0 30px;
+                .icon{
+                    height: 60px;
+                    width: 60px;
+                }
+                .feature{
+                    padding-right: 0;
+                }
+            }
+        }
+        .use-cases{
+            margin-top: 60px;
+            .use-case-title{
+                margin: 50px auto 50px auto;
+            }
+            .use-case-data{
+                p{
+                    padding-right: 0;
+                }
+            }
+        }
+        .layer5-callout{
+            .callout-text{
+                width: 90%;
+            }
+        }
+        .smp-effects{
+            .iframe{
+                width: 95%;
+                height: 400px;
             }
         }
     }
