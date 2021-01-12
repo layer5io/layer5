@@ -65,31 +65,37 @@ const SMPPage = () => {
                             <h4> The following analysis compares native Envoy filter performance to WebAssembly (WASM) filter performance using Rust. </h4>
                         </div>
                         <Row className="use-case-data">
-                            <Col lg={6}>
+                            <Col className="use-case-box" lg={6}>
                                 <img src={wasm_capacity} />
                             </Col>
-                            <Col lg={6}>
-                                <h1> Native WASM at Capacity </h1>
-                                <p> When every request goes via the rate-limit check and then the actual program logic, we see that the latency incurred for the WASM code is higher than the Native client. This is expected since the native client has processing for rate-limiting locally in a process whereas the rust module is invoked as an additional thread to do the processing and the communication involved with the module incurs an overhead. This is prominent in the minimum response time case which represents latency just due to rate-limiting logic where every other part of the request is already "warm". <br />
-As we move towards average latency, the overhead gets slightly amortized but is still above the native rate-limiting case. Our max latency is slightly lower than native, but we attribute it to various other system effects like TLS handshake and network latencies that usually contribute to the maximum tail latency. </p>
+                            <Col className="use-case-box" lg={6}>
+                                <div>
+                                    <h1> Native WASM at Capacity </h1>
+                                    <p> When every request goes via the rate-limit check and then the actual program logic, we see that the latency incurred for the WASM code is higher than the Native client. This is expected since the native client has processing for rate-limiting locally in a process whereas the rust module is invoked as an additional thread to do the processing and the communication involved with the module incurs an overhead. This is prominent in the minimum response time case which represents latency just due to rate-limiting logic where every other part of the request is already "warm". <br />
+    As we move towards average latency, the overhead gets slightly amortized but is still above the native rate-limiting case. Our max latency is slightly lower than native, but we attribute it to various other system effects like TLS handshake and network latencies that usually contribute to the maximum tail latency. </p>
+                                </div>
                             </Col>
                         </Row>
                         <Row className="use-case-data">
-                            <Col lg={6}>
-                                <h1> Latency at scale </h1>
-                                <p> When we go beyond the application capacity (100 in our example), we start noticing the power of a in-line ight wasm module which starts terminating requests at the side-car and the core application logic is never invoked/loaded. We notice that even the minimum response time for a terminated request is about 15-20% faster than invoking of application logic since the wasm is a dynamic module in the sidecar and we start to avoid complex network redirection and invocation of a new container/instance. We also notice that the average latency of requests is lower than in the case of native client.</p>
+                            <Col className="use-case-box" lg={6}>
+                                <div>
+                                    <h1> Latency at scale </h1>
+                                    <p> When we go beyond the application capacity (100 in our example), we start noticing the power of a in-line ight wasm module which starts terminating requests at the side-car and the core application logic is never invoked/loaded. We notice that even the minimum response time for a terminated request is about 15-20% faster than invoking of application logic since the wasm is a dynamic module in the sidecar and we start to avoid complex network redirection and invocation of a new container/instance. We also notice that the average latency of requests is lower than in the case of native client.</p>
+                                </div>
                             </Col>      
-                            <Col lg={6}>
+                            <Col className="use-case-box" lg={6}>
                                 <img src={latency} />
                             </Col>                    
                         </Row>
                         <Row className="use-case-data">
-                            <Col lg={6}>
+                            <Col className="use-case-box" lg={6}>
                                 <img src={client_capacity} />
                             </Col>
-                            <Col lg={6}>
-                                <h1> Client Capacity </h1>
-                                <p> Client Capacity figure also shows us that we are able to handle more requests than in the native case, although this infometric needs to be taken with a grain of salt, i.e. the difference might reduce if our application capacity was significantly larger than 100. </p>
+                            <Col className="use-case-box" lg={6}>
+                                <div>
+                                    <h1> Client Capacity </h1>
+                                    <p> Client Capacity figure also shows us that we are able to handle more requests than in the native case, although this infometric needs to be taken with a grain of salt, i.e. the difference might reduce if our application capacity was significantly larger than 100. </p>
+                                </div>
                             </Col>
                         </Row>
                     </div>
@@ -103,13 +109,13 @@ As we move towards average latency, the overhead gets slightly amortized but is 
                     </Container>
                     <div>
                         <Row>
-                            <iframe width="33%" height="300px" src="https://www.youtube.com/embed/rgnb0-ntPko"
+                            <iframe width="33%" height="400px" src="https://www.youtube.com/embed/rgnb0-ntPko"
                                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"allowFullScreen>
                             </iframe>
-                            <iframe	width="33%" height="300px" src="https://www.youtube.com/embed/LxP-yHrKL4M"	
+                            <iframe	width="33%" height="400px" src="https://www.youtube.com/embed/LxP-yHrKL4M"	
                                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"	allowFullScreen>	
                             </iframe>
-                            <iframe	width="33%" height="300px" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000"	
+                            <iframe	width="33%" height="400px" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000"	
                                 frameBorder="0" allowFullScreen mozallowfullscreen="true"	webkitallowfullscreen="true">	
                             </iframe>	
                         </Row>
@@ -122,7 +128,7 @@ As we move towards average latency, the overhead gets slightly amortized but is 
                 </div>
                 <div className="layer5-callout">
                     <div className="callout-text">
-                        <h2> Check Out the Layer5 community and join us on Slack</h2> 
+                        <h1> Check Out the Layer5 community and join us on Slack</h1> 
                         <Button primary title="Let's go"></Button>   
                     </div>                
                 </div>

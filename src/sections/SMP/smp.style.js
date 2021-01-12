@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import smp_bg from "./smp-hero.png";
-import callout from "./callout.svg";
+import callout from "./callout.png";
 
 const SMPWrapper = styled.section`
     .smp-hero{
@@ -26,10 +26,13 @@ const SMPWrapper = styled.section`
         h2{
             margin: auto;
             text-align: center;
-            width: 90%;
+            width: 80%;
             margin-bottom: 100px;
         }
         h1{
+            margin-bottom: 30px;
+        }
+        table{
             margin-bottom: 30px;
         }
         .features{
@@ -67,6 +70,14 @@ const SMPWrapper = styled.section`
             img{
                 max-height: 500px;
             }
+            p{
+                padding-right: 30px;
+            }
+            .use-case-box{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
     .smp-effects{
@@ -87,12 +98,19 @@ const SMPWrapper = styled.section`
     }
     .layer5-callout{
         background-image: url(${callout});
-        height: 575px; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 600px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
         .callout-text{
+            width: 70%;
             margin: auto;
-            vertical-align: middle;
             text-align: center;
             h1{
+                margin-bottom: 40px;
                 color: ${props => props.theme.white};
             }
         }
