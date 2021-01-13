@@ -10,10 +10,10 @@ const SMPWrapper = styled.section`
         background-repeat: no-repeat;
         background-size: cover;
         .hero-text{
-            padding: 150px 0 100px 0;
+            padding: 9.375rem 0 6.25rem 0;
             h1{
                 color: ${props => props.theme.white};
-                margin-bottom: 30px;
+                margin-bottom: 1.875rem;
             }
             p{
                 color: ${props => props.theme.white};
@@ -22,31 +22,31 @@ const SMPWrapper = styled.section`
     }
     .smp-details{
         vertical-align: middle;
-        margin: 100px auto;
+        margin: 6.25rem auto;
         h2{
             margin: auto;
             text-align: center;
             width: 80%;
-            margin-bottom: 100px;
+            margin-bottom: 6.25rem;
         }
         h1{
-            margin-bottom: 30px;
+            margin-bottom: 1.875rem;
         }
         
         .features{
-            padding-left: 50px;
+            padding-left: 3.125rem;
             table{
-                margin-bottom: 30px;
+                margin-bottom: 1.875rem;
             }
             .icon{
                 object-fit: cover;
-                padding-right: 20px;
+                padding-right: 1.25rem;
                 padding-bottom: 10px;
             }
             .feature{
                 font-size: 21px;
-                padding-bottom: 20px;
-                padding-right: 30px;
+                padding-bottom: 1.25rem;
+                padding-right: 1.875rem;
             }
         }
         .smp-example{
@@ -54,25 +54,25 @@ const SMPWrapper = styled.section`
         }
     }
     .use-cases{
-        margin-top: 150px;
+        margin-top: 9.375rem;
         .use-case-title{
             width: 90%;
-            margin: 50px auto 100px auto;
+            margin: 3.125rem auto 6.25rem auto;
             text-align: center;
             h1{
-                margin-bottom: 20px;
+                margin-bottom: 1.25rem;
             }
         }
         .use-case-data{
-            margin-bottom: 50px;
+            margin-bottom: 3.125rem;
             h1{
-                margin-bottom: 30px;
+                margin-bottom: 1.875rem;
             }
             img{
-                max-height: 500px;
+                max-height: 31.25rem;
             }
             p{
-                padding-right: 30px;
+                padding-right: 1.875rem;
             }
             .use-case-box{
                 display: flex;
@@ -83,22 +83,22 @@ const SMPWrapper = styled.section`
     }
     .smp-effects{
         .effects-title{
-            margin: 50px auto 50px auto;
+            margin: 6.25rem auto 3.125rem auto;
             text-align: center;
             h1{
-                margin-bottom: 20px;
+                margin-bottom: 1.25rem;
             }
         }
         .iframe{
-            width: 33%;
-            height: 400px;
+            width: 33.33%;
+            height: 21.875rem;
         }
     }
     .cncf-callout{
-        margin: 120px auto;
+        margin: 11.25rem auto;
         text-align: center;
         h1, h4{
-            margin-bottom: 30px;
+            margin-bottom: 1.875rem;
         }
     }
     .layer5-callout{
@@ -106,7 +106,7 @@ const SMPWrapper = styled.section`
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 600px; 
+        height: 37.5rem; 
         display: flex;
         justify-content: center;
         align-items: center;
@@ -115,28 +115,36 @@ const SMPWrapper = styled.section`
             margin: auto;
             text-align: center;
             h1{
-                margin-bottom: 40px;
+                margin-bottom: 2.5rem;
                 color: ${props => props.theme.white};
+            }
+        }
+    }
+    @media only screen and (max-width: 1024px) {
+        .smp-effects{
+            .iframe{
+                width: 50%;
+                height: 18.75rem;
             }
         }
     }
     @media only screen and (max-width: 480px) {
         .smp-hero{
             .hero-text{
-                padding: 50px 0 50px 0;
+                padding: 3.125rem 0 3.125rem 0;
             }
         }
         .smp-details{
-            margin: 50px auto;
+            margin: 3.125rem auto;
             h2{
                 width: 100%;
-                margin-bottom: 30px;
+                margin-bottom: 1.875rem;
             }
             .features{
-                padding: 20px 0 0 30px;
+                padding: 1.25rem 0 0 1.875rem;
                 .icon{
-                    height: 60px;
-                    width: 60px;
+                    height: 3.75rem;
+                    width: 3.75rem;
                 }
                 .feature{
                     padding-right: 0;
@@ -144,13 +152,16 @@ const SMPWrapper = styled.section`
             }
         }
         .use-cases{
-            margin-top: 60px;
+            margin-top: 3.75rem;
             .use-case-title{
-                margin: 50px auto 50px auto;
+                margin: 3.125rem auto 3.125rem auto;
             }
             .use-case-data{
                 p{
                     padding-right: 0;
+                }
+                img{
+                    max-height: 18.75rem;
                 }
             }
         }
@@ -160,9 +171,11 @@ const SMPWrapper = styled.section`
             }
         }
         .smp-effects{
+            .effects-title{
+                margin: 3.125rem auto 1.875rem auto;
+            }
             .iframe{
-                width: 95%;
-                height: 400px;
+                width: 100%;
             }
         }
     }

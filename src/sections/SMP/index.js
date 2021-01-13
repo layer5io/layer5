@@ -33,7 +33,7 @@ const SMPPage = () => {
                         <h2> SMP is a collaborative effort of Layer5, UT Austin, Google and The Linux Foundation.</h2>
                         <Row>
                             <Col lg={6}>
-                                <img src={example} className="smp-example"></img>
+                                <img src={example} className="smp-example" alt="example: smp in action"></img>
                             </Col>
                             <Col className="features" lg={6}>
                                 <h1> SMP accounts for details of:</h1>
@@ -55,7 +55,7 @@ const SMPPage = () => {
                                         <td className="feature"> Statistical analysis of performance results </td>
                                     </tr>
                                 </table>
-                                <Button primary title="Learn More"></Button>
+                                <Button primary title="Learn More" url="https://smp-spec.io"></Button>
                             </Col>
                         </Row>
                     </div>
@@ -108,17 +108,17 @@ const SMPPage = () => {
                         </div>
                     </Container>
                     <div>
-                        <Row>
-                            <iframe className="iframe" src="https://www.youtube.com/embed/rgnb0-ntPko"
-                                frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"allowFullScreen>
-                            </iframe>
-                            <iframe	className="iframe" src="https://www.youtube.com/embed/LxP-yHrKL4M"	
-                                frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"	allowFullScreen>	
-                            </iframe>
-                            <iframe	className="iframe" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000"	
-                                frameBorder="0" allowFullScreen>	
-                            </iframe>	
-                        </Row>
+                        {/* <Row> */}
+                        <iframe className="iframe" src="https://www.youtube.com/embed/rgnb0-ntPko"
+                            frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"allowFullScreen>
+                        </iframe>
+                        <iframe	className="iframe" src="https://www.youtube.com/embed/LxP-yHrKL4M"	
+                            frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"	allowFullScreen>	
+                        </iframe>
+                        <iframe	className="iframe" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000"	
+                            frameBorder="0" allowFullScreen>	
+                        </iframe>	
+                        {/* </Row> */}
                     </div>
                 </div>
                 <div className="cncf-callout">
@@ -129,7 +129,7 @@ const SMPPage = () => {
                 <div className="layer5-callout">
                     <div className="callout-text">
                         <h1> Check Out the Layer5 community and join us on Slack</h1> 
-                        <Button primary title="Let's go"></Button>   
+                        <Button primary title="Let's go" url="http://slack.layer5.io"></Button>   
                     </div>                
                 </div>
             </SMPWrapper>
