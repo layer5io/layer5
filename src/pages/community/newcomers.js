@@ -6,7 +6,7 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 import Layout from "../../components/layout";
-import NewcomersGuide from "../../sections/Newcomers-guide";
+import NewcomersGuide from "../../sections/Community/Newcomers-guide";
 
 const newComers = () => {
     return (

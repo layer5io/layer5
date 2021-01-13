@@ -1,13 +1,13 @@
 import React from "react";
 import {Link} from "gatsby";
-import {Col, Container, Row} from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
+import {Col, Container, Row} from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
 import CommunityImage1 from "./community-image1.png";
 import CommunityImage2 from "./community-image2.png";
 import CommunityImage3 from "./community-image3.png";
 import CommunityImage4 from "./community-image4.png";
-import TutorialsTable from "../Tutorials-table";
+import TutorialsTable from "../../Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 
