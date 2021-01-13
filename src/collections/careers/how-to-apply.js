@@ -1,28 +1,19 @@
 import React from "react";
-import Button from "../../reusecore/Button";
 import styled from "styled-components";
 import job_icon from "./jobs_black.svg";
-import { AiOutlineArrowLeft } from "react-icons/ai";
 
 export const PositionApplyWrapper = styled.div`
-text-align: center;
-    .center{
-        text-align: center;
-    }
-    
+    text-align: center;
+
     .pos-logo{
-        vertical-align:bottom;
-        width: 37px;
-        display:inline;
-        margin-left: 2px;
+        width: 2.25rem;
+        margin: 0 0.5rem;
     }
     
     .apply-now {
-        border-width: 2px;
-        border-color: ${props => props.theme.secondaryColor};
-        border-radius: 5px;
-        border-style: solid;
-        padding-top: 10px;
+        border: 2px solid ${props => props.theme.secondaryColor};
+        border-radius: 0.25rem;
+        padding-top: 0.5rem;
         width: 60%;
         margin: auto;
     }
@@ -34,8 +25,8 @@ text-align: center;
 
     }
     .back-button{
-        padding: 8px;
-        margin: 20px;
+        padding: 0.75rem;
+        margin: 1.5rem;
     }
     .back-arrow{
         margin-right: 5px;
@@ -45,16 +36,15 @@ text-align: center;
 const PositionApply = ()=>{
     return(
         <PositionApplyWrapper>
-            <div className="center apply-now">
+            <div className="apply-now">
                 <div className="apply">
                     <img src={job_icon} alt="job-icon" className="pos-logo"/>
                     <h5>How to Apply</h5>
                 </div>
-                <p className="center">Submit your resume and a short cover letter to:
+                <p>Submit your resume and a short cover letter to:
                     <a href="mailto:jobs@layer5.io"> jobs@layer5.io</a>
                 </p>
             </div>
-            <Button primary className="back-button" url="/careers"><AiOutlineArrowLeft className="back-arrow"/> Back to Open Positions</Button>
         </PositionApplyWrapper>
     );
 };

@@ -22,33 +22,40 @@ const SocialLinksColor = () => {
                     >
                         <img height="30px" src={mail_icon} alt="mail" />
                     </a>
-                    <a
-                        href="http://slack.layer5.io/" 
-                        target="_blank"
-                        rel="noreferrer"
-                    >
+                    <a href="http://slack.layer5.io/" target="_blank" rel="noreferrer">
                         <img className="slack" height="30px" src={slack_icon} alt="slack" />
                     </a>
-                    <a
-                        href="https://twitter.com/layer5" 
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <img className="twitter" height="30px" src={twitter_icon} alt="twitter" />
+                    <a href="https://twitter.com/layer5" target="_blank" rel="noreferrer">
+                        <img
+                            className="twitter"
+                            height="30px"
+                            src={twitter_icon}
+                            alt="twitter"
+                        />
                     </a>
                     <a
-                        href="https://github.com/layer5io" 
+                        href="https://github.com/layer5io"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <img className="github" height="30px" src={github_icon} alt="github" />
+                        <img
+                            className="github"
+                            height="30px"
+                            src={github_icon}
+                            alt="github"
+                        />
                     </a>
                     <a
-                        href="https://www.linkedin.com/company/layer5" 
+                        href="https://www.linkedin.com/company/layer5"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <img className="linkedin" height="30px" src={linkedin_icon} alt="linkedin" />
+                        <img
+                            className="linkedin"
+                            height="30px"
+                            src={linkedin_icon}
+                            alt="linkedin"
+                        />
                     </a>
                     <a
                         className="youtube_icon"
@@ -56,7 +63,12 @@ const SocialLinksColor = () => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <img className="youtube" height="30px" src={youtube_icon} alt="youtube" />
+                        <img
+                            className="youtube"
+                            height="30px"
+                            src={youtube_icon}
+                            alt="youtube"
+                        />
                     </a>
                     <a
                         className="docker_icon"
@@ -64,7 +76,12 @@ const SocialLinksColor = () => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <img className="docker" height="30px" src={docker_icon} alt="docker" />
+                        <img
+                            className="docker"
+                            height="30px"
+                            src={docker_icon}
+                            alt="docker"
+                        />
                     </a>
                 </Row>
             </Col>
