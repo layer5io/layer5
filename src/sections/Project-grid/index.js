@@ -10,9 +10,10 @@ import Image from "../../components/image";
 import meshery from "../../assets/images/app/projects/meshery-logo-light.png";
 import landscape from "../../assets/images/app/projects/landscape.png";
 import smi from "../../assets/images/app/projects/smi.svg";
+import smp from "../../assets/images/smp/icon/smp-dark.svg";
 import imagehub from "../../assets/images/image-hub/layer5-image-hub.png"; 
 
-const ProjectPage = ({data}) => {
+const ProjectPage = () => {
     return (
         <ProjectWrapper>
             <PageHeader title="Projects" path="Projects"/>
@@ -55,11 +56,21 @@ const ProjectPage = ({data}) => {
                                     <img src={smi}
                                         alt="Service Mesh Interface Conformance" 
                                     />
-                                    <h1>Service Mesh Interface Conformance</h1>
+                                    <h5>Service Mesh Interface Conformance</h5>
                                 </div>
                             </Link>
                         </Col>
-                        {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+                        <Col xs={12} sm={6} lg={4}>
+                            <Link to="/projects/service-mesh-performance">
+                                <div className="project__block__inner">
+                                    <img src={smp}
+                                        alt="Service Mesh Performance" 
+                                    />
+                                    <h5>Service Mesh Performance</h5>
+                                </div>
+                            </Link>
+                        </Col>
+                        {/* {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
                             <Col xs={12} sm={6} lg={4} key={id}>
                                 <Link to={fields.slug}>
                                     <div className="project__block__inner">
@@ -72,7 +83,7 @@ const ProjectPage = ({data}) => {
                                     </div>
                                 </Link>
                             </Col>
-                        ))}
+                        ))} */}
                     </Row>
                 </Container>
             </div>
