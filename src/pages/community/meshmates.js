@@ -6,7 +6,7 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 import Layout from "../../components/layout";
-import MeshmatesGrid from "../../sections/Community/Meshmates-grid";
+import Meshmates from "../../sections/Community/Meshmates";
 
 const MeshmatePage=() => {
     return (
@@ -15,7 +15,7 @@ const MeshmatePage=() => {
                 <GlobalStyle />
                 <SEO title="Meshmates" />
                 <Navigation />
-                <MeshmatesGrid />
+                <Meshmates />
                 <Footer />
             </Layout>
         </ThemeProvider>

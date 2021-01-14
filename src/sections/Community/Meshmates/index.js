@@ -1,21 +1,16 @@
 import React from "react";
-import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import PageHeader from "../../../reusecore/PageHeader";
 import ProfileCard from "../../../components/Profile-card";
-import { MembersGridWrapper } from "../Members-grid/membersGrid.style";
 import MeshMatesWrapper from "./meshmates.style";
-import ProgramDetails from "./ProgramDetails";
 import EmeritusGrid from "../Emeritus-grid";
 import { useStaticQuery, graphql } from "gatsby";
 
 import meshmate from "./meshmate.svg";
 import c_icon from "./c-icon.svg";
 import hero from "./hero.png";
-// import { Button } from "react-scroll";
 
-const MeshmatesGrid=() => {
+const Meshmates=() => {
     const data=useStaticQuery(
         graphql`
             query meshmates {
@@ -77,11 +72,11 @@ const MeshmatesGrid=() => {
                     </Row>
                 </div>
                 <div className="expect">
-                    <img className="meshmate-logo" src={meshmate} />
+                    <img className="meshmate-logo" alt="meshmate-logo" src={meshmate} />
                     <h5> What to Expect </h5>
                     <h2> Engaging with a MeshMate Program </h2>
                     <p> The program pairs experienced Layer5 community members with community newcomers to ensure a smooth onboarding experience. There is a lot going in the Layer5 community. Projects and working groups move fast. MeshMates are committed to helping their mentees in identifying an area of the projects to engage within, working groups to join, growing their Cloud Native knowledge, and network of relationships. By connecting one-on-one, MeshMates will share tips on how to have the best community experience possible. </p>
-                    <img className="meshmeet-img" src={hero} />
+                    <img className="meshmeet-img" alt="community" src={hero} />
                     <p> Meshtees are encouraged to get to know their MeshMate as soon as they are assigned (MeshMates and Mentees will be introduced in the Layer5 Slack). Help your MeshMate understand your current skills, ideal topics of learning, and areas of passion. Doing so will help them to point out various aspects of projects that you might find your first foothold. </p>
                 </div>
                 <div className="meshmate-meet">
@@ -91,35 +86,35 @@ const MeshmatesGrid=() => {
                             <p> Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted and onboarding into the community, we suggest the following goals: </p>
                             <table>
                                 <tr> 
-                                    <td className="icon"><img src={c_icon} /></td>
+                                    <td className="icon"><img alt="icon" src={c_icon} /></td>
                                     <td className="feature"> 
                                         <h4> Get familiar with all of the projects </h4>
                                         <p> Spend time understanding each of the Layer5 initiatives through high level overviews available in the community drive and in discussion with your MeshMate. </p>
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <td className="icon"><img src={c_icon} /></td>
+                                    <td className="icon"><img alt="icon" src={c_icon} /></td>
                                     <td className="feature"> 
                                         <h4> Identify your area of interest </h4>
                                         <p> Use time with your MeshMate to familiarize with the architecture and technologies used in the projects. Inform your MeshMate of your current skills and what skills you would like to develop. </p>
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <td className="icon"><img src={c_icon} /></td>
+                                    <td className="icon"><img alt="icon" src={c_icon} /></td>
                                     <td className="feature"> 
                                         <h4> Run Meshery </h4>
                                         <p> Put on your user hat and walk-through all of Meshery’s features and functions as a user. </p>
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <td className="icon"><img src={c_icon} /></td>
+                                    <td className="icon"><img alt="icon" src={c_icon} /></td>
                                     <td className="feature"> 
                                         <h4> Build Meshery </h4>
                                         <p> Confirm that you have a usable development environment. </p>
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <td className="icon"><img src={c_icon} /></td>
+                                    <td className="icon"><img alt="icon" src={c_icon} /></td>
                                     <td className="feature"> 
                                         <h4> Contribute </h4>
                                         <p> Grab an open issue or suggest a new one. </p>
@@ -129,12 +124,17 @@ const MeshmatesGrid=() => {
                         </Col>
                         <Col lg={6}>
                             <div className="callout-card">
-                                <img className="card-img" src={hero} />
+                                <img className="card-img" alt="community" src={hero} />
                                 <div className="card-text">
                                     <h4> Community Call </h4>
                                     <p> Layer5 hosts official monthly community calls where users and contributors can discuss about any topic and demonstrate  use-cases. </p>
                                     <h4 className="highlight"> Interested? </h4>
                                     <p> You can register below for the next Community Call. </p>
+                                    <Row>
+                                        <input type="text" placeholder="Your Email Address" />
+                                        <Button secondary title="Subscribe" />
+                                    </Row>
+                                    <p className="unsubscribe"> You can unsubscribe any time. No spam. </p>
                                 </div>
                             </div>
                         </Col>
@@ -152,4 +152,4 @@ const MeshmatesGrid=() => {
     );
 };
 
-export default MeshmatesGrid;
+export default Meshmates;

@@ -46,7 +46,7 @@ const Emeritus=() => {
             </div>
             <Row>
                 {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-                    <Col xs={6} sm={4} lg={3} key={id}>
+                    <Col xs={12} sm={6} lg={3} key={id}>
                         <Link to={fields.slug}>
                             <ProfileCard frontmatter={frontmatter} />
                         </Link>

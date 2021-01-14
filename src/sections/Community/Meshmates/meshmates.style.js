@@ -85,7 +85,9 @@ const MeshMatesWrapper = styled.div`
                 filter: brightness(50%);
             }
             .card-text{
+                margin-top: -7px;
                 padding: 20px;
+                box-shadow: 0 1px 10px 0 gray;
                 h4{
                     font-weight: 700;
                     margin-bottom: 10px;
@@ -93,6 +95,28 @@ const MeshMatesWrapper = styled.div`
                 .highlight{
                     color: ${props => props.theme.secondaryColor};
                 }
+                p{
+                    line-height: 20px;
+                }
+                .unsubscribe{
+                    margin-top: 15px;
+                    font-size: 12px;
+                    color: #CCCCCC;
+                    text-align: center;
+                    line-height: 10px;
+                }
+            }
+            input{
+                margin: 0 10px 0 15px;
+                padding: 15px;
+                width: 325px;
+                background: #F5F7FA;
+                border: 1px solid white;
+                border-radius: 7px;
+            }
+            button{
+                padding: 10px;
+                min-width: 50px;
             }
         }
     }
@@ -106,6 +130,40 @@ const MeshMatesWrapper = styled.div`
         }
         p{
             margin-bottom: 30px;
+        }
+    }
+    @media only screen and (max-width: 1024px){
+        .expect{
+            .meshmate-logo{
+                float: right;
+                height: 120px;
+                margin: 0 0 0 0;
+            }
+        }
+    }
+    @media only screen and (max-width: 480px){
+        .meshmates-grid{
+            margin: 50px auto;
+        }
+        .expect{
+            .meshmeet-img{
+                margin-top: 30px;
+                height: 300px;
+            }
+        }
+        .meshmate-meet{
+            margin: 50px auto 30px auto;
+            p{
+                margin-bottom: 10px;
+            }
+            .callout-card{
+                margin: 30px auto 0 auto;
+                max-width: 95%;
+                input{
+                    margin: 0 10px 0 15px;
+                    max-width: 60%;
+                }
+            }
         }
     }
 `;
