@@ -1,18 +1,18 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../../../components/layout";
+import SEO from "../../../components/seo";
 
-import Navigation from "../sections/Navigation";
-import Footer from "../sections/Footer";
-import AnimatedStepsList from "../components/Animated-steps-list";
-import Hero from "../components/Animated-steps-list/hero";
-import Features from "../components/Features-carousel";
-import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
-import { Container } from "../reusecore/Layout";
-import Terminal from "../components/Terminal";
+import Navigation from "../../../sections/Navigation";
+import Footer from "../../../sections/Footer";
+import AnimatedStepsList from "../../../components/Animated-steps-list";
+import Hero from "../../../components/Animated-steps-list/hero";
+import Features from "../../../components/Features-carousel";
+import { GlobalStyle } from "../../../sections/app.style";
+import theme from "../../../theme/app/themeStyles";
+import { Container } from "../../../reusecore/Layout";
+import Terminal from "../../../components/Terminal";
 
 const temp = () => (
     <ThemeProvider theme={theme}>
@@ -63,7 +63,7 @@ const temp = () => (
                                 ),
                                 logos: [
                                     {
-                                        url: require("../assets/images/mesheryctl/kubernetes.svg"),
+                                        url: require("../../../assets/images/mesheryctl/kubernetes.svg"),
                                         alt: "Kubernetes",
                                     }
                                 // {
@@ -665,7 +665,7 @@ const temp = () => (
                                     "View projects and applications being deployed by meshery in a web interface",
                                 content: (
                                     <img
-                                        src={require("../assets/images/workshops/workshops.png")}
+                                        src={require("../../../assets/images/workshops/workshops.png")}
                                         alt="Web UI"
                                     />
                                 ),
