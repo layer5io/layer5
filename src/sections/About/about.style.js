@@ -40,6 +40,7 @@ const AboutSectionWrapper = styled.section`
     h2 {
       margin-bottom: 18px;
       margin-top: 28px;
+      color: ${props => props.theme.headingColor};
     }
   }
 

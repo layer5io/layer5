@@ -13,7 +13,6 @@ import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import NavigationWrap from "./navigation.style";
 import { DarkModeToggler } from "react-darkmode-toggler";
 import { ThemeManagerContext } from "gatsby-styled-components-dark-mode";
-import GlobalStyle from "../app.style";
 
 const Navigation = () => {
     const themeContext = useContext(ThemeManagerContext);
@@ -148,6 +147,7 @@ const Navigation = () => {
     );
     const [expand, setExpand] = useState(false);
     const [scroll, setScroll] = useState(false);
+
     const dropDownRef = useRef();
     useEffect(() => {
         window.addEventListener("scroll", () =>
@@ -237,12 +237,9 @@ const Navigation = () => {
                                 blogData={data}
                             />
                         </nav>
-                        <label htmlFor="darkMode"> toggle dark mode</label>
-                        <input
-                            id="darkMode"
-                            type="checkbox"
-                            onChange={() => themeContext.toggleDark()}
-                            checked={themeContext.isDark}
+                        <DarkModeToggler
+                            isDark={themeContext.themeSetting.toLocaleLowerCase()}
+                            onClick={() => themeContext.toggleDark()}
                         />
                     </div>
                 </Container>

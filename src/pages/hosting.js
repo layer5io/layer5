@@ -1,5 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -17,28 +16,22 @@ import News from "../sections/News";
 import ContactCard from "../components/ContactCard";
 import Footer from "../sections/Footer";
 
-import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/hosting/themeStyles";
-
 const HostingPage = () => (
-    <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
-            <SEO title="Layer5 | The Service Mesh Company" />
-            <Navigation />
-            <Banner />
-            <About />
-            <Pricing />
-            <Features />
-            <CTAHosting />
-            <Counters />
-            <Testimonial />
-            <Faq />
-            <News />
-            <ContactCard />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+    <Layout>
+        <SEO title="Layer5 | The Service Mesh Company" />
+        <Navigation />
+        <Banner />
+        <About />
+        <Pricing />
+        <Features />
+        <CTAHosting />
+        <Counters />
+        <Testimonial />
+        <Faq />
+        <News />
+        <ContactCard />
+        <Footer />
+    </Layout>
 );
 
 export default HostingPage;

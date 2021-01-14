@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const PageHeaderWrapper = styled.div`
         position: relative;
         overflow: hidden;
@@ -11,7 +10,7 @@ const PageHeaderWrapper = styled.div`
             height: auto;
             margin: 2rem auto 2rem;
             padding: 0 1rem 0;
-            z-index: 99;
+            z-index: 99;     
         }
         
         .feature-image{

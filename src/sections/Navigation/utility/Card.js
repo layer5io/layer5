@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { BiLinkExternal } from "react-icons/bi";
 import Image from "./image";
 
 const Card = ({ frontmatter, fields }) => {
@@ -16,12 +15,10 @@ const Card = ({ frontmatter, fields }) => {
                     />
                 </div>
                 <div className="post-content-block">
-                    <h2 className="post-title">
-                        {frontmatter.title}
-                    </h2>
+                    <h2 className="post-title">{frontmatter.title}</h2>
                     <div className="readmore-btn-wrapper">
                         <span className="readmore-btn">
-                            see more <IoIosArrowRoundForward />
+              see more <IoIosArrowRoundForward />
                         </span>
                     </div>
                 </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -19,29 +18,23 @@ import Getapp from "../sections/Getapp";
 import Client from "../sections/Client";
 import Footer from "../sections/Footer-classic";
 
-import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/classic/themeStyles";
-
 const ClassicPage = () => (
-    <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
-            <SEO title="Layer5 | The Service Mesh Company" />
-            <Navigation />
-            <BannerClassic />
-            <AboutClassic />
-            <Integrations />
-            <FeaturesClassic />
-            <AppScreens />
-            <Counter />
-            <Pricing />
-            <Testimonial />
-            <FaqClassic />
-            <Getapp />
-            <News />
-            <Client />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+    <Layout>
+        <SEO title="Layer5 | The Service Mesh Company" />
+        <Navigation />
+        <BannerClassic />
+        <AboutClassic />
+        <Integrations />
+        <FeaturesClassic />
+        <AppScreens />
+        <Counter />
+        <Pricing />
+        <Testimonial />
+        <FaqClassic />
+        <Getapp />
+        <News />
+        <Client />
+        <Footer />
+    </Layout>
 );
 export default ClassicPage;

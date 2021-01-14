@@ -6,33 +6,33 @@ import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 
 export const ToolTipWrapper = styled.div`
-    @media screen and (max-width: 576px) {
-        display: none;
-    }
-    float:left;
-    margin: auto 1rem;
+  @media screen and (max-width: 576px) {
+    display: none;
+  }
+  float: left;
+  margin: auto 1rem;
 
-    .border {
-        line-height: 18px;
-    }
+  .border {
+    line-height: 18px;
+  }
 
-    a {
-        padding: 5px;
-        color: ${props => props.theme.primaryLightColorTwo};
-        background-color: white;
-        border: 1.5px solid ${props => props.theme.primaryLightColorTwo};
-        &:hover{
-            background-color: ${props => props.theme.primaryColor};
-            color: ${props => props.theme.primaryLightColorTwo};
-            cursor: pointer;
-            border: 1.5px solid ${props => props.theme.primaryColor};
-        }             
+  a {
+    padding: 5px;
+    color: ${props => props.theme.primaryLightColorTwo};
+    background-color: ${props => props.theme.color};
+    border: 1.5px solid ${props => props.theme.primaryLightColorTwo};
+    &:hover {
+      background-color: ${props => props.theme.primaryColor};
+      color: ${props => props.theme.primaryLightColorTwo};
+      cursor: pointer;
+      border: 1.5px solid ${props => props.theme.primaryColor};
     }
-    .active {
-        background-color: ${props => props.theme.primaryColor};
-        color: ${props => props.theme.primaryLightColorTwo};
-        border: 1.5px solid ${props => props.theme.primaryColor};
-    }
+  }
+  .active {
+    background-color: ${props => props.theme.primaryColor};
+    color: ${props => props.theme.primaryLightColorTwo};
+    border: 1.5px solid ${props => props.theme.primaryColor};
+  }
 `;
 
 const BlogViewToolTip = ({ isListView, setListView, setGridView }) => {

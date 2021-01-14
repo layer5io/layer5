@@ -1,6 +1,9 @@
 import React from "react";
+
 import Layout from "../components/layout";
+import ContactCard from "../components/ContactCard";
 import SEO from "../components/seo";
+
 import Navigation from "../sections/Navigation";
 import Banner from "../sections/Banner-default";
 import Features from "../sections/Features";
@@ -12,7 +15,6 @@ import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
 import News from "../sections/News";
 import Getapp from "../sections/Getapp";
-import ContactCard from "../components/ContactCard";
 import Footer from "../sections/Footer";
 
 const IndexPage = () => (

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { ThemeProvider } from "styled-components";
-import theme from "../../theme/app/themeStyles";
-import { GlobalStyle } from "../../sections/app.style";
+
 import SEO from "../../components/seo";
+import Layout from "../../components/layout";
+
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
-import Layout from "../../components/layout";
 import AllMembers from "../../sections/Members-grid/AllMembers";
 import ActiveMembers from "../../sections/Members-grid/ActiveMembers";
 import InactiveMembers from "../../sections/Members-grid/InactiveMembers";
@@ -29,24 +28,29 @@ const MembersPage = () => {
 
     let MembersView = props => {
         switch (members.value) {
-        case "active" : return <ActiveMembers {...props} />;
-        case "inactive" : return <InactiveMembers {...props}/>;
-        case "maintainers" : return <Maintainers {...props}/>;
-        case "meshmates" : return <Meshmate {...props}/>;
-        default: return <AllMembers {...props}/>;
+        case "active":
+            return <ActiveMembers {...props} />;
+        case "inactive":
+            return <InactiveMembers {...props} />;
+        case "maintainers":
+            return <Maintainers {...props} />;
+        case "meshmates":
+            return <Meshmate {...props} />;
+        default:
+            return <AllMembers {...props} />;
         }
     };
     return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title="Members" />
-                <Navigation />
-                <MembersView options={options} handleChange={handleChange}
-                    members={members} />
-                <Footer/>
-            </Layout>
-        </ThemeProvider>
+        <Layout>
+            <SEO title="Members" />
+            <Navigation />
+            <MembersView
+                options={options}
+                handleChange={handleChange}
+                members={members}
+            />
+            <Footer />
+        </Layout>
     );
 };
 
