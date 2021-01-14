@@ -6,7 +6,7 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 import Layout from "../../components/layout";
-import NewcomersPage from "../../sections/Community/Newcomers/NewcomersPage";
+import NewcomersGuide from "../../sections/Community/Newcomers-guide";
 
 const newComers = () => {
     return (
@@ -15,7 +15,7 @@ const newComers = () => {
                 <GlobalStyle />
                 <SEO title="Newcomers" />
                 <Navigation />
-                <NewcomersPage />
+                <NewcomersGuide />
                 <Footer />
             </Layout>
         </ThemeProvider>

@@ -36,7 +36,7 @@ const data = [
         },
         presenters: [
             {
-                link: "community/members/ruth-ikegah",
+                link: "/community/members/ruth-ikegah",
                 name: "Ruth Ikegah",
             },
         ],
@@ -50,7 +50,7 @@ const data = [
         },
         presenters: [
             {
-                link: "community/members/lee-calcote",
+                link: "/community/members/lee-calcote",
                 name: "Lee Calcote",
             },
         ],
@@ -64,11 +64,11 @@ const data = [
         },
         presenters: [
             {
-                link: "community/members/jash-patel",
+                link: "/community/members/jash-patel",
                 name: "Jash Patel",
             },
             {
-                link: "community/members/tanuj-agarwal",
+                link: "/community/members/tanuj-agarwal",
                 name: "Tanuj Agarwal"
             }
         ]
