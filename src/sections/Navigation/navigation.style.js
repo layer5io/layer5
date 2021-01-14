@@ -275,7 +275,7 @@ const NavigationWrap = styled.header`
       display: block;
       margin-top: 7px;
       img {
-        width: 13px;
+        width: 130px;
       }
     }
     .mobile-dropdown-container {

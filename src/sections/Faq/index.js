@@ -66,8 +66,8 @@ const Faq = () => {
                                 Jash, will you padding and center this button? 
                                 
                                 */}
-                                <div className="center">
-                                    {faq.link && <Button primary className="about-button" url={faq.link} title={faq.linktext} external="false" />}
+                                <div className="faqbutton">
+                                    {faq.link && <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external="false" />}
                                 </div>
                             </AccordionBody>
                         </AccordionItem>

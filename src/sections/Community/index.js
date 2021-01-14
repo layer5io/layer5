@@ -2,13 +2,13 @@ import React from "react";
 import {Link} from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
-import JoinCommunity from "../Join-community";
+import JoinCommunity from "../Community/Join-community";
 import PictureSlider from "./slider";
 import {FaArrowRight} from "react-icons/fa";
 import CommunitySectionWrapper from "./community.style";
 import Lee_workshop from "./Lee_Workshop.png";
 import CommunityMemberImage from "./community-member.jpeg";
-import MehsmateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
+import MeshmateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
 
 const CommunityPage = () => {
 
@@ -49,17 +49,17 @@ const CommunityPage = () => {
                         <Row>
                             <Col className="community" sm={12} lg={6}>
                                 <h1>Our Community Members</h1>
-                                <h5>Jump In! Our Community is warm</h5>
+                                <h5>Jump in. The community is warm!</h5>
                                 <p>
-                                The Layer5 community is diverse with members from around the globe,
-                                who have shown consistent commitment in advancing our open source initiatives.
+                                With active members from around the globe, the Layer5 community is a collection of diverse open source contributors, each of whom espouse our cultural values of inclusivity and paying it forward for others.
+                                We welcome individuals at all stages of their development and of all walks of life. Every member is encourage to embrace these values and support one another in meaninfully and consistently advancing the community's open source initiatives.
                                 </p>
                                 <p>
                                 We believe that every contributor deserves a safe and friendly environment,
                                 enabling them to effectively compare different ideas and find the best solutions
                                 for advancement, while building the size, diversity, and strength of the community.
                                 </p>
-                                <Button primary title="See Our Community Members" url="/community/members"/>
+                                <Button primary title="See our community member profiles" url="/community/members"/>
                             </Col>
                             <Col className="slider" sm={12} lg={6}>
                                 <PictureSlider/>
@@ -88,7 +88,7 @@ const CommunityPage = () => {
                             </p>
                         </Col>
                         <Col sm={12} lg={6}>
-                            <img src={MehsmateIcon} alt="MeshMate Icon"/>
+                            <img src={MeshmateIcon} alt="MeshMate Icon"/>
                             <Link className="meshmate-link" to="/community/meshmates">
                                 <h3>Open Source Mentorship Program</h3>
                                 <button className="icon">

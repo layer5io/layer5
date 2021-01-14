@@ -9,7 +9,7 @@ import Layout from "../../components/layout";
 import Loadable from "react-loadable";
 
 const LoadableCalendar = Loadable({
-    loader: () => import("../../sections/Calendar"),
+    loader: () => import("../../sections/Community/Calendar"),
     loading() {
         return <div>Loading...</div>;
     }

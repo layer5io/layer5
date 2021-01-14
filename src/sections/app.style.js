@@ -1,7 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
-
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
@@ -168,7 +166,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Open Sans', sans-serif;
-  color: ${props => props.theme.textColor};
+  color: ${(props) => props.theme.textColor};
   overflow-x: hidden !important;
   font-weight: 400 !important;
   margin: 0;
@@ -234,10 +232,12 @@ h6 {
     font-size: 1rem;
 }
 
-h2.sub-heading {
+h2.sub-heading, h3.sub-heading {
     color: gray;
     text-align: center;
+    font-style: oblique;
 }
+
 
 p {
     margin: 0 0 1rem 0;
@@ -248,11 +248,11 @@ p {
     }
 }
 
-a{
+a {
     text-decoration: none;
-    color: ${props => props.theme.linkColor};
+    color: ${(props) => props.theme.linkColor};
     &:hover{
-        color: ${props => props.theme.primaryColor};
+        color: ${(props) => props.theme.primaryColor};
     }
   }
   img{
@@ -264,6 +264,5 @@ section{
     position: relative;
 }
 `;
-
 
 export { GlobalStyle };

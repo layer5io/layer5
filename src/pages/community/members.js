@@ -6,11 +6,11 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 import Layout from "../../components/layout";
-import AllMembers from "../../sections/Members-grid/AllMembers";
-import ActiveMembers from "../../sections/Members-grid/ActiveMembers";
-import InactiveMembers from "../../sections/Members-grid/InactiveMembers";
-import Maintainers from "../../sections/Members-grid/Maintainers";
-import Meshmate from "../../sections/Members-grid/Meshmate";
+import AllMembers from "../../sections/Community/Members-grid/AllMembers";
+import ActiveMembers from "../../sections/Community/Members-grid/ActiveMembers";
+import InactiveMembers from "../../sections/Community/Members-grid/InactiveMembers";
+import Maintainers from "../../sections/Community/Members-grid/Maintainers";
+import Meshmate from "../../sections/Community/Members-grid/Meshmate";
 
 const options = [
     { label: "All Members", value: "all" },

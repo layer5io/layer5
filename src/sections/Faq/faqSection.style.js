@@ -36,6 +36,13 @@ const FaqSectionWrapper = styled.section`
       }
     }
   }
+  div.faqbutton {
+    text-align: center; 
+    
+    button.faqbutton {
+      margin-bottom: 1.25rem;
+    }
+  }
   .section-title {
     text-align: center;
     h1 {
@@ -53,13 +60,6 @@ const FaqSectionWrapper = styled.section`
         background-color: #F0F0F0;
         border-radius: 1.25rem;
       }
-      // button {
-      //   position: absolute;
-      //   left: 30px;
-      //   min-width: 20px;
-      //   background: transparent;
-      //   color: ${props => props.theme.headingColor}; 
-      // }
     }
   }
   @media only screen and (max-width: 912px) {

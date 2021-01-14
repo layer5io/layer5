@@ -83,7 +83,7 @@ const CareersSectionWrapper = styled.div`
     }
     .opensource-section-img img{
         height: 30rem;
-        width: 52rem;
+        
         box-shadow: 0px 8px 20px -10px black;
     }
     @media only screen and (max-width:600px){

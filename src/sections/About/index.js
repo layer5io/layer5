@@ -5,11 +5,39 @@ import Button from "../../reusecore/Button";
 import VintageBox from "../../reusecore/VintageBox";
 import SocialLinks from "../../components/SocialLinks";
 import AboutSectionWrapper from "./about.style";
+import collabMap from "./images/layer5-collaboration-map.svg";
+import layer5BusCard from "./images/layer5-business-card-photo_med.jpg";
+import layer5BusCard2 from "./images/layer5-bus-card.jpg";
+import location from "./images/location.svg";
+
+
 
 const About = () => {
     return (
         <AboutSectionWrapper id="about">
             <Container fullWidthSM>
+                <Row Vcenter={true}>
+                    <Col xs={12} sm={12}>
+                        <SectionTitle
+                            className="section-title section-bottom"
+                            leftAlign={false}
+                            UniWidth="100%"
+                        >
+                            <h2>We are collaborators from around the globe</h2>
+                            <img height="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
+                            <h3>Join the community and collaborate on our projects</h3>
+                            <VintageBox left={true} vintageTwo={true} >
+                                <Button
+                                    primary
+                                    className="about-button"
+                                    url="/community"
+                                    title="Start Contributing"
+                                    external="false"
+                                />
+                            </VintageBox>
+                        </SectionTitle>
+                    </Col>
+                </Row>
                 <Row Vcenter={true}>
                     <Col xs={12} sm={6}>
                         <SectionTitle
@@ -37,59 +65,65 @@ const About = () => {
                 community and its projects forward.
                             </p>
                         </div>
-                        <div className="about-text text-two">
-                            <h3>
-                                <a href="http://slack.layer5.io">Collaborate</a>
-                            </h3>
-                            <p>
-                                <a className="anchor" href="/community">
-                  Join the community
-                                </a>{" "}
-                and collaborate on our projects.
-                            </p>
-                            <SocialLinks />
-                        </div>
-                    </Col>
 
+                    </Col>
                     <Col xs={12} sm={6}>
+                        <img src={layer5BusCard} alt="Layer5 Business Cards" className="busCard" />
                         <div>
                             <Row>
                                 <Col xs={12} sm={6}>
-                                    <h3>Locations</h3>
+                                    
                                     <div className="section">
-                                        <h4>USA</h4>
+                                        <h4><a href="https://goo.gl/maps/3oeuqrsMtHPQSTmQ8"><img src={location} className="location" alt="Layer5 locations" /></a>USA</h4>
                                         <p>
-                      Layer5, Inc.
-                                            <br />
+                      Layer5, Inc., 
                       Corporate Headquarters
                                             <br />
-                                            <a href="https://goo.gl/maps/3oeuqrsMtHPQSTmQ8">
+                                            
                         701 Brazos Street, Suite 1600
-                                                <br />
+                                            <br />
                         Austin, TX 78701
-                                            </a>
                                         </p>
                                     </div>
                                 </Col>
-
                                 <Col xs={12} sm={6}>
-                                    <br />
-                                    <h4>Scotland, UK</h4>
+                                    <h4>
+                                        <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
+                                            <img src={location} className="location" alt="Layer5 locations" /></a>Scotland</h4>
                                     <p>
-                    Layer5, Inc.
-                                        <br />
+                    Layer5, Inc., 
                     Engineering
                                         <br />
-                                        <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
-                      3 Queen Street Edinburgh, EH2 1JE
-                                        </a>
+                      3 Queen Street 
+                                        <br />
+                      Edinburgh, EH2 1JE
+                                        <br />
+                      United Kingdom
                                     </p>
                                 </Col>
                             </Row>
-                            <VintageBox right={false} vintageTwo={true} position="relative">
-                                <Button primary className="about-button" url="mailto:hello@layer5.io" title="Contact Us" external="true" />
-                            </VintageBox>
+                            
                         </div>
+                    </Col>           
+                </Row>
+                <Row className="contactButton">
+                    <Col xs={12} sm={12}>
+                        <SectionTitle
+                            className="section-title"
+                            leftAlign={false}
+                            UniWidth="100%"
+                        >
+                            {" "}
+                            <VintageBox right={true} vintageTwo={true} >
+                                <Button
+                                    primary
+                                    className="about-button"
+                                    url="/company/contact"
+                                    title="Contact Us"
+                                    external="false"
+                                />
+                            </VintageBox>
+                        </SectionTitle>
                     </Col>
                 </Row>
             </Container>
