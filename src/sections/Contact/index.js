@@ -21,8 +21,7 @@ const ContactPage = () => {
             <Container>
                 <PageHeader 
                     title={"Get In Touch"}
-                    subtitle={`Do you have a general question or enquiry, would like to establish a partnership with Layer5, 
-                               need assistance with my cloud native infrastructure or interested in career opportunities at Layer5.`}
+                    subtitle={"Let us know how we help you."}
                 />
                 <Row>
                     <CardOutline 
