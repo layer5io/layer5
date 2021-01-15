@@ -30,13 +30,13 @@ const IndexPage = () => (
             <Banner />
             <Integrations />
             <Features />
-            <AppScreens />
-            <Counters /> 
+            {/* <AppScreens /> */}
+            {/* <Counters />  */}
             <Pricing />
             <Testimonial />
+            {/* <Getapp /> */}
+            {/* <News /> */}
             <Faq />
-            <Getapp />
-            <News />
             <ContactCard />
             <Footer />
         </Layout>
