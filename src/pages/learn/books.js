@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../../components/layout";
 
 import SEO from "../../components/seo";
-import BookPage from "../../sections/Books-grid";
+import BookPage from "../../sections/Learn/Books-grid";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 

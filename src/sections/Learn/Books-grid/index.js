@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import PageHeader from "../../reusecore/PageHeader";
+import PageHeader from "../../../reusecore/PageHeader";
 import { Link } from "gatsby";
 import Slider from "react-slick";
 import "swiper/swiper-bundle.css";

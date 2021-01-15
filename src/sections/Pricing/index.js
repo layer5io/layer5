@@ -4,8 +4,7 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import { IoMdCheckbox } from "react-icons/io";
 
-import particle1 from "../../assets/images/app/particle/14.png";
-import particle2 from "../../assets/images/app/particle/15.png";
+import bubblesElement from "./images/bubbles-element.svg";
 
 import data from "../../assets/data/pricing";
 
@@ -14,8 +13,8 @@ import PricingSectionWrapper from "./pricingSection.style";
 const Pricing = () => {
     return (
         <PricingSectionWrapper id="pricing">
-            <img className="section__particle one" src={particle1} alt="img" />
-            <img className="section__particle two" src={particle2} alt="img" />
+            <img className="section__particle one" src={bubblesElement} alt="img" />
+            <img className="section__particle two" src={bubblesElement} alt="img" />
             <Container>
                 <SectionTitle UniWidth="100%">
                     <h2>
