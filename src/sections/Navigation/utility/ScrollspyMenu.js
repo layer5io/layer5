@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from "gatsby";
 import Card from "./Card";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
     const addAllClasses = [""];
@@ -56,11 +57,11 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
             ))}
             {active.subItems !== undefined && (
                 <React.Fragment>
-                    <ul className="dropdown" style={{zIndex: "101"}}>
+                    <ul className="dropdown" style={{ zIndex: "101" }}>
                         <div className="nav-grid">
                             <div className="hr">
                                 <Link className="section" to={active.path}  >{active.name}
-                                </Link>    
+                                </Link>
                                 {active.subItems.map((subItem, i) => (
                                     <li key={i}>
                                         <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"}>
@@ -68,6 +69,15 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                                         </Link>
                                     </li>
                                 ))}
+                                <div className="action-items">
+                                    {active.actionItems.map((actionItem, i) => (
+                                        <Link key={i} to={actionItem.actionLink} partiallyActive={true} className="action-link">
+                                            <span className="readmore-btn">
+                                                {actionItem.actionName} <IoIosArrowRoundForward />
+                                            </span>
+                                        </Link>
+                                    ))}
+                                </div>
                             </div>
                             <div className="nav-display">
                                 <Card frontmatter={blogData[active.name].nodes[0].frontmatter} fields={blogData[active.name].nodes[0].fields}></Card>
@@ -75,7 +85,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                             </div>
                         </div>
                     </ul>
-                    <div className="wrap" ref={wrapRef} style={{zIndex: "100"}}/>
+                    <div className="wrap" ref={wrapRef} style={{ zIndex: "100" }} />
                 </React.Fragment>
             )}
         </ul>

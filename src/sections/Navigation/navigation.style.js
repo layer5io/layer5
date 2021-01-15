@@ -61,6 +61,8 @@ const NavigationWrap = styled.header`
     display: grid;
     grid-template-columns: 35% 65%;
     .hr {
+      display: flex;
+      flex-direction: column;
       position: relative;
       padding: 3em;
       background: #fafafa;
@@ -74,6 +76,32 @@ const NavigationWrap = styled.header`
         font-weight: 600;
         margin-left:0px;
         padding-left:0px;
+      }
+      li:nth-last-child(2) {
+        margin-bottom: auto;
+      }
+      .action-items {
+        margin-top: 10px;
+        position: relative;
+        .action-link {
+          padding: 2px 0;
+          display: block;
+          .readmore-btn {
+            color: ${props => props.theme.black};
+          }
+          &:before {
+            content: none;
+          }
+          &:hover{
+            .readmore-btn {
+                color: ${props => props.theme.menuHoverColor};
+                svg{
+                    margin-left: 3px;
+                      transform: scale(1.2);
+                }
+            }
+          }
+        }
       }
     }
     .nav-display {
