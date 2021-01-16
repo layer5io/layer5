@@ -1,16 +1,16 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
 import { graphql } from "gatsby";
 
-import Navigation from "../sections/Navigation";
-import NewsPage from "../sections/Company/News-grid";
-import Footer from "../sections/Footer";
+import Navigation from "../../sections/Navigation";
+import NewsPage from "../../sections/Company/News-grid";
+import Footer from "../../sections/Footer";
 
-import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
+import { GlobalStyle } from "../../sections/app.style";
+import theme from "../../theme/app/themeStyles";
 
 export const query = graphql`
     query allNews {
