@@ -74,10 +74,14 @@ const Data = {
                     name: "Service Mesh Performance",
                     path: "/projects/service-mesh-performance",
                     sepLine: true
-                }               
+                }
             ],
-            actionName: "Projects",
-            actionLink: "/projects",
+            actionItems: [
+                {
+                    actionName: "Projects",
+                    actionLink: "/projects",
+                }
+            ],
             div1: {
                 src: img1,
                 descr: "How I schooled my seniors"
@@ -107,8 +111,12 @@ const Data = {
                     sepLine: true
                 }
             ],
-            actionName: "Learn",
-            actionLink: "/learn",
+            actionItems: [
+                {
+                    actionName: "Learn",
+                    actionLink: "/learn",
+                }
+            ],
             div1: {
                 src: img1,
                 descr: "How I schooled my seniors"
@@ -156,8 +164,12 @@ const Data = {
                     sepLine: true
                 },
             ],
-            actionName: "Meet the community",
-            actionLink: "/community",
+            actionItems: [
+                {
+                    actionName: "Meet the community",
+                    actionLink: "/community",
+                }
+            ],
             div1: {
                 src: meshmateLogo,
                 descr: "Meet our MeshMates",
@@ -184,8 +196,12 @@ const Data = {
                     sepLine: true
                 }
             ],
-            actionName: "Blogs",
-            actionLink: "/blog",
+            actionItems: [
+                {
+                    actionName: "Blogs",
+                    actionLink: "/blog",
+                }
+            ],
             // div1: {
             //     src: img1,
             //     descr: "How I schooled my seniors"
