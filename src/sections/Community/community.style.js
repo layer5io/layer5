@@ -150,6 +150,31 @@ const CommunitySectionWrapper = styled.div`
         text-align:center;
         margin: 5rem auto;
     }
+
+    .maintainer{
+        div{
+            display: inline-block
+            width: 50%
+            padding-left: 2rem
+            padding-top: 3rem
+        }
+        h2{
+            line-height: 3.1rem;
+            margin-bottom: 1rem;
+            @media (max-width: 62rem) {
+                line-height: 2.5rem;
+            }
+        }
+        img {
+            width : 50%
+        }
+    }
+    .meet-button{
+        margin-right: auto
+        margin-left: auto
+        margin-top: 1rem
+        margin-bottom: 3rem
+    }
    
 `;
 

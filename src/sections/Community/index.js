@@ -9,6 +9,7 @@ import CommunitySectionWrapper from "./community.style";
 import Lee_workshop from "./Lee_Workshop.png";
 import CommunityMemberImage from "./community-member.jpeg";
 import MeshmateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
+import ContributorImg from "./Michael-Gfeller.svg";
 
 const CommunityPage = () => {
 
@@ -100,6 +101,16 @@ const CommunityPage = () => {
                             <h2>Are you new to the community?</h2>
                             <h4>Don't worry we have got you covered</h4>
                             <Button primary title="Hop In!" url="/community/newcomers"/>
+                        </div>
+                    </Row>
+                    <Row>
+                        <Button className="meet-button" primary title="Meet Our MeshMates" />
+                    </Row>
+                    <Row className="maintainer">
+                    <img src={ContributorImg} alt="Community maintainer"/>
+                        <div>
+                            <h2>Learn from our open source maintainers.</h2>
+                            <p>The Layer5 community is warm and welcoming.</p>
                         </div>
                     </Row>
                     <JoinCommunity image={Lee_workshop}/>
