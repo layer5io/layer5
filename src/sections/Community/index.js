@@ -109,8 +109,10 @@ const CommunityPage = () => {
                     <Row className="maintainer">
                     <img src={ContributorImg} alt="Community maintainer"/>
                         <div>
+                            <h5 className="small-gray">engage with experts</h5>
                             <h2>Learn from our open source maintainers.</h2>
                             <p>The Layer5 community is warm and welcoming.</p>
+                            <Button secondary title="All Newcomers Welcome" url="http://slack.layer5.io/"/>
                         </div>
                     </Row>
                     <JoinCommunity image={Lee_workshop}/>

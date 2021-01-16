@@ -156,7 +156,7 @@ const CommunitySectionWrapper = styled.div`
             display: inline-block
             width: 50%
             padding-left: 2rem
-            padding-top: 3rem
+            padding-top: 5rem
         }
         h2{
             line-height: 3.1rem;
@@ -175,7 +175,10 @@ const CommunitySectionWrapper = styled.div`
         margin-top: 1rem
         margin-bottom: 3rem
     }
-   
+    .small-gray{
+        color: #A0AAAA
+        
+    }
 `;
 
 export default CommunitySectionWrapper;
