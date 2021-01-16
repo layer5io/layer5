@@ -1,9 +1,9 @@
 ---
-layout: person
 name: Neil Alvares
 position: Contributor
-image_path: /assets/images/community/members/Neil-Ivares.jpg
+image_path: ./neil-alvares.jpg
+twitter: ""
 GitHub: Neil-140301
+blurb: Mesh Head
 status: Active
-LinkedIn: neil-alvares-2986561a0
 ---
