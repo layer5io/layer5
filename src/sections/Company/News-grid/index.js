@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import Card from "../../components/Card";
-import PageHeader from "../../reusecore/PageHeader";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import Card from "../../../components/Card";
+import PageHeader from "../../../reusecore/PageHeader";
 import { NewsPageWrapper } from "./NewsGrid.style";
 
 const NewsGrid = ({data}) => {

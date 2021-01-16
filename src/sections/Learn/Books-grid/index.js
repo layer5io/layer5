@@ -76,8 +76,8 @@ const BooksGrid = ({hide_path}) => {
 
     return (
         <BooksPageWrapper>
-            <PageHeader title="Service mesh with the best" path={path}/>
-            <h2 className="sub-heading">Learn to service mesh from the world’s authority </h2>
+            <PageHeader title="Learn to service mesh from the world’s authority" path={path}/>
+            <h2 className="sub-heading">Service mesh with the best</h2>
             <div className="book_list">
                 <Slider {...settings}>
                     {data.allMdx.nodes.map(({id, frontmatter, fields }) => (

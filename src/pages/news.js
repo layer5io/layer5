@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 import { graphql } from "gatsby";
 
 import Navigation from "../sections/Navigation";
-import NewsPage from "../sections/News-grid";
+import NewsPage from "../sections/Company/News-grid";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";

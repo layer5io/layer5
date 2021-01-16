@@ -15,7 +15,9 @@ export const WorkshopPageWrapper = styled.div`
 			padding-left: 1.5625rem;
 		}
 	}
-
+    h2.sub-heading {
+        font-weight: 400;
+    }
 	.btn-and-status-open {
 		display: flex;
 		align-items: center;

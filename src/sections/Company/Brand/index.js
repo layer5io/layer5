@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import BrandPageWrapper from "./brandPage.style";
-import { Row, Col } from "../../reusecore/Layout";
+import { Row, Col } from "../../../reusecore/Layout";
 import Layer5Brand from "./Brand-components/layer5";
 import MesheryBrand from "./Brand-components/meshery";
 import MeshSyncBrand from "./Brand-components/meshsync";
@@ -8,7 +8,7 @@ import MesheryOperatorBrand from "./Brand-components/meshery-operator";
 import ImageHubBrand from "./Brand-components/imagehub";
 import SMPBrand from "./Brand-components/smp";
 import CommunityBrand from "./Brand-components/community";
-import Button from "../../reusecore/Button";
+import Button from "../../../reusecore/Button";
 import { FiDownloadCloud } from "react-icons/fi";
 
 const getDimensions = ele => {

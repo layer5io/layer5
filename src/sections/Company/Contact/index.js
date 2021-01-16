@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
-import { Container, Row } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
-import Jobs_Icon from "../../assets/images/contact/job.svg";
-import Support_Icon from "../../assets/images/contact/support.svg";
-import Partner_Icon from "../../assets/images/contact/partner.svg";
-import Contact_Icon from "../../assets/images/contact/contact.svg";
-import CardOutline from "../../components/Card-Outline";
+import { Container, Row } from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
+import Jobs_Icon from "../../../assets/images/contact/job.svg";
+import Support_Icon from "../../../assets/images/contact/support.svg";
+import Partner_Icon from "../../../assets/images/contact/partner.svg";
+import Contact_Icon from "../../../assets/images/contact/contact.svg";
+import CardOutline from "../../../components/Card-Outline";
 import ContactPageWrapper from "./contactpage.style";
 
 const ContactPage = () => {

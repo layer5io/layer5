@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { Row, Col } from "../../../reusecore/Layout";
-import Button from "../../../reusecore/Button";
-import ColorBox from "../../../components/ColorBox";
+import { Row, Col } from "../../../../reusecore/Layout";
+import Button from "../../../../reusecore/Button";
+import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "react-icons/fi";
-import SmpDark from "../../../assets/images/smp/icon/smp-dark.png";
-import SmpLight from "../../../assets/images/smp/icon/smp-light.png";
-import SmpWhite from "../../../assets/images/smp/icon/smp-white.png";
-import SmPLightTextSide from "../../../assets/images/smp/horizontal/smp-light-text-side.png";
-import SmPDarkTextSide from "../../../assets/images/smp/horizontal/smp-dark-text-side.png";
-import SmPWhiteTextSide from "../../../assets/images/smp/horizontal/smp-white-text-side.png";
+import SmpDark from "../../../../assets/images/smp/icon/smp-dark.png";
+import SmpLight from "../../../../assets/images/smp/icon/smp-light.png";
+import SmpWhite from "../../../../assets/images/smp/icon/smp-white.png";
+import SmPLightTextSide from "../../../../assets/images/smp/horizontal/smp-light-text-side.png";
+import SmPDarkTextSide from "../../../../assets/images/smp/horizontal/smp-dark-text-side.png";
+import SmPWhiteTextSide from "../../../../assets/images/smp/horizontal/smp-white-text-side.png";
 
 const SMPWrap = styled.section`
     .smp-logo {
@@ -28,7 +28,7 @@ const SMPBrand = () => {
                         </h1>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Download Logo Assets" url="../../../assets/brand/smp-brand-kit.zip" external={true}>
+                        <Button primary title="Download Logo Assets" url="../../../../assets/brand/smp-brand-kit.zip" external={true}>
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>

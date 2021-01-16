@@ -1,10 +1,10 @@
 import React from "react";
-import { Row, Col } from "../../../reusecore/Layout";
-import Button from "../../../reusecore/Button";
-import ColorBox from "../../../components/ColorBox";
+import { Row, Col } from "../../../../reusecore/Layout";
+import Button from "../../../../reusecore/Button";
+import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "react-icons/fi";
-import MeshMateLogoLight from "../../../assets/images/meshmate/meshmate-icon-white.png";
-import MeshMateLogo from "../../../assets/images/meshmate/meshmate-icon.png";
+import MeshMateLogoLight from "../../../../assets/images/meshmate/meshmate-icon-white.png";
+import MeshMateLogo from "../../../../assets/images/meshmate/meshmate-icon.png";
 
 
 const CommunityBrand = () => {
@@ -24,7 +24,7 @@ const CommunityBrand = () => {
                     </h2>
                 </Col>
                 <Col xs={12} sm={6} className="download-button">
-                    <Button primary title="Download Logo Assets" url="../../../assets/brand/meshmate-brand-kit.zip" external={true}>
+                    <Button primary title="Download Logo Assets" url="../../../../assets/brand/meshmate-brand-kit.zip" external={true}>
                         <FiDownloadCloud size={21} className="icon-left" />
                     </Button>
                 </Col>

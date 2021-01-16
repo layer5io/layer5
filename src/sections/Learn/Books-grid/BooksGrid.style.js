@@ -9,7 +9,9 @@ export const BooksPageWrapper = styled.div`
     .slick-arrow{
         display: none !important;
     }
-
+    h2.sub-heading {
+        font-weight: 400;
+    }
     .slick-slide{
         filter: drop-shadow(0px 0px 8px gray) brightness(0.75);
         .book_image{

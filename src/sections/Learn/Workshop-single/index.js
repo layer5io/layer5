@@ -4,14 +4,14 @@ import WorkshopSinglePageWrapper from "./WorkshopSinglePageWrapper.style";
 import { MdArrowBack } from "react-icons/md";
 import { Link } from "gatsby";
 
-import Slack from "../../assets/images/socialIcons/slack_color.png";
-import Slide from "../../assets/images/socialIcons/slide_color.png";
-import LinkIcon from "../../assets/images/socialIcons/link_color.png";
-import Youtube from "../../assets/images/socialIcons/youtube_color.png";
-import Lab from "../../assets/images/socialIcons/lab_color.png";
-import PageHeader from "../../reusecore/PageHeader";
-import { Container } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
+import Slack from "../../../assets/images/socialIcons/slack_color.png";
+import Slide from "../../../assets/images/socialIcons/slide_color.png";
+import LinkIcon from "../../../assets/images/socialIcons/link_color.png";
+import Youtube from "../../../assets/images/socialIcons/youtube_color.png";
+import Lab from "../../../assets/images/socialIcons/lab_color.png";
+import PageHeader from "../../../reusecore/PageHeader";
+import { Container } from "../../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
 
 const WorkshopSinglePage = ({ frontmatter, body }) => {
 

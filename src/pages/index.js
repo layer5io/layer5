@@ -14,7 +14,7 @@ import Counters from "../sections/Counters";
 import Statement from "../sections/Home/Layer5-statement";
 import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
-import News from "../sections/News";
+import News from "../sections/Company/News";
 import Getapp from "../sections/Getapp";
 import ContactCard from "../components/ContactCard";
 import Footer from "../sections/Footer";

@@ -1,12 +1,12 @@
 import React from "react";
-import { Row, Col } from "../../../reusecore/Layout";
-import Button from "../../../reusecore/Button";
-import ColorBox from "../../../components/ColorBox";
+import { Row, Col } from "../../../../reusecore/Layout";
+import Button from "../../../../reusecore/Button";
+import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "react-icons/fi";
-import MeshLogoLightText from "../../../assets/images/meshery/meshery-logo-light-text.png";
-import MeshLogoLightTextSide from "../../../assets/images/meshery/meshery-logo-light-text-side.png";
-import MeshDarkText from "../../../assets/images/meshery/meshery-dark-text.png";
-import MeshDarkTagText from "../../../assets/images/meshery/meshery-dark-tag-text.png";
+import MeshLogoLightText from "../../../../assets/images/meshery/meshery-logo-light-text.png";
+import MeshLogoLightTextSide from "../../../../assets/images/meshery/meshery-logo-light-text-side.png";
+import MeshDarkText from "../../../../assets/images/meshery/meshery-dark-text.png";
+import MeshDarkTagText from "../../../../assets/images/meshery/meshery-dark-tag-text.png";
 
 
 const MesheryBrand = () => {
@@ -19,7 +19,7 @@ const MesheryBrand = () => {
                     </h1>
                 </Col>
                 <Col xs={12} sm={6} className="download-button">
-                    <Button primary title="Download Logo Assets" url="../../../assets/brand/meshery-brand-kit.zip" external={true}>
+                    <Button primary title="Download Logo Assets" url="../../../../assets/brand/meshery-brand-kit.zip" external={true}>
                         <FiDownloadCloud size={21} className="icon-left" />
                     </Button>
                 </Col>

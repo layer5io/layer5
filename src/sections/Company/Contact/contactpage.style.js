@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ContactWrapper from "../../components/ContactCard/contact.style";
+import ContactWrapper from "../../../components/ContactCard/contact.style";
 
 const ContactPageWrapper = styled.section`
 

@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import { Container, Row, Col } from "../../reusecore/Layout";
-import SectionTitle from "../../reusecore/SectionTitle";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import SectionTitle from "../../../reusecore/SectionTitle";
 
 import { TiMessageTyping, TiHeartOutline } from "react-icons/ti";
 
-import imgNews1 from "../../assets/images/app/news/news-thumb-1.png";
-import imgNews2 from "../../assets/images/app/news/news-thumb-2.png";
-import imgNews3 from "../../assets/images/app/news/news-thumb-3.png";
-import particle1 from "../../assets/images/app/particle/16.png";
-import particle2 from "../../assets/images/app/particle/09.png";
+import imgNews1 from "../../../assets/images/app/news/news-thumb-1.png";
+import imgNews2 from "../../../assets/images/app/news/news-thumb-2.png";
+import imgNews3 from "../../../assets/images/app/news/news-thumb-3.png";
+import particle1 from "../../../assets/images/app/particle/16.png";
+import particle2 from "../../../assets/images/app/particle/09.png";
 
 import NewsSectionWrapper from "./newsSection.style";
 

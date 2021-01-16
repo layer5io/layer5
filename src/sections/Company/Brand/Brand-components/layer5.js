@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { Row, Col } from "../../../reusecore/Layout";
-import Button from "../../../reusecore/Button";
-import ColorBox from "../../../components/ColorBox";
+import { Row, Col } from "../../../../reusecore/Layout";
+import Button from "../../../../reusecore/Button";
+import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "react-icons/fi";
-import Layer5CommunityWhite from "../../../assets/images/layer5/layer5-tagline/png/layer5-tag-white-bg.png";
-import Layer5WhiteBg from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
-import Bookmarks from "../../../assets/images/layer5/bookmarks.png";
-import BookmarksPDF from "../../../assets/brand/bookmarks.pdf";
-import Layer5Icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
+import Layer5CommunityWhite from "../../../../assets/images/layer5/layer5-tagline/png/layer5-tag-white-bg.png";
+import Layer5WhiteBg from "../../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
+import Bookmarks from "../../../../assets/images/layer5/bookmarks.png";
+import BookmarksPDF from "../../../../assets/brand/bookmarks.pdf";
+import Layer5Icon from "../../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
 const Layer5Wrapper = styled.section`
     @media (max-width:575px){
@@ -30,7 +30,7 @@ const Layer5Brand = () => {
                         </h1>
                     </Col>
                     <Col xs={12} sm={6} className="download-button">
-                        <Button primary title="Download Logo Assets" url="../../../assets/brand/layer5-brand-kit.zip" external={false}>
+                        <Button primary title="Download Logo Assets" url="../../../../assets/brand/layer5-brand-kit.zip" external={false}>
                             <FiDownloadCloud size={21} className="icon-left" />
                         </Button>
                     </Col>
