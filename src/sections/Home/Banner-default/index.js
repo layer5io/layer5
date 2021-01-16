@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Container, Row, Col } from "../../reusecore/Layout";
-import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
-import VintageBox from "../../reusecore/VintageBox";
-import ParticleComponent from "../../reusecore/Particle";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import SectionTitle from "../../../reusecore/SectionTitle";
+import Button from "../../../reusecore/Button";
+import VintageBox from "../../../reusecore/VintageBox";
+import ParticleComponent from "../../../reusecore/Particle";
 
 import { FaMapMarkedAlt, FaPlay } from "react-icons/fa";
 import { FiDownloadCloud } from "react-icons/fi";
@@ -32,10 +32,10 @@ const BannerDefault = () => {
                         The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
                         </p>
                         <VintageBox right={true} vintageOne={true}>
-                            <Button  className="banner-btn two" title="Join in" url="/community">
+                            <Button primary className="banner-btn" title="Join in" url="/community">
                                 <FaMapMarkedAlt size={21} className="icon-left" />
                             </Button>
-                            <Button primary className="banner-btn one" title="Run Meshery" url="/projects/meshery">
+                            <Button primary className="banner-btn two" title="Run Meshery" url="/projects/meshery">
                                 <FiDownloadCloud size={21} className="icon-left" />
                             </Button>
                             

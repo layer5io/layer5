@@ -5,12 +5,13 @@ import Layout from "../components/layout";
 
 import SEO from "../components/seo";
 import Navigation from "../sections/Navigation";
-import Banner from "../sections/Banner-default";
+import Banner from "../sections/Home/Banner-default";
 import Features from "../sections/Features";
 import Faq from "../sections/Faq";
 import Integrations from "../sections/Projects-home";
 import AppScreens from "../sections/AppScreens";
 import Counters from "../sections/Counters";
+import Statement from "../sections/Home/Layer5-statement";
 import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
 import News from "../sections/News";
@@ -32,6 +33,7 @@ const IndexPage = () => (
             <Features />
             {/* <AppScreens /> */}
             {/* <Counters />  */}
+            <Statement />
             <Pricing />
             <Testimonial />
             {/* <Getapp /> */}

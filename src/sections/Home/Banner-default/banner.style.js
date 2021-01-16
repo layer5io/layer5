@@ -1,23 +1,24 @@
 import styled from "styled-components";
 
-import imgHero from "../../assets/images/app/hero/forklift.svg";
+import imgHero from "../../../assets/images/app/hero/forklift.svg";
 
 const BannerSectionWrapper = styled.section`
     padding: 6rem 0;
     background: url(${imgHero}) no-repeat;
     background-size: 40%;
     background-position: center right 35px;
-    p{
+    p {
         font-size: 21px;
         font-weight: 300; 
         color: ${props => props.theme.primaryColor};
         margin: 0 0 70px 0;
         width: 70%;
     }
-    h4{
+    h4 {
         margin-bottom: 8px;
-        font-size: 22px;
+        color: ${props => props.theme.primaryLightColor};
         text-transform: uppercase;
+        font-weight: 600;
     }
     .section-title{
         h1{
@@ -31,7 +32,13 @@ const BannerSectionWrapper = styled.section`
             }
         }
     }
-    .banner-btn.one{
+    .banner-btn {
+        margin: 0rem .5rem 0 .5rem;
+
+
+    }
+    .banner-btn.one {
+        margin: 0rem .5rem 0 .5rem;
         // background: #EAD07D;
         a{
             color: black;
@@ -41,18 +48,16 @@ const BannerSectionWrapper = styled.section`
         }
     }
     .banner-btn.two{
-        background: #5cccb6;
-        color: #326d62;
+        
+        background: ${props => props.theme.secondaryColor};
+        color: #fff;
         &:hover{
-            background: #00b39f;
-            color: #fff;
+            background: ${props => props.theme.secondaryLightColor};
+            //color: #326d62;
         }
     }
-    .banner-btn+.banner-btn{
-        margin-left: 30px;
-    }
     @media only screen and (max-width: 912px) {
-        p{
+        p {
             width: 100%;
         }
         margin: 50px 0 0 0;
@@ -68,10 +73,10 @@ const BannerSectionWrapper = styled.section`
                 font-size: 16px;
             }
         }
-        p{ 
+        p { 
             margin: 0 0 30px 0;
         }
-        .banner-btn{
+        .banner-btn {
             min-width: 140px;
         }
         .banner-btn+.banner-btn{
