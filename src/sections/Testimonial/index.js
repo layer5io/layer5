@@ -49,7 +49,7 @@ const Testimonial = () => {
                         <SectionTitle leftAlign={true} className="testmonial__heading">
                             <h4>Testimonial</h4>
                             <h2>
-                                <span>What our client says </span> about us
+                                <span>What our users are</span> saying
                             </h2>
                         </SectionTitle>
                         <SlickSlider {...settings} className="testimonial__slider">

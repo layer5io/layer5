@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import logo from "../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg";
-import particleOne from "../../assets/images/app/footer/footer-particle.png";
 import SocialLinksColor from "../../components/SocialLinks-Color";
 import Button from "../../reusecore/Button";
 import FooterWrapper from "./footer.style";
+import bubblesElement from "./images/bubbles-element.svg";
 
 const Footer = () => {
     return (
         <FooterWrapper>
-            <img className="section__particle" src={particleOne} alt="Layer5, the service mesh company" />
+            <img className="section__particle" src={bubblesElement} alt="Layer5, the service mesh company" />
             <Container>
                 <Row className="footer-head">
                     <Col className="footer_logo-icons" sm={3}>

@@ -9,7 +9,7 @@ import Footer from "../../sections/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
-import ContactPage from "../../sections/Contact";
+import ContactPage from "../../sections/Company/Contact";
 
 class Contact extends Component {
     render() {

@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../../reusecore/Button";
 import BooksSection from "./LearnPage-Sections/books";
 import WorkshopsSection from "./LearnPage-Sections/workshops";
 import LearnSection from "./LearnPage-Sections/learn";
