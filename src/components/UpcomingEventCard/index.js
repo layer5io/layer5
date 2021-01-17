@@ -9,6 +9,7 @@ import Button from "../../reusecore/Button";
 
 SwiperCore.use([Pagination, Mousewheel]);
 
+
 const UpcomingEvents = ({ data }) => {
     return (
         <UpcomingEventsWrapper>

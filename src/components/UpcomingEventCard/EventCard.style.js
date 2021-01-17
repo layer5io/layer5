@@ -10,7 +10,7 @@ const UpcomingEventsWrapper = styled.div`
 		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 		padding: 1rem;
 		border-radius: 0.5rem;
-		height: 34rem;
+		height: 35rem;
 		transition: all 0.3s;
 	}
 
