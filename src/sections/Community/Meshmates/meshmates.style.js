@@ -3,12 +3,17 @@ import hero from "./hero.png";
 
 const MeshMatesWrapper = styled.div`
     .hero{
-        // filter: brightness(50%);
-        background-image: url(${hero});
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 37.5rem; 
+        height: 37.5rem;
+        position: relative;
+        width: 100%;
+        img{
+            opacity: 0.6;
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
         display: flex;
         justify-content: center;
         align-items: center;
@@ -18,10 +23,7 @@ const MeshMatesWrapper = styled.div`
                 margin-bottom: 30px;
                 color: ${props => props.theme.white};
             }
-            h4{
-                color: ${props => props.theme.white};
-            }
-            p{
+            h2, p{
                 color: ${props => props.theme.white};
             }
         }
@@ -68,14 +70,14 @@ const MeshMatesWrapper = styled.div`
                 width: 32px;
             }
             .feature{
-                padding-left: 30px;
+                padding-left: 20px;
                 h4{
                     font-weight: 700;
                 }
             }
         }
         .callout-card{
-            box-shadow: 1px 1px 1px solid gray;
+            box-shadow: 0 1px 10px 0 gray;
             margin: 100px 0 0 30px;
             width: 500px;
             .card-img{
@@ -87,7 +89,6 @@ const MeshMatesWrapper = styled.div`
             .card-text{
                 margin-top: -7px;
                 padding: 20px;
-                box-shadow: 0 1px 10px 0 gray;
                 h4{
                     font-weight: 700;
                     margin-bottom: 10px;

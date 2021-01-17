@@ -51,9 +51,10 @@ const Meshmates=() => {
     return (
         <MeshMatesWrapper>
             <div className="hero">
+                <img src={hero} alt="community" />
                 <Container>
                     <div className="hero-text">
-                        <h4> A warm and welcoming collection of open sourcers </h4>
+                        <h2> A warm and welcoming collection of open sourcers </h2>
                         <h1> Layer5 Meshmates </h1>
                         <p> Layer5 MeshMates are committed to helping community members be successful contributors. MeshMates aid in identifying areas of projects to engage within, working groups to join, and in helping community members grow in their open source and cloud native knowledge. By connecting one-on-one, MeshMates will share tips on how to have the best community experience possible. </p>
                     </div>
@@ -61,7 +62,7 @@ const Meshmates=() => {
             </div>
             <Container>
                 <div className="meshmates-grid">
-                    <h1> Layer5 MeshMates </h1>
+                    <h1> Our Community Meshmates </h1>
                     <p> MeshMate is a distinction that Layer5 awards select members of the community that who innately align with the Layer5 culture of helping others, paying it forward, and have a commitment to sharing their knowledge of Layer5 projects with the community. MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing their expertise has a huge impact on the Layer5 community – don’t hesitate to reach out to them! </p>
                     <Row>
                         {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
@@ -144,7 +145,7 @@ const Meshmates=() => {
                     <h2> Code of Conduct </h2>
                     <p> The comfort and safety of Layer5 community members is our priority. You must agree to the Code of Conduct to participate in the Layer5 community, and any violations of the Code of Conduct will be taken seriously. <br/>
                     To report any violations please fill out this incident form. </p>
-                    <Button primary title="Fill Form"></Button>
+                    <Button primary title="Fill Form" url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" external="true"></Button>
                 </div>
                 <EmeritusGrid />
             </Container>
