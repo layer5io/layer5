@@ -11,6 +11,8 @@ import c_icon from "./c-icon.svg";
 import wasm_capacity from "./native-and-wasm-at-capacity-100rps.png";
 import latency from "./latency-at-scale.png";
 import client_capacity from "./client-capacity.png";
+import smp from "../../assets/images/app/projects/smp.png";
+import callout from "./callout.png";
 
 const SMPPage = () => {
     return (
@@ -23,6 +25,9 @@ const SMPPage = () => {
                                 <Col lg={7}>
                                     <h1> Service Mesh Performance </h1>
                                     <p> The Service Mesh Performance Working Group is hosted within CNCF SIG Network. All are welcome to participate. This group is defining the Service Mesh Performance(SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
+                                </Col>
+                                <Col lg={5}>
+                                    {/* <img src={smp} /> */}
                                 </Col>
                             </Row>
                         </div>
@@ -108,7 +113,6 @@ const SMPPage = () => {
                         </div>
                     </Container>
                     <div>
-                        {/* <Row> */}
                         <iframe className="iframe" src="https://www.youtube.com/embed/rgnb0-ntPko"
                             frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"allowFullScreen>
                         </iframe>
@@ -117,16 +121,16 @@ const SMPPage = () => {
                         </iframe>
                         <iframe	className="iframe" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000"	
                             frameBorder="0" allowFullScreen>	
-                        </iframe>	
-                        {/* </Row> */}
+                        </iframe>
                     </div>
                 </div>
                 <div className="cncf-callout">
                     <h1> Join the CNCF Service Mesh Working Group </h1>
                     <h4> Learn more about these initiatives</h4>
-                    <Button primary title="Learn More"></Button>
+                    <Button primary title="Learn More" url="https://smp-spec.io"></Button>
                 </div>
                 <div className="layer5-callout">
+                    <img src={callout} />
                     <div className="callout-text">
                         <h1> Check Out the Layer5 community and join us on Slack</h1> 
                         <Button primary title="Let's go" url="http://slack.layer5.io"></Button>   

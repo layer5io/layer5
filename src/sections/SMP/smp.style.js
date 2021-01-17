@@ -90,7 +90,7 @@ const SMPWrapper = styled.section`
             }
         }
         .iframe{
-            width: 33.33%;
+            width: 33.3%;
             height: 21.875rem;
         }
     }
@@ -102,11 +102,18 @@ const SMPWrapper = styled.section`
         }
     }
     .layer5-callout{
-        background-image: url(${callout});
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 37.5rem; 
+        height: 37.5rem;
+        position: relative;
+        width: 100%;
+        img{
+            opacity: 0.6;
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+         
         display: flex;
         justify-content: center;
         align-items: center;
