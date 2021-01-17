@@ -14,6 +14,7 @@ const WorkshopCardWrapper = styled.div`
 		display: block;
 		width: 100%;
 		height: 25rem;
+		transition: 0.25s ease-in-out all;
 	}
 
 	.main-open {
@@ -49,12 +50,15 @@ const WorkshopCardWrapper = styled.div`
 		-webkit-transition: 0.5s ease-in-out all;
 		transition: 0.5s ease-in-out all;
 		box-shadow: 0 0 black;
+
+		.gatsby-image-wrapper {
+			height: 90%;
+		}
 	}
 
 	.card-content {
 		display: block;
 		width: 100%;
-		height: 100%;
 		padding-top: 0.625rem;
 	}
 
@@ -67,7 +71,6 @@ const WorkshopCardWrapper = styled.div`
 
 	.para {
 		padding-left: 0.625rem;
-		text-align: start;
 	}
 
 	@media only screen and (max-width: 62rem) {

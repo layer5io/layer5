@@ -213,6 +213,8 @@ const NavigationWrap = styled.header`
     .nav-active {
       position: relative;
       color: ${props => props.theme.menuColor};
+      display: flex;
+      line-height: 1.5rem;
       font-size: 15px;
       transition: 450ms all;
       padding: 0px 20px 5px 20px;
@@ -236,7 +238,7 @@ const NavigationWrap = styled.header`
       }
     }
     .menu-link {
-      margin: 0 1.25rem;
+      margin: auto 1.25rem;
       padding: 0.25rem 0 0.25rem;
       &:before {
         content: none;

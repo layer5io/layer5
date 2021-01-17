@@ -114,7 +114,7 @@ const WorkshopsPage = ({hide_path, limit}) => {
                                                 <div className="expand">
                                                     {content && ID === id ?
                                                         <button onClick={() => toggleActive(id)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
-                                                        <button onClick={() => toggleActive(id)} className="readmeBtn"> Read More <BsArrowDown className="icon" size={30} /></button> }
+                                                        <button onClick={() => toggleActive(id)} className="readmeBtn readmreBtn"> Read More <BsArrowDown className="icon" size={30} /></button> }
                                                 </div>
                                                 <div className="externalLink">
                                                     <Link to={fields.slug} className="siteLink"><FaRegWindowMaximize style={{ height: "25px", width: "auto" }} /></Link>

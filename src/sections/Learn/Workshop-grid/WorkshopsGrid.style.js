@@ -20,9 +20,9 @@ export const WorkshopPageWrapper = styled.div`
     }
 	.btn-and-status-open {
 		display: flex;
+		margin: auto;
+		padding-bottom: 1rem;
 		align-items: center;
-		bottom: 2.1875rem;
-		position: absolute;
 		width: 95%;
 
 		p {
@@ -59,8 +59,8 @@ export const WorkshopPageWrapper = styled.div`
 	}
 
 	.linkAndReadBtns-open {
-		width: 30%;
 		display: flex;
+		flex: auto;
 		flex-direction: row-reverse;
 		justify-content: space-between;
 	}
@@ -73,17 +73,26 @@ export const WorkshopPageWrapper = styled.div`
 		align-items: center;
 		font-size: 1.125rem;
 		cursor: pointer;
-		transition: 0.25s ease-in all;
+		transition: 0.2s ease-in all;
 
 		&:hover {
 			color: ${props => props.theme.primaryLightColorTwo};
 		}
 	}
 
+	.readmreBtn:after {
+		content: '';
+		position: absolute;
+		top: -22rem;
+		right: -0.125rem;
+		left: 0;
+		bottom: -1rem;
+	}
+
 	a.siteLink {
-		margin-left: 1.25rem;
-		filter: grayscale(90%);
-		transition: 0.25s ease-in-out all;
+		padding: 0.5rem 0.25rem 0rem;
+		filter: grayscale(100%) brightness(0.5);
+		transition: 0.2s ease-in-out all;
 
 		&:hover {
 			color: ${props => props.theme.primaryLightColorTwo};
@@ -91,7 +100,11 @@ export const WorkshopPageWrapper = styled.div`
 		}
 	}
 
-
+	.externalLink {
+		position: relative;
+		left: 1rem;
+		margin-top: 0.25rem;
+	}
 
 	.text-contents {
 		display: none;
@@ -104,26 +117,20 @@ export const WorkshopPageWrapper = styled.div`
 		display: block;
 		width: 100%;
 		height: 100%;
-		padding: 1.25rem 1.25rem 3.75rem 1.25rem;
+		padding: 1.5rem;
 	}
 
 	.social-icons {
 		display: flex;
-		margin-left: 1.25rem;
-		width: 70%;
 	}
 
 	.links {
 		display: flex;
-		color: ${props => props.theme.primaryLightColorTwo};
-		border: none;
 		align-items: center;
-		padding: 0.3125rem 0.9375rem;
+		padding: 0.25rem 0.75rem;
 		background-color: whitesmoke;
-		margin-right: 0.625rem;
-		border-radius: 0.3125rem;
-		font-size: 1.125rem;
-		font-weight: 400;
+		margin-right: 0.5rem;
+		border-radius: 0.3rem;
 		box-shadow: 0rem 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
 		transition: 0.25s ease-in-out all;
 
@@ -157,11 +164,11 @@ export const WorkshopPageWrapper = styled.div`
 		border-radius: 0.3125rem;
 		margin-bottom: 1.25rem;
 		box-shadow: 0rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.2);
-		-webkit-transition: 0.25s ease-in-out all;
-		transition: 0.25s ease-in-out all;
 
 		&:hover {
-			box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.15);
+			.main {
+				box-shadow: 0rem 0.25rem 1rem rgba(0, 0, 0, 0.15);
+			}
 		}
 	}
 
