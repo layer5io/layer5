@@ -8,7 +8,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
     const addAllClasses = [""];
 
     const [state, setState] = useState({
-        active: menuItems[5]
+        active: menuItems[4]
     });
 
     const wrapRef = useRef(null);

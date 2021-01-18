@@ -10,6 +10,7 @@ import data from "../../assets/data/pricing";
 
 import PricingSectionWrapper from "./pricingSection.style";
 
+
 const Pricing = () => {
     return (
         <PricingSectionWrapper id="pricing">
@@ -34,8 +35,8 @@ const Pricing = () => {
                                     {pricing.services.map((service, index) => (
                                         <table className="table" key={index}>
                                             <tr>
-                                                <td><IoMdCheckbox size={40} /></td>
-                                                <td><h4>{service.content}</h4></td>
+                                                <td><IoMdCheckbox size={20} /></td>
+                                                <td><p>{service.content}</p></td>
                                             </tr>
                                         </table>
                                     ))}

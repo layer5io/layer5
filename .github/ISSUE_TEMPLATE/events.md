@@ -1,36 +1,17 @@
 ---
-name: 🐛 Bug Report
-about: Report an issue to help us improve
-title: ''
-labels: 'kind/bug'
+name: 🎪 📅 Layer5 Event Update
+about: Upcoming event to be listed on https://layer5.io/news
+title: '[Event]'
+labels: 'area/events'
 assignees: ''
 ---
-**Description**
-<!-- A brief description of the issue. -->
-
-**Expected Behavior**
-<!-- A brief description of what you expected to happen. -->
-
-**Screenshots**
-<!-- Add screenshots, if applicable, to help explain your problem. -->
-
-**Enviroment:**
-- Host OS: 
-- Meshery Version: 
-- Kubernetes Version: 
-- Browser: 
-
----
-
-[Optional] **To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-[Optional] **Additional Context**
-<!-- Add any other context about the problem here. -->
+**Event:**
+- Event Title: 
+- Event Link: 
+- Talk Description: 
+- Talk Link: 
+- Deck: 
+- Video: 
 
 ---
 **Contributor Resources**
