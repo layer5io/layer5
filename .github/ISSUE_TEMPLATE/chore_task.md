@@ -1,36 +1,22 @@
 ---
-name: 🐛 Bug Report
-about: Report an issue to help us improve
+name: 🧹Chore or task
+about: Identify a necessary task to be addressed.
 title: ''
-labels: 'kind/bug'
+labels: 'kind/chore'
 assignees: ''
 ---
-**Description**
-<!-- A brief description of the issue. -->
+**Current Behavior**
+<!-- A brief description of what the current circumstance is. -->
 
-**Expected Behavior**
-<!-- A brief description of what you expected to happen. -->
-
-**Screenshots**
-<!-- Add screenshots, if applicable, to help explain your problem. -->
-
-**Enviroment:**
-- Host OS: 
-- Meshery Version: 
-- Kubernetes Version: 
-- Browser: 
+**Desired Situation**
+<!-- A brief description of the necessary action to take. -->
 
 ---
+[Optional] **Alternatives**
+<!-- A brief description of any alternative solutions or features you've considered. -->
 
-[Optional] **To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-[Optional] **Additional Context**
-<!-- Add any other context about the problem here. -->
+[Optional] **Additional context**
+<!-- Add any other context or screenshots about the chore or task here. -->
 
 ---
 **Contributor Resources**
@@ -41,3 +27,4 @@ If the `layer5-ng` label is absent on this issue, then this issue pertains to th
 
 If the `layer5-ng` label is present on this issue, then this issue pertains to the next-generation of the layer5.io website, which uses Gatsby, Strapi, and GitHub Pages. Site content is found under the [`layer5-ng` branch](https://github.com/layer5io/layer5/tree/layer5-ng).
 - See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)
+
