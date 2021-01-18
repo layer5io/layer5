@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import {Container} from "../../reusecore/Layout";
-import Terminal from "../../components/Terminal";
-import Features from "../../components/Features-carousel";
+import {Container} from "../../../reusecore/Layout";
+import Terminal from "../../../components/Terminal";
+import Features from "../../../components/Features-carousel";
 
 const MesheryFeaturesWrapper = styled.div`
     margin: 6.25rem auto;
@@ -90,7 +90,7 @@ const MehseryFeatures = () => {
                                 "View projects and applications being deployed by meshery in a web interface",
                             content: (
                                 <img
-                                    src={require("../../assets/images/workshops/workshops.png")}
+                                    src={require("../../../assets/images/workshops/workshops.png")}
                                     alt="Web UI"
                                 />
                             ),
@@ -250,7 +250,7 @@ const MehseryFeatures = () => {
                                 "View projects and applications being deployed by meshery in a web interface",
                             content: (
                                 <img
-                                    src={require("../../assets/images/workshops/workshops.png")}
+                                    src={require("../../../assets/images/workshops/workshops.png")}
                                     alt="Web UI"
                                 />
                             ),

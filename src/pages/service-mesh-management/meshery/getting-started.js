@@ -6,9 +6,9 @@ import SEO from "../../../components/seo";
 
 import Navigation from "../../../sections/Navigation";
 import Footer from "../../../sections/Footer";
-import MesheryTerminal from "../../../sections/Meshery-terminal";
-import MesheryPlatforms from "../../../sections/Meshery-platforms";
-import MehseryFeatures from "../../../sections/Meshery-features";
+import MesheryTerminal from "../../../sections/Meshery/Meshery-terminal";
+import MesheryPlatforms from "../../../sections/Meshery/Meshery-platforms";
+import MehseryFeatures from "../../../sections/Meshery/Meshery-features";
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 

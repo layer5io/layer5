@@ -1,7 +1,7 @@
 import React from "react";
-import {Container} from "../../reusecore/Layout";
-import Hero from "../../components/Animated-steps-list/hero";
-import AnimatedStepsList from "../../components/Animated-steps-list";
+import {Container} from "../../../reusecore/Layout";
+import Hero from "../../../components/Animated-steps-list/hero";
+import AnimatedStepsList from "../../../components/Animated-steps-list";
 
 const MesheryTerminal = () => {
     return(
@@ -46,7 +46,7 @@ const MesheryTerminal = () => {
                         ),
                         logos: [
                             {
-                                url: require("../../assets/images/mesheryctl/kubernetes.svg"),
+                                url: require("../../../assets/images/mesheryctl/kubernetes.svg"),
                                 alt: "Kubernetes",
                             }
                             // {

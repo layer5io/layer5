@@ -7,9 +7,9 @@ export const MesheryPlatformsWrapper = styled.div`
         width: 100%;
         height: 52rem;
         overflow: hidden;
-        transform: skewY(10deg);
-        transform-origin: 50% center;
-        background-color: ${props => props.theme.secondaryColor};
+        //transform: skewY(10deg);
+        //transform-origin: 50% center;
+        background-color: ${props => props.theme.black};
         z-index: -1;
     }
   
@@ -31,6 +31,19 @@ export const MesheryPlatformsWrapper = styled.div`
       .supported-platforms{
         padding-top: 2rem;
         align-items: center;
+        max-width: 110rem;
+        margin: 0 auto;
+        
+        .single-platform{
+          max-height: 6rem;
+          max-width: 12rem;
+          border-radius: 1rem;
+          margin-bottom: 2rem; 
+          background-color: ${props => props.theme.tertiaryColor};
+          img {
+            height: 3.5rem;
+          }
+        }
       }
       .step-2{
         padding-top: 4rem;

@@ -1,7 +1,8 @@
 import React from "react";
-import MesheryLogo from  "../../assets/images/meshery/meshery-logo-complete-white-side.svg";
+import MesheryLogo from  "../../../assets/images/meshery/meshery-logo-complete-white-side.svg";
 import { MesheryPlatformsWrapper } from "./MesheryPlatforms.style";
-import {Col, Container, Row} from "../../reusecore/Layout";
+import {Col, Container, Row} from "../../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
 
 const supported_platforms = [
     {
@@ -58,20 +59,22 @@ const MesheryPlatforms = () =>{
     return(
         <MesheryPlatformsWrapper>
             <div className="background-wrapper"/>
-            <Container>
+            <>
                 <div className="content">
                     <h2 className="step-1">Step 1: Choose your platform</h2>
                     <Row className="supported-platforms">
                         { supported_platforms.map(platform => (
-                            <Col xs ={3} sm={3} lg={2} key={platform.alt}>
-                                <img src={platform.icon} alt={platform.alt} />
+                            <Col xs={6} sm={4} md={3} lg={2} key={platform.alt}>
+                                <Button className="single-platform">
+                                    <img src={platform.icon} alt={platform.alt} />
+                                </Button>
                             </Col>
                         ))}
                     </Row>
                     <h2 className="step-2">Step 2: Manage your mesh</h2>
                     <img src={MesheryLogo} alt="Meshery"/>
                 </div>
-            </Container>
+            </>
         </MesheryPlatformsWrapper>
     );
 };
