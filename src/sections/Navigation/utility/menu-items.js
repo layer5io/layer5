@@ -210,12 +210,7 @@ const Data = {
             //     src: img2,
             //     descr: "Service Mesh Istio patterns for multilatency"
             // }
-        },
-        {
-            name: "About",
-            path: "/company/about",
-            offset: "-50"
-        },
+        }
         // {
         //     name: "Contact",
         //     path: "/#contact",
