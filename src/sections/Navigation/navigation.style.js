@@ -379,6 +379,8 @@ const NavigationWrap = styled.header`
     flex-direction: column;
     align-items: stretch;
     min-height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
     &:hover{
       .readmore-btn{
           color: ${props => props.theme.menuHoverColor};
@@ -442,6 +444,15 @@ const NavigationWrap = styled.header`
     text-overflow: ellipsis;
     -webkit-transition: 450ms all;
     transition: 450ms all;
+    
+    @supports (-webkit-line-clamp: 2) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: initial;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
   }
   .readmore-btn {
     color: rgba(0,0,0,0.35);
