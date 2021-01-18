@@ -8,7 +8,7 @@ import Navigation from "../../../sections/Navigation";
 import Footer from "../../../sections/Footer";
 import MesheryTerminal from "../../../sections/Meshery/Meshery-terminal";
 import MesheryPlatforms from "../../../sections/Meshery/Meshery-platforms";
-import MehseryFeatures from "../../../sections/Meshery/Meshery-features";
+import MesheryManageMesh from "../../../sections/Meshery/Meshery-mange-mesh";
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
@@ -20,7 +20,7 @@ const MesheryMainPage = () => (
             <Navigation />
             <MesheryTerminal/>
             <MesheryPlatforms/>
-            <MehseryFeatures/>
+            <MesheryManageMesh/>
             <Footer />
         </Layout>
     </ThemeProvider>

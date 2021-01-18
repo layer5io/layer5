@@ -2,18 +2,11 @@ import styled from "styled-components";
 
 export const MesheryPlatformsWrapper = styled.div`
    margin-top: 5rem;
-  .background-wrapper {
-        position: absolute;
-        width: 100%;
-        height: 52rem;
-        overflow: hidden;
-        //transform: skewY(10deg);
-        //transform-origin: 50% center;
-        background-color: ${props => props.theme.black};
-        z-index: -1;
-    }
-  
+   background-color: ${props => props.theme.black};
+   transform: skew(0deg, -5deg);
+   width: 100%;
   .content{ 
+      transform: skew(0deg, 5deg);
       text-align: center;
       h2 {
         color: ${props => props.theme.white};
