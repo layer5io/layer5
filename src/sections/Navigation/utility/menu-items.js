@@ -212,6 +212,11 @@ const Data = {
             // }
         }
         // {
+        //     name: "About",
+        //     path: "/company/about",
+        //     offset: "-50"
+        // },
+        // {
         //     name: "Contact",
         //     path: "/#contact",
         //     offset: "-50"
