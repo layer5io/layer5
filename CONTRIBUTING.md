@@ -16,15 +16,15 @@ Layer5 community members are an integral part of what makes Layer5 and it's proj
 
 The service mesh landscape is powered by Gatsbyjs. In order to add/update the landscape, fork this repository, clone it, create a branch and navigate to the **\_data/categories** folder. Edit these yaml files (if appropriate):
 
-- [non-functional.yml](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/non-functional.yml) - overview of various service meshes
-- [meshes.yml](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-gridmeshes.yml) - list of individual service mesh details
-- [proxies.yml](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/proxies.yml) - list of individual modern proxies
-- [gw.yml](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/gw.yml) - list of API gateways
-- [lb.yml](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/lb.yml) - list of load balancers
+- [non-functional.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/non-functional.js) - overview of various service meshes
+- [meshes.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-gridmeshes.js) - list of individual service mesh details
+- [proxies.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/proxies.js) - list of individual modern proxies
+- [gw.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/gw.js) - list of API gateways
+- [lb.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/lb.js) - list of load balancers
 
-Entries should be listed in alphabetical order. Edit other yaml files as needed.
+Entries should be listed in alphabetical order. Data provided to the `smi.js` is dynamic and based upon results from conformance tests run using Meshery.
 
-- Aslo, to update the Service Mesh Timeline, add the new service mesh in the [non-functional.yml](https://github.com/layer5io/layer5/blob/master/_data/landscape/non-functional.yml) file. Add `announce-date` key for the service mesh then add a `timeline-order` key having value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
+To update the Service Mesh Timeline, add the new service mesh in the [non-functional.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/non-functional.js) file. Add `announce-date` key for the service mesh then add a `timeline-order` key having value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
 
 #### <a name="news">Adding News</a>
 
