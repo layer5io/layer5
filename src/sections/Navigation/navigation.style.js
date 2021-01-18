@@ -379,6 +379,8 @@ const NavigationWrap = styled.header`
     flex-direction: column;
     align-items: stretch;
     min-height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
     &:hover{
       .readmore-btn{
           color: ${props => props.theme.menuHoverColor};
