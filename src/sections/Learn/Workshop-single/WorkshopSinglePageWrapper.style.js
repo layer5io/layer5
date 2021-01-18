@@ -7,22 +7,32 @@ const WorkshopSinglePageWrapper = styled.div`
 	.backBtn {
 	    z-index: 2;
 		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		width: 11.5625rem;
-		height: 2.5rem;
+		justify-content: center;
 		position: absolute;
-		top: 6.875rem;
-		font-size: 1.25rem;
+		top: 7rem;
 		left: 3.75rem;
 		font-weight: 600;
 		a{
+			display: flex;
 		    color: ${props=> props.theme.primaryColor};
 		    &:hover{
 		        color: ${props=> props.theme.linkColor};
-		    }
+			}
+			
+			h4 {
+				line-height: 1.75rem;
+			}
+			svg {
+				font-size: 1.75rem;
+			}
 		}
 		
+	}
+
+	@media screen and (max-width: 992px) {
+		.backBtn {
+			display: none;
+		}
 	}
 
 	.bottomBtn {

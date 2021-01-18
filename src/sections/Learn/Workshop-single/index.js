@@ -1,7 +1,7 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import WorkshopSinglePageWrapper from "./WorkshopSinglePageWrapper.style";
-import { MdArrowBack } from "react-icons/md";
+import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { Link } from "gatsby";
 
 import Slack from "../../../assets/images/socialIcons/slack_color.png";
@@ -19,7 +19,8 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
         <WorkshopSinglePageWrapper>
             <div className="backBtn">
                 <Link to="/workshops">
-                    <MdArrowBack /> All Workshops
+                    <IoIosArrowDropleftCircle />
+                    <h4>All Workshops</h4>
                 </Link>
             </div>
             <PageHeader
