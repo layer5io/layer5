@@ -1,6 +1,6 @@
 ---
 name: 💡 Feature request
-about: Suggest an enhancement to this project
+about: Suggest an enhancement to the Layer5 website
 title: ''
 labels: 'kind/enhancement'
 assignees: ''
@@ -12,12 +12,11 @@ assignees: ''
 <!-- A brief description of the enhancement. -->
 
 ---
-[Optional] **Alternatives**
-<!-- A brief description of any alternative solutions or features you've considered. -->
-
-[Optional] **Additional context**
+[Optional] **Screenshots / Mockups**
 <!-- Add any other context or screenshots about the feature request here. -->
 
+[Optional] **Alternatives**
+<!-- A brief description of any alternative solutions or features you've considered. -->
 
 ---
 **Contributor Resources**
@@ -28,4 +27,5 @@ If the `layer5-ng` label is absent on this issue, then this issue pertains to th
 
 If the `layer5-ng` label is present on this issue, then this issue pertains to the next-generation of the layer5.io website, which uses Gatsby, Strapi, and GitHub Pages. Site content is found under the [`layer5-ng` branch](https://github.com/layer5io/layer5/tree/layer5-ng).
 - See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)
+- See Layer5 site designs in this [Figma project](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs).
 
