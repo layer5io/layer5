@@ -10,16 +10,16 @@ import { IoMdCheckmark } from "react-icons/io";
 import Faq from "../Faq";
 import FeaturesTable from "../Pricing";
 
-import meshery from "./meshery-logo-tag-light-white-text-side.png";
-import meshery_multi_mesh from "./meshery_multi_mesh.png";
-import meshes from "./meshes.png";
-import meshery_benchmark_screen from "./meshery_benchmark_screen.png";
-import meshery_configuration_management from "./meshery-configuration-management.png";
-import smi_conformance from "./SMI-Conformance-in-Meshery.png";
-import smi_performance from "./service-mesh-performance-example.gif";
-import meshery_architecture from "./meshery-architecture.svg";
-import smi_logo from "./smi-logo.png";
-import smp_logo from "./smp-dark-text.png";
+import meshery from "./images/meshery-logo-tag-light-white-text-side.png";
+import meshery_multi_mesh from "./images/meshery_multi_mesh.png";
+import meshes from "./images/meshes.png";
+import meshery_benchmark_screen from "./images/meshery_benchmark_screen.png";
+import meshery_configuration_management from "./images/meshery-configuration-management.png";
+import smi_conformance from "./images/SMI-Conformance-in-Meshery.png";
+import smi_performance from "./images/service-mesh-performance-example.gif";
+import meshery_architecture from "./images/meshery-architecture.svg";
+import smi_logo from "./images/smi-logo.png";
+import smp_logo from "./images/smp-dark-text.png";
 
 import MesheryWrapper from "./meshery.style";
 import theme from "../../theme/app/themeStyles";

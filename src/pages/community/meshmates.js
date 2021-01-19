@@ -6,7 +6,7 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
 import Layout from "../../components/layout";
-import MeshmatesGrid from "../../sections/Meshmates-grid";
+import MeshmatesGrid from "../../sections/Community/Meshmates-grid";
 
 const MeshmatePage=() => {
     return (

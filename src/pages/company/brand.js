@@ -6,7 +6,7 @@ import SEO from "../../components/seo";
 
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
-import Brand from "../../sections/Brand";
+import Brand from "../../sections/Company/Brand";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";

@@ -6,8 +6,8 @@ import communityGreen from "../../../assets/images/community/community-green.svg
 const Data = {
     menuItems: [
         {
-            // name: "Home",
-            // path: "/",
+            name: "Landscape",
+            path: "/service-mesh-landscape",
             // subItems: [
             //     {
             //         name: "Current Home",
@@ -46,6 +46,16 @@ const Data = {
             path: "/projects",
             subItems: [
                 {
+                    name: "Distributed Performance",
+                    path: "/projects/distributed-performance-management-of-service-meshes",
+                    sepLine: true
+                },
+                {
+                    name: "Image Hub",
+                    path: "/projects/image-hub",
+                    sepLine: true
+                },
+                {
                     name: "Meshery",
                     path: "/meshery",
                     sepLine: true
@@ -56,28 +66,22 @@ const Data = {
                     sepLine: true
                 },
                 {
-                    name: "Service Mesh Performance",
-                    path: "/projects/service-mesh-performance",
-                    sepLine: true
-                },
-                {
                     name: "Service Mesh Interface",
                     path: "/projects/service-mesh-interface-conformance",
                     sepLine: true
                 },
                 {
-                    name: "Image Hub",
-                    path: "/projects/image-hub",
-                    sepLine: true
-                },
-                {
-                    name: "Distributed Performance",
-                    path: "/projects/distributed-performance-management-of-service-meshes",
+                    name: "Service Mesh Performance",
+                    path: "/projects/service-mesh-performance",
                     sepLine: true
                 }
             ],
-            actionName: "Projects",
-            actionLink: "/projects",
+            actionItems: [
+                {
+                    actionName: "Projects",
+                    actionLink: "/projects",
+                }
+            ],
             div1: {
                 src: img1,
                 descr: "How I schooled my seniors"
@@ -97,7 +101,7 @@ const Data = {
                     sepLine: true
                 },
                 {
-                    name: "Service Mesh",
+                    name: "Service Mesh Labs",
                     path: "/learn/service-mesh",
                     sepLine: true
                 },
@@ -107,8 +111,12 @@ const Data = {
                     sepLine: true
                 }
             ],
-            actionName: "Learn",
-            actionLink: "/learn",
+            actionItems: [
+                {
+                    actionName: "Learn",
+                    actionLink: "/learn",
+                }
+            ],
             div1: {
                 src: img1,
                 descr: "How I schooled my seniors"
@@ -122,6 +130,11 @@ const Data = {
             name: "Community",
             path: "/community",
             subItems: [
+                {
+                    name: "Calendar",
+                    path: "/community/calendar",
+                    sepLine: true
+                },
                 {
                     name: "Join!",
                     path: "/community",
@@ -150,15 +163,13 @@ const Data = {
                     path: "/community/events",
                     sepLine: true
                 },
-                {
-                    name: "Calendar",
-                    path: "/community/calendar",
-                    sepLine: true
-                },
-
             ],
-            actionName: "Meet the community",
-            actionLink: "/community",
+            actionItems: [
+                {
+                    actionName: "Meet the community",
+                    actionLink: "/community",
+                }
+            ],
             div1: {
                 src: meshmateLogo,
                 descr: "Meet our MeshMates",
@@ -185,8 +196,12 @@ const Data = {
                     sepLine: true
                 }
             ],
-            actionName: "Blogs",
-            actionLink: "/blog",
+            actionItems: [
+                {
+                    actionName: "Blogs",
+                    actionLink: "/blog",
+                }
+            ],
             // div1: {
             //     src: img1,
             //     descr: "How I schooled my seniors"
@@ -195,12 +210,12 @@ const Data = {
             //     src: img2,
             //     descr: "Service Mesh Istio patterns for multilatency"
             // }
-        },
-        {
-            name: "About",
-            path: "/company/about",
-            offset: "-50"
-        },
+        }
+        // {
+        //     name: "About",
+        //     path: "/company/about",
+        //     offset: "-50"
+        // },
         // {
         //     name: "Contact",
         //     path: "/#contact",
