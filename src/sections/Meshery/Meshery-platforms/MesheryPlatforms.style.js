@@ -13,6 +13,8 @@ export const MesheryPlatformsWrapper = styled.div`
         color: ${props => props.theme.white};
       }
       .step-1 {
+        margin: 0 auto;
+        flex-direction: column;
           padding-top: 8rem;
           @media (max-width: 62rem) {
             padding-top: 6rem;
@@ -40,6 +42,8 @@ export const MesheryPlatformsWrapper = styled.div`
       }
       .installation-steps{
           margin: 2rem;
+          flex-direction: column;
+          text-align: left;
       }
       .step-2{
         padding-top: 4rem;

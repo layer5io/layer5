@@ -4,6 +4,7 @@ import { MesheryPlatformsWrapper } from "./MesheryPlatforms.style";
 import {Col, Container, Row} from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import Code from "../../../components/CodeBlock";
+import dedent from "dedent";
 
 const supported_platforms = [
     {
@@ -48,9 +49,9 @@ const supported_platforms = [
             <>
                 <h3>Brew User</h3>
                 <p>Install on Mac or Linux using Homebrew:</p>
-                <Code codeString='brew tap layer5io/tap \n
-                    brew install mesheryctl \n
-                    mesheryctl system start'
+                <Code codeString={dedent`brew tap layer5io/tap
+                    brew install mesheryctl
+                    mesheryctl system start`}
                 />
             </>
         )
@@ -112,7 +113,10 @@ const MesheryPlatforms = () =>{
     return(
         <MesheryPlatformsWrapper>
             <div className="content">
-                <h2 className="step-1">Step 1: Choose your platform</h2>
+                <Row Hcenter className="step-1">
+                    <p>1 step install to managing service meshes</p>
+                    <h2>Step 1: Choose your platform</h2>
+                </Row>
                 <Row className="supported-platforms">
                     { supported_platforms.map((platform,index) => (
                         <Col xs={6} sm={4} md={3} lg={2} key={platform.name}>
