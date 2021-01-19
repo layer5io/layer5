@@ -16,7 +16,7 @@ const SocialLinksWrapper = styled.div`
             }
 
             &:hover {
-                filter: grayscale(0) invert(0);
+                filter: grayscale(0) invert(0.2);
             }
             .github {
                 filter: grayscale(0) invert(0.5);
@@ -32,11 +32,6 @@ const SocialLinksWrapper = styled.div`
                 padding: 0.1rem;
                 border-radius: 0.25rem;
             }
-        }
-        .github {
-           img {
-             border-radius: 0;
-           }
         }
 
     }

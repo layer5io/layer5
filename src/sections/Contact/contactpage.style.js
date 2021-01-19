@@ -26,7 +26,7 @@ const ContactPageWrapper = styled.section`
 				cursor: pointer;
 			}
 		}
-	}	
+	}
 
 	.contact-form {
 		display: none;
