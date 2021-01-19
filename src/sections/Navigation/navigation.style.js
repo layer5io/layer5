@@ -213,6 +213,8 @@ const NavigationWrap = styled.header`
     .nav-active {
       position: relative;
       color: ${props => props.theme.menuColor};
+      display: flex;
+      line-height: 1.5rem;
       font-size: 15px;
       transition: 450ms all;
       padding: 0px 20px 5px 20px;
@@ -236,7 +238,7 @@ const NavigationWrap = styled.header`
       }
     }
     .menu-link {
-      margin: 0 1.25rem;
+      margin: auto 1.25rem;
       padding: 0.25rem 0 0.25rem;
       &:before {
         content: none;
@@ -377,6 +379,8 @@ const NavigationWrap = styled.header`
     flex-direction: column;
     align-items: stretch;
     min-height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
     &:hover{
       .readmore-btn{
           color: ${props => props.theme.menuHoverColor};
@@ -440,6 +444,15 @@ const NavigationWrap = styled.header`
     text-overflow: ellipsis;
     -webkit-transition: 450ms all;
     transition: 450ms all;
+    
+    @supports (-webkit-line-clamp: 2) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: initial;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
   }
   .readmore-btn {
     color: rgba(0,0,0,0.35);

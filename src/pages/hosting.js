@@ -13,7 +13,7 @@ import Faq from "../sections/Faq-hosting";
 import Counters from "../sections/Counters";
 import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
-import News from "../sections/News";
+import News from "../sections/Company/News";
 import ContactCard from "../components/ContactCard";
 import Footer from "../sections/Footer";
 
