@@ -44,19 +44,19 @@ const SMPPage = () => {
                                 <h1> SMP accounts for details of:</h1>
                                 <table>
                                     <tr> 
-                                        <td className="icon"><img src={c_icon} /></td>
+                                        <td className="icon"><img src={c_icon} alt="icon" /></td>
                                         <td className="feature"> Environment and infrastructure details </td>
                                     </tr>
                                     <tr> 
-                                        <td className="icon"><img src={c_icon} /></td>
+                                        <td className="icon"><img src={c_icon} alt="icon" /></td>
                                         <td className="feature"> Service mesh and its configuration </td>
                                     </tr>
                                     <tr> 
-                                        <td className="icon"><img src={c_icon} /></td>
+                                        <td className="icon"><img src={c_icon} alt="icon" /></td>
                                         <td className="feature"> Service (workload) details </td>
                                     </tr>
                                     <tr> 
-                                        <td className="icon"><img src={c_icon} /></td>
+                                        <td className="icon"><img src={c_icon} alt="icon" /></td>
                                         <td className="feature"> Statistical analysis of performance results </td>
                                     </tr>
                                 </table>
@@ -71,7 +71,7 @@ const SMPPage = () => {
                         </div>
                         <Row className="use-case-data">
                             <Col className="use-case-box" lg={6}>
-                                <img src={wasm_capacity} />
+                                <img src={wasm_capacity} alt="wasm capacity" />
                             </Col>
                             <Col className="use-case-box" lg={6}>
                                 <div>
@@ -89,12 +89,12 @@ const SMPPage = () => {
                                 </div>
                             </Col>      
                             <Col className="use-case-box" lg={6}>
-                                <img src={latency} />
+                                <img src={latency} alt="latency" />
                             </Col>                    
                         </Row>
                         <Row className="use-case-data">
                             <Col className="use-case-box" lg={6}>
-                                <img src={client_capacity} />
+                                <img src={client_capacity} alt="client capacity" />
                             </Col>
                             <Col className="use-case-box" lg={6}>
                                 <div>
