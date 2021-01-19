@@ -15,13 +15,10 @@ export const MesheryPlatformsWrapper = styled.div`
       .step-1 {
         margin: 0 auto;
         flex-direction: column;
-          padding-top: 8rem;
-          @media (max-width: 62rem) {
-            padding-top: 6rem;
-          }
-           @media (max-width: 32rem) {
-            padding-top: 4rem;
-          }
+        padding-top: 6rem;
+        @media (max-width: 32rem) {
+          padding-top: 4rem;
+        }
       }
       .supported-platforms{
         padding-top: 2rem;
@@ -41,13 +38,17 @@ export const MesheryPlatformsWrapper = styled.div`
         }
       }
       .installation-steps{
-          margin: 2rem;
           flex-direction: column;
           text-align: left;
       }
       .step-2{
-        padding-top: 4rem;
+        margin: 0 auto;
+        flex-direction: column;
+        padding-top: 2rem;
         padding-bottom: 2rem;
+        h2{
+          padding-bottom: 2rem;
+        }
       }
     }
 `;

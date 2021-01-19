@@ -133,8 +133,10 @@ const MesheryPlatforms = () =>{
                         </Row>
                     </Container>
                 )}
-                <h2 className="step-2">Step 2: Manage your mesh</h2>
-                <img src={MesheryLogo} alt="Meshery"/>
+                <Row Hcenter className="step-2">
+                    <h2>Step 2: Manage your mesh</h2>
+                    <img src={MesheryLogo} alt="Meshery"/>
+                </Row>
             </div>
         </MesheryPlatformsWrapper>
     );
