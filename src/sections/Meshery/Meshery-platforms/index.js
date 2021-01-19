@@ -1,74 +1,134 @@
-import React from "react";
+import React, {useState} from "react";
 import MesheryLogo from  "../../../assets/images/meshery/meshery-logo-complete-white-side.svg";
 import { MesheryPlatformsWrapper } from "./MesheryPlatforms.style";
 import {Col, Container, Row} from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
+import Code from "../../../components/CodeBlock";
 
 const supported_platforms = [
     {
         icon : require("./supported-icons/apple.svg"),
-        alt: "Apple"
+        name: "Apple",
+        steps: (
+            <h3>Apple</h3>
+        )
     },
     {
         icon : require("./supported-icons/docker.svg"),
-        alt: "Docker"
+        name: "Docker",
+        steps: (
+            <h2>Docker</h2>
+        )
     },
     {
         icon : require("./supported-icons/eks.svg"),
-        alt: "EKS"
+        name: "EKS",
+        steps: (
+            <h2>EKS</h2>
+        )
     },
     {
         icon : require("./supported-icons/gke.svg"),
-        alt: "GKE"
+        name: "GKE",
+        steps: (
+            <h2>test</h2>
+        )
     },
     {
         icon : require("./supported-icons/helm.svg"),
-        alt: "Helm"
+        name: "Helm",
+        steps: (
+            <h2>test</h2>
+        )
     },
     {
         icon : require("./supported-icons/homebrew.svg"),
-        alt: "HomeBrew"
+        name: "HomeBrew",
+        steps: (
+            <>
+                <h3>Brew User</h3>
+                <p>Install on Mac or Linux using Homebrew:</p>
+                <Code codeString='brew tap layer5io/tap \n
+                    brew install mesheryctl \n
+                    mesheryctl system start'
+                />
+            </>
+        )
     },
     {
         icon : require("./supported-icons/kind.svg"),
-        alt: "Kind"
+        name: "Kind",
+        steps: (
+            <h2>test</h2>
+        )
     },
     {
         icon : require("./supported-icons/kubernetes.svg"),
-        alt: "Kubernetes"
+        name: "Kubernetes",
+        steps: (
+            <h2>test</h2>
+        )
     },
     {
         icon : require("./supported-icons/linux.svg"),
-        alt: "Linux"
+        name: "Linux",
+        steps: (
+            <h2>test</h2>
+        )
     },
     {
         icon : require("./supported-icons/minikube.svg"),
-        alt: "Minikube"
+        name: "Minikube",
+        steps: (
+            <h2>test</h2>
+        )
     },
     {
         icon : require("./supported-icons/openshift.svg"),
-        alt: "OpenShift"
+        name: "OpenShift",
+        steps: (
+            <h2>test</h2>
+        )
     },
     {
         icon : require("./supported-icons/wsl2.svg"),
-        alt: "WSL2"
+        name: "WSL2",
+        steps: (
+            <h2>test</h2>
+        )
     }
 ];
 
 const MesheryPlatforms = () =>{
+    const [currentPlatform, setCurrentPlatform] = useState({});
+
+    const changeCurrentPlatform = (index) => {
+        if(currentPlatform.name && currentPlatform.name === supported_platforms[index].name)
+            setCurrentPlatform({});
+        else
+            setCurrentPlatform(supported_platforms[index]);
+    };
+
     return(
         <MesheryPlatformsWrapper>
             <div className="content">
                 <h2 className="step-1">Step 1: Choose your platform</h2>
                 <Row className="supported-platforms">
-                    { supported_platforms.map(platform => (
-                        <Col xs={6} sm={4} md={3} lg={2} key={platform.alt}>
-                            <Button className="single-platform">
-                                <img src={platform.icon} alt={platform.alt} />
+                    { supported_platforms.map((platform,index) => (
+                        <Col xs={6} sm={4} md={3} lg={2} key={platform.name}>
+                            <Button className="single-platform" onClick={() => changeCurrentPlatform(index)}>
+                                <img src={platform.icon} alt={platform.name} />
                             </Button>
                         </Col>
                     ))}
                 </Row>
+                {currentPlatform.name && (
+                    <Container>
+                        <Row className="installation-steps">
+                            {currentPlatform.steps}
+                        </Row>
+                    </Container>
+                )}
                 <h2 className="step-2">Step 2: Manage your mesh</h2>
                 <img src={MesheryLogo} alt="Meshery"/>
             </div>

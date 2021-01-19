@@ -8,9 +8,9 @@ export const MesheryPlatformsWrapper = styled.div`
   .content{ 
       transform: skew(0deg, 5deg);
       text-align: center;
-      h2 {
+      color: ${props => props.theme.white};
+      h1,h2,h3,h4,h5,h6 {
         color: ${props => props.theme.white};
-        font-weight: 700;
       }
       .step-1 {
           padding-top: 8rem;
@@ -37,6 +37,9 @@ export const MesheryPlatformsWrapper = styled.div`
             height: 3.5rem;
           }
         }
+      }
+      .installation-steps{
+          margin: 2rem;
       }
       .step-2{
         padding-top: 4rem;
