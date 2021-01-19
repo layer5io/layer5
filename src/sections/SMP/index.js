@@ -5,6 +5,7 @@ import Layout from "../../components/layout";
 import SMPWrapper from "./smp.style";
 import { Row, Col, Container } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
+import JoinCommunity from "../Community/Join-community";
 
 import example from "./service-mesh-performance-specification-example.gif";
 import c_icon from "./c-icon.svg";
@@ -12,7 +13,6 @@ import wasm_capacity from "./native-and-wasm-at-capacity-100rps.png";
 import latency from "./latency-at-scale.png";
 import client_capacity from "./client-capacity.png";
 import smp from "../../assets/images/app/projects/smp.png";
-import callout from "./callout.png";
 
 const SMPPage = () => {
     return (
@@ -112,7 +112,7 @@ const SMPPage = () => {
                             <h4> The group is also working in collaboration with the Envoy project to create easy-to-use tooling around distributed performance management (distributed load generation and analysis) in context of Istio, Consul, Tanzu Service Mesh, Network Service Mesh, App Mesh, Linkerd, and so on. </h4>
                         </div>
                     </Container>
-                    <div>
+                    <div className="iframes">
                         <iframe className="iframe" src="https://www.youtube.com/embed/rgnb0-ntPko"
                             frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"allowFullScreen>
                         </iframe>
@@ -129,13 +129,7 @@ const SMPPage = () => {
                     <h4> Learn more about these initiatives</h4>
                     <Button primary title="Learn More" url="https://smp-spec.io"></Button>
                 </div>
-                <div className="layer5-callout">
-                    <img src={callout} />
-                    <div className="callout-text">
-                        <h1> Check Out the Layer5 community and join us on Slack</h1> 
-                        <Button primary title="Let's go" url="http://slack.layer5.io"></Button>   
-                    </div>                
-                </div>
+                <JoinCommunity />
             </SMPWrapper>
         </Layout>
     );

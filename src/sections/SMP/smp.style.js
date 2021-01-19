@@ -89,49 +89,33 @@ const SMPWrapper = styled.section`
                 margin-bottom: 1.25rem;
             }
         }
-        .iframe{
-            width: 33.3%;
-            height: 21.875rem;
+        .iframes{
+            padding: 0 3rem;
+            .iframe{
+                width: 33.3%;
+                height: 20rem;
+            }
         }
     }
     .cncf-callout{
-        margin: 11.25rem auto;
+        margin: 8rem auto;
         text-align: center;
         h1, h4{
             margin-bottom: 1.875rem;
         }
     }
-    .layer5-callout{
-        height: 37.5rem;
-        position: relative;
+    .join-community{
         width: 100%;
-        img{
-            opacity: 0.6;
-            position: absolute;
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-         
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .callout-text{
-            width: 70%;
-            margin: auto;
-            text-align: center;
-            h1{
-                margin-bottom: 2.5rem;
-                color: ${props => props.theme.white};
-            }
-        }
+        margin-bottom: 0;
     }
     @media only screen and (max-width: 1024px) {
         .smp-effects{
-            .iframe{
-                width: 50%;
-                height: 18.75rem;
+            .iframes{
+                padding: 0 1rem;
+                .iframe{
+                    width: 50%;
+                    height: 18.75rem;
+                }
             }
         }
     }
@@ -172,17 +156,15 @@ const SMPWrapper = styled.section`
                 }
             }
         }
-        .layer5-callout{
-            .callout-text{
-                width: 90%;
-            }
-        }
         .smp-effects{
             .effects-title{
                 margin: 3.125rem auto 1.875rem auto;
             }
-            .iframe{
-                width: 100%;
+            .iframes{
+                padding: 0 0.5rem;
+                .iframe{
+                    width: 100%;
+                }
             }
         }
     }
