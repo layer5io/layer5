@@ -27,6 +27,7 @@ const ContactPageWrapper = styled.section`
 			}
 		}
 	}
+	
 
 	.contact-form {
 		display: none;
