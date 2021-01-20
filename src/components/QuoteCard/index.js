@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const QuotesCardWrapper = styled.div`
-    //min-height: 250px;
+    min-height: 250px;
     background-color: ${props => props.theme.secondaryLightColor};
     margin: auto 1rem;
     border-radius: 15px;

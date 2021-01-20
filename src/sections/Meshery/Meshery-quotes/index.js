@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
-import {Col, Container, Row} from "../../../reusecore/Layout";
+import {Container} from "../../../reusecore/Layout";
 import QuoteCard from "../../../components/QuoteCard";
 
 const MesheryQuotesWrapper = styled.div`
@@ -12,18 +12,30 @@ const MesheryQuotesWrapper = styled.div`
       max-width: 40%;
       font-weight: 700;
     }
-    
-    .slick-track
-{
-    display: flex !important;
-}
-
-.slick-slide
-{
-    height: inherit !important;
-}
-
 `;
+
+const quotes_data = [
+    {
+        name: "USER1",
+        position: "POSITION",
+        quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    },
+    {
+        name: "USER2",
+        position: "POSITION",
+        quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    },
+    {
+        name: "USER3",
+        position: "POSITION",
+        quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    },
+    {
+        name: "USER4",
+        position: "POSITION",
+        quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    },
+];
 
 
 const MesheryQuotes = () => {
@@ -36,7 +48,16 @@ const MesheryQuotes = () => {
         speed: 2000,
         autoplaySpeed: 2000,
         pauseOnHover: true,
-        cssEase: "linear"
+        cssEase: "linear",
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
     };
 
     return(
@@ -44,10 +65,14 @@ const MesheryQuotes = () => {
             <Container>
                 <h2>Hear what Mehsery users (and lovers) have to say</h2>
                 <Slider {...settings}>
-                    <QuoteCard name="1" position="POSITION" quote="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."/>
-                    <QuoteCard name="2" position="POSITION" quote="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit"/>
-                    <QuoteCard name="3" position="POSITION" quote="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."/>
-                    <QuoteCard name="4" position="POSITION" quote="Amet minim mollit non deserunt ullamco est sit ali"/>
+                    {quotes_data.map((data,index)=>(
+                        <QuoteCard
+                            key={`${data.name}${index}`}
+                            name={data.name}
+                            position={data.position}
+                            quote={data.quote}
+                        />
+                    ))}
                 </Slider>
             </Container>
         </MesheryQuotesWrapper>
