@@ -120,7 +120,10 @@ const MesheryPlatforms = () =>{
                 <Row className="supported-platforms">
                     { supported_platforms.map((platform,index) => (
                         <Col xs={6} sm={4} md={3} lg={2} key={platform.name}>
-                            <Button className="single-platform" onClick={() => changeCurrentPlatform(index)}>
+                            <Button
+                                className={currentPlatform.name && currentPlatform.name === supported_platforms[index].name
+                                    ? "single-platform single-platform-selected " : "single-platform "}
+                                onClick={() => changeCurrentPlatform(index)}>
                                 <img src={platform.icon} alt={platform.name} />
                             </Button>
                         </Col>

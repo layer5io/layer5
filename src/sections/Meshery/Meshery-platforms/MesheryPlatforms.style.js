@@ -32,10 +32,19 @@ export const MesheryPlatformsWrapper = styled.div`
           border-radius: 1rem;
           margin-bottom: 2rem; 
           background-color: ${props => props.theme.tertiaryColor};
+          
+          &:hover {
+            background-color: ${props => props.theme.secondaryColor};
+          }
+          
           img {
             height: 3.5rem;
           }
         }
+        .single-platform-selected {
+          background-color: ${props => props.theme.secondaryColor};
+        }
+        
       }
       .installation-steps{
           flex-direction: column;
