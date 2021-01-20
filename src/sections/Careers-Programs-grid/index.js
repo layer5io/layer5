@@ -40,7 +40,7 @@ const ProgramsGrid = ({hide_path, sub_section}) => {
     let path = hide_path ? "" : "Programs";
     return (
         <ProgramsPageWrapper>
-            <PageHeader title="Open Source Internship Programs" path={path} sub_header={sub_section} />
+            <PageHeader title="Open Source Internship Programs" path={path}/>
             <div className={sub_section ? "sub-header_wrapper" : "programs-page-wrapper"}>
                 <Container>
                     <div className="program-grid-wrapper">

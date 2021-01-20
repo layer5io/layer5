@@ -9,6 +9,7 @@ import { BsArrowDown } from "react-icons/bs";
 import { BsArrowUp } from "react-icons/bs";
 import Slack from "../../../assets/images/socialIcons/slack-light.svg";
 import Button from "../../../reusecore/Button";
+import WorkshopImage from "../../../assets/images/workshops/workshops.svg";
 import { FaRegWindowMaximize } from "react-icons/fa";
 
 
@@ -80,23 +81,18 @@ const WorkshopsPage = ({hide_path, limit}) => {
         }
     };
 
-    console.log(data);
-
-    let path = hide_path ? "" : "Workshop";
-    let no_of_items = limit ? limit : data.length;
-
     return (
         <WorkshopPageWrapper>
-            <PageHeader title="Workshop" path={path}/>
+            <PageHeader title="Workshops"/>
             <h2 className="sub-heading">Over 5,000 trained. Join them.</h2>
             <div className="workshop-page-wrapper">
                 <Container>
                     <div className="workshop-grid-wrapper">
                         <Row>
-                            {data.allMdx.nodes.slice(0, no_of_items).map(({id, frontmatter, fields, body }) => (
+                            {data.allMdx.nodes.map(({id, frontmatter, fields, body }) => (
                                 <Col {...content && ID === id ? {xs:12, sm:12, lg:12} : {xs:12, sm:6, lg:4} } key={id}>
                                     <div className="workshop-grid-card">
-                                        <WorkshopCard frontmatter={frontmatter} fields={fields} content={content} ID={ID} id={id} />
+                                        <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                                         <div className={content && ID === id ? "active" : "text-contents"}>
                                             <div className="content">
                                                 <MDXRenderer>{body}</MDXRenderer>
@@ -125,12 +121,11 @@ const WorkshopsPage = ({hide_path, limit}) => {
                                 </Col>
                             ))}
                         </Row>
-                        <Row>
-                            { limit && (
-                                <div className="see-more-button">
-                                    <Button primary title="see more" url="workshops"/>
-                                </div>
-                            )}
+                        <Row className="rqst-workshop">
+                            <img src={WorkshopImage} alt="WorkshopImage" className="bottom-image" />
+                            <Button primary url="mailto:support@layer5.io" external={true}>
+                                Request A Workshop
+                            </Button>
                         </Row>
                     </div>
                 </Container>

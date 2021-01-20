@@ -19,7 +19,7 @@ const authorField = (author, isSlugAvailable) =>{
     );
 };
 
-const PageHeader = ({ category, title, subtitle,  author, thumbnail, path, sub_header }) => {
+const PageHeader = ({ category, title, subtitle,  author, thumbnail, path }) => {
     let isSlugAvailable = false;
     if(author){
         const validMembers = useStaticQuery(
@@ -43,11 +43,7 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail, path, sub_h
     }
     return (
         <PageHeaderWrapper>
-            {/* NOTE:
-                    className 'page_header' is used if the haeding is displayed as the Page heading
-                    className 'sub_header' is used if the heading is displayed in the subsection of any page
-            */}
-            <div className={sub_header ? "sub_header" : "page-header"}>
+            <div className="page-header">
                 { thumbnail && <div className="feature-image">
                     <Image {...thumbnail} imgStyle={{ objectFit: "contain"}} alt={title}/>
                 </div>}
