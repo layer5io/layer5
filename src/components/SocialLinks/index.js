@@ -1,11 +1,11 @@
 import React from "react";
 import { Col, Row } from "../../reusecore/Layout";
-import mail_icon from "../../assets/images/app/footer/social/mail_keppel.svg";
+import mail_icon from "../../assets/images/socialIcons/mail_keppel.svg";
 import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
 import twitter_icon from "../../assets/images/socialIcons/twitter-light.svg";
 import github_icon from "../../assets/images/socialIcons/github_white_trim.svg";
-import youtube_icon from "../../assets/images/app/footer/social/youtube.svg";
-import docker_icon from "../../assets/images/app/footer/social/docker.svg";
+import youtube_icon from "../../assets/images/socialIcons/youtube.svg";
+import docker_icon from "../../assets/images/socialIcons/docker.svg";
 import SocialIconWrapper from "./socialicon.style";
 
 const SocialLinks = () => {

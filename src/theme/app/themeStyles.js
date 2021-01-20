@@ -10,9 +10,11 @@ const theme = {
 
     // keppel (dark green)
     primaryLightColorTwo: "#00d3a9",
+    keppelColor: "#00d3a9",
 
     // caribbean green (light green)
     secondaryColor: "#00b39f",
+    caribbeanGreenColor: "#00d3a9",
 
     // lighter gray
     secondaryLightColor: "#FAFAFA",

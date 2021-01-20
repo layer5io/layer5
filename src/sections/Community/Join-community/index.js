@@ -12,20 +12,17 @@ const JoinCommunityWrapper = styled.div`
         background-size: cover;
         background-position: center;
         margin: auto;
-        margin-bottom: 5rem;
     }
     .join-community_text-and_button{
         position: relative;
         top: 6.5rem;
         text-align: center;
         h1{
-            margin-top: 1rem;
             color: white;
         }
         p{
             margin: auto;
-            margin-top: 1rem;
-            max-width: 18rem;
+            max-width: 20rem;
             color: white;
         }
         button{
@@ -34,15 +31,16 @@ const JoinCommunityWrapper = styled.div`
     }
 `;
 
-const JoinCommunity = ({image}) => {
+const JoinCommunity = (props) => {
 
     return(
-        <JoinCommunityWrapper image={image}>
+        <JoinCommunityWrapper image={props.image}>
             <div className="join-community">
                 <div className="join-community_text-and_button">
-                    <h1>Join the community!</h1>
-                    <p>Checkout the Layer5 community and join us on Slack</p>
-                    <Button secondary title="Join Our Talented Community" url="http://slack.layer5.io/"/>
+                    <h1>{props.header ? props.header : "Join the community!"}</h1>
+                    <p>{props.text ? props.text : "Checkout the Layer5 community by joining us on Slack"}</p>
+                    {props.btn_primary ? <Button primary title="Join Our Talented Community" url="http://slack.layer5.io/"/>
+                        : <Button secondary title="Join Our Talented Community" url="http://slack.layer5.io/"/>}
                 </div>
             </div>
         </JoinCommunityWrapper>

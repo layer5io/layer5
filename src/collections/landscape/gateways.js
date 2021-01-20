@@ -10,11 +10,6 @@ export const gateways=[
         desc: "Contour uses Envoy"
     },
     {
-        name: "Gloo",
-        link: "https://gloo.solo.io/",
-        desc: "An Envoy-powered API Gateway"
-    },
-    {
         name: "Kong",
         link: "https://github.com/kong/kong",
         desc: "Kong uses NGINX"

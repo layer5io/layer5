@@ -14,9 +14,9 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import ParticleComponent from "../../reusecore/Particle";
 
-import logo from "../../assets/images/app/footer/footer-logo-two.svg";
+import logo from "../Footer/images/footer-logo-two.svg";
 
-import FooterBGTwo from "../../assets/images/app/footer/footer-particle-two.png";
+import FooterBGTwo from "../Footer/images/footer-particle-two.png";
 
 import FooterWrapper from "./footer.style";
 

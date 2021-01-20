@@ -11,6 +11,13 @@ export const LandscapePageWrapper=styled.div`
 	.subsequent-heading {
 		padding-top: 8rem;
 	}
+	.landscape-section-sub-heading {
+		margin-top: -1rem;
+		position:relative;
+		top: -1rem;
+		text-align: center;
+		width: 100%;
+	}
 
 	.strength-comparison-section {
 		display: flex;
@@ -315,8 +322,11 @@ export const LandscapePageWrapper=styled.div`
 	}
 
 	.category-row-heading {
-		font-size: 1.15rem;
-		padding: 0.75rem 0 0 0.75rem;
+		font-size: 1.05rem;
+		padding: 0.75rem;
+		font-weight: 600;
+		color: ${props => props.theme.white};
+		background: ${props => props.theme.tertiaryColor};
 	}
 	ul.category {
 		margin: 0;
@@ -373,12 +383,15 @@ export const LandscapePageWrapper=styled.div`
 	.even-row {
 		background: #efefef;
 		&:hover{
-			box-shadow: 0px 2px 5px -10px black;
+			box-shadow: 10px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
 	.mesh-tooltip {
 		width: 15rem;
+		box-shadow: 1px 1px 6px -6px ${props => props.theme.primaryLightColorTwo};
+		border-radius: .75rem;
+		line-height: 1.5rem;
 	}
 	.AboutLandscape {
 		display: flex;
