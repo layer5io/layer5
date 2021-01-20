@@ -23,7 +23,7 @@ const SocialLinksWrapper = styled.div`
             }
             .github:hover {
                 filter: grayscale(0) invert(1);
-                filter: grayscale(0) invert(1);
+                filter: grayscale(0) invert(0);
             }
 
         }
