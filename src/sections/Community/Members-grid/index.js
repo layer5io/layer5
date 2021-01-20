@@ -37,7 +37,6 @@ const MembersGrid = props => {
                                 <br />
                             </Col>
                         </Row>
-                        
                         <Row>
                             {props.data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
                                 <Col xs={12} sm={6} md={6} lg={4} xl={3} key={id}>
