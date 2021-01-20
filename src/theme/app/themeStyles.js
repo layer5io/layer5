@@ -14,8 +14,8 @@ const theme = {
     // caribbean green (light green)
     secondaryColor: "#00b39f",
 
-    // lavender blush (light pink)
-    secondaryLightColor: "#FFEBEC",
+    // lighter gray
+    secondaryLightColor: "#FAFAFA",
 
     // dark jungle green
     tertiaryColor: "#1e2117",
