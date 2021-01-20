@@ -23,7 +23,7 @@ const StepsList = ({ steps, className, onFocusedIndexChanged }) => {
                             // our new focusedStepIndex. If it's been updated
                             // notify the subscriber.
                             const newFocusIndex = newStatusArray.indexOf(true);
-                            if (focusedStepIndex != newFocusIndex && newFocusIndex != -1) {
+                            if (focusedStepIndex !== newFocusIndex && newFocusIndex !== -1) {
                                 setFocusedStepIndex(newFocusIndex);
                                 onFocusedIndexChanged(newFocusIndex);
                             }

@@ -45,6 +45,7 @@ const FeaturesCarousel = ({ features }) => {
     return(
         <FeaturesWrapper>
             <div className="features-carousel">
+                <h2 className="main-heading">Features</h2>
                 <Carousel
                     renderCenterRightControls={() => null}
                     renderCenterLeftControls={() => null}

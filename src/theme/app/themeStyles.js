@@ -16,11 +16,14 @@ const theme = {
     secondaryColor: "#00b39f",
     caribbeanGreenColor: "#00d3a9",
 
-    // // lavender blush (light pink)
-    // secondaryLightColor: "#FFEBEC",
+    // lighter gray
+    secondaryLightColor: "#FAFAFA",
 
     // dark jungle green
     tertiaryColor: "#1e2117",
+
+    // Teal Blue
+    tertiaryColorTwo: "#477E96",
 
     headingColor: "#111111",
 
