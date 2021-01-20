@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Container, Row, Col } from "../../reusecore/Layout";
+import { Container } from "../../reusecore/Layout";
 
 import PageHeader from "../../reusecore/PageHeader";
 
@@ -18,62 +18,51 @@ const ProjectPage = ({data}) => {
             <PageHeader title="Projects" path="Projects"/>
             <div className="project-page-wrapper">
                 <Container>
-                    <Row>
-                        <Col xs={12} sm={6} lg={4}>
-                            <Link to="/meshery">
-                                <div className="project__block__inner">
-                                    <img src={meshery}
-                                        alt="Meshery"
-                                    />
-                                    <h5>Meshery</h5>
-                                </div>
-                            </Link>
-                        </Col>
-                        <Col xs={12} sm={6} lg={4}>
-                            <Link to="/landscape">
-                                <div className="project__block__inner">
-                                    <img src={landscape}
-                                        alt="Landscape"
-                                    />
-                                    <h5>Landscape</h5>
-                                </div>
-                            </Link>
-                        </Col>
-                        <Col xs={12} sm={6} lg={4}>
-                            <Link to="/projects/image-hub">
-                                <div className="project__block__inner">
-                                    <img src={imagehub}
-                                        alt="Image Hub"
-                                    />
-                                    <h5>Image Hub</h5>
-                                </div>
-                            </Link>
-                        </Col>
-                        <Col xs={12} sm={6} lg={4}>
-                            <Link to="/projects/service-mesh-interface-conformance">
-                                <div className="project__block__inner">
-                                    <img src={smi}
-                                        alt="Service Mesh Interface Conformance" 
-                                    />
-                                    <h1>Service Mesh Interface Conformance</h1>
-                                </div>
-                            </Link>
-                        </Col>
+                    <div className="project__grid">
                         {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
-                            <Col xs={12} sm={6} lg={4} key={id}>
-                                <Link to={fields.slug}>
-                                    <div className="project__block__inner">
-                                        <Image
-                                            {...frontmatter.thumbnail}
-                                            imgStyle={{ objectFit: "contain" }}
-                                            alt={frontmatter.title}
-                                        />
-                                        <h5>{frontmatter.title}</h5>
-                                    </div>
-                                </Link>
-                            </Col>
+                            <Link to={fields.slug} key={id} className={`project__card ${frontmatter.title === "Service Mesh Performance" ? "five": "six"}`}>
+                                <div className="project__card-container" >
+                                    <Image
+                                        {...frontmatter.thumbnail}
+                                        alt={frontmatter.title}
+                                    />
+                                    <h5>{frontmatter.title}</h5>
+                                </div>
+                            </Link>        
                         ))}
-                    </Row>
+                        <Link to="/landscape" className="project__card one">
+                            <div className="project__card-container">
+                                <img src={landscape}
+                                    alt="Landscape"
+                                />
+                                <h5>Landscape</h5>
+                            </div>
+                        </Link>
+                        <Link to="/meshery" className="project__card two">
+                            <div className="project__card-container">
+                                <img src={meshery}
+                                    alt="Meshery"
+                                />
+                                <h5>MESHERY</h5>
+                            </div>
+                        </Link>
+                        <Link to="/projects/image-hub" className="project__card three">
+                            <div className="project__card-container">
+                                <img src={imagehub}
+                                    alt="Image Hub"
+                                />
+                                <h5>Image Hub</h5>
+                            </div>
+                        </Link>
+                        <Link to="/projects/service-mesh-interface-conformance" className="project__card four">
+                            <div className="project__card-container">
+                                <img src={smi}
+                                    alt="Service Mesh Interface Conformance" 
+                                />
+                                <h5>Service Mesh Interface Conformance</h5>
+                            </div>
+                        </Link>
+                    </div>
                 </Container>
             </div>
         </ProjectWrapper>
