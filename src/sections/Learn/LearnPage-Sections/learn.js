@@ -68,38 +68,7 @@ const LearnSectionWrapper = styled.div`
 
     .learn-buttons-section {
         text-align: center;
-        margin: 3rem 0 5rem;
-
-        .learn-mesh-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            margin: 2.5rem 0;
-            justify-content: center;
-
-            button {
-                display: flex;
-                flex: 0 0 40%;
-                margin: 1rem;
-                border-radius: 1rem;
-                min-width: 16rem;
-                min-height: 3.5rem;
-                background: rgba(0, 179, 159, 0.2);
-
-                &:hover {
-                    background: ${props => props.theme.secondaryColor};
-                }
-            }
-        }
-    }
-    @media screen and (max-width: 600px) {
-        .learn-buttons-section {
-            .learn-mesh-buttons {
-                button {
-                    flex: auto;
-                }
-            }
-        }
+        margin: 4rem 0 2rem;
     }
 
     .learn-cards-section {
@@ -113,10 +82,17 @@ const LearnSectionWrapper = styled.div`
             display: flex;
             flex-wrap: wrap;
             flex: auto;
-            justify-content: center;
+            justify-content: space-evenly;
+
+            .link {
+                display: block;
+                max-width: 20rem;
+                margin: auto;
+            }
 
             .learn-card {
-                max-width: 18rem;
+                max-width: 20rem;
+                height: 18rem;
                 border: 1px solid white;
                 padding: 1rem 0.75rem;
                 margin: 1rem auto;
@@ -131,21 +107,10 @@ const LearnSectionWrapper = styled.div`
                     font-size: 1rem;
                 }
                 .card-link {
+                    display: inline-flex;
                     margin-top: 1.5rem;
-
-                    a {
-                        display: inline-flex;
-
-                        &:after {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            left: 0;
-                            bottom: 0;
-                            margin: 1rem;
-                        }
-                    }
+                    position: absolute;
+                    bottom: 2rem;
                     h5 {
                         display: inline-block;
                         font-weight: 500;
@@ -173,26 +138,20 @@ const LearnSectionWrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: 1400px) and (min-width: 993px) {
+    @media screen and (max-width: 992px) and (min-width: 675px) {
         .learn-cards-section {
             .cards-row {
-                .col{
-                    flex: 0 0 33.33%;
-                    max-width: 33.33%;
+                .learn-card{
+                    height: 15rem;
                 }
             }
         }
     }
-    @media screen and (max-width: 800px) and (min-width: 576px) {
+    @media screen and (max-width: 576px) and (min-width: 425px) {
         .learn-cards-section {
             .cards-row {
                 .learn-card{
-                    min-height: 17rem;
-
-                    .card-link {
-                        position: absolute;
-                        bottom: 2rem;
-                    }
+                    height: 14rem;
                 }
             }
         }
@@ -207,67 +166,38 @@ const LearnSection = () => {
             </div>
             <div>
                 <h1 className="learn-heading"><span>Meshery - </span> Learn how to manage your service mesh</h1>
-                <div className="learn-buttons-section">
-                    <div className="learn-mesh-buttons">
-                        <Button secondary title="Learn how to run Meshery" url="/projects/meshery" />
-                        <Button secondary title="Install service meshes" url="/" />
-                        <Button secondary title="Deploy sample apps" url="/" />
-                    </div>
-                    <Button primary title="Start Learning" url="/service-mesh" />
-                </div>
                 <div className="learn-cards-section">
                     <h2>Learn to Service Mesh through interactive labs</h2>
                     <div className="cards-row">
-                        <Col xs={12} sm={6} xl={3}>
-                            <div className="learn-card">
-                                <h2>Working with Meshery and Istio</h2>
-                                <p>Learn how to run Meshery, install Istio and deploy a sample app</p>
-                                <div className="card-link">
-                                    <a href="/" target="_blank" rel="noreferrer">
+                        <Col xs={12} sm={6}>
+                            <a className="link" href="https://www.katacoda.com/layer5/courses/meshery-adapters/istio-meshery-adapter" target="_blank" rel="noreferrer">
+                                <div className="learn-card">
+                                    <h2>Working with Meshery and Istio</h2>
+                                    <p>Learn how to run Meshery, install Istio and deploy a sample app</p>
+                                    <div className="card-link">
                                         <h5>Start Scenario</h5>
                                         <FaArrowRight />
-                                    </a>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </Col>
-                        <Col xs={12} sm={6} xl={3}>
-                            <div className="learn-card">
-                                <h2>Working with Meshery and Linkerd</h2>
-                                <p>Learn how to run Meshery, install Linkerd and deploy a sample app</p>
-                                <div className="card-link">
-                                    <a href="/" target="_blank" rel="noreferrer">
+                        <Col xs={12} sm={6}>
+                            <a className="link" href="https://www.katacoda.com/layer5/courses/performance-testing-with-meshery/running-performance-tests" target="_blank" rel="noreferrer">
+                                <div className="learn-card">
+                                    <h2>Running performance tests using Meshery</h2>
+                                    <p>Learn how to do performance testing with Meshery</p>
+                                    <div className="card-link">
                                         <h5>Start Scenario</h5>
                                         <FaArrowRight />
-                                    </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </Col>
-                        <Col xs={12} sm={6} xl={3}>
-                            <div className="learn-card">
-                                <h2>Working with Meshery and Consul</h2>
-                                <p>Learn how to run Meshery, install Consul and deploy a sample app</p>
-                                <div className="card-link">
-                                    <a href="/" target="_blank" rel="noreferrer">
-                                        <h5>Start Scenario</h5>
-                                        <FaArrowRight />
-                                    </a>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col xs={12} sm={6} xl={3}>
-                            <div className="learn-card">
-                                <h2>Working with Meshery and Kuma</h2>
-                                <p>Learn how to run Meshery, install Kuma and deploy a sample app</p>
-                                <div className="card-link">
-                                    <a href="/" target="_blank" rel="noreferrer">
-                                        <h5>Start Scenario</h5>
-                                        <FaArrowRight />
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </Col>
                     </div>
                 </div>
+            </div>
+            <div className="learn-buttons-section">
+                <Button primary title="Checkout all the labs" url="/service-mesh" />
             </div>
         </LearnSectionWrapper>
     );

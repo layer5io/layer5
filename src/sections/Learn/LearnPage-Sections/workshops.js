@@ -20,7 +20,7 @@ export const WorkshopsListWrapper = styled.div`
         background: rgba( 0, 179, 159, 0.1);
     }
     .workshop-thumbnails {
-        height: 14rem;
+        height: 13rem;
 
         img {
             height: 100%;
@@ -30,33 +30,41 @@ export const WorkshopsListWrapper = styled.div`
         .workshop-section-wrapper {
             padding: 8rem 4.5rem;
         }
+        .workshops-card {
+            flex: 0 0 50%;
+            max-width: 50%;
+            margin: 1rem auto;
+        }
     }
     @media screen and (max-width: 1400px) {
         .workshop-section-wrapper {
             padding: 6rem 3.5rem;
         }
+    }
+    @media screen and (max-width: 1100px) and (min-width: 993px) {
+        .workshops-col {
+            h1 {
+                font-size: 2.75rem; //Done to avoid text overlap with images
+            }
+        }
+    }
+    @media screen and (max-width: 950px) {
+        .workshops-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+        .workshops-card {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
         .workshop-thumbnails {
-            height: 12rem;
+            height: 11rem;
         }
     }
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 768px) {
         .workshops-card {
-            margin: 1rem auto;
-            max-width: 45%;
-        }
-    }
-    @media screen and (max-width: 800px) {
-        .workshops-col {
             flex: 0 0 100%;
-            max-width: 100%;
-        }
-    }
-    @media screen and (max-width: 600px) {
-        .workshops-col {
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
-        .workshops-card {
             max-width: 100%;
         }
     }
