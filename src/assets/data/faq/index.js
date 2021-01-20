@@ -133,7 +133,7 @@ const data = {
             question: "I have already selected and am operating a service mesh. Should I use Meshery?",
             category: "Meshery",
             answer: "As a management plane, Meshery provides value in a number of ways post-adoption of a service mesh. For example, Meshery analyzes your deployments in evaluation of service mesh best practices and patterns, highlighting where you might be deviating. Meshery's Other ways can be articulated in its set of features spanning:",
-            answer_2: "Lifecycle Management" ,
+            answer_2: "Lifecycle Management",
             answer_3: "Configuration Management",
             answer_4: "Performance Management",
             answer_5: "Workload Management",
