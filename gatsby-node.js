@@ -325,7 +325,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
           break;
         case `members`:
-          slug = `/community/members/${slugify(node.frontmatter.name)}`;
+          if(node.frontmatter.published)
+            slug = `/community/members/${slugify(node.frontmatter.name)}`;
           break;
         default:
           slug = `/${collection}/${slugify(node.frontmatter.title)}`;
