@@ -35,16 +35,17 @@ export const query = graphql`
 `;
 
 const ProjectSinglePage = ({data}) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={`${data.mdx.frontmatter.title}`} />
-                <Navigation />
-                <ProjectSingle data={data}/>
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );};
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title={`${data.mdx.frontmatter.title}`} />
+        <Navigation />
+        <ProjectSingle data={data}/>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  ); 
+};
 
 export default ProjectSinglePage;

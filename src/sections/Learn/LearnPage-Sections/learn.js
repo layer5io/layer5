@@ -159,48 +159,48 @@ const LearnSectionWrapper = styled.div`
 `;
 
 const LearnSection = () => {
-    return (
-        <LearnSectionWrapper>
-            <div className="learn-particle-img">
-                <img src={Meshery_Logo} alt="Meshery Logo"/>
-            </div>
-            <div>
-                <h1 className="learn-heading"><span>Meshery - </span> Learn how to manage your service mesh</h1>
-                <div className="learn-cards-section">
-                    <h2>Learn to Service Mesh through interactive labs</h2>
-                    <div className="cards-row">
-                        <Col xs={12} sm={6}>
-                            <a className="link" href="https://www.katacoda.com/layer5/courses/meshery-adapters/istio-meshery-adapter" target="_blank" rel="noreferrer">
-                                <div className="learn-card">
-                                    <h2>Working with Meshery and Istio</h2>
-                                    <p>Learn how to run Meshery, install Istio and deploy a sample app</p>
-                                    <div className="card-link">
-                                        <h5>Start Scenario</h5>
-                                        <FaArrowRight />
-                                    </div>
-                                </div>
-                            </a>
-                        </Col>
-                        <Col xs={12} sm={6}>
-                            <a className="link" href="https://www.katacoda.com/layer5/courses/performance-testing-with-meshery/running-performance-tests" target="_blank" rel="noreferrer">
-                                <div className="learn-card">
-                                    <h2>Running performance tests using Meshery</h2>
-                                    <p>Learn how to do performance testing with Meshery</p>
-                                    <div className="card-link">
-                                        <h5>Start Scenario</h5>
-                                        <FaArrowRight />
-                                    </div>
-                                </div>
-                            </a>
-                        </Col>
-                    </div>
+  return (
+    <LearnSectionWrapper>
+      <div className="learn-particle-img">
+        <img src={Meshery_Logo} alt="Meshery Logo"/>
+      </div>
+      <div>
+        <h1 className="learn-heading"><span>Meshery - </span> Learn how to manage your service mesh</h1>
+        <div className="learn-cards-section">
+          <h2>Learn to Service Mesh through interactive labs</h2>
+          <div className="cards-row">
+            <Col xs={12} sm={6}>
+              <a className="link" href="https://www.katacoda.com/layer5/courses/meshery-adapters/istio-meshery-adapter" target="_blank" rel="noreferrer">
+                <div className="learn-card">
+                  <h2>Working with Meshery and Istio</h2>
+                  <p>Learn how to run Meshery, install Istio and deploy a sample app</p>
+                  <div className="card-link">
+                    <h5>Start Scenario</h5>
+                    <FaArrowRight />
+                  </div>
                 </div>
-            </div>
-            <div className="learn-buttons-section">
-                <Button primary title="Checkout all the labs" url="/service-mesh" />
-            </div>
-        </LearnSectionWrapper>
-    );
+              </a>
+            </Col>
+            <Col xs={12} sm={6}>
+              <a className="link" href="https://www.katacoda.com/layer5/courses/performance-testing-with-meshery/running-performance-tests" target="_blank" rel="noreferrer">
+                <div className="learn-card">
+                  <h2>Running performance tests using Meshery</h2>
+                  <p>Learn how to do performance testing with Meshery</p>
+                  <div className="card-link">
+                    <h5>Start Scenario</h5>
+                    <FaArrowRight />
+                  </div>
+                </div>
+              </a>
+            </Col>
+          </div>
+        </div>
+      </div>
+      <div className="learn-buttons-section">
+        <Button primary title="Checkout all the labs" url="/service-mesh" />
+      </div>
+    </LearnSectionWrapper>
+  );
 };
 
 export default LearnSection;

@@ -9,14 +9,14 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
 const LandscapeGridPage=() => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Service Mesh Landscape" />
-            <Navigation />
-            <LandscapeGrid />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Service Mesh Landscape" />
+      <Navigation />
+      <LandscapeGrid />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 export default LandscapeGridPage;

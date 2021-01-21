@@ -40,17 +40,17 @@ export const query = graphql`
 `;
 
 const WorkshopSingle = ({ data }) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={`${data.mdx.frontmatter.title}`} />
-                <Navigation />
-                <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title={`${data.mdx.frontmatter.title}`} />
+        <Navigation />
+        <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default WorkshopSingle;

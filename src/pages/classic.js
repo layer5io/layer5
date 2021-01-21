@@ -23,25 +23,25 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/classic/themeStyles";
 
 const ClassicPage = () => (
-    <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
-            <SEO title="Layer5 | The Service Mesh Company" />
-            <Navigation />
-            <BannerClassic />
-            <AboutClassic />
-            <Integrations />
-            <FeaturesClassic />
-            <AppScreens />
-            <Counter />
-            <Pricing />
-            <Testimonial />
-            <FaqClassic />
-            <Getapp />
-            <News />
-            <Client />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Layout>
+      <SEO title="Layer5 | The Service Mesh Company" />
+      <Navigation />
+      <BannerClassic />
+      <AboutClassic />
+      <Integrations />
+      <FeaturesClassic />
+      <AppScreens />
+      <Counter />
+      <Pricing />
+      <Testimonial />
+      <FaqClassic />
+      <Getapp />
+      <News />
+      <Client />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 export default ClassicPage;

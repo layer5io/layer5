@@ -37,17 +37,17 @@ export const query = graphql`
 `;
 
 const NewsSinglePage = ({data}) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={data.mdx.frontmatter.title} />
-                <Navigation />
-                <NewsSingle data={data}/>
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title={data.mdx.frontmatter.title} />
+        <Navigation />
+        <NewsSingle data={data}/>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default NewsSinglePage;

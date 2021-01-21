@@ -12,14 +12,14 @@ import theme from "../../theme/app/themeStyles";
 
 
 const BooksGridPage = ({hide_path}) => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Service Mesh Books" />
-            <Navigation />
-            <BooksPage hide_path={hide_path} />
-            <Footer/>
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Service Mesh Books" />
+      <Navigation />
+      <BooksPage hide_path={hide_path} />
+      <Footer/>
+    </Layout>
+  </ThemeProvider>
 );
 export default BooksGridPage;

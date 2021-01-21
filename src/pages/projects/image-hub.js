@@ -12,14 +12,14 @@ import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
 const ImageHub = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Image Hub" />
-            <Navigation />
-            <ImageHubPage />
-            <Footer/>
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Image Hub" />
+      <Navigation />
+      <ImageHubPage />
+      <Footer/>
+    </Layout>
+  </ThemeProvider>
 );
 export default ImageHub;

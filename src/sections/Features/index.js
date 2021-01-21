@@ -18,89 +18,89 @@ import performanceManagement from "./img/performance-management.svg";
 import FeturesSectionWrapper from "./features.style";
 
 const Features = () => {
-    return (
-        <FeturesSectionWrapper id="features">
-            <Container fullWidthSM>
-                <SectionTitle UniWidth="65%">
-                    <h4><i>Service Mesh Management</i></h4>
-                    <h2>
+  return (
+    <FeturesSectionWrapper id="features">
+      <Container fullWidthSM>
+        <SectionTitle UniWidth="65%">
+          <h4><i>Service Mesh Management</i></h4>
+          <h2>
                         Manage your service mesh with features<span> you won't find anywhere else</span>.
-                    </h2>
-                </SectionTitle>
-                <Row>
-                    <Col xs={12} sm={6} md={4}>
-                        <div className="fetures-block v1">
-                            <div className="fetures-icon-block">
-                                <img src={Icon1} alt="img" />
-                            </div>
-                            <h3>Lifecycle Management</h3>
-                            <p>
+          </h2>
+        </SectionTitle>
+        <Row>
+          <Col xs={12} sm={6} md={4}>
+            <div className="fetures-block v1">
+              <div className="fetures-icon-block">
+                <img src={Icon1} alt="img" />
+              </div>
+              <h3>Lifecycle Management</h3>
+              <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
                                 eiusmod tempor incididunt.
-                            </p>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <div className="fetures-block v2">
-                            <div className="fetures-icon-block">
-                                <img src={performanceManagement} alt="img" />
-                            </div>
-                            <h3>Performance Management</h3>
-                            <p>
+              </p>
+            </div>
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <div className="fetures-block v2">
+              <div className="fetures-icon-block">
+                <img src={performanceManagement} alt="img" />
+              </div>
+              <h3>Performance Management</h3>
+              <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
                                 eiusmod tempor incididunt.
-                            </p>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <div className="fetures-block v1">
-                            <div className="fetures-icon-block">
-                                <img src={policyEngineGreen} alt="img" />
-                            </div>
-                            <h3>Configuration Management</h3>
-                            <p>
+              </p>
+            </div>
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <div className="fetures-block v1">
+              <div className="fetures-icon-block">
+                <img src={policyEngineGreen} alt="img" />
+              </div>
+              <h3>Configuration Management</h3>
+              <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
                                 eiusmod tempor incididunt.
-                            </p>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <div className="fetures-block v2">
-                            <div className="fetures-icon-block">
-                                <img src={distributedPerformance} alt="img" />
-                            </div>
-                            <h3>Data Plane Intelligence</h3>
-                            <p>
+              </p>
+            </div>
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <div className="fetures-block v2">
+              <div className="fetures-icon-block">
+                <img src={distributedPerformance} alt="img" />
+              </div>
+              <h3>Data Plane Intelligence</h3>
+              <p>
                                 Harness the power of WebAssembly filters to implement application and offload your service development teams from lengthy engineering cycles. Expect and receive more from your infrastructure.
-                            </p>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <div className="fetures-block v1">
-                            <div className="fetures-icon-block">
-                                <img src={visualToplogy} alt="img" />
-                            </div>
-                            <h3>Visual Topology</h3>
-                            <p>
+              </p>
+            </div>
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <div className="fetures-block v1">
+              <div className="fetures-icon-block">
+                <img src={visualToplogy} alt="img" />
+              </div>
+              <h3>Visual Topology</h3>
+              <p>
                                 Use <a href="/meshery/service-mesh-map" alt="Service Mesh Visual Map">MeshMap</a> to quickly understand how your service mesh is functioning and to intuitively reconfigure and tune your mesh in accordance with the needs of your workloads.
-                            </p>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={6} md={4}>
-                        <div className="fetures-block v2">
-                            <div className="fetures-icon-block">
-                                <img src={mesheryOperatorDark} alt="Meshery Operator" />
-                            </div>
-                            <h3>Automated Operation</h3>
-                            <p>
-                                <a href="/meshery/service-mesh-operator" alt="Service Mesh Operator">Meshery Operator</a>
-                            </p>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
-        </FeturesSectionWrapper>
-    );
+              </p>
+            </div>
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <div className="fetures-block v2">
+              <div className="fetures-icon-block">
+                <img src={mesheryOperatorDark} alt="Meshery Operator" />
+              </div>
+              <h3>Automated Operation</h3>
+              <p>
+                <a href="/meshery/service-mesh-operator" alt="Service Mesh Operator">Meshery Operator</a>
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </FeturesSectionWrapper>
+  );
 };
 
 export default Features;

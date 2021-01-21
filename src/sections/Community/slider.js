@@ -30,25 +30,25 @@ const PictureSliderWrapper = styled.div`
 `;
 
 const PictureSlider = () => {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000
-    };
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000
+  };
 
-    return(
-        <PictureSliderWrapper>
-            <Slider {...settings}>
-                <img src={CommunityImage1} alt="Community Member"/>
-                <img src={CommunityImage2} alt="Community Member"/>
-                <img src={CommunityImage3} alt="Community Member"/>
-            </Slider>
-        </PictureSliderWrapper>
-    );
+  return(
+    <PictureSliderWrapper>
+      <Slider {...settings}>
+        <img src={CommunityImage1} alt="Community Member"/>
+        <img src={CommunityImage2} alt="Community Member"/>
+        <img src={CommunityImage3} alt="Community Member"/>
+      </Slider>
+    </PictureSliderWrapper>
+  );
 };
 
 export default PictureSlider;

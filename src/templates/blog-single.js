@@ -42,17 +42,17 @@ export const query = graphql`
 `;
 
 const BlogSinglePage = ({data}) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={data.mdx.frontmatter.title} />
-                <Navigation />
-                <BlogSingle data={data}/>
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title={data.mdx.frontmatter.title} />
+        <Navigation />
+        <BlogSingle data={data}/>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default BlogSinglePage;

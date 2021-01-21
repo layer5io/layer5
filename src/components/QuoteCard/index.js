@@ -20,15 +20,15 @@ const QuotesCardWrapper = styled.div`
 `;
 
 const QuoteCard = ({name , position, quote}) => {
-    return(
-        <QuotesCardWrapper>
-            <div className="content">
-                <h3>{name}</h3>
-                <h5>{position}</h5>
-                <p>{quote}</p>
-            </div>
-        </QuotesCardWrapper>
-    );
+  return(
+    <QuotesCardWrapper>
+      <div className="content">
+        <h3>{name}</h3>
+        <h5>{position}</h5>
+        <p>{quote}</p>
+      </div>
+    </QuotesCardWrapper>
+  );
 };
 
 export default QuoteCard;

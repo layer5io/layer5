@@ -21,24 +21,24 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/hosting/themeStyles";
 
 const HostingPage = () => (
-    <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
-            <SEO title="Layer5 | The Service Mesh Company" />
-            <Navigation />
-            <Banner />
-            <About />
-            <Pricing />
-            <Features />
-            <CTAHosting />
-            <Counters />
-            <Testimonial />
-            <Faq />
-            <News />
-            <ContactCard />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Layout>
+      <SEO title="Layer5 | The Service Mesh Company" />
+      <Navigation />
+      <Banner />
+      <About />
+      <Pricing />
+      <Features />
+      <CTAHosting />
+      <Counters />
+      <Testimonial />
+      <Faq />
+      <News />
+      <ContactCard />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default HostingPage;

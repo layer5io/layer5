@@ -16,7 +16,7 @@
     "dev": "npm run develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "lint": "eslint ./src --fix",
+    "lint": "eslint --fix .",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts"
   },

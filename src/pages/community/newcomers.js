@@ -9,17 +9,17 @@ import Layout from "../../components/layout";
 import NewcomersGuide from "../../sections/Community/Newcomers-guide";
 
 const newComers = () => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title="Newcomers" />
-                <Navigation />
-                <NewcomersGuide />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Newcomers" />
+        <Navigation />
+        <NewcomersGuide />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default newComers;

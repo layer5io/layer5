@@ -47,14 +47,14 @@ export const query = graphql`
 `;
 
 const BlogListPage = ({ pageContext, data }) => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Blog" />
-            <Navigation />
-            <BlogList data={data} pageContext={pageContext} />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Blog" />
+      <Navigation />
+      <BlogList data={data} pageContext={pageContext} />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 export default BlogListPage;
