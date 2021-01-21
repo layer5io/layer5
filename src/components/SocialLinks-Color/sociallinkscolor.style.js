@@ -8,29 +8,19 @@ const SocialLinksWrapper = styled.div`
         a {
             margin: 0 0.3rem;
             width: 2.5rem;
-            filter: grayscale(1) invert(0);
+            filter: grayscale(1) invert(0.25);
 
             img {
                 width: 2rem;
-
             }
 
             &:hover {
-                filter: grayscale(0) invert(0.2);
-            }
-            .github {
-                filter: grayscale(0) invert(0.5);
-            }
-            .github:hover {
-                filter: grayscale(0) invert(1);
                 filter: grayscale(0) invert(0);
             }
-
         }
         .github:hover {
             filter: grayscale(0) invert(1);
         }
-
 
         .mail_icon {
             img {
