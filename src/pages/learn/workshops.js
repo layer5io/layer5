@@ -10,16 +10,16 @@ import theme from "../../theme/app/themeStyles";
 
 
 const WorkshopsGridPage = () => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title="Service Mesh Workshops" />
-                <Navigation />
-                <WorkshopsPage />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Service Mesh Workshops" />
+        <Navigation />
+        <WorkshopsPage />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 export default WorkshopsGridPage;

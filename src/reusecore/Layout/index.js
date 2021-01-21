@@ -4,7 +4,7 @@ import Row from "./Row";
 import Col from "./Col"; 
 
 export {
-    Container,
-    Row,
-    Col,
+  Container,
+  Row,
+  Col,
 };

@@ -157,17 +157,17 @@ export const query = graphql`
 `;
 
 const Events = ({data, pageContext}) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title="Events" />
-                <Navigation />
-                <Meetups data={data} pageContext={pageContext} />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Events" />
+        <Navigation />
+        <Meetups data={data} pageContext={pageContext} />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default Events;

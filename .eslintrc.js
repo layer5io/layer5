@@ -23,9 +23,21 @@ module.exports = {
     },
     "plugins": [
         "react"
-
     ],
     "rules": {
+        "arrow-spacing": [
+            "error",
+            {
+                "after": true,
+                "before": true
+            }
+        ],
+        "block-scoped-var": "error",
+        "block-spacing": "error",
+        "brace-style": [
+            "error",
+            "1tbs"
+        ],
         "no-unused-vars": [
             "warn",
             {
@@ -36,9 +48,16 @@ module.exports = {
         "react/prop-types": [0],
         "react/no-unescaped-entities": [0],
         "react/jsx-no-duplicate-props": [0],
-        "indent": [
-            "error",
-            4
+        'indent': [
+            'error', 2, {
+                "FunctionExpression": {"parameters": "first"},
+                "FunctionDeclaration": {"parameters": "first"},
+                "MemberExpression": 1,
+                "SwitchCase": 1,
+                "outerIIFEBody": 0,
+                "VariableDeclarator": { "var": 2, "let": 2, "const": 3 },
+                ignoredNodes: ['TemplateLiteral']
+            }
         ],
         "linebreak-style": [
             "error",

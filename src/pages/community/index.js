@@ -12,15 +12,15 @@ import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
 const community = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Community" />
-            <Navigation />
-            <Community />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Community" />
+      <Navigation />
+      <Community />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default community;

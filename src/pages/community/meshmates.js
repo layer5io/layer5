@@ -9,17 +9,17 @@ import Layout from "../../components/layout";
 import MeshmatesGrid from "../../sections/Community/Meshmates-grid";
 
 const MeshmatePage=() => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title="Meshmates" />
-                <Navigation />
-                <MeshmatesGrid />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Meshmates" />
+        <Navigation />
+        <MeshmatesGrid />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default MeshmatePage;

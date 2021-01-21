@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { Row, Col } from "../../../reusecore/Layout";
-import Image from "../../../components/image";
 import Button from "../../../reusecore/Button";
 import styled from "styled-components";
 
@@ -72,8 +71,8 @@ export const WorkshopsListWrapper = styled.div`
 
 
 const WorkshopsSection = () => {
-    const data = useStaticQuery(
-        graphql`
+  const data = useStaticQuery(
+    graphql`
             query workshopsList {
                 allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
@@ -98,34 +97,34 @@ const WorkshopsSection = () => {
                 }
             }
         `
-    );
+  );
 
-    return (
-        <WorkshopsListWrapper>
-            <div className="workshop-section-wrapper">
-                <Col xs={12} md={3} className="workshops-col">
-                    <h1>Workshops</h1>
-                    <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
-                    <div className="see-more-button">
-                        <Button primary title="Checkout all workshops" url="workshops"/>
-                    </div>
-                </Col>
-                <Col xs={12} md={9} className="workshops-col">
-                    <Row>
-                        {data.allMdx.nodes.slice(0, 3).map(({id, frontmatter, fields, body }) => (
-                            <Col xs={12} sm={6} xl={4} className="workshops-card" key={id}>
-                                <Link to={fields.slug} >
-                                    <div className="workshop-thumbnails">
-                                        <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
-                                    </div>
-                                </Link>
-                            </Col>
-                        ))}
-                    </Row>
-                </Col>
-            </div>
-        </WorkshopsListWrapper>
-    );
+  return (
+    <WorkshopsListWrapper>
+      <div className="workshop-section-wrapper">
+        <Col xs={12} md={3} className="workshops-col">
+          <h1>Workshops</h1>
+          <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
+          <div className="see-more-button">
+            <Button primary title="Checkout all workshops" url="workshops"/>
+          </div>
+        </Col>
+        <Col xs={12} md={9} className="workshops-col">
+          <Row>
+            {data.allMdx.nodes.slice(0, 3).map(({id, frontmatter, fields}) => (
+              <Col xs={12} sm={6} xl={4} className="workshops-card" key={id}>
+                <Link to={fields.slug} >
+                  <div className="workshop-thumbnails">
+                    <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
+                  </div>
+                </Link>
+              </Col>
+            ))}
+          </Row>
+        </Col>
+      </div>
+    </WorkshopsListWrapper>
+  );
 };
 
 export default WorkshopsSection;

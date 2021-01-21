@@ -44,14 +44,14 @@ export const query = graphql`
 `;
 
 const NewsGridPage = ({data}) => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="News" />
-            <Navigation />
-            <NewsPage data={data}/>
-            <Footer/>
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="News" />
+      <Navigation />
+      <NewsPage data={data}/>
+      <Footer/>
+    </Layout>
+  </ThemeProvider>
 );
 export default NewsGridPage;
