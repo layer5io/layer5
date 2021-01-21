@@ -92,7 +92,7 @@ const LearnSectionWrapper = styled.div`
 
             .learn-card {
                 max-width: 20rem;
-                height: 18rem;
+                height: 18.5rem;
                 border: 1px solid white;
                 padding: 1rem 0.75rem;
                 margin: 1rem auto;
