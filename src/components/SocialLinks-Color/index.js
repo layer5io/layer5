@@ -37,9 +37,9 @@ const SocialLinksColor = () => {
                         href="https://github.com/layer5io"
                         target="_blank"
                         rel="noreferrer"
+                        className="github"
                     >
                         <img
-                            className="github"
                             height="30px"
                             src={github_icon}
                             alt="github"
