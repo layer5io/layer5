@@ -10,15 +10,15 @@ import Layout from "../../components/layout";
 import Conduct from "../../sections/Terms";
 
 const codeofconduct = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Code of Conduct" />
-            <Navigation />
-            <Conduct />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Code of Conduct" />
+      <Navigation />
+      <Conduct />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default codeofconduct;

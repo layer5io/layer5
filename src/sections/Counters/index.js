@@ -6,23 +6,23 @@ import Counter from "../../reusecore/Counter";
 import CounterSectionWrapper from "./counterSection.style";
 
 const Counters = () => {
-    return (
-        <CounterSectionWrapper>
-            <Container>
-                <Row>
-                    <Col xs={12} sm={6} lg={6}>
-                        <div className="counter__item">
-                            <Counter end={16} suffix="k+" />
-                            <p>GLobal Customers</p>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={6} lg={6}>
-                        <div className="counter__item">
-                            <Counter end={1111} suffix="+" />
-                            <p>Performance Tests run</p>
-                        </div>
-                    </Col>
-                    {/* <Col xs={12} sm={6} lg={3}>
+  return (
+    <CounterSectionWrapper>
+      <Container>
+        <Row>
+          <Col xs={12} sm={6} lg={6}>
+            <div className="counter__item">
+              <Counter end={16} suffix="k+" />
+              <p>GLobal Customers</p>
+            </div>
+          </Col>
+          <Col xs={12} sm={6} lg={6}>
+            <div className="counter__item">
+              <Counter end={1111} suffix="+" />
+              <p>Performance Tests run</p>
+            </div>
+          </Col>
+          {/* <Col xs={12} sm={6} lg={3}>
                         <div className="counter__item">
                             <Counter end={1450} suffix="+" />
                             <p>Happy Clients</p>
@@ -34,10 +34,10 @@ const Counters = () => {
                             <p>Expert Workers</p>
                         </div>
                     </Col> */}
-                </Row>
-            </Container>
-        </CounterSectionWrapper>
-    );
+        </Row>
+      </Container>
+    </CounterSectionWrapper>
+  );
 };
 
 export default Counters;

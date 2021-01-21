@@ -12,15 +12,15 @@ import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
 const programs = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Open Source Internship Programs" />
-            <Navigation />
-            <ProgramsGrid />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Open Source Internship Programs" />
+      <Navigation />
+      <ProgramsGrid />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default programs;

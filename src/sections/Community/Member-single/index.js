@@ -13,128 +13,128 @@ import getNighthawkLogo from "../../../assets/images/meshmate/meshmate-icon.svg"
 import communityLogo from "./community-green.svg";
 import imageHubLogo from "./layer5-image-hub.svg";
 
-const MemberSingle = ({frontmatter}) =>{
-    const {name, position,  github, twitter, image_path, meshmate, linkedin, location, badges, bio} = frontmatter;
-    return(
-        <MemberSingleWrapper>
-            <Container>
-                <div>
-                    <Row>
-                        <Col xs={12} sm={6} lg={6} >
-                            <Image className="profile-image" {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
-                        </Col>
-                        <Col xs={12} sm={6} lg={6} >
-                            <div className="header">
-                                <div className="h1">{name}</div>
-                                { position && (
-                                    <div className="h2">{position}</div>
-                                )}
-                            </div>
-                            <div className="body">
-                                {
-                                    location &&
+const MemberSingle = ({frontmatter}) => {
+  const {name, position,  github, twitter, image_path, meshmate, linkedin, location, badges, bio} = frontmatter;
+  return(
+    <MemberSingleWrapper>
+      <Container>
+        <div>
+          <Row>
+            <Col xs={12} sm={6} lg={6} >
+              <Image className="profile-image" {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
+            </Col>
+            <Col xs={12} sm={6} lg={6} >
+              <div className="header">
+                <div className="h1">{name}</div>
+                { position && (
+                  <div className="h2">{position}</div>
+                )}
+              </div>
+              <div className="body">
+                {
+                  location &&
                                     <div className="h4 location">
-                                        <span className="bold">{location}</span></div>
-                                }
-                                {
-                                    badges &&
+                                      <span className="bold">{location}</span></div>
+                }
+                {
+                  badges &&
                                 <div className="social-bg">
-                                    <ul className="profile-social-links">
-                                        {badges.includes("meshery") &&
+                                  <ul className="profile-social-links">
+                                    {badges.includes("meshery") &&
                                             <li>
-                                                <Link to="/meshery">
-                                                    <img className="profile-social-links" src={mesheryLogo} alt="Meshery logo"/>
-                                                </Link>
+                                              <Link to="/meshery">
+                                                <img className="profile-social-links" src={mesheryLogo} alt="Meshery logo"/>
+                                              </Link>
                                             </li> 
-                                        }
-                                        {badges.includes("smp") &&
+                                    }
+                                    {badges.includes("smp") &&
                                             <li>
-                                                <Link to="/projects/service-mesh-performance">
-                                                    <img className="profile-social-links" src={smpLogo} alt="Service Mesh Peformance logo"/>
-                                                </Link>
+                                              <Link to="/projects/service-mesh-performance">
+                                                <img className="profile-social-links" src={smpLogo} alt="Service Mesh Peformance logo"/>
+                                              </Link>
                                             </li>
-                                        }
-                                        {badges.includes("image-hub") &&
+                                    }
+                                    {badges.includes("image-hub") &&
                                             <li>
-                                                <Link to="/projects/image-hub">
-                                                    <img className="profile-social-links" src={imageHubLogo} alt="Image Hublogo"/>
-                                                </Link>
+                                              <Link to="/projects/image-hub">
+                                                <img className="profile-social-links" src={imageHubLogo} alt="Image Hublogo"/>
+                                              </Link>
                                             </li>
-                                        }
-                                        {badges.includes("landscape") &&
+                                    }
+                                    {badges.includes("landscape") &&
                                             <li>
-                                                <Link to="/landscape">
-                                                    <img className="profile-social-links" src={landscapeLogo} alt="Service Mesh Landscape logo"/>
-                                                </Link>
+                                              <Link to="/landscape">
+                                                <img className="profile-social-links" src={landscapeLogo} alt="Service Mesh Landscape logo"/>
+                                              </Link>
                                             </li> 
-                                        }
-                                        {badges.includes("community") &&
+                                    }
+                                    {badges.includes("community") &&
                                             <li>
-                                                <Link to="/community">
-                                                    <img className="profile-social-links" src={communityLogo} alt="Service Mesh Community logo"/>
-                                                </Link>
+                                              <Link to="/community">
+                                                <img className="profile-social-links" src={communityLogo} alt="Service Mesh Community logo"/>
+                                              </Link>
                                             </li> 
-                                        }
-                                        {badges.includes("getnighthawk") &&
+                                    }
+                                    {badges.includes("getnighthawk") &&
                                             <li>
-                                                <Link to="/projects/getnighthawk">
-                                                    <img className="profile-social-links" src={getNighthawkLogo} alt="GetNighthawk logo"/>
-                                                </Link>
+                                              <Link to="/projects/getnighthawk">
+                                                <img className="profile-social-links" src={getNighthawkLogo} alt="GetNighthawk logo"/>
+                                              </Link>
                                             </li> 
-                                        }
-                                        {badges.includes("meshery-operator") &&
+                                    }
+                                    {badges.includes("meshery-operator") &&
                                             <li>
-                                                <Link to="/projects/meshery-operator">
-                                                    <img className="profile-social-links" src={mesheryOperatorLogo} alt="Meshery Operator logo"/>
-                                                </Link>
+                                              <Link to="/projects/meshery-operator">
+                                                <img className="profile-social-links" src={mesheryOperatorLogo} alt="Meshery Operator logo"/>
+                                              </Link>
                                             </li> 
-                                        }
-                                    </ul>
+                                    }
+                                  </ul>
                                 </div>    
-                                }
-                                {
-                                    bio &&
+                }
+                {
+                  bio &&
                                     <div className="h4 bio">{bio}</div>
-                                }
-                            </div>
-                            <div className="social-bg">
-                                <ul className="profile-social-links">
-                                    { github && (
-                                        <li>
-                                            <a href={`https://github.com/${github}`}>
-                                                <FaGithub className="github" size={32}/>
-                                            </a>
-                                        </li>
-                                    )}
-                                    { twitter && (
-                                        <li>
-                                            <a href={`https://twitter.com/${twitter}`}>
-                                                <FaTwitter className="twitter" size={32}/>
-                                            </a>
-                                        </li>
-                                    )}
-                                    { linkedin && (
-                                        <li>
-                                            <a href={`https://Linkedin.com/in/${linkedin}`}>
-                                                <FaLinkedin className="linkedin" size={32}/>
-                                            </a>
-                                        </li>
-                                    )}
-                                    { meshmate && (
-                                        <li>
-                                            <Link to="/community/meshmates">
-                                                <img src={MeshMateIcon} className="meshmate-white" alt="meshmate-icon" />
-                                            </Link>
-                                        </li>
-                                    )}
-                                </ul>
-                            </div>
-                        </Col>
-                    </Row>
-                </div>
-            </Container>
-        </MemberSingleWrapper>
-    );
+                }
+              </div>
+              <div className="social-bg">
+                <ul className="profile-social-links">
+                  { github && (
+                    <li>
+                      <a href={`https://github.com/${github}`}>
+                        <FaGithub className="github" size={32}/>
+                      </a>
+                    </li>
+                  )}
+                  { twitter && (
+                    <li>
+                      <a href={`https://twitter.com/${twitter}`}>
+                        <FaTwitter className="twitter" size={32}/>
+                      </a>
+                    </li>
+                  )}
+                  { linkedin && (
+                    <li>
+                      <a href={`https://Linkedin.com/in/${linkedin}`}>
+                        <FaLinkedin className="linkedin" size={32}/>
+                      </a>
+                    </li>
+                  )}
+                  { meshmate && (
+                    <li>
+                      <Link to="/community/meshmates">
+                        <img src={MeshMateIcon} className="meshmate-white" alt="meshmate-icon" />
+                      </Link>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            </Col>
+          </Row>
+        </div>
+      </Container>
+    </MemberSingleWrapper>
+  );
 };
 
 export default MemberSingle;

@@ -5,7 +5,7 @@ export const ColorBoxWrapper = styled.div`
            height: 16rem;
            width: 16rem;
            background-color: ${props =>
-        props.bgcolor ? props.bgcolor : "red"};
+  props.bgcolor ? props.bgcolor : "red"};
            margin-bottom: 1rem;
            padding: 1.5rem 2.5rem;
            color: ${props => props.dark ? "black" : "white" };
