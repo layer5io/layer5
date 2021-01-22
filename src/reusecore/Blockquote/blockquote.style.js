@@ -5,19 +5,19 @@ const BlockquoteStyle = styled.div`
     .blockquote-wrapper {
     display: flex;
     /* height: 100vh; */
-    padding: 0 20px;
+    padding: 0 10px;
     }
 
     /* Blockquote main style */
     .blockquote {
         position: relative;
         max-width: 620px;
-        margin: 20px auto;
+        margin: 10px auto;
         align-self: center;
     }
 
     /* Blockquote header */
-    .blockquote h1 {
+    .blockquote h4 {
         position: relative; /* for pseudos */
         color: ${props => props.theme.primaryColor};
         font-weight: normal;
@@ -30,7 +30,7 @@ const BlockquoteStyle = styled.div`
     }
 
     /* Blockquote right double quotes */
-    .blockquote h1:after {
+    .blockquote h4:after {
         content:"";
         position: absolute;
         border: 2px solid ${props => props.theme.primaryColor};
@@ -44,7 +44,7 @@ const BlockquoteStyle = styled.div`
         z-index: 3; 
     }
 
-    .blockquote h1:before {
+    .blockquote h4:before {
         content:"";
         position: absolute;
         width: 80px;
@@ -56,20 +56,15 @@ const BlockquoteStyle = styled.div`
 
     /* increase header size after 600px */
     @media all and (min-width: 600px) {
-        .blockquote h1 {
-            font-size: 3rem;
+        .blockquote h4 {
+            font-size: 1.25rem;
             line-height: 1.2;
-    }
-
+        }
     }
 
     /* Blockquote subheader */
-    .blockquote h4 {
-        position: relative;
-        color: #000;
-        font-size: 1.3rem;
-        font-weight: 400;
-        line-height: 1.2;
+    .blockquote h5 {
+        position: relative;     
         margin: 0;
         padding-top: 15px;
         z-index: 1;
@@ -77,9 +72,8 @@ const BlockquoteStyle = styled.div`
         padding-left:12px;
     }
 
-    
-    .blockquote h4:first-letter {
-    margin-left:-12px;
+    .blockquote h5:first-letter {
+    margin-left:-30px;
     }
 `;
 BlockquoteStyle.displayName = "BlockquoteStyle";

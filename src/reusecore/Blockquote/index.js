@@ -4,34 +4,25 @@ import BlockquoteStyle from "./blockquote.style";
 
 const Blockquote = ({
   className,
-  children,
   ...props
 
 }) => {
-  const addClasses = ["appion__btn"];
-  if (className) {
-    addClasses.push(className);
+  const AllClasses = ["blockquote"];
+  if(className){
+    AllClasses.push(className);
   }
-
-  // const initalBlockquote = 
-  // <BlockquoteStyle 
-  //   className={addClasses.join(" ")}{...props} >
-  //   {children}
-  //   {props.quote}
-  // </BlockquoteStyle>;
-
   return (
     <React.Fragment>
       {
         <BlockquoteStyle
-          className={addClasses.join(" ")}{...props} >
+          className={AllClasses.join(" ")} {...props}>
           <div className="blockquote-wrapper">
             <div className="blockquote">
-              <h1>
+              <h4>
                 {props.quote}
-              </h1>
-              <h4> {props.person}</h4>
-              <h4>{props.title}</h4>
+              </h4>
+              <h5>{props.person}</h5>
+              <h5>{props.title}</h5>
             </div>
           </div>
         </BlockquoteStyle>
@@ -42,7 +33,7 @@ const Blockquote = ({
 };
 
 Blockquote.propTypes = {
-  as: PropTypes.oneOf(["Blockquote", "blockquote",]), //--
+  
   quote: PropTypes.string,
   person: PropTypes.string,
   className: PropTypes.string,
