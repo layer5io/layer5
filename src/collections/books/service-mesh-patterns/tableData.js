@@ -1,7 +1,6 @@
 export const Data = [
     {
         service_mesh_pattern:"Area I: It's a Mesh Out There",
-        category:"",
         subheading:"bold"
     },
     {
@@ -31,7 +30,6 @@ export const Data = [
     },
     {
         service_mesh_pattern:"Area II: Patterns of Initialization and Deployment",
-        category:"",
         subheading:"bold"
     },
     {
@@ -76,7 +74,6 @@ export const Data = [
     },
     {
         service_mesh_pattern:"Area III: Patterns of Configuration",
-        category:"",
         subheading:"bold"
     },
     {
@@ -161,7 +158,6 @@ export const Data = [
     },
     {
         service_mesh_pattern:"Area IV: Patterns of Operation",
-        category:"",
         subheading:"bold"
     },
     {
@@ -231,7 +227,6 @@ export const Data = [
     },
     {
         service_mesh_pattern:"Area V: Performance, Testing, and Debugging, Tuning, Troubleshooting",
-        category:"",
         subheading:"bold"
     },
     {
@@ -276,7 +271,6 @@ export const Data = [
     },
     {
         service_mesh_pattern:"Area VI: Patterns in Practice: Employing Standards",
-        category:"",
         subheading:"bold"
     },
     {

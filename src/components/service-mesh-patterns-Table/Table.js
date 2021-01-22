@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { useTable, useSortBy } from "react-table";
+import { useTable, useSortBy, useFilters } from "react-table";
 import {Data} from "../../collections/books/service-mesh-patterns/tableData";
 import {Columns} from "../../collections/books/service-mesh-patterns/bookColumns";
 import { TableWrapper } from "./table.style";
@@ -23,16 +23,8 @@ const Table = ()=>{
         columns,
         data,
     },
+    useFilters,
     useSortBy
-    );
-    
-    const spring = React.useMemo(
-        () => ({
-            type: "spring",
-            damping: 50,
-            stiffness: 100,
-        }),
-        []
     );
 
     return (
@@ -54,7 +46,10 @@ const Table = ()=>{
                                                     : <img className="service-mesh-icon" src={alphaicon} alt="alpha icon" />}
                                             </span>
                                             : <>
-                                            </>
+                                            </>}
+                                        {(column.Header == "Category") ? 
+                                            <div>{column.canFilter ? column.render("Filter") : null}</div>
+                                            : <> </>
                                         }
                                     </div>
                                 </th>

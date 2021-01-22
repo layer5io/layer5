@@ -17,9 +17,43 @@ export const Columns = [
         columns: [
             {
                 Header: "Category",
-                accessor: "category"
+                accessor: "category",
+                Filter: SelectColumnFilter
             }
         ],
         accessor: "category_column"
     }
 ];
+
+
+// Filter for selecting category
+function SelectColumnFilter({
+    column: { filterValue, setFilter, preFilteredRows, id },
+}) {
+    // Calculate the options for filtering
+    // using the preFilteredRows
+    const options = React.useMemo(() => {
+        const option = new Set();
+        preFilteredRows.forEach(row => {
+            option.add(row.values[id]);
+        });
+        return [...option.values()];
+    }, [id, preFilteredRows]);
+
+    // Render a multi-select box
+    return (
+        <select
+            value={filterValue}
+            onChange={e => {
+                setFilter(e.target.value || undefined);
+            }}
+        >
+            <option value="">All</option>
+            {options.map((option, i) => (
+                <option key={i} value={option}>
+                    {option}
+                </option>
+            ))}
+        </select>
+    );
+}
