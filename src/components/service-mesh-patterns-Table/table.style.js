@@ -11,6 +11,7 @@ export const TableWrapper = styled.div`
             border-collapse:collapse;
         }
 
+
         th{
             background:${theme["tertiaryColor"]};
             color:${theme["white"]};
@@ -32,6 +33,13 @@ export const TableWrapper = styled.div`
                     color:#ccc;
                 }
             }
+            span {
+                img{
+                    margin-left: 1rem;
+                    position: relative;
+                    top: 0.25rem;
+                }
+            }
         }
 
         tbody{
@@ -40,7 +48,7 @@ export const TableWrapper = styled.div`
 
                 &:hover{
                     box-shadow: 0px 2px 15px -10px black;
-			        transform: translateY(0px);
+                    transform: translateY(0px);
                 }
             }
 
