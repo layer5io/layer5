@@ -19,7 +19,7 @@ const BlockquoteStyle = styled.div`
 /* Blockquote header */
 .blockquote h1 {
     position: relative; /* for pseudos */
-    color: #e74848;
+    color: ${props => props.active ? props.theme.primaryColor : props.theme.primaryLightColor};/* center the blockquote in the page */
     font-size: 2.8rem;
     font-weight: normal;
     line-height: 1;
