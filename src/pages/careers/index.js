@@ -12,15 +12,15 @@ import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
 const careers = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Careers" />
-            <Navigation />
-            <Careers />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Careers" />
+      <Navigation />
+      <Careers />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default careers;

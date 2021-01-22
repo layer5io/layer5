@@ -2,9 +2,9 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import MembersGrid from "./index";
 
-const AllMembers = props =>{
-    const data = useStaticQuery(
-        graphql`
+const AllMembers = props => {
+  const data = useStaticQuery(
+    graphql`
             query allMembers {
                 allMdx(
                     sort: { fields: [frontmatter___name], order: ASC }
@@ -39,9 +39,9 @@ const AllMembers = props =>{
                 }
             }
         `
-    );
+  );
 
-    return <MembersGrid data={data} {...props}/>;
+  return <MembersGrid data={data} {...props}/>;
 };
 
 export default AllMembers;

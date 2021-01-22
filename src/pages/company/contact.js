@@ -12,19 +12,19 @@ import theme from "../../theme/app/themeStyles";
 import ContactPage from "../../sections/Company/Contact";
 
 class Contact extends Component {
-    render() {
-        return (
-            <ThemeProvider theme={theme}>
-                <Layout>
-                    <GlobalStyle />
-                    <SEO title="Contact" />
-                    <Navigation />
-                    <ContactPage />
-                    <Footer />
-                </Layout>
-            </ThemeProvider>
-        );
-    }
+  render() {
+    return (
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <GlobalStyle />
+          <SEO title="Contact" />
+          <Navigation />
+          <ContactPage />
+          <Footer />
+        </Layout>
+      </ThemeProvider>
+    );
+  }
 }
 
 export default Contact;

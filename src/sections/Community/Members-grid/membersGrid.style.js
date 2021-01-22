@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const selectStyles = {
-    menu: styles => ({ ...styles, zIndex: 999, })
+  menu: styles => ({ ...styles, zIndex: 999, })
 };
 export const dropdownTheme = theme => ({
-    ...theme,
-    borderRadius: 0,
-    colors: {
-        ...theme.colors,
-        primary50:"#b0e8e2",
-        primary25: "#b0e8e2",
-        primary: "#00b39f",
-    }
+  ...theme,
+  borderRadius: 0,
+  colors: {
+    ...theme.colors,
+    primary50:"#b0e8e2",
+    primary25: "#b0e8e2",
+    primary: "#00b39f",
+  }
 });
 
 

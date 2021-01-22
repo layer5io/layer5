@@ -12,14 +12,14 @@ import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
 const Meshery = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Meshery" />
-            <Navigation />
-            <MesheryPage />
-            <Footer/>
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Meshery" />
+      <Navigation />
+      <MesheryPage />
+      <Footer/>
+    </Layout>
+  </ThemeProvider>
 );
 export default Meshery;

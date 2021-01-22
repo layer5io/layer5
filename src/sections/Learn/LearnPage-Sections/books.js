@@ -88,8 +88,8 @@ const BooksListWrapper = styled.div`
 `;
 
 const BooksSection = () => {
-    const data = useStaticQuery(
-        graphql`
+  const data = useStaticQuery(
+    graphql`
             query booksList {
                 allMdx(
                     filter: { fields: { collection: { eq: "books" } }, frontmatter: { published: { eq: true } } }
@@ -114,32 +114,32 @@ const BooksSection = () => {
                 }
             }
         `
-    );
+  );
 
-    return (
-        <BooksListWrapper>
-            <Container>
-                <h1 className="book-heading">Service Mesh Books</h1>
-                <div className="books-list">
-                    {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
-                        <div className="books-card" key={id}>
-                            <Link className="books-page_link" to={fields.slug} >
-                                <div className="books-image">
-                                    <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
-                                </div>
-                                <div className="books-details">
-                                    <h2>{frontmatter.title}</h2>
-                                    <p>{frontmatter.abstract}</p>
-                                </div>
-                                <Button secondary title={<FaArrowRight />} className="arrow_icon" />
-                            </Link>
-                            
-                        </div>
-                    ))}
+  return (
+    <BooksListWrapper>
+      <Container>
+        <h1 className="book-heading">Service Mesh Books</h1>
+        <div className="books-list">
+          {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+            <div className="books-card" key={id}>
+              <Link className="books-page_link" to={fields.slug} >
+                <div className="books-image">
+                  <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
                 </div>
-            </Container>
-        </BooksListWrapper>
-    );
+                <div className="books-details">
+                  <h2>{frontmatter.title}</h2>
+                  <p>{frontmatter.abstract}</p>
+                </div>
+                <Button secondary title={<FaArrowRight />} className="arrow_icon" />
+              </Link>
+                            
+            </div>
+          ))}
+        </div>
+      </Container>
+    </BooksListWrapper>
+  );
 };
 
 export default BooksSection;

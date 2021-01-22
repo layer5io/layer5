@@ -14,18 +14,18 @@ import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
 const MesheryMainPage = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Meshery"/>
-            <Navigation />
-            <MesheryTerminal/>
-            <MesheryPlatforms/>
-            <MesheryManageMesh/>
-            <MesheryQuotes/>
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Meshery"/>
+      <Navigation />
+      <MesheryTerminal/>
+      <MesheryPlatforms/>
+      <MesheryManageMesh/>
+      <MesheryQuotes/>
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default MesheryMainPage;

@@ -4,22 +4,22 @@ import { HeroWrapper } from "./hero.style";
 
 
 const Hero = ({ title, description, subtitle, links }) => {
-    return(
-        <HeroWrapper>
-            <div className="content">
-                <h5 className="subtitle">{subtitle}</h5>
-                <h1>{title}</h1>
-                <p>{description}</p>
-                <div className="links">
-                    {links.map((link) => {
-                        return (
-                            <Button primary key={link.text} title={link.text} url={link.url} external={link.external}/>
-                        );
-                    })}
-                </div>
-            </div>
-        </HeroWrapper>
-    );
+  return(
+    <HeroWrapper>
+      <div className="content">
+        <h5 className="subtitle">{subtitle}</h5>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <div className="links">
+          {links.map((link) => {
+            return (
+              <Button primary key={link.text} title={link.text} url={link.url} external={link.external}/>
+            );
+          })}
+        </div>
+      </div>
+    </HeroWrapper>
+  );
 };
 
 export default Hero;

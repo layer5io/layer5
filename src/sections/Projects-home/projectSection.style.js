@@ -20,7 +20,7 @@ const ProjectItemWrapper = styled.section`
         margin: auto;
         p{
             font-size: 17.5px;
-            color: ${props=> props.theme.black};
+            color: ${props => props.theme.black};
         }
     }
     .project-text {

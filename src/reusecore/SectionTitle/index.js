@@ -9,20 +9,20 @@ width: 40%;
 text-align: center;
 
 ${props => (props.rightAlign && css (
-        {
-            "text-align": "right"
-        }
-    ))}
+  {
+    "text-align": "right"
+  }
+))}
 ${props => (props.leftAlign && css (
-        {
-            "text-align": "left"
-        }
-    ))}
+  {
+    "text-align": "left"
+  }
+))}
 ${props => (props.UniWidth && css (
-        {
-            "width": props.UniWidth
-        }
-    ))}
+  {
+    "width": props.UniWidth
+  }
+))}
 
 h4{
     font-size: 20px;
@@ -53,11 +53,11 @@ h2{
 `;
 const SectionTitle = ({ children, ...props }) => {
 
-    return (
-        <TitleWrap {...props}>
-            {children}
-        </TitleWrap>
-    );
+  return (
+    <TitleWrap {...props}>
+      {children}
+    </TitleWrap>
+  );
 };
 
 export default SectionTitle;

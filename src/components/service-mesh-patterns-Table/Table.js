@@ -8,82 +8,80 @@ import alphaicon from "./sort_by_alpha.svg";
 import upicon from "./expand_more.svg";
 import downicon from "./expand_less.svg";
 
-const Table = ()=>{
+const Table = () => {
 
-    const columns = React.useMemo(()=>Columns,[]);
-    const data = React.useMemo(()=>Data,[]);
+  const columns = React.useMemo(() => Columns, []);
+  const data = React.useMemo(() => Data,[]);
 
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    } = useTable({
-        columns,
-        data,
-    },
-    useFilters,
-    useSortBy
-    );
-
-    return (
-        <TableWrapper>
-            <table {...getTableProps()}>
-                <thead>
-                    {headerGroups.map(headerGroup => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
-                            {headerGroup.headers.map((column, index) => (
-                                <th key={index} {...column.getHeaderProps()}>
-                                    <div {...column.getSortByToggleProps()}>
-                                        {column.render("Header")}
-                                        {(column.Header == "Service Mesh Pattern" || column.Header == "Category") ?
-                                            <span>
-                                                {column.isSorted
-                                                    ? column.isSortedDesc
-                                                        ? <img className="service-mesh-icon" src={downicon} alt="down icon" />
-                                                        : <img className="service-mesh-icon" src={upicon} alt="up icon" />
-                                                    : <img className="service-mesh-icon" src={alphaicon} alt="alpha icon" />}
-                                            </span>
-                                            : <>
-                                            </>}
-                                        {(column.Header == "Category") ? 
-                                            <div>{column.canFilter ? column.render("Filter") : null}</div>
-                                            : <> </>
-                                        }
-                                    </div>
-                                </th>
-                            ))}
-                        </tr>
-                    ))}
-                </thead>
-                <tbody {...getTableBodyProps()}>
-                    { rows.map((row, i) => {
-                        prepareRow(row);
-                        return (
-                            <tr key={i} {...row.getRowProps()}>
-                                {row.cells.map((cell, index) => {
-                                    if(row["original"]["subheading"] === "bold"){
-                                        return (
-                                            <th key={index} {...cell.getCellProps()} className="bold">
-                                                {cell.render("Cell")}
-                                            </th>
-                                        );
-                                    }
-                                    else{
-                                        return (
-                                            <td key={index} {...cell.getCellProps()}>
-                                                {cell.render("Cell")}
-                                            </td>
-                                        );
-                                    }
-                                })}
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </TableWrapper>
-    );
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable({
+    columns,
+    data,
+  },
+  useFilters,
+  useSortBy
+  );
+  return (
+    <TableWrapper>
+      <table {...getTableProps()}>
+        <thead>
+          {headerGroups.map(headerGroup => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column, index) => (
+                <th key={index} {...column.getHeaderProps()}>
+                  <div {...column.getSortByToggleProps()}>
+                    {column.render("Header")}
+                    {(column.Header == "Service Mesh Pattern" || column.Header == "Category") ?
+                      <span>
+                        {column.isSorted
+                          ? column.isSortedDesc
+                            ? <img className="service-mesh-icon" src={downicon} alt="down icon" />
+                            : <img className="service-mesh-icon" src={upicon} alt="up icon" />
+                          : <img className="service-mesh-icon" src={alphaicon} alt="alpha icon" />}
+                      </span>
+                      : <>
+                      </>}
+                    {(column.Header == "Category") ? 
+                      <div>{column.canFilter ? column.render("Filter") : null}</div>
+                      : <> </>
+                    }
+                  </div>
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          { rows.map((row, i) => {
+            prepareRow(row);
+            return (
+              <tr key={i} {...row.getRowProps()}>
+                {row.cells.map((cell, index) => {
+                  if(row["original"]["subheading"] === "bold"){
+                    return (
+                      <th key={index} {...cell.getCellProps()} className="bold">
+                        {cell.render("Cell")}
+                      </th>
+                    );
+                  } else{
+                    return (
+                      <td key={index} {...cell.getCellProps()}>
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  }
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </TableWrapper>
+  );
 };
 export default Table;
