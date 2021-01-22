@@ -56,29 +56,6 @@ export const ProjectWrapper = styled.div`
             text-align: center;
         }
     }
-    // Service Mesh Performance
-    .project__card.five{
-        grid-column: 1/2;
-        grid-row: 1/3;
-        img{
-           width: 180px;
-           margin-left: 6px;
-        }
-    }
-    // Distributed Performance Management of Service Meshes
-    .project__card.six{
-        grid-column: 1/3;
-        grid-row: 3/6;
-        img{
-            width: 180px;
-            margin-top: -35px;
-            margin-left: 6px;
-        }
-        h5{ 
-            align-self: center;
-            width: 150%;
-        }
-    }
     // Landscape
     .project__card.one{
         grid-column: 2/3;
@@ -133,8 +110,39 @@ export const ProjectWrapper = styled.div`
             align-self: center;
         }
     }
+    // Service Mesh Performance
+    .project__card.five{
+        grid-column: 1/2;
+        grid-row: 1/3;
+        img{
+           width: 180px;
+           align-self: center;
+        }
+    }
+    // Distributed Performance Management of Service Meshes
+    .project__card.six{
+        grid-column: 1/3;
+        grid-row: 3/6;
+        img{
+            width: 180px;
+            margin-top: -35px;
+            align-self: center;
+        }
+        h5{ 
+            align-self: center;
+            width: 150%;
+        }
+    }
     @media only screen and (max-width: 1200px) {
-       .project__card.six h5, .project__card.four h5{
+       .project__card.six {
+            h5{
+                width: 100%;
+           }
+            img{
+                width: 150px;
+           }
+       }
+       .project__card.four h5{
         width: 100%;
        }
        .project__card h5{
@@ -214,7 +222,6 @@ export const ProjectWrapper = styled.div`
             img{
                 width: 130px;
                 margin-top: 10px;
-                margin-left: 30px;
             }
             h5{ 
                 width: 100%;

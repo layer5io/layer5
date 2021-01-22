@@ -55,7 +55,7 @@ const ProjectPage = ({ data }) => {
               </div>
             </Link>
             <Link
-              to="/distributed-performance-management-of-service-meshes"
+              to="/projects/distributed-performance-management-of-service-meshes"
               className="project__card six"
             >
               <div className="project__card-container">
