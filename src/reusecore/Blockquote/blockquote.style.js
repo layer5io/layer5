@@ -19,12 +19,12 @@ const BlockquoteStyle = styled.div`
 /* Blockquote header */
 .blockquote h1 {
     position: relative; /* for pseudos */
-    color: ${props => props.active ? props.theme.primaryColor : props.theme.primaryLightColor};/* center the blockquote in the page */
+    color: ${props => props.active ? props.theme.primaryColor : props.theme.primaryLightColor};
     font-size: 2.8rem;
     font-weight: normal;
     line-height: 1;
     margin: 0;
-    border: 2px solid #fff;
+    border: 2px solid #000;
     border: solid 2px;
     border-radius:20px;
     padding: 25px;
@@ -34,7 +34,7 @@ const BlockquoteStyle = styled.div`
 .blockquote h1:after {
     content:"";
     position: absolute;
-    border: 2px solid #e74848;
+    border: 2px solid ${props => props.active ? props.theme.primaryColor : props.theme.primaryLightColor};
     border-radius: 0 50px 0 0;
     width: 60px;
     height: 60px;
@@ -67,7 +67,7 @@ const BlockquoteStyle = styled.div`
 /* Blockquote subheader */
 .blockquote h4 {
     position: relative;
-    color: #ffffff;
+    color: #000;
     font-size: 1.3rem;
     font-weight: 400;
     line-height: 1.2;
