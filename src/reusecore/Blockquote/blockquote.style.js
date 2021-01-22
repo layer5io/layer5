@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 const BlockquoteStyle = styled.div`
 
     /* center the blockquote in the page */
@@ -22,8 +22,7 @@ const BlockquoteStyle = styled.div`
         color: ${props => props.theme.primaryColor};
         font-weight: normal;        
         margin: 0;
-        border: 2px solid #000;
-        border: solid 2px;
+        border: 2px solid ${props => props.theme.primaryLightColorTwo};
         border-radius:20px;
         padding: 20px;
     }
@@ -32,7 +31,7 @@ const BlockquoteStyle = styled.div`
     .blockquote h4:after {
         content:"";
         position: absolute;
-        border: 2px solid ${props => props.theme.primaryColor};
+        border: 2px solid ${props => props.theme.primaryLightColorTwo};
         border-radius: 0 50px 0 0;
         width: 60px;
         height: 60px;
