@@ -1,22 +1,16 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 const BlockquoteStyle = styled.div`
-
-background-color: ${props => props.active ?  props.theme.primaryColor: props.theme.primaryLightColor};/* center the blockquote in the page */
-body { 
-  background-color: #292a2b;
- }
 
 /* center the blockquote in the page */
 .blockquote-wrapper {
    display: flex;
-   height: 100vh;
+   /* height: 100vh; */
    padding: 0 20px;
 }
 
 /* Blockquote main style */
 .blockquote {
     position: relative;
-    font-family: 'Barlow Condensed', sans-serif;
     max-width: 620px;
     margin: 80px auto;
     align-self: center;
@@ -24,7 +18,6 @@ body {
 
 /* Blockquote header */
 .blockquote h1 {
-    font-family: 'Abril Fatface', cursive;
     position: relative; /* for pseudos */
     color: #e74848;
     font-size: 2.8rem;
