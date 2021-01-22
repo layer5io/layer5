@@ -21,8 +21,8 @@ const Blockquote = ({
               <h4>
                 {props.quote}
               </h4>
-              <h5>{props.person}</h5>
-              <h5>{props.title}</h5>
+              <h5 className="person">{props.person}</h5>
+              <h5 className="title">{props.title}</h5>
             </div>
           </div>
         </BlockquoteStyle>

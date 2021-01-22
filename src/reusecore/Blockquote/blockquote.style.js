@@ -20,8 +20,7 @@ const BlockquoteStyle = styled.div`
     .blockquote h4 {
         position: relative; /* for pseudos */
         color: ${props => props.theme.primaryColor};
-        font-weight: normal;
-        line-height: 1;
+        font-weight: normal;        
         margin: 0;
         border: 2px solid #000;
         border: solid 2px;
@@ -37,7 +36,7 @@ const BlockquoteStyle = styled.div`
         border-radius: 0 50px 0 0;
         width: 60px;
         height: 60px;
-        bottom: -62px;
+        bottom: -60px;
         left: 50px;
         border-bottom: none;
         border-left: none;
@@ -48,33 +47,45 @@ const BlockquoteStyle = styled.div`
         content:"";
         position: absolute;
         width: 80px;
-        border: 6px solid ${props => props.theme.primaryColor};
+        border: 6px solid #fff;
         bottom: -3px;
         left: 50px;
         z-index: 2;
+        /* content:"";
+        position: absolute;
+        width: 80px;
+        border: 6px solid ${props => props.theme.primaryColor};
+        bottom: -3px;
+        left: 50px;
+        z-index: 2; */
     }
 
     /* increase header size after 600px */
     @media all and (min-width: 600px) {
         .blockquote h4 {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             line-height: 1.2;
         }
     }
 
     /* Blockquote subheader */
-    .blockquote h5 {
+    .person {
         position: relative;     
         margin: 0;
         padding-top: 15px;
         z-index: 1;
-        margin-left:150px;
-        padding-left:12px;
+        margin-left:140px;
     }
-
-    .blockquote h5:first-letter {
-    margin-left:-30px;
+    .title {
+        line-height: 1rem;
+        position: relative;
+        font-size: 1.1rem;
+        font-style: italic;
+        margin: 0;
+        z-index: 1;
+        margin-left:140px;
     }
+    
 `;
 BlockquoteStyle.displayName = "BlockquoteStyle";
 
