@@ -12,39 +12,39 @@ import { FiDownloadCloud } from "react-icons/fi";
 import BannerSectionWrapper from "./banner.style";
 
 const BannerDefault = () => {
-    return (
-        <BannerSectionWrapper>
-            <ParticleComponent />
-            <Container fullWidthSM>
-                <Row>
-                    <Col sm={7} md={6} lg={7}>
-                        <SectionTitle
-                            className="section-title"
-                            leftAlign={true}
-                            UniWidth="100%"
-                        >
-                            <h4>The Service Mesh Company</h4>
-                            <h1>
+  return (
+    <BannerSectionWrapper>
+      <ParticleComponent />
+      <Container fullWidthSM>
+        <Row>
+          <Col sm={7} md={6} lg={7}>
+            <SectionTitle
+              className="section-title"
+              leftAlign={true}
+              UniWidth="100%"
+            >
+              <h4>The Service Mesh Company</h4>
+              <h1>
                             Representing <span>every</span> service mesh
-                            </h1>
-                        </SectionTitle>
-                        <p>
+              </h1>
+            </SectionTitle>
+            <p>
                         The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
-                        </p>
-                        <VintageBox right={true} vintageOne={true}>
-                            <Button primary className="banner-btn" title="Join in" url="/community">
-                                <FaMapMarkedAlt size={21} className="icon-left" />
-                            </Button>
-                            <Button primary className="banner-btn two" title="Run Meshery" url="/projects/meshery">
-                                <FiDownloadCloud size={21} className="icon-left" />
-                            </Button>
+            </p>
+            <VintageBox right={true} vintageOne={true}>
+              <Button primary className="banner-btn" title="Join in" url="/community">
+                <FaMapMarkedAlt size={21} className="icon-left" />
+              </Button>
+              <Button primary className="banner-btn two" title="Run Meshery" url="/projects/meshery">
+                <FiDownloadCloud size={21} className="icon-left" />
+              </Button>
                             
-                        </VintageBox>
-                    </Col>
-                </Row>
-            </Container>
-        </BannerSectionWrapper>
-    );
+            </VintageBox>
+          </Col>
+        </Row>
+      </Container>
+    </BannerSectionWrapper>
+  );
 };
 
 export default BannerDefault;

@@ -13,41 +13,41 @@ import Maintainers from "../../sections/Community/Members-grid/Maintainers";
 import Meshmate from "../../sections/Community/Members-grid/Meshmate";
 
 const options = [
-    { label: "All Members", value: "all" },
-    { label: "Active Members", value: "active" },
-    { label: "Inactive Members", value: "inactive" },
-    { label: "Maintainers", value: "maintainers" },
-    { label: "MeshMates", value: "meshmates" }
+  { label: "All Members", value: "all" },
+  { label: "Active Members", value: "active" },
+  { label: "Inactive Members", value: "inactive" },
+  { label: "Maintainers", value: "maintainers" },
+  { label: "MeshMates", value: "meshmates" }
 ];
 
 const MembersPage = () => {
-    const [members, setMembers] = useState(options[0]);
+  const [members, setMembers] = useState(options[0]);
 
-    const handleChange = value => {
-        setMembers(value);
-    };
+  const handleChange = value => {
+    setMembers(value);
+  };
 
-    let MembersView = props => {
-        switch (members.value) {
-        case "active" : return <ActiveMembers {...props} />;
-        case "inactive" : return <InactiveMembers {...props}/>;
-        case "maintainers" : return <Maintainers {...props}/>;
-        case "meshmates" : return <Meshmate {...props}/>;
-        default: return <AllMembers {...props}/>;
-        }
-    };
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title="Members" />
-                <Navigation />
-                <MembersView options={options} handleChange={handleChange}
-                    members={members} />
-                <Footer/>
-            </Layout>
-        </ThemeProvider>
-    );
+  let MembersView = props => {
+    switch (members.value) {
+      case "active" : return <ActiveMembers {...props} />;
+      case "inactive" : return <InactiveMembers {...props}/>;
+      case "maintainers" : return <Maintainers {...props}/>;
+      case "meshmates" : return <Meshmate {...props}/>;
+      default: return <AllMembers {...props}/>;
+    }
+  };
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Members" />
+        <Navigation />
+        <MembersView options={options} handleChange={handleChange}
+          members={members} />
+        <Footer/>
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default MembersPage;

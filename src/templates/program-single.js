@@ -25,17 +25,17 @@ export const query = graphql`
 `;
 
 const ProgramSinglePage = ({data}) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={data.mdx.frontmatter.title} />
-                <Navigation />
-                <ProgramsSingle data={data}/>
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title={data.mdx.frontmatter.title} />
+        <Navigation />
+        <ProgramsSingle data={data}/>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default ProgramSinglePage;

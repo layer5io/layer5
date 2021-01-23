@@ -33,20 +33,20 @@ export const PositionApplyWrapper = styled.div`
     }
 `;
 
-const PositionApply = ()=>{
-    return(
-        <PositionApplyWrapper>
-            <div className="apply-now">
-                <div className="apply">
-                    <img src={job_icon} alt="job-icon" className="pos-logo"/>
-                    <h5>How to Apply</h5>
-                </div>
-                <p>Submit your resume and a short cover letter to:
-                    <a href="mailto:jobs@layer5.io"> jobs@layer5.io</a>
-                </p>
-            </div>
-        </PositionApplyWrapper>
-    );
+const PositionApply = () => {
+  return(
+    <PositionApplyWrapper>
+      <div className="apply-now">
+        <div className="apply">
+          <img src={job_icon} alt="job-icon" className="pos-logo"/>
+          <h5>How to Apply</h5>
+        </div>
+        <p>Submit your resume and a short cover letter to:
+          <a href="mailto:jobs@layer5.io"> jobs@layer5.io</a>
+        </p>
+      </div>
+    </PositionApplyWrapper>
+  );
 };
 
 export default PositionApply;

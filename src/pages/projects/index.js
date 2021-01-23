@@ -40,14 +40,14 @@ export const query = graphql`
 `;
 
 const ProjectGridPage = ({data}) => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Projects" />
-            <Navigation />
-            <ProjectPage data={data} />
-            <Footer/>
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Projects" />
+      <Navigation />
+      <ProjectPage data={data} />
+      <Footer/>
+    </Layout>
+  </ThemeProvider>
 );
 export default ProjectGridPage;

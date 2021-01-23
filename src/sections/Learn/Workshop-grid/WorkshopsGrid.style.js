@@ -202,4 +202,16 @@ export const WorkshopPageWrapper = styled.div`
 		text-align: center;
 		font-weight: 500;
 	}
+
+	.rqst-workshop {
+		.bottom-image {
+			width: 100%;
+			height: 100%;
+			margin: auto;
+			display: block;
+		}
+		
+		a {
+			margin: auto;
+		}
 `;

@@ -26,17 +26,17 @@ export const query = graphql`
 `;
 
 const BookSinglePage = ({data}) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={data.mdx.frontmatter.title} />
-                <Navigation />
-                <BookSingle data={data}/>
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title={data.mdx.frontmatter.title} />
+        <Navigation />
+        <BookSingle data={data}/>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default BookSinglePage;
