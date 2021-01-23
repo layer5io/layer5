@@ -12,14 +12,14 @@ import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
 const SMP = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="SMP" />
-            <Navigation />
-            <SMPPage />
-            <Footer/>
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="SMP" />
+      <Navigation />
+      <SMPPage />
+      <Footer/>
+    </Layout>
+  </ThemeProvider>
 );
 export default SMP;
