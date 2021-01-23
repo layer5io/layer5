@@ -14,7 +14,7 @@ import AppScreens from "../sections/AppScreens";
 import Counters from "../sections/Counters";
 import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
-import News from "../sections/News";
+import News from "../sections/Company/News";
 import Getapp from "../sections/Getapp";
 import ContactCard from "../components/ContactCard";
 import Footer from "../sections/Footer";
@@ -23,26 +23,26 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/modern/themeStyles";
 
 const IndexPage = () => (
-    <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
-            <SEO title="Layer5 | The Service Mesh Company" />
-            <Navigation />
-            <Banner />
-            <About />
-            <Integrations />
-            <Features />
-            <AppScreens />
-            <Counters />
-            <Pricing />
-            <Testimonial />
-            <Faq />
-            <Getapp />
-            <News />
-            <ContactCard />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Layout>
+      <SEO title="Layer5 | The Service Mesh Company" />
+      <Navigation />
+      <Banner />
+      <About />
+      <Integrations />
+      <Features />
+      <AppScreens />
+      <Counters />
+      <Pricing />
+      <Testimonial />
+      <Faq />
+      <Getapp />
+      <News />
+      <ContactCard />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default IndexPage;

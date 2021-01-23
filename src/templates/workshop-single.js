@@ -7,7 +7,7 @@ import Navigation from "../sections/Navigation";
 import Footer from "../sections/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
-import WorkshopSinglePage from "../sections/Workshop-single/index";
+import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
 
 export const query = graphql`
     query WorkshopBySlug($slug: String!) {
@@ -40,17 +40,17 @@ export const query = graphql`
 `;
 
 const WorkshopSingle = ({ data }) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={`${data.mdx.frontmatter.title}`} />
-                <Navigation />
-                <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title={`${data.mdx.frontmatter.title}`} />
+        <Navigation />
+        <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default WorkshopSingle;

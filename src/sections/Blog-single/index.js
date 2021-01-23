@@ -8,40 +8,40 @@ import RelatedPosts from "../Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
 
 const BlogSingle = ({data}) => {
-    const { frontmatter, body, fields } = data.mdx;
-    return (
-        <BlogPageWrapper>
-            <PageHeader
-                title={frontmatter.title}
-                subtitle={frontmatter.subtitle}
-                category={frontmatter.category}
-                author={{ name: frontmatter.author }}
-                thumbnail={frontmatter.thumbnail}
-            />
-            <div className="single-post-wrapper">
-                <Container>
-                    <MDXRenderer>{body}</MDXRenderer>
-                    <div className="post-info-block">
-                        <div className="tags">
-                            <span>Tags:</span>
-                            <div>
-                                {frontmatter.tags && frontmatter.tags.map(tag => (
-                                    <Link key={`${frontmatter.title}-${tag}`}
-                                        to={`/blog/tag/${slugify(tag)}`}>{tag}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    <RelatedPosts
-                        category={frontmatter.category}
-                        tags={frontmatter.tags}
-                        currentPostSlug={fields.slug}
-                    />
-                </Container>
+  const { frontmatter, body, fields } = data.mdx;
+  return (
+    <BlogPageWrapper>
+      <PageHeader
+        title={frontmatter.title}
+        subtitle={frontmatter.subtitle}
+        category={frontmatter.category}
+        author={{ name: frontmatter.author }}
+        thumbnail={frontmatter.thumbnail}
+      />
+      <div className="single-post-wrapper">
+        <Container>
+          <MDXRenderer>{body}</MDXRenderer>
+          <div className="post-info-block">
+            <div className="tags">
+              <span>Tags:</span>
+              <div>
+                {frontmatter.tags && frontmatter.tags.map(tag => (
+                  <Link key={`${frontmatter.title}-${tag}`}
+                    to={`/blog/tag/${slugify(tag)}`}>{tag}
+                  </Link>
+                ))}
+              </div>
             </div>
-        </BlogPageWrapper>
-    );
+          </div>
+          <RelatedPosts
+            category={frontmatter.category}
+            tags={frontmatter.tags}
+            currentPostSlug={fields.slug}
+          />
+        </Container>
+      </div>
+    </BlogPageWrapper>
+  );
 };
 
 export default BlogSingle;

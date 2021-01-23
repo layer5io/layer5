@@ -7,7 +7,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import Navigation from "../sections/Navigation";
-import BookSingle from "../sections/Book-single";
+import BookSingle from "../sections/Learn/Book-single";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
@@ -26,17 +26,17 @@ export const query = graphql`
 `;
 
 const BookSinglePage = ({data}) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={data.mdx.frontmatter.title} />
-                <Navigation />
-                <BookSingle data={data}/>
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title={data.mdx.frontmatter.title} />
+        <Navigation />
+        <BookSingle data={data}/>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default BookSinglePage;

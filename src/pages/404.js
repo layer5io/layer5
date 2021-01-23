@@ -12,15 +12,15 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
 const NotFoundPage = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="What a mesh!" />
-            <Navigation />
-            <L404 />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="What a mesh!" />
+      <Navigation />
+      <L404 />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default NotFoundPage;

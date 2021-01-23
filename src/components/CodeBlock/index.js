@@ -40,40 +40,40 @@ const CopyCode = styled.button`
 `;
 
 const Code = ({ codeString, language }) => {
-    const handleClick = () => {
-        copyToClipboard(codeString);
-    };
-    return (
-        <Highlight
-            {...defaultProps}
-            code={codeString}
-            language={language}
-            theme={theme}
-        >
-            {({
-                className,
-                style,
-                tokens,
-                getLineProps,
-                getTokenProps,
-            }) => (
-                <Pre>
-                    <CopyCode onClick={handleClick}>Copy</CopyCode>
-                    <Pre className={className} style={style}>
+  const handleClick = () => {
+    copyToClipboard(codeString);
+  };
+  return (
+    <Highlight
+      {...defaultProps}
+      code={codeString}
+      language={language}
+      theme={theme}
+    >
+      {({
+        className,
+        style,
+        tokens,
+        getLineProps,
+        getTokenProps,
+      }) => (
+        <Pre>
+          <CopyCode onClick={handleClick}>Copy</CopyCode>
+          <Pre className={className} style={style}>
                         
-                        {tokens.map((line, i) => (
-                            <div {...getLineProps({ line, key: i })} key={i}>
-                                <LineNo>{i + 1}</LineNo>
-                                {line.map((token, key) => (
-                                    <span {...getTokenProps({ token, key })} key={key}/>
-                                ))}
-                            </div>
-                        ))}
-                    </Pre>
-                </Pre>
-            )}
-        </Highlight>
-    );
+            {tokens.map((line, i) => (
+              <div {...getLineProps({ line, key: i })} key={i}>
+                <LineNo>{i + 1}</LineNo>
+                {line.map((token, key) => (
+                  <span {...getTokenProps({ token, key })} key={key}/>
+                ))}
+              </div>
+            ))}
+          </Pre>
+        </Pre>
+      )}
+    </Highlight>
+  );
 };
 
 export default Code;

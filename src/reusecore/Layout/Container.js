@@ -26,11 +26,11 @@ const ContainerWrapper = styled.div`
 `;
 
 const Container = ({children}, props) => {
-    return(
-        <ContainerWrapper {...props}>
-            {children}
-        </ContainerWrapper>
-    );
+  return(
+    <ContainerWrapper {...props}>
+      {children}
+    </ContainerWrapper>
+  );
 };
 
 export default Container;

@@ -44,7 +44,7 @@ const PricingSectionWrapper = styled.section`
         box-shadow: 15px 15px 40px ${props => props.theme.shadowColor};
         position: relative;
         text-align: center;
-        height: 725px;
+        height: 650px;
         transition: all 0.3s ease-in;
         &:hover{
             border-color: ${props => props.theme.primaryColor};
@@ -58,9 +58,10 @@ const PricingSectionWrapper = styled.section`
         .count-block{
             position: absolute;
             margin-left: 80px;
+            text-aling: center;
             bottom: 20px;
             .count{
-                font-size: 50px;
+                font-size: 30px;
                 font-weight: 700;
                 margin-bottom: 10px;
                 color: ${props => props.theme.black};
@@ -83,7 +84,7 @@ const PricingSectionWrapper = styled.section`
         h3{
             font-size: 36px;
             font-weight: 600;
-            margin: 0 0 10px 0; 
+            margin: 0 0 10px 0;
             color: ${props => props.theme.black};
         }
         p{
@@ -100,7 +101,7 @@ const PricingSectionWrapper = styled.section`
     .details-block{
         text-align: left;
         .table{
-            color: ${props => props.theme.black};  
+            color: ${props => props.theme.black};
             h4 {
                 color: ${props => props.theme.black};
                 font-weight: 400;
@@ -109,11 +110,11 @@ const PricingSectionWrapper = styled.section`
             h4 + h4 {
             }
             td{
-                
+
                 vertical-align: top;
             }
             svg{
-                fill: #FFF7D8; 
+                fill: #FFF7D8;
                 // ${props => props.theme.textColor};
                 margin-right: 15px;
             }
@@ -148,7 +149,7 @@ const PricingSectionWrapper = styled.section`
     }
     @media only screen and (max-width: 1280px) {
         padding: 90px 0 210px 0;
-        
+
         .pricing-block{
             padding: 40px 15px 35px 15px;
         }
@@ -179,8 +180,8 @@ const PricingSectionWrapper = styled.section`
             padding: 40px 15px 35px 15px;
         }
     }
-    
-    
+
+
 `;
 
 export default PricingSectionWrapper;

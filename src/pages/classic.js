@@ -14,7 +14,7 @@ import AppScreens from "../sections/AppScreens-classic";
 import Counter from "../sections/Counters";
 import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
-import News from "../sections/News";
+import News from "../sections/Company/News";
 import Getapp from "../sections/Getapp";
 import Client from "../sections/Client";
 import Footer from "../sections/Footer-classic";
@@ -23,25 +23,25 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/classic/themeStyles";
 
 const ClassicPage = () => (
-    <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
-            <SEO title="Layer5 | The Service Mesh Company" />
-            <Navigation />
-            <BannerClassic />
-            <AboutClassic />
-            <Integrations />
-            <FeaturesClassic />
-            <AppScreens />
-            <Counter />
-            <Pricing />
-            <Testimonial />
-            <FaqClassic />
-            <Getapp />
-            <News />
-            <Client />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Layout>
+      <SEO title="Layer5 | The Service Mesh Company" />
+      <Navigation />
+      <BannerClassic />
+      <AboutClassic />
+      <Integrations />
+      <FeaturesClassic />
+      <AppScreens />
+      <Counter />
+      <Pricing />
+      <Testimonial />
+      <FaqClassic />
+      <Getapp />
+      <News />
+      <Client />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 export default ClassicPage;
