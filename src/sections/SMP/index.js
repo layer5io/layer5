@@ -12,7 +12,7 @@ import c_icon from "./c-icon.svg";
 import wasm_capacity from "./native-and-wasm-at-capacity-100rps.png";
 import latency from "./latency-at-scale.png";
 import client_capacity from "./client-capacity.png";
-import smp from "../../assets/images/app/projects/smp.png";
+import smp from "./smp-white.svg";
 
 const SMPPage = () => {
     return (
@@ -22,12 +22,12 @@ const SMPPage = () => {
                     <Container>
                         <div className="hero-text">
                             <Row>
-                                <Col lg={7}>
+                                <Col lg={5} md={12} sm={12}>
+                                    <img className="logo-img" src={smp} />
+                                </Col>
+                                <Col lg={7} md={12} sm={12}>
                                     <h1> Service Mesh Performance </h1>
                                     <p> The Service Mesh Performance Working Group is hosted within CNCF SIG Network. All are welcome to participate. This group is defining the Service Mesh Performance(SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
-                                </Col>
-                                <Col lg={5}>
-                                    {/* <img src={smp} /> */}
                                 </Col>
                             </Row>
                         </div>

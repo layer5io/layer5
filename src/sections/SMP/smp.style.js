@@ -18,6 +18,10 @@ const SMPWrapper = styled.section`
             p{
                 color: ${props => props.theme.white};
             }
+            .logo-img{
+                height: 240px;
+                width: auto;
+            }
         }
     }
     .smp-details{
@@ -109,6 +113,14 @@ const SMPWrapper = styled.section`
         margin-bottom: 0;
     }
     @media only screen and (max-width: 1024px) {
+        .smp-hero{
+            .hero-text{
+                padding: 4rem 0;
+                .logo-img{
+                    height: 150px;
+                }
+            }
+        }
         .smp-effects{
             .iframes{
                 padding: 0 1rem;
@@ -122,7 +134,10 @@ const SMPWrapper = styled.section`
     @media only screen and (max-width: 480px) {
         .smp-hero{
             .hero-text{
-                padding: 3.125rem 0 3.125rem 0;
+                padding: 3.125rem 0;
+                .logo-img{
+                    height: 80px;
+                }
             }
         }
         .smp-details{
