@@ -1,30 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
 import { KatacodaWrapper } from "./KatacodaWrapper.style";
 import PageHeader from "../../reusecore/PageHeader";
-import CourseCard from "../../components/CourseCard";
+import ScenarioCard from "../../components/ScenarioCard";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
-import cover from "./cover.svg";
-
-const data = [
-    { title: "Meshery - Learn how to manage your service mesh", info: "Learn how to run Meshery, install service meshes and deploy sample apps", link: "https://www.katacoda.com/layer5/courses/meshery-adapters" },
-    { title: "Meshery - Performance Testing", info: "Learn how to do Performance Testing with Meshery", link: "https://www.katacoda.com/layer5/courses/performance-testing-with-meshery" }
-];
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { data } from "./courseData";
 
 
 const KatacodaServiceMesh = () => {
+
+    const [content, setContent] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [ID, setID] = useState("");
+
+
+    const toggleActive = (subId) => {
+        if (open) {
+            if (ID === subId) {
+                setOpen(false);
+                setContent(false);
+                setID("");
+            }
+            else {
+                setOpen(false);
+                setContent(false);
+                setID(subId);
+                setContent(true);
+                setOpen(true);
+            }
+        }
+        else {
+            setID(subId);
+            setContent(true);
+            setOpen(true);
+        }
+    };
+
     return (
         <KatacodaWrapper>
-            <PageHeader title="We build projects to provide learning environments, deployment and operational best practices"/>
+            <PageHeader title="We build projects to provide learning environments, deployment and operational best practices" />
             <div className="Katacoda-section-wrapper">
                 <Container>
-                    <Row>
-                        {data.map(({ id, title, info, link }) => (
-                            <Col key={id} xs={12} sm={6}>
-                                <CourseCard title={title} info={info} link={link} cover={cover}/>
-                            </Col>
+                    <Tabs className="course-tabs">
+                        <TabList className="course-tab-list">
+                            {data.map(({ id, title }) => (
+                                <Tab className="course-tab" key={id}>
+                                    <div className="title">
+                                        {title}
+                                    </div>
+                                </Tab>
+                            ))}
+                        </TabList>
+                        {data.map(({ id, courseLink, scenarios }) => (
+                            <TabPanel className="content" key={id}>
+                                <Row>
+                                    {scenarios.map(({ subId, title, cover, info, embed, link }) => (
+                                        <Col {...content && ID === subId ? { xs: 12, sm: 12, lg: 12 } : { xs: 12, sm: 6 }} key={subId}>
+                                            <ScenarioCard
+                                                title={title}
+                                                info={info}
+                                                cover={cover}
+                                                content={content}
+                                                embed={embed}
+                                                courseLink={courseLink}
+                                                link={link}
+                                                subId={subId}
+                                                ID={ID}
+                                                toggleActive={(subId) => {
+                                                    toggleActive(subId);
+                                                }}
+                                            />
+                                        </Col>
+                                    ))}
+                                </Row>
+                            </TabPanel>
                         ))}
-                    </Row>
+                    </Tabs>
                 </Container>
                 <div className="join-community">
                     <div className="join-community_text-and_button">

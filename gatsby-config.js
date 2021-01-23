@@ -95,6 +95,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/src/collections/labs`,
+        name: `labs`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/src/collections/events`,
         name: `events`,
       },
