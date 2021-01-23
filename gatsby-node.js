@@ -1,3 +1,4 @@
+/* eslint-env node */
 /**
  * Implement Gatsby's Node APIs in this file.
  *
@@ -5,12 +6,12 @@
  */
 
 
-const path = require(`path`);
+const path = require("path");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 
 // Replacing '/' would result in empty string which is invalid
-const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``));
+const replacePath = path => (path === "/" ? path : path.replace(/\/$/, ""));
 // Implement the Gatsby API “onCreatePage”. This is
 // called after every page is created.
 exports.onCreatePage = ({ page, actions }) => {
@@ -21,75 +22,75 @@ exports.onCreatePage = ({ page, actions }) => {
   if (page.path !== oldPage.path) {
     // Replace new page with old page
     deletePage(oldPage);
-    createPage(page)
+    createPage(page);
   }
 };
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create client-side redirects (these only work in prod deployment)
-  const { createRedirect } = actions
-  createRedirect({ fromPath: '/books', toPath: '/learn/books', redirectInBrowser: true, isPermanent: true })
-  createRedirect({ fromPath: '/workshops', toPath: '/learn/workshops', redirectInBrowser: true, isPermanent: true })
-  createRedirect({ fromPath: '/service-mesh', toPath: '/learn/service-mesh', redirectInBrowser: true, isPermanent: true })
-  createRedirect({ fromPath: '/meshery', toPath: '/projects/meshery', redirectInBrowser: true, isPermanent: true })
-  createRedirect({ fromPath: '/landscape', toPath: '/service-mesh-landscape', redirectInBrowser: true, isPermanent: true })
-  createRedirect({ fromPath: '/events', toPath: '/community/events', redirectInBrowser: true, isPermanent: true })
-  createRedirect({ fromPath: '/programs', toPath: '/careers/programs', redirectInBrowser: true, isPermanent: true })
-  createRedirect({ fromPath: '/about', toPath: '/company/about', redirectInBrowser: true, isPermanent: true })
-  createRedirect({ fromPath: '/brand', toPath: '/company/brand', redirectInBrowser: true, isPermanent: true })
-  createRedirect({ fromPath: '/contact', toPath: '/company/contact', redirectInBrowser: true, isPermanent: true })
-  createRedirect({ fromPath: '/news', toPath: '/company/news', redirectInBrowser: true, isPermanent: true })
+  const { createRedirect } = actions;
+  createRedirect({ fromPath: "/books", toPath: "/learn/books", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/workshops", toPath: "/learn/workshops", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-mesh", toPath: "/learn/service-mesh", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshery", toPath: "/projects/meshery", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/landscape", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/events", toPath: "/community/events", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/programs", toPath: "/careers/programs", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/about", toPath: "/company/about", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/brand", toPath: "/company/brand", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/contact", toPath: "/company/contact", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/news", toPath: "/company/news", redirectInBrowser: true, isPermanent: true });
 
   // Create Pages
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
-    'src/templates/blog-single.js'
+    "src/templates/blog-single.js"
   );
   const blogCategoryListTemplate = path.resolve(
-    'src/templates/blog-category-list.js'
+    "src/templates/blog-category-list.js"
   );
   const blogTagListTemplate = path.resolve(
-    'src/templates/blog-tag-list.js'
+    "src/templates/blog-tag-list.js"
   );
   const blogViewTemplate = path.resolve(
-    'src/templates/blog.js'
+    "src/templates/blog.js"
   );
 
   const EventsTemplate = path.resolve(
-    'src/templates/events.js'
+    "src/templates/events.js"
   );
 
   const NewsPostTemplate = path.resolve(
-    'src/templates/news-single.js'
+    "src/templates/news-single.js"
   );
 
   const ProjectPostTemplate = path.resolve(
-    'src/templates/project-single.js'
+    "src/templates/project-single.js"
   );
 
   const BookPostTemplate = path.resolve(
-    'src/templates/book-single.js'
+    "src/templates/book-single.js"
   );
 
   const ProgramPostTemplate = path.resolve(
-    'src/templates/program-single.js'
+    "src/templates/program-single.js"
   );
 
   const CareerPostTemplate = path.resolve(
-    'src/templates/career-single.js'
+    "src/templates/career-single.js"
   );
 
   const MemberTemplate = path.resolve(
-    'src/templates/member-single.js'
+    "src/templates/member-single.js"
   );
 
   const WorkshopTemplate = path.resolve(
-    'src/templates/workshop-single.js'
+    "src/templates/workshop-single.js"
   );
 
   const LabTemplate = path.resolve(
-    'src/templates/lab-single.js'
+    "src/templates/lab-single.js"
   );
 
   const res = await graphql(`
@@ -159,38 +160,38 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // handle errors
   if (res.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
-    return
+    reporter.panicOnBuild("Error while running GraphQL query.");
+    return;
   }
 
   const allNodes = res.data.allPosts.nodes;
 
   const blogs = allNodes.filter(
-    node => node.fields.collection === `blog`
+    node => node.fields.collection === "blog"
   );
 
   const news = allNodes.filter(
-    node => node.fields.collection === `news`
+    node => node.fields.collection === "news"
   );
 
   const projects = allNodes.filter(
-    node => node.fields.collection === `projects`
+    node => node.fields.collection === "projects"
   );
 
   const books = allNodes.filter(
-    node => node.fields.collection === `books`
+    node => node.fields.collection === "books"
   );
 
   const programs = allNodes.filter(
-    node => node.fields.collection === `programs`
+    node => node.fields.collection === "programs"
   );
 
   const careers = allNodes.filter(
-    node => node.fields.collection === `careers`
+    node => node.fields.collection === "careers"
   );
 
   const members = allNodes.filter(
-    node => node.fields.collection === `members`
+    node => node.fields.collection === "members"
   );
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
@@ -201,7 +202,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage,
     items: blogs,
     itemsPerPage: 8,
-    pathPrefix: `/blog`,
+    pathPrefix: "/blog",
     component: blogViewTemplate
   });
 
@@ -209,7 +210,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage,
     items: events,
     itemsPerPage: 9,
-    pathPrefix: `/community/events`,
+    pathPrefix: "/community/events",
     component: EventsTemplate
   });
 
@@ -220,7 +221,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: blog.fields.slug,
       },
-    })
+    });
   });
   const blogCategory = res.data.blogCategory.group;
   blogCategory.forEach(category => {
@@ -257,7 +258,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: singleNews.fields.slug,
       },
-    })
+    });
   });
 
   projects.forEach(project => {
@@ -267,7 +268,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: project.fields.slug,
       },
-    })
+    });
   });
 
   books.forEach(book => {
@@ -277,7 +278,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: book.fields.slug,
       },
-    })
+    });
   });
 
   programs.forEach(program => {
@@ -287,7 +288,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: program.fields.slug,
       },
-    })
+    });
   });
 
   careers.forEach(career => {
@@ -297,7 +298,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: career.fields.slug,
       },
-    })
+    });
   });
 
   members.forEach(member => {
@@ -307,7 +308,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: member.fields.slug,
       },
-    })
+    });
   });
 
   singleWorkshop.forEach(workshop => {
@@ -317,7 +318,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: workshop.fields.slug,
       },
-    })
+    });
   });
 
   labs.forEach(lab => {
@@ -327,14 +328,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: lab.fields.slug,
       },
-    })
+    });
   });
-
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === `Mdx`) {
+  if (node.internal.type === "Mdx") {
     const collection = getNode(node.parent).sourceInstanceName;
     createNodeField({
       name: "collection",
@@ -344,21 +344,21 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     let slug = "";
     if (node.frontmatter.permalink) {
       slug = `/${collection}/${node.frontmatter.permalink}`;
-    }
-    else {
+    } else {
       switch (collection) {
-        case `blog`:
+        case "blog":
           slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
           break;
-        case `members`:
-          slug = `/community/members/${slugify(node.frontmatter.name)}`;
+        case "members":
+          if (node.frontmatter.published)
+            slug = `/community/members/${slugify(node.frontmatter.name)}`;
           break;
         default:
           slug = `/${collection}/${slugify(node.frontmatter.title)}`;
       }
     }
     createNodeField({
-      name: `slug`,
+      name: "slug",
       node,
       value: slug,
     });
@@ -388,5 +388,5 @@ exports.createSchemaCustomization = ({ actions }) => {
       video: String,
     }
   `;
-  createTypes(typeDefs)
+  createTypes(typeDefs);
 };

@@ -96,6 +96,7 @@ const InternshipSectionWrapper = styled.div`
         }
         &:hover{
             .arrow_icon{
+                color: white;
                 background: #00D3A9;
                 left: 0.2rem;
             }
@@ -109,8 +110,7 @@ const InternshipSectionWrapper = styled.div`
         padding: 0;
         font-size: 1.25rem;
         border-radius: 1rem; 
-        justify-content: center;       
-        right: 0;
+        justify-content: center;
         transition: all 0.2s;
     }
 

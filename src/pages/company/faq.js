@@ -12,15 +12,15 @@ import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
 const FAQPage = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="FAQs" />
-            <Navigation />
-            <FAQ />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="FAQs" />
+      <Navigation />
+      <FAQ />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default FAQPage;

@@ -10,14 +10,14 @@ import Layout from "../components/layout";
 import Partner from "../sections/Partners";
 
 const Partners = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="Partners" />
-            <Navigation />
-            <Partner />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="Partners" />
+      <Navigation />
+      <Partner />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 export default Partners;

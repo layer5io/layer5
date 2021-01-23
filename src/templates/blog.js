@@ -47,42 +47,42 @@ export const query = graphql`
 `;
 
 const Blog = props => {
-    const [isListView, setIsListView] = useState(false);
+  const [isListView, setIsListView] = useState(false);
 
-    const setListView = () => {
-        setIsListView(true);
-    };
+  const setListView = () => {
+    setIsListView(true);
+  };
 
-    const setGridView = () => {
-        setIsListView(false);
-    };
+  const setGridView = () => {
+    setIsListView(false);
+  };
 
-    useEffect(() => {
-        if (props.location.state){
-            if (props.location.state.isListView) setListView();
-        }
-    }, []);
+  useEffect(() => {
+    if (props.location.state){
+      if (props.location.state.isListView) setListView();
+    }
+  }, []);
 
-    let BlogView = props => {
-        if (isListView)
-            return (<BlogList {...props} />);
-        return (<BlogGrid {...props} />);
-    };
+  let BlogView = props => {
+    if (isListView)
+      return (<BlogList {...props} />);
+    return (<BlogGrid {...props} />);
+  };
 
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title="Blog" />
-                <Navigation />
-                <BlogView data={props.data} isListView={isListView}
-                    setListView={setListView} setGridView={setGridView}
-                    pageContext={props.pageContext}
-                />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Blog" />
+        <Navigation />
+        <BlogView data={props.data} isListView={isListView}
+          setListView={setListView} setGridView={setGridView}
+          pageContext={props.pageContext}
+        />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default Blog;

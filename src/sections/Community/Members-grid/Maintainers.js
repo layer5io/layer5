@@ -2,9 +2,9 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import MembersGrid from "./index";
 
-const Maintainer = props =>{
-    const data = useStaticQuery(
-        graphql`
+const Maintainer = props => {
+  const data = useStaticQuery(
+    graphql`
             query Maintainer {
                 allMdx(
                     sort: { fields: [frontmatter___name], order: ASC }
@@ -39,9 +39,9 @@ const Maintainer = props =>{
                 }
             }
         `
-    );
+  );
 
-    return <MembersGrid data={data} {...props} />;
+  return <MembersGrid data={data} {...props} />;
 };
 
 export default Maintainer;

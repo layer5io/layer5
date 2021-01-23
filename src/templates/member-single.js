@@ -40,17 +40,17 @@ export const query = graphql`
 `;
 
 const MemberSinglePage = ({data}) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={data.mdx.frontmatter.name} />
-                <Navigation />
-                <MemberSingle frontmatter={data.mdx.frontmatter}/>
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title={data.mdx.frontmatter.name} />
+        <Navigation />
+        <MemberSingle frontmatter={data.mdx.frontmatter}/>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default MemberSinglePage;

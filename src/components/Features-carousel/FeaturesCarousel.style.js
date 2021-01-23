@@ -5,6 +5,10 @@ export const FeaturesWrapper = styled.div`
       @media (min-width: 768px) {
         display: none;
       }
+      
+      .main-heading{
+        margin-bottom: 2rem;
+      }
     
       .feature {
         border-left: none;
@@ -59,19 +63,34 @@ export const FeaturesWrapper = styled.div`
     
       & p {
         margin: 0 0 8px;
+        font-size: 1rem;
       }
     }
     
     .active-feature {
       border-color: ${props => props.theme.secondaryColor};
-    
+      padding: 3rem 2.75rem 2rem 2.75rem;
+      @media (min-width: 768px){
+        border-color: ${props => props.theme.tertiaryColorTwo};
+        background-color: ${props => props.theme.tertiaryColorTwo};
+        border-radius: 20px;
+      }
+      
       & .body {
         opacity: 1;
+        font-size: 1rem;
         max-height: 200px;
+        
+        @media (min-width: 768px){
+            color: ${props => props.theme.white};
+        }
       }
     
       & .heading {
-        color: black;
+        
+        @media (min-width: 768px){
+            color: ${props => props.theme.white};
+        }
       }
     }
     
@@ -94,9 +113,9 @@ export const FeaturesWrapper = styled.div`
       background: none;
       border: none;
       padding: 0;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 28px;
-      font-weight: bold;
+      font-weight: 600;
       color: ${props => props.theme.headingColor};
       cursor: pointer;
     }
@@ -129,9 +148,10 @@ export const FeaturesWrapper = styled.div`
       display: none;
       text-align: left;
       transition: all 0.3s linear;
+      color: ${props => props.theme.white};
       
       svg{
-           margin-left: 0px;
+           margin-left: 0;
            font-size: 27px;
            transition: all 0.3s linear;
        }

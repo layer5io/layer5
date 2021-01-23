@@ -12,14 +12,14 @@ import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
 const SMI = () => (
-    <ThemeProvider theme={theme}>
-        <Layout>
-            <GlobalStyle />
-            <SEO title="SMI" />
-            <Navigation />
-            <SMIPage />
-            <Footer/>
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <Layout>
+      <GlobalStyle />
+      <SEO title="SMI" />
+      <Navigation />
+      <SMIPage />
+      <Footer/>
+    </Layout>
+  </ThemeProvider>
 );
 export default SMI;

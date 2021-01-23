@@ -9,24 +9,24 @@ import Layout from "../../components/layout";
 import Loadable from "react-loadable";
 
 const LoadableCalendar = Loadable({
-    loader: () => import("../../sections/Community/Calendar"),
-    loading() {
-        return <div>Loading...</div>;
-    }
+  loader: () => import("../../sections/Community/Calendar"),
+  loading() {
+    return <div>Loading...</div>;
+  }
 });
 
 const CalendarPage = () => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title="Service Mesh Events Calendar" />
-                <Navigation />
-                <LoadableCalendar />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Service Mesh Events Calendar" />
+        <Navigation />
+        <LoadableCalendar />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default CalendarPage;
