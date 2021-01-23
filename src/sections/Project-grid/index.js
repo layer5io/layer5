@@ -10,6 +10,7 @@ import meshery from "../../assets/images/app/projects/meshery-logo-light.png";
 import landscape from "../../assets/images/app/projects/landscape.png";
 import smi from "../../assets/images/app/projects/smi.svg";
 import imagehub from "../../assets/images/image-hub/layer5-image-hub.png";
+import smp from "../../assets/images/smp/icon/smp-dark.svg";
 
 const ProjectPage = ({ data }) => {
   return (
@@ -47,10 +48,7 @@ const ProjectPage = ({ data }) => {
             </Link>
             <Link to="/service-mesh-performance" className="project__card five">
               <div className="project__card-container">
-                <img
-                  src={data.allMdx.nodes[0].frontmatter.thumbnail.publicURL}
-                  alt="Service Mesh Performance"
-                />
+                <img src={smp} alt="Service Mesh Performance" />
                 <h5>Service Mesh Performance</h5>
               </div>
             </Link>
