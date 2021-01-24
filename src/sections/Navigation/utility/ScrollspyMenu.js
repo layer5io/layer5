@@ -8,12 +8,12 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   const addAllClasses = [""];
 
   const [state, setState] = useState({
-    active: menuItems[4]
+    active: menuItems[0]
   });
 
   const wrapRef = useRef(null);
 
-  let handleMouseEnter = (index) => {
+  const handleMouseOver = (index) => {
     setState({
       active: menuItems[index]
     });
@@ -23,13 +23,13 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
     addAllClasses.push(props.className);
   }
 
-  let wrapDisplay = () => {
+  const wrapDisplay = () => {
     if (wrapRef.current) {
       wrapRef.current.style.display = "block";
     }
   };
 
-  let wrapNone = () => {
+  const wrapNone = () => {
     if (wrapRef.current) {
       wrapRef.current.style.display = "none";
     }
@@ -39,14 +39,14 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   const blogData = props.blogData;
 
   return (
-    <ul className={addAllClasses.join(" ")} onMouseEnter={wrapDisplay} onMouseLeave={wrapNone}>
+    <ul className={addAllClasses.join(" ")} onMouseOver={wrapDisplay} onMouseOut={wrapNone}>
       {menuItems.map((menu, index) => (
         <li
           key={index}
           className={
             menu.subItems !== undefined ? "nav-item has-dropdown" : "nav-item"
           }
-          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseOver={() => handleMouseOver(index)}
         >
           <AnchorLink to={menu.path} className="menu-link">
             <span>

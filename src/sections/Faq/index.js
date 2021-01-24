@@ -20,7 +20,18 @@ import data from "../../assets/data/faq";
 
 import FaqSectionWrapper from "./faqSection.style";
 
-const Faq = () => {
+const Faq = (props) => {
+  let faqs = [];
+  if(props.category === "all" || props.category === undefined){
+    faqs = data.faqs;
+  }
+
+  data.faqs.forEach(faq => {
+    if(faq.category.toString() === props.category){
+      faqs.push(faq);
+    }
+  });
+    
   return (
     <FaqSectionWrapper id="faq">
       <Container fullWidthSM>
@@ -40,7 +51,9 @@ const Faq = () => {
           </div>
         </SectionTitle>
         <Accordion allowMultipleExpanded="true" allowZeroExpanded="true">
-          {data.faqs.map((faq, index) => (
+
+
+          {faqs.map((faq, index) => (
             <AccordionItem key={index}>
               <AccordionTitle>
                 <IconWrapper>
@@ -72,6 +85,9 @@ const Faq = () => {
               </AccordionBody>
             </AccordionItem>
           ))}
+
+
+
         </Accordion>
       </Container>
     </FaqSectionWrapper>
