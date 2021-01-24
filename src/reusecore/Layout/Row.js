@@ -8,23 +8,23 @@ const RowWrapper = styled.div`
     margin-left: -15px;
     margin-right: -15px;
     ${props => props.Vcenter && css(
-        {
-            "align-items": "center"
-        }
-    )};
+  {
+    "align-items": "center"
+  }
+)};
     ${props => props.Hcenter && css(
-        {
-            "justify-content": "center"
-        }
-    )};
+  {
+    "justify-content": "center"
+  }
+)};
 `;
 
 const Row = ({children, ...props}) => {
-    return(
-        <RowWrapper {...props}>
-            {children}
-        </RowWrapper>
-    );
+  return(
+    <RowWrapper {...props}>
+      {children}
+    </RowWrapper>
+  );
 };
 
 export default Row;

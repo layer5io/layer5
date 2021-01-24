@@ -2,9 +2,9 @@ import React from "react";
 import MembersGrid from "./index";
 import { useStaticQuery, graphql } from "gatsby";
 
-const Meshmate = props =>{
-    const data=useStaticQuery(
-        graphql`
+const Meshmate = props => {
+  const data=useStaticQuery(
+    graphql`
             query Meshmate {
                 allMdx(
                     sort: { fields: [frontmatter___name], order: ASC }
@@ -39,8 +39,8 @@ const Meshmate = props =>{
                 }
             }
         `
-    );
-    return <MembersGrid data={data} {...props} />;
+  );
+  return <MembersGrid data={data} {...props} />;
 };
 
 export default Meshmate;

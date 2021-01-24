@@ -9,13 +9,13 @@ const ImageHubWrapper = styled.section`
         .title-text{
             margin: 3.125rem 0 6.25rem 0;
             h1{
-                color: ${props =>props.theme.white};
+                color: ${props => props.theme.white};
             }
             h4{
                 border: 1px solid gray;
                 padding: 0 0.625rem 0 0.625rem;
                 width: 17.19rem;
-                color: ${props =>props.theme.white};
+                color: ${props => props.theme.white};
             }
         }
         .logo{
@@ -26,7 +26,7 @@ const ImageHubWrapper = styled.section`
         }
         p{
             width: 96%;
-            color: ${props =>props.theme.white};
+            color: ${props => props.theme.white};
         }
         .iframe-div{
             height: 400px;

@@ -14,16 +14,16 @@ import theme from "../../theme/app/themeStyles";
 
 
 const ServiceMeshKatacodaPage = () => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title="Katacoda" />
-                <Navigation />
-                <KatacodaServiceMesh />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Katacoda" />
+        <Navigation />
+        <KatacodaServiceMesh />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 export default ServiceMeshKatacodaPage;

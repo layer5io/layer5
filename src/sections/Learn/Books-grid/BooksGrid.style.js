@@ -79,7 +79,7 @@ export const BooksPageWrapper = styled.div`
     }
 
     @media screen and (max-width: 1050px){
-        .book_list{
+        .books_caraousel{
             margin-bottom: 6rem;
         }
 
@@ -96,7 +96,7 @@ export const BooksPageWrapper = styled.div`
     }
 
     @media screen and (max-width: 700px){
-        .book_list{
+        .books_caraousel{
             margin-bottom: 6rem;
         }
 

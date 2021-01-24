@@ -56,62 +56,62 @@ import Terminal from "../../Terminal";
  *  />
  */
 const FramedTerminal = ({ frame, lines }) => {
-    // Determine the total number of frames
-    let totalFrames = 0;
-    lines.forEach((line) => {
-        let frames = line.frames ? line.frames : 1;
-        if (Array.isArray(line.code)) {
-            totalFrames += line.code.length * frames;
+  // Determine the total number of frames
+  let totalFrames = 0;
+  lines.forEach((line) => {
+    let frames = line.frames ? line.frames : 1;
+    if (Array.isArray(line.code)) {
+      totalFrames += line.code.length * frames;
+    } else {
+      totalFrames += frames;
+    }
+  });
+
+  // Determine the actual activeFrame to handle when the number
+  // of frames passed in exceeds our totalFrames
+  const activeFrame = frame % totalFrames;
+
+  // Calculate the lines that should actively be displayed
+  // and passed down to our terminal
+  let previousFrames = 0;
+  const terminalLines = lines
+    .map((line) => {
+      // Determine how many frames left we have here
+      let remainingFrames = activeFrame - previousFrames;
+
+      // Calculate our result for this line that will be passed down
+      // to our <Terminal />
+      let result = null;
+      if (remainingFrames >= 0) {
+        if (!Array.isArray(line.code)) {
+          result = {
+            color: line.color,
+            code: line.code,
+            indent: line.indent,
+            short: line.short,
+          };
         } else {
-            totalFrames += frames;
+          let lineFrame = Math.floor(remainingFrames / line.frames);
+          result = {
+            color: line.color,
+            code: line.code.slice(0, lineFrame + 1).splice(-1, 1),
+            indent: line.indent,
+          };
         }
-    });
+      }
 
-    // Determine the actual activeFrame to handle when the number
-    // of frames passed in exceeds our totalFrames
-    const activeFrame = frame % totalFrames;
+      // Increment our previousFrames
+      let lineFrames = line.frames ? line.frames : 1;
+      if (Array.isArray(line.code)) {
+        previousFrames += line.code.length * lineFrames;
+      } else {
+        previousFrames += lineFrames;
+      }
+      return result;
+    })
+    .filter((el) => el != null);
 
-    // Calculate the lines that should actively be displayed
-    // and passed down to our terminal
-    let previousFrames = 0;
-    const terminalLines = lines
-        .map((line) => {
-            // Determine how many frames left we have here
-            let remainingFrames = activeFrame - previousFrames;
-
-            // Calculate our result for this line that will be passed down
-            // to our <Terminal />
-            let result = null;
-            if (remainingFrames >= 0) {
-                if (!Array.isArray(line.code)) {
-                    result = {
-                        color: line.color,
-                        code: line.code,
-                        indent: line.indent,
-                        short: line.short,
-                    };
-                } else {
-                    let lineFrame = Math.floor(remainingFrames / line.frames);
-                    result = {
-                        color: line.color,
-                        code: line.code.slice(0, lineFrame + 1).splice(-1, 1),
-                        indent: line.indent,
-                    };
-                }
-            }
-
-            // Increment our previousFrames
-            let lineFrames = line.frames ? line.frames : 1;
-            if (Array.isArray(line.code)) {
-                previousFrames += line.code.length * lineFrames;
-            } else {
-                previousFrames += lineFrames;
-            }
-            return result;
-        })
-        .filter((el) => el != null);
-
-    return <Terminal lines={terminalLines} noScroll />;
+  return <Terminal lines={terminalLines} noScroll />;
 };
 
 export default FramedTerminal;

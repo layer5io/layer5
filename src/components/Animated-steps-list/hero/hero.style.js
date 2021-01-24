@@ -1,43 +1,29 @@
 import styled from "styled-components";
 
 export const HeroWrapper = styled.div`
-  // min-height: min(45vw, 750px);
-  // background-image: url(/img/hero-left.svg), url(/img/hero-right.svg);
-  // background-position: top left, top right;
-  // background-size: auto 100%, auto 100%;
-  // background-repeat: no-repeat, no-repeat;
-  // @media (max-width: 600px) {
-  //   background-size: auto 70%, auto 70%;
-  // }
-  
   h1 {
-    color: ${props=> props.theme.black};
-    font-size: 48px;
-    line-height: 50px;
-    padding-bottom: 30px;
-    
-    @media (max-width: 768px) {
-      font-size: 34px;
-    }
+    line-height: 3.125rem;
+    padding-bottom: 2rem;
+    font-weight: 600;
   }
 
-  padding: 250px 0;
+  padding: 12rem 0 20rem 0;
 
-  @media (max-width: 850px) {
-    padding: 197px 0;
+  @media (max-width: 800px) {
+    padding: 2rem 0 10rem 0;
   }
 
    .content {
-    max-width: 500px;
+    max-width: 30rem;
 
     @media (max-width: 1119px) {
-      max-width: 350px;
+      max-width: 22rem;
     }
 
     @media (max-width: 850px) {
       margin-left: auto;
       margin-right: auto;
-      max-width: 550px;
+      max-width: 35rem;
       text-align: center;
     }
 
@@ -45,15 +31,10 @@ export const HeroWrapper = styled.div`
       margin-top: 0;
     }
 
-    & > p {
-      &.subtitle {
-        font-size: 17px;
-        line-height: 25px;
-      }
-      &.description {
-        font-size: 15px;
-        line-height: 28px;
-      }
+    .subtitle{
+      font-weight: 600;
+      color: ${props => props.theme.primaryColor};
+      margin-bottom: 1rem;
     }
 
     & .links {

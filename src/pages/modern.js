@@ -23,26 +23,26 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/modern/themeStyles";
 
 const IndexPage = () => (
-    <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout>
-            <SEO title="Layer5 | The Service Mesh Company" />
-            <Navigation />
-            <Banner />
-            <About />
-            <Integrations />
-            <Features />
-            <AppScreens />
-            <Counters />
-            <Pricing />
-            <Testimonial />
-            <Faq />
-            <Getapp />
-            <News />
-            <ContactCard />
-            <Footer />
-        </Layout>
-    </ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Layout>
+      <SEO title="Layer5 | The Service Mesh Company" />
+      <Navigation />
+      <Banner />
+      <About />
+      <Integrations />
+      <Features />
+      <AppScreens />
+      <Counters />
+      <Pricing />
+      <Testimonial />
+      <Faq />
+      <Getapp />
+      <News />
+      <ContactCard />
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default IndexPage;
