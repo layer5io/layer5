@@ -12,7 +12,7 @@ const FaqSectionWrapper = styled.section`
   }
   .accordion__item {
     .accordion__header {
-      padding: 0.625rem 1.5rem 0.625rem 1.5rem;
+      padding:0;
       background: ${props => props.theme.secondaryColor};
       h5 {
         font-weight: 700;
