@@ -197,7 +197,7 @@ const LearnSection = () => {
         </div>
       </div>
       <div className="learn-buttons-section">
-        <Button primary title="Checkout all the labs" url="/service-mesh" />
+        <Button primary title="Checkout all the labs" url="/learn/service-mesh" />
       </div>
     </LearnSectionWrapper>
   );

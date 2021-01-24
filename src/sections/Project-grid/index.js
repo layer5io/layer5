@@ -46,7 +46,7 @@ const ProjectPage = ({ data }) => {
                 <h5>Service Mesh Interface Conformance</h5>
               </div>
             </Link>
-            <Link to="/service-mesh-performance" className="project__card five">
+            <Link to="/projects/service-mesh-performance" className="project__card five">
               <div className="project__card-container">
                 <img src={smp} alt="Service Mesh Performance" />
                 <h5>Service Mesh Performance</h5>
