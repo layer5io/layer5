@@ -22,7 +22,7 @@ import FaqSectionWrapper from "./faqSection.style";
 
 const Faq = (props) => {
   let faqs = [];
-  if(props.category === "all"){
+  if(props.category === "all" || props.category === undefined){
     faqs = data.faqs;
   }
 
