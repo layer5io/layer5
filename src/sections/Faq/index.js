@@ -21,7 +21,6 @@ import data from "../../assets/data/faq";
 import FaqSectionWrapper from "./faqSection.style";
 
 const Faq = (props) => {
-  console.log(props.category);
   let faqs = [];
   if(props.category === "all"){
     faqs = data.faqs;
