@@ -37,7 +37,7 @@ const KatacodaServiceMesh = () => {
 
   return (
     <KatacodaWrapper>
-      <PageHeader title="We build projects to provide learning environments, deployment and operational best practices" />
+      <PageHeader title="Learn how to service mesh with interactive labs" />
       <div className="Katacoda-section-wrapper">
         <Container>
           <Tabs className="course-tabs">

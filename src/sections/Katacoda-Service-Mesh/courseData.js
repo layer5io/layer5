@@ -1,15 +1,15 @@
-import istioLogo from "../../assets/images/service-mesh-icons/istio.svg";
-import linkerdLogo from "../../assets/images/service-mesh-icons/linkerd.svg";
-import consulLogo from "../../assets/images/service-mesh-icons/consul.svg";
-import kumaLogo from "../../assets/images/service-mesh-icons/kuma.svg";
-import nsmLogo from "../../assets/images/service-mesh-icons/nsm.svg";
+import istioLogo from "../../assets/images/service-mesh-icons/istio-white.svg";
+import linkerdLogo from "../../assets/images/service-mesh-icons/linkerd-white.svg";
+import consulLogo from "../../assets/images/service-mesh-icons/consul-white.svg";
+import kumaLogo from "../../assets/images/service-mesh-icons/kuma-white.svg";
+import nsmLogo from "../../assets/images/service-mesh-icons/nsm-white.svg";
 import smpLogo from "../../assets/images/smp/horizontal/smp-light-text-side.svg";
 import smiLogo from "./assets/servicemeshinterface-icon-color.svg";
 
 export const data = [
     {
         id: "1",
-        title: "Meshery - Learn how to manage your service mesh",
+        title: "Getting Started",
         info: "Learn how to run Meshery, install service meshes and deploy sample apps",
         courseLink: "layer5/courses/meshery-adapters",
         scenarios: [
@@ -57,7 +57,7 @@ export const data = [
     },
     {
         id: "2",
-        title: "Meshery - Performance Testing",
+        title: "Performance Management",
         info: "Learn how to do Performance Testing with Meshery",
         courseLink: "layer5/courses/performance-testing-with-meshery",
         scenarios: [

@@ -34,8 +34,8 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
           </Col>
           <Col xs={12} sm={8}>
             <div className="scenario-description">
-              <h4>{title}</h4>
-              <p>{info}</p>
+              <h4 className="title">{title}</h4>
+              <p className="info">{info}</p>
               <div className="toggle-and-full-screen-wrapper">
                 {content && ID === subId ?
                   <div className="open-close-scenario"> Close Scenario <BsArrowUp className="icon" size={30} /></div> :
