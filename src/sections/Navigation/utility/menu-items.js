@@ -136,17 +136,12 @@ const Data = {
           sepLine: true
         },
         {
-          name: "Join!",
-          path: "/community",
-          sepLine: true
-        },
-        {
           name: "Members",
           path: "/community/members",
           sepLine: true
         },
         {
-          name: "Meshmates",
+          name: "MeshMates",
           path: "/community/meshmates",
           sepLine: true
         },
@@ -166,8 +161,12 @@ const Data = {
       ],
       actionItems: [
         {
-          actionName: "Meet the community",
+          actionName: "Join the community",
           actionLink: "/community",
+        },
+        {
+          actionName: "Meet the community",
+          actionLink: "/community/members",
         }
       ],
       div1: {
