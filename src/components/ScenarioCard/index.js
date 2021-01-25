@@ -4,7 +4,7 @@ import { ScenarioCardWrapper } from "./ScenarioCard.style";
 import { BsArrowDown } from "react-icons/bs";
 import { BsArrowUp } from "react-icons/bs";
 import { Link } from "gatsby";
-import { FaRegWindowMaximize } from "react-icons/fa";
+import { FaExternalLinkAlt, FaRegWindowMaximize } from "react-icons/fa";
 
 const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID, toggleActive }) => {
 
@@ -27,6 +27,13 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
     <ScenarioCardWrapper>
       <div className="scenario-card-block" onClick={() => toggleActive(subId)}>
         <Row>
+          <Col xs={12} sm={12}>
+            <div className="full-screen">
+              <Link to={link} className="siteLink"><FaExternalLinkAlt style={{ height: "1.5rem", width: "auto" }} /></Link>
+            </div>
+          </Col>
+        </Row>
+        <Row>
           <Col xs={12} sm={4}>
             <div className="scenario-cover">
               <img src={cover} className="scenario-image" />
@@ -34,16 +41,15 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
           </Col>
           <Col xs={12} sm={8}>
             <div className="scenario-description">
+
               <h4 className="title">{title}</h4>
               <p className="info">{info}</p>
+
               <div className="toggle-and-full-screen-wrapper">
                 {content && ID === subId ?
                   <div className="open-close-scenario"> Close Scenario <BsArrowUp className="icon" size={30} /></div> :
                   <div className="open-close-scenario"> Open Scenario <BsArrowDown className="icon" size={30} /></div>
                 }
-                <div className="full-screen">
-                  <Link to={link} className="siteLink"><FaRegWindowMaximize style={{ height: "1rem", width: "auto" }} /></Link>
-                </div>
               </div>
             </div>
           </Col>

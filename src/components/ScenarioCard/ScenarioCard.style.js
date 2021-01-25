@@ -10,6 +10,7 @@ export const ScenarioCardWrapper = styled.div`
         margin: 1rem;
         &:hover {
             background-color: #222;
+            transition: 0.2s ease-in all;
         }
         &:hover .open-close-scenario {
             color: ${props => props.theme.primaryLightColorTwo};
@@ -27,9 +28,10 @@ export const ScenarioCardWrapper = styled.div`
     }
     .scenario-description {
         display: flex;
+        /* border: 3px red solid; */
         flex-direction: column;
         justify-content: center;
-        padding: 1rem 0;
+        padding: 0rem 0;
         color: ${props => props.theme.primaryLightColorTwo};
         height: 100%;
     }
@@ -49,7 +51,11 @@ export const ScenarioCardWrapper = styled.div`
 		display: flex;
 		justify-content: space-between;
         color: ${props => props.theme.primaryLightColorTwo};
-        /* border: 3px red solid */
+        
+        margin-top: 1rem;
+        
+        justify-content: flex-end;
+		align-self: flex-end;
 	}
 
 	.open-close-scenario {
@@ -57,11 +63,10 @@ export const ScenarioCardWrapper = styled.div`
 		background: transparent;
         color: white;
 		border: none;
-		justify-content: center;
-		align-items: center;
+		
 		font-size: 1rem;
 		cursor: pointer;
-		transition: 1.2s ease-in all;
+		transition: 0.2s ease-in all;
 	}
 
 	.text-contents {
@@ -76,6 +81,14 @@ export const ScenarioCardWrapper = styled.div`
 	}
 
     .full-screen {
+        /* text-align:right; */
+        position: relative;
+        float: right;
+        
+        /* display: flex; */
+        /* align-self: flex-end; */
+        /* right: 1rem; */
+        /* top: -1rem; */
         a {
             color: ${props => props.theme.white};
             &:hover {

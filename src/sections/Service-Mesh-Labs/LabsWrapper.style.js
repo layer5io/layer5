@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const KatacodaWrapper = styled.div`
+export const LabsWrapper = styled.div`
     h1 {
         text-align: center;
         width: 70rem;
@@ -54,7 +54,13 @@ export const KatacodaWrapper = styled.div`
 		list-style-type: none;
 		background: ${props => props.theme.menuHoverColor};
 		cursor: pointer;
+		
+		&:hover {
+            background-color: ${props => props.theme.highlightLightColor};
+            transition: 0.05s ease-in all;
+        }
 	}
+	
 	.title {
 		/* padding: 0rem 1rem 1rem 0.5rem; */
 		color: #fff;

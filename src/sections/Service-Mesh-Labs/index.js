@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { KatacodaWrapper } from "./KatacodaWrapper.style";
+import { LabsWrapper } from "./LabsWrapper.style";
 import PageHeader from "../../reusecore/PageHeader";
 import ScenarioCard from "../../components/ScenarioCard";
 import { Container, Row, Col } from "../../reusecore/Layout";
@@ -8,7 +8,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { data } from "./courseData";
 
 
-const KatacodaServiceMesh = () => {
+const ServiceMeshLabs = () => {
 
   const [content, setContent] = useState(false);
   const [open, setOpen] = useState(false);
@@ -36,9 +36,9 @@ const KatacodaServiceMesh = () => {
   };
 
   return (
-    <KatacodaWrapper>
+    <LabsWrapper>
       <PageHeader title="Learn how to service mesh with interactive labs" />
-      <div className="Katacoda-section-wrapper">
+      <div className="Labs-section-wrapper">
         <Container>
           <Tabs className="course-tabs">
             <TabList className="course-tab-list">
@@ -84,8 +84,8 @@ const KatacodaServiceMesh = () => {
           </div>
         </div>
       </div>
-    </KatacodaWrapper>
+    </LabsWrapper>
   );
 };
 
-export default KatacodaServiceMesh;
+export default ServiceMeshLabs;
