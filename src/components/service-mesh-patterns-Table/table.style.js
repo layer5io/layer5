@@ -42,6 +42,11 @@ export const TableWrapper = styled.div`
             }
         }
 
+        .table-header {
+            border-radius: 0 !important;
+            background-color: ${theme["primaryColor"]};
+        }
+
         tbody{
             tr{
                 border-bottom:1px solid #e0e0e0;

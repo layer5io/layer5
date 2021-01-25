@@ -33,7 +33,8 @@ const Table = () => {
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, index) => (
-                <th key={index} {...column.getHeaderProps()}>
+                <th key={index} {...column.getHeaderProps()}
+                  className={(column.Header == "Service Mesh Pattern" || column.Header == "Category") ? "table-header" : ""}>
                   <div {...column.getSortByToggleProps()}>
                     {column.render("Header")}
                     {(column.Header == "Service Mesh Pattern" || column.Header == "Category") ?
