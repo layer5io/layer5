@@ -24,17 +24,17 @@ export const query = graphql`
 `;
 
 const LabSingle = ({ data }) => {
-    return (
-        <ThemeProvider theme={theme}>
-            <Layout>
-                <GlobalStyle />
-                <SEO title={`${data.mdx.frontmatter.title}`} />
-                <Navigation />
-                <LabSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
-                <Footer />
-            </Layout>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title={`${data.mdx.frontmatter.title}`} />
+        <Navigation />
+        <LabSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
 };
 
 export default LabSingle;
