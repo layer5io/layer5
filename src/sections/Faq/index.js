@@ -67,9 +67,9 @@ const Faq = (props) => {
                 </IconWrapper>
               </AccordionTitle>
               <AccordionBody>
-              {
-                faq.answer.length >=1 ? <ul>{faq.answer.map((ans, id) => (<li><p>{ans}</p></li>))}</ul> : <br />
-              }
+                {
+                  faq.answer.length >=1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
+                }
                 {/*
 
                                 Jash, will you padding and center this button?
