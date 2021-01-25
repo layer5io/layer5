@@ -10,7 +10,7 @@ import AllMembers from "../../sections/Community/Members-grid/AllMembers";
 import ActiveMembers from "../../sections/Community/Members-grid/ActiveMembers";
 import InactiveMembers from "../../sections/Community/Members-grid/InactiveMembers";
 import Maintainers from "../../sections/Community/Members-grid/Maintainers";
-import MeshMate from "../../sections/Community/Members-grid/MeshMate";
+import Meshmate from "../../sections/Community/Members-grid/Meshmate";
 
 const options = [
   { label: "All Members", value: "all" },
@@ -32,7 +32,7 @@ const MembersPage = () => {
       case "active" : return <ActiveMembers {...props} />;
       case "inactive" : return <InactiveMembers {...props}/>;
       case "maintainers" : return <Maintainers {...props}/>;
-      case "meshmates" : return <MeshMate {...props}/>;
+      case "meshmates" : return <Meshmate {...props}/>;
       default: return <AllMembers {...props}/>;
     }
   };
