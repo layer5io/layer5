@@ -17,7 +17,7 @@ const FAQPage = () => (
       <GlobalStyle />
       <SEO title="FAQs" />
       <Navigation />
-      <FAQ />
+      <FAQ category = "all" />
       <Footer />
     </Layout>
   </ThemeProvider>

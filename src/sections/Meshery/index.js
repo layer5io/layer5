@@ -182,7 +182,7 @@ const MesheryPage = () => {
               <img src={meshery_architecture} alt="meshery_architecture" />
             </a>
           </div>
-          <Faq /> 
+          <Faq category = "Meshery"/> 
         </MesheryWrapper>
       </Layout>
     </ThemeProvider>

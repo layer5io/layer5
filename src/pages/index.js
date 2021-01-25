@@ -34,7 +34,7 @@ const IndexPage = () => (
       <Testimonial />
       {/* <Getapp /> */}
       {/* <News /> */}
-      <Faq />
+      <Faq category = "all"/>
       <ContactCard />
       <Footer />
     </Layout>

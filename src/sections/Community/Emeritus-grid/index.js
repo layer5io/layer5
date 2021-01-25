@@ -37,23 +37,23 @@ const Emeritus=() => {
         `
   );
   return (
-    <div>
-      <h3>Layer5 MeshMate Emeritus</h3>
-      <p>
-                O​nce a MeshMate, always a MeshMate. We thank and salute our previous MeshMates. Each has served the Layer5 community selflessly.
-      </p>
-      <EmeritusWrapper>
-        <Row>
-          {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-            <Col xs={6} sm={3} lg={2} key={id}>
-              <Link to={fields.slug}>
-                <ProfileCard frontmatter={frontmatter} />
-              </Link>
-            </Col>
-          ))}
-        </Row>
-      </EmeritusWrapper>
-    </div>
+    <EmeritusWrapper>
+      <div className="emeritus-text">
+        <h2>Layer5 MeshMate Emeritus</h2>
+        <p>
+                    O​nce a MeshMate, always a MeshMate. We thank and salute our previous MeshMates. Each has served the Layer5 community selflessly.
+        </p>
+      </div>
+      <Row>
+        {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
+          <Col xs={12} sm={6} lg={3} key={id}>
+            <Link to={fields.slug}>
+              <ProfileCard frontmatter={frontmatter} />
+            </Link>
+          </Col>
+        ))}
+      </Row>
+    </EmeritusWrapper>
   );
 };
 

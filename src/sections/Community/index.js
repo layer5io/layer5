@@ -8,7 +8,7 @@ import {FaArrowRight} from "react-icons/fa";
 import CommunitySectionWrapper from "./community.style";
 import Lee_workshop from "./Lee_Workshop.png";
 import CommunityMemberImage from "./community-member.jpeg";
-import MeshmateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
+import MeshMateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
 
 const CommunityPage = () => {
 
@@ -88,7 +88,7 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-              <img src={MeshmateIcon} alt="MeshMate Icon"/>
+              <img src={MeshMateIcon} alt="MeshMate Icon"/>
               <Link className="meshmate-link" to="/community/meshmates">
                 <h3>Open Source Mentorship Program</h3>
                 <button className="icon">
