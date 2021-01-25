@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const MemberSingleWrapper = styled.div`
-    padding: 7.5rem 0 3.125rem 0;
-    margin-bottom: 1.5625rem;
+    margin: 4.5rem 0 3.125rem 0;
     .backBtn {
 		font-weight: 600;
 		margin-bottom: 1rem;
