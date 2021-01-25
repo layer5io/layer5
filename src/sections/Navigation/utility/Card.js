@@ -20,7 +20,7 @@ const Card = ({ frontmatter, fields }) => {
           </h2>
           <div className="readmore-btn-wrapper">
             <span className="readmore-btn">
-                            see more <IoIosArrowRoundForward />
+              see more <IoIosArrowRoundForward />
             </span>
           </div>
         </div>
