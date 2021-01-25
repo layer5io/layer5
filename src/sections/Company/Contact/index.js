@@ -56,7 +56,7 @@ const ContactPage = () => {
               img={Contact_Icon}
               alt="Contact"
               title="Contact"
-              content="Send us your enquiry through a form"
+              content="Send us your enquiry"
             />
           </Row>
           <div className="contact-form" ref={expandForm}>
