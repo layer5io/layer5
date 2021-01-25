@@ -31,7 +31,7 @@ const Faq = (props) => {
       faqs.push(faq);
     }
   });
-    
+
   return (
     <FaqSectionWrapper id="faq">
       <Container fullWidthSM>
@@ -67,17 +67,13 @@ const Faq = (props) => {
                 </IconWrapper>
               </AccordionTitle>
               <AccordionBody>
-                <ul>
-                  <li><p>{faq.answer}</p></li>
-                  {faq.answer_2 && <li><p>{faq.answer_2}</p></li>}
-                  {faq.answer_3 && <li><p>{faq.answer_3}</p></li>}
-                  {faq.answer_4 && <li><p>{faq.answer_4}</p></li>}
-                  {faq.answer_5&& <li><p>{faq.answer_5}</p></li>}
-                </ul>
-                {/* 
-                                
-                                Jash, will you padding and center this button? 
-                                
+                {
+                  faq.answer.length >=1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
+                }
+                {/*
+
+                                Jash, will you padding and center this button?
+
                                 */}
                 <div className="faqbutton">
                   {faq.link && <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external="false" />}

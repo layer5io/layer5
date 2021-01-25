@@ -6,7 +6,7 @@ export const Data=[
   },
   {
     service_mesh_pattern:"A world of multiple service meshes",
-    category:"Foundational" 
+    category:"Foundational"
   },
   {
     service_mesh_pattern:"Pattern: How a service mesh empowers an Operator: Retry Budgets",
