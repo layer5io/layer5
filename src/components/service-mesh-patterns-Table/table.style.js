@@ -5,6 +5,7 @@ export const TableWrapper = styled.div`
     table{
         border-collapse:collapse; 
         box-shadow:0px 2px 16px rgba(0,0,0,0.2);
+        width: 75vw;
 
         td{
             padding:0.5rem;
