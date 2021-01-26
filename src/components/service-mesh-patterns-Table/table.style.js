@@ -5,7 +5,8 @@ export const TableWrapper = styled.div`
     table{
         border-collapse:collapse; 
         box-shadow:0px 2px 16px rgba(0,0,0,0.2);
-        width: 75vw;
+        width: 100%;
+        margin: auto;
 
         td{
             padding:0.5rem;
@@ -43,6 +44,10 @@ export const TableWrapper = styled.div`
             }
         }
 
+        .area-header{
+            border-radius: 0 !important;
+        }
+        
         .table-header {
             border-radius: 0 !important;
             background-color: ${theme["primaryColor"]};

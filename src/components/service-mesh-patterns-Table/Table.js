@@ -65,7 +65,7 @@ const Table = () => {
                 {row.cells.map((cell, index) => {
                   if(row["original"]["subheading"] === "bold"){
                     return (
-                      <th key={index} {...cell.getCellProps()} className="bold">
+                      <th key={index} {...cell.getCellProps()} className="bold area-header">
                         {cell.render("Cell")}
                       </th>
                     );
