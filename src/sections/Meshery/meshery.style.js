@@ -10,9 +10,8 @@ const MesheryWrapper = styled.section`
         .meshery-img{
             max-width: 90%;
             max-width: 400px;
-            position: relative;
-            padding-top: 100px;      
-            margin: auto auto 50px auto; 
+            position: relative;      
+            margin: -50px auto -50px auto; 
         }
     }
 
@@ -131,7 +130,6 @@ const MesheryWrapper = styled.section`
     .heading-1 {
         font-weight: 400;
         line-height: 40px;
-        color: ${props => props.theme.white};
     }
     .heading-2 {
         font-weight: 700;
@@ -145,9 +143,15 @@ const MesheryWrapper = styled.section`
             padding: 25px;
         }
         .desc-p {
-            font-size: 22px;           
-            color: #a0aaaa;
+            font-size: 20px;   
             margin: 30px 0 50px 0;
+        }
+        .banner-btn {
+            margin: 0rem .5rem 0 .5rem;
+            color: white;
+            .button-icon{
+                margin-right: 10px;
+            }    
         }
     }
 

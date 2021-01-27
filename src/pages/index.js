@@ -10,7 +10,6 @@ import Features from "../sections/Features";
 import Faq from "../sections/Faq";
 import Integrations from "../sections/Projects-home";
 import Statement from "../sections/Home/Layer5-statement";
-import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
 import ContactCard from "../components/ContactCard";
 import Footer from "../sections/Footer";
@@ -30,7 +29,7 @@ const IndexPage = () => (
       {/* <AppScreens /> */}
       {/* <Counters />  */}
       <Statement />
-      <Pricing />
+      {/* <Pricing /> */}
       <Testimonial />
       {/* <Getapp /> */}
       {/* <News /> */}
