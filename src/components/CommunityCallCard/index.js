@@ -34,8 +34,8 @@ const CommunityCallCardWrapper = styled.div`
         }
     }
     input{
-        margin: 0 10px 0 15px;
-        padding: 0.9375rem;
+        //margin: 0 10px 0 15px;
+        padding: 1rem;
         width: 100%;
         background: #F5F7FA;
         border: 1px solid white;
@@ -58,10 +58,10 @@ const CommunityCallCard = ({hero_image}) => {
         <h4 className="highlight"> Interested? </h4>
         <p> You can register below for the next Community Call. </p>
         <Row>
-          <Col sm={7} lg={7}>
+          <Col xs={7} lg={7}>
             <input type="text" placeholder="Your Email Address" />
           </Col>
-          <Col sm={3} lg={3}>
+          <Col xs={3} lg={3}>
             <Button secondary title="Subscribe" />
           </Col>
         </Row>
