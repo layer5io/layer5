@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const NewcomersGuideWrapper = styled.section`
+    margin-bottom: 4rem;
     .newcomers-welcome{
         text-align: center;
         .newcomers-journey{
@@ -48,6 +49,7 @@ export const NewcomersGuideWrapper = styled.section`
     
     .table-wrapper{
       text-align: center;
+      margin-bottom: 4rem;
     }
 `;
 

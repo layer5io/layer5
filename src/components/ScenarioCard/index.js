@@ -4,7 +4,7 @@ import { ScenarioCardWrapper } from "./ScenarioCard.style";
 import { BsArrowDown } from "react-icons/bs";
 import { BsArrowUp } from "react-icons/bs";
 import { Link } from "gatsby";
-import { FaExternalLinkAlt, FaRegWindowMaximize } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID, toggleActive }) => {
 
