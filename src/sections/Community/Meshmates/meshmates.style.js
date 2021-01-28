@@ -9,17 +9,9 @@ const MeshMatesWrapper = styled.div`
         h5{
             font-weight: 700;
         }
-        .meshmate-logo{
-            float: right;
-            margin: 0 -120px 0 150px;
-        }
-        .meshmeet-img{
-            width: 750px;
-            height: 450px;
-        }
     }
     .meshmates-grid{
-        margin: 100px auto;
+        margin: 6.25rem auto;
         text-align: center;
         h1{
             margin-bottom: 15px;
@@ -29,63 +21,49 @@ const MeshMatesWrapper = styled.div`
         }
     }
     .meshmate-meet{
-        margin: 100px auto 60px auto;
+        margin: 6.25rem auto 3.75rem auto;
         h2{
-            margin-bottom: 30px;
+            margin-bottom: 1.875rem;
         }
         p{
-            margin-bottom: 30px;
+            margin-bottom: 1.875rem;
         }
         table{
             .icon{
                 padding-top: 5px;
                 vertical-align: top;
-                height: 32px;
-                width: 32px;
+                height: 2rem;
+                width: 2rem
             }
             .feature{
-                padding-left: 20px;
+                padding-left: 15px;
                 h4{
-                    font-weight: 700;
+                    font-weight: 600;
+                    margin-bottom: 0.7rem;
                 }
             }
         }
     }
     .conduct{
-        margin: 0 auto 100px auto;
+        margin: 0 auto 6.25rem auto;
         text-align: center;
         width: 90%;
         h2{
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
             font-weight: 700;
         }
         p{
-            margin-bottom: 30px;
-        }
-    }
-    @media only screen and (max-width: 1024px){
-        .expect{
-            .meshmate-logo{
-                float: right;
-                height: 120px;
-                margin: 0 0 0 0;
-            }
+            margin-bottom: 1.875rem;
         }
     }
     @media only screen and (max-width: 480px){
         .meshmates-grid{
             margin: 50px auto;
         }
-        .expect{
-            .meshmeet-img{
-                margin-top: 30px;
-                height: 300px;
-            }
-        }
         .meshmate-meet{
-            margin: 50px auto 30px auto;
+            margin: 3.125rem auto 1.875rem auto;
             p{
-                margin-bottom: 10px;
+                margin-bottom: 0.625rem;
             }
         }
     }

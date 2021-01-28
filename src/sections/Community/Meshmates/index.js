@@ -51,7 +51,6 @@ const Meshmates=() => {
   );
   return (
     <MeshMatesWrapper>
-
       <Container>
         <div className="meshmates-grid">
           <h1> Our Community Meshmates </h1>
@@ -65,11 +64,9 @@ const Meshmates=() => {
           </Row>
         </div>
         <div className="expect">
-          <img className="meshmate-logo" alt="meshmate-logo" src={meshmate} />
           <h5> What to Expect </h5>
           <h2> Engaging with a MeshMate Program </h2>
           <p> The program pairs experienced Layer5 community members with community newcomers to ensure a smooth onboarding experience. There is a lot going in the Layer5 community. Projects and working groups move fast. MeshMates are committed to helping their mentees in identifying an area of the projects to engage within, working groups to join, growing their Cloud Native knowledge, and network of relationships. By connecting one-on-one, MeshMates will share tips on how to have the best community experience possible. </p>
-          <img className="meshmeet-img" alt="community" src={hero} />
           <p> Meshtees are encouraged to get to know their MeshMate as soon as they are assigned (MeshMates and Mentees will be introduced in the Layer5 Slack). Help your MeshMate understand your current skills, ideal topics of learning, and areas of passion. Doing so will help them to point out various aspects of projects that you might find your first foothold. </p>
         </div>
         <div className="meshmate-meet">
