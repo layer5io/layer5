@@ -43,7 +43,7 @@ const ProjectGridPage = ({data}) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Projects" />
+      <SEO title="Innovative Service Mesh Projects" />
       <Navigation />
       <ProjectPage data={data} />
       <Footer/>

@@ -15,7 +15,7 @@ const Meshery = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Meshery" />
+      <SEO title="Meshery Overview" />
       <Navigation />
       <MesheryPage />
       <Footer/>

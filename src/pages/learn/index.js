@@ -14,7 +14,7 @@ const WorkshopsGridPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Learn" />
+        <SEO title="Learn Service Mesh" />
         <Navigation />
         <LearnPage />
         <Footer />

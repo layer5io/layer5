@@ -18,7 +18,7 @@ const ServiceMeshKatacodaPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Katacoda" />
+        <SEO title="Interactive Service Mesh Labs" />
         <Navigation />
         <KatacodaServiceMesh />
         <Footer />
