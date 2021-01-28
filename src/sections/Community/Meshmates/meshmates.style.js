@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import hero from "./hero.png";
 
 const MeshMatesWrapper = styled.div`
     
@@ -87,14 +86,6 @@ const MeshMatesWrapper = styled.div`
             margin: 50px auto 30px auto;
             p{
                 margin-bottom: 10px;
-            }
-            .callout-card{
-                margin: 30px auto 0 auto;
-                max-width: 95%;
-                input{
-                    margin: 0 10px 0 15px;
-                    max-width: 60%;
-                }
             }
         }
     }

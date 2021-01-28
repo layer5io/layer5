@@ -73,7 +73,7 @@ const Meshmates=() => {
           <p> Meshtees are encouraged to get to know their MeshMate as soon as they are assigned (MeshMates and Mentees will be introduced in the Layer5 Slack). Help your MeshMate understand your current skills, ideal topics of learning, and areas of passion. Doing so will help them to point out various aspects of projects that you might find your first foothold. </p>
         </div>
         <div className="meshmate-meet">
-          <Row>
+          <Row Vcenter>
             <Col sm={12} lg={6}>
               <h2> Meeting Your Meshmate </h2>
               <p> Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted and onboarding into the community, we suggest the following goals: </p>

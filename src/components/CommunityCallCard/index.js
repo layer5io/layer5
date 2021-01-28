@@ -1,23 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import {Row} from "../../reusecore/Layout";
+import {Row, Col} from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import hero from "./hero.png";
 
-
 const CommunityCallCardWrapper = styled.div`
-    box-shadow: 0 1px 10px 0 gray;
-    margin: 100px 0 0 30px;
-    width: 500px;
+    box-shadow: 0 1px 30px 0 ${props => props.theme.shadowLightColor};
     .card-img{
-        height: 200px;
-        width: 500px;
+        height: 12.5rem;
+        width: 100%;
         object-fit: cover;
         filter: brightness(50%);
     }
     .card-text{
         margin-top: -7px;
-        padding: 20px;
+        padding: 1.25rem;
         h4{
             font-weight: 700;
             margin-bottom: 10px;
@@ -29,8 +26,8 @@ const CommunityCallCardWrapper = styled.div`
             line-height: 20px;
         }
         .unsubscribe{
-            margin-top: 15px;
-            font-size: 12px;
+            margin-top: 0.9375rem;
+            font-size: 0.75rem;
             color: #CCCCCC;
             text-align: center;
             line-height: 10px;
@@ -38,15 +35,15 @@ const CommunityCallCardWrapper = styled.div`
     }
     input{
         margin: 0 10px 0 15px;
-        padding: 15px;
-        width: 325px;
+        padding: 0.9375rem;
+        width: 100%;
         background: #F5F7FA;
         border: 1px solid white;
         border-radius: 7px;
     }
     button{
         padding: 10px;
-        min-width: 50px;
+        min-width: auto;
     }
 `;
 
@@ -61,8 +58,12 @@ const CommunityCallCard = ({hero_image}) => {
         <h4 className="highlight"> Interested? </h4>
         <p> You can register below for the next Community Call. </p>
         <Row>
-          <input type="text" placeholder="Your Email Address" />
-          <Button secondary title="Subscribe" />
+          <Col sm={7} lg={7}>
+            <input type="text" placeholder="Your Email Address" />
+          </Col>
+          <Col sm={3} lg={3}>
+            <Button secondary title="Subscribe" />
+          </Col>
         </Row>
         <p className="unsubscribe"> You can unsubscribe any time. No spam. </p>
       </div>
