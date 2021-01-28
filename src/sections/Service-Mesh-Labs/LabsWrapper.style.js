@@ -34,10 +34,6 @@ export const LabsWrapper = styled.div`
 	.course-tab-list {
 		padding: 0rem;
 		text-align: center;
-		display: flex;
-		flex-direction: col;
-		flex-wrap: wrap;
-		align-content: flex-start;
 		/* border: 3px purple solid; */
 	}
 	.course-tab {
@@ -48,6 +44,7 @@ export const LabsWrapper = styled.div`
 		margin: auto;
 		border-bottom-right-radius: 20px;
 		border-top-right-radius: 20px;
+		border-top-left-radius: 0px;
 		writing-mode: vertical-lr;
 		transform: rotate(180deg);
 		transform-origin: center center;
@@ -76,5 +73,8 @@ export const LabsWrapper = styled.div`
 		-webkit-box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.25);
 		-moz-box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.25);
 		box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.25);
+	}
+	.row-wrapper {
+		margin-left: 0px;
 	}
 `;

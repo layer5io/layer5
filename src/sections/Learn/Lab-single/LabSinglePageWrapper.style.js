@@ -40,8 +40,11 @@ const LabSinglePageWrapper = styled.div`
 			left: 0rem;
 		}
 	}
+	.cardContent {
+		margin: 0 5rem;
+	}
 	#katacoda-scenario {
-		min-height: 40rem;
+		min-height: 45rem;
 	}
 `;
 
