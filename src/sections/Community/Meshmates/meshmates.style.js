@@ -2,32 +2,7 @@ import styled from "styled-components";
 import hero from "./hero.png";
 
 const MeshMatesWrapper = styled.div`
-    .hero{
-        height: 37.5rem;
-        position: relative;
-        width: 100%;
-        img{
-            opacity: 0.6;
-            position: absolute;
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .hero-text{
-            text-align: center;
-            h1{
-                margin-bottom: 30px;
-                color: ${props => props.theme.white};
-            }
-            h2, p{
-                color: ${props => props.theme.white};
-            }
-        }
-    }
+    
     .expect{
         p{
             margin: 30px auto 0 auto;
@@ -74,50 +49,6 @@ const MeshMatesWrapper = styled.div`
                 h4{
                     font-weight: 700;
                 }
-            }
-        }
-        .callout-card{
-            box-shadow: 0 1px 10px 0 gray;
-            margin: 100px 0 0 30px;
-            width: 500px;
-            .card-img{
-                height: 200px;
-                width: 500px;
-                object-fit: cover;
-                filter: brightness(50%);
-            }
-            .card-text{
-                margin-top: -7px;
-                padding: 20px;
-                h4{
-                    font-weight: 700;
-                    margin-bottom: 10px;
-                }
-                .highlight{
-                    color: ${props => props.theme.secondaryColor};
-                }
-                p{
-                    line-height: 20px;
-                }
-                .unsubscribe{
-                    margin-top: 15px;
-                    font-size: 12px;
-                    color: #CCCCCC;
-                    text-align: center;
-                    line-height: 10px;
-                }
-            }
-            input{
-                margin: 0 10px 0 15px;
-                padding: 15px;
-                width: 325px;
-                background: #F5F7FA;
-                border: 1px solid white;
-                border-radius: 7px;
-            }
-            button{
-                padding: 10px;
-                min-width: 50px;
             }
         }
     }
