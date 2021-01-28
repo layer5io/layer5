@@ -9,6 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import defaultImage from "../assets/images/favicon.png";
 
 function SEO({ description, lang, meta, title, image }) {
   const { site } = useStaticQuery(
@@ -19,7 +20,6 @@ function SEO({ description, lang, meta, title, image }) {
             title
             description
             author
-            defaultImage
           }
         }
       }
@@ -27,7 +27,7 @@ function SEO({ description, lang, meta, title, image }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const metaImage = `${site.siteMetadata.siteUrl}${image ? image : site.siteMetadata.defaultImage}`;
+  const metaImage = image ? image : defaultImage;
 
   return (
     <Helmet
@@ -71,7 +71,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           name: "image",
-          content: metaImage,
+          content: {metaImage},
         },
       ].concat(meta)}
     />
