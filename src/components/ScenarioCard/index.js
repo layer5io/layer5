@@ -67,7 +67,7 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
                   data-katacoda-background="#fff"
                   data-katacoda-hideprogress="true"
                   data-katacoda-font="Open Sans"
-                  data-katacoda-fontheader="Open Sans" style={{ height: "500px" }}>
+                  data-katacoda-fontheader="Open Sans" style={{ minHeight: "37rem" }}>
                 </div>
               </div>
             </div>
