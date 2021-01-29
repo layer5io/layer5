@@ -16,7 +16,8 @@ const BannerSectionWrapper = styled.section`
         height: 100%;
     }
     .left-child {
-        margin: auto;
+        align-self: flex-end;
+        margin-bottom: 3rem;
     }
     .right-col {
         padding-left: 0px;
@@ -90,12 +91,12 @@ const BannerSectionWrapper = styled.section`
             }
         }
      }
-     @media only screen and (max-width: 568px) {
+     @media only screen and (max-width: 576px) {
          .section-title {
             padding: 2rem 1rem;
          }
          .hero {
-             display: none;
+            display: none;
          }
      }  
 `;
