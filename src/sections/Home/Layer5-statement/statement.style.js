@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import imgHero from "./images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
-import Layer5Logo from "../../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
+
 
 const BannerSectionWrapper = styled.section`
     .row {
@@ -16,6 +16,7 @@ const BannerSectionWrapper = styled.section`
         height: 100%;
     }
     .left-child {
+        position: relative;
         align-self: flex-end;
         margin-bottom: 3rem;
     }
@@ -32,7 +33,6 @@ const BannerSectionWrapper = styled.section`
         margin-left: 3.5rem;
         text-indent: -3.5rem;
         margin-bottom: 2rem;
-        font-weight: 300;
         &:before {
             content: "";
             display: inline-block;
@@ -43,8 +43,9 @@ const BannerSectionWrapper = styled.section`
         }
     }
     h4.statement {
+        font-weight: bold;
         display: flex; 
-        color: ${props => props.theme.secondaryLightColor};
+        color: rgba(255, 255, 255, 0.7);
     }
     .hero {
         background: url(${imgHero});
@@ -57,7 +58,19 @@ const BannerSectionWrapper = styled.section`
     }
     .section-title {
         padding: 3rem 8rem;
-        background: #00B39F;
+        background: #00b39f;
+    }
+    .svg-background {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        overflow: hidden;
+        height: 20rem;
+        width: 15rem;
+        img {
+            transform: scale(2);
+            transform-origin: 0rem 0rem;
+        }
     }
 
 
@@ -90,13 +103,18 @@ const BannerSectionWrapper = styled.section`
                 font-size: 1rem;
             }
         }
+        .hero {
+            height: 700px;
+        }
      }
+     @media only screen and (max-width: 767px) {
+         .hero {
+            display: none;
+         }
+     }  
      @media only screen and (max-width: 576px) {
          .section-title {
             padding: 2rem 1rem;
-         }
-         .hero {
-            display: none;
          }
      }  
 `;
