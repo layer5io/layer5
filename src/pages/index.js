@@ -14,6 +14,7 @@ import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
 import ContactCard from "../components/ContactCard";
 import Footer from "../sections/Footer";
+import Partners from "../sections/Partners-home";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
@@ -25,6 +26,7 @@ const IndexPage = () => (
     <Layout>
       <Navigation />
       <Banner />
+      <Partners />
       <Integrations />
       <Features />
       {/* <AppScreens /> */}
