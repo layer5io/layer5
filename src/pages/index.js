@@ -40,7 +40,6 @@ const IndexPage = () => (
       {/*<ContactCard />*/}
       <EngineerEnabler />
       <SubscribeSection />
-
       <Footer />
     </Layout>
   </ThemeProvider>
