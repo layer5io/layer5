@@ -4,7 +4,6 @@ import LabSinglePageWrapper from "./LabSinglePageWrapper.style";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { Link } from "gatsby";
 import PageHeader from "../../../reusecore/PageHeader";
-import { Container } from "../../../reusecore/Layout";
 
 const LabSinglePage = ({ frontmatter, body }) => {
 
@@ -30,11 +29,9 @@ const LabSinglePage = ({ frontmatter, body }) => {
       <PageHeader
         title={frontmatter.title}
       />
-      <Container>
-        <div className="cardContent">
-          <MDXRenderer>{body}</MDXRenderer>
-        </div>
-      </Container>
+      <div className="cardContent">
+        <MDXRenderer>{body}</MDXRenderer>
+      </div>
     </LabSinglePageWrapper>
   );
 };

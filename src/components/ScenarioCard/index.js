@@ -4,7 +4,7 @@ import { ScenarioCardWrapper } from "./ScenarioCard.style";
 import { BsArrowDown } from "react-icons/bs";
 import { BsArrowUp } from "react-icons/bs";
 import { Link } from "gatsby";
-import { FaExternalLinkAlt, FaRegWindowMaximize } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID, toggleActive }) => {
 
@@ -67,7 +67,7 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
                   data-katacoda-background="#fff"
                   data-katacoda-hideprogress="true"
                   data-katacoda-font="Open Sans"
-                  data-katacoda-fontheader="Open Sans" style={{ height: "500px" }}>
+                  data-katacoda-fontheader="Open Sans" style={{ minHeight: "37rem" }}>
                 </div>
               </div>
             </div>
