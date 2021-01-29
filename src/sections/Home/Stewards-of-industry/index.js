@@ -18,6 +18,7 @@ const StewardsOfIndustry = () => {
           <br /> You could say we are the creators of service mesh standards.
         </p>
         <Button
+          primary
           className="section-button"
           title="See our Projects"
           url="/projects"
