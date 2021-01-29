@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-import imgHero from "../../../assets/images/app/hero/forklift.svg";
+import Group from "./assets/images/Group.svg";
 
 const BannerSectionWrapper = styled.section`
-    padding: 6rem 0;
-    background: url(${imgHero}) no-repeat;
+    padding: 7rem 0;
+    background: url(${Group}) no-repeat;
+    background-color: #F3FFFD;
     background-size: 40%;
-    background-position: center right 35px;
+    background-position: bottom -85px right;
     p {
         font-size: 21px;
         font-weight: 300; 
@@ -32,7 +33,7 @@ const BannerSectionWrapper = styled.section`
             }
         }
     }
-    .banner-btn {
+    /* .banner-btn {
         margin: 0rem .5rem 0 .5rem;
 
 
@@ -55,13 +56,15 @@ const BannerSectionWrapper = styled.section`
             background: ${props => props.theme.secondaryLightColor};
             //color: #326d62;
         }
-    }
+    } */
+    @media only screen and (max-width: 1200px) {
+        background-image: none;
+     }
     @media only screen and (max-width: 912px) {
         p {
             width: 100%;
         }
         margin: 50px 0 0 0;
-        background-size: 40%;
         padding: 120px 0 60px 0;
         .section-title{
             h1{
@@ -76,22 +79,15 @@ const BannerSectionWrapper = styled.section`
         p { 
             margin: 0 0 30px 0;
         }
-        .banner-btn {
+        /* .banner-btn {
             min-width: 140px;
         }
         .banner-btn+.banner-btn{
             margin-left: 15px;
-        }
+        } */
      }
      @media only screen and (max-width: 760px) {
         padding: 130px 0 60px 0;
-        background-size: 30%
-     }
-     @media only screen and (max-width: 568px) {
-        background: none;
-        .banner-btn{
-            min-width: 160px;
-        }
      }
      @media only screen and (max-width: 480px) {
         padding: 120px 0 100px 0;
@@ -101,11 +97,11 @@ const BannerSectionWrapper = styled.section`
                 line-height: 50px;
             }
         }
-         .vintage-box{
+         /* .vintage-box{
              &:before{
                  content: none;
              }
-         }
+         } */
      }
      @media only screen and (max-width: 380px) {
         .section-title{
@@ -118,11 +114,11 @@ const BannerSectionWrapper = styled.section`
                 font-size: 15px;
             }
         }
-        .banner-btn{
+        /* .banner-btn{
             font-size: 14px;
             min-width: 127px;
             padding: 14px 12px; 
-        }
+        } */
      }
      @media only screen and (max-width: 330px) {
         .section-title{
