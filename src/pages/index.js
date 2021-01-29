@@ -12,11 +12,13 @@ import Integrations from "../sections/Projects-home";
 import Statement from "../sections/Home/Layer5-statement";
 import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
-import ContactCard from "../components/ContactCard";
+/*import ContactCard from "../components/ContactCard";*/
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
+import EngineerEnabler from "../sections/Engineer-section";
+import SubscribeSection from "../sections/subscribe/subscribe";
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
@@ -35,7 +37,10 @@ const IndexPage = () => (
       {/* <Getapp /> */}
       {/* <News /> */}
       <Faq />
-      <ContactCard />
+      {/*<ContactCard />*/}
+      <EngineerEnabler />
+      <SubscribeSection />
+
       <Footer />
     </Layout>
   </ThemeProvider>
