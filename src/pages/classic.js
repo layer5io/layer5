@@ -12,7 +12,6 @@ import FaqClassic from "../sections/Faq-Classic";
 import Integrations from "../sections/Integrations";
 import AppScreens from "../sections/AppScreens-classic";
 import Counter from "../sections/Counters";
-import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
 import News from "../sections/Company/News";
 import Getapp from "../sections/Getapp";
@@ -34,7 +33,6 @@ const ClassicPage = () => (
       <FeaturesClassic />
       <AppScreens />
       <Counter />
-      <Pricing />
       <Testimonial />
       <FaqClassic />
       <Getapp />
