@@ -17,27 +17,29 @@ const ServiceMeshManagement = () => {
             UniWidth="65%"
           >
             <h4 className = "title">Service Mesh Management</h4>
-            <h2>
+            <h2 className = "big-title">
                         Manage your service mesh with features<span> you won't find anywhere else</span>.
             </h2>
           </SectionTitle>  
-          <Col  xs={12} sm={12} md={6}>
-            <img src = {ServiceMesh} className = "mesh-image"/>
+          <Col xs={12} sm={12} md={6}>
+            <img className = "mesh-image" src = {ServiceMesh} />
           </Col>
-          <Col xs = {12} sm = {12} md = {6}>             
-            <div className = "side-text">
+          <Col xs = {12} sm = {12} md = {6}>  
+            <div className = "side">          
+              <div className = "side-text">
                      Meshery is <span>the</span> service mesh management plane.
-            </div> 
-            <div className = "description">
+              </div> 
+              <div className = "description">
                 Adopt and operate any service mesh with confidence using Meshery's management features.
-            </div> 
+              </div> 
                 
-            <div className="backBtn">
-              <br/>
-              <Link to="/service-mesh-management/meshery">
-                <p>Learn More <span><IoIosArrowForward className = "icon" /></span></p>
-              </Link>        
-            </div>
+              <div className="backBtn">
+                <br/>
+                <Link to="/service-mesh-management/meshery">
+                  <p>Learn More <span><IoIosArrowForward className = "icon" /></span></p>
+                </Link>        
+              </div>
+            </div> 
           </Col> 
         </Row>  
       </Container>
