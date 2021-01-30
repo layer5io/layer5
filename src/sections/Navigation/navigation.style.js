@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavigationWrap = styled.header`
-  background: ${props => props.theme.white};
+  background-color: #F3FFFD;
   position: sticky;
   width: 100%;
   margin-top: 1rem;
