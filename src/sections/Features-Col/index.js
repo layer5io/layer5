@@ -1,32 +1,28 @@
 import React from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
-import SectionTitle from "../../reusecore/SectionTitle";
-import c_icon from "./images/icon.svg";
+import c_icon from "./c_icon.svg";
 
 import data from "./data";
 
-import PricingSectionWrapper from "./pricingSection.style";
+import FeaturesColSectionWrapper from "./featuresColSection.style";
 
 
 const Features = () => {
   return (
-    <PricingSectionWrapper>
+    <FeaturesColSectionWrapper>
       <Container>
-        <SectionTitle UniWidth="50%">
+        <div className="title">
           <h4>ADOPT AND OPERATE ANY SERVICE MESH WITH CONFIDENCE USING MESHERY'S MANAGEMENT FEATURES</h4>
-          <h2>
-            <span>
-              Meshery is the service <br/>
-              <b>mesh management plane.</b>
-            </span>
-          </h2> 
-        </SectionTitle>
-        <Row className="feature-tables">
+          <h1>
+            <span className="light">Meshery is the service </span>mesh management plane.
+          </h1> 
+        </div>
+        <Row>
           {data.features.map((feature, index) => (
             <Col xs={12} sm={6} lg={4} key={index}>
-              <div className="pricing-block">
-                <div className="price-block">
+              <div className="features-block">
+                <div className="feature-block">
                   <h3>{feature.name}</h3>
                 </div>
                 <p>{feature.description}</p>
@@ -49,7 +45,7 @@ const Features = () => {
           ))}
         </Row>
       </Container>
-    </PricingSectionWrapper>
+    </FeaturesColSectionWrapper>
   );
 };
 
