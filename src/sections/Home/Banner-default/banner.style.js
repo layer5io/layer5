@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-import Group from "./assets/images/Group.svg";
+import HeroCubes from "./assets/images/mesh_cubes.svg";
+import HeroCubesBlack from "./assets/images/mesh_cubes_black.svg";
 
 const BannerSectionWrapper = styled.section`
     padding: 7rem 0;
-    background: url(${Group}) no-repeat;
+    background: url(${HeroCubesBlack}) no-repeat;
     background-color: #F3FFFD;
-    background-size: 40%;
+    background-size: 50%;
     background-position: bottom -85px right;
     p {
         font-size: 21px;
@@ -33,7 +34,7 @@ const BannerSectionWrapper = styled.section`
             }
         }
     }
-    /* .banner-btn {
+    .banner-btn {
         margin: 0rem .5rem 0 .5rem;
 
 
@@ -56,9 +57,9 @@ const BannerSectionWrapper = styled.section`
             background: ${props => props.theme.secondaryLightColor};
             //color: #326d62;
         }
-    } */
+    }
     @media only screen and (max-width: 1200px) {
-        background-image: none;
+        
      }
     @media only screen and (max-width: 912px) {
         p {
@@ -91,6 +92,7 @@ const BannerSectionWrapper = styled.section`
      }
      @media only screen and (max-width: 480px) {
         padding: 120px 0 100px 0;
+        background-image: none;
         .section-title{
             h1{
                 font-size: 35px;

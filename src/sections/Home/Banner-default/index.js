@@ -11,8 +11,6 @@ import { FiDownloadCloud } from "react-icons/fi";
 
 import BannerSectionWrapper from "./banner.style";
 
-import Group from "./assets/images/Group.svg";
-
 const BannerDefault = () => {
   return (
     <BannerSectionWrapper>
@@ -35,7 +33,7 @@ const BannerDefault = () => {
                 The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
               </p>
             </div>
-            {/* <VintageBox right={true} vintageOne={true}>
+            <VintageBox right={true} vintageOne={true}>
               <Button primary className="banner-btn" title="Join in" url="/community">
                 <FaMapMarkedAlt size={21} className="icon-left" />
               </Button>
@@ -43,7 +41,7 @@ const BannerDefault = () => {
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
                             
-            </VintageBox> */}
+            </VintageBox>
           </Col>
         </Row>
       </Container>
