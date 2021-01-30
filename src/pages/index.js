@@ -31,7 +31,7 @@ const IndexPage = () => (
       {/* <AppScreens /> */}
       {/* <Counters />  */}
       <Statement />
-      <Pricing />
+      {/* <Pricing /> */}
       <Testimonial />
       <StewardsOfIndustry />
       {/* <Getapp /> */}
