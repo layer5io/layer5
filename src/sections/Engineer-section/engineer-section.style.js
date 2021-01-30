@@ -17,11 +17,6 @@ const EngineerWrapper = styled.div`
     div button{
         background-color:${props => props.theme.highlightColor};
         color:white;
-        border-radius: 5px;
-        padding:15px 20px;
-        outline:none;
-        border:none;
-        cursor:pointer;
         margin:15px;
     }
     @media only screen and (max-width:1500px){

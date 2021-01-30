@@ -1,5 +1,6 @@
 import React from "react";
 import EngineerWrapper from "./engineer-section.style";
+import Button from "../../reusecore/Button/index";
 
 const EngineerEnabler = () => {
 
@@ -15,7 +16,7 @@ const EngineerEnabler = () => {
       </div>
       <h5>It's a multi-mesh world, Infrastructure diversity is reality for any enterprise.</h5>
       <div>
-        <button>Request Training</button>
+        <Button>Request Training</Button>
       </div>
     </EngineerWrapper>
   );
