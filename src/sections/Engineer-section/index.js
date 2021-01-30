@@ -9,14 +9,14 @@ const EngineerEnabler = () => {
       <h5>Learn more about how Layer5 is a service mesh leader</h5>  
       <div className="head-cont">
         <h1>
-          <span>Enabler of Engineers. </span>
-          <span>Enabler of Speed. </span>
-          <span>Enabler of Business.</span>
+          Enabler of Engineers. 
+          Enabler of Speed. 
         </h1>
+        <h1>Enabler of Business.</h1>
       </div>
       <h5>It's a multi-mesh world, Infrastructure diversity is reality for any enterprise.</h5>
       <div>
-        <Button>Request Training</Button>
+        <Button primary title="Request Training" url="/company/contact" />
       </div>
     </EngineerWrapper>
   );

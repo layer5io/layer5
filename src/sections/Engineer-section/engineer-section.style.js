@@ -8,8 +8,11 @@ const EngineerWrapper = styled.div`
     padding:40px;
     .head-cont{
         margin:20px;
-        width:80%;
+        width:100%;
         display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
     }
     h5{
         margin:15px;
@@ -19,22 +22,21 @@ const EngineerWrapper = styled.div`
         color:white;
         margin:15px;
     }
-    @media only screen and (max-width:1500px){
-        .head-cont{        
-            width:80%;
+    @media only screen and (max-width:1050px) and (min-width:992px)
+    {
+        .head-cont h1{
+            font-size:2.9rem;
             
         }
-    }
-    @media only screen and (max-width:1200px){
-        .head-cont{
         
-            width:80%;
-        }
     }
-    @media only screen and (max-width:1000px){
+    @media only screen and (max-width:700px){
         .head-cont{
+            display:flex;
+            flex-direction:column;
+            justify-content:unset;
+            align-items:unset;
             
-            width:100%;
         }
     }
 `;
