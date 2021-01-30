@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import background from "./images/background.svg";
 
 const ProjectItemWrapper = styled.section`
     padding: 0 0 110px 0;
@@ -12,7 +13,7 @@ const ProjectItemWrapper = styled.section`
                 margin-bottom: 40px;
             }
             text-align: center;
-            margin-bottom: -25px;
+            margin-bottom: 25px;
         }
         text-align: center;
         padding: 0 5% 0 5%;
@@ -29,9 +30,17 @@ const ProjectItemWrapper = styled.section`
         margin-top: 0;
     }
     .project__block__wrap{
+        position: relative;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        &:before {
+            content: url(${background});
+            position: absolute;
+            right: -2rem;
+            bottom: 0;
+            z-index: 1;
+        }
     }
     .project__block__inner { 
         box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
@@ -57,9 +66,21 @@ const ProjectItemWrapper = styled.section`
             margin: 0 0 15px 10px; 
         }
     }
-    .button{
-        margin-top: 25px;
+    .description {
+        padding: 1rem;
+        border-radius: 1rem;
+        background: ${props => props.theme.secondaryLightColor};
         text-align: center;
+        p {
+            padding: 0 4rem;
+            margin: 0rem;
+            color: #737373;
+        }
+    }
+    @media only screen and (max-width: 992px) {
+        .project__block__wrap:before {
+            content: none;
+        }
     }
     @media only screen and (max-width: 912px) {
          padding: 60px 0 0 0;
@@ -83,6 +104,12 @@ const ProjectItemWrapper = styled.section`
                 margin-bottom: 0px;
             }
         }
+        .description {
+            padding: 1rem 0.5rem;
+            p {
+                padding: 0 2rem;
+            }
+        }
         .button{
             margin-top: 0px;
         }
@@ -93,6 +120,12 @@ const ProjectItemWrapper = styled.section`
      @media only screen and (max-width: 760px) {
         .project__block__wrap{
             margin-bottom: 60px;
+        }
+        .description {
+            padding: 1rem 0.5rem;
+            p {
+                padding: 0 1rem;
+            }
         }
      }
      @media only screen and (max-width: 568px) {
@@ -114,6 +147,12 @@ const ProjectItemWrapper = styled.section`
      @media only screen and (max-width: 480px) {
         .project__block__inner{
             padding: 30px;
+        }
+        .description {
+            padding: 1rem 0.5rem;
+            p {
+                padding: 0rem;
+            }
         }
      }
    
