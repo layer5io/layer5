@@ -4,12 +4,12 @@ const MeshSectionWrapper = styled.section`
   margin: 1rem 0 5rem
   position: relative;
   overflow: hidden;
-  .title{ 
+  .title { 
     text-transform: uppercase;
     color: #A0AAAA;
   }
-  .side-text{
-    font-size: 34px;
+  .side-text {
+    font-size: 2rem;
     font-weight: 400;
     line-height: 44.2px;
     color: ${props => props.theme.headingColor ? props.theme.headingColor : "#2C0075"};
@@ -21,6 +21,7 @@ const MeshSectionWrapper = styled.section`
    .side{
        vertical-align: center;
        span {
+           font-weight: 300;
             color: ${props => props.theme.keppelColor};
         }
    }
@@ -51,34 +52,25 @@ const MeshSectionWrapper = styled.section`
        margin-bottom: 24px;
        font-style: normal;
        font-weight: 300;
-       font-size: 18px;
+       font-size: 1rem;
        line-height: 27px;
    }
 
-  @media only screen and (max-width: 480px) {
-    padding: 40px 20px 60px 20px;
-    .mesh-image{
-       width: 200px;
-    }
-    .description{
-        margin: 0px;
-    }
-    
 
-  }
   @media only screen and (max-width: 780px) {
     .mesh-image{
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 80%
     }
     .section-title{
-        margin: 0;
-        padding: 0;
+        margin-bottom: 0rem;
+        /* padding-bottom: 1.5rem; */
+        
     }
     .side-text{
-        font-weight: 600;
+        padding-top: 1rem;
+        font-weight: 400;
         text-align: center;
         line-height: 21px;
         margin-top: 0;
@@ -138,6 +130,18 @@ const MeshSectionWrapper = styled.section`
     .backBtn{
         text-align: center;
     }
+
+  @media only screen and (max-width: 480px) {
+    padding: 40px 20px 60px 20px;
+    .section-title{
+          margin-bottom: 1rem;
+          padding: 0;
+      }
+
+    .description{
+        margin: 0px;
+    }
+  }
 
   }
   
