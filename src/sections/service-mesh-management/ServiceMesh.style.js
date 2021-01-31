@@ -20,6 +20,9 @@ const MeshSectionWrapper = styled.section`
    }
    .side{
        vertical-align: center;
+       span {
+            color: ${props => props.theme.keppelColor};
+        }
    }
   .backBtn {
         color: #00B39F;
@@ -34,7 +37,7 @@ const MeshSectionWrapper = styled.section`
         margin-top: 21px;
     }
    .mesh-image{
-        height: 397px; 
+        width: 100%; 
    }
    .icon{
        padding: 0px;
@@ -75,12 +78,10 @@ const MeshSectionWrapper = styled.section`
         padding: 0;
     }
     .side-text{
-        font-size: 20px;
         font-weight: 600;
         text-align: center;
         line-height: 21px;
         margin-top: 0;
-
     }
     .big-title{
         margin: 0;
@@ -121,7 +122,6 @@ const MeshSectionWrapper = styled.section`
             text-align: center;
             line-height: 21px;
             margin-top: 0;
-
     }
     .big-title{
         margin: 0;

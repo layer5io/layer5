@@ -20,7 +20,7 @@ const ServiceMeshManagement = () => {
           >
             <h4 className="title">Service Mesh Management</h4>
             <h2 className="big-title">
-              Manage your service mesh with features<span> you won't find anywhere else</span>.
+            Meshery is <span>the</span> service mesh management plane.
             </h2>
           </SectionTitle>
           <Col xs={12} sm={12} md={6}>
@@ -31,10 +31,10 @@ const ServiceMeshManagement = () => {
           <Col xs={12} sm={12} md={6}>
             <div className="side">
               <div className="side-text">
-                Meshery is <span>the</span> service mesh management plane.
+                The <span>extensible</span> service mesh manager.
               </div>
               <div className="description">
-                Adopt and operate any service mesh with confidence using Meshery's management features.
+                An extensible platform, Meshery, comes packed with integrations for Prometheus, Grafana, and support for WebAssembly filters for Envoy.
               </div>
 
               <div className="backBtn">
