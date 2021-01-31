@@ -15,6 +15,7 @@ import meshery_multi_mesh from "./images/meshery_multi_mesh.png";
 
 import MesheryWrapper from "./meshery.style";
 import theme from "../../theme/app/themeStyles";
+import FeaturesSection from "./Features-section";
 
 const MesheryPage = () => {
   return (
@@ -46,12 +47,15 @@ const MesheryPage = () => {
                     <FiDownloadCloud size={21} className="button-icon" />
                   </Button>
                 </Col>
-                <Col lg={6} md={12} sm={12}>
-                  <div><img className="meshery-sup-img" src={meshery_multi_mesh} alt="meshery_multi_mesh" /></div>
+                <Col lg={6} md={12} sm={12} className="meshery-hero-img">
+                  <img className="meshery-sup-img" src={meshery_multi_mesh} alt="meshery_multi_mesh" />
                 </Col>
               </Row>
             </div>
             <FeaturesTable />
+          </Container>
+          <FeaturesSection />
+          <Container>
             <div className="callout">
               <h3> Service Mesh Management </h3>
               <h1> Manage your service mesh with features you won't find anywhere else.</h1>

@@ -405,17 +405,14 @@ export const LandscapePageWrapper=styled.div`
 			font-style: italic;
 		}
 		img {
-			height: 100%;
-			margin-right: 30px;
+			height: 10rem;
+			margin-right: 2rem;
 		}
 		@media screen and (max-width:767px) {
 			display: block;
 	
 			img {
-				width: 50%;
-				height: inherit;
-				margin-right: 0rem;
-				margin-bottom: .25rem;
+				margin: 0 auto 0.25rem;
 			}
 	}
 

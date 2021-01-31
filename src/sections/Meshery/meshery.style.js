@@ -7,36 +7,37 @@ const MesheryWrapper = styled.section`
         display: block;
         .meshery-img{
             max-width: 25rem;
-            position: relative;      
-            margin: -3.125rem auto -3.125rem auto; 
+            position: relative;
+            bottom: 2rem;
+            margin: auto; 
         }
         .description {
-            margin-top: 2.5rem; 
-            padding: 0 0 6.25rem 1.25rem;
+            align-items: center;
+            margin-top: -2rem;
             .desc-text {
                 padding: 1.56rem;
                 h1{
-                    font-size: 45px;
                     font-weight: 600;
                 }
                 .heading-2 {
+                    font-weight: 700;
                     color: ${props => props.theme.secondaryColor};
                 }
                 .desc-p {
                     font-size: 1.25rem;   
-                    margin: 1.875rem 0 3.125rem 0;
+                    margin: 1.875rem 0 2.5rem 0;
                 }
                 .banner-btn {
-                    margin: 0rem 0.5rem 0 0.5rem;
+                    margin: 0rem 0.75rem 0 0;
                     color: white;
                     .button-icon{
                         margin-right: 0.625rem;
                     }    
                 }
-            } 
-            .meshery-sup-img{
-                max-height: 21.875rem
-            }    
+            }
+            .meshery-hero-img {
+                text-align: center;
+            }
         }
     }
 
@@ -153,6 +154,14 @@ const MesheryWrapper = styled.section`
         }
     }
 
+    @media only screen and (max-width: 1200px) {
+        .info{
+            .description {
+                margin-top: -4rem;
+            }
+        }
+    }
+
     @media only screen and (max-width: 568px) {
         .info{
             .meshery-img{
@@ -165,11 +174,7 @@ const MesheryWrapper = styled.section`
                         margin: 1.875rem 0 1.25rem 0;
                     }
                     .banner-btn {
-                        margin: 0rem 0.5rem 0 -0.5rem;
-                        color: white;
-                        .button-icon{
-                            margin-right: 0.625rem;
-                        }    
+                        margin: 0rem 0.75rem 0.5rem 0;  
                     }
                 }
             }
