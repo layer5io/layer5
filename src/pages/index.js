@@ -12,12 +12,14 @@ import Integrations from "../sections/Projects-home";
 import Statement from "../sections/Home/Layer5-statement";
 import StewardsOfIndustry from "../sections/Home/Stewards-of-industry/index";
 import Testimonial from "../sections/Testimonial";
-import ContactCard from "../components/ContactCard";
+/*import ContactCard from "../components/ContactCard";*/
 import Footer from "../sections/Footer";
 import ServiceMeshManagement from "../sections/service-mesh-management";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
+import EngineerEnabler from "../sections/Engineer-section";
+import SubscribeSection from "../sections/subscribe/subscribe";
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
@@ -38,7 +40,9 @@ const IndexPage = () => (
       {/* <Getapp /> */}
       {/* <News /> */}
       <Faq category = "all"/>
-      <ContactCard />
+      {/*<ContactCard />*/}
+      <EngineerEnabler />
+      <SubscribeSection />
       <Footer />
     </Layout>
   </ThemeProvider>
