@@ -286,7 +286,6 @@ const NavigationWrap = styled.header`
     height: auto;
     min-height: 50px;
     padding: 15px 20px;
-    background: #fff;
     .nav {
       margin-top: 7px;
     }
