@@ -1,10 +1,10 @@
 
 import React from "react";
 import MeshFocusWrapper from "./service-mesh-focussed";
-//import { Row, Col } from "../../../reusecore/Layout";
 import BlockQouteImage from "../../../assets/images/blockqoute/quote-left.svg";
-import Button from "../../../reusecore/Button/index";
+import Button from "../../../reusecore/Button";
 import {FaArrowRight} from "react-icons/fa";
+
 const ServiceMeshFocused = () => {
 
   return (
@@ -29,7 +29,7 @@ const ServiceMeshFocused = () => {
               enterprises use multiple service mesh products, whether separately or together."
               </strong>
             </p>
-            <Button>
+            <Button url="/books/the-enterprise-path-to-service-mesh-architectures">
               Read Story
               <FaArrowRight className="icon-right"/>
             </Button>

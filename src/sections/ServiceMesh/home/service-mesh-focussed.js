@@ -10,13 +10,13 @@ const MeshFocusWrapper = styled.div`
     
     .head-cont-2{
         text-align:center;
-        padding:20px 10px;
+        padding:2rem 1rem;
     }
     
     .card-cont-1{
         display:flex;
         width:60%;
-        margin:30px;
+        margin:4rem;
         background-color: ${props => props.theme.secondaryLightColor}
     }
     .img-col img{
@@ -25,54 +25,48 @@ const MeshFocusWrapper = styled.div`
     }
     .content-col
     {
-        width:65%;
-        padding:30px 60px;
+        width:68%;
+        padding:4rem;
         img{
-            width:60px;
-            height:60px;
+            width:5rem;
+            height:4rem;
         }
         
         .content
         {
             font-family:"Qanelas Soft";
-            padding:30px 0px;
-            font-size:18px;
+            padding:2rem 0rem;
+            font-size:1.25rem;
             font-weight:300;
             font-style:oblique;
         }
         Button {
             background:none;
             color:${props => props.theme.secondaryColor};
-            font-size:20px;
+            font-size:1.2rem;
             border-bottom:3px solid ${props => props.theme.secondaryColor};
             padding:0px;
             min-width:unset;
             border-radius:0px;
         }
-        .FaArrowRight {
-            color:${props => props.theme.secondaryColor};
-            margin:-5px 10px;
-        }
+        
         Button:hover {
             background-color:${props => props.theme.secondaryColor};
             color:black;
             
         }
-        .FaArrowRight {
-            color:${props => props.theme.secondaryColor};
-            margin:-5px 10px;
-        }
+
     }
     @media only screen and (max-width:1400px){
         .card-cont-1{
             width:80%;
         }
     }
-    @media only screen and (max-width:1000px){
+    @media only screen and (max-width:1050px){
 
         .card-cont-1{
             width:93%;
-            margin:10px;
+            margin:2rem;;
             flex-direction:column;
             justify-content:center;align-items:center;
             .img-col{
@@ -81,7 +75,7 @@ const MeshFocusWrapper = styled.div`
             .content-col
             {
                 width:100%;
-                padding:30px 30px;
+                padding:1rem;
             }
         }
         
@@ -90,7 +84,7 @@ const MeshFocusWrapper = styled.div`
 
     .card-cont-1{
         width:93%;
-        margin:10px;
+        margin:2rem;
         flex-direction:column;
         justify-content:center;
         align-items:center;
@@ -100,10 +94,10 @@ const MeshFocusWrapper = styled.div`
         .content-col
         {
             width:100%;
-            padding:30px 30px;
+            padding:1rem;
             img{
-                width:40px;
-                height:40px;
+               width:3rem;
+                height:2.5rem;
             }
         }
 }
