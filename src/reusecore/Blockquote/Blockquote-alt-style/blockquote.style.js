@@ -7,7 +7,6 @@ const BlockquoteStyle = styled.div`
   }
   .blockquote-container {
     position: relative;
-    font-family: "Montserrat", sans-serif;
     font-weight: 800;
     color: ${(props) => props.theme.keppelColor};
     padding: 1.875rem 0;
@@ -32,37 +31,46 @@ const BlockquoteStyle = styled.div`
   .blockquote-quote {
     position: relative;
     color: ${(props) => props.theme.primaryLightColorTwo};
-    font-family: "Montserrat", sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: 1.85rem;
+    font-weight: 700;
     line-height: 1;
     margin: 0;
   }
   .blockquote-person {
     position: relative;
-    color: ${(props) => props.theme.textColor};
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.4rem;
+    color: ${(props) => props.theme.tertiaryColor};
+    font-size: 1.3rem;
     font-weight: 300;
-    line-height: 1;
+    line-height: 1rem;
     margin: 0;
-    padding-top: 1.25rem;
+    padding-top: 1.2rem;
     z-index: 1;
   }
   .blockquote-title {
     line-height: 1rem;
     position: relative;
     font-size: 1.1rem;
+    color: ${(props) => props.theme.tertiaryColor};
+    line-height: 1.1.rem;
+    font-weight: 300;
     font-style: italic;
     margin: 0;
     z-index: 1;
-    margin-left: 1.40625rem;
+    margin-top: .25rem;
+    margin-left: 1.4rem;
   }
   /* increase header size after 600px */
-  @media all and (min-width: 600px) {
+  @media all and (max-width: 600px) {
     .blockquote-quote {
-      font-size: 3.75rem;
+      font-size: 1.25rem;     
     }
+    .blockquote-title {
+      font-size: .9rem;
+    }
+    .blockquote-person {
+      font-size: 1.1
+    }
+    
   }
 `;
 BlockquoteStyle.displayName = "BlockquoteStyle";
