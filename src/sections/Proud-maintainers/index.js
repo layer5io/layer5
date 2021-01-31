@@ -5,11 +5,11 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 
-import Image1 from "../../assets/images/app/proudMaintainers/envoy.png";
-import Image2 from "../../assets/images/app/proudMaintainers/linkerd.png";
-import Image3 from "../../assets/images/app/proudMaintainers/service-mesh.png";
-import Image4 from "../../assets/images/app/proudMaintainers/traefik.png";
-import Image5 from "../../assets/images/app/proudMaintainers/kuma.png";
+import Image1 from "../../assets/images/proudMaintainers/envoy.png";
+import Image2 from "../../assets/images/proudMaintainers/linkerd.png";
+import Image3 from "../../assets/images/proudMaintainers/service-mesh.png";
+import Image4 from "../../assets/images/proudMaintainers/traefik.png";
+import Image5 from "../../assets/images/proudMaintainers/kuma.png";
 
 import ProjectItemWrapper from "./proudMaintainers.style";
 
