@@ -5,13 +5,13 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 
-import Image1 from "../../assets/images/app/ProudMaintainers/envoy.png";
-import Image2 from "../../assets/images/app/ProudMaintainers/linkerd.png";
-import Image3 from "../../assets/images/app/ProudMaintainers/service-mesh.png";
-import Image4 from "../../assets/images/app/ProudMaintainers/traefik.png";
-import Image5 from "../../assets/images/app/ProudMaintainers/kuma.png";
+import Image1 from "../../assets/images/app/proudMaintainers/envoy.png";
+import Image2 from "../../assets/images/app/proudMaintainers/linkerd.png";
+import Image3 from "../../assets/images/app/proudMaintainers/service-mesh.png";
+import Image4 from "../../assets/images/app/proudMaintainers/traefik.png";
+import Image5 from "../../assets/images/app/proudMaintainers/kuma.png";
 
-import ProjectItemWrapper from "./ProudMaintainers.style";
+import ProjectItemWrapper from "./proudMaintainers.style";
 
 const ProudMaintainers = () => {
   return (
