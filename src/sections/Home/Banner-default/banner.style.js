@@ -5,9 +5,10 @@ import HeroCubesBlack from "./assets/images/mesh_cubes_black.svg";
 
 const BannerSectionWrapper = styled.section`
     padding: 7rem 0;
+
     background: url(${HeroCubesBlack}) no-repeat;
-    background-color: #F3FFFD;
     background-size: 50%;
+    background-color: #F3FFFD;
     background-position: bottom -85px right;
     p {
         font-size: 21px;
@@ -65,7 +66,7 @@ const BannerSectionWrapper = styled.section`
         p {
             width: 100%;
         }
-        margin: 50px 0 0 0;
+        margin: 0 0 0 0;
         padding: 120px 0 60px 0;
         .section-title{
             h1{
