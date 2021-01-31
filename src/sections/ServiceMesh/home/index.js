@@ -12,10 +12,8 @@ const ServiceMeshFocused = () => {
       <div className="main-cont">
         <div className="head-cont-2">
           <h5>Open Source</h5>  
-          <h1 >
-            <span>Service mesh focused.</span>
-            <span>Service mesh neutral.</span>
-          </h1>
+          <h1>Service mesh focused.</h1>
+          <h1>Service mesh neutral.</h1>
           <h5>The only vendor dedicated to empowering organisations with any service mesh.</h5>
         </div>
         <div className="card-cont-1">

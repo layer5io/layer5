@@ -9,18 +9,10 @@ const MeshFocusWrapper = styled.div`
    } 
     
     .head-cont-2{
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
+        text-align:center;
         padding:20px 10px;
     }
-    .head-cont-2 h1{
-        display:flex;
-        flex-direction:column;
-        padding:15px;
-        margin:10px;
-    }
+    
     .card-cont-1{
         display:flex;
         width:60%;
@@ -100,7 +92,8 @@ const MeshFocusWrapper = styled.div`
         width:93%;
         margin:10px;
         flex-direction:column;
-        justify-content:center;align-items:center;
+        justify-content:center;
+        align-items:center;
         .img-col{
             width:unset;
         }
