@@ -15,6 +15,7 @@ import Testimonial from "../sections/Testimonial";
 import ContactCard from "../components/ContactCard";
 import Footer from "../sections/Footer";
 import ServiceMeshManagement from "../sections/service-mesh-management";
+
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
@@ -24,6 +25,8 @@ const IndexPage = () => (
     <SEO meta="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure."/>
     <Layout>
       <Navigation />
+      <BlockquoteAltStyle quote="hello there this is great. Wonder if that would work." person="Rob Johnson" title="Palyer, Acme Corp"  />
+      <Blockquote quote="hello there this is great. Wonder if that would work." person="Rob Johnson" title="Palyer, Acme Corp"  />
       <Banner />
       <Integrations />
       <Features />
