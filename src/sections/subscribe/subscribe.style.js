@@ -92,6 +92,23 @@ const SubscribeWrapper = styled.div`
             
         }
     }
+    @media only screen and (min-width:768px) and (max-width:800px)
+    {
+        #mce-EMAIL{
+            margin:25px 0px;
+            width:100%;
+        }
+        .email-cont div{
+            padding:0px;
+        }
+
+    }
+    @media only screen and (max-width:500px){
+        #mce-EMAIL{
+            margin:25px 0px;
+            width:100%;
+        }
+    }
 `;
 
 export default SubscribeWrapper;

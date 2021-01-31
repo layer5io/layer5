@@ -8,9 +8,9 @@ const EngineerEnabler = () => {
     <EngineerWrapper>
       <h5>Learn more about how Layer5 is a service mesh leader</h5>  
       <div className="head-cont">
-        <h1>
-          Enabler of Engineers. 
-          Enabler of Speed. 
+        <h1 className="resp">
+          <span>Enabler of Engineers. </span>
+          <span>Enabler of Speed. </span>
         </h1>
         <h1>Enabler of Business.</h1>
       </div>
