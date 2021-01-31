@@ -20,6 +20,7 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import EngineerEnabler from "../sections/Engineer-section";
 import SubscribeSection from "../sections/subscribe/subscribe";
+import ServiceMeshFocussed from "../sections/ServiceMesh/home/index";
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
@@ -41,6 +42,7 @@ const IndexPage = () => (
       {/* <News /> */}
       <Faq category = "all"/>
       {/*<ContactCard />*/}
+      <ServiceMeshFocussed />
       <EngineerEnabler />
       <SubscribeSection />
       <Footer />
