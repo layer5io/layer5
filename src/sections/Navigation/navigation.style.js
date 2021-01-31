@@ -4,7 +4,7 @@ const NavigationWrap = styled.header`
   background-color: #F3FFFD;
   position: sticky;
   width: 100%;
-  margin-top: 1rem;
+  padding-top: 1rem;
   z-index: 9999;
   top: 0;
   transition: all 0.3s ease 0s;
