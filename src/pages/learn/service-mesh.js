@@ -6,24 +6,24 @@ import SEO from "../../components/seo";
 
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
-import KatacodaServiceMesh from "../../sections/Katacoda-Service-Mesh";
+import ServiceMeshLabs from "../../sections/Service-Mesh-Labs";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
 
 
-const ServiceMeshKatacodaPage = () => {
+const ServiceMeshLabsPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Interactive Service Mesh Labs" />
         <Navigation />
-        <KatacodaServiceMesh />
+        <ServiceMeshLabs />
         <Footer />
       </Layout>
     </ThemeProvider>
   );
 };
-export default ServiceMeshKatacodaPage;
+export default ServiceMeshLabsPage;

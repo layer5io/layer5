@@ -12,7 +12,6 @@ import Faq from "../sections/Faq";
 import Integrations from "../sections/Projects";
 import AppScreens from "../sections/AppScreens";
 import Counters from "../sections/Counters";
-import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
 import News from "../sections/Company/News";
 import Getapp from "../sections/Getapp";
@@ -34,7 +33,6 @@ const IndexPage = () => (
       <Features />
       <AppScreens />
       <Counters />
-      <Pricing />
       <Testimonial />
       <Faq />
       <Getapp />

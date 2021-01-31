@@ -119,4 +119,8 @@ export const MembersGridWrapper = styled.div`
                 
             }
     }
+    .memberProfileBtn{
+        margin: 1rem;
+        
+    }
 `;

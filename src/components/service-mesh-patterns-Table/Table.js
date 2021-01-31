@@ -1,13 +1,16 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { useTable } from "react-table";
+import { useTable, useSortBy, useFilters } from "react-table";
 import {Data} from "../../collections/books/service-mesh-patterns/tableData";
 import {Columns} from "../../collections/books/service-mesh-patterns/bookColumns";
-import {TableWrapper} from "./table.style";
+import { TableWrapper } from "./table.style";
+import alphaicon from "./sort_by_alpha.svg";
+import upicon from "./expand_more.svg";
+import downicon from "./expand_less.svg";
 
 const Table = () => {
 
-  const columns = React.useMemo(() => Columns,[]);
+  const columns = React.useMemo(() => Columns, []);
   const data = React.useMemo(() => Data,[]);
 
   const {
@@ -19,18 +22,36 @@ const Table = () => {
   } = useTable({
     columns,
     data,
-  });
-
+  },
+  useFilters,
+  useSortBy
+  );
   return (
     <TableWrapper>
       <table {...getTableProps()}>
         <thead>
-        
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, index) => (
-                <th key={index} {...column.getHeaderProps()}>
-                  {column.render("Header")}
+                <th key={index} {...column.getHeaderProps()}
+                  className={(column.Header == "Service Mesh Pattern" || column.Header == "Category") ? "table-header" : ""}>
+                  <div {...column.getSortByToggleProps()}>
+                    {column.render("Header")}
+                    {(column.Header == "Service Mesh Pattern" || column.Header == "Category") ?
+                      <span>
+                        {column.isSorted
+                          ? column.isSortedDesc
+                            ? <img className="service-mesh-icon" src={downicon} alt="down icon" />
+                            : <img className="service-mesh-icon" src={upicon} alt="up icon" />
+                          : <img className="service-mesh-icon" src={alphaicon} alt="alpha icon" />}
+                      </span>
+                      : <>
+                      </>}
+                    {(column.Header == "Category") ? 
+                      <div>{column.canFilter ? column.render("Filter") : null}</div>
+                      : <> </>
+                    }
+                  </div>
                 </th>
               ))}
             </tr>
@@ -44,9 +65,9 @@ const Table = () => {
                 {row.cells.map((cell, index) => {
                   if(row["original"]["subheading"] === "bold"){
                     return (
-                      <td key={index} {...cell.getCellProps()} className="bold">
+                      <th key={index} {...cell.getCellProps()} className="bold area-header">
                         {cell.render("Cell")}
-                      </td>
+                      </th>
                     );
                   } else{
                     return (

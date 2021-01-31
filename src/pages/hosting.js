@@ -11,7 +11,6 @@ import Features from "../sections/Features-hosting";
 import CTAHosting from "../sections/CTA-hosting";
 import Faq from "../sections/Faq-hosting";
 import Counters from "../sections/Counters";
-import Pricing from "../sections/Pricing";
 import Testimonial from "../sections/Testimonial";
 import News from "../sections/Company/News";
 import ContactCard from "../components/ContactCard";
@@ -28,7 +27,6 @@ const HostingPage = () => (
       <Navigation />
       <Banner />
       <About />
-      <Pricing />
       <Features />
       <CTAHosting />
       <Counters />

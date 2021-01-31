@@ -11,8 +11,9 @@ import landscape from "../../assets/images/app/projects/landscape.png";
 import smi from "../../assets/images/app/projects/smi.svg";
 import imagehub from "../../assets/images/image-hub/layer5-image-hub.png";
 import smp from "../../assets/images/smp/icon/smp-dark.svg";
+import distributedPerformance from "../../collections/projects/distributed-performance-management-of-service-meshes/distributed-performance_green.svg";
 
-const ProjectPage = ({ data }) => {
+const ProjectPage = () => {
   return (
     <ProjectWrapper>
       <PageHeader title="Projects" path="Projects" />
@@ -58,7 +59,7 @@ const ProjectPage = ({ data }) => {
             >
               <div className="project__card-container">
                 <img
-                  src={data.allMdx.nodes[1].frontmatter.thumbnail.publicURL}
+                  src={distributedPerformance}
                   alt="Distributed Performance Management of Service Meshes"
                 />
                 <h5>Distributed Performance Management of Service Meshes</h5>

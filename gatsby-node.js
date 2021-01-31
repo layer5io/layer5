@@ -32,7 +32,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect } = actions;
   createRedirect({ fromPath: "/books", toPath: "/learn/books", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/workshops", toPath: "/learn/workshops", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshery", toPath: "/projects/meshery", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-mesh", toPath: "/learn/service-mesh", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshery", toPath: "/service-mesh-management/meshery", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/landscape", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/events", toPath: "/community/events", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/programs", toPath: "/careers/programs", redirectInBrowser: true, isPermanent: true });
@@ -88,6 +89,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/workshop-single.js"
   );
 
+  const LabTemplate = path.resolve(
+    "src/templates/lab-single.js"
+  );
+
   const res = await graphql(`
     {
       allPosts:  allMdx(
@@ -140,6 +145,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+      labs: allMdx(
+        filter: {fields: {collection: {eq: "labs"}}}
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+        }
+      }
     }
   `);
 
@@ -180,6 +195,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
+  const labs = res.data.labs.nodes;
   const events = res.data.allCollections.nodes;
 
   paginate({
@@ -305,6 +321,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  labs.forEach(lab => {
+    createPage({
+      path: lab.fields.slug,
+      component: LabTemplate,
+      context: {
+        slug: lab.fields.slug,
+      },
+    });
+  });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -317,15 +342,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: collection
     });
     let slug = "";
-    if(node.frontmatter.permalink) {
+    if (node.frontmatter.permalink) {
       slug = `/${collection}/${node.frontmatter.permalink}`;
-    } else{
-      switch(collection){
+    } else {
+      switch (collection) {
         case "blog":
           slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
           break;
         case "members":
-          if(node.frontmatter.published)
+          if (node.frontmatter.published)
             slug = `/community/members/${slugify(node.frontmatter.name)}`;
           break;
         default:

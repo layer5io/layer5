@@ -4,12 +4,11 @@ import job_icon from "./jobs_black.svg";
 
 export const PositionApplyWrapper = styled.div`
     text-align: center;
-
     .pos-logo{
         width: 2.25rem;
         margin: 0 0.5rem;
     }
-    
+
     .apply-now {
         border: 2px solid ${props => props.theme.secondaryColor};
         border-radius: 0.25rem;
@@ -17,12 +16,11 @@ export const PositionApplyWrapper = styled.div`
         width: 60%;
         margin: auto;
     }
-    
+
     .apply{
         display:flex;
         justify-content: center;
-        align-items: center; 
-
+        align-items: center;
     }
     .back-button{
         padding: 0.75rem;
