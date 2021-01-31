@@ -23,8 +23,7 @@ const BannerDefault = () => {
             <div className="left">
               <div className="left-child">
                 <div className="svg-background">
-                  <img src={svgBackground}>
-                  </img>
+                  <img src={svgBackground} />
                 </div>
                 <SectionTitle
                   className="section-title"
@@ -42,7 +41,9 @@ const BannerDefault = () => {
                     {/* Enablers of Engineers. Enablers of Speed. Enablers of Business. */}
                     Layer5 is an empowerer of the developer, the operator, and the service owner
                   </h3>
-                  <Button primary className="join-community" title="Join our community" url="/community" />
+                  <div className="join-community">
+                    <Button primary className="join-community-button" title="Join our community" url="/community" />
+                  </div>
                 </SectionTitle>
               </div>
             </div>

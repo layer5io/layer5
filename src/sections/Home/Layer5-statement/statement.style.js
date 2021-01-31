@@ -68,6 +68,7 @@ const BannerSectionWrapper = styled.section`
         height: 20rem;
         width: 15rem;
         img {
+            filter: brightness(1.3);
             transform: scale(2);
             transform-origin: 0rem 0rem;
         }
@@ -110,6 +111,9 @@ const BannerSectionWrapper = styled.section`
      @media only screen and (max-width: 767px) {
          .hero {
             display: none;
+         }
+         .join-community {
+             text-align: center;
          }
      }  
      @media only screen and (max-width: 576px) {
