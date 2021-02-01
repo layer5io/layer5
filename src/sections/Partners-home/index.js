@@ -2,12 +2,12 @@ import React from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 
-import partner1 from "../../assets/images/partners/redhat_lightgray.svg";
-import partner2 from "../../assets/images/partners/uem_lightgray.svg";
-import partner3 from "../../assets/images/partners/ut-austin_lightgray.svg";
-import partner4 from "../../assets/images/partners/citrix_lightgray.svg";
-import partner5 from "../../assets/images/partners/hashicorp_vertical_black.svg";
-import partner6 from "../../assets/images/partners/hpe_side_lightgray.svg";
+import redhat from "../../assets/images/partners/redhat_black.svg";
+import uem from "../../assets/images/partners/uem_black.svg";
+import utaustin from "../../assets/images/partners/ut-austin_black.svg";
+import citrix from "../../assets/images/partners/citrix.svg";
+import hashicorp from "../../assets/images/partners/hashicorp_vertical_black.svg";
+import hpe from "../../assets/images/partners/hpe_side_black.svg";
 
 import SectionTitle from "../../reusecore/SectionTitle";
 
@@ -28,45 +28,45 @@ const Projects = () => {
           </SectionTitle>
         </Row>
         <Row>
-          <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="https://www.redhat.com" target="_blank" rel="noreferrer">
+          <Col sm={8} md={6} lg={4}>
+            <a className="partner-card" href="/partners#redhat" target="_blank" rel="noreferrer">
               <div className="partner__block__inner">
-                <img src={partner1} alt="redhat" />
+                <img src={redhat} alt="redhat" />
               </div>
             </a>
           </Col>
           <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="https://uem.edu.in/uem-jaipur/" target="_blank" rel="noreferrer">
+            <a className="partner-card" href="/partners#uem" target="_blank" rel="noreferrer">
               <div className="partner__block__inner">
-                <img src={partner2} alt="uem" />
+                <img src={uem} alt="uem" />
               </div>
             </a>
           </Col>
           <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="https://www.utexas.edu/" target="_blank" rel="noreferrer">
+            <a className="partner-card" href="/partners#utaustin" target="_blank" rel="noreferrer">
               <div className="partner__block__inner">
-                <img src={partner3} alt="ut_austin" />
+                <img src={utaustin} alt="ut_austin" />
               </div>
             </a>
           </Col>
           <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="https://www.citrix.com/" target="_blank" rel="noreferrer">
+            <a className="partner-card" href="/partners#citrix" target="_blank" rel="noreferrer">
               <div className="partner__block__inner">
-                <img src={partner4} alt="citrix" />
+                <img src={citrix} alt="citrix" />
               </div>
             </a>
           </Col>
           <Col sm={6} md={4} lg={2}>
             <a className="partner-card" href="https://www.hashicorp.com/" target="_blank" rel="noreferrer">
               <div className="partner__block__inner">
-                <img src={partner5} alt="hashicorp" />
+                <img src={hashicorp} alt="hashicorp" />
               </div>
             </a>
           </Col>
           <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="https://www.hpe.com/us/en/home.html" target="_blank" rel="noreferrer">
+            <a className="partner-card" href="/partners#hpe" target="_blank" rel="noreferrer">
               <div className="partner__block__inner">
-                <img src={partner6} alt="hpe" />
+                <img src={hpe} alt="hpe" />
               </div>
             </a>
           </Col>
