@@ -15,6 +15,7 @@ const theme = {
   // caribbean green (light green)
   secondaryColor: "#00b39f",
   caribbeanGreenColor: "#00d3a9",
+  secondaryLightColorTwo: "#F3FFFD",
 
   // lighter gray
   secondaryLightColor: "#FAFAFA",

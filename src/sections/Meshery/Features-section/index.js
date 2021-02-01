@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import meshery_logo from "../../../assets/images/meshery/meshery-logo-tag-light-white-text-side.png";
+import meshery_logo from "../../../assets/images/meshery/full-logo/meshery-logo-tag-light-white-text-side.png";
 import Slider from "react-slick";
 import slide1 from "../images/meshery_benchmark_screen.png";
 import slide2 from "../images/meshery-configuration-management.png";
