@@ -12,8 +12,8 @@ const Meetups = ({ data, pageContext }) => {
 
   return(
     <MeetupStyle>
-      <PageHeader title="Events" path="Community/Events"/>
-      <h3 className="event-subhead">Want to learn more about our projects? Find out which events the layer5 team is speaking at in your area!</h3>
+      <PageHeader title="Upcoming Events" path="Community/Events"/>
+      {/* <h3 className="event-subhead">Join us</h3> */}
       <UpcomingEvents data={data.allUpcoming} />
       <Container>
         <div className="filterBtns">
