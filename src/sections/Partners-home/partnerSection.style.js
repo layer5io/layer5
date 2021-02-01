@@ -9,9 +9,11 @@ const PartnerItemWrapper = styled.section`
             text-align: center;
         }
     }
-    a.partner-card:hover {
-        div {
-            box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
+    a.partner-card {
+        &:hover {
+            div {
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            }
         }
     }
     img {
@@ -21,6 +23,7 @@ const PartnerItemWrapper = styled.section`
     .partner__block__inner {
         padding: 1.5rem 1rem;
         display: flex;
+        transition: all 0.2s ease-in-out;
     }
     @media only screen and (max-width: 991px) {
         .partner__block__inner{
