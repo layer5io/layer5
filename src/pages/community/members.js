@@ -41,7 +41,7 @@ const MembersPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Members" />
+        <SEO title="Members" description="Members - The Layer5 contributors list" />
         <Navigation />
         <MembersView options={options} handleChange={handleChange}
           members={members} />

@@ -161,7 +161,7 @@ const Events = ({data, pageContext}) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Events" />
+        <SEO title="Events" description="Join Layer5 at upcoming events." />
         <Navigation />
         <Meetups data={data} pageContext={pageContext} />
         <Footer />

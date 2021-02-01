@@ -13,7 +13,7 @@ const Partners = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Partners" />
+      <SEO title="Partners" description="Partner Program" />
       <Navigation />
       <Partner />
       <Footer />

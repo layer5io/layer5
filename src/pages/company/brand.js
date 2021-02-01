@@ -15,7 +15,7 @@ const BrandPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Layout>
-      <SEO title="Layer5 Brand Kit" />
+      <SEO title="Brand Kits" description="Layer5 brand kits with logos, color schemes, and approved usage of Meshery, Image Hub, and other Layer5 projects" />
       <Navigation />
       <Brand />
       <Footer />

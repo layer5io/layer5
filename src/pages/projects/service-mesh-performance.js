@@ -15,7 +15,7 @@ const SMP = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="SMP" />
+      <SEO title="Service Mesh Performance (SMP)" description="Measuring and indexing the performance, overhead, and value of the world's service mesh deployments." />
       <Navigation />
       <SMPPage />
       <Footer/>

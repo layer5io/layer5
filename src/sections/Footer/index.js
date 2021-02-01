@@ -40,12 +40,12 @@ const Footer = () => {
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link className="category-link" to="/projects/landscape#service-mesh-comaprison-matrix">
+                    <Link className="category-link" to="/service-mesh-landscape#service-mesh-comaprison-matrix">
                                             Service Mesh Feature Comparison
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/landscape#service-mesh-comparison-strength">
+                    <Link className="category-link" to="/service-mesh-landscape#service-mesh-comparison-strength">
                                             Service Mesh Strength Comparison
                     </Link>
                   </li>
@@ -98,7 +98,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/landscape">
+                    <Link className="category-link" to="/service-mesh-landscape">
                                             Service Mesh Landscape
                     </Link>
                   </li>

@@ -22,11 +22,12 @@ import theme from "../theme/app/themeStyles";
 import EngineerEnabler from "../sections/Engineer-section";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/ServiceMesh/home/index";
+import CloudNativeLeaders from "../sections/Cloud-Native";
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <SEO meta="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure."/>
+    <SEO description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure." />
     <Layout>
       <Navigation />
       <Banner />
@@ -39,6 +40,7 @@ const IndexPage = () => (
       <Statement />
       {/* <Pricing /> */}
       <Testimonial />
+      <CloudNativeLeaders />
       <StewardsOfIndustry />
       {/* <Getapp /> */}
       {/* <News /> */}

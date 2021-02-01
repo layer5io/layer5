@@ -15,7 +15,7 @@ const careers = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Careers" />
+      <SEO title="Careers" description="Careers at Layer5. Come work with the largest collection of service mesh projects and their maintainers in the world." />
       <Navigation />
       <Careers />
       <Footer />

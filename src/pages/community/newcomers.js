@@ -13,7 +13,7 @@ const newComers = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Newcomers" />
+        <SEO title="Newcomers" description="Contributions from Newcomers are actively encouraged in Layer5. Find a Meshmate and start contributing!" />
         <Navigation />
         <NewcomersGuide />
         <Footer />
