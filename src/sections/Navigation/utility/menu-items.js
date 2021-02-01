@@ -1,4 +1,4 @@
-import img1 from "./img1.svg";
+import meshery from "../../../assets/images/meshery/full-logo/meshery-logo-light-text.svg";
 import img2 from "./layer5-and-istio.png";
 import meshmateLogo from "../../../assets/images/community/meshmate-stack.svg";
 import communityGreen from "../../../assets/images/community/community-green.svg";
@@ -83,7 +83,7 @@ const Data = {
         }
       ],
       div1: {
-        src: img1,
+        src: meshery,
         descr: "How I schooled my seniors"
       },
       div2: {
@@ -118,7 +118,7 @@ const Data = {
         }
       ],
       div1: {
-        src: img1,
+        src: meshery,
         descr: "How I schooled my seniors"
       },
       div2: {

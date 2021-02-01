@@ -34,7 +34,7 @@ const BannerDefault = () => {
               </p>
             </div>
             <VintageBox right={true} vintageOne={true}>
-              <Button primary className="banner-btn" title="Join in" url="/community">
+              <Button primary className="banner-btn one" title="Join in" url="/community">
                 <FaMapMarkedAlt size={21} className="icon-left" />
               </Button>
               <Button primary className="banner-btn two" title="Run Meshery" url="/projects/meshery">

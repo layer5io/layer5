@@ -286,7 +286,6 @@ const NavigationWrap = styled.header`
     height: auto;
     min-height: 50px;
     padding: 15px 20px;
-    background: #fff;
     .nav {
       margin-top: 7px;
     }
@@ -297,6 +296,7 @@ const NavigationWrap = styled.header`
       display: none;
     }
     .navbar-wrap {
+      position: static;
       display: flex;
       align-items: center;
     }
@@ -309,7 +309,7 @@ const NavigationWrap = styled.header`
       }
     }
     .mobile-dropdown-container {
-      position: fixed;
+      position: absolute;
       top: auto;
       left: 0;
       height: auto;

@@ -6,7 +6,7 @@ import SEO from "../../components/seo";
 
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
-import InternshipPage from "../../sections/Careers-Internship-grid";
+import InternshipPage from "../../sections/Careers/Careers-Internship-grid";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
