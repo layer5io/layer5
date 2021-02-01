@@ -7,7 +7,7 @@ import PictureSlider from "./slider";
 import { FaArrowRight, FaUsers } from "react-icons/fa";
 import CommunitySectionWrapper from "./community.style";
 import Lee_workshop from "./Lee_Workshop.png";
-import CommunityMemberImage from "./community-member.jpeg";
+import CommunityMemberImage from "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
 import MeshMateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 
