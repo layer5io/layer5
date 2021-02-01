@@ -25,7 +25,7 @@ export default function Feature({
           <img src={icon} alt="title"/>
         </div>
         <div className="text">
-          <h4 className="g-type-display-4">{title}</h4>
+          <h4>{title}</h4>
           {description}
           <br/>
           {logos ? <LogoList logos={logos} /> : null}

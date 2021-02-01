@@ -12,7 +12,7 @@ const HowitworksWrapper = styled.section`
     top: calc(50vh - 249px);
 }
 .root {
-    padding: 0px 0;
+    padding: 0 0;
   
     & .headerWrapper {
       & h2 {
@@ -57,6 +57,9 @@ const HowitworksWrapper = styled.section`
   
       @media (max-width: 767px) {
         margin-left: 0;
+      }
+      @media (max-width: 500px) {
+        padding-left: 0;
       }
     }
   }
