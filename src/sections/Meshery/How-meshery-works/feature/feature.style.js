@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-const Howitworks = styled.section`
+const FeatureWrapper = styled.section`
 .root {
   & > h4 {
     margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
   }
 
   & > p {
@@ -14,4 +16,4 @@ const Howitworks = styled.section`
 `;
 
 
-export default Howitworks;
+export default FeatureWrapper;

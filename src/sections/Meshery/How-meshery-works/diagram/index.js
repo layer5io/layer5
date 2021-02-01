@@ -1,9 +1,9 @@
 import React from "react";
-import Howitworks from "./howitworks.style";
+import DiagramStyles from "./diagram.style";
 
 export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
   return (
-    <Howitworks>
+    <DiagramStyles>
       <div className='root' style={{padding: "0px"}}>
         <svg xmlns="http://www.w3.org/2000/svg" className="scroll" viewBox="0 0 559.92 498.86">
           <g style={{ isolation: "isolate" }}>
@@ -3517,6 +3517,6 @@ export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
 
 
       </div>
-    </Howitworks>
+    </DiagramStyles>
   );
 }

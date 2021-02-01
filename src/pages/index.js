@@ -21,7 +21,7 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import EngineerEnabler from "../sections/Engineer-section";
 import SubscribeSection from "../sections/subscribe/subscribe";
-import ServiceMeshFocussed from "../sections/ServiceMesh/home/index";
+import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
 import CloudNativeLeaders from "../sections/Cloud-Native";
 
 const IndexPage = () => (
@@ -33,7 +33,7 @@ const IndexPage = () => (
       <Banner />
       <Integrations />
       <Features />
-      <ServiceMeshManagement />      
+      <ServiceMeshManagement />
       <ProudMaintainers />
       {/* <AppScreens /> */}
       {/* <Counters />  */}

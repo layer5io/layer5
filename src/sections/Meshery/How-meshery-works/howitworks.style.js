@@ -1,22 +1,25 @@
 import styled from "styled-components";
 
-const Howitworks = styled.section`
-ul li:last-child {
-    padding-bottom: 120px;
+const HowitworksWrapper = styled.section`
+// ul li:last-child {
+//     padding-bottom: 120px;
+//   }
+  ul li:first-child {
+    padding-top: 60px;
   }
 .scroll{
     position: sticky;
     top: calc(50vh - 249px);
 }
 .root {
-    padding: 88px 0;
+    padding: 0px 0;
   
     & .headerWrapper {
       & h2 {
         text-align: center;
         margin-top: 0;
         margin-bottom: 32px;
-        @media (--small) {
+        @media (max-width: 767px) {
           margin-bottom: 0;
         }
       }
@@ -35,24 +38,24 @@ ul li:last-child {
     justify-content: space-between;
     position: relative;
   
-    @media (--small) {
+    @media (max-width: 767px) {
       flex-direction: column;
     }
 
     & > ul {
       max-width: 470px;
       margin-left: 50px;
-      padding: 0;
+      padding-bottom: 50px;
   
-      @media (width < 1120px) {
+      @media (max-width: 1120px) {
         margin-left: 64px;
       }
   
-      @media (width < 1024px) {
+      @media (max-width: 1024px) {
         margin-left: 40px;
       }
   
-      @media (--small) {
+      @media (max-width: 767px) {
         margin-left: 0;
       }
     }
@@ -63,6 +66,9 @@ ul li:last-child {
     max-width: 100%;
     position: sticky;
     top: calc(50vh - 249px);
+    @media (max-width: 767px) {
+        display: none;
+      }
   }
   
   .features {
@@ -74,7 +80,7 @@ ul li:last-child {
         list-style: none;
         padding-bottom: 150px;
   
-        @media (--small) {
+        @media (max-width: 767px) {
           padding-top: 0;
           margin-bottom: 0;
           padding-bottom: 50px;
@@ -85,7 +91,7 @@ ul li:last-child {
         & > div {
           padding-bottom: 600px;
           margin-bottom: -200px;
-          @media (--small) {
+          @media (max-width: 767px) {
             padding-bottom: 0;
             margin-bottom: 0;
           }
@@ -95,7 +101,7 @@ ul li:last-child {
       &:first-child {
         & > div {
           padding-top: 108px;
-          @media (width < 1120px) {
+          @media (max-width:  1120px) {
             padding-top: 64px;
           }
         }
@@ -106,4 +112,4 @@ ul li:last-child {
 
 `;
 
-export default Howitworks;
+export default HowitworksWrapper;
