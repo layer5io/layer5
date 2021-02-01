@@ -47,7 +47,6 @@ const ProudMaintainers = () => {
       </Container>
       <Row>
         <div className="project__block__wrap">
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div-up">
               <Row>
@@ -57,7 +56,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div-up">
               <Row>
@@ -67,7 +65,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div-up">
               <Row>
@@ -77,7 +74,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div-up">
               <Row>
@@ -90,7 +86,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div-up">
               <Row>
@@ -100,7 +95,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div-up">
               <Row>
@@ -112,11 +106,8 @@ const ProudMaintainers = () => {
           </Col>
         </div>
       </Row>
-
-
       <Row>
         <div className="project__block__wrap">
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div">
               <Row>
@@ -129,7 +120,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div">
               <Row>
@@ -139,7 +129,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div">
               <Row>
@@ -149,7 +138,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div">
               <Row>
@@ -162,7 +150,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div">
               <Row>
@@ -172,7 +159,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
           <Col sm={12} md={6} lg={2}>
             <div className="project-div">
               <Row>
@@ -185,7 +171,6 @@ const ProudMaintainers = () => {
               </Row>
             </div>
           </Col>
-
         </div>
       </Row>
     </ProjectItemWrapper>

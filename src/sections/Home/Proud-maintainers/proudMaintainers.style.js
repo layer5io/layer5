@@ -4,10 +4,12 @@ const ProjectItemWrapper = styled.section`
     padding: 0 0 110px 0;
     .project-title {
         .section-title{
-            h4{
-                text-transform: uppercase;
-                color: #A0AAAA;           
-            }
+            h4 {
+            margin-bottom: 8px;
+            color: ${props => props.theme.primaryLightColor};
+            text-transform: uppercase;
+            font-weight: 500;
+    }
             h2{
                 margin-bottom: 1rem;
                 font-style: normal;
