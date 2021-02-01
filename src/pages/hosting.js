@@ -5,11 +5,11 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import Navigation from "../sections/Navigation";
-import Banner from "../sections/Banner-hosting";
-import About from "../sections/About-hosting";
-import Features from "../sections/Features-hosting";
+import Banner from "../sections/z_other/Banner-hosting";
+import About from "../sections/z_other/About-hosting";
+import Features from "../sections/z_other/Features-hosting";
 import CTAHosting from "../sections/CTA-hosting";
-import Faq from "../sections/Faq-hosting";
+import Faq from "../sections/z_other/Faq-hosting";
 import Counters from "../sections/Counters";
 import Testimonial from "../sections/Testimonial";
 import News from "../sections/Company/News";
