@@ -12,8 +12,9 @@ const MeshMatesWrapper = styled.div`
        }
        
        .meshmate-logo-wrapper{
-          background-color: #EBFCF8;
+          background-color: ${props => props.theme.secondaryLightColorTwo};
           border-bottom-left-radius: 4.375rem;
+          border-bottom-right-radius: 4.375rem;
           @media only screen and (max-width: 992px){
             border-bottom-left-radius: 0;
           }

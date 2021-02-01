@@ -5,9 +5,10 @@ import HeroCubesBlack from "./assets/images/mesh_cubes_black.svg";
 
 const BannerSectionWrapper = styled.section`
     padding: 7rem 0;
+
     background: url(${HeroCubesBlack}) no-repeat;
-    background-color: #F3FFFD;
     background-size: 50%;
+    background-color: #F3FFFD;
     background-position: bottom -85px right;
     p {
         font-size: 21px;
@@ -36,25 +37,22 @@ const BannerSectionWrapper = styled.section`
     }
     .banner-btn {
         margin: 0rem .5rem 0 .5rem;
-
-
     }
     .banner-btn.one {
         margin: 0rem .5rem 0 .5rem;
-        // background: #EAD07D;
-        a{
-            color: black;
+        background: ${props => props.theme.highlightColor}; 
+
+        &:hover {
+             background: ${props => props.theme.highlightLightColor}; 
         }
-        &:hover{
-            // background: #EBC017; 
-        }
+        
     }
     .banner-btn.two{
         
         background: ${props => props.theme.secondaryColor};
         color: #fff;
         &:hover{
-            background: ${props => props.theme.secondaryLightColor};
+            background: ${props => props.theme.caribbeanGreenColor};
             //color: #326d62;
         }
     }
@@ -65,7 +63,7 @@ const BannerSectionWrapper = styled.section`
         p {
             width: 100%;
         }
-        margin: 50px 0 0 0;
+        margin: 0 0 0 0;
         padding: 120px 0 60px 0;
         .section-title{
             h1{
