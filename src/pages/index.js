@@ -12,7 +12,7 @@ import Integrations from "../sections/Home/Projects-home";
 import Statement from "../sections/Home/Layer5-statement";
 import StewardsOfIndustry from "../sections/Home/Stewards-of-industry/index";
 import Testimonial from "../sections/Testimonial";
-import ProudMaintainers from "../sections/Proud-maintainers";
+import ProudMaintainers from "../sections/Home/Proud-maintainers";
 /*import ContactCard from "../components/ContactCard";*/
 import Footer from "../sections/Footer";
 import ServiceMeshManagement from "../sections/Home/service-mesh-management";
@@ -21,7 +21,7 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import EngineerEnabler from "../sections/Engineer-section";
 import SubscribeSection from "../sections/subscribe/subscribe";
-import ServiceMeshFocussed from "../sections/ServiceMesh/home/index";
+import ServiceMeshFocussed from "../sections/ServiceMesh/Home/index";
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
