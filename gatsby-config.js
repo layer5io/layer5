@@ -4,6 +4,7 @@ module.exports = {
     title: "Layer5 - The Service Mesh Company",
     description: "Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.",
     author: "Layer5 Authors",
+    defaultImage: "/src/assets/images/layer5/layer5-tagline/png/layer5-tag-dark-bg.png",
     siteUrl: "https://layer5ng.netlify.app/",
   },
   plugins: [

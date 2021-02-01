@@ -22,7 +22,7 @@ const Howitworks = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="How the service mesh management plane, Meshery works" />
+      <SEO title="Meshery, Multi-Mesh Manager" />
       <Navigation />
       <Container>
         <br></br>

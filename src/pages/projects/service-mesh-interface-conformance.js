@@ -15,7 +15,7 @@ const SMI = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="SMI" />
+      <SEO title="Service Mesh Interface (SMI)" />
       <Navigation />
       <SMIPage />
       <Footer/>
