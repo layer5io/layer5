@@ -8,12 +8,16 @@ const PartnerItemWrapper = styled.section`
             text-align: center;
         }
     }
+    .row{
+        flex-wrap: nowrap;
+    }
     a.partner-card {
-        &:hover {
+        /* &:hover {
             div {
                 box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
             }
-        }
+        } */
+        
     }
     img {
         max-width: 100%;
@@ -21,12 +25,13 @@ const PartnerItemWrapper = styled.section`
         margin: auto;
     }
     .partner__block__inner {
-        padding: 2rem;
+        padding: .5rem;
+        margin: 0px;
         display: flex;
         transition: all 0.2s ease-in-out;
-        height: 150px;
+        height: 8vw;
     }
-     @media only screen and (max-width: 768px) {
+     /* @media only screen and (max-width: 768px) {
         .horizontal {
             padding: 2rem 4rem;
         }
@@ -39,7 +44,7 @@ const PartnerItemWrapper = styled.section`
      @media only screen and (max-width: 380px) {
         .horizontal {
             padding: 2.5rem;
-        }
+        } */
      }
 `;
 
