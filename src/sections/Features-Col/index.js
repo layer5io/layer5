@@ -18,9 +18,9 @@ const Features = () => {
             <span className="light">Meshery is the service </span>mesh management plane.
           </h1> 
         </div>
-        <Row>
+        <Row className="features-row">
           {data.features.map((feature, index) => (
-            <Col xs={12} sm={6} lg={4} key={index}>
+            <Col xs={12} sm={6} lg={4} key={index} className="features-col">
               <div className="features-block">
                 <div className="feature-block">
                   <h3>{feature.name}</h3>

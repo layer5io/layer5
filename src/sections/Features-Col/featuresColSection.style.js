@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const FeaturesColSectionWrapper = styled.section`
-    padding: 0.625rem 0 3.125rem 0;
-    margin-top: 3.125rem;
+    padding: 5rem 0;
     overflow: hidden;
     position: relative;
     .title{
@@ -10,16 +9,16 @@ const FeaturesColSectionWrapper = styled.section`
         margin: auto;
         text-align: center;
         .light{
-            font-weight: 600;
+            font-weight: 500;
         }
     }
     .features-block{
-        padding: 2.5rem 1.875rem 2.5rem 1.875rem;
+        padding: 2.5rem 1rem;
         border-radius: 1.25rem;
-        box-shadow: 0.94rem 0.94rem 2.5rem ${props => props.theme.shadowColor};
+        box-shadow: 2px 4px 2.5rem 0.5rem ${props => props.theme.shadowColor};
         position: relative;
         text-align: center;
-        height: 45rem;
+        height: 42rem;
         transition: all 0.3s ease-in;
         .feature-block{
             text-align: center;
@@ -54,9 +53,9 @@ const FeaturesColSectionWrapper = styled.section`
         }
         .count-block{
             position: absolute;
-            margin-left: 5rem;
-            text-align: center;
-            bottom: 1.25rem;
+            left: 0;
+            right: 0;
+            bottom: 0rem;
             .count{
                 font-weight: 700;
                 margin-bottom: 0.625rem;
@@ -69,31 +68,39 @@ const FeaturesColSectionWrapper = styled.section`
         }
     }
     
-    @media only screen and (max-width: 1280px) {
-        padding: 5.625rem 0 20.625rem 0;
+    @media only screen and (max-width: 1200px) {
         .features-block{
-            padding: 2.5rem 0.94rem 2.2rem 0.94rem;
+            height: 48.5rem
         }
     }
-    @media only screen and (max-width: 912px) {
-        padding: 0;
+    @media only screen and (max-width: 992px) {
+        .features-row {
+            justify-content: center;
+        }
         .features-block{
-            margin-bottom: 2.5rem;
-            padding: 2.5rem 1.875rem 2.2rem 1.875rem;
+            margin-bottom: 2rem;
+            height: 42rem;
         }
     }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 700px) {
+        .features-block{
+            height: 46rem;
+        }
+    }
+    @media only screen and (max-width: 625px) {
         .title{
             width: 100%;
         }
+        .features-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
         .features-block{
-            margin: 0 0 2.5rem 0;
-            padding: 2.5rem 0.625rem 0.625rem 0.625rem;
+            padding: 1.5rem 1rem;
             height: auto;
             .count-block{
                 position: relative;
-                margin: 1.25rem 0;
-
+                bottom: -0.5rem;
             }
         }
     }
