@@ -37,25 +37,22 @@ const BannerSectionWrapper = styled.section`
     }
     .banner-btn {
         margin: 0rem .5rem 0 .5rem;
-
-
     }
     .banner-btn.one {
         margin: 0rem .5rem 0 .5rem;
-        // background: #EAD07D;
-        a{
-            color: black;
+        background: ${props => props.theme.highlightColor}; 
+
+        &:hover {
+             background: ${props => props.theme.highlightLightColor}; 
         }
-        &:hover{
-            // background: #EBC017; 
-        }
+        
     }
     .banner-btn.two{
         
         background: ${props => props.theme.secondaryColor};
         color: #fff;
         &:hover{
-            background: ${props => props.theme.secondaryLightColor};
+            background: ${props => props.theme.caribbeanGreenColor};
             //color: #326d62;
         }
     }

@@ -8,7 +8,7 @@ import Button from "../../../reusecore/Button";
 import projectImage1 from "../../../assets/images/app/projects/landscape.png";
 import projectImage2 from "../../../assets/images/app/projects/smp.png";
 import projectImage3 from "../../../assets/images/app/projects/meshery-logo-light.png";
-import projectImage4 from "../../../assets/images/app/projects/meshery-logo-light.png";
+import projectImage4 from "../../../assets/images/app/projects/image-hub/layer5-image-hub.png";
 
 import ProjectItemWrapper from "./projectSection.style";
 
@@ -25,7 +25,7 @@ const Projects = () => {
             >
               <h4>ENABLING YOU TO</h4>
               <h2>
-                                Operate any service mesh <span>with confidence</span>.
+                Operate any service mesh <span>with confidence</span>.
               </h2>
             </SectionTitle>
             <p className="project-text">

@@ -14,7 +14,7 @@ import StewardsOfIndustry from "../sections/Home/Stewards-of-industry/index";
 import Testimonial from "../sections/Testimonial";
 /*import ContactCard from "../components/ContactCard";*/
 import Footer from "../sections/Footer";
-import ServiceMeshManagement from "../sections/service-mesh-management";
+import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
