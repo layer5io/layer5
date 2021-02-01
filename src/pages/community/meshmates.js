@@ -13,7 +13,8 @@ const MeshmatePage=() => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Meshmates" />
+        <SEO title="Meshmates" description="MeshMates - the Layer5 contributor onboarding program. 
+    MeshMates is a collection of service mesh mentors." />
         <Navigation />
         <Meshmates />
         <Footer />

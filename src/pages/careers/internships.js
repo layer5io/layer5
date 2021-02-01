@@ -15,7 +15,8 @@ const Internships = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Internships" />
+      <SEO title="Open Source Internship Programs" description="The Service Mesh Community at Layer5 - Learn, Share, Engage.
+  Join the largest collection of service mesh projects and their maintainers in the world." />
       <Navigation />
       <InternshipPage />
       <Footer />

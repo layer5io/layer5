@@ -47,7 +47,8 @@ const NewsGridPage = ({data}) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="News" />
+      <SEO title="News" description="News and Press about Layer5, the service mesh company. 
+    Layer5 the company behind the world's largest service mesh community." />
       <Navigation />
       <NewsPage data={data}/>
       <Footer/>

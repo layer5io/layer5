@@ -15,7 +15,8 @@ const community = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Community" />
+      <SEO title="Service Mesh Community" description="The Service Mesh Community at Layer5 - Learn, Share, Engage.
+  Join the largest collection of service mesh projects and their maintainers in the world." />
       <Navigation />
       <Community />
       <Footer />
