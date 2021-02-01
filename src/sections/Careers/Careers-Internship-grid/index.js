@@ -1,13 +1,13 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
-import Button from "../../reusecore/Button";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
+import Button from "../../../reusecore/Button";
 import {FaArrowRight} from "react-icons/fa";
 import InternshipSectionWrapper from "./InternshipPage.style";
 import ProgramsGrid from "../Careers-Programs-grid/index";
-import UEM_Img from "../../assets/images/partners/uem_partner.png";
-import Univ_Texas_Img from "../../assets/images/partners/texas_partner.png";
+import UEM_Img from "../../../assets/images/partners/uem_partner.png";
+import Univ_Texas_Img from "../../../assets/images/partners/texas_partner.png";
 
 const InternshipPage = ({ hide_heading }) => {
   const opportunities = useStaticQuery(

@@ -1,9 +1,13 @@
 import styled from "styled-components";
 export const ProjectWrapper = styled.div`
     padding-bottom: 5rem;
+    h3 {
+       text-align:center;
+        font-weight: 400;
+    }
     .project-text{
         font-weight: 300;
-        margin-bottom: 80px;
+        margin-bottom: 5rem;
         margin-top: 0;
     }
     .project__block__wrap{
@@ -55,7 +59,9 @@ export const ProjectWrapper = styled.div`
             font-weight: 600;
             text-align: center;
         }
+        
     }
+    
     // Landscape
     .project__card.one{
         grid-column: 2/3;
@@ -70,11 +76,8 @@ export const ProjectWrapper = styled.div`
         grid-column: 3/6;
         grid-row: 1/6;
         img{
-            height: 160px;
-            width: 160px;
+            
             align-self: center;
-            margin-top: -40px;
-            margin-bottom: 20px;
         }
         h5{
             font-size: 40px;
@@ -147,6 +150,12 @@ export const ProjectWrapper = styled.div`
        }
        .project__card h5{
         font-size: 15px;
+        }
+        .project__card.two{
+            img {
+                width: 900px;
+            }
+        
         }
     }
     @media only screen and (max-width: 991px) {

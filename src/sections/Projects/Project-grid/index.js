@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Container } from "../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 
-import PageHeader from "../../reusecore/PageHeader";
+import PageHeader from "../../../reusecore/PageHeader";
 
 import { ProjectWrapper } from "./projectGrid.style";
 
@@ -16,7 +16,8 @@ import distributedPerformance from "../../collections/projects/distributed-perfo
 const ProjectPage = () => {
   return (
     <ProjectWrapper>
-      <PageHeader title="Projects" path="Projects" />
+      <PageHeader className="title" title="Layer5 Projects" path="Projects" />
+      <h3>Cloud Native Networking, Performance, Management, Automation</h3>
       <div className="project-page-wrapper">
         <Container>
           <div className="project__grid">
@@ -29,7 +30,6 @@ const ProjectPage = () => {
             <Link to="/meshery" className="project__card two">
               <div className="project__card-container">
                 <img src={meshery} alt="Meshery" />
-                <h5>MESHERY</h5>
               </div>
             </Link>
             <Link to="/projects/image-hub" className="project__card three">

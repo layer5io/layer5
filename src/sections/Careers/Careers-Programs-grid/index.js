@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
-import Image from "../../components/image";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
+import Image from "../../../components/image";
 
 import { ProgramsPageWrapper } from "./ProgramGrid.style";
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import { Container } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
+import { Container } from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
 
 import ProjectPageWrapper from "./projectSingle.style";
 

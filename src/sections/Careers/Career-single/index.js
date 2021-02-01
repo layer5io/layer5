@@ -1,12 +1,12 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
 import CareerPageWrapper from "./CareerSingle.style";
 import { FaPlay } from "react-icons/fa";
 import { FiCalendar, FiClock } from "react-icons/fi";
 import { HiOutlineCash } from "react-icons/hi";
-import Layer5_Icon from "../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
+import Layer5_Icon from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
 
 
 const CareerSingle = ({data}) => {

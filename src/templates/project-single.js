@@ -7,7 +7,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import Navigation from "../sections/Navigation";
-import ProjectSingle from "../sections/Project-single";
+import ProjectSingle from "../sections/Projects/Project-single";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
