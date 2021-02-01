@@ -414,6 +414,37 @@ export const LandscapePageWrapper=styled.div`
 			img {
 				margin: 0 auto 0.25rem;
 			}
+		}
+	}
+	.Legend {
+		display: flex;
+		padding-bottom: 2.5rem;
+		text-align: right;
+		margin-left: auto;
+		vertical-align:middle;
+
+		.text-gray {
+			margin
+			color: gray;
+			font-style: italic;
+		}
+		img {
+			height: 2rem;
+			vertical-align:middle;
+			padding-right: 0.2rem;
+		}
+		@media screen and (max-width:767px) {
+			display: block;
+	
+			img {
+				margin: 0 auto 0.25rem;
+			}
+		}
+
+		div {
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+		}
 	}
 
 	.Landscape div {

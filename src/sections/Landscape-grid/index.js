@@ -16,6 +16,9 @@ import Nginx_Img from "../../assets/images/service-mesh-icons/nginx-white.svg";
 import Linkerd_Img from "../../assets/images/service-mesh-icons/linkerd-white.svg";
 import NSM_Img from "../../assets/images/service-mesh-icons/nsm-white.svg";
 import Istio_Img from "../../assets/images/service-mesh-icons/istio-white.svg";
+import halfMark from "../../assets/images/landscape/half.svg";
+import passingMark from "../../assets/images/landscape/passing.svg";
+import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
 
 const LandscapeGrid=() => {
@@ -105,6 +108,20 @@ const LandscapeGrid=() => {
               <h2 className="sub-heading landscape-section-heading">Service Mesh Interface Compliance</h2>
               <h4 className="landscape-section-sub-heading">Is your service mesh compliant? <a href="/projects/service-mesh-interface-conformance">Find out</a>.</h4>
               <SMI_Compatibility />
+              <div className="Legend">
+                <div className="Landscape">
+                <img alt="Full" src={passingMark} />
+                <span className="text-grey">Full capability</span>
+                </div>
+                <div>
+                <img alt="Half" src={halfMark} />
+                <span className="text-grey">Partial capability</span>
+                </div>
+                <div>
+                <img alt="None" src={failingMark} />
+                <span className="text-grey">Dosnt have the capability</span>
+                </div>
+              </div>
               <div className="AboutLandscape">
                 <img src={landscape} 
                   alt="Service Mesh Landscape" 
