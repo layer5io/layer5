@@ -21,6 +21,7 @@ import theme from "../theme/app/themeStyles";
 import EngineerEnabler from "../sections/Engineer-section";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/ServiceMesh/home/index";
+import CloudNativeLeaders from "../sections/Cloud-Native";
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
@@ -37,6 +38,7 @@ const IndexPage = () => (
       <Statement />
       {/* <Pricing /> */}
       <Testimonial />
+      <CloudNativeLeaders />
       <StewardsOfIndustry />
       {/* <Getapp /> */}
       {/* <News /> */}
