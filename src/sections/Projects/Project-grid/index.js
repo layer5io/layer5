@@ -6,12 +6,12 @@ import PageHeader from "../../../reusecore/PageHeader";
 
 import { ProjectWrapper } from "./projectGrid.style";
 
-import meshery from "../../../assets/images/meshery/full-logo/meshery-logo-light-text-tag.svg";
-import landscape from "../../../assets/images/app/projects/landscape.png";
-import smi from "../../../assets/images/app/projects/smi.svg";
-import imagehub from "../../../assets/images/image-hub/layer5-image-hub.png";
-import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
-import distributedPerformance from "../../../collections/projects/distributed-performance-management-of-service-meshes/distributed-performance_green.svg";
+import meshery from "../../assets/images/app/projects/meshery-logo-light.png";
+import landscape from "../../assets/images/app/projects/landscape.png";
+import smi from "../../assets/images/app/projects/smi.svg";
+import imagehub from "../../assets/images/image-hub/layer5-image-hub.png";
+import smp from "../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+import distributedPerformance from "../../collections/projects/distributed-performance-management-of-service-meshes/distributed-performance_green.svg";
 
 const ProjectPage = () => {
   return (
