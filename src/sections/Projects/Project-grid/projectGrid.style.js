@@ -1,10 +1,31 @@
 import styled from "styled-components";
 export const ProjectWrapper = styled.div`
     padding-bottom: 5rem;
-    h3 {
-       text-align:center;
-        font-weight: 400;
+    h3{
+            
+            color: ${props => props.theme.primaryLightColor};
+            margin: 0px;
+            padding: 0px;
+            font-weight: 500;
+            text-align:center;
+
+        }
+    .title{
+        margin: 0px;
+            padding: 0px;
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 2rem;
+            
+            span{
+                font-weight: 500;
+                color: ${props => props.theme.secondaryColor};
+            }
+
+        
+     
     }
+    
     .project-text{
         font-weight: 300;
         margin-bottom: 5rem;
@@ -80,8 +101,8 @@ export const ProjectWrapper = styled.div`
             align-self: center;
         }
         h5{
-            font-size: 40px;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 600;
             margin-top: 10px;
         }
     }
@@ -153,7 +174,7 @@ export const ProjectWrapper = styled.div`
         }
         .project__card.two{
             img {
-                width: 900px;
+                
             }
         
         }
@@ -161,7 +182,6 @@ export const ProjectWrapper = styled.div`
     @media only screen and (max-width: 991px) {
         padding: 5px 0 0 0;
         .project-text{
-            margin-bottom: 40px;
         }
         .project__card h5{
             font-size: 12px;
@@ -241,5 +261,9 @@ export const ProjectWrapper = styled.div`
         margin-left: 5%;
         margin-right: 5%;
         padding: 0 0 40px 0;
+
+        h3{
+            font-size: 1.25rem;
+        }
     }
 `;

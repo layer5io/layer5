@@ -271,7 +271,7 @@ section{
     inset: 50% auto auto 50%;
     border: 1px solid rgb(204, 204, 204);
     background: rgb(255, 255, 255);
-    overflow: auto;
+    overflow: hidden;
     border-radius: 0.5rem;
     outline: none;
     padding: 20px;
@@ -289,11 +289,13 @@ section{
         svg {
             font-size: 2rem;
             width: 1.75rem;
+
         }
     }
 
     .modal-heading {
         text-align: center;
+
     }
 }
 
@@ -309,9 +311,10 @@ section{
 }
 
 .form-frame {
-    height: 28rem;
+    height: 50rem;
     width: 35rem;
     border: none;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 765px) {

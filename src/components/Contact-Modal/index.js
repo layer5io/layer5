@@ -9,6 +9,9 @@ const ContactFormModalWrapper = styled.div`
 		display: flex;
     margin: auto;
 	}
+  .footerContainer-156e0 {
+    visibility: hidden;
+  }
 `;
 
 const ContactFormModal = (props) => {
@@ -30,7 +33,7 @@ const ContactFormModal = (props) => {
         ariaHideApp={false}
         contentLabel="Contact Form"
       >
-        <Button secondary className="close-modal-btn" onClick={closeModal} title="Close"> <GrFormClose /> </Button>
+        <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
         <h2 className="modal-heading">Get In Touch</h2>
         <div className="contact-form">
           <iframe
