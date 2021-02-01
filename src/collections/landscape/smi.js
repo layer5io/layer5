@@ -17,8 +17,8 @@ export const smi_data=[
         "reason": "failed in step 4-install",
         "capability": "HALF",
         "status": "FAILED"
-        },
-        {
+      },
+      {
         "smi_specification": "traffic-split",
         "smi_version": "v1alpha1",
         "time": "3m0.185017042s",
@@ -27,8 +27,8 @@ export const smi_data=[
         "reason": "failed in step 4-install",
         "capability": "HALF",
         "status": "FAILED"
-        },
-        {
+      },
+      {
         "smi_specification": "traffic-spec",
         "smi_version": "v1alpha1",
         "time": "3m44.100076898s",
@@ -37,7 +37,7 @@ export const smi_data=[
         "reason": "failed in step 3-install",
         "capability": "HALF",
         "status": "FAILED"
-        }
+      }
     ],
     "previous_versions": [
 
@@ -62,8 +62,8 @@ export const smi_data=[
         "reason": "failed in step 4-install",
         "capability": "HALF",
         "status": "FAILED"
-        },
-        {
+      },
+      {
         "smi_specification": "traffic-split",
         "smi_version": "v1alpha1",
         "time": "2m0.68506152s",
@@ -72,8 +72,8 @@ export const smi_data=[
         "reason": "failed in step 4-install",
         "capability": "HALF",
         "status": "FAILED"
-        },
-        {
+      },
+      {
         "smi_specification": "traffic-spec",
         "smi_version": "v1alpha1",
         "time": "2m52.083696738s",
@@ -82,7 +82,7 @@ export const smi_data=[
         "reason": "failed in step 3-install",
         "capability": "HALF",
         "status": "FAILED"
-        }
+      }
     ],
     "previous_versions": [
                  
@@ -106,8 +106,8 @@ export const smi_data=[
         "reason": "failed in step 4-install",
         "capability": "HALF",
         "status": "FAILED"
-        },
-        {
+      },
+      {
         "smi_specification": "traffic-spec",
         "smi_version": "v1alpha1",
         "time": "1m47.294364872s",
@@ -116,8 +116,8 @@ export const smi_data=[
         "reason": "failed in step 3-install",
         "capability": "HALF",
         "status": "FAILED"
-        },
-        {
+      },
+      {
         "smi_specification": "traffic-access",
         "smi_version": "v1alpha1",
         "time": "2m53.380669651s",
@@ -126,7 +126,7 @@ export const smi_data=[
         "reason": "failed in step 4-install",
         "capability": "HALF",
         "status": "FAILED"
-        }
+      }
     ],
     "previous_versions": [
                        
@@ -150,8 +150,8 @@ export const smi_data=[
         "reason": "failed in step 4-install",
         "capability": "HALF",
         "status": "FAILED"
-        },
-        {
+      },
+      {
         "smi_specification": "traffic-split",
         "smi_version": "v1alpha1",
         "time": "2m3.267674307s",
@@ -160,8 +160,8 @@ export const smi_data=[
         "reason": "failed in step 4-install",
         "capability": "HALF",
         "status": "FAILED"
-        },
-        {
+      },
+      {
         "smi_specification": "traffic-spec",
         "smi_version": "v1alpha1",
         "time": "2m54.969396793s",
@@ -170,19 +170,20 @@ export const smi_data=[
         "reason": "failed in step 3-install",
         "capability": "HALF",
         "status": "FAILED"
-        }
+      }
     ],
     "previous_versions": [
                        
     ],
   },
   {
+    //Data not 100% acurate
     "id": "7",
     "date": "2020-10-14T20:14:48+05:30",
     "mesh_name": "Istio",
     "mesh_version": "v1.6.7",
     "cases_passed": "10",
-    "passing_percentage": "0%",
+    "passing_percentage": "50%",
     "status": "completed",
     "more_details": [
       {
@@ -192,29 +193,29 @@ export const smi_data=[
         "assertions": "1",
         "result": "customresourcedefinitions.apiextensions.k8s.io \"traffictargets.access.smi-spec.io\" not found",
         "reason": "failed in step 1-",
-        "capability": "NONE",
+        "capability": "HALF",
         "status": "FAILED"
-        },
-        {
+      },
+      {
         "smi_specification": "traffic-split",
         "smi_version": "v1alpha1",
         "time": "4m2.0887822s",
         "assertions": "1",
         "result": "customresourcedefinitions.apiextensions.k8s.io \"trafficsplits.split.smi-spec.io\" not found",
         "reason": "failed in step 1-",
-        "capability": "NONE",
+        "capability": "HALF",
         "status": "FAILED"
-        },
-        {
+      },
+      {
         "smi_specification": "traffic-spec",
         "smi_version": "v1alpha1",
         "time": "6m3.155662313s",
         "assertions": "1",
         "result": "customresourcedefinitions.apiextensions.k8s.io \"httproutegroups.specs.smi-spec.io\" not found",
         "reason": "failed in step 1-",
-        "capability": "NONE",
+        "capability": "HALF",
         "status": "FAILED"
-        }
+      }
     ],
     "previous_versions": [
                        
