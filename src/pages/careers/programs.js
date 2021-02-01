@@ -6,7 +6,7 @@ import SEO from "../../components/seo";
 
 import Navigation from "../../sections/Navigation";
 import Footer from "../../sections/Footer";
-import ProgramsGrid from "../../sections/Careers-Programs-grid";
+import ProgramsGrid from "../../sections/Careers/Careers-Programs-grid";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";

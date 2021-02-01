@@ -8,16 +8,21 @@ import Navigation from "../sections/Navigation";
 import Banner from "../sections/Home/Banner-default";
 import Features from "../sections/Features";
 import Faq from "../sections/Faq";
-import Integrations from "../sections/Projects-home";
+import Integrations from "../sections/Home/Projects-home";
 import Statement from "../sections/Home/Layer5-statement";
-import Pricing from "../sections/Pricing";
+import StewardsOfIndustry from "../sections/Home/Stewards-of-industry/index";
 import Testimonial from "../sections/Testimonial";
-import ContactCard from "../components/ContactCard";
+import ProudMaintainers from "../sections/Home/Proud-maintainers";
+/*import ContactCard from "../components/ContactCard";*/
 import Footer from "../sections/Footer";
 import Partners from "../sections/Partners-home";
+import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
+import EngineerEnabler from "../sections/Engineer-section";
+import SubscribeSection from "../sections/subscribe/subscribe";
+import ServiceMeshFocussed from "../sections/ServiceMesh/home/index";
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
@@ -29,15 +34,21 @@ const IndexPage = () => (
       <Partners />
       <Integrations />
       <Features />
+      <ServiceMeshManagement />      
+      <ProudMaintainers />
       {/* <AppScreens /> */}
       {/* <Counters />  */}
       <Statement />
-      <Pricing />
+      {/* <Pricing /> */}
       <Testimonial />
+      <StewardsOfIndustry />
       {/* <Getapp /> */}
       {/* <News /> */}
       <Faq category = "all"/>
-      <ContactCard />
+      {/*<ContactCard />*/}
+      <ServiceMeshFocussed />
+      <EngineerEnabler />
+      <SubscribeSection />
       <Footer />
     </Layout>
   </ThemeProvider>
