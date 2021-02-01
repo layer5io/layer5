@@ -147,10 +147,21 @@ const CommunitySectionWrapper = styled.div`
     }
     
     .newcomers-section {
-        margin-top: 7rem;
-        margin-bottom: 7rem;
+        background: ${props => props.theme.secondaryLightColor};
+        width:100%;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        padding-top: 4rem;
+        /* padding-bottom: 4rem; */
+        .map {
+            padding-left: 3rem;
+            padding-top: 0rem;
+            margin-top:0rem;
+            max-width:40rem;
+            padding-bottom: 2rem;
+        }
         h4{
-            margin: 1rem auto;
+            padding: 1rem auto;
         }
         text-align:center;
         
@@ -169,7 +180,7 @@ const CommunitySectionWrapper = styled.div`
             margin: 2rem 0rem 2rem 0rem;
         }
     }
-   
+
 `;
 
 export default CommunitySectionWrapper;
