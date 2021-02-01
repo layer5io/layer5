@@ -9,6 +9,7 @@ import citrix from "../../../assets/images/partners/citrix.svg";
 import hashicorp from "../../../assets/images/partners/hashicorp_vertical_black.svg";
 import hpe from "../../../assets/images/partners/hpe_side_black.svg";
 import nitk from "../../../assets/images/partners/nitk_black.png";
+import rackspace from "../../../assets/images/partners/rackspace_black.svg";
 
 import SectionTitle from "../../../reusecore/SectionTitle";
 
@@ -77,7 +78,14 @@ const Projects = () => {
                 <img src={nitk} alt="National Institute of Technology Karnataka" />
               </div>
             </Link>
-          </Col>          
+          </Col>
+          <Col sm={6} md={4} lg={3}>
+            <Link className="partner-card" to="/partners#rackspace">
+              <div className="partner__block__inner">
+                <img src={rackspace} alt="Rackspace Technology" />
+              </div>
+            </Link>
+          </Col>              
         </Row>
       </Container>
     </PartnerItemWrapper>

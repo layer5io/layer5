@@ -7,7 +7,6 @@ const ProjectItemWrapper = styled.section`
     .project-title {
         .section-title{
             h4{
-                font-weight: bold;
                 color: ${props => props.theme.primaryLightColor};
             }
             h2{
