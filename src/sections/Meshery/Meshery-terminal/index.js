@@ -37,7 +37,7 @@ const MesheryTerminal = () => {
                                     Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes: <code>mesheryctl</code>.
                 </p>
                 <p>
-                                    With <code>mesheryctl</code>, not only you can manage your service meshes, but you can also manage their workloads using the command line.
+                                    With <code>mesheryctl</code>, not only you can manage your service meshes, but you can also manage their workloads, mesure their performance, verify conformance to service mesh standards. You can also apply patterns.
                 </p>
                 <p>
                   <code>mesheryctl</code> provides support for all of Meshery's features.
