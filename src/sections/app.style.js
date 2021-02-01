@@ -263,6 +263,69 @@ a {
 section{
     position: relative;
 }
+
+/* Modal styling needs to be applied to the global CSS */
+
+.Modal {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 0.5rem;
+    outline: none;
+    padding: 20px;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    .close-modal-btn {
+        min-width: 2rem;
+        height: 2rem;
+        padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.75rem;
+
+        svg {
+            font-size: 2rem;
+            width: 1.75rem;
+        }
+    }
+
+    .modal-heading {
+        text-align: center;
+    }
+}
+
+.Overlay {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 9999;
+}
+
+.contact-form {
+    margin: auto -1rem;
+}
+
+.form-frame {
+    height: 28rem;
+    width: 35rem;
+    border: none;
+}
+
+@media screen and (max-width: 765px) {
+    .form-frame {
+        width: 25rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .form-frame {
+        width: 22rem;
+    }
+}
+
+/* Modal CSS Ends */
 `;
 
 export { GlobalStyle };

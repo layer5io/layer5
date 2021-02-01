@@ -12,6 +12,7 @@ import smi from "../../../assets/images/app/projects/smi.svg";
 import imagehub from "../../../assets/images/image-hub/layer5-image-hub.png";
 import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import distributedPerformance from "../../../collections/projects/distributed-performance-management/distributed-performance_green.svg";
+import ContactFormModal from "../../../components/Contact-Modal";
 
 const ProjectPage = () => {
   return (
@@ -66,6 +67,8 @@ const ProjectPage = () => {
               </div>
             </Link>
           </div>
+
+          <ContactFormModal callout_text="Contact Us" />
         </Container>
       </div>
     </ProjectWrapper>
