@@ -17,12 +17,14 @@ const PartnerItemWrapper = styled.section`
                 box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
             }
         } */
-        
+        flex-shrink: 3;
     }
     img {
         max-width: 100%;
         max-height: 100%;
         margin: auto;
+        opacity: .7;
+       
     }
     .partner__block__inner {
         padding: .5rem;
