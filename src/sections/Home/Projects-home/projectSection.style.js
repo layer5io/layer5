@@ -43,6 +43,8 @@ const ProjectItemWrapper = styled.section`
         }
     }
     .project__block__inner { 
+        display: flex;
+        flex-direction: column;
         background: ${props => props.theme.white};
         box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
         &:hover{
@@ -52,8 +54,9 @@ const ProjectItemWrapper = styled.section`
         height: 220px;
         border-radius: 4%;
         margin-bottom: 30px;
+        text-align: center;
         h5{
-            margin-bottom: 10px; 
+            margin-bottom: auto; 
             font-weight: 700;
             color: ${props => props.theme.secondaryColor}
         }
@@ -64,7 +67,7 @@ const ProjectItemWrapper = styled.section`
 
         img{
             height: 40px; 
-            margin: 0 0 15px 10px; 
+            margin: 10px auto; 
         }
     }
     .description {
