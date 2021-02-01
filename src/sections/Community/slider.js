@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 
-import CommunityImage1 from "./Community-Pictures/Yogi Porla showing Layer5 parntership at HPE Discover.png";
+import CommunityImage1 from "./Community-pictures/Yogi Porla showing Layer5 partnership at HPE Discover.png";
 import CommunityImage2 from "./Community-pictures/Nikhil Ladha - MeshMate of the Year.png";
 import CommunityImage3 from "./Community-pictures/Derek Weeks and Lee at book signing at All Things Open.jpg";
 import CommunityImage4 from "./Community-pictures/Navendu Pottekkat.png";
