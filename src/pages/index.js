@@ -15,7 +15,7 @@ import Testimonial from "../sections/Testimonial";
 import ProudMaintainers from "../sections/Home/Proud-maintainers";
 /*import ContactCard from "../components/ContactCard";*/
 import Footer from "../sections/Footer";
-import Partners from "../sections/Partners-home";
+import Partners from "../sections/Home/Partners-home";
 import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 
 import { GlobalStyle } from "../sections/app.style";

@@ -4,7 +4,6 @@ const PartnerItemWrapper = styled.section`
     padding: 2rem 0;
     .section-title{
         h4{
-            font-weight: bold;
             color: ${props => props.theme.primaryLightColor};
             text-align: center;
         }
