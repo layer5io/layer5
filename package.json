@@ -34,6 +34,7 @@
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-anchor-links": "^1.1.0",
+    "gatsby-plugin-google-gtag": "^2.7.0",
     "gatsby-plugin-manifest": "^2.2.30",
     "gatsby-plugin-mdx": "^1.2.27",
     "gatsby-plugin-meta-redirect": "^1.1.1",
