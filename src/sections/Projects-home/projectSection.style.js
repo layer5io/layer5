@@ -39,10 +39,10 @@ const ProjectItemWrapper = styled.section`
             position: absolute;
             right: -2rem;
             bottom: 0;
-            z-index: 1;
         }
     }
     .project__block__inner { 
+        background: ${props => props.theme.white};
         box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
         &:hover{
             box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
