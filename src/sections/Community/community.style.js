@@ -36,7 +36,7 @@ const CommunitySectionWrapper = styled.div`
         img{
             display:block;
             margin:auto;
-            max-height: 18.75rem;
+            /* max-height: 18.75rem; */
         }
         @media (max-width: 62rem) {
              text-align:center;
