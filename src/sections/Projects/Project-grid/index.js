@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Container } from "../../../reusecore/Layout";
+import SectionTitle from "../../../reusecore/SectionTitle";
 
 import PageHeader from "../../../reusecore/PageHeader";
 
@@ -12,12 +13,13 @@ import smi from "../../../assets/images/app/projects/smi.svg";
 import imagehub from "../../../assets/images/image-hub/layer5-image-hub.png";
 import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import distributedPerformance from "../../../collections/projects/distributed-performance-management/distributed-performance_green.svg";
+import ContactFormModal from "../../../components/Contact-Modal";
 
 const ProjectPage = () => {
   return (
     <ProjectWrapper>
-      <PageHeader className="title" title="Layer5 Projects" path="Projects" />
-      <h3>Cloud Native Networking, Performance, Management, Automation</h3>
+      <PageHeader className="title" title="Cloud Native Management" path="/projects" />
+      <h3>for the fifth layer of distributed systems</h3>
       <div className="project-page-wrapper">
         <Container>
           <div className="project__grid">
@@ -30,6 +32,7 @@ const ProjectPage = () => {
             <Link to="/meshery" className="project__card two">
               <div className="project__card-container">
                 <img src={meshery} alt="Meshery" />
+                <h5>Meshery</h5>
               </div>
             </Link>
             <Link to="/projects/image-hub" className="project__card three">
@@ -66,6 +69,8 @@ const ProjectPage = () => {
               </div>
             </Link>
           </div>
+
+          <ContactFormModal callout_text="Contact Us" />
         </Container>
       </div>
     </ProjectWrapper>
