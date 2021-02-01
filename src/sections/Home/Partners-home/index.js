@@ -12,8 +12,8 @@ import nitk from "../../../assets/images/partners/nitk_black.png";
 
 import SectionTitle from "../../../reusecore/SectionTitle";
 
-
 import PartnerItemWrapper from "./partnerSection.style";
+import { Link } from "gatsby";
 
 const Projects = () => {
   return (
@@ -28,55 +28,55 @@ const Projects = () => {
             <h4>OUR PARTNERS</h4>
           </SectionTitle>
         </Row>
-        <Row>
-          <Col sm={8} md={6} lg={4}>
-            <a className="partner-card" href="/partners#redhat" target="_blank" rel="noreferrer">
-              <div className="partner__block__inner">
+        <Row Hcenter>
+          <Col sm={6} md={4} lg={3}>
+            <Link className="partner-card" to="/partners#redhat">
+              <div className="partner__block__inner horizontal">
                 <img src={redhat} alt="redhat" />
               </div>
-            </a>
+            </Link>
           </Col>
-          <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="/partners#uem" target="_blank" rel="noreferrer">
+          <Col sm={6} md={4} lg={3}>
+            <Link className="partner-card" to="/partners#uem">
               <div className="partner__block__inner">
                 <img src={uem} alt="uem" />
               </div>
-            </a>
+            </Link>
           </Col>
-          <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="/partners#utaustin" target="_blank" rel="noreferrer">
-              <div className="partner__block__inner">
+          <Col sm={6} md={4} lg={3}>
+            <Link className="partner-card" to="/partners#utaustin">
+              <div className="partner__block__inner horizontal">
                 <img src={utaustin} alt="University of Texas at Austin partnership with Layer5" />
               </div>
-            </a>
+            </Link>
           </Col>
-          <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="/partners#citrix" target="_blank" rel="noreferrer">
+          <Col sm={6} md={4} lg={3}>
+            <Link className="partner-card" to={"/partners#citrix"}>
               <div className="partner__block__inner">
                 <img src={citrix} alt="Citrix" />
               </div>
-            </a>
+            </Link>
           </Col>
-          <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="/news/layer5-and-hashicorp-launch-service-mesh-partnership" target="_blank" rel="noreferrer">
+          <Col sm={6} md={4} lg={3}>
+            <Link className="partner-card" to="/news/layer5-and-hashicorp-launch-service-mesh-partnership">
               <div className="partner__block__inner">
                 <img src={hashicorp} alt="Hashicorp partnership with Layer5" />
               </div>
-            </a>
+            </Link>
           </Col>
-          <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="/partners#hpe" target="_blank" rel="noreferrer">
-              <div className="partner__block__inner">
+          <Col sm={6} md={4} lg={3}>
+            <Link className="partner-card" to="/partners#hpe">
+              <div className="partner__block__inner horizontal">
                 <img src={hpe} alt="Hewlett-Packard Enterprise" />
               </div>
-            </a>
+            </Link>
           </Col>
-          <Col sm={6} md={4} lg={2}>
-            <a className="partner-card" href="/partners#nitk" target="_blank" rel="noreferrer">
+          <Col sm={6} md={4} lg={3}>
+            <Link className="partner-card" to="/partners#nitk">
               <div className="partner__block__inner">
                 <img src={nitk} alt="National Institute of Technology Karnataka" />
               </div>
-            </a>
+            </Link>
           </Col>          
         </Row>
       </Container>

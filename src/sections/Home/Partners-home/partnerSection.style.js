@@ -16,27 +16,29 @@ const PartnerItemWrapper = styled.section`
         }
     }
     img {
-        width: 60%;
+        max-width: 100%;
+        max-height: 100%;
         margin: auto;
     }
     .partner__block__inner {
-        padding: 1.5rem 1rem;
+        padding: 2rem;
         display: flex;
         transition: all 0.2s ease-in-out;
+        height: 150px;
     }
-    @media only screen and (max-width: 991px) {
-        .partner__block__inner{
-            padding: 3rem 2rem;
-        }
-     }
      @media only screen and (max-width: 768px) {
-        .partner__block__inner{
-            padding: 3rem 3rem;
+        .horizontal {
+            padding: 2rem 4rem;
         }
      }
      @media only screen and (max-width: 575px) {
-        .partner__block__inner{
-            padding: 2rem 6rem;
+        .horizontal {
+            padding: 3rem 6rem;
+        }
+     }
+     @media only screen and (max-width: 380px) {
+        .horizontal {
+            padding: 2.5rem;
         }
      }
 `;
