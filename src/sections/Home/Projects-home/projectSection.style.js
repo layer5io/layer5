@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const ProjectItemWrapper = styled.section`
     padding: 0 0 110px 0;
+    margin-top: 2rem;
     .project-title {
         .section-title{
             h4{
@@ -61,6 +62,12 @@ const ProjectItemWrapper = styled.section`
         margin-top: 25px;
         text-align: center;
     }
+    @media only screen and (max-width: 992px) {
+        .project-text{
+            font-size: 7rem;
+            color:red;
+        }
+    }
     @media only screen and (max-width: 912px) {
          padding: 60px 0 0 0;
          .project-title {
@@ -96,7 +103,7 @@ const ProjectItemWrapper = styled.section`
         }
      }
      @media only screen and (max-width: 568px) {
-        padding: 60px 0 40px 0;
+        padding: 60px 0 0px 0;
          .section-title,
         .project-content-wrap{
             text-align: center;

@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import { Container, Row, Col } from "../../reusecore/Layout";
-import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import SectionTitle from "../../../reusecore/SectionTitle";
+import Button from "../../../reusecore/Button";
 
-import projectImage1 from "../../assets/images/app/projects/landscape.png";
-import projectImage2 from "../../assets/images/app/projects/smp.png";
-import projectImage3 from "../../assets/images/app/projects/meshery-logo-light.png";
-import projectImage4 from "../../assets/images/app/projects/meshery-logo-light.png";
+import projectImage1 from "../../../assets/images/app/projects/landscape.png";
+import projectImage2 from "../../../assets/images/app/projects/smp.png";
+import projectImage3 from "../../../assets/images/app/projects/meshery-logo-light.png";
+import projectImage4 from "../../../assets/images/app/projects/meshery-logo-light.png";
 
 import ProjectItemWrapper from "./projectSection.style";
 
@@ -23,7 +23,7 @@ const Projects = () => {
               leftAlign={true}
               UniWidth="75%"
             >
-              <h4>PROJECTS</h4>
+              <h4>ENABLING YOU TO</h4>
               <h2>
                                 Operate any service mesh <span>with confidence</span>.
               </h2>
