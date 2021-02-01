@@ -15,7 +15,7 @@ const ImageHub = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Image Hub" />
+      <SEO title="Image Hub" description="Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters." />
       <Navigation />
       <ImageHubPage />
       <Footer/>

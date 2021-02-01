@@ -15,7 +15,7 @@ const FAQPage = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="FAQs" />
+      <SEO title="FAQs" description="Frequently Asked Questions" />
       <Navigation />
       <FAQ category = "all" />
       <Footer />

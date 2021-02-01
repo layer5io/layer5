@@ -27,7 +27,7 @@ import CloudNativeLeaders from "../sections/Cloud-Native";
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <SEO meta="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure."/>
+    <SEO description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure." />
     <Layout>
       <Navigation />
       <Banner />
