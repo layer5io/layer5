@@ -6,6 +6,7 @@ import SEO from "../../../components/seo";
 
 import Navigation from "../../../sections/Navigation";
 import HowMehseryWorks from "../../../sections/Meshery/How-meshery-works";
+import HowitworksHero from "../../../sections/Meshery/How-meshery-works/hero";
 import Footer from "../../../sections/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
@@ -24,6 +25,7 @@ const Howitworks = () => (
       <GlobalStyle />
       <SEO title="Meshery, Multi-Mesh Manager" />
       <Navigation />
+      <HowitworksHero/>
       <HowMehseryWorks
         title="How Meshery Manages Meshes"
         description="As the multi-mesh manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
