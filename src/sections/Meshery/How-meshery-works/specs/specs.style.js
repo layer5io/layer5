@@ -49,6 +49,13 @@ const SpecsWrapper = styled.div`
     }
   }
   
+  .cloud-native{
+    margin: 5rem 0;
+    h3{
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
   
   
 `;
