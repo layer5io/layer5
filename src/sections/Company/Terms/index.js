@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container, Row, Col } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
 
 import TermsWrapper from "./terms.style";
 
