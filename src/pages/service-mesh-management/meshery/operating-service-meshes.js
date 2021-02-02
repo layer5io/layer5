@@ -6,6 +6,7 @@ import SEO from "../../../components/seo";
 
 import HowMesheryWorks from "../../../sections/Meshery/How-meshery-works";
 import HowitworksHero from "../../../sections/Meshery/How-meshery-works/hero";
+import HowitworksSpecs from "../../../sections/Meshery/How-meshery-works/specs";
 import Navigation from "../../../sections/General/Navigation";
 import Footer from "../../../sections/General/Footer";
 
@@ -98,6 +99,7 @@ const Howitworks = () => (
               <p>Automate credential injection to securely access services and hosts with HashiCorp Vault. Reduce risk of leaking credentials with dynamic secrets and just-in-time credentials.</p>,
           },
         ]} />
+      <HowitworksSpecs/>
       <Container>
         <HowMesheryWorksWrapper>
           <SectionTitle
