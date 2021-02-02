@@ -4,9 +4,9 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../../../components/layout";
 import SEO from "../../../components/seo";
 
-import Navigation from "../../../sections/Navigation";
+import Navigation from "../../../sections/General/Navigation";
 import Works from "../../../sections/ServiceMesh";
-import Footer from "../../../sections/Footer";
+import Footer from "../../../sections/General/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
@@ -22,7 +22,7 @@ const Howitworks = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="How the service mesh management plane, Meshery works" />
+      <SEO title="Meshery, Multi-Mesh Manager" description="How the service mesh management plane, Meshery works" />
       <Navigation />
       <Container>
         <br></br>

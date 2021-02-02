@@ -16,11 +16,11 @@ Layer5 community members are an integral part of what makes Layer5 and it's proj
 
 The service mesh landscape is powered by Gatsbyjs. In order to add/update the landscape, fork this repository, clone it, create a branch and navigate to the **\_data/categories** folder. Edit these yaml files (if appropriate):
 
-- [non-functional.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/non-functional.js) - overview of various service meshes
-- [meshes.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-gridmeshes.js) - list of individual service mesh details
-- [proxies.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/proxies.js) - list of individual modern proxies
-- [gw.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/gw.js) - list of API gateways
-- [lb.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/lb.js) - list of load balancers
+- [non-functional.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape/non-functional.js) - overview of various service meshes
+- [meshes.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape/meshes.js) - list of individual service mesh details
+- [proxies.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape/proxies.js) - list of individual modern proxies
+- [gw.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape/gw.js) - list of API gateways
+- [lb.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape/lb.js) - list of load balancers
 
 Entries should be listed in alphabetical order. Data provided to the `smi.js` is dynamic and based upon results from conformance tests run using Meshery.
 

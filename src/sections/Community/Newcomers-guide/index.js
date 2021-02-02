@@ -7,7 +7,7 @@ import CommunityImage1 from "./community-image1.png";
 import CommunityImage2 from "./community-image2.png";
 import CommunityImage3 from "./community-image3.png";
 import CommunityImage4 from "./community-image4.png";
-import TutorialsTable from "../../Tutorials-table";
+import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 

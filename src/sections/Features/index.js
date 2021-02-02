@@ -4,10 +4,10 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 
 import Icon1 from "../../assets/images/app/features/01.svg";
-import Icon2 from "../../assets/images/app/features/02.svg";
-import Icon3 from "../../assets/images/app/features/03.svg";
-import Icon4 from "../../assets/images/app/features/04.svg";
-import Icon5 from "../../assets/images/app/features/05.svg";
+// import Icon2 from "../../assets/images/app/features/02.svg";
+// import Icon3 from "../../assets/images/app/features/03.svg";
+// import Icon4 from "../../assets/images/app/features/04.svg";
+// import Icon5 from "../../assets/images/app/features/05.svg";
 import mesheryOperatorDark from "./img/meshery-operator_dark.svg";
 import policyEngineGreen from "./img/policy-engine_green.svg";
 import distributedPerformance from "./img/distributed-performance_green.svg";

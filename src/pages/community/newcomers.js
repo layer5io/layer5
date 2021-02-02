@@ -3,8 +3,8 @@ import { ThemeProvider } from "styled-components";
 import theme from "../../theme/app/themeStyles";
 import { GlobalStyle } from "../../sections/app.style";
 import SEO from "../../components/seo";
-import Navigation from "../../sections/Navigation";
-import Footer from "../../sections/Footer";
+import Navigation from "../../sections/General/Navigation";
+import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
 import NewcomersGuide from "../../sections/Community/Newcomers-guide";
 
@@ -13,7 +13,7 @@ const newComers = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Newcomers" />
+        <SEO title="Newcomers" description="Contributions from Newcomers are actively encouraged in Layer5. Find a Meshmate and start contributing!" />
         <Navigation />
         <NewcomersGuide />
         <Footer />
