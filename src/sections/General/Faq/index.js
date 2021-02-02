@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Container} from "../../reusecore/Layout";
-import SectionTitle from "../../reusecore/SectionTitle";
+import { Container} from "../../../reusecore/Layout";
+import SectionTitle from "../../../reusecore/SectionTitle";
 // import { FiSearch } from "react-icons/fi";
-import Button from "../../reusecore/Button";
+import Button from "../../../reusecore/Button";
 import {
   Accordion,
   AccordionItem,
@@ -12,11 +12,11 @@ import {
   IconWrapper,
   OpenIcon,
   CloseIcon
-} from "../../reusecore/Accordion";
+} from "../../../reusecore/Accordion";
 
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-import data from "../../assets/data/faq";
+import data from "../../../assets/data/faq";
 
 import FaqSectionWrapper from "./faqSection.style";
 

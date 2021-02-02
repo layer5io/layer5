@@ -47,7 +47,7 @@ const Data = {
       subItems: [
         {
           name: "Distributed Performance",
-          path: "/projects/distributed-performance-management-of-service-meshes",
+          path: "/projects/distributed-performance-management",
           sepLine: true
         },
         {
@@ -60,11 +60,11 @@ const Data = {
           path: "/meshery",
           sepLine: true
         },
-        {
-          name: "Service Mesh Landscape",
-          path: "/landscape",
-          sepLine: true
-        },
+        // {
+        //   name: "Service Mesh Landscape",
+        //   path: "/landscape",
+        //   sepLine: true
+        // },
         {
           name: "Service Mesh Interface",
           path: "/projects/service-mesh-interface-conformance",
@@ -78,7 +78,7 @@ const Data = {
       ],
       actionItems: [
         {
-          actionName: "Projects",
+          actionName: "All projects",
           actionLink: "/projects",
         }
       ],
@@ -101,19 +101,19 @@ const Data = {
           sepLine: true
         },
         {
-          name: "Service Mesh Labs",
-          path: "/learn/service-mesh",
+          name: "Workshops",
+          path: "/learn/workshops",
           sepLine: true
         },
         {
-          name: "Workshops",
-          path: "/learn/workshops",
+          name: "Service Mesh Labs",
+          path: "/learn/service-mesh-labs",
           sepLine: true
         }
       ],
       actionItems: [
         {
-          actionName: "Learn",
+          actionName: "Free service mesh training",
           actionLink: "/learn",
         }
       ],
@@ -162,10 +162,10 @@ const Data = {
       actionItems: [
         {
           actionName: "Join the community",
-          actionLink: "/community",
+          actionLink: "/community/newcomers",
         },
         {
-          actionName: "Meet the community",
+          actionName: "Open source internship programs",
           actionLink: "/community/members",
         }
       ],
@@ -197,8 +197,12 @@ const Data = {
       ],
       actionItems: [
         {
-          actionName: "Blogs",
-          actionLink: "/blog",
+          actionName: "Layer5 in the news",
+          actionLink: "/news",
+        },
+        {
+          actionName: "Recent announcements",
+          actionLink: "/blog/category/announcements"
         }
       ],
       // div1: {

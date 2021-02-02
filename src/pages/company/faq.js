@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
 import Navigation from "../../sections/General/Navigation";
-import FAQ from "../../sections/Faq";
+import FAQ from "../../sections/General/Faq";
 import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
