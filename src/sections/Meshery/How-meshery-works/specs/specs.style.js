@@ -56,6 +56,37 @@ const SpecsWrapper = styled.div`
       margin-bottom: 1rem;
     }
   }
+   
+   overflow: hidden;
+  .find-kubernetes{
+    position: relative;
+    img{
+      position: absolute;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .green-bubble{
+      left: -320px;
+      top: -180px;
+      overflow: hidden;
+    }
+    
+    .yellow-bubble{
+      right: -230px;
+      bottom: -100px;
+      overflow: hidden;
+    }
+    .content{
+      text-align: center;
+      margin: 10rem 0;
+      h3{
+        font-weight: 600;
+      }
+      p{
+        margin: 1rem 0;
+      }
+    }
+  }
   
   
 `;

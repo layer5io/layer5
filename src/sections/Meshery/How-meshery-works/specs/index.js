@@ -1,7 +1,12 @@
 import React from "react";
 import {Container, Col, Row} from "../../../../reusecore/Layout";
 import MesheryImage1 from "../images/meshery-img.png";
+import GreenBubble from "../images/green-bubble.svg";
+import YellowBubble from "../images/yellow-bubble.svg";
 import DataCard from "./data-card";
+import VintageBox from "../../../../reusecore/VintageBox";
+import Button from "../../../../reusecore/Button";
+
 import SpecsWrapper from "./specs.style";
 
 const HowitworksSpecs = () => {
@@ -39,6 +44,18 @@ const HowitworksSpecs = () => {
             <p>Tomorrow: 70% of cloud native environments running a service mesh in three years</p>
           </Col>
         </Row>
+        <div className="find-kubernetes">
+          <img className="green-bubble" src={GreenBubble} alt="bubble"/>
+          <img className="yellow-bubble" src={YellowBubble} alt="bubble"/>
+          <div className="content">
+            <h3>Where you find a Kubernetes,
+              you’ll find a service mesh.</h3>
+            <p>Service meshes are the third major step in enterprises cloud native journeys.</p>
+            <VintageBox left={true} vintageTwo={true} >
+              <Button primary url="/service-mesh-management/meshery/getting-started" title="Install Meshery"/>
+            </VintageBox>
+          </div>
+        </div>
       </Container>
     </SpecsWrapper>
   );

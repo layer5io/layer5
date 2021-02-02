@@ -12,20 +12,9 @@ import Footer from "../../../sections/General/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
-import { Container } from "../../../reusecore/Layout";
-import SectionTitle from "../../../reusecore/SectionTitle";
 
 
-import Button from "../../../reusecore/Button";
-import VintageBox from "../../../reusecore/VintageBox";
-
-import styled from "styled-components";
-export const HowMesheryWorksWrapper = styled.div`
-    margin-bottom: 5rem;
-    margin-top: 5rem;
-`;
-
-const Howitworks = () => (
+const OperatingServiceMeshes = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -100,29 +89,8 @@ const Howitworks = () => (
           },
         ]} />
       <HowitworksSpecs/>
-      <Container>
-        <HowMesheryWorksWrapper>
-          <SectionTitle
-            leftAlign={false}
-            UniWidth="100%"
-          >
-            <h3>Where you find a Kubernetes,
-you’ll find a service mesh.</h3>
-            <p>Service meshes are the third major step in enterprises cloud native journeys.</p>
-            <VintageBox left={true} vintageTwo={true} >
-              <Button
-                primary
-                className="about-button"
-                url="./getting-started"
-                title="Install Meshery"
-                external="false"
-              />
-            </VintageBox>
-          </SectionTitle>
-        </HowMesheryWorksWrapper>
-      </Container>
       <Footer />
     </Layout>
   </ThemeProvider>
 );
-export default Howitworks;
+export default OperatingServiceMeshes;
