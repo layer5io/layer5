@@ -19,6 +19,7 @@ const HowitworksWrapper = styled.section`
         text-align: center;
         margin-top: 0;
         margin-bottom: 32px;
+        font-weight: 700;
         @media (max-width: 767px) {
           margin-bottom: 0;
         }

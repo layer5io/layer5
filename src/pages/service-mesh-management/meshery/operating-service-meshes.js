@@ -5,8 +5,8 @@ import Layout from "../../../components/layout";
 import SEO from "../../../components/seo";
 
 import HowMesheryWorks from "../../../sections/Meshery/How-meshery-works";
-import HowitworksHero from "../../../sections/Meshery/How-meshery-works/hero";
-import HowitworksSpecs from "../../../sections/Meshery/How-meshery-works/specs";
+import HowMesheryWorksHero from "../../../sections/Meshery/How-meshery-works/hero";
+import HowMesheryWorksSpecs from "../../../sections/Meshery/How-meshery-works/specs";
 import Navigation from "../../../sections/General/Navigation";
 import Footer from "../../../sections/General/Footer";
 
@@ -20,7 +20,7 @@ const OperatingServiceMeshes = () => (
       <GlobalStyle />
       <SEO title="Meshery, Multi-Mesh Manager" description="How the service mesh management plane, Meshery works" />
       <Navigation />
-      <HowitworksHero />
+      <HowMesheryWorksHero />
       <HowMesheryWorks
         title="How Meshery Manages Meshes"
         description="As the multi-mesh manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
@@ -88,7 +88,7 @@ const OperatingServiceMeshes = () => (
               <p>Automate credential injection to securely access services and hosts with HashiCorp Vault. Reduce risk of leaking credentials with dynamic secrets and just-in-time credentials.</p>,
           },
         ]} />
-      <HowitworksSpecs/>
+      <HowMesheryWorksSpecs/>
       <Footer />
     </Layout>
   </ThemeProvider>

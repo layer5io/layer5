@@ -9,7 +9,7 @@ import Button from "../../../../reusecore/Button";
 
 import SpecsWrapper from "./specs.style";
 
-const HowitworksSpecs = () => {
+const HowMesheryWorksSpecs = () => {
   return(
     <SpecsWrapper>
       <div className="management-plane">
@@ -61,4 +61,4 @@ const HowitworksSpecs = () => {
   );
 };
 
-export default HowitworksSpecs;
+export default HowMesheryWorksSpecs;

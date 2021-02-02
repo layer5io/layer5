@@ -3,7 +3,7 @@ import {Container, Col, Row} from "../../../../reusecore/Layout";
 import styled from "styled-components";
 import HeroImage from "./hero-img.png";
 
-const HowitworksHeroWrapper = styled.div`
+const HowMesheryWorksHeroWrapper = styled.div`
     margin-bottom: 4rem;
     .hero-text{
       h5{
@@ -34,9 +34,9 @@ const HowitworksHeroWrapper = styled.div`
   
 `;
 
-const HowitworksHero = () => {
+const HowMesheryWorksHero = () => {
   return(
-    <HowitworksHeroWrapper>
+    <HowMesheryWorksHeroWrapper>
       <Container>
         <Row Vcenter>
           <Col className="hero-text" xs={12} lg={6}>
@@ -49,8 +49,8 @@ const HowitworksHero = () => {
           </Col>
         </Row>
       </Container>
-    </HowitworksHeroWrapper>
+    </HowMesheryWorksHeroWrapper>
   );
 };
 
-export default HowitworksHero;
+export default HowMesheryWorksHero;
