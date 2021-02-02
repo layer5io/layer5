@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql, useStaticQuery, Link} from "gatsby";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import Card from "../../components/Card";
+import Card from "../../../components/Card";
 import RelatedPostsWrapper from "./relatedPosts.style";
-import { Col } from "../../reusecore/Layout";
+import { Col } from "../../../reusecore/Layout";
 import Slider from "react-slick";
 import RelatedPostsFactory from "./relatedPostsFactory";
 

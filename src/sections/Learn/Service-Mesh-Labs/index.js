@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { LabsWrapper } from "./LabsWrapper.style";
-import PageHeader from "../../reusecore/PageHeader";
-import ScenarioCard from "../../components/ScenarioCard";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
+import PageHeader from "../../../reusecore/PageHeader";
+import ScenarioCard from "../../../components/ScenarioCard";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { data } from "./courseData";
 

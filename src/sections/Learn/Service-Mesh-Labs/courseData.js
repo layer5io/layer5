@@ -1,8 +1,8 @@
-import istioLogo from "../../assets/images/service-mesh-icons/istio-white.svg";
-import linkerdLogo from "../../assets/images/service-mesh-icons/linkerd-white.svg";
-import consulLogo from "../../assets/images/service-mesh-icons/consul-white.svg";
-import kumaLogo from "../../assets/images/service-mesh-icons/kuma-white.svg";
-import nsmLogo from "../../assets/images/service-mesh-icons/nsm-white.svg";
+import istioLogo from "../../../assets/images/service-mesh-icons/istio-white.svg";
+import linkerdLogo from "../../../assets/images/service-mesh-icons/linkerd-white.svg";
+import consulLogo from "../../../assets/images/service-mesh-icons/consul-white.svg";
+import kumaLogo from "../../../assets/images/service-mesh-icons/kuma-white.svg";
+import nsmLogo from "../../../assets/images/service-mesh-icons/nsm-white.svg";
 // import smpLogo from "../../assets/images/smp/horizontal/smp-light-text-side.svg";
 import smpLogo from "./assets/smp-dark-text.svg";
 import smiLogo from "./assets/servicemeshinterface-icon-color.svg";
