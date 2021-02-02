@@ -15,6 +15,12 @@ const SpecsWrapper = styled.div`
       position: relative;
       padding: 6rem;
       overflow: visible;
+      
+      @media (max-width: 36rem) {
+        padding-left: 2rem;
+        padding-bottom: 12rem;
+      }
+      
       h2{
         position: relative;
         color: ${props => props.theme.white};
@@ -35,9 +41,15 @@ const SpecsWrapper = styled.div`
         opacity: 0.2;
       }
     }
-   
     
+    .card{
+      @media (max-width: 62rem) {
+        padding-bottom: 2rem;
+      }
+    }
   }
+  
+  
   
 `;
 

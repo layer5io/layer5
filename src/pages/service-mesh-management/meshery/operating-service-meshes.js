@@ -38,19 +38,19 @@ const Howitworks = () => (
         features={[
           {
             title: "Supporting Service Mesh Interface",
-            icon: require("../../../sections/Meshery/How-meshery-works/icons/consulicon.svg"),
+            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
             description:
               <p>Adapters allow Meshery to interface with the different service meshes, exposing their differentiated value to users.</p>,
           },
           {
             title: "Adapters should avoid wheel reinvention, but seek to leverage the functionality provided by service meshes under management.",
-            icon: require("../../../sections/Meshery/How-meshery-works/icons/consulicon.svg"),
+            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
             description:
               <p>This both reduces sustaining costs and improves reliability</p>,
           },
           {
             title: "Each service mesh adapter is unique",
-            icon: require("../../../sections/Meshery/How-meshery-works/icons/consulicon.svg"),
+            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
             description:
               <p>Every Meshery Adapter provides a common substrate of support for every service mesh, offering a
               standard set of management features across all service meshes. Carre is taken in each Meshery Adapters
@@ -59,20 +59,20 @@ const Howitworks = () => (
           },
           {
             title: "Main",
-            icon: require("../../../sections/Meshery/How-meshery-works/icons/consulicon.svg"),
+            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
             description:
               <p>Automate credential injection to securely access services and
                       hosts with HashiCorp Vault. Reduce risk of leaking credentials with dynamic secrets and just-in-time credentials.</p>,
           },
           {
             title: "BG",
-            icon: require("../../../sections/Meshery/How-meshery-works/icons/consulicon.svg"),
+            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
             description:
               <p>Automate credential injection to securely access services and hosts with HashiCorp Vault. Reduce risk of leaking credentials with dynamic secrets and just-in-time credentials.</p>,
           },
           {
             title: "Managing multiple instances of the same type of service mesh",
-            icon: require("../../../sections/Meshery/How-meshery-works/icons/consulicon.svg"),
+            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
             description:
               <p>Adapters establish
               communication with Kubernetes and a specific type of service mesh.
@@ -82,19 +82,19 @@ const Howitworks = () => (
           },
           {
             title: "BG",
-            icon: require("../../../sections/Meshery/How-meshery-works/icons/consulicon.svg"),
+            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
             description:
               <p>Automate credential injection to securely access services and hosts with HashiCorp Vault. Reduce risk of leaking credentials with dynamic secrets and just-in-time credentials.</p>,
           },
           {
             title: "BG",
-            icon: require("../../../sections/Meshery/How-meshery-works/icons/consulicon.svg"),
+            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
             description:
               <p>Automate credential injection to securely access services and hosts with HashiCorp Vault. Reduce risk of leaking credentials with dynamic secrets and just-in-time credentials.</p>,
           },
           {
             title: "BG",
-            icon: require("../../../sections/Meshery/How-meshery-works/icons/consulicon.svg"),
+            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
             description:
               <p>Automate credential injection to securely access services and hosts with HashiCorp Vault. Reduce risk of leaking credentials with dynamic secrets and just-in-time credentials.</p>,
           },

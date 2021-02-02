@@ -1,6 +1,6 @@
 import React from "react";
 import {Container, Col, Row} from "../../../../reusecore/Layout";
-import MesheryWhiteLogo from "../../../../assets/images/meshery/icon-only/meshery-logo.svg";
+import DataCard from "./data-card";
 import SpecsWrapper from "./specs.style";
 
 const HowitworksSpecs = () => {
@@ -10,12 +10,11 @@ const HowitworksSpecs = () => {
         <Container>
           <Row Vcenter>
             <Col className="text" xs={12} lg={6}>
-              {/*<img src={MesheryWhiteLogo} alt="meshery logo"/>*/}
               <h2>Meshery is the service mesh management plane</h2>
               <p>Adopt and operate any service mesh with confidence using Meshery's management features</p>
             </Col>
             <Col className="card" xs={12} lg={6}>
-                            hhh
+              <DataCard/>
             </Col>
           </Row>
         </Container>
