@@ -414,6 +414,45 @@ export const LandscapePageWrapper=styled.div`
 			img {
 				margin: 0 auto 0.25rem;
 			}
+		}
+	}
+	.Legend {
+		display: flex;
+		padding: 1rem;
+		text-align: right;
+		margin-left: auto;
+		vertical-align: middle;
+		border: 3px ${props => props.theme.primaryColor};
+		background-color: ${props => props.theme.darkJungleGreenColor};
+		color: #efefef;
+		font-size: .9rem;
+		border-style: inset; 
+		span {
+			font-size: 1rem;
+			font-weight:600;
+		}
+		img {
+			height: 2rem;
+			vertical-align:middle;
+			padding: 0.3rem;
+			margin-right: .25rem;
+		}
+		@media screen and (max-width:767px) {
+			display: block;
+	
+			img {
+				margin: 0 auto 0.25rem;
+			}
+		}
+
+		div {
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+			
+			border: 1px dashed ${props => props.theme.primaryLightColor};
+			margin: 0rem .3rem;
+
+		}
 	}
 
 	.Landscape div {
