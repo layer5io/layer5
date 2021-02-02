@@ -5,8 +5,8 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
 import Navigation from "../../sections/Navigation";
-import ImageHubPage from "../../sections/Image-Hub";
-import Footer from "../../sections/Footer";
+import ImageHubPage from "../../sections/Projects/Image-Hub";
+import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";

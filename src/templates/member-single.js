@@ -7,7 +7,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../sections/Navigation";
 import MemberSingle from "../sections/Community/Member-single";
-import Footer from "../sections/Footer";
+import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";

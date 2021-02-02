@@ -7,7 +7,7 @@ import { graphql } from "gatsby";
 
 import Navigation from "../../sections/Navigation";
 import NewsPage from "../../sections/Company/News-grid";
-import Footer from "../../sections/Footer";
+import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";

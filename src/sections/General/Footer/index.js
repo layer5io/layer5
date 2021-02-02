@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import logo from "../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg";
-import SocialLinksColor from "../../components/SocialLinks-Color";
-import Button from "../../reusecore/Button";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-bg.svg";
+import SocialLinksColor from "../../../components/SocialLinks-Color";
+import Button from "../../../reusecore/Button";
 import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 

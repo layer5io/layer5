@@ -8,7 +8,7 @@ import SEO from "../components/seo";
 
 import Navigation from "../sections/Navigation";
 import ProgramsSingle from "../sections/Careers/Careers-Programs-single";
-import Footer from "../sections/Footer";
+import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";

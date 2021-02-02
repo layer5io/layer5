@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
 import Navigation from "../../sections/Navigation";
-import Footer from "../../sections/Footer";
+import Footer from "../../sections/General/Footer";
 import ProgramsGrid from "../../sections/Careers/Careers-Programs-grid";
 
 import { GlobalStyle } from "../../sections/app.style";

@@ -4,7 +4,7 @@ import theme from "../../theme/app/themeStyles";
 import { GlobalStyle } from "../../sections/app.style";
 import SEO from "../../components/seo";
 import Navigation from "../../sections/Navigation";
-import Footer from "../../sections/Footer";
+import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
 import NewcomersGuide from "../../sections/Community/Newcomers-guide";
 

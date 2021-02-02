@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
 import Navigation from "../../sections/Navigation";
-import Footer from "../../sections/Footer";
+import Footer from "../../sections/General/Footer";
 import ServiceMeshLabs from "../../sections/Learn/Service-Mesh-Labs";
 
 import { GlobalStyle } from "../../sections/app.style";

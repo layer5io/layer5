@@ -1,13 +1,13 @@
 import React from "react";
 
-import Layout from "../../components/layout"; 
+import Layout from "../../../components/layout"; 
 
 import ImageHubWrapper from "./imageHub.style";
-import { Container } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
+import { Container } from "../../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
 import Slider from "react-slick";
 
-import ImageHub from "../../assets/images/image-hub/layer5-image-hub.png";
+import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.png";
 import  imagehubslider1  from "./service-mesh-architecture-consul.png";
 import  imagehubslider2  from "./image-hub-on-consul-with-wasm-and-meshery.png";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "gatsby";
 import { useTable } from "react-table";
-import data from "../../assets/data/tutorials";
+import data from "../../../../assets/data/tutorials";
 import {TutorialsTableWrapper} from "./TutorialsTable.style";
 
 const TutorialsTable = () => {

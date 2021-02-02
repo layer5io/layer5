@@ -14,7 +14,7 @@
 // import Testimonial from "../sections/Testimonial";
 // import News from "../sections/Company/News";
 // import ContactCard from "../components/ContactCard";
-// import Footer from "../sections/Footer";
+// import Footer from "../sections/General/Footer";
 
 // import { GlobalStyle } from "../sections/app.style";
 // import theme from "../theme/hosting/themeStyles";

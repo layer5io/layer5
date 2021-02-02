@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Row } from "../../reusecore/Layout";
+import { Row } from "../../../reusecore/Layout";
 
 import flag1 from "../../assets/images/footer/flags/de.svg";
 import flag2 from "../../assets/images/footer/flags/en.svg";

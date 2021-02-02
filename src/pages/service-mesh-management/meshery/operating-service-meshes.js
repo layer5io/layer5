@@ -6,7 +6,7 @@ import SEO from "../../../components/seo";
 
 import Navigation from "../../../sections/Navigation";
 import Works from "../../../sections/ServiceMesh";
-import Footer from "../../../sections/Footer";
+import Footer from "../../../sections/General/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
