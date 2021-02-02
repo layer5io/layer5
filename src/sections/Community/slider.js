@@ -21,6 +21,7 @@ import CommunityImage16 from "./Community-pictures/gsoc-shirt.jpg";
 import CommunityImage17 from "./Community-pictures/Michael Gfeller.png";
 import CommunityImage18 from "./Community-pictures/Lee Calcote and Zack Butcher.jpeg";
 import CommunityImage19 from "./Community-pictures/Aisuko Li.png";
+import CommunityImage21 from "./Community-pictures/Anirudh Jain.png";
 
 // 
 
@@ -86,6 +87,7 @@ const PictureSlider = () => {
         <img src={CommunityImage17} alt="Community Member"/>
         <img src={CommunityImage18} alt="Community Member"/>
         <img src={CommunityImage19} alt="Community Member"/>
+        <img src={CommunityImage21} alt="Community Member"/>
       </Slider>
     </PictureSliderWrapper>
   );
