@@ -4,7 +4,7 @@
 // import Layout from "../components/layout";
 // import SEO from "../components/seo";
 
-// import Navigation from "../sections/Navigation";
+// import Navigation from "../sections/General/Navigation";
 // import Banner from "../sections/z_other/Banner-hosting";
 // import About from "../sections/z_other/About-hosting";
 // import Features from "../sections/z_other/Features-hosting";

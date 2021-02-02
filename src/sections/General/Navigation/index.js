@@ -4,8 +4,8 @@ import { Link } from "gatsby";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
-import { Container } from "../../reusecore/Layout";
-import layer5_logo from "../../assets/images/app/layer5.svg";
+import { Container } from "../../../reusecore/Layout";
+import layer5_logo from "../../../assets/images/app/layer5.svg";
 
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";

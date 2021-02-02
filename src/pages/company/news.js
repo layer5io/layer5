@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import { graphql } from "gatsby";
 
-import Navigation from "../../sections/Navigation";
+import Navigation from "../../sections/General/Navigation";
 import NewsPage from "../../sections/Company/News-grid";
 import Footer from "../../sections/General/Footer";
 

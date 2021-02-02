@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import Navigation from "../sections/Navigation";
+import Navigation from "../sections/General/Navigation";
 import L404 from "../sections/404";
 import Footer from "../sections/General/Footer";
 

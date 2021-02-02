@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import Navigation from "../sections/Navigation";
+import Navigation from "../sections/General/Navigation";
 import BlogSingle from "../sections/Blog/Blog-single";
 import Footer from "../sections/General/Footer";
 

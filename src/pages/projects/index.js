@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
-import Navigation from "../../sections/Navigation";
+import Navigation from "../../sections/General/Navigation";
 import ProjectPage from "../../sections/Projects/Project-grid";
 import Footer from "../../sections/General/Footer";
 

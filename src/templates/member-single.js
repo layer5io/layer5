@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Navigation from "../sections/Navigation";
+import Navigation from "../sections/General/Navigation";
 import MemberSingle from "../sections/Community/Member-single";
 import Footer from "../sections/General/Footer";
 
