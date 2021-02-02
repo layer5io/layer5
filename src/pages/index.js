@@ -22,7 +22,7 @@ import theme from "../theme/app/themeStyles";
 import EngineerEnabler from "../sections/Home/Engineer-enabler";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
-import CloudNativeLeaders from "../sections/Cloud-Native";
+import CloudNativeLeaders from "../sections/Home/Cloud-Native";
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>

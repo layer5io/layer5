@@ -42,7 +42,7 @@ const HowitworksHero = () => {
           <Col className="hero-text" xs={12} lg={6}>
             <h5>It's meshery out there</h5>
             <h1> Wrangle your mesh with Meshery</h1>
-            <p>Run Mehsery Operator with MeshSync inside and you'll</p>
+            <p>Run Meshery Operator with MeshSync inside</p>
           </Col>
           <Col className="hero-img-wrapper" xs={12} lg={6}>
             <img src={HeroImage} alt="hero"/>
