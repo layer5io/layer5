@@ -6,7 +6,7 @@ import Meshmate2020 from "./meshmate_of_the_year_2020.svg";
 import Image from "../image";
 
 const ProfileCard = (props) => {
-  const {name, status, image_path, meshmate, badges} = props.frontmatter;
+  const {name, status, image_path, meshmate} = props.frontmatter;
   const link = props.cardlink;
   return(
     <ProfileCardWrapper status={status}>
