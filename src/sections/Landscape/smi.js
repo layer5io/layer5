@@ -40,7 +40,7 @@ function SMI_Compatibility() {
   return (
     <Tabs style={{ overflow: "auto", whiteSpace: "nowrap"}} className="landscape-table">
       <TabList>
-        <Tab>V0.1.0</Tab>
+        <Tab>Test Set v0.4.9</Tab>
       </TabList>
       <TabPanel>
         <Table columns={columns} data={data} spec={{"traffic-access":"v1alpha1", "traffic-split":"v1alpha1", "traffic-spec":"v1alpha1"}} />

@@ -21,6 +21,8 @@ import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
 
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+
 const LandscapeGrid=() => {
   return (
     <LandscapePageWrapper>
@@ -105,21 +107,23 @@ const LandscapeGrid=() => {
                   <Tools />
                 </TabPanel>
               </Tabs>
-              <h2 className="sub-heading landscape-section-heading">Service Mesh Interface Compliance</h2>
+              <a name="#smi"></a>
+              <h2 className="sub-heading landscape-section-heading" >Service Mesh Interface Compliance</h2>
               <h4 className="landscape-section-sub-heading">Is your service mesh compliant? <a href="/projects/service-mesh-interface-conformance">Find out</a>.</h4>
               <SMI_Compatibility />
               <div className="Legend">
+                <span>Legend</span>:
                 <div className="Landscape">
                   <img alt="Full" src={passingMark} />
-                  <span className="text-grey">Full capability</span>
+                  Fully Compatible
                 </div>
                 <div>
                   <img alt="Half" src={halfMark} />
-                  <span className="text-grey">Partial capability</span>
+                  Partially Compatible
                 </div>
                 <div>
                   <img alt="None" src={failingMark} />
-                  <span className="text-grey">Dosnt have the capability</span>
+                  Incompatible
                 </div>
               </div>
               <div className="AboutLandscape">
