@@ -4,10 +4,10 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../../../components/layout";
 import SEO from "../../../components/seo";
 
-import Navigation from "../../../sections/Navigation";
-import HowMehseryWorks from "../../../sections/Meshery/How-meshery-works";
+import HowMesheryWorks from "../../../sections/Meshery/How-meshery-works";
 import HowitworksHero from "../../../sections/Meshery/How-meshery-works/hero";
-import Footer from "../../../sections/Footer";
+import Navigation from "../../../sections/General/Navigation";
+import Footer from "../../../sections/General/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
@@ -23,10 +23,10 @@ const Howitworks = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Meshery, Multi-Mesh Manager" />
+      <SEO title="Meshery, Multi-Mesh Manager" description="How the service mesh management plane, Meshery works" />
       <Navigation />
       <HowitworksHero/>
-      <HowMehseryWorks
+      <HowMesheryWorks
         title="How Meshery Manages Meshes"
         description="As the multi-mesh manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
         features={[
