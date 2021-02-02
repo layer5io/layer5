@@ -9,7 +9,6 @@ import { Link } from "gatsby";
 import { MembersGridWrapper, selectStyles, dropdownTheme } from "./membersGrid.style";
 import VintageBox from "../../../reusecore/VintageBox";
 import { FaEnvelope, FaUsers } from "react-icons/fa";
-import chroma from "chroma-js";
 
 const dot = (color = "#ccc") => ({
   alignItems: "center",
@@ -23,13 +22,13 @@ const dot = (color = "#ccc") => ({
     marginRight: 8,
     height: 10,
     width: 10,
+    zindex: 1000,
   },
 });
 
 const colourStyles = {
   control: styles => ({ ...styles, backgroundColor: "white" }),
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-    const color = chroma(data.color);
     return {
       ...styles,
       backgroundColor: isDisabled
@@ -37,21 +36,15 @@ const colourStyles = {
         : isSelected
           ? data.color
           : isFocused
-            ? color.alpha(0.1).css()
+            ? data.color + "777"
             : null,
-      color: isDisabled
-        ? "#ccc"
-        : isSelected
-          ? chroma.contrast(color, "white") > 2
-            ? "white"
-            : "black"
-          : data.color,
-      cursor: isDisabled ? "not-allowed" : "default",
+      color: "555" + data.color,
+
+      zindex: 500,
 
       ":active": {
         ...styles[":active"],
-        backgroundColor:
-          !isDisabled && (isSelected ? data.color : color.alpha(0.3).css()),
+        backgroundColor: (isSelected ? data.color : "444" + data.color),
       },
     };
   },
