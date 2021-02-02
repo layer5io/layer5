@@ -4,9 +4,9 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
-import Navigation from "../../sections/Navigation";
-import FAQ from "../../sections/Faq";
-import Footer from "../../sections/Footer";
+import Navigation from "../../sections/General/Navigation";
+import FAQ from "../../sections/General/Faq";
+import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
@@ -15,7 +15,7 @@ const FAQPage = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="FAQs" />
+      <SEO title="FAQs" description="Frequently Asked Questions" />
       <Navigation />
       <FAQ category = "all" />
       <Footer />

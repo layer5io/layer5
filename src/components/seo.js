@@ -28,7 +28,10 @@ function SEO({ description, lang, meta, title, image }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const metaImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.defaultImage}`;
+  const defaultmetaImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.defaultImage}`;
+  
+  // PAGE-SPECIFIC IMAGE AND CONDITIONAL LOGIC NEEDED
+  // const metaImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.Image}`;
 
   return (
     <Helmet
@@ -56,7 +59,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           property: "og:image",
-          content: metaImage,
+          content: defaultmetaImage,
         },
         {
           name: "twitter:card",

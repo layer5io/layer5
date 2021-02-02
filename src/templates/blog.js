@@ -4,15 +4,15 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import Navigation from "../sections/Navigation";
-import BlogGrid from "../sections/Blog-grid";
-import Footer from "../sections/Footer";
+import Navigation from "../sections/General/Navigation";
+import BlogGrid from "../sections/Blog/Blog-grid";
+import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
 import {graphql} from "gatsby";
-import BlogList from "../sections/Blog-list";
+import BlogList from "../sections/Blog/Blog-list";
 
 export const query = graphql`
     query allBlogs($skip: Int!, $limit: Int!) {
@@ -73,7 +73,8 @@ const Blog = props => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Blog" />
+        <SEO title="Blog" description="Articles how to service mesh from the world's largest service mesh community.
+              Service mesh how-tos and cloud native ecosystem news." />
         <Navigation />
         <BlogView data={props.data} isListView={isListView}
           setListView={setListView} setGridView={setGridView}
