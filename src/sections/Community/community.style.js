@@ -131,6 +131,7 @@ const CommunitySectionWrapper = styled.div`
               display: flex;
               margin: auto;
             }
+            
             @media (max-width: 36rem) {
                h3{
                   font-size: 18px;
