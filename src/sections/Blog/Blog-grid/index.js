@@ -1,10 +1,10 @@
 import React from "react";
-import BlogViewToolTip from "../../components/blog-view-tooltip";
-import Card from "../../components/Card";
-import Pager from "../../components/pager";
-import { Container, Row, Col } from "../../reusecore/Layout";
+import BlogViewToolTip from "../../../components/blog-view-tooltip";
+import Card from "../../../components/Card";
+import Pager from "../../../components/pager";
+import { Container, Row, Col } from "../../../reusecore/Layout";
 
-import PageHeader from "../../reusecore/PageHeader";
+import PageHeader from "../../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
 
 import { BlogPageWrapper } from "./blogGrid.style";

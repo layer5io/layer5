@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
 import Navigation from "../../sections/Navigation";
-import SMIPage from "../../sections/SMI";
+import SMIPage from "../../sections/Projects/SMI";
 import Footer from "../../sections/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";

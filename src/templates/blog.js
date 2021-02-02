@@ -5,14 +5,14 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import Navigation from "../sections/Navigation";
-import BlogGrid from "../sections/Blog-grid";
+import BlogGrid from "../sections/Blog/Blog-grid";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
 import {graphql} from "gatsby";
-import BlogList from "../sections/Blog-list";
+import BlogList from "../sections/Blog/Blog-list";
 
 export const query = graphql`
     query allBlogs($skip: Int!, $limit: Int!) {

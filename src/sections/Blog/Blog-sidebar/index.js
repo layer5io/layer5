@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql, Link, useStaticQuery} from "gatsby";
-import slugify from "../../utils/slugify";
+import slugify from "../../../utils/slugify";
 
 import { FaSearch } from "react-icons/fa";
 
-import Button from "../../reusecore/Button";
+import Button from "../../../reusecore/Button";
 
 
 import BlogSideBarWrapper from "./blogSidebar.style";

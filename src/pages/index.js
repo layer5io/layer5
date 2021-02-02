@@ -19,10 +19,10 @@ import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
-import EngineerEnabler from "../sections/Engineer-section";
+import EngineerEnabler from "../sections/Home/Engineer-enabler";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/ServiceMesh/home/index";
-import CloudNativeLeaders from "../sections/Cloud-Native";
+import CloudNativeLeaders from "../sections/Home/Cloud-Native";
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>

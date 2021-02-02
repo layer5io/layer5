@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import slugify from "../../utils/slugify";
-import { Container } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
-import RelatedPosts from "../Related-Posts";
+import slugify from "../../../utils/slugify";
+import { Container } from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
+import RelatedPosts from "../../Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
 
 const BlogSingle = ({data}) => {

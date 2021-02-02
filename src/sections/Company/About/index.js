@@ -1,8 +1,8 @@
 import React from "react";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
-import VintageBox from "../../reusecore/VintageBox";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import SectionTitle from "../../../reusecore/SectionTitle";
+import Button from "../../../reusecore/Button";
+import VintageBox from "../../../reusecore/VintageBox";
 import AboutSectionWrapper from "./about.style";
 import collabMap from "./images/layer5-collaboration-map.svg";
 import layer5BusCard from "./images/layer5-business-card-photo_med.jpg";

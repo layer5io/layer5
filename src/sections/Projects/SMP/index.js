@@ -1,11 +1,11 @@
 import React from "react";
 
-import Layout from "../../components/layout"; 
+import Layout from "../../../components/layout"; 
 
 import SMPWrapper from "./smp.style";
-import { Row, Col, Container } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
-import JoinCommunity from "../Community/Join-community";
+import { Row, Col, Container } from "../../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
+import JoinCommunity from "../../Community/Join-community";
 
 import example from "./service-mesh-performance-specification-example.gif";
 import c_icon from "./c-icon.svg";

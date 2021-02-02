@@ -1,10 +1,10 @@
 import React from "react";
 
-import Layout from "../../components/layout"; 
+import Layout from "../../../components/layout"; 
 
 import SMIWrapper from "./smi.style";
-import { Row, Col, Container } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
+import { Row, Col, Container } from "../../../reusecore/Layout";
+import Button from "../../../reusecore/Button";
 
 import data from "./data";
 import c_icon from "./c-icon.svg";

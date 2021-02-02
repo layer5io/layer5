@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 import Navigation from "../sections/Navigation";
-import BlogList from "../sections/Blog-list";
+import BlogList from "../sections/Blog/Blog-list";
 import Footer from "../sections/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
