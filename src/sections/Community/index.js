@@ -113,7 +113,7 @@ const CommunityPage = () => {
               <p className="invitation">
                 Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <a href="community/newcomers">Contributor's Journey Map</a> and engage in the community and projects.
 
-                  {/* <FaArrowRight className="newcomers-arrow" /> */}
+                {/* <FaArrowRight className="newcomers-arrow" /> */}
 
               </p>
               <Button primary title="See All Newcomers Resources" url="/community/newcomers">
