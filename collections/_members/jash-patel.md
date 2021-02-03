@@ -7,4 +7,5 @@ github: Jashpatel1
 linkedin: jash-patel-78a998173
 blurb: Mesh Head
 status: Active
+meshmate: yes
 ---
