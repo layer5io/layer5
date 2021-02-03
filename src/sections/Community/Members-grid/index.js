@@ -34,10 +34,10 @@ const colourStyles = {
       backgroundColor: isSelected
         ? data.value == "inactive" ? "rgba(171, 171, 171, 1)" : "rgba(11, 177, 158, 1)"
         : isFocused
-          ? data.value == "inactive" ? "rgba(171, 171, 171, 0.75)" : "rgba(11, 177, 158, 0.75)"
+          ? data.value == "inactive" ? "rgba(171, 171, 171, 0.30)" : "rgba(11, 177, 158, 0.30)"
           : null,
 
-      color: isSelected || isFocused ? "black" : data.color,
+      color: isSelected ? "white" : data.color,
 
       zIndex: 900,
 
