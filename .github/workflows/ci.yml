@@ -2,7 +2,7 @@ name: layer5-ng
 on:
   push:
     branches:
-      - '*'
+      - layer5-ng
     tags:
       - 'v*'
   pull_request:
