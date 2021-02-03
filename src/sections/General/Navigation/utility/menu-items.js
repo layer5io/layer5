@@ -97,12 +97,12 @@ const Data = {
       subItems: [
         {
           name: "Books",
-          path: "/learn/books",
+          path: "/learn/service-mesh-books",
           sepLine: true
         },
         {
           name: "Workshops",
-          path: "/learn/workshops",
+          path: "/learn/service-mesh-workshops",
           sepLine: true
         },
         {

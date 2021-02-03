@@ -30,8 +30,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create client-side redirects (these only work in prod deployment)
   const { createRedirect } = actions;
-  createRedirect({ fromPath: "/books", toPath: "/learn/books", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/workshops", toPath: "/learn/workshops", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/books", toPath: "/learn/service-mesh-books", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/workshops", toPath: "/learn/service-mesh-workshops", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/service-mesh", toPath: "/learn/service-mesh", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/meshery", toPath: "/service-mesh-management/meshery", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/landscape", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
