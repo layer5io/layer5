@@ -22,6 +22,7 @@ const theme = {
 
   // dark jungle green
   tertiaryColor: "#1e2117",
+  darkJungleGreenColor: "#1e2117",
 
   // Teal Blue
   tertiaryColorTwo: "#477E96",

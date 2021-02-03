@@ -58,15 +58,15 @@ const Table = ({ columns, data, spec }) => {
                   </td>
                   <td>{row.original.mesh_version}</td>
                   {row.original.more_details.map(spec => {
-                    if(spec["capability"] === "Full"){
+                    if(spec["capability"] === "FULL"){
                       return <td>
                         <img className="smiMark" src={passingMark} />    
                       </td>;
-                    } else if (spec["capability"] === "None") {
+                    } else if (spec["capability"] === "NONE") {
                       return <td >
                         <img className="smiMark" src={failingMark} />
                       </td>;
-                    } else if(spec["capability"] === "Half"){
+                    } else if(spec["capability"] === "HALF"){
                       return <td><img className="smiMark" src={halfMark} />
                       </td>;
                     } else {
