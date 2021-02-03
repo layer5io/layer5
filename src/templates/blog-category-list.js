@@ -50,7 +50,8 @@ const BlogListPage = ({ pageContext, data }) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Blog" />
+      <SEO title="Blog" description="Articles how to service mesh from the world's largest service mesh community.
+              Service mesh how-tos and cloud native ecosystem news." />
       <Navigation />
       <BlogList data={data} pageContext={pageContext} />
       <Footer />
