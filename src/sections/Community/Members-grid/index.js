@@ -27,30 +27,30 @@ const dot = (color = "#ccc") => ({
 });
 
 const colourStyles = {
-  control: styles => ({ ...styles, backgroundColor: "white" }),
-  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+  control: styles => ({ ...styles, backgroundColor: "white", zIndex: 500 }),
+  option: (styles, { data, isFocused, isSelected }) => {
     return {
       ...styles,
-      backgroundColor: isDisabled
-        ? null
-        : isSelected
-          ? data.color
-          : isFocused
-            ? data.color + "777"
-            : null,
-      color: "555" + data.color,
+      backgroundColor: isSelected
+        ? data.value == "inactive" ? "rgba(171, 171, 171, 1)" : "rgba(11, 177, 158, 1)"
+        : isFocused
+          ? data.value == "inactive" ? "rgba(171, 171, 171, 0.75)" : "rgba(11, 177, 158, 0.75)"
+          : null,
 
-      zindex: 500,
+      color: isSelected || isFocused ? "black" : data.color,
+
+      zIndex: 900,
 
       ":active": {
         ...styles[":active"],
-        backgroundColor: (isSelected ? data.color : "444" + data.color),
+        backgroundColor: (isSelected ? data.value == "inactive"
+          ? "rgba(171, 171, 171, 0.75)" : "rgba(11, 177, 158, 0.75)" : "white"),
       },
     };
   },
-  input: styles => ({ ...styles, ...dot() }),
-  placeholder: styles => ({ ...styles, ...dot() }),
-  singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
+  input: styles => ({ ...styles, ...dot(), zIndex: 900 }),
+  placeholder: styles => ({ ...styles, ...dot(), zIndex: 900 }),
+  singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color), zIndex: 900 }),
 };
 
 const MembersGrid = props => {
