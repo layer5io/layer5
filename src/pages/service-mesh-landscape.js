@@ -7,13 +7,14 @@ import Navigation from "../sections/General/Navigation";
 import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
+import seoimage from "../assets/images/app/projects/landscape.png";
 
 const LandscapeGridPage=() => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
       <SEO title="Service Mesh Landscape" description="Compare service meshes like Istio, Linkerd, App Mesh, Maesh, Kuma, Network Service Mesh,
-    Consul, Kuma, Citrix and VMware Tanzu Service Mesh. What is the best service mesh? What's the difference between Istio and Envoy?" />
+    Consul, Kuma, Citrix and VMware Tanzu Service Mesh. What is the best service mesh? What's the difference between Istio and Envoy?" image={seoimage} />
       <Navigation />
       <LandscapeGrid />
       <Footer />
