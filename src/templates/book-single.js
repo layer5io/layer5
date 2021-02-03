@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 
 import Navigation from "../sections/General/Navigation";
 import BookSingle from "../sections/Learn/Book-single";
@@ -20,6 +19,7 @@ export const query = graphql`
             frontmatter {
                 title
                 author
+                abstract
             }
         }
     }
@@ -30,7 +30,6 @@ const BookSinglePage = ({data}) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
         <Navigation />
         <BookSingle data={data}/>
         <Footer />

@@ -9,6 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import defaultImage from "../assets/images/layer5/layer5-tagline/png/layer5-tag-dark-bg.png";
 
 function SEO({ description, lang, meta, title, image }) {
   const { site } = useStaticQuery(
@@ -19,7 +20,6 @@ function SEO({ description, lang, meta, title, image }) {
             title
             description
             author
-            defaultImage
             siteUrl
           }
         }
@@ -28,7 +28,7 @@ function SEO({ description, lang, meta, title, image }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultmetaImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.defaultImage}`;
+  const defaultmetaImage = image || defaultImage;
   
   // PAGE-SPECIFIC IMAGE AND CONDITIONAL LOGIC NEEDED
   // const metaImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.Image}`;
