@@ -28,14 +28,18 @@ import CommunityImage19 from "./Community-pictures/Aisuko Li.png";
 // import CommunityImage8 from "./Community-pictures/.jpg";
 
 const PictureSliderWrapper = styled.div`
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
       .slick-slider {
         margin-top: 1rem;
-        
+        height:100%;
         margin-left: 2.125rem;
         width: 100%;
         /* max-width: 25rem; */
-        @media (max-width: 62rem) {
-           margin: 3.75rem auto;
+        .slick-list{
+          width:100%;
         }
         @media (max-width: 36rem) {
             margin: 5rem auto;
