@@ -1,15 +1,12 @@
 import React from "react";
-import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
-import Button from "../../../reusecore/Button";
 
 import Envoy from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-color.svg";
 import Linkerd from "../../../assets/images/service-mesh-icons/linkerd/horizontal/color/linkerd-horizontal-color.svg";
 import Image3 from "../../../assets/images/service-mesh-icons/service-mesh.svg";
 import Traefik from "../../../assets/images/service-mesh-icons/traefik.svg";
-import Kuma from "../../../assets/images/service-mesh-icons/kuma/horizontal/color/kuma-horizontal-color.svg";
 import Istio from "../../../assets/images/service-mesh-icons/istio.svg";
 import OSM from "../../../assets/images/service-mesh-icons/open-service-mesh/stacked/color/openservicemesh-stacked-color.svg";
 import SMI from "../../../assets/images/service-mesh-icons/service-mesh-interface/horizontal-stackedtext/color/servicemeshinterface-horizontal-stackedtext-color.svg";
@@ -51,7 +48,7 @@ const ProudMaintainers = () => {
             <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
-                  <img src={CNCF} alt="" />
+                  <img src={CNCF} alt="CNCF" />
                 </Col>
               </Row>
             </div>
@@ -60,7 +57,7 @@ const ProudMaintainers = () => {
             <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
-                  <img src={Envoy} alt="" />
+                  <img src={Envoy} alt="Envoy" />
                 </Col>
               </Row>
             </div>
@@ -69,18 +66,18 @@ const ProudMaintainers = () => {
             <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
-                  <img src={Linkerd} alt="" />
+                  <img src={Linkerd} alt="Linkerd" />
                 </Col>
               </Row>
             </div>
           </Col>
           <Col sm={12} md={6} lg={2}>
-            <div className="project-div-up">
+            <div className="project-div">
               <Row>
                 <Col sm={6} md={6} lg={6}>
-                  <img src={Image3} alt="" />
+                  <img src={Image3} alt="Service-Mesh" width="100" height="100" />
                 </Col>
-                <Col className="company-name-service" sm={6} md={6} lg={6}>
+                <Col className="company-name" sm={6} md={6} lg={6}>
                   <h4>Service Mesh</h4>
                 </Col>
               </Row>
@@ -90,7 +87,7 @@ const ProudMaintainers = () => {
             <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
-                  <img src={Meshery} alt="" />
+                  <img src={Meshery} alt="Meshery" />
                 </Col>
               </Row>
             </div>
@@ -99,7 +96,7 @@ const ProudMaintainers = () => {
             <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
-                  <img src={OAM} alt="" />
+                  <img src={OAM} alt="OAM" />
                 </Col>
               </Row>
             </div>
@@ -112,7 +109,7 @@ const ProudMaintainers = () => {
             <div className="project-div">
               <Row>
                 <Col sm={6} md={6} lg={6}>
-                  <img src={Istio} alt="" />
+                  <img src={Istio} alt="Istio" width="100" height="100" />
                 </Col>
                 <Col className="company-name" sm={6} md={6} lg={6}>
                   <h4>Istio</h4>
@@ -121,19 +118,19 @@ const ProudMaintainers = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={2}>
-            <div className="project-div">
+            <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
-                  <img src={OSM} alt="" />
+                  <img src={OSM} alt="OSM" />
                 </Col>
               </Row>
             </div>
           </Col>
           <Col sm={12} md={6} lg={2}>
-            <div className="project-div">
+            <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
-                  <img src={SMP} alt="" />
+                  <img src={SMP} alt="SMP" />
                 </Col>
               </Row>
             </div>
@@ -142,7 +139,7 @@ const ProudMaintainers = () => {
             <div className="project-div">
               <Row>
                 <Col sm={6} md={6} lg={6}>
-                  <img src={ImageHub} alt="" />
+                  <img src={ImageHub} alt="ImageHub" width="100" height="100" />
                 </Col>
                 <Col className="company-name" sm={6} md={6} lg={6}>
                   <h4>Image Hub</h4>
@@ -151,10 +148,10 @@ const ProudMaintainers = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={2}>
-            <div className="project-div">
+            <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
-                  <img src={SMI} alt="" />
+                  <img src={SMI} alt="SMI" />
                 </Col>
               </Row>
             </div>
@@ -163,7 +160,7 @@ const ProudMaintainers = () => {
             <div className="project-div">
               <Row>
                 <Col sm={6} md={6} lg={6}>
-                  <img src={Traefik} alt="" />
+                  <img src={Traefik} alt="Traefik" width="100" height="100" />
                 </Col>
                 <Col className="company-name" sm={6} md={6} lg={6}>
                   <h4>Traefik Mesh</h4>
