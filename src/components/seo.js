@@ -9,8 +9,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import defaultImage from "../assets/images/layer5/layer5-tagline/png/layer5-tag-dark-bg.png";
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +20,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -26,6 +28,10 @@ function SEO({ description, lang, meta, title }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const defaultmetaImage = image || defaultImage;
+  
+  // PAGE-SPECIFIC IMAGE AND CONDITIONAL LOGIC NEEDED
+  // const metaImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.Image}`;
 
   return (
     <Helmet
@@ -50,6 +56,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: "og:type",
           content: "website",
+        },
+        {
+          property: "og:image",
+          content: defaultmetaImage,
         },
         {
           name: "twitter:card",

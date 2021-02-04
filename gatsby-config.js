@@ -12,6 +12,20 @@ module.exports = {
     "gatsby-plugin-netlify-cache",
     "gatsby-plugin-preload-fonts",
     {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: [
+          "G-MDVP5FT6JY",
+        ],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
+        pluginConfig: {
+          head: false,
+        },
+      },
+    },
+    {
       resolve: "gatsby-plugin-styled-components",
       options: {
         minify: false,

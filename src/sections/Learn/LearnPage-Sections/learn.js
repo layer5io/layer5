@@ -2,7 +2,7 @@ import React from "react";
 import { Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import {FaArrowRight} from "react-icons/fa";
-import Meshery_Logo from "../../../assets/images/meshery/meshery-logo-light.svg";
+import Meshery_Logo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import styled from "styled-components";
 
 const LearnSectionWrapper = styled.div`
@@ -197,7 +197,7 @@ const LearnSection = () => {
         </div>
       </div>
       <div className="learn-buttons-section">
-        <Button primary title="Checkout all the labs" url="/service-mesh" />
+        <Button primary title="Checkout all the labs" url="/learn/service-mesh" />
       </div>
     </LearnSectionWrapper>
   );

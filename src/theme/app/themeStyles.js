@@ -15,12 +15,14 @@ const theme = {
   // caribbean green (light green)
   secondaryColor: "#00b39f",
   caribbeanGreenColor: "#00d3a9",
+  secondaryLightColorTwo: "#F3FFFD",
 
   // lighter gray
   secondaryLightColor: "#FAFAFA",
 
   // dark jungle green
   tertiaryColor: "#1e2117",
+  darkJungleGreenColor: "#1e2117",
 
   // Teal Blue
   tertiaryColorTwo: "#477E96",
@@ -45,6 +47,6 @@ const theme = {
   highlightColor: "#EBC017",
 
   // flax (light yellow)
-  highlightLightColor: "#EAD07D"
+  highlightLightColor: "#EAD07D",
 };
 export default theme;

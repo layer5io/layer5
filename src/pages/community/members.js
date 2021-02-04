@@ -3,8 +3,8 @@ import { ThemeProvider } from "styled-components";
 import theme from "../../theme/app/themeStyles";
 import { GlobalStyle } from "../../sections/app.style";
 import SEO from "../../components/seo";
-import Navigation from "../../sections/Navigation";
-import Footer from "../../sections/Footer";
+import Navigation from "../../sections/General/Navigation";
+import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
 import AllMembers from "../../sections/Community/Members-grid/AllMembers";
 import ActiveMembers from "../../sections/Community/Members-grid/ActiveMembers";
@@ -41,7 +41,7 @@ const MembersPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Members" />
+        <SEO title="Members" description="Members - The Layer5 contributors list" />
         <Navigation />
         <MembersView options={options} handleChange={handleChange}
           members={members} />

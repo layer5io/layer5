@@ -3,9 +3,9 @@ import { graphql } from "gatsby";
 import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Navigation from "../sections/Navigation";
-import CareerSingle from "../sections/Career-single";
-import Footer from "../sections/Footer";
+import Navigation from "../sections/General/Navigation";
+import CareerSingle from "../sections/Careers/Career-single";
+import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
