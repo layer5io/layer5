@@ -5,7 +5,7 @@ import Image from "./image";
 
 const Card = ({ frontmatter, fields }) => {
   return (
-    <Link className="anchor" to={fields.slug}>
+    <Link className="anchor" to={frontmatter.link? frontmatter.link:fields.slug}>
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
