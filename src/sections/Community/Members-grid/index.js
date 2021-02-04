@@ -10,49 +10,6 @@ import { MembersGridWrapper, selectStyles, dropdownTheme } from "./membersGrid.s
 import VintageBox from "../../../reusecore/VintageBox";
 import { FaEnvelope, FaUsers } from "react-icons/fa";
 
-const dot = (color = "#ccc") => ({
-  alignItems: "center",
-  display: "flex",
-
-  ":before": {
-    backgroundColor: color,
-    borderRadius: 10,
-    content: "\" \"",
-    display: "block",
-    marginRight: 8,
-    height: 10,
-    width: 10,
-    zindex: 1000,
-  },
-});
-
-const colourStyles = {
-  control: styles => ({ ...styles, backgroundColor: "white", zIndex: 500 }),
-  option: (styles, { data, isFocused, isSelected }) => {
-    return {
-      ...styles,
-      backgroundColor: isSelected
-        ? data.value == "inactive" ? "rgba(171, 171, 171, 1)" : "rgba(11, 177, 158, 1)"
-        : isFocused
-          ? data.value == "inactive" ? "rgba(171, 171, 171, 0.30)" : "rgba(11, 177, 158, 0.30)"
-          : null,
-
-      color: isSelected ? "white" : data.color,
-
-      zIndex: 900,
-
-      ":active": {
-        ...styles[":active"],
-        backgroundColor: (isSelected ? data.value == "inactive"
-          ? "rgba(171, 171, 171, 0.75)" : "rgba(11, 177, 158, 0.75)" : "white"),
-      },
-    };
-  },
-  input: styles => ({ ...styles, ...dot(), zIndex: 900 }),
-  placeholder: styles => ({ ...styles, ...dot(), zIndex: 900 }),
-  singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color), zIndex: 900 }),
-};
-
 const MembersGrid = props => {
   return (
     <MembersGridWrapper>
@@ -62,30 +19,33 @@ const MembersGrid = props => {
       <div className="members-page-wrapper">
         <Container>
           <div className="members-grid-wrapper">
-            <Row>
-              <Col xs={12} sm={6} lg={9} />
-              <Col xs={12} sm={6} lg={3}>
-                <Select
-                  name="Filter Members"
-                  defaultValue={props.options[0]}
-                  isSearchable={false}
-                  styles={selectStyles}
-                  options={props.options}
-                  value={props.members}
-                  onChange={props.handleChange}
-                  theme={dropdownTheme}
-                  styles={colourStyles}
-                />
-                <br />
-              </Col>
-            </Row>
-            <Row>
-              {props.data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-                <Col xs={12} sm={6} md={6} lg={4} xl={3} key={id}>
-                  <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
+            <div className="members-grid-select">
+              <Row>
+                <Col xs={12} sm={6} lg={9} />
+                <Col xs={12} sm={6} lg={3}>
+                  <Select
+                    name="Filter Members"
+                    defaultValue={props.options[0]}
+                    isSearchable={false}
+                    styles={selectStyles}
+                    options={props.options}
+                    value={props.members}
+                    onChange={props.handleChange}
+                    theme={dropdownTheme}
+                  />
+                  <br />
                 </Col>
-              ))}
-            </Row>
+              </Row>
+            </div>
+            <div className="members-profile-cards">
+              <Row>
+                {props.data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
+                  <Col xs={12} sm={6} md={6} lg={4} xl={3} key={id}>
+                    <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
+                  </Col>
+                ))}
+              </Row>
+            </div>
           </div>
           <div className="AboutCommunity">
             <div>

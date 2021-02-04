@@ -1,8 +1,51 @@
 import styled from "styled-components";
 
+const dot = (color = "#ccc") => ({
+  alignItems: "center",
+  display: "flex",
+
+  ":before": {
+    backgroundColor: color,
+    borderRadius: 10,
+    content: "\" \"",
+    display: "block",
+    marginRight: 8,
+    height: 10,
+    width: 10,
+    zindex: 1000,
+  },
+});
+
 export const selectStyles = {
-  menu: styles => ({ ...styles, zIndex: 999, })
+  menu: styles => ({ ...styles, zIndex: 999, }),
+  control: styles => ({ ...styles, backgroundColor: "white", zIndex: 900 }),
+  option: (styles, { data, isFocused, isSelected }) => {
+    return {
+      ...styles,
+      backgroundColor: isSelected
+        ? data.value == "inactive" ? "rgba(171, 171, 171, 1)" : "rgba(11, 177, 158, 1)"
+        : isFocused
+          ? data.value == "inactive" ? "rgba(171, 171, 171, 0.30)" : "rgba(11, 177, 158, 0.30)"
+          : "white",
+
+      color: isSelected ? "white" : data.color,
+
+      zIndex: 900,
+
+      ":active": {
+        ...styles[":active"],
+        backgroundColor: (isSelected
+          ? data.value == "inactive"
+            ? "rgba(171, 171, 171, 0.75)" : "rgba(11, 177, 158, 0.75)"
+          : "white"),
+      },
+    };
+  },
+  input: styles => ({ ...styles, ...dot(), zIndex: 900 }),
+  placeholder: styles => ({ ...styles, ...dot(), zIndex: 900 }),
+  singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color), zIndex: 900 }),
 };
+
 export const dropdownTheme = theme => ({
   ...theme,
   borderRadius: 0,
@@ -14,7 +57,6 @@ export const dropdownTheme = theme => ({
   }
 });
 
-
 export const MembersGridWrapper = styled.div`
 
     .members-list-wrapper{
@@ -22,6 +64,10 @@ export const MembersGridWrapper = styled.div`
     }
     .members-grid-wrapper{
         padding-bottom: 60px;
+        z-index: -1;
+    }
+    .members-profile-cards{
+        z-index: -1 !important;
     }
     @media only screen and (max-width: 912px) {
         .members-page-wrapper{
@@ -43,7 +89,6 @@ export const MembersGridWrapper = styled.div`
         }  
     }
     .active-filter-color{
-            display: inline-block;
             background-color: ${props => props.theme.secondaryColor};
             width: 20px;
             height: 20px;
@@ -51,11 +96,14 @@ export const MembersGridWrapper = styled.div`
     }
     
     .inactive-filter-color{
-            display: inline-block;
             background-color: gray;
             width: 20px;
             height: 20px;
             margin-right: 10px;
+    }
+
+    .members-grid-select{
+        z-index: 900 !important;
     }
     .AboutCommunity {
 		display: flex;
