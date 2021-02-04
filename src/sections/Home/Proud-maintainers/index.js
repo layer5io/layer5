@@ -75,12 +75,12 @@ const ProudMaintainers = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={2}>
-            <div className="project-div-up">
+            <div className="project-div">
               <Row>
                 <Col sm={6} md={6} lg={6}>
-                  <img src={Image3} alt="" />
+                  <img src={Image3} alt="" width="100" height="100" />
                 </Col>
-                <Col className="company-name-service" sm={6} md={6} lg={6}>
+                <Col className="company-name" sm={6} md={6} lg={6}>
                   <h4>Service Mesh</h4>
                 </Col>
               </Row>
@@ -112,7 +112,7 @@ const ProudMaintainers = () => {
             <div className="project-div">
               <Row>
                 <Col sm={6} md={6} lg={6}>
-                  <img src={Istio} alt="" />
+                  <img src={Istio} alt="" width="100" height="100" />
                 </Col>
                 <Col className="company-name" sm={6} md={6} lg={6}>
                   <h4>Istio</h4>
@@ -121,7 +121,7 @@ const ProudMaintainers = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={2}>
-            <div className="project-div">
+            <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
                   <img src={OSM} alt="" />
@@ -130,7 +130,7 @@ const ProudMaintainers = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={2}>
-            <div className="project-div">
+            <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
                   <img src={SMP} alt="" />
@@ -142,7 +142,7 @@ const ProudMaintainers = () => {
             <div className="project-div">
               <Row>
                 <Col sm={6} md={6} lg={6}>
-                  <img src={ImageHub} alt="" />
+                  <img src={ImageHub} alt="" width="100" height="100" />
                 </Col>
                 <Col className="company-name" sm={6} md={6} lg={6}>
                   <h4>Image Hub</h4>
@@ -151,7 +151,7 @@ const ProudMaintainers = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={2}>
-            <div className="project-div">
+            <div className="project-div-up">
               <Row>
                 <Col sm={12} md={12} lg={12}>
                   <img src={SMI} alt="" />
@@ -163,7 +163,7 @@ const ProudMaintainers = () => {
             <div className="project-div">
               <Row>
                 <Col sm={6} md={6} lg={6}>
-                  <img src={Traefik} alt="" />
+                  <img src={Traefik} alt="" width="100" height="100" />
                 </Col>
                 <Col className="company-name" sm={6} md={6} lg={6}>
                   <h4>Traefik Mesh</h4>

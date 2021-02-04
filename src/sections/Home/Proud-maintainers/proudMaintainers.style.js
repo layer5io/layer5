@@ -9,7 +9,7 @@ const ProjectItemWrapper = styled.section`
             color: ${props => props.theme.primaryLightColor};
             text-transform: uppercase;
             font-weight: 500;
-    }
+            }
             h2{
                 margin-bottom: 1rem;
                 font-style: normal;
@@ -17,51 +17,50 @@ const ProjectItemWrapper = styled.section`
             }
             text-align: center;
         }
+        .project-text {
+            font-weight: 300;
+            margin:0 auto 80px auto;
+            max-width: 600px;
+        }
         text-align: center;
         padding: 0 5% 0 5%;
         width: 100%;
         margin: auto;
     }
-    .project-text {
-        font-weight: 300;
-        margin-bottom: 80px;
-        width: 50%;
-        margin-left: 272px;
-    }
+
     .project-div {
-      width: 250px;
-      margin-left: 40px;
-      height: 120px;
-      background: #FAFAFA;
-      border-radius: 20px;
-    }
-    .project-div-up {
-      width: 100%;
+      max-width: 250px;
+      max-heigth: 100px;
       margin: auto;
-      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
       height: 100px;
       margin-bottom: 3rem;
       background: #FAFAFA;
       border-radius: 20px;
     }
+    .project-div-up {
+      max-width: 250px;
+      max-heigth: 100px;
+      margin: auto;
+      text-align: center;
+      height: 100px;
+      padding: 20px;
+      margin-bottom: 3rem;
+      margin-top: 10px;
+      background: #FAFAFA;
+      border-radius: 20px;
+    }
     .company-name {
-      padding-top: 35px;
-      padding-right: 60px;
+      padding-top: 20px;
+      padding-bottom: 20px !important;
       font-weight: boldest;
       font-size: 30px;
       line-height: 30px;
       text-align: center;
       color: #000000;
     }
-    .company-name-service {
-      padding-top: 25px;
-      padding-right: 30px;
-      font-weight: boldest;
-      font-size: 30px;
-      line-height: 30px;
-      text-align: center;
-      color: #000000;
-    }
+
     .project__block__wrap{
         width: 100%;
         display: flex;
