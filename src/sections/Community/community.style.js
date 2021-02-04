@@ -2,7 +2,7 @@ import styled from "styled-components";
 import BookmarkImage from "./bookmark.png";
 
 const CommunitySectionWrapper = styled.div`
-
+    margin-bottom: 3.25rem;
     .community-header{
         color: white;
         height: 25rem;

@@ -166,7 +166,7 @@ const Data = {
         },
         {
           actionName: "Open source internship programs",
-          actionLink: "/community/members",
+          actionLink: "/careers/programs",
         }
       ],
       div1: {
