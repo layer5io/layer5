@@ -64,6 +64,9 @@ const CommunitySectionWrapper = styled.div`
         @media (max-width: 62rem) {
             background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
         }
+        @media (max-width: 32rem) {
+            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 66%, ${props => props.theme.black} 34%);
+        }
 
         .community{
             margin: 5.25rem auto 6rem auto;
@@ -73,7 +76,6 @@ const CommunitySectionWrapper = styled.div`
             }
             @media (max-width: 36rem) {
                 margin-top: 5rem;
-                margin-bottom: auto;
             }
             h3{
                 margin: 1.5rem auto 1.5rem auto;
