@@ -22,7 +22,7 @@ export const MeetTheMaintainer = styled.div`
         color: #222;
         font-style: italic;
         text-align:left;
-        border-left: 2px green solid;
+        border-left: 2px solid ${props => props.theme.primaryColor};
         padding-left: 2rem;
         span {
             font-weight: 600;
