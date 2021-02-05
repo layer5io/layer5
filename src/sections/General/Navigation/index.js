@@ -73,6 +73,7 @@ const Navigation = () => {
                         id
                         frontmatter {
                             title
+                            eurl
                             thumbnail{
                                 childImageSharp{
                                     fixed(width: 240, height: 160, cropFocus: CENTER) {
