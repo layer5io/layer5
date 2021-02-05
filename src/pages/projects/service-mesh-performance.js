@@ -10,12 +10,13 @@ import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
+import seoimage from "../../assets/images/service-mesh-performance/icon/smp-dark.png";
 
 const SMP = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Service Mesh Performance (SMP)" description="Measuring and indexing the performance, overhead, and value of the world's service mesh deployments." />
+      <SEO title="Service Mesh Performance (SMP)" description="Measuring and indexing the performance, overhead, and value of the world's service mesh deployments." image={seoimage} />
       <Navigation />
       <SMPPage />
       <Footer/>
