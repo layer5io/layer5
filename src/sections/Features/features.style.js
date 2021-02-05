@@ -12,7 +12,14 @@ import MeshSyncLogo from "./img/meshsync.svg";
 const FeturesSectionWrapper = styled.section`
    padding: 95px 0 50px 0;
   
-   .fetures-icon-block{
+    .section-title{
+        h4{
+            text-transform: uppercase;
+                color: ${props => props.theme.primaryLightColor};
+            }
+    }
+
+   .features-icon-block{
         height: 70px;
         width: 70px;
         display: flex;
@@ -26,9 +33,9 @@ const FeturesSectionWrapper = styled.section`
         }
         
    }
-    .fetures-block{
+    .features-block{
         
-        .fetures-icon-block{
+        .features-icon-block{
             &:before{
                 position: absolute;
                 display: inline-block;
@@ -44,7 +51,7 @@ const FeturesSectionWrapper = styled.section`
             }
         } 
         &:hover{
-            .fetures-icon-block{
+            .features-icon-block{
                 &:before{
                     opacity: .3;
                     right: -10px;
@@ -52,7 +59,7 @@ const FeturesSectionWrapper = styled.section`
             }
         }
         &.v1{
-            .fetures-icon-block{
+            .features-icon-block{
                // background: url(${Bg1}) no-repeat;
                 background-size: contain;
                 &:before{
@@ -61,7 +68,7 @@ const FeturesSectionWrapper = styled.section`
             }
         }
         &.v2{
-            .fetures-icon-block{
+            .features-icon-block{
                // background: url(${Bg2}) no-repeat;
                 background-size: contain;
                 &:before{
@@ -89,10 +96,10 @@ const FeturesSectionWrapper = styled.section`
         padding: 80px 0 50px 0;
     }
     @media only screen and (max-width: 568px) {
-        .fetures-block{
+        .features-block{
             text-align: center;
         }
-        .fetures-icon-block{
+        .features-icon-block{
             margin: 0 auto 25px auto;
         }
     }

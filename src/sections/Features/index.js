@@ -15,22 +15,22 @@ import visualToplogy from "./img/visual-topology.svg";
 import performanceManagement from "./img/performance-management.svg";
 
 
-import FeturesSectionWrapper from "./features.style";
+import FeaturesSectionWrapper from "./features.style";
 
 const Features = () => {
   return (
-    <FeturesSectionWrapper id="features">
+    <FeaturesSectionWrapper id="features">
       <Container fullWidthSM>
-        <SectionTitle UniWidth="65%">
-          <h4><i>Service Mesh Management</i></h4>
+        <SectionTitle UniWidth="65%" className="section-title">
+          <h4>Service Mesh Management</h4>
           <h2>
                         Manage your service mesh with features<span> you won't find anywhere else</span>.
           </h2>
         </SectionTitle>
         <Row>
           <Col xs={12} sm={6} md={4}>
-            <div className="fetures-block v1">
-              <div className="fetures-icon-block">
+            <div className="features-block v1">
+              <div className="features-icon-block">
                 <img src={Icon1} alt="img" />
               </div>
               <h3>Lifecycle Management</h3>
@@ -41,8 +41,8 @@ const Features = () => {
             </div>
           </Col>
           <Col xs={12} sm={6} md={4}>
-            <div className="fetures-block v2">
-              <div className="fetures-icon-block">
+            <div className="features-block v2">
+              <div className="features-icon-block">
                 <img src={performanceManagement} alt="img" />
               </div>
               <h3>Performance Management</h3>
@@ -53,8 +53,8 @@ const Features = () => {
             </div>
           </Col>
           <Col xs={12} sm={6} md={4}>
-            <div className="fetures-block v1">
-              <div className="fetures-icon-block">
+            <div className="features-block v1">
+              <div className="features-icon-block">
                 <img src={policyEngineGreen} alt="img" />
               </div>
               <h3>Configuration Management</h3>
@@ -65,8 +65,8 @@ const Features = () => {
             </div>
           </Col>
           <Col xs={12} sm={6} md={4}>
-            <div className="fetures-block v2">
-              <div className="fetures-icon-block">
+            <div className="features-block v2">
+              <div className="features-icon-block">
                 <img src={distributedPerformance} alt="img" />
               </div>
               <h3>Data Plane Intelligence</h3>
@@ -76,8 +76,8 @@ const Features = () => {
             </div>
           </Col>
           <Col xs={12} sm={6} md={4}>
-            <div className="fetures-block v1">
-              <div className="fetures-icon-block">
+            <div className="features-block v1">
+              <div className="features-icon-block">
                 <img src={visualToplogy} alt="img" />
               </div>
               <h3>Visual Topology</h3>
@@ -87,8 +87,8 @@ const Features = () => {
             </div>
           </Col>
           <Col xs={12} sm={6} md={4}>
-            <div className="fetures-block v2">
-              <div className="fetures-icon-block">
+            <div className="features-block v2">
+              <div className="features-icon-block">
                 <img src={mesheryOperatorDark} alt="Meshery Operator" />
               </div>
               <h3>Automated Operation</h3>
@@ -99,7 +99,7 @@ const Features = () => {
           </Col>
         </Row>
       </Container>
-    </FeturesSectionWrapper>
+    </FeaturesSectionWrapper>
   );
 };
 
