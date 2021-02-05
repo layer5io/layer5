@@ -105,7 +105,6 @@ const CommunitySectionWrapper = styled.div`
             display:block;
             margin: auto;
             background-color: ${props => props.theme.secondaryLightColorTwo};
-
         }
         .meshmate-link{
             background-color: ${props => props.theme.secondaryLightColorTwo};
