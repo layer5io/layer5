@@ -28,7 +28,6 @@ const IndexPage = () => (
     <SEO description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure." />
     <Layout>
       <Navigation />
-      <Partners />
       <Integrations />
       {/* <Features /> */}
       <ServiceMeshManagement />
