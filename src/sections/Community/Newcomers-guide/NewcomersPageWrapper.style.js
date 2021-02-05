@@ -22,7 +22,36 @@ export const NewcomersGuideWrapper = styled.section`
           }
         }
     }
-    
+    .heading{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .heading-start{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-end;
+      margin-right: 2rem;
+      margin-top: -1.5rem;
+      h5{
+      font-size: 1.125rem;
+      font-weight: 400;
+      margin-right: 1rem;
+      }
+      img{
+      height: 3rem;
+      width: 4rem;
+      cursor: pointer;
+      transition: .5s;
+      }
+      img:hover{
+      padding-left: 1rem;
+      transition: .5s;
+      }
+    }
     .instructions{
       .step{
         display: flex;
@@ -46,10 +75,14 @@ export const NewcomersGuideWrapper = styled.section`
         max-width: 21.875rem
       }
     }
-    
     .table-wrapper{
       text-align: center;
       margin-bottom: 4rem;
     }
+    @media only screen and (max-width: 991px) {
+      .heading-start, .heading-start__arrow{
+        display: none;
+      }
+  }
 `;
 

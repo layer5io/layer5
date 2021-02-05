@@ -10,6 +10,7 @@ import CommunityImage4 from "./community-image4.png";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
+import longArrow from "./long-arrow.svg";
 
 
 const NewcomersGuide = () => {
@@ -28,6 +29,10 @@ const NewcomersGuide = () => {
           <Row className="newcomers-journey">
             <Col className="heading" sm={12} lg={6}>
               <h2>Contributor's Journey</h2>
+              <div className="heading-start">
+                <h5>Start Here</h5>
+                <img className="heading-start__arrow" src={longArrow} />
+              </div>
             </Col>
             <Col sm={12} lg={6}>
               <NewcomersMap/>
