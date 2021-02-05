@@ -15,7 +15,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-      - run: git fetch --prune --unshallow
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup Node
         uses: actions/setup-node@v1
