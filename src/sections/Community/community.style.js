@@ -155,7 +155,6 @@ const CommunitySectionWrapper = styled.div`
 
     .newcomers-section {
         background: ${props => props.theme.secondaryLightColor};
-        width:100%;
         margin-top: 5rem;
         margin-bottom: 5rem;
         padding-top: 4rem;
