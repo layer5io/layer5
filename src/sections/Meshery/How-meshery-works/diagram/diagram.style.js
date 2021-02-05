@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Howitworks = styled.section`
+const DiagramStyles = styled.section`
 .cls-1{
     fill:#00d3a9;
 }
@@ -82,7 +82,7 @@ position: sticky;
     @media (min-width: 768px) {
         position: sticky;
         top: calc(50vh - 249px);
-}
+  }
   
     & > svg {
       width: 100%;
@@ -271,4 +271,4 @@ position: sticky;
   }
 `;
 
-export default Howitworks;
+export default DiagramStyles;
