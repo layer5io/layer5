@@ -1,11 +1,10 @@
 import React from "react";
-
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container, Row } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 
 import Envoy from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-color.svg";
 import Linkerd from "../../../assets/images/service-mesh-icons/linkerd/horizontal/color/linkerd-horizontal-color.svg";
-import Image3 from "../../../assets/images/service-mesh-icons/service-mesh.svg";
+import ServiceMesh from "../../../assets/images/service-mesh-icons/service-mesh.svg";
 import Traefik from "../../../assets/images/service-mesh-icons/traefik.svg";
 import Istio from "../../../assets/images/service-mesh-icons/istio.svg";
 import OSM from "../../../assets/images/service-mesh-icons/open-service-mesh/stacked/color/openservicemesh-stacked-color.svg";
@@ -22,154 +21,64 @@ const ProudMaintainers = () => {
   return (
     <ProjectItemWrapper id="projects">
       <Container>
-        <Row>
-          <div className="project-title">
-            <SectionTitle
-              className="section-title"
-              leftAlign={true}
-              UniWidth="75%"
-            >
-              <h4>PROUDLY MAINTAINING AND CONTRIBUTING</h4>
-              <h2>
-                <span>Open Source and Community First</span>.
-              </h2>
-            </SectionTitle>
-            <p className="project-text">
-              We are the world’s largest collection of service mesh practitioners and
-              maintainers of leading open source projects
-              We are open source contributors and maintainers.
-            </p>
-          </div>
+        <Row className="project-title">
+          <SectionTitle
+            UniWidth="75%"
+          >
+            <h4>Proudly maintaining and contributing</h4>
+            <h2>
+              <span>Open Source and Community First</span>.
+            </h2>
+          </SectionTitle>
+          <p className="project-text">
+            We are the world’s largest collection of service mesh practitioners and
+            maintainers of leading open source projects
+            We are open source contributors and maintainers.
+          </p>
         </Row>
       </Container>
-      <Row>
-        <div className="project__block__wrap">
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div-up">
-              <Row>
-                <Col sm={12} md={12} lg={12}>
-                  <img src={CNCF} alt="CNCF" />
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div-up">
-              <Row>
-                <Col sm={12} md={12} lg={12}>
-                  <img src={Envoy} alt="Envoy" />
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div-up">
-              <Row>
-                <Col sm={12} md={12} lg={12}>
-                  <img src={Linkerd} alt="Linkerd" />
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div">
-              <Row>
-                <Col sm={6} md={6} lg={6}>
-                  <img src={Image3} alt="Service-Mesh" width="100" height="100" />
-                </Col>
-                <Col className="company-name" sm={6} md={6} lg={6}>
-                  <h4>Service Mesh</h4>
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div-up">
-              <Row>
-                <Col sm={12} md={12} lg={12}>
-                  <img src={Meshery} alt="Meshery" />
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div-up">
-              <Row>
-                <Col sm={12} md={12} lg={12}>
-                  <img src={OAM} alt="OAM" />
-                </Col>
-              </Row>
-            </div>
-          </Col>
+      <div className="project_icons_section">
+        <div className="proj_icon">
+          <img src={CNCF} alt="CNCF" />
         </div>
-      </Row>
-      <Row>
-        <div className="project__block__wrap">
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div">
-              <Row>
-                <Col sm={6} md={6} lg={6}>
-                  <img src={Istio} alt="Istio" width="100" height="100" />
-                </Col>
-                <Col className="company-name" sm={6} md={6} lg={6}>
-                  <h4>Istio</h4>
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div-up">
-              <Row>
-                <Col sm={12} md={12} lg={12}>
-                  <img src={OSM} alt="OSM" />
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div-up">
-              <Row>
-                <Col sm={12} md={12} lg={12}>
-                  <img src={SMP} alt="SMP" />
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div">
-              <Row>
-                <Col sm={6} md={6} lg={6}>
-                  <img src={ImageHub} alt="ImageHub" width="100" height="100" />
-                </Col>
-                <Col className="company-name" sm={6} md={6} lg={6}>
-                  <h4>Image Hub</h4>
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div-up">
-              <Row>
-                <Col sm={12} md={12} lg={12}>
-                  <img src={SMI} alt="SMI" />
-                </Col>
-              </Row>
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={2}>
-            <div className="project-div">
-              <Row>
-                <Col sm={6} md={6} lg={6}>
-                  <img src={Traefik} alt="Traefik" width="100" height="100" />
-                </Col>
-                <Col className="company-name" sm={6} md={6} lg={6}>
-                  <h4>Traefik Mesh</h4>
-                </Col>
-              </Row>
-            </div>
-          </Col>
+        <div className="proj_icon">
+          <img src={Envoy} alt="Envoy" />
         </div>
-      </Row>
+        <div className="proj_icon">
+          <img src={Linkerd} alt="Linkerd" />
+        </div>
+        <div className="proj_icon">
+          <img src={ServiceMesh} alt="Service Mesh"/>
+          <h4>Service Mesh</h4>
+        </div>
+        <div className="proj_icon">
+          <img src={Meshery} alt="Meshery" />
+        </div>
+        <div className="proj_icon">
+          <img src={OAM} alt="OAM" />
+        </div>
+        <div className="proj_icon istio">
+          <img src={Istio} alt="Istio" />
+          <h4>Istio</h4>
+        </div>
+        <div className="proj_icon">
+          <img src={OSM} alt="OSM" />
+        </div>
+        <div className="proj_icon">
+          <img src={SMP} alt="SMP" />
+        </div>
+        <div className="proj_icon">
+          <img src={ImageHub} alt="ImageHub" />
+          <h4>Image Hub</h4>
+        </div>
+        <div className="proj_icon">
+          <img src={SMI} alt="SMI" />
+        </div>
+        <div className="proj_icon">
+          <img src={Traefik} alt="Traefik" />
+          <h4>Traefik Mesh</h4>
+        </div>
+      </div>
     </ProjectItemWrapper>
   );
 };
