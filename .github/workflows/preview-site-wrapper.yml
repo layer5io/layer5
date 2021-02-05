@@ -6,7 +6,7 @@ on:
 
 jobs:
   triger-previewing-site:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Triger Inner workflow
         run: echo "triger inner workflow"
