@@ -53,7 +53,6 @@ jobs:
           check_for_duplicate_msg: false
 
       - name: Production deploy to Netlify
-        id: deploy-netlify
         uses: netlify/actions/cli@master
         if: (github.event_name == 'push') && endsWith(github.ref, '/layer5-ng')
         env:
