@@ -105,7 +105,7 @@ const data = {
             question: "Does Meshery manage service meshes?",
             category: "Meshery",
             answer: ["Yes, as the service management plane, Meshery, provisions and manage the lifecycle of service meshes."],
-            link: "/meshery",
+            link: "/service-mesh-management/meshery",
             linktext: "Run Meshery",
         },
         {
