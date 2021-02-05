@@ -13,7 +13,10 @@ published: false
 ---
 
 import { BlogWrapper } from "../Blog.style.js";
+import { Blockquote } from "../../../reusecore/Blockquote";
+import { Blockquote-alt-style } from "../../../reusecore/Blockquote/Blockquote-alt-style";
 import gsoc from "./gsoc.png";
+
 
 <BlogWrapper>
 
@@ -25,7 +28,7 @@ Curabitur iaculis ante sit amet condimentum interdum. Cras tellus nunc, gravida 
 
 <img src={gsoc} className="gsoc-image" align="right" alt="gsoc-image" />
 
-\-- John Doe
+\-- <Link to="/community/members/john-jane-doe">John Jane Doe
 
 _**P.S.: If these topics excite you and you want to explore the beautiful realm of service meshes, come and say "Hi" on our [Slack Channel](http://slack.layer5.io) and one of us will reach out to you!**_
 

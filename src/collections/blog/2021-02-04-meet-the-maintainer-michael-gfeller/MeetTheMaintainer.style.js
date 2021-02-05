@@ -13,6 +13,7 @@ export const MeetTheMaintainer = styled.div`
         text-align:left;
         span {
             font-weight: 600;
+            font-style: normal;
         }
     }
     div.interviewee {
@@ -22,10 +23,36 @@ export const MeetTheMaintainer = styled.div`
         color: #222;
         font-style: italic;
         text-align:left;
-        border-left: 2px solid ${props => props.theme.primaryColor};
+        border-left: 2px solid ${props => props.theme.primaryLightColor};
         padding-left: 2rem;
         span {
             font-weight: 600;
+            font-style: normal;
+        }
+    }
+    div.note {
+        margin: 1rem;
+        padding: 2rem;
+        display: flex;
+        border: 1px solid ${props => props.theme.primaryLightColor};
+        img {
+            margin-right: 3rem;
+        }
+    }
+    .centered-text {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    a {
+        color: ${props => props.theme.primaryColor};
+        background-color: #eeeeee;
+        border-radius: 8px;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        &:hover {
+            color: ${props => props.theme.keppelColor}; 
         }
     }
 `;
