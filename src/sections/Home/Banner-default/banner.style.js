@@ -102,7 +102,13 @@ const BannerSectionWrapper = styled.section`
                  content: none;
              }
          } */
-     }
+		 }
+		 @media screen and (max-width: 402px) {
+			.banner-btn.one, .banner-btn.two 
+			{
+				margin: 0 0.5rem 1rem;
+			}
+		 }
      @media only screen and (max-width: 380px) {
         .section-title{
             h1{

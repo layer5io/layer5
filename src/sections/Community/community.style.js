@@ -2,7 +2,7 @@ import styled from "styled-components";
 import BookmarkImage from "./bookmark.png";
 
 const CommunitySectionWrapper = styled.div`
-
+    margin-bottom: 3.25rem;
     .community-header{
         color: white;
         height: 25rem;
@@ -36,7 +36,6 @@ const CommunitySectionWrapper = styled.div`
         img{
             display:block;
             margin:auto;
-            /* max-height: 18.75rem; */
         }
         @media (max-width: 62rem) {
              text-align:center;
@@ -64,6 +63,9 @@ const CommunitySectionWrapper = styled.div`
         @media (max-width: 62rem) {
             background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
         }
+        @media (max-width: 32rem) {
+            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 66%, ${props => props.theme.black} 34%);
+        }
 
         .community{
             margin: 5.25rem auto 6rem auto;
@@ -73,7 +75,6 @@ const CommunitySectionWrapper = styled.div`
             }
             @media (max-width: 36rem) {
                 margin-top: 5rem;
-                margin-bottom: auto;
             }
             h3{
                 margin: 1.5rem auto 1.5rem auto;
@@ -103,7 +104,6 @@ const CommunitySectionWrapper = styled.div`
             display:block;
             margin: auto;
             background-color: ${props => props.theme.secondaryLightColorTwo};
-
         }
         .meshmate-link{
             background-color: ${props => props.theme.secondaryLightColorTwo};
