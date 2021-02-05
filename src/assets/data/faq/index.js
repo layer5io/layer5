@@ -35,7 +35,7 @@ const data = {
             answer: ["Use of Meshery and the Service Mesh Interface specification help avoid switching costs between service meshes.",
                      "The goal of Service Mesh Interface specifications are to provide an abstract, unified method of interacting with a service mesh.",
                      "See if your service mesh adheres to SMI specifications at the link below."],
-            link: "/projects/service-mesh-interface",
+            link: "/projects/service-mesh-interface-conformance",
             linktext: "Service Mesh Interface",
         },
         {
@@ -105,7 +105,7 @@ const data = {
             question: "Does Meshery manage service meshes?",
             category: "Meshery",
             answer: ["Yes, as the service management plane, Meshery, provisions and manage the lifecycle of service meshes."],
-            link: "/projects/meshery",
+            link: "/meshery",
             linktext: "Run Meshery",
         },
         {

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Container } from "../../../reusecore/Layout";
-import SectionTitle from "../../../reusecore/SectionTitle";
 
 import PageHeader from "../../../reusecore/PageHeader";
 
@@ -57,7 +56,7 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/projects/distributed-performance-management-of-service-meshes"
+              to="/projects/distributed-performance-management"
               className="project__card six"
             >
               <div className="project__card-container">
