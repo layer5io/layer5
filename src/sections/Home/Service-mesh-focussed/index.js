@@ -1,5 +1,6 @@
 import React from "react";
 import MeshFocusWrapper from "./service-mesh-focussed.style";
+import ServiceMeshFocusedImage from "./The-Enterprise-Path-to-Service-Mesh-Architectures.png";
 import BlockQouteImage from "../../../assets/images/blockqoute/quote-left.svg";
 import Button from "../../../reusecore/Button";
 import {FaArrowRight} from "react-icons/fa";
@@ -17,7 +18,7 @@ const ServiceMeshFocused = () => {
         </div>
         <div className="card-cont-1">
           <div className="img-col">
-            <img src="/static/f43f94862a4505b9c575e0cf0c5184ae/The-Enterprise-Path-to-Service-Mesh-Architectures.png" alt="The-Enterprise-Path-to-Service-Mesh-Architectures" />
+            <img src={ServiceMeshFocusedImage} alt="The-Enterprise-Path-to-Service-Mesh-Architectures" />
           </div>
           <div className="content-col">
             <img src={BlockQouteImage} alt="Quote-left"/>
