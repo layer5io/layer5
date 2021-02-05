@@ -35,6 +35,16 @@ const BoxWrapper = styled.div`
     right: "auto"
   }
 )}
+  @media screen and (max-width: 450px) and (min-width: 402px)
+  {
+    // content: '';
+    right: -10px;
+  }
+
+  @media screen and (max-width: 402px)
+  {
+    content: '';
+  }
     }
 `;
 
