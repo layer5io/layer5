@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const ProjectItemWrapper = styled.section`
     padding: 0 0 110px 0;
+    overflow: hidden;
     .project-title {
         .section-title{
             h4 {

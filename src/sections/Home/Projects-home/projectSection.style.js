@@ -3,6 +3,7 @@ import background from "./images/background.svg";
 
 const ProjectItemWrapper = styled.section`
     padding: 0 0 110px 0;
+    overflow: hidden;
     margin-top: 2rem;
     .project-title {
         .section-title{

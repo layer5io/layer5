@@ -3,6 +3,7 @@ import styled from "styled-components";
 const SubscribeWrapper = styled.div`
     background-color:${props => props.theme.secondaryLightColor};
     padding: 50px 10px;
+    overflow: hidden;
     h2{
         font-weight: 600;
         margin:0px;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const PartnerItemWrapper = styled.section`
     padding: 2rem 0;
+    overflow: hidden;
     .section-title{
         h4{
             color: ${props => props.theme.primaryLightColor};
@@ -20,8 +21,8 @@ const PartnerItemWrapper = styled.section`
         flex-shrink: 3;
     }
     img {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 100px;
+        min-width: 50px;
         margin: auto;
         opacity: .7;
        
@@ -31,7 +32,7 @@ const PartnerItemWrapper = styled.section`
         margin: 0px;
         display: flex;
         transition: all 0.2s ease-in-out;
-        height: 8vw;
+        height: 100px;
     }
      /* @media only screen and (max-width: 768px) {
         .horizontal {
