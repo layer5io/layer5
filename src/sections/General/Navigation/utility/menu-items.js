@@ -97,12 +97,12 @@ const Data = {
       subItems: [
         {
           name: "Books",
-          path: "/learn/books",
+          path: "/learn/service-mesh-books",
           sepLine: true
         },
         {
           name: "Workshops",
-          path: "/learn/workshops",
+          path: "/learn/service-mesh-workshops",
           sepLine: true
         },
         {
@@ -166,7 +166,7 @@ const Data = {
         },
         {
           actionName: "Open source internship programs",
-          actionLink: "/community/members",
+          actionLink: "/careers/programs",
         }
       ],
       div1: {

@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <html lang="pt" />
-        <title>{"Layer5 - The Service Mesh Company"}</title>
+        <title>{"Layer5"}</title>
         <link rel="shortcut icon" type="image/x-icon" href={FavIcon} />
         <link
           href='https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap'

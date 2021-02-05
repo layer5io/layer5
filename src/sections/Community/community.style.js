@@ -2,7 +2,7 @@ import styled from "styled-components";
 import BookmarkImage from "./bookmark.png";
 
 const CommunitySectionWrapper = styled.div`
-    
+    margin-bottom: 3.25rem;
     .community-header{
         color: white;
         height: 25rem;
@@ -22,7 +22,7 @@ const CommunitySectionWrapper = styled.div`
     .community-section-wrapper{
         margin-bottom: 3.125rem;
     }
-    
+
     .service-mesh-projects{
         margin-top: 2rem;
         h2{
@@ -32,21 +32,20 @@ const CommunitySectionWrapper = styled.div`
                 line-height: 2.5rem;
             }
         }
-        
+
         img{
             display:block;
             margin:auto;
-            /* max-height: 18.75rem; */
         }
         @media (max-width: 62rem) {
              text-align:center;
         }
     }
-    
+
     .open-source-projects{
         margin-top: 3rem;
         text-align: center;
-        
+
         h2{
             margin:auto;
             margin-bottom: 1rem;
@@ -56,7 +55,7 @@ const CommunitySectionWrapper = styled.div`
             margin: auto;
         }
     }
-    
+
     .our-community-members{
         margin-top: 2rem;
         color: white;
@@ -64,7 +63,10 @@ const CommunitySectionWrapper = styled.div`
         @media (max-width: 62rem) {
             background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
         }
-        
+        @media (max-width: 32rem) {
+            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 66%, ${props => props.theme.black} 34%);
+        }
+
         .community{
             margin: 5.25rem auto 6rem auto;
             @media (max-width: 62rem) {
@@ -73,7 +75,6 @@ const CommunitySectionWrapper = styled.div`
             }
             @media (max-width: 36rem) {
                 margin-top: 5rem;
-                margin-bottom: auto;
             }
             h3{
                 margin: 1.5rem auto 1.5rem auto;
@@ -84,8 +85,8 @@ const CommunitySectionWrapper = styled.div`
             }
             button{
                 margin-top: 2.5rem;
-            }       
-        }        
+            }
+        }
     }
     .meshmate{
         margin-top: 5rem;
@@ -103,7 +104,6 @@ const CommunitySectionWrapper = styled.div`
             display:block;
             margin: auto;
             background-color: ${props => props.theme.secondaryLightColorTwo};
-
         }
         .meshmate-link{
             background-color: ${props => props.theme.secondaryLightColorTwo};
@@ -121,18 +121,23 @@ const CommunitySectionWrapper = styled.div`
                 padding: 0;
                 font-size: 1.25rem;
                 border: 0px;
-                border-radius: 1rem;        
+                border-radius: 1rem;
                 left: 0;
                 background: ${props => props.theme.secondaryColor};
                 border-color: ${props => props.theme.secondaryColor};
                 color: white;
             }
+            .icon svg {
+              display: flex;
+              margin: auto;
+            }
+            
             @media (max-width: 36rem) {
                h3{
                   font-size: 18px;
                }
             }
-            
+
             &:hover{
                 h3{
                     color: ${props => props.theme.primaryLightColorTwo};
@@ -145,7 +150,7 @@ const CommunitySectionWrapper = styled.div`
             }
         }
     }
-    
+
     .newcomers-section {
         background: ${props => props.theme.secondaryLightColor};
         width:100%;
@@ -164,7 +169,7 @@ const CommunitySectionWrapper = styled.div`
             padding: 1rem auto;
         }
         text-align:center;
-        
+
         .newcomers-arrow {
             align-items: center;
                 min-width: auto;
