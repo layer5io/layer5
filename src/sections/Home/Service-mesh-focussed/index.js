@@ -20,7 +20,7 @@ const ServiceMeshFocused = () => {
             <img src="/static/f43f94862a4505b9c575e0cf0c5184ae/The-Enterprise-Path-to-Service-Mesh-Architectures.png" alt="The-Enterprise-Path-to-Service-Mesh-Architectures" />
           </div>
           <div className="content-col">
-            <img src={BlockQouteImage} alt="Qoute-left"/>
+            <img src={BlockQouteImage} alt="Quote-left"/>
             <p className="content">
               <strong>
               "Diverse Microservices patterns and technologies, together with the requirements of given microservice applications,provide myriad opportunities

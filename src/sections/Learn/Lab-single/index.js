@@ -21,7 +21,7 @@ const LabSinglePage = ({ frontmatter, body }) => {
   return (
     <LabSinglePageWrapper>
       <div className="backBtn">
-        <Link to="/service-mesh">
+        <Link to="/learn/service-mesh-labs">
           <IoIosArrowDropleftCircle />
           <h4>All Labs</h4>
         </Link>

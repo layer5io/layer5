@@ -16,6 +16,7 @@ import meshery_multi_mesh from "./images/meshery_multi_mesh.png";
 import MesheryWrapper from "./meshery.style";
 import theme from "../../theme/app/themeStyles";
 import FeaturesSection from "./Features-section";
+import Features from "./Meshery-features";
 
 const MesheryPage = () => {
   return (
@@ -62,6 +63,7 @@ const MesheryPage = () => {
               <Button primary title="Get Started" url="./getting-started" />
             </div>
           </Container>
+          <Features />
         </MesheryWrapper>
       </Layout>
     </ThemeProvider>
