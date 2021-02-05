@@ -17,6 +17,9 @@ import img from "./Michael Gfeller - Layer5 Maintainer.png";
 import { MeetTheMaintainer } from "./MeetTheMaintainer.style";
 import { Link } from "gatsby";
 import ForkLift from "../../../assets/images/app/hero/forklift.svg";
+import MoireCircles from "./Line Moire.svg";
+import MoireLines from "./Circle Moire.svg";
+
 
 <BlogWrapper>
 <MeetTheMaintainer>
@@ -26,7 +29,7 @@ import ForkLift from "../../../assets/images/app/hero/forklift.svg";
 
 <div class="interviewer">
 <span>Shriti:</span><p>
-Michael, thank you for joining me today. This certainly isn’t our first conversation, and many in the Layer5 community have seen your work, but may not know the backstory as to who Michael is and how you arrived at the position you currently hold. Indulge us. How did you come across the Layer5 community? What made you stay?
+Michael, thank you for joining me today. Many people inside and outside of the Layer5 Community have seen the affects of your contributions, but may not know the backstory as to who Michael is and how you arrived at your maintainer role. Indulge us. How did you come across the Layer5 community? What made you stay?
 </p></div>
 
 <div class="interviewee">
@@ -69,13 +72,15 @@ Michael, thank you for joining me today. This certainly isn’t our first conver
 <span>Shriti:</span><p>
 What is so fascinating about service meshes?
 </p></div>
+<img class="right" src={MoireCircles} />
+
 
 <div class="interviewee">
-<span>Michael:</span><p>
+<span>Michael:</span>
+<p>
 "I find meshes intriguing in general. Meshes can look intricate, layered and complicated at a first glance, and yet they are built on the most basic principles. For me, meshes are visual structures, complete with an aesthetic and artistic dimension. "
 </p>
-<p>
-"Fun Fact: Overlapping meshes resulting in Moiré patterns are an example of this. They appealed to me from a young age, and I learned about their mathematics from my mathematics teacher."
+<p>"Fun Fact: Overlapping meshes resulting in Moiré patterns are an example of this. They appealed to me from a young age, and I learned about their mathematics from my mathematics teacher."
 </p></div>
 
 <div class="interviewer">
@@ -83,10 +88,12 @@ What is so fascinating about service meshes?
 Fascinating. Why did you pick service meshes specifically though? 
 </p></div>
 
+
 <div class="interviewee">
 <span>Michael:</span><p>
 "An increasing number of applications nowadays consist of distributed services, both in the  cloud and on-premises, in mixed and hybrid environments.  Many legacy applications are in express need of modernisation, consuming and being consumed by cloud native applications.  Introducing microservices, also by refactoring monolithic applications, increases the complexity of the service landscape. By delegating cross-cutting infrastructure concerns like security, traffic management, resilience, and observability to the services mesh, some of the complexity is moved from the applications to the service mesh, allowing application developers to focus on business logic. A concern in these distributed, dynamic and scalable systems is that the security also needs to scale. If security doesn’t scale, it becomes very challenging to handle such systems. Services meshes today are already able to support many of these scenarios, and are continuously improving."
 </p>
+
 <p>
 "Service meshes are complex but that is something I enjoy attempting as a challenge, to have control and overview and make it appear simple, investing into automating options. Another field that I’m excited to learn about continuously is related to  the security of distributed systems, and how service meshes contribute to implementing a  zero trust network architecture."
 </p>
@@ -95,7 +102,7 @@ Fascinating. Why did you pick service meshes specifically though?
 "I actually <a href="https://twitter.com/michaelgfeller/status/1289951164281233408" target="nofollow">dreamed about service mesh</a> a while ago. That was almost a bit spooky.”
 </p> 
 </div>
-
+<img class="right" src={MoireLines} />
 <div class="interviewer">
 <span>Shriti:</span><p>
 Haha. Leading on that, what should Meshery dream about next? What can we hope to contribute to the service mesh landscape in your opinion?</p>

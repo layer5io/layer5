@@ -1,11 +1,25 @@
 import styled from "styled-components";
 export const MeetTheMaintainer = styled.div`
     
+    img.right {
+        width: 25%;
+        display: inline;
+        position: relative;
+        float: right;
+    }
+    img.left {
+        width: 25%;
+        display: inline;
+        position: relative;
+        float: left;
+    }
     div.intro {
         padding-left: 3rem;
         padding-right: 3rem;
         font-style: italic;
         font-size: .8rem;
+        border-bottom: 1px dashed ${props => props.theme.primaryLightColor};
+
     }
 
     div.interviewer {
