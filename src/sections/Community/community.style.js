@@ -36,7 +36,6 @@ const CommunitySectionWrapper = styled.div`
         img{
             display:block;
             margin:auto;
-            /* max-height: 18.75rem; */
         }
         @media (max-width: 62rem) {
              text-align:center;
@@ -105,7 +104,6 @@ const CommunitySectionWrapper = styled.div`
             display:block;
             margin: auto;
             background-color: ${props => props.theme.secondaryLightColorTwo};
-
         }
         .meshmate-link{
             background-color: ${props => props.theme.secondaryLightColorTwo};
