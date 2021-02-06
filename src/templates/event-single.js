@@ -12,9 +12,12 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
+import SEO from "../components/seo";
+
 export const query = graphql`
       query EventsBySlug($slug: String!) {
         mdx(fields: { slug: { eq: $slug } }) {
+                body
                 frontmatter {
                     attribute{
                         name
@@ -45,6 +48,7 @@ const EventSinglePage = ({data}) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
+        <SEO title={`${data.mdx.frontmatter.title}`} />
         <Navigation />
         <EventSingle data={data}/>
         <Footer />
