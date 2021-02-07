@@ -26,14 +26,14 @@ const quotes_data = [
     quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
   },
   {
-    name: "USER3",
-    position: "POSITION",
-    quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    name: "Jason S.",
+    position: "Site Reliability Engineer",
+    quote: "Huge fan of MeshMap. It doesn't get any more intuitive than this."
   },
   {
-    name: "USER4",
-    position: "POSITION",
-    quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    name: "Shane W.",
+    position: "DevOps Architect",
+    quote: "...the ability to benchmark Istio in MY cluster with MY workloads is just what I was looking for. I threw out my test scripts."
   },
 ];
 
@@ -45,7 +45,7 @@ const MesheryQuotes = () => {
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 8000,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     cssEase: "linear",
@@ -59,11 +59,10 @@ const MesheryQuotes = () => {
       },
     ]
   };
-
   return(
     <MesheryQuotesWrapper>
       <Container>
-        <h2>Hear what Mehsery users (and lovers) have to say</h2>
+        <h2>Meshery Users Get Mushy</h2>
         <Slider {...settings}>
           {quotes_data.map((data,index) => (
             <QuoteCard

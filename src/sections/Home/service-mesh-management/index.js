@@ -20,9 +20,9 @@ const ServiceMeshManagement = () => {
             leftAlign={false}
             UniWidth="65%"
           >
-            <h4 className="title">Service Mesh Management</h4>
+            <h4 className="title">Meshery is</h4>
             <h2 className="big-title">
-              Meshery is <span>the</span> service mesh management plane.
+              <span>The</span> service mesh management plane.
             </h2>
           </SectionTitle>
           {/* <ServiceMeshAnimate className="active" >

@@ -15,9 +15,6 @@ const MeshMatesWrapper = styled.div`
           background-color: ${props => props.theme.secondaryLightColorTwo};
           border-bottom-left-radius: 4.375rem;
           border-bottom-right-radius: 4.375rem;
-          @media only screen and (max-width: 992px){
-            border-bottom-left-radius: 0;
-          }
           img{
             max-height: 25rem;
           }

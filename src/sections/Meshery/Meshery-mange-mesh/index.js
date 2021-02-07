@@ -31,7 +31,7 @@ const MesheryManageMesh = () => {
           <Col sm={12} lg={6}>
             <h2>Manage your Mesh</h2>
             <p>Manage the performance of your service <br/>mesh and its workloads</p>
-            <Button primary title="Run Meshery" url="/service-mesh-management/meshery/how-to-get-started-with-any-service-mesh"/>
+            <Button primary title="See how Meshery works" url="/service-mesh-management/meshery/operating-service-meshes"/>
           </Col>
           <Col sm={12} lg={6}>
             <img src={MultiMesh} alt="meshery-multi-mesh"/>
