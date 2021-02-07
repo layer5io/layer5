@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import icon5 from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
+import meshmateIcon from "../../../assets/images/meshmate/meshmate-icon.svg";
 
 const dot = (color = "#ccc") => ({
   alignItems: "center",
@@ -16,34 +18,81 @@ const dot = (color = "#ccc") => ({
   },
 });
 
+const img = (icon) => ({
+  alignItems: "center",
+  display: "flex",
+  backgroundImage: `url(${icon})`,
+  backgroundRepeat: "no-repeat",
+  backgroundSize: 20,
+  backgroundPosition: "left center",
+
+  ":before": {
+    borderRadius: 10,
+    content: "\" \"",
+    display: "block",
+    marginRight: 12,
+    marginLeft: 5,
+    height: 10,
+    width: 10,
+    zindex: 1000,
+  },
+});
+
 export const selectStyles = {
   menu: styles => ({ ...styles, zIndex: 999, }),
   control: styles => ({ ...styles, backgroundColor: "white", zIndex: 900 }),
-  option: (styles, { data, isFocused, isSelected }) => {
-    return {
-      ...styles,
-      backgroundColor: isSelected
-        ? data.value == "inactive" ? "rgba(171, 171, 171, 1)" : "rgba(11, 177, 158, 1)"
-        : isFocused
-          ? data.value == "inactive" ? "rgba(171, 171, 171, 0.30)" : "rgba(11, 177, 158, 0.30)"
-          : "white",
+  option: (styles, { data, isFocused, isSelected }) => ({
+    ...styles,
 
-      color: isSelected ? "white" : data.color,
+    alignItems: "center",
+    display: "flex",
+    backgroundImage: data.value == "all" ? ""
+      : data.value == "active" ? "" :
+        data.value == "inactive" ? "" :
+          data.value == "maintainers" ? `url(${icon5})` : `url(${meshmateIcon})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: 20,
+    backgroundPosition: "4% 50%",
 
-      zIndex: 900,
+    ":before": {
+      backgroundColor: data.value == "active" || data.value == "inactive" ? data.color : "",
+      borderRadius: 10,
+      content: "\" \"",
+      display: "block",
+      marginRight: 12,
+      marginLeft: 5,
+      height: 10,
+      width: 10,
+      zindex: 1000,
+    },
 
-      ":active": {
-        ...styles[":active"],
-        backgroundColor: (isSelected
-          ? data.value == "inactive"
-            ? "rgba(171, 171, 171, 0.75)" : "rgba(11, 177, 158, 0.75)"
-          : "white"),
-      },
-    };
-  },
+    backgroundColor: isSelected
+      ? data.value == "inactive" ? "rgba(171, 171, 171, 1)"
+        : "rgba(11, 177, 158, 1)"
+      : isFocused
+        ? data.value == "inactive" ? "rgba(171, 171, 171, 0.30)" : "rgba(11, 177, 158, 0.30)"
+        : "white",
+
+    color: isSelected ? "white" : "black",
+
+    zIndex: 900,
+
+    ":active": {
+      ...styles[":active"],
+      backgroundColor: (isSelected
+        ? data.value == "inactive"
+          ? "rgba(171, 171, 171, 0.75)" : "rgba(11, 177, 158, 0.75)"
+        : "white"),
+    },
+  }
+  ),
   input: styles => ({ ...styles, ...dot(), zIndex: 900 }),
   placeholder: styles => ({ ...styles, ...dot(), zIndex: 900 }),
-  singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color), zIndex: 900 }),
+  singleValue: (styles, { data }) => (data.value == "all"
+    ? { ...styles, zIndex: 900 }
+    : data.value == "maintainers" ? {...styles, ...img(icon5)}
+      : data.value == "meshmates" ? { ...styles, ...img(meshmateIcon) } 
+        : { ...styles, ...dot(data.color), zIndex: 900 }),
 };
 
 export const dropdownTheme = theme => ({

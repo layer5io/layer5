@@ -14,11 +14,11 @@ import Maintainers from "../../sections/Community/Members-grid/Maintainers";
 import Meshmate from "../../sections/Community/Members-grid/Meshmate";
 
 const options = [
-  { label: "All Members", value: "all", color: "#0bb39f", isFixed: true},
-  { label: "Active Members", value: "active", color: "#00b39f", isFixed: true},
-  { label: "Inactive Members", value: "inactive", color: "#aaa", isFixed: true},
-  { label: "Maintainers", value: "maintainers", color: "#00b39f", isFixed: true},
-  { label: "MeshMates", value: "meshmates", color: "#00b39f", isFixed: true}
+  { label: "All Members", value: "all", color: `${theme.linkColor}`, isFixed: true},
+  { label: "Active Members", value: "active", color: `${theme.linkColor}`, isFixed: true},
+  { label: "Inactive Members", value: "inactive", color: `${theme.menuColor}`, isFixed: true},
+  { label: "Maintainers", value: "maintainers", color: `${theme.linkColor}`, isFixed: true},
+  { label: "MeshMates", value: "meshmates", color: `${theme.linkColor}`, isFixed: true}
 ];
 
 const MembersPage = () => {
