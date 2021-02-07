@@ -22,7 +22,7 @@ const EventSingle = ({ data }) => {
         <Container>
           <div className="event-info-block">
             <div className="tags">
-              <i><MDXRenderer>{body}</MDXRenderer></i>
+              <MDXRenderer>{body}</MDXRenderer>
               <ul className="speakers">
                 {
                   frontmatter.speakers && frontmatter.speakers ? "Speakers:" : ""
