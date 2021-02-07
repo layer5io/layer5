@@ -10,7 +10,6 @@ import { MembersGridWrapper, selectStyles, dropdownTheme } from "./membersGrid.s
 import VintageBox from "../../../reusecore/VintageBox";
 import { FaEnvelope, FaUsers } from "react-icons/fa";
 
-
 const MembersGrid = props => {
   return (
     <MembersGridWrapper>
@@ -20,29 +19,33 @@ const MembersGrid = props => {
       <div className="members-page-wrapper">
         <Container>
           <div className="members-grid-wrapper">
-            <Row>
-              <Col xs={12} sm={6} lg={9} />
-              <Col xs={12} sm={6} lg={3}>
-                <Select
-                  name="Filter Members"
-                  defaultValue={props.options[0]}
-                  isSearchable={false}
-                  styles={selectStyles}
-                  options={props.options}
-                  value={props.members}
-                  onChange={props.handleChange}
-                  theme={dropdownTheme}
-                />
-                <br />
-              </Col>
-            </Row>
-            <Row>
-              {props.data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-                <Col xs={12} sm={6} md={6} lg={4} xl={3} key={id}>
-                  <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
+            <div className="members-grid-select">
+              <Row>
+                <Col xs={12} sm={6} lg={9} />
+                <Col xs={12} sm={6} lg={3}>
+                  <Select
+                    name="Filter Members"
+                    defaultValue={props.options[0]}
+                    isSearchable={false}
+                    styles={selectStyles}
+                    options={props.options}
+                    value={props.members}
+                    onChange={props.handleChange}
+                    theme={dropdownTheme}
+                  />
+                  <br />
                 </Col>
-              ))}
-            </Row>
+              </Row>
+            </div>
+            <div className="members-profile-cards">
+              <Row>
+                {props.data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
+                  <Col xs={12} sm={6} md={6} lg={4} xl={3} key={id}>
+                    <ProfileCard frontmatter={frontmatter} cardlink={fields.slug} />
+                  </Col>
+                ))}
+              </Row>
+            </div>
           </div>
           <div className="AboutCommunity">
             <div>
