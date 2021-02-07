@@ -26,7 +26,9 @@ export const NewcomersGuideWrapper = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      h2{
+        margin-top: -6.5rem;
+      }
     }
     .heading-start{
       display: flex;
@@ -44,7 +46,6 @@ export const NewcomersGuideWrapper = styled.section`
       img{
       height: 3rem;
       width: 4rem;
-      cursor: pointer;
       transition: .5s;
       }
       img:hover{
