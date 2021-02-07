@@ -27,7 +27,7 @@ const OperatingServiceMeshes = () => (
         features={[
           {
             title: "Supporting Service Mesh Interface",
-            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
+            icon: require("../../../assets/images/app/projects/smi.svg"),
             description:
               <p>Adapters allow Meshery to interface with the different service meshes, exposing their differentiated value to users.</p>,
           },
