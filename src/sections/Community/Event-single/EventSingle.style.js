@@ -8,7 +8,17 @@ const EventSinglePageWrapper = styled.div`
         p+p{
             margin-top: 1.75rem;  
         }  
-}
+    }
+    div.event-title {
+        text-align: center;
+    }
+    ul.speakers {
+        margin-left:0px;
+        padding-left:0px;
+    }
+    li.speakers {
+        margin-left: 2rem;
+    }
 `;
 
 export default EventSinglePageWrapper;

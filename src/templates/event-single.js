@@ -26,6 +26,7 @@ export const query = graphql`
                     eurl
                     title
                     topic
+                    speakers
                     date(formatString: "MMM Do, YYYY")
                     thumbnail {
                         publicURL
