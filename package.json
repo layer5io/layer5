@@ -50,6 +50,7 @@
     "lodash": "^4.17.20",
     "nuka-carousel": "^4.7.1",
     "prism-react-renderer": "^1.1.1",
+    "prismjs": "^1.23.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-accessible-accordion": "^3.3.3",

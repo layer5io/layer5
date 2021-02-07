@@ -18,7 +18,8 @@ export const query = graphql`
             body
             frontmatter {
                 title
-                
+                author
+                abstract
             }
         }
     }

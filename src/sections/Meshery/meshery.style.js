@@ -40,6 +40,18 @@ const MesheryWrapper = styled.section`
             }
         }
     }
+    code {
+        font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+ 
+        background-color: #000;
+        border-radius: 3px;
+        font-family: courier, monospace;
+        padding: 5px;
+        color: white;
+
+
+    }
+    pre:hover, pre:focus { width: min-content; }
 
     // #stripes, #stripes span {
     //     position: absolute
