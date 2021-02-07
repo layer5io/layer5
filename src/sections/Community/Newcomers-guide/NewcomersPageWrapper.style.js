@@ -84,6 +84,11 @@ export const NewcomersGuideWrapper = styled.section`
       .heading-start, .heading-start__arrow{
         display: none;
       }
+      .heading{
+        h2{
+          margin-top: 0;
+        }
+      }
   }
 `;
 
