@@ -23,10 +23,21 @@ const NewcomersMapWrapper = styled.div`
       }
     }
   }
-
+  #newcomers-guide{
+    path{
+      fill: ${props => props.handleHover.hover ? props => props.theme.secondaryColor : "#3c494e"};
+      transition: .5s;
+    }
+    &:hover{
+      path{
+        fill: ${props => props.theme.secondaryColor};
+        transition: 0s;
+      }
+    }
+  }
 `;
 
-const NewcomersMap = () => {
+const NewcomersMap = ({ handleMouseHover }) => {
   const [hoveredPoly1, setHoveredPoly1] = useState(false);
   // const toggleHoverPoly1 = () => setHoveredPoly1(!hoveredPoly1);
   const [hoveredPoly2, setHoveredPoly2] = useState(false);
@@ -34,7 +45,7 @@ const NewcomersMap = () => {
   const [hoveredPoly3, setHoveredPoly3] = useState(false);
   // const toggleHoverPoly3 = () => setHoveredPoly3(!hoveredPoly1);
   return(
-    <NewcomersMapWrapper>
+    <NewcomersMapWrapper handleHover={handleMouseHover}>
       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 584 322.62">
         <defs>
           <mask id="mask" x="13.73" y="53.34" width="153.4" height="60.53" maskUnits="userSpaceOnUse" >
@@ -86,7 +97,7 @@ const NewcomersMap = () => {
         <path d="M321.21,191.24h0a6.78,6.78,0,0,1,4.87,1.94,7,7,0,0,1,1.94,5,10.76,10.76,0,0,1-8.69,10.12,8.69,8.69,0,0,1-1.42.12A6.77,6.77,0,0,1,313,206.5a7,7,0,0,1-1.93-5,10.73,10.73,0,0,1,8.66-10.1,9,9,0,0,1,1.44-.13m0-1a9.8,9.8,0,0,0-1.6.14,11.75,11.75,0,0,0-9.5,11.08,7.62,7.62,0,0,0,7.8,8,9.62,9.62,0,0,0,1.58-.13A11.79,11.79,0,0,0,329,198.19a7.62,7.62,0,0,0-7.81-7.95Z" />
         <path d="M257.63,219.56a7.29,7.29,0,0,1-5.21-2.07,7.52,7.52,0,0,1-2.09-5.37,11.27,11.27,0,0,1,9-10.61,9.32,9.32,0,0,1,1.56-.14,7.28,7.28,0,0,1,5.2,2.07,7.46,7.46,0,0,1,2.09,5.38,11.28,11.28,0,0,1-9,10.6A9.44,9.44,0,0,1,257.63,219.56Z" style={{fill: "#62accd"}} />
         <path d="M260.94,201.87h0a6.74,6.74,0,0,1,4.85,1.93,7,7,0,0,1,1.94,5,10.75,10.75,0,0,1-8.62,10.11,9.35,9.35,0,0,1-1.48.13,6.76,6.76,0,0,1-4.86-1.93,7,7,0,0,1-1.94-5A10.76,10.76,0,0,1,259.47,202a8.19,8.19,0,0,1,1.47-.13m0-1a9.35,9.35,0,0,0-1.64.15,11.74,11.74,0,0,0-9.47,11.1,7.62,7.62,0,0,0,7.8,7.94,9.37,9.37,0,0,0,1.65-.15,11.76,11.76,0,0,0,9.45-11.09,7.61,7.61,0,0,0-7.79-7.95Z" />
-        <a href="https://docs.google.com/document/d/1tpg2sLxirozNt3Ofr3GdM002f9rExp74EqrsGZBU710/edit?usp=sharing" target="_blank" rel="noreferrer">
+        <a id="newcomers-guide" href="https://docs.google.com/document/d/1tpg2sLxirozNt3Ofr3GdM002f9rExp74EqrsGZBU710/edit?usp=sharing" target="_blank" rel="noreferrer">
           <path d="M19.69,53.67A4.67,4.67,0,0,0,14,58.38V81.87a7.13,7.13,0,0,0,5.73,6.74l65.07,11.47,6,11.36,6-9.26,64.5,11.38a4.68,4.68,0,0,0,5.73-4.72V85.35a7.13,7.13,0,0,0-5.73-6.74Z"/>
           <g style={{mask: "url(#mask)"}}>
             <path d="M84.76,100.08,85,100l-.06-.12-.14,0Zm6,11.36-.2.08.2.38.2-.31Zm6-9.26V102l-.13,0-.07.1ZM14.19,58.42a4.48,4.48,0,0,1,5.5-4.52v-.46a4.86,4.86,0,0,0-6,4.9Zm0,23.49V58.42l-.46-.08V81.83Zm5.5,6.47a6.85,6.85,0,0,1-5.5-6.47l-.46-.08a7.42,7.42,0,0,0,6,7ZM84.76,99.85,19.69,88.38v.46l65.07,11.47Zm-.19.31,6,11.36.4-.16L85,100Zm6.35,11.43,6-9.26-.4-.3-6,9.26Zm70.25,1.74L96.67,102v.46l64.5,11.37Zm5.5-4.53a4.49,4.49,0,0,1-5.5,4.53v.45a4.86,4.86,0,0,0,6-4.9Zm0-23.49V108.8l.46.08V85.39Zm-5.5-6.47a6.85,6.85,0,0,1,5.5,6.47l.46.08a7.42,7.42,0,0,0-6-7ZM19.69,53.9,161.17,78.84v-.46L19.69,53.44Z" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {Link} from "gatsby";
 import {Col, Container, Row} from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -14,6 +14,9 @@ import longArrow from "./long-arrow.svg";
 
 
 const NewcomersGuide = () => {
+
+  const[hover, setHover] = useState({ hover: false });
+
   return (
     <NewcomersGuideWrapper>
       <PageHeader title="Welcome Newcomers!"/>
@@ -27,7 +30,7 @@ const NewcomersGuide = () => {
             Also, you can check the quick-links below for jumping straight into things.
           </p>
           <Row className="newcomers-journey">
-            <Col className="heading" sm={12} lg={6}>
+            <Col className="heading" sm={12} lg={6} onMouseOver={() => setHover({ hover: true })} onMouseOut={() => setHover({ hover: false })}>
               <h2>Contributor's Journey</h2>
               <div className="heading-start">
                 <h5>Start Here</h5>
@@ -35,7 +38,7 @@ const NewcomersGuide = () => {
               </div>
             </Col>
             <Col sm={12} lg={6}>
-              <NewcomersMap/>
+              <NewcomersMap handleMouseHover={hover}/>
             </Col>
           </Row>
           <Row className="how-to-contribute">
