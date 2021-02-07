@@ -28,9 +28,9 @@ const Projects = () => {
                 Operate any service mesh <span>with confidence</span>.
               </h2>
             </SectionTitle>
-            <p className="project-text">
+            {/* <p className="project-text">
                         Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services.
-            </p>
+            </p> */}
           </div>
         </Row>
         <Row>
@@ -73,9 +73,19 @@ const Projects = () => {
             </Col>
           </div>
         </Row>
-        <div className="button">
+        {/* <div className="button">
           <Button secondary url="/projects" title="Learn More" />
-        </div>
+        </div> */}
+        <Row>
+          <Col xs={12}>
+            <div className="description">
+              <p>Layer5 projects establish industry standards and enable service developers,
+                owners, and operators with repeatable patterns and best practices for managing
+                all aspects of distributed services
+              </p>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </ProjectItemWrapper>
   );

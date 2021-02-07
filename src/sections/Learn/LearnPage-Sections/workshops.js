@@ -6,6 +6,7 @@ import { feedbackData } from "./feedbackData";
 import Slider from "react-slick";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import styled from "styled-components";
+import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
 
 export const WorkshopsListWrapper = styled.div`
 
@@ -91,6 +92,10 @@ export const WorkshopsListWrapper = styled.div`
 		}
 
 		.feedback-section {
+			img{
+				width:4rem;
+				height:3rem;
+			}
 			.slick-slider {
 				max-width: 1100px;
 			}
@@ -209,7 +214,7 @@ const WorkshopsSection = () => {
           <h1>Workshops</h1>
           <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
           <div className="see-more-button">
-            <Button primary title="Checkout all workshops" url="workshops"/>
+            <Button primary title="Checkout all workshops" url="/workshops"/>
           </div>
         </Col>
         <Col xs={12} md={9} className="workshops-col">
@@ -226,12 +231,13 @@ const WorkshopsSection = () => {
           </Row>
         </Col>
       </div>
-      <div className="feedback-section">
+      <div className="feedback-section">	
         <Slider {...settings}>
           {
-            feedbackData.map((data, indx) => {
+            feedbackData.map((data, index) => {
               return (
-                <Col key={indx}>
+                <Col key={index}>
+                  <img src={BlockQouteImage} alt="Quote-left" />
                   <p>{data.feedback}</p>
                   <h3>{data.workshop}</h3>
                   <h5>{data.studnt_name}</h5>

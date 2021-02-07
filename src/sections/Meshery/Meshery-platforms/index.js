@@ -1,49 +1,54 @@
-import React, {useState} from "react";
-import MesheryLogo from  "../../../assets/images/meshery/meshery-logo-complete-white-side.svg";
+import React, { useState } from "react";
+import MesheryLogo from "../../../assets/images/meshery/meshery-logo-complete-white-side.svg";
 import { MesheryPlatformsWrapper } from "./MesheryPlatforms.style";
-import {Col, Container, Row} from "../../../reusecore/Layout";
+import { Col, Container, Row } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import Code from "../../../components/CodeBlock";
 import dedent from "dedent";
 
 const supported_platforms = [
   {
-    icon : require("./supported-icons/apple.svg"),
+    icon: require("./supported-icons/apple.svg"),
     name: "Apple",
     steps: (
       <h3>Apple</h3>
     )
   },
   {
-    icon : require("./supported-icons/docker.svg"),
+    icon: require("./supported-icons/docker_white.svg"),
     name: "Docker",
     steps: (
       <h2>Docker</h2>
     )
   },
   {
-    icon : require("./supported-icons/eks.svg"),
+    icon: require("./supported-icons/eks_white.svg"),
     name: "EKS",
     steps: (
       <h2>EKS</h2>
     )
   },
   {
-    icon : require("./supported-icons/gke.svg"),
+    icon: require("./supported-icons/gke.svg"),
     name: "GKE",
     steps: (
       <h2>test</h2>
     )
   },
   {
-    icon : require("./supported-icons/helm.svg"),
+    icon: require("./supported-icons/helm-icon-white.svg"),
     name: "Helm",
     steps: (
-      <h2>test</h2>
+      <>
+        <h2>Helm Chart</h2>
+        <p>Install on Kubernetes using Helm:</p>
+        <Code codeString={dedent`kubectl create namespace meshery
+      helm install meshery --namespace meshery install/kubernetes/helm/meshery`} />
+      </>
     )
   },
   {
-    icon : require("./supported-icons/homebrew.svg"),
+    icon: require("./supported-icons/homebrew.svg"),
     name: "HomeBrew",
     steps: (
       <>
@@ -57,45 +62,51 @@ const supported_platforms = [
     )
   },
   {
-    icon : require("./supported-icons/kind.svg"),
+    icon: require("./supported-icons/kind.svg"),
     name: "Kind",
     steps: (
       <h2>test</h2>
     )
   },
   {
-    icon : require("./supported-icons/kubernetes.svg"),
+    icon: require("./supported-icons/kubernetes_white.svg"),
     name: "Kubernetes",
     steps: (
       <h2>test</h2>
     )
   },
   {
-    icon : require("./supported-icons/linux.svg"),
+    icon: require("./supported-icons/linux.svg"),
     name: "Linux",
     steps: (
       <h2>test</h2>
     )
   },
   {
-    icon : require("./supported-icons/minikube.svg"),
+    icon: require("./supported-icons/minikube.svg"),
     name: "Minikube",
     steps: (
       <h2>test</h2>
     )
   },
   {
-    icon : require("./supported-icons/openshift.svg"),
+    icon: require("./supported-icons/openshift.svg"),
     name: "OpenShift",
     steps: (
       <h2>test</h2>
     )
   },
   {
-    icon : require("./supported-icons/wsl2.svg"),
+    icon: require("./supported-icons/wsl2.svg"),
     name: "WSL2",
     steps: (
-      <h2>test</h2>
+      <>
+        <h2>Winddows</h2>
+        <p>
+          Download and unzip mesheryctl from the <a href="https://github.com/layer5io/meshery/releases/">Meshery releases page</a>. Add mesheryctl to your PATH for ease of use. Then, execute:</p>
+        <Code codeString={dedent`./mesheryctl system start`}
+        />
+      </>
     )
   }
 ];
@@ -104,13 +115,13 @@ const MesheryPlatforms = () => {
   const [currentPlatform, setCurrentPlatform] = useState({});
 
   const changeCurrentPlatform = (index) => {
-    if(currentPlatform.name && currentPlatform.name === supported_platforms[index].name)
+    if (currentPlatform.name && currentPlatform.name === supported_platforms[index].name)
       setCurrentPlatform({});
     else
       setCurrentPlatform(supported_platforms[index]);
   };
 
-  return(
+  return (
     <MesheryPlatformsWrapper>
       <div className="content">
         <Row Hcenter className="step-1">
@@ -118,7 +129,7 @@ const MesheryPlatforms = () => {
           <h2>Step 1: Choose your platform</h2>
         </Row>
         <Row className="supported-platforms">
-          { supported_platforms.map((platform,index) => (
+          {supported_platforms.map((platform, index) => (
             <Col xs={6} sm={4} md={3} lg={2} key={platform.name}>
               <Button
                 className={currentPlatform.name && currentPlatform.name === supported_platforms[index].name
@@ -138,7 +149,7 @@ const MesheryPlatforms = () => {
         )}
         <Row Hcenter className="step-2">
           <h2>Step 2: Manage your mesh</h2>
-          <img src={MesheryLogo} alt="Meshery"/>
+          <img src={MesheryLogo} alt="Meshery" />
         </Row>
       </div>
     </MesheryPlatformsWrapper>

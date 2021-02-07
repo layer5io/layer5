@@ -6,6 +6,8 @@ import { IoMdClose } from "react-icons/io";
 
 import { Container } from "../../../reusecore/Layout";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
+import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
+import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
@@ -13,33 +15,9 @@ import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import NavigationWrap from "./navigation.style";
 
 const Navigation = () => {
-  const data = useStaticQuery(
+  let data = useStaticQuery(
     graphql`
-            query  {
-                Projects: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: { eq: true } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
+            query {
                 Learn: allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
                     filter: { fields: { collection: { eq: "books" } } }
@@ -136,6 +114,32 @@ const Navigation = () => {
             }
         `
   );
+  data["Projects"] = {
+    nodes: [
+      {
+        frontmatter: {
+          thumbnail: {
+            img: meshery
+          },
+          title:  "Meshery, the Service Mesh Manager"
+        },
+        fields: {
+          slug: "/service-mesh-management/meshery"
+        }
+      },
+      {
+        frontmatter: {
+          thumbnail: {
+            img: smp_dark_text
+          },
+          title: "Service Mesh Performance"
+        },
+        fields: {
+          slug: "/projects/service-mesh-performance"
+        }
+      }
+    ]
+  };
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
   const dropDownRef = useRef();
@@ -168,13 +172,13 @@ const Navigation = () => {
             {expand ?
               <IoMdClose
                 className="mobile-menu-icon open"
-                onClick={function() {
-                  setExpand(!expand); closeDropDown(); 
+                onClick={function () {
+                  setExpand(!expand); closeDropDown();
                 }}
               /> : <FaBars
                 className="mobile-menu-icon"
-                onClick={function() {
-                  setExpand(!expand); openDropDown(); 
+                onClick={function () {
+                  setExpand(!expand); openDropDown();
                 }}
               />
             }

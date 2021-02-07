@@ -43,7 +43,6 @@ module.exports = {
         extensions: [".mdx", ".md"],
       },
     },
-
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -51,6 +50,14 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "communityImageSlider",
+        path: `${__dirname}/src/assets/images/Community-pictures`,
+      },
+    },
+
     {
       resolve: "gatsby-source-filesystem",
       options: {

@@ -6,7 +6,7 @@ import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 import ParticleComponent from "../../../reusecore/Particle";
 
-import { FaMapMarkedAlt, FaPlay } from "react-icons/fa";
+import { FaMapMarkedAlt } from "react-icons/fa";
 import { FiDownloadCloud } from "react-icons/fi";
 
 import BannerSectionWrapper from "./banner.style";
@@ -37,10 +37,9 @@ const BannerDefault = () => {
               <Button primary className="banner-btn one" title="Join in" url="/community">
                 <FaMapMarkedAlt size={21} className="icon-left" />
               </Button>
-              <Button primary className="banner-btn two" title="Run Meshery" url="/projects/meshery">
+              <Button primary className="banner-btn two" title="Run Meshery" url="/service-mesh-management/meshery">
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
-                            
             </VintageBox>
           </Col>
         </Row>
