@@ -18,7 +18,8 @@
     "serve": "gatsby serve",
     "lint": "eslint --fix .",
     "pretest": "eslint --ignore-path .gitignore .",
-    "preload-fonts": "gatsby-preload-fonts"
+    "preload-fonts": "gatsby-preload-fonts",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b gh-pages"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^5.5.0",
@@ -47,6 +48,7 @@
     "gatsby-redirect-from": "^0.2.4",
     "gatsby-source-filesystem": "^2.1.39",
     "gatsby-transformer-sharp": "^2.3.6",
+    "gh-pages": "^3.1.0",
     "lodash": "^4.17.20",
     "nuka-carousel": "^4.7.1",
     "prism-react-renderer": "^1.1.1",

@@ -60,3 +60,11 @@ jobs:
          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
        with:
          args: deploy --dir=public --prod
+
+     - name: Deploy on GH Pgaes
+       uses: actions/setup-node@v1
+       with:
+         node-version: 12
+       run:
+         npm i
+         npm run deploy
