@@ -105,8 +105,8 @@ const ProudMaintainers = () => {
           </div>
         </Col>
       </Row>
-      {/* <div className="project_icons_section">
-        <div className="proj_icon">
+      <div className="project_icons_section">
+        {/* <div className="proj_icon">
           <img src={CNCF} alt="CNCF" />
         </div>
         <div className="proj_icon">
@@ -146,7 +146,7 @@ const ProudMaintainers = () => {
           <img src={Traefik} alt="Traefik" />
           <h4>Traefik Mesh</h4>
         </div>
-      </div> */}
+      </div> 
     </ProjectItemWrapper>
   );
 };
