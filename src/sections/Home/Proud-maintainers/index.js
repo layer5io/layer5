@@ -53,12 +53,12 @@ const ProudMaintainers = () => {
             <img src={Linkerd} alt="Linkerd" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2}>
+        {/* <Col xs={3} sm={3} md={3} lg={2}>
           <div className="proj_icon_2">
             <img src={ServiceMesh} alt="Service Mesh" />
             <h4>Service Mesh</h4>
           </div>
-        </Col>
+        </Col> */}
         <Col xs={3} sm={3} md={3} lg={2}>
           <div className="proj_icon_1">
             <img src={Meshery} alt="Meshery" />
@@ -105,8 +105,8 @@ const ProudMaintainers = () => {
           </div>
         </Col>
       </Row>
-      <div className="project_icons_section">
-        {/* <div className="proj_icon">
+      {/*  <div className="project_icons_section">
+        <div className="proj_icon">
           <img src={CNCF} alt="CNCF" />
         </div>
         <div className="proj_icon">
@@ -118,7 +118,7 @@ const ProudMaintainers = () => {
         {/* <div className="proj_icon">
           <img src={ServiceMesh} alt="Service Mesh"/>
           <h4>Service Mesh</h4>
-        </div> */}
+        </div> 
         <div className="proj_icon">
           <img src={Meshery} alt="Meshery" />
         </div>
@@ -146,7 +146,7 @@ const ProudMaintainers = () => {
           <img src={Traefik} alt="Traefik" />
           <h4>Traefik Mesh</h4>
         </div>
-      </div> 
+      </div> */}
     </ProjectItemWrapper>
   );
 };
