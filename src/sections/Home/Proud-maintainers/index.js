@@ -70,7 +70,7 @@ const ProudMaintainers = () => {
           </div>
         </Col>
       </Row>
-      <Row className="row">
+      <Row className="row row_2">
         <Col xs={3} sm={3} md={3} lg={2}>
           <div className="proj_icon_2">
             <img src={Istio} alt="Istio" />
