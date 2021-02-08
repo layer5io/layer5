@@ -18,16 +18,14 @@ const BannerSectionWrapper = styled.section`
         width: 70%;
     }
     h4 {
-        margin-bottom: 8px;
         color: ${props => props.theme.primaryLightColor};
         text-transform: uppercase;
-        font-weight: 600;
     }
     .section-title{
         h1{
             font-weight: 400;
             font-size: 60px;
-            line-height: 75px;
+            line-height: 4.3rem;
             margin: 0 0 38px 0; 
             span{
                 font-weight: 700;

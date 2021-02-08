@@ -3,13 +3,13 @@ export const LandscapePageWrapper=styled.div`
 
 	h2.landscape-section-heading {
 		margin-bottom: 3rem;
-		margin-top: 3rem;
+		margin-top: 1rem;
 		width: 100%;
 		font-weight: 400;
 		text-align: center;
 	}
 	.subsequent-heading {
-		padding-top: 8rem;
+		padding-top: 6rem;
 	}
 	.landscape-section-sub-heading {
 		margin-top: -1rem;
@@ -164,20 +164,58 @@ export const LandscapePageWrapper=styled.div`
 		height: 4.4rem;
 		left: 12.5%;
 		top: 12%;
+		animation: bounce .75s; 
+		animation-direction: alternate; 
+		animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+		animation-iteration-count: infinite; 
 	}
 	.showMoreIcon:hover {
 		cursor: pointer;
-		transform: scale(1.1);
 	}
 	span.moreIcon.vertical-timeline-element-icon {
-		background: #EAD07D;
-		color: #1E2117;
+		background: ${props => props.theme.saffronColor};
+		color: #fff;
 		margin-left: -1.75rem;
+		animation: bounce .75s; 
+		animation-direction: alternate; 
+		animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
+		animation-iteration-count: infinite; 
+	
 	}
 	span.moreIcon.vertical-timeline-element-icon:hover {
-		background: #EBC017;
-		transform: scale(1.1);
+		background: ${props => props.theme.saffronLightColor};
 	}
+      
+	@keyframes bounce { 
+		from { 
+			transform: translate3d(0, 0, 0); 
+		} 
+		to { 
+			transform: translate3d(0, 6px, 0); 
+		} 
+	} 
+	/* Prefix Support */ 
+          
+	.showMoreIcon { 
+		-webkit-animation-name: bounce; 
+		-webkit-animation-duration: .75s; 
+		-webkit-animation-direction: alternate; 
+		-webkit-animation-timing-function: cubic-bezier( 
+		.5, 0.05, 1, .5); 
+		-webkit-animation-iteration-count: infinite; 
+	} 
+          
+	@-webkit-keyframes bounce { 
+		from { 
+			-webkit-transform: translate3d(0, 0, 0); 
+			transform: translate3d(0, 0, 0); 
+		} 
+		to { 
+			-webkit-transform: translate3d(0, 6px, 0); 
+			transform: translate3d(0, 6px, 0); 
+		} 
+	} 
+
 	@media screen and (min-width: 1200px) {
 		.dashLine-0 {
 			margin-left: -33%;
@@ -398,6 +436,8 @@ export const LandscapePageWrapper=styled.div`
 		padding: 2.5rem;
 		text-align: center;
 		margin: auto;
+		margin-top: 4rem;
+		margin-bottom: 4rem;
 
 		.text-gray {
 			margin-top: 2rem;
@@ -418,18 +458,21 @@ export const LandscapePageWrapper=styled.div`
 	}
 	.Legend {
 		display: flex;
-		padding: 1rem;
+		padding: .7rem;
 		text-align: right;
 		margin-left: auto;
 		vertical-align: middle;
-		border: 3px ${props => props.theme.primaryColor};
+		border: 1px ${props => props.theme.primaryColor};
 		background-color: ${props => props.theme.darkJungleGreenColor};
+		opacity: .85;
 		color: #efefef;
 		font-size: .9rem;
 		border-style: inset; 
 		span {
 			font-size: 1rem;
 			font-weight:600;
+			margin: auto;
+			margin-right: 1rem;
 		}
 		img {
 			height: 2rem;
@@ -448,7 +491,8 @@ export const LandscapePageWrapper=styled.div`
 		div {
 			padding-left: 0.5rem;
 			padding-right: 0.5rem;
-			
+			background-color:#fff;
+			color: ${props => props.theme.darkJungleGreenColor};
 			border: 1px dashed ${props => props.theme.primaryLightColor};
 			margin: 0rem .3rem;
 

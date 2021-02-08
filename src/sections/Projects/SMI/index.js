@@ -1,6 +1,7 @@
 import React from "react";
 
-import Layout from "../../../components/layout"; 
+import Layout from "../../../components/layout"
+import Subscribe from "../../../sections/subscribe/subscribe"; 
 
 import SMIWrapper from "./smi.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
@@ -19,10 +20,13 @@ const SMIPage = () => {
           <img className="logo" src={logo} />
           <Row className="description">
             <Col lg={8} md={12} sm={12}>
-              <h6> Why does conformance matter? </h6>
-              <h1> Service Mesh Interface Conformance</h1>
+              <h4> Conformance and Diagnostics</h4>
+              <h1> Service Mesh Interface</h1>
               <p className="desc-p"> 
-                            In order to confidently operate a service mesh without locking into the specific service mesh's APIs, you will adopt SMI. How do you know if the service mesh you are using is SMI compatible, though
+                Integrate and wrap your operational processes around a service mesh without fear of lock-in. SMI provides a standard interface for service meshes on Kubernetes and a basic feature set for the most common service mesh use cases.
+              </p>
+              <p> 
+                Meshery is <span>the official</span> SMI Conformance Validator. Use Meshery's diagnostic tool to verify that your service mesh's behavior in an accessible and non-destructive manner.
               </p>
               <Button primary title="Run SMI Conformance" url="/blog/programs/starting-smi-conformance-testing-with-meshery" /> 
             </Col>
@@ -83,6 +87,7 @@ const SMIPage = () => {
           </div>
         </div>
       </SMIWrapper>
+      <Subscribe />
     </Layout>
   );
 };

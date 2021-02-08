@@ -7,6 +7,7 @@ import NonFunctional from "./non-functional";
 import Functional from "./functional";
 import SMI_Compatibility from "./smi";
 import Tools from "./tools";
+import Subscribe from "../../sections/subscribe/subscribe";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ServiceMeshTimeline from "./ServiceMeshTimeline";
@@ -112,7 +113,7 @@ const LandscapeGrid=() => {
               <h4 className="landscape-section-sub-heading">Is your service mesh compliant? <a href="/projects/service-mesh-interface-conformance">Find out</a>.</h4>
               <SMI_Compatibility />
               <div className="Legend">
-                <span>Legend</span>:
+                <span>Legend:</span>
                 <div className="Landscape">
                   <img alt="Full" src={passingMark} />
                   Fully Compatible
@@ -145,6 +146,7 @@ const LandscapeGrid=() => {
           </div>
         </Container>
       </div>
+      <Subscribe />
     </LandscapePageWrapper>
   );
 };

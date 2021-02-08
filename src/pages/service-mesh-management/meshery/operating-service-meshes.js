@@ -49,8 +49,11 @@ const OperatingServiceMeshes = () => (
           {
             title: "Extension Points",
             icon: require("../../../assets/images/meshery/icon-only/meshery-logo-light.svg"),
-            description:
-              <p>Meshery is not just an application. It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points. Extension points come in various forms and are available through Meshery’s architecture.</p>,
+            description: <div>
+              <p>Meshery is not just an application. It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points. Extension points come in various forms and are available through Mesherys architecture.</p>
+
+              <p>Learn more about <a href="https://docs.meshery.io/extensibility">Extension Points</a></p>
+            </div>
           },
           {
             title: "BG",
@@ -87,7 +90,7 @@ const OperatingServiceMeshes = () => (
               <p>Automate credential injection to securely access services and hosts with HashiCorp Vault. Reduce risk of leaking credentials with dynamic secrets and just-in-time credentials.</p>,
           },
         ]} />
-      <HowMesheryWorksSpecs/>
+      <HowMesheryWorksSpecs />
       <Footer />
     </Layout>
   </ThemeProvider>

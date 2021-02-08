@@ -115,10 +115,10 @@ const ProudMaintainers = () => {
         <div className="proj_icon">
           <img src={Linkerd} alt="Linkerd" />
         </div>
-        <div className="proj_icon">
+        {/* <div className="proj_icon">
           <img src={ServiceMesh} alt="Service Mesh"/>
           <h4>Service Mesh</h4>
-        </div>
+        </div> */}
         <div className="proj_icon">
           <img src={Meshery} alt="Meshery" />
         </div>

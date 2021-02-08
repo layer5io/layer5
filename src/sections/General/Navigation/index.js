@@ -119,23 +119,23 @@ const Navigation = () => {
       {
         frontmatter: {
           thumbnail: {
+            img: meshery
+          },
+          title:  "Meshery, the Service Mesh Manager"
+        },
+        fields: {
+          slug: "/service-mesh-management/meshery"
+        }
+      },
+      {
+        frontmatter: {
+          thumbnail: {
             img: smp_dark_text
           },
           title: "Service Mesh Performance"
         },
         fields: {
           slug: "/projects/service-mesh-performance"
-        }
-      },
-      {
-        frontmatter: {
-          thumbnail: {
-            img: meshery
-          },
-          title:  "Meshery, The Service Mesh Manager"
-        },
-        fields: {
-          slug: "/service-mesh-management/meshery"
         }
       }
     ]

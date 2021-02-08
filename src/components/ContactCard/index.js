@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
-import img from "../../assets/images/contact/forklift.svg";
+import img from "../../assets/images/service-mesh-icons/service-mesh.svg";
 import { MdPermContactCalendar, MdEmail } from "react-icons/md";
 import ContactWrapper from "./contact.style";
 
@@ -12,10 +12,10 @@ const ContactCard = () => {
       <div className="parentcard">
         <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
           <SectionTitle className="section-title" UniWidth="100%">
-            <h2><span>Stay meshy and subscribe</span></h2>
+            <h3><span>Stay meshy. Subscribe.</span></h3>
           </SectionTitle>
           <Row>
-            <Col md={3}><img src={img} alt="forklift" /></Col>
+            <Col md={3}><img src={img} alt="service mesh icon" /></Col>
             <Col md={9}>
               <Row>
                 <Col className="nopad" md={1} xs={1}><MdPermContactCalendar className="contact-icon" size={30}></MdPermContactCalendar></Col>

@@ -7,6 +7,7 @@ const ProjectItemWrapper = styled.section`
     margin-top: 2rem;
     .project-title {
         .section-title{
+
             h4{
                 font-weight: 500;
                 color: ${props => props.theme.primaryLightColor};
@@ -94,7 +95,7 @@ const ProjectItemWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 912px) {
-         padding: 60px 0 0 0;
+         /* padding: 60px 0 0 0; */
          .project-title {
             padding: 0 5% 0 5%;
             .section-title{
@@ -140,7 +141,7 @@ const ProjectItemWrapper = styled.section`
         }
      }
      @media only screen and (max-width: 568px) {
-        padding: 60px 0 0px 0;
+        /* padding: 60px 0 0px 0; */
          .section-title,
         .project-content-wrap{
             text-align: center;

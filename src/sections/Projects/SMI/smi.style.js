@@ -3,10 +3,15 @@ import styled from "styled-components";
 const SMIWrapper = styled.section`
     .description{
         margin: 6.25rem -0.94rem 7.5rem -0.94rem;
-        h6{
-            font-size: 20px;
+        h4{
+          
             color: ${props => props.theme.tertiaryColor};;
-            font-weight: semi-bold;
+            font-weight: ;
+            border: 1px solid gray;
+            padding: 0 0.625rem 0 0.625rem;
+            width: fit-content;
+            
+            
         }
         h1{
             margin-bottom: 1.56rem;

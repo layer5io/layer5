@@ -43,7 +43,9 @@ const PictureSlider = () => {
           filter: {
             extension: { regex: "/(jpg)|(jpeg)|(png)/" }
             relativeDirectory: {eq: "Community-pictures"}
+            
           }
+          sort: {fields: [base] }
         ) {
           edges {
             node {
