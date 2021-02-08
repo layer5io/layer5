@@ -25,8 +25,12 @@ const ProjectItemWrapper = styled.section`
 
 	.row {
 		justify-content: center;
-		margin: 0 1rem;
+		margin: 1rem 1rem;
 		flex-wrap: nowrap;
+	}
+	.row_2 {
+		margin-left: 10%;
+		margin-right: -10%;
 	}
 
 	.proj_icon_2,
