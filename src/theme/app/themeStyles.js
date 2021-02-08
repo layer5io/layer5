@@ -23,6 +23,7 @@ const theme = {
   // dark jungle green
   tertiaryColor: "#1e2117",
   darkJungleGreenColor: "#1e2117",
+  darkJungleGreenHalfColor: "rgba(30, 33, 23, .5)",
 
   // Teal Blue
   tertiaryColorTwo: "#477E96",
@@ -45,8 +46,10 @@ const theme = {
 
   // saffron (dark yellow)
   highlightColor: "#EBC017",
-
+  saffronColor: "#EBC017",
+  
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
+  saffronLightColor: "#EAD07D",
 };
 export default theme;
