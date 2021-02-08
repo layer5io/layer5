@@ -14,8 +14,8 @@ export const LogoListWrapper = styled.div`
       margin: 10px 16px;
 
       & img {
-        max-height: 32px;
-        max-width: 96px;
+        height: 32px;
+        width: auto;
       }
     }
   }
