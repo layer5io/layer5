@@ -5,8 +5,9 @@ const FeaturesColSectionWrapper = styled.section`
     overflow: hidden;
     position: relative;
     .title{
-        width: 60%
+        width: 100%
         margin: auto;
+        margin-bottom: 2rem;
         text-align: center;
         .light{
             font-weight: 500;
@@ -20,11 +21,14 @@ const FeaturesColSectionWrapper = styled.section`
         text-align: center;
         height: 42rem;
         transition: all 0.3s ease-in;
+        
         .feature-block{
             text-align: center;
             margin: 0 0 0.3rem 0;
+            font-size: .9rem;
+            color: darkgray;
             h3{
-                font-size: 36px;
+                font-size: 2rem;
                 font-weight: 600;
                 margin: 0 0 0.625rem 0;
                 color: ${props => props.theme.black};
@@ -34,6 +38,9 @@ const FeaturesColSectionWrapper = styled.section`
                 color: ${props => props.theme.primaryColor};
             text-align: center;
             }
+        }
+        p {
+            font-weight: 300;
         }
         .details-block{
             text-align: left;
