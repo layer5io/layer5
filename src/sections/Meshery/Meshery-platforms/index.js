@@ -90,10 +90,16 @@ const supported_platforms = [
     )
   },
   {
-    icon: require("./supported-icons/openshift.svg"),
-    name: "OpenShift",
+    icon: require("./supported-icons/aks_white.svg"),
+    name: "AKS",
     steps: (
-      <h2>test</h2>
+      <>
+        <h2>Azure Kubernetes Service</h2>
+        <p>Install mesheryctl and configure Meshery to communicate with AKS.</p>
+        <Code codeString={dedent`mesheryctl system config aks`
+        }
+        />
+      </>
     )
   },
   {
