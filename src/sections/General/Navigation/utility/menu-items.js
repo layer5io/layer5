@@ -1,5 +1,4 @@
 import meshery from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text.svg";
-import img2 from "./layer5-and-istio.png";
 import meshmateLogo from "../../../../assets/images/community/meshmate-stack.svg";
 import communityGreen from "../../../../assets/images/community/community-green.svg";
 
@@ -82,14 +81,14 @@ const Data = {
           actionLink: "/projects",
         }
       ],
-      div1: {
-        src: meshery,
-        descr: "How I schooled my seniors"
-      },
-      div2: {
-        src: img2,
-        descr: "Service Mesh Istio patterns for multilatency"
-      }
+      // div1: {
+      //   src: meshery,
+      //   descr: "How I schooled my seniors"
+      // },
+      // div2: {
+      //   src: img2,
+      //   descr: "Service Mesh Istio patterns for multilatency"
+      // }
     },
     {
       name: "Learn",
@@ -117,14 +116,14 @@ const Data = {
           actionLink: "/learn",
         }
       ],
-      div1: {
-        src: meshery,
-        descr: "How I schooled my seniors"
-      },
-      div2: {
-        src: img2,
-        descr: "Service Mesh Istio patterns for multitenancy"
-      }
+      // div1: {
+      //   src: meshery,
+      //   descr: "How I schooled my seniors"
+      // },
+      // div2: {
+      //   src: img2,
+      //   descr: "Service Mesh Istio patterns for multitenancy"
+      // }
     },
     {
       name: "Community",

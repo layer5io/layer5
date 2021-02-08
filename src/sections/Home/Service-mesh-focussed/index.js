@@ -1,7 +1,7 @@
 import React from "react";
 import MeshFocusWrapper from "./service-mesh-focussed.style";
 import ServiceMeshFocusedImage from "./The-Enterprise-Path-to-Service-Mesh-Architectures.png";
-import BlockQouteImage from "../../../assets/images/blockqoute/quote-left.svg";
+import BlockQuoteImage from "../../../assets/images/blockquote/quote-left.svg";
 import Button from "../../../reusecore/Button";
 import {FaArrowRight} from "react-icons/fa";
 
@@ -21,7 +21,7 @@ const ServiceMeshFocused = () => {
             <img src={ServiceMeshFocusedImage} alt="The-Enterprise-Path-to-Service-Mesh-Architectures" />
           </div>
           <div className="content-col">
-            <img src={BlockQouteImage} alt="Quote-left"/>
+            <img src={BlockQuoteImage} alt="Quote-left"/>
             <p className="content">
               <strong>
               "Diverse Microservices patterns and technologies, together with the requirements of given microservice applications,provide myriad opportunities

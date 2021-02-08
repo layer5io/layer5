@@ -11,6 +11,8 @@ import Integrations from "../sections/Home/Projects-home";
 import Statement from "../sections/Home/Layer5-statement";
 import StewardsOfIndustry from "../sections/Home/Stewards-of-industry/index";
 import ProudMaintainers from "../sections/Home/Proud-maintainers";
+/*import ContactCard from "../components/ContactCard";*/
+import Partners from "../sections/Home/Partners-home";
 import Footer from "../sections/General/Footer";
 import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 import { GlobalStyle } from "../sections/app.style";
@@ -27,6 +29,7 @@ const IndexPage = () => (
     <Layout>
       <Navigation />
       <Banner />
+      <Partners />
       <Integrations />
       {/* <Features /> */}
       <ServiceMeshManagement />

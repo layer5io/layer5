@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MeshSectionWrapper = styled.section`
-  margin: 1rem 0 5rem
+  margin: 0rem 0 5rem
   position: relative;
   overflow: hidden;
   .title { 
@@ -10,7 +10,7 @@ const MeshSectionWrapper = styled.section`
   }
   .side-text {
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 44.2px;
     color: ${props => props.theme.headingColor ? props.theme.headingColor : "#2C0075"};
     margin: 50px 0 24px 0;
@@ -25,18 +25,6 @@ const MeshSectionWrapper = styled.section`
             color: ${props => props.theme.keppelColor};
         }
    }
-  .backBtn {
-        color: #00B39F;
-        cursor: pointer;
-        &:hover{
-            .icon{
-                transform: translate3d(5px, 0, 0);
-            }
-         }
-        line-height: 21px;
-        font-size: 21px;
-        margin-top: 21px;
-    }
    .mesh-image{
         width: 100%; 
    }
@@ -46,8 +34,7 @@ const MeshSectionWrapper = styled.section`
        cursor: pointer;
        vertical-align: middle;
        }
-       
-   }
+   
    .description{
        margin-bottom: 24px;
        font-style: normal;
@@ -87,9 +74,6 @@ const MeshSectionWrapper = styled.section`
         font-weight: 300;
         margin: 0;
     }
-    .backBtn{
-        text-align: center;
-    }
 
   }
   @media only screen and (max-width: 568px) {
@@ -126,9 +110,6 @@ const MeshSectionWrapper = styled.section`
         padding-right: 20px;
         font-weight: 300;
         margin: 0;
-    }
-    .backBtn{
-        text-align: center;
     }
 
   @media only screen and (max-width: 480px) {

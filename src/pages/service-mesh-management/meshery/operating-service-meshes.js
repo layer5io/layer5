@@ -27,7 +27,7 @@ const OperatingServiceMeshes = () => (
         features={[
           {
             title: "Supporting Service Mesh Interface",
-            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
+            icon: require("../../../assets/images/app/projects/smi.svg"),
             description:
               <p>Adapters allow Meshery to interface with the different service meshes, exposing their differentiated value to users.</p>,
           },
@@ -47,11 +47,13 @@ const OperatingServiceMeshes = () => (
                       capable as another service mesh.</p>,
           },
           {
-            title: "Main",
-            icon: require("../../../sections/Meshery/How-meshery-works/images/consulicon.svg"),
-            description:
-              <p>Automate credential injection to securely access services and
-                      hosts with HashiCorp Vault. Reduce risk of leaking credentials with dynamic secrets and just-in-time credentials.</p>,
+            title: "Extension Points",
+            icon: require("../../../assets/images/meshery/icon-only/meshery-logo-light.svg"),
+            description: <div>
+              <p>Meshery is not just an application. It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points. Extension points come in various forms and are available through Mesherys architecture.</p>
+
+              <p>Learn more about <a href="https://docs.meshery.io/extensibility">Extension Points</a></p>
+            </div>
           },
           {
             title: "BG",
@@ -88,7 +90,7 @@ const OperatingServiceMeshes = () => (
               <p>Automate credential injection to securely access services and hosts with HashiCorp Vault. Reduce risk of leaking credentials with dynamic secrets and just-in-time credentials.</p>,
           },
         ]} />
-      <HowMesheryWorksSpecs/>
+      <HowMesheryWorksSpecs />
       <Footer />
     </Layout>
   </ThemeProvider>

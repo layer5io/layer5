@@ -61,6 +61,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/events.js"
   );
 
+  const EventTemplate = path.resolve(
+    "src/templates/event-single.js"
+  );
+
   const NewsPostTemplate = path.resolve(
     "src/templates/news-single.js"
   );
@@ -182,6 +186,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     node => node.fields.collection === "books"
   );
 
+  const events = allNodes.filter(
+    node => node.fields.collection === "events"
+  );
+
   const programs = allNodes.filter(
     node => node.fields.collection === "programs"
   );
@@ -196,7 +204,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
-  const events = res.data.allCollections.nodes;
+  // const events = res.data.allCollections.nodes;
 
   paginate({
     createPage,
@@ -281,6 +289,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  events.forEach(event => {
+    createPage({
+      path: event.fields.slug,
+      component: EventTemplate,
+      context: {
+        slug: event.fields.slug,
+      },
+    });
+  });
+
   programs.forEach(program => {
     createPage({
       path: program.fields.slug,
@@ -352,6 +370,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         case "members":
           if (node.frontmatter.published)
             slug = `/community/members/${slugify(node.frontmatter.name)}`;
+          break;
+        case "events":
+          if (node.frontmatter.title)
+            slug = `/community/events/${slugify(node.frontmatter.title)}`;
           break;
         default:
           slug = `/${collection}/${slugify(node.frontmatter.title)}`;

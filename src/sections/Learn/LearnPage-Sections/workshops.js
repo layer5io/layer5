@@ -6,7 +6,7 @@ import { feedbackData } from "./feedbackData";
 import Slider from "react-slick";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import styled from "styled-components";
-import BlockQouteImage from "../../../assets/images/blockqoute/quote-left.svg";
+import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
 
 export const WorkshopsListWrapper = styled.div`
 
