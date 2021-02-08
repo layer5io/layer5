@@ -7,6 +7,7 @@ const PartnerItemWrapper = styled.section`
         h4{
             color: ${props => props.theme.primaryLightColor};
             text-align: center;
+            margin-top: .5rem;
         }
     }
     .row{

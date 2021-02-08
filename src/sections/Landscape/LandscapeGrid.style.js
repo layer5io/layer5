@@ -3,13 +3,13 @@ export const LandscapePageWrapper=styled.div`
 
 	h2.landscape-section-heading {
 		margin-bottom: 3rem;
-		margin-top: 3rem;
+		margin-top: 1rem;
 		width: 100%;
 		font-weight: 400;
 		text-align: center;
 	}
 	.subsequent-heading {
-		padding-top: 8rem;
+		padding-top: 6rem;
 	}
 	.landscape-section-sub-heading {
 		margin-top: -1rem;
