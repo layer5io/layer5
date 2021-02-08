@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
+import { IoIosArrowRoundForward } from "react-icons/io";
 import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
 import ContactCard from "../../components/ContactCard";
@@ -14,38 +15,35 @@ import partner8 from "../../assets/images/partners/microsft.svg";
 import partner9 from "../../assets/images/partners/redhat.svg";
 import partner10 from "../../assets/images/partners/smi1.png";
 import PartnerWrapper from "./partner.style";
-
 const Partner = () => {
     return (
         <PartnerWrapper>
-            <PageHeader title="Layer5 Partner Program"
-                path="Partners"
-            />
+            <div className="partnerHeader">
+                <h1>Layer5 Partner Program</h1>
+                <p>
+                    Layer5 is dedicated to partnering with leading educational institutions, 
+                    technology vendors, solution providers and industry experts to drive the 
+                    adoption of cloud native technologies focused on the evolution of how 
+                    developers write modern applications, how operators run infrastructure 
+                    and how product owners manage service offerings.<br/>
+                    Layer5, the service mesh community, established the Layer5 Partner Program 
+                    to develop an ecosystem to advance higher learning of cloud native 
+                    networking and to enable service providers to accelerate customers’ digital 
+                    transformations, helping them move into the new era of DevOps and cloud 
+                    native applications.
+                </p>
+            </div>
             <Container>
+                <h1 className="heading">Our Academic Partners</h1>
                 <Row>
-                    <Col xs={12} sm={1} lg={1}>
-                    </Col>
-                    <Col xs={12} sm={10} lg={10}>
-                        <br />
-                        <div className="container">
-                            <p>Layer5 is dedicated to partnering with leading educational institutions, technology vendors, solution providers and industry experts to drive the adoption of cloud native technologies focused on the evolution of how developers write modern applications, how operators run infrastructure and how product owners manage service offerings.</p>
-                            <p>Layer5, the service mesh community, established the Layer5 Partner Program to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers to accelerate customers’ digital transformations, helping them move into the new era of DevOps and cloud native applications.</p>
-                        </div>
-                    </Col>
-                    <Col xs={12} sm={1} lg={1}>
-                    </Col>
-                </Row>
-
-                <h1 className="heading">Academic Partners</h1>
-                <Row>
-                    <Col xs={12} sm={2} lg={2}>
+                    <Col xs={12} sm={3} lg={3}>
                         <div className="img1" style={{paddingTop:"1.625em"}}>
                             <a href="http://www.ece.utexas.edu/speakers/lee-calcote" target="_blank" rel="noopener noreferrer">
                                 <img width="120px" height="120px"  src={partner1} title="Click to know More about our partner" alt="The University of Texas at Austin" />
                             </a>
                         </div>
                     </Col>
-                    <Col xs={12} sm={10} lg={10}>
+                    <Col xs={12} sm={9} lg={9}>
                         <div rightAlign={true} className="container">
                             <h1>The University of Texas at Austin</h1>
                             <div>
@@ -56,19 +54,19 @@ const Partner = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} sm={2} lg={2}>
-                        <div className="img1" style={{paddingTop:"1.0625em"}}>
-                            <a href="https://layer5.io/gsoc/2020" target="_blank" rel="noopener noreferrer">
-                                <img width="120px" height="120px"  src={partner2} title="Click to know More about our partner" alt="Google Summer of Code" />
-                            </a>
-                        </div>
-                    </Col>
                     <Col xs={12} sm={10} lg={10}>
                         <div rightAlign={true} className="container">
                             <h1>Google Summer of Code</h1>
                             <div>
                                 Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school. Learn more about <a href="https://layer5.io/gsoc/2020">our mentoring</a>.
                             </div>
+                        </div>
+                    </Col>
+                    <Col xs={12} sm={2} lg={2}>
+                        <div className="img1" style={{paddingTop:"1.0625em"}}>
+                            <a href="https://layer5.io/gsoc/2020" target="_blank" rel="noopener noreferrer">
+                                <img width="120px" height="120px"  src={partner2} title="Click to know More about our partner" alt="Google Summer of Code" />
+                            </a>
                         </div>
                     </Col>
                 </Row>
@@ -90,7 +88,7 @@ const Partner = () => {
                         </div>
                     </Col>
                 </Row>
-                <h1 className="heading">Technology Partners</h1>
+                <h1 className="heading">Our Technology Partners</h1>
                 <Row>
                     <Col xs={12} sm={2} lg={2}>
                         <div className="img1" style={{paddingTop:"1.625em"}}>
@@ -109,19 +107,19 @@ const Partner = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} sm={2} lg={2}>
-                        <div className="img1" style={{paddingTop:"1em"}}>
-                            <a href="https://landscape.cncf.io/category=cncf-members&format=logo-mode&grouping=category&selected=layer5-member&embed=yes" target="_blank" rel="noopener noreferrer">
-                                <img width="130px" height="130px"  src={partner5} title="Click to know More about our partner" alt="Cloud Native Computing Foundation (CNCF)" />
-                            </a>
-                        </div>
-                    </Col>
                     <Col xs={12} sm={10} lg={10}>
                         <div leftAlign={true} className="container">
                             <h1>Cloud Native Computing Foundation (CNCF)</h1>
                             <div>
                                 The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world’s top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.
                             </div>
+                        </div>
+                    </Col>
+                    <Col xs={12} sm={2} lg={2}>
+                        <div className="img1" style={{paddingTop:"1em"}}>
+                            <a href="https://landscape.cncf.io/category=cncf-members&format=logo-mode&grouping=category&selected=layer5-member&embed=yes" target="_blank" rel="noopener noreferrer">
+                                <img width="130px" height="130px"  src={partner5} title="Click to know More about our partner" alt="Cloud Native Computing Foundation (CNCF)" />
+                            </a>
                         </div>
                     </Col>
                 </Row>
@@ -139,23 +137,25 @@ const Partner = () => {
                             <div>
                                 HashiCorp is the leader in cloud infrastructure automation software. Our software stack enables the provisioning, securing, connecting, and running of apps and the infrastructure to support them. HashiCorp unlocks the cloud operating model for every business and enable their digital transformation strategies to succeed.
                             </div>
+
                         </div>
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} sm={2} lg={2}>
-                        <div className="img1" style={{paddingTop:"1.0625em"}}>
-                            <a href="https://www.hpe.com/" target="_blank" rel="noopener noreferrer">
-                                <img width="100%" height="100px"  src={partner7} alt="HPE" title="Click to know More about our partner"/>
-                            </a>
-                        </div>
-                    </Col>
                     <Col xs={12} sm={10} lg={10}>
                         <div rightAlign={true} className="container">
                             <h1>HPE</h1>
                             <div>
                                 HPE GreenLake is an IT-as-a-service offering that brings the cloud experience to your on-premises infrastructure and unifies your edges, clouds, and data centers.
                             </div>
+
+                        </div>
+                    </Col>
+                    <Col xs={12} sm={2} lg={2}>
+                        <div className="img1" style={{paddingTop:"1.0625em"}}>
+                            <a href="https://www.hpe.com/" target="_blank" rel="noopener noreferrer">
+                                <img width="100%" height="100px"  src={partner7} alt="HPE" title="Click to know More about our partner"/>
+                            </a>
                         </div>
                     </Col>
                 </Row>
@@ -173,23 +173,25 @@ const Partner = () => {
                             <div>
                                 Istio is an open source independent service mesh that provides the fundamentals you need to successfully run a distributed microservice architecture. Istio reduces complexity of managing microservice deployments by providing a uniform way to secure, connect, and monitor microservices.
                             </div>
+
                         </div>
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={12} sm={2} lg={2}>
-                        <div className="img1" style={{paddingTop:"1.625em"}}>
-                            <a href="https://www.microsoft.com/" target="_blank" rel="noopener noreferrer">
-                                <img  width="120%" height="75px" src={partner8} title="Click to know More about our partner" alt="Microsoft" />
-                            </a>
-                        </div>
-                    </Col>
                     <Col xs={12} sm={10} lg={10}>
                         <div rightAlign={true} className="container">
                             <h1>Microsoft</h1>
                             <div>
                                 Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.
                             </div>
+
+                        </div>
+                    </Col>
+                    <Col xs={12} sm={2} lg={2}>
+                        <div className="img1" style={{paddingTop:"1.625em"}}>
+                            <a href="https://www.microsoft.com/" target="_blank" rel="noopener noreferrer">
+                                <img  width="120%" height="75px" src={partner8} title="Click to know More about our partner" alt="Microsoft" />
+                            </a>
                         </div>
                     </Col>
                 </Row>
@@ -207,10 +209,20 @@ const Partner = () => {
                             <div>
                                 The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.
                             </div>
+
                         </div>
                     </Col>
                 </Row>
                 <Row>
+                    <Col xs={12} sm={10} lg={10}>
+                        <div rightAlign={true} className="container">
+                            <h1>Service Mesh Interface</h1>
+                            <div>
+                                The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.
+                            </div>
+
+                        </div>
+                    </Col>
                     <Col xs={12} sm={2} lg={2}>
                         <div className="img1" style={{paddingTop:"2em"}}>
                             <a href="https://smi-spec.io/" target="_blank" rel="noopener noreferrer">
@@ -218,15 +230,8 @@ const Partner = () => {
                             </a>
                         </div>
                     </Col>
-                    <Col xs={12} sm={10} lg={10}>
-                        <div rightAlign={true} className="container">
-                            <h1>Service Mesh Interface</h1>
-                            <div>
-                                The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.
-                            </div>
-                        </div>
-                    </Col>
                 </Row>
+                <h1 className="heading" style={{marginBottom:"10px"}}>Become a Layer5 partner</h1>
                 <Row className='partner-button-row'>
                     <Col xs={12} sm={4} lg={4}>
                         <div className="container partner-button">
@@ -234,7 +239,6 @@ const Partner = () => {
                         </div>
                     </Col>
                 </Row>
-                <ContactCard/>
             </Container>
         </PartnerWrapper >
     );

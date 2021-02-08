@@ -4,14 +4,33 @@ const PartnerWrapper = styled.section`
     position: relative;
     min-height: 100%;
     top: 0px;
+
+    .partnerHeader {
+		padding: 6rem 0;
+		background: ${props => props.theme.tertiaryColor};
+		text-align: center;
+		h1{
+			color: ${props => props.theme.white};
+		}
+		p{
+			margin: 1.5rem auto 4rem;
+            max-width: 60%;
+            text-align: center;
+			color: ${props => props.theme.white};
+		}
+    }
     .container {
         position: relative;
+        text-align: justify;
         margin: 0 auto;
+        margin-bottom: 40px;
         max-width: 1280px;
         z-index: 1;
         padding: 1em;
         h1 {
-            font-weight: 300;
+            font-weight: 5;
+            text-align: left;
+            font size: 35px;
         }
     }
     .card-content {
@@ -25,12 +44,11 @@ const PartnerWrapper = styled.section`
             text-align: center;
         }
     }
-
     .heading {
         text-align: center;
-        font-size: 35px;
-        margin-bottom: 30px;
-        margin-top: 30px;
+        font-size: 45px;
+        margin-bottom: 50px;
+        margin-top: 50px;
     }
 
     .img1 {
