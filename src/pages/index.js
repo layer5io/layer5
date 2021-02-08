@@ -33,10 +33,10 @@ const IndexPage = () => (
       <Integrations />
       {/* <Features /> */}
       <ServiceMeshManagement />
+      <Statement />
       <ProudMaintainers />
       {/* <AppScreens /> */}
       {/* <Counters />  */}
-      <Statement />
       {/* <Pricing /> */}
       {/* <Testimonial /> */}
       <CloudNativeLeaders />

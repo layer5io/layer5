@@ -1,13 +1,16 @@
 import styled from "styled-components";
+import background from "./background.svg";
 
 const CloudNativeWrapper = styled.div`
-    background-color:${props => props.theme.black};
+    background: url(${background}) no-repeat; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     padding:2rem;
     color:white;
     margin-top:3rem;
     
-    clip-path: polygon(0% 18%,100% 0%,100% 100%,0% 100%);
-
     .cloud-cont{
         margin:6rem 6rem 0rem 6rem;
         padding:4rem 4rem 0rem 4rem;
@@ -33,6 +36,7 @@ const CloudNativeWrapper = styled.div`
     .btn-cont{
         text-align:center;
         padding:2rem 0rem;
+        margin-bottom: 2rem;
     }
     .btn-cont button{
         color:white;
