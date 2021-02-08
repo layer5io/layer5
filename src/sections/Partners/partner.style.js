@@ -28,11 +28,14 @@ const PartnerWrapper = styled.section`
 
     .heading {
         text-align: center;
-        font-size: 35px;
         margin-bottom: 30px;
         margin-top: 30px;
+        font-weight: 500;
+        font-size: 2.75rem;
     }
-
+    h2 {
+        font-weight: 300;
+    }
     .img1 {
         max-height: 160px;
         max-width: 130px;
@@ -97,16 +100,13 @@ const PartnerWrapper = styled.section`
         float: center;
     }
     .btn-section {
-        float: center;
-        display: inline-block;
-        clear: left;
+        
+        display: flex;
+        
         text-align: center;
-        position: relative;
+        margin: auto;
         vertical-align: middle;
-        margin: 20px auto;
-        min-width: 240px;
-        max-width: 300px;
-        width: 100%;
+
     }
     .partner-button-row {
         justify-content: center;

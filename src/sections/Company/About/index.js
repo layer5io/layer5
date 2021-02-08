@@ -50,7 +50,7 @@ const About = () => {
               <h3>Community First</h3>
               <p className="indent">
                 The Layer5 community represents the largest collection of
-                service mesh projects and their maintainers in the world.
+                service mesh projects and their maintainers in the world. 
               </p>
             </div>
             <div className="about-text text-two">
@@ -73,7 +73,7 @@ const About = () => {
                                     
                   <div className="section">
                     <h4><a href="https://goo.gl/maps/3oeuqrsMtHPQSTmQ8"><img src={location} className="location" alt="Layer5 locations" /></a>USA</h4>
-                    <p>
+                    <p className="address">
                       Layer5, Inc., 
                       Corporate Headquarters
                       <br />
@@ -88,7 +88,7 @@ const About = () => {
                   <h4>
                     <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
                       <img src={location} className="location" alt="Layer5 locations" /></a>Scotland</h4>
-                  <p>
+                  <p className="address">
                     Layer5, Inc., 
                     Engineering
                     <br />

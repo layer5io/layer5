@@ -63,8 +63,8 @@ const ContactWrapper = styled.section`
         }
     }
     .section-title{
-        h2{
-            margin-bottom: 25px;
+        h3 {
+            margin-bottom: 2rem;
         }
     }
     @media only screen and (max-width: 912px) {

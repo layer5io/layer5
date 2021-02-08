@@ -36,6 +36,10 @@ const AboutSectionWrapper = styled.section`
     display: inline;
     height: 1.75rem;
   }
+  p.address {
+      font-size: .95rem;
+      line-height: 1.25rem;
+    }
   .about-thumb {
     width: 100%;
     transform: translateX(-80px);

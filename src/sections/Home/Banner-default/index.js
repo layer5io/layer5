@@ -24,7 +24,7 @@ const BannerDefault = () => {
                 leftAlign={true}
                 UniWidth="100%"
               >
-                <h4>The Service Mesh Company</h4>
+                <h4>Cloud Native Management</h4>
                 <h1>
                   Representing <span>every</span> service mesh
                 </h1>
