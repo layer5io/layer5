@@ -1,16 +1,51 @@
 import React from "react";
 import Slider from "react-slick";
 import SoSpecialWrapper from "./so-special-style";
-import MarketLandscape from "./MarketLandscape.png";
-import Forrester from "./Forrester.jpg";
+
+import Button from "../../../reusecore/Button";
+import { graphql, useStaticQuery } from "gatsby";
 
 const SoSpecial = () => {
+  const data = useStaticQuery(
+    graphql`
+            query newsList {
+                allMdx(
+                    filter: { fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } } }
+                    sort: { fields: [frontmatter___date], order: ASC }
+                ) 
+                {
+                    nodes {
+                        id
+                        frontmatter {
+                            title
+                            author
+                            eurl
+                            thumbnail{
+                              childImageSharp{
+                                fluid(maxWidth: 300, maxHeight: 300){
+                                    ...GatsbyImageSharpFluid_withWebp
+                                }
+                              }
+                              extension
+                              publicURL
+                            }
+                            
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+            }
+        `
+  );
   var settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    className:"slick-inside-div",
-    slidesToShow: 2,
+    slidesToShow: 2.8,
+    swipeToSlide:true,
+    
     responsive: [
       {
         breakpoint: 1200,
@@ -58,54 +93,19 @@ const SoSpecial = () => {
       </div>
       <div className="special_carousel">
         <Slider {...settings}>
-          <div className="special-cont">
-            <div className="special-cont_img">
-              <img src={Forrester} alt="forrester-image" />
-            </div>
-            <p className="special-cont_para">Forrester: Layer5 and Meshery Help Developers Focus On The Business</p>
-          </div>    
-          <div className="special-cont">
-            <div className="special-cont_img">
-              <img src={MarketLandscape} alt="market-landscape-image" />
-            </div>
-            <p className="special-cont_para">Meshery Provides the Service Mesh Managemnet Plane and Kubernetes Evolves into an Enterprise Platform</p>
-          </div>    
-          <div className="special-cont">
-            <div className="special-cont_img">
-              <img src={Forrester} alt="forrester-image" />
-            </div>
-            <p className="special-cont_para">Forrester: Layer5 and Meshery Help Developers Focus On The Business</p>
-          </div>    
-          <div className="special-cont">
-            <div className="special-cont_img">
-              <img src={MarketLandscape} alt="market-landscape-image" />
-            </div>
-            <p className="special-cont_para">Meshery Provides the Service Mesh Managemnet Plane and Kubernetes Evolves into an Enterprise Platform</p>
-          </div> 
-          <div className="special-cont">
-            <div className="special-cont_img">
-              <img src={Forrester} alt="forrester-image" />
-            </div>
-            <p className="special-cont_para">Forrester: Layer5 and Meshery Help Developers Focus On The Business</p>
-          </div> 
-          <div className="special-cont">
-            <div className="special-cont_img">
-              <img src={MarketLandscape} alt="market-landscape-image" />
-            </div>
-            <p className="special-cont_para">Meshery Provides the Service Mesh Managemnet Plane and Kubernetes Evolves into an Enterprise Platform</p>
-          </div>    
-          <div className="special-cont">
-            <div className="special-cont_img">
-              <img src={Forrester} alt="forrester-image" />
-            </div>
-            <p className="special-cont_para">Forrester: Layer5 and Meshery Help Developers Focus On The Business</p>
-          </div> 
-          <div className="special-cont">
-            <div className="special-cont_img">
-              <img src={MarketLandscape} alt="market-landscape-image" />
-            </div>
-            <p className="special-cont_para">Meshery Provides the Service Mesh Managemnet Plane and Kubernetes Evolves into an Enterprise Platform</p>
-          </div>    
+          {
+            data.allMdx.nodes.map(({id,frontmatter,fields}) => (
+              <Button class="special-cont_btn" url={fields.slug} key={id}>
+                <div id="special-cont" >
+                  <div id="special-cont_img">
+                    <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
+                  </div>
+                  <div id="special-cont_content">
+                    <p className="special-cont_para">{frontmatter.title}</p>        
+                  </div>
+                </div>
+              </Button>
+            ))}   
         </Slider>
       </div>
     </SoSpecialWrapper>
