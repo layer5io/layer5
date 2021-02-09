@@ -12,7 +12,6 @@ const NewcomersMapWrapper = styled.div`
     //  fill: #9fbfcd;
     //}
   }
-  
   a{
     path{
       fill: #3c494e;
