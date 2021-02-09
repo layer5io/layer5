@@ -60,21 +60,33 @@ const CommunitySectionWrapper = styled.div`
         margin-top: 2rem;
         color: white;
         background: linear-gradient(to right, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
-        @media (max-width: 62rem) {
-            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
+        @media (max-width: 991px) {
+            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 42rem, ${props => props.theme.black} 42rem);
         }
-        @media (max-width: 32rem) {
-            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 66%, ${props => props.theme.black} 34%);
+        @media (max-width: 550px) {
+            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 48rem, ${props => props.theme.black} 42rem);
+        }
+        @media (max-width: 440px) {
+            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 55rem, ${props => props.theme.black} 42rem);
+        }
+
+        .our-community-members_row {
+            margin: auto 3rem;
+            align-items: center;
+
+            @media (max-width: 650px) {
+                margin: auto 1.25rem;
+            }
         }
 
         .community{
-            margin: 5.25rem auto 6rem auto;
+            margin: 5rem auto;
             @media (max-width: 62rem) {
-                margin-bottom: 12.5rem;
-                 text-align:center;
+                margin: 5rem auto 8rem;
+                text-align:center;
             }
-            @media (max-width: 36rem) {
-                margin-top: 5rem;
+            @media (max-width: 600px) {
+                margin: 2.5rem auto;
             }
             h3{
                 margin: 1.5rem auto 1.5rem auto;
@@ -86,6 +98,10 @@ const CommunitySectionWrapper = styled.div`
             button{
                 margin-top: 2.5rem;
             }
+        }
+
+        .slider {
+            padding: 0 3rem;
         }
     }
     .meshmate{
@@ -157,7 +173,6 @@ const CommunitySectionWrapper = styled.div`
         margin-top: 5rem;
         margin-bottom: 5rem;
         padding-top: 4rem;
-        /* padding-bottom: 4rem; */
         .map {
             padding-left: 3rem;
             padding-top: 0rem;

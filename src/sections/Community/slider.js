@@ -5,33 +5,35 @@ import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 
 const PictureSliderWrapper = styled.div`
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        text-align:center;
-      .slick-slider {
-        margin-top: 1rem;
-        height:100%;
-        margin-left: 2.125rem;
-        width: 100%;
-        /* max-width: 25rem; */
-        .slick-list{
-          width:100%;
-        }
-        @media (max-width: 36rem) {
-            margin: 5rem auto;
-            max-width: 18.75rem;
-        }
-      }
-      .slick-track {
-         display: flex;
-        .slick-slide {
-          display: flex;
-          height: auto;
-          align-items: center;
-          justify-content: center;
-        }
-      }
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  .slick-slider {
+    margin-top: 1rem;
+    height:100%;
+    width: 100%;
+
+    .slick-list{
+      width:100%;
+    }
+    @media (max-width: 36rem) {
+        margin: 5rem auto;
+        max-width: 18.75rem;
+    }
+  }
+
+  .slick-track {
+    display: flex;
+
+    .slick-slide {
+      display: flex;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 `;
 
 const PictureSlider = () => {
