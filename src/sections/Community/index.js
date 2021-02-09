@@ -47,27 +47,25 @@ const CommunityPage = () => {
           </Row>
         </Container>
         <div className="our-community-members">
-          <Container>
-            <Row>
-              <Col className="community" sm={12} lg={6}>
-                <h1>Our Community Members</h1>
-                <h3>Jump in. The community is warm!</h3>
-                <p>
-                  With active members from around the globe, the Layer5 community is a collection of diverse open source contributors, each of whom espouse our cultural values of inclusivity and paying it forward for others.
-                  We welcome individuals at all stages of their development and of all walks of life. Every member is encourage to embrace these values and support one another in meaninfully and consistently advancing the community's open source initiatives.
-                </p>
-                <p>
-                  We believe that every contributor deserves a safe and friendly environment,
-                  enabling them to effectively compare different ideas and find the best solutions
-                  for advancement, while building the size, diversity, and strength of the community.
-                </p>
-                <Button primary title="See our community member profiles" url="/community/members" />
-              </Col>
-              <Col className="slider" sm={12} lg={6}>
-                <PictureSlider />
-              </Col>
-            </Row>
-          </Container>
+          <Row className="our-community-members_row">
+            <Col className="community" sm={12} lg={6}>
+              <h1>Our Community Members</h1>
+              <h3>Jump in. The community is warm!</h3>
+              <p>
+                With active members from around the globe, the Layer5 community is a collection of diverse open source contributors, each of whom espouse our cultural values of inclusivity and paying it forward for others.
+                We welcome individuals at all stages of their development and of all walks of life. Every member is encourage to embrace these values and support one another in meaninfully and consistently advancing the community's open source initiatives.
+              </p>
+              <p>
+                We believe that every contributor deserves a safe and friendly environment,
+                enabling them to effectively compare different ideas and find the best solutions
+                for advancement, while building the size, diversity, and strength of the community.
+              </p>
+              <Button primary title="See our community member profiles" url="/community/members" />
+            </Col>
+            <Col className="slider" sm={12} lg={6}>
+              <PictureSlider />
+            </Col>
+          </Row>
         </div>
         <Container>
           <Row className="meshmate">
