@@ -4,7 +4,7 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 
 import Envoy from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-color.svg";
 import Linkerd from "../../../assets/images/service-mesh-icons/linkerd/horizontal/color/linkerd-horizontal-color.svg";
-import ServiceMesh from "../../../assets/images/service-mesh-icons/service-mesh.svg";
+
 import Traefik from "../../../assets/images/service-mesh-icons/traefik.svg";
 import Istio from "../../../assets/images/service-mesh-icons/istio.svg";
 import OSM from "../../../assets/images/service-mesh-icons/open-service-mesh/stacked/color/openservicemesh-stacked-color.svg";
@@ -74,7 +74,7 @@ const ProudMaintainers = () => {
         <Col xs={3} sm={3} md={3} lg={2}>
           <div className="proj_icon_2">
             <img src={Istio} alt="Istio" />
-            <h4>Istio</h4>
+            {/* <h4>Istio</h4> */}
           </div>
         </Col>
         <Col xs={3} sm={3} md={3} lg={2}>
@@ -90,7 +90,7 @@ const ProudMaintainers = () => {
         <Col xs={3} sm={3} md={3} lg={2}>
           <div className="proj_icon_2">
             <img src={ImageHub} alt="ImageHub" />
-            <h4>Image Hub</h4>
+            {/* <h4>Image Hub</h4> */}
           </div>
         </Col>
         <Col xs={3} sm={3} md={3} lg={2}>
@@ -101,7 +101,7 @@ const ProudMaintainers = () => {
         <Col xs={3} sm={3} md={3} lg={2}>
           <div className="proj_icon_2">
             <img src={Traefik} alt="Traefik" />
-            <h4>Traefik Mesh</h4>
+            {/* <h4>Traefik Mesh</h4> */}
           </div>
         </Col>
       </Row>

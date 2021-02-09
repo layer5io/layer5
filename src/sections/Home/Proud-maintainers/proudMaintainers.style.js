@@ -31,14 +31,16 @@ const ProjectItemWrapper = styled.section`
 	.row_2 {
 		margin-left: 10%;
 		margin-right: -10%;
+		flex-wrap: nowrap;
 	}
 
 	.proj_icon_2,
 	.proj_icon_1 {
 		height: 7rem;
-		background: ${props => props.theme.secondaryLightColor};
+		background: #F3F3F3; //${props => props.theme.tertiaryColor};
 		display: flex;
 		border-radius: 1.5rem;
+
 	}
 
 	.proj_icon_1 {
@@ -48,7 +50,8 @@ const ProjectItemWrapper = styled.section`
 	.proj_icon_2 {
 		img {
 			padding: 1.5rem 1rem;
-		}
+			max-height: 125px;
+			}
 		h4 {
 			/* font-size: 1rem; */
 			margin: auto 0;
