@@ -36,8 +36,8 @@ const NewcomersGuide = () => {
               className="heading"
               sm={12}
               lg={6}
-              onMouseOver={() => setHover({ hover: true })}
-              onMouseOut={() => setHover({ hover: false })}
+              onMouseOver={() => setHover(true)}
+              onMouseOut={() => setHover(false)}
             >
               <h2>Contributor's Journey</h2>
               <div className="heading-start">

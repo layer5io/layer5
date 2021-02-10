@@ -27,7 +27,7 @@ const NewcomersMapWrapper = styled.div`
   #newcomers-guide {
     path {
       fill: ${(props) =>
-  props.handleHover.hover
+  props.handleHover
     ? (props) => props.theme.secondaryColor
     : "#3c494e"};
       transition: 0.5s;
