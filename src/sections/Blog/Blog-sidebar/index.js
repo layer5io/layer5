@@ -33,19 +33,23 @@ const Sidebar = ( ) => {
         `
   );
 
-  const tags = data.tags.group;
-  const categories = data.categories.group;
+  const tags = data.tags.group.sort((a,b) => {
+    return b.totalCount - a.totalCount;
+  });
+  const categories = data.categories.group.sort((a,b) => {
+    return b.totalCount - a.totalCount;
+  });
 
   return (
     <BlogSideBarWrapper>
-      <div className="sidebar-widgets">
-        <div className="search-box">
-          <input type="text" placeholder="Search here..." />
-          <Button>
-            <FaSearch />
-          </Button>
-        </div>
-      </div>
+      {/*<div className="sidebar-widgets">*/}
+      {/*  <div className="search-box">*/}
+      {/*    <input type="text" placeholder="Search here..." />*/}
+      {/*    <Button>*/}
+      {/*      <FaSearch />*/}
+      {/*    </Button>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
 
       <div className="sidebar-widgets catagorie">
         <div className="widgets-title">
