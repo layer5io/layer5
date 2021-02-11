@@ -5,6 +5,7 @@ import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "react-icons/fi";
 import ImageHub from "../../../../assets/images/image-hub/layer5-image-hub.png";
 import ImageHubWhite from "../../../../assets/images/image-hub/layer5-image-hub-white.png";
+import ImageHubBrandKit from "url-loader!../../../../assets/brand/image-hub-brand-kit.zip";
 
 
 const ImageHubBrand = () => {
@@ -17,9 +18,11 @@ const ImageHubBrand = () => {
           </h1>
         </Col>
         <Col xs={12} sm={6} className="download-button">
-          <Button primary title="Download Logo Assets" url="../../../../assets/brand/image-hub-brand-kit.zip" external={true}>
-            <FiDownloadCloud size={21} className="icon-left" />
-          </Button>
+          <a href={ImageHubBrandKit} download="ImageHubBrandKit">
+            <Button primary title="Download Logo Assets" external={true}>
+              <FiDownloadCloud size={21} className="icon-left" />
+            </Button>
+          </a>
         </Col>
         <Col>
           <p>
