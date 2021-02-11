@@ -21,6 +21,7 @@ import EngineerEnabler from "../sections/Home/Engineer-enabler";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
 import CloudNativeLeaders from "../sections/Home/Cloud-Native";
+import SoSpecial from "../sections/Home/So-Special-Section";
 
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
@@ -45,6 +46,7 @@ const IndexPage = () => (
       {/* <News /> */}
       <Faq category = "all"/>
       {/*<ContactCard />*/}
+      <SoSpecial />
       <ServiceMeshFocussed />
       <EngineerEnabler />
       <SubscribeSection />
