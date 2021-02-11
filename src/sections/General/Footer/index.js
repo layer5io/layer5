@@ -163,7 +163,7 @@ const Footer = () => {
         <Row>
           <div className="footer-bottom">
             <p className="copyright-text">
-                            2020 Copyright ©Layer5, Inc | All Rights Reserved
+                            2021 Copyright ©Layer5, Inc | All Rights Reserved
             </p>
             <ul className="policies">
               <li>
