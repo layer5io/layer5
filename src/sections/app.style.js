@@ -17,14 +17,14 @@ const GlobalStyle = createGlobalStyle`
 @font-face {
     font-family: "Qanelas Soft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftBlackItalic.otf');
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftBoldItalic.otf');
     font-weight: bold;
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 @font-face {
@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Qanelas Soft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftExtraBoldItalic.otf');
     font-weight: 800;
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 @font-face {
@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Qanelas Soft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftHeavyItalic.otf');
     font-weight: 900;
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 @font-face {
@@ -63,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Qanelas Soft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftLightItalic.otf');
     font-weight: 300;
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 @font-face {
@@ -76,7 +76,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Qanelas Soft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftMediumItalic.otf');
     font-weight: 500;
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 @font-face {
@@ -89,7 +89,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Qanelas Soft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftRegularItalic.otf');
     font-weight: 400;
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 @font-face {
@@ -102,7 +102,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Qanelas Soft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftSemiBoldItalic.otf');
     font-weight: 600;
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 @font-face {
@@ -115,7 +115,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Qanelas Soft";
     src: url('../assets/fonts/qanelas-soft/QanelasSoftThinItalic.otf');
     font-weight: 100;
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 @font-face {
@@ -126,15 +126,15 @@ const GlobalStyle = createGlobalStyle`
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftUltraLightItalics.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftUltraLightItalic.otf');
     font-weight: 200;
-    font-style: italic, oblique;
+    font-style: italic;
 }
 
 ::selection {
-    background: #3c494f;
+    background: ${(props) => props.theme.primaryColor};
     color: #ffffff;
-  }
+}
 
   *,
   *::before,
@@ -156,10 +156,9 @@ html{
 }
 
 body,html {
-    
-    margin: 0px;
-
+    margin: 0;
 }
+
 body {
   font-size: 1.125rem;
   line-height: 28px;
@@ -181,8 +180,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Qanelas Soft', 'Open Sans';
-    color: #1E2117;
+    font-family: 'Qanelas Soft', 'Open Sans', sans-serif;
+    color: ${(props) => props.theme.tertiaryColor};
     margin: 0;
     line-height: normal;
 }
@@ -235,9 +234,8 @@ h6 {
 h2.sub-heading, h3.sub-heading {
     color: gray;
     text-align: center;
-    font-style: oblique;
+    font-style: italic;
 }
-
 
 p {
     margin: 0 0 1rem 0;
