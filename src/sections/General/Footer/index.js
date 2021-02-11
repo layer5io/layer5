@@ -93,7 +93,7 @@ const Footer = () => {
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link className="category-link" to="/projects/meshery">
+                    <Link className="category-link" to="/service-mesh-management/meshery">
                                             Meshery
                     </Link>
                   </li>
