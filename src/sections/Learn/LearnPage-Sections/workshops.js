@@ -33,6 +33,11 @@ export const WorkshopsListWrapper = styled.div`
 	.feedback-section {
 		margin: 5rem auto;
 
+		img{
+			width:4rem;
+			height:3rem;
+		}
+		
 		.slick-slider {
 			max-width: 1500px;
 			margin: auto;
@@ -92,10 +97,6 @@ export const WorkshopsListWrapper = styled.div`
 		}
 
 		.feedback-section {
-			img{
-				width:4rem;
-				height:3rem;
-			}
 			.slick-slider {
 				max-width: 1100px;
 			}

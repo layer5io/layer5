@@ -10,6 +10,7 @@ import SMPBrand from "./Brand-components/smp";
 import CommunityBrand from "./Brand-components/community";
 import Button from "../../../reusecore/Button";
 import { FiDownloadCloud } from "react-icons/fi";
+import BrandKit from "url-loader!../../../assets/brand/brand-kit.zip";
 
 const getDimensions = ele => {
   let dummyheight=0, dummyoffsetTop=0, dummyoffsetBottom=0;
@@ -101,15 +102,17 @@ const Brand = () => {
       <div className="brandHeader" ref={headerRef}>
         <h1>Layer5 Brand Kits</h1>
         <p>
-                    We’ve created some guidelines to help you use our brand and
-                    assets, including our logo, content and trademarks, without having
-                    to negotiate legal agreements for each use. To make any use of our
-                    marks in a way not covered by these guidelines, please contact us
-                    and include a visual mockup of intended use.
+          We’ve created some guidelines to help you use our brand and
+          assets, including our logo, content and trademarks, without having
+          to negotiate legal agreements for each use. To make any use of our
+          marks in a way not covered by these guidelines, please contact us
+          and include a visual mockup of intended use.
         </p>
-        <Button primary title="Download Brand Kit" url="../../../assets/brand/brand-kit.zip">
-          <FiDownloadCloud size={21} className="icon-left" />
-        </Button>
+        <a href={BrandKit} download="BrandKit">
+          <Button primary title="Download Brand Kit">
+            <FiDownloadCloud size={21} className="icon-left" />
+          </Button>
+        </a>
       </div>
       <Row className="brand-row">
         <Col xs={12} md={9} className="brand-col">

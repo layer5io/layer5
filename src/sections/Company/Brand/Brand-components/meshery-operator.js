@@ -6,6 +6,7 @@ import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "react-icons/fi";
 import MesheryOperatorDark from "../../../../assets/images/meshery-operator/meshery-operator-dark.png";
 import MesheryOperator from "../../../../assets/images/meshery-operator/meshery-operator.png";
+import MesheryOperatorBrandKit from "url-loader!../../../../assets/brand/meshery-operator-brand-kit.zip";
 
 const MesheryOperatorWrapper = styled.section`
     .sub-project {
@@ -24,9 +25,11 @@ const MesheryOperatorBrand = () => {
             </h2>
           </Col>
           <Col xs={12} sm={6} className="download-button">
-            <Button primary title="Download Logo Assets" url="../../../../assets/brand/meshery-operator-brand-kit.zip" external={true}>
-              <FiDownloadCloud size={21} className="icon-left" />
-            </Button>
+            <a href={MesheryOperatorBrandKit} download="MesheryOperatorBrandKit">
+              <Button primary title="Download Logo Assets" external={true}>
+                <FiDownloadCloud size={21} className="icon-left" />
+              </Button>
+            </a>
           </Col>
           <Col>
             <p>
