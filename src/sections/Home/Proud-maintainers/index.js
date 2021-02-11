@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, Row } from "../../../reusecore/Layout";
+import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 
 import Envoy from "../../../assets/images/service-mesh-icons/envoy/horizontal/color/envoy-horizontal-color.svg";
 import Linkerd from "../../../assets/images/service-mesh-icons/linkerd/horizontal/color/linkerd-horizontal-color.svg";
-import ServiceMesh from "../../../assets/images/service-mesh-icons/service-mesh.svg";
+
 import Traefik from "../../../assets/images/service-mesh-icons/traefik.svg";
 import Istio from "../../../assets/images/service-mesh-icons/istio.svg";
 import OSM from "../../../assets/images/service-mesh-icons/open-service-mesh/stacked/color/openservicemesh-stacked-color.svg";
@@ -19,7 +19,7 @@ import ProjectItemWrapper from "./proudMaintainers.style";
 
 const ProudMaintainers = () => {
   return (
-    <ProjectItemWrapper id="projects">
+    <ProjectItemWrapper>
       <Container>
         <Row className="project-title">
           <SectionTitle
@@ -37,7 +37,75 @@ const ProudMaintainers = () => {
           </p>
         </Row>
       </Container>
-      <div className="project_icons_section">
+      <Row className="row">
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_1">
+            <img src={CNCF} alt="CNCF" />
+          </div>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_1">
+            <img src={Envoy} alt="Envoy" />
+          </div>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_1">
+            <img src={Linkerd} alt="Linkerd" />
+          </div>
+        </Col>
+        {/* <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_2">
+            <img src={ServiceMesh} alt="Service Mesh" />
+            <h4>Service Mesh</h4>
+          </div>
+        </Col> */}
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_1">
+            <img src={Meshery} alt="Meshery" />
+          </div>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_1">
+            <img src={OAM} alt="OAM" />
+          </div>
+        </Col>
+      </Row>
+      <Row className="row row_2">
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_2">
+            <img src={Istio} alt="Istio" />
+            {/* <h4>Istio</h4> */}
+          </div>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_1">
+            <img src={OSM} alt="OSM" />
+          </div>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_1">
+            <img src={SMP} alt="SMP" />
+          </div>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_2">
+            <img src={ImageHub} alt="ImageHub" />
+            {/* <h4>Image Hub</h4> */}
+          </div>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_1">
+            <img src={SMI} alt="SMI" />
+          </div>
+        </Col>
+        <Col xs={3} sm={3} md={3} lg={2}>
+          <div className="proj_icon_2">
+            <img src={Traefik} alt="Traefik" />
+            {/* <h4>Traefik Mesh</h4> */}
+          </div>
+        </Col>
+      </Row>
+      {/*  <div className="project_icons_section">
         <div className="proj_icon">
           <img src={CNCF} alt="CNCF" />
         </div>
@@ -50,7 +118,7 @@ const ProudMaintainers = () => {
         {/* <div className="proj_icon">
           <img src={ServiceMesh} alt="Service Mesh"/>
           <h4>Service Mesh</h4>
-        </div> */}
+        </div> 
         <div className="proj_icon">
           <img src={Meshery} alt="Meshery" />
         </div>
@@ -78,7 +146,7 @@ const ProudMaintainers = () => {
           <img src={Traefik} alt="Traefik" />
           <h4>Traefik Mesh</h4>
         </div>
-      </div>
+      </div> */}
     </ProjectItemWrapper>
   );
 };
