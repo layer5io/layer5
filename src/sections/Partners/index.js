@@ -20,9 +20,7 @@ const Partner = () => {
   return (
     <PartnerWrapper>
       <div className="partnerHeader">
-                path="Partners"
         <h1>Layer5 Partner Program</h1>
-            />
         <p>
                     Layer5 is dedicated to partnering with leading educational institutions, 
                     technology vendors, solution providers and industry experts to drive the 

@@ -72,61 +72,6 @@ const PartnerWrapper = styled.section`
         width: 130px;
     }
 
-    .img2 {
-        width: auto;
-        height: 100%;
-        min-width: 150px;
-        margin-right: 60px;
-        padding-right: 50px;
-    }
-    .icon1 {
-        font-size: 32px;
-        vertical-align:  middle;
-    }
-    form {
-        text-align: center;
-    }
-    .input-text {
-        font-size: 15px;
-        box-sizing: border-box;
-        display: inline-block;
-        padding: 0px 1px;
-        height: 32px;
-        width: 34.5%;
-        border: 1px solid #d0d0d0;
-        border-radius: 3px;
-        margin-right: 5px; 
-    }
-    .input-email {
-        font-size: 15px;
-        box-sizing: border-box;
-        display: inline-block;
-        padding: 0px 1px;
-        height: 32px;
-        border: 1px solid #d0d0d0;
-        border-radius: 3px;
-        width: 70%;
-    }
-    .subscribe-form {
-        padding: 10px 0px 10px 0px;
-        text-align: center;
-    }
-    .btn {
-        font-size: inherit;
-        min-width: 240px;
-        max-width: 300px;
-        width: 100%;
-        float: center;
-    }
-    .btn-section {
-        
-        display: flex;
-        
-        text-align: center;
-        margin: auto;
-        vertical-align: middle;
-
-    }
     .partner-button-row {
         justify-content: center;
     }
@@ -134,13 +79,9 @@ const PartnerWrapper = styled.section`
         text-align: center;
     }
 
-    @media only screen and (max-width: 420px) {
+    @media only screen and (max-width: 760px) {
         .img1 {
-            max-height: 160px;
-            max-width: 130px;
-            position: relative;
-            margin: auto;
-            text-align: center;
+            display:none;
         }
     }
 `;
