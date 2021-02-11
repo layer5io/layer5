@@ -32,8 +32,6 @@ const SubscribeWrapper = styled.div`
         
     }
     #mc-embedded-subscribe{
-        background-color:${props => props.theme.secondaryColor};
-        color:white;
         margin: 24px 5px 0px;
     }
     #mc-embedded-subscribe:hover{

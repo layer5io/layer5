@@ -81,7 +81,7 @@ const FooterWrapper = styled.section`
 			margin-right: 0.25rem;
 			width: 20rem;
 			height: 3.5rem;
-			color: rgba(255, 255, 255, 0.5);
+			color: rgba(255, 255, 255, 0.75);
 			border: 1px solid #FFFFFF;
 			background-color: #000000;
 			border-radius: 0.25rem;
