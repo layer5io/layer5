@@ -13,7 +13,7 @@ import DeployServiceMesh from "../sections/Deploy Service Mesh/index";
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <SEO title="when should i deploy service mesh" description="when should i deploy service mesh question form." />
+    <SEO title="When should I deploy a service mesh?" description="When should a service mesh be used? When should I deploy a service mesh? How to adopt a service mesh? How to run a service mesh?" />
     <Layout>
       <Navigation />
       <DeployServiceMesh />
