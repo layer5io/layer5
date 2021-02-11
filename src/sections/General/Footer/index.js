@@ -150,13 +150,15 @@ const Footer = () => {
               </div>
             </Row>
             <Row className="subscribe">
-              <div>
-                <span>
-                  Subscribe to our Newsletter
-                </span>
-                <input type="text" placeholder="Email Address" />
-                <Button secondary title="Subscribe" />
-              </div>
+              <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
+                <div>
+                  <span>
+                    Subscribe to our Newsletter
+                  </span>
+                  <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
+                  <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
+                </div>
+              </form>
             </Row>
           </Col>
         </Row>
