@@ -7,6 +7,7 @@ import MeshLogoLightText from "../../../../assets/images/meshery/full-logo/meshe
 import MeshLogoLightTextSide from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.png";
 import MeshDarkText from "../../../../assets/images/meshery/text-only/meshery-dark-text.png";
 import MeshDarkTagText from "../../../../assets/images/meshery/meshery-dark-tag-text.png";
+import MesheryBrandKit from "url-loader!../../../../assets/brand/meshery-brand-kit.zip";
 
 
 const MesheryBrand = () => {
@@ -19,9 +20,11 @@ const MesheryBrand = () => {
           </h1>
         </Col>
         <Col xs={12} sm={6} className="download-button">
-          <Button primary title="Download Logo Assets" url="../../../../assets/brand/meshery-brand-kit.zip" external={true}>
-            <FiDownloadCloud size={21} className="icon-left" />
-          </Button>
+          <a href={MesheryBrandKit} download="MesheryBrandKit">
+            <Button primary title="Download Logo Assets" external={true}>
+              <FiDownloadCloud size={21} className="icon-left" />
+            </Button>
+          </a>
         </Col>
         <Col>
           <p>

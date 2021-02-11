@@ -5,6 +5,7 @@ import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "react-icons/fi";
 import MeshMateLogoLight from "../../../../assets/images/meshmate/meshmate-icon-white.png";
 import MeshMateLogo from "../../../../assets/images/meshmate/meshmate-icon.png";
+import MeshmateBrandKit from "url-loader!../../../../assets/brand/meshmate-brand-kit.zip";
 
 
 const CommunityBrand = () => {
@@ -24,9 +25,11 @@ const CommunityBrand = () => {
           </h2>
         </Col>
         <Col xs={12} sm={6} className="download-button">
-          <Button primary title="Download Logo Assets" url="../../../../assets/brand/meshmate-brand-kit.zip" external={true}>
-            <FiDownloadCloud size={21} className="icon-left" />
-          </Button>
+          <a href={MeshmateBrandKit} download="MeshmateBrandKit">
+            <Button primary title="Download Logo Assets" external={true}>
+              <FiDownloadCloud size={21} className="icon-left" />
+            </Button>
+          </a>
         </Col>
         <Col>
           <p>
