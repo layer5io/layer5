@@ -1,8 +1,5 @@
 import React from "react";
 import { useTable } from "react-table";
-import ReactTooltip from "react-tooltip";
-import { IoMdHelpCircle } from "react-icons/io";
-import { IconContext } from "react-icons";
 import { TableWrapper } from "./ConformanceTestTable.style";
 
 const Table = ({ columns, data }) => {
@@ -27,10 +24,9 @@ const Table = ({ columns, data }) => {
             <tr key={"table-header"} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => {
                 if(column["id"]==="desc") {
-                  return ( <th key={column} {...column.getHeaderProps()} style={{textAlign:"left"}}>{column.render("Header")} </th> )
-                }
-                else {
-                  return ( <th key={column} {...column.getHeaderProps()}>{column.render("Header")}</th> )
+                  return ( <th key={column} {...column.getHeaderProps()} style={{textAlign:"left"}}>{column.render("Header")} </th> );
+                } else {
+                  return ( <th key={column} {...column.getHeaderProps()}>{column.render("Header")}</th> );
                 }
 
               })}
@@ -45,20 +41,20 @@ const Table = ({ columns, data }) => {
                 {row.cells.map(cell => {
                   if(cell["column"]["id"] === "test_no"){
                     return <td {...cell.getCellProps()} style={{whiteSpace:"nowrap"}}>
-                    {cell.render("Cell")}
-                  </td>;
+                      {cell.render("Cell")}
+                    </td>;
                   } else if(cell["column"]["id"] === "spec"){
                     return <td {...cell.getCellProps()} style={{whiteSpace:"nowrap"}}>
-                    {cell.render("Cell")}
-                  </td>;
+                      {cell.render("Cell")}
+                    </td>;
                   } else if(cell["column"]["id"] === "test_type"){
                     return <td {...cell.getCellProps()} style={{whiteSpace:"nowrap"}}>
-                    {cell.render("Cell")}
-                  </td>;
+                      {cell.render("Cell")}
+                    </td>;
                   } else if(cell["column"]["id"] === "desc"){
                     return <td {...cell.getCellProps()} style={{textAlign:"left"}}>
-                    <i>{cell.render("Cell")}</i>
-                  </td>;
+                      <i>{cell.render("Cell")}</i>
+                    </td>;
                   } else {
                     return <td {...cell.getCellProps()}>
                       {cell.render("Cell")}

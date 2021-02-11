@@ -34,7 +34,7 @@ const data = {
     },   
   ],
   testDetails:{
-  "0.4.9": [
+    "0.4.9": [
       {
         test_no: "TA - 1.1.1",
         spec: "Traffic Access",

@@ -88,12 +88,12 @@ const SMIPage = () => {
           </div>
         </div>
         <div className="test-block">
-              <h2>Conformance Tests</h2>
-              <p></p>
-              <div className="table">
-                <TestsTable/>
-              </div>
-      </div>
+          <h2>Conformance Tests</h2>
+          <p></p>
+          <div className="table">
+            <TestsTable/>
+          </div>
+        </div>
       </SMIWrapper>
       <Subscribe />
     </Layout>
