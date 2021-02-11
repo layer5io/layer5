@@ -11,6 +11,7 @@ import data from "./data";
 import c_icon from "./c-icon.svg";
 import logo from "./logo.svg";
 import smi from "./smi.svg";
+import TestsTable from "./testsTable";
 
 const SMIPage = () => {
   return (
@@ -86,6 +87,13 @@ const SMIPage = () => {
             </Row>
           </div>
         </div>
+        <div className="test-block">
+              <h2>Conformance Tests</h2>
+              <p></p>
+              <div className="table">
+                <TestsTable/>
+              </div>
+      </div>
       </SMIWrapper>
       <Subscribe />
     </Layout>

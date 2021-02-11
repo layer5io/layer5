@@ -119,6 +119,62 @@ const SMIWrapper = styled.section`
             }
         }
     }
+    .test-block{
+        margin: 1.875rem 5rem 1.875rem 5rem;
+        h2,p {
+            text-align: center;
+        }
+        .table {
+            margin: auto;
+            max-width: 62.5rem;
+        }
+
+    }
+    
+    .react-tabs__tab {
+		bottom: 0px;
+		padding: 1.25rem;
+		&:hover {
+			background-color: ${props => props.theme.tertiaryColor};
+			border-top-left-radius: .5rem;
+			border-top-right-radius: .5rem;
+		}
+	}
+	.react-tabs__tab-list {
+		margin: 0px;
+		padding: 0px;
+		font-size: 1.25rem;
+		font-weight: 500;
+		border-bottom: none;
+        overflow: auto;
+        white-space: nowrap
+		border-top-left-radius: .5rem;
+		border-top-right-radius: .5rem;
+		color: #ffffff;
+		background: #00B39F;
+	}
+	.react-tabs__tab--selected {
+		background: ${props => props.theme.tertiaryColor};
+		border-color: ${props => props.theme.tertiaryColor};
+		color: white;
+		font-weight: 600;
+	}
+    .conformance-table {
+		width: 100%;
+		margin-bottom: 2rem;
+		box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
+		border-top-left-radius: .5rem;
+		border-top-right-radius: .5rem;
+
+		a { 
+			color: ${props => props.theme.tertiaryColor};
+	
+			&:hover {
+				color: ${props => props.theme.secondaryColor};
+			}
+		}
+	}
+
     @media only screen and (max-width: 990px) {
         .hero-img{
             width: 95%;
@@ -152,6 +208,9 @@ const SMIWrapper = styled.section`
         .card{
             width: 90%;
             padding: 1.5rem;
+        }
+        .test-block{
+            margin: 0 0 0.625rem 0;
         }
     }
 `;
