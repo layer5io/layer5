@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import bookCover from "../../assets/images/learn/book-cover.png";
 
-const DeployServiceMeshWrapper = styled.div`     
-    scroll-behavior: smooth; 
+const DeployServiceMeshWrapper = styled.div`   
+    html {
+        scroll-behavior: smooth;
+    }
     #hero{
         background-color: #EBC017;
         height: 246px;
@@ -165,6 +167,10 @@ const DeployServiceMeshWrapper = styled.div`
     }
 
     #form{
+        #submit-btn{
+            text-align: center;
+            padding:  20px;
+         }
         #text{
             color: black;
             display: flex; 
@@ -290,6 +296,32 @@ const DeployServiceMeshWrapper = styled.div`
                 background-size: 40em 2000px;
             }
           }
+      }
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 300px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        font-size: 12px;
+        
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+      }
+      
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
       }
 `;
 
