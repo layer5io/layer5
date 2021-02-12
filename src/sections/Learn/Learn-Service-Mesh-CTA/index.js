@@ -8,15 +8,23 @@ const LearnServiceMeshCTAWrapper = styled.div`
     background-color:${props => props.theme.secondaryLightColor};
     padding: 5rem 0;
     margin-top: 2rem;
-    h2{
-      margin-bottom: 2rem;
-      font-weight: 700;
-    }
-    img{
-      max-height: 16rem;
+    
+    .section-wrapper{
       @media (max-width: 767px){
-        display: none;
-      } 
+          flex-direction: column-reverse;
+      }
+      .content{
+          @media (max-width: 767px){
+            text-align: center;
+          }
+          h2{
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+      }
+      img{
+        max-height: 16rem; 
+      }
     }
 `;
 
@@ -24,8 +32,8 @@ const LearnServiceMeshCTA = () => {
   return(
     <LearnServiceMeshCTAWrapper>
       <Container>
-        <Row Vcenter>
-          <Col sm={12} md={6} lg={6}>
+        <Row className="section-wrapper" Vcenter>
+          <Col className="content" sm={12} md={6} lg={6}>
             <h2>Learn to service mesh with interactive labs</h2>
             <Button secondary title="Let's Learn" url="/learn/service-mesh-labs"/>
           </Col>
