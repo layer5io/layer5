@@ -75,7 +75,6 @@ const CloudNativeWrapper = styled.div`
         }
         .col-1,.col-2{
             margin:2rem 0rem;
-            padding:2rem;
             text-align:center;
         }
         .col-2 p{
@@ -84,12 +83,6 @@ const CloudNativeWrapper = styled.div`
         .btn-cont{
             padding:0rem;
             padding-bottom:2rem;
-        }
-    }
-    @media only screen and (max-width:500px)
-    {
-        .col-2{
-            padding:0rem;
         }
     }
 `;

@@ -19,6 +19,7 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import data from "../../../assets/data/faq";
 
 import FaqSectionWrapper from "./faqSection.style";
+import ContactFormModal from "../../../components/Contact-Modal";
 
 const Faq = (props) => {
   let faqs = [];
@@ -43,16 +44,14 @@ const Faq = (props) => {
           <h1>
             <span>Frequently Asked Questions</span>
           </h1>
-          <div className="search">
-            {/* <Button>
-                            <FiSearch size={22} />
-                        </Button> */}
+          {/* <div className="search">
+            <Button>
+                <FiSearch size={22} />
+            </Button>
             <input type="text" placeholder="Search" />
-          </div>
+          </div> */}
         </SectionTitle>
         <Accordion allowMultipleExpanded="true" allowZeroExpanded="true">
-
-
           {faqs.map((faq, index) => (
             <AccordionItem key={index}>
               <AccordionTitle>
@@ -70,21 +69,18 @@ const Faq = (props) => {
                 {
                   faq.answer.length >=1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
                 }
-                {/*
-
-                                Jash, will you padding and center this button?
-
-                                */}
                 <div className="faqbutton">
                   {faq.link && <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external="false" />}
                 </div>
               </AccordionBody>
             </AccordionItem>
           ))}
-
-
-
         </Accordion>
+        <div className="askus_section">
+          <h2>Couldn't find your questions?</h2>
+          <p>Feel free to ask us</p>
+          <ContactFormModal callout_text="Ask Us" form_header="Mail Us Your Query" />
+        </div>
       </Container>
     </FaqSectionWrapper>
   );

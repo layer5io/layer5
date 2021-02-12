@@ -9,9 +9,6 @@ const ContactFormModalWrapper = styled.div`
 		display: flex;
     margin: auto;
 	}
-  .footerContainer-156e0 {
-    visibility: hidden;
-  }
 `;
 
 const ContactFormModal = (props) => {
@@ -34,7 +31,7 @@ const ContactFormModal = (props) => {
         contentLabel="Contact Form"
       >
         <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
-        <h2 className="modal-heading">Get In Touch</h2>
+        <h2 className="modal-heading">{props.form_header}</h2>
         <div className="contact-form">
           <iframe
             src="https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"

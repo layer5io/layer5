@@ -23,24 +23,55 @@ const ProjectItemWrapper = styled.section`
 		}
 	}
 
-	.row {
+	.row, .row_2 {
 		justify-content: center;
-		margin: 1rem 1rem;
+		margin: 1rem 0;
 		flex-wrap: nowrap;
+		overflow: hidden;
 	}
-	.row_2 {
-		margin-left: 10%;
-		margin-right: -10%;
-		flex-wrap: nowrap;
+
+	.proj_row_1_col, .proj_row_2_col {
+		flex: 0 0 25%;
+		max-width: 20%;
+
+		@media screen and (max-width: 1600px) {
+			max-width: 22%;
+		}
+		@media screen and (max-width: 992px) {
+			max-width: 25%;
+		}
+		@media screen and (max-width: 768px) {
+			flex: 0 0 32%;
+			max-width: 32%;
+		}
+		@media screen and (max-width: 550px) {
+			flex: 0 0 35%;
+			max-width: 35%;
+		}
 	}
 
 	.proj_icon_2,
 	.proj_icon_1 {
+		max-width: 18rem;
 		height: 7rem;
-		background: #F3F3F3; //${props => props.theme.tertiaryColor};
+		background: #F3F3F3;
 		display: flex;
 		border-radius: 1.5rem;
+		justify-content: center;
+		margin: auto;
 
+		h4 {
+			font-weight: 500;
+			margin: auto 0;
+			text-align: center;
+		}
+
+		@media screen and (max-width: 900px) {
+			height: 6.5rem;
+		}
+		@media screen and (max-width: 480px) {
+			height: 5rem;
+		}
 	}
 
 	.proj_icon_1 {
@@ -51,45 +82,19 @@ const ProjectItemWrapper = styled.section`
 		img {
 			padding: 1.5rem 1rem;
 			max-height: 125px;
-			}
-		h4 {
-			/* font-size: 1rem; */
-			margin: auto 0;
-			text-align: center;
 		}
 	}
-	@media only screen and (max-width: 1400px) {
-        .proj_icon_2 {
+
+	@media screen and (max-width: 550px) {
+		.proj_icon_2 {
 			img {
-				padding: 2rem 0.5rem;
+				padding: 1.65rem 0.4rem;
 			}
 			h4 {
 				font-size: 1rem;
 			}
 		}
-    }
-     @media only screen and (max-width: 575px) {
-		.proj_icon_2,
-		.proj_icon_1 {
-			padding: 0.5rem;
-			height: 4rem;
-		}
-        .proj_icon_2 {
-			img {
-				padding: 1rem 0.5rem;
-			}
-			h4 {
-				font-size: 0.5rem;
-			}
-		}
-     }
-     /* @media only screen and (max-width: 380px) {
-        .proj_icon_2 {
-			img {
-				padding: 1rem 0.5rem;
-			}
-		}
-	 } */
+	}
 `;
 
 export default ProjectItemWrapper;
