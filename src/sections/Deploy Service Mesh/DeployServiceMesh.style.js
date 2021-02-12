@@ -64,12 +64,12 @@ const DeployServiceMeshWrapper = styled.div`
         }
         #arrow-box{
             
-            padding: 20px 40px 20px 40px;
+            padding: 0px 40px 20px 40px;
             display: flex;
             .arrow-left {
                 // width: 90%;
                 height: 0;
-                padding-top: 2.3em;
+                padding-top: 1.3em;
                 padding-bottom: 25%;
                 padding-left:20px;
                 position: relative;
@@ -80,9 +80,9 @@ const DeployServiceMeshWrapper = styled.div`
                 display: block;
                 width: 0; 
                 height: 0; 
-                border-top: 20px solid transparent;
-                border-bottom: 20px solid transparent; 
-                border-right: 60em solid #00B39F;
+                border-top: 4em solid transparent;
+                border-bottom: 4em solid transparent; 
+                border-right: 6em solid #00B39F;
             }
 
             .arrow-right {
@@ -100,8 +100,8 @@ const DeployServiceMeshWrapper = styled.div`
                 display: block;
                 width: 0; 
                 height: 0; 
-                border-top: 2em solid transparent;
-                border-bottom: 2em solid transparent;
+                border-top: 4em solid transparent;
+                border-bottom: 4em solid transparent;
                 border-left: 8em solid #00B39F;
             } 
             @media only screen and (min-width: 1000px) {
