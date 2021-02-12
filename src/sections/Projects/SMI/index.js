@@ -11,6 +11,7 @@ import data from "./data";
 import c_icon from "./c-icon.svg";
 import logo from "./logo.svg";
 import smi from "./smi.svg";
+import smiLogo from "./smi-logo.png";
 import TestsTable from "./testsTable";
 
 const SMIPage = () => {
@@ -92,6 +93,20 @@ const SMIPage = () => {
           <p></p>
           <div className="table">
             <TestsTable/>
+          </div>
+
+          <div className="smiResults">
+            <img src={smiLogo} 
+              alt="Service Mesh Landscape" 
+            />
+            <div>
+              <p>
+                    Checkout the current status of the support for SMI Conformance Tests of all service meshes in our landscape page.
+              </p>
+              <Button primary url="/service-mesh-landscape#smi" external={false}>
+                      Check it Out
+              </Button>
+            </div>
           </div>
         </div>
       </SMIWrapper>
