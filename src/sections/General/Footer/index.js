@@ -25,38 +25,38 @@ const Footer = () => {
         <Row>
           <Col xs={12} lg={3}>
             <p className="desc-info">
-                            Representing the largest collection of service meshes and their maintainers in the world, Layer5 is the service mesh company.
-                            Creator and maintainer of service mesh standards.
-                            Maker of Meshery, the service mesh management plane.
-            </p>    
+              Representing the largest collection of service meshes and their maintainers in the world, Layer5 is the service mesh company.
+              Creator and maintainer of service mesh standards.
+              Maker of Meshery, the service mesh management plane.
+            </p>
           </Col>
           <Col className="sections_col" xs={12} lg={9}>
             <Row>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
                   <Link className="title-link" to="/learn">
-                                        RESOURCES
+                      RESOURCES
                   </Link>
                 </h3>
                 <ul className="section-categories">
                   <li>
                     <Link className="category-link" to="/service-mesh-landscape#service-mesh-comaprison-matrix">
-                                            Service Mesh Feature Comparison
+                      Service Mesh Feature Comparison
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/service-mesh-landscape#service-mesh-comparison-strength">
-                                            Service Mesh Strength Comparison
+                      Service Mesh Strength Comparison
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/learn/books">
-                                            Service Mesh Books
+                      Service Mesh Books
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/learn/workshops">
-                                            Service Mesh Workshops
+                      Service Mesh Workshops
                     </Link>
                   </li>
                 </ul>
@@ -64,23 +64,23 @@ const Footer = () => {
               <div className="footer-sections even-col">
                 <h3 className="section-title">
                   <Link className="title-link" to="/community">
-                                        COMMUNITY
+                    COMMUNITY
                   </Link>
                 </h3>
                 <ul className="section-categories">
                   <li>
                     <Link className="category-link" to="/blog">
-                                            Blog
+                      Blog
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/community/events">
-                                            Events
+                      Events
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/careers/programs">
-                                            Programs
+                      Programs
                     </Link>
                   </li>
                 </ul>
@@ -88,28 +88,28 @@ const Footer = () => {
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
                   <Link className="title-link" to="/projects">
-                                        PROJECTS
+                    PROJECTS
                   </Link>
                 </h3>
                 <ul className="section-categories">
                   <li>
                     <Link className="category-link" to="/service-mesh-management/meshery">
-                                            Meshery
+                      Meshery
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/service-mesh-landscape">
-                                            Service Mesh Landscape
+                      Service Mesh Landscape
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/projects/service-mesh-interface-conformance">
-                                            Service Mesh Interface
+                      Service Mesh Interface
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/projects/service-mesh-performance">
-                                            Service Mesh Performace
+                      Service Mesh Performace
                     </Link>
                   </li>
                 </ul>
@@ -117,33 +117,33 @@ const Footer = () => {
               <div className="footer-sections even-col">
                 <h3 className="section-title">
                   <Link className="title-link" to="/company/about">
-                                        COMPANY
+                    COMPANY
                   </Link>
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link className="category-link" to="/news">
-                                            News
+                    <Link className="category-link" to="/company/news">
+                      News
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/company/brand">
-                                            Brand
+                      Brand
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/careers">
-                                            Careers
+                      Careers
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/partners">
-                                            Partners
+                      Partners
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/company/contact">
-                                            Contact
+                      Contact
                     </Link>
                   </li>
                 </ul>
@@ -165,17 +165,17 @@ const Footer = () => {
         <Row>
           <div className="footer-bottom">
             <p className="copyright-text">
-                            2021 Copyright ©Layer5, Inc | All Rights Reserved
+              2021 Copyright ©Layer5, Inc | All Rights Reserved
             </p>
             <ul className="policies">
               <li>
                 <a href="https://meshery.layer5.io/privacy-policy.html" target="_blank" rel="noreferrer">
-                                    Privacy
+                  Privacy
                 </a>
               </li>
               <li>
                 <a href="https://meshery.layer5.io/terms-of-service.html" target="_blank" rel="noreferrer">
-                                    Terms
+                  Terms
                 </a>
               </li>
             </ul>
