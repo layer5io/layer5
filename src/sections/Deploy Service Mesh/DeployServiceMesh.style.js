@@ -169,7 +169,7 @@ const DeployServiceMeshWrapper = styled.div`
     #form{
         #submit-btn{
             text-align: center;
-            padding:  20px;
+            padding:  20px 0px 100px 0px;
          }
         #text{
             color: black;
@@ -212,6 +212,8 @@ const DeployServiceMeshWrapper = styled.div`
         opacity: 0.7;
         -webkit-transition: .2s;
         transition: opacity .2s;
+        overflow: hidden;
+        cursor: pointer;
       }
       
       .slider:hover {
@@ -225,6 +227,7 @@ const DeployServiceMeshWrapper = styled.div`
         height: 26px;
         border-radius: 50%;
         border:5px solid #00B39F;
+        box-shadow: -100vw 0 0 100vw dodgerblue;
         background: #FFFFFF;
         cursor: pointer;
       }
@@ -239,6 +242,12 @@ const DeployServiceMeshWrapper = styled.div`
       #submit{
           text-align: center;
           padding: 150px 0px 200px 0px;
+          width: 74%;
+          height: 95%;
+          background-color: rgba(228, 231, 237, 0.8);
+          position:absolute;
+          z-index: 3000;
+          
           h2{
               font-weight: 700;
               padding: 0px 0px 20px 0px;

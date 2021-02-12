@@ -67,14 +67,14 @@ const ServiceMesh = () => {
         console.log(error);
       });
   };
-  const [parentVal1, setParentVal1] = useState(10);
-  const [parentVal2, setParentVal2] = useState(10);
-  const [parentVal3, setParentVal3] = useState(10);
-  const [parentVal4, setParentVal4] = useState(10);
-  const [parentVal5, setParentVal5] = useState(10);
-  const [parentVal6, setParentVal6] = useState(10);
-  const [parentVal7, setParentVal7] = useState(10);
-  const [parentVal8, setParentVal8] = useState(10);
+  const [parentVal1, setParentVal1] = useState(50);
+  const [parentVal2, setParentVal2] = useState(50);
+  const [parentVal3, setParentVal3] = useState(50);
+  const [parentVal4, setParentVal4] = useState(50);
+  const [parentVal5, setParentVal5] = useState(50);
+  const [parentVal6, setParentVal6] = useState(50);
+  const [parentVal7, setParentVal7] = useState(50);
+  const [parentVal8, setParentVal8] = useState(50);
   const [email, setEmail] = useState("");
   const [flag, setFlag] = useState(false);
 
@@ -289,62 +289,59 @@ const ServiceMesh = () => {
       {
         !flag
         &&
-        <div id="submit">
-          <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
-          <input type="email" className="email" onChange={addData}  placeholder="Email Address"></input>
-          <Button secondary id="arrow-btn" type="button" onClick={expand} title="Continue &rarr;"/>
-        </div>
+        <Container>
+          <div id="submit">
+            <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
+            <input type="email" className="email" onChange={addData}  placeholder="Email Address"></input>
+            <Button secondary id="arrow-btn" type="button" onClick={expand} title="Continue &rarr;"/>
+          </div>
+        </Container>
       }
-      {
-        flag
-        &&
-        <div id="form">
-          <Container>
-            <div>
-              <div className="range-slider">
-                <div id="slider">
-                  <h4>
-                    Security Model
-                  </h4>
-                  <RangeSlider {...sliderProps4}/>
-                </div>
+      <div id="form">
+        <Container>
+          <div>
+            <div className="range-slider">
+              <div id="slider">
+                <h4>
+                  Security Model
+                </h4>
+                <RangeSlider {...sliderProps4}/>
+              </div>
 
-                <div id="slider">
-                  <h4>
-                    # of services
-                  </h4>
-                  <RangeSlider {...sliderProps5}/>
-                </div>
+              <div id="slider">
+                <h4>
+                  # of services
+                </h4>
+                <RangeSlider {...sliderProps5}/>
+              </div>
 
-                <div id="slider">
-                  <h4>
-                    Service reliability
-                  </h4>
-                  <RangeSlider {...sliderProps6}/>
-                </div>
+              <div id="slider">
+                <h4>
+                  Service reliability
+                </h4>
+                <RangeSlider {...sliderProps6}/>
+              </div>
 
-                <div id="slider">
-                  <h4>
-                    Size of your organization
-                  </h4>
-                  <RangeSlider {...sliderProps7}/>
-                </div>
+              <div id="slider">
+                <h4>
+                  Size of your organization
+                </h4>
+                <RangeSlider {...sliderProps7}/>
+              </div>
 
-                <div id="slider">
-                  <h4>
-                    Diversity of application stack
-                  </h4>
-                  <RangeSlider {...sliderProps8}/>
-                </div>
+              <div id="slider">
+                <h4>
+                  Diversity of application stack
+                </h4>
+                <RangeSlider {...sliderProps8}/>
               </div>
             </div>
-            <div id="submit-btn">
-              <Button secondary type="button" onClick={submit} title="Submit &rarr;"/>
-            </div>
-          </Container>
-        </div>
-      }
-      
+          </div>
+          <div id="submit-btn">
+            <Button secondary type="button" onClick={submit} title="Submit &rarr;"/>
+          </div>
+        </Container>
+      </div>
 
       <div id="bot">
         <Row>
