@@ -14,11 +14,10 @@ const CloudNativeLeaders = () => {
         </div>
         <div className="col-2">
           <p>
-              From the beginning Layer5 actively engaged in leadership roles in CNCF initiatives and projects.Commissioned by the CNCF for research and analysis.
-            <br />
-              Published the Serverless Whitepaper Chatir of 
+              From the beginning Layer5 actively engaged in leadership roles in CNCF initiatives and projects.
           </p>
           <img src={cncf} alt="Cloud Native-logo" />
+          <p>Commissioned by the CNCF for research and analysis.</p>
         </div>
         
       </div>

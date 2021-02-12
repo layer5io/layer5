@@ -118,7 +118,7 @@ const About = () => {
                   className="about-button"
                   url="/company/contact"
                   title="Contact Us"
-                  external="false"
+                  external={false}
                 />
               </VintageBox>
             </SectionTitle>

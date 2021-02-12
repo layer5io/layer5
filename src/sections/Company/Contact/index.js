@@ -21,7 +21,7 @@ const ContactPage = () => {
       <Container>
         <PageHeader 
           title={"Get In Touch"}
-          subtitle={"Let us know how we help you."}
+          subtitle={"Let us know how we can help you."}
         />
         <Row>
           <CardOutline 
@@ -36,7 +36,7 @@ const ContactPage = () => {
             img={Support_Icon}
             alt="Support"
             title="Support"
-            content="I need assistance with my cloud native infrastructure"
+            content="I need assistance managing my cloud native systems"
           />
           <CardOutline 
             link="/partners"
@@ -56,7 +56,7 @@ const ContactPage = () => {
               img={Contact_Icon}
               alt="Contact"
               title="Contact"
-              content="Let us know how we can help"
+              content="We are here to help"
             />
           </Row>
           <div className="contact-form" ref={expandForm}>

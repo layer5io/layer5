@@ -78,7 +78,7 @@ const Meshmates=() => {
         </div>
         <div className="expect">
           <h5> What to Expect </h5>
-          <h2> Engaging with a MeshMate Program </h2>
+          <h2> Engaging with a MeshMate</h2>
           <p> The program pairs experienced Layer5 community members with community newcomers to ensure a smooth onboarding experience. There is a lot going in the Layer5 community. Projects and working groups move fast. MeshMates are committed to helping their mentees in identifying an area of the projects to engage within, working groups to join, growing their Cloud Native knowledge, and network of relationships. By connecting one-on-one, MeshMates will share tips on how to have the best community experience possible. </p>
           <p> Meshtees are encouraged to get to know their MeshMate as soon as they are assigned (MeshMates and Mentees will be introduced in the Layer5 Slack). Help your MeshMate understand your current skills, ideal topics of learning, and areas of passion. Doing so will help them to point out various aspects of projects that you might find your first foothold. </p>
         </div>
@@ -134,7 +134,7 @@ const Meshmates=() => {
           <h2> Code of Conduct </h2>
           <p> The comfort and safety of Layer5 community members is our priority. You must agree to the Code of Conduct to participate in the Layer5 community, and any violations of the Code of Conduct will be taken seriously. <br/>
                     To report any violations please fill out this incident form. </p>
-          <Button primary title="Fill Form" url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" external={true}/>
+          <Button primary title="Report Incident" url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" external={true}/>
         </div>
         <EmeritusGrid />
       </Container>
