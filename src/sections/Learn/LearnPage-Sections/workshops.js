@@ -215,7 +215,7 @@ const WorkshopsSection = () => {
           <h1>Workshops</h1>
           <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
           <div className="see-more-button">
-            <Button primary title="Checkout all workshops" url="/workshops"/>
+            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops"/>
           </div>
         </Col>
         <Col xs={12} md={9} className="workshops-col">
@@ -232,7 +232,7 @@ const WorkshopsSection = () => {
           </Row>
         </Col>
       </div>
-      <div className="feedback-section">	
+      <div className="feedback-section">
         <Slider {...settings}>
           {
             feedbackData.map((data, index) => {
