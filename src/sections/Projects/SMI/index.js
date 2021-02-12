@@ -103,7 +103,7 @@ const SMIPage = () => {
               <p>
                     Checkout the current status of the support for SMI Conformance Tests of all service meshes in our landscape page.
               </p>
-              <Button primary url="/service-mesh-landscape#smi" external="false">
+              <Button primary url="/service-mesh-landscape#smi" external={false}>
                       Check it Out
               </Button>
             </div>
