@@ -81,7 +81,7 @@ const BooksPage = ({hide_path}) => {
               <div className="blog-slider_img">
                 <img src={frontmatter.cover.publicURL} alt={frontmatter.title} />
               </div>
-              <Link className="book-page_link" to={fields.slug}></Link>
+              <Link className="book-page_link" to={fields.slug}/>
             </div>
           ))}
         </Slider>
