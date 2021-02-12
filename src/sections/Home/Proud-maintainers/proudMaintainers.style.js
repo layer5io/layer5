@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ProjectItemWrapper = styled.section`
 	margin: 2rem 0 -6rem 0;
-
+	overflow: hidden;
 	.project-title {
 		text-align: center;
 		padding: 0 2rem;
