@@ -9,7 +9,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-netlify-cache",
     "gatsby-plugin-preload-fonts",
     {
       resolve: "gatsby-plugin-google-gtag",

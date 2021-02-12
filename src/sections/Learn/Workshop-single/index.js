@@ -18,7 +18,7 @@ const WorkshopSinglePage = ({ frontmatter, body }) => {
   return (
     <WorkshopSinglePageWrapper>
       <div className="backBtn">
-        <Link to="/workshops">
+        <Link to="/learn/service-mesh-workshops">
           <IoIosArrowDropleftCircle />
           <h4>All Workshops</h4>
         </Link>

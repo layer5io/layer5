@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 const SubscribeWrapper = styled.div`
     background-color:${props => props.theme.secondaryLightColor};
-    padding: 50px 10px;
+    padding: 3.125rem 0.625rem;
     overflow: hidden;
     h2{
         font-weight: 600;
-        margin:0px;
-        font-size:30px;
-        margin:20px 0px;
+        font-size:1.875rem;
+        margin:1.25rem 0;
     }
     h2 span{
         color:${props => props.theme.secondaryColor};
@@ -16,25 +15,22 @@ const SubscribeWrapper = styled.div`
     
     input{
         display: block;
-        padding: 15px;
+        padding: 0.9375rem;
         width: 90%;
-        height: 48px;
+        height: 3rem;
         font-size: 1rem;
         border-radius: 5px;
-        margin: 0 auto 0px auto;
         box-shadow: none;
         transition: 450ms all;
         border: 1px solid #000;
-        margin:25px;
+        margin:1.5625rem;
         &:hover,&:focus{
             border-color: ${props => props.theme.secondaryColor};
         }
         
     }
     #mc-embedded-subscribe{
-        background-color:${props => props.theme.secondaryColor};
-        color:white;
-        margin: 24px 5px 0px;
+        margin: 1.5rem 0.3125rem 0;
     }
     #mc-embedded-subscribe:hover{
         color:black;
@@ -49,14 +45,14 @@ const SubscribeWrapper = styled.div`
     }
     @media only screen and (max-width: 912px) {
         form{
-            padding:0px 30px;
+            padding:0 1.875rem;
             h2{
-                font-size:28px;
-                margin: 25px 0px;
+                font-size:1.75rem;
+                margin: 1.5625rem 0;
             }
             input{
                 width:90%;
-                height: 50px;
+                height: 3.125rem;
             }
         }
         .email-cont{
@@ -72,7 +68,7 @@ const SubscribeWrapper = styled.div`
             input{
                 width: 90%;
                 margin-bottom: 30px;
-                height: 50px;
+                height: 3.125rem;
             }
         }
         .email-cont{
@@ -96,17 +92,17 @@ const SubscribeWrapper = styled.div`
     @media only screen and (min-width:768px) and (max-width:800px)
     {
         #mce-EMAIL{
-            margin:25px 0px;
+            margin:1.5625rem 0;
             width:100%;
         }
         .email-cont div{
-            padding:0px;
+            padding:0;
         }
 
     }
     @media only screen and (max-width:500px){
         #mce-EMAIL{
-            margin:25px 0px;
+            margin:1.5625rem 0;
             width:100%;
         }
     }

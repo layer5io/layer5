@@ -1,18 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
 const NewcomersMapWrapper = styled.div`
-  .poly-color {
-    fill: #9fbfcd;
-  }
   .poly-1,
   .poly-2,
   .poly-3 {
     fill: white;
-    //&:hover{
-    //  fill: #9fbfcd;
-    //}
   }
   a {
     path {
@@ -41,13 +35,7 @@ const NewcomersMapWrapper = styled.div`
   }
 `;
 
-const NewcomersMap = ({ handleMouseHover = {} }) => {
-  const [hoveredPoly1, setHoveredPoly1] = useState(false);
-  // const toggleHoverPoly1 = () => setHoveredPoly1(!hoveredPoly1);
-  const [hoveredPoly2, setHoveredPoly2] = useState(false);
-  // const toggleHoverPoly2 = () => setHoveredPoly2(!hoveredPoly1);
-  const [hoveredPoly3, setHoveredPoly3] = useState(false);
-  // const toggleHoverPoly3 = () => setHoveredPoly3(!hoveredPoly1);
+const NewcomersMap = ({ handleMouseHover = false }) => {
   return (
     <NewcomersMapWrapper handleHover={handleMouseHover}>
       <svg
@@ -135,17 +123,17 @@ const NewcomersMap = ({ handleMouseHover = {} }) => {
         </defs>
         <title>newcomer-map</title>
         <polygon
-          className={hoveredPoly1 ? "poly-color" : "poly-1"}
+          className="poly-1"
           points="4.5 286.9 4.5 1.91 196.24 35.72 196.24 320.71 4.5 286.9"
         />
         <path d="M5,2.51,195.74,36.14v284L5,286.48V2.51M4,1.32v286l192.74,34V35.3L4,1.32Z" />
         <polygon
-          className={hoveredPoly2 ? "poly-color" : "poly-2"}
+          className="poly-2"
           points="196.13 35.72 387.87 1.91 387.87 286.9 196.13 320.71 196.13 35.72"
         />
         <path d="M387.37,2.51v284L196.63,320.11v-284L387.37,2.51m1-1.19-192.74,34v286l192.74-34V1.32Z" />
         <polygon
-          className={hoveredPoly3 ? "poly-color" : "poly-3"}
+          className="poly-3"
           points="387.76 286.9 387.76 1.91 579.5 35.72 579.5 320.71 387.76 286.9"
         />
         <path d="M388.26,2.51,579,36.14v284L388.26,286.48V2.51m-1-1.19v286L580,321.3V35.3l-192.74-34Z" />
@@ -216,7 +204,7 @@ const NewcomersMap = ({ handleMouseHover = {} }) => {
             style={{
               fontSize: 16,
               fill: "#f2f2f2",
-              fontFamily: "QanelasSoft-SemiBold, Qanelas Soft",
+              fontFamily: "Qanelas Soft, sans-serif",
               fontWeight: 700,
             }}
           >
@@ -383,7 +371,7 @@ const NewcomersMap = ({ handleMouseHover = {} }) => {
             style={{
               fontSize: 16,
               fill: "#f2f2f2",
-              fontFamily: "QanelasSoft-SemiBold, Qanelas Soft",
+              fontFamily: "Qanelas Soft, sans-serif",
               fontWeight: 700,
             }}
           >
@@ -461,7 +449,7 @@ const NewcomersMap = ({ handleMouseHover = {} }) => {
             style={{
               fontSize: 16,
               fill: "#f2f2f2",
-              fontFamily: "QanelasSoft-SemiBold, Qanelas Soft",
+              fontFamily: "Qanelas Soft, sans-serif",
               fontWeight: 700,
             }}
           >
@@ -493,7 +481,7 @@ const NewcomersMap = ({ handleMouseHover = {} }) => {
             style={{
               fontSize: 15,
               fill: "#f2f2f2",
-              fontFamily: "QanelasSoft-SemiBold, Qanelas Soft",
+              fontFamily: "Qanelas Soft, sans-serif",
               fontWeight: 700,
             }}
           >

@@ -87,8 +87,11 @@ const SoSpecialWrapper = styled.div`
         color:black;
         height:100%;
         outline:none;
-        border:none;
-        
+        border:none;   
+    }
+    .special-cont_btn:hover{
+        background-color:white;
+        color:black;
     }
 
     
