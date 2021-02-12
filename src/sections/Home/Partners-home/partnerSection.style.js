@@ -22,18 +22,18 @@ const PartnerItemWrapper = styled.section`
         flex-shrink: 3;
     }
     img {
-        max-width: 100px;
+        max-width: 100%;
         min-width: 50px;
         margin: auto;
         opacity: .7;
-       
+        max-height:100px;
     }
     .partner__block__inner {
-        padding: .5rem;
+        padding: 5px;
         margin: 0px;
         display: flex;
         transition: all 0.2s ease-in-out;
-        height: 100px;
+        height: 110px;
     }
      /* @media only screen and (max-width: 768px) {
         .horizontal {
