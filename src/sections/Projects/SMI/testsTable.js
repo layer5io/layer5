@@ -13,7 +13,7 @@ function TestsTable() {
         accessor: "test_no",
       },
       {
-        Header: "Specification",
+        Header: "Spec",
         accessor: "spec",
       },
       {

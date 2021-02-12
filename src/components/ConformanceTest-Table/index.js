@@ -1,5 +1,5 @@
 import React from "react";
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 import { TableWrapper } from "./ConformanceTestTable.style";
 
 const Table = ({ columns, data }) => {
@@ -10,25 +10,35 @@ const Table = ({ columns, data }) => {
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({
-    columns,
-    data,
-  });
+  } = useTable(
+    {
+      columns,
+      data,
+    },
+    useSortBy,
+  );
   
   // Render the UI for the table
   return (
     <TableWrapper>
-      <table {...getTableProps()}>
+      <table {...getTableProps()} >
         <thead >
           {headerGroups.map(headerGroup => (
-            <tr key={"table-header"} {...headerGroup.getHeaderGroupProps()}>
+            <tr key={"table-header"} {...headerGroup.getHeaderGroupProps()} >
               {headerGroup.headers.map((column) => {
-                if(column["id"]==="desc") {
-                  return ( <th key={column} {...column.getHeaderProps()} style={{textAlign:"left"}}>{column.render("Header")} </th> );
-                } else {
-                  return ( <th key={column} {...column.getHeaderProps()}>{column.render("Header")}</th> );
-                }
-
+                return (
+                  <th key={column} {...column.getHeaderProps(column.getSortByToggleProps())} style={{textAlign:"left", paddingLeft: "0.75rem",}}>
+                    {column.render("Header")}
+                    <span>
+                      {column.isSorted
+                        ? column.isSortedDesc
+                          ? " ↓"
+                          : " ↑"
+                        : ""}
+                    </span>
+                  </th>
+                );
+                  
               })}
             </tr>
           ))}

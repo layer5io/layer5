@@ -123,6 +123,7 @@ const SMIWrapper = styled.section`
         margin: 1.875rem 5rem 1.875rem 5rem;
         h2,p {
             text-align: center;
+            padding: 1rem;
         }
         .table {
             margin: auto;
@@ -146,8 +147,6 @@ const SMIWrapper = styled.section`
 		font-size: 1.25rem;
 		font-weight: 500;
 		border-bottom: none;
-        overflow: auto;
-        white-space: nowrap
 		border-top-left-radius: .5rem;
 		border-top-right-radius: .5rem;
 		color: #ffffff;

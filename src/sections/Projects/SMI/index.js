@@ -87,7 +87,7 @@ const SMIPage = () => {
             </Row>
           </div>
         </div>
-        <div className="test-block">
+        <div id="tests" className="test-block">
           <h2>Conformance Tests</h2>
           <p></p>
           <div className="table">
