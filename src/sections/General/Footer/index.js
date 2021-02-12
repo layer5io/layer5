@@ -50,12 +50,12 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/learn/books">
+                    <Link className="category-link" to="/learn/service-mesh-books">
                       Service Mesh Books
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/learn/workshops">
+                    <Link className="category-link" to="/learn/service-mesh-workshops">
                       Service Mesh Workshops
                     </Link>
                   </li>
