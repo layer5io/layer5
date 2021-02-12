@@ -10,6 +10,7 @@ assignees: ''
 - Event Link: 
 - Talk Description: 
 - Talk Link: 
+- Talk Type:
 - Deck: 
 - Video: 
 
