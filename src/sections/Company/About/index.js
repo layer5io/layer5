@@ -17,12 +17,15 @@ const About = () => {
         <Row Vcenter={true}>
           <Col xs={12} sm={12}>
             <SectionTitle
-              className="section-title section-bottom"
+              className="section-title"
               leftAlign={false}
               UniWidth="100%"
             >
-              <h2>We are collaborators from around the globe</h2>
+              <h2>We are collaborators</h2>
+              <h1>from around the globe</h1>
+
               <img height="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
+
               <h3>Join the community and collaborate on our projects</h3>
               <VintageBox left={true} vintageTwo={true} >
                 <Button
@@ -30,27 +33,22 @@ const About = () => {
                   className="about-button"
                   url="/community"
                   title="Start Contributing"
-                  external="false"
+                  external={false}
                 />
               </VintageBox>
             </SectionTitle>
           </Col>
         </Row>
-        <Row Vcenter={true}>
+        <Row Vcenter={true} className="aboutus-title">
           <Col xs={12} sm={6}>
-            <SectionTitle
-              className="section-title"
-              leftAlign={true}
-              UniWidth="100%"
-            >
-              {" "}
+            <div>
               <h2>About Us</h2>
-            </SectionTitle>
+            </div>
             <div className="about-text text-one">
               <h3>Community First</h3>
               <p className="indent">
                 The Layer5 community represents the largest collection of
-                service mesh projects and their maintainers in the world. 
+                service mesh projects and their maintainers in the world.
               </p>
             </div>
             <div className="about-text text-two">
@@ -70,14 +68,14 @@ const About = () => {
             <div>
               <Row>
                 <Col xs={12} sm={6}>
-                                    
+
                   <div className="section">
                     <h4><a href="https://goo.gl/maps/3oeuqrsMtHPQSTmQ8"><img src={location} className="location" alt="Layer5 locations" /></a>USA</h4>
                     <p className="address">
-                      Layer5, Inc., 
+                      Layer5, Inc.,
                       Corporate Headquarters
                       <br />
-                                            
+
                         701 Brazos Street, Suite 1600
                       <br />
                         Austin, TX 78701
@@ -89,10 +87,10 @@ const About = () => {
                     <a href="https://goo.gl/maps/1nF7vNmVq5fm2GLS6">
                       <img src={location} className="location" alt="Layer5 locations" /></a>Scotland</h4>
                   <p className="address">
-                    Layer5, Inc., 
+                    Layer5, Inc.,
                     Engineering
                     <br />
-                      3 Queen Street 
+                      3 Queen Street
                     <br />
                       Edinburgh, EH2 1JE
                     <br />
@@ -100,11 +98,11 @@ const About = () => {
                   </p>
                 </Col>
               </Row>
-                            
+
             </div>
-          </Col>           
+          </Col>
         </Row>
-        <Row className="contactButton">
+        <Row className="contactButton section-bottom ">
           <Col xs={12} sm={12}>
             <SectionTitle
               className="section-title"
