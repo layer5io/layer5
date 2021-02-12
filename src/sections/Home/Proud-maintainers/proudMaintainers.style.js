@@ -40,7 +40,9 @@ const ProjectItemWrapper = styled.section`
 		background: #F3F3F3; //${props => props.theme.tertiaryColor};
 		display: flex;
 		border-radius: 1.5rem;
-
+		img {
+			margin: 0 auto;
+		}
 	}
 
 	.proj_icon_1 {
@@ -51,7 +53,7 @@ const ProjectItemWrapper = styled.section`
 		img {
 			padding: 1.5rem 1rem;
 			max-height: 125px;
-			}
+		}
 		h4 {
 			/* font-size: 1rem; */
 			margin: auto 0;
