@@ -95,7 +95,7 @@ const SoSpecial = () => {
         <Slider {...settings}>
           {
             data.allMdx.nodes.map(({id,frontmatter,fields}) => (
-              <Button class="special-cont_btn" url={fields.slug} key={id}>
+              <Button className="special-cont_btn" url={fields.slug} key={id}>
                 <div id="special-cont" >
                   <div id="special-cont_img">
                     <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
