@@ -70,6 +70,9 @@ const FaqSectionWrapper = styled.section`
     p {
       margin-bottom: 2rem;
     }
+    button {
+      margin-bottom: 1rem;
+    }
   }
   @media only screen and (max-width: 912px) {
     .reusecore__accordion {
