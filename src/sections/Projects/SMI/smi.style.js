@@ -174,6 +174,32 @@ const SMIWrapper = styled.section`
 		}
 	}
 
+    .smiResults {
+        display: flex;
+		padding: 2.5rem;
+		text-align: center;
+		margin: auto;
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+        max-width: 70%;
+
+		.text-gray {
+			margin-top: 2rem;
+			color: gray;
+			font-style: italic;
+		}
+		img {
+			height: 10rem;
+			margin-right: 2rem;
+		}
+		@media screen and (max-width:767px) {
+			display: block;
+	
+			img {
+				margin: 0 auto 0.25rem;
+			}
+		}
+    }
     @media only screen and (max-width: 990px) {
         .hero-img{
             width: 95%;
