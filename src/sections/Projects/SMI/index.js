@@ -11,6 +11,7 @@ import data from "./data";
 import c_icon from "./c-icon.svg";
 import logo from "./logo.svg";
 import smi from "./smi.svg";
+import TestsTable from "./testsTable";
 
 const SMIPage = () => {
   return (
@@ -84,6 +85,13 @@ const SMIPage = () => {
                 <Button primary title="Run SMI Conformance" url="/blog/programs/starting-smi-conformance-testing-with-meshery"></Button>
               </Col>
             </Row>
+          </div>
+        </div>
+        <div id="tests" className="test-block">
+          <h2>Conformance Tests</h2>
+          <p></p>
+          <div className="table">
+            <TestsTable/>
           </div>
         </div>
       </SMIWrapper>
