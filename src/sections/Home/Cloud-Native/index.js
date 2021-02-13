@@ -5,7 +5,7 @@ import cncf from "../../../assets/images/partners/cncf-stacked-white-color.svg";
 
 const CloudNativeLeaders = () => {
   return (
-    <CloudNativeWrapper >
+    <CloudNativeWrapper className="arrow">
       <div className="cloud-cont">
         <div className="col-1">
           <h4>We are</h4>

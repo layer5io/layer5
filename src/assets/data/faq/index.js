@@ -98,7 +98,7 @@ const data = {
             category: "Service Mesh",
             answer: ["There are many service meshes from which to choose as well as a variety of deployment models. Which is right for you and your organization depends on where you are in your maturity curve (Cloud Native skill set), number of services, underlying infrastructure, and how centric technology is to your business. ",
                      "So, should you deploy a service mesh? More and more the answer is “yes”. Service meshes are quickly becoming a ubiquitous layer in modern infrastructures."],
-            link: "/when-should-I-use-a-service-mesh",
+            link: "/deploy-a-service-mesh",
             linktext: "Factors When considering how strongly you need a service mesh",
         },
         {

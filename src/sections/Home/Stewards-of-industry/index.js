@@ -8,15 +8,10 @@ const StewardsOfIndustry = () => {
     <BannerSectionWrapper>
       <div className="section">
         <h1 className="section-header">
-          Stewards of industry.
-          <br /> Service mesh leaders.
-        </h1>
-        <p className="section-content">
-          Open source. Service mesh focused. Service mesh neutral.
-          <br /> The only vendor dedicated to empowering organizations with any
-          service mesh.
-          <br /> You could say we are the creators of service mesh standards.
-        </p>
+        Creators of service mesh standards.</h1>
+        <h2>Service mesh leaders.</h2>
+        
+        
         <Button
           primary
           className="section-button"

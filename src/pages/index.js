@@ -44,7 +44,7 @@ const IndexPage = () => (
       <StewardsOfIndustry />
       {/* <Getapp /> */}
       {/* <News /> */}
-      <Faq category = "all"/>
+      {/* <Faq category = "all"/> */}
       {/*<ContactCard />*/}
       <SoSpecial />
       <ServiceMeshFocussed />
