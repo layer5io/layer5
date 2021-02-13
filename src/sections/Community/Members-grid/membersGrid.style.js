@@ -60,7 +60,7 @@ export const selectStyles = {
       content: "\" \"",
       display: "block",
       marginRight: 12,
-      marginLeft: data.value === "all" || data.value === "active" || data.value === "inactive" ? 1 : 5,
+      marginLeft: data.value === "all" || data.value === "active" || data.value === "inactive" ? 1.5 : 5,
       height: 10,
       width: 10,
       zIndex: 1000,
