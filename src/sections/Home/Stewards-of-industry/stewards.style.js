@@ -3,6 +3,8 @@ import styled from "styled-components";
 import backgroundImg from "./images/stewards.png";
 
 const BannerSectionWrapper = styled.section`
+  z-index:-10;
+  position: relative; 
   .section {
     background-image: url(${backgroundImg});
     background-size: cover;
@@ -11,6 +13,12 @@ const BannerSectionWrapper = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: black;
+  
+  }
+  h2{
+    color: white;
+    margin-bottom: 3rem;
   }
   .section-header,
   .section-content {
@@ -19,7 +27,9 @@ const BannerSectionWrapper = styled.section`
   .section-header {
     line-height: 3.125rem;
     color: white;
-    padding: 4rem 20rem 1.5rem 20rem;
+  }
+  h1,h2 {
+    margin-top: 2rem;
   }
   .section-content {
     line-height: 1.463rem;
@@ -28,10 +38,17 @@ const BannerSectionWrapper = styled.section`
   }
   .section-button {
     font-weight: 600;
+    color: white;
+    margin-bottom: -15rem;
   }
   @media only screen and (max-width: 1224px) {
     .section-header {
-      padding: 4rem 15rem 1.5rem 15rem;
+      padding: 8rem 15rem 1.5rem 15rem;
+    }
+    h2 {
+      font-weight: 400;
+      margin-top: .5rem;
+      margin-bottom: 4rem;
     }
     .section-content {
       padding: 0 15rem 1.5rem 15rem;
@@ -49,20 +66,27 @@ const BannerSectionWrapper = styled.section`
     .section-header {
       padding: 4rem 10rem 1.5rem 10rem;
     }
+    h2 {
+      font-weight: 400;
+      margin-top: 1rem;
+    }
     .section-content {
       padding: 0 10rem 1.5rem 10rem;
     }
   }
   @media only screen and (max-width: 624px) {
     .section-header {
-      padding: 2rem 5rem 0.75rem 5rem;
+      padding: 6rem 2rem 0.75rem 2rem;
+      margin-top: 1rem;
     }
     .section-content {
-      padding: 0 5rem 0.75rem 5rem;
+      padding: 0 2rem 0.75rem 1rem;
     }
     .section-button {
       font-size: 1rem;
-      margin-bottom: 3rem;
+      margin-bottom: 0rem;
+      margin-top: 2rem;
+      color: white;
     }
   }
   @media only screen and (max-width: 424px) {
@@ -77,15 +101,18 @@ const BannerSectionWrapper = styled.section`
       font-size: 2rem;
       line-height: 2.8rem;
       padding: 1rem 3rem;
+      
     }
     .section-content {
       font-size: 1rem;
       line-height: 1.3rem;
-      padding: 0 3rem 1rem 3rem;
+      padding: 0rem 3rem 1rem 3rem;
     }
     .section-button {
       font-size: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
+      
+      color: white;
     }
   }
   @media only screen and (max-width: 300px) {

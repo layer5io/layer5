@@ -178,6 +178,7 @@ const SMIWrapper = styled.section`
     }
     .test-block{
         margin: 1.875rem 5rem 1.875rem 5rem;
+        h3 {   text-align: center;}
         h2,p {
             text-align: center;
             padding: 1rem;

@@ -1,9 +1,8 @@
 import styled from "styled-components";
+import collabMap from "./images/layer5-collaboration-map.svg";
 
 const AboutSectionWrapper = styled.section`
-  margin: 1rem 0 5rem
-  position: relative;
-  overflow: hidden;
+  
   .section__particle {
     position: absolute;
     &.one {
@@ -55,10 +54,25 @@ const AboutSectionWrapper = styled.section`
     font-weight: 400;
     margin-bottom: 28px;
   }
+  .aboutus-title {
+    margin-top: 10vw;
+    h2 {
+      display: block;
+      font-weight: 400;     
+      margin-bottom: 1rem;
+      line-height: 1rem;
+    }
+  }
   .section-title {
     h2 {
-      margin-bottom: 1rem;
+      /* line-height: 1rem; */
+      /* top: -5rem;  */
+      margin-top: 4rem;
+      margin-bottom: 0rem;
     }
+    h3 {
+        margin-bottom: 1.7vw;
+      }
   }
   .section-bottom {
     margin-bottom: 5rem;
@@ -79,8 +93,12 @@ const AboutSectionWrapper = styled.section`
     }
   }
   @media screen and (max-width: 1200px) {
-    .section-bottom {
+    .section-title {
       h2 {
+        margin-bottom: 1rem;
+      }
+      h1{
+        
         margin-bottom: -4rem;
       }
 
@@ -90,6 +108,19 @@ const AboutSectionWrapper = styled.section`
     }
   }
   @media only screen and (max-width: 1024px) {
+    .section-title {
+      h2 {
+        margin-bottom: 0rem;
+      }
+      h1{
+        
+        margin-bottom: -4rem;
+      }
+
+      img {
+        margin-bottom: -6rem;
+      }
+    }
     .section__particle {
       &.one {
         top: 0%;
@@ -97,17 +128,24 @@ const AboutSectionWrapper = styled.section`
     }
   }
   @media only screen and (max-width: 912px) {
-    padding: 2rem 0 0;
-    .section-title h2 {
-      margin-bottom: 20px;
-      font-size: 2.125rem;
-      line-height: normal;
+    .section-title {
+      h2 {
+        margin-top: 2rem;
+      }
+      h1{
+        margin-bottom: -9rem;
+      }
+
+      img {
+        margin-bottom: -6rem;
+      }
     }
     .about-text.text-two {
       margin-bottom: 10px;
     }
   }
   @media screen and (max-width: 911px) and (min-width: 569px) {
+    
     .section-bottom {
       h2 {
         margin-bottom: -8rem;
@@ -115,6 +153,7 @@ const AboutSectionWrapper = styled.section`
     }
   }
   @media only screen and (max-width: 760px) {
+    
     padding: 60px 0 60px 0;
     .about-thumb {
       margin-bottom: 70px;
@@ -126,17 +165,34 @@ const AboutSectionWrapper = styled.section`
       text-align: center;
     }
     .section-title {
-      img {
-        display: none;
+
+      h2 {
+        margin-bottom: 0rem;
       }
-      h4 {
-        width: 100%;
+      h1{
+        
+        margin-bottom: 0rem;
+      }
+      img {
+        padding:0px;
+        margin: 0px;
+        height:auto;
       }
     }
   }
   @media only screen and (max-width: 480px) {
     padding: 40px 0 60px 0;
+    .section-title {
+    h2 {
+      margin-bottom: 0rem;
+      font-size: 1.4rem;
+    }
+    h1{
+      font-size: 1.6rem;
+      margin-bottom: 0rem;
+    }
   }
+
   .community {
     color: blue;
   }

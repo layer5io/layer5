@@ -279,7 +279,7 @@ section{
     .close-modal-btn {
         min-width: 2rem;
         height: 2rem;
-        padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+        padding: 0.25rem;
         position: absolute;
         right: 0.5rem;
         top: 0.75rem;
@@ -309,7 +309,7 @@ section{
 }
 
 .form-frame {
-    height: 50rem;
+    height: 36rem;
     width: 35rem;
     border: none;
     overflow: hidden;
@@ -318,11 +318,13 @@ section{
 @media screen and (max-width: 765px) {
     .form-frame {
         width: 25rem;
+        height: 30rem;
     }
 }
 @media screen and (max-width: 500px) {
     .form-frame {
         width: 22rem;
+        height: 26rem;
     }
 }
 
