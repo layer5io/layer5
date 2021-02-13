@@ -200,6 +200,12 @@ const ServiceMesh = () => {
     }),
     [parentVal8]
   );
+
+  const handleKeyPress = (event) => {
+    if(event.key === "Enter"){
+      expand();
+    }
+  };
   return (
     <DeployServiceMeshWrapper>
       <div id="hero">
@@ -296,19 +302,20 @@ const ServiceMesh = () => {
         </Container>
       </div>
 
-      {
-        !flag
-        &&
-        <Container>
-          <div id="submit">
-            <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
-            <input type="email" className="email" onChange={addData}  placeholder="Email Address"></input>
-            <Button secondary id="arrow-btn" type="button" onClick={expand} title="Continue &rarr;"/>
-          </div>
-        </Container>
-      }
+      
       <div id="form">
         <Container>
+          {
+            !flag
+        &&
+ 
+          <div id="submit">
+            <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
+            <input type="email" className="email" onKeyDown={handleKeyPress} onChange={addData}  placeholder="Email Address"></input>
+            <Button secondary id="arrow-btn" type="button"  onClick={expand} title="Continue &rarr;"/>
+          </div>
+    
+          }
           <div>
             <div className="range-slider">
               <div id="slider">
@@ -354,20 +361,22 @@ const ServiceMesh = () => {
       </div>
 
       <div id="bot">
-        <Row>
-          <Col sm={12} md={6} lg={6} id="green">
+        <div id="row">
+
+        
+          <div id="green">
             <div id="text">
               <p id="cover">Services-first Network</p>
               <h1>What is A <br></br> Service Mesh?</h1>
               <p>
-              Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
+            Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
               </p>
               <Button primary id="learn" type="button" title="Learn More"/>
             </div>  
-          </Col>
-          <Col sm={12} md={6} lg={6} id="book" >
-          </Col>
-        </Row>
+          </div>
+          <div  id="book" >
+          </div>
+        </div>
       </div>
     </DeployServiceMeshWrapper>
   );

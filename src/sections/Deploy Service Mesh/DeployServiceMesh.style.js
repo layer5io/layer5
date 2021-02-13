@@ -7,9 +7,9 @@ const DeployServiceMeshWrapper = styled.div`
     }
     #hero{
         background-color: #EBC017;
-        height: 246px;
+        height: 35rem;
         text-align: center;
-        padding: 50px 0px 10px 0px;
+        padding: 200px 0px 10px 0px;
         p{
             padding-top: 20px; 
         }
@@ -272,13 +272,16 @@ const DeployServiceMeshWrapper = styled.div`
       #submit{
           text-align: center;
           padding: 150px 0px 200px 0px;
-          width: 74%;
-          height: 95%;
           background-color: rgba(228, 231, 237, 0.8);
           position:absolute;
+          left: 0;
+right: 0;
+margin: auto
           border-radius: 25px;
           z-index: 3000;
-          
+                width: 80%;
+                height: 80%;
+        
           h2{
               font-weight: 700;
               padding: 0px 0px 20px 0px;
@@ -293,11 +296,16 @@ const DeployServiceMeshWrapper = styled.div`
               width: 60px;
           }
       }
-
+      #row{
+        display: table-row;  
+      }
       #bot{
+        display: table;
+        width: 100%;
           #green{
               background: #00B39F;
-              width: 100%;
+            width:50%;
+              display: table-cell;
               min-height: 400px;
               #text{
                   color: white;
@@ -317,24 +325,13 @@ const DeployServiceMeshWrapper = styled.div`
               }
           }
           #book{
-
+            width: 50%;
+            display: table-cell;
             background-image: url(${bookCover});
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: right;
-            
-            @media only screen and (min-width: 1600px) {
-                background-size: 55em 2000px;
-            }
-            @media only screen and (max-width: 1400px) {
-                background-size: 50em 2000px;
-            }
-            @media only screen and (max-width: 1200px) {
-                background-size: 45em 2000px;
-            }
-            @media only screen and (max-width: 1000px) {
-                background-size: 40em 2000px;
-            }
+            min-height: 700px;
           }
       }
       .tooltip {
@@ -344,7 +341,7 @@ const DeployServiceMeshWrapper = styled.div`
       
       .tooltip .tooltiptext {
         visibility: hidden;
-        width: 300px;
+        
         background-color: black;
         color: #fff;
         text-align: center;
@@ -358,6 +355,28 @@ const DeployServiceMeshWrapper = styled.div`
         bottom: 100%;
         left: 50%;
         margin-left: -140px;
+        width: 12.5rem;
+
+        font-size: 1.125rem;
+        text-align: center;
+        width: 300px;
+        color: ${props => props.theme.white};
+        background: ${props => props.theme.tertiaryColor};
+        z-index: 3000;
+        border-bottom-right-radius: 0.8rem;
+        border-bottom-left-radius: 0.8rem;
+
+        transition: all 0.5s ease;
+
+        p {
+            margin: 0;
+        }
+        &:hover {
+            cursor: default;
+            .tooltiptext {
+                transform: translateY(-0.5rem);
+            }
+        }
       }
       
       .tooltip:hover .tooltiptext {
