@@ -64,7 +64,7 @@ const BannerSectionWrapper = styled.section`
   }
   @media only screen and (max-width: 824px) {
     .section-header {
-      padding: 4rem 4rem 1.5rem 4rem;
+      padding: 4rem 10rem 1.5rem 10rem;
     }
     h2 {
       font-weight: 400;
@@ -76,7 +76,7 @@ const BannerSectionWrapper = styled.section`
   }
   @media only screen and (max-width: 624px) {
     .section-header {
-      padding: 2rem 2rem 0.75rem 2rem;
+      padding: 6rem 2rem 0.75rem 2rem;
       margin-top: 1rem;
     }
     .section-content {
@@ -85,7 +85,7 @@ const BannerSectionWrapper = styled.section`
     .section-button {
       font-size: 1rem;
       margin-bottom: 0rem;
-      margin-top: 5rem;
+      margin-top: 2rem;
       color: white;
     }
   }
@@ -106,7 +106,7 @@ const BannerSectionWrapper = styled.section`
     .section-content {
       font-size: 1rem;
       line-height: 1.3rem;
-      padding: 0 3rem 1rem 3rem;
+      padding: 0rem 3rem 1rem 3rem;
     }
     .section-button {
       font-size: 1rem;
