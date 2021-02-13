@@ -22,7 +22,7 @@ const options = [
 ];
 
 const MembersPage = () => {
-  const [members, setMembers] = useState(options[0]);
+  const [members, setMembers] = useState(options[1]);
 
   const handleChange = value => {
     setMembers(value);
