@@ -6,7 +6,7 @@ labels: 'area/community'
 assignees: ''
 ---
 
-**Current Behaviour**
+**Current Behavior**
 
 <@github-username> has been a consistent contributor and community member.
 
