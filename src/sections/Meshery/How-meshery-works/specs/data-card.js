@@ -3,7 +3,8 @@ import styled from "styled-components";
 import LifeCycleIcon from "../images/lifecycle-icon.svg";
 import PerformanceIcon from "../images/performance-icon.svg";
 import ConfigurationIcon from "../images/configuration-icon.svg";
-import {Container, Col, Row} from "../../../../reusecore/Layout";
+import { Col, Row} from "../../../../reusecore/Layout";
+import Counter from "../../../../reusecore/Counter";
 
 const DataCardWrapper = styled.div`
   background: ${props => props.theme.white};
@@ -68,7 +69,13 @@ const DataCard = () => {
               <p>Global Customers</p>
             </li>
             <li>
-              <h3>1300+</h3>
+              <h3>
+                <Counter
+                  duration={3}
+                  separator=","
+                  end={1300}
+                  suffix="+" />
+              </h3>
               <p>Performance Tests run</p>
             </li>
           </ul>

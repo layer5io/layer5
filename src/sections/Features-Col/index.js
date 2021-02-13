@@ -6,6 +6,7 @@ import c_icon from "./c_icon.svg";
 import data from "./data";
 
 import FeaturesColSectionWrapper from "./featuresColSection.style";
+import Counter from "../../reusecore/Counter";
 
 
 const Features = () => {
@@ -37,7 +38,13 @@ const Features = () => {
                   ))}
                 </div>
                 <div className="count-block">
-                  <h1 className="count">{feature.count.value}</h1>
+                  <h1 className="count">
+                    <Counter
+                      duration={6}
+                      separator=","
+                      end={feature.count.value}
+                      suffix={feature.count.description==="performance tests run" ? "+" : ""} />
+                  </h1>
                   <p className="count-desc">{feature.count.description}</p>
                 </div>
               </div>
