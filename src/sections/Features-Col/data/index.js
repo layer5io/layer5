@@ -21,7 +21,7 @@ const data = {
         }
       ],
       count: {
-        value: "11",
+        value: 11,
         description: "service meshes supported"
       }
     },{
@@ -44,7 +44,7 @@ const data = {
         }
       ],
       count: {
-        value: "1,000",
+        value: 1000,
         description: "tracked users"
       }
     },
@@ -72,7 +72,7 @@ const data = {
         }
       ],
       count: {
-        value: "1,300+",
+        value: 1300,
         description: "performance tests run"
       }
     }
