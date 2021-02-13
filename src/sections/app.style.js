@@ -4,129 +4,129 @@ const GlobalStyle = createGlobalStyle`
 
 @font-face {
     font-family: "QanelasSoft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftBlack.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftBlack.otf') format('otf');
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftBold.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftBold.otf') format('otf');
     font-weight: bold;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftBlackItalic.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftBlackItalic.otf') format('otf');
     font-style: italic;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftBoldItalic.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftBoldItalic.otf') format('otf');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftExtraBold.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftExtraBold.otf') format('otf');
     font-weight: 800;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftExtraBoldItalic.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftExtraBoldItalic.otf') format('otf');
     font-weight: 800;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftHeavy.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftHeavy.otf') format('otf');
     font-weight: 900;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftHeavyItalic.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftHeavyItalic.otf') format('otf');
     font-weight: 900;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftLight.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftLight.otf') format('otf');
     font-weight: 300;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftLightItalic.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftLightItalic.otf') format('otf');
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftMedium.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftMedium.otf') format('otf');
     font-weight: 500;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftMediumItalic.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftMediumItalic.otf') format('otf');
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftRegular.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftRegular.otf') format('otf');
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftRegularItalic.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftRegularItalic.otf') format('otf');
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftSemiBold.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftSemiBold.otf') format('otf');
     font-weight: 600;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftSemiBoldItalic.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftSemiBoldItalic.otf') format('otf');
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftThin.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftThin.otf') format('otf');
     font-weight: 100;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftThinItalic.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftThinItalic.otf') format('otf');
     font-weight: 100;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftUltraLight.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftUltraLight.otf') format('otf');
     font-weight: 200;
 }
 
 @font-face {
     font-family: "Qanelas Soft";
-    src: url('../assets/fonts/qanelas-soft/QanelasSoftUltraLightItalic.otf');
+    src: url('../assets/fonts/qanelas-soft/QanelasSoftUltraLightItalic.otf') format('otf');
     font-weight: 200;
     font-style: italic;
 }
