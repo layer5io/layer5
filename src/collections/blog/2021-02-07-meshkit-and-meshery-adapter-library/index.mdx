@@ -14,6 +14,7 @@ published: true
 
 import { BlogWrapper } from "../Blog.style.js";
 import { MeshkitMesheryAdapterLibrary } from "./MeshkitMesheryAdapterLibrary.style";
+import mesheryAdapterLibrary from "./meshery-adapter-library.svg";
 import meshkitKubernetesExample from "./meshkit-kubernetes-example.png";
 import adapterHandlerInterface from "./adapter-handler-interface.png";
 import meshServiceServer from "./mesh-service-server.png"
@@ -203,10 +204,6 @@ The main purpose of the Meshery Adapter Library is to
 * implement cross-cutting concerns like logging, error handling, and tracing.
 * provide a mini framework implementing the gRPC server that allows plugging in the mesh specific configuration and operations implemented in the adapters.
 
-The figure below illustrates the usage of the library in an adapter, leveraging UML notation.
-
-The library is represented by the top package, the adapter code by the bottom package. 
-
 By struct embedding, the adapter extends the default implementation `Adapter` of the interface `Handler` from the library, for the adapter specific lifecycle management operations.
 
 The `Handler` interface looks like this:
@@ -231,6 +228,10 @@ type Handler interface {
 
 It corresponds closely to the gRPC API discussed above, and indeed these methods are called in the implementation of the `MeshServiceServer` interface. 
 
+The figure below illustrates the usage of the library in an adapter, leveraging UML notation.
+
+The library is represented by the rectangle with the stippled line at the top of the figure, the adapter by the corresponding rectangle at the bottom. 
+
 In the `main` package of the adapter, the default configuration provider `Viper` from the library is instantiated, and reads the adapter specific configuration. 
 This includes a specification of all available operations.
 
@@ -239,7 +240,7 @@ The concrete adapter handler implementation is used in the `Service` instance. T
 the library wraps the gRPC server, wiring up all necessary components, and starts the service. The developer does not need to touch 
 any gRPC code.  
 
-<img src={malOverview} class="image-center" alt="meshery adapter library overview" />
+<img src={mesheryAdapterLibrary} class="image-center" alt="meshery adapter library" />
 
 ### Conclusion
 
