@@ -24,12 +24,20 @@ const RangeSlider = memo(
       setSliderVal(e.target.value);
     };
 
+    const sliderStyle = {
+      backgroundImage: `-webkit-gradient(linear,left top,right top,color-stop(${(sliderVal/100)}, #0098A6),color-stop(${(sliderVal/100)}, #D2CECC))`
+    };
+
+    const bubbleStyle = {
+      left: `calc(${sliderVal}%)`
+    };
+
     useEffect(() => {
       if (mouseState === "up") {
         onChange(sliderVal);
       }
     }, [mouseState]);
-    return (
+    return ( 
       <div className="slidecontainer tooltip">
         {/* <p>{label}</p> */}
         <input
@@ -38,15 +46,17 @@ const RangeSlider = memo(
           {...sliderProps}
           className="slider"
           id="myRange"
+          style={sliderStyle}
           onChange={changeCallback}
           onMouseDown={() => setMouseState("down")}
           onMouseUp={() => setMouseState("up")}
         />
-        <span className="tooltiptext">{label}</span>
+        <span className="bubble" style={bubbleStyle} className="tooltiptext">{label}</span>
       </div>
+      
     );
   }
-);
+); 
 
 const ServiceMesh = () => {
   const submit = () => {

@@ -200,8 +200,38 @@ const DeployServiceMeshWrapper = styled.div`
     }
     .slidecontainer {
         width: 100%;
+        position: absolute;
+        margin: 0 auto;
       }
       
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+        input[type='range'] {
+            -webkit-appearance: none;
+            background-color: #D2CECC;
+            -webkit-appearance: none;
+            -moz-apperance: none;
+            border-radius: 6px;
+            height: 6px;  
+        }
+        .bubble {
+            background: red;
+            color: white;
+            padding: 4px 12px;
+            position: absolute;
+            border-radius: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 5px;
+          }
+          .bubble::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: red;
+            top: -1px;
+            left: 50%;
+          }
       .slider {
         -webkit-appearance: none;
         width: 100%;
@@ -212,7 +242,7 @@ const DeployServiceMeshWrapper = styled.div`
         opacity: 0.7;
         -webkit-transition: .2s;
         transition: opacity .2s;
-        overflow: hidden;
+        // overflow: hidden;
         cursor: pointer;
       }
       
@@ -227,7 +257,7 @@ const DeployServiceMeshWrapper = styled.div`
         height: 26px;
         border-radius: 50%;
         border:5px solid #00B39F;
-        box-shadow: -100vw 0 0 100vw dodgerblue;
+        // box-shadow: -100vw 0 0 100vw dodgerblue;
         background: #FFFFFF;
         cursor: pointer;
       }
@@ -246,6 +276,7 @@ const DeployServiceMeshWrapper = styled.div`
           height: 95%;
           background-color: rgba(228, 231, 237, 0.8);
           position:absolute;
+          border-radius: 25px;
           z-index: 3000;
           
           h2{
@@ -326,7 +357,7 @@ const DeployServiceMeshWrapper = styled.div`
         z-index: 1;
         bottom: 100%;
         left: 50%;
-        margin-left: -60px;
+        margin-left: -140px;
       }
       
       .tooltip:hover .tooltiptext {
