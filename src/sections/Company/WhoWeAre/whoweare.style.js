@@ -7,9 +7,9 @@ const AboutSectionWrapper = styled.section`
     mix-blend-mode: darken; 
     color: white;
     text-align: center;
-    margin: auto;
+    
  
-    h1 {
+    h1, h2, h3, h4 {
       color: white;
     }
     h2 {
@@ -18,11 +18,10 @@ const AboutSectionWrapper = styled.section`
       margin-top: 4rem;
       margin-bottom: 1rem;
       line-height: 1rem;
-      color: white;
+
     }
     h3 {
-        color: white;
-        margin-bottom: 1.7vw;
+        margin: 1.7vw;
       }
 
   .section-bottom {
@@ -30,36 +29,54 @@ const AboutSectionWrapper = styled.section`
   }
 
   .row {
-		justify-content: center;
-		margin: 1rem;
-		overflow: hidden;
+		margin: 2rem 5rem;
+		display: flex;
+    padding-bottom: 5rem;
+		
 	}
 
 	.col {
-		flex: 0 0 25%;
-		max-width: 20%;
+		display: flex;
+		flex-flow: column wrap;
+    justify-content: center;
+    margin: 1rem;
+    min-height: 6rem;
+    
 	}
 
 	.item {
-		height: 7rem;
+    height: 100%;
+    min-width: 100px;
 		background: ${props => props.theme.tertiaryColor};
 		display: flex;
 		border-radius: 1.5rem;
 		justify-content: left;
 		margin: auto;
 		padding: 1rem;
-
+    overflow-block: visible;
 		h4 {
-      padding-left: .9rem;
+      padding-left: .5rem;
+      padding-right: 1.5rem;
 			font-weight: 500;
 			text-align: left;
-      color: white;
+      font-size: 1.25rem;
       margin: auto;
 		}
-
-		@media screen and (max-width: 900px) {
+    img {
+      height: 1.5rem;
+      margin: auto;
+    }
+		@media screen and (max-width: 1200px) {
 			height: 6.5rem;
+        h4 {font-size: 1.1rem;
+        padding-top: 0px;
+        padding-bottom: 0px;
 		}
+    @media screen and (max-width: 1000px) {
+			height: 6.5rem;
+      
+      h4 {font-size: .8rem;}
+    }
 		@media screen and (max-width: 480px) {
 			height: 5rem;
 		}
