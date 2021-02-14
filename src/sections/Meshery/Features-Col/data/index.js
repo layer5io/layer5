@@ -8,7 +8,7 @@ const data = {
       btnText: "Get Started",
       services:[
         {
-          content: "Consul, Istio, Linkerd, Network Service Mesh, Open Service Mesh, App Mesh, Kuma, Maesh, Citrix Service Mesh, Octarine",
+          content: "AWS App Mesh, Citrix Service Mesh, Consul, Istio, Kuma, Linkerd, Network Service Mesh, NGINX Service Mesh, Octarine, Open Service Mesh, Traefik Mesh",
           className: "--on"
         },
         {
@@ -16,12 +16,12 @@ const data = {
           className: "--on"
         },
         {
-          content: "Validate each service mesh's compliance with Service Mesh Interface (SMI) specifications",
+          content: "Validate each service mesh's compliance with Service Mesh Interface (SMI)",
           className: "--on"
         }
       ],
       count: {
-        value: 11,
+        value: 10,
         description: "service meshes supported"
       }
     },{
@@ -44,8 +44,8 @@ const data = {
         }
       ],
       count: {
-        value: 1000,
-        description: "tracked users"
+        value: 800,
+        description: "users"
       }
     },
     {
@@ -72,7 +72,7 @@ const data = {
         }
       ],
       count: {
-        value: 1300,
+        value: 2000,
         description: "performance tests run"
       }
     }

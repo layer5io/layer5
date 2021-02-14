@@ -6,7 +6,7 @@ const MesheryWrapper = styled.section`
         overflow: hidden;
         display: block;
         .meshery-img{
-            max-width: 25rem;
+            max-width: 45rem;
             position: relative;
             bottom: 2rem;
             margin: auto; 
@@ -37,6 +37,7 @@ const MesheryWrapper = styled.section`
             }
             .meshery-hero-img {
                 text-align: center;
+                padding: 5rem;
             }
         }
     }
