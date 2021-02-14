@@ -11,13 +11,19 @@ const AboutSectionWrapper = styled.section`
  
     h1, h2, h3, h4 {
       color: white;
+      line-height: 4rem;
+      
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 30rem;
     }
     h2 {
       display: block;
       font-weight: 400;     
       margin-top: 4rem;
       margin-bottom: 1rem;
-      line-height: 1rem;
+      line-height: 2.5rem;
 
     }
     h3 {
@@ -46,7 +52,7 @@ const AboutSectionWrapper = styled.section`
 
 	.item {
     height: 100%;
-    min-width: 100px;
+    min-width: 150px;
 		background: ${props => props.theme.tertiaryColor};
 		display: flex;
 		border-radius: 1.5rem;
@@ -76,6 +82,10 @@ const AboutSectionWrapper = styled.section`
 			height: 6.5rem;
       
       h4 {font-size: .8rem;}
+    }
+    @media screen and (max-width: 650px) {
+			height: 6.5rem;
+      h4 {font-size: .7rem;}
     }
 		@media screen and (max-width: 480px) {
 			height: 5rem;

@@ -17,17 +17,10 @@ const WhoWeAre = () => {
               leftAlign={false}
               UniWidth="100%"
             >
-              <h2>We are collaborators</h2>
-              <h1>from around the globe</h1>
+              <h2>Recognized as</h2>
+              <h1>Cloud Native Leaders</h1>
 
-              <h3>Join the community and collaborate on our projects</h3>
             </SectionTitle>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            Open standards creators.
-            Industry stewards.
           </Col>
         </Row>
       </Container >
@@ -109,11 +102,6 @@ const WhoWeAre = () => {
           </div>
         </Col>
       </Row>
-
-
-
-
-
     </WhoWeAreSectionWrapper >
   );
 };

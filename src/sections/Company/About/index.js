@@ -7,7 +7,7 @@ import AboutSectionWrapper from "./about.style";
 import collabMap from "./images/layer5-collaboration-map.svg";
 import layer5BusCard from "./images/layer5-business-card-photo_med.jpg";
 import location from "./images/location.svg";
-
+import WhoWeAre from "../WhoWeAre";
 
 
 const About = () => {
@@ -27,7 +27,7 @@ const About = () => {
               <img height="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
 
               <h3>Join the community and collaborate on our projects</h3>
-              <VintageBox left={true} vintageTwo={true} >
+              <VintageBox left={true} vintageTwo={true} className="section-bottom">
                 <Button
                   primary
                   className="about-button"
@@ -39,6 +39,9 @@ const About = () => {
             </SectionTitle>
           </Col>
         </Row>
+      </Container>
+      <WhoWeAre />
+      <Container fullWidthSM>
         <Row Vcenter={true} className="aboutus-title">
           <Col xs={12} sm={6}>
             <div>
