@@ -269,18 +269,21 @@ const DeployServiceMeshWrapper = styled.div`
         background: #4CAF50;
         cursor: pointer;
       }
+      #additional{
+          position: relative;
+      }
       #submit{
           text-align: center;
           padding: 150px 0px 200px 0px;
           background-color: rgba(228, 231, 237, 0.8);
           position:absolute;
           left: 0;
-right: 0;
-margin: auto
+        right: 0;
+        margin: auto
           border-radius: 25px;
           z-index: 3000;
-                width: 80%;
-                height: 80%;
+        width: 100%;
+        height: 90%;
         
           h2{
               font-weight: 700;
@@ -296,16 +299,11 @@ margin: auto
               width: 60px;
           }
       }
-      #row{
-        display: table-row;  
-      }
       #bot{
-        display: table;
-        width: 100%;
+        display: flex;
           #green{
               background: #00B39F;
-            width:50%;
-              display: table-cell;
+              flex: 1;
               min-height: 400px;
               #text{
                   color: white;
@@ -325,13 +323,14 @@ margin: auto
               }
           }
           #book{
-            width: 50%;
-            display: table-cell;
             background-image: url(${bookCover});
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: right;
-            min-height: 700px;
+            min-height: 800px;
+            #spacer{
+                min-width: 850px;
+            }
           }
       }
       .tooltip {

@@ -302,81 +302,80 @@ const ServiceMesh = () => {
         </Container>
       </div>
 
-      
-      <div id="form">
-        <Container>
-          {
-            !flag
-        &&
- 
-          <div id="submit">
-            <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
-            <input type="email" className="email" onKeyDown={handleKeyPress} onChange={addData}  placeholder="Email Address"></input>
-            <Button secondary id="arrow-btn" type="button"  onClick={expand} title="Continue &rarr;"/>
-          </div>
-    
-          }
-          <div>
+      <Container>
+        <div id="form">
+          <div id="additional">
+            {
+              !flag
+              &&
+              <div id="submit">
+                <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
+                <input type="email" className="email" onKeyDown={handleKeyPress} onChange={addData}  placeholder="Email Address"></input>
+                <Button secondary id="arrow-btn" type="button"  onClick={expand} title="Continue &rarr;"/>
+              </div>
+            }
             <div className="range-slider">
               <div id="slider">
                 <h4>
-                  Security Model
+                    Security Model
                 </h4>
                 <RangeSlider {...sliderProps4}/>
               </div>
 
               <div id="slider">
                 <h4>
-                  # of services
+                    # of services
                 </h4>
                 <RangeSlider {...sliderProps5}/>
               </div>
 
               <div id="slider">
                 <h4>
-                  Service reliability
+                    Service reliability
                 </h4>
                 <RangeSlider {...sliderProps6}/>
               </div>
 
               <div id="slider">
                 <h4>
-                  Size of your organization
+                    Size of your organization
                 </h4>
                 <RangeSlider {...sliderProps7}/>
               </div>
 
               <div id="slider">
                 <h4>
-                  Diversity of application stack
+                    Diversity of application stack
                 </h4>
                 <RangeSlider {...sliderProps8}/>
               </div>
             </div>
-          </div>
-          <div id="submit-btn">
-            <Button secondary type="button" onClick={submit} title="Submit &rarr;"/>
-          </div>
-        </Container>
-      </div>
-
-      <div id="bot">
-        <div id="row">
-
-        
-          <div id="green">
-            <div id="text">
-              <p id="cover">Services-first Network</p>
-              <h1>What is A <br></br> Service Mesh?</h1>
-              <p>
-            Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
-              </p>
-              <Button primary id="learn" type="button" title="Learn More"/>
-            </div>  
-          </div>
-          <div  id="book" >
+            <div id="submit-btn">
+              <Button secondary type="button" onClick={submit} title="Submit &rarr;"/>
+            </div>
           </div>
         </div>
+      </Container>
+
+      <div id="bot">
+
+        <div id="green">
+          <div id="text">
+            <p id="cover">Services-first Network</p>
+            <h1>What is A <br></br> Service Mesh?</h1>
+            <p>
+            Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
+            </p>
+            <Button primary id="learn" type="button" title="Learn More"/>
+          </div>  
+        </div>
+
+        <div  id="book" >
+          <div id="spacer">
+              
+          </div>
+        </div>
+
       </div>
     </DeployServiceMeshWrapper>
   );
