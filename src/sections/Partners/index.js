@@ -19,23 +19,26 @@ import PartnerWrapper from "./partner.style";
 const Partner = () => {
   return (
     <PartnerWrapper>
-      <div className="partnerHeader">
-        <h1>Layer5 Partner Program</h1>
-        <p>
-                    Layer5 is dedicated to partnering with leading educational institutions, 
-                    technology vendors, solution providers and industry experts to drive the 
-                    adoption of cloud native technologies focused on the evolution of how 
-                    developers write modern applications, how operators run infrastructure 
-                    and how product owners manage service offerings.<br/>
-                    Layer5, the service mesh community, established the Layer5 Partner Program 
-                    to develop an ecosystem to advance higher learning of cloud native 
-                    networking and to enable service providers to accelerate customers’ digital 
-                    transformations, helping them move into the new era of DevOps and cloud 
-                    native applications.
-        </p>
-      </div>
+      <PageHeader title="Layer5 Partner Program"
+        path="Partners"
+      />
       <Container>
-        <h1 className="heading">Our Academic Partners</h1>
+        <Row>
+          <Col xs={12} sm={12} lg={8}>
+            <br />
+            <div className="container">
+              <p>Layer5 is dedicated to partnering with leading educational institutions, technology vendors, solution providers and industry experts to drive the adoption of cloud native technologies focused on the evolution of how developers write modern applications, how operators run infrastructure and how product owners manage service offerings.</p>
+              <p>Layer5, the service mesh community, established the Layer5 Partner Program to develop an ecosystem to advance higher learning of cloud native networking and to enable service providers to accelerate customers’ digital transformations, helping them move into the new era of DevOps and cloud native applications.</p>
+            </div>
+          </Col>
+          <Col xs={0} sm={4} lg={4} className="btn-section" >
+            <div className="container partner-button">
+              <Button primary title="BECOME A PARTNER" url="mailto:partners@layer5.io?subject=Partner Program" external="true" />
+            </div>
+          </Col>
+        </Row>
+
+        <h1 className="heading">Academic Partners</h1>
         <Row>
           <Col xs={12} sm={2} lg={2}>
             <div className="img1" style={{ paddingTop: "1.625em" }}>
