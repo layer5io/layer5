@@ -167,6 +167,9 @@ const DeployServiceMeshWrapper = styled.div`
     }
 
     #form{
+        h3{
+            font-weight: 700;
+        }
         #submit-btn{
             text-align: center;
             padding:  20px 0px 100px 0px;

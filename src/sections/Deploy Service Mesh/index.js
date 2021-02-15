@@ -60,6 +60,7 @@ const RangeSlider = memo(
 
 const ServiceMesh = () => {
   const submit = () => {
+    setSubmit(true);
     axios.post("https://layer5-291812-default-rtdb.firebaseio.com/form.json", {
       parentVal1,
       parentVal2,
@@ -87,6 +88,7 @@ const ServiceMesh = () => {
   const [parentVal8, setParentVal8] = useState(50);
   const [email, setEmail] = useState("");
   const [flag, setFlag] = useState(false);
+  const [submitFlag, setSubmit] = useState(false);
 
   const expand = () => {
     setFlag(true);
@@ -346,12 +348,21 @@ const ServiceMesh = () => {
               <div id="slider">
                 <h4>
                     Diversity of application stack
-                </h4>
+                </h4>  
                 <RangeSlider {...sliderProps8}/>
               </div>
             </div>
             <div id="submit-btn">
-              <Button secondary type="button" onClick={submit} title="Submit &rarr;"/>
+              {
+                !submitFlag
+                &&
+                <Button secondary type="button" onClick={submit} title="Submit &rarr;"/>
+              }
+              {
+                submitFlag
+                &&
+                <h3>Your response has been recorded!</h3>
+              }
             </div>
           </div>
         </div>
