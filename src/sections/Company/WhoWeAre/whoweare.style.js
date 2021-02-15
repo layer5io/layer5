@@ -2,54 +2,52 @@ import styled from "styled-components";
 import collabMap from "./images/layer5-collaboration-map.svg";
 
 const AboutSectionWrapper = styled.section`
-
     background: linear-gradient(255.21deg, #477E96 20.89%, #01B29F 36.99%, #00B39F 59.78%, #3C494F 90.08%);
     mix-blend-mode: darken; 
     color: white;
     text-align: center;
-    
- 
-    h1, h2, h3, h4 {
-      color: white;
-      line-height: 4rem;
-      
+    padding:4rem;
+    .section-title-2
+    {
+      h1, h2, h3, h4 {
+          color: white;
+        }
+        h4{
+          padding:2rem;
+        }
     }
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 30rem;
-    }
-    h2 {
-      display: block;
-      font-weight: 400;     
-      margin-top: 4rem;
-      margin-bottom: 1rem;
-      line-height: 2.5rem;
+    h2{
+        display: block;
+        font-weight: 400;     
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+        line-height: 2.5rem;
 
-    }
+      }
     h3 {
         margin: 1.7vw;
+        pa
       }
-
-  .section-bottom {
-    margin-bottom: 5rem;
-  }
-
-  .row {
-		margin: 2rem 5rem;
-		display: flex;
-    padding-bottom: 5rem;
-		
-	}
+      
+    .row {
+      margin: 2rem 5rem;
+      display: flex;      
+    }
 
 	.col {
 		display: flex;
 		flex-flow: column wrap;
     justify-content: center;
-    margin: 1rem;
     min-height: 6rem;
     
 	}
-
+  .second-row{
+      margin:2rem 5rem;
+    }
+    .third-row{
+      justify-content:center;
+      margin:2rem 5rem;
+    }
 	.item {
     height: 100%;
     min-width: 150px;
@@ -57,7 +55,6 @@ const AboutSectionWrapper = styled.section`
 		display: flex;
 		border-radius: 1.5rem;
 		justify-content: left;
-		margin: auto;
 		padding: 1rem;
     overflow-block: visible;
 		h4 {
@@ -66,31 +63,79 @@ const AboutSectionWrapper = styled.section`
 			font-weight: 500;
 			text-align: left;
       font-size: 1.25rem;
-      margin: auto;
+      margin: auto 0rem;
+      color:white;
 		}
     img {
       height: 1.5rem;
-      margin: auto;
+      margin: auto 0rem;
     }
 		@media screen and (max-width: 1200px) {
 			height: 6.5rem;
         h4 {font-size: 1.1rem;
         padding-top: 0px;
         padding-bottom: 0px;
-		}
-    @media screen and (max-width: 1000px) {
+		  }
+    }
+    @media screen and (max-width: 1020px) {
 			height: 6.5rem;
       
-      h4 {font-size: .8rem;}
+      h4 {font-size: 1rem;}
     }
     @media screen and (max-width: 650px) {
 			height: 6.5rem;
-      h4 {font-size: .7rem;}
+      
     }
 		@media screen and (max-width: 480px) {
-			height: 5rem;
+			height: 5.5rem;
+		}
+    @media screen and (max-width: 330px) {
+			height: 6.5rem;
 		}
 	}
+  @media screen and (max-width: 1600px) {
+    padding:4rem 2rem;
+    .row{
+      margin:2rem 0rem;
+    }
+    .second-row{
+      margin:2rem 0rem;
+    }
+    .third-row{
+      margin:2rem 0rem;
+    }
+  }
+  @media screen and (max-width:991px)
+  {
+    .row{
+      margin:0rem;
+    }
+    .second-row{
+      margin:0rem;
+    }
+    .third-row{
+      margin:0rem;
+    }
+    .col{
+      margin:1rem 0rem;
+    }
+  }
+  @media screen and (max-width:480px)
+  {
+    padding:4rem 1rem;
+    .row{
+      margin:0rem;
+    }
+    .second-row{
+      margin:0rem;
+    }
+    .third-row{
+      margin:0rem;
+    }
+    .col{
+      margin:0.5rem 0rem;
+    }
+  }
 
 `;
 
