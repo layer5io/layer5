@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "gatsby";
 import layer5_img from "./layer5-white.png";
 
 export const Columns = [
@@ -13,7 +14,7 @@ export const Columns = [
     accessor: "service_mesh"
   },
   {
-    Header:() => <a href="https://layer5.io"><img src={layer5_img} alt="layer5"/></a>,
+    Header:() => <Link to="/"><img src={layer5_img} alt="layer5"/></Link>,
     columns: [
       {
         Header: "Category",

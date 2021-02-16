@@ -140,7 +140,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
       singleWorkshop: allMdx(
-        filter: {fields: {collection: {eq: "workshops"}}}
+        filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
       ){
         nodes{
           fields{
@@ -150,7 +150,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
       labs: allMdx(
-        filter: {fields: {collection: {eq: "labs"}}}
+        filter: {fields: {collection: {eq: "service-mesh-labs"}}}
       ){
         nodes{
           fields{
@@ -183,7 +183,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
 
   const books = allNodes.filter(
-    node => node.fields.collection === "books"
+    node => node.fields.collection === "service-mesh-books"
   );
 
   const events = allNodes.filter(
@@ -366,6 +366,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       switch (collection) {
         case "blog":
           slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "news":
+          slug = `company/${collection}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "service-mesh-books":
+        case "service-mesh-workshops":
+        case "service-mesh-labs":
+          slug = `learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
         case "members":
           if (node.frontmatter.published)

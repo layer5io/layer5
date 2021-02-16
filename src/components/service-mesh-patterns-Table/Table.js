@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { useTable, useSortBy, useFilters } from "react-table";
-import {Data} from "../../collections/books/service-mesh-patterns/tableData";
-import {Columns} from "../../collections/books/service-mesh-patterns/bookColumns";
+import {Data} from "../../collections/service-mesh-books/service-mesh-patterns/tableData";
+import {Columns} from "../../collections/service-mesh-books/service-mesh-patterns/bookColumns";
 import { TableWrapper } from "./table.style";
 import alphaicon from "./sort_by_alpha.svg";
 import upicon from "./expand_more.svg";
@@ -47,7 +47,7 @@ const Table = () => {
                       </span>
                       : <>
                       </>}
-                    {(column.Header == "Category") ? 
+                    {(column.Header == "Category") ?
                       <div>{column.canFilter ? column.render("Filter") : null}</div>
                       : <> </>
                     }

@@ -166,7 +166,7 @@ const WorkshopsSection = () => {
             query workshopsList {
                 allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "workshops" } } }
+                    filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
                 ) {
                     nodes {
                         frontmatter {
