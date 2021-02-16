@@ -15,7 +15,7 @@ const WhatServiceMesh = ({gradient}) => {
       <br/>
       <span className="description"> A services-first network</span>
       <br/><br/>
-      <Link to="/books/the-enterprise-path-to-service-mesh-architectures-2nd-edition">
+      <Link to="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition">
         <img
           src={bookImage}
           alt="The Enterprise path to service mesh Architectures 2nd Edition"

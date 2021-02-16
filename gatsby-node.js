@@ -368,12 +368,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
           break;
         case "news":
-          slug = `company/${collection}/${slugify(node.frontmatter.title)}`;
+          slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
           break;
         case "service-mesh-books":
         case "service-mesh-workshops":
         case "service-mesh-labs":
-          slug = `learn/${collection}/${slugify(node.frontmatter.title)}`;
+          slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
           break;
         case "members":
           if (node.frontmatter.published)
