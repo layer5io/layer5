@@ -45,7 +45,7 @@ const ServiceMeshLabs = () => {
               {data.map(({ id, title }) => (
                 <Tab className="course-tab" key={id}>
                   <div className="title">
-                    {title}
+                    <h5 className="menu_title">{title}</h5>
                   </div>
                 </Tab>
               ))}

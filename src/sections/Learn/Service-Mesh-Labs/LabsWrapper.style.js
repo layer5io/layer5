@@ -34,8 +34,8 @@ export const LabsWrapper = styled.div`
 	.course-tab-list {
 		padding: 0rem;
 		text-align: center;
-		width: 5.1rem;
-		/* border: 3px purple solid; */
+		min-width: 5.05rem;
+		max-width: 5.05rem;
 	}
 	.course-tab {
 		/* border: 3px blue solid; */
@@ -62,10 +62,14 @@ export const LabsWrapper = styled.div`
 	.title {
 		/* padding: 0rem 1rem 1rem 0.5rem; */
 		color: #fff;
-		font-weight: 650;
+		font-weight: 600;
+		.menu_title {
+			color: #fff;
+			font-weight: 600;
+		}
 	}
 	.content.react-tabs__tab-panel--selected {
-		background-color: black;		
+		background-color: black;
 		/* border: 3px solid pink; */
 	}
 	.react-tabs__tab--selected {
