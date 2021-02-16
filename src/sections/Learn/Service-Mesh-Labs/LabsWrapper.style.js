@@ -34,6 +34,7 @@ export const LabsWrapper = styled.div`
 	.course-tab-list {
 		padding: 0rem;
 		text-align: center;
+		width: 5.1rem;
 		/* border: 3px purple solid; */
 	}
 	.course-tab {
