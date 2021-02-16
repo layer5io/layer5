@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 const FeaturesColSectionWrapper = styled.section`
-    padding: 5rem 0;
+    padding: 0rem 0rem 5rem 0rem;
     overflow: hidden;
     position: relative;
     .title{
-        width: 100%
+        width: 100%;
         margin: auto;
         margin-bottom: 2rem;
         text-align: center;
-        .light{
+        .light {
             font-weight: 500;
         }
     }

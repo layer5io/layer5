@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Container, Row, Col } from "../../reusecore/Layout";
-import c_icon from "./c_icon.svg";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import c_icon from "./checkmark-box_green.svg";
 
 import data from "./data";
 
 import FeaturesColSectionWrapper from "./featuresColSection.style";
-import Counter from "../../reusecore/Counter";
+import Counter from "../../../reusecore/Counter";
 
 
 const Features = () => {
@@ -43,7 +43,7 @@ const Features = () => {
                       duration={6}
                       separator=","
                       end={feature.count.value}
-                      suffix={feature.count.description==="performance tests run" ? "+" : ""} />
+                      suffix={feature.count.description!="performance tests run" ? "" : "+"} />
                   </h1>
                   <p className="count-desc">{feature.count.description}</p>
                 </div>

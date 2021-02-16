@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import collabMap from "./images/layer5-collaboration-map.svg";
+
 
 const AboutSectionWrapper = styled.section`
   
@@ -36,7 +36,7 @@ const AboutSectionWrapper = styled.section`
     height: 1.75rem;
   }
   p.address {
-      font-size: .95rem;
+      font-size: 1.05rem;
       line-height: 1.25rem;
     }
   .about-thumb {
@@ -55,7 +55,7 @@ const AboutSectionWrapper = styled.section`
     margin-bottom: 28px;
   }
   .aboutus-title {
-    margin-top: 10vw;
+    
     h2 {
       display: block;
       font-weight: 400;     
@@ -64,20 +64,57 @@ const AboutSectionWrapper = styled.section`
     }
   }
   .section-title {
-    h2 {
+    h1 {
       /* line-height: 1rem; */
       /* top: -5rem;  */
       margin-top: 4rem;
       margin-bottom: 0rem;
+      font-family:"Qanelas Soft";
+      color:black;
     }
-    h3 {
+    h4{
         margin-bottom: 1.7vw;
+        font-family:"Open Sans";
+        color:rgba(0, 0, 0, 0.7);
       }
   }
   .section-bottom {
     margin-bottom: 5rem;
   }
-
+  .footer-section{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    h4{
+      font-weight:600;
+    }
+  }
+  .bottom-sect-head{
+    text-align:center;
+    padding: 2rem;
+    margin: 1rem;
+  }
+  .row-img-cont-1,.row-img-cont-2{
+    padding:2rem 0rem;
+    margin:2rem 0rem;
+  }
+  .location-row{
+    align-items:center;
+    justify-content:center;
+    .loc{
+      margin:0rem 1rem;
+      font
+    }
+  }
+  .section-title{
+    #contact{
+      color:white;
+      :hover{
+        color:black;
+      }
+    }
+  }
+  
   @media only screen and (max-width: 1400px) {
     .about-thumb {
       transform: translateX(0px);
@@ -94,12 +131,12 @@ const AboutSectionWrapper = styled.section`
   }
   @media screen and (max-width: 1200px) {
     .section-title {
-      h2 {
+      h1 {
         margin-bottom: 1rem;
       }
-      h1{
+      h3{
         
-        margin-bottom: -4rem;
+        margin-bottom: -2rem;
       }
 
       img {
@@ -111,10 +148,6 @@ const AboutSectionWrapper = styled.section`
     .section-title {
       h2 {
         margin-bottom: 0rem;
-      }
-      h1{
-        
-        margin-bottom: -4rem;
       }
 
       img {
@@ -132,10 +165,6 @@ const AboutSectionWrapper = styled.section`
       h2 {
         margin-top: 2rem;
       }
-      h1{
-        margin-bottom: -9rem;
-      }
-
       img {
         margin-bottom: -6rem;
       }
@@ -151,6 +180,7 @@ const AboutSectionWrapper = styled.section`
         margin-bottom: -8rem;
       }
     }
+
   }
   @media only screen and (max-width: 760px) {
     
@@ -159,10 +189,29 @@ const AboutSectionWrapper = styled.section`
       margin-bottom: 70px;
     }
   }
-  @media only screen and (max-width: 568px) {
+  
+  @media only screen and (max-width: 575px) {
     .section-title,
     .about-content-wrap {
       text-align: center;
+    }
+    .row-img-cont-1{
+      flex-direction:column-reverse;
+      margin:1rem 0rem;
+      padding:0rem;
+      .col{
+        margin:0.5rem 0rem;
+      }
+    }
+    .loc{
+      width:55%;
+    }
+    .row-img-cont-2{
+      margin:1rem 0rem;
+      padding:0rem;
+      .col{
+        margin:0.5rem 0rem;
+      }
     }
     .section-title {
 
@@ -199,6 +248,12 @@ const AboutSectionWrapper = styled.section`
   .about-button {
     height: 40px;
     margin-top: 20px;
+  }
+  }
+  @media only screen and (max-width: 370px) {
+    .loc{
+        width:100%;
+      }
   }
 `;
 export default AboutSectionWrapper;
