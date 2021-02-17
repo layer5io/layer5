@@ -81,8 +81,8 @@ const WorkshopsPage = () => {
 
   return (
     <WorkshopPageWrapper>
-      <PageHeader title="Workshops"/>
-      <h2 className="sub-heading">Over 5,000 trained. Join them.</h2>
+      <PageHeader title="Service Mesh Workshops"/>
+      <h2 className="sub-heading">Over 5,000 engineers trained.</h2>
       <div className="workshop-page-wrapper">
         <Container>
           <div className="workshop-grid-wrapper">

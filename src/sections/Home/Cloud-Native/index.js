@@ -17,7 +17,7 @@ const CloudNativeLeaders = () => {
               From the beginning Layer5 actively engaged in leadership roles in CNCF initiatives and projects.
           </p>
           <img src={cncf} alt="Cloud Native-logo" />
-          <p>Commissioned by the CNCF for research and analysis.</p>
+          <p>Commissioned by the CNCF.</p>
         </div>
         
       </div>

@@ -235,6 +235,7 @@ h2.sub-heading, h3.sub-heading {
     color: gray;
     text-align: center;
     font-style: italic;
+    margin-bottom: 1.25rem;
 }
 
 p {
