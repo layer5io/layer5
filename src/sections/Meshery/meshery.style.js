@@ -21,6 +21,9 @@ const MesheryWrapper = styled.section`
                 h1{
                     font-weight: 600;
                 }
+                .heading-1 {
+                    font-weight: 500;
+                }
                 .heading-2 {
                     font-weight: 700;
                     color: ${props => props.theme.secondaryColor};

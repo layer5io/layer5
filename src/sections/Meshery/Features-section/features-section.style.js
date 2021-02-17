@@ -90,10 +90,12 @@ const FeaturesSectionWrapper = styled.section`
 			margin: 4rem 0;
 			align-items: center;
 		}
-
+		h2, h4 {
+				color: white;
+			}
 		.smp-section-data {
-			h1, p {
-				text-align: start;
+			h1, h3, p {
+				text-align: start; color: white;
 			}
 		}
 

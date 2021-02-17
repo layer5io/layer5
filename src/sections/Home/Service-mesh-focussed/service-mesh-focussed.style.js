@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 const MeshFocusWrapper = styled.div`
-   .main-cont {
+   .main {
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    align-content:center;
+    margin: 4rem;
    } 
     
     .head-cont-2{
@@ -16,29 +18,27 @@ const MeshFocusWrapper = styled.div`
     .card-cont-1{
         display:flex;
         width:60%;
-        margin:4rem;
+     
         background-color: ${props => props.theme.secondaryLightColor}
     }
     .img-col img{
-        width:350px;
-        height:100%;
+        object-fit: contain;
+        margin: auto;
     }
     .content-col
     {
         width:68%;
         padding:4rem;
-        img{
+
+        img {
             width:5rem;
-            height:4rem;
         }
-        
-        .content
+
+        p.content
         {
-            font-family:"Qanelas Soft";
-            padding:2rem 0rem;
-            font-size:1.25rem;
-            font-weight:300;
-            font-style:oblique;
+            padding: 2rem 0rem;
+            font-weight: normal;
+            font-style: oblique;
         }
         Button {
             background:none;

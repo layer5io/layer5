@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container, Row, Col } from "../../reusecore/Layout";
-import SectionTitle from "../../reusecore/SectionTitle";
+import { Container, Row, Col } from "../../../reusecore/Layout";
+import SectionTitle from "../../../reusecore/SectionTitle";
 
 import Icon1 from "../../assets/images/app/features/01.svg";
 // import Icon2 from "../../assets/images/app/features/02.svg";

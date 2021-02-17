@@ -35,8 +35,8 @@ const MesheryPage = () => {
               {/* <div className="meshery-img"><img src={meshery} alt="meshery" /></div> */}
               <Row className="description">
                 <Col className="desc-text" lg={6} md={12} sm={12}>
-                  <h1 className="heading-1"> The <span className="heading-2"> Service Mesh </span> </h1>
-                  <h1 className="heading-1"> Management Plane</h1>
+                  <h1 className="heading-1"> The Service Mesh</h1>
+                  <h1 className="heading-2"> <span className="heading-2">Management Plane</span></h1>
                   <p className="desc-p">
                     Meshery is the service mesh management plane. <br/>
                     Adopt and operate any service mesh with confidence using Meshery's management features. 
