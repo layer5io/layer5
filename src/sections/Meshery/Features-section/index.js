@@ -90,7 +90,7 @@ const FeaturesSection = () => {
               <Button secondary className="mgmt_button" title="Manage" url="/service-mesh-management/meshery/operating-service-meshes" />
             </Col>
             <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Patterns" url="/books/service-mesh-patterns"/>
+              <Button secondary className="mgmt_button" title="Patterns" url="/learn/service-mesh-books/service-mesh-patterns"/>
             </Col>
           </div>
         </div>

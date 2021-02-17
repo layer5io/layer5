@@ -92,7 +92,7 @@ const BooksSection = () => {
     graphql`
             query booksList {
                 allMdx(
-                    filter: { fields: { collection: { eq: "books" } }, frontmatter: { published: { eq: true } } }
+                    filter: { fields: { collection: { eq: "service-mesh-books" } }, frontmatter: { published: { eq: true } } }
                     sort: { fields: [frontmatter___date], order: ASC }
                 ) 
                 {
@@ -133,7 +133,7 @@ const BooksSection = () => {
                 </div>
                 <Button secondary title={<FaArrowRight />} className="arrow_icon" />
               </Link>
-                            
+
             </div>
           ))}
         </div>

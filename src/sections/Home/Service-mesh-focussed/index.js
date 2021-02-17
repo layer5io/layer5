@@ -29,7 +29,7 @@ const ServiceMeshFocused = () => {
               enterprises use multiple service mesh products, whether separately or together."
               </strong>
             </p>
-            <Button url="/books/the-enterprise-path-to-service-mesh-architectures">
+            <Button url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures">
               Read Story
               <FaArrowRight className="icon-right"/>
             </Button>
