@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ProjectItemWrapper = styled.section`
-	margin: 2rem 0 -7rem 0;
+	margin: 5rem 0rem;
 
 	.project-title {
 		text-align: center;

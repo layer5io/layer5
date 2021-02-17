@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const PartnerItemWrapper = styled.section`
     padding: 2rem 0;
+    margin: 0rem 0 5rem
     overflow: hidden;
     .section-title{
         h4{

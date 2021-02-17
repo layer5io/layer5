@@ -89,14 +89,10 @@ const InternshipPage = ({ hide_heading }) => {
         <p>
                     Our community of contributors is the key ingredient to the success of every one of our projects. Interns engage as part of the community. Whether interning directly with Layer5 or through one of Layer5's partner programs, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small.
         </p>
-        <p>
-                    The Layer5 community includes software engineers, researchers, students, artists, system administrators,
-                    operators and web designers -- all of whom will be happy to help you get started. We believe that all contributors should be afforded a safe and friendly environment for constructive learning. Our projects are improved through diversity and empathic community.
-        </p>
 
         <div className="oppurtunities">
           <div>
-            <h2>Internships</h2>
+            <h2><span>Explore our world-class</span> internship experience</h2>
             <div className="grid">
               <Row className="oppurtunities_row">
                 {opportunities.internships.nodes.map((data) => (
@@ -106,7 +102,7 @@ const InternshipPage = ({ hide_heading }) => {
             </div>
           </div>
           <div>
-            <h2>Full-Time Opportunities</h2>
+            <h2><span>Join other industry leaders in a </span> full-time position</h2>
             <div className="grid">
               <Row className="oppurtunities_row full_time">
                 {opportunities.jobs.nodes.map((data) => (
@@ -118,6 +114,10 @@ const InternshipPage = ({ hide_heading }) => {
           <div>
             <ProgramsGrid sub_section={true}/>
           </div>
+          <p>
+                      The Layer5 community includes software engineers, researchers, students, artists, system administrators,
+                      operators and web designers -- all of whom will be happy to help you get started. We believe that all contributors should be afforded a safe and friendly environment for constructive learning. Our projects are improved through diversity and empathic community.
+          </p>
           <div>
             <h1>Participating Partners</h1>
             <div className="grid">

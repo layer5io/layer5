@@ -32,7 +32,7 @@ const supported_platforms = [
     icon: require("./supported-icons/gke.svg"),
     name: "GKE",
     steps: (
-      <h2>test</h2>
+      <h2>mesheryctl system config gke</h2>
     )
   },
   {
@@ -132,7 +132,7 @@ const MesheryPlatforms = () => {
       <div className="content">
         <Row Hcenter className="step-1">
           <p>1 step install to managing service meshes</p>
-          <h2>Step 1: Choose your platform</h2>
+          <h2><span>Step 1:</span> Choose your platform</h2>
         </Row>
         <Row className="supported-platforms">
           {supported_platforms.map((platform, index) => (
@@ -154,8 +154,10 @@ const MesheryPlatforms = () => {
           </Container>
         )}
         <Row Hcenter className="step-2">
-          <h2>Step 2: Manage your mesh</h2>
-          <img src={MesheryLogo} alt="Meshery" />
+          <Col>
+            <h2><span>Step 2:</span> Manage your mesh</h2>
+            <img src={MesheryLogo} alt="Meshery" className="meshery-logo" />
+          </Col>
         </Row>
       </div>
     </MesheryPlatformsWrapper>

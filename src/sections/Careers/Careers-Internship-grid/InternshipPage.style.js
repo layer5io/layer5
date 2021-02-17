@@ -11,9 +11,12 @@ const InternshipSectionWrapper = styled.div`
         margin: 1rem 0;
     }
   
-    .oppurtunities{
+    .oppurtunities {
         margin: 3rem auto;
         text-align: center;
+        span {
+            font-weight: 400;
+        }
     }
     .oppurtunities > div {
         margin: 3rem 0;
