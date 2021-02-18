@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 import HeroCubes from "./assets/images/mesh_cubes.svg";
-import HeroCubesBlack from "./assets/images/mesh_cubes_black.svg";
+import Layer5Icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
 const BannerSectionWrapper = styled.section`
     padding: 7rem 0;
 
-    background: url(${HeroCubesBlack}) no-repeat;
-    background-size: 50%;
+    background: url(${Layer5Icon}) no-repeat;
+    background-size: 25%;
     background-color: #F3FFFD;
-    background-position: bottom -85px right;
+    background-position: center right 160px;
     p {
         font-size: 21px;
-        font-weight: 300; 
+        font-weight: 300;
         color: ${props => props.theme.primaryColor};
         margin: 0 0 70px 0;
         width: 70%;
@@ -69,7 +69,8 @@ const BannerSectionWrapper = styled.section`
     }
     @media only screen and (max-width: 912px) {
         padding: 3rem 0;
-        background-size: 45%;
+        background-position: center right 50px;
+        background-size: 25%;
 
         p {
             width: 100%;
@@ -99,7 +100,8 @@ const BannerSectionWrapper = styled.section`
      }
      @media only screen and (max-width: 760px) {
         padding: 2rem 0;
-        background-size: 45%;
+        background-position: bottom 100px right 10px;
+        background-size: 25%;
  
         .section-title { 
             h1 { margin: 0rem; }
@@ -112,6 +114,8 @@ const BannerSectionWrapper = styled.section`
      }
      @media only screen and (max-width: 480px) {
         padding: 2rem 0;
+        background-position: bottom 200px right 20px;
+        background-size: 25%;
         
         .section-title{
             h1 {
@@ -132,6 +136,8 @@ const BannerSectionWrapper = styled.section`
 			}
 		 }
      @media only screen and (max-width: 380px) {
+         background-position: bottom 100px right 20px;
+        background-size: 25%;
         .section-title{
             h1 {
                 font-size: 30px;
