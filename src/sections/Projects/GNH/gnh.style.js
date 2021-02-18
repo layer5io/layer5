@@ -3,23 +3,18 @@ import cover from "./Rectangle 495.png";
 
 const Gnhwrapper = styled.section`
     .hero-section{
-        padding: 100px 0px 200px 0px;
+        padding: 6.25rem 0 12.5rem 0;
         .img1{
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             width: 50%;
         }
         .hero-text{
-            margin-left: auto;
-            margin-right: auto;
-            @media only screen and (max-width: 767px) {
-                width: 50%;
-            }
+            margin: 0 auto;
             img{
                 width: 70%;
             }
-            padding: 50px 0px 0px 0px;
+            padding-top: 3.125rem;
             p{
                 color: #4d4d4d;
             }
@@ -37,34 +32,28 @@ const Gnhwrapper = styled.section`
     }
 
     .explain-1{
-        padding: 100px 0px 0px 0px;
+        padding-top: 6.25rem;
         text-align: center;
         p{
             font-size: 24px;
             color: #4d4d4d;
-            padding: 0px 50px;
+            padding: 0px 3.125rem;
         }
-        h2{
-            font-size: 50px;
-            font-weight: 700;
-            padding: 20px 0px;
-            @media only screen and (max-width: 767px) {
-                font-size: 30px;
-            }
+        h1{
+            padding: 1.25rem 0px;
         }
         img{
             display: block;
             margin-left: auto;
             margin-right: auto;
             width: 80%;
-            padding: 30px 0px 30px 0px;
+            padding: 1.875rem 0;
         }
         .cards{
-            margin-top: 50px;
-            margin-bottom: 50px;
+            margin: 3.125rem 0;
             width: 100%;
             min-height: 500px;
-            padding: 100px 20px 100px 20px;
+            padding: 6.25rem 1.25rem;
             background-color: #FFF3C5;
             border-radius: 25px;
 
@@ -75,10 +64,10 @@ const Gnhwrapper = styled.section`
                 0 12.5px 10px rgba(0, 0, 0, 0.06),
                 0 10.3px 17.9px rgba(0, 0, 0, 0.072),
                 0 20.8px 33.4px rgba(0, 0, 0, 0.086),
-                0 50px 80px rgba(0, 0, 0, 0.12)
+                0 3.125rem 80px rgba(0, 0, 0, 0.12)
                 ;
                 margin: 2px;
-                padding: 20px;
+                padding: 1.25rem;
                 background-color: white;
                 border-radius: 25px;
                 p{
@@ -94,12 +83,11 @@ const Gnhwrapper = styled.section`
 
                 .circle{
                     border-radius: 50%;
-                    width: 60px;
-                    height: 60px;
+                    width: 3.75rem;
+                    height: 3.75rem;
                     background-color: #FFF3C5;
-
                     img{
-                        padding: 10px 0px;
+                        padding: 0.625rem 0px;
 
                     }
                 }
@@ -110,11 +98,11 @@ const Gnhwrapper = styled.section`
     .explain-2{
         padding: 25px 0px;
         .text{
-            padding: 20px 20px 0px 20px;
+            padding: 1.25rem 1.25rem 0px 1.25rem;
             h2{
                 font-weight: 700;
                 font-size: 40px;
-                padding: 20px 0px;
+                padding: 1.25rem 0px;
             }
             p{
                 color: #4d4d4d;
@@ -127,19 +115,19 @@ const Gnhwrapper = styled.section`
             margin-right: auto;
         }
         Button{
-            margin: 20px 0px;
+            margin: 1.25rem 0px;
             color: white;
         }
     }
 
     .list{
-        padding: 30px 0px;
+        padding: 1.875rem 0px;
 
         .text{
           h2{
               font-size: 40px;
               font-weight: 700;
-              padding: 20px 0px;
+              padding: 1.25rem 0px;
           }
           p{
             color: #4d4d4d;
@@ -177,6 +165,20 @@ const Gnhwrapper = styled.section`
         }
         img{
             width: 25rem;
+        }
+    }
+    @media only screen and (max-width: 568px) {
+        .hero-section{
+            padding: 3.125rem 0;
+            .hero-text{
+                width: 50%;
+            }
+        }
+        .explain-1{
+            padding-top: 3.125rem;
+            p{
+                padding: 0 1.25rem;
+            }
         }
     }
 `;

@@ -59,7 +59,7 @@ const Projects = () => {
         </div>
 
         <div className="explain-1">
-          <h2>What is Nighthawk?</h2>
+          <h1>What is Nighthawk?</h1>
           <p>Nighthawk is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool.<br/> Nighthawk is Envoy’s load generator and is written in C++. </p>
           <img src={explain1} />
         </div>
@@ -94,7 +94,7 @@ const Projects = () => {
         </div>
 
         <div className="explain-1">
-          <h2>Why GetNighthawk?</h2>
+          <h1>Why GetNighthawk?</h1>
           <p>Nighthawk is growing in popularity, but the core project only builds to one architecture / one Docker image. Recently, Nighthawk is being improved so that it can be horizontally scalable - such that multiple instances will be cognizant of one another and able to coordinate amongst each other. Nighthawk is a subproject of Envoy. Nighthawk is growing in popularity with Google, Red Hat, and AWS are investing into it. Istio is considering switching from Fortio to Nighthawk.</p>
           <div className="cards">
             <Row>
