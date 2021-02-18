@@ -6,7 +6,7 @@ const data = {
       description: "Manage any service mesh",
       link: "#",
       btnText: "Get Started",
-      services:[
+      services: [
         {
           content: "AWS App Mesh, Citrix Service Mesh, Consul, Istio, Kuma, Linkerd, Network Service Mesh, NGINX Service Mesh, Octarine, Open Service Mesh, Traefik Mesh",
           className: "--on"
@@ -24,12 +24,12 @@ const data = {
         value: 10,
         description: "service meshes supported"
       }
-    },{
+    }, {
       name: "Configuration",
-      description: "Operators with best practices",
+      description: "Operate with best practices",
       link: "#",
       btnText: "Get Started",
-      services:[
+      services: [
         {
           content: "Built-in industry patterns and known best practices",
           className: "--on"
@@ -39,7 +39,15 @@ const data = {
           className: "--on"
         },
         {
-          content: "Advanced reporting",
+          content: "WebAssembly for Envoy filters",
+          className: "--on"
+        },
+        {
+          content: "Control service mesh add-ons",
+          className: "--on"
+        },
+        {
+          content: "Visualize your deployment with MeshMap",
           className: "--on"
         }
       ],
@@ -53,7 +61,7 @@ const data = {
       description: "Assess the performance of your service mesh",
       link: "#",
       btnText: "Get Started",
-      services:[
+      services: [
         {
           content: "Distributed performance analysis supporting 3 different types of load generators",
           className: "--on"
@@ -76,8 +84,8 @@ const data = {
         description: "performance tests run"
       }
     }
-      
+
   ]
-    
+
 };
 export default data;

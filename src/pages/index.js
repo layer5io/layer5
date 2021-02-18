@@ -45,9 +45,9 @@ const IndexPage = () => (
       {/* <News /> */}
       {/* <Faq category = "all"/> */}
       {/*<ContactCard />*/}
-      <SoSpecial />
+      {/* <SoSpecial /> */}
       <ServiceMeshFocussed />
-      <EngineerEnabler />
+      {/* <EngineerEnabler /> */}
       <SubscribeSection />
       <Footer />
     </Layout>
