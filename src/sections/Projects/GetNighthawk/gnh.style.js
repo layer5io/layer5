@@ -32,7 +32,7 @@ const Gnhwrapper = styled.section`
     }
 
     .explain-1 {
-        padding-top: 6.25rem;
+        padding-top: 5rem;
         text-align: center;
         p {
             font-size: 24px;
@@ -53,7 +53,7 @@ const Gnhwrapper = styled.section`
             margin: 3.125rem 0;
             width: 100%;
             min-height: 500px;
-            padding: 6.25rem 1.25rem;
+            padding: 5rem 1.25rem;
             background-color: ${props => props.theme.secondaryLightColorTwo};
             border-radius: 25px;
             .card {
