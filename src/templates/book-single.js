@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 
 import Navigation from "../sections/General/Navigation";
 import BookSingle from "../sections/Learn/Book-single";
+import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
 import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
@@ -18,7 +19,7 @@ export const query = graphql`
             body
             frontmatter {
                 title
-                author
+                
                 abstract
             }
         }
@@ -32,6 +33,7 @@ const BookSinglePage = ({data}) => {
         <GlobalStyle />
         <Navigation />
         <BookSingle data={data}/>
+        <LearnServiceMeshCTA />
         <Footer />
       </Layout>
     </ThemeProvider>
