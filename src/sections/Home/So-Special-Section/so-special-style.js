@@ -6,9 +6,6 @@ const SoSpecialWrapper = styled.div`
     justify-content: space-around;
     align-items:center;
     padding:0rem 3rem 2rem 3rem;
-    overflow:hidden;
-    font-family:"Qanelas Soft";
-    font-weight:600;
     .slick-list .slick-track{
         width:5000px;
     }
@@ -57,8 +54,7 @@ const SoSpecialWrapper = styled.div`
     #special-cont_img{
             height:70%;
             width:100%;
-            display:flex;
-            
+            display:flex;  
             justify-content:center;
             align-items:center;
             overflow:hidden;
@@ -80,7 +76,6 @@ const SoSpecialWrapper = styled.div`
         bottom:0;
         height:30%;
         .special-cont_para{
-            font-family:"Qanelas Soft";
             font-weight:bold;
             font-size:1rem;
             margin:0rem;
@@ -98,11 +93,8 @@ const SoSpecialWrapper = styled.div`
         background-color:white;
         color:black;
     }
-
     .so-special-foot{
         text-align:center;
-        font-family:"Open Sans";
-        
         .so-special-foot-btn
         {
             color:white;
@@ -115,30 +107,18 @@ const SoSpecialWrapper = styled.div`
     @media screen and (max-width: 1400px){
         .special_carousel{
             width:75%;
-            
         }
-        
     }
     @media screen and (min-width: 1199px){
         .special-cont_img{
             height:20rem;
             width:100%;
-            overflow:hidden;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            
         }
     }
     @media screen and (max-width: 1199px){
         .special-cont_img{
             height:20rem;
             width:100%;
-            overflow:hidden;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            
         }
     }
     @media screen and (max-width: 1024px){
@@ -146,17 +126,12 @@ const SoSpecialWrapper = styled.div`
             margin-bottom: 3rem;
             width:80%;
         }
-
         .special-cont_img{
             width: 100%;
             max-height: 75%;
-            display:flex;
-            justify-content:center;
-            align-items:center;
         }
         .special-cont_para{
             padding:1rem ;
-            
         }
     }
 
@@ -168,9 +143,6 @@ const SoSpecialWrapper = styled.div`
         .special-cont_img{
             width: 22rem;
             max-height: 17rem;
-            display:flex;
-            justify-content:center;
-            align-items:center;
         }
         .so-special-head{
             padding:1rem;
@@ -191,9 +163,6 @@ const SoSpecialWrapper = styled.div`
         .special-cont_img{
             width: 100%;
             max-height: 20rem;
-            display:flex;
-            justify-content:center;
-            align-items:center;
         }
         .special-cont_content{
             padding:0rem;
@@ -206,8 +175,7 @@ const SoSpecialWrapper = styled.div`
         }
         .so-special-head{
             padding: 0.5rem 0rem;
-        }
-        
+        }   
     }
     @media screen and (max-width: 300px){
         .slick-slide{
@@ -223,8 +191,6 @@ const SoSpecialWrapper = styled.div`
                 padding:0rem;
             }
         }
-        
     }
-
 `;
 export default SoSpecialWrapper;
