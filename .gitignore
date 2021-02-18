@@ -1,12 +1,6 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
 .cache
 serve
-Gemfile.lock
+
 .DS_Store
 .idea
 node_modules
-public/
-src/
