@@ -9,7 +9,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-preload-fonts",
+    // "gatsby-plugin-preload-fonts",
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
