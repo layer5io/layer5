@@ -3,7 +3,7 @@ import cover from "./images/Rectangle 495.png";
 
 const Gnhwrapper = styled.section`
     .hero-section{
-        padding: 6.25rem 0 12.5rem 0;
+        padding: 5rem 0rem;
         .img1{
             display: block;
             margin: 0 auto;
@@ -21,43 +21,42 @@ const Gnhwrapper = styled.section`
         }
     }
 
-    .stats{
+    .stats {
         text-align: center;
-        h3{
+        h3 {
             font-weight: 700;
         }
-        p{
-            color: #4d4d4d;
+        p {
+            color: ${props => props.theme.tertiaryColor};
         }
     }
 
-    .explain-1{
+    .explain-1 {
         padding-top: 6.25rem;
         text-align: center;
-        p{
+        p {
             font-size: 24px;
             color: ${props => props.theme.tertiaryColor};
             padding: 0px 3.125rem;
         }
-        h1{
+        h1 {
             padding: 1.25rem 0px;
         }
-        img{
+        img {
             display: block;
             margin-left: auto;
             margin-right: auto;
             width: 80%;
             padding: 1.875rem 0;
         }
-        .cards{
+        .cards {
             margin: 3.125rem 0;
             width: 100%;
             min-height: 500px;
             padding: 6.25rem 1.25rem;
             background-color: ${props => props.theme.secondaryLightColorTwo};
             border-radius: 25px;
-
-            .card{
+            .card {
                 box-shadow:
                 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
                 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -68,33 +67,30 @@ const Gnhwrapper = styled.section`
                 ;
                 margin: 2px;
                 padding: 1.25rem;
-                background-color: ${props => props.theme.white};
+                background-color: white;
                 border-radius: 25px;
-                p{
+                p {
                     text-align: left;
                     font-size: 18px;
                     padding: 0px 0px;
                     letter-spacing: 0;
                 }
-                h2{
+                h2 {
                     text-align: left;
                     font-size: 24px;
+                    text-transform:uppercase;
+                    clear: both;
                 }
-
-                .circle{
+                .circle {
                     border-radius: 50%;
+                    position:relative;
+                    float:left;
                     width: 3.75rem;
                     height: 3.75rem;
                     background-color: ${props => props.theme.secondaryLightColorTwo};
-                    img {
+                    img { 
                         padding: 0.625rem 0px;
-                        
                     }
-                    img.cli {
-                        // recolor to Keppel green
-                        filter: invert(63%) sepia(84%) saturate(3033%) hue-rotate(127deg) brightness(101%) contrast(101%);
-                            
-                        }
                 }
             }
         }
@@ -110,7 +106,7 @@ const Gnhwrapper = styled.section`
                 padding: 1.25rem 0px;
             }
             p{
-                color: #4d4d4d;
+                color: ${props => props.theme.tertiaryColor};
                 font-size: 18px;
             }
         }
