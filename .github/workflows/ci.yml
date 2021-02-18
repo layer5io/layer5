@@ -61,7 +61,7 @@ jobs:
        with:
          args: deploy --dir=public --prod
 
-     - name: Deploy on GH Pgaes
+     - name: Deploy on GH Pages
        uses: actions/setup-node@v1
        with:
          node-version: 12
