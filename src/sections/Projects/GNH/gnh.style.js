@@ -48,6 +48,9 @@ const Gnhwrapper = styled.section`
             font-size: 50px;
             font-weight: 700;
             padding: 20px 0px;
+            @media only screen and (max-width: 767px) {
+                font-size: 30px;
+            }
         }
         img{
             display: block;
@@ -161,6 +164,19 @@ const Gnhwrapper = styled.section`
                     }
                 }
             }
+        }
+    }
+    .callout{
+        background: rgb(205,28,109);
+        background: linear-gradient(107deg, rgba(205,28,109,1) 0%, rgba(40,43,98,1) 99%, rgba(41,44,99,1) 100%);
+        padding: 5rem;
+        text-align: center;
+        color: ${props => props.theme.white};
+        p{
+            margin: 0.94rem 0;
+        }
+        img{
+            width: 25rem;
         }
     }
 `;

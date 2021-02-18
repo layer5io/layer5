@@ -15,6 +15,7 @@ import icon from "./GETNIGHTHAWK.png";
 import code from "./code.png";
 import cloud from "./cloud.png";
 import cpu from "./cpu.png";
+import cncf from "./cncf-white.png";
 
 import Gnhwrapper from "./gnh.style";
 
@@ -185,6 +186,12 @@ const Projects = () => {
           </Row>
         </div>
       </Container>
+      <div className="callout">
+        <img src={cncf} />
+        <p> Participate in the state of the art. <br/>
+        Join us in the Cloud Native Computing Foundation's Service Mesh Working Group.</p>
+        <Button primary title="Join Us" />
+      </div>
     </Gnhwrapper>
   );
 };
