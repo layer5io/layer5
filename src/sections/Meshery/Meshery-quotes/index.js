@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
-import {Container} from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import QuoteCard from "../../../components/QuoteCard";
 
 const MesheryQuotesWrapper = styled.div`
@@ -40,7 +40,7 @@ const quotes_data = [
 
 const MesheryQuotes = () => {
   const settings = {
-    dots: false ,
+    dots: false,
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 1,
@@ -59,10 +59,13 @@ const MesheryQuotes = () => {
       },
     ]
   };
-  return(
+  return (
     <MesheryQuotesWrapper>
       <Container>
-        <h2>Meshery Users Get Mushy</h2>
+        {/* 
+         Enable after go-live  
+         */}
+        {/* <h2>Meshery Users Get Mushy</h2>
         <Slider {...settings}>
           {quotes_data.map((data,index) => (
             <QuoteCard
@@ -72,7 +75,7 @@ const MesheryQuotes = () => {
               quote={data.quote}
             />
           ))}
-        </Slider>
+        </Slider> */}
       </Container>
     </MesheryQuotesWrapper>
   );

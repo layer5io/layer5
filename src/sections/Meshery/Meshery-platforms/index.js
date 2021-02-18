@@ -11,28 +11,49 @@ const supported_platforms = [
     icon: require("./supported-icons/apple.svg"),
     name: "Apple",
     steps: (
-      <h3>Apple</h3>
+      <>
+        <h3>macOS User</h3>
+        <p>Install on Mac using Homebrew:</p>
+        <Code codeString={dedent`brew tap layer5io/tap
+                    brew install mesheryctl
+                    mesheryctl system start`}
+        />
+      </>
     )
   },
   {
     icon: require("./supported-icons/docker_white.svg"),
     name: "Docker",
     steps: (
-      <h2>Docker</h2>
+      <>
+        <h2>Docker User</h2>
+        <Code codeString={dedent`mesheryctl system start`}
+        />
+      </>
     )
   },
   {
     icon: require("./supported-icons/eks_white.svg"),
     name: "EKS",
     steps: (
-      <h2>EKS</h2>
+      <>
+        <h2>AWS Elastic Kubernetes Service User</h2>
+        <Code codeString={dedent`mesheryctl system config eks
+      mesheryctl system start`}
+        />
+      </>
     )
   },
   {
     icon: require("./supported-icons/gke.svg"),
     name: "GKE",
     steps: (
-      <h2>mesheryctl system config gke</h2>
+      <>
+        <h2>Google Kubernetes Engine User</h2>
+        <Code codeString={dedent`mesheryctl system config gke
+        mesheryctl system start`}
+        />
+      </>
     )
   },
   {
@@ -65,28 +86,48 @@ const supported_platforms = [
     icon: require("./supported-icons/kind.svg"),
     name: "Kind",
     steps: (
-      <h2>test</h2>
+      <>
+        <h2>KinD User</h2>
+        <Code codeString={dedent`export KUBECONFIG=$HOME/.kube/config
+      kubectl create namespace meshery
+      helm install meshery --namespace meshery install/kubernetes/helm/meshery`}
+        />
+      </>
     )
   },
   {
     icon: require("./supported-icons/kubernetes_white.svg"),
     name: "Kubernetes",
     steps: (
-      <h2>test</h2>
+      <>
+        <h2>Kubernetes User</h2>
+        <Code codeString={dedent`mesheryctl system start`}
+        />
+      </>
     )
   },
   {
     icon: require("./supported-icons/linux.svg"),
     name: "Linux",
     steps: (
-      <h2>test</h2>
+      <>
+        <h2>Bash User</h2>
+        <Code codeString={dedent`./mesheryctl system start`}
+        />
+      </>
     )
   },
   {
     icon: require("./supported-icons/minikube.svg"),
     name: "Minikube",
     steps: (
-      <h2>test</h2>
+      <>
+        <h2>Minikube User</h2>
+
+        <Code codeString={dedent`mesheryctl system config minikube`
+        }
+        />
+      </>
     )
   },
   {
@@ -94,7 +135,7 @@ const supported_platforms = [
     name: "AKS",
     steps: (
       <>
-        <h2>Azure Kubernetes Service</h2>
+        <h2>Azure Kubernetes Service User</h2>
         <p>Install mesheryctl and configure Meshery to communicate with AKS.</p>
         <Code codeString={dedent`mesheryctl system config aks`
         }
@@ -107,7 +148,7 @@ const supported_platforms = [
     name: "WSL2",
     steps: (
       <>
-        <h2>Winddows</h2>
+        <h2>Winddows User</h2>
         <p>
           Download and unzip mesheryctl from the <a href="https://github.com/layer5io/meshery/releases/">Meshery releases page</a>. Add mesheryctl to your PATH for ease of use. Then, execute:</p>
         <Code codeString={dedent`./mesheryctl system start`}

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import LifeCycleIcon from "../images/lifecycle-icon.svg";
 import PerformanceIcon from "../images/performance-icon.svg";
 import ConfigurationIcon from "../images/configuration-icon.svg";
-import { Col, Row} from "../../../../reusecore/Layout";
+import { Col, Row } from "../../../../reusecore/Layout";
 import Counter from "../../../../reusecore/Counter";
 
 const DataCardWrapper = styled.div`
@@ -43,21 +43,21 @@ const DataCardWrapper = styled.div`
 `;
 
 const DataCard = () => {
-  return(
+  return (
     <DataCardWrapper>
       <Row Vcenter>
         <Col className="col-1" sm={6} lg={6}>
           <ul>
             <li>
-              <img src={LifeCycleIcon} alt="Lifecycle Icon"/>
+              <img src={LifeCycleIcon} alt="Lifecycle Icon" />
               <h5>Lifecycle</h5>
             </li>
             <li>
-              <img src={ConfigurationIcon} alt="Configuration Icon"/>
+              <img src={ConfigurationIcon} alt="Configuration Icon" />
               <h5>Configuration</h5>
             </li>
             <li>
-              <img src={PerformanceIcon} alt="Performance Icon"/>
+              <img src={PerformanceIcon} alt="Performance Icon" />
               <h5>Performance</h5>
             </li>
           </ul>
@@ -65,15 +65,21 @@ const DataCard = () => {
         <Col className="col-2" sm={6} lg={6}>
           <ul>
             <li>
-              <h3>16k+</h3>
-              <p>Global Customers</p>
+              <h3>
+                <Counter
+                  duration={3}
+                  separator=","
+                  end={800}
+                  suffix="+" />
+              </h3>
+              <p>Users</p>
             </li>
             <li>
               <h3>
                 <Counter
                   duration={3}
                   separator=","
-                  end={1300}
+                  end={2000}
                   suffix="+" />
               </h3>
               <p>Performance Tests run</p>
