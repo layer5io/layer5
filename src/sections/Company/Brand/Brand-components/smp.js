@@ -10,7 +10,6 @@ import SmpWhite from "../../../../assets/images/service-mesh-performance/icon/sm
 import SmPLightTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-light-text-side.png";
 import SmPDarkTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.png";
 import SmPWhiteTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-white-text-side.png";
-import SMPBrandKit from "url-loader!../../../../assets/brand/smp-brand-kit.zip";
 
 const SMPWrap = styled.section`
     .smp-logo {
@@ -29,7 +28,7 @@ const SMPBrand = () => {
             </h1>
           </Col>
           <Col xs={12} sm={6} className="download-button">
-            <a href={SMPBrandKit} download="SMPBrandKit">
+            <a href="/brand/smp-brand-kit.zip">
               <Button primary title="Download Logo Assets" external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>

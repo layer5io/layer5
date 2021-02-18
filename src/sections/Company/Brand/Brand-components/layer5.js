@@ -10,7 +10,6 @@ import Layer5WhiteBg from "../../../../assets/images/layer5/layer5-only/png/laye
 import Bookmarks from "../../../../assets/images/layer5/bookmarks.png";
 import BookmarksPDF from "../../../../assets/brand/bookmarks.pdf";
 import Layer5Icon from "../../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
-import Layer5BrandKit from "url-loader!../../../../assets/brand/layer5-brand-kit.zip";
 
 const Layer5Wrapper = styled.section`
     @media (max-width:575px){
@@ -31,7 +30,7 @@ const Layer5Brand = () => {
             </h1>
           </Col>
           <Col xs={12} sm={6} className="download-button">
-            <a href={Layer5BrandKit} download="Layer5BrandKit">
+            <a href="/brand/layer5-brand-kit.zip">
               <Button primary title="Download Logo Assets" external={false}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
