@@ -6,3 +6,4 @@ site:
 
 build:
 	gatsby build && gatsby serve
+ 
