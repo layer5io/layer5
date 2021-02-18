@@ -43,7 +43,7 @@ const Features = () => {
                       duration={6}
                       separator=","
                       end={feature.count.value}
-                      suffix={feature.count.description!="performance tests run" ? "" : "+"} />
+                      suffix={feature.count.description == "service meshes supported" ? "" : "+"} />
                   </h1>
                   <p className="count-desc">{feature.count.description}</p>
                 </div>
