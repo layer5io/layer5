@@ -5,14 +5,12 @@ const LabSinglePageWrapper = styled.div`
 	display: block;
 
 	.backBtn {
-	    z-index: 2;
 		display: flex;
-		justify-content: center;
-		position: absolute;
-		top: 7rem;
-		left: 3.75rem;
+		justify-content: flex-start;
+		margin-top: 5rem;
+		margin-left: 5rem;
 		font-weight: 600;
-		a{
+		a {
 			display: flex;
 		    color: ${props => props.theme.primaryColor};
 		    &:hover{
@@ -28,7 +26,23 @@ const LabSinglePageWrapper = styled.div`
 		}
 		
 	}
-
+    .join-community {
+        margin: 5rem 0rem;
+    }
+    .join-community_text-and_button {
+		margin: 0 4rem; 
+        text-align: center;
+        h1{
+            margin-top: 1rem;
+        }
+        p{
+            margin: auto;
+            margin-top: 1rem;
+        }
+        button{
+            margin-top: 1.5rem;
+        }
+    }
 	@media screen and (max-width: 992px) {
 		.backBtn {
 			display: none;

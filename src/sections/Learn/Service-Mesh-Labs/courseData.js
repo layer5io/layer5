@@ -4,8 +4,8 @@ import consulLogo from "../../../assets/images/service-mesh-icons/consul-white.s
 import kumaLogo from "../../../assets/images/service-mesh-icons/kuma-white.svg";
 import nsmLogo from "../../../assets/images/service-mesh-icons/nsm-white.svg";
 // import smpLogo from "../../assets/images/smp/horizontal/smp-light-text-side.svg";
-import smpLogo from "./assets/smp-dark-text.svg";
-import smiLogo from "./assets/servicemeshinterface-icon-color.svg";
+import smpLogo from "./assets/smp-light-text.svg";
+import smiLogo from "./assets/servicemeshinterface-stackedsmi-white.svg";
 
 export const data = [
   {
