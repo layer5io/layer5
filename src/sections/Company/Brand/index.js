@@ -10,7 +10,6 @@ import SMPBrand from "./Brand-components/smp";
 import CommunityBrand from "./Brand-components/community";
 import Button from "../../../reusecore/Button";
 import { FiDownloadCloud } from "react-icons/fi";
-import BrandKit from "url-loader!../../../assets/brand/brand-kit.zip";
 
 const getDimensions = ele => {
   let dummyheight=0, dummyoffsetTop=0, dummyoffsetBottom=0;
@@ -108,7 +107,7 @@ const Brand = () => {
           marks in a way not covered by these guidelines, please contact us
           and include a visual mockup of intended use.
         </p>
-        <a href={BrandKit} download="BrandKit">
+        <a href="/brand/brand-kit.zip">
           <Button primary title="Download Brand Kit">
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>

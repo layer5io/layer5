@@ -6,7 +6,6 @@ import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "react-icons/fi";
 import MeshSyncLight from "../../../../assets/images/meshsync/meshsync-light.png";
 import MeshSync from "../../../../assets/images/meshsync/meshsync.png";
-import MeshSyncBrandKit from "url-loader!../../../../assets/brand/meshsync-brand-kit.zip";
 
 const MeshSyncWrapper = styled.section`
     .sub-project {
@@ -25,7 +24,7 @@ const MeshSyncBrand = () => {
             </h2>
           </Col>
           <Col xs={12} sm={6} className="download-button">
-            <a href={MeshSyncBrandKit} download="MeshSyncBrandKit">
+            <a href="/brand/meshsync-brand-kit.zip">
               <Button primary title="Download Logo Assets" external={true}>
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>

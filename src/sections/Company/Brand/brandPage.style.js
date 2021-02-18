@@ -83,11 +83,11 @@ const BrandPageWrapper = styled.section`
 	}
 
 	.post-content {
-		margin: 0rem 0rem 5rem 12rem;
+		margin: 0rem 0rem 3rem 12rem;
 	}
 
 	.brand-section {
-		padding-top: 5rem;
+		padding-top: 7rem;
 	}
 
 	.section + .section {
@@ -96,7 +96,7 @@ const BrandPageWrapper = styled.section`
 
 	@media screen and (max-width: 1800px) and (min-width: 1300px) {
 		.post-content {
-			margin: 3rem 0rem 5rem 8rem;
+			margin: 3rem 0rem 3rem 8rem;
 		}
 
 		.brand-nav-col {
@@ -106,7 +106,7 @@ const BrandPageWrapper = styled.section`
 
 	@media screen and (max-width: 1299px) and (min-width: 1024px) {
 		.post-content {
-			margin: 3rem 0rem 5rem 3rem;
+			margin: 3rem 0rem 3rem 3rem;
 		}
 		.brand-nav-col {
 			padding: 4rem 0.75rem 6rem;
@@ -115,7 +115,7 @@ const BrandPageWrapper = styled.section`
 
 	@media screen and (max-width: 1023px) and (min-width: 768px) {
 		.post-content {
-			margin: 3rem 0rem 5rem 1.5rem;
+			margin: 3rem 0rem 3rem 1.5rem;
 		}
 		.brand-nav-col {
 			padding: 4rem 0.25rem 6rem;
