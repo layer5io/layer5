@@ -7,6 +7,8 @@ const SoSpecialWrapper = styled.div`
     align-items:center;
     padding:0rem 3rem 2rem 3rem;
     overflow:hidden;
+    font-family:"Qanelas Soft";
+    font-weight:600;
     .slick-list .slick-track{
         width:5000px;
     }
@@ -17,10 +19,12 @@ const SoSpecialWrapper = styled.div`
         width:65%;
         display:flex;
         flex-direction:column;
+        margin-bottom: 3rem;
     }
     
     .slick-arrow::before{
         color:black;
+        font-size:22px;
     }
     .slick-slider{
         .slick-inside-div{
@@ -35,8 +39,12 @@ const SoSpecialWrapper = styled.div`
         }    
     }
     .so-special-head{
-        padding:4rem;
+        padding:2rem;
         text-align:center; 
+        h4{
+            color:#b3b3b3;
+            padding:2rem 0rem;
+        }
     }
     #special-cont{
         cursor: pointer;
@@ -44,9 +52,6 @@ const SoSpecialWrapper = styled.div`
         text-align:center;
         width:100%;
         border-radius:1rem;
-        border:1px solid gray;
-    }
-    #special-cont:hover{
         box-shadow:0 2px 10px rgba(0,0,0,0.4);
     }
     #special-cont_img{
@@ -94,11 +99,23 @@ const SoSpecialWrapper = styled.div`
         color:black;
     }
 
-    
+    .so-special-foot{
+        text-align:center;
+        font-family:"Open Sans";
+        
+        .so-special-foot-btn
+        {
+            color:white;
+            margin:2rem;
+            :hover{
+                color:black;
+            }
+        }
+    }
     @media screen and (max-width: 1400px){
         .special_carousel{
-            margin-bottom: 6rem;
             width:75%;
+            
         }
         
     }
@@ -126,7 +143,7 @@ const SoSpecialWrapper = styled.div`
     }
     @media screen and (max-width: 1024px){
         .special_carousel{
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
             width:80%;
         }
 
@@ -145,7 +162,7 @@ const SoSpecialWrapper = styled.div`
 
     @media screen and (max-width: 850px){
         .special_carousel{
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
             width:100%;
         }
         .special-cont_img{
@@ -156,7 +173,7 @@ const SoSpecialWrapper = styled.div`
             align-items:center;
         }
         .so-special-head{
-           padding:1rem;
+            padding:1rem;
             text-align:center;  
         }
          .slick-prev{
@@ -166,8 +183,8 @@ const SoSpecialWrapper = styled.div`
             right:-20px;
         }
         .special-cont_para{
-            padding:1rem ;
-            
+            padding:1rem 0rem;
+            word-wrap:break-word;
         }
     }
     @media screen and (max-width: 671px){
@@ -183,14 +200,31 @@ const SoSpecialWrapper = styled.div`
         }
     }
     @media screen and (max-width: 500px){
-        .special-cont_img{
+        #special-cont_img{
             width: 100%;
-            max-height: 15rem;
-            
+            height: 65%;
         }
-        .special-cont_content{
-            padding:0rem;
+        .so-special-head{
+            padding: 0.5rem 0rem;
         }
+        
     }
+    @media screen and (max-width: 300px){
+        .slick-slide{
+            height:25rem;
+            margin:0rem;
+        }
+        #special-cont_img{
+            height: 60%;
+        }
+        #special-cont_content{
+            .special-cont_para
+            {
+                padding:0rem;
+            }
+        }
+        
+    }
+
 `;
 export default SoSpecialWrapper;

@@ -43,34 +43,34 @@ const SoSpecial = () => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 2.8,
+    slidesToShow: 2.5,
     swipeToSlide:true,
     
     responsive: [
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 2.5,
+          slidesToShow: 2.2,
           
         }
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2.25,
+          slidesToShow: 2,
           
         }
       },
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+          initialSlide: 1
         }
       },
       {
-        breakpoint: 670,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -89,7 +89,8 @@ const SoSpecial = () => {
   return(
     <SoSpecialWrapper>
       <div className="so-special-head">
-        <h1>Why Is Layer5 So special?</h1>
+        <h4>LAYER5 IN THE NEWS</h4>
+        <h1>We're making a mesh of things</h1>
       </div>
       <div className="special_carousel">
         <Slider {...settings}>
@@ -107,6 +108,11 @@ const SoSpecial = () => {
               </Button>
             ))}   
         </Slider>
+      </div>
+      <div className="so-special-foot">
+        <h5>Layer5 provides cloud native management for monoliths and</h5>
+        <h5>microservices alike.</h5>
+        <Button className="so-special-foot-btn" primary url="/projects" title="Our Projects"></Button>
       </div>
     </SoSpecialWrapper>
   );
