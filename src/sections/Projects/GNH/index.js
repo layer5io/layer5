@@ -190,7 +190,7 @@ const Projects = () => {
         <img src={cncf} />
         <p> Participate in the state of the art. <br/>
         Join us in the Cloud Native Computing Foundation's Service Mesh Working Group.</p>
-        <Button primary title="Join Us" />
+        <Button primary title="Join Us" url="/community/calendar#meetings" />
       </div>
     </Gnhwrapper>
   );
