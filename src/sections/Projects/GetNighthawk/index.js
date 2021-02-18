@@ -3,19 +3,19 @@ import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import logo from "./placeholder.png";
-import c_icon from "./c_icon.svg";
+import logo from "./images/placeholder.png";
+import c_icon from "./images/c_icon.svg";
 
-import explain1 from "./Rectangle 479.png";
-import explain2 from "./Rectangle 487.png";
-import explain3 from "./Rectangle 488.png";
-import explain4 from "./Rectangle 494.png";
-import icon from "./GETNIGHTHAWK.png";
+import explain1 from "./images/Rectangle 479.png";
+import explain2 from "./images/Rectangle 487.png";
+import explain3 from "./images/Rectangle 488.png";
+import explain4 from "./images/Rectangle 494.png";
+import icon from "./images/GETNIGHTHAWK.png";
 
-import code from "./code.png";
-import cloud from "./cloud.png";
-import cpu from "./cpu.png";
-import cncf from "./cncf-white.png";
+import cli from "./images/cli_green.svg";
+import cloud from "./images/cloud-network_green.svg";
+import cpu from "./images/cpu_green.svg";
+import cncf from "./images/cncf-white.svg";
 
 import Gnhwrapper from "./gnh.style";
 
@@ -87,7 +87,7 @@ const Projects = () => {
               <div className="text">
                 <h2>Easing Management of<br/> the Nighthawk <br/> Lifecycle</h2>
                 <p>As with a lot of open source projects, there is a lack of consistent tooling. This makes it difficult to have easily repeatable tests in that the building, deploying, and maintaining of Nighthawk instances (potentially a fleet of Nighthawk instances) is a burden without additional tooling. </p>
-                <Button primary id="learn" type="button" title="Learn More"/>
+                <Button primary id="learn" type="button" title="Learn More" url="https://getnighthawk.dev" />
               </div>
             </Col>
           </Row>
@@ -95,13 +95,13 @@ const Projects = () => {
 
         <div className="explain-1">
           <h1>Why GetNighthawk?</h1>
-          <p>Nighthawk is growing in popularity, but the core project only builds to one architecture / one Docker image. Recently, Nighthawk is being improved so that it can be horizontally scalable - such that multiple instances will be cognizant of one another and able to coordinate amongst each other. Nighthawk is a subproject of Envoy. Nighthawk is growing in popularity with Google, Red Hat, and AWS are investing into it. Istio is considering switching from Fortio to Nighthawk.</p>
+          <p>Nighthawk is growing in popularity, but the core project only builds to one architecture / one Docker image. Recently, Nighthawk is being improved so that it can be horizontally scalable - such that multiple instances will be cognizant of one another and able to coordinate amongst each other. Nighthawk is a subproject of Envoy. Nighthawk is growing in popularity with Google, Red Hat, and AWS are investing into it. Istio is considering switching from Fortio `to Nighthawk.</p>
           <div className="cards">
             <Row>
               <Col lg={4} md={4} sm={12}>
                 <div className="card">
                   <div className="circle">
-                    <img src={code} />
+                    <img src={cli} className="cli" />
                   </div>
                   <h2>APPLICATIONS</h2>
                   <p>Sitting atop our payments platform are applications to manage revenue, prevent fraud, and expand internationally.</p>
@@ -190,7 +190,7 @@ const Projects = () => {
         <img src={cncf} />
         <p> Participate in the state of the art. <br/>
         Join us in the Cloud Native Computing Foundation's Service Mesh Working Group.</p>
-        <Button primary title="Join Us" />
+        <Button primary title="Join Us" url="/community/calendar#meetings" />
       </div>
     </Gnhwrapper>
   );

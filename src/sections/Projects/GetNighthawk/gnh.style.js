@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import cover from "./Rectangle 495.png";
+import cover from "./images/Rectangle 495.png";
 
 const Gnhwrapper = styled.section`
     .hero-section{
@@ -16,7 +16,7 @@ const Gnhwrapper = styled.section`
             }
             padding-top: 3.125rem;
             p{
-                color: #4d4d4d;
+                color: ${props => props.theme.tertiaryColor};
             }
         }
     }
@@ -36,7 +36,7 @@ const Gnhwrapper = styled.section`
         text-align: center;
         p{
             font-size: 24px;
-            color: #4d4d4d;
+            color: ${props => props.theme.tertiaryColor};
             padding: 0px 3.125rem;
         }
         h1{
@@ -54,7 +54,7 @@ const Gnhwrapper = styled.section`
             width: 100%;
             min-height: 500px;
             padding: 6.25rem 1.25rem;
-            background-color: #FFF3C5;
+            background-color: ${props => props.theme.secondaryLightColorTwo};
             border-radius: 25px;
 
             .card{
@@ -68,7 +68,7 @@ const Gnhwrapper = styled.section`
                 ;
                 margin: 2px;
                 padding: 1.25rem;
-                background-color: white;
+                background-color: ${props => props.theme.white};
                 border-radius: 25px;
                 p{
                     text-align: left;
@@ -85,11 +85,16 @@ const Gnhwrapper = styled.section`
                     border-radius: 50%;
                     width: 3.75rem;
                     height: 3.75rem;
-                    background-color: #FFF3C5;
-                    img{
+                    background-color: ${props => props.theme.secondaryLightColorTwo};
+                    img {
                         padding: 0.625rem 0px;
-
+                        
                     }
+                    img.cli {
+                        // recolor to Keppel green
+                        filter: invert(63%) sepia(84%) saturate(3033%) hue-rotate(127deg) brightness(101%) contrast(101%);
+                            
+                        }
                 }
             }
         }
@@ -130,7 +135,7 @@ const Gnhwrapper = styled.section`
               padding: 1.25rem 0px;
           }
           p{
-            color: #4d4d4d;
+            color: ${props => props.theme.tertiaryColor};
           }
         }
 
@@ -144,7 +149,7 @@ const Gnhwrapper = styled.section`
                     vertical-align: top;
                 }
                 .service{
-                    color: #4d4d4d;
+                    color: ${props => props.theme.tertiaryColor};
                     font-size: 16px;
                     padding: 0 0 1.25rem 1.875rem;
                     h4{

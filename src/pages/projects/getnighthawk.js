@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
 import Navigation from "../../sections/General/Navigation";
-import GNH from "../../sections/Projects/GNH";
+import GNH from "../../sections/Projects/GetNighthawk";
 import Footer from "../../sections/General/Footer";
 import Subscribe from "../../sections/subscribe/subscribe";
 
