@@ -28,7 +28,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/layer5io/layer5.git
-          npm run gh-pages -- -u "github-actions-bot <support+actions@github.com>"
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
 
 
       # - name: Install dependencies
