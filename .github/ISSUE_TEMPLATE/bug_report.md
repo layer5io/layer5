@@ -36,4 +36,4 @@ Steps to reproduce the behavior:
 **Contributor Resources**
 
 The layer5.io website uses Gatsby, Strapi, and GitHub Pages. Site content is found under the [`layer5-ng` branch](https://github.com/layer5io/layer5/tree/layer5-ng).
-- See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)
+- See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
