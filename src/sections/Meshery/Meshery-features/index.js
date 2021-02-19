@@ -21,8 +21,8 @@ const MehseryFeatures = () => {
             {
               title: "Operational Best Practices",
               description:
-                                "Benefit from the operational expertise of the world’s foremost service mesh operators.",
-              learnMoreLink: "/",
+                                "Benefit from the operational expertise of the world’s foremost service mesh operator and the patterns they use.",
+              learnMoreLink: "/books/service-mesh-patterns",
               content: (
                 <img
                   src={require("./feature-images/meshery-configuration-management.png")}
@@ -34,7 +34,7 @@ const MehseryFeatures = () => {
               title: "WebAssembly Filters for Envoy",
               description:
                                 "Execute a command in the context of a running application",
-              learnMoreLink: "/",
+              learnMoreLink: "/projects/image-hub",
               content: (
                 <img
                   src={require("./feature-images/meshery-wasm.png")}
@@ -43,42 +43,53 @@ const MehseryFeatures = () => {
               ),
             },
             {
-              title: "Integration with Grafana and Prometheus",
+              title: "Integration with ArgoCD",
               description:
-                                "Get publicly accessible preview URLs per-deployment",
+                                "Canary new releases of your applicatioons intelligently. Leverage your existing ArgoCD workflows.",
               learnMoreLink: "/",
               content: (
                 <Terminal
                   lines={[
-                    { code: "$ meshery deploy" },
-                    { code: "" },
-                    { code: "» Deploying...", color: "white" },
+                    { code: "$ meshery pattern apply -f canary-v3.yaml", color: "white" },
+                    { code: "» Deploying...", color: "navy" },
                     {
                       code: "✓ Deployment successfully rolled out!",
+                      color: "green",
+                    },
+                    { code: "\n" },
+                    { code: "» Traffic splitting...", color: "navy" },
+                    {
+                      code: "✓ 5% of user requests to v3.",
+                      color: "green",
+                    },
+                    {
+                      code: "✓ 30% of user requests to v3.",
+                      color: "green",
+                    },
+                    {
+                      code: "✓ 60% of user requests to v3.",
+                      color: "green",
+                    },
+                    {
+                      code: "✓ 90% of user requests to v3.",
+                      color: "green",
+                    },
+                    {
+                      code: "✓ 100% of user requests to v3.",
+                      color: "green",
+                    },
+                    { code: "\n" },
+                    {
+                      code: "Pattern successfully applied. Rollout of 'canary-v3' completed.",
                       color: "navy",
                     },
-                    { code: "\n" },
-                    { code: "» Releasing...", color: "white" },
                     {
-                      code: "✓ Service successfully configured!",
-                      color: "navy",
-                    },
-                    { code: "\n" },
-                    {
-                      code:
-                                                "The deploy was successful! A meshery URL is shown below.",
-                      color: "white",
-                    },
-                    { code: "\n" },
-                    {
-                      code:
-                                                "   Release URL: https://admittedly-poetic-joey.meshery.run",
-                      color: "white",
+                      code: "» Prerelease URL: https://payments-v3.meshery.run",
+                      color: "green",
                     },
                     {
-                      code:
-                                                "Deployment URL: https://admittedly-poetic-joey--v18.meshery.run",
-                      color: "white",
+                      code: "» Release URL: https://payments.meshery.run",
+                      color: "green",
                     },
                   ]}
                 />

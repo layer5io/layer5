@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FaqSectionWrapper = styled.section`
-  padding: 2.5rem 0 3.125rem 0;
+  margin: 2.5rem auto 5rem;
   position: relative;
   overflow: hidden;
   .accordion__item + .accordion__item {
@@ -60,6 +60,18 @@ const FaqSectionWrapper = styled.section`
         background-color: #F0F0F0;
         border-radius: 1.25rem;
       }
+    }
+  }
+  .askus_section {
+    text-align: center;
+    h2 {
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 2rem;
+    }
+    button {
+      margin-bottom: 1rem;
     }
   }
   @media only screen and (max-width: 912px) {

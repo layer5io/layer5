@@ -30,9 +30,11 @@ const Layer5Brand = () => {
             </h1>
           </Col>
           <Col xs={12} sm={6} className="download-button">
-            <Button primary title="Download Logo Assets" url="../../../../assets/brand/layer5-brand-kit.zip" external={false}>
-              <FiDownloadCloud size={21} className="icon-left" />
-            </Button>
+            <a href="/brand/layer5-brand-kit.zip">
+              <Button primary title="Download Logo Assets" external={false}>
+                <FiDownloadCloud size={21} className="icon-left" />
+              </Button>
+            </a>
           </Col>
           <Col>
             <p>

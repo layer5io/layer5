@@ -6,6 +6,10 @@ export const MesheryPlatformsWrapper = styled.div`
    transform: skew(0deg, -5deg);
    width: 100%;
   .content{ 
+    margin-top: -6rem;
+    z-index: -1;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
       transform: skew(0deg, 5deg);
       text-align: center;
       color: ${props => props.theme.white};
@@ -16,6 +20,10 @@ export const MesheryPlatformsWrapper = styled.div`
         margin: 0 auto;
         flex-direction: column;
         padding-top: 6rem;
+        span {
+          font-weight: 400;
+          text-transform: uppercase;
+        }
         @media (max-width: 32rem) {
           padding-top: 4rem;
         }
@@ -55,8 +63,16 @@ export const MesheryPlatformsWrapper = styled.div`
         flex-direction: column;
         padding-top: 2rem;
         padding-bottom: 2rem;
+        span {
+          font-weight: 400;
+          text-transform: uppercase;
+        }
         h2{
           padding-bottom: 2rem;
+        }
+        img {
+          width: 20vw;
+          min-width: 200px;
         }
       }
     }

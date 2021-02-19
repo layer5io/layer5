@@ -1,7 +1,7 @@
 import React from "react";
 import DiagramStyles from "./diagram.style";
 
-export default function HowBoundaryWorksDiagram({ activeExampleIndex }) {
+export default function HowMesheryWorksDiagram({ activeExampleIndex }) {
   return (
     <DiagramStyles>
       <div className='root' style={{padding: "0px"}}>

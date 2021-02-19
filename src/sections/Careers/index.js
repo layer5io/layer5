@@ -17,7 +17,7 @@ const CareersPage = () => {
           <p className="centerTexts">If you’re a smart, curious person who can make contributions in and out of your areas of expertise, why not start now?</p>
           <Row className="videoText">
             <div className="introText">
-              <h1>What is Layer5?</h1>
+              <h2>Who works at Layer5?</h2>
               <p>
                                 The quickly growing Layer5 community represents the largest collection of
                                 service mesh projects and their maintainers in the world. Our projects establish
@@ -40,7 +40,7 @@ const CareersPage = () => {
         </Container>
         <div className="opensource-section">
           <div className="opensource-section-text">
-            <h1>Open Source Projects?</h1>
+            <h1>Open Source is in our DNA</h1>
             <p>
                             Layer5 projects are open source software. Anyone can download, use, work
                             on, and share it with others. It's built on principles like collaboration,

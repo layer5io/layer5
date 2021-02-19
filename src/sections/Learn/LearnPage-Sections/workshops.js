@@ -33,6 +33,11 @@ export const WorkshopsListWrapper = styled.div`
 	.feedback-section {
 		margin: 5rem auto;
 
+		img{
+			width:4rem;
+			height:3rem;
+		}
+		
 		.slick-slider {
 			max-width: 1500px;
 			margin: auto;
@@ -92,10 +97,6 @@ export const WorkshopsListWrapper = styled.div`
 		}
 
 		.feedback-section {
-			img{
-				width:4rem;
-				height:3rem;
-			}
 			.slick-slider {
 				max-width: 1100px;
 			}
@@ -165,7 +166,7 @@ const WorkshopsSection = () => {
             query workshopsList {
                 allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "workshops" } } }
+                    filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
                 ) {
                     nodes {
                         frontmatter {
@@ -214,7 +215,7 @@ const WorkshopsSection = () => {
           <h1>Workshops</h1>
           <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
           <div className="see-more-button">
-            <Button primary title="Checkout all workshops" url="/workshops"/>
+            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops"/>
           </div>
         </Col>
         <Col xs={12} md={9} className="workshops-col">
@@ -231,7 +232,7 @@ const WorkshopsSection = () => {
           </Row>
         </Col>
       </div>
-      <div className="feedback-section">	
+      <div className="feedback-section">
         <Slider {...settings}>
           {
             feedbackData.map((data, index) => {

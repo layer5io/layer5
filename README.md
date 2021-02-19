@@ -26,10 +26,11 @@ We create and steward initiatives that press on the service mesh-centric envelop
 <a href="https://meshery.io"><img src="assets/images/meshery/meshery-logo.svg"
 style="margin:10px;" width="125px" 
 alt="Meshery - Service Mesh Management Plane" align="left" /></a>
-<a href="https://meshery.io">Meshery</a> is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
+<a href="https://meshery.io">Meshery</a> is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. 
+Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
 <br /><br /><br />
 </p>
-
+<br />
 <p style="clear:both;">
 <h2><a href="https://layer5.io/landscape">Service Mesh Landscape</a></h2>
 <a href="https://layer5.io/landscape"><img src="assets/images/buttons/landscape.png"  
@@ -38,16 +39,16 @@ alt="Service Mesh Landscape Ecosystem" align="left"/></a>
 The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
 <br /><br /><br />
 </p>
-
+<br />
 <p style="clear:both;">
-<h2><a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a></h2>
-<a href="https://layer5.io/performance"><img src="assets/images/buttons/smps.png"
+<h2><a href="https://layer5.io/performance">Service Mesh Performance</a></h2>
+<a href="https://layer5.io/performance"><img src="assets/images/buttons/new-smp-logo_square.png"
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Performance Specification Index" align="left" /></a>
-The <a href="https://layer5.io/performance">Service Mesh Benchmark Specification</a> is a common format for describing and capturing performance benchmark test environmental configuration, mesh configuration and load test configuration.
+The <a href="https://layer5.io/performance">Service Mesh Performance</a> (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and its configuration, service / application details, and bundling of statistical analysis of results.
 <br /><br /><br />
 </p>
-
+<br />
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/image-hub">Image Hub</a></h2>
 <a href="https://layer5.io/projects/image-hub"><img src="assets/images/image-hub/layer5-image-hub.png"
@@ -56,7 +57,34 @@ alt="Image Hub" align="left" /></a>
 <a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application which runs on <a href="https://meshery.layer5.io/docs/service-meshes/adapters/consul">Consul</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
 <br /><br /><br />
 </p>
-
+<br />
+<p style="clear:both;">
+<h2><a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a></h2>
+<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg" style="margin:10px;" width="125px" align="left" /></a>
+<a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> is the multi-service mesh operator and implementation of MeshSync.
+<br /><br /><br /><br />
+</p>
+<br />
+<p style="clear:both;">
+<h2><a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a></h2>
+<a href="https://github.com/layer5io/learn-layer5"><img src="assets/images/layer5/5-light-bg.png"
+style="margin:10px;" width="125px"
+alt="Layer5" align="left" /></a>
+<a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> is a sample application for learning how service meshes work which also provides <a href="https://layer5.io/smi">SMI Conformance testing</a>.
+<br /><br /><br />
+</p>
+<br />
+<p style="clear:both;">
+<h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
+<a href="https://layer5.io/smi"><img src="assets/images/smi-conformance/checklist.svg"
+style="margin:10px;" width="125px"
+alt="Layer5" align="left" /></a>
+<a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification.
+<br>
+It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
+<br /><br /><br />
+</p>
+<br />
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributing</a></h1>
 <p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
@@ -66,7 +94,7 @@ Jump into our <a href="http://slack.layer5.io"><img src="assets/images/slack.png
 </p>
 <p>
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src="assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
-✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calender.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendaropen</a>.<br />
+✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calender.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
 ✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.<br />
 ✔️ <em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">community drive</a>.<br />
 <br />
@@ -81,3 +109,4 @@ align="bottom" />@layer5</a> and <a href="https://twitter.com/mesheryio">@mesher
 #### License
 
 This repository and site are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
+

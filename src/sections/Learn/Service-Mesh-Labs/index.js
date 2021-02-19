@@ -37,7 +37,8 @@ const ServiceMeshLabs = () => {
 
   return (
     <LabsWrapper>
-      <PageHeader title="Learn how to service mesh with interactive labs" />
+      <PageHeader title="Learn how to service mesh" subtitle="with interactive labs" />
+
       <div className="Labs-section-wrapper">
         <Container>
           <Tabs className="course-tabs">
@@ -45,7 +46,7 @@ const ServiceMeshLabs = () => {
               {data.map(({ id, title }) => (
                 <Tab className="course-tab" key={id}>
                   <div className="title">
-                    {title}
+                    <h5 className="menu_title">{title}</h5>
                   </div>
                 </Tab>
               ))}
@@ -79,7 +80,7 @@ const ServiceMeshLabs = () => {
         <div className="join-community">
           <div className="join-community_text-and_button">
             <h1>Don't Learn Alone</h1>
-            <p>Check Out the Layer5 community, join us on Slack and learn with the community</p>
+            <p>Join other learners and cloud native engineers in the Layer5 community. Join us on Slack and learn with us.</p>
             <Button primary title="Join Our Community" url="http://slack.layer5.io/" />
           </div>
         </div>

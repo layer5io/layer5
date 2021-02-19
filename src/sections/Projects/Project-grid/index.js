@@ -69,7 +69,7 @@ const ProjectPage = () => {
             </Link>
           </div>
 
-          <ContactFormModal callout_text="Contact Us" />
+          <ContactFormModal callout_text="Contact Us" form_header="Get In Touch" />
         </Container>
       </div>
     </ProjectWrapper>

@@ -82,7 +82,7 @@ const Conduct = () => {
             <p>Portions derived from the <a href="https://github.com/docker/code-of-conduct">Docker Community Code of Conduct</a>, <a href="https://api.slack.com/docs/community-code-of-conduct">Slack Developer Community Code of Conduct</a>, <a href="https://adainitiative.org/2014/02/18/howto-design-a-code-of-conduct-for-your-community/">The Ada Initiative</a>,
               <a href="https://geekfeminism.org/about/code-of-conduct/">geekfeminism.org</a> and <a href="https://events.drupal.org/dublin2016/code-conduct">Drupal Events Code of Conduct</a></p>
             <p>This work is licensed under a Creative Commons Attribution 3.0 Unported License For attribution requirements:</p>
-            <p>“@Layer5 Code of Conduct” © 2020 Layer5, Inc, used under a Creative Commons Attribution Unported license: <a href="http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/licenses/by/3.0/ </a></p>
+            <p>“@Layer5 Code of Conduct” © 2021 Layer5, Inc, used under a Creative Commons Attribution Unported license: <a href="http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/licenses/by/3.0/ </a></p>
           </Col>
         </Row>
       </Container>

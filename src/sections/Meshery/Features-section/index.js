@@ -13,7 +13,7 @@ const slides_list = [slide1, slide2, slide3];
 const FeaturesSection = () => {
 
   var settings = {
-    customPaging: function(i) {
+    customPaging: function (i) {
       return (
         <a>
           <img src={slides_list[i]} />
@@ -39,26 +39,27 @@ const FeaturesSection = () => {
         <div className="rect-4-right"></div>
       </div>
       <div className="section-data">
-        <div className="meshery-logo">
+        {/* <div className="meshery-logo">
           <img src={meshery_logo} alt="Meshery Logo" />
-        </div>
+        </div> */}
         <div className="section-header">
-          <h1>It's meshy out there.</h1>
-          <h1>
+          <h2>It's meshy out there.</h2>
+          <h1>Get the <span>most out</span> of your service mesh</h1> 
+          {/* <h1>
             <span>Meshery</span> supports the most service meshes.
-          </h1>
-          <p>
+          </h1> */}
+          {/* <p>
 						No matter what service mesh you choose, Meshery works.
-          </p>
+          </p> */}
         </div>
         <div className="smp-section">
-          <h1>FEATURES</h1>
+          <h4>No matter what service mesh you use, Meshery just works.</h4>
           <Row className="smp-section-row">
             <Col xs={12} xl={4} className="smp-section-data">
-              <h1>Service Mesh Performance Management</h1>
+              <h3>The Performance Yardstick</h3>
               <p>
-								Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your
-								application across different service meshes. Compare and manage service mesh overhead.
+                Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your
+                application across different service meshes. Compare and manage service mesh overhead.
               </p>
             </Col>
             <Col xs={12} xl={8} className="smp-section-caraousel">
@@ -90,7 +91,7 @@ const FeaturesSection = () => {
               <Button secondary className="mgmt_button" title="Manage" url="/service-mesh-management/meshery/operating-service-meshes" />
             </Col>
             <Col xs={12} sm={6} md={4}>
-              <Button secondary className="mgmt_button" title="Patterns" url="/books/service-mesh-patterns"/>
+              <Button secondary className="mgmt_button" title="Patterns" url="/learn/service-mesh-books/service-mesh-patterns" />
             </Col>
           </div>
         </div>

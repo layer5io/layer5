@@ -9,8 +9,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-netlify-cache",
-    "gatsby-plugin-preload-fonts",
+    // "gatsby-plugin-preload-fonts",
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
@@ -82,8 +81,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/books`,
-        name: "books",
+        path: `${__dirname}/src/collections/service-mesh-books`,
+        name: "service-mesh-books",
       },
     },
     {
@@ -110,15 +109,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/workshops`,
-        name: "workshops",
+        path: `${__dirname}/src/collections/service-mesh-workshops`,
+        name: "service-mesh-workshops",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/labs`,
-        name: "labs",
+        path: `${__dirname}/src/collections/service-mesh-labs`,
+        name: "service-mesh-labs",
       },
     },
     {
