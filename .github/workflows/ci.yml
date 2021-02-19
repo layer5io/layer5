@@ -1,27 +1,27 @@
-name: layer5-ng
-on:
-  push:
-    branches:
-      - layer5-ng
-    tags:
-      - "v*"
-  pull_request_target:
-    branches:
-      - layer5-ng
+#name: layer5-ng
+#on:
+#  push:
+#    branches:
+#      - layer5-ng
+#    tags:
+#      - "v*"
+#  pull_request_target:
+#    branches:
+#      - layer5-ng
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Check out code
+#        uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 1
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
+#      - name: Setup Node
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: 12
 
       # - name: Install dependencies
       #   run: npm install
