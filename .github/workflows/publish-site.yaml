@@ -3,7 +3,7 @@ name: Gatsby Publish
 on:
   push:
     branches:
-      - master
+      - layer5-ng
 
 jobs:
   build:
@@ -14,4 +14,3 @@ jobs:
         with:
           deploy-branch: master
           access-token: ${{ secrets.GH_ACCESS_TOKEN }}
-  
