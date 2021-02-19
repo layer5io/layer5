@@ -42,8 +42,8 @@ jobs:
       - name: 'Deploy'
         if: github.event_name != 'pull_request'
         run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/RehanSaeed/rehansaeed.github.io.git
-          npx gh-pages --branch master --dist dist --user "github-actions-bot <support+actions@github.com>"
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/layer5io/layer5.git
+          npx gh-pages --branch master --dist public --user "github-actions-bot <support+actions@github.com>"
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
