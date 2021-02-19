@@ -62,4 +62,6 @@ jobs:
       #     args: deploy --dir=public --prod
   
       - name: Build and Deploy on GH Pages
+        env:
+          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: npm run deploy
