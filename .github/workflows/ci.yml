@@ -29,8 +29,8 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-      - name: Build project
-        run: npm run build
+      # - name: Build project
+      #   run: npm run build
 
       # - name: Publish github pages
       #   env:
@@ -40,9 +40,8 @@ jobs:
       #     npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
 
       - name: 'Deploy'
-        if: github.event_name != 'pull_request'
         run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/layer5io/layer5.git
+          git remote set-url origin https://git:${{ secrets.GITHUB_ACCESS_TOKEN }}@github.com/layer5io/layer5.git
           npx gh-pages --branch master --dist public --user "github-actions-bot <support+actions@github.com>"
         shell: bash
         env:
