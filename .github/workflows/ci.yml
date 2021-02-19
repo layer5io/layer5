@@ -22,7 +22,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build project
+        run: npm run build
+
       - name: Publish github pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
@@ -31,14 +40,7 @@ jobs:
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
 
 
-      # - name: Install dependencies
-      #   run: npm install
 
-      # - name: Run linter
-      #   run: npm run lint
-
-      # # - name: Build project
-      # #   run: npm run build
 
       # - name: Preview deploy to Netlify
       #   id: deploy-netlify
