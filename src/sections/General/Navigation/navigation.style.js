@@ -30,9 +30,8 @@ const NavigationWrap = styled.header`
     left: 0;
     width: 100%;
     display: block;
-    visibility: hidden;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
-    animation: bobbleout ease .3s forwards;
+    animation: bobbleout ease .18s forwards;
     pointer-events: none;
   }
   .wrap {
@@ -139,15 +138,17 @@ const NavigationWrap = styled.header`
   }
   @keyframes bobbleout {
     0% {
-        transform: translate3d(0px, 0px, 8px) scale(1, 1);
-        opacity: 100%
+        transform: translate3d(0px, 0px, 8px) scale(.9, .9);
+        opacity: 40%;
     }
     50% {
-        transform: translate3d(0px, 0px, 4px) perspective(800px) ;
-        opacity: 70%
+        transform: translate3d(0px, 0px, 4px) scale(.75, .75);
+        perspective(800px);
+        opacity: 20%;
     }
     100% {
-        transform: translate3d(0px, -15px, 0px) scale(.75, .75); opacity: 0; visibility: hidden;
+        transform: translate3d(0px, -15px, 0px) scale(.5, .5);
+        opacity: 0;
     }
   }
   @keyframes flowin {
