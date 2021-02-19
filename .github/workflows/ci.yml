@@ -23,12 +23,12 @@ jobs:
         with:
           node-version: 12
       
-      - name: Build
-        env:
-          GH_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+      - name: Publish github pages
         run: |
-          npm i
-          npm run deploy
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/layer5io/layer5.git
+          npm run gh-pages -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_GITHUB_TOKEN }}
       # - name: build and push
       #   uses: enriikke/gatsby-gh-pages-action@v2.1.1
       #   with:
