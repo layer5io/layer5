@@ -19,7 +19,7 @@
     "lint": "eslint --fix .",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
-    "deploy": "gatsby build && gh-pages -d public -b master -r https://$GH_ACCESS_TOKEN@github.com/layer5io/layer5.git"
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://${{ secrets.GH_ACCESS_TOKEN}}@github.com/layer5io/layer5.git"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^5.5.0",
