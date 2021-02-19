@@ -19,7 +19,7 @@
     "lint": "eslint --fix .",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
-    "deploy": "gatsby build"
+    "deploy": "npm cache clean --force && gatsby build"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^5.5.0",
