@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-import HeroCubes from "./assets/images/mesh_cubes.svg";
+import Ellipse from "./assets/images/Group.svg";
 import Layer5Icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
 const BannerSectionWrapper = styled.section`
     padding: 7rem 0;
 
-    background: url(${Layer5Icon}) no-repeat;
-    background-size: 25%;
+    background: url(${Layer5Icon}) no-repeat, url(${Ellipse}) no-repeat;
+    background-size: 25%, 23%;
     background-color: #F3FFFD;
-    background-position: center right 160px;
+    background-position: center right 160px, bottom right;
     p {
         font-size: 21px;
         font-weight: 300;
