@@ -23,11 +23,11 @@ jobs:
         with:
           node-version: 12
 
-      - name: build and push
-        uses: enriikke/gatsby-gh-pages-action@v2.1.1
-        with:
-          access-token: ${{ secrets.GH_ACCESS_TOKEN }}
-          deploy-branch: master
+      # - name: build and push
+      #   uses: enriikke/gatsby-gh-pages-action@v2.1.1
+      #   with:
+      #     access-token: ${{ secrets.GH_ACCESS_TOKEN }}
+      #     deploy-branch: master
 
       # - name: Install dependencies
       #   run: npm install
@@ -67,7 +67,11 @@ jobs:
       #   with:
       #     args: deploy --dir=public --prod
   
-      # - name: Build and Deploy on GH Pages
-      #   env:
-      #     GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
-      #   run: npm run deploy
+      - name: Build and Deploy on GH Pages
+        env:
+          GH_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+        with:
+          node-version: 12
+        run: |
+          npm i
+          npm run deploy
