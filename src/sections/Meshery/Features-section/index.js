@@ -79,7 +79,7 @@ const FeaturesSection = () => {
         </div>
         <div className="mesh-mngmnt">
           <div>
-            <h4>1 step install to managing service meshes</h4>
+            <h4>One step to managing service meshes</h4>
             <h1>Cloud Native Application Management</h1>
             <p>Confidentally take full advantage of all that a service mesh offers.</p>
           </div>
