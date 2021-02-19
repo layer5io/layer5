@@ -261,8 +261,8 @@ const MehseryFeatures = () => {
                                 "View projects and applications being deployed by meshery in a web interface",
               content: (
                 <img
-                  src={require("./images/meshery-extensibility.svg")}
-                  alt="Web UI"
+                  src={require("./feature-images/meshery-extensibility.svg")}
+                  alt="Meshery, the extensible service mesh manager"
                 />
               ),
             },
