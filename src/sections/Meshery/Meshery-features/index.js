@@ -96,20 +96,20 @@ const MehseryFeatures = () => {
               ),
             },
             {
-              title: "Kubernetes Operator",
+              title: "Meshery Operator",
               description:
-                                "View projects and applications being deployed by meshery in a web interface",
+                "<div><p>Service meshes are dynamic. Changes to the service meshes and their workloads occur with great frequency. Meshery Operator helps Meshery stay in lockstep with these changes. Service mesh administrators might make updates to service mesh configuration directly with the service mesh. </p><p>Meshery is continually cognizant of such changes. The Kubernetes operator for Meshery, supports discovery and eventing of greenfield and brownfield service mesh deployments.</p></div>",
               content: (
                 <img
-                  src={require("../../../assets/images/workshops/workshops.png")}
-                  alt="Web UI"
+                  src={require("../../../assets/images/meshery-operator/meshery-operator-dark.svg")}
+                  alt="Kubernetes Operator for Meshery"
                 />
               ),
             },
             {
               title: "CI/CD and Version Control Integration",
               description:
-                                "Integrate with existing CI/CD providers and version control providers like GitHub, CircleCI, Jenksins, and more",
+                "Integrate with existing CI/CD providers and version control providers like GitHub, CircleCI, Jenksins, and more",
               learnMoreLink: "/",
               content: (
                 <Terminal
@@ -169,7 +169,7 @@ const MehseryFeatures = () => {
             {
               title: "MeshSync",
               description:
-                                "Easily extend Meshery with custom support for platforms, build processes, and release systems.",
+                "<div><p>With MeshSync was designed from the ground up to perform tiered discovery of your Kubernetes enviroment by incorporating tiered discovery and a unique method of fingerprinting each running mesh and workload.</p><p>MeshSync's working snapshot of the state of each cluster and service mesh under management is stored in-memory and continuously refreshed.</p></div>",
               learnMoreLink: "/",
               content: (
                 <Terminal
@@ -261,7 +261,7 @@ const MehseryFeatures = () => {
                                 "View projects and applications being deployed by meshery in a web interface",
               content: (
                 <img
-                  src={require("../../../assets/images/workshops/workshops.png")}
+                  src={require("./images/meshery-extensibility.svg")}
                   alt="Web UI"
                 />
               ),
