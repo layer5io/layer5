@@ -10,8 +10,6 @@ const StewardsOfIndustry = () => {
         <h1 className="section-header">
         Creators of service mesh standards.</h1>
         <h2>Service mesh leaders.</h2>
-        
-        
         <Button
           primary
           className="section-button"
