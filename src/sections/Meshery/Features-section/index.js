@@ -31,8 +31,7 @@ const FeaturesSection = () => {
 
   return (
     <FeaturesSectionWrapper>
-      <div className="skw"></div>
-      <div>
+      <div className="skw">
         <div className="rect-1-left"></div>
         <div className="rect-2-left"></div>
         <div className="rect-3-right"></div>
