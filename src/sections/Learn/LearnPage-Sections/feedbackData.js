@@ -1,33 +1,33 @@
 
 export const feedbackData=[
   {
-    feedback: "Best in the world workshop. I have never attended such a workshop in my life.",
-    workshop: "Advanced Istio",
-    studnt_name: "Person 1",
+    feedback: "Advanced Istio by Docker Captains. I couldn't have enjoyed this workshop more than I did.",
+    workshop: "DockerCon: Advanced Istio",
+    studnt_name: "Ryan Anders",
   },
   {
     feedback: "Best in the world workshop. I have never attended such a workshop in my life.",
-    workshop: "Advanced Istio",
-    studnt_name: "Person 1",
+    workshop: "Introduction to Service Mesh with Linkerd",
+    studnt_name: "Raul Perez",
   },
   {
-    feedback: "Best in the world workshop. I have never attended such a workshop in my life.",
-    workshop: "Advanced Istio",
-    studnt_name: "Person 1",
+    feedback: "Meshery made understanding how Linkerd and Istio are different and where their strengths lie much easier. We're going to use Meshery in our CI process now.",
+    workshop: "O'Reilly Training: Introduction to Linkerd",
+    studnt_name: "Abel Kahn",
   },
   {
-    feedback: "Best in the world workshop. I have never attended such a workshop in my life.",
-    workshop: "Advanced Istio",
-    studnt_name: "Person 1",
+    feedback: "Amazing content. I really enjoyed how the instructors made sure that I was able to keep up. No student was left behind.",
+    workshop: "KubeCon: Using Istio",
+    studnt_name: "David Johnson",
   },
   {
-    feedback: "Best in the world workshop. I have never attended such a workshop in my life.",
-    workshop: "Advanced Istio",
-    studnt_name: "Person 1",
+    feedback: "The workshop changed my understanding of what a service mesh can do. I didn't realize (how) many functions Istio can provide.",
+    workshop: "CCOSS: Understanding and Contributing to Istio",
+    studnt_name: "Miguel V. Santos",
   },
   {
-    feedback: "Best in the world workshop. I have never attended such a workshop in my life.",
-    workshop: "Advanced Istio",
-    studnt_name: "Person 1",
+    feedback: "Very knowledgeable instructors. Patient with my questions, too.",
+    workshop: "OSCON: Advanced Service Meshing",
+    studnt_name: "Wei Zhang",
   },
 ];
