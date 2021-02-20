@@ -220,7 +220,7 @@ const MesheryFeatures = () => {
             {
               title: "Extensible Management Plane",
               description:
-                "Plugin different service meshes, load generators and providers.",
+                "Plug in different service meshes, load generators and providers.",
               content: (
                 <div className="feature-expose-full">
                   <a href={require("./feature-images/meshery-extensibility.svg")}>
