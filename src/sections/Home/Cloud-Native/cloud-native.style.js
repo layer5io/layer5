@@ -11,17 +11,10 @@ const CloudNativeWrapper = styled.div`
      
     padding: 1rem 0rem 2rem 0rem;
     color:white;
-    margin-top:5rem;
-    margin-bottom: -9rem;
-    margin-left: 0rem;
-    margin-right: 0rem;
-       
-    /* width:0; 
-    height: 0; 
-  border-top: 10px solid transparent;
-  border-bottom: 10vh solid transparent; 
-  
-  border-right:100vw solid blue;  */
+    margin:5rem 0 -9rem;
+    position: relative;
+    z-index: 1;
+    
     
     .cloud-cont{
         margin:6rem 6rem 0rem 6rem;
@@ -67,9 +60,7 @@ const CloudNativeWrapper = styled.div`
     }
     
     @media only screen and (max-width:1220px)
-    
     {
-
         .cloud-cont{
             margin:6rem 6rem 0em 6rem;
 
@@ -92,7 +83,7 @@ const CloudNativeWrapper = styled.div`
             margin-top: 1rem;
             margin-bottom: 3rem;
             padding-top: 0rem;
-            width: 55%;
+            width: 50%;
         }
     }
     @media only screen and (max-width:900px)
@@ -116,11 +107,10 @@ const CloudNativeWrapper = styled.div`
             text-align:center;
         }
         .btn-cont{
-            margin-top: 0rem;
-            margin-bottom:0rem;
-            padding-top: 0rem;
-            padding-bottom:6rem;
-            width:20vw;
+            margin: 0 auto;
+            padding: 0rem 0 6rem;
+            width: 20rem;
+            justify-content: center;
         }
     }
 `;
