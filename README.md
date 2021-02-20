@@ -104,6 +104,7 @@ Jump into our <a href="http://slack.layer5.io"><img src=".github/assets/images/s
 </p>
 <p>Find us on Twitter: <a href="https://twitter.com/layer5"><img src="assets/images/twitter.png" height="16px"
 align="bottom"/>@layer5</a>,<a href="https://twitter.com/mesheryio">@mesheryio</a>&<a href="https://twitter.com/smp_spec">@smp_spec</a>. Subscribe on <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">Youtube</a>
+</p>
 
 #### License 
 This repository and site are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
