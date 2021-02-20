@@ -35,12 +35,28 @@ table {
 			background: #ffffff;
 			td {
 				border-right: 1px solid #ffffff;
+				img {
+					height: 30px;
+					width: auto;
+				}
+				.question-mark{
+					height: 30px;
+					width: auto;
+				}
 			}
 		}
 		:nth-child(even) {
 			background: #efefef;
 			td {
 				border-right: 1px solid #efefef;
+				img {
+					height: 30px;
+					width: auto;
+				}
+				.question-mark{
+					height: 30px;
+					width: auto;
+				}
 			}
 		}
 		:last-child {

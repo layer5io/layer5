@@ -86,8 +86,8 @@ const Table = ({ columns, data }) => {
                     </td>;
                   } else if(cell["value"] === "?"){
                     return <td {...cell.getCellProps()}>
-                      <IconContext.Provider value={{color: "gray", size: "70%" }}>
-                        <IoMdHelpCircle />
+                      <IconContext.Provider value={{color: "gray", size: "70%" }} >
+                        <IoMdHelpCircle className="question-mark"/>
                       </IconContext.Provider>
                     </td>;
                   } else {
