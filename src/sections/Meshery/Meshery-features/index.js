@@ -200,7 +200,7 @@ const MesheryFeatures = () => {
             {
               title: "Extensible Management Plane",
               description:
-                "View projects and applications being deployed by Meshery in a web interface",
+                "Meshery provides several extension points for working with different service meshes via adapters, different load generators and different providers. Meshery also offers a Graphql and ReST API.",
               content: (
                 <img
                   src={require("./feature-images/meshery-extensibility.svg")}
