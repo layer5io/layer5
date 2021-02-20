@@ -34,19 +34,18 @@ export const MeshkitMesheryAdapterLibrary = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        color: #222;
+        color: ${props => props.theme.secondaryColor};
         font-style: italic;
-        font-size: 1.2rem;
-        text-align:left;
-        border-left: 2px solid ${props => props.theme.primaryLightColor};        
+        font-size: 1.3rem;
+        font-weight: 600;
+        text-align: right;
+        border-right: 4px solid ${props => props.theme.secondaryColor};        
         padding-left: 2rem;
+        padding-right: 2rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        span {
-            font-weight: 600;
-            font-style: normal;
-        }
     }
+    
     div.note {
         margin: 1rem;
         padding: 2rem;
