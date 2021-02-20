@@ -10,6 +10,8 @@ import axios from "axios";
 import DeployServiceMeshWrapper from "./DeployServiceMesh.style";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
+import bookCover from "../../assets/images/learn/book-cover.png";
+
 
 const RangeSlider = memo(
   ({ classes, label, onChange, value, ...sliderProps }) => {
@@ -211,8 +213,8 @@ const ServiceMesh = () => {
   return (
     <DeployServiceMeshWrapper>
       <div id="hero">
-        <h1>"When should i deploy a service mesh?"</h1>
-        <p>The adopter's dilemma</p>
+        <h1>"When should I deploy a service mesh?"</h1>
+        <h3 className="sub-heading">the adopter's dilemma</h3>
       </div>
 
       <div id="info">
@@ -238,7 +240,7 @@ const ServiceMesh = () => {
       </div>
 
       <div id="arrow">
-        <h2>Consider a Service Mesh</h2>
+        <h2>How Strongly to Consider a Service Mesh</h2>
         <div id="text">
           <p id="left">Lightly</p>
           <p id="right">Strongly</p>
@@ -383,6 +385,7 @@ const ServiceMesh = () => {
 
         <div  id="book" >
           <div id="spacer">
+            <img src={bookCover} />
               
           </div>
         </div>

@@ -5,6 +5,10 @@ const DeployServiceMeshWrapper = styled.div`
     html {
         scroll-behavior: smooth;
     }
+    h3.sub-heading {
+        margin-top: 2rem;
+        color: ${props => props.theme.white};
+    }
     #hero{
         background-color: #EBC017;
         height: 35rem;
@@ -302,14 +306,22 @@ const DeployServiceMeshWrapper = styled.div`
               width: 60px;
           }
       }
+      
       #bot{
+          /*
+
+        switch this section to React Row, Col
+
+        */
         display: flex;
           #green{
               background: #00B39F;
-              flex: 1;
+              
               min-height: 400px;
+              width: 60%;
               #text{
                   color: white;
+                  
                   padding: 120px 70px 120px 150px;
                   #cover{
                       border: 2px solid white;
@@ -325,14 +337,28 @@ const DeployServiceMeshWrapper = styled.div`
                   }
               }
           }
+          /*
+
+        switch this section to React Row, Col
+
+        */
+
+
           #book{
-            background-image: url(${bookCover});
+            /* background-image: url(${bookCover}); */
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: right;
-            min-height: 800px;
+            /* background-attachment: fixed; */
+            background-position: center;
+            /* min-height: 800px; */
+            vertical-align: center;
+
+            background-size: contain;
+            
+
             #spacer{
-                min-width: 850px;
+                minwidth: 850px;
+                vertical-align: center;
+
             }
           }
       }
@@ -349,17 +375,20 @@ const DeployServiceMeshWrapper = styled.div`
         text-align: center;
         border-radius: 6px;
         padding: 5px 0;
-        font-size: 12px;
+        font-size: 1rem;
         
         /* Position the tooltip */
         position: absolute;
         z-index: 1;
         bottom: 100%;
         left: 50%;
+        padding: 1rem;
+
         margin-left: -140px;
         width: 12.5rem;
 
-        font-size: 1.125rem;
+        font-size: .9125rem;
+        line-height: 1.25rem;
         text-align: center;
         width: 300px;
         color: ${props => props.theme.white};
