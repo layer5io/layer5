@@ -25,7 +25,7 @@ const MembersGrid = props => {
                 <Col xs={12} sm={6} lg={3}>
                   <Select
                     name="Filter Members"
-                    defaultValue={props.options[0]}
+                    defaultValue={props.options[1]}
                     isSearchable={false}
                     styles={selectStyles}
                     options={props.options}

@@ -4,13 +4,12 @@ module.exports = {
     title: "Layer5 - The Service Mesh Company",
     description: "Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.",
     author: "Layer5 Authors",
-    siteUrl: "https://layer5ng.netlify.app/",
+    siteUrl: "https://layer5.io/",
   },
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-netlify-cache",
-    "gatsby-plugin-preload-fonts",
+    // "gatsby-plugin-preload-fonts",
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
@@ -82,8 +81,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/books`,
-        name: "books",
+        path: `${__dirname}/src/collections/service-mesh-books`,
+        name: "service-mesh-books",
       },
     },
     {
@@ -110,15 +109,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/workshops`,
-        name: "workshops",
+        path: `${__dirname}/src/collections/service-mesh-workshops`,
+        name: "service-mesh-workshops",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/labs`,
-        name: "labs",
+        path: `${__dirname}/src/collections/service-mesh-labs`,
+        name: "service-mesh-labs",
       },
     },
     {

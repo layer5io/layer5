@@ -6,12 +6,12 @@ import Layout from "../../components/layout";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import { FiDownloadCloud } from "react-icons/fi";
-import { AiFillPlayCircle } from "react-icons/ai";
+import { GiClockwork } from "react-icons/gi";
 
-import FeaturesTable from "../Features-Col";
+import FeaturesTable from "./Features-Col";
 
 import meshery from "./images/meshery-logo-light-text-side.png";
-import meshery_multi_mesh from "./images/meshery_multi_mesh.png";
+import mesheryFullStack from "./images/meshery-logo-light-text-tag.png";
 
 import MesheryWrapper from "./meshery.style";
 import theme from "../../theme/app/themeStyles";
@@ -32,24 +32,24 @@ const MesheryPage = () => {
                 <span></span>
                 <span></span>
               </div> */}
-              <div className="meshery-img"><img src={meshery} alt="meshery" /></div>
+              {/* <div className="meshery-img"><img src={meshery} alt="meshery" /></div> */}
               <Row className="description">
-                <Col className="desc-text" lg={6} md={12} sm={12}>
-                  <h1 className="heading-1"> The <span className="heading-2"> Service Mesh </span> </h1>
-                  <h1 className="heading-1"> Management Plane</h1>
+                <Col className="desc-text" lg={6} md={6} sm={8} xs={8}>
+                  <h1 className="heading-1"> the service mesh</h1>
+                  <h1 className="heading-2"> <span className="heading-2">management plane</span></h1>
                   <p className="desc-p">
                     Meshery is the service mesh management plane. <br/>
                     Adopt and operate any service mesh with confidence using Meshery's management features. 
                   </p>
-                  <Button primary className="banner-btn" title="Watch Now" url="./operating-service-meshes">
-                    <AiFillPlayCircle size={21} className="button-icon" />
+                  <Button primary className="banner-btn" title="How Meshery Works" url="./operating-service-meshes">
+                    <GiClockwork size={21} className="button-icon" />
                   </Button> 
                   <Button secondary className="banner-btn" title="Run Meshery" url="./getting-started">
                     <FiDownloadCloud size={21} className="button-icon" />
                   </Button>
                 </Col>
-                <Col lg={6} md={12} sm={12} className="meshery-hero-img">
-                  <img className="meshery-sup-img" src={meshery_multi_mesh} alt="meshery_multi_mesh" />
+                <Col lg={6} md={6} sm={4} xs={4}className="meshery-hero-img">
+                  <img className="meshery-sup-img" src={mesheryFullStack} alt="Meshery the multi-mesh manager" />
                 </Col>
               </Row>
             </div>

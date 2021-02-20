@@ -33,19 +33,23 @@ const Sidebar = ( ) => {
         `
   );
 
-  const tags = data.tags.group;
-  const categories = data.categories.group;
+  const tags = data.tags.group.sort((a,b) => {
+    return b.totalCount - a.totalCount;
+  });
+  const categories = data.categories.group.sort((a,b) => {
+    return b.totalCount - a.totalCount;
+  });
 
   return (
     <BlogSideBarWrapper>
-      <div className="sidebar-widgets">
-        <div className="search-box">
-          <input type="text" placeholder="Search here..." />
-          <Button>
-            <FaSearch />
-          </Button>
-        </div>
-      </div>
+      {/*<div className="sidebar-widgets">*/}
+      {/*  <div className="search-box">*/}
+      {/*    <input type="text" placeholder="Search here..." />*/}
+      {/*    <Button>*/}
+      {/*      <FaSearch />*/}
+      {/*    </Button>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
 
       <div className="sidebar-widgets catagorie">
         <div className="widgets-title">
@@ -74,6 +78,17 @@ const Sidebar = ( ) => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className="subscribe">
+        <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
+          <div>
+            <span>
+              <h4>Subscribe to our Newsletter</h4>
+            </span>
+            <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
+            <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
+          </div>
+        </form>
       </div>
     </BlogSideBarWrapper>
   );

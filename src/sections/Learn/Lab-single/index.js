@@ -4,6 +4,8 @@ import LabSinglePageWrapper from "./LabSinglePageWrapper.style";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { Link } from "gatsby";
 import PageHeader from "../../../reusecore/PageHeader";
+import Button from "../../../reusecore/Button";
+
 
 const LabSinglePage = ({ frontmatter, body }) => {
 
@@ -23,7 +25,7 @@ const LabSinglePage = ({ frontmatter, body }) => {
       <div className="backBtn">
         <Link to="/learn/service-mesh-labs">
           <IoIosArrowDropleftCircle />
-          <h4>All Labs</h4>
+          <h4> All Labs</h4>
         </Link>
       </div>
       <PageHeader
@@ -31,6 +33,13 @@ const LabSinglePage = ({ frontmatter, body }) => {
       />
       <div className="cardContent">
         <MDXRenderer>{body}</MDXRenderer>
+      </div>
+      <div className="join-community">
+        <div className="join-community_text-and_button">
+          <h1>Don't Learn Alone</h1>
+          <p>Join other learners and cloud native engineers in the Layer5 community. Join us on Slack and learn with us.</p>
+          <Button primary title="Join Our Community" url="http://slack.layer5.io/" />
+        </div>
       </div>
     </LabSinglePageWrapper>
   );

@@ -9,21 +9,19 @@ const MeshSectionWrapper = styled.section`
     color: #A0AAAA;
   }
   .side-text {
-    font-size: 2rem;
-    font-weight: 200;
-    line-height: 44.2px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 2rem;
     color: ${props => props.theme.headingColor ? props.theme.headingColor : "#2C0075"};
     margin: 50px 0 24px 0;
-    span{
-        font-weight: 600;
-    }
+    span {
+           font-weight: 600;
+            color: ${props => props.theme.keppelColor};
+        }
    }
    .side{
        vertical-align: center;
-       span {
-           font-weight: 300;
-            color: ${props => props.theme.keppelColor};
-        }
+      
    }
    .mesh-image{
         width: 100%; 
@@ -51,16 +49,21 @@ const MeshSectionWrapper = styled.section`
         margin-right: auto;
     }
     .section-title{
-        margin-bottom: 0rem;
+        margin-bottom: 1.5rem;
         /* padding-bottom: 1.5rem; */
         
     }
     .side-text{
-        padding-top: 1rem;
-        font-weight: 400;
+        padding-top: 0rem;
+        font-weight: 500;
+        font-size: 1.25rem;
         text-align: center;
-        line-height: 21px;
-        margin-top: 0;
+        line-height: 2rem;
+        margin-top: 1rem;
+        span {
+           font-weight: 600;
+            color: ${props => props.theme.keppelColor};
+        }
     }
     .big-title{
         margin: 0;
@@ -90,14 +93,19 @@ const MeshSectionWrapper = styled.section`
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 80%
+        width: 80%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
     .side-text{
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 1.25rem;
+            font-weight: 400;
             text-align: center;
             line-height: 21px;
-            margin-top: 0;
+            span {
+                font-weight: 400;
+            }
+            
     }
     .big-title{
         margin: 0;

@@ -22,7 +22,7 @@ const ServiceMeshManagement = () => {
           >
             <h4 className="title">Meshery is</h4>
             <h2 className="big-title">
-              <span>The</span> service mesh management plane.
+              The <span>service mesh management plane</span>
             </h2>
           </SectionTitle>
           {/* <ServiceMeshAnimate className="active" >
@@ -42,8 +42,12 @@ const ServiceMeshManagement = () => {
                 The <span>extensible</span> service mesh manager.
               </div>
               <div className="description">
-                An extensible platform, Meshery, comes packed with integrations for Prometheus, Grafana, and support for WebAssembly filters for Envoy.
+                <p>An extensible platform, Meshery, comes packed with integrations for Prometheus, Grafana, and support for WebAssembly filters for Envoy.</p>
+                <p>
+                  Not just a service mesh manager, Meshery comprises a set of microservices each one fitted with extension points. Users and integrators may extend Meshery by taking advantage of designated extension points.
+                </p>
               </div>
+
               <div className="backBtn">
                 <br />
                 <Link to="/service-mesh-management/meshery">

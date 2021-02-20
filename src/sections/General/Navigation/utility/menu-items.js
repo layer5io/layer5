@@ -73,6 +73,11 @@ const Data = {
           name: "Service Mesh Performance",
           path: "/projects/service-mesh-performance",
           sepLine: true
+        },
+        {
+          name: "GetNighthawk",
+          path: "/projects/getnighthawk",
+          sepLine: true
         }
       ],
       actionItems: [

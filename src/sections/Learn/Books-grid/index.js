@@ -11,7 +11,7 @@ const BooksPage = ({hide_path}) => {
     graphql`
             query allBooks {
                 allMdx(
-                    filter: { fields: { collection: { eq: "books" } }, frontmatter: { published: { eq: true } } }
+                    filter: { fields: { collection: { eq: "service-mesh-books" } }, frontmatter: { published: { eq: true } } }
                     sort: { fields: [frontmatter___date], order: ASC }
                 ) {
                     nodes {
@@ -81,7 +81,7 @@ const BooksPage = ({hide_path}) => {
               <div className="blog-slider_img">
                 <img src={frontmatter.cover.publicURL} alt={frontmatter.title} />
               </div>
-              <Link className="book-page_link" to={fields.slug}></Link>
+              <Link className="book-page_link" to={fields.slug}/>
             </div>
           ))}
         </Slider>

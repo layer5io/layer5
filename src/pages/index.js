@@ -37,18 +37,17 @@ const IndexPage = () => (
       <Statement />
       <ProudMaintainers />
       {/* <AppScreens /> */}
-      {/* <Counters />  */}
       {/* <Pricing /> */}
       {/* <Testimonial /> */}
       <CloudNativeLeaders />
       <StewardsOfIndustry />
       {/* <Getapp /> */}
       {/* <News /> */}
-      <Faq category = "all"/>
+      {/* <Faq category = "all"/> */}
       {/*<ContactCard />*/}
-      <SoSpecial />
+      {/* <SoSpecial /> */}
       <ServiceMeshFocussed />
-      <EngineerEnabler />
+      {/* <EngineerEnabler /> */}
       <SubscribeSection />
       <Footer />
     </Layout>

@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 const MesheryWrapper = styled.section`
+    position: relative;
+    z-index: 1;
     .info {
         position: relative;
         overflow: hidden;
         display: block;
         .meshery-img{
-            max-width: 25rem;
+            max-width: 45rem;
             position: relative;
             bottom: 2rem;
             margin: auto; 
@@ -18,6 +20,9 @@ const MesheryWrapper = styled.section`
                 padding: 1.56rem;
                 h1{
                     font-weight: 600;
+                }
+                .heading-1 {
+                    font-weight: 500;
                 }
                 .heading-2 {
                     font-weight: 700;
@@ -37,6 +42,7 @@ const MesheryWrapper = styled.section`
             }
             .meshery-hero-img {
                 text-align: center;
+                padding: 6rem 6rem 10rem 6rem;
             }
         }
     }
@@ -169,18 +175,38 @@ const MesheryWrapper = styled.section`
     @media only screen and (max-width: 1200px) {
         .info{
             .description {
-                margin-top: -4rem;
+                margin-top: 0rem;
+
+                .meshery-hero-img {
+                    text-align: center;
+                    padding: 4rem 4rem 8rem 4rem;
+                }
             }
+            
+        }
+    }
+    @media only screen and (max-width: 992px) {
+        .info{
+            .description {
+                margin-top: 2rem;
+
+                .meshery-hero-img {
+                    text-align: center;
+                    padding: 1rem 1rem 2rem 1rem;
+                }
+            }
+            
         }
     }
 
     @media only screen and (max-width: 568px) {
         .info{
-            .meshery-img{
-                max-width: 90%;
-            }
             .description {
                 padding: 0;
+                .meshery-hero-img {
+                    text-align: center;
+                    padding: 0;;
+                }
                 .desc-text{
                     .desc-p{
                         margin: 1.875rem 0 1.25rem 0;

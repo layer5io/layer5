@@ -30,10 +30,11 @@ const BannerDefault = () => {
                   leftAlign={true}
                   UniWidth="100%"
                 >
-                  <h4 className="statement">Layer5 makes Cloud Native Manageable</h4>
+                  <h4 className="statement">We make cloud native manageable by </h4>
+                  {/* <h4 className="statement">We make cloud native manageable by </h4> */}
                   <h2 className="statement">
                     <span>
-                      Exploiting the unique position  service meshes have in changing how developers write applications and how operators run modern infrastructure.
+                      exploiting the unique position service meshes have in changing how developers write applications and how operators run modern infrastructure.
                     </span>
                   </h2>
                   {/* <img className="Layer5Logo" src={Layer5Logo} /> */}
@@ -42,7 +43,7 @@ const BannerDefault = () => {
                     Layer5 is an empowerer of the developer, the operator, and the service owner
                   </h3>
                   <div className="join-community">
-                    <Button primary className="join-community-button" title="Join our community" url="/community" />
+                    <Button primary className="join-community-button" title="See Layer5's cloud native projects" url="/projects" />
                   </div>
                 </SectionTitle>
               </div>

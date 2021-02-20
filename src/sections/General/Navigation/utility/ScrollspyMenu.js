@@ -80,8 +80,8 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 </div>
               </div>
               <div className="nav-display">
-                <Card frontmatter={blogData[active.name].nodes[0].frontmatter} fields={blogData[active.name].nodes[0].fields}></Card>
-                <Card frontmatter={blogData[active.name].nodes[1].frontmatter} fields={blogData[active.name].nodes[1].fields}></Card>
+                <Card frontmatter={blogData[active.name].nodes[0].frontmatter} fields={blogData[active.name].nodes[0].fields}/>
+                <Card frontmatter={blogData[active.name].nodes[1].frontmatter} fields={blogData[active.name].nodes[1].fields}/>
               </div>
             </div>
           </ul>

@@ -38,17 +38,17 @@ const ProudMaintainers = () => {
         </Row>
       </Container>
       <Row className="row">
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
             <img src={CNCF} alt="CNCF" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
             <img src={Envoy} alt="Envoy" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
             <img src={Linkerd} alt="Linkerd" />
           </div>
@@ -59,94 +59,52 @@ const ProudMaintainers = () => {
             <h4>Service Mesh</h4>
           </div>
         </Col> */}
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
             <img src={Meshery} alt="Meshery" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={3} className="proj_row_1_col">
           <div className="proj_icon_1">
             <img src={OAM} alt="OAM" />
           </div>
         </Col>
       </Row>
       <Row className="row row_2">
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
           <div className="proj_icon_2">
             <img src={Istio} alt="Istio" />
-            {/* <h4>Istio</h4> */}
+            <h4>Istio</h4>
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
           <div className="proj_icon_1">
             <img src={OSM} alt="OSM" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
           <div className="proj_icon_1">
             <img src={SMP} alt="SMP" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
           <div className="proj_icon_2">
             <img src={ImageHub} alt="ImageHub" />
-            {/* <h4>Image Hub</h4> */}
+            <h4>Image Hub</h4>
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
           <div className="proj_icon_1">
             <img src={SMI} alt="SMI" />
           </div>
         </Col>
-        <Col xs={3} sm={3} md={3} lg={2}>
+        <Col xs={3} sm={3} md={3} lg={2} className="proj_row_2_col">
           <div className="proj_icon_2">
             <img src={Traefik} alt="Traefik" />
-            {/* <h4>Traefik Mesh</h4> */}
+            <h4>Traefik Mesh</h4>
           </div>
         </Col>
       </Row>
-      {/*  <div className="project_icons_section">
-        <div className="proj_icon">
-          <img src={CNCF} alt="CNCF" />
-        </div>
-        <div className="proj_icon">
-          <img src={Envoy} alt="Envoy" />
-        </div>
-        <div className="proj_icon">
-          <img src={Linkerd} alt="Linkerd" />
-        </div>
-        {/* <div className="proj_icon">
-          <img src={ServiceMesh} alt="Service Mesh"/>
-          <h4>Service Mesh</h4>
-        </div> 
-        <div className="proj_icon">
-          <img src={Meshery} alt="Meshery" />
-        </div>
-        <div className="proj_icon">
-          <img src={OAM} alt="OAM" />
-        </div>
-        <div className="proj_icon istio">
-          <img src={Istio} alt="Istio" />
-          <h4>Istio</h4>
-        </div>
-        <div className="proj_icon">
-          <img src={OSM} alt="OSM" />
-        </div>
-        <div className="proj_icon">
-          <img src={SMP} alt="SMP" />
-        </div>
-        <div className="proj_icon">
-          <img src={ImageHub} alt="ImageHub" />
-          <h4>Image Hub</h4>
-        </div>
-        <div className="proj_icon">
-          <img src={SMI} alt="SMI" />
-        </div>
-        <div className="proj_icon">
-          <img src={Traefik} alt="Traefik" />
-          <h4>Traefik Mesh</h4>
-        </div>
-      </div> */}
     </ProjectItemWrapper>
   );
 };

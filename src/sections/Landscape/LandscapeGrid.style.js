@@ -171,6 +171,7 @@ export const LandscapePageWrapper=styled.div`
 	}
 	.showMoreIcon:hover {
 		cursor: pointer;
+		color: ${props => props.theme.tertiaryColor};
 	}
 	span.moreIcon.vertical-timeline-element-icon {
 		background: ${props => props.theme.saffronColor};

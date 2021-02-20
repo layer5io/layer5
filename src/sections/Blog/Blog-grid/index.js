@@ -12,7 +12,7 @@ import { BlogPageWrapper } from "./blogGrid.style";
 const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => {
   return (
     <BlogPageWrapper>
-      <PageHeader title="Blogs" path="Blog"/>
+      <PageHeader title="Blog" path="Blog"/>
       <div className="blog-page-wrapper">
         <Container>
           <Row>

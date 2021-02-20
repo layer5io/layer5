@@ -4,13 +4,15 @@ import styled from "styled-components";
 import HeroImage from "../images/meshery-operator-dark.svg";
 
 const HowMesheryWorksHeroWrapper = styled.div`
+    
     margin-bottom: 4rem;
     .hero-text{
+      margin: auto;
       h5{
         font-weight: 600;
       }
-      p{
-        margin-top: 1rem;
+      h2 {
+        font-weight: 400;
       }
       @media only screen and (max-width: 992px){
          margin-top: 2rem;
@@ -21,13 +23,17 @@ const HowMesheryWorksHeroWrapper = styled.div`
       background-color: ${props => props.theme.secondaryLightColorTwo};
       border-bottom-left-radius: 4.375rem;
       border-bottom-right-radius: 4.375rem;
+      vertical-align: top;
+      justify-content: top;
+      align-self: top;
+      margin-top: 0px;
+      padding-top: 0px;
       img {
-        padding: 2rem 2rem 4rem 0;
-        margin-left: -2.5rem;
+        padding: 2rem 2rem;
+        margin: auto;
         @media only screen and (max-width: 992px){
-            display:block;
             margin:auto;
-            padding: 2rem;
+            padding: 1rem 0rem 0rem 0rem;
          }
       }
     }
@@ -38,13 +44,13 @@ const HowMesheryWorksHero = () => {
   return(
     <HowMesheryWorksHeroWrapper>
       <Container>
-        <Row Vcenter>
-          <Col className="hero-text" xs={12} lg={6}>
+        <Row>
+          <Col Vcenter className="hero-text" xs={8} lg={6}>
             <h5>Distributed systems are hard.</h5>
             <h1>Wrangle your mesh</h1>
-            <h2>run Meshery Operator with MeshSync inside.</h2>
+            <h2>with Meshery Operator and MeshSync.</h2>
           </Col>
-          <Col className="hero-img-wrapper" xs={12} lg={6}>
+          <Col className="hero-img-wrapper" xs={4} lg={6}>
             <img src={HeroImage} alt="hero"/>
           </Col>
         </Row>

@@ -4,11 +4,11 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import SubscribeWrapper from "./subscribe.style";
 
-const SubscribeSection = () => {
+const subscribe= () => {
   return (
     <SubscribeWrapper>
       <div className="parentcard">
-        <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">   
+        <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
           <Row>
             <Col md={6}>
               <SectionTitle className="section-title" UniWidth="100%">
@@ -19,13 +19,12 @@ const SubscribeSection = () => {
               <Row className="email-cont">
                 <Col md={6} xs={12} >
                   <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
-                </Col>  
+                </Col>
                 <div>
-                  <Button title="Subscribe" id="mc-embedded-subscribe" />
+                  <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
                 </div>
               </Row>
             </Col>
-
           </Row>
         </form>
       </div>
@@ -33,4 +32,4 @@ const SubscribeSection = () => {
   );
 };
 
-export default SubscribeSection;
+export default subscribe;

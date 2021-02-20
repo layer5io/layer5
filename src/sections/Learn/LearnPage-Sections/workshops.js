@@ -166,7 +166,7 @@ const WorkshopsSection = () => {
             query workshopsList {
                 allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "workshops" } } }
+                    filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
                 ) {
                     nodes {
                         frontmatter {
@@ -215,13 +215,13 @@ const WorkshopsSection = () => {
           <h1>Workshops</h1>
           <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
           <div className="see-more-button">
-            <Button primary title="Checkout all workshops" url="/workshops"/>
+            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops"/>
           </div>
         </Col>
         <Col xs={12} md={9} className="workshops-col">
           <Row>
-            {data.allMdx.nodes.slice(0, 3).map(({id, frontmatter, fields}) => (
-              <Col xs={12} sm={6} xl={4} className="workshops-card" key={id}>
+            {data.allMdx.nodes.slice(0, 3).map(({frontmatter, fields}, index) => (
+              <Col xs={12} sm={6} xl={4} className="workshops-card" key={index}>
                 <Link to={fields.slug} >
                   <div className="workshop-thumbnails">
                     <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
@@ -232,7 +232,7 @@ const WorkshopsSection = () => {
           </Row>
         </Col>
       </div>
-      <div className="feedback-section">	
+      <div className="feedback-section">
         <Slider {...settings}>
           {
             feedbackData.map((data, index) => {

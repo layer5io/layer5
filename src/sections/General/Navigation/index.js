@@ -20,7 +20,7 @@ const Navigation = () => {
             query {
                 Learn: allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "books" } } }
+                    filter: { fields: { collection: { eq: "service-mesh-books" } } }
                     limit: 2
                 ) {
                     nodes {
@@ -57,6 +57,7 @@ const Navigation = () => {
                                     }
                                 }
                                 publicURL
+                                extension
                             }
                         }
                         fields {
@@ -80,6 +81,7 @@ const Navigation = () => {
                                     }
                                 }
                                 publicURL
+                                extension
                             }
                         }
                         fields {

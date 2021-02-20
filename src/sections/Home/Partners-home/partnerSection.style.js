@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const PartnerItemWrapper = styled.section`
     padding: 2rem 0;
+    margin: 0rem 0 5rem
     overflow: hidden;
     .section-title{
         h4{
@@ -22,18 +23,18 @@ const PartnerItemWrapper = styled.section`
         flex-shrink: 3;
     }
     img {
-        max-width: 100px;
+        max-width: 100%;
         min-width: 50px;
         margin: auto;
         opacity: .7;
-       
+        max-height:100px;
     }
     .partner__block__inner {
-        padding: .5rem;
+        padding: 5px;
         margin: 0px;
         display: flex;
         transition: all 0.2s ease-in-out;
-        height: 100px;
+        height: 110px;
     }
      /* @media only screen and (max-width: 768px) {
         .horizontal {

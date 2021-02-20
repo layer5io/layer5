@@ -4,8 +4,8 @@ import consulLogo from "../../../assets/images/service-mesh-icons/consul-white.s
 import kumaLogo from "../../../assets/images/service-mesh-icons/kuma-white.svg";
 import nsmLogo from "../../../assets/images/service-mesh-icons/nsm-white.svg";
 // import smpLogo from "../../assets/images/smp/horizontal/smp-light-text-side.svg";
-import smpLogo from "./assets/smp-dark-text.svg";
-import smiLogo from "./assets/servicemeshinterface-icon-color.svg";
+import smpLogo from "./assets/smp-light-text.svg";
+import smiLogo from "./assets/servicemeshinterface-stackedsmi-white.svg";
 
 export const data = [
   {
@@ -19,7 +19,7 @@ export const data = [
         title: "Working with Meshery and Istio",
         info: "Learn how to run Meshery, install Istio and deploy a sample app",
         embed: "istio-meshery-adapter",
-        link: "/labs/working-with-meshery-and-istio",
+        link: "/learn/service-mesh-labs/working-with-meshery-and-istio",
         cover: istioLogo
       },
       {
@@ -27,7 +27,7 @@ export const data = [
         title: "Working with Meshery and Linkerd",
         info: "Learn how to run Meshery, install Linkerd and deploy a sample app",
         embed: "linkerd-meshery-adapter",
-        link: "/labs/working-with-meshery-and-linkerd",
+        link: "/learn/service-mesh-labs/working-with-meshery-and-linkerd",
         cover: linkerdLogo
       },
       {
@@ -35,7 +35,7 @@ export const data = [
         title: "Working with Meshery and Consul",
         info: "Learn how to run Meshery, install Consul and deploy a sample app",
         embed: "consul-meshery-adapter",
-        link: "/labs/working-with-meshery-and-consul",
+        link: "/learn/service-mesh-labs/working-with-meshery-and-consul",
         cover: consulLogo
       },
       {
@@ -43,7 +43,7 @@ export const data = [
         title: "Working with Meshery and Kuma",
         info: "Learn how to run Meshery, install Kuma and deploy a sample app",
         embed: "kuma-meshery-adapter",
-        link: "/labs/working-with-meshery-and-kuma",
+        link: "/learn/service-mesh-labs/working-with-meshery-and-kuma",
         cover: kumaLogo
       },
       {
@@ -51,7 +51,7 @@ export const data = [
         title: "Working with Meshery and NSM",
         info: "Learn how to run Meshery, install NSM and deploy a sample app",
         embed: "nsm-meshery-adapter",
-        link: "/labs/working-with-meshery-and-nsm",
+        link: "/learn/service-mesh-labs/working-with-meshery-and-nsm",
         cover: nsmLogo
       }
     ]
@@ -67,7 +67,7 @@ export const data = [
         title: "Running Performance Tests",
         info: "Learn how to do performance testing with Meshery",
         embed: "running-performance-tests",
-        link: "/labs/running-performance-tests",
+        link: "/learn/service-mesh-labs/running-performance-tests",
         cover: smpLogo
       },
       {
@@ -75,7 +75,7 @@ export const data = [
         title: "Traffic Splitting with Meshery",
         info: "Traffic Management with Meshery",
         embed: "traffic-splitting",
-        link: "/labs/traffic-splitting-with-meshery",
+        link: "/learn/service-mesh-labs/traffic-splitting-with-meshery",
         cover: smiLogo
       }
     ]

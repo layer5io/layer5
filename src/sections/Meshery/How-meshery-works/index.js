@@ -1,7 +1,7 @@
 import React from "react";
 import {Container} from "../../../reusecore/Layout";
 import HowitworksWrapper from "./howitworks.style";
-import HowBoundaryWorksDiagram from "./diagram";
+import HowMesheryWorksDiagram from "./diagram";
 import Feature from "./feature";
 import { useState } from "react";
 
@@ -21,7 +21,7 @@ export default function HowItWorks({ title, description, features }) {
           </div>
           <div className='g-grid-container contentContainer'>
             <div className='diagram scroll'>
-              <HowBoundaryWorksDiagram activeExampleIndex={activeExampleIndex} />
+              <HowMesheryWorksDiagram activeExampleIndex={activeExampleIndex} />
             </div>
             <ul className='features'>
               {features.map((feature, index) => (
