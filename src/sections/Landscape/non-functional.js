@@ -45,7 +45,7 @@ function NonFunctional() {
   const data = React.useMemo(() => non_functional);
 
   return (
-    <Table columns={columns} data={data} />
+    <Table columns={columns} data={data} placeHolder="Find your mesh..." />
   );
 }
 

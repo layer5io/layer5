@@ -31,6 +31,8 @@ table {
     }
   
     tr {
+		height: 4rem;
+
 		:nth-child(odd) {
 			background: #ffffff;
 			td {

@@ -33,7 +33,7 @@ function Tools() {
   const data = React.useMemo(() => tools_data);
 
   return (
-    <Table columns={columns} data={data} />
+    <Table columns={columns} data={data} placeHolder="Find the tool..." />
   );
 }
 
