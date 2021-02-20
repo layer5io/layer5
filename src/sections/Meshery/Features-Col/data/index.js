@@ -75,7 +75,7 @@ const data = {
           className: "--on"
         },
         {
-          content: "Baseline and track deltas of workload performance over time.",
+          content: "Baseline and track deltas of workload performance.",
           className: "--on"
         }
       ],
