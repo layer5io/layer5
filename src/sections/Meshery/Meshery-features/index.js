@@ -10,9 +10,13 @@ const MesheryFeaturesWrapper = styled.div`
         margin-top: 10rem;
     }
     .feature-expose {
-    display:inline;
     img {
       padding: 4rem;
+    }
+  }
+  .feature-expose-full {
+    img {
+      padding: 0rem;
     }
   }
 `;
@@ -118,65 +122,81 @@ const MesheryFeatures = () => {
               ),
             },
             {
-              title: "CI/CD and Version Control Integration",
+              title: "Integration with Prometheus and Grafana",
               description:
-                "Integrate with existing CI/CD providers and version control providers like GitHub, CircleCI, Jenksins, and more",
-              //learnMoreLink: "/",
+                "",
               content: (
-                <Terminal
-                  title="config.yaml"
-                  lines={[
-                    {
-                      code: "env:",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code:
-                        "SERVER_TOKEN: ${{ secrets.SERVER_TOKEN }}",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "SERVER_ADDR: meshery.example.com:9701",
-                      color: "white",
-                    },
-                    {
-                      code: "steps:",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "- uses: actions/checkout@v2",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "- uses: layer5/action-setup-layer5",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "with:",
-                      color: "white",
-                    },
-                    {
-                      indent: 2,
-                      code: "version: '0.1.0'",
-                      color: "white",
-                    },
-                    {
-                      code: "- run: meshery init",
-                      color: "white",
-                    },
-                    {
-                      code: "- run: meshery up",
-                      color: "white",
-                    },
-                  ]}
-                />
+                <div className="feature-expose">
+                  <img
+                    src={require("./feature-images/meshery-and-grafana.png")}
+                    alt="Prometheus and Grafana integration with Meshery"
+                  />
+                  <p>Key to the efficient operation of any service mesh is the measurement and management of it’s performance.</p>
+                  <p>Meshery provides performance test results alongside environment metrics, including service mesh control and data plane metrics as well as cluster node resource metrics, so that operators may easily understand the overhead of their service mesh’s control plane and data plane in context of the overhead incurred on nodes within the cluster.</p>
+
+                </div>
               ),
             },
+            // {
+            //   title: "CI/CD and Version Control Integration",
+            //   description:
+            //     "Integrate with existing CI/CD providers and version control providers like GitHub, CircleCI, Jenksins, and more",
+            //   //learnMoreLink: "/",
+            //   content: (
+            //     <Terminal
+            //       title="config.yaml"
+            //       lines={[
+            //         {
+            //           code: "env:",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 1,
+            //           code:
+            //             "SERVER_TOKEN: ${{ secrets.SERVER_TOKEN }}",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 1,
+            //           code: "SERVER_ADDR: meshery.example.com:9701",
+            //           color: "white",
+            //         },
+            //         {
+            //           code: "steps:",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 1,
+            //           code: "- uses: actions/checkout@v2",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 1,
+            //           code: "- uses: layer5/action-setup-layer5",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 1,
+            //           code: "with:",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 2,
+            //           code: "version: '0.1.0'",
+            //           color: "white",
+            //         },
+            //         {
+            //           code: "- run: meshery init",
+            //           color: "white",
+            //         },
+            //         {
+            //           code: "- run: meshery up",
+            //           color: "white",
+            //         },
+            //       ]}
+            //     />
+            //   ),
+            // },
             {
               title: "MeshSync",
               description:
@@ -200,12 +220,19 @@ const MesheryFeatures = () => {
             {
               title: "Extensible Management Plane",
               description:
-                "Meshery provides several extension points for working with different service meshes via adapters, different load generators and different providers. Meshery also offers a Graphql and ReST API.",
+                "Plugin different service meshes, load generators and providers.",
               content: (
-                <img
-                  src={require("./feature-images/meshery-extensibility.svg")}
-                  alt="Meshery, the extensible service mesh manager"
-                />
+                <div className="feature-expose-full">
+                  <a href={require("./feature-images/meshery-extensibility.svg")}>
+                    <img
+                      src={require("./feature-images/meshery-extensibility.svg")}
+                      alt="Meshery, the extensible service mesh manager"
+                    /></a>
+                  <p>
+                    Meshery is not just an application. It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points.</p>
+                  <p>Extension points come in various forms and are available through Meshery’s architecture.
+                  </p>
+                </div>
               ),
               learnMoreLink: "https://docs.meshery.io/extensibility",
             },
