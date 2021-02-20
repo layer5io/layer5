@@ -33,17 +33,21 @@ const CommunityCallCardWrapper = styled.div`
             line-height: 10px;
         }
     }
-    input{
-        //margin: 0 10px 0 15px;
+    form {
+      display: flex;
+      width: 100%;
+
+      .inputrow{
         padding: 1rem;
         width: 100%;
         background: #F5F7FA;
         border: 1px solid white;
         border-radius: 7px;
-    }
-    button{
-        padding: 10px;
-        min-width: auto;
+      }
+      button{
+          padding: 10px;
+          min-width: auto;
+      }
     }
 `;
 
@@ -58,12 +62,14 @@ const CommunityCallCard = ({hero_image}) => {
         <h4 className="highlight"> Interested? </h4>
         <p> You can register below for the next Community Call. </p>
         <Row>
-          <Col xs={7} lg={7}>
-            <input type="text" placeholder="Your Email Address" />
-          </Col>
-          <Col xs={3} lg={3}>
-            <Button secondary title="Subscribe" />
-          </Col>
+          <form name="registerform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
+            <Col xs={7}>
+              <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
+            </Col>
+            <Col xs={3}>
+              <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
+            </Col>
+          </form>
         </Row>
         <p className="unsubscribe"> You can unsubscribe any time. No spam. </p>
       </div>
