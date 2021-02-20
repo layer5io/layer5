@@ -4,10 +4,12 @@ const SubscribeWrapper = styled.div`
     background-color:${props => props.theme.secondaryLightColor};
     padding: 3.125rem 0.625rem;
     overflow: hidden;
-    h2{
+    h1{
         font-weight: 600;
-        font-size:1.875rem;
+        font-size:2.875rem;
         margin:1.25rem 0;
+        width: 100%;
+        text-align: center;
     }
     h2 span{
         color:${props => props.theme.secondaryColor};
