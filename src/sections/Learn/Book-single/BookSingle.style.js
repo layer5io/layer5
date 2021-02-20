@@ -3,14 +3,8 @@ import styled from "styled-components";
 const BookSinglePageWrapper = styled.div`
     
     .single-post-wrapper{
-        margin: 0rem  5rem;
-    
+        margin: 2rem 0;
     }
-    .single-post-block{
-        p {
-    
-        }  
-}
 `;
 
 export default BookSinglePageWrapper;

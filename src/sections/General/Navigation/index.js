@@ -57,6 +57,7 @@ const Navigation = () => {
                                     }
                                 }
                                 publicURL
+                                extension
                             }
                         }
                         fields {
@@ -80,6 +81,7 @@ const Navigation = () => {
                                     }
                                 }
                                 publicURL
+                                extension
                             }
                         }
                         fields {

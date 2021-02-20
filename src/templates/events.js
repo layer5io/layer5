@@ -144,6 +144,9 @@ export const query = graphql`
                     eurl
                     date(formatString: "MMM Do, YYYY")
                     thumbnail {
+                        publicURL
+                        relativePath
+                        extension
                         childImageSharp {
                             fluid {
                                 ...GatsbyImageSharpFluid_withWebp

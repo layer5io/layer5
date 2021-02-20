@@ -16,14 +16,9 @@ const MesheryQuotesWrapper = styled.div`
 
 const quotes_data = [
   {
-    name: "USER1",
-    position: "POSITION",
-    quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-  },
-  {
-    name: "USER2",
-    position: "POSITION",
-    quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    name: "Yogi Porla",
+    position: "Principal Engineer, HPE",
+    quote: "Meshery helps us curate Service Mesh for tailored need by helping us running simulations and identifying the right fit Service Mesh that works efficiently across diverse ecosystem of tools."
   },
   {
     name: "Jason S.",

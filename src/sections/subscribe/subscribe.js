@@ -4,7 +4,7 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import SubscribeWrapper from "./subscribe.style";
 
-const SubscribeSection = () => {
+const subscribe= () => {
   return (
     <SubscribeWrapper>
       <div className="parentcard">
@@ -32,4 +32,4 @@ const SubscribeSection = () => {
   );
 };
 
-export default SubscribeSection;
+export default subscribe;

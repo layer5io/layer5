@@ -3,60 +3,48 @@ import styled from "styled-components";
 const FeaturesSectionWrapper = styled.section`
 
 	background-color: black;
-	transform: skew(0deg, -5deg);
-	// .skw{
-	// 	background-color: white;
-  //   transform: skew(0deg,-5deg);
-  //   width: 100%;
-  //   height: 11rem;
-  //   position: relative;
-  //   top: -1rem;
-  //   z-index: 1;
-	// }
-	// .rect-1-left, .rect-3-right {
-	// 	position: absolute;
-	// 	width: 14rem;
-	// 	height: 5rem;
-	// 	transform: skew(0deg, -5deg);
-	// 	background-color: ${props => props.theme.secondaryColor};
-	// 	z-index: 1;
-	// }
-	// .rect-1-left {
-	// 	left: 0;
-	// 	top: 14.4rem;
-	// 	border-radius: 0px 0px 40px 0px;
-	// }
-	// .rect-3-right {
-	// 	right: 0;
-	// 	top: 0.5rem;
-	// 	border-radius: 40px 0px 0px 0px;
-	// }
-	// .rect-2-left, .rect-4-right {
-	// 	position: absolute;
-	// 	width: 20rem;
-	// 	height: 5rem;
-	// 	transform: skew(0deg, -5deg);
-	// 	background-color: #C9FCF6;
-	// 	z-index: 1;
-	// }
-	// .rect-2-left {
-	// 	left: 0;
-	// 	top: 9.25rem;
-	// 	border-radius: 0px 40px 0px 0px;
-	// }
-	// .rect-4-right {
-	// 	right: 0;
-	// 	top: 5.75rem;
-	// 	border-radius: 0px 0px 0px 40px;
-	// }
+	transform: skew(0deg, -6deg);
+	.skw{
+		display: grid;
+		position: relative;
+		top: -5rem;
+	}
+	.rect-1-left {
+		background: #C9FCF6;
+		border-radius: 0 2.125rem 0 0;
+		grid-column: 1/ span 2;
+		height: 5rem;
+		grid-row: 1;
+		position: relative;
+		top: 0.5px;
+	}
+	.rect-2-left {
+		background: ${props => props.theme.secondaryColor};
+		border-radius: 0 0 3.5rem 0;
+		grid-column: 1/2;
+		height: 5rem;
+		grid-row: 2;
+	}
+	.rect-3-right {
+		background: ${props => props.theme.secondaryColor};
+		border-radius: 3.5rem 0 0 0;
+		grid-column: 10/11;
+		grid-row: 1;
+		height: 5rem;
+	}
+	.rect-4-right {
+		background: #C9FCF6;
+		border-radius: 0 0 0 2.125rem;
+		grid-column: 9/11;
+		grid-row: 2;
+		height: 5rem;
+		position: relative;
+		top: -0.75px
+	}
 
 	.section-data {
-		transform: skew(0deg, 5deg);
-		padding: 3rem 1rem;
-		// padding: 8rem 0 1.5rem;
-		// position: relative;
-    // top: -6.5rem;
-		// clip-path: polygon(0% 50%, 0% 100%, 100% 100%, 100% 0%);
+		transform: skew(0deg, 6deg);
+		padding: 0 1rem 3rem;
 		text-align: center;
 		h1, h2, p {
 			color: white;
@@ -172,7 +160,7 @@ const FeaturesSectionWrapper = styled.section`
 			}
 
 			.smp-section-data {
-				h1, p {
+				h3, p {
 					text-align: center;
 				}
 			}

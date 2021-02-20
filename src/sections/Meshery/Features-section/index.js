@@ -31,8 +31,7 @@ const FeaturesSection = () => {
 
   return (
     <FeaturesSectionWrapper>
-      <div className="skw"></div>
-      <div>
+      <div className="skw">
         <div className="rect-1-left"></div>
         <div className="rect-2-left"></div>
         <div className="rect-3-right"></div>
@@ -79,7 +78,7 @@ const FeaturesSection = () => {
         </div>
         <div className="mesh-mngmnt">
           <div>
-            <h4>1 step install to managing service meshes</h4>
+            <h4>One step to managing service meshes</h4>
             <h1>Cloud Native Application Management</h1>
             <p>Confidentally take full advantage of all that a service mesh offers.</p>
           </div>

@@ -75,7 +75,7 @@ const Data = {
           sepLine: true
         },
         {
-          name: "Get Nighthawk",
+          name: "GetNighthawk",
           path: "/projects/getnighthawk",
           sepLine: true
         }

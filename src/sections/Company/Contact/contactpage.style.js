@@ -41,7 +41,7 @@ const ContactPageWrapper = styled.section`
 	}
 
 	.form-frame {
-		height: 50rem;
+		height: 68rem;
 		width: 35rem;
 		border: none;
 		margin-top: -2rem;

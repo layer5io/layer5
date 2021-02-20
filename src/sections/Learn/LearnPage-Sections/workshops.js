@@ -220,8 +220,8 @@ const WorkshopsSection = () => {
         </Col>
         <Col xs={12} md={9} className="workshops-col">
           <Row>
-            {data.allMdx.nodes.slice(0, 3).map(({id, frontmatter, fields}) => (
-              <Col xs={12} sm={6} xl={4} className="workshops-card" key={id}>
+            {data.allMdx.nodes.slice(0, 3).map(({frontmatter, fields}, index) => (
+              <Col xs={12} sm={6} xl={4} className="workshops-card" key={index}>
                 <Link to={fields.slug} >
                   <div className="workshop-thumbnails">
                     <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />

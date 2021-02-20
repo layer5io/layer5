@@ -15,6 +15,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
-          branch: master # The branch the action should deploy to.
+          branch: site # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
           clean: true

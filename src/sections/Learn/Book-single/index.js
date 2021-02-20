@@ -20,7 +20,6 @@ const BookSingle = ({data}) => {
           </div>
         </Container>
       </div>
-
     </BookSinglePageWrapper>
   );
 };

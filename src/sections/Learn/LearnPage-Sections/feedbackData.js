@@ -1,12 +1,12 @@
 
 export const feedbackData=[
   {
-    feedback: "Advanced Istio by Docker Captains. I couldn't have enjoyed this workshop more than I did.",
+    feedback: "I couldn't have enjoyed this workshop more than I did. The Advanced Istio workshop given by Docker Captains was great.",
     workshop: "DockerCon: Advanced Istio",
     studnt_name: "Ryan Anders",
   },
   {
-    feedback: "Best in the world workshop. I have never attended such a workshop in my life.",
+    feedback: "I am much more confident than before. The service mesh training from Layer5 is what I needed to kickstart our use of Linkerd.",
     workshop: "Introduction to Service Mesh with Linkerd",
     studnt_name: "Raul Perez",
   },
