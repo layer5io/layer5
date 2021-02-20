@@ -1,13 +1,45 @@
 import React from "react";
-import { useTable } from "react-table";
+import { useTable, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from "react-table";
 import ReactTooltip from "react-tooltip";
 import { IoMdHelpCircle } from "react-icons/io";
 import { IconContext } from "react-icons";
 import { TableWrapper } from "./LandscapeTable.style";
 import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
+import { AiOutlineCaretUp, AiOutlineCaretDown } from "react-icons/ai";
 
-const Table = ({ columns, data }) => {
+function GlobalFilter({
+  globalFilter,
+  setGlobalFilter,
+  searchPlaceHolder
+}) {
+  const [value, setValue] = React.useState(globalFilter);
+  const onChange = useAsyncDebounce(value => {
+    setGlobalFilter(value || undefined);
+  }, 200);
+
+  return (
+    <span>
+      Search:{" "}
+      <input
+        value={value || ""}
+        onChange={e => {
+          setValue(e.target.value);
+          onChange(e.target.value);
+        }}
+        placeholder={searchPlaceHolder}
+        style={{
+          font: "400 1rem Open Sans",
+          border: "1.5px solid white",
+          borderRadius: "4px",
+          width: "20rem"
+        }}
+      />
+    </span>
+  );
+}
+
+const Table = ({ columns, data, placeHolder }) => {
   // Use the state and functions returned from useTable to build the UI
   const {
     getTableProps,
@@ -15,10 +47,18 @@ const Table = ({ columns, data }) => {
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({
-    columns,
-    data,
-  });
+    state,
+    visibleColumns,
+    setGlobalFilter,
+  } = useTable(
+    {
+      columns,
+      data,
+    },
+    useFilters,
+    useGlobalFilter,
+    useSortBy
+  );
   
   // Render the UI for the table
   return (
@@ -28,10 +68,34 @@ const Table = ({ columns, data }) => {
           {headerGroups.map(headerGroup => (
             <tr key={"table-header"} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th key={column} {...column.getHeaderProps()}>{column.render("Header")}</th>
+                <th key={column} {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render("Header")}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? <AiOutlineCaretDown />
+                        : <AiOutlineCaretUp />
+                      : ""}
+                  </span>
+                </th>
               ))}
             </tr>
           ))}
+          <tr>
+            <th
+              colSpan={visibleColumns.length}
+              style={{
+                textAlign: "left",
+                padding: "0.5rem 0.75rem",
+              }}
+            >
+              <GlobalFilter
+                globalFilter={state.globalFilter}
+                setGlobalFilter={setGlobalFilter}
+                searchPlaceHolder={placeHolder}
+              />
+            </th>
+          </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
           {rows.map((row, i) => {

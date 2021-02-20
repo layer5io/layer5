@@ -53,7 +53,7 @@ function Functional() {
   const data = React.useMemo(() => meshes);
 
   return (
-    <Table columns={columns} data={data} />
+    <Table columns={columns} data={data} placeHolder="Find your mesh..." />
   );
 }
 
