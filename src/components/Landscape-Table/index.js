@@ -151,7 +151,7 @@ const Table = ({ columns, data, placeHolder }) => {
                   } else if(cell["value"] === "?"){
                     return <td {...cell.getCellProps()}>
                       <IconContext.Provider value={{color: "gray", size: "70%" }}>
-                        <IoMdHelpCircle />
+                        <IoMdHelpCircle className="Mark"/>
                       </IconContext.Provider>
                     </td>;
                   } else {
