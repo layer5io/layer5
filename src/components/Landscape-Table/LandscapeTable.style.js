@@ -20,6 +20,10 @@ table {
 		line-height: .9rem;
         font-weight: 400;
         border-bottom: 1px solid #efefef;
+		height: 4rem;
+		.Mark {
+			height: 1.5rem;
+		}
     }
     th {
         background: #1E2117;
