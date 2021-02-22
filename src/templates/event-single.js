@@ -8,6 +8,8 @@ import Layout from "../components/layout";
 import Navigation from "../sections/General/Navigation";
 import EventSingle from "../sections/Community/Event-single";
 import Footer from "../sections/General/Footer";
+import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
+import Subscribe from "../sections/subscribe/subscribe";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
@@ -52,6 +54,8 @@ const EventSinglePage = ({data}) => {
         <SEO title={`${data.mdx.frontmatter.title}`} />
         <Navigation />
         <EventSingle data={data}/>
+        <LearnServiceMeshCTA />
+        <Subscribe />
         <Footer />
       </Layout>
     </ThemeProvider>
