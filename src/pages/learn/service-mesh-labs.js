@@ -17,7 +17,6 @@ const ServiceMeshLabsPage = (props) => {
 
   useEffect(() => {
     if (props.location.state && props.location.state.selectedIndex){
-      console.log(props.location.state);
       setSelectedIndex(props.location.state.selectedIndex);
     }
   },[]);
