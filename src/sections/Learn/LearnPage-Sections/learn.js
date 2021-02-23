@@ -5,6 +5,7 @@ import Button from "../../../reusecore/Button";
 import {FaArrowRight} from "react-icons/fa";
 import Meshery_Logo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import OReillyLogo from "./OReilly_logo_rgb.svg";
+import {data} from "../Service-Mesh-Labs/courseData";
 import styled from "styled-components";
 
 const LearnSectionWrapper = styled.div`
@@ -201,30 +202,20 @@ const LearnSection = () => {
         <div className="learn-cards-section">
           <h2>Learn to Service Mesh through interactive labs</h2>
           <div className="cards-row">
-            <Col xs={12} sm={6}>
-              <a className="link" href="https://www.katacoda.com/layer5/courses/meshery-adapters/istio-meshery-adapter" target="_blank" rel="noreferrer">
-                <div className="learn-card">
-                  <h2>Working with Meshery and Istio</h2>
-                  <p>Learn how to run Meshery, install Istio and deploy a sample app</p>
-                  <div className="card-link">
-                    <h5>Start Scenario</h5>
-                    <FaArrowRight />
+            {data[0].scenarios.splice(0, 4).map(({subId, title, info, link}) => (
+              <Col xs={12} sm={6} lg={4} xl={3} key={subId}>
+                <Link className="link" to={link}>
+                  <div className="learn-card">
+                    <h2>{title}</h2>
+                    <p>{info}</p>
+                    <div className="card-link">
+                      <h5>Start Scenario</h5>
+                      <FaArrowRight />
+                    </div>
                   </div>
-                </div>
-              </a>
-            </Col>
-            <Col xs={12} sm={6}>
-              <a className="link" href="https://www.katacoda.com/layer5/courses/performance-testing-with-meshery/running-performance-tests" target="_blank" rel="noreferrer">
-                <div className="learn-card">
-                  <h2>Running performance tests using Meshery</h2>
-                  <p>Learn how to do performance testing with Meshery</p>
-                  <div className="card-link">
-                    <h5>Start Scenario</h5>
-                    <FaArrowRight />
-                  </div>
-                </div>
-              </a>
-            </Col>
+                </Link>
+              </Col>
+            ))}
           </div>
         </div>
       </div>
