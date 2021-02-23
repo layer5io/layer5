@@ -8,12 +8,11 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { data } from "./courseData";
 
 
-const ServiceMeshLabs = () => {
+const ServiceMeshLabs = ({selectedIndex, setSelectedIndex}) => {
 
   const [content, setContent] = useState(false);
   const [open, setOpen] = useState(false);
   const [ID, setID] = useState("");
-
 
   const toggleActive = (subId) => {
     if (open) {
@@ -38,10 +37,12 @@ const ServiceMeshLabs = () => {
   return (
     <LabsWrapper>
       <PageHeader title="Learn how to service mesh" subtitle="with interactive labs" />
-
       <div className="Labs-section-wrapper">
         <Container>
-          <Tabs className="course-tabs">
+          <Tabs className="course-tabs"
+            selectedIndex={selectedIndex}
+            onSelect={tabIndex => setSelectedIndex(tabIndex)}
+          >
             <TabList className="course-tab-list">
               {data.map(({ id, title }) => (
                 <Tab className="course-tab" key={id}>
