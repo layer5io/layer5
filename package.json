@@ -32,7 +32,7 @@
     "babel-plugin-styled-components": "^1.10.7",
     "dedent": "^0.7.0",
     "eslint": "^6.8.0",
-    "gatsby": "^2.24.78",
+    "gatsby": "^2.32.8",
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-anchor-links": "^1.1.0",
