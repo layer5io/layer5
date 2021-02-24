@@ -5,7 +5,8 @@ import Terminal from "../../../components/Terminal";
 import Features from "../../../components/Features-carousel";
 
 const MesheryFeaturesWrapper = styled.div`
-    margin: 6.25rem auto;
+    margin: auto;
+    margin-top: 4rem;
     @media (max-width: 32rem){
         margin-top: 10rem;
     }
@@ -41,14 +42,14 @@ const MesheryFeatures = () => {
               ),
             },
             {
-              title: "WebAssembly Filters for Envoy",
+              title: "Adaptive WebAssembly Filters for Envoy",
               description:
-                "Execute a command in the context of a running application",
+                "Dynamically offload application infrastructure logic.",
               learnMoreLink: "/projects/image-hub",
               content: (
                 <img
                   src={require("./feature-images/meshery-wasm.png")}
-                  alt="WebAssembly Filters for Envoy"
+                  alt="Adaptive WebAssembly Filters for Envoy"
                 />
               ),
             },
