@@ -135,8 +135,9 @@ const Projects = () => {
                   <div className="circle">
                     <img src={cpu} />
                   </div>
-                  <h2>INFRASTRUCTURE</h2>
-                  <p>Sitting atop our payments platform are applications to manage revenue, prevent fraud, and expand internationally.</p>
+                  <h2>SCHEDULING AND ANALYSIS</h2>
+                  <p>GetNighthawk integrates with <Link to="/meshery">Meshery</Link> and provides you with the ability to schedule performance tests or insert them into your CI pipeline.</p>
+                  <p>Adapative analysis in which you may run multi-stage performance tests and persist their results in a historical archive is also enabled through integration with Meshery.</p>
                 </div>
               </Col>
             </Row>
@@ -147,7 +148,7 @@ const Projects = () => {
           <Row>
             <Col lg={6} md={6} sm={12}>
               <div className="text">
-                <h2>What Is The Purpose Of<br />GetNighthawk</h2>
+                <h2>Standards-based, distributed performance management</h2>
                 <p>GetNighthawk will provide generally-available distributions of Nighthawk under different architectures and platforms and easy-to-use tooling for installation and operation. This will include creating distributions of Nighthawk as well as augmenting existing tooling, Meshery, to retrieve these arch-specific packages and update their deployments.</p>
               </div>
               <img src={explain4} />
