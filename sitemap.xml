@@ -15,11 +15,11 @@
 <url> <loc>https://layer5.io/blog/meshery/deploying-linkerd-with-meshery</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/meshery/getting-started-with-mesheryctl</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/announcements/meshery-lands-in-the-cncf-landscape</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/blog/programs/google-summer-of-code-2020-service-mesh-performance-with-envoy-nighthawk</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/programs/starting-smi-conformance-testing-with-meshery</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/community/my-meshy-journey</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/programs/communitybridge-2020-teaching-service-meshes-to-be-compliant</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/community/growing-as-an-open-source-contributor-with-layer5</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/blog/programs/google-summer-of-code-2020-service-mesh-performance-with-envoy-nighthawk</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/istio/service-mesh-istio-patterns-for-multitenancy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/community/how-i-schooled-my-seniors</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/announcements/announcing-meshery-v040</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -103,8 +103,8 @@
 <url> <loc>https://layer5.io/community/events/meshery-the-service-mesh-management-plane-kudo-kubernetes-operators-the-ea</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/oreilly-infrastructure-ops</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/open-infrastructure-summit-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/community/events/oreilly-oscon-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/securing-the-mesh</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/events/oreilly-oscon-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/service-meshes-but-at-what-cost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/servicemeshcon-na-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/programs/communitybridge</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -208,6 +208,7 @@
 <url> <loc>https://layer5.io/community/members/vineeth-reddy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/will-calcote</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/will-tamagi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/members/yash-pandey</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-workshops/dockercon-eu-2018</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-workshops/dockercon-na-2018</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-workshops/kubecon-na-2018</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
