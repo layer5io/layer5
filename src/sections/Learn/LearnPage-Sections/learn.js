@@ -202,19 +202,21 @@ const LearnSection = () => {
         <div className="learn-cards-section">
           <h2>Learn to Service Mesh through interactive labs</h2>
           <div className="cards-row">
-            {data[0].scenarios.splice(0, 4).map(({subId, title, info, link}) => (
-              <Col xs={12} sm={6} lg={4} xl={3} key={subId}>
-                <Link className="link" to={link}>
-                  <div className="learn-card">
-                    <h2>{title}</h2>
-                    <p>{info}</p>
-                    <div className="card-link">
-                      <h5>Start Scenario</h5>
-                      <FaArrowRight />
+            {data[0].scenarios.map(({subId, title, info, link}, index) => (
+              index < 4 && (
+                <Col xs={12} sm={6} lg={4} xl={3} key={subId}>
+                  <Link className="link" to={link}>
+                    <div className="learn-card">
+                      <h2>{title}</h2>
+                      <p>{info}</p>
+                      <div className="card-link">
+                        <h5>Start Scenario</h5>
+                        <FaArrowRight />
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </Col>
+                  </Link>
+                </Col>
+              )
             ))}
           </div>
         </div>
