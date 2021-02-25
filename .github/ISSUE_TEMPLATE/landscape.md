@@ -11,7 +11,7 @@ assignees: ''
 
 ---
 **Contributor Resources**
-- [Instructions for updating the landscape](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#updating-the-service-mesh-landscape)Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).
-
-The layer5.io website uses Gatsby, Strapi, and GitHub Pages. Site content is found under the [`layer5-ng` branch](https://github.com/layer5io/layer5/tree/layer5-ng).
-- See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
+- [Instructions for updating the landscape](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#updating-the-service-mesh-landscape)
+The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).
+- See [`master` contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
+- See Layer5 site designs in this [Figma project](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs).
