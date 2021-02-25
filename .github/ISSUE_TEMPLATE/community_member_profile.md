@@ -6,12 +6,12 @@ labels: 'area/community'
 assignees: ''
 ---
 
-**Current Behaviour**
+**Current Behavior**
 
 <@github-username> has been a consistent contributor and community member.
 
 **Desired Situation**
-Let's recognizing <@github-username> as a contributor and community member by creating a profile on https://layer5.io/community/members.
+Let's recognize <@github-username> as a contributor and community member by creating a profile on https://layer5.io/community/members.
 
 - GitHub: <!-- username only -->
 - Twitter: <!-- handle only -->
