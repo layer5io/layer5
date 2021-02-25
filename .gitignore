@@ -76,3 +76,5 @@ yarn-error.log
 
 #IDE Files
 .vscode
+
+default.profraw
