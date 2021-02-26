@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-  build-and-deploy:
+  build-deploy-preview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -19,8 +19,10 @@ jobs:
 
       - name: Deploy and Preview 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
+        env:
+          PR_NUMBER: ${{ github.event.number }}
         with:
-          repository-name: "layer5labs/layer5"
+          repository-name: "layer5labs/layer5/{PR_NUMBER}"
           branch: site # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
           clean: true
