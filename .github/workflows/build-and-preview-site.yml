@@ -25,4 +25,3 @@ jobs:
           repository-name: "layer5labs/layer5/{PR_NUMBER}"
           branch: site # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
-          clean: true
