@@ -18,7 +18,7 @@ const Counters = () => {
           </Col>
           <Col xs={12} sm={6} lg={6}>
             <div className="counter__item">
-              <Counter end={1111} suffix="+" />
+              <Counter end={1111} duration={2.25} suffix="+" />
               <p>Performance Tests run</p>
             </div>
           </Col>

@@ -35,7 +35,6 @@ const Gnhwrapper = styled.section`
         padding-top: 5rem;
         text-align: center;
         p {
-            font-size: 24px;
             color: ${props => props.theme.tertiaryColor};
             padding: 0px 3.125rem;
         }
@@ -71,7 +70,6 @@ const Gnhwrapper = styled.section`
                 border-radius: 25px;
                 p {
                     text-align: left;
-                    font-size: 18px;
                     padding: 0px 0px;
                     letter-spacing: 0;
                 }
@@ -107,7 +105,7 @@ const Gnhwrapper = styled.section`
             }
             p{
                 color: ${props => props.theme.tertiaryColor};
-                font-size: 18px;
+                
             }
         }
         img{
@@ -126,7 +124,7 @@ const Gnhwrapper = styled.section`
 
         .text{
           h2{
-              font-size: 40px;
+              font-size: 2rem;
               font-weight: 700;
               padding: 1.25rem 0px;
           }

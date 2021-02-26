@@ -86,6 +86,19 @@ It is an easy-to-use, service mesh and SMI-specific tool to give service mesh pr
 </p>
 <br />
 <p style="clear:both;">
+<h2><a href="https://layer5.io/smi">GetNightHawk </a></h2>
+<a href="https://getnighthawk.dev/"><img src=".github/assets/images/layer5/5-light-bg.png"
+style="margin:10px;" width="125px"
+alt="Layer5" align="left" /></a>
+<a href="https://getnighthawk.dev/">Nighthawk</a> is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++.
+<br>
+Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance
+<br>
+of service meshes and their workloads.
+<br /><br /><br />
+</p>
+<br />
+<p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributing</a></h1>
 <p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 </p>

@@ -43,16 +43,16 @@ const FeaturesSection = () => {
         </div> */}
         <div className="section-header">
           <h2>It's meshy out there.</h2>
-          <h1>Get the <span>most out</span> of your service mesh</h1> 
+          <h1>Get the <span>most out</span> of your service mesh</h1>
           {/* <h1>
             <span>Meshery</span> supports the most service meshes.
           </h1> */}
-          {/* <p>
-						No matter what service mesh you choose, Meshery works.
-          </p> */}
+          <p>
+            No matter what service mesh you choose, Meshery works.
+          </p>
         </div>
         <div className="smp-section">
-          <h4>No matter what service mesh you use, Meshery just works.</h4>
+          {/* <h4>No matter what service mesh you use, Meshery just works.</h4> */}
           <Row className="smp-section-row">
             <Col xs={12} xl={4} className="smp-section-data">
               <h3>The Performance Yardstick</h3>

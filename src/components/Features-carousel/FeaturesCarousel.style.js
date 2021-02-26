@@ -71,8 +71,8 @@ export const FeaturesWrapper = styled.div`
       border-color: ${props => props.theme.secondaryColor};
       padding: 3rem 2.75rem 2rem 2.75rem;
       @media (min-width: 768px){
-        border-color: ${props => props.theme.tertiaryColorTwo};
-        background-color: ${props => props.theme.tertiaryColorTwo};
+        border-color: ${props => props.theme.black};
+        background-color: ${props => props.theme.black};
         border-radius: 20px;
       }
       
