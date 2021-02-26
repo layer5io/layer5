@@ -12,13 +12,14 @@ import smi from "../../../assets/images/app/projects/smi.svg";
 import imagehub from "../../../assets/images/image-hub/layer5-image-hub.png";
 import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import distributedPerformance from "../../../collections/projects/distributed-performance-management/distributed-performance_green.svg";
+import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
 import ContactFormModal from "../../../components/Contact-Modal";
 
 const ProjectPage = () => {
   return (
     <ProjectWrapper>
       <PageHeader className="title" title="Cloud Native Management" path="/projects" />
-      <h3>for the fifth layer of distributed systems</h3>
+      <h3>for the <img src={L5gray} alt="Layer 5 icon"/>th layer of distributed systems</h3>
       <div className="project-page-wrapper">
         <Container>
           <div className="project__grid">
