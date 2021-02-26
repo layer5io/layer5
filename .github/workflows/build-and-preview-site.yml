@@ -23,6 +23,7 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
         with:
           repository-name: "layer5labs/layer5"
+          token: ${{ secrets.PAT_FOR_PREVIEW }}
           branch: site{PR_NUMBER} # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
           clean: false
