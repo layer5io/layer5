@@ -117,8 +117,8 @@
 <url> <loc>https://layer5.io/programs/gsod/2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/programs/hacktoberfest/2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/programs/mlh/2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/careers/digital-marketing-internship</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/careers/software-engineer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/careers/digital-marketing-internship</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/careers/software-engineer-internship</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/careers/ui-engineer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/careers/ui-visual-designer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -138,7 +138,6 @@
 <url> <loc>https://layer5.io/community/members/ant-weiss</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/ashis-kumar-singh</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/augustine-ogiza</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/community/members/bart-kalanski</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/chinmay-mehta</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/chris-mazur</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/dev-kalra</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -149,6 +148,7 @@
 <url> <loc>https://layer5.io/community/members/girish-ranganathan</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/gunjan-paul</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/haim-helman</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/members/bart-kalanski</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/harshini-mohandass</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/harshita-kanal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/hussaina-begum</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -225,7 +225,6 @@
 <url> <loc>https://layer5.io/learn/service-mesh-workshops/infrastructure-ops-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-workshops/oscon-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-workshops/service-mesh-fundamentals-with-linkerd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/learn/service-mesh-workshops/introduction-to-istio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-workshops/advanced-istio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-workshops/istiocon-using-istio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-labs/running-performance-tests</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
