@@ -1,0 +1,9 @@
+---
+name: shubhank-saxena
+position: Contributor
+image_path: /assets/images/community/members/shubhank-saxena.jpeg
+GitHub: shubhank-saxena
+Twitter: 19_saxena
+LinkedIn: shubhank-saxena
+bio: I am an electronics student who is always looking for opportunities to learn something new and grow. I have a goal of helping differentially abled people with my tech and innovation. I have experience with OSS contributions and wearable hardware devices.
+---
