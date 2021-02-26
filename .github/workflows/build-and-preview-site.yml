@@ -24,6 +24,8 @@ jobs:
         with:
           repository-name: "layer5labs/layer5"
           token: ${{ secrets.PAT_FOR_PREVIEW }}
+          git-config-name: "Nikhil-Ladha"
           branch: site{PR_NUMBER} # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
+          target-folder: preview{PR_NUMBER}
           clean: false
