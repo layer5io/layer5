@@ -60,30 +60,49 @@ The two new adapters with the latest version of Meshery released
       * It can be implemented by anyone or any organization that wishes to integrate with Meshery
 
 
+### MeshKit
+
+* <a href="https://github.com/layer5io/meshkit">MeshKit toolkit</a> aims to specifically focus on service mesh management and provides broadly useful functionality, 
+it provides a standard policy for error handling and logging across all Meshery components, and implementations for error handling, logging, and tracing.
+* MeshKit provides common data models of Service Mesh Interface conformance testing for Meshery.
+* The low-level API abstract by MeshKit to the high-level functions provides out-of-the-box functions.
+
+
+### Meshery Adapter library
+
+* <a href="https://github.com/layer5io/meshery-adapter-library">Meshery Adapter Library</a> provides a common and consistent set of functionality
+for managing the lifecycle of service meshes and their workloads.
+* The library provides a set of interfaces, some with default implementations like a mini framework implementing the gRPC server 
+that allows plugging in the mesh-specific configuration and operations implemented in the adapters.
+* The default configuration provider we use Viper to reads the adapter specific configuration, and the configuration providers are implementations of an interface,
+this can be flexible if anyone wants to implement it on their own.
+
+
 ### MeshSync
 
 * MeshSync is one of a family of custom controllers within Meshery Operator.
 * We released it to a new project, welcome to contribute <a href="https://github.com/layer5io/meshsync">MeshSync</a>
+* It provides ability to detect service meshes and services deployed on the cluster, and snapshot stored in-memory and refreshed periodically; 
+maintain the local snapshot of the cluster and refreshed periodically.
+* These abilities above help Meshery operations more resilient.
 
 
 ### Meshery Operator
 
- * We add new broker to meshery-operator <a href="https://github.com/layer5io/meshery-operator/pull/97">PR #97</a>
-   * Need more information
-
- * We split the source code of MeshSync from Meshery Operator  <a href="https://github.com/layer5io/meshery-operator/issues/88"> issue #88</a>
-
+* We add new broker to meshery-operator <a href="https://github.com/layer5io/meshery-operator/pull/97">PR #97</a>
+* We split the source code of MeshSync from Meshery Operator  <a href="https://github.com/layer5io/meshery-operator/issues/88"> issue #88</a>
+* Meshery Operator is provides abilities includes cluster discovery, service-mesh discovery and data streaming via NATS.
 
 ### GraphQL
 
-  * We added <a href="https://docs.meshery.io/concepts/architecture#meshery-operator-and-meshsync">GraphQL instances</a> between Meshery UI and Meshery Server 
-  to gives UI the power to ask for exactly what they need from mesh stage cache and preparing for more exciting features.
+* We added <a href="https://docs.meshery.io/concepts/architecture#meshery-operator-and-meshsync">GraphQL instances</a> between Meshery UI and Meshery Server 
+to gives UI the power to ask for exactly what they need from mesh stage cache and preparing for more exciting features.
 
 
 ### Meshery Databases
 
-  * <a href="https://docs.meshery.io/concepts/architecture/database">Meshery databases</a> as repositories for MeshSync, user preferences, system settings, 
-  can be considered ephemeral and treated as caches. Now we have been supported several kinds of databases for different use cases.
+* <a href="https://docs.meshery.io/concepts/architecture/database">Meshery databases</a> as repositories for MeshSync, user preferences, system settings, 
+can be considered ephemeral and treated as caches. Now we have been supported several kinds of databases for different use cases.
 
 
 ### Other notable changes
