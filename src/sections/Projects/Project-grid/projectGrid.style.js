@@ -2,14 +2,17 @@ import styled from "styled-components";
 export const ProjectWrapper = styled.div`
     padding-bottom: 5rem;
     h3{
-            
-            color: ${props => props.theme.primaryLightColor};
-            margin: 0px;
-            padding: 0px;
-            font-weight: 500;
-            text-align:center;
-
+        color: ${props => props.theme.primaryLightColor};
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+        text-align:center;
+        img{
+          width: 3rem;
+          position: relative;
+          top: 10px;
         }
+    }
     .title{
         margin: 0px;
             padding: 0px;
