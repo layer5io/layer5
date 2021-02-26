@@ -22,7 +22,7 @@ jobs:
         env:
           PR_NUMBER: ${{ github.event.number }}
         with:
-          repository-name: "layer5labs/layer5/{PR_NUMBER}"
+          repository-name: "layer5labs/layer5"
           branch: site{PR_NUMBER} # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
           clean: false
