@@ -21,12 +21,9 @@ jobs:
 
       - name: Deploy and Preview 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
-        env:
-          PR_NUMBER: ${{ github.event.number }}
         with:
           repository-name: "layer5labs/layer5"
-          token: ${{ secrets.PAT_FOR_PREVIEW }}
-          # git-config-email: 'nikhilladha1999@gmail.com'
+          ssh-key: true
           branch: site${{ github.event.number }} # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
           target-folder: preview${{ github.event.number }}
