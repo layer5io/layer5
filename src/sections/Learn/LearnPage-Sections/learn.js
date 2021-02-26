@@ -83,7 +83,7 @@ const LearnSectionWrapper = styled.div`
           }
           
           img{
-            margin: 3rem 0;
+            margin-top: 3rem;
             opacity: 0.5;
           }
         }
