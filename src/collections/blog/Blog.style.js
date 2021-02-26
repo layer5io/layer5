@@ -151,4 +151,40 @@ export const BlogWrapper = styled.div`
       padding-top:15px;
       width:28%;
     }
+    img.right {
+        width: 25%;
+        display: inline;
+        position: relative;
+        float: right;
+    }
+    img.left {
+        width: 25%;
+        display: inline;
+        position: relative;
+        float: left;
+    }
+    div.intro {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        font-style: italic;
+        font-size: .8rem;
+        border-top: 1px dashed ${props => props.theme.primaryLightColor};
+        border-bottom: 1px dashed ${props => props.theme.primaryLightColor};
+        margin-bottom: 1rem;
+        padding-top: 1rem;
+        background-color: ${props => props.theme.secondaryLightColorTwo};
+        span {
+            font-style: normal;
+        }
+    }
+    a {
+        color: ${props => props.theme.primaryColor};
+        background-color: #eeeeee;
+        border-radius: 8px;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        &:hover {
+            color: ${props => props.theme.keppelColor}; 
+        }
+    }
 `;
