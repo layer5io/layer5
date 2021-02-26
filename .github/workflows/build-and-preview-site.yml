@@ -11,9 +11,6 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
-        with:
-          repository: 'layer5labs/layer5'
-          persist-credentials: 'false'
 
       - name: Install and Build 🔧 
         run: |
@@ -26,8 +23,8 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
         with:
           repository-name: "layer5labs/layer5"
-          # token: ${{ secrets.PAT_FOR_PREVIEW }}
-          branch: site{{$PR_NUMBER}} # The branch the action should deploy to.
+          token: ${{ secrets.PAT_FOR_PREVIEW }}
+          branch: site${{ github.event.number }} # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
-          target-folder: preview{{$PR_NUMBER}}
+          target-folder: preview${{ github.event.number }}
           clean: false
