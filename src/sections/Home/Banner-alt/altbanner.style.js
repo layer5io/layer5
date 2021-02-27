@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
-import Ellipse from "./assets/Group.svg";
+import Ellipse from "./assets/images/Group.svg";
 import Layer5Icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
-const BannerSectionWrapper = styled.section`
+const AltBannerSectionWrapper = styled.section`
     padding: 7rem 0;
 
-    background: url(${Layer5Icon}) no-repeat, url(${Ellipse}) no repeat;
+    background-image: url(${Layer5Icon}), url(${Ellipse});
+    background-repeat: no-repeat, no-repeat;
+
     background-size: 25%, 23%;
     background-color: #F3FFFD;
     background-position: center right 160px, bottom right;
@@ -165,4 +167,4 @@ const BannerSectionWrapper = styled.section`
      
 `;
 
-export default BannerSectionWrapper;
+export default AltBannerSectionWrapper;
