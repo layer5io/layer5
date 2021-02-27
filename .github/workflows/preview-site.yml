@@ -1,8 +1,10 @@
 name: Deploy to Netlify
 on:
-  pull_request:
-    branches: [ master ]
-    types: [opened, synchronize, edited, reopened]
+  workflow_run:
+    workflows:
+      - Preview Site Wrapper
+    types:
+      - completed
 
 jobs:
   deploy:
@@ -10,6 +12,13 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
 
       - name: Install dependencies
         run: npm install
@@ -32,7 +41,7 @@ jobs:
       - name: Netlify Preview URL
         uses: unsplash/comment-on-pr@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OUTPUT: "This pull request is being automatically deployed to Netlify.\n\n🔍 Inspect: ${{ steps.deploy-netlify.outputs.NETLIFY_LOGS_URL }}\n✅ Preview: ${{ steps.deploy-netlify.outputs.NETLIFY_URL }}"
         with:
           msg: ${{ env.OUTPUT }}
