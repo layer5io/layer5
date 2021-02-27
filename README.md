@@ -79,9 +79,7 @@ alt="Layer5" align="left" /></a>
 <a href="https://layer5.io/smi"><img src=".github/assets/images/smi-conformance/checklist.svg"
 style="margin:10px;" width="125px"
 alt="Layer5" align="left" /></a>
-<a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification.
-<br>
-It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
+<a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification. It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
 <br /><br /><br />
 </p>
 <br />
@@ -90,11 +88,7 @@ It is an easy-to-use, service mesh and SMI-specific tool to give service mesh pr
 <a href="https://getnighthawk.dev/"><img src=".github/assets/images/layer5/5-light-bg.png"
 style="margin:10px;" width="125px"
 alt="Layer5" align="left" /></a>
-<a href="https://getnighthawk.dev/">Nighthawk</a> is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++.
-<br>
-Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance
-<br>
-of service meshes and their workloads.
+<a href="https://getnighthawk.dev/">Nighthawk</a> is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads.
 <br /><br /><br />
 </p>
 <br />
