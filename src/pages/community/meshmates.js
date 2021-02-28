@@ -7,6 +7,7 @@ import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
 import Meshmates from "../../sections/Community/Meshmates";
+import seoImage from "../../assets/images/meshmate/meshmate-icon.png";
 
 const MeshmatePage=() => {
   return (
@@ -14,7 +15,7 @@ const MeshmatePage=() => {
       <Layout>
         <GlobalStyle />
         <SEO title="Meshmates" description="MeshMates - the Layer5 contributor onboarding program. 
-    MeshMates is a collection of service mesh mentors." />
+    MeshMates is a collection of service mesh mentors." image={seoImage}/>
         <Navigation />
         <Meshmates />
         <Footer />
