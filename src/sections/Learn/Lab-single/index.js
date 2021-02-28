@@ -38,7 +38,7 @@ const LabSinglePage = ({ frontmatter, body }) => {
         <div className="join-community_text-and_button">
           <h1>Don't Learn Alone</h1>
           <p>Join other learners and cloud native engineers in the Layer5 community. Join us on Slack and learn with us.</p>
-          <Button primary title="Join Our Community" url="http://slack.layer5.io/" />
+          <Button primary title="Join Our Community" url="http://slack.layer5.io/" external={true}/>
         </div>
       </div>
     </LabSinglePageWrapper>

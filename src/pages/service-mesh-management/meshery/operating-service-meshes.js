@@ -12,13 +12,14 @@ import Footer from "../../../sections/General/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
+import seoimage from "../../../assets/images/meshery/full-logo/meshery-logo-dark-text.png";
 
 
 const OperatingServiceMeshes = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Meshery, Multi-Mesh Manager" description="How the service mesh management plane, Meshery works" />
+      <SEO title="Meshery, Multi-Mesh Manager" description="How the service mesh management plane, Meshery works" image={seoimage}/>
       <Navigation />
       <HowMesheryWorksHero />
       <HowMesheryWorks

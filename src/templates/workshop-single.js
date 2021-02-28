@@ -44,7 +44,7 @@ const WorkshopSingle = ({ data }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
+        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL}/>
         <Navigation />
         <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
         <Footer />

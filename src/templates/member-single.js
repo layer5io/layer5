@@ -44,7 +44,7 @@ const MemberSinglePage = ({data}) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.name} />
+        <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL}/>
         <Navigation />
         <MemberSingle frontmatter={data.mdx.frontmatter}/>
         <Footer />
