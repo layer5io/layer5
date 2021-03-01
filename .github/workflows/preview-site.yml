@@ -48,7 +48,6 @@
 #           check_for_duplicate_msg: false
 
 name: Deploy Preview
-
 on:
   workflow_run:
     workflows:
