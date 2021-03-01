@@ -22,6 +22,8 @@ jobs:
       - name: Deploy and Preview 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
+          git-config-name: l5io
+          git-config-email: l5io@layer5.io
           repository-name: "layer5io/preview-layer5"
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           branch: site # The branch the action should deploy to.
