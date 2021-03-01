@@ -21,7 +21,6 @@ jobs:
 
       - name: Deploy and Preview 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
-        run: git config -l
         with:
           git-config-name: l5io
           git-config-email: l5io@layer5.io
@@ -31,3 +30,5 @@ jobs:
           folder: public # The folder the action should deploy.
           target-folder: preview${{ github.event.number }}
           # clean: false
+        run: |
+          git config -l
