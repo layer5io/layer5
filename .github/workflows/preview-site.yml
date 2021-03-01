@@ -62,6 +62,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
 
       - name: Download Site dir
         uses: dawidd6/action-download-artifact@v2

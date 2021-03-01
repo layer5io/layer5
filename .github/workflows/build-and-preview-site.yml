@@ -19,7 +19,8 @@ jobs:
           npm install
           npm run build
 
-      - name: actions/upload-artifact@v2
+      - name: Upload files
+        uses: actions/upload-artifact@v2
         with:
           name: public-dir
           path: ./public
