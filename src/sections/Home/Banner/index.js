@@ -11,16 +11,14 @@ const Banner = () => {
   const [Banner, setBanner] = useState(0);
   useEffect(() => {
     if (sessionStorage.getItem("banner")) {
-      sessionStorage.setItem("banner", (1 + Number(Banner)) % Banners.length);
+      sessionStorage.setItem("banner", (1 ^ Number(Banner)));
     } else {
       sessionStorage.setItem("banner", 0);
     }
-  });
-  useEffect(() => {
     if (Banner != sessionStorage.getItem("banner")) {
       setBanner(sessionStorage.getItem("banner"));
     }
-  });
+  }, []);
   return (Banners[Banner]);
 };
 
