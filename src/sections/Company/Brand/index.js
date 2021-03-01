@@ -32,26 +32,29 @@ const getDimensions = ele => {
   };
 };
 
+// Functions to make scroll with speed control
+// Element to move, element or px from, element or px to, time in ms to animate
 const scrollTo = (element,duration=2000) => {
-  var e = document.documentElement;
-  if(e.scrollTop===0){
-    var t = e.scrollTop;
+  let e = document.documentElement;
+  if(e.scrollTop === 0){
+    let t = e.scrollTop;
     ++e.scrollTop;
-    e = t+1===e.scrollTop--?e:document.body;
+    e = t+1 === e.scrollTop-- ? e : document.body;
   }
   scrollToC(e, e.scrollTop, element, duration);
 };
 // Element to move, element or px from, element or px to, time in ms to animate
 const scrollToC = (element, from, to, duration) => {
   if (duration <= 0) return;
-  if(typeof from === "object")from=from.offsetTop;
-  if(typeof to === "object")to=to.offsetTop+580;
-
+  if(typeof from === "object")
+    from=from.offsetTop;
+  if(typeof to === "object")
+    to=to.offsetTop+580;
   scrollToX(element, from, to, 0, 1/duration, 20, easeOutCuaic);
 };
 
 const scrollToX = (element, xFrom, xTo, t01, speed, step, motion) => {
-  if (t01 < 0 || t01 > 1 || speed<= 0) {
+  if (t01 < 0 || t01 > 1 || speed <= 0) {
     element.scrollTop = xTo;
     return;
   }
