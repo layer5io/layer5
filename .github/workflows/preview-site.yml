@@ -73,6 +73,12 @@ jobs:
           run_id: ${{ github.event.workflow_run.id }}
           name: public-dir
 
+      - name: Unzip Site
+        run: |
+          rm -rf ./public
+          unzip public-dir.zip
+          rm -f public-dir.zip
+
       - name: Deploy and Preview 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
