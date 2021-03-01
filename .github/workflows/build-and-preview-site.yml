@@ -19,14 +19,19 @@ jobs:
           npm install
           npm run build
 
-      - name: Deploy and Preview 🚀
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+      - name: actions/upload-artifact@v2
         with:
-          git-config-name: Nikhil-Ladha
-          git-config-email: nikhilladha1999@gmail.com
-          repository-name: "layer5io/preview-layer5"
-          token: ${{ secrets.PREVIEW_TOKEN }}
-          branch: site # The branch the action should deploy to.
-          folder: public # The folder the action should deploy.
-          target-folder: preview${{ github.event.number }}
-          clean: false
+          name: public-dir
+          path: ./public
+      - name: Triger Inner workflow
+        run: echo "triger inner workflow"
+
+      # - name: Deploy and Preview 🚀
+      #   uses: JamesIves/github-pages-deploy-action@4.0.0
+      #   with:
+      #     repository-name: "layer5io/preview-layer5"
+      #     token: ${{ secrets.PREVIEW_TOKEN }}
+      #     branch: site # The branch the action should deploy to.
+      #     folder: public # The folder the action should deploy.
+      #     target-folder: preview${{ github.event.number }}
+      #     clean: false
