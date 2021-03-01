@@ -22,6 +22,7 @@ jobs:
       - name: Deploy and Preview 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
+          ssh-key: ${{ secrets.GH_ACCESS_TOKEN }}
           git-config-name: l5io
           git-config-email: l5io@layer5.io
           repository-name: "layer5io/preview-layer5"
@@ -30,5 +31,3 @@ jobs:
           folder: public # The folder the action should deploy.
           target-folder: preview${{ github.event.number }}
           # clean: false
-        run: |
-          git config -l
