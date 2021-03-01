@@ -58,7 +58,7 @@ on:
 
 jobs:
   run-deploy-preview:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.3.1
