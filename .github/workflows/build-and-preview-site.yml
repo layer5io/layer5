@@ -23,7 +23,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: public-dir
-          path: ./public
+          path: ./public/*
       - name: Triger Inner workflow
         run: echo "triger inner workflow"
 
