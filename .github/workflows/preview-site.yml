@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.3.1
-        with:
-          persist-credentials: false
 
       - name: Download Site dir
         uses: dawidd6/action-download-artifact@v2
@@ -37,4 +35,13 @@ jobs:
           branch: site # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
           target-folder: preview${{ github.event.number }}
-          clean: false
+          # clean: false
+
+      - name: Preview URL
+        uses: unsplash/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+          OUTPUT: "Preview link: https://layer5io.github.io/preview-layer5/${{ github.event.number }}"
+        with:
+          msg: ${{ env.OUTPUT }}
+          check_for_duplicate_msg: false
