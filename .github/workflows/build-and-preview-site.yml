@@ -14,10 +14,10 @@ jobs:
         with:
           persist-credentials: false
 
-      # - name: Install and Build 🔧 
-      #   run: |
-      #     npm install
-      #     npm run build
+      - name: Install and Build 🔧 
+        run: |
+          npm install
+          npm run build
 
       # - name: Zip Site
       #   run: bash ./script.sh
