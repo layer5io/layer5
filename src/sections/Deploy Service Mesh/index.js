@@ -63,7 +63,7 @@ const RangeSlider = memo(
 const ServiceMesh = () => {
   const submit = () => {
     setSubmit(true);
-    axios.post("https://hook.integromat.com/ksudhsgwo6fir2vqhvs4720oipdg9fyt", {
+    axios.post("https://hook.integromat.com/ndmru0l21n51mcw4dsbhc48xg1mzh1v5", {
       parentVal1,
       parentVal2,
       parentVal3,
@@ -73,12 +73,7 @@ const ServiceMesh = () => {
       parentVal7,
       parentVal8,
       email
-    })
-      .then((response) => {
-        console.log(response);
-      }, (error) => {
-        console.log(error);
-      });
+    });
   };
   const [parentVal1, setParentVal1] = useState(50);
   const [parentVal2, setParentVal2] = useState(50);
