@@ -33,7 +33,7 @@ jobs:
         with:
           publish-dir: 'public'
           production-deploy: false
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_ACCESS_TOKEN }}
           enable-commit-comment: false
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -42,7 +42,7 @@ jobs:
       - name: Comment Deploy URL
         uses: ./.github/actions/comment-preview-on-pr
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
           deploy_url: "${{ steps.netlify.outputs.deploy-url }}"
 
 
