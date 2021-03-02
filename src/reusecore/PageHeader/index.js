@@ -21,6 +21,7 @@ const authorField = (author, isSlugAvailable) => {
 
 const PageHeader = ({ category, title, subtitle,  author, thumbnail }) => {
   let isSlugAvailable = false;
+  console.log(category)
   if(author){
     const validMembers = useStaticQuery(
       graphql`
@@ -53,7 +54,11 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail }) => {
           <div className="breadcrumbs">
             <span>
               <h5>Category:</h5>
-              <p key={category}>{category}</p>
+              <p key={category}>
+                <Link to={`/blog/category/${slugify(category)}`}>
+                  <span>{category}</span>
+                </Link>
+              </p>
             </span>
             {author && (
               <>
