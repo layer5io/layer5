@@ -28,7 +28,7 @@ jobs:
       #     name: public-dir
       #     path: ./public-dir.zip
       - name: Triger Inner workflow
-        run: echo "triger inner workflow"
+        run: echo "trigering inner workflow"
 
       # - name: Deploy and Preview 🚀
       #   uses: JamesIves/github-pages-deploy-action@4.0.0
