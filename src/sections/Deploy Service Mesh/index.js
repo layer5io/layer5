@@ -63,7 +63,7 @@ const RangeSlider = memo(
 const ServiceMesh = () => {
   const submit = () => {
     setSubmit(true);
-    axios.post("https://layer5-291812-default-rtdb.firebaseio.com/form.json", {
+    axios.post("https://hook.integromat.com/ksudhsgwo6fir2vqhvs4720oipdg9fyt", {
       parentVal1,
       parentVal2,
       parentVal3,
