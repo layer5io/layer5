@@ -19,14 +19,14 @@ jobs:
           npm install
           npm run build
 
-      # - name: Zip Site
-      #   run: bash ./script.sh
+      - name: Zip Site
+        run: bash ./script.sh
 
-      # - name: Upload files
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: public-dir
-      #     path: ./public-dir.zip
+      - name: Upload files
+        uses: actions/upload-artifact@v2
+        with:
+          name: public-dir
+          path: ./public-dir.zip
       - name: Triger Inner workflow
         run: echo "trigering inner workflow"
 
