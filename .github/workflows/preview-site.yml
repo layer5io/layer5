@@ -27,39 +27,22 @@ jobs:
           unzip public-dir.zip
           rm -f public-dir.zip
 
-      - name: Preview deploy to Netlify
-        id: deploy-netlify
-        uses: netlify/actions/cli@master
+      - name: Deploy to Netlify
+        id: netlify
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: 'public'
+          production-deploy: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          enable-commit-comment: false
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Comment Deploy URL
+        uses: ./.github/actions/comment-preview-on-pr
         with:
-          args: deploy --dir=public
+          token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_url: "${{ steps.netlify.outputs.deploy-url }}"
 
-      - name: Netlify Preview URL
-        uses: unsplash/comment-on-pr@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN}}
-          OUTPUT: "This pull request is being automatically deployed to Netlify.\n\n🔍 Inspect: ${{ steps.deploy-netlify.outputs.NETLIFY_LOGS_URL }}\n✅ Preview: ${{ steps.deploy-netlify.outputs.NETLIFY_URL }}"
-        with:
-          msg: ${{ env.OUTPUT }}
-          check_for_duplicate_msg: false
 
-      # - name: Deploy and Preview 🚀
-      #   uses: JamesIves/github-pages-deploy-action@4.0.0
-      #   with:
-      #     repository-name: "layer5io/preview-layer5"
-      #     token: ${{ secrets.GH_ACCESS_TOKEN }}
-      #     branch: site # The branch the action should deploy to.
-      #     folder: public # The folder the action should deploy.
-      #     target-folder: preview${{ github.event.number }}
-      #     # clean: false
-
-      # - name: Preview URL
-      #   uses: unsplash/comment-on-pr@master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
-      #     OUTPUT: "${{ github.event }} ${{ github.ref }} Preview link: https://layer5io.github.io/preview-layer5/"
-      #   with:
-      #     msg: ${{ env.OUTPUT }}
-      #     check_for_duplicate_msg: false
