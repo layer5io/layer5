@@ -19,23 +19,13 @@ jobs:
           npm install
           npm run build
 
-      # - name: Zip Site
-      #   run: bash ./script.sh
+      - name: Zip Site
+        run: bash ./script.sh
 
-      # - name: Upload files
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: public-dir
-      #     path: ./public-dir.zip
+      - name: Upload files
+        uses: actions/upload-artifact@v2
+        with:
+          name: public-dir
+          path: ./public-dir.zip
       - name: Triger Inner workflow
-        run: echo "triger inner workflow"
-
-      # - name: Deploy and Preview 🚀
-      #   uses: JamesIves/github-pages-deploy-action@4.0.0
-      #   with:
-      #     repository-name: "layer5io/preview-layer5"
-      #     token: ${{ secrets.PREVIEW_TOKEN }}
-      #     branch: site # The branch the action should deploy to.
-      #     folder: public # The folder the action should deploy.
-      #     target-folder: preview${{ github.event.number }}
-      #     clean: false
+        run: echo "trigering inner workflow"
