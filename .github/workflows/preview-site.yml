@@ -15,26 +15,26 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Download Site dir
-        uses: dawidd6/action-download-artifact@v2
-        with:
-          github_token: ${{ secrets.GH_ACCESS_TOKEN }}
-          workflow: build-and-preview-site.yml
-          run_id: ${{ github.event.workflow_run.id }}
-          name: public-dir
+      # - name: Download Site dir
+      #   uses: dawidd6/action-download-artifact@v2
+      #   with:
+      #     github_token: ${{ secrets.GH_ACCESS_TOKEN }}
+      #     workflow: build-and-preview-site.yml
+      #     run_id: ${{ github.event.workflow_run.id }}
+      #     name: public-dir
 
-      - name: Unzip Site
-        run: |
-          rm -rf ./public
-          unzip public-dir.zip
-          rm -f public-dir.zip
+      # - name: Unzip Site
+      #   run: |
+      #     rm -rf ./public
+      #     unzip public-dir.zip
+      #     rm -f public-dir.zip
 
-      - name: Deploy and Preview 🚀
-        uses: JamesIves/github-pages-deploy-action@4.0.0
-        with:
-          repository-name: "layer5io/preview-layer5"
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          branch: site # The branch the action should deploy to.
-          folder: public # The folder the action should deploy.
-          target-folder: preview${{ github.event.number }}
-          # clean: false
+      # - name: Deploy and Preview 🚀
+      #   uses: JamesIves/github-pages-deploy-action@4.0.0
+      #   with:
+      #     repository-name: "layer5io/preview-layer5"
+      #     token: ${{ secrets.GH_ACCESS_TOKEN }}
+      #     branch: site # The branch the action should deploy to.
+      #     folder: public # The folder the action should deploy.
+      #     target-folder: preview${{ github.event.number }}
+      #     clean: false

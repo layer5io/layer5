@@ -14,19 +14,19 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install and Build 🔧 
-        run: |
-          npm install
-          npm run build
+      # - name: Install and Build 🔧 
+      #   run: |
+      #     npm install
+      #     npm run build
 
-      - name: Zip Site
-        run: bash ./script.sh
+      # - name: Zip Site
+      #   run: bash ./script.sh
 
-      - name: Upload files
-        uses: actions/upload-artifact@v2
-        with:
-          name: public-dir
-          path: ./public-dir.zip
+      # - name: Upload files
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: public-dir
+      #     path: ./public-dir.zip
       - name: Triger Inner workflow
         run: echo "triger inner workflow"
 
