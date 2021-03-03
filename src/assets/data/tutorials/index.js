@@ -75,7 +75,7 @@ const data = [
     },
     {
         date: "Jan. 28 2021",
-        topic: "Intro to Mesheryctl",
+        topic: "Beginner's guide to contributing to Meshery and mesheryctl",
         resources: {
             slides: "https://docs.google.com/presentation/d/1oUzWQpFeFbpIs_sejtOPbF9J4nigj9ziEAzoWxmm6ig/edit",
             recording: "https://youtu.be/hh_kFLZx3G4",
