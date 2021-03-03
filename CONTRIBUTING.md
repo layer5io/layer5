@@ -102,5 +102,5 @@ To ensure all your commits are signed, you may choose to add this alias to your 
 ```
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
-<a href="./.github/assets/images/git-signoff-vscode.png" ><img src="./assets/images/git-signoff-vscode.png" width="50%"/><a>
+<a href="./.github/assets/images/git-signoff-vscode.png" ><img src="./.github/assets/images/git-signoff-vscode.png" width="50%"/><a>
 
