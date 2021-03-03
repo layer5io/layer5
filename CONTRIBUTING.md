@@ -56,7 +56,7 @@ Please contribute! The Layer5-ng site uses Gatsby. The process of contributing t
 1. Get a local clone of your fork of the site.
 `git clone https://github.com/layer5io/layer5`
 1. Switch to the `layer5-ng` branch.
-`git checkout upstream/layer5-ng`
+`git checkout upstream/master`
 1. Create and checkout a new branch to make changes within
 `git checkout -b <my-username>/<my-changes>` 
 1. Edit site/add content.
