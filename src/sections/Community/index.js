@@ -13,7 +13,7 @@ import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 
 
 const CommunityPage = () => {
-
+ 
   return (
     <CommunitySectionWrapper>
       <div className="community-header">
