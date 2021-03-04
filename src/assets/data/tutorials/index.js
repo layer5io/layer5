@@ -70,6 +70,20 @@ const data = [
             {
                 link: "/community/members/tanuj-agarwal",
                 name: "Tanuj Agarwal"
+            },
+        ],
+    },
+    {
+        date: "Jan. 28 2021",
+        topic: "Beginner's guide to contributing to Meshery and mesheryctl",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1oUzWQpFeFbpIs_sejtOPbF9J4nigj9ziEAzoWxmm6ig/edit",
+            recording: "https://youtu.be/hh_kFLZx3G4",
+        },
+        presenters: [
+            {
+                link: "/community/members/navendu-pottekkat",
+                name: "Navendu Pottekkat",
             }
         ]
     },
