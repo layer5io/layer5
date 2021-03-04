@@ -71,7 +71,7 @@ const AltBannerSectionWrapper = styled.section`
     }
     @media only screen and (max-width: 912px) {
         padding: 3rem 0;
-        background-position: center right 50px;
+        background-position: center right 50px, bottom right;
         background-size: 25%;
 
         p {
@@ -102,7 +102,7 @@ const AltBannerSectionWrapper = styled.section`
      }
      @media only screen and (max-width: 760px) {
         padding: 2rem 0;
-        background-position: bottom 100px right 10px;
+        background-position: bottom 100px right 10px, bottom right;
         background-size: 25%;
  
         .section-title { 
@@ -116,8 +116,8 @@ const AltBannerSectionWrapper = styled.section`
      }
      @media only screen and (max-width: 480px) {
         padding: 2rem 0;
-        background-position: bottom 200px right 20px;
-        background-size: 25%;
+        background-position: bottom 230px right 20px, bottom 180px right;
+        background-size: 20%;
 
         .section-title{
             h1 {
@@ -138,7 +138,7 @@ const AltBannerSectionWrapper = styled.section`
 			}
 		 }
      @media only screen and (max-width: 380px) {
-        background-position: bottom 100px right 20px;
+        background-position: bottom 200px right 20px, bottom 150px right;
         background-size: 25%;
         .section-title{
             h1 {
@@ -157,6 +157,8 @@ const AltBannerSectionWrapper = styled.section`
         } */
      }
      @media only screen and (max-width: 330px) {
+        background-position: bottom 250px right 20px, bottom 220px right;
+        background-size: 20%;
         .section-title{
             h1 {
                 font-size: 23px;

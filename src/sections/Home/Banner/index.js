@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
 import BannerDefault from "../Banner-default";
-import BannerAlt from "../Banner-alt"; 
+import BannerAlt from "../Banner-alt";
 
-const Banners = [
+const BannersList = [
   <BannerDefault key={0} />,
-  <BannerAlt key={1}/> 
+  <BannerAlt key={1} /> 
 ];
 
-const Banner = () => {
-  const [Banner, setBanner] = useState(0);
+const RotationalBanner = () => {
+  let initialValue;
+  try {
+    initialValue = sessionStorage.getItem("banner") || 0;
+  } catch (e) {
+    initialValue = 0;
+  }
+  const [Banner, setBanner] = useState(initialValue);
   useEffect(() => {
     if (sessionStorage.getItem("banner")) {
       sessionStorage.setItem("banner", (1 ^ Number(Banner)));
     } else {
-      sessionStorage.setItem("banner", 0);
+      sessionStorage.setItem("banner", 1);
     }
-    if (Banner != sessionStorage.getItem("banner")) {
-      setBanner(sessionStorage.getItem("banner"));
-    }
-  }, []);
-  return (Banners[Banner]);
+  });
+  return (BannersList[Banner]);
 };
 
-export default Banner;
+export default RotationalBanner;
