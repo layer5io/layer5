@@ -5,8 +5,7 @@ import Button from "../../../reusecore/Button";
 
 const JoinCommunityWrapper = styled.div`
     .join-community{
-        width: 50rem;
-        max-width: 100%;
+        max-width: 70rem;
         height: 25rem;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props => props.image});
         background-size: cover;

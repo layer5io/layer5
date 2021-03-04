@@ -4,6 +4,7 @@ import SoSpecialWrapper from "./so-special-style";
 
 import Button from "../../../reusecore/Button";
 import { graphql, useStaticQuery } from "gatsby";
+import Image from "../../../components/image";
 
 const SoSpecial = () => {
   const data = useStaticQuery(
@@ -12,6 +13,7 @@ const SoSpecial = () => {
                 allMdx(
                     filter: { fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } } }
                     sort: { fields: [frontmatter___date], order: ASC }
+                    limit: 8
                 ) 
                 {
                     nodes {
@@ -22,7 +24,7 @@ const SoSpecial = () => {
                             eurl
                             thumbnail{
                               childImageSharp{
-                                fluid(maxWidth: 300, maxHeight: 300){
+                                fluid(maxWidth: 1000){
                                     ...GatsbyImageSharpFluid_withWebp
                                 }
                               }
@@ -39,26 +41,26 @@ const SoSpecial = () => {
             }
         `
   );
-  var settings = {
+  const settings = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 2.5,
     swipeToSlide:true,
-    
+
     responsive: [
       {
         breakpoint: 1200,
         settings: {
           slidesToShow: 2.2,
-          
+
         }
       },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          
+
         }
       },
       {
@@ -72,6 +74,8 @@ const SoSpecial = () => {
       {
         breakpoint: 600,
         settings: {
+          dots: true,
+          arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1
@@ -80,6 +84,8 @@ const SoSpecial = () => {
       {
         breakpoint: 400,
         settings: {
+          dots: true,
+          arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1
         }
@@ -99,20 +105,24 @@ const SoSpecial = () => {
               <Button className="special-cont_btn" url={fields.slug} key={id}>
                 <div id="special-cont" >
                   <div id="special-cont_img">
-                    <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
+                    <Image
+                      {...frontmatter.thumbnail}
+                      imgStyle={{ objectFit: "contain" }}
+                      alt={frontmatter.title}
+                    />
                   </div>
                   <div id="special-cont_content">
-                    <p className="special-cont_para">{frontmatter.title}</p>        
+                    <p className="special-cont_para">{frontmatter.title}</p>
                   </div>
                 </div>
               </Button>
-            ))}   
+            ))}
         </Slider>
       </div>
       <div className="so-special-foot">
         <h5>Layer5 provides cloud native management for monoliths and</h5>
         <h5>microservices alike.</h5>
-        <Button className="so-special-foot-btn" primary url="/projects" title="Our Projects"></Button>
+        <Button className="so-special-foot-btn" primary url="/projects" title="Our Projects"/>
       </div>
     </SoSpecialWrapper>
   );

@@ -43,7 +43,8 @@ const CommunitySectionWrapper = styled.div`
     }
 
     .open-source-projects{
-        margin-top: 3rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
         text-align: center;
 
         h2{
@@ -89,11 +90,12 @@ const CommunitySectionWrapper = styled.div`
                 margin: 2.5rem auto;
             }
             h3{
-                margin: 1.5rem auto 1.5rem auto;
+                margin: 0.5rem auto 0.5rem auto;
                 color: white;
             }
             h1{
                 color: white;
+                margin: 1rem auto 1rem auto;
             }
             button{
                 margin-top: 2.5rem;
@@ -108,8 +110,10 @@ const CommunitySectionWrapper = styled.div`
         margin-top: 5rem;
         .content{
             h3{
-                margin: 1.5rem auto 1.5rem auto;
-
+                margin: 0.5rem auto 0.5rem auto;
+            }
+            h1{
+                margin: 1rem auto 1rem auto;
             }
             @media (max-width: 62rem) {
               text-align:center;
@@ -147,7 +151,7 @@ const CommunitySectionWrapper = styled.div`
               display: flex;
               margin: auto;
             }
-            
+
             @media (max-width: 36rem) {
                h3{
                   font-size: 18px;
