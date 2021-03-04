@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import BannerDefault from "../Banner-default";
 // import BannerAlt from "../Banner-alt";
 
-const Banners = [
+const BannersList = [
   <BannerDefault key={0} />,
   // <BannerAlt key={1} /> 
 ];
 
-const Banner = () => {
+const RotationalBanner = () => {
   let initialValue;
   try {
     initialValue = sessionStorage.getItem("banner") || 0;
@@ -17,12 +17,12 @@ const Banner = () => {
   const [Banner, setBanner] = useState(initialValue);
   useEffect(() => {
     if (sessionStorage.getItem("banner")) {
-      sessionStorage.setItem("banner", (1 + Number(Banner)) % Banners.length);
+      sessionStorage.setItem("banner", (1 + Number(Banner)) % BannersList.length);
     } else {
       sessionStorage.setItem("banner", 1);
     }
   });
-  return (Banners[Banner]);
+  return (BannersList[Banner]);
 };
 
-export default Banner;
+export default RotationalBanner;
