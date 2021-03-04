@@ -17,7 +17,7 @@ const RotationalBanner = () => {
   const [Banner, setBanner] = useState(initialValue);
   useEffect(() => {
     if (sessionStorage.getItem("banner")) {
-      sessionStorage.setItem("banner", (1 ^ Number(Banner)));
+      sessionStorage.setItem("banner", (1 + Number(Banner)) % BannersList.length);
     } else {
       sessionStorage.setItem("banner", 1);
     }
