@@ -80,10 +80,7 @@ const ProjectPage = () => {
             </Link>
           </div>
 
-          <CommunityCallCard
-            callout_text="Join community"
-            form_header="Get In Touch"
-          />
+          <CommunityCallCard />
         </Container>
       </div>
     </ProjectWrapper>
