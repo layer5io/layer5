@@ -296,7 +296,9 @@ const DeployServiceMeshWrapper = styled.div`
               width: 200px;
               height: 48px;
               padding: 15px;
-              margin-right: 10px;
+              margin: 5px;
+              border-radius: 5px;
+              font-size: 15px;
           }
           #arrow-btn{
               width: 60px;

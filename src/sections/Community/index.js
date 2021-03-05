@@ -13,7 +13,7 @@ import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 
 
 const CommunityPage = () => {
-
+ 
   return (
     <CommunitySectionWrapper>
       <div className="community-header">
@@ -49,8 +49,8 @@ const CommunityPage = () => {
         <div className="our-community-members">
           <Row className="our-community-members_row">
             <Col className="community" sm={12} lg={6}>
-              <h1>Our Community Members</h1>
               <h3>Jump in. The community is warm!</h3>
+              <h1>Our Community Members</h1>
               <p>
                 With active members from around the globe, the Layer5 community is a collection of diverse open source contributors, each of whom espouse our cultural values of inclusivity and paying it forward for others.
                 We welcome individuals at all stages of their development and of all walks of life. Every member is encourage to embrace these values and support one another in meaninfully and consistently advancing the community's open source initiatives.
@@ -70,8 +70,8 @@ const CommunityPage = () => {
         <Container>
           <Row className="meshmate">
             <Col className="content" sm={12} lg={6}>
-              <h1>Layer5 MeshMates</h1>
               <h3>An onboarding and mentoring program</h3>
+              <h1>Layer5 MeshMates</h1>
               <p>
                 The Layer5 community is growing at a tremendous rate.
                 We value our connections and that is what makes us unique.

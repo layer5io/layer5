@@ -5,7 +5,7 @@ const SoSpecialWrapper = styled.div`
     flex-direction:column;
     justify-content: space-around;
     align-items:center;
-    padding:0rem 3rem 2rem 3rem;
+    padding:0 3rem 2rem 3rem;
     .slick-list .slick-track{
         width:5000px;
     }
@@ -30,7 +30,7 @@ const SoSpecialWrapper = styled.div`
     }
     .slick-slide{
         height:30rem;
-        margin:1rem 0rem;
+        margin:1rem 0;
         div{
             height:100%;
         }    
@@ -40,7 +40,7 @@ const SoSpecialWrapper = styled.div`
         text-align:center; 
         h4{
             color:#b3b3b3;
-            padding:2rem 0rem;
+            padding:2rem 0;
         }
     }
     #special-cont{
@@ -52,33 +52,31 @@ const SoSpecialWrapper = styled.div`
         box-shadow:0 2px 10px rgba(0,0,0,0.4);
     }
     #special-cont_img{
-            height:70%;
-            width:100%;
-            display:flex;  
-            justify-content:center;
-            align-items:center;
-            overflow:hidden;
-            img{
-                width:100%;
-                height:100%;
-                border:none;
-                border-top-left-radius:1rem;
-                border-top-right-radius:1rem;
-            }
-        }
+        height:70%;
+        width:100%;
+        overflow:hidden;
+          .gatsby-image-wrapper{
+              height:100%;
+          }
+          img{
+            height: inherit;
+            display: block;
+            text-align: center;
+            margin: auto;
+          }
+    }
     .slick-dots{
         display:none;
     }
     #special-cont_content{
         padding-top:1rem;
         text-align: center;
-        postion:absolute;
         bottom:0;
         height:30%;
         .special-cont_para{
             font-weight:bold;
             font-size:1rem;
-            margin:0rem;
+            margin:0;
             padding:1rem;
         }
     }
@@ -155,7 +153,7 @@ const SoSpecialWrapper = styled.div`
             right:-20px;
         }
         .special-cont_para{
-            padding:1rem 0rem;
+            padding:1rem 0;
             word-wrap:break-word;
         }
     }
@@ -174,13 +172,13 @@ const SoSpecialWrapper = styled.div`
             height: 65%;
         }
         .so-special-head{
-            padding: 0.5rem 0rem;
+            padding: 0.5rem 0;
         }   
     }
     @media screen and (max-width: 300px){
         .slick-slide{
             height:25rem;
-            margin:0rem;
+            margin:0;
         }
         #special-cont_img{
             height: 60%;
@@ -188,7 +186,7 @@ const SoSpecialWrapper = styled.div`
         #special-cont_content{
             .special-cont_para
             {
-                padding:0rem;
+                padding:0;
             }
         }
     }

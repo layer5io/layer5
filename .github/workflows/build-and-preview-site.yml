@@ -6,23 +6,27 @@ on:
 
 
 jobs:
-  build-deploy-preview:
+  triger-previewing-site:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
 
       - name: Install and Build 🔧 
         run: |
           npm install
           npm run build
 
-      - name: Deploy and Preview 🚀
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+      - name: Zip Site
+        run: bash ./script.sh
+
+      - name: Upload files
+        uses: actions/upload-artifact@v2
         with:
-          repository-name: "layer5labs/layer5"
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          branch: site # The branch the action should deploy to.
-          folder: public # The folder the action should deploy.
-          target-folder: preview${{ github.event.number }}
-          # clean: false
+          name: public-dir
+          path: ./public-dir.zip
+          retention-days: 1
+      - name: Triger Inner workflow
+        run: echo "trigering inner workflow"

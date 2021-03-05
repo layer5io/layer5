@@ -59,7 +59,7 @@ const Projects = () => {
             </Link>
           </Col>
           <Col sm={2} md={2} lg={2}>
-            <Link className="partner-card" to="/news/layer5-and-hashicorp-launch-service-mesh-partnership">
+            <Link className="partner-card" to="/company/news/layer5-and-hashicorp-launch-service-mesh-partnership">
               <div className="partner__block__inner">
                 <img src={hashicorp} alt="Hashicorp partnership with Layer5" />
               </div>

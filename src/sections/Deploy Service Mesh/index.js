@@ -63,7 +63,7 @@ const RangeSlider = memo(
 const ServiceMesh = () => {
   const submit = () => {
     setSubmit(true);
-    axios.post("https://layer5-291812-default-rtdb.firebaseio.com/form.json", {
+    axios.post("https://hook.integromat.com/ndmru0l21n51mcw4dsbhc48xg1mzh1v5", {
       parentVal1,
       parentVal2,
       parentVal3,
@@ -72,13 +72,11 @@ const ServiceMesh = () => {
       parentVal6,
       parentVal7,
       parentVal8,
-      email
-    })
-      .then((response) => {
-        console.log(response);
-      }, (error) => {
-        console.log(error);
-      });
+      email,
+      first,
+      second,
+      org
+    });
   };
   const [parentVal1, setParentVal1] = useState(50);
   const [parentVal2, setParentVal2] = useState(50);
@@ -91,6 +89,9 @@ const ServiceMesh = () => {
   const [email, setEmail] = useState("");
   const [flag, setFlag] = useState(false);
   const [submitFlag, setSubmit] = useState(false);
+  const [first, setFirst] = useState("");
+  const [second, setSecond] = useState("");
+  const [org, setOrg] = useState("");
 
   const expand = () => {
     setFlag(true);
@@ -98,6 +99,18 @@ const ServiceMesh = () => {
  
   const addData = (e) => {
     setEmail(e.target.value);
+  };
+
+  const addData1 = (e) => {
+    setFirst(e.target.value);
+  };
+
+  const addData2 = (e) => {
+    setSecond(e.target.value);
+  };
+
+  const addData3 = (e) => {
+    setOrg(e.target.value);
   };
   
   const sliderProps1 = useMemo(
@@ -210,6 +223,7 @@ const ServiceMesh = () => {
       expand();
     }
   };
+
   return (
     <DeployServiceMeshWrapper>
       <div id="hero">
@@ -314,6 +328,12 @@ const ServiceMesh = () => {
               &&
               <div id="submit">
                 <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
+                <input type="text" className="email"  onChange={addData1}  placeholder="First Name"></input>
+                <br/>
+                <input type="text" className="email"  onChange={addData2}  placeholder="Second Name"></input>
+                <br/>
+                <input type="text" className="email"  onChange={addData3}  placeholder="Organization or Company"></input>
+                <br/>
                 <input type="email" className="email" onKeyDown={handleKeyPress} onChange={addData}  placeholder="Email Address"></input>
                 <Button secondary id="arrow-btn" type="button"  onClick={expand} title="Continue &rarr;"/>
               </div>
