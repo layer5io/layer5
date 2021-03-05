@@ -78,7 +78,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
             We also spend a great deal of time trying to recognize and uplift contributors on the Layer5 and Meshery Twitter accounts whether “contribution” means code or any of the other various forms of being involved int the projects and community. Likewise, we try to lift up contributors’ works on the Layer5 and Meshery LinkedIn pages, too. And, while it’s not a world stage, we openly and publicly share our community meetings on YouTube.
           </p>
           <p>
-            Open source contributors come in all shapes, sizes, colors and so on. All are welcome in the Layer5 projects and community!!</p>
+        Open source contributors come in all shapes, sizes, colors and so on. All are welcome in the Layer5 projects and community!!</p>
         </Container>
       </div>
     </ProgramsPageWrapper>
