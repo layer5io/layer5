@@ -162,15 +162,18 @@ export const ProjectWrapper = styled.div`
     .image{
         margin: 0 auto;
         @media only screen and (max-width: 991px) {
+            padding-left: 40%;
+        }
+        @media only screen and (max-width: 741px) {
             padding-left: 30%;
         }
+        
     }
     .project__card.seven{
         grid-column: 3/8;
         grid-row: 6/8;
         img{
             width: 90px;
-            margin-right: 15px;
             align-self: center;
             @media only screen and (min-width: 780px) {
                 align-self: flex-start;
