@@ -6,6 +6,7 @@ import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import RelatedPosts from "../Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
+import BlogPostSignOff from "../BlogPostSignOff";
 
 const BlogSingle = ({data}) => {
   const { frontmatter, body, fields } = data.mdx;
@@ -21,6 +22,9 @@ const BlogSingle = ({data}) => {
       <div className="single-post-wrapper">
         <Container>
           <MDXRenderer>{body}</MDXRenderer>
+          <BlogPostSignOff
+            author={{ name: frontmatter.author }}
+          />
           <div className="post-info-block">
             <div className="tags">
               <span>Tags:</span>
