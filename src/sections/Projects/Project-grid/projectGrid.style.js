@@ -24,21 +24,8 @@ export const ProjectWrapper = styled.div`
                 font-weight: 500;
                 color: ${props => props.theme.secondaryColor};
             }
-
         
      
-    }
-
-    .grid {
-        margin: 300px 0xp;
-    }
-
-    .bottom-grid{
-        margin: 0 auto;
-        width: 78.26%;
-        @media only screen and (max-width: 992px) {
-            width: 100%;
-        }
     }
     
     .project-text{
@@ -68,7 +55,6 @@ export const ProjectWrapper = styled.div`
         justify-content: center;
         align-items: center;
         transition: 0.6s;
-        margin: 15px 0;
         &:hover{
             background-color: ${props => props.theme.secondaryColor};
             img {
@@ -95,7 +81,6 @@ export const ProjectWrapper = styled.div`
         h5{
             font-weight: 600;
             text-align: center;
-            margin: auto 0;
         }
         
     }
@@ -105,8 +90,7 @@ export const ProjectWrapper = styled.div`
         grid-column: 2/3;
         grid-row: 1/3;
         img{
-            width: 80px;
-            margin-top: auto;
+            width: 90px;
             align-self: center;
         }
     }
@@ -115,12 +99,13 @@ export const ProjectWrapper = styled.div`
         grid-column: 3/6;
         grid-row: 1/6;
         img{
-            width: 80px;
-            margin-top: auto;
+            
             align-self: center;
         }
         h5{
+            font-size: 2rem;
             font-weight: 600;
+            margin-top: 10px;
         }
     }
     //Image Hub
@@ -128,9 +113,9 @@ export const ProjectWrapper = styled.div`
         grid-column: 6/8;
         grid-row: 4/6;
         img{
-            width: 80px;
-            margin-top: auto;
+            width: 90px;
             align-self: center;
+            margin-top: 20px;
         }
         h5{
             margin-bottom: 25px;
@@ -141,9 +126,10 @@ export const ProjectWrapper = styled.div`
         grid-column: 6/8;
         grid-row: 1/4;
         img{
-            width: 80px;
-            margin-top: auto;
-            align-self: center;
+           width: 150px;
+           align-self: center;
+           margin-top: -45px;
+           margin-bottom: 45px;
         }
         h5{
             width: 150%;
@@ -155,33 +141,69 @@ export const ProjectWrapper = styled.div`
         grid-column: 1/2;
         grid-row: 1/3;
         img{
-            width: 80px;
-            margin-top: auto;
-            align-self: center;
+           width: 180px;
+           align-self: center;
         }
     }
     // Distributed Performance Management of Service Meshes
     .project__card.six{
         grid-column: 1/3;
-        grid-row: 3/6;
+        grid-row: 3/8;
         img{
-            width: 80px;
-            margin-top: auto;
+            width: 180px;
+            margin-top: -35px;
             align-self: center;
         }
         h5{ 
             align-self: center;
-            width: 120%;
+            width: 150%;
+        }
+    }
+    .image{
+        margin: 0 auto;
+        @media only screen and (max-width: 991px) {
+            padding-left: 30%;
         }
     }
     .project__card.seven{
-        grid-column: 2/3;
-        grid-row: 1/3;
+        grid-column: 3/8;
+        grid-row: 6/8;
         img{
-            width: 80px;
-            margin-top: auto;
+            width: 90px;
+            margin-right: 15px;
             align-self: center;
+            @media only screen and (min-width: 780px) {
+                align-self: flex-start;
+            }
         }
+        h5{
+            align-self: center;
+            @media only screen and (min-width: 780px) {
+                align-self: flex-end;
+                padding-top:  20px;
+            }
+        }
+    }
+    .project__card-container-seven{
+        max-width: 100%;
+        height: 10rem;
+        width: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+        h5{
+            font-weight: 600;
+            text-align: center;
+        }
+        @media only screen and (min-width: 741px) {
+            width: 80%;
+            padding: 40px 0px 0px 0px;
+        }
+        
     }
     @media only screen and (max-width: 1200px) {
        .project__card.six {
@@ -287,7 +309,6 @@ export const ProjectWrapper = styled.div`
         margin-left: 5%;
         margin-right: 5%;
         padding: 0 0 40px 0;
-
         h3{
             font-size: 1.25rem;
         }
