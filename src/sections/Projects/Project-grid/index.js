@@ -16,11 +16,21 @@ import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg"
 import ContactFormModal from "../../../components/Contact-Modal";
 import nighthawk from "../GetNighthawk/images/getnighthawk.svg";
 
+import CommunityCallCard from "../../../components/CommunityCallCard/index";
+
+
 const ProjectPage = () => {
   return (
     <ProjectWrapper>
-      <PageHeader className="title" title="Cloud Native Management" path="/projects" />
-      <h3>for the <img src={L5gray} alt="Layer 5 icon"/>th layer of distributed systems</h3>
+      <PageHeader
+        className="title"
+        title="Cloud Native Management"
+        path="/projects"
+      />
+      <h3>
+        for the <img src={L5gray} alt="Layer 5 icon" />
+        th layer of distributed systems
+      </h3>
       <div className="project-page-wrapper">
         <Container>
           <div className="project__grid">
@@ -51,7 +61,10 @@ const ProjectPage = () => {
                 <h5>Service Mesh Interface Conformance</h5>
               </div>
             </Link>
-            <Link to="/projects/service-mesh-performance" className="project__card five">
+            <Link
+              to="/projects/service-mesh-performance"
+              className="project__card five"
+            >
               <div className="project__card-container">
                 <img src={smp} alt="Service Mesh Performance" />
                 <h5>Service Mesh Performance</h5>
@@ -83,7 +96,7 @@ const ProjectPage = () => {
             </Link>
           </div>
 
-          <ContactFormModal callout_text="Contact Us" form_header="Get In Touch" />
+          <CommunityCallCard />
         </Container>
       </div>
     </ProjectWrapper>
