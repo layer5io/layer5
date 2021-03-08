@@ -8,10 +8,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
-import defaultImage from "../assets/images/layer5/layer5-tagline/png/layer5-tag-dark-bg.png";
+// import defaultImage from "../assets/images/layer5/layer5-tagline/png/layer5-tag-dark-bg.png";
 
 function SEO({ description, lang, meta, title, image }) {
+  const { pathname } = useLocation();
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,6 +23,8 @@ function SEO({ description, lang, meta, title, image }) {
             description
             author
             siteUrl
+            image
+            twitterUsername
           }
         }
       }
@@ -28,8 +32,9 @@ function SEO({ description, lang, meta, title, image }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultmetaImage = image || defaultImage;
-  
+  const defaultmetaImage = `${site.siteMetadata.siteUrl}${image || site.siteMetadata.image}`;
+  const url = `${site.siteMetadata.siteUrl}${pathname}`;
+
   // PAGE-SPECIFIC IMAGE AND CONDITIONAL LOGIC NEEDED
   // const metaImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.Image}`;
 
@@ -54,6 +59,10 @@ function SEO({ description, lang, meta, title, image }) {
           content: metaDescription,
         },
         {
+          property: "og:url",
+          content: url,
+        },
+        {
           property: "og:type",
           content: "website",
         },
@@ -63,11 +72,11 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           name: "twitter:card",
-          content: "summary",
+          content: "summary_large_image",
         },
         {
           name: "twitter:creator",
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.twitterUsername,
         },
         {
           name: "twitter:title",
@@ -86,6 +95,7 @@ function SEO({ description, lang, meta, title, image }) {
 }
 
 SEO.defaultProps = {
+  title: "",
   lang: "en",
   meta: [],
   description: "",
