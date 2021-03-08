@@ -7,8 +7,10 @@ export const TutorialsTableWrapper = styled.div`
     height: auto;
     border-collapse: collapse;
     margin: 3.75rem auto;
-    th,
-    tr {
+    th {
+      color: white;
+    }
+    th, tr {
       height: 3.75rem;
       vertical-align: middle;
     }
@@ -18,8 +20,7 @@ export const TutorialsTableWrapper = styled.div`
     th {
       background-color: ${props => props.theme.secondaryColor};
     }
-    th,
-    td {
+    th, td {
       border-bottom: 1px solid #F0F0F0;
       padding: 0 0.625rem;
       p{
