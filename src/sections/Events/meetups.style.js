@@ -6,14 +6,14 @@ export const MeetupStyle = styled.div`
 
     .event-subhead{
         text-align: center;
-        margin: 0 auto 2rem;
+        margin: 1rem auto 2rem;
     }
 
     .filterBtns{
         display: flex;
         margin-bottom: 1.25rem;
         border-bottom: 1px solid #BEC2C5;
-        margin-top: 3rem;
+        margin-top: 5rem;
 
 
         button{
