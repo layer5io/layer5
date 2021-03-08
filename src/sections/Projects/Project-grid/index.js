@@ -34,13 +34,13 @@ const ProjectPage = () => {
       <div className="project-page-wrapper">
         <Container>
           <div className="project__grid">
-            <Link to="/landscape" className="project__card one">
+            <Link to="/service-mesh-landscape" className="project__card one">
               <div className="project__card-container">
                 <img src={landscape} alt="Landscape" />
                 <h5>Landscape</h5>
               </div>
             </Link>
-            <Link to="/meshery" className="project__card two">
+            <Link to="/service-mesh-management/meshery" className="project__card two">
               <div className="project__card-container">
                 <img src={meshery} alt="Meshery" />
                 <h5>Meshery</h5>
