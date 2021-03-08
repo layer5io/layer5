@@ -5,7 +5,7 @@ module.exports = {
     description: "Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.",
     author: "Layer5 Authors",
     siteUrl: "https://layer5.io",
-    image: "/images/layer5-tag-dark-bg.png",
+    image: "/static/images/layer5-tag-dark-bg.png",
     twitterUsername: "@layer5",
   },
   plugins: [
