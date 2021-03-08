@@ -9,7 +9,7 @@ const PageHeaderWrapper = styled.div`
             text-align: center;
             position: relative;
             height: auto;
-            margin: 2rem auto 2rem;
+            margin: 2.5rem auto;
             padding: 0 1rem 0;
             z-index: 99;
         }
