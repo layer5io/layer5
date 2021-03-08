@@ -95,7 +95,7 @@ function SEO({ description, lang, meta, title, image }) {
 }
 
 SEO.defaultProps = {
-  title: "",
+  title: "Layer5",
   lang: "en",
   meta: [],
   description: "",
