@@ -179,8 +179,13 @@ const CommunitySectionWrapper = styled.div`
         .map {
             padding-top: 0rem;
             margin-top:0rem;
+            margin-left: 2rem;
+            margin-right: 1rem;
             max-width:40rem;
             padding-bottom: 2rem;
+            @media (max-width: 1366px) {
+                margin: 0;
+            }
         }
         h4{
             padding: 1rem auto;
