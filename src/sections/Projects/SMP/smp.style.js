@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import smp_bg from "./smp-hero.png";
 import callout from "./callout.png";
+import cncfIcon from "./cncf-icon.png";
 
 const SMPWrapper = styled.section`
     .smp-hero{
@@ -85,7 +86,12 @@ const SMPWrapper = styled.section`
             }
         }
     }
+    
     .smp-effects{
+        background-image: url(${cncfIcon});
+        background-repeat: no-repeat;
+        background-position:right top;
+        padding-top:3rem;
         .effects-title{
             margin: 6.25rem auto 3.125rem auto;
             text-align: center;
@@ -110,7 +116,7 @@ const SMPWrapper = styled.section`
     }
     .join-community{
         width: 100%;
-        max-width:90rem;
+        max-width:100%;
         margin-bottom: 0;
         display: flex;
         justify-content: center;
