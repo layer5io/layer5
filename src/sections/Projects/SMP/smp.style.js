@@ -92,8 +92,9 @@ const SMPWrapper = styled.section`
         background-repeat: no-repeat;
         background-position:right top;
         padding-top:3rem;
+        background-size:435px;
         .effects-title{
-            margin: 6.25rem auto 3.125rem auto;
+            margin: 3.25rem auto 3.25rem auto;
             text-align: center;
             h1{
                 margin-bottom: 1.25rem;
@@ -154,6 +155,14 @@ const SMPWrapper = styled.section`
             }
         }
         .smp-effects{
+            background-image: url(${cncfIcon});
+            background-repeat: no-repeat;
+            background-position:right top;
+            padding-top:1rem;
+            background-size:325px;
+            .effects-title{
+                margin: 3.25rem auto;
+            }
             .iframes{
                 padding: 0 1rem;
                 .iframe{
@@ -161,6 +170,21 @@ const SMPWrapper = styled.section`
                     height: 18.75rem;
                 }
             }
+        }
+    }
+    @media only screen and (min-width: 993px) and  (max-width: 1024px) {
+        .smp-effects{
+            background-image: url(${cncfIcon});
+            background-repeat: no-repeat;
+            background-position:right top;
+            padding-top:1rem;
+            background-size:385px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .smp-effects{
+            background-image: unset;
+            padding-top:0;
         }
     }
     @media only screen and (max-width: 480px) {
