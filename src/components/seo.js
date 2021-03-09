@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
-// import defaultImage from "../assets/images/layer5/layer5-tagline/png/layer5-tag-dark-bg.png";
 
 function SEO({ description, lang, meta, title, image }) {
   const { pathname } = useLocation();
