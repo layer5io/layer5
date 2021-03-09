@@ -5,7 +5,7 @@ import callout from "./callout.png";
 const SMPWrapper = styled.section`
     .smp-hero{
         background-image: url(${smp_bg});
-        height: 100%;
+        height: 34.4rem;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -110,8 +110,34 @@ const SMPWrapper = styled.section`
     }
     .join-community{
         width: 100%;
+        max-width:90rem;
         margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: 40rem;
     }
+    .join-community_text-and_button{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction:column;
+        top:0rem;
+        h1{
+            color: white;
+        }
+        p{
+            margin: unset;
+            max-width: 20rem;
+            color: white;
+        }
+        button{
+            margin-top: 1.5rem;
+        }
+
+    }
+
     @media only screen and (max-width: 1024px) {
         .smp-hero{
             .hero-text{
