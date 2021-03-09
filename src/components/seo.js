@@ -25,11 +25,8 @@ function SEO({ description, lang, meta, title, image }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultmetaImage = `${site.siteMetadata.siteUrl}${image || site.siteMetadata.image}`;
+  const metaImage = `${site.siteMetadata.siteUrl}${image || site.siteMetadata.image}`;
   const url = `${site.siteMetadata.siteUrl}${pathname}`;
-
-  // PAGE-SPECIFIC IMAGE AND CONDITIONAL LOGIC NEEDED
-  // const metaImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.Image}`;
 
   return (
     <Helmet
@@ -61,7 +58,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           property: "og:image",
-          content: defaultmetaImage,
+          content: metaImage,
         },
         {
           name: "twitter:card",
@@ -80,7 +77,7 @@ function SEO({ description, lang, meta, title, image }) {
           content: metaDescription,
         },{
           name: "twitter:image",
-          content: defaultmetaImage,
+          content: metaImage,
         },
       ].concat(meta)}
     />
@@ -88,10 +85,11 @@ function SEO({ description, lang, meta, title, image }) {
 }
 
 SEO.defaultProps = {
-  title: "Layer5",
+  title: null,
   lang: "en",
   meta: [],
   description: "",
+  image: null,
 };
 
 SEO.propTypes = {
@@ -99,6 +97,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 export default SEO;
