@@ -17,6 +17,7 @@ export const WorkshopPageWrapper = styled.div`
 	}
     h2.sub-heading {
         font-weight: 400;
+		margin: -0.5rem auto 5rem;
     }
 	.btn-and-status-open {
 		display: flex;

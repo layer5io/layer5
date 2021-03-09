@@ -13,6 +13,7 @@ import wasm_capacity from "./native-and-wasm-at-capacity-100rps.png";
 import latency from "./latency-at-scale.png";
 import client_capacity from "./client-capacity.png";
 import smp from "./smp-white.svg";
+import callout from "./callout.png";
 
 const SMPPage = () => {
   return (
@@ -129,7 +130,7 @@ const SMPPage = () => {
           <h4> Learn more about these initiatives</h4>
           <Button primary title="Learn More" url="https://smp-spec.io"></Button>
         </div>
-        <JoinCommunity />
+        <JoinCommunity image={callout}/>
       </SMPWrapper>
     </Layout>
   );
