@@ -12,13 +12,14 @@ import MesheryManageMesh from "../../../sections/Meshery/Meshery-mange-mesh";
 import MesheryQuotes from "../../../sections/Meshery/Meshery-quotes";
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
-import seoimage from "../../../assets/images/meshery/full-logo/meshery-logo-dark-text.png";
 
 const MesheryMainPage = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Meshery Getting Started" description="How to get started with any service mesh. Adopting and operating a service mesh." image={seoimage}/>
+      <SEO title="Meshery Getting Started"
+        description="How to get started with any service mesh. Adopting and operating a service mesh."
+        image="/images/meshery-logo-dark-text.png"/>
       <Navigation />
       <MesheryTerminal/>
       <MesheryPlatforms/>
