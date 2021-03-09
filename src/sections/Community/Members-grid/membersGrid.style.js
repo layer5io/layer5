@@ -118,6 +118,18 @@ export const MembersGridWrapper = styled.div`
     .members-profile-cards{
         z-index: -1 !important;
     }
+    @media only screen and (max-width: 990px) and (min-width: 580px) {
+      .members-profile-cards{
+          max-width: 550px;
+          margin: auto;
+      }
+    }
+    @media only screen and (min-width: 991px) and (max-width: 1200px) {
+      .members-profile-cards{
+          max-width: 800px;
+          margin: auto;
+      }
+    }
     @media only screen and (max-width: 912px) {
         .members-page-wrapper{
             padding-bottom: 80px;
@@ -181,11 +193,11 @@ export const MembersGridWrapper = styled.div`
             }
             .detailsCommunity {
                 width:100%;
-                
+
             }
     }
     .memberProfileBtn{
         margin: 1rem;
-        
+
     }
 `;
