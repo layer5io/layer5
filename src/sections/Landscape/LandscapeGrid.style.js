@@ -10,6 +10,10 @@ export const LandscapePageWrapper=styled.div`
 		font-style:unset;
 		color:#1e2117;
 	}
+	.sub-heading {
+		margin-top: -1rem !important;
+		padding-bottom: 5rem !important;
+	}
 	.subsequent-heading {
 		padding-top: 6rem;
 	}
