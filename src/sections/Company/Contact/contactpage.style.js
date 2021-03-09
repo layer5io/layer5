@@ -28,21 +28,30 @@ const ContactPageWrapper = styled.section`
 	}
 
 	.contact-form {
-		display: none;
-
+		display: flex;
+		transition: height ease-in-out 1.5s;
 		flex: auto;
 		justify-content: center;
+		height:0rem;
+		iframe {
+			height:0rem;
+		}
 	}
 
 	.showForm {
 		display: flex;
 		flex-wrap: wrap;
 		margin: auto -15px;
+		height:68rem;
+		iframe {
+			height:unset;
+		}
 	}
 
 	.form-frame {
 		height: 68rem;
 		width: 35rem;
+		
 		border: none;
 		margin-top: -2rem;
 	}

@@ -28,7 +28,7 @@ You should...
             <div className="introVideo">
               <iframe
                 width="392"
-                height="220.5"
+                height="250"
                 src="https://www.youtube.com/embed/0yN5T5LB9ps"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

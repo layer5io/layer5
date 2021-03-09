@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
 const CareersSectionWrapper = styled.div`
-    .careers-section-wrapper{
-        padding: 50px 0;
-    }
-
     h1{
         color: black;
     }
-
+    .page-header{
+        margin:4rem auto;
+    }
     .centerTexts{
-        margin-top: -2.5rem;
+        margin-top: -3rem;
         text-align: center;
     }
 
@@ -34,7 +32,7 @@ const CareersSectionWrapper = styled.div`
         text-align: center;
 
         iframe{
-            width: 25rem;
+            width: 26rem;
         }
     }
     @media only screen and (max-width:996px){
@@ -60,7 +58,7 @@ const CareersSectionWrapper = styled.div`
     }
 
     .opensource-section{
-        margin-top: 2rem;
+        margin-top: 4rem;
         text-align: center;
         background: #00B39F;
         color: white;
@@ -69,7 +67,7 @@ const CareersSectionWrapper = styled.div`
         padding-top: 50px;
     }
     .opensource-section-text > h1{
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
         color: white;
     }
     .opensource-section-text > p{
