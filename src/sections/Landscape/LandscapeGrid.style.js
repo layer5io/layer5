@@ -11,8 +11,8 @@ export const LandscapePageWrapper=styled.div`
 		color:#1e2117;
 	}
 	.sub-heading {
-		margin-top: -1rem !important;
-		padding-bottom: 5rem !important;
+		margin-top: -2.5rem !important;
+		padding-bottom: 6rem !important;
 	}
 	.subsequent-heading {
 		padding-top: 6rem;
