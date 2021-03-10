@@ -35,6 +35,8 @@ const ContactPageWrapper = styled.section`
 		height:0rem;
 		iframe {
 			height:0rem;
+			transition: height ease-in-out 0.75s;
+			
 		}
 	}
 
@@ -44,7 +46,8 @@ const ContactPageWrapper = styled.section`
 		margin: auto -15px;
 		height:68rem;
 		iframe {
-			height:unset;
+			height:100%;
+			
 		}
 	}
 
