@@ -71,7 +71,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
             Our shared commitment to the open source spirit push the Layer5 community and its projects forward.
             New members are always welcome.
           </p>
-          HashiCorp is driven by its people who are the stewards of our culture and principles which have been the foundational characteristics of. Join us on the journey to enabling the world's most innovative companies make the transition to cloud, and multi-cloud through simple workflows and automation.
+          Layer5 is driven by its people who are the stewards of our culture and principles which have been the foundational characteristics of. Join us on the journey to enabling the world's most innovative companies make the transition to cloud, and multi-cloud through simple workflows and automation.
 
           <p>Layer5 goes out of its way to welcome and encourage new contributors. We often assign newcomers an onboarding buddy, a MeshMate, to ensure that newcomers get both introduced to the projects within the community and introduced around to other individuals. We strive to help them get a foothold on a crevice of one of our initiatives, instilling and nurturing a sense of ownership, so that they feel at-home as they become a regular contributor.</p>
           <p>

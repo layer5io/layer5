@@ -84,10 +84,10 @@ const InternshipPage = ({ hide_heading }) => {
       )}
       <Container>
         <p>
-                    At Layer5, we take our internships seriously. Interns are expected to work hard, learn much, and be recognized for doing so. Past interns have presented their projects at KubeCon, DockerCon, and similar technical conferences.
+            At Layer5, we take our internships seriously. Interns are expected to work hard, learn much, and be recognized for doing so. Past interns have presented their projects at KubeCon, DockerCon, and similar technical conferences.
         </p>
         <p>
-                    Our community of contributors is the key ingredient to the success of every one of our projects. Interns engage as part of the community. Whether interning directly with Layer5 or through one of Layer5's partner programs, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small.
+            Our community of contributors is the key ingredient to the success of every one of our projects. Interns engage as part of the community. Whether interning directly with Layer5 or through one of Layer5's partner programs, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small.
         </p>
 
         <div className="oppurtunities">
@@ -115,8 +115,8 @@ const InternshipPage = ({ hide_heading }) => {
             <ProgramsGrid sub_section={true}/>
           </div>
           <p>
-                      The Layer5 community includes software engineers, researchers, students, artists, system administrators,
-                      operators and web designers -- all of whom will be happy to help you get started. We believe that all contributors should be afforded a safe and friendly environment for constructive learning. Our projects are improved through diversity and empathic community.
+          The Layer5 community includes software engineers, researchers, students, artists, system administrators,
+          operators and web designers -- all of whom will be happy to help you get started. We believe that all contributors should be afforded a safe and friendly environment for constructive learning. Our projects are improved through diversity and empathic community.
           </p>
           <div>
             <h1>Participating Partners</h1>
