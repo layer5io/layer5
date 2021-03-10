@@ -179,8 +179,7 @@ const CommunitySectionWrapper = styled.div`
         .map {
             padding-top: 0rem;
             margin-top:0rem;
-            margin-left: 2rem;
-            margin-right: 1rem;
+            margin: 0 1rem 0 2rem;
             max-width:40rem;
             padding-bottom: 2rem;
             @media (max-width: 1366px) {
