@@ -10,7 +10,7 @@ export const LandscapePageWrapper=styled.div`
 		font-style:unset;
 		color:#1e2117;
 	}
-	.sub-heading {
+	#service-mesh-comparison-strength {
 		margin-top: -2.5rem !important;
 		padding-bottom: 6rem !important;
 	}
