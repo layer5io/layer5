@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
-import Button from "../../../reusecore/Button";
 
 import projectImage1 from "../../../assets/images/app/projects/landscape.png";
 import projectImage2 from "../../../assets/images/app/projects/smp.png";
