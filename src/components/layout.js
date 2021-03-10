@@ -8,6 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 import FavIcon from "../assets/images/favicon.png";
 
@@ -33,8 +34,9 @@ const Layout = ({ children }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
       </Helmet>
-      
-      {children}
+      <SimpleReactLightbox>
+        {children}
+      </SimpleReactLightbox>
     </>
   );
 };
