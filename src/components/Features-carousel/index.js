@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {SRLWrapper} from "simple-react-lightbox";
 import {Link} from "gatsby";
 import Carousel from "nuka-carousel";
 import { IoIosArrowRoundForward } from "react-icons/io";
@@ -34,7 +35,9 @@ const FeaturesList = ({ features }) => {
           ))}
         </ul>
         <div className="terminal-wrapper">
-          {features[activeFeature].content}
+          <SRLWrapper>
+            {features[activeFeature].content}
+          </SRLWrapper>
         </div>
       </div>
     </FeaturesWrapper>
