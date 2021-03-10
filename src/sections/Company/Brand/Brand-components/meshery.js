@@ -1,4 +1,5 @@
 import React from "react";
+import {SRLWrapper} from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -42,22 +43,24 @@ const MesheryBrand = () => {
             Logos
           </h2>
         </Col>
-        <Row Vcenter className="ImgDiv">
-          <Col xs={12} sm={4}>
-            <img src={MeshDarkText} alt="MesheryDark Logo"/>
-          </Col>
-          <Col xs={12} sm={4}>
-            <img src={MeshDarkTagText} alt="MesheryDarkText Logo"/>
-          </Col>
-        </Row>
-        <Row Vcenter className="ImgDiv">
-          <Col xs={12} sm={4}>
-            <img src={MeshLogoLightText} alt="MesheryLightText Logo"/>
-          </Col>
-          <Col xs={12} sm={4}>
-            <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo"/>
-          </Col>
-        </Row>
+        <SRLWrapper>
+          <Row Vcenter className="ImgDiv">
+            <Col xs={12} sm={4}>
+              <img src={MeshDarkText} alt="MesheryDark Logo"/>
+            </Col>
+            <Col xs={12} sm={4}>
+              <img src={MeshDarkTagText} alt="MesheryDarkText Logo"/>
+            </Col>
+          </Row>
+          <Row Vcenter className="ImgDiv">
+            <Col xs={12} sm={4}>
+              <img src={MeshLogoLightText} alt="MesheryLightText Logo"/>
+            </Col>
+            <Col xs={12} sm={4}>
+              <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo"/>
+            </Col>
+          </Row>
+        </SRLWrapper>
       </Row>
       <Row>
         <Col>

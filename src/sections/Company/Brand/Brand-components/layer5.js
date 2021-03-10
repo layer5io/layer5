@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import {SRLWrapper} from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -53,20 +54,22 @@ const Layer5Brand = () => {
               Logos
             </h2>
           </Col>
-          <Row Vcenter className="Layer5Logos">
-            <Col xs={12} sm={4}>
-              <img src={Layer5WhiteBg} alt="Layer5 Logo" />
-                Primary Logo: broadly, and majorly applicable
-            </Col>
-            <Col xs={12} sm={4}>
-              <img src={Layer5CommunityWhite} alt="Layer5 Logo with tagline" />
-                Primary Logo with tagline: alternate horizontal layout
-            </Col>
-            <Col xs={12} sm={4}>
-              <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
-                Layer5 Icon: suited for square-shaped display
-            </Col>
-          </Row>
+          <SRLWrapper>
+            <Row Vcenter className="Layer5Logos">
+              <Col xs={12} sm={4}>
+                <img src={Layer5WhiteBg} alt="Layer5 Logo" />
+                  Primary Logo: broadly, and majorly applicable
+              </Col>
+              <Col xs={12} sm={4}>
+                <img src={Layer5CommunityWhite} alt="Layer5 Logo with tagline" />
+                  Primary Logo with tagline: alternate horizontal layout
+              </Col>
+              <Col xs={12} sm={4}>
+                <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
+                  Layer5 Icon: suited for square-shaped display
+              </Col>
+            </Row>
+          </SRLWrapper>
         </Row>
         <Row>
           <Col xs={12}>
