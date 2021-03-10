@@ -126,7 +126,7 @@ export const MembersGridWrapper = styled.div`
     }
     @media only screen and (min-width: 991px) and (max-width: 1200px) {
       .members-profile-cards{
-          max-width: 800px;
+          max-width: 830px;
           margin: auto;
       }
     }
