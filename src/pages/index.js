@@ -17,7 +17,6 @@ import Footer from "../sections/General/Footer";
 import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
-import EngineerEnabler from "../sections/Home/Engineer-enabler";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
 import CloudNativeLeaders from "../sections/Home/Cloud-Native";
