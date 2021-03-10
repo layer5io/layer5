@@ -58,13 +58,13 @@ const CareersSectionWrapper = styled.div`
     }
 
     .opensource-section{
-        margin-top: 4rem;
+        margin-top: 6rem;
         text-align: center;
         background: #00B39F;
         color: white;
     }
     .opensource-section-text{
-        padding-top: 50px;
+        padding-top: 5rem;
     }
     .opensource-section-text > h1{
         margin-bottom: 1rem;
@@ -81,7 +81,6 @@ const CareersSectionWrapper = styled.div`
     }
     .opensource-section-img img{
         height: 30rem;
-        
         box-shadow: 0px 8px 20px -10px black;
     }
     @media only screen and (max-width:600px){

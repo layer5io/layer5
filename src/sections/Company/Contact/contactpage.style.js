@@ -29,7 +29,7 @@ const ContactPageWrapper = styled.section`
 
 	.contact-form {
 		display: flex;
-		transition: height ease-in-out 1.5s;
+		transition: height ease-in-out 0.75s;
 		flex: auto;
 		justify-content: center;
 		height:0rem;
@@ -51,13 +51,11 @@ const ContactPageWrapper = styled.section`
 	.form-frame {
 		height: 68rem;
 		width: 35rem;
-		
 		border: none;
 		margin-top: -2rem;
 	}
 
 	@media screen and (max-width: 765px) {
-
 		.form-frame {
 			width: 25rem;
 		}
