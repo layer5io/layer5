@@ -15,26 +15,7 @@ const CareersPage = () => {
       <div className="careers-section-wrapper">
         <Container>
           <p className="centerTexts">If you’re a smart, curious person who can make contributions in and out of your areas of expertise, why not start now?</p>
-          <Row className="videoText">
-            <div className="introText">
-              <h2>Layer5 Culture</h2>
-              <ul><li>All team members are expected to...</li></ul>
-...take initiative, execute briskly, debate in the discussion, then execute post-haste on the decision, irrespective of the specific decision.
-All team members should expect to...
-...be challenged, to work hard, to play hard, to be recognized, to grow and help others grow.
-You should...
-...pay attention to detail and take pride in your work. Know when to pri- oritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.
-            </div>
-            <div className="introVideo">
-              <iframe
-                width="392"
-                height="220.5"
-                src="https://www.youtube.com/embed/0yN5T5LB9ps"
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen />
-            </div>
-          </Row>
+
         </Container>
         <div className="opensource-section">
           <div className="opensource-section-text">
@@ -50,6 +31,29 @@ You should...
             <img src={Lee_and_Rigs} alt="Lee-and-Rigs-Caballero-of-Google" />
           </div>
         </div>
+        <Container>
+          <Row className="videoText">
+            <div className="introText">
+              <h2>Layer5 Culture</h2>
+              <strong>All team members are expected to...</strong>
+              <p>
+                ...take initiative, execute briskly, debate in the discussion, then execute post-haste on the decision, irrespective of the specific decision.</p>
+              <strong>All team members should expect to...</strong>
+              <p>...be challenged, to work hard, to play hard, to be recognized, to grow and help others grow.</p>
+              <strong>You should...</strong>
+              <p>...pay attention to detail and take pride in your work. Know when to pri- oritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
+            </div>
+            <div className="introVideo">
+              <iframe
+                width="392"
+                height="220.5"
+                src="https://www.youtube.com/embed/0yN5T5LB9ps"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen />
+            </div>
+          </Row>
+        </Container>
         <div className="opportunity-section">
           <InternshipPage hide_heading={true} />
         </div>

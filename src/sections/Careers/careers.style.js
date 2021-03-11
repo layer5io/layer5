@@ -21,6 +21,8 @@ const CareersSectionWrapper = styled.div`
     }
     .introText{
         width: 50%;
+        clear:both;
+        margin-top: 9rem;
     }
     .introText h1{
         margin-bottom: 1rem;
@@ -93,7 +95,7 @@ const CareersSectionWrapper = styled.div`
     }
 
     .opportunity-section {
-        margin-top: 13rem; 
+ 
     }
     
 `;

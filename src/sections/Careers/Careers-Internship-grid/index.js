@@ -83,13 +83,6 @@ const InternshipPage = ({ hide_heading }) => {
         <PageHeader title="Internships at Layer5" path="Careers > Internships" subtitle="Available Opportunities"/>
       )}
       <Container>
-        <p>
-                    At Layer5, we take our internships seriously. Interns are expected to work hard, learn much, and be recognized for doing so. Past interns have presented their projects at KubeCon, DockerCon, and similar technical conferences.
-        </p>
-        <p>
-                    Our community of contributors is the key ingredient to the success of every one of our projects. Interns engage as part of the community. Whether interning directly with Layer5 or through one of Layer5's partner programs, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small.
-        </p>
-
         <div className="oppurtunities">
           <div>
             <h2><span>Explore our world-class</span> internship experience</h2>
@@ -101,6 +94,12 @@ const InternshipPage = ({ hide_heading }) => {
               </Row>
             </div>
           </div>
+          <p>
+                    At Layer5, we take our internships seriously. Interns are expected to work hard, learn much, and be recognized for doing so. Past interns have presented their projects at KubeCon, DockerCon, and similar technical conferences.
+        </p>
+        <p>
+                    Our community of contributors is the key ingredient to the success of every one of our projects. Interns engage as part of the community. Whether interning directly with Layer5 or through one of Layer5's partner programs, your contributions will affect people you've never met as the Layer5 projects are being broadly referenced and used in organizations large and small.
+        </p>
           <div>
             <h2><span>Join other industry leaders in a </span> full-time position</h2>
             <div className="grid">
