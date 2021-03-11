@@ -12,7 +12,7 @@ const SoSpecial = () => {
             query newsList {
                 allMdx(
                     filter: { fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } } }
-                    sort: { fields: [frontmatter___date], order: ASC }
+                    sort: { fields: [frontmatter___date], order: DESC }
                     limit: 8
                 ) 
                 {
