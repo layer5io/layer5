@@ -4,12 +4,13 @@ module.exports = {
     title: "Layer5 - The Service Mesh Company",
     description: "Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.",
     author: "Layer5 Authors",
-    siteUrl: "https://layer5.io/",
+    siteUrl: "https://layer5.io",
+    image: "/images/layer5-tag-dark-bg.png",
+    twitterUsername: "@layer5",
   },
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
-    // "gatsby-plugin-preload-fonts",
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {

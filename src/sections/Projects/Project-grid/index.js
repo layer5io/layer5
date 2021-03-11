@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Container } from "../../../reusecore/Layout";
+import { Container, Row, Col } from "../../../reusecore/Layout";
 
 import PageHeader from "../../../reusecore/PageHeader";
 
@@ -13,7 +13,10 @@ import imagehub from "../../../assets/images/image-hub/layer5-image-hub.png";
 import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import distributedPerformance from "../../../collections/projects/distributed-performance-management/distributed-performance_green.svg";
 import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
+import nighthawk from "../GetNighthawk/images/getnighthawk.svg";
+
 import CommunityCallCard from "../../../components/CommunityCallCard/index";
+
 
 const ProjectPage = () => {
   return (
@@ -30,13 +33,13 @@ const ProjectPage = () => {
       <div className="project-page-wrapper">
         <Container>
           <div className="project__grid">
-            <Link to="/landscape" className="project__card one">
+            <Link to="/service-mesh-landscape" className="project__card one">
               <div className="project__card-container">
                 <img src={landscape} alt="Landscape" />
                 <h5>Landscape</h5>
               </div>
             </Link>
-            <Link to="/meshery" className="project__card two">
+            <Link to="/service-mesh-management/meshery" className="project__card two">
               <div className="project__card-container">
                 <img src={meshery} alt="Meshery" />
                 <h5>Meshery</h5>
@@ -66,16 +69,28 @@ const ProjectPage = () => {
                 <h5>Service Mesh Performance</h5>
               </div>
             </Link>
+            <Link to="/projects/getnighthawk" className="project__card six">
+              <div className="project__card-container">
+                <img src={nighthawk} alt="Getnighthawk" />
+                <h5>GetNightHawk</h5>
+              </div>
+            </Link>
             <Link
               to="/projects/distributed-performance-management"
-              className="project__card six"
+              className="project__card seven"
             >
-              <div className="project__card-container">
-                <img
-                  src={distributedPerformance}
-                  alt="Distributed Performance Management of Service Meshes"
-                />
-                <h5>Distributed Performance Management of Service Meshes</h5>
+              <div className="project__card-container-seven">
+                <Row>
+                  <Col lg={4} md={12} sm={12} className="image">
+                    <img
+                      src={distributedPerformance}
+                      alt="Distributed Performance Management of Service Meshes"
+                    />
+                  </Col>
+                  <Col lg={8} md={12} sm={12}>
+                    <h5> Distributed Performance Management of Service Meshes</h5>
+                  </Col>
+                </Row>
               </div>
             </Link>
           </div>

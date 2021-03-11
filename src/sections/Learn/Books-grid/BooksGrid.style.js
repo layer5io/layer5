@@ -11,6 +11,7 @@ export const BooksPageWrapper = styled.div`
     }
     h2.sub-heading {
         font-weight: 400;
+        margin: -1.25rem auto 2rem;
     }
     .slick-slide{
         filter: drop-shadow(0px 0px 8px gray) brightness(0.75);

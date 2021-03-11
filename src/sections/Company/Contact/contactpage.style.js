@@ -28,16 +28,27 @@ const ContactPageWrapper = styled.section`
 	}
 
 	.contact-form {
-		display: none;
-
+		display: flex;
+		transition: height ease-in-out 0.75s;
 		flex: auto;
 		justify-content: center;
+		height:0rem;
+		iframe {
+			height:0rem;
+			transition: height ease-in-out 0.75s;
+			
+		}
 	}
 
 	.showForm {
 		display: flex;
 		flex-wrap: wrap;
 		margin: auto -15px;
+		height:68rem;
+		iframe {
+			height:100%;
+			
+		}
 	}
 
 	.form-frame {
@@ -48,7 +59,6 @@ const ContactPageWrapper = styled.section`
 	}
 
 	@media screen and (max-width: 765px) {
-
 		.form-frame {
 			width: 25rem;
 		}

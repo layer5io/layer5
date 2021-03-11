@@ -24,7 +24,6 @@ export const ProjectWrapper = styled.div`
                 font-weight: 500;
                 color: ${props => props.theme.secondaryColor};
             }
-
         
      
     }
@@ -149,7 +148,7 @@ export const ProjectWrapper = styled.div`
     // Distributed Performance Management of Service Meshes
     .project__card.six{
         grid-column: 1/3;
-        grid-row: 3/6;
+        grid-row: 3/8;
         img{
             width: 180px;
             margin-top: -35px;
@@ -159,6 +158,55 @@ export const ProjectWrapper = styled.div`
             align-self: center;
             width: 150%;
         }
+    }
+    .image{
+        margin: 0 auto;
+        @media only screen and (max-width: 991px) {
+            padding-left: 40%;
+        }
+        @media only screen and (max-width: 741px) {
+            padding-left: 30%;
+        }
+        
+    }
+    .project__card.seven{
+        grid-column: 3/8;
+        grid-row: 6/8;
+        img{
+            width: 90px;
+            align-self: center;
+            @media only screen and (min-width: 780px) {
+                align-self: flex-start;
+            }
+        }
+        h5{
+            align-self: center;
+            @media only screen and (min-width: 780px) {
+                align-self: flex-end;
+                padding-top:  20px;
+            }
+        }
+    }
+    .project__card-container-seven{
+        max-width: 100%;
+        height: 10rem;
+        width: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+        h5{
+            font-weight: 600;
+            text-align: center;
+        }
+        @media only screen and (min-width: 741px) {
+            width: 80%;
+            padding: 40px 0px 0px 0px;
+        }
+        
     }
     @media only screen and (max-width: 1200px) {
        .project__card.six {
@@ -264,7 +312,6 @@ export const ProjectWrapper = styled.div`
         margin-left: 5%;
         margin-right: 5%;
         padding: 0 0 40px 0;
-
         h3{
             font-size: 1.25rem;
         }

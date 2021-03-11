@@ -23,20 +23,24 @@ export const WorkshopsListWrapper = styled.div`
 		background: rgba( 0, 179, 159, 0.1);
 	}
 	.workshop-thumbnails {
-		height: 13rem;
+		height: 14rem;
 
 		img {
-				height: 100%;
+			height: 100%;
 		}
+	}
+
+	.blockquoteImg {
+		position: absolute;
+		opacity: 0.04;
+		max-height: 11.5rem;
+		left: 0rem;
+		top: -0.75rem;
 	}
 
 	.feedback-section {
 		margin: 5rem auto;
-
-		img{
-			width:4rem;
-			height:3rem;
-		}
+		position: relative;
 		
 		.slick-slider {
 			max-width: 1500px;
@@ -75,13 +79,22 @@ export const WorkshopsListWrapper = styled.div`
 			}
 
 			.slick-dots li button:before {
-        font-size: 0.6rem;
-        color: ${props => props.theme.secondaryColor};
+				font-size: 0.6rem;
+				color: ${props => props.theme.secondaryColor};
 			}
 
 			.slick-dots li.slick-active button:before {
 				opacity: 1;
 				color: ${props => props.theme.secondaryColor};
+			}
+
+			.feedbackCol {
+				padding: 5rem 3.5rem;
+			}
+
+			p {
+				font-size: 1.85rem;
+				color: rgba(0,0,0,0.6)
 			}
 		}
 	}
@@ -105,6 +118,9 @@ export const WorkshopsListWrapper = styled.div`
 	@media screen and (max-width: 1400px) {
 		.workshop-section-wrapper {
 				padding: 6rem 3.5rem;
+		}
+		.workshop-thumbnails {
+			height: 13rem;
 		}
 	}
 	@media screen and (max-width: 1100px) {
@@ -145,6 +161,10 @@ export const WorkshopsListWrapper = styled.div`
 		.feedback-section {
 			.slick-slider {
 				max-width: 100%;
+
+				.feedbackCol {
+					padding: 4rem 2.5rem;
+				}
 			}
 		}
 	}
@@ -237,8 +257,8 @@ const WorkshopsSection = () => {
           {
             feedbackData.map((data, index) => {
               return (
-                <Col key={index}>
-                  <img src={BlockQouteImage} alt="Quote-left" />
+                <Col key={index} className="feedbackCol">
+                  <img className="blockquoteImg" src={BlockQouteImage} alt="Quote-Image" />
                   <p>{data.feedback}</p>
                   <h3>{data.workshop}</h3>
                   <h5>{data.studnt_name}</h5>
