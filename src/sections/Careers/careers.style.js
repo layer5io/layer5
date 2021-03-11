@@ -11,6 +11,9 @@ const CareersSectionWrapper = styled.div`
         margin-top: -3rem;
         text-align: center;
     }
+    .center{
+        text-align: center;
+    }
 
     .videoText {
         flex-wrap: nowrap;
@@ -66,7 +69,7 @@ const CareersSectionWrapper = styled.div`
         color: white;
     }
     .opensource-section-text{
-        padding-top: 5rem;
+        padding-top: 4rem;
     }
     .opensource-section-text > h1{
         margin-bottom: 1rem;

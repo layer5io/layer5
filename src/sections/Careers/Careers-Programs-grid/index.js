@@ -71,14 +71,10 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
             Our shared commitment to the open source spirit push the Layer5 community and its projects forward.
             New members are always welcome.
           </p>
-          Layer5 is driven by its people who are the stewards of our culture and principles which have been the foundational characteristics of. Join us on the journey to enabling the world's most innovative companies make the transition to cloud, and multi-cloud through simple workflows and automation.
-
-          <p>Layer5 goes out of its way to welcome and encourage new contributors. We often assign newcomers an onboarding buddy, a MeshMate, to ensure that newcomers get both introduced to the projects within the community and introduced around to other individuals. We strive to help them get a foothold on a crevice of one of our initiatives, instilling and nurturing a sense of ownership, so that they feel at-home as they become a regular contributor.</p>
           <p>
-            We also spend a great deal of time trying to recognize and uplift contributors on the Layer5 and Meshery Twitter accounts whether “contribution” means code or any of the other various forms of being involved int the projects and community. Likewise, we try to lift up contributors’ works on the Layer5 and Meshery LinkedIn pages, too. And, while it’s not a world stage, we openly and publicly share our community meetings on YouTube.
+          Layer5 is driven by its people, who are the stewards of our culture and principles. Join us on the journey to enabling the world's most innovative companies make the transition to cloud navtive and multi-cloud through engineering-empowered automation.
           </p>
-          <p>
-        Open source contributors come in all shapes, sizes, colors and so on. All are welcome in the Layer5 projects and community!!</p>
+          
         </Container>
       </div>
     </ProgramsPageWrapper>
