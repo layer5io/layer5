@@ -47,7 +47,7 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
-                  description: node.excerpt,
+                  description: node.body,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
