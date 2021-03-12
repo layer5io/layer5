@@ -57,7 +57,9 @@ module.exports = {
             query: `
               {
                 allPosts: allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
                   filter: { frontmatter: { published: { eq: true } } }
+                  limit: 8
                 ) {
                   nodes {
                     excerpt
