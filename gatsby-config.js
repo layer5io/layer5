@@ -26,6 +26,62 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-feed",
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allPosts }}) => {
+              return allPosts.nodes.map( node => {
+                return Object.assign({}, node.frontmatter, {
+                  title: node.frontmatter.title,
+                  subtitle: node.frontmatter.subtitle,
+                  author: node.frontmatter.author,
+                  description: node.body,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  // custom_elements: [{ "content:encoded": node.html }],
+                });
+              });
+            },
+            query: `
+              {
+                allPosts: allMdx(
+                  filter: { frontmatter: { published: { eq: true } } }
+                ) {
+                  nodes {
+                    body
+                    frontmatter {
+                      title
+                      subtitle
+                      author
+                      date(formatString: "MMMM Do, YYYY")
+                    }
+                    fields {
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-plugin-styled-components",
       options: {
         minify: false,
