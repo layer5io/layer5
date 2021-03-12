@@ -46,10 +46,8 @@ module.exports = {
               return allPosts.nodes.map( node => {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
-                  subtitle: node.frontmatter.subtitle,
                   author: node.frontmatter.author,
-                  description: node.body,
-                  date: node.frontmatter.date,
+                  description: node.excerpt,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   // custom_elements: [{ "content:encoded": node.html }],
@@ -62,12 +60,13 @@ module.exports = {
                   filter: { frontmatter: { published: { eq: true } } }
                 ) {
                   nodes {
-                    body
+                    excerpt
                     frontmatter {
                       title
-                      subtitle
                       author
-                      date(formatString: "MMMM Do, YYYY")
+                      thumbnail{
+                        publicURL
+                      }
                     }
                     fields {
                       slug
