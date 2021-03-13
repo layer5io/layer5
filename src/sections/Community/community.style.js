@@ -173,17 +173,24 @@ const CommunitySectionWrapper = styled.div`
 
     .newcomers-section {
         background: ${props => props.theme.secondaryLightColor};
-        padding-top: 4rem;
         width:100%;
         margin: 5rem 0;
+        padding: 2rem 0;
         .map {
-            padding-top: 0rem;
-            margin-top:0rem;
-            margin: 0 1rem 0 2rem;
-            max-width:40rem;
-            padding-bottom: 2rem;
-            @media (max-width: 1366px) {
-                margin: 0;
+            margin: auto 0 auto auto;
+            max-width: 35rem;
+        }
+        .text {
+            margin: 0 auto 0 0;
+            max-width: 70%;
+            h1{
+                font-size: 2rem;
+            }
+            h3{
+                font-size: 1.5rem;
+            }
+            p{
+                font-size: 1rem;
             }
         }
         h4{

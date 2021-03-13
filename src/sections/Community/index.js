@@ -105,7 +105,7 @@ const CommunityPage = () => {
           </Col>
           <Col sm={6} lg={6}>
 
-            <div>
+            <div className="text">
               <h1>Newcomers Welcome!</h1>
               <h3>Are you new to the community?</h3>
               <p className="invitation">
