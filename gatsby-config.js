@@ -51,6 +51,9 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  enclosure: node.frontmatter.thumbnail && {
+                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                  },
                   custom_elements: [{ "content:encoded": node.html }],
                 });
               });
@@ -60,7 +63,7 @@ module.exports = {
                 allPosts: allMdx(
                   sort: { fields: [frontmatter___date], order: DESC }
                   filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-                  limit: 8
+                  limit: 15
                 ) {
                   nodes {
                     body
@@ -68,12 +71,13 @@ module.exports = {
                     frontmatter {
                       title
                       author
-                      date(formatString: "MMMM Do, YYYY")
-                      thumbnail{
+                      date(formatString: "MMM DD YYYY")
+                      thumbnail {
                         publicURL
                       }
                     }
                     fields {
+                      collection
                       slug
                     }
                   }
@@ -81,6 +85,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
+            title: "Layer5 Blogs"
           },
         ],
       },
