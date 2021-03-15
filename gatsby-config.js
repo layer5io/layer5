@@ -63,7 +63,7 @@ module.exports = {
                 allPosts: allMdx(
                   sort: { fields: [frontmatter___date], order: DESC }
                   filter: { fields: { collection: { in: ["blog", "news"] } }, frontmatter: { published: { eq: true } } }
-                  limit: 15
+                  limit: 100
                 ) {
                   nodes {
                     body
