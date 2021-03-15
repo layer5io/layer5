@@ -62,8 +62,8 @@ module.exports = {
               {
                 allPosts: allMdx(
                   sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-                  limit: 15
+                  filter: { fields: { collection: { in: ["blog", "news"] } }, frontmatter: { published: { eq: true } } }
+                  limit: 100
                 ) {
                   nodes {
                     body
@@ -85,7 +85,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Layer5 Blogs"
+            title: "Layer5"
           },
         ],
       },
