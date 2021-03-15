@@ -1,12 +1,34 @@
-import React from "react";
+import React,{ useState } from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
-import {partners} from "../../collections/partners/partners";
+import {partners} from "./partners";
 import PartnerWrapper from "./partner.style";
+import { BsArrowDown } from "react-icons/bs";
+import { BsArrowUp } from "react-icons/bs";
 
 const Partner = () => {
   let academic_partners = partners.filter(partner => partner.type === "academic");
   let technology_partners = partners.filter(partner => partner.type === "technology");
+  
+  const [isOpen, setIsOpen] = useState(false);
+  const [ID, setID] = useState(-1);
+
+
+  const toggleActive = (id) => {
+    if(isOpen){
+      if(ID === id){
+        setIsOpen(false);
+        setID("");
+      } else{
+        setIsOpen(false);
+        setID(id);
+        setIsOpen(true);
+      }
+    } else{
+      setID(id);
+      setIsOpen(true);
+    }
+  };
 
   return (
     
@@ -37,22 +59,28 @@ const Partner = () => {
         </div>
         {
           academic_partners.map((partner,index) => (
-            <Row key={index} className={(index) %2 == 1?"cont-row-reverse":"cont-row"}>
-              <Col xs={5} sm={3} lg={2} className="custom-col">
+            <Row key={index} className={ID === index ? "active cont-row" : (index) % 2 === 1 ? "cont-row-reverse" : "cont-row"} >
+              <Col xs={5} sm={3} lg={2} className={ID === index? "custom-col-active":"custom-col"}>
                 <div className="img1">
                   <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
                     <img  src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
                   </a>
                 </div>
               </Col>
-              <Col xs={12} sm={9} lg={10}>
+              <Col xs={12} sm={9} lg={10} className={ID === index? "custom-col-active-desc":""}>
                 <div className="container">
                   <h2>{partner.name}</h2>
                   <div>
                     {partner.desc}
                   </div>
                   {
-                    partner.link ?<Button secondary className="custom-btn" url={partner.link}>Learn More &rarr;</Button>:null
+                    isOpen && ID === index ?<div className="moreInfo-div">
+                      {partner.moreInfo}
+                    </div>:null
+                  }
+                  {
+                    isOpen && ID === index? <button onClick={() => toggleActive(index)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
+                      <button onClick={() => toggleActive(index)} className="readmeBtn readmreBtn"> Read More <BsArrowDown className="icon" size={30} /></button> 
                   }
                 </div>
               </Col>
@@ -62,23 +90,30 @@ const Partner = () => {
         <h1 className="heading">Our Technology Partners</h1>
         {
           technology_partners.map((partner,index) => (
-            <Row key={index+1} className={(academic_partners.length % 2 == 0 && index % 2 == 1) || (academic_partners.length % 2 == 1 && index % 2 == 0)?"cont-row-reverse":"cont-row"}>
-              <Col xs={5} sm={3} lg={2} className="custom-col">
+            <Row key={index+1} className={ID === index ? "active cont-row" :(academic_partners.length % 2 == 0 && index % 2 == 1) || (academic_partners.length % 2 == 1 && index % 2 == 0)?"cont-row-reverse":"cont-row"}>
+              <Col xs={5} sm={3} lg={2} className={ID === index? "custom-col-active":"custom-col"}>
                 <div className="img1">
                   <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
                     <img src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
                   </a>
                 </div>
               </Col>
-              <Col xs={12} sm={9} lg={10} >
+              <Col xs={12} sm={9} lg={10} className={ID === index? "custom-col-active-desc":""}>
                 <div className="container">
                   <h2>{partner.name}</h2>
                   <div>
                     {partner.desc}
                   </div>
                   {
-                    partner.link ?<Button secondary className="custom-btn" url={partner.link} title="Learn More" >&rarr;</Button>:null
+                    isOpen ?<div className="moreInfo-div">
+                      {partner.moreInfo}
+                    </div>:null
                   }
+                  {
+                    isOpen && ID === index? <button onClick={() => toggleActive(index)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
+                      <button onClick={() => toggleActive(index)} className="readmeBtn readmreBtn"> Read More <BsArrowDown className="icon" size={30} /></button> 
+                  }
+                  
                 </div>
               </Col>
             </Row>
