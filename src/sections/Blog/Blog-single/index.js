@@ -22,9 +22,9 @@ const BlogSingle = ({data}) => {
       />
       <div className="single-post-wrapper">
         <Container>
-          <SRLWrapper>
-            <MDXRenderer>{body}</MDXRenderer>
-          </SRLWrapper>
+          {/* <SRLWrapper> */}
+          <MDXRenderer>{body}</MDXRenderer>
+          {/* </SRLWrapper> */}
           <BlogPostSignOff
             author={{ name: frontmatter.author }}
           />
