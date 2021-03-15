@@ -85,7 +85,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Layer5 Blogs"
+            title: "Layer5"
           },
         ],
       },
