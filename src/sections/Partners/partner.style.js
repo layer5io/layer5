@@ -86,13 +86,6 @@ const PartnerWrapper = styled.section`
         float: left;
         width: 130px;
     }
-    .img2 {
-        width: auto;
-        height: 100%;
-        min-width: 150px;
-        margin-right: 60px;
-        padding-right: 50px;
-    }
     .icon1 {
         font-size: 32px;
         vertical-align:  middle;
@@ -181,6 +174,40 @@ const PartnerWrapper = styled.section`
     .cont-row{
         flex-direction: row;
     }
+
+	.active {
+		display: flex;
+		width: 100%;
+		height: 100%;
+        flex-direction: column;
+        align-items:center;
+        transition: display 0.5s;
+	}
+    .readmeBtn {
+		display: flex;
+		background: transparent;
+		border: none;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.125rem;
+		cursor: pointer;
+		transition: 0.2s ease-in all;
+        padding:1rem 0;
+		&:hover {
+			color: ${props => props.theme.primaryLightColorTwo};
+		}
+	}
+    .moreInfo-div{
+        padding:1rem 0;
+    }
+    .custom-col-active{
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+    .custom-col-active-desc{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
     @media only screen and (max-width: 1500px) {
         .partner-container{
             .partner-container-body{
@@ -251,11 +278,28 @@ const PartnerWrapper = styled.section`
                 padding: 1rem 0;
             }
         }
+        .custom-col-active{
+            flex: 0 0 55%;
+            max-width: 55%;
+        }
+        .custom-col-active-desc{
+            flex: 0 0 75%;
+            max-width: 75%;
+        }
+
     }
     @media only screen and (max-width:576px){
         .custom-col{
             flex: 0 0 35%;
             max-width: 35%;
+        }
+        .custom-col-active{
+            flex: 0 0 85%;
+            max-width: 85%;
+        }
+        .custom-col-active-desc{
+            flex: 0 0 100%;
+            max-width: 100%;
         }
     }
     @media only screen and (max-width:476px){
@@ -268,6 +312,9 @@ const PartnerWrapper = styled.section`
         .custom-col{
             flex: 0 0 50%;
             max-width: 50%;
+        }
+        img{
+            width:80%;
         }
     }
 `;
