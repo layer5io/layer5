@@ -56,7 +56,7 @@ const Partner = () => {
         </div>
         {
           academic_partners.map((partner,index) => (
-            <div key={index}>
+            <div key={index} className="acc-cont">
               <Row  className={(index) % 2 === 1?"cont-row-reverse":"cont-row"} >
                 <Col xs={5} sm={3} lg={2} className="custom-col">
                   <div className="img1">
@@ -87,7 +87,7 @@ const Partner = () => {
                       </a>
                     </div>
                   </Col>
-                  <Col xs={12} sm={9} lg={8}>
+                  <Col xs={12} sm={9} lg={8} className="mobview">
                     <div className={isOpen&& ID === index ? "container container-active":"container"}>
                       <h2>{partner.name}</h2>
                       <div>
@@ -103,7 +103,7 @@ const Partner = () => {
                       </a>
                     </div>
                   </Col>
-                  <Col xs={12} sm={9} lg={8}>
+                  <Col xs={12} sm={9} lg={8} className="mobview">
                     <div className={isOpen&& ID === index ? "container container-active":"container"}>
                       <h2>{partner.name}</h2>
                       <div>
@@ -119,7 +119,7 @@ const Partner = () => {
         <h1 className="heading">Our Technology Partners</h1>
         {
           technology_partners.map((partner,index) => (
-            <div key={index+len_acad_part}>
+            <div key={index+len_acad_part} className="acc-cont">
               <Row  className={((len_acad_part+ index) % 2 == 1)?"cont-row-reverse":"cont-row"}>
                 <Col xs={5} sm={3} lg={2} className="custom-col">
                   <div className="img1">
@@ -150,7 +150,7 @@ const Partner = () => {
                       </a>
                     </div>
                   </Col>
-                  <Col xs={12} sm={9} lg={8}>
+                  <Col xs={12} sm={9} lg={8} className="mobview">
                     <div className={isOpen&& ID === index+len_acad_part ? "container container-active":"container"}>
                       <h2>{partner.name}</h2>
                       <div>
@@ -167,7 +167,7 @@ const Partner = () => {
                       </a>
                     </div>
                   </Col>
-                  <Col xs={12} sm={9} lg={8}>
+                  <Col xs={12} sm={9} lg={8} className="mobview">
                     <div className={isOpen&& ID === index+len_acad_part ? "container container-active":"container"}>
                       <h2>{partner.name}</h2>
                       <div>
