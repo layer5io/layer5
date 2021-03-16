@@ -156,7 +156,7 @@ const data = {
             question: "What are characteristics of successful interns?",
             category: "internships",
             answer: ["Interns that thrive at Layer5 are those that espouse the Layer5 culture of paying it forward. These interns freely help other contributors, understanding that 1) they learn as they teach and assist others, 2) their projects are futhered with more contributors engage, and 3) any contributors path to maintainership is one of enabling others.",
-            "Successful interns steward projects naturally as they become a resource to othe contributors. These interns frequently become component and/or core maintainers."],
+            "Successful interns steward projects naturally as they become a resource to other contributors. These interns frequently become component and/or core maintainers."],
             link: "/blog/tag/community",
             linktext: "Hear from other interns"
         },
