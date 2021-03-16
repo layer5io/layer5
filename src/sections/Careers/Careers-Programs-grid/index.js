@@ -64,14 +64,6 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
             </Row>
           </div>
           <p>
-            The quickly growing Layer5 community represents the largest collection of
-            service mesh projects and their maintainers in the world. Our projects establish
-            industry standards and enable service developers, owners, and operators
-            with repeatable patterns and best practices for managing all aspects of distributed services.
-            Our shared commitment to the open source spirit push the Layer5 community and its projects forward.
-            New members are always welcome.
-          </p>
-          <p>
           Layer5 is driven by its people, who are the stewards of our culture and principles. Join us on the journey to enabling the world's most innovative companies make the transition to cloud navtive and multi-cloud through engineering-empowered automation.
           </p>
           
