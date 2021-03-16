@@ -25,6 +25,7 @@ const PartnerWrapper = styled.section`
             display: flex;
             justify-content: center;
             padding:2rem;
+            flex-direction: column;
         }
     }
     
@@ -41,17 +42,6 @@ const PartnerWrapper = styled.section`
             font-size: 35px;
         }
     }
-    .card-content {
-        position: relative;
-        float: right;
-        width: 40%;
-        margin: 20px 20px 20px 35px;
-        vertical-align: bottom;
-        a {
-            width: auto;
-            text-align: center;
-        }
-    }
 
     .heading {
         text-align: center;
@@ -65,58 +55,23 @@ const PartnerWrapper = styled.section`
         margin: 1rem 0rem;
     }
     .img1 {
-        max-height: 256px;
         width: 256px;
-        position: relative;
-        margin: auto;
-        
-        object-fit: cover;
-        paddingTop: 1.0625em 
+        a{
+            display: block;
+            height: 100%;
+            width: 80%;
+
+        }
     }
 
     .custom-col{
         display: flex;
+        align-items: center;
+        justify-content:center;
     }
     .para {
         text-align: center;
         font-weight: bold;
-    }
-
-    .forklift-section {
-        float: left;
-        width: 130px;
-    }
-    .icon1 {
-        font-size: 32px;
-        vertical-align:  middle;
-    }
-    form {
-        text-align: center;
-    }
-    .input-text {
-        font-size: 15px;
-        box-sizing: border-box;
-        display: inline-block;
-        padding: 0px 1px;
-        height: 32px;
-        width: 34.5%;
-        border: 1px solid #d0d0d0;
-        border-radius: 3px;
-        margin-right: 5px; 
-    }
-    .input-email {
-        font-size: 15px;
-        box-sizing: border-box;
-        display: inline-block;
-        padding: 0px 1px;
-        height: 32px;
-        border: 1px solid #d0d0d0;
-        border-radius: 3px;
-        width: 70%;
-    }
-    .subscribe-form {
-        padding: 10px 0px 10px 0px;
-        text-align: center;
     }
     .btn {
         font-size: inherit;
@@ -143,7 +98,7 @@ const PartnerWrapper = styled.section`
         }
     }
     .partner-button{
-        margin: auto 0;
+        text-align: center;
     }
     .custom-btn{
         margin:1rem 0;
@@ -159,13 +114,12 @@ const PartnerWrapper = styled.section`
         }
     }
     .partner-btn{
-        border-radius: 50%;
-        display: flex;
-        height: 140px;
-        flex-direction: column;
-        p{
-            margin:0;   
-            color:white;
+        color:white;
+        img{
+            padding: 0 0.5rem;   
+        }
+        :hover{
+            opacity:0.9;
         }
     }
     .cont-row-reverse{
@@ -175,14 +129,6 @@ const PartnerWrapper = styled.section`
         flex-direction: row;
     }
 
-	.active {
-		display: flex;
-		width: 100%;
-		height: 100%;
-        flex-direction: column;
-        align-items:center;
-        transition: display 0.5s;
-	}
     .readmeBtn {
 		display: flex;
 		background: transparent;
@@ -191,23 +137,39 @@ const PartnerWrapper = styled.section`
 		align-items: center;
 		font-size: 1.125rem;
 		cursor: pointer;
-		transition: 0.2s ease-in all;
+		transition: 0.5s ease-in all;
         padding:1rem 0;
 		&:hover {
 			color: ${props => props.theme.primaryLightColorTwo};
 		}
 	}
+    .row-elem{
+        transition: all 0.5s ease-in-out;
+    } 
     .moreInfo-div{
+        height:0;
+        overflow: hidden;
+    }
+    .moreInfo-div-active{
+        height:30rem;
         padding:1rem 0;
+        box-shadow:0 2px 10px rgba(0,0,0,0.4);
+        border-bottom-right-radius:1rem;
+        border-bottom-left-radius:1rem;
+        margin-bottom:2rem ;
     }
     .custom-col-active{
-        flex: 0 0 35%;
-        max-width: 35%;
+        flex: 0 0 25%;
+        max-width: 25%;
+        img{
+            max-width:80%;
+        }
     }
-    .custom-col-active-desc{
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+    .container-active{
+        margin:0;
+        text-align:center;
+    }  
+    
     @media only screen and (max-width: 1500px) {
         .partner-container{
             .partner-container-body{
@@ -228,9 +190,6 @@ const PartnerWrapper = styled.section`
         }
         .container{
             margin: 0;
-        }
-        .partner-btn{
-            height: 130px;
         }
     }
     @media only screen and (max-width: 768px) {
@@ -268,7 +227,6 @@ const PartnerWrapper = styled.section`
             max-width:30%;
         }
         .partner-button-cont{
-            
             padding:2rem 0;
             margin:1rem 0;
             .partner-btn-cont-head{
