@@ -177,26 +177,20 @@ const CommunitySectionWrapper = styled.div`
         margin: 5rem 0;
         padding: 2rem 0;
         .map {
-            margin: auto 0 auto auto;
+            padding-bottom: 2rem;
+            margin: 0 !important;
             max-width: 35rem;
+            float: left;
         }
-        .text {
-            margin: 0 auto 0 0;
-            max-width: 70%;
-            h1{
-                font-size: 2rem;
-            }
-            h3{
-                font-size: 1.5rem;
-            }
-            p{
-                font-size: 1rem;
-            }
+        .text{
+            width: 50%;
+            margin: 0 !important;
+            padding-left: 2rem;
+            float: right;
         }
         h4{
             padding: 1rem auto;
         }
-        text-align:center;
 
         .newcomers-arrow {
             align-items: center;
