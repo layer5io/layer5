@@ -1,4 +1,3 @@
-
 const data = {
   features: [
     {
@@ -80,7 +79,7 @@ const data = {
         }
       ],
       count: {
-        value: 2000,
+        value: 0,
         description: "performance tests run"
       }
     }

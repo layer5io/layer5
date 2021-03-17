@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import c_icon from "./checkmark-box_green.svg";
@@ -10,6 +10,18 @@ import Counter from "../../../reusecore/Counter";
 
 
 const Features = () => {
+  const [performanceCount, setPerformanceCount] = useState(0);
+
+  useEffect(async () => {
+    try {
+      const response = await fetch("https://meshery.layer5.io/result/total");
+      const json = await response.json();
+      setPerformanceCount(json.total_runs);
+    } catch(err) {
+      console.log(err);
+    }
+  }, [setPerformanceCount]);
+
   return (
     <FeaturesColSectionWrapper>
       <Container>
@@ -42,7 +54,7 @@ const Features = () => {
                     <Counter
                       duration={6}
                       separator=","
-                      end={feature.count.value}
+                      end={feature.count.value !== 0 ? feature.count.value : performanceCount }
                       suffix={feature.count.description == "service meshes supported" ? "" : "+"} />
                   </h1>
                   <p className="count-desc">{feature.count.description}</p>
