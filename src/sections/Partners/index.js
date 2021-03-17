@@ -78,7 +78,7 @@ const Partner = () => {
                   </div>
                 </Col>
               </Row>
-              <div className={isOpen && ID === index + len_acad_part ? "parent-cont-active":"parent-cont"}>
+              <div className={isOpen && ID === index ? "parent-cont-active":"parent-cont"}>
                 <Row className={isOpen && ID === index && index % 2 == 1 ? "row-elem moreInfo-div-active cont-row-reverse": isOpen && ID === index && index % 2 == 0 ? "row-elem moreInfo-div-active cont-row": ID !== index && index % 2 == 1 ? "row-elem moreInfo-div cont-row-reverse" : "row-elem moreInfo-div cont-row"}>
                   <Col xs={5} sm={3} lg={4} className="custom-col">
                     <div className="img1">
