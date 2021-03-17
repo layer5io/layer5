@@ -171,18 +171,19 @@ const PartnerWrapper = styled.section`
             max-width:80%;
         }
     }
-    .container-active{
-        margin:0;
-        text-align:center;
-    }  
-    .cont-center{
-        text-align:center;
-    }
     .parent-cont{
         transition: all 0.5s ease-in-out;
     }
     .parent-cont-active{
         height:28rem;
+    }
+    .cont-vert-align{
+        margin:0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
     }
     @media only screen and (max-width: 1500px) {
         .partner-container{
@@ -277,13 +278,13 @@ const PartnerWrapper = styled.section`
             flex-direction: unset;
         }
         .moreInfo-div-active{
-            height: 45rem;
+            height: 50rem;
             display: flex;
             justify-content: center;
             flex-direction: unset;
         }
         .parent-cont-active{
-            height: 45rem;
+            height: 50rem;
             display: flex;
             justify-content: center;
         }
@@ -295,6 +296,11 @@ const PartnerWrapper = styled.section`
             flex: 0 0 85%;
             max-width: 85%;
             width: 100%;
+        }
+        .img1 {
+            a{ 
+                width: 100%;
+            }
         }
     }
     @media only screen and (max-width:576px){
@@ -327,12 +333,12 @@ const PartnerWrapper = styled.section`
             width: 100%;
         }
         .moreInfo-div-active{
-            height: 45rem;
+            height: 50rem;
             display: flex;
             justify-content: center;
         }
         .parent-cont-active{
-            height: 45rem;
+            height: 50rem;
             display: flex;
             justify-content: center;
         }
@@ -357,12 +363,12 @@ const PartnerWrapper = styled.section`
             align-items: center;
         }
         .moreInfo-div-active{
-            height: 45rem;
+            height: 53rem;
             display: flex;
             justify-content: center;
         }
         .parent-cont-active{
-            height: 45rem;
+            height: 53rem;
             display: flex;
             justify-content: center;
         }
@@ -394,12 +400,12 @@ const PartnerWrapper = styled.section`
             width: 100%;
         }
         .moreInfo-div-active{
-            height: 60rem;
+            height: 65rem;
             display: flex;
             justify-content: center;
         }
         .parent-cont-active{
-            height: 60rem;
+            height: 65rem;
             display: flex;
             justify-content: center;
         }
