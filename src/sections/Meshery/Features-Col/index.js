@@ -19,7 +19,6 @@ const Features = () => {
       setPerformanceCount(json.total_runs);
     } catch(err) {
       console.log(err);
-      throw err;
     }
   }, [setPerformanceCount]);
 
