@@ -73,7 +73,7 @@ const Partner = () => {
                     </div>
                     {
                       isOpen && ID === index? <button onClick={() => toggleActive(index)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
-                        <button onClick={() => toggleActive(index)} className="readmeBtn readmreBtn"> Read More <BsArrowDown className="icon" size={30} /></button> 
+                        <button onClick={() => toggleActive(index)} className="readmeBtn"> Read More <BsArrowDown className="icon" size={30} /></button> 
                     }
                   </div>
                 </Col>
@@ -120,12 +120,12 @@ const Partner = () => {
                     </div>
                     {
                       isOpen && ID === index+len_acad_part? <button onClick={() => toggleActive(index+len_acad_part)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
-                        <button onClick={() => toggleActive(index+len_acad_part)} className="readmeBtn readmreBtn"> Read More <BsArrowDown className="icon" size={30} /></button> 
+                        <button onClick={() => toggleActive(index+len_acad_part)} className="readmeBtn"> Read More <BsArrowDown className="icon" size={30} /></button> 
                     }
                   </div>
                 </Col>
               </Row>   
-              <div className={isOpen && ID === index + len_acad_part ? "parent-cont-active":"parent-cont"}>
+              <div className={isOpen && ID === index + len_acad_part ? "parent-cont-active" : "parent-cont"}>
                 <Row className={isOpen && ID === index + len_acad_part && (len_acad_part+ index) % 2 == 1 ? "row-elem moreInfo-div-active cont-row-reverse" : isOpen && ID === index + len_acad_part && (len_acad_part+ index) % 2 == 0 ? "row-elem moreInfo-div-active cont-row" : ID !== index + len_acad_part && (len_acad_part+ index) % 2 == 1 ? "row-elem moreInfo-div cont-row-reverse" : "row-elem moreInfo-div cont-row"}>
                   <Col xs={5} sm={3} lg={4} className="custom-col">
                     <div className="img1">

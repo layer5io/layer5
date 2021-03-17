@@ -161,7 +161,7 @@ const PartnerWrapper = styled.section`
         box-shadow:0 2px 10px rgba(0,0,0,0.4) inset;
         border-bottom-right-radius:1rem;
         border-bottom-left-radius:1rem;
-        margin-bottom:2rem ;
+        margin-bottom: 2rem;
     }
     .custom-col-active{
         flex: 0 0 25%;
@@ -243,8 +243,8 @@ const PartnerWrapper = styled.section`
             margin:1rem 0;
         }
         .custom-col{
-            flex:0 0 25%;
-            max-width:25%;
+            flex: 0 0 30%;
+            max-width: 45%;
         }
         .partner-button-cont{
             padding:2rem 0;
@@ -268,12 +268,33 @@ const PartnerWrapper = styled.section`
             display:flex;
             flex-direction:column;
             align-items:center;
+            margin: 3rem 0;
+        }
+        .moreInfo-div{
+            height:0;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+            flex-direction: unset;
         }
         .moreInfo-div-active{
-            height:45rem;
+            height: 45rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: unset;
         }
         .parent-cont-active{
-            height:45rem;
+            height: 45rem;
+            display: flex;
+            justify-content: center;
+        }
+        .parent-cont{
+            display: flex;
+            justify-content: center;
+        }
+        .mobview{
+            flex: 0 0 85%;
+            max-width: 85%;
+            width: 100%;
         }
     }
     @media only screen and (max-width:576px){
@@ -297,19 +318,27 @@ const PartnerWrapper = styled.section`
         .row-elem{
             transition: height 0.5s ease-in-out;
             display:flex;
-            flex-direction:column;
+            flex-direction:unset;
             width:100%;
         } 
         .mobview{
-            flex: unset;
-            max-width: unset;
+            flex: 0 0 100%;
+            max-width: 100%;
             width: 100%;
         }
         .moreInfo-div-active{
-            height:50rem;
+            height: 45rem;
+            display: flex;
+            justify-content: center;
         }
         .parent-cont-active{
-            height:50rem;
+            height: 45rem;
+            display: flex;
+            justify-content: center;
+        }
+        .parent-cont{
+            display: flex;
+            justify-content: center;
         }
     }
     @media only screen and (max-width:476px){
@@ -318,8 +347,8 @@ const PartnerWrapper = styled.section`
             max-width: 50%;
         }
         .mobview{
-            flex: unset;
-            max-width: unset;
+            flex: 0 0 100%;
+            max-width: 100%;
             width: 100%;
         }
         .acc-cont{
@@ -328,10 +357,18 @@ const PartnerWrapper = styled.section`
             align-items: center;
         }
         .moreInfo-div-active{
-            height: 55rem;
+            height: 45rem;
+            display: flex;
+            justify-content: center;
         }
         .parent-cont-active{
-            height: 55rem;
+            height: 45rem;
+            display: flex;
+            justify-content: center;
+        }
+        .parent-cont{
+            display: flex;
+            justify-content: center;
         }
     }
     @media only screen and (max-width:376px){
@@ -358,9 +395,17 @@ const PartnerWrapper = styled.section`
         }
         .moreInfo-div-active{
             height: 60rem;
+            display: flex;
+            justify-content: center;
         }
         .parent-cont-active{
             height: 60rem;
+            display: flex;
+            justify-content: center;
+        }
+        .parent-cont{
+            display: flex;
+            justify-content: center;
         }
     }
 `;
