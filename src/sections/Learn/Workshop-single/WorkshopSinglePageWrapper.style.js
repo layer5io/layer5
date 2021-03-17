@@ -35,6 +35,9 @@ const WorkshopSinglePageWrapper = styled.div`
 	}
 
 	.bottomBtn {
+		padding:4rem;
+		padding-top:5rem;
+		background-color: #FAFAFA;
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;

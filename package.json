@@ -36,6 +36,7 @@
     "gatsby-awesome-pagination": "^0.3.6",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-anchor-links": "^1.1.0",
+    "gatsby-plugin-feed-mdx": "^1.1.0",
     "gatsby-plugin-google-gtag": "^2.7.0",
     "gatsby-plugin-manifest": "^2.2.30",
     "gatsby-plugin-mdx": "^1.2.27",
@@ -71,6 +72,7 @@
     "react-twitter-embed": "^3.0.3",
     "react-vertical-timeline-component": "^3.3.0",
     "react-visibility-sensor": "^5.1.1",
+    "simple-react-lightbox": "^3.6.3",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1",
     "swiper": "^6.3.5"

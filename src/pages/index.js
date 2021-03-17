@@ -17,7 +17,6 @@ import Footer from "../sections/General/Footer";
 import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
-import EngineerEnabler from "../sections/Home/Engineer-enabler";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
 import CloudNativeLeaders from "../sections/Home/Cloud-Native";
@@ -26,7 +25,7 @@ import SoSpecial from "../sections/Home/So-Special-Section";
 const IndexPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <SEO description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure." />
+    <SEO title="Layer5" description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure." />
     <Layout>
       <Navigation />
       <Banner />

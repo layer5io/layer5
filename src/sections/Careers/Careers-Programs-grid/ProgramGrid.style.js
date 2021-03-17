@@ -1,5 +1,8 @@
 import styled from "styled-components";
 export const ProgramsPageWrapper = styled.div`
+    
+    margin-top: -2rem;
+
     .programs-page-wrapper{
         margin: 4rem 0;
 

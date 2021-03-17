@@ -1,5 +1,6 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { SRLWrapper } from "simple-react-lightbox";
 
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -21,7 +22,9 @@ const NewsSingle = ({data}) => {
       <div className="single-post-wrapper">
         <Container>
           <div className="single-post-block">
-            <MDXRenderer>{body}</MDXRenderer>
+            <SRLWrapper>
+              <MDXRenderer>{body}</MDXRenderer>
+            </SRLWrapper>
           </div>
         </Container>
       </div>
