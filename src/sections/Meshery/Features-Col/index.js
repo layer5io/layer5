@@ -54,7 +54,7 @@ const Features = () => {
                     <Counter
                       duration={6}
                       separator=","
-                      end={feature.count.value !== null ? feature.count.value:performanceCount}
+                      end={feature.count.value !== 0 ? feature.count.value : performanceCount }
                       suffix={feature.count.description == "service meshes supported" ? "" : "+"} />
                   </h1>
                   <p className="count-desc">{feature.count.description}</p>

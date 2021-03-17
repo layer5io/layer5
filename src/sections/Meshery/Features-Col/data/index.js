@@ -79,7 +79,7 @@ const data = {
         }
       ],
       count: {
-        value: null,
+        value: 0,
         description: "performance tests run"
       }
     }
