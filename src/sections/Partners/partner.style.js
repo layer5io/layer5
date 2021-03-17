@@ -116,7 +116,9 @@ const PartnerWrapper = styled.section`
     .partner-btn{
         color:white;
         img{
-            padding: 0 0.5rem;   
+            padding: 0 0.5rem;  
+            width:60px;
+            height:40px; 
         }
         :hover{
             opacity:0.9;
@@ -146,6 +148,7 @@ const PartnerWrapper = styled.section`
     .row-elem{
         transition: all 0.5s ease-in-out;
         background-color:rgb(248,248,255);
+        text-align:center;
     } 
     .moreInfo-div{
         height:0;
@@ -153,7 +156,7 @@ const PartnerWrapper = styled.section`
         transition: all 0.5s ease-in-out;
     }
     .moreInfo-div-active{
-        height:30rem;
+        height:28rem;
         padding:1rem 0;
         box-shadow:0 2px 10px rgba(0,0,0,0.4) inset;
         border-bottom-right-radius:1rem;
@@ -171,9 +174,16 @@ const PartnerWrapper = styled.section`
     .container-active{
         margin:0;
         text-align:center;
-
     }  
-    
+    .cont-center{
+        text-align:center;
+    }
+    .parent-cont{
+        transition: all 0.5s ease-in-out;
+    }
+    .parent-cont-active{
+        height:28rem;
+    }
     @media only screen and (max-width: 1500px) {
         .partner-container{
             .partner-container-body{
@@ -198,7 +208,7 @@ const PartnerWrapper = styled.section`
     }
     @media only screen and (max-width: 768px) {
         .row-elem{
-            transition: height 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
             display:flex;
             flex-direction:column;
             width:90%;
@@ -262,6 +272,9 @@ const PartnerWrapper = styled.section`
         .moreInfo-div-active{
             height:45rem;
         }
+        .parent-cont-active{
+            height:45rem;
+        }
     }
     @media only screen and (max-width:576px){
         .custom-col{
@@ -295,6 +308,9 @@ const PartnerWrapper = styled.section`
         .moreInfo-div-active{
             height:50rem;
         }
+        .parent-cont-active{
+            height:50rem;
+        }
     }
     @media only screen and (max-width:476px){
         .custom-col{
@@ -307,12 +323,15 @@ const PartnerWrapper = styled.section`
             width: 100%;
         }
         .acc-cont{
-            display:flex;
-            flex-direction:column;
-            align-items:center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .moreInfo-div-active{
-            height:55rem;
+            height: 55rem;
+        }
+        .parent-cont-active{
+            height: 55rem;
         }
     }
     @media only screen and (max-width:376px){
@@ -321,9 +340,9 @@ const PartnerWrapper = styled.section`
             max-width: 50%;
         }
         .acc-cont{
-            display:flex;
-            flex-direction:column;
-            align-items:center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         img{
             width:100%;
@@ -338,7 +357,10 @@ const PartnerWrapper = styled.section`
             width: 100%;
         }
         .moreInfo-div-active{
-            height:60rem;
+            height: 60rem;
+        }
+        .parent-cont-active{
+            height: 60rem;
         }
     }
 `;
