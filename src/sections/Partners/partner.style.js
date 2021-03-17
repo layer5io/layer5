@@ -145,18 +145,17 @@ const PartnerWrapper = styled.section`
 	}
     .row-elem{
         transition: all 0.5s ease-in-out;
-        transform-origin: left top;
-        transform: scaleY(0);
+        background-color:rgb(248,248,255);
     } 
     .moreInfo-div{
         height:0;
         overflow: hidden;
+        transition: all 0.5s ease-in-out;
     }
     .moreInfo-div-active{
         height:30rem;
         padding:1rem 0;
-        transform: scaleY(1);
-        box-shadow:0 2px 10px rgba(0,0,0,0.4);
+        box-shadow:0 2px 10px rgba(0,0,0,0.4) inset;
         border-bottom-right-radius:1rem;
         border-bottom-left-radius:1rem;
         margin-bottom:2rem ;
@@ -164,6 +163,7 @@ const PartnerWrapper = styled.section`
     .custom-col-active{
         flex: 0 0 25%;
         max-width: 25%;
+        transition: all 0.5s ease-in-out;
         img{
             max-width:80%;
         }
@@ -171,6 +171,7 @@ const PartnerWrapper = styled.section`
     .container-active{
         margin:0;
         text-align:center;
+
     }  
     
     @media only screen and (max-width: 1500px) {
