@@ -147,7 +147,7 @@ const PartnerWrapper = styled.section`
 	}
     .row-elem{
         transition: all 0.5s ease-in-out;
-        background-color:rgb(248,248,255);
+        background-image: linear-gradient(${props => props.theme.caribbeanGreenColor},${props => props.theme.secondaryColor});
         text-align:center;
     } 
     .moreInfo-div{
