@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import BannerDefault from "../Banner-default";
 import BannerAlt from "../Banner-alt";
+import Banner3 from "../Banner-3";
 
 const BannersList = [
   <BannerDefault key={0} />,
-  <BannerAlt key={1} /> 
+  <BannerAlt key={1} />,
+  <Banner3 key={2} />
 ];
 
 const RotationalBanner = () => {
