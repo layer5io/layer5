@@ -176,17 +176,8 @@ const CommunitySectionWrapper = styled.div`
         width:100%;
         margin: 5rem 0;
         padding: 2rem 0;
-        .map {
-            padding-bottom: 2rem;
-            margin: 0 !important;
-            max-width: 35rem;
-            float: left;
-        }
         .text{
-            width: 50%;
-            margin: 0 !important;
-            padding-left: 2rem;
-            float: right;
+            text-align: center;
         }
         h4{
             padding: 1rem auto;
@@ -205,6 +196,14 @@ const CommunitySectionWrapper = styled.div`
         }
         .invitation {
             margin: 2rem 0rem 2rem 0rem;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .newcomers-section {
+            .text {
+                margin-top: 1.5rem;
+            }
         }
     }
 
