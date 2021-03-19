@@ -11,9 +11,9 @@ import { FiDownloadCloud } from "react-icons/fi";
 // import Banner3SectionWrapper from "./banner3.style";
 import Backgroundsvg from "./assets/images/background.svg";
 
-const Banner3 = ({Style_element}) => {
+const Banner3 = () => {
   return (
-    <Style_element>
+    <React.Fragment>
       <img src={Backgroundsvg} className="background-svg" />
       <Container fullWidthSM>
         <Row>
@@ -45,7 +45,7 @@ const Banner3 = ({Style_element}) => {
           </Col>
         </Row>
       </Container>
-    </Style_element>
+    </React.Fragment>
   );
 };
 
