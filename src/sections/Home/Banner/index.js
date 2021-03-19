@@ -28,6 +28,7 @@ const RotationalBanner = () => {
   return (
     <TopLevelWrapper>
       <div className={`banner${Banner}`}>
+        {console.log(Banner)}
         {BannersList[Banner]}
       </div>
     </TopLevelWrapper>
