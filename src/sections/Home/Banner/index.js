@@ -11,7 +11,6 @@ const BannersList = [
 ];
 
 const RotationalBanner = () => {
-  const bannerRef = useRef(null);
   let initialValue;
   try {
     initialValue = sessionStorage.getItem("banner") || 0;
@@ -19,19 +18,24 @@ const RotationalBanner = () => {
     initialValue = 0;
   }
   const [Banner, setBanner] = useState(initialValue);
+  const [mounted, setMounted] = useState(false);
+  // useEffect(() => {
+  //   bannerRef.current.classList.add(`banner${Banner}`);
+  //   bannerRef.current.classList.remove(`banner${(Banner + BannersList.length - 1) % BannersList.length}`);
+  //   console.log(bannerRef.current.classList);
+  // })
   useEffect(() => {
-    bannerRef.current.classList.add(`banner${Banner}`);
-    bannerRef.current.classList.remove(`banner${(Banner+BannersList.length-1) % BannersList.length}`);
-    // console.log(`${(Banner+BannersList.length-1) % BannersList.length}`);
     if (sessionStorage.getItem("banner")) {
       sessionStorage.setItem("banner", (1 + Number(Banner)) % BannersList.length);
     } else {
       sessionStorage.setItem("banner", 1);
     }
-  },[]);
+    setMounted(true);
+  }, []);
+
   return (
     <TopLevelWrapper>
-      <div className={`banner${Banner}`} ref={bannerRef}>
+      <div className={mounted?`banner${Banner}`: ""}>
         {BannersList[Banner]}
       </div>
     </TopLevelWrapper>
