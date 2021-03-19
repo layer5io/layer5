@@ -8,7 +8,6 @@ import VintageBox from "../../../reusecore/VintageBox";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { FiDownloadCloud } from "react-icons/fi";
 
-// import Banner3SectionWrapper from "./banner3.style";
 import Backgroundsvg from "./assets/images/background.svg";
 
 const Banner3 = () => {

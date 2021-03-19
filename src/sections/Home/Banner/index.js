@@ -19,11 +19,6 @@ const RotationalBanner = () => {
   }
   const [Banner, setBanner] = useState(initialValue);
   const [mounted, setMounted] = useState(false);
-  // useEffect(() => {
-  //   bannerRef.current.classList.add(`banner${Banner}`);
-  //   bannerRef.current.classList.remove(`banner${(Banner + BannersList.length - 1) % BannersList.length}`);
-  //   console.log(bannerRef.current.classList);
-  // })
   useEffect(() => {
     if (sessionStorage.getItem("banner")) {
       sessionStorage.setItem("banner", (1 + Number(Banner)) % BannersList.length);
@@ -35,7 +30,7 @@ const RotationalBanner = () => {
 
   return (
     <TopLevelWrapper>
-      <div className={mounted?`banner${Banner}`: ""}>
+      <div className={mounted?`banner${Banner}`: "banner0"}>
         {BannersList[Banner]}
       </div>
     </TopLevelWrapper>
