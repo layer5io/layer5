@@ -22,12 +22,13 @@ const RotationalBanner = () => {
   useEffect(() => {
     bannerRef.current.classList.add(`banner${Banner}`);
     bannerRef.current.classList.remove(`banner${(Banner+BannersList.length-1) % BannersList.length}`);
+    // console.log(`${(Banner+BannersList.length-1) % BannersList.length}`);
     if (sessionStorage.getItem("banner")) {
       sessionStorage.setItem("banner", (1 + Number(Banner)) % BannersList.length);
     } else {
       sessionStorage.setItem("banner", 1);
     }
-  });
+  },[]);
   return (
     <TopLevelWrapper>
       <div className={`banner${Banner}`} ref={bannerRef}>
