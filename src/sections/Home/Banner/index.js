@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import BannerDefault from "../Banner-default";
 import BannerAlt from "../Banner-alt";
 import Banner3 from "../Banner-3";
+import styleAlt from "../Banner-alt/altbanner.style";
+import styleDefault from "../Banner-default/banner.style";
+import style3 from "../Banner-3/banner3.style";
 
 const BannersList = [
-  <BannerDefault key={0} />,
-  <BannerAlt key={1} />,
-  <Banner3 key={2} />
+  <BannerDefault key={0} Style_element={styleDefault}/>,
+  <BannerAlt key={1} Style_element={styleAlt}/>,
+  <Banner3 key={2} Style_element={style3}/>
 ];
 
 const RotationalBanner = () => {
@@ -24,6 +27,7 @@ const RotationalBanner = () => {
       sessionStorage.setItem("banner", 1);
     }
   });
+  console.log(BannersList[Banner]);
   return (BannersList[Banner]);
 };
 

@@ -6,7 +6,7 @@ const Banner3SectionWrapper = styled.section`
         overflow: visible;
         position: absolute;
         right: 0px;
-        top: -20%;
+        top: -10%;
         width: 25%;
         min-height: 150%;
     }

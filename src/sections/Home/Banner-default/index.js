@@ -9,11 +9,11 @@ import VintageBox from "../../../reusecore/VintageBox";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { FiDownloadCloud } from "react-icons/fi";
 
-import BannerSectionWrapper from "./banner.style";
+// import BannerSectionWrapper from "./banner.style";
 
-const BannerDefault = () => {
+const BannerDefault = ({Style_element}) => {
   return (
-    <BannerSectionWrapper>
+    <Style_element>
       {/* <ParticleComponent /> */}
       <Container fullWidthSM>
         <Row>
@@ -43,7 +43,7 @@ const BannerDefault = () => {
           </Col>
         </Row>
       </Container>
-    </BannerSectionWrapper>
+    </Style_element>
   );
 };
 

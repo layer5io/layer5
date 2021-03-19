@@ -8,11 +8,11 @@ import VintageBox from "../../../reusecore/VintageBox";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { FiDownloadCloud } from "react-icons/fi";
 
-import AltBannerSectionWrapper from "./altbanner.style";
+// import AltBannerSectionWrapper from "./altbanner.style";
 
-const BannerAlt = () => {
+const BannerAlt = ({Style_element}) => {
   return (
-    <AltBannerSectionWrapper>
+    <Style_element>
       <Container fullWidthSM>
         <Row>
           <Col sm={8} lg={8} className="section-title-wrapper">
@@ -41,7 +41,7 @@ const BannerAlt = () => {
           </Col>
         </Row>
       </Container>
-    </AltBannerSectionWrapper>
+    </Style_element>
   );
 };
 

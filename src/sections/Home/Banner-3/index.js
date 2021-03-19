@@ -8,12 +8,12 @@ import VintageBox from "../../../reusecore/VintageBox";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { FiDownloadCloud } from "react-icons/fi";
 
-import Banner3SectionWrapper from "./banner3.style";
+// import Banner3SectionWrapper from "./banner3.style";
 import Backgroundsvg from "./assets/images/background.svg";
 
-const Banner3 = () => {
+const Banner3 = ({Style_element}) => {
   return (
-    <Banner3SectionWrapper>
+    <Style_element>
       <img src={Backgroundsvg} className="background-svg" />
       <Container fullWidthSM>
         <Row>
@@ -45,7 +45,7 @@ const Banner3 = () => {
           </Col>
         </Row>
       </Container>
-    </Banner3SectionWrapper>
+    </Style_element>
   );
 };
 
