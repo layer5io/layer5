@@ -332,9 +332,8 @@ const TopLevelWrapper = styled.div`
             overflow: visible;
             position: absolute;
             right: 0px;
-            top: -10%;
-            width: 25%;
-            min-height: 150%;
+            top: 0px;
+            min-height: 70rem;
         }
         p {
             font-size: 21px;
@@ -366,9 +365,9 @@ const TopLevelWrapper = styled.div`
         }
         .vintage-box-container {
             display: flex;
-        }
-        .vintage-box {
-            margin: auto;
+            .vintage-box {
+                margin: auto;
+            }
         }
         .banner-btn {
             margin: 0rem .5rem 0 .5rem;
@@ -406,6 +405,10 @@ const TopLevelWrapper = styled.div`
             p {
                 font-size: 1.5rem;
             }
+            .background-svg {
+                max-height: 60rem;
+                min-height: 0rem;
+            }
         }
         @media only screen and (max-width: 992px) {
             padding: 3rem 0;
@@ -420,6 +423,9 @@ const TopLevelWrapper = styled.div`
             }
             p {
                 font-size: 1.5rem;
+            }
+            .background-svg {
+                max-height: 55rem;
             }
         }
         @media only screen and (max-width: 912px) {
@@ -448,6 +454,9 @@ const TopLevelWrapper = styled.div`
             .banner-btn+.banner-btn{
                 margin-left: 15px;
             } 
+            .background-svg {
+                max-height: 50rem;
+            }
         }
         @media only screen and (max-width: 760px) {
             padding: 2rem 0;
@@ -471,6 +480,10 @@ const TopLevelWrapper = styled.div`
                     content: none;
                 }
             }
+            .background-svg {
+                max-width: 20rem;
+                max-height: 40rem;
+            }
         }
         @media only screen and (max-width: 480px) {
             padding: 2rem 0;
@@ -478,6 +491,11 @@ const TopLevelWrapper = styled.div`
                 &:before{
                     content: none;
                 }
+            }
+            .background-svg {
+                top: 3rem;
+                max-width: 10rem;
+                min-height: 30rem;
             }
         }
         @media only screen and (max-width: 430px) {
@@ -524,6 +542,10 @@ const TopLevelWrapper = styled.div`
                 font-size: 14px;
                 min-width: 127px;
                 padding: 14px 12px; 
+            }
+            .background-svg {
+                max-width: 8rem;
+                min-height: 30rem;
             }
         }
         @media only screen and (max-width: 330px) {
