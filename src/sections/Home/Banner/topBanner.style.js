@@ -390,13 +390,28 @@ const TopLevelWrapper = styled.div`
                 //color: #326d62;
             }
         }
+        @media only screen and (max-width: 1400px) {
+            .section-title {
+                text-align: left;
+            }
+            p {
+                width: 80%;
+                text-align: left;
+                font-size: 1.5rem;
+            }
+            .vintage-box-container {
+                display: flex;
+                .vintage-box {
+                    margin: auto 0;
+                }
+            }
+        }
         @media only screen and (max-width: 1200px) {
             padding: 4rem 0;
             .section-title { 
                 h1 {
                     font-size: 3rem;
                     line-height: 3.5rem;
-                    margin: 0 0 1rem 0;
                 }
                 h2 {
                     font-size: 2rem;
@@ -429,16 +444,11 @@ const TopLevelWrapper = styled.div`
             }
         }
         @media only screen and (max-width: 912px) {
-            padding: 3rem 0;
-            p {
-                width: 100%;
-            }
-            
+            padding: 3rem 0;            
             .section-title {
                 h1 {
                     font-size: 2.5rem;
                     line-height: 2.7rem;
-                    margin: 0 0 1rem 0;
                 }
                 h2 {
                     font-size: 2rem;
@@ -473,6 +483,7 @@ const TopLevelWrapper = styled.div`
                 }
             }
             p {
+                width: 60%;
                 font-size: 1.2rem;
             }
             .vintage-box{
@@ -496,6 +507,9 @@ const TopLevelWrapper = styled.div`
                 top: 3rem;
                 max-width: 10rem;
                 min-height: 30rem;
+            }
+            p {
+                width: 80%;
             }
         }
         @media only screen and (max-width: 430px) {
