@@ -24,7 +24,7 @@ const PartnerItemWrapper = styled.section`
     }
     img {
         max-width: 100%;
-        min-width: 50px;
+        min-width: 5rem;
         margin: auto;
         opacity: .7;
         max-height:100px;
