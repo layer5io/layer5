@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BookmarkImage from "./bookmark.png";
+import BookmarkImage from "./bookmarks.jpg";
 
 const CommunitySectionWrapper = styled.div`
     margin-bottom: 3.25rem;
