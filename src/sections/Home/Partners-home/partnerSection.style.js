@@ -24,10 +24,20 @@ const PartnerItemWrapper = styled.section`
     }
     img {
         max-width: 100%;
-        min-width: 5rem;
+        min-width: 3.2rem;
         margin: auto;
         opacity: .7;
         max-height:100px;
+    }
+    @supports (-webkit-hyphens:none) { 
+        img { 
+            min-width: 8rem; 
+        }
+        @media only screen and (max-width: 992px) {
+            img { 
+                min-width: 5.625rem; 
+            }
+        }
     }
     .partner__block__inner {
         padding: 5px;
