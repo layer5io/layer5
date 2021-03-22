@@ -12,15 +12,11 @@ import Counter from "../../../reusecore/Counter";
 const Features = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
 
-  useEffect(async () => {
-    try {
-      const response = await fetch("https://meshery.layer5.io/result/total");
-      const json = await response.json();
-      setPerformanceCount(json.total_runs);
-    } catch(err) {
-      console.log(err);
-    }
-  }, [setPerformanceCount]);
+  useEffect(() => {
+    fetch("https://meshery.layer5.io/result/total")
+      .then(response => response.json())
+      .then(resultcount => setPerformanceCount(resultcount.total_runs));
+  }, []);
 
   return (
     <FeaturesColSectionWrapper>
@@ -55,7 +51,7 @@ const Features = () => {
                       duration={6}
                       separator=","
                       end={feature.count.value !== 0 ? feature.count.value : performanceCount }
-                      suffix={feature.count.description == "service meshes supported" ? "" : "+"} />
+                      suffix={feature.count.description == "users" ? "+" : ""} />
                   </h1>
                   <p className="count-desc">{feature.count.description}</p>
                 </div>
