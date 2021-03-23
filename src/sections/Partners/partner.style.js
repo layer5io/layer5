@@ -1,4 +1,14 @@
-import styled from "styled-components";
+import styled ,{ keyframes } from "styled-components";
+
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 const PartnerWrapper = styled.section`
     position: relative;
@@ -67,7 +77,9 @@ const PartnerWrapper = styled.section`
     .custom-col{
         display: flex;
         align-items: center;
-        justify-content:center;
+        width: 85%;
+        padding: 3rem 4rem;
+        transition: all 0.5s ease-in-out;
     }
     .para {
         text-align: center;
@@ -147,44 +159,50 @@ const PartnerWrapper = styled.section`
 	}
     .row-elem{
         transition: all 0.5s ease-in-out;
-        background-image: linear-gradient(${props => props.theme.caribbeanGreenColor},${props => props.theme.secondaryColor});
-        text-align:center;
+        background-color: rgba(0,179,159,0.1);
+        display: flex;
+        height: 0rem;
+        justify-content: center;
+        flex-direction:column;
+        h1{
+            font-weight: 600;
+        }
     } 
     .moreInfo-div{
         height:0;
         overflow: hidden;
         transition: all 0.5s ease-in-out;
+        
     }
     .moreInfo-div-active{
-        height:28rem;
-        padding:1rem 0;
-        box-shadow:0 2px 10px rgba(0,0,0,0.4) inset;
-        border-bottom-right-radius:1rem;
-        border-bottom-left-radius:1rem;
-        margin-bottom: 2rem;
-    }
-    .custom-col-active{
-        flex: 0 0 25%;
-        max-width: 25%;
-        transition: all 0.5s ease-in-out;
-        img{
-            max-width:80%;
-        }
+        height: 34rem;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
     }
     .parent-cont{
         transition: all 0.5s ease-in-out;
+        height: 0rem;
     }
     .parent-cont-active{
-        height:28rem;
+        height: 34rem;
+        animation: 0.35s ${fadeOut};
     }
     .cont-vert-align{
         margin:0;
+        padding:0 4rem;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         height: 100%;
     }
+    .par-cont{
+        margin: 1rem 0;
+    }
+    .sub-cont{
+        height: 100%;
+    }
+    
     @media only screen and (max-width: 1500px) {
         .partner-container{
             .partner-container-body{
@@ -244,8 +262,8 @@ const PartnerWrapper = styled.section`
             margin:1rem 0;
         }
         .custom-col{
-            flex: 0 0 30%;
-            max-width: 45%;
+            display:flex;
+            width: 100%;
         }
         .partner-button-cont{
             padding:2rem 0;
@@ -256,14 +274,6 @@ const PartnerWrapper = styled.section`
             .partner-btn-cont-body{
                 padding: 1rem 0;
             }
-        }
-        .custom-col-active{
-            flex: 0 0 55%;
-            max-width: 55%;
-        }
-        .custom-col-active-desc{
-            flex: 0 0 75%;
-            max-width: 75%;
         }
         .acc-cont{
             display:flex;
@@ -278,13 +288,14 @@ const PartnerWrapper = styled.section`
             flex-direction: unset;
         }
         .moreInfo-div-active{
-            height: 50rem;
+            height: 45rem;
+            padding:0;
             display: flex;
             justify-content: center;
-            flex-direction: unset;
+            flex-direction: column;
         }
         .parent-cont-active{
-            height: 50rem;
+            height: 45rem;
             display: flex;
             justify-content: center;
         }
@@ -293,9 +304,7 @@ const PartnerWrapper = styled.section`
             justify-content: center;
         }
         .mobview{
-            flex: 0 0 85%;
-            max-width: 85%;
-            width: 100%;
+            width: 85%;
         }
         .img1 {
             a{ 
@@ -305,12 +314,8 @@ const PartnerWrapper = styled.section`
     }
     @media only screen and (max-width:576px){
         .custom-col{
-            flex: 0 0 10%;
-            max-width: 50%;
-        }
-        .custom-col-active{
-            flex: 0 0 85%;
-            max-width: 85%;
+           display: flex;
+           width: 100%;
         }
         .custom-col-active-desc{
             flex: 0 0 100%;
@@ -323,9 +328,9 @@ const PartnerWrapper = styled.section`
         }
         .row-elem{
             transition: height 0.5s ease-in-out;
-            display:flex;
-            flex-direction:unset;
-            width:100%;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
         } 
         .mobview{
             flex: 0 0 100%;
