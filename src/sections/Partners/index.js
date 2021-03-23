@@ -57,7 +57,7 @@ const Partner = () => {
         {
           academic_partners.map((partner,index) => (
             <div key={index} className="acc-cont">
-              <Row  className={(index) % 2 === 1?"cont-row-reverse":"cont-row"} >
+              <Row  className={ (index) % 2 === 1 ? "cont-row-reverse" : "cont-row" } >
                 <Col xs={5} sm={3} lg={3} className="custom-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
@@ -78,24 +78,24 @@ const Partner = () => {
                   </div>
                 </Col>
               </Row>
-              <div className={isOpen && ID === index ? "parent-cont-active":"parent-cont"}>
-                <Row className={isOpen && ID === index && index % 2 == 1 ? "row-elem moreInfo-div-active cont-row-reverse": isOpen && ID === index && index % 2 == 0 ? "row-elem moreInfo-div-active cont-row": ID !== index && index % 2 == 1 ? "row-elem moreInfo-div cont-row-reverse" : "row-elem moreInfo-div cont-row"}>
-                  <Col xs={5} sm={3} lg={4} className="custom-col">
-                    <div className="img1">
-                      <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
-                        <img  src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
-                      </a>
+              <div className={isOpen && ID === index ? "par-cont parent-cont-active" : "par-cont parent-cont" }>
+                <div className={isOpen && ID === index && index % 2 == 1 ? "row-elem moreInfo-div-active cont-row-reverse": isOpen && ID === index && index % 2 == 0 ? "row-elem moreInfo-div-active cont-row": ID !== index && index % 2 == 1 ? "row-elem moreInfo-div cont-row-reverse" : "row-elem moreInfo-div cont-row"}>
+                  <div className="sub-cont">
+                    <div className="custom-col">
+                      <div className="img1">
+                        <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
+                          <img  src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                        </a>
+                      </div>
+                      <h1>{partner.name}</h1>
                     </div>
-                  </Col>
-                  <Col xs={12} sm={9} lg={8} className="mobview">
-                    <div className="container cont-vert-align">
-                      <h2>{partner.name}</h2>
-                      <div>
+                    <div className="mobview">
+                      <div className="container cont-vert-align">                      
                         {partner.moreInfo}
                       </div>
                     </div>
-                  </Col>
-                </Row>
+                  </div>
+                </div>
               </div>
             </div>
           ))
@@ -104,7 +104,7 @@ const Partner = () => {
         {
           technology_partners.map((partner,index) => (
             <div key={index+len_acad_part} className="acc-cont">
-              <Row  className={((len_acad_part+ index) % 2 == 1)?"cont-row-reverse":"cont-row"}>
+              <Row  className={ ((len_acad_part+ index) % 2 == 1 ) ? "cont-row-reverse" : "cont-row" }>
                 <Col xs={5} sm={3} lg={3} className="custom-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
@@ -125,25 +125,25 @@ const Partner = () => {
                   </div>
                 </Col>
               </Row>   
-              <div className={isOpen && ID === index + len_acad_part ? "parent-cont-active" : "parent-cont"}>
-                <Row className={isOpen && ID === index + len_acad_part && (len_acad_part+ index) % 2 == 1 ? "row-elem moreInfo-div-active cont-row-reverse" : isOpen && ID === index + len_acad_part && (len_acad_part+ index) % 2 == 0 ? "row-elem moreInfo-div-active cont-row" : ID !== index + len_acad_part && (len_acad_part+ index) % 2 == 1 ? "row-elem moreInfo-div cont-row-reverse" : "row-elem moreInfo-div cont-row"}>
-                  <Col xs={5} sm={3} lg={4} className="custom-col">
-                    <div className="img1">
-                      <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
-                        <img  src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
-                      </a>
+              <div className={isOpen && ID === index + len_acad_part ? "par-cont parent-cont-active" : "par-cont parent-cont" }>
+                <div className={isOpen && ID === index + len_acad_part && (len_acad_part+ index) % 2 == 1 ? "row-elem moreInfo-div-active cont-row-reverse" : isOpen && ID === index + len_acad_part && (len_acad_part+ index) % 2 == 0 ? "row-elem moreInfo-div-active cont-row" : ID !== index + len_acad_part && (len_acad_part+ index) % 2 == 1 ? "row-elem moreInfo-div cont-row-reverse" : "row-elem moreInfo-div cont-row"}>
+                  <div className="sub-cont">
+                    <div className="custom-col">
+                      <div className="img1">
+                        <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
+                          <img  src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                        </a>
+                      </div>
+                      <h1>{partner.name}</h1>
                     </div>
-                  </Col>
-                  <Col xs={12} sm={9} lg={8} className="mobview">
-                    <div className="container cont-vert-align">
-                      <h2>{partner.name}</h2>
-                      <div>
+                    <div className="mobview">
+                      <div className="container cont-vert-align">
                         {partner.moreInfo}
                         {partner.desc}
                       </div>
                     </div>
-                  </Col>
-                </Row>
+                  </div>
+                </div>
               </div>
             </div>
           ))
