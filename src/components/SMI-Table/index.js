@@ -8,6 +8,7 @@ import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import { non_functional } from "../../collections/landscape/non-functional";
 import ServiceMeshIcon from "../../assets/images/service-mesh-icons/service-mesh.svg";
+import ReactTooltip from "react-tooltip";
 
 const Table = ({ columns, data, spec }) => {
   // Use the state and functions returned from useTable to build the UI
@@ -60,14 +61,15 @@ const Table = ({ columns, data, spec }) => {
                   {row.original.more_details.map(spec => {
                     if(spec["capability"] === "FULL"){
                       return <td>
-                        <img className="smiMark" src={passingMark} />    
+                        <img className="smiMark" src={passingMark} />
                       </td>;
                     } else if (spec["capability"] === "NONE") {
                       return <td >
                         <img className="smiMark" src={failingMark} />
                       </td>;
                     } else if(spec["capability"] === "HALF"){
-                      return <td><img className="smiMark" src={halfMark} />
+                      return <td>
+                          <img className="smiMark" src={halfMark} />
                       </td>;
                     } else {
                       return <td >
@@ -82,7 +84,7 @@ const Table = ({ columns, data, spec }) => {
                 </tr>
 
                 {
-                  row.original.previous_versions.map(prevResult => {
+                  row.original.previous_versions && row.original.previous_versions.map(prevResult => {
                     return (
                       <tr key={`collapse-row${i}`} className={isCollapsed[i] ? "secondaryRow" : "secondaryRow-hidden"} >
                         <td></td>

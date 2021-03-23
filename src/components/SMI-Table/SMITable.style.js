@@ -5,6 +5,7 @@ overflow-x: auto;
 
 img.smiMark {
 	height: 70%;
+	max-height:2.5rem;
 }
 table {
     border-spacing: 0;
