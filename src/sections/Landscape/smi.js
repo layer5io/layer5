@@ -38,7 +38,7 @@ function SMI_Compatibility() {
   );
     
   // const data = React.useMemo(() => smi_data);
-  const [smiData, setSmiData] = useState({});
+  const [smiData, setSmiData] = useState(0);
   const [smiTests, setSmiTests] = useState([]);
 
   useEffect(() => {
@@ -73,7 +73,6 @@ function SMI_Compatibility() {
             })
           })
         })
-        console.log(result)
         return result
       })
       //Save
@@ -85,28 +84,33 @@ function SMI_Compatibility() {
             (data[ver] = data[ver] || []).push(res[ver][mesh])
           })
         })
-        console.log(data, "data")
-        setSmiData(data)
-        setSmiTests(Object.keys(res))
 
+        setSmiData(data)
+        setSmiTests(Object.keys(data))
       })
     
   }, []);
 
+  if(smiData==0) {
+    return (<div></div>)
+  }
+
   return (
-    <Tabs style={{ overflow: "auto", whiteSpace: "nowrap"}} className="landscape-table">
+    <Tabs defaultFocus style={{ overflow: "auto", whiteSpace: "nowrap"}} className="landscape-table">
       <TabList>
         {
-          smiTests.map(ver => 
-            <Tab>{ver}</Tab>)
+          Object.keys(smiData).map((ver, ind) => {
+            return <Tab  key={ver}>{ver}</Tab>
+          }
+          )
         }
       </TabList>
-      <TabPanel>
       {
-          smiTests.map(ver => 
-        <Table columns={columns} data={smiData[ver]} spec={{"traffic-access":Object.values(smiData[ver])[0].more_details[0].smi_version, "traffic-split":Object.values(smiData[ver])[0].more_details[1].smi_version, "traffic-spec":Object.values(smiData[ver])[0].more_details[2].smi_version}} />)
-      }
-      </TabPanel>
+      Object.keys(smiData).map(ver => 
+        <TabPanel key={ver}>
+          <Table columns={columns} data={smiData[ver]} spec={{"traffic-access":Object.values(smiData[ver])[0].more_details[0].smi_version, "traffic-split":Object.values(smiData[ver])[0].more_details[1].smi_version, "traffic-spec":Object.values(smiData[ver])[0].more_details[2].smi_version}} /> 
+        </TabPanel>
+      )}
     </Tabs>
   );
 }

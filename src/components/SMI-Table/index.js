@@ -52,23 +52,23 @@ const Table = ({ columns, data, spec }) => {
                 }}>
                   <td>
                     {
-                      non_functional.find(ele => ele.name == row.original.mesh_name) ?
-                        <img className="smiMark" src={non_functional.find(ele => ele.name == row.original.mesh_name).icon} />
+                      non_functional.find(ele => ele.name.includes(row.original.mesh_name)) ?
+                        <img className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} />
                         :<img className="smiMark" src={ServiceMeshIcon} />
                     }
                   </td>
                   <td>{row.original.mesh_version}</td>
                   {row.original.more_details.map(spec => {
                     if(spec["capability"] === "FULL"){
-                      return <td>
+                      return <td key={`row${i}-${spec["smi_specification"]}`}>
                         <img className="smiMark" src={passingMark} />
                       </td>;
                     } else if (spec["capability"] === "NONE") {
-                      return <td >
+                      return <td key={`row${i}-${spec["smi_specification"]}`}>
                         <img className="smiMark" src={failingMark} />
                       </td>;
                     } else if(spec["capability"] === "HALF"){
-                      return <td>
+                      return <td key={`row${i}-${spec["smi_specification"]}`}>
                           <img className="smiMark" src={halfMark} />
                       </td>;
                     } else {
@@ -91,16 +91,16 @@ const Table = ({ columns, data, spec }) => {
                         <td>{prevResult.mesh_version}</td>
                         {prevResult.more_details.map(spec => {
                           if(spec["capability"] === "Full"){
-                            return <td>
+                            return <td key="capability-half">
                               <img className="smiMark" src={passingMark} />
                             </td>;
                           } else if(spec["capability"] === "None"){
                             return <td>
-                              <img className="smiMark" src={failingMark} />
+                              <img key="capability-none" className="smiMark" src={failingMark} />
                             </td>;
                           } else if(spec["capability"] === "Half"){
                             return <td>
-                              <img className="smiMark" src={halfMark} />
+                              <img key="capability-half" className="smiMark" src={halfMark} />
                             </td>;
                           } else {
                             return <td >
