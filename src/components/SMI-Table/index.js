@@ -116,8 +116,8 @@ const Table = ({ columns, data, spec }) => {
                   <td>{row.original.passing_percentage}</td>
                 </tr>
 
-                {/* {
-                  row.original.previous_versions.map(prevResult => {
+                {
+                  row.original.previous_versions && row.original.previous_versions.map(prevResult => {
                     return (
                       <tr key={`collapse-row${i}`} className={isCollapsed[i] ? "secondaryRow" : "secondaryRow-hidden"} >
                         <td></td>
@@ -147,7 +147,7 @@ const Table = ({ columns, data, spec }) => {
                       </tr>
                     );
                   })
-                } */}
+                }
 
               </React.Fragment>
             );
