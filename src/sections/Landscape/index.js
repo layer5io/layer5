@@ -110,7 +110,7 @@ const LandscapeGrid=() => {
               <a name="#smi"></a>
               <h2 className="sub-heading landscape-section-heading" >Service Mesh Interface Compliance</h2>
               <h4 className="landscape-section-sub-heading">Is your service mesh compliant? <a href="/projects/service-mesh-interface-conformance">Find out</a>.</h4>
-              <SMI_Compatibility />
+              <SMI_Compatibility/>
               <div className="Legend">
                 <span>Legend:</span>
                 <div className="Landscape">
