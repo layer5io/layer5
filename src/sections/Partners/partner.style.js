@@ -77,8 +77,7 @@ const PartnerWrapper = styled.section`
     .custom-col{
         display: flex;
         align-items: center;
-        width: 85%;
-        padding: 3rem 4rem;
+        width: 95%;
         transition: all 0.5s ease-in-out;
     }
     .para {
@@ -182,10 +181,12 @@ const PartnerWrapper = styled.section`
     .parent-cont{
         transition: all 0.5s ease-in-out;
         height: 0rem;
+        width: 100%;
     }
     .parent-cont-active{
         height: 34rem;
         animation: 0.35s ${fadeOut};
+        width: 100%;
     }
     .cont-vert-align{
         margin:0;
@@ -201,14 +202,32 @@ const PartnerWrapper = styled.section`
     }
     .sub-cont{
         height: 100%;
+        width: 100%;
     }
-    
+    .content-head{
+        padding: 3rem 4rem;
+    }
     @media only screen and (max-width: 1500px) {
         .partner-container{
             .partner-container-body{
                 width:70%;
             }
         }
+    }
+    @media only screen and (max-width: 1200px) and (min-width: 1101px) {
+        .moreInfo-div-active{
+            height: 38rem;
+            padding:0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .parent-cont-active{
+            height: 38rem;
+            display: flex;
+            justify-content: center;
+        }
+        
     }
     @media only screen and (max-width: 1100px) {
         .partner-container{
@@ -223,6 +242,21 @@ const PartnerWrapper = styled.section`
         }
         .container{
             margin: 0;
+        }
+        .moreInfo-div-active{
+            height: 40rem;
+            padding:0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .parent-cont-active{
+            height: 40rem;
+            display: flex;
+            justify-content: center;
+        }
+        .content-head{
+            padding: 2rem 4rem;
         }
     }
     @media only screen and (max-width: 768px) {
@@ -288,14 +322,14 @@ const PartnerWrapper = styled.section`
             flex-direction: unset;
         }
         .moreInfo-div-active{
-            height: 45rem;
+            height: 40rem;
             padding:0;
             display: flex;
             justify-content: center;
             flex-direction: column;
         }
         .parent-cont-active{
-            height: 45rem;
+            height: 40rem;
             display: flex;
             justify-content: center;
         }
@@ -305,22 +339,29 @@ const PartnerWrapper = styled.section`
         }
         .mobview{
             width: 85%;
+            margin: auto;
         }
         .img1 {
+            width: 256px;
+            padding: 0 1rem;
             a{ 
                 width: 100%;
             }
         }
-    }
-    @media only screen and (max-width:576px){
+        .content-head{
+            padding: 2rem 4rem 0rem 4rem ;
+        }
+        .mob-col{
+            flex: 0 0 35%;
+            max-width: 35%;
+        }
         .custom-col{
            display: flex;
-           width: 100%;
+           width: 70%;
+           margin: auto;
         }
-        .custom-col-active-desc{
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
+    }
+    @media only screen and (max-width:576px){
         .acc-cont{
             display:flex;
             flex-direction:column;
@@ -333,17 +374,15 @@ const PartnerWrapper = styled.section`
             width: 100%;
         } 
         .mobview{
-            flex: 0 0 100%;
-            max-width: 100%;
             width: 100%;
         }
         .moreInfo-div-active{
-            height: 50rem;
+            height: 41rem;
             display: flex;
             justify-content: center;
         }
         .parent-cont-active{
-            height: 50rem;
+            height: 41rem;
             display: flex;
             justify-content: center;
         }
@@ -351,15 +390,24 @@ const PartnerWrapper = styled.section`
             display: flex;
             justify-content: center;
         }
+        .mob-col{
+            flex: 0 0 35%;
+            max-width: 35%;
+        }
+        .container{
+            padding:1rem;
+            margin: 0 1rem;
+        }
+        .img-1-mob{
+            padding:0 0.5rem;
+        }
+        
     }
     @media only screen and (max-width:476px){
         .custom-col{
-            flex: 0 0 10%;
-            max-width: 50%;
-        }
+           width: 100%;
+        }   
         .mobview{
-            flex: 0 0 100%;
-            max-width: 100%;
             width: 100%;
         }
         .acc-cont{
@@ -368,12 +416,12 @@ const PartnerWrapper = styled.section`
             align-items: center;
         }
         .moreInfo-div-active{
-            height: 53rem;
+            height: 58rem;
             display: flex;
             justify-content: center;
         }
         .parent-cont-active{
-            height: 53rem;
+            height: 58rem;
             display: flex;
             justify-content: center;
         }
@@ -381,9 +429,19 @@ const PartnerWrapper = styled.section`
             display: flex;
             justify-content: center;
         }
+        .mob-col{
+            flex: 0 0 45%;
+            max-width: 45%;
+        }
+        .content-head{
+            flex-direction: column;
+        }
+        .img-1-mob{
+            padding: 1rem 4rem;
+        }
     }
     @media only screen and (max-width:376px){
-        .custom-col{
+        .mob-col{
             flex: 0 0 50%;
             max-width: 50%;
         }
@@ -392,31 +450,34 @@ const PartnerWrapper = styled.section`
             flex-direction: column;
             align-items: center;
         }
-        img{
-            width:100%;
-        }
-        .custom-col{
-            flex: 0 0 10%;
-            max-width: 50%;
-        }
+       
         .mobview{
             flex: unset;
             max-width: unset;
             width: 100%;
         }
         .moreInfo-div-active{
-            height: 65rem;
+            height: 70rem;
             display: flex;
             justify-content: center;
         }
         .parent-cont-active{
-            height: 65rem;
+            height: 70rem;
             display: flex;
             justify-content: center;
         }
         .parent-cont{
             display: flex;
             justify-content: center;
+        }
+        .acc-cont{
+            margin: 1rem 0;
+        }
+        .container{
+            padding: 0;
+        }
+        .content-head{
+            padding: 0rem 4rem;
         }
     }
 `;

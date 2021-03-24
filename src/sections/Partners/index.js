@@ -58,7 +58,7 @@ const Partner = () => {
           academic_partners.map((partner,index) => (
             <div key={index} className="acc-cont">
               <Row  className={ (index) % 2 === 1 ? "cont-row-reverse" : "cont-row" } >
-                <Col xs={5} sm={3} lg={3} className="custom-col">
+                <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
                       <img  src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
@@ -81,8 +81,8 @@ const Partner = () => {
               <div className={isOpen && ID === index ? "par-cont parent-cont-active" : "par-cont parent-cont" }>
                 <div className={isOpen && ID === index && index % 2 == 1 ? "row-elem moreInfo-div-active cont-row-reverse": isOpen && ID === index && index % 2 == 0 ? "row-elem moreInfo-div-active cont-row": ID !== index && index % 2 == 1 ? "row-elem moreInfo-div cont-row-reverse" : "row-elem moreInfo-div cont-row"}>
                   <div className="sub-cont">
-                    <div className="custom-col">
-                      <div className="img1">
+                    <div className="custom-col content-head">
+                      <div className="img1 img-1-mob">
                         <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
                           <img  src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
                         </a>
@@ -105,7 +105,7 @@ const Partner = () => {
           technology_partners.map((partner,index) => (
             <div key={index+len_acad_part} className="acc-cont">
               <Row  className={ ((len_acad_part+ index) % 2 == 1 ) ? "cont-row-reverse" : "cont-row" }>
-                <Col xs={5} sm={3} lg={3} className="custom-col">
+                <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
                       <img src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
@@ -128,8 +128,8 @@ const Partner = () => {
               <div className={isOpen && ID === index + len_acad_part ? "par-cont parent-cont-active" : "par-cont parent-cont" }>
                 <div className={isOpen && ID === index + len_acad_part && (len_acad_part+ index) % 2 == 1 ? "row-elem moreInfo-div-active cont-row-reverse" : isOpen && ID === index + len_acad_part && (len_acad_part+ index) % 2 == 0 ? "row-elem moreInfo-div-active cont-row" : ID !== index + len_acad_part && (len_acad_part+ index) % 2 == 1 ? "row-elem moreInfo-div cont-row-reverse" : "row-elem moreInfo-div cont-row"}>
                   <div className="sub-cont">
-                    <div className="custom-col">
-                      <div className="img1">
+                    <div className="custom-col content-head">
+                      <div className="img1 img-1-mob">
                         <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
                           <img  src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
                         </a>
