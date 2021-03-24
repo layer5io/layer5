@@ -4,6 +4,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import CareerPageWrapper from "./CareerSingle.style";
 import { FaPlay } from "react-icons/fa";
+import { FaGlobeAmericas } from "react-icons/fa";
 import { FiCalendar, FiClock } from "react-icons/fi";
 import { HiOutlineCash } from "react-icons/hi";
 import Layer5_Icon from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
@@ -24,9 +25,10 @@ const CareerSingle = ({data}) => {
                   <h5> <FaPlay /> Start Date</h5>
                   <p>{frontmatter.start_date}</p>
                 </Col>
+                {frontmatter.type === "internship" ? '<Col xs={6} className="job-details-col"><h5> <FiCalendar/> Duration</h5><p>{frontmatter.duration}</p></Col>' : '' }
                 <Col xs={6} className="job-details-col">
-                  <h5> <FiCalendar/> Duration</h5>
-                  <p>{frontmatter.duration}</p>
+                  <h5> <FaGlobeAmericas /> Location</h5>
+                  <p>{frontmatter.location}</p>
                 </Col>
                 <Col xs={6} className="job-details-col">
                   <h5> <HiOutlineCash /> {frontmatter.type === "internship" ? "Stipend" : "Salary"}</h5>

@@ -16,6 +16,7 @@ export const query = graphql`
             frontmatter {
                 title,
                 type,
+                location,
                 start_date,
                 duration,
                 salary,
