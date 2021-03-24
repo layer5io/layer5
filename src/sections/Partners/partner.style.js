@@ -66,10 +66,11 @@ const PartnerWrapper = styled.section`
     }
     .img1 {
         width: 256px;
+        padding:0 1rem;
         a{
             display: block;
             height: 100%;
-            width: 80%;
+            width: 100%;
 
         }
     }
@@ -77,7 +78,7 @@ const PartnerWrapper = styled.section`
     .custom-col{
         display: flex;
         align-items: center;
-        width: 95%;
+        width: 100%;
         transition: all 0.5s ease-in-out;
     }
     .para {
@@ -197,6 +198,7 @@ const PartnerWrapper = styled.section`
         align-items: center;
         height: 100%;
     }
+        
     .par-cont{
         margin: 1rem 0;
     }
@@ -205,7 +207,7 @@ const PartnerWrapper = styled.section`
         width: 100%;
     }
     .content-head{
-        padding: 3rem 4rem;
+        padding: 3rem;
     }
     @media only screen and (max-width: 1500px) {
         .partner-container{
@@ -256,7 +258,7 @@ const PartnerWrapper = styled.section`
             justify-content: center;
         }
         .content-head{
-            padding: 2rem 4rem;
+            padding: 2rem 3rem;
         }
     }
     @media only screen and (max-width: 768px) {
@@ -298,6 +300,7 @@ const PartnerWrapper = styled.section`
         .custom-col{
             display:flex;
             width: 100%;
+            justify-content:center;
         }
         .partner-button-cont{
             padding:2rem 0;
@@ -322,14 +325,14 @@ const PartnerWrapper = styled.section`
             flex-direction: unset;
         }
         .moreInfo-div-active{
-            height: 40rem;
+            height: 46rem;
             padding:0;
             display: flex;
             justify-content: center;
             flex-direction: column;
         }
         .parent-cont-active{
-            height: 40rem;
+            height: 46rem;
             display: flex;
             justify-content: center;
         }
@@ -342,23 +345,15 @@ const PartnerWrapper = styled.section`
             margin: auto;
         }
         .img1 {
-            width: 256px;
-            padding: 0 1rem;
-            a{ 
-                width: 100%;
-            }
+            width: 211px;
         }
         .content-head{
-            padding: 2rem 4rem 0rem 4rem ;
+            padding: 2rem;
+            text-align: center;
         }
         .mob-col{
             flex: 0 0 35%;
             max-width: 35%;
-        }
-        .custom-col{
-           display: flex;
-           width: 70%;
-           margin: auto;
         }
     }
     @media only screen and (max-width:576px){
@@ -377,12 +372,12 @@ const PartnerWrapper = styled.section`
             width: 100%;
         }
         .moreInfo-div-active{
-            height: 41rem;
+            height: 44rem;
             display: flex;
             justify-content: center;
         }
         .parent-cont-active{
-            height: 41rem;
+            height: 44rem;
             display: flex;
             justify-content: center;
         }
@@ -396,12 +391,15 @@ const PartnerWrapper = styled.section`
         }
         .container{
             padding:1rem;
-            margin: 0 1rem;
+            margin: 0;
         }
         .img-1-mob{
             padding:0 0.5rem;
         }
-        
+        .content-head{
+            padding: 2rem 1rem;
+            text-align: center;
+        }
     }
     @media only screen and (max-width:476px){
         .custom-col{
@@ -416,12 +414,12 @@ const PartnerWrapper = styled.section`
             align-items: center;
         }
         .moreInfo-div-active{
-            height: 58rem;
+            height: 60rem;
             display: flex;
             justify-content: center;
         }
         .parent-cont-active{
-            height: 58rem;
+            height: 60rem;
             display: flex;
             justify-content: center;
         }
@@ -439,6 +437,9 @@ const PartnerWrapper = styled.section`
         .img-1-mob{
             padding: 1rem 4rem;
         }
+        .img1 {
+            width: 256px;
+        }
     }
     @media only screen and (max-width:376px){
         .mob-col{
@@ -449,8 +450,8 @@ const PartnerWrapper = styled.section`
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin: 2rem 0;
         }
-       
         .mobview{
             flex: unset;
             max-width: unset;
@@ -469,16 +470,11 @@ const PartnerWrapper = styled.section`
         .parent-cont{
             display: flex;
             justify-content: center;
-        }
-        .acc-cont{
-            margin: 1rem 0;
-        }
+        }       
         .container{
-            padding: 0;
+            padding: 1rem;
         }
-        .content-head{
-            padding: 0rem 4rem;
-        }
+        
     }
 `;
 
