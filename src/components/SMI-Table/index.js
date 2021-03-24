@@ -60,16 +60,49 @@ const Table = ({ columns, data, spec }) => {
                   <td>{row.original.mesh_version}</td>
                   {row.original.more_details.map(spec => {
                     if(spec["capability"] === "FULL"){
-                      return <td key={`row${i}-${spec["smi_specification"]}`}>
-                        <img className="smiMark" src={passingMark} />
+                      return <td>
+                        <div className="tooltip">
+                          <img data-for="capablity" data-tip={`${spec["result"]}`} className="smiMark" src={passingMark} />
+                          <ReactTooltip 
+                            id="capablity"
+                            place="bottom"
+                            effect="solid"
+                            multiline
+                            backgroundColor="rgb(60,73,79)"
+                            className="smi-tooltip"
+                          />
+                        </div>
+                            
                       </td>;
                     } else if (spec["capability"] === "NONE") {
-                      return <td key={`row${i}-${spec["smi_specification"]}`}>
-                        <img className="smiMark" src={failingMark} />
+                      return <td >
+                        <div >
+                          <img data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={failingMark} />
+                          <ReactTooltip 
+                            id="capablity"
+                            place="bottom"
+                            effect="solid"
+                            multiline
+                            wrapper="span"
+
+                            backgroundColor="rgb(60,73,79)"
+                            className="smi-tooltip"
+                          />
+                        </div>
                       </td>;
                     } else if(spec["capability"] === "HALF"){
-                      return <td key={`row${i}-${spec["smi_specification"]}`}>
-                          <img className="smiMark" src={halfMark} />
+                      return <td>
+                      <div className="tooltip">
+                          <img data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={halfMark} />
+                          <ReactTooltip 
+                            id="capablity"
+                            place="bottom"
+                            effect="solid"
+                            multiline
+                            backgroundColor="rgb(60,73,79)"
+                            className="smi-tooltip"
+                          />
+                        </div>
                       </td>;
                     } else {
                       return <td >
@@ -83,8 +116,8 @@ const Table = ({ columns, data, spec }) => {
                   <td>{row.original.passing_percentage}</td>
                 </tr>
 
-                {
-                  row.original.previous_versions && row.original.previous_versions.map(prevResult => {
+                {/* {
+                  row.original.previous_versions.map(prevResult => {
                     return (
                       <tr key={`collapse-row${i}`} className={isCollapsed[i] ? "secondaryRow" : "secondaryRow-hidden"} >
                         <td></td>
@@ -114,7 +147,7 @@ const Table = ({ columns, data, spec }) => {
                       </tr>
                     );
                   })
-                }
+                } */}
 
               </React.Fragment>
             );
