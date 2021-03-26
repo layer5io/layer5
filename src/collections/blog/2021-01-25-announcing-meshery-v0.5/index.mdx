@@ -1,7 +1,7 @@
 ---
 title: "Announcing Meshery v0.5.0"
 subtitle: ""
-date: 2021-01-25 08:00:00 +0000
+date: 2021-03-25 08:00:00 +0000
 author: Aisuko Li
 thumbnail: ./meshery.png
 category: Announcements
@@ -16,6 +16,7 @@ redirect_from:
 
 import { BlogWrapper } from "../Blog.style.js";
 import { Link } from "gatsby";
+import mesheryOperator from "./meshery-operator-v0.5.0.png";
 
 <BlogWrapper>
 
@@ -89,6 +90,8 @@ maintain the local snapshot of the cluster and refreshed periodically.
 
 ### Meshery Operator
 
+<img style="float:right; width:40%;" src={mesheryOperator} />
+
 * We add new broker to meshery-operator <a href="https://github.com/layer5io/meshery-operator/pull/97">PR #97</a>
 * We split the source code of MeshSync from Meshery Operator  <a href="https://github.com/layer5io/meshery-operator/issues/88"> issue #88</a>
 * Meshery Operator is provides abilities includes cluster discovery, service-mesh discovery and data streaming via NATS.
@@ -111,9 +114,7 @@ To get a more comprehensive list of the bug fixes and enhancements packaged in t
 
 How to build a dynamic injection of remote provider, see the [Extensibility Documentation](https://docs.meshery.io/extensibility/providers)
 
-Checking the Service Meshes we supported, see the [Service Meshes](https://docs.meshery.io/service-meshes)
-
-\- <Link to="/community/member/aisuko-li">Aisuko Li</Link>
+Increasing the number and diversity of service meshes supported by Meshery. See the [Service Meshes](https://docs.meshery.io/service-meshes) page for a complete list.
 
 <div class="intro"><p>P.S. If these topics excite you and you want to explore the beautiful realm of service meshes, come and say "Hi" on the community <Link to="http://slack.layer5.io">Slack</Link> and you are sure to be warmly welcomed. <span>😀</span></p></div>
 
