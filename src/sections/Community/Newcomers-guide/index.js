@@ -3,9 +3,9 @@ import { Link } from "gatsby";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
-import CommunityImage1 from "./community-image1.png";
-import CommunityImage2 from "./community-image2.png";
-import CommunityImage3 from "./community-image3.png";
+import CommunityImage1 from "./contributor-chest.svg";
+import CommunityImage2 from "./community-image3.png";
+import CommunityImage3 from "./community-collage.png";
 import CommunityImage4 from "./community-image4.png";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
@@ -72,7 +72,7 @@ const NewcomersGuide = () => {
         <div className="instructions">
           <Row className="step">
             <Col sm={12} lg={6}>
-              <img src={CommunityImage1} alt="Community Image" />
+              <img src={CommunityImage1} className="finding-an-issue" alt="Community Image" />
             </Col>
             <Col sm={12} lg={6}>
               <h3>Finding an Issue to Work On</h3>
