@@ -15,8 +15,8 @@ const BooksListWrapper = styled.div`
     .books-card {
         display: flex;
         margin: 1rem auto;
-        min-height: 14rem;
-        max-width: 48rem;
+        min-height: 15.5rem;
+        max-width: 50.5rem;
         transition: all 0.2s;
         transition-timing-function: ease-in-out;
 

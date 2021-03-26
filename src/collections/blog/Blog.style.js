@@ -6,7 +6,38 @@ export const BlogWrapper = styled.div`
       position:relative;
       top:-10px;
     }
-
+    a.invert {
+      text-decoration: none;
+      color: ${(props) => props.theme.tertiaryColor};
+      &:hover{
+          color: ${(props) => props.theme.keppelColor};
+      }
+    }
+    
+    a.blog {
+        color: ${props => props.theme.primaryColor};
+        background-color: #eeeeee;
+        border-radius: 8px;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        &:hover {
+            color: ${props => props.theme.keppelColor}; 
+        }
+    }
+    div.intro {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        font-style: italic;
+        font-size: .8rem;
+        border-top: 1px dashed ${props => props.theme.primaryLightColor};
+        border-bottom: 1px dashed ${props => props.theme.primaryLightColor};
+        margin-bottom: 1rem;
+        padding-top: 1rem;
+        background-color: ${props => props.theme.secondaryLightColorTwo};
+        span {
+            font-style: normal;
+        }
+    }
     .to-uppercase {
       text-transform: uppercase;
     }
@@ -94,13 +125,15 @@ export const BlogWrapper = styled.div`
     .image-left {
       width: 40%;
       float: left;
-      padding-right: 10px;
+      margin: 1rem 1.25rem 1rem 0rem;
+      box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
     }
 
     .image-right {
       width: 40%;
       float: right;
-      padding-left: 10px;
+      margin: 1rem 0rem 1rem 1.25rem;
+      box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
     }
     .image-center {
         display: block;

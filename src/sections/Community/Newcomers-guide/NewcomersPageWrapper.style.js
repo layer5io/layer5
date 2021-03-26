@@ -7,7 +7,7 @@ export const NewcomersGuideWrapper = styled.section`
         .newcomers-journey{
             display: flex;
             align-items: center;
-            margin: 2rem 0;
+            margin: 3.5rem 0;
             h2{
               margin-bottom: 2rem;
             }

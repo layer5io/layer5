@@ -22,7 +22,6 @@ import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
 
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const LandscapeGrid=() => {
   return (
@@ -128,8 +127,8 @@ const LandscapeGrid=() => {
                 </div>
               </div>
               <div className="AboutLandscape">
-                <img src={landscape} 
-                  alt="Service Mesh Landscape" 
+                <img src={landscape}
+                  alt="Service Mesh Landscape"
                 />
                 <div>
                   <p>The Layer5 Service Mesh Landscape is a community-curated collection of service mesh projects.

@@ -16,6 +16,8 @@ const UpcomingEventsWrapper = styled.div`
 
 	.blog-slider_content{
 		text-align: center;
+		max-height: 18rem;
+		overflow: hidden;
 	}
 
 	.blog-slider_title {

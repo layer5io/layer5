@@ -2,19 +2,21 @@ import styled from "styled-components";
 export const LandscapePageWrapper=styled.div`
 
 	h2.landscape-section-heading {
-		margin-bottom: 3rem;
-		margin-top: 1rem;
+		margin-bottom: 2rem;
+		margin-top: 3rem;
 		width: 100%;
-		font-weight: 400;
+		font-weight: 600;
 		text-align: center;
+		font-style:unset;
+		color:#1e2117;
+	}
+	#service-mesh-comparison-strength {
+            margin: -2.5rem auto 6rem;
 	}
 	.subsequent-heading {
 		padding-top: 6rem;
 	}
 	.landscape-section-sub-heading {
-		margin-top: -1rem;
-		position:relative;
-		top: -1rem;
 		text-align: center;
 		width: 100%;
 	}
@@ -346,7 +348,7 @@ export const LandscapePageWrapper=styled.div`
 
 	.landscape-table {
 		width: 100%;
-		margin-bottom: 2rem;
+		margin: 2rem 0;
 		box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
 		border-top-left-radius: .5rem;
 		border-top-right-radius: .5rem;

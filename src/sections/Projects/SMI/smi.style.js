@@ -96,6 +96,7 @@ const SMIWrapper = styled.section`
     .section-3{
         background-color: #FAFAFA;
         width: 100%;
+        padding:7rem 0rem;
     }
     .bg{
         height: 20rem;
@@ -150,7 +151,7 @@ const SMIWrapper = styled.section`
         width: 70%;
         max-width: 62.5rem;
         margin: auto;
-        padding: 1.875rem 4.7rem 1.875rem 4.7rem;
+        padding: 2.5rem 4.7rem 2rem 4.7rem;
         border: 1px white;
         border-radius: 20px;
         h2{

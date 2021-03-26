@@ -18,7 +18,9 @@ const OperatingServiceMeshes = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Meshery, Multi-Mesh Manager" description="How the service mesh management plane, Meshery works" />
+      <SEO title="Meshery, Multi-Mesh Manager"
+        description="How the service mesh management plane, Meshery works"
+        image="/images/meshery-logo-dark-text.png"/>
       <Navigation />
       <HowMesheryWorksHero />
       <HowMesheryWorks

@@ -52,7 +52,7 @@ const MemberSingle = ({frontmatter}) => {
                   <ul className="profile-social-links">
                     {badges.includes("meshery") &&
                       <li>
-                        <Link to="/meshery">
+                        <Link to="/service-mesh-management/meshery">
                           <img className="profile-social-links" src={mesheryLogo} alt="Meshery logo"/>
                         </Link>
                       </li>
@@ -73,7 +73,7 @@ const MemberSingle = ({frontmatter}) => {
                     }
                     {badges.includes("landscape") &&
                       <li>
-                        <Link to="/landscape">
+                        <Link to="/service-mesh-landscape">
                           <img className="profile-social-links" src={landscapeLogo} alt="Service Mesh Landscape logo"/>
                         </Link>
                       </li>

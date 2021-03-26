@@ -4,6 +4,9 @@ const CalendarStyleWrapper = styled.div`
     position: relative;
     overflow: hidden;
     text-align: center;
+    .page-header {
+        margin: 3rem auto 6rem;
+    }
     .calendar-wrapper {
         margin-bottom: 5rem;
     }
@@ -71,10 +74,28 @@ const CalendarStyleWrapper = styled.div`
         min-height: auto;
         font-size: 14px;
         background: ${props => props.theme.secondaryColor};
+
+        .fc-daygrid-event-harness {
+            background: ${props => props.theme.secondaryColor};
+        }
     }
     @media only screen and (max-width: 57rem) {
         .fc.fc-media-screen.fc-direction-ltr.fc-theme-standard {
             width: 57rem;
+        }
+    }
+    .fc-daygrid-event {
+        color: white;
+        font-weight: bold;
+        background: ${props => props.theme.secondaryColor};
+        border-color: ${props => props.theme.secondaryColor};
+
+        &:hover {
+            background: rgba( 0, 0, 0, 0.1);
+        }
+
+        .fc-daygrid-event-dot {
+            border: calc(var(--fc-daygrid-event-dot-width, 8px) / 3) solid var(--fc-event-border-color, #ffffff)
         }
     }
 `;

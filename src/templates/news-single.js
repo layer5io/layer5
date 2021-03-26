@@ -41,7 +41,7 @@ const NewsSinglePage = ({data}) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
+        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL}/>
         <Navigation />
         <NewsSingle data={data}/>
         <Footer />

@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
-import Button from "../../../reusecore/Button";
 
 import projectImage1 from "../../../assets/images/app/projects/landscape.png";
 import projectImage2 from "../../../assets/images/app/projects/smp.png";
@@ -28,15 +27,12 @@ const Projects = () => {
                 Operate any service mesh <span>with confidence</span>.
               </h2>
             </SectionTitle>
-            {/* <p className="project-text">
-                        Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services.
-            </p> */}
           </div>
         </Row>
         <Row>
           <div className="project__block__wrap">
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/landscape">
+              <Link className="project-card" to="/service-mesh-landscape">
                 <div className="project__block__inner">
                   <img src={projectImage1} alt="appion project" />
                   <h5>Landscape</h5>
@@ -45,7 +41,7 @@ const Projects = () => {
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/meshery">
+              <Link className="project-card" to="/service-mesh-management/meshery">
                 <div className="project__block__inner">
                   <img src={projectImage3} alt="appion project" />
                   <h5>Meshery</h5>
