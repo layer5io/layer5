@@ -5,7 +5,7 @@ const CommunitySectionWrapper = styled.div`
     margin-bottom: 3.25rem;
     .community-header{
         color: white;
-        height: 25rem;
+        height: 50rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
