@@ -11,11 +11,9 @@ export const ToolTipWrapper = styled.div`
     }
     float:left;
     margin: auto 1rem;
-
     .border {
         line-height: 18px;
     }
-
     a {
         padding: 5px;
         color: ${props => props.theme.primaryLightColorTwo};

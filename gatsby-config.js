@@ -11,20 +11,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     // "gatsby-plugin-preload-fonts",
     {
-      resolve: "gatsby-plugin-google-gtag",
-      options: {
-        trackingIds: [
-          "G-MDVP5FT6JY",
-        ],
-        gtagConfig: {
-          anonymize_ip: true,
-        },
-        pluginConfig: {
-          head: false,
-        },
-      },
-    },
-    {
       resolve: "gatsby-plugin-styled-components",
       options: {
         minify: false,
@@ -59,14 +45,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "communityImageSlider",
-        path: `${__dirname}/src/assets/images/Community-pictures`,
-      },
-    },
-
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         path: `${__dirname}/src/collections/blog`,
         name: "blog",
       },
@@ -88,13 +66,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/service-mesh-books`,
-        name: "service-mesh-books",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         path: `${__dirname}/src/collections/programs`,
         name: "programs",
       },
@@ -111,20 +82,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/members`,
         name: "members",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/service-mesh-workshops`,
-        name: "service-mesh-workshops",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/service-mesh-labs`,
-        name: "service-mesh-labs",
       },
     },
     {
