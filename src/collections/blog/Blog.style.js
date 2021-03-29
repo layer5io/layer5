@@ -1,5 +1,8 @@
 import styled from "styled-components";
 export const BlogWrapper = styled.div`
+  h3 {
+    margin-top: 1rem;
+  }
     color:#000;
     .sub-heading {
       color:gray;
@@ -219,5 +222,11 @@ export const BlogWrapper = styled.div`
         &:hover {
             color: ${props => props.theme.keppelColor}; 
         }
+    }
+    .bigfirstletter {
+      initial-letter: 2;
+      font-size: 2.5rem;
+      font-weight: 500;
+      line-height: 2.5rem;
     }
 `;
