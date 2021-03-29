@@ -1,5 +1,12 @@
-.PHONY: npm-install
-npm-install:
+.PHONY: gatsby-build
+gatsby-build:
+	gatsby build && gatsby serve
+
+build:
+	gatsby build && gatsby serve
+
+.PHONY: setup-libs
+setup-libs:
 	npm install
 
 .PHONY: site
@@ -13,8 +20,3 @@ npm-build:
 .PHONY: npm-audit-fix
 npm-audit-fix:
 	npm audit fix
-
-.PHONY: gatsby-build
-gatsby-build:
-	gatsby build && gatsby serve
-
