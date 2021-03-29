@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BookmarkImage from "./bookmark.png";
+import BookmarkImage from "./bookmarks.jpg";
 
 const CommunitySectionWrapper = styled.div`
     margin-bottom: 3.25rem;
@@ -173,19 +173,15 @@ const CommunitySectionWrapper = styled.div`
 
     .newcomers-section {
         background: ${props => props.theme.secondaryLightColor};
-        padding-top: 4rem;
         width:100%;
         margin: 5rem 0;
-        .map {
-            padding-top: 0rem;
-            margin-top:0rem;
-            max-width:40rem;
-            padding-bottom: 2rem;
+        padding: 2rem 0;
+        .text{
+            text-align: center;
         }
         h4{
             padding: 1rem auto;
         }
-        text-align:center;
 
         .newcomers-arrow {
             align-items: center;
@@ -200,6 +196,14 @@ const CommunitySectionWrapper = styled.div`
         }
         .invitation {
             margin: 2rem 0rem 2rem 0rem;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .newcomers-section {
+            .text {
+                margin-top: 1.5rem;
+            }
         }
     }
 

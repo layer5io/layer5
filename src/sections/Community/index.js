@@ -99,27 +99,26 @@ const CommunityPage = () => {
 
           </Row>
         </Container>
-        <Row className="newcomers-section">
-          <Col sm={6} lg={6} className="map">
-            <NewcomersMap />
-          </Col>
-          <Col sm={6} lg={6}>
-
-            <div>
-              <h1>Newcomers Welcome!</h1>
-              <h3>Are you new to the community?</h3>
-              <p className="invitation">
-                Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <a href="community/newcomers">Contributor's Journey Map</a> and engage in the community and projects.
-
-                {/* <FaArrowRight className="newcomers-arrow" /> */}
-
-              </p>
-              <Button primary title="See All Newcomers Resources" url="/community/newcomers">
-                <FaUsers size={21} className="icon-left" />
-              </Button>
-            </div>
-          </Col>
-        </Row>
+        <Container>
+          <Row className="newcomers-section">
+            <Col xs={12} lg={6} className="map">
+              <NewcomersMap />
+            </Col>
+            <Col xs={12} lg={6} className="text">
+              <div>
+                <h1>Newcomers Welcome!</h1>
+                <h3>Are you new to the community?</h3>
+                <p className="invitation">
+                Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <a href="community/newcomers">Contributor's Journey Map</a>
+                and engage in the community and projects.
+                </p>
+                <Button primary title="See All Newcomers Resources" url="/community/newcomers">
+                  <FaUsers size={21} className="icon-left" />
+                </Button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
       <JoinCommunity image={Lee_workshop} className="newcomers-join" />
 

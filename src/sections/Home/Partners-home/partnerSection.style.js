@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const PartnerItemWrapper = styled.section`
     padding: 2rem 0;
-    margin: 0rem 0 5rem
+    margin: 0rem 0rem 5rem;
     overflow: hidden;
     .section-title{
         h4{
@@ -24,10 +24,20 @@ const PartnerItemWrapper = styled.section`
     }
     img {
         max-width: 100%;
-        min-width: 50px;
+        min-width: 3.2rem;
         margin: auto;
         opacity: .7;
         max-height:100px;
+    }
+    @supports (-webkit-hyphens:none) { 
+        img { 
+            min-width: 8rem; 
+        }
+        @media only screen and (max-width: 992px) {
+            img { 
+                min-width: 5.625rem; 
+            }
+        }
     }
     .partner__block__inner {
         padding: 5px;
@@ -49,8 +59,8 @@ const PartnerItemWrapper = styled.section`
      @media only screen and (max-width: 380px) {
         .horizontal {
             padding: 2.5rem;
-        } */
-     }
+        }
+     } */
 `;
 
 export default PartnerItemWrapper;

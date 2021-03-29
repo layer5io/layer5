@@ -55,7 +55,7 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
           </Col>
         </Row>
         <Row>
-          <Col xs={12}>
+          <Col xs={12} className={content && subId === ID ? "open-animate" : "close-animate"}>
             <div className={content && subId === ID ? "active" : "text-contents"}>
               <div className="sub-content">
                 <div id="katacoda-scenario"
