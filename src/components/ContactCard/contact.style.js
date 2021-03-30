@@ -18,7 +18,7 @@ const ContactWrapper = styled.section`
     }
     form{
         text-align: center;
-        background: linear-gradient(122.25deg, #eee -2.45%, #fff 52.7%, #eee 96.5%);
+        background: ${props => props.theme.contactBackground};
         border-radius: 10px 10px 0px 0px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         padding: 25px;
@@ -48,6 +48,7 @@ const ContactWrapper = styled.section`
         box-shadow: none;
         transition: 450ms all;
         border: 1px solid transparent;
+        background: ${props => props.theme.inputColor};
         &:hover,&:focus{
             border-color: ${props => props.theme.secondaryColor};
         }
@@ -65,6 +66,7 @@ const ContactWrapper = styled.section`
     .section-title{
         h3 {
             margin-bottom: 2rem;
+            ${props => props.theme.contactSectionTitle}
         }
     }
     @media only screen and (max-width: 912px) {

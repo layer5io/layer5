@@ -8,7 +8,7 @@ const BannerSectionWrapper = styled.section`
 
     background: url(${HeroCubesBlack}) no-repeat;
     background-size: 50%;
-    background-color: #F3FFFD;
+    background-color: ${props => props.theme.secondaryLightColorTwo};
     background-position: bottom -85px right;
     p {
         font-size: 21px;
@@ -27,6 +27,7 @@ const BannerSectionWrapper = styled.section`
             font-size: 60px;
             line-height: 4.3rem;
             margin: 0 0 38px 0; 
+            color: ${props => props.theme.textColor};
             span {
                 font-weight: 700;
                 color: ${props => props.theme.secondaryColor};
@@ -38,7 +39,8 @@ const BannerSectionWrapper = styled.section`
     }
     .banner-btn.one {
         margin: 0rem .5rem 0 .5rem;
-        background: ${props => props.theme.highlightColor}; 
+        background: ${props => props.theme.highlightColor};
+        color: #fff; 
 
         &:hover {
              background: ${props => props.theme.highlightLightColor}; 

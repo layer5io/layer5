@@ -79,7 +79,7 @@ export const CardWrapper = styled.div`
     .post-title{
         font-size: 1.4rem;
         font-weight: 400;
-        color: black;
+        color: ${props => props.theme.black};
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -93,7 +93,7 @@ export const CardWrapper = styled.div`
             text-align: end;
         }
         .author, p{
-            color: rgba(0, 0, 0, 0.4);
+            color: ${props => props.theme.gray};
             font-size: 0.9rem;
             font-weight: 400;
             flex: auto;
@@ -116,7 +116,7 @@ export const CardWrapper = styled.div`
     }
 
     .readmore-btn, .external-link-btn{
-       color: rgba(0,0,0,0.4);
+       color: ${props => props.theme.gray};
        display: flex;
        flex: auto;
        align-items: center;
