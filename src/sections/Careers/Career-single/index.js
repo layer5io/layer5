@@ -25,7 +25,7 @@ const CareerSingle = ({data}) => {
                   <h5> <FaPlay /> Start Date</h5>
                   <p>{frontmatter.start_date}</p>
                 </Col>
-                {frontmatter.type === "internship" ? '<Col xs={6} className="job-details-col"><h5> <FiCalendar/> Duration</h5><p>{frontmatter.duration}</p></Col>' : '' }
+                {frontmatter.type === "internship" ? "<Col xs={6} className=\"job-details-col\"><h5> <FiCalendar/> Duration</h5><p>{frontmatter.duration}</p></Col>" : "" }
                 <Col xs={6} className="job-details-col">
                   <h5> <FaGlobeAmericas /> Location</h5>
                   <p>{frontmatter.location}</p>

@@ -92,7 +92,7 @@ const Table = ({ columns, data, spec }) => {
                       </td>;
                     } else if(spec["capability"] === "HALF"){
                       return <td>
-                      <div className="tooltip">
+                        <div className="tooltip">
                           <img data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={halfMark} />
                           <ReactTooltip 
                             id="capablity"
