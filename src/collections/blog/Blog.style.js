@@ -30,12 +30,15 @@ export const BlogWrapper = styled.div`
     div.intro {
         padding-left: 3rem;
         padding-right: 3rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         font-style: italic;
         font-size: .8rem;
         border-top: 1px dashed ${props => props.theme.primaryLightColor};
         border-bottom: 1px dashed ${props => props.theme.primaryLightColor};
         margin-bottom: 1rem;
-        padding-top: 1rem;
+        margin-top: 1rem;
+        
         background-color: ${props => props.theme.secondaryLightColorTwo};
         span {
             font-style: normal;
@@ -199,6 +202,18 @@ export const BlogWrapper = styled.div`
         position: relative;
         float: left;
     }
+    div.img-center {
+        text-align:center;
+        margin: auto;
+        img {
+          width: 50%;
+        }
+        @media screen and (max-width: 765px) {
+          img {
+            width: 90%;
+          }
+        }
+    }
     div.intro {
         padding-left: 3rem;
         padding-right: 3rem;
@@ -212,6 +227,19 @@ export const BlogWrapper = styled.div`
         span {
             font-style: normal;
         }
+        @media screen and (max-width: 765px) {
+          padding-left: 0rem;
+          padding-right: 1rem;
+          margin-left:0rem;
+          margin-right:0rem;
+          flex-direction: column; 
+          width: 90%;
+          p {
+            padding-top:2rem;
+            width: 100%; 
+          }
+    }
+}
     }
     a {
         color: ${props => props.theme.primaryColor};

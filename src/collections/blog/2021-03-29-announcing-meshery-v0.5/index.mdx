@@ -40,9 +40,9 @@ import layer5Logo from "../../../assets/images/layer5/layer5-only/svg/layer5-no-
 - Meshery Remote Provider extensions with dynamic injection
 - New Meshery CLI commands to manage mutiple Meshery deployments
 
-<div class="intro" style="text-align:center;display:flex;margin: 4rem;padding:2rem;padding-bottom:1rem;">
-<img src={layer5Logo} style="max-height:55px; height:auto; width:50%;" />
-<p>Thank you to the wonderful Layer5 community of open source contributors in making this significant release possible.</p>
+<div class="intro" style="text-align:center; display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; margin: 2rem;">
+  <img src={layer5Logo} style="max-height:55px; height:auto; margin: auto; padding: .5rem;" />
+  <p style="flex-basis: 50%; width:100%; padding: 0rem; margin:0rem; ">Thank you to the wonderful Layer5 community of open source contributors in making this significant release possible.</p>
 </div>
 
 ## New Service Mesh Support
@@ -50,17 +50,17 @@ import layer5Logo from "../../../assets/images/layer5/layer5-only/svg/layer5-no-
 <p><span class="bigfirstletter">2</span> new Meshery service mesh adapters are bundled with this latest version of Meshery: The Meshery Adapter for Traefik Mesh and the Meshery Adapter for NGINX Service Mesh.</p>
 
 <h3>Meshery Adapter for Traefik Mesh (beta)</h3>
-<img style="display: inline; float: left; max-width:300px; width:20%; padding: 1.25rem;" src={Traefik} />
+<img style="display: inline; float: left; max-width:300px; width:80%; padding: 1.25rem;" src={Traefik} />
 
 <p>Traefik Mesh is a straight-forward, easy to configure, and non-invasive service mesh that allows visibility and management of the traffic flows inside any Kubernetes cluster.</p>
 
 <p>Meshery supports the lifecycle and performance management of Traefik Mesh. Along with support for multiple versions of Traefik Mesh, bundled with this adapter are the Book Info and HttpBin sample applications operations to aid you in familiarizing with the functionality of Traefik Mesh. As a Meshery user, you can apply custom configuration to your instances of Traefik Mesh, managing the onboarding of your own applications onto the service mesh and providing the ability for you as a service mesh manager to customize your service mesh deployment.</p>
 
-<p>Review the <a href="https://docs.meshery.io/guides/sample-apps">sample application guides</a> to familiarize with their differences and learn more about the beta adapter for <a href="https://docs.meshery.io/service-meshes">Meshery Adapter for Traefik Mesh</a></p>
+<p>Review the <a href="https://docs.meshery.io/guides/sample-apps">sample application guides</a> to familiarize with their differences and learn more about the beta adapter for <a href="https://docs.meshery.io/service-meshes">Meshery Adapter for Traefik Mesh</a>.</p>
  
 
 <h3>Meshery Adapter for NGINX Service Mesh (alpha)</h3>
-<img style="float:left; max-width:300px; width:20%;margin-right: 1.5rem; padding: 1.25rem;" src={NGINXSM} />
+<img style="float:left; max-width:200px; display:inline; position:relative; margin-right: 1.5rem; padding: 1.25rem;" src={NGINXSM} />
 
 <p>NGINX Service Mesh (NSM) is a fully integrated, lightweight service mesh that leverages a data plane powered by NGINX Plus to manage container traffic in Kubernetes environments. </p>
 
@@ -72,14 +72,14 @@ import layer5Logo from "../../../assets/images/layer5/layer5-only/svg/layer5-no-
     <li>Emojivoto</li>
   </ul>
 
-<p>Review the <a href="https://docs.meshery.io/guides/sample-apps">sample application guides</a> to familiarize with their differences. Learn more about the alpha adapter for <a href="https://docs.meshery.io/service-meshes">Meshery Adapter for NGINX Service Mesh</a></p>
+<p>Review the <a href="https://docs.meshery.io/guides/sample-apps">sample application guides</a> to familiarize with their differences. Learn more about the alpha adapter for <a href="https://docs.meshery.io/service-meshes">Meshery Adapter for NGINX Service Mesh</a>.</p>
 
 <h2>Integrating with Meshery: Using extension points</h2>
 
 As the service mesh manager, Meshery, is an extensible platform offering user and integrators well-crafted, extension points. Extension points allow you to  augment the behavior of Meshery by either adding entirely new capabilities or affecting the behavior of existing functionality, as see in the figure below.
 
-<div style="text-align:center;">
-  <a href={MesheryExtensibility} style="background-color:rgba(255,255,255,0)"><img style=" width:50%;" src={MesheryExtensibility} /></a>
+<div class="img-center">
+  <a href={MesheryExtensibility} style="background-color:rgba(255,255,255,0)"><img src={MesheryExtensibility} /></a>
 </div>
 
 As you can see in the diagram, Meshery offers many types of extension points.
@@ -111,14 +111,14 @@ As a service mesh toolkit, MeshKit aims to specifically focus on service mesh ma
 <h3>Meshery Adapter Library</h3>
 
 <p>The Meshery Adapter Library provides a common and consistent set of functionality for managing the lifecycle of service meshes and their workloads.</p>
-<div style="text-align:center;margin: 2rem;">
-  <a href={MesheryAdapterLibrary}><img style=" width:50%;" src={MesheryAdapterLibrary} /></a>
+<div class="img-center">
+  <a href={MesheryAdapterLibrary}><img src={MesheryAdapterLibrary} /></a>
 </div>
 
 * The library provides a set of interfaces, some with default implementations like a mini framework implementing the gRPC server that allows plugging in the mesh-specific configuration and operations implemented in the adapters.
 * The default configuration provider we use Viper to reads the adapter specific configuration, and the configuration providers are implementations of an interface, this can be flexible if anyone wants to implement it on their own.
 
-<div class="intro" style="font-size: 1rem; text-align:center;margin: 2rem 4rem;padding:2rem;">Read <Link to="/community/member/michael-gfeller">Maintainer Michael Gfeller</Link>'s blog post <Link to="/blog/meshery/introducing-meshkit-and-the-meshery-adapter-library">Introduction MeshKit and the Meshery Adapter Library</Link> for more details.</div>
+<div class="intro" style="text-align:center;margin: 2rem 4rem;"><p>Read <Link to="/community/member/michael-gfeller">Maintainer Michael Gfeller</Link>'s blog post <Link to="/blog/meshery/introducing-meshkit-and-the-meshery-adapter-library">Introduction MeshKit and the Meshery Adapter Library</Link> for more details.</p></div>
 
 With the increasing the number and diversity of service meshes supported by Meshery, you might find the list of [Supported Service Meshes](https://docs.meshery.io/service-meshes) a helpful, complete list.
 
@@ -152,6 +152,14 @@ maintain the local snapshot of the cluster and refreshed periodically.</li>
 </ul>
 
 </div>
+<h4>Relational Database</h4>
+
+Meshery's <a href="https://docs.meshery.io/concepts/architecture/database">relational database</a> serves as a repository for MeshSync data, user preferences, and system settings. This database should be considered ephemeral and given that it operates as a cache. Meshery relational database offers federated datasets for managing multiple Kubernetes cluster and multiple service meshes.
+
+<div class="img-center">
+  <a href={MesheryDB}><img src={MesheryDB} /></a>
+</div>
+
 <p>Learn more and consider <a href="https://github.com/layer5io/meshsync">contributing</a> to MeshSync.</p>
 
 ## GraphQL Support
@@ -159,20 +167,11 @@ maintain the local snapshot of the cluster and refreshed periodically.</li>
 Meshery now supports <a href="https://docs.meshery.io/concepts/architecture#meshery-operator-and-meshsync">GraphQL instances</a> between Meshery UI and Meshery Server offering any GraphQL client the  power to ask for exactly what they need from mesh. This new API sets the stage preparing for  exciting features in upcoming releases. Extension points are also built into Meshery's GraphQL support allowing integrators to bring their own GraphQL resolvers to the Meshery server runtime.
 
 
-## Meshery Databases
-
-<a href="https://docs.meshery.io/concepts/architecture/database">Meshery databases</a> as repositories for MeshSync, user preferences, system settings, 
-can be considered ephemeral and treated as caches. Meshery Database offers federated datasets for managing multiple Kubernetes cluster and multiple service meshes.
-<div style="text-align:center;margin: 2rem;">
-  <a href={MesheryDB}><img style=" width:50%;" src={MesheryDB} /></a>
-</div>
-
-
 <h2>Meshery Command Line Interface Enhancements</h2>
 The beloved `mesheryctl` introduces new commands in the v0.5.0 release expands the CLI's support of multiple Meshery deployments with the `context` command and control over when Meshery auto-updates with the `channel` command.
 
 <h3>Managing Multiple Meshery Deployments</h3>
-Introduced in this release is the meshconfig - a configuration file that describes Meshery deployments in separate <i>contexts</i>. A Meshery <i>context</i> describes deployments across Docker hosts and Kubernetes clusters. `mesheryctl system context` enables user to easy manage multiple deployments of Meshery by quickly switching contexts. See all of the flags supported by `
+Introduced in this release is the meshconfig - a configuration file that describes Meshery deployments in separate <i>contexts</i>. A Meshery <i>context</i> describes deployments across Docker hosts and Kubernetes clusters. <code>mesheryctl system context</code> enables user to easy manage multiple deployments of Meshery by quickly switching contexts. 
 
 ### Subscribing to Meshery Release Channels
 `mesheryctl system channel` allows you to easily set and switch between which Meshery release channel (stable or edge) that you want a particilar Meshery deployment (`context`) to use. Meshery deployments subscribe to one of two release channels and can either automatically self-update the deployment or prompt you to update the deployment. Alternatively, you can pin a given Meshery deployment to a specific release should you want tighter control over when Meshery updates. Read more about <Link to="https://docs.meshery.io/project/build-and-release#release-channels">Meshery's <i>stable</i> and <i>edge</i> release channels</Link>. 
