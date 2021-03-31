@@ -12,7 +12,7 @@ const TopLevelWrapper = styled.div`
 
         background: url(${HeroCubesBlack}) no-repeat;
         background-size: 50%;
-        background-color: #F3FFFD;
+        background-color: ${props => props.theme.secondaryLightColorTwo};
         background-position: bottom -85px right;
         p {
             font-size: 21px;
@@ -42,6 +42,7 @@ const TopLevelWrapper = styled.div`
         }
         .banner-btn.one {
             margin: 0rem .5rem 0 .5rem;
+            color: #fff;
             background: ${props => props.theme.highlightColor}; 
 
             &:hover {

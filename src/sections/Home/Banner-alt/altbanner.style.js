@@ -10,7 +10,7 @@ const AltBannerSectionWrapper = styled.section`
     background-repeat: no-repeat, no-repeat;
 
     background-size: 25%, 23%;
-    background-color: #F3FFFD;
+    background-color: ${props => props.theme.secondaryLightColorTwo};
     background-position: center right 160px, bottom right;
     p {
         font-size: 21px;
@@ -40,6 +40,7 @@ const AltBannerSectionWrapper = styled.section`
     }
     .banner-btn.one {
         margin: 0rem .5rem 0 .5rem;
+        color: #fff;
         background: ${props => props.theme.highlightColor}; 
 
         &:hover {

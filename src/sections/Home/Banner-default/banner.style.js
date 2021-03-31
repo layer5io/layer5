@@ -36,6 +36,7 @@ const BannerSectionWrapper = styled.section`
     }
     .banner-btn {
         margin: 0rem .5rem 0 .5rem;
+        color: #fff; 
     }
     .banner-btn.one {
         margin: 0rem .5rem 0 .5rem;

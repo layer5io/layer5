@@ -49,6 +49,7 @@ const Banner3SectionWrapper = styled.section`
     }
     .banner-btn.one {
         margin: 0rem .5rem 0 .5rem;
+        color: #fff;
         background: ${props => props.theme.highlightColor}; 
 
         &:hover {
