@@ -4,6 +4,7 @@ const FeaturesSectionWrapper = styled.section`
 
 	background-color: black;
 	transform: skew(0deg, -6deg);
+	padding-bottom:5rem;
 	.skw{
 		display: grid;
 		position: relative;
@@ -63,6 +64,9 @@ const FeaturesSectionWrapper = styled.section`
 			span {
 				color: ${props => props.theme.secondaryColor};
 			}
+		}
+		h2 {
+			font-weight: 400;
 		}
 		p {
 			font-size: 1.25rem;
@@ -154,6 +158,8 @@ const FeaturesSectionWrapper = styled.section`
 	}
 
 	@media screen and (max-width: 1200px) {
+		padding-bottom: 2rem;
+
 		.smp-section {
 			.smp-section-row {
 				margin: 2.5rem 0;
@@ -179,6 +185,7 @@ const FeaturesSectionWrapper = styled.section`
 	}
 
 	@media screen and (max-width: 960px) {
+		padding-bottom: 0rem;
 		.smp-section .smp-section-caraousel .slick-slider .slick-list {
 			.slick-slide {
 				img {

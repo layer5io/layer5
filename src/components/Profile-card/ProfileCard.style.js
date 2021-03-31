@@ -6,7 +6,7 @@ export const ProfileCardWrapper = styled.div`
        vertical-align: middle;
        border: 0;
     }
- 
+
     .profile-card{
         width: 250px;
         border-radius: 2px;
@@ -14,15 +14,16 @@ export const ProfileCardWrapper = styled.div`
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
         position: relative;
         margin: auto;
+        margin-bottom: 2.5rem;
         background: ${props => props.status === "Active" ? props.theme.menuColor : "gray"};
         filter: ${props => props.status === "Inactive" ? "grayscale(1)" : ""};
         top: 50%;
         transition: 0.3s;
-        
+
         &:hover{
             background: ${props => props.status === "Active" ? props.theme.secondaryColor : props.theme.primaryLightColor};
         }
-        
+
         header {
             display: block;
             position: relative;
@@ -30,7 +31,7 @@ export const ProfileCardWrapper = styled.div`
             padding: 20px 0 20px;
             z-index: 1;
             overflow: hidden;
-            
+
             .gatsby-image-wrapper {
                 display: block;
                 margin: auto;
@@ -41,7 +42,7 @@ export const ProfileCardWrapper = styled.div`
                 box-shadow: 0 1px 0 rgba(0,0,0,.1);
                 opacity: 90%;
             }
-            
+
             h4 {
                 font-weight: 400;
                 color: white;
@@ -49,7 +50,7 @@ export const ProfileCardWrapper = styled.div`
                 padding: 0;
             }
         }
-       
+
         .meshmate {
             position: absolute;
             text-align: center;

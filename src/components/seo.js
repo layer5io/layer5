@@ -1,17 +1,11 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
-import defaultImage from "../assets/images/layer5/layer5-tagline/png/layer5-tag-dark-bg.png";
 
-function SEO({ description, lang, meta, title, image }) {
+const SEO = ({ description, lang, meta, title, image }) => {
+  const { pathname } = useLocation();
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,6 +15,8 @@ function SEO({ description, lang, meta, title, image }) {
             description
             author
             siteUrl
+            image
+            twitterUsername
           }
         }
       }
@@ -28,10 +24,8 @@ function SEO({ description, lang, meta, title, image }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultmetaImage = image || defaultImage;
-  
-  // PAGE-SPECIFIC IMAGE AND CONDITIONAL LOGIC NEEDED
-  // const metaImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.Image}`;
+  const metaImage = `${site.siteMetadata.siteUrl}${image || site.siteMetadata.image}`;
+  const url = `${site.siteMetadata.siteUrl}${pathname}`;
 
   return (
     <Helmet
@@ -54,20 +48,24 @@ function SEO({ description, lang, meta, title, image }) {
           content: metaDescription,
         },
         {
+          property: "og:url",
+          content: url,
+        },
+        {
           property: "og:type",
           content: "website",
         },
         {
           property: "og:image",
-          content: defaultmetaImage,
+          content: metaImage,
         },
         {
           name: "twitter:card",
-          content: "summary",
+          content: "summary_large_image",
         },
         {
           name: "twitter:creator",
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.twitterUsername,
         },
         {
           name: "twitter:title",
@@ -78,17 +76,19 @@ function SEO({ description, lang, meta, title, image }) {
           content: metaDescription,
         },{
           name: "twitter:image",
-          content: defaultmetaImage,
+          content: metaImage,
         },
       ].concat(meta)}
     />
   );
-}
+};
 
 SEO.defaultProps = {
+  title: null,
   lang: "en",
   meta: [],
   description: "",
+  image: null,
 };
 
 SEO.propTypes = {
@@ -96,6 +96,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 export default SEO;

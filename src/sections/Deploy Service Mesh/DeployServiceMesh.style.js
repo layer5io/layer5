@@ -18,7 +18,6 @@ const DeployServiceMeshWrapper = styled.div`
             padding-top: 20px; 
         }
     }
-
     #info{
         padding: 70px 0px 70px 0px;
         h3{
@@ -88,7 +87,6 @@ const DeployServiceMeshWrapper = styled.div`
                 border-bottom: 4em solid transparent; 
                 border-right: 6em solid #00B39F;
             }
-
             .arrow-right {
                 margin-left: auto;
                 // width: 10%;
@@ -169,7 +167,6 @@ const DeployServiceMeshWrapper = styled.div`
             }
         }
     }
-
     #form{
         h3{
             font-weight: 700;
@@ -190,7 +187,6 @@ const DeployServiceMeshWrapper = styled.div`
                 margin-left: auto;
             }
         }
-
         #slider{
             display: flex;
             padding: 40px
@@ -300,7 +296,9 @@ const DeployServiceMeshWrapper = styled.div`
               width: 200px;
               height: 48px;
               padding: 15px;
-              margin-right: 10px;
+              margin: 5px;
+              border-radius: 5px;
+              font-size: 15px;
           }
           #arrow-btn{
               width: 60px;
@@ -309,9 +307,7 @@ const DeployServiceMeshWrapper = styled.div`
       
       #bot{
           /*
-
         switch this section to React Row, Col
-
         */
         display: flex;
           #green{
@@ -338,12 +334,8 @@ const DeployServiceMeshWrapper = styled.div`
               }
           }
           /*
-
         switch this section to React Row, Col
-
         */
-
-
           #book{
             /* background-image: url(${bookCover}); */
             background-repeat: no-repeat;
@@ -351,14 +343,11 @@ const DeployServiceMeshWrapper = styled.div`
             background-position: center;
             /* min-height: 800px; */
             vertical-align: center;
-
             background-size: contain;
             
-
             #spacer{
                 minwidth: 850px;
                 vertical-align: center;
-
             }
           }
       }
@@ -383,10 +372,8 @@ const DeployServiceMeshWrapper = styled.div`
         bottom: 100%;
         left: 50%;
         padding: 1rem;
-
         margin-left: -140px;
         width: 12.5rem;
-
         font-size: .9125rem;
         line-height: 1.25rem;
         text-align: center;
@@ -396,9 +383,7 @@ const DeployServiceMeshWrapper = styled.div`
         z-index: 3000;
         border-bottom-right-radius: 0.8rem;
         border-bottom-left-radius: 0.8rem;
-
         transition: all 0.5s ease;
-
         p {
             margin: 0;
         }

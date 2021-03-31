@@ -58,12 +58,16 @@ const MesheryPage = () => {
           <FeaturesSection />
           <Container>
             <div className="callout">
-              <h3> Service Mesh Management </h3>
               <h1> Manage your service mesh with features you won't find anywhere else.</h1>
-              <Button primary title="Get Started" url="./getting-started" />
             </div>
           </Container>
           <Features />
+          {/* <Container>
+            <div className="callout">
+              <h3> Service Mesh Management </h3>
+              <Button primary title="Get Started" url="./getting-started" />
+            </div>
+          </Container> */}
         </MesheryWrapper>
       </Layout>
     </ThemeProvider>

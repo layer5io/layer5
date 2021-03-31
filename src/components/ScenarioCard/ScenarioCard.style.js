@@ -78,6 +78,7 @@ export const ScenarioCardWrapper = styled.div`
 		width: 100%;
 		height: 100%;
 		padding: 1.5rem;
+        overflow: hidden;
 	}
 
     .full-screen {
@@ -96,5 +97,12 @@ export const ScenarioCardWrapper = styled.div`
             }
         }
     }
-
+    .open-animate {
+        height: 640px;
+        transition: height 0.2s ease-in;
+    }
+    .close-animate {
+        height: 0px;
+        transition: height 0.2s ease-in;
+    }
 `;

@@ -59,14 +59,4 @@ export const MeetTheMaintainer = styled.div`
         font-size: 1.2rem;
         font-weight: 600;
     }
-    a {
-        color: ${props => props.theme.primaryColor};
-        background-color: #eeeeee;
-        border-radius: 8px;
-        padding-left: .5rem;
-        padding-right: .5rem;
-        &:hover {
-            color: ${props => props.theme.keppelColor}; 
-        }
-    }
 `;

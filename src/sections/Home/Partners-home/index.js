@@ -10,6 +10,7 @@ import hashicorp from "../../../assets/images/partners/hashicorp_vertical_black.
 import hpe from "../../../assets/images/partners/hpe_side_black.svg";
 import nitk from "../../../assets/images/partners/nitk_black.png";
 import rackspace from "../../../assets/images/partners/rackspace_black.svg";
+import intel from "../../../assets/images/partners/intel-black.svg";
 
 import SectionTitle from "../../../reusecore/SectionTitle";
 
@@ -59,7 +60,7 @@ const Projects = () => {
             </Link>
           </Col>
           <Col sm={2} md={2} lg={2}>
-            <Link className="partner-card" to="/news/layer5-and-hashicorp-launch-service-mesh-partnership">
+            <Link className="partner-card" to="/company/news/layer5-and-hashicorp-launch-service-mesh-partnership">
               <div className="partner__block__inner">
                 <img src={hashicorp} alt="Hashicorp partnership with Layer5" />
               </div>
@@ -83,6 +84,13 @@ const Projects = () => {
             <Link className="partner-card" to="/partners#rackspace">
               <div className="partner__block__inner">
                 <img src={rackspace} alt="Rackspace Technology" />
+              </div>
+            </Link>
+          </Col>
+          <Col sm={2} md={2} lg={2}>
+            <Link className="partner-card" to="/partners#intel">
+              <div className="partner__block__inner">
+                <img src={intel} alt="intel" />
               </div>
             </Link>
           </Col>

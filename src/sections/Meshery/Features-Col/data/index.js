@@ -1,4 +1,3 @@
-
 const data = {
   features: [
     {
@@ -75,12 +74,12 @@ const data = {
           className: "--on"
         },
         {
-          content: "Baseline and track deltas of workload performance over time.",
+          content: "Baseline and track deltas of workload performance.",
           className: "--on"
         }
       ],
       count: {
-        value: 2000,
+        value: 0,
         description: "performance tests run"
       }
     }

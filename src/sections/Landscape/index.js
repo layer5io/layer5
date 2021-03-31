@@ -22,7 +22,6 @@ import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
 
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const LandscapeGrid=() => {
   return (
@@ -108,10 +107,9 @@ const LandscapeGrid=() => {
                   <Tools />
                 </TabPanel>
               </Tabs>
-              <a name="#smi"></a>
-              <h2 className="sub-heading landscape-section-heading" >Service Mesh Interface Compliance</h2>
+              <h2 id="smi" className="sub-heading landscape-section-heading" >Service Mesh Interface Compliance</h2>
               <h4 className="landscape-section-sub-heading">Is your service mesh compliant? <a href="/projects/service-mesh-interface-conformance">Find out</a>.</h4>
-              <SMI_Compatibility />
+              <SMI_Compatibility/>
               <div className="Legend">
                 <span>Legend:</span>
                 <div className="Landscape">
@@ -128,8 +126,8 @@ const LandscapeGrid=() => {
                 </div>
               </div>
               <div className="AboutLandscape">
-                <img src={landscape} 
-                  alt="Service Mesh Landscape" 
+                <img src={landscape}
+                  alt="Service Mesh Landscape"
                 />
                 <div>
                   <p>The Layer5 Service Mesh Landscape is a community-curated collection of service mesh projects.

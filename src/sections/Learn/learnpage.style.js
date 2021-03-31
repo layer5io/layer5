@@ -14,12 +14,19 @@ export const LearnPageWrapper = styled.div`
 
     .join-community{
         width: 100%;
+        max-width: 100%;
         height: 28rem;
         background-position: bottom;
 
         @media screen and (min-width: 1800px) {
             height: 34rem;
             background-position-y: -56vw;
+        }
+    }
+
+    .join-community_text-and_button{
+        p{
+            max-width: 22rem;
         }
     }
 `;

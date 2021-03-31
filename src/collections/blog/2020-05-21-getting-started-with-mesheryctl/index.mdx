@@ -2,7 +2,7 @@
 title: "Getting started with mesheryctl"
 subtitle: "No easier way to get started with a service mesh"
 date: 2020-05-21 08:00:05 -0530
-author: Kush Trivedi
+author: Layer5 Contributor
 thumbnail: ./mesheryctl.png
 category: Meshery
 tags:
@@ -41,14 +41,14 @@ You will see the output as
 
 ```
 Extracting mesheryctl-v0.3.14...
-Archive:  /Users/kush/meshery.zip
+Archive:  /Users/user/meshery.zip
   inflating: LICENSE
   inflating: README.md
   inflating: mesheryctl
 
 Installing mesheryctl in /usr/local/bin.
 mesheryctl installed.
-permissions moved to kush
+permissions moved to user
 Removing installation files and opening Meshery...Updating Meshery now...
 Pulling meshery          ... download complete
 Pulling meshery-istio    ... done
@@ -73,39 +73,39 @@ If you are wondering if bash is only way to get `mesheryctl`, then here is the l
 </thead>
 <tbody>
     <tr>
-    <td ><a href="https://meshery.layer5.io/docs/installation/docker">Docker</a></td>
+    <td ><a href="https://docs.meshery.io/installation/platforms/docker">Docker</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td> - <a href="https://meshery.layer5.io/docs/installation/docker">Docker - Docker App</a></td>
+    <td> - <a href="https://docs.meshery.io/installation/platforms/docker">Docker - Docker App</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td><a href="https://meshery.layer5.io/docs/installation/kubernetes">Kubernetes</a></td>
+    <td><a href="https://docs.meshery.io/installation/platforms/kubernetes">Kubernetes</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td> - <a href="https://meshery.layer5.io/docs/installation/aks">Kubernetes - AKS</a></td>
+    <td> - <a href="https://docs.meshery.io/installation/platforms/aks">Kubernetes - AKS</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td> - <a href="https://meshery.layer5.io/docs/installation#mac-or-linux">Kubernetes - Docker Desktop</a></td>
+    <td> - <a href="https://docs.meshery.io/installation/quick-start">Kubernetes - Docker Desktop</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td> - <a href="https://meshery.layer5.io/docs/installation/eks">Kubernetes - EKS</a></td>
+    <td> - <a href="https://docs.meshery.io/installation/platforms/eks">Kubernetes - EKS</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td> - <a href="https://meshery.layer5.io/docs/installation/gke">Kubernetes - GKE</a></td>
+    <td> - <a href="https://docs.meshery.io/installation/platforms/gke">Kubernetes - GKE</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td> - <a href="https://meshery.layer5.io/docs/installation/kubernetes#helm">Kubernetes - Helm</a></td>
+    <td> - <a href="https://docs.meshery.io/installation/platforms/kubernetes#helm">Kubernetes - Helm</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td> - <a href="https://meshery.layer5.io/docs/installation/minikube">Kubernetes - Minikube</a></td>
+    <td> - <a href="https://docs.meshery.io/installation/platforms/minikube">Kubernetes - Minikube</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
@@ -113,27 +113,27 @@ If you are wondering if bash is only way to get `mesheryctl`, then here is the l
     <td className="text-centre">In Progress</td>
     </tr>
     <tr>
-    <td><a href="https://meshery.layer5.io/docs/installation#mac-or-linux">Linux</a></td>
+    <td><a href="https://docs.meshery.io/installation/quick-start">Linux</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td><a href="https://meshery.layer5.io/docs/installation#mac-or-linux">Mac</a></td>
+    <td><a href="https://docs.meshery.io/installation/quick-start">Mac</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td> - <a href="https://meshery.layer5.io/docs/installation#mac-or-linux">Mac - Homebrew</a></td>
+    <td> - <a href="https://docs.meshery.io/installation/mesheryctl#homebrew">Mac - Homebrew</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td><a href="https://meshery.layer5.io/docs/installation#windows">Windows</a></td>
+    <td><a href="https://docs.meshery.io/installation/platforms/windows">Windows</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td> - <a href="https://meshery.layer5.io/docs/installation#windows">Scoop</a></td>
+    <td> - <a href="https://docs.meshery.io/installation/mesheryctl#scoop">Scoop</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
-    <td> - <a href="https://meshery.layer5.io/docs/installation/wsl2">WSL2</a></td>
+    <td> - <a href="https://docs.meshery.io/installation/platforms/windows#wsl">WSL2</a></td>
     <td className="text-centre">✔️</td>
     </tr>
     <tr>
@@ -175,7 +175,7 @@ Flags:
 Use "mesheryctl [command] --help" for more information about a command.
 ```
 
-Once you do `mesheryctl system start`, Meshery will pull its adapters and latest docker images. Meshery will also detect your Kubernetes configuration and will let you know if Kubernetes is running. Meshery will run it’s web-based user interface on localhost port `9081` and will let you select your choice of <a href="https://meshery.layer5.io/docs/extensibility#Providers">Provider</a> before you can start managing your service meshes with this powerful utility.
+Once you do `mesheryctl system start`, Meshery will pull its adapters and latest docker images. Meshery will also detect your Kubernetes configuration and will let you know if Kubernetes is running. Meshery will run it’s web-based user interface on localhost port `9081` and will let you select your choice of <a href="https://docs.meshery.io/extensibility#providers">Provider</a> before you can start managing your service meshes with this powerful utility.
 
 <table align="center" className="table-box"><tbody><tr><td className="text-centre">One of the most interesting sub-commands of <code>mesheryctl</code> is <strong><code>perf</code></strong>.</td></tr></tbody></table>
 
@@ -222,6 +222,5 @@ If this makes you excited, [join the Layer5 community](http://slack.layer5.io) w
 
 Stay meshy and happy meshing!
 
-\- _[Kush Trivedi](https://github.com/kushthedude)_
 
 </BlogWrapper>

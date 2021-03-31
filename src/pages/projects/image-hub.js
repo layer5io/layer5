@@ -10,13 +10,14 @@ import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
-import seoimage from "../../assets/images/image-hub/layer5-image-hub.png";
 
 const ImageHub = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Image Hub" description="Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters." image={seoimage} />
+      <SEO title="Image Hub"
+        description="Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters."
+        image="/images/layer5-image-hub.png" />
       <Navigation />
       <ImageHubPage />
       <Footer/>

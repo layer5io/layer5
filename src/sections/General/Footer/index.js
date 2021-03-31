@@ -146,6 +146,11 @@ const Footer = () => {
                       Contact
                     </Link>
                   </li>
+                  <li>
+                    <Link className="category-link" to="/company/faq">
+                      FAQs
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </Row>

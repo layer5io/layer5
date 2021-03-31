@@ -28,7 +28,7 @@ const LabSingle = ({ data }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={`${data.mdx.frontmatter.title}`} />
+        <SEO title={data.mdx.frontmatter.title} />
         <Navigation />
         <LabSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
         <Footer />

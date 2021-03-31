@@ -13,5 +13,7 @@ assignees: ''
 
 ---
 **Contributor Resources**
-The layer5.io website uses Gatsby, Strapi, and GitHub Pages. Site content is found under the [`layer5-ng` branch](https://github.com/layer5io/layer5/tree/layer5-ng).
-- See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
+
+The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).
+- See [contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
+- See Layer5 site designs in this [Figma project](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs).

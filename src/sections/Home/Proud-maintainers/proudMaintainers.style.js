@@ -83,18 +83,22 @@ const ProjectItemWrapper = styled.section`
 			padding: 1.5rem 1rem;
 			max-height: 125px;
 		}
-	}
+      @media screen and (max-width: 550px) {
+          img {
+            padding: 1.65rem 0;
+          }
+          h4 {
+            font-size: 0.7rem;
+          }
+      }
 
-	@media screen and (max-width: 550px) {
-		.proj_icon_2 {
-			img {
-				padding: 1.65rem 0.4rem;
-			}
-			h4 {
-				font-size: 1rem;
-			}
-		}
+      @media screen and (max-width: 460px){
+        h4 {
+          margin-left: -25px;
+        }
+      }
 	}
+  
 `;
 
 export default ProjectItemWrapper;
