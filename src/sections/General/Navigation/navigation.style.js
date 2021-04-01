@@ -318,6 +318,7 @@ const NavigationWrap = styled.header`
       padding: 0 10px;
       visibility: hidden;
       opacity: 0;
+      transition: .3s;
     }
     .mobile-dropdown {
       position: relative;
