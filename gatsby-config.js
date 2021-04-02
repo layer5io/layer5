@@ -26,6 +26,13 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-styled-components-dark-mode",
+      options: {
+        light: require(`${__dirname}/src/theme/app/themeStyles.js`).lightTheme,
+        dark: require(`${__dirname}/src/theme/app/themeStyles.js`).darkTheme
+      }
+    },
+    {
       resolve: "gatsby-plugin-feed-mdx",
       options: {
         query: `

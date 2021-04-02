@@ -18,7 +18,7 @@ const ProjectItemWrapper = styled.section`
 		}
 		.project-text {
 			margin:0 auto 4rem auto;
-			color: rgba(0, 0, 0, 0.6);
+			color: ${props => props.theme.specialTextColor}
 			max-width: 60%;
 		}
 	}

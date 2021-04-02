@@ -1,8 +1,8 @@
 import styled from "styled-components";
 export const BlogWrapper = styled.div`
-    color:#000;
+    color:${props => props.theme.black};
     .sub-heading {
-      color:gray;
+      color:${props => props.theme.gray};
       position:relative;
       top:-10px;
     }
@@ -80,19 +80,19 @@ export const BlogWrapper = styled.div`
         width: auto;
         background-color: #3C494F;
         text-align: center;
-        color: #fff;
+        color: ${props => props.theme.white};
       }
       .beta-adapters {
         width: auto;
         background-color: #00D3A9;
         text-align: center;
-        color: #fff;
+        color: ${props => props.theme.white};
       }
       .alpha-adapters {
         width: auto;
         background-color: lightgray;
         text-align: center;
-        color: black;
+        color: ${props => props.theme.black};
       }
     }
 

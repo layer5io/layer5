@@ -2,7 +2,8 @@ module.exports = {
     "env": {
         "browser": true,
         "es6": true,
-        "amd": true
+        "amd": true,
+        "node": true
     },
     "settings": {
         "react": {

@@ -36,6 +36,9 @@ const PageHeaderWrapper = styled.div`
                 margin: 0;
                 display: inline-block;
             }
+            .title{
+                color: ${props => props.theme.black};
+            }
         } 
     }
 `;

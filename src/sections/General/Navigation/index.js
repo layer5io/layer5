@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import { DarkModeToggler } from "react-darkmode-toggler";
+import { ThemeManagerContext } from "gatsby-styled-components-dark-mode";
 
 import { Container } from "../../../reusecore/Layout";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
@@ -15,6 +17,7 @@ import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import NavigationWrap from "./navigation.style";
 
 const Navigation = () => {
+  const themeContext = useContext(ThemeManagerContext);
   let data = useStaticQuery(
     graphql`
             query {
@@ -216,6 +219,10 @@ const Navigation = () => {
               blogData={data}
             />
           </nav>
+          <DarkModeToggler
+            isDark={themeContext.themeSetting.toLocaleLowerCase()}
+            onClick={() => themeContext.toggleDark()}
+          />
         </div>
       </Container>
     </NavigationWrap>

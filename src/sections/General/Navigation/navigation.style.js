@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavigationWrap = styled.header`
-  background-color: #F3FFFD;
+  background-color: ${props => props.theme.secondaryLightColorTwo};
   position: sticky;
   width: 100%;
   padding-top: 1rem;
@@ -22,7 +22,7 @@ const NavigationWrap = styled.header`
   }
   .dropdown {
     position: absolute;
-    background: white;
+    background: ${props => props.theme.backgroundColor};;
     opacity: 0;
     border: 1px solid #f5f5f5;
     border-radius: 50px;
@@ -48,7 +48,7 @@ const NavigationWrap = styled.header`
     display: none;
   }
   .title {
-    color: black;
+    color: ${props => props.theme.black}
     font-size: 20px;
     font-weight: 600;
   }
@@ -64,13 +64,13 @@ const NavigationWrap = styled.header`
       flex-direction: column;
       position: relative;
       padding: 3em;
-      background: #fafafa;
+      background: ${props => props.theme.navGridBackground};
       border-radius: 50px 0 0 50px;
       .sub-item {
         padding: 0;
       }
       .section {
-        color: black;
+        color: ${props => props.theme.textColor};
         font-size: 20px;
         font-weight: 600;
         margin-left:0px;
@@ -105,7 +105,7 @@ const NavigationWrap = styled.header`
     }
     .nav-display {
       border-left: 2px solid #f1f1f1;
-      background: #ffffff;
+      background: ${props => props.theme.backgroundColor};
       padding-top: 3em;
       border-radius: 0 50px 50px 0;
       display: grid;
@@ -266,7 +266,7 @@ const NavigationWrap = styled.header`
   }
   &.scrolled {    
     box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px;
-    background: white;
+    background: ${props => props.theme.backgroundColor};
     .nav {
       .nav-item{
         a {
@@ -438,7 +438,7 @@ const NavigationWrap = styled.header`
     font-size: 16px;
     font-weight: 600;
     line-height: 28px;
-    color: black;
+    color: ${props => props.theme.textColor};
     margin-bottom: 20px;
     display: block;
     white-space: nowrap;
@@ -457,7 +457,7 @@ const NavigationWrap = styled.header`
     }
   }
   .readmore-btn {
-    color: rgba(0,0,0,0.35);
+    color: ${props => props.theme.readMoreBtnColor};
     display: flex;
     align-items: center;
     transition: all 0.3s linear;
