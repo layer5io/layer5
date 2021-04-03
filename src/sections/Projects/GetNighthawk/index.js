@@ -27,11 +27,11 @@ const Projects = () => {
         <div className="hero-section">
           <Row>
             <Col lg={6} md={6} sm={12}>
-              <img src={logo} className="img1" />
+              <img src={logo} className="img1" alt="GetNighthawk Logo" />
             </Col>
             <Col lg={6} md={6} sm={12}>
               <div className="hero-text">
-                <img src={icon} />
+                <img src={icon} alt="GetNighthawk Text Logo" />
                 <p>The easiest way to get started with <br /> Nighthawk on any cloud or platform</p>
               </div>
             </Col>
@@ -62,7 +62,7 @@ const Projects = () => {
         <div className="explain-1">
           <h1>What is Nighthawk?</h1>
           <p>Nighthawk is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool.<br /> Nighthawk is Envoy’s load generator and is written in C++. </p>
-          <img src={explain1} />
+          <img src={explain1} alt="explanation" />
         </div>
 
         <div className="explain-2">
@@ -74,7 +74,7 @@ const Projects = () => {
               </div>
             </Col>
             <Col lg={6} md={6} sm={12}>
-              <img src={explain2} />
+              <img src={explain2} alt="explanation" />
             </Col>
           </Row>
         </div>
@@ -82,7 +82,7 @@ const Projects = () => {
         <div className="explain-2">
           <Row>
             <Col lg={6} md={6} sm={12}>
-              <img src={explain3} />
+              <img src={explain3} alt="explanation" />
             </Col>
             <Col lg={6} md={6} sm={12}>
               <div className="text">
@@ -102,7 +102,7 @@ const Projects = () => {
               <Col lg={4} md={4} sm={12}>
                 <div className="card">
                   <div className="circle">
-                    <img src={smpIcon} className="smp" />
+                    <img src={smpIcon} className="smp" alt="smp logo" />
                   </div>
                   <h2>SERVICE MESH PERFORMANCE COMPATIBILITY</h2>
                   <p>Enabling Standards-based, Distributed Performance Management - GetNighthawk integrates Meshery and Nighthawk. Through this integration Meshery facilitates <Link to="/projects/service-mesh-performance">Service Mesh Performance (SMP)</Link> compatibility for Nighthawk.</p>
@@ -111,7 +111,7 @@ const Projects = () => {
               <Col lg={4} md={4} sm={12}>
                 <div className="card">
                   <div className="circle">
-                    <img src={cloud} />
+                    <img src={cloud} alt="cloud image" />
                   </div>
                   <h2>Nighthawk Distribution</h2>
                   <p>Stable builds available for:
@@ -133,7 +133,7 @@ const Projects = () => {
               <Col lg={4} md={4} sm={12}>
                 <div className="card">
                   <div className="circle">
-                    <img src={cpu} />
+                    <img src={cpu} alt="cpu image" />
                   </div>
                   <h2>SCHEDULING AND ANALYSIS</h2>
                   <p>GetNighthawk integrates with <Link to="/meshery">Meshery</Link> and provides you with the ability to schedule performance tests or insert them into your CI pipeline.</p>
@@ -151,13 +151,13 @@ const Projects = () => {
                 <h2>Standards-based, distributed performance management</h2>
                 <p>GetNighthawk will provide generally-available distributions of Nighthawk under different architectures and platforms and easy-to-use tooling for installation and operation. This will include creating distributions of Nighthawk as well as augmenting existing tooling, Meshery, to retrieve these arch-specific packages and update their deployments.</p>
               </div>
-              <img src={explain4} />
+              <img src={explain4} alt="explanation" />
             </Col>
             <Col lg={6} md={6} sm={12}>
               <div className="listed">
                 <table className="table">
                   <tr>
-                    <td className="icon"><img src={c_icon} /></td>
+                    <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="service">
                       <h4>
                         Further the state of distributed <br />
@@ -167,7 +167,7 @@ const Projects = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="icon"><img src={c_icon} /></td>
+                    <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="service">
                       <h4>
                         Facilitate Nighthawk adoption.
@@ -177,7 +177,7 @@ const Projects = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="icon"><img src={c_icon} /></td>
+                    <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="service">
                       <h4>
                         Deliver easy-to-use, repeatable <br />
@@ -187,7 +187,7 @@ const Projects = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="icon"><img src={c_icon} /></td>
+                    <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="service">
                       <h4>
                         Educate the ecosystem
@@ -202,7 +202,7 @@ const Projects = () => {
         </div>
       </Container>
       <div className="callout">
-        <img src={cncf} />
+        <img src={cncf} alt="cncf logo" />
         <p> Participate in the state of the art. <br />
         Join us in the Cloud Native Computing Foundation's Service Mesh Working Group.</p>
         <Button primary title="Join Us" url="/community/calendar#meetings" />
