@@ -10,8 +10,6 @@ import axios from "axios";
 import DeployServiceMeshWrapper from "./DeployServiceMesh.style";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
-import bookCover from "../../assets/images/learn/book-cover.png";
-
 
 const RangeSlider = memo(
   ({ classes, label, onChange, value, ...sliderProps }) => {
@@ -21,6 +19,8 @@ const RangeSlider = memo(
     useEffect(() => {
       setSliderVal(value);
     }, [value]);
+
+    
 
     const changeCallback = e => {
       setSliderVal(e.target.value);
@@ -86,12 +86,18 @@ const ServiceMesh = () => {
   const [parentVal6, setParentVal6] = useState(50);
   const [parentVal7, setParentVal7] = useState(50);
   const [parentVal8, setParentVal8] = useState(50);
+  const [average, SetAverage] = useState(50);
   const [email, setEmail] = useState("");
   const [flag, setFlag] = useState(false);
   const [submitFlag, setSubmit] = useState(false);
   const [first, setFirst] = useState("");
   const [second, setSecond] = useState("");
   const [org, setOrg] = useState("");
+
+  useEffect(() => {
+    const sum = parseInt(parentVal1) + parseInt(parentVal2) + parseInt(parentVal3) + parseInt(parentVal4) + parseInt(parentVal5) + parseInt(parentVal6) + parseInt(parentVal7) + parseInt(parentVal8);
+    SetAverage((sum/800)*100);
+  });
 
   const expand = () => {
     setFlag(true);
@@ -223,6 +229,25 @@ const ServiceMesh = () => {
       expand();
     }
   };
+  const Progress = ({done}) => {
+    const [style, setStyle] = React.useState({});
+    
+    setTimeout(() => {
+      const newStyle = {
+        opacity: 1,
+        width: `${done}%`
+      };
+      
+      setStyle(newStyle);
+    }, 200);
+    
+    return (
+      <div className="progress">
+        <div className="progress-done" style={style}>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <DeployServiceMeshWrapper>
@@ -259,10 +284,11 @@ const ServiceMesh = () => {
           <p id="left">Lightly</p>
           <p id="right">Strongly</p>
         </div>
-        <div id="arrow-box">
+        {/* <div id="arrow-box">
           <div className="arrow-left"></div>
           <div className="arrow-right"></div>
-        </div>
+        </div> */}
+        <Progress done={average}/>
       </div>
 
       <div id="info">
@@ -300,6 +326,9 @@ const ServiceMesh = () => {
                   Interservice Communication
                 </h4>
                 <RangeSlider {...sliderProps1}/>
+                <h5>
+                  {parentVal1}
+                </h5>
               </div>
 
               <div id="slider">
@@ -307,6 +336,9 @@ const ServiceMesh = () => {
                   Observability
                 </h4>
                 <RangeSlider {...sliderProps2}/>
+                <h5>
+                  {parentVal2}
+                </h5>
               </div>
 
               <div id="slider">
@@ -314,6 +346,9 @@ const ServiceMesh = () => {
                   Perspective from which you think of your APIs
                 </h4>
                 <RangeSlider {...sliderProps3}/>
+                <h5>
+                  {parentVal3}
+                </h5>
               </div>
             </div>
           </div>
@@ -329,87 +364,102 @@ const ServiceMesh = () => {
               <div id="submit">
                 <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
                 <input type="text" className="email"  onChange={addData1}  placeholder="First Name"></input>
-                <br/>
+                {/* <br/> */}
                 <input type="text" className="email"  onChange={addData2}  placeholder="Second Name"></input>
                 <br/>
                 <input type="text" className="email"  onChange={addData3}  placeholder="Organization or Company"></input>
-                <br/>
+                {/* <br/> */}
                 <input type="email" className="email" onKeyDown={handleKeyPress} onChange={addData}  placeholder="Email Address"></input>
+                <br/>
                 <Button secondary id="arrow-btn" type="button"  onClick={expand} title="Continue &rarr;"/>
               </div>
             }
-            <div className="range-slider">
-              <div id="slider">
-                <h4>
-                    Security Model
-                </h4>
-                <RangeSlider {...sliderProps4}/>
-              </div>
+            <div className={!flag ? "blur" : ""}>
+              <div className="range-slider">
+                <div id="slider">
+                  <h4>
+                        Security Model
+                  </h4>
+                  <RangeSlider {...sliderProps4}/>
+                  <h5>
+                    {parentVal4}
+                  </h5>
+                </div>
 
-              <div id="slider">
-                <h4>
-                    # of services
-                </h4>
-                <RangeSlider {...sliderProps5}/>
-              </div>
+                <div id="slider">
+                  <h4>
+                        # of services
+                  </h4>
+                  <RangeSlider {...sliderProps5}/>
+                  <h5>
+                    {parentVal5}
+                  </h5>
+                </div>
 
-              <div id="slider">
-                <h4>
-                    Service reliability
-                </h4>
-                <RangeSlider {...sliderProps6}/>
-              </div>
+                <div id="slider">
+                  <h4>
+                        Service reliability
+                  </h4>
+                  <RangeSlider {...sliderProps6}/>
+                  <h5>
+                    {parentVal6}
+                  </h5>
+                </div>
 
-              <div id="slider">
-                <h4>
-                    Size of your organization
-                </h4>
-                <RangeSlider {...sliderProps7}/>
-              </div>
+                <div id="slider">
+                  <h4>
+                        Size of your organization
+                  </h4>
+                  <RangeSlider {...sliderProps7}/>
+                  <h5>
+                    {parentVal7}
+                  </h5>
+                </div>
 
-              <div id="slider">
-                <h4>
-                    Diversity of application stack
-                </h4>  
-                <RangeSlider {...sliderProps8}/>
+                <div id="slider">
+                  <h4>
+                        Diversity of application stack
+                  </h4>  
+                  <RangeSlider {...sliderProps8}/>
+                  <h5>
+                    {parentVal8}
+                  </h5>
+                </div>
               </div>
-            </div>
-            <div id="submit-btn">
-              {
-                !submitFlag
-                &&
-                <Button secondary type="button" onClick={submit} title="Submit &rarr;"/>
-              }
-              {
-                submitFlag
-                &&
-                <h3>Your response has been recorded!</h3>
-              }
+              <div id="submit-btn">
+                {
+                  !submitFlag
+                    &&
+                    <Button secondary type="button" onClick={submit} title="Submit &rarr;"/>
+                }
+                {
+                  submitFlag
+                    &&
+                    <h3>Your response has been recorded!</h3>
+                }
+              </div>
             </div>
           </div>
         </div>
       </Container>
 
       <div id="bot">
-
-        <div id="green">
-          <div id="text">
-            <p id="cover">Services-first Network</p>
-            <h1>What is A <br></br> Service Mesh?</h1>
-            <p>
-            Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
-            </p>
-            <Button primary id="learn" type="button" title="Learn More"/>
-          </div>  
-        </div>
-
-        <div  id="book" >
-          <div id="spacer">
-            <img src={bookCover} />
-              
-          </div>
-        </div>
-
+        <Row>
+          <Col sm={12} md={6} lg={6} style={{paddingRight: "0px"}}>
+            <div id="green">
+              <div id="text">
+                <p id="cover">Services-first Network</p>
+                <h1>What is A <br></br> Service Mesh?</h1>
+                <p>
+                  Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
+                </p>
+                <Button primary id="learn" type="button" title="Learn More"/>
+              </div>  
+            </div>
+          </Col>
+          <Col sm={12} md={6} lg={6} id="book">
+          </Col>
+        </Row>
       </div>
     </DeployServiceMeshWrapper>
   );

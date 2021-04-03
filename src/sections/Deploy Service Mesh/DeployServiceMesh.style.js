@@ -168,6 +168,7 @@ const DeployServiceMeshWrapper = styled.div`
         }
     }
     #form{
+        
         h3{
             font-weight: 700;
         }
@@ -194,6 +195,12 @@ const DeployServiceMeshWrapper = styled.div`
                 font-size: 16px;
                 font-weight: 700;
                 width: 150px;
+            }
+            h5 {
+                font-size: 16px;
+                font-weight: 700;
+                margin-left: 10px;
+                margin-top: 7px;
             }
             // #slide{
             //     margin: 60px 0 0 0%;
@@ -274,6 +281,9 @@ const DeployServiceMeshWrapper = styled.div`
       }
       #additional{
           position: relative;
+          .blur{
+            filter: blur(4px);
+          }
       }
       #submit{
           text-align: center;
@@ -306,15 +316,11 @@ const DeployServiceMeshWrapper = styled.div`
       }
       
       #bot{
-          /*
-        switch this section to React Row, Col
-        */
         display: flex;
           #green{
               background: #00B39F;
-              
+               !important; 
               min-height: 400px;
-              width: 60%;
               #text{
                   color: white;
                   
@@ -333,22 +339,12 @@ const DeployServiceMeshWrapper = styled.div`
                   }
               }
           }
-          /*
-        switch this section to React Row, Col
-        */
           #book{
-            /* background-image: url(${bookCover}); */
-            background-repeat: no-repeat;
-            /* background-attachment: fixed; */
+            background-image: url(${bookCover}); 
+            background-attachment: fixed;
             background-position: center;
-            /* min-height: 800px; */
-            vertical-align: center;
-            background-size: contain;
-            
-            #spacer{
-                minwidth: 850px;
-                vertical-align: center;
-            }
+            background-repeat: no-repeat;
+            background-size: cover;
           }
       }
       .tooltip {
@@ -398,6 +394,29 @@ const DeployServiceMeshWrapper = styled.div`
       .tooltip:hover .tooltiptext {
         visibility: visible;
       }
+      .progress {
+        background-color: #d8d8d8;
+        border-radius: 20px;
+        position: relative;
+        margin: 15px 0;
+        height: 30px;
+        width: 90%;
+        margin: 20px auto;
+    }
+    
+    .progress-done {
+        background: linear-gradient(to left, #00B39F, #00D3A9);
+        box-shadow: 0 3px 3px -5px #00B39F, 0 2px 5px #00B39F;
+        border-radius: 20px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 0;
+        opacity: 0; 
+        transition: 1s ease 0.3s;
+    }
 `;
 
 export default DeployServiceMeshWrapper;
