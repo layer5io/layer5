@@ -8,7 +8,7 @@ const DeployServiceMeshWrapper = styled.div`
         margin-top: 2rem;
         color: ${props => props.theme.white};
     }
-    #hero{
+    .hero{
         background-color: #EBC017;
         height: 35rem;
         text-align: center;
@@ -17,7 +17,7 @@ const DeployServiceMeshWrapper = styled.div`
             padding-top: 20px; 
         }
     }
-    #info{
+    .info{
         padding: 70px 0px 70px 0px;
         h3{
             font-weight: 650;
@@ -37,7 +37,7 @@ const DeployServiceMeshWrapper = styled.div`
         }
     }
     
-    #arrow{
+    .arrow{
         margin: auto;
         width: auto;
         padding: 20px;
@@ -52,11 +52,11 @@ const DeployServiceMeshWrapper = styled.div`
             font-weight: 700;
             text-align: center;
         }
-        #text{
+        .text{
             color: white;
             display: flex; 
             padding: 30px 40px 0px 40px;
-            #right{
+            .right{
                 margin-left: auto;
             }
             p{
@@ -64,125 +64,125 @@ const DeployServiceMeshWrapper = styled.div`
                 font-size: 1.2em;
             }
         }
-        #arrow-box{
+        // #arrow-box{
             
-            padding: 0px 40px 20px 40px;
-            display: flex;
-            .arrow-left {
-                // width: 90%;
-                height: 0;
-                padding-top: 1.3em;
-                padding-bottom: 25%;
-                padding-left:20px;
-                position: relative;
-                overflow: hidden;
-            }
-            .arrow-left:after {
-                content: "";
-                display: block;
-                width: 0; 
-                height: 0; 
-                border-top: 4em solid transparent;
-                border-bottom: 4em solid transparent; 
-                border-right: 6em solid #00B39F;
-            }
-            .arrow-right {
-                margin-left: auto;
-                // width: 10%;
-                height: 0;
-                padding-top: 1.3em;
-                padding-bottom: 20%;
-                padding-right: 75px;
-                position: relative;
-                overflow: hidden;
-            }
-            .arrow-right:after {
-                content: "";
-                display: block;
-                width: 0; 
-                height: 0; 
-                border-top: 4em solid transparent;
-                border-bottom: 4em solid transparent;
-                border-left: 8em solid #00B39F;
-            } 
-            @media only screen and (min-width: 1000px) {
+        //     padding: 0px 40px 20px 40px;
+        //     display: flex;
+        //     .arrow-left {
+        //         // width: 90%;
+        //         height: 0;
+        //         padding-top: 1.3em;
+        //         padding-bottom: 25%;
+        //         padding-left:20px;
+        //         position: relative;
+        //         overflow: hidden;
+        //     }
+        //     .arrow-left:after {
+        //         content: "";
+        //         display: block;
+        //         width: 0; 
+        //         height: 0; 
+        //         border-top: 4em solid transparent;
+        //         border-bottom: 4em solid transparent; 
+        //         border-right: 6em solid #00B39F;
+        //     }
+        //     .arrow-right {
+        //         margin-left: auto;
+        //         // width: 10%;
+        //         height: 0;
+        //         padding-top: 1.3em;
+        //         padding-bottom: 20%;
+        //         padding-right: 75px;
+        //         position: relative;
+        //         overflow: hidden;
+        //     }
+        //     .arrow-right:after {
+        //         content: "";
+        //         display: block;
+        //         width: 0; 
+        //         height: 0; 
+        //         border-top: 4em solid transparent;
+        //         border-bottom: 4em solid transparent;
+        //         border-left: 8em solid #00B39F;
+        //     } 
+        //     @media only screen and (min-width: 1000px) {
                 
-                .arrow-left:after {
+        //         .arrow-left:after {
                     
-                    border-right: 60em solid #00B39F;
-                }
+        //             border-right: 60em solid #00B39F;
+        //         }
     
-                .arrow-right {
-                    padding-top: 1.3em;
-                }
-            }
-            @media only screen and (max-width: 1000px) {
+        //         .arrow-right {
+        //             padding-top: 1.3em;
+        //         }
+        //     }
+        //     @media only screen and (max-width: 1000px) {
                 
-                .arrow-left:after {
+        //         .arrow-left:after {
                     
-                    border-right: 60em solid #00B39F;
-                }
+        //             border-right: 60em solid #00B39F;
+        //         }
     
-                .arrow-right {
-                    padding-top: 2.1em;   
-                }
-                .arrow-right:after {
-                    border-top: 1.4em solid transparent;
-                    border-bottom: 1.4em solid transparent;
-                    border-left: 5em solid #00B39F;
-                }
-            }
-            @media only screen and (max-width: 600px) {
+        //         .arrow-right {
+        //             padding-top: 2.1em;   
+        //         }
+        //         .arrow-right:after {
+        //             border-top: 1.4em solid transparent;
+        //             border-bottom: 1.4em solid transparent;
+        //             border-left: 5em solid #00B39F;
+        //         }
+        //     }
+        //     @media only screen and (max-width: 600px) {
                 
-                .arrow-left:after {
+        //         .arrow-left:after {
                     
-                    border-right: 60em solid #00B39F;
-                }
+        //             border-right: 60em solid #00B39F;
+        //         }
     
-                .arrow-right {
-                    padding-top: 2.6em;   
-                }
-                .arrow-right:after {
-                    border-top: 1.0em solid transparent;
-                    border-bottom: 1.0em solid transparent;
-                    border-left: 2.4em solid #00B39F;
-                }
-            }
-            @media only screen and (max-width: 400px) {
+        //         .arrow-right {
+        //             padding-top: 2.6em;   
+        //         }
+        //         .arrow-right:after {
+        //             border-top: 1.0em solid transparent;
+        //             border-bottom: 1.0em solid transparent;
+        //             border-left: 2.4em solid #00B39F;
+        //         }
+        //     }
+        //     @media only screen and (max-width: 400px) {
                 
-                .arrow-left:after {
+        //         .arrow-left:after {
                     
-                    border-right: 60em solid #00B39F;
-                }
+        //             border-right: 60em solid #00B39F;
+        //         }
     
-                .arrow-right {
-                    padding-top: 3.1em;   
-                }
-                .arrow-right:after {
-                    border-top: 0.4em solid transparent;
-                    border-bottom: 0.4em solid transparent;
-                    border-left: 1.4em solid #00B39F;
-                }
-            }
-        }
+        //         .arrow-right {
+        //             padding-top: 3.1em;   
+        //         }
+        //         .arrow-right:after {
+        //             border-top: 0.4em solid transparent;
+        //             border-bottom: 0.4em solid transparent;
+        //             border-left: 1.4em solid #00B39F;
+        //         }
+        //     }
+        // }
     }
-    #form{
+    .form{
         
         h3{
             font-weight: 700;
         }
-        #submit-btn{
+        .submit-btn{
             text-align: center;
             padding:  20px 0px 100px 0px;
          }
-        #text{
+        .text{
             color: black;
             display: flex; 
             padding: 30px 60px 20px 150px;
             p{
                 font-weight: 600;
             }
-            #right{
+            .right{
                 padding-left: 10px;
                 margin-left: auto;
             }
@@ -278,13 +278,13 @@ const DeployServiceMeshWrapper = styled.div`
         background: #4CAF50;
         cursor: pointer;
       }
-      #additional{
+      .additional{
           position: relative;
           .blur{
             filter: blur(4px);
           }
       }
-      #submit{
+      .submit{
           text-align: center;
           padding: 150px 0px 200px 0px;
           background-color: rgba(228, 231, 237, 0.8);
@@ -332,13 +332,13 @@ const DeployServiceMeshWrapper = styled.div`
             @media screen and (max-width: 750px) {
                 padding: 2rem;
             }
-            #cover{
+            .cover{
                 border: 2px solid white;
                 width: 240px;
                 padding: 10px;
                 text-align: center;
             }
-            h1, p, #learn{
+            h1, p, .learn{
                 color: white;
             }
         }

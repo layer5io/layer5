@@ -253,12 +253,12 @@ const ServiceMesh = () => {
 
   return (
     <DeployServiceMeshWrapper>
-      <div id="hero">
+      <div className="hero">
         <h1>"When should I deploy a service mesh?"</h1>
         <h3 className="sub-heading">the adopter's dilemma</h3>
       </div>
 
-      <div id="info">
+      <div className="info">
         <Container>
           <Row>
             <Col sm={12} md={6} lg={4}>
@@ -280,11 +280,11 @@ const ServiceMesh = () => {
         </Container>
       </div>
 
-      <div id="arrow">
+      <div className="arrow">
         <h2>How Strongly to Consider a Service Mesh</h2>
-        <div id="text">
-          <p id="left">Lightly</p>
-          <p id="right">Strongly</p>
+        <div className="text">
+          <p className="left">Lightly</p>
+          <p className="right">Strongly</p>
         </div>
         {/* <div id="arrow-box">
           <div className="arrow-left"></div>
@@ -293,7 +293,7 @@ const ServiceMesh = () => {
         <Progress done={average}/>
       </div>
 
-      <div id="info">
+      <div className="info">
         <Container>
           <Row>
             <Col sm={12} md={6} lg={4}>
@@ -315,11 +315,11 @@ const ServiceMesh = () => {
         </Container>
       </div>
 
-      <div id="form">
+      <div className="form">
         <Container>
-          <div id="text">
-            <p id="left">Lightly</p>
-            <p id="right">Strongly</p>
+          <div className="text">
+            <p className="left">Lightly</p>
+            <p className="right">Strongly</p>
           </div>
           <div>
             <div className="range-slider">
@@ -358,12 +358,12 @@ const ServiceMesh = () => {
       </div>
 
       <Container>
-        <div id="form">
-          <div id="additional">
+        <div className="form">
+          <div className="additional">
             {
               !flag
               &&
-              <div id="submit">
+              <div className="submit">
                 <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
                 <input type="text" className="email"  onChange={addData1}  placeholder="First Name"></input>
                 {/* <br/> */}
@@ -428,7 +428,7 @@ const ServiceMesh = () => {
                   </h5>
                 </div>
               </div>
-              <div id="submit-btn">
+              <div className="submit-btn">
                 {
                   !submitFlag
                     &&
@@ -447,12 +447,12 @@ const ServiceMesh = () => {
 
       <Row className="book_cover">
         <Col xs={12} sm={6} className="book_col text">
-          <p id="cover">Services-first Network</p>
+          <p className="cover">Services-first Network</p>
           <h1>What is A <br></br> Service Mesh?</h1>
           <p>
             Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
           </p>
-          <Button primary id="learn" type="button" title="Learn More" url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"/>
+          <Button primary className="learn" type="button" title="Learn More" url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"/>
         </Col>
         <Col xs={12} sm={6} className="book_col book_img">
           <Link to={"/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"} className="bookLink">
