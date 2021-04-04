@@ -41,6 +41,8 @@ const CopyCode = styled.button`
 
 const Code = ({ codeString, language }) => {
   const handleClick = () => {
+    var btn=document.getElementById("copy");
+    btn.innerText="Copied";
     copyToClipboard(codeString);
   };
   return (
@@ -58,7 +60,7 @@ const Code = ({ codeString, language }) => {
         getTokenProps,
       }) => (
         <Pre>
-          <CopyCode onClick={handleClick}>Copy</CopyCode>
+          <CopyCode onClick={handleClick} id="copy">Copy</CopyCode>
           <Pre className={className} style={style}>
                         
             {tokens.map((line, i) => (
