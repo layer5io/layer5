@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import bookCover from "../../assets/images/learn/book-cover.png";
 
 const DeployServiceMeshWrapper = styled.div`   
     html {
@@ -314,40 +313,54 @@ const DeployServiceMeshWrapper = styled.div`
               width: 60px;
           }
       }
-      
-      #bot{
+    
+    .book_cover{
         display: flex;
-          #green{
-              background: #00B39F;
-               !important; 
-              min-height: 400px;
-              #text{
-                  color: white;
-                  
-                  padding: 120px 70px 120px 150px;
-                  #cover{
-                      border: 2px solid white;
-                      width: 240px;
-                      padding: 10px;
-                      text-align: center;
-                  }
-                  h1{
-                      color: white;
-                  }
-                  #learn{
-                      color: white;
-                  }
-              }
-          }
-          #book{
-            background-image: url(${bookCover}); 
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-          }
-      }
-      .tooltip {
+        margin: auto;
+        background: #00B39F;
+        .book_col {
+            max-height: 40rem;
+        }
+        .text{
+            padding: 5rem 5rem 5rem 13rem;
+            @media screen and (max-width: 1200px) {
+                padding: 5rem 5rem 5rem 10rem;
+            }
+            @media screen and (max-width: 950px) {
+                padding: 5rem;
+            }
+            @media screen and (max-width: 750px) {
+                padding: 2rem;
+            }
+            #cover{
+                border: 2px solid white;
+                width: 240px;
+                padding: 10px;
+                text-align: center;
+            }
+            h1, p, #learn{
+                color: white;
+            }
+        }
+    }
+
+    .book_img {
+        text-align: center;
+        align-self: center;
+        .bookLink {
+            display: block;
+        }
+        img {
+            max-height: 38rem;
+            vertical-align: middle;
+            @media screen and (max-width: 576px) {
+                max-height: 28rem;
+                margin: 1rem auto;
+            }
+        }
+    }
+
+    .tooltip {
         position: relative;
         display: inline-block;
       }

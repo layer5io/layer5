@@ -10,6 +10,8 @@ import axios from "axios";
 import DeployServiceMeshWrapper from "./DeployServiceMesh.style";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
+import { Link } from "gatsby";
+import bookCover from "../../assets/images/learn/book-cover.png";
 
 const RangeSlider = memo(
   ({ classes, label, onChange, value, ...sliderProps }) => {
@@ -443,24 +445,21 @@ const ServiceMesh = () => {
         </div>
       </Container>
 
-      <div id="bot">
-        <Row>
-          <Col sm={12} md={6} lg={6} style={{paddingRight: "0px"}}>
-            <div id="green">
-              <div id="text">
-                <p id="cover">Services-first Network</p>
-                <h1>What is A <br></br> Service Mesh?</h1>
-                <p>
-                  Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
-                </p>
-                <Button primary id="learn" type="button" title="Learn More"/>
-              </div>  
-            </div>
-          </Col>
-          <Col sm={12} md={6} lg={6} id="book">
-          </Col>
-        </Row>
-      </div>
+      <Row className="book_cover">
+        <Col xs={12} sm={6} className="book_col text">
+          <p id="cover">Services-first Network</p>
+          <h1>What is A <br></br> Service Mesh?</h1>
+          <p>
+            Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology.
+          </p>
+          <Button primary id="learn" type="button" title="Learn More" url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"/>
+        </Col>
+        <Col xs={12} sm={6} className="book_col book_img">
+          <Link to={"/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"} className="bookLink">
+            <img src={bookCover} alt="Book Image" />
+          </Link>
+        </Col>
+      </Row>
     </DeployServiceMeshWrapper>
   );
 };
