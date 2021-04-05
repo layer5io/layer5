@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
-import { DarkModeToggler } from "react-darkmode-toggler";
-import { ThemeManagerContext } from "gatsby-styled-components-dark-mode";
 
 import { Container } from "../../../reusecore/Layout";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
 import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import ThemeSwitcher from "../../../components/ThemeSwitcher";
 
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
@@ -17,7 +16,6 @@ import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import NavigationWrap from "./navigation.style";
 
 const Navigation = () => {
-  const themeContext = useContext(ThemeManagerContext);
   let data = useStaticQuery(
     graphql`
             query {
@@ -219,10 +217,7 @@ const Navigation = () => {
               blogData={data}
             />
           </nav>
-          <DarkModeToggler
-            isDark={themeContext.themeSetting.toLocaleLowerCase()}
-            onClick={() => themeContext.toggleDark()}
-          />
+          <ThemeSwitcher />
         </div>
       </Container>
     </NavigationWrap>
