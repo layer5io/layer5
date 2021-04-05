@@ -56,6 +56,7 @@ const CopyCode = styled.button`
       background-color:#5e6a82;
       content:"Copy";
   }
+  
   &:active:before{
       display:block;
       background-color:#5e6a82;
