@@ -17,6 +17,7 @@ const ThemeSwitcher = () => {
       onChange={handleChange} 
       checked={themeContext.themeSetting.toLocaleLowerCase(), checked} 
       onColor="#00b39f"
+      height = {32}
       checkedIcon={<IoMdSunny style={{
         display: "flex",
         justifyContent: "center",
@@ -31,7 +32,7 @@ const ThemeSwitcher = () => {
         alignItems: "center",
         height: "100%",
         fontSize: 25,
-        paddingLeft: 5,
+        paddingRight: 5,
       }}/>}/>
   );
 };
