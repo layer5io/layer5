@@ -14,7 +14,7 @@ export const meet_links_data= [
     slack_channel: "#meshery-ci",
     slack_link: "https://layer5io.slack.com/archives/C010LFFGFFA",
     meeting_minutes: "https://bit.ly/2It7IA4",
-    meeting_link: "https://meet.layer5.io/community",
+    meeting_link: "https://meet.layer5.io/meshmap",
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
   },
   {
@@ -23,7 +23,7 @@ export const meet_links_data= [
     slack_channel: "#meshery",
     slack_link: "https://layer5io.slack.com/archives/CFGG6U10E",
     meeting_minutes: "https://bit.ly/2It7IA4",
-    meeting_link: "https://meet.layer5.io/community",
+    meeting_link: "https://meet.layer5.io/meshery",
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
   },
   {
@@ -41,7 +41,7 @@ export const meet_links_data= [
     slack_channel: "#newcomers",
     slack_link: "https://layer5io.slack.com/archives/C019426UBNY",
     meeting_minutes: "https://bit.ly/2It7IA4",
-    meeting_link: "https://meet.layer5.io/community",
+    meeting_link: "https://meet.layer5.io/newcomers",
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
   },
   {
@@ -58,8 +58,8 @@ export const meet_links_data= [
     meeting: "CNCF SMI Community Meeting",
     slack_channel: "#smi",
     slack_link: "https://layer5io.slack.com/archives/CDM0ACDM5",
-    meeting_minutes: "https://bit.ly/2It7IA4",
-    meeting_link: "https://meet.layer5.io/community",
+    meeting_minutes: "https://docs.google.com/document/d/1NTBaJf6LhUBlF8_lfvBBt_MbyPvT-6CZNg6Ckpm_yCo/edit",
+    meeting_link: "https://zoom.us/my/cncfsmiproject",
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
   },
   {
@@ -67,8 +67,8 @@ export const meet_links_data= [
     meeting: "CNCF SIG Network Meeting",
     slack_channel: "#sig-network",
     slack_link: "",
-    meeting_minutes: "https://bit.ly/2It7IA4",
-    meeting_link: "https://meet.layer5.io/community",
+    meeting_minutes: "https://docs.google.com/document/d/18hYemFKK_PC_KbT_TDBUgb0rknOuIhikkRxer4_bv4Q/edit#",
+    meeting_link: "https://zoom.us/my/cncfsignetwork",
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
   },
 ];

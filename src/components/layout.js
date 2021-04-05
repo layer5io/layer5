@@ -8,6 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 import FavIcon from "../assets/images/favicon.png";
 
@@ -16,7 +17,7 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <html lang="pt" />
-        <title>{"Layer5 - The Service Mesh Company"}</title>
+        <title>{"Layer5"}</title>
         <link rel="shortcut icon" type="image/x-icon" href={FavIcon} />
         <link
           href='https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap'
@@ -33,8 +34,9 @@ const Layout = ({ children }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
       </Helmet>
-      
-      {children}
+      <SimpleReactLightbox>
+        {children}
+      </SimpleReactLightbox>
     </>
   );
 };

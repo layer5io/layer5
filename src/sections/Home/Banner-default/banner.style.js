@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
-import imgHero from "../../../assets/images/app/hero/forklift.svg";
+import HeroCubes from "./assets/images/mesh_cubes.svg";
+import HeroCubesBlack from "./assets/images/mesh_cubes_black.svg";
 
 const BannerSectionWrapper = styled.section`
-    padding: 6rem 0;
-    background: url(${imgHero}) no-repeat;
-    background-size: 40%;
-    background-position: center right 35px;
+    padding: 7rem 0;
+
+    background: url(${HeroCubesBlack}) no-repeat;
+    background-size: 50%;
+    background-color: #F3FFFD;
+    background-position: bottom -85px right;
     p {
         font-size: 21px;
         font-weight: 300; 
@@ -15,18 +18,16 @@ const BannerSectionWrapper = styled.section`
         width: 70%;
     }
     h4 {
-        margin-bottom: 8px;
         color: ${props => props.theme.primaryLightColor};
         text-transform: uppercase;
-        font-weight: 600;
     }
     .section-title{
-        h1{
+        h1 {
             font-weight: 400;
             font-size: 60px;
-            line-height: 75px;
+            line-height: 4.3rem;
             margin: 0 0 38px 0; 
-            span{
+            span {
                 font-weight: 700;
                 color: ${props => props.theme.secondaryColor};
             }
@@ -34,69 +35,86 @@ const BannerSectionWrapper = styled.section`
     }
     .banner-btn {
         margin: 0rem .5rem 0 .5rem;
-
-
     }
     .banner-btn.one {
         margin: 0rem .5rem 0 .5rem;
-        // background: #EAD07D;
-        a{
-            color: black;
+        background: ${props => props.theme.highlightColor}; 
+
+        &:hover {
+             background: ${props => props.theme.highlightLightColor}; 
         }
-        &:hover{
-            // background: #EBC017; 
-        }
+        
     }
     .banner-btn.two{
         
         background: ${props => props.theme.secondaryColor};
         color: #fff;
         &:hover{
-            background: ${props => props.theme.secondaryLightColor};
+            background: ${props => props.theme.caribbeanGreenColor};
             //color: #326d62;
         }
     }
+    @media only screen and (max-width: 1200px) {
+        padding: 4rem 0;
+        .section-title { 
+            h1 {
+                font-size: 2.25rem;
+                line-height: 2.4rem;
+                margin: 0 0 1rem 0;
+            }
+        }
+        p {
+            width: 80%;
+        }
+    }
     @media only screen and (max-width: 912px) {
+        padding: 3rem 0;
+        background-size: 45%;
+
         p {
             width: 100%;
         }
-        margin: 50px 0 0 0;
-        background-size: 40%;
-        padding: 120px 0 60px 0;
-        .section-title{
-            h1{
-                font-size: 32px;
-                line-height: 42px;
-                margin: 0 0 25px 0;
+        
+        .section-title {
+            h1 {
+                font-size: 2.25rem;
+                line-height: 2.4rem;
+                margin: 0 0 1rem 0;
             }
-            h4{
-                font-size: 16px;
+            h4 {
+                font-size: 1rem;
             }
         }
         p { 
-            margin: 0 0 30px 0;
+            font-size: 1.25rem;
+            margin: 2rem 0rem;
+            padding-right: 4rem;
         }
         .banner-btn {
             min-width: 140px;
         }
         .banner-btn+.banner-btn{
             margin-left: 15px;
-        }
+        } 
      }
      @media only screen and (max-width: 760px) {
-        padding: 130px 0 60px 0;
-        background-size: 30%
-     }
-     @media only screen and (max-width: 568px) {
-        background: none;
-        .banner-btn{
-            min-width: 160px;
+        padding: 2rem 0;
+        background-size: 45%;
+ 
+        .section-title { 
+            h1 { margin: 0rem; }
         }
+        .vintage-box{
+             &:before{
+                 content: none;
+             }
+         }
      }
      @media only screen and (max-width: 480px) {
-        padding: 120px 0 100px 0;
+        padding: 2rem 0;
+        
         .section-title{
-            h1{
+            h1 {
                 font-size: 35px;
                 line-height: 50px;
             }
@@ -106,27 +124,33 @@ const BannerSectionWrapper = styled.section`
                  content: none;
              }
          }
-     }
+		 }
+		 @media screen and (max-width: 402px) {
+			.banner-btn.one, .banner-btn.two 
+			{
+				margin: 0 0.5rem 1rem;
+			}
+		 }
      @media only screen and (max-width: 380px) {
         .section-title{
-            h1{
+            h1 {
                 font-size: 30px;
                 line-height: 46px;
                 margin: 0 0 30px 0;
             }
-            h4{
+            h4 {
                 font-size: 15px;
             }
         }
-        .banner-btn{
+        /* .banner-btn{
             font-size: 14px;
             min-width: 127px;
             padding: 14px 12px; 
-        }
+        } */
      }
      @media only screen and (max-width: 330px) {
         .section-title{
-            h1{
+            h1 {
                 font-size: 23px;
                 line-height: 35px;
             }

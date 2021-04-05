@@ -23,9 +23,9 @@ const QuoteCard = ({name , position, quote}) => {
   return(
     <QuotesCardWrapper>
       <div className="content">
-        <h3>{name}</h3>
-        <h5>{position}</h5>
-        <p>{quote}</p>
+        <h3>{quote}</h3>
+        <h5>{name}</h5>
+        <p>{position}</p>
       </div>
     </QuotesCardWrapper>
   );

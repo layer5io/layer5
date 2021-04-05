@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 const CareersSectionWrapper = styled.div`
-    .careers-section-wrapper{
-        padding: 50px 0;
-    }
-
     h1{
         color: black;
     }
-
+    .page-header{
+        margin:4rem auto;
+    }
     .centerTexts{
-        margin-top: -2.5rem;
+        margin-top: -3rem;
+        text-align: center;
+    }
+    .center{
         text-align: center;
     }
 
@@ -21,6 +22,8 @@ const CareersSectionWrapper = styled.div`
     }
     .introText{
         width: 50%;
+        clear:both;
+        margin-top: 9rem;
     }
     .introText h1{
         margin-bottom: 1rem;
@@ -34,7 +37,7 @@ const CareersSectionWrapper = styled.div`
         text-align: center;
 
         iframe{
-            width: 25rem;
+            width: 26rem;
         }
     }
     @media only screen and (max-width:996px){
@@ -60,16 +63,16 @@ const CareersSectionWrapper = styled.div`
     }
 
     .opensource-section{
-        margin-top: 2rem;
+        margin-top: 6rem;
         text-align: center;
         background: #00B39F;
         color: white;
     }
     .opensource-section-text{
-        padding-top: 50px;
+        padding-top: 4rem;
     }
     .opensource-section-text > h1{
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
         color: white;
     }
     .opensource-section-text > p{
@@ -83,7 +86,6 @@ const CareersSectionWrapper = styled.div`
     }
     .opensource-section-img img{
         height: 30rem;
-        
         box-shadow: 0px 8px 20px -10px black;
     }
     @media only screen and (max-width:600px){
@@ -93,7 +95,7 @@ const CareersSectionWrapper = styled.div`
     }
 
     .opportunity-section {
-        margin-top: 13rem; 
+ 
     }
     
 `;

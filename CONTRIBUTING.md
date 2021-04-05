@@ -4,7 +4,7 @@ You want to contribute to Layer5's community and projects? Yay! We want you to! 
 ## Layer5 Site
 The Layer5 website is hosted in this repository and is built using Gatsbyjs. See the [design document](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) for more information and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. 
 
-When submitting a pull request a preview deployment will be built and made available to you on your PR. The latest preview build of this site is available at https://layer5ng.netlify.app
+When submitting a pull request a preview deployment will be built and made available to you on your PR.
 
 ### Common Types of Site Updates
 
@@ -14,22 +14,22 @@ Layer5 community members are an integral part of what makes Layer5 and it's proj
 
 #### <a name="updating-the-service-mesh-landscape">Updating the Service Mesh Landscape ([create new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D))
 
-The service mesh landscape is powered by Gatsbyjs. In order to add/update the landscape, fork this repository, clone it, create a branch and navigate to the **\_data/categories** folder. Edit these yaml files (if appropriate):
+The service mesh landscape is powered by Gatsbyjs. In order to add/update the landscape, fork this repository, clone it, create a branch and navigate to the **src/collections/landscape** folder. Edit these js files (if appropriate):
 
-- [non-functional.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/non-functional.js) - overview of various service meshes
-- [meshes.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-gridmeshes.js) - list of individual service mesh details
-- [proxies.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/proxies.js) - list of individual modern proxies
-- [gw.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/gw.js) - list of API gateways
-- [lb.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/Landscape-grid/lb.js) - list of load balancers
+- [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) - overview of various service meshes
+- [meshes.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/meshes.js) - list of individual service mesh details
+- [proxies.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/proxies.js) - list of individual modern proxies
+- [gateway.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/gateways.js) - list of API gateways
+- [load-balancer.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/load-balancer.js) - list of load balancers
 
 Entries should be listed in alphabetical order. Data provided to the `smi.js` is dynamic and based upon results from conformance tests run using Meshery.
 
-To update the Service Mesh Timeline, add the new service mesh in the [non-functional.js](https://github.com/layer5io/layer5/tree/layer5-ng/src/sections/non-functional.js) file. Add `announce-date` key for the service mesh then add a `timeline-order` key having value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
+To update the Service Mesh Timeline, add the new service mesh in the [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) file. Add `announce-date` key for the service mesh then add a `timeline-order` key having value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
 
 #### <a name="news">Adding News</a>
 
-1. In order to add/update news items, fork this repository, clone it, create a branch and navigate to the `collections/_news` directory.
-1. Create a copy of the [news template](https://github.com/layer5io/layer5/tree/layer5-ng/src/collections/news/0000-00-00-news-template).
+1. In order to add/update news items, fork this repository, clone it, create a branch and navigate to the `src/collections/news` directory.
+1. Create a copy of the [news template](https://github.com/layer5io/layer5/tree/master/src/collections/news/0000-00-00-news-template).
 1. Follow the instructions included in the news template and name the new file after the title of the news article.
 1. Entries will be listed in chronological order automatically.
 
@@ -50,24 +50,24 @@ Run the following:
 1. `make setup-libs`-To install the dependencies for the running the site.
 1. `make site`-To run the website locally.
 
-Please contribute! The Layer5-ng site uses Gatsby. The process of contributing to documentation follows this flow:
+Please contribute! The Layer5 site uses Gatsby. The process of contributing to documentation follows this flow:
 
 1. Fork a copy of this repo.
 1. Get a local clone of your fork of the site.
 `git clone https://github.com/layer5io/layer5`
-1. Switch to the `layer5-ng` branch.
-`git checkout upstream/layer5-ng`
+1. Switch to the `master` branch.
+`git checkout master`
 1. Create and checkout a new branch to make changes within
 `git checkout -b <my-username>/<my-changes>` 
 1. Edit site/add content.
 `vi <specific page>.md` # or use your favorite IDE
 1. Run site locally to preview changes.
 `make site` # this will run a local web server with "live reload" conveniently enabled.
-1. Commit and push changes to your remote branch.
+1. Commit your changes to your remote branch.
+`git commit --signoff -m"<commit subject>`
+1. Push your changes
 `git push origin <my-username>/<my-changes>`
-1. Open a [pull request](../../pulls) (in your web browser) against the `layer5-ng` branch on https://github.com/layer5io/layer5.
-
-Build and preview your changes by running `make site`. When submitting a pull request a preview deployment will be built and made available to you on your PR. The latest preview build of this site is available at https://layer5ng.netlify.app
+1. Open a [pull request](../../pulls) (in your web browser) against the `master` branch on https://github.com/layer5io/layer5.
 
 ### <a name="commit-signing">Signing-off on Commits (Developer Certificate of Origin)</a>
 
@@ -102,6 +102,5 @@ To ensure all your commits are signed, you may choose to add this alias to your 
 ```
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
-<a href="./assets/images/git-signoff-vscode.png" ><img src="./assets/images/git-signoff-vscode.png" width="50%"/><a>
+<a href="./.github/assets/images/git-signoff-vscode.png" ><img src="./.github/assets/images/git-signoff-vscode.png" width="50%"/><a>
 
-### <a name="flow">Contribution Flow</a>

@@ -69,6 +69,7 @@ public
 
 # Yarn
 yarn-error.log
+yarn.lock
 .pnp/
 .pnp.js
 # Yarn Integrity file
@@ -76,4 +77,5 @@ yarn-error.log
 
 #IDE Files
 .vscode
-.gitignore
+
+default.profraw

@@ -4,14 +4,32 @@ const PartnerWrapper = styled.section`
     position: relative;
     min-height: 100%;
     top: 0px;
+    .partnerHeader {
+        padding: 6rem 0;
+        background: ${props => props.theme.tertiaryColor};
+        text-align: center;
+        h1{
+            color: ${props => props.theme.white};
+        }
+        p{
+            margin: 1.5rem auto 4rem;
+            max-width: 60%;
+            text-align: center;
+            color: ${props => props.theme.white};
+        }
+    }
     .container {
         position: relative;
+        text-align: justify;
         margin: 0 auto;
+        margin-bottom: 40px;
         max-width: 1280px;
         z-index: 1;
         padding: 1em;
         h1 {
-            font-weight: 300;
+            font-weight: 5;
+            text-algin: left;
+            font-size: 35px;
         }
     }
     .card-content {
@@ -28,11 +46,14 @@ const PartnerWrapper = styled.section`
 
     .heading {
         text-align: center;
-        font-size: 35px;
         margin-bottom: 30px;
         margin-top: 30px;
+        font-weight: 500;
+        font-size: 2.75rem;
     }
-
+    h2 {
+        font-weight: 300;
+    }
     .img1 {
         max-height: 160px;
         max-width: 130px;
@@ -49,7 +70,6 @@ const PartnerWrapper = styled.section`
         float: left;
         width: 130px;
     }
-
     .img2 {
         width: auto;
         height: 100%;
@@ -97,16 +117,13 @@ const PartnerWrapper = styled.section`
         float: center;
     }
     .btn-section {
-        float: center;
-        display: inline-block;
-        clear: left;
+        
+        display: flex;
+        
         text-align: center;
-        position: relative;
+        margin: auto;
         vertical-align: middle;
-        margin: 20px auto;
-        min-width: 240px;
-        max-width: 300px;
-        width: 100%;
+
     }
     .partner-button-row {
         justify-content: center;
@@ -115,13 +132,9 @@ const PartnerWrapper = styled.section`
         text-align: center;
     }
 
-    @media only screen and (max-width: 420px) {
+    @media only screen and (max-width: 760px) {
         .img1 {
-            max-height: 160px;
-            max-width: 130px;
-            position: relative;
-            margin: auto;
-            text-align: center;
+            display:none;
         }
     }
 `;

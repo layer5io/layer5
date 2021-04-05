@@ -6,9 +6,9 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import Navigation from "../sections/Navigation";
-import BlogSingle from "../sections/Blog-single";
-import Footer from "../sections/Footer";
+import Navigation from "../sections/General/Navigation";
+import BlogSingle from "../sections/Blog/Blog-single";
+import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
@@ -46,7 +46,7 @@ const BlogSinglePage = ({data}) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
+        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL}/>
         <Navigation />
         <BlogSingle data={data}/>
         <Footer />

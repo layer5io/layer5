@@ -30,9 +30,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create client-side redirects (these only work in prod deployment)
   const { createRedirect } = actions;
-  createRedirect({ fromPath: "/books", toPath: "/learn/books", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/workshops", toPath: "/learn/workshops", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshery", toPath: "/projects/meshery", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/books", toPath: "/learn/service-mesh-books", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/workshops", toPath: "/learn/service-mesh-workshops", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/labs", toPath: "/learn/service-mesh-labs", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshery", toPath: "/service-mesh-management/meshery", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/landscape", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/events", toPath: "/community/events", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/programs", toPath: "/careers/programs", redirectInBrowser: true, isPermanent: true });
@@ -40,6 +41,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/brand", toPath: "/company/brand", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/contact", toPath: "/company/contact", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/news", toPath: "/company/news", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-meshes", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/calendar", toPath: "/community/calendar", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/smi", toPath: "/projects/service-mesh-interface-conformance", redirectInBrowser: true, isPermanent: true });
 
   // Create Pages
   const { createPage } = actions;
@@ -58,6 +62,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const EventsTemplate = path.resolve(
     "src/templates/events.js"
+  );
+
+  const EventTemplate = path.resolve(
+    "src/templates/event-single.js"
   );
 
   const NewsPostTemplate = path.resolve(
@@ -86,6 +94,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const WorkshopTemplate = path.resolve(
     "src/templates/workshop-single.js"
+  );
+
+  const LabTemplate = path.resolve(
+    "src/templates/lab-single.js"
   );
 
   const res = await graphql(`
@@ -131,7 +143,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
       singleWorkshop: allMdx(
-        filter: {fields: {collection: {eq: "workshops"}}}
+        filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+        }
+      }
+      labs: allMdx(
+        filter: {fields: {collection: {eq: "service-mesh-labs"}}}
       ){
         nodes{
           fields{
@@ -164,7 +186,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
 
   const books = allNodes.filter(
-    node => node.fields.collection === "books"
+    node => node.fields.collection === "service-mesh-books"
+  );
+
+  const events = allNodes.filter(
+    node => node.fields.collection === "events"
   );
 
   const programs = allNodes.filter(
@@ -180,7 +206,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
-  const events = res.data.allCollections.nodes;
+  const labs = res.data.labs.nodes;
+  // const events = res.data.allCollections.nodes;
 
   paginate({
     createPage,
@@ -265,6 +292,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  events.forEach(event => {
+    createPage({
+      path: event.fields.slug,
+      component: EventTemplate,
+      context: {
+        slug: event.fields.slug,
+      },
+    });
+  });
+
   programs.forEach(program => {
     createPage({
       path: program.fields.slug,
@@ -305,6 +342,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  labs.forEach(lab => {
+    createPage({
+      path: lab.fields.slug,
+      component: LabTemplate,
+      context: {
+        slug: lab.fields.slug,
+      },
+    });
+  });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -317,16 +363,28 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: collection
     });
     let slug = "";
-    if(node.frontmatter.permalink) {
+    if (node.frontmatter.permalink) {
       slug = `/${collection}/${node.frontmatter.permalink}`;
-    } else{
-      switch(collection){
+    } else {
+      switch (collection) {
         case "blog":
           slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
           break;
+        case "news":
+          slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "service-mesh-books":
+        case "service-mesh-workshops":
+        case "service-mesh-labs":
+          slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
+          break;
         case "members":
-          if(node.frontmatter.published)
+          if (node.frontmatter.published)
             slug = `/community/members/${slugify(node.frontmatter.name)}`;
+          break;
+        case "events":
+          if (node.frontmatter.title)
+            slug = `/community/events/${slugify(node.frontmatter.title)}`;
           break;
         default:
           slug = `/${collection}/${slugify(node.frontmatter.title)}`;

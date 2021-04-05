@@ -1,19 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import {Container} from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import Terminal from "../../../components/Terminal";
 import Features from "../../../components/Features-carousel";
 
 const MesheryFeaturesWrapper = styled.div`
-    margin: 6.25rem auto;
+    margin: auto;
+    margin-top: 4rem;
     @media (max-width: 32rem){
         margin-top: 10rem;
     }
+    .feature-expose {
+    img {
+      padding: 4rem;
+    }
+  }
+  .feature-expose-full {
+    img {
+      padding: 0rem;
+    }
+  }
 `;
 
 
-const MehseryFeatures = () => {
-  return(
+const MesheryFeatures = () => {
+  return (
     <MesheryFeaturesWrapper>
       <Container>
         <Features
@@ -21,8 +32,8 @@ const MehseryFeatures = () => {
             {
               title: "Operational Best Practices",
               description:
-                                "Benefit from the operational expertise of the world’s foremost service mesh operators.",
-              learnMoreLink: "/",
+                "Benefit from the operational expertise of the world’s foremost service mesh operator and the patterns they use.",
+              learnMoreLink: "/books/service-mesh-patterns",
               content: (
                 <img
                   src={require("./feature-images/meshery-configuration-management.png")}
@@ -31,229 +42,200 @@ const MehseryFeatures = () => {
               ),
             },
             {
-              title: "WebAssembly Filters for Envoy",
+              title: "Adaptive WebAssembly Filters for Envoy",
               description:
-                                "Execute a command in the context of a running application",
-              learnMoreLink: "/",
+                "Dynamically offload application infrastructure logic.",
+              learnMoreLink: "/projects/image-hub",
               content: (
                 <img
                   src={require("./feature-images/meshery-wasm.png")}
-                  alt="WebAssembly Filters for Envoy"
+                  alt="Adaptive WebAssembly Filters for Envoy"
                 />
               ),
             },
             {
-              title: "Integration with Grafana and Prometheus",
+              title: "Integration with ArgoCD",
               description:
-                                "Get publicly accessible preview URLs per-deployment",
+                "Canary new releases of your applicatioons intelligently. Leverage your existing ArgoCD workflows.",
               learnMoreLink: "/",
               content: (
                 <Terminal
                   lines={[
-                    { code: "$ meshery deploy" },
-                    { code: "" },
-                    { code: "» Deploying...", color: "white" },
+                    { code: "$ mesheryctl pattern apply -f canary-v3.yaml", color: "white" },
+                    { code: "» Deploying...", color: "navy" },
                     {
                       code: "✓ Deployment successfully rolled out!",
+                      color: "green",
+                    },
+                    { code: "\n" },
+                    { code: "» Traffic splitting...", color: "navy" },
+                    {
+                      code: "✓ 5% of user requests to v3.",
+                      color: "green",
+                    },
+                    {
+                      code: "✓ 30% of user requests to v3.",
+                      color: "green",
+                    },
+                    {
+                      code: "✓ 60% of user requests to v3.",
+                      color: "green",
+                    },
+                    {
+                      code: "✓ 90% of user requests to v3.",
+                      color: "green",
+                    },
+                    {
+                      code: "✓ 100% of user requests to v3.",
+                      color: "green",
+                    },
+                    { code: "\n" },
+                    {
+                      code: "Pattern successfully applied. Rollout of 'canary-v3' completed.",
                       color: "navy",
                     },
-                    { code: "\n" },
-                    { code: "» Releasing...", color: "white" },
                     {
-                      code: "✓ Service successfully configured!",
-                      color: "navy",
-                    },
-                    { code: "\n" },
-                    {
-                      code:
-                                                "The deploy was successful! A meshery URL is shown below.",
-                      color: "white",
-                    },
-                    { code: "\n" },
-                    {
-                      code:
-                                                "   Release URL: https://admittedly-poetic-joey.meshery.run",
-                      color: "white",
+                      code: "» Prerelease URL: https://payments-v3.meshery.run",
+                      color: "green",
                     },
                     {
-                      code:
-                                                "Deployment URL: https://admittedly-poetic-joey--v18.meshery.run",
-                      color: "white",
+                      code: "» Release URL: https://payments.meshery.run",
+                      color: "green",
                     },
                   ]}
                 />
               ),
             },
             {
-              title: "Kubernetes Operator",
+              title: "Meshery Operator",
               description:
-                                "View projects and applications being deployed by meshery in a web interface",
+                "",
               content: (
-                <img
-                  src={require("../../../assets/images/workshops/workshops.png")}
-                  alt="Web UI"
-                />
+                <div className="feature-expose">
+                  <img
+                    src={require("../../../assets/images/meshery-operator/meshery-operator-dark.svg")}
+                    alt="Kubernetes Operator for Meshery"
+                  />
+                  <p>Service meshes are dynamic. Changes to the service meshes and their workloads occur with great frequency. Meshery Operator helps Meshery stay in lockstep with these changes. Service mesh administrators might make updates to service mesh configuration directly with the service mesh. </p>
+                  <p>Meshery is continually cognizant of such changes. The Kubernetes operator for Meshery, supports discovery and eventing of greenfield and brownfield service mesh deployments.</p>
+
+                </div>
               ),
             },
             {
-              title: "CI/CD and Version Control Integration",
+              title: "Integration with Prometheus and Grafana",
               description:
-                                "Integrate with existing CI/CD providers and version control providers like GitHub, CircleCI, Jenksins, and more",
-              learnMoreLink: "/",
+                "",
               content: (
-                <Terminal
-                  title="config.yaml"
-                  lines={[
-                    {
-                      code: "env:",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code:
-                                                "SERVER_TOKEN: ${{ secrets.SERVER_TOKEN }}",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "SERVER_ADDR: meshery.example.com:9701",
-                      color: "white",
-                    },
-                    {
-                      code: "steps:",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "- uses: actions/checkout@v2",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "- uses: layer5/action-setup-layer5",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "with:",
-                      color: "white",
-                    },
-                    {
-                      indent: 2,
-                      code: "version: '0.1.0'",
-                      color: "white",
-                    },
-                    {
-                      code: "- run: meshery init",
-                      color: "white",
-                    },
-                    {
-                      code: "- run: meshery up",
-                      color: "white",
-                    },
-                  ]}
-                />
+                <div className="feature-expose">
+                  <img
+                    src={require("./feature-images/meshery-and-grafana.png")}
+                    alt="Prometheus and Grafana integration with Meshery"
+                  />
+                  <p>Key to the efficient operation of any service mesh is the measurement and management of it’s performance.</p>
+                  <p>Meshery provides performance test results alongside environment metrics, including service mesh control and data plane metrics as well as cluster node resource metrics, so that operators may easily understand the overhead of their service mesh’s control plane and data plane in context of the overhead incurred on nodes within the cluster.</p>
+
+                </div>
               ),
             },
+            // {
+            //   title: "CI/CD and Version Control Integration",
+            //   description:
+            //     "Integrate with existing CI/CD providers and version control providers like GitHub, CircleCI, Jenksins, and more",
+            //   //learnMoreLink: "/",
+            //   content: (
+            //     <Terminal
+            //       title="config.yaml"
+            //       lines={[
+            //         {
+            //           code: "env:",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 1,
+            //           code:
+            //             "SERVER_TOKEN: ${{ secrets.SERVER_TOKEN }}",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 1,
+            //           code: "SERVER_ADDR: meshery.example.com:9701",
+            //           color: "white",
+            //         },
+            //         {
+            //           code: "steps:",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 1,
+            //           code: "- uses: actions/checkout@v2",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 1,
+            //           code: "- uses: layer5/action-setup-layer5",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 1,
+            //           code: "with:",
+            //           color: "white",
+            //         },
+            //         {
+            //           indent: 2,
+            //           code: "version: '0.1.0'",
+            //           color: "white",
+            //         },
+            //         {
+            //           code: "- run: meshery init",
+            //           color: "white",
+            //         },
+            //         {
+            //           code: "- run: meshery up",
+            //           color: "white",
+            //         },
+            //       ]}
+            //     />
+            //   ),
+            // },
             {
               title: "MeshSync",
               description:
-                                "Easily extend Meshery with custom support for platforms, build processes, and release systems.",
-              learnMoreLink: "/",
+                "Strict control of service mesh behavior.",
+              //learnMoreLink: "/",
               content: (
-                <Terminal
-                  title="plugin.go"
-                  lines={[
-                    {
-                      code: "// Destroy deletes the Nomad job.",
-                    },
-                    {
-                      code: "func (p *Platform) Destroy(",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "ctx context.Context,",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "log hclog.Logger,",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "deployment *Deployment,",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "ui terminal.UI,",
-                      color: "white",
-                    },
-                    {
-                      code: ") error {",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "client, err := api.NewClient(api.DefaultConfig())",
-                      color: "white",
-                    },
-                    {
-                      indent: 1,
-                      code: "if err != nil {",
-                      color: "gray",
-                    },
-                    {
-                      indent: 2,
-                      code: "return err",
-                      color: "gray",
-                    },
-                    {
-                      indent: 1,
-                      code: "}",
-                      color: "gray",
-                    },
-                    {
-                      indent: 1,
-                      code: "",
-                      color: "gray",
-                    },
-                    {
-                      indent: 1,
-                      code: "st.Update(\"Deleting job...\")",
-                      color: "gray",
-                    },
-                    {
-                      indent: 1,
-                      code:
-                                                "_, _, err = client.Jobs().Deregister(deployment.Id, true, nil)",
-                      color: "navy",
-                    },
-                    {
-                      indent: 1,
-                      code: "return err",
-                      color: "gray",
-                    },
-                    {
-                      code: "}",
-                      color: "white",
-                    },
-                  ]}
-                />
+                <div className="feature-expose">
+                  <img
+                    src={require("./feature-images/meshsync.svg")}
+                    alt="Meshery, the extensible service mesh manager"
+                  />
+                  <p>
+                    With MeshSync was designed from the ground up to perform tiered discovery of your Kubernetes enviroment by incorporating tiered discovery and a unique method of fingerprinting each running mesh and workload.
+                  </p>
+                  <p>
+                    MeshSync's working snapshot of the state of each cluster and service mesh under management is stored in-memory and continuously refreshed.
+                  </p>
+                </div>
               ),
             },
             {
               title: "Extensible Management Plane",
               description:
-                                "View projects and applications being deployed by meshery in a web interface",
+                "Plug in different service meshes, load generators and providers.",
               content: (
-                <img
-                  src={require("../../../assets/images/workshops/workshops.png")}
-                  alt="Web UI"
-                />
+                <div className="feature-expose-full">
+                  <a href={require("./feature-images/meshery-extensibility.svg")}>
+                    <img
+                      src={require("./feature-images/meshery-extensibility.svg")}
+                      alt="Meshery, the extensible service mesh manager"
+                    /></a>
+                  <p>
+                    Meshery is not just an application. It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points.</p>
+                  <p>Extension points come in various forms and are available through Meshery’s architecture.
+                  </p>
+                </div>
               ),
+              learnMoreLink: "https://docs.meshery.io/extensibility",
             },
           ]}
         />
@@ -262,4 +244,4 @@ const MehseryFeatures = () => {
   );
 };
 
-export default MehseryFeatures;
+export default MesheryFeatures;

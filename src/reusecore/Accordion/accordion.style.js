@@ -41,6 +41,9 @@ export const AccordionTitleWrapper = styled(AccordionItemHeading)`
         opacity: 1;
       }
     }
+    &[aria-expanded='true'] {
+      background: ${props => props.theme.tertiaryColor};
+    }
   }
 
   &:focus {
@@ -50,7 +53,9 @@ export const AccordionTitleWrapper = styled(AccordionItemHeading)`
     flex-grow: 1;
   }
 `;
-export const AccordionItemButtonWrapper = styled(AccordionItemButton)``;
+export const AccordionItemButtonWrapper = styled(AccordionItemButton)`
+  padding: 0.625rem 1.5rem 0.625rem 1.5rem;
+  `;
 export const AccordionBodyWrapper = styled(AccordionItemPanel)`
   animation: 0.35s ${fadeIn} ease-in;
   &.accordion__body--hidden {

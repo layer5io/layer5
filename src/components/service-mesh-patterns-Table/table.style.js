@@ -2,14 +2,20 @@ import styled from "styled-components";
 import theme from "../../theme/app/themeStyles";
 
 export const TableWrapper = styled.div`
+
+    overflow: auto;
+
     table{
         border-collapse:collapse; 
         box-shadow:0px 2px 16px rgba(0,0,0,0.2);
+        width: 100%;
+        margin: auto;
 
         td{
             padding:0.5rem;
             border-collapse:collapse;
         }
+
 
         th{
             background:${theme["tertiaryColor"]};
@@ -32,6 +38,22 @@ export const TableWrapper = styled.div`
                     color:#ccc;
                 }
             }
+            span {
+                img{
+                    margin-left: 1rem;
+                    position: relative;
+                    top: 0.25rem;
+                }
+            }
+        }
+
+        .area-header{
+            border-radius: 0 !important;
+        }
+        
+        .table-header {
+            border-radius: 0 !important;
+            background-color: ${theme["primaryColor"]};
         }
 
         tbody{
@@ -40,7 +62,7 @@ export const TableWrapper = styled.div`
 
                 &:hover{
                     box-shadow: 0px 2px 15px -10px black;
-			        transform: translateY(0px);
+                    transform: translateY(0px);
                 }
             }
 

@@ -5,8 +5,7 @@ import Button from "../../../reusecore/Button";
 
 const JoinCommunityWrapper = styled.div`
     .join-community{
-        width: 50rem;
-        max-width: 100%;
+        max-width: 70rem;
         height: 25rem;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props => props.image});
         background-size: cover;
@@ -39,8 +38,8 @@ const JoinCommunity = (props) => {
         <div className="join-community_text-and_button">
           <h1>{props.header ? props.header : "Join the community!"}</h1>
           <p>{props.text ? props.text : "Checkout the Layer5 community by joining us on Slack"}</p>
-          {props.btn_primary ? <Button primary title="Join Our Talented Community" url="http://slack.layer5.io/"/>
-            : <Button secondary title="Join Our Talented Community" url="http://slack.layer5.io/"/>}
+          {props.btn_primary ? <Button primary title="Join Our Talented Community" url="http://slack.layer5.io/" external={true}/>
+            : <Button secondary title="Join Our Talented Community" url="http://slack.layer5.io/" external={true} />}
         </div>
       </div>
     </JoinCommunityWrapper>

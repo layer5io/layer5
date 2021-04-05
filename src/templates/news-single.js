@@ -6,9 +6,9 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-import Navigation from "../sections/Navigation";
+import Navigation from "../sections/General/Navigation";
 import NewsSingle from "../sections/Company/News-single";
-import Footer from "../sections/Footer";
+import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
@@ -41,7 +41,7 @@ const NewsSinglePage = ({data}) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
+        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL}/>
         <Navigation />
         <NewsSingle data={data}/>
         <Footer />

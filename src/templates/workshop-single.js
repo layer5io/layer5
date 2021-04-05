@@ -3,8 +3,8 @@ import { graphql } from "gatsby";
 import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Navigation from "../sections/Navigation";
-import Footer from "../sections/Footer";
+import Navigation from "../sections/General/Navigation";
+import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
@@ -44,7 +44,7 @@ const WorkshopSingle = ({ data }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={`${data.mdx.frontmatter.title}`} />
+        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL}/>
         <Navigation />
         <WorkshopSinglePage frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
         <Footer />

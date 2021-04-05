@@ -6,6 +6,7 @@ import { feedbackData } from "./feedbackData";
 import Slider from "react-slick";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import styled from "styled-components";
+import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
 
 export const WorkshopsListWrapper = styled.div`
 
@@ -22,16 +23,25 @@ export const WorkshopsListWrapper = styled.div`
 		background: rgba( 0, 179, 159, 0.1);
 	}
 	.workshop-thumbnails {
-		height: 13rem;
+		height: 14rem;
 
 		img {
-				height: 100%;
+			height: 100%;
 		}
+	}
+
+	.blockquoteImg {
+		position: absolute;
+		opacity: 0.04;
+		max-height: 11.5rem;
+		left: 0rem;
+		top: -0.75rem;
 	}
 
 	.feedback-section {
 		margin: 5rem auto;
-
+		position: relative;
+		
 		.slick-slider {
 			max-width: 1500px;
 			margin: auto;
@@ -69,13 +79,22 @@ export const WorkshopsListWrapper = styled.div`
 			}
 
 			.slick-dots li button:before {
-        font-size: 0.6rem;
-        color: ${props => props.theme.secondaryColor};
+				font-size: 0.6rem;
+				color: ${props => props.theme.secondaryColor};
 			}
 
 			.slick-dots li.slick-active button:before {
 				opacity: 1;
 				color: ${props => props.theme.secondaryColor};
+			}
+
+			.feedbackCol {
+				padding: 5rem 3.5rem;
+			}
+
+			p {
+				font-size: 1.85rem;
+				color: rgba(0,0,0,0.6)
 			}
 		}
 	}
@@ -99,6 +118,9 @@ export const WorkshopsListWrapper = styled.div`
 	@media screen and (max-width: 1400px) {
 		.workshop-section-wrapper {
 				padding: 6rem 3.5rem;
+		}
+		.workshop-thumbnails {
+			height: 13rem;
 		}
 	}
 	@media screen and (max-width: 1100px) {
@@ -139,6 +161,10 @@ export const WorkshopsListWrapper = styled.div`
 		.feedback-section {
 			.slick-slider {
 				max-width: 100%;
+
+				.feedbackCol {
+					padding: 4rem 2.5rem;
+				}
 			}
 		}
 	}
@@ -160,7 +186,7 @@ const WorkshopsSection = () => {
             query workshopsList {
                 allMdx(
                     sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "workshops" } } }
+                    filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
                 ) {
                     nodes {
                         frontmatter {
@@ -209,13 +235,13 @@ const WorkshopsSection = () => {
           <h1>Workshops</h1>
           <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
           <div className="see-more-button">
-            <Button primary title="Checkout all workshops" url="workshops"/>
+            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops"/>
           </div>
         </Col>
         <Col xs={12} md={9} className="workshops-col">
           <Row>
-            {data.allMdx.nodes.slice(0, 3).map(({id, frontmatter, fields}) => (
-              <Col xs={12} sm={6} xl={4} className="workshops-card" key={id}>
+            {data.allMdx.nodes.slice(0, 3).map(({frontmatter, fields}, index) => (
+              <Col xs={12} sm={6} xl={4} className="workshops-card" key={index}>
                 <Link to={fields.slug} >
                   <div className="workshop-thumbnails">
                     <img src={frontmatter.thumbnail.publicURL} alt={frontmatter.title} />
@@ -229,9 +255,10 @@ const WorkshopsSection = () => {
       <div className="feedback-section">
         <Slider {...settings}>
           {
-            feedbackData.map((data, indx) => {
+            feedbackData.map((data, index) => {
               return (
-                <Col key={indx}>
+                <Col key={index} className="feedbackCol">
+                  <img className="blockquoteImg" src={BlockQouteImage} alt="Quote-Image" />
                   <p>{data.feedback}</p>
                   <h3>{data.workshop}</h3>
                   <h5>{data.studnt_name}</h5>

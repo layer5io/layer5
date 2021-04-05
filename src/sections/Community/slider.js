@@ -1,35 +1,65 @@
 import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import CommunityImage1 from "./community1.png";
-import CommunityImage2 from "./community2.png";
-import CommunityImage3 from "./community-member.jpeg";
+
+import { useStaticQuery, graphql } from "gatsby";
 
 const PictureSliderWrapper = styled.div`
-      .slick-slider {
-        margin-top: 11.25rem;
-        margin-left: 3.125rem;
-        max-width: 25rem;
-        @media (max-width: 62rem) {
-           margin: 3.75rem auto;
-        }
-        @media (max-width: 36rem) {
-            margin: 15rem auto;
-            max-width: 18.75rem;
-        }
-      }
-      .slick-track {
-         display: flex;
-        .slick-slide {
-          display: flex;
-          height: auto;
-          align-items: center;
-          justify-content: center;
-        }
-      }
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  .slick-slider {
+    margin-top: 1rem;
+    height:100%;
+    width: 100%;
+
+    .slick-list{
+      width:100%;
+    }
+    @media (max-width: 36rem) {
+        margin: 5rem auto;
+        max-width: 18.75rem;
+    }
+  }
+
+  .slick-track {
+    display: flex;
+
+    .slick-slide {
+      display: flex;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 `;
 
 const PictureSlider = () => {
+
+  const data = useStaticQuery(
+    graphql`
+      query community {
+        allFile(
+          filter: {
+            extension: { regex: "/(jpg)|(jpeg)|(png)/" }
+            relativeDirectory: {eq: "Community-pictures"}
+            
+          }
+          sort: {fields: [base] }
+        ) {
+          edges {
+            node {
+              extension
+              publicURL
+            }
+          }
+        }
+      }
+    `
+  );
+
   const settings = {
     dots: false,
     infinite: true,
@@ -40,12 +70,12 @@ const PictureSlider = () => {
     autoplaySpeed: 2000
   };
 
-  return(
+  return (
     <PictureSliderWrapper>
       <Slider {...settings}>
-        <img src={CommunityImage1} alt="Community Member"/>
-        <img src={CommunityImage2} alt="Community Member"/>
-        <img src={CommunityImage3} alt="Community Member"/>
+        {data.allFile.edges.map((image, id) => (
+          <img key={id} src={image.node.publicURL} alt="community" />
+        ))}
       </Slider>
     </PictureSliderWrapper>
   );

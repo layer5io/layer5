@@ -48,4 +48,14 @@ export const HeroWrapper = styled.div`
       }
     }
   }
+  code {
+
+    background-color: #eee;
+    border-radius: 5px;
+    font-family: courier, monospace;
+    padding: 5px;
+    }
+    p.enddescr {
+      margin-top: 1rem;
+    }
 `;

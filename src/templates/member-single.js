@@ -5,9 +5,9 @@ import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Navigation from "../sections/Navigation";
+import Navigation from "../sections/General/Navigation";
 import MemberSingle from "../sections/Community/Member-single";
-import Footer from "../sections/Footer";
+import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
@@ -44,7 +44,7 @@ const MemberSinglePage = ({data}) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.name} />
+        <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL}/>
         <Navigation />
         <MemberSingle frontmatter={data.mdx.frontmatter}/>
         <Footer />

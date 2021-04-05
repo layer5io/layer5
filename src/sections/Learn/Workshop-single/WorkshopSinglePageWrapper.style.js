@@ -5,12 +5,10 @@ const WorkshopSinglePageWrapper = styled.div`
 	display: block;
 
 	.backBtn {
-	    z-index: 2;
-		display: flex;
-		justify-content: center;
-		position: absolute;
-		top: 7rem;
-		left: 3.75rem;
+		position: relative;
+		left: 0px;
+		margin-top: 3rem;
+		margin-left: 3rem;
 		font-weight: 600;
 		a{
 			display: flex;
@@ -31,11 +29,15 @@ const WorkshopSinglePageWrapper = styled.div`
 
 	@media screen and (max-width: 992px) {
 		.backBtn {
-			display: none;
+			margin-top: 2rem;
+			margin-left: 2rem;
 		}
 	}
 
 	.bottomBtn {
+		padding:4rem;
+		padding-top:5rem;
+		background-color: #FAFAFA;
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
@@ -48,7 +50,8 @@ const WorkshopSinglePageWrapper = styled.div`
 
 	@media only screen and (max-width: 25rem) {
 		.backBtn {
-			left: 0rem;
+			margin-top: 1rem;
+			margin-left: 1rem;
 		}
 	}
 

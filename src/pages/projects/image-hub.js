@@ -4,9 +4,9 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
-import Navigation from "../../sections/Navigation";
-import ImageHubPage from "../../sections/Image-Hub";
-import Footer from "../../sections/Footer";
+import Navigation from "../../sections/General/Navigation";
+import ImageHubPage from "../../sections/Projects/Image-Hub";
+import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
@@ -15,7 +15,9 @@ const ImageHub = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Image Hub" />
+      <SEO title="Image Hub"
+        description="Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters."
+        image="/images/layer5-image-hub.png" />
       <Navigation />
       <ImageHubPage />
       <Footer/>

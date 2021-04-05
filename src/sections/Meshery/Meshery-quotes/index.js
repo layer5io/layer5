@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
-import {Container} from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import QuoteCard from "../../../components/QuoteCard";
 
 const MesheryQuotesWrapper = styled.div`
@@ -16,36 +16,31 @@ const MesheryQuotesWrapper = styled.div`
 
 const quotes_data = [
   {
-    name: "USER1",
-    position: "POSITION",
-    quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    name: "Yogi Porla",
+    position: "Principal Engineer, HPE",
+    quote: "Meshery helps us curate Service Mesh for tailored need by helping us running simulations and identifying the right fit Service Mesh that works efficiently across diverse ecosystem of tools."
   },
   {
-    name: "USER2",
-    position: "POSITION",
-    quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    name: "Jason S.",
+    position: "Site Reliability Engineer",
+    quote: "Huge fan of MeshMap. It doesn't get any more intuitive than this."
   },
   {
-    name: "USER3",
-    position: "POSITION",
-    quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-  },
-  {
-    name: "USER4",
-    position: "POSITION",
-    quote: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    name: "Shane W.",
+    position: "DevOps Architect",
+    quote: "...the ability to benchmark Istio in MY cluster with MY workloads is just what I was looking for. I threw out my test scripts."
   },
 ];
 
 
 const MesheryQuotes = () => {
   const settings = {
-    dots: false ,
+    dots: false,
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 8000,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     cssEase: "linear",
@@ -59,11 +54,13 @@ const MesheryQuotes = () => {
       },
     ]
   };
-
-  return(
+  return (
     <MesheryQuotesWrapper>
       <Container>
-        <h2>Hear what Mehsery users (and lovers) have to say</h2>
+        {/* 
+         Enable after go-live  
+         */}
+        {/* <h2>Meshery Users Get Mushy</h2>
         <Slider {...settings}>
           {quotes_data.map((data,index) => (
             <QuoteCard
@@ -73,7 +70,7 @@ const MesheryQuotes = () => {
               quote={data.quote}
             />
           ))}
-        </Slider>
+        </Slider> */}
       </Container>
     </MesheryQuotesWrapper>
   );

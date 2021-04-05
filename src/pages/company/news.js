@@ -5,9 +5,9 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 import { graphql } from "gatsby";
 
-import Navigation from "../../sections/Navigation";
+import Navigation from "../../sections/General/Navigation";
 import NewsPage from "../../sections/Company/News-grid";
-import Footer from "../../sections/Footer";
+import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
@@ -47,7 +47,8 @@ const NewsGridPage = ({data}) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="News" />
+      <SEO title="News" description="News and Press about Layer5, the service mesh company. 
+    Layer5 the company behind the world's largest service mesh community." />
       <Navigation />
       <NewsPage data={data}/>
       <Footer/>

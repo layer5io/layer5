@@ -19,7 +19,7 @@ const authorField = (author, isSlugAvailable) => {
   );
 };
 
-const PageHeader = ({ category, title, subtitle,  author, thumbnail, path }) => {
+const PageHeader = ({ category, title, subtitle,  author, thumbnail }) => {
   let isSlugAvailable = false;
   if(author){
     const validMembers = useStaticQuery(
@@ -53,7 +53,11 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail, path }) => 
           <div className="breadcrumbs">
             <span>
               <h5>Category:</h5>
-              <p key={category}>{category}</p>
+              <p key={category}>
+                <Link to={`/blog/category/${slugify(category)}`}>
+                  <span>{category}</span>
+                </Link>
+              </p>
             </span>
             {author && (
               <>

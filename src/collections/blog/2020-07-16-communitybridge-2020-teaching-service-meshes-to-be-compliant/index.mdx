@@ -13,6 +13,7 @@ tags:
 published: true
 redirect_from:
  - /blog/community/communitybridge-2020-teaching-service-meshes-to-be-compliant/
+ - /blog/community-bridge-with-layer5/
 ---
 
 import { BlogWrapper } from '../Blog.style.js';
@@ -52,7 +53,7 @@ We are now enhancing Meshery to automate the process of verifying conformance ag
 
 The goals accomplished in my tenure at Layer5 are summarized as follows:
 
-1. **[Meshery Providers](https://meshery.layer5.io/docs/extensibility)** - Ported Meshery and its remote provider from using session based authentication to JWT based auth. This opened doors to:
+1. **[Meshery Providers](https://docs.meshery.io/extensibility)** - Ported Meshery and its remote provider from using session based authentication to JWT based auth. This opened doors to:
     - Usage of refresh tokens for longevity of sessions instead of asking user to re-login frequently.
     - CLI based authentication (not done yet, but is on the roadmap)
 2. **[Image Hub](https://github.com/layer5io/image-hub)** - WASM based envoy network packet filters in Rust-lang. Built a demo app demonstrating its potentials; we also built a  WASM filter which performs custom user specific rate limiting. This app was demo’ed in Dockercon 2020 under the header “Service Meshing with Docker Desktop and WebAssembly”.

@@ -11,6 +11,7 @@ export const BooksPageWrapper = styled.div`
     }
     h2.sub-heading {
         font-weight: 400;
+        margin: -1.25rem auto 2rem;
     }
     .slick-slide{
         filter: drop-shadow(0px 0px 8px gray) brightness(0.75);
@@ -80,7 +81,7 @@ export const BooksPageWrapper = styled.div`
 
     @media screen and (max-width: 1050px){
         .books_caraousel{
-            margin-bottom: 6rem;
+            margin-bottom: 4rem;
         }
 
         .book_image{
@@ -97,7 +98,7 @@ export const BooksPageWrapper = styled.div`
 
     @media screen and (max-width: 700px){
         .books_caraousel{
-            margin-bottom: 6rem;
+            margin-bottom: 4rem;
         }
 
         .book_image{

@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import BookmarkImage from "./bookmark.png";
+import BookmarkImage from "./bookmarks.jpg";
 
 const CommunitySectionWrapper = styled.div`
-    
+    margin-bottom: 3.25rem;
     .community-header{
         color: white;
-        height: 25rem;
+        height: 35rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -22,7 +22,7 @@ const CommunitySectionWrapper = styled.div`
     .community-section-wrapper{
         margin-bottom: 3.125rem;
     }
-    
+
     .service-mesh-projects{
         margin-top: 2rem;
         h2{
@@ -32,22 +32,22 @@ const CommunitySectionWrapper = styled.div`
                 line-height: 2.5rem;
             }
         }
-        
+
         img{
             display:block;
             margin:auto;
-            max-height: 18.75rem;
         }
         @media (max-width: 62rem) {
              text-align:center;
         }
     }
-    
+
     .open-source-projects{
-        margin-top: 3rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
         text-align: center;
-        
-        h1{
+
+        h2{
             margin:auto;
             margin-bottom: 1rem;
         }
@@ -56,44 +56,64 @@ const CommunitySectionWrapper = styled.div`
             margin: auto;
         }
     }
-    
+
     .our-community-members{
         margin-top: 2rem;
         color: white;
         background: linear-gradient(to right, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
-        @media (max-width: 62rem) {
-            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
+        @media (max-width: 991px) {
+            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 42rem, ${props => props.theme.black} 42rem);
         }
-        
+        @media (max-width: 550px) {
+            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 48rem, ${props => props.theme.black} 42rem);
+        }
+        @media (max-width: 440px) {
+            background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 55rem, ${props => props.theme.black} 42rem);
+        }
+
+        .our-community-members_row {
+            margin: auto 3rem;
+            align-items: center;
+
+            @media (max-width: 650px) {
+                margin: auto 1.25rem;
+            }
+        }
+
         .community{
-            margin: 11.25rem auto 14rem auto;
+            margin: 5rem auto;
             @media (max-width: 62rem) {
-                margin-bottom: 12.5rem;
-                 text-align:center;
+                margin: 5rem auto 8rem;
+                text-align:center;
             }
-            @media (max-width: 36rem) {
-                margin-top: 5rem;
-                margin-bottom: auto;
+            @media (max-width: 600px) {
+                margin: 2.5rem auto;
             }
-            h5{
-                margin: 1.5rem auto 2.5rem auto;
+            h3{
+                margin: 0.5rem auto 0.5rem auto;
                 color: white;
-                font-weight: 600;
             }
             h1{
                 color: white;
+                margin: 1rem auto 1rem auto;
             }
             button{
                 margin-top: 2.5rem;
-            }       
-        }        
+            }
+        }
+
+        .slider {
+            padding: 0 3rem;
+        }
     }
     .meshmate{
         margin-top: 5rem;
         .content{
-            h5{
-                margin: 1.5rem auto 2.5rem auto;
-                font-weight: 600;
+            h3{
+                margin: 0.5rem auto 0.5rem auto;
+            }
+            h1{
+                margin: 1rem auto 1rem auto;
             }
             @media (max-width: 62rem) {
               text-align:center;
@@ -103,8 +123,11 @@ const CommunitySectionWrapper = styled.div`
             max-height: 25rem;
             display:block;
             margin: auto;
+            background-color: ${props => props.theme.secondaryLightColorTwo};
         }
         .meshmate-link{
+            background-color: ${props => props.theme.secondaryLightColorTwo};
+            padding-bottom: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -118,18 +141,23 @@ const CommunitySectionWrapper = styled.div`
                 padding: 0;
                 font-size: 1.25rem;
                 border: 0px;
-                border-radius: 1rem;        
+                border-radius: 1rem;
                 left: 0;
                 background: ${props => props.theme.secondaryColor};
                 border-color: ${props => props.theme.secondaryColor};
                 color: white;
             }
+            .icon svg {
+              display: flex;
+              margin: auto;
+            }
+
             @media (max-width: 36rem) {
                h3{
                   font-size: 18px;
                }
             }
-            
+
             &:hover{
                 h3{
                     color: ${props => props.theme.primaryLightColorTwo};
@@ -142,15 +170,43 @@ const CommunitySectionWrapper = styled.div`
             }
         }
     }
-    
-    .newcomers-section{
-        h4{
-            margin: 1rem auto;
+
+    .newcomers-section {
+        background: ${props => props.theme.secondaryLightColor};
+        width:100%;
+        margin: 5rem 0;
+        padding: 2rem 0;
+        .text{
+            text-align: center;
         }
-        text-align:center;
-        margin: 5rem auto;
+        h4{
+            padding: 1rem auto;
+        }
+
+        .newcomers-arrow {
+            align-items: center;
+                min-width: auto;
+                vertical-align:middle;
+                align-self: center;
+                font-size: 1.25rem;
+                color: ${props => props.theme.secondaryColor};
+        }
+        h3 {
+            margin: 1.5rem auto 1.5rem auto;
+        }
+        .invitation {
+            margin: 2rem 0rem 2rem 0rem;
+        }
     }
-   
+
+    @media screen and (max-width: 992px) {
+        .newcomers-section {
+            .text {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+
 `;
 
 export default CommunitySectionWrapper;

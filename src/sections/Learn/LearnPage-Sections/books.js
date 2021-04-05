@@ -15,8 +15,8 @@ const BooksListWrapper = styled.div`
     .books-card {
         display: flex;
         margin: 1rem auto;
-        min-height: 14rem;
-        max-width: 48rem;
+        min-height: 15.5rem;
+        max-width: 50.5rem;
         transition: all 0.2s;
         transition-timing-function: ease-in-out;
 
@@ -92,7 +92,7 @@ const BooksSection = () => {
     graphql`
             query booksList {
                 allMdx(
-                    filter: { fields: { collection: { eq: "books" } }, frontmatter: { published: { eq: true } } }
+                    filter: { fields: { collection: { eq: "service-mesh-books" } }, frontmatter: { published: { eq: true } } }
                     sort: { fields: [frontmatter___date], order: ASC }
                 ) 
                 {
@@ -133,7 +133,7 @@ const BooksSection = () => {
                 </div>
                 <Button secondary title={<FaArrowRight />} className="arrow_icon" />
               </Link>
-                            
+
             </div>
           ))}
         </div>

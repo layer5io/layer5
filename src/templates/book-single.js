@@ -4,14 +4,15 @@ import { graphql } from "gatsby";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 
-import Navigation from "../sections/Navigation";
+import Navigation from "../sections/General/Navigation";
 import BookSingle from "../sections/Learn/Book-single";
-import Footer from "../sections/Footer";
+import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
+import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
+import SEO from "../components/seo";
 
 export const query = graphql`
     query BookBySlug($slug: String!) {
@@ -19,7 +20,16 @@ export const query = graphql`
             body
             frontmatter {
                 title
-                author
+                abstract
+                thumbnail{
+                    childImageSharp{
+                        fluid(maxWidth: 500){
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                    extension
+                    publicURL
+                }
             }
         }
     }
@@ -30,9 +40,10 @@ const BookSinglePage = ({data}) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
+        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL}/>
         <Navigation />
         <BookSingle data={data}/>
+        <LearnServiceMeshCTA />
         <Footer />
       </Layout>
     </ThemeProvider>

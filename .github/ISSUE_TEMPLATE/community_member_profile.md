@@ -6,12 +6,12 @@ labels: 'area/community'
 assignees: ''
 ---
 
-**Current Behaviour**
+**Current Behavior**
 
 <@github-username> has been a consistent contributor and community member.
 
 **Desired Situation**
-Let's recognizing <@github-username> as a contributor and community member by creating a profile on https://layer5.io/community/members.
+Let's recognize <@github-username> as a contributor and community member by creating a profile on https://layer5.io/community/members.
 
 - GitHub: <!-- username only -->
 - Twitter: <!-- handle only -->
@@ -22,4 +22,6 @@ Let's recognizing <@github-username> as a contributor and community member by cr
 
 **Contributor Resources**
 
-The layer5.io website, which uses GatsbyJS and GitHub Pages. Site content is found under the <a href="https://github.com/layer5io/layer5/tree/master">`master` branch</a>. See <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">`layer5` contributing instructions</a>.
+The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).
+- See [contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
+- See Layer5 site designs in this [Figma project](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs). Join the [Layer5 Community](http://slack.layer5.io) for access.

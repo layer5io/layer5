@@ -7,7 +7,7 @@ import { NewsPageWrapper } from "./NewsGrid.style";
 const NewsGrid = ({data}) => {
   return (
     <NewsPageWrapper>
-      <PageHeader title="News" path="News"/>
+      <PageHeader title="Layer5 in the News" path="News"/>
       <div>
         <Container>
           <div className="news-grid-wrapper">

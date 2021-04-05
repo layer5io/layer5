@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import {SRLWrapper} from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "react-icons/fi";
-import SmpDark from "../../../../assets/images/smp/icon/smp-dark.png";
-import SmpLight from "../../../../assets/images/smp/icon/smp-light.png";
-import SmpWhite from "../../../../assets/images/smp/icon/smp-white.png";
-import SmPLightTextSide from "../../../../assets/images/smp/horizontal/smp-light-text-side.png";
-import SmPDarkTextSide from "../../../../assets/images/smp/horizontal/smp-dark-text-side.png";
-import SmPWhiteTextSide from "../../../../assets/images/smp/horizontal/smp-white-text-side.png";
+import SmpDark from "../../../../assets/images/service-mesh-performance/icon/smp-dark.png";
+import SmpLight from "../../../../assets/images/service-mesh-performance/icon/smp-light.png";
+import SmpWhite from "../../../../assets/images/service-mesh-performance/icon/smp-white.png";
+import SmPLightTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-light-text-side.png";
+import SmPDarkTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.png";
+import SmPWhiteTextSide from "../../../../assets/images/service-mesh-performance/horizontal/smp-white-text-side.png";
 
 const SMPWrap = styled.section`
     .smp-logo {
@@ -28,57 +29,61 @@ const SMPBrand = () => {
             </h1>
           </Col>
           <Col xs={12} sm={6} className="download-button">
-            <Button primary title="Download Logo Assets" url="../../../../assets/brand/smp-brand-kit.zip" external={true}>
-              <FiDownloadCloud size={21} className="icon-left" />
-            </Button>
+            <a href="/brand/smp-brand-kit.zip">
+              <Button primary title="Download Logo Assets" external={true}>
+                <FiDownloadCloud size={21} className="icon-left" />
+              </Button>
+            </a>
           </Col>
           <Col>
             <p>
-                            The Service Mesh Performance mark includes SMP name & logo and any
-                            word, phrase, image, or other designation that identifies the
-                            source or origin of any Layer5 projects. PLease don't modify the
-                            marks or use them in a confusing way, including suggesting
-                            sponsorship or endorsement by Layer5 with another brand(including
-                            your own)
+              The Service Mesh Performance mark includes SMP name & logo and any
+              word, phrase, image, or other designation that identifies the
+              source or origin of any Layer5 projects. PLease don't modify the
+              marks or use them in a confusing way, including suggesting
+              sponsorship or endorsement by Layer5 with another brand(including
+              your own)
             </p>
           </Col>
         </Row>
         <Row>
           <Col>
             <h2 className="layerH3 in">
-                            Logos
+              Logos
             </h2>
           </Col>
-          <Row className="ImgDiv smp-logo">
-            <Col xs={12} sm={4}>
-              <img src={SmpDark} alt="SmpDark Logo"/>
-            </Col>
-            <Col xs={12} sm={4}>
-              <div className="logo">
-                <img src={SmpWhite} alt="SmpWhite Logo"/>
-              </div>
-            </Col>
-            <Col xs={12} sm={4}>
-              <div className="logo">
-                <img src={SmpLight} alt="SmpLight Logo"/>
-              </div>
-            </Col>
-          </Row>
-          <Row className="ImgDiv smp-logo">
-            <Col xs={12} sm={4}>
-              <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo"/>
-            </Col>
-            <Col xs={12} sm={4}>
-              <div className="logo">
-                <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo"/>
-              </div>
-            </Col>
-            <Col xs={12} sm={4}>
-              <div className="logo">
-                <img src={SmPLightTextSide} alt="SmPLightTextSide Logo"/>
-              </div>
-            </Col>
-          </Row>
+          <SRLWrapper>
+            <Row Vcenter className="ImgDiv smp-logo">
+              <Col xs={12} sm={4}>
+                <img src={SmpDark} alt="SmpDark Logo"/>
+              </Col>
+              <Col xs={12} sm={4}>
+                <div className="logo">
+                  <img src={SmpWhite} alt="SmpWhite Logo"/>
+                </div>
+              </Col>
+              <Col xs={12} sm={4}>
+                <div className="logo">
+                  <img src={SmpLight} alt="SmpLight Logo"/>
+                </div>
+              </Col>
+            </Row>
+            <Row Vcenter className="ImgDiv smp-logo">
+              <Col xs={12} sm={4}>
+                <img src={SmPDarkTextSide} alt="SmpDarkTextSide Logo"/>
+              </Col>
+              <Col xs={12} sm={4}>
+                <div className="logo">
+                  <img src={SmPWhiteTextSide} alt="SmPWhiteTextSide Logo"/>
+                </div>
+              </Col>
+              <Col xs={12} sm={4}>
+                <div className="logo">
+                  <img src={SmPLightTextSide} alt="SmPLightTextSide Logo"/>
+                </div>
+              </Col>
+            </Row>
+          </SRLWrapper>
         </Row>
         <Row>
           <Col>

@@ -32,11 +32,43 @@ const getDimensions = ele => {
   };
 };
 
-const scrollTo = ele => {
-  ele.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+// Functions to make scroll with speed control
+// Element to move, element or px from, element or px to, time in ms to animate
+const scrollTo = (element,duration=2000) => {
+  let e = document.documentElement;
+  if(e.scrollTop === 0){
+    let t = e.scrollTop;
+    ++e.scrollTop;
+    e = t+1 === e.scrollTop-- ? e : document.body;
+  }
+  scrollToC(e, e.scrollTop, element, duration);
+};
+// Element to move, element or px from, element or px to, time in ms to animate
+const scrollToC = (element, from, to, duration) => {
+  if (duration <= 0) return;
+  if(typeof from === "object")
+    from=from.offsetTop;
+  if(typeof to === "object")
+    to=to.offsetTop+580;
+  scrollToX(element, from, to, 0, 1/duration, 20, easeOutCuaic);
+};
+
+const scrollToX = (element, xFrom, xTo, t01, speed, step, motion) => {
+  if (t01 < 0 || t01 > 1 || speed <= 0) {
+    element.scrollTop = xTo;
+    return;
+  }
+  element.scrollTop = xFrom - (xFrom - xTo) * motion(t01);
+  t01 += speed * step;
+  
+  setTimeout(function() {
+    scrollToX(element, xFrom, xTo, t01, speed, step, motion);
+  }, step);
+};
+
+const easeOutCuaic = (t) => {
+  t--;
+  return t*t*t+1;
 };
 
 const Brand = () => {
@@ -101,15 +133,17 @@ const Brand = () => {
       <div className="brandHeader" ref={headerRef}>
         <h1>Layer5 Brand Kits</h1>
         <p>
-                    We’ve created some guidelines to help you use our brand and
-                    assets, including our logo, content and trademarks, without having
-                    to negotiate legal agreements for each use. To make any use of our
-                    marks in a way not covered by these guidelines, please contact us
-                    and include a visual mockup of intended use.
+          We’ve created some guidelines to help you use our brand and
+          assets, including our logo, content and trademarks, without having
+          to negotiate legal agreements for each use. To make any use of our
+          marks in a way not covered by these guidelines, please contact us
+          and include a visual mockup of intended use.
         </p>
-        <Button primary title="Download Brand Kit" url="../../../assets/brand/brand-kit.zip">
-          <FiDownloadCloud size={21} className="icon-left" />
-        </Button>
+        <a href="/brand/brand-kit.zip">
+          <Button primary title="Download Brand Kit">
+            <FiDownloadCloud size={21} className="icon-left" />
+          </Button>
+        </a>
       </div>
       <Row className="brand-row">
         <Col xs={12} md={9} className="brand-col">

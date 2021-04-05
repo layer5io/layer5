@@ -12,7 +12,6 @@ const BookSingle = ({data}) => {
     <BookSinglePageWrapper>
       <PageHeader
         title={frontmatter.title}
-        author={{ name: frontmatter.author }}
       />
       <div className="single-post-wrapper">
         <Container>
