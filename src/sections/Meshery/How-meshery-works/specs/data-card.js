@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import LifeCycleIcon from "../images/lifecycle-icon.svg";
 import PerformanceIcon from "../images/performance-icon.svg";
 import ConfigurationIcon from "../images/configuration-icon.svg";
 import { Col, Row } from "../../../../reusecore/Layout";
 import Counter from "../../../../reusecore/Counter";
+import { URL } from "../../../Counters/index";
 
 const DataCardWrapper = styled.div`
   background: ${props => props.theme.white};
@@ -43,6 +44,14 @@ const DataCardWrapper = styled.div`
 `;
 
 const DataCard = () => {
+  const [performanceCount, setPerformanceCount] = useState(0);
+
+  useEffect(() => {
+    fetch(URL)
+      .then((response) => response.json())
+      .then((result) => setPerformanceCount(result.total_runs));
+  }, []);
+
   return (
     <DataCardWrapper>
       <Row Vcenter>
@@ -79,8 +88,7 @@ const DataCard = () => {
                 <Counter
                   duration={3}
                   separator=","
-                  end={2000}
-                  suffix="+" />
+                  end={performanceCount} />
               </h3>
               <p>Performance Tests run</p>
             </li>
