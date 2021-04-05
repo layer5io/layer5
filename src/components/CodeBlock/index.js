@@ -28,21 +28,44 @@ export const LineNo = styled.span`
 const CopyCode = styled.button`
   position: absolute;
   right: 0;
-  z-index: 1;
+  z-index: 3;
   border: 0;
   border-radius: 3px;
   margin: 2em;
   opacity: 0.3;
+  overflow:none;
   &:hover {
     opacity: 1;
     cursor: pointer;
   }
+  &:before{
+    top:2.5rem;
+    background-color:#5e6a82;
+    border-radius:3px;
+    left:-.5rem;
+    width:4rem !important;
+    /* height:3rem !important; */
+    content:"Copied!";
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+  }
+  &:hover:before{
+      display:block;
+      background-color:#5e6a82;
+      content:"Copy";
+  }
+  &:active:before{
+      display:block;
+      background-color:#5e6a82;
+      content:"Copied";
+      
+  }
 `;
 
 const Code = ({ codeString, language }) => {
-  const handleClick = () => {
-    var btn=document.getElementById("copy");
-    btn.innerText="Copied";
+  const handleClick = (e) => {
     copyToClipboard(codeString);
   };
   return (
@@ -61,7 +84,7 @@ const Code = ({ codeString, language }) => {
         getTokenProps,
       }) => (
         <Pre>
-          <CopyCode onClick={handleClick} id="copy">Copy</CopyCode>
+          <CopyCode onClick={(e) => handleClick} id="copy">Copy</CopyCode>
           <Pre className={className} style={style}>
                         
             {tokens.map((line, i) => (
