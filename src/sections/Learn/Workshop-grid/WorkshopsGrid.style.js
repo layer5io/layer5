@@ -158,6 +158,10 @@ export const WorkshopPageWrapper = styled.div`
 		padding-bottom: 3.75rem;
 	}
 
+	.workshop-grid-col{
+		transition: all 0.25s ease-in;
+	}
+
 	.workshop-grid-card {
 		width: 100%;
 		display: block;
