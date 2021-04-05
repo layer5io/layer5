@@ -44,7 +44,7 @@ const Code = ({ codeString, language }) => {
   const handleClick = () => {
     copyToClipboard(codeString);
     setCopyText("Copied!");
-    setTimeout(() => setCopyText("Copy"), 3000);
+    setTimeout(() => setCopyText("Copy"), 1000);
   };
   return (
     <Highlight
