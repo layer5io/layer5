@@ -295,10 +295,6 @@ const ServiceMesh = () => {
           <p className="left">Lightly</p>
           <p className="right">Strongly</p>
         </div>
-        {/* <div id="arrow-box">
-          <div className="arrow-left"></div>
-          <div className="arrow-right"></div>
-        </div> */}
         <Progress done={average}/>
       </div>
 
@@ -375,11 +371,9 @@ const ServiceMesh = () => {
               <div className="submit">
                 <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
                 <input type="text" className="email" onKeyDown={handleKeyPress} onChange={addData1}  placeholder="First Name"></input>
-                {/* <br/> */}
                 <input type="text" className="email" onKeyDown={handleKeyPress} onChange={addData2}  placeholder="Second Name"></input>
                 <br/>
                 <input type="text" className="email" onKeyDown={handleKeyPress} onChange={addData3}  placeholder="Organization or Company"></input>
-                {/* <br/> */}
                 <input type="email" className="email" onKeyDown={handleKeyPress} onChange={addData}  placeholder="Email Address"></input>
                 <br/>
                 <Button secondary id="arrow-btn" type="button"  onClick={expand} title="Continue &rarr;"/>

@@ -64,107 +64,6 @@ const DeployServiceMeshWrapper = styled.div`
                 font-size: 1.2em;
             }
         }
-        // #arrow-box{
-            
-        //     padding: 0px 40px 20px 40px;
-        //     display: flex;
-        //     .arrow-left {
-        //         // width: 90%;
-        //         height: 0;
-        //         padding-top: 1.3em;
-        //         padding-bottom: 25%;
-        //         padding-left:20px;
-        //         position: relative;
-        //         overflow: hidden;
-        //     }
-        //     .arrow-left:after {
-        //         content: "";
-        //         display: block;
-        //         width: 0; 
-        //         height: 0; 
-        //         border-top: 4em solid transparent;
-        //         border-bottom: 4em solid transparent; 
-        //         border-right: 6em solid #00B39F;
-        //     }
-        //     .arrow-right {
-        //         margin-left: auto;
-        //         // width: 10%;
-        //         height: 0;
-        //         padding-top: 1.3em;
-        //         padding-bottom: 20%;
-        //         padding-right: 75px;
-        //         position: relative;
-        //         overflow: hidden;
-        //     }
-        //     .arrow-right:after {
-        //         content: "";
-        //         display: block;
-        //         width: 0; 
-        //         height: 0; 
-        //         border-top: 4em solid transparent;
-        //         border-bottom: 4em solid transparent;
-        //         border-left: 8em solid #00B39F;
-        //     } 
-        //     @media only screen and (min-width: 1000px) {
-                
-        //         .arrow-left:after {
-                    
-        //             border-right: 60em solid #00B39F;
-        //         }
-    
-        //         .arrow-right {
-        //             padding-top: 1.3em;
-        //         }
-        //     }
-        //     @media only screen and (max-width: 1000px) {
-                
-        //         .arrow-left:after {
-                    
-        //             border-right: 60em solid #00B39F;
-        //         }
-    
-        //         .arrow-right {
-        //             padding-top: 2.1em;   
-        //         }
-        //         .arrow-right:after {
-        //             border-top: 1.4em solid transparent;
-        //             border-bottom: 1.4em solid transparent;
-        //             border-left: 5em solid #00B39F;
-        //         }
-        //     }
-        //     @media only screen and (max-width: 600px) {
-                
-        //         .arrow-left:after {
-                    
-        //             border-right: 60em solid #00B39F;
-        //         }
-    
-        //         .arrow-right {
-        //             padding-top: 2.6em;   
-        //         }
-        //         .arrow-right:after {
-        //             border-top: 1.0em solid transparent;
-        //             border-bottom: 1.0em solid transparent;
-        //             border-left: 2.4em solid #00B39F;
-        //         }
-        //     }
-        //     @media only screen and (max-width: 400px) {
-                
-        //         .arrow-left:after {
-                    
-        //             border-right: 60em solid #00B39F;
-        //         }
-    
-        //         .arrow-right {
-        //             padding-top: 3.1em;   
-        //         }
-        //         .arrow-right:after {
-        //             border-top: 0.4em solid transparent;
-        //             border-bottom: 0.4em solid transparent;
-        //             border-left: 1.4em solid #00B39F;
-        //         }
-        //     }
-        // }
     }
     .form{
         
@@ -201,10 +100,6 @@ const DeployServiceMeshWrapper = styled.div`
                 margin-left: 10px;
                 margin-top: 7px;
             }
-            // #slide{
-            //     margin: 60px 0 0 0%;
-            //     width: 100%;
-            // }
         }
     }
     .slidecontainer {
