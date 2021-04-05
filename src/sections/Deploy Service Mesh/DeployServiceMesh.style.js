@@ -348,7 +348,7 @@ const DeployServiceMeshWrapper = styled.div`
         text-align: center;
         align-self: center;
         .bookLink {
-            display: block;
+            
         }
         img {
             max-height: 38rem;

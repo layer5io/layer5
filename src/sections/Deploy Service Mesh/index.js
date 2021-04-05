@@ -97,12 +97,21 @@ const ServiceMesh = () => {
   const [org, setOrg] = useState("");
 
   useEffect(() => {
-    const sum = parseInt(parentVal1) + parseInt(parentVal2) + parseInt(parentVal3) + parseInt(parentVal4) + parseInt(parentVal5) + parseInt(parentVal6) + parseInt(parentVal7) + parseInt(parentVal8);
-    SetAverage((sum/800)*100);
-  });
+    if (!flag) {
+      const sum = parseInt(parentVal1) + parseInt(parentVal2) + parseInt(parentVal3);
+      SetAverage((sum/300)*100);
+    }else {
+      const sum = parseInt(parentVal1) + parseInt(parentVal2) + parseInt(parentVal3) + parseInt(parentVal4) + parseInt(parentVal5) + parseInt(parentVal6) + parseInt(parentVal7) + parseInt(parentVal8);
+      SetAverage((sum/800)*100);
+    }
+  }, [flag,parentVal1,parentVal2,parentVal3,parentVal4,parentVal5,parentVal6,parentVal7,parentVal8]);
 
   const expand = () => {
-    setFlag(true);
+    if (email === "" || first === "" || second === "" || org === ""){
+      alert("Kindly fill all the required details");
+    }else {
+      setFlag(true);
+    }
   };
  
   const addData = (e) => {
@@ -365,11 +374,11 @@ const ServiceMesh = () => {
               &&
               <div className="submit">
                 <h2>Complete the survey and receive <br/>an in-depth analysis</h2>
-                <input type="text" className="email"  onChange={addData1}  placeholder="First Name"></input>
+                <input type="text" className="email" onKeyDown={handleKeyPress} onChange={addData1}  placeholder="First Name"></input>
                 {/* <br/> */}
-                <input type="text" className="email"  onChange={addData2}  placeholder="Second Name"></input>
+                <input type="text" className="email" onKeyDown={handleKeyPress} onChange={addData2}  placeholder="Second Name"></input>
                 <br/>
-                <input type="text" className="email"  onChange={addData3}  placeholder="Organization or Company"></input>
+                <input type="text" className="email" onKeyDown={handleKeyPress} onChange={addData3}  placeholder="Organization or Company"></input>
                 {/* <br/> */}
                 <input type="email" className="email" onKeyDown={handleKeyPress} onChange={addData}  placeholder="Email Address"></input>
                 <br/>
