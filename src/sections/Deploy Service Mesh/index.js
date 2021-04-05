@@ -320,7 +320,7 @@ const ServiceMesh = () => {
         </Container>
       </div>
 
-      <div className="form">
+      <div className="form" id="form">
         <Container>
           <div className="text">
             <p className="left">Lightly</p>
