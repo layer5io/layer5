@@ -37,8 +37,8 @@ const RelatedPostsWrapper = styled.div`
     }
 
     .slick-arrow{
-        width: 2rem;	
-        height: 3rem;	
+        width: 4.8rem;	
+        height: 5rem;
     }	
     .slick-arrow:before{	
         color: ${props => props.theme.primaryColor};
@@ -54,11 +54,13 @@ const RelatedPostsWrapper = styled.div`
         line-height: 0;
         opacity: 1;
         color: ${props => props.theme.primaryColor};
+        margin-left: -3rem;
     }
     .slick-next:before{	
         content: "›";
         line-height: 0;
         opacity: 1;
+        margin-left: 2rem;
         color: ${props => props.theme.primaryColor};
     }
     .slick-disabled{	
