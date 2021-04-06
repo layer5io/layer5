@@ -195,6 +195,8 @@ export const BlogWrapper = styled.div`
         display: inline;
         position: relative;
         float: left;
+        margin: 1rem 1rem 1rem 0rem;
+ 
     }
     div.intro {
         padding-left: 3rem;
