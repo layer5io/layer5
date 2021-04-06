@@ -29,9 +29,10 @@ const EventSingle = ({ data }) => {
                 }
                 {frontmatter.speakers && frontmatter.speakers.map((speaker, id) => (
                   <li key={{ id }} className="speakers">
-                    <Link
+                    {/*<Link
                       to={`/community/members/${slugify(speaker)}`}>{speaker}
-                    </Link>
+                    </Link> */}  
+                    {speaker}              
                   </li>
                 ))}
               </ul>
