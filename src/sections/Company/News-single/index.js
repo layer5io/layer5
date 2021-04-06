@@ -6,7 +6,7 @@ import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
 import NewsPageWrapper from "./NewsSingle.style.js";
-
+import RelatedNewsPosts from "../../Blog/Related-NewsBlogs";
 const NewsSingle = ({data}) => {
   const { frontmatter, body } = data.mdx;
 
@@ -26,6 +26,7 @@ const NewsSingle = ({data}) => {
               <MDXRenderer>{body}</MDXRenderer>
             </SRLWrapper>
           </div>
+          <RelatedNewsPosts />
         </Container>
       </div>
     </NewsPageWrapper>
