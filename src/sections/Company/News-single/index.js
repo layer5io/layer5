@@ -6,7 +6,7 @@ import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
 import NewsPageWrapper from "./NewsSingle.style.js";
-import RelatedPosts from "../../Blog/Related-Posts";
+import RelatedPosts from "../../../components/Related-Posts";
 
 const NewsSingle = ({data}) => {
   const { frontmatter, body } = data.mdx;

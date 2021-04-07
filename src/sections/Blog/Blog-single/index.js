@@ -5,10 +5,10 @@ import { SRLWrapper } from "simple-react-lightbox";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
-import RelatedPosts from "../Related-Posts";
+import RelatedPosts from "../../../components/Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
 import BlogPostSignOff from "../BlogPostSignOff";
-import RelatedPostsFactory from "../Related-Posts/relatedPostsFactory";
+import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
 
 const BlogSingle = ({data}) => {
   const { frontmatter, body, fields } = data.mdx;
