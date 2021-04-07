@@ -12,31 +12,28 @@ import Footer from "../../sections/General/Footer";
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
-export const query = graphql`
-    query allProjects {
-        allMdx(
-            filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: { eq: true } } }
-        ) {
-            nodes {
-                id
-                frontmatter {
-                    title
-                    thumbnail{
-                        childImageSharp{
-                            fluid(maxWidth: 1000){
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                        extension
-                        publicURL
-                    }
-                }
-                fields {
-                    slug
-                }
-            }
+export const query = graphql`query allProjects {
+  allMdx(
+    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
         }
+      }
+      fields {
+        slug
+      }
     }
+  }
+}
 `;
 
 const ProjectGridPage = ({data}) => (

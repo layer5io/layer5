@@ -8,33 +8,30 @@ import { ProgramsPageWrapper } from "./ProgramGrid.style";
 
 const ProgramsGrid = ({ hide_path, sub_section }) => {
   const data = useStaticQuery(
-    graphql`
-            query allPrograms {
-                allMdx(
-                    sort: { fields: [frontmatter___title], order: ASC }
-                    filter: { fields: { collection: { eq: "programs" } }, frontmatter: { published: { eq: true } } }
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fluid(maxWidth: 1000){
-                                        ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query allPrograms {
+  allMdx(
+    sort: {fields: [frontmatter___title], order: ASC}
+    filter: {fields: {collection: {eq: "programs"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
 
   let path = hide_path ? "" : "Programs";

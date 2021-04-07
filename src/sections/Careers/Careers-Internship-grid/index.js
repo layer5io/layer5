@@ -11,58 +11,53 @@ import Univ_Texas_Img from "../../../assets/images/partners/texas_partner.png";
 
 const InternshipPage = ({ hide_heading }) => {
   const opportunities = useStaticQuery(
-    graphql`
-            query allOppornuties{
-                internships: allMdx(
-                    sort: { fields: [frontmatter___title], order: ASC }
-                    filter: { fields: { collection: { eq: "careers" } }, frontmatter: { published: { eq: true }, type: { eq: "internship" } } }
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            abstract
-                            thumbnail{
-                                childImageSharp{
-                                    fluid(maxWidth: 500){
-                                        ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-                jobs: allMdx(
-                    sort: { fields: [frontmatter___title], order: ASC }
-                    filter: { fields: { collection: { eq: "careers" } }, frontmatter: { published: { eq: true }, type: { eq: "job" } } }
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            abstract
-                            thumbnail{
-                                childImageSharp{
-                                    fluid(maxWidth: 500){
-                                        ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query allOppornuties {
+  internships: allMdx(
+    sort: {fields: [frontmatter___title], order: ASC}
+    filter: {fields: {collection: {eq: "careers"}}, frontmatter: {published: {eq: true}, type: {eq: "internship"}}}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        abstract
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  jobs: allMdx(
+    sort: {fields: [frontmatter___title], order: ASC}
+    filter: {fields: {collection: {eq: "careers"}}, frontmatter: {published: {eq: true}, type: {eq: "job"}}}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        abstract
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 
 const Image = ({ childImageSharp, extension, publicURL, alt, ...rest }) => {
@@ -10,7 +10,7 @@ const Image = ({ childImageSharp, extension, publicURL, alt, ...rest }) => {
       </div>
     );
   }
-  return <Img fixed={childImageSharp.fixed}  {...rest} alt={alt} />;
+  return <GatsbyImage image={childImageSharp.gatsbyImageData} {...rest} alt={alt} />;
 };
 
 export default Image;
