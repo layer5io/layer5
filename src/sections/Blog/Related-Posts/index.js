@@ -1,61 +1,21 @@
 import React from "react";
-import { graphql, useStaticQuery, Link} from "gatsby";
+import { Link} from "gatsby";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Card from "../../../components/Card";
 import RelatedPostsWrapper from "./relatedPosts.style";
 import { Col } from "../../../reusecore/Layout";
 import Slider from "react-slick";
-import RelatedPostsFactory from "./relatedPostsFactory";
+
 
 
 const RelatedPosts = props => {
-  const data = useStaticQuery(
-    graphql`
-            query relatedPosts{
-                allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC}
-                    filter: { 
-                        fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } }
-                    }
-                ) {
-                    nodes {
-                        frontmatter {
-                            title
-                            date(formatString: "MMM Do YYYY")
-                            author
-                            category
-                            tags
-                            thumbnail{
-                                childImageSharp{
-                                    fluid(maxWidth: 1000){
-                                        ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }         
-            }
-        `
-  );
-  const { category, tags, currentPostSlug } = props;
-  const posts = data.allMdx.nodes;
-  const relatedPosts = new RelatedPostsFactory (
-    posts, currentPostSlug
-  ).setMaxPosts(6)
-    .setCategory(category)
-    .setTags(tags)
-    .getPosts();
+  
+  const {postType , relatedPosts , mainHead , lastHead , linkToAllItems} = props;
 
   return (
     <RelatedPostsWrapper>
       <div className="widgets-title">
-        <h3>Related Blogs</h3>
+        <h3>{mainHead}</h3>
       </div>
       {
         typeof window !== "undefined" &&
@@ -68,7 +28,13 @@ const RelatedPosts = props => {
                   slidesToScroll= {1}
                 >
                   {
-                    relatedPosts.map(({post}) => {
+                    postType === "blogs" ? relatedPosts.map(({post}) => {
+                      return (
+                        <Col className="cardCol" xs={12} key={post.fields.slug}>
+                          <Card frontmatter={post.frontmatter} fields={post.fields}/>
+                        </Col>
+                      );
+                    }):relatedPosts.map((post) => {
                       return (
                         <Col className="cardCol" xs={12} key={post.fields.slug}>
                           <Card frontmatter={post.frontmatter} fields={post.fields}/>
@@ -78,8 +44,8 @@ const RelatedPosts = props => {
                   }
                   <Col xs={12} lg={12} className="allBlogs">
                     <div className="allBlogs_card">
-                      <Link to="/blog">
-                        <h2>All Blogs</h2>
+                      <Link to={linkToAllItems}>
+                        <h2>{lastHead}</h2>
                         <IoIosArrowRoundForward/>
                       </Link>
                     </div>
