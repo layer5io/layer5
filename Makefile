@@ -6,9 +6,3 @@ site:
 
 build:
 	gatsby build && gatsby serve
-
-outdated:
-	npm outdated
-	
-update:
-	npm update
