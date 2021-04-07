@@ -1,16 +1,60 @@
 import React from "react";
-import { Link } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
-import RelatedPosts from "../Related-Posts";
+import RelatedPosts from "../../../components/Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
 import BlogPostSignOff from "../BlogPostSignOff";
+import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
 
 const BlogSingle = ({data}) => {
   const { frontmatter, body, fields } = data.mdx;
+  const blogData = useStaticQuery(
+    graphql`
+            query relatedPosts{
+                allMdx(
+                    sort: { fields: [frontmatter___date], order: DESC}
+                    filter: { 
+                        fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } }
+                    }
+                ) {
+                    nodes {
+                        frontmatter {
+                            title
+                            date(formatString: "MMM Do YYYY")
+                            author
+                            category
+                            tags
+                            thumbnail{
+                                childImageSharp{
+                                    fluid(maxWidth: 1000){
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
+                                }
+                                extension
+                                publicURL
+                            }
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }         
+            }
+        `
+  );
+  
+  const posts = blogData.allMdx.nodes;
+  const relatedPosts = new RelatedPostsFactory (
+    posts, fields.slug
+  ).setMaxPosts(6)
+    .setCategory(frontmatter.category)
+    .setTags(frontmatter.tags)
+    .getPosts();
+
   return (
     <BlogPageWrapper>
       <PageHeader
@@ -41,9 +85,11 @@ const BlogSingle = ({data}) => {
             </div>
           </div>
           <RelatedPosts
-            category={frontmatter.category}
-            tags={frontmatter.tags}
-            currentPostSlug={fields.slug}
+            postType="blogs"
+            relatedPosts={relatedPosts}
+            mainHead="Related Blogs" 
+            lastCardHead="All Blogs" 
+            linkToAllItems="/blog"
           />
         </Container>
       </div>
