@@ -156,7 +156,8 @@ const data = {
             question: "What are characteristics of successful interns?",
             category: "internships",
             answer: ["Interns that thrive at Layer5 are those that espouse the Layer5 culture of paying it forward. These interns freely help other contributors, understanding that 1) they learn as they teach and assist others, 2) their projects are futhered with more contributors engage, and 3) any contributors path to maintainership is one of enabling others.",
-            "Successful interns steward projects naturally as they become a resource to other contributors. These interns frequently become component and/or core maintainers."],
+            "Successful interns steward projects naturally as they become a resource to other contributors. These interns frequently become component and/or core maintainers.",
+            "Successful interns internalize the fact that the real value of engaging and contributing to projects is the experience gained. They understand that the experience is theirs for the taking and that project maintainers and Layer5 employees want you to seize the opportunity. We consider your success our success and embrace the concept that your meaningful engagement is to all our benefits."],
             link: "/blog/tag/community",
             linktext: "Hear from other interns"
         },
@@ -166,7 +167,7 @@ const data = {
             answer: ["Many Layer5 interns speak at large, public technology conferences like KubeCon, DockerCon, and so on. They write blog posts and share about their experience and learnings on social media. They engage with their whole self.",
             "Many interns become open source maintainers, and have ongoing responsibility to steward Layer5 and CNCF projects."]
         }
-
+        
     ]
 
 };
