@@ -19,8 +19,17 @@ When adding a new or updating an existing community member profile be sure to fo
 
 #### Badges for Community Members
 
-Badges are a way to identify projects community members have made contributions to. When a community member successfully completes a project, they get the badge of that community. An example of how a badge is written can be found [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx), and it will be displayed like [this](https://layer5.io/community/members/abishek-kumar) on the community project.
+Badges are a way to identify projects community members have made contributions to. These badges are assigned to a contributor to acknowledge the contributions made to the respective project. An example of how a badge is written can be found [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx), and it will be displayed like [this](https://layer5.io/community/members/abishek-kumar) on the community project.
 
+##### Possible badges include
+
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/community-green.svg" width="25px" height="25px"/> community
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/landscape-green.png" width="25px" height="25px"/> Landscape
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/layer5-image-hub.svg" width="25px" height="25px"/> Layer5
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark-text.svg" width="25px" height="25px"/> smp
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark.svg" width="25px" height="25px"/> smp
 
 #### <a name="updating-the-service-mesh-landscape">Updating the Service Mesh Landscape ([create new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D))
 
