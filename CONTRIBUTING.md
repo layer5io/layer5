@@ -12,6 +12,14 @@ When submitting a pull request a preview deployment will be built and made avail
 
 Layer5 community members are an integral part of what makes Layer5 and it's projects successful. Prominently highlighting our members and their works is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A), which has all the instructions needed. 
 
+#### Source code for Community Member Profiles
+
+When adding a new or updating an existing community member profile be sure to follow the existing template which can be found here [Community Member Profile template](https://github.com/layer5io/layer5/tree/master/src/collections/members/_member-profile-template). You can easily understand the template by referrring to this example [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx)
+
+
+#### Badges for Community Members
+
+Badges are a way to identify projects community members have made contributions to. When a community member successfully completes a project, they get the badge of that community. An example of how a badge is written can be found [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx), and it will be displayed like [this](https://layer5.io/community/members/abishek-kumar) on the community project.
 
 
 #### <a name="updating-the-service-mesh-landscape">Updating the Service Mesh Landscape ([create new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D))
