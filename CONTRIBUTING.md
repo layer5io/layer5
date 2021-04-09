@@ -19,8 +19,7 @@ When adding a new or updating an existing community member profile be sure to fo
 
 #### Badges for Community Members
 
-Badges are a way to identify projects community members have made contributions to. These badges are assigned to a contributor to acknowledge the contributions made to the respective project. An example of how a badge is written can be found [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx), and it will be displayed like [this](https://layer5.io/community/members/abishek-kumar) on the community project.
-
+Badges offer recognition of the efforts and works of community members.  Badges are assigned to a community member in acknowledgement of their engagement within and/or contribution to the representative project or (sub-)community. A variety of badges exist so that community members and their efforts may be affiliated with a particular project or community initiative. An example of how a badge assigned using markdown can be found [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx), and it will be appear [this way](https://layer5.io/community/members/abishek-kumar) on a member profile.
 ##### Possible badges include
 
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/community-green.svg" width="25px" height="25px"/> community
