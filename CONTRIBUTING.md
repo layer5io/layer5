@@ -14,7 +14,7 @@ Layer5 community members are an integral part of what makes Layer5 and it's proj
 
 #### Source code for Community Member Profiles
 
-When adding a new or updating an existing community member profile be sure to follow the existing template which can be found here [Community Member Profile template](https://github.com/layer5io/layer5/tree/master/src/collections/members/_member-profile-template). You can easily understand the template by referrring to this example [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx)
+When adding a new or updating an existing community member profile be sure to follow the existing template which can be found here [Community Member Profile template](https://github.com/layer5io/layer5/tree/master/src/collections/members/_member-profile-template). You can easily understand the template by checking out one of the profiles [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx)
 
 
 #### Badges for Community Members

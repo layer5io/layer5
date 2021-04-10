@@ -18,9 +18,9 @@ Let's recognize <@github-username> as a contributor and community member by crea
 - LinkedIn: <!-- <profilename> only (https://www.linkedin.com/in/<profilename>)-->
 - Link to profile picture:
 
-A detailed explanation on how to set up a community member profile can be found in the [CONTRIBUTING.md](https://github.com/layer5io/layer5/issues/1736)
+A detailed explanation on how to set up a community member profile can be found in the [CONTRIBUTING.md](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
 
-The CONTRIBUTING.md file has a "Common Types of Site Updates" section with detailed examples to follow.
+The CONTRIBUTING.md file has a "Common Types of Site Updates" section with detailed examples to follow here.[CONTRIBUTING.md](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
 ---
 
 **Contributor Resources**
