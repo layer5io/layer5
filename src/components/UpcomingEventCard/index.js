@@ -32,6 +32,7 @@ const UpcomingEvents = ({ data }) => {
                     <div className="blog-slider_content">
                       <h3 className="blog-slider_title">{item.frontmatter.title}</h3>
                       <p className="blog-slider_date">{item.frontmatter.date}</p>
+                      <p className="blog-slider_description">{item.frontmatter.abstract}</p>
                       <div className="blog-slider_text">
                         <MDXRenderer>
                           {item.body}
