@@ -25,7 +25,7 @@ const BannerSectionWrapper = styled.section`
         padding-right: 0px;
     }
     h2.statement {
-        color: ${props => props.theme.white};
+        color: ${props => props.theme.textColor};
         margin-bottom: 1rem;
     }
     h3.statement {
@@ -58,7 +58,7 @@ const BannerSectionWrapper = styled.section`
     }
     .section-title {
         padding: 3rem 8rem;
-        background: #00b39f;
+        background: ${props => props.theme.statementBackgroundColor};
     }
     .svg-background {
         position: absolute;

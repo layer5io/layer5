@@ -69,7 +69,9 @@ const lightTheme = {
 
   specialTextColor: "rgba(0, 0, 0, 0.6)",
 
-  tagColor: "#F0F0F0"
+  tagColor: "#F0F0F0",
+
+  statementBackgroundColor: "#00b39f"
 
 };
 
@@ -93,8 +95,7 @@ const darkTheme = {
   caribbeanGreenColor: "#00d3a9",
   secondaryLightColorTwo: "#2a2d1f",
 
-  // lighter gray
-  secondaryLightColor: "#24271B",
+  secondaryLightColor: "#f2f2f2",
 
   tertiaryColor: "#477E96",
   darkJungleGreenColor: "#1e2117",
@@ -144,7 +145,9 @@ const darkTheme = {
 
   specialTextColor: "#ffffff",
 
-  tagColor: "#F0F0F0"
+  tagColor: "#F0F0F0",
+
+  statementBackgroundColor: "rgba(0,0,0,0.4)"
 
 };
 module.exports = {
