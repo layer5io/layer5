@@ -4,6 +4,12 @@ const FaqSectionWrapper = styled.section`
   margin: 2.5rem auto 5rem;
   position: relative;
   overflow: hidden;
+
+  .category_name {
+    margin: 2rem 0 0.5rem;
+    font-style: italic;
+    text-transform: capitalize;
+  }
   .accordion__item + .accordion__item {
     border-color: transparent;
   }

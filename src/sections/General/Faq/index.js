@@ -21,17 +21,16 @@ import data from "../../../assets/data/faq";
 import FaqSectionWrapper from "./faqSection.style";
 import ContactFormModal from "../../../components/Contact-Modal";
 
-const Faq = (props) => {
-  let faqs = [];
-  if(props.category === "all" || props.category === undefined){
-    faqs = data.faqs;
-  }
+const Faq = () => {
 
-  data.faqs.forEach(faq => {
-    if(faq.category.toString() === props.category){
-      faqs.push(faq);
-    }
-  });
+  let faq_keys = [];
+
+  let faqs = data.faqs.reduce((faq, ind) => {
+    faq[ind.category] = [...faq[ind.category] || [], ind];
+    return faq;
+  }, {});
+
+  faq_keys = Object.keys(faqs);
 
   return (
     <FaqSectionWrapper id="faq">
@@ -52,28 +51,34 @@ const Faq = (props) => {
           </div> */}
         </SectionTitle>
         <Accordion allowMultipleExpanded="true" allowZeroExpanded="true">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index}>
-              <AccordionTitle>
-                <IconWrapper>
-                  <h5>{faq.question}</h5>
-                  <OpenIcon>
-                    <IoIosArrowUp size={22} color="white" />
-                  </OpenIcon>
-                  <CloseIcon>
-                    <IoIosArrowDown size={22} color="white" />
-                  </CloseIcon>
-                </IconWrapper>
-              </AccordionTitle>
-              <AccordionBody>
-                {
-                  faq.answer.length >=1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
-                }
-                <div className="faqbutton">
-                  {faq.link && <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external={false} />}
-                </div>
-              </AccordionBody>
-            </AccordionItem>
+          {faq_keys.map((key) => (
+            <>
+              <h2 className="category_name">{key}</h2>
+              {faqs[key].map((faq, index) => (
+                <AccordionItem key={index}>
+                  <AccordionTitle>
+                    <IconWrapper>
+                      {console.log(faq)}
+                      <h5>{faq.question}</h5>
+                      <OpenIcon>
+                        <IoIosArrowUp size={22} color="white" />
+                      </OpenIcon>
+                      <CloseIcon>
+                        <IoIosArrowDown size={22} color="white" />
+                      </CloseIcon>
+                    </IconWrapper>
+                  </AccordionTitle>
+                  <AccordionBody>
+                    {
+                      faq.answer.length >=1 ? <ul>{faq.answer.map((ans, id) => (<li key={id}><p key={id}>{ans}</p></li>))}</ul> : <br />
+                    }
+                    <div className="faqbutton">
+                      {faq.link && <Button primary className="faqbutton" url={faq.link} title={faq.linktext} external={false} />}
+                    </div>
+                  </AccordionBody>
+                </AccordionItem>
+              ))}
+            </>
           ))}
         </Accordion>
         <div className="askus_section">
