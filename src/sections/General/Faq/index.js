@@ -21,11 +21,27 @@ import data from "../../../assets/data/faq";
 import FaqSectionWrapper from "./faqSection.style";
 import ContactFormModal from "../../../components/Contact-Modal";
 
-const Faq = () => {
+const Faq = (props) => {
 
   let faq_keys = [];
+  let faqs_data = [];
+  if (props.category === undefined)
+    faqs_data = data.faqs;
+  else {
+    props.category.forEach(item => {
+      if(item === "all")
+        faqs_data = data.faqs;
+      else {
+        data.faqs.forEach(faq => {
+          if(faq.category.toString() === item){
+            faqs_data.push(faq);
+          }
+        });
+      }
+    });
+  }
 
-  let faqs = data.faqs.reduce((faq, ind) => {
+  let faqs = faqs_data.reduce((faq, ind) => {
     faq[ind.category] = [...faq[ind.category] || [], ind];
     return faq;
   }, {});
@@ -58,7 +74,6 @@ const Faq = () => {
                 <AccordionItem key={index}>
                   <AccordionTitle>
                     <IconWrapper>
-                      {console.log(faq)}
                       <h5>{faq.question}</h5>
                       <OpenIcon>
                         <IoIosArrowUp size={22} color="white" />
