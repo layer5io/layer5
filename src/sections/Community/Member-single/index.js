@@ -10,7 +10,7 @@ import mesheryLogo from "./meshery-logo-light.svg";
 import mesheryOperatorLogo from "./meshery-operator-dark.svg";
 import smpLogo from "./smp-dark-text.svg";
 import landscapeLogo from "./landscape-green.png";
-import getNighthawkLogo from "../../../assets/images/meshmate/meshmate-icon.svg";
+import getNighthawkLogo from "../../../assets/images/getnighthawk/icon only/SVG/getnighthawk-logo.svg";
 import communityLogo from "./community-green.svg";
 import imageHubLogo from "./layer5-image-hub.svg";
 import Button from "../../../reusecore/Button";

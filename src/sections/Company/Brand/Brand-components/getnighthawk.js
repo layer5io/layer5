@@ -3,9 +3,9 @@ import { SRLWrapper } from "simple-react-lightbox";
 import { FiDownloadCloud } from "react-icons/fi";
 import Button from "../../../../reusecore/Button";
 import { Col, Row } from "../../../../reusecore/Layout";
-import GNH from "../../../../assets/images/getnighthawk/getnighthawk.png";
-import GNHNameOnly from "../../../../assets/images/getnighthawk/getnighthawk-name-only.png";
-import GNHWithName from "../../../../assets/images/getnighthawk/getnighthawk-with-name.png";
+import GNH from "../../../../assets/images/getnighthawk/icon only/SVG/getnighthawk-logo.svg";
+import GNHNameOnly from "../../../../assets/images/getnighthawk/name only/SVG/getnighthawk-text.svg";
+import GNHWithName from "../../../../assets/images/getnighthawk/with name/SVG/getnighthawk-full.svg";
 
 const GetNightHawk = () => {
   return (

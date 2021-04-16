@@ -3,14 +3,14 @@ import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import logo from "./images/getnighthawk.svg";
+import logo from "../../../assets/images/getnighthawk/with name/SVG/getnighthawk-full.svg";
 import c_icon from "./images/c_icon.svg";
 
 import explain1 from "./images/Rectangle 479.png";
 import explain2 from "./images/Rectangle 487.png";
 import explain3 from "./images/Rectangle 488.png";
 import explain4 from "./images/Rectangle 494.png";
-import icon from "./images/GETNIGHTHAWK.png";
+import icon from "../../../assets/images/getnighthawk/name only/SVG/getnighthawk-text.svg";
 
 import smpIcon from "./images/smp-dark-text.svg";
 //import cli from "./images/cli_green.svg";
@@ -37,12 +37,13 @@ const Projects = () => {
         <div className="hero-section">
           <Row>
             <Col lg={6} md={6} sm={12}>
-              <img src={logo} className="img1" alt="GetNighthawk Logo" />
+              <img src={logo} className="logo" alt="GetNighthawk Logo" />
             </Col>
             <Col lg={6} md={6} sm={12}>
               <div className="hero-text">
-                <img src={icon} alt="GetNighthawk Text Logo" />
-                <p>The easiest way to get started with <br /> Nighthawk on any cloud or platform</p>
+                {/* <img src={icon} alt="GetNighthawk Text Logo" /> */}
+                <h1>Unlock distributed systems behavioral performance analysis</h1>
+                <p>GetNighthawk is the easiest way to get started with Nighthawk on any cloud or platform</p>
               </div>
             </Col>
           </Row>
