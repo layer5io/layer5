@@ -3,14 +3,14 @@ import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import logo from "../../../assets/images/getnighthawk/with name/SVG/getnighthawk-full.svg";
+import logo from "../../../assets/images/getnighthawk/with-name/SVG/getnighthawk-full.svg";
 import c_icon from "./images/c_icon.svg";
 
 import explain1 from "./images/Rectangle 479.png";
 import explain2 from "./images/Rectangle 487.png";
 import explain3 from "./images/Rectangle 488.png";
 import explain4 from "./images/Rectangle 494.png";
-import icon from "../../../assets/images/getnighthawk/name only/SVG/getnighthawk-text.svg";
+import icon from "../../../assets/images/getnighthawk/name-only/SVG/getnighthawk-text.svg";
 
 import smpIcon from "./images/smp-dark-text.svg";
 //import cli from "./images/cli_green.svg";

@@ -3,9 +3,9 @@ import { SRLWrapper } from "simple-react-lightbox";
 import { FiDownloadCloud } from "react-icons/fi";
 import Button from "../../../../reusecore/Button";
 import { Col, Row } from "../../../../reusecore/Layout";
-import GNH from "../../../../assets/images/getnighthawk/icon only/SVG/getnighthawk-logo.svg";
-import GNHNameOnly from "../../../../assets/images/getnighthawk/name only/SVG/getnighthawk-text.svg";
-import GNHWithName from "../../../../assets/images/getnighthawk/with name/SVG/getnighthawk-full.svg";
+import GNH from "../../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import GNHNameOnly from "../../../../assets/images/getnighthawk/name-only/SVG/getnighthawk-text.svg";
+import GNHWithName from "../../../../assets/images/getnighthawk/with-name/SVG/getnighthawk-full.svg";
 
 const GetNightHawk = () => {
   return (
@@ -38,19 +38,17 @@ const GetNightHawk = () => {
         <Col>
           <h2 className="layerH3 in"> Logos </h2>
         </Col>
-        <SRLWrapper>
-          <Row Vcenter className="ImgDiv">
-            <Col xs={12} sm={4}>
-              <img src={GNHWithName} alt="GetNightHawk-with-name Logo" />
-            </Col>
-            <Col xs={12} sm={4}>
-              <img src={GNH} alt="GetNightHawk Logo" />
-            </Col>
-            <Col xs={12} sm={4}>
-              <img src={GNHNameOnly} alt="GetNightHawk-name-only Logo" />
-            </Col>
-          </Row>
-        </SRLWrapper>
+        <Row Vcenter className="ImgDiv">
+          <Col xs={12} sm={4}>
+            <img src={GNHWithName} alt="GetNightHawk-with-name Logo" />
+          </Col>
+          <Col xs={12} sm={4}>
+            <img src={GNH} alt="GetNightHawk Logo" />
+          </Col>
+          <Col xs={12} sm={4}>
+            <img src={GNHNameOnly} alt="GetNightHawk-name-only Logo" />
+          </Col>
+        </Row>
       </Row>
     </div>
   );
