@@ -95,7 +95,7 @@ const darkTheme = {
   caribbeanGreenColor: "#00d3a9",
   secondaryLightColorTwo: "#2a2d1f",
 
-  secondaryLightColor: "#f2f2f2",
+  secondaryLightColor: "#2a2d1f",
 
   tertiaryColor: "#477E96",
   darkJungleGreenColor: "#1e2117",
