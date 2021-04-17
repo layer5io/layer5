@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 
@@ -9,8 +10,9 @@ const Image = ({ childImageSharp, extension, publicURL, alt, ...rest }) => {
         <img src={publicURL} alt={alt} />
       </div>
     );
-  }
-  return <GatsbyImage image={childImageSharp.gatsbyImageData} {...rest} alt={alt} />;
+  } else{
+    return <GatsbyImage image={childImageSharp.gatsbyImageData} {...rest} alt={alt} />;
+  }  
 };
 
 export default Image;
