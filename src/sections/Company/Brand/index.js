@@ -10,10 +10,13 @@ import SMPBrand from "./Brand-components/smp";
 import CommunityBrand from "./Brand-components/community";
 import Button from "../../../reusecore/Button";
 import { FiDownloadCloud } from "react-icons/fi";
+import GetNightHawk from "./Brand-components/getnighthawk";
 
-const getDimensions = ele => {
-  let dummyheight=0, dummyoffsetTop=0, dummyoffsetBottom=0;
-  if(ele) {
+const getDimensions = (ele) => {
+  let dummyheight = 0,
+      dummyoffsetTop = 0,
+      dummyoffsetBottom = 0;
+  if (ele) {
     const { height } = ele.getBoundingClientRect();
     const offsetTop = ele.offsetTop;
     const offsetBottom = offsetTop + height;
@@ -28,29 +31,27 @@ const getDimensions = ele => {
   return {
     dummyheight,
     dummyoffsetTop,
-    dummyoffsetBottom
+    dummyoffsetBottom,
   };
 };
 
 // Functions to make scroll with speed control
 // Element to move, element or px from, element or px to, time in ms to animate
-const scrollTo = (element,duration=2000) => {
+const scrollTo = (element, duration = 2000) => {
   let e = document.documentElement;
-  if(e.scrollTop === 0){
+  if (e.scrollTop === 0) {
     let t = e.scrollTop;
     ++e.scrollTop;
-    e = t+1 === e.scrollTop-- ? e : document.body;
+    e = t + 1 === e.scrollTop-- ? e : document.body;
   }
   scrollToC(e, e.scrollTop, element, duration);
 };
 // Element to move, element or px from, element or px to, time in ms to animate
 const scrollToC = (element, from, to, duration) => {
   if (duration <= 0) return;
-  if(typeof from === "object")
-    from=from.offsetTop;
-  if(typeof to === "object")
-    to=to.offsetTop+580;
-  scrollToX(element, from, to, 0, 1/duration, 20, easeOutCuaic);
+  if (typeof from === "object") from = from.offsetTop;
+  if (typeof to === "object") to = to.offsetTop + 580;
+  scrollToX(element, from, to, 0, 1 / duration, 20, easeOutCuaic);
 };
 
 const scrollToX = (element, xFrom, xTo, t01, speed, step, motion) => {
@@ -60,15 +61,15 @@ const scrollToX = (element, xFrom, xTo, t01, speed, step, motion) => {
   }
   element.scrollTop = xFrom - (xFrom - xTo) * motion(t01);
   t01 += speed * step;
-  
-  setTimeout(function() {
+
+  setTimeout(function () {
     scrollToX(element, xFrom, xTo, t01, speed, step, motion);
   }, step);
 };
 
 const easeOutCuaic = (t) => {
   t--;
-  return t*t*t+1;
+  return t * t * t + 1;
 };
 
 const Brand = () => {
@@ -88,6 +89,7 @@ const Brand = () => {
   const mesheryOperatorRef = useRef(null);
   const imageHubRef = useRef(null);
   const smpRef = useRef(null);
+  const getnightHawkRef = useRef(null);
   const meshmateRef = useRef(null);
 
   const sectionRefs = [
@@ -97,6 +99,7 @@ const Brand = () => {
     { section: "MesheryOperator", ref: mesheryOperatorRef },
     { section: "ImageHub", ref: imageHubRef },
     { section: "SMP", ref: smpRef },
+    { section: "GetNightHawk", ref: getnightHawkRef },
     { section: "MeshMate", ref: meshmateRef },
   ];
 
@@ -133,11 +136,11 @@ const Brand = () => {
       <div className="brandHeader" ref={headerRef}>
         <h1>Layer5 Brand Kits</h1>
         <p>
-          We’ve created some guidelines to help you use our brand and
-          assets, including our logo, content and trademarks, without having
-          to negotiate legal agreements for each use. To make any use of our
-          marks in a way not covered by these guidelines, please contact us
-          and include a visual mockup of intended use.
+          We’ve created some guidelines to help you use our brand and assets,
+          including our logo, content and trademarks, without having to
+          negotiate legal agreements for each use. To make any use of our marks
+          in a way not covered by these guidelines, please contact us and
+          include a visual mockup of intended use.
         </p>
         <a href="/brand/brand-kit.zip">
           <Button primary title="Download Brand Kit">
@@ -165,14 +168,19 @@ const Brand = () => {
           <div className="section" ref={smpRef}>
             <SMPBrand />
           </div>
+          <div className="section" ref={getnightHawkRef}>
+            <GetNightHawk />
+          </div>
           <div className="section" ref={meshmateRef}>
             <CommunityBrand />
           </div>
         </Col>
         <Col md={3} className="brand-nav-col">
-          <nav className={`brand-nav ${scroll ? "nav-fixed": ""}`}>
+          <nav className={`brand-nav ${scroll ? "nav-fixed" : ""}`}>
             <p
-              className={`header_link ${visibleSection === "Layer5" ? "selected" : ""}`}
+              className={`header_link ${
+                visibleSection === "Layer5" ? "selected" : ""
+              }`}
               onClick={() => {
                 scrollTo(layer5Ref.current);
               }}
@@ -180,7 +188,9 @@ const Brand = () => {
               <span>Layer5</span>
             </p>
             <p
-              className={`header_link ${visibleSection === "Meshery" ? "selected" : ""}`}
+              className={`header_link ${
+                visibleSection === "Meshery" ? "selected" : ""
+              }`}
               onClick={() => {
                 scrollTo(mesheryRef.current);
               }}
@@ -188,7 +198,9 @@ const Brand = () => {
               <span>Meshery</span>
             </p>
             <p
-              className={`header_link ${visibleSection === "MeshSync" ? "selected" : ""}`}
+              className={`header_link ${
+                visibleSection === "MeshSync" ? "selected" : ""
+              }`}
               onClick={() => {
                 scrollTo(meshsyncRef.current);
               }}
@@ -196,7 +208,9 @@ const Brand = () => {
               <span>MeshSync</span>
             </p>
             <p
-              className={`header_link ${visibleSection === "MesheryOperator" ? "selected" : ""}`}
+              className={`header_link ${
+                visibleSection === "MesheryOperator" ? "selected" : ""
+              }`}
               onClick={() => {
                 scrollTo(mesheryOperatorRef.current);
               }}
@@ -204,7 +218,9 @@ const Brand = () => {
               <span>Meshery Operator</span>
             </p>
             <p
-              className={`header_link ${visibleSection === "ImageHub" ? "selected" : ""}`}
+              className={`header_link ${
+                visibleSection === "ImageHub" ? "selected" : ""
+              }`}
               onClick={() => {
                 scrollTo(imageHubRef.current);
               }}
@@ -212,7 +228,9 @@ const Brand = () => {
               <span>Image Hub</span>
             </p>
             <p
-              className={`header_link ${visibleSection === "SMP" ? "selected" : ""}`}
+              className={`header_link ${
+                visibleSection === "SMP" ? "selected" : ""
+              }`}
               onClick={() => {
                 scrollTo(smpRef.current);
               }}
@@ -220,7 +238,19 @@ const Brand = () => {
               <span>Service Mesh Performance</span>
             </p>
             <p
-              className={`header_link ${visibleSection === "MeshMate" ? "selected" : ""}`}
+              className={`header_link ${
+                visibleSection === "GetNightHawk" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(getnightHawkRef.current);
+              }}
+            >
+              <span> GetNightHawk </span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "MeshMate" ? "selected" : ""
+              }`}
               onClick={() => {
                 scrollTo(meshmateRef.current);
               }}

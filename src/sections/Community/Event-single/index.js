@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import {Link, graphql, useStaticQuery} from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
@@ -7,11 +7,49 @@ import PageHeader from "../../../reusecore/PageHeader";
 import EventPageWrapper from "./EventSingle.style";
 import Button from "../../../reusecore/Button";
 
+const checkSpeaker = (speaker) => {
+
+  let isSlugAvailable = false;
+
+  const validMembers = useStaticQuery(
+    graphql`
+              query eventValidMemberss{
+                  allMdx(
+                      filter:{ 
+                          fields:{ collection:{eq:"members"} }
+                      }
+                  ) {
+                      nodes {
+                          frontmatter {
+                              name
+                          }
+                      }
+                  }
+              }
+          `
+  );
+
+  isSlugAvailable = validMembers.allMdx.nodes.some(matter => matter.frontmatter.name == speaker);
+
+
+  return(
+    <>
+      {
+        isSlugAvailable ?
+          <Link to={`/community/members/${slugify(speaker)}`}>
+            <span>{speaker}</span>
+          </Link>
+          : <span>{speaker}</span>
+      }
+    </>
+  );
+};
+
 const EventSingle = ({ data }) => {
 
   //const frontmatter = ({speakers = []});
   const { frontmatter, body } = data.mdx;
-
+  
   return (
     <EventPageWrapper>
       <PageHeader
@@ -29,9 +67,7 @@ const EventSingle = ({ data }) => {
                 }
                 {frontmatter.speakers && frontmatter.speakers.map((speaker, id) => (
                   <li key={{ id }} className="speakers">
-                    <Link
-                      to={`/community/members/${slugify(speaker)}`}>{speaker}
-                    </Link>
+                    {checkSpeaker(speaker)}              
                   </li>
                 ))}
               </ul>
