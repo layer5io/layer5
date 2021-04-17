@@ -10,7 +10,7 @@ import RelatedPostsFactory from "./relatedPostsFactory";
 
 const RelatedPosts = props => {
   const data = useStaticQuery(
-    graphql`query relatedPosts {
+    graphql`query relatedPostsAndRelatedPosts {
   allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
     filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
