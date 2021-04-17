@@ -21,6 +21,7 @@ import cncf from "./images/cncf-white.svg";
 import Gnhwrapper from "./gnh.style";
 
 import { URL } from "../../Counters/index";
+import Counter from "../../../reusecore/Counter";
 
 const Projects = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
@@ -30,7 +31,7 @@ const Projects = () => {
       .then((response) => response.json())
       .then((result) => setPerformanceCount(result.total_runs));
   }, []);
-  
+
   return (
     <Gnhwrapper id="projects">
       <Container>
@@ -52,19 +53,19 @@ const Projects = () => {
         <div className="stats">
           <Row>
             <Col lg={3} md={3} sm={6}>
-              <h3>12</h3>
+              <h3><Counter duration={6} end={12} /></h3>
               <p>Histogram Statistics</p>
             </Col>
             <Col lg={3} md={3} sm={6}>
-              <h3>{performanceCount}</h3>
+              <h3><Counter duration={6} end={performanceCount} separator="," /></h3>
               <p>Meshery Tests</p>
             </Col>
             <Col lg={3} md={3} sm={6}>
-              <h3>2 modes</h3>
+              <h3><Counter duration={6} end={2} suffix=" modes" /></h3>
               <p>Closed and Open-loop</p>
             </Col>
             <Col lg={3} md={3} sm={6}>
-              <h3>9</h3>
+              <h3><Counter duration={6} end={9} /></h3>
               <p>Percentiles calculated</p>
             </Col>
           </Row>
