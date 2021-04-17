@@ -11,39 +11,34 @@ import RelatedPosts from "../../../components/Related-Posts";
 const NewsSingle = ({data}) => {
   const { frontmatter, body } = data.mdx;
   const newsData = useStaticQuery(
-    graphql`
-            query relatedNewsPosts{
-                allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC}
-                    filter: { 
-                        fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } }
-                    }
-                    limit:6
-                ) {
-                    nodes {
-                        frontmatter {
-                            title
-                            date(formatString: "MMM Do YYYY")
-                            author
-                            category
-                            tags
-                            thumbnail{
-                                childImageSharp{
-                                    fluid(maxWidth: 1000){
-                                        ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }         
-            }
-        `
+    graphql`query relatedNewsPosts {
+  allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
+    limit: 6
+  ) {
+    nodes {
+      frontmatter {
+        title
+        date(formatString: "MMM Do YYYY")
+        author
+        category
+        tags
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
   return (
     <NewsPageWrapper>
