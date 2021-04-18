@@ -20,43 +20,40 @@ const WorkshopsPage = () => {
   const [ID, setID] = useState("");
 
   const data = useStaticQuery(
-    graphql`
-            query allWorkshops {
-                allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
-                ) {
-                    nodes {
-                        id
-                        slug
-                        body
-                        frontmatter {
-                            title
-                            date(formatString: "MMMM Do, YYYY")
-                            slack
-                            slides
-                            abstract
-                            status
-                            labs
-                            video
-                            eurl
-                            thumbnail {
-                                childImageSharp {
-                                    fluid(maxWidth: 1000) {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                            extension
-                            publicURL
-                        }
-                    }
-                    fields {
-                        slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query allWorkshops {
+  allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+  ) {
+    nodes {
+      id
+      slug
+      body
+      frontmatter {
+        title
+        date(formatString: "MMMM Do, YYYY")
+        slack
+        slides
+        abstract
+        status
+        labs
+        video
+        eurl
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
 
   const toggleActive = (id) => {

@@ -13,38 +13,33 @@ import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsF
 const BlogSingle = ({data}) => {
   const { frontmatter, body, fields } = data.mdx;
   const blogData = useStaticQuery(
-    graphql`
-            query relatedPosts{
-                allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC}
-                    filter: { 
-                        fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } }
-                    }
-                ) {
-                    nodes {
-                        frontmatter {
-                            title
-                            date(formatString: "MMM Do YYYY")
-                            author
-                            category
-                            tags
-                            thumbnail{
-                                childImageSharp{
-                                    fluid(maxWidth: 1000){
-                                        ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }         
-            }
-        `
+    graphql`query relatedPosts {
+  allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      frontmatter {
+        title
+        date(formatString: "MMM Do YYYY")
+        author
+        category
+        tags
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
   
   const posts = blogData.allMdx.nodes;

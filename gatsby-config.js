@@ -193,6 +193,7 @@ module.exports = {
         name: "events",
       },
     },
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-transformer-sharp",

@@ -13,32 +13,29 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
-export const query = graphql`
-    query BlogsBySlug($slug: String!) {
-        mdx(fields: { slug: { eq: $slug } }) {
-            body
-            frontmatter {
-                title
-                subtitle
-                date(formatString: "MMMM Do, YYYY")
-                author
-                category
-                tags
-                thumbnail{
-                    childImageSharp{
-                        fluid(maxWidth: 500){
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                    extension
-                    publicURL
-                }
-            }
-            fields {
-                slug
-            }
+export const query = graphql`query BlogsBySlug($slug: String!) {
+  mdx(fields: {slug: {eq: $slug}}) {
+    body
+    frontmatter {
+      title
+      subtitle
+      date(formatString: "MMMM Do, YYYY")
+      author
+      category
+      tags
+      thumbnail {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
+        extension
+        publicURL
+      }
     }
+    fields {
+      slug
+    }
+  }
+}
 `;
 
 const BlogSinglePage = ({data}) => {

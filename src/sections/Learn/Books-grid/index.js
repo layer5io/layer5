@@ -8,35 +8,32 @@ import { BooksPageWrapper } from "./BooksGrid.style";
 
 const BooksPage = ({hide_path}) => {
   const data = useStaticQuery(
-    graphql`
-            query allBooks {
-                allMdx(
-                    filter: { fields: { collection: { eq: "service-mesh-books" } }, frontmatter: { published: { eq: true } } }
-                    sort: { fields: [frontmatter___date], order: ASC }
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            author
-                            abstract
-                            cover{
-                                childImageSharp{
-                                    fluid(maxWidth: 480, maxHeight: 600){
-                                        ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                            extension
-                            publicURL
-                        }
-                    }
-                    fields {
-                        slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query allBooks {
+  allMdx(
+    filter: {fields: {collection: {eq: "service-mesh-books"}}, frontmatter: {published: {eq: true}}}
+    sort: {fields: [frontmatter___date], order: ASC}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        author
+        abstract
+        cover {
+          childImageSharp {
+            gatsbyImageData(width: 480, height: 600, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
 
   let path = hide_path ? "" : "Books";
