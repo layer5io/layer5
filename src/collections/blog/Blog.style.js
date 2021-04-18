@@ -216,6 +216,14 @@ styles for meshmate-of-the-year-2020
   }
 
   .meshmate-img {
-    display: none;
+    width: 100%;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .meshmate-img {
+      width: 40%;
+      margin: auto;
+    }
   }
 `;
