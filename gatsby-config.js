@@ -193,6 +193,7 @@ module.exports = {
         name: "events",
       },
     },
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-transformer-sharp",
@@ -200,8 +201,6 @@ module.exports = {
         checkSupportedExtensions: false, // suppress warning about childImageSharp being null
       },
     },
-    "gatsby-plugin-image",
-    "gatsby-transformer-sharp", // Needed for dynamic images
     {
       resolve: "gatsby-plugin-manifest",
       options: {
