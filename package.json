@@ -34,7 +34,7 @@
     "eslint": "^7.23.0",
     "gatsby": "^3.2.1",
     "gatsby-awesome-pagination": "^0.3.8",
-    "gatsby-cli": "^3.2.0",
+    "gatsby-cli": "^3.3.0",
     "gatsby-plugin-anchor-links": "^1.1.0",
     "gatsby-plugin-feed-mdx": "^1.1.0",
     "gatsby-plugin-google-gtag": "^3.2.0",
@@ -75,7 +75,7 @@
     "react-visibility-sensor": "^5.1.1",
     "simple-react-lightbox": "^3.6.5",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.2.3",
+    "styled-components": "^4.4.1",
     "swiper": "^6.5.4"
   },
   "peerDependencies": {
