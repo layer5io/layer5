@@ -32,7 +32,7 @@ export const ProfileCardWrapper = styled.div`
             z-index: 1;
             overflow: hidden;
 
-            .gatsby-image-wrapper {
+            .gatsby-image-wrapper, .old-gatsby-image-wrapper {
                 display: block;
                 margin: auto;
                 border-radius: 100%;

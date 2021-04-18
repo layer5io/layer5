@@ -1,5 +1,5 @@
 setup-libs:
-	npm install
+	npm install --legacy-peer-deps
 
 site:
 	npm start

@@ -55,7 +55,7 @@ const SoSpecialWrapper = styled.div`
         height:70%;
         width:100%;
         overflow:hidden;
-          .gatsby-image-wrapper{
+          .gatsby-image-wrapper, .old-gatsby-image-wrapper{
               height:100%;
           }
           img{
