@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { Container } from "../../../reusecore/Layout";
 import Terminal from "../../../components/Terminal";
 import Features from "../../../components/Features-carousel";
+import img1 from "./feature-images/meshery-configuration-management.png";
+import img2 from "./feature-images/meshery-wasm.png";
+import img3 from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
+import img4 from "./feature-images/meshery-and-grafana.png";
+import img5 from "./feature-images/meshsync.svg";
+import img6 from "./feature-images/meshery-extensibility.svg";
 
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
@@ -36,7 +42,7 @@ const MesheryFeatures = () => {
               learnMoreLink: "/books/service-mesh-patterns",
               content: (
                 <img
-                  src={require("./feature-images/meshery-configuration-management.png")}
+                  src={img1}
                   alt="Operational Best Practices"
                 />
               ),
@@ -48,7 +54,7 @@ const MesheryFeatures = () => {
               learnMoreLink: "/projects/image-hub",
               content: (
                 <img
-                  src={require("./feature-images/meshery-wasm.png")}
+                  src={img2}
                   alt="Adaptive WebAssembly Filters for Envoy"
                 />
               ),
@@ -113,7 +119,7 @@ const MesheryFeatures = () => {
               content: (
                 <div className="feature-expose">
                   <img
-                    src={require("../../../assets/images/meshery-operator/meshery-operator-dark.svg")}
+                    src={img3}
                     alt="Kubernetes Operator for Meshery"
                   />
                   <p>Service meshes are dynamic. Changes to the service meshes and their workloads occur with great frequency. Meshery Operator helps Meshery stay in lockstep with these changes. Service mesh administrators might make updates to service mesh configuration directly with the service mesh. </p>
@@ -129,7 +135,7 @@ const MesheryFeatures = () => {
               content: (
                 <div className="feature-expose">
                   <img
-                    src={require("./feature-images/meshery-and-grafana.png")}
+                    src={img4}
                     alt="Prometheus and Grafana integration with Meshery"
                   />
                   <p>Key to the efficient operation of any service mesh is the measurement and management of it’s performance.</p>
@@ -206,7 +212,7 @@ const MesheryFeatures = () => {
               content: (
                 <div className="feature-expose">
                   <img
-                    src={require("./feature-images/meshsync.svg")}
+                    src={img5}
                     alt="Meshery, the extensible service mesh manager"
                   />
                   <p>
@@ -224,9 +230,9 @@ const MesheryFeatures = () => {
                 "Plug in different service meshes, load generators and providers.",
               content: (
                 <div className="feature-expose-full">
-                  <a href={require("./feature-images/meshery-extensibility.svg")}>
+                  <a href={img6}>
                     <img
-                      src={require("./feature-images/meshery-extensibility.svg")}
+                      src={img6}
                       alt="Meshery, the extensible service mesh manager"
                     /></a>
                   <p>

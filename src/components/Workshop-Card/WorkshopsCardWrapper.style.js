@@ -51,7 +51,7 @@ const WorkshopCardWrapper = styled.div`
     transition: all 0.25s ease-in;
     box-shadow: 0 0 black;
 
-    .gatsby-image-wrapper {
+    .gatsby-image-wrapper,.old-gatsby-image-wrapper {
       height: 90%;
     }
   }

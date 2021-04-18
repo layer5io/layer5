@@ -6,7 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const Image = ({ childImageSharp, extension, publicURL, alt, ...rest }) => {
   if (!childImageSharp && extension === "svg") {
     return (
-      <div className="gatsby-image-wrapper">
+      <div className="old-gatsby-image-wrapper">
         <img src={publicURL} alt={alt} />
       </div>
     );
