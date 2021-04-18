@@ -53,7 +53,7 @@ const Projects = () => {
         <div className="stats">
           <Row>
             <Col lg={3} md={3} sm={6}>
-              <h3><Counter duration={6} end={12} /></h3>
+              <h3><Counter duration={3} end={12} /></h3>
               <p>Histogram Statistics</p>
             </Col>
             <Col lg={3} md={3} sm={6}>
@@ -61,11 +61,11 @@ const Projects = () => {
               <p>Meshery Tests</p>
             </Col>
             <Col lg={3} md={3} sm={6}>
-              <h3><Counter duration={6} end={2} suffix=" modes" /></h3>
+              <h3><Counter duration={3} end={2} suffix=" modes" /></h3>
               <p>Closed and Open-loop</p>
             </Col>
             <Col lg={3} md={3} sm={6}>
-              <h3><Counter duration={6} end={9} /></h3>
+              <h3><Counter duration={3} end={9} /></h3>
               <p>Percentiles calculated</p>
             </Col>
           </Row>
