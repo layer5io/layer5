@@ -38,7 +38,7 @@
     "gatsby-plugin-anchor-links": "^1.1.0",
     "gatsby-plugin-feed-mdx": "^1.1.0",
     "gatsby-plugin-google-gtag": "^3.2.0",
-    "gatsby-plugin-image": "^1.2.1",
+    "gatsby-plugin-image": "^1.3.0",
     "gatsby-plugin-manifest": "^3.2.0",
     "gatsby-plugin-mdx": "^2.2.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
