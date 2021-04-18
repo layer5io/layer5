@@ -214,4 +214,8 @@ styles for meshmate-of-the-year-2020
       display: flex;
     }
   }
+
+  .meshmate-img {
+    display: none;
+  }
 `;
