@@ -4,6 +4,21 @@ import Hero from "../../../components/Animated-steps-list/hero";
 import AnimatedStepsList from "../../../components/Animated-steps-list";
 import MesheryWrapper from "../meshery.style";
 import { Link } from "gatsby";
+import Homebrew from "../Meshery-platforms/supported-icons/homebrew.svg";
+import Kubernetes from "../Meshery-platforms/supported-icons/kubernetes.svg";
+import KinD from "../Meshery-platforms/supported-icons/kind.svg";
+import Minikube from "../Meshery-platforms/supported-icons/minikube.svg";
+import EKS from "../Meshery-platforms/supported-icons/eks.svg";
+import Helm from "../Meshery-platforms/supported-icons/helm-icon-color.png";
+import WSL2 from "../Meshery-platforms/supported-icons/wsl2.svg";
+import GKE from "../Meshery-platforms/supported-icons/gke.svg";
+import Docker from "../Meshery-platforms/supported-icons/docker.svg";
+import OAM from "../../../assets/images/partners/oam.svg";
+import ImageHub from "../../../assets/images/image-hub/layer5-image-hub.svg";
+import SMP from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+
+
+
 
 
 const MesheryTerminal = () => {
@@ -40,10 +55,10 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes:
+                          Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes:
                   </p>
                   <p>
-                    With <code>mesheryctl</code>, not only you can manage your service meshes, but you can also manage their workloads, mesure their performance, verify conformance to service mesh standards. You can also apply patterns.
+                          With <code>mesheryctl</code>, not only you can manage your service meshes, but you can also manage their workloads, mesure their performance, verify conformance to service mesh standards. You can also apply patterns.
                   </p>
                   <p>
                     <code>mesheryctl</code> provides support for all of Meshery's features and many platforms.
@@ -52,39 +67,39 @@ const MesheryTerminal = () => {
               ),
               logos: [
                 {
-                  url: require("../Meshery-platforms/supported-icons/homebrew.svg"),
+                  url: Homebrew,
                   alt: "Homebrew",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/kubernetes.svg"),
+                  url: Kubernetes,
                   alt: "Kubernetes",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/kind.svg"),
+                  url: KinD,
                   alt: "KinD",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/minikube.svg"),
+                  url: Minikube,
                   alt: "Minikube",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/eks.svg"),
+                  url: EKS,
                   alt: "AWS Elastic Kuberentes Service",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/helm-icon-color.png"),
+                  url: Helm,
                   alt: "Meshery Helm Chart",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/wsl2.svg"),
+                  url: WSL2,
                   alt: "WSL2",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/gke.svg"),
+                  url: GKE,
                   alt: "GKE",
                 },
                 {
-                  url: require("../Meshery-platforms/supported-icons/docker.svg"),
+                  url: Docker,
                   alt: "Docker",
                 },
               ],
@@ -105,7 +120,7 @@ const MesheryTerminal = () => {
                   {
                     frames: 4,
                     code:
-                      "Archive:  /Users/layer5/meshery.zip",
+                            "Archive:  /Users/layer5/meshery.zip",
                     color: "gray",
                   },
                   {
@@ -286,49 +301,25 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery supports cloud native application patterns using a mesh-agnostic and application-holistic approach: patternfiles.
+                          Meshery supports cloud native application patterns using a mesh-agnostic and application-holistic approach: patternfiles.
                   </p>
                   <p>
-                    Patternfiles stems from multiple open needs, one of which is the desire to define a common practice of both configuring and operating service mesh functionality in a single, universal file.
+                          Patternfiles stems from multiple open needs, one of which is the desire to define a common practice of both configuring and operating service mesh functionality in a single, universal file.
                   </p>
                   <p>
-                    With a patternfile, you cancapture service mesh behavior in a single file. You can access service mesh-specific differentiation while keeping your patterns short and simple.
+                          With a patternfile, you cancapture service mesh behavior in a single file. You can access service mesh-specific differentiation while keeping your patterns short and simple.
                   </p>
                 </>
               ),
               logos: [
                 {
-                  url: require("../../../assets/images/partners/oam.svg"),
+                  url: OAM,
                   alt: "Open Application Model",
                 },
                 {
-                  url: require("../../../assets/images/image-hub/layer5-image-hub.svg"),
+                  url: ImageHub,
                   alt: "Image Hub",
-                },
-                // {
-                //     url: require('./img/step-logos/netlify.svg'),
-                //     alt: 'Netlify',
-                // },
-                // {
-                //     url: require('./img/step-logos/amazon-ecs.svg'),
-                //     alt: 'Amazon ECS',
-                // },
-                // {
-                //     url: require('./img/step-logos/azure-container-service.svg'),
-                //     alt: 'Azure Container Service',
-                // },
-                // {
-                //     url: require('./img/step-logos/docker.svg'),
-                //     alt: 'Docker',
-                // },
-                // {
-                //     url: require('./img/step-logos/cloud-run.svg'),
-                //     alt: 'Google Cloud Run',
-                // },
-                // {
-                //     url: require('./img/step-logos/and-more.svg'),
-                //     alt: 'and More',
-                // },
+                }
               ],
               terminal: {
                 frameLength: 100,
@@ -347,7 +338,7 @@ const MesheryTerminal = () => {
                   {
                     frames: 5,
                     code:
-                      "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
+                            "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
                   },
                   {
                     frames: 2,
@@ -407,14 +398,14 @@ const MesheryTerminal = () => {
                   {
                     frames: 2,
                     code:
-                      "\nYour cloud native application pattern deployment was successful!",
+                            "\nYour cloud native application pattern deployment was successful!",
                     color: "gray",
                   },
                   { code: "" },
                   {
                     frames: 1,
                     code:
-                      "\nDeployment URL: https://meshery.local/patterns",
+                            "\nDeployment URL: https://meshery.local/patterns",
                     color: "green",
                   },
                 ],
@@ -425,49 +416,21 @@ const MesheryTerminal = () => {
               description: (
                 <>
                   <p>
-                    Meshery provides service mesh and application performance measurement and management.
+                          Meshery provides service mesh and application performance measurement and management.
                   </p>
                   <p>
-                    Meshery natively supports the <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> (SMP) specification.
+                          Meshery natively supports the <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> (SMP) specification.
                   </p>
                   <p>
-                    Use performance test profiles to schedule and continuously verify your service mesh is performing in accordance with your SLOs.
+                          Use performance test profiles to schedule and continuously verify your service mesh is performing in accordance with your SLOs.
                   </p>
                 </>
               ),
               logos: [
                 {
-                  url: require("../../../assets/images/service-mesh-performance/icon/smp-dark.svg"),
-                  alt: "ÎService Mesh Performance",
-                },
-                // {
-                //     url: require('./img/step-logos/azure.svg'),
-                //     alt: 'Microsoft Azure',
-                // },
-                // {
-                //     url: require('./img/step-logos/gcp.svg'),
-                //     alt: 'Google Cloud Platform',
-                // },
-                // {
-                //     url: require('./img/step-logos/terraform.svg'),
-                //     alt: 'Terraform',
-                // },
-                // {
-                //     url: require('./img/step-logos/circleci.svg'),
-                //     alt: 'CircleCI',
-                // },
-                // {
-                //     url: require('./img/step-logos/slack.svg'),
-                //     alt: 'Slack',
-                // },
-                // {
-                //     url: require('./img/step-logos/github.svg'),
-                //     alt: 'Github',
-                // },
-                // {
-                //     url: require('./img/step-logos/and-more.svg'),
-                //     alt: 'and More',
-                // },
+                  url: SMP,
+                  alt: "Service Mesh Performance",
+                }
               ],
               terminal: {
                 frameLength: 100,
@@ -486,7 +449,7 @@ const MesheryTerminal = () => {
                   {
                     frames: 2,
                     code:
-                      "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
+                            "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
                   },
                   {
                     frames: 2,
@@ -554,4 +517,3 @@ const MesheryTerminal = () => {
 };
 
 export default MesheryTerminal;
-
