@@ -12,35 +12,32 @@ import Footer from "../../sections/General/Footer";
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
-export const query = graphql`
-    query allNews {
-        allMdx(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } } }
-        ) {
-            nodes {
-                id
-                frontmatter {
-                    title
-                    date(formatString: "MMMM Do, YYYY")
-                    author
-                    eurl
-                    thumbnail{
-                        childImageSharp{
-                            fluid(maxWidth: 1000){
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                        extension
-                        publicURL
-                    }
-                }
-                fields {
-                    slug
-                }
-            }
+export const query = graphql`query allNews {
+  allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        date(formatString: "MMMM Do, YYYY")
+        author
+        eurl
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
         }
+      }
+      fields {
+        slug
+      }
     }
+  }
+}
 `;
 
 const NewsGridPage = ({data}) => (

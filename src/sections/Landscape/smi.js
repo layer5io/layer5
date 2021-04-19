@@ -47,22 +47,22 @@ function SMI_Compatibility() {
       // Group by SMI-spec version
       .then(results => {
         let res = results.results.reduce( (reducedResults, currVal) => {
-          (reducedResults[currVal.more_details[0].smi_version.split('/')[0]]= reducedResults[currVal.more_details[0].smi_version.split('/')[0]] || []).push(currVal)
-          return reducedResults
-        }, {})
+          (reducedResults[currVal.more_details[0].smi_version.split("/")[0]]= reducedResults[currVal.more_details[0].smi_version.split("/")[0]] || []).push(currVal);
+          return reducedResults;
+        }, {});
 
-        return res
+        return res;
       })
       // Group by Mesh
       .then(result => {
-        let res = result
+        let res = result;
         Object.keys(result).map( key => {
           res[key] = result[key].reduce( (redArr, currVal) => {
-            (redArr[currVal["mesh_name"]] = redArr[currVal["mesh_name"]] || []).push(currVal)
-              return redArr
-            }, {})
-        })
-        return res
+            (redArr[currVal["mesh_name"]] = redArr[currVal["mesh_name"]] || []).push(currVal);
+            return redArr;
+          }, {});
+        });
+        return res;
       })
       // Find Latest test
       .then( result => {
@@ -70,29 +70,29 @@ function SMI_Compatibility() {
           Object.keys(result[version]).map( mesh => {
             result[version][mesh] = result[version][mesh].reduce((redObj, currVal) => {
               return redObj.created_at > currVal.created_at ? redObj : currVal;
-            })
-          })
-        })
-        return result
+            });
+          });
+        });
+        return result;
       })
       //Save
       .then(res => {
-        let data = {}
+        let data = {};
         Object.keys(res).map (ver => {
-          console.log(res[ver])
+          console.log(res[ver]);
           Object.keys(res[ver]).map(mesh => {
-            (data[ver] = data[ver] || []).push(res[ver][mesh])
-          })
-        })
+            (data[ver] = data[ver] || []).push(res[ver][mesh]);
+          });
+        });
 
-        setSmiData(data)
-        setSmiTests(Object.keys(data))
-      })
+        setSmiData(data);
+        setSmiTests(Object.keys(data));
+      });
     
   }, []);
 
   if(smiData==0) {
-    return (<div></div>)
+    return (<div></div>);
   }
 
   return (
@@ -100,17 +100,17 @@ function SMI_Compatibility() {
       <TabList>
         {
           Object.keys(smiData).map((ver, ind) => {
-            return <Tab  key={ver}>{ver}</Tab>
+            return <Tab  key={ver}>{ver}</Tab>;
           }
           )
         }
       </TabList>
       {
-      Object.keys(smiData).map(ver => 
-        <TabPanel key={ver}>
-          <Table columns={columns} data={smiData[ver]} spec={{"traffic-access":Object.values(smiData[ver])[0].more_details[0].smi_version, "traffic-split":Object.values(smiData[ver])[0].more_details[1].smi_version, "traffic-spec":Object.values(smiData[ver])[0].more_details[2].smi_version}} /> 
-        </TabPanel>
-      )}
+        Object.keys(smiData).map(ver => 
+          <TabPanel key={ver}>
+            <Table columns={columns} data={smiData[ver]} spec={{"traffic-access":Object.values(smiData[ver])[0].more_details[0].smi_version, "traffic-split":Object.values(smiData[ver])[0].more_details[1].smi_version, "traffic-spec":Object.values(smiData[ver])[0].more_details[2].smi_version}} /> 
+          </TabPanel>
+        )}
     </Tabs>
   );
 }

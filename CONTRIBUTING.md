@@ -2,7 +2,7 @@
 You want to contribute to Layer5's community and projects? Yay! We want you to! Visit https://layer5.io/community/newcomers for a list of resources available to help you get started. Contributions of all shapes and sizes are welcome (contributors, too)! Layer5 is community-built and warmly welcomes collaboration. Contributors are expected to adhere to our [Code of Conduct](.CODE_OF_CONDUCT.md).
 
 ## Layer5 Site
-The Layer5 website is hosted in this repository and is built using Gatsbyjs. See the [design document](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) for more information and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. 
+The Layer5 website is hosted in this repository and is built using Gatsbyjs. See the [design document](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) for more information and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel.
 
 When submitting a pull request a preview deployment will be built and made available to you on your PR.
 
@@ -10,7 +10,25 @@ When submitting a pull request a preview deployment will be built and made avail
 
 #### Community Member Profile ([create new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A))
 
-Layer5 community members are an integral part of what makes Layer5 and it's projects successful. Prominently highlighting our members and their works is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A), which has all the instructions needed. 
+Layer5 community members are an integral part of what makes Layer5 and it's projects successful. Prominently highlighting our members and their works is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A), which has all the instructions needed.
+
+#### Source code for Community Member Profiles
+
+When adding a new or updating an existing community member profile be sure to follow the existing template which can be found here [Community Member Profile template](https://github.com/layer5io/layer5/tree/master/src/collections/members/_member-profile-template). You can easily understand the template by checking out one of the profiles [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx)
+
+
+#### Badges for Community Members
+
+Badges offer recognition of the efforts and works of community members.  Badges are assigned to a community member in acknowledgement of their engagement within and/or contribution to the representative project or (sub-)community. A variety of badges exist so that community members and their efforts may be affiliated with a particular project or community initiative. An example of how a badge assigned using markdown can be found [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx), and it will be appear [this way](https://layer5.io/community/members/abishek-kumar) on a member profile.
+##### Possible badges include
+
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/community-green.svg" width="25px" height="25px"/> community
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/landscape-green.png" width="25px" height="25px"/> Landscape
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/layer5-image-hub.svg" width="25px" height="25px"/> Layer5
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark-text.svg" width="25px" height="25px"/> smp
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark.svg" width="25px" height="25px"/> smp
 
 #### <a name="updating-the-service-mesh-landscape">Updating the Service Mesh Landscape ([create new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D))
 
@@ -41,7 +59,6 @@ To update the Service Mesh Timeline, add the new service mesh in the [non-functi
 Before building the site, ensure that you have the following dependencies installed on your system.
 
 - [Nodejs and npm](https://nodejs.org/en/): To verify run `node -v` & `npm -v`
-- [gatsby cli](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli): e.g., `npm install -g gatsby-cli`
 
 ### Building the site
 
@@ -58,7 +75,7 @@ Please contribute! The Layer5 site uses Gatsby. The process of contributing to d
 1. Switch to the `master` branch.
 `git checkout master`
 1. Create and checkout a new branch to make changes within
-`git checkout -b <my-username>/<my-changes>` 
+`git checkout -b <my-username>/<my-changes>`
 1. Edit site/add content.
 `vi <specific page>.md` # or use your favorite IDE
 1. Run site locally to preview changes.
@@ -103,4 +120,3 @@ To ensure all your commits are signed, you may choose to add this alias to your 
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
 <a href="./.github/assets/images/git-signoff-vscode.png" ><img src="./.github/assets/images/git-signoff-vscode.png" width="50%"/><a>
-

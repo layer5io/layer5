@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/nightOwl";
 import styled from "styled-components";
@@ -40,8 +40,11 @@ const CopyCode = styled.button`
 `;
 
 const Code = ({ codeString, language }) => {
+  const [copyText, setCopyText] = useState("Copy");
   const handleClick = () => {
     copyToClipboard(codeString);
+    setCopyText("Copied!");
+    setTimeout(() => setCopyText("Copy"), 1000);
   };
   return (
     <Highlight
@@ -58,7 +61,7 @@ const Code = ({ codeString, language }) => {
         getTokenProps,
       }) => (
         <Pre>
-          <CopyCode onClick={handleClick}>Copy</CopyCode>
+          <CopyCode onClick={handleClick}>{copyText}</CopyCode>
           <Pre className={className} style={style}>
                         
             {tokens.map((line, i) => (

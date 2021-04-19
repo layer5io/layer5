@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
 
-const SEO = ({ description, lang, meta, title, image }) => {
+const SEO = ({ description, lang, meta, title, schemaMarkup, image }) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(
     graphql`
@@ -79,7 +79,10 @@ const SEO = ({ description, lang, meta, title, image }) => {
           content: metaImage,
         },
       ].concat(meta)}
-    />
+    >
+      {schemaMarkup &&
+        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>}
+    </Helmet>
   );
 };
 

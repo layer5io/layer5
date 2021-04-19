@@ -318,6 +318,7 @@ const NavigationWrap = styled.header`
       padding: 0 10px;
       visibility: hidden;
       opacity: 0;
+      transition: .3s;
     }
     .mobile-dropdown {
       position: relative;
@@ -346,11 +347,20 @@ const NavigationWrap = styled.header`
       display: inline-block;
       position: relative;
       cursor: pointer;
+      animation: open-icon 0.3s ease-in;
     }
     .mobile-menu-icon.open {
       animation: close-icon 0.3s ease-in;
     }
+    @keyframes open-icon {
+      from { opacity: 0; }
+      to { opacity: 1; }
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
     @keyframes close-icon {
+        from { opacity: 0; }
+        to { opacity: 1; }
         0% { transform: rotate(0deg); }
         100% { transform: rotate(180deg); }
     }
@@ -410,7 +420,7 @@ const NavigationWrap = styled.header`
     height: 160px;
     max-width: 100%;
     margin: 0 auto;
-    .gatsby-image-wrapper{
+    .gatsby-image-wrapper, .old-gatsby-image-wrapper{
         height:100%;
         transition: all 0.3s ease-in;
     }

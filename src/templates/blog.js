@@ -14,36 +14,33 @@ import theme from "../theme/app/themeStyles";
 import {graphql} from "gatsby";
 import BlogList from "../sections/Blog/Blog-list";
 
-export const query = graphql`
-    query allBlogs($skip: Int!, $limit: Int!) {
-        allMdx(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-            skip: $skip
-            limit: $limit
-        ) {
-            nodes {
-                id
-                frontmatter {
-                    title
-                    date(formatString: "MMM Do, YYYY")
-                    author
-                    thumbnail{
-                        childImageSharp{
-                            fluid(maxWidth: 1000){
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                        extension
-                        publicURL
-                    }
-                }
-                fields {
-                    slug
-                }
-            }
+export const query = graphql`query allBlogs($skip: Int!, $limit: Int!) {
+  allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+    skip: $skip
+    limit: $limit
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        date(formatString: "MMM Do, YYYY")
+        author
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
         }
+      }
+      fields {
+        slug
+      }
     }
+  }
+}
 `;
 
 const Blog = props => {

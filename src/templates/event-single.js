@@ -16,34 +16,30 @@ import theme from "../theme/app/themeStyles";
 
 import SEO from "../components/seo";
 
-export const query = graphql`
-      query EventsBySlug($slug: String!) {
-        mdx(fields: { slug: { eq: $slug } }) {
-                body
-                frontmatter {
-                    attribute{
-                        name
-                        url
-                    }
-                    eurl
-                    title
-                    topic
-                    speakers
-                    date(formatString: "MMM Do, YYYY")
-                    thumbnail {
-                        publicURL
-                        relativePath
-                        extension
-                        childImageSharp {
-                            fluid(maxWidth: 1000) {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
-                }
-            
+export const query = graphql`query EventsBySlug($slug: String!) {
+  mdx(fields: {slug: {eq: $slug}}) {
+    body
+    frontmatter {
+      attribute {
+        name
+        url
+      }
+      eurl
+      title
+      topic
+      speakers
+      date(formatString: "MMM Do, YYYY")
+      thumbnail {
+        publicURL
+        relativePath
+        extension
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
         }
+      }
     }
+  }
+}
 `;
 
 const EventSinglePage = ({data}) => {

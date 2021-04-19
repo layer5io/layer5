@@ -182,31 +182,28 @@ export const WorkshopsListWrapper = styled.div`
 
 const WorkshopsSection = () => {
   const data = useStaticQuery(
-    graphql`
-            query workshopsList {
-                allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
-                ) {
-                    nodes {
-                        frontmatter {
-                            thumbnail {
-                                childImageSharp {
-                                    fluid(maxWidth: 1000) {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                            extension
-                            publicURL
-                        }
-                    }
-                    fields {
-                        slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query workshopsList {
+  allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+  ) {
+    nodes {
+      frontmatter {
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
 
   var settings = {

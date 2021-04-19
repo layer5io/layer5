@@ -7,7 +7,7 @@ build:
 
 .PHONY: setup-libs
 setup-libs:
-	npm install
+	npm install --legacy-peer-deps
 
 .PHONY: site
 site:

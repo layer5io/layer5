@@ -6,6 +6,7 @@ const BlockquoteStyle = styled.div`
     display: flex;
     /* height: 100vh; */
     padding: 0 10px;
+    margin-bottom: 1rem;
     }
 
     /* Blockquote main style */

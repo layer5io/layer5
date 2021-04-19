@@ -8,38 +8,33 @@ import Image from "../../../components/image";
 
 const SoSpecial = () => {
   const data = useStaticQuery(
-    graphql`
-            query newsList {
-                allMdx(
-                    filter: { fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } } }
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    limit: 8
-                ) 
-                {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            author
-                            eurl
-                            thumbnail{
-                              childImageSharp{
-                                fluid(maxWidth: 1000){
-                                    ...GatsbyImageSharpFluid_withWebp
-                                }
-                              }
-                              extension
-                              publicURL
-                            }
-                            
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query newsList {
+  allMdx(
+    filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
+    sort: {fields: [frontmatter___date], order: DESC}
+    limit: 8
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        author
+        eurl
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
   const settings = {
     dots: false,
