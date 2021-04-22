@@ -1,5 +1,8 @@
 import styled from "styled-components";
 export const MeetTheMaintainer = styled.div`
+  div.intro {
+    word-spacing: 0.5rem;
+  }
   div.interviewer {
     margin-top: 1rem;
     text-align: left;
