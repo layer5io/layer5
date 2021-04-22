@@ -133,7 +133,7 @@ const MesheryFeatures = () => {
               description:
                 "",
               content: (
-                <div className="feature-expose">
+                <div className="feature-expose-full">
                   <img
                     src={img4}
                     alt="Prometheus and Grafana integration with Meshery"

@@ -48,6 +48,10 @@ const data = {
         {
           content: "Visualize your deployment with MeshMap",
           className: "--on"
+        },
+        {
+          content: "Apply well-known service mesh patterns",
+          className: "--on"
         }
       ],
       count: {

@@ -79,7 +79,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/careers/programs">
+                    <Link className="category-link" to="/careers/internships">
                       Programs
                     </Link>
                   </li>
