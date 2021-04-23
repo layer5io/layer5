@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CardWrapper = styled.div`
     .post-block{
+        position: relative;
         margin-bottom: 2rem;
         border-radius: 0.5rem;
         box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
@@ -51,7 +52,7 @@ export const CardWrapper = styled.div`
 
     .post-content-block{
         padding: 1rem 2rem;
-        height: 8rem;
+        height: 9rem;
     }
 
     @media screen and (max-width: 1200px) and (min-width: 992px){
@@ -105,16 +106,6 @@ export const CardWrapper = styled.div`
         justify-content: flex-start;
     }
 
-    .readmore-btn::after{
-        content: '';
-        position: absolute;
-        margin: 0 1rem 2rem;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-
     .readmore-btn, .external-link-btn{
        color: rgba(0,0,0,0.4);
        display: flex;
@@ -141,5 +132,22 @@ export const CardWrapper = styled.div`
                 transform: scale(1.25);
             }
         }
+    }
+
+    .readmore-btn::after,
+    .external-link-btn::after{
+        content: '';
+        margin: 0 1rem 2rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .readmore-btn::after {
+        z-index: 1;
+    }
+    .external-link-btn::after {
+        z-index: 2;
     }
 `;
