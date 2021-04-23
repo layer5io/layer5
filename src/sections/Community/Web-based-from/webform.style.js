@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Webform = styled.div`
   
-.timeline {
+  .timeline {
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -44,7 +44,12 @@ const Webform = styled.div`
     transition: all 200ms ease-in;
   }
 
-  .li.complete .status {
+  .li.active .status::before {
+    border-color: #00B39F;
+  }
+
+  .li.complete .status,
+  .li.active .status {
     border-top: 5px solid #00B39F;
   }
   .li.complete .status:before {
@@ -54,6 +59,14 @@ const Webform = styled.div`
   }
   .li.complete .status h4 {
     color: #66DC71;
+  }
+
+  .required-sign {
+    color: #8b0000;
+  }
+
+  .checkbox-label {
+    font-size: .8rem;
   }
   
   @media (min-device-width: 320px) and (max-device-width: 700px) {
@@ -86,6 +99,9 @@ const Webform = styled.div`
 
     .para {
         color: #777777;
+    }
+    .label {
+      font-size: 1rem;
     }
 
     .container-1 {
@@ -122,23 +138,21 @@ const Webform = styled.div`
 
         .form-name {
             font-weight: 600;
-            margin: 20px 0px 5px 0px;
+            margin: 20px 0px 5px 3px;
         }
 
         .text-field {
             width: 100%;
             border: 1px solid black;
-            border-radius: 15px;
-            height: 40px;
-            padding: 5px;
+            border-radius: 10px;
+            padding: 1rem .5rem;
         }
 
         .form-select {
             width: 150px;
             border: 1px solid black;
             border-radius: 15px;
-            height: 40px;
-            padding: 5px;
+            padding: 1rem .5rem;
         }
 
         .upload-field {
@@ -153,8 +167,7 @@ const Webform = styled.div`
           width: 20px;
           height: 20px;
           border-radius: 15px;
-          outline: 1px solid #828C8C !important;
-          margin: 0px 10px !important;
+          margin: 2px 10px !important;
         }
 
         .btn {
@@ -211,6 +224,7 @@ const Webform = styled.div`
         color: white;
         text-align: center;
         padding-top: 85px; 
+        transition: background 500ms cubic-bezier(.15,.86,1,.32);
     }
     .option:hover{
         background-color: #EBC017;
@@ -222,13 +236,12 @@ const Webform = styled.div`
       padding: 20px;
       min-height: 400px;
       margin: 3rem 13%;
-      border-radius: 50px;
       background-color: #1E2117;
 
       h2{
         padding-top: 60px;
         color: white;
-        font-size: 2.4em;
+        font-size: 2rem;
         font-weight: 700;
         text-align: center;
       }
