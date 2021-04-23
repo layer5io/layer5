@@ -291,7 +291,7 @@ const NavigationWrap = styled.header`
       margin-top: 7px;
     }
     &.scrolled {
-      padding: 8px 20px;
+      padding: 15px 20px;
     }
     ul.collapsed {
       display: none;
