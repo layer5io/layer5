@@ -9,6 +9,7 @@ import Button from "../../reusecore/Button";
 
 const Meetups = ({ data, pageContext }) => {
   const [active, setActive] = useState("all");
+  console.log("data: ", data);
 
   return(
     <MeetupStyle>
@@ -27,28 +28,28 @@ const Meetups = ({ data, pageContext }) => {
             {active == "all" ? data.allCategories.nodes.map(category => {
               return(
                 <Col xs={12} sm={6} lg={4} key={category.id}>
-                  <Card frontmatter={category.frontmatter} fields={false} />
+                  <Card frontmatter={category.frontmatter} fields={category.fields} />
                 </Col>
               );
             }) : <></> }
             {active == "events" ? data.allEvents.nodes.map(event => {
               return(
                 <Col xs={12} sm={6} lg={4} key={event.id}>
-                  <Card frontmatter={event.frontmatter} fields={false} />
+                  <Card frontmatter={event.frontmatter} fields={event.fields} />
                 </Col>
               );
             }) : <></>}
             {active == "workshops" ? data.allWorkshops.nodes.map(workshop => {
               return(
                 <Col xs={12} sm={6} lg={4} key={workshop.id}>
-                  <Card frontmatter={workshop.frontmatter} fields={false} />
+                  <Card frontmatter={workshop.frontmatter} fields={workshop.fields} />
                 </Col>
               );
             }) : <></>}
             {active == "meetups" ? data.allMeetups.nodes.map(meetup => {
               return(
                 <Col xs={12} sm={6} lg={4} key={meetup.id}>
-                  <Card frontmatter={meetup.frontmatter} fields={false} />
+                  <Card frontmatter={meetup.frontmatter} fields={meetup.fields} />
                 </Col>
               );
             }) : <></>}
