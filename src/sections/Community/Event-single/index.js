@@ -1,0 +1,94 @@
+import React from "react";
+import {Link, graphql, useStaticQuery} from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import slugify from "../../../utils/slugify";
+import { Container } from "../../../reusecore/Layout";
+import PageHeader from "../../../reusecore/PageHeader";
+import EventPageWrapper from "./EventSingle.style";
+import Button from "../../../reusecore/Button";
+
+const checkSpeaker = (speaker) => {
+
+  let isSlugAvailable = false;
+
+  const validMembers = useStaticQuery(
+    graphql`
+              query eventValidMemberss{
+                  allMdx(
+                      filter:{ 
+                          fields:{ collection:{eq:"members"} }
+                      }
+                  ) {
+                      nodes {
+                          frontmatter {
+                              name
+                          }
+                      }
+                  }
+              }
+          `
+  );
+
+  isSlugAvailable = validMembers.allMdx.nodes.some(matter => matter.frontmatter.name == speaker);
+
+
+  return(
+    <>
+      {
+        isSlugAvailable ?
+          <Link to={`/community/members/${slugify(speaker)}`}>
+            <span>{speaker}</span>
+          </Link>
+          : <span>{speaker}</span>
+      }
+    </>
+  );
+};
+
+const EventSingle = ({ data }) => {
+
+  //const frontmatter = ({speakers = []});
+  const { frontmatter, body } = data.mdx;
+  
+  return (
+    <EventPageWrapper>
+      <PageHeader
+        title={frontmatter.title}
+        thumbnail={frontmatter.thumbnail}
+      />
+      <div className="single-event-wrapper">
+        <Container>
+          <div className="event-info-block">
+            <div className="tags">
+              <MDXRenderer>{body}</MDXRenderer>
+              <ul className="speakers">
+                {
+                  frontmatter.speakers && frontmatter.speakers ? "Speakers:" : ""
+                }
+                {frontmatter.speakers && frontmatter.speakers.map((speaker, id) => (
+                  <li key={{ id }} className="speakers">
+                    {checkSpeaker(speaker)}              
+                  </li>
+                ))}
+              </ul>
+              <div className="event-title">
+                <Button primary url={frontmatter.eurl}>
+                  <h3>
+                    Join us at {frontmatter.title}
+                  </h3>
+                </Button>
+              </div>
+            </div>
+            {/* <RelatedPosts
+            category={frontmatter.category}
+            tags={frontmatter.tags}
+            currentPostSlug={fields.slug}
+          /> */}
+          </div>
+        </Container>
+      </div>
+    </EventPageWrapper>
+  );
+};
+
+export default EventSingle;

@@ -1,5 +1,5 @@
 ---
-name: Bug/issue report
+name: 🐛 Bug Report
 about: Report an issue to help us improve
 title: ''
 labels: 'kind/bug'
@@ -15,15 +15,14 @@ assignees: ''
 <!-- Add screenshots, if applicable, to help explain your problem. -->
 
 **Enviroment:**
- - OS: [e.g. Ubuntu]
- - Browser: [e.g. Chrome, Safari]
- - Version: [e.g. 22]
- - Device: [e.g. laptop, iPhone 8]
+- Host OS: 
+- Meshery Version: 
+- Kubernetes Version: 
+- Browser: 
 
 ---
 
 [Optional] **To Reproduce**
-
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
@@ -35,10 +34,7 @@ Steps to reproduce the behavior:
 
 ---
 **Contributor Resources**
-The `layer5` repo contains two websites. The current generation and the next-generation of the layer5.io site.
 
-If the `layer5-ng` label is absent on this issue, then this issue pertains to the current generation of the layer5.io website, which uses Jekyll and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).
-- See [`layer5` contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
-
-If the `layer5-ng` label is present on this issue, then this issue pertains to the next-generation of the layer5.io website, which uses Gatsby, Strapi, and GitHub Pages. Site content is found under the [`layer5-ng` branch](https://github.com/layer5io/layer5/tree/layer5-ng).
-- See [`layer5-ng` contributing instructions](https://github.com/layer5io/layer5/blob/layer5-ng/CONTRIBUTING.md)
+The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).
+- See [contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
+- See Layer5 site designs in this [Figma project](https://www.figma.com/file/5ZwEkSJwUPitURD59YHMEN/Layer5-Designs).
