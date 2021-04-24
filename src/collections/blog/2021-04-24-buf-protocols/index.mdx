@@ -1,0 +1,96 @@
+---
+title: "Buf - Rethinking Protocol Buffers"
+subtitle: "Buf makes Protocol Buffer APIs easy to create, maintain, and consume"
+date: 2021-04-24 22:19:00 +0530
+author: Dev Kalra
+thumbnail: ./buf-protocol.png
+category: Landscape
+tags:
+ - Meshery
+ - Landscape
+ - Community
+published: true
+---
+
+import { BlogWrapper } from "../Blog.style.js";
+import { BufProtocol } from "./BufProtocol.style";
+import { Link } from "gatsby";
+import Problems from "./problems.png";
+
+<BlogWrapper>
+<BufProtocol>
+
+## What is Buf?
+A tool to make Protobuf reliable and easy to use for service owners and clients, while keeping it the obvious choice on the technical merits.
+Our organization should not have to reinvent the wheel to create, maintain, and consume Protobuf APIs efficiently and effectively. It will handle our Protobuf management strategy for us, so we can focus on what matters.
+
+<div class="fact">Buf makes Protocol Buffer APIs easy to create, maintain, and consume</div>
+
+<div class="intro" style="text-align:center;margin: 2rem 4rem;"><p>To know more about Buf Protocol, visit <Link to="https://buf.build/">Buf Protocol</Link> or their documentation at <Link to="https://docs.buf.build/">Buf Protocol Docs</Link></p></div>
+
+<img style="display: inline; float: right; max-width:300px; width:80%; padding: 1.25rem;" src={Problems} />
+
+## Features 
+- Automatic file discovery. Click [Here](https://docs.buf.build/lint-overview/) to know more.
+- Selectable configuration - 40 lint checkers and 54 breaking checkers
+- Selectable error output - `file:line:col:message`
+- Check anything from anywhere - proto files, tar, git, pre-built images or file descriptors.
+- [Speed](https://docs.buf.build/tour-8/) - Its internal compiler is super fast (approx. 4x then Protoc)
+- Can use buf as a protoc plugin instead of using it as a standalone tool.
+
+<br />
+
+<div class="fact-left">Simplify your Protocol Buffers workflow</div>
+
+<br />
+
+## Buf CLI
+
+- Buf CLI tools and protoc plugins are released
+- Currently it provides.
+    - A linter that enforces good API design choices and structure.
+    - A breaking change detector that enforces compatibility at the source code level or wire level.
+    - A generator that invokes your protoc plugins based on a configurable template. A protoc replacement that uses Buf's newly-developed high performance Protobuf compiler.
+    - A configurable file builder that produces Images, our extension of FileDescriptorSets.
+
+<div class="intro" style="text-align:center;margin: 2rem 4rem;"><p>To know more about this, visit <Link to="https://docs.buf.build/#the-buf-cli">Buf CLI</Link></p></div>
+
+## Comparison Between Protobuf and Buf
+
+- Protobuf is not as widely adopted as JSON.
+- API Structure 
+    - No standards enforcement
+    - Inconsistency can arise across an organization's Protobuf APIs,   
+    - Design decisions can be made that can affect your API's future iterability.
+- Backward Compatibility
+- Stub distribution
+- Tooling
+
+<div class="fact-center">Buf aims to solve the above problems and it's long-term goal is to enable schema-driven development: A future where APIs are defined consistently, in a way that service owners and us can depend on</div>
+
+<br />
+
+## Roadmap to Adopting Buf
+
+<br />
+
+#### Phase 1
+
+- **API Structure  Enforcements**
+    - Linter solves this issue by enforcing standards. 
+    - Also, we don’t need to use Buf as a standalone tool we can just use linter as plugins.
+
+<br />
+
+- **Backward Compatibility**
+    - It will check for different things that can cause breaking change.
+    - For example, type change.
+
+#### Phase 2
+
+
+
+<div class="intro"><p>P.S. If these topics excite you and you want to explore the beautiful realm of service meshes, come and say "Hi" on the community <Link to="http://slack.layer5.io">Slack</Link> and you are sure to be warmly welcomed. <span>😀</span></p></div>
+
+</BufProtocol>
+</BlogWrapper>
