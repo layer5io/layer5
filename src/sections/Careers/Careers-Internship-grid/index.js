@@ -8,6 +8,8 @@ import InternshipSectionWrapper from "./InternshipPage.style";
 import ProgramsGrid from "../Careers-Programs-grid/index";
 import UEM_Img from "../../../assets/images/partners/uem_partner.png";
 import Univ_Texas_Img from "../../../assets/images/partners/texas_partner.png";
+import Peek_Img from "../../../assets/images/layer5/layer5-peek-cards.svg";
+
 
 const InternshipPage = ({ hide_heading }) => {
   const opportunities = useStaticQuery(
@@ -65,6 +67,9 @@ const InternshipPage = ({ hide_heading }) => {
     <Col className="opportunity-col">
       <Link to={fields.slug}>
         <div className="opportunity-card">
+          <div className="peek-card">
+            <img src={Peek_Img} alt="Peek card effect" />
+          </div>
           <h3>{frontmatter.title}</h3>
           <p>{frontmatter.abstract}</p>
         </div>

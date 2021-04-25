@@ -48,6 +48,8 @@ const InternshipSectionWrapper = styled.div`
         border-bottom: 5px solid ${props => props.theme.secondaryColor};
         transition: all 0.2s;
         transition-timing-function: ease-in-out;
+        position: relative;
+
         h3{ 
             font-weight: 500;
         }
@@ -55,8 +57,27 @@ const InternshipSectionWrapper = styled.div`
             margin: 0.5rem 0;
             color: rgba(0, 0, 0, 0.8);
         }
+        .peek-card {
+            position: absolute;
+            height: inherit;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+      
+            img {
+              height: inherit;
+            }
+          }
         &:hover{
             box-shadow: 0px 4px 20px 2px ${props => props.theme.shadowLightColor};
+            .peek-card {
+                visibility: visible;
+                opacity: 1;
+                transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+              }
         }
     }
 
