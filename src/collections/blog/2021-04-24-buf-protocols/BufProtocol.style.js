@@ -49,6 +49,22 @@ export const BufProtocol = styled.div`
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+    .problem-image {
+        display: inline;
+        float: right;
+        max-width:300px;
+        width:80%; 
+        padding: 1.25rem;
+    }
+
+    var mediaQuery = window.matchMedia('(min-width: 768px)');
+    if(mediaQuery.matches) {
+        .problem-image {
+            display: flex !important;
+            margin: auto !important;
+            float: none;
+        }
+    }
     
     div.note {
         margin: 1rem;
