@@ -35,20 +35,10 @@ const Footer = () => {
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
                   <Link className="title-link" to="/learn">
-                      RESOURCES
+                    RESOURCES
                   </Link>
                 </h3>
                 <ul className="section-categories">
-                  <li>
-                    <Link className="category-link" to="/service-mesh-landscape#service-mesh-comaprison-matrix">
-                      Service Mesh Feature Comparison
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="category-link" to="/service-mesh-landscape#service-mesh-comparison-strength">
-                      Service Mesh Strength Comparison
-                    </Link>
-                  </li>
                   <li>
                     <Link className="category-link" to="/learn/service-mesh-books">
                       Service Mesh Books
@@ -57,6 +47,16 @@ const Footer = () => {
                   <li>
                     <Link className="category-link" to="/learn/service-mesh-workshops">
                       Service Mesh Workshops
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/service-mesh-landscape#service-mesh-comaprison-matrix">
+                      Service Mesh Feature Comparison
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/service-mesh-landscape#service-mesh-comparison-strength">
+                      Service Mesh Strength Comparison
                     </Link>
                   </li>
                 </ul>
@@ -83,6 +83,11 @@ const Footer = () => {
                       Programs
                     </Link>
                   </li>
+                  <li>
+                    <Link className="category-link" to="/company/faq">
+                      FAQs
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="footer-sections odd-col">
@@ -98,13 +103,18 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/service-mesh-landscape">
-                      Service Mesh Landscape
+                    <Link className="category-link" to="/projects/getnighthawk">
+                      GetNighthawk
                     </Link>
                   </li>
                   <li>
                     <Link className="category-link" to="/projects/service-mesh-interface-conformance">
                       Service Mesh Interface
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/service-mesh-landscape">
+                      Service Mesh Landscape
                     </Link>
                   </li>
                   <li>
@@ -146,11 +156,6 @@ const Footer = () => {
                       Contact
                     </Link>
                   </li>
-                  <li>
-                    <Link className="category-link" to="/company/faq">
-                      FAQs
-                    </Link>
-                  </li>
                 </ul>
               </div>
             </Row>
@@ -174,12 +179,12 @@ const Footer = () => {
             </p>
             <ul className="policies">
               <li>
-                <a href="https://meshery.layer5.io/privacy-policy.html" target="_blank" rel="noreferrer">
+                <a href="/company/legal/privacy" target="_blank" rel="noreferrer">
                   Privacy
                 </a>
               </li>
               <li>
-                <a href="https://meshery.layer5.io/terms-of-service.html" target="_blank" rel="noreferrer">
+                <a href="company/legal/terms-of-service" target="_blank" rel="noreferrer">
                   Terms
                 </a>
               </li>
