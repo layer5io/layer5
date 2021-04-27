@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../../../reusecore/Button";
 import { HeroWrapper } from "./hero.style";
 import Code from "../../../components/CodeBlock";
-import dedent from "dedent";
 
 
 const Hero = ({ title, initialdescription, enddescription, subtitle, links, code }) => {
