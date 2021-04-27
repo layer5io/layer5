@@ -9,7 +9,6 @@ import Button from "../../reusecore/Button";
 
 const Meetups = ({ data, pageContext }) => {
   const [active, setActive] = useState("all");
-  console.log("data: ", data);
 
   return(
     <MeetupStyle>
