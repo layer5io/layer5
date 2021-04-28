@@ -40,19 +40,19 @@ const Conduct = () => {
             <div leftAlign={true} className="conduct_heading">
               <h2>Children Under Thirteen</h2>
             </div>
-            <h5 class="black-text"></h5>
+            <h5 className="black-text"></h5>
 Layer5 does not knowingly collect, either online or offline, personal information from persons under the age of thirteen. If you are under 18, you may use meshery.layer5.io only with permission of a parent or guardian.
-</Col>
+          </Col>
         </Row>
         <Row>
           <Col xs={12} sm={12} lg={12}>
             <div leftAlign={true} className="conduct_heading">
               <h2>No Unlawful or Prohibited Use/Intellectual Property</h2>
             </div>
-            <h5 class="black-text">Links to Third Party Sites/Third Party Services</h5>
+            <h5 className="black-text">Links to Third Party Sites/Third Party Services</h5>
 meshery.layer5.io may contain links to other websites ("Linked Sites"). The Linked Sites are not under the control of Layer5 and Layer5 is not responsible for the contents of any Linked Site, including without limitation any link contained in a Linked Site, or any changes or updates to a Linked Site. Layer5 is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement by Layer5 of the site or any association with its operators.
 
-<p>Certain services made available via meshery.layer5.io are delivered by third party sites and organizations. By using any product, service or functionality originating from the meshery.layer5.io domain, you hereby acknowledge and consent that Layer5 may share such information and data with any third party with whom Layer5 has a contractual relationship to provide the requested product, service or functionality on behalf of meshery.layer5.io users and customers.</p>
+            <p>Certain services made available via meshery.layer5.io are delivered by third party sites and organizations. By using any product, service or functionality originating from the meshery.layer5.io domain, you hereby acknowledge and consent that Layer5 may share such information and data with any third party with whom Layer5 has a contractual relationship to provide the requested product, service or functionality on behalf of meshery.layer5.io users and customers.</p>
           </Col>
         </Row>
         <Row>
@@ -77,7 +77,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
             </div>
             <p>
               The Service is controlled, operated and administered by Layer5 from our offices within the USA. If you access the Service from a location outside the USA, you are responsible for compliance with all local laws. You agree that you will not use the Layer5 Content accessed through meshery.layer5.io in any country or in any manner prohibited by any applicable laws, restrictions or regulations.
-              </p>
+            </p>
           </Col>
         </Row>
         <Row>
@@ -87,7 +87,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
             </div>
             <p>
               You agree to indemnify, defend and hold harmless Layer5, its officers, directors, employees, agents and third parties, for any losses, costs, liabilities and expenses (including reasonable attorney's fees) relating to or arising out of your use of or inability to use the Site or services, any user postings made by you, your violation of any terms of this Agreement or your violation of any rights of a third party, or your violation of any applicable laws, rules or regulations. Layer5 reserves the right, at its own cost, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, in which event you will fully cooperate with Layer5 in asserting any available defenses.
-          </p>
+            </p>
           </Col>
         </Row>
         <Row>
@@ -140,7 +140,7 @@ meshery.layer5.io may contain links to other websites ("Linked Sites"). The Link
               <h2>Contact Us</h2>
             </div>
             <p>Layer5 welcomes your questions or comments regarding the Terms:</p>
-            <p class="address">
+            <p className="address">
               Layer5, Inc<br />
               1000 Congress Avenue<br />
               Austin, Texas 78735<br />
