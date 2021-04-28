@@ -91,7 +91,7 @@ const WebBasedForm = () => {
       <Container>
         <h2 className="title">New Community Member</h2>
         <p className="para">Hi! Welcome to the Layer5 community. As you get oriented with the community and its projects, will you consider filling in this form? It helps us get familiarized with you and you with the ongoing projects and community. There is much to learn around the technologies at-hand. We'll look to get you acclimated and engaged around your areas of interest and passion. </p>
-        <form className="form">
+        <form className="form" method="post">
           <p className="form-name">Email Address <span className="required-sign">*</span></p>
           <input type="text" className="text-field" name="email" required></input>
           <p className="form-name">First Name <span className="required-sign">*</span></p>
@@ -141,6 +141,12 @@ const WebBasedForm = () => {
                     I'm here as a Standerby
           </div>
         </div>
+        <br /><br />
+        <div className="btn-wrapper">
+          <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
+          <Button secondary onClick={nextStep} className="btn-next" title="Next Step" />
+        </div>
+        <br /><br />
       </Container>
     );
   };
@@ -163,14 +169,14 @@ const WebBasedForm = () => {
               onChange={() => setCheckMesh(!checkMesh)}
               className="form-check"
             />
-            <span className="checkbox-label">Ok</span>
+            <span>Ok</span>
           </label>
-          <br/><br/>
+          <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
-            <Button secondary onClick={nextStep} className="btn-next" title="Next Step" /> 
+            <Button secondary onClick={nextStep} className="btn-next" title="Next Step" />
           </div>
-          <br/><br/>
+          <br /><br />
         </div>
       </Container>
     );
@@ -526,7 +532,7 @@ const WebBasedForm = () => {
               onChange={() => setChecked4(!checked4[0])}
               className="form-check"
             />
-            <span className="checkbox-label">Ok</span>
+            <span>Ok</span>
           </label>
           <p className="form-name">I see works of other contributors being highlighted in the Layer5, Meshery, and SMP Twitter feeds, the Meshery and SMP showcases, and in the Layer5 YouTube channel.</p>
           <p className="para label">We try to elevate the works of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Be sure to follow and engage with these Twitter accounts, YouTube, and LinkedIn accounts.</p>
@@ -536,7 +542,7 @@ const WebBasedForm = () => {
               onChange={() => setChecked4(!checked4[1])}
               className="form-check"
             />
-            <span className="checkbox-label">Ok</span>
+            <span>Ok</span>
           </label>
           <p className="form-name">Are community contributors paid? Are internships paid? What do I get in return?</p>
           <p className="para label">With few exceptions, generally community contributors and interns are not paid. Those that participate through Google Summer of Code, CommunityBridge, or Google Season of Docs do receive a stipend at the culmination of their internship. The largest return on time invested in the community for any contributor is the knowledge, relationships, recognition, and experience gained throughout their engagement. Their participation affords them an opportunity to work with world-class engineers, gives focus and purpose to their learning efforts on technologies they otherwise may not understand, and exposes their work broadly to the Cloud Native community.Letters of recommendation, mentorship and coaching, introduction to engineers at globally-recognized technology companies, potential contract or full-time work at Layer5, public writing and speaking opportunities are all examples of benefits those that participate can receive for their time spent.</p>
@@ -546,7 +552,7 @@ const WebBasedForm = () => {
               onChange={() => setChecked4(!checked4[2])}
               className="form-check"
             />
-            <span className="checkbox-label">Ok</span>
+            <span>Ok</span>
           </label>
           <p className="form-name">I see other contributors have affiliated themselves with Layer5 on LinkedIn. Am I encouraged to do the same?</p>
           <p className="para label">Yes! We welcome you to affiliate with the community and projects. We consider this affiliation helpful in boosting your profile and resume in context of job searches and overall in general. Be sure to update your profile, and be social about your activities. We love to highlight our members!</p>
@@ -556,7 +562,7 @@ const WebBasedForm = () => {
               onChange={() => setChecked4(!checked4[3])}
               className="form-check"
             />
-            <span className="checkbox-label">Ok</span>
+            <span>Ok</span>
           </label>
           <br/><br/>
           <div className="btn-wrapper">
@@ -576,9 +582,9 @@ const WebBasedForm = () => {
           <h2>
               Welcome to the Layer5 Community! Additional community resources are on their way.
           </h2>
-          <p>We are pleased to have you as a new member</p>
+          <p>We are pleased to have you as a new member!</p>
           <div className="btn-box">
-            <Button primary className="btn-one" type="button" title="Join Slack Community" url="http://slack.layer5.io/" external={true}/>
+            <Button primary className="btn-one" type="button" title="Community Handbook" url="https://docs.google.com/document/d/1pj1gQgiepQ_3UyRnE9ag6qQraAGn5bksJd7b4D3SXFE/edit?usp=sharing" external={true}/>
             <Button secondary className="btn-two" type="button" title="Check The Docs" url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"/>
           </div>
         </div>

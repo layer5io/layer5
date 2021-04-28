@@ -69,26 +69,19 @@ const Webform = styled.div`
     font-size: .8rem;
   }
   
-  @media (min-device-width: 320px) and (max-device-width: 700px) {
-    .timeline {
-      list-style-type: none;
-      display: block;
+  @media (min-width: 320px) and (max-width: 700px) {
+    .status {
+      border-top: 3px solid #EFEFEF;
+      padding: 0px 25px;
     }
-  
-    .li {
-      transition: all 200ms ease-in;
-      display: flex;
-      width: inherit;
-    }
-  
-    .timestamp {
-      width: 100px;
-    }
-  
     .status:before {
-      left: -8%;
-      top: 30%;
-      transition: all 200ms ease-in;
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      border: 3px solid #EFEFEF;
+      top: -12px;
+      left: -10%
     }
   }
 
@@ -146,12 +139,13 @@ const Webform = styled.div`
             border: 1px solid black;
             border-radius: 10px;
             padding: 1rem .5rem;
+            font-size: 1rem;
         }
 
         .form-select {
             width: 150px;
             border: 1px solid black;
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 1rem .5rem;
         }
 
@@ -175,35 +169,35 @@ const Webform = styled.div`
           margin: 20px 0;
         }
 
-        .btn-wrapper {
-          float: right;
-          width: 350px;
+      }
+      .btn-wrapper {
+        float: right;
+        width: 350px;
 
-          .btn-next {
-            float: left;
-          }
+        .btn-next {
+          float: left;
+        }
 
-          .btn-prev {
-            background-color: white; 
-            border: none;
-            color: #828C8C;
-            float: left;
-            padding: 12px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 0 5px;
+        button.btn-prev {
+          background-color: white; 
+          border: none;
+          color: #828C8C;
+          float: left;
+          padding: 12px 15px;
+          font-size: 16px;
+          cursor: pointer;
+          margin: 0 5px;
 
-            .back {
-              font-size: 20px;
-            }
-          }
-
-          .btn-prev:hover {
-            transition: all 200ms ease-in;
-            color: #00B39F;
+          .back {
+            font-size: 20px;
           }
         }
-    }
+
+        .btn-prev:hover {
+          transition: all 200ms ease-in;
+          color: #00B39F;
+        }
+      }
 
     .center {
         display: flex;
@@ -224,7 +218,7 @@ const Webform = styled.div`
         color: white;
         text-align: center;
         padding-top: 85px; 
-        transition: background 500ms cubic-bezier(.15,.86,1,.32);
+        transition: background 200ms ease-in;
     }
     .option:hover{
         background-color: #EBC017;
@@ -253,7 +247,7 @@ const Webform = styled.div`
       }
 
       .btn-box {
-        width: 50%;
+        width: 55%;
         margin: auto;
 
         .btn-one {
