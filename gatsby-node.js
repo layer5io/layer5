@@ -9,6 +9,8 @@
 const path = require("path");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
+const { createFilePath } = require("gatsby-source-filesystem");
+const config = require("./gatsby-config");
 
 // Replacing '/' would result in empty string which is invalid
 const replacePath = path => (path === "/" ? path : path.replace(/\/$/, ""));
@@ -165,6 +167,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes{
           fields{
             slug
+            collection
+          }
+        }
+      }
+      learncontent: allMdx(
+        filter: {fields: {collection: {eq: "content-learn"}}}
+      ){
+        nodes{
+          fields{
+            guide
+            slug
+            framework
+            language
+            chapter
+            pageType
             collection
           }
         }
@@ -358,6 +375,79 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  const learnNodes = res.data.learncontent.nodes;
+
+  learnNodes.forEach((node) => {
+    if (node.fields){
+      const { pageType, slug } = node.fields;
+
+      if (pageType === "chapter") {
+        createChapterPage({ createPage, node });
+        return;
+      }
+
+      if (pageType === "guide") {
+        createGuidePage({ createPage, node });
+        return;
+      }
+
+      throw new Error(`Unexpected pageType !== 'chapter' || !== 'guide': ${slug}`);
+    }
+  });
+};
+
+const defaultLanguage = "en";
+const defaultFramework = "react";
+
+// slug starts and ends with '/' so parts[0] and parts[-1] will be empty
+const getSlugParts = slug => slug.split("/").filter(p => !!p);
+
+const onCreateGuideNode = ({ actions, node, slug }) => {
+  const { createNodeField } = actions;
+  const parts = getSlugParts(slug);
+  const [guide] = parts;
+
+  createNodeField({ node, name: "guide", value: guide });
+  createNodeField({ node, name: "slug", value: slug });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name: "pageType", value: "guide" });
+};
+
+const onCreateNonFrameworkChapterNode = ({ actions, node, slug }) => {
+  const { createNodeField } = actions;
+  const parts = getSlugParts(slug);
+  const [guide, language, chapter] = parts;
+
+  createNodeField({ node, name: "guide", value: guide });
+  createNodeField({ node, name: "slug", value: slug });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name: "language", value: language });
+  createNodeField({ node, name: "chapter", value: chapter });
+  createNodeField({ node, name: "pageType", value: "chapter" });
+  createNodeField({ node, name: "isDefaultTranslation", value: language === defaultLanguage });
+};
+
+const onCreateFrameworkChapterNode = ({ actions, node, slug }) => {
+  const { createNodeField } = actions;
+  const parts = getSlugParts(slug);
+  const [guide, framework, language, chapter] = parts;
+
+  createNodeField({ node, name: "guide", value: guide });
+  createNodeField({ node, name: "slug", value: slug });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name: "framework", value: framework });
+  createNodeField({ node, name: "language", value: language });
+  createNodeField({ node, name: "chapter", value: chapter });
+  createNodeField({ node, name: "pageType", value: "chapter" });
+  createNodeField({
+    node,
+    name: "isDefaultTranslation",
+    value: language === defaultLanguage && framework === defaultFramework,
+  });
+
+  // Code for live fetch of code from github using commit-id, check storybook's gatsby-node.js file
+
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -369,40 +459,114 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value: collection
     });
-    let slug = "";
-    if (node.frontmatter.permalink) {
-      slug = `/${collection}/${node.frontmatter.permalink}`;
-    } else {
-      switch (collection) {
-        case "blog":
-          slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
-          break;
-        case "news":
-          slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
-          break;
-        case "service-mesh-books":
-        case "service-mesh-workshops":
-        case "service-mesh-labs":
-          slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
-          break;
-        case "members":
-          if (node.frontmatter.published)
-            slug = `/community/members/${slugify(node.frontmatter.name)}`;
-          break;
-        case "events":
-          if (node.frontmatter.title)
-            slug = `/community/events/${slugify(node.frontmatter.title)}`;
-          break;
-        default:
-          slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+    if(collection !== "content-learn"){
+      let slug = "";
+      if (node.frontmatter.permalink) {
+        slug = `/${collection}/${node.frontmatter.permalink}`;
+      } else {
+        switch (collection) {
+          case "blog":
+            slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
+            break;
+          case "news":
+            slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
+            break;
+          case "service-mesh-books":
+          case "service-mesh-workshops":
+          case "service-mesh-labs":
+            slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
+            break;
+          case "members":
+            if (node.frontmatter.published)
+              slug = `/community/members/${slugify(node.frontmatter.name)}`;
+            break;
+          case "events":
+            if (node.frontmatter.title)
+              slug = `/community/events/${slugify(node.frontmatter.title)}`;
+            break;
+          default:
+            slug = `/${collection}/${slugify(node.frontmatter.title)}`;
+        }
       }
+      createNodeField({
+        name: "slug",
+        node,
+        value: slug,
+      });
+    } else {
+      //if(node.internal.type === 'MarkdownRemark') {
+      const slug = createFilePath({
+        node,
+        getNode,
+        basePath: "content-learn"
+      });
+      
+      // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
+      const parts = slug.split("/").filter(p => !!p);
+
+      if (parts.length === 1) {
+        onCreateGuideNode({ actions, node, slug });
+        return;
+      }
+
+      if (parts.length === 3) {
+        onCreateNonFrameworkChapterNode({ actions, node, slug });
+        return;
+      }
+
+      if (parts.length === 4) {
+        onCreateFrameworkChapterNode({ actions, node, slug });
+        return;
+      }
+
+      throw new Error(`Unexpected node path of length !== 1 || !== 4: ${slug}`);
     }
-    createNodeField({
-      name: "slug",
-      node,
-      value: slug,
-    });
   }
+};
+
+const createChapterPage = ({ createPage, node }) => {
+  const {
+    guide,
+    slug,
+    framework,
+    language,
+    chapter,
+    pageType,
+    isDefaultTranslation,
+    permalink,
+  } = node.fields;
+
+  createPage({
+    path: `learn${slug}`,
+    component: path.resolve("src/sections/Learn-Layer5/Course/index.js"),
+    context: {
+      // Data passed to context is available in page queries as GraphQL variables.
+      guide,
+      slug,
+      framework,
+      language,
+      chapter,
+      pageType,
+      permalink,
+      isDefaultTranslation,
+    },
+  });
+};
+
+const createGuidePage = ({ createPage, node }) => {
+  const { guide, slug, pageType, permalink } = node.fields;
+
+  createPage({
+    path: `learn${slug}`,
+    component: path.resolve("src/sections/Learn-Layer5/Learning-Paths/index.js"),
+    context: {
+      // Data passed to context is available in page queries as GraphQL variables.
+      guide,
+      slug,
+      permalink,
+      pageType,
+    },
+  });
 };
 
 exports.createSchemaCustomization = ({ actions }) => {
