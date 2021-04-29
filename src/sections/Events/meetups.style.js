@@ -60,35 +60,7 @@ export const MeetupStyle = styled.div`
         }
     }
 
-    .post-content-block{
-        height: 6rem;
-    }
-
     .post-title{
         text-align: center;
-    }
-
-    .post-meta-block{
-        display: inline-block;
-        margin-top: 0.5rem;
-        p{
-            font-size: 1rem;
-        }
-    }
-
-    .readmore-btn-wrapper{
-        display: inline-block;
-        float: right;
-        margin-top: 0.5rem;
-    }
-
-    .external-link-btn::after{
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: 0 1rem 2rem;
     }
 `;
