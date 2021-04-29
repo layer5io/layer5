@@ -12,34 +12,59 @@ const WebBasedForm = () => {
   const [contributorFlag, setContributorFlag] = useState(false);
   const [userFlag, setUserFlag] = useState(false);
   const [standerbyFlag, setStanderbyFlag] = useState(false);
-  const [checked, setChecked] = useState([false,false,false,false,false,false,false,false,false,false,false]);
-  const [checked1, setChecked1] = useState([false,false,false,false,false,false]);
-  const [checked2, setChecked2] = useState([false,false,false]);
-  const [checked3, setChecked3] = useState([false,false,false,false,false,false,false,false,false]);
+  const [checked, setChecked] = useState([false, false, false, false, false, false, false, false, false, false, false]);
+  const [checked1, setChecked1] = useState([false, false, false, false, false, false]);
+  const [checked2, setChecked2] = useState([false, false, false]);
+  const [checked3, setChecked3] = useState([false, false, false, false, false, false, false, false, false]);
   const [checkMesh, setCheckMesh] = useState(false);
-  const [checked4, setChecked4] = useState([false,false,false,false]);
+  const [checked4, setChecked4] = useState([false, false, false, false]);
+  const [formData, setFormData] = useState({
+    email: "",
+    fname: "",
+    lname: "",
+    occupation: "",
+    org: "",
+    github: "",
+    twitter: "",
+    linkedin: "",
+    tshirtSize: "",
+    picture: "",
+
+  });
 
   const handleFileSelected = (e) => {
     const files = Array.from(e.target.files);
-  }; 
+  };
 
   const nextStep = () => {
-    setStepNumber(stepNumber+1);
+    if(formData.email && formData.fname) {
+      setStepNumber(stepNumber + 1);
+    }else {
+      return false;
+    }
+  };
+
+  const handleFormChange = (e) => {
+    const {id, value} = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value
+    }));
   };
 
   const laststep = () => {
-    setStepNumber(stepNumber-1);
+    setStepNumber(stepNumber - 1);
   };
 
   const contributor = () => {
-    setStepNumber(stepNumber+1);
+    setStepNumber(stepNumber + 1);
     setContributorFlag(true);
     setStanderbyFlag(false);
     setUserFlag(false);
   };
-    
+
   const user = () => {
-    setStepNumber(stepNumber+1);
+    setStepNumber(stepNumber + 1);
     setUserFlag(true);
     setContributorFlag(false);
     setStanderbyFlag(false);
@@ -54,7 +79,7 @@ const WebBasedForm = () => {
   const standerbyBack = () => {
     setStanderbyFlag(false);
   };
- 
+
   const RangeDisplay = () => {
     return (
       <ul className="timeline" id="timeline">
@@ -82,7 +107,7 @@ const WebBasedForm = () => {
           <div className="status">
           </div>
         </li>
-      </ul>      
+      </ul>
     );
   };
 
@@ -92,24 +117,29 @@ const WebBasedForm = () => {
         <h2 className="title">New Community Member</h2>
         <p className="para">Hi! Welcome to the Layer5 community. As you get oriented with the community and its projects, will you consider filling in this form? It helps us get familiarized with you and you with the ongoing projects and community. There is much to learn around the technologies at-hand. We'll look to get you acclimated and engaged around your areas of interest and passion. </p>
         <form className="form" method="post">
-          <p className="form-name">Email Address <span className="required-sign">*</span></p>
-          <input type="text" className="text-field" name="email" required></input>
-          <p className="form-name">First Name <span className="required-sign">*</span></p>
-          <input type="text" className="text-field" name="fname" required></input>
-          <p className="form-name">Last Name <span className="required-sign">*</span></p>
-          <input type="text" className="text-field" name="lname" required></input>
-          <p className="form-name">Occupation / Title</p>
-          <input type="text" className="text-field" name="occupation"></input>
-          <p className="form-name">Organization / Company / School</p>
-          <input type="text" className="text-field" name="org"></input>
-          <p className="form-name">Github</p>
-          <input type="text" className="text-field" name="github"></input>
-          <p className="form-name">Twitter</p>
-          <input type="text" className="text-field" name="twitter"></input>
-          <p className="form-name">Linkedin</p>
-          <input type="text" className="text-field" name="linkedin"></input>
-          <p className="form-name">T-shirt size</p>
-          <select className="form-select" name="tshirtSize">
+          <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
+          <input type="text" className="text-field" id="email" value={formData.email} name="email" onChange={handleFormChange} required />
+
+          <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
+          <input type="text" className="text-field" id="fname" value={formData.fname} name="fname" onChange={handleFormChange} required />
+
+          <label htmlFor="lname" className="form-name">Last Name</label>
+          <input type="text" className="text-field" id="lname" value={formData.lname} name="lname" onChange={handleFormChange} />
+
+          <label htmlFor="occupation" className="form-name">Occupation / Title</label>
+          <input type="text" className="text-field" id="occupation" value={formData.occupation} name="occupation" onChange={handleFormChange} />
+
+          <label htmlFor="org" className="form-name">Organization / Company / School</label>
+          <input type="text" className="text-field" id="org" value={formData.org} name="org" onChange={handleFormChange}  />
+
+          <label htmlFor="github" className="form-name">GitHub</label>
+          <input type="url" className="text-field" id="github" value={formData.github} name="github" onChange={handleFormChange} pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
+          <label htmlFor="twitter" className="form-name">Twitter</label>
+          <input type="url" className="text-field" id="twitter" value={formData.twitter} name="twitter" onChange={handleFormChange} pattern="http(s?)(:\/\/)((www.)?)twitter.com(\/)([a-zA-z0-9\-_]+)" />
+          <label htmlFor="linkedin" className="form-name">Linkedin</label>
+          <input type="url" className="text-field" id="linkedin" value={formData.linkedin} name="linkedin" onChange={handleFormChange} />
+          <label htmlFor="tshirtSize" className="form-name">T-shirt size</label>
+          <select className="form-select" id="tshirtSize" value={formData.tshirtSize} name="tshirtSize" onChange={handleFormChange}>
             <option value="XS">XS</option>
             <option value="S">S</option>
             <option value="M">M</option>
@@ -117,9 +147,9 @@ const WebBasedForm = () => {
             <option value="XL">XL</option>
             <option value="XXL">XXL</option>
           </select>
-          <p className="form-name">Picture</p>
-          <input type="file" label='Upload' name="picture" accept="image/*,.png,.jpeg" onChange={handleFileSelected} className="upload-field"></input>
-          <Button secondary onClick={nextStep} className="btn" title="Next Step" /> <br/><br/><br/><br/>
+          <label htmlFor="picture" className="form-name">Picture</label>
+          <input type="file" label='Upload' name="picture" value={formData.picture} name="picture" id="picture" accept="image/*,.png,.jpeg" onChange={handleFileSelected} className="upload-field" />
+          <Button secondary onClick={nextStep} className="btn" title="Next Step" /> <br /><br /><br /><br />
         </form>
       </Container>
     );
@@ -132,21 +162,20 @@ const WebBasedForm = () => {
         <p className="para">Which describes your main focus as a community member? </p>
         <div className="center">
           <div className="option" onClick={contributor}>
-                    I'm here as a Developer
+            I'm here as a Developer
           </div>
           <div className="option" onClick={user}>
-                    I'm here as a User
+            I'm here as a User
           </div>
           <div className="option" onClick={standerby}>
-                    I'm here as a Standerby
+            I'm here as a Standerby
           </div>
         </div>
         <br /><br />
         <div className="btn-wrapper">
           <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
-          <Button secondary onClick={nextStep} className="btn-next" title="Next Step" />
         </div>
-        <br /><br />
+        <br /><br /><br /><br />
       </Container>
     );
   };
@@ -155,12 +184,12 @@ const WebBasedForm = () => {
     return (
       <Container>
         <h2 className="title">Layer5 and You</h2>
-        <div className="form">
-          <p className="form-name">What has your recent focus been? What are you passionate about? Is there a specific project or aspect a project that interests you?</p>
-          <input type="text" className="text-field"></input>
-          <p className="form-name">If a contributor, what tools, technologies, and languages are you most proficient with?</p>
-          <input type="text" className="text-field"></input>
-                
+        <form className="form">
+          <label htmlFor="interests" className="form-name">What has your recent focus been? What are you passionate about? Is there a specific project or aspect a project that interests you?</label>
+          <input type="text" className="text-field" id="interests" name="interests" />
+          <label htmlFor="profiency" className="form-name">If a contributor, what tools, technologies, and languages are you most proficient with?</label>
+          <input type="text" className="text-field" id="profiency" name="profiency" />
+
           <p className="form-name">Familiarize with the Layer5 Mentor Program.</p>
           <p className="para">If you would like to pair with a MeshMate, please review each MeshMate profile (https://layer5.io/community/meshmates) to identify your ideal mentor. Once you have identified your ideal MeshMate, message the MeshMate in the #newcomers channel</p>
           <label>
@@ -177,7 +206,7 @@ const WebBasedForm = () => {
             <Button secondary onClick={nextStep} className="btn-next" title="Next Step" />
           </div>
           <br /><br />
-        </div>
+        </form>
       </Container>
     );
   };
@@ -196,7 +225,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">A Git and Github primer</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked[1]}
@@ -205,7 +234,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Contributing to Meshery UI with ReactJS, NextJS and Material UI</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked[2]}
@@ -214,7 +243,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Introduction to Service Meshes</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked[3]}
@@ -223,7 +252,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Introduction to using a service mesh management plane: Meshery</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked[4]}
@@ -232,7 +261,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">How to evaluate service mesh performance and analyze the data</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked[5]}
@@ -241,7 +270,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">How gRPC is used in Meshery and Service Mesh Performance (SMP)</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked[6]}
@@ -250,7 +279,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">How Jekyll websites work and how to contribute to Layer5 projects</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked[7]}
@@ -259,7 +288,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">How mesheryctl uses Go Cobra</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked[8]}
@@ -268,7 +297,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Introduction to Gatsby and Layer5-ng</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked[9]}
@@ -277,7 +306,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Introduction to Istio</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked[10]}
@@ -295,7 +324,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">No</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked1[1]}
@@ -304,7 +333,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Yes, Layer5 (https://layer5.io)</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked1[2]}
@@ -313,7 +342,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Yes, Meshery (https://meshery.io)</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked1[3]}
@@ -322,7 +351,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Yes, Service Mesh Performance (SMP) (https://smp-spec.io)</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked1[4]}
@@ -331,7 +360,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Yes, Service Mesh Landscape (https://layer5.io/landscape)</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked1[5]}
@@ -349,7 +378,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Yes, and I would like to explore engaging with a Layer5 MeshMate.</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked2[1]}
@@ -358,7 +387,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Maybe later.</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked2[2]}
@@ -368,13 +397,13 @@ const WebBasedForm = () => {
             <span className="checkbox-label">No, thank you.</span>
           </label>
           <p className="form-name">How can we help?</p>
-          <input type="text" className="text-field"></input>
-          <br/><br/>
+          <input type="text" className="text-field" />
+          <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
-            <Button secondary onClick={nextStep} className="btn-next" title="Next Step" /> 
+            <Button secondary onClick={nextStep} className="btn-next" title="Next Step" />
           </div>
-          <br/><br/>
+          <br /><br />
         </div>
       </Container>
     );
@@ -410,9 +439,9 @@ const WebBasedForm = () => {
             </Col>
           </Row>
         </div>
-        <br/><br/>
+        <br /><br />
         <button onClick={standerbyBack} className="btn-prev1"><span className="back">&larr;</span> Previous step</button>
-        <br/><br/>
+        <br /><br />
       </Container>
     );
   };
@@ -421,9 +450,9 @@ const WebBasedForm = () => {
     return (
       <Container>
         <h2 className="title">Layer5 and You</h2>
-        <div className="form">
-          <p className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?</p>
-          <select className="form-select">
+        <form className="form">
+          <label htmlFor="interestToShareContribution" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?</label>
+          <select className="form-select" name="interestToShareContribution" id="interestToShareContribution">
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
@@ -436,7 +465,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Community Ambassador</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked3[1]}
@@ -445,7 +474,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Community Management</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked3[2]}
@@ -454,7 +483,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Documentation</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked3[3]}
@@ -463,7 +492,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Digital Marketing</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked3[4]}
@@ -472,7 +501,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Frontend Engineering</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked3[5]}
@@ -481,7 +510,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Backend Engineering</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked3[6]}
@@ -490,7 +519,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">DevOps</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked3[7]}
@@ -499,7 +528,7 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">User</span>
           </label>
-          <br/>
+          <br />
           <label>
             <input type="checkbox"
               defaultChecked={checked3[8]}
@@ -508,13 +537,13 @@ const WebBasedForm = () => {
             />
             <span className="checkbox-label">Other</span>
           </label>
-          <br/><br/>
+          <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
-            <Button secondary onClick={nextStep} className="btn-next" title="Next Step" /> 
+            <Button secondary onClick={nextStep} className="btn-next" title="Next Step" />
           </div>
-          <br/><br/>
-        </div>
+          <br /><br />
+        </form>
       </Container>
     );
   };
@@ -523,7 +552,7 @@ const WebBasedForm = () => {
     return (
       <Container>
         <h2 className="title">Expectations and Programs FAQ</h2>
-        <div className="form">
+        <form className="form">
           <p className="form-name">What can I expect from Layer5? What does Layer5 expect of me?</p>
           <p className="para label">The Layer5 community expects you to get as much or more out of your time than you give to the projects. We expect earnest effort from its contributors. What “earnest effort” means is different for each community member as all have different circumstances. Suffice to say, the more you put into your efforts, the greater your reward will be. Most community contributors stay with the project for many months, if not indefinitely. Length of involvement is entirely up to the individual community member.</p>
           <label>
@@ -564,13 +593,13 @@ const WebBasedForm = () => {
             />
             <span>Ok</span>
           </label>
-          <br/><br/>
+          <br /><br />
           <div className="btn-wrapper">
             <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
-            <Button secondary onClick={nextStep} className="btn-next" title="Submit" /> 
+            <Button secondary onClick={nextStep} className="btn-next" title="Submit" />
           </div>
-          <br/><br/>
-        </div>
+          <br /><br />
+        </form>
       </Container>
     );
   };
@@ -580,65 +609,65 @@ const WebBasedForm = () => {
       <Container>
         <div className="black-box">
           <h2>
-              Welcome to the Layer5 Community! Additional community resources are on their way.
+            Welcome to the Layer5 Community! Additional community resources are on their way.
           </h2>
           <p>We are pleased to have you as a new member!</p>
           <div className="btn-box">
-            <Button primary className="btn-one" type="button" title="Community Handbook" url="https://docs.google.com/document/d/1pj1gQgiepQ_3UyRnE9ag6qQraAGn5bksJd7b4D3SXFE/edit?usp=sharing" external={true}/>
-            <Button secondary className="btn-two" type="button" title="Check The Docs" url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"/>
+            <Button primary className="btn-one" type="button" title="Community Handbook" url="https://docs.google.com/document/d/1pj1gQgiepQ_3UyRnE9ag6qQraAGn5bksJd7b4D3SXFE/edit?usp=sharing" external={true} />
+            <Button secondary className="btn-two" type="button" title="Check The Docs" url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition" />
           </div>
         </div>
       </Container>
     );
   };
- 
-  return(
+
+  return (
     <Webform>
       <div>
         <SlackLinkNotif />
         {
           standerbyFlag &&
-                <Standerby />
+          <Standerby />
         }
         {
           !standerbyFlag &&
-                <div>
-                  <RangeDisplay />
-                  {
-                    stepNumber === 0 &&
-                        <MemberFormStart />
-                  }
-                  {
-                    stepNumber === 1 &&
-                        <MemberFormSecond />
-                  }
-                  {
-                    (userFlag && stepNumber === 2) &&
-                        <UserForm />
-                  }
-                  {
-                    (contributorFlag && stepNumber === 2) &&
-                        <ContributorFrom />
-                  }
-                  {
-                    stepNumber === 3 &&
-                        <MemberFormThird />
-                  }
-                  {
-                    stepNumber === 4 &&
-                        <MemberFormFour />
-                  }
-                  {
-                    stepNumber === 5 &&
-                        <FinalForm />
-                  }
-                </div>
+          <div>
+            <RangeDisplay />
+            {
+              stepNumber === 0 &&
+              <MemberFormStart />
+            }
+            {
+              stepNumber === 1 &&
+              <MemberFormSecond />
+            }
+            {
+              (userFlag && stepNumber === 2) &&
+              <UserForm />
+            }
+            {
+              (contributorFlag && stepNumber === 2) &&
+              <ContributorFrom />
+            }
+            {
+              stepNumber === 3 &&
+              <MemberFormThird />
+            }
+            {
+              stepNumber === 4 &&
+              <MemberFormFour />
+            }
+            {
+              stepNumber === 5 &&
+              <FinalForm />
+            }
+          </div>
         }
-            
-            
+
+
       </div>
     </Webform>
   );
 };
-  
+
 export default WebBasedForm;

@@ -132,6 +132,7 @@ const Webform = styled.div`
         .form-name {
             font-weight: 600;
             margin: 20px 0px 5px 3px;
+            display: block;
         }
 
         .text-field {
@@ -212,16 +213,18 @@ const Webform = styled.div`
         flex: 1 1 160px;
         height: 200px;
         border-radius: 15px;
-        background-color: #00B39F;
+        border: 1px solid  #00B39F;
+        background-color: rgba(0,179,159, .2);
+        color: #00B39F;
         margin: 10px 5px;
         max-width: 250px;
-        color: white;
         text-align: center;
         padding-top: 85px; 
         transition: background 200ms ease-in;
-    }
-    .option:hover{
-        background-color: #EBC017;
+      }
+      .option:hover{
+        color: white;
+        background-color: #00B39F;
     }
 
     .black-box {
