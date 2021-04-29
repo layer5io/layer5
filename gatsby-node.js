@@ -176,11 +176,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ){
         nodes{
           fields{
-            guide
+            learnpath
             slug
-            framework
-            language
-            chapter
+            course
+            section
+            lab
             pageType
             collection
           }
@@ -380,71 +380,83 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   learnNodes.forEach((node) => {
     if (node.fields){
-      const { pageType, slug } = node.fields;
+      const { pageType } = node.fields;
 
-      if (pageType === "chapter") {
-        createChapterPage({ createPage, node });
+      if (pageType === "learnpath") {
+        createPathPage({ createPage, node });
         return;
       }
 
-      if (pageType === "guide") {
-        createGuidePage({ createPage, node });
+      if (pageType === "course") {
+        createCoursePage({ createPage, node });
         return;
       }
 
-      throw new Error(`Unexpected pageType !== 'chapter' || !== 'guide': ${slug}`);
+      if (pageType === "section") {
+        createSectionPage({ createPage, node });
+        return;
+      }
+      
+      if (pageType === "labs") {
+        createLabsPage({ createPage, node });
+        return;
+      }
     }
   });
 };
 
-const defaultLanguage = "en";
-const defaultFramework = "react";
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
 const getSlugParts = slug => slug.split("/").filter(p => !!p);
 
-const onCreateGuideNode = ({ actions, node, slug }) => {
+const onCreatePathNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
-  const [guide] = parts;
+  const [learnpath] = parts;
 
-  createNodeField({ node, name: "guide", value: guide });
+  createNodeField({ node, name: "learnpath", value: learnpath });
   createNodeField({ node, name: "slug", value: slug });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "pageType", value: "guide" });
+  createNodeField({ node, name: "pageType", value: "learnpath" });
 };
 
-const onCreateNonFrameworkChapterNode = ({ actions, node, slug }) => {
+const onCreateCourseNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
-  const [guide, language, chapter] = parts;
+  const [learnpath, course] = parts;
 
-  createNodeField({ node, name: "guide", value: guide });
+  createNodeField({ node, name: "learnpath", value: learnpath });
   createNodeField({ node, name: "slug", value: slug });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "language", value: language });
-  createNodeField({ node, name: "chapter", value: chapter });
-  createNodeField({ node, name: "pageType", value: "chapter" });
-  createNodeField({ node, name: "isDefaultTranslation", value: language === defaultLanguage });
+  createNodeField({ node, name: "course", value: course });
+  createNodeField({ node, name: "pageType", value: "course" });
 };
 
-const onCreateFrameworkChapterNode = ({ actions, node, slug }) => {
+const onCreateSectionNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
-  const [guide, framework, language, chapter] = parts;
+  const [learnpath, course, section] = parts;
 
-  createNodeField({ node, name: "guide", value: guide });
+  createNodeField({ node, name: "learnpath", value: learnpath });
   createNodeField({ node, name: "slug", value: slug });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "framework", value: framework });
-  createNodeField({ node, name: "language", value: language });
-  createNodeField({ node, name: "chapter", value: chapter });
-  createNodeField({ node, name: "pageType", value: "chapter" });
-  createNodeField({
-    node,
-    name: "isDefaultTranslation",
-    value: language === defaultLanguage && framework === defaultFramework,
-  });
+  createNodeField({ node, name: "course", value: course });
+  createNodeField({ node, name: "section", value: section });
+  createNodeField({ node, name: "pageType", value: "section" });
+};
+
+const onCreateLabNode = ({ actions, node, slug }) => {
+  const { createNodeField } = actions;
+  const parts = getSlugParts(slug);
+  const [learnpath, course, section, lab] = parts;
+
+  createNodeField({ node, name: "learnpath", value: learnpath });
+  createNodeField({ node, name: "slug", value: slug });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name: "lab", value: lab });
+  createNodeField({ node, name: "course", value: course });
+  createNodeField({ node, name: "section", value: section });
+  createNodeField({ node, name: "pageType", value: "labs" });
 
   // Code for live fetch of code from github using commit-id, check storybook's gatsby-node.js file
 
@@ -494,45 +506,60 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         value: slug,
       });
     } else {
-      //if(node.internal.type === 'MarkdownRemark') {
       const slug = createFilePath({
         node,
         getNode,
         basePath: "content-learn"
       });
-      
+
       // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
       const parts = slug.split("/").filter(p => !!p);
 
       if (parts.length === 1) {
-        onCreateGuideNode({ actions, node, slug });
+        onCreatePathNode({ actions, node, slug });
+        return;
+      }
+
+      if (parts.length === 2) {
+        onCreateCourseNode({ actions, node, slug });
         return;
       }
 
       if (parts.length === 3) {
-        onCreateNonFrameworkChapterNode({ actions, node, slug });
+        onCreateSectionNode({ actions, node, slug });
         return;
       }
 
       if (parts.length === 4) {
-        onCreateFrameworkChapterNode({ actions, node, slug });
+        onCreateLabNode({ actions, node, slug });
         return;
       }
-
-      throw new Error(`Unexpected node path of length !== 1 || !== 4: ${slug}`);
     }
   }
 };
 
-const createChapterPage = ({ createPage, node }) => {
+const createPathPage = ({ createPage, node }) => {
+  const { learnpath, slug, pageType, permalink } = node.fields;
+
+  createPage({
+    path: `learn${slug}`,
+    component: path.resolve("src/sections/Learn-Layer5/Learning-Paths/index.js"),
+    context: {
+      // Data passed to context is available in page queries as GraphQL variables.
+      learnpath,
+      slug,
+      permalink,
+      pageType,
+    },
+  });
+};
+
+const createCoursePage = ({ createPage, node }) => {
   const {
-    guide,
+    learnpath,
     slug,
-    framework,
-    language,
-    chapter,
+    course,
     pageType,
-    isDefaultTranslation,
     permalink,
   } = node.fields;
 
@@ -540,31 +567,61 @@ const createChapterPage = ({ createPage, node }) => {
     path: `learn${slug}`,
     component: path.resolve("src/sections/Learn-Layer5/Course/index.js"),
     context: {
-      // Data passed to context is available in page queries as GraphQL variables.
-      guide,
+      learnpath,
       slug,
-      framework,
-      language,
-      chapter,
+      course,
       pageType,
       permalink,
-      isDefaultTranslation,
     },
   });
 };
 
-const createGuidePage = ({ createPage, node }) => {
-  const { guide, slug, pageType, permalink } = node.fields;
+const createSectionPage = ({ createPage, node }) => {
+  const {
+    learnpath,
+    slug,
+    course,
+    section,
+    pageType,
+    permalink,
+  } = node.fields;
 
   createPage({
     path: `learn${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Learning-Paths/index.js"),
+    component: path.resolve("src/sections/Learn-Layer5/Sections/index.js"),
     context: {
-      // Data passed to context is available in page queries as GraphQL variables.
-      guide,
+      learnpath,
       slug,
-      permalink,
+      course,
+      section,
       pageType,
+      permalink,
+    },
+  });
+};
+
+const createLabsPage = ({ createPage, node }) => {
+  const {
+    learnpath,
+    slug,
+    course,
+    section,
+    lab,
+    pageType,
+    permalink,
+  } = node.fields;
+
+  createPage({
+    path: `learn${slug}`,
+    component: path.resolve("src/sections/Learn-Layer5/Labs/index.js"),
+    context: {
+      learnpath,
+      slug,
+      course,
+      section,
+      lab,
+      pageType,
+      permalink,
     },
   });
 };
