@@ -37,7 +37,7 @@ const WebBasedForm = () => {
   };
 
   const nextStep = () => {
-    if(formData.email && formData.fname) {
+    if(formData.email && formData.fname && formData.lname) {
       setStepNumber(stepNumber + 1);
     }else {
       return false;
@@ -123,8 +123,8 @@ const WebBasedForm = () => {
           <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
           <input type="text" className="text-field" id="fname" value={formData.fname} name="fname" onChange={handleFormChange} required />
 
-          <label htmlFor="lname" className="form-name">Last Name</label>
-          <input type="text" className="text-field" id="lname" value={formData.lname} name="lname" onChange={handleFormChange} />
+          <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
+          <input type="text" className="text-field" id="lname" value={formData.lname} name="lname" onChange={handleFormChange} required />
 
           <label htmlFor="occupation" className="form-name">Occupation / Title</label>
           <input type="text" className="text-field" id="occupation" value={formData.occupation} name="occupation" onChange={handleFormChange} />
