@@ -141,45 +141,23 @@ const InternshipPage = ({ hide_heading }) => {
             <div className="grid">
               <Row className="oppurtunities_row">
                 <Col className="partner-col">
-                  <a
-                    href="https://layer5.io/assets/careers/internships/UT%20Austin%20Boot%20Camp%20-%20Meshery%20Flyer.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="partners-card">
-                      <div className="partner-image">
-                        <img
-                          src={Univ_Texas_Img}
-                          alt="University of Texas, Austin"
-                        />
-                      </div>
-                      <h5>UT Austin Coding Boot Camp</h5>
-                      <Button
-                        secondary
-                        title={<FaArrowRight />}
-                        className="arrow_icon"
+                  <div className="partners-card">
+                    <div className="partner-image">
+                      <img
+                        src={Univ_Texas_Img}
+                        alt="University of Texas, Austin"
                       />
                     </div>
-                  </a>
+                    <h5>UT Austin Coding Boot Camp</h5>
+                  </div>
                 </Col>
                 <Col className="partner-col">
-                  <a
-                    href="https://layer5.io/assets/careers/internships/UEM%20Jaipur%20-%20Meshery%20Flyer.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="partners-card">
-                      <div className="partner-image">
-                        <img src={UEM_Img} alt="UEM Jaipur" />
-                      </div>
-                      <h5>UEM Jaipur</h5>
-                      <Button
-                        secondary
-                        title={<FaArrowRight />}
-                        className="arrow_icon"
-                      />
+                  <div className="partners-card">
+                    <div className="partner-image">
+                      <img src={UEM_Img} alt="UEM Jaipur" />
                     </div>
-                  </a>
+                    <h5>UEM Jaipur</h5>
+                  </div>
                 </Col>
               </Row>
               <Row>
