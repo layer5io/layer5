@@ -11,41 +11,38 @@ import MeshmateStackImage from "../../../assets/images/meshmate/meshmate-stack.s
 
 const Meshmates=() => {
   const data=useStaticQuery(
-    graphql`
-        query meshmates {
-            allMdx(
-                sort: { fields: [frontmatter___name], order: ASC }
-                filter: { fields: { collection: { eq: "members" } }, frontmatter: { meshmate: { eq: "yes" } } }
-            ) {
-                nodes {
-                    id
-                    frontmatter {
-                        name
-                        github
-                        twitter
-                        status
-                        linkedin
-                        location
-                        badges
-                        bio
-                        meshmate
-                        image_path{
-                            childImageSharp{
-                                fluid(maxWidth: 200){
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                            extension
-                            publicURL
-                        }
-                    }
-                    fields{
-                        slug
-                    }
-                }
-            }
+    graphql`query meshmates {
+  allMdx(
+    sort: {fields: [frontmatter___name], order: ASC}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}}}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        name
+        github
+        twitter
+        status
+        linkedin
+        location
+        badges
+        bio
+        meshmate
+        image_path {
+          childImageSharp {
+            gatsbyImageData(width: 200, layout: CONSTRAINED)
+          }
+          extension
+          publicURL
         }
-        `
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
   return (
     <MeshMatesWrapper>

@@ -13,150 +13,136 @@ import theme from "../theme/app/themeStyles";
 import { graphql } from "gatsby";
 import Meetups from "../sections/Events/index";
 
-export const query = graphql`
-    query allCategories($skip: Int!, $limit: Int!) {
-        allCategories:allMdx(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { fields: { collection: { eq: "events" } },
-            frontmatter: { published: {eq: true } } }
-            skip: $skip
-            limit: $limit
-        ){
-            nodes {
-                id
-                fields {
-                    slug
-                }
-                frontmatter {
-                    attribute{
-                        name
-                        url
-                    }
-                    eurl
-                    title
-                    topic
-                    date(formatString: "MMM Do, YYYY")
-                    thumbnail {
-                        publicURL
-                        relativePath
-                        extension
-                        childImageSharp {
-                            fluid(maxWidth: 1000) {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
-                }
-            }
+export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
+  allCategories: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
+    skip: $skip
+    limit: $limit
+  ) {
+    nodes {
+      id
+      fields {
+        slug
+      }
+      frontmatter {
+        attribute {
+          name
+          url
         }
-        allMeetups: allMdx(
-            sort: { fields: frontmatter___date, order: DESC }
-            filter: { frontmatter: { topic: { eq: "meetups" } } }
-        ) {
-        totalCount
-        nodes {
-            id
-            fields {
-                slug
-            }
-            frontmatter {
-                attribute{
-                    name
-                    url
-                }
-                title
-                eurl
-                topic
-                date(formatString: "MMM Do, YYYY")
-                thumbnail {
-                        childImageSharp {
-                            fluid {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
-                }
-            }
+        eurl
+        title
+        topic
+        date(formatString: "MMM Do, YYYY")
+        thumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
         }
-        allWorkshops: allMdx(
-            filter: { frontmatter: { topic: { eq: "workshop" }, 
-            published: { eq: true } } }
-            ) {
-            nodes {
-                id
-                fields {
-                    slug
-                }
-                frontmatter {
-                    abstract
-                    eurl
-                    title
-                    date(formatString: "MMM Do, YYYY")
-                    thumbnail {
-                        publicURL
-                        relativePath
-                        extension
-                        childImageSharp {
-                            fluid(maxWidth: 1000) {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        allEvents: allMdx( filter: { frontmatter: { topic: { eq: "event" } } } ) {
-            nodes {
-                id
-                fields {
-                    slug
-                }
-                frontmatter {
-                    abstract
-                    eurl
-                    title
-                    date(formatString: "MMM Do, YYYY")
-                    thumbnail {
-                        publicURL
-                        relativePath
-                        extension
-                        childImageSharp {
-                            fluid(maxWidth: 1000) {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        allUpcoming: allMdx(
-            filter: { frontmatter: { upcoming: { eq: true } }, 
-            fields: { collection: { eq: "events" } } }, 
-            sort: { fields: frontmatter___date, order: DESC }
-        ) {
-            nodes {
-                id
-                body
-                frontmatter {
-                    title
-                    topic
-                    upcoming
-                    eurl
-                    date(formatString: "MMM Do, YYYY")
-                    thumbnail {
-                        publicURL
-                        relativePath
-                        extension
-                        childImageSharp {
-                            fluid {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+  }
+  allMeetups: allMdx(
+    sort: {fields: frontmatter___date, order: DESC}
+    filter: {frontmatter: {topic: {eq: "meetups"}}}
+  ) {
+    totalCount
+    nodes {
+      id
+      fields {
+        slug
+      }
+      frontmatter {
+        attribute {
+          name
+          url
+        }
+        title
+        eurl
+        topic
+        date(formatString: "MMM Do, YYYY")
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+      }
+    }
+  }
+  allWorkshops: allMdx(
+    filter: {frontmatter: {topic: {eq: "workshop"}, published: {eq: true}}}
+  ) {
+    nodes {
+      id
+      fields {
+        slug
+      }
+      frontmatter {
+        abstract
+        eurl
+        title
+        date(formatString: "MMM Do, YYYY")
+        thumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+      }
+    }
+  }
+  allEvents: allMdx(filter: {frontmatter: {topic: {eq: "event"}}}) {
+    nodes {
+      id
+      fields {
+        slug
+      }
+      frontmatter {
+        abstract
+        eurl
+        title
+        date(formatString: "MMM Do, YYYY")
+        thumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+      }
+    }
+  }
+  allUpcoming: allMdx(
+    filter: {frontmatter: {upcoming: {eq: true}}, fields: {collection: {eq: "events"}}}
+    sort: {fields: frontmatter___date, order: DESC}
+  ) {
+    nodes {
+      id
+      body
+      frontmatter {
+        title
+        topic
+        upcoming
+        eurl
+        date(formatString: "MMM Do, YYYY")
+        thumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+      }
+    }
+  }
+}
 `;
 
 const Events = ({data, pageContext}) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../../reusecore/Button";
 import { HeroWrapper } from "./hero.style";
+import Code from "../../../components/CodeBlock";
 
 
 const Hero = ({ title, initialdescription, enddescription, subtitle, links, code }) => {
@@ -18,7 +19,7 @@ const Hero = ({ title, initialdescription, enddescription, subtitle, links, code
           })}
         </div>
         <div className="code">
-          <code>{code}</code>
+          <Code codeString={code}/>
         </div>
         <p className="enddescr">{enddescription}</p>
       </div>

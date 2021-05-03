@@ -9,34 +9,31 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import WorkshopSinglePage from "../sections/Learn/Workshop-single/index";
 
-export const query = graphql`
-    query WorkshopBySlug($slug: String!) {
-        mdx(fields: { slug: { eq: $slug } } ) {
-            body
-            frontmatter {
-                title
-                date(formatString: "MMMM Do, YYYY")
-                slack
-                abstract
-                status
-                labs
-                video
-                eurl
-                thumbnail {
-                    childImageSharp {
-                        fluid (maxWidth: 1000) {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                extension
-                publicURL
-                }
-            }
-            fields {
-                slug
-            }
+export const query = graphql`query WorkshopBySlug($slug: String!) {
+  mdx(fields: {slug: {eq: $slug}}) {
+    body
+    frontmatter {
+      title
+      date(formatString: "MMMM Do, YYYY")
+      slack
+      abstract
+      status
+      labs
+      video
+      eurl
+      thumbnail {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
         }
+        extension
+        publicURL
+      }
     }
+    fields {
+      slug
+    }
+  }
+}
 `;
 
 const WorkshopSingle = ({ data }) => {

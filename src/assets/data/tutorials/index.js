@@ -74,6 +74,20 @@ const data = [
         ],
     },
     {
+        date: "Nov. 4 2020",
+        topic: "Functional Testing with Cypress in Meshery UI",
+        resources: {
+            slides: "https://layer5.io/blog/meshery/functional-testing-with-cypress-in-meshery-ui",
+            recording: "https://youtu.be/pIFSI7xtwFs",
+        },
+        presenters: [
+            {
+                link: "/community/members/rodolfo-martinez-vega",
+                name: "Rodolfo Martinez Vega",
+            }
+        ]
+    },
+    {
         date: "Jan. 28 2021",
         topic: "Beginner's guide to contributing to Meshery and mesheryctl",
         resources: {

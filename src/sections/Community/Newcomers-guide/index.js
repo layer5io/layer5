@@ -185,7 +185,7 @@ const NewcomersGuide = () => {
           </Row>
           <Row className="step">
             <Col sm={12} lg={6}>
-              <img src={CommunityImage3} alt="Community Image" />
+              <img className="community-collage" src={CommunityImage3} alt="Community Image" />
             </Col>
             <Col sm={12} lg={6}>
               <h3>While Your Issue is under Review</h3>

@@ -16,105 +16,116 @@ import NavigationWrap from "./navigation.style";
 
 const Navigation = () => {
   let data = useStaticQuery(
-    graphql`
-            query {
-                Learn: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "service-mesh-books" } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-                Community: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "events" } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                publicURL
-                                extension
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-                Blog: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "blog" } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                publicURL
-                                extension
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-                Home: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: { eq: true } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`{
+  Learn: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "service-mesh-books"}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Community: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "events"}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+          extension
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Blog: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "blog"}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+          extension
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Home: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
   data["Projects"] = {
     nodes: [

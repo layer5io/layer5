@@ -20,43 +20,40 @@ const WorkshopsPage = () => {
   const [ID, setID] = useState("");
 
   const data = useStaticQuery(
-    graphql`
-            query allWorkshops {
-                allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
-                ) {
-                    nodes {
-                        id
-                        slug
-                        body
-                        frontmatter {
-                            title
-                            date(formatString: "MMMM Do, YYYY")
-                            slack
-                            slides
-                            abstract
-                            status
-                            labs
-                            video
-                            eurl
-                            thumbnail {
-                                childImageSharp {
-                                    fluid(maxWidth: 1000) {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                            extension
-                            publicURL
-                        }
-                    }
-                    fields {
-                        slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query allWorkshops {
+  allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+  ) {
+    nodes {
+      id
+      slug
+      body
+      frontmatter {
+        title
+        date(formatString: "MMMM Do, YYYY")
+        slack
+        slides
+        abstract
+        status
+        labs
+        video
+        eurl
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
 
   const toggleActive = (id) => {
@@ -88,7 +85,7 @@ const WorkshopsPage = () => {
           <div className="workshop-grid-wrapper">
             <Row>
               {data.allMdx.nodes.map(({id, frontmatter, fields, body }) => (
-                <Col {...content && ID === id ? {xs:12, sm:12, lg:12} : {xs:12, sm:6, lg:4} } key={id}>
+                <Col {...content && ID === id ? {xs:12, sm:12, lg:12} : {xs:12, sm:6, lg:4} } key={id} className="workshop-grid-col">
                   <div className="workshop-grid-card">
                     <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                     <div className={content && ID === id ? "active" : "text-contents"}>

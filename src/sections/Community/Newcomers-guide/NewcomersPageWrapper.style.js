@@ -79,6 +79,11 @@ export const NewcomersGuideWrapper = styled.section`
         max-width: 21.875rem
       }
     }
+    .community-collage {
+      
+      min-width: 45vmin;
+      
+    }
     .table-wrapper{
       text-align: center;
       margin-bottom: 4rem;

@@ -195,6 +195,7 @@ export const BlogWrapper = styled.div`
     display: inline;
     position: relative;
     float: left;
+    margin: 1rem 1rem 1rem 0rem;
   }
   div.intro {
     padding-left: 3rem;
@@ -202,5 +203,27 @@ export const BlogWrapper = styled.div`
     font-style: italic;
     font-size: 0.8rem;
     border-bottom: 1px dashed ${(props) => props.theme.primaryLightColor};
+  }
+
+  /* ==============
+styles for meshmate-of-the-year-2020 
+=======================*/
+
+  @media screen and (min-width: 768px) {
+    .responsive-blog {
+      display: flex;
+    }
+  }
+
+  .meshmate-img {
+    width: 100%;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .meshmate-img {
+      width: 40%;
+      margin: auto;
+    }
   }
 `;

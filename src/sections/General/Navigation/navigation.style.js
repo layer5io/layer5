@@ -291,7 +291,7 @@ const NavigationWrap = styled.header`
       margin-top: 7px;
     }
     &.scrolled {
-      padding: 8px 20px;
+      padding: 15px 20px;
     }
     ul.collapsed {
       display: none;
@@ -420,7 +420,7 @@ const NavigationWrap = styled.header`
     height: 160px;
     max-width: 100%;
     margin: 0 auto;
-    .gatsby-image-wrapper{
+    .gatsby-image-wrapper, .old-gatsby-image-wrapper{
         height:100%;
         transition: all 0.3s ease-in;
     }
