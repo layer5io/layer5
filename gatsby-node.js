@@ -542,7 +542,7 @@ const createPathPage = ({ createPage, node }) => {
   const { learnpath, slug, pageType, permalink } = node.fields;
 
   createPage({
-    path: `learn${slug}`,
+    path: `learn-ng${slug}`,
     component: path.resolve("src/sections/Learn-Layer5/Learning-Paths/index.js"),
     context: {
       // Data passed to context is available in page queries as GraphQL variables.
@@ -564,7 +564,7 @@ const createCoursePage = ({ createPage, node }) => {
   } = node.fields;
 
   createPage({
-    path: `learn${slug}`,
+    path: `learn-ng${slug}`,
     component: path.resolve("src/sections/Learn-Layer5/Course/index.js"),
     context: {
       learnpath,
@@ -587,7 +587,7 @@ const createSectionPage = ({ createPage, node }) => {
   } = node.fields;
 
   createPage({
-    path: `learn${slug}`,
+    path: `learn-ng${slug}`,
     component: path.resolve("src/sections/Learn-Layer5/Sections/index.js"),
     context: {
       learnpath,
@@ -612,7 +612,7 @@ const createLabsPage = ({ createPage, node }) => {
   } = node.fields;
 
   createPage({
-    path: `learn${slug}`,
+    path: `learn-ng${slug}`,
     component: path.resolve("src/sections/Learn-Layer5/Labs/index.js"),
     context: {
       learnpath,
