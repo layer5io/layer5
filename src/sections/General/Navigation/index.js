@@ -72,7 +72,7 @@ const Navigation = () => {
   }
   Blog: allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "blog"}}}
+    filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
     limit: 2
   ) {
     nodes {
