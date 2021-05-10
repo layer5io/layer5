@@ -8,7 +8,6 @@ import { Container } from "../../../reusecore/Layout";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
 import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 
@@ -72,7 +71,7 @@ const Navigation = () => {
   }
   Blog: allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "blog"}}}
+    filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
     limit: 2
   ) {
     nodes {
