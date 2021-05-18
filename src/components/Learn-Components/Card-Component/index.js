@@ -1,7 +1,8 @@
 import React from "react";
 import CardWrapper from "./learn-card.style";
-import Image from "../../../../components/image";
+import Image from "../../image";
 import { Link } from "gatsby";
+
 const CardComponent = ({tutorial}) => {
 
   return (
