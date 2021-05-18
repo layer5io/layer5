@@ -1,6 +1,6 @@
 import React from "react";
 import { LearnLayer5GridWrapper } from "./learnlayer5.style";
-import CardWrapperComponent from "../../components/Learn-Components/Card-Wrapper";
+import CardWrapperComponent from "./Learn-Components/Card-Wrapper";
 
 
 const LearnPathsPage = () => {

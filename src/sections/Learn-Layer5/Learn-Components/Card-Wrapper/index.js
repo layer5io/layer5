@@ -1,5 +1,5 @@
 import React from "react";
-import CardComponentWrapper from "./Card-Wrapper.component.style";
+import CardComponentWrapper from "./card-wrapper.style";
 import { graphql, useStaticQuery } from "gatsby";
 import CardComponent from "../Card-Component";
 

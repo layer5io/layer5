@@ -22,9 +22,6 @@ const CardComponentWrapper = styled.div`
     .card-head{
         display: flex;
         padding: 1rem;
-        h3{
-            margin: 0 1rem;
-        }
         span{
             background-color: white;
             border-radius : 1rem;
@@ -50,5 +47,29 @@ const CardComponentWrapper = styled.div`
             padding: 1rem;
         }
     }
+    @media(max-width:1300px){
+        .learning-paths{
+            
+            padding: 2rem 1rem;
+            margin: 2rem 1rem;
+        }
+    }
+    @media(max-width:1100px){
+        .learning-paths{
+            grid-template-columns: 1fr 1fr;
+            padding: 2rem 0rem;
+            margin: 2rem 0rem;
+        }
+    }
+    @media(max-width:760px){
+        padding: 8rem 1rem;
+        .learning-paths{
+            grid-template-columns: 1fr;
+            padding: 2rem 0rem;
+            margin: 2rem 0rem;
+        }
+     
+    }
+
 `;
 export default CardComponentWrapper;
