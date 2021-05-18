@@ -1,28 +1,57 @@
 import React from "react";
-// import { graphql, useStaticQuery } from "gatsby";
-import { LearnLayer5GridWrapper } from "./learnlayer5.style";
+import { LearnLayer5GridWrapper , CardComponentWrapper} from "./learnlayer5.style";
+import { graphql, useStaticQuery } from "gatsby";
+import CardComponent from "../../components/Learn-Components/Card-Component";
 
 const LearnPathsPage = () => {
-  // const data = useStaticQuery(
-  //                 graphql`query allLearnPath {
-  //                     allMdx(
-  //                         filter: {fields: {collection: {eq: "content-learn"}, slug: {glob: "/*/"}}}
-  //                     ) {
-  //                         nodes {
-  //                             fields {
-  //                                 slug
-  //                                 learnpath
-  //                             }
-  //                         }
-  //                     }
-  //                 }
-  //             `);
+  const data = useStaticQuery(graphql`query allLearnPath {
+    allMdx(
+        filter: {fields: {collection: {eq: "content-learn"}, slug: {glob: "/*/"}}}
+    ) {
+        nodes {
+            id,
+            frontmatter{
+              title,
+              description,
+              themeColor,   
+              learningPaths                 
+              cardImage{
+                childImageSharp {
+                  gatsbyImageData(width: 200, layout: CONSTRAINED)
+                }
+                extension
+                publicURL
+              },
+              status
+            }
+            fields {
+                slug
+                learnpath
+            }
+        }
+    }
+}
+`);
 
   return (
     <LearnLayer5GridWrapper>
-      <div className="page-header-section">
-        <h1>Learn Service Mesh</h1>
-      </div>
+      <CardComponentWrapper>
+        <div>
+          <h1>Learning Paths</h1>
+          <div className="">
+            <p>Learn how to service mesh.Learn how to run</p>
+            <p>Meshery, install Istio and deploy a sample app</p>
+          </div>
+        </div>
+        <div className="learning-paths">
+          {
+            data.allMdx.nodes.map((tutorial,index) => (
+              <CardComponent tutorial={tutorial} key={index} />
+            ))
+          }
+        </div>
+      </CardComponentWrapper>
+    );
     </LearnLayer5GridWrapper>
   );
 };
