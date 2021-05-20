@@ -1,10 +1,8 @@
-
 <p style="text-align:center;" align="center">
   <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-tag-white-bg.png" width="45%" /></p>
 
-
 ![GitHub contributors](https://img.shields.io/github/contributors/layer5io/layer5.svg)
-![GitHub](https://img.shields.io/github/license/layer5io/layer5.svg) 
+![GitHub](https://img.shields.io/github/license/layer5io/layer5.svg)
 ![GitHub issues by-label](https://img.shields.io/github/issues/layer5io/layer5/help%20wanted.svg?color=%23DDDD00)
 [![Slack](http://slack.layer5.io/badge.svg)](http://slack.layer5.io)
 ![Twitter Follow](https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social)
@@ -103,16 +101,16 @@ Jump into our <a href="http://slack.layer5.io"><img src=".github/assets/images/s
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src=".github/assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
 ✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calender.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
 ✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.<br />
-✔️ <em><strong>To Access </strong></em><a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">community drive, fill Community Member Form</a>.<br />
+✔️ <em><strong>To Access community drive,</strong></em><a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA"> fill Community Member Form</a>.<br />
 <br />
 </p>
 <p>
 <i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+">help-wanted label</a>
 </p>
 <p>Find us on Twitter: <a href="https://twitter.com/layer5"><img src=".github/assets/images/twitter.png" height="16px"
-align="bottom"/>@layer5</a>,<a href="https://twitter.com/mesheryio">@mesheryio</a>&<a href="https://twitter.com/smp_spec">@smp_spec</a>. Subscribe on <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">Youtube</a>
+align="bottom"/>@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a> and <a href="https://twitter.com/smp_spec">@smp_spec</a>. <br>Subscribe on <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">Youtube</a>
 </p>
 
-#### License 
-This repository and site are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
+#### License
 
+This repository and site are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
