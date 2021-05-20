@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
+import Button from "../../../reusecore/Button";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
@@ -26,11 +27,9 @@ const NewcomersGuide = () => {
             development of projects at Layer5. Here are some instructions to get
             you started and if you haven’t joined yet, join the{" "}
             <a href="http://slack.layer5.io/" target="_blank" rel="noreferrer">
-              Slack workspace
-            </a>{" "}
+              Slack workspace</a>{" "}
             to collaborate with the community. Also, you can check the
-            quick-links below for jumping straight into things.
-          </p>
+            quick-links below for jumping straight into things.</p>
           <Row className="newcomers-journey">
             <Col
               className="heading"
@@ -51,8 +50,13 @@ const NewcomersGuide = () => {
           </Row>
           <Row className="how-to-contribute">
             <h3>How to Contribute?</h3>
+          </Row>
+          <Row className="how-to-contribute">
+
             <p>
-              The following set of steps outlines the process by which you can
+
+            <Button primary className="newcomers-form" title="Member Form" url="/newcomer" external={true} />
+              These steps outline the process by which you can
               openly engage, learn, and participate in the broad set of open
               source projects at Layer5. If at any time you get stuck, please
               seek help in the{" "}
@@ -63,10 +67,11 @@ const NewcomersGuide = () => {
               >
                 #newcomers
               </a>{" "}
-              channel in the Layer5 (joining instructions below). Our{" "}
+              channel in the Layer5 Slack. Our{" "}
               <Link to="/community/meshmates">MeshMates</Link> and community
               members are here to help!
             </p>
+
           </Row>
         </div>
         <div className="instructions">
