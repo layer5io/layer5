@@ -1,31 +1,32 @@
 import React from "react";
-import CardWrapper from "./info.style";
+import InfoWrapper from "./learninfo.style";
+import {Col, Row} from "../../../reusecore/Layout";
 
-function Info() {
+const LearnInfo = () => {
   return (
-    <CardWrapper>
-      <div className="row">
-        <div className="column">
+    <InfoWrapper>
+      <Row className="info-row">
+        <Col xs={12} sm={6} lg={4}>
           <h2>4 courses</h2>
           <p>
             Learning the service mesh the right way. From the best learing paths
             by the experts at Layer5 and learn how to mesh.
           </p>
-        </div>
-        <div className="column">
+        </Col>
+        <Col xs={12} sm={6} lg={4}>
           <h2>24 chapters</h2>
           <p>
             Learning the service mesh the right way. From the best learing paths
             by the experts at Layer5 and learn how to mesh.
           </p>
-        </div>
-        <div className="column">
+        </Col>
+        <Col xs={12} sm={6} lg={4}>
           <h2>12 service meshes available.</h2>
           <p>Istio, Kuma, NSM, Linkerd, Consul</p>
-        </div>
-      </div>
-    </CardWrapper>
+        </Col>
+      </Row>
+    </InfoWrapper>
   );
-}
+};
 
-export default Info;
+export default LearnInfo;

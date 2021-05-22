@@ -2,7 +2,7 @@ import React from "react";
 import { LearnLayer5GridWrapper , CardComponentWrapper} from "./learnlayer5.style";
 import { graphql, useStaticQuery } from "gatsby";
 import CardComponent from "../../components/Learn-Components/Card-Component";
-import LearnInfo from "./LearnInfo/index";
+import LearnInfo from "../../components/Learn-Components/LearnInfo";
 
 const LearnPathsPage = () => {
   const data = useStaticQuery(graphql`query allLearnPath {
