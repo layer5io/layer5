@@ -1,7 +1,30 @@
 import styled from "styled-components";
 
 const ProgramsPageWrapper = styled.div`
- margin-bottom: 30px;
+margin: 4.5rem 0 3.125rem 0;
+.backBtn {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    @media screen and (max-width: 62rem) {
+        display: none;
+    }
+    a{
+        display: flex;
+        color: ${props => props.theme.primaryColor};
+        &:hover{
+            color: ${props => props.theme.linkColor};
+        }
+        
+        h4 {
+            line-height: 1.75rem;
+            margin-left: 0.5rem;
+        }
+        svg {
+            font-size: 1.75rem;
+        }
+    }
+}
+
 .single-post-wrapper{
     padding: 50px 0 180px 0;
 }
