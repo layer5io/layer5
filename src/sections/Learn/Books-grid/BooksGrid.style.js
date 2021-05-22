@@ -115,6 +115,7 @@ export const BooksPageWrapper = styled.div`
             li, img{
                 width: 3.5rem;
                 height: 5rem;
+                
             }
         }
     }
