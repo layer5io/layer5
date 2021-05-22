@@ -514,7 +514,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
       // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
       const parts = slug.split("/").filter(p => !!p);
-      console.log(parts);
 
       if (parts.length === 1) {
         onCreatePathNode({ actions, node, slug });
@@ -596,6 +595,7 @@ const createChapterPage = ({ createPage, node }) => {
       slug,
       course,
       section,
+      chapter,
       pageType,
       permalink,
     },
