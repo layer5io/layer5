@@ -2,8 +2,7 @@ import React from "react";
 import {Link} from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { Row } from "../../../reusecore/Layout";
-import { Container } from "../../../reusecore/Layout";
+import { Row, Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
 import ProgramsPageWrapper from "./ProgramsSingle.style.js";

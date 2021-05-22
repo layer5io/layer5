@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 const ProgramsPageWrapper = styled.div`
-margin: 4.5rem 0 3.125rem 0;
+margin-bottom : 3.125rem;
 .backBtn {
     font-weight: 600;
-    margin-bottom: 1rem;
+    position: absolute;
+    top: 9.30rem;
+    z-index: 2;
+
     @media screen and (max-width: 62rem) {
         display: none;
     }
