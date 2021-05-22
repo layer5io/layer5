@@ -55,7 +55,7 @@ const NewcomersGuide = () => {
 
             <p>
 
-            <Button primary className="newcomers-form" title="Member Form" url="/newcomer" external={true} />
+              <Button primary className="newcomers-form" title="Member Form" url="/newcomer" external={true} />
               These steps outline the process by which you can
               openly engage, learn, and participate in the broad set of open
               source projects at Layer5. If at any time you get stuck, please
