@@ -7,7 +7,7 @@ const CardComponent = ({tutorial}) => {
 
   return (
     <CardWrapper>
-      <Link to={tutorial.fields.learnpath} className='link-a'>
+      <Link to={tutorial.fields.learnpath} className='card-link'>
         <div style={{backgroundColor:tutorial.frontmatter.themeColor}} className="card-parent">
           <div>
             <div className="card-head">
@@ -16,7 +16,7 @@ const CardComponent = ({tutorial}) => {
                 tutorial.frontmatter.status ? <p><span>New</span></p>:null
               }
             </div>
-            <div className="card-head-desc">
+            <div className="card-desc">
               <p>{tutorial.frontmatter.description}</p>
               <p>{tutorial.frontmatter.learningPaths} learning paths</p>  
             </div>

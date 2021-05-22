@@ -3,14 +3,14 @@ import React from "react";
 // import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
-import { LearnLabsWrapper } from "./labs.style";
+import { SectionsWrapper } from "./chapters.style";
 
-const LearnLabs = (data) => {
+const Sections = (data) => {
   return (
-    <LearnLabsWrapper>
-      <PageHeader title="Learn Layer5 Labs"/>
-    </LearnLabsWrapper>
+    <SectionsWrapper>
+      <PageHeader title="Learn Layer5 Chpaters"/>
+    </SectionsWrapper>
   );
 };
 
-export default LearnLabs;
+export default Sections;

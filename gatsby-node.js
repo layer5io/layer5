@@ -180,7 +180,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             slug
             course
             section
-            lab
+            chapter
             pageType
             collection
           }
@@ -383,22 +383,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       const { pageType } = node.fields;
 
       if (pageType === "learnpath") {
-        createPathPage({ createPage, node });
+        createCoursesListPage({ createPage, node });
         return;
       }
 
       if (pageType === "course") {
-        createCoursePage({ createPage, node });
+        createCourseOverviewPage({ createPage, node });
         return;
       }
 
-      if (pageType === "section") {
-        createSectionPage({ createPage, node });
+      if (pageType === "chapter") {
+        createChapterPage({ createPage, node });
         return;
       }
       
-      if (pageType === "labs") {
-        createLabsPage({ createPage, node });
+      if (pageType === "section") {
+        createSectionPage({ createPage, node });
         return;
       }
     }
@@ -445,18 +445,18 @@ const onCreateSectionNode = ({ actions, node, slug }) => {
   createNodeField({ node, name: "pageType", value: "section" });
 };
 
-const onCreateLabNode = ({ actions, node, slug }) => {
+const onCreateChapterNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
-  const [learnpath, course, section, lab] = parts;
+  const [learnpath, course, section, chapter] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
   createNodeField({ node, name: "slug", value: slug });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "lab", value: lab });
+  createNodeField({ node, name: "chapter", value: chapter });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "section", value: section });
-  createNodeField({ node, name: "pageType", value: "labs" });
+  createNodeField({ node, name: "pageType", value: "chapter" });
 
   // Code for live fetch of code from github using commit-id, check storybook's gatsby-node.js file
 
@@ -514,6 +514,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
       // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
       const parts = slug.split("/").filter(p => !!p);
+      console.log(parts);
 
       if (parts.length === 1) {
         onCreatePathNode({ actions, node, slug });
@@ -531,19 +532,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       }
 
       if (parts.length === 4) {
-        onCreateLabNode({ actions, node, slug });
+        onCreateChapterNode({ actions, node, slug });
         return;
       }
     }
   }
 };
 
-const createPathPage = ({ createPage, node }) => {
+const createCoursesListPage = ({ createPage, node }) => {
   const { learnpath, slug, pageType, permalink } = node.fields;
 
   createPage({
     path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Learning-Paths/index.js"),
+    component: path.resolve("src/sections/Learn-Layer5/Courses-List/index.js"),
     context: {
       // Data passed to context is available in page queries as GraphQL variables.
       learnpath,
@@ -554,7 +555,7 @@ const createPathPage = ({ createPage, node }) => {
   });
 };
 
-const createCoursePage = ({ createPage, node }) => {
+const createCourseOverviewPage = ({ createPage, node }) => {
   const {
     learnpath,
     slug,
@@ -565,11 +566,36 @@ const createCoursePage = ({ createPage, node }) => {
 
   createPage({
     path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Course/index.js"),
+    component: path.resolve("src/sections/Learn-Layer5/Course-Overview/index.js"),
     context: {
       learnpath,
       slug,
       course,
+      pageType,
+      permalink,
+    },
+  });
+};
+
+const createChapterPage = ({ createPage, node }) => {
+  const {
+    learnpath,
+    slug,
+    course,
+    section,
+    chapter,
+    pageType,
+    permalink,
+  } = node.fields;
+
+  createPage({
+    path: `learn-ng${slug}`,
+    component: path.resolve("src/sections/Learn-Layer5/Chapters/index.js"),
+    context: {
+      learnpath,
+      slug,
+      course,
+      section,
       pageType,
       permalink,
     },
@@ -588,38 +614,12 @@ const createSectionPage = ({ createPage, node }) => {
 
   createPage({
     path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Sections/index.js"),
+    component: path.resolve("src/sections/Learn-Layer5/Section/index.js"),
     context: {
       learnpath,
       slug,
       course,
       section,
-      pageType,
-      permalink,
-    },
-  });
-};
-
-const createLabsPage = ({ createPage, node }) => {
-  const {
-    learnpath,
-    slug,
-    course,
-    section,
-    lab,
-    pageType,
-    permalink,
-  } = node.fields;
-
-  createPage({
-    path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Labs/index.js"),
-    context: {
-      learnpath,
-      slug,
-      course,
-      section,
-      lab,
       pageType,
       permalink,
     },

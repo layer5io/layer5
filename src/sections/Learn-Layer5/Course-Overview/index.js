@@ -3,14 +3,14 @@ import React from "react";
 // import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
-import { SectionsWrapper } from "./sections.style";
+import { CourseWrapper } from "./courseoverview.style";
 
-const Sections = (data) => {
+const Courses = (data) => {
   return (
-    <SectionsWrapper>
-      <PageHeader title="Learn Layer5 Sections"/>
-    </SectionsWrapper>
+    <CourseWrapper>
+      <PageHeader title="Learn Layer5 Course Overview"/>
+    </CourseWrapper>
   );
 };
 
-export default Sections;
+export default Courses;

@@ -3,14 +3,14 @@ import React from "react";
 // import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
-import { LearnPathWrapper } from "./learningpath.style";
+import { LearnLabsWrapper } from "./section.style";
 
-const LearningPathGrid = (data) => {
+const LearnLabs = (data) => {
   return (
-    <LearnPathWrapper>
-      <PageHeader title="Learn Layer5 Paths"/>
-    </LearnPathWrapper>
+    <LearnLabsWrapper>
+      <PageHeader title="Learn Layer5 Section"/>
+    </LearnLabsWrapper>
   );
 };
 
-export default LearningPathGrid;
+export default LearnLabs;
