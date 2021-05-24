@@ -62,7 +62,7 @@ env:
   ## TODO: configure connectivity to the databases
   DISCOURSE_DB_SOCKET: 'discourse-production.clruupgioi9v.us-east-2.rds.amazonaws.com'
   #DISCOURSE_DB_USERNAME: discourse
-  DISCOURSE_DB_PASSWORD: discourse
+  DISCOURSE_DB_PASSWORD: '********'
   DISCOURSE_DB_HOST: 'discourse-production.clruupgioi9v.us-east-2.rds.amazonaws.com'
   DISCOURSE_DB_PORT: 5432
   DISCOURSE_REDIS_HOST: '172.31.4.62'
