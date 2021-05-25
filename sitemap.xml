@@ -199,6 +199,7 @@
 <url> <loc>https://layer5.io/community/members/oluwatomiyin-adekanye</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/omkar-phansopkar</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/oscar-hernandez</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/members/otto-van-der-schaaf</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/pang-meng-cheng</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/peace-onyekachi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/piyush-singariya</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -254,9 +255,9 @@
 <url> <loc>https://layer5.io/learn/service-mesh-labs/working-with-meshery-and-linkerd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-labs/working-with-meshery-and-nsm</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/securing-the-service-mesh/istio/filtering-traffic/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/securing-the-service-mesh/istio/mutual-TLS/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/securing-the-service-mesh/linkerd/filtering-traffic/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/securing-the-service-mesh/linkerd/mutual-TLS/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/securing-the-service-mesh/istio/mutual-TLS/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/securing-the-service-mesh/istio/filtering-traffic/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/securing-the-service-mesh/istio/mutual-TLS/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/securing-the-service-mesh/linkerd/filtering-traffic/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
