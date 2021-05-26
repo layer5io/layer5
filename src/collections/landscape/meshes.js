@@ -31,6 +31,21 @@ export const meshes=[
     multi_tenant_score: 6
   },
   {
+    name: "Alibaba Cloud Service Mesh (ASM)",
+    desc: "Alibaba Cloud Service Mesh (ASM) - a fully managed control plane offering that is compatible with Istio.",
+    link: "https://www.alibabacloud.com/product/servicemesh",
+    autoinject: "Yes",
+    tcp_web: "Yes",
+    grpc: "Yes",
+    h2: "Yes",
+    multi_cluster: "Yes",
+    multi_tenant: "Yes",
+    prometheus: "Yes",
+    tracing: "Yes",
+    encryption: "Yes",
+    multi_tenant_score: 10
+  },  
+  {
     name: "Aspen Mesh",
     desc: "Aspen Mesh - a commercial offering built on top of Istio with some open source components.",
     link: "https://aspenmesh.io/",
