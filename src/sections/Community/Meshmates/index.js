@@ -4,7 +4,6 @@ import Button from "../../../reusecore/Button";
 import ProfileCard from "../../../components/Profile-card";
 import CommunityCallCard from "../../../components/CommunityCallCard";
 import MeshMatesWrapper from "./meshmates.style";
-import EmeritusGrid from "../Emeritus-grid";
 import { useStaticQuery, graphql } from "gatsby";
 import c_icon from "./c-icon.svg";
 import MeshmateStackImage from "../../../assets/images/meshmate/meshmate-stack.svg";
@@ -133,7 +132,6 @@ const Meshmates=() => {
                     To report any violations please fill out this incident form. </p>
           <Button primary title="Report Incident" url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" external={true}/>
         </div>
-        <EmeritusGrid />
       </Container>
     </MeshMatesWrapper>
   );
