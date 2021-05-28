@@ -32,7 +32,7 @@ const BannerDefault = () => {
             <Button primary className="banner-btn one" title="Join in" url="/community">
               <FaMapMarkedAlt size={21} className="icon-left" />
             </Button>
-            <Button primary className="banner-btn two" title="Run Meshery" url="/service-mesh-management/meshery">
+            <Button primary className="banner-btn two" title="See Meshery" url="/service-mesh-management/meshery">
               <FiDownloadCloud size={21} className="icon-left" />
             </Button>
           </VintageBox>

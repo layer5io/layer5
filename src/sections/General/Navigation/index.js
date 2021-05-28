@@ -3,6 +3,10 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import Button from "../../../reusecore/Button";
+import { FiDownloadCloud } from "react-icons/fi";
+
+
 
 import { Container } from "../../../reusecore/Layout";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
@@ -220,11 +224,6 @@ const Navigation = () => {
                 </ul>
               </div>
             </div>
-            <ScrollspyMenu
-              className={`collapsed ${expand ? "is-expanded" : ""}`}
-              menuItems={Data.menuItems}
-              blogData={data}
-            />
           </nav>
         </div>
       </Container>
