@@ -25,7 +25,7 @@ const ContainerWrapper = styled.div`
     `}
 `;
 
-const Container = ({children}, props) => {
+const Container = ({children, ...props}) => {
   return(
     <ContainerWrapper {...props}>
       {children}
