@@ -4,8 +4,6 @@ import { Link } from "gatsby";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import Button from "../../../reusecore/Button";
-import { FiDownloadCloud } from "react-icons/fi";
-
 
 
 import { Container } from "../../../reusecore/Layout";
@@ -179,7 +177,7 @@ const Navigation = () => {
 
   return (
     <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
-      <Container>
+      <Container className="nav-container">
         <div className="navbar-wrap">
           <Link to="/" className="logo">
             <img src={layer5_logo} alt="Layer5 logo" />
@@ -224,7 +222,15 @@ const Navigation = () => {
                 </ul>
               </div>
             </div>
+            <ScrollspyMenu
+              className={`collapsed ${expand ? "is-expanded" : ""}`}
+              menuItems={Data.menuItems}
+              blogData={data}
+            />
           </nav>
+        </div>
+        <div className="meshery-cta">
+          <Button secondary title="Run Meshery" url="/service-mesh-management/meshery"/>
         </div>
       </Container>
     </NavigationWrap>
