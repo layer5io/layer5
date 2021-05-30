@@ -2,7 +2,7 @@
 name: 👤 Community Member Profile
 about: Recognize a Layer5 contributor with a community member profile
 title: '[Community] Member Profile:'
-labels: 'area/community'
+labels: 'area/community, help wanted, framework/gatsby, language/markdown, good first issue'
 assignees: ''
 ---
 
