@@ -2,7 +2,7 @@
 name: 📔 Learn Layer5 Site Update
 about: Issues related to Learn Layer5.
 title: '[Learn]'
-labels: 'area/learn'
+labels: 'area/learn, help wanted, framework/gatsby, language/markdown, good first issue'
 assignees: ''
 ---
 **Current State:**
