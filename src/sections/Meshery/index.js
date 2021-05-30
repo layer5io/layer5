@@ -10,7 +10,6 @@ import { GiClockwork } from "react-icons/gi";
 
 import FeaturesTable from "./Features-Col";
 
-import meshery from "./images/meshery-logo-light-text-side.png";
 import mesheryFullStack from "./images/meshery-logo-light-text-tag.png";
 
 import MesheryWrapper from "./meshery.style";
