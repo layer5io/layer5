@@ -230,7 +230,7 @@ const Navigation = () => {
           </nav>
         </div>
         <div className="meshery-cta">
-          <Button secondary title="Run Meshery" url="/service-mesh-management/meshery"/>
+          <Button secondary className="banner-btn two" title="Try Meshery" url="/service-mesh-management/meshery"/>
         </div>
       </Container>
     </NavigationWrap>
