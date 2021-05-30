@@ -2,7 +2,7 @@
 name: 🎪 📅 Layer5 Event Update
 about: Upcoming event to be listed on https://layer5.io/news
 title: '[Event]'
-labels: 'area/events'
+labels: 'area/events, help wanted, framework/gatsby, language/markdown, good first issue'
 assignees: ''
 ---
 **Event:**
