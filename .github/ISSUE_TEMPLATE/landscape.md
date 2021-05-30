@@ -2,7 +2,7 @@
 name: 🏞 Service Mesh Landscape Update
 about: Issues related to the service mesh landscape.
 title: '[Landscape]'
-labels: 'area/landscape'
+labels: 'area/landscape, help wanted, framework/gatsby, language/markdown, good first issue'
 assignees: ''
 ---
 **Current State:**
