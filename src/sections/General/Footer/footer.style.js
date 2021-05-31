@@ -112,7 +112,7 @@ const FooterWrapper = styled.section`
 					color: #CCCCCC;
 				}
 				a:hover {
-					color: #00d3a9;
+					color: ${props => props.theme.secondaryColor};
 				}
 			}
 			li + li {
