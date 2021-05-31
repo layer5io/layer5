@@ -111,6 +111,9 @@ const FooterWrapper = styled.section`
 				a {
 					color: #CCCCCC;
 				}
+				a:hover {
+					color: #00d3a9;
+				}
 			}
 			li + li {
 				margin-left: 1rem;
