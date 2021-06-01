@@ -6,7 +6,6 @@ import { graphql } from "gatsby";
 
 import { CourseWrapper } from "./courseoverview.style";
 import CourseOverview from "../../../components/Learn-Components/Course-Overview-page";
-import { Container } from "@material-ui/core";
 import Layout from "../../../components/layout";
 import SEO from "../../../components/seo";
 import Navigation from "../../General/Navigation";
