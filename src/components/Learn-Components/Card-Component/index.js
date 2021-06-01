@@ -3,15 +3,15 @@ import CardWrapper from "./learn-card.style";
 import Image from "../../image";
 import { Link } from "gatsby";
 
-const CardComponent = ({tutorial}) => {
+const CardComponent = ({tutorial,link}) => {
 
   return (
     <CardWrapper>
-      <Link to={tutorial.fields.learnpath} className='card-link'>
+      <Link to={link?link:tutorial.fields.learnpath} className='card-link'>
         <div style={{backgroundColor:tutorial.frontmatter.themeColor}} className="card-parent">
           <div>
             <div className="card-head">
-              <h3>{tutorial.frontmatter.title}</h3>
+              <h3>{tutorial.frontmatter.title ? tutorial.frontmatter.title : tutorial.frontmatter.courseTitle}</h3>
               {
                 tutorial.frontmatter.status ? <p><span>New</span></p>:null
               }
