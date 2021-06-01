@@ -5,6 +5,8 @@ import PageHeader from "../../reusecore/PageHeader";
 import { Row, Col, Container} from "../../reusecore/Layout";
 import CardComponent from "../../components/Learn-Components/Card-Component";
 import LearnInfo from "../../components/Learn-Components/LearnInfo";
+import WhatAwaitsSection from "../../components/Learn-Components/what-await-section";
+import Button from "../../reusecore/Button";
 
 const LearnPathsPage = () => {
   const data = useStaticQuery(graphql`
@@ -88,10 +90,20 @@ const LearnPathsPage = () => {
             ))
           }
         </Row>
+      </Container>
+      <WhatAwaitsSection />
+      <Container>
         <LearnInfo
           courses={data.coursesCount.edges}
           chapters={data.chaptersCount.edges}
           meshes={data.meshesCount.edges} />
+        <div className="join-community">
+          <div className="join-community_text-and_button">
+            <h1>Don't Learn Alone</h1>
+            <p>Check Out the Layer5 community, Join us on Slack and learn with the community</p>
+          </div>
+          <Button secondary title="Join Our Talented Community" url="http://slack.layer5.io/" />
+        </div>
       </Container>
     </LearnLayer5GridWrapper>
   );
