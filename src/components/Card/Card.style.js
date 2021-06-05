@@ -9,7 +9,7 @@ export const CardWrapper = styled.div`
         &:hover{
             box-shadow: 0px 2px 15px 4px rgba(0,0,0,0.2);
             .post-thumb-block{
-                .gatsby-image-wrapper, .old-gatsby-image-wrapper{
+                .gatsby-image-wrapper{
                     transform: scale3d(1.1,1.1,1);
                 }
             }
@@ -36,7 +36,7 @@ export const CardWrapper = styled.div`
         border-top-right-radius: 0.5rem;
         border-top-left-radius: 0.5rem;
 
-        .gatsby-image-wrapper, .old-gatsby-image-wrapper{
+        .gatsby-image-wrapper{
             height:100%;
             transition: all 0.3s ease-in;
         }
@@ -79,7 +79,7 @@ export const CardWrapper = styled.div`
     .post-title{
         font-size: 1.4rem;
         font-weight: 400;
-        color: black;
+        color: ${props => props.theme.black};
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -93,7 +93,7 @@ export const CardWrapper = styled.div`
             text-align: end;
         }
         .author, p{
-            color: rgba(0, 0, 0, 0.4);
+            color: ${props => props.theme.gray};
             font-size: 0.9rem;
             font-weight: 400;
             flex: auto;
@@ -114,8 +114,9 @@ export const CardWrapper = styled.div`
         right: 0;
         bottom: 0;
     }
+
     .readmore-btn, .external-link-btn{
-       color: rgba(0,0,0,0.4);
+       color: ${props => props.theme.gray};
        display: flex;
        flex: auto;
        align-items: center;

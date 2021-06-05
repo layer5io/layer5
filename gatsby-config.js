@@ -4,7 +4,6 @@ module.exports = {
     title: "Layer5 - The Service Mesh Company",
     description: "Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.",
     author: "Layer5 Authors",
-    permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
     image: "/images/layer5-tag-dark-bg.png",
     twitterUsername: "@layer5",
@@ -25,6 +24,13 @@ module.exports = {
           head: false,
         },
       },
+    },
+    {
+      resolve: "gatsby-styled-components-dark-mode",
+      options: {
+        light: require(`${__dirname}/src/theme/app/themeStyles.js`).lightTheme,
+        dark: require(`${__dirname}/src/theme/app/themeStyles.js`).darkTheme
+      }
     },
     {
       resolve: "gatsby-plugin-feed-mdx",
@@ -194,14 +200,6 @@ module.exports = {
         name: "events",
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/content-learn`,
-        name: "content-learn",
-      },
-    },
-    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
       resolve: "gatsby-transformer-sharp",

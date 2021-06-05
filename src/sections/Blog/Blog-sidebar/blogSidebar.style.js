@@ -96,7 +96,7 @@ const BlogSideBarWrapper = styled.div`
             li{
                 display: inline-block;
                 a{
-                    color: ${props => props.theme.black};
+                    color: #000000
                     margin: 5px;
                     display: block;
                     padding: 6px 18px;

@@ -44,11 +44,6 @@ const UpcomingEventsWrapper = styled.div`
 		}
 	}
 
-	.blog-slider_description {
-		padding-left: 0.625rem;
-		font-size: 1.25rem;
-	}
-
 	.swiper-pagination-bullet {
 		background: ${props => props.theme.secondaryColor};
 	}

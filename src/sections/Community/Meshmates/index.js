@@ -4,44 +4,48 @@ import Button from "../../../reusecore/Button";
 import ProfileCard from "../../../components/Profile-card";
 import CommunityCallCard from "../../../components/CommunityCallCard";
 import MeshMatesWrapper from "./meshmates.style";
+import EmeritusGrid from "../Emeritus-grid";
 import { useStaticQuery, graphql } from "gatsby";
 import c_icon from "./c-icon.svg";
 import MeshmateStackImage from "../../../assets/images/meshmate/meshmate-stack.svg";
 
 const Meshmates=() => {
   const data=useStaticQuery(
-    graphql`query meshmates {
-  allMdx(
-    sort: {fields: [frontmatter___name], order: ASC}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}}}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        name
-        github
-        twitter
-        status
-        linkedin
-        location
-        badges
-        bio
-        meshmate
-        image_path {
-          childImageSharp {
-            gatsbyImageData(width: 200, layout: CONSTRAINED)
-          }
-          extension
-          publicURL
+    graphql`
+        query meshmates {
+            allMdx(
+                sort: { fields: [frontmatter___name], order: ASC }
+                filter: { fields: { collection: { eq: "members" } }, frontmatter: { meshmate: { eq: "yes" } } }
+            ) {
+                nodes {
+                    id
+                    frontmatter {
+                        name
+                        github
+                        twitter
+                        status
+                        linkedin
+                        location
+                        badges
+                        bio
+                        meshmate
+                        image_path{
+                            childImageSharp{
+                                fluid(maxWidth: 200){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                            extension
+                            publicURL
+                        }
+                    }
+                    fields{
+                        slug
+                    }
+                }
+            }
         }
-      }
-      fields {
-        slug
-      }
-    }
-  }
-}
-`
+        `
   );
   return (
     <MeshMatesWrapper>
@@ -132,6 +136,7 @@ const Meshmates=() => {
                     To report any violations please fill out this incident form. </p>
           <Button primary title="Report Incident" url="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform" external={true}/>
         </div>
+        <EmeritusGrid />
       </Container>
     </MeshMatesWrapper>
   );

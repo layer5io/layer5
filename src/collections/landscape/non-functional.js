@@ -17,7 +17,6 @@ import Kuma from "../../assets/images/service-mesh-icons/kuma.svg";
 import Citrix from "../../assets/images/service-mesh-icons/citrix.svg";
 import Osm from "../../assets/images/service-mesh-icons/osm.svg";
 import Nginx from "../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
-import Asm from "../../assets/images/service-mesh-icons/alibaba-cloud-asm.svg";
 
 
 export const non_functional=[{
@@ -278,19 +277,6 @@ export const non_functional=[{
   icon: Citrix
 },
 {
-  name: "Alibaba Cloud Service Mesh (ASM)",
-  opensource: "Partial",
-  link: "https://www.alibabacloud.com/product/servicemesh",
-  governance: "Alibaba Cloud",
-  primary_lang: "Go",
-  announce_date: "February 2020",
-  ga_1_date: "August 2020",
-  commercial: "Alibaba Cloud",
-  category: "Service Mesh",
-  timeline_order: 21,
-  icon: Asm
-},
-{
   name: "Open Service Mesh",
   opensource: "Yes",
   link: "https://openservicemesh.io/",
@@ -300,7 +286,7 @@ export const non_functional=[{
   ga_1_date: "?",
   commercial: "Microsoft",
   category: "Service Mesh",
-  timeline_order: 22,
+  timeline_order: 21,
   icon: Osm
 },
 {
@@ -313,7 +299,7 @@ export const non_functional=[{
   ga_1_date: "?",
   commercial: "NGINX",
   category: "Service Mesh",
-  timeline_order: 23,
+  timeline_order: 22,
   icon: Nginx,
 },
 {

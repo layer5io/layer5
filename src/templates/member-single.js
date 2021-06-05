@@ -12,28 +12,31 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
-export const query = graphql`query MemberBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    frontmatter {
-      name
-      position
-      github
-      twitter
-      meshmate
-      linkedin
-      location
-      badges
-      bio
-      image_path {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
+export const query = graphql`
+    query MemberBySlug($slug: String!) {
+        mdx(fields: { slug: { eq: $slug } }) {
+            frontmatter {
+                name
+                position
+                github
+                twitter
+                meshmate
+                linkedin
+                location
+                badges
+                bio
+                image_path{
+                    childImageSharp{
+                        fluid(maxWidth: 500){
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                    extension
+                    publicURL
+                }
+            }
         }
-        extension
-        publicURL
-      }
     }
-  }
-}
 `;
 
 const MemberSinglePage = ({data}) => {

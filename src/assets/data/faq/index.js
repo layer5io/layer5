@@ -4,8 +4,7 @@ const data = {
         {
             question: "Are Layer5's service mesh solutions open source?",
             category: "Layer5",
-            answer: ["Yes, all of Layer5's projects are licensed under Apache v2.",
-            "Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported."]
+            answer: ["Yes, all of Layer5's projects are licensed under Apache v2."]
         },
         {
             question: "What value does a service mesh provide?",
@@ -94,7 +93,7 @@ const data = {
             category: "Service Mesh",
             answer: ["There are many service meshes from which to choose as well as a variety of deployment models. Which is right for you and your organization depends on where you are in your maturity curve (Cloud Native skill set), number of services, underlying infrastructure, and how centric technology is to your business. ",
                 "So, should you deploy a service mesh? More and more the answer is “yes”. Service meshes are quickly becoming a ubiquitous layer in modern infrastructures."],
-            link: "/deploy-service-mesh",
+            link: "/deploy-a-service-mesh",
             linktext: "Factors When considering how strongly you need a service mesh",
         },
         {
@@ -134,8 +133,7 @@ const data = {
         {
             question: "Is Meshery open source?",
             category: "Meshery",
-            answer: ["Yes, all of Layer5's projects are licensed under Apache v2, including Meshery.",
-            "As the service mesh management plane, Meshery is an extensible platform, offering multiple extension points within which users and partners can customize and extend Meshery's functionality."]
+            answer: ["Yes, all of Layer5's projects are licensed under Apache v2, including Meshery."]
         },
         {
             question: "How do I land an internship with Layer5?",
@@ -158,8 +156,7 @@ const data = {
             question: "What are characteristics of successful interns?",
             category: "internships",
             answer: ["Interns that thrive at Layer5 are those that espouse the Layer5 culture of paying it forward. These interns freely help other contributors, understanding that 1) they learn as they teach and assist others, 2) their projects are futhered with more contributors engage, and 3) any contributors path to maintainership is one of enabling others.",
-            "Successful interns steward projects naturally as they become a resource to other contributors. These interns frequently become component and/or core maintainers.",
-            "Successful interns internalize the fact that the real value of engaging and contributing to projects is the experience gained. They understand that the experience is theirs for the taking and that project maintainers and Layer5 employees want you to seize the opportunity. We consider your success our success and embrace the concept that your meaningful engagement is to all our benefits."],
+            "Successful interns steward projects naturally as they become a resource to other contributors. These interns frequently become component and/or core maintainers."],
             link: "/blog/tag/community",
             linktext: "Hear from other interns"
         },
@@ -169,7 +166,7 @@ const data = {
             answer: ["Many Layer5 interns speak at large, public technology conferences like KubeCon, DockerCon, and so on. They write blog posts and share about their experience and learnings on social media. They engage with their whole self.",
             "Many interns become open source maintainers, and have ongoing responsibility to steward Layer5 and CNCF projects."]
         }
-        
+
     ]
 
 };

@@ -10,6 +10,8 @@ import { Container } from "../../../reusecore/Layout";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
 import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import ThemeSwitcher from "../../../components/ThemeSwitcher";
+
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 
@@ -228,6 +230,7 @@ const Navigation = () => {
               blogData={data}
             />
           </nav>
+          <ThemeSwitcher />
         </div>
         <div className="meshery-cta">
           <Button secondary className="banner-btn two" title="Try Meshery" url="/service-mesh-management/meshery"/>

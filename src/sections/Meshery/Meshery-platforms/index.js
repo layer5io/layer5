@@ -5,22 +5,10 @@ import { Col, Container, Row } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import Code from "../../../components/CodeBlock";
 import dedent from "dedent";
-import Apple from "./supported-icons/apple.svg";
-import Docker from "./supported-icons/docker_white.svg";
-import EKS from "./supported-icons/eks_white.svg";
-import GKE from "./supported-icons/gke.svg";
-import Helm from "./supported-icons/helm-icon-white.svg";
-import HomeBrew from "./supported-icons/homebrew.svg";
-import Kind from "./supported-icons/kind.svg";
-import Kubernetes from "./supported-icons/kubernetes_white.svg";
-import Linux from "./supported-icons/linux.svg";
-import Minikube from "./supported-icons/minikube.svg";
-import AKS from "./supported-icons/aks_white.svg";
-import WSL2 from "./supported-icons/wsl2.svg";
 
 const supported_platforms = [
   {
-    icon: Apple,
+    icon: require("./supported-icons/apple.svg"),
     name: "Apple",
     steps: (
       <>
@@ -34,7 +22,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: Docker,
+    icon: require("./supported-icons/docker_white.svg"),
     name: "Docker",
     steps: (
       <>
@@ -45,7 +33,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: EKS,
+    icon: require("./supported-icons/eks_white.svg"),
     name: "EKS",
     steps: (
       <>
@@ -57,7 +45,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: GKE,
+    icon: require("./supported-icons/gke.svg"),
     name: "GKE",
     steps: (
       <>
@@ -69,7 +57,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: Helm,
+    icon: require("./supported-icons/helm-icon-white.svg"),
     name: "Helm",
     steps: (
       <>
@@ -81,7 +69,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: HomeBrew,
+    icon: require("./supported-icons/homebrew.svg"),
     name: "HomeBrew",
     steps: (
       <>
@@ -95,7 +83,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: Kind,
+    icon: require("./supported-icons/kind.svg"),
     name: "Kind",
     steps: (
       <>
@@ -108,7 +96,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: Kubernetes,
+    icon: require("./supported-icons/kubernetes_white.svg"),
     name: "Kubernetes",
     steps: (
       <>
@@ -119,7 +107,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: Linux,
+    icon: require("./supported-icons/linux.svg"),
     name: "Linux",
     steps: (
       <>
@@ -130,7 +118,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: Minikube,
+    icon: require("./supported-icons/minikube.svg"),
     name: "Minikube",
     steps: (
       <>
@@ -143,7 +131,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: AKS,
+    icon: require("./supported-icons/aks_white.svg"),
     name: "AKS",
     steps: (
       <>
@@ -156,7 +144,7 @@ const supported_platforms = [
     )
   },
   {
-    icon: WSL2,
+    icon: require("./supported-icons/wsl2.svg"),
     name: "WSL2",
     steps: (
       <>

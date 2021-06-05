@@ -4,10 +4,10 @@ import cover from "./images/Rectangle 495.png";
 const Gnhwrapper = styled.section`
     .hero-section{
         padding: 5rem 0rem;
-        .logo{
+        .img1{
             display: block;
             margin: 0 auto;
-            width: 80%;
+            width: 50%;
         }
         .hero-text{
             margin: 0 auto;

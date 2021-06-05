@@ -13,22 +13,25 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
-export const query = graphql`query ProjectsBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    body
-    frontmatter {
-      title
-      subtitle
-      thumbnail {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
+export const query = graphql`
+    query ProjectsBySlug($slug: String!) {
+        mdx(fields: { slug: { eq: $slug } }) {
+            body
+            frontmatter {
+                title
+                subtitle
+                thumbnail{
+                    childImageSharp{
+                        fluid(maxWidth: 500){
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                    extension
+                    publicURL
+                }
+            }
         }
-        extension
-        publicURL
-      }
     }
-  }
-}
 `;
 
 const ProjectSinglePage = ({data}) => {

@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
 
 ::selection {
     background: ${(props) => props.theme.primaryColor};
-    color: #ffffff;
+    color: ${props => props.theme.white};
 }
 
   *,
@@ -37,6 +37,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Open Sans', sans-serif;
   color: ${(props) => props.theme.textColor};
+  background-color: ${props => props.theme.backgroundColor};
   overflow-x: hidden !important;
   font-weight: 400 !important;
   margin: 0;

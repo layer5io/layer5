@@ -14,22 +14,25 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import SEO from "../components/seo";
 
-export const query = graphql`query BookBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    body
-    frontmatter {
-      title
-      abstract
-      thumbnail {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
+export const query = graphql`
+    query BookBySlug($slug: String!) {
+        mdx(fields: { slug: { eq: $slug } }) {
+            body
+            frontmatter {
+                title
+                abstract
+                thumbnail{
+                    childImageSharp{
+                        fluid(maxWidth: 500){
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                    extension
+                    publicURL
+                }
+            }
         }
-        extension
-        publicURL
-      }
     }
-  }
-}
 `;
 
 const BookSinglePage = ({data}) => {

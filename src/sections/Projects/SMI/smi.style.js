@@ -32,7 +32,7 @@ const SMIWrapper = styled.section`
             margin-bottom: 2.5rem;
             p{
                 font-size: 21px;
-                color: black;
+                color: ${props => props.theme.black};
                 opacity: 70%;
             }
         }

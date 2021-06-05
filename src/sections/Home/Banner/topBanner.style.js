@@ -12,7 +12,7 @@ const TopLevelWrapper = styled.div`
 
         background: url(${HeroCubesBlack}) no-repeat;
         background-size: 50%;
-        background-color: #F3FFFD;
+        background-color: ${props => props.theme.secondaryLightColorTwo};
         background-position: bottom -85px right;
         p {
             font-size: 21px;
@@ -168,7 +168,7 @@ const TopLevelWrapper = styled.div`
         background-repeat: no-repeat, no-repeat;
 
         background-size: 25%, 23%;
-        background-color: #F3FFFD;
+        background-color: ${props => props.theme.secondaryLightColorTwo};
         background-position: center right 160px, bottom right;
         p {
             font-size: 21px;

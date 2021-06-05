@@ -13,24 +13,27 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
-export const query = graphql`query NewsBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    body
-    frontmatter {
-      title
-      subtitle
-      date(formatString: "MMMM Do, YYYY")
-      author
-      thumbnail {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED)
+export const query = graphql`
+    query NewsBySlug($slug: String!) {
+        mdx(fields: { slug: { eq: $slug } }) {
+            body
+            frontmatter {
+                title
+                subtitle
+                date(formatString: "MMMM Do, YYYY")
+                author
+                thumbnail{
+                    childImageSharp{
+                        fluid(maxWidth: 500){
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                    extension
+                    publicURL
+                }
+            }
         }
-        extension
-        publicURL
-      }
     }
-  }
-}
 `;
 
 const NewsSinglePage = ({data}) => {

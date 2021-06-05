@@ -12,20 +12,13 @@ export const NewcomersGuideWrapper = styled.section`
               margin-bottom: 2rem;
             }
         }
-        .how-to-contribute {
-          display: flex;
-          flex-direction: row;
+        .how-to-contribute{
           h3{
             margin: auto;
             font-weight: 600;
           }
           p {
             margin: 2rem 0;
-            button {
-              margin: 1rem;
-              padding: 1rem;
-              float: left;
-            }
           }
         }
     }
@@ -85,11 +78,6 @@ export const NewcomersGuideWrapper = styled.section`
         margin: 0 auto;
         max-width: 21.875rem
       }
-    }
-    .community-collage {
-      
-      min-width: 45vmin;
-      
     }
     .table-wrapper{
       text-align: center;

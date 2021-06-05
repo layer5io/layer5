@@ -9,8 +9,6 @@
 const path = require("path");
 const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
-const { createFilePath } = require("gatsby-source-filesystem");
-const config = require("./gatsby-config");
 
 // Replacing '/' would result in empty string which is invalid
 const replacePath = path => (path === "/" ? path : path.replace(/\/$/, ""));
@@ -45,15 +43,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/news", toPath: "/company/news", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/service-meshes", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/calendar", toPath: "/community/calendar", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/smi", toPath: "/projects/service-mesh-interface-conformance", redirectInBrowser: true, isPermanent: true });
 
-  //****
-  // External Resoruce Redirects
-  //****
-
-  // New Community Member (Google Form)
-  createRedirect({ fromPath: "/newcomer", toPath: "https://docs.google.com/forms/d/e/1FAIpQLSdMLeZY6hZ46yYNkoKKV5OM-jCypjbYcqptbUNltEE73EqCjA/viewform", redirectInBrowser: true, isPermanent: true });
-  
   // Create Pages
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
@@ -167,21 +157,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes{
           fields{
             slug
-            collection
-          }
-        }
-      }
-      learncontent: allMdx(
-        filter: {fields: {collection: {eq: "content-learn"}}}
-      ){
-        nodes{
-          fields{
-            learnpath
-            slug
-            course
-            section
-            chapter
-            pageType
             collection
           }
         }
@@ -375,91 +350,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
-
-  const learnNodes = res.data.learncontent.nodes;
-
-  learnNodes.forEach((node) => {
-    if (node.fields){
-      const { pageType } = node.fields;
-
-      if (pageType === "learnpath") {
-        createCoursesListPage({ createPage, node });
-        return;
-      }
-
-      if (pageType === "course") {
-        createCourseOverviewPage({ createPage, node });
-        return;
-      }
-
-      if (pageType === "chapter") {
-        createChapterPage({ createPage, node });
-        return;
-      }
-      
-      if (pageType === "section") {
-        createSectionPage({ createPage, node });
-        return;
-      }
-    }
-  });
-};
-
-
-// slug starts and ends with '/' so parts[0] and parts[-1] will be empty
-const getSlugParts = slug => slug.split("/").filter(p => !!p);
-
-const onCreatePathNode = ({ actions, node, slug }) => {
-  const { createNodeField } = actions;
-  const parts = getSlugParts(slug);
-  const [learnpath] = parts;
-
-  createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: slug });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "pageType", value: "learnpath" });
-};
-
-const onCreateCourseNode = ({ actions, node, slug }) => {
-  const { createNodeField } = actions;
-  const parts = getSlugParts(slug);
-  const [learnpath, course] = parts;
-
-  createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: slug });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "course", value: course });
-  createNodeField({ node, name: "pageType", value: "course" });
-};
-
-const onCreateSectionNode = ({ actions, node, slug }) => {
-  const { createNodeField } = actions;
-  const parts = getSlugParts(slug);
-  const [learnpath, course, section] = parts;
-
-  createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: slug });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "course", value: course });
-  createNodeField({ node, name: "section", value: section });
-  createNodeField({ node, name: "pageType", value: "section" });
-};
-
-const onCreateChapterNode = ({ actions, node, slug }) => {
-  const { createNodeField } = actions;
-  const parts = getSlugParts(slug);
-  const [learnpath, course, section, chapter] = parts;
-
-  createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: slug });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "chapter", value: chapter });
-  createNodeField({ node, name: "course", value: course });
-  createNodeField({ node, name: "section", value: section });
-  createNodeField({ node, name: "pageType", value: "chapter" });
-
-  // Code for live fetch of code from github using commit-id, check storybook's gatsby-node.js file
-
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -471,159 +361,40 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value: collection
     });
-    if(collection !== "content-learn"){
-      let slug = "";
-      if (node.frontmatter.permalink) {
-        slug = `/${collection}/${node.frontmatter.permalink}`;
-      } else {
-        switch (collection) {
-          case "blog":
-            slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "news":
-            slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "service-mesh-books":
-          case "service-mesh-workshops":
-          case "service-mesh-labs":
-            slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
-            break;
-          case "members":
-            if (node.frontmatter.published)
-              slug = `/community/members/${slugify(node.frontmatter.name)}`;
-            break;
-          case "events":
-            if (node.frontmatter.title)
-              slug = `/community/events/${slugify(node.frontmatter.title)}`;
-            break;
-          default:
-            slug = `/${collection}/${slugify(node.frontmatter.title)}`;
-        }
-      }
-      createNodeField({
-        name: "slug",
-        node,
-        value: slug,
-      });
+    let slug = "";
+    if (node.frontmatter.permalink) {
+      slug = `/${collection}/${node.frontmatter.permalink}`;
     } else {
-      const slug = createFilePath({
-        node,
-        getNode,
-        basePath: "content-learn"
-      });
-
-      // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
-      const parts = slug.split("/").filter(p => !!p);
-
-      if (parts.length === 1) {
-        onCreatePathNode({ actions, node, slug });
-        return;
-      }
-
-      if (parts.length === 2) {
-        onCreateCourseNode({ actions, node, slug });
-        return;
-      }
-
-      if (parts.length === 3) {
-        onCreateSectionNode({ actions, node, slug });
-        return;
-      }
-
-      if (parts.length === 4) {
-        onCreateChapterNode({ actions, node, slug });
-        return;
+      switch (collection) {
+        case "blog":
+          slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "news":
+          slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "service-mesh-books":
+        case "service-mesh-workshops":
+        case "service-mesh-labs":
+          slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
+          break;
+        case "members":
+          if (node.frontmatter.published)
+            slug = `/community/members/${slugify(node.frontmatter.name)}`;
+          break;
+        case "events":
+          if (node.frontmatter.title)
+            slug = `/community/events/${slugify(node.frontmatter.title)}`;
+          break;
+        default:
+          slug = `/${collection}/${slugify(node.frontmatter.title)}`;
       }
     }
+    createNodeField({
+      name: "slug",
+      node,
+      value: slug,
+    });
   }
-};
-
-const createCoursesListPage = ({ createPage, node }) => {
-  const { learnpath, slug, pageType, permalink } = node.fields;
-
-  createPage({
-    path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Courses-List/index.js"),
-    context: {
-      // Data passed to context is available in page queries as GraphQL variables.
-      learnpath,
-      slug,
-      permalink,
-      pageType,
-    },
-  });
-};
-
-const createCourseOverviewPage = ({ createPage, node }) => {
-  const {
-    learnpath,
-    slug,
-    course,
-    pageType,
-    permalink,
-  } = node.fields;
-
-  createPage({
-    path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Course-Overview/index.js"),
-    context: {
-      learnpath,
-      slug,
-      course,
-      pageType,
-      permalink,
-    },
-  });
-};
-
-const createChapterPage = ({ createPage, node }) => {
-  const {
-    learnpath,
-    slug,
-    course,
-    section,
-    chapter,
-    pageType,
-    permalink,
-  } = node.fields;
-
-  createPage({
-    path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Chapters/index.js"),
-    context: {
-      learnpath,
-      slug,
-      course,
-      section,
-      chapter,
-      pageType,
-      permalink,
-    },
-  });
-};
-
-const createSectionPage = ({ createPage, node }) => {
-  const {
-    learnpath,
-    slug,
-    course,
-    section,
-    pageType,
-    permalink,
-  } = node.fields;
-
-  createPage({
-    path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Section/index.js"),
-    context: {
-      learnpath,
-      slug,
-      course,
-      section,
-      pageType,
-      permalink,
-    },
-  });
 };
 
 exports.createSchemaCustomization = ({ actions }) => {

@@ -111,9 +111,6 @@ const FooterWrapper = styled.section`
 				a {
 					color: #CCCCCC;
 				}
-				a:hover {
-					color: ${props => props.theme.secondaryColor};
-				}
 			}
 			li + li {
 				margin-left: 1rem;

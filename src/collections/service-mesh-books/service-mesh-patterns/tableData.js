@@ -157,11 +157,6 @@ export const Data = [
     subsection: "Area III"
   },
   {
-    service_mesh_pattern:"Pattern: Service Mesh Adapter Pattern  (Protocol conversion using WASM)",
-    category:"Traffic Manangement",
-    subsection: "Area III"
-  },
-  {
     service_mesh_pattern:"Area IV: Patterns of Operation",
     subheading:"bold"
   },

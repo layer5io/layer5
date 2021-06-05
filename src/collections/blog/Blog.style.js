@@ -1,98 +1,98 @@
 import styled from "styled-components";
 export const BlogWrapper = styled.div`
-  color: #000;
-  .sub-heading {
-    color: gray;
-    position: relative;
-    top: -10px;
-  }
-  a.invert {
-    text-decoration: none;
-    color: ${(props) => props.theme.tertiaryColor};
-    &:hover {
-      color: ${(props) => props.theme.keppelColor};
+    color: ${(props) => props.theme.black};
+    .sub-heading {
+      color: ${(props) => props.theme.gray};
+      position: relative;
+      top: -10px;
     }
-  }
-
-  a.blog {
-    color: ${(props) => props.theme.primaryColor};
-    background-color: #eeeeee;
-    border-radius: 8px;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    &:hover {
-      color: ${(props) => props.theme.keppelColor};
+    a.invert {
+      text-decoration: none;
+      color: ${(props) => props.theme.tertiaryColor};
+      &:hover {
+          color: ${(props) => props.theme.keppelColor};
+      }
     }
-  }
-  div.intro {
-    padding-left: 3rem;
-    padding-right: 3rem;
-    font-style: italic;
-    font-size: 0.8rem;
-    border-top: 1px dashed ${(props) => props.theme.primaryLightColor};
-    border-bottom: 1px dashed ${(props) => props.theme.primaryLightColor};
-    margin-bottom: 1rem;
-    padding-top: 1rem;
-    background-color: ${(props) => props.theme.secondaryLightColorTwo};
-    span {
-      font-style: normal;
+    
+    a.blog {
+        color: ${(props) => props.theme.primaryColor};
+        background-color: #eeeeee;
+        border-radius: 8px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        &:hover {
+            color: ${(props) => props.theme.keppelColor}; 
+        }
     }
-  }
-  .to-uppercase {
-    text-transform: uppercase;
-  }
+    div.intro {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        font-style: italic;
+        font-size: 0.8rem;
+        border-top: 1px dashed ${(props) => props.theme.primaryLightColor};
+        border-bottom: 1px dashed ${(props) => props.theme.primaryLightColor};
+        margin-bottom: 1rem;
+        padding-top: 1rem;
+        background-color: ${(props) => props.theme.secondaryLightColorTwo};
+        span {
+            font-style: normal;
+        }
+    }
+    .to-uppercase {
+      text-transform: uppercase;
+    }
 
-  .content-left-margin {
-    margin-left: 0.5em;
-  }
+    .content-left-margin {
+      margin-left: 0.5em;
+    }
 
-  .table-1 {
-    white-space: nowrap;
-    max-width: 290px;
-  }
+    .table-1 {
+      white-space: nowrap;
+      max-width: 290px;
+    }
 
-  .table-2 {
-    width: 40%;
-    margin-left: 1.8em;
-  }
+    .table-2 {
+      width: 40%;
+      margin-left: 1.8em;
+    }
 
-  .table-box {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    width: 50%;
-    border: 2px solid gray;
-  }
-  .text-centre {
-    text-align: center;
-  }
-  .table-adapters {
-    float: right;
-    width: auto;
-    vertical-align: middle;
-    border: 1px solid darkgray;
-    .adapter-logo {
+    .table-box {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      width: 50%;
+      border: 2px solid gray;
+    }
+    .text-centre {
+      text-align: center;
+    }
+    .table-adapters {
+      float: right;
+      width: auto;
       vertical-align: middle;
-      margin-right: 5px;
-      height: 30px;
-      width: 30px;
+      border: 1px solid darkgray;
+      .adapter-logo {
+        vertical-align: middle;
+        margin-right: 5px;
+        height: 30px;
+        width: 30px;
     }
     .stable-adapters {
       width: auto;
       background-color: #3c494f;
       text-align: center;
-      color: #fff;
+      color: ${(props) => props.theme.white};
     }
     .beta-adapters {
       width: auto;
       background-color: #00d3a9;
       text-align: center;
-      color: #fff;
+      color: ${(props) => props.theme.white};;
     }
     .alpha-adapters {
       width: auto;
       background-color: lightgray;
       text-align: center;
-      color: black;
+      color: ${(props) => props.theme.black};;
     }
   }
 

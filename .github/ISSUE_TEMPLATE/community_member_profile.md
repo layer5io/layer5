@@ -2,7 +2,7 @@
 name: 👤 Community Member Profile
 about: Recognize a Layer5 contributor with a community member profile
 title: '[Community] Member Profile:'
-labels: 'area/community, help wanted, framework/gatsby, language/markdown, good first issue'
+labels: 'area/community'
 assignees: ''
 ---
 
@@ -17,10 +17,6 @@ Let's recognize <@github-username> as a contributor and community member by crea
 - Twitter: <!-- handle only -->
 - LinkedIn: <!-- <profilename> only (https://www.linkedin.com/in/<profilename>)-->
 - Link to profile picture:
-
-A detailed explanation on how to set up a community member profile can be found in the [CONTRIBUTING.md](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
-
-The CONTRIBUTING.md file has a "Common Types of Site Updates" section with detailed examples to follow here.[CONTRIBUTING.md](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
 
 ---
 

@@ -14,7 +14,7 @@ export const HeroWrapper = styled.div`
   }
 
    .content {
-    max-width: 34rem;
+    max-width: 30rem;
 
     @media (max-width: 1119px) {
       max-width: 22rem;
@@ -47,16 +47,14 @@ export const HeroWrapper = styled.div`
         margin: 8px;
       }
     }
-
-     .code{
-       pre{
-         width: inherit;
-       }
-       .token-line > span:first-of-type{
-         display: none;
-       }
-     }
   }
+  code {
+
+    background-color: #eee;
+    border-radius: 5px;
+    font-family: courier, monospace;
+    padding: 5px;
+    }
     p.enddescr {
       margin-top: 1rem;
     }
