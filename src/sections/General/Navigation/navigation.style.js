@@ -8,6 +8,35 @@ const NavigationWrap = styled.header`
   z-index: 9999;
   top: 0;
   transition: all 0.3s ease 0s;
+
+  .nav-container {
+    display: flex;
+  }
+  .meshery-cta {
+    position: absolute;
+    right: 2.5rem;
+    top: 2.5rem;
+    max-height: 50px;
+
+    a {
+      display: flex;
+    }
+
+    @media screen and (max-width: 1550px) {
+      position: relative;
+      right: -4rem;
+      top: 1.5rem;
+    }
+    @media screen and (max-width: 1275px) {
+      right: -1.95rem;
+    }
+    @media screen and (max-width: 992px) {
+      right: -1rem;
+    }
+    @media screen and (max-width: 912px) {
+      display: none;
+    }
+  }
   .navbar-wrap {
     width: 100%;
     display: flex;
@@ -263,6 +292,9 @@ const NavigationWrap = styled.header`
     img {
       width: 155px;
     }
+    @media screen and (max-width: 992px) and (min-width: 912px) {
+      width: 125px;
+    }
   }
   &.scrolled {    
     box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px;
@@ -291,7 +323,7 @@ const NavigationWrap = styled.header`
       margin-top: 7px;
     }
     &.scrolled {
-      padding: 8px 20px;
+      padding: 15px 20px;
     }
     ul.collapsed {
       display: none;
@@ -347,11 +379,20 @@ const NavigationWrap = styled.header`
       display: inline-block;
       position: relative;
       cursor: pointer;
+      animation: open-icon 0.3s ease-in;
     }
     .mobile-menu-icon.open {
       animation: close-icon 0.3s ease-in;
     }
+    @keyframes open-icon {
+      from { opacity: 0; }
+      to { opacity: 1; }
+      0% { transform: scale(0); }
+      100% { transform: scale(1); }
+    }
     @keyframes close-icon {
+        from { opacity: 0; }
+        to { opacity: 1; }
         0% { transform: rotate(0deg); }
         100% { transform: rotate(180deg); }
     }
@@ -411,7 +452,7 @@ const NavigationWrap = styled.header`
     height: 160px;
     max-width: 100%;
     margin: 0 auto;
-    .gatsby-image-wrapper{
+    .gatsby-image-wrapper, .old-gatsby-image-wrapper{
         height:100%;
         transition: all 0.3s ease-in;
     }

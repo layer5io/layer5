@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import Button from "../../../reusecore/Button";
+
 
 import { Container } from "../../../reusecore/Layout";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
@@ -17,105 +19,116 @@ import NavigationWrap from "./navigation.style";
 
 const Navigation = () => {
   let data = useStaticQuery(
-    graphql`
-            query {
-                Learn: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "service-mesh-books" } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-                Community: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "events" } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                publicURL
-                                extension
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-                Blog: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "blog" } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                publicURL
-                                extension
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-                Home: allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "projects" } }, frontmatter: { published: { eq: true } } }
-                    limit: 2
-                ) {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            thumbnail{
-                                childImageSharp{
-                                    fixed(width: 240, height: 160, cropFocus: CENTER) {
-                                        ...GatsbyImageSharpFixed_withWebp
-                                    }
-                                }
-                                extension
-                                publicURL
-                            }
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`{
+  Learn: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "service-mesh-books"}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Community: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "events"}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+          extension
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Blog: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          publicURL
+          extension
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+  Home: allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
+    limit: 2
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              width: 240
+              height: 160
+              transformOptions: {cropFocus: CENTER}
+              layout: FIXED
+            )
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
   data["Projects"] = {
     nodes: [
@@ -166,7 +179,7 @@ const Navigation = () => {
 
   return (
     <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
-      <Container>
+      <Container className="nav-container">
         <div className="navbar-wrap">
           <Link to="/" className="logo">
             <img src={layer5_logo} alt="Layer5 logo" />
@@ -218,6 +231,9 @@ const Navigation = () => {
             />
           </nav>
           <ThemeSwitcher />
+        </div>
+        <div className="meshery-cta">
+          <Button secondary className="banner-btn two" title="Try Meshery" url="/service-mesh-management/meshery"/>
         </div>
       </Container>
     </NavigationWrap>
