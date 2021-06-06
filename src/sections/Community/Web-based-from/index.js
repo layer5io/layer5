@@ -18,38 +18,13 @@ const WebBasedForm = () => {
   const [checked3, setChecked3] = useState([false, false, false, false, false, false, false, false, false]);
   const [checkMesh, setCheckMesh] = useState(false);
   const [checked4, setChecked4] = useState([false, false, false, false]);
-  const [formData, setFormData] = useState({
-    email: "",
-    fname: "",
-    lname: "",
-    occupation: "",
-    org: "",
-    github: "",
-    twitter: "",
-    linkedin: "",
-    tshirtSize: "",
-    picture: "",
-
-  });
 
   const handleFileSelected = (e) => {
     const files = Array.from(e.target.files);
   };
 
   const nextStep = () => {
-    if(formData.email && formData.fname && formData.lname) {
-      setStepNumber(stepNumber + 1);
-    }else {
-      return false;
-    }
-  };
-
-  const handleFormChange = (e) => {
-    const {id, value} = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value
-    }));
+    setStepNumber(stepNumber + 1);
   };
 
   const laststep = () => {
@@ -118,28 +93,28 @@ const WebBasedForm = () => {
         <p className="para">Hi! Welcome to the Layer5 community. As you get oriented with the community and its projects, will you consider filling in this form? It helps us get familiarized with you and you with the ongoing projects and community. There is much to learn around the technologies at-hand. We'll look to get you acclimated and engaged around your areas of interest and passion. </p>
         <form className="form" method="post">
           <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-          <input type="text" className="text-field" id="email" value={formData.email} name="email" onChange={handleFormChange} required />
+          <input type="text" className="text-field" id="email" name="email" required />
 
           <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
-          <input type="text" className="text-field" id="fname" value={formData.fname} name="fname" onChange={handleFormChange} required />
+          <input type="text" className="text-field" id="fname" name="fname" required />
 
           <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
-          <input type="text" className="text-field" id="lname" value={formData.lname} name="lname" onChange={handleFormChange} required />
+          <input type="text" className="text-field" id="lname" name="lname" required />
 
           <label htmlFor="occupation" className="form-name">Occupation / Title</label>
-          <input type="text" className="text-field" id="occupation" value={formData.occupation} name="occupation" onChange={handleFormChange} />
+          <input type="text" className="text-field" id="occupation" name="occupation" />
 
           <label htmlFor="org" className="form-name">Organization / Company / School</label>
-          <input type="text" className="text-field" id="org" value={formData.org} name="org" onChange={handleFormChange}  />
+          <input type="text" className="text-field" id="org" name="org" />
 
           <label htmlFor="github" className="form-name">GitHub</label>
-          <input type="url" className="text-field" id="github" value={formData.github} name="github" onChange={handleFormChange} pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
+          <input type="url" className="text-field" id="github" name="github" pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
           <label htmlFor="twitter" className="form-name">Twitter</label>
-          <input type="url" className="text-field" id="twitter" value={formData.twitter} name="twitter" onChange={handleFormChange} pattern="http(s?)(:\/\/)((www.)?)twitter.com(\/)([a-zA-z0-9\-_]+)" />
+          <input type="url" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)twitter.com(\/)([a-zA-z0-9\-_]+)" />
           <label htmlFor="linkedin" className="form-name">Linkedin</label>
-          <input type="url" className="text-field" id="linkedin" value={formData.linkedin} name="linkedin" onChange={handleFormChange} />
+          <input type="url" className="text-field" id="linkedin" name="linkedin" />
           <label htmlFor="tshirtSize" className="form-name">T-shirt size</label>
-          <select className="form-select" id="tshirtSize" value={formData.tshirtSize} name="tshirtSize" onChange={handleFormChange}>
+          <select className="form-select" id="tshirtSize" name="tshirtSize">
             <option value="XS">XS</option>
             <option value="S">S</option>
             <option value="M">M</option>
@@ -148,7 +123,7 @@ const WebBasedForm = () => {
             <option value="XXL">XXL</option>
           </select>
           <label htmlFor="picture" className="form-name">Picture</label>
-          <input type="file" label='Upload' name="picture" value={formData.picture} name="picture" id="picture" accept="image/*,.png,.jpeg" onChange={handleFileSelected} className="upload-field" />
+          <input type="file" label='Upload' name="picture" name="picture" id="picture" accept="image/*,.png,.jpeg" onChange={handleFileSelected} className="upload-field" />
           <Button secondary onClick={nextStep} className="btn" title="Next Step" /> <br /><br /><br /><br />
         </form>
       </Container>
@@ -162,7 +137,7 @@ const WebBasedForm = () => {
         <p className="para">Which describes your main focus as a community member? </p>
         <div className="center">
           <div className="option" onClick={contributor}>
-            I'm here as a Developer
+            I'm here as a Contributor
           </div>
           <div className="option" onClick={user}>
             I'm here as a User
