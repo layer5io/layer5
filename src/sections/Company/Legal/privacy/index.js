@@ -92,12 +92,12 @@ const Conduct = () => {
               In connection with promotions or other projects, we may ask you specifically whether you have objections against a certain kind of data use or sharing. If you opt-out under such circumstances, we will respect your decision. To opt out of receiving commercial communications from Layer5 or please click on the "opt-out" link in the communication or, please contact us at privacy@layer5.io Please note that our affiliates and other data recipients have their own data privacy policies, which may differ from ours and you would have to contact them separately with respect to opt-out requests.
 
 
-        </p>
+            </p>
             <p>
               In connection with promotions or other projects, we may ask you specifically whether you have objections against a certain kind of data use or sharing. If you opt out, we may still send you non-marketing emails. Non-marketing emails include emails about your accounts and our business dealings with you.
 
 
-</p>
+            </p>
             <p>You may send requests about personal information to our Contact Information below. You can request to change contact choices, opt-out of our sharing with others, and update your personal information.
             </p>
             <p>
@@ -112,7 +112,7 @@ const Conduct = () => {
             </div>
             <p>We welcome your comments or questions about this privacy policy. You may also contact us as follows:
             </p>
-            <p class="address">
+            <p className="address">
               Layer5, Inc<br />
               1000 Congress Avenue<br />
               Austin, Texas 78735<br />
