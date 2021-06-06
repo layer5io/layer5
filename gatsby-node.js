@@ -334,7 +334,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: program.fields.slug,
       component: ProgramPostTemplate,
       context: {
-        osProgram: program.frontmatter.program,
+        program: program.frontmatter.program,
         slug: program.fields.slug,
       },
     });

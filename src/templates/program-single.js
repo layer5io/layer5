@@ -14,10 +14,10 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
 export const query = graphql`
-    query ProgramBySlug($osProgram: String!) {
+    query ProgramByName($program: String!) {
         allMdx(
           sort: {fields: [frontmatter___title], order: DESC}
-          filter:{frontmatter: { program: { eq: $osProgram } }}
+          filter:{frontmatter: { program: { eq: $program } }}
         ) {
           nodes{
             body

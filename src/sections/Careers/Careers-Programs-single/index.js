@@ -14,28 +14,26 @@ const ProgramsSingle = ({ data, options, setActiveOption, activeOption }) => {
   return (
     <ProgramsPageWrapper>
       <Container>
-        <div className="rowWrapper">
-          <Row>
-            <div className="backBtn">
-              <Link to="/careers/programs">
-                <IoIosArrowDropleftCircle />
-                <h4>Go Back</h4>
-              </Link>
-            </div>
-            <div className="selectWrapper">
-              <Select
-                name="Select Year of Program"
-                defaultValue={options[activeOption]}
-                isSearchable={false}
-                styles={selectStyles}
-                options={options}
-                value={options[activeOption]}
-                onChange={(e) => setActiveOption(() => e.value)}
-                theme={dropdownTheme}
-              />
-            </div>
-          </Row>
-        </div>
+        <Row className="rowWrapper">
+          <div className="backBtn">
+            <Link to="/careers/programs">
+              <IoIosArrowDropleftCircle />
+              <h4>Go Back</h4>
+            </Link>
+          </div>
+          <div className="selectWrapper">
+            <Select
+              name="Select Year of Program"
+              defaultValue={options[activeOption]}
+              isSearchable={false}
+              styles={selectStyles}
+              options={options}
+              value={options[activeOption]}
+              onChange={(e) => setActiveOption(() => e.value)}
+              theme={dropdownTheme}
+            />
+          </div>
+        </Row>
       </Container>
       <PageHeader
         title={frontmatter.title}
