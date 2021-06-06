@@ -115,6 +115,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         filter: { frontmatter: { published: { eq: true } } }
       ) {
         nodes {
+          frontmatter{
+            program
+          }
           fields {
             collection
             slug
@@ -331,6 +334,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: program.fields.slug,
       component: ProgramPostTemplate,
       context: {
+        osProgram: program.frontmatter.program,
         slug: program.fields.slug,
       },
     });

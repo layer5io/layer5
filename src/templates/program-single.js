@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 
 import { ThemeProvider } from "styled-components";
@@ -14,24 +14,43 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
 export const query = graphql`
-    query ProgramBySlug($slug: String!) {
-        mdx(fields: { slug: { eq: $slug } }) {
+    query ProgramBySlug($osProgram: String!) {
+        allMdx(
+          sort: {fields: [frontmatter___title], order: DESC}
+          filter:{frontmatter: { program: { eq: $osProgram } }}
+        ) {
+          nodes{
             body
             frontmatter {
                 title
             }
+          }
         }
     }
 `;
 
 const ProgramSinglePage = ({data}) => {
+  const [activeOption, setActiveOption] = useState(0);
+  const programs = data.allMdx.nodes;
+  const options = programs.map((program, index) => {
+    let optionItem = new Object();
+    optionItem.label = program.frontmatter.title;
+    optionItem.value = index;
+    return optionItem;
+  });
+
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
+        <SEO title={programs[activeOption].frontmatter.title} />
         <Navigation />
-        <ProgramsSingle data={data}/>
+        <ProgramsSingle 
+          data={programs[activeOption]}
+          options={options}
+          setActiveOption={setActiveOption}
+          activeOption={activeOption}
+        />
         <Footer />
       </Layout>
     </ThemeProvider>
