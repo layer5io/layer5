@@ -63,7 +63,7 @@ const CourseOverview = ({ course, chapters }) => {
                 <div className="service-mesh-courses">
                   {LearnData.map((img, index) => (
                     <a key={index} href="" target="" rel="" className="course">
-                      <img src={img.course} className="" alt="" />
+                      <img src={img.learn} className="" alt="" />
                     </a>
                   ))}
                 </div>
