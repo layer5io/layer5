@@ -21,7 +21,7 @@ export const TableWrapper = styled.div`
 			font-weight: 400;
 			border-bottom: 1px solid #efefef;
 			a {
-				color: ${props => props.theme.primaryColor};
+				color: ${props => props.theme.darkJungleGreenColor};
 				&:hover {
 					color: ${props => props.theme.primaryLightColor};
 				}
@@ -50,11 +50,11 @@ export const TableWrapper = styled.div`
 				}
 			}
 			/* Highlight Community Calendar */
-			:nth-child(6) {
-				background: rgb(0, 179, 159, .2);
+			:nth-child(7) {
+				background: ${props => props.theme.saffronLightColor};
 			}
 			&:hover {
-				background-color: ${props => props.theme.shadowColor};
+				background-color: ${props => props.theme.secondaryLightColorTwo};
 				border-color:  ${props => props.theme.shadowColor};
 			}
 		}
