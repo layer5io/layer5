@@ -4,6 +4,7 @@ const ProgramsPageWrapper = styled.div`
 margin-bottom : 3.125rem;
 
 .rowWrapper{
+    align-items: center;
     position: relative;
     top: 1.5rem;
     padding: 1rem;

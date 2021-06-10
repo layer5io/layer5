@@ -18,6 +18,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
       frontmatter {
         title
         program
+        programSlug
         thumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
@@ -54,9 +55,9 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
         <Container>
           <div className="program-grid-wrapper">
             <Row>
-              {programs.reverse().map(({ id, frontmatter, fields }) => (
+              {programs.reverse().map(({ id, frontmatter }) => (
                 <Col key={id} className="programs-col">
-                  <Link to={fields.slug}>
+                  <Link to={`/programs/${frontmatter.programSlug}`}>
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
                       <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
                         <Image
@@ -65,7 +66,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                           alt={frontmatter.title}
                         />
                       </div>
-                      <h5>{frontmatter.title}</h5>
+                      <h5>{frontmatter.program}</h5>
                     </div>
                   </Link>
                 </Col>

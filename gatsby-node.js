@@ -93,6 +93,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/program-single.js"
   );
 
+  const MultiProgramPostTemplate = path.resolve(
+    "src/templates/program-multiple.js"
+  );
+
   const CareerPostTemplate = path.resolve(
     "src/templates/career-single.js"
   );
@@ -117,6 +121,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes {
           frontmatter{
             program
+            programSlug
           }
           fields {
             collection
@@ -334,7 +339,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: program.fields.slug,
       component: ProgramPostTemplate,
       context: {
-        program: program.frontmatter.program,
         slug: program.fields.slug,
       },
     });
@@ -378,6 +382,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         slug: lab.fields.slug,
       },
     });
+  });
+
+
+  let programsArray = [];
+  programs.forEach(program => {
+    if(programsArray.indexOf(program.frontmatter.program)>=0) {
+      return false;
+    }else{     
+      createPage({
+        path:  `/programs/${program.frontmatter.programSlug}`,
+        component: MultiProgramPostTemplate,
+        context: {
+          program: program.frontmatter.program,
+        },
+      });
+    }
   });
 
   const learnNodes = res.data.learncontent.nodes;
