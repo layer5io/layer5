@@ -9,6 +9,15 @@ export const meet_links_data= [
     meeting_recordings: "https://www.youtube.com/watch?v=Zba0b0ZojOI&list=PL3A-A6hPO2IO1ZuLj3cbOTdi-hlkF4Lqu",
   },
   {
+    day: "Mondays",
+    meeting: "WASM Filters Meeting",
+    slack_channel: "#wasm",
+    slack_link: "https://layer5io.slack.com/archives/C012UMS2MCM",
+    meeting_minutes: "https://bit.ly/2XK4eQV",
+    meeting_link: "https://meet.layer5.io/wasm",
+    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IOur7idhSAUf6hySLn-hdVD",
+  },
+  {
     day: "Tuesdays & Thursdays",
     meeting: "Meshery MeshSync/MeshMap Meeting",
     slack_channel: "#meshery-ci",
