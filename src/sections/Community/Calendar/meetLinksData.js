@@ -10,7 +10,7 @@ export const meet_links_data= [
   },
   {
     day: "Mondays",
-    meeting: "WASM Filters Meeting",
+    meeting: "WebAssembly Filters Meeting",
     slack_channel: "#wasm",
     slack_link: "https://layer5io.slack.com/archives/C012UMS2MCM",
     meeting_minutes: "https://bit.ly/2XK4eQV",
