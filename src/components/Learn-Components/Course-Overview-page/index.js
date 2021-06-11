@@ -2,7 +2,8 @@ import React from "react";
 import { CourseOverviewWrapper } from "./course-overview.styles";
 import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../image";
-import { LearnData } from "./service-meshes-to-learn";
+import Course1 from "../../../assets/images/learn/sercice-mesh-course1.png";
+
 import { Link } from "gatsby";
 
 import {
@@ -61,11 +62,25 @@ const CourseOverview = ({ course, chapters }) => {
               <div className="service-meshes-you-can-learn">
                 <h2>Service Meshes You can Learn</h2>
                 <div className="service-mesh-courses">
-                  {LearnData.map((img, index) => (
-                    <a key={index} href="" target="" rel="" className="course">
-                      <img src={img.course} className="" alt="" />
-                    </a>
-                  ))}
+                  <a href="" target="" rel="" className="course">
+                    <img src={Course1} className="docker" alt="" />
+                  </a>
+
+                  <a href="" target="" rel="" className="course">
+                    <img src={Course1} className="docker" alt="" />
+                  </a>
+
+                  <a href="" target="" rel="" className="course">
+                    <img src={Course1} className="docker" alt="" />
+                  </a>
+
+                  <a href="" target="" rel="" className="course">
+                    <img src={Course1} className="docker" alt="" />
+                  </a>
+
+                  <a href="" target="" rel="" className="course">
+                    <img src={Course1} className="docker" alt="" />
+                  </a>
                 </div>
               </div>
             </div>
