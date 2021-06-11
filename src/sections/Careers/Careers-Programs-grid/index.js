@@ -55,9 +55,15 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
         <Container>
           <div className="program-grid-wrapper">
             <Row>
-              {programs.reverse().map(({ id, frontmatter }) => (
+              {programs.reverse().map(({ id, frontmatter, fields }) => (
                 <Col key={id} className="programs-col">
-                  <Link to={`/programs/${frontmatter.programSlug}`}>
+                  <Link 
+                    to={
+                      frontmatter.program === "Layer5"
+                        ?fields.slug
+                        :`/programs/${frontmatter.programSlug}`
+                    }
+                  >
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
                       <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
                         <Image

@@ -387,9 +387,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   let programsArray = [];
   programs.forEach(program => {
-    if(programsArray.indexOf(program.frontmatter.program)>=0) {
+    if(
+      programsArray.indexOf(program.frontmatter.program)>=0 &&
+      program.frontmatter.program === "Layer5"
+    ){
       return false;
     }else{     
+      programsArray.push(program.frontmatter.program);
       createPage({
         path:  `/programs/${program.frontmatter.programSlug}`,
         component: MultiProgramPostTemplate,
