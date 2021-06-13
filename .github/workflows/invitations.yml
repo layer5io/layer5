@@ -5,6 +5,7 @@ on:
 
 jobs:
   automate_invite:
+    if: contains(github.event.issue.labels.*.name, 'issue/invite')
     runs-on: ubuntu-latest
     steps:
       - name: Invite on label
