@@ -74,7 +74,7 @@ const Calendar = () => {
             <>
               {meet_links_data.slack_channel !== "#smi" ?
                 <a href={meet_links_data.meeting_recordings}>
-                                    Youtube
+                                    YouTube
                 </a>: "N/A"
               }
             </>
