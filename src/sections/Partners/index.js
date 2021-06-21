@@ -1,7 +1,7 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
-import {partners} from "./partners";
+import { partners } from "./partners";
 import PartnerWrapper from "./partner.style";
 import { BsArrowDown } from "react-icons/bs";
 import { BsArrowUp } from "react-icons/bs";
