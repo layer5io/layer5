@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 
 const BlogAccordion = (isAccOpen , accID , accIndex , accImageRoute , accImageLink , accName , accMoreInfo , accDesc) => {
