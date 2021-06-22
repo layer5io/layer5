@@ -47,7 +47,7 @@ const RelatedPostsWrapper = styled.div`
         height: 3rem;
     }
     .slick-arrow:hover:before{	
-        color: ${props => props.theme.secondaryColor};	
+        color: ${props => props.theme.secondaryColor};
     }
     .slick-prev:before{	
         content: "‹";	

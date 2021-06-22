@@ -66,6 +66,9 @@ export const CourseOverviewWrapper = styled.div`
   .content-section {
     padding: 2rem 0rem;
     margin: 1rem 0rem;
+    .chapter-link {
+      color: black;
+    }
   }
   .content-section-container {
     margin: 0 5rem;

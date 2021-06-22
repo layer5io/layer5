@@ -1,5 +1,5 @@
 import React from "react";
-import ContentCardWrapper from "./content.card.styles";
+import ContentCardWrapper from "./content.card.style";
 import { IoDocumentTextOutline, IoVideocam, IoBookmarkOutline } from "react-icons/io5";
 import Button from "../../../reusecore/Button";
 import { Link } from "gatsby";

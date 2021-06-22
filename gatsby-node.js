@@ -477,10 +477,11 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
   const [learnpath, course, section, chapter] = parts;
+  const pageSlug = slug.slice(0, -1);
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: slug });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name: "slug", value: pageSlug });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${pageSlug}` });
   createNodeField({ node, name: "chapter", value: chapter });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "section", value: section });
@@ -617,7 +618,7 @@ const createChapterPage = ({ createPage, node }) => {
 
   createPage({
     path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Chapters/index.js"),
+    component: path.resolve("src/templates/learn-chapter.js"),
     context: {
       learnpath,
       slug,

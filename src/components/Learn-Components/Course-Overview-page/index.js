@@ -1,5 +1,5 @@
 import React from "react";
-import { CourseOverviewWrapper } from "./course-overview.styles";
+import { CourseOverviewWrapper } from "./course-overview.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../image";
 import Course1 from "../../../assets/images/learn/sercice-mesh-course1.png";
@@ -54,7 +54,9 @@ const CourseOverview = ({ course, chapters }) => {
           <Col md={12} lg={8} xl={7}>
             <h2>Content</h2>
             {chapters.map((chapter, index) => (
-              <ContentCard key={index} chapter={chapter} />
+              <Link key={index} to={`./istio/${chapter.fields.chapter}`} className="chapter-link">
+                <ContentCard chapter={chapter} />
+              </Link>
             ))}
           </Col>
           <Col md={12} lg={4} xl={5}>
