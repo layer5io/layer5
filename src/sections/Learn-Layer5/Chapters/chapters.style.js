@@ -1,5 +1,11 @@
 import styled from "styled-components";
-import { BlogPageWrapper } from "../../Blog/Blog-grid/blogGrid.style";
-export const SectionsWrapper = styled.div`
-    ${BlogPageWrapper};
+export const ChapterWrapper = styled.div`
+
+    margin: 5rem auto;
+
+    .chapter-data {
+        .chapter-heading {
+            margin-bottom: 1.5rem;
+        }
+    }
 `;
