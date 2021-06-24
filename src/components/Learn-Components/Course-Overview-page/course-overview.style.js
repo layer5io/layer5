@@ -10,7 +10,7 @@ export const CourseOverviewWrapper = styled.div`
   }
   .course-info-content {
     width: 55%;
-    padding: 5rem 7rem;
+    padding: 5rem 6rem;
     button {
       background-color: white;
       color: black;
@@ -43,6 +43,11 @@ export const CourseOverviewWrapper = styled.div`
     margin: 1rem 0;
     .info {
       padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      span {
+        margin: 0 0.5rem;
+      }
     }
   }
   .course-hero-head-image {
@@ -74,7 +79,8 @@ export const CourseOverviewWrapper = styled.div`
     margin: 0 5rem;
   }
 
-  .service-meshes-you-can-learn, .join-community_text-and_button,
+  .service-meshes-you-can-learn,
+  .join-community_text-and_button,
   .engage_text-and_button {
     display: flex;
     padding: 4rem 0rem;
@@ -84,13 +90,13 @@ export const CourseOverviewWrapper = styled.div`
     h2 {
       margin-bottom: 1rem;
       padding: 1rem;
-      font-size: 1.7rem
+      font-size: 1.7rem;
     }
   }
 
   .service-mesh-courses {
     display: flex;
-    justify-content:center;
+    justify-content: center;
   }
   .course {
     padding: 0.5rem;
@@ -98,7 +104,7 @@ export const CourseOverviewWrapper = styled.div`
   @media screen and (max-width: 1400px) {
     .course-info-content {
       width: 65%;
-      padding: 5rem 7rem;
+      padding: 5rem 5rem;
     }
     .course-hero-head-image {
       width: 20%;
@@ -116,11 +122,14 @@ export const CourseOverviewWrapper = styled.div`
     .course-hero-head-image {
       width: 22%;
     }
+    .content-section-container {
+      margin: 0 1rem;
+    }
   }
   @media screen and (max-width: 768px) {
     .course-info-content {
       width: 100%;
-      padding: 5rem 2rem;
+      padding: 5rem 1rem;
     }
     .course-hero-head-image {
       display: none;
