@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const GetStartedWrapper = styled.div`
-    padding: 1rem 3rem;
+    padding: 1rem 0;
     h2{
         margin: 1rem 0;
     }
@@ -16,8 +16,7 @@ const GetStartedWrapper = styled.div`
             
         }
         .card {
-            padding: 2rem 1.5rem;
-            
+            padding: 2rem;
             background-color: #eee;
             max-width: 350px;
             min-height: 200px;
@@ -27,27 +26,34 @@ const GetStartedWrapper = styled.div`
             }
         }
     }
-    @media (max-width: 1470px)
+    
+    @media (max-width: 1200px)
     {
         padding: 1rem 0;
+        .get-started-desc{
+            margin: 0;
+        }
         .container-card {
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            
-        }
-    }
-    @media (max-width: 1049px)
-    { 
-        .container-card {
             .card{
                 margin: 0;
                 max-width: none;
             }
             a{
                 margin: 1rem 0rem;
+            }  
+        } 
+    }
+    @media (max-width: 400px)
+    {
+        .container-card {
+            .card {
+                padding: 2rem 1rem;
             }
         }
+
     }
 `;
 

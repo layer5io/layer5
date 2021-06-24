@@ -2,16 +2,13 @@ import styled from "styled-components";
 import { BlogPageWrapper } from "../../Blog/Blog-grid/blogGrid.style";
 export const LearnPathWrapper = styled.div`
   ${BlogPageWrapper};
-  margin: 2rem;
-  .go-back-btn {
-    margin: 0 2rem;
-  }
+  margin: 2rem 0;
   .course-list {
     display: flex;
-    margin: 2rem 1rem;
+    margin: 2rem 0;
   }
   .course-list-cont {
-    padding: 3rem;
+    padding: 3rem 0;
     margin: 1rem;
   }
   .learning-path-cards {
@@ -19,18 +16,11 @@ export const LearnPathWrapper = styled.div`
       color: black;
     }
   }
-  @media (max-width: 1470px) {
+  @media(max-width: 1200px)
+  {
     .course-list-cont {
-      padding: 3rem 0rem;
+      margin: 0;
     }
-  }
-  @media (max-width: 1049px) {
-    margin: 2rem 0;
-    .course-list-cont {
-      padding: 3rem 0rem;
-    }
-    .course-list {
-      margin: 3rem 0;
-    }
+
   }
 `;

@@ -10,7 +10,7 @@ export const CourseOverviewWrapper = styled.div`
   }
   .course-info-content {
     width: 55%;
-    padding: 5rem 7rem;
+    padding: 5rem 6rem;
     button {
       background-color: white;
       color: black;
@@ -104,7 +104,7 @@ export const CourseOverviewWrapper = styled.div`
   @media screen and (max-width: 1400px) {
     .course-info-content {
       width: 65%;
-      padding: 5rem 7rem;
+      padding: 5rem 5rem;
     }
     .course-hero-head-image {
       width: 20%;
@@ -122,11 +122,14 @@ export const CourseOverviewWrapper = styled.div`
     .course-hero-head-image {
       width: 22%;
     }
+    .content-section-container {
+      margin: 0 1rem;
+    }
   }
   @media screen and (max-width: 768px) {
     .course-info-content {
       width: 100%;
-      padding: 5rem 2rem;
+      padding: 5rem 1rem;
     }
     .course-hero-head-image {
       display: none;

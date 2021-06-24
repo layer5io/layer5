@@ -18,9 +18,6 @@ const ContentCardWrapper = styled.div`
   .card-link {
     color: black;
   }
-  .chapter-content-div {
-    padding: 0 1rem;
-  }
 
   .chapter-info {
     display: flex;
@@ -58,7 +55,6 @@ const ContentCardWrapper = styled.div`
     }
   }
   @media screen and (max-width: 1200px) {
-    padding: 1rem;
     .chapter-info {
       width: 60%;
     }
@@ -82,6 +78,7 @@ const ContentCardWrapper = styled.div`
     }
   }
   @media screen and (max-width: 400px) {
+    padding: 1rem 1rem;
     .chapter-info {
       width: 100%;
     }

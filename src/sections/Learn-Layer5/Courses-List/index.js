@@ -1,6 +1,6 @@
 import React from "react";
 // import Card from "../../../components/Card";
-import { Row, Col } from "../../../reusecore/Layout";
+import { Row, Col, Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { graphql, Link } from "gatsby";
 import { LearnPathWrapper } from "./courseslist.style";
@@ -14,6 +14,7 @@ import { GlobalStyle } from "../../app.style";
 import theme from "../../../theme/app/themeStyles";
 import { ThemeProvider } from "styled-components";
 import GetStarted from "../../../components/Learn-Components/get-started-section";
+
 
 export const query = graphql`
   query CoursesBySlug($learnpath: String!) {
@@ -73,33 +74,33 @@ const LearningPathGrid = (coursesData) => {
         <PageHeader
           title={getTitle(coursesData.data.allMdx.nodes[0].fields.learnpath)}
         />
-
-        <LearnPathWrapper>
-          <Button url="/learn-ng" title="Go Back" className="go-back-btn" />
-          <Row className="course-list">
-            <Col sm={0} lg={2} xl={3}>
-              SideBar Component
-            </Col>
-            <Col sm={12} lg={10} xl={9}>
-              <GetStarted />
-              <div className="course-list-cont">
-                <h2>Courses</h2>
-                <Row className="learning-path-cards">
-                  {coursesData.data.allMdx.nodes.map((tutorial) => {
-                    return (
-                      <Col sm={12} xl={10} key={tutorial.id}>
-                        <Link to={tutorial.fields.course}>
-                          <ContentCard chapter={tutorial} />
-                        </Link>
-                      </Col>
-                    );
-                  })}
-                </Row>
-              </div>
-            </Col>
-          </Row>
-        </LearnPathWrapper>
-
+        <Container>
+          <LearnPathWrapper>
+            <Button url="/learn-ng" title="Go Back" className="go-back-btn" />
+            <Row className="course-list">
+              <Col sm={0} lg={2} xl={2}>
+                SideBar Component
+              </Col>
+              <Col sm={12} lg={10} xl={10}>
+                <GetStarted />
+                <div className="course-list-cont">
+                  <h2>Courses</h2>
+                  <Row className="learning-path-cards">
+                    {coursesData.data.allMdx.nodes.map((tutorial) => {
+                      return (
+                        <Col sm={12} key={tutorial.id}>
+                          <Link to={tutorial.fields.course}>
+                            <ContentCard chapter={tutorial} />
+                          </Link>
+                        </Col>
+                      );
+                    })}
+                  </Row>
+                </div>
+              </Col>
+            </Row>
+          </LearnPathWrapper>
+        </Container>
         <Footer />
       </Layout>
     </ThemeProvider>
