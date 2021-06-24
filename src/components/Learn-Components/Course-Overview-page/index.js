@@ -2,8 +2,6 @@ import React from "react";
 import { CourseOverviewWrapper } from "./course-overview.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../image";
-import Course1 from "../../../assets/images/learn/sercice-mesh-course1.png";
-
 import { Link } from "gatsby";
 
 import {
@@ -33,10 +31,11 @@ const CourseOverview = ({ course, chapters }) => {
           </div>
           <div className="content-info">
             <div className="info">
-              <IoVideocam /> {course.frontmatter.videos} videos
+              <IoVideocam /> <span>{course.frontmatter.videos} videos</span>
             </div>
             <div className="info">
-              <IoDocumentTextOutline /> {course.frontmatter.lectures} lectures
+              <IoDocumentTextOutline />{" "}
+              <span>{course.frontmatter.lectures} lectures</span>
             </div>
           </div>
 
@@ -54,7 +53,11 @@ const CourseOverview = ({ course, chapters }) => {
           <Col md={12} lg={8} xl={7}>
             <h2>Content</h2>
             {chapters.map((chapter, index) => (
-              <Link key={index} to={`./istio/${chapter.fields.chapter}`} className="chapter-link">
+              <Link
+                key={index}
+                to={`./istio/${chapter.fields.chapter}`}
+                className="chapter-link"
+              >
                 <ContentCard chapter={chapter} />
               </Link>
             ))}
@@ -64,25 +67,15 @@ const CourseOverview = ({ course, chapters }) => {
               <div className="service-meshes-you-can-learn">
                 <h2>Service Meshes You can Learn</h2>
                 <div className="service-mesh-courses">
-                  <a href="" target="" rel="" className="course">
-                    <img src={Course1} className="docker" alt="" />
-                  </a>
-
-                  <a href="" target="" rel="" className="course">
-                    <img src={Course1} className="docker" alt="" />
-                  </a>
-
-                  <a href="" target="" rel="" className="course">
-                    <img src={Course1} className="docker" alt="" />
-                  </a>
-
-                  <a href="" target="" rel="" className="course">
-                    <img src={Course1} className="docker" alt="" />
-                  </a>
-
-                  <a href="" target="" rel="" className="course">
-                    <img src={Course1} className="docker" alt="" />
-                  </a>
+                  {course.frontmatter.meshesYouLearn.map((mesh, index) => (
+                    <a key={index} href="" target="" rel="" className="course">
+                      <Image
+                        {...mesh.imagepath}
+                        className="docker"
+                        alt={mesh.name}
+                      />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
