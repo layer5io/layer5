@@ -49,7 +49,7 @@ const Meshmates=() => {
         <Row className="hero">
           <Col sm={12} lg={6}>
             <h5>A warm and welcoming collection of open sourcers</h5>
-            <h1>Layer5 Meshmates</h1>
+            <h1>Layer5 MeshMates</h1>
             <p>
                   Layer5 MeshMates are committed to helping community members be successful contributors.
                   MeshMates aid in identifying areas of projects to engage within, working groups to join,
@@ -62,7 +62,7 @@ const Meshmates=() => {
           </Col>
         </Row>
         <div className="meshmates-grid">
-          <h1> Our Community Meshmates </h1>
+          <h1> Our Community MeshMates </h1>
           <p> MeshMate is a distinction that Layer5 awards select members of the community that who innately align with the Layer5 culture of helping others, paying it forward, and have a commitment to sharing their knowledge of Layer5 projects with the community. MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing their expertise has a huge impact on the Layer5 community – don’t hesitate to reach out to them! </p>
           <Row>
             {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
@@ -81,7 +81,7 @@ const Meshmates=() => {
         <div className="meshmate-meet">
           <Row Vcenter>
             <Col sm={12} lg={6}>
-              <h2> Meeting Your Meshmate </h2>
+              <h2> Meeting Your MeshMate </h2>
               <p> Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted and onboarding into the community, we suggest the following goals: </p>
               <table>
                 <tr>

@@ -116,6 +116,10 @@ const Data = {
       ],
       actionItems: [
         {
+          actionName: "Discussion forum",
+          actionLink: "https://discuss.layer5.io",
+        },
+        {
           actionName: "Free service mesh training",
           actionLink: "/learn",
         }
@@ -159,6 +163,11 @@ const Data = {
         {
           name: "Events",
           path: "/community/events",
+          sepLine: true
+        },
+        {
+          name: "Forum",
+          path: "https://discuss.layer5.io",
           sepLine: true
         },
       ],

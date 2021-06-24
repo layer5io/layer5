@@ -28,7 +28,7 @@ const SMPPage = () => {
                 </Col>
                 <Col lg={7} md={12} sm={12}>
                   <h1> Service Mesh Performance </h1>
-                  <p> The Service Mesh Performance Working Group is hosted within CNCF SIG Network. All are welcome to participate. This group is defining the Service Mesh Performance(SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
+                  <p> The Service Mesh Performance Working Group is hosted within CNCF TAG Network. All are welcome to participate. This group is defining the Service Mesh Performance(SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
                 </Col>
               </Row>
             </div>

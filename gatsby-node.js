@@ -93,6 +93,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/program-single.js"
   );
 
+  const MultiProgramPostTemplate = path.resolve(
+    "src/templates/program-multiple.js"
+  );
+
   const CareerPostTemplate = path.resolve(
     "src/templates/career-single.js"
   );
@@ -115,6 +119,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         filter: { frontmatter: { published: { eq: true } } }
       ) {
         nodes {
+          frontmatter{
+            program
+            programSlug
+          }
           fields {
             collection
             slug
@@ -376,6 +384,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+
+  let programsArray = [];
+  programs.forEach(program => {
+    if(
+      programsArray.indexOf(program.frontmatter.program)>=0 &&
+      program.frontmatter.program === "Layer5"
+    ){
+      return false;
+    }else{     
+      programsArray.push(program.frontmatter.program);
+      createPage({
+        path:  `/programs/${program.frontmatter.programSlug}`,
+        component: MultiProgramPostTemplate,
+        context: {
+          program: program.frontmatter.program,
+        },
+      });
+    }
+  });
+
   const learnNodes = res.data.learncontent.nodes;
 
   learnNodes.forEach((node) => {
@@ -449,10 +477,11 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
   const [learnpath, course, section, chapter] = parts;
+  const pageSlug = slug.slice(0, -1);
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: slug });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name: "slug", value: pageSlug });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${pageSlug}` });
   createNodeField({ node, name: "chapter", value: chapter });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "section", value: section });
@@ -589,7 +618,7 @@ const createChapterPage = ({ createPage, node }) => {
 
   createPage({
     path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Chapters/index.js"),
+    component: path.resolve("src/templates/learn-chapter.js"),
     context: {
       learnpath,
       slug,

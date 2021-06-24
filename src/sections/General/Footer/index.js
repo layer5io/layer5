@@ -88,6 +88,11 @@ const Footer = () => {
                       FAQs
                     </Link>
                   </li>
+                  <li>
+                    <a className="category-link" href="https://discuss.layer5.io">
+                      Forum
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div className="footer-sections odd-col">

@@ -19,7 +19,8 @@
     "lint": "eslint --fix .",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "deploy": "gatsby build && gh-pages -d public -b master",
+    "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^5.5.0",
