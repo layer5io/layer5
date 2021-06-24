@@ -3,9 +3,6 @@ export const BufProtocol = styled.div`
     
 
     div.fact {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
         color: ${props => props.theme.secondaryColor};
         font-style: italic;
         font-size: 1.3rem;
