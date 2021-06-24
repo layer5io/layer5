@@ -10,7 +10,6 @@ import { GiClockwork } from "react-icons/gi";
 
 import FeaturesTable from "./Features-Col";
 
-import meshery from "./images/meshery-logo-light-text-side.png";
 import mesheryFullStack from "./images/meshery-logo-light-text-tag.png";
 
 import MesheryWrapper from "./meshery.style";
@@ -25,14 +24,6 @@ const MesheryPage = () => {
         <MesheryWrapper>
           <Container> 
             <div className="info">
-              {/* <div id="stripes" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div> */}
-              {/* <div className="meshery-img"><img src={meshery} alt="meshery" /></div> */}
               <Row className="description">
                 <Col className="desc-text" lg={6} md={6} sm={8} xs={8}>
                   <h1 className="heading-1"> the service mesh</h1>
@@ -62,12 +53,6 @@ const MesheryPage = () => {
             </div>
           </Container>
           <Features />
-          {/* <Container>
-            <div className="callout">
-              <h3> Service Mesh Management </h3>
-              <Button primary title="Get Started" url="./getting-started" />
-            </div>
-          </Container> */}
         </MesheryWrapper>
       </Layout>
     </ThemeProvider>

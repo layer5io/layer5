@@ -3,12 +3,13 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import Button from "../../../reusecore/Button";
+
 
 import { Container } from "../../../reusecore/Layout";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
 import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 
@@ -72,7 +73,7 @@ const Navigation = () => {
   }
   Blog: allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "blog"}}}
+    filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
     limit: 2
   ) {
     nodes {
@@ -176,7 +177,7 @@ const Navigation = () => {
 
   return (
     <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
-      <Container>
+      <Container className="nav-container">
         <div className="navbar-wrap">
           <Link to="/" className="logo">
             <img src={layer5_logo} alt="Layer5 logo" />
@@ -227,6 +228,9 @@ const Navigation = () => {
               blogData={data}
             />
           </nav>
+        </div>
+        <div className="meshery-cta">
+          <Button secondary className="banner-btn two" title="Try Meshery" url="/service-mesh-management/meshery"/>
         </div>
       </Container>
     </NavigationWrap>

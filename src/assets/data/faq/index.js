@@ -4,7 +4,8 @@ const data = {
         {
             question: "Are Layer5's service mesh solutions open source?",
             category: "Layer5",
-            answer: ["Yes, all of Layer5's projects are licensed under Apache v2."]
+            answer: ["Yes, all of Layer5's projects are licensed under Apache v2.",
+            "Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported."]
         },
         {
             question: "What value does a service mesh provide?",
@@ -133,7 +134,8 @@ const data = {
         {
             question: "Is Meshery open source?",
             category: "Meshery",
-            answer: ["Yes, all of Layer5's projects are licensed under Apache v2, including Meshery."]
+            answer: ["Yes, all of Layer5's projects are licensed under Apache v2, including Meshery.",
+            "As the service mesh management plane, Meshery is an extensible platform, offering multiple extension points within which users and partners can customize and extend Meshery's functionality."]
         },
         {
             question: "How do I land an internship with Layer5?",

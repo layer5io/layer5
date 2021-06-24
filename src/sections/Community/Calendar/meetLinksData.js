@@ -9,6 +9,15 @@ export const meet_links_data= [
     meeting_recordings: "https://www.youtube.com/watch?v=Zba0b0ZojOI&list=PL3A-A6hPO2IO1ZuLj3cbOTdi-hlkF4Lqu",
   },
   {
+    day: "Mondays",
+    meeting: "WebAssembly Filters Meeting",
+    slack_channel: "#wasm",
+    slack_link: "https://layer5io.slack.com/archives/C012UMS2MCM",
+    meeting_minutes: "https://bit.ly/2XK4eQV",
+    meeting_link: "https://meet.layer5.io/wasm",
+    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IOur7idhSAUf6hySLn-hdVD",
+  },
+  {
     day: "Tuesdays & Thursdays",
     meeting: "Meshery MeshSync/MeshMap Meeting",
     slack_channel: "#meshery-ci",
@@ -64,11 +73,11 @@ export const meet_links_data= [
   },
   {
     day: "1st & 3rd Thursday",
-    meeting: "CNCF SIG Network Meeting",
-    slack_channel: "#sig-network",
+    meeting: "CNCF TAG Network Meeting",
+    slack_channel: "#tag-network",
     slack_link: "",
     meeting_minutes: "https://docs.google.com/document/d/18hYemFKK_PC_KbT_TDBUgb0rknOuIhikkRxer4_bv4Q/edit#",
-    meeting_link: "https://zoom.us/my/cncfsignetwork",
+    meeting_link: "https://zoom.us/my/cncftagnetwork",
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
   },
 ];

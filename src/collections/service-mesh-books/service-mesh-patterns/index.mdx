@@ -1,8 +1,8 @@
 ---
 title: "Service Mesh Patterns"
 date: 2020-04-08 21:15:05 +0000
-cover: ./oreilly-logo.svg
-thumbnail: ./oreilly-logo.png
+cover: ./service-mesh-patterns.png
+thumbnail: ./service-mesh-patterns-small.png
 author: Lee Calcote and Nic Jackson
 abstract: "Patterns, recipes and best practices for deploying and operating service meshes."
 published: true
@@ -13,11 +13,19 @@ redirect_from:
 import { BookWrapper } from "../Book.style.js";
 import Table from "../../../components/service-mesh-patterns-Table/Table.js";
 import {Link} from "gatsby"
+import service_mesh_pattern_book from "./service-mesh-patterns.png"
 
 
 <BookWrapper>
 
-<h4 style="text-align:center;margin-bottom:1rem;margin-top:-1rem;">Lee Calcote and Nic Jackson</h4>
+<div className="book">
+  <a href="https://www.oreilly.com/library/view/service-mesh-patterns/9781492086444/">
+    <img className="card" width="300px" src={service_mesh_pattern_book} align="center" />
+  </a><div>&nbsp;</div>
+  <Button primary className="banner-btn one pa-8" title="Get the Book" url="hhttps://www.oreilly.com/library/view/service-mesh-patterns/9781492086444/" external="true"/>
+</div>
+
+
 <p>
   Patterns and best practices for getting most out of Istio, Linkerd, Consul, App Mesh or <Link to="/service-mesh-landscape">any service mesh</Link>, including those using Envoy and use of WebAssembly.
 </p>

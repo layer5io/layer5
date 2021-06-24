@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const NavigationWrap = styled.header`
+
   background-color: #F3FFFD;
   position: sticky;
   width: 100%;
@@ -8,6 +9,35 @@ const NavigationWrap = styled.header`
   z-index: 9999;
   top: 0;
   transition: all 0.3s ease 0s;
+
+  .nav-container {
+    display: flex;
+  }
+  .meshery-cta {
+    position: absolute;
+    right: 2.5rem;
+    top: 2.5rem;
+    max-height: 50px;
+
+    a {
+      display: flex;
+    }
+
+    @media screen and (max-width: 1550px) {
+      position: relative;
+      right: -4rem;
+      top: 1.5rem;
+    }
+    @media screen and (max-width: 1275px) {
+      right: -1.95rem;
+    }
+    @media screen and (max-width: 992px) {
+      right: -1rem;
+    }
+    @media screen and (max-width: 912px) {
+      display: none;
+    }
+  }
   .navbar-wrap {
     width: 100%;
     display: flex;
@@ -262,6 +292,9 @@ const NavigationWrap = styled.header`
     transition: all 0.8s cubic-bezier(0.3, 0.8, 0.2, 1) 0s;
     img {
       width: 155px;
+    }
+    @media screen and (max-width: 992px) and (min-width: 912px) {
+      width: 125px;
     }
   }
   &.scrolled {    

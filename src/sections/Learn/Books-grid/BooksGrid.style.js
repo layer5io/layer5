@@ -33,7 +33,6 @@ export const BooksPageWrapper = styled.div`
         }
         .book_image{
             z-index: 1;
-            box-shadow: 0px 1px 52px 8px rgba(0,0,0,0.3);
             transform: scale(1.1);
         }
         a{
@@ -116,6 +115,7 @@ export const BooksPageWrapper = styled.div`
             li, img{
                 width: 3.5rem;
                 height: 5rem;
+                
             }
         }
     }

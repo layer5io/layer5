@@ -114,7 +114,6 @@ export const CardWrapper = styled.div`
         right: 0;
         bottom: 0;
     }
-
     .readmore-btn, .external-link-btn{
        color: rgba(0,0,0,0.4);
        display: flex;

@@ -76,7 +76,8 @@ const supported_platforms = [
         <h2>Helm Chart</h2>
         <p>Install on Kubernetes using Helm:</p>
         <Code codeString={dedent`kubectl create namespace meshery
-      helm install meshery --namespace meshery install/kubernetes/helm/meshery`} />
+      helm repo add meshery https://meshery.io/charts/
+      helm install meshery meshery/meshery -n meshery`} />
       </>
     )
   },
@@ -102,7 +103,8 @@ const supported_platforms = [
         <h2>KinD User</h2>
         <Code codeString={dedent`export KUBECONFIG=$HOME/.kube/config
       kubectl create namespace meshery
-      helm install meshery --namespace meshery install/kubernetes/helm/meshery`}
+      helm repo add meshery https://meshery.io/charts/
+      helm install meshery meshery/meshery`}
         />
       </>
     )

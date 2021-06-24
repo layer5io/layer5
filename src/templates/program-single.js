@@ -31,7 +31,7 @@ const ProgramSinglePage = ({data}) => {
         <GlobalStyle />
         <SEO title={data.mdx.frontmatter.title} />
         <Navigation />
-        <ProgramsSingle data={data}/>
+        <ProgramsSingle data={data.mdx}/>
         <Footer />
       </Layout>
     </ThemeProvider>
@@ -39,4 +39,3 @@ const ProgramSinglePage = ({data}) => {
 };
 
 export default ProgramSinglePage;
-

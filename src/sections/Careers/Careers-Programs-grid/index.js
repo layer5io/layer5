@@ -10,13 +10,15 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
   const data = useStaticQuery(
     graphql`query allPrograms {
   allMdx(
-    sort: {fields: [frontmatter___title], order: ASC}
+    sort: {fields: [frontmatter___title], order: DESC}
     filter: {fields: {collection: {eq: "programs"}}, frontmatter: {published: {eq: true}}}
   ) {
     nodes {
       id
       frontmatter {
         title
+        program
+        programSlug
         thumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
@@ -35,6 +37,17 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
   );
 
   let path = hide_path ? "" : "Programs";
+  let programsArray = [];
+
+  const programs = data.allMdx.nodes.filter((item) => {
+    if(programsArray.indexOf(item.frontmatter.program)>=0) {
+      return false;
+    }else{
+      programsArray.push(item.frontmatter.program);
+      return true;
+    }
+  });
+
   return (
     <ProgramsPageWrapper>
       <PageHeader title="Open Source Internship Programs" subtitle="Build Your Career at Layer5" path={path} />
@@ -42,9 +55,15 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
         <Container>
           <div className="program-grid-wrapper">
             <Row>
-              {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
+              {programs.reverse().map(({ id, frontmatter, fields }) => (
                 <Col key={id} className="programs-col">
-                  <Link to={fields.slug}>
+                  <Link 
+                    to={
+                      frontmatter.program === "Layer5"
+                        ?fields.slug
+                        :`/programs/${frontmatter.programSlug}`
+                    }
+                  >
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
                       <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
                         <Image
@@ -53,7 +72,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                           alt={frontmatter.title}
                         />
                       </div>
-                      <h5>{frontmatter.title}</h5>
+                      <h5>{frontmatter.program}</h5>
                     </div>
                   </Link>
                 </Col>

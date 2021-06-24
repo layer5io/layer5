@@ -35,7 +35,7 @@ const MesheryTerminal = () => {
           //     external: false,
           //   },
           // ]}
-          code="$ curl -L https://git.io/meshery | bash -"
+          code="curl -L https://git.io/meshery | PLATFORM=kubernetes bash -"
           enddescription="Lightning fast time to cloud native management."
         />
         <AnimatedStepsList
@@ -45,7 +45,7 @@ const MesheryTerminal = () => {
             lines: [
               {
                 frames: 5,
-                code: ["$ curl -L https://git.io/meshery | bash -", "$ curl -L https://git.io/meshery | bash -|"],
+                code: ["curl -L https://git.io/meshery | PLATFORM=kubernetes bash -", "curl -L https://git.io/meshery | PLATFORM=kubernetes bash -|"],
               },
             ],
           }}
