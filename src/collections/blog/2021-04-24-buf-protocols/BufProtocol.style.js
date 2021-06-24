@@ -52,7 +52,7 @@ export const BufProtocol = styled.div`
     .problem-image {
         display: inline;
         float: right;
-        max-width:300px;
+        max-width:200px;
         width:80%; 
         padding: 1.25rem;
     }
