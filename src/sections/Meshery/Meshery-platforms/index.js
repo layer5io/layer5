@@ -174,13 +174,27 @@ const supported_platforms = [
 
 const MesheryPlatforms = () => {
   const [currentPlatform, setCurrentPlatform] = useState({});
+  const [installationStepsHeight,setInstallationStepsHeight] = useState(currentPlatform.name ? "200px" : 0);
 
-  const changeCurrentPlatform = (index) => {
-    if (currentPlatform.name && currentPlatform.name === supported_platforms[index].name)
+  const hasSelectedSamePlatform = (index) => currentPlatform.name === supported_platforms[index].name;
+
+  const changeCurrentPlatformState = (index) => {
+    if (currentPlatform.name && hasSelectedSamePlatform(index))
       setCurrentPlatform({});
     else
       setCurrentPlatform(supported_platforms[index]);
+
   };
+
+  const changeCurrentPlatform = (index) => {
+    if(currentPlatform.name && !hasSelectedSamePlatform(index)) {
+      changeCurrentPlatformState(index);
+      return;
+    }
+    setTimeout(() => changeCurrentPlatformState(index), 500);
+    setInstallationStepsHeight(currentPlatform.name ? 0 : "200px");
+  };
+
 
   return (
     <MesheryPlatformsWrapper>
@@ -201,13 +215,11 @@ const MesheryPlatforms = () => {
             </Col>
           ))}
         </Row>
-        {currentPlatform.name && (
-          <Container>
-            <Row className="installation-steps">
-              {currentPlatform.steps}
-            </Row>
-          </Container>
-        )}
+        <Container style={{transition: "height 0.5s ease-in-out", height: installationStepsHeight, overflow: "hidden"}}>
+          <Row className="installation-steps" >
+            {currentPlatform.name && currentPlatform.steps}
+          </Row>
+        </Container>
         <Row Hcenter className="step-2">
           <Col>
             <h2><span>Step 2:</span> Manage your mesh</h2>
