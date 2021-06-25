@@ -135,6 +135,11 @@ export const BlogWrapper = styled.div`
     margin: 1rem 0rem 1rem 1.25rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
+  .image-right-no-shadow {
+    width: 40%;
+    float: right;
+    margin: 1rem 0rem 1rem 1.25rem;
+  }
   .image-center {
     display: block;
     margin-left: auto;
