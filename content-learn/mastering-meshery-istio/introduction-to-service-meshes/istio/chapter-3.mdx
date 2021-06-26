@@ -6,11 +6,18 @@ videos: 4
 lectures: 12
 ---
 
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
+<ChapterStyle>
 The components deployed on the service mesh by default are not exposed outside the cluster. An Ingress Gateway is deployed as a Kubernetes service of type LoadBalancer (or NodePort). To make Bookinfo accessible external to the cluster, you have to create an `Istio Gateway` for the Bookinfo application and also define an `Istio VirtualService` with the routes we need.
 
-## 3.1 Inspecting the Istio Ingress Gateway
+<br />
 
-The ingress gateway gets exposed as a normal Kubernetes service of type LoadBalancer (or NodePort):
+<h2 class="chapter-sub-heading"> 3.1 Inspecting the Istio Ingress Gateway</h2>
+
+<br />
+The ingress gateway gets exposed as a normal Kubernetes service of type LoadBalancer
+(or NodePort):
 
 ```sh
 kubectl get svc istio-ingressgateway -n istio-system -o yaml
@@ -54,9 +61,13 @@ Now let us find the ingress pod and output the log:
 kubectl logs istio-ingressgateway-... -n istio-system
 ```
 
-## 3.2 View Istio Ingress Gateway for Bookinfo
+<h2 class="chapter-sub-heading">3.2 View Istio Ingress Gateway for Bookinfo</h2>
+<br />
 
-### 3.2.1 - View the Gateway and VirtualServices
+<h3 class="chapter-sub-heading">
+  {" "}
+  3.2.1 - View the Gateway and VirtualServices
+</h3>
 
 Check the created `Istio Gateway` and `Istio VirtualService` to see the changes deployed:
 
@@ -68,7 +79,10 @@ kubectl get virtualservices
 kubectl get virtualservices -o yaml
 ```
 
-### 3.2.2 - Find the external port of the Istio Ingress Gateway by running:
+<h3 class="chapter-sub-heading">
+  {" "}
+  3.2.2 - Find the external port of the Istio Ingress Gateway by running:
+</h3>
 
 ```sh
 kubectl get service istio-ingressgateway -n istio-system -o wide
@@ -80,7 +94,7 @@ To just get the first port of istio-ingressgateway service, we can run this:
 kubectl get service istio-ingressgateway -n istio-system --template='{{(index .spec.ports 1).nodePort}}'
 ```
 
-### 3.2.2 - Create a DNS entry:
+<h3 class="chapter-sub-heading"> 3.2.2 - Create a DNS entry:</h3>
 
 Modify you local `/etc/hosts` file to add an entry for your sample application.
 
@@ -96,7 +110,7 @@ echo "http://$(kubectl get nodes --selector=kubernetes.io/role!=master -o jsonpa
 
 Docker Desktop users please use `http://localhost/productpage` to access product page in your browser.
 
-## 3.3 Apply default destination rules
+<h2 class="chapter-sub-heading"> 3.3 Apply default destination rules</h2>
 
 Before we start playing with Istio's traffic management capabilities we need to define the available versions of the deployed services. They are called subsets, in destination rules.
 
@@ -179,16 +193,19 @@ kubectl get destinationrules
 kubectl get destinationrules -o yaml
 ```
 
-## 3.4 - Browse to BookInfo
+<h2 class="chapter-sub-heading"> 3.4 - Browse to BookInfo</h2>
 
 Browse to the website of the Bookinfo. To view the product page, you will have to append
 `/productpage` to the url.
 
-### 3.4.1 - Reload Page
+<h3 class="chapter-sub-heading"> 3.4.1 - Reload Page</h3>
 
 Now, reload the page multiple times and notice how it round robins between v1, v2 and v3 of the reviews service.
 
-## 3.5 Inspect the Istio proxy of the productpage pod
+<h2 class="chapter-sub-heading">
+  {" "}
+  3.5 Inspect the Istio proxy of the productpage pod
+</h2>
 
 To better understand the istio proxy, let's inspect the details. Let us `exec` into the productpage pod to find the proxy details. To do so we need to first find the full pod name and then `exec` into the istio-proxy container:
 
@@ -213,21 +230,13 @@ As a last step, lets exit the container:
 exit
 ```
 
-### Default destination rules
+<h3 class="chapter-sub-heading"> Default destination rules</h3>
 
 Run the following command to create default destination rules for the Bookinfo services:
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml
 ```
-
-<h2>
-  <a href="../lab-4/README.md">
-    <img src="../img/go.svg" width="32" height="32" align="left" />
-    Continue to Lab 4
-  </a>
-  : Observability
-</h2>
 
 <br />
 <hr />
@@ -236,9 +245,9 @@ Alternative, manual installation steps are provided for reference below. No need
 
 <hr />
 
-## <a name="appendix"></a> Appendix - Alternative Manual Steps
+<br />
 
-### Default destination rules
+<h3 class="chapter-sub-heading"> Default destination rules</h3>
 
 Run the following command to create default destination rules for the Bookinfo services:
 
@@ -246,7 +255,10 @@ Run the following command to create default destination rules for the Bookinfo s
 kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml
 ```
 
-### 3.2.1 - Configure the Bookinfo route with the Istio Ingress gateway:
+<h3 class="chapter-sub-heading">
+  {" "}
+  3.2.1 - Configure the Bookinfo route with the Istio Ingress gateway:
+</h3>
 
 We can create a virtualservice & gateway for bookinfo app in the ingress gateway by running the following:
 
@@ -254,4 +266,4 @@ We can create a virtualservice & gateway for bookinfo app in the ingress gateway
 kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 ```
 
-### 3.2.2 - View the Gateway and VirtualServices
+</ChapterStyle>
