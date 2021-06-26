@@ -132,4 +132,52 @@ kubectl describe pod productpage-v1-.....
 
 Next, you will expose the BookInfo application to be accessed external from the cluster.
 
+<br />
+<hr />
+
+Alternative, manual installation steps are provided for reference below. No need to execute these if you have performed the steps above.
+
+<hr />
+<br />
+
+<h3 class="chapter-sub-heading"> Label namespace for injection</h3>
+
+Label the default namespace with istio-injection=enabled
+
+```sh
+kubectl label namespace default istio-injection=enabled
+```
+
+```sh
+kubectl get namespace -L istio-injection
+```
+
+Output:
+
+```sh
+NAME           STATUS    AGE       ISTIO-INJECTION
+default        Active    1h        enabled
+istio-system   Active    1h        disabled
+kube-public    Active    1h
+kube-system    Active    1h
+```
+
+<h3 class="chapter-sub-heading"> Deploy BookInfo</h3>
+<br />
+
+Applying this yaml file included in the Istio package you collected in https://github.com/layer5io/istio-service-mesh-workshop/tree/master/lab-1#1 will deploy the BookInfo app in you cluster.
+
+```sh
+kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+```
+
+<h3 class="chapter-sub-heading">
+  {" "}
+  Deploy Gateway and Virtual Service for BookInfo app
+</h3>
+
+```sh
+kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+```
+
 </ChapterStyle>
