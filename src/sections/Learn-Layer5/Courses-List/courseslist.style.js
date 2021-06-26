@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { BlogPageWrapper } from "../../Blog/Blog-grid/blogGrid.style";
-export const LearnPathWrapper = styled.div`
-  ${BlogPageWrapper};
-  margin: 2rem 0;
+export const CoursesListWrapper = styled.div`
+
+  .page-header {
+    margin: 3rem auto 5rem;
+  }
   .course-list {
     display: flex;
     margin: 2rem 0;

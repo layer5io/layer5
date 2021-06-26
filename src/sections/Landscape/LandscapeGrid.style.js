@@ -225,18 +225,15 @@ export const LandscapePageWrapper=styled.div`
 
 	@media screen and (min-width: 1200px) {
 		.dashLine-0 {
-			// margin-left: -33%;
-			// margin-right: 48%;
 			margin-left: -28%;
 			position: absolute;
 			width: 75%;
+			top: 5rem;
 		}
 		.dashLine-1 {
-			// margin-right: -33%;
-			// margin-left: 45%;
 			margin-left: 39%;
 			position: absolute;
-			top: 4.5rem;
+			top: 5rem;
 			width: 77%;
 		}
 		.title-1, .subtitle-1 {
@@ -249,18 +246,15 @@ export const LandscapePageWrapper=styled.div`
 
 	@media screen and (min-width: 992px) and (max-width: 1200px) {
 		.dashLine-0 {
-			// margin-left: -40%;
-			// margin-right: 40%;
 			margin-left: -30%;
 			position: absolute;
 			width: 85%;
+			top: 5rem;
 		}
 		.dashLine-1 {
-			// margin-left: 30%;
-			// margin-right: -40%;
 			margin-left: 25%;
 			position: absolute;
-			top: 4.5rem;
+			top: 5rem;
 			width: 92%;
 		}
 		.title-1, .subtitle-1 {
@@ -307,19 +301,15 @@ export const LandscapePageWrapper=styled.div`
 	}
 	@media screen and (min-width: 767px) and (max-width: 996px) {
 		.dashLine-0 {
-			// margin-left: -40%;
-			// margin-right: 20%;
 			margin-left: -32%;
 			position: absolute;
 			width: 100%;
-			top: 4.5rem;
+			top: 5rem;
 		}
 		.dashLine-1 {
-			// margin-left: 15%;
-			// margin-right: -40%;
 			margin-left: 13%;
 			position: absolute;
-			top: 4.5rem;
+			top: 5rem;
 			width: 103%;
 		}
 		.title-1, .subtitle-1 {
@@ -364,7 +354,7 @@ export const LandscapePageWrapper=styled.div`
 			margin-left: -5rem;
 			width: 20rem;
 			position: absolute;
-			top: 3.85rem;
+			top: 4.15rem;
 		}
 		.meshtitle-img-0 img, .meshtitle-img-1 img {
 			width: 3.25rem;
