@@ -6,11 +6,15 @@ videos: 4
 lectures: 12
 ---
 
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
+<ChapterStyle>
+
 Istio provides transparent mutual TLS to services inside the service mesh where both the client and the server authenticate each others' certificates as part of the TLS handshake. As part of this workshop, we have deployed Istio with mTLS.
 
 By default istio sets mTLS in `PERMISSIVE` mode which allows plain text traffic to be sent and accepted by a mesh. We first disallow plain text traffic using `PeerAuthentication` and setting mTLS mode to STRICT.
 
-## Confirm mTLS is being enforced
+<h2 class="chapter-sub-heading"> Confirm mTLS is being enforced</h2>
 
 This can be easily done by executing a simple command:-
 
@@ -18,7 +22,7 @@ This can be easily done by executing a simple command:-
 kubectl get peerauthentication --all-namespaces
 ```
 
-## 8.1 Verify mTLS
+<h2 class="chapter-sub-heading"> 8.1 Verify mTLS</h2>
 
 Citadel is Istio’s key management service. As a first step, confirm that Citadel is up and running:
 
@@ -129,9 +133,18 @@ Now lets come out of the container before we go to the next section:
 exit
 ```
 
-## 8.2 [Secure Production Identity Framework for Everyone (SPIFFE)](https://spiffe.io/)
-
-Istio uses [SPIFFE](https://spiffe.io/) to assert the identify of workloads on the cluster. SPIFFE consists of a notion of identity and a method of proving it. A SPIFFE identity consists of an authority part and a path. The meaning of the path in spiffe land is implementation defined. In k8s it takes the form `/ns/$namespace/sa/$service-account` with the expected meaning. A SPIFFE identify is embedded in a document. This document in principle can take many forms but currently the only defined format is x509.
+<h2 class="chapter-sub-heading">
+  {" "}
+  8.2 Secure Production Identity Framework for Everyone (SPIFFE)
+</h2>
+<br />
+Istio uses [SPIFFE](https://spiffe.io/) to assert the identify of workloads on
+the cluster. SPIFFE consists of a notion of identity and a method of proving it.
+A SPIFFE identity consists of an authority part and a path. The meaning of the
+path in spiffe land is implementation defined. In k8s it takes the form
+`/ns/$namespace/sa/$service-account` with the expected meaning. A SPIFFE
+identify is embedded in a document. This document in principle can take many
+forms but currently the only defined format is x509.
 
 To start our investigation, let us check if the certs are in place in the productpage sidecar:
 
@@ -187,14 +200,4 @@ X509v3 Subject Alternative Name: critical
     URI:spiffe://cluster.local/ns/default/sa/bookinfo-productpage
 ```
 
-You can see that the subject isn't what you'd normally expect, URI SAN extension has a `spiffe` URI.
-
-This wraps up this lab and training. Thank you for attending!
-
----
-
-# Additional Resources
-
-For future updates and additional resources, check out [layer5.io](https://layer5.io).
-
-Join the Layer5 service mesh community on [Slack](http://slack.layer5.io) or point questions to [@Layer5](https://twitter.com/layer5) on Twitter.
+</ChapterStyle>
