@@ -6,9 +6,16 @@ videos: 4
 lectures: 12
 ---
 
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+import InstallIstio from "../../../../src/assets/images/learn-layer5/istio/install-istio.png";
+
+<ChapterStyle>
 In this lab, we are going to get our hands on some of the traffic management capabilities of Istio.
 
-## 5.1 Apply default destination rules
+<br />
+<br />
+<h2 class="chapter-sub-heading"> 5.1 Apply default destination rules</h2>
+<br />
 
 Before we start playing with Istio's traffic management capabilities, we need to define the available versions of the deployed services. In Istio parlance, versions are called subsets. Subsets are defined in destination rules.
 
@@ -91,7 +98,11 @@ kubectl get destinationrules
 kubectl get destinationrules -o yaml
 ```
 
-## 5.2 Configure the default route for all services to V1
+<h2 class="chapter-sub-heading">
+  {" "}
+  5.2 Configure the default route for all services to V1
+</h2>
+<br />
 
 As part of the bookinfo sample app, there are multiple versions of reviews service. When we load the `/productpage` in the browser multiple times we have seen the reviews service round robin between v1, v2 or v3. As the first exercise, let us first restrict traffic to just V1 of all the services.
 
@@ -99,11 +110,6 @@ Using Meshery, navigate to the Istio management page:
 
 1. Enter `default` in the `Namespace` field.
 2. Click the (+) icon on the `Apply Custom Configuration` card and paste the configuration below.
-
-<!--
-```sh
-kubectl apply -f samples/bookinfo/networking/virtual-service-all-v1.yaml
-``` -->
 
 To view the applied rule:
 
@@ -140,13 +146,11 @@ spec:
 
 Now when we reload the `/productpage` several times, we will ONLY be viewing the data from v1 of all the services, which means we will not see any ratings (any stars).
 
-## 5.3 Content-based routing
+<h2 class="chapter-sub-heading"> 5.3 Content-based routing</h2>
 
-Let's replace our first rules with a new set. Enable the `ratings` service for a user `jason` by routing `productpage` traffic to `reviews` v2:
-
-<!-- ```sh
-kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml
-``` -->
+<br />
+Let's replace our first rules with a new set. Enable the `ratings` service for a
+user `jason` by routing `productpage` traffic to `reviews` v2:
 
 Using Meshery, navigate to the Istio management page:
 
@@ -192,15 +196,12 @@ spec:
 
 Now if we login as your `jason`, you will be able to see data from `reviews` v2. While if you NOT logged in or logged in as a different user, you will see data from `reviews` v1.
 
-## 5.4 Canary Testing - Traffic Shifting
+<h2 class="chapter-sub-heading"> 5.4 Canary Testing - Traffic Shifting</h2>
 
-### 5.4.1 Canary testing w/50% load
+<br />
+<h3 class="chapter-sub-heading"> 5.4.1 Canary testing w/50% load</h3>
 
 To start canary testing, let's begin by transferring 50% of the traffic from reviews:v1 to reviews:v3 with the following command:
-
-<!-- ```sh
-kubectl apply -f  samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
-``` -->
 
 Using Meshery, navigate to the Istio management page:
 
@@ -243,13 +244,9 @@ spec:
 
 Now, if we reload the `/productpage` in your browser several times, you should now see red-colored star ratings approximately 50% of the time.
 
-### 5.4.2 Shift 100% to v3
+<h3 class="chapter-sub-heading"> 5.4.2 Shift 100% to v3</h3>
 
 When version v3 of the reviews microservice is considered stable, we can route 100% of the traffic to reviews:v3:
-
-<!-- ```sh
-kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-v3.yaml
-``` -->
 
 Using Meshery, navigate to the Istio management page:
 
@@ -287,16 +284,14 @@ spec:
 
 Now, if we reload the `/productpage` in your browser several times, you should now see red-colored star ratings 100% of the time.
 
-## [Continue to lab 6 - Fault Injection and Rate Limiting](../lab-6/README.md)
-
+<br />
 <hr />
-Alternative, manual installation steps below. No need to execute, if you have performed
-the steps above.
+Alternative, manual installation steps below. No need to execute, if you have
+performed the steps above.
 <hr />
+<br />
 
-## <a name="appendix"></a> Appendix - Manual Instructions
-
-### Default destination rules
+<h3 class="chapter-sub-heading"> Default destination rules</h3>
 
 Run the following command to create default destination rules for the Bookinfo services:
 
@@ -304,26 +299,40 @@ Run the following command to create default destination rules for the Bookinfo s
 kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml
 ```
 
-### Route all traffic to version V1 of all services
+<h3 class="chapter-sub-heading">
+  {" "}
+  Route all traffic to version V1 of all services
+</h3>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-all-v1.yaml
 ```
 
-### Route all traffic to version V2 of reviews for user Jason
+<h3 class="chapter-sub-heading">
+  {" "}
+  Route all traffic to version V2 of reviews for user Jason
+</h3>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml
 ```
 
-### Route 50% of traffic to version V3 of reviews service
+<h3 class="chapter-sub-heading">
+  {" "}
+  Route 50% of traffic to version V3 of reviews service
+</h3>
 
 ```sh
 kubectl apply -f  samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
 ```
 
-### Route 100% of traffic to version V3 of reviews service
+<h3 class="chapter-sub-heading">
+  {" "}
+  Route 100% of traffic to version V3 of reviews service
+</h3>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-v3.yaml
 ```
+
+</ChapterStyle>
