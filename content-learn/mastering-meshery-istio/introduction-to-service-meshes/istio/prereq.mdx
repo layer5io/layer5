@@ -6,6 +6,11 @@ videos: 4
 lectures: 12
 ---
 
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+import MehseryArchitecture from "../../../../src/assets/images/learn-layer5/istio/meshery-architecture.svg";
+
+<ChapterStyle>
+
 You will need each of the following in order to complete the workshop:
 
 1. Docker (installed locally)
@@ -13,11 +18,15 @@ You will need each of the following in order to complete the workshop:
 1. Meshery (installed locally)
 1. Istioctl (installed locally)
 
-## Install Docker and Create a Kubernetes Cluster<a name="1"></a>
+<h2 class="chapter-sub-heading">
+  {" "}
+  Install Docker and Create a Kubernetes Cluster<a name="1"></a>
+</h2>
+<br />
 
 You will access to a Kubernetes cluster in this training. While any Kubernetes cluster _should_ work, instructions for Docker Desktop and Minikube are included in these labs as the example Kubernetes platforms. Alternatively, you may choose to use any of the other [supported Kubernetes platform](https://github.com/layer5io/meshery#run-meshery).
 
-### Setup Docker Desktop (MacOS and Windows)
+<h3 class="chapter-sub-heading"> Setup Docker Desktop (MacOS and Windows)</h3>
 
 1. Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop).
    1. Ensure 4GB is allocated to your Docker Desktop VM in Docker Desktop preferences ([see screenshot](https://raw.githubusercontent.com/layer5io/istio-service-mesh-workshop/master/prereq/img/docker-desktop-memory.png)).
@@ -29,12 +38,15 @@ You will access to a Kubernetes cluster in this training. While any Kubernetes c
 
 - Mac and Windows users may continue this workshop with Kubernetes on Docker Desktop.
 
-### Or... Setup Minikube (MacOS, Windows, Linux)
+<h3 class="chapter-sub-heading">
+  {" "}
+  Or... Setup Minikube (MacOS, Windows, Linux)
+</h3>
 
 1. [Install minikube](https://minikube.sigs.k8s.io).
 1. Create Kubernetes cluster: `minikube start`.
 
-### Check Cluster Status
+<h3 class="chapter-sub-heading"> Check Cluster Status</h3>
 
 Check the status of the nodes. Ensure `Ready` state.
 
@@ -59,14 +71,18 @@ kube-system   kube-scheduler-node1            1/1       Running   0          1h
 
 If all pods are in a `Running` state, you have an operational Kubernetes cluster. Please continue to download and run Meshery.
 
-## Download `mesheryctl`<a name="3"></a>
+<h2 class="chapter-sub-heading">
+  {" "}
+  Download `mesheryctl`<a name="3"></a>
+</h2>
+<br />
 
-### Meshery Architecture
+<h3 class="chapter-sub-heading"> Meshery Architecture</h3>
 
 In this workshop, Meshery will run "off-cluster", which is to say it will be running outside of the Kubernetes cluster. You will be running Meshery in your local Docker instance.
 
 <img
-  src="img/meshery-architecture.svg"
+  src={MehseryArchitecture}
   alt="Meshery Architecture"
   style="float: left; margin-right: 10px;"
   width="60%"
@@ -74,7 +90,7 @@ In this workshop, Meshery will run "off-cluster", which is to say it will be run
 
 Install Meshery on your local machine (running Docker) by executing the following:
 
-#### Install on MacOS with Homebrew
+<h4 class="chapter-sub-heading"> Install on MacOS with Homebrew</h4>
 
 ```
 brew tap layer5io/tap
@@ -82,15 +98,24 @@ brew install mesheryctl
 mesheryctl system start
 ```
 
-#### Or... Install on MacOS and Linux with bash script:
+<h4 class="chapter-sub-heading">
+  {" "}
+  Or... Install on MacOS and Linux with bash script:
+</h4>
 
 ```
 curl -L https://git.io/meshery | bash -
 ```
 
-#### Or.... Install on Windows with `mesheryctl` binary
+<h4 class="chapter-sub-heading">
+  {" "}
+  Or.... Install on Windows with `mesheryctl` binary
+</h4>
+<br />
+<br />
+<h3 class="chapter-sub-heading"> Windows</h3>
 
-### [Windows](https://meshery.layer5.io/docs/installation#windows)
+[Docs for Installation](https://meshery.layer5.io/docs/installation#windows)
 
 1. Use Scoop.
 
@@ -105,13 +130,13 @@ or
 
 Upon starting Meshery successfully, instructions to access Meshery will be printed on the sceen.
 
-## Run Meshery
+<h2 class="chapter-sub-heading"> Run Meshery</h2>
 
 Meshery will automatically launch in your browser.
 
-Sign into Meshery ([see screenshot](/master/prereq/img/sign-into-meshery.png)) using either Twitter, Linkedin, GitHub or Google authentication.
+Sign into Meshery ([see screenshot](https://raw.githubusercontent.com/layer5io/istio-service-mesh-workshop/master/prereq/img/sign-into-meshery.png)) using either Twitter, Linkedin, GitHub or Google authentication.
 
-Meshery attempts to automatically connect with your Kubernetes cluster by loading the kubeconfig found in your `$HOME/.kube` folder and connecting existing service mesh adapters ([see screenshot](../master/prereq/img/meshery_landing_page.png)).
+Meshery attempts to automatically connect with your Kubernetes cluster by loading the kubeconfig found in your `$HOME/.kube` folder and connecting existing service mesh adapters ([see screenshot](https://raw.githubusercontent.com/layer5io/istio-service-mesh-workshop/master/prereq/img/meshery_landing_page.png)).
 
 If your kubeconfig is in a different location (i.e. if you are not using Docker Desktop), point Meshery to your kubeconfig location by navigating to the Settings page. Navigate to Settings by clicking the gear icon on the right top of the screen ([see screenshot](https://raw.githubusercontent.com/layer5io/advanced-istio-service-mesh-workshop/master/prereq/img/meshery_landing_page_settings_icon.png)).
 
@@ -133,14 +158,6 @@ Once an adapter is connected, you will also see it added to the nav menu on the 
 
 In the labs, you will use a combination of Meshery's UI and your terminal. We suggest splitting the view on your display between your terminal and your web browser, so that you don't have to switch between apps frequently.
 
-<h2>
-  <a href="../lab-1/README.md">
-    <img src="../img/go.svg" width="32" height="32" align="left" />
-    Continue to Lab 1
-  </a>
-  : Deploy Istio
-</h2>
-
 <br />
 <hr />
 
@@ -148,7 +165,11 @@ Optional, manual installation steps are provided for reference below. No need to
 
 <hr />
 
-## Download `istioctl`<a name="4"></a>
+<br />
+<h2 class="chapter-sub-heading">
+  {" "}
+  Download `istioctl`<a name="4"></a>
+</h2>
 
 **Bash**
 Install `istioctl` CLI on your local system by executing:
@@ -170,3 +191,5 @@ To verify if the cli was successfully installed:
 ```sh
 istioctl version
 ```
+
+</ChapterStyle>
