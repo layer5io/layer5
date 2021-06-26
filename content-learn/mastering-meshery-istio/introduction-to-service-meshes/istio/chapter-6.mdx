@@ -6,14 +6,9 @@ videos: 4
 lectures: 12
 ---
 
+hello
+
 In this lab we will learn how to test the resiliency of an application by injecting systematic faults.
-
-<!-- Before we start let us reset the route rules: -->
-
-<!-- ```sh
-kubectl apply -f samples/bookinfo/networking/virtual-service-all-v1.yaml
-``` -->
-
 Before we start, we will need to reset the virtual services.
 
 Using Meshery, navigate to the Istio management page:
@@ -23,7 +18,7 @@ Using Meshery, navigate to the Istio management page:
 
 Config:
 
-```
+```yaml
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
@@ -38,18 +33,9 @@ spec:
             subset: v2
 ```
 
-<!--
-```sh
-kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml
-``` -->
-
 ## 6.1 Inject a route rule to create a fault using HTTP delay
 
 To start, we will inject a 7s delay for accessing the ratings service for a user `jason`. reviews v2 service has a 10s hard-coded connection timeout for its calls to the ratings service configured globally.
-
-<!-- ```sh
-kubectl apply -f samples/bookinfo/networking/virtual-service-ratings-test-delay.yaml
-``` -->
 
 Using Meshery, navigate to the Istio management page:
 
@@ -98,10 +84,8 @@ spec:
 
 Now we login to `/productpage` as user `jason` and observe that the page loads but because of the induced delay between services the reviews section will show :
 
-<pre>
-  <b>Error fetching product reviews!</b>
-  Sorry, product reviews are currently unavailable for this book.
-</pre>
+<b>Error fetching product reviews!</b>
+Sorry, product reviews are currently unavailable for this book.
 
 If you logout or login as a different user, the page should load normally without any errors.
 
