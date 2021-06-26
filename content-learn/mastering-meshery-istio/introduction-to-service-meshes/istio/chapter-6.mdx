@@ -6,7 +6,9 @@ videos: 4
 lectures: 12
 ---
 
-hello
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+
+<ChapterStyle>
 
 In this lab we will learn how to test the resiliency of an application by injecting systematic faults.
 Before we start, we will need to reset the virtual services.
@@ -33,7 +35,10 @@ spec:
             subset: v2
 ```
 
-## 6.1 Inject a route rule to create a fault using HTTP delay
+<h2 class="chapter-sub-heading">
+  {" "}
+  6.1 Inject a route rule to create a fault using HTTP delay
+</h2>
 
 To start, we will inject a 7s delay for accessing the ratings service for a user `jason`. reviews v2 service has a 10s hard-coded connection timeout for its calls to the ratings service configured globally.
 
@@ -93,11 +98,6 @@ If you logout or login as a different user, the page should load normally withou
 
 In this section, , we will introduce an HTTP abort to the ratings microservices for user `jason`.
 
-<!-- Now apply the change to the cluster:
-```sh
-kubectl apply -f samples/bookinfo/networking/virtual-service-ratings-test-abort.yaml
-``` -->
-
 Using Meshery, navigate to the Istio management page:
 
 1. Enter `default` in the `Namespace` field.
@@ -145,39 +145,44 @@ Now we login to `/productpage` as user `jason` and observe that the page loads w
 
 `Ratings service is currently unavailable`.
 
-### 6.3 Verify fault injection
+<h3 class="chapter-sub-heading"> 6.3 Verify fault injection</h3>
 
 Verify the fault injection by logging out (or logging in as a different user), the page should load normally without any errors.
 
-## [Continue to Lab 7 - Circuit Breaking](../lab-7/README.md)
-
+<br />
 <hr />
-Alternative, manual installation steps below. No need to execute, if you have performed
-the steps above.
+Alternative, manual installation steps below. No need to execute, if you have
+performed the steps above.
 <hr />
+<br />
 
-## <a name="appendix"></a> Appendix
-
-### Route all traffic to version V1 of all services
+<h3 class="chapter-sub-heading">
+  Route all traffic to version V1 of all services
+</h3>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-all-v1.yaml
 ```
 
-### Route all traffic to version V2 of reviews for user Jason
+<h3 class="chapter-sub-heading">
+  {" "}
+  Route all traffic to version V2 of reviews for user Jason
+</h3>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml
 ```
 
-### Inject 7s delay for ratings service
+<h3 class="chapter-sub-heading"> Inject 7s delay for ratings service</h3>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-ratings-test-delay.yaml
 ```
 
-### Inject HTTP abort for ratings service
+<h3 class="chapter-sub-heading"> Inject HTTP abort for ratings service</h3>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/virtual-service-ratings-test-abort.yaml
 ```
+
+</ChapterStyle>
