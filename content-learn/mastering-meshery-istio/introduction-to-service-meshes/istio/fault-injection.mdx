@@ -10,7 +10,7 @@ import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapte
 
 <ChapterStyle>
 
-In this lab we will learn how to test the resiliency of an application by injecting systematic faults.
+In this chapter we will learn how to test the resiliency of an application by injecting systematic faults.
 Before we start, we will need to reset the virtual services.
 
 Using Meshery, navigate to the Istio management page:
@@ -46,8 +46,6 @@ Using Meshery, navigate to the Istio management page:
 
 1. Enter `default` in the `Namespace` field.
 2. Click the (+) icon on the `Apply Custom Configuration` card and paste the configuration below.
-
-<small>Manual step for can be found [here](#appendix)</small>
 
 This will update the existing virtual service definition for ratings to inject a delay for user `jason` to access the ratings V1.
 
