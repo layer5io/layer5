@@ -1,10 +1,10 @@
 import { Link } from "gatsby";
 import React from "react";
-import GetStartedWrapper from "./get-started.styles";
+import SetupPreReqWrapper from "./setup-pre-req.style";
 
 
-const GetStarted = () => (
-  <GetStartedWrapper>
+const SetupPreReq = () => (
+  <SetupPreReqWrapper>
     <div className="get-started-desc">
       <h2>Get Started</h2>
       <p>Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads.</p>
@@ -29,7 +29,7 @@ const GetStarted = () => (
         </div>
       </Link>
     </div>
-  </GetStartedWrapper>
+  </SetupPreReqWrapper>
 );
 
-export default GetStarted;
+export default SetupPreReq;

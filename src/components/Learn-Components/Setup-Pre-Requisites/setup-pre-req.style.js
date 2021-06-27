@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const GetStartedWrapper = styled.div`
+const SetupPreReqWrapper = styled.div`
     padding: 1rem 0;
     h2{
         margin: 1rem 0;
@@ -57,4 +57,4 @@ const GetStartedWrapper = styled.div`
     }
 `;
 
-export default GetStartedWrapper;
+export default SetupPreReqWrapper;

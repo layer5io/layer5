@@ -572,7 +572,7 @@ const createCoursesListPage = ({ createPage, node }) => {
 
   createPage({
     path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Courses-List/index.js"),
+    component: path.resolve("src/templates/courses-list.js"),
     context: {
       // Data passed to context is available in page queries as GraphQL variables.
       learnpath,
@@ -594,7 +594,7 @@ const createCourseOverviewPage = ({ createPage, node }) => {
 
   createPage({
     path: `learn-ng${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Course-Overview/index.js"),
+    component: path.resolve("src/templates/course-overview.js"),
     context: {
       learnpath,
       slug,
