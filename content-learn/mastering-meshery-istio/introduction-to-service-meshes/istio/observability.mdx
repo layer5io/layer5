@@ -14,10 +14,7 @@ import Jaeger from "../../../../src/assets/images/learn-layer5/istio/jaeger.png"
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">
-  {" "}
-  <a name="1"></a>Install Telemetry Add-ons
-</h2>
+<h2 class="chapter-sub-heading">Install Telemetry Add-ons</h2>
 
 Using Meshery, install Istio telemetry add-ons. In the Istio management page:
 
@@ -33,10 +30,7 @@ Using Meshery, install Istio telemetry add-ons. In the Istio management page:
 
 You will use Prometheus and Grafana for collecting and viewing metrics and [Jaeger](https://www.jaegertracing.io/) collecting and viewing distributed traces. Expose each add-on external to the cluster. Each the service network typs are set to "LoadBalancer".
 
-<h3 class="chapter-sub-heading">
-  {" "}
-  <a name="2"></a> Service Mesh Performance and Telemetry
-</h3>
+<h3 class="chapter-sub-heading">Service Mesh Performance and Telemetry</h3>
 
 Many of the labs require load to be placed on the sample apps. Let's generate HTTP traffic against the BookInfo application, so we can see interesting telemetry.
 
@@ -55,7 +49,6 @@ The URL to run a load test against will be `http://<IP/hostname of any of the no
 Use the computed URL above in Meshery, in the browser, to run a load test and see the results.
 
 <h4 class="chapter-sub-heading">
-  {" "}
   Connect Grafana (optionally, Prometheus) to Meshery.
 </h4>
 
@@ -65,7 +58,6 @@ On the [Settings page](http://localhost:9081/settings#metrics):
 1. Enter Grafana's URL:port number and submit.
 
 <h4 class="chapter-sub-heading">
-  {" "}
   Use Meshery to generate load and analyze performance.
 </h4>
 
@@ -229,7 +221,6 @@ kubectl -n istio-system get svc tracing
 ```
 
 <h5 class="chapter-alt-heading">
-  {" "}
   Option 2: Expose services with port-forwarding
 </h5>
 

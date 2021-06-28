@@ -55,7 +55,7 @@ APIs. Verify whether your Kubernetes deployment supports these APIs by executing
 kubectl api-versions | grep admissionregistration
 ```
 
-If your environment **does NOT** supports either of these two APIs, then you may use [manual sidecar injection](https://github.com/layer5io/istio-service-mesh-workshop/blob/master/lab-2/appendix-manual-injection.md) to deploy the sample app.
+If your environment **does NOT** supports either of these two APIs, then you may use [manual sidecar injection](#manual-sidecar-inj) to deploy the sample app.
 
 As part of Istio deployment in [Previous chapter](/learn-ng/mastering-meshery-istio/performance-of-service-mesh/istio/getting-started), you have deployed the sidecar injector.
 
@@ -107,7 +107,6 @@ This will do 3 things:
 1. Deploys the virtual service and gateway needed to expose the BookInfo's productpage application in the `default` namespace.
 
 <h3 class="chapter-sub-heading">
-  {" "}
   <a name="verify"></a> Verify Bookinfo deployment{" "}
 </h3>
 
@@ -171,12 +170,49 @@ kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 ```
 
 <h4 class="chapter-alt-heading">
-  {" "}
   Deploy Gateway and Virtual Service for BookInfo app
 </h4>
 
 ```sh
 kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 ```
+
+<hr />
+<br />
+
+<h3>
+  <a name="manual-sidecar-inj" />
+  Manual Sidecar Injection
+</h3>
+
+<p>Use this only when Automatic Sidecar injection doesn't work</p>
+
+To do a manual sidecar injection we will be using `istioctl` command:
+
+```sh
+curl https://raw.githubusercontent.com/istio/istio/master/samples/bookinfo/platform/kube/bookinfo.yaml | istioctl kube-inject -f - > newBookInfo.yaml
+```
+
+Observing the new yaml file reveals that additional container Istio Proxy has been added to the Pods with necessary configurations:
+
+```
+        image: docker.io/istio/proxyv2:1.3.0
+        imagePullPolicy: IfNotPresent
+        name: istio-proxy
+```
+
+We need to now deploy the new yaml using `kubectl`
+
+```sh
+kubectl apply -f newBookInfo.yaml
+```
+
+To do both in a single command:
+
+```sh
+kubectl apply -f <(curl https://raw.githubusercontent.com/istio/istio/master/samples/bookinfo/platform/kube/bookinfo.yaml | istioctl kube-inject -f -)
+```
+
+Now continue to [Verify Bookinfo deployment](#verify).
 
 </ChapterStyle>
