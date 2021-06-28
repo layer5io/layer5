@@ -1,7 +1,7 @@
 ---
-docType: 'Chapter'
-chapterTitle: 'Getting Started'
-description: 'Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads.'
+docType: "Chapter"
+chapterTitle: "Getting Started"
+description: "Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
 videos: 4
 lectures: 12
 ---
@@ -27,12 +27,14 @@ Optional (manual install of Istio):
 1. [Setup `istioctl`](#1.2)
 1. [Install istio](#1.3)
 
-<h3 class="chapter-sub-heading"><a name="1">Install Istio</a></h3>
+<h3 class="chapter-sub-heading">
+  <a name="1">Install Istio</a>
+</h3>
 
 Using Meshery, select `Istio` from the `Management` menu.
 
 <a href={IstioAdapter}>
-<img src={IstioAdapter} align="center" />
+  <img src={IstioAdapter} align="center" />
 </a>
 
 In the Istio management page:
@@ -41,16 +43,18 @@ In the Istio management page:
 1. Click the (+) icon on the `Install` card and select `Latest Istio` to install the latest version of Istio.
 
    <a href={InstallIstio}>
-   <img src={InstallIstio} align="center" />
+     <img src={InstallIstio} align="center" />
    </a>
-
 
 <h3>Alternative:Manual installation</h3>
 Perform the below steps if the above steps doesn't work for you.
 
-<br /><br />
+<br />
+<br />
 
-<h4 class="chapter-alt-heading"><a name="1.1">Download Istio</a></h4>
+<h4 class="chapter-alt-heading">
+  <a name="1.1">Download Istio</a>
+</h4>
 
 You will download and deploy the latest Istio resources on your Kubernetes cluster.
 
@@ -62,7 +66,9 @@ On your local machine, execute:
 curl -L https://git.io/getLatestIstio | ISTIO_VERSION=1.7.3 sh -
 ```
 
-<h4 class="chapter-alt-heading"><a name="1.2">Setting up istioctl</a></h4>
+<h4 class="chapter-alt-heading">
+  <a name="1.2">Setting up istioctl</a>
+</h4>
 
 On a \*nix system, you can setup `istioctl` by doing the following:
 
@@ -89,7 +95,9 @@ Check if the cluster is ready for installation:
 istioctl verify-install
 ```
 
-<h4 class="chapter-alt-heading"><a name="1.3">Install Istio</a></h4>
+<h4 class="chapter-alt-heading">
+  <a name="1.3">Install Istio</a>
+</h4>
 
 To install Istio with a `demo` profile, execute the below command.
 
@@ -103,7 +111,9 @@ Alternatively, with Envoy logging enabled:
 istioctl install --set profile=demo --set meshConfig.accessLogFile=/dev/stdout
 ```
 
-<h3 class="chapter-sub-heading"><a name="2">Verify install</a></h3>
+<h3 class="chapter-sub-heading">
+  <a name="2">Verify install</a>
+</h3>
 
 In the Istio management page:
 
