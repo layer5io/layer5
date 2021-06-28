@@ -12,6 +12,7 @@ const CardWrapper = styled.div`
 
     .card-parent{
         border-radius: 2rem;
+        min-height:357px;
     }
 
     .card-head{
