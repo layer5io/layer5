@@ -124,7 +124,6 @@ const Brand = () => {
     };
 
     handleScroll();
-    console.log(handleScroll());
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);

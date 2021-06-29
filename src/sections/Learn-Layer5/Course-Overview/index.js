@@ -10,9 +10,19 @@ import {
   IoChevronBackOutline,
 } from "react-icons/io5";
 import Button from "../../../reusecore/Button";
-import ContentCard from "../../../components/Learn-Components/Content-Card";
+import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { SRLWrapper } from "simple-react-lightbox";
 
 const CourseOverview = ({ course, chapters }) => {
+
+  const getChapterTitle = (chapter, chapterList) => {
+    for(let i=0; i < chapterList.length; i++) {
+      if (chapterList[i].fields.chapter === chapter)
+        return chapterList[i];
+    }
+  };
+
   return (
     <CourseOverviewWrapper>
       <div
@@ -30,15 +40,15 @@ const CourseOverview = ({ course, chapters }) => {
             <p>{course.frontmatter.description}</p>
           </div>
           <div className="content-info">
-            <div className="info">
+            {/* <div className="info">
               <IoVideocam /> <span>{course.frontmatter.videos} videos</span>
-            </div>
+            </div> */}
             <div className="info">
               <IoDocumentTextOutline />{" "}
-              <span>{course.frontmatter.lectures} lectures</span>
+              <span>{course.frontmatter.toc.length} Chapters</span>
             </div>
           </div>
-          <Button title="Get Started" url="#toc" />
+          <Button title="Get Started" url={`istio/${course.frontmatter.toc[0]}`} />
         </div>
         <div className="course-hero-head-image">
           <Image
@@ -46,18 +56,22 @@ const CourseOverview = ({ course, chapters }) => {
             alt={course.frontmatter.title}
           />
         </div>
-      	</div>
+      </div>
       <div className="content-section-container" id="toc">
         <Row className="content-section">
           <Col md={12} lg={8} xl={7}>
-            <h2>Content</h2>
-            {chapters.map((chapter, index) => (
+            <h2 className="overview">Overview</h2>
+            <SRLWrapper>
+              <MDXRenderer>{course.body}</MDXRenderer>
+            </SRLWrapper>
+            <h2 className="course-toc">Table Of Contents</h2>
+            {course.frontmatter.toc.map((item, index) => (
               <Link
                 key={index}
-                to={`./istio/${chapter.fields.chapter}`}
+                to={`./istio/${item}`}
                 className="chapter-link"
               >
-                <ContentCard chapter={chapter} />
+                <ChapterCard chapterNum={index+1} chapter={getChapterTitle(item, chapters)} />
               </Link>
             ))}
           </Col>
@@ -67,7 +81,6 @@ const CourseOverview = ({ course, chapters }) => {
               <div className="service-mesh-courses">
                 {course.frontmatter.meshesYouLearn.map((mesh, index) => (
                   <a key={index} className="course">
-                    {console.log(mesh.imagepath)}
                     <Image
                       {...mesh.imagepath}
                       className="docker"

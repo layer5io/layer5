@@ -19,12 +19,12 @@ export const query = graphql`
       }
     ) {
       nodes {
+        body
         frontmatter {
           courseTitle
           description
 					themeColor
-          videos
-          lectures
+          toc
 
           cardImage {
             childImageSharp {
@@ -76,13 +76,12 @@ export const query = graphql`
   }
 `;
 const CourseOverviewTemplate = ({ data, pageContext }) => {
-  console.log(data, pageContext);
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
         <SEO
-          title={`Learn ${data.courseByTitle.nodes[0].frontmatter.courseTitle}`}
+          title={`${data.courseByTitle.nodes[0].frontmatter.courseTitle}`}
           description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Maesh, Kuma, App Mesh, Citrix, Tanzu Service Mesh"
         />
         <Navigation />

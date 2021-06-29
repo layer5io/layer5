@@ -26,7 +26,7 @@ const CardComponent = ({ tutorial }) => {
             </div>
             <div className="card-desc">
               <p>{tutorial.frontmatter.description}</p>
-              <p>{tutorial.frontmatter.learningPaths} learning paths</p>
+              <p>{tutorial.frontmatter.courses} learning paths</p>
             </div>
           </div>
           <div className="card-image">

@@ -13,7 +13,7 @@ const LearnPathsPage = () => {
     query allLearnPath {
       learnPaths: allMdx(
         filter: {
-          fields: { collection: { eq: "content-learn" }, slug: { glob: "/*/" } }
+          fields: { collection: { eq: "content-learn" }, pageType: { eq: "learnpath" } }
         }
       ) {
         nodes {
@@ -22,7 +22,7 @@ const LearnPathsPage = () => {
             title
             description
             themeColor
-            learningPaths
+            courses
             cardImage {
               childImageSharp {
                 gatsbyImageData(width: 200, layout: CONSTRAINED)

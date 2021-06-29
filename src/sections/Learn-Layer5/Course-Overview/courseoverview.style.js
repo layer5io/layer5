@@ -4,21 +4,6 @@ export const CourseOverviewWrapper = styled.div`
 
   .course-back-btn {
     margin: 1rem 0;
-    padding: 1rem 0;
-  }
-  .course-overview-hero {
-    display: flex;
-  }
-  .course-info-content {
-    width: 55%;
-    padding: 5rem 6rem;
-    button {
-      background-color: white;
-      color: black;
-      font-weight: 600;
-    }
-  }
-  .course-back-btn {
     display: flex;
     align-items: center;
     a {
@@ -36,6 +21,19 @@ export const CourseOverviewWrapper = styled.div`
       font-size: 1.15rem;
     }
   }
+  .course-overview-hero {
+    display: flex;
+  }
+  .course-info-content {
+    width: 55%;
+    padding: 5rem 6rem;
+    button {
+      background-color: white;
+      color: black;
+      font-weight: 600;
+    }
+  }
+
   .content-info {
     width: 70%;
     display: flex;
@@ -69,6 +67,10 @@ export const CourseOverviewWrapper = styled.div`
     }
   }
 
+  .content-section-container {
+    margin: 0 5rem;
+  }
+
   .content-section {
     padding: 2rem 0rem;
     margin: 1rem 0rem;
@@ -76,8 +78,14 @@ export const CourseOverviewWrapper = styled.div`
       color: black;
     }
   }
-  .content-section-container {
-    margin: 0 5rem;
+
+  .overview {
+    margin-bottom: 0.5rem;
+  }
+
+  .course-toc {
+    margin-top: 1.75rem;
+    color: rgba(0, 0, 0, 0.6);
   }
 
   .service-meshes-you-can-learn,
