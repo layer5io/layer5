@@ -443,7 +443,7 @@ const onCreatePathNode = ({ actions, node, slug }) => {
   const [learnpath] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: slug });
+  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "pageType", value: "learnpath" });
 };
@@ -454,7 +454,7 @@ const onCreateCourseNode = ({ actions, node, slug }) => {
   const [learnpath, course] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: slug });
+  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "pageType", value: "course" });
@@ -466,7 +466,7 @@ const onCreateSectionNode = ({ actions, node, slug }) => {
   const [learnpath, course, section] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: slug });
+  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "section", value: section });
@@ -477,11 +477,11 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
   const [learnpath, course, section, chapter] = parts;
-  const pageSlug = slug.slice(0, -1);
+  // const pageSlug = slug.slice(0, -1);
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: pageSlug });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${pageSlug}` });
+  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
+  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "chapter", value: chapter });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "section", value: section });
@@ -571,7 +571,7 @@ const createCoursesListPage = ({ createPage, node }) => {
   const { learnpath, slug, pageType, permalink } = node.fields;
 
   createPage({
-    path: `learn-ng${slug}`,
+    path: `${slug}`,
     component: path.resolve("src/templates/courses-list.js"),
     context: {
       // Data passed to context is available in page queries as GraphQL variables.
@@ -593,7 +593,7 @@ const createCourseOverviewPage = ({ createPage, node }) => {
   } = node.fields;
 
   createPage({
-    path: `learn-ng${slug}`,
+    path: `${slug}`,
     component: path.resolve("src/templates/course-overview.js"),
     context: {
       learnpath,
@@ -617,7 +617,7 @@ const createChapterPage = ({ createPage, node }) => {
   } = node.fields;
 
   createPage({
-    path: `learn-ng${slug}`,
+    path: `${slug}`,
     component: path.resolve("src/templates/learn-chapter.js"),
     context: {
       learnpath,
@@ -642,7 +642,7 @@ const createSectionPage = ({ createPage, node }) => {
   } = node.fields;
 
   createPage({
-    path: `learn-ng${slug}`,
+    path: `${slug}`,
     component: path.resolve("src/sections/Learn-Layer5/Section/index.js"),
     context: {
       learnpath,

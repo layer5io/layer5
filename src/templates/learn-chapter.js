@@ -13,30 +13,45 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
-export const query = graphql`query chapters($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
-    body
-    frontmatter {
-      chapterTitle
-      description
+export const query = graphql`
+  query chapters($slug: String!, $course: String!) {
+    chapter: mdx(fields: {slug: {eq: $slug}}) {
+        body
+        frontmatter {
+          chapterTitle
+          description
+        }
+        fields {
+          slug
+          course
+          learnpath
+          chapter
+        }
     }
-    fields {
-      slug
-      course
-      learnpath
+    course: allMdx(
+      filter: {fields: {course: {eq: $course}}, frontmatter:{ docType:{eq:"Course"}}}
+    ) {
+        nodes {
+          frontmatter {
+            courseTitle
+            toc
+          }
+          fields {
+            slug
+          }
+        }
     }
-  }
 }
 `;
 
-const SingleChapter = ({data}) => {
+const SingleChapter = ({data, location}) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.chapterTitle} />
+        <SEO title={data.chapter.frontmatter.chapterTitle} />
         <Navigation />
-        <Chapters data={data}/>
+        <Chapters chapterData={data.chapter} courseData={data.course.nodes[0]} location={location} />
         <Footer />
       </Layout>
     </ThemeProvider>

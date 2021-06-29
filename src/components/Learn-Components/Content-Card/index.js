@@ -1,5 +1,5 @@
 import React from "react";
-import ContentCardWrapper from "./content.card.style";
+import ContentCardWrapper from "./content-card.style";
 import {
   IoDocumentTextOutline,
   IoVideocam,
@@ -19,13 +19,13 @@ const ContentCard = ({ chapter }) => (
         <p>{chapter.frontmatter.description}</p>
       </div>
       <div className="chapter-info">
-        <div className="info">
+        {/* <div className="info">
           <IoVideocam /> <span>{chapter.frontmatter.videos} videos</span>
         </div>
         <div className="info">
           <IoDocumentTextOutline />{" "}
           <span>{chapter.frontmatter.lectures} lectures</span>
-        </div>
+        </div> */}
       </div>
     </div>
     <div className="bookmark-btn-div">
