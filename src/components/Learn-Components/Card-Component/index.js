@@ -1,9 +1,10 @@
 import React from "react";
 import CardWrapper from "./learn-card.style";
 import Image from "../../image";
-import { Link } from "gatsby";
+import { Link} from "gatsby";
 
-const CardComponent = ({ tutorial }) => {
+const CardComponent = ({ tutorial , courseCount}) => {
+
   return (
     <CardWrapper>
       <Link to={tutorial.fields.learnpath} className="card-link">
@@ -26,7 +27,7 @@ const CardComponent = ({ tutorial }) => {
             </div>
             <div className="card-desc">
               <p>{tutorial.frontmatter.description}</p>
-              <p>{tutorial.frontmatter.courses} learning paths</p>
+              <p>{courseCount} Course{courseCount ===1  ? "" : "s"}</p>
             </div>
           </div>
           <div className="card-image">
