@@ -72,8 +72,22 @@ const LearnPathsPage = () => {
           }
         }
       }
+      allCourses: allMdx(
+        filter: {
+          fields: { collection: { eq: "content-learn" },pageType: { eq: "course" } }
+        }
+      ) {
+        nodes{
+          fields{
+            learnpath
+          }
+        }
+      }
     }
   `);
+
+
+  const getCoursesOfaLearningPath = (learnpath) => data.allCourses.nodes.filter(obj => obj.fields.learnpath === learnpath);
 
   return (
     <LearnLayer5GridWrapper>
@@ -86,7 +100,7 @@ const LearnPathsPage = () => {
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
             <Col sm={12} md={6} xl={4} key={tutorial.id}>
-              <CardComponent tutorial={tutorial} />
+              <CardComponent tutorial={tutorial} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
             </Col>
           ))}
         </Row>
