@@ -15,10 +15,6 @@ const ContentCardWrapper = styled.div`
     box-shadow: rgba(0, 0, 0, 0.08) 0px 3px 10px 0px;
   }
 
-  .card-link {
-    color: black;
-  }
-
   .chapter-info {
     display: flex;
     width: 60%;

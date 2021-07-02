@@ -7,8 +7,10 @@ const TOCWrapper = styled.div`
             display: inline-flex;
             svg {
                 align-self: center;
-                font-size: 1.25rem;
-                color: rgba(177, 182, 184, 0.75);
+                font-size: 1.5rem;
+                color: rgb(177, 182, 184);
+                width: 100%;
+                max-width: 1.5rem;
             }
             h4 {
                 font-weight: 500;
@@ -39,7 +41,6 @@ const TOCWrapper = styled.div`
             }
             li {
                 line-height: 3rem;
-                font-size: 1.3rem;
                 width: fit-content;
 
                 &::marker {
@@ -47,9 +48,11 @@ const TOCWrapper = styled.div`
                 }
                 p {
                     margin: 0;
-                }
-                p a {
-                    color: rgba(0, 0, 0, 0.65);
+                    font-size: 1rem;
+
+                    a {
+                        color: rgba(0, 0, 0, 0.65);
+                    }
                 }
                 &:hover {
                     &::marker, p, a {
@@ -57,6 +60,11 @@ const TOCWrapper = styled.div`
                     }
                 }
 
+            }
+            .active-link {
+                &::marker, p, a {
+                    color: ${props => props.theme.secondaryColor};
+                }
             }
         }
     }

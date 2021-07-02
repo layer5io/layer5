@@ -3,55 +3,36 @@ import { HiOutlineChevronLeft } from "react-icons/hi";
 import { Link } from "gatsby";
 import TOCWrapper from "./toc.style";
 
-const TOC = ({data}) => {
-  const toc = [
-    {
-      name: "Filter",
-      link:"/"
-    },
-    {
-      name: "Filter",
-      link:"/"
-    },
-    {
-      name: "Filter",
-      link:"/"
-    },
-    {
-      name: "Filter",
-      link:"/"
-    },
-    {
-      name: "Filter",
-      link:"/"
-    },
-    {
-      name: "Filter",
-      link:"/"
-    },
-    {
-      name: "Filter",
-      link:"/"
-    },
-    {
-      name: "Filter",
-      link:"/"
+const TOC = ({ courseData, chapterData, location }) => {
+  const reformatTOC= (data) => {
+    let newData = data.split("-").join(" ");
+    let firstLetter = newData.charAt(0).toUpperCase();
+    newData = `${firstLetter}${newData.slice(1)}`;
+    return newData;
+  };
+
+  const getCurrentPage = (location) => {
+    if (location !== undefined && location.href !== undefined) {
+      const currentChapter = location.href.split("/");
+      return currentChapter[currentChapter.length - 2];
     }
-  ];
+  };
   return (
     <TOCWrapper>
       <div className="chapter-back">
-        <Link to={`/learn-ng/${data.mdx.fields.learnpath}/${data.mdx.fields.course}`}>
+        <Link to={`/learn-ng${courseData.fields.slug}`}>
           <HiOutlineChevronLeft />
-          <h4>{data.mdx.fields.course}</h4>
+          <h4>{courseData.frontmatter.courseTitle}</h4>
         </Link>
       </div>
       <div className="toc-list">
         <ul>
-          {toc.map((item) => (
-            <li key={item.name}>
+          {courseData.frontmatter.toc.map((item) => (
+            <li key={item} className={item === getCurrentPage(location)? "active-link" : ""}>
               <p className="toc-item">
-                <a href={item.link}>{item.name}</a>
+                <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/istio/${item}/`}>
+                  {reformatTOC(item)}
+                </a>
               </p>
             </li>
           ))}
