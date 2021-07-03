@@ -71,14 +71,14 @@ const Partner = () => {
                     <div>
                       {partner.desc}
                     </div>
-                    {
+                    {/* {
                       isOpen && ID === index? <button onClick={() => toggleActive(index)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
                         <button onClick={() => toggleActive(index)} className="readmeBtn"> Read More <BsArrowDown className="icon" size={30} /></button> 
-                    }
+                    } */}
                   </div>
                 </Col>
               </Row>
-              <div className={isOpen && ID === index ? "par-cont parent-cont-active" : "par-cont parent-cont" }>
+              {/* <div className={isOpen && ID === index ? "par-cont parent-cont-active" : "par-cont parent-cont" }>
                 <div className={isOpen && ID === index && index % 2 == 1 ? "row-elem moreInfo-div-active cont-row-reverse": isOpen && ID === index && index % 2 == 0 ? "row-elem moreInfo-div-active cont-row": ID !== index && index % 2 == 1 ? "row-elem moreInfo-div cont-row-reverse" : "row-elem moreInfo-div cont-row"}>
                   <div className="sub-cont">
                     <div className="custom-col content-head">
@@ -96,7 +96,7 @@ const Partner = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           ))
         }
@@ -118,14 +118,14 @@ const Partner = () => {
                     <div>
                       {partner.desc}
                     </div>
-                    {
+                    {/* {
                       isOpen && ID === index+len_acad_part? <button onClick={() => toggleActive(index+len_acad_part)} className="readmeBtn"> Read Less <BsArrowUp className="icon" size={30} /></button> :
                         <button onClick={() => toggleActive(index+len_acad_part)} className="readmeBtn"> Read More <BsArrowDown className="icon" size={30} /></button> 
-                    }
+                    } */}
                   </div>
                 </Col>
               </Row>   
-              <div className={isOpen && ID === index + len_acad_part ? "par-cont parent-cont-active" : "par-cont parent-cont" }>
+              {/* <div className={isOpen && ID === index + len_acad_part ? "par-cont parent-cont-active" : "par-cont parent-cont" }>
                 <div className={isOpen && ID === index + len_acad_part && (len_acad_part+ index) % 2 == 1 ? "row-elem moreInfo-div-active cont-row-reverse" : isOpen && ID === index + len_acad_part && (len_acad_part+ index) % 2 == 0 ? "row-elem moreInfo-div-active cont-row" : ID !== index + len_acad_part && (len_acad_part+ index) % 2 == 1 ? "row-elem moreInfo-div cont-row-reverse" : "row-elem moreInfo-div cont-row"}>
                   <div className="sub-cont">
                     <div className="custom-col content-head">
@@ -144,7 +144,7 @@ const Partner = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           ))
         }
