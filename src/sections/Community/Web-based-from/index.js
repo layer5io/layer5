@@ -341,7 +341,6 @@ const WebBasedForm = () => {
               className="form-check"
             />
             How
-
             <a href="https://docs.meshery.io/reference/mesheryctl">
               mesheryctl
             </a>
@@ -397,7 +396,7 @@ const WebBasedForm = () => {
               onChange={() => setChecked1(!checked1[1])}
               className="form-check"
             />
-            Yes, Layer5 (https://layer5.io)
+            Yes, <a href="https://layer5.io">Layer5</a>
           </label>
           <br />
           <label>
@@ -407,7 +406,7 @@ const WebBasedForm = () => {
               onChange={() => setChecked1(!checked1[2])}
               className="form-check"
             />
-            Yes, Meshery (https://meshery.io)
+            Yes, <a href="https://meshery.io">Meshery</a>
           </label>
           <br />
           <label>
@@ -417,7 +416,8 @@ const WebBasedForm = () => {
               onChange={() => setChecked1(!checked1[3])}
               className="form-check"
             />
-            Yes, Service Mesh Performance (SMP) (https://smp-spec.io)
+            Yes,{" "}
+            <a href="https://smp-spec.io">Service Mesh Performance (SMP) </a>
           </label>
           <br />
           <label>
@@ -427,7 +427,8 @@ const WebBasedForm = () => {
               onChange={() => setChecked1(!checked1[4])}
               className="form-check"
             />
-            Yes, Service Mesh Landscape (https://layer5.io/landscape)
+            Yes,
+            <a href="https://layer5.io/landscape">Service Mesh Landscape </a>
           </label>
           <br />
           <label>
@@ -437,7 +438,7 @@ const WebBasedForm = () => {
               onChange={() => setChecked1(!checked1[5])}
               className="form-check"
             />
-            Yes, Image Hub (https://github.com/layer5io/image-hub)
+            Yes,<a href="https://github.com/layer5io/image-hub">Image Hub</a>
           </label>
           <p className="form-name">
             Layer5 has a community member mentoring program, MeshMates, that is
