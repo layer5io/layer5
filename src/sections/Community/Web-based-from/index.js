@@ -172,19 +172,25 @@ const WebBasedForm = () => {
   const MemberFormSecond = () => {
     return (
       <Container>
-        <h2 className="title">About You and Why You're Here</h2>
-        <p className="para">
-          Which describes your main focus as a community member?{" "}
-        </p>
+        <div className="member-header">
+          <h2 className="title">About You and Why You're Here</h2>
+          <p className="para">
+            Which describes your main focus as a community member?{" "}
+          </p>
+        </div>
+
         <div className="center">
+          <div className="option" onClick={contributor}>
+            I'm here as a Contributor
+          </div>
           <div className="option" onClick={contributor}>
             I'm here as a Developer
           </div>
           <div className="option" onClick={user}>
-            I'm here as a User
+            I'm here as a User and Contibutor
           </div>
           <div className="option" onClick={standerby}>
-            I'm here as a Standerby
+            I'm here as a Participant
           </div>
         </div>
       </Container>
