@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Webform = styled.div`
   
-.timeline {
+  .timeline {
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -44,7 +44,12 @@ const Webform = styled.div`
     transition: all 200ms ease-in;
   }
 
-  .li.complete .status {
+  .li.active .status::before {
+    border-color: #00B39F;
+  }
+
+  .li.complete .status,
+  .li.active .status {
     border-top: 5px solid #00B39F;
   }
   .li.complete .status:before {
@@ -55,27 +60,28 @@ const Webform = styled.div`
   .li.complete .status h4 {
     color: #66DC71;
   }
+
+  .required-sign {
+    color: #8b0000;
+  }
+
+  .checkbox-label {
+    font-size: .8rem;
+  }
   
-  @media (min-device-width: 320px) and (max-device-width: 700px) {
-    .timeline {
-      list-style-type: none;
-      display: block;
+  @media (min-width: 320px) and (max-width: 700px) {
+    .status {
+      border-top: 3px solid #EFEFEF;
+      padding: 0px 25px;
     }
-  
-    .li {
-      transition: all 200ms ease-in;
-      display: flex;
-      width: inherit;
-    }
-  
-    .timestamp {
-      width: 100px;
-    }
-  
     .status:before {
-      left: -8%;
-      top: 30%;
-      transition: all 200ms ease-in;
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      border: 3px solid #EFEFEF;
+      top: -12px;
+      left: -10%
     }
   }
   .member-header{
@@ -90,6 +96,9 @@ const Webform = styled.div`
 
     .para {
         color: #777777;
+    }
+    .label {
+      font-size: 1rem;
     }
 
     .container-1 {
@@ -126,23 +135,23 @@ const Webform = styled.div`
 
         .form-name {
             font-weight: 600;
-            margin: 20px 0px 5px 0px;
+            margin: 20px 0px 5px 3px;
+            display: block;
         }
 
         .text-field {
             width: 100%;
             border: 1px solid black;
-            border-radius: 15px;
-            height: 40px;
-            padding: 5px;
+            border-radius: 10px;
+            padding: 1rem .5rem;
+            font-size: 1rem;
         }
 
         .form-select {
             width: 150px;
             border: 1px solid black;
-            border-radius: 15px;
-            height: 40px;
-            padding: 5px;
+            border-radius: 10px;
+            padding: 1rem .5rem;
         }
 
         .upload-field {
@@ -157,8 +166,7 @@ const Webform = styled.div`
           width: 20px;
           height: 20px;
           border-radius: 15px;
-          outline: 1px solid #828C8C !important;
-          margin: 0px 10px !important;
+          margin: 2px 10px !important;
         }
 
         .btn {
@@ -166,35 +174,35 @@ const Webform = styled.div`
           margin: 20px 0;
         }
 
-        .btn-wrapper {
-          float: right;
-          width: 350px;
+      }
+      .btn-wrapper {
+        float: right;
+        width: 350px;
 
-          .btn-next {
-            float: left;
-          }
+        .btn-next {
+          float: left;
+        }
 
-          .btn-prev {
-            background-color: white; 
-            border: none;
-            color: #828C8C;
-            float: left;
-            padding: 12px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 0 5px;
+        button.btn-prev {
+          background-color: white; 
+          border: none;
+          color: #828C8C;
+          float: left;
+          padding: 12px 15px;
+          font-size: 16px;
+          cursor: pointer;
+          margin: 0 5px;
 
-            .back {
-              font-size: 20px;
-            }
-          }
-
-          .btn-prev:hover {
-            transition: all 200ms ease-in;
-            color: #00B39F;
+          .back {
+            font-size: 20px;
           }
         }
-    }
+
+        .btn-prev:hover {
+          transition: all 200ms ease-in;
+          color: #00B39F;
+        }
+      }
 
     .center {
         /* display: flex;
@@ -226,13 +234,12 @@ const Webform = styled.div`
       padding: 20px;
       min-height: 400px;
       margin: 3rem 13%;
-      border-radius: 50px;
       background-color: #1E2117;
 
       h2{
         padding-top: 60px;
         color: white;
-        font-size: 2.4em;
+        font-size: 2rem;
         font-weight: 700;
         text-align: center;
       }
@@ -244,7 +251,7 @@ const Webform = styled.div`
       }
 
       .btn-box {
-        width: 50%;
+        width: 55%;
         margin: auto;
 
         .btn-one {
