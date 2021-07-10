@@ -20,7 +20,7 @@ const TOC = ({ courseData, chapterData, location }) => {
   return (
     <TOCWrapper>
       <div className="chapter-back">
-        <Link to={`/learn-ng${courseData.fields.slug}`}>
+        <Link to={`/${courseData.fields.slug}`}>
           <HiOutlineChevronLeft />
           <h4>{courseData.frontmatter.courseTitle}</h4>
         </Link>
