@@ -7,7 +7,6 @@ import img1 from "./Rectangle 471.png";
 import img2 from "./Vector.png";
 
 const WebBasedForm = () => {
-
   const [stepNumber, setStepNumber] = useState(0);
   const [contributorFlag, setContributorFlag] = useState(false);
   const [userFlag, setUserFlag] = useState(false);
@@ -16,6 +15,7 @@ const WebBasedForm = () => {
   const [checked1, setChecked1] = useState([false, false, false, false, false, false]);
   const [checked2, setChecked2] = useState([false, false, false]);
   const [checked3, setChecked3] = useState([false, false, false, false, false, false, false, false, false]);
+
   const [checkMesh, setCheckMesh] = useState(false);
   const [checked4, setChecked4] = useState([false, false, false, false]);
 
@@ -58,6 +58,7 @@ const WebBasedForm = () => {
   const RangeDisplay = () => {
     return (
       <ul className="timeline" id="timeline">
+
         <li className={stepNumber === 0 ? ("li active") : stepNumber > 0 ? ("li complete") : ("li")}>
           <div className="status">
           </div>
@@ -133,17 +134,26 @@ const WebBasedForm = () => {
   const MemberFormSecond = () => {
     return (
       <Container>
-        <h2 className="title">About You and Why You're Here</h2>
-        <p className="para">Which describes your main focus as a community member? </p>
+        <div className="member-header">
+          <h2 className="title">About You and Why You're Here</h2>
+          <p className="para">
+            Which describes your main focus as a community member?{" "}
+          </p>
+        </div>
+
         <div className="center">
           <div className="option" onClick={contributor}>
             I'm here as a Contributor
           </div>
+          <div className="option" onClick={contributor}>
+            I'm here as a Developer
+          </div>
           <div className="option" onClick={user}>
-            I'm here as a User
+            I'm here as a User and Contibutor
           </div>
           <div className="option" onClick={standerby}>
-            I'm here as a Standerby
+            I'm here as a Participant
+
           </div>
         </div>
         <br /><br />
@@ -159,6 +169,7 @@ const WebBasedForm = () => {
     return (
       <Container>
         <h2 className="title">Layer5 and You</h2>
+
         <form className="form">
           <label htmlFor="interests" className="form-name">What has your recent focus been? What are you passionate about? Is there a specific project or aspect a project that interests you?</label>
           <input type="text" className="text-field" id="interests" name="interests" />
@@ -191,9 +202,13 @@ const WebBasedForm = () => {
       <Container>
         <h2 className="title">Layer5 and You</h2>
         <div className="form">
-          <p className="form-name">Mark any of the following 101 tutorials that you would like to receive.</p>
+          <p className="form-name">
+            Mark any of the following 101 tutorials that you would like to
+            receive.
+          </p>
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[0]}
               onChange={() => setChecked(!checked[0])}
               className="form-check"
@@ -202,70 +217,87 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[1]}
               onChange={() => setChecked(!checked[1])}
               className="form-check"
             />
-            <span className="checkbox-label">Contributing to Meshery UI with ReactJS, NextJS and Material UI</span>
+            <span className="checkbox-label">Contributing to <a href="https://meshery.io/">Meshery</a> with ReactJS, NextJS and Material UI</span>
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[2]}
               onChange={() => setChecked(!checked[2])}
               className="form-check"
             />
+
             <span className="checkbox-label">Introduction to Service Meshes</span>
+
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[3]}
               onChange={() => setChecked(!checked[3])}
               className="form-check"
             />
-            <span className="checkbox-label">Introduction to using a service mesh management plane: Meshery</span>
+            <span className="checkbox-label">Introduction to using a <a href="https://www.katacoda.com/layer5/courses/meshery-adapters">
+              service mesh management plane
+            </a>: Meshery</span>
+
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[4]}
               onChange={() => setChecked(!checked[4])}
               className="form-check"
             />
-            <span className="checkbox-label">How to evaluate service mesh performance and analyze the data</span>
+            <span className="checkbox-label">How to evaluate <a href="https://smp-spec.io/">Service Mesh Performance</a> and analyze the data</span>
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[5]}
               onChange={() => setChecked(!checked[5])}
               className="form-check"
             />
+
             <span className="checkbox-label">How gRPC is used in Meshery and Service Mesh Performance (SMP)</span>
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[6]}
               onChange={() => setChecked(!checked[6])}
               className="form-check"
             />
-            <span className="checkbox-label">How Jekyll websites work and how to contribute to Layer5 projects</span>
+            <span className="checkbox-label">How Jekyll websites work and how to contribute to <a href="https://layer5.io/">Layer5 projects</a></span>
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[7]}
               onChange={() => setChecked(!checked[7])}
               className="form-check"
             />
-            <span className="checkbox-label">How mesheryctl uses Go Cobra</span>
+
+            <span className="checkbox-label">How <a href="https://docs.meshery.io/reference/mesheryctl">
+              mesheryctl
+            </a> uses Go Cobra</span>
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[8]}
               onChange={() => setChecked(!checked[8])}
               className="form-check"
@@ -274,7 +306,8 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[9]}
               onChange={() => setChecked(!checked[9])}
               className="form-check"
@@ -283,16 +316,21 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked[10]}
               onChange={() => setChecked(!checked[10])}
               className="form-check"
             />
+
             <span className="checkbox-label">None of the above</span>
           </label>
-          <p className="form-name">Have you previously heard of Layer5 or its projects?</p>
+          <p className="form-name">
+            Have you previously heard of Layer5 or its projects?
+          </p>
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked1[0]}
               onChange={() => setChecked1(!checked1[0])}
               className="form-check"
@@ -301,52 +339,63 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked1[1]}
               onChange={() => setChecked1(!checked1[1])}
               className="form-check"
             />
-            <span className="checkbox-label">Yes, Layer5 (https://layer5.io)</span>
+            <span className="checkbox-label">Yes,  <a href="https://layer5.io">Layer5</a></span>
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked1[2]}
               onChange={() => setChecked1(!checked1[2])}
               className="form-check"
             />
-            <span className="checkbox-label">Yes, Meshery (https://meshery.io)</span>
+            <span className="checkbox-label">Yes, <a href="https://meshery.io">Meshery</a></span>
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked1[3]}
               onChange={() => setChecked1(!checked1[3])}
               className="form-check"
             />
-            <span className="checkbox-label">Yes, Service Mesh Performance (SMP) (https://smp-spec.io)</span>
+            <span className="checkbox-label">Yes,  <a href="https://smp-spec.io">Service Mesh Performance (SMP) </a></span>
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked1[4]}
               onChange={() => setChecked1(!checked1[4])}
               className="form-check"
             />
-            <span className="checkbox-label">Yes, Service Mesh Landscape (https://layer5.io/landscape)</span>
+            <span className="checkbox-label">Yes,  <a href="https://layer5.io/landscape">Service Mesh Landscape </a></span>
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked1[5]}
               onChange={() => setChecked1(!checked1[5])}
               className="form-check"
             />
-            <span className="checkbox-label">Yes, Image Hub (https://github.com/layer5io/image-hub)</span>
+            <span className="checkbox-label">Yes, <a href="https://github.com/layer5io/image-hub">Image Hub</a></span>
           </label>
-          <p className="form-name">Layer5 has a community member mentoring program, MeshMates, that is aimed at individuals new to open source or simply new to Layer5 projects. Learn more at https://layer5.io/community. Is this program of interest to you?</p>
+          <p className="form-name">
+            Layer5 has a community member mentoring program, MeshMates, that is
+            aimed at individuals new to open source or simply new to Layer5
+            projects. Learn more at https://layer5.io/community. Is this program
+            of interest to you?
+          </p>
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked2[0]}
               onChange={() => setChecked2(!checked2[0])}
               className="form-check"
@@ -355,7 +404,8 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked2[1]}
               onChange={() => setChecked2(!checked2[1])}
               className="form-check"
@@ -364,7 +414,8 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked2[2]}
               onChange={() => setChecked2(!checked2[2])}
               className="form-check"
@@ -392,7 +443,10 @@ const WebBasedForm = () => {
             <Col lg={6} md={6} sm={12}>
               <div className="text">
                 <h2>Community First</h2>
-                <p>The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.</p>
+                <p>
+                  The Layer5 community represents the largest collection of
+                  service mesh projects and their maintainers in the world.
+                </p>
               </div>
             </Col>
             <Col lg={6} md={6} sm={12}>
@@ -409,7 +463,13 @@ const WebBasedForm = () => {
             <Col lg={6} md={6} sm={12}>
               <div className="text">
                 <h2>Open Source First</h2>
-                <p>Our projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. Our shared commitment to the open source spirit push the Layer5 community and its projects forward.</p>
+                <p>
+                  Our projects establish industry standards and enable service
+                  developers, owners, and operators with repeatable patterns and
+                  best practices for managing all aspects of distributed
+                  services. Our shared commitment to the open source spirit push
+                  the Layer5 community and its projects forward.
+                </p>
               </div>
             </Col>
           </Row>
@@ -429,11 +489,13 @@ const WebBasedForm = () => {
           <label htmlFor="interestToShareContribution" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?</label>
           <select className="form-select" name="interestToShareContribution" id="interestToShareContribution">
             <option value="Yes">Yes</option>
+            <option value="Eventually">Eventually</option>
             <option value="No">No</option>
           </select>
           <p className="form-name">Area(s) of Desired Focus</p>
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked3[0]}
               onChange={() => setChecked3(!checked3[0])}
               className="form-check"
@@ -442,7 +504,8 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked3[1]}
               onChange={() => setChecked3(!checked3[1])}
               className="form-check"
@@ -451,7 +514,8 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked3[2]}
               onChange={() => setChecked3(!checked3[2])}
               className="form-check"
@@ -460,7 +524,8 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked3[3]}
               onChange={() => setChecked3(!checked3[3])}
               className="form-check"
@@ -469,7 +534,8 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked3[4]}
               onChange={() => setChecked3(!checked3[4])}
               className="form-check"
@@ -478,7 +544,8 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked3[5]}
               onChange={() => setChecked3(!checked3[5])}
               className="form-check"
@@ -487,25 +554,30 @@ const WebBasedForm = () => {
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked3[6]}
               onChange={() => setChecked3(!checked3[6])}
               className="form-check"
             />
             <span className="checkbox-label">DevOps</span>
+
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked3[7]}
               onChange={() => setChecked3(!checked3[7])}
               className="form-check"
             />
             <span className="checkbox-label">User</span>
+
           </label>
           <br />
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked3[8]}
               onChange={() => setChecked3(!checked3[8])}
               className="form-check"
@@ -519,6 +591,7 @@ const WebBasedForm = () => {
           </div>
           <br /><br />
         </form>
+
       </Container>
     );
   };
@@ -540,8 +613,10 @@ const WebBasedForm = () => {
           </label>
           <p className="form-name">I see works of other contributors being highlighted in the Layer5, Meshery, and SMP Twitter feeds, the Meshery and SMP showcases, and in the Layer5 YouTube channel.</p>
           <p className="para label">We try to elevate the works of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Be sure to follow and engage with these Twitter accounts, YouTube, and LinkedIn accounts.</p>
+
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked4[1]}
               onChange={() => setChecked4(!checked4[1])}
               className="form-check"
@@ -561,7 +636,8 @@ const WebBasedForm = () => {
           <p className="form-name">I see other contributors have affiliated themselves with Layer5 on LinkedIn. Am I encouraged to do the same?</p>
           <p className="para label">Yes! We welcome you to affiliate with the community and projects. We consider this affiliation helpful in boosting your profile and resume in context of job searches and overall in general. Be sure to update your profile, and be social about your activities. We love to highlight our members!</p>
           <label>
-            <input type="checkbox"
+            <input
+              type="checkbox"
               defaultChecked={checked4[3]}
               onChange={() => setChecked4(!checked4[3])}
               className="form-check"
@@ -638,11 +714,11 @@ const WebBasedForm = () => {
             }
           </div>
         }
-
-
       </div>
     </Webform>
   );
 };
 
+
 export default WebBasedForm;
+
