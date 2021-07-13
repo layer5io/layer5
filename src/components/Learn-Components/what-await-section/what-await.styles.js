@@ -32,28 +32,6 @@ const WhatAwaitsWrapper = styled.div`
             padding: 4rem 1rem;
         }
     }
-    .what_awaits-section-wrapper{
-        margin-bottom: 3.125rem;
-    }
-
-    .what_awaits{
-        margin-top: 2rem;
-        h2{
-            line-height: 3.1rem;
-            margin-bottom: 1rem;
-            @media (max-width: 62rem) {
-                line-height: 2.5rem;
-            }
-        }
-
-        img{
-            display:block;
-            margin:auto;
-        }
-        @media (max-width: 62rem) {
-             text-align:left;
-        }
-    }
 `;
 
 export default WhatAwaitsWrapper;
