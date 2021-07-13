@@ -12,27 +12,43 @@ import InstallLinkerd from "../../../../src/assets/images/learn-layer5/linkerd/i
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">1 - Install Linkerd</h2>
+<h2 class="chapter-sub-heading">Deploy Linkerd</h2>
 
-Using Meshery, select Linkerd from the `Management` menu.
+With <a href="https://github.com/layer5io/linkerd-service-mesh-workshop/blob/master/prereq/README.md">prerequisites</a> complete, you are ready to download and deploy Linkerd resources.
+
+<h2 class="chapter-sub-heading">Steps</h2>
+
+1. [Install Linkerd](#1)
+1. [Verify install](#2)
+1. [Confirm add-ons](#3) 
+
+<h3 class="chapter-sub-heading">
+  <a name="1">Install Linkerd</a>
+</h3>
+
+Using Meshery, select `Linkerd` from the `Management` menu.
 
 <a href={LinkerdAdapter}>
-    <img src={LinkerdAdapter} />
+  <img src={LinkerdAdapter} />
 </a>
 
 In the Linkerd management page:
 
 1. Type `linkerd` into the namespace field.
-2. Click the (+) icon on the `Install` card and select `Latest Linkerd` to install the latest version of Linkerd.
+1. Click the (+) icon on the `Install` card and select `Latest Linkerd` to install the latest version of Linkerd.
 
-     <a href={InstallLinkerd}>
-       <img src={InstallLinkerd} align="center" />
-     </a>
+   <a href={InstallLinkerd}>
+     <img src={InstallLinkerd} align="center" />
+   </a>
+
 <h3>For manual steps go <a href="https://github.com/layer5io/linkerd-service-mesh-workshop/blob/master/lab-1/README.md#appendix">here</a></h3>
 
-<h2 class="chapter-alt-heading">
-  <a name="2">2 - Verify install</a>
-</h2>
+<br />
+<br />
+
+<h4 class="chapter-alt-heading">
+  <a name="2">Verify install</a>
+</h4>
 
 Linkerd is deployed in the `linkerd` Kubernetes namespace. Verify that Linkerd and its components are deployed, execute the command:
 
@@ -40,15 +56,15 @@ Linkerd is deployed in the `linkerd` Kubernetes namespace. Verify that Linkerd a
 linkerd check
 ```
 
-<h2 class="chapter-alt-heading">
-  <a name="3">3 - Enforce mTLS strict mode</a>
-</h2>
+<h4 class="chapter-alt-heading">
+  <a>Enforce mTLS strict mode</a>
+</h4>
 
 By establishing mutually-authenticated connections between Linkerd proxies , Linkerd automatically enables mutual Transport Layer Security (mTLS) by default for most HTTP-based communication between services.
 
-<h2 class="chapter-alt-heading">
-  <a name="4">4 - Confriming Add-ons</a>
-</h2>
+<h4 class="chapter-alt-heading">
+  <a name="3">Confirming Add-ons</a>
+</h4>
 
 Linkerd, as part of this workshop, is installed with several optional addons like:
 
@@ -60,13 +76,14 @@ Linkerd, as part of this workshop, is installed with several optional addons lik
 You will use Meshery for collecting and viewing metrics, and Jaeger for viewing distribued traces.
 
 <br />
-<br />
 
-<h2 class="chapter-alt-heading">
-  <a name="5">Appendix - Alternative Manual Install</a>
-</h2>
+Alternative, manual installation steps are provided for reference below. No need to execute these if you have performed the steps above.
 
-<h4>Download `linkerd` CLI</h4>
+<h3 class="chapter-sub-heading">
+  <a>Appendix - Alternative Manual Install</a>
+</h3>
+
+<h4 class="chapter-alt-heading">Download `linkerd` CLI</h4>
 
 On a *nix system, you can setup linkerd by doing the following:
 
@@ -97,7 +114,7 @@ We can use a new feature in linkerd to check if the cluster is ready for install
 linkerd check --pre
 ```
 
-<h4>Install and Verify Linkerd:</h4>
+<h4 class="chapter-alt-heading">Install and Verify Linkerd:</h4>
 
 Deploy Linkerd custom resources:
 
