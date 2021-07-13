@@ -14,7 +14,7 @@ import InstallLinkerd from "../../../../src/assets/images/learn-layer5/linkerd/i
 
 <h2 class="chapter-sub-heading">Deploy Linkerd</h2>
 
-With <a href="https://github.com/layer5io/linkerd-service-mesh-workshop/blob/master/prereq/README.md">prerequisites</a> complete, you are ready to download and deploy Linkerd resources.
+Now that we have a Kubernetes cluster and Meshery, we are ready to download and deploy Linkerd resources.
 
 <h2 class="chapter-sub-heading">Steps</h2>
 
@@ -41,47 +41,21 @@ In the Linkerd management page:
      <img src={InstallLinkerd} align="center" />
    </a>
 
-<h3>For manual steps go <a href="https://github.com/layer5io/linkerd-service-mesh-workshop/blob/master/lab-1/README.md#appendix">here</a></h3>
-
-<br />
-<br />
-
-<h4 class="chapter-alt-heading">
+<h3 class="chapter-sub-heading">
   <a name="2">Verify install</a>
-</h4>
+</h3>
 
 Linkerd is deployed in the `linkerd` Kubernetes namespace. Verify that Linkerd and its components are deployed, execute the command:
 
 ```sh
 linkerd check
-```
+```   
 
-<h4 class="chapter-alt-heading">
-  <a>Enforce mTLS strict mode</a>
-</h4>
-
-By establishing mutually-authenticated connections between Linkerd proxies , Linkerd automatically enables mutual Transport Layer Security (mTLS) by default for most HTTP-based communication between services.
-
-<h4 class="chapter-alt-heading">
-  <a name="3">Confirming Add-ons</a>
-</h4>
-
-Linkerd, as part of this workshop, is installed with several optional addons like:
-
-  1. Prometheus <a href="https://prometheus.io/">(site)</a>
-  2. Grafana <a href="https://grafana.com/">(site)</a>
-  3. Jaeger <a href="https://www.jaegertracing.io/">(site)</a>
-  4. Dashboard <a href="https://linkerd.io/2.10/reference/architecture/#dashboard">(site)</a>
-
-You will use Meshery for collecting and viewing metrics, and Jaeger for viewing distribued traces.
-
-<br />
-
-Alternative, manual installation steps are provided for reference below. No need to execute these if you have performed the steps above.
-
-<h3 class="chapter-sub-heading">
+<h3>
   <a>Appendix - Alternative Manual Install</a>
 </h3>
+
+Perform the below steps if the above steps doesn't work for you.
 
 <h4 class="chapter-alt-heading">Download `linkerd` CLI</h4>
 
@@ -114,7 +88,7 @@ We can use a new feature in linkerd to check if the cluster is ready for install
 linkerd check --pre
 ```
 
-<h4 class="chapter-alt-heading">Install and Verify Linkerd:</h4>
+<h4 class="chapter-alt-heading">Install Linkerd:</h4>
 
 Deploy Linkerd custom resources:
 
@@ -122,10 +96,23 @@ Deploy Linkerd custom resources:
 linkerd install | kubectl apply -f -
 ```
 
-Use the following command to see the progress on the installation of Linkerd custom CRDs and components
+<h3 class="chapter-sub-heading">
+  <a>Enforce mTLS strict mode</a>
+</h3>
 
-```sh
-linkerd check
-```
+By establishing mutually-authenticated connections between Linkerd proxies , Linkerd automatically enables mutual Transport Layer Security (mTLS) by default for most HTTP-based communication between services.
+
+<h3 class="chapter-sub-heading">
+  <a name="3">Confirming Add-ons</a>
+</h3>
+
+Linkerd, as part of this workshop, is installed with several optional addons like:
+
+  1. Prometheus <a href="https://prometheus.io/">(site)</a>
+  2. Grafana <a href="https://grafana.com/">(site)</a>
+  3. Jaeger <a href="https://www.jaegertracing.io/">(site)</a>
+  4. Dashboard <a href="https://linkerd.io/2.10/reference/architecture/#dashboard">(site)</a>
+
+You will use Meshery for collecting and viewing metrics, and Jaeger for viewing distribued traces.
 
 </ChapterStyle>
