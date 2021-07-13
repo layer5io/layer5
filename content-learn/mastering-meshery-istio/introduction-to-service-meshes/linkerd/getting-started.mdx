@@ -1,0 +1,114 @@
+---
+doctype: "Chapter"
+chapterTitle: "Getting Started"
+description: "Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
+videos: 
+lectures: 8
+---
+
+import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
+import LinkderdAdapter from "../../../../src/assets/images/learn-layer5/linkerd/linkerd-adapter.png";
+import InstallLinkerd from "../../../../src/assets/images/learn-layer5/linkerd/install-linkerd.png";
+
+<ChapterStyle>
+
+<h2 class="chapter-sub-heading">1 - Install Linkerd</h2>
+
+Using Meshery, select Linkerd from the `Management` menu.
+
+<a href={LinkerdAdapter}>
+    <img src={LinkerdAdapter} />
+</a>
+
+In the Linkerd management page:
+
+1. Type `linkerd` into the namespace field.
+2. Click the (+) icon on the `Install` card and select `Latest Linkerd` to install the latest version of Linkerd.
+
+     <a href={InstallLinkerd}>
+       <img src={InstallLinkerd} align="center" />
+     </a>
+<h3>For manual steps go <a href="https://github.com/layer5io/linkerd-service-mesh-workshop/blob/master/lab-1/README.md#appendix">here</a>
+
+<h2 class="chapter-alt-heading">
+  <a name="2">2 - Verify install</a>
+</h2>
+
+Linkerd is deployed in the `linkerd` Kubernetes namespace. Verify that Linkerd and its components are deployed, execute the command:
+
+```sh
+linkerd check
+```
+
+<h2 class="chapter-alt-heading">
+  <a name="3">3 - Enforce mTLS strict mode</a>
+</h2>
+
+By establishing mutually-authenticated connections between Linkerd proxies , Linkerd automatically enables mutual Transport Layer Security (mTLS) by default for most HTTP-based communication between services.
+
+<h2 class="chapter-alt-heading">
+  <a name="4">4 - Confriming Add-ons</a>
+</h2>
+
+Linkerd, as part of this workshop, is installed with several optional addons like:
+
+  1. Prometheus <a href="https://prometheus.io/">(site)</a>
+  2. Grafana <a href="https://grafana.com/">(site)</a>
+  3. Jaeger <a href="https://www.jaegertracing.io/">(site)</a>
+  4. Dashboard <a href="https://linkerd.io/2.10/reference/architecture/#dashboard">(site)</a>
+
+You will use Meshery for collecting and viewing metrics, and Jaeger for viewing distribued traces.
+
+<br />
+<br />
+
+<h2 class="chapter-alt-heading">
+  <a name="5">Appendix - Alternative Manual Install</a>
+</h2>
+
+<h4>Download `linkerd` CLI</h4>
+
+On a *nix system, you can setup linkerd by doing the following:
+
+The above command will get the latest Linkerd package and untar it in the same folder.
+
+Change into the Linkerd package directory and add the linkerd client to your PATH environment variable.
+
+```sh
+curl -sL https://run.linkerd.io/install | sh
+export PATH=$PATH:$HOME/.linkerd2/bin
+```
+
+Alternatively, on MacOS you can sue `HomeBrew` to install `linkerd`
+
+```sh
+brew install linkerd
+```
+
+To verify `linkerd` is setup lets try to print out the command help
+
+```sh
+linkerd version
+```
+
+We can use a new feature in linkerd to check if the cluster is ready for install:
+
+```sh
+linkerd check --pre
+```
+
+<h4>Install and Verify Linkerd:</h4>
+
+Deploy Linkerd custom resources:
+
+```sh
+linkerd install | kubectl apply -f -
+```
+
+Use the following command to see the progress on the installation of Linkerd custom CRDs and components
+
+```sh
+linkerd check
+```
+
+</ChapterStyle>
