@@ -42,7 +42,7 @@ const data = {
         answer: [ "Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Be sure to introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa."
         ],
         link: "https://slack.layer5.io",
-        linktext: "Layer5's Slack",
+        linktext: "Layer5 Slack",
         },
 
       
