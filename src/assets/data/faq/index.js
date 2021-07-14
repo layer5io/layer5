@@ -2,7 +2,7 @@
 const data = {
   faqs: [
     {
-      question: "Are Layer5's service mesh solutions open source?",
+      question: "Are Layer5's solutions open source?",
       category: "Layer5",
       answer: [
         "Yes, all of Layer5's projects are licensed under Apache v2.",
