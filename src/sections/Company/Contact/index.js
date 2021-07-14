@@ -8,13 +8,42 @@ import Contact_Icon from "../../../assets/images/contact/contact.svg";
 import CardOutline from "../../../components/Card-Outline";
 import ContactPageWrapper from "./contactpage.style";
 
+const CONTACT_FORM_URL = "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8";
+
 const ContactPage = () => {
 
   const expandForm = useRef();
 
   const toggleForm = () => {
+
+    if(detectSafari() || !navigator.cookieEnabled) {
+      window.open(CONTACT_FORM_URL);
+      return;
+    }
+
     expandForm.current.classList.toggle("showForm");
   };
+
+  /**
+   * Finds if the given agent is the 
+   * browser's agent
+   * @param {string} agent
+   * @returns {boolean}
+   */
+  const findAgent = (agent) => navigator.userAgent.indexOf(agent) > -1;
+
+  
+  const detectSafari = () => {
+    
+    let safariAgent = findAgent("Safari");
+    let chromeAgent = findAgent("Chrome");
+  
+    // Discard Safari since it also matches Chrome
+    if ((chromeAgent) && (safariAgent)) safariAgent = false;
+
+    return safariAgent;
+  };
+
 
   return (
     <ContactPageWrapper>
@@ -62,7 +91,7 @@ const ContactPage = () => {
           <div className="contact-form" ref={expandForm}>
             <iframe
               scrolling="no"
-              src="https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"
+              src= {CONTACT_FORM_URL}
               className="form-frame"
             />
           </div>
