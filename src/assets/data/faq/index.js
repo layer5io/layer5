@@ -10,19 +10,25 @@ const data = {
       ],
     },
     {
-      question: "What is expected of me as a member of Layer5 organisation?",
+      question: "As a member of one of Layer5's GitHub organizations, What is expected of me?",
       category: "Layer5",
       answer: [
-        "As a member of the Layer5 organization, you are expected to be a good representative of Layer5's cultures and values of helping fellow members and paying it forward",
-        "You are expected to engage where the topic strikes your interest. You are to triage(assign,clarify, label, qualify) any issue you feel confortable doing so for.",
-        "To be curious, be helpful, ask questions, challenge others and be challenged yourself.",
-
-        "To spread the word about what we do here, invite new members, learn, share, get smarter,help other,  make friends, build a network, write blogposts, Tweet, become maintainers, become MeshMates, earn an internship, get hired by Layer5...",
-        "To offer your ideas and skills to help advance our community and its projects.",
+        "As a member of one of Layer5's GitHub organizations, your user account is entitled with triage level permissions across all repositories in the org. You are expected to engage where the topic strikes your interest, triaging (assigning, clarifying, labeling, qualifying) any issue you feel confortable doing so. You are encouraged to review any open pull request and offer feedback to or ask questions of the author.",
+        "Layer5 has a number of GitHub organziations in which it's projects are advanced. See the repository overview below."        
       ],
-      link: "https://discuss.layer5.io/latest",
-      linktext: "Engage freely on Discourse",
+      link: "https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit",
+      linktext: "Layer5 Repository Overview",
     },
+    {
+      question: "As a community member, what can I expect from Layer5? What does Layer5 expect of me?",
+      category: "Layer5",
+      answer: [ "The Layer5 community expects you to get as much or more out of your time than you give to the projects. We expect earnest effort from its contributors. What “earnest effort” means is different for each community member as all have different circumstances. Suffice to say, the more you put into your efforts, the greater your reward will be. Most community contributors stay with the project for many months, if not indefinitely. Length of involvement is entirely up to the individual community member. You can expect to be challenged, to be assisted, to learn, to be recognized for your effort and to have your contributions appreciated.",
+      "As a member of the Layer5 community, you are expected to be a good representative of Layer5's cultures and values of helping fellow members and paying it forward as we all learn together. You are expected to offer your ideas and skills to help advance our community and its projects. You are expected to share your experiences with others, to be curious, to be helpful, to ask questions, to challenge others and to be challenged yourself, to spread the word about what we collectively do here, to invite new members, to learn, to share, to make friends, to build a network, to write blog posts, to tweet, to become maintainers, to become MeshMates, to earn an internship, to get hired by Layer5 - - any and all of these things.",
+      ],
+      link: "https://layer5.io/community/meshmates",
+      linktext: "Reach out to a MeshMate to find out more",
+    },
+    
     {
       question: "What value does a service mesh provide?",
       category: "Service Mesh",
