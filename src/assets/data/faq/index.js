@@ -28,7 +28,24 @@ const data = {
       link: "https://layer5.io/community/meshmates",
       linktext: "Reach out to a MeshMate to find out more",
     },
-    
+    {
+      question: "I see works of other contributors being highlighted. Will my contributions be highlighted, too?",
+      category: "Layer5",
+      answer: [ "We might not get to everyone, but we try to elevate the works of all of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Be sure to follow and engage with the Twitter, YouTube, and LinkedIn accounts."
+      ],
+      link: "https://twitter.com/layer5",
+      linktext: "Layer5 on Twitter",
+      },
+      {
+        question: "I am not a coder. Can I contribute, too?",
+        category: "Layer5",
+        answer: [ "Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Be sure to introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa."
+        ],
+        link: "https://slack.layer5.io",
+        linktext: "Layer5's Slack",
+        },
+
+      
     {
       question: "What value does a service mesh provide?",
       category: "Service Mesh",
