@@ -12,7 +12,7 @@ import InstallLinkerd from "../../../../src/assets/images/learn-layer5/linkerd/i
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">Deploy Linkerd</h2>
+<h2 class="chapter-sub-heading">Setup Linkerd</h2>
 
 Now that we have a Kubernetes cluster and Meshery, we are ready to download and deploy Linkerd resources.
 
@@ -39,21 +39,9 @@ In the Linkerd management page:
 
    <a href={InstallLinkerd}>
      <img src={InstallLinkerd} align="center" />
-   </a>
+   </a>   
 
-<h3 class="chapter-sub-heading">
-  <a name="2">Verify install</a>
-</h3>
-
-Linkerd is deployed in the `linkerd` Kubernetes namespace. Verify that Linkerd and its components are deployed, execute the command:
-
-```sh
-linkerd check
-```   
-
-<h3>
-  <a>Appendix - Alternative Manual Install</a>
-</h3>
+<h3>Appendix - Alternative Manual Install</h3>
 
 Perform the below steps if the above steps doesn't work for you.
 
@@ -94,6 +82,16 @@ Deploy Linkerd custom resources:
 
 ```sh
 linkerd install | kubectl apply -f -
+```
+
+<h3 class="chapter-sub-heading">
+  <a name="2">Verify install</a>
+</h3>
+
+Linkerd is deployed in the `linkerd` Kubernetes namespace. Verify that Linkerd and its components are deployed, execute the command:
+
+```sh
+linkerd check
 ```
 
 <h3 class="chapter-sub-heading">
