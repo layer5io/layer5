@@ -127,12 +127,16 @@ const FooterWrapper = styled.section`
 		}
 	}
 
-	@media only screen and (max-width: 1199px) and (min-width: 662px) {
+	@media only screen and (max-width: 1199px) and (min-width: 704px) {
 		.subscribe {
 			margin-top: -7rem;
 		}
 	}
-
+	media only screen and (max-width:704px) and (min-width: 662px){
+		.subscribe {
+			margin-top: 10px;
+		}
+	}
 	@media only screen and (max-width: 661px) and (min-width: 470px) {
 		.sections_col{
 			padding: 0 1rem 0 3rem;
