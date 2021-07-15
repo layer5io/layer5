@@ -29,7 +29,6 @@ const WebBasedForm = () => {
   };
 
   const nextStep =  () => {
-    console.log(memberFormOne, contributorForm, userForm, MemberFormThirdValue, MemberFormFourValue);
     setStepNumber(stepNumber + 1);
     if(stepNumber === 4) {
       setSubmit(true);
@@ -42,7 +41,7 @@ const WebBasedForm = () => {
 
   useEffect(() => {
     if(submit) {
-      axios.post("https://hook.integromat.com/1rk2s512t6vi2mr3gwdh5519gi1c8e08", {
+      axios.post("https://hook.integromat.com/64g6bpjsr37eec49zo3oawgw91n9a6xg", {
         memberFormOne,
         contributorForm,
         userForm,
@@ -52,7 +51,6 @@ const WebBasedForm = () => {
         userFlag
       });
     }
-    console.log(memberFormOne, contributorForm, userForm, MemberFormThirdValue, MemberFormFourValue);
   }, [submit]);
 
   const contributor = () => {
