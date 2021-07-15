@@ -7,8 +7,6 @@ lectures: 12
 ---
 
 import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
-import BookInfoOffMesh from "../../../../src/assets/images/learn-layer5/istio/bookinfo-off-mesh.png";
-import BookInfoOnMesh from "../../../../src/assets/images/learn-layer5/istio/bookinfo-on-mesh.png";
 
 <ChapterStyle>
 
@@ -31,16 +29,7 @@ The Linkerd sidecar proxy can be either manually or automatically injected into 
 1. Click the (+) icon on the `Configure Application` card and select `Annotate Namespace` from the list.
 
 As part of Linkerd deployment in [Previous chapter](/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/linkerd/getting-started), you have deployed the sidecar injector.
-
-<br />
-<h2 class="chapter-sub-heading">
-  <a name="auto"></a> Deploying Sample App with Automatic sidecar injection
-</h2>
-
-<br />
-
-
-As part of Linkerd deployment in [Lab 1](/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/linkerd/getting-started), you have deployed the sidecar proxy injector, which should be running in your control plane. To verify, execute this command:
+To verify, execute this command:
 
 ```sh
 kubectl get deployment linkerd-proxy-injector -n linkerd
@@ -74,6 +63,10 @@ No resource quota.
 No LimitRange resource.
 ```
 
+<h3 class="chapter-sub-heading">
+  <a name="auto"></a> Deploy the application
+</h3>
+
 Using Meshery, navigate to the Linkerd management page.
 
 1. Enter `default` in the `Namespace` field.
@@ -83,6 +76,29 @@ This will do 3 things:
 
 1. Label the `emojivoto` namespace for sidecar injection.
 1. Deploys all the Emojivoto services and replica's in the `emojivoto` namespace.
+
+<br />
+<h3>Alternative: Manual installation </h3>
+Follow this if the above steps did not work for you
+<br />
+<br />
+
+<h4 class="chapter-alt-heading"> Deploy emojivoto application</h4>
+
+Install emojivoto into the emojivoto namespace by running:
+
+```sh
+curl -sL https://run.linkerd.io/emojivoto.yml \
+  | kubectl apply -f -
+```
+Before we mesh it, let's take a look at the app. 
+If you're using Docker Desktop at this point you can visit http://localhost directly.
+If you're not using Docker Desktop, we'll need to forward the web-svc service. 
+To forward web-svc locally to port 8080, you can run:
+
+```sh
+kubectl -n emojivoto port-forward svc/web-svc 8080:80
+```
 
 <h3 class="chapter-sub-heading">
   <a name="verify"></a> Verify EmojiVoto deployment{" "}
@@ -129,29 +145,6 @@ linkerd -n emojivoto check --proxy
 ```
 
 Linkerd, in contrast to Istio annotates the resources (namespaces, deployment workloads) rather than labelling them.
-
-<br />
-<h3>Alternative: Manual installation </h3>
-Follow this if the above steps did not work for you
-<br />
-<br />
-
-<h4 class="chapter-alt-heading"> Deploy emojivoto application</h4>
-
-Install emojivoto into the emojivoto namespace by running:
-
-```sh
-curl -sL https://run.linkerd.io/emojivoto.yml \
-  | kubectl apply -f -
-```
-Before we mesh it, let's take a look at the app. 
-If you're using Docker Desktop at this point you can visit http://localhost directly.
-If you're not using Docker Desktop, we'll need to forward the web-svc service. 
-To forward web-svc locally to port 8080, you can run:
-
-```sh
-kubectl -n emojivoto port-forward svc/web-svc 8080:80
-```
 
 <h3>Deploy EmojiVoto </h3>
 
