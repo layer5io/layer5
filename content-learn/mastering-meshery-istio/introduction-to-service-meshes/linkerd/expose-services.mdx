@@ -1,6 +1,6 @@
 ---
 docType: "Chapter"
-chapterTitle: "Ingressing and Egressing with Linkerd"
+chapterTitle: "Exposing services through Linkerd Ingress"
 description: "Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
 videos: 4
 lectures: 12
@@ -9,6 +9,8 @@ lectures: 12
 import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
 
 <ChapterStyle>
+
+<h2  class="chapter-sub-heading">Ingressing and Egressing with Linkerd</h2>
 
 Linkerd's control plane does not include ingress or egress gateways. Linkerd allows you choice of your preferred ingress (and egress) controller.
 
@@ -80,11 +82,11 @@ You'll need to include both the Kubernetes administration FQDN (web-svc.emojivot
 
 To test this, you need to get the external IP of your controller.
 
-<h3 class="chapter-sub-heading"> Docker Desktop</h3>
+<h4 class="chapter-sub-heading"> Docker Desktop</h4>
 
 You may use http://localhost or http://kubernetes.docker.internal or your host's IP address.
 
-<h3 class="chapter-sub-heading"> Minikube</h3>
+<h4 class="chapter-sub-heading"> Minikube</h4>
 
 Expose your Kubernetes's cluster services to your localhost network:
 
@@ -94,9 +96,9 @@ minikube tunnel
 
 You may use http://localhost or You may use http://localhost: provided by the output of `minikube tunnel`.
 
-<h3 class="chapter-sub-heading">
+<h4 class="chapter-sub-heading">
   Hosted Kubernetes
-</h3>
+</h4>
 
 Retrieve the external IP address by running:
 
