@@ -29,9 +29,9 @@ const WebBasedForm = () => {
     const files = Array.from(e.target.files);
   };
 
-  const nextStep =  () => {
+  const nextStep = () => {
     setStepNumber(stepNumber + 1);
-    if(stepNumber === 4) {
+    if (stepNumber === 4) {
       setSubmit(true);
     }
   };
@@ -41,7 +41,7 @@ const WebBasedForm = () => {
   };
 
   useEffect(() => {
-    if(submit) {
+    if (submit) {
       axios.post("https://hook.integromat.com/64g6bpjsr37eec49zo3oawgw91n9a6xg", {
         memberFormOne,
         contributorForm,
@@ -220,7 +220,7 @@ const WebBasedForm = () => {
   };
 
   const ContributorFrom = () => {
-    
+
     return (
       <Container>
         <h2 className="title">Layer5 and You</h2>
@@ -252,7 +252,7 @@ const WebBasedForm = () => {
             <br /><br />
             <div className="btn-wrapper">
               <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
-              <Button type="submit"  secondary className="btn-next" title="Next Step" />
+              <Button type="submit" secondary className="btn-next" title="Next Step" />
             </div>
             <br /><br />
           </Form>
@@ -709,12 +709,12 @@ const WebBasedForm = () => {
       <Container>
         <div className="black-box">
           <h2>Welcome to the Layer5 Community!</h2>
-          <h3> Additional community resources are on their way.</h3>
-          <p>We are pleased to have you as a new member!</p>
+          <h4>Resources are on their way. See these in the meantime:</h4>
           <div className="btn-box">
             <Button primary className="btn-one" type="button" title="Community Handbook" url="https://docs.google.com/document/d/1pj1gQgiepQ_3UyRnE9ag6qQraAGn5bksJd7b4D3SXFE/edit?usp=sharing" external={true} />
             <Button secondary className="btn-two" type="button" title="Newcomers Roadmap" url="https://layer5.io/community/newcomers" />
           </div>
+          <p>We are pleased to have you as a new member!</p>
         </div>
       </Container>
     );
