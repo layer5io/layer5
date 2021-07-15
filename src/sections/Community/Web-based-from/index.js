@@ -9,7 +9,7 @@ import { Field, Formik, Form } from "formik";
 import axios from "axios";
 
 const WebBasedForm = () => {
-  
+
   const [stepNumber, setStepNumber] = useState(0);
   const [contributorFlag, setContributorFlag] = useState(false);
   const [userFlag, setUserFlag] = useState(false);
@@ -23,6 +23,7 @@ const WebBasedForm = () => {
   const [MemberFormFourValue, setMemberFormFourValue] = useState({});
 
   const [submit, setSubmit] = useState(false);
+
 
   const handleFileSelected = (e) => {
     const files = Array.from(e.target.files);
@@ -80,6 +81,7 @@ const WebBasedForm = () => {
   const RangeDisplay = () => {
     return (
       <ul className="timeline" id="timeline">
+
         <li className={stepNumber === 0 ? ("li active") : stepNumber > 0 ? ("li complete") : ("li")}>
           <div className="status">
           </div>
@@ -186,17 +188,26 @@ const WebBasedForm = () => {
   const MemberFormSecond = () => {
     return (
       <Container>
-        <h2 className="title">About You and Why You're Here</h2>
-        <p className="para">Which describes your main focus as a community member? </p>
+        <div className="member-header">
+          <h2 className="title">About You and Why You're Here</h2>
+          <p className="para">
+            Which describes your main focus as a community member?{" "}
+          </p>
+        </div>
+
         <div className="center">
           <div className="option" onClick={contributor}>
             I'm here as a Contributor
           </div>
+          <div className="option" onClick={contributor}>
+            I'm here as a Developer
+          </div>
           <div className="option" onClick={user}>
-            I'm here as a User
+            I'm here as a User and Contibutor
           </div>
           <div className="option" onClick={standerby}>
-            I'm here as a Standerby
+            I'm here as a Participant
+
           </div>
         </div>
         <br /><br />
@@ -229,7 +240,6 @@ const WebBasedForm = () => {
             <Field type="text" className="text-field" id="interests" name="interests" />
             <label htmlFor="profiency" className="form-name">If a contributor, what tools, technologies, and languages are you most proficient with?</label>
             <Field type="text" className="text-field" id="profiency" name="profiency" />
-
             <p className="form-name">Familiarize with the Layer5 Mentor Program.</p>
             <p className="para">If you would like to pair with a MeshMate, please review each MeshMate profile (https://layer5.io/community/meshmates) to identify your ideal mentor. Once you have identified your ideal MeshMate, message the MeshMate in the #newcomers channel</p>
             <label>
@@ -472,7 +482,10 @@ const WebBasedForm = () => {
             <Col lg={6} md={6} sm={12}>
               <div className="text">
                 <h2>Community First</h2>
-                <p>The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.</p>
+                <p>
+                  The Layer5 community represents the largest collection of
+                  service mesh projects and their maintainers in the world.
+                </p>
               </div>
             </Col>
             <Col lg={6} md={6} sm={12}>
@@ -489,7 +502,13 @@ const WebBasedForm = () => {
             <Col lg={6} md={6} sm={12}>
               <div className="text">
                 <h2>Open Source First</h2>
-                <p>Our projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. Our shared commitment to the open source spirit push the Layer5 community and its projects forward.</p>
+                <p>
+                  Our projects establish industry standards and enable service
+                  developers, owners, and operators with repeatable patterns and
+                  best practices for managing all aspects of distributed
+                  services. Our shared commitment to the open source spirit push
+                  the Layer5 community and its projects forward.
+                </p>
               </div>
             </Col>
           </Row>
@@ -744,11 +763,11 @@ const WebBasedForm = () => {
             }
           </div>
         }
-
-
       </div>
     </Webform>
   );
 };
 
+
 export default WebBasedForm;
+

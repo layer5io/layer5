@@ -94,7 +94,7 @@ const ProjectItemWrapper = styled.section`
 
       @media screen and (max-width: 460px){
         h4 {
-          margin-left: -25px;
+          margin-left: 0px;
         }
       }
 	}
