@@ -1,7 +1,7 @@
 import React from "react";
 import WhatAwaitsWrapper from "./what-await.styles";
 import { Row, Col, Container } from "../../../reusecore/Layout";
-import Features from "./Features-carousel";
+import Features from "../../../components/Features-carousel";
 import Terminal from "../../../components/Terminal";
 
 const WhatAwaitsSection = () => {

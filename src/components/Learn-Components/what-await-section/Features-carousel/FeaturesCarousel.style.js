@@ -126,11 +126,6 @@ export const FeaturesWrapper = styled.div`
         height: 660px;
       }
     
-      & > img {
-        width: 100%;
-        height: auto;
-      }
-    
       @media (min-width: 768px) {
         width: 400px;
     
@@ -139,10 +134,7 @@ export const FeaturesWrapper = styled.div`
         }
       }
     
-      @media (min-width: 900px) {
-        width: 600px;
-      }
-    }
+   
     
 
 `;
