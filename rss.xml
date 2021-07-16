@@ -1,4 +1,113 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5]]></title><description><![CDATA[Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 15 Jul 2021 19:40:18 GMT</lastBuildDate><item><title><![CDATA[5 Lesser-Known, But Extremely Powerful Kubernetes Service Mesh Tools]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5]]></title><description><![CDATA[Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 16 Jul 2021 23:34:48 GMT</lastBuildDate><item><title><![CDATA[She Code Africa Contributhon Boot Camp Report]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+/* @jsxRuntime classic */
+
+/* @jsx mdx */
+var _frontmatter = {
+  "title": "She Code Africa Contributhon Boot Camp Report",
+  "date": "2021-06-25 16:00:00 +0000",
+  "author": "Anita Charles",
+  "thumbnail": "./sca-thumbnail.png",
+  "category": "Community",
+  "tags": ["Community", "MeshMate"],
+  "published": true,
+  "redirect_from": ["/blog/community/she-code-africa-contributhon-boot-camp-report"]
+};
+var layoutProps = {
+  _frontmatter: _frontmatter
+};
+var MDXLayout = "wrapper";
+return function MDXContent(_ref) {
+  var components = _ref.components,
+      props = _objectWithoutProperties(_ref, ["components"]);
+
+  return mdx(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), mdx(BlogWrapper, {
+    mdxType: "BlogWrapper"
+  }, mdx("p", null, "Layer5 participated as a suporting organization in the ", mdx("a", {
+    href: "https://sites.google.com/shecodeafrica.org/contributhon",
+    rel: "nofollow"
+  }, "She Code Africa Contributhon"), " which started on April 1, 2021. It was indeed a pleasant and impactful experience for both the mentors and the mentees from She Code Africa."), mdx("p", null, "The ", mdx("a", {
+    href: "https://www.shecodeafrica.org",
+    rel: "nofollow"
+  }, "She Code Africa"), " hosts their Contributhon as an Africa-wide open source boot camp focused on building more women OSS contributors & creating more diversity in the African open source ecosystem by matching African women in technology with sponsors and mentors from Open Source organizations. During this boot camp, participants work with an open source organisation on a project for 4 weeks with the help of organisation mentors and get rewarded at the end of the boot camp upon successful project completion."), mdx("p", null, "  During the boot camp, Layer5 received a total of 8 mentees - all from Nigeria. These mentees were teamed up to work on the 3 project ideas selected by Layer5. Each project had an average of 2 members of the community who were delegated as mentors to oversee the contributions of the mentees. Often ", mdx(Link, {
+    to: "/community/meshmates",
+    mdxType: "Link"
+  }, "Layer5 MeshMates"), " volunteer to be mentors."), mdx("h2", null, "Projects"), mdx("p", null, "Layer5 mentors prepared and organized a few projects in advance of the start of the boot camp, so that mentees might hit the ground running."), mdx("h3", null, "Layer5 Community Handbook"), mdx("p", null, "Layer5 Community Handbook is a curated Document with the ABC's of the community. In this project, mentees were expected to look for repetition pattern across existing docs thereby, creating a structured guide for interaction across all projects."), mdx("b", null, "Mentors:"), mdx("ul", null, mdx("li", null, mdx(Link, {
+    to: "/community/members/ruth-ikegah",
+    mdxType: "Link"
+  }, "Ruth Ikegah")), mdx("li", null, mdx(Link, {
+    to: "/community/members/anita-charles",
+    mdxType: "Link"
+  }, "Anita Ihuman"))), mdx("b", null, "Mentee(s):"), mdx("ul", null, mdx("li", null, mdx(Link, {
+    to: "community/members/anisat-akinbani",
+    mdxType: "Link"
+  }, "Anisat Akinbani")), mdx("li", null, mdx(Link, {
+    to: "/community/members/abiola-farounbi",
+    mdxType: "Link"
+  }, "Abiola Farounbi"))), mdx("p", {
+    align: "center"
+  }, mdx("img", {
+    src: Sandy,
+    alt: "sandy-testimonial"
+  }), mdx("img", {
+    src: Abiola,
+    alt: "abiola-testimonial"
+  })), mdx("h3", null, "Layer5 Main Website"), mdx("p", null, "This required the contributors to fix existing issues on the GitHub repository, while suggesting ideas to improve the website, which used Gatsbyjs and Reactjs. The layer5.io website is hosted on GitHub Pages and is a collaborative effort of nearly 200 contributors."), mdx("b", null, "Mentors:"), mdx("ul", null, mdx("li", null, mdx(Link, {
+    to: "/community/members/jash-patel",
+    mdxType: "Link"
+  }, "Jash Patel")), mdx("li", null, mdx(Link, {
+    to: "/community/members/chinmay-mehta",
+    mdxType: "Link"
+  }, "Chinmay Mehta"))), mdx("b", null, "Mentee(s):"), mdx("ul", null, mdx("li", null, mdx(Link, {
+    to: "/community/members/elizabeth-lola",
+    mdxType: "Link"
+  }, "Elizabeth Meshioye")), mdx("li", null, mdx("a", {
+    href: "https://twitter.com/adun__ni",
+    rel: "nofollow"
+  }, "Cynthia Akinade")), mdx("li", null, mdx("a", {
+    href: "https://twitter.com/blossom_babs",
+    rel: "nofollow"
+  }, "Blossom Babalola"))), mdx("p", {
+    align: "center"
+  }, mdx("img", {
+    src: Cynthia,
+    alt: "cynthia-testimonial"
+  }), mdx("img", {
+    src: Elizabeth,
+    alt: "elizabeth-testimonial"
+  })), mdx("h3", null, "Meshery CLI"), mdx("p", null, mdx("code", null, "mesheryctl"), " is a command-line tool for Meshery, the service mesh management plane. Using Golang, mentees were required to design new CLI commands and attend to existing issues, focusing on enforcing the consistency of user experience with the command line client."), mdx("b", null, "Mentors:"), mdx("ul", null, mdx("li", null, mdx(Link, {
+    to: "/community/members/navendu-pottekkat",
+    mdxType: "Link"
+  }, "Navendu Pottekkat")), mdx("li", null, mdx(Link, {
+    to: "/community/members/chinmay-mehta",
+    mdxType: "Link"
+  }, "Chinmay Mehta"))), mdx("b", null, "Mentee(s):"), mdx("ul", null, mdx("li", null, mdx(Link, {
+    to: "/community/members/joy-nwaiwu",
+    mdxType: "Link"
+  }, "Joy Nwaiwu")), mdx("li", null, mdx(Link, {
+    to: "/community/members/naimat-oyewale",
+    mdxType: "Link"
+  }, "Naimat Oyewale"))), mdx("p", {
+    align: "center"
+  }, mdx("img", {
+    src: Naimat,
+    alt: "naimat-testimonial"
+  }), mdx("img", {
+    src: Joy,
+    alt: "joy-testimonial"
+  })), mdx("p", null, "The mentors were in constant communication with the mentees, taking their questions and rendering help when needed. At the end of the Contribution boot camp, it was heartwarming to see the mentees were able to make noticeable contributions to the projects.  During the boot camp wrap up call, mentees gave presentations that revealed how impactful it was for them working on Layer5 projects."), mdx("h3", null, "Appreciation"), mdx("p", null, "In gratitude, we acknowledge the commitment and contributions of the mentees toward the projects and we won't forget our incredible mentors who were devoted to meeting the needs and answering to the mentees during this bootcamp. Also, we would like to appreciate ", mdx("a", {
+    href: "https://twitter.com/zaycodes"
+  }, "Zainab Abubakar"), " for having facilitated the She Code Africa Contribution 2021.")));
+}
+;
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/blog/community/she-code-africa-contributhon-boot-camp-report</link><guid isPermaLink="false">https://layer5.io/blog/community/she-code-africa-contributhon-boot-camp-report</guid><dc:creator><![CDATA[Anita Charles]]></dc:creator><pubDate>Fri, 25 Jun 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/cc2bda435aee9c43bee57e2cedf7ac94/sca-thumbnail.png" length="0" type="image/png"/><content:encoded>&lt;div class=&quot;Blogstyle__BlogWrapper-di69nl-0 fybqdG&quot;&gt;&lt;p&gt;Layer5 participated as a suporting organization in the &lt;a href=&quot;https://sites.google.com/shecodeafrica.org/contributhon&quot; rel=&quot;nofollow&quot;&gt;She Code Africa Contributhon&lt;/a&gt; which started on April 1, 2021. It was indeed a pleasant and impactful experience for both the mentors and the mentees from She Code Africa.&lt;/p&gt;&lt;p&gt;The &lt;a href=&quot;https://www.shecodeafrica.org&quot; rel=&quot;nofollow&quot;&gt;She Code Africa&lt;/a&gt; hosts their Contributhon as an Africa-wide open source boot camp focused on building more women OSS contributors &amp;amp; creating more diversity in the African open source ecosystem by matching African women in technology with sponsors and mentors from Open Source organizations. During this boot camp, participants work with an open source organisation on a project for 4 weeks with the help of organisation mentors and get rewarded at the end of the boot camp upon successful project completion.&lt;/p&gt;&lt;p&gt;  During the boot camp, Layer5 received a total of 8 mentees - all from Nigeria. These mentees were teamed up to work on the 3 project ideas selected by Layer5. Each project had an average of 2 members of the community who were delegated as mentors to oversee the contributions of the mentees. Often &lt;a href=&quot;/community/meshmates&quot;&gt;Layer5 MeshMates&lt;/a&gt; volunteer to be mentors.&lt;/p&gt;&lt;h2&gt;Projects&lt;/h2&gt;&lt;p&gt;Layer5 mentors prepared and organized a few projects in advance of the start of the boot camp, so that mentees might hit the ground running.&lt;/p&gt;&lt;h3&gt;Layer5 Community Handbook&lt;/h3&gt;&lt;p&gt;Layer5 Community Handbook is a curated Document with the ABC&amp;#x27;s of the community. In this project, mentees were expected to look for repetition pattern across existing docs thereby, creating a structured guide for interaction across all projects.&lt;/p&gt;&lt;b&gt;Mentors:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/community/members/ruth-ikegah&quot;&gt;Ruth Ikegah&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/community/members/anita-charles&quot;&gt;Anita Ihuman&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;b&gt;Mentee(s):&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/community/members/anisat-akinbani&quot;&gt;Anisat Akinbani&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/community/members/abiola-farounbi&quot;&gt;Abiola Farounbi&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;static/sandySCA-5062d5b2c85d02cff45f6a3e6fbf7321.jpg&quot; alt=&quot;sandy-testimonial&quot;/&gt;&lt;img src=&quot;static/abiolaSCA-16a440886104c450dcdbf4d72492e974.jpg&quot; alt=&quot;abiola-testimonial&quot;/&gt;&lt;/p&gt;&lt;h3&gt;Layer5 Main Website&lt;/h3&gt;&lt;p&gt;This required the contributors to fix existing issues on the GitHub repository, while suggesting ideas to improve the website, which used Gatsbyjs and Reactjs. The layer5.io website is hosted on GitHub Pages and is a collaborative effort of nearly 200 contributors.&lt;/p&gt;&lt;b&gt;Mentors:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/community/members/jash-patel&quot;&gt;Jash Patel&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/community/members/chinmay-mehta&quot;&gt;Chinmay Mehta&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;b&gt;Mentee(s):&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/community/members/elizabeth-lola&quot;&gt;Elizabeth Meshioye&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://twitter.com/adun__ni&quot; rel=&quot;nofollow&quot;&gt;Cynthia Akinade&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;https://twitter.com/blossom_babs&quot; rel=&quot;nofollow&quot;&gt;Blossom Babalola&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;static/cynthiaSCA-6630bf3a0d3c4ab737672ee841fb2a2b.jpg&quot; alt=&quot;cynthia-testimonial&quot;/&gt;&lt;img src=&quot;static/elizabethSCA-b829303c3e84e33e5f09f18c6ef47b2c.jpg&quot; alt=&quot;elizabeth-testimonial&quot;/&gt;&lt;/p&gt;&lt;h3&gt;Meshery CLI&lt;/h3&gt;&lt;p&gt;&lt;code&gt;mesheryctl&lt;/code&gt; is a command-line tool for Meshery, the service mesh management plane. Using Golang, mentees were required to design new CLI commands and attend to existing issues, focusing on enforcing the consistency of user experience with the command line client.&lt;/p&gt;&lt;b&gt;Mentors:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/community/members/navendu-pottekkat&quot;&gt;Navendu Pottekkat&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/community/members/chinmay-mehta&quot;&gt;Chinmay Mehta&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;b&gt;Mentee(s):&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/community/members/joy-nwaiwu&quot;&gt;Joy Nwaiwu&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/community/members/naimat-oyewale&quot;&gt;Naimat Oyewale&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;static/naimatSCA-e13e897e9922f80330827fc905bf565d.jpg&quot; alt=&quot;naimat-testimonial&quot;/&gt;&lt;img src=&quot;static/joySCA-8474f0f4a5fa2457aab9fd5f52e5cd90.jpg&quot; alt=&quot;joy-testimonial&quot;/&gt;&lt;/p&gt;&lt;p&gt;The mentors were in constant communication with the mentees, taking their questions and rendering help when needed. At the end of the Contribution boot camp, it was heartwarming to see the mentees were able to make noticeable contributions to the projects.  During the boot camp wrap up call, mentees gave presentations that revealed how impactful it was for them working on Layer5 projects.&lt;/p&gt;&lt;h3&gt;Appreciation&lt;/h3&gt;&lt;p&gt;In gratitude, we acknowledge the commitment and contributions of the mentees toward the projects and we won&amp;#x27;t forget our incredible mentors who were devoted to meeting the needs and answering to the mentees during this bootcamp. Also, we would like to appreciate &lt;a href=&quot;https://twitter.com/zaycodes&quot;&gt;Zainab Abubakar&lt;/a&gt; for having facilitated the She Code Africa Contribution 2021.&lt;/p&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[5 Lesser-Known, But Extremely Powerful Kubernetes Service Mesh Tools]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
