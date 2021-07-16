@@ -81,18 +81,25 @@ Linkerd dashboard exposes various CLI tools which may come handy while you debug
 
 Mainly there are three tools which Linkerd exposes as an extension to it's CLI commands
 
-1. stat : This will show the “golden” metrics for each deployment:
-    1. Success rates
-    1. Request rates
-    1. Latency distribution percentiles
+**stat**
 
-1. top : to get a real-time view of which paths are being called.
+This will show the “golden” metrics for each deployment:
+
+  1. Success rates
+  1. Request rates
+  1. Latency distribution percentiles
+
+**top**
+
+To get a real-time view of which paths are being called.
 
   <a href={Top}>
     <img src={Top} width="100%" align="center" />
   </a>
 
-1. tap : shows the stream of requests across a single pod, deployment, or even everything in the emojivoto namespace.
+**tap**
+
+Shows the stream of requests across a single pod, deployment, or even everything in the emojivoto namespace.
 
   <a href={Tap}>
     <img src={Tap} width="100%" align="center" />
