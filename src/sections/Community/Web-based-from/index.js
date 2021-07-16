@@ -34,6 +34,7 @@ const WebBasedForm = () => {
     if (stepNumber === 4) {
       setSubmit(true);
     }
+    window.scrollTo(0, 0);
   };
 
   const laststep = () => {
@@ -98,11 +99,7 @@ const WebBasedForm = () => {
           <div className="status">
           </div>
         </li>
-        <li className={stepNumber === 4 ? ("li active") : stepNumber > 4 ? ("li complete") : ("li")}>
-          <div className="status">
-          </div>
-        </li>
-        <li className={stepNumber >= 5 ? ("li complete") : ("li")}>
+        <li className={stepNumber >= 4 ? ("li complete") : ("li")}>
           <div className="status">
           </div>
         </li>
@@ -207,7 +204,6 @@ const WebBasedForm = () => {
           </div>
           <div className="option" onClick={standerby}>
             I'm here as a Participant
-
           </div>
         </div>
         <br /><br />
@@ -215,261 +211,6 @@ const WebBasedForm = () => {
           <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
         </div>
         <br /><br /><br /><br />
-      </Container>
-    );
-  };
-
-  const ContributorFrom = () => {
-
-    return (
-      <Container>
-        <h2 className="title">Layer5 and You</h2>
-        <Formik
-          initialValues={{
-            interests: "",
-            profiency: "",
-            mentor: false
-          }}
-          onSubmit={values => {
-            setContributorForm(values);
-            nextStep();
-          }}
-        >
-          <Form className="form">
-            <label htmlFor="interests" className="form-name">What has your recent focus been? What are you passionate about? Is there a specific project or aspect a project that interests you?</label>
-            <Field type="text" className="text-field" id="interests" name="interests" />
-            <label htmlFor="profiency" className="form-name">If a contributor, what tools, technologies, and languages are you most proficient with?</label>
-            <Field type="text" className="text-field" id="profiency" name="profiency" />
-            <p className="form-name">Familiarize with the Layer5 Mentor Program.</p>
-            <p className="para">If you would like to pair with a MeshMate, please review each MeshMate profile (https://layer5.io/community/meshmates) to identify your ideal mentor. Once you have identified your ideal MeshMate, message the MeshMate in the #newcomers channel</p>
-            <label>
-              <Field type="checkbox"
-                name="mentor"
-                className="form-check"
-              />
-              <span>Ok</span>
-            </label>
-            <br /><br />
-            <div className="btn-wrapper">
-              <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
-              <Button type="submit" secondary className="btn-next" title="Next Step" />
-            </div>
-            <br /><br />
-          </Form>
-        </Formik>
-      </Container>
-    );
-  };
-
-  const UserForm = () => {
-    return (
-      <Container>
-        <h2 className="title">Layer5 and You</h2>
-        <div className="form">
-          <Formik
-            initialValues={{
-              tutorials: [],
-              projects: [],
-              meshMate: [],
-              help: ""
-            }}
-            onSubmit={values => {
-              setUserForm(values);
-              nextStep();
-            }}
-          >
-            <Form>
-              <p className="form-name">Mark any of the following 101 tutorials that you would like to receive.</p>
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="A Git and Github primer"
-                  className="form-check"
-                />
-                <span className="checkbox-label">A Git and Github primer</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="Contributing to Meshery UI with ReactJS, NextJS and Material UI"
-                  className="form-check"
-                />
-                <span className="checkbox-label">Contributing to Meshery UI with ReactJS, NextJS and Material UI</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="Introduction to Service Meshes"
-                  className="form-check"
-                />
-                <span className="checkbox-label">Introduction to Service Meshes</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="Introduction to using a service mesh management plane: Meshery"
-                  className="form-check"
-                />
-                <span className="checkbox-label">Introduction to using a service mesh management plane: Meshery</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="How to evaluate service mesh performance and analyze the data"
-                  className="form-check"
-                />
-                <span className="checkbox-label">How to evaluate service mesh performance and analyze the data</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="How gRPC is used in Meshery and Service Mesh Performance (SMP)"
-                  className="form-check"
-                />
-                <span className="checkbox-label">How gRPC is used in Meshery and Service Mesh Performance (SMP)</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="How Jekyll websites work and how to contribute to Layer5 projects"
-                  className="form-check"
-                />
-                <span className="checkbox-label">How Jekyll websites work and how to contribute to Layer5 projects</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="How mesheryctl uses Go Cobra"
-                  className="form-check"
-                />
-                <span className="checkbox-label">How mesheryctl uses Go Cobra</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="Introduction to Gatsby and Layer5-ng"
-                  className="form-check"
-                />
-                <span className="checkbox-label">Introduction to Gatsby and Layer5-ng</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="Introduction to Istio"
-                  className="form-check"
-                />
-                <span className="checkbox-label">Introduction to Istio</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="tutorials"
-                  value="None of the above"
-                  className="form-check"
-                />
-                <span className="checkbox-label">None of the above</span>
-              </label>
-              <p className="form-name">Have you previously heard of Layer5 or its projects?</p>
-              <label>
-                <Field type="checkbox"
-                  name="projects"
-                  value="No"
-                  className="form-check"
-                />
-                <span className="checkbox-label">No</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="projects"
-                  value="Yes, Layer5 (https://layer5.io)"
-                  className="form-check"
-                />
-                <span className="checkbox-label">Yes, Layer5 (https://layer5.io)</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="projects"
-                  value="Yes, Meshery (https://meshery.io)"
-                  className="form-check"
-                />
-                <span className="checkbox-label">Yes, Meshery (https://meshery.io)</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="projects"
-                  value="Yes, Service Mesh Performance (SMP) (https://smp-spec.io)"
-                  className="form-check"
-                />
-                <span className="checkbox-label">Yes, Service Mesh Performance (SMP) (https://smp-spec.io)</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="projects"
-                  value="Yes, Service Mesh Landscape (https://layer5.io/landscape)"
-                  className="form-check"
-                />
-                <span className="checkbox-label">Yes, Service Mesh Landscape (https://layer5.io/landscape)</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="projects"
-                  value="Yes, Image Hub (https://github.com/layer5io/image-hub)"
-                  className="form-check"
-                />
-                <span className="checkbox-label">Yes, Image Hub (https://github.com/layer5io/image-hub)</span>
-              </label>
-              <p className="form-name">Layer5 has a community member mentoring program, MeshMates, that is aimed at individuals new to open source or simply new to Layer5 projects. Learn more at https://layer5.io/community. Is this program of interest to you?</p>
-              <label>
-                <Field type="checkbox"
-                  name="meshMate"
-                  value="Yes, and I would like to explore engaging with a Layer5 MeshMate."
-                  className="form-check"
-                />
-                <span className="checkbox-label">Yes, and I would like to explore engaging with a Layer5 MeshMate.</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="meshMate"
-                  value="Maybe later."
-                  className="form-check"
-                />
-                <span className="checkbox-label">Maybe later.</span>
-              </label>
-              <br />
-              <label>
-                <Field type="checkbox"
-                  name="meshMate"
-                  value="No, thank you."
-                  className="form-check"
-                />
-                <span className="checkbox-label">No, thank you.</span>
-              </label>
-              <p className="form-name">How can we help?</p>
-              <Field type="text" className="text-field" name="help" />
-              <br /><br />
-              <div className="btn-wrapper">
-                <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
-                <Button type="submit" secondary className="btn-next" title="Next Step" />
-              </div>
-              <br /><br />
-            </Form>
-          </Formik>
-        </div>
       </Container>
     );
   };
@@ -526,8 +267,13 @@ const WebBasedForm = () => {
         <h2 className="title">Layer5 and You</h2>
         <Formik
           initialValues={{
-            areaOfFocus: [],
-            interestToShareContribution: ""
+            projects: [],
+            tutorials: [],
+            meshMate: [],
+            interests: "",
+            profiency: "",
+            interestToShareContribution: "",
+            areaOfFocus: []
           }}
           onSubmit={values => {
             setMemberFormThirdValue(values);
@@ -535,6 +281,201 @@ const WebBasedForm = () => {
           }}
         >
           <Form className="form">
+            <p className="form-name">Which project(s) are of interest to you?</p>
+            <label>
+              <Field type="checkbox"
+                name="projects"
+                value="Meshery"
+                className="form-check"
+              />
+              <span className="checkbox-label">Meshery</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="projects"
+                value="Service Mesh Performance (SMP)"
+                className="form-check"
+              />
+              <span className="checkbox-label">Service Mesh Performance (SMP)</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="projects"
+                value="GetNightHawk"
+                className="form-check"
+              />
+              <span className="checkbox-label">GetNightHawk</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="projects"
+                value="Service Mesh Landscape"
+                className="form-check"
+              />
+              <span className="checkbox-label">Service Mesh Landscape</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="projects"
+                value="WASM Filter Hub"
+                className="form-check"
+              />
+              <span className="checkbox-label">WASM Filter Hub</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="projects"
+                value="I'm not sure,yet. I'm still exploring"
+                className="form-check"
+              />
+              <span className="checkbox-label">I'm not sure,yet. I'm still exploring</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="projects"
+                value="All of them!"
+                className="form-check"
+              />
+              <span className="checkbox-label">All of them!</span>
+            </label>
+            <p className="form-name">Mark any of the following 101 tutorials that you would like to receive.</p>
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="A Git and Github primer"
+                className="form-check"
+              />
+              <span className="checkbox-label">A Git and Github primer</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="Contributing to Meshery UI with ReactJS, NextJS and Material UI"
+                className="form-check"
+              />
+              <span className="checkbox-label">Contributing to Meshery UI with ReactJS, NextJS and Material UI</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="Introduction to Service Meshes"
+                className="form-check"
+              />
+              <span className="checkbox-label">Introduction to Service Meshes</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="Introduction to using a service mesh management plane: Meshery"
+                className="form-check"
+              />
+              <span className="checkbox-label">Introduction to using a service mesh management plane: Meshery</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="How to evaluate service mesh performance and analyze the data"
+                className="form-check"
+              />
+              <span className="checkbox-label">How to evaluate service mesh performance and analyze the data</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="How gRPC is used in Meshery and Service Mesh Performance (SMP)"
+                className="form-check"
+              />
+              <span className="checkbox-label">How gRPC is used in Meshery and Service Mesh Performance (SMP)</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="How Jekyll websites work and how to contribute to Layer5 projects"
+                className="form-check"
+              />
+              <span className="checkbox-label">How Jekyll websites work and how to contribute to Layer5 projects</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="How mesheryctl uses Go Cobra"
+                className="form-check"
+              />
+              <span className="checkbox-label">How mesheryctl uses Go Cobra</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="Introduction to Gatsby and Layer5-ng"
+                className="form-check"
+              />
+              <span className="checkbox-label">Introduction to Gatsby and Layer5-ng</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="Introduction to Istio"
+                className="form-check"
+              />
+              <span className="checkbox-label">Introduction to Istio</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="tutorials"
+                value="None of the above"
+                className="form-check"
+              />
+              <span className="checkbox-label">None of the above</span>
+            </label>
+            <p className="form-name">Layer5 has a community member mentoring program, MeshMates, that is aimed at individuals new to open source or simply new to Layer5 projects. Learn more at https://layer5.io/community. Is this program of interest to you?</p>
+            <label>
+              <Field type="checkbox"
+                name="meshMate"
+                value="Yes, and I would like to explore engaging with a Layer5 MeshMate."
+                className="form-check"
+              />
+              <span className="checkbox-label">Yes, and I would like to explore engaging with a Layer5 MeshMate.</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="meshMate"
+                value="Maybe later."
+                className="form-check"
+              />
+              <span className="checkbox-label">Maybe later.</span>
+            </label>
+            <br />
+            <label>
+              <Field type="checkbox"
+                name="meshMate"
+                value="No, thank you."
+                className="form-check"
+              />
+              <span className="checkbox-label">No, thank you.</span>
+            </label>
+            <br />
+            <p className="para label">If you would like to pair with a MeshMate, please review each MeshMate profile to identify your ideal mentor. Once you have identified your ideal MeshMate or if you can’t decide on one, simple ask to be partnered in the #newcomers channel in the Layer5 Slack.</p>
+            <label htmlFor="interests" className="form-name">What has your recent focus been? What are you passionate about? Is there a specific project or aspect a project that interests you?</label>
+            <Field type="text" className="text-field" id="interests" name="interests" />
+            <label htmlFor="profiency" className="form-name">If a contributor, what tools, technologies, and languages are you most proficient with?</label>
+            <Field type="text" className="text-field" id="profiency" name="profiency" />
             <label htmlFor="interestToShareContribution" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?</label>
             <div role="group" aria-labelledby="my-radio-group">
               <label>
@@ -648,7 +589,8 @@ const WebBasedForm = () => {
             expect: false,
             highlighted: false,
             paid: false,
-            affiliated: false
+            affiliated: false,
+            help: ""
           }}
           onSubmit={values => {
             setMemberFormFourValue(values);
@@ -692,6 +634,8 @@ const WebBasedForm = () => {
               />
               <span>Ok</span>
             </label>
+            <p className="form-name">Is there anything else we should know about you? How can we help you?</p>
+            <Field type="text" className="text-field" name="help" />
             <br /><br />
             <div className="btn-wrapper">
               <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
@@ -741,23 +685,15 @@ const WebBasedForm = () => {
               <MemberFormSecond />
             }
             {
-              (userFlag && stepNumber === 2) &&
-              <UserForm />
-            }
-            {
-              (contributorFlag && stepNumber === 2) &&
-              <ContributorFrom />
-            }
-            {
-              stepNumber === 3 &&
+              stepNumber === 2 &&
               <MemberFormThird />
             }
             {
-              stepNumber === 4 &&
+              stepNumber === 3 &&
               <MemberFormFour />
             }
             {
-              stepNumber === 5 &&
+              stepNumber === 4 &&
               <FinalForm />
             }
           </div>
