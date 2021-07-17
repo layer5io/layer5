@@ -11,26 +11,21 @@ import axios from "axios";
 const WebBasedForm = () => {
 
   const [stepNumber, setStepNumber] = useState(0);
-  const [contributorFlag, setContributorFlag] = useState(false);
-  const [userFlag, setUserFlag] = useState(false);
-  const [standerbyFlag, setStanderbyFlag] = useState(false);
+  const [role, setRole] = useState("");
 
   // Form values
   const [memberFormOne, setMemberFormOne] = useState({});
-  const [contributorForm, setContributorForm] = useState({});
-  const [userForm, setUserForm] = useState({});
   const [MemberFormThirdValue, setMemberFormThirdValue] = useState({});
   const [MemberFormFourValue, setMemberFormFourValue] = useState({});
 
   const [submit, setSubmit] = useState(false);
-
+  const [photo, setPhoto] = useState();
 
   const handleFileSelected = (e) => {
     const files = Array.from(e.target.files);
   };
 
   const nextStep = () => {
-    setStepNumber(stepNumber + 1);
     if (stepNumber === 4) {
       setSubmit(true);
     }
@@ -45,39 +40,13 @@ const WebBasedForm = () => {
     if (submit) {
       axios.post("https://hook.integromat.com/64g6bpjsr37eec49zo3oawgw91n9a6xg", {
         memberFormOne,
-        contributorForm,
-        userForm,
         MemberFormThirdValue,
         MemberFormFourValue,
-        contributorFlag,
-        userFlag
+        role,
+        photo
       });
     }
   }, [submit]);
-
-  const contributor = () => {
-    setStepNumber(stepNumber + 1);
-    setContributorFlag(true);
-    setStanderbyFlag(false);
-    setUserFlag(false);
-  };
-
-  const user = () => {
-    setStepNumber(stepNumber + 1);
-    setUserFlag(true);
-    setContributorFlag(false);
-    setStanderbyFlag(false);
-  };
-
-  const standerby = () => {
-    setStanderbyFlag(true);
-    setContributorFlag(false);
-    setUserFlag(false);
-  };
-
-  const standerbyBack = () => {
-    setStanderbyFlag(false);
-  };
 
   const RangeDisplay = () => {
     return (
@@ -126,6 +95,7 @@ const WebBasedForm = () => {
           }}
           onSubmit={values => {
             setMemberFormOne(values);
+            setStepNumber(1);
             nextStep();
           }}
         >
@@ -185,24 +155,30 @@ const WebBasedForm = () => {
   const MemberFormSecond = () => {
     return (
       <Container>
-        <div className="member-header">
-          <h2 className="title">About You and Why You're Here</h2>
-          <p className="para">
+        <h2 className="title">About You and Why You're Here</h2>
+        <p className="para">
             Which describes your main focus as a community member?{" "}
-          </p>
-        </div>
+        </p>
 
         <div className="center">
-          <div className="option" onClick={contributor}>
+          <div className="option" onClick={() => {
+            setRole("Contributor"),setStepNumber(2); 
+          }}>
             I'm here as a Contributor
           </div>
-          <div className="option" onClick={contributor}>
+          <div className="option" onClick={() => {
+            setRole("Developer"),setStepNumber(2); 
+          }}>
             I'm here as a Developer
           </div>
-          <div className="option" onClick={user}>
+          <div className="option" onClick={() => {
+            setRole("User"),setStepNumber(2); 
+          }}>
             I'm here as a User and Contibutor
           </div>
-          <div className="option" onClick={standerby}>
+          <div className="option" onClick={() => {
+            setRole("Participant"),setStepNumber(2); 
+          }}>
             I'm here as a Participant
           </div>
         </div>
@@ -215,51 +191,51 @@ const WebBasedForm = () => {
     );
   };
 
-  const Standerby = () => {
-    return (
-      <Container>
-        <div className="container-1">
-          <Row>
-            <Col lg={6} md={6} sm={12}>
-              <div className="text">
-                <h2>Community First</h2>
-                <p>
-                  The Layer5 community represents the largest collection of
-                  service mesh projects and their maintainers in the world.
-                </p>
-              </div>
-            </Col>
-            <Col lg={6} md={6} sm={12}>
-              <img src={img1} alt="Community photo" />
-            </Col>
-          </Row>
-        </div>
+  // const Standerby = () => {
+  //   return (
+  //     <Container>
+  //       <div className="container-1">
+  //         <Row>
+  //           <Col lg={6} md={6} sm={12}>
+  //             <div className="text">
+  //               <h2>Community First</h2>
+  //               <p>
+  //                 The Layer5 community represents the largest collection of
+  //                 service mesh projects and their maintainers in the world.
+  //               </p>
+  //             </div>
+  //           </Col>
+  //           <Col lg={6} md={6} sm={12}>
+  //             <img src={img1} alt="Community photo" />
+  //           </Col>
+  //         </Row>
+  //       </div>
 
-        <div className="container-1">
-          <Row>
-            <Col lg={6} md={6} sm={12}>
-              <img src={img2} alt="Open source photo" />
-            </Col>
-            <Col lg={6} md={6} sm={12}>
-              <div className="text">
-                <h2>Open Source First</h2>
-                <p>
-                  Our projects establish industry standards and enable service
-                  developers, owners, and operators with repeatable patterns and
-                  best practices for managing all aspects of distributed
-                  services. Our shared commitment to the open source spirit push
-                  the Layer5 community and its projects forward.
-                </p>
-              </div>
-            </Col>
-          </Row>
-        </div>
-        <br /><br />
-        <button onClick={standerbyBack} className="btn-prev1"><span className="back">&larr;</span> Previous step</button>
-        <br /><br />
-      </Container>
-    );
-  };
+  //       <div className="container-1">
+  //         <Row>
+  //           <Col lg={6} md={6} sm={12}>
+  //             <img src={img2} alt="Open source photo" />
+  //           </Col>
+  //           <Col lg={6} md={6} sm={12}>
+  //             <div className="text">
+  //               <h2>Open Source First</h2>
+  //               <p>
+  //                 Our projects establish industry standards and enable service
+  //                 developers, owners, and operators with repeatable patterns and
+  //                 best practices for managing all aspects of distributed
+  //                 services. Our shared commitment to the open source spirit push
+  //                 the Layer5 community and its projects forward.
+  //               </p>
+  //             </div>
+  //           </Col>
+  //         </Row>
+  //       </div>
+  //       <br /><br />
+  //       <button onClick={standerbyBack} className="btn-prev1"><span className="back">&larr;</span> Previous step</button>
+  //       <br /><br />
+  //     </Container>
+  //   );
+  // };
 
   const MemberFormThird = () => {
     return (
@@ -277,6 +253,7 @@ const WebBasedForm = () => {
           }}
           onSubmit={values => {
             setMemberFormThirdValue(values);
+            setStepNumber(3);
             nextStep();
           }}
         >
@@ -594,6 +571,7 @@ const WebBasedForm = () => {
           }}
           onSubmit={values => {
             setMemberFormFourValue(values);
+            setStepNumber(4);
             nextStep();
           }}
         >
@@ -668,36 +646,29 @@ const WebBasedForm = () => {
     <Webform>
       <div>
         <SlackLinkNotif />
-        {
-          standerbyFlag &&
-          <Standerby />
-        }
-        {
-          !standerbyFlag &&
-          <div>
-            <RangeDisplay />
-            {
-              stepNumber === 0 &&
+        <div>
+          <RangeDisplay />
+          {
+            stepNumber === 0 &&
               <MemberFormStart />
-            }
-            {
-              stepNumber === 1 &&
+          }
+          {
+            stepNumber === 1 &&
               <MemberFormSecond />
-            }
-            {
-              stepNumber === 2 &&
+          }
+          {
+            stepNumber === 2 &&
               <MemberFormThird />
-            }
-            {
-              stepNumber === 3 &&
+          }
+          {
+            stepNumber === 3 &&
               <MemberFormFour />
-            }
-            {
-              stepNumber === 4 &&
+          }
+          {
+            stepNumber === 4 &&
               <FinalForm />
-            }
-          </div>
-        }
+          }
+        </div>
       </div>
     </Webform>
   );

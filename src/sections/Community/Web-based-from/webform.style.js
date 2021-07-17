@@ -210,7 +210,7 @@ const Webform = styled.div`
         align-items: center;
         justify-content: center;
         margin: 90px;
-        padding:0px 200px;
+        padding:0px 10px;
     }
 
     .option {
