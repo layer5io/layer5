@@ -294,8 +294,8 @@
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/deploy-an-application/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/expose-services/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/fault-injection/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/mutual-tls/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/getting-started/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/mutual-tls/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/observability/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/routing-and-canary/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/linkerd/dashboard/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
