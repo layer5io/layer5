@@ -19,11 +19,6 @@ const WebBasedForm = () => {
   const [MemberFormFourValue, setMemberFormFourValue] = useState({});
 
   const [submit, setSubmit] = useState(false);
-  const [photo, setPhoto] = useState();
-
-  const handleFileSelected = (e) => {
-    const files = Array.from(e.target.files);
-  };
 
   const nextStep = () => {
     if (stepNumber === 4) {
@@ -42,8 +37,7 @@ const WebBasedForm = () => {
         memberFormOne,
         MemberFormThirdValue,
         MemberFormFourValue,
-        role,
-        photo
+        role
       });
     }
   }, [submit]);
@@ -91,7 +85,8 @@ const WebBasedForm = () => {
             github: "",
             twitter: "",
             linkedin: "",
-            tshirtSize: ""
+            tshirtSize: "",
+            picture: ""
           }}
           onSubmit={values => {
             setMemberFormOne(values);
@@ -111,11 +106,11 @@ const WebBasedForm = () => {
             <label htmlFor="org" className="form-name">Organization / Company / School</label>
             <Field type="text" className="text-field" id="org" name="org" />
             <label htmlFor="github" className="form-name">GitHub</label>
-            <Field type="url" className="text-field" id="github" name="github" pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
+            <Field type="url" placeholder="https://github.com/" className="text-field" id="github" name="github" pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
             <label htmlFor="twitter" className="form-name">Twitter</label>
-            <Field type="url" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)twitter.com(\/)([a-zA-z0-9\-_]+)" />
+            <Field type="url" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)twitter.com(\/)([a-zA-z0-9\-_]+)" />
             <label htmlFor="linkedin" className="form-name">Linkedin</label>
-            <Field type="url" className="text-field" id="linkedin" name="linkedin" />
+            <Field type="url" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
             <label htmlFor="tshirtSize" className="form-name">T-shirt size</label>
             <div role="group" aria-labelledby="my-radio-group">
               <label>
@@ -144,7 +139,7 @@ const WebBasedForm = () => {
               </label>
             </div>
             <label htmlFor="picture" className="form-name">Picture</label>
-            <Field type="file" label='Upload' name="picture" name="picture" id="picture" accept="image/*,.png,.jpeg" onChange={handleFileSelected} className="upload-field" />
+            <Field type="url" className="text-field" id="picture" name="picture" />
             <Button secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
           </Form>
         </Formik>
