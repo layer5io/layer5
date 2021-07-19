@@ -26,11 +26,11 @@ const TOC = ({ coursesData }) => {
           <h5 className="toc-sub-heading">
             Pre-requisites
           </h5>
-          {["Set up", "Run Meshery", "Manage Meshery"].map(item =>
-            <li key={item}>
+          {[{name: "Set up", link: "/service-mesh-management/meshery"},{name:"Run Meshery",link:"/service-mesh-management/meshery/getting-started"},{name: "Manage Meshery", link: "/service-mesh-management/meshery/operating-service-meshes"}].map(item =>
+            <li key={item.link}>
               <p className="toc-item">
-                <a href={"/"}>
-                  {item}
+                <a href={item.link}>
+                  {item.name}
                 </a>
               </p>
             </li>
