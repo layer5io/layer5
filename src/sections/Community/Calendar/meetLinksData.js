@@ -72,6 +72,15 @@ export const meet_links_data= [
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
   },
   {
+    day: "Biweekly Thursday",
+    meeting: "SMP Community Meeting",
+    slack_channel: "#performance",
+    slack_link: "https://layer5io.slack.com/archives/CVBGPTFJN",
+    meeting_minutes: "https://bit.ly/3B7uIy9",
+    meeting_link: "https://meet.layer5.io/smp",
+    meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IPZ3dP6FgZBAA0dZFmmX0kA",
+  },
+  {
     day: "1st & 3rd Thursday",
     meeting: "CNCF TAG Network Meeting",
     slack_channel: "#tag-network",
