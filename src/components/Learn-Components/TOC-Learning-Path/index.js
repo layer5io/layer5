@@ -1,0 +1,59 @@
+import React from "react";
+// import { HiOutlineChevronLeft } from "react-icons/hi";
+// import { Link } from "gatsby";
+import TOCWrapper from "./toc.style";
+
+const TOC = ({ coursesData }) => {
+
+  // const reformatTOC= (data) => {
+  //   let newData = data.split("-").join(" ");
+  //   let firstLetter = newData.charAt(0).toUpperCase();
+  //   newData = `${firstLetter}${newData.slice(1)}`;
+  //   return newData;
+  // };
+
+  console.log(coursesData);
+  return (
+    <TOCWrapper>
+      {/** <div className="go-back">
+        <Link to={`/learn-ng`}>
+          <HiOutlineChevronLeft />
+          <h4>Learn-Layer5</h4>
+        </Link>
+      </div>*/}
+      <div className="toc-list">
+        <ul>
+          <h5 className="toc-sub-heading">
+            Pre-requisites
+          </h5>
+          {["Set up", "Run Meshery", "Manage Meshery"].map(item =>
+            <li key={item}>
+              <p className="toc-item">
+                <a href={"/"}>
+                  {item}
+                </a>
+              </p>
+            </li>
+          )}
+
+          <h5 className="toc-sub-heading">
+            Courses
+          </h5>
+
+          {coursesData.map((item) => (
+            <li key={item}>
+              <p className="toc-item">
+                <a href={`/${item.fields.slug}`}>
+                  {item.frontmatter.courseTitle}
+                </a>
+              </p>
+            </li>
+          ))}
+
+        </ul>
+      </div>
+    </TOCWrapper>
+  );
+};
+
+export default TOC;

@@ -6,9 +6,10 @@ import ContentCard from "../../../components/Learn-Components/Content-Card";
 import Button from "../../../reusecore/Button";
 import SetupPreReq from "../../../components/Learn-Components/Setup-Pre-Requisites";
 import { Link } from "gatsby";
+import TOC from "../../../components/Learn-Components/TOC-Learning-Path";
 
 
-const CoursesList = ({ coursesData, learnPath }) => {
+const CoursesList = ({ coursesData, learnPath}) => {
   return (
     <CoursesListWrapper>
       <PageHeader
@@ -17,10 +18,10 @@ const CoursesList = ({ coursesData, learnPath }) => {
       <Container>
         <Button url="/learn-ng" title="Go Back" className="go-back-btn" />
         <Row className="course-list">
-          <Col sm={0} lg={2} xl={2}>
-				SideBar Component
+          <Col sm={0} lg={3} xl={3}>
+            <TOC coursesData={coursesData} />
           </Col>
-          <Col sm={12} lg={10} xl={10}>
+          <Col sm={12} lg={9} xl={9}>
             <SetupPreReq />
             <div className="course-list-cont">
               <h2>Courses</h2>
