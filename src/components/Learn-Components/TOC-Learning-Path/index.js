@@ -12,7 +12,6 @@ const TOC = ({ coursesData }) => {
   //   return newData;
   // };
 
-  console.log(coursesData);
   return (
     <TOCWrapper>
       {/** <div className="go-back">
