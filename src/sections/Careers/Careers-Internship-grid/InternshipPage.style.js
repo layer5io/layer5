@@ -83,6 +83,7 @@ const InternshipSectionWrapper = styled.div`
     }
     &:hover {
       box-shadow: 0px 4px 20px 4px ${(props) => props.theme.shadowLightColor};
+      height: 15rem;
 
       .text {
         width: 80%;
