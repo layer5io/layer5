@@ -13,8 +13,6 @@ import theme from "../../theme/app/themeStyles";
 import JoinCommunity from "../../sections/Community/Join-community";
 import Lee_workshop from "../../sections/Community/Lee_Workshop.png"
 
-
-
 const FAQPage = () => (
   <ThemeProvider theme={theme}>
     <Layout>
