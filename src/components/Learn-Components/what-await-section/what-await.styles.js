@@ -6,11 +6,12 @@ const WhatAwaitsWrapper = styled.div`
     margin: 1rem 0rem 6rem 0rem;
     
     .what-await-section {
-        padding: 4rem;  
+        padding: 2rem;  
         justify-content: center;
         align-items:center;
     }
     .what-await-section-info {
+        margin-right: 100px
         padding: 2rem 1rem; 
         justify-content: center;
         display: flex;
@@ -21,17 +22,16 @@ const WhatAwaitsWrapper = styled.div`
        
     }
     .what-await-section-image {
-        img{
-            height: 100%;
-            width: 100%;
-        }
+      
+        
+        @media (max-width: 768px) {
+            & > div {
+                width: 700px;
+            max-width: 100%;
+            height: 660px;
+            }
     }
-    @media(max-width: 768px)
-    {
-        .what-await-section {
-            padding: 4rem 1rem;
-        }
-    }
+    
 `;
 
 export default WhatAwaitsWrapper;
