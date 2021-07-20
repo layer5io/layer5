@@ -11,6 +11,8 @@ const JoinCommunityWrapper = styled.div`
         background-size: cover;
         background-position: center;
         margin: auto;
+        
+        margin-bottom:2.5rem;
     }
     .join-community_text-and_button{
         position: relative;
@@ -27,8 +29,16 @@ const JoinCommunityWrapper = styled.div`
         button{
             margin-top: 1.5rem;
         }
-    }
-`;
+  
+      }
+
+      .callout{
+        display: grid;
+
+      }
+`
+
+;
 
 const JoinCommunity = (props) => {
 
@@ -37,9 +47,13 @@ const JoinCommunity = (props) => {
       <div className="join-community">
         <div className="join-community_text-and_button">
           <h1>{props.header ? props.header : "Join the community!"}</h1>
-          <p>{props.text ? props.text : "Checkout the Layer5 community by joining us on Slack"}</p>
-          {props.btn_primary ? <Button primary title="Join Our Talented Community" url="http://slack.layer5.io/" external={true}/>
-            : <Button secondary title="Join Our Talented Community" url="http://slack.layer5.io/" external={true} />}
+          <p>{props.text ? props.text : "Checkout the Layer5 community by joining us on Slack and Our Discussion Forum"}</p>
+          <div className="callout">
+          {props.btn_primary ? <Button primary title="Join Our Talented Slack Community" url="http://slack.layer5.io/" external={true}/>
+            : <Button secondary title="Join Our Talented Slack Community" url="http://slack.layer5.io/" external={true} />}
+            {props.btn_primary ? <Button primary title="Join Our Trending Discussion Forum" url="https://discuss.layer5.io/" external={true}/>
+            : <Button secondary title="Join Our Trending Discussion Forum" url="https://discuss.layer5.io/" external={true} />}
+            </div>
         </div>
       </div>
     </JoinCommunityWrapper>

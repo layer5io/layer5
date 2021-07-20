@@ -74,6 +74,7 @@
     "react-twitter-embed": "^3.0.3",
     "react-vertical-timeline-component": "^3.3.0",
     "react-visibility-sensor": "^5.1.1",
+    "sharp": "^0.28.3",
     "simple-react-lightbox": "^3.6.5",
     "slick-carousel": "^1.8.1",
     "styled-components": "^4.4.1",

@@ -10,6 +10,10 @@ import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
+import JoinCommunity from "../../sections/Community/Join-community";
+import Lee_workshop from "../../sections/Community/Lee_Workshop.png"
+
+
 
 const FAQPage = () => (
   <ThemeProvider theme={theme}>
@@ -18,6 +22,7 @@ const FAQPage = () => (
       <SEO title="FAQs" description="Frequently Asked Questions" />
       <Navigation />
       <FAQ category = {["all"]} />
+      <JoinCommunity image={Lee_workshop} className="newcomers-faq-join"/>
       <Footer />
     </Layout>
   </ThemeProvider>
