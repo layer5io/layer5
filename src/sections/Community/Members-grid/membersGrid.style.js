@@ -2,6 +2,15 @@ import styled from "styled-components";
 import icon5 from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 import meshmateIcon from "../../../assets/images/meshmate/meshmate-icon.svg";
 
+import hawkIcon from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import hubIcon from "../../../assets/images/image-hub/layer5-image-hub.svg";
+import communityIcon from "../../../assets/images/community/community-green.svg";
+import landscapeIcon from "../../../assets/images/landscape/layer5_landscape_green.svg";
+import mesheryIcon from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import mesheryOpIcon from "../../../assets/images/meshery-operator/meshery-operator-skinny.svg";
+import smpIcon from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+import { NonceProvider } from "react-select";
+
 const dot = (color = "#ccc") => ({
   alignItems: "center",
   display: "flex",
@@ -44,22 +53,34 @@ export const selectStyles = {
   option: (styles, { data, isFocused, isSelected }) => ({
     ...styles,
 
-    alignItems: "center",
-    display: "flex",
-    backgroundImage: data.value === "all" ? ""
-      : data.value === "active" ? "" :
+    alignItems: "left",
+    marginTop: "0.0em",
+    marginBottom: "0.0em",
+    paddingTop: "0.0em",
+    paddingBottom: "0.0em",
+    backgroundImage: data.value === "all" ? "" :
+      data.value === "active" ? "" :
         data.value === "inactive" ? "" :
-          data.value === "maintainers" ? `url(${icon5})` : `url(${meshmateIcon})`,
+          data.value === "maintainers" ? `url(${icon5})` :
+            data.value === "getnighthawk" ? `url(${hawkIcon})`  :
+              data.value === "meshery" ? `url(${mesheryIcon})` :
+                data.value === "mesheryoperator" ? `url(${mesheryOpIcon})` :
+                  data.value === "imagehub" ? `url(${hubIcon})` :
+                    data.value === "meshmates" ? `url(${meshmateIcon})` :
+                      data.value === "smp" ? `url(${smpIcon})` :
+                        data.value === "" ? "" :
+                          data.value === "community" ? `url(${communityIcon})` : `url(${landscapeIcon})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: 20,
-    backgroundPosition: "4% 50%",
+    backgroundPosition: "14% 70%",  
 
     ":before": {
-      backgroundColor: data.value === "active" || data.value === "inactive" ? data.color : "",
+      //backgroundColor: data.value === "active" || data.value === "inactive" ? data.color : "",
       borderRadius: 10,
       content: "\" \"",
       display: "block",
       marginRight: 12,
+      marginTop: 1,
       marginLeft: data.value === "all" || data.value === "active" || data.value === "inactive" ? 1.5 : 5,
       height: 10,
       width: 10,
@@ -89,10 +110,20 @@ export const selectStyles = {
   input: styles => ({ ...styles, ...dot(), zIndex: 900 }),
   placeholder: styles => ({ ...styles, ...dot(), zIndex: 900 }),
   singleValue: (styles, { data }) => (data.value === "all"
-    ? { ...styles, zIndex: 900 }
-    : data.value === "maintainers" ? {...styles, ...img(icon5)}
-      : data.value === "meshmates" ? { ...styles, ...img(meshmateIcon) }
-        : { ...styles, ...dot(data.color), zIndex: 900 }),
+    ? { ...styles, zIndex: 900}
+    : data.value === "maintainers" ? {...styles, ...img(icon5),backgroundPosition: "30% 50%"}
+      : data.value === "meshmates" ? { ...styles, ...img(meshmateIcon),backgroundPosition: "30% 50%" }
+        : data.value === "community" ? { ...styles, ...img(communityIcon),backgroundPosition: "30% 50%" }
+          : data.value === "landscape" ? { ...styles, ...img(landscapeIcon) ,backgroundPosition: "30% 50%"}
+            : data.value === "meshery" ? { ...styles, ...img(mesheryIcon),backgroundPosition: "30% 50%" }
+              : data.value === "mesheryoperator" ? { ...styles, ...img(mesheryOpIcon),backgroundPosition: "20% 50%" }
+                : data.value === "smp" ? { ...styles, ...img(smpIcon),backgroundPosition: "20% 50%" }
+                  : data.value === "imagehub" ? { ...styles, ...img(hubIcon),backgroundPosition: "30% 50%" }
+                    : data.value === "getnighthawk" ? { ...styles, ...img(hawkIcon),backgroundPosition: "28% 50%" }
+                      : data.value === "active" ? { ...styles}
+                        : data.value === "inactive" ? { ...styles}
+                          : data.value === "" ? { display:"none" }
+                            : { ...styles, ...dot(data.color), zIndex: 900 }),
 };
 
 export const dropdownTheme = theme => ({
@@ -183,8 +214,8 @@ export const MembersGridWrapper = styled.div`
             }
 
 			img {
-                text-align: center;
-                align-items: center;
+        text-align: center;
+        align-items: center;
 				width: 70%;
 				height: inherit;
 				margin-right: 0rem;
@@ -197,7 +228,7 @@ export const MembersGridWrapper = styled.div`
             }
     }
     .memberProfileBtn{
-        margin: 1rem;
-
+      margin: 1rem;
     }
+
 `;
