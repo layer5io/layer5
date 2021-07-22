@@ -1,6 +1,6 @@
 **Description**
 
-This PR fixes #
+This PR closes #
 
 **Notes for Reviewers**
 
