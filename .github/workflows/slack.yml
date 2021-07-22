@@ -10,6 +10,7 @@ jobs:
         echo ::set-env name=STARS::$(curl --silent 'https://api.github.com/repos/layer5io/layer5' -H 'Accept: application/vnd.github.preview' | jq '.watchers_count')
     - name: Notify slack
       env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       uses: pullreminders/slack-action@master
       with:
