@@ -22,8 +22,8 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="274.5"
-     inkscape:cy="334"
+     inkscape:cx="254.5"
+     inkscape:cy="396"
      inkscape:window-width="1600"
      inkscape:window-height="848"
      inkscape:window-x="-6"
@@ -867,22 +867,6 @@
       </g>
     </g>
     <g
-       id="logo"
-       transform="matrix(0.32353355,0,0,0.32353355,54.314068,517.0273)">
-      <polygon
-         id="hull"
-         points="60,240 0,210 160,210 "
-         class="st0" />
-      <polygon
-         id="mainsail"
-         points="60,80 0,200 60,190 "
-         class="st0" />
-      <polygon
-         id="headsail"
-         points="70,0 70,190 160,200 "
-         class="st0" />
-    </g>
-    <g
        id="g2827"
        transform="matrix(0.23782689,0,0,0.2378269,52.233007,421.90709)">
       <path
@@ -917,6 +901,26 @@
          fill="#ff0000"
          d="m 523.531,436.826 c 11.125,-0.028 20.227,9.046 20.227,20.142 0.028,11.097 -9.046,20.171 -20.199,20.199 -11.152,0 -20.226,-9.018 -20.226,-20.142 0.028,-11.153 9.074,-20.199 20.198,-20.199 z m 0.085,34.75 c 8.09,-0.028 14.608,-6.573 14.58,-14.664 -0.029,-8.006 -6.574,-14.495 -14.58,-14.552 -8.119,-0.028 -14.665,6.574 -14.636,14.749 0.028,8.034 6.601,14.495 14.636,14.467 z"
          id="path5010" />
+    </g>
+    <g
+       id="logo"
+       transform="matrix(0.35848593,0,0,0.35848593,53.778456,511.98169)"
+       style="fill:#466bb0;fill-opacity:1">
+      <polygon
+         id="hull"
+         points="160,210 60,240 0,210 "
+         class="st0"
+         style="fill:#466bb0;fill-opacity:1" />
+      <polygon
+         id="mainsail"
+         points="60,190 60,80 0,200 "
+         class="st0"
+         style="fill:#466bb0;fill-opacity:1" />
+      <polygon
+         id="headsail"
+         points="160,200 70,0 70,190 "
+         class="st0"
+         style="fill:#466bb0;fill-opacity:1" />
     </g>
   </g>
   <defs
@@ -1090,4 +1094,7 @@
   <style
      type="text/css"
      id="style2821">.st0{fill:#290b53}</style>
+  <style
+     type="text/css"
+     id="style345">.st0{fill:#466bb0}</style>
 </svg>
