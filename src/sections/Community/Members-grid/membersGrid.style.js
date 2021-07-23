@@ -1,14 +1,5 @@
 import styled from "styled-components";
-import icon5 from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
-import meshmateIcon from "../../../assets/images/meshmate/meshmate-icon.svg";
-
-import hawkIcon from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
-import hubIcon from "../../../assets/images/image-hub/layer5-image-hub.svg";
-import communityIcon from "../../../assets/images/community/community-green.svg";
 import landscapeIcon from "../../../assets/images/landscape/layer5_landscape_green.svg";
-import mesheryIcon from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import mesheryOpIcon from "../../../assets/images/meshery-operator/meshery-operator-skinny.svg";
-import smpIcon from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import { NonceProvider } from "react-select";
 
 const dot = (color = "#ccc") => ({
@@ -30,7 +21,7 @@ const dot = (color = "#ccc") => ({
 const img = (icon) => ({
   alignItems: "center",
   display: "flex",
-  backgroundImage: `url(${icon})`,
+  backgroundImage: icon,
   backgroundRepeat: "no-repeat",
   backgroundSize: 20,
   backgroundPosition: "left center",
@@ -61,15 +52,15 @@ export const selectStyles = {
     backgroundImage: data.value === "all" ? "" :
       data.value === "active" ? "" :
         data.value === "inactive" ? "" :
-          data.value === "maintainers" ? `url(${icon5})` :
-            data.value === "getnighthawk" ? `url(${hawkIcon})`  :
-              data.value === "meshery" ? `url(${mesheryIcon})` :
-                data.value === "mesheryoperator" ? `url(${mesheryOpIcon})` :
-                  data.value === "imagehub" ? `url(${hubIcon})` :
-                    data.value === "meshmates" ? `url(${meshmateIcon})` :
-                      data.value === "smp" ? `url(${smpIcon})` :
+          data.value === "maintainers" ? data.icon :
+            data.value === "getnighthawk" ? data.icon  :
+              data.value === "meshery" ? data.icon :
+                data.value === "mesheryoperator" ? data.icon :
+                  data.value === "imagehub" ? data.icon :
+                    data.value === "meshmates" ? data.icon :
+                      data.value === "smp" ? data.icon :
                         data.value === "" ? "" :
-                          data.value === "community" ? `url(${communityIcon})` : `url(${landscapeIcon})`,
+                          data.value === "community" ? data.icon : `url(${landscapeIcon})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: 20,
     backgroundPosition: "14% 70%",  
@@ -89,12 +80,13 @@ export const selectStyles = {
 
     backgroundColor: isSelected
       ? data.value === "inactive" ? "rgba(171, 171, 171, 1)"
-        : "rgba(11, 177, 158, 1)"
+        : data.value === "" ? "white" :"rgba(11, 177, 158, 1)"
       : isFocused
-        ? data.value === "inactive" ? "rgba(171, 171, 171, 0.30)" : "rgba(11, 177, 158, 0.30)"
-        : "white",
+        ? data.value === "inactive" ? "rgba(171, 171, 171, 0.30)" 
+          : data.value === "" ? "white" : "rgba(11, 177, 158, 0.30)"
+        : "white",    
 
-    color: isSelected ? "white" : "black",
+    color: isSelected ? "white" : "grey",
 
     zIndex: 900,
 
@@ -111,15 +103,15 @@ export const selectStyles = {
   placeholder: styles => ({ ...styles, ...dot(), zIndex: 900 }),
   singleValue: (styles, { data }) => (data.value === "all"
     ? { ...styles, zIndex: 900}
-    : data.value === "maintainers" ? {...styles, ...img(icon5),backgroundPosition: "30% 50%"}
-      : data.value === "meshmates" ? { ...styles, ...img(meshmateIcon),backgroundPosition: "30% 50%" }
-        : data.value === "community" ? { ...styles, ...img(communityIcon),backgroundPosition: "30% 50%" }
-          : data.value === "landscape" ? { ...styles, ...img(landscapeIcon) ,backgroundPosition: "30% 50%"}
-            : data.value === "meshery" ? { ...styles, ...img(mesheryIcon),backgroundPosition: "30% 50%" }
-              : data.value === "mesheryoperator" ? { ...styles, ...img(mesheryOpIcon),backgroundPosition: "20% 50%" }
-                : data.value === "smp" ? { ...styles, ...img(smpIcon),backgroundPosition: "20% 50%" }
-                  : data.value === "imagehub" ? { ...styles, ...img(hubIcon),backgroundPosition: "30% 50%" }
-                    : data.value === "getnighthawk" ? { ...styles, ...img(hawkIcon),backgroundPosition: "28% 50%" }
+    : data.value === "maintainers" ? {...styles, ...img(data.icon),backgroundPosition: "30% 50%"}
+      : data.value === "meshmates" ? { ...styles, ...img(data.icon),backgroundPosition: "30% 50%" }
+        : data.value === "community" ? { ...styles, ...img(data.icon),backgroundPosition: "30% 50%" }
+          : data.value === "landscape" ? { ...styles, ...img(data.icon) ,backgroundPosition: "30% 50%"}
+            : data.value === "meshery" ? { ...styles, ...img(data.icon),backgroundPosition: "30% 50%" }
+              : data.value === "mesheryoperator" ? { ...styles, ...img(data.icon),backgroundPosition: "20% 50%" }
+                : data.value === "smp" ? { ...styles, ...img(data.icon),backgroundPosition: "20% 50%" }
+                  : data.value === "imagehub" ? { ...styles, ...img(data.icon),backgroundPosition: "30% 50%" }
+                    : data.value === "getnighthawk" ? { ...styles, ...img(data.icon),backgroundPosition: "28% 50%" }
                       : data.value === "active" ? { ...styles}
                         : data.value === "inactive" ? { ...styles}
                           : data.value === "" ? { display:"none" }

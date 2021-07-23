@@ -23,37 +23,36 @@ import InactiveMembers from "../../sections/Community/Members-grid/InactiveMembe
 import Maintainers from "../../sections/Community/Members-grid/Maintainers";
 import Meshmate from "../../sections/Community/Members-grid/Meshmate";
 import { bool } from "prop-types";
+import Layouts from "../../components/dropdownLayouts/layout";
+
+import communityIcon from "../../assets/images/community/community-green.svg";
+import hubIcon from "../../assets/images/image-hub/layer5-image-hub.svg";
+import icon5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
+import meshmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
+import hawkIcon from "../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import landscapeIcon from "../../assets/images/landscape/layer5_landscape_green.svg";
+import mesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import mesheryOpIcon from "../../assets/images/meshery-operator/meshery-operator-skinny.svg";
+import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 
 const options = [
-  { label: <option disabled className="category">BADGES&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>, value: "", color: `${theme.linkColor}`,isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;Community</option>, value: "community", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;Landscape</option>, value: "lanscape", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;Image Hub</option>, value: "imagehub", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;Meshery</option>, value: "meshery", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;Meshery Operator</option>, value: "mesheryoperator", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;Service Mesh Performance</option>, value: "smp", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;GetNighthawk</option>, value: "getnighthawk", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option disabled className="category">STATUS&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>, value: "", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;All Members</option>, value: "all", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;Active Members</option>, value: "active", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;Inactive Members</option>, value: "inactive", color: `${theme.menuColor}`, isFixed: true},
-  { label: <option disabled className="category">ROLE&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>, value: "", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;Maintainers</option>, value: "maintainers", color: `${theme.linkColor}`, isFixed: true},
-  { label: <option className="allOptions">&ensp;&emsp;&nbsp;&nbsp;&nbsp;MeshMates</option>, value: "meshmates", color: `${theme.linkColor}`, isFixed: true}
+  { label: <option disabled className="category comm">BADGES</option>, value: "", color: `${theme.linkColor}`,isFixed: true},
+  { label: <option className="allOptions">Community</option>, value: "community", color: `${theme.linkColor}`, isFixed: true, icon: `url(${communityIcon})`},
+  { label: <option className="allOptions">Landscape</option>, value: "lanscape", color: `${theme.linkColor}`, isFixed: true, icon: `url(${landscapeIcon})`},
+  { label: <option className="allOptions">Image Hub</option>, value: "imagehub", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hubIcon})`},
+  { label: <option className="allOptions">Meshery</option>, value: "meshery", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryIcon})`},
+  { label: <option className="allOptions">Meshery Operator</option>, value: "mesheryoperator", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryOpIcon})`},
+  { label: <option className="allOptions">Service Mesh Performance</option>, value: "smp", color: `${theme.linkColor}`, isFixed: true, icon: `url(${smpIcon})`},
+  { label: <option className="allOptions">GetNighthawk</option>, value: "getnighthawk", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hawkIcon})`},
+  { label: <option disabled className="category">STATUS</option>, value: "", color: `${theme.linkColor}`, isFixed: true},
+  { label: <option className="allOptions">All Members</option>, value: "all", color: `${theme.linkColor}`, isFixed: true},
+  { label: <option className="allOptions">Active Members</option>, value: "active", color: `${theme.linkColor}`, isFixed: true},
+  { label: <option className="allOptions">Inactive Members</option>, value: "inactive", color: `${theme.menuColor}`, isFixed: true},
+  { label: <option disabled className="category">ROLE</option>, value: "", color: `${theme.linkColor}`, isFixed: true},
+  { label: <option className="allOptions">Maintainers</option>, value: "maintainers", color: `${theme.linkColor}`, isFixed: true, icon: `url(${icon5})`},
+  { label: <option className="allOptions">MeshMates</option>, value: "meshmates", color: `${theme.linkColor}`, isFixed: true, icon: `url(${meshmateIcon})`}
 ];
 
-var style = document.createElement("style");
-style.innerHTML = `
-.category {
-font-weight: bold;
-color: black;
-}
-
-.allOptions {
-  color: grey;
-}
-`;
-document.head.appendChild(style);
 
 const MembersPage = () => {
   const [members, setMembers] = useState(options[1]);
@@ -75,7 +74,6 @@ const MembersPage = () => {
       case "inactive" : return <InactiveMembers {...props}/>;
       case "maintainers" : return <Maintainers {...props}/>;
       case "meshmates" : return <Meshmate {...props}/>;
-      //case "" : return props.hover={disabled};
 
       default: return <AllMembers {...props}/>;
     }
