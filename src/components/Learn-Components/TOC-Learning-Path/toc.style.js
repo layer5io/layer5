@@ -5,6 +5,7 @@ const TOCWrapper = styled.div`
     position: sticky;
     top: 10rem;
     left: 0;
+    margin-left: -3rem;
 
     .go-back {
         a {
@@ -36,24 +37,19 @@ const TOCWrapper = styled.div`
         font-weight: 500;
         font-size: 1.15rem;
   }
+    
 
     .toc-list {
   
         ul {
             position: relative;
             padding-inline-start: 2.75rem;
-            &::after {
-                position: absolute;
-                inset: 2rem auto 1rem 26px;
-                width: auto;
-                height: auto;
-                border-left: 1px solid rgba(177, 182, 184, 0.25);
-                content: "";
-                z-index: 0;
-            }
+            list-style-type: none;
+            
             li {
                 line-height: 3rem;
                 width: fit-content;
+                margin-left: 1rem;
 
                 &::marker {
                     color: rgba(177, 182, 184, 0.75);

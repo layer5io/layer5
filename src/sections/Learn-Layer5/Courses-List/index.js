@@ -28,7 +28,7 @@ const CoursesList = ({ coursesData, learnPath}) => {
               <Row className="learning-path-cards">
                 {coursesData.map((tutorial) => {
                   return (
-                    <Col sm={12} key={tutorial.id}>
+                    <Col sm={12} key={tutorial.id} name={tutorial.frontmatter.courseTitle}>
                       <Link to={tutorial.fields.course}>
                         <ContentCard chapter={tutorial} />
                       </Link>

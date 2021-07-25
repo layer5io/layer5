@@ -3,6 +3,13 @@ import React from "react";
 // import { Link } from "gatsby";
 import TOCWrapper from "./toc.style";
 
+
+const preReqSteps = [
+  {name: "Set up", link: "/service-mesh-management/meshery"},
+  {name:"Run Meshery",link:"/service-mesh-management/meshery/getting-started"},
+  {name: "Manage Meshery", link: "/service-mesh-management/meshery/operating-service-meshes"}
+];
+
 const TOC = ({ coursesData }) => {
 
   // const reformatTOC= (data) => {
@@ -25,10 +32,10 @@ const TOC = ({ coursesData }) => {
           <h5 className="toc-sub-heading">
             Pre-requisites
           </h5>
-          {[{name: "Set up", link: "/service-mesh-management/meshery"},{name:"Run Meshery",link:"/service-mesh-management/meshery/getting-started"},{name: "Manage Meshery", link: "/service-mesh-management/meshery/operating-service-meshes"}].map(item =>
+          {preReqSteps.map(item =>
             <li key={item.link}>
               <p className="toc-item">
-                <a href={item.link}>
+                <a href={`#${item.name}`}>
                   {item.name}
                 </a>
               </p>
@@ -42,7 +49,7 @@ const TOC = ({ coursesData }) => {
           {coursesData.map((item) => (
             <li key={item}>
               <p className="toc-item">
-                <a href={`/${item.fields.slug}`}>
+                <a href={`#${item.frontmatter.courseTitle}`}>
                   {item.frontmatter.courseTitle}
                 </a>
               </p>

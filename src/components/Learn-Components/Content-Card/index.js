@@ -9,7 +9,7 @@ import Button from "../../../reusecore/Button";
 
 const ContentCard = ({ chapter }) => (
   <ContentCardWrapper>
-    <div className="chapter-content-div">
+    <div className="chapter-content-div" id={chapter.frontmatter.courseTitle ? chapter.frontmatter.courseTitle : null} >
       <div className="chapter-content">
         <h2>
           {chapter.frontmatter.chapterTitle
