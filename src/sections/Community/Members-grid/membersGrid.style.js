@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import landscapeIcon from "../../../assets/images/landscape/layer5_landscape_green.svg";
 import { NonceProvider } from "react-select";
 
 const dot = (color = "#ccc") => ({
@@ -49,21 +48,10 @@ export const selectStyles = {
     marginBottom: "0.0em",
     paddingTop: "0.0em",
     paddingBottom: "0.0em",
-    backgroundImage: data.value === "all" ? "" :
-      data.value === "active" ? "" :
-        data.value === "inactive" ? "" :
-          data.value === "maintainers" ? data.icon :
-            data.value === "getnighthawk" ? data.icon  :
-              data.value === "meshery" ? data.icon :
-                data.value === "mesheryoperator" ? data.icon :
-                  data.value === "imagehub" ? data.icon :
-                    data.value === "meshmates" ? data.icon :
-                      data.value === "smp" ? data.icon :
-                        data.value === "" ? "" :
-                          data.value === "community" ? data.icon : `url(${landscapeIcon})`,
+    backgroundImage: (data.value) ? data.icon : "",
     backgroundRepeat: "no-repeat",
     backgroundSize: 20,
-    backgroundPosition: "14% 70%",  
+    backgroundPosition: "10% 70%",  
 
     ":before": {
       //backgroundColor: data.value === "active" || data.value === "inactive" ? data.color : "",
@@ -101,20 +89,11 @@ export const selectStyles = {
   ),
   input: styles => ({ ...styles, ...dot(), zIndex: 900 }),
   placeholder: styles => ({ ...styles, ...dot(), zIndex: 900 }),
-  singleValue: (styles, { data }) => (data.value === "all"
-    ? { ...styles, zIndex: 900}
-    : data.value === "maintainers" ? {...styles, ...img(data.icon),backgroundPosition: "30% 50%"}
-      : data.value === "meshmates" ? { ...styles, ...img(data.icon),backgroundPosition: "30% 50%" }
-        : data.value === "community" ? { ...styles, ...img(data.icon),backgroundPosition: "30% 50%" }
-          : data.value === "landscape" ? { ...styles, ...img(data.icon) ,backgroundPosition: "30% 50%"}
-            : data.value === "meshery" ? { ...styles, ...img(data.icon),backgroundPosition: "30% 50%" }
-              : data.value === "mesheryoperator" ? { ...styles, ...img(data.icon),backgroundPosition: "20% 50%" }
-                : data.value === "smp" ? { ...styles, ...img(data.icon),backgroundPosition: "20% 50%" }
-                  : data.value === "imagehub" ? { ...styles, ...img(data.icon),backgroundPosition: "30% 50%" }
-                    : data.value === "getnighthawk" ? { ...styles, ...img(data.icon),backgroundPosition: "28% 50%" }
-                      : data.value === "active" ? { ...styles}
-                        : data.value === "inactive" ? { ...styles}
-                          : data.value === "" ? { display:"none" }
+  singleValue: (styles, { data }) =>  (data.value === "mesheryoperator" 
+    ? { ...styles, ...img(data.icon),backgroundPosition: "20% 50%" }
+     : data.value === "smp" ? { ...styles, ...img(data.icon),backgroundPosition: "16% 50%" }  
+     : (data.value) ? {...styles, ...img(data.icon),backgroundPosition: "30% 50%"}         
+                           : data.value === "" ? { display:"none" }
                             : { ...styles, ...dot(data.color), zIndex: 900 }),
 };
 
