@@ -117,22 +117,27 @@ const WebBasedForm = () => {
                 <Field type="radio" name="tshirtSize" value="XS" />
                 XS
               </label>
+              <br></br>
               <label>
                 <Field type="radio" name="tshirtSize" value="S" />
                 S
               </label>
+              <br></br>
               <label>
                 <Field type="radio" name="tshirtSize" value="M" />
                 M
               </label>
+              <br></br>
               <label>
                 <Field type="radio" name="tshirtSize" value="L" />
                 L
               </label>
+              <br></br>
               <label>
                 <Field type="radio" name="tshirtSize" value="XL" />
                 XL
               </label>
+              <br></br>
               <label>
                 <Field type="radio" name="tshirtSize" value="XXL" />
                 XXL
@@ -444,18 +449,18 @@ const WebBasedForm = () => {
             </label>
             <br />
             <p className="para label">If you would like to pair with a MeshMate, please review each MeshMate profile to identify your ideal mentor. Once you have identified your ideal MeshMate or if you can’t decide on one, simple ask to be partnered in the #newcomers channel in the Layer5 Slack.</p>
-            <label htmlFor="interests" className="form-name">What has your recent focus been? What are you passionate about? Is there a specific project or aspect a project that interests you?</label>
-            <Field type="text" className="text-field" id="interests" name="interests" />
+            <label htmlFor="interests" className="form-name">What has your recent focus been? What are you passionate about? Is there a specific project or aspect a project that interests you? <span className="required-sign">*</span></label>
+            <Field type="text" className="text-field" id="interests" name="interests" required />
             <label htmlFor="profiency" className="form-name">If a contributor, what tools, technologies, and languages are you most proficient with?</label>
             <Field type="text" className="text-field" id="profiency" name="profiency" />
-            <label htmlFor="interestToShareContribution" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?</label>
+            <label htmlFor="interestToShareContribution" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects? <span className="required-sign">*</span></label>
             <div role="group" aria-labelledby="my-radio-group">
               <label>
-                <Field type="radio" name="interestToShareContribution" value="Yes" />
+                <Field type="radio" name="interestToShareContribution" value="Yes" required />
                 Yes
               </label>
               <label>
-                <Field type="radio" name="interestToShareContribution" value="No" />
+                <Field type="radio" name="interestToShareContribution" value="No" required />
                 No
               </label>
             </div>

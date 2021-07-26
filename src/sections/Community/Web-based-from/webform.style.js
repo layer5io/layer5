@@ -147,6 +147,11 @@ const Webform = styled.div`
             font-size: 1rem;
         }
 
+        .text-field:focus {
+          border: 2px solid #00B39F;
+
+        }
+
         .form-select {
             width: 150px;
             border: 1px solid black;
