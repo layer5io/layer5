@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import icon5 from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
-import meshmateIcon from "../../../assets/images/meshmate/meshmate-icon.svg";
+import { NonceProvider } from "react-select";
 
 const dot = (color = "#ccc") => ({
   alignItems: "center",
@@ -21,7 +20,7 @@ const dot = (color = "#ccc") => ({
 const img = (icon) => ({
   alignItems: "center",
   display: "flex",
-  backgroundImage: `url(${icon})`,
+  backgroundImage: icon,
   backgroundRepeat: "no-repeat",
   backgroundSize: 20,
   backgroundPosition: "left center",
@@ -44,18 +43,18 @@ export const selectStyles = {
   option: (styles, { data, isFocused, isSelected }) => ({
     ...styles,
 
-    alignItems: "center",
-    display: "flex",
-    backgroundImage: data.value === "all" ? ""
-      : data.value === "active" ? "" :
-        data.value === "inactive" ? "" :
-          data.value === "maintainers" ? `url(${icon5})` : `url(${meshmateIcon})`,
+    alignItems: "left",
+    marginTop: "0.0em",
+    marginBottom: "0.0em",
+    paddingTop: "0.0em",
+    paddingBottom: "0.0em",
+    backgroundImage: (data.value) ? data.icon : "",
     backgroundRepeat: "no-repeat",
     backgroundSize: 20,
-    backgroundPosition: "4% 50%",
+    backgroundPosition: "10% 70%",  
 
     ":before": {
-      backgroundColor: data.value === "active" || data.value === "inactive" ? data.color : "",
+      //backgroundColor: data.value === "active" || data.value === "inactive" ? data.color : "",
       borderRadius: 10,
       content: "\" \"",
       display: "block",
@@ -68,12 +67,13 @@ export const selectStyles = {
 
     backgroundColor: isSelected
       ? data.value === "inactive" ? "rgba(171, 171, 171, 1)"
-        : "rgba(11, 177, 158, 1)"
+        : data.value === "" ? "white" :"rgba(11, 177, 158, 1)"
       : isFocused
-        ? data.value === "inactive" ? "rgba(171, 171, 171, 0.30)" : "rgba(11, 177, 158, 0.30)"
-        : "white",
+        ? data.value === "inactive" ? "rgba(171, 171, 171, 0.30)" 
+          : data.value === "" ? "white" : "rgba(11, 177, 158, 0.30)"
+        : "white",    
 
-    color: isSelected ? "white" : "black",
+    color: isSelected ? "white" : "grey",
 
     zIndex: 900,
 
@@ -88,11 +88,12 @@ export const selectStyles = {
   ),
   input: styles => ({ ...styles, ...dot(), zIndex: 900 }),
   placeholder: styles => ({ ...styles, ...dot(), zIndex: 900 }),
-  singleValue: (styles, { data }) => (data.value === "all"
-    ? { ...styles, zIndex: 900 }
-    : data.value === "maintainers" ? {...styles, ...img(icon5)}
-      : data.value === "meshmates" ? { ...styles, ...img(meshmateIcon) }
-        : { ...styles, ...dot(data.color), zIndex: 900 }),
+  singleValue: (styles, { data }) =>  (data.value === "mesheryoperator" 
+    ? { ...styles, ...img(data.icon),backgroundPosition: "20% 50%" }
+     : data.value === "smp" ? { ...styles, ...img(data.icon),backgroundPosition: "16% 50%" }  
+     : (data.value) ? {...styles, ...img(data.icon),backgroundPosition: "25% 50%"}         
+                           : data.value === "" ? { display:"none" }
+                            : { ...styles, ...dot(data.color), zIndex: 900 }),
 };
 
 export const dropdownTheme = theme => ({
@@ -183,8 +184,8 @@ export const MembersGridWrapper = styled.div`
             }
 
 			img {
-                text-align: center;
-                align-items: center;
+        text-align: center;
+        align-items: center;
 				width: 70%;
 				height: inherit;
 				margin-right: 0rem;
@@ -197,7 +198,7 @@ export const MembersGridWrapper = styled.div`
             }
     }
     .memberProfileBtn{
-        margin: 1rem;
-
+      margin: 1rem;
     }
+
 `;
