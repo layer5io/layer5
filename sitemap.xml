@@ -31,8 +31,8 @@
 <url> <loc>https://layer5.io/blog/announcements/layer5-at-kubecon-na</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/meshery/functional-testing-with-cypress-in-meshery-ui</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/community/meet-the-maintainer-michael-gfeller</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/blog/community/meshmate-of-the-year-2020-nikhil-ladha</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/meshery/introducing-meshkit-and-the-meshery-adapter-library</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/blog/community/meshmate-of-the-year-2020-nikhil-ladha</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/community/meet-the-maintainer-jash-patel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/announcements/announcing-meshery-v050</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/cloud-native/rethinking-protocol-buffers-with-buf</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -287,11 +287,13 @@
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-service-meshes-for-developers/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/working-with-meshery-consul/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-service-meshes-for-developers/improving-performance-of-service-mesh/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-service-meshes-for-developers/securing-the-service-mesh/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/working-with-meshery-consul/istio/filtering-traffic/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/working-with-meshery-consul/istio/mutual-tls/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/istio/getting-started/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/circuit-breaking/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/deploy-an-application/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/expose-services/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
