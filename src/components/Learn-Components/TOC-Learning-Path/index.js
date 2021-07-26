@@ -1,6 +1,6 @@
 import React from "react";
-// import { HiOutlineChevronLeft } from "react-icons/hi";
-// import { Link } from "gatsby";
+import { HiOutlineChevronLeft } from "react-icons/hi";
+import { Link } from "gatsby";
 import TOCWrapper from "./toc.style";
 
 
@@ -21,12 +21,12 @@ const TOC = ({ coursesData }) => {
 
   return (
     <TOCWrapper>
-      {/** <div className="go-back">
-        <Link to={`/learn-ng`}>
+      <div className="go-back">
+        <Link to={"/learn-ng"}>
           <HiOutlineChevronLeft />
-          <h4>Learn-Layer5</h4>
+          <h4>Go Back</h4>
         </Link>
-      </div>*/}
+      </div>
       <div className="toc-list">
         <ul>
           <h5 className="toc-sub-heading">

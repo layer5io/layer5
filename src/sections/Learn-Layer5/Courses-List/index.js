@@ -16,7 +16,6 @@ const CoursesList = ({ coursesData, learnPath}) => {
         title={learnPath}
       />
       <Container>
-        <Button url="/learn-ng" title="Go Back" className="go-back-btn" />
         <Row className="course-list">
           <Col sm={0} lg={3} xl={3}>
             <TOC coursesData={coursesData} />

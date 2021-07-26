@@ -8,6 +8,7 @@ const TOCWrapper = styled.div`
     margin-left: -3rem;
 
     .go-back {
+        margin-left: 1rem;
         a {
             display: inline-flex;
             svg {
