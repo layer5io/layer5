@@ -9,7 +9,7 @@ const CardComponent = ({ tutorial , courseCount}) => {
     <CardWrapper>
       <Link to={tutorial.fields.learnpath} className="card-link">
         <div
-          style={{ backgroundColor: tutorial.frontmatter.themeColor }}
+          style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}` }}
           className="card-parent"
         >
           <div>
@@ -26,7 +26,9 @@ const CardComponent = ({ tutorial , courseCount}) => {
               ) : null}
             </div>
             <div className="card-desc">
-              <p>{tutorial.frontmatter.description}</p>
+              <p className="summary">{tutorial.frontmatter.description}</p>
+            </div>
+            <div className="card-subdata">
               <p>{courseCount} Course{courseCount ===1  ? "" : "s"}</p>
             </div>
           </div>
