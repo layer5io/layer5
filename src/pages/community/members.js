@@ -34,6 +34,8 @@ import landscapeIcon from "../../assets/images/landscape/layer5_landscape_green.
 import mesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import mesheryOpIcon from "../../assets/images/meshery-operator/meshery-operator-skinny.svg";
 import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+import inactiveIcon from "../../assets/images/status/inactive.png";
+import activeIcon from "../../assets/images/status/active.png";
 
  const options = [
    { label: <DropdownWrapper><option disabled className="category comm">BADGES</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`,isFixed: true},
@@ -46,8 +48,8 @@ import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.
    { label: <DropdownWrapper><option className="allOptions">GetNighthawk</option></DropdownWrapper>, value: "getnighthawk", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hawkIcon})`},
    { label: <DropdownWrapper><option disabled className="category">STATUS</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`, isFixed: true},
    { label: <DropdownWrapper><option className="allOptions">All Members</option></DropdownWrapper>, value: "all", color: `${theme.linkColor}`, isFixed: true, icon: ""},
-   { label: <DropdownWrapper><option className="allOptions">Active Members</option></DropdownWrapper>, value: "active", color: `${theme.linkColor}`, isFixed: true, icon: ""},
-   { label: <DropdownWrapper><option className="allOptions">Inactive Members</option></DropdownWrapper>, value: "inactive", color: `${theme.menuColor}`, isFixed: true, icon: ""},
+   { label: <DropdownWrapper><option className="allOptions">Active Members</option></DropdownWrapper>, value: "active", color: `${theme.linkColor}`, isFixed: true, icon:  `url(${activeIcon})`},
+   { label: <DropdownWrapper><option className="allOptions">Inactive Members</option></DropdownWrapper>, value: "inactive", color: `${theme.menuColor}`, isFixed: true, icon: `url(${inactiveIcon})`},
    { label: <DropdownWrapper><option disabled className="category">ROLE</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`, isFixed: true},
    { label: <DropdownWrapper><option className="allOptions">Maintainers</option></DropdownWrapper>, value: "maintainers", color: `${theme.linkColor}`, isFixed: true, icon: `url(${icon5})`},
    { label: <DropdownWrapper><option className="allOptions">MeshMates</option></DropdownWrapper>, value: "meshmates", color: `${theme.linkColor}`, isFixed: true, icon: `url(${meshmateIcon})`}
@@ -56,7 +58,7 @@ import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.
 
 
 const MembersPage = () => {
-  const [members, setMembers] = useState(options[1]);
+  const [members, setMembers] = useState(options[10]);
 
   const handleChange = value => {
     setMembers(value);

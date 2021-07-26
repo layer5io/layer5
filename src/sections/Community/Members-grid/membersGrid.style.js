@@ -59,7 +59,6 @@ export const selectStyles = {
       content: "\" \"",
       display: "block",
       marginRight: 12,
-      marginTop: 1,
       marginLeft: data.value === "all" || data.value === "active" || data.value === "inactive" ? 1.5 : 5,
       height: 10,
       width: 10,
@@ -92,7 +91,7 @@ export const selectStyles = {
   singleValue: (styles, { data }) =>  (data.value === "mesheryoperator" 
     ? { ...styles, ...img(data.icon),backgroundPosition: "20% 50%" }
      : data.value === "smp" ? { ...styles, ...img(data.icon),backgroundPosition: "16% 50%" }  
-     : (data.value) ? {...styles, ...img(data.icon),backgroundPosition: "30% 50%"}         
+     : (data.value) ? {...styles, ...img(data.icon),backgroundPosition: "25% 50%"}         
                            : data.value === "" ? { display:"none" }
                             : { ...styles, ...dot(data.color), zIndex: 900 }),
 };

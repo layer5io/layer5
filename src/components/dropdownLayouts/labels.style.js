@@ -11,7 +11,7 @@ export const DropdownWrapper = styled.div`
 .allOptions {
       margin-left: 2rem;
       font-size: medium;
-    }
+    }  
 
 @media only screen and (max-width: 992px) {
         .allOptions{
