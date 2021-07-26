@@ -147,6 +147,11 @@ const Webform = styled.div`
             font-size: 1rem;
         }
 
+        .text-field:focus {
+          border: 2px solid #00B39F;
+
+        }
+
         .form-select {
             width: 150px;
             border: 1px solid black;
@@ -210,7 +215,7 @@ const Webform = styled.div`
         align-items: center;
         justify-content: center;
         margin: 90px;
-        padding:0px 200px;
+        padding:0px 10px;
     }
 
     .option {
@@ -229,42 +234,38 @@ const Webform = styled.div`
     }
 
     .black-box {
-      margin: auto;
-      width: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 20px;
       min-height: 400px;
       margin: 3rem 13%;
-      background-color: #1E2117;
-
-      h2{
-        padding-top: 60px;
+      background-color: ${props => props.theme.darkJungleGreenColor};
+      
+      h2, h4 {
         color: white;
-        font-size: 2rem;
-        font-weight: 700;
-        text-align: center;
       }
-
+      h4{
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
       p {
-        padding-top: 10px;
+        margin-top: .85rem;
         color: white;
-        text-align: center;
       }
 
       .btn-box {
-        width: 55%;
-        margin: auto;
 
-        .btn-one {
-          color: white;
-          margin: 10px;
-        }
-
-        .btn-two {
-          margin: 10px;
+        .btn-one, .btn-two {
+          margin: .65rem;
         }
 
         .btn-one:hover {
-          color: #111111;
+          color: ${props => props.theme.darkJungleGreenColor};
+        }
+        .btn-two:hover {
+          color: ${props => props.theme.darkJungleGreenColor};
         }
       }
 
