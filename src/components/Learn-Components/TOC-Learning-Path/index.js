@@ -24,14 +24,16 @@ const TOC = ({ coursesData }) => {
       <div className="go-back">
         <Link to={"/learn-ng"}>
           <HiOutlineChevronLeft />
-          <h4>Go Back</h4>
+          <h4>Learning Paths</h4>
         </Link>
       </div>
       <div className="toc-list">
         <ul>
-          <h5 className="toc-sub-heading">
-            Pre-requisites
-          </h5>
+          <Link to="#pre-requisites">
+            <h5 className="toc-sub-heading">
+              Pre-requisites
+            </h5>
+          </Link>
           {preReqSteps.map(item =>
             <li key={item.link}>
               <p className="toc-item">
@@ -42,9 +44,11 @@ const TOC = ({ coursesData }) => {
             </li>
           )}
 
-          <h5 className="toc-sub-heading">
-            Courses
-          </h5>
+          <Link to="#courses-list">
+            <h5 className="toc-sub-heading">
+              Courses
+            </h5>
+          </Link>
 
           {coursesData.map((item) => (
             <li key={item}>

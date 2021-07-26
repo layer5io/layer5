@@ -5,8 +5,8 @@ import SetupPreReqWrapper from "./setup-pre-req.style";
 
 const SetupPreReq = () => (
   <SetupPreReqWrapper>
-    <div className="get-started-desc" >
-      <h2>Get Started</h2>
+    <div className="get-started-desc" id="pre-requisites">
+      <h2>Pre-requisites</h2>
       <p>Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads.</p>
     </div>
     <div className="container-card" id="Set up">

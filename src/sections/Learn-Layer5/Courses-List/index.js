@@ -22,7 +22,7 @@ const CoursesList = ({ coursesData, learnPath}) => {
           </Col>
           <Col sm={12} lg={9} xl={9}>
             <SetupPreReq />
-            <div className="course-list-cont">
+            <div className="course-list-cont" id="courses-list">
               <h2>Courses</h2>
               <Row className="learning-path-cards">
                 {coursesData.map((tutorial) => {
