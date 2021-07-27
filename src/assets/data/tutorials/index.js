@@ -87,6 +87,7 @@ const data = [
             }
         ]
     },
+    
     {
         date: "Jan. 28 2021",
         topic: "Beginner's guide to contributing to Meshery and mesheryctl",
@@ -101,6 +102,19 @@ const data = [
             }
         ]
     },
+    {
+        date: "Jul. 27 2021",
+        topic: "Contributing to Meshery API Swagger Documentation" ,
+        resources: {
+            recording: "https://www.youtube.com/watch?v=NAvt6B5kNIQ"
+        },
+        presenters: [
+            {
+                link: "/community/members/piyush-singariya",
+                name: "Piyush Singariya",
+            }
+        ] 
+    },     
 ];
 
 export default data;
