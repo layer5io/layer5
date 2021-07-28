@@ -5,7 +5,6 @@ const TOCWrapper = styled.div`
     position: sticky;
     top: 10rem;
     left: 0;
-    margin-left: -3rem;
     .chapter-back {
         a {
             display: inline-flex;
@@ -35,7 +34,7 @@ const TOCWrapper = styled.div`
             padding-inline-start: 2.5rem;
             &::after {
                 position: absolute;
-                inset: 1.5rem auto 1.5rem 26px;
+                inset: 1.5rem auto 1.5rem 27px;
                 width: auto;
                 height: auto;
                 border-left: 1px solid rgba(177, 182, 184, 0.25);
@@ -68,6 +67,16 @@ const TOCWrapper = styled.div`
                     color: ${props => props.theme.secondaryColor};
                 }
             }
+        }
+    }
+    @media(max-width: 992px){
+        .toc-list{
+            ul{
+                &::after {
+                    inset: 1.5rem auto 1.5rem 28px;
+                }
+            }
+            
         }
     }
 `;

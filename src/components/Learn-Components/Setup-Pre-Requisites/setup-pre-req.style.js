@@ -57,10 +57,12 @@ const SetupPreReqWrapper = styled.div`
                     img {
                         height: 2rem;
                         flex: 0 0 10%;
+                        margin: 0 0.5rem;
                     }
                     svg {
                         font-size: 2.15rem;
                         flex: 0 0 10%;
+                        margin: 0 0.5rem;
                     }
                 }
             }

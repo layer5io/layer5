@@ -5,7 +5,6 @@ const TOCWrapper = styled.div`
     position: sticky;
     top: 10rem;
     left: 0;
-    margin-left: -3rem;
 
     .go-back {
         margin: 1rem 0;
@@ -50,9 +49,9 @@ const TOCWrapper = styled.div`
             list-style-type: none;
             
             li {
-                margin: 1rem 0;
+                margin: 1rem 0 1rem 0.5rem;
                 width: fit-content;
-                margin-left: 1rem;
+                
 
                 &::marker {
                     color: rgba(177, 182, 184, 0.75);
