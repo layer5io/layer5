@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 const TOCWrapper = styled.div`
 
+    position: sticky;
+    top: 10rem;
+    left: 0;
+    margin-left: -3rem;
     .chapter-back {
         a {
             display: inline-flex;
@@ -23,16 +27,15 @@ const TOCWrapper = styled.div`
                 }
             }
         }
-        margin-bottom: -1rem;
     }
 
     .toc-list {
         ul {
             position: relative;
-            padding-inline-start: 2.75rem;
+            padding-inline-start: 2.5rem;
             &::after {
                 position: absolute;
-                inset: 2rem auto 1rem 26px;
+                inset: 1.5rem auto 1.5rem 26px;
                 width: auto;
                 height: auto;
                 border-left: 1px solid rgba(177, 182, 184, 0.25);
@@ -40,9 +43,8 @@ const TOCWrapper = styled.div`
                 z-index: 0;
             }
             li {
-                line-height: 3rem;
                 width: fit-content;
-
+                margin: 1rem 0;
                 &::marker {
                     color: rgba(177, 182, 184, 0.75);
                 }
