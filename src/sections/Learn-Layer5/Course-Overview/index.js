@@ -67,7 +67,7 @@ const CourseOverview = ({ course, chapters }) => {
             {course.frontmatter.toc.map((item, index) => (
               <Link
                 key={index}
-                to={`/learn-ng/${course.fields.learnpath}/${course.fields.course}/istio/${item}/`}
+                to={`istio/${item}`}
                 className="chapter-link"
               >
                 <ChapterCard chapterNum={index+1} chapter={getChapterTitle(item, chapters)} />

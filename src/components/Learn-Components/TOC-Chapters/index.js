@@ -15,8 +15,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const getCurrentPage = (location) => {
     if (location !== undefined && location.href !== undefined) {
       const currentChapter = location.href.split("/");
-      console.log(currentChapter);
-      return currentChapter[currentChapter.length - 2];
+      return currentChapter[currentChapter.length - 1];
     }
   };
 
@@ -34,10 +33,17 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
       </div>
       <div className="toc-list">
         <ul>
+<<<<<<< HEAD
           {availableChapters.map((item) => (
             <li key={item} className={item === getCurrentPage(location)? "active-link" : ""}>
               <p className="toc-item">
                 <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh()}/${item}/`}>
+=======
+          {courseData.frontmatter.toc.map((item,index) => (
+            <li key={index} className={item === getCurrentPage(location) ? "active-link" : ""}>
+              <p className="toc-item">
+                <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/istio/${item}`}>
+>>>>>>> fixed active-link issue
                   {reformatTOC(item)}
                 </a>
               </p>
