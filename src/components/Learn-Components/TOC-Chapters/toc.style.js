@@ -79,6 +79,28 @@ const TOCWrapper = styled.div`
             
         }
     }
+    @media(max-width: 767px){
+        position: initial;
+         .toc-list{
+            ul{
+                display: flex;
+                flex-flow: wrap;
+                margin: 1.5rem 0;
+                padding-inline-start: 0rem;
+                &::after{
+                    display: none;
+                }
+                li {
+                    list-style-type: none;
+                    margin:0.5rem;
+                }
+            }
+    }
+    .chapter-back {
+        h4 {
+            margin: 0 1rem;
+        }
+    }
 `;
 
 export default TOCWrapper;

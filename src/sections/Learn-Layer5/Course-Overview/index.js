@@ -22,7 +22,6 @@ const CourseOverview = ({ course, chapters }) => {
         return chapterList[i];
     }
   };
-
   return (
     <CourseOverviewWrapper>
       <div
@@ -68,7 +67,7 @@ const CourseOverview = ({ course, chapters }) => {
             {course.frontmatter.toc.map((item, index) => (
               <Link
                 key={index}
-                to={`./istio/${item}`}
+                to={`/learn-ng/${course.fields.learnpath}/${course.fields.course}/istio/${item}/`}
                 className="chapter-link"
               >
                 <ChapterCard chapterNum={index+1} chapter={getChapterTitle(item, chapters)} />

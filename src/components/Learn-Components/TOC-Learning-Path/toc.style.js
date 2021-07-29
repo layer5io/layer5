@@ -78,6 +78,9 @@ const TOCWrapper = styled.div`
             }
         }
     }
+    @media (max-width:767px){
+        position: initial;
+    }
 `;
 
 export default TOCWrapper;
