@@ -14,6 +14,7 @@ const TOC = ({ courseData, chapterData, location }) => {
   const getCurrentPage = (location) => {
     if (location !== undefined && location.href !== undefined) {
       const currentChapter = location.href.split("/");
+      console.log(currentChapter);
       return currentChapter[currentChapter.length - 2];
     }
   };
@@ -27,8 +28,8 @@ const TOC = ({ courseData, chapterData, location }) => {
       </div>
       <div className="toc-list">
         <ul>
-          {courseData.frontmatter.toc.map((item) => (
-            <li key={item} className={item === getCurrentPage(location)? "active-link" : ""}>
+          {courseData.frontmatter.toc.map((item,index) => (
+            <li key={index} className={item === getCurrentPage(location)? "active-link" : ""}>
               <p className="toc-item">
                 <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/istio/${item}/`}>
                   {reformatTOC(item)}
