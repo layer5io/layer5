@@ -15,6 +15,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const getCurrentPage = (location) => {
     if (location !== undefined && location.href !== undefined) {
       const currentChapter = location.href.split("/");
+      console.log(currentChapter);
       return currentChapter[currentChapter.length - 2];
     }
   };
