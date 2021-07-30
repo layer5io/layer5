@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { NonceProvider } from "react-select";
+import { Autoplay } from "swiper";
 
 const dot = (color = "#ccc") => ({
   alignItems: "center",
@@ -58,13 +59,15 @@ export const selectStyles = {
       borderRadius: 10,
       content: "\" \"",
       display: "block",
+      
       marginRight: 12,
       marginLeft: data.value === "all" || data.value === "active" || data.value === "inactive" ? 1.5 : 5,
+
       height: 10,
       width: 10,
       zIndex: 1000,
     },
-
+    
     backgroundColor: isSelected
       ? data.value === "inactive" ? "rgba(171, 171, 171, 1)"
         : data.value === "" ? "white" :"rgba(11, 177, 158, 1)"
@@ -89,11 +92,12 @@ export const selectStyles = {
   input: styles => ({ ...styles, ...dot(), zIndex: 900 }),
   placeholder: styles => ({ ...styles, ...dot(), zIndex: 900 }),
   singleValue: (styles, { data }) =>  (data.value === "mesheryoperator" 
-    ? { ...styles, ...img(data.icon),backgroundPosition: "20% 50%" }
-     : data.value === "smp" ? { ...styles, ...img(data.icon),backgroundPosition: "16% 50%" }  
-     : (data.value) ? {...styles, ...img(data.icon),backgroundPosition: "25% 50%"}         
-                           : data.value === "" ? { display:"none" }
-                            : { ...styles, ...dot(data.color), zIndex: 900 }),
+    ? { ...styles, ...img(data.icon),backgroundPosition: "20% 50%",marginLeft: "-26px" }
+    : data.value === "smp" ? { ...styles, ...img(data.icon),backgroundPosition: "16% 50%",marginLeft: "-26px" }  
+      : (data.value) ? {...styles, ...img(data.icon),backgroundPosition: "27% 50%",marginLeft: "-29px"}         
+        : data.value === "" ? { display:"none" }
+          : { ...styles, ...dot(data.color), zIndex: 900 }),
+
 };
 
 export const dropdownTheme = theme => ({
