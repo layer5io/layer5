@@ -69,11 +69,20 @@ const TOCWrapper = styled.div`
             }
         }
     }
+    @media(max-width: 1250px){
+        .toc-list{
+            ul{
+                &::after {
+                    inset: 1.5rem auto 1.5rem 25.9px;
+                }
+            }
+        }
+    }
     @media(max-width: 992px){
         .toc-list{
             ul{
                 &::after {
-                    inset: 1.5rem auto 1.5rem 27px;
+                    inset: 1.5rem auto 1.5rem 27.4px;
                 }
             }
             

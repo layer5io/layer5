@@ -11,7 +11,6 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
     newData = `${firstLetter}${newData.slice(1)}`;
     return newData;
   };
-
   const getCurrentPage = (location) => {
     if (location !== undefined && location.href !== undefined) {
       const currentChapter = location.href.split("/");
