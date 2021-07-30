@@ -98,8 +98,7 @@ const Faq = (props) => {
         </Accordion>
         <div className="askus_section">
           <h2>Didn't find an answer to your question?</h2>
-          <p>Ask Us</p>
-          <ContactFormModal callout_text="Let Us Know" form_header="Mail Us Your Query" />
+          <ContactFormModal callout_text="Just Ask" form_header="Mail Us Your Query" />
         </div>
       </Container>
     </FaqSectionWrapper>
