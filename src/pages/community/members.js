@@ -37,22 +37,22 @@ import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.
 import inactiveIcon from "../../assets/images/status/inactive.png";
 import activeIcon from "../../assets/images/status/active.png";
 
- const options = [
-   { label: <DropdownWrapper><option disabled className="category comm">BADGES</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`,isFixed: true},
-   { label: <DropdownWrapper><option className="allOptions">Community</option></DropdownWrapper>, value: "community", color: `${theme.linkColor}`, isFixed: true, icon: `url(${communityIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Landscape</option></DropdownWrapper>, value: "lanscape", color: `${theme.linkColor}`, isFixed: true, icon: `url(${landscapeIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Image Hub</option></DropdownWrapper>, value: "imagehub", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hubIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Meshery</option></DropdownWrapper>, value: "meshery", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Meshery Operator</option></DropdownWrapper>, value: "mesheryoperator", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryOpIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Service Mesh Performance</option></DropdownWrapper>, value: "smp", color: `${theme.linkColor}`, isFixed: true, icon: `url(${smpIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">GetNighthawk</option></DropdownWrapper>, value: "getnighthawk", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hawkIcon})`},
-   { label: <DropdownWrapper><option disabled className="category">STATUS</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`, isFixed: true},
-   { label: <DropdownWrapper><option className="allOptions">All Members</option></DropdownWrapper>, value: "all", color: `${theme.linkColor}`, isFixed: true, icon: ""},
-   { label: <DropdownWrapper><option className="allOptions">Active Members</option></DropdownWrapper>, value: "active", color: `${theme.linkColor}`, isFixed: true, icon:  `url(${activeIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Inactive Members</option></DropdownWrapper>, value: "inactive", color: `${theme.menuColor}`, isFixed: true, icon: `url(${inactiveIcon})`},
-   { label: <DropdownWrapper><option disabled className="category">ROLE</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`, isFixed: true},
-   { label: <DropdownWrapper><option className="allOptions">Maintainers</option></DropdownWrapper>, value: "maintainers", color: `${theme.linkColor}`, isFixed: true, icon: `url(${icon5})`},
-   { label: <DropdownWrapper><option className="allOptions">MeshMates</option></DropdownWrapper>, value: "meshmates", color: `${theme.linkColor}`, isFixed: true, icon: `url(${meshmateIcon})`}
+const options = [
+  { label: <DropdownWrapper><option disabled className="category comm">BADGES</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`,isFixed: true},
+  { label: <DropdownWrapper><option className="allOptions">Community</option></DropdownWrapper>, value: "community", color: `${theme.linkColor}`, isFixed: true, icon: `url(${communityIcon})`},
+  { label: <DropdownWrapper><option className="allOptions">Landscape</option></DropdownWrapper>, value: "landscape", color: `${theme.linkColor}`, isFixed: true, icon: `url(${landscapeIcon})`},
+  { label: <DropdownWrapper><option className="allOptions">Image Hub</option></DropdownWrapper>, value: "imagehub", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hubIcon})`},
+  { label: <DropdownWrapper><option className="allOptions">Meshery</option></DropdownWrapper>, value: "meshery", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryIcon})`},
+  { label: <DropdownWrapper><option className="allOptions">Meshery Operator</option></DropdownWrapper>, value: "mesheryoperator", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryOpIcon})`},
+  { label: <DropdownWrapper><option className="allOptions">Service Mesh Performance</option></DropdownWrapper>, value: "smp", color: `${theme.linkColor}`, isFixed: true, icon: `url(${smpIcon})`},
+  { label: <DropdownWrapper><option className="allOptions">GetNighthawk</option></DropdownWrapper>, value: "getnighthawk", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hawkIcon})`},
+  { label: <DropdownWrapper><option disabled className="category">STATUS</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`, isFixed: true},
+  { label: <DropdownWrapper><option className="allOptions">All Members</option></DropdownWrapper>, value: "all", color: `${theme.linkColor}`, isFixed: true, icon: ""},
+  { label: <DropdownWrapper><option className="allOptions">Active Members</option></DropdownWrapper>, value: "active", color: `${theme.linkColor}`, isFixed: true, icon:  `url(${activeIcon})`},
+  { label: <DropdownWrapper><option className="allOptions">Inactive Members</option></DropdownWrapper>, value: "inactive", color: `${theme.menuColor}`, isFixed: true, icon: `url(${inactiveIcon})`},
+  { label: <DropdownWrapper><option disabled className="category">ROLE</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`, isFixed: true},
+  { label: <DropdownWrapper><option className="allOptions">Maintainers</option></DropdownWrapper>, value: "maintainers", color: `${theme.linkColor}`, isFixed: true, icon: `url(${icon5})`},
+  { label: <DropdownWrapper><option className="allOptions">MeshMates</option></DropdownWrapper>, value: "meshmates", color: `${theme.linkColor}`, isFixed: true, icon: `url(${meshmateIcon})`}
 ]; 
 
 
