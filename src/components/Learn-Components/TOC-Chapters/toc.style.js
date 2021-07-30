@@ -73,7 +73,7 @@ const TOCWrapper = styled.div`
         .toc-list{
             ul{
                 &::after {
-                    inset: 1.5rem auto 1.5rem 28px;
+                    inset: 1.5rem auto 1.5rem 27px;
                 }
             }
             
