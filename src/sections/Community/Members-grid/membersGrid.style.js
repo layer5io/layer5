@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NonceProvider } from "react-select";
-import { Autoplay } from "swiper";
+
 
 const dot = (color = "#ccc") => ({
   alignItems: "center",
