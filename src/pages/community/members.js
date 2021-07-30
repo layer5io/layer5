@@ -43,7 +43,7 @@ import activeIcon from "../../assets/images/status/active.png";
 const options = [
   { label: <DropdownWrapper><div className="category " >BADGES</div></DropdownWrapper>, value: "", color: `${theme.linkColor}`,isFixed: true},
   { label: <DropdownWrapper><div className="allOptions">Community</div></DropdownWrapper>, value: "community", color: `${theme.linkColor}`, isFixed: true, icon: `url(${communityIcon})`},
-  { label: <DropdownWrapper><div className="allOptions">Landscape</div></DropdownWrapper>, value: "lanscape", color: `${theme.linkColor}`, isFixed: true, icon: `url(${landscapeIcon})`},
+  { label: <DropdownWrapper><div className="allOptions">Landscape</div></DropdownWrapper>, value: "landscape", color: `${theme.linkColor}`, isFixed: true, icon: `url(${landscapeIcon})`},
   { label: <DropdownWrapper><div className="allOptions">Image Hub</div></DropdownWrapper>, value: "imagehub", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hubIcon})`},
   { label: <DropdownWrapper><div className="allOptions">Meshery </div></DropdownWrapper>,value: "meshery", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryIcon})`},
   { label: <DropdownWrapper><div className="allOptions">Meshery Operator</div></DropdownWrapper>, value: "mesheryoperator", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryOpIcon})`},
