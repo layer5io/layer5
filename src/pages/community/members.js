@@ -32,7 +32,7 @@ import meshmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
 import hawkIcon from "../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
 import landscapeIcon from "../../assets/images/landscape/layer5_landscape_green.svg";
 import mesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import mesheryOpIcon from "../../assets/images/meshery-operator/meshery-operator-skinny.svg";
+import mesheryOpIcon from "../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import inactiveIcon from "../../assets/images/status/inactive.png";
 import activeIcon from "../../assets/images/status/active.png";
