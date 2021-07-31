@@ -39,7 +39,9 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Docker User</h2>
-        <Code codeString={dedent`mesheryctl system start`}
+        <Code codeString={dedent`curl -L https://git.io/meshery | PLATFORM=docker bash - 
+        mesheryctl system start`
+        }
         />
       </>
     )
@@ -62,7 +64,8 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Google Kubernetes Engine User</h2>
-        <Code codeString={dedent`mesheryctl system config gke
+        <Code codeString={dedent` mesheryctl system config gke --token *PATH_TO_TOKEN*
+        ./generate_kubeconfig_gke.sh cluster-admin-sa-gke default
         mesheryctl system start`}
         />
       </>
@@ -75,36 +78,22 @@ const supported_platforms = [
       <>
         <h2>Helm Chart</h2>
         <p>Install on Kubernetes using Helm:</p>
-        <Code codeString={dedent`kubectl create namespace meshery
-      helm repo add meshery https://meshery.io/charts/
-      helm install meshery meshery/meshery -n meshery`} />
+        <Code codeString={dedent`helm repo add meshery https://meshery.io/charts/
+        helm install my-meshery meshery/meshery --version 2.1.2`
+        } />
       </>
     )
   },
-  {
-    icon: HomeBrew,
-    name: "HomeBrew",
-    steps: (
-      <>
-        <h3>Brew User</h3>
-        <p>Install on Mac or Linux using Homebrew:</p>
-        <Code codeString={dedent`brew tap layer5io/tap
-                    brew install mesheryctl
-                    mesheryctl system start`}
-        />
-      </>
-    )
-  },
+  
   {
     icon: Kind,
-    name: "Kind",
+    name: "KinD",
     steps: (
       <>
         <h2>KinD User</h2>
         <Code codeString={dedent`export KUBECONFIG=$HOME/.kube/config
-      kubectl create namespace meshery
-      helm repo add meshery https://meshery.io/charts/
-      helm install meshery meshery/meshery`}
+        kubectl create namespace meshery
+        helm install meshery --namespace meshery install/kubernetes/helm/meshery`}
         />
       </>
     )
@@ -115,7 +104,9 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Kubernetes User</h2>
-        <Code codeString={dedent`mesheryctl system start`}
+        <Code codeString={dedent`curl -L https://git.io/meshery | PLATFORM=kubernetes bash - 
+        mesheryctl system start`
+        }
         />
       </>
     )
@@ -138,7 +129,7 @@ const supported_platforms = [
       <>
         <h2>Minikube User</h2>
 
-        <Code codeString={dedent`mesheryctl system config minikube`
+        <Code codeString={dedent`mesheryctl system config minikube -t ~/Downloads/auth.json`
         }
         />
       </>
@@ -162,7 +153,7 @@ const supported_platforms = [
     name: "WSL2",
     steps: (
       <>
-        <h2>Winddows User</h2>
+        <h2>Windows User</h2>
         <p>
           Download and unzip mesheryctl from the <a href="https://github.com/layer5io/meshery/releases/">Meshery releases page</a>. Add mesheryctl to your PATH for ease of use. Then, execute:</p>
         <Code codeString={dedent`./mesheryctl system start`}
