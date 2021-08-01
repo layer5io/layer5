@@ -34,7 +34,7 @@ const TOCWrapper = styled.div`
             padding-inline-start: 2.45rem;
             &::after {
                 position: absolute;
-                inset: 1.5rem auto 1.5rem 26px;
+                inset: 1rem auto 0.5rem 22.25px;
                 width: auto;
                 height: auto;
                 border-left: 1px solid rgba(177, 182, 184, 0.25);
@@ -69,20 +69,11 @@ const TOCWrapper = styled.div`
             }
         }
     }
-    @media(max-width: 1250px){
-        .toc-list{
-            ul{
-                &::after {
-                    inset: 1.5rem auto 1.5rem 25.9px;
-                }
-            }
-        }
-    }
     @media(max-width: 992px){
         .toc-list{
             ul{
                 &::after {
-                    inset: 1.5rem auto 1.5rem 27.4px;
+                    inset: 1rem auto 0.5rem 23px;
                 }
             }
             
