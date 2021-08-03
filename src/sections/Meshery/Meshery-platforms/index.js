@@ -162,7 +162,7 @@ const supported_platforms = [
     name: "WSL2",
     steps: (
       <>
-        <h2>Winddows User</h2>
+        <h2>Windows User</h2>
         <p>
           Download and unzip mesheryctl from the <a href="https://github.com/layer5io/meshery/releases/">Meshery releases page</a>. Add mesheryctl to your PATH for ease of use. Then, execute:</p>
         <Code codeString={dedent`./mesheryctl system start`}

@@ -20,7 +20,8 @@ export const query = graphql`
         frontmatter {
           chapterTitle
           description
-        }
+
+                 }
         fields {
           slug
           course
@@ -35,12 +36,34 @@ export const query = graphql`
           frontmatter {
             courseTitle
             toc
+            meshesYouLearn {
+            imagepath {
+              childImageSharp {
+                gatsbyImageData(width: 50, layout: CONSTRAINED)
+              }
+              extension
+              publicURL
+            }
+            name
           }
+        }
           fields {
             slug
           }
         }
     }
+
+  serviceMeshesList: allMdx(
+    filter: {fields: {course: {eq: $course}, pageType: {eq: "chapter"}}}
+  ){
+      nodes {
+        fields {
+          section
+        }
+      }
+    }
+
+   
 }
 `;
 
@@ -51,7 +74,7 @@ const SingleChapter = ({data, location}) => {
         <GlobalStyle />
         <SEO title={data.chapter.frontmatter.chapterTitle} />
         <Navigation />
-        <Chapters chapterData={data.chapter} courseData={data.course.nodes[0]} location={location} />
+        <Chapters chapterData={data.chapter} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes}/>
         <Footer />
       </Layout>
     </ThemeProvider>

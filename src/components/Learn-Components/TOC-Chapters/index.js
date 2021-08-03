@@ -21,6 +21,7 @@ const TOC = ({ courseData, chapterData, location }) => {
         return currentChapter[currentChapter.length - 2];
     }
   };
+
   useEffect(() => {
     const path = location.pathname.split("/");
     if(path[1] === "learn-ng"){
@@ -29,7 +30,9 @@ const TOC = ({ courseData, chapterData, location }) => {
       return;
     
   }, [location.pathname]);
-  
+
+  const getActiveServiceMesh = () => chapterData.fields.slug.split("/")[3];
+
   return (
     <TOCWrapper>
       <div className="chapter-back">
@@ -43,7 +46,7 @@ const TOC = ({ courseData, chapterData, location }) => {
           {courseData.frontmatter.toc.map((item,index) => (
             <li key={index} className={item === path ? "active-link" : ""}>
               <p className="toc-item">
-                <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/istio/${item}`}>
+                <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh()}/${item}/`}>
                   {reformatTOC(item)}
                 </a>
               </p>
