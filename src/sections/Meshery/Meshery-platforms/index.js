@@ -129,7 +129,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Bash User</h2>
-        <Code codeString={dedent`./mesheryctl system start`}
+        <Code codeString={dedent`curl -L https://git.io/meshery | PLATFORM=kubernetes bash -`}
         />
       </>
     )
