@@ -39,7 +39,7 @@ const InternshipSectionWrapper = styled.div`
 
   .opportunity-card {
     width: 20rem;
-    height: 14rem;
+    height: 15rem;
     margin: auto;
     padding: 0.5rem;
     background: rgba(245, 245, 245, 1);
@@ -83,7 +83,6 @@ const InternshipSectionWrapper = styled.div`
     }
     &:hover {
       box-shadow: 0px 4px 20px 4px ${(props) => props.theme.shadowLightColor};
-      height: 15rem;
 
       .text {
         width: 80%;
