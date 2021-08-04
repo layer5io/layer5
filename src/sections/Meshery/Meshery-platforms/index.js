@@ -24,7 +24,7 @@ const supported_platforms = [
     name: "Apple",
     steps: (
       <>
-        <h3>macOS User</h3>
+        <h3>MacOS User</h3>
         <p>Install on Mac using Homebrew:</p>
         <Code codeString={dedent`brew tap layer5io/tap
                     brew install mesheryctl
@@ -39,8 +39,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Docker User</h2>
-        <Code codeString={dedent`curl -L https://git.io/meshery | PLATFORM=docker bash - 
-        mesheryctl system start`
+        <Code codeString={dedent`curl -L https://git.io/meshery | PLATFORM=docker bash -`
         }
         />
       </>
@@ -78,19 +77,32 @@ const supported_platforms = [
       <>
         <h2>Helm Chart</h2>
         <p>Install on Kubernetes using Helm:</p>
-        <Code codeString={dedent`helm repo add meshery https://meshery.io/charts/
+        { <Code codeString={dedent`helm repo add meshery https://meshery.io/charts/
         helm install my-meshery meshery/meshery --version 2.1.2`
-        } />
+        } /> }
       </>
     )
   },
-  
   {
-    icon: Kind,
-    name: "KinD",
+    icon: HomeBrew,
+    name: "HomeBrew",
     steps: (
       <>
-        <h2>KinD User</h2>
+        <h3>Brew User</h3>
+        <p>Install on Mac or Linux using Homebrew:</p>
+        <Code codeString={dedent`brew tap layer5io/tap
+                    brew install mesheryctl
+                    mesheryctl system start`}
+        />
+      </>
+    )
+  },
+  {
+    icon: Kind,
+    name: "Kind",
+    steps: (
+      <>
+        <h2>Kind User</h2>
         <Code codeString={dedent`export KUBECONFIG=$HOME/.kube/config
         kubectl create namespace meshery
         helm install meshery --namespace meshery install/kubernetes/helm/meshery`}
@@ -156,7 +168,7 @@ const supported_platforms = [
         <h2>Windows User</h2>
         <p>
           Download and unzip mesheryctl from the <a href="https://github.com/layer5io/meshery/releases/">Meshery releases page</a>. Add mesheryctl to your PATH for ease of use. Then, execute:</p>
-        <Code codeString={dedent`./mesheryctl system start`}
+        <Code codeString={dedent`mesheryctl system start`}
         />
       </>
     )
@@ -207,7 +219,7 @@ const MesheryPlatforms = () => {
           ))}
         </Row>
         <Container style={{transition: "height 0.5s ease-in-out", height: installationStepsHeight, overflow: "hidden"}}>
-          <Row className="installation-steps" >
+          <Row className="installation-steps" style={{width: "70%"}}>
             {currentPlatform.name && currentPlatform.steps}
           </Row>
         </Container>
