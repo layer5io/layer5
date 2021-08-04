@@ -154,7 +154,8 @@ const supported_platforms = [
       <>
         <h2>Azure Kubernetes Service User</h2>
         <p>Install mesheryctl and configure Meshery to communicate with AKS.</p>
-        <Code codeString={dedent`mesheryctl system config aks`
+        <Code codeString={dedent`mesheryctl system config aks
+        mesheryctl system start`
         }
         />
       </>
