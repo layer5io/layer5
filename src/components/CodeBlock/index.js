@@ -7,7 +7,9 @@ import { copyToClipboard } from "./copy-to-clipboard";
 export const Pre = styled.pre`
   position: relative;
   text-align: left;
-  margin: 1em 0;
+  width: 85%;
+  margin: auto;
+  margin-top: 1em;
   padding: 0.5em;
   overflow-x: auto;
   border-radius: 3px;
@@ -27,7 +29,7 @@ export const LineNo = styled.span`
 
 const CopyCode = styled.button`
   position: absolute;
-  right: 0;
+  right: 5em;
   z-index: 1;
   border: 0;
   border-radius: 3px;

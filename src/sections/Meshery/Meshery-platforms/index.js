@@ -63,7 +63,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Google Kubernetes Engine User</h2>
-        <Code codeString={dedent` mesheryctl system config gke --token *PATH_TO_TOKEN*
+        <Code codeString={dedent`mesheryctl system config gke --token *PATH_TO_TOKEN* 
         ./generate_kubeconfig_gke.sh cluster-admin-sa-gke default
         mesheryctl system start`}
         />
@@ -77,9 +77,9 @@ const supported_platforms = [
       <>
         <h2>Helm Chart</h2>
         <p>Install on Kubernetes using Helm:</p>
-        { <Code codeString={dedent`helm repo add meshery https://meshery.io/charts/
-        helm install my-meshery meshery/meshery --version 2.1.2`
-        } /> }
+        <Code codeString={dedent`helm repo add meshery https://meshery.io/charts/
+        helm install my-meshery meshery/meshery --version 2.1.2`}
+        /> 
       </>
     )
   },
@@ -140,7 +140,6 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Minikube User</h2>
-
         <Code codeString={dedent`mesheryctl system config minikube -t ~/Downloads/auth.json`
         }
         />
@@ -179,15 +178,15 @@ const supported_platforms = [
 const MesheryPlatforms = () => {
   const [currentPlatform, setCurrentPlatform] = useState({});
   const [installationStepsHeight,setInstallationStepsHeight] = useState(currentPlatform.name ? "200px" : 0);
-
+ 
   const hasSelectedSamePlatform = (index) => currentPlatform.name === supported_platforms[index].name;
-
+  
   const changeCurrentPlatformState = (index) => {
     if (currentPlatform.name && hasSelectedSamePlatform(index))
       setCurrentPlatform({});
     else
       setCurrentPlatform(supported_platforms[index]);
-
+ 
   };
 
   const changeCurrentPlatform = (index) => {
@@ -199,7 +198,7 @@ const MesheryPlatforms = () => {
     setInstallationStepsHeight(currentPlatform.name ? 0 : "200px");
   };
 
-
+  
   return (
     <MesheryPlatformsWrapper>
       <div className="content">
@@ -220,7 +219,7 @@ const MesheryPlatforms = () => {
           ))}
         </Row>
         <Container style={{transition: "height 0.5s ease-in-out", height: installationStepsHeight, overflow: "hidden"}}>
-          <Row className="installation-steps" style={{width: "70%"}}>
+          <Row className="installation-steps" >
             {currentPlatform.name && currentPlatform.steps}
           </Row>
         </Container>
@@ -233,6 +232,7 @@ const MesheryPlatforms = () => {
       </div>
     </MesheryPlatformsWrapper>
   );
+
 };
 
 export default MesheryPlatforms;
