@@ -7,7 +7,9 @@ import { copyToClipboard } from "./copy-to-clipboard";
 export const Pre = styled.pre`
   position: relative;
   text-align: left;
-  margin: 1em 0;
+  width: 100%;
+  margin: auto;
+  margin-top: 1em;
   padding: 0.5em;
   overflow-x: auto;
   border-radius: 3px;
