@@ -189,7 +189,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="company/legal/terms-of-service" target="_blank" rel="noreferrer">
+                <a href="/company/legal/terms-of-service" target="_blank" rel="noreferrer">
                   Terms
                 </a>
               </li>
