@@ -170,8 +170,13 @@ const Gnhwrapper = styled.section`
         .hero-section{
             padding: 3.125rem 0;
             .hero-text{
-                width: 50%;
-            }
+                width: 90%;
+		text-align:center;
+		h1{
+		    margin-bottom:1rem;		
+		}
+	    }
+	    
         }
         .explain-1{
             padding-top: 3.125rem;
