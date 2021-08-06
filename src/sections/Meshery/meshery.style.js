@@ -100,17 +100,29 @@ const MesheryWrapper = styled.section`
         .info{
             .description {
                 padding: 0;
+                flex-direction: column-reverse;
                 .meshery-hero-img {
                     text-align: center;
                     padding: 0;;
                 }
                 .desc-text{
+                    text-align: center;
+                    margin-bottom: .75rem;
                     .desc-p{
-                        margin: 1.875rem 0 1.25rem 0;
+                        margin: 1.875rem 0 1.5rem 0;
                     }
                     .banner-btn {
                         margin: 0rem 0.75rem 0.5rem 0;  
                     }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 479px) {
+        .info{
+            .description {
+                .desc-text{
+                    max-width:90%
                 }
             }
         }
