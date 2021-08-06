@@ -166,17 +166,24 @@ const Gnhwrapper = styled.section`
             width: 25rem;
         }
     }
+    
+    @media only screen and (max-width: 767px) {
+        .hero-section{
+            .hero-text{
+                text-align:center;
+            }
+        }
+    }
+
     @media only screen and (max-width: 568px) {
         .hero-section{
             padding: 3.125rem 0;
             .hero-text{
                 width: 90%;
-		text-align:center;
-		h1{
-		    margin-bottom:1rem;		
-		}
-	    }
-	    
+                h1{
+                    margin-bottom:1rem;		
+                }
+	        }
         }
         .explain-1{
             padding-top: 3.125rem;
