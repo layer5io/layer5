@@ -108,21 +108,13 @@ const MesheryWrapper = styled.section`
                 .desc-text{
                     text-align: center;
                     margin-bottom: .75rem;
+                    max-width:100%;
                     .desc-p{
                         margin: 1.875rem 0 1.5rem 0;
                     }
                     .banner-btn {
                         margin: 0rem 0.75rem 0.5rem 0;  
                     }
-                }
-            }
-        }
-    }
-    @media only screen and (max-width: 479px) {
-        .info{
-            .description {
-                .desc-text{
-                    max-width:90%
                 }
             }
         }
