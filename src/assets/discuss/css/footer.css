@@ -1,0 +1,170 @@
+@import url(//db.onlinewebfonts.com/c/5173256ffa3e08c4cbed8986369258a6?family=Qanelas+Soft);
+
+@font-face {
+  font-family: 'Qanelas Soft';
+  src: url('Qanelas-Soft.eot'); /* IE9 Compat Modes */
+  src: url('Qanelas-Soft?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Qanelas-Soft.woff2') format('woff2'), /* Super Modern Browsers */
+       url('Qanelas-Soft.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
+/* Footer Section Styles */
+
+.footer {
+    background-color: black;
+    color: white;
+    line-height: 28px;
+    padding: 2.5rem 0px 1.5rem;
+    h5{
+        font-weight: 400;
+        font-family: "Open Sans", sans-serif;
+    }
+}
+
+.row {
+    width: 100%;
+}
+
+.footer-top {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.footer-info {
+    display: flex;
+}
+
+.col-lg-6 {
+    width: 50%;
+}
+
+.footer-logo {
+    margin-left: -10px;
+    max-width: 200px;
+    height: auto;
+}
+
+.col-lg-3 {
+    width: 22%;
+}
+
+.col-lg-9 {
+    width: 78%;
+}
+
+.footer-desc {
+	padding-right: 1rem;
+	font-style: italic;
+	font-weight: 100;
+	font-size: 16px;
+	color: rgb(204, 204, 204);
+}
+
+.section-title {
+	font-size: 1.25rem;
+    font-weight: 500px;
+    color: rgba(255, 255, 255, 0.8);
+    --heading-font-family: "Qanelas Soft", sans-serif;
+}
+
+.footer-h5 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.063rem;
+    font-weight: 400 !important;
+    color: rgb(204, 204, 204);
+}
+
+.footer-sections{
+	flex: auto;
+	padding: 0 1rem;
+	margin-top: 15px;
+	a {
+	    color: inherit;
+	}
+	a:hover {
+        color: var(--layer5_green);
+    }
+}
+
+.footer-icons {
+    justify-content: flex-end;
+    img {
+        padding: 0.1rem;
+        height: 30px;
+        width: 32px;
+    }
+    a {
+        padding-right: 15px;
+        filter: grayscale(1) invert(0.25);
+    }
+    a:hover {
+      filter: grayscale(0) invert(0);
+    }
+}
+
+.footer-resources {
+    margin-left: 60px;
+}
+.subscribe {
+	justify-content: flex-end;
+	margin: 0px 0px 2rem 0px;
+	p{
+	    margin-bottom: 0;
+	}
+	form{
+	    margin: 0;
+	}
+}
+input.footer-input {
+  padding: 1rem;
+  margin-right: 0.25rem;
+  width: 20rem;
+  height: 3.5rem;
+  border: 0.5px solid white;
+  background: transparent;
+  border-radius: 0.5rem; 	
+  outline: none;
+  color: white;
+}
+input.footer-input:focus {
+  padding: 1rem;
+  margin-right: 0.25rem;
+  width: 24rem;
+  height: 3.5rem;
+  border: 0.5px solid white;
+  background: transparent;
+  border-radius: 0.5rem; 	
+  outline-width: 0;
+  color: white;
+}
+.footer-button {
+    height: 3.5rem;
+    background: var(--layer5_green);
+    width: 160px;
+    border-radius: 0.25rem;
+    border: none;
+    margin-right: 2.5rem;
+}
+    
+.footer-hr {
+    color: white;
+    margin: 0;
+}
+
+.footer-bottom {
+    p{
+        margin: 0 0 1rem;
+        font-size: 0.8rem;
+    }
+    a{
+        color: white;
+    }
+}
+.footer-bottom-left {
+    float: left;
+}
+.footer-bottom-right {
+    float: right;
+}
