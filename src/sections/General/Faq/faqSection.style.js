@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FaqSectionWrapper = styled.section`
-  margin: 2.5rem auto 5rem;
+  margin: 2.5rem auto 0rem;
   position: relative;
   overflow: hidden;
 
