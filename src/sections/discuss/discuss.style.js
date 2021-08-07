@@ -4,7 +4,7 @@ import DiscussDark from "./layer_discuss.png"
 
 const DiscussWrapper = styled.div`
     background-color:${props => props.theme.secondaryLightColor};
-    padding: 1.125rem 0.625rem;
+    padding: 0 0.625rem 1.125rem 0.625rem;
     overflow: hidden;
     h2{
         font-weight: 600;
@@ -38,9 +38,9 @@ const DiscussWrapper = styled.div`
             padding: 1.25rem 0px;
         }
         .cards {
-            margin: 2.1rem 0rem 0rem 0;
+            margin: 0rem 0rem 0rem 0;
             width: 100%;
-            padding: 0rem 25rem 3rem 25rem;
+            padding: 3rem 25rem 3rem 25rem;
             background-color: ${props => props.theme.white};
             border-radius: 25px;
             .card {
