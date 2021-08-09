@@ -1,10 +1,9 @@
 ---
 docType: "Chapter"
 chapterTitle: "Exposing services through Istio Ingress Gateway"
-description: "Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
+description: "Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
 videos: 4
 lectures: 12
-order: 3
 ---
 
 import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapters-Style/chapters.style.js";
@@ -94,7 +93,7 @@ kubectl get service istio-ingressgateway -n istio-system --template='{{(index .s
 
 <h3 class="chapter-sub-heading"> Create a DNS entry:</h3>
 
-Modify you local `/etc/hosts` file to add an entry for your sample application.
+Modify your local `/etc/hosts` file to add an entry for your sample application.
 
 `127.0.0.1. bookinfo.meshery.io`
 

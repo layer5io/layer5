@@ -39,7 +39,7 @@ const InternshipSectionWrapper = styled.div`
 
   .opportunity-card {
     width: 20rem;
-    height: 14rem;
+    height: 15rem;
     margin: auto;
     padding: 0.5rem;
     background: rgba(245, 245, 245, 1);
