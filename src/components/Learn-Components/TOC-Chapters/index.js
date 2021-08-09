@@ -1,9 +1,11 @@
-import React from "react";
+import React,{ useState, useEffect } from "react";
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import { Link } from "gatsby";
 import TOCWrapper from "./toc.style";
 
+
 const TOC = ({ TOCData,courseData, chapterData, location }) => {
+
 
   const reformatTOC= (data) => {
     let newData = data.split("-").join(" ");
@@ -14,7 +16,10 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const getCurrentPage = (location) => {
     if (location !== undefined && location.href !== undefined) {
       const currentChapter = location.href.split("/");
-      return currentChapter[currentChapter.length - 1];
+      if(currentChapter[currentChapter.length - 1] != "")
+        return currentChapter[currentChapter.length - 1];
+      else
+        return currentChapter[currentChapter.length - 2];
     }
   };
 
@@ -34,6 +39,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
         <ul>
           {availableChapters.map((item) => (
             <li key={item} className={item === getCurrentPage(location)? "active-link" : ""}>
+
               <p className="toc-item">
                 <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh()}/${item}/`}>
                   {reformatTOC(item)}
