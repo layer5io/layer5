@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 const TOCWrapper = styled.div`
 
-    position: sticky;
-    top: 10rem;
-    left: 0;
+    
     .chapter-back {
         a {
             display: inline-flex;
