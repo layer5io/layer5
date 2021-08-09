@@ -1,18 +1,18 @@
 ---
-name: 📝 Blog Post
+name: 📝 Layer5 Blog Post
 about: Request for a new blog post.
 title: '[Blog]'
 labels: 'area/blog, help wanted, framework/gatsby, language/markdown'
 assignees: ''
 ---
-https://layer5.io/blog encourages blog posts from contributors and community members.
+Contributors and community members are encouraged to post on https://layer5.io/blog. A new blog post fitting the following description is requested to be written by a community member:
 
-A new blog post fitting the following description is requested:
-
-**Post:**
-- Desired Title: 
-- Topic:
-- Core points to conveny in the post: 
+**Desired Title:** 
+**Topic:** 
+**Core points to convey in the post:** 
+1.
+1.
+1.
 
 ---
 **Contributor Resources**
