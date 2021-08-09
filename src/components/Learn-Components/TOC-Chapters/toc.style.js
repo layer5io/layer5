@@ -31,10 +31,11 @@ const TOCWrapper = styled.div`
     .toc-list {
         ul {
             position: relative;
-            padding-inline-start: 2.45rem;
+            padding-inline-start: 3.031rem;
+            -moz-padding-start: 2.85rem;
             &::after {
                 position: absolute;
-                inset: 1.5rem auto 1.5rem 25.999px;
+                inset: 1.5rem auto 1.5rem 32px;
                 width: auto;
                 height: auto;
                 border-left: 1px solid rgba(177, 182, 184, 0.25);
