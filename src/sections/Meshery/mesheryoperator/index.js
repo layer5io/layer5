@@ -5,8 +5,6 @@ import Layout from "../../../components/layout";
 import MesheryOperatorWrapper from "./mesheryoperator.style";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Slider from "react-slick";
-import JoinCommunity from "../../Community/Join-Community";
-import Lee_workshop from "./Lee_Workshop.png";
 
 
 import Operator from "../../../assets/images/meshery-operator/meshery-operator.png";
@@ -126,7 +124,6 @@ const MesheryOperatorPage = () => {
 
           </Container>
         </div>
-        <JoinCommunity image={Lee_workshop} className="newcomers-join" />
       </MesheryOperatorWrapper>
     </Layout>
   );
