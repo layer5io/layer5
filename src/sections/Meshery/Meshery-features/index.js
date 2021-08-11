@@ -116,6 +116,7 @@ const MesheryFeatures = () => {
               title: "Meshery Operator",
               description:
                 "",
+              learnMoreLink: "/service-mesh-management/meshery/meshery-operator",
               content: (
                 <div className="feature-expose">
                   <img
