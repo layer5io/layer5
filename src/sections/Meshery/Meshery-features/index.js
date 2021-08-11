@@ -119,12 +119,15 @@ const MesheryFeatures = () => {
               learnMoreLink: "/service-mesh-management/meshery/meshery-operator",
               content: (
                 <div className="feature-expose">
+
                   <img
                     src={img3}
                     alt="Kubernetes Operator for Meshery"
                   />
+
                   <p>Service meshes are dynamic. Changes to the service meshes and their workloads occur with great frequency. Meshery Operator helps Meshery stay in lockstep with these changes. Service mesh administrators might make updates to service mesh configuration directly with the service mesh. </p>
                   <p>Meshery is continually cognizant of such changes. The Kubernetes operator for Meshery, supports discovery and eventing of greenfield and brownfield service mesh deployments.</p>
+                  <p>Learn more about <a className="highlight" href="/service-mesh-management/meshery/meshery-operator">Meshery Operator</a>.</p>
 
                 </div>
               ),
