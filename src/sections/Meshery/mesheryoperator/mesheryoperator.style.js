@@ -9,13 +9,13 @@ const MesheryOperatorWrapper = styled.section`
         padding: 5rem 0rem;
         .logo{
             display: block;
-            margin: 0 auto;
-            width: 70%;
+            margin: 2rem auto;
+            width: 60%;
         }
         .hero-text{
             margin: 0 auto;
             img{
-                width: 70%;
+                width: 60%;
             }
             padding-top: 3.125rem;
             p{
@@ -140,7 +140,7 @@ const MesheryOperatorWrapper = styled.section`
         }
     }
     .explain-1 {
-        padding-top: 5rem;
+        padding-top: 1rem;
         text-align: center;
         p {
             color: ${props => props.theme.tertiaryColor};
@@ -208,6 +208,20 @@ const MesheryOperatorWrapper = styled.section`
         margin: 0 0 3rem 0;
     }
 
+    @media only screen and (max-width: 568px) {
+        .hero-section{
+            padding: 2.125rem 0;
+            .hero-text{
+                width: 50%;
+            }
+        }
+        .explain-1{
+            padding-top: 1.125rem;
+            p{
+                padding: 0 1.25rem;
+            }
+        }
+    }
 `;
 
 export default MesheryOperatorWrapper; 
