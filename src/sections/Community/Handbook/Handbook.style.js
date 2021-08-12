@@ -68,6 +68,8 @@ export const HandbookWrapper = styled.div`
                     padding: 5px 0px 0px 0px;
                     letter-spacing: 0;
                     font-size: 20px;
+                    display:flex;
+		    align-items:center;
                 }
                 }
             }
