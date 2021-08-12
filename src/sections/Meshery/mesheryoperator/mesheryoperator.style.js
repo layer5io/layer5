@@ -212,7 +212,9 @@ const MesheryOperatorWrapper = styled.section`
         .hero-section{
             padding: 2.125rem 0;
             .hero-text{
-                width: 50%;
+               h1{
+                   text-align: center;
+               } 
             }
         }
         .explain-1{
