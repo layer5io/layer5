@@ -1,27 +1,18 @@
 import styled from "styled-components";
-import Discuss from "./layer5-discuss-white.png"
-import DiscussDark from "./layer_discuss.png"
 
 const DiscussWrapper = styled.div`
     background-color:${props => props.theme.secondaryLightColor};
     padding: 0 0.625rem 1.125rem 0.625rem;
     overflow: hidden;
     h2{
-        font-weight: 600;
-        font-size:1.875rem;
-        margin:1.25rem 0;
+        font-weight: 500;
     }
     h2 span{
         color:${props => props.theme.secondaryColor};
     }
-    #callout_discuss:hover{
-        color:black;
-        box-shadow:0 2px 10px rgba(0,0,0,0.4);
-    }
     .logo{
-        height: 35px;
+        height: 2.5rem;
         width: auto;
-        margin: 0;
     }
     .explain-1 {
         padding-top: 0rem;
@@ -38,9 +29,9 @@ const DiscussWrapper = styled.div`
             padding: 1.25rem 0px;
         }
         .cards {
-            margin: 0rem 0rem 0rem 0;
-            width: 100%;
-            padding: 3rem 25rem 3rem 25rem;
+            margin: 0.15rem auto;
+            max-width: 50rem;
+            padding: 1rem 2rem 3rem 2rem;
             background-color: ${props => props.theme.white};
             border-radius: 25px;
             .card {
@@ -52,16 +43,13 @@ const DiscussWrapper = styled.div`
                 0 20.8px 33.4px rgba(0, 0, 0, 0.086),
                 0 3.125rem 80px rgba(0, 0, 0, 0.12)
                 ;
-                height: 15rem;
                 margin: 2px;
                 padding: 1.25rem;
                 background-color: #1E2117; 
-                border-style: solid;
-                border-color: #00d3a9;
                 border-radius: 25px;
                 p {
                     text-align: center;
-                    padding: 0px 0px 5px 0px;
+                    padding: 0px 0px 1px 0px;
                     letter-spacing: 0;
                     font-size: 16px;
                 }
@@ -73,6 +61,14 @@ const DiscussWrapper = styled.div`
                     margin-bottom: 0rem;
                     margin-top: 1rem;
                 }
+                &:hover{
+                    border-color: #00d3a9;
+                    border: 2px solid;
+                    color: #00d3a9;
+                    box-shadow: 0 0.5em 0.5em -0.4em #00d3a9 ; 
+                    transform: translateY(-0.30em); 
+                    cursor: pointer; 
+                }
                 }
             }
         }
@@ -83,18 +79,42 @@ const DiscussWrapper = styled.div`
         padding: 0.2em 1em;
         border: 2px solid;
         background: none;
-        font-size: 1em;
         transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
+        cursor: pointer;
     }
-    
-    button:hover{
-        border-color: #00d3a9;
-        color: #00d3a9;
-        background: none;
-        box-shadow: 0 0.5em 0.5em -0.4em #00d3a9 ; 
-        transform: translateY(-0.35em); 
-        cursor: pointer;  
+    @media only screen and (max-width: 450px){
+        .explain-1 {
+            .cards {
+                padding: 1rem 1rem 3rem 1rem;
+                .card {
+                    padding: 0.5rem;
+                    h2 {
+                        font-size: 25px;
+                    }
+                    p{
+                        font-size: 15px;  
+                    }
+                }
+            }
+        }
     }
+    @media only screen and (max-width: 375px){
+        .explain-1 {
+            .cards {
+                padding: 1rem .5rem 3rem .5rem;
+                h2 {
+                    font-size: 22px;
+                }
+                p{
+                    font-size: 13px;  
+                }
+            }
+        }
+        .logo{
+            height: 1.7rem;
+            width: auto;  
+        }
+    } 
 `;
 
 export default DiscussWrapper;
