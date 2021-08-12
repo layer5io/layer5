@@ -94,7 +94,7 @@ const MemberSingle = ({frontmatter}) => {
                     }
                     {badges.includes("meshery-operator") &&
                       <li>
-                        <Link to="/service-mesh-management/meshery/mesheryoperator">
+                        <Link to="/service-mesh-management/meshery/meshery-operator">
                           <img className="profile-social-links" src={mesheryOperatorLogo} alt="Meshery Operator logo"/>
                           </Link>
                       </li>

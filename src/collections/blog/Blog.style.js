@@ -6,24 +6,8 @@ export const BlogWrapper = styled.div`
     position: relative;
     top: -10px;
   }
-  a.invert {
-    text-decoration: none;
-    color: ${(props) => props.theme.tertiaryColor};
-    &:hover {
-      color: ${(props) => props.theme.keppelColor};
-    }
-  }
 
-  a.blog {
-    color: ${(props) => props.theme.primaryColor};
-    background-color: #eeeeee;
-    border-radius: 8px;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    &:hover {
-      color: ${(props) => props.theme.keppelColor};
-    }
-  }
+
   div.intro {
     padding-left: 3rem;
     padding-right: 3rem;

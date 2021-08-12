@@ -5,7 +5,7 @@ import Layout from "../../../components/layout";
 import SEO from "../../../components/seo";
 
 import Navigation from "../../../sections/General/Navigation";
-import MesheryOperatorPage from "../../../sections/Meshery/mesheryoperator";
+import MesheryOperatorPage from "../../../sections/Meshery/meshery-operator";
 import Footer from "../../../sections/General/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
