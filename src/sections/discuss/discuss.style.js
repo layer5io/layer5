@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const DiscussWrapper = styled.div`
-    background-color:${props => props.theme.secondaryLightColor};
+    background-color:none;
     padding: 0 0.625rem 1.125rem 0.625rem;
     overflow: hidden;
     h2{
