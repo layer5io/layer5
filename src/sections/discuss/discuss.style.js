@@ -32,17 +32,11 @@ const DiscussWrapper = styled.div`
             margin: 0.15rem auto;
             max-width: 50rem;
             padding: 1rem 2rem 3rem 2rem;
-            background-color: ${props => props.theme.white};
+            background-color: none;
             border-radius: 25px;
             .card {
-                box-shadow:
-                0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-                0 12.5px 10px rgba(0, 0, 0, 0.06),
-                0 10.3px 17.9px rgba(0, 0, 0, 0.072),
-                0 20.8px 33.4px rgba(0, 0, 0, 0.086),
-                0 3.125rem 80px rgba(0, 0, 0, 0.12)
-                ;
+                -webkit-transition: 450ms all;
+                transition: 450ms all;
                 margin: 2px;
                 padding: 1.25rem;
                 background-color: #1E2117; 
@@ -61,13 +55,13 @@ const DiscussWrapper = styled.div`
                     margin-bottom: 0rem;
                     margin-top: 1rem;
                 }
+                &:hover,
+                &:focus {
+                   outline: none;
+                }
                 &:hover{
-                    border-color: #00d3a9;
-                    border: 2px solid;
-                    color: #00d3a9;
-                    box-shadow: 0 0.5em 0.5em -0.4em #00d3a9 ; 
-                    transform: translateY(-0.30em); 
-                    cursor: pointer; 
+                    transform: translateY(0.03rem);
+                    box-shadow: 0 2px 10px #00d3a9;
                 }
                 }
             }
@@ -96,6 +90,10 @@ const DiscussWrapper = styled.div`
                     }
                 }
             }
+        }
+        .logo{
+            height: 1.8rem;
+            width: auto;  
         }
     }
     @media only screen and (max-width: 375px){
