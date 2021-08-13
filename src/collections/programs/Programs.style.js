@@ -52,6 +52,9 @@ export const ProgramsWrapper = styled.div`
         text-align: center;
         vertical-align: bottom;
     }
+    .gsod-table-container{
+        overflow-x: scroll;
+    }
     .tutorials-table {
         border-spacing: 0;
         th {
