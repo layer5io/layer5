@@ -38,9 +38,9 @@ const contributingGuide= () => {
       <TOC />
       <ContributionWrapper>
         <Container>
-        <h2>General contribution flow</h2>
-        <p>Pull requests (PRs) are the best ways to propose changes to a project repository. At Layer5 org, we use the Github Flow:</p>
-        <div className="steps">
+          <h2>General contribution flow</h2>
+          <p>Pull requests (PRs) are the best ways to propose changes to a project repository. At Layer5 org, we use the Github Flow:</p>
+          <div className="steps">
             <h3>Working by forking any of the project repository</h3>
             <p><img className="bullet" src={Bullet} />Just head over to the <a href="https://github.com/layer5io">Layer5 org</a> Github page and click the "Fork" button. It's just that simple. Once you've done that, you can use your favorite git client to clone your repo or just head straight to the command line.</p>
             <h3>Clone your fork to your local machine</h3>
@@ -61,11 +61,11 @@ For example, git checkout -b feature (feature being a branch name</p>
             <h3>Commit the changes made</h3>
             <p><img className="bullet" src={Bullet} />Now commit those changes using the git commit command;
 git commit -s -m “This is my commit message” 
-</p>
+            </p>
             <h3>Push changes to Github and submit a pull request (PR)</h3>
             <p><img className="bullet" src={Bullet} />To push your changes, run the git command; 
 git push origin your_branch_name
-</p>
+            </p>
           </div>
         </Container>
       </ContributionWrapper>      
