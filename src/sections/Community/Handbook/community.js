@@ -7,7 +7,12 @@ import {Link} from "gatsby";
 
 const CommunityWrapper = styled.div`
     padding: 3rem 20rem;
-    margin-top: -25rem;  
+    margin-top: -30rem;  
+    h1{
+      color:black;
+      margin-bottom: 2rem;
+      font-size: 40px;
+    }
     h2{
       color:black;
       margin-bottom: 1rem;
@@ -27,11 +32,12 @@ const CommunityGuide= () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">
-        <h1>Community</h1>
+        <h1>Community Handbook</h1>
       </div>    
       <TOC />
       <CommunityWrapper>
         <Container>
+          <h1>Community</h1>
           <h2>Where do I start? Who should I talk to?</h2>
           <p>We realize that finding your way in a maze of fast-paced projects can be baffling, so we have an amazing program called “The Meshmate Program”. A <Link to="/community/meshmates">MeshMate </Link> is an experienced Layer5 community member, who will be available to guide you as you explore the various projects and find your areas of interest.</p>
           <h3>Become a Meshtee today!	</h3>

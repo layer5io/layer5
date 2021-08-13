@@ -9,7 +9,12 @@ import TOC from "../../../components/handbook-navigation/index";
 
 const IntroWrapper = styled.div`
     padding: 3rem 20rem;
-    margin-top: -25rem; 
+    margin-top: -30rem; 
+    h1{
+      color:black;
+      margin-bottom: 2rem;
+      font-size: 40px;
+    }
     h2{
       color:black;
       margin-bottom: 1rem;
@@ -41,11 +46,12 @@ const Intro= () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">
-        <h1>About</h1>
+        <h1>Community Handbook</h1>
       </div> 
       <TOC />
       <IntroWrapper>
         <Container>
+          <h1>About</h1>
           <h2>What is Layer5</h2>
           <p>Layer5 is a community and open source-centered service mesh company, representing the largest collection of service meshes and their maintainers in the world. Layer5 is also the creator and maintainer of service mesh standards and also the maker of Meshery,  the service mesh management plane.</p>         
           <h2>Community First</h2>

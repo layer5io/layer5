@@ -14,11 +14,16 @@ import TOC from "../../../components/handbook-navigation/index";
 
 
 const ConductWrapper = styled.div`
-    padding: 3rem 5rem 3rem 15rem;
-    margin-top: -25rem; 
+    padding: 3rem 5rem 3rem 20rem;
+    margin-top: -30rem; 
     .rows{
       margin-top:2rem;
     } 
+    h1{
+      color:black;
+      margin-bottom: 2rem;
+      font-size: 40px;
+    }
     h2{
       color:#00d3a9;
       margin-bottom: 1rem;
@@ -68,11 +73,12 @@ const MentorshipPrograms= () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">
-        <h1>Mentorship Programs</h1>
+        <h1>Community Handbook</h1>
       </div>   
       <TOC />
       <ConductWrapper>
         <Container>
+          <h1>Mentorship Programs</h1>
           <p>As an open-source organization and a community, we participate in different mentorships programs where project ideas are submitted for people to contribute to during the program. </p>
         </Container>
         <div className="showcase">

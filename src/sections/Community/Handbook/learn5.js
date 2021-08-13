@@ -8,7 +8,12 @@ import TOC from "../../../components/handbook-navigation/index";
 
 const LearnWrapper = styled.div`
     padding: 3rem 20rem;
-    margin-top: -25rem; 
+    margin-top: -30rem; 
+    h1{
+      color:black;
+      margin-bottom: 2rem;
+      font-size: 40px;
+    }
     h2{
       color:black;
       margin-bottom: 1rem;
@@ -33,10 +38,11 @@ const LearnLayer= () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">
-        <h1>Learn Layer5</h1>
+        <h1>Community Handbook</h1>
       </div>  
       <TOC />
       <LearnWrapper>
+        <h1>Learn Layer5</h1>  
         <h2>Learn</h2>
         <p>As a community, we have put together good learning materials and resources to guide you through learning about service meshes.</p>
         <p>The resource includes:</p>
