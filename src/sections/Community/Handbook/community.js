@@ -7,7 +7,7 @@ import {Link} from "gatsby";
 
 const CommunityWrapper = styled.div`
     padding: 3rem 20rem;
-    margin-top: -30rem;  
+    margin-top: -25rem;  
     h1{
       color:black;
       margin-bottom: 2rem;

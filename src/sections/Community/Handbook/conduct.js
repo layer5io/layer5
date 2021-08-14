@@ -12,7 +12,7 @@ const ConductWrapper = styled.div`
       font-size: 40px;
     }
     padding: 3rem 20rem;
-    margin-top: -30rem; 
+    margin-top: -25rem; 
     
 `;
 

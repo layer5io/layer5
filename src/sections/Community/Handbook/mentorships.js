@@ -15,7 +15,7 @@ import TOC from "../../../components/handbook-navigation/index";
 
 const ConductWrapper = styled.div`
     padding: 3rem 5rem 3rem 20rem;
-    margin-top: -30rem; 
+    margin-top: -25rem; 
     .rows{
       margin-top:2rem;
     } 
