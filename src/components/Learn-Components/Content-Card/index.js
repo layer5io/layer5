@@ -18,15 +18,15 @@ const ContentCard = ({ chapter }) => (
         </h2>
         <p>{chapter.frontmatter.description}</p>
       </div>
-      <div className="chapter-info">
-        {/* <div className="info">
+      {/* <div className="chapter-info">
+        <div className="info">
           <IoVideocam /> <span>{chapter.frontmatter.videos} videos</span>
         </div>
         <div className="info">
           <IoDocumentTextOutline />{" "}
           <span>{chapter.frontmatter.lectures} lectures</span>
-        </div> */}
-      </div>
+        </div>
+      </div> */}
     </div>
     <div className="bookmark-btn-div">
       <Button className="bookmark-btn">

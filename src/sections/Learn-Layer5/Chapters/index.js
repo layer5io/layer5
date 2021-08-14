@@ -82,11 +82,13 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
       <Container className="chapter-container">
         <Row>
           <Col sm={12} md={3}>
-            <TOC courseData={courseData} TOCData={TOCData} chapterData={chapterData} location={location} />
-            <div className="service-mesh-switch-container">
-              <h4>Service Meshes Available</h4>
-              <div className="service-mesh-switcher">
-                <ServiceMeshesAvailable serviceMeshes={getAvailableServiceMeshes()}/>
+            <div className="toc-switcher-parent-div">
+              <TOC courseData={courseData} TOCData={TOCData} chapterData={chapterData} location={location} />
+              <div className="service-mesh-switch-container">
+                <h4>Service Meshes Available</h4>
+                <div className="service-mesh-switcher">
+                  <ServiceMeshesAvailable serviceMeshes={getAvailableServiceMeshes()}/>
+                </div>
               </div>
             </div>
           </Col>
