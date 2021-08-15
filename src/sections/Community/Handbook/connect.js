@@ -12,7 +12,7 @@ const ConnectWrapper = styled.div`
     padding: 3rem 20rem;
     margin-top: -25rem; 
     h1{
-      color:black;
+      color: ${props => props.theme.darkJungleGreenColor};
       margin-bottom: 2rem;
       font-size: 40px;
     }

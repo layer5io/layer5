@@ -20,7 +20,7 @@ const ConductWrapper = styled.div`
       margin-top:2rem;
     } 
     h1{
-      color:black;
+      color: ${props => props.theme.darkJungleGreenColor};
       margin-bottom: 2rem;
       font-size: 40px;
     }

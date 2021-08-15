@@ -7,7 +7,7 @@ import TOC from "../../../components/handbook-navigation/index";
 
 const ConductWrapper = styled.div`
     h1{
-      color:black;
+      color: ${props => props.theme.darkJungleGreenColor};
       margin-bottom: 2rem;
       font-size: 40px;
     }
