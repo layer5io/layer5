@@ -11,8 +11,9 @@ const LearnWrapper = styled.div`
     margin-top: -25rem; 
     h1{
       color: ${props => props.theme.darkJungleGreenColor};
+      font-size: 3.125rem;
+      font-weight: 700;
       margin-bottom: 2rem;
-      font-size: 40px;
     }
     h2{
       color:black;
