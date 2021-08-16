@@ -45,7 +45,7 @@ export const meet_links_data = [
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IM7rYiKxG4l3eQNc6X3IUex",
   },
   {
-    day: "Thursdays",
+    day: "Thursday",
     meeting: "Layer5 Newcomers' Meeting",
     slack_channel: "#newcomers",
     slack_link: "https://layer5io.slack.com/archives/C019426UBNY",
