@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FaqSectionWrapper = styled.section`
-  margin: 2.5rem auto 0rem;
+  margin: 2.5rem auto;
   position: relative;
   overflow: hidden;
 
@@ -77,7 +77,7 @@ const FaqSectionWrapper = styled.section`
       margin-bottom: 2rem;
     }
     button {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
   }
   @media only screen and (max-width: 912px) {

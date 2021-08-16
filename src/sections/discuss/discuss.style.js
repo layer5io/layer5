@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const DiscussWrapper = styled.div`
     background-color:none;
-    padding: 0 0.625rem 1.125rem 0.625rem;
+    padding: 1.5rem 0.625rem 1rem;
     overflow: hidden;
     h2{
         font-weight: 500;
@@ -29,9 +29,9 @@ const DiscussWrapper = styled.div`
             padding: 1.25rem 0px;
         }
         .cards {
-            margin: 0.15rem auto;
+            margin: 0.15rem auto 0 ;
             max-width: 50rem;
-            padding: 1rem 2rem 3rem 2rem;
+            padding: 1.5rem 2rem 0rem 2rem;
             background-color: none;
             border-radius: 25px;
             .card {
@@ -79,7 +79,7 @@ const DiscussWrapper = styled.div`
     @media only screen and (max-width: 450px){
         .explain-1 {
             .cards {
-                padding: 1rem 1rem 3rem 1rem;
+                padding: 1rem 1rem 1rem 1rem;
                 .card {
                     padding: 0.5rem;
                     h2 {
@@ -99,7 +99,7 @@ const DiscussWrapper = styled.div`
     @media only screen and (max-width: 375px){
         .explain-1 {
             .cards {
-                padding: 1rem .5rem 3rem .5rem;
+                padding: 1rem .5rem 1rem .5rem;
                 h2 {
                     font-size: 22px;
                 }
