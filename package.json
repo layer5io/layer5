@@ -12,7 +12,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean && rimraf node_modules",
-    "develop": "env-cmd -f .env.development gatsby develop",
+    "develop": "gatsby develop",
     "dev": "npm run develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
