@@ -29,7 +29,7 @@ h2 h3{
 }
 
 .page-section{
-  margin-top: -25rem;
+  margin-top: -29rem;
   margin-left: 20rem;
 
 }
@@ -72,14 +72,27 @@ h2 h3{
         }
     }
     
-  
+    @media only screen and (max-width: 750px){
+      .page-section{
+        margin-top: -2rem;
+        margin-left: 4rem;
+      
+      }
+      
+
+    }
    
 
-    @media only screen and (max-width: 375px){
+    @media only screen and (max-width: 475px){
         .page-header-section h1{
             padding: 0 1rem;
             line-height: 3rem;
             padding-top: 4rem;
+        }
+        .page-section{
+          margin-top: -2rem;
+          margin-left: 2rem;
+        
         }
     }
 `;
