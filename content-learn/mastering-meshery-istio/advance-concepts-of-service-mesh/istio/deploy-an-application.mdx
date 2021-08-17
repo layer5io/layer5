@@ -58,7 +58,7 @@ kubectl api-versions | grep admissionregistration
 
 If your environment **does NOT** supports either of these two APIs, then you may use [manual sidecar injection](#manual-sidecar-inj) to deploy the sample app.
 
-As part of Istio deployment in [Previous chapter](/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/getting-started), you have deployed the sidecar injector.
+As part of Istio deployment in [Previous chapter](/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/istio/getting-started), you have deployed the sidecar injector.
 
 <br />
 <h2 class="chapter-sub-heading">
@@ -129,7 +129,7 @@ kubectl describe pod productpage-v1-.....
 
 ```sh
 kubectl describe svc productpage
- ```
+```
 
 Next, you will expose the BookInfo application to be accessed external from the cluster.
 

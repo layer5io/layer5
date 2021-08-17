@@ -2,19 +2,6 @@ import styled from "styled-components";
 export const HandbookWrapper = styled.div`
 
 
-.sidebar {
-margin: 0;
-padding: 0;
-width: 250px;
-background-color: #f1f1f1;
-position: absolute;
-height: 150rem;
-overflow: auto;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-
-}
 .highlight{
 
   font-weight: 600;
@@ -47,24 +34,33 @@ h2 h3{
 
 }
 
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
- 
-.sidebar a.active {
-  background-color: #00d3a9;
-  color: white;
-}
 
-.sidebar a:hover:not(.active) {
-  background-color: #929496;
-  color: white;
-}
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 250px;
+        background-color: #f1f1f1;
+        position: absolute;
+        height: 150rem;
+        overflow: auto;
+    }
 
+    .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+    }
+    
+    .sidebar a.active {
+        background-color: #00d3a9;
+        color: white;
+    }
 
+    .sidebar a:hover:not(.active) {
+        background-color: #929496;
+        color: white;
+    }
     .page-header-section {
         height: 10rem;
         text-align: center;
@@ -77,5 +73,13 @@ h2 h3{
     }
     
   
+   
 
+    @media only screen and (max-width: 375px){
+        .page-header-section h1{
+            padding: 0 1rem;
+            line-height: 3rem;
+            padding-top: 4rem;
+        }
+    }
 `;

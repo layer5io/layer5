@@ -49,7 +49,7 @@ export const meet_links_data = [
     meeting: "Layer5 Newcomers' Meeting",
     slack_channel: "#newcomers",
     slack_link: "https://layer5io.slack.com/archives/C019426UBNY",
-    meeting_minutes: "https://bit.ly/2It7IA4",
+    meeting_minutes: "https://docs.google.com/document/d/1aHarIyIL__HRq_4klYOUsEXP5SQLlmb50W17yKdNmpU/edit#",
     meeting_link: "https://meet.layer5.io/newcomers",
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0",
   },

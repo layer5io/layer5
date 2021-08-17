@@ -26,11 +26,13 @@ const SetupPreReqWrapper = styled.div`
                     height: 3rem;
                     align-self: center;
                     flex: 0 0 25%;
+                    margin: 0 0.5rem;
                 }
                 svg {
                     font-size: 4.15rem;
                     align-self: center;
                     flex: 0 0 25%;
+                    margin: 0 0.5rem;
                 }
                 h2 {
                     font-size: 1.75rem;

@@ -51,4 +51,9 @@ export const ChapterWrapper = styled.div`
             margin-bottom: 1.5rem;
         }
     }
+    .toc-switcher-parent-div{
+        position: sticky;
+        top: 10rem;
+        left: 0;
+    }
 `;

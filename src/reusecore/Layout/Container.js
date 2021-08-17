@@ -23,6 +23,23 @@ const ContainerWrapper = styled.div`
     ${props => props.fluid && css`
         max-width: 100%; 
     `}
+    a.mute {
+    text-decoration: none;
+    color: ${(props) => props.theme.tertiaryColor};
+    &:hover {
+      color: ${(props) => props.theme.keppelColor};
+    }
+  }
+  a.highlight {
+    color: ${(props) => props.theme.primaryColor};
+    background-color: #eeeeee;
+    border-radius: 8px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    &:hover {
+      color: ${(props) => props.theme.keppelColor};
+    }
+  }
 `;
 
 const Container = ({children, ...props}) => {

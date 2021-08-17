@@ -8,7 +8,7 @@ const TOCWrapper = styled.div`
     margin-left: -3rem;
 
     .go-back {
-        margin-left: 1rem;
+        margin: 1rem 0;
         a {
             display: inline-flex;
             svg {
@@ -30,7 +30,6 @@ const TOCWrapper = styled.div`
                 }
             }
         }
-        margin-bottom: 1rem;
     }
 
   .toc-sub-heading {
@@ -39,18 +38,19 @@ const TOCWrapper = styled.div`
         font-size: 1.15rem;
   }
     
-
+  .toc-item {
+        line-height: 1.5rem;
+    }
     .toc-list {
   
         ul {
             position: relative;
-            padding-inline-start: 2.75rem;
+            padding-inline-start: 1.5rem;
             list-style-type: none;
             
             li {
-                line-height: 3rem;
+                margin: 1rem 0 1rem 0.5rem;
                 width: fit-content;
-                margin-left: 1rem;
 
                 &::marker {
                     color: rgba(177, 182, 184, 0.75);
@@ -76,6 +76,9 @@ const TOCWrapper = styled.div`
                 }
             }
         }
+    }
+    @media (max-width:767px){
+        position: initial;
     }
 `;
 
