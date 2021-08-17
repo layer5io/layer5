@@ -1,49 +1,15 @@
 import styled from "styled-components";
 
 const TOCWrapper = styled.div`
-<<<<<<< HEAD
-position: sticky;
-top: 10rem;
-left: 0rem;
-margin-left: 3rem;
-margin-top: 3rem;
-width:15rem;
-padding-bottom: 2rem;
-.go-back {
-  margin-left: 1rem;
-  a {
-    display: inline-flex;
-    svg {
-      align-self: center;
-      font-size: 1.5rem;
-      color: rgb(177, 182, 184);
-      width: 100%;
-      max-width: 1.5rem;
-    }
-    h4 {
-      font-weight: 500;
-      text-transform: capitalize;
-      font-size: 1.25rem;
-      white-space: nowrap;
-    }
-    &:hover {
-      svg,
-      h4 {
-        color: #3c494f;
-    }
-}
-}
-margin-bottom: 1rem;
-}
 
-=======
   position: sticky;
   top: 10rem;
   left: 0rem;
   margin-left: 3rem;
   margin-top: 3rem;
   width:15rem;
-
+  padding-bottom: 2rem;
+  
   .go-back {
     margin-left: 1rem;
     a {
@@ -70,7 +36,6 @@ margin-bottom: 1rem;
     }
     margin-bottom: 1rem;
   }
->>>>>>> 12c6b908ba996e8209d39b566f58888cedb1fc11
 
   .toc-sub-heading {
     margin-top: 1rem;
