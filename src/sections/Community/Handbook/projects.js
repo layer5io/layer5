@@ -12,18 +12,22 @@ const Maintainer= () => {
         <h1>Projects</h1>
       </div>  
       <TOC />
-      <Container>
-        <p>Here are the Layer5 Projects:  </p>
-
-        <h3><span className="number">1</span>Layer5</h3>
-        <p>It is the official website for the Layer5 community showing an overview of the Layer5 Projects, the different service mesh landscapes, resources to learn about service Mesh and communities.</p>
-        <h3><span className="number">2</span>Meshery</h3>
-        <p>It is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating, and managing the performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. </p>
-        <h3><span className="number">3</span>Service Mesh Performance</h3>
-        <p>The Service Mesh Performance (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and it’s configuration, service/application details, and bundling of statistical analysis of the result.</p>
-        <h3><span className="number">4</span> GetNightHawk</h3>
-        <p>This Is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool.      Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads.</p>
-      </Container>       
+      <div className="page-section">
+        <Container>
+          <div className= "content">
+            <p>Here are the Layer5 Projects:  </p>
+        
+            <h3>1. Layer5</h3>
+            <p>It is the official website for the Layer5 community showing an overview of the Layer5 Projects, the different service mesh landscapes, resources to learn about service Mesh and communities.</p>
+            <h3>2. Meshery</h3>
+            <p>It is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating, and managing the performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. </p>
+            <h3>3. Service Mesh Performance</h3>
+            <p>The Service Mesh Performance (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and it’s configuration, service/application details, and bundling of statistical analysis of the result.</p>
+            <h3>4. GetNightHawk</h3>
+            <p>This Is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool.      Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads.</p>
+          </div>
+        </Container> 
+      </div>    
     </HandbookWrapper>
   );
 };
