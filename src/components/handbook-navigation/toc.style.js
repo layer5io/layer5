@@ -6,6 +6,7 @@ const TOCWrapper = styled.div`
   left: 0rem;
   margin-left: 3rem;
   margin-top: 3rem;
+  width:15rem;
 
   .go-back {
     margin-left: 1rem;
@@ -39,6 +40,18 @@ const TOCWrapper = styled.div`
     font-weight: 300;
     font-size: 1.15rem;
   }
+  
+  .toc-sub-inline{
+    display: inline-block;
+  }
+
+  .toc-ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+    list-style: none;
+  }
+
   .toc-sub-heading:hover {
     color: ${(props) => props.theme.secondaryColor};
   }

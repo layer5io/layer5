@@ -10,6 +10,7 @@ import TOC from "../../../components/handbook-navigation/index";
 const IntroWrapper = styled.div`
     padding: 3rem 20rem;
     margin-top: -25rem; 
+    padding-top: 0.5rem;
     h2{
       color:black;
       margin-bottom: 1rem;
