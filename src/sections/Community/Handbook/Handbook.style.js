@@ -1,33 +1,31 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
     .sidebar {
-  margin: 0;
-  padding: 0;
-  width: 250px;
-  background-color: #f1f1f1;
-  position: absolute;
-  height: 150rem;
-  overflow: auto;
-}
+        margin: 0;
+        padding: 0;
+        width: 250px;
+        background-color: #f1f1f1;
+        position: absolute;
+        height: 150rem;
+        overflow: auto;
+    }
 
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
- 
-.sidebar a.active {
-  background-color: #00d3a9;
-  color: white;
-}
+    .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+    }
+    
+    .sidebar a.active {
+        background-color: #00d3a9;
+        color: white;
+    }
 
-.sidebar a:hover:not(.active) {
-  background-color: #929496;
-  color: white;
-}
-
-
+    .sidebar a:hover:not(.active) {
+        background-color: #929496;
+        color: white;
+    }
     .page-header-section {
         height: 15rem;
         text-align: center;
@@ -49,9 +47,9 @@ export const HandbookWrapper = styled.div`
             color: ${props => props.theme.black};  
         }
         .cards {
-            margin: 0.15rem 0;
-            width: 100%;
-            padding: 1rem 20rem 3rem 20rem;
+            margin: 0.15rem auto;
+            max-width: 50rem;
+            padding: 1rem 2rem 3rem 2rem;
             background-color: ${props => props.theme.white};
             border-radius: 10px;
             .card {
@@ -70,10 +68,38 @@ export const HandbookWrapper = styled.div`
                     padding: 5px 0px 0px 0px;
                     letter-spacing: 0;
                     font-size: 20px;
+                    display:flex;
+		    align-items:center;
                 }
                 }
             }
         }
     }
 
+    @media only screen and (max-width: 450px){
+        .explain-1 {
+            .cards {
+                padding: 1rem 1rem 3rem 1rem;
+                .card {
+                    padding: 0.5rem;
+                    p {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 375px){
+        .explain-1 {
+            .cards {
+                padding: 1rem .5rem 3rem .5rem;
+            }
+        }
+        .page-header-section h1{
+            padding: 0 1rem;
+            line-height: 3rem;
+            padding-top: 4rem;
+        }
+    }
 `;

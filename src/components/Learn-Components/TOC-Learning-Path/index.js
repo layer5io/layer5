@@ -34,8 +34,8 @@ const TOC = ({ coursesData }) => {
               Pre-requisites
             </h5>
           </Link>
-          {preReqSteps.map(item =>
-            <li key={item.link}>
+          {preReqSteps.map((item,index) =>
+            <li key={index}>
               <p className="toc-item">
                 <a href={`#${item.name}`}>
                   {item.name}
@@ -50,8 +50,8 @@ const TOC = ({ coursesData }) => {
             </h5>
           </Link>
 
-          {coursesData.map((item) => (
-            <li key={item}>
+          {coursesData.map((item,index) => (
+            <li key={index}>
               <p className="toc-item">
                 <a href={`#${item.frontmatter.courseTitle}`}>
                   {item.frontmatter.courseTitle}
