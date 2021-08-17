@@ -1,6 +1,8 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
-    .sidebar {
+
+
+  .sidebar {
   margin: 0;
   padding: 0;
   width: 250px;
@@ -8,6 +10,33 @@ export const HandbookWrapper = styled.div`
   position: absolute;
   height: 150rem;
   overflow: auto;
+  flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+
+}
+
+.content{
+  width:100%;
+ul > li {
+    color:#00d3a9;
+  }
+ol > li {
+    color:#00d3a9;
+  }
+ul > li > span {
+    color: black;
+  }
+ol > li > span {
+  color: black;
+}  
+
+}
+
+.page-section{
+  margin-top: -30rem;
+  margin-left: 20rem;
+
 }
 
 .sidebar a {
@@ -37,6 +66,13 @@ export const HandbookWrapper = styled.div`
             line-height: 15rem;
             color: white;
         }
+    }
+    .sub-heading{
+        padding: -3rem 20rem;
+    }
+
+    .content{
+      
     }
     .explain-1 {
         padding-top: 1rem;

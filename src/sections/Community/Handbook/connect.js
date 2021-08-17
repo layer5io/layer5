@@ -8,43 +8,6 @@ import Bullet from "./images/active.png";
 import Slider from "react-slick";
 import TOC from "../../../components/handbook-navigation/index";
 
-const ConnectWrapper = styled.div`
-    padding: 3rem 20rem;
-    margin-top: -25rem; 
-    h2{
-      color:black;
-      margin-bottom: 1rem;
-      font-size: 25px;
-    }
-    h3{
-      color:black;
-      font-size: 20px;
-      margin-bottom: 0.5rem;
-    }
-    p{
-      font-size: 18px;
-    }
-    .bullet{
-      width: 15px;
-    }
-    .logo{
-      width: 25px;
-    }
-    .number{
-      color:#00d3a9;
-      background-color:#f3fffd;
-      font-size: 18px;
-      padding: 0rem 1rem;
-    }
-    .highlight{
-      color:black;
-      margin-left:2rem;
-      font-weight: 600;
-    }
-    .Block{
-      background-color:#f3fffd;
-    }
-`;
 
 const Connect= () => {
   return (
@@ -53,21 +16,20 @@ const Connect= () => {
         <h1>Connect with Us</h1>
       </div> 
       <TOC />
-      <ConnectWrapper>
-        <Container>
+      <Container>
 
-          <h2>Joining the Community</h2>
-          <p><img className="logo" src={Point} /> Join our <a href="http://slack.layer5.io/">Slack workspace</a> and interact with like-minded people.</p>
-          <p><img className="logo" src={Point} /> Join our  <a href="https://discuss.layer5.io/">Discussion Forum</a>  and engage with the community.</p> 
-          <p><img className="logo" src={Point} /> Join our community, by filling the <a href="https://layer5.io/newcomer">membership form.</a></p>
-          <p><img className="logo" src={Point} /> Join any or all of the weekly meetings on the <a href="https://bit.ly/2SbrRhe">community calendar.</a></p>
-          <p><img className="logo" src={Point} /> Watch community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings.</a></p>
+        <h2>Joining the Community</h2>
+        <p><img className="logo" src={Point} /> Join our <a href="http://slack.layer5.io/">Slack workspace</a> and interact with like-minded people.</p>
+        <p><img className="logo" src={Point} /> Join our  <a href="https://discuss.layer5.io/">Discussion Forum</a>  and engage with the community.</p> 
+        <p><img className="logo" src={Point} /> Join our community, by filling the <a href="https://layer5.io/newcomer">membership form.</a></p>
+        <p><img className="logo" src={Point} /> Join any or all of the weekly meetings on the <a href="https://bit.ly/2SbrRhe">community calendar.</a></p>
+        <p><img className="logo" src={Point} /> Watch community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings.</a></p>
         
-          <h2>Slack Community</h2>
+        <h2>Slack Community</h2>
         <p>We are a community of like-minded people with over a thousand members.</p>
         <p>Join our <a href="http://slack.layer5.io/">Slack Workspace</a> and interact with people.
        In the workspace, there are different channels to engage in. Here’s a description of them:</p>
-        <div className="Block">
+        <div className="content">
           <p><span className="highlight" >#announcements</span> - For general announcements, projects, releases, security vulnerabilities.</p>
           <p><span className="highlight">#buzz</span> - For notifications on Twitter activities.</p>
           <p><span className="highlight">#careers</span> - For various career opportunities available </p>
@@ -88,8 +50,7 @@ const Connect= () => {
           <p><span className="highlight">#websites</span> - For discussions related to layer5.io site.</p>
           <p><span className="highlight">#workshops</span> - Q-A for workshops given at KubeCon, DockerCon, Velocity, O’Reilly Live Training</p>
         </div>
-        </Container>
-      </ConnectWrapper>
+      </Container>
     </HandbookWrapper>
   );
 };

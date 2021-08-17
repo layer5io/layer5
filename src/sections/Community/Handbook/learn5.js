@@ -6,28 +6,6 @@ import Bullet from "./images/active.png";
 import {Link} from "gatsby";
 import TOC from "../../../components/handbook-navigation/index";
 
-const LearnWrapper = styled.div`
-    padding: 3rem 20rem;
-    margin-top: -25rem; 
-    h2{
-      color:black;
-      margin-bottom: 1rem;
-      font-size: 30px;
-    }
-    p{
-      margin: 1rem 0;
-    }
-    .source{
-      margin-left:3rem;
-      z-index: 999;
-    }
-    .bullet{
-      width: 15px;
-    }
-    .logo{
-      width: 25px;
-    }
-`;
 
 const LearnLayer= () => {
   return (
@@ -36,11 +14,11 @@ const LearnLayer= () => {
         <h1>Learn Layer5</h1>
       </div>  
       <TOC />
-      <LearnWrapper>
+      <div className="content">
         <h2>Learn</h2>
         <p>As a community, we have put together good learning materials and resources to guide you through learning about service meshes.</p>
         <p>The resource includes:</p>
-        <div className="source">
+        <div className="content">
           <li><Link to="/learn">Service Mesh Training.</Link></li>
           <li><Link to="/learn/service-mesh-labs">Learn how to service mesh with interactive labs.</Link></li>
           <li><Link to="/learn/service-mesh-books">Books.</Link></li>
@@ -56,8 +34,8 @@ const LearnLayer= () => {
 
         <h2>Blogs</h2>
         <p>Visit our <Link to="/blog">Blog</Link> for the latest updates on Layer5</p>
-        
-      </LearnWrapper>        
+      </div>
+                
     </HandbookWrapper>
   );
 };

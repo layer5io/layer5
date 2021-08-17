@@ -7,7 +7,9 @@ const TOCWrapper = styled.div`
     margin-left: 3rem;
     margin-top: 3rem;
     margin-inline-end: 75rem;
-
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     .go-back {
         margin-left: 1rem;
         a {
