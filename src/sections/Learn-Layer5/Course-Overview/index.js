@@ -68,7 +68,7 @@ const CourseOverview = ({ course, chapters }) => {
             {course.frontmatter.toc.map((item, index) => (
               <Link
                 key={index}
-                to={`./istio/${item}`}
+                to={`istio/${item}`}
                 className="chapter-link"
               >
                 <ChapterCard chapterNum={index+1} chapter={getChapterTitle(item, chapters)} />
