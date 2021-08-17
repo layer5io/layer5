@@ -26,6 +26,7 @@ ol > li > span {
 
 h2 h3{
   margin: 0.5rem 0;
+  color: #1e2117;
 }
 
 .page-section{
