@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 const TOCWrapper = styled.div`
+
   position: sticky;
   top: 10rem;
   left: 0rem;
   margin-left: 3rem;
   margin-top: 3rem;
   width:15rem;
+  padding-bottom: 2rem;
 
   .go-back {
     margin-left: 1rem;
@@ -55,6 +57,10 @@ const TOCWrapper = styled.div`
   .toc-sub-heading:hover {
     color: ${(props) => props.theme.secondaryColor};
   }
+
+  @media only screen and (max-width: 750px){
+   position: initial;
+    }
 `;
 
 export default TOCWrapper;

@@ -1,10 +1,46 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
+
+
+.highlight{
+
+  font-weight: 600;
+}
+.content{
+  width:100%;
+  padding-bottom: 2rem;
+ul > li {
+    color: ${props => props.theme.primaryLightColorTwo};
+  }
+ol > li {
+    color: ${props => props.theme.primaryLightColorTwo};
+  }
+ul > li > span {
+    color: ${props => props.theme.black};
+  }
+ol > li > span {
+  color: ${props => props.theme.black};
+}  
+
+}
+
+h2 h3{
+  margin: 0.5rem 0;
+  color: ${props => props.theme.tertiaryColor};
+}
+
+.page-section{
+  margin-top: -29rem;
+  margin-left: 20rem;
+
+}
+
+
     .sidebar {
         margin: 0;
         padding: 0;
         width: 250px;
-        background-color: #f1f1f1;
+        background-color:${props => props.theme.secondaryLightColor};
         position: absolute;
         height: 150rem;
         overflow: auto;
@@ -18,88 +54,46 @@ export const HandbookWrapper = styled.div`
     }
     
     .sidebar a.active {
-        background-color: #00d3a9;
+        background-color: ${props => props.theme.primaryLightColorTwo};
         color: white;
     }
 
     .sidebar a:hover:not(.active) {
-        background-color: #929496;
+        background-color:${props => props.theme.secondaryLightColor};
         color: white;
     }
     .page-header-section {
-        height: 15rem;
+        height: 10rem;
         text-align: center;
         background: rgb(71,126,150);
         background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
         h1 {
-            line-height: 15rem;
+            line-height: 10rem;
             color: white;
         }
     }
-    .explain-1 {
-        padding-top: 1rem;
-        text-align: center;
-        p { 
-            text-align: center;
-            color: ${props => props.theme.black};
-        }
-        h2 {
-            color: ${props => props.theme.black};  
-        }
-        .cards {
-            margin: 0.15rem auto;
-            max-width: 50rem;
-            padding: 1rem 2rem 3rem 2rem;
-            background-color: ${props => props.theme.white};
-            border-radius: 10px;
-            .card {
-                box-shadow:
-                0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-                0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-                0 12.5px 10px rgba(0, 0, 0, 0.05),
-                0 10.3px 17.9px rgba(0, 0, 0, 0.052),
-                0 3.125rem 80px rgba(0, 0, 0, 0.12)
-                ;
-                padding: 0.75rem;
-                background-color: white; 
-                border-radius: 10px;
-                p {
-                    text-align: left;
-                    padding: 5px 0px 0px 0px;
-                    letter-spacing: 0;
-                    font-size: 20px;
-                    display:flex;
-		    align-items:center;
-                }
-                }
-            }
-        }
-    }
+    
+    @media only screen and (max-width: 750px){
+      .page-section{
+        margin-top: -2rem;
+        margin-left: 4rem;
+      
+      }
+      
 
-    @media only screen and (max-width: 450px){
-        .explain-1 {
-            .cards {
-                padding: 1rem 1rem 3rem 1rem;
-                .card {
-                    padding: 0.5rem;
-                    p {
-                        font-size: 17px;
-                    }
-                }
-            }
-        }
     }
+   
 
-    @media only screen and (max-width: 375px){
-        .explain-1 {
-            .cards {
-                padding: 1rem .5rem 3rem .5rem;
-            }
-        }
+    @media only screen and (max-width: 475px){
         .page-header-section h1{
             padding: 0 1rem;
             line-height: 3rem;
             padding-top: 4rem;
+        }
+        .page-section{
+          margin-top: -2rem;
+          margin-left: 2rem;
+        
         }
     }
 `;
