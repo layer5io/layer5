@@ -10,23 +10,23 @@ export const HandbookWrapper = styled.div`
   width:100%;
   padding-bottom: 2rem;
 ul > li {
-    color:#00d3a9;
+    color: ${props => props.theme.primaryLightColorTwo};
   }
 ol > li {
-    color:#00d3a9;
+    color: ${props => props.theme.primaryLightColorTwo};
   }
 ul > li > span {
-    color: black;
+    color: ${props => props.theme.black};
   }
 ol > li > span {
-  color: black;
+  color: ${props => props.theme.black};
 }  
 
 }
 
 h2 h3{
   margin: 0.5rem 0;
-  color: #1e2117;
+  color: ${props => props.theme.tertiaryColor};
 }
 
 .page-section{
@@ -40,7 +40,7 @@ h2 h3{
         margin: 0;
         padding: 0;
         width: 250px;
-        background-color: #f1f1f1;
+        background-color:${props => props.theme.secondaryLightColor};
         position: absolute;
         height: 150rem;
         overflow: auto;
@@ -54,12 +54,12 @@ h2 h3{
     }
     
     .sidebar a.active {
-        background-color: #00d3a9;
+        background-color: ${props => props.theme.primaryLightColorTwo};
         color: white;
     }
 
     .sidebar a:hover:not(.active) {
-        background-color: #929496;
+        background-color:${props => props.theme.secondaryLightColor};
         color: white;
     }
     .page-header-section {
