@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import { Link } from "gatsby";
 import TOCWrapper from "./toc.style";
+import { IoMdClose } from "react-icons/io";
+import { FaBars } from "react-icons/fa";
 
 const TOC = () => {
+  const [expand, setExpand] = useState(false);
   return (
     <TOCWrapper>
       <div className="go-back">
@@ -11,9 +14,24 @@ const TOC = () => {
           <HiOutlineChevronLeft />
           <h4>Table of Content</h4>
         </Link>
+        <div className="toc-toggle-btn">
+          {expand ?
+            <IoMdClose
+              className="mobile-menu-icon open"
+              onClick={function () {
+                setExpand(!expand);
+              }}
+            /> : <FaBars
+              className="mobile-menu-icon"
+              onClick={function () {
+                setExpand(!expand);
+              }}
+            />
+          }
+        </div>
       </div>
       <div className="toc-list">
-        <ul className="toc-ul">
+        <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
           <li>
             <Link to="/community/handbook">
               <h5 className="toc-sub-heading toc-sub-inline">About</h5>
