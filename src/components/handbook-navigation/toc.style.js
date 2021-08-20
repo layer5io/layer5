@@ -12,6 +12,9 @@ const TOCWrapper = styled.div`
 
   .go-back {
     margin-left: 1rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;   
     a {
       display: inline-flex;
       svg {
@@ -54,13 +57,48 @@ const TOCWrapper = styled.div`
     list-style: none;
   }
 
+  .toc-toggle-btn{
+    display:none;
+  }
+ 
+   .toc-ul-open{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+    list-style: none;
+    height:auto !important;
+    opacity:1 !important;
+    transition:all .4s !important;
+   }
+
+  .toc-menu-icon{
+    width: 1.5rem; 
+    height: 1.5rem; 
+    cursor: pointer;
+    fill: ${props => props.theme.menuColor};
+  }
+
   .toc-sub-heading:hover {
     color: ${(props) => props.theme.secondaryColor};
   }
 
   @media only screen and (max-width: 750px){
    position: initial;
-    }
+   margin-right: 3rem;
+   width: auto;
+   .toc-toggle-btn{
+    display:inline-block;
+   }
+   .go-back{
+      margin-left:0;
+   }
+
+   .toc-ul{
+    opacity:0;
+    height:0;
+    transition:none;
+   }
+  }
 `;
 
 export default TOCWrapper;
