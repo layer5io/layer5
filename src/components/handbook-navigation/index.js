@@ -16,18 +16,14 @@ const TOC = () => {
         <div className="toc-toggle-btn">
           {expand ? (
             <IoMdClose
-              className="mobile-menu-icon open"
-              style={{ width: "1.5rem", height: "1.5rem", cursor:"pointer" }}
-              fill="#3c494f"
+              className="mobile-menu-icon toc-menu-icon open"
               onClick={function () {
                 setExpand(!expand);
               }}
             />
           ) : (
             <IoIosArrowDropdownCircle
-              className="mobile-menu-icon"
-              fill="#3c494f"
-              style={{ width: "1.5rem", height: "1.5rem", cursor:"pointer" }}
+              className="mobile-menu-icon toc-menu-icon"
               onClick={function () {
                 setExpand(!expand);
               }}

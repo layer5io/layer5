@@ -71,6 +71,13 @@ const TOCWrapper = styled.div`
     transition:all .4s !important;
    }
 
+  .toc-menu-icon{
+    width: 1.5rem; 
+    height: 1.5rem; 
+    cursor: pointer;
+    fill: ${props => props.theme.menuColor};
+  }
+
   .toc-sub-heading:hover {
     color: ${(props) => props.theme.secondaryColor};
   }
