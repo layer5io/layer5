@@ -16,14 +16,14 @@ const TOC = () => {
         <div className="toc-toggle-btn">
           {expand ? (
             <IoMdClose
-              className="mobile-menu-icon toc-menu-icon open"
+              className="toc-menu-icon"
               onClick={function () {
                 setExpand(!expand);
               }}
             />
           ) : (
             <IoIosArrowDropdownCircle
-              className="mobile-menu-icon toc-menu-icon"
+              className="toc-menu-icon"
               onClick={function () {
                 setExpand(!expand);
               }}
