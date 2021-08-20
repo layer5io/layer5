@@ -17,7 +17,7 @@ const TOC = () => {
           {expand ? (
             <IoMdClose
               className="mobile-menu-icon open"
-              style={{ width: "1.5rem", height: "1.5rem" }}
+              style={{ width: "1.5rem", height: "1.5rem", cursor:"pointer" }}
               fill="#3c494f"
               onClick={function () {
                 setExpand(!expand);
@@ -27,7 +27,7 @@ const TOC = () => {
             <IoIosArrowDropdownCircle
               className="mobile-menu-icon"
               fill="#3c494f"
-              style={{ width: "1.5rem", height: "1.5rem" }}
+              style={{ width: "1.5rem", height: "1.5rem", cursor:"pointer" }}
               onClick={function () {
                 setExpand(!expand);
               }}
