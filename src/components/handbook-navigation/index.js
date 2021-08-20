@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import { Link } from "gatsby";
 import TOCWrapper from "./toc.style";
-import { IoMdClose } from "react-icons/io";
-import { FaBars } from "react-icons/fa";
+import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
 
 const TOC = () => {
   const [expand, setExpand] = useState(false);
@@ -15,19 +14,25 @@ const TOC = () => {
           <h4>Table of Content</h4>
         </Link>
         <div className="toc-toggle-btn">
-          {expand ?
+          {expand ? (
             <IoMdClose
               className="mobile-menu-icon open"
-              onClick={function () {
-                setExpand(!expand);
-              }}
-            /> : <FaBars
-              className="mobile-menu-icon"
+              style={{ width: "1.5rem", height: "1.5rem" }}
+              fill="#3c494f"
               onClick={function () {
                 setExpand(!expand);
               }}
             />
-          }
+          ) : (
+            <IoIosArrowDropdownCircle
+              className="mobile-menu-icon"
+              fill="#3c494f"
+              style={{ width: "1.5rem", height: "1.5rem" }}
+              onClick={function () {
+                setExpand(!expand);
+              }}
+            />
+          )}
         </div>
       </div>
       <div className="toc-list">
