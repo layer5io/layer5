@@ -96,7 +96,7 @@ const MemberSingle = ({frontmatter}) => {
                       <li>
                         <Link to="/service-mesh-management/meshery/meshery-operator">
                           <img className="profile-social-links" src={mesheryOperatorLogo} alt="Meshery Operator logo"/>
-                          </Link>
+                        </Link>
                       </li>
                     }
                   </ul>
