@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import { Link } from "gatsby";
 import TOCWrapper from "./toc.style";
-
+import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
 
 const preReqSteps = [
   {name: "Set up", link: "/service-mesh-management/meshery"},
@@ -11,7 +11,7 @@ const preReqSteps = [
 ];
 
 const TOC = ({ coursesData }) => {
-
+  const [expand, setExpand] = useState(false);
   // const reformatTOC= (data) => {
   //   let newData = data.split("-").join(" ");
   //   let firstLetter = newData.charAt(0).toUpperCase();
@@ -26,9 +26,26 @@ const TOC = ({ coursesData }) => {
           <HiOutlineChevronLeft />
           <h4>Learning Paths</h4>
         </Link>
+        <div className="toc-toggle-btn">
+          {expand ? (
+            <IoMdClose
+              className="toc-menu-icon"
+              onClick={function () {
+                setExpand(!expand);
+              }}
+            />
+          ) : (
+            <IoIosArrowDropdownCircle
+              className="toc-menu-icon"
+              onClick={function () {
+                setExpand(!expand);
+              }}
+            />
+          )}
+        </div>
       </div>
       <div className="toc-list">
-        <ul>
+        <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
           <Link to="#pre-requisites">
             <h5 className="toc-sub-heading">
               Pre-requisites
