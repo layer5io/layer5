@@ -90,20 +90,20 @@ const Sidebar = ( ) => {
             <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
           </div>
         </form>
-       
+        </div>
       <div className="explain-1">
        <div className="cards">
          <a href="https://discuss.layer5.io/">
                     <div className="card">
                       <h2>Join the Conversation</h2>
-                <p>Ask questions, find answers and share knowledge on our Discussion Forum</p>
+                <p>On our Discussion Forum</p>
                 <img className="logo" src={Discuss} />
                     </div>
           </a>
        </div>
       </div>
 
-      </div>
+     
     </BlogSideBarWrapper>
   );
 };
