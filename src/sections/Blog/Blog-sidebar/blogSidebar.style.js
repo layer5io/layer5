@@ -165,8 +165,54 @@ const BlogSideBarWrapper = styled.div`
        
     }
    
-      
-       
+    .explain-1 {
+        padding-top: 0rem;
+        text-align: center;
+        .cards {
+            margin: 0.15rem auto 0 ;
+            max-width: 50rem;
+            padding: 1.5rem 1rem 0rem 1rem;
+            background-color: none;
+            border-radius: 25px;
+            .card {
+                -webkit-transition: 450ms all;
+                transition: 450ms all;
+                margin: 2px;
+                padding: 1.25rem;
+                background-color: #1E2117; 
+                border-radius: 25px;
+                p {
+                    text-align: center;
+                    letter-spacing: 0;
+                    font-size: 15px;
+                    font-weight: 200;
+                    color: ${props => props.theme.white}; 
+                }
+                h2 {
+                    text-align: center;
+                    font-size: 21px;
+                    text-transform:uppercase;
+                    clear: both;
+                    margin-bottom: 0rem;
+                    margin-top: 1rem;
+                    color: ${props => props.theme.white}; 
+                }
+                .logo{
+                 height: 1.8rem;
+                 width: auto;  
+                 }
+                &:hover,
+                &:focus {
+                   outline: none;
+                }
+                &:hover{
+                    transform: translateY(0.03rem);
+                    box-shadow: 0 2px 10px #00d3a9;
+                }
+                }
+            }
+        }
+    }  
 `;
 
 export default BlogSideBarWrapper;
