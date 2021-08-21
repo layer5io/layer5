@@ -117,6 +117,9 @@ const TOCWrapper = styled.div`
            transition:none;
            padding-left: .8rem !important;
         }
+	.toc-item {
+           line-height: .8rem;
+        }
     }
 `;
 
