@@ -183,7 +183,7 @@ const BlogSideBarWrapper = styled.div`
                 transition: 450ms all;
                 margin: 2px 2px 2px 2px;
                 padding: 1.25rem;
-                background-color: #1E2117; 
+                background-color: ${props => props.theme.darkJungleGreenColor};   
                 border-radius: 25px;
                 p {
                     text-align: center;
