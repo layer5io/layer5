@@ -103,7 +103,7 @@ const TOCWrapper = styled.div`
     
     @media only screen and (max-width: 991px){
         position: initial;
-        margin-left: .25rem;
+        margin-left: -0.5rem;
         width: auto;
         .toc-toggle-btn{
            display: flex;
