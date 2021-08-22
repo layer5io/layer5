@@ -22,12 +22,12 @@ When adding a new or updating an existing community member profile be sure to fo
 Badges offer recognition of the efforts and works of community members.  Badges are assigned to a community member in acknowledgement of their engagement within and/or contribution to the representative project or (sub-)community. A variety of badges exist so that community members and their efforts may be affiliated with a particular project or community initiative. An example of how a badge assigned using markdown can be found [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx), and it will be appear [this way](https://layer5.io/community/members/abishek-kumar) on a member profile.
 ##### Possible badges include
 
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/community-green.svg" width="25px" height="25px"/> community
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/community-green.svg" width="25px" height="25px"/> Community
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/landscape-green.png" width="25px" height="25px"/> Landscape
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/layer5-image-hub.svg" width="25px" height="25px"/> Layer5
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark-text.svg" width="25px" height="25px"/> smp
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark-text.svg" width="25px" height="25px"/> SMP
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/getnighthawk-logo.png" width="25px" height="25px"/> GetNighthawk
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/patterns-logo.png" width="25px" height="25px"/> Patterns
 
