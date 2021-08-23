@@ -12,7 +12,7 @@ const Intro= () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">
-        <h1>About</h1>
+        <h1>Community Handbook</h1>
       </div> 
       <TOC />
       <div className="page-section">
