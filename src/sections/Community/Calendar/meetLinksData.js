@@ -18,7 +18,7 @@ export const meet_links_data = [
     meeting_recordings: "https://www.youtube.com/playlist?list=PL3A-A6hPO2IOur7idhSAUf6hySLn-hdVD",
   },
   {
-    day: "Tuesdays & Thursdays",
+    day: "Tuesdays",
     meeting: "Meshery MeshSync/MeshMap Meeting",
     slack_channel: "#meshery-ci",
     slack_link: "https://layer5io.slack.com/archives/C010LFFGFFA",
