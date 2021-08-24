@@ -11,10 +11,21 @@ const UnsubscribedWrapper = styled.div`
         width: 100%;
         text-align: center;
     }
-    h2 span{
-        color:${props => props.theme.secondaryColor};
+    h2,h3,h4,h5{
+        text-align: center;
+        font-weight: normal;
+        margin-top: 1.5rem;
     }
-    
+    a.highlight {
+    color: ${(props) => props.theme.primaryColor};
+    background-color: #eeeeee;
+    border-radius: 8px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    &:hover {
+      color: ${(props) => props.theme.keppelColor};
+    }
+  }
     input{
         display: block;
         padding: 0.9375rem;
