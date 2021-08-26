@@ -14,7 +14,7 @@ import TOC from "../../../components/handbook-navigation/index";
 
 
 const ConductWrapper = styled.div`
-    padding: 3rem 5rem 3rem 15rem;
+    padding: 0 5rem 3rem 20rem;
     margin-top: -25rem; 
     .rows{
       margin-top:2rem;
@@ -33,34 +33,57 @@ const ConductWrapper = styled.div`
       font-size: 17px;
     }
    .showcase{
-    text-align: center;
-    margin: 4rem 0;
-    .slider{
-        margin: auto;
-        width: 60%;
-        .slick-arrow{
-            margin: 0 -1.25rem 0 -3.125rem;
-        }	
-        .slick-arrow:before{	
-            color: ${props => props.theme.primaryColor};
-            font-size: 2rem;
-            display: inline-block;
-        }
-        .slick-arrow:hover:before{	
-            color: ${props => props.theme.secondaryColor};	
-        }
+	    text-align: center;
+	    margin: 4rem 0;
+	    .slider{
+		margin: auto;
+		width: 60%;
+		.slick-arrow{
+		    margin: 0 -1.25rem 0 -3.125rem;
+		}	
+		.slick-arrow:before{	
+		    color: ${props => props.theme.primaryColor};
+		    font-size: 2rem;
+		    display: inline-block;
+		}
+		.slick-arrow:hover:before{	
+		    color: ${props => props.theme.secondaryColor};	
+		}
+	    }
     }
-}
-.poster{
-  width: 20rem;
-  margin-left: 28%;
-  margin-bottom: 2%;
-}
-.gdocs{
-  margin-left: 40%;
-  width: 10rem;
-  height:10rem;
-}
+    .poster{
+	  width: 20rem;
+	  margin:0 auto;
+	  margin-bottom: 2rem;
+    }
+    .gdocs{
+	  margin: 0 auto;
+    	  margin-bottom: 2rem;      
+	  width: 10rem;
+	  height:10rem;
+    }
+    .page-main-para{
+          text-align:center;
+          font-family: "Qanelas Soft", "Open Sans", sans-serif;
+          letter-spacing:1px;
+    }
+    
+    @media screen and (max-width:750px){
+          padding: 0rem 3rem;
+    	  margin-top: 0; 
+          .showcase{
+	    margin-bottom: 2rem;
+	    .slider{
+		width: 80%;
+          }
+    }
+
+    @media screen and (max-width: 475px){
+          padding: 0rem 1.5rem;
+	  .showcase .slider .slick-arrow{
+		margin: 0 -.25rem 0 -1.25rem;
+          }
+    }
 `;
 
 
@@ -73,7 +96,7 @@ const MentorshipPrograms= () => {
       <TOC />
       <ConductWrapper>
         <Container>
-          <p>As an open-source organization and a community, we participate in different mentorships programs where project ideas are submitted for people to contribute to during the program. </p>
+          <p className="page-main-para">As an open-source organization and a community, we participate in different mentorships programs where project ideas are submitted for people to contribute to during the program. </p>
         </Container>
         <div className="showcase">
           <Slider

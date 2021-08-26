@@ -90,7 +90,7 @@ h2 h3{
         }
         .page-section{
           margin-top: -2rem;
-          margin-left: 2rem;
+          margin-left: 0rem;
         
         }
     }
