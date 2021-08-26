@@ -68,6 +68,7 @@ const TOCWrapper = styled.div`
     list-style: none;
     height:auto !important;
     opacity:1 !important;
+    margin-bottom: 2rem;
     transition:all .4s !important;
    }
 
