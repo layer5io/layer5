@@ -8,6 +8,8 @@ import partner7 from "../../assets/images/partners/hpe_side_black.svg";
 import partner8 from "../../assets/images/partners/microsft.svg";
 import partner9 from "../../assets/images/partners/redhat.svg";
 import partner10 from "../../assets/images/partners/smi1.png";
+import partner11 from "../../assets/images/partners/intel.svg";
+import {Link} from "gatsby";
 
 export const partners = [
   {
@@ -98,6 +100,15 @@ export const partners = [
     imageLink: partner10,
     imageRoute: "https://smi-spec.io/",
     moreInfo: "The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.",
+  },{
+    name: "Intel",
+    desc: "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
+    //link: null,
+    type: "technology",
+    imageLink: partner11,
+    imageRoute: "https://www.intel.in/content/www/in/en/homepage.html",
+    moreInfo:  "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
   }
+  
 
 ];
