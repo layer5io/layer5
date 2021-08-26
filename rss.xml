@@ -1,4 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5]]></title><description><![CDATA[Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 26 Aug 2021 09:53:05 GMT</lastBuildDate><item><title><![CDATA[CNCF Projects Bring Service Mesh Interoperability, Benchmarks]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5]]></title><description><![CDATA[Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 26 Aug 2021 10:50:37 GMT</lastBuildDate><item><title><![CDATA[GSoC Experience @ Layer5 - Piyush Singariya]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+/* @jsxRuntime classic */
+
+/* @jsx mdx */
+var _frontmatter = {
+  "title": "GSoC Experience @ Layer5 - Piyush Singariya",
+  "subtitle": "damn, it was good!",
+  "date": "2021-08-25 10:30:05 -0530",
+  "author": "Piyush Singariya",
+  "thumbnail": "./gsoc-wide.png",
+  "category": "Programs",
+  "tags": ["GSoC", "Programs", "Meshery", "Experience"],
+  "published": true
+};
+var layoutProps = {
+  _frontmatter: _frontmatter
+};
+var MDXLayout = "wrapper";
+return function MDXContent(_ref) {
+  var components = _ref.components,
+      props = _objectWithoutProperties(_ref, ["components"]);
+
+  return mdx(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), mdx(BlogWrapper, {
+    mdxType: "BlogWrapper"
+  }, mdx("img", {
+    src: gsocLogo,
+    className: "gsoc-image",
+    align: "right",
+    alt: "gsoc-image"
+  }), mdx("p", null, "Hi, I am Piyush Singariya, a short description of me would be \u201Canother software engineer watching anime\u201D, in the longer version I am a 2021 graduate from IIT Roorkee, who loves to watch anime and play video games all day. I know both are exactly the same, but it is what it is."), mdx("p", null, "It all started around 22 Feb when I jumped into slack, and after 10 whole days messing around the project, I started to get a hold of it. I started contributing to mesheryctl and I thought to apply for the GSoC 2021."), mdx("h2", {
+    id: "project"
+  }, "Project"), mdx("p", null, "My project was to introduce multiple net new features and minor enhancements in Meshery and mesheryctl (Meshery\u2019s CLI)."), mdx("p", null, "Meshery is a multi-service mesh management plane that offers lifecycle, configuration, and performance management of service meshes and applications running on top of those meshes. Meshery uses the", " ", mdx("a", {
+    href: "https://smp-spec.io/"
+  }, "Service Mesh Performance"), " specification to describe and capture performance benchmarks and characterize service mesh behavior."), mdx("p", null, "I integrated many new features in Meshery Some of them are mentioned here."), mdx("h3", {
+    id: "mesheryctl"
+  }, "mesheryctl"), mdx("ul", null, mdx("li", null, "Adding a new command to meshery's cli, i.e. mesheryctl for performance profiles and result management"), mdx("li", null, "Introduction of Unit Testing and Integration testing for Cobra commands of cli, mesheryctl.", mdx("ul", null, mdx("li", null, "Reached 28% code-coverage in mesheryctl"))), mdx("li", null, "Introducing health-checks for environment checking of pre/post-deployment of meshery server"), mdx("li", null, "Adding a new command to meshery's cli, i.e. mesheryctl for managing Webssembly filters")), mdx("h3", {
+    id: "meshery"
+  }, "Meshery"), mdx("ul", null, mdx("li", null, "Reworking and consolidation of API endpoint handlers"), mdx("li", null, "Swagger Spec definition and automatic publishing of documentation")), mdx("h3", {
+    id: "others"
+  }, "Others"), mdx("ul", null, mdx("li", null, "Documentation on writing Unit and Integration Tests and Contributing to Meshery Server Documentation"), mdx("li", null, "CI workflow for Swagger Documentation and running Unit and Integration Tests with calculating Code-coverage with CodeCov")), mdx("p", null, "Refer here for", " ", mdx("a", {
+    href: "https://github.com/piyushsingariya/gsoc2021"
+  }, "GSoC Final Report")), mdx("h2", {
+    id: "what-did-i-learn-"
+  }, "What did I learn?"), mdx("p", null, "During the whole season, as my work was mostly focused on Golang so I can say I learned Golang, learned working around HTTP handlers, writing cobra commands, setting up golang unit testing for Cobra Commands(damn, it was tough), writing environment health-checks, writing GitHub-actions, Open-API specification 2.0,"), mdx("h2", {
+    id: "summary"
+  }, "Summary"), mdx("p", null, "A quick summary of this experience would be that I had a really good time with Layer5, I learned, I engaged with other folks in the community, and I believe the environment here is truly best for any student to spend their time here, to learn and engage with each other. The folks here are crazy for helping new members get started with Layer5 projects.")));
+}
+;
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/blog/programs/gsoc-experience-layer5-piyush-singariya</link><guid isPermaLink="false">https://layer5.io/blog/programs/gsoc-experience-layer5-piyush-singariya</guid><dc:creator><![CDATA[Piyush Singariya]]></dc:creator><pubDate>Wed, 25 Aug 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/004c84277959e41260305fdda76691b1/gsoc-wide.png" length="0" type="image/png"/><content:encoded>&lt;div class=&quot;Blogstyle__BlogWrapper-di69nl-0 hbmsrp&quot;&gt;&lt;img src=&quot;static/gsoc-6270d7e92752bc9a4dc261e5ea71bd5c.png&quot; class=&quot;gsoc-image&quot; align=&quot;right&quot; alt=&quot;gsoc-image&quot;/&gt;&lt;p&gt;Hi, I am Piyush Singariya, a short description of me would be “another software engineer watching anime”, in the longer version I am a 2021 graduate from IIT Roorkee, who loves to watch anime and play video games all day. I know both are exactly the same, but it is what it is.&lt;/p&gt;&lt;p&gt;It all started around 22 Feb when I jumped into slack, and after 10 whole days messing around the project, I started to get a hold of it. I started contributing to mesheryctl and I thought to apply for the GSoC 2021.&lt;/p&gt;&lt;h2 id=&quot;project&quot;&gt;Project&lt;/h2&gt;&lt;p&gt;My project was to introduce multiple net new features and minor enhancements in Meshery and mesheryctl (Meshery’s CLI).&lt;/p&gt;&lt;p&gt;Meshery is a multi-service mesh management plane that offers lifecycle, configuration, and performance management of service meshes and applications running on top of those meshes. Meshery uses the &lt;a href=&quot;https://smp-spec.io/&quot;&gt;Service Mesh Performance&lt;/a&gt; specification to describe and capture performance benchmarks and characterize service mesh behavior.&lt;/p&gt;&lt;p&gt;I integrated many new features in Meshery Some of them are mentioned here.&lt;/p&gt;&lt;h3 id=&quot;mesheryctl&quot;&gt;mesheryctl&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Adding a new command to meshery&amp;#x27;s cli, i.e. mesheryctl for performance profiles and result management&lt;/li&gt;&lt;li&gt;Introduction of Unit Testing and Integration testing for Cobra commands of cli, mesheryctl.&lt;ul&gt;&lt;li&gt;Reached 28% code-coverage in mesheryctl&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Introducing health-checks for environment checking of pre/post-deployment of meshery server&lt;/li&gt;&lt;li&gt;Adding a new command to meshery&amp;#x27;s cli, i.e. mesheryctl for managing Webssembly filters&lt;/li&gt;&lt;/ul&gt;&lt;h3 id=&quot;meshery&quot;&gt;Meshery&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Reworking and consolidation of API endpoint handlers&lt;/li&gt;&lt;li&gt;Swagger Spec definition and automatic publishing of documentation&lt;/li&gt;&lt;/ul&gt;&lt;h3 id=&quot;others&quot;&gt;Others&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Documentation on writing Unit and Integration Tests and Contributing to Meshery Server Documentation&lt;/li&gt;&lt;li&gt;CI workflow for Swagger Documentation and running Unit and Integration Tests with calculating Code-coverage with CodeCov&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Refer here for &lt;a href=&quot;https://github.com/piyushsingariya/gsoc2021&quot;&gt;GSoC Final Report&lt;/a&gt;&lt;/p&gt;&lt;h2 id=&quot;what-did-i-learn-&quot;&gt;What did I learn?&lt;/h2&gt;&lt;p&gt;During the whole season, as my work was mostly focused on Golang so I can say I learned Golang, learned working around HTTP handlers, writing cobra commands, setting up golang unit testing for Cobra Commands(damn, it was tough), writing environment health-checks, writing GitHub-actions, Open-API specification 2.0,&lt;/p&gt;&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;&lt;p&gt;A quick summary of this experience would be that I had a really good time with Layer5, I learned, I engaged with other folks in the community, and I believe the environment here is truly best for any student to spend their time here, to learn and engage with each other. The folks here are crazy for helping new members get started with Layer5 projects.&lt;/p&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[CNCF Projects Bring Service Mesh Interoperability, Benchmarks]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
