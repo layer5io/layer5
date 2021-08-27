@@ -1,7 +1,7 @@
 ---
 docType: "Chapter"
 chapterTitle: "Observability"
-description: "Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
+description: "Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
 videos: 4
 lectures: 12
 order: 4
@@ -31,7 +31,7 @@ Using Meshery, install Istio telemetry add-ons. In the Istio management page:
 
 You will use Prometheus and Grafana for collecting and viewing metrics and [Jaeger](https://www.jaegertracing.io/) collecting and viewing distributed traces. Expose each add-on external to the cluster. Each the service network typs are set to "LoadBalancer".
 
-<h3 class="chapter-sub-heading">Service Mesh Performance and Telemetry</h3>
+<h2 class="chapter-sub-heading">Service Mesh Performance and Telemetry</h2>
 
 Many of the labs require load to be placed on the sample apps. Let's generate HTTP traffic against the BookInfo application, so we can see interesting telemetry.
 
@@ -49,18 +49,18 @@ The URL to run a load test against will be `http://<IP/hostname of any of the no
 
 Use the computed URL above in Meshery, in the browser, to run a load test and see the results.
 
-<h4 class="chapter-sub-heading">
+<h3 class="chapter-sub-heading">
   Connect Grafana (optionally, Prometheus) to Meshery.
-</h4>
+</h3>
 
 On the [Settings page](http://localhost:9081/settings#metrics):
 
 1. Navigate to the `Metrics` tab.
 1. Enter Grafana's URL:port number and submit.
 
-<h4 class="chapter-sub-heading">
+<h3 class="chapter-sub-heading">
   Use Meshery to generate load and analyze performance.
-</h4>
+</h3>
 
 On the [Performance page](http://localhost:9081/performance):
 
@@ -105,7 +105,7 @@ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.7/sampl
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.7/samples/addons/jaeger.yaml
 
 ```
-
+<br/>
 <h4 class="chapter-alt-heading"> Exposing services</h4>
 
 Istio add-on services are deployed by default as `ClusterIP` type services. We can expose the services outside the cluster by either changing the Kubernetes service type to `NodePort` or `LoadBalancer` or by port-forwarding or by configuring Kubernetes Ingress.
