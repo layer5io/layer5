@@ -17,7 +17,7 @@ const Table = ({ columns, data }) => {
   return (
     <TableWrapper>
       <a name="meetings" id="meetings"></a>
-      <h1 className="meetings-table-title">Layer5 Meetings</h1>
+      <h1 className="meetings-table-title"><a href="https://meet.layer5.io">Layer5 Meetings</a></h1>
       <h3 className="meetings-table-subtitle">Everyone is welcome to join. Engage!</h3>
       <table {...getTableProps()}>
         <thead>
