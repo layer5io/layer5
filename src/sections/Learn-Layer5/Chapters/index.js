@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import { Container, Row, Col } from "../../../reusecore/Layout";
@@ -59,13 +60,13 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
     return(  
       <>
         <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`}>
-          <a  href={`/${sm.slug}`} data-for="mesh-name" data-tip={capitalize(sm.section)} className="course" key={sm+index}>
+          <Link to={`/${sm.slug}`} data-for="mesh-name" data-tip={capitalize(sm.section)} className="course" key={sm+index}>
             <Image
               {...findServiceMeshImage(serviceMeshImages, sm.section).imagepath}
               className="docker"
               alt={sm.section}
             />
-          </a>
+          </Link>
         </div>
         <ReactTooltip 
           id="mesh-name"

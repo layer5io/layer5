@@ -1,8 +1,8 @@
 import React,{ useState, useEffect } from "react";
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import { Link } from "gatsby";
-import { getActiveServiceMesh } from "../getActiveServiceMesh";
-import { getCurrentPage } from "../getCurrentPage";
+import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
+import { getCurrentPage } from "../../../utils/getCurrentPage";
 import TOCWrapper from "./toc.style";
 
 const TOC = ({ TOCData,courseData, chapterData, location }) => {
@@ -40,9 +40,9 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
           {availableChapters.map((item) => (
             <li key={item} className={item === path ? "active-link" : ""}>
               <p className="toc-item">
-                <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
+                <Link to={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
                   {reformatTOC(item)}
-                </a>
+                </Link>
               </p>
             </li>
           ))}

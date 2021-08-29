@@ -20,6 +20,7 @@ export const ChapterWrapper = styled.div`
         a {
             display: block;
             padding: 0.1rem 0.35rem;
+            text-align: center;
         }
         .old-gatsby-image-wrapper {
             img {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../../reusecore/Button";
 import { PaginationWrapper } from "./paginate.style";
-import { getActiveServiceMesh } from "../getActiveServiceMesh";
-import { getCurrentPage } from "../getCurrentPage";
+import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
+import { getCurrentPage } from "../../../utils/getCurrentPage";
 
 const Pagination = ({ TOCData, chapterData, location }) => {
 
@@ -26,7 +26,7 @@ const Pagination = ({ TOCData, chapterData, location }) => {
     nextChapter = availableChapters[currentChapterIndx + 1];
     for(let i = 0; i < TOCData.length; i++){
       if(TOCData[i].fields.chapter === nextChapter &&
-                TOCData[i].fields.section === getActiveServiceMesh(chapterData)){
+          TOCData[i].fields.section === getActiveServiceMesh(chapterData)){
         nextChapterTitle = TOCData[i].frontmatter.chapterTitle;
         break;
       }
