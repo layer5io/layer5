@@ -51,7 +51,6 @@ const Connect= () => {
             <p><span className="highlight">#websites</span> - For discussions related to layer5.io site.</p>
             <p><span className="highlight">#workshops</span> - Q-A for workshops given at KubeCon, DockerCon, Velocity, O’Reilly Live Training</p>
           </div>
-
         </Container>
       </div>
     </HandbookWrapper>
