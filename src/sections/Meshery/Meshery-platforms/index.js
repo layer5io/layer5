@@ -63,8 +63,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Google Kubernetes Engine User</h2>
-        <Code codeString={dedent`mesheryctl system config gke --token *PATH_TO_TOKEN* 
-        ./generate_kubeconfig_gke.sh cluster-admin-sa-gke default
+        <Code codeString={dedent`mesheryctl system config gke
         mesheryctl system start`}
         />
       </>
@@ -77,8 +76,8 @@ const supported_platforms = [
       <>
         <h2>Helm Chart</h2>
         <p>Install on Kubernetes using Helm:</p>
-        <Code codeString={dedent`helm repo add meshery https://meshery.io/charts/
-        helm install my-meshery meshery/meshery --version 2.1.2`}
+        <Code codeString={dedent`kubectl create namespace meshery
+        helm install meshery --namespace meshery install/kubernetes/helm/meshery`}
         /> 
       </>
     )
@@ -116,7 +115,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Kubernetes User</h2>
-        <Code codeString={dedent`curl -L https://git.io/meshery | PLATFORM=kubernetes bash - 
+        <Code codeString={dedent`mesheryctl system context create k8s -p kubernetes -s
         mesheryctl system start`
         }
         />
@@ -140,7 +139,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Minikube User</h2>
-        <Code codeString={dedent`mesheryctl system config minikube -t ~/Downloads/auth.json`
+        <Code codeString={dedent`mesheryctl system config minikube`
         }
         />
       </>
@@ -153,8 +152,7 @@ const supported_platforms = [
       <>
         <h2>Azure Kubernetes Service User</h2>
         <p>Install mesheryctl and configure Meshery to communicate with AKS.</p>
-        <Code codeString={dedent`mesheryctl system config aks
-        mesheryctl system start`
+        <Code codeString={dedent`mesheryctl system config aks`
         }
         />
       </>
