@@ -477,7 +477,6 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
   const [learnpath, course, section, chapter] = parts;
-  // const pageSlug = slug.slice(0, -1);
 
   createNodeField({ node, name: "learnpath", value: learnpath });
   createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
@@ -486,9 +485,6 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "section", value: section });
   createNodeField({ node, name: "pageType", value: "chapter" });
-
-  // Code for live fetch of code from github using commit-id, check storybook's gatsby-node.js file
-
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

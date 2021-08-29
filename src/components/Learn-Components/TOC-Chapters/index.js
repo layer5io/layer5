@@ -1,6 +1,8 @@
 import React,{ useState, useEffect } from "react";
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import { Link } from "gatsby";
+import { getActiveServiceMesh } from "../getActiveServiceMesh";
+import { getCurrentPage } from "../getCurrentPage";
 import TOCWrapper from "./toc.style";
 
 const TOC = ({ TOCData,courseData, chapterData, location }) => {
@@ -13,19 +15,8 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
     return newData;
   };
 
-  const getCurrentPage = (location) => {
-    if (location !== undefined && location.href !== undefined) {
-      const currentChapter = location.href.split("/");
-      if(currentChapter[currentChapter.length - 1] != "")
-        return currentChapter[currentChapter.length - 1];
-      else
-        return currentChapter[currentChapter.length - 2];
-    }
-  };
-
-  const getActiveServiceMesh = () => chapterData.fields.slug.split("/")[3];
-
-  const availableChapters = TOCData.filter(toc => toc.fields.section === getActiveServiceMesh()).map(toc => toc.fields.chapter);
+  const availableChapters = TOCData.filter(toc => toc.fields.section === getActiveServiceMesh(chapterData))
+    .map(toc => toc.fields.chapter);
 
   useEffect(() => {
     const path = location.pathname.split("/");
@@ -49,7 +40,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
           {availableChapters.map((item) => (
             <li key={item} className={item === path ? "active-link" : ""}>
               <p className="toc-item">
-                <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh()}/${item}/`}>
+                <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
                   {reformatTOC(item)}
                 </a>
               </p>

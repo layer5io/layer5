@@ -28,13 +28,13 @@ export const query = graphql`
           chapter
         }
     }
+
     course: allMdx(
       filter: {fields: {course: {eq: $course}}, frontmatter:{ docType:{eq:"Course"}}}
     ) {
         nodes {
           frontmatter {
             courseTitle
-            toc
             meshesYouLearn {
             imagepath {
               childImageSharp {
@@ -58,14 +58,14 @@ export const query = graphql`
         nodes {
           frontmatter{
             order
-      }
+            chapterTitle
+          }
           fields {
             section
             chapter
           }
         }
     }
-
 
   serviceMeshesList: allMdx(
     filter: {fields: {course: {eq: $course}, pageType: {eq: "chapter"}}}
@@ -76,8 +76,6 @@ export const query = graphql`
         }
       }
     }
-
-   
 }
 `;
 
