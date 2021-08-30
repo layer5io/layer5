@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import { Container, Row, Col } from "../../../reusecore/Layout";
@@ -6,6 +7,7 @@ import TOC from "../../../components/Learn-Components/TOC-Chapters";
 import Image from "../../../components/image";
 import { ChapterWrapper } from "./chapters.style";
 import ReactTooltip from "react-tooltip";
+import Pagination from "../../../components/Learn-Components/Pagination";
 
 const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData}) => {
 
@@ -51,20 +53,21 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
   };
 
   const findServiceMeshImage = (images, serviceMesh) => images.find(image => image.name.toLowerCase() == serviceMesh);
+  const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
   const ServiceMeshesAvailable = ({serviceMeshes}) => serviceMeshes.map((sm, index) => {
 
     return(  
       <>
-        <a  href={`/${sm.slug}`} data-for="mesh-name" data-tip={sm.section} className="course" key={sm+index}>
-          <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`}>
+        <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`}>
+          <Link to={`/${sm.slug}`} data-for="mesh-name" data-tip={capitalize(sm.section)} className="course" key={sm+index}>
             <Image
               {...findServiceMeshImage(serviceMeshImages, sm.section).imagepath}
               className="docker"
               alt={sm.section}
             />
-          </div>
-        </a>
+          </Link>
+        </div>
         <ReactTooltip 
           id="mesh-name"
           place="bottom"
@@ -84,7 +87,7 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
           <Col sm={12} md={3}>
             <div className="toc-switcher-parent-div">
               <TOC courseData={courseData} TOCData={TOCData} chapterData={chapterData} location={location} />
-              <div className="service-mesh-switch-container">
+              <div>
                 <h4>Service Meshes Available</h4>
                 <div className="service-mesh-switcher">
                   <ServiceMeshesAvailable serviceMeshes={getAvailableServiceMeshes()}/>
@@ -99,6 +102,7 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
                 <MDXRenderer>{body}</MDXRenderer>
               </SRLWrapper>
             </div>
+            <Pagination TOCData={TOCData} chapterData={chapterData} location={location} />
           </Col>
         </Row>
       </Container>

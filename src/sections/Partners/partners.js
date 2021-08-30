@@ -8,6 +8,8 @@ import partner7 from "../../assets/images/partners/hpe_side_black.svg";
 import partner8 from "../../assets/images/partners/microsft.svg";
 import partner9 from "../../assets/images/partners/redhat.svg";
 import partner10 from "../../assets/images/partners/smi1.png";
+import partner11 from "../../assets/images/partners/intel.svg";
+import {Link} from "gatsby";
 
 export const partners = [
   {
@@ -28,12 +30,12 @@ export const partners = [
     moreInfo: "Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school. Learn more about our mentoring",
   },{
     name: "University of Engineering & Management Jaipur",
-    desc: "We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the univeristy participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. Learn more about Layer5's internships",
+    desc: "We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the university participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. Learn more about Layer5's internships",
     //link: "/careers/internships",
     type: "academic",
     imageLink: partner3,
     imageRoute: "https://uem.edu.in/blog/what-is-open-source/",
-    moreInfo: "We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the univeristy participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. Learn more about Layer5's internships",
+    moreInfo: "We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the university participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. Learn more about Layer5's internships",
   },{
     name: "Citrix",
     desc: "Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.",
@@ -98,6 +100,15 @@ export const partners = [
     imageLink: partner10,
     imageRoute: "https://smi-spec.io/",
     moreInfo: "The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.",
+  },{
+    name: "Intel",
+    desc: "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
+    //link: null,
+    type: "technology",
+    imageLink: partner11,
+    imageRoute: "https://www.intel.in/content/www/in/en/homepage.html",
+    moreInfo:  "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
   }
+  
 
 ];

@@ -304,7 +304,7 @@ export const non_functional=[{
   icon: Osm
 },
 {
-  name: "NGINX Service Mesh",
+  name: "Nginx Service Mesh",
   opensource: "Partial",
   link: "https://www.nginx.com/products/nginx-service-mesh/",
   governance: "NGINX",

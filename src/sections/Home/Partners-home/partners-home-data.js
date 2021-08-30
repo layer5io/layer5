@@ -16,10 +16,11 @@ export const partners = [
     imageRoute: "/partners#redhat",
     innerDivStyle: "partner__block__inner horizontal"
   },{
-    name: "UEM",
-    imageLink: uem, 
-    imageRoute: "/partners#uem",
+    name: "Intel",
+    imageLink: intel, 
+    imageRoute: "/partners#intel",
     innerDivStyle: "partner__block__inner"
+    
   },{
     name: "University of Texas at Austin partnership with Layer5",
     imageLink: utaustin, 
@@ -52,9 +53,9 @@ export const partners = [
     innerDivStyle: "partner__block__inner"
    
   },{
-    name: "Intel",
-    imageLink: intel, 
-    imageRoute: "/partners#intel",
+    name: "UEM",
+    imageLink: uem, 
+    imageRoute: "/partners#uem",
     innerDivStyle: "partner__block__inner"
   }
 ]; 
