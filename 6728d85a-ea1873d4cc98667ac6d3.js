@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkLayer5=self.webpackChunkLayer5||[]).push([[6158],{49845:function(t,e,n){n.d(e,{v8y:function(){return a}});var r=n(51046);function a(t){return(0,r.w_)({tag:"svg",attr:{viewBox:"0 0 24 24"},child:[{tag:"path",attr:{fill:"none",stroke:"#000",strokeWidth:"2",d:"M7,7 L17,17 M7,17 L17,7"}}]})(t)}}}]);
+//# sourceMappingURL=6728d85a-ea1873d4cc98667ac6d3.js.map
