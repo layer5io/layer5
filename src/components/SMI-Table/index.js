@@ -57,7 +57,7 @@ const Table = ({ columns, data, spec }) => {
                           <img data-for="mesh-icon" data-tip={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} />
                           <ReactTooltip 
                             id="mesh-icon"
-                            place="bottom"
+                            place="left"
                             effect="solid"
                             multiline
                             backgroundColor="rgb(60,73,79)"
@@ -68,7 +68,7 @@ const Table = ({ columns, data, spec }) => {
                           <img  data-for="mesh-icon" data-tip={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} />
                           <ReactTooltip 
                             id="mesh-icon"
-                            place="bottom"
+                            place="left"
                             effect="solid"
                             multiline
                             backgroundColor="rgb(60,73,79)"
