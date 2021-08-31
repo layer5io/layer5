@@ -66,7 +66,6 @@ h2 h3{
       width:75%
       margin-top:-2rem;
     }
-    
     @media only screen and (max-width: 750px){
       .page-section{
         margin-top: -2rem;
