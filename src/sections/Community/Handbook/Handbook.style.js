@@ -73,6 +73,22 @@ h2 h3{
         }
     }
     
+    table {
+     border-collapse: collapse;
+     width: 100%;
+     margin: 20px 0 30px 0;
+        }
+
+   td, th {
+     border: 1px solid #dddddd;
+     text-align: left;
+     padding: 8px;
+        }
+
+   tr:nth-child(even) {
+     background-color: ${props => props.theme.secondaryLightColorTwo};
+        }
+
     @media only screen and (max-width: 750px){
       .page-section{
         margin-top: -2rem;

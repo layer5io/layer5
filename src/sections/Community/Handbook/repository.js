@@ -2,9 +2,16 @@ import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
+import { repo_data } from "./repo-data";
 
-
-const Repository= () => {
+const Repository = () => {
+  const data = React.useMemo(() => repo_data);
+  let frontend =  data.filter((data) => data.category === "Frontend");
+  let installation =  data.filter((data) => data.category === "Installation Dedicated Repos");
+  let serviceMeshManagement =  data.filter((data) => data.category === "Service Mesh Management Repos");
+  let adapterDedicated =  data.filter((data) => data.category === "Adapter Dedicated Repos");
+  let webAssembly =  data.filter((data) => data.category === "WebAssembly Repos");
+  let serviceMeshPerformance =  data.filter((data) => data.category === "Service Mesh Performance Repos ");
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -15,72 +22,127 @@ const Repository= () => {
         <Container>
           <div className= "content">
             <h2>Purpose</h2>
-            <p>This overview serves as resources to newcomers seeking a perspective of the collective community efforts (from the limited vantage point of a code-centric perspective). </p>
-
-            <h2>Frontend Projects</h2>
-            <p>
-              <li><a href="https://layer5.io/">Layer.io</a></li> 
-              <li><a href="https://meshery.io">Meshery.io</a></li>
-              <li><a href="http://docs.meshery.io">Meshery Documentation</a></li>
-              <li><a href="https://smp-spec.io">Service Mesh Performance</a></li>
-              <li><a href="https://github.com/layer5io/meshery/tree/master/ui">Meshery UI</a></li>
-              <li><a href="https://docs.google.com/document/d/1lHfMo4iIx2WXFZIspfHyxTsPR1T63_2IV5NUkgxoo0w/edit#"> GetNighthawk</a></li>
-              <li><a href="https://drive.google.com/a/layer5.io/open?id=1AMi5UTUwLRFeQRQj7YuRQgMG-4IXWie24z4R88Eoazs">MeshSync UI (MeshMap)</a></li>
-            </p>
-
-            <h2>Backend Projects</h2>
-            <h3>Service Mesh Management Repos</h3>
-            <p>
-              <li><a href="https://github.com/layer5io/meshery">Meshery</a></li>
-              <li><a href="https://github.com/layer5io/smi-conformance">Learn-Layer5</a></li>
-              <li><a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a></li>
-              <li><a href="https://github.com/layer5io/meshsync">MeshSync</a></li> 
-            </p>
-            <h3>Adapter Dedicated Repos</h3>
-            <Row>
-              <Col lg={6} md={6} sm={12}>
-                <p>
-                  <li><a href="https://github.com/layer5io/meshery-istio">Meshery-istio</a></li>
-                  <li><a href="https://github.com/layer5io/meshery-linkerd">Meshery-linkerd</a></li>
-                  <li><a href="https://github.com/layer5io/layer5-istio-adapter">Layer5-istio-adapter</a></li>
-                  <li><a href="https://github.com/layer5io/meshery-nsm">Meshery-nsm</a></li> 
-                  <li><a href="https://github.com/layer5io/meshery-octarine">Meshery-octarine</a></li>
-                  <li><a href="https://github.com/layer5io/meshery-traefik-mesh">Meshery-traefik-mesh</a></li>
-                  <li><a href="https://github.com/layer5io/meshery-kuma">Meshery-kuma</a></li>
-                </p>
-              </Col>
-              <Col lg={6} md={6} sm={12}>
-                <p>
-                  <li><a href="https://github.com/layer5io/meshery-consul">Meshery-consul</a></li>
-                  <li><a href="https://github.com/layer5io/meshery-cpx">Meshery-cpx</a></li> 
-                  <li><a href="https://github.com/layer5io/meshery-adapter-template">Meshery-adapter-template</a></li> 
-                  <li><a href="https://github.com/layer5io/meshery-tanzu-sm">Meshery-tanzu-sm</a></li> 
-                  <li><a href="https://github.com/layer5io/meshery-nginx-sm">Meshery-Nginx-sm</a></li>  
-                  <li><a href="https://github.com/layer5io/meshkit">Meshkit</a></li> 
-                  <li><a href="https://github.com/layer5io/meshery-adapter-library">Meshery-adapter-library</a></li> 
-                </p>
-              </Col>
-            </Row>
-        
-            <h3>Installation Dedicated Repos</h3>
-        
-            <p>
-              <li><a href="https://github.com/layer5io/scoop-bucket">Scoop-bucket</a></li>
-              <li><a href="https://github.com/layer5io/homebrew-tap">Homebrew-tap</a></li> 
-            </p>
-            <h3>WebAssembly Repos </h3>
-            <p>
-              <li><a href="https://github.com/layer5io/image-hub">Image-hub</a></li>
-              <li><a href="https://github.com/layer5io/wasm-filters">Wasm-filters</a></li>  
-            </p>
-            <h3>Service Mesh Performance Repos </h3>
-            <p>
-              <li><a href="https://github.com/layer5io/service-mesh-performance-specification">Service Mesh Performance</a></li>
-              <li><a href="https://github.com/giltene/wrk2">Wrk2</a></li> 
-              <li><a href="https://github.com/layer5io/gowrk2">Gowrk2</a></li> 
-              <li><a href="https://github.com/layer5io/nighthawk-go">Getnighthawk</a></li> 
-            </p>
+            <p>This overview serves as resources to newcomers seeking a perspective of the collective community efforts (from the limited vantage point of a code-centric perspective). </p>    
           </div>
+
+          <h2>Frontend Projects</h2>
+          
+           <table>
+             <tr>
+            <th>Project</th>
+            <th>Framework</th>
+            <th>Github</th>
+            </tr>
+        {frontend.map((frontend) => {
+            const { project, language, repository, site } = frontend;
+            return (
+            <tr>
+            <td><a href={site}>{project}</a></td>
+            <td>{language}</td>
+            <td><a href={repository}>Repository</a></td>
+          </tr> 
+        );
+      })} 
+           </table>
+       
+
+<h2>Backend Projects</h2>
+
+<table>
+            <tr>
+              <th>Service Mesh Management Repos</th>
+              <th>Language</th>
+              <th>Github</th>
+            </tr>
+{serviceMeshManagement.map((serviceMeshManagement) => {
+        const { project, language, repository } = serviceMeshManagement;
+        return (
+            <tr>
+               <td>{project}</td>
+               <td>{language}</td>
+                <td><a href={repository}>Repository</a></td>
+             </tr>
+           
+        );
+      })} 
+</table>
+
+<table>
+            <tr>
+              <th>Adapter Dedicated Repos</th>
+              <th>Language</th>
+              <th>Github</th>
+            </tr>
+{adapterDedicated.map((adapterDedicated) => {
+        const { project, language, repository } = adapterDedicated;
+        return (
+            <tr>
+               <td>{project}</td>
+               <td>{language}</td>
+                <td><a href={repository}>Repository</a></td>
+             </tr>
+           
+        );
+      })} 
+</table>
+
+
+<table>
+            <tr>
+              <th>Installation Dedicated Repos</th>
+              <th>Description</th>
+              <th>Github</th>
+            </tr>
+{installation.map((installation) => {
+        const { project, language, repository } = installation;
+        return (
+            <tr>
+               <td>{project}</td>
+               <td>{language}</td>
+                <td><a href={repository}>Repository</a></td>
+             </tr>
+           
+        );
+      })} 
+</table>
+
+<table>
+            <tr>
+              <th>WebAssembly Repos</th>
+              <th>Description</th>
+              <th>Github</th>
+            </tr>
+{webAssembly.map((webAssembly) => {
+        const { project, language, repository } = webAssembly;
+        return (
+            <tr>
+               <td>{project}</td>
+               <td>Built with {language}</td>
+                <td><a href={repository}>Repository</a></td>
+             </tr>
+           
+        );
+      })} 
+</table>
+
+<table>
+            <tr>
+              <th>Sevice Mesh Performance Repos</th>
+              <th>Description</th>
+              <th>Github</th>
+            </tr>
+{serviceMeshPerformance.map((serviceMeshPerformance) => {
+        const { project, language, repository } = serviceMeshPerformance;
+        return (
+            <tr>
+               <td>{project}</td>
+               <td>Built with {language}</td>
+                <td><a href={repository}>Repository</a></td>
+             </tr>
+           
+        );
+      })} 
+</table>
         </Container>     
       </div>
     </HandbookWrapper>

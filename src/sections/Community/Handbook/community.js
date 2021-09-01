@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
-import styled from "styled-components";
 import {Link} from "gatsby";
 
 
