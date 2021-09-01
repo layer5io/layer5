@@ -10,10 +10,10 @@ export const HandbookWrapper = styled.div`
   width:100%;
   padding-bottom: 2rem;
 ul > li {
-    color: ${props => props.theme.primaryLightColorTwo};
+    color: ${props => props.theme.menuColor};
   }
 ol > li {
-    color: ${props => props.theme.primaryLightColorTwo};
+    color: ${props => props.theme.menuColor};
   }
 ul > li > span {
     color: ${props => props.theme.black};
