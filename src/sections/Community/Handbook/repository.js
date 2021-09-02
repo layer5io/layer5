@@ -3,15 +3,16 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import { repo_data } from "./repo-data";
+import github from "../../../assets/images/socialIcons/github.svg";
+import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import five from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
+import gnh from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
 
 const Repository = () => {
   const data = React.useMemo(() => repo_data);
   let frontend =  data.filter((data) => data.category === "Frontend");
-  let installation =  data.filter((data) => data.category === "Installation Dedicated Repos");
-  let serviceMeshManagement =  data.filter((data) => data.category === "Service Mesh Management Repos");
-  let adapterDedicated =  data.filter((data) => data.category === "Adapter Dedicated Repos");
-  let webAssembly =  data.filter((data) => data.category === "WebAssembly Repos");
-  let serviceMeshPerformance =  data.filter((data) => data.category === "Service Mesh Performance Repos ");
+  let backend =  data.filter((data) => data.category !== "Frontend");
+
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -23,126 +24,65 @@ const Repository = () => {
           <div className= "content">
             <h2>Purpose</h2>
             <p>This overview serves as resources to newcomers seeking a perspective of the collective community efforts (from the limited vantage point of a code-centric perspective). </p>    
-          </div>
-
-          <h2>Frontend Projects</h2>
           
-           <table>
-             <tr>
-            <th>Project</th>
-            <th>Framework</th>
-            <th>Github</th>
-            </tr>
-        {frontend.map((frontend) => {
-            const { project, language, repository, site } = frontend;
-            return (
-            <tr>
-            <td><a href={site}>{project}</a></td>
-            <td>{language}</td>
-            <td><a href={repository}>Repository</a></td>
-          </tr> 
-        );
-      })} 
-           </table>
-       
+             <h2>Frontend Projects</h2>
+             {frontend.map((frontend) => {
+                  const { category } = frontend; 
+                  return (  
+                  
+          <table className="frontendTable">
+                      <tr>
+                        <th>Project</th>
+                        <th>Framework</th>
+                        <th className="linkscol">Site</th>
+                        <th className="linkscol">GitHub</th>
+                      </tr>          
+          {frontend.subdata.map((subdata) => {
+                  const { project, language, repository, site, image } = subdata;
+                 let url = (image === "meshery")? meshery : 
+                 (image === "five")? five : gnh ;
+                  return (
+                      <tr>
+                         <td>{project}</td>
+                         <td>{language}</td>
+                         <td><a href={site}><img className="site-icon" src={url} /></a></td>
+                         <td><a href={repository}><img class="github-icon" src={github} /></a></td>
+                      </tr>
+           
+                  );
+                  })} 
+            </table>
+            );
+                  })}
 
-<h2>Backend Projects</h2>
+          <h2>Backend Projects</h2>
 
-<table>
-            <tr>
-              <th>Service Mesh Management Repos</th>
-              <th>Language</th>
-              <th>Github</th>
-            </tr>
-{serviceMeshManagement.map((serviceMeshManagement) => {
-        const { project, language, repository } = serviceMeshManagement;
-        return (
-            <tr>
-               <td>{project}</td>
+          {backend.map((backend) => {
+                  const { category } = backend;
+                  return (            
+          <table>
+                      <tr>
+                        <th>{category}</th>
+                        <th>Language</th>
+                        <th class="linkscol">GitHub</th>
+                      </tr>          
+          {backend.subdata.map((subdata) => {
+                  const { project, language, repository } = subdata;
+                  return (
+                      <tr>
+                         <td>{project}</td>
                <td>{language}</td>
-                <td><a href={repository}>Repository</a></td>
+                <td><a href={repository}><img class="github-icon" src={github} /></a></td>
              </tr>
            
-        );
-      })} 
-</table>
-
-<table>
-            <tr>
-              <th>Adapter Dedicated Repos</th>
-              <th>Language</th>
-              <th>Github</th>
-            </tr>
-{adapterDedicated.map((adapterDedicated) => {
-        const { project, language, repository } = adapterDedicated;
-        return (
-            <tr>
-               <td>{project}</td>
-               <td>{language}</td>
-                <td><a href={repository}>Repository</a></td>
-             </tr>
-           
-        );
-      })} 
-</table>
+                  );
+                  })} 
+            </table>
+            );
+                  })}
 
 
-<table>
-            <tr>
-              <th>Installation Dedicated Repos</th>
-              <th>Description</th>
-              <th>Github</th>
-            </tr>
-{installation.map((installation) => {
-        const { project, language, repository } = installation;
-        return (
-            <tr>
-               <td>{project}</td>
-               <td>{language}</td>
-                <td><a href={repository}>Repository</a></td>
-             </tr>
-           
-        );
-      })} 
-</table>
-
-<table>
-            <tr>
-              <th>WebAssembly Repos</th>
-              <th>Description</th>
-              <th>Github</th>
-            </tr>
-{webAssembly.map((webAssembly) => {
-        const { project, language, repository } = webAssembly;
-        return (
-            <tr>
-               <td>{project}</td>
-               <td>Built with {language}</td>
-                <td><a href={repository}>Repository</a></td>
-             </tr>
-           
-        );
-      })} 
-</table>
-
-<table>
-            <tr>
-              <th>Sevice Mesh Performance Repos</th>
-              <th>Description</th>
-              <th>Github</th>
-            </tr>
-{serviceMeshPerformance.map((serviceMeshPerformance) => {
-        const { project, language, repository } = serviceMeshPerformance;
-        return (
-            <tr>
-               <td>{project}</td>
-               <td>Built with {language}</td>
-                <td><a href={repository}>Repository</a></td>
-             </tr>
-           
-        );
-      })} 
-</table>
+          </div>
         </Container>     
       </div>
     </HandbookWrapper>

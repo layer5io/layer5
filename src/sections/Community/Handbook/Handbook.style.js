@@ -75,26 +75,50 @@ h2 h3{
     
     table {
      border-collapse: collapse;
-     width: 100%;
+     width: 98%;
      margin: 20px 0 30px 0;
+     .github-icon{
+       height: 27px;
+       width:auto;
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+     }
+     .site-icon{
+       height: 25px;
+       width:auto;
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+     }
         }
 
    td, th {
-     border: 1px solid #dddddd;
+     border: 0.5px solid ${props => props.theme.primaryLightColor};
      text-align: left;
      padding: 8px;
         }
-
+      .linkscol{
+        text-align: center;
+        width:8%;
+      }  
    tr:nth-child(even) {
      background-color: ${props => props.theme.secondaryLightColorTwo};
         }
-
+     .codes{
+      width:75%
+      margin-top:-2rem;
+    }
     @media only screen and (max-width: 750px){
       .page-section{
         margin-top: -2rem;
         margin-left: 0;
         padding: 1rem 2.5rem;
       }
+      .codes{
+      width:100%
+      margin-top:-2rem;
+    }
     }
    
 
@@ -107,7 +131,12 @@ h2 h3{
         .page-section{
           margin-top: -2rem;
           margin-left: 0rem;
-        
+        }
+        table{
+          margin-left: -1.5rem;
+        }
+        .frontendTable{
+          margin-left: -3rem; 
         }
     }
 `;
