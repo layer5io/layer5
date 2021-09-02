@@ -41,6 +41,7 @@ const TOCWrapper = styled.div`
   }
 
   .toc-sub-heading {
+    color:#000000;
     margin-top: 1rem;
     font-weight: 300;
     font-size: 1.15rem;
@@ -48,6 +49,16 @@ const TOCWrapper = styled.div`
   
   .toc-sub-inline{
     display: inline-block;
+  }
+
+  .active{
+    font-weight:500;
+  }
+
+  ul{
+    display:flex;
+    flex-direction:column;
+    white-space: nowrap;
   }
 
   .toc-ul{
