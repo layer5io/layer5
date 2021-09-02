@@ -7,21 +7,21 @@ export const HandbookWrapper = styled.div`
   width:100%;
   padding-bottom: 2rem;
 ul > li {
-    color: ${props => props.theme.menuColor};
+    color: ${(props) => props.theme.menuColor};
   }
 ol > li {
-    color: ${props => props.theme.menuColor};
+    color: ${(props) => props.theme.menuColor};
   }
 ul > li > span {
-    color: ${props => props.theme.black};
+    color: ${(props) => props.theme.black};
   }
 ol > li > span {
-  color: ${props => props.theme.black};
+  color: ${(props) => props.theme.black};
 }  
 }
 h2 h3{
   margin: 0.5rem 0;
-  color: ${props => props.theme.tertiaryColor};
+  color: ${(props) => props.theme.tertiaryColor};
 }
 .page-section{
   margin-top: -29rem;
@@ -31,7 +31,7 @@ h2 h3{
         margin: 0;
         padding: 0;
         width: 250px;
-        background-color:${props => props.theme.secondaryLightColor};
+        background-color:${(props) => props.theme.secondaryLightColor};
         position: absolute;
         height: 150rem;
         overflow: auto;
@@ -44,11 +44,11 @@ h2 h3{
     }
     
     .sidebar a.active {
-        background-color: ${props => props.theme.primaryLightColorTwo};
+        background-color: ${(props) => props.theme.primaryLightColorTwo};
         color: white;
     }
     .sidebar a:hover:not(.active) {
-        background-color:${props => props.theme.secondaryLightColor};
+        background-color:${(props) => props.theme.secondaryLightColor};
         color: white;
     }
     .page-header-section {
@@ -65,16 +65,16 @@ h2 h3{
     table {
      border-collapse: collapse;
      width: 98%;
-     margin: 20px 0 30px 0;
+     margin: 1rem 0 2rem 0;
      .github-icon{
-       height: 27px;
+       height: 1.7rem;
        width:auto;
        display: block;
        margin-left: auto;
        margin-right: auto;
      }
      .site-icon{
-       height: 25px;
+       height: 1.6rem;
        width:auto;
        display: block;
        margin-left: auto;
@@ -83,21 +83,23 @@ h2 h3{
         }
 
    td, th {
-     border: 0.5px solid ${props => props.theme.primaryLightColor};
+     border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
      text-align: left;
-     padding: 8px;
+     padding: 0.5rem;
         }
       .linkscol{
         text-align: center;
         width:8%;
       }  
-   tr:nth-child(even) {
-     background-color: ${props => props.theme.secondaryLightColorTwo};
+   tbody:nth-child(even) {
+     background-color: ${(props) => props.theme.secondaryLightColorTwo};
         }
+
      .codes{
       width:75%
       margin-top:-2rem;
     }
+
     @media only screen and (max-width: 750px){
       .page-section{
         margin-top: -2rem;
@@ -125,7 +127,7 @@ h2 h3{
           margin-left: -1.5rem;
         }
         .frontendTable{
-          margin-left: -3rem; 
+          margin-left: -2.8rem; 
         }
     }
 `;
