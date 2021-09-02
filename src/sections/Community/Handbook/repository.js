@@ -23,7 +23,7 @@ const Repository = () => {
             <p>
               This overview serves as resources to newcomers seeking a
               perspective of the collective community efforts (from the limited
-              vantage point of a code-centric perspective).{" "}
+              vantage point of a code-centric perspective).
             </p>
 
             <h2>Frontend Projects</h2>
