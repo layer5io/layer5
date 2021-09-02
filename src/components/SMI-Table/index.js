@@ -52,9 +52,29 @@ const Table = ({ columns, data, spec }) => {
                 }}>
                   <td>
                     {
-                      non_functional.find(ele => ele.name.includes(row.original.mesh_name)) ?
-                        <img className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} />
-                        :<img className="smiMark" src={ServiceMeshIcon} />
+                      (non_functional.find(ele => ele.name.includes(row.original.mesh_name))) ? 
+                        <>
+                          <img data-for="mesh-icon" data-tip={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} />
+                          <ReactTooltip 
+                            id="mesh-icon"
+                            place="left"
+                            effect="solid"
+                            multiline
+                            backgroundColor="rgb(60,73,79)"
+                            className="smi-tooltip"
+                          />
+                        </>
+                        : <>
+                          <img  data-for="mesh-icon" data-tip={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} />
+                          <ReactTooltip 
+                            id="mesh-icon"
+                            place="left"
+                            effect="solid"
+                            multiline
+                            backgroundColor="rgb(60,73,79)"
+                            className="smi-tooltip"
+                          />
+                        </>
                     }
                   </td>
                   <td>{row.original.mesh_version}</td>
@@ -72,7 +92,6 @@ const Table = ({ columns, data, spec }) => {
                             className="smi-tooltip"
                           />
                         </div>
-                            
                       </td>;
                     } else if (spec["capability"] === "NONE") {
                       return <td >
