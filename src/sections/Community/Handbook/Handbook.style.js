@@ -1,19 +1,16 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
-
-
 .highlight{
-
   font-weight: 600;
 }
 .content{
   width:100%;
   padding-bottom: 2rem;
 ul > li {
-    color: ${props => props.theme.primaryLightColorTwo};
+    color: ${props => props.theme.menuColor};
   }
 ol > li {
-    color: ${props => props.theme.primaryLightColorTwo};
+    color: ${props => props.theme.menuColor};
   }
 ul > li > span {
     color: ${props => props.theme.black};
@@ -21,21 +18,15 @@ ul > li > span {
 ol > li > span {
   color: ${props => props.theme.black};
 }  
-
 }
-
 h2 h3{
   margin: 0.5rem 0;
   color: ${props => props.theme.tertiaryColor};
 }
-
 .page-section{
   margin-top: -29rem;
   margin-left: 20rem;
-
 }
-
-
     .sidebar {
         margin: 0;
         padding: 0;
@@ -45,7 +36,6 @@ h2 h3{
         height: 150rem;
         overflow: auto;
     }
-
     .sidebar a {
         display: block;
         color: black;
@@ -57,7 +47,6 @@ h2 h3{
         background-color: ${props => props.theme.primaryLightColorTwo};
         color: white;
     }
-
     .sidebar a:hover:not(.active) {
         background-color:${props => props.theme.secondaryLightColor};
         color: white;
@@ -89,12 +78,21 @@ h2 h3{
      background-color: ${props => props.theme.secondaryLightColorTwo};
         }
 
+     .codes{
+      width:75%
+      margin-top:-2rem;
+    }
+
     @media only screen and (max-width: 750px){
       .page-section{
         margin-top: -2rem;
         margin-left: 0;
         padding: 1rem 2.5rem;
       }
+      .codes{
+      width:100%
+      margin-top:-2rem;
+    }
     }
    
 

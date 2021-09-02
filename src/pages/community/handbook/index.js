@@ -15,7 +15,7 @@ const About = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="About" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO title="Community Handbook" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
       <Navigation />
       <AboutPage />
       <Footer/>

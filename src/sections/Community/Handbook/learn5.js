@@ -20,11 +20,13 @@ const LearnLayer= () => {
             <p>As a community, we have put together good learning materials and resources to guide you through learning about service meshes.</p>
             <p>The resource includes:</p>
             <div className="content">
-              <li><Link to="/learn">Service Mesh Training.</Link></li>
-              <li><Link to="/learn/service-mesh-labs">Learn how to service mesh with interactive labs.</Link></li>
-              <li><Link to="/learn/service-mesh-books">Books.</Link></li>
-              <li><Link to="/learn/service-mesh-workshops">Workshops.</Link></li>
-              <li><a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA/playlists">Layer5  youtube playlist.</a></li>
+              <ul>
+                <li><Link to="/learn">Service Mesh Training.</Link></li>
+                <li><Link to="/learn/service-mesh-labs">Learn how to service mesh with interactive labs.</Link></li>
+                <li><Link to="/learn/service-mesh-books">Books.</Link></li>
+                <li><Link to="/learn/service-mesh-workshops">Workshops.</Link></li>
+                <li><a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA/playlists">Layer5  youtube playlist.</a></li>
+              </ul>
             </div>
             <p>These materials were created to be interactive, easy to use, and free for all.</p>
 
