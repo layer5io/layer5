@@ -109,6 +109,11 @@ const TOCWrapper = styled.div`
     opacity:0;
     height:0;
     transition:none;
+    visibility:hidden;
+   }
+
+   .toc-ul-open{
+    visibility:visible;
    }
   }
 `;
