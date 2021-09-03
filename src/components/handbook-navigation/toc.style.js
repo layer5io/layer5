@@ -53,6 +53,7 @@ const TOCWrapper = styled.div`
 
   .active{
     font-weight:500;
+    color: ${(props) => props.theme.secondaryColor};
   }
 
   ul{
