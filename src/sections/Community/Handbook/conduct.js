@@ -10,7 +10,7 @@ const CodeofConduct= () => {
     <HandbookWrapper>
       <div className="page-header-section">
         <h1>Code of Conduct</h1>
-      </div>  
+      </div>
       <TOC />
       <div className="page-section">
         <Container>
@@ -29,12 +29,12 @@ const CodeofConduct= () => {
             </ul>
             <p>Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct. By adopting this Code of Conduct, project maintainers commit themselves to fairly and consistently applying these principles to every aspect of managing this project. Project maintainers who do not follow or enforce the Code of Conduct may be permanently removed from the project team.</p>
             <p>This code of conduct applies both within project spaces and in public spaces when an individual is representing the project or its community.</p>
-            <p>Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting  <a href="http://community@layer5.io.">community@layer5.io.</a></p>       
+            <p>Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting  <a href="http://community@layer5.io.">community@layer5.io.</a></p>
           </div>
         </Container>
-      </div>      
+      </div>
     </HandbookWrapper>
   );
 };
-  
+
 export default CodeofConduct;

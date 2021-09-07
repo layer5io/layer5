@@ -10,9 +10,9 @@ const LearnLayer= () => {
     <HandbookWrapper>
       <div className="page-header-section">
         <h1>Learn Layer5</h1>
-      </div>  
+      </div>
       <TOC />
-     
+
       <div className="page-section">
         <Container>
           <div className="content">
@@ -33,16 +33,17 @@ const LearnLayer= () => {
             <h2>Events</h2>
             <p>At Layer5, we participate in international events, online workshops, and also meetups( both small and large). They all vary in topics ranging from cloud-native management, service mesh, DevOps, and open-source. In these events,  more awareness about the Layer5 projects and the community is created.
             </p>
+            <p>Layer5 has participated in numerous CNCF events over the years.</p>
             <p>Check out <Link to="/community/events">Layer5 events</Link> to participate in any of the latest events.</p>
 
-            <h2>Blogs</h2>
-            <p>Visit our <Link to="/blog">Blog</Link> for the latest updates on Layer5</p>
+            <h2>Blog</h2>
+            <p>Visit our <Link to="/blog">Blog</Link> for the latest blog posts on Layer5</p>
           </div>
         </Container>
       </div>
-                
+
     </HandbookWrapper>
   );
 };
-  
+
 export default LearnLayer;
