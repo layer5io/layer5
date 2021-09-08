@@ -37,9 +37,9 @@ import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.
 import inactiveIcon from "../../assets/images/status/inactive.png";
 import activeIcon from "../../assets/images/status/active.png";
 
+import Dropdown from "../../sections/Community/Members-grid/Dropdown";
 
-
-
+// prettier-ignore
 const options = [
   { label: <DropdownWrapper><div className="category " >BADGES</div></DropdownWrapper>, value: "", color: `${theme.linkColor}`,isFixed: true},
   { label: <DropdownWrapper><div className="allOptions">Community</div></DropdownWrapper>, value: "community", color: `${theme.linkColor}`, isFixed: true, icon: `url(${communityIcon})`},
@@ -58,30 +58,29 @@ const options = [
   { label: <DropdownWrapper><div className="allOptions">MeshMates</div></DropdownWrapper>, value: "meshmates", color: `${theme.linkColor}`, isFixed: true, icon: `url(${meshmateIcon})`}
 ];
 
-
-
 const MembersPage = () => {
   const [members, setMembers] = useState(options[10]);
 
-  const handleChange = value => {
+  const handleChange = (value) => {
     setMembers(value);
   };
 
-  let MembersView = props => {
+  // prettier-ignore
+  let MembersView = () => {
     switch (members.value) {
-      case "community" : return <Community {...props} />;
-      case "landscape" : return <Landscape {...props}/>;
-      case "imagehub" : return <ImageHub {...props}/>;
-      case "meshery" : return <Meshery {...props}/>;
-      case "mesheryoperator" : return <MesheryOperator {...props}/>;
-      case "smp" : return <SMP {...props}/>;
-      case "getnighthawk" : return <GetNighthawk {...props}/>;
-      case "active" : return <ActiveMembers {...props} />;
-      case "inactive" : return <InactiveMembers {...props}/>;
-      case "maintainers" : return <Maintainers {...props}/>;
-      case "meshmates" : return <Meshmate {...props}/>;
+      case "community" : return <Community  />;
+      case "landscape" : return <Landscape />;
+      case "imagehub" : return <ImageHub />;
+      case "meshery" : return <Meshery />;
+      case "mesheryoperator" : return <MesheryOperator />;
+      case "smp" : return <SMP />;
+      case "getnighthawk" : return <GetNighthawk />;
+      case "active" : return <ActiveMembers  />;
+      case "inactive" : return <InactiveMembers />;
+      case "maintainers" : return <Maintainers />;
+      case "meshmates" : return <Meshmate />;
 
-      default: return <AllMembers {...props}/>;
+      default: return <AllMembers />;
     }
   };
 
@@ -89,11 +88,14 @@ const MembersPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Members" description="Members - The Layer5 contributors list" />
+        <SEO
+          title='Members'
+          description='Members - The Layer5 contributors list'
+        />
         <Navigation />
-        <MembersView options={options} handleChange={handleChange}
-          members={members} />
-        <Footer/>
+        <Dropdown options={options} handleChange={handleChange} />
+        <MembersView />
+        <Footer />
       </Layout>
     </ThemeProvider>
   );
