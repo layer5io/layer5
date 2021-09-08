@@ -1,44 +1,13 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import MembersGrid from "./index";
+import DataWrapper from "./DataWrapper";
 
-const InactiveMembers = props => {
-  const data = useStaticQuery(
-    graphql`query InactiveMembers {
-  allMdx(
-    sort: {fields: [frontmatter___name], order: ASC}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {published: {eq: true}, status: {eq: "Inactive"}}}
-  ) {
-    nodes {
-      id
-      frontmatter {
-        name
-        github
-        twitter
-        status
-        meshmate
-        linkedin
-        location
-        badges
-        bio
-        image_path {
-          childImageSharp {
-            gatsbyImageData(width: 200, layout: CONSTRAINED)
-          }
-          extension
-          publicURL
-        }
-      }
-      fields {
-        slug
-      }
-    }
-  }
-}
-`
+const InactiveMembers = (props) => {
+  const data = props.allMembers.allMdx.nodes.filter(
+    (member) => member.frontmatter.status == "Inactive"
   );
 
   return <MembersGrid data={data} {...props} />;
 };
 
-export default InactiveMembers;
+export default DataWrapper(InactiveMembers);

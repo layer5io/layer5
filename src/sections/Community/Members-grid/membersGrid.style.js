@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { NonceProvider } from "react-select";
 
-
 const dot = (color = "#ccc") => ({
   alignItems: "center",
   display: "flex",
@@ -39,8 +38,8 @@ const img = (icon) => ({
 });
 
 export const selectStyles = {
-  menu: styles => ({ ...styles, zIndex: 999, }),
-  control: styles => ({ ...styles, backgroundColor: "white", zIndex: 900 }),
+  menu: (styles) => ({ ...styles, zIndex: 999 }),
+  control: (styles) => ({ ...styles, backgroundColor: "white", zIndex: 900 }),
   option: (styles, { data, isFocused, isSelected }) => ({
     ...styles,
 
@@ -49,32 +48,43 @@ export const selectStyles = {
     marginBottom: "0.0em",
     paddingTop: "0.0em",
     paddingBottom: "0.0em",
-    backgroundImage: (data.value) ? data.icon : "",
+    backgroundImage: data.value ? data.icon : "",
     backgroundRepeat: "no-repeat",
     backgroundSize: 20,
-    backgroundPosition: "10% 70%",  
+    backgroundPosition: "10% 70%",
 
     ":before": {
       //backgroundColor: data.value === "active" || data.value === "inactive" ? data.color : "",
       borderRadius: 10,
       content: "\" \"",
       display: "block",
-      
+
       marginRight: 12,
-      marginLeft: data.value === "all" || data.value === "active" || data.value === "inactive" ? 1.5 : 5,
+      marginLeft:
+        data.value === "all" ||
+        data.value === "active" ||
+        data.value === "inactive"
+          ? 1.5
+          : 5,
 
       height: 10,
       width: 10,
       zIndex: 1000,
     },
-    
+
     backgroundColor: isSelected
-      ? data.value === "inactive" ? "rgba(171, 171, 171, 1)"
-        : data.value === "" ? "white" :"rgba(11, 177, 158, 1)"
+      ? data.value === "inactive"
+        ? "rgba(171, 171, 171, 1)"
+        : data.value === ""
+          ? "white"
+          : "rgba(11, 177, 158, 1)"
       : isFocused
-        ? data.value === "inactive" ? "rgba(171, 171, 171, 0.30)" 
-          : data.value === "" ? "white" : "rgba(11, 177, 158, 0.30)"
-        : "white",    
+        ? data.value === "inactive"
+          ? "rgba(171, 171, 171, 0.30)"
+          : data.value === ""
+            ? "white"
+            : "rgba(11, 177, 158, 0.30)"
+        : "white",
 
     color: isSelected ? "white" : "grey",
 
@@ -82,33 +92,51 @@ export const selectStyles = {
 
     ":active": {
       ...styles[":active"],
-      backgroundColor: (isSelected
+      backgroundColor: isSelected
         ? data.value === "inactive"
-          ? "rgba(171, 171, 171, 0.75)" : "rgba(11, 177, 158, 0.75)"
-        : "white"),
+          ? "rgba(171, 171, 171, 0.75)"
+          : "rgba(11, 177, 158, 0.75)"
+        : "white",
     },
-  }
-  ),
-  input: styles => ({ ...styles, ...dot(), zIndex: 900 }),
-  placeholder: styles => ({ ...styles, ...dot(), zIndex: 900 }),
-  singleValue: (styles, { data }) =>  (data.value === "mesheryoperator" 
-    ? { ...styles, ...img(data.icon),backgroundPosition: "20% 50%",marginLeft: "-26px" }
-    : data.value === "smp" ? { ...styles, ...img(data.icon),backgroundPosition: "16% 50%",marginLeft: "-26px" }  
-      : (data.value) ? {...styles, ...img(data.icon),backgroundPosition: "27% 50%",marginLeft: "-29px"}         
-        : data.value === "" ? { display:"none" }
-          : { ...styles, ...dot(data.color), zIndex: 900 }),
-
+  }),
+  input: (styles) => ({ ...styles, ...dot(), zIndex: 900 }),
+  placeholder: (styles) => ({ ...styles, ...dot(), zIndex: 900 }),
+  singleValue: (styles, { data }) =>
+    data.value === "mesheryoperator"
+      ? {
+        ...styles,
+        ...img(data.icon),
+        backgroundPosition: "20% 50%",
+        marginLeft: "-26px",
+      }
+      : data.value === "smp"
+        ? {
+          ...styles,
+          ...img(data.icon),
+          backgroundPosition: "16% 50%",
+          marginLeft: "-26px",
+        }
+        : data.value
+          ? {
+            ...styles,
+            ...img(data.icon),
+            backgroundPosition: "27% 50%",
+            marginLeft: "-29px",
+          }
+          : data.value === ""
+            ? { display: "none" }
+            : { ...styles, ...dot(data.color), zIndex: 900 },
 };
 
-export const dropdownTheme = theme => ({
+export const dropdownTheme = (theme) => ({
   ...theme,
   borderRadius: 0,
   colors: {
     ...theme.colors,
-    primary50:"#b0e8e2",
+    primary50: "#b0e8e2",
     primary25: "#b0e8e2",
     primary: "#00b39f",
-  }
+  },
 });
 
 export const MembersGridWrapper = styled.div`
