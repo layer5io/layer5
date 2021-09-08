@@ -56,7 +56,7 @@ const options = [
   { label: <DropdownWrapper><div className="category">ROLE</div></DropdownWrapper>, value: "", color: `${theme.linkColor}`, isFixed: true},
   { label: <DropdownWrapper><div className="allOptions">Maintainers</div></DropdownWrapper>, value: "maintainers", color: `${theme.linkColor}`, isFixed: true, icon: `url(${icon5})`},
   { label: <DropdownWrapper><div className="allOptions">MeshMates</div></DropdownWrapper>, value: "meshmates", color: `${theme.linkColor}`, isFixed: true, icon: `url(${meshmateIcon})`}
-]; 
+];
 
 
 
@@ -84,7 +84,7 @@ const MembersPage = () => {
       default: return <AllMembers {...props}/>;
     }
   };
- 
+
   return (
     <ThemeProvider theme={theme}>
       <Layout>
