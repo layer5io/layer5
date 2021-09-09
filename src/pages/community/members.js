@@ -19,6 +19,7 @@ import GetNighthawk from "../../sections/Community/Members-grid/getnighthawk";
 import AllMembers from "../../sections/Community/Members-grid/AllMembers";
 import ActiveMembers from "../../sections/Community/Members-grid/ActiveMembers";
 import InactiveMembers from "../../sections/Community/Members-grid/InactiveMembers";
+import MultipleMembers from "../../sections/Community/Members-grid/MultipleMembers";
 
 import Maintainers from "../../sections/Community/Members-grid/Maintainers";
 import Meshmate from "../../sections/Community/Members-grid/Meshmate";
@@ -46,7 +47,7 @@ const options = [
   { label: <DropdownWrapper><div className="allOptions">Landscape</div></DropdownWrapper>, value: "landscape", color: `${theme.linkColor}`, isFixed: true, icon: `url(${landscapeIcon})`},
   { label: <DropdownWrapper><div className="allOptions">Image Hub</div></DropdownWrapper>, value: "imagehub", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hubIcon})`},
   { label: <DropdownWrapper><div className="allOptions">Meshery </div></DropdownWrapper>,value: "meshery", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryIcon})`},
-  { label: <DropdownWrapper><div className="allOptions">Meshery Operator</div></DropdownWrapper>, value: "mesheryoperator", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryOpIcon})`},
+  { label: <DropdownWrapper><div className="allOptions">Meshery Operator</div></DropdownWrapper>, value: "meshery-operator", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryOpIcon})`},
   { label: <DropdownWrapper><div className="allOptions">Service Mesh Performance</div></DropdownWrapper>, value: "smp", color: `${theme.linkColor}`, isFixed: true, icon: `url(${smpIcon})`},
   { label: <DropdownWrapper><div className="allOptions">GetNighthawk </div></DropdownWrapper>, value: "getnighthawk", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hawkIcon})`},
   { label: <DropdownWrapper><div className="category">STATUS</div></DropdownWrapper>, value: "", color: `${theme.linkColor}`, isFixed: true},
@@ -59,7 +60,7 @@ const options = [
 ];
 
 const MembersPage = () => {
-  const [members, setMembers] = useState(options[10]);
+  const [members, setMembers] = useState([options[10]]);
 
   const handleChange = (value) => {
     setMembers(value);
@@ -67,21 +68,21 @@ const MembersPage = () => {
 
   // prettier-ignore
   let MembersView = () => {
-    switch (members.value) {
-      case "community" : return <Community  />;
-      case "landscape" : return <Landscape />;
-      case "imagehub" : return <ImageHub />;
-      case "meshery" : return <Meshery />;
-      case "mesheryoperator" : return <MesheryOperator />;
-      case "smp" : return <SMP />;
-      case "getnighthawk" : return <GetNighthawk />;
-      case "active" : return <ActiveMembers  />;
-      case "inactive" : return <InactiveMembers />;
-      case "maintainers" : return <Maintainers />;
-      case "meshmates" : return <Meshmate />;
-
-      default: return <AllMembers />;
-    }
+    return <MultipleMembers members={members} />;
+    // switch (members[0]?.value) {
+    //   case "community" : return <Community  />;
+    //   case "landscape" : return <Landscape />;
+    //   case "imagehub" : return <ImageHub />;
+    //   case "meshery" : return <Meshery />;
+    //   case "mesheryoperator" : return <MesheryOperator />;
+    //   case "smp" : return <SMP />;
+    //   case "getnighthawk" : return <GetNighthawk />;
+    //   case "active" : return <ActiveMembers  />;
+    //   case "inactive" : return <InactiveMembers />;
+    //   case "maintainers" : return <Maintainers />;
+    //   case "meshmates" : return <Meshmate />;
+    //   default: return <AllMembers />;
+    // }
   };
 
   return (

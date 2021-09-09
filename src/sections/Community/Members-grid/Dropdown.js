@@ -23,13 +23,14 @@ const Dropdown = (props) => {
             <Col xs={12} sm={6} lg={3}>
               <Select
                 name='Filter Members'
-                defaultValue={props.options[1]}
+                defaultValue={[props.options[10]]}
                 isSearchable={false}
                 styles={selectStyles}
                 options={props.options}
                 value={props.members}
                 onChange={props.handleChange}
                 theme={dropdownTheme}
+                isMulti
               />
               <br />
             </Col>
