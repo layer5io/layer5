@@ -19,7 +19,7 @@ const AllMembers = (props) => {
       ) {
         data.push(member);
       } else if (
-        badge === "meshmate" &&
+        badge === "meshmates" &&
         member.frontmatter.meshmate === "yes"
       ) {
         data.push(member);

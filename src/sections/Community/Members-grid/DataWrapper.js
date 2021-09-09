@@ -23,6 +23,7 @@ const DataWrapper = (WrappedComponent) => {
                 twitter
                 status
                 meshmate
+                maintainer
                 linkedin
                 location
                 badges
