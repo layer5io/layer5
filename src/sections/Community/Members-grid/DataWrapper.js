@@ -1,4 +1,6 @@
 import React from "react";
+
+// Libraries
 import { useStaticQuery, graphql } from "gatsby";
 
 const DataWrapper = (WrappedComponent) => {

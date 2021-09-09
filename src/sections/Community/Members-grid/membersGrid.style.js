@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { NonceProvider } from "react-select";
 
 const dot = (color = "#ccc") => ({
   alignItems: "center",
@@ -54,7 +53,6 @@ export const selectStyles = {
     backgroundPosition: "10% 70%",
 
     ":before": {
-      //backgroundColor: data.value === "active" || data.value === "inactive" ? data.color : "",
       borderRadius: 10,
       content: "\" \"",
       display: "block",
@@ -140,97 +138,94 @@ export const dropdownTheme = (theme) => ({
 });
 
 export const MembersGridWrapper = styled.div`
+  .members-list-wrapper {
+    padding: 50px 0;
+  }
+  .members-grid-wrapper {
+    padding-bottom: 60px;
+    z-index: -1;
+  }
+  .members-profile-cards {
+    z-index: -1 !important;
+  }
+  @media only screen and (max-width: 990px) and (min-width: 580px) {
+    .members-profile-cards {
+      max-width: 550px;
+      margin: auto;
+    }
+  }
+  @media only screen and (min-width: 991px) and (max-width: 1200px) {
+    .members-profile-cards {
+      max-width: 830px;
+      margin: auto;
+    }
+  }
+  @media only screen and (max-width: 912px) {
+    .members-page-wrapper {
+      padding-bottom: 80px;
+    }
+  }
 
-    .members-list-wrapper{
-        padding: 50px 0;
-    }
-    .members-grid-wrapper{
-        padding-bottom: 60px;
-        z-index: -1;
-    }
-    .members-profile-cards{
-        z-index: -1 !important;
-    }
-    @media only screen and (max-width: 990px) and (min-width: 580px) {
-      .members-profile-cards{
-          max-width: 550px;
-          margin: auto;
-      }
-    }
-    @media only screen and (min-width: 991px) and (max-width: 1200px) {
-      .members-profile-cards{
-          max-width: 830px;
-          margin: auto;
-      }
-    }
-    @media only screen and (max-width: 912px) {
-        .members-page-wrapper{
-            padding-bottom: 80px;
-        }
-    }
+  .members-grid-select {
+    z-index: 900 !important;
+  }
+  .AboutCommunity {
+    display: flex;
+    text-align: center;
+    margin: auto auto 4rem;
+    align-items: center;
 
-    .members-grid-select{
-        z-index: 900 !important;
+    .sectionTitle {
+      width: 100%;
+      margin: auto 3rem 1rem auto;
+      text-align: center;
     }
-    .AboutCommunity {
-		display: flex;
-		text-align: center;
-        margin: auto auto 4rem;
+    img {
+      width: 100%;
+      padding-right: 3rem;
+      padding-left: 3rem;
+      margin-right: 3rem;
+      margin-top: 3rem;
+    }
+    .detailsCommunity {
+      width: 60%;
+      flex-grow: 1;
+    }
+    .text-gray {
+      margin-top: 2rem;
+      color: gray;
+      font-style: italic;
+    }
+    @media screen and (max-width: 767px) {
+      display: inline;
+      margin: auto;
+      text-align: center;
+      width: 70%;
+
+      .sectionTitle {
+        display: inline-block;
+        width: 90%;
+        font-size: 2.25rem;
+        margin: 1rem auto 1.5rem;
         align-items: center;
+        text-align: center;
+      }
 
-
-        .sectionTitle{
-            width: 100%;
-            margin: auto 3rem 1rem auto;
-            text-align: center;
-        }
-		img {
-            width: 100%;
-            padding-right: 3rem;
-            padding-left: 3rem;
-            margin-right: 3rem;
-            margin-top: 3rem;
-        }
-        .detailsCommunity {
-            width: 60%;
-            flex-grow: 1;
-        }
-        .text-gray {
-            margin-top: 2rem;
-            color: gray;
-            font-style: italic;
-        }
-		@media screen and (max-width:767px) {
-            display: inline;
-            margin: auto;
-            text-align: center;
-            width: 70%;
-
-            .sectionTitle {
-                display: inline-block;
-                width: 90%;
-                font-size: 2.25rem;
-                margin: 1rem auto 1.5rem;
-                align-items: center;
-                text-align: center;
-            }
-
-			img {
+      img {
         text-align: center;
         align-items: center;
-				width: 70%;
-				height: inherit;
-				margin-right: 0rem;
-                margin-bottom: .25rem;
-                margin-top: .25rem;
-            }
-            .detailsCommunity {
-                width:100%;
-
-            }
+        width: 70%;
+        height: inherit;
+        margin-right: 0rem;
+        margin-bottom: 0.25rem;
+        margin-top: 0.25rem;
+      }
+      .detailsCommunity {
+        width: 100%;
+      }
     }
-    .memberProfileBtn{
+    .memberProfileBtn {
       margin: 1rem;
     }
-
+  }
 `;

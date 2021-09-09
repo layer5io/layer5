@@ -1,17 +1,17 @@
 import React from "react";
-import Select from "react-select";
+
+// Libraries
+import { Link } from "gatsby";
+
+// Components
 import { Container, Row, Col } from "../../../reusecore/Layout";
-import PageHeader from "../../../reusecore/PageHeader";
 import ProfileCard from "../../../components/Profile-card";
 import Button from "../../../reusecore/Button";
-import communityImg from "../../../assets/images/community/community-green.svg";
-import { Link } from "gatsby";
-import {
-  MembersGridWrapper,
-  selectStyles,
-  dropdownTheme,
-} from "./membersGrid.style";
 import VintageBox from "../../../reusecore/VintageBox";
+
+// Assets
+import { MembersGridWrapper } from "./membersGrid.style";
+import communityImg from "../../../assets/images/community/community-green.svg";
 import { FaEnvelope, FaUsers } from "react-icons/fa";
 
 const MembersGrid = (props) => {
