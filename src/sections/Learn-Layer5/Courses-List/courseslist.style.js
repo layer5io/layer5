@@ -1,6 +1,10 @@
 import styled from "styled-components";
 export const CoursesListWrapper = styled.div`
 
+.content{
+  padding: 3rem;
+}
+
   .page-header {
     margin: 3rem auto 5rem;
   }
