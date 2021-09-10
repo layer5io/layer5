@@ -21,8 +21,8 @@ const Dropdown = (props) => {
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "right",
-            minWidth: "200px",
+            justifyContent: "flex-end",
+            width: "100%",
           }}
         >
           <Select

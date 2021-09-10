@@ -27,6 +27,10 @@ import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.
 import inactiveIcon from "../../assets/images/status/inactive.png";
 import activeIcon from "../../assets/images/status/active.png";
 
+/**
+ * Array containing a list of categories to be shown in the dropdown.
+ * The map function in the end wraps the label property with a component.
+ */
 const options = [
   {
     label: "BADGES",
@@ -160,6 +164,9 @@ const options = [
 }));
 
 const MembersPage = () => {
+  /**
+   * state storing the currently selected categories.
+   */
   const [members, setMembers] = useState([options[10]]);
   const handleChange = (value) => setMembers(value);
 

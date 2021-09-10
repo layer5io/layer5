@@ -13,11 +13,17 @@ const img = (icon) => ({
   backgroundImage: icon,
   backgroundRepeat: "no-repeat",
   backgroundSize: 20,
-  backgroundPosition: "left center",
+  backgroundPosition: "8px center",
+  paddingLeft: 8,
+  width: "auto",
 });
 
 export const selectStyles = {
-  menu: (styles) => ({ ...styles, zIndex: 999, minWidth: "200px" }),
+  menu: (styles) => ({
+    ...styles,
+    zIndex: 999,
+    minWidth: "200px",
+  }),
   control: (styles) => ({
     ...styles,
     backgroundColor: "white",
@@ -36,6 +42,7 @@ export const selectStyles = {
     backgroundRepeat: "no-repeat",
     backgroundSize: 20,
     backgroundPosition: "15px 70%",
+    paddingLeft: data.value == "" ? 10 : 50,
 
     ":before": {
       borderRadius: 10,
@@ -91,29 +98,42 @@ export const selectStyles = {
     width: "100px",
   }),
   placeholder: (styles) => ({ ...styles, ...dot(), zIndex: 900 }),
+  multiValueRemove: (styles) => ({
+    ...styles,
+    height: "100%",
+    color: "#00D3A8",
+    ":hover": {
+      backgroundColor: "transparent",
+      color: "#00D3A8",
+    },
+  }),
+  multiValueLabel: (styles) => ({ ...styles, marginLeft: 20 }),
   multiValue: (styles, { data }) =>
     // prettier-ignore
     data.value === "meshery-operator"
     ? {
         ...styles,
         ...img(data.icon),
-        backgroundColor: "#F8F8F8"
+        backgroundColor: "#F8F8F8",
+        marginLeft: "5px",
       }
       : data.value === "smp"
         ? {
           ...styles,
           ...img(data.icon),
-          backgroundColor: "#F8F8F8"
+          backgroundColor: "#F8F8F8",
+          marginLeft: "5px",
         }
         : data.value
           ? {
             ...styles,
             ...img(data.icon),
-            backgroundColor: "#F8F8F8"
+            backgroundColor: "#F8F8F8",
+            marginLeft: "5px",
           }
           : data.value === ""
-            ? {display: "none"}
-            : {...styles, ...dot(data.color), zIndex: 900},
+            ? {display: "none", marginLeft: "5px",}
+            : {...styles, ...dot(data.color), zIndex: 900, marginLeft: "5px",},
 };
 
 export const dropdownTheme = (theme) => ({
