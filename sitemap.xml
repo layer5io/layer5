@@ -146,8 +146,8 @@
 <url> <loc>https://layer5.io/careers/ux-engineer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/shreyas-mishra</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/aadhitya-amarendiran</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/community/members/aayush-dutt</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/abhishek-kumar</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/members/aayush-dutt</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/abiola-farounbi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/abishek-kumar</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/adheip-singh</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -215,12 +215,12 @@
 <url> <loc>https://layer5.io/community/members/neil-alvares</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/nicholas-jackson</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/nikhil-ladha</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/members/nikhil-sharma</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/nithish-karthik</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/nitish-malhotra</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/nitish-vulli</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/nuno-do-carmo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/nupur-thakur</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/community/members/nikhil-sharma</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/olayiwola-ololade</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/olushesi-toheeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/oluwatomiyin-adekanye</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -297,9 +297,9 @@
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/working-with-meshery-consul/linkerd/filtering-traffic/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/working-with-meshery-consul/linkerd/mutual-tls/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-service-meshes-for-developers/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-consul/working-with-meshery-consul/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-service-meshes-for-developers/improving-performance-of-service-mesh/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -310,8 +310,8 @@
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/istio/expose-services/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/istio/getting-started/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/istio/observability/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/istio/traffic-management/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/istio/service-security-capabilities/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/istio/traffic-management/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/advance-concepts-of-service-mesh/istio/webassembly-and-intelligent-data-planes/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/circuit-breaking/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn-ng/mastering-meshery-istio/introduction-to-service-meshes/istio/deploy-an-application/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
