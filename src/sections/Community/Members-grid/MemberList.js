@@ -6,7 +6,6 @@ import DataWrapper from "./DataWrapper";
 
 const MembersList = (props) => {
   const selectedBadges = props.members;
-  let hasAllMembers = false;
   let data = [];
 
   /**
@@ -41,7 +40,7 @@ const MembersList = (props) => {
 
       if (member.frontmatter.badges?.includes(badge)) isApplicable++;
 
-      if (badge === "all") hasAllMembers = true;
+      if (badge === "all") isApplicable++;
     });
 
     /**
@@ -52,8 +51,6 @@ const MembersList = (props) => {
      */
     if (isApplicable === selectedBadges.length) data.push(member);
   });
-
-  if (hasAllMembers) data = props.allMembers.allMdx.nodes;
 
   return <MembersGrid data={[...new Set(data)]} {...props} />;
 };
