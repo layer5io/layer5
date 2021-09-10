@@ -70,7 +70,7 @@ const options = [
   },
   {
     label: "Meshery Operator",
-    value: "meshsery-operator",
+    value: "meshery-operator",
     color: theme.linkColor,
     isFixed: true,
     icon: mesheryOpIcon,
