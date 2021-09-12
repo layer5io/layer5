@@ -1,35 +1,113 @@
 import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
+import {Link} from "gatsby";
 import Point from "./images/bullet.svg";
 import TOC from "../../../components/handbook-navigation/index";
+import twitter_icon from "../../../assets/images/socialIcons/twitter-light.svg";
+import mail_icon from "../../../assets/images/socialIcons/mail_keppel.svg";
+import youtube_icon from "../../../assets/images/socialIcons/youtube-light.svg";
+import github_icon from "../../../assets/images/socialIcons/github-light.svg";
+import linkedin_icon from "../../../assets/images/socialIcons/linkedin-light.svg";
+import docker_icon from "../../../assets/images/socialIcons/docker-light.svg";
+import slack_icon from "../../../assets/images/socialIcons/slack-light.svg";
 
 
-const CodeofConduct= () => {
+const Connect= () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">
-        <h1>Code of Conduct</h1>
-      </div>
+        <h1>Connect with Us</h1>
+      </div> 
       <TOC />
       <div className="page-section">
         <Container>
           <div className="content">
-            <p>Layer5 follows the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a> which states that:</p>
-            <p>As contributors and maintainers of this project, and in the interest of fostering an open and welcoming community, we pledge to respect all people who contribute through reporting issues, to post feature requests, to update documentation, to submit pull requests or patches, and other activities.</p>
-            <p>We are committed to participating in this project as a harassment-free experience for everyone, regardless of the level of experience, gender, gender identity, and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, or nationality.</p>
-            <p>Examples of unacceptable behavior by participants include:</p>
+            <h2>Subscribe to Newsletter</h2>
+            <p>Don’t miss out on anything, sign up to receive updates on our newest releases, latest blog posts and any relevant information.</p>
             <ul>
-              <p><img className="logo" src={Point} />The use of sexualized language or imagery</p>
-              <p><img className="logo" src={Point} />Personal attacks</p>
-              <p><img className="logo" src={Point} />Trolling or insulting/derogatory comments</p>
-              <p><img className="logo" src={Point} />Public or private harassment</p>
-              <p><img className="logo" src={Point} />Publishing other’s private information, such as physical or electronic addresses, without explicit permission</p>
-              <p><img className="logo" src={Point} />Other unethical or unprofessional conduct</p>
+              <li><a href="https://meshery.io/subscribe">Meshery mailing</a></li>
+              <li><a href="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&id=6bb65defeb">Layer5 mailing</a></li>
+              <li><a href="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&id=6bb65defeb">SMP(Service Mesh Performance) mailing</a></li>
             </ul>
-            <p>Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct. By adopting this Code of Conduct, project maintainers commit themselves to fairly and consistently applying these principles to every aspect of managing this project. Project maintainers who do not follow or enforce the Code of Conduct may be permanently removed from the project team.</p>
-            <p>This code of conduct applies both within project spaces and in public spaces when an individual is representing the project or its community.</p>
-            <p>Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting  <a href="http://community@layer5.io.">community@layer5.io.</a></p>
+
+            <h2>Mailing Lists</h2>
+            <ul>
+              <li><a href="mailto:maintainers@layer5.io">Layer5 Maintainers</a></li>
+              <li><a href="mailto:discuss-admins@layer5.io">Administrators of discuss.layer5.io</a></li>
+              <li><a href="mailto:discuss-moderators@layer5.io">Moderators of discuss.layer5.io</a></li>
+              <li><a href="mailto:dev-group@meshery.io">Meshery Developers</a></li>
+              <li><a href="mailto:user-group@meshery.io">Meshery Users</a></li>
+              <li><a href="http://meshery-dev@meshery.dev">Meshery Contributors</a></li>
+              <li><a href="mailto:maintainers@meshery.io">Meshery Maintainers</a></li>
+              <li><a href="http://meshery-security-vulns-reports@meshery.dev">Meshery Security and Vulnerability Reports</a></li>
+              <li><a href="mailto:community@meshery.io">Meshery Community</a></li>
+              <li><a href="mailto:katacoda@layer5.io">Katacoda-Managers</a></li>
+              <li><a href="http://developers@getnighthawk.dev">GetNighthawk Developers</a></li>
+              <li><a href="http://maintainers@getnighthawk.dev">GetNighthawk Maintainers</a></li>
+              <li><a href="http://users@getnighthawk.dev">GetNighthawk Users</a></li>
+              <li><a href="mailto:community@smp-spec.io">Service Mesh Performance Community</a></li>
+              <li><a href="mailto:maintainers@smp-spec.io">Service Mesh Performance Maintainers</a></li>
+              <li><a href="mailto:user-group@smp-spec.io">Service Mesh Performance Users</a></li>
+              <li><a href="mailto:community@layer5.io">Layer5 Community</a></li>
+              <li><a href="mailto:community-members@layer5.io">Layer5 Community Members</a></li>
+            </ul>
+
+            <h2>Calendar</h2>
+            <p>Don’t miss out on any of the activities in the community. Join any or all of the weekly meetings subscribing to the <a href="https://layer5.io/community/calendar#meetings">community calendar</a>.</p>
+
+            <h2>Slack Community</h2>
+            <p>We are a community of like-minded people with over a thousand members.</p>
+            <p>Join our <a href="http://slack.layer5.io/">Slack Workspace</a> “introduce yourself” and interact with the community. There are different channels in the workspace, to engage in, just search for:</p>
+            <div style={{paddingLeft: "40px"}}>
+              <p><a href="https://layer5io.slack.com/archives/CDM0ACDM5">#general</a> - For workspace-wide communication and announcements.</p>
+              <p><a href="https://layer5io.slack.com/archives/CFGG6U10E">#meshery</a> - For discussion on topics in and around Meshery.</p>
+              <p><a href="https://layer5io.slack.com/archives/C017NA80S66">#meshery-adapters</a> - Discuss topics related to meshery-adapters.</p>
+              <p><a href="https://layer5io.slack.com/archives/C011VPREG2Z">#meshery-ci</a> - For discussion on topics related to meshery-ci.</p>
+              <p><a href="https://layer5io.slack.com/archives/C010LFFGFFA">#meshery-meshsync</a> - For discussions on issues related to mesh sync.</p>
+              <p><a href="https://layer5io.slack.com/archives/C0130BQ4L3T">#mesheryctl</a> - For discussions on Meshery’s CLI</p>
+              <p><a href="https://layer5io.slack.com/archives/C019426UBNY">#newcomers</a> - For welcoming first-time contributors and community newcomers.</p>
+              <p><a href="https://layer5io.slack.com/archives/CVBGPTFJN">#performance</a> - For discussions related to measuring and evaluating Service Mesh Performance.</p>
+              <p><a href="https://layer5io.slack.com/archives/C010H0HE2E6">#smi</a> - For discussions related to Meshery and Service Mesh Interface (SMI).</p>
+              <p><a href="https://layer5io.slack.com/archives/C012UMS2MCM">#wasm</a> - For discussions on web assembly, rust, data plane filters.</p>
+              <p><a href="https://layer5io.slack.com/archives/C015QJKUMPU">#websites</a> - For discussions related to the UI/UX of <a href="http://layer5.io/">Layer 5</a> project sites.</p>
+            </div>
+
+            <h2>Discussion Forum</h2>
+            <p>Join us on our service mesh community's <a href="https://discuss.layer5.io">Discussion Forum</a></p>
+
+            <h2>Social Media</h2>
+            <p>Layer5 is dedicated to providing the most efficient Service mesh management tool while growing a healthy open-source community. To know more about layer5 and connect with the community, follow and engage with us on our social media accounts.</p>
+            <div style={{paddingLeft: "40px"}}>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={twitter_icon} alt="twitter" />&nbsp;&nbsp;
+                <a href="https://twitter.com/layer5">@layer5</a>,&nbsp;<a href="https://twitter.com/mesheryio">@mesheryio</a>&nbsp;and&nbsp;<a href="https://twitter.com/smp_spec">@smp_spec</a>
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" width="30" src={mail_icon} alt="mail" />&nbsp;&nbsp;
+                <a href="mailto:community@layer5.io">community@layer5.io</a>
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={youtube_icon} alt="youtube" />&nbsp;&nbsp;
+                <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA">Subscribe on Youtube</a>
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={github_icon} alt="github" />&nbsp;&nbsp;
+                <a href="https://github.com/layer5io">Layer5io</a>
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={linkedin_icon} alt="linkedin" />&nbsp;&nbsp;
+                <a href="https://www.linkedin.com/company/layer5">Layer 5</a>
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={docker_icon} alt="docker" />&nbsp;&nbsp;
+                <a href="https://hub.docker.com/u/layer5/">Layer 5</a>
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={slack_icon} alt="slack" />&nbsp;&nbsp;
+                <a href="https://bit.ly/3fXwYPk">Layer 5</a>
+              </p>
+            </div>
           </div>
         </Container>
       </div>
@@ -37,4 +115,4 @@ const CodeofConduct= () => {
   );
 };
 
-export default CodeofConduct;
+export default Connect;
