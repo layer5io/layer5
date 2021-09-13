@@ -58,66 +58,61 @@ const Connect= () => {
 
             <h2>Slack Community</h2>
             <p>We are a community of like-minded people with over a thousand members.</p>
-            <p>Join our <img height="40 px" src={slack_icon} alt="slack" /> <a href="http://slack.layer5.io/">Slack Workspace</a> “introduce yourself” and interact with the community. There are different channels in the workspace, to engage in, just search for:</p>
-            <p><a href="https://layer5io.slack.com/archives/CDM0ACDM5">#general</a> - For workspace-wide communication and announcements.</p>
-            <p><a href="https://layer5io.slack.com/archives/CFGG6U10E">#meshery</a> - For discussion on topics in and around Meshery.</p>
-            <p><a href="https://layer5io.slack.com/archives/C017NA80S66">#meshery-adapters</a> - Discuss topics related to meshery-adapters.</p>
-            <p><a href="https://layer5io.slack.com/archives/C011VPREG2Z">#meshery-ci</a> - For discussion on topics related to meshery-ci.</p>
-            <p><a href="https://layer5io.slack.com/archives/C010LFFGFFA">#meshery-meshsync</a> - For discussions on issues related to mesh sync.</p>
-            <p><a href="https://layer5io.slack.com/archives/C0130BQ4L3T">#mesheryctl</a> - For discussions on Meshery’s CLI</p>
-            <p><a href="https://layer5io.slack.com/archives/C019426UBNY">#newcomers</a> - For welcoming first-time contributors and community newcomers.</p>
-            <p><a href="https://layer5io.slack.com/archives/CVBGPTFJN">#performance</a> - For discussions related to measuring and evaluating Service Mesh Performance.</p>
-            <p><a href="https://layer5io.slack.com/archives/C010H0HE2E6">#smi</a> - For discussions related to Meshery and Service Mesh Interface (SMI).</p>
-            <p><a href="https://layer5io.slack.com/archives/C012UMS2MCM">#wasm</a> - For discussions on web assembly, rust, data plane filters.</p>
-            <p><a href="https://layer5io.slack.com/archives/C015QJKUMPU">#websites</a> - For discussions related to the UI/UX of <a href="http://layer5.io/">Layer 5</a> project sites.</p>
+            <p>Join our <a href="http://slack.layer5.io/">Slack Workspace</a> “introduce yourself” and interact with the community. There are different channels in the workspace, to engage in, just search for:</p>
+            <div style={{paddingLeft: "40px"}}>
+              <p><a href="https://layer5io.slack.com/archives/CDM0ACDM5">#general</a> - For workspace-wide communication and announcements.</p>
+              <p><a href="https://layer5io.slack.com/archives/CFGG6U10E">#meshery</a> - For discussion on topics in and around Meshery.</p>
+              <p><a href="https://layer5io.slack.com/archives/C017NA80S66">#meshery-adapters</a> - Discuss topics related to meshery-adapters.</p>
+              <p><a href="https://layer5io.slack.com/archives/C011VPREG2Z">#meshery-ci</a> - For discussion on topics related to meshery-ci.</p>
+              <p><a href="https://layer5io.slack.com/archives/C010LFFGFFA">#meshery-meshsync</a> - For discussions on issues related to mesh sync.</p>
+              <p><a href="https://layer5io.slack.com/archives/C0130BQ4L3T">#mesheryctl</a> - For discussions on Meshery’s CLI</p>
+              <p><a href="https://layer5io.slack.com/archives/C019426UBNY">#newcomers</a> - For welcoming first-time contributors and community newcomers.</p>
+              <p><a href="https://layer5io.slack.com/archives/CVBGPTFJN">#performance</a> - For discussions related to measuring and evaluating Service Mesh Performance.</p>
+              <p><a href="https://layer5io.slack.com/archives/C010H0HE2E6">#smi</a> - For discussions related to Meshery and Service Mesh Interface (SMI).</p>
+              <p><a href="https://layer5io.slack.com/archives/C012UMS2MCM">#wasm</a> - For discussions on web assembly, rust, data plane filters.</p>
+              <p><a href="https://layer5io.slack.com/archives/C015QJKUMPU">#websites</a> - For discussions related to the UI/UX of <a href="http://layer5.io/">Layer 5</a> project sites.</p>
+            </div>
 
-            <h2>Discourse Forum</h2>
-            <p>Join us on <a href="https://discuss.layer5.io">Discourse</a></p>
+            <h2>Discussion Forum</h2>
+            <p>Join us on our service mesh community's <a href="https://discuss.layer5.io">Discussion Forum</a></p>
 
             <h2>Social Media</h2>
-            <p>Layer5 is dedicated to providing the most efficient Service mesh management tool while growing a healthy open-source community. To know more about layer5 and connect with our community, follow and engage with us and join our social media accounts.</p>
-            <ul>
-              <li>
-                <img height="40 px" src={twitter_icon} alt="twitter" />
-                Twitter: 
-                <a href="https://twitter.com/layer5">@layer5, @mesheryio & @smp_spec</a>
-              </li>
-              <li>
-                <img height="40 px" src={mail_icon} alt="mail" />
-                Mail: 
+            <p>Layer5 is dedicated to providing the most efficient Service mesh management tool while growing a healthy open-source community. To know more about layer5 and connect with the community, follow and engage with us on our social media accounts.</p>
+            <div style={{paddingLeft: "40px"}}>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={twitter_icon} alt="twitter" />&nbsp;&nbsp;
+                <a href="https://twitter.com/layer5">@layer5</a>,&nbsp;<a href="https://twitter.com/mesheryio">@mesheryio</a>&nbsp;and&nbsp;<a href="https://twitter.com/smp_spec">@smp_spec</a>
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" width="30" src={mail_icon} alt="mail" />&nbsp;&nbsp;
                 <a href="mailto:community@layer5.io">community@layer5.io</a>
-              </li>
-              <li>
-                <img height="40 px" src={youtube_icon} alt="youtube" />
-                Youtube: 
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={youtube_icon} alt="youtube" />&nbsp;&nbsp;
                 <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA">Subscribe on Youtube</a>
-              </li>
-              <li>
-                <img height="40 px" src={github_icon} alt="github" />
-                GitHub: 
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={github_icon} alt="github" />&nbsp;&nbsp;
                 <a href="https://github.com/layer5io">Layer5io</a>
-              </li>
-              <li>
-                <img height="40 px" src={linkedin_icon} alt="linkedin" />
-                LinkedIn: 
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={linkedin_icon} alt="linkedin" />&nbsp;&nbsp;
                 <a href="https://www.linkedin.com/company/layer5">Layer 5</a>
-              </li>
-              <li>
-                <img height="40 px" src={docker_icon} alt="docker" />
-                Docker: 
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={docker_icon} alt="docker" />&nbsp;&nbsp;
                 <a href="https://hub.docker.com/u/layer5/">Layer 5</a>
-              </li>
-              <li>
-                <img height="40 px" src={slack_icon} alt="slack" />
-                Slack: 
+              </p>
+              <p style={{display: "flex", alignItems: "flex-end"}}>
+                <img height="30" src={slack_icon} alt="slack" />&nbsp;&nbsp;
                 <a href="https://bit.ly/3fXwYPk">Layer 5</a>
-              </li>
-            </ul>
+              </p>
+            </div>
           </div>
         </Container>
       </div>
     </HandbookWrapper>
   );
 };
-  
+
 export default Connect;
