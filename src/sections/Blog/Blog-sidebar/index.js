@@ -5,7 +5,7 @@ import slugify from "../../../utils/slugify";
 import { FaSearch } from "react-icons/fa";
 
 import Button from "../../../reusecore/Button";
-import Discuss from "../../discuss/layer5-discuss-white.png"
+import Discuss from "../../discuss/layer5-discuss-white.png";
 
 
 import BlogSideBarWrapper from "./blogSidebar.style";
@@ -90,17 +90,17 @@ const Sidebar = ( ) => {
             <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
           </div>
         </form>
-        </div>
+      </div>
       <div className="explain-1">
-       <div className="cards">
-         <a href="https://discuss.layer5.io/">
-                    <div className="card">
-                      <h2>Join the Conversation</h2>
-                <p>On our Discussion Forum</p>
-                <img className="logo" src={Discuss} />
-                    </div>
+        <div className="cards">
+          <a href="https://discuss.layer5.io/">
+            <div className="card">
+              <h2>Join the Conversation</h2>
+              <p>On our Discussion Forum</p>
+              <img className="logo" src={Discuss} />
+            </div>
           </a>
-       </div>
+        </div>
       </div>
 
      

@@ -27,6 +27,7 @@ export const HandbookWrapper = styled.div`
       margin-top: -29rem;
       margin-left: 20rem;
     }
+    
     .sidebar {
         margin: 0;
         padding: 0;
@@ -42,7 +43,7 @@ export const HandbookWrapper = styled.div`
         padding: 16px;
         text-decoration: none;
     }
-    
+
     .sidebar a.active {
         background-color: ${(props) => props.theme.primaryLightColorTwo};
         color: white;
@@ -69,42 +70,42 @@ export const HandbookWrapper = styled.div`
     }
     
     table {
-     border-collapse: collapse;
-     width: 98%;
-     margin: 1rem 0 2rem 0;
-     .github-icon{
-       height: 1.7rem;
-       width:auto;
-       display: block;
-       margin-left: auto;
-       margin-right: auto;
-     }
-     .site-icon{
-       height: 1.6rem;
-       width:auto;
-       display: block;
-       margin-left: auto;
-       margin-right: auto;
-     }
+    border-collapse: collapse;
+    width: 98%;
+    margin: 1rem 0 2rem 0;
+    .github-icon{
+      height: 1.7rem;
+      width:auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .site-icon{
+      height: 1.6rem;
+      width:auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
         }
 
-   td, th {
-     border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
-     text-align: left;
-     padding: 0.5rem;
+  td, th {
+    border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
+    text-align: left;
+    padding: 0.5rem;
         }
       .linkscol{
         text-align: center;
         width:8%;
-      }  
-   tbody:nth-child(even) {
-     background-color: ${(props) => props.theme.secondaryLightColorTwo};
+      }
+  tbody:nth-child(even) {
+    background-color: ${(props) => props.theme.secondaryLightColorTwo};
         }
 
-     .codes{
-      width:75%
-      margin-top:-2rem;
-    }
+  .codes{
+    width:75%
+    margin-top:-2rem;
+  }
 
     .community-home-container{
         padding: 1rem 0;
@@ -126,7 +127,6 @@ export const HandbookWrapper = styled.div`
       margin-top:-2rem;
     }
     }
-   
 
     @media only screen and (max-width: 475px){
         .page-header-section h1{
@@ -145,4 +145,15 @@ export const HandbookWrapper = styled.div`
           margin-left: -2.8rem; 
         }
     }
+  .channels-list {
+    padding-left: 40px;
+  }
+  .channels-img {
+    width: 30px;
+    height: 30px;
+  }
+  .channels-para {
+    display: flex;
+    align-items: flex-end;
+  }
 `;

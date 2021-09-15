@@ -53,12 +53,12 @@ const Repository = () => {
                           <td>{project}</td>
                           <td>{language}</td>
                           <td>
-                            <a href={site} target="_blank">
+                            <a href={site} target="_blank" rel="noreferrer">
                               <img className="site-icon" src={image} />
                             </a>
                           </td>
                           <td>
-                            <a href={repository} target="_blank">
+                            <a href={repository} target="_blank" rel="noreferrer">
                               <img className="github-icon" src={github} />
                             </a>
                           </td>
@@ -91,7 +91,7 @@ const Repository = () => {
                           <td>{project}</td>
                           <td>{language}</td>
                           <td>
-                            <a href={repository} target="_blank">
+                            <a href={repository} target="_blank" rel="noreferrer">
                               <img className="github-icon" src={github} />
                             </a>
                           </td>
