@@ -44,6 +44,12 @@ The service mesh landscape is powered by Gatsbyjs. In order to add/update the la
 Entries should be listed in alphabetical order. Data provided to the `smi.js` is dynamic and based upon results from conformance tests run using Meshery.
 
 To update the Service Mesh Timeline, add the new service mesh in the [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) file. Add `announce-date` key for the service mesh then add a `timeline-order` key having value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
+#### <a name="blog">Adding a blog post</a>
+
+1. In order to contribute a blog post, fork this repository, clone it, create a branch and navigate to the `src/collections/blog` directory.
+1. Create a copy of the [blog template](https://github.com/layer5io/layer5/tree/master/src/collections/blog/blog-template).
+1. Follow the instructions included in the blog template and name the new file after the title of the blog article.
+1. Entries will be listed in chronological order automatically.
 
 #### <a name="news">Adding News</a>
 
