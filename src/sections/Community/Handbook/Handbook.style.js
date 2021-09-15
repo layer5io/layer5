@@ -65,6 +65,7 @@ export const HandbookWrapper = styled.div`
     .community-home-subtitle {
         text-align: center;
         padding-top: 3rem;
+        padding-bottom: 1.5rem;
     }
     
     table {

@@ -67,19 +67,16 @@ export const HandbookCardWrapper = styled.div`
 	  text-decoration: none;
 	  color: rgba(71,126,150,1);
 	  font-weight: 500;
-	  border-bottom: 1px solid rgba(71,126,150,1);
-	  padding: 0.3rem .5rem;
+	  padding: 0.1rem .5rem;
 	  transform: translateX(5rem);
-	  transition: all 0.3s;
+	  transition: all 0.4s;
 	  opacity: 0;
 	  display: flex;
 	  align-items: center;
 	}
 
 	.handbook__card--lm:hover {
-	  background: rgb(71,126,150);
-      background: linear-gradient(250deg,rgba(71,126,150,1) 0%,rgba(0,179,159,1) 35%,rgba(60,73,79,1) 100%);
-	  color: white;
+	  border-bottom: 1px solid rgba(71,126,150,1);
 	}
 
 	.handbook__card:hover .handbook__card--lm {

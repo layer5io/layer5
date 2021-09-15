@@ -13,7 +13,7 @@ const handbookHome= () => {
       </div>
 
       <div className="community-home-subtitle">
-        <p>Explore the Community Handbook</p>
+        <h3>Explore the Community Handbook</h3>
       </div>
        
       <div className="community-home-container">
