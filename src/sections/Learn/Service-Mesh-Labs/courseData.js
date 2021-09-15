@@ -3,6 +3,7 @@ import linkerdLogo from "../../../assets/images/service-mesh-icons/linkerd-white
 import consulLogo from "../../../assets/images/service-mesh-icons/consul-white.svg";
 import kumaLogo from "../../../assets/images/service-mesh-icons/kuma-white.svg";
 import nsmLogo from "../../../assets/images/service-mesh-icons/nsm-white.svg";
+import traefikLogo from "../../../assets/images/service-mesh-icons/traefik-white.svg";
 // import smpLogo from "../../assets/images/smp/horizontal/smp-light-text-side.svg";
 import smpLogo from "./assets/smp-light-text.svg";
 import smiLogo from "./assets/servicemeshinterface-stackedsmi-white.svg";
@@ -53,6 +54,14 @@ export const data = [
         embed: "nsm-meshery-adapter",
         link: "/learn/service-mesh-labs/working-with-meshery-and-nsm",
         cover: nsmLogo
+      },
+      {
+        subId: "1f",
+        title: "Working with Meshery and Traefik",
+        info: "Learn how to run Meshery, install Traefik and deploy a sample app",
+        embed: "traefik-meshery-adapter",
+        link: "/learn/service-mesh-labs/working-with-meshery-and-traefik",
+        cover: traefikLogo
       }
     ]
   },
