@@ -6,7 +6,7 @@ import { HandbookCardWrapper } from "./HandbookCard.style";
 const HandbookCard = ({title, description, to}) => {
   return (
     <HandbookCardWrapper>
-      <Link to={to} class="handbook__card--a">
+      <Link to={to} class="handbook__card--main">
         <div className="handbook__card">
           <h1 className="handbook__card--head">{title}</h1>
           <div className="handbook__card--line"></div>

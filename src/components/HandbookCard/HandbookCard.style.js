@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const HandbookCardWrapper = styled.div`
+	.handbook__card--main {
+	  margin: 1rem;
+	  display: block;
+	}
+
     .handbook__card {
 	  border-radius: 5px;
 	  width: 25rem;
@@ -8,7 +13,6 @@ export const HandbookCardWrapper = styled.div`
 	  overflow: hidden;
 	  height: 15rem;
 	  transition: all 0.3s;
-	  margin: 1rem;
 	  position: relative;
 	}
 
