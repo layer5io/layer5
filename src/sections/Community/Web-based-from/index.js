@@ -179,7 +179,7 @@ const WebBasedForm = () => {
           <div className="option" onClick={() => {
             setRole("Participant"),setStepNumber(2); 
           }}>
-            I'm here as a Participant
+            I'm here as a Community Participant
           </div>
         </div>
         <br /><br />
