@@ -633,7 +633,7 @@ const WebBasedForm = () => {
           <h2>Welcome to the Layer5 Community!</h2>
           <h4>Resources are on their way. See these in the meantime:</h4>
           <div className="btn-box">
-            <Button primary className="btn-one" type="button" title="Community Handbook" url="https://docs.google.com/document/d/1pj1gQgiepQ_3UyRnE9ag6qQraAGn5bksJd7b4D3SXFE/edit?usp=sharing" external={true} />
+            <Button primary className="btn-one" type="button" title="Community Handbook" url="https://layer5.io/community/handbook" />
             <Button secondary className="btn-two" type="button" title="Newcomers Roadmap" url="https://layer5.io/community/newcomers" />
           </div>
           <p>We are pleased to have you as a new member!</p>
