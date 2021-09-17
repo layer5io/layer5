@@ -11,7 +11,7 @@ import Bridge from "../../../collections/programs/communitybridge/communitybridg
 export const programs_data = [
     {
         id:1,
-        name:"Goggle Season of Docs",
+        name:"Google Season of Docs",
         description:"Google Season of Docs provides support for open source projects to improve their documentation and allows professional technical writers to gain experience in open source. This is to raise awareness of open source, docs, and technical writing. Google season of docs started in 2019. Each year, layer5 submits a new project idea for technical writers to contribute to for a particular period. Also, stipends are awarded to the contributors.",
         buttonLink:"/programs/gsod",
         imageLink:GSOD,
