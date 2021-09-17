@@ -1,32 +1,33 @@
 import styled from "styled-components";
 export const HandbookWrapper = styled.div`
-.highlight{
-  font-weight: 600;
-}
-.content{
-  width:100%;
-  padding-bottom: 2rem;
-ul > li {
-    color: ${(props) => props.theme.menuColor};
-  }
-ol > li {
-    color: ${(props) => props.theme.menuColor};
-  }
-ul > li > span {
-    color: ${(props) => props.theme.black};
-  }
-ol > li > span {
-  color: ${(props) => props.theme.black};
-}
-}
-h2 h3{
-  margin: 0.5rem 0;
-  color: ${(props) => props.theme.tertiaryColor};
-}
-.page-section{
-  margin-top: -29rem;
-  margin-left: 20rem;
-}
+    .highlight{
+      font-weight: 600;
+    }
+    .content{
+      width:100%;
+      padding-bottom: 2rem;
+    ul > li {
+        color: ${(props) => props.theme.menuColor};
+      }
+    ol > li {
+        color: ${(props) => props.theme.menuColor};
+      }
+    ul > li > span {
+        color: ${(props) => props.theme.black};
+      }
+    ol > li > span {
+      color: ${(props) => props.theme.black};
+    }  
+    }
+    h2 h3{
+      margin: 0.5rem 0;
+      color: ${(props) => props.theme.tertiaryColor};
+    }
+    .page-section{
+      margin-top: -29rem;
+      margin-left: 20rem;
+    }
+    
     .sidebar {
         margin: 0;
         padding: 0;
@@ -62,6 +63,12 @@ h2 h3{
         }
     }
 
+    .community-home-subtitle {
+        text-align: center;
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
+    }
+    
     table {
     border-collapse: collapse;
     width: 98%;
@@ -99,6 +106,15 @@ h2 h3{
     width:75%
     margin-top:-2rem;
   }
+
+    .community-home-container{
+        padding: 1rem 0;
+        padding-bottom: 4rem;
+        display: flex;
+        flex-wrap : wrap;
+        align-items : center;
+        justify-content: center;
+    }
 
     @media only screen and (max-width: 750px){
       .page-section{
