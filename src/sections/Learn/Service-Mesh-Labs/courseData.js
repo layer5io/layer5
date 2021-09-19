@@ -66,8 +66,8 @@ export const data = [
       },
       {
         subId: "1g",
-        title: "Open Service Mesh",
-        info: "Working with Open Service Mesh",
+        title: "Working with Meshery and Open Service Mesh",
+        info: "Learn how to run Meshery, install Open Service Mesh and deploy a sample app",
         embed: "osm-meshery-adapter",
         link: "/learn/service-mesh-labs/working-with-open-service-mesh",
         cover: osmLogo
