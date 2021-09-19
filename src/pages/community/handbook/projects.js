@@ -11,7 +11,7 @@ import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
 
-const Projects = () => (
+const CommunityProjects = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -22,4 +22,4 @@ const Projects = () => (
     </Layout>
   </ThemeProvider>
 );
-export default Projects;
+export default CommunityProjects;

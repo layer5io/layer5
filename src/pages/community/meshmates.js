@@ -17,7 +17,7 @@ const MeshmatePage=() => {
         <SEO title="Meshmates"
           description="MeshMates - the Layer5 contributor onboarding program.
                 MeshMates is a collection of service mesh mentors."
-          image="/images/meshmate-icon.png"/>
+          image={seoImage}/>
         <Navigation />
         <Meshmates />
         <Footer />
