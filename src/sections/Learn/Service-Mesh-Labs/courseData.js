@@ -69,7 +69,7 @@ export const data = [
         title: "Working with Meshery and Open Service Mesh",
         info: "Learn how to run Meshery, install Open Service Mesh and deploy a sample app",
         embed: "osm-meshery-adapter",
-        link: "/learn/service-mesh-labs/working-with-open-service-mesh",
+        link: "/learn/service-mesh-labs/working-with-meshery-and-open-service-mesh",
         cover: osmLogo
       }
     ]
