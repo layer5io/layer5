@@ -1,6 +1,7 @@
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import five from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import gnh from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 
 export const repo_data = [
   {
@@ -36,7 +37,7 @@ export const repo_data = [
       },
       {
         project: "Service Mesh Performance",
-        image: meshery,
+        image: smp,
         site: "https://smp-spec.io",
         language: "Jekyll",
         repository:
