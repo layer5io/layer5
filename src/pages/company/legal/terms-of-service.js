@@ -11,7 +11,7 @@ import Terms from "../../../sections/Company/Legal/terms-of-service";
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
-const terms = () => (
+const TermsOfService = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -25,4 +25,4 @@ const terms = () => (
   </ThemeProvider>
 );
 
-export default terms;
+export default TermsOfService;

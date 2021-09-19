@@ -11,7 +11,7 @@ import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
 
-const About = () => (
+const CommunityAbout = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -22,4 +22,4 @@ const About = () => (
     </Layout>
   </ThemeProvider>
 );
-export default About;
+export default CommunityAbout;

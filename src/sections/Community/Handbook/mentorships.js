@@ -79,27 +79,27 @@ const MentorshipPrograms= () => {
       <ConductWrapper>
         <Container>
 
-        {data.map((data) => {
-              const { id, name, description, buttonLink, imageLink, imagePosition } = data;
-              return (
-                <div className={imagePosition}>
+          {data.map((data) => {
+            const { id, name, description, buttonLink, imageLink, imagePosition } = data;
+            return (
+              <div className={imagePosition} key={id}>
                 <div className="explain-2 list" key={id}>
-                <Row>
-                  <Col lg={6} md={6} sm={12} id="col1">
-                    <div className="text">
-                      <h2>{name}</h2>
-                      <p>{description}</p>
-                      <Button primary id="learn" type="button" title="Learn More" url={buttonLink} />
-                  </div>
-                  </Col>
-                  <Col lg={6} md={6} sm={12} id="col2">
-                    <img src={imageLink} alt="logo" />
-                  </Col>
-                </Row>
+                  <Row>
+                    <Col lg={6} md={6} sm={12} id="col1">
+                      <div className="text">
+                        <h2>{name}</h2>
+                        <p>{description}</p>
+                        <Button primary id="learn" type="button" title="Learn More" url={buttonLink} />
+                      </div>
+                    </Col>
+                    <Col lg={6} md={6} sm={12} id="col2">
+                      <img src={imageLink} alt="logo" />
+                    </Col>
+                  </Row>
+                </div>
               </div>
-              </div>
-              )     
-              })}
+            );     
+          })}
 
         </Container>
       </ConductWrapper>       

@@ -10,7 +10,7 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import WebBasedForm from "../sections/Community/Web-based-from";
 
-const IndexPage = () => (
+const NewcomersPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <SEO title="Layer5 newcomers form" description="Layer5 newcomers form for contributors, users and visitors" />
@@ -22,4 +22,4 @@ const IndexPage = () => (
   </ThemeProvider>
 );
 
-export default IndexPage;
+export default NewcomersPage;

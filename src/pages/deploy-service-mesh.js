@@ -10,7 +10,7 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import DeployServiceMesh from "../sections/Deploy Service Mesh/index";
 
-const IndexPage = () => (
+const DeployServiceMeshPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <SEO title="when should i deploy service mesh" description="when should i deploy service mesh question form." />
@@ -22,4 +22,4 @@ const IndexPage = () => (
   </ThemeProvider>
 );
 
-export default IndexPage;
+export default DeployServiceMeshPage;

@@ -6,12 +6,12 @@ import SEO from "../../../components/seo";
 
 import Navigation from "../../../sections/General/Navigation";
 import Footer from "../../../sections/General/Footer";
-import Terms from "../../../sections/Company/Legal/privacy";
+import CompanyPrivacy from "../../../sections/Company/Legal/privacy";
 
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
-const terms = () => (
+const Privacy = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -19,10 +19,10 @@ const terms = () => (
   Layer5 is the makers of Meshery and service mesh standards. 
   We are the largest collection of service mesh projects and their maintainers in the world." />
       <Navigation />
-      <Terms />
+      <CompanyPrivacy />
       <Footer />
     </Layout>
   </ThemeProvider>
 );
 
-export default terms;
+export default Privacy;

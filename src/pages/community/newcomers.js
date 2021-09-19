@@ -8,7 +8,7 @@ import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
 import NewcomersGuide from "../../sections/Community/Newcomers-guide";
 
-const newComers = () => {
+const NewComers = () => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
@@ -22,4 +22,4 @@ const newComers = () => {
   );
 };
 
-export default newComers;
+export default NewComers;

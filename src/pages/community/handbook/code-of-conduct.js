@@ -11,7 +11,7 @@ import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
 
-const Conduct = () => (
+const CommunityConduct = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -22,4 +22,4 @@ const Conduct = () => (
     </Layout>
   </ThemeProvider>
 );
-export default Conduct;
+export default CommunityConduct;
