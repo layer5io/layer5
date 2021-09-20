@@ -2,7 +2,7 @@
 title: "Service Mesh Specifications and Why They Matter"
 date: 2021-09-20 10:30:05 -0530
 author: Debopriya Bhattacharjee
-thumbnail: ./architectures.png
+thumbnail: ./Cover-image.png
 category: "Service Mesh Specifications"
 tags:
  - Projects
@@ -36,9 +36,9 @@ import { Link } from "gatsby";
 </div>   
 
 ### Service Mesh Specifications:
-<img src={Abstractions} className="slides-left" align="left" alt="al-abstractions" />
+<img src={Abstractions} className="slides-left" align="left" alt="abstractions" />
 
-As the ubiquity of service eshes unfolds and they become commonplace to any cloud native or edge environment, so does the need for vendor and technology-agnostic interfaces to interact with them. The Service Mesh Interface (SMI), the Service Mesh Performance (SMP), and Multi-Vendor Service Mesh Interoperation (Hamlet) are three open specifications solving the challenge of interoperability, workload and performance management between service meshes. 
+As the ubiquity of service meshes unfolds and they become a commonplace for any cloud native or edge environment, so does the need for vendor and technology-agnostic interfaces to interact with them. The Service Mesh Interface (SMI), the Service Mesh Performance (SMP), and Multi-Vendor Service Mesh Interoperation (Hamlet) are three open specifications solving the challenge of interoperability, workload and performance management between service meshes. 
 
 Learn what makes each of them unique and why they are much needed. See each of these three specifications in action as we use Meshery, the open-source service mesh management plane to demonstrate the value and functionality of each service mesh abstraction, and the adherence of these specifications by Istio, Linkerd, Consul and other popular service meshes.
 
@@ -56,7 +56,7 @@ There are a number of service meshes out there. One of the community projects is
 ### Service Mesh Interface
 <img src={SMI} className="slides-left" align="left" alt="smi-image" />
 <ul>
-    <li>It's goal and its genesis were born inside of Kubernetes.</li>
+    <li>Its goal and genesis were born inside of Kubernetes.</li>
     <li> Being a specification that is native to Kubernetes, its focus is on lowest common denominator functionality.</li>
     <li> The focus on bringing forth APIs that highlight and reinforce the most common use cases that service meshes are being used for currently</li>
     <li>Leaves space and provides extensibility room for additional APIs to address other service mesh functionality as more people adopt and make use cases well known.</li>
@@ -71,7 +71,8 @@ There are a number of service meshes out there. One of the community projects is
   <li> Meshery, the service mesh management plane, is the canonical implementation of the service mesh performance.</li>
   <li>The management planes can do a number of things to help bridge the divide between other back-end systems and service meshes. They also help performance management, configuration management, making sure you are following best practices in your implementations by taking common patterns and applying them to your environment </li>
 </ul>
-<h5>Let's take a moment to demo what it looks like to validate conformance in SMI using Meshery.</h5>
+Let's take a moment to demo what it looks like to validate conformance in SMI using Meshery.
+
 <img src={Graph} className="slides-left" align="left" alt="graph" />
 <ul>
    <li> We need to spin up Meshery locally</li>
@@ -95,7 +96,10 @@ There are a number of service meshes out there. One of the community projects is
 You might be using a client library to do some service mesh functionality. Maybe you're using those in combination with the service mesh. What costs more? What's more efficient? What's more powerful? Maybe you're using web assembly and filters there.
 These are all open questions that <Link to="/projects/service-mesh-performance">SMP</Link> assists in answering in your environment. You’d be surprised by some of the results of some tests that we have done and that the community has done in combination with a couple of universities and graduate students.
 
-<b>Performance Test</b><h5>Demonstration of the implementation of service mesh Performance:</h5>
+<b>Performance Test</b>
+
+Demonstration of the implementation of service mesh Performance:
+
 <img src={Flowchart} className="slides-left" align="left" alt="flowchart" />
 <ul>
   <li> On the terminal, we have a local deployment of Meshery running. You can also deploy on Kubernetes as well as the vendor Kubernetes platforms like AKS, EKS and GCP or you can use a dockerized container to run Meshery. You can also have your Kubernetes on Docker desktop.</li>
