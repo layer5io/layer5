@@ -215,4 +215,37 @@ styles for meshmate-of-the-year-2020
       margin: auto;
     }
   }
+
+  /* ==============
+  styles for service-mesh-specifications 
+  =======================*/
+
+  .slides-right{
+    width: 45%;
+    display: inline;
+    position: relative;
+    float: right;
+  }
+  .slides-left {
+    width: 45%;
+    display: inline;
+    position: relative;
+    float: left;
+    margin: 1rem 2rem 1rem 0rem;
+  }
+  div.note {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: ${props => props.theme.secondaryColor};
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: right;
+    border-right: 4px solid ${props => props.theme.secondaryColor};        
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 `;
