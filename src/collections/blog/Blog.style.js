@@ -225,6 +225,7 @@ styles for meshmate-of-the-year-2020
     display: inline;
     position: relative;
     float: right;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
   .slides-left {
     width: 45%;
@@ -232,6 +233,13 @@ styles for meshmate-of-the-year-2020
     position: relative;
     float: left;
     margin: 1rem 2rem 1rem 0rem;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+  }
+  .slides-left:hover{
+    cursor:pointer;
+  }
+  .slides-right:hover{
+    cursor:pointer;
   }
   div.note {
     display: flex;
