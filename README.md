@@ -26,6 +26,7 @@ We create and steward initiatives that press on the service mesh-centric envelop
 
 # Projects
 
+
 <p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
 <a href="https://meshery.io"><img src=".github/assets/images/meshery/meshery-logo.svg"
@@ -33,6 +34,16 @@ style="margin:10px;" width="125px"
 alt="Meshery - Service Mesh Management Plane" align="left" /></a>
 <a href="https://meshery.io">Meshery</a> is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. 
 Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
+<br /><br /><br />
+</p>
+<br />
+<p style="clear:both;">
+<h2><a href="https://github.com/service-mesh-patterns">Service Mesh Patterns</a></h2>
+<a href="https://meshery.io"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png"
+style="margin:10px;" width="125px" 
+alt="Meshery - Service Mesh Patterns" align="left" /></a>
+
+Service mesh patterns help you get the most out of Linkerd, Consul, App Mesh, Istio, Kuma, Open Service Mesh or <a href="https://layer5.io/service-mesh-landscape">any service mesh</a>, including those using Envoy and use of WebAssembly. Each pattern can be used as a template and is customizable.
 <br /><br /><br />
 </p>
 <br />
