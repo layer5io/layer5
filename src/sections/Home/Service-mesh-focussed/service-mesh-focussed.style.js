@@ -32,6 +32,14 @@ const MeshFocusWrapper = styled.div`
     p {
         font-style: italic;
     }
+    .book_btn{
+       padding-right: 3rem;
+       text-align: center;
+    }
+    .icon-right{
+        position: relative;
+        left: 6.5rem;
+    }
     @media only screen and (max-width:992px){
         .book {
             padding: 1rem;
