@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import {Link} from "gatsby";
+import NewcomersMap from "../Newcomers-guide/newcomers-map";
 import TOC from "../../../components/handbook-navigation/index";
 
 
@@ -33,6 +34,24 @@ const Intro= () => {
             <h2>Newcomer’s Path</h2>
             <p>Thank you for your interest in contributing to Layer5 open source initiatives!</p>
             <p>In combination with the Layer5 Community Guide and Contributing Guide, the following set of instructions are to encourage and support first-time (or near first-time) open-source contributors.</p>
+            <Row className="newcomers-journey">
+            <Col
+              className="heading"
+              sm={12}
+              lg={6}
+              onMouseOver={() => setHover(true)}
+              onMouseOut={() => setHover(false)}
+            >
+              <h2>Contributor's Journey</h2>
+              <div className="heading-start">
+                <h5>Start Here</h5>
+                <img className="heading-start__arrow" src={longArrow} />
+              </div>
+            </Col>
+            <Col sm={12} lg={6}>
+              <NewcomersMap handleMouseHover={hover} />
+            </Col>
+          </Row>
             <h3>How to contribute?</h3>
             <p>The following steps outline the process by which you can openly engage, learn, and participate in the broad set of open source projects at Layer5.</p>
 
