@@ -16,13 +16,22 @@ const Intro= () => {
         <Container>
           <div className="sub-heading">
             <h2>What is Layer5</h2>
-            <p>Layer5 is a community and open source-centered service mesh company, representing the largest collection of service meshes and their maintainers in the world. Layer5 is also the creator and maintainer of service mesh standards and also the maker of Meshery,  the service mesh management plane.</p>         
+            <p><a href="https://layer5.io">Layer5</a> is a community and open source-centered service mesh company, representing the largest collection of service meshes and their maintainers in the world. Layer5 is also the creator and maintainer of <a href="https://layer5.io/blog/announcements/a-standard-interface-for-service-meshes">service mesh standards</a> and also the maker of <a href="https://meshery.io/">Meshery</a>,  the <a href="https://layer5.io/service-mesh-management/meshery">service mesh management plane</a>.</p>         
             <h2>Community First</h2>
             <p>Layer5 also represents the community.  We build projects to provide learning environments, deployment, and operational best practices, performance benchmarks, create documentation, share networking opportunities, and more. Our shared commitment to the open-source spirit pushes Layer5 projects forward. New members are always welcome.</p>
             <h2>Open Source First</h2>
-            <p>Layer5 projects are open-source software. Anyone can download, use, work on, and share it with others. It's built on principles like collaboration, globalism, and innovation. Layer5 projects are distributed under the terms of Apache v2.</p>
+            <p> All Layer5 projects are open-source software. Anyone can download, use, work on, and share it with others. It's built on principles like collaboration, globalism, and innovation. Layer5 projects are distributed under the terms of <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache v2</a>.</p>
           </div>
           <div className="content">
+            <h2>Values</h2>
+            <ul>
+              <li><span>Collaboration</span></li>
+              <li><span>Inclusivity & Diversity</span></li>
+              <li><span>Community-Centered</span></li>
+              <li><span>Respect</span></li>
+              <li><span>Openness/Transparency</span></li>
+            </ul>
+
             <h2>Goals</h2>
             <ul>
               <li><span>To build a large collection of service meshes.</span></li>
