@@ -16,23 +16,48 @@
 
 ### About Layer5
 
+[Layer5](https://layer5.io) is a community and open-source-centered service mesh company, representing the largest collection of service meshes and their maintainers in the world. Layer5 is the creator and maintainer of service mesh standards and also the maker of Meshery,  the Service Mesh Management Plane.
+
 **Community First**
 
-The [Layer5](https://layer5.io) community represents the largest collection of service mesh projects and their maintainers in the world.
+Layer5 represents the community.  We build projects to provide learning environments, deployment, and operational best practices, performance benchmarks, create documentation, share networking opportunities, and more. Our shared commitment to the open-source spirit pushes Layer5 projects forward. New members are always welcome.
 
 **Open Source First**
 
-We create and steward initiatives that press on the service mesh-centric envelope of Cloud Native. Our shared commitment to the open source spirit compels our community members to push Layer5 projects forward.
+All Layer5 projects are open-source. Anyone can download, use, work on, and share it with others. It's built on principles like collaboration, globalism, and innovation. Layer5 projects are distributed under the terms of [Apache v2](https://www.apache.org/licenses/LICENSE-2.0).
+
+**Values**
+<ul>
+  <li>Collaboration</li>
+  <li>Inclusivity & Diversity</li>
+  <li>Community-Centered</li>
+  <li>Respect</li>
+  <li>Openness/Transparency</li>
+</ul>
+
+**Goals**
+
+  Our goals as a community and company are: 
+  <ul>
+    <li>To build a large collection of service meshes.</li>
+    <li>To build products that are accessible and easy to use.</li>
+    <li>To build a welcoming community for open-source contributions.</li>
+  </ul>
+
 
 # Projects
+
+This is an amazing layer5 community project. These are really interesting ones. There is something new for every beginner, intermediate, newcomer in the projects. Start exploring it by clicking on the github link of projects. Layer5
+Spans four github organizations are described below.
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
 <a href="https://meshery.io"><img src=".github/assets/images/meshery/meshery-logo.svg"
 style="margin:10px;" width="125px" 
 alt="Meshery - Service Mesh Management Plane" align="left" /></a>
-<a href="https://meshery.io">Meshery</a> is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. 
-Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
+<a href="https://meshery.io">Meshery</a> is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating, and managing the performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
+Github-link: <a href="https://github.com/meshery" target="_blank">https://github.com/meshery</a>
+
 <br /><br /><br />
 </p>
 <br />
@@ -50,7 +75,8 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 <a href="https://layer5.io/projects/service-mesh-performance"><img src=".github/assets/images/smp-dark-text.svg"
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Performance Specification Index" align="left" /></a>
-The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a> (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and its configuration, service / application details, and bundling of statistical analysis of results.
+The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a>  (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and its configuration, service/application details, and bundling of statistical analysis of the result.<br/>
+Github-link: <a href="https://github.com/service-mesh-performance/service-mesh-performance">https://github.com/service-mesh-performance/service-mesh-performance</a>
 <br /><br /><br />
 </p>
 <br />
@@ -59,15 +85,18 @@ The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh P
 <a href="https://layer5.io/projects/image-hub"><img src=".github/assets/images/image-hub/layer5-image-hub.png"
 style="float:left;margin:10px;" width="125px"
 alt="Image Hub" align="left" /></a>
-<a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application which runs on <a href="https://docs.meshery.io/service-meshes/adapters/consul">Consul</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
-Image Hub supports Envoy-based data planes. It is compatible with and can be deployed on Istio and Consul service meshes.
+<a href="https://layer5.io/projects/image-hub">Image Hub</a> is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters are written in Rust. These modules can be used to implement multi-tenancy or to implement per-user rate-limiting in your application's endpoints. This application was first demonstrated at DockerCon 2020.<br/>
+Github-link: <a href="https://github.com/layer5io/image-hub">https://github.com/layer5io/image-hub
+
 <br /><br /><br />
 </p>
 <br />
 <p style="clear:both;">
 <h2><a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a></h2>
 <a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg" style="margin:10px;" width="125px" align="left" /></a>
-<a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> is the multi-service mesh operator and implementation of MeshSync.
+Meshery Operator is the multi-service mesh operator and implementation of MeshSync.<br/>
+Github-link: <a href="Github-link: https://github.com/meshery/meshery-operator"> https://github.com/meshery/meshery-operator
+
 <br /><br /><br /><br />
 </p>
 <br />
@@ -94,7 +123,8 @@ alt="Layer5" align="left" /></a>
 <a href="https://getnighthawk.dev/"><img src=".github/assets/images/getnighthawk/layer5-getnighthawk.png"
 style="margin:10px;" width="125px"
 alt="Layer5" align="left" /></a>
-<a href="https://getnighthawk.dev/">Nighthawk</a> is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads.
+<a href="https://getnighthawk.dev/">Nighthawk</a> is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generators for characterizing and managing the performance of service meshes and their workloads.
+	Github-link: <a href="https://github.com/layer5io/getnighthawk">https://github.com/layer5io/getnighthawk
 <br /><br /><br />
 </p>
 <br />
