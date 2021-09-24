@@ -30,25 +30,19 @@ const Maintainer= () => {
             <h3><a href="https://layer5.io/service-mesh-management/meshery">2. Meshery</a></h3>
             <p>Meshery and its components Meshery Operator   and MeshSync  
               <ul>
-                <li><h4>Meshery</h4> </li>
+                <li><h4><a href="https://layer5.io/service-mesh-management/meshery">Meshery</a></h4> </li>
                 <p>It is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. Meshery facilitates adopting, configuring, operating, and managing the performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. <br/> Github link: <a href="https://github.com/meshery">https://github.com/meshery</a> </p>
-                <li><h4>Meshery.io :</h4> </li>
+                <li><h4><a href="https://meshery.io/">Meshery.io :</a></h4> </li>
                 <p>WebSite for Meshery, the multi-mesh manager.<br/> Github link: <a href="https://github.com/meshery/meshery.io">https://github.com/meshery/meshery.io</a> </p>
-                <li><h4>Meshery-operator :</h4> </li>
+                <li><h4><a href="https://layer5.io/service-mesh-management/meshery/meshery-operator">Meshery-operator :</a></h4> </li>
                 <p>Meshery Operator is the multi-service mesh operator and implementation of MeshSync.<br/> Github link: <a href="https://github.com/meshery/meshery-operator">https://github.com/meshery/meshery-operator</a> </p>
               </ul>
             </p>
-            <h3><a href="https://layer5.io/projects/service-mesh-performance">3. Service Mesh Performance</a></h3>
-            <p>Service Mesh Performance specification.</p>
-            <ul>
-              <li><h4>Service Mesh Performance :</h4></li>
-              <p>The Service Mesh Performance (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and it’s configuration, service/application details, and bundling of statistical analysis of the result.<br/>Github link: <a href="https://github.com/service-mesh-performance/service-mesh-performance">https://github.com/service-mesh-performance/service-mesh-performance</a></p>
-            </ul>
-            <h3><a href="https://github.com/service-mesh-patterns/service-mesh-patterns">4. Service Mesh Patterns</a></h3>
-            <ul>
-              <li><h4>Service Mesh Performance :</h4></li>
-              <p>A collection of curated patterns of service mesh use cases compatible with Meshery.<br/>Github link: <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">https://github.com/service-mesh-patterns/service-mesh-patterns</a></p>
-            </ul> 
+            <h3><a href="https://smp-spec.io/">3. Service Mesh Performance</a></h3>
+            <p><a href="https://layer5.io/projects/service-mesh-performance">The Service Mesh Performance (SMP)</a> is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and it’s configuration, service/application details, and bundling of statistical analysis of the result.<br/>Github link: <a href="https://github.com/service-mesh-performance/service-mesh-performance">https://github.com/service-mesh-performance/service-mesh-performance</a></p>
+            
+            <h3><a href="https://github.com/service-mesh-patterns/service-mesh-patterns">4. Service Mesh Patterns</a></h3>              
+              <p>A collection of curated patterns of service mesh use cases compatible with Meshery.<br/>Github link: <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">https://github.com/service-mesh-patterns/service-mesh-patterns</a></p>        
           </div>
         </Container> 
       </div>    
