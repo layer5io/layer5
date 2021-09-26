@@ -41,7 +41,7 @@ Meshery facilitates adopting, configuring, operating and managing performance of
 <a href="https://github.com/service-mesh-patterns"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png?raw=true"  
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Pattern" align="left"/></a>
-<a href="https://github.com/service-mesh-patterns">Service Mesh Patterns</a> help you get the most out of Linkerd, Consul, App Mesh, Istio, Kuma, Open Service Mesh or any service mesh, including those using Envoy and use of WebAssembly. Each pattern can be used as a template and is customizable.
+<a href="https://github.com/service-mesh-patterns">Service Mesh Patterns</a> help you get the most out of Linkerd, Consul, App Mesh, Istio, Kuma, Open Service Mesh or <a href="https://layer5.io/service-mesh-landscape">any service mesh</a>, including those using Envoy and use of WebAssembly. Each pattern can be used as a template and is customizable.
 <br /><br /><br />
 </p>
 <br />
