@@ -29,27 +29,26 @@ We create and steward initiatives that press on the service mesh-centric envelop
 <p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
 <a href="https://meshery.io"><img src=".github/assets/images/meshery/meshery-logo.svg"
-style="margin:10px;" width="125px" 
+style="margin:10px;" width="125px"
 alt="Meshery - Service Mesh Management Plane" align="left" /></a>
-<a href="https://meshery.io">Meshery</a> is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today. 
-Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh. 
+<a href="https://meshery.io">Meshery</a> is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today.
+Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh.
 <br /><br /><br />
 </p>
 <br />
 <p style="clear:both;">
 <h2><a href="https://github.com/service-mesh-patterns">Service Mesh Pattern</a></h2>
-<a href="https://github.com/service-mesh-patterns"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png"  
-style="float:left;margin:10px;" width="125px" 
+<a href="https://github.com/service-mesh-patterns"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png?raw=true"  
+style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Pattern" align="left"/></a>
 <a href="https://github.com/service-mesh-patterns">Service Mesh Patterns</a> help you get the most out of Linkerd, Consul, App Mesh, Istio, Kuma, Open Service Mesh or any service mesh, including those using Envoy and use of WebAssembly. Each pattern can be used as a template and is customizable.
 <br /><br /><br />
 </p>
 <br />
-
 <p style="clear:both;">
 <h2><a href="https://layer5.io/landscape">Service Mesh Landscape</a></h2>
 <a href="https://layer5.io/landscape"><img src=".github/assets/images/buttons/landscape.png"  
-style="float:left;margin:10px;" width="125px" 
+style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Landscape Ecosystem" align="left"/></a>
 The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
 <br /><br /><br />
