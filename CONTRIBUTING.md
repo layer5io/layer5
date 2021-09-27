@@ -87,6 +87,7 @@ Please contribute! The Layer5 site uses Gatsby. The process of contributing to d
 `vi <specific page>.md` # or use your favorite IDE
 1. Run site locally to preview changes.
 `make site` # this will run a local web server with "live reload" conveniently enabled.
+(NOTE: while using `make` command on windows, there sometimes arises an error in identifying the command even after it is installed(unrecognized command), this is because the PATH for the binary might not be set correctly.)
 1. Commit your changes to your remote branch.
 `git commit --signoff -m"<commit subject>`
 1. Push your changes
