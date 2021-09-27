@@ -34,7 +34,7 @@ const TOC = () => {
       <div className="toc-list">
         <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
           <li>
-            <Link to="/community/handbook" className="toc-sub-heading toc-sub-inline" activeClassName="active">
+            <Link to="/community/handbook/about" className="toc-sub-heading toc-sub-inline" activeClassName="active">
               About
             </Link>
           </li>

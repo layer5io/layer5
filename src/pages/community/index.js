@@ -11,7 +11,7 @@ import Community from "../../sections/Community";
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
-const community = () => (
+const CommunityIndex = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -26,4 +26,4 @@ const community = () => (
   </ThemeProvider>
 );
 
-export default community;
+export default CommunityIndex;

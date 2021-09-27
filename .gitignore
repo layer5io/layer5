@@ -79,6 +79,3 @@ yarn.lock
 .vscode
 
 default.profraw
-
-# NPM Lock
-package-lock.json

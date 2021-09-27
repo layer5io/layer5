@@ -11,7 +11,7 @@ import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
 
-const Learn = () => (
+const CommunityLearn = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -22,4 +22,4 @@ const Learn = () => (
     </Layout>
   </ThemeProvider>
 );
-export default Learn;
+export default CommunityLearn;

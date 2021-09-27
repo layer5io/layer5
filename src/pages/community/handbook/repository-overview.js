@@ -11,7 +11,7 @@ import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
 
-const Repository = () => (
+const CommunityRepository = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -22,4 +22,4 @@ const Repository = () => (
     </Layout>
   </ThemeProvider>
 );
-export default Repository;
+export default CommunityRepository;

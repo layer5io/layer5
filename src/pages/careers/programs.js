@@ -12,7 +12,7 @@ import ProgramsGrid from "../../sections/Careers/Careers-Programs-grid";
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
-const programs = () => (
+const CareerPrograms = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -25,4 +25,4 @@ const programs = () => (
   </ThemeProvider>
 );
 
-export default programs;
+export default CareerPrograms;

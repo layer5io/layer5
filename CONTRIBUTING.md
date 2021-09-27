@@ -44,6 +44,12 @@ The service mesh landscape is powered by Gatsbyjs. In order to add/update the la
 Entries should be listed in alphabetical order. Data provided to the `smi.js` is dynamic and based upon results from conformance tests run using Meshery.
 
 To update the Service Mesh Timeline, add the new service mesh in the [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) file. Add `announce-date` key for the service mesh then add a `timeline-order` key having value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
+#### <a name="blog">Adding a blog post</a>
+
+1. In order to contribute a blog post, fork this repository, clone it, create a branch and navigate to the `src/collections/blog` directory.
+1. Create a copy of the [blog template](https://github.com/layer5io/layer5/tree/master/src/collections/blog/blog-template).
+1. Follow the instructions included in the blog template and name the new file after the title of the blog article.
+1. Entries will be listed in chronological order automatically.
 
 #### <a name="news">Adding News</a>
 
@@ -74,17 +80,18 @@ Please contribute! The Layer5 site uses Gatsby. The process of contributing to d
 1. Get a local clone of your fork of the site.
 `git clone https://github.com/layer5io/layer5`
 1. Switch to the `master` branch.
-`git checkout master`
+`git switch master`
 1. Create and checkout a new branch to make changes within
-`git checkout -b <my-username>/<my-changes>`
+`git checkout -b <my-changes-branchname>`
 1. Edit site/add content.
 `vi <specific page>.md` # or use your favorite IDE
 1. Run site locally to preview changes.
 `make site` # this will run a local web server with "live reload" conveniently enabled.
+(NOTE: while using `make` command on windows, there sometimes arises an error in identifying the command even after it is installed(unrecognized command), this is because the PATH for the binary might not be set correctly.)
 1. Commit your changes to your remote branch.
 `git commit --signoff -m"<commit subject>`
 1. Push your changes
-`git push origin <my-username>/<my-changes>`
+`git push origin <my-changes-branchname>`
 1. Open a [pull request](../../pulls) (in your web browser) against the `master` branch on https://github.com/layer5io/layer5.
 
 ### <a name="commit-signing">Signing-off on Commits (Developer Certificate of Origin)</a>

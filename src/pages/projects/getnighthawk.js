@@ -12,7 +12,7 @@ import Subscribe from "../../sections/subscribe/subscribe";
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
-const SMI = () => (
+const GetNighthawkPage = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -28,4 +28,4 @@ const SMI = () => (
     </Layout>
   </ThemeProvider>
 );
-export default SMI;
+export default GetNighthawkPage;
