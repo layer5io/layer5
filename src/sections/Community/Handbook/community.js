@@ -21,9 +21,6 @@ const badgeStyle = {
 const badgeListStyle = {
   listStyleType: "none"
 };
-const paddingBottom18 = {
-  paddingBottom: "18px"
-};
 
 const CommunityGuide= () => {
   return (
@@ -35,7 +32,7 @@ const CommunityGuide= () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2 id="communityGuidelines" style={paddingBottom18}>Community Guidelines</h2>
+            <h2 id="communityGuidelines">Community Guidelines</h2>
             <p>
               Welcome to the Layer5 community! We’re happy to have you here and handhold you for your first contribution. Here are some tips to help you get started:
             </p>
@@ -92,12 +89,12 @@ const CommunityGuide= () => {
               </ul>
             </p>
 
-            <h3 style={paddingBottom18}>Community Manager</h3>
+            <h3>Community Manager</h3>
             <p>
               A Community Manager is a  person who has an innate drive to contribute to the community's prosperity. A community manager serves as a link between the organisation and its community, overcoming obstacles as they arise—or even before they arise!—by
               collaborating with other departments and the community to find solutions that benefit the entire community.
             </p>
-            <h3 style={paddingBottom18}>Meshmates</h3>
+            <h3>Meshmates</h3>
             <p>
               Layer5 MeshMates are committed to helping community members be successful contributors. MeshMates aid in identifying areas of projects to engage within, working groups to join, and helping community members grow in their open-source and cloud-native knowledge.
               By connecting one-on-one, MeshMates will share tips on how to have the best community experience possible.
@@ -107,13 +104,13 @@ const CommunityGuide= () => {
               MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing their expertise has a huge impact on the Layer5 community – don’t hesitate to reach out to them!
             </p>
 
-            <h3 style={paddingBottom18}>Contributors</h3>
+            <h3>Contributors</h3>
             <p>
               As you contribute to the Layer5 community, do follow the <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">contributing guidelines</a> to make sure you are on the right track. For information about the community, please refer to the <Link to="/community/handbook/community/#communityGuidelines">community guidelines</Link>.
               Always remember to reach out to a <Link to="/community/meshmates">MeshMate</Link> when in doubt or in need of a helping hand.
             </p>
 
-            <h3 style={paddingBottom18}>Badges</h3>
+            <h3>Badges</h3>
             <p>
             As you continue your contributions to this community, you stand a chance to receive a badge in acknowledgement of your engagement within and/or contribution to the representative project or (sub-)community. A variety of badges exist so that community members and their efforts may be affiliated with a particular project or community initiative.
             </p>
@@ -128,13 +125,13 @@ const CommunityGuide= () => {
               <li><img src={PatternsLogo} style={badgeStyle}/>Patterns</li>
             </ul>
 
-            <h2 style={paddingBottom18}>Path to Leadership</h2>
-            <h3 style={paddingBottom18}>What does leadership mean to the Layer5 community?</h3>
+            <h2>Path to Leadership</h2>
+            <h3>What does leadership mean to the Layer5 community?</h3>
             <p>
               A leader is someone who can contribute to the Layer5 Community's growth by being accountable, participating in decision-making, and feeling responsible.
             </p>
-            <h3 style={paddingBottom18}>What does it take to be a leader?</h3>
-            <h4 style={paddingBottom18}><strong>First, you have to be a MeshMate</strong></h4>
+            <h3>What does it take to be a leader?</h3>
+            <h4><strong>First, you have to be a MeshMate</strong></h4>
             <p>
               Roles/Responsibilities
               <ul>
@@ -144,7 +141,7 @@ const CommunityGuide= () => {
                 <li>Facilitate newcomers call</li>
               </ul>
             </p>
-            <h4 style={paddingBottom18}><strong>Maintainer</strong></h4>
+            <h4><strong>Maintainer</strong></h4>
             <p>
               Roles/Responsibilities
               <ul>
@@ -162,16 +159,36 @@ const CommunityGuide= () => {
               </ul>
             </p>
             <p><strong>Checklist before becoming a Maintainer</strong></p>
-            <input type="checkbox" name="maintainer-checklist-1" value="Makes consistent contributions within the Layer5 community"/>Makes consistent contributions within the Layer5 community<br/>
-            <input type="checkbox" name="maintainer-checklist-2" value="Has the ability to commit directly to a project repository"/>Has the ability to commit directly to a project repository<br/>
-            <input type="checkbox" name="maintainer-checklist-3" value="Holds knowledge of Layer5 project performance, and software"/>Holds knowledge of Layer5 project performance, and software<br/>
-            <input type="checkbox" name="maintainer-checklist-4" value="Attends community meeting"/>Attends community meeting<br/>
-            <input type="checkbox" name="maintainer-checklist-5" value="Holds good knowledge in helping others achieve their goals"/>Holds good knowledge in helping others achieve their goals<br/>
-            <input type="checkbox" name="maintainer-checklist-6" value="Has knowledge of Git and GitHub"/>Has knowledge of Git and GitHub<br/>
-            <input type="checkbox" name="maintainer-checklist-7" value="Understands the workflow of the Issues and Pull Requests"/>Understands the workflow of the Issues and Pull Requests<br/>
-            <br/>
+            <input type="checkbox" name="maintainer-checklist-1" id="maintainer-checklist-1"/>
+            <label htmlFor="maintainer-checklist-1">
+                Makes consistent contributions within the Layer5 community
+            </label>
+            <input type="checkbox" name="maintainer-checklist-2" id="maintainer-checklist-2"/>
+            <label htmlFor="maintainer-checklist-2">
+                Has the ability to commit directly to a project repository
+            </label>
+            <input type="checkbox" name="maintainer-checklist-3" id="maintainer-checklist-3"/>
+            <label htmlFor="maintainer-checklist-3">
+                Holds knowledge of Layer5 project performance, and software
+            </label>
+            <input type="checkbox" name="maintainer-checklist-3" id="maintainer-checklist-4"/>
+            <label htmlFor="maintainer-checklist-4">
+                Attends community meeting
+            </label>
+            <input type="checkbox" name="maintainer-checklist-5" id="maintainer-checklist-5"/>
+            <label htmlFor="maintainer-checklist-5">
+                Holds good knowledge in helping others achieve their goals
+            </label>
+            <input type="checkbox" name="maintainer-checklist-6" id="maintainer-checklist-6"/>
+            <label htmlFor="maintainer-checklist-6">
+                Has knowledge of Git and GitHub
+            </label>
+            <input type="checkbox" name="maintainer-checklist-7" id="maintainer-checklist-7"/>
+            <label htmlFor="maintainer-checklist-7">
+                Understands the workflow of the Issues and Pull Requests
+            </label><br/>
 
-            <h4 style={paddingBottom18}><strong>Community Manager</strong></h4>
+            <h4><strong>Community Manager</strong></h4>
             <p>
               Roles/Responsibilities
               <ul>
@@ -185,13 +202,34 @@ const CommunityGuide= () => {
               </ul>
             </p>
             <p><strong>Checklist before becoming a Community Manager</strong></p>
-            <input type="checkbox" name="CM-checklist-1" value="Prior technical community management experience"/>Prior technical community management experience.<br/>
-            <input type="checkbox" name="CM-checklist-2" value="Self-motivated with the ability to manage multiple competing priorities"/>Self-motivated with the ability to manage multiple competing priorities.<br/>
-            <input type="checkbox" name="CM-checklist-3" value="A growth mindset and an approach to new information and knowledge with curiosity"/>A growth mindset and an approach to new information and knowledge with curiosity.<br/>
-            <input type="checkbox" name="CM-checklist-4" value="A challenge seeker who desires and readily takes on new challenges and works towards solutions"/>A challenge seeker who desires and readily takes on new challenges and works towards solutions.<br/>
-            <input type="checkbox" name="CM-checklist-5" value="Good communication skills"/>Good communication skills.<br/>
-            <input type="checkbox" name="CM-checklist-6" value="Strong relational skills"/>Strong relational skills.<br/>
-            <input type="checkbox" name="CM-checklist-7" value="An understanding of how contemporary open-source projects function"/>An understanding of how contemporary open-source projects function.<br/>
+            <input type="checkbox" name="CM-checklist-1" id="CM-checklist-1"/>
+            <label htmlFor="CM-checklist-1">
+              Prior technical community management experience
+            </label>
+            <input type="checkbox" name="CM-checklist-2" id="CM-checklist-2"/>
+            <label htmlFor="CM-checklist-2">
+              Self-motivated with the ability to manage multiple competing priorities
+            </label>
+            <input type="checkbox" name="CM-checklist-3" id="CM-checklist-3"/>
+            <label htmlFor="CM-checklist-3">
+              A growth mindset and an approach to new information and knowledge with curiosity
+            </label>
+            <input type="checkbox" name="CM-checklist-4" id="CM-checklist-4"/>
+            <label htmlFor="CM-checklist-4">
+              A challenge seeker who desires and readily takes on new challenges and works towards solutions
+            </label>
+            <input type="checkbox" name="CM-checklist-5" id="CM-checklist-5"/>
+            <label htmlFor="CM-checklist-5">
+              Good communication skills
+            </label>
+            <input type="checkbox" name="CM-checklist-6" id="CM-checklist-6"/>
+            <label htmlFor="CM-checklist-6">
+              Strong relational skills
+            </label>
+            <input type="checkbox" name="CM-checklist-7" id="CM-checklist-7"/>
+            <label htmlFor="CM-checklist-7">
+              An understanding of how contemporary open-source projects function
+            </label>
             <br/>
           </div>
         </Container>
