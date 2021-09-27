@@ -142,7 +142,6 @@ export const HandbookWrapper = styled.div`
       margin-right: 0.2em;
       vertical-align: bottom;
       color: transparent;
-      /* transition: .2s; */
     }
 
     input[type=checkbox] + label:active:before {
@@ -150,8 +149,8 @@ export const HandbookWrapper = styled.div`
     }
 
     input[type=checkbox]:checked + label:before {
-      background-color: #00B39F;
-      border-color: #00B39F;
+      background-color: ${(props) => props.theme.primaryLightColorTwo};
+      border-color: ${(props) => props.theme.primaryLightColorTwo};
       color: #fff;
     }
 
@@ -162,8 +161,8 @@ export const HandbookWrapper = styled.div`
 
     input[type=checkbox]:checked:disabled + label:before {
       transform: scale(1);
-      background-color: #bfb;
-      border-color: #bfb;
+      background-color: ${(props) => props.theme.secondaryLightColor};
+      border-color: ${(props) => props.theme.secondaryLightColor};
     }
 
     @media only screen and (max-width: 750px){

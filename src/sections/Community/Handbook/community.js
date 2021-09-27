@@ -44,12 +44,12 @@ const CommunityGuide= () => {
             <p>
               <img className="logo" src={Point} />
               <strong>Familiarize with the community -</strong> As you get to familiarize yourself with the community, know that there are multiple initiatives for you to explore.
-              Some initiatives have working groups that meet at different times each week, while others use the weekly community meeting as their place of discussion. Details of each can be found on the <a href="https://bit.ly/2SbrRhe">community calendar</a>.
+              Some initiatives have working groups that meet at different times each week, while others use the weekly community meeting as their place of discussion. Details of each can be found on the <Link to="/community/calendar">community calendar</Link>.
               Everyone is welcome to join the calls and engage with other community members over Slack, the mailing list, and so on.
             </p>
             <p>
               <img className="logo" src={Point} />
-              <strong>Familiarize with the projects -</strong> The following is a sample of the many active, ongoing community projects. One way of doing so is to review the Layer5 Repository Overview section of this handbook to get a better understanding of each project.
+              <strong>Familiarize with the projects -</strong> The following is a sample of the many active, ongoing community projects. One way of doing so is to review the <Link to="/community/handbook/repository-overview">Layer5 Repository Overview</Link> section of this handbook to get a better understanding of each project.
               This document will help you to understand the projects based on their technology domain(s). Be sure to star the community’s <a href="https://github.com/layer5io">repositories</a> on GitHub!
             </p>
             <p>
