@@ -87,7 +87,15 @@ Please contribute! The Layer5 site uses Gatsby. The process of contributing to d
 `vi <specific page>.md` # or use your favorite IDE
 1. Run site locally to preview changes.
 `make site` # this will run a local web server with "live reload" conveniently enabled.
-(NOTE: while using `make` command on windows, there sometimes arises an error in identifying the command even after it is installed(unrecognized command), this is because the PATH for the binary might not be set correctly.)
+     
+    Installing make on windows using choco
+    1. open powershell as administator
+    2. Copy the below command and run it
+    3. `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))`
+    4. Now reopen powershell as administrator and run the below command
+    5. `choco install make`
+    6. It's done now you can run make site command
+
 1. Commit your changes to your remote branch.
 `git commit --signoff -m"<commit subject>`
 1. Push your changes
