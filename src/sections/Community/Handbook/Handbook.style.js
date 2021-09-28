@@ -116,8 +116,8 @@ export const HandbookWrapper = styled.div`
         justify-content: center;
     }
 
-    h2, h3, h4{
-      padding-bottom: 10px;
+    p{
+      margin-top: 10px;
     }
     input[type=checkbox] + label {
       display: block;
