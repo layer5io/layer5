@@ -17,7 +17,7 @@ const CommunityGuide= () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">
-        <h1>Path to Leadership</h1>
+        <h1>Contributor Ladder</h1>
       </div>
       <TOC />
       <div className="page-section">

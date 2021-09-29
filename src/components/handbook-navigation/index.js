@@ -44,8 +44,8 @@ const TOC = () => {
             </Link>
           </li>
           <li>
-            <Link to="/community/handbook/path-to-leadership" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              Path to Leadership
+            <Link to="/community/handbook/contributor-ladder" className="toc-sub-heading toc-sub-inline" activeClassName="active">
+            Contributor Ladder
             </Link>
           </li>
           <li>
