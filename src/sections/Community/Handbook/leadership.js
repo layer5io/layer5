@@ -3,15 +3,6 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import {Link} from "gatsby";
-import Point from "./images/bullet.svg";
-import CommunityLogo from "../../../assets/images/community/community-green.svg";
-import PatternsLogo from "./images/patterns-logo.png";
-import LandscapeGreen from "../../../assets/images/landscape/layer5_landscape_green.svg";
-import ImageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
-import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
-import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
-import GetNightHawkLogo from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
 
 const badgeStyle = {
   height: "25px",
