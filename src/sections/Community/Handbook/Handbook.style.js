@@ -139,7 +139,7 @@ export const HandbookWrapper = styled.div`
       height: 1.3em;
       padding-left: 0.2em;
       padding-bottom: 0.3em;
-      margin-right: 0.2em;
+      margin-right: 0.5em;
       vertical-align: top;
       color: transparent;
     }

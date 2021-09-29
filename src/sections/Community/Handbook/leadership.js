@@ -72,7 +72,7 @@ const CommunityGuide= () => {
               An understanding of how contemporary open-source projects function
             </label>
             <br/>
-            <h4><strong>Next you be a <Link to="/community/meshmates">MeshMate</Link></strong></h4>
+            <h4><strong><Link to="/community/meshmates">MeshMate</Link></strong></h4>
             <p>
               Roles/Responsibilities:
               <ul>
