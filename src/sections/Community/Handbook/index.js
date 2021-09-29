@@ -30,6 +30,12 @@ const handbookHome= () => {
         />
 
         <HandbookCard 
+          title="Path to Leadership" 
+          description="A leader is someone who can contribute to the Layer5 Community's growth by being accountable, participating in decision-making, and feeling responsible." 
+          to="/community/handbook/path-to-leadership" 
+        />
+
+        <HandbookCard 
           title="Contribution" 
           description="Pull requests (PRs) are the best ways to propose changes to a project repository. At Layer5 org, we use the Github Flow." 
           to="/community/handbook/contribution" 
