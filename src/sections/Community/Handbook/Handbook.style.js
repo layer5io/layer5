@@ -24,7 +24,7 @@ export const HandbookWrapper = styled.div`
       color: ${(props) => props.theme.tertiaryColor};
     }
     .page-section{
-      margin-top: -29rem;
+      margin-top: -33rem;
       margin-left: 20rem;
     }
 
@@ -131,7 +131,7 @@ export const HandbookWrapper = styled.div`
     }
 
     input[type=checkbox] + label:before {
-      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
+      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
       border: 0.1em solid #000;
       border-radius: 0.2em;
       display: inline-block;
@@ -139,7 +139,8 @@ export const HandbookWrapper = styled.div`
       height: 1.3em;
       padding-left: 0.2em;
       padding-bottom: 0.3em;
-      margin-right: 0.2em;
+      margin-right: 0.5em;
+      margin-bottom: 0.15em;
       vertical-align: bottom;
       color: transparent;
     }
