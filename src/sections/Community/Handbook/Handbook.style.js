@@ -206,4 +206,45 @@ export const HandbookWrapper = styled.div`
     display: flex;
     align-items: flex-end;
   }
+  .newcomers-journey{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 5rem 3rem 0rem;
+    
+    h2{
+      margin-bottom: 2rem;
+    }
+}
+  .heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+      margin-top: -5.5rem;
+    }
+  }
+  .heading-start{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    margin-right: 2rem;
+    margin-top: -2rem;
+    h5{
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-right: 1rem;
+    }
+    img{
+    height: 3rem;
+    width: 4rem;
+    transition: .5s;
+    }
+    img:hover{
+    padding-left: 1rem;
+    transition: .5s;
+    }
+  }
 `;
