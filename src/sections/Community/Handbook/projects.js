@@ -4,7 +4,7 @@ import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import github from "../../../assets/images/socialIcons/github.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import five from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
+import five from "../../../assets/images/layer5/5 icon/svg/dark/5-dark-bg.svg";
 import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 
 const Maintainer= () => {
@@ -19,7 +19,7 @@ const Maintainer= () => {
           <div className= "content">
             <p>Here are the Layer5 Projects:  </p>
         
-            <p><h3><a href="https://layer5.io/"><img margin="10px" width="4%" align="center" align="left" src={five}/>Layer5</a></h3></p>
+            <p><h3><a href="https://layer5.io/"><img margin="10%" width="4%" align="bottom" align="left" src={five}/>&nbsp;Layer5</a></h3></p>
             <p>Its service mesh community represents the largest collection of service Mesh projects.Emerging projects like GetNighthawk , community with  MeshMates, catch-all org, “home base”.  <br/><a href="https://github.com/layer5io"><img className="channels-img" src={github} alt="github"/></a>
               <ul>
                 <li><h4><a href="https://layer5.io/">Layer5 :</a></h4> </li>
@@ -30,7 +30,7 @@ const Maintainer= () => {
                 <p>This Is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generators for characterizing and managing the performance of service meshes and their workloads. <br/><a href="https://github.com/layer5io/getnighthawk"><img className="channels-img" src={github} alt="github"/></a> </p>
               </ul>
             </p>
-            <p><h3><a href="https://layer5.io/service-mesh-management/meshery"><img margin="10px" width="3%" align="center" src={meshery} alt="Meshery"/> Meshery </a></h3></p>
+            <p><h3><a href="https://layer5.io/service-mesh-management/meshery"><img margin="10%" width="4%" align="bottom" align="left" src={meshery} alt="Meshery"/>&nbsp;Meshery </a></h3></p>
             <p>Meshery and its components Meshery Operator and MeshSync  
               <ul>
                 <li><h4><a href="https://layer5.io/service-mesh-management/meshery">Meshery</a></h4> </li>
@@ -41,11 +41,10 @@ const Maintainer= () => {
                 <p>Meshery Operator is the multi-service mesh operator and implementation of MeshSync. <br/><a href="https://github.com/meshery/meshery-operator"><img className="channels-img" src={github} alt="github"/></a> </p>
               </ul>
             </p>
-            
-            <h3><a href="https://smp-spec.io/"><img className="channels-img" src={smp} /> Service Mesh Performance</a></h3>
+            <h3><a href="https://smp-spec.io/"><img className="channels-img" src={smp} />&nbsp;Service Mesh Performance</a></h3>
             <p><a href="https://layer5.io/projects/service-mesh-performance">The Service Mesh Performance (SMP)</a> is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and it’s configuration, service/application details, and bundling of statistical analysis of the result. <br/><a href="https://github.com/service-mesh-performance/service-mesh-performance"><img className="channels-img" src={github} alt="github"/></a></p>
             
-            <h3><a href="https://github.com/service-mesh-patterns/service-mesh-patterns"><img margin="10px" width="4%" align="center" src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"/> Service Mesh Patterns</a></h3>              
+            <p><h3><a href="https://github.com/service-mesh-patterns/service-mesh-patterns"><img margin="10%" width="4%" align="bottom" align="left" src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"/>&nbsp;Service Mesh Patterns</a></h3></p>
             <p>A collection of curated patterns of service mesh use cases compatible with Meshery. <br/><a href="https://github.com/service-mesh-patterns/service-mesh-patterns"><img className="channels-img" src={github} alt="github"/></a></p>        
           </div>
         </Container> 
