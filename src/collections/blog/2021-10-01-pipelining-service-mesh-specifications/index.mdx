@@ -1,0 +1,208 @@
+---
+title: "Pipelining Service Mesh Specifications"
+subtitle: "Using SMI and SMP specs on your CI/CD pipelines with Meshery"
+date: 2021-10-01 10:30:05 -0530
+author: Navendu Pottekkat
+thumbnail: ./service-mesh-specifications.png
+category: "Service Mesh Specifications"
+tags:
+ - Projects
+ - SMI
+ - SMP
+ - Meshery
+published: true
+---
+
+import { BlogWrapper } from "../Blog.style.js";
+import Blockquote from "../../../reusecore/Blockquote";
+import token from "./download-token.png"
+import perfdashboard from "./performance-management-dashboard.png"
+import smidashboard from "./smi-conformance-result.png"
+
+<BlogWrapper>
+
+Before jumping into how to leverage the service mesh specifications, let’s take a brief look into what these specs facilitate.
+
+The [Service Mesh Interface](https://smi-spec.io/) specification provides a standard interface for service meshes on Kubernetes. It has a basic common denominator feature set to support most common service mesh use cases and a flexibility to support new service mesh capabilities over time.
+
+The [Service Mesh Performance](https://smp-spec.io/) specification standardizes capturing and characterizing the details of infrastructure capacity, service mesh configuration and workload metadata.
+
+As a service mesh agnostic tool that provides lifecycle and performance management of a large number (10+) service meshes, sample applications, service mesh patterns and WebAssembly filters, Meshery is the ideal tool for the job when it comes to implementing these specifications.
+
+Meshery also comes with 2 new GitHub Actions that do exactly this. The [Meshery SMI Conformance Action](https://github.com/layer5io/meshery-smi-conformance-action) which [validates SMI conformance](https://meshery.io/blog/validating-smi-conformance-with-meshery) in your pipeline and the [Meshery SMP Action](https://github.com/layer5io/meshery-smp-action) which runs [SMP compatible performance benchmarks](https://docs.meshery.io/functionality/performance-management).
+
+But how do we use these actions? What do they offer? Let’s find out!
+
+## Meshery SMI Conformance Action
+
+Conformance of SMI specifications are defined as a series of test assertions. These test assertions are categorised by SMI specification and comprise the complete suite of SMI conformance tests. The conformance requirements will change appropriately as each new version of the SMI spec is released.
+
+Read more about Meshery and SMI conformance [here](https://docs.meshery.io/functionality/service-mesh-interface).
+
+### Using the GitHub Action
+
+You can get the action from [GitHub Marketplace](https://github.com/marketplace/actions/service-mesh-interface-conformance-with-meshery).
+
+You can configure this action to run on releases or on every pull request.
+
+An example of the action configuration which runs on every release is shown below. The action handles setting up a Kubernetes environment, deploying the service mesh (see supported service meshes), running the conformance tests and reporting back the results to the SMI Conformance dashboard in Meshery.
+
+```yaml
+name: SMI Conformance with Meshery
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  smi-conformance:
+    name: SMI Conformance
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: SMI conformance tests
+        uses: layer5io/mesheryctl-smi-conformance-action@master
+        with:
+          provider_token: ${{ secrets.MESHERY_PROVIDER_TOKEN }}
+          service_mesh: open_service_mesh
+          mesh_deployed: false
+```
+
+Users can also bring in their own cluster with specific capabilities and with a service mesh already installed.
+
+```yaml
+name: SMI Conformance with Meshery
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  smi-conformance:
+    name: SMI Conformance tests on master
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Deploy k8s-minikube
+        uses: manusa/actions-setup-minikube@v2.4.1
+        with:
+          minikube version: 'v1.21.0'
+          kubernetes version: 'v1.20.7'
+          driver: docker
+
+      - name: Install OSM
+        run: |
+           curl -LO https://github.com/openservicemesh/osm/releases/download/v0.9.1/osm-v0.9.1-linux-amd64.tar.gz
+           tar -xzf osm-v0.9.1-linux-amd64.tar.gz
+           mkdir -p ~/osm/bin
+           mv ./linux-amd64/osm ~/osm/bin/osm-bin
+           PATH="$PATH:$HOME/osm/bin/"
+           osm-bin install --osm-namespace default
+
+      - name: SMI conformance tests
+        uses: layer5io/mesheryctl-smi-conformance-action@master
+        with:
+          provider_token: ${{ secrets.MESHERY_PROVIDER_TOKEN }}
+          service_mesh: open_service_mesh
+          mesh_deployed: true
+```
+
+Users can download a token from Meshery and add it as a GitHub secret (in the example above, the secret is MESHERY_PROVIDER_TOKEN).
+
+<div class="img-center">
+  <a href={token} style="background-color:rgba(255,255,255,0)"><img src={token} /></a>
+</div>
+
+After the test is run, you can view the results from the Service Mesh Interface dashboard in Meshery UI.
+
+<div class="img-center">
+  <a href={smidashboard} style="background-color:rgba(255,255,255,0)"><img src={smidashboard} /></a>
+</div>
+
+Participating service mesh projects can also [automatically report their conformance test results](https://docs.meshery.io/functionality/service-mesh-interface#reporting-conformance) to the [SMI Conformance dashboard](https://meshery.io/service-mesh-interface) automatically.
+
+## Meshery SMP Action
+
+Measuring and managing the performance of a service mesh is key to efficient operation of any service mesh.
+
+Meshery is the canonical implementation of the Service Mesh Performance specification. Users can choose from multiple load generators and use a highly configurable set of load profiles with variable tunable facets to run a performance test.
+
+Meshery packages all these features into an easy-to-use GitHub Action.
+
+### Using the GitHub Action
+
+The Meshery SMP Action is available in the [GitHub Marketplace](https://github.com/marketplace/actions/performance-testing-with-meshery).
+
+Users can create their own performance profiles to run repeatable tests with Meshery.
+
+A sample configuration of the action is shown below.
+
+```yaml
+name: Meshery SMP Action
+on:
+  push:
+    branches:
+      'master'
+
+jobs:
+  performance-test:
+    name: Performance Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          ref: 'perf'
+
+      - name: Deploy k8s-minikube
+        uses: manusa/actions-setup-minikube@v2.4.1
+        with:
+          minikube version: 'v1.21.0'
+          kubernetes version: 'v1.20.7'
+          driver: docker
+
+      - name: Run Performance Test
+        uses: layer5io/meshery-smp-action@master
+        with:
+          provider_token: ${{ secrets.PROVIDER_TOKEN }}
+          platform: docker
+          profile_name: soak-test
+```
+
+Users can also define their test configuration in an SMP compatible configuration file as shown below.
+
+```yaml
+smp_version: v0.0.1
+id:
+name: Istio Performance Test
+labels: {}
+clients:
+- internal: false
+  load_generator: fortio
+  protocol: 1
+  connections: 2
+  rps: 10
+  headers: {}
+  cookies: {}
+  body: ""
+  content_type: ""
+  endpoint_urls:
+  - http://localhost:2323/productpage
+duration: "30m"
+```
+
+See [action.yml](https://github.com/layer5io/meshery-smp-action/blob/master/action.yml) for more configuration details.
+
+The results from the tests are updated on the Performance Management dashboard in Meshery.
+
+<div class="img-center">
+  <a href={perfdashboard} style="background-color:rgba(255,255,255,0)"><img src={perfdashboard} /></a>
+</div>
+
+To know more about interpreting the test results, check out [this guide](https://docs.meshery.io/guides/interpreting-performance-test-results).
+
+You can always check out the [Meshery usage guides](https://docs.meshery.io/guides) to dive deep into these features.
+
+Stay meshy!
+
+</BlogWrapper>
