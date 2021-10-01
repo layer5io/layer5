@@ -5,7 +5,7 @@ import TOC from "../../../components/handbook-navigation/index";
 import { repo_data } from "./repo-data";
 import github from "../../../assets/images/socialIcons/github.svg";
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/dark/5-dark-bg.svg";
-import hawkIcon from "../../../assets/images/getnighthawk/icon-only/svg/getnighthawk-logo.svg";
+import hawkIcon from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
 import meshmateicon from "../../../assets/images/meshmate/meshmate-icon.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
