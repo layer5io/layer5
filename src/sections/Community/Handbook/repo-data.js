@@ -58,6 +58,16 @@ export const repo_data = [
         language: "Cytoscape.js",
         repository: "https://github.com/meshery/meshery",
       },
+      {
+        project: "Layer5 discussion forum",
+        image: five,
+        site: "https://discuss.layer5.io/",
+      },
+      {
+        project: "layer5.io/learn-ng",
+        image: five,
+        site: "layer5.io/learn-ng",
+      },
     ],
   },
 
@@ -84,6 +94,16 @@ export const repo_data = [
         project: "Meshsync",
         language: "Golang and NATS",
         repository: "https://github.com/layer5io/meshsync",
+      },
+      {
+        project: "Learn-Layer5",
+        language: "Golang",
+        repository: "https://github.com/layer5io/smi-conformance",
+      },
+      {
+        project: "MeshMonkey",
+        language: "Chaos Mesh / LitmusChaos",
+        repository: "https://github.com/layer5io/meshmonkey",
       },
     ],
   },
@@ -160,6 +180,11 @@ export const repo_data = [
         project: "Meshery Adapter Library",
         language: "Golang gRPC",
         repository: "https://github.com/layer5io/meshery-adapter-library",
+      },
+      {
+        project: "Meshery-app-mesh ",
+        language: "Golang gRPC",
+        repository: "https://github.com/layer5io/meshery-app-mesh",
       },
     ],
   },

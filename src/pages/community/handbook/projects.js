@@ -10,15 +10,17 @@ import Footer from "../../../sections/General/Footer";
 import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
-
 const CommunityProjects = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Projects" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO
+        title="Projects"
+        description="The purpose of the handbook is to provide an overview of the Layer5 community"
+      />
       <Navigation />
       <ProjectsPage />
-      <Footer/>
+      <Footer />
     </Layout>
   </ThemeProvider>
 );
