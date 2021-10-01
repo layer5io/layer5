@@ -87,7 +87,7 @@ export const HandbookWrapper = styled.div`
       margin-left: auto;
       margin-right: auto;
     }
-        }
+    }
 
   td, th {
     border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
