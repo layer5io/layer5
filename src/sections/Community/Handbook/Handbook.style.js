@@ -17,17 +17,17 @@ export const HandbookWrapper = styled.div`
       }
     ol > li > span {
       color: ${(props) => props.theme.black};
-    }  
+    }
     }
     h2 h3{
       margin: 0.5rem 0;
       color: ${(props) => props.theme.tertiaryColor};
     }
     .page-section{
-      margin-top: -29rem;
+      margin-top: -33rem;
       margin-left: 20rem;
     }
-    
+
     .sidebar {
         margin: 0;
         padding: 0;
@@ -68,7 +68,7 @@ export const HandbookWrapper = styled.div`
         padding-top: 3rem;
         padding-bottom: 1.5rem;
     }
-    
+
     table {
     border-collapse: collapse;
     width: 98%;
@@ -116,6 +116,56 @@ export const HandbookWrapper = styled.div`
         justify-content: center;
     }
 
+    p{
+      margin-top: 10px;
+    }
+    input[type=checkbox] + label {
+      display: block;
+      margin: 0.2em;
+      cursor: pointer;
+      padding: 0.2em;
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    input[type=checkbox] + label:before {
+      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
+      border: 0.1em solid #000;
+      border-radius: 0.2em;
+      display: inline-block;
+      width: 1.3em;
+      height: 1.3em;
+      padding-left: 0.2em;
+      padding-bottom: 0.3em;
+      margin-right: 0.5em;
+      margin-bottom: 0.15em;
+      vertical-align: bottom;
+      color: transparent;
+    }
+
+    input[type=checkbox] + label:active:before {
+      transform: scale(0);
+    }
+
+    input[type=checkbox]:checked + label:before {
+      background-color: ${(props) => props.theme.primaryLightColorTwo};
+      border-color: ${(props) => props.theme.primaryLightColorTwo};
+      color: #fff;
+    }
+
+    input[type=checkbox]:disabled + label:before {
+      transform: scale(1);
+      border-color: #aaa;
+    }
+
+    input[type=checkbox]:checked:disabled + label:before {
+      transform: scale(1);
+      background-color: ${(props) => props.theme.secondaryLightColor};
+      border-color: ${(props) => props.theme.secondaryLightColor};
+    }
+
     @media only screen and (max-width: 750px){
       .page-section{
         margin-top: -2rem;
@@ -142,7 +192,7 @@ export const HandbookWrapper = styled.div`
           margin-left: -1.5rem;
         }
         .frontendTable{
-          margin-left: -2.8rem; 
+          margin-left: -2.8rem;
         }
     }
   .channels-list {
@@ -155,5 +205,46 @@ export const HandbookWrapper = styled.div`
   .channels-para {
     display: flex;
     align-items: flex-end;
+  }
+  .newcomers-journey{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 5rem 3rem 0rem;
+    
+    h2{
+      margin-bottom: 2rem;
+    }
+}
+  .heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+      margin-top: -5.5rem;
+    }
+  }
+  .heading-start{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    margin-right: 2rem;
+    margin-top: -2rem;
+    h5{
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-right: 1rem;
+    }
+    img{
+    height: 3rem;
+    width: 4rem;
+    transition: .5s;
+    }
+    img:hover{
+    padding-left: 1rem;
+    transition: .5s;
+    }
   }
 `;

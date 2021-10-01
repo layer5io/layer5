@@ -44,6 +44,11 @@ const TOC = () => {
             </Link>
           </li>
           <li>
+            <Link to="/community/handbook/contributor-ladder" className="toc-sub-heading toc-sub-inline" activeClassName="active">
+            Contributor Ladder
+            </Link>
+          </li>
+          <li>
             <Link to="/community/handbook/contribution" className="toc-sub-heading toc-sub-inline" activeClassName="active">
               Contribution
             </Link>
