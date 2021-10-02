@@ -20,13 +20,9 @@ const contributingGuide= () => {
           <p>Pull requests (PRs) are the best ways to propose changes to a project repository. At Layer5 org, we use the Github Flow:</p>
           <div className="content">
 
-            <h3>Working by forking any of the project repository</h3>
-            <ul>
-              <li><span>Just head over to the <a href="https://github.com/layer5io">Layer5 org</a> Github page and click the "Fork" button. It's just that simple. Once you've done that, you can use your favorite git client to clone your repo or just head straight to the command line.</span> </li>
-            </ul>
-
             <h3>Clone your fork to your local machine</h3>
             <ul>
+              <li>Fork the repository you are working on.</li>
               <li><span>Go to your GitHub account, open the forked repository, click on the code button and then click the “copy to clipboard” icon if you intend to use a command-line tool. </span></li>
               <li><span>Open the terminal and run the following git command:
                 <div className="codes"><Code codeString="git clone “URL you copied from the clipboard.”" /></div></span></li>
@@ -49,7 +45,6 @@ const contributingGuide= () => {
 
             <h3>Make the necessary changes to your file.</h3>
             <ul>
-              <li><span>Now, go to town hacking away and make whatever changes you want to.</span></li>
               <li><span>To add the changes you have made to your branch, use: 
                 <div className="codes"><Code codeString="git add <file> " /></div></span></li>
               <li><span> If you add multiple file changes to the branch, you simply use:
