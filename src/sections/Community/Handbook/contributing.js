@@ -3,7 +3,8 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import Code from "../../../components/CodeBlock";
-
+import Signoff from "../../../../.github/assets/images/git-signoff-vscode.png";
+import github from "../../../assets/images/socialIcons/github.svg";
 
 const contributingGuide= () => {
   return (
@@ -66,8 +67,21 @@ const contributingGuide= () => {
               <li><span>To push your changes, run the git command:
                 <div className="codes"><Code codeString="git push origin your_branch_name" /></div></span></li>
             </ul>
-
           </div>
+          <h2>Make sure to <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin">Sign-off</a> on your Commits (Developer Certificate of Origin)</h2>
+          <p>To contribute to this project, you must agree to the Developer Certificate of Origin (DCO) for each commit you make. The DCO is a simple statement that you, as a contributor, have the legal right to contribute.          </p>
+          <p>To signify that you agree to the DCO for contributions, you simply add a line to each of your git commit messages:</p>
+          <div className="codes"><Code codeString="Signed-off-by: Jane Smith <jane.smith@example.com>" /></div>
+          <p>In most cases, you can add this signoff to your commit automatically with the -s or --signoff flag to git commit. You must use your real name and a reachable email address (sorry, no pseudonyms or anonymous contributions). An example of signing off on a commit:</p>
+          <div className="codes"><Code codeString="$ commit -s -m “my commit message w/signoff”" /></div>
+          <p>To ensure all your commits are signed, you may choose to add this alias to your global .gitconfig:</p>
+          <div className="codes"><Code codeString="[alias]
+  amend = commit -s --amend
+  cm = commit -s -m
+  commit = commit -s
+" /></div>
+       <p>Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:</p>   
+      <img src={Signoff} width="74%" id="sign-off"/>
         </Container>
       </div> 
     </HandbookWrapper>
