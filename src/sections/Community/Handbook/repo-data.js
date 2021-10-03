@@ -62,11 +62,8 @@ export const repo_data = [
         project: "Layer5 discussion forum",
         image: five,
         site: "https://discuss.layer5.io/",
-      },
-      {
-        project: "layer5.io/learn-ng",
-        image: five,
-        site: "layer5.io/learn-ng",
+        language: "Gatsby and Strapi",
+        repository: " https://staging-discuss.layer5.io/",
       },
     ],
   },
