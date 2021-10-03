@@ -34,35 +34,61 @@ const Repository = () => {
               <br /> Note that the Layer5 community spans four GitHub
               organizations:
             </p>
-            <p>
-              <img
-                margin-left="10%"
-                width="2.5%"
-                align="auto"
-                src={layer5icon}
-              />
-              {"  "}
-              emerging projects like GetNighthawk{" "}
-              <img width="2.5%" src={hawkIcon} /> , community with MeshMates{" "}
-              <img width="2.5%" src={meshmateicon} /> , catch-all org, “home
-              base”, so to speak.
-            </p>
-            <p>
-              <img className="channels-img" src={servicemeshperformance} />{" "}
-              Service Mesh Performance specification <br />
-              <img margin="10%" width="2%" src={meshery} alt="Meshery" />{" "}
-              Meshery and its components Meshery Operator{" "}
-              <img width="2%" src={mesheryoperatoricon} /> and MeshSync{" "}
-              <img width="2%" src={mesherysyncicon} /> <br />{" "}
-              <img
-                margin="10%"
-                width="2%"
-                align="bottom"
-                src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
-              />
-              {"  "}a collection of curated patterns of service mesh use cases
-              compatible with Meshery.
-            </p>
+            <ul>
+              <li>
+                {" "}
+                <a href="https://github.com/layer5io">
+                  <img
+                    margin-left="10%"
+                    width="2.5%"
+                    align="left"
+                    src={layer5icon}
+                  />{" "}
+                </a>
+                &nbsp; emerging projects like GetNighthawk{" "}
+                <img width="2.5%" src={hawkIcon} /> , community with MeshMates{" "}
+                <img width="2.5%" src={meshmateicon} /> , catch-all org, “home
+                base”, so to speak.{" "}
+              </li>
+
+              <li>
+                {" "}
+                <a href="http://github.com/service-mesh-performance">
+                  <img className="channels-img" src={servicemeshperformance} />{" "}
+                </a>
+                Service Mesh Performance specification <br />{" "}
+              </li>
+              <li>
+                <a href="http://github.com/meshery">
+                  <img
+                    margin="10%"
+                    width="2%"
+                    align="left"
+                    align="bottom"
+                    src={meshery}
+                    alt="Meshery"
+                  />
+                  &nbsp; Meshery{" "}
+                </a>{" "}
+                and its components Meshery Operator{" "}
+                <img width="1.5%" src={mesheryoperatoricon} /> and MeshSync{" "}
+                <img width="1.5%" src={mesherysyncicon} /> <br />{" "}
+              </li>
+              <li>
+                <a href="http://github.com/service-mesh-patterns">
+                  <img
+                    margin="10%"
+                    width="2%"
+                    align="left"
+                    align="bottom"
+                    src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
+                  />
+                </a>
+                &nbsp;
+                {"  "}a collection of curated patterns of service mesh use cases
+                compatible with Meshery.{" "}
+              </li>
+            </ul>
 
             <h2>Frontend Projects</h2>
             {frontendProjects.map((frontendProjects) => {

@@ -24,22 +24,21 @@ const Maintainer = () => {
             <p>
               <h3>
                 <a href="https://layer5.io/">
-                  Layer5{" "}
                   <img
                     margin-left="10%"
                     width="3.5%"
-                    align="auto"
+                    align="left"
                     src={layer5icon}
                   />
-                  &nbsp;
+                  &nbsp; Layer5{" "}
                 </a>
               </h3>
             </p>
             <p>
               Its service mesh community represents the largest collection of
               service Mesh projects.Emerging projects like GetNighthawk{" "}
-              <img width="3.5%" src={hawkIcon} /> , community with{" "}
-              <img width="3.5%" src={meshmateicon} /> MeshMates, catch-all org,
+              <img width="2.5%" src={hawkIcon} /> , community with{" "}
+              <img width="2.5%" src={meshmateicon} /> MeshMates, catch-all org,
               “home base”. <br />
               <a href="https://github.com/layer5io">
                 <img className="channels-img" src={github} alt="github" />
@@ -100,16 +99,21 @@ const Maintainer = () => {
             <p>
               <h3>
                 <a href="https://layer5.io/service-mesh-management/meshery">
-                  Meshery{" "}
-                  <img margin="10%" width="3%" src={meshery} alt="Meshery" />
-                  &nbsp;
+                  <img
+                    margin="10%"
+                    width="3%"
+                    align="left"
+                    src={meshery}
+                    alt="Meshery"
+                  />
+                  &nbsp; Meshery
                 </a>
               </h3>
             </p>
             <p>
               Meshery and its components Meshery Operator{" "}
-              <img width="3%" src={mesheryoperatoricon} /> and MeshSync{" "}
-              <img width="3%" src={mesherysyncicon} />
+              <img width="2%" src={mesheryoperatoricon} /> and MeshSync{" "}
+              <img width="2%" src={mesherysyncicon} />
               <ul>
                 <li>
                   <h4>
