@@ -20,7 +20,7 @@ export const query = graphql`
         frontmatter {
           chapterTitle
           description
-                 }
+        }
         fields {
           slug
           course

@@ -99,7 +99,7 @@ const LearnPathsPage = () => {
         </div>
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
-            <Col sm={12} md={6} xl={4} key={tutorial.id}>
+            <Col sm={12} key={tutorial.id}>
               <CardComponent tutorial={tutorial} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
             </Col>
           ))}

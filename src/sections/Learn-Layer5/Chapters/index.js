@@ -59,8 +59,8 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
 
     return(  
       <>
-        <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`}>
-          <Link to={`/${sm.slug}`} data-for="mesh-name" data-tip={capitalize(sm.section)} className="course" key={sm+index}>
+        <div className={`service-mesh-image ${isMeshActive(sm.section) ? "service-mesh-image-active" : ""}`} key={index}>
+          <Link to={`/${sm.slug}`} data-for="mesh-name" data-tip={capitalize(sm.section)} className="course" key={index}>
             <Image
               {...findServiceMeshImage(serviceMeshImages, sm.section).imagepath}
               className="docker"
@@ -68,7 +68,7 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
             />
           </Link>
         </div>
-        <ReactTooltip 
+        <ReactTooltip
           id="mesh-name"
           place="bottom"
           effect="solid"
@@ -76,8 +76,7 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
           className="mesh-tooltip"
         />
       </>);
-  }
-  ); 
+  });
 
 
   return (
