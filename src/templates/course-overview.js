@@ -73,6 +73,16 @@ export const query = graphql`
         }
       }
     }
+
+    serviceMeshesList: allMdx(
+      filter: {fields: {course: {eq: $course}, pageType: {eq: "chapter"}}}
+    ){
+        nodes {
+          fields {
+            section
+          }
+        }
+      }
   }
 `;
 const CourseOverviewTemplate = ({ data, pageContext }) => {
@@ -88,6 +98,7 @@ const CourseOverviewTemplate = ({ data, pageContext }) => {
         <CourseOverview
           course={data.courseByTitle.nodes[0]}
           chapters={data.courseChapters.nodes}
+          serviceMeshesList={data.serviceMeshesList.nodes}
         />
         <Footer />
       </Layout>

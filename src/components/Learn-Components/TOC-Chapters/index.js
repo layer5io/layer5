@@ -39,7 +39,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
         <ul>
           {availableChapters.map((item) => (
             <li key={item} className={item === path ? "active-link" : ""}>
-              <p className="toc-item">
+              <p className="toc-item" key={item}>
                 <Link to={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
                   {reformatTOC(item)}
                 </Link>
