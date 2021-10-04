@@ -10,6 +10,7 @@ import location from "./images/location.svg";
 import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import Tshirts from "./images/free-tshirts.jpg";
+import Layer5Projects from "./images/layer5-projects.png";
 import CNCFServiceMesh from "./images/CNCF-Service-Mesh-WG-1.png";
 import { Link } from "gatsby";
 
@@ -30,7 +31,7 @@ const About = () => {
                   <h1>About Us</h1>
                   <p>We embrace <i>developer</i>-defined infrastructure. We empower developers to change how they write applications, support <i>operators</i> in rethinking how they run modern infrastructure, and enable <i>product owners</i> to regain full-control over their product portfolio.</p>
                   <p>Our cloud native application and infrastructure management software enables organizations to expect more from their infrastrcture.</p>
-                  
+
                   <h5 className="section-title">We are enablers.</h5>
                   <p>At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?". Our suite of multi-mesh, multi-cloud infrastructure management products — all with open source projects at their core — underpin each of our offerings. </p>
                   {/* <p>As stewards of industry, we enable organizations of all sizes, from well-known brands to ambitious start-ups to rely on our solutions to provision, secure, connect, and run their business-critical applications.</p> */}
@@ -58,7 +59,7 @@ const About = () => {
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <img src={CNCFServiceMesh} alt="CNCF Service Mesh" />
+                  <Link to="./images/layer5-projects.png" ><img src={Layer5Projects} alt="About Layer5 Projects" /></Link>
                 </div>
               </Col>
               <Col xs={12} sm={6}>
