@@ -11,6 +11,7 @@ import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import Tshirts from "./images/free-tshirts.jpg";
 import CNCFServiceMesh from "./images/CNCF-Service-Mesh-WG-1.png";
+import { Link } from "gatsby";
 
 const About = () => {
   return (
@@ -26,10 +27,13 @@ const About = () => {
               </Col>
               <Col xs={12} sm={6}>
                 <div className="about-text text-one">
-                  <h1>Cloud Native Management</h1>
-                  <p className="indent">
-                    Layer5 is produces cloud native management software that harnesses the unique position service meshes will have in changing how developers write applications, how operators run modern infrastructure and how product owners manage their offerings.
-                  </p>
+                  <h1>About Us</h1>
+                  <p>We embrace <i>developer</i>-defined infrastructure. We empower developers to change how they write applications, support <i>operators</i> in rethinking how they run modern infrastructure, and enable <i>product owners</i> to regain full-control over their product portfolio.</p>
+                  <p>Our cloud native application and infrastructure management software enables organizations to expect more from their infrastrcture.</p>
+                  
+                  <h5 className="section-title">We are enablers.</h5>
+                  <p>At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?". Our suite of multi-mesh, multi-cloud infrastructure management products — all with open source projects at their core — underpin each of our offerings. </p>
+                  {/* <p>As stewards of industry, we enable organizations of all sizes, from well-known brands to ambitious start-ups to rely on our solutions to provision, secure, connect, and run their business-critical applications.</p> */}
                 </div>
               </Col>
             </Row>
@@ -38,8 +42,11 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>Community First</h1>
                   <p className="indent">
-                    The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
+                    Layer5 is powered by a growing community represents the largest collection of service mesh projects and their maintainers in the world.
                   </p>
+                  <h5 className="section-title">We are remote oriented.</h5>
+                  <p>Our remote working model has been in our DNA since our start in 2020, which allows us to maintain a flexible working environment and gives us access to a global pool of diverse talent.</p>
+                  <Link className="mute" to="/careers">Learn how Layer5 works</Link>
                 </div>
               </Col>
               <Col xs={12} sm={6}>
@@ -59,14 +66,12 @@ const About = () => {
                   <h1>Open Source First</h1>
                   <p className="indent">
                     Our projects establish industry standards and enable service
-                    developers, owners, and operators with repeatable patterns and
-                    best practices for managing all aspects of distributed services.
-                    Our shared commitment to the open source spirit push the Layer5
-                    community and its projects forward.
+                    developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. Our shared commitment to the open source spirit push the Layer5 community and its projects forward.
                   </p>
+                  <h5 className="section-title">We are principled.</h5>
+                  <p>We are proud of the inclusive and kind work environment we have built. We support each other as we work to solve important problems. We take our work seriously, and we do it with integrity and in alignment with our core principles.</p>
                 </div>
               </Col>
-
             </Row>
           </Col>
         </Row>
