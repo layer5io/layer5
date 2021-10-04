@@ -8,6 +8,7 @@ import collabMap from "./images/layer5-collaboration-map.svg";
 import layer5BusCard from "./images/layer5-business-card-photo_med.jpg";
 import location from "./images/location.svg";
 import WhoWeAre from "../WhoWeAre";
+import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import Tshirts from "./images/free-tshirts.jpg";
 import CNCFServiceMesh from "./images/CNCF-Service-Mesh-WG-1.png";
 
@@ -19,24 +20,38 @@ const About = () => {
           <Col xs={12} sm={12}>
             <Row Vcenter={true} className="row-img-cont-1">
               <Col xs={12} sm={6}>
+                <div className="head-images">
+                  <img src={FiveIcon} alt="About Layer5" />
+                </div>
+              </Col>
+              <Col xs={12} sm={6}>
+                <div className="about-text text-one">
+                  <h1>Cloud Native Management</h1>
+                  <p className="indent">
+                    Layer5 is produces cloud native management software that harnesses the unique position service meshes will have in changing how developers write applications, how operators run modern infrastructure and how product owners manage their offerings.
+                  </p>
+                </div>
+              </Col>
+            </Row>
+            <Row Vcenter={true} className="row-img-cont-1">
+              <Col xs={12} sm={6}>
                 <div className="about-text text-one">
                   <h1>Community First</h1>
                   <p className="indent">
-                    The Layer5 community represents the largest collection of
-                    service mesh projects and their maintainers in the world.
+                    The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
                   </p>
                 </div>
               </Col>
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <img src={Tshirts} alt="free-tshirts"/>
+                  <img src={Tshirts} alt="free-tshirts" />
                 </div>
               </Col>
-            </Row>  
+            </Row>
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <img src={CNCFServiceMesh} alt="CNCF Service Mesh"/>
+                  <img src={CNCFServiceMesh} alt="CNCF Service Mesh" />
                 </div>
               </Col>
               <Col xs={12} sm={6}>
@@ -51,8 +66,8 @@ const About = () => {
                   </p>
                 </div>
               </Col>
-              
-            </Row>        
+
+            </Row>
           </Col>
         </Row>
       </Container>
@@ -73,7 +88,7 @@ const About = () => {
           </Col>
         </Row>
       </Container>
-      
+
       <Container fullWidthSM>
         <Row Vcenter={true} className="aboutus-title">
           <Col xs={12} sm={12} >
@@ -92,9 +107,9 @@ const About = () => {
                         Corporate Headquarters
                         <br />
 
-                          701 Brazos Street, Suite 1600
+                        701 Brazos Street, Suite 1600
                         <br />
-                          Austin, TX 78701
+                        Austin, TX 78701
                       </p>
                     </div>
                   </div>
@@ -110,11 +125,11 @@ const About = () => {
                         Layer5, Inc.,
                         Engineering
                         <br />
-                          3 Queen Street
+                        3 Queen Street
                         <br />
-                          Edinburgh, EH2 1JE
+                        Edinburgh, EH2 1JE
                         <br />
-                          United Kingdom
+                        United Kingdom
                       </p>
                     </div>
                   </div>
