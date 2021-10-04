@@ -42,10 +42,10 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>Community First</h1>
                   <p className="indent">
-                    Layer5 is powered by a growing community represents the largest collection of service mesh projects and their maintainers in the world.
+                    Layer5 is powered by a growing community of collaborators representing the largest collection of service mesh projects and their maintainers in the world.
                   </p>
                   <h5 className="section-title">We are remote oriented.</h5>
-                  <p>Our remote working model has been in our DNA since our start in 2020, which allows us to maintain a flexible working environment and gives us access to a global pool of diverse talent.</p>
+                  <p>Our remote working model has been in our DNA since our genesis in 2020, which allows us to maintain a flexible working environment and gives us access to a global pool of diverse talent.</p>
                   <Link className="mute" to="/careers">Learn how Layer5 works</Link>
                 </div>
               </Col>
@@ -65,8 +65,8 @@ const About = () => {
                 <div className="about-text text-two">
                   <h1>Open Source First</h1>
                   <p className="indent">
-                    Our projects establish industry standards and enable service
-                    developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. Our shared commitment to the open source spirit push the Layer5 community and its projects forward.
+                    Our projects establish industry standards and enable
+                    developers, operators, and product owners with repeatable patterns and best practices for managing all aspects of distributed services.
                   </p>
                   <h5 className="section-title">We are principled.</h5>
                   <p>We are proud of the inclusive and kind work environment we have built. We support each other as we work to solve important problems. We take our work seriously, and we do it with integrity and in alignment with our core principles.</p>
@@ -86,7 +86,7 @@ const About = () => {
               UniWidth="100%"
             >
               <h1>Collaborate</h1>
-              <h4>Join the community and collaborate on our projects.</h4>
+              <h4>Join the community and collaborate on our projects all around the world.</h4>
 
               <img height="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
             </SectionTitle>
