@@ -4,7 +4,7 @@ import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import { repo_data } from "./repo-data";
 import github from "../../../assets/images/socialIcons/github.svg";
-import layer5icon from "../../../assets/images/layer5/5 icon/svg/dark/5-dark-bg.svg";
+import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import hawkIcon from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
 import meshmateicon from "../../../assets/images/meshmate/meshmate-icon.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
@@ -44,36 +44,34 @@ const Repository = () => {
                     align="left"
                     src={layer5icon}
                   />{" "}
+                  &nbsp; Layer5
                 </a>
-                &nbsp; emerging projects like GetNighthawk{" "}
-                <img width="2.5%" src={hawkIcon} /> , community with MeshMates{" "}
-                <img width="2.5%" src={meshmateicon} /> , catch-all org, “home
-                base”, so to speak.{" "}
-              </li>
-
-              <li>
-                {" "}
-                <a href="http://github.com/service-mesh-performance">
-                  <img className="channels-img" src={servicemeshperformance} />{" "}
-                </a>
-                Service Mesh Performance specification <br />{" "}
               </li>
               <li>
                 <a href="http://github.com/meshery">
                   <img
-                    margin="10%"
+                    margin="20%"
                     width="2%"
                     align="left"
-                    align="bottom"
                     src={meshery}
                     alt="Meshery"
                   />
                   &nbsp; Meshery{" "}
                 </a>{" "}
-                and its components Meshery Operator{" "}
-                <img width="1.5%" src={mesheryoperatoricon} /> and MeshSync{" "}
-                <img width="1.5%" src={mesherysyncicon} /> <br />{" "}
               </li>
+              <li>
+                {" "}
+                <a href="http://github.com/service-mesh-performance">
+                  <img
+                    className="channels-img"
+                    align="left"
+                    align="bottom"
+                    src={servicemeshperformance}
+                  />
+                  &nbsp; Service Mesh Performance{" "}
+                </a>
+              </li>
+
               <li>
                 <a href="http://github.com/service-mesh-patterns">
                   <img
@@ -82,11 +80,9 @@ const Repository = () => {
                     align="left"
                     align="bottom"
                     src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
-                  />
+                  />{" "}
+                  &nbsp; Service Mesh Patterns
                 </a>
-                &nbsp;
-                {"  "}a collection of curated patterns of service mesh use cases
-                compatible with Meshery.{" "}
               </li>
             </ul>
 

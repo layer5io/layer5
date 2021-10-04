@@ -163,9 +163,12 @@ const Maintainer = () => {
             </p>
             <h3>
               <a href="https://smp-spec.io/">
-                Service Mesh Performance{" "}
-                <img className="channels-img" src={servicemeshperformance} />
-                &nbsp;
+                <img
+                  className="channels-img"
+                  align="left"
+                  src={servicemeshperformance}
+                />
+                &nbsp; Service Mesh Performance{" "}
               </a>
             </h3>
             <p>
@@ -184,14 +187,13 @@ const Maintainer = () => {
             <p>
               <h3>
                 <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
-                  Service Mesh Patterns{" "}
                   <img
                     margin="10%"
-                    width="2%"
-                    align="bottom"
+                    width="3%"
+                    align="left"
                     src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
-                  />
-                  &nbsp;
+                  />{" "}
+                  &nbsp; Service Mesh Patterns{" "}
                 </a>
               </h3>
             </p>
