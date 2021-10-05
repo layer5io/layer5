@@ -40,9 +40,6 @@ const Maintainer = () => {
               <img width="2.5%" src={hawkIcon} /> , community with{" "}
               <img width="2.5%" src={meshmateicon} /> MeshMates, catch-all org,
               “home base”. <br />
-              <a href="https://github.com/layer5io">
-                <img className="channels-img" src={github} alt="github" />
-              </a>
               <ul>
                 <li>
                   <h4>
@@ -54,9 +51,6 @@ const Maintainer = () => {
                   an overview of the Layer5 projects. The different service mesh
                   landscapes, resources to learn about service mesh, and
                   communities. <br />
-                  <a href="https://github.com/layer5io/layer5">
-                    <img className="channels-img" src={github} alt="github" />
-                  </a>{" "}
                 </p>
                 <li>
                   <h4>
@@ -72,9 +66,6 @@ const Maintainer = () => {
                   multi-tenancy or to implement per-user rate-limiting in your
                   application's endpoints. This application was first
                   demonstrated at DockerCon 2020. <br />
-                  <a href="https://github.com/layer5io/image-hub">
-                    <img className="channels-img" src={github} alt="github" />
-                  </a>{" "}
                 </p>
                 <li>
                   <h4>
@@ -90,9 +81,6 @@ const Maintainer = () => {
                   (currently) three choices of load generators for
                   characterizing and managing the performance of service meshes
                   and their workloads. <br />
-                  <a href="https://github.com/layer5io/getnighthawk">
-                    <img className="channels-img" src={github} alt="github" />
-                  </a>{" "}
                 </p>
               </ul>
             </p>
@@ -130,9 +118,6 @@ const Maintainer = () => {
                   meshes and incorporates the collection and display of metrics
                   from applications running on top of any service mesh.
                   <br />{" "}
-                  <a href="https://github.com/meshery">
-                    <img className="channels-img" src={github} alt="github" />
-                  </a>{" "}
                 </p>
                 <li>
                   <h4>
@@ -141,9 +126,6 @@ const Maintainer = () => {
                 </li>
                 <p>
                   Website for Meshery, the multi-mesh manager. <br />
-                  <a href="https://github.com/meshery/meshery.io">
-                    <img className="channels-img" src={github} alt="github" />
-                  </a>{" "}
                 </p>
                 <li>
                   <h4>
@@ -155,9 +137,6 @@ const Maintainer = () => {
                 <p>
                   Meshery Operator is the multi-service mesh operator and
                   implementation of MeshSync. <br />
-                  <a href="https://github.com/meshery/meshery-operator">
-                    <img className="channels-img" src={github} alt="github" />
-                  </a>{" "}
                 </p>
               </ul>
             </p>
@@ -179,9 +158,6 @@ const Maintainer = () => {
               environment and infrastructure details, service mesh and it’s
               configuration, service/application details, and bundling of
               statistical analysis of the result. <br />
-              <a href="https://github.com/service-mesh-performance/service-mesh-performance">
-                <img className="channels-img" src={github} alt="github" />
-              </a>
             </p>
 
             <p>
@@ -200,9 +176,6 @@ const Maintainer = () => {
             <p>
               A collection of curated patterns of service mesh use cases
               compatible with Meshery. <br />
-              <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
-                <img className="channels-img" src={github} alt="github" />
-              </a>
             </p>
           </div>
         </Container>
