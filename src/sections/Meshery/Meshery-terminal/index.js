@@ -155,7 +155,7 @@ const MesheryTerminal = () => {
                   {
                     frames: 8,
                     code: [
-                      "downloading manifest files from https://github.com/meshery/meshery/tree/v0.5.60/install/deployment_yamls/k8s",
+                      "downloading manifest files from https://github.com/meshery/meshery/tree/v0.6.0/install/deployment_yamls/k8s",
                     ],
                     color: "navy",
                   },
