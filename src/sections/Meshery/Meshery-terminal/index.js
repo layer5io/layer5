@@ -172,7 +172,7 @@ const MesheryTerminal = () => {
                     color: "gray",
                   },
                   {
-                    frames: 2,
+                    frames: 6,
                     color: "gray",
                     code: [
                       "⠋ Deploying Meshery on Kubernetes",
