@@ -4,6 +4,9 @@ import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import { repo_data } from "./repo-data";
 import github from "../../../assets/images/socialIcons/github.svg";
+import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
+import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 
 const Repository = () => {
   const data = React.useMemo(() => repo_data);
@@ -19,12 +22,69 @@ const Repository = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>Purpose</h2>
+            <h2>GitHub Organizations and Repositories</h2>
             <p>
-              This overview serves as resources to newcomers seeking a
+              This overview serves as a resource to newcomers seeking a
               perspective of the collective community efforts (from the limited
               vantage point of a code-centric perspective).
+              <br /> Note that the Layer5 community spans four GitHub
+              organizations:
             </p>
+            <ul>
+              <li>
+                {" "}
+                <a href="https://github.com/layer5io">
+                  <img
+                    margin-left="10%"
+                    width="2.5%"
+                    align="left"
+                    src={layer5icon}
+                  />
+                  &nbsp; Layer5
+                </a>
+              </li>
+              <li>
+                <a href="http://github.com/meshery">
+                  {" "}
+                  <img
+                    margin="10%"
+                    width="2%"
+                    align="left"
+                    align="bottom"
+                    src={meshery}
+                    alt="Meshery"
+                  />
+                  {"   "}
+                  &nbsp; Meshery
+                </a>
+              </li>
+              <li>
+                {" "}
+                <a href="http://github.com/service-mesh-performance">
+                  <img
+                    margin="10%"
+                    width="2.5%"
+                    align="left"
+                    align="bottom"
+                    src={servicemeshperformance}
+                  />
+                  &nbsp; Service Mesh Performance
+                </a>
+              </li>
+
+              <li>
+                <a href="http://github.com/service-mesh-patterns">
+                  <img
+                    margin="10%"
+                    width="2%"
+                    align="left"
+                    align="bottom"
+                    src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
+                  />{" "}
+                  &nbsp; Service Mesh Patterns
+                </a>
+              </li>
+            </ul>
 
             <h2>Frontend Projects</h2>
             {frontendProjects.map((frontendProjects) => {
@@ -58,7 +118,11 @@ const Repository = () => {
                             </a>
                           </td>
                           <td>
-                            <a href={repository} target="_blank" rel="noreferrer">
+                            <a
+                              href={repository}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
                               <img className="github-icon" src={github} />
                             </a>
                           </td>
@@ -91,7 +155,11 @@ const Repository = () => {
                           <td>{project}</td>
                           <td>{language}</td>
                           <td>
-                            <a href={repository} target="_blank" rel="noreferrer">
+                            <a
+                              href={repository}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
                               <img className="github-icon" src={github} />
                             </a>
                           </td>
