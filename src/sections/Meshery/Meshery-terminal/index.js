@@ -199,11 +199,20 @@ const MesheryTerminal = () => {
                     ],
                   },
                   {
-                    frames: 3,
+                    frames: 4,
                     code: [
                       "Some Meshery pods have not come up yet.",
                       "Some Meshery pods have not come up yet..",
                       "Some Meshery pods have not come up yet...",
+                      "Pods are online!",
+                    ],
+                    short: true,
+                    color: "gray",
+                  },
+                  {
+                    frames: 3,
+                    code: [
+                      "Opening Meshery (https://localhost:9081) on your browser...",
                     ],
                     short: true,
                     color: "gray",
