@@ -78,6 +78,11 @@ const TOC = () => {
               Code of Conduct
             </Link>
           </li>
+          <li>
+            <Link to="/community/handbook/faq" className="toc-sub-heading toc-sub-inline" activeClassName="active">
+              FAQs
+            </Link>
+          </li>
         </ul>
       </div>
     </TOCWrapper>
