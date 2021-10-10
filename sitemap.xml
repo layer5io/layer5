@@ -101,10 +101,10 @@
 <url> <loc>https://layer5.io/company/news/vendors-make-a-splash-in-2019-service-mesh-implementation-rush</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/learn-cloud-native-managing-service-meshes-with-meshery</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/the-new-stack-what-the-numbers-say-about-how-service-meshes-are-used-today</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/company/news/layer5-and-hashicorp-launch-service-mesh-partnership</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/meshery-accepted-into-the-cncf-landscape</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/meshery-provides-the-service-mesh-management-plane-and-kubernetes-evolves-into-an-enterprise-platform</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/kubeconcloudnativecon</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/company/news/layer5-and-hashicorp-launch-service-mesh-partnership</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/service-mesh-offers-promising-solution-for-cloud-native-networking</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/5-lesser-known-but-extremely-powerful-kubernetes-service-mesh-tools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/cncf-projects-bring-service-mesh-interoperability-benchmarks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -220,9 +220,9 @@
 <url> <loc>https://layer5.io/community/members/mayank-shah</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/meghana-varanasi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/michael-gfeller</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/community/members/muskan-bansal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/naimat-oyewale</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/naveen-jain</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/members/muskan-bansal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/navendu-pottekkat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/neil-alvares</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/nicholas-jackson</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
