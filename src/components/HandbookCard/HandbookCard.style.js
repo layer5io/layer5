@@ -52,7 +52,7 @@ export const HandbookCardWrapper = styled.div`
 	  margin-bottom: 0rem;
 	  line-height: 1.75;
 	  letter-spacing: 0px;
-	  font-weight: 500;
+	  font-weight: 400;
 	  font-size: .9rem;
 	}
 
