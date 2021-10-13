@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5]]></title><description><![CDATA[Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 13 Oct 2021 13:23:41 GMT</lastBuildDate><item><title><![CDATA[CNCF Adopts Service Mesh Performance Standard Established by Layer5 ]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5]]></title><description><![CDATA[Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 13 Oct 2021 13:34:04 GMT</lastBuildDate><item><title><![CDATA[CNCF Adopts Service Mesh Performance Standard Established by Layer5 ]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
@@ -12,6 +12,7 @@ var _frontmatter = {
   "subtitle": "5,000 service mesh performance tests under analysis",
   "date": "2021-10-13 04:00:05 +0000",
   "author": "The Newsroom",
+  "category": "Press Release",
   "thumbnail": "../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.svg",
   "published": true
 };
@@ -62,6 +63,7 @@ var _frontmatter = {
   "subtitle": "Standards-based and extensible service mesh management",
   "date": "2021-10-13 00:00:05 +0000",
   "author": "The Newsroom",
+  "category": "Press Release",
   "thumbnail": "../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.svg",
   "published": true
 };
@@ -583,6 +585,7 @@ var _frontmatter = {
   "subtitle": "",
   "date": "2021-06-18 12:15:05 +0000",
   "author": "The Newsroom",
+  "category": "Coverage",
   "thumbnail": "./kubernetes-with-mesh-tools.png",
   "eurl": "https://techgenix.com/kubernetes-service-mesh-tools/",
   "published": true,
@@ -1758,6 +1761,7 @@ var _frontmatter = {
   "subtitle": "Service Mesh can be thought of as a next generation of Software Defined Networking (SDN) for the cloud. Here are the main approaches.",
   "date": "2020-12-04 12:15:05 +0000",
   "author": "The Newsroom",
+  "category": "Coverage",
   "thumbnail": "./service-mesh.png",
   "eurl": "http://www.enterprisenetworkingplanet.com/datacenter/datacenter-blog/service-mesh-cloud-native-networking.html",
   "published": true,
@@ -1801,6 +1805,7 @@ var _frontmatter = {
   "subtitle": "Service Mesh Battle Stories and Fixes",
   "date": "2020-12-02 06:00:00 +0000",
   "author": "The Newsroom",
+  "category": "Coverage",
   "thumbnail": "./service-mesh-implementations.png",
   "eurl": "https://thenewstack.io/kubeconcloudnativecon-service-mesh-battle-stories-and-fixes/",
   "published": true,
@@ -1920,6 +1925,7 @@ var _frontmatter = {
   "date": "2020-10-29 12:00:00 +0000",
   "author": "The Newsroom",
   "thumbnail": "./kubernetes-platform.png",
+  "category": "Coverage",
   "eurl": "https://amalgaminsights.com/product/market-landscape-kubernetes-evolves-into-an-enterprise-platform/",
   "published": true
 };
@@ -2997,6 +3003,7 @@ var _frontmatter = {
   "subtitle": "A story about growing together as a community and building a project that matters",
   "date": "2020-06-01 12:15:05 +0000",
   "author": "The Newsroom",
+  "category": "Coverage",
   "thumbnail": "./cncf-landscape-horizontal-color.svg",
   "eurl": "https://landscape.cncf.io/category=service-mesh&format=card-mode&grouping=category&selected=meshery",
   "published": true,
@@ -3093,6 +3100,7 @@ var _frontmatter = {
   "date": "2020-05-28 00:00:00 +0800",
   "author": "Lee Calcote",
   "thumbnail": "./layer5-hashicorp.png",
+  "category": "Press Release",
   "eurl": "",
   "redirect_from": ["/company/news/layer5-hashicorp-launch-service-mesh-partnership/", "/company/news/layer5-hashicorp-launch-service-mesh-partnership"],
   "published": true
@@ -3392,6 +3400,7 @@ var _frontmatter = {
   "subtitle": "",
   "date": "2020-03-13 08:04:00 +0000",
   "author": "The Newsroom",
+  "category": "Coverage",
   "thumbnail": "./what-the-numbers-say-about-how-service-meshes-are-used-today.png",
   "eurl": "https://thenewstack.io/what-the-numbers-say-about-how-service-meshes-are-used-today/",
   "published": true,
@@ -3445,6 +3454,7 @@ var _frontmatter = {
   "date": "2020-03-12 12:00:00 +0000",
   "author": "The Newsroom",
   "thumbnail": "./linkerd-emojivoto.png",
+  "category": "Coverage",
   "eurl": "https://www.learncloudnative.com/blog/2020-03-12-meshery-service-mesh-management-plane/",
   "published": true,
   "redirect_from": ["/news/managing-service-meshes-with-meshery/"]
@@ -3618,6 +3628,7 @@ var _frontmatter = {
   "thumbnail": "./2019-12-27-vendors-make-a-splash-in-2019-service-mesh-implementation-rush.png",
   "eurl": "https://searchapparchitecture.techtarget.com/feature/Vendors-make-a-splash-in-2019-service-mesh-implementation-rush",
   "published": true,
+  "category": "Coverage",
   "redirect_from": ["/news/vendors-make-a-splash-in-2019-service-mesh-implementation-rush/"]
 };
 var layoutProps = {
@@ -3650,6 +3661,7 @@ var _frontmatter = {
   "subtitle": "",
   "date": "2019-12-12 09:13:00 +0000",
   "author": "The Newsroom",
+  "category": "Coverage",
   "thumbnail": "./Meshery_top3_servish_mesh_development.png",
   "eurl": "https://thenewstack.io/the-top-3-service-mesh-developments-in-2020/",
   "published": true,
@@ -3785,6 +3797,7 @@ var _frontmatter = {
   "subtitle": "",
   "date": "2019-11-23 12:15:05 +0000",
   "author": "The Newsroom",
+  "category": "Coverage",
   "thumbnail": "./KubeCon_NA_2019_bg-01.svg",
   "eurl": "",
   "published": true,
@@ -3830,6 +3843,7 @@ var _frontmatter = {
   "subtitle": "",
   "date": "2019-11-23 12:15:05 +0000",
   "author": "The Newsroom",
+  "category": "Coverage",
   "thumbnail": "./enterprise_networking_planet_logo_700px-e1533637827914.png",
   "eurl": "",
   "published": true,
@@ -3876,6 +3890,7 @@ var _frontmatter = {
   "subtitle": "",
   "date": "2019-11-15 12:15:05 +0000",
   "author": "The Newsroom",
+  "category": "Press Release",
   "thumbnail": "./cncf-stacked-color.svg",
   "eurl": "https://landscape.cncf.io/category=cncf-members&format=logo-mode&grouping=category&selected=layer5-member&embed=yes",
   "published": true,
@@ -4075,6 +4090,7 @@ var _frontmatter = {
   "subtitle": "",
   "date": "2019-10-24 12:15:05 +0000",
   "author": "The Newsroom",
+  "category": "Coverage",
   "thumbnail": "./layer5-meshery-forrester.png",
   "eurl": "https://www.forrester.com/webinar/Plan+A+Service+Mesh+For+Your+Microservices+Future/-/E-WEB29705",
   "published": true,
