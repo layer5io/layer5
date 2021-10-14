@@ -22,6 +22,10 @@ const badgeListStyle = {
   listStyleType: "none",
 };
 
+const recognitionsstyle = {
+  marginBottom: "0.5rem",
+};
+
 const CommunityGuide = () => {
   return (
     <HandbookWrapper>
@@ -32,7 +36,7 @@ const CommunityGuide = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2 id="communityGuidelines">Community Guidelines</h2>
+            <h2 id="communityGuidelines">Community Guidelines</h2>{" "}
             <p>
               Welcome to the Layer5 community! We’re happy to have you here and
               handhold you for your first contribution. Here are some tips to
@@ -138,34 +142,7 @@ const CommunityGuide = () => {
                 </li>
               </ul>
             </p>
-
-            <h3>Meshmates</h3>
-
-            <p>
-              MeshMate is a distinction that Layer5 awards select members of the
-              community who innately align with the Layer5 culture of helping
-              others, paying it forward, and have a commitment to sharing their
-              knowledge of Layer5 projects with the community. MeshMates are
-              Layer5 ambassadors (not employees) and their commitment to helping
-              others and sharing their expertise has a huge impact on the Layer5
-              community – don’t hesitate to reach out to them!
-            </p>
-
-            <p>
-              As you contribute to the Layer5 community, do follow the{" "}
-              <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">
-                contributing guidelines
-              </a>{" "}
-              to make sure you are on the right track. For information about the
-              community, please refer to the{" "}
-              <Link to="/community/handbook/community/#communityGuidelines">
-                community guidelines
-              </Link>
-              . Always remember to reach out to a{" "}
-              <Link to="/community/meshmates">MeshMate</Link> when in doubt or
-              in need of a helping hand.
-            </p>
-            <h3>Recognitions</h3>
+            <h3 style={recognitionsstyle}>Recognitions</h3>
             <h4>Badges</h4>
             <p>
               As you continue your contributions to this community, you stand a
@@ -208,16 +185,16 @@ const CommunityGuide = () => {
                 <img src={PatternsLogo} style={badgeStyle} />
                 Patterns
               </li>
-            </ul>
-            <h3>Membership to the github orgs</h3>
+            </ul>{" "}
+            <h3>Membership to the github orgs</h3>{" "}
             <p>
               As you continue making your contributions to Layer5 projects, you
               will be given an invite to the github org for the project you have
-              been diligently contributing to. This invitation can be from all 4
-              github orgs of Layer5 depending on the number of contributions you
-              make.
-            </p>
-            <h3>Community member profile</h3>
+              been diligently contributing to. This invitation can be from all
+              four github orgs of Layer5 depending on the number of
+              contributions you make.
+            </p>{" "}
+            <h3>Community member profile</h3>{" "}
             <p>
               Onee a contributor joins the Layer5 community by filling in the
               community member form, they are automatically classified as

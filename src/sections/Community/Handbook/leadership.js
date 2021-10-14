@@ -214,50 +214,6 @@ const CommunityGuide = () => {
               Understands the workflow of the Issues and Pull Requests
             </label>
             <br />
-            <h3>Recognitions</h3>
-            <h4>Badges</h4>
-            <p>
-              As you continue your contributions to this community, you stand a
-              chance to receive a badge in acknowledgement of your engagement
-              within and/or contribution to the representative project or
-              (sub-)community. A variety of badges exist so that community
-              members and their efforts may be affiliated with a particular
-              project or community initiative.
-            </p>
-            <ul style={badgeListStyle}>
-              <li>
-                <img src={CommunityLogo} style={badgeStyle} />
-                Community
-              </li>
-              <li>
-                <img src={LandscapeGreen} style={badgeStyle} />
-                Landscape
-              </li>
-              <li>
-                <img src={ImageHubLogo} style={badgeStyle} />
-                Image Hub
-              </li>
-              <li>
-                <img src={MesheryLogo} style={badgeStyle} />
-                Meshery
-              </li>
-              <li>
-                <img src={MesheryOperator} style={badgeStyle} />
-                Meshery Operator
-              </li>
-              <li>
-                <img src={ServiceMeshPerformance} style={badgeStyle} />
-                Service Mesh Performance
-              </li>
-              <li>
-                <img src={GetNightHawkLogo} style={badgeStyle} />
-                GetNighthawk
-              </li>
-              <li>
-                <img src={PatternsLogo} style={badgeStyle} />
-                Patterns
-              </li>
-            </ul>
           </div>
         </Container>
       </div>
