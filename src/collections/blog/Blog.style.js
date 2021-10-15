@@ -256,4 +256,22 @@ styles for meshmate-of-the-year-2020
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+.status {
+  text-align: center;
+  padding-left: 2rem;
+}
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 `;
