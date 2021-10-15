@@ -51,6 +51,17 @@ const Sidebar = ( ) => {
       {/*    </Button>*/}
       {/*  </div>*/}
       {/*</div>*/}
+      <div className="explain-1">
+        <div className="cards">
+          <a href="https://discuss.layer5.io/">
+            <div className="card">
+              <h2>Join the Conversation</h2>
+              <p>On our Discussion Forum</p>
+              <img className="logo" src={Discuss} />
+            </div>
+          </a>
+        </div>
+      </div>
 
       <div className="sidebar-widgets catagorie">
         <div className="widgets-title">
@@ -68,6 +79,18 @@ const Sidebar = ( ) => {
         </ul>
       </div>
 
+      <div className="subscribe">
+        <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
+          <div>
+            <span>
+              <h4>Subscribe to our Newsletter</h4>
+            </span>
+            <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
+            <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
+          </div>
+        </form>
+      </div>
+      
       <div className="sidebar-widgets tags">
         <div className="widgets-title">
           <h3>Tags</h3>
@@ -80,28 +103,8 @@ const Sidebar = ( ) => {
           ))}
         </ul>
       </div>
-      <div className="subscribe">
-        <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
-          <div>
-            <span>
-              <h4>Subscribe to our Newsletter</h4>
-            </span>
-            <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
-            <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
-          </div>
-        </form>
-      </div>
-      <div className="explain-1">
-        <div className="cards">
-          <a href="https://discuss.layer5.io/">
-            <div className="card">
-              <h2>Join the Conversation</h2>
-              <p>On our Discussion Forum</p>
-              <img className="logo" src={Discuss} />
-            </div>
-          </a>
-        </div>
-      </div>
+      
+      
 
      
     </BlogSideBarWrapper>

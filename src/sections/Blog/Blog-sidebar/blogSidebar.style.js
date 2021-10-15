@@ -30,7 +30,7 @@ const BlogSideBarWrapper = styled.div`
 
 
     .sidebar-widgets {
-        padding: 0 30px;
+        padding: 30px 30px;
     }
 
     .widgets-title{
@@ -117,7 +117,7 @@ const BlogSideBarWrapper = styled.div`
     .subscribe {
 		font-family: 'Qanelas Soft', sans-serif;
         padding: 0 1rem;
-        margin: 2rem auto auto;
+        margin: 1rem auto auto;
 
 		span {
 			h4 {
@@ -161,7 +161,7 @@ const BlogSideBarWrapper = styled.div`
 
     @media only screen and (max-width: 1024px) {
         .sidebar-widgets {
-            padding: 0;
+            padding: 3rem 0 0 0;
         }
        
     }
@@ -176,6 +176,7 @@ const BlogSideBarWrapper = styled.div`
             background-color: none;
             border-radius: 25px;
             @media only screen and (max-width: 1200px) {
+             margin-top: -4rem;
              padding: 1.5rem 0.8rem 0rem 0.5rem;
              }
             .card {
