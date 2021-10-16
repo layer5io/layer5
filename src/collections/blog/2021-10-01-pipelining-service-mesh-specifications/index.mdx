@@ -100,16 +100,22 @@ jobs:
           mesh_deployed: true
 ```
 
-<p>Users can download a token from Meshery and add it as a GitHub secret (in the example above, the secret is MESHERY_PROVIDER_TOKEN).</p>
-
-<div class="img-center">
-  <a href={token} style="background-color:rgba(255,255,255,0)"><img src={token} /></a>
+<div style="display:flex;width:100%;align-items:center;padding-bottom:20px">
+  <div style="text-align:center;flex:65%;">
+    <img src={token} className="image-center" alt="token download" />
+  </div>
+  <div style="flex:35%;">
+    <p>Users can download a token from Meshery and add it as a GitHub secret (in the example above, the secret is MESHERY_PROVIDER_TOKEN).</p>
+  </div>
 </div>
 
-<p>After the test is run, you can view the results from the Service Mesh Interface dashboard in Meshery UI.</p>
-
-<div class="img-center">
-  <a href={smidashboard} style="background-color:rgba(255,255,255,0)"><img src={smidashboard} /></a>
+<div style="display:flex;width:100%;align-items:center;">
+  <div style="flex:35%;">
+    <p>After the test is run, you can view the results from the Service Mesh Interface dashboard in Meshery UI.</p>
+  </div>
+  <div style="text-align:center;flex:65%;">
+    <img src={smidashboard} className="image-center" alt="smi conformance dashboard" />
+  </div>
 </div>
 
 <p>Participating service mesh projects can also <Link to="https://docs.meshery.io/functionality/service-mesh-interface#reporting-conformance">automatically report their conformance test results</Link> to the <Link to="https://meshery.io/service-mesh-interface">SMI Conformance dashboard</Link> automatically.</p>
@@ -181,10 +187,14 @@ duration: "30m"
 ```
 
 <p>See <Link to="https://github.com/layer5io/meshery-smp-action/blob/master/action.yml">action.yml</Link> for more configuration details.</p>
-<p>The results from the tests are updated on the Performance Management dashboard in Meshery.</p>
 
-<div class="img-center">
-  <a href={perfdashboard} style="background-color:rgba(255,255,255,0)"><img src={perfdashboard} /></a>
+<div style="display:flex;width:100%;align-items:center;padding-bottom:20px">
+  <div style="text-align:center;flex:65%;">
+    <img src={perfdashboard} className="image-center" alt="performance management dashboard" />
+  </div>
+  <div style="flex:35%;">
+    <p>The results from the tests are updated on the Performance Management dashboard in Meshery.</p>
+  </div>
 </div>
 
 <p>To know more about interpreting the test results, check out <Link to="https://docs.meshery.io/guides/interpreting-performance-test-results">this guide</Link>.</p>
