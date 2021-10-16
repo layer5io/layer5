@@ -443,7 +443,7 @@ const onCreatePathNode = ({ actions, node, slug }) => {
   const [learnpath] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "pageType", value: "learnpath" });
 };
@@ -454,7 +454,7 @@ const onCreateCourseNode = ({ actions, node, slug }) => {
   const [learnpath, course] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "pageType", value: "course" });
@@ -466,7 +466,7 @@ const onCreateSectionNode = ({ actions, node, slug }) => {
   const [learnpath, course, section] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "section", value: section });
@@ -479,7 +479,7 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   const [learnpath, course, section, chapter] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "chapter", value: chapter });
   createNodeField({ node, name: "course", value: course });

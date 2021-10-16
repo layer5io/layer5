@@ -1,19 +1,14 @@
 import React from "react";
-import { Row, Col, Container } from "../../reusecore/Layout";
+import { Col} from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
-import Button from "../../reusecore/Button";
 import DiscussWrapper from "./discuss.style";
 import Discuss from "./layer5-discuss-white.png";
-import DiscussDark from "./layer_discuss.png";
 
-const discuss= () => {
+const DiscussCallout = () => {
   return (
     <DiscussWrapper>
-      
-
       <div className="explain-1">
         <div className="cards">
-              
           <Col lg={12} md={12} sm={12}>
             <a href="https://discuss.layer5.io/">
               <div className="card">
@@ -35,4 +30,4 @@ const discuss= () => {
   );
 };
 
-export default discuss;
+export default DiscussCallout;

@@ -20,7 +20,7 @@ import data from "../../../assets/data/faq";
 
 import FaqSectionWrapper from "./faqSection.style";
 import ContactFormModal from "../../../components/Contact-Modal";
-import Discuss from "../../../sections/discuss/discuss";
+import DiscussCallout from "../../../sections/Discuss-Callout";
 
 const Faq = (props) => {
 
@@ -102,7 +102,7 @@ const Faq = (props) => {
           <ContactFormModal callout_text="Just Ask" form_header="Mail Us Your Query" />
         </div>
       </Container>
-      <Discuss />
+      <DiscussCallout />
     </FaqSectionWrapper>
   );
 };
