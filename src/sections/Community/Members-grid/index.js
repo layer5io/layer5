@@ -61,6 +61,10 @@ const MembersGrid = (props) => {
                 <Link to='https://www.linkedin.com/showcase/meshery'>
                   Meshery
                 </Link>
+                ,{" "}
+                <Link to='https://getnighthawk.dev/'>
+                GetNighthawk
+                </Link>
                 , and{" "}
                 <Link to='https://www.linkedin.com/showcase/service-mesh-performance'>
                   Service Mesh Performance

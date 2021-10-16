@@ -3,7 +3,8 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import Code from "../../../components/CodeBlock";
-
+import Signoff from "../../../../.github/assets/images/git-signoff-vscode.png";
+import github from "../../../assets/images/socialIcons/github.svg";
 
 const contributingGuide= () => {
   return (
@@ -19,13 +20,9 @@ const contributingGuide= () => {
           <p>Pull requests (PRs) are the best ways to propose changes to a project repository. At Layer5 org, we use the Github Flow:</p>
           <div className="content">
 
-            <h3>Working by forking any of the project repository</h3>
-            <ul>
-              <li><span>Just head over to the <a href="https://github.com/layer5io">Layer5 org</a> Github page and click the "Fork" button. It's just that simple. Once you've done that, you can use your favorite git client to clone your repo or just head straight to the command line.</span> </li>
-            </ul>
-
             <h3>Clone your fork to your local machine</h3>
             <ul>
+              <li>Fork the repository you are working on.</li>
               <li><span>Go to your GitHub account, open the forked repository, click on the code button and then click the “copy to clipboard” icon if you intend to use a command-line tool. </span></li>
               <li><span>Open the terminal and run the following git command:
                 <div className="codes"><Code codeString="git clone “URL you copied from the clipboard.”" /></div></span></li>
@@ -48,7 +45,6 @@ const contributingGuide= () => {
 
             <h3>Make the necessary changes to your file.</h3>
             <ul>
-              <li><span>Now, go to town hacking away and make whatever changes you want to.</span></li>
               <li><span>To add the changes you have made to your branch, use: 
                 <div className="codes"><Code codeString="git add <file> " /></div></span></li>
               <li><span> If you add multiple file changes to the branch, you simply use:
@@ -66,8 +62,21 @@ const contributingGuide= () => {
               <li><span>To push your changes, run the git command:
                 <div className="codes"><Code codeString="git push origin your_branch_name" /></div></span></li>
             </ul>
-
           </div>
+          <h2>Make sure to <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin">Sign-off</a> on your Commits (Developer Certificate of Origin)</h2>
+          <p>To contribute to this project, you must agree to the Developer Certificate of Origin (DCO) for each commit you make. The DCO is a simple statement that you, as a contributor, have the legal right to contribute.          </p>
+          <p>To signify that you agree to the DCO for contributions, you simply add a line to each of your git commit messages:</p>
+          <div className="codes"><Code codeString="Signed-off-by: Jane Smith <jane.smith@example.com>" /></div>
+          <p>In most cases, you can add this signoff to your commit automatically with the -s or --signoff flag to git commit. You must use your real name and a reachable email address (sorry, no pseudonyms or anonymous contributions). An example of signing off on a commit:</p>
+          <div className="codes"><Code codeString="$ commit -s -m “my commit message w/signoff”" /></div>
+          <p>To ensure all your commits are signed, you may choose to add this alias to your global .gitconfig:</p>
+          <div className="codes"><Code codeString="[alias]
+  amend = commit -s --amend
+  cm = commit -s -m
+  commit = commit -s
+" /></div>
+       <p>Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:</p>   
+      <img src={Signoff} width="74%" id="sign-off"/>
         </Container>
       </div> 
     </HandbookWrapper>

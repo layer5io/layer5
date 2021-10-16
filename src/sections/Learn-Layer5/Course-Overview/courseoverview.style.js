@@ -91,9 +91,7 @@ export const CourseOverviewWrapper = styled.div`
   .service-meshes-you-can-learn,
   .join-community_text-and_button,
   .engage_text-and_button {
-    display: flex;
     padding: 4rem 0rem;
-    flex-direction: column;
     align-items: center;
     text-align: center;
     h2 {
@@ -104,8 +102,12 @@ export const CourseOverviewWrapper = styled.div`
   }
 
   .service-mesh-courses {
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
+    padding: 0 1rem;
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
   .course {
     padding: 0.5rem;

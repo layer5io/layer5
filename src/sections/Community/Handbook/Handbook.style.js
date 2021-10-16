@@ -69,6 +69,9 @@ export const HandbookWrapper = styled.div`
         padding-bottom: 1.5rem;
     }
 
+    #sign-off{
+      padding-bottom: 4rem;
+    }
     table {
     border-collapse: collapse;
     width: 98%;
