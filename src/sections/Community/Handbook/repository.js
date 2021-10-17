@@ -7,6 +7,7 @@ import github from "../../../assets/images/socialIcons/github.svg";
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const Repository = () => {
   const data = React.useMemo(() => repo_data);
@@ -172,6 +173,7 @@ const Repository = () => {
             })}
           </div>
         </Container>
+        <TocPagination />
       </div>
     </HandbookWrapper>
   );

@@ -3,6 +3,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import {Link} from "gatsby";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const badgeStyle = {
   height: "25px",
@@ -131,6 +132,7 @@ const CommunityGuide= () => {
 
           </div>
         </Container>
+        <TocPagination />
       </div>
     </HandbookWrapper>
   );

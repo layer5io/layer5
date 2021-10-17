@@ -5,6 +5,7 @@ import TOC from "../../../components/handbook-navigation/index";
 import Code from "../../../components/CodeBlock";
 import Signoff from "../../../../.github/assets/images/git-signoff-vscode.png";
 import github from "../../../assets/images/socialIcons/github.svg";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const contributingGuide= () => {
   return (
@@ -75,9 +76,10 @@ const contributingGuide= () => {
   cm = commit -s -m
   commit = commit -s
 " /></div>
-       <p>Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:</p>   
-      <img src={Signoff} width="74%" id="sign-off"/>
+          <p>Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:</p>   
+          <img src={Signoff} width="74%" id="sign-off"/>
         </Container>
+        <TocPagination />
       </div> 
     </HandbookWrapper>
   );

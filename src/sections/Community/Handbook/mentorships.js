@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Button from "../../../reusecore/Button";
 import TOC from "../../../components/handbook-navigation/index";
 import { programs_data } from "./programs-data";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const ConductWrapper = styled.div`
 
@@ -102,6 +103,7 @@ const MentorshipPrograms= () => {
           })}
 
         </Container>
+        <TocPagination />
       </ConductWrapper>       
     </HandbookWrapper>
   );

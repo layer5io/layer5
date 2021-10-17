@@ -11,6 +11,7 @@ import github_icon from "../../../assets/images/socialIcons/github-light.svg";
 import linkedin_icon from "../../../assets/images/socialIcons/linkedin-light.svg";
 import docker_icon from "../../../assets/images/socialIcons/docker-light.svg";
 import slack_icon from "../../../assets/images/socialIcons/slack-light.svg";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 
 const Connect= () => {
@@ -110,6 +111,7 @@ const Connect= () => {
             </div>
           </div>
         </Container>
+        <TocPagination />
       </div>
     </HandbookWrapper>
   );

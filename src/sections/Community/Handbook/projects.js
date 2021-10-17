@@ -10,6 +10,7 @@ import mesheryoperatoricon from "../../../assets/images/meshery-operator/meshery
 import mesherysyncicon from "../../../assets/images/meshsync/meshsync.svg";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const Maintainer = () => {
   return (
@@ -179,6 +180,7 @@ const Maintainer = () => {
             </p>
           </div>
         </Container>
+        <TocPagination />
       </div>
     </HandbookWrapper>
   );
