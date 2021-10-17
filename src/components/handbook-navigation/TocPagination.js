@@ -11,7 +11,6 @@ const TocPagination = () => {
     const path = window.location.pathname;
     const index = content.findIndex((x) => x.link === path);
     setCurrentPage(index);
-    console.log("Index: " + index + " len: " + content.length);
   }, []);
 
   const handleNextClick = () => {
@@ -28,7 +27,6 @@ const TocPagination = () => {
         secondary
         url={content[currentPage - 1]?.link}
         onClick={handlePrevClick}
-        className="btn-toc-pagination"
         className={currentPage === 0 ? "btn-toc-pagination-disable" : null}
         disable={currentPage === 0}
       >
