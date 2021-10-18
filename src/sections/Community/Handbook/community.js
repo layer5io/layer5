@@ -36,7 +36,7 @@ const CommunityGuide = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2 id="communityGuidelines">Community Guidelines</h2>{" "}
+            <h2 id="communityGuidelines">Community Guidelines</h2>
             <p>
               Welcome to the Layer5 community! We’re happy to have you here and
               handhold you for your first contribution. Here are some tips to
@@ -141,9 +141,8 @@ const CommunityGuide = () => {
                   for more details.
                 </li>
               </ul>
-            </p>
-            <h3 style={recognitionsstyle}>Recognitions</h3>
-            <h4>Badges</h4>
+            </p>{" "}
+            <h3 style={recognitionsstyle}>Recognitions</h3> <h4>Badges</h4>
             <p>
               As you continue your contributions to this community, you stand a
               chance to receive a badge in acknowledgement of your engagement
@@ -194,7 +193,10 @@ const CommunityGuide = () => {
               four github orgs of Layer5 depending on the number of
               contributions you make.
             </p>{" "}
-            <h3>Community member profile</h3>{" "}
+            <Link to="/community/members">
+              {" "}
+              <h3>Community member profile</h3>{" "}
+            </Link>
             <p>
               Onee a contributor joins the Layer5 community by filling in the
               community member form, they are automatically classified as
