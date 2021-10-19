@@ -5,6 +5,7 @@ import { Link } from "gatsby";
 import NewcomersMap from "../Newcomers-guide/newcomers-map";
 import TOC from "../../../components/handbook-navigation/index";
 import longArrow from "../Newcomers-guide/long-arrow.svg";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 
 const Intro = () => {
@@ -170,6 +171,7 @@ const Intro = () => {
 
           </div>
         </Container>
+        <TocPagination />
       </div>
     </HandbookWrapper>
   );
