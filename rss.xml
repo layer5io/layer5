@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5]]></title><description><![CDATA[Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Oct 2021 16:28:12 GMT</lastBuildDate><item><title><![CDATA[CNCF Adopts Service Mesh Performance Standard Established by Layer5 ]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5]]></title><description><![CDATA[Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Oct 2021 19:59:58 GMT</lastBuildDate><item><title><![CDATA[CNCF Adopts Meshery to Advance Service Mesh Management]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+/* @jsxRuntime classic */
+
+/* @jsx mdx */
+var _frontmatter = {
+  "title": "CNCF Adopts Meshery to Advance Service Mesh Management",
+  "subtitle": "",
+  "date": "2021-10-14 04:00:05 +0000",
+  "author": "The Newsroom",
+  "category": "Coverage",
+  "thumbnail": "./devops.png",
+  "eurl": "https://devops.com/cncf-adopts-meshery-to-advance-service-mesh-management/",
+  "published": true,
+  "redirect_from": ["/news/cncf-adopts-meshery-to-advance-service-mesh-management"]
+};
+var layoutProps = {
+  _frontmatter: _frontmatter
+};
+var MDXLayout = "wrapper";
+return function MDXContent(_ref) {
+  var components = _ref.components,
+      props = _objectWithoutProperties(_ref, ["components"]);
+
+  return mdx(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), mdx(NewsWrapper, {
+    mdxType: "NewsWrapper"
+  }, mdx("p", null, "The Cloud Native Computing Foundation (CNCF) announced this week during the ServiceMeshCon/KubeCon + CloudNativeCon conference that Meshery, a service mesh management plane created by Layer5, has become a sandbox-level project."), mdx("p", null, "In addition, Layer5 has also donated Service Mesh Performance (SMP), a set of tools for measuring the efficiency of a service mesh, to the CNCF. SMP provides an open source framework to define standardized benchmarking practices, performance test configurations and measurements as part of an effort to create a MeshMark index for rating a service mesh. A set of service mesh performance methodologies will also be published by the IEEE later this month, developed in collaboration with engineers from Layer5, Intel, Red Hat and HashiCorp."), mdx("p", null, "Layer5 CEO Lee Calcote said the goal is to make it simpler for IT teams to determine which service mesh to employ based on their specific use case requirements."), mdx("p", null, mdx("strong", {
+    parentName: "p"
+  }, "Read the full article on ", mdx("a", {
+    parentName: "strong",
+    "href": "https://devops.com/cncf-adopts-meshery-to-advance-service-mesh-management/"
+  }, "DEVOPS"), "."))));
+}
+;
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/cncf-adopts-meshery-to-advance-service-mesh-management</link><guid isPermaLink="false">https://layer5.io/company/news/cncf-adopts-meshery-to-advance-service-mesh-management</guid><dc:creator><![CDATA[The Newsroom]]></dc:creator><pubDate>Thu, 14 Oct 2021 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/57928de15340ab6805b8b22b3c0825cc/devops.png" length="0" type="image/png"/><content:encoded>&lt;div class=&quot;Newsstyle__NewsWrapper-sc-12r6uiw-0 kxwopX&quot;&gt;&lt;p&gt;The Cloud Native Computing Foundation (CNCF) announced this week during the ServiceMeshCon/KubeCon + CloudNativeCon conference that Meshery, a service mesh management plane created by Layer5, has become a sandbox-level project.&lt;/p&gt;&lt;p&gt;In addition, Layer5 has also donated Service Mesh Performance (SMP), a set of tools for measuring the efficiency of a service mesh, to the CNCF. SMP provides an open source framework to define standardized benchmarking practices, performance test configurations and measurements as part of an effort to create a MeshMark index for rating a service mesh. A set of service mesh performance methodologies will also be published by the IEEE later this month, developed in collaboration with engineers from Layer5, Intel, Red Hat and HashiCorp.&lt;/p&gt;&lt;p&gt;Layer5 CEO Lee Calcote said the goal is to make it simpler for IT teams to determine which service mesh to employ based on their specific use case requirements.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Read the full article on &lt;a href=&quot;https://devops.com/cncf-adopts-meshery-to-advance-service-mesh-management/&quot;&gt;DEVOPS&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[CNCF Adopts Service Mesh Performance Standard Established by Layer5 ]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
