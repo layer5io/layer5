@@ -3,23 +3,6 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import { Link } from "gatsby";
-import CommunityLogo from "../../../assets/images/community/community-green.svg";
-import PatternsLogo from "./images/patterns-logo.png";
-import LandscapeGreen from "../../../assets/images/landscape/layer5_landscape_green.svg";
-import ImageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
-import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
-import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
-import GetNightHawkLogo from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
-
-const badgeStyle = {
-  height: "25px",
-  width: "25px",
-  marginRight: "5px",
-};
-const badgeListStyle = {
-  listStyleType: "none",
-};
 
 const CommunityGuide = () => {
   return (
@@ -32,6 +15,7 @@ const CommunityGuide = () => {
         <Container>
           <div className="content">
             <h2>What does leadership mean to the Layer5 community?</h2>
+
             <p>
               A leader is someone who can contribute to the Layer5 Community's
               growth by being accountable, participating in decision-making, and
@@ -42,6 +26,7 @@ const CommunityGuide = () => {
             <h4>
               <strong>Community Manager</strong>
             </h4>
+
             <p>
               Roles/Responsibilities: <br />A Community Manager is a person who
               has an innate drive to contribute to the community's prosperity. A
@@ -102,13 +87,15 @@ const CommunityGuide = () => {
               An understanding of how contemporary open-source projects function
             </label>
             <br />
+
             <h4>
               <strong>
                 <Link to="/community/meshmates">MeshMate</Link>
               </strong>
             </h4>
+
             <p>
-              Roles/Responsibilities:
+              <strong> Roles/Responsibilities: </strong>
               <br />
               Layer5 MeshMates are committed to helping community members be
               successful contributors. MeshMates aid in identifying areas of
@@ -127,9 +114,11 @@ const CommunityGuide = () => {
                 <li>Facilitate newcomers call</li>
               </ul>
             </p>
+
             <h4>
               <strong>Maintainer</strong>
             </h4>
+
             <p>
               Roles/Responsibilities:
               <br />
@@ -213,7 +202,6 @@ const CommunityGuide = () => {
             <label htmlFor="maintainer-checklist-7">
               Understands the workflow of the Issues and Pull Requests
             </label>
-            <br />
           </div>
         </Container>
       </div>
