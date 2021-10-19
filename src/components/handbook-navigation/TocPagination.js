@@ -13,39 +13,19 @@ const TocPagination = () => {
     setCurrentPage(index);
   }, []);
 
-  const handleNextClick = () => {
-    if (currentPage < content.length - 1) setCurrentPage(currentPage + 1);
-  };
-
-  const handlePrevClick = () => {
-    if (currentPage > 0) setCurrentPage(currentPage - 1);
-  };
-
   return (
     <TocPaginationWrapper>
-      <Button
-        secondary
-        url={content[currentPage - 1]?.link}
-        onClick={handlePrevClick}
-        className={currentPage === 0 ? "btn-toc-pagination-disable" : null}
-        disable={currentPage === 0}
-      >
-        &larr; Previous
-      </Button>
+      {currentPage > 0 ? (
+        <Button secondary url={content[currentPage - 1]?.link}>
+          &larr; Previous
+        </Button>
+      ) : null}
 
-      <Button
-        primary
-        url={content[currentPage + 1]?.link}
-        onClick={handleNextClick}
-        className={
-          currentPage === content.length - 1
-            ? "btn-toc-pagination-disable"
-            : null
-        }
-        disabled={currentPage === content.length - 1}
-      >
-        Next &rarr;
-      </Button>
+      {currentPage < content.length - 1 ? (
+        <Button primary url={content[currentPage + 1]?.link}>
+          Next &rarr;
+        </Button>
+      ) : null}
     </TocPaginationWrapper>
   );
 };
