@@ -12,6 +12,7 @@ import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-l
 import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import GetNightHawkLogo from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const badgeStyle = {
   height: "25px",
@@ -206,6 +207,7 @@ const CommunityGuide = () => {
             </p>
           </div>
         </Container>
+        <TocPagination />
       </div>
     </HandbookWrapper>
   );

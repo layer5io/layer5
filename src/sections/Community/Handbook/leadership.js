@@ -2,7 +2,10 @@ import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
-import { Link } from "gatsby";
+
+import {Link} from "gatsby";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
+
 
 const CommunityGuide = () => {
   return (
@@ -204,6 +207,7 @@ const CommunityGuide = () => {
             </label>
           </div>
         </Container>
+        <TocPagination />
       </div>
     </HandbookWrapper>
   );
