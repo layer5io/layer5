@@ -2,13 +2,16 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import CardComponent from "../../../components/Learn-Components/Card-Component";
+import Button from "../../../reusecore/Button";
 import styled from "styled-components";
 
 const LearningPathsWrapper = styled.div`
 
+    margin: 3rem 0 4rem;
+
     .learn-path-heading {
         text-align: center;
-        margin: 1rem 0
+        margin: 2rem 0
     }
     .learn-subtitle {
         text-align: center;
@@ -21,6 +24,9 @@ const LearningPathsWrapper = styled.div`
         @media(max-width:500px){
             padding: 6rem 2rem;
         }
+    }
+    .see-more-button {
+      text-align: center;
     }
 `;
 
@@ -86,6 +92,9 @@ const LearningPaths = () => {
             </Col>
           ))}
         </Row>
+        <div className="see-more-button">
+          <Button primary title="Checkout all learning paths" url="/learn/learning-paths"/>
+        </div>
       </Container>
     </LearningPathsWrapper>
   );

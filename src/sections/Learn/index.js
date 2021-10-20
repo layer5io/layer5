@@ -15,8 +15,8 @@ const LearnPage = () => {
       </div>
       <BooksSection />
       <WorkshopsSection />
-      <LearningPaths />
       <LearnSection />
+      <LearningPaths />
       <JoinCommunity image={Book_Giveaway} header={"Don't Learn Alone"} text={"Check Out the Layer5 community, join us on Slack and learn with the community"} btn_primary={true}/>
     </LearnPageWrapper>
   );
