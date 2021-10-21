@@ -26,7 +26,7 @@ const ServiceMeshPatterns = () => {
         </Col>
         <Col>
           <p>
-              The Service Mesh Pattern mark includes SMP name & logo and any
+              The Service Mesh Pattern mark includes Service Mesh Pattern name & logo and any
               word, phrase, image, or other designation that identifies the
               source or origin of any Layer5 projects. PLease don't modify the
               marks or use them in a confusing way, including suggesting
