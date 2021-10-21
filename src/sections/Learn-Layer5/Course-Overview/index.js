@@ -13,11 +13,10 @@ import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
+import DiscussCallout from "../../Discuss-Callout";
 
 const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
-  // console.log(serviceMeshesList)
   const serviceMeshImages = course.frontmatter.meshesYouLearn;
-  // console.log(serviceMeshImages)
   const getChapterTitle = (chapter, chapterList) => {
     for(let i=0; i < chapterList.length; i++) {
       if (chapterList[i].fields.chapter === chapter)
@@ -35,7 +34,6 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
   };
 
   const findServiceMeshImage = (images, serviceMesh) => {
-    console.log(images.find(image => image.name.toLowerCase() == serviceMesh));
     return images.find(image => image.name.toLowerCase() == serviceMesh);
   };
 
@@ -60,8 +58,8 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
       >
         <div className="course-info-content">
           <div className="course-back-btn">
-            <Link to={"/learn-ng/" + course.fields.learnpath}>
-              <IoChevronBackOutline /> <h4>Courses</h4>
+            <Link to={`/learn/learning-paths/${course.fields.learnpath}`}>
+              <IoChevronBackOutline /> <h4>Learning Paths/Courses</h4>
             </Link>
           </div>
           <div className="course-hero-head">
@@ -109,7 +107,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
               <h2>Service Meshes You can Learn</h2>
               <ServiceMeshesAvailable serviceMeshes={getAvailableServiceMeshes()}/>
             </div>
-            <div className="join-community_text-and_button">
+            {/* <div className="join-community_text-and_button">
               <h2>Contribute to Layer5</h2>
               <Button
                 secondary
@@ -117,16 +115,8 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
                 url="http://slack.layer5.io/"
                 external={true}
               />
-            </div>
-            <div className="engage_text-and_button">
-              <h2>Engage in Discussion</h2>
-              <Button
-                secondary
-                title="Join The Service Mesh Forum"
-                url="https://discuss.layer5.io/"
-                external={true}
-              />
-            </div>
+            </div> */}
+            <DiscussCallout />
           </Col>
         </Row>
       </div>

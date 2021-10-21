@@ -19,20 +19,34 @@ const ChapterCardWrapper = styled.div`
     display: inline-flex;
 
     .chapter-number {
-        font-size: 2rem;
-        margin: 0 2rem 0 1rem;
-        color: rgba(0, 0, 0, 0.4);
-        align-self: center;
+      font-size: 2rem;
+      margin: 0 2rem 0 1rem;
+      color: rgba(0, 0, 0, 0.4);
+      align-self: center;
     }
 
     .chapter-desc {
-        h3 {
-            margin: 0.25rem 0;
-        }
+      h3 {
+          margin: 0.25rem 0;
+      }
+      p {
+          margin: 0.35rem 0;
+          color: rgba(0, 0, 0, 0.6);
+      }
+
+      @media screen and (max-width: 650px) {
         p {
-            margin: 0.35rem 0;
-            color: rgba(0, 0, 0, 0.6);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 75vw;
         }
+      }
+      @media screen and (max-width: 650px) {
+        p {
+            width: 68vw;
+        }
+      }
     }
   }
 `;

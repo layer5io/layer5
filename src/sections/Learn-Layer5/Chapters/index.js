@@ -23,17 +23,17 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
     parts[index] = replacement;
     return parts.join("/");
   };
-  const replaceServiceMeshInSlug = replaceSlugPart(3)(chapterData.fields.slug);
-  const replaceChapterInSlug = (slugWithReplacedMesh) => replaceSlugPart(4)(slugWithReplacedMesh);
+  const replaceServiceMeshInSlug = replaceSlugPart(4)(chapterData.fields.slug);
+  const replaceChapterInSlug = (slugWithReplacedMesh) => replaceSlugPart(5)(slugWithReplacedMesh);
 
 
-  const isMeshActive = (sm) => chapterData.fields.slug.split("/")[3] === sm;
+  const isMeshActive = (sm) => chapterData.fields.slug.split("/")[4] === sm;
 
   const mapMeshWithFormattedSlug = (sm, serviceMeshes) => {
     let chapterFound = false;
     tableOfContents.forEach(toc => {
       if(toc.section === sm.fields.section){
-        if(toc.chapter === chapterData.fields.slug.split("/")[4]) chapterFound = true;
+        if(toc.chapter === chapterData.fields.slug.split("/")[5]) chapterFound = true;
       }
     });
 
@@ -49,6 +49,7 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
     serviceMeshesList.forEach(sm => {
       mapMeshWithFormattedSlug(sm, serviceMeshes);    
     });
+
     return serviceMeshes;
   };
 

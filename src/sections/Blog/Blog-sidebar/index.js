@@ -5,7 +5,7 @@ import slugify from "../../../utils/slugify";
 import { FaSearch } from "react-icons/fa";
 
 import Button from "../../../reusecore/Button";
-import Discuss from "../../discuss/layer5-discuss-white.png";
+import Discuss from "../../Discuss-Callout/layer5-discuss-white.png";
 
 
 import BlogSideBarWrapper from "./blogSidebar.style";

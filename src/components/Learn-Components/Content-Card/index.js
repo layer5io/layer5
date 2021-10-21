@@ -7,10 +7,12 @@ import {
 } from "react-icons/io5";
 import Button from "../../../reusecore/Button";
 
-const ContentCard = ({ chapter }) => (
-  <ContentCardWrapper>
-    <div className="chapter-content-div" id={chapter.frontmatter.courseTitle ? chapter.frontmatter.courseTitle : null} >
-      <div className="chapter-content">
+const ContentCard = ({ chapterNum, chapter }) => (
+  <ContentCardWrapper id={chapter.frontmatter.courseTitle ? chapter.frontmatter.courseTitle : null}>
+    {/* <div className="chapter-content-div" id={chapter.frontmatter.courseTitle ? chapter.frontmatter.courseTitle : null} > */}
+    <div className="chapter-content">
+      <h2 className="chapter-number">{chapterNum}</h2>
+      <div className="chapter-desc">
         <h2>
           {chapter.frontmatter.chapterTitle
             ? chapter.frontmatter.chapterTitle
@@ -18,7 +20,8 @@ const ContentCard = ({ chapter }) => (
         </h2>
         <p>{chapter.frontmatter.description}</p>
       </div>
-      {/* <div className="chapter-info">
+    </div>
+    {/* <div className="chapter-info">
         <div className="info">
           <IoVideocam /> <span>{chapter.frontmatter.videos} videos</span>
         </div>
@@ -27,12 +30,12 @@ const ContentCard = ({ chapter }) => (
           <span>{chapter.frontmatter.lectures} lectures</span>
         </div>
       </div> */}
-    </div>
-    <div className="bookmark-btn-div">
+    {/* </div> */}
+    {/* <div className="bookmark-btn-div">
       <Button className="bookmark-btn">
         <IoBookmarkOutline />
       </Button>
-    </div>
+    </div> */}
   </ContentCardWrapper>
 );
 

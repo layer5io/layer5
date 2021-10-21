@@ -10,7 +10,7 @@ import Lee_workshop from "./Lee_Workshop.png";
 import CommunityMemberImage from "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
 import MeshMateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
-import Discuss from "../../sections/discuss/discuss";
+import DiscussCallout from "../../sections/Discuss-Callout";
 
 
 const CommunityPage = () => {
@@ -122,7 +122,7 @@ const CommunityPage = () => {
         </Container>
       </div>
       <JoinCommunity image={Lee_workshop} className="newcomers-join" />
-      <Discuss />
+      <DiscussCallout />
 
     </CommunitySectionWrapper>
   );

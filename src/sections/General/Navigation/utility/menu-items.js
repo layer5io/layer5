@@ -112,7 +112,12 @@ const Data = {
           name: "Service Mesh Labs",
           path: "/learn/service-mesh-labs",
           sepLine: true
-        }
+        },
+        {
+          name: "Learning Paths",
+          path: "/learn/learning-paths",
+          sepLine: true
+        },
       ],
       actionItems: [
         {
