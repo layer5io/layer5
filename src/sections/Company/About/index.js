@@ -12,6 +12,7 @@ import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.
 import Tshirts from "./images/free-tshirts.jpg";
 import Layer5Projects from "./images/layer5-projects.png";
 import CNCFServiceMesh from "./images/CNCF-Service-Mesh-WG-1.png";
+import CNCFstackedlogo from "./images/cncf-stacked-color.svg";
 import { Link } from "gatsby";
 
 const About = () => {
@@ -41,7 +42,7 @@ const About = () => {
             </Row>
             <Container fullWidthSM>
               <div className="head-images">
-                <Link to="./images/layer5-projects.png" ><img src={Layer5Projects} alt="About Layer5 Projects" /></Link>
+                <Link to={Layer5Projects} ><img src={Layer5Projects} alt="About Layer5 Projects" /></Link>
               </div>
             </Container>
             <Row Vcenter={true} className="row-img-cont-1">
@@ -65,7 +66,7 @@ const About = () => {
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <Link to="./images/layer5-projects.png" ><img src={Layer5Projects} alt="About Layer5 Projects" /></Link>
+                  <img src={CNCFstackedlogo} alt="About Layer5 Projects" />
                 </div>
               </Col>
               <Col xs={12} sm={6}>
