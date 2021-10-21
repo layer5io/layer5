@@ -44,7 +44,7 @@ const LearnInfo = ({courses, chapters, meshes}) => {
           </p>
         </Col>
         <Col xs={12} sm={6} lg={4}>
-          <h2>{meshesCount} service {meshesCount === 1 ? "mesh" : "meshes"} available</h2>
+          <h2>{meshesCount} service {meshesCount === 1 ? "mesh" : "meshes"}</h2>
           <p>Istio, Linkerd</p>
         </Col>
       </Row>

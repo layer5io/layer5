@@ -3,11 +3,11 @@ import CardWrapper from "./learn-card.style";
 import Image from "../../image";
 import { Link} from "gatsby";
 
-const CardComponent = ({ tutorial , courseCount}) => {
+const CardComponent = ({ tutorial, path, courseCount}) => {
 
   return (
     <CardWrapper>
-      <Link to={tutorial.fields.learnpath} className="card-link">
+      <Link to={path} className="card-link">
         <div
           style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}` }}
           className="card-parent"

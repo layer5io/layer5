@@ -22,7 +22,7 @@ const TOC = ({ coursesData }) => {
   return (
     <TOCWrapper>
       <div className="go-back">
-        <Link to={"/learn-ng"}>
+        <Link to={"/learn/learning-paths"}>
           <HiOutlineChevronLeft />
           <h4>Learning Paths</h4>
         </Link>
