@@ -17,6 +17,7 @@ import { Link } from "gatsby";
 const About = () => {
   return (
     <AboutSectionWrapper id="about">
+
       <Container fullWidthSM>
         <Row Vcenter={true} className="aboutus-title">
           <Col xs={12} sm={12}>
@@ -38,6 +39,11 @@ const About = () => {
                 </div>
               </Col>
             </Row>
+            <Container fullWidthSM>
+              <div className="head-images">
+                <Link to="./images/layer5-projects.png" ><img src={Layer5Projects} alt="About Layer5 Projects" /></Link>
+              </div>
+            </Container>
             <Row Vcenter={true} className="row-img-cont-1">
               <Col xs={12} sm={6}>
                 <div className="about-text text-one">
