@@ -11,6 +11,7 @@ import CommunityBrand from "./Brand-components/community";
 import Button from "../../../reusecore/Button";
 import { FiDownloadCloud } from "react-icons/fi";
 import GetNightHawk from "./Brand-components/getnighthawk";
+import ServiceMeshPatterns from "./Brand-components/servicemeshpatterns";
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -89,6 +90,7 @@ const Brand = () => {
   const mesheryOperatorRef = useRef(null);
   const imageHubRef = useRef(null);
   const smpRef = useRef(null);
+  const servicemeshpatternsRef = useRef(null);
   const getnightHawkRef = useRef(null);
   const meshmateRef = useRef(null);
 
@@ -99,6 +101,7 @@ const Brand = () => {
     { section: "MesheryOperator", ref: mesheryOperatorRef },
     { section: "ImageHub", ref: imageHubRef },
     { section: "SMP", ref: smpRef },
+    { section: "ServiceMeshPatterns", ref: servicemeshpatternsRef },
     { section: "GetNightHawk", ref: getnightHawkRef },
     { section: "MeshMate", ref: meshmateRef },
   ];
@@ -166,6 +169,9 @@ const Brand = () => {
           </div>
           <div className="section" ref={smpRef}>
             <SMPBrand />
+          </div>
+          <div className="section" ref={servicemeshpatternsRef}>
+            <ServiceMeshPatterns />
           </div>
           <div className="section" ref={getnightHawkRef}>
             <GetNightHawk />
@@ -235,6 +241,16 @@ const Brand = () => {
               }}
             >
               <span>Service Mesh Performance</span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "ServiceMeshPatterns" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(servicemeshpatternsRef.current);
+              }}
+            >
+              <span>Service Mesh Patterns</span>
             </p>
             <p
               className={`header_link ${
