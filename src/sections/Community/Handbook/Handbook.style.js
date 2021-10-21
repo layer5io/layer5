@@ -214,6 +214,11 @@ export const HandbookWrapper = styled.div`
     display: flex;
     align-items: center;
     margin: 2.5rem 5rem 3rem 0rem;
+
+    
+    @media only screen and (max-width: 992px){
+      width: 100%;
+      }
     
     h2{
       margin-bottom: 2rem;
@@ -223,9 +228,6 @@ export const HandbookWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    h2{
-      margin-top: -5.5rem;
-    }
   }
   .heading-start{
     display: flex;
