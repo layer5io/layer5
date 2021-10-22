@@ -38,7 +38,9 @@ const CommunityGuide = () => {
         <Container>
           <div className="content">
             {" "}
-            <h2 id="communityGuidelines">Community Guidelines</h2>{" "}
+            <a name="Community Guidelines">
+              <h2 id="communityGuidelines">Community Guidelines</h2>
+            </a>
             <p>
               Welcome to the Layer5 community! We’re happy to have you here and
               handhold you for your first contribution. Here are some tips to
@@ -144,7 +146,10 @@ const CommunityGuide = () => {
                 </li>
               </ul>
             </p>
-            <h3 style={recognitionsstyle}>Recognitions</h3> <h4>Badges</h4>
+            <a name="Recognitions">
+              <h3 style={recognitionsstyle}>Recognitions</h3>
+            </a>
+            <h4>Badges</h4>
             <p>
               As you continue your contributions to this community, you stand a
               chance to receive a badge in acknowledgement of your engagement
@@ -186,8 +191,10 @@ const CommunityGuide = () => {
                 <img src={PatternsLogo} style={badgeStyle} />
                 Patterns
               </li>
-            </ul>{" "}
-            <h3>Membership to the github orgs</h3>{" "}
+            </ul>
+            <a name="Membership">
+              <h3>Membership to the github orgs</h3>
+            </a>
             <p>
               As you continue making your contributions to Layer5 projects, you
               will be given an invite to the github org for the project you have
@@ -195,9 +202,11 @@ const CommunityGuide = () => {
               four github orgs of Layer5 depending on the number of
               contributions you make.
             </p>
-            <h3>
-              <Link to="/community/members">Community member profile</Link>
-            </h3>
+            <a name="Community_member_profile">
+              <h3>
+                <Link to="/community/members">Community member profile</Link>
+              </h3>
+            </a>
             <p>
               Once a contributor joins the Layer5 community by filling in the
               community member form, they are automatically classified as
@@ -206,8 +215,25 @@ const CommunityGuide = () => {
               can find out more about the Members profile on the Layer5 website.
             </p>
           </div>
+          <TocPagination />
         </Container>
-        <TocPagination />
+        <div>
+          <div className="intra-page">
+            <a href="#Community Guidelines" activeClassName="active">
+              Community Guidelines
+            </a>
+
+            <a href="#Recognitions" activeClassName="active">
+              Recognitions
+            </a>
+            <a href="#Membership" activeClassName="active">
+              Membership to the github
+            </a>
+            <a href="#Community_member_profile" activeClassName="active">
+              Community member profile
+            </a>
+          </div>
+        </div>
       </div>
     </HandbookWrapper>
   );

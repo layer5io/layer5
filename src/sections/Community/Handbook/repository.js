@@ -23,7 +23,10 @@ const Repository = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>GitHub Organizations and Repositories</h2>
+            <a name="top">
+              {" "}
+              <h2>GitHub Organizations and Repositories</h2>{" "}
+            </a>
             <p>
               This overview serves as a resource to newcomers seeking a
               perspective of the collective community efforts (from the limited
@@ -87,7 +90,10 @@ const Repository = () => {
               </li>
             </ul>
 
-            <h2>Frontend Projects</h2>
+            <a name="Frontend Projects">
+              {" "}
+              <h2>Frontend Projects</h2>{" "}
+            </a>
             {frontendProjects.map((frontendProjects) => {
               const { category } = frontendProjects;
               return (
@@ -135,7 +141,10 @@ const Repository = () => {
               );
             })}
 
-            <h2>Backend Projects</h2>
+            <a name="Backend Projects">
+              {" "}
+              <h2>Backend Projects</h2>{" "}
+            </a>
 
             {backendProjects.map((backendProjects) => {
               const { category } = backendProjects;
@@ -172,8 +181,29 @@ const Repository = () => {
               );
             })}
           </div>
+          <TocPagination />
         </Container>
-        <TocPagination />
+
+        <div>
+          <div className="intra-page">
+            <a href="#top" activeClassName="active">
+              GitHub Organizations and Repositories
+            </a>
+
+            <a href="#Frontend Projects" activeClassName="active">
+              Frontend Projects
+            </a>
+            <a href="#Backend Projects" activeClassName="active">
+              Backend Projects
+            </a>
+            <a href="#Installation Dedicated Repos" activeClassName="active">
+              Installation Dedicated Repos
+            </a>
+            <a href="#Service Mesh Performance Repos" activeClassName="active">
+              Service Mesh Performance Repos
+            </a>
+          </div>
+        </div>
       </div>
     </HandbookWrapper>
   );

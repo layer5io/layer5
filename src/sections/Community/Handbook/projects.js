@@ -23,17 +23,20 @@ const Maintainer = () => {
         <Container>
           <div className="content">
             <p>
-              <h3>
-                <a href="https://layer5.io/">
-                  <img
-                    margin-left="10%"
-                    width="3.5%"
-                    align="left"
-                    src={layer5icon}
-                  />
-                  &nbsp; Layer5{" "}
-                </a>
-              </h3>
+              <a name="Layer5">
+                {" "}
+                <h3>
+                  <a href="https://layer5.io/">
+                    <img
+                      margin-left="10%"
+                      width="3.5%"
+                      align="left"
+                      src={layer5icon}
+                    />
+                    &nbsp; Layer5{" "}
+                  </a>
+                </h3>{" "}
+              </a>
             </p>
             <p>
               Its service mesh community represents the largest collection of
@@ -86,18 +89,21 @@ const Maintainer = () => {
               </ul>
             </p>
             <p>
-              <h3>
-                <a href="https://layer5.io/service-mesh-management/meshery">
-                  <img
-                    margin="10%"
-                    width="3%"
-                    align="left"
-                    src={meshery}
-                    alt="Meshery"
-                  />
-                  &nbsp; Meshery
-                </a>
-              </h3>
+              <a name="Meshery">
+                {" "}
+                <h3>
+                  <a href="https://layer5.io/service-mesh-management/meshery">
+                    <img
+                      margin="10%"
+                      width="3%"
+                      align="left"
+                      src={meshery}
+                      alt="Meshery"
+                    />
+                    &nbsp; Meshery
+                  </a>
+                </h3>{" "}
+              </a>
             </p>
             <p>
               Meshery and its components Meshery Operator{" "}
@@ -141,16 +147,19 @@ const Maintainer = () => {
                 </p>
               </ul>
             </p>
-            <h3>
-              <a href="https://smp-spec.io/">
-                <img
-                  className="channels-img"
-                  align="left"
-                  src={servicemeshperformance}
-                />
-                &nbsp; Service Mesh Performance{" "}
-              </a>
-            </h3>
+            <a name="Service Mesh Performance">
+              {" "}
+              <h3>
+                <a href="https://smp-spec.io/">
+                  <img
+                    className="channels-img"
+                    align="left"
+                    src={servicemeshperformance}
+                  />
+                  &nbsp; Service Mesh Performance{" "}
+                </a>
+              </h3>{" "}
+            </a>
             <p>
               <a href="https://layer5.io/projects/service-mesh-performance">
                 The Service Mesh Performance (SMP)
@@ -162,25 +171,46 @@ const Maintainer = () => {
             </p>
 
             <p>
-              <h3>
-                <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
-                  <img
-                    margin="10%"
-                    width="3%"
-                    align="left"
-                    src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
-                  />{" "}
-                  &nbsp; Service Mesh Patterns{" "}
-                </a>
-              </h3>
+              <a name="Service Mesh Patterns">
+                {" "}
+                <h3>
+                  <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
+                    <img
+                      margin="10%"
+                      width="3%"
+                      align="left"
+                      src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
+                    />{" "}
+                    &nbsp; Service Mesh Patterns{" "}
+                  </a>
+                </h3>{" "}
+              </a>
             </p>
             <p>
               A collection of curated patterns of service mesh use cases
               compatible with Meshery. <br />
             </p>
           </div>
+          <TocPagination />
         </Container>
-        <TocPagination />
+
+        <div>
+          <div className="intra-page">
+            <a href="#Layer5" activeClassName="active">
+              Layer5
+            </a>
+
+            <a href="#Meshery" activeClassName="active">
+              Meshery
+            </a>
+            <a href="#Service Mesh Performance" activeClassName="active">
+              Service Mesh Performance
+            </a>
+            <a href="#Service Mesh Patterns" activeClassName="active">
+              Service Mesh Patterns
+            </a>
+          </div>
+        </div>
       </div>
     </HandbookWrapper>
   );

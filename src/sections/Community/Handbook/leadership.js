@@ -3,9 +3,8 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
-
 
 const CommunityGuide = () => {
   return (
@@ -17,7 +16,10 @@ const CommunityGuide = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>What does leadership mean to the Layer5 community?</h2>
+            <a name="top">
+              {" "}
+              <h2>What does leadership mean to the Layer5 community?</h2>{" "}
+            </a>
 
             <p>
               A leader is someone who can contribute to the Layer5 Community's
@@ -26,9 +28,12 @@ const CommunityGuide = () => {
             </p>
             <h3>What does it take to be a leader?</h3>
 
-            <h4>
-              <strong>Community Manager</strong>
-            </h4>
+            <a name="Community Manager">
+              {" "}
+              <h4>
+                <strong>Community Manager</strong>
+              </h4>{" "}
+            </a>
 
             <p>
               Roles/Responsibilities: <br />A Community Manager is a person who
@@ -91,11 +96,14 @@ const CommunityGuide = () => {
             </label>
             <br />
 
-            <h4>
-              <strong>
-                <Link to="/community/meshmates">MeshMate</Link>
-              </strong>
-            </h4>
+            <a name="MeshMate">
+              {" "}
+              <h4>
+                <strong>
+                  <Link to="/community/meshmates">MeshMate</Link>
+                </strong>
+              </h4>{" "}
+            </a>
 
             <p>
               <strong> Roles/Responsibilities: </strong>
@@ -118,9 +126,12 @@ const CommunityGuide = () => {
               </ul>
             </p>
 
-            <h4>
-              <strong>Maintainer</strong>
-            </h4>
+            <a name="Maintainer">
+              {" "}
+              <h4>
+                <strong>Maintainer</strong>
+              </h4>{" "}
+            </a>
 
             <p>
               Roles/Responsibilities:
@@ -206,8 +217,26 @@ const CommunityGuide = () => {
               Understands the workflow of the Issues and Pull Requests
             </label>
           </div>
+          <TocPagination />
         </Container>
-        <TocPagination />
+
+        <div>
+          <div className="intra-page">
+            <a href="#top" activeClassName="active">
+              What does leadership mean to the Layer5 community?
+            </a>
+
+            <a href="#Community Manager" activeClassName="active">
+              Community Manager
+            </a>
+            <a href="#MeshMate" activeClassName="active">
+              MeshMate
+            </a>
+            <a href="#Maintainer" activeClassName="active">
+              Maintainer
+            </a>
+          </div>
+        </div>
       </div>
     </HandbookWrapper>
   );

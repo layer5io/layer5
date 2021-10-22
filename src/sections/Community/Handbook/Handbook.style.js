@@ -6,6 +6,7 @@ export const HandbookWrapper = styled.div`
     .content{
       width:100%;
       padding-bottom: 2rem;
+      
     ul > li {
         color: ${(props) => props.theme.menuColor};
       }
@@ -26,6 +27,7 @@ export const HandbookWrapper = styled.div`
     .page-section{
       margin-top: -33rem;
       margin-left: 20rem;
+      display: flex;
     }
 
     .sidebar {
@@ -251,5 +253,24 @@ export const HandbookWrapper = styled.div`
     padding-left: 1rem;
     transition: .5s;
     }
+  }
+  .intra-page{
+    position: sticky;
+  top: 10rem;
+  right:0rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  width:15rem;
+  padding-bottom: 5rem;
+    align-items:left;
+    justify-content:space-around;
+    display: flex;
+    flex-direction: column;
+    a{
+      padding-bottom:0.5rem;
+      padding-top:0.5rem;
+    }
+
   }
 `;
