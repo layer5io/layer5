@@ -6,7 +6,8 @@ import { Row, Col, Container } from "../../reusecore/Layout";
 import CardComponent from "../../components/Learn-Components/Card-Component";
 import LearnInfo from "../../components/Learn-Components/LearnInfo";
 import WhatAwaitsSection from "../../components/Learn-Components/what-await-section";
-import Button from "../../reusecore/Button";
+import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.jpg";
+import JoinCommunity from "../Community/Join-community";
 
 const LearnPathsPage = () => {
   const data = useStaticQuery(graphql`
@@ -94,13 +95,13 @@ const LearnPathsPage = () => {
       <Container>
         <PageHeader title="Learning Paths" />
         <div className="learn-subtitle">
-          <p>Learn how to service mesh.Learn how to run</p>
-          <p>Meshery, install Istio and deploy a sample app</p>
+          <h3>Learn how to build an application and </h3>
+          <h3>manage it using a service mesh</h3>
         </div>
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
-            <Col sm={12} md={6} xl={4} key={tutorial.id}>
-              <CardComponent tutorial={tutorial} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
+            <Col sm={12} key={tutorial.id}>
+              <CardComponent tutorial={tutorial} path={tutorial.fields.learnpath} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
             </Col>
           ))}
         </Row>
@@ -112,20 +113,11 @@ const LearnPathsPage = () => {
           chapters={data.chaptersCount.edges}
           meshes={data.meshesCount.edges}
         />
-        <div className="join-community">
-          <div className="join-community_text-and_button">
-            <h1>Don't Learn Alone</h1>
-            <p>
-              Check Out the Layer5 community, Join us on Slack and learn with
-              the community
-            </p>
-          </div>
-          <Button
-            secondary
-            title="Join Our Talented Community"
-            url="http://slack.layer5.io/"
-          />
-        </div>
+        <JoinCommunity
+          image={Book_Giveaway}
+          header={"Don't Learn Alone"}
+          text={"Check Out the Layer5 community, join us on Slack and learn with the community"}
+          btn_primary={true}/>
       </Container>
     </LearnLayer5GridWrapper>
   );

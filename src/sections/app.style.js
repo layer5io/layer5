@@ -109,6 +109,14 @@ h2.sub-heading, h3.sub-heading {
     margin-bottom: 1.25rem;
 }
 
+h5.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    @media (max-width: 62rem) {
+      font-size: 1.1rem;
+    }
+}
+
 p {
     margin: 0 0 1rem 0;
     font-size: 1.125rem;

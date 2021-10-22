@@ -3,6 +3,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import Point from "./images/bullet.svg";
 import TOC from "../../../components/handbook-navigation/index";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 
 const CodeofConduct= () => {
@@ -32,6 +33,7 @@ const CodeofConduct= () => {
             <p>Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting  <a href="http://community@layer5.io.">community@layer5.io.</a></p>       
           </div>
         </Container>
+        <TocPagination />
       </div>      
     </HandbookWrapper>
   );

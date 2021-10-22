@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import { Link } from "gatsby";
-import TOCWrapper from "./toc.style";
 import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
+
+import TOCWrapper from "./toc.style";
+import { content } from "./content";
 
 const TOC = () => {
   const [expand, setExpand] = useState(false);
@@ -33,56 +35,18 @@ const TOC = () => {
       </div>
       <div className="toc-list">
         <ul className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
-          <li>
-            <Link to="/community/handbook/about" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/community/handbook/community" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              Community
-            </Link>
-          </li>
-          <li>
-            <Link to="/community/handbook/contribution" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              Contribution
-            </Link>
-          </li>
-          <li>
-            <Link to="/community/handbook/repository-overview" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              Repository Overview
-            </Link>
-          </li>
-          <li>
-            <Link to="/community/handbook/projects" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link to="/community/handbook/mentorship-programs" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              Mentorship Programs
-            </Link>
-          </li>
-          <li>
-            <Link to="/community/handbook/learn-layer5" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              Learn Layer5
-            </Link>
-          </li>
-          <li>
-            <Link to="/community/handbook/connect-with-us" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              Connect with us
-            </Link>
-          </li>
-          <li>
-            <Link to="/community/handbook/code-of-conduct" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              Code of Conduct
-            </Link>
-          </li>
-          <li>
-            <Link to="/community/handbook/faq" className="toc-sub-heading toc-sub-inline" activeClassName="active">
-              FAQs
-            </Link>
-          </li>
+          {content.map((x) => (
+            <li key={x.id}>
+              <Link
+                to={x.link}
+                key={x.id}
+                className="toc-sub-heading toc-sub-inline"
+                activeClassName="active"
+              >
+                {x.text}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </TOCWrapper>

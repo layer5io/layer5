@@ -13,15 +13,42 @@ import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
+import DiscussCallout from "../../Discuss-Callout";
 
-const CourseOverview = ({ course, chapters }) => {
-
+const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
+  const serviceMeshImages = course.frontmatter.meshesYouLearn;
   const getChapterTitle = (chapter, chapterList) => {
     for(let i=0; i < chapterList.length; i++) {
       if (chapterList[i].fields.chapter === chapter)
         return chapterList[i];
     }
   };
+
+  const getAvailableServiceMeshes = () => {
+    let serviceMeshes = [];
+    serviceMeshesList.forEach(item => {
+      if(serviceMeshes.indexOf(item["fields"]["section"]) === -1)
+        serviceMeshes.push(item["fields"]["section"]);
+    });
+    return serviceMeshes;
+  };
+
+  const findServiceMeshImage = (images, serviceMesh) => {
+    return images.find(image => image.name.toLowerCase() == serviceMesh);
+  };
+
+  const ServiceMeshesAvailable = ({serviceMeshes}) => serviceMeshes.map((sm, index) => {
+    return(  
+      <>
+        <div className="service-mesh-courses" key={index}>
+          <Image
+            {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
+            className="docker"
+            alt={sm}
+          />
+        </div>
+      </>);
+  });
 
   return (
     <CourseOverviewWrapper>
@@ -31,8 +58,8 @@ const CourseOverview = ({ course, chapters }) => {
       >
         <div className="course-info-content">
           <div className="course-back-btn">
-            <Link to={"/learn-ng/" + course.fields.learnpath}>
-              <IoChevronBackOutline /> <h4>Courses</h4>
+            <Link to={`/learn/learning-paths/${course.fields.learnpath}`}>
+              <IoChevronBackOutline /> <h4>Learning Paths/Courses</h4>
             </Link>
           </div>
           <div className="course-hero-head">
@@ -78,34 +105,18 @@ const CourseOverview = ({ course, chapters }) => {
           <Col md={12} lg={4} xl={5}>
             <div className="service-meshes-you-can-learn">
               <h2>Service Meshes You can Learn</h2>
-              <div className="service-mesh-courses">
-                {course.frontmatter.meshesYouLearn.map((mesh, index) => (
-                  <a key={index} className="course">
-                    <Image
-                      {...mesh.imagepath}
-                      className="docker"
-                      alt={mesh.name}
-                    />
-                  </a>
-                ))}
-              </div>
+              <ServiceMeshesAvailable serviceMeshes={getAvailableServiceMeshes()}/>
             </div>
-            <div className="join-community_text-and_button">
+            {/* <div className="join-community_text-and_button">
               <h2>Contribute to Layer5</h2>
               <Button
                 secondary
                 title="Join The Community"
                 url="http://slack.layer5.io/"
+                external={true}
               />
-            </div>
-            <div className="engage_text-and_button">
-              <h2>Engage in Discussion</h2>
-              <Button
-                secondary
-                title="Join The Service Mesh Forum"
-                url="https://discuss.layer5.io/"
-              />
-            </div>
+            </div> */}
+            <DiscussCallout />
           </Col>
         </Row>
       </div>

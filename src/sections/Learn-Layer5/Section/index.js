@@ -1,3 +1,5 @@
+// Use this file for certificates page implementation
+
 import React from "react";
 // import Card from "../../../components/Card";
 // import { Container, Row, Col } from "../../../reusecore/Layout";

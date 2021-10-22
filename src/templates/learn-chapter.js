@@ -20,7 +20,7 @@ export const query = graphql`
         frontmatter {
           chapterTitle
           description
-                 }
+        }
         fields {
           slug
           course
@@ -85,7 +85,7 @@ const SingleChapter = ({data, location}) => {
     let firstOrder = first.frontmatter?.order ? first.frontmatter.order : 100;
     let secondOrder = second.frontmatter?.order ? second.frontmatter.order : 100;
     return firstOrder - secondOrder;
-  }); 
+  });
   return (
     <ThemeProvider theme={theme}>
       <Layout>

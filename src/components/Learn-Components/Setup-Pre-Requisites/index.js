@@ -19,7 +19,7 @@ const SetupPreReq = () => (
             <h2>Install Meshery</h2>
             <BsTerminalFill />
           </div>
-          <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sem id magna tempus fringilla. Suspendisse posuere nibh et dictum varius.</p>
+          <p>Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes: 'mesheryctl'.</p>
         </div>
       </Link>
       <Link to="/service-mesh-management/meshery/getting-started" id="Run Meshery">
@@ -28,7 +28,7 @@ const SetupPreReq = () => (
             <h2>Run Meshery</h2>
             <img src={Meshery} />
           </div>
-          <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sem id magna tempus fringilla. Suspendisse posuere nibh et dictum varius.</p>
+          <p>With 'mesheryctl', not only you can manage your service meshes, but also manage their workloads, mesure their performance, verify conformance to service mesh standards.</p>
         </div>
       </Link>
       <Link to="/service-mesh-management/meshery/operating-service-meshes" id="Manage Meshery">
@@ -37,7 +37,7 @@ const SetupPreReq = () => (
             <h2>Manage Meshery</h2>
             <img src={MesheryOperator} />
           </div>
-          <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sem id magna tempus fringilla. Suspendisse posuere nibh et dictum varius.</p>
+          <p>Wrangle your mesh with Meshery Operator and MeshSync.</p>
         </div>
       </Link>
     </div>

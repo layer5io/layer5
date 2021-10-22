@@ -58,8 +58,8 @@ const AboutSectionWrapper = styled.section`
     
     h2 {
       display: block;
-      font-weight: 400;     
-      margin-bottom: 1rem;
+      font-weight: 500;     
+      font-size: 3.2rem;
       line-height: 1rem;
     }
   }

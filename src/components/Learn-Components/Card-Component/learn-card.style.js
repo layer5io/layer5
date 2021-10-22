@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const CardWrapper = styled.div`
-    max-width: 23.5rem;
+    max-width: 28rem;
     min-height: 16rem;
     margin: auto;
     border-radius: 1rem;

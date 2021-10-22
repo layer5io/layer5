@@ -50,10 +50,10 @@ export const HandbookCardWrapper = styled.div`
 	  text-align: center;
 	  margin: 1.5rem;
 	  margin-bottom: 0rem;
-	  line-height: 2;
-	  letter-spacing: 1px;
-	  font-weight: 500;
-	  font-size: .8rem;
+	  line-height: 1.75;
+	  letter-spacing: 0px;
+	  font-weight: 400;
+	  font-size: .9rem;
 	}
 
 	.handbook__card--lm__container {

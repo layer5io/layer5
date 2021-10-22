@@ -5,11 +5,12 @@ import styled from "styled-components";
 import Button from "../../../reusecore/Button";
 import TOC from "../../../components/handbook-navigation/index";
 import { programs_data } from "./programs-data";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const ConductWrapper = styled.div`
 
     padding: 0 5rem 3rem 20rem;
-    margin-top: -32rem; 
+    margin-top: -36rem; 
     .explain-2{
       padding: 25px 0px;
       .text{
@@ -102,6 +103,7 @@ const MentorshipPrograms= () => {
           })}
 
         </Container>
+        <TocPagination />
       </ConductWrapper>       
     </HandbookWrapper>
   );

@@ -61,6 +61,11 @@ const BooksListWrapper = styled.div`
         }
     }
 
+    .see-more-button {
+        margin: 4rem 0 0;
+        text-align: center;
+      }
+
     @media screen and (max-width: 600px) {
         .books-card {
             display: block;
@@ -94,6 +99,7 @@ const BooksSection = () => {
                 allMdx(
                     filter: { fields: { collection: { eq: "service-mesh-books" } }, frontmatter: { published: { eq: true } } }
                     sort: { fields: [frontmatter___date], order: ASC }
+                    limit: 2
                 ) 
                 {
                     nodes {
@@ -133,9 +139,11 @@ const BooksSection = () => {
                 </div>
                 <Button secondary title={<FaArrowRight />} className="arrow_icon" />
               </Link>
-
             </div>
           ))}
+        </div>
+        <div className="see-more-button">
+          <Button primary title="Checkout all service mesh books" url="/learn/service-mesh-books"/>
         </div>
       </Container>
     </BooksListWrapper>

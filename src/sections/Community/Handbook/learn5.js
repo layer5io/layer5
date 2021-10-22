@@ -3,6 +3,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import {Link} from "gatsby";
 import TOC from "../../../components/handbook-navigation/index";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 
 const LearnLayer= () => {
@@ -40,6 +41,7 @@ const LearnLayer= () => {
             <p>Visit our <Link to="/blog">Blog</Link> for the latest blog posts on Layer5</p>
           </div>
         </Container>
+        <TocPagination />
       </div>
 
     </HandbookWrapper>
