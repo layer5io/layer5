@@ -176,6 +176,7 @@ export const HandbookWrapper = styled.div`
         margin-top: -2rem;
         margin-left: 0;
         padding: 1rem 2.5rem;
+        width:100%;
       }
       .codes{
       width:100%
@@ -192,6 +193,7 @@ export const HandbookWrapper = styled.div`
         .page-section{
           margin-top: -2rem;
           margin-left: 0rem;
+          width: 100%;
         }
         table{
           margin-left: -1.5rem;
@@ -267,10 +269,20 @@ export const HandbookWrapper = styled.div`
     justify-content:space-around;
     display: flex;
     flex-direction: column;
+    
     a{
       padding-bottom:0.5rem;
       padding-top:0.5rem;
     }
-
+    @media only screen and (max-width: 750px){
+      width: 0;
+      opacity:0;
+    height:0;
+      transition:none;
+      visibility:hidden;
+      
+      
+    }
   }
+  
 `;
