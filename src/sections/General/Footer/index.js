@@ -124,7 +124,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link className="category-link" to="/projects/service-mesh-performance">
-                      Service Mesh Performace
+                      Service Mesh Performance
                     </Link>
                   </li>
                 </ul>
