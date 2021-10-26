@@ -1,7 +1,7 @@
 ---
 docType: "Chapter"
 chapterTitle: "Linkerd Dashboard"
-description: "Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
+description: "Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
 videos: 4
 lectures: 12
 order: 4
@@ -74,9 +74,7 @@ This exposes the dashboard at `dashboard.example.com` and protects it with basic
 
 From here you may need to modify your resolv.conf to add `dashboard.example.com` to localhost or use an alternative approach in order to see the dashboard deployment. We will not cover this in the workshop.
 
-<h3 class="chapter-sub-heading">
-  Tools exposed by dashboard
-</h3>
+<h3 class="chapter-sub-heading">Tools exposed by dashboard</h3>
 
 Linkerd dashboard exposes various CLI tools which may come handy while you debug your application running on mesh.
 
@@ -86,24 +84,26 @@ Mainly there are three tools which Linkerd exposes as an extension to it's CLI c
 
 This will show the “golden” metrics for each deployment:
 
-  1. Success rates
-  1. Request rates
-  1. Latency distribution percentiles
+1. Success rates
+1. Request rates
+1. Latency distribution percentiles
 
 **top**
 
 To get a real-time view of which paths are being called.
 
-  <a href={Top}>
-    <img src={Top} width="100%" align="center" />
-  </a>
+{" "}
+<a href={Top}>
+  <img src={Top} width="100%" align="center" />
+</a>
 
 **tap**
 
 Shows the stream of requests across a single pod, deployment, or even everything in the emojivoto namespace.
 
-  <a href={Tap}>
-    <img src={Tap} width="100%" align="center" />
-  </a>
+{" "}
+<a href={Tap}>
+  <img src={Tap} width="100%" align="center" />
+</a>
 
 </ChapterStyle>
