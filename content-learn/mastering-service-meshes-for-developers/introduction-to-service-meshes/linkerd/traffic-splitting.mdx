@@ -1,7 +1,7 @@
 ---
 docType: "Chapter"
 chapterTitle: "Traffic Splitting using SMI and Linkerd"
-description: "Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
+description: "Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
 videos: 4
 lectures: 12
 order: 7
@@ -18,7 +18,7 @@ import ControlPlane from "../../../../src/assets/images/learn-layer5/linkerd/con
   <img src={ControlPlane} width="100%" align="center" />
 </a>
 
-The destination component of the control plane looks for changes in configuration of linkerd (actualized as Kubernetes Custom Resource Definitions) and afterward pushes the right config for 
+The destination component of the control plane looks for changes in configuration of linkerd (actualized as Kubernetes Custom Resource Definitions) and afterward pushes the right config for
 
 proxies to follow. As opposed to presenting its own configuration format for traffic splitting, Linkerd follows the [SMI spec](https://smi-spec.io/), which plans to give a brought together, summed up setup model for service meshes (simply like ingress, CRI, and so on in Kubernetes).
 
@@ -28,14 +28,14 @@ We will be deploying [istio's bookinfo application](https://istio.io/latest/docs
 
 Use meshery to deploy the bookinfo application :
 
-+ In Meshery, navigate to the Linkerd adapter's management page from the left nav menu.
-+ On the Linkerd adapter's management page, please enter `default` in the `Namespace` field.
-+ Then, click the (+) icon on the `Sample Application` card and select `Bookinfo Application` from the list.
+- In Meshery, navigate to the Linkerd adapter's management page from the left nav menu.
+- On the Linkerd adapter's management page, please enter `default` in the `Namespace` field.
+- Then, click the (+) icon on the `Sample Application` card and select `Bookinfo Application` from the list.
 
 OR...
 
-+ Download the [./sample/bookinfo.yaml](https://raw.githubusercontent.com/layer5io/linkerd-service-mesh-workshop/master/lab-7/sample/book-info.yaml)
-+ Inject linkerd into the sample application.
+- Download the [./sample/bookinfo.yaml](https://raw.githubusercontent.com/layer5io/linkerd-service-mesh-workshop/master/lab-7/sample/book-info.yaml)
+- Inject linkerd into the sample application.
 
 ```sh
 linkerd inject ./sample/bookinfo.yaml | kubectl apply -f -
@@ -69,9 +69,9 @@ Checking [localhost:9080](localhost:9080) would show you a product page, with a 
 
 The three different versions provide different output:
 
-+ v1 with No stars
-+ v2 with Orange stars
-+ v3 with Black stars
+- v1 with No stars
+- v2 with Orange stars
+- v3 with Black stars
 
 We will have reviews service only split traffic between v1 and v2 of the application.
 
@@ -122,6 +122,6 @@ kubectl delete trafficsplit/reviews-split
 kubectl delete -f ./sample/service.yaml
 ```
 
- + Remove the bookinfo application from the `Meshery Dashboard` by clicking on the `trash icon` in the `sample application` card on the linkerd adapters' page.
+- Remove the bookinfo application from the `Meshery Dashboard` by clicking on the `trash icon` in the `sample application` card on the linkerd adapters' page.
 
 </ChapterStyle>
