@@ -4,8 +4,24 @@ import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import Code from "../../../components/CodeBlock";
 import Signoff from "../../../../.github/assets/images/git-signoff-vscode.png";
-import github from "../../../assets/images/socialIcons/github.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
+import { Link } from "gatsby";
+
+const content = [
+  {
+    id: 0,
+    link: "#top",
+    text: "General contribution flow",
+  },
+  { id: 1, link: "#Community Manager", text: "Community Manager" },
+  { id: 2, link: "#MeshMate", text: "MeshMate" },
+  {
+    id: 3,
+    link: "#Maintainer",
+    text: "Maintainer",
+  },
+  { id: 4, link: "#Membership", text: "Membership to the github" },
+];
 
 const contributingGuide = () => {
   return (
@@ -16,7 +32,7 @@ const contributingGuide = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <a name="top">
+          <a id="top">
             {" "}
             <h2>General contribution flow</h2>{" "}
           </a>
@@ -193,19 +209,15 @@ const contributingGuide = () => {
 
         <div>
           <div className="intra-page">
-            <a href="#top" activeClassName="active">
-              General contribution flow
-            </a>
-
-            <a href="#Community Manager" activeClassName="active">
-              Community Manager
-            </a>
-            <a href="#MeshMate" activeClassName="active">
-              MeshMate
-            </a>
-            <a href="#Maintainer" activeClassName="active">
-              Maintainer
-            </a>
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

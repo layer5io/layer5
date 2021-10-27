@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
-import github from "../../../assets/images/socialIcons/github.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/dark/5-dark-bg.svg";
 import hawkIcon from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
@@ -11,6 +10,27 @@ import mesherysyncicon from "../../../assets/images/meshsync/meshsync.svg";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
+import { Link } from "gatsby";
+
+const content = [
+  {
+    id: 0,
+    link: "#Layer5",
+    text: "Layer5",
+  },
+  { id: 1, link: "#Meshery", text: "Meshery" },
+  { id: 2, link: "#Backend Projects", text: "Backend Projects" },
+  {
+    id: 3,
+    link: "#Service Mesh Performance",
+    text: "Service Mesh Performance",
+  },
+  {
+    id: 4,
+    link: "# Service Mesh Patterns",
+    text: " Service Mesh Patterns",
+  },
+];
 
 const Maintainer = () => {
   return (
@@ -23,7 +43,7 @@ const Maintainer = () => {
         <Container>
           <div className="content">
             <p>
-              <a name="Layer5">
+              <a id="Layer5">
                 {" "}
                 <h3>
                   <a href="https://layer5.io/">
@@ -89,7 +109,7 @@ const Maintainer = () => {
               </ul>
             </p>
             <p>
-              <a name="Meshery">
+              <a id="Meshery">
                 {" "}
                 <h3>
                   <a href="https://layer5.io/service-mesh-management/meshery">
@@ -147,7 +167,7 @@ const Maintainer = () => {
                 </p>
               </ul>
             </p>
-            <a name="Service Mesh Performance">
+            <a id="Service Mesh Performance">
               {" "}
               <h3>
                 <a href="https://smp-spec.io/">
@@ -171,7 +191,7 @@ const Maintainer = () => {
             </p>
 
             <p>
-              <a name="Service Mesh Patterns">
+              <a id="Service Mesh Patterns">
                 {" "}
                 <h3>
                   <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
@@ -196,19 +216,15 @@ const Maintainer = () => {
 
         <div>
           <div className="intra-page">
-            <a href="#Layer5" activeClassName="active">
-              Layer5
-            </a>
-
-            <a href="#Meshery" activeClassName="active">
-              Meshery
-            </a>
-            <a href="#Service Mesh Performance" activeClassName="active">
-              Service Mesh Performance
-            </a>
-            <a href="#Service Mesh Patterns" activeClassName="active">
-              Service Mesh Patterns
-            </a>
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

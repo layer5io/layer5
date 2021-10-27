@@ -28,6 +28,7 @@ export const HandbookWrapper = styled.div`
       margin-top: -33rem;
       margin-left: 20rem;
       display: flex;
+      scroll-behavior: smooth;
     }
 
     .sidebar {
@@ -176,7 +177,6 @@ export const HandbookWrapper = styled.div`
         margin-top: -2rem;
         margin-left: 0;
         padding: 1rem 2.5rem;
-        width:100%;
       }
       .codes{
       width:100%
@@ -260,17 +260,27 @@ export const HandbookWrapper = styled.div`
     position: sticky;
   top: 10rem;
   right:0rem;
-  margin-left: 1rem;
   margin-right: 1rem;
-  margin-top: 2rem;
-  width:15rem;
+  width:16rem;
   padding-bottom: 5rem;
     align-items:left;
     justify-content:space-around;
     display: flex;
     flex-direction: column;
     
-    a{
+    
+
+    .active{
+      font-weight:5000;
+      color: ${(props) => props.theme.secondaryColor};
+    }
+    
+    ul{
+      list-style: none;
+      top: 3rem;
+    }
+
+    li{
       padding-bottom:0.5rem;
       padding-top:0.5rem;
     }
@@ -285,4 +295,7 @@ export const HandbookWrapper = styled.div`
     }
   }
   
+  .learn{
+    width: 10rem;
+  }
 `;

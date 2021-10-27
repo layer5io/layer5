@@ -14,6 +14,22 @@ import ServiceMeshPerformance from "../../../assets/images/service-mesh-performa
 import GetNightHawkLogo from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
+const content = [
+  { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
+  { id: 1, link: "#Recognitions", text: "Recognition" },
+  {
+    id: 2,
+    link: "#Newcomer’s Path",
+    text: "Newcomer’s Path",
+  },
+  { id: 3, link: "#Membership", text: "Membership to the github" },
+  {
+    id: 4,
+    link: "#Community_member_profile",
+    text: "Community member profile",
+  },
+];
+
 const badgeStyle = {
   height: "25px",
   width: "25px",
@@ -38,7 +54,7 @@ const CommunityGuide = () => {
         <Container>
           <div className="content">
             {" "}
-            <a name="Community Guidelines">
+            <a id="Community Guidelines">
               <h2 id="communityGuidelines">Community Guidelines</h2>
             </a>
             <p>
@@ -146,7 +162,7 @@ const CommunityGuide = () => {
                 </li>
               </ul>
             </p>
-            <a name="Recognitions">
+            <a id="Recognitions">
               <h3 style={recognitionsstyle}>Recognitions</h3>
             </a>
             <h4>Badges</h4>
@@ -192,7 +208,7 @@ const CommunityGuide = () => {
                 Patterns
               </li>
             </ul>
-            <a name="Membership">
+            <a id="Membership">
               <h3>Membership to the github orgs</h3>
             </a>
             <p>
@@ -202,7 +218,7 @@ const CommunityGuide = () => {
               four github orgs of Layer5 depending on the number of
               contributions you make.
             </p>
-            <a name="Community_member_profile">
+            <a id="Community_member_profile">
               <h3>
                 <Link to="/community/members">Community member profile</Link>
               </h3>
@@ -219,19 +235,15 @@ const CommunityGuide = () => {
         </Container>
         <div>
           <div className="intra-page">
-            <a href="#Community Guidelines" activeClassName="active">
-              Community Guidelines
-            </a>
-
-            <a href="#Recognitions" activeClassName="active">
-              Recognitions
-            </a>
-            <a href="#Membership" activeClassName="active">
-              Membership to the github
-            </a>
-            <a href="#Community_member_profile" activeClassName="active">
-              Community member profile
-            </a>
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

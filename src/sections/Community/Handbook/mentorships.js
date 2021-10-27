@@ -115,10 +115,9 @@ const MentorshipPrograms = () => {
           })}
           <TocPagination />
         </Container>
-
-        <div>
+        {/* <div>
           <div className="intra-page">
-            <a href="#top" activeClassName="active">
+            {/* <a href="#top" activeClassName="active">
               Google Season of Docs
             </a>
 
@@ -142,9 +141,9 @@ const MentorshipPrograms = () => {
             </a>
             <a href="#She Code Africa Contributhon" activeClassName="active">
               She Code Africa Contributhon
-            </a>
-          </div>
-        </div>
+            </a> */
+        /* </div>
+        </div> */}
       </ConductWrapper>
     </HandbookWrapper>
   );

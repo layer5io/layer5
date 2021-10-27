@@ -13,6 +13,19 @@ import docker_icon from "../../../assets/images/socialIcons/docker-light.svg";
 import slack_icon from "../../../assets/images/socialIcons/slack-light.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
+const content = [
+  {
+    id: 0,
+    link: "#Newsletter",
+    text: "Newsletter",
+  },
+  { id: 1, link: "#Mailing Lists", text: "Mailing Lists" },
+  { id: 2, link: "#Calendar", text: "Calendar" },
+  { id: 3, link: "#Slack Community", text: "Slack Community" },
+  { id: 4, link: "#Discussion Forum", text: "Discussion Forum" },
+  { id: 5, link: "#Social Media", text: "Social Media" },
+];
+
 const Connect = () => {
   return (
     <HandbookWrapper>
@@ -23,7 +36,7 @@ const Connect = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a name="Newsletter">
+            <a id="Newsletter">
               {" "}
               <h2>Subscribe to Newsletter</h2>{" "}
             </a>
@@ -46,7 +59,7 @@ const Connect = () => {
                 </a>
               </li>
             </ul>
-            <a name="Mailing Lists">
+            <a id="Mailing Lists">
               {" "}
               <h2>Mailing Lists</h2>{" "}
             </a>
@@ -126,7 +139,7 @@ const Connect = () => {
                 </a>
               </li>
             </ul>
-            <a name="Calendar">
+            <a id="Calendar">
               {" "}
               <h2>Calendar</h2>{" "}
             </a>
@@ -137,7 +150,7 @@ const Connect = () => {
                 community calendar .
               </a>
             </p>{" "}
-            <a name="Slack Community">
+            <a id="Slack Community">
               {" "}
               <h2>Slack Community</h2>{" "}
             </a>
@@ -222,7 +235,7 @@ const Connect = () => {
                 <a href="http://layer5.io/">Layer 5</a> project sites.
               </p>
             </div>
-            <a name="Discussion Forum">
+            <a id="Discussion Forum">
               {" "}
               <h2>Discussion Forum</h2>{" "}
             </a>
@@ -230,7 +243,7 @@ const Connect = () => {
               Join us on our service mesh community's{" "}
               <a href="https://discuss.layer5.io">Discussion Forum</a>
             </p>
-            <a name="Social Media">
+            <a id="Social Media">
               {" "}
               <h2>Social Media</h2>{" "}
             </a>
@@ -300,25 +313,15 @@ const Connect = () => {
 
         <div>
           <div className="intra-page">
-            <a href="#Newsletter" activeClassName="active">
-              Subscribe to Newsletter
-            </a>
-
-            <a href="#Mailing Lists" activeClassName="active">
-              Mailing Lists
-            </a>
-            <a href="#Calendar" activeClassName="active">
-              Calendar
-            </a>
-            <a href="#Slack Community" activeClassName="active">
-              Slack Community
-            </a>
-            <a href="#Discussion Forum" activeClassName="active">
-              Discussion Forum
-            </a>
-            <a href="#Social Media" activeClassName="active">
-              Social Media
-            </a>
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

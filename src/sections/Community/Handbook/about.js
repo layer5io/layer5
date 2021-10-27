@@ -7,8 +7,25 @@ import TOC from "../../../components/handbook-navigation/index";
 import longArrow from "../Newcomers-guide/long-arrow.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
+const content = [
+  { id: 0, link: "#About Layer5", text: "About Layer5" },
+  { id: 1, link: "#Goals", text: "Goals" },
+  {
+    id: 2,
+    link: "#Newcomer’s Path",
+    text: "Newcomer’s Path",
+  },
+  { id: 3, link: "#Working on your issue", text: "Working on your issue" },
+  {
+    id: 4,
+    link: "#While your issue is under review",
+    text: "While your issue is under review",
+  },
+];
+
 const Intro = () => {
   const [hover, setHover] = useState(false);
+
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -18,7 +35,7 @@ const Intro = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a name="About Layer5">
+            <a id="About Layer5">
               <h2>About Layer5</h2>
             </a>
             <p>
@@ -27,12 +44,14 @@ const Intro = () => {
               their maintainers in the world. Layer5 is the creator and
               maintainer of
               <Link to="../blog/announcements/a-standard-interface-for-service-meshes">
-                service mesh standards
+                {" "}
+                service mesh standards{" "}
               </Link>
-              and also the maker of <a href="https://meshery.io">Meshery</a>,
+              and also the maker of <a href="https://meshery.io">Meshery </a>,
               the
               <Link to="/service-mesh-management/meshery">
-                Service Mesh Management Plane
+                {" "}
+                Service Mesh Management Plane{" "}
               </Link>
               .<br />
               Layer5 is not just a company, we are also:
@@ -57,7 +76,7 @@ const Intro = () => {
               </a>
               .
             </p>
-            <a name="Goals">
+            <a id="Goals">
               {" "}
               <h2>Goals</h2>{" "}
             </a>
@@ -77,7 +96,7 @@ const Intro = () => {
               </li>
             </ul>
 
-            <a name="Newcomer’s Path">
+            <a id="Newcomer’s Path">
               {" "}
               <h2>Newcomer’s Path</h2>{" "}
             </a>
@@ -108,7 +127,7 @@ const Intro = () => {
               Guide, the following set of instructions are to encourage and
               support first-time (or near first-time) open-source contributors.
             </p>
-            <a name="How to contribute?">
+            <a id="How to contribute?">
               {" "}
               <h3>How to contribute?</h3>{" "}
             </a>
@@ -153,7 +172,7 @@ const Intro = () => {
                 </span>
               </li>
             </ol>
-            <a name="Working on your issue">
+            <a id="Working on your issue">
               {" "}
               <h3>Working on your issue</h3>{" "}
             </a>
@@ -181,7 +200,7 @@ const Intro = () => {
                 </span>
               </li>
             </ol>
-            <a name="While your issue is under review">
+            <a id="While your issue is under review">
               {" "}
               <h3>While your issue is under review</h3>{" "}
             </a>
@@ -208,27 +227,15 @@ const Intro = () => {
         </Container>
         <div>
           <div className="intra-page">
-            <a href="#About Layer5" activeClassName="active">
-              About Layer5
-            </a>
-            <a href="#Goals" activeClassName="active">
-              Goals
-            </a>
-            <a href="#Newcomer’s Path" activeClassName="active">
-              Newcomer’s Path
-            </a>
-            <a href="#How to contribute?" activeClassName="active">
-              How to contribute?
-            </a>
-            <a href="#Working on your issue" activeClassName="active">
-              Working on your issue
-            </a>
-            <a
-              href="#While your issue is under review"
-              activeClassName="active"
-            >
-              While your issue is under review
-            </a>
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

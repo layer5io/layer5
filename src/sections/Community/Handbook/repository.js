@@ -8,6 +8,27 @@ import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-b
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
+import { Link } from "gatsby";
+
+const content = [
+  {
+    id: 0,
+    link: "#top",
+    text: "GitHub Organizations and Repositories",
+  },
+  { id: 1, link: "#Frontend Projects", text: "Frontend Projects" },
+  { id: 2, link: "#Backend Projects", text: "Backend Projects" },
+  {
+    id: 3,
+    link: "#Installation Dedicated Repos",
+    text: "Installation Dedicated Repos",
+  },
+  {
+    id: 4,
+    link: "# Service Mesh Performance Repos",
+    text: " Service Mesh Performance Repos",
+  },
+];
 
 const Repository = () => {
   const data = React.useMemo(() => repo_data);
@@ -23,7 +44,7 @@ const Repository = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a name="top">
+            <a id="top">
               {" "}
               <h2>GitHub Organizations and Repositories</h2>{" "}
             </a>
@@ -90,7 +111,7 @@ const Repository = () => {
               </li>
             </ul>
 
-            <a name="Frontend Projects">
+            <a id="Frontend Projects">
               {" "}
               <h2>Frontend Projects</h2>{" "}
             </a>
@@ -141,7 +162,7 @@ const Repository = () => {
               );
             })}
 
-            <a name="Backend Projects">
+            <a id="Backend Projects">
               {" "}
               <h2>Backend Projects</h2>{" "}
             </a>
@@ -186,22 +207,15 @@ const Repository = () => {
 
         <div>
           <div className="intra-page">
-            <a href="#top" activeClassName="active">
-              GitHub Organizations and Repositories
-            </a>
-
-            <a href="#Frontend Projects" activeClassName="active">
-              Frontend Projects
-            </a>
-            <a href="#Backend Projects" activeClassName="active">
-              Backend Projects
-            </a>
-            <a href="#Installation Dedicated Repos" activeClassName="active">
-              Installation Dedicated Repos
-            </a>
-            <a href="#Service Mesh Performance Repos" activeClassName="active">
-              Service Mesh Performance Repos
-            </a>
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

@@ -5,6 +5,16 @@ import { Link } from "gatsby";
 import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
+const content = [
+  {
+    id: 0,
+    link: "#Learn",
+    text: "Learn",
+  },
+  { id: 1, link: "#Event", text: "Event" },
+  { id: 2, link: "#Blog", text: "Blog" },
+];
+
 const LearnLayer = () => {
   return (
     <HandbookWrapper>
@@ -16,7 +26,7 @@ const LearnLayer = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a name="Learn">
+            <a id="Learn">
               {" "}
               <h2>Learn</h2>{" "}
             </a>
@@ -53,7 +63,7 @@ const LearnLayer = () => {
               free for all.
             </p>
 
-            <a name="Events">
+            <a id="Events">
               {" "}
               <h2>Events</h2>{" "}
             </a>
@@ -72,7 +82,7 @@ const LearnLayer = () => {
               participate in any of the latest events.
             </p>
 
-            <a name="Blog">
+            <a id="Blog">
               {" "}
               <h2>Blog</h2>{" "}
             </a>
@@ -85,17 +95,16 @@ const LearnLayer = () => {
         </Container>
 
         <div>
-          <div className="intra-page">
-            <a href="#Learn" activeClassName="active">
-              Learn
-            </a>
-
-            <a href="#Events" activeClassName="active">
-              Events
-            </a>
-            <a href="#Blog" activeClassName="active">
-              Blog
-            </a>
+          <div className="intra-page learn">
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

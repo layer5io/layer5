@@ -6,6 +6,22 @@ import TOC from "../../../components/handbook-navigation/index";
 import { Link } from "gatsby";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
+const content = [
+  {
+    id: 0,
+    link: "#top",
+    text: "What does leadership mean to the Layer5 community?",
+  },
+  { id: 1, link: "#Community Manager", text: "Community Manager" },
+  { id: 2, link: "#MeshMate", text: "MeshMate" },
+  {
+    id: 3,
+    link: "#Maintainer",
+    text: "Maintainer",
+  },
+  { id: 4, link: "#Membership", text: "Membership to the github" },
+];
+
 const CommunityGuide = () => {
   return (
     <HandbookWrapper>
@@ -16,7 +32,7 @@ const CommunityGuide = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <a name="top">
+            <a id="top">
               {" "}
               <h2>What does leadership mean to the Layer5 community?</h2>{" "}
             </a>
@@ -28,7 +44,7 @@ const CommunityGuide = () => {
             </p>
             <h3>What does it take to be a leader?</h3>
 
-            <a name="Community Manager">
+            <a id="Community Manager">
               {" "}
               <h4>
                 <strong>Community Manager</strong>
@@ -96,7 +112,7 @@ const CommunityGuide = () => {
             </label>
             <br />
 
-            <a name="MeshMate">
+            <a id="MeshMate">
               {" "}
               <h4>
                 <strong>
@@ -222,19 +238,15 @@ const CommunityGuide = () => {
 
         <div>
           <div className="intra-page">
-            <a href="#top" activeClassName="active">
-              What does leadership mean to the Layer5 community?
-            </a>
-
-            <a href="#Community Manager" activeClassName="active">
-              Community Manager
-            </a>
-            <a href="#MeshMate" activeClassName="active">
-              MeshMate
-            </a>
-            <a href="#Maintainer" activeClassName="active">
-              Maintainer
-            </a>
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
