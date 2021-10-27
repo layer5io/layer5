@@ -13,7 +13,7 @@ const Meshmates=() => {
     graphql`query meshmates {
   allMdx(
     sort: {fields: [frontmatter___name], order: ASC}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}}}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}, emeritus: {ne: "yes"}}}
   ) {
     nodes {
       id
@@ -27,6 +27,7 @@ const Meshmates=() => {
         badges
         bio
         meshmate
+        emeritus
         image_path {
           childImageSharp {
             gatsbyImageData(width: 200, layout: CONSTRAINED)

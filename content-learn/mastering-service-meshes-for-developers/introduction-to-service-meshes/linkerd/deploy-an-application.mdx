@@ -1,7 +1,7 @@
 ---
 docType: "Chapter"
 chapterTitle: "Deploy a sample application"
-description: "Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
+description: "Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
 videos: 4
 lectures: 12
 order: 2
@@ -17,16 +17,16 @@ To play with Linkerd and demonstrate some of it's capabilities, you will deploy 
 <br />
 
 Emojivoto is a sample microservice application that allows users to vote for their favorite emoji.
-It displays votes received on a leaderboard. Emojivoto has no dependecies on Linkerd, but will run 
+It displays votes received on a leaderboard. Emojivoto has no dependecies on Linkerd, but will run
 fine either on or off the service mesh.
 
-A sidecar injector is used for automating the injection of the Linkerd proxy into your application's pod spec. The Kubernetes admission controller enforces this behavior send 
-sending a webhook request the the sidecar injector every time a pod is to be scheduled. This injector inspects resources for a Linkerd-specific annotation (linkerd.io/inject: enabled). 
+A sidecar injector is used for automating the injection of the Linkerd proxy into your application's pod spec. The Kubernetes admission controller enforces this behavior send
+sending a webhook request the the sidecar injector every time a pod is to be scheduled. This injector inspects resources for a Linkerd-specific annotation (linkerd.io/inject: enabled).
 When that annotation exists, the injector mutates the pod's specification and adds both an init container as well as a sidecar containing the proxy itself.
 
 The Linkerd sidecar proxy can be either manually or automatically injected into your application's pods. This can be done from the meshery dashboard for namespace globally by,
 
-1. Using Meshery, navigate to the Linkerd management page. 
+1. Using Meshery, navigate to the Linkerd management page.
 1. Click the (+) icon on the `Configure Application` card and select `Annotate Namespace` from the list.
 
 As part of Linkerd deployment in [Previous chapter](/learn/learning-paths/mastering-meshery-istio/introduction-to-service-meshes/linkerd/getting-started), you have deployed the sidecar injector.
@@ -90,9 +90,10 @@ Install emojivoto into the emojivoto namespace by running:
 curl -sL https://run.linkerd.io/emojivoto.yml \
   | kubectl apply -f -
 ```
-Before we mesh it, let's take a look at the app. 
+
+Before we mesh it, let's take a look at the app.
 If you're using Docker Desktop at this point you can visit http://localhost directly.
-If you're not using Docker Desktop, we'll need to forward the web-svc service. 
+If you're not using Docker Desktop, we'll need to forward the web-svc service.
 To forward web-svc locally to port 8080, you can run:
 
 ```sh
@@ -147,18 +148,20 @@ Linkerd, in contrast to Istio annotates the resources (namespaces, deployment wo
 
 <h3>Deploy EmojiVoto </h3>
 
-Applying this yaml file included in the Linkerd package you collected in https://run.linkerd.io/emojivoto.yml 
+Applying this yaml file included in the Linkerd package you collected in https://run.linkerd.io/emojivoto.yml
 will deploy the sample app into your cluster.
 
 ```sh
 kubectl apply -f https://run.linkerd.io/emojivoto.yml
 ```
 
-<h4 class="chapter-alt-heading">Inject Linkerd proxy into the sample application</h4>
+<h4 class="chapter-alt-heading">
+  Inject Linkerd proxy into the sample application
+</h4>
 
-The emojivoto application is a standalone Kubernetes application that uses a mix of gRPC and 
+The emojivoto application is a standalone Kubernetes application that uses a mix of gRPC and
 HTTP calls to allow the users to vote on their favorite emojis, which means the
-application can run standalone without support from linkerd service mesh. Now we will 
+application can run standalone without support from linkerd service mesh. Now we will
 be injecting linkerd into our sample application
 
 ```sh
@@ -179,12 +182,12 @@ spec:
 '
 ```
 
-Either of these commands retrieve all of the deployments running in the emojivoto namespace, runs the manifest 
+Either of these commands retrieve all of the deployments running in the emojivoto namespace, runs the manifest
 through linkerd inject, and then reapplies it to the cluster. The linkerd inject command adds annotations to the pod spec
 instructing Linkerd to add (“inject”) the proxy as a container to the pod spec.
 
-You've now added Linkerd to existing services! Just as with the control plane, it 
-is possible to verify that everything worked the way it should with the data plane. 
+You've now added Linkerd to existing services! Just as with the control plane, it
+is possible to verify that everything worked the way it should with the data plane.
 To do this check, run:
 
 ```sh
