@@ -11,6 +11,7 @@ const SubscribeLearnWrapper = styled.div`
   }
 
   p {
+    font-size: 0.9rem;
     margin: 0 0 1rem 0;
   }
 
@@ -40,10 +41,6 @@ const SubscribeLearnWrapper = styled.div`
       max-width: 95%;
       margin-left: 2.5%;
       margin-right: 2.5%;
-    }
-
-    p {
-      font-size: 0.9rem;
     }
   }
 `;
