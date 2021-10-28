@@ -11,7 +11,6 @@ const SubscribeLearnWrapper = styled.div`
   }
 
   p {
-    font-size: 0.75rem;
     margin: 0 0 1rem 0;
   }
 
@@ -28,6 +27,24 @@ const SubscribeLearnWrapper = styled.div`
     display: flex;
     justify-content: center;
     gap: 5px;
+  }
+
+  .subscriptionText {
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  @media only screen and (max-width: 496px) {
+    .subscriptionText {
+      max-width: 95%;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
   }
 `;
 

@@ -15,10 +15,12 @@ const SubscribeLearnPath = () => {
           <div>
             <span>
               <h2>Stay meshy!</h2>
-              <p>
-                Subscribe to our newsletter to receive updates on new learning
-                paths, courses, and more.
-              </p>
+              <div className="subscriptionText">
+                <p>
+                  Subscribe to our newsletter to receive updates on new learning
+                  paths, courses, and more.
+                </p>
+              </div>
             </span>
             <div className="subscribe">
               <input
