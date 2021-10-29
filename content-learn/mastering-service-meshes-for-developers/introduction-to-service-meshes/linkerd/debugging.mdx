@@ -1,7 +1,7 @@
 ---
 docType: "Chapter"
 chapterTitle: "Debugging (Optional)"
-description: "Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
+description: "Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
 videos: 4
 lectures: 12
 order: 5
@@ -22,9 +22,7 @@ Let's jump into debugging the Emojivoto application right away.
 
 <br />
 
-<h3 class="chapter-sub-heading">
-  Exploring the Linkerd Dashboard
-</h3>
+<h3 class="chapter-sub-heading">Exploring the Linkerd Dashboard</h3>
 
 In the event that you look at the Linkerd dashboard (by running the `linkerd dashboard` command), you should see all the resources in the emojivoto namespace, including the deployments. Every deployments running Linkerd shows success rate, requests per second and latency percentiles. If you see closely, you will observe success rate is below 100% because of some buggy endpoint present in the service.
 

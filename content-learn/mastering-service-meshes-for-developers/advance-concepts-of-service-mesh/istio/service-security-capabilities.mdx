@@ -1,7 +1,7 @@
 ---
 docType: "Chapter"
 chapterTitle: "Service security capabilities"
-description: "Meshery is the service mesh managemen plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
+description: "Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads."
 videos: 4
 lectures: 12
 order: 6
@@ -11,9 +11,7 @@ import { ChapterStyle } from "../../../../src/components/Learn-Components/Chapte
 
 <ChapterStyle>
 
-<h2 class="chapter-sub-heading">
-  Access Control
-</h2>
+<h2 class="chapter-sub-heading">Access Control</h2>
 
 You will start by denying all traffic.
 
@@ -117,15 +115,11 @@ spec:
       to:
         - operation:
             methods: ["GET", "POST"]
-
 ```
 
-<h3 class="chapter-sub-heading">
-  Allow per user access
-</h3>
+<h3 class="chapter-sub-heading">Allow per user access</h3>
 
 ```yaml
-
 ---
 apiVersion: "security.istio.io/v1beta1"
 kind: "AuthorizationPolicy"
@@ -218,17 +212,13 @@ spec:
 
 ```
 
-<h2 class="chapter-sub-heading">
-  Identity Verfification
-</h2>
+<h2 class="chapter-sub-heading">Identity Verfification</h2>
 
 Note: this lab uses the sample application HTTPbin.
 
 Using Meshery, deploy the HTTPbin sample application.
 
-<h3 class="chapter-sub-heading">
-  Add Claims
-</h3>
+<h3 class="chapter-sub-heading">Add Claims</h3>
 
 ```yaml
 apiVersion: security.istio.io/v1beta1
@@ -249,12 +239,9 @@ spec:
       when:
         - key: request.auth.claims[groups]
           values: ["group1"]
-
 ```
 
-<h3 class="chapter-sub-heading">
-  Def
-</h3>
+<h3 class="chapter-sub-heading">Def</h3>
 
 ```yaml
 apiVersion: "security.istio.io/v1beta1"
@@ -269,12 +256,9 @@ spec:
   jwtRules:
     - issuer: "testing@secure.istio.io"
       jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.7/security/tools/jwt/samples/jwks.json"
-
 ```
 
-<h2 class="chapter-sub-heading">
-  Mutual TLS
-</h2>
+<h2 class="chapter-sub-heading">Mutual TLS</h2>
 
 Using Meshery, you can change mTLS enforcement for a namespace.
 
@@ -295,7 +279,6 @@ spec:
   # portLevelMtls:
   #   80:
   #     mode: DISABLE
-
 ```
 
 </ChapterStyle>
