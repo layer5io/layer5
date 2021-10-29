@@ -25,7 +25,7 @@ import smidashboard from "./smi-conformance-result.png"
 <p>Let’s examine what each specification provides.</p>
 <p>The <Link to="https://smi-spec.io">Service Mesh Interface</Link> specification provides a standard interface for service meshes on Kubernetes. These (currently) four specfications offer a common denominator set of interfaces to support most common service mesh use cases and the flexibility to evolve to support new service mesh capabilities over time.</p>
 <p>The <Link to="https://smp-spec.io">Service Mesh Performance</Link> specification standardizes service mesh value measurement, characterizing any deployment's performance by capturing the details of infrastructure capacity, service mesh configuration and workload metadata.</p>
-<p>Meshery implements both of these service mesh specifications. As a service mesh agnostic tool that provides lifecycle and performance management of a large number (10+) service meshes, sample applications, service mesh patterns and WebAssembly filters, Meshery is the ideal tool for the job when it comes to implementing these specifications.</p>
+<p>As a service mesh agnostic tool that provides lifecycle and performance management of a large number of (10+) service meshes, sample applications, service mesh patterns and WebAssembly filters, Meshery is the ideal tool for the job when it comes to implementing these specifications.</p>
 <p>Meshery also comes with 2 new GitHub Actions that do exactly this. The <Link to="https://github.com/layer5io/meshery-smi-conformance-action">Meshery SMI Conformance Action</Link> which <Link to="https://meshery.io/blog/validating-smi-conformance-with-meshery">validates SMI conformance</Link> in your pipeline and the <Link to="https://github.com/layer5io/meshery-smp-action">Meshery SMP Action</Link> which runs <Link to="https://docs.meshery.io/functionality/performance-management">SMP compatible performance benchmarks</Link>.</p>
 <p>But how do we use these actions? What do they offer? Let’s find out!</p>
 
@@ -118,7 +118,7 @@ jobs:
   </div>
 </div>
 
-<p>Participating service mesh projects can also <Link to="https://docs.meshery.io/functionality/service-mesh-interface#reporting-conformance">automatically report their conformance test results</Link> to the <Link to="https://meshery.io/service-mesh-interface">SMI Conformance dashboard</Link> automatically.</p>
+<p>Participating service mesh projects can also <Link to="https://docs.meshery.io/functionality/service-mesh-interface#reporting-conformance">automatically report their conformance test results</Link> to the <Link to="https://meshery.io/service-mesh-interface">SMI Conformance dashboard</Link></p>
 
 <h2>Meshery SMP Action</h2>
 
