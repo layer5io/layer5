@@ -90,7 +90,7 @@ const Connect= () => {
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={youtube_icon} alt="youtube" />&nbsp;&nbsp;
-                <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA">Subscribe on Youtube</a>
+                <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1">Subscribe on Youtube</a>
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={github_icon} alt="github" />&nbsp;&nbsp;
