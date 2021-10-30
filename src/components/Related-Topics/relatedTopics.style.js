@@ -75,43 +75,43 @@ const RelatedTopicsWrapper = styled.div`
         color: ${props => props.theme.secondaryColor};
     }
 
-    .post-meta-block{
+    .topic-meta-block{
         text-align: left;
     }
 
-    .post-content-block{
+    .topic-content-block{
         height: 10rem;
 
-        .post-title {
+        .topic-title {
             text-align: left;
         }
     }
 
-    .allBlogs{
+    .allTopics{
         height: 22rem;
     }
 
     @media screen and (min-width: 1200px) {
-        .post-content-block {
+        .topic-content-block {
             height: 8rem;
         }
 
-        .allBlogs{
+        .allTopics{
             height: 19.5rem;
         }
     }
 
     @media screen and (max-width: 720px) and (min-width: 385px){
-        .post-content-block{
+        .topic-content-block{
             height: 8rem;
         }
 
-        .allBlogs{
+        .allTopics{
             height: 19.5rem;
         }
     }
 
-    .allBlogs_card{
+    .allTopics_card{
         display: inline-block;
         height: inherit;
         width: inherit;

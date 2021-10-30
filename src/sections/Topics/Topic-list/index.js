@@ -20,8 +20,8 @@ const TopicList = ({
   const tag = pageContext.tag ? pageContext.tag : null;
   const { totalCount, nodes } = data.allMdx;
   const header = tag
-    ? `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
-    : category ? `${totalCount} post${totalCount === 1 ? "" : "s"} categorized as "${category}"`: "Topic";
+    ? `${totalCount} topic${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
+    : category ? `${totalCount} topic${totalCount === 1 ? "" : "s"} categorized as "${category}"`: "Topic";
 
   return (
     <TopicPageWrapper>

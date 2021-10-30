@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 const TopicPageWrapper = styled.div`
 
-    .single-post-wrapper{
+    .single-topic-wrapper{
         margin-bottom: 4rem;
     }
 
-    .post-info-block{
+    .topic-info-block{
         margin-top: 3rem;
         border-bottom: 1px solid #e5e5e5;
         padding-bottom: 2rem;

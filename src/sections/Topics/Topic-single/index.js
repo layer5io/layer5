@@ -41,9 +41,9 @@ const TopicSingle = ({data}) => {
 `
   );
   
-  const posts = topicData.allMdx.nodes;
+  const topics = topicData.allMdx.nodes;
   const relatedTopics = new RelatedTopicsFactory (
-    posts, fields.slug
+    topics, fields.slug
   ).setMaxTopics(6)
     .setCategory(frontmatter.category)
     .setTags(frontmatter.tags)
@@ -55,15 +55,15 @@ const TopicSingle = ({data}) => {
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
         category={frontmatter.category}
-        author={{ name: frontmatter.author }}
+
         thumbnail={frontmatter.thumbnail}
       />
-      <div className="single-post-wrapper">
+      <div className="single-topic-wrapper">
         <Container>
           <SRLWrapper>
             <MDXRenderer>{body}</MDXRenderer>
           </SRLWrapper>
-          <div className="post-info-block">
+          <div className="topic-info-block">
             <div className="tags">
               <span>Tags:</span>
               <div>
@@ -76,7 +76,7 @@ const TopicSingle = ({data}) => {
             </div>
           </div>
           <RelatedTopics
-            postType="topics"
+            topicType="topics"
             relatedTopics={relatedTopics}
             mainHead="Related Topics" 
             lastCardHead="All Topics" 

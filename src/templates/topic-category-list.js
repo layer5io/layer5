@@ -47,8 +47,7 @@ const TopicListPage = ({ pageContext, data }) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Topic" description="Articles how to service mesh from the world's largest service mesh community.
-              Service mesh how-tos and cloud native ecosystem news." />
+      <SEO title="Cloud Native Resources by Topic" description="Articles on how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news." />
       <Navigation />
       <TopicList data={data} pageContext={pageContext} />
       <Footer />

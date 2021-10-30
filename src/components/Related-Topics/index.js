@@ -42,8 +42,8 @@ const RelatedTopics = props => {
                       );
                     })
                   }
-                  <Col xs={12} lg={12} className="allBlogs">
-                    <div className="allBlogs_card">
+                  <Col xs={12} lg={12} className="allTopics">
+                    <div className="allTopics_card">
                       <Link to={linkToAllItems}>
                         <h2>{lastCardHead}</h2>
                         <IoIosArrowRoundForward/>
