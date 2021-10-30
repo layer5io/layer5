@@ -272,15 +272,10 @@ const Connect = () => {
                 <a href="mailto:community@layer5.io">community@layer5.io</a>
               </p>
               <p className="channels-para">
-                <img
-                  className="channels-img"
-                  src={youtube_icon}
-                  alt="youtube"
-                />
-                &nbsp;&nbsp;
-                <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA">
-                  Subscribe on Youtube
-                </a>
+
+                <img className="channels-img" src={youtube_icon} alt="youtube" />&nbsp;&nbsp;
+                <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1">Subscribe on Youtube</a>
+
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={github_icon} alt="github" />
