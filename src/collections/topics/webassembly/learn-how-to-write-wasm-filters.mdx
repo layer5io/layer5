@@ -1,5 +1,6 @@
 ---
 title: "Learn How to Write WebAssembly Filters"
+subtitle: ""
 date: 2021-10-01 08:00:00 +0000
 author: Contributor
 thumbnail: ./webassembly-logo-horizontal.png
@@ -13,12 +14,12 @@ published: true
 
 import { Link } from "gatsby";
 import wasmLogo from "./webassembly-logo-horizontal.png";
-import { BlogWrapper } from "../Blog.style.js";
+import { TopicsWrapper } from "../Topics.style.js";
 
-<BlogWrapper>
+<TopicsWrapper>
   <div className="intro">
     <p>Learn more about WebAssembly's use within service mesh data planes in
-      <Link className="blog" to="/learn/books">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource for anyone looking to understand WASM filters, Lua scripts, and other options available for extending the data plane.</p>
+      <Link className="Topics" to="/learn/books">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource for anyone looking to understand WASM filters, Lua scripts, and other options available for extending the data plane.</p>
   </div>
 
 <p>
@@ -63,4 +64,4 @@ Envoy provides the ability to integrate additional filters by either:
 Envoy configuration is initialized via bootstrap on startup. Envoy’s xDS APIs allow configuration to be loaded and reloaded dynamically during runtime. Envoy configuration has different sections (e.g. LDS which is for configuring Listeners and CDS which is for configuring clusters). Each of the sections can configure WASM plugins (programs).
 </p>
 
-</BlogWrapper>
+</TopicsWrapper>
