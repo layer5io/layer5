@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import github from "../../../assets/images/socialIcons/github.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import layer5icon from "../../../assets/images/layer5/5 icon/svg/dark/5-dark-bg.svg";
+import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import hawkIcon from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
 import meshmateicon from "../../../assets/images/meshmate/meshmate-icon.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
@@ -25,7 +25,7 @@ const Maintainer = () => {
             <p>
               <h3>
                 <a href="https://layer5.io/">
-                  <img className="h-icon" src={layer5icon} alt="Layer5" />
+                  <img className="project-title-icon" src={layer5icon} alt="Layer5" />
 									&nbsp; Layer5{" "}
                 </a>
               </h3>
@@ -33,8 +33,8 @@ const Maintainer = () => {
             <p>
 							Its service mesh community represents the largest collection of
 							service Mesh projects.Emerging projects like GetNighthawk{" "}
-              <img className="p-icon" src={hawkIcon} /> , community with{" "}
-              <img className="p-icon" src={meshmateicon} /> MeshMates, catch-all
+              <img className="project-description-icon" src={hawkIcon} /> , community with{" "}
+              <img className="project-description-icon" src={meshmateicon} /> MeshMates, catch-all
 							org, “home base”. <br />
               <ul>
                 <li>
@@ -83,15 +83,15 @@ const Maintainer = () => {
             <p>
               <h3>
                 <a href="https://layer5.io/service-mesh-management/meshery">
-                  <img className="h-icon" src={meshery} alt="Meshery" />
+                  <img className="project-title-icon" src={meshery} alt="Meshery" />
 									&nbsp; Meshery
                 </a>
               </h3>
             </p>
             <p>
 							Meshery and its components Meshery Operator{" "}
-              <img className="p-icon" src={mesheryoperatoricon} /> and MeshSync{" "}
-              <img className="p-icon" src={mesherysyncicon} />
+              <img className="project-description-icon" src={mesheryoperatoricon} /> and MeshSync{" "}
+              <img className="project-description-icon" src={mesherysyncicon} />
               <ul>
                 <li>
                   <h4>
@@ -133,7 +133,7 @@ const Maintainer = () => {
             <h3>
               <a href="https://smp-spec.io/">
                 <img
-                  className="h-icon"
+                  className="project-title-icon"
                   alt="service mesh performance"
                   src={servicemeshperformance}
                 />
@@ -154,7 +154,7 @@ const Maintainer = () => {
               <h3>
                 <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
                   <img
-                    className="h-icon"
+                    className="project-title-icon"
                     alt="service mesh patterns"
                     src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
                   />{" "}

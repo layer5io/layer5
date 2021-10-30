@@ -175,14 +175,17 @@ export const HandbookWrapper = styled.div`
       border-color: ${(props) => props.theme.secondaryLightColor};
     }
     
-    .p-icon{
-      width: 20px;
+    .project-description-icon{
+      width: 3%;
+      transform : translate(0,25%);
+      margin: 0 0.3%;
     }
 
-    .h-icon{
+    .project-title-icon{
       margin-left:"10%";
-      width: 30px;
+      width: 4%;
       align: left;
+      transform : translate(0,28%);
     }
 
     
@@ -201,9 +204,9 @@ export const HandbookWrapper = styled.div`
 
     @media only screen and (max-width: 475px){
       .page-header-section h1{
-          padding: 0 1rem;
-          line-height: 3rem;
-          padding-top: 4rem;
+        padding: 0 1rem;
+        line-height: 3rem;
+        padding-top: 4rem;
       }
       .page-section{
         margin-top: -2rem;
@@ -217,13 +220,42 @@ export const HandbookWrapper = styled.div`
       }
       
     }
-
-    @media only screen and (max-width: 370px){
-      .p-icon{
-        width:11%;
+   
+    @media only screen and (max-width: 1024px){
+      .project-title-icon{
+        width:5.5%;
+        transform : translate(0,23%);
       }
-      .h-icon{
-        width:14%;
+      .project-description-icon{
+        width:4%;
+      }
+      
+    }
+    @media only screen and (max-width: 768px){
+      .project-title-icon{
+        width:8.5%;
+      }
+      .project-description-icon{
+        width:7%;
+      }
+      
+    }
+    @media only screen and (max-width: 425px){
+      .project-title-icon{
+        width:11%;
+        transform: translate(0,25%)
+      }
+      .project-description-icon{
+        width:8%;
+      }
+    }
+    @media only screen and (max-width: 375px){
+      .project-title-icon{
+        width:13%;
+        transform : translate(0,20%)
+      }
+      .project-description-icon{
+        width:10%;
       }
     }
 
