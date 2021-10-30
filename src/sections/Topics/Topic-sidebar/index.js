@@ -98,7 +98,7 @@ const Sidebar = ( ) => {
         <ul>
           { tags && tags.map(tag => (
             <li key={tag.fieldValue}>
-              <Link to={`/topics/tag/${slugify(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
+              <Link to={`/topic/tag/${slugify(tag.fieldValue)}`}>{tag.fieldValue} ({tag.totalCount})</Link>
             </li>
           ))}
         </ul>
