@@ -9,5 +9,5 @@ export const content = [
   { id: 7, link: "/community/handbook/learn-layer5", text: "Learn Layer5" },
   { id: 8, link: "/community/handbook/connect-with-us", text: "Connect with us" },
   { id: 9, link: "/community/handbook/code-of-conduct", text: "Code of Conduct" },
-  { id: 10, link: "/community/faq", text: "FAQs" },
+  { id: 10, link: "/community/handbook/faq", text: "FAQs" },
 ];
