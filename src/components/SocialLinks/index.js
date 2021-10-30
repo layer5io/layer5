@@ -44,7 +44,7 @@ const SocialLinks = () => {
           </a>
           <a
             className="youtube_icon"
-            href="https://www.youtube.com/c/Layer5io?sub_confirmation=1?sub_confirmation=1"
+            href="https://www.youtube.com/c/Layer5io?sub_confirmation=1"
             target="_blank"
             rel="noreferrer"
           >
