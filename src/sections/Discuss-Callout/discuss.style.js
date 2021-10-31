@@ -76,6 +76,44 @@ const DiscussWrapper = styled.div`
         transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
         cursor: pointer;
     }
+    @media only screen and (max-width: 1200px){
+        .explain-1 {
+            .cards {
+                padding: 1rem 0.5rem; 
+                .card {
+                    h2 {
+                        font-size: 25px;
+                    }
+                    p {
+                        font-size: 15px
+                    }
+                }
+            }
+        }
+        .logo {
+            height: 1.8rem;
+            width: auto;  
+        }
+    }
+    @media only screen and (max-width: 1100px){
+        .explain-1 {
+            .cards {
+                padding: 1rem 0.5rem;
+                .card {
+                    h2 {
+                        font-size: 22px;
+                    }
+                    p {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .logo{
+            height: 1.7rem;
+            width: auto;  
+        }
+    }
     @media only screen and (max-width: 450px){
         .explain-1 {
             .cards {
