@@ -83,7 +83,7 @@ const Meshmates=() => {
           <Row Vcenter>
             <Col sm={12} lg={6}>
               <h2> Meeting Your MeshMate </h2>
-              <p> Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted and onboarding into the community, we suggest the following goals: </p>
+              <p>After pairing up on the <a href="https://discuss.layer5.io/c/community/12">Layer5 discussion forum</a>, the community Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted and onboarding into the community, we suggest the following goals: </p>
               <table>
                 <tr>
                   <td className="icon"><img alt="icon" src={c_icon} /></td>
