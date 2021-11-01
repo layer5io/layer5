@@ -83,6 +83,7 @@ const DiscussWrapper = styled.div`
                 .card {
                     h2 {
                         font-size: 25px;
+                        line-height: 35px;
                     }
                     p {
                         font-size: 15px
@@ -102,15 +103,20 @@ const DiscussWrapper = styled.div`
                 .card {
                     h2 {
                         font-size: 22px;
+                        line-height: 32px;
                     }
                     p {
                         font-size: 13px;
+                        line-height: 23px;
                     }
                 }
             }
+            button {
+                padding: 0;
+            }
         }
         .logo{
-            height: 1.7rem;
+            height: 1.4rem;
             width: auto;  
         }
     }
