@@ -63,7 +63,7 @@ const MembersGrid = (props) => {
                 </Link>
                 ,{" "}
                 <Link to='https://getnighthawk.dev/'>
-                GetNighthawk
+                Nighthawk
                 </Link>
                 , and{" "}
                 <Link to='https://www.linkedin.com/showcase/service-mesh-performance'>

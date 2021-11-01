@@ -3,7 +3,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import github from "../../../assets/images/socialIcons/github.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/dark/5-dark-bg.svg";
-import hawkIcon from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import hawkIcon from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import meshmateicon from "../../../assets/images/meshmate/meshmate-icon.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import mesheryoperatoricon from "../../../assets/images/meshery-operator/meshery-operator.svg";
@@ -37,7 +37,7 @@ const Maintainer = () => {
             </p>
             <p>
               Its service mesh community represents the largest collection of
-              service Mesh projects.Emerging projects like GetNighthawk{" "}
+              service Mesh projects.Emerging projects like Nighthawk{" "}
               <img width="2.5%" src={hawkIcon} /> , community with{" "}
               <img width="2.5%" src={meshmateicon} /> MeshMates, catch-all org,
               “home base”. <br />
@@ -70,8 +70,8 @@ const Maintainer = () => {
                 </p>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/projects/getnighthawk">
-                      GetNightHawk :
+                    <a href="https://layer5.io/projects/nighthawk">
+                      NightHawk :
                     </a>
                   </h4>{" "}
                 </li>
