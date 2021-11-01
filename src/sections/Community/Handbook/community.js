@@ -11,7 +11,7 @@ import ImageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg"
 import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
-import GetNightHawkLogo from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import NightHawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const badgeStyle = {
@@ -179,8 +179,8 @@ const CommunityGuide = () => {
                 Service Mesh Performance
               </li>
               <li>
-                <img src={GetNightHawkLogo} style={badgeStyle} />
-                GetNighthawk
+                <img src={NightHawkLogo} style={badgeStyle} />
+                Nighthawk
               </li>
               <li>
                 <img src={PatternsLogo} style={badgeStyle} />
