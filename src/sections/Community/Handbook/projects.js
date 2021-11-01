@@ -130,16 +130,19 @@ const Maintainer = () => {
                 </p>
               </ul>
             </p>
-            <h3>
-              <a href="https://smp-spec.io/">
-                <img
-                  className="project-title-icon"
-                  alt="service mesh performance"
-                  src={servicemeshperformance}
-                />
-								&nbsp; Service Mesh Performance{" "}
-              </a>
-            </h3>
+
+            <p>
+              <h3 style = {{ margin : "2% 0%"}}>
+                <a href="https://smp-spec.io/">
+                  <img
+                    className="project-title-icon"
+                    alt="service mesh performance"
+                    src={servicemeshperformance}    
+                  />
+                  &nbsp; Service Mesh Performance{" "}
+                </a>
+              </h3>
+            </p>
             <p>
               <a href="https://layer5.io/projects/service-mesh-performance">
 								The Service Mesh Performance (SMP)
@@ -151,7 +154,7 @@ const Maintainer = () => {
             </p>
 
             <p>
-              <h3>
+              <h3 style = {{ margin : "2% 0%"}} >
                 <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
                   <img
                     className="project-title-icon"
