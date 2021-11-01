@@ -14,6 +14,22 @@ import ServiceMeshPerformance from "../../../assets/images/service-mesh-performa
 import GetNightHawkLogo from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
+const content = [
+  { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
+  { id: 1, link: "#Recognitions", text: "Recognition" },
+  {
+    id: 2,
+    link: "#Newcomer’s Path",
+    text: "Newcomer’s Path",
+  },
+  { id: 3, link: "#Membership", text: "Membership to the github" },
+  {
+    id: 4,
+    link: "#Community_member_profile",
+    text: "Community member profile",
+  },
+];
+
 const badgeStyle = {
   height: "25px",
   width: "25px",
@@ -38,7 +54,9 @@ const CommunityGuide = () => {
         <Container>
           <div className="content">
             {" "}
-            <h2 id="communityGuidelines">Community Guidelines</h2>{" "}
+            <a id="Community Guidelines">
+              <h2 id="communityGuidelines">Community Guidelines</h2>
+            </a>
             <p>
               Welcome to the Layer5 community! We’re happy to have you here and
               handhold you for your first contribution. Here are some tips to
@@ -144,7 +162,10 @@ const CommunityGuide = () => {
                 </li>
               </ul>
             </p>
-            <h3 style={recognitionsstyle}>Recognitions</h3> <h4>Badges</h4>
+            <a id="Recognitions">
+              <h3 style={recognitionsstyle}>Recognitions</h3>
+            </a>
+            <h4>Badges</h4>
             <p>
               As you continue your contributions to this community, you stand a
               chance to receive a badge in acknowledgement of your engagement
@@ -186,8 +207,10 @@ const CommunityGuide = () => {
                 <img src={PatternsLogo} style={badgeStyle} />
                 Patterns
               </li>
-            </ul>{" "}
-            <h3>Membership to the github orgs</h3>{" "}
+            </ul>
+            <a id="Membership">
+              <h3>Membership to the github orgs</h3>
+            </a>
             <p>
               As you continue making your contributions to Layer5 projects, you
               will be given an invite to the github org for the project you have
@@ -195,9 +218,11 @@ const CommunityGuide = () => {
               four github orgs of Layer5 depending on the number of
               contributions you make.
             </p>
-            <h3>
-              <Link to="/community/members">Community member profile</Link>
-            </h3>
+            <a id="Community_member_profile">
+              <h3>
+                <Link to="/community/members">Community member profile</Link>
+              </h3>
+            </a>
             <p>
               Once a contributor joins the Layer5 community by filling in the
               community member form, they are automatically classified as
@@ -206,8 +231,21 @@ const CommunityGuide = () => {
               can find out more about the Members profile on the Layer5 website.
             </p>
           </div>
+          <TocPagination />
         </Container>
-        <TocPagination />
+        <div>
+          <div className="intra-page">
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </HandbookWrapper>
   );
