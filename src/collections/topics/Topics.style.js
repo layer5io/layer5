@@ -7,6 +7,37 @@ export const TopicsWrapper = styled.div`
     top: -10px;
   }
 
+  div.fact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: ${props => props.theme.secondaryColor};
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: right;
+    border-right: 4px solid ${props => props.theme.secondaryColor};        
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+div.fact-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: ${props => props.theme.secondaryColor};
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: left;
+  border-left: 4px solid ${props => props.theme.secondaryColor};        
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 
   div.intro {
     padding-left: 3rem;
@@ -174,17 +205,61 @@ export const TopicsWrapper = styled.div`
     width: 28%;
   }
   img.right {
-    width: 25%;
+    width: 40%;
     display: inline;
     position: relative;
     float: right;
   }
   img.left {
-    width: 25%;
+    width: 40%;
     display: inline;
     position: relative;
     float: left;
     margin: 1rem 1rem 1rem 0rem;
+  }
+  .left {
+    width: 40%;
+    display: inline;
+    position: relative;
+    float: left;
+    margin: 1rem 1rem 1rem 0rem;
+    p{
+      font-size: 0.9rem;
+      font-weight: 15;
+      text-align: center;
+    }
+    img:hover{
+      cursor:pointer;
+    }
+  }
+  .center {
+    width: 60%;
+    position: relative;
+    float: center;
+    margin: 1rem auto 1rem auto;
+    p{
+      font-size: 0.9rem;
+      font-weight: 15;
+      text-align: center;
+    }
+    img:hover{
+      cursor:pointer;
+    }
+  }
+  .right {
+    width: 40%;
+    display: inline;
+    position: relative;
+    float: right;
+    margin: 1rem 0 0 1rem;
+    p{
+      font-size: 0.9rem;
+      font-weight: 15;
+      text-align: center;
+    }
+    img:hover{
+      cursor:pointer;
+    }
   }
   div.intro {
     padding-left: 3rem;
@@ -194,27 +269,6 @@ export const TopicsWrapper = styled.div`
     border-bottom: 1px dashed ${(props) => props.theme.primaryLightColor};
   }
 
-  /* ==============
-styles for meshmate-of-the-year-2020 
-=======================*/
-
-  @media screen and (min-width: 768px) {
-    .responsive-blog {
-      display: flex;
-    }
-  }
-
-  .meshmate-img {
-    width: 100%;
-    margin: auto;
-  }
-
-  @media screen and (min-width: 768px) {
-    .meshmate-img {
-      width: 40%;
-      margin: auto;
-    }
-  }
 
   /* ==============
   styles for service-mesh-specifications 

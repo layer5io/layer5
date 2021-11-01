@@ -69,7 +69,7 @@ const TopicSingle = ({data}) => {
               <div>
                 {frontmatter.tags && frontmatter.tags.map(tag => (
                   <Link key={`${frontmatter.title}-${tag}`}
-                    to={`/topics/tag/${slugify(tag)}`}>{tag}
+                    to={`/topic/tag/${slugify(tag)}`}>{tag}
                   </Link>
                 ))}
               </div>
