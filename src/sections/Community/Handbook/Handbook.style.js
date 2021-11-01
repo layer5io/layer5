@@ -267,6 +267,9 @@ export const HandbookWrapper = styled.div`
     flex-direction: column;
     overflow:hidden;
     
+
+
+    
     .active{
       font-weight:5000;
       color: ${(props) => props.theme.secondaryColor};
