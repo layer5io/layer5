@@ -3,9 +3,24 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
+const content = [
+  {
+    id: 0,
+    link: "#top",
+    text: "What does leadership mean to the Layer5 community?",
+  },
+  { id: 1, link: "#Community Manager", text: "Community Manager" },
+  { id: 2, link: "#MeshMate", text: "MeshMate" },
+  {
+    id: 3,
+    link: "#Maintainer",
+    text: "Maintainer",
+  },
+  { id: 4, link: "#Membership", text: "Membership to the github" },
+];
 
 const CommunityGuide = () => {
   return (
@@ -17,7 +32,10 @@ const CommunityGuide = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>What does leadership mean to the Layer5 community?</h2>
+            <a id="top">
+              {" "}
+              <h2>What does leadership mean to the Layer5 community?</h2>{" "}
+            </a>
 
             <p>
               A leader is someone who can contribute to the Layer5 Community's
@@ -26,9 +44,12 @@ const CommunityGuide = () => {
             </p>
             <h3>What does it take to be a leader?</h3>
 
-            <h4>
-              <strong>Community Manager</strong>
-            </h4>
+            <a id="Community Manager">
+              {" "}
+              <h4>
+                <strong>Community Manager</strong>
+              </h4>{" "}
+            </a>
 
             <p>
               Roles/Responsibilities: <br />A Community Manager is a person who
@@ -91,11 +112,14 @@ const CommunityGuide = () => {
             </label>
             <br />
 
-            <h4>
-              <strong>
-                <Link to="/community/meshmates">MeshMate</Link>
-              </strong>
-            </h4>
+            <a id="MeshMate">
+              {" "}
+              <h4>
+                <strong>
+                  <Link to="/community/meshmates">MeshMate</Link>
+                </strong>
+              </h4>{" "}
+            </a>
 
             <p>
               <strong> Roles/Responsibilities: </strong>
@@ -118,9 +142,12 @@ const CommunityGuide = () => {
               </ul>
             </p>
 
-            <h4>
-              <strong>Maintainer</strong>
-            </h4>
+            <a name="Maintainer">
+              {" "}
+              <h4>
+                <strong>Maintainer</strong>
+              </h4>{" "}
+            </a>
 
             <p>
               Roles/Responsibilities:
@@ -206,8 +233,22 @@ const CommunityGuide = () => {
               Understands the workflow of the Issues and Pull Requests
             </label>
           </div>
+          <TocPagination />
         </Container>
-        <TocPagination />
+
+        <div>
+          <div className="intra-page">
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </HandbookWrapper>
   );

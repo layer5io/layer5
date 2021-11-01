@@ -7,9 +7,25 @@ import TOC from "../../../components/handbook-navigation/index";
 import longArrow from "../Newcomers-guide/long-arrow.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
+const content = [
+  { id: 0, link: "#About Layer5", text: "About Layer5" },
+  { id: 1, link: "#Goals", text: "Goals" },
+  {
+    id: 2,
+    link: "#Newcomer’s Path",
+    text: "Newcomer’s Path",
+  },
+  { id: 3, link: "#Working on your issue", text: "Working on your issue" },
+  {
+    id: 4,
+    link: "#While your issue is under review",
+    text: "While your issue is under review",
+  },
+];
 
 const Intro = () => {
   const [hover, setHover] = useState(false);
+
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -18,27 +34,53 @@ const Intro = () => {
       <TOC />
       <div className="page-section">
         <Container>
-
           <div className="content">
-            <h2>About Layer5</h2>
+            <a id="About Layer5">
+              <h2>About Layer5</h2>
+            </a>
             <p>
-              Layer5 is a community and open-source-centered service mesh company, representing the largest collection of service meshes and their maintainers in the world.
-              Layer5 is the creator and maintainer of <Link to="../blog/announcements/a-standard-interface-for-service-meshes">service mesh standards</Link> and also the maker of <a href="https://meshery.io">Meshery</a>,  the <Link to="/service-mesh-management/meshery">Service Mesh Management Plane</Link>.<br/>
+              Layer5 is a community and open-source-centered service mesh
+              company, representing the largest collection of service meshes and
+              their maintainers in the world. Layer5 is the creator and
+              maintainer of
+              <Link to="../blog/announcements/a-standard-interface-for-service-meshes">
+                {" "}
+                service mesh standards{" "}
+              </Link>
+              and also the maker of <a href="https://meshery.io">Meshery </a>,
+              the
+              <Link to="/service-mesh-management/meshery">
+                {" "}
+                Service Mesh Management Plane{" "}
+              </Link>
+              .<br />
               Layer5 is not just a company, we are also:
             </p>
             <h4>Community First</h4>
             <p>
-              Layer5 represents the community.  We build projects to provide learning environments, deployment, and operational best practices, performance benchmarks, create documentation, share networking opportunities, and more.
-              Our shared commitment to the open-source spirit pushes Layer5 projects forward. New members are always welcome.
+              Layer5 represents the community. We build projects to provide
+              learning environments, deployment, and operational best practices,
+              performance benchmarks, create documentation, share networking
+              opportunities, and more. Our shared commitment to the open-source
+              spirit pushes Layer5 projects forward. New members are always
+              welcome.
             </p>
             <h4>Open Source First</h4>
             <p>
-              All Layer5 projects are open-source. Anyone can download, use, work on, and share it with others. It's built on principles like collaboration,
-              globalism, and innovation. Layer5 projects are distributed under the terms of <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache v2</a>.
+              All Layer5 projects are open-source. Anyone can download, use,
+              work on, and share it with others. It's built on principles like
+              collaboration, globalism, and innovation. Layer5 projects are
+              distributed under the terms of{" "}
+              <a href="https://www.apache.org/licenses/LICENSE-2.0">
+                Apache v2
+              </a>
+              .
             </p>
-            <h2>Goals</h2>
+            <a id="Goals">
+              {" "}
+              <h2>Goals</h2>{" "}
+            </a>
             <ul>
-
               <li>
                 <span>To build a large collection of service meshes.</span>
               </li>
@@ -54,7 +96,10 @@ const Intro = () => {
               </li>
             </ul>
 
-            <h2>Newcomer’s Path</h2>
+            <a id="Newcomer’s Path">
+              {" "}
+              <h2>Newcomer’s Path</h2>{" "}
+            </a>
             <p>
               Thank you for your interest in contributing to Layer5 open source
               initiatives!
@@ -82,7 +127,10 @@ const Intro = () => {
               Guide, the following set of instructions are to encourage and
               support first-time (or near first-time) open-source contributors.
             </p>
-            <h3>How to contribute?</h3>
+            <a id="How to contribute?">
+              {" "}
+              <h3>How to contribute?</h3>{" "}
+            </a>
             <p>
               The following steps outline the process by which you can openly
               engage, learn, and participate in the broad set of open source
@@ -124,7 +172,10 @@ const Intro = () => {
                 </span>
               </li>
             </ol>
-            <h3>Working on your issue</h3>
+            <a id="Working on your issue">
+              {" "}
+              <h3>Working on your issue</h3>{" "}
+            </a>
             <p>
               Once an issue has been assigned to you, it’s time to get started!
             </p>
@@ -149,7 +200,10 @@ const Intro = () => {
                 </span>
               </li>
             </ol>
-            <h3>While your issue is under review</h3>
+            <a id="While your issue is under review">
+              {" "}
+              <h3>While your issue is under review</h3>{" "}
+            </a>
 
             <ol>
               <li>
@@ -168,10 +222,22 @@ const Intro = () => {
                 </span>
               </li>
             </ol>
-
           </div>
+          <TocPagination />
         </Container>
-        <TocPagination />
+        <div>
+          <div className="intra-page">
+            <ul>
+              {content.map((x) => (
+                <li key={x.id}>
+                  <Link to={x.link} key={x.id} activeClassName="active">
+                    {x.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </HandbookWrapper>
   );
