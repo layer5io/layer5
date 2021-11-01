@@ -99,7 +99,7 @@ alt="Layer5" align="left" /></a>
 </p>
 <br />
 <p style="clear:both;">
-<h2><a href="https://layer5.io/smi">NightHawk</a></h2>
+<h2><a href="https://layer5.io/smi">Nighthawk</a></h2>
 <a href="https://getnighthawk.dev/"><img src=".github/assets/images/nighthawk/layer5-nighthawk.png"
 style="margin:10px;" width="125px"
 alt="Layer5" align="left" /></a>
