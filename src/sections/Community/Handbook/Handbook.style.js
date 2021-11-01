@@ -6,7 +6,6 @@ export const HandbookWrapper = styled.div`
     .content{
       width:100%;
       padding-bottom: 2rem;
-      
     ul > li {
         color: ${(props) => props.theme.menuColor};
       }
@@ -28,7 +27,6 @@ export const HandbookWrapper = styled.div`
       margin-top: -33rem;
       margin-left: 20rem;
       display: flex;
-      scroll-behavior: smooth;
     }
 
     .sidebar {
@@ -256,20 +254,19 @@ export const HandbookWrapper = styled.div`
     transition: .5s;
     }
   }
+
   .intra-page{
     position: sticky;
-  top: 10rem;
-  right:0rem;
-  margin-right: 1rem;
-  width:16rem;
-  padding-bottom: 5rem;
+    top: 10rem;
+    right:0rem;
+    margin-right: 1rem;
+    padding-bottom: 5rem;
     align-items:left;
     justify-content:space-around;
     display: flex;
     flex-direction: column;
+    overflow:hidden;
     
-    
-
     .active{
       font-weight:5000;
       color: ${(props) => props.theme.secondaryColor};
@@ -279,19 +276,16 @@ export const HandbookWrapper = styled.div`
       list-style: none;
       top: 3rem;
     }
-
     li{
       padding-bottom:0.5rem;
       padding-top:0.5rem;
     }
-    @media only screen and (max-width: 750px){
+    @media only screen and (max-width: 900px){
       width: 0;
       opacity:0;
     height:0;
       transition:none;
       visibility:hidden;
-      
-      
     }
   }
   
