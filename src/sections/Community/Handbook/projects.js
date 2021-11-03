@@ -32,7 +32,7 @@ const Maintainer = () => {
             </p>
             <p>
 							Its service mesh community represents the largest collection of
-							service Mesh projects.Emerging projects like GetNighthawk{" "}
+							service Mesh projects.Emerging projects like Nighthawk{" "}
               <img className="project-description-icon" src={hawkIcon} /> , community with{" "}
               <img className="project-description-icon" src={meshmateicon} /> MeshMates, catch-all
 							org, “home base”. <br />
