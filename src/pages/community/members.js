@@ -19,7 +19,7 @@ import communityIcon from "../../assets/images/community/community-green.svg";
 import hubIcon from "../../assets/images/image-hub/layer5-image-hub.svg";
 import icon5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 import meshmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
-import hawkIcon from "../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import hawkIcon from "../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import landscapeIcon from "../../assets/images/landscape/layer5_landscape_green.svg";
 import mesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import mesheryOpIcon from "../../assets/images/meshery-operator/meshery-operator-dark.svg";
@@ -89,8 +89,8 @@ const options = [
     className: "allOptions",
   },
   {
-    label: "GetNighthawk",
-    value: "getnighthawk",
+    label: "Nighthawk",
+    value: "nighthawk",
     color: theme.linkColor,
     isFixed: true,
     icon: hawkIcon,

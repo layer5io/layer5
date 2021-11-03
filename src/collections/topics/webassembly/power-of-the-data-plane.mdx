@@ -1,0 +1,36 @@
+---
+title: "Customizing and Integrating with your Service Mesh Data Plane"
+subtitle: "Building Envoy filters with Rust"
+thumbnail: ./webassembly-logo-horizontal.png
+category: How To
+tags:
+ - WebAssembly
+ - Envoy
+published: true
+---
+
+import { Link } from "gatsby";
+import wasmLogo from "./webassembly-logo-horizontal.png";
+import { TopicsWrapper } from "../Topics.style.js";
+
+<TopicsWrapper>
+  <div className="intro">
+    <p>Learn more about WebAssembly's use within service mesh data planes in
+      <Link className="blog" to="/learn/books">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource for anyone looking to understand WASM filters, Lua scripts, and other options available for extending the data plane.</p>
+  </div>
+<h2> The Power of the Data Plane</h2>
+
+<p>
+Control planes bring much needed element management to operators. Data planes composed of any number of service proxies need control planes to go about the task of applying service mesh-specific use cases to their fleet of service proxies. Configuration management, telemetry collection, infrastructure-centric authorization, identity and so on are common functions delivered by a control plane. However, their true source of power is drawn significantly from the service proxy. Users commonly find themselves in need of customizing the chain of traffic filters (modules) that service proxies use to do much of their heaving lifting. Different technologies are used to provide data plane extensibility, and consequently, additional custom data plane intelligence, including:
+</p>
+
+<ul>
+  <li>Lua - a scripting language for execution inside a Just-In-Time compiler, LuaJIT.</li>
+  <li>WebAssembly (WASM) - a virtual stack machine as a compilation target for different languages to use as an execution environment.</li>
+</ul>
+
+<p>
+</p>
+
+
+</TopicsWrapper>

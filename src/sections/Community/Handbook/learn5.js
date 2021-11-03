@@ -26,7 +26,7 @@ const LearnLayer= () => {
                 <li><Link to="/learn/service-mesh-labs">Learn how to service mesh with interactive labs.</Link></li>
                 <li><Link to="/learn/service-mesh-books">Books.</Link></li>
                 <li><Link to="/learn/service-mesh-workshops">Workshops.</Link></li>
-                <li><a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA/playlists">Layer5  youtube playlist.</a></li>
+                <li><a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1/playlists">Layer5  youtube playlist.</a></li>
                 <li><Link to="/learn/learning-paths">Learning Paths.</Link></li>
               </ul>
             </div>
