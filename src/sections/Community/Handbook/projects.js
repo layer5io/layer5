@@ -34,8 +34,8 @@ const Maintainer = () => {
 							Its service mesh community represents the largest collection of
 							service Mesh projects.Emerging projects like Nighthawk{" "}
               <img className="project-description-icon" src={hawkIcon} /> , community with{" "}
-              <img className="project-description-icon" src={meshmateicon} /> MeshMates, catch-all
-							org, “home base”. <br />
+              <a href="https://layer5.io/community/meshmates"><img className="project-description-icon" src={meshmateicon} /> MeshMates </a>, catch-all org, “home base”. 
+              <br />
               <ul>
                 <li>
                   <h4>
