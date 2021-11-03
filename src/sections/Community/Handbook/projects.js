@@ -65,7 +65,7 @@ const Maintainer = () => {
                 </p>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/projects/getnighthawk">
+                    <a href="https://layer5.io/projects/nighthawk">
 											Nighthawk :
                     </a>
                   </h4>{" "}
