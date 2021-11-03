@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "gatsby";
 export const HandbookWrapper = styled.div`
     .highlight{
       font-weight: 600;
