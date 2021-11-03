@@ -383,7 +383,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       createPage,
       items: tag.nodes,
       itemsPerPage: 4,
-      pathPrefix: `/topic/tag/${slugify(tag.fieldValue)}`,
+      pathPrefix: `/topics/tag/${slugify(tag.fieldValue)}`,
       component: topicTagListTemplate,
       context: {
         tag: tag.fieldValue,

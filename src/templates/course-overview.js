@@ -92,7 +92,7 @@ const CourseOverviewTemplate = ({ data, pageContext }) => {
         <GlobalStyle />
         <SEO
           title={`${data.courseByTitle.nodes[0].frontmatter.courseTitle}`}
-          description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Maesh, Kuma, App Mesh, Citrix, Tanzu Service Mesh"
+          description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
         />
         <Navigation />
         <CourseOverview
