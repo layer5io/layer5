@@ -68,7 +68,7 @@ const CoursesListTemplate = ({data, pageContext}) => {
         <GlobalStyle />
         <SEO
           title={`${learnpath}`}
-          description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Maesh, Kuma, App Mesh, Citrix, Tanzu Service Mesh"
+          description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
         />
         <Navigation />
         <CoursesList coursesData={sortedCoursesList} learnPath={learnpath} />
