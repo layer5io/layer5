@@ -3,7 +3,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import github from "../../../assets/images/socialIcons/github.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
-import hawkIcon from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import hawkIcon from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import meshmateicon from "../../../assets/images/meshmate/meshmate-icon.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import mesheryoperatoricon from "../../../assets/images/meshery-operator/meshery-operator.svg";
