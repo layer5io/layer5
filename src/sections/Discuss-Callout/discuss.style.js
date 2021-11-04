@@ -92,7 +92,7 @@ const DiscussWrapper = styled.div`
             }
         }
         .logo {
-            height: 1.8rem;
+            height: 2.6rem;
             width: auto;  
         }
     }
@@ -116,7 +116,7 @@ const DiscussWrapper = styled.div`
             }
         }
         .logo{
-            height: 1.4rem;
+            height: 2.4rem;
             width: auto;  
         }
     }
