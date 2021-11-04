@@ -6,8 +6,9 @@ import Code from "../../../components/CodeBlock";
 import Signoff from "../../../../.github/assets/images/git-signoff-vscode.png";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import { Link } from "gatsby";
+import IntraPage from "../../../components/handbook-navigation/intra-page";
 
-const content = [
+const contents = [
   {
     id: 0,
     link: "#top",
@@ -207,19 +208,7 @@ const contributingGuide = () => {
           <TocPagination />
         </Container>
 
-        <div>
-          <div className="intra-page">
-            <ul>
-              {content.map((x) => (
-                <li key={x.id}>
-                  <Link to={x.link} key={x.id} activeClassName="active">
-                    {x.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <IntraPage contents={contents} />
       </div>
     </HandbookWrapper>
   );

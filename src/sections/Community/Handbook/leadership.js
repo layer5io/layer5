@@ -2,11 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
-
+import IntraPage from "../../../components/handbook-navigation/intra-page";
 import { Link } from "gatsby";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
-const content = [
+const contents = [
   {
     id: 0,
     link: "#top",
@@ -236,19 +236,7 @@ const CommunityGuide = () => {
           <TocPagination />
         </Container>
 
-        <div>
-          <div className="intra-page">
-            <ul>
-              {content.map((x) => (
-                <li key={x.id}>
-                  <Link to={x.link} key={x.id} activeClassName="active">
-                    {x.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <IntraPage contents={contents} />
       </div>
     </HandbookWrapper>
   );

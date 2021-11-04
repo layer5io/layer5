@@ -4,8 +4,9 @@ import { HandbookWrapper } from "./Handbook.style";
 import { Link } from "gatsby";
 import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
+import IntraPage from "../../../components/handbook-navigation/intra-page";
 
-const content = [
+const contents = [
   {
     id: 0,
     link: "#Learn",
@@ -97,19 +98,7 @@ const LearnLayer = () => {
           <TocPagination />
         </Container>
 
-        <div>
-          <div className="intra-page learn">
-            <ul>
-              {content.map((x) => (
-                <li key={x.id}>
-                  <Link to={x.link} key={x.id} activeClassName="active">
-                    {x.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <IntraPage contents={contents} />
       </div>
     </HandbookWrapper>
   );

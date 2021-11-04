@@ -12,8 +12,9 @@ import linkedin_icon from "../../../assets/images/socialIcons/linkedin-light.svg
 import docker_icon from "../../../assets/images/socialIcons/docker-light.svg";
 import slack_icon from "../../../assets/images/socialIcons/slack-light.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
+import IntraPage from "../../../components/handbook-navigation/intra-page";
 
-const content = [
+const contents = [
   {
     id: 0,
     link: "#Newsletter",
@@ -311,19 +312,7 @@ const Connect = () => {
           <TocPagination />
         </Container>
 
-        <div>
-          <div className="intra-page">
-            <ul>
-              {content.map((x) => (
-                <li key={x.id}>
-                  <Link to={x.link} key={x.id} activeClassName="active">
-                    {x.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <IntraPage contents={contents} />
       </div>
     </HandbookWrapper>
   );

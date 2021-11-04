@@ -13,8 +13,9 @@ import MesheryOperator from "../../../assets/images/meshery-operator/meshery-ope
 import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import GetNightHawkLogo from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
+import IntraPage from "../../../components/handbook-navigation/intra-page";
 
-const content = [
+const contents = [
   { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
   { id: 1, link: "#Recognitions", text: "Recognition" },
   {
@@ -233,19 +234,7 @@ const CommunityGuide = () => {
           </div>
           <TocPagination />
         </Container>
-        <div>
-          <div className="intra-page">
-            <ul>
-              {content.map((x) => (
-                <li key={x.id}>
-                  <Link to={x.link} key={x.id} activeClassName="active">
-                    {x.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <IntraPage contents={contents} />
       </div>
     </HandbookWrapper>
   );
