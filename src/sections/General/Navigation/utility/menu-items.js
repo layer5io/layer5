@@ -178,8 +178,8 @@ const Data = {
       ],
       actionItems: [
         {
-          actionName: "Join the community",
-          actionLink: "/community/newcomers",
+          actionName: "Join the discussion",
+          actionLink: "https://discuss.layer5.io",
         },
         {
           actionName: "Open source internship programs",
