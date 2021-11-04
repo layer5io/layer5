@@ -32,7 +32,7 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>About Us</h1>
                   <p>We embrace <i>developer</i>-defined infrastructure. We empower developers to change how they write applications, support <i>operators</i> in rethinking how they run modern infrastructure, and enable <i>product owners</i> to regain full-control over their product portfolio.</p>
-                  <p>Our cloud native application and infrastructure management software enables organizations to expect more from their infrastrcture.</p>
+                  <p>Our cloud native application and infrastructure management software enables organizations to expect more from their infrastructure.</p>
 
                   <h5 className="section-title">We are enablers.</h5>
                   <p>At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?". Our suite of multi-mesh, multi-cloud infrastructure management products — all with open source projects at their core — underpin each of our offerings. </p>
