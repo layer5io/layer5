@@ -128,10 +128,10 @@ This will run a local web server with "live reload" conveniently enabled. ( **NO
   git add .
   ```
 
-  **10.** Commit your changes. To contribute to this project, you must agree to the [Developer Certificate of Origin (DCO)]() for each commit you make.
+  **10.** Commit your changes. To contribute to this project, you must agree to the [Developer Certificate of Origin (DCO)](## Signing-off on Commits (Developer Certificate of Origin)) for each commit you make.
 
   ```
-  git commit --signoff -m"<commit subject>
+  git commit --signoff -m "<commit subject>"
   ```
 
 
@@ -185,7 +185,7 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 # Common Types of Site Updates
 
-Some of the common site updates that our contributors work on have been listed below.
+Two of the common site updates that our contributors work on have been listed below.
 
 ## Updating/Creating a community Member Profile 
 
