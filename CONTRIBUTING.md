@@ -31,7 +31,7 @@ If you want to start contributing to the project's code, please follow these gui
 
 # Contributing to the docs
 
-If you'd like to contribute to the docs then following is a breif list of what and how you can contribute to it. Also, if you don't have anything to write on as of now then hop on to our [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) and we shall find you a topic to write on.
+If you'd like to contribute to the docs then following is a brief list of what and how you can contribute to it. Also, if you don't have anything to write on as of now then hop on to our [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) and we shall find you a topic to write on.
 
 ## Adding a blog post
 
