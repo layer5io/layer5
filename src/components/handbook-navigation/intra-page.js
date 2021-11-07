@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-// import { content } from "./content";
 
 const JoinCommunityWrapper = styled.div`
   .intra-page {
@@ -16,18 +15,22 @@ const JoinCommunityWrapper = styled.div`
     flex-direction: column;
     overflow: hidden;
 
+    .list {
+      color: #000000;
+    }
     .active {
       font-weight: 5000;
-      color: ${(props) => props.theme.secondaryColor};
+      color: #000000;
     }
 
     ul {
       list-style: none;
       top: 3rem;
-    }
-    li {
-      padding-bottom: 0.5rem;
-      padding-top: 0.5rem;
+
+      li {
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+      }
     }
     @media only screen and (max-width: 900px) {
       width: 0;
@@ -49,8 +52,12 @@ function IntraPage({ contents }) {
       <div className="intra-page">
         <ul>
           {contents.map((x) => (
-            <li key={x.id}>
-              <Link to={x.link} key={x.id} activeClassName="active">
+            <li key={x.id} className="list">
+              <Link
+                to={`${window.location.pathname}${x.link}`}
+                key={x.id}
+                activeClassName="active"
+              >
                 {x.text}
               </Link>
             </li>
