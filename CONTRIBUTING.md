@@ -185,7 +185,7 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 # Common Types of Site Updates
 
-Two of the common site updates that our contributors work on have been listed below.
+Two of the most common site updates that our contributors work on have been listed below.
 
 ## Updating/Creating a community Member Profile 
 
