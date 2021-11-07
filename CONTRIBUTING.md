@@ -12,6 +12,10 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be repor
 Violation of the code of conduct is taken seriously, kindly <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform"> report any violations</a> of the Code of Conduct by filling in the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform"> Incident report </a>.
 The comfort and safety of Layer5 community members is our priority. Please do well to adhere to the Code of Conduct to participate in the Layer5 community.
 
+## Newcomers guide
+
+To help you get started on contributing to the Layer5 projects, we made a newcomers guide to make contributions easier for new folks like you! Refer the [newcomers guide](https://layer5.io/community/newcomers) for the resources and tutorials to help you get started!
+
 ## Style guide
 
 The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a pull request, please review the [design doc](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) to know more about the functioning of the website. Once a pull request has been submitted, a preview deployment will be built and made available to you on your PR.
@@ -24,10 +28,10 @@ Join the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel on
 
 If you want to start contributing to the project's code, please follow these guidelines before creating a pull request: 
 
-- First step is to set up the local development environment. See [this](# How to contribute) on how to do the same. 
-- Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
-- A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
-- We regularly discuss about new issues to work on in our [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel on slack. Feel free to join and discuss about any issue or any idea that you may have.
+  - First step is to set up the local development environment. See [this](# How to contribute) on how to do the same. 
+  - Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
+  - A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
+  - We regularly discuss about new issues to work on in our [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel on slack. Feel free to join and discuss about any issue or any idea that you may have.
 
 # Contributing to the docs
 
@@ -133,7 +137,11 @@ This will run a local web server with "live reload" conveniently enabled. ( **NO
   ```
   git commit --signoff -m "<commit subject>"
   ```
+  or you could go with the shorter format for the same, as shown below.
 
+  ```
+  git commit -s -m "<commit subject>"
+  ```
 
   **11.** Push the committed changes in your feature branch to your remote repo.
 
