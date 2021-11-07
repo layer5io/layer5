@@ -149,7 +149,7 @@ This will run a local web server with "live reload" conveniently enabled. ( **NO
   git push -u origin <your_branch_name>
   ```
 
-  **12.** To create a pull request, click on `compare and pull requests`. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to.
+  **12.** Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it.
 
 ## Signing-off on Commits (Developer Certificate of Origin)
 
