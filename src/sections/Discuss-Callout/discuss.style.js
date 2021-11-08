@@ -37,7 +37,7 @@ const DiscussWrapper = styled.div`
             .card {
                 -webkit-transition: 450ms all;
                 transition: 450ms all;
-                margin: 2px;
+                margin: auto;
                 padding: 1.25rem;
                 background-color: #1E2117; 
                 border-radius: 25px;
@@ -76,48 +76,62 @@ const DiscussWrapper = styled.div`
         transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
         cursor: pointer;
     }
-    @media only screen and (max-width: 1200px){
-        .explain-1 {
-            .cards {
-                padding: 1rem 0.5rem; 
-                .card {
-                    h2 {
-                        font-size: 25px;
-                        line-height: 35px;
-                    }
-                    p {
-                        font-size: 15px
-                    }
+    @media only screen and (min-width: 990px){
+        @media only screen and (min-width: 1211px){
+            .explain-1 {
+                .cards {
+                    padding: 0;
+                    .card {
+                        width: 23.25rem;
+                    }  
                 }
             }
         }
-        .logo {
-            height: 2.6rem;
-            width: auto;  
-        }
-    }
-    @media only screen and (max-width: 1100px){
-        .explain-1 {
-            .cards {
-                padding: 1rem 0.5rem;
-                .card {
-                    h2 {
-                        font-size: 22px;
-                        line-height: 32px;
-                    }
-                    p {
-                        font-size: 13px;
-                        line-height: 23px;
+        @media only screen and (max-width: 1210px){
+            .explain-1 {
+                .cards {
+                    padding: 0; 
+                    .card {
+                        width: 17.25rem; 
+                        h2 {
+                            font-size: 25px;
+                            line-height: 35px;
+                        }
+                        p {
+                            font-size: 15px
+                        }
                     }
                 }
             }
-            button {
-                padding: 0;
+            .logo {
+                height: 2.6rem;
+                width: auto;  
             }
         }
-        .logo{
-            height: 2.4rem;
-            width: auto;  
+        @media only screen and (max-width: 1100px){
+            .explain-1 {
+                .cards {
+                    padding: 0;
+                    .card {
+                        width: 13.25rem; 
+                        h2 {
+                            font-size: 22px;
+                            line-height: 32px;
+                        }
+                        p {
+                            font-size: 13px;
+                            line-height: 23px;
+                        }
+                    }
+                }
+                button {
+                    padding: 0;
+                }
+            }
+            .logo{
+                height: 2.4rem;
+                width: auto;  
+            }
         }
     }
     @media only screen and (max-width: 450px){
