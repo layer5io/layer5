@@ -65,80 +65,26 @@ const Connect = () => {
               <h2>Mailing Lists</h2>{" "}
             </a>
             <ul>
-              <li>
-                <a href="mailto:maintainers@layer5.io">Layer5 Maintainers</a>
-              </li>
-              <li>
-                <a href="mailto:discuss-admins@layer5.io">
-                  Administrators of discuss.layer5.io
-                </a>
-              </li>
-              <li>
-                <a href="mailto:discuss-moderators@layer5.io">
-                  Moderators of discuss.layer5.io
-                </a>
-              </li>
-              <li>
-                <a href="mailto:dev-group@meshery.io">Meshery Developers</a>
-              </li>
-              <li>
-                <a href="mailto:user-group@meshery.io">Meshery Users</a>
-              </li>
-              <li>
-                <a href="http://meshery-dev@meshery.dev">
-                  Meshery Contributors
-                </a>
-              </li>
-              <li>
-                <a href="mailto:maintainers@meshery.io">Meshery Maintainers</a>
-              </li>
-              <li>
-                <a href="http://meshery-security-vulns-reports@meshery.dev">
-                  Meshery Security and Vulnerability Reports
-                </a>
-              </li>
-              <li>
-                <a href="mailto:community@meshery.io">Meshery Community</a>
-              </li>
-              <li>
-                <a href="mailto:katacoda@layer5.io">Katacoda-Managers</a>
-              </li>
-              <li>
-                <a href="http://developers@getnighthawk.dev">
-                  GetNighthawk Developers
-                </a>
-              </li>
-              <li>
-                <a href="http://maintainers@getnighthawk.dev">
-                  GetNighthawk Maintainers
-                </a>
-              </li>
-              <li>
-                <a href="http://users@getnighthawk.dev">GetNighthawk Users</a>
-              </li>
-              <li>
-                <a href="mailto:community@smp-spec.io">
-                  Service Mesh Performance Community
-                </a>
-              </li>
-              <li>
-                <a href="mailto:maintainers@smp-spec.io">
-                  Service Mesh Performance Maintainers
-                </a>
-              </li>
-              <li>
-                <a href="mailto:user-group@smp-spec.io">
-                  Service Mesh Performance Users
-                </a>
-              </li>
-              <li>
-                <a href="mailto:community@layer5.io">Layer5 Community</a>
-              </li>
-              <li>
-                <a href="mailto:community-members@layer5.io">
-                  Layer5 Community Members
-                </a>
-              </li>
+
+              <li><a href="mailto:maintainers@layer5.io">Layer5 Maintainers</a></li>
+              <li><a href="mailto:discuss-admins@layer5.io">Administrators of discuss.layer5.io</a></li>
+              <li><a href="mailto:discuss-moderators@layer5.io">Moderators of discuss.layer5.io</a></li>
+              <li><a href="mailto:dev-group@meshery.io">Meshery Developers</a></li>
+              <li><a href="mailto:user-group@meshery.io">Meshery Users</a></li>
+              <li><a href="http://meshery-dev@meshery.dev">Meshery Contributors</a></li>
+              <li><a href="mailto:maintainers@meshery.io">Meshery Maintainers</a></li>
+              <li><a href="http://meshery-security-vulns-reports@meshery.dev">Meshery Security and Vulnerability Reports</a></li>
+              <li><a href="mailto:community@meshery.io">Meshery Community</a></li>
+              <li><a href="mailto:katacoda@layer5.io">Katacoda-Managers</a></li>
+              <li><a href="http://developers@nighthawk.dev">Nighthawk Developers</a></li>
+              <li><a href="http://maintainers@nighthawk.dev">Nighthawk Maintainers</a></li>
+              <li><a href="http://users@nighthawk.dev">Nighthawk Users</a></li>
+              <li><a href="mailto:community@smp-spec.io">Service Mesh Performance Community</a></li>
+              <li><a href="mailto:maintainers@smp-spec.io">Service Mesh Performance Maintainers</a></li>
+              <li><a href="mailto:user-group@smp-spec.io">Service Mesh Performance Users</a></li>
+              <li><a href="mailto:community@layer5.io">Layer5 Community</a></li>
+              <li><a href="mailto:community-members@layer5.io">Layer5 Community Members</a></li>
+
             </ul>
             <a id="Calendar">
               {" "}

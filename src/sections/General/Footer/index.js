@@ -138,8 +138,8 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/getnighthawk">
-                      GetNighthawk
+                    <Link className="category-link" to="/projects/nighthawk">
+                      Nighthawk
                     </Link>
                   </li>
                   <li>
