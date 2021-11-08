@@ -132,7 +132,7 @@ This will run a local web server with "live reload" conveniently enabled. ( **NO
   git add .
   ```
 
-  **10.** Commit your changes. To contribute to this project, you must agree to the [Developer Certificate of Origin (DCO)](#signing-off-on-commits-(-developer-certificate-of-origin-)) for each commit you make.
+  **10.** Commit your changes. To contribute to this project, you must agree to the [Developer Certificate of Origin (DCO)](#signing-off-on-commits) for each commit you make.
 
   ```
   git commit --signoff -m "<commit subject>"
@@ -166,13 +166,16 @@ git commit messages:
   Signed-off-by: Jane Smith <jane.smith@example.com>
   ```
 
-In most cases, you can add this signoff to your commit automatically with the
-`-s` or `--signoff` flag to `git commit`. You must use your real name and a reachable email
-address (sorry, no pseudonyms or anonymous contributions). An example of signing off on a commit:
+**Note:** you don't have to manually include thismline on your commits, git does that for you as shown below:
 
   ```
   $ git commit -s -m “my commit message w/signoff”
   ```
+
+In most cases, git automatically adds the signoff to your commit with the use of 
+`-s` or `--signoff` flag to `git commit`. You must use your real name and a reachable email
+address (sorry, no pseudonyms or anonymous contributions).
+
 
 To ensure all your commits are signed, you may choose to add this alias to your global ```.gitconfig```:
 
