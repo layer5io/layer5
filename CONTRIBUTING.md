@@ -80,7 +80,7 @@ Make sure you have the following installed on your operating system before you s
 
 **Note:** If you're on a *Windows environment* then it is highly recommended that you install [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install) both for performance and ease of use. Refer to the [documentation](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/gatsby-on-wsl) for the installation of *Gatsby.js on WSL*.
 
-## Set up your Local Development environment
+## Set up your Local Development Environment
 
 Follow the following instructions to start contributing.
 
