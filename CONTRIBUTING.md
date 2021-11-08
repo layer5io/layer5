@@ -2,7 +2,7 @@
 
 We are beyond excited to see that you want to contribute! We would love to accept your contributions. Layer5 is built by the community and warmly welcomes collaboration. There are many ways in which one could contribute to Layer5 and every contribution is equally appreciated here. Navigate through the following to understand more about contributing here. 
 
-# Before you get started
+# Before You Get Started
 
 ## Code of Conduct
 
@@ -12,19 +12,19 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be repor
 Violation of the code of conduct is taken seriously, kindly <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform"> report any violations</a> of the Code of Conduct by filling in the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform"> Incident report </a>.
 The comfort and safety of Layer5 community members is our priority. Please do well to adhere to the Code of Conduct to participate in the Layer5 community.
 
-## Newcomers guide
+## Newcomers Guide
 
 To help you get started on contributing to the Layer5 projects, we made a newcomers guide to make contributions easier for new folks like you! Refer the [newcomers guide](https://layer5.io/community/newcomers) for the resources and tutorials to help you get started!
 
-## Style guide
+## Style Guide
 
 The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a pull request, please review the [design doc](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) to know more about the functioning of the website. Once a pull request has been submitted, a preview deployment will be built and made available to you on your PR.
 
-## Documentation and site discussions 
+## Documentation and Site Discussions 
 
 Join the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel on our slack to discuss about new features, site improvements, enhancement in user experience, and on any other improvements in the documentation.
 
-# Contributing to Layer5's code
+# Contributing to Layer5's Code
 
 If you want to start contributing to the project's code, please follow these guidelines before creating a pull request: 
 
@@ -33,11 +33,11 @@ If you want to start contributing to the project's code, please follow these gui
   - A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
   - We regularly discuss about new issues to work on in our [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel on slack. Feel free to join and discuss about any issue or any idea that you may have.
 
-# Contributing to the docs
+# Contributing to Layer5's Docs
 
 If you'd like to contribute to the docs then following is a brief list of what and how you can contribute to it. In case, if you don't have anything to write on as of now then hop on to our [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) and we shall find you a topic to write on.
 
-## Adding a blog post
+## Adding a Blog Post
 
   1. In order to contribute a blog post, fork this repository, clone it, create a new branch and navigate to the `src/collections/blog` directory.
   2. Create a copy of the [blog template](https://github.com/layer5io/layer5/tree/master/src/collections/blog/blog-template).
@@ -52,7 +52,7 @@ If you'd like to contribute to the docs then following is a brief list of what a
   4. Entries will be listed in chronological order automatically.
 
 
-# How to contribute
+# How to Contribute
 
 ## Prequisites
 
@@ -80,7 +80,7 @@ Make sure you have the following installed on your operating system before you s
 
 **Note:** If you're on a *Windows environment* then it is highly recommended that you install [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install) both for performance and ease of use. Refer to the [documentation](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/gatsby-on-wsl) for the installation of *Gatsby.js on WSL*.
 
-## Set up your local development environment
+## Set up your Local Development environment
 
 Follow the following instructions to start contributing.
 
@@ -198,7 +198,7 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 Two of the most common site updates that our contributors work on have been listed below.
 
-## Updating/Creating a community Member Profile 
+## Updating/Creating a Community Member Profile 
 
 Layer5 community members are an integral part of what makes Layer5 and it's projects successful. Prominently highlighting our members and their works is something that we think is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A) which has all the instructions that one may need for this.
 Make sure to create a [new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A) before working on it.
@@ -214,7 +214,7 @@ Badges are a great way of highlighting the contribution done by the community me
 
 A variety of badges exist so that community members and their efforts may be affiliated with a particular project or with a community initiative. An example of how a badge is assigned using markdown can be found [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx), and it will appear [this way](https://layer5.io/community/members/abishek-kumar) on a member profile.
 
-#### Possible badges include:
+#### Possible Badges:
 
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/community-green.svg" width="25px" height="25px"/> Community
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/landscape-green.png" width="25px" height="25px"/> Landscape
