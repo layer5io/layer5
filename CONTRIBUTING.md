@@ -153,13 +153,27 @@ This will run a local web server with "live reload" conveniently enabled. ( **NO
   git commit -s -m "<commit subject>"
   ```
 
-  **11.** Push the committed changes in your feature branch to your remote repo.
+  **11.** While you are working on your branch, other developers may update the `master` branch with their branch. This action means your branch is now out of date of the `master` branch and missing content. So in order to fetch the new changes, follow along:
+
+  ```
+  git checkout master
+  git fetch origin master
+  ```
+
+  Now you need to merge the `master` branch into your branch. This can be done in the following way:
+
+  ```
+  git checkout <your_branch_name>
+  git merge master
+  ```
+
+  **12.** Push the committed changes in your feature branch to your remote repo.
 
   ```
   git push -u origin <your_branch_name>
   ```
 
-  **12.** Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it.
+  **13.** Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it.
 
 ## Signing-off on Commits
 
@@ -202,7 +216,6 @@ Or you may configure your IDE, for example, Visual Studio Code to automatically 
 
 <a href="./.github/assets/images/git-signoff-vscode.png" ><img src="./.github/assets/images/git-signoff-vscode.png" width="50%"/><a>
 
-<!-- Maybe the below section can be shifted to a new file -->
 
 # Common Types of Site Updates
 
