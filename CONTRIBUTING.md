@@ -166,7 +166,7 @@ git commit messages:
   Signed-off-by: Jane Smith <jane.smith@example.com>
   ```
 
-**Note:** you don't have to manually include thismline on your commits, git does that for you as shown below:
+**Note:** you don't have to manually include this line on your commits, git does that for you as shown below:
 
   ```
   $ git commit -s -m “my commit message w/signoff”
