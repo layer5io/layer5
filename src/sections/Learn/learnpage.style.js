@@ -6,8 +6,15 @@ export const LearnPageWrapper = styled.div`
         text-align: center;
         background: rgb(71,126,150);
         background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
-        h1 {
-            line-height: 35rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        h1 {            
+            color: white;
+        }
+        h3 {
+            margin-top: 1rem;
             color: white;
         }
     }
