@@ -151,7 +151,7 @@ This will run a local web server with "live reload" conveniently enabled. ( **NO
 
   **12.** Once you’ve committed and pushed all of your changes to GitHub, go to the page for your fork on GitHub, select your development branch, and click the pull request button. Please ensure that you compare your feature branch to the desired branch of the repo you are supposed to make a PR to. If you need to make any adjustments to your pull request, just push the updates to GitHub. Your pull request will automatically track the changes in your development branch and update it.
 
-## Signing-off on Commits (Developer Certificate of Origin)
+## Signing-off on Commits
 
 To contribute to this project, you must agree to the Developer Certificate of
 Origin (DCO) for each commit you make. The DCO is a simple statement that you,
