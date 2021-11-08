@@ -153,6 +153,13 @@ const Gnhwrapper = styled.section`
             }
         }
     }
+    .distributedPerf {
+        display: relative;
+        float: left;
+        width: 30%;
+        padding-right: 1rem;
+
+    }
     .callout{
         background: rgb(205,28,109);
         background: linear-gradient(107deg, rgba(205,28,109,1) 0%, rgba(40,43,98,1) 99%, rgba(41,44,99,1) 100%);
