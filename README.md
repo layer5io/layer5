@@ -14,14 +14,9 @@
 <img src="https://img.shields.io/github/license/layer5io/layer5.svg" /></a>
 </p>
 
-### About Layer5
-
-**Community First**
+# About Layer5
 
 The [Layer5](https://layer5.io) community represents the largest collection of service mesh projects and their maintainers in the world.
-
-**Open Source First**
-
 We create and steward initiatives that press on the service mesh-centric envelope of Cloud Native. Our shared commitment to the open source spirit compels our community members to push Layer5 projects forward.
 
 # Projects
@@ -36,6 +31,8 @@ Meshery facilitates adopting, configuring, operating and managing performance of
 <br /><br /><br />
 </p>
 <br />
+
+
 <p style="clear:both;">
 <h2><a href="https://github.com/service-mesh-patterns">Service Mesh Pattern</a></h2>
 <a href="https://github.com/service-mesh-patterns"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png?raw=true"  
@@ -45,6 +42,8 @@ alt="Service Mesh Pattern" align="left"/></a>
 <br /><br /><br />
 </p>
 <br />
+
+
 <p style="clear:both;">
 <h2><a href="https://layer5.io/landscape">Service Mesh Landscape</a></h2>
 <a href="https://layer5.io/landscape"><img src=".github/assets/images/buttons/landscape.png"  
@@ -54,6 +53,8 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 <br /><br /><br />
 </p>
 <br />
+
+
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a></h2>
 <a href="https://layer5.io/projects/service-mesh-performance"><img src=".github/assets/images/smp-dark-text.svg"
@@ -63,6 +64,8 @@ The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh P
 <br /><br /><br />
 </p>
 <br />
+
+
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/image-hub">Image Hub</a></h2>
 <a href="https://layer5.io/projects/image-hub"><img src=".github/assets/images/image-hub/layer5-image-hub.png"
@@ -73,6 +76,8 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <br /><br /><br />
 </p>
 <br />
+
+
 <p style="clear:both;">
 <h2><a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a></h2>
 <a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg" style="margin:10px;" width="125px" align="left" /></a>
@@ -80,6 +85,8 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <br /><br /><br /><br />
 </p>
 <br />
+
+
 <p style="clear:both;">
 <h2><a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a></h2>
 <a href="https://github.com/layer5io/learn-layer5"><img src=".github/assets/images/layer5/5-light-bg.png"
@@ -89,6 +96,8 @@ alt="Layer5" align="left" /></a>
 <br /><br /><br />
 </p>
 <br />
+
+
 <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
 <a href="https://layer5.io/smi"><img src=".github/assets/images/smi-conformance/checklist.svg"
@@ -98,6 +107,8 @@ alt="Layer5" align="left" /></a>
 <br /><br /><br />
 </p>
 <br />
+
+
 <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Nighthawk</a></h2>
 <a href="https://getnighthawk.dev/"><img src=".github/assets/images/nighthawk/layer5-nighthawk.png"
@@ -107,12 +118,14 @@ alt="Layer5" align="left" /></a>
 <br /><br /><br />
 </p>
 <br />
+
+
 <p style="clear:both;">
-<h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributing</a></h1>
-<p>Please do! Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are welcome. This project is community-built and welcomes collaboration. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
+<h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributions</a></h1>
+<p> We would love to accept your contributions! This project is community-built and welcomes collaboration. Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are all appreciated. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 </p>
 <p>
-Jump into our <a href="http://slack.layer5.io"><img src=".github/assets/images/slack.png" height="16px" align="bottom" />Slack</a>! Our projects are community-built and welcome collaboration. 👍Be sure to see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you.
+Join us on<a href="http://slack.layer5.io"><img src=".github/assets/images/slack.png" height="16px" align="bottom" />Slack</a>to learn more about Layer5 and its community! Make sure you see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you.
 </p>
 <p>
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src=".github/assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
@@ -128,6 +141,6 @@ Jump into our <a href="http://slack.layer5.io"><img src=".github/assets/images/s
 <p>Find us on Twitter <img src=".github/assets/images/twitter.png" height="16px" align="bottom" />: <a href="https://twitter.com/layer5">@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a> and <a href="https://twitter.com/smp_spec">@smp_spec</a>. <br>Subscribe on <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">Youtube</a>
 </p>
 
-#### License
+### License
 
 This repository and site are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
