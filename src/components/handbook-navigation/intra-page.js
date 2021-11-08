@@ -47,6 +47,7 @@ const JoinCommunityWrapper = styled.div`
 `;
 
 function IntraPage({ contents }) {
+  const intapath = window.location.pathname;
   return (
     <JoinCommunityWrapper>
       <div className="intra-page">
@@ -54,7 +55,7 @@ function IntraPage({ contents }) {
           {contents.map((x) => (
             <li key={x.id} className="list">
               <Link
-                to={`${window.location.pathname}${x.link}`}
+                to={`${intapath}${x.link}`}
                 key={x.id}
                 activeClassName="active"
               >
