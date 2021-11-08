@@ -153,8 +153,8 @@ This will run a local web server with "live reload" conveniently enabled. ( **NO
 
 ## Signing-off on Commits
 
-To contribute to this project, you must agree to the Developer Certificate of
-Origin (DCO) for each commit you make. The DCO is a simple statement that you,
+To contribute to this project, you must agree to the **Developer Certificate of
+Origin (DCO)** for each commit you make. The DCO is a simple statement that you,
 as a contributor, have the legal right to make the contribution.
 
 See the [DCO](https://developercertificate.org) file for the full text of what you must agree to
