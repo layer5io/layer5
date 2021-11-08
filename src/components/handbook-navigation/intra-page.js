@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
@@ -47,7 +47,11 @@ const JoinCommunityWrapper = styled.div`
 `;
 
 function IntraPage({ contents }) {
-  const intapath = window.location.pathname;
+  let intapath;
+
+  useEffect(() => {
+    intapath = window.location.pathname;
+  }, []);
   return (
     <JoinCommunityWrapper>
       <div className="intra-page">
