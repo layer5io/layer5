@@ -1,6 +1,6 @@
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import five from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
-import gnh from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import gnh from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 
 export const repo_data = [
@@ -44,11 +44,11 @@ export const repo_data = [
           "https://github.com/service-mesh-performance/service-mesh-performance",
       },
       {
-        project: "GetNighthawk",
+        project: "Nighthawk",
         image: gnh,
         site: "https://getnighthawk.dev",
         language: "Jekyll",
-        repository: "https://github.com/layer5io/getnighthawk",
+        repository: "https://github.com/layer5io/nighthawk",
       },
       {
         project: "MeshSync UI (MeshMap)",
@@ -241,7 +241,7 @@ export const repo_data = [
         repository: "https://github.com/layer5io/gowrk2",
       },
       {
-        project: "Getnighthawk",
+        project: "Nighthawk",
         language:
           "Augmentation of Envoy Nighthawk to produce output compatible with Meshery’s visualization of performance test results",
         repository: "https://github.com/layer5io/nighthawk-go",

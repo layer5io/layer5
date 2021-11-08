@@ -49,7 +49,7 @@ const handbookHome= () => {
 
         <HandbookCard 
           title="Projects" 
-          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance, GetNightHawk" 
+          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance, NightHawk" 
           to="/community/handbook/projects" 
         />
 

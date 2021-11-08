@@ -12,7 +12,9 @@ const LearnPage = () => {
     <LearnPageWrapper>
       <div className="page-header-section">
         <h1>Learn to Service Mesh</h1>
-        <h3>Free training on Istio, Linkerd, Consul, Open Service Mesh, Kuma, NGINX Service Mesh, AWS App Mesh, VMware Tanzu Service Mesh</h3>
+
+        <h3>Free training and how-tos on Istio, Linkerd, Consul, Open Service Mesh, Kuma, NGINX Service Mesh, AWS App Mesh, and VMware Tanzu Service Mesh</h3>
+
       </div>
       <BooksSection />
       <WorkshopsSection />
