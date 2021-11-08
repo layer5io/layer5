@@ -111,7 +111,7 @@ alt="Layer5" align="left" /></a>
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Nighthawk</a></h2>
-<a href="https://getnighthawk.dev/"><img src=".github/assets/images/nighthawk/layer5-nighthawk.png"
+<a href="https://getnighthawk.dev/"><img src=".github/assets/images/getnighthawk/layer5-getnighthawk.png"
 style="margin:10px;" width="125px"
 alt="Layer5" align="left" /></a>
 <a href="https://getnighthawk.dev/">Nighthawk</a> is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads.
