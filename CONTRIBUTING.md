@@ -28,7 +28,7 @@ Join the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel on
 
 If you want to start contributing to the project's code, please follow these guidelines before creating a pull request: 
 
-  - First step is to set up the local development environment. See [this](# How to contribute) on how to do the same. 
+  - First step is to set up the local development environment. See [this](#how-to-contribute) on how to do the same. 
   - Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
   - A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
   - We regularly discuss about new issues to work on in our [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel on slack. Feel free to join and discuss about any issue or any idea that you may have.
@@ -132,7 +132,7 @@ This will run a local web server with "live reload" conveniently enabled. ( **NO
   git add .
   ```
 
-  **10.** Commit your changes. To contribute to this project, you must agree to the [Developer Certificate of Origin (DCO)](## Signing-off on Commits (Developer Certificate of Origin)) for each commit you make.
+  **10.** Commit your changes. To contribute to this project, you must agree to the [Developer Certificate of Origin (DCO)](#signing-off-on-commits-(-developer-certificate-of-origin-)) for each commit you make.
 
   ```
   git commit --signoff -m "<commit subject>"
@@ -219,7 +219,7 @@ A variety of badges exist so that community members and their efforts may be aff
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark-text.svg" width="25px" height="25px"/> SMP
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/nighthawk-logo.png" width="25px" height="25px"/> Nighthawk
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/getnighthawk-logo.png" width="25px" height="25px"/> Nighthawk
 - <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/patterns-logo.png" width="25px" height="25px"/> Patterns
 
 ## Updating the Service Mesh Landscape 
