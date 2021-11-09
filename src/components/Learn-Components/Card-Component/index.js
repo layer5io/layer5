@@ -21,13 +21,9 @@ const CardComponent = ({ tutorial, path, courseCount}) => {
                   ? tutorial.frontmatter.title
                   : tutorial.frontmatter.courseTitle}
               </h3>
-              {tutorial.frontmatter.status ? (
-                <p>
-                  <span>New</span>
-                </p>
-              ) : <div style={{whiteSpace: "nowrap"}}>
+              <div style={{whiteSpace: "nowrap"}}>
                 <span>Coming Soon</span>
-              </div> }
+              </div> 
             </div>
             <div className="card-desc">
               <p className="summary">{tutorial.frontmatter.description}</p>
@@ -74,9 +70,9 @@ const CardComponent = ({ tutorial, path, courseCount}) => {
                 alt={tutorial.frontmatter.title}
               />
             </div>
-          </div>  </Link>}
-        
-    
+          </div>  
+        </Link>
+      }
     </CardWrapper>
   );
 };
