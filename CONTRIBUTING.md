@@ -158,6 +158,8 @@ This will run a local web server with "live reload" conveniently enabled. ( **NO
   ```
   git checkout master
   git fetch origin master
+  git merge upstream/master
+  git push origin
   ```
 
   Now you need to merge the `master` branch into your branch. This can be done in the following way:
