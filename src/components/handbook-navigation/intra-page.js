@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
@@ -47,10 +47,10 @@ const JoinCommunityWrapper = styled.div`
 `;
 
 function IntraPage({ contents }) {
-  let intapath;
-
+  const [intapath, setIntapath] = useState(null);
   useEffect(() => {
-    intapath = window.location.pathname;
+    const path = window.location.pathname;
+    setIntapath(path);
   }, []);
   return (
     <JoinCommunityWrapper>
