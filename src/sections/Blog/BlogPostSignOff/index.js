@@ -1,6 +1,7 @@
 import React from "react";
 import {Link, graphql, useStaticQuery} from "gatsby";
 import slugify from "../../../utils/slugify";
+import layer5_img from "../../../assets/images/layer5/layer5-only/svg/layer5-gray-no-trim.svg";
 import BlogPostSignOffWrapper from "./blogpost-signoff.styles";
 
 const authorField = (author, isSlugAvailable) => {
@@ -41,7 +42,10 @@ const BlogPostSignOff = ({ author}) => {
   }
   return (
     <BlogPostSignOffWrapper>
-      - <p className="sign-off">{authorField(author, isSlugAvailable)}</p>
+      - {author.name === "Layer5 Team"
+        ? <p className="sign-off"><img src={layer5_img} alt="Layer5" /> Team</p>
+        : <p className="sign-off">{authorField(author, isSlugAvailable)}</p>
+      }
     </BlogPostSignOffWrapper>
   );
 };
