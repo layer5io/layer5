@@ -20,7 +20,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
 
   useEffect(() => {
     const path = location.pathname.split("/");
-    if(path[1] === "learn-ng"){
+    if(path[2] === "learning-paths"){
       setPath(getCurrentPage(location));
     } else
       return;
@@ -40,7 +40,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
           {availableChapters.map((item) => (
             <li key={item} className={item === path ? "active-link" : ""}>
               <p className="toc-item" key={item}>
-                <Link to={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
+                <Link to={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
                   {reformatTOC(item)}
                 </Link>
               </p>

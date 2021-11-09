@@ -64,7 +64,7 @@ module.exports = {
                 allPosts: allMdx(
                   sort: { fields: [frontmatter___date], order: DESC }
                   filter: { fields: { collection: { in: ["blog", "news"] } }, frontmatter: { published: { eq: true } } }
-                  limit: 100
+                  limit: 20
                 ) {
                   nodes {
                     body
@@ -185,6 +185,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/collections/service-mesh-labs`,
         name: "service-mesh-labs",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/collections/topics`,
+        name: "topics",
       },
     },
     {

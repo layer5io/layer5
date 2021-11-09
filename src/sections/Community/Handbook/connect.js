@@ -11,6 +11,7 @@ import github_icon from "../../../assets/images/socialIcons/github-light.svg";
 import linkedin_icon from "../../../assets/images/socialIcons/linkedin-light.svg";
 import docker_icon from "../../../assets/images/socialIcons/docker-light.svg";
 import slack_icon from "../../../assets/images/socialIcons/slack-light.svg";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 
 const Connect= () => {
@@ -43,9 +44,9 @@ const Connect= () => {
               <li><a href="http://meshery-security-vulns-reports@meshery.dev">Meshery Security and Vulnerability Reports</a></li>
               <li><a href="mailto:community@meshery.io">Meshery Community</a></li>
               <li><a href="mailto:katacoda@layer5.io">Katacoda-Managers</a></li>
-              <li><a href="http://developers@getnighthawk.dev">GetNighthawk Developers</a></li>
-              <li><a href="http://maintainers@getnighthawk.dev">GetNighthawk Maintainers</a></li>
-              <li><a href="http://users@getnighthawk.dev">GetNighthawk Users</a></li>
+              <li><a href="http://developers@nighthawk.dev">Nighthawk Developers</a></li>
+              <li><a href="http://maintainers@nighthawk.dev">Nighthawk Maintainers</a></li>
+              <li><a href="http://users@nighthawk.dev">Nighthawk Users</a></li>
               <li><a href="mailto:community@smp-spec.io">Service Mesh Performance Community</a></li>
               <li><a href="mailto:maintainers@smp-spec.io">Service Mesh Performance Maintainers</a></li>
               <li><a href="mailto:user-group@smp-spec.io">Service Mesh Performance Users</a></li>
@@ -89,7 +90,7 @@ const Connect= () => {
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={youtube_icon} alt="youtube" />&nbsp;&nbsp;
-                <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA">Subscribe on Youtube</a>
+                <a href="https://www.youtube.com/c/Layer5io?sub_confirmation=1">Subscribe on Youtube</a>
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={github_icon} alt="github" />&nbsp;&nbsp;
@@ -110,6 +111,7 @@ const Connect= () => {
             </div>
           </div>
         </Container>
+        <TocPagination />
       </div>
     </HandbookWrapper>
   );

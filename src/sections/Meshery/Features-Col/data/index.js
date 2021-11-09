@@ -11,7 +11,7 @@ const data = {
           className: "--on"
         },
         {
-          content: "Explore service mesh functionality with 10 different sample applications",
+          content: "Use sample applications, patterns, and filters to explore service mesh functionality",
           className: "--on"
         },
         {
@@ -38,7 +38,7 @@ const data = {
           className: "--on"
         },
         {
-          content: "WebAssembly for Envoy filters",
+          content: "Manage WebAssembly filters for Envoy",
           className: "--on"
         },
         {
@@ -55,7 +55,7 @@ const data = {
         }
       ],
       count: {
-        value: 800,
+        value: 1000,
         description: "users"
       }
     },

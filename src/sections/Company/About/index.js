@@ -12,11 +12,13 @@ import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.
 import Tshirts from "./images/free-tshirts.jpg";
 import Layer5Projects from "./images/layer5-projects.png";
 import CNCFServiceMesh from "./images/CNCF-Service-Mesh-WG-1.png";
+import CNCFstackedlogo from "./images/cncf-stacked-color.svg";
 import { Link } from "gatsby";
 
 const About = () => {
   return (
     <AboutSectionWrapper id="about">
+
       <Container fullWidthSM>
         <Row Vcenter={true} className="aboutus-title">
           <Col xs={12} sm={12}>
@@ -30,7 +32,7 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>About Us</h1>
                   <p>We embrace <i>developer</i>-defined infrastructure. We empower developers to change how they write applications, support <i>operators</i> in rethinking how they run modern infrastructure, and enable <i>product owners</i> to regain full-control over their product portfolio.</p>
-                  <p>Our cloud native application and infrastructure management software enables organizations to expect more from their infrastrcture.</p>
+                  <p>Our cloud native application and infrastructure management software enables organizations to expect more from their infrastructure.</p>
 
                   <h5 className="section-title">We are enablers.</h5>
                   <p>At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?". Our suite of multi-mesh, multi-cloud infrastructure management products — all with open source projects at their core — underpin each of our offerings. </p>
@@ -38,6 +40,11 @@ const About = () => {
                 </div>
               </Col>
             </Row>
+            <Container fullWidthSM>
+              <div className="head-images">
+                <Link to={Layer5Projects} ><img src={Layer5Projects} alt="About Layer5 Projects" /></Link>
+              </div>
+            </Container>
             <Row Vcenter={true} className="row-img-cont-1">
               <Col xs={12} sm={6}>
                 <div className="about-text text-one">
@@ -59,7 +66,7 @@ const About = () => {
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <Link to="./images/layer5-projects.png" ><img src={Layer5Projects} alt="About Layer5 Projects" /></Link>
+                  <img src={CNCFstackedlogo} alt="About Layer5 Projects" />
                 </div>
               </Col>
               <Col xs={12} sm={6}>

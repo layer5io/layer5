@@ -13,7 +13,7 @@ const Meshmates=() => {
     graphql`query meshmates {
   allMdx(
     sort: {fields: [frontmatter___name], order: ASC}
-    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}}}
+    filter: {fields: {collection: {eq: "members"}}, frontmatter: {meshmate: {eq: "yes"}, emeritus: {ne: "yes"}}}
   ) {
     nodes {
       id
@@ -27,6 +27,7 @@ const Meshmates=() => {
         badges
         bio
         meshmate
+        emeritus
         image_path {
           childImageSharp {
             gatsbyImageData(width: 200, layout: CONSTRAINED)
@@ -76,13 +77,13 @@ const Meshmates=() => {
           <h5> What to Expect </h5>
           <h2> Engaging with a MeshMate</h2>
           <p> The program pairs experienced Layer5 community members with community newcomers to ensure a smooth onboarding experience. There is a lot going in the Layer5 community. Projects and working groups move fast. MeshMates are committed to helping their mentees in identifying an area of the projects to engage within, working groups to join, growing their Cloud Native knowledge, and network of relationships. By connecting one-on-one, MeshMates will share tips on how to have the best community experience possible. </p>
-          <p> Meshtees are encouraged to get to know their MeshMate as soon as they are assigned (MeshMates and Mentees will be introduced in the Layer5 Slack). Help your MeshMate understand your current skills, ideal topics of learning, and areas of passion. Doing so will help them to point out various aspects of projects that you might find your first foothold. </p>
+          <p> Meshtees are encouraged to reach out to any MeshMate directly in order to pair up. Introduce yourself either on in the <a href="https://discuss.layer5.io/c/community/12">Layer5 discussion forum</a>. Help your MeshMate understand your current skills, ideal topics of learning, and areas of passion. Doing so will help them to point out various aspects of projects that you might find your first foothold. </p>
         </div>
         <div className="meshmate-meet">
           <Row Vcenter>
             <Col sm={12} lg={6}>
               <h2> Meeting Your MeshMate </h2>
-              <p> Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted and onboarding into the community, we suggest the following goals: </p>
+              <p>After pairing up on the <a href="https://discuss.layer5.io/c/community/12">Layer5 discussion forum</a>, the community Slack’s video chat or Google Hangouts are both available for your use as tools for getting to know one another. While getting acquainted and onboarding into the community, we suggest the following goals: </p>
               <table>
                 <tr>
                   <td className="icon"><img alt="icon" src={c_icon} /></td>

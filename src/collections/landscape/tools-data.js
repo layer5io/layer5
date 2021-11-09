@@ -112,11 +112,11 @@ export const tools_data= [
     desc: "Locust is an easy-to-use, distributed, user load testing tool. It is intended for load-testing web sites (or other systems) and figuring out how many concurrent users a system can handle.",
   },
   {
-    tool: "GetNighthawk",
-    link: "https://github.com/layer5io/getnighthawk",
+    tool: "Nighthawk",
+    link: "https://github.com/layer5io/nighthawk",
     language: "C++",
     written_for: "L7 (HTTP/HTTPS/HTTP2) performance characterization tool",
     supported_by: "Envoy, CNCF",
-    desc: "GetNighthawk provides Service Mesh Performance-compatible access to the L7 (HTTP/HTTPS/HTTP2) performance characterization tool, Nighthawk. Nighthawk’s design focuses on exact request release timing and aims to provide its users with the ability to dynamically customize the request headers and content during an experiment.",
+    desc: "Nighthawk provides Service Mesh Performance-compatible access to the L7 (HTTP/HTTPS/HTTP2) performance characterization tool, Nighthawk. Nighthawk’s design focuses on exact request release timing and aims to provide its users with the ability to dynamically customize the request headers and content during an experiment.",
   },
 ];

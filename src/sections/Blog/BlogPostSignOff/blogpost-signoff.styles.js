@@ -7,6 +7,11 @@ const BlogPostSignOffWrapper  = styled.div`
     {
         padding:0rem 0.2rem;
         font-style:italic;
+
+        img {
+            width: 5.5rem;
+            transform: skewX(-15deg);
+        }
     }
     
 `;

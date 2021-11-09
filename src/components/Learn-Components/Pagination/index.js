@@ -13,7 +13,7 @@ const Pagination = ({ TOCData, chapterData, location }) => {
 
   useEffect(() => {
     const path = location.pathname.split("/");
-    if(path[1] === "learn-ng"){
+    if(path[2] === "learning-paths"){
       setPath(getCurrentPage(location));
     } else
       return;
@@ -37,7 +37,7 @@ const Pagination = ({ TOCData, chapterData, location }) => {
     nextChapter !== "" ? (
       <PaginationWrapper>
         <h4 className="next-chapter">
-                    NEXT CHAPTER
+          NEXT CHAPTER
         </h4>
         <div className="paginate-section">
           <h3 className="next-chapter-heading">
@@ -45,13 +45,12 @@ const Pagination = ({ TOCData, chapterData, location }) => {
           </h3>
           <div className="chapter-link">
             <Button secondary title="Next Chapter"
-              url={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${nextChapter}/`}
+              url={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${nextChapter}/`}
               external={false} />
           </div>
         </div>
       </PaginationWrapper>
-    )
-      : null
+    ) : null
   );
 };
 

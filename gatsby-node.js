@@ -46,6 +46,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/service-meshes", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/calendar", toPath: "/community/calendar", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/smi", toPath: "/projects/service-mesh-interface-conformance", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
 
   //****
   // External Resoruce Redirects
@@ -53,7 +54,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // New Community Member (Google Form)
   createRedirect({ fromPath: "/newcomer", toPath: "https://docs.google.com/forms/d/e/1FAIpQLSdMLeZY6hZ46yYNkoKKV5OM-jCypjbYcqptbUNltEE73EqCjA/viewform", redirectInBrowser: true, isPermanent: true });
-  
+  createRedirect({ fromPath: "/go/meshmap-beta", toPath: "https://docs.google.com/forms/d/e/1FAIpQLSdf4a_JPH9zenEXtvhaUAU1-5_nkScDpDKcdbaarwbqWkZLNg/viewform?usp=sf_link", redirectInBrowser: true, isPermanent: true });
   // Create Pages
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
@@ -113,6 +114,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/lab-single.js"
   );
 
+  const topicPostTemplate = path.resolve(
+    "src/templates/topic-single.js"
+  );
+  const topicCategoryListTemplate = path.resolve(
+    "src/templates/topic-category-list.js"
+  );
+  const topicTagListTemplate = path.resolve(
+    "src/templates/topic-tag-list.js"
+  );
+  const topicViewTemplate = path.resolve(
+    "src/templates/topic.js"
+  );
   const res = await graphql(`
     {
       allPosts:  allMdx(
@@ -179,6 +192,40 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+      allTopics:  allMdx(
+        filter: { frontmatter: { published: { eq: true } } }
+      ) {
+        nodes {
+          frontmatter{
+            program
+            programSlug
+          }
+          fields {
+            collection
+            slug
+          }
+        }
+      }
+      topicTags: allMdx(
+        filter: { fields: { collection: { eq: "topics" } }, frontmatter: { published: { eq: true } } }
+        ){
+          group(field: frontmatter___tags) {
+            nodes{
+              id
+            }
+            fieldValue
+          }
+      }
+      topicCategory: allMdx(
+        filter: { fields: { collection: { eq: "topics" } }, frontmatter: { published: { eq: true } } }
+        ){
+          group(field: frontmatter___category) {
+            nodes{
+              id
+            }
+            fieldValue
+          }
+      }
       learncontent: allMdx(
         filter: {fields: {collection: {eq: "content-learn"}}}
       ){
@@ -207,6 +254,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogs = allNodes.filter(
     node => node.fields.collection === "blog"
+  );
+
+  const topics = allNodes.filter(
+    node => node.fields.collection === "topics"
   );
 
   const news = allNodes.filter(
@@ -251,6 +302,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   paginate({
     createPage,
+    items: topics,
+    itemsPerPage: 8,
+    pathPrefix: "/topics",
+    component: topicViewTemplate
+  });
+
+  paginate({
+    createPage,
     items: events,
     itemsPerPage: 9,
     pathPrefix: "/community/events",
@@ -266,6 +325,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
   const blogCategory = res.data.blogCategory.group;
   blogCategory.forEach(category => {
     paginate({
@@ -288,6 +348,44 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       itemsPerPage: 4,
       pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
       component: blogTagListTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
+    });
+  });
+
+  topics.forEach(topic => {
+    createPage({
+      path: topic.fields.slug,
+      component: topicPostTemplate,
+      context: {
+        slug: topic.fields.slug,
+      },
+    });
+  });
+
+  const topicCategory = res.data.topicCategory.group;
+  topicCategory.forEach(category => {
+    paginate({
+      createPage,
+      items: category.nodes,
+      itemsPerPage: 4,
+      pathPrefix: `/topics/category/${slugify(category.fieldValue)}`,
+      component: topicCategoryListTemplate,
+      context: {
+        category: category.fieldValue,
+      },
+    });
+  });
+
+  const TopicTags = res.data.topicTags.group;
+  TopicTags.forEach(tag => {
+    paginate({
+      createPage,
+      items: tag.nodes,
+      itemsPerPage: 4,
+      pathPrefix: `/topics/tag/${slugify(tag.fieldValue)}`,
+      component: topicTagListTemplate,
       context: {
         tag: tag.fieldValue,
       },
@@ -387,15 +485,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   let programsArray = [];
   programs.forEach(program => {
-    if(
-      programsArray.indexOf(program.frontmatter.program)>=0 &&
+    if (
+      programsArray.indexOf(program.frontmatter.program) >= 0 &&
       program.frontmatter.program === "Layer5"
-    ){
+    ) {
       return false;
-    }else{     
+    } else {
       programsArray.push(program.frontmatter.program);
       createPage({
-        path:  `/programs/${program.frontmatter.programSlug}`,
+        path: `/programs/${program.frontmatter.programSlug}`,
         component: MultiProgramPostTemplate,
         context: {
           program: program.frontmatter.program,
@@ -407,7 +505,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const learnNodes = res.data.learncontent.nodes;
 
   learnNodes.forEach((node) => {
-    if (node.fields){
+    if (node.fields) {
       const { pageType } = node.fields;
 
       if (pageType === "learnpath") {
@@ -424,7 +522,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         createChapterPage({ createPage, node });
         return;
       }
-      
+
       if (pageType === "section") {
         createSectionPage({ createPage, node });
         return;
@@ -443,7 +541,7 @@ const onCreatePathNode = ({ actions, node, slug }) => {
   const [learnpath] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "pageType", value: "learnpath" });
 };
@@ -454,7 +552,7 @@ const onCreateCourseNode = ({ actions, node, slug }) => {
   const [learnpath, course] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "pageType", value: "course" });
@@ -466,7 +564,7 @@ const onCreateSectionNode = ({ actions, node, slug }) => {
   const [learnpath, course, section] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "section", value: section });
@@ -479,7 +577,7 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   const [learnpath, course, section, chapter] = parts;
 
   createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn-ng${slug}` });
+  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "chapter", value: chapter });
   createNodeField({ node, name: "course", value: course });
@@ -496,14 +594,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value: collection
     });
-    if(collection !== "content-learn"){
+    if (collection !== "content-learn") {
       let slug = "";
       if (node.frontmatter.permalink) {
         slug = `/${collection}/${node.frontmatter.permalink}`;
       } else {
         switch (collection) {
           case "blog":
-            slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
+            if (node.frontmatter.published)
+              slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
             break;
           case "news":
             slug = `/company/${collection}/${slugify(node.frontmatter.title)}`;
@@ -512,6 +611,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           case "service-mesh-workshops":
           case "service-mesh-labs":
             slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
+            break;
+          case "topics":
+            if (node.frontmatter.published)
+              slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
             break;
           case "members":
             if (node.frontmatter.published)

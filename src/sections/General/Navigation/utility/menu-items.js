@@ -43,26 +43,31 @@ const Data = {
       name: "Projects",
       path: "/projects",
       subItems: [
-        {
-          name: "Distributed Performance",
-          path: "/projects/distributed-performance-management",
-          sepLine: true
-        },
-        {
-          name: "Image Hub",
-          path: "/projects/image-hub",
-          sepLine: true
-        },
+        // {
+        //   name: "Image Hub",
+        //   path: "/projects/image-hub",
+        //   sepLine: true
+        // },
         {
           name: "Meshery",
           path: "/service-mesh-management/meshery",
           sepLine: true
         },
+        {
+          name: "Nighthawk",
+          path: "/projects/nighthawk",
+          sepLine: true
+        },        
         // {
         //   name: "Service Mesh Landscape",
         //   path: "/landscape",
         //   sepLine: true
         // },
+        {
+          name: "Service Mesh Patterns",
+          path: "/learn/service-mesh-books/service-mesh-patterns",
+          sepLine: true
+        },
         {
           name: "Service Mesh Interface",
           path: "/projects/service-mesh-interface-conformance",
@@ -73,11 +78,6 @@ const Data = {
           path: "/projects/service-mesh-performance",
           sepLine: true
         },
-        {
-          name: "GetNighthawk",
-          path: "/projects/getnighthawk",
-          sepLine: true
-        }
       ],
       actionItems: [
         {
@@ -109,10 +109,15 @@ const Data = {
           sepLine: true
         },
         {
-          name: "Service Mesh Labs",
+          name: "Learning Paths",
+          path: "/learn/learning-paths",
+          sepLine: true
+        },        
+        {
+          name: "Interactive Labs",
           path: "/learn/service-mesh-labs",
           sepLine: true
-        }
+        },
       ],
       actionItems: [
         {
@@ -173,8 +178,8 @@ const Data = {
       ],
       actionItems: [
         {
-          actionName: "Join the community",
-          actionLink: "/community/newcomers",
+          actionName: "Join the discussion",
+          actionLink: "https://discuss.layer5.io",
         },
         {
           actionName: "Open source internship programs",
