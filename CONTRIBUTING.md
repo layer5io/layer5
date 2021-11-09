@@ -109,8 +109,9 @@ Follow the following instructions to start contributing.
   ```
 
   **4.** Add a reference(remote) to the original repository.
+  
   ```
-  git remote add upstream https://github.com/commclassroom/commclassroom.git
+  git remote add upstream https://github.com/layer5io/layer5.git
   ```
 
   **5.** Check the remotes for this repository.
