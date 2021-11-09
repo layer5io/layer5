@@ -9,9 +9,7 @@ import WhatAwaitsSection from "../../components/Learn-Components/what-await-sect
 import Book_Giveaway from "../../assets/images/learn/istio-book-giveaway.jpg";
 import JoinCommunity from "../Community/Join-community";
 
-function ComingSoon() {
-  "<h2>Coming Soon</h2>";
-}
+
 const LearnPathsPage = () => {
   const data = useStaticQuery(graphql`
     query allLearnPath {
@@ -26,6 +24,7 @@ const LearnPathsPage = () => {
             title
             description
             themeColor
+            disabled
             courses
             cardImage {
               childImageSharp {
@@ -104,10 +103,7 @@ const LearnPathsPage = () => {
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
             <Col sm={6} key={tutorial.id}>
-              <CardComponent tutorial={tutorial} path={tutorial.fields.learnpath} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length}  />
-              {getCoursesOfaLearningPath(tutorial.fields.learnpath).length === 0 &&
-                 <ComingSoon />
-              }
+              <CardComponent tutorial={tutorial} path={tutorial.fields.learnpath} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
             </Col>
           ))}
         </Row>
