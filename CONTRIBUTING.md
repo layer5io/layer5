@@ -109,6 +109,7 @@ Follow the following instructions to start contributing.
   ```
 
   **4.** Add a reference(remote) to the original repository.
+  
   ```
   git remote add upstream https://github.com/layer5io/layer5.git
   ```
