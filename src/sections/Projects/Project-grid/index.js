@@ -11,9 +11,11 @@ import landscape from "../../../assets/images/app/projects/landscape.png";
 import smi from "../../../assets/images/app/projects/smi.svg";
 import imagehub from "../../../assets/images/image-hub/layer5-image-hub.png";
 import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
-import distributedPerformance from "../../../collections/projects/distributed-performance-management/distributed-performance_green.svg";
+import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+
+// import distributedPerformance from "../../../collections/projects/distributed-performance-management/distributed-performance_green.svg";
 import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
-import nighthawk from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 
 import CommunityCallCard from "../../../components/CommunityCallCard/index";
 
@@ -69,26 +71,26 @@ const ProjectPage = () => {
                 <h5>Service Mesh Performance</h5>
               </div>
             </Link>
-            <Link to="/projects/getnighthawk" className="project__card six">
+            <Link to="/projects/nighthawk" className="project__card six">
               <div className="project__card-container">
-                <img src={nighthawk} alt="Getnighthawk" />
-                <h5>GetNightHawk</h5>
+                <img src={nighthawk} alt="Nighthawk" />
+                <h5>NightHawk</h5>
               </div>
             </Link>
             <Link
-              to="/projects/distributed-performance-management"
+              to="/learn/service-mesh-books/service-mesh-patterns"
               className="project__card seven"
             >
               <div className="project__card-container-seven">
                 <Row>
                   <Col lg={4} md={12} sm={12} className="image">
                     <img
-                      src={distributedPerformance}
-                      alt="Distributed Performance Management of Service Meshes"
+                      src={patterns}
+                      alt="Service Mesh Patterns"
                     />
                   </Col>
                   <Col lg={8} md={12} sm={12}>
-                    <h5> Distributed Performance Management of Service Meshes</h5>
+                    <h5> Service Mesh Patterns</h5>
                   </Col>
                 </Row>
               </div>

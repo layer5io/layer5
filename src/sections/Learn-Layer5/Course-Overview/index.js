@@ -14,6 +14,7 @@ import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import DiscussCallout from "../../Discuss-Callout";
+import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 
 const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
   const serviceMeshImages = course.frontmatter.meshesYouLearn;
@@ -117,6 +118,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
               />
             </div> */}
             <DiscussCallout />
+            <SubscribeLearnPath />
           </Col>
         </Row>
       </div>

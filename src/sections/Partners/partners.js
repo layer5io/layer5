@@ -18,7 +18,7 @@ export const partners = [
     //link: "http://www.ece.utexas.edu/speakers/lee-calcote",
     type: "academic",
     imageLink: partner1, 
-    imageRoute: "http://www.ece.utexas.edu/speakers/lee-calcote",
+    //imageRoute: "http://www.ece.utexas.edu/speakers/lee-calcote",
     moreInfo:"In partnership with faculty of the Cockrell School of Engineering at The University of Texas at Austin, graduate students engage in research on the affects of hardware architectures and the performance of software-based networking.Ph.D. candidates leverage Meshery in research and analysis of affect and overhead service mesh architectures have on when running distributed systems. Learn more about our collaborative research"
   },{
     name: "Google Summer of Code",
@@ -26,7 +26,7 @@ export const partners = [
     //link: "/programs",
     type: "academic",
     imageLink: partner2,
-    imageRoute: "https://layer5.io/gsoc/2020",
+    imageRoute: "https://layer5.io/gsoc/",
     moreInfo: "Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school. Learn more about our mentoring",
   },{
     name: "University of Engineering & Management Jaipur",
@@ -34,7 +34,7 @@ export const partners = [
     //link: "/careers/internships",
     type: "academic",
     imageLink: partner3,
-    imageRoute: "https://uem.edu.in/blog/what-is-open-source/",
+    //imageRoute: "https://uem.edu.in/blog/what-is-open-source/",
     moreInfo: "We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the university participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. Learn more about Layer5's internships",
   },{
     name: "Citrix",
@@ -42,7 +42,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner4,
-    imageRoute: "https://www.citrix.com/products/citrix-adc/",
+    //imageRoute: "https://www.citrix.com/products/citrix-adc/",
     moreInfo: "Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.",
   },{
     name: "Cloud Native Computing Foundation (CNCF)",
@@ -50,7 +50,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner5,
-    imageRoute: "https://landscape.cncf.io/category=cncf-members&format=logo-mode&grouping=category&selected=layer5-member&embed=yes",
+    imageRoute: "https://landscape.cncf.io/card-mode?category=cncf-members&grouping=category&selected=layer5-member&embed=yes&style=logo",
     moreInfo: "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world’s top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
   },{
     name: "HashiCorp",
@@ -58,7 +58,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner6,
-    imageRoute: "https://www.hashicorp.com/integrations/layer5-io/consul",
+    imageRoute: "https://www.hashicorp.com/partners/tech/layer5",
     moreInfo: "HashiCorp is the leader in cloud infrastructure automation software. Our software stack enables the provisioning, securing, connecting, and running of apps and the infrastructure to support them. HashiCorp unlocks the cloud operating model for every business and enable their digital transformation strategies to succeed.",
   },{
     name: "HPE",
@@ -66,7 +66,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner7,
-    imageRoute: "https://www.hpe.com/",
+    //imageRoute: "https://www.hpe.com/",
     moreInfo: "HPE GreenLake is an IT-as-a-service offering that brings the cloud experience to your on-premises infrastructure and unifies your edges, clouds, and data centers.",
   },{
     name: "Istio",
@@ -82,7 +82,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner8,
-    imageRoute: "https://www.microsoft.com/",
+    //imageRoute: "https://www.microsoft.com/",
     moreInfo: "Microsoft Azure is an ever-expanding set of cloud services to help your organization meet your business challenges. It’s the freedom to build, manage, and deploy applications on a massive, global network using your favorite tools and frameworks.",
   },{
     name: "Red Hat",
@@ -90,7 +90,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner9,
-    imageRoute: "https://www.redhat.com/",
+    //imageRoute: "https://www.redhat.com/",
     moreInfo: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
   },{
     name: "Service Mesh Interface",
@@ -98,7 +98,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner10,
-    imageRoute: "https://smi-spec.io/",
+    imageRoute: "https://smi-spec.io/blog/validating-smi-conformance-with-meshery/",
     moreInfo: "The Service Mesh Interface (SMI) is a specification for service meshes that run on Kubernetes. It defines a common standard that can be implemented by a variety of providers. This allows for both standardization for end-users and innovation by providers of Service Mesh Technology. It enables flexibility and interoperability.",
   },{
     name: "Intel",
@@ -106,7 +106,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner11,
-    imageRoute: "https://www.intel.in/content/www/in/en/homepage.html",
+    //imageRoute: "https://www.intel.in/content/www/in/en/homepage.html",
     moreInfo:  "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
   }
   

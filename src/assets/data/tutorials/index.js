@@ -114,6 +114,20 @@ const data = [
                 name: "Piyush Singariya",
             }
         ] 
+    },
+    {
+        date: "Oct. 7 2021",
+        topic: "Working with Meshery Docs and Jekyll",
+        resources: {
+            slides: "https://docs.google.com/presentation/d/1GhJH3YF5mBeYX7I7ItEd-EbUmk1cnn3BdK1X230kwII/edit?usp=sharing",
+            recording: "https://www.youtube.com/watch?v=PBq7mIPnPhM"
+        },
+        presenters: [
+            {
+                link: "/community/members/aadhitya-amarendiran",
+                name: "Aadhitya Amarendiran",
+            }
+        ]
     },     
 ];
 

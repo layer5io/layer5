@@ -15,7 +15,7 @@ const LearnGridPage = () => {
       <Layout>
         <GlobalStyle />
         <SEO title="Learn Service Mesh"
-          description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Maesh, Kuma, App Mesh, Citrix, Tanzu Service Mesh"
+          description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Open Service Mesh, Traefik Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
           image="/images/workshops.png" />
         <Navigation />
         <LearnPage />
