@@ -11,10 +11,9 @@ const DiscussWrapper = styled.div`
         color:${props => props.theme.secondaryColor};
     }
     .logo{
-        height: 2.5rem;
         width: auto;
     }
-    .explain-1 {
+    .explain {
         padding-top: 0rem;
         text-align: center;
         p { 
@@ -78,7 +77,7 @@ const DiscussWrapper = styled.div`
     }
     @media only screen and (min-width: 990px){
         @media only screen and (min-width: 1211px){
-            .explain-1 {
+            .explain {
                 .cards {
                     padding: 0;
                     .card {
@@ -88,7 +87,7 @@ const DiscussWrapper = styled.div`
             }
         }
         @media only screen and (max-width: 1210px){
-            .explain-1 {
+            .explain {
                 .cards {
                     padding: 0; 
                     .card {
@@ -104,12 +103,11 @@ const DiscussWrapper = styled.div`
                 }
             }
             .logo {
-                height: 2.6rem;
                 width: auto;  
             }
         }
         @media only screen and (max-width: 1100px){
-            .explain-1 {
+            .explain {
                 .cards {
                     padding: 0;
                     .card {
@@ -129,13 +127,12 @@ const DiscussWrapper = styled.div`
                 }
             }
             .logo{
-                height: 2.4rem;
                 width: auto;  
             }
         }
     }
     @media only screen and (max-width: 450px){
-        .explain-1 {
+        .explain {
             .cards {
                 padding: 1rem 1rem 1rem 1rem;
                 .card {
@@ -150,12 +147,11 @@ const DiscussWrapper = styled.div`
             }
         }
         .logo{
-            height: 1.8rem;
             width: auto;  
         }
     }
     @media only screen and (max-width: 375px){
-        .explain-1 {
+        .explain {
             .cards {
                 padding: 1rem .5rem 1rem .5rem;
                 h2 {
@@ -167,7 +163,6 @@ const DiscussWrapper = styled.div`
             }
         }
         .logo{
-            height: 1.7rem;
             width: auto;  
         }
     } 
