@@ -58,7 +58,7 @@ const CommunityCallCard = ({hero_image}) => {
       <img className="card-img" alt="community" src={hero_image ? hero_image : hero} />
       <div className="card-text">
         <h4> Community Meeting </h4>
-        <p> Layer5 hosts weekly community calls where users and contributors discuss cloud native topics nd demonstrate advancements of open source projects. </p>
+        <p> Layer5 hosts weekly community calls where users and contributors discuss cloud native topics and demonstrate advancements of its open source projects. </p>
         <h4 className="highlight"> Interested? </h4>
         <p> You can register below for the next Layer5 community meeting. </p>
         <Row>

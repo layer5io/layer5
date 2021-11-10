@@ -9,7 +9,7 @@ import MesheryOperator from "../../../assets/images/meshery-operator/meshery-ope
 const SetupPreReq = () => (
   <SetupPreReqWrapper>
     <div className="get-started-desc" id="pre-requisites">
-      <h2>Pre-requisites</h2>
+      <h2>Prerequisites</h2>
       <p>In this learning path, we will be using Meshery as the management plane to manage the service meshes. Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads.</p>
     </div>
     <div className="container-card" id="Set up">

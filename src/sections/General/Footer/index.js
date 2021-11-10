@@ -47,6 +47,13 @@ const Footer = () => {
                   <li>
                     <Link
                       className="category-link"
+                      to="/topics/category/webassembly"
+                    >WebAssembly Filters
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="category-link"
                       to="/learn/service-mesh-books"
                     >
                       Service Mesh Books
@@ -63,17 +70,17 @@ const Footer = () => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/service-mesh-landscape#service-mesh-comaprison-matrix"
+                      to="/learn/service-mesh-labs"
                     >
-                      Service Mesh Feature Comparison
+                      Service Mesh Interactive Labs
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="category-link"
-                      to="/service-mesh-landscape#service-mesh-comparison-strength"
+                      to="/service-mesh-landscape#service-mesh-comaprison-matrix"
                     >
-                      Service Mesh Strength Comparison
+                      Service Mesh Feature Comparison
                     </Link>
                   </li>
                 </ul>
@@ -131,8 +138,8 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/getnighthawk">
-                      GetNighthawk
+                    <Link className="category-link" to="/projects/nighthawk">
+                      Nighthawk
                     </Link>
                   </li>
                   <li>

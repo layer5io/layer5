@@ -10,7 +10,7 @@ import SMPBrand from "./Brand-components/smp";
 import CommunityBrand from "./Brand-components/community";
 import Button from "../../../reusecore/Button";
 import { FiDownloadCloud } from "react-icons/fi";
-import GetNightHawk from "./Brand-components/getnighthawk";
+import NightHawk from "./Brand-components/nighthawk";
 import ServiceMeshPatterns from "./Brand-components/servicemeshpatterns";
 
 const getDimensions = (ele) => {
@@ -91,7 +91,7 @@ const Brand = () => {
   const imageHubRef = useRef(null);
   const smpRef = useRef(null);
   const servicemeshpatternsRef = useRef(null);
-  const getnightHawkRef = useRef(null);
+  const nightHawkRef = useRef(null);
   const meshmateRef = useRef(null);
 
   const sectionRefs = [
@@ -102,7 +102,7 @@ const Brand = () => {
     { section: "ImageHub", ref: imageHubRef },
     { section: "SMP", ref: smpRef },
     { section: "ServiceMeshPatterns", ref: servicemeshpatternsRef },
-    { section: "GetNightHawk", ref: getnightHawkRef },
+    { section: "NightHawk", ref: nightHawkRef },
     { section: "MeshMate", ref: meshmateRef },
   ];
 
@@ -173,8 +173,8 @@ const Brand = () => {
           <div className="section" ref={servicemeshpatternsRef}>
             <ServiceMeshPatterns />
           </div>
-          <div className="section" ref={getnightHawkRef}>
-            <GetNightHawk />
+          <div className="section" ref={nightHawkRef}>
+            <NightHawk />
           </div>
           <div className="section" ref={meshmateRef}>
             <CommunityBrand />
@@ -254,13 +254,13 @@ const Brand = () => {
             </p>
             <p
               className={`header_link ${
-                visibleSection === "GetNightHawk" ? "selected" : ""
+                visibleSection === "NightHawk" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(getnightHawkRef.current);
+                scrollTo(nightHawkRef.current);
               }}
             >
-              <span> GetNightHawk </span>
+              <span> NightHawk </span>
             </p>
             <p
               className={`header_link ${
