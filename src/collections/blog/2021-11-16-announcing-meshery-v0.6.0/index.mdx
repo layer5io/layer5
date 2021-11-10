@@ -1,0 +1,160 @@
+---
+title: "Announcing Meshery v0.6.0"
+subtitle: "Now servicing over 1,000 users"
+date: 2021-11-16 08:00:00 +0000
+author: Layer5 Team
+thumbnail: ./cover.png
+category: Announcements
+tags:
+  - Meshery
+  - Projects
+  - News
+published: true
+featured: true
+---
+
+import { BlogWrapper } from "../Blog.style.js";
+import { Link } from "gatsby";
+import layer5Logo from "../../../assets/images/layer5/layer5-only/svg/layer5-no-trim.svg";
+import patterns from "./patterns.png";
+import applications from "./applications.png";
+import filters from "./filters.png";
+import meshmap from "./meshmap.png";
+import smiaction from "./smi-action.jpeg";
+
+<BlogWrapper>
+
+<p>Following on the announcement at KubeCon NA 2021 of the Cloud Native Computing Foundation's adoption of Meshery, the open source community is pleased to announce the v0.6.0 release of Meshery. In this latest release, three new feature areas entered beta, service mesh standards are GitOps enabled, new CLI commands and more are now available to users as previewed at ServiceMeshCon NA 2021.</p>
+
+As the CNCF’s service mesh manager, Meshery v0.6.0 touts the following new whizbang features.
+
+<h2>Feature Highlights</h2>
+
+- Manage Applications in Meshery [beta]
+- Manage WebAssembly filters in Meshery [beta]
+- Manage Service Mesh Patterns in Meshery [beta]
+- Meshery on Apple Silicon
+- Improved Kubernetes support
+- CLI commands to check environment readiness and system health
+- Pipelining service mesh specifications
+- MeshMap: Visual Designer [beta program]
+
+<div
+  class="intro"
+  style="text-align:center; display:flex; flex-direction:row; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; margin: 2rem;"
+>
+  <img
+    src={layer5Logo}
+    style="max-height:55px; height:auto; margin: auto; padding: .5rem;"
+  />
+  <p style="flex-basis: 50%; width:100%; padding: 0rem; margin:0rem; ">
+    Thank you to the wonderful Layer5 community of open source contributors in
+    making this significant release possible.
+  </p>
+</div>
+
+<h2>Meshery Applications [beta]</h2>
+
+<p>Users can now manage their Kubernetes applications directly through Meshery. Meshery offers an all-in-one place to store and onboard/offboard your applications onto the service mesh.</p>
+<p>Meshery also comes with a set of sample applications that you can use to quickly test your service mesh’s capabilities. Users can also bring in their own applications from disk, import it from a URL or even a GitHub repository.</p>
+
+<h2>WASM Filters [beta]</h2>
+
+<p>WebAssembly is a low-level language with a compact binary format that runs almost anywhere at near-native speed including Envoy’s Application Binary Interface to extend Envoy with new capabilities.</p>
+<p>With this new feature, Meshery works with the service meshes to dynamically load, configure and unload filter(s) in the running Envoy proxies.</p>
+<p>Learn more about filter management <a href="https://docs.meshery.io/functionality/filter-management">here</a>.</p>
+
+<h2><img src={PatternsLogo}  align="center" alt="patterns-logo" height="35rem" width="32rem" style="padding-bottom:5px;padding-top:auto;"/> Service Mesh Patterns [beta]</h2>
+
+<p>Service Mesh Patterns capture service mesh behaviour in a single or a combination of files in a concise and readable fashion. Patterns are service mesh agnostic but still allow users to access service mesh-specific features.</p>
+<img src={patterns} className="slides-right" align="right" alt="meshery patterns" />
+<p>Meshery comes with a set of patterns out-of-the-box which the users can try out in their deployment. See more <a href="https://docs.meshery.io/functionality/pattern-management">here</a>.</p>
+<p>Users can also bring in their own patterns from any URL or from a GitHub repository, customize it and apply it to their service mesh.</p>
+
+<h2>Run Meshery anywhere (and everywhere)</h2>
+
+<p>Meshery’s CLI, mesheryctl now supports macOS with Apple Silicon (ARM/M1) chips along with the previously supported Windows, Linux and macOS (x86).</p>
+<p>mesheryctl can be installed by using a single command as shown in the <a href="https://docs.meshery.io/installation/quick-start">quick start guide</a>.</p>
+
+<h2>Meshery on Kubernetes (by default)</h2>
+
+<p>With this release, Meshery by default deploys on your Kubernetes cluster.</p>
+<p>Whether you are running a test environment locally using minikube or KinD, or if you are using a managed Kubernetes service like EKS or GKE, you can run Meshery with a one-liner command.</p>
+
+```
+curl -L https://git.io/meshery | PLATFORM=kubernetes bash -
+```
+
+<p>See the list for more <a href="https://docs.meshery.io/installation/platforms">supported platforms</a>.</p>
+
+<h2>Checking environment readiness and post deployment checks</h2>
+
+<p>Users can now run <a href="">environment readiness checks with Meshery’s CLI</a>, mesheryctl, to verify if their environment is configured correctly before deploying Meshery.</p>
+<p>This ensures that the deployment process is smooth and would help the users troubleshoot and fix any errors in their environment.</p>
+<p>mesheryctl now also has the `system check` command which will run checks on a running instance of Meshery and report back any issues.</p>
+
+```
+➜  ~ mesheryctl system check            
+
+Docker 
+--------------
+!! Docker is not running
+✓ docker-compose is available
+
+Kubernetes API 
+--------------
+✓ can initialize Kubernetes client
+✓ can query the Kubernetes API
+
+Kubernetes Version 
+--------------
+✓ running the minimum Kubernetes version
+✓ running the minimum kubectl version
+
+Meshery Version 
+--------------
+✓ Meshery Server is up-to-date (stable-v0.5.66)
+✓ CLI is up-to-date (stable-v0.5.66)
+
+Meshery Adapters 
+--------------
+!! meshery-octarine adapter is not running
+!! meshery-cpx adapter is not running
+✓ meshery-istio adapter is running and reachable
+✓ meshery-consul adapter is running and reachable
+✓ meshery-nsm adapter is running and reachable
+✓ meshery-kuma adapter is running and reachable
+✓ meshery-osm adapter is running and reachable
+✓ meshery-nginx-sm adapter is running and reachable
+✓ meshery-linkerd adapter is running and reachable
+```
+
+<h2>Pipelining service mesh specifications</h2>
+
+<p>The <a href="https://smi-spec.io/">Service Mesh Interface</a> specification provides a standard interface for service meshes on Kubernetes. It has a basic common denominator feature set to support most common service mesh use cases and a flexibility to support new service mesh capabilities over time.</p>
+
+<div class="img-center">
+  <a href={smiaction}><img src={smiaction} /></a>
+</div>
+
+<p>The <a href="https://smp-spec.io/">Service Mesh Performance</a> specification standardizes capturing and characterizing the details of infrastructure capacity, service mesh configuration and workload metadata.</p>
+<p>As a service mesh agnostic tool that provides lifecycle and performance management of a large number (10+) service meshes, sample applications, service mesh patterns and WebAssembly filters, Meshery is the ideal tool for the job when it comes to implementing these specifications.</p>
+<p>Meshery also comes with 2 new GitHub Actions that do exactly this. The <a href="https://github.com/layer5io/meshery-smi-conformance-action">Meshery SMI Conformance Action</a> which <a href="https://meshery.io/blog/validating-smi-conformance-with-meshery">validates SMI conformance</a> in your pipeline and the <a href="https://github.com/layer5io/meshery-smp-action">Meshery SMP Action</a> which runs <a href="https://docs.meshery.io/functionality/performance-management">SMP compatible performance benchmarks</a>.</p>
+
+<h2>MeshMap Beta Program</h2>
+
+<p>We saved the best for last! Meshery’s latest feature, MeshMap, which lets users visualise their service mesh deployments is now in beta.</p>
+<p>Users can sign up for the beta to try out this feature early on.</p>
+
+<div class="img-center">
+  <a href={meshmap}><img src={meshmap} /></a>
+</div>
+
+<h2>On to v0.7.0</h2>
+
+<p>To learn more about the new features and a comprehensive list of bug fixes, see the <a href="https://docs.layer5.io/docs/project/releases">Meshery Documentation</a>.</p>
+<p>Checkout <a href="https://github.com/meshery/meshery/blob/master/ROADMAP.md">Meshery’s roadmap</a> to peek into what’s yet to come.</p>
+
+<div class="intro"><p>If these topics excite you and you want to explore the wonderful world of service meshes, come and say "Hi" on the community <a href="http://slack.layer5.io">Slack</a> and you are sure to be warmly welcomed. <span>😀</span></p></div>
+
+</BlogWrapper>
