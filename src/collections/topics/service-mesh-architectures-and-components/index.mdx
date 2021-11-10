@@ -109,6 +109,10 @@ When the number of proxies becomes unmanageable or when a single point of visibi
   We can see how the data and control planes are packaged and deployed in Linkerd (pronounced "linker-dee") and Istio (pronounced "Ist-tee-oh"), two prominent open source service meshes. In terms of packaging, Linkerdv1 contains both its proxying components (linkerd) and its control plane (namerd) packaged together simply as “Linkerd,” and Istio brings a collection of control plane components (Galley, Pilot, and Citadel) to pair by default with Envoy (a data plane) packaged together as “Istio.” Envoy is often labeled a service mesh, inappropriately so, because it takes packaging with a control plane to form a service mesh. 
 </p>
 
+<p>
+  A service mesh management plane is a higher order level of control as shown in Figure 4. A management plane may provide a variety of functions. As such, implementations vary in their functionality: some focusing on orchestrating service meshes (e.g., service mesh lifecycle management) and mesh federation, providing insight across a collection of diverse meshes. Some management planes focus on integrating service meshes with business process and policy, including governance, compliance, validation of configuration, and extensible access control.
+</p>
+
   <div className="left" >
   <img src={Meshery} align="right" alt="Meshery" />
   <p>Figure 4: Meshery, the service mesh management plane’s architecture.</p>
