@@ -38,7 +38,7 @@ const LearnServiceMeshCTA = () => {
             <Button secondary title="Let's Learn" url="/learn/service-mesh-labs"/>
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <img src={ServiceMeshImage} alt="Learn Service Mesh"/>
+            <img src={ServiceMeshImage} alt="Learn how to Service Mesh"/>
           </Col>
         </Row>
       </Container>
