@@ -26,6 +26,7 @@ export const query = graphql`
           themeColor
           videos
           lectures
+          order
           cardImage {
             childImageSharp {
               gatsbyImageData(width: 200, layout: CONSTRAINED)
@@ -55,6 +56,11 @@ const CoursesListTemplate = ({data, pageContext}) => {
     return str;
   };
   const learnpath = getTitle(pageContext.learnpath);
+  const sortedCoursesList = data.allMdx.nodes.sort((first, second) => {
+    let firstOrder = first.frontmatter?.order ? first.frontmatter.order : 100;
+    let secondOrder = second.frontmatter?.order ? second.frontmatter.order : 100;
+    return firstOrder - secondOrder;
+  });
 
   return (
     <ThemeProvider theme={theme}>
@@ -62,10 +68,10 @@ const CoursesListTemplate = ({data, pageContext}) => {
         <GlobalStyle />
         <SEO
           title={`${learnpath}`}
-          description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Maesh, Kuma, App Mesh, Citrix, Tanzu Service Mesh"
+          description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
         />
         <Navigation />
-        <CoursesList coursesData={data.allMdx.nodes} learnPath={learnpath} />
+        <CoursesList coursesData={sortedCoursesList} learnPath={learnpath} />
         <Footer />
       </Layout>
     </ThemeProvider>

@@ -10,7 +10,11 @@ import bubblesElement from "./images/bubbles-element.svg";
 const Footer = () => {
   return (
     <FooterWrapper>
-      <img className="section__particle" src={bubblesElement} alt="Layer5, the service mesh company" />
+      <img
+        className="section__particle"
+        src={bubblesElement}
+        alt="Layer5, the service mesh company"
+      />
       <Container>
         <Row className="footer-head">
           <Col className="footer_logo-icons" sm={3}>
@@ -25,9 +29,10 @@ const Footer = () => {
         <Row>
           <Col xs={12} lg={3}>
             <p className="desc-info">
-              Representing the largest collection of service meshes and their maintainers in the world, Layer5 is the service mesh company.
-              Creator and maintainer of service mesh standards.
-              Maker of Meshery, the service mesh management plane.
+              Representing the largest collection of service meshes and their
+              maintainers in the world, Layer5 is the service mesh company.
+              Creator and maintainer of service mesh standards. Maker of
+              Meshery, the service mesh management plane.
             </p>
           </Col>
           <Col className="sections_col" xs={12} lg={9}>
@@ -40,23 +45,42 @@ const Footer = () => {
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link className="category-link" to="/learn/service-mesh-books">
+                    <Link
+                      className="category-link"
+                      to="/topics/category/webassembly"
+                    >WebAssembly Filters
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="category-link"
+                      to="/learn/service-mesh-books"
+                    >
                       Service Mesh Books
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/learn/service-mesh-workshops">
+                    <Link
+                      className="category-link"
+                      to="/learn/service-mesh-workshops"
+                    >
                       Service Mesh Workshops
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/service-mesh-landscape#service-mesh-comaprison-matrix">
-                      Service Mesh Feature Comparison
+                    <Link
+                      className="category-link"
+                      to="/learn/service-mesh-labs"
+                    >
+                      Service Mesh Interactive Labs
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/service-mesh-landscape#service-mesh-comparison-strength">
-                      Service Mesh Strength Comparison
+                    <Link
+                      className="category-link"
+                      to="/service-mesh-landscape#service-mesh-comaprison-matrix"
+                    >
+                      Service Mesh Feature Comparison
                     </Link>
                   </li>
                 </ul>
@@ -89,7 +113,10 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <a className="category-link" href="https://discuss.layer5.io">
+                    <a
+                      className="category-link"
+                      href="https://discuss.layer5.io"
+                    >
                       Forum
                     </a>
                   </li>
@@ -103,28 +130,40 @@ const Footer = () => {
                 </h3>
                 <ul className="section-categories">
                   <li>
-                    <Link className="category-link" to="/service-mesh-management/meshery">
+                    <Link
+                      className="category-link"
+                      to="/service-mesh-management/meshery"
+                    >
                       Meshery
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/getnighthawk">
-                      GetNighthawk
+                    <Link className="category-link" to="/projects/nighthawk">
+                      Nighthawk
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/service-mesh-interface-conformance">
+                    <Link
+                      className="category-link"
+                      to="/projects/service-mesh-interface-conformance"
+                    >
                       Service Mesh Interface
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/service-mesh-landscape">
+                    <Link
+                      className="category-link"
+                      to="/service-mesh-landscape"
+                    >
                       Service Mesh Landscape
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/service-mesh-performance">
-                      Service Mesh Performace
+                    <Link
+                      className="category-link"
+                      to="/projects/service-mesh-performance"
+                    >
+                      Service Mesh Performance
                     </Link>
                   </li>
                 </ul>
@@ -165,13 +204,26 @@ const Footer = () => {
               </div>
             </Row>
             <Row className="subscribe">
-              <form name="contactform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
+              <form
+                name="contactform"
+                method="post"
+                action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb"
+              >
                 <div>
-                  <span>
-                    Subscribe to our Newsletter
-                  </span>
-                  <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
-                  <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
+                  <span>Subscribe to our Newsletter</span>
+                  <input
+                    className="inputrow subscribe-email"
+                    type="email"
+                    placeholder="Email Address"
+                    name="EMAIL"
+                    id="mce-EMAIL"
+                    required
+                  />
+                  <Button
+                    secondary
+                    title="Subscribe"
+                    id="mc-embedded-subscribe"
+                  />
                 </div>
               </form>
             </Row>
@@ -184,12 +236,20 @@ const Footer = () => {
             </p>
             <ul className="policies">
               <li>
-                <a href="/company/legal/privacy" target="_blank" rel="noreferrer">
+                <a
+                  href="/company/legal/privacy"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Privacy
                 </a>
               </li>
               <li>
-                <a href="/company/legal/terms-of-service" target="_blank" rel="noreferrer">
+                <a
+                  href="/company/legal/terms-of-service"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Terms
                 </a>
               </li>

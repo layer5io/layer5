@@ -1,28 +1,33 @@
 import styled from "styled-components";
+import { Link } from "gatsby";
 export const HandbookWrapper = styled.div`
+    
     .highlight{
       font-weight: 600;
     }
+
     .content{
       width:100%;
       padding-bottom: 2rem;
-    ul > li {
+      ul > li {
         color: ${(props) => props.theme.menuColor};
       }
-    ol > li {
+      ol > li {
         color: ${(props) => props.theme.menuColor};
       }
-    ul > li > span {
+      ul > li > span {
         color: ${(props) => props.theme.black};
       }
-    ol > li > span {
-      color: ${(props) => props.theme.black};
+      ol > li > span {
+        color: ${(props) => props.theme.black};
+      }
     }
-    }
+
     h2 h3{
       margin: 0.5rem 0;
       color: ${(props) => props.theme.tertiaryColor};
     }
+
     .page-section{
       margin-top: -33rem;
       margin-left: 20rem;
@@ -37,6 +42,7 @@ export const HandbookWrapper = styled.div`
         height: 150rem;
         overflow: auto;
     }
+
     .sidebar a {
         display: block;
         color: black;
@@ -48,10 +54,12 @@ export const HandbookWrapper = styled.div`
         background-color: ${(props) => props.theme.primaryLightColorTwo};
         color: white;
     }
+
     .sidebar a:hover:not(.active) {
         background-color:${(props) => props.theme.secondaryLightColor};
         color: white;
     }
+    
     .page-header-section {
         height: 10rem;
         text-align: center;
@@ -72,43 +80,46 @@ export const HandbookWrapper = styled.div`
     #sign-off{
       padding-bottom: 4rem;
     }
+    
     table {
-    border-collapse: collapse;
-    width: 98%;
-    margin: 1rem 0 2rem 0;
-    .github-icon{
-      height: 1.7rem;
-      width:auto;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .site-icon{
-      height: 1.6rem;
-      width:auto;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-        }
-
-  td, th {
-    border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
-    text-align: left;
-    padding: 0.5rem;
-        }
-      .linkscol{
-        text-align: center;
-        width:8%;
+      border-collapse: collapse;
+      width: 98%;
+      margin: 1rem 0 2rem 0;
+      .github-icon{
+        height: 1.7rem;
+        width:auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
-  tbody:nth-child(even) {
-    background-color: ${(props) => props.theme.secondaryLightColorTwo};
-        }
+      .site-icon{
+        height: 1.6rem;
+        width:auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
 
-  .codes{
-    width:75%
-    margin-top:-2rem;
-  }
+    td, th {
+      border: 0.05rem solid ${(props) => props.theme.primaryLightColor};
+      text-align: left;
+      padding: 0.5rem;
+    }
+
+    .linkscol{
+      text-align: center;
+      width:8%;
+    }
+
+    tbody:nth-child(even) {
+      background-color: ${(props) => props.theme.secondaryLightColorTwo};
+    }
+
+    .codes{
+      width:75%
+      margin-top:-2rem;
+    }
 
     .community-home-container{
         padding: 1rem 0;
@@ -168,6 +179,21 @@ export const HandbookWrapper = styled.div`
       background-color: ${(props) => props.theme.secondaryLightColor};
       border-color: ${(props) => props.theme.secondaryLightColor};
     }
+    
+    .project-description-icon{
+      width: 3%;
+      transform : translate(0,25%);
+      margin: 0 0.3%;
+    }
+
+    .project-title-icon{
+      margin-left:"10%";
+      width: 4%;
+      align: left;
+      transform : translate(0,28%);
+    }
+
+    
 
     @media only screen and (max-width: 750px){
       .page-section{
@@ -178,76 +204,122 @@ export const HandbookWrapper = styled.div`
       .codes{
       width:100%
       margin-top:-2rem;
-    }
+      }  
     }
 
     @media only screen and (max-width: 475px){
-        .page-header-section h1{
-            padding: 0 1rem;
-            line-height: 3rem;
-            padding-top: 4rem;
-        }
-        .page-section{
-          margin-top: -2rem;
-          margin-left: 0rem;
-        }
-        table{
-          margin-left: -1.5rem;
-        }
-        .frontendTable{
-          margin-left: -2.8rem;
-        }
+      .page-header-section h1{
+        padding: 0 1rem;
+        line-height: 3rem;
+        padding-top: 4rem;
+      }
+      .page-section{
+        margin-top: -2rem;
+        margin-left: 0rem;
+      }
+      table{
+        margin-left: -1.5rem;
+      }
+      .frontendTable{
+        margin-left: -2.8rem;
+      }
+      
     }
-  .channels-list {
-    padding-left: 40px;
-  }
-  .channels-img {
-    width: 30px;
-    height: 30px;
-  }
-  .channels-para {
-    display: flex;
-    align-items: flex-end;
-  }
-  .newcomers-journey{
-    text-align: center;
-    display: flex;
-    align-items: center;
-    margin: 2.5rem 5rem 3rem 0rem;
-    
-    h2{
-      margin-bottom: 2rem;
+   
+    @media only screen and (max-width: 1024px){
+      .project-title-icon{
+        width:5.5%;
+        transform : translate(0,23%);
+      }
+      .project-description-icon{
+        width:4%;
+      }
+      
     }
-}
-  .heading{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    h2{
-      margin-top: -5.5rem;
+    @media only screen and (max-width: 768px){
+      .project-title-icon{
+        width:8.5%;
+      }
+      .project-description-icon{
+        width:7%;
+      }
+      
     }
-  }
-  .heading-start{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    align-self: flex-end;
-    margin-right: 2rem;
-    margin-top: -2rem;
-    h5{
-    font-size: 1.125rem;
-    font-weight: 400;
-    margin-right: 1rem;
+    @media only screen and (max-width: 425px){
+      .project-title-icon{
+        width:11%;
+        transform: translate(0,25%)
+      }
+      .project-description-icon{
+        width:8%;
+      }
     }
-    img{
-    height: 3rem;
-    width: 4rem;
-    transition: .5s;
+    @media only screen and (max-width: 375px){
+      .project-title-icon{
+        width:13%;
+        transform : translate(0,20%)
+      }
+      .project-description-icon{
+        width:10%;
+      }
     }
-    img:hover{
-    padding-left: 1rem;
-    transition: .5s;
+
+    .channels-list {
+      padding-left: 40px;
     }
-  }
+
+    .channels-img {
+      width: 40px;
+      height: 30px;
+    }
+
+    .channels-para {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .newcomers-journey{
+      text-align: center;
+      display: flex;
+      align-items: center;
+      margin: 2.5rem 5rem 3rem 0rem;
+
+      @media only screen and (max-width: 992px){
+        width: 100%;
+      }
+      
+      h2{
+        margin-bottom: 2rem;
+      }
+    }
+
+    .heading{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .heading-start{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-end;
+      margin-right: 2rem;
+      margin-top: -2rem;
+      h5{
+      font-size: 1.125rem;
+      font-weight: 400;
+      margin-right: 1rem;
+      }
+      img{
+      height: 3rem;
+      width: 4rem;
+      transition: .5s;
+      }
+      img:hover{
+      padding-left: 1rem;
+      transition: .5s;
+      }
+    }
 `;

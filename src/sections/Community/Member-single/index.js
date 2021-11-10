@@ -11,7 +11,7 @@ import mesheryOperatorLogo from "./meshery-operator-dark.svg";
 import smpLogo from "./smp-dark-text.svg";
 import landscapeLogo from "./landscape-green.png";
 import patternsLogo from "./patterns-logo.png";
-import getNighthawkLogo from "../../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import communityLogo from "./community-green.svg";
 import imageHubLogo from "./layer5-image-hub.svg";
 import Button from "../../../reusecore/Button";
@@ -119,13 +119,13 @@ const MemberSingle = ({ frontmatter }) => {
                           </Link>
                         </li>
                       )}
-                      {badges.includes("getnighthawk") && (
+                      {badges.includes("nighthawk") && (
                         <li>
-                          <Link to="/projects/getnighthawk">
+                          <Link to="/projects/nighthawk">
                             <img
                               className="profile-social-links"
-                              src={getNighthawkLogo}
-                              alt="GetNighthawk logo"
+                              src={NighthawkLogo}
+                              alt="Nighthawk logo"
                             />
                           </Link>
                         </li>
