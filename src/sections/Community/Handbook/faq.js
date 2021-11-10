@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
+import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import {Link} from "gatsby";
 
 
@@ -15,7 +16,7 @@ const Faq= () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>General FAQs:</h2>
+            <h2>General FAQs:</h2><br/>
             <h4>Q: Are Layer5’s solutions open source?</h4>
             <p>A: Yes, all of Layer5 projects are licensed under Apache V2. Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.</p>
               
@@ -59,6 +60,7 @@ const Faq= () => {
             <p>A:</p> */}
           </div>
         </Container>
+        <TocPagination />
       </div>      
     </HandbookWrapper>
   );
