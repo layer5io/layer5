@@ -64,7 +64,7 @@ const MeshMasterBrand = () => {
         </Col>
         <Col>
           <p>
-            The Meshmaster color palette consists of the primary Image Hub
+            The MeshMaster color palette consists of the primary Image Hub
             color and additional shades. The Meshmaster logo should be white or
             monochrome tonal when using a color background.
           </p>
