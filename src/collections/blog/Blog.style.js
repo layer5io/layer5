@@ -122,7 +122,21 @@ export const BlogWrapper = styled.div`
   .image-right-no-shadow {
     width: 40%;
     float: right;
-    margin: 1rem 0rem 1rem 1.25rem;
+    margin: 1rem 0rem 1rem 1rem;
+  }
+  .image-left-no-shadow {
+    width: 40%;
+    float: left;
+    margin: 1rem 1rem 1rem 0rem;
+  }
+  .image-center-shadow {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
   .image-center {
     display: block;

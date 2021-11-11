@@ -11,10 +11,9 @@ const DiscussWrapper = styled.div`
         color:${props => props.theme.secondaryColor};
     }
     .logo{
-        height: 2.5rem;
         width: auto;
     }
-    .explain-1 {
+    .explain {
         padding-top: 0rem;
         text-align: center;
         p { 
@@ -37,7 +36,7 @@ const DiscussWrapper = styled.div`
             .card {
                 -webkit-transition: 450ms all;
                 transition: 450ms all;
-                margin: 2px;
+                margin: auto;
                 padding: 1.25rem;
                 background-color: #1E2117; 
                 border-radius: 25px;
@@ -76,8 +75,64 @@ const DiscussWrapper = styled.div`
         transition: color 0.25s,border-color 0.25s,transform 0.25s,box-shadow 0.25s;
         cursor: pointer;
     }
+    @media only screen and (min-width: 990px){
+        @media only screen and (min-width: 1211px){
+            .explain {
+                .cards {
+                    padding: 0;
+                    .card {
+                        width: 23.25rem;
+                    }  
+                }
+            }
+        }
+        @media only screen and (max-width: 1210px){
+            .explain {
+                .cards {
+                    padding: 0; 
+                    .card {
+                        width: 17.25rem; 
+                        h2 {
+                            font-size: 25px;
+                            line-height: 35px;
+                        }
+                        p {
+                            font-size: 15px
+                        }
+                    }
+                }
+            }
+            .logo {
+                width: auto;  
+            }
+        }
+        @media only screen and (max-width: 1100px){
+            .explain {
+                .cards {
+                    padding: 0;
+                    .card {
+                        width: 13.25rem; 
+                        h2 {
+                            font-size: 22px;
+                            line-height: 32px;
+                        }
+                        p {
+                            font-size: 13px;
+                            line-height: 23px;
+                        }
+                    }
+                }
+                button {
+                    padding: 0;
+                }
+            }
+            .logo{
+                width: auto;  
+            }
+        }
+    }
     @media only screen and (max-width: 450px){
-        .explain-1 {
+        .explain {
             .cards {
                 padding: 1rem 1rem 1rem 1rem;
                 .card {
@@ -92,12 +147,11 @@ const DiscussWrapper = styled.div`
             }
         }
         .logo{
-            height: 1.8rem;
             width: auto;  
         }
     }
     @media only screen and (max-width: 375px){
-        .explain-1 {
+        .explain {
             .cards {
                 padding: 1rem .5rem 1rem .5rem;
                 h2 {
@@ -109,7 +163,6 @@ const DiscussWrapper = styled.div`
             }
         }
         .logo{
-            height: 1.7rem;
             width: auto;  
         }
     } 
