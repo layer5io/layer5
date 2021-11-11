@@ -18,7 +18,7 @@ const Faq= () => {
           <div className="content">
             <h2>General FAQs:</h2><br/>
             <h4>Q: Are Layer5’s solutions open source?</h4>
-            <p>A: Yes, all of Layer5 projects are licensed under Apache V2. Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.</p>
+            <p>A: Yes, all Layer5 projects are licensed under Apache V2. Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.</p>
               
             <h4>Q: I am new to Open Source, where do I begin?</h4>
             <p>A: You can start by going through the <a href="https://docs.google.com/document/d/1tpg2sLxirozNt3Ofr3GdM002f9rExp74EqrsGZBU710/edit#heading=h.rcr9t5pnt3bw">Newcomers’ Welcome Guide.</a></p>
