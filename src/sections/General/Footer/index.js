@@ -39,7 +39,7 @@ const Footer = () => {
             <Row>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/learn">
+                  <Link className="title-link" to="/resources">
                     RESOURCES
                   </Link>
                 </h3>
@@ -47,7 +47,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/topics/category/webassembly"
+                      to="/resources/category/webassembly-filters"
                     >WebAssembly Filters
                     </Link>
                   </li>
@@ -70,17 +70,17 @@ const Footer = () => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/learn/service-mesh-labs"
+                      to="/service-mesh-landscape"
                     >
-                      Service Mesh Interactive Labs
+                      Service Mesh Comparison
                     </Link>
-                  </li>
+                  </li>                  
                   <li>
                     <Link
                       className="category-link"
-                      to="/service-mesh-landscape#service-mesh-comaprison-matrix"
+                      to="/learn/service-mesh-labs"
                     >
-                      Service Mesh Feature Comparison
+                      Service Mesh Interactive Labs
                     </Link>
                   </li>
                 </ul>
