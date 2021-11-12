@@ -9,7 +9,7 @@ const MeshSectionWrapper = styled.section`
     color: #A0AAAA;
   }
   .side-text {
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     font-weight: 600;
     line-height: 2rem;
     color: ${props => props.theme.headingColor ? props.theme.headingColor : "#2C0075"};
@@ -40,6 +40,11 @@ const MeshSectionWrapper = styled.section`
        font-size: 1rem;
        line-height: 27px;
    }
+   .strikethrough {
+    text-decoration: line-through;
+    font-weight: 400;
+   }
+
 
 
   @media only screen and (max-width: 780px) {
