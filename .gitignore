@@ -77,6 +77,5 @@ yarn.lock
 
 #IDE Files
 .vscode
-access.txt
 
 default.profraw
