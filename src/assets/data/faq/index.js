@@ -13,7 +13,7 @@ const data = {
       question: "As a member of one of Layer5's GitHub organizations, What is expected of me?",
       category: "Layer5",
       answer: [
-        "As a member of one of Layer5's GitHub organizations, your user account is entitled with triage level permissions across all repositories in the org. You are expected to engage where the topic strikes your interest, triaging (assigning, clarifying, labeling, qualifying) any issue you feel confortable doing so. You are encouraged to review any open pull request and offer feedback to or ask questions to the author.",
+        "As a member of one of Layer5's GitHub organizations, your user account is entitled with triage level permissions across all repositories in the org. You are expected to engage where the topic strikes your interest, triaging (assigning, clarifying, labeling, qualifying) any issue you feel comfortable doing so. You are encouraged to review any open pull request and offer feedback to or ask questions to the author.",
         "Layer5 has a number of GitHub organziations in which it's projects are advanced. See the repository overview below."        
       ],
       link: "https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit",
