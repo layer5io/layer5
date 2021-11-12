@@ -54,7 +54,7 @@ const Projects = () => {
                 <div className="project__block__inner">
                   <img src={projectImage2} alt="appion project" />
                   <h5>Service Mesh Performance</h5>
-                  <p>The Standard Measurement</p>
+                  <p>The Measurement Standard</p>
                 </div>
               </Link>
             </Col>

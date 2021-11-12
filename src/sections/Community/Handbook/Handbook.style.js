@@ -29,7 +29,7 @@ export const HandbookWrapper = styled.div`
     }
 
     .page-section{
-      margin-top: -33rem;
+      margin-top: -36rem;
       margin-left: 20rem;
     }
 

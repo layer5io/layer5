@@ -11,7 +11,7 @@ const DiscussWrapper = styled.div`
         color:${props => props.theme.secondaryColor};
     }
     .logo{
-        width: auto;
+        width: 200px;
     }
     .explain {
         padding-top: 0rem;
@@ -90,8 +90,6 @@ const DiscussWrapper = styled.div`
             .explain {
                 .cards {
                     padding: 0; 
-                    .card {
-                        width: 17.25rem; 
                         h2 {
                             font-size: 25px;
                             line-height: 35px;
@@ -111,7 +109,6 @@ const DiscussWrapper = styled.div`
                 .cards {
                     padding: 0;
                     .card {
-                        width: 13.25rem; 
                         h2 {
                             font-size: 22px;
                             line-height: 32px;
@@ -125,9 +122,6 @@ const DiscussWrapper = styled.div`
                 button {
                     padding: 0;
                 }
-            }
-            .logo{
-                width: auto;  
             }
         }
     }
