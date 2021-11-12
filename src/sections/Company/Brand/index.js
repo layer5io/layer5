@@ -12,6 +12,7 @@ import Button from "../../../reusecore/Button";
 import { FiDownloadCloud } from "react-icons/fi";
 import NightHawk from "./Brand-components/nighthawk";
 import ServiceMeshPatterns from "./Brand-components/servicemeshpatterns";
+import MeshMasterBrand from "./Brand-components/meshmaster";
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -89,6 +90,7 @@ const Brand = () => {
   const meshsyncRef = useRef(null);
   const mesheryOperatorRef = useRef(null);
   const imageHubRef = useRef(null);
+  const meshMasterRef = useRef(null);
   const smpRef = useRef(null);
   const servicemeshpatternsRef = useRef(null);
   const nightHawkRef = useRef(null);
@@ -104,6 +106,7 @@ const Brand = () => {
     { section: "ServiceMeshPatterns", ref: servicemeshpatternsRef },
     { section: "NightHawk", ref: nightHawkRef },
     { section: "MeshMate", ref: meshmateRef },
+    { section: "MeshMaster", ref: meshMasterRef },
   ];
 
   useEffect(() => {
@@ -178,6 +181,9 @@ const Brand = () => {
           </div>
           <div className="section" ref={meshmateRef}>
             <CommunityBrand />
+          </div>
+          <div className="section" ref={meshMasterRef}>
+            <MeshMasterBrand />
           </div>
         </Col>
         <Col md={3} className="brand-nav-col">
@@ -271,6 +277,16 @@ const Brand = () => {
               }}
             >
               <span>MeshMate</span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "MeshMaster" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(meshMasterRef.current);
+              }}
+            >
+              <span> MeshMasters </span>
             </p>
           </nav>
         </Col>
