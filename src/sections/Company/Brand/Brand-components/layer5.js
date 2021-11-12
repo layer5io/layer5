@@ -79,7 +79,7 @@ const Layer5Brand = () => {
           </Col>
           <Col xs={12}>
             <p>
-              Our community color palette consists of gray, green and colors
+              Our community color palette consists of gray, green and blue colors
               representing each of our projects. The Layer5 logo should be white
               when using project colors as the background.
             </p>
