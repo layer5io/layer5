@@ -67,7 +67,7 @@ const ServiceMeshPatterns = () => {
         </Col>
         <Col>
           <p>
-                            The Service Mesh Pattern color palette consists of gray, green and colors and
+                            The Service Mesh Pattern color palette consists of gray, green and blue colors along with
                             additional shades. The SMP logo should be white or monochrome when
                             using project colors as the background.
           </p>
