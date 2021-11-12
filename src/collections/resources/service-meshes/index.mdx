@@ -1,0 +1,57 @@
+---
+title: "All About Service Meshes"
+thumbnail: ../service-mesh.svg
+category: Service mesh
+tags:
+ - Service mesh
+featured: false
+published: true
+---
+
+import { Link } from "gatsby";
+import { ResourcesWrapper } from "../Resources.style.js";
+import Differences from "./figure1.png";
+
+<ResourcesWrapper>
+  <div className="intro">
+    <p>Learn more about service mesh fundamentals in
+      <Link className="blog" to="/learn/books"> The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource which addresses how to evaluate your organization’s readiness, provides factors to consider when building new applications and converting existing applications to best take advantage of a service mesh, and offers insight on deployment architectures used to get you there.</p>
+  </div>
+
+<p>
+ In a world of many service meshes, you have a choice when it comes to which service mesh(es) to adopt. For many of you, the organizations that you are in will end up with more than one type of service mesh. Every organization that I’ve been in has multiple hypervisors for running VMs, multiple container runtimes, different container orchestrators in use and so on. Infrastructure diversity is a reality for enterprises. Diversity is driven by a broad set of workload requirements varying from those that are process-based to event-driven in their design, from those running on bare metal to executing in functions and those representing each and every style of deployment artifact in-between. Different organizations need different scopes of service mesh functionality. Consequently, different service meshes are built with slightly divergent use cases in mind, and therefore, the architecture and deployment models of service meshes differ between them (see Figure 2-3). Driven by Cloud, Hybrid, On-Prem, and Edge, service meshes are capable of enabling each of these. Microservice patterns and technologies, together with the requirements of different edge devices and their function along with ephemeral cloud-based workloads, provide myriad opportunities for service mesh differentiation and specialization. Cloud vendors also produce and/or partner as they offer on service mesh as a managed service on their platforms. 
+</p>
+
+  <div className="center" >
+  <img src={Differences} align="center" alt="comparative spectrum" />
+  <p>Figure 1: A comparative spectrum of the difference between some of the service meshes based on their individual strengths.</p>
+  </div>
+
+<p>
+ Open source governance and corporate interests dictate a world of multiple meshes, too. A huge range of microservice patterns drives service mesh opportunity.  Open source projects and vendors create features to serve microservice patterns (they splinter the landscape and function differently) and some accommodate hybrid workloads. Non-containerized workloads need to integrate and benefit from a service mesh as well.
+</p>
+<p>
+As the number of microservices grows, so too, does the need for service meshes, including meshes native to specific cloud platforms. This leads to a world where many enterprises use multiple service mesh products, whether separately or together. 
+</p>
+
+<h3>Service Mesh Abstractions</h3>
+<p>Because there are any number of service meshes available, independent specifications have cropped up to provide abstraction and standardization across them. Three service mesh abstractions exist today:
+</p>
+<ul>
+    <li><Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> (SMP) is a format for describing and capturing service mesh performance. Created by Layer5; Meshery is the canonical implementation of this specification.</li>
+    <li>Multi-Vendor Service Mesh Interoperation (Hamlet) is a set of API standards for enabling service mesh federation. Created by VMware.</li>
+    <li><Link to="/projects/service-mesh-interface-conformance">Service Mesh Interface</Link> (SMI) is a standard interface for service meshes on Kubernetes. Created by Microsoft; Meshery is the official SMI conformance tool used to ensure that a cluster is properly configured and that its behavior conforms to official SMI specifications.</li>
+</ul>
+
+<h3>Service Mesh Landscape</h3>
+<p>
+ With a sense now of why it’s a multi-mesh world, let’s begin to characterize different service meshes. Some service meshes support non-containerized workloads (services running on a VM or on bare metal), whereas some focus solely on layering on top of a container orchestrator, most notably Kubernetes. All service meshes support integration with service discovery systems. The subsections that follow provide a very brief survey of service mesh offerings within the current technology landscape.
+</p>
+
+<div class="fact-left">
+<p>
+ The list included here is neither exhaustive nor intended to be a detailed comparison, but rather a simple overview of some of the available service meshes and related components. Many service meshes have emerged and more will emerge after the publication of this book. See the Layer5 service mesh landscape for a comprehensive perspective of and characterizing of all of the service meshes, service proxies, and related tools available today. This landscape is community-maintained and places service meshes in contrast with one another so that the reader might make the most informed decision about which service mesh best suits their needs.
+</p>
+</div>
+
+</ResourcesWrapper>

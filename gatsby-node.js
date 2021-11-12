@@ -114,17 +114,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/lab-single.js"
   );
 
-  const topicPostTemplate = path.resolve(
-    "src/templates/topic-single.js"
+  const resourcePostTemplate = path.resolve(
+    "src/templates/resource-single.js"
   );
-  const topicCategoryListTemplate = path.resolve(
-    "src/templates/topic-category-list.js"
+  const resourceCategoryListTemplate = path.resolve(
+    "src/templates/resource-category-list.js"
   );
-  const topicTagListTemplate = path.resolve(
-    "src/templates/topic-tag-list.js"
+  const resourceTagListTemplate = path.resolve(
+    "src/templates/resource-tag-list.js"
   );
-  const topicViewTemplate = path.resolve(
-    "src/templates/topic.js"
+  const resourceViewTemplate = path.resolve(
+    "src/templates/resource.js"
   );
   const res = await graphql(`
     {
@@ -192,7 +192,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      allTopics:  allMdx(
+      allResources:  allMdx(
         filter: { frontmatter: { published: { eq: true } } }
       ) {
         nodes {
@@ -206,8 +206,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      topicTags: allMdx(
-        filter: { fields: { collection: { eq: "topics" } }, frontmatter: { published: { eq: true } } }
+      resourceTags: allMdx(
+        filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
         ){
           group(field: frontmatter___tags) {
             nodes{
@@ -216,8 +216,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             fieldValue
           }
       }
-      topicCategory: allMdx(
-        filter: { fields: { collection: { eq: "topics" } }, frontmatter: { published: { eq: true } } }
+      resourceCategory: allMdx(
+        filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
         ){
           group(field: frontmatter___category) {
             nodes{
@@ -256,8 +256,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     node => node.fields.collection === "blog"
   );
 
-  const topics = allNodes.filter(
-    node => node.fields.collection === "topics"
+  const resources = allNodes.filter(
+    node => node.fields.collection === "resources"
   );
 
   const news = allNodes.filter(
@@ -302,10 +302,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   paginate({
     createPage,
-    items: topics,
+    items: resources,
     itemsPerPage: 8,
-    pathPrefix: "/topics",
-    component: topicViewTemplate
+    pathPrefix: "/resources",
+    component: resourceViewTemplate
   });
 
   paginate({
@@ -354,38 +354,38 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  topics.forEach(topic => {
+  resources.forEach(resource => {
     createPage({
-      path: topic.fields.slug,
-      component: topicPostTemplate,
+      path: resource.fields.slug,
+      component: resourcePostTemplate,
       context: {
-        slug: topic.fields.slug,
+        slug: resource.fields.slug,
       },
     });
   });
 
-  const topicCategory = res.data.topicCategory.group;
-  topicCategory.forEach(category => {
+  const resourceCategory = res.data.resourceCategory.group;
+  resourceCategory.forEach(category => {
     paginate({
       createPage,
       items: category.nodes,
       itemsPerPage: 4,
-      pathPrefix: `/topics/category/${slugify(category.fieldValue)}`,
-      component: topicCategoryListTemplate,
+      pathPrefix: `/resources/category/${slugify(category.fieldValue)}`,
+      component: resourceCategoryListTemplate,
       context: {
         category: category.fieldValue,
       },
     });
   });
 
-  const TopicTags = res.data.topicTags.group;
-  TopicTags.forEach(tag => {
+  const ResourceTags = res.data.resourceTags.group;
+  ResourceTags.forEach(tag => {
     paginate({
       createPage,
       items: tag.nodes,
       itemsPerPage: 4,
-      pathPrefix: `/topics/tag/${slugify(tag.fieldValue)}`,
-      component: topicTagListTemplate,
+      pathPrefix: `/resources/tag/${slugify(tag.fieldValue)}`,
+      component: resourceTagListTemplate,
       context: {
         tag: tag.fieldValue,
       },
@@ -612,7 +612,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           case "service-mesh-labs":
             slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
             break;
-          case "topics":
+          case "resources":
             if (node.frontmatter.published)
               slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
             break;
