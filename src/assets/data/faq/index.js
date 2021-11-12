@@ -13,7 +13,7 @@ const data = {
       question: "As a member of one of Layer5's GitHub organizations, What is expected of me?",
       category: "Layer5",
       answer: [
-        "As a member of one of Layer5's GitHub organizations, your user account is entitled with triage level permissions across all repositories in the org. You are expected to engage where the topic strikes your interest, triaging (assigning, clarifying, labeling, qualifying) any issue you feel confortable doing so. You are encouraged to review any open pull request and offer feedback to or ask questions of the author.",
+        "As a member of one of Layer5's GitHub organizations, your user account is entitled with triage level permissions across all repositories in the org. You are expected to engage where the topic strikes your interest, triaging (assigning, clarifying, labeling, qualifying) any issue you feel confortable doing so. You are encouraged to review any open pull request and offer feedback to or ask questions to the author.",
         "Layer5 has a number of GitHub organziations in which it's projects are advanced. See the repository overview below."        
       ],
       link: "https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit",
@@ -31,7 +31,7 @@ const data = {
     {
       question: "I see works of other contributors being highlighted. Will my contributions be highlighted, too?",
       category: "Layer5",
-      answer: [ "We might not get to everyone, but we try to elevate the works of all of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Be sure to follow and engage with the Twitter, YouTube, and LinkedIn accounts."
+      answer: [ "We might not get to everyone, but we try to elevate the works of all of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Make sure that you follow and engage with the Twitter, YouTube, and LinkedIn accounts."
       ],
       link: "https://twitter.com/layer5",
       linktext: "Layer5 on Twitter",
@@ -39,7 +39,7 @@ const data = {
       {
         question: "I am not a coder. Can I contribute, too?",
         category: "Layer5",
-        answer: [ "Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Be sure to introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa."
+        answer: [ "Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Make sure that you introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa."
         ],
         link: "https://slack.layer5.io",
         linktext: "Layer5 Slack",
@@ -143,7 +143,7 @@ const data = {
       question: "When should I adopting a service mesh?",
       category: "Service Mesh",
       answer: [
-        "There are many service meshes from which to choose as well as a variety of deployment models. Which is right for you and your organization depends on where you are in your maturity curve (Cloud Native skill set), number of services, underlying infrastructure, and how centric technology is to your business. ",
+        "There are many service meshes to choose from as well as a variety of deployment models. Which is right for you and your organization depends on where you are in your maturity curve (Cloud Native skill set), number of services, underlying infrastructure, and how centric technology is to your business. ",
         "So, should you deploy a service mesh? More and more the answer is “yes”. Service meshes are quickly becoming a ubiquitous layer in modern infrastructures.",
       ],
       link: "/deploy-service-mesh",
@@ -153,7 +153,7 @@ const data = {
       question: "Does Meshery manage service meshes?",
       category: "Meshery",
       answer: [
-        "Yes, as the service management plane, Meshery, provisions and manage the lifecycle of service meshes.",
+        "Yes, as the service mesh management plane, Meshery provisions and manages the lifecycle of service meshes.",
       ],
       link: "/service-mesh-management/meshery",
       linktext: "Run Meshery",
@@ -174,7 +174,7 @@ const data = {
       category: "Meshery",
       answer: [
         "Meshery is an open source, vendor neutral projects that facilitates testing across meshes.",
-        "Other performance benchmark tools are not packaged into a mesh testing utility, butare only a load-generators unto their own.",
+        "Other performance benchmark tools are not packaged into a mesh testing utility, but are only a load-generators unto their own.", 
       ],
       link: "/projects/service-mesh-performance",
       linktext: "Service Mesh Performance",
@@ -207,7 +207,7 @@ const data = {
       answer: [
         "To best position your candidancy for an internship with Layer5, engage in the community and its projects. Start contributing and keep contributing. Community members who consistently contribute are the first individuals to be awarded internships when new internship opportunities open up - particularly members who are making significantly impactful contributions.",
         "Understand that internships are assigned as a recognition of work that you are already performing. They are not assigned in the hopes of you becoming a good contributor, but are awarded to support and reinforce efforts that you are already giving. Engage and make an impact on an area of a project. Show your passion for helping move the project forward, willingness to work hard, and capacity to learn.",
-        "Recognize that there are many hundreds of contributors and relatively few maintainers and MeshMates. If you don't get an immediate response, don't lose heart. Be tenacious and find a piece of one of the projects to engaged within and advance.",
+        "Recognize that there are many hundreds of contributors and relatively few maintainers and MeshMates. If you don't get an immediate response, don't lose heart. Be tenacious and find a piece of one of the projects to be engaged with and advance.",
       ],
       link: "/community/meshmates",
       linktext: "Engage a MeshMate",
@@ -216,8 +216,8 @@ const data = {
       question: "How often does Layer5 offer internships?",
       category: "internships",
       answer: [
-        "Continuously. Layer5 has internships starting and stopping frequently. Some internships rigidly start and stop on particular dates, particularly those hosted in partnership with other organizations like the Linux Foundation, Google, MLH, Outreachy, and so on. Internships offered directly with Layer5 often start as a batch of candidantes show collective readiness.",
-        "We work with individuals to align with timing of internships with other activities in their life. build it into something active and something to be maintained.",
+        "Continuously. Layer5 has internships starting and stopping frequently. Some internships rigidly start and stop on particular dates, particularly those hosted in partnership with other organizations like the Linux Foundation, Google, MLH, Outreachy, and so on. Internships offered directly with Layer5 often start as a batch of candidates show collective readiness.",
+        "We work with individuals to balance out the timing of internships with other activities in their life. Build it into something active and something to be maintained.",
       ],
       link: "https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+",
       linktext: 'Grab a "Help Wanted" Issue',
