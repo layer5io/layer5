@@ -23,16 +23,16 @@ const TOCWrapper = styled.div`
                 }
             }
         }
-        margin-bottom: -1rem;
     }
 
     .toc-list {
         ul {
             position: relative;
-            padding-inline-start: 2.75rem;
+            padding-inline-start: 3.031rem;
+            -moz-padding-start: 2.78rem;
             &::after {
                 position: absolute;
-                inset: 2rem auto 1rem 26px;
+                inset: 1rem auto 1rem 31px;
                 width: auto;
                 height: auto;
                 border-left: 1px solid rgba(177, 182, 184, 0.25);
@@ -40,9 +40,8 @@ const TOCWrapper = styled.div`
                 z-index: 0;
             }
             li {
-                line-height: 3rem;
                 width: fit-content;
-
+                margin: 1rem 0;
                 &::marker {
                     color: rgba(177, 182, 184, 0.75);
                 }
@@ -66,6 +65,38 @@ const TOCWrapper = styled.div`
                     color: ${props => props.theme.secondaryColor};
                 }
             }
+        }
+    }
+    @media(max-width: 992px){
+        .toc-list{
+            ul{
+                &::after {
+                    inset: 1rem auto 1rem 32.4px;
+                }
+            }
+            
+        }
+    }
+    @media(max-width: 767px){
+        position: initial;
+         .toc-list{
+            ul{
+                display: flex;
+                flex-flow: wrap;
+                margin: 1.5rem 0;
+                padding-inline-start: 0rem;
+                &::after{
+                    display: none;
+                }
+                li {
+                    list-style-type: none;
+                    margin:0.5rem;
+                }
+            }
+    }
+    .chapter-back {
+        h4 {
+            margin: 0 1rem;
         }
     }
 `;

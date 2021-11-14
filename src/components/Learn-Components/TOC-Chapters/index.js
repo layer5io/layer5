@@ -1,9 +1,13 @@
-import React from "react";
+import React,{ useState, useEffect } from "react";
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import { Link } from "gatsby";
+import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
+import { getCurrentPage } from "../../../utils/getCurrentPage";
 import TOCWrapper from "./toc.style";
 
-const TOC = ({ courseData, chapterData, location }) => {
+const TOC = ({ TOCData,courseData, chapterData, location }) => {
+  const [path, setPath] = useState("");
+
   const reformatTOC= (data) => {
     let newData = data.split("-").join(" ");
     let firstLetter = newData.charAt(0).toUpperCase();
@@ -11,12 +15,18 @@ const TOC = ({ courseData, chapterData, location }) => {
     return newData;
   };
 
-  const getCurrentPage = (location) => {
-    if (location !== undefined && location.href !== undefined) {
-      const currentChapter = location.href.split("/");
-      return currentChapter[currentChapter.length - 2];
-    }
-  };
+  const availableChapters = TOCData.filter(toc => toc.fields.section === getActiveServiceMesh(chapterData))
+    .map(toc => toc.fields.chapter);
+
+  useEffect(() => {
+    const path = location.pathname.split("/");
+    if(path[2] === "learning-paths"){
+      setPath(getCurrentPage(location));
+    } else
+      return;
+
+  }, [location.pathname]);
+
   return (
     <TOCWrapper>
       <div className="chapter-back">
@@ -27,12 +37,12 @@ const TOC = ({ courseData, chapterData, location }) => {
       </div>
       <div className="toc-list">
         <ul>
-          {courseData.frontmatter.toc.map((item) => (
-            <li key={item} className={item === getCurrentPage(location)? "active-link" : ""}>
-              <p className="toc-item">
-                <a href={`/learn-ng/${chapterData.fields.learnpath}/${chapterData.fields.course}/istio/${item}/`}>
+          {availableChapters.map((item) => (
+            <li key={item} className={item === path ? "active-link" : ""}>
+              <p className="toc-item" key={item}>
+                <Link to={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
                   {reformatTOC(item)}
-                </a>
+                </Link>
               </p>
             </li>
           ))}

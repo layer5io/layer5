@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-  triger-previewing-site:
+  site-preview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️

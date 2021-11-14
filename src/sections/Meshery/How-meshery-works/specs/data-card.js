@@ -78,7 +78,7 @@ const DataCard = () => {
                 <Counter
                   duration={3}
                   separator=","
-                  end={800}
+                  end={1000}
                   suffix="+" />
               </h3>
               <p>Users</p>

@@ -6,12 +6,12 @@ import SEO from "../../components/seo";
 
 import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
-import About from "../../sections/Company/About";
+import AboutSection from "../../sections/Company/About";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
-const about = () => (
+const About = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -19,10 +19,10 @@ const about = () => (
   Layer5 is the makers of Meshery and service mesh standards. 
   We are the largest collection of service mesh projects and their maintainers in the world." />
       <Navigation />
-      <About />
+      <AboutSection />
       <Footer />
     </Layout>
   </ThemeProvider>
 );
 
-export default about;
+export default About;

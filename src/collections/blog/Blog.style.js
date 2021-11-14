@@ -6,24 +6,8 @@ export const BlogWrapper = styled.div`
     position: relative;
     top: -10px;
   }
-  a.invert {
-    text-decoration: none;
-    color: ${(props) => props.theme.tertiaryColor};
-    &:hover {
-      color: ${(props) => props.theme.keppelColor};
-    }
-  }
 
-  a.blog {
-    color: ${(props) => props.theme.primaryColor};
-    background-color: #eeeeee;
-    border-radius: 8px;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    &:hover {
-      color: ${(props) => props.theme.keppelColor};
-    }
-  }
+
   div.intro {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -138,7 +122,21 @@ export const BlogWrapper = styled.div`
   .image-right-no-shadow {
     width: 40%;
     float: right;
-    margin: 1rem 0rem 1rem 1.25rem;
+    margin: 1rem 0rem 1rem 1rem;
+  }
+  .image-left-no-shadow {
+    width: 40%;
+    float: left;
+    margin: 1rem 1rem 1rem 0rem;
+  }
+  .image-center-shadow {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
   .image-center {
     display: block;
@@ -231,4 +229,63 @@ styles for meshmate-of-the-year-2020
       margin: auto;
     }
   }
+
+  /* ==============
+  styles for service-mesh-specifications 
+  =======================*/
+
+  .slides-right{
+    width: 45%;
+    display: inline;
+    position: relative;
+    float: right;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+  }
+  .slides-left {
+    width: 45%;
+    display: inline;
+    position: relative;
+    float: left;
+    margin: 1rem 2rem 1rem 0rem;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+  }
+  .slides-left:hover{
+    cursor:pointer;
+  }
+  .slides-right:hover{
+    cursor:pointer;
+  }
+  div.note {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: ${props => props.theme.secondaryColor};
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: right;
+    border-right: 4px solid ${props => props.theme.secondaryColor};        
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.status {
+  text-align: center;
+  padding-left: 2rem;
+}
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 `;

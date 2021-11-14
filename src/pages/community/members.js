@@ -1,96 +1,192 @@
 import React, { useState } from "react";
-import styled, { ThemeProvider } from "styled-components";
-import theme from "../../theme/app/themeStyles";
+
+// Libraries
+import { ThemeProvider } from "styled-components";
+
+// Components
 import { GlobalStyle } from "../../sections/app.style";
 import SEO from "../../components/seo";
 import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
-import MembersGrid from "../../sections/Community/Members-grid/index";
-
-import Community from "../../sections/Community/Members-grid/community";
-import Landscape from "../../sections/Community/Members-grid/landscape";
-import ImageHub from "../../sections/Community/Members-grid/imagehub";
-import Meshery from "../../sections/Community/Members-grid/meshery";
-import MesheryOperator from "../../sections/Community/Members-grid/mesheryoperator.js";
-import SMP from "../../sections/Community/Members-grid/smp";
-import GetNighthawk from "../../sections/Community/Members-grid/getnighthawk";
-
-import AllMembers from "../../sections/Community/Members-grid/AllMembers";
-import ActiveMembers from "../../sections/Community/Members-grid/ActiveMembers";
-import InactiveMembers from "../../sections/Community/Members-grid/InactiveMembers";
-
-import Maintainers from "../../sections/Community/Members-grid/Maintainers";
-import Meshmate from "../../sections/Community/Members-grid/Meshmate";
-import { bool } from "prop-types";
+import MultipleMembers from "../../sections/Community/Members-grid/MemberList";
+import Dropdown from "../../sections/Community/Members-grid/Dropdown";
 import { DropdownWrapper } from "../../components/dropdownLayouts/labels.style";
 
+// Assets + Icons
+import theme from "../../theme/app/themeStyles";
 import communityIcon from "../../assets/images/community/community-green.svg";
 import hubIcon from "../../assets/images/image-hub/layer5-image-hub.svg";
 import icon5 from "../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 import meshmateIcon from "../../assets/images/meshmate/meshmate-icon.svg";
-import hawkIcon from "../../assets/images/getnighthawk/icon-only/SVG/getnighthawk-logo.svg";
+import hawkIcon from "../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import landscapeIcon from "../../assets/images/landscape/layer5_landscape_green.svg";
 import mesheryIcon from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import mesheryOpIcon from "../../assets/images/meshery-operator/meshery-operator-skinny.svg";
+import mesheryOpIcon from "../../assets/images/meshery-operator/meshery-operator-dark.svg";
 import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import inactiveIcon from "../../assets/images/status/inactive.png";
 import activeIcon from "../../assets/images/status/active.png";
 
- const options = [
-   { label: <DropdownWrapper><option disabled className="category comm">BADGES</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`,isFixed: true},
-   { label: <DropdownWrapper><option className="allOptions">Community</option></DropdownWrapper>, value: "community", color: `${theme.linkColor}`, isFixed: true, icon: `url(${communityIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Landscape</option></DropdownWrapper>, value: "lanscape", color: `${theme.linkColor}`, isFixed: true, icon: `url(${landscapeIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Image Hub</option></DropdownWrapper>, value: "imagehub", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hubIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Meshery</option></DropdownWrapper>, value: "meshery", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Meshery Operator</option></DropdownWrapper>, value: "mesheryoperator", color: `${theme.linkColor}`, isFixed: true, icon: `url(${mesheryOpIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Service Mesh Performance</option></DropdownWrapper>, value: "smp", color: `${theme.linkColor}`, isFixed: true, icon: `url(${smpIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">GetNighthawk</option></DropdownWrapper>, value: "getnighthawk", color: `${theme.linkColor}`, isFixed: true, icon: `url(${hawkIcon})`},
-   { label: <DropdownWrapper><option disabled className="category">STATUS</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`, isFixed: true},
-   { label: <DropdownWrapper><option className="allOptions">All Members</option></DropdownWrapper>, value: "all", color: `${theme.linkColor}`, isFixed: true, icon: ""},
-   { label: <DropdownWrapper><option className="allOptions">Active Members</option></DropdownWrapper>, value: "active", color: `${theme.linkColor}`, isFixed: true, icon:  `url(${activeIcon})`},
-   { label: <DropdownWrapper><option className="allOptions">Inactive Members</option></DropdownWrapper>, value: "inactive", color: `${theme.menuColor}`, isFixed: true, icon: `url(${inactiveIcon})`},
-   { label: <DropdownWrapper><option disabled className="category">ROLE</option></DropdownWrapper>, value: "", color: `${theme.linkColor}`, isFixed: true},
-   { label: <DropdownWrapper><option className="allOptions">Maintainers</option></DropdownWrapper>, value: "maintainers", color: `${theme.linkColor}`, isFixed: true, icon: `url(${icon5})`},
-   { label: <DropdownWrapper><option className="allOptions">MeshMates</option></DropdownWrapper>, value: "meshmates", color: `${theme.linkColor}`, isFixed: true, icon: `url(${meshmateIcon})`}
-]; 
-
-
+/**
+ * Array containing a list of categories to be shown in the dropdown.
+ * The map function in the end wraps the label property with a component.
+ */
+const options = [
+  {
+    label: "BADGES",
+    value: "",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: null,
+    className: "category",
+  },
+  {
+    label: "Community",
+    value: "community",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: communityIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Landscape",
+    value: "landscape",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: landscapeIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Image Hub",
+    value: "image-hub",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: hubIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Meshery",
+    value: "meshery",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: mesheryIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Meshery Operator",
+    value: "meshery-operator",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: mesheryOpIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Service Mesh Performance",
+    value: "smp",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: smpIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Nighthawk",
+    value: "nighthawk",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: hawkIcon,
+    className: "allOptions",
+  },
+  {
+    label: "STATUS",
+    value: "",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: null,
+    className: "category",
+  },
+  {
+    label: "All Members",
+    value: "all",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: null,
+    className: "allOptions",
+  },
+  {
+    label: "Active",
+    value: "active",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: activeIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Inactive",
+    value: "inactive",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: inactiveIcon,
+    className: "allOptions",
+  },
+  {
+    label: "ROLE",
+    value: "",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: null,
+    className: "category",
+  },
+  {
+    label: "Maintainers",
+    value: "maintainers",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: icon5,
+    className: "allOptions",
+  },
+  {
+    label: "Meshmates",
+    value: "meshmates",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: meshmateIcon,
+    className: "allOptions",
+  },
+].map((obj) => ({
+  ...obj,
+  label: (
+    <DropdownWrapper>
+      <div className={obj.className}>{obj.label}</div>
+    </DropdownWrapper>
+  ),
+  color: `${obj.color}`,
+  icon: obj.icon && `url(${obj.icon})`,
+}));
 
 const MembersPage = () => {
-  const [members, setMembers] = useState(options[10]);
+  /**
+   * state storing the currently selected categories.
+   */
+  const [members, setMembers] = useState([options[10]]);
+  const handleChange = (value) => setMembers(value);
 
-  const handleChange = value => {
-    setMembers(value);
-  };
-
-  let MembersView = props => {
-    switch (members.value) {
-      case "community" : return <Community {...props} />;
-      case "landscape" : return <Landscape {...props}/>;
-      case "imagehub" : return <ImageHub {...props}/>;
-      case "meshery" : return <Meshery {...props}/>;
-      case "mesheryoperator" : return <MesheryOperator {...props}/>;
-      case "smp" : return <SMP {...props}/>;
-      case "getnighthawk" : return <GetNighthawk {...props}/>;
-      case "active" : return <ActiveMembers {...props} />;
-      case "inactive" : return <InactiveMembers {...props}/>;
-      case "maintainers" : return <Maintainers {...props}/>;
-      case "meshmates" : return <Meshmate {...props}/>;
-
-      default: return <AllMembers {...props}/>;
-    }
-  };
- 
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Members" description="Members - The Layer5 contributors list" />
+        <SEO
+          title='Members'
+          description='Members - The Layer5 contributors list'
+        />
         <Navigation />
-        <MembersView options={options} handleChange={handleChange}
-          members={members} />
-        <Footer/>
+        <Dropdown options={options} handleChange={handleChange} />
+
+        {!members ? (
+          <MultipleMembers members={[options[10]]} />
+        ) : (
+          <MultipleMembers members={members} />
+        )}
+        <Footer />
       </Layout>
     </ThemeProvider>
   );

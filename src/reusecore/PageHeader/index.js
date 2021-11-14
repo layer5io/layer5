@@ -4,6 +4,7 @@ import {Link, graphql, useStaticQuery} from "gatsby";
 import slugify from "../../utils/slugify";
 import PageHeaderWrapper from "./pageHeader.style";
 import Image from "../../components/image";
+import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-gray-no-trim.svg";
 
 const authorField = (author, isSlugAvailable) => {
   return(
@@ -63,7 +64,11 @@ const PageHeader = ({ category, title, subtitle,  author, thumbnail }) => {
               <>
                 <span>
                   <h5>By:</h5>
-                  <p>{authorField(author, isSlugAvailable)}</p>
+                  {console.log(author)}
+                  {author.name === "Layer5 Team"
+                    ? <p><img src={layer5_img} alt="Layer5" width="85" /> Team</p>
+                    : <p>{authorField(author, isSlugAvailable)}</p>
+                  }
                 </span>
               </>
             )}

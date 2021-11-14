@@ -5,6 +5,8 @@ title: '[Event]'
 labels: 'area/events, help wanted, framework/gatsby, language/markdown, good first issue'
 assignees: ''
 ---
+Please add the following event to layer5.io/events.
+
 **Event:**
 - Event Title: 
 - Event Link: 

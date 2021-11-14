@@ -33,7 +33,7 @@ const IndexPage = () => {
       "https://twitter.com/layer5",
       "https://www.linkedin.com/company/layer5/",
       "https://github.com/layer5io",
-      "https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA"
+      "https://www.youtube.com/c/Layer5io?sub_confirmation=1"
     ]
   };
   return (

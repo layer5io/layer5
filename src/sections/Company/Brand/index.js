@@ -10,7 +10,9 @@ import SMPBrand from "./Brand-components/smp";
 import CommunityBrand from "./Brand-components/community";
 import Button from "../../../reusecore/Button";
 import { FiDownloadCloud } from "react-icons/fi";
-import GetNightHawk from "./Brand-components/getnighthawk";
+import NightHawk from "./Brand-components/nighthawk";
+import ServiceMeshPatterns from "./Brand-components/servicemeshpatterns";
+import MeshMasterBrand from "./Brand-components/meshmaster";
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -88,8 +90,10 @@ const Brand = () => {
   const meshsyncRef = useRef(null);
   const mesheryOperatorRef = useRef(null);
   const imageHubRef = useRef(null);
+  const meshMasterRef = useRef(null);
   const smpRef = useRef(null);
-  const getnightHawkRef = useRef(null);
+  const servicemeshpatternsRef = useRef(null);
+  const nightHawkRef = useRef(null);
   const meshmateRef = useRef(null);
 
   const sectionRefs = [
@@ -99,8 +103,10 @@ const Brand = () => {
     { section: "MesheryOperator", ref: mesheryOperatorRef },
     { section: "ImageHub", ref: imageHubRef },
     { section: "SMP", ref: smpRef },
-    { section: "GetNightHawk", ref: getnightHawkRef },
+    { section: "ServiceMeshPatterns", ref: servicemeshpatternsRef },
+    { section: "NightHawk", ref: nightHawkRef },
     { section: "MeshMate", ref: meshmateRef },
+    { section: "MeshMaster", ref: meshMasterRef },
   ];
 
   useEffect(() => {
@@ -167,11 +173,17 @@ const Brand = () => {
           <div className="section" ref={smpRef}>
             <SMPBrand />
           </div>
-          <div className="section" ref={getnightHawkRef}>
-            <GetNightHawk />
+          <div className="section" ref={servicemeshpatternsRef}>
+            <ServiceMeshPatterns />
+          </div>
+          <div className="section" ref={nightHawkRef}>
+            <NightHawk />
           </div>
           <div className="section" ref={meshmateRef}>
             <CommunityBrand />
+          </div>
+          <div className="section" ref={meshMasterRef}>
+            <MeshMasterBrand />
           </div>
         </Col>
         <Col md={3} className="brand-nav-col">
@@ -238,13 +250,23 @@ const Brand = () => {
             </p>
             <p
               className={`header_link ${
-                visibleSection === "GetNightHawk" ? "selected" : ""
+                visibleSection === "ServiceMeshPatterns" ? "selected" : ""
               }`}
               onClick={() => {
-                scrollTo(getnightHawkRef.current);
+                scrollTo(servicemeshpatternsRef.current);
               }}
             >
-              <span> GetNightHawk </span>
+              <span>Service Mesh Patterns</span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "NightHawk" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(nightHawkRef.current);
+              }}
+            >
+              <span> NightHawk </span>
             </p>
             <p
               className={`header_link ${
@@ -255,6 +277,16 @@ const Brand = () => {
               }}
             >
               <span>MeshMate</span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "MeshMaster" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(meshMasterRef.current);
+              }}
+            >
+              <span> MeshMaster </span>
             </p>
           </nav>
         </Col>

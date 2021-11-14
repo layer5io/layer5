@@ -8,7 +8,10 @@ const TOCWrapper = styled.div`
     margin-left: -3rem;
 
     .go-back {
-        margin-left: 1rem;
+        margin: 1rem 0;
+        display:flex;
+        justify-content:space-between;
+        align-items:center; 
         a {
             display: inline-flex;
             svg {
@@ -30,8 +33,27 @@ const TOCWrapper = styled.div`
                 }
             }
         }
-        margin-bottom: 1rem;
     }
+
+  .toc-toggle-btn{
+    display:none;
+  }
+ 
+  .toc-ul-open{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+    list-style: none;
+    height:auto !important;
+    opacity:1 !important;
+    transition:all .4s !important;
+  }
+  .toc-menu-icon{
+    width: 1.5rem; 
+    height: 1.5rem; 
+    cursor: pointer;
+    fill: ${props => props.theme.menuColor};
+  }
 
   .toc-sub-heading {
         margin-top: 1rem;
@@ -39,18 +61,19 @@ const TOCWrapper = styled.div`
         font-size: 1.15rem;
   }
     
-
+  .toc-item {
+        line-height: 1.5rem;
+    }
     .toc-list {
   
         ul {
             position: relative;
-            padding-inline-start: 2.75rem;
+            padding-inline-start: 1.5rem;
             list-style-type: none;
             
             li {
-                line-height: 3rem;
+                margin: 1rem 0 1rem 0.5rem;
                 width: fit-content;
-                margin-left: 1rem;
 
                 &::marker {
                     color: rgba(177, 182, 184, 0.75);
@@ -75,6 +98,27 @@ const TOCWrapper = styled.div`
                     color: ${props => props.theme.secondaryColor};
                 }
             }
+        }
+    }
+    
+    @media only screen and (max-width: 991px){
+        position: initial;
+        margin-left: -0.5rem;
+        width: auto;
+        .toc-toggle-btn{
+           display: flex;
+        }
+        .go-back{
+           margin-left:0;
+        }
+        .toc-ul{
+           opacity:0;
+           height:0;
+           transition:none;
+           padding-left: .8rem !important;
+        }
+	.toc-item {
+           line-height: .8rem;
         }
     }
 `;
