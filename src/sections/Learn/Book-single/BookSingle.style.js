@@ -3,6 +3,7 @@ import styled from "styled-components";
 const BookSinglePageWrapper = styled.div`
   
 	.backBtn {
+		width: fit-content;
 		position: relative;
 		left: 0px;
 		margin-top: 3rem;
