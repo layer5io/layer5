@@ -217,7 +217,7 @@ const data = {
       category: "internships",
       answer: [
         "Continuously. Layer5 has internships starting and stopping frequently. Some internships rigidly start and stop on particular dates, particularly those hosted in partnership with other organizations like the Linux Foundation, Google, MLH, Outreachy, and so on. Internships offered directly with Layer5 often start as a batch of candidates show collective readiness.",
-        "We work with individuals to balance out the timing of internships with other activities in their life. Build it into something active and something to be maintained.",
+        "We work with individuals to align the timings of the internship with other activities in their life.. Build it into something active and something to be maintained.",
       ],
       link: "https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+",
       linktext: 'Grab a "Help Wanted" Issue',
