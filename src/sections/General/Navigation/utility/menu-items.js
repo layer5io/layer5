@@ -57,7 +57,7 @@ const Data = {
           name: "Nighthawk",
           path: "/projects/nighthawk",
           sepLine: true
-        },        
+        },
         // {
         //   name: "Service Mesh Landscape",
         //   path: "/landscape",
@@ -112,7 +112,7 @@ const Data = {
           name: "Learning Paths",
           path: "/learn/learning-paths",
           sepLine: true
-        },        
+        },
         {
           name: "Interactive Labs",
           path: "/learn/service-mesh-labs",
@@ -143,32 +143,30 @@ const Data = {
       path: "/community",
       subItems: [
         {
-          name: "Calendar",
-          path: "/community/calendar",
-          sepLine: true
-        },
-        {
           name: "Members",
           path: "/community/members",
           sepLine: true
         },
         {
+          name: "Newcomers",
+          path: "/community/newcomers"
+        },
+        {
           name: "MeshMates",
           path: "/community/meshmates",
-          sepLine: true
         },
         // {
-        //     name: "MeshMasters",
-        //     path: "/community/meshmasters"
-        // },
-        // {
-        //     name: "Newcomers",
-        //     path: "/community/newcomers"
+        //   name: "MeshMasters",
+        //   path: "/community/meshmasters"
         // },
         {
           name: "Events",
           path: "/community/events",
           sepLine: true
+        },
+        {
+          name: "Calendar",
+          path: "/community/calendar",
         },
         {
           name: "Forum",
@@ -182,7 +180,7 @@ const Data = {
           actionLink: "https://discuss.layer5.io",
         },
         {
-          actionName: "Open source internship programs",
+          actionName: "Open source internships",
           actionLink: "/careers/programs",
         }
       ],
@@ -202,8 +200,8 @@ const Data = {
       path: "/blog",
       subItems: [
         {
-          name: "Blog",
-          path: "/blog",
+          name: "Resources",
+          path: "/resources",
           sepLine: true
         },
         {
@@ -213,6 +211,10 @@ const Data = {
         }
       ],
       actionItems: [
+        {
+          actionName: "Explore resource library",
+          actionLink: "/resources",
+        },
         {
           actionName: "Layer5 in the news",
           actionLink: "/news",
