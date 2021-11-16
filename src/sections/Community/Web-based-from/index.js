@@ -280,10 +280,10 @@ const WebBasedForm = () => {
             <label>
               <Field type="checkbox"
                 name="projects"
-                value="GetNightHawk"
+                value="NightHawk"
                 className="form-check"
               />
-              <span className="checkbox-label">GetNightHawk</span>
+              <span className="checkbox-label">NightHawk</span>
             </label>
             <br />
             <label>

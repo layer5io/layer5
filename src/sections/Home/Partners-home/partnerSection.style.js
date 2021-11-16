@@ -13,7 +13,17 @@ const PartnerItemWrapper = styled.section`
     }
     .row{
         flex-wrap: nowrap;
+        @media(max-width: 1400px){
+            flex-wrap: wrap;
+        }
+
+        .col{
+              flex: 0 0 12%;
+              margin-left:0.5rem;
+              margin-right:0.5rem;
+        }
     }
+   
     a.partner-card {
         /* &:hover {
             div {
@@ -24,7 +34,7 @@ const PartnerItemWrapper = styled.section`
     }
     img {
         max-width: 100%;
-        min-width: 3.2rem;
+        min-width: 7rem;
         margin: auto;
         opacity: .7;
         max-height:100px;

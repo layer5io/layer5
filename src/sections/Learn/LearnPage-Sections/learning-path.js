@@ -45,6 +45,7 @@ const LearningPaths = () => {
             description
             themeColor
             courses
+            disabled
             cardImage {
               childImageSharp {
                 gatsbyImageData(width: 200, layout: CONSTRAINED)
@@ -87,7 +88,7 @@ const LearningPaths = () => {
         </div>
         <Row className="learning-path-cards">
           {data.learnPaths.nodes.map((tutorial) => (
-            <Col sm={12} key={tutorial.id}>
+            <Col sm={6} key={tutorial.id}>
               <CardComponent tutorial={tutorial} path={`learning-paths/${tutorial.fields.learnpath}`} courseCount={getCoursesOfaLearningPath(tutorial.fields.learnpath).length} />
             </Col>
           ))}

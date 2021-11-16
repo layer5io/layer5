@@ -49,7 +49,7 @@ const handbookHome= () => {
 
         <HandbookCard 
           title="Projects" 
-          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance, GetNightHawk" 
+          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance, NightHawk" 
           to="/community/handbook/projects" 
         />
 
@@ -75,6 +75,11 @@ const handbookHome= () => {
           title="Code of Conduct" 
           description="At Layer5 We follow the CNCF Code of Conduct. We pledge to respect all people who contribute through reporting issues, to submit pull requests or patches, and other activities." 
           to="/community/handbook/code-of-conduct" 
+        />
+        <HandbookCard 
+          title="FAQs" 
+          description="General frequently asked questions (FAQ) about Layer5 and people who contribute through reporting issues, to submit pull requests or patches, and other activities." 
+          to="/community/handbook/faq" 
         />
       </div>
     </HandbookWrapper>

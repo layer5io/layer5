@@ -44,9 +44,9 @@ const Connect= () => {
               <li><a href="http://meshery-security-vulns-reports@meshery.dev">Meshery Security and Vulnerability Reports</a></li>
               <li><a href="mailto:community@meshery.io">Meshery Community</a></li>
               <li><a href="mailto:katacoda@layer5.io">Katacoda-Managers</a></li>
-              <li><a href="http://developers@getnighthawk.dev">GetNighthawk Developers</a></li>
-              <li><a href="http://maintainers@getnighthawk.dev">GetNighthawk Maintainers</a></li>
-              <li><a href="http://users@getnighthawk.dev">GetNighthawk Users</a></li>
+              <li><a href="http://developers@nighthawk.dev">Nighthawk Developers</a></li>
+              <li><a href="http://maintainers@nighthawk.dev">Nighthawk Maintainers</a></li>
+              <li><a href="http://users@nighthawk.dev">Nighthawk Users</a></li>
               <li><a href="mailto:community@smp-spec.io">Service Mesh Performance Community</a></li>
               <li><a href="mailto:maintainers@smp-spec.io">Service Mesh Performance Maintainers</a></li>
               <li><a href="mailto:user-group@smp-spec.io">Service Mesh Performance Users</a></li>
@@ -98,15 +98,15 @@ const Connect= () => {
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={linkedin_icon} alt="linkedin" />&nbsp;&nbsp;
-                <a href="https://www.linkedin.com/company/layer5">Layer 5</a>
+                <a href="https://www.linkedin.com/company/layer5">Layer5</a>
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={docker_icon} alt="docker" />&nbsp;&nbsp;
-                <a href="https://hub.docker.com/u/layer5/">Layer 5</a>
+                <a href="https://hub.docker.com/u/layer5/">Layer5</a>
               </p>
               <p className="channels-para">
                 <img className="channels-img" src={slack_icon} alt="slack" />&nbsp;&nbsp;
-                <a href="https://bit.ly/3fXwYPk">Layer 5</a>
+                <a href="https://bit.ly/3fXwYPk">Layer5</a>
               </p>
             </div>
           </div>

@@ -43,26 +43,34 @@ const Data = {
       name: "Projects",
       path: "/projects",
       subItems: [
+        // {
+        //   name: "Image Hub",
+        //   path: "/projects/image-hub",
+        //   sepLine: true
+        // },
         {
-          name: "Distributed Performance",
-          path: "/projects/distributed-performance-management",
-          sepLine: true,
-        },
-        {
-          name: "Image Hub",
-          path: "/projects/image-hub",
-          sepLine: true,
-        },
-        {
+ sepLine: true,
+
           name: "Meshery",
           path: "/service-mesh-management/meshery",
-          sepLine: true,
+          sepLine: true
+        },
+        {
+          name: "Nighthawk",
+          path: "/projects/nighthawk",
+          sepLine: true
+
         },
         // {
         //   name: "Service Mesh Landscape",
         //   path: "/landscape",
         //   sepLine: true
         // },
+        {
+          name: "Service Mesh Patterns",
+          path: "/learn/service-mesh-books/service-mesh-patterns",
+          sepLine: true
+        },
         {
           name: "Service Mesh Interface",
           path: "/projects/service-mesh-interface-conformance",
@@ -73,11 +81,7 @@ const Data = {
           path: "/projects/service-mesh-performance",
           sepLine: true,
         },
-        {
-          name: "GetNighthawk",
-          path: "/projects/getnighthawk",
-          sepLine: true,
-        },
+
       ],
       actionItems: [
         {
@@ -109,14 +113,16 @@ const Data = {
           sepLine: true,
         },
         {
-          name: "Service Mesh Labs",
-          path: "/learn/service-mesh-labs",
-          sepLine: true,
-        },
-        {
+
           name: "Learning Paths",
           path: "/learn/learning-paths",
-          sepLine: true,
+          sepLine: true
+        },
+        {
+          name: "Interactive Labs",
+          path: "/learn/service-mesh-labs",
+          sepLine: true
+
         },
       ],
       actionItems: [
@@ -143,32 +149,32 @@ const Data = {
       path: "/community",
       subItems: [
         {
-          name: "Calendar",
-          path: "/community/calendar",
-          sepLine: true,
-        },
-        {
+
           name: "Members",
           path: "/community/members",
           sepLine: true,
         },
         {
+          name: "Newcomers",
+          path: "/community/newcomers"
+        },
+        {
           name: "MeshMates",
           path: "/community/meshmates",
-          sepLine: true,
+
         },
         // {
-        //     name: "MeshMasters",
-        //     path: "/community/meshmasters"
-        // },
-        // {
-        //     name: "Newcomers",
-        //     path: "/community/newcomers"
+        //   name: "MeshMasters",
+        //   path: "/community/meshmasters"
         // },
         {
           name: "Events",
           path: "/community/events",
           sepLine: true,
+        },
+        {
+          name: "Calendar",
+          path: "/community/calendar",
         },
         {
           name: "Forum",
@@ -183,11 +189,11 @@ const Data = {
       ],
       actionItems: [
         {
-          actionName: "Join the community",
-          actionLink: "/community/newcomers",
+          actionName: "Join the discussion",
+          actionLink: "https://discuss.layer5.io",
         },
         {
-          actionName: "Open source internship programs",
+          actionName: "Open source internships",
           actionLink: "/careers/programs",
         },
       ],
@@ -207,9 +213,11 @@ const Data = {
       path: "/blog",
       subItems: [
         {
-          name: "Blog",
-          path: "/blog",
-          sepLine: true,
+
+          name: "Resources",
+          path: "/resources",
+          sepLine: true
+
         },
         {
           name: "News",
@@ -218,6 +226,10 @@ const Data = {
         },
       ],
       actionItems: [
+        {
+          actionName: "Explore resource library",
+          actionLink: "/resources",
+        },
         {
           actionName: "Layer5 in the news",
           actionLink: "/news",
