@@ -286,7 +286,7 @@ const Brand = () => {
                 scrollTo(meshMasterRef.current);
               }}
             >
-              <span> MeshMasters </span>
+              <span> MeshMaster </span>
             </p>
           </nav>
         </Col>
