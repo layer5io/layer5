@@ -174,7 +174,7 @@ const data = {
       category: "Meshery",
       answer: [
         "Meshery is an open source, vendor neutral project that facilitates testing across meshes.",
-        "Other performance benchmark tools are not packaged into a mesh testing utility, but are only a load-generators unto their own.", 
+        "Other performance benchmark tools are not packaged into a mesh testing utility, but are only load-generators unto their own.", 
       ],
       link: "/projects/service-mesh-performance",
       linktext: "Service Mesh Performance",
