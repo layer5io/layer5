@@ -16,6 +16,7 @@ const LoadableCalendar = Loadable({
 });
 
 const CalendarPage = () => {
+  console.log("jjjjjjjj" ,__dirname);
   return (
     <ThemeProvider theme={theme}>
       <Layout>
