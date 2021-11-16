@@ -12,11 +12,12 @@ const MeshSectionWrapper = styled.section`
     font-size: 1.45rem;
     font-weight: 600;
     line-height: 2rem;
-    color: ${props => props.theme.headingColor ? props.theme.headingColor : "#2C0075"};
+    color: ${(props) =>
+  props.theme.headingColor ? props.theme.headingColor : "#2C0075"};
     margin: 50px 0 24px 0;
     span {
            font-weight: 600;
-            color: ${props => props.theme.keppelColor};
+            color: ${(props) => props.theme.keppelColor};
         }
    }
    .side{
@@ -67,7 +68,7 @@ const MeshSectionWrapper = styled.section`
         margin-top: 1rem;
         span {
            font-weight: 600;
-            color: ${props => props.theme.keppelColor};
+            color: ${(props) => props.theme.keppelColor};
         }
     }
     .big-title{
