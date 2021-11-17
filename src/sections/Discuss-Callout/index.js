@@ -7,7 +7,7 @@ import Discuss from "./layer5-discuss-white.png";
 const DiscussCallout = () => {
   return (
     <DiscussWrapper>
-      <div className="explain-1">
+      <div className="explain">
         <div className="cards">
           <Col lg={12} md={12} sm={12}>
             <a href="https://discuss.layer5.io/">

@@ -39,11 +39,18 @@ const Footer = () => {
             <Row>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
-                  <Link className="title-link" to="/learn">
+                  <Link className="title-link" to="/resources">
                     RESOURCES
                   </Link>
                 </h3>
                 <ul className="section-categories">
+                  <li>
+                    <Link
+                      className="category-link"
+                      to="/resources/category/webassembly-filters"
+                    >WebAssembly Filters
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       className="category-link"
@@ -63,17 +70,17 @@ const Footer = () => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/service-mesh-landscape#service-mesh-comaprison-matrix"
+                      to="/service-mesh-landscape"
                     >
-                      Service Mesh Feature Comparison
+                      Service Mesh Comparison
                     </Link>
-                  </li>
+                  </li>                  
                   <li>
                     <Link
                       className="category-link"
-                      to="/service-mesh-landscape#service-mesh-comparison-strength"
+                      to="/learn/service-mesh-labs"
                     >
-                      Service Mesh Strength Comparison
+                      Service Mesh Interactive Labs
                     </Link>
                   </li>
                 </ul>
@@ -131,8 +138,8 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/projects/getnighthawk">
-                      GetNighthawk
+                    <Link className="category-link" to="/projects/nighthawk">
+                      Nighthawk
                     </Link>
                   </li>
                   <li>
