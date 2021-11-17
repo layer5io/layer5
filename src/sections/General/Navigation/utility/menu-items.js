@@ -43,20 +43,20 @@ const Data = {
       name: "Projects",
       path: "/projects",
       subItems: [
-        {
-          name: "Distributed Performance",
-          path: "/projects/distributed-performance-management",
-          sepLine: true,
-        },
-        {
-          name: "Image Hub",
-          path: "/projects/image-hub",
-          sepLine: true,
-        },
+        // {
+        //   name: "Image Hub",
+        //   path: "/projects/image-hub",
+        //   sepLine: true
+        // },
         {
           name: "Meshery",
           path: "/service-mesh-management/meshery",
-          sepLine: true,
+          sepLine: true
+        },
+        {
+          name: "Nighthawk",
+          path: "/projects/nighthawk",
+          sepLine: true
         },
         // {
         //   name: "Service Mesh Landscape",
@@ -64,26 +64,26 @@ const Data = {
         //   sepLine: true
         // },
         {
+          name: "Service Mesh Patterns",
+          path: "/learn/service-mesh-books/service-mesh-patterns",
+          sepLine: true
+        },
+        {
           name: "Service Mesh Interface",
           path: "/projects/service-mesh-interface-conformance",
-          sepLine: true,
+          sepLine: true
         },
         {
           name: "Service Mesh Performance",
           path: "/projects/service-mesh-performance",
-          sepLine: true,
-        },
-        {
-          name: "GetNighthawk",
-          path: "/projects/getnighthawk",
-          sepLine: true,
+          sepLine: true
         },
       ],
       actionItems: [
         {
           actionName: "All projects",
           actionLink: "/projects",
-        },
+        }
       ],
       // div1: {
       //   src: meshery,
@@ -101,22 +101,22 @@ const Data = {
         {
           name: "Books",
           path: "/learn/service-mesh-books",
-          sepLine: true,
+          sepLine: true
         },
         {
           name: "Workshops",
           path: "/learn/service-mesh-workshops",
-          sepLine: true,
-        },
-        {
-          name: "Service Mesh Labs",
-          path: "/learn/service-mesh-labs",
-          sepLine: true,
+          sepLine: true
         },
         {
           name: "Learning Paths",
           path: "/learn/learning-paths",
-          sepLine: true,
+          sepLine: true
+        },
+        {
+          name: "Interactive Labs",
+          path: "/learn/service-mesh-labs",
+          sepLine: true
         },
       ],
       actionItems: [
@@ -127,7 +127,7 @@ const Data = {
         {
           actionName: "Free service mesh training",
           actionLink: "/learn",
-        },
+        }
       ],
       // div1: {
       //   src: meshery,
@@ -143,89 +143,91 @@ const Data = {
       path: "/community",
       subItems: [
         {
-          name: "Calendar",
-          path: "/community/calendar",
-          sepLine: true,
-        },
-        {
           name: "Members",
           path: "/community/members",
-          sepLine: true,
+          sepLine: true
+        },
+        {
+          name: "Newcomers",
+          path: "/community/newcomers"
         },
         {
           name: "MeshMates",
           path: "/community/meshmates",
-          sepLine: true,
         },
         // {
-        //     name: "MeshMasters",
-        //     path: "/community/meshmasters"
-        // },
-        // {
-        //     name: "Newcomers",
-        //     path: "/community/newcomers"
+        //   name: "MeshMasters",
+        //   path: "/community/meshmasters"
         // },
         {
           name: "Events",
           path: "/community/events",
-          sepLine: true,
+          sepLine: true
+        },
+        {
+          name: "Calendar",
+          path: "/community/calendar",
         },
         {
           name: "Forum",
           path: "https://discuss.layer5.io",
-          sepLine: true,
+          sepLine: true
         },
         {
           name: "Handbook",
           path: "/community/handbook",
-          sepLine: true,
+          sepLine: true
         },
       ],
       actionItems: [
         {
-          actionName: "Join the community",
-          actionLink: "/community/newcomers",
+          actionName: "Join the discussion",
+          actionLink: "https://discuss.layer5.io",
         },
         {
-          actionName: "Open source internship programs",
+          actionName: "Open source internships",
           actionLink: "/careers/programs",
-        },
+        }
       ],
       div1: {
         src: meshmateLogo,
         descr: "Meet our MeshMates",
-        path: "/community/meshmates",
+        path: "/community/meshmates"
       },
       div2: {
         src: communityGreen,
         descr: "Join the service mesh community",
-        path: "/community",
-      },
+        path: "/community"
+      }
     },
     {
       name: "Blog",
       path: "/blog",
       subItems: [
         {
-          name: "Blog",
-          path: "/blog",
-          sepLine: true,
+          name: "Resources",
+          path: "/resources",
+          sepLine: true
         },
         {
           name: "News",
           path: "/news",
-          sepLine: true,
-        },
+          sepLine: true
+        }
       ],
       actionItems: [
+        {
+          actionName: "Explore resource library",
+          actionLink: "/resources",
+        },
         {
           actionName: "Layer5 in the news",
           actionLink: "/news",
         },
         {
           actionName: "Recent announcements",
-          actionLink: "/blog/category/announcements",
-        },
+          actionLink: "/blog/category/announcements"
+        }
       ],
       // div1: {
       //     src: img1,
@@ -235,7 +237,7 @@ const Data = {
       //     src: img2,
       //     descr: "Service Mesh Istio patterns for multilatency"
       // }
-    },
+    }
     // {
     //     name: "About",
     //     path: "/company/about",
@@ -246,6 +248,6 @@ const Data = {
     //     path: "/#contact",
     //     offset: "-50"
     // }
-  ],
+  ]
 };
 export default Data;

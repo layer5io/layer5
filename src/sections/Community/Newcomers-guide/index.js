@@ -29,11 +29,9 @@ const NewcomersGuide = () => {
             development of projects at Layer5. Here are some instructions to get
             you started and if you haven’t joined yet, join the{" "}
             <a href="http://slack.layer5.io/" target="_blank" rel="noreferrer">
-              Slack workspace
-            </a>{" "}
+            Slack workspace</a>{" "}
             to collaborate with the community. Also, you can check the
-            quick-links below for jumping straight into things.
-          </p>
+            quick-links below for jumping straight into things.</p>
           <Row className="newcomers-journey">
             <Col
               className="heading"
@@ -57,17 +55,14 @@ const NewcomersGuide = () => {
             <h3>How to Contribute?</h3>
           </Row>
           <Row className="how-to-contribute">
+
             <p>
-              <Button
-                primary
-                className="newcomers-form"
-                title="Member Form"
-                url="/newcomer"
-                external={true}
-              />
-              These steps outline the process by which you can openly engage,
-              learn, and participate in the broad set of open source projects at
-              Layer5. If at any time you get stuck, please seek help in the{" "}
+
+              <Button primary className="newcomers-form" title="Member Form" url="/newcomer" external={true} />
+              These steps outline the process by which you can
+              openly engage, learn, and participate in the broad set of open
+              source projects at Layer5. If at any time you get stuck, please
+              seek help in the{" "}
               <a
                 href="https://layer5io.slack.com/archives/C019426UBNY"
                 target="_blank"
@@ -79,16 +74,13 @@ const NewcomersGuide = () => {
               <Link to="/community/meshmates">MeshMates</Link> and community
               members are here to help!
             </p>
+
           </Row>
         </div>
         <div className="instructions">
           <Row className="step">
             <Col sm={12} lg={6}>
-              <img
-                src={CommunityImage1}
-                className="finding-an-issue"
-                alt="Community Image"
-              />
+              <img src={CommunityImage1} className="finding-an-issue" alt="Community Image" />
             </Col>
             <Col sm={12} lg={6}>
               <h3>Finding an Issue to Work On</h3>
@@ -201,11 +193,7 @@ const NewcomersGuide = () => {
           </Row>
           <Row className="step">
             <Col sm={12} lg={6}>
-              <img
-                className="community-collage"
-                src={CommunityImage3}
-                alt="Community Image"
-              />
+              <img className="community-collage" src={CommunityImage3} alt="Community Image" />
             </Col>
             <Col sm={12} lg={6}>
               <h3>While Your Issue is under Review</h3>
