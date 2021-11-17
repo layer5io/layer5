@@ -82,10 +82,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/news-single.js"
   );
 
-  const ProjectPostTemplate = path.resolve(
-    "src/templates/project-single.js"
-  );
-
   const BookPostTemplate = path.resolve(
     "src/templates/book-single.js"
   );
@@ -398,16 +394,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: NewsPostTemplate,
       context: {
         slug: singleNews.fields.slug,
-      },
-    });
-  });
-
-  projects.forEach(project => {
-    createPage({
-      path: project.fields.slug,
-      component: ProjectPostTemplate,
-      context: {
-        slug: project.fields.slug,
       },
     });
   });
