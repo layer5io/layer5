@@ -245,13 +245,26 @@ order for anyone to plan the performance scenarios of their deployment and execu
 </p>
 
 <p>
-Figure 2 provides insight to the fact that the specification defines a common collection of statistical analysis 
+The code snippet below provides insights on the fact that the specification defines a common collection of statistical analysis 
 to be calculated for every performance test.
 </p>
 
-<img src={EWtraffic} align="right" alt="EWtraffic" />
+<pre>
+  <code>
+    message PerformanceTestResult {
+  message Latency {
+    double min = 1;
+    double average = 2;
+    double p50 = 3;
+    double p90 = 4;
+    double p99 = 5;
+    double max = 6;
+  }
+}
+  </code>
+</pre>
 
-<p><i>Figure 2: Snippet of the Service Mesh Performance specification describing how to capture statistical analysis of test results.</i></p>
+<p><i> Snippet of the Service Mesh Performance specification describing how to capture statistical analysis of test results.</i></p>
 
 <h2>Defining Deployments</h2>
 
