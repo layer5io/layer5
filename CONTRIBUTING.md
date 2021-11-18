@@ -24,28 +24,32 @@ The comfort and safety of Layer5 community members is our priority. Please do we
 
 ## Newcomers Guide
 
-To help you get started on contributing to the Layer5 projects, we made a newcomers guide to make contributions easier for new folks like you! Refer the [newcomers guide](https://layer5.io/community/newcomers) for the resources and tutorials to help you get started!
+To help you get started on contributing to Layer5 projects, refer to the [Layer5 Newcomers Guide](https://layer5.io/community/newcomers), which aims to make contributions easier for new folks like you! See the resources and tutorials to help you get started.
 
 ## Style Guide
 
-The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a pull request, please review the [design doc](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) to know more about the functioning of the website. Once a pull request has been submitted, a preview deployment will be built and made available to you on your PR.
+The Layer5 website is hosted in this repository and is built using Gatsbyjs. Before opening a pull request, please review the [design doc](https://docs.google.com/document/d/1rvUZy2_S1a2_14BAQIg6b9cMhUuu04kYzkOPDPaPptI/edit#) to learn more about the structure of the website. Once a pull request has been submitted, a preview deployment will be built and made available to you and other contributors on your PR to review.
 
-## Documentation and Site Discussions 
+## Discussion Forum
 
-Join the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel on our slack to discuss about new features, site improvements, enhancement in user experience, and on any other improvements in the documentation.
+Join the [discussion forum](https://discuss.layer5.io/c/landscape/7) (the Landscape topic is appropriate for all layer5.io questions) to discuss suggested new features, possible bugs, enhancement in user experience, and on any other aspects of the site. The discussion forum is our preferred method of communication, you can, however, also inquire in the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel in the Layer5 Slack workspace.
 
-# Contributing to Layer5's Code
+# Contributing to Layer5 Projects
 
-If you want to start contributing to the project's code, please follow these guidelines before creating a pull request: 
+Please follow these steps and note these guidelines to begin contributing:
 
-  - First step is to set up the local development environment. See [this](#how-to-contribute) on how to do the same. 
-  - Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
-  - A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
-  - We regularly discuss about new issues to work on in our [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel on slack. Feel free to join and discuss about any issue or any idea that you may have.
+1. First step is to set up the local development environment. See [this](#how-to-contribute) on how to do the same. 
+1. Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
+1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
+1. We regularly discuss about new issues to work on in our [discussion forum](https://discuss.layer5.io/c/landscape/7)and in the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss about any issue or any idea that you may have.
 
-# Contributing to Layer5's Docs
+# Contributing to Layer5's Blogs
 
-If you'd like to contribute to the docs then following is a brief list of what and how you can contribute to it. In case, if you don't have anything to write on as of now then hop on to our [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) and we shall find you a topic to write on.
+If you'd like to contribute a post to the layer5.io/blog, please open an issue and suggest a topic. If you don't have a topic, then hop into the [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) channel, and we'll help you find one.
+
+# Common Types of Site Contributions
+
+The following list of instructions pertain to commonplace site updates by contributors.
 
 ## Adding a Blog Post
 
@@ -61,12 +65,49 @@ If you'd like to contribute to the docs then following is a brief list of what a
   3. Follow the instructions included in the news template and name the new file after the title of the news article.
   4. Entries will be listed in chronological order automatically.
 
+## Updating/Creating a Community Member Profile 
+
+Layer5 community members are an integral part of what makes Layer5 and it's projects successful. Prominently highlighting our members and their works is something that we think is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A) which has all the instructions that one may need for this.
+
+Note that the [Community Member Profile template](https://github.com/layer5io/layer5/tree/master/src/collections/members/_member-profile-template) is helpful when adding new or updating an existing community member profiles. You can easily understand how the template is used by reviewing other profiles.
+
+
+### Badges for Community Members
+Badges are a great way of highlighting the area of contribution by any given community member. A variety of badges exist so that community members and their efforts may be affiliated with a particular project or with a community initiative. An example of how a badge is assigned using markdown can be found [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/lee-calcote/index.mdx), and it will appear [this way](https://layer5.io/community/members/lee-calcote) on a member profile.
+
+#### Possible Badges:
+
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/community-green.svg" width="25px" height="25px"/> Community
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/landscape-green.png" width="25px" height="25px"/> Landscape
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark-text.svg" width="25px" height="25px"/> SMP
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg" width="25px" height="25px"/> Nighthawk
+- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/patterns-logo.png" width="25px" height="25px"/> Patterns
+
+## Updating the Service Mesh Landscape 
+
+Another common site update includes updation of the Service Mesh Landscape. The service mesh landscape is powered by Gatsby.js. In order to update the landscape, fork this repository, clone it, create a branch and navigate to the **src/collections/landscape** folder.
+
+Make sure to open a [new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D) first. Following are a list of files that you may edit and make the neccessary updates (if appropriate):
+
+- [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) - overview of various service meshes
+- [meshes.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/meshes.js) - list of individual service mesh details
+- [proxies.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/proxies.js) - list of individual modern proxies
+- [gateway.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/gateways.js) - list of API gateways
+- [load-balancer.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/load-balancer.js) - list of load balancers
+
+Entries should be listed in alphabetical order. Data provided to the `smi.js` is dynamic and based upon results from conformance tests run using Meshery.
+
+To update the Service Mesh Timeline, add the new service mesh in the [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) file. Add `announce-date` key for the service mesh, then add a `timeline-order` key having a value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
+
 
 # How to Contribute
 
 ## Prequisites
 
-Make sure you have the following installed on your operating system before you start contributing:
+Make sure you have the following prerequisites installed on your operating system before you start contributing:
 
 - [Nodejs and npm](https://nodejs.org/en/)
 
@@ -229,53 +270,5 @@ To ensure all your commits are signed, you may choose to add this alias to your 
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
 <a href="./.github/assets/images/git-signoff-vscode.png" ><img src="./.github/assets/images/git-signoff-vscode.png" width="50%"/><a>
-
-
-# Common Types of Site Updates
-
-Two of the most common site updates that our contributors work on have been listed below.
-
-## Updating/Creating a Community Member Profile 
-
-Layer5 community members are an integral part of what makes Layer5 and it's projects successful. Prominently highlighting our members and their works is something that we think is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A) which has all the instructions that one may need for this.
-Make sure to create a [new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A) before working on it.
-
-### Source code for Community Member Profiles
-
-Now that you've created a new issue, you'll need to work on the code for the same. When adding a new or updating an existing community member profile be sure to follow the existing template which can be found here [Community Member Profile template](https://github.com/layer5io/layer5/tree/master/src/collections/members/_member-profile-template). You can easily understand the template by checking out one of the profiles [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/lee-calcote/index.mdx).
-
-Now, our new community member profile has been created. But there are some additional accessories that the new member profile may have.
-Badges are a great way of highlighting the contribution done by the community members and a good accessory for the profile.
-
-### Badges for Community Members
-
-A variety of badges exist so that community members and their efforts may be affiliated with a particular project or with a community initiative. An example of how a badge is assigned using markdown can be found [here](https://github.com/layer5io/layer5/blob/master/src/collections/members/abishek-kumar/index.mdx), and it will appear [this way](https://layer5.io/community/members/abishek-kumar) on a member profile.
-
-#### Possible Badges:
-
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/community-green.svg" width="25px" height="25px"/> Community
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/landscape-green.png" width="25px" height="25px"/> Landscape
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark-text.svg" width="25px" height="25px"/> SMP
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/getnighthawk-logo.png" width="25px" height="25px"/> Nighthawk
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/patterns-logo.png" width="25px" height="25px"/> Patterns
-
-## Updating the Service Mesh Landscape 
-
-Another common site update includes updation of the Service Mesh Landscape. The service mesh landscape is powered by Gatsby.js. In order to update the landscape, fork this repository, clone it, create a branch and navigate to the **src/collections/landscape** folder.
-
-Make sure to open a [new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D) first. Following are a list of files that you may edit and make the neccessary updates (if appropriate):
-
-- [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) - overview of various service meshes
-- [meshes.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/meshes.js) - list of individual service mesh details
-- [proxies.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/proxies.js) - list of individual modern proxies
-- [gateway.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/gateways.js) - list of API gateways
-- [load-balancer.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/load-balancer.js) - list of load balancers
-
-Entries should be listed in alphabetical order. Data provided to the `smi.js` is dynamic and based upon results from conformance tests run using Meshery.
-
-To update the Service Mesh Timeline, add the new service mesh in the [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) file. Add `announce-date` key for the service mesh, then add a `timeline-order` key having a value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
 
 
