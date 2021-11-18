@@ -6,10 +6,11 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import VintageBox from "../../reusecore/VintageBox";
 
-import projectImage1 from "../../assets/images/app/projects/landscape.png";
-import projectImage2 from "../../assets/images/app/projects/smp.png";
-import projectImage3 from "../../assets/images/app/projects/meshery-logo-light.png";
-import projectImage4 from "../../assets/images/app/projects/meshery-logo-light.png";
+// import projectImage1 from "../../assets/images/app/projects/landscape.png";
+// import projectImage2 from "../../assets/images/app/projects/smp.png";
+// import projectImage3 from "../../assets/images/app/projects/meshery-logo-light.png";
+// import projectImage4 from "../../assets/images/app/projects/meshery-logo-light.png";
+import { StaticImage } from "gatsby-plugin-image";
 import Icon from "../../assets/images/app/projects/arrow.svg";
 
 import ProjectItemWrapper from "./projectSection.style";
@@ -23,7 +24,11 @@ const Projects = () => {
             <div className="project__block__wrap">
               <div className="project__block">
                 <div className="project__block__inner">
-                  <img src={projectImage1} alt="service mesh comparison" />
+                  <StaticImage
+                    src="../../assets/images/app/projects/landscape.png"
+                    alt="service mesh comparison"
+                    placeholder="blurred"
+                  />
                   <h3>Landscape</h3>
                   <p>Service Mesh Ecosystem</p>
                   <Link to="#">
@@ -31,7 +36,11 @@ const Projects = () => {
                   </Link>
                 </div>
                 <div className="project__block__inner">
-                  <img src={projectImage2} alt="Service Mesh Performance" />
+                  <StaticImage
+                    src="../../assets/images/app/projects/smp.png"
+                    alt="Service Mesh Performance"
+                    placeholder="blurred"
+                  />
                   <h3>Service Mesh Performance</h3>
                   <p>The Standard Measurement</p>
                   <Link to="#">
@@ -41,15 +50,26 @@ const Projects = () => {
               </div>
               <div className="project__block right">
                 <div className="project__block__inner">
-                  <img src={projectImage3} alt="Layer5 open source projects" />
+                  <StaticImage
+                    src="../../assets/images/app/projects/meshery-logo-light.png"
+                    alt="Layer5 open source projects"
+                    placeholder="blurred"
+                  />
                   <h3>Meshery</h3>
                   <p>Service Mesh Management</p>
                   <Link to="#">
-                    <img src={Icon} alt="Meshery, the service mesh management plane" />
+                    <img
+                      src={Icon}
+                      alt="Meshery, the service mesh management plane"
+                    />
                   </Link>
                 </div>
                 <div className="project__block__inner">
-                  <img src={projectImage4} alt="Business logic in the service mesh data plane" />
+                  <StaticImage
+                    src="../../assets/images/app/projects/meshery-logo-light.png"
+                    alt="Business logic in the service mesh data plane"
+                    placeholder="blurred"
+                  />
                   <h3>Image Hub</h3>
                   <p>WebAssembly Filters</p>
                   <Link to="/projects/image-hub">
@@ -68,17 +88,15 @@ const Projects = () => {
               <h4>Projects</h4>
 
               <h2>
-                                Operate any service mesh <span>with confidence</span>.
+                Operate any service mesh <span>with confidence</span>.
               </h2>
             </SectionTitle>
             <p className="project-text">
-                        Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. 
+              Layer5 projects establish industry standards and enable service
+              developers, owners, and operators with repeatable patterns and
+              best practices for managing all aspects of distributed services.
             </p>
-            <VintageBox
-              right={true}
-              vintageTwo={true}
-              position="relative"
-            >
+            <VintageBox right={true} vintageTwo={true} position="relative">
               <Button className="project-btn" title="Learn More" />
             </VintageBox>
           </Col>
