@@ -81,12 +81,12 @@ const ProjectItemWrapper = styled.section`
   }
 
   .proj_icon_2 {
-    .proj-2.img {
+    img {
       padding: 1.5rem 1rem;
       max-height: 125px;
     }
     @media screen and (max-width: 550px) {
-      .proj-2.img {
+      img {
         padding: 1.65rem 0;
       }
       h4 {

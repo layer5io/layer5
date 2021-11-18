@@ -93,9 +93,6 @@ const BannerSectionWrapper = styled.section`
         font-size: 2rem;
       }
     }
-    .hero {
-      height: 91.5%;
-    }
   }
   @media only screen and (max-width: 912px) {
     .section-title {
@@ -106,22 +103,19 @@ const BannerSectionWrapper = styled.section`
         font-size: 1rem;
       }
     }
-    .hero {
-      height: 91%;
-    }
-  }
 
-  @media only screen and (max-width: 767px) {
-    .hero {
-      display: none;
+    @media only screen and (max-width: 767px) {
+      .hero {
+        display: none;
+      }
+      .join-community {
+        text-align: center;
+      }
     }
-    .join-community {
-      text-align: center;
-    }
-  }
-  @media only screen and (max-width: 576px) {
-    .section-title {
-      padding: 2rem 1rem;
+    @media only screen and (max-width: 576px) {
+      .section-title {
+        padding: 2rem 1rem;
+      }
     }
   }
 `;
