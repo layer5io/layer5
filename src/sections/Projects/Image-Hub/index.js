@@ -21,12 +21,6 @@ const ImageHubPage = () => {
           <Container>
             <div className="banner">
               <img className="logo" src={ImageHub} alt="Image-Hub Logo" />
-              {/* <StaticImage
-                src="../../../assets/images/image-hub/layer5-image-hub.png"
-                alt="Image-Hub Logo"
-                placeholder="blurred"
-                imgClassName="logo"
-              /> */}
               <div className="title-text">
                 <h4>Purpose and Overview</h4>
                 <h1>Image Hub</h1>
@@ -78,7 +72,6 @@ const ImageHubPage = () => {
             >
               <div>
                 <a href={imagehubslider1}>
-                  {/* <img src={imagehubslider1} alt="Consul Service Mesh Architecture" /> */}
                   <StaticImage
                     src="./service-mesh-architecture-consul.png"
                     alt="Consul Service Mesh Architecture"
@@ -92,7 +85,6 @@ const ImageHubPage = () => {
                     src={imagehubslider2}
                     alt="Image Hub on Consul with WASM and Meshery"
                   /> */}
-
                   <StaticImage
                     src="./image-hub-on-consul-with-wasm-and-meshery.png"
                     alt="Image Hub on Consul with WASM and Meshery"
