@@ -9,6 +9,7 @@ const JoinCommunityWrapper = styled.div`
     right: 0rem;
     margin-right: 1rem;
     padding-bottom: 5rem;
+    padding-right: 2rem;
     align-items: left;
     justify-content: space-around;
     display: flex;
@@ -32,7 +33,7 @@ const JoinCommunityWrapper = styled.div`
         padding-top: 0.5rem;
       }
     }
-    @media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 950px) {
       width: 0;
       opacity: 0;
       height: 0;
