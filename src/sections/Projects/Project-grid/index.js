@@ -19,7 +19,6 @@ import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-
 
 import CommunityCallCard from "../../../components/CommunityCallCard/index";
 
-
 const ProjectPage = () => {
   return (
     <ProjectWrapper>
@@ -41,7 +40,10 @@ const ProjectPage = () => {
                 <h5>Landscape</h5>
               </div>
             </Link>
-            <Link to="/service-mesh-management/meshery" className="project__card two">
+            <Link
+              to="/service-mesh-management/meshery"
+              className="project__card two"
+            >
               <div className="project__card-container">
                 <img src={meshery} alt="Meshery" />
                 <h5>Meshery</h5>
@@ -84,10 +86,7 @@ const ProjectPage = () => {
               <div className="project__card-container-seven">
                 <Row>
                   <Col lg={4} md={12} sm={12} className="image">
-                    <img
-                      src={patterns}
-                      alt="Service Mesh Patterns"
-                    />
+                    <img src={patterns} alt="Service Mesh Patterns" />
                   </Col>
                   <Col lg={8} md={12} sm={12}>
                     <h5> Service Mesh Patterns</h5>
