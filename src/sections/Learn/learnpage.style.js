@@ -20,7 +20,7 @@ export const LearnPageWrapper = styled.div`
             color: white;
             font-size: 1.5rem;
             font-weight: 300;
-            @media screen and (max-width: 450px) {
+            @media screen and (max-width: 445px) {
                 margin-left:0;
                 margin-right:0;
                 font-size:1.3rem;
