@@ -15,7 +15,11 @@ export const LearnPageWrapper = styled.div`
         }
         h3 {
             margin-top: 1rem;
+            margin-left: 5rem;
+            margin-right: 5rem;
             color: white;
+            font-size: 1.5rem;
+            font-weight: 300;
         }
     }
 
