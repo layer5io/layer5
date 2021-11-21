@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: inherit;
+    /* border: 1px solid red; */
   }
 
   * {

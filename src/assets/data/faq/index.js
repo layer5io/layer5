@@ -1,4 +1,3 @@
-
 const data = {
   faqs: [
     {
@@ -10,42 +9,48 @@ const data = {
       ],
     },
     {
-      question: "As a member of one of Layer5's GitHub organizations, What is expected of me?",
+      question:
+        "As a member of one of Layer5's GitHub organizations, What is expected of me?",
       category: "Layer5",
       answer: [
         "As a member of one of Layer5's GitHub organizations, your user account is entitled with triage level permissions across all repositories in the org. You are expected to engage where the topic strikes your interest, triaging (assigning, clarifying, labeling, qualifying) any issue you feel comfortable doing so. You are encouraged to review any open pull request and offer feedback to or ask questions to the author.",
-        "Layer5 has a number of GitHub organziations in which it's projects are advanced. See the repository overview below."        
+        "Layer5 has a number of GitHub organziations in which it's projects are advanced. See the repository overview below.",
       ],
-      link: "https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit",
+      link:
+        "https://docs.google.com/document/d/1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk/edit",
       linktext: "Layer5 Repository Overview",
     },
     {
-      question: "As a community member, what can I expect from Layer5? What does Layer5 expect of me?",
+      question:
+        "As a community member, what can I expect from Layer5? What does Layer5 expect of me?",
       category: "Layer5",
-      answer: [ "The Layer5 community expects you to get as much or more out of your time than you give to the projects. We expect earnest effort from its contributors. What “earnest effort” means is different for each community member as all have different circumstances. Suffice to say, the more you put into your efforts, the greater your reward will be. Most community contributors stay with the project for many months, if not indefinitely. Length of involvement is entirely up to the individual community member. You can expect to be challenged, to be assisted, to learn, to be recognized for your effort and to have your contributions appreciated.",
-      "As a member of the Layer5 community, you are expected to be a good representative of Layer5's cultures and values of helping fellow members and paying it forward as we all learn together. You are expected to offer your ideas and skills to help advance our community and its projects. You are expected to share your experiences with others, to be curious, to be helpful, to ask questions, to challenge others and to be challenged yourself, to spread the word about what we collectively do here, to invite new members, to learn, to share, to make friends, to build a network, to write blog posts, to tweet, to become maintainers, to become MeshMates, to earn an internship, to get hired by Layer5 - - any and all of these things.",
+      answer: [
+        "The Layer5 community expects you to get as much or more out of your time than you give to the projects. We expect earnest effort from its contributors. What “earnest effort” means is different for each community member as all have different circumstances. Suffice to say, the more you put into your efforts, the greater your reward will be. Most community contributors stay with the project for many months, if not indefinitely. Length of involvement is entirely up to the individual community member. You can expect to be challenged, to be assisted, to learn, to be recognized for your effort and to have your contributions appreciated.",
+        "As a member of the Layer5 community, you are expected to be a good representative of Layer5's cultures and values of helping fellow members and paying it forward as we all learn together. You are expected to offer your ideas and skills to help advance our community and its projects. You are expected to share your experiences with others, to be curious, to be helpful, to ask questions, to challenge others and to be challenged yourself, to spread the word about what we collectively do here, to invite new members, to learn, to share, to make friends, to build a network, to write blog posts, to tweet, to become maintainers, to become MeshMates, to earn an internship, to get hired by Layer5 - - any and all of these things.",
       ],
       link: "https://layer5.io/community/meshmates",
       linktext: "Reach out to a MeshMate to find out more",
     },
     {
-      question: "I see works of other contributors being highlighted. Will my contributions be highlighted, too?",
+      question:
+        "I see works of other contributors being highlighted. Will my contributions be highlighted, too?",
       category: "Layer5",
-      answer: [ "We might not get to everyone, but we try to elevate the works of all of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Make sure that you follow and engage with the Twitter, YouTube, and LinkedIn accounts."
+      answer: [
+        "We might not get to everyone, but we try to elevate the works of all of our contributors. All of our community members are proud of their work and so are we! We want their work and names to be recognized across our collective technology industry. Make sure that you follow and engage with the Twitter, YouTube, and LinkedIn accounts.",
       ],
       link: "https://twitter.com/layer5",
       linktext: "Layer5 on Twitter",
-      },
-      {
-        question: "I am not a coder. Can I contribute, too?",
-        category: "Layer5",
-        answer: [ "Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Make sure that you introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa."
-        ],
-        link: "https://slack.layer5.io",
-        linktext: "Layer5 Slack",
-        },
+    },
+    {
+      question: "I am not a coder. Can I contribute, too?",
+      category: "Layer5",
+      answer: [
+        "Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Make sure that you introduce yourself in the Layer5 Slack and let other community members get acquainted with you and vice-versa.",
+      ],
+      link: "https://slack.layer5.io",
+      linktext: "Layer5 Slack",
+    },
 
-      
     {
       question: "What value does a service mesh provide?",
       category: "Service Mesh",
@@ -87,7 +92,8 @@ const data = {
         "Service Mesh Interface (SMI) - A standard interface for using common service mesh functionality on Kubernetes.",
         "Multi-Vendor Service Mesh Interoperation (Hamlet) - A set of API standards for enabling service mesh federation.",
       ],
-      link: "https://calcotestudios.com/talks/decks/slides-open-infrastructure-summit-2020-its-a-multi-mesh-world.html",
+      link:
+        "https://calcotestudios.com/talks/decks/slides-open-infrastructure-summit-2020-its-a-multi-mesh-world.html",
       linktext: "See Open Infrastructure Summit Presentation",
     },
     {
@@ -174,7 +180,7 @@ const data = {
       category: "Meshery",
       answer: [
         "Meshery is an open source, vendor neutral project that facilitates testing across meshes.",
-        "Other performance benchmark tools are not packaged into a mesh testing utility, but are only load-generators unto their own.", 
+        "Other performance benchmark tools are not packaged into a mesh testing utility, but are only load-generators unto their own.",
       ],
       link: "/projects/service-mesh-performance",
       linktext: "Service Mesh Performance",
@@ -219,7 +225,8 @@ const data = {
         "Continuously. Layer5 has internships starting and stopping frequently. Some internships rigidly start and stop on particular dates, particularly those hosted in partnership with other organizations like the Linux Foundation, Google, MLH, Outreachy, and so on. Internships offered directly with Layer5 often start as a batch of candidates show collective readiness.",
         "We work with individuals to align the timings of the internship with other activities in their life.. Build it into something active and something to be maintained.",
       ],
-      link: "https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+",
+      link:
+        "https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+",
       linktext: 'Grab a "Help Wanted" Issue',
     },
     {

@@ -8,54 +8,60 @@ import nitk from "../../../assets/images/partners/nitk_black.png";
 import rackspace from "../../../assets/images/partners/rackspace_black.svg";
 import intel from "../../../assets/images/partners/intel-black.svg";
 
-
 export const partners = [
   {
     name: "Redhat",
-    imageLink: redhat, 
+    imageLink: redhat,
     imageRoute: "/partners#redhat",
-    innerDivStyle: "partner__block__inner horizontal"
-  },{
+    innerDivStyle: "partner__block__inner horizontal",
+  },
+  {
     name: "Intel",
-    imageLink: intel, 
+    imageLink: intel,
     imageRoute: "/partners#intel",
-    innerDivStyle: "partner__block__inner"
-    
-  },{
+    innerDivStyle: "partner__block__inner",
+  },
+  {
     name: "University of Texas at Austin partnership with Layer5",
-    imageLink: utaustin, 
+    imageLink: utaustin,
     imageRoute: "/partners#utaustin",
-    innerDivStyle: "partner__block__inner horizontal"
-  },{
+    innerDivStyle: "partner__block__inner horizontal",
+  },
+  {
     name: "Citrix",
-    imageLink: citrix, 
+    imageLink: citrix,
     imageRoute: "/partners#utaustin",
-    innerDivStyle: "partner__block__inner"
-  },{
+    innerDivStyle: "partner__block__inner",
+  },
+  {
     name: "Hashicorp partnership with Layer5",
-    imageLink: hashicorp, 
-    imageRoute: "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership",
-    innerDivStyle: "partner__block__inner"
-  },{
+    imageLink: hashicorp,
+    imageRoute:
+      "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership",
+    innerDivStyle: "partner__block__inner",
+  },
+  {
     name: "Hewlett-Packard Enterprise",
-    imageLink: hpe, 
+    imageLink: hpe,
     imageRoute: "/partners#hpe",
-    innerDivStyle: "partner__block__inner"
-  },{
+    innerDivStyle: "partner__block__inner",
+  },
+  {
     name: "National Institute of Technology Karnataka",
-    imageLink: nitk, 
+    imageLink: nitk,
     imageRoute: "/partners#nitk",
-    innerDivStyle: "partner__block__inner"
-  },{
+    innerDivStyle: "partner__block__inner",
+  },
+  {
     name: "Rackspace Technology",
-    imageLink: rackspace, 
+    imageLink: rackspace,
     imageRoute: "/partners#rackspace",
-    innerDivStyle: "partner__block__inner"
-   
-  },{
+    innerDivStyle: "partner__block__inner",
+  },
+  {
     name: "UEM",
-    imageLink: uem, 
+    imageLink: uem,
     imageRoute: "/partners#uem",
-    innerDivStyle: "partner__block__inner"
-  }
-]; 
+    innerDivStyle: "partner__block__inner",
+  },
+];

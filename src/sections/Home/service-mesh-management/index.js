@@ -1,14 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import MeshSectionWrapper from "./ServiceMesh.style";
-import ServiceMeshAnimate from "./ServiceMeshAnimation.style";
 import SectionTitle from "../../../reusecore/SectionTitle";
-import MesheryLogo from "../../../assets/images/meshery/full-logo/meshery-logo-light-text.svg";
-import ServiceMesh from "./images/animated-service-mesh.svg";
-import MeshMap from "./images/meshmap.png";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "gatsby";
-import AnimatedMesh from "./AnimateSVG";
+import { StaticImage } from "gatsby-plugin-image";
 
 const ServiceMeshManagement = () => {
   return (
@@ -22,7 +18,11 @@ const ServiceMeshManagement = () => {
           >
             <h4 className="title">Meshery is</h4>
             <h2 className="big-title">
-              The <span>service mesh management <span className="strikethrough">plane</span> platform</span>
+              The{" "}
+              <span>
+                service mesh management{" "}
+                <span className="strikethrough">plane</span> platform
+              </span>
             </h2>
           </SectionTitle>
           {/* <ServiceMeshAnimate className="active" >
@@ -33,7 +33,14 @@ const ServiceMeshManagement = () => {
 
           <Col xs={12} sm={12} md={6}>
             <Link to="/service-mesh-management/meshery">
-              <img className="mesh-image" alt="Meshery - the multi-service mesh manager" src={MeshMap} />
+              <StaticImage
+                src="./images/meshmap.png"
+                alt="Meshery - the multi-service mesh manager"
+                placeholder="blurred"
+                imageClassName="mesh-image"
+                objectFit="cover"
+                objectPosition="50% 50%"
+              />
             </Link>
           </Col>
           <Col xs={12} sm={12} md={6}>
@@ -42,16 +49,28 @@ const ServiceMeshManagement = () => {
                 The <span>extensible</span> service mesh manager.
               </div>
               <div className="description">
-                <p>An extensible platform, Meshery, comes packed with integrations for Prometheus, Grafana, Jaeger, CloudEvents, and support for WebAssembly filters for Envoy.</p>
                 <p>
-                  Not just a service mesh manager, Meshery is your microservices manager. Meshery comprises a set of components each one fitted with extension points. Users and integrators may extend Meshery by taking advantage of designated extension points.
+                  An extensible platform, Meshery, comes packed with
+                  integrations for Prometheus, Grafana, Jaeger, CloudEvents, and
+                  support for WebAssembly filters for Envoy.
+                </p>
+                <p>
+                  Not just a service mesh manager, Meshery is your microservices
+                  manager. Meshery comprises a set of components each one fitted
+                  with extension points. Users and integrators may extend
+                  Meshery by taking advantage of designated extension points.
                 </p>
               </div>
 
               <div className="backBtn">
                 <br />
                 <Link to="/service-mesh-management/meshery">
-                  <p>Learn More <span><IoIosArrowForward className="icon" /></span></p>
+                  <p>
+                    Learn More{" "}
+                    <span>
+                      <IoIosArrowForward className="icon" />
+                    </span>
+                  </p>
                 </Link>
               </div>
             </div>
