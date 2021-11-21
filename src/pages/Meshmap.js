@@ -13,7 +13,7 @@ import Meshmap from "../sections/Meshmap/index";
 const MeshmapPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <SEO title="when should i deploy service mesh" description="when should i deploy service mesh question form." />
+    <SEO title="MeshMap" description="An extension plugin to Meshery" />
     <Layout>
       <Navigation />
       <Meshmap />
