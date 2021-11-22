@@ -18,14 +18,15 @@ import EWtraffic from "./figure-1.png"
 import Workload from "./figure-2.png"
 import Archictures from "./Meshery Architecture - Clients.png"
 import Code from "./code-snippet.png"
+import NetworkFunction from "./Comparison of different modes of delivery of service mesh network functions.png"
 import { ResourcesWrapper } from "../Resources.style.js";
 
 <ResourcesWrapper>
   <div className="intro">
     <p> 
       Learn more about Service Mesh Performance from this article  
-      <a className="blog" href="https://www.nxtbook.com/nxtbooks/ieee/bridge_issue3_2021/index.php#/p/16">Analyzing Service Mesh Performance</a> - Published in issue 3 of IEEE Bridge October 2021
-      <img src="{cover}" align="right" alt="IEEE The Bridge 2021 Issue 3 cover" />
+      <a className="blog" href="https://www.nxtbook.com/nxtbooks/ieee/bridge_issue3_2021/index.php#/p/16"> Analyzing Service Mesh Performance</a> - Published in issue 3 of IEEE Bridge October 2021
+      <img src={cover} align="right" alt="IEEE The Bridge 2021 Issue 3 cover" />
     </p>
   </div>
 
@@ -69,9 +70,13 @@ to even a few hours to characterize the state of your systems and the overhead i
 <p>
 Moreover, anytime performance is characterized, analysis is subjective to the specific workload, infrastructure, and instruments used for measurement. 
 Given the variety of this measurement challenge, most service meshes and their data plane proxies (if a third-party component), do not have the tooling 
-necessary or refuses to publish performance data because such tests can be 1) arduous to create and sustain a capable harness, 2) a point-in-time 
-consideration (none of the elements under measurement are static, and 3) misinterpreted. 
-</p>
+necessary or refuse to publish performance data because such tests can be:
+  <ol>
+  <li>arduous to create and sustain a capable harness</li>
+  <li>a point-in-time consideration (none of the elements under measurement are static</li>
+  <li>misinterpreted</li>
+</ol>
+
 
 <p>
 Read on as we identify how to surmount each of these challenges.
@@ -82,7 +87,7 @@ Read on as we identify how to surmount each of these challenges.
 <p>
 As the software defined networking layer of microservices, service mesh encompasses multiple aspects of critical functions of the applications, 
 such as circuit breaking, health checks, and packet operations. Analyzing the permutations of these configurations is an impossible task without 
-a suitable test harness. A service mesh management plane can be such a tool. As the multi-mesh manager, <a href="https://meshery.io">Meshery</a> 
+a suitable test harness. A service mesh management plane can be such a tool. As the multi-mesh manager, <a href="https://meshery.io">Meshery </a> 
 is capable of provisioning 10 different service meshes, workloads atop the meshes, generating load using <a href="https://getnighthawk.dev">Nighthawk</a>, 
 and analyzing that load. No other tool capable of performing these tasks 
 end-to-end exists. Meshery is a Cloud Native Computing Foundation project originally created by Layer5.
@@ -457,7 +462,7 @@ Whether to  integrate your traffic filters natively or as an extension, a tradeo
 exists primarily in exchanging between service mesh speed and service mesh flexibility as shown in <i>Figure 4.</i>
 </p>
 
-<img src="x" alt="image req"/>
+<img src={NetworkFunction} align="right" alt="comparison of Network functions" />
 
 <p>
 <i>Figure 5 - A comparison of different modes of delivery of service mesh network functions.</i>
