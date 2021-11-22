@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import MeshmapWrapper from "./meshmap.style";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
+import PageHeader from "../../reusecore/PageHeader";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import mesheryCloud from "./meshery-cloud.png";
 import meshmapImage from "./MeshMap.png";
 import serviceMesh from "./service-mesh.svg";
+import DiscussCallout from "../../sections/Discuss-Callout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import { Link } from "gatsby";
 
@@ -39,49 +41,46 @@ const Meshmap = () => {
 
   const MeshmapFormPage = () => {
     return (
+        
       <Container>
-        <div className="hero-section">
-          <Row>
-            <Col lg={6} md={6} sm={12}>
-              <div className="hero-text">
-                <h1 className="title1">MeshMap</h1>
-                <p>As an extensible platform, Meshery has many extension points, MeshMap being a prominent example of a Meshery plugin. MeshMap has two modes: Visualizer and Designer. Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. MeshMap is centered around service mesh patterns. </p>
-              </div>
-            </Col>
-            <Col lg={6} md={6} sm={12}>
-              <img className="meshmapImage" src={meshmapImage} />
-            </Col>
-            <Col lg={6} md={6} sm={12}>
-              <h4><img className="bullet-image" src={serviceMesh} /> Visualizer Mode</h4>
-              <ul className="bullet">
-                <li> Examine a visual topology of Kubernetes cluster and its services.</li>
-                <li> View and search streams of your pod container logs.</li>
-                <li> Connect an interactive terminal to instances of your containers.</li>
-              </ul>
-            </Col>
-            <Col lg={6} md={6} sm={12}>
-              <h4><img className="bullet-image" src={serviceMesh} /> Designer Mode </h4>
-              <ul className="bullet">
-                <li> Design a service mesh deployment with application and Envoy filter from scratch (Istio only).</li>
-                <li> Customize a service mesh deployment with application and Envoy filter from pattern (Istio only).</li>
-              </ul>
-            </Col>
-          </Row>
-        </div>
-
-
+        <PageHeader title="MeshMap" />   
+        <Row>
+          <Col lg={6} md={6} sm={12}>
+            <p className= "para">As an extensible platform, Meshery has many extension points, MeshMap being a prominent example of a Meshery plugin. MeshMap has two modes: Visualizer and Designer. Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. MeshMap is centered around service mesh patterns. </p>
+            <p>Create and share your own Kubernetes deployments and service mesh patterns in MeshMap Designer or import from the <Link to="/books/service-mesh-patterns"> patterns catalog </Link>. </p>
+          </Col>
+          <Col lg={6} md={6} sm={12}>
+            <img className="meshmapImage" src={meshmapImage} />
+          </Col>
+          <Col lg={6} md={6} sm={12}>
+            <h4><img className="bullet-image" src={serviceMesh} /> Visualizer Mode</h4>
+            <ul className="bullet">
+              <li> Examine a visual topology of Kubernetes cluster and its services.</li>
+              <li> View and search streams of your pod container logs.</li>
+              <li> Connect an interactive terminal to instances of your containers.</li>
+            </ul>
+          </Col>
+          <Col lg={6} md={6} sm={12}>
+            <h4><img className="bullet-image" src={serviceMesh} /> Designer Mode </h4>
+            <ul className="bullet">
+              <li> Design a service mesh deployment with application and Envoy filter from scratch.</li>
+              <li> Customize a service mesh deployment with application and Envoy filter from pattern.</li>
+            </ul>
+          </Col>
+        </Row>
         <div className="banner-background">
           <Container>
             <div className="hero-section">
               <Row>
                 <Col lg={6} md={6} sm={12}>
-                  <p className="para">Create and share your own Kubernetes deployments and service mesh patterns in MeshMap Designer or import from the <Link to="/books/service-mesh-patterns"> patterns catalog </Link>. </p>
+                  <p style={{paddingTop: "4.5rem"}}> Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.</p>
                   <img src={mesheryCloud} className="logo" />
                   <p className="para"> Deploy your designs and manage your infrastructure using MeshMap Visualizer. Enter your name (as soon as possible) into the waiting list for participant in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.</p>
+                  <DiscussCallout />
                 </Col>
                 <Col lg={6} md={6} sm={12}>
                   <div className="hero-text">
-                    <h3 className="title">MeshMap Beta Waiting List</h3>
+                    <h3 className="title" id="meshmap-beta">MeshMap Beta Waiting List</h3>
                     <Formik
                       initialValues={{
                         firstname: "",
@@ -169,7 +168,6 @@ const Meshmap = () => {
                           </label>
                         </div>
                         <br />
-                        <p className="para"> Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.</p>
                         <Button secondary type="submit" className="btn" title="Submit" />
                       </Form>
                     </Formik>
@@ -179,10 +177,6 @@ const Meshmap = () => {
             </div>
           </Container>
         </div>
-
-
-
-
       </Container>
     );
   };
@@ -201,13 +195,11 @@ const Meshmap = () => {
   return (
     <MeshmapWrapper>
       <div>
-
         {
           stepNumber === 0 &&
 
           <MeshmapFormPage />
         }
-
         {
           stepNumber === 1 &&
           <ThankYou />

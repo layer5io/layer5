@@ -11,6 +11,10 @@ const MeshmapWrapper = styled.div`
     font-size: .8rem;
   }
 
+  .para {
+      padding-top: 4rem;
+  }
+
   .image {
     width: 85%;
     margin-left: auto;
@@ -35,6 +39,7 @@ const MeshmapWrapper = styled.div`
   .meshmapImage{
     display: block;
     margin: 4rem auto;
+    width: 100%;
 }
   .member-header{
     align-items:center;
@@ -54,22 +59,14 @@ const MeshmapWrapper = styled.div`
       font-size: 1rem;
     }
 
-    .container-1 {
-      margin: 40px 0;
-      
-      .text {
-        margin: 80px 0;
-      }
-    }
 
 
 
     .form {
         margin: 1rem;
         font-size: .9rem;
-        float: left;
         margin: 1rem 1.25rem 1rem 0rem;
-        box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+        box-shadow: 0px 10px 10px 2px rgba(0, 179, 159, 0.5);
         padding: 1rem;
 
 
@@ -182,7 +179,7 @@ const MeshmapWrapper = styled.div`
         }
       }
 
-      @media (max-width: 62rem) {
+      @media only screen and (max-width: 62rem) {
           .image {
             width: auto;
             height: auto;
@@ -192,6 +189,9 @@ const MeshmapWrapper = styled.div`
         }
         .hero-text {
             text-align: center;
+        }
+        p {
+            padding-top: 4rem;
         }
         }
 
