@@ -186,7 +186,7 @@ Enter your name (as soon as possible) into the waiting list for participant in t
               <br></br>
             </div>
             <br></br>
-            <p className="para"> Choosing between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.</p>
+            <p className="para"> Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.</p>
             <img className="image" src={mesheryCloud} />
             <Button secondary type="submit" className="btn" title="Submit" /> <br /><br /><br /><br />
           </Form>
