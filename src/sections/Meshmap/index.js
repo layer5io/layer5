@@ -32,7 +32,7 @@ const Meshmap = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("01jjo1gku2c41dl9jjah5zlr66cfrazr@hook.integromat.com", {
+      axios.post("https://hook.integromat.com/bklgspwelgqkvbdj4coxompc62d78ngi", {
         memberFormOne,
       });
     }
