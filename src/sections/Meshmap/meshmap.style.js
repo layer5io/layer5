@@ -12,12 +12,11 @@ const MeshmapWrapper = styled.div`
   }
 
   .image {
-    width: 700px;
-    height: 490px;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    padding-right: 20px;
+    padding-bottom: 1rem;
 
 }
 
@@ -42,6 +41,10 @@ const MeshmapWrapper = styled.div`
     padding-left:200px
   }
 
+  .title1 {
+    font-weight: 700;
+    margin: 70px 0px 10px 0px;
+  }
     .title {
         font-weight: 700;
         margin: 70px 0px 10px 0px;
@@ -68,10 +71,15 @@ const MeshmapWrapper = styled.div`
     .form {
         margin: 40px 40px;
 
+        label {
+            display: block;
+        }
+        
         .form-name {
             font-weight: 600;
             margin: 20px 0px 5px 3px;
             display: block;
+
         }
 
         .text-field {
@@ -102,19 +110,12 @@ const MeshmapWrapper = styled.div`
         }
 
         .btn {
-          float: right;
-          margin: 20px 0;
+          margin: 0 auto;
+          display: block;
+          width: auto;
         }
 
-      }
-      .btn-wrapper {
-        float: right;
-        width: 350px;
-
-        .btn-next {
-          float: left;
-        }
-        }
+    }
 
 
     .center {
@@ -177,10 +178,45 @@ const MeshmapWrapper = styled.div`
         }
       }
 
-      @media only screen and (max-width: 600px) {
-        .btn-box {
-          width: 100%;
+      @media (max-width: 62rem) {
+          .image {
+            width: auto;
+            height: auto;
+          }
+          .title1 {
+            text-align: center;
         }
+        .hero-text {
+            text-align: center;
+        }
+        }
+
+        @media (max-width: 770px) {
+            .image {
+                width: auto;
+                height: auto;
+              }
+
+           
+
+            .hero-text {
+                .title1 {
+                    text-align: center;
+                }
+            }
+            
+             
+        }
+      @media only screen and (max-width: 600px) {
+        image {
+            width: auto;
+            height: auto;
+          }
+        .form{
+            .btn {
+            width: 50%;
+        }
+    }
       }
     }
 `;

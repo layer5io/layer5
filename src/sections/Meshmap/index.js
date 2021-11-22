@@ -5,7 +5,7 @@ import Button from "../../reusecore/Button";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import mesheryCloud from "./meshery-cloud.png";
-import meshmapImage from "./MeshMap.png";
+import meshmapImage from "./meshmap.png";
 import serviceMesh from "./service-mesh.svg";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-gray-no-trim.svg";
 import { Link } from "gatsby";
@@ -36,14 +36,6 @@ const Meshmap = () => {
     }
   }, [submit]);
 
-  //   const MeshmapPage = () => {
-  //     return (
-  //         <Container>
-            
-  //         </Container>
-  //     );
-
-  //   };
 
   const MeshmapFormPage = () => {
     return (
@@ -52,18 +44,13 @@ const Meshmap = () => {
           <Row>
             <Col lg={6} md={6} sm={12}>
               <div className="hero-text">
-                <h1 className="title">MeshMap</h1>
+                <h1 className="title1">MeshMap</h1>
                 <p>As an extensible platform, Meshery has many extension points, MeshMap being a prominent example of a Meshery plugin. MeshMap has two modes: Visualizer and Designer. Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. MeshMap is centered around service mesh patterns. </p>
               </div>
             </Col>
             <Col lg={6} md={6} sm={12}>
               <img className="meshmapImage" src={meshmapImage} />
-                
-                    
-                 
             </Col>
-             
-                 
             <Col lg={6} md={6} sm={12}>   
               <h4><img className="bullet-image" src={serviceMesh} /> Visualizer Mode</h4> 
               <ul className="bullet">
@@ -84,9 +71,7 @@ const Meshmap = () => {
 
         <h2 className="title">Sign up for MeshMap-Beta</h2>
         <p className="para">Create and share your own Kubernetes deployments and service mesh patterns in MeshMap Designer or import from the <Link to="/books/service-mesh-patterns"> patterns catalog </Link>. </p>
-        
-        <p className="para"> Deploy your designs and manage your infrastructure using MeshMap Visualizer. 
-Enter your name (as soon as possible) into the waiting list for participant in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.</p>
+        <p className="para"> Deploy your designs and manage your infrastructure using MeshMap Visualizer. Enter your name (as soon as possible) into the waiting list for participant in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.</p>
         <Formik
           initialValues={{
             firstname: "",
@@ -128,67 +113,55 @@ Enter your name (as soon as possible) into the waiting list for participant in t
                 <Field type="radio" name="role" value="Architect" />
                 Architect
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="Business Operations" />
                 Business Operations
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="Developer" />
                 Developer
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="DevOps" />
                 DevOps/SRE/Sysadmin
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="Executive" />
                 Executive 
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="IT Operations" />
                 IT Operations
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="Media" />
                 Media/Analyst
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="Product Manager" />
                 Product Manager
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="Professor" />
                 Professor/Academic
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="Sales Marketing" />
                 Sales Marketing
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="Student" />
                 Student
               </label>
-              <br></br>
               <label>
                 <Field type="radio" name="role" value="Other" />
                 Other
               </label>
-              <br></br>
             </div>
-            <br></br>
+            <br />
             <p className="para"> Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.</p>
             <img className="image" src={mesheryCloud} />
-            <Button secondary type="submit" className="btn" title="Submit" /> <br /><br /><br /><br />
+            <Button secondary type="submit" className="btn" title="Submit" /> 
           </Form>
         </Formik>
       </Container>
