@@ -50,13 +50,9 @@ const MeshmapWrapper = styled.div`
         margin: 70px 0px 10px 0px;
     }
 
-    .para {
-        color: #777777;
-    }
     .label {
       font-size: 1rem;
     }
-
 
     .container-1 {
       margin: 40px 0;
@@ -69,7 +65,13 @@ const MeshmapWrapper = styled.div`
 
 
     .form {
-        margin: 40px 40px;
+        margin: 1rem;
+        font-size: .9rem;
+        float: left;
+        margin: 1rem 1.25rem 1rem 0rem;
+        box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+        padding: 1rem;
+
 
         label {
             display: block;
@@ -87,7 +89,7 @@ const MeshmapWrapper = styled.div`
             border: 1px solid black;
             border-radius: 10px;
             padding: 1rem .5rem;
-            font-size: 1rem;
+            font-size: .85rem;
         }
 
         .text-field:focus {
@@ -110,7 +112,7 @@ const MeshmapWrapper = styled.div`
         }
 
         .btn {
-          margin: 0 auto;
+          margin: 1.9rem auto;
           display: block;
           width: auto;
         }
@@ -149,13 +151,15 @@ const MeshmapWrapper = styled.div`
       justify-content: center;
       padding: 20px;
       min-height: 400px;
-      margin: 3rem 13%;
+      margin: 5%;
+      padding: 5%;
       background-color: ${props => props.theme.darkJungleGreenColor};
+      border-radius: 10%;
       
-      h2, h4 {
+      h2, h3 {
         color: white;
       }
-      h4{
+      h2{
         margin-top: 1rem;
         margin-bottom: 2rem;
       }
