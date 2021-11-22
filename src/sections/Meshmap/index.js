@@ -5,7 +5,7 @@ import Button from "../../reusecore/Button";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import mesheryCloud from "./meshery-cloud.png";
-import meshmapImage from "./meshmap1.png";
+import meshmapImage from "./MeshMap.png";
 import serviceMesh from "./service-mesh.svg";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-gray-no-trim.svg";
 import { Link } from "gatsby";
