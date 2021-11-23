@@ -21,7 +21,7 @@ const WebBasedForm = () => {
   const [submit, setSubmit] = useState(false);
 
   const nextStep = () => {
-    if (stepNumber === 4) {
+    if (stepNumber === 3) {
       setSubmit(true);
     }
     window.scrollTo(0, 0);
