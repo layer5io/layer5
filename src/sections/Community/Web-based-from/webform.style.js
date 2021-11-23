@@ -98,7 +98,7 @@ const Webform = styled.div`
         color: #777777;
     }
     .label {
-      font-size: 1rem;
+      font-size: .9rem;
     }
 
     .container-1 {
@@ -144,7 +144,7 @@ const Webform = styled.div`
             border: 1px solid black;
             border-radius: 10px;
             padding: 1rem .5rem;
-            font-size: 1rem;
+            font-size: .9rem;
         }
 
         .text-field:focus {
