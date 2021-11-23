@@ -145,7 +145,7 @@ const WebBasedForm = () => {
             </div>
             <label htmlFor="picture" className="form-name">Picture</label>
             <Field type="url" className="text-field" id="picture" name="picture" />
-            <Button secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
+            <Button secondary type="submit" className="btn" title="Submit" /> <br /><br /><br /><br />
           </Form>
         </Formik>
       </Container>
