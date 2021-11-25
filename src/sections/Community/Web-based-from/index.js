@@ -98,11 +98,11 @@ const WebBasedForm = () => {
         >
           <Form className="form" method="post">
             <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="firstname" name="firstname" required />
+            <Field type="text" className="text-field" id="firstname" name="firstname" maxlength="32"  pattern="[A-Za-z]{1,32}" required />
             <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="lastname" name="lastname" required />
+            <Field type="text" className="text-field" id="lastname" name="lastname" maxlength="32"  pattern="[A-Za-z]{1,32}" required />
             <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="email" name="email" required />
+            <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
             <label htmlFor="occupation" className="form-name">Occupation / Title</label>
             <Field type="text" className="text-field" id="occupation" name="occupation" />
             <label htmlFor="org" className="form-name">Organization / Company / School</label>
