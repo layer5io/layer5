@@ -75,8 +75,15 @@ const WebBasedForm = () => {
   const MemberFormStart = () => {
     return (
       <Container>
-        <h2 className="title">New Community Member</h2>
-        <p className="para">Hi! Welcome to the Layer5 community. As you get oriented with the community and its projects, will you consider filling in this form? It helps us get familiarized with you and you with the ongoing projects and community. There is much to learn around the technologies at-hand. We'll look to get you acclimated and engaged around your areas of interest and passion. </p>
+        <Row className="community-form-header">
+          <Col lg={6} sm={12}>
+            <h2 className="title">Layer5 Community Member Form</h2>
+            <p className="para">Hi! Welcome to the Layer5 community. As you get oriented with the community and its projects, will you consider filling in this form? It helps us get familiarized with you and you with the ongoing projects and community. There is much to learn around the technologies at-hand. We'll look to get you acclimated and engaged around your areas of interest and passion. </p>
+          </Col>
+          <Col lg={6} sm={12}>
+            <img src={img1} alt="Community Sign"/>
+          </Col>
+        </Row>
         <Formik
           initialValues={{
             firstname: "",

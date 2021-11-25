@@ -68,7 +68,26 @@ const Webform = styled.div`
   .checkbox-label {
     font-size: .8rem;
   }
-  
+
+  .community-form-header {
+    margin-top: 2rem;
+      h2{
+        line-height: 3.1rem;
+        margin-bottom: 1rem;
+        @media (max-width: 62rem) {
+          line-height: 2.5rem;
+        }
+    }
+
+    img{
+      display:block;
+      margin:auto;
+    }
+    @media (max-width: 62rem) {
+       text-align:center;
+    }
+  }
+
   @media (min-width: 320px) and (max-width: 700px) {
     .status {
       border-top: 3px solid #EFEFEF;
@@ -91,7 +110,7 @@ const Webform = styled.div`
 
     .title {
         font-weight: 700;
-        margin: 70px 0px 10px 0px;
+        margin-bottom: 10px;
     }
 
     .para {
