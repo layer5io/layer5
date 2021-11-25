@@ -9,7 +9,6 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import WebBasedForm from "../sections/Community/Web-based-from";
-import img from "../../static/images/community.png";
 
 const NewcomersPage = () => (
   <ThemeProvider theme={theme}>
