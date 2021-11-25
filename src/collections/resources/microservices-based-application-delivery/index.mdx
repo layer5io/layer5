@@ -1,7 +1,7 @@
 ---
 title: "7 Key Considerations for Microservices-Based Application Delivery"
 subtitle: "Ensuring the Success of Your Cloud Native Journey"
-thumbnail: ./path to cloud native.jpg
+thumbnail: ./citrix-path-to-cloud-native.svg
 category: Service Mesh
 tags:
  - Microservices
@@ -12,12 +12,12 @@ published: true
 import { Link } from "gatsby";
 import { ResourcesWrapper } from "../Resources.style.js";
 import Stakeholders from "./figure1.png";
-import Graph from "./Citrix-Architectures-for-Kubernetes-Environments.jpg";
+import Graph from "./citrix-architectures-for-kubernetes-environments.svg";
 import TwoTier from "./citrix-two-tier-ingress.svg";
 import Unified from "./citrix-unified-ingress.svg";
 import Servicemesh from "./citrix-service-mesh.svg";
 import Servicemeshlite from "./citrix-service-mesh-lite.svg";
-import Comparison from "./OSS Integration Categories.jpg";
+import Comparison from "./citrix-oss-integration-categories.svg";
 
 
 <ResourcesWrapper>
@@ -173,7 +173,7 @@ By default, kube-proxy uses iptables (x_tables kernel modules), so it does not p
 
 <h3>Unified Ingress</h3>
   <div className="right" >
-  <img src={Unified} align="centre" alt="Unified Ingress" />
+  <img src={Unified} align="centre" height="50%" alt="Unified Ingress" />
   </div>
 <p>
     Unified ingress is very similar to the two-tier ingress architecture, except that it unifies two tiers of application delivery controllers (ADCs) for N-S traffic into one. Reducing an ADC tier effectively removes one hop of latency for N-S traffic. 
@@ -189,13 +189,13 @@ By default, kube-proxy uses iptables (x_tables kernel modules), so it does not p
 </p>
 
 <h3>Service Mesh</h3> 
-  <div className="right" >
-  <img src={Servicemesh} align="centre" alt="Service Mesh" />
-  </div>
+
 <p>
     A service mesh is a dedicated infrastructure layer to control how different parts of an application communicate with one another with one another. The service mesh landscape has exploded because service meshes offer the best observability, security, and fine-grained management for traffic among microservices — that is, for E-W traffic. As an additional layer of infrastructure, service meshes do bear additional complexity as a tradeoff to the value they provide. 
 </p>
-
+  <div className="left" >
+  <img src={Servicemesh} align="centre" alt="Service Mesh" />
+  </div>
 <p>
     A typical service mesh architecture is similar to the two-tier ingress proxy architecture for N-S traffic and offers the same rich benefits for N-S traffic. The key difference between service mesh and two-tier ingress, and where most of the value lies, is that service mesh employs a lightweight proxy as a sidecar to each microservice pod for E-W traffic. Microservices do not communicate directly: Communication among microservices happens via the sidecar, which enables inter-pod traffic to be inspected and managed as it enters and leaves the pods. 
 </p>
