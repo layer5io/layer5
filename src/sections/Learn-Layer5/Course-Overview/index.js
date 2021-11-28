@@ -3,7 +3,7 @@ import { CourseOverviewWrapper } from "./courseoverview.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
 import { Link } from "gatsby";
-import HandbookCallout from "../../Handbook-CallOut/handbookcallout-small";
+import HandbookCallout from "../../Handbook-CallOut/";
 import handbookcallourbng from "../../../assets/images/community/Layer5-mentor-program.png";
 
 import {

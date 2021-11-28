@@ -205,6 +205,15 @@ const CommunitySectionWrapper = styled.div`
             }
         }
     }
+    
+    .callout{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: 70rem;
+        margin: auto;
+        padding-top:2rem;
+    }
 
 `;
 

@@ -121,8 +121,9 @@ const CommunityPage = () => {
         </Container>
       </div>
       <JoinCommunity image={Lee_workshop} className="newcomers-join" />
-      <HandbookCallout image={handbookcallourbng} />
-      <DiscussCallout />
+      <div className="callout">
+        <DiscussCallout />
+        <HandbookCallout image={handbookcallourbng} /> </div>
     </CommunitySectionWrapper>
   );
 };

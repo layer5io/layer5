@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const DiscussWrapper = styled.div`
     background-color:none;
-    padding: 1.5rem 0.625rem 1rem;
+    padding: 1.5rem 0rem 1rem;
     overflow: hidden;
     h2{
         font-weight: 500;

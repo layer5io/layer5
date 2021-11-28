@@ -5,16 +5,13 @@ import styled from "styled-components";
 
 const HandbookCallOutWrapper = styled.div`
   border-radius: 25px;
-  max-width: 70rem;
-  height: 15%;
   text-align: center;
   background-position: center;
   background: radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75)),
     url(${(props) => props.image});
   background-size: cover;
   margin: auto;
-  margin-bottom: 3rem;
-  margin-top: 3%;
+  margin: 1.5rem;
 
   .content {
     padding-top: 8%;
@@ -28,28 +25,27 @@ const HandbookCallOutWrapper = styled.div`
       text-transform: uppercase;
       clear: both;
       margin-bottom: 0rem;
-      margin-top: 2.5rem;
+      margin-top: 2rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
       font-weight: 500;
-      font-size: 350%;
+      font-size: 220%;
     }
     p {
       text-align: center;
       padding: 0.5rem 0.75rem 0.25rem 0.75rem;
       letter-spacing: 0;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       color: white;
     }
     img {
       padding: 0;
-      width: 17rem;
-    }
-    .handbook-btn {
-      text-align: center;
-      margin-bottom: 0;
+      width: 13rem;
     }
 
     .logo {
-      margin-top: -0.5rem;
+      margin-top: -0.7rem;
+      margin-bottom: -0.2rem;
     }
   }
   &:hover,
