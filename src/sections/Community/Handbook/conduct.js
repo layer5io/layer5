@@ -33,8 +33,8 @@ const CodeofConduct= () => {
             <p>Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting  <a href="http://community@layer5.io.">community@layer5.io.</a></p>       
           </div>
         </Container>
-        <TocPagination />
       </div>      
+      <TocPagination />
     </HandbookWrapper>
   );
 };
