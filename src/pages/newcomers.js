@@ -13,7 +13,7 @@ import WebBasedForm from "../sections/Community/Web-based-from";
 const NewcomersPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <SEO title="Layer5 newcomers form" description="Layer5 newcomers form for contributors, users and visitors" />
+    <SEO title="Layer5 Community Member Form" description="Layer5 newcomers form for contributors, users and visitors" image="/images/community.png" />
     <Layout>
       <Navigation />
       <WebBasedForm />
