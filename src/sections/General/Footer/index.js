@@ -217,6 +217,8 @@ const Footer = () => {
                     placeholder="Email Address"
                     name="EMAIL"
                     id="mce-EMAIL"
+                    onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} 
+                    onInput={e => e.target.setCustomValidity("")}
                     required
                   />
                   <Button
