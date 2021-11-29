@@ -68,7 +68,7 @@ const Webform = styled.div`
   .checkbox-label {
     font-size: .8rem;
   }
-  
+
   @media (min-width: 320px) and (max-width: 700px) {
     .status {
       border-top: 3px solid #EFEFEF;
