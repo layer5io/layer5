@@ -9,19 +9,11 @@ import { Link } from "gatsby";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
-  {
-    id: 0,
-    link: "#top",
-    text: "General contribution flow",
-  },
-  { id: 1, link: "#Community Manager", text: "Community Manager" },
-  { id: 2, link: "#MeshMate", text: "MeshMate" },
-  {
-    id: 3,
-    link: "#Maintainer",
-    text: "Maintainer",
-  },
-  { id: 4, link: "#Membership", text: "Membership to the github" },
+  { id: 0, link: "#Clone your fork", text: "Clone your fork" },
+  { id: 1, link: "#Checkout a new branch", text: "Checkout a new branch" },
+  { id: 2, link: "#Commit your changes", text: "Commit your changes" },
+  { id: 3, link: "#Push changes to Github", text: "Push changes to Github"},
+  { id: 4, link: "#Sign-off commits", text: "Sign-off commits" },
 ];
 
 const contributingGuide = () => {
@@ -33,16 +25,13 @@ const contributingGuide = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <a id="top">
-            {" "}
-            <h2>General contribution flow</h2>{" "}
-          </a>
+          <h2>General contribution flow</h2>
           <p>
             Pull requests (PRs) are the best ways to propose changes to a
             project repository. At Layer5 org, we use the Github Flow:
           </p>
           <div className="content">
-            <h3>Clone your fork to your local machine</h3>
+            <a id="Clone your fork">  <h3>Clone your fork to your local machine</h3> </a>
             <ul>
               <li>Fork the repository you are working on.</li>
               <li>
@@ -85,7 +74,7 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <h3>Create and checkout a new branch</h3>
+            <a id="Checkout a new branch">  <h3>Create and checkout a new branch</h3> </a>
             <ul>
               <li>
                 <span>
@@ -134,7 +123,7 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <h3>Commit the changes made</h3>
+            <a id="Commit your changes">  <h3>Commit the changes made</h3> </a>
             <ul>
               <li>
                 <span>
@@ -146,7 +135,7 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <h3>Push changes to Github and submit a pull request (PR)</h3>
+            <a id="Push changes to Github">  <h3>Push changes to Github and submit a pull request (PR)</h3> </a>
             <ul>
               <li>
                 <span>
@@ -158,13 +147,14 @@ const contributingGuide = () => {
               </li>
             </ul>
           </div>
-          <h2>
+          <a id="Sign-off commits"> <h2>
             Make sure to{" "}
             <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin">
               Sign-off
             </a>{" "}
             on your Commits (Developer Certificate of Origin)
           </h2>
+          </a>
           <p>
             To contribute to this project, you must agree to the Developer
             Certificate of Origin (DCO) for each commit you make. The DCO is a

@@ -19,7 +19,6 @@ const contents = [
     link: "#Maintainer",
     text: "Maintainer",
   },
-  { id: 4, link: "#Membership", text: "Membership to the github" },
 ];
 
 const CommunityGuide = () => {
@@ -142,7 +141,7 @@ const CommunityGuide = () => {
               </ul>
             </p>
 
-            <a name="Maintainer">
+            <a id="Maintainer">
               {" "}
               <h4>
                 <strong>Maintainer</strong>

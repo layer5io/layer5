@@ -20,15 +20,14 @@ const contents = [
     text: "Layer5",
   },
   { id: 1, link: "#Meshery", text: "Meshery" },
-  { id: 2, link: "#Backend Projects", text: "Backend Projects" },
   {
-    id: 3,
+    id: 2,
     link: "#Service Mesh Performance",
     text: "Service Mesh Performance",
   },
   {
-    id: 4,
-    link: "# Service Mesh Patterns",
+    id: 3,
+    link: "#Service Mesh Patterns",
     text: " Service Mesh Patterns",
   },
 ];
@@ -113,7 +112,7 @@ const Maintainer = () => {
                 {" "}
                 <h3>
                   <a href="https://layer5.io/service-mesh-management/meshery">
-                   <img className="project-title-icon" src={meshery} alt="Meshery" />
+                    <img className="project-title-icon" src={meshery} alt="Meshery" />
                     &nbsp; Meshery
                   </a>
                 </h3>{" "}
@@ -163,20 +162,20 @@ const Maintainer = () => {
               </ul>
             </p>
 
-          <a id="Service Mesh Performance">
-            <p>
-              <h3 style = {{ margin : "2% 0%"}}>
-                <a href="https://smp-spec.io/">
-                  <img
-                    className="project-title-icon"
-                    alt="service mesh performance"
-                    src={servicemeshperformance}    
-                  />
+            <a id="Service Mesh Performance">
+              <p>
+                <h3 style = {{ margin : "2% 0%"}}>
+                  <a href="https://smp-spec.io/">
+                    <img
+                      className="project-title-icon"
+                      alt="service mesh performance"
+                      src={servicemeshperformance}    
+                    />
                   &nbsp; Service Mesh Performance{" "}
-                </a>
-              </h3>
-            </p>
-          </a>
+                  </a>
+                </h3>
+              </p>
+            </a>
 
             <p>
               <a href="https://layer5.io/projects/service-mesh-performance">
@@ -195,10 +194,10 @@ const Maintainer = () => {
                 <h3>
                   <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
                     <img
-                    className="project-title-icon"
-                    alt="service mesh patterns"
-                    src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
-                  />{" "}
+                      className="project-title-icon"
+                      alt="service mesh patterns"
+                      src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
+                    />{" "}
                     &nbsp; Service Mesh Patterns{" "}
                   </a>
                 </h3>{" "}

@@ -19,16 +19,6 @@ const contents = [
   },
   { id: 1, link: "#Frontend Projects", text: "Frontend Projects" },
   { id: 2, link: "#Backend Projects", text: "Backend Projects" },
-  {
-    id: 3,
-    link: "#Installation Dedicated Repos",
-    text: "Installation Dedicated Repos",
-  },
-  {
-    id: 4,
-    link: "# Service Mesh Performance Repos",
-    text: " Service Mesh Performance Repos",
-  },
 ];
 
 const Repository = () => {
