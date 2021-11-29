@@ -64,7 +64,7 @@ const CommunityCallCard = ({hero_image}) => {
         <Row>
           <form name="registerform" method="post" action="https://calcotestudios.us15.list-manage.com/subscribe/post?u=6b50be5aea3dfe1fd4c041d80&amp;id=6bb65defeb">
             <Col xs={7}>
-              <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
+              <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required  onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             </Col>
             <Col xs={3}>
               <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
