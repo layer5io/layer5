@@ -11,15 +11,15 @@ import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
 
-const ContributorLadder = () => (
+const ContributorJourney = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Contributor Ladder" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO title="Contributor Journey" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
       <Navigation />
       <LeadershipPage />
       <Footer/>
     </Layout>
   </ThemeProvider>
 );
-export default ContributorLadder;
+export default ContributorJourney;
