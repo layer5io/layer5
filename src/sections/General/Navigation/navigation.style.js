@@ -13,9 +13,9 @@ const NavigationWrap = styled.header`
     display: flex;
   }
   .meshery-cta {
-    position: absolute;
-    right: 2.5rem;
-    top: 2.5rem;
+    position: relative;
+    right: -4.5rem;
+    top: 1.5rem;
     max-height: 50px;
 
     a {
