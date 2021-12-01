@@ -5,7 +5,7 @@ title: '[News]'
 labels: 'area/news, help wanted, framework/gatsby, language/markdown, good first issue'
 assignees: ''
 ---
-We're in the news! Using the contributing instructions for [adding news](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-news), please add the following article to the Layer5 Newsroom.
+We're in the news! Using the contributing instructions for [adding news](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-news), please add the following article to the [Layer5 Newsroom](https://layer5.io/news).
 
 **Article:**
 - Title: 
