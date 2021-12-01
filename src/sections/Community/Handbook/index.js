@@ -30,9 +30,9 @@ const handbookHome= () => {
         />
 
         <HandbookCard 
-          title="Contributor Ladder" 
+          title="Contributor Journey" 
           description="A leader is someone who can contribute to the Layer5 Community's growth by being accountable, participating in decision-making, and feeling responsible." 
-          to="/community/handbook/contributor-ladder" 
+          to="/community/handbook/contributor-journey" 
         />
 
         <HandbookCard 
