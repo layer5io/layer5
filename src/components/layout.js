@@ -9,10 +9,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import SimpleReactLightbox from "simple-react-lightbox";
-
 import FavIcon from "../assets/images/favicon.png";
+import ScrollToTopBtn from "./Scrolltotop-button";
 
 const Layout = ({ children }) => {
+
   return (
     <>
       <Helmet>
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <SimpleReactLightbox>
         {children}
+        <ScrollToTopBtn />
       </SimpleReactLightbox>
     </>
   );

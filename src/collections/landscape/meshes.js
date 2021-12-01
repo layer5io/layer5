@@ -13,7 +13,9 @@ export const meshes=[
     prometheus: "No, Replaced by Harmony Controller",
     tracing: "Yes",
     encryption: "Yes",
-    multi_tenant_score: 10
+    multi_tenant_score: 10,
+    spiffe: "?",
+    spire: "?"
   },
   {
     name: "App Mesh",
@@ -28,7 +30,9 @@ export const meshes=[
     prometheus: "No",
     tracing: "Yes",
     encryption: "Yes",
-    multi_tenant_score: 6
+    multi_tenant_score: 6,
+    spiffe: "Not supported today, but in development",
+    spire: "Not supported today, but in development"
   },
   {
     name: "Alibaba Cloud Service Mesh (ASM)",
@@ -43,7 +47,9 @@ export const meshes=[
     prometheus: "Yes",
     tracing: "Yes",
     encryption: "Yes",
-    multi_tenant_score: 10
+    multi_tenant_score: 10,
+    spiffe: "?",
+    spire: "?"
   },  
   {
     name: "Aspen Mesh",
@@ -59,7 +65,9 @@ export const meshes=[
     tracing: "Jaeger",
     encryption: "Yes",
     multi_tenant_score: 10,
-    netdev_persona_score: 6
+    netdev_persona_score: 6,
+    spiffe: "?",
+    spire: "?"
   },
   {
     name: "Cilium",
@@ -75,7 +83,9 @@ export const meshes=[
     tracing: "?",
     encryption: "Yes",
     multi_tenant_score: 1,
-    netdev_persona_score: 4
+    netdev_persona_score: 4,
+    spiffe: "?",
+    spire : "?"
   },
   {
     name: "Citrix Service Mesh",
@@ -91,7 +101,9 @@ export const meshes=[
     tracing: "?",
     encryption: "Yes",
     multi_tenant_score: 1,
-    netdev_persona_score: 9
+    netdev_persona_score: 9,
+    spiffe: "Partial",
+    spire : "No"
   },
   {
     name: "Consul",
@@ -116,7 +128,9 @@ export const meshes=[
     tsplit: "No",
     tsplitlink: "",
     tspec: "No",
-    tspeclink: ""
+    tspeclink: "",
+    spiffe: "Partial",
+    spire : "No"
   },
   {
     name: "Grey Matter",
@@ -131,7 +145,9 @@ export const meshes=[
     prometheus: "Yes",
     tracing: "OpenTracing compatible",
     encryption: "Yes",
-    multi_tenant_score: 1
+    multi_tenant_score: 1,
+    spiffe: "?",
+    spire : "?"
   },
   {
     name: "Istio",
@@ -156,7 +172,9 @@ export const meshes=[
     tsplit: "Yes",
     tsplitlink: "https://github.com/deislabs/smi-adapter-istio",
     tspec: "Yes",
-    tspeclink: "https://github.com/deislabs/smi-adapter-istio"
+    tspeclink: "https://github.com/deislabs/smi-adapter-istio",
+    spiffe: "Istio has partial SPIFFE support, but doesn't support the Workload API or Federation API currently, and thus is not interoperable with other SPIFFE implementations.",
+    spire : "Istio does not use SPIRE by default"
   },
   {
     name: "Kuma",
@@ -172,7 +190,9 @@ export const meshes=[
     tracing: "Yes",
     encryption: "Yes",
     multi_tenant_score: 8,
-    netdev_persona_score: 2
+    netdev_persona_score: 2,
+    spiffe: "Yes",
+    spire : "No"
   },
   {
     name: "Linkerd 1.x",
@@ -188,7 +208,9 @@ export const meshes=[
     tracing: "Zipkin",
     encryption: "Yes",
     multi_tenant_score: 1,
-    netdev_persona_score: 5
+    netdev_persona_score: 5,
+    spiffe: "SPIFFE IDs are not supported in Linkerd",
+    spire : "No"
   },
   {
     name: "Linkerd 2.x(Conduit)",
@@ -213,7 +235,9 @@ export const meshes=[
     tsplit: "Yes",
     tsplitlink: "https://linkerd.io/2/features/traffic-split/",
     tspec: "No",
-    tspeclink: ""
+    tspeclink: "",
+    spiffe: "No",
+    spire : "No"
   },
   {
     name: "NGINX Service Mesh",
@@ -239,6 +263,8 @@ export const meshes=[
     tsplitlink: "https://docs.nginx.com/nginx-service-mesh/tutorials/trafficsplit-deployments/",
     tspec: "Yes",
     tspeclink: "https://docs.nginx.com/nginx-service-mesh/usage/traffic-policies/",
+    spiffe: "Yes",
+    spire : "Yes"
   },
   {
     name: "Traefik Mesh",
@@ -263,7 +289,9 @@ export const meshes=[
     tsplit: "Yes",
     tsplitlink: "https://github.com/traefik/mesh",
     tspec: "Yes",
-    tspeclink: "https://github.com/traefik/mesh"
+    tspeclink: "https://github.com/traefik/mesh",
+    spiffe: "No",
+    spire : "No"
   },
   {
     name: "Maistra",
@@ -278,7 +306,9 @@ export const meshes=[
     prometheus: "Yes",
     tracing: "Jaeger/Grafana",
     encryption: "Yes",
-    multi_tenant_score: 10
+    multi_tenant_score: 10,
+    spiffe: "Partial",
+    spire : "No"
   },
   {
     name: "Mesher",
@@ -293,7 +323,9 @@ export const meshes=[
     prometheus: "?",
     tracing: "?",
     encryption: "?",
-    multi_tenant_score: 8
+    multi_tenant_score: 8,
+    spiffe: "No",
+    spire : "No"
   },
   {
     name: "SOFAMesh",
@@ -308,7 +340,9 @@ export const meshes=[
     tracing: "Project Shutdown",
     encryption: "Project Shutdown",
     multi_tenant_score: 8,
-    netdev_persona_score: 7
+    netdev_persona_score: 7,
+    spiffe: "Partial",
+    spire : "No"
   },
   {
     name: "Octarine",
@@ -323,7 +357,9 @@ export const meshes=[
     tracing: "No",
     encryption: "Yes",
     multi_tenant_score: 10,
-    netdev_persona_score: 8
+    netdev_persona_score: 8,
+    spiffe: "No",
+    spire : "No"
   },
   {
     name: "Open Service Mesh",
@@ -348,7 +384,9 @@ export const meshes=[
     tsplit: "Yes",
     tsplitlink: "https://github.com/openservicemesh/osm#smi-specification-support",
     tspec: "Yes",
-    tspeclink: "https://github.com/openservicemesh/osm#smi-specification-support"
+    tspeclink: "https://github.com/openservicemesh/osm#smi-specification-support",
+    spiffe: "No",
+    spire : "No"
   },
   {
     name: "Rotor",
@@ -364,6 +402,8 @@ export const meshes=[
     prometheus: "Project shutdown",
     tracing: "Project shutdown",
     encryption: "Project shutdown",
+    spiffe: "No",
+    spire : "No"
   },
   {
     name: "Yggdrasil",
@@ -378,7 +418,9 @@ export const meshes=[
     prometheus: "Yes",
     tracing: "Pluggable",
     encryption: "Yes",
-    multi_tenant_score: 1
+    multi_tenant_score: 1,
+    spiffe: "No",
+    spire : "No"
   },
   {
     name: "Zuul",
@@ -393,7 +435,9 @@ export const meshes=[
     prometheus: "?",
     tracing: "?",
     encryption: "?",
-    multi_tenant_score: 1
+    multi_tenant_score: 1,
+    spiffe: "No",
+    spire : "No"
   },
   {
     name: "Vulcand",
@@ -408,7 +452,9 @@ export const meshes=[
     prometheus: "No",
     tracing: "No",
     encryption: "Yes",
-    multi_tenant_score: 1
+    multi_tenant_score: 1,
+    spiffe: "No",
+    spire : "No"
   },
   {
     name: "Network Service Mesh",
@@ -423,6 +469,8 @@ export const meshes=[
     prometheus: "?",
     tracing: "?",
     encryption: "?",
-    multi_tenant_score: 1
+    multi_tenant_score: 1,
+    spiffe: "Yes",
+    spire : "Yes"
   }
 ];
