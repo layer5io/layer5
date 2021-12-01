@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const CourseOverviewWrapper = styled.div`
-
   .course-back-btn {
-    margin: 1rem 0;
+    margin: 4.5rem 0 0rem 3rem;
     display: flex;
     align-items: center;
+    padding-bottom: 1rem;
     a {
       display: flex;
       align-items: center;
@@ -19,6 +19,10 @@ export const CourseOverviewWrapper = styled.div`
     }
     svg {
       font-size: 1.15rem;
+    }
+    @media(max-width: 745px)
+    {
+      margin: 4rem 0 0 1rem;
     }
   }
   .course-overview-hero {
