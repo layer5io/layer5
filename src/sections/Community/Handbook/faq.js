@@ -60,8 +60,8 @@ const Faq= () => {
             <p>A:</p> */}
           </div>
         </Container>
-        <TocPagination />
       </div>      
+      <TocPagination />
     </HandbookWrapper>
   );
 };

@@ -7,6 +7,8 @@ import img1 from "./Rectangle 471.png";
 import img2 from "./Vector.png";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
+import { Link } from "gatsby";
+
 
 const WebBasedForm = () => {
 
@@ -21,7 +23,7 @@ const WebBasedForm = () => {
   const [submit, setSubmit] = useState(false);
 
   const nextStep = () => {
-    if (stepNumber === 4) {
+    if (stepNumber === 3) {
       setSubmit(true);
     }
     window.scrollTo(0, 0);
@@ -33,7 +35,7 @@ const WebBasedForm = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.integromat.com/64g6bpjsr37eec49zo3oawgw91n9a6xg", {
+      axios.post("https://hook.integromat.com/6837rdde4mqpjj1e3pk3zfixjmfn514a", {
         memberFormOne,
         MemberFormThirdValue,
         MemberFormFourValue,
@@ -95,12 +97,12 @@ const WebBasedForm = () => {
           }}
         >
           <Form className="form" method="post">
-            <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="email" name="email" required />
             <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="firstname" name="firstname" required />
+            <Field type="text" className="text-field" id="firstname" name="firstname" maxlength="32"  pattern="[A-Za-z]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="lastname" name="lastname" required />
+            <Field type="text" className="text-field" id="lastname" name="lastname" maxlength="32"  pattern="[A-Za-z]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
+            <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
+            <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="occupation" className="form-name">Occupation / Title</label>
             <Field type="text" className="text-field" id="occupation" name="occupation" />
             <label htmlFor="org" className="form-name">Organization / Company / School</label>
@@ -145,6 +147,7 @@ const WebBasedForm = () => {
             </div>
             <label htmlFor="picture" className="form-name">Picture</label>
             <Field type="url" className="text-field" id="picture" name="picture" />
+            <p className="para label">Please provide a link to your profile photo. Profile photos are used for <Link to="/community/members">community member profiles</Link> of longstanding community members.</p>
             <Button secondary type="submit" className="btn" title="Next Step" /> <br /><br /><br /><br />
           </Form>
         </Formik>
@@ -157,34 +160,34 @@ const WebBasedForm = () => {
       <Container>
         <h2 className="title">About You and Why You're Here</h2>
         <p className="para">
-            Which describes your main focus as a community member?{" "}
+          Which describes your main focus as a community member?{" "}
         </p>
 
         <div className="center">
           <div className="option" onClick={() => {
-            setRole("Contributor"),setStepNumber(2); 
+            setRole("Contributor"), setStepNumber(2);
           }}>
             I'm here as a Contributor
           </div>
           <div className="option" onClick={() => {
-            setRole("Developer"),setStepNumber(2); 
+            setRole("Developer"), setStepNumber(2);
           }}>
-            I'm here as a Developer
+            I'm here as a User
           </div>
           <div className="option" onClick={() => {
-            setRole("User"),setStepNumber(2); 
+            setRole("User"), setStepNumber(2);
           }}>
             I'm here as a User and Contibutor
           </div>
           <div className="option" onClick={() => {
-            setRole("Participant"),setStepNumber(2); 
+            setRole("Bystander"), setStepNumber(2);
           }}>
-            I'm here as a Community Participant
+            I'm here as a Bystander <br /><small>(here to learn and absorb passively)</small>
           </div>
         </div>
         <br /><br />
         <div className="btn-wrapper">
-          <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
+          <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous Step</button>
         </div>
         <br /><br /><br /><br />
       </Container>
@@ -397,10 +400,10 @@ const WebBasedForm = () => {
             <label>
               <Field type="checkbox"
                 name="tutorials"
-                value="Introduction to Gatsby and Layer5-ng"
+                value="Introduction to Gatsby and Layer5"
                 className="form-check"
               />
-              <span className="checkbox-label">Introduction to Gatsby and Layer5-ng</span>
+              <span className="checkbox-label">Introduction to Gatsby and Layer5</span>
             </label>
             <br />
             <label>
@@ -420,12 +423,12 @@ const WebBasedForm = () => {
               />
               <span className="checkbox-label">None of the above</span>
             </label>
-            <p className="form-name">Layer5 has a community member mentoring program, MeshMates, that is aimed at individuals new to open source or simply new to Layer5 projects. Learn more at https://layer5.io/community. Is this program of interest to you?</p>
+            <p className="form-name"><Link to="https://layer5.io/community/meshmates">Layer5 MeshMates</Link> is a community member mentoring program aimed at individuals new to open source or simply new to Layer5 projects. Is this program of interest to you?</p>
             <label>
               <Field type="checkbox"
                 name="meshMate"
                 value="Yes, and I would like to explore engaging with a Layer5 MeshMate."
-                className="form-check"
+                className="form-check" 
               />
               <span className="checkbox-label">Yes, and I would like to explore engaging with a Layer5 MeshMate.</span>
             </label>
@@ -448,22 +451,14 @@ const WebBasedForm = () => {
               <span className="checkbox-label">No, thank you.</span>
             </label>
             <br />
-            <p className="para label">If you would like to pair with a MeshMate, please review each MeshMate profile to identify your ideal mentor. Once you have identified your ideal MeshMate or if you can’t decide on one, simple ask to be partnered in the #newcomers channel in the Layer5 Slack.</p>
-            <label htmlFor="interests" className="form-name">What has your recent focus been? What are you passionate about? Is there a specific project or aspect a project that interests you? <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="interests" name="interests" required />
-            <label htmlFor="profiency" className="form-name">If a contributor, what tools, technologies, and languages are you most proficient with?</label>
-            <Field type="text" className="text-field" id="profiency" name="profiency" />
-            <label htmlFor="interestToShareContribution" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects? <span className="required-sign">*</span></label>
-            <div role="group" aria-labelledby="my-radio-group">
-              <label>
-                <Field type="radio" name="interestToShareContribution" value="Yes" required />
-                Yes
-              </label>
-              <label>
-                <Field type="radio" name="interestToShareContribution" value="No" required />
-                No
-              </label>
-            </div>
+            <p className="para label">If you would like to pair with a MeshMate, please review each MeshMate profile to identify your ideal mentor. Once you have identified your ideal MeshMate or if you can’t decide on one, simple ask to be partnered in the <a href="https://layer5io.slack.com/archives/C019426UBNY">#newcomers channel</a> in the Layer5 Slack.</p>
+            <label htmlFor="interests" className="form-name">What has your recent focus been? Why have you joined the community? What are you passionate about? Is there a specific project or aspect a project that interests you?<span className="required-sign">*</span></label>
+            <Field as="textarea" className="text-field" id="interests" name="interests" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
+            <label htmlFor="profiency" className="form-name">If a contributor, what tools, technologies, or languages are you most proficient with?</label>
+            <Field as="textarea" className="text-field" id="profiency" name="profiency" />
+            <p className="para label">Examples: [Go/Gorilla, Javascript/React… ], [Photoshop, Illustrator, Figma…], [DevOps, Kubernetes, AWS, CI pipelining…], [Digital marketing, social media, community management…]</p>
+            
+
             <p className="form-name">Area(s) of Desired Focus</p>
             <label>
               <Field type="checkbox"
@@ -545,9 +540,26 @@ const WebBasedForm = () => {
               />
               <span className="checkbox-label">Other</span>
             </label>
+
+            <label htmlFor="interestToShareContribution" className="form-name">Now or eventually, would you like to speak or write about your works in the community and/or on the projects?<span className="required-sign">*</span></label>
+            <div role="group" aria-labelledby="my-radio-group">
+              <label>
+                <Field type="radio" name="interestToShareContribution" value="Yes" required />
+                Yes
+              </label>
+              <label>
+                <Field type="radio" name="interestToShareContribution" value="Eventually" required />
+                Eventually
+              </label>
+              <label>
+                <Field type="radio" name="interestToShareContribution" value="No" required />
+                No
+              </label>
+            </div>
+
             <br /><br />
             <div className="btn-wrapper">
-              <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
+              <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous Step</button>
               <Button secondary type="submit" className="btn-next" title="Next Step" />
             </div>
             <br /><br />
@@ -561,6 +573,7 @@ const WebBasedForm = () => {
     return (
       <Container>
         <h2 className="title">Expectations and Programs FAQ</h2>
+        <p>Commonly asked questions about general engagement expectations and information focal to internship programs. See the <Link to="/community">Layer5 Community</Link> and <Link to="/programs">Open Source Internship Programs</Link> for additional information.</p>
         <Formik
           initialValues={{
             expect: false,
@@ -595,7 +608,7 @@ const WebBasedForm = () => {
               <span>Ok</span>
             </label>
             <p className="form-name">Are community contributors paid? Are internships paid? What do I get in return?</p>
-            <p className="para label">With few exceptions, generally community contributors and interns are not paid. Those that participate through Google Summer of Code, CommunityBridge, or Google Season of Docs do receive a stipend at the culmination of their internship. The largest return on time invested in the community for any contributor is the knowledge, relationships, recognition, and experience gained throughout their engagement. Their participation affords them an opportunity to work with world-class engineers, gives focus and purpose to their learning efforts on technologies they otherwise may not understand, and exposes their work broadly to the Cloud Native community.Letters of recommendation, mentorship and coaching, introduction to engineers at globally-recognized technology companies, potential contract or full-time work at Layer5, public writing and speaking opportunities are all examples of benefits those that participate can receive for their time spent.</p>
+            <p className="para label">With few exceptions, generally community contributors and interns are not paid. Those that participate through Google Summer of Code, LFX, or Google Season of Docs do receive a stipend at the culmination of their internship. The largest return on time invested in the community for any contributor is the knowledge, relationships, recognition, and experience gained throughout their engagement. Their participation affords them an opportunity to work with world-class engineers, gives focus and purpose to their learning efforts on technologies they otherwise may not understand, and exposes their work broadly to the Cloud Native community. Letters of recommendation, mentorship and coaching, introduction to engineers at globally-recognized technology companies, potential contract or full-time work at Layer5, public writing and speaking opportunities are all examples of benefits those that participate can receive for their time spent.</p>
             <label>
               <Field type="checkbox"
                 name="paid"
@@ -616,8 +629,8 @@ const WebBasedForm = () => {
             <Field type="text" className="text-field" name="help" />
             <br /><br />
             <div className="btn-wrapper">
-              <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous step</button>
-              <Button secondary type="submit" className="btn-next" title="Submit" />
+              <button onClick={laststep} className="btn-prev"><span className="back">&larr;</span> Previous Step</button>
+              <Button secondary type="submit" className="btn-next" title="Complete" />
             </div>
             <br /><br />
           </Form>
@@ -650,23 +663,23 @@ const WebBasedForm = () => {
           <RangeDisplay />
           {
             stepNumber === 0 &&
-              <MemberFormStart />
+            <MemberFormStart />
           }
           {
             stepNumber === 1 &&
-              <MemberFormSecond />
+            <MemberFormSecond />
           }
           {
             stepNumber === 2 &&
-              <MemberFormThird />
+            <MemberFormThird />
           }
           {
             stepNumber === 3 &&
-              <MemberFormFour />
+            <MemberFormFour />
           }
           {
             stepNumber === 4 &&
-              <FinalForm />
+            <FinalForm />
           }
         </div>
       </div>

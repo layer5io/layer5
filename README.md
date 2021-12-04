@@ -32,7 +32,6 @@ Meshery facilitates adopting, configuring, operating and managing performance of
 </p>
 <br />
 
-
 <p style="clear:both;">
 <h2><a href="https://github.com/service-mesh-patterns">Service Mesh Pattern</a></h2>
 <a href="https://github.com/service-mesh-patterns"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png?raw=true"  
@@ -42,7 +41,6 @@ alt="Service Mesh Pattern" align="left"/></a>
 <br /><br /><br />
 </p>
 <br />
-
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/landscape">Service Mesh Landscape</a></h2>
@@ -54,7 +52,6 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 </p>
 <br />
 
-
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a></h2>
 <a href="https://layer5.io/projects/service-mesh-performance"><img src=".github/assets/images/smp-dark-text.svg"
@@ -64,7 +61,6 @@ The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh P
 <br /><br /><br />
 </p>
 <br />
-
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/image-hub">Image Hub</a></h2>
@@ -77,7 +73,6 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 </p>
 <br />
 
-
 <p style="clear:both;">
 <h2><a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a></h2>
 <a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg" style="margin:10px;" width="125px" align="left" /></a>
@@ -85,7 +80,6 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <br /><br /><br /><br />
 </p>
 <br />
-
 
 <p style="clear:both;">
 <h2><a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a></h2>
@@ -97,7 +91,6 @@ alt="Layer5" align="left" /></a>
 </p>
 <br />
 
-
 <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
 <a href="https://layer5.io/smi"><img src=".github/assets/images/smi-conformance/checklist.svg"
@@ -108,7 +101,6 @@ alt="Layer5" align="left" /></a>
 </p>
 <br />
 
-
 <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Nighthawk</a></h2>
 <a href="https://getnighthawk.dev/"><img src=".github/assets/images/getnighthawk/layer5-getnighthawk.png"
@@ -118,7 +110,6 @@ alt="Layer5" align="left" /></a>
 <br /><br /><br />
 </p>
 <br />
-
 
 <p style="clear:both;">
 <h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributions</a></h1>
@@ -131,7 +122,8 @@ Join us on<a href="http://slack.layer5.io"><img src=".github/assets/images/slack
 <a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src=".github/assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
 ✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calender.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
 ✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.<br />
-✔️ <em><strong>Access</strong></em> the <a href="https://drive.google.com/drive/u/4/folders/0ABH8aabN4WAKUk9PVA">Community Drive</a> by completing a community <a href="https://layer5.io/newcomer">Member Form</a>.<br />
+✔️ <em>Fill-in</em> a <a href="https://layer5.io/newcomers">community member form</a> to gain access to community resources.
+<br />
 ✔️ <em><strong>Discuss</strong></em> in the <a href="https://discuss.layer5.io">Community Forum</a>.<br />
 <br />
 </p>

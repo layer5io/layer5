@@ -85,7 +85,7 @@ const Sidebar = ( ) => {
             <span>
               <h4>Subscribe to our Newsletter</h4>
             </span>
-            <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required />
+            <input className="inputrow subscribe-email" type="email" placeholder="Email Address" name="EMAIL" id="mce-EMAIL" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
           </div>
         </form>

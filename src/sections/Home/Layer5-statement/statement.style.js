@@ -7,6 +7,7 @@ const BannerSectionWrapper = styled.section`
   .left-col {
     padding-left: 0px;
     padding-right: 0px;
+    height: 500px;
   }
   .left {
     display: flex;
