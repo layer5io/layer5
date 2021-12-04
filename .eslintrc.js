@@ -54,7 +54,7 @@ module.exports = {
         ignoredNodes: ["TemplateLiteral"],
       },
     ],
-    "linebreak-style": ["off", "unix"],
+    "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
     semi: ["error", "always"],
     strict: 0,
