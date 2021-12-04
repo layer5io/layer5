@@ -7,15 +7,15 @@ const BannerSectionWrapper = styled.section`
   .left-col {
     padding-left: 0px;
     padding-right: 0px;
-    height: 500px;
+    display: flex;
+    align-items: center;
   }
   .left {
     display: flex;
-    height: 100%;
+    height: 90%;
   }
   .left-child {
     position: relative;
-    align-self: stretch;
   }
   .right-col {
     padding-left: 0px;
@@ -84,12 +84,12 @@ const BannerSectionWrapper = styled.section`
   }
   @media only screen and (max-width: 1440px) {
     .section-title {
-      padding: 2rem 3rem;
+      padding: 3rem;
     }
   }
   @media only screen and (max-width: 1200px) {
     .section-title {
-      padding: 2rem 2rem;
+      padding: 3rem 2rem;
       h2 {
         font-size: 2rem;
       }
