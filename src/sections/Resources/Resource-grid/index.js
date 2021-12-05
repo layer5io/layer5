@@ -5,7 +5,7 @@ import Pager from "../../../components/pager";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 
 import PageHeader from "../../../reusecore/PageHeader";
-import Sidebar from "../Resource-sidebar";
+import ResourceNavigation from "../Resource-navigation";
 
 import { ResourcePageWrapper } from "./resourceGrid.style";
 
@@ -15,7 +15,11 @@ const ResourceGrid = ({data, isListView, setListView, setGridView, pageContext})
       <PageHeader title="Cloud Native Resources" path="Resources"/>
       <div className="resource-page-wrapper">
         <Container>
+
           <Row>
+          <Col xs={12} lg={4}>
+          <ResourceNavigation />
+          </Col>
             <Col xs={12} lg={8}>
               <BlogViewToolTip isListView={isListView} setListView={setListView}
                 setGridView ={setGridView}
@@ -32,9 +36,6 @@ const ResourceGrid = ({data, isListView, setListView, setGridView, pageContext})
                   </Col>
                 </Row>
               </div>
-            </Col>
-            <Col xs={12} lg={4}>
-              <Sidebar/>
             </Col>
           </Row>
         </Container>

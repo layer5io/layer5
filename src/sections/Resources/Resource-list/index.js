@@ -3,7 +3,7 @@ import BlogViewToolTip from "../../../components/blog-view-tooltip";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
-import Sidebar from "../Resource-sidebar";
+import ResourceNavigation from "../Resource-navigation";
 import Pager from "../../../components/pager";
 import Card from "../../../components/Card";
 
@@ -29,6 +29,9 @@ const ResourceList = ({
       <div className="resource-list-wrapper">
         <Container>
           <Row>
+          <Col sm={12} md={4}>
+        <ResourceNavigation />
+            </Col>
             <Col sm={12} md={8}>
               {!pageContext.tag && !pageContext.category && (
                 <BlogViewToolTip
@@ -47,9 +50,6 @@ const ResourceList = ({
                   <Pager pageContext={pageContext} text={"Resources"} isListView={isListView}/>
                 </Col>
               </Row>
-            </Col>
-            <Col sm={12} md={4}>
-              <Sidebar />
             </Col>
           </Row>
         </Container>
