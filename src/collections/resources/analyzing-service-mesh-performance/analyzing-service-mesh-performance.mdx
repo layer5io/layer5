@@ -29,9 +29,11 @@ import { ResourcesWrapper } from "../Resources.style.js";
     </p>
   </div>
 
-<img src={cover} align="right" width="400" height="500" alt="IEEE The Bridge 2021 Issue 3 cover" />
+<div className="right" >
+<img src={cover} align="center" width="400" height="500" alt="IEEE The Bridge 2021 Issue 3 cover" />
+</div>
 
-<p style="text-align:left;">
+<p>
 As a forthcoming, ubiquitous layer of cloud native infrastructure, 
 service meshes offer deep and uniform control and visibility into the topology and state of ephemeral microservices. 
 Managing the myriad configurations of cloud native infrastructure is greatly facilitated by a service mesh, but succinctly 
@@ -39,14 +41,14 @@ summarizing and characterizing the performance of your service mesh in context o
 of choice is a challenge unto its own.
 </p>
 
-<p style="text-align:left;">
+<p>
 We explore how to model your service mesh topology and optimize for your ideal configuration in context of how much you value properties 
 of resiliency, performance, throughput, latency, and so on before you deploy to production. Readers will understand how distributed performance 
 analysis offers unique insights on the behavior of microservices and their efficiency of operation, see examples of how common types of 
 workloads perform under specific service mesh functions, and be empowered with analytical tooling that can be used to make optimized configurations.
 </p>
 
-<p style="text-align:left;">
+<p>
 We provide core, memory and I/O combinations based on workload needs with insights into workload analysis which can influence the efficiency of the 
 service mesh and overall performance of the cluster.
 </p>
@@ -122,7 +124,12 @@ Outside of the different types of performance tests, performance management conc
 overhead data under a permutation of different workloads (applications) and different types and sizes of infrastructure resources. 
 </p>
 
-<img src={EWtraffic} align="right" alt="EWtraffic" />
+<div className="center" >
+<a href={EWtraffic}>
+<img src={EWtraffic} align="center" width="992" height="571" alt="EWtraffic" />
+</a>
+</div>
+
 
 <p>
 Hence, it is crucial to understand what is being measured in a service mesh based deployment. Certain critical considerations are 
@@ -256,7 +263,11 @@ Figure 2 provides insight to the fact that the specification defines a common co
 to be calculated for every performance test.
 </p>
 
-<img src={Code} align="right" alt="Code-snippet" />
+<div className="center" >
+<a href={Code}>
+<img src={Code} align="center" width="992" height="571" alt="Code-snippet" />
+</a>
+</div>
 
 <p><i>Figure 2: Snippet of the Service Mesh Performance specification describing how to capture statistical analysis of test results.</i></p>
 
@@ -288,7 +299,11 @@ performance could be analyzed either on a same node or in a multi-node cluster:
 
 <p>These considerations are illustrated in a typical workload deployment as shown in <i>Figure 3.</i></p>
 
-<img src={Workload} align="right" alt="Workload" />
+<div className="center" >
+<a href={Workload}>
+<img src={Workload} align="center" width="992" height="571" alt="Workload" />
+</a>
+</div>
 
 <p>
 Here is an example of deployment with Kubernetes as the orchestrator using Calico CNI and deployed in VMs, 
@@ -312,7 +327,11 @@ Meshery is capable of generating load, baselining, and comparing performance res
 specification is implemented in Meshery.
 </p>
 
-<img src={Archictures} align="right" alt="Archictures-client" />
+<div className="center" >
+<a href={Archictures}>
+<img src={Archictures} align="center" width="992" height="571" alt="Archictures-client" />
+</a>
+</div>
 
 <p><i>Figure 4 - Meshery’s load generators can be deployed in the same cluster under test or outside of the cluster under test.</i></p>
 
@@ -463,7 +482,11 @@ Whether to  integrate your traffic filters natively or as an extension, a tradeo
 exists primarily in exchanging between service mesh speed and service mesh flexibility as shown in <i>Figure 4.</i>
 </p>
 
-<img src={NetworkFunction} align="right" alt="comparison of Network functions" />
+<div className="center" >
+<a href={NetworkFunction}>
+<img src={NetworkFunction} align="center" width="992" height="571" alt="comparison of Network functions" />
+</a>
+</div>
 
 <p>
 <i>Figure 5 - A comparison of different modes of delivery of service mesh network functions.</i>
