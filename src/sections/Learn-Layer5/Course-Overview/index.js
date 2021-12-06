@@ -19,50 +19,51 @@ import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
   const serviceMeshImages = course.frontmatter.meshesYouLearn;
   const getChapterTitle = (chapter, chapterList) => {
-    for(let i=0; i < chapterList.length; i++) {
-      if (chapterList[i].fields.chapter === chapter)
-        return chapterList[i];
+    for (let i = 0; i < chapterList.length; i++) {
+      if (chapterList[i].fields.chapter === chapter) return chapterList[i];
     }
   };
 
   const getAvailableServiceMeshes = () => {
     let serviceMeshes = [];
-    serviceMeshesList.forEach(item => {
-      if(serviceMeshes.indexOf(item["fields"]["section"]) === -1)
+    serviceMeshesList.forEach((item) => {
+      if (serviceMeshes.indexOf(item["fields"]["section"]) === -1)
         serviceMeshes.push(item["fields"]["section"]);
     });
     return serviceMeshes;
   };
 
   const findServiceMeshImage = (images, serviceMesh) => {
-    return images.find(image => image.name.toLowerCase() == serviceMesh);
+    return images.find((image) => image.name.toLowerCase() == serviceMesh);
   };
 
-  const ServiceMeshesAvailable = ({serviceMeshes}) => serviceMeshes.map((sm, index) => {
-    return(  
-      <>
-        <div className="service-mesh-courses" key={index}>
-          <Image
-            {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
-            className="docker"
-            alt={sm}
-          />
-        </div>
-      </>);
-  });
+  const ServiceMeshesAvailable = ({ serviceMeshes }) =>
+    serviceMeshes.map((sm, index) => {
+      return (
+        <>
+          <div className="service-mesh-courses" key={index}>
+            <Image
+              {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
+              className="docker"
+              alt={sm}
+            />
+          </div>
+        </>
+      );
+    });
 
   return (
     <CourseOverviewWrapper>
+      <div className="course-back-btn">
+        <Link to={`/learn/learning-paths/${course.fields.learnpath}`}>
+          <IoChevronBackOutline /> <h4>Learning Paths/Courses</h4>
+        </Link>
+      </div>
       <div
         style={{ backgroundColor: course.frontmatter.themeColor }}
         className="course-overview-hero"
       >
         <div className="course-info-content">
-          <div className="course-back-btn">
-            <Link to={`/learn/learning-paths/${course.fields.learnpath}`}>
-              <IoChevronBackOutline /> <h4>Learning Paths/Courses</h4>
-            </Link>
-          </div>
           <div className="course-hero-head">
             <h2>{course.frontmatter.courseTitle}</h2>
             <p>{course.frontmatter.description}</p>
@@ -76,7 +77,10 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
               <span>{course.frontmatter.toc.length} Chapters</span>
             </div>
           </div>
-          <Button title="Get Started" url={`istio/${course.frontmatter.toc[0]}`} />
+          <Button
+            title="Get Started"
+            url={`istio/${course.frontmatter.toc[0]}`}
+          />
         </div>
         <div className="course-hero-head-image">
           <Image
@@ -94,19 +98,20 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             </SRLWrapper>
             <h2 className="course-toc">Table Of Contents</h2>
             {course.frontmatter.toc.map((item, index) => (
-              <Link
-                key={index}
-                to={`istio/${item}`}
-                className="chapter-link"
-              >
-                <ChapterCard chapterNum={index+1} chapter={getChapterTitle(item, chapters)} />
+              <Link key={index} to={`istio/${item}`} className="chapter-link">
+                <ChapterCard
+                  chapterNum={index + 1}
+                  chapter={getChapterTitle(item, chapters)}
+                />
               </Link>
             ))}
           </Col>
           <Col md={12} lg={4} xl={5}>
             <div className="service-meshes-you-can-learn">
               <h2>Service Meshes You can Learn</h2>
-              <ServiceMeshesAvailable serviceMeshes={getAvailableServiceMeshes()}/>
+              <ServiceMeshesAvailable
+                serviceMeshes={getAvailableServiceMeshes()}
+              />
             </div>
             {/* <div className="join-community_text-and_button">
               <h2>Contribute to Layer5</h2>

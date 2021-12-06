@@ -8,6 +8,18 @@ import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-b
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
+import { Link } from "gatsby";
+import IntraPage from "../../../components/handbook-navigation/intra-page";
+
+const contents = [
+  {
+    id: 0,
+    link: "#top",
+    text: "GitHub Organizations and Repositories",
+  },
+  { id: 1, link: "#Frontend Projects", text: "Frontend Projects" },
+  { id: 2, link: "#Backend Projects", text: "Backend Projects" },
+];
 
 const Repository = () => {
   const data = React.useMemo(() => repo_data);
@@ -23,7 +35,10 @@ const Repository = () => {
       <div className="page-section">
         <Container>
           <div className="content">
-            <h2>GitHub Organizations and Repositories</h2>
+            <a id="top">
+              {" "}
+              <h2>GitHub Organizations and Repositories</h2>{" "}
+            </a>
             <p>
               This overview serves as a resource to newcomers seeking a
               perspective of the collective community efforts (from the limited
@@ -87,7 +102,10 @@ const Repository = () => {
               </li>
             </ul>
 
-            <h2>Frontend Projects</h2>
+            <a id="Frontend Projects">
+              {" "}
+              <h2>Frontend Projects</h2>{" "}
+            </a>
             {frontendProjects.map((frontendProjects) => {
               const { category } = frontendProjects;
               return (
@@ -135,7 +153,10 @@ const Repository = () => {
               );
             })}
 
-            <h2>Backend Projects</h2>
+            <a id="Backend Projects">
+              {" "}
+              <h2>Backend Projects</h2>{" "}
+            </a>
 
             {backendProjects.map((backendProjects) => {
               const { category } = backendProjects;
@@ -172,8 +193,10 @@ const Repository = () => {
               );
             })}
           </div>
+          <TocPagination />
         </Container>
-        <TocPagination />
+
+        <IntraPage contents={contents} />
       </div>
     </HandbookWrapper>
   );
