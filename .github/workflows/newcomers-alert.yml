@@ -1,0 +1,16 @@
+name: Newcomers Alert
+on:
+  issues:
+    types: [opened, labeled]
+jobs:
+  good-first-issue-notify:
+    if: contains(github.event.issue.labels.*.name, 'good first issue') || contains(github.event.issue.labels.*.name, 'first-timers-only') 
+    name: Notify Slack for new good-first-issue
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify slack
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        uses: pullreminders/slack-action@master
+        with:
+          args: '{\"channel\":\"C019426UBNY\",\"text\":\"A good first issue label was just added to ${{github.event.issue.html_url}}.\"}'
