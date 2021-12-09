@@ -98,11 +98,11 @@ const WebBasedForm = () => {
         >
           <Form className="form" method="post">
             <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="firstname" name="firstname" required />
+            <Field type="text" className="text-field" id="firstname" name="firstname" maxlength="32"  pattern="[A-Za-z]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="lastname" name="lastname" required />
+            <Field type="text" className="text-field" id="lastname" name="lastname" maxlength="32"  pattern="[A-Za-z]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="email" name="email" required />
+            <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="occupation" className="form-name">Occupation / Title</label>
             <Field type="text" className="text-field" id="occupation" name="occupation" />
             <label htmlFor="org" className="form-name">Organization / Company / School</label>
@@ -453,7 +453,7 @@ const WebBasedForm = () => {
             <br />
             <p className="para label">If you would like to pair with a MeshMate, please review each MeshMate profile to identify your ideal mentor. Once you have identified your ideal MeshMate or if you can’t decide on one, simple ask to be partnered in the <a href="https://layer5io.slack.com/archives/C019426UBNY">#newcomers channel</a> in the Layer5 Slack.</p>
             <label htmlFor="interests" className="form-name">What has your recent focus been? Why have you joined the community? What are you passionate about? Is there a specific project or aspect a project that interests you?<span className="required-sign">*</span></label>
-            <Field as="textarea" className="text-field" id="interests" name="interests" required />
+            <Field as="textarea" className="text-field" id="interests" name="interests" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="profiency" className="form-name">If a contributor, what tools, technologies, or languages are you most proficient with?</label>
             <Field as="textarea" className="text-field" id="profiency" name="profiency" />
             <p className="para label">Examples: [Go/Gorilla, Javascript/React… ], [Photoshop, Illustrator, Figma…], [DevOps, Kubernetes, AWS, CI pipelining…], [Digital marketing, social media, community management…]</p>
