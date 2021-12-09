@@ -5,7 +5,7 @@ on:
 jobs:
   good-first-issue-notify:
     if: contains(github.event.issue.labels.*.name, 'good first issue') || contains(github.event.issue.labels.*.name, 'newcomers-only') 
-    name: Notify Slack on new good-first-issue
+    name: Notify Slack for new good-first-issue
     runs-on: ubuntu-latest
     steps:
       - name: Notify slack
