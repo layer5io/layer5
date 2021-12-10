@@ -239,9 +239,16 @@ const Footer = () => {
             <ul className="policies">
               <li>
                 <a
-                  href="/company/legal/privacy"
+                  href="https://layer5.statuspage.io"
                   target="_blank"
                   rel="noreferrer"
+                >
+                  Status
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/company/legal/privacy"
                 >
                   Privacy
                 </a>
@@ -249,8 +256,6 @@ const Footer = () => {
               <li>
                 <a
                   href="/company/legal/terms-of-service"
-                  target="_blank"
-                  rel="noreferrer"
                 >
                   Terms
                 </a>
