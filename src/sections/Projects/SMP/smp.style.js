@@ -118,12 +118,10 @@ const SMPWrapper = styled.section`
     }
     .join-community{
         width: 100%;
-        max-width:100%;
         margin-bottom: 0;
         display: flex;
         justify-content: center;
         align-content: center;
-        height: 40rem;
     }
     .join-community_text-and_button{
         width:100%;
@@ -131,7 +129,7 @@ const SMPWrapper = styled.section`
         justify-content: center;
         align-items:center;
         flex-direction:column;
-        top:0rem;
+        top: 6.5rem;
         h1{
             color: white;
         }
