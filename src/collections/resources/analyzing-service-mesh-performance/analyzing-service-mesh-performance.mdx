@@ -263,11 +263,18 @@ Figure 2 provides insight to the fact that the specification defines a common co
 to be calculated for every performance test.
 </p>
 
-<div className="center" >
-<a href={Code}>
-<img src={Code} align="center" alt="Code-snippet" />
-</a>
-</div>
+```yaml
+message PerformanceTestResult {
+  message Latency {
+    double min = 1;
+    double average = 2;
+    double p50 = 3;
+    double p90 = 4;
+    double p99 = 5;
+    double max = 6;
+  }
+}
+```
 
 <p><i>Figure 2: Snippet of the Service Mesh Performance specification describing how to capture statistical analysis of test results.</i></p>
 
