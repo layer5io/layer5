@@ -30,7 +30,7 @@ const LearnLayer = () => {
 
             <a id="Learn"> 
               <h2>Learn</h2>
-             </a>
+            </a>
             <p>As a community, we have put together an excellent set of learning materials and training resources to guide you through learning about cloud native infrastucture and service meshes.</p>
             <p>You can review the <Link to="/learn">complete list of learning resources</Link> or jump straight to the type of training you prefer:</p>
             <div className="content">
@@ -50,7 +50,7 @@ const LearnLayer = () => {
 
     
             <a id="Events">    
-                <h2>Events</h2>
+              <h2>Events</h2>
             </a>
             <p>At Layer5, we participate in international events, online workshops, and also meetups (both small and large). They all vary in topics ranging from cloud-native management, service mesh, DevOps, and open-source. In these events,  more awareness about the Layer5 projects and the community is created.
             </p>

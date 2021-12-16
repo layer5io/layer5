@@ -4,6 +4,7 @@ import callout from "./callout.png";
 import cncfIcon from "./cncf-icon.png";
 
 const SMPWrapper = styled.section`
+    margin-bottom: 3.25rem;
     .smp-hero{
         background-image: url(${smp_bg});
         height: 34.4rem;
@@ -117,12 +118,10 @@ const SMPWrapper = styled.section`
     }
     .join-community{
         width: 100%;
-        max-width:100%;
         margin-bottom: 0;
         display: flex;
         justify-content: center;
         align-content: center;
-        height: 40rem;
     }
     .join-community_text-and_button{
         width:100%;
@@ -130,7 +129,7 @@ const SMPWrapper = styled.section`
         justify-content: center;
         align-items:center;
         flex-direction:column;
-        top:0rem;
+        top: 6.5rem;
         h1{
             color: white;
         }
@@ -142,9 +141,7 @@ const SMPWrapper = styled.section`
         button{
             margin-top: 1.5rem;
         }
-
     }
-
     @media only screen and (max-width: 1024px) {
         .smp-hero{
             .hero-text{
