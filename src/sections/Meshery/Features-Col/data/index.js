@@ -7,7 +7,7 @@ const data = {
       btnText: "Get Started",
       services: [
         {
-          content: "AWS App Mesh, Citrix Service Mesh, Consul, Istio, Kuma, Linkerd, Network Service Mesh, NGINX Service Mesh, Octarine, Open Service Mesh, Traefik Mesh, Cilium Service Mesh",
+          content: "AWS App Mesh, Cilium Service Mesh, Citrix Service Mesh, Consul, Istio, Kuma, Linkerd, Network Service Mesh, NGINX Service Mesh, Octarine, Open Service Mesh, Traefik Mesh,",
           className: "--on"
         },
         {
