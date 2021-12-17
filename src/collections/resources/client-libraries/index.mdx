@@ -1,6 +1,6 @@
 ---
 title: "Client Libraries"
-thumbnail: ./client-library.png
+thumbnail: ./using-different-microservice-client-libraries.png
 category: Service Mesh
 tags:
  - Service mesh
@@ -10,7 +10,7 @@ published: true
 
 import { Link } from "gatsby";
 import { ResourcesWrapper } from "../Resources.style.js";
-import Library from "./figure1.png";
+import Library from "./using-different-microservice-client-libraries.png";
 
 <ResourcesWrapper>
   <div className="intro">
@@ -66,8 +66,9 @@ import Library from "./figure1.png";
   Getting teams to update their client libraries can be an arduous process. When these infrastructure concerns are embedded in your service code, you'll need to track down your developers to update and reconfigure these libraries.  It can take a long time to get a consistent configuration with the same and most recent version deployed.  Enforcing consistency is challenging.  As seen in the figure below, these frameworks couple your services with the infrastructure.
   </p>
   <div className="center" >
-  <img src={Library} align="right" alt="client libraries" />
+  <img src={Library} align="right" alt="service mesh client libraries" />
   <p>Figure 1: Services architecture using client libraries coupled with application logic</p>
+
   </div>
 
   <p>

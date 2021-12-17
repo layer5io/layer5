@@ -15,6 +15,7 @@ const JoinCommunityWrapper = styled.div`
     .join-community_text-and_button{
         position: relative;
         top: 6.5rem;
+        height: 13rem;
         text-align: center;
         h1{
             color: white;

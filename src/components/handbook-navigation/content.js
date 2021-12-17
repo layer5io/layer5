@@ -1,7 +1,7 @@
 export const content = [
   { id: 0, link: "/community/handbook/about", text: "About" },
   { id: 1, link: "/community/handbook/community", text: "Community" },
-  { id: 2, link: "/community/handbook/contributor-ladder", text: "Contributor Ladder" },
+  { id: 2, link: "/community/handbook/contributor-journey", text: "Contributor Journey" },
   { id: 3, link: "/community/handbook/contribution", text: "Contribution" },
   { id: 4, link: "/community/handbook/repository-overview", text: "Repository Overview" },
   { id: 5, link: "/community/handbook/projects", text: "Projects" },

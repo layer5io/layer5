@@ -5,7 +5,6 @@ const NavigationWrap = styled.header`
   background-color: #F3FFFD;
   position: sticky;
   width: 100%;
-  padding-top: 1rem;
   z-index: 9999;
   top: 0;
   transition: all 0.3s ease 0s;
@@ -14,9 +13,9 @@ const NavigationWrap = styled.header`
     display: flex;
   }
   .meshery-cta {
-    position: absolute;
-    right: 2.5rem;
-    top: 2.5rem;
+    position: relative;
+    right: -4.5rem;
+    top: 1.5rem;
     max-height: 50px;
 
     a {

@@ -53,8 +53,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //****
 
   // New Community Member (Google Form)
-  createRedirect({ fromPath: "/newcomer", toPath: "https://docs.google.com/forms/d/e/1FAIpQLSdMLeZY6hZ46yYNkoKKV5OM-jCypjbYcqptbUNltEE73EqCjA/viewform", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/go/meshmap-beta", toPath: "https://docs.google.com/forms/d/e/1FAIpQLSdf4a_JPH9zenEXtvhaUAU1-5_nkScDpDKcdbaarwbqWkZLNg/viewform?usp=sf_link", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/newcomer", toPath: "/newcomers", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/go/meshmap-beta", toPath: "/service-mesh-management/meshmap#meshmap-beta", redirectInBrowser: true, isPermanent: true });
   // Create Pages
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
@@ -80,10 +80,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const NewsPostTemplate = path.resolve(
     "src/templates/news-single.js"
-  );
-
-  const ProjectPostTemplate = path.resolve(
-    "src/templates/project-single.js"
   );
 
   const BookPostTemplate = path.resolve(
@@ -398,16 +394,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: NewsPostTemplate,
       context: {
         slug: singleNews.fields.slug,
-      },
-    });
-  });
-
-  projects.forEach(project => {
-    createPage({
-      path: project.fields.slug,
-      component: ProjectPostTemplate,
-      context: {
-        slug: project.fields.slug,
       },
     });
   });
