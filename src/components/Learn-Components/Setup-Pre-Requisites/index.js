@@ -36,7 +36,7 @@ const SetupPreReq = () => (
       </a>
       <a href="/service-mesh-management/meshery/operating-service-meshes" id="Manage Meshery"
         target = "_blank" 
-        rel = "noopener noreferrer">
+       >
         <div className="card">
           <div className="card-header">
             <h2>Manage Meshery</h2>
