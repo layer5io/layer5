@@ -57,7 +57,7 @@ export default function HowMesheryWorksDiagram({ activeExampleIndex }) {
               </g>
               {/*  Line to traefik */}
               <g className={activeExampleIndex >= 8 ? "show " : "render "}>
-                <line x1="284.52" y1="213.91" x2="230.52" y2="80.83" stroke="#3c494f"></line>
+                <line x1="284.52" y1="213.91" x2="214.52" y2="90.83" stroke="#3c494f"></line>
               </g>
               { /*  Line to Cilium */}
               <g className={activeExampleIndex >= 8 ? "show " : "render "}>
@@ -2861,7 +2861,7 @@ export default function HowMesheryWorksDiagram({ activeExampleIndex }) {
                 </g>
               </g>
               {/* Traefik */}
-              <g className={activeExampleIndex >= 8 ? "show " : "render "} transform="translate(193 50.04)">
+              <g className={activeExampleIndex >= 8 ? "show " : "render "} transform="translate(187.05 50.04)">
                 <svg className="traefik" xmlns="http://www.w3.org/2000/svg" width="56px" height="56px" viewBox="0 -190.89 988 988">
                   <title>traefik</title>
                   <g id="Layer_2" data-name="Layer 2">
