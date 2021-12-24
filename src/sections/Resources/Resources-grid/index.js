@@ -1,10 +1,6 @@
 import React from "react";
-import BlogViewToolTip from "../../components/blog-view-tooltip";
-import Card from "../../components/Card";
-import Pager from "../../components/pager";
-import { Container, Row, Col } from "../../reusecore/Layout";
-import ResourceNavigation from "../Resources-grid/filters";
-
+import Card from "../../../components/Card";
+import { Container, Row, Col } from "../../../reusecore/Layout";
 
 import { ResourcePageWrapper } from "./resourceGrid.style";
 
@@ -14,9 +10,6 @@ const ResourceGrid = (props) => {
       <div className="resource-page-wrapper">
         <Container>
           <Row>
-          {/* <Col xs={12} lg={4}>
-          <ResourceNavigation />
-          </Col> */}
             <Col xs={12} lg={12}>
               <div className="resource-grid-wrapper">
                <Row>

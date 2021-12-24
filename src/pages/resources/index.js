@@ -9,8 +9,11 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
-import ResourcesList from "../../sections/Resources-grid/ResourcesList";
-import ResourcesNavigation from "../../sections/Resources-grid/filters";
+import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList";
+import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
+import { Row, Col } from "../../reusecore/Layout";
+import PageHeader from "../../reusecore/PageHeader";
+
 
 // Assets + Icons
 import theme from "../../theme/app/themeStyles";
@@ -18,6 +21,7 @@ import theme from "../../theme/app/themeStyles";
 
 const MembersPage = () => {
   const [filter, setFilter] = useState([]);
+  
   const handleChange = () => {
     var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
     var filters = [];
@@ -37,8 +41,15 @@ const MembersPage = () => {
         description="Articles on how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news." 
         />
         <Navigation />
+        <PageHeader title="Cloud Native Resources" path="Resources"/>
+        <Row>
+        <Col xs={12} lg={4}>
         <ResourcesNavigation handleChange={handleChange} />
+        </Col>
+        <Col xs={12} lg={8}>
         <ResourcesList resource={filter} />
+        </Col>
+        </Row>
         <Footer />
       </Layout>
     </ThemeProvider>

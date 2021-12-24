@@ -25,6 +25,9 @@ const DataWrapper = (WrappedComponent) => {
                 frontmatter {
                   title
                   type
+                  technology
+                  product
+                  mesh
                   thumbnail {
                     childImageSharp {
                       gatsbyImageData(layout: FULL_WIDTH)

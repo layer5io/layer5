@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const ResourceNavigationWrapper = styled.div`
 .filter{
-  float: left;
-  margin: 2rem 1rem 0 0;
+  margin-left: 8rem ;
+  margin-right: 2rem ;
   position: sticky;
 }
 .filter-wrap {
@@ -71,7 +71,6 @@ input[type="checkbox"] {
             width: 1.5rem; 
             height: 1.5rem; 
             cursor: pointer;
-            margin-right: 5rem;
             float: right;
             vertical-align: bottom;
           }
@@ -98,7 +97,8 @@ input[type="checkbox"] {
 
   @media only screen and (max-width: 750px){
        position: initial;
-       margin-right: 3rem;
+       margin-left: 4rem;
+       margin-right: 2rem;
        width: auto;
        .filter{
         display:contents;

@@ -113,12 +113,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const resourcePostTemplate = path.resolve(
     "src/templates/resource-single.js"
   );
-  const resourceCategoryListTemplate = path.resolve(
-    "src/templates/resource-category-list.js"
-  );
-  const resourceTagListTemplate = path.resolve(
-    "src/templates/resource-tag-list.js"
-  );
+  // const resourceCategoryListTemplate = path.resolve(
+  //   "src/templates/resource-category-list.js"
+  // );
+  // const resourceTagListTemplate = path.resolve(
+  //   "src/templates/resource-tag-list.js"
+  // );
   const resourceViewTemplate = path.resolve(
     "src/templates/resource.js"
   );
@@ -202,26 +202,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      resourceTags: allMdx(
-        filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
-        ){
-          group(field: frontmatter___tags) {
-            nodes{
-              id
-            }
-            fieldValue
-          }
-      }
-      resourceCategory: allMdx(
-        filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
-        ){
-          group(field: frontmatter___category) {
-            nodes{
-              id
-            }
-            fieldValue
-          }
-      }
       learncontent: allMdx(
         filter: {fields: {collection: {eq: "content-learn"}}}
       ){
@@ -298,14 +278,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   paginate({
     createPage,
-    items: resources,
-    itemsPerPage: 8,
-    pathPrefix: "/resources",
-    component: resourceViewTemplate
-  });
-
-  paginate({
-    createPage,
     items: events,
     itemsPerPage: 9,
     pathPrefix: "/community/events",
@@ -356,34 +328,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: resourcePostTemplate,
       context: {
         slug: resource.fields.slug,
-      },
-    });
-  });
-
-  const resourceCategory = res.data.resourceCategory.group;
-  resourceCategory.forEach(category => {
-    paginate({
-      createPage,
-      items: category.nodes,
-      itemsPerPage: 4,
-      pathPrefix: `/resources/category/${slugify(category.fieldValue)}`,
-      component: resourceCategoryListTemplate,
-      context: {
-        category: category.fieldValue,
-      },
-    });
-  });
-
-  const ResourceTags = res.data.resourceTags.group;
-  ResourceTags.forEach(tag => {
-    paginate({
-      createPage,
-      items: tag.nodes,
-      itemsPerPage: 4,
-      pathPrefix: `/resources/tag/${slugify(tag.fieldValue)}`,
-      component: resourceTagListTemplate,
-      context: {
-        tag: tag.fieldValue,
       },
     });
   });
