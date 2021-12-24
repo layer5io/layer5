@@ -6,6 +6,8 @@ import SEO from "../components/seo";
 
 import Navigation from "../sections/General/Navigation";
 import ResourceGrid from "../sections/Resources/Resource-grid";
+import ResourceNavigation from "../sections/Resources/Resource-navigation";
+
 import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
@@ -65,6 +67,7 @@ const Resource = props => {
       return (<ResourceList {...props} />);
     return (<ResourceGrid {...props} />);
   };
+
 
   return (
     <ThemeProvider theme={theme}>

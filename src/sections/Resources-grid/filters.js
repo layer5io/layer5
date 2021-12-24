@@ -1,29 +1,33 @@
 import React, { useState } from "react";
 import { HiOutlineChevronUp, HiOutlineChevronDown } from "react-icons/hi";
 import { graphql, Link, useStaticQuery} from "gatsby";
-import slugify from "../../../utils/slugify";
+import { Container, Row, Col } from "../../reusecore/Layout";
+import PageHeader from "../../reusecore/PageHeader";
+import { options } from "./options";
 
-import ResourceNavigationWrapper from "./resourceNavigation.style";
+import ResourceNavigationWrapper from "./filters.style";
 
-const Navigation = ( ) => {
+const Navigation = (props) => {
     const [expandType, setExpandType] = useState(true);
     const [expandProduct, setExpandProduct] = useState(false);
     const [expandTech, setExpandTech] = useState(false);
     const [expandMesh, setExpandMesh] = useState(false);
 
-    const filtersArray = () =>  {
-      var types = []
-      var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
-
-      for (var i = 0; i < checkboxes.length; i++) {
-        types.push(checkboxes[i].value)
-      }
-      console.log(types);
-    };
+    // const filtersArray = () =>  {
+    //   var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+    //   for (var i = 0; i < checkboxes.length; i++) {
+    //     props.types.splice(i);
+    //     props.types.push(checkboxes[i].value)
+    //   }
+    //   console.log(props.types);
+    // };
 
     return (
         <ResourceNavigationWrapper>
-
+          <Container>
+          <PageHeader title="Cloud Native Resources" path="Resources"/>
+          <Col xs={12} lg={4}>
+            <div className="filter">
           <h4><strong>Filters</strong></h4>
         
         <div className="toggle-btn">
@@ -47,19 +51,14 @@ const Navigation = ( ) => {
         </div>
         <div className="list">
         <ul className={`ul ${expandType ? "ul-open" : ""}`}>
-        <label><input type="checkbox"  value="Case Study" id="caseStudy" onChange={filtersArray} /><span> Case Study</span></label> 
-    <label><input type="checkbox" className="category" value="Presentation" id="presentation" onChange={filtersArray} /><span> Presentation</span></label> 
-    <label><input type="checkbox"  value="Demo" id="demo" onChange={filtersArray} /><span> Demo</span></label> 
-    <label><input type="checkbox"  value="Recorded Webinar" id="recordedWebinar" onChange={filtersArray} /><span> Recorded Webinar</span></label> 
-    <label><input type="checkbox"  value="Interview" id="Interview" onChange={filtersArray} /><span> Interview</span></label> 
-    <label><input type="checkbox"  value="Blog" id="blog" onChange={filtersArray} /><span> Blog</span></label> 
-    <label><input type="checkbox"  value="News" id="news" onChange={filtersArray} /><span> News</span></label> 
-    <label><input type="checkbox"  value="White Paper" id="whitePaper" onChange={filtersArray} /><span> White Paper</span></label> 
-    <label><input type="checkbox"  value="Article" id="article" onChange={filtersArray} /><span> Article</span></label> 
-    <label><input type="checkbox"  value="Tutorial" id="tutorial" onChange={filtersArray} /><span> Tutorial</span></label> 
-    <label><input type="checkbox"  value="FAQ" id="faq" onChange={filtersArray} /><span> FAQ</span></label> 
-    <label><input type="checkbox"  value="Guide" id="guide" onChange={filtersArray} /><span> Guide</span></label> 
-    <label><input type="checkbox"  value="Podcast" id="podcast" onChange={filtersArray} /><span> Podcast</span></label> 
+        {options.map((x) => (
+            <li key={x.id}>
+                  <label>
+                    <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                    <span> {x.label}</span>
+                  </label> 
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -150,7 +149,10 @@ const Navigation = ( ) => {
     <label><input type="checkbox"  value="Traefik Mesh" id="traefik"/> Traefik Mesh</label>
         </ul>
       </div>
-           
+
+      </div>
+      </Col> 
+      </Container> 
         </ResourceNavigationWrapper>
       );
     };
