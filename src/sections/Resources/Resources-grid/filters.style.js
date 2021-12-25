@@ -24,16 +24,17 @@ export const ResourceNavigationWrapper = styled.div`
 label {
         display: block;
         padding-left: 15px;
+        margin-top: 1px;
         vertical-align: bottom;
         text-indent: -15px; 
         }
 input {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
         padding: 0;
         margin: 0 1rem 1rem 0;
         display: inline;
-        vertical-align: center;
+        vertical-align: middle;
         position: relative;
         top: -1px;
       }

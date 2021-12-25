@@ -113,12 +113,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const resourcePostTemplate = path.resolve(
     "src/templates/resource-single.js"
   );
-  // const resourceCategoryListTemplate = path.resolve(
-  //   "src/templates/resource-category-list.js"
-  // );
-  // const resourceTagListTemplate = path.resolve(
-  //   "src/templates/resource-tag-list.js"
-  // );
+ 
   const resourceViewTemplate = path.resolve(
     "src/templates/resource.js"
   );

@@ -99,7 +99,6 @@ let totalMesh = mesh.length;
 
       result = [typeData, productData, techData, meshData],
       data = result.reduce((a, b) => a.filter(c => b.includes(c)));
-      console.log(data);
   });
 }
 else{
