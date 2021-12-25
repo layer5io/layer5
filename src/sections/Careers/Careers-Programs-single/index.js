@@ -7,7 +7,7 @@ import { Row, Container, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import ProgramsPageWrapper, {dropdownTheme, selectStyles} from "./ProgramsSingle.style.js";
 
-const ProgramsSingle = ({ data, options, setActiveOption, activeOption }) => {
+const ProgramsSingle = ({ data, options, setActiveOption, activeOption}) => {
 
   const { frontmatter, body } = data;
 
@@ -22,18 +22,20 @@ const ProgramsSingle = ({ data, options, setActiveOption, activeOption }) => {
             </Link>
           </div>
           {Boolean(options) && 
-            <div className="selectWrapper">
-              <Select
-                name="Select Year of Program"
-                defaultValue={options[activeOption]}
-                isSearchable={false}
-                styles={selectStyles}
-                options={options}
-                value={options[activeOption]}
-                onChange={(e) => setActiveOption(() => e.value)}
-                theme={dropdownTheme}
-              />
-            </div>
+              <div className="selectWrapper">
+                <div className="selectMenu">
+                  {options.length>1 && <Select
+                    name="Select Year of Program"
+                    defaultValue={options[activeOption]}
+                    isSearchable={false}
+                    styles={selectStyles}
+                    options={options}
+                    value={options[activeOption]}
+                    onChange={(e) => setActiveOption(() => e.value)}
+                    theme={dropdownTheme}
+                  />}
+                </div>
+              </div>
           }
         </Row>
       </Container>

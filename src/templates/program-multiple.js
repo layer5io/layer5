@@ -32,13 +32,17 @@ export const query = graphql`
 
 const ProgramsPage = ({data}) => {
   const [activeOption, setActiveOption] = useState(0);
+
   const programs = data.allMdx.nodes;
+
+
   const options = programs.map((program, index) => {
     let optionItem = new Object();
     optionItem.label = program.frontmatter.title;
     optionItem.value = index;
     return optionItem;
   });
+
 
   return (
     <ThemeProvider theme={theme}>
