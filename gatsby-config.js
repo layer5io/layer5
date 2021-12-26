@@ -6,7 +6,7 @@ module.exports = {
     author: "Layer5 Authors",
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
-    image: "/images/layer5-tag-dark-bg.png",
+    image: "/images/layer5-company.png",
     twitterUsername: "@layer5",
   },
   plugins: [

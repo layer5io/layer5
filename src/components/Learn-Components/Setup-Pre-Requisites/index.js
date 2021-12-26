@@ -14,7 +14,7 @@ const SetupPreReq = () => (
     <div className="container-card" id="Set up">
       <a href="/service-mesh-management/meshery" 
         target = "_blank" 
-        >
+      >
         <div className="card">
           <div className="card-header">
             <h2>Install Meshery</h2>
@@ -25,7 +25,7 @@ const SetupPreReq = () => (
       </a>
       <a href="/service-mesh-management/meshery/getting-started" id="Run Meshery"
         target = "_blank" 
-        >
+      >
         <div className="card">
           <div className="card-header">
             <h2>Run Meshery</h2>
@@ -36,7 +36,7 @@ const SetupPreReq = () => (
       </a>
       <a href="/service-mesh-management/meshery/operating-service-meshes" id="Manage Meshery"
         target = "_blank" 
-       >
+      >
         <div className="card">
           <div className="card-header">
             <h2>Manage Meshery</h2>
