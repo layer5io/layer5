@@ -32,7 +32,7 @@ const handbookHome= () => {
         <HandbookCard 
           title="Community Roles" 
           description="Many roles exist in the community. Individuals who perform a role, bolster community and project growth by participating in decision-making and being accountable for those decisions." 
-          to="/community/handbook/contributor-journey" 
+          to="/community/handbook/community-roles" 
         />
 
         <HandbookCard 
