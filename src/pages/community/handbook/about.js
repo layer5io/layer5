@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../../../components/layout";
 
 import SEO from "../../../components/seo";
-import AboutPage from "../../../sections/Community/Handbook/about";
+import AboutPage from "../../../sections/Community/Handbook/contributor-journey";
 import Navigation from "../../../sections/General/Navigation";
 import Footer from "../../../sections/General/Footer";
 

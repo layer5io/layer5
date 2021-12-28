@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../../../components/layout";
 
 import SEO from "../../../components/seo";
-import LeadershipPage from "../../../sections/Community/Handbook/leadership";
+import LeadershipPage from "../../../sections/Community/Handbook/community-roles";
 import Navigation from "../../../sections/General/Navigation";
 import Footer from "../../../sections/General/Footer";
 

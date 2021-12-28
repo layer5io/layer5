@@ -30,8 +30,8 @@ const handbookHome= () => {
         />
 
         <HandbookCard 
-          title="Contributor Journey" 
-          description="A leader is someone who can contribute to the Layer5 Community's growth by being accountable, participating in decision-making, and feeling responsible." 
+          title="Community Roles" 
+          description="Many roles exist in the community. Individuals who perform a role, bolster community and project growth by participating in decision-making and being accountable for those decisions." 
           to="/community/handbook/contributor-journey" 
         />
 
