@@ -2,6 +2,22 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import five from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import gnh from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+import imagehub from "../../../assets/images/image-hub/layer5-image-hub.svg";
+import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator.svg";
+import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
+import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+
+import istioLogo from "../../../assets/images/service-mesh-icons/istio.svg";
+import linkerdLogo from "../../../assets/images/service-mesh-icons/linkerd.svg";
+import consulLogo from "../../../assets/images/service-mesh-icons/consul.svg";
+import kumaLogo from "../../../assets/images/service-mesh-icons/kuma.svg";
+import nsmLogo from "../../../assets/images/service-mesh-icons/nsm.svg";
+import nginxLogo from "../../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
+import traefikLogo from "../../../assets/images/service-mesh-icons/traefik.svg";
+import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-interface/icon/color/servicemeshinterface-icon-color.svg";
+import osmLogo from "../../../assets/images/service-mesh-icons/open-service-mesh/icon/color/openservicemesh-icon-color.svg";
+import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.svg";
+import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 
 export const repo_data = [
   {
@@ -11,7 +27,7 @@ export const repo_data = [
         project: "Layer5",
         image: five,
         site: "https://layer5.io/",
-        language: "Gatsby and Strapi",
+        language: "Gatsby",
         repository: "https://github.com/layer5io/layer5",
       },
       {
@@ -32,7 +48,7 @@ export const repo_data = [
         project: "Meshery UI",
         image: meshery,
         site: "https://github.com/layer5io/meshery/tree/master/ui",
-        language: "NextJs, MaterialUI and Billboard.js",
+        language: "NextJS, MaterialUI and Billboard.js",
         repository: "https://github.com/layer5io/meshery/tree/master/ui",
       },
       {
@@ -51,18 +67,19 @@ export const repo_data = [
         repository: "https://github.com/layer5io/nighthawk",
       },
       {
-        project: "MeshSync UI (MeshMap)",
+        project: "MeshMap",
         image: meshery,
         site:
-          "https://drive.google.com/a/layer5.io/open?id=1AMi5UTUwLRFeQRQj7YuRQgMG-4IXWie24z4R88Eoazs",
+          "/service-mesh-management/meshmap",
         language: "Cytoscape.js",
+        description: "A visual topology to display service mesh configuration, workloads and traffic.",
         repository: "https://github.com/meshery/meshery",
       },
       {
-        project: "Layer5 discussion forum",
+        project: "Service Mesh Discussion",
         image: five,
         site: "https://discuss.layer5.io/",
-        language: "Gatsby and Strapi",
+        language: "Discourse",
         repository: " https://staging-discuss.layer5.io/",
       },
     ],
@@ -73,33 +90,42 @@ export const repo_data = [
     subdata: [
       {
         project: "Meshery",
-        language: "Golang gRPC",
+        image: meshery,
+        language: "Golang, gRPC",
+        description: "The service mesh management plane to provide governance and backend system integration. Golang, gRPC, NATS, CloudEvents",
         repository: "https://github.com/layer5io/meshery",
       },
       {
         project: "SMI Conformance",
-        language: "Golang",
+        image: smiLogo,
+        language: "GitHub Action",
         repository:
           "https://github.com/layer5io/meshery-smi-conformance-action",
       },
       {
         project: "Meshery Operator",
-        language: "Golang",
+        image: MesheryOperator,
+        language: "Golang, Kubernetes Operator",
+        description: "Meshery Operator is the multi-service mesh operator and implementation of MeshSync.",
         repository: "https://github.com/layer5io/meshery-operator",
       },
       {
-        project: "Meshsync",
+        project: "MeshSync",
+        image: MeshSync,
         language: "Golang and NATS",
+        description: "MeshSync is a multi-mesh resource discovery application which is also a custom kubernetes controller.",
         repository: "https://github.com/layer5io/meshsync",
       },
       {
         project: "Learn-Layer5",
-        language: "Golang",
+        image: five,
+        language: "Golang, Kuttl",
+        description: "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
         repository: "https://github.com/layer5io/smi-conformance",
       },
       {
         project: "MeshMonkey",
-        language: "Chaos Mesh / LitmusChaos",
+        language: "Golang",
         repository: "https://github.com/layer5io/meshmonkey",
       },
     ],
@@ -109,79 +135,96 @@ export const repo_data = [
     category: "Adapter Dedicated Repos",
     subdata: [
       {
-        project: "Meshery Istio",
-        language: "Golang gRPC",
+        project: "Meshery Adapter for Istio",
+        image: istioLogo,
+        language: "Golang, gRPC",
         repository: "https://github.com/layer5io/meshery-istio",
       },
       {
-        project: "Meshery Linkerd",
-        language: "Golang gRPC",
+        project: "Meshery Adapter for Linkerd",
+        image: linkerdLogo,
+        language: "Golang, gRPC",
         repository: "https://github.com/layer5io/meshery-linkerd",
       },
       {
-        project: "Layer5-istio-adapter",
-        language: "Golang",
-        repository: "https://github.com/layer5io/layer5-istio-adapter",
-      },
-      {
-        project: "Meshery NSM",
-        language: "Golang gRPC",
+        project: "Meshery Adapter for NSM",
+        image: nsmLogo,
+        language: "Golang, gRPC",
         repository: "https://github.com/layer5io/meshery-nsm",
       },
       {
-        project: "Meshery Octarine",
-        language: "Golang gRPC",
+        project: "Meshery Adapter for Octarine",
+        image: meshery,
+        language: "Golang, gRPC",
         repository: "https://github.com/layer5io/meshery-octarine",
       },
       {
-        project: "Meshery Traefik-mesh",
-        language: "Golang gRPC",
+        project: "Meshery Adapter for Traefik Mesh",
+        image: traefikLogo,
+        language: "Golang, gRPC",
         repository: "https://github.com/layer5io/meshery-traefik-mesh",
       },
       {
-        project: "Meshery Kuma",
-        language: "Golang gRPC",
+        project: "Meshery Adapter for Kuma",
+        image: kumaLogo,
+        language: "Golang, gRPC",
         repository: "https://github.com/layer5io/meshery-kuma",
       },
       {
-        project: "Meshery Consul",
-        language: "Golang gRPC",
+        project: "Meshery Adapter for Consul",
+        image: consulLogo,
+        language: "Golang, gRPC",
         repository: "https://github.com/layer5io/meshery-consul",
       },
       {
-        project: "Meshery CPX",
-        language: "Golang gRPC",
+        project: "Meshery Adapter for CPX",
+        image: meshery,
+        language: "Golang, gRPC",
         repository: "https://github.com/layer5io/meshery-cpx",
       },
       {
-        project: "Meshery Adapter Template",
-        language: "Golang gRPC",
-        repository: "https://github.com/layer5io/meshery-adapter-template",
+        project: "Meshery Adapter for App Mesh ",
+        image: appmeshLogo,
+        language: "Golang, gRPC",
+        repository: "https://github.com/layer5io/meshery-app-mesh",
       },
       {
-        project: "Meshery-tanzu-sm",
-        language: "Golang gRPC",
+        project: "Meshery Adapter for Tanzu Service Mesh",
+        image: meshery,
+        language: "Golang, gRPC",
         repository: "https://github.com/layer5io/meshery-tanzu-sm",
       },
       {
-        project: "Meshery-Nginx-sm",
-        language: "Golang gRPC",
+        project: "Meshery Adapter for NGINX Service Mesh",
+        image: nginxLogo,
+        language: "Golang, gRPC",
         repository: "https://github.com/layer5io/meshery-nginx-sm",
       },
       {
-        project: "Meshkit",
-        language: "Toolkit for Layer5's microservices",
+        project: "Meshery Adapter for Cilium Service Mesh",
+        image: ciliumLogo,
+        language: "Golang, gRPC",
+        repository: "https://github.com/meshery/meshery-cilium",
+      },
+      {
+        project: "MeshKit",
+        image: meshery,
+        language: "Golang",
+        descriptionp: "Toolkit for Layer5's microservices",
         repository: "https://github.com/layer5io/meshkit",
       },
       {
         project: "Meshery Adapter Library",
-        language: "Golang gRPC",
+        image: meshery,
+        language: "Golang, gRPC",
+        description: "The Meshery Adapter Library provides a common and consistent set of functionality that Meshery adapters use for managing the lifecycle, configuration, operation, and performance of service meshes and their workloads.",
         repository: "https://github.com/layer5io/meshery-adapter-library",
       },
       {
-        project: "Meshery-app-mesh ",
-        language: "Golang gRPC",
-        repository: "https://github.com/layer5io/meshery-app-mesh",
+        project: "Meshery Adapter Template",
+        image: meshery,
+        language: "Golang, gRPC",
+        repository: "https://github.com/layer5io/meshery-adapter-template",
       },
     ],
   },
@@ -190,13 +233,14 @@ export const repo_data = [
     category: "Installation Dedicated Repos",
     subdata: [
       {
-        project: "Scoop-bucket",
+        project: "Scoop Bucket",
         language: "Windows-compatible package management for `mesheryctl`",
         repository: "https://github.com/layer5io/scoop-bucket",
       },
       {
-        project: "Homebrew-tap",
-        language: "MacOS-compatible package management for `mesheryctl`",
+        project: "Homebrew Tap",
+        language: "Ruby",
+        description: "MacOS-compatible package management for `mesheryctl`",
         repository: "https://github.com/layer5io/homebrew-tap",
       },
     ],
@@ -206,13 +250,16 @@ export const repo_data = [
     category: "WebAssembly Repos",
     subdata: [
       {
-        project: "Image-hub",
+        project: "Image Hub",
+        image: imagehub,
         language: "Vuejs",
+        description: "A sample application written to run on Istio or Consul for exploring WebAssembly modules used as Envoy filters.",
         repository: "https://github.com/layer5io/image-hub",
       },
       {
-        project: "Wasm-filters",
-        language: "Rust",
+        project: "WASM Filters",
+        language: "C, C++, Rust",
+        description: "A collection of WebAssemby filters for Envoy proxy written in C, C++, and Rust for exercising different features provided by envoy-wasm.",
         repository: "https://github.com/layer5io/wasm-filters",
       },
     ],
@@ -223,28 +270,65 @@ export const repo_data = [
     subdata: [
       {
         project: "Service Mesh Performance",
-        language:
+        image: smp,
+        language: "Protobuf",
+        description:
           "a common format for capturing and describing service meshes’ performance and workloads.",
         repository:
           "https://github.com/layer5io/service-mesh-performance-specification",
       },
       {
         project: "Wrk2",
-        language:
+        language: "C",
+        description:
           "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
         repository: "https://github.com/giltene/wrk2",
       },
       {
         project: "Gowrk2",
-        language:
+        image: meshery,
+        language: "Golang",
+        description:
           "Augmentation of wrk2 to produce output compatible with Meshery’s visualization of performance test results.",
         repository: "https://github.com/layer5io/gowrk2",
       },
       {
         project: "Nighthawk",
-        language:
+        image: gnh,
+        language: "Golang, gRPC",
+        description:
           "Augmentation of Envoy Nighthawk to produce output compatible with Meshery’s visualization of performance test results",
         repository: "https://github.com/layer5io/nighthawk-go",
+      },
+    ],
+  },
+
+  {
+    category: "Service Mesh Pattern Repos",
+    subdata: [
+      {
+        project: "Service Mesh Patterns",
+        image: patterns,
+        language: "Yaml",
+        description:
+          "A collection of functional examples to be used as patterns for operationalizing cloud native infrastruture and application deployments and applying best practices.",
+        repository:
+          "https://github.com/service-mesh-patterns/service-mesh-patterns",
+      },
+    ],
+  },
+
+  {
+    category: "Service Mesh Training",
+    subdata: [
+      {
+        project: "Istio Service Mesh Workshop",
+        image: istioLogo,
+        language: "Labs",
+        description:
+          "A workshop that teaches about service meshes through the lens of Istio.",
+        repository:
+          "https://github.com/layer5io/istio-service-mesh-workshop",
       },
     ],
   },
