@@ -25,7 +25,7 @@ const CommunityGuide = () => {
           <div className="content">
             <a id="top">
               {" "}
-              <h2>What does leadership mean to the Layer5 community?</h2>{" "}
+              <h2>What are the roles held by individuals in the Layer5 community?</h2>{" "}
             </a>
 
             <p>

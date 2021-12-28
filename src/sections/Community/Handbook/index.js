@@ -20,7 +20,7 @@ const handbookHome= () => {
         <HandbookCard 
           title="About" 
           description="Layer5 is a community and open source-centered service mesh company, representing the largest collection of service meshes and their maintainers in the world." 
-          to="/community/handbook/about" 
+          to="/community/handbook/contributor-journey" 
         />
 
         <HandbookCard 
