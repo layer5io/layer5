@@ -60,7 +60,7 @@ const handbookHome= () => {
         />
 
         <HandbookCard 
-          title="Learn Layer5" 
+          title="Learning" 
           description="As a community, we have put together good learning materials and resources to guide you through learning about service meshes." 
           to="/community/handbook/learn-layer5" 
         />

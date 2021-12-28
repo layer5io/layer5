@@ -117,7 +117,7 @@ const Repository = () => {
                       <th className="linkscol">Site</th>
                       <th>Project</th>
                       <th>Framework</th>
-                      <th className="linkscol">GitHub</th>
+                      <th className="linkscol">Repo</th>
                     </tr>
                   </thead>
                   {frontendProjects.subdata.map((subdata) => {
@@ -170,7 +170,7 @@ const Repository = () => {
                       <th>{category}</th>
                       <th>Language</th>
                       <th>Description</th>
-                      <th className="linkscol">GitHub</th>
+                      <th className="linkscol">Repo</th>
                     </tr>
                   </thead>
                   {backendProjects.subdata.map((subdata) => {
