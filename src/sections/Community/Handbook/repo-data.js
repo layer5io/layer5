@@ -126,6 +126,15 @@ export const repo_data = [
         repository:
           "https://github.com/layer5io/linkerd-service-mesh-workshop",
       },
+      {
+        project: "Containers 101 Workshop",
+        image: five,
+        language: "Docker",
+        description:
+          "A workshop that introduces Linux containers through concepts in slides and hands-on labs.",
+        repository:
+          "https://github.com/layer5io/containers-101-workshop",
+      },
     ],
   },
 
