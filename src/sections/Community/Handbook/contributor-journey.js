@@ -11,17 +11,9 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 const contents = [
   { id: 0, link: "#About Layer5", text: "About Layer5" },
   { id: 1, link: "#Goals", text: "Goals" },
-  {
-    id: 2,
-    link: "#Newcomer’s Path",
-    text: "Newcomer’s Path",
-  },
+  { id: 2, link: "#Newcomer’s Path", text: "Newcomer’s Path", },
   { id: 3, link: "#Working on your issue", text: "Working on your issue" },
-  {
-    id: 4,
-    link: "#While your issue is under review",
-    text: "While your issue is under review",
-  },
+  { id: 4, link: "#While your issue is under review", text: "While your issue is under review", },
 ];
 
 const Intro = () => {

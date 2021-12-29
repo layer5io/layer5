@@ -100,6 +100,10 @@ export const HandbookWrapper = styled.div`
         margin-left: auto;
         margin-right: auto;
       }
+      .inline {
+        display: inline;
+        vertical-align: bottom;
+      }
     }
 
     td, th {

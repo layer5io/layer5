@@ -20,7 +20,7 @@ const handbookHome= () => {
         <HandbookCard 
           title="About" 
           description="Layer5 is a community and open source-centered service mesh company, representing the largest collection of service meshes and their maintainers in the world." 
-          to="/community/handbook/about" 
+          to="/community/handbook/contributor-journey" 
         />
 
         <HandbookCard 
@@ -30,9 +30,9 @@ const handbookHome= () => {
         />
 
         <HandbookCard 
-          title="Contributor Journey" 
-          description="A leader is someone who can contribute to the Layer5 Community's growth by being accountable, participating in decision-making, and feeling responsible." 
-          to="/community/handbook/contributor-journey" 
+          title="Community Roles" 
+          description="Many roles exist in the community. Individuals who perform a role, bolster community and project growth by participating in decision-making and being accountable for those decisions." 
+          to="/community/handbook/community-roles" 
         />
 
         <HandbookCard 
@@ -60,7 +60,7 @@ const handbookHome= () => {
         />
 
         <HandbookCard 
-          title="Learn Layer5" 
+          title="Learning" 
           description="As a community, we have put together good learning materials and resources to guide you through learning about service meshes." 
           to="/community/handbook/learn-layer5" 
         />
