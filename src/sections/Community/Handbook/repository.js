@@ -32,12 +32,12 @@ const Repository = () => {
     <HandbookWrapper>
       <div className="page-header-section">
         <h1>Repository Overview</h1>
-        <p>A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">Layer5 GitHub Process</a> for more related information.</p>
       </div>
       <TOC />
       <div className="page-section">
         <Container>
           <div className="content">
+            <p>A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">Layer5 GitHub Process</a> for more related information.</p>
             <a id="top">
               {" "}
               <h2>GitHub Organizations and Repositories</h2>{" "}
@@ -75,7 +75,7 @@ const Repository = () => {
                   />
                   {"   "}
                   &nbsp; Meshery
-                </a> -  Meshery and its components Meshery Operator <img src={MesheryOperator} className="project-description-icon"/> and MeshSync <img src={MeshSync} className="project-description-icon" />.
+                </a> -  Meshery and its components Meshery Operator <img src={MesheryOperator} className="project-description-icon" /> and MeshSync <img src={MeshSync} className="project-description-icon" />.
               </li>
               <li>
                 {" "}
