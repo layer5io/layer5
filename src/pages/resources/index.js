@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-// Libraries
 import { ThemeProvider } from "styled-components";
 
 // Components
@@ -13,9 +11,6 @@ import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList
 import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
 import { Row, Col } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-
-
-// Assets + Icons
 import theme from "../../theme/app/themeStyles";
 
 
@@ -26,10 +21,16 @@ const MembersPage = () => {
     var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
     var filters = [];
     for (var i = 0; i < checkboxes.length; i++) {
-      // filters.splice(i);
       filters.push(checkboxes[i].value)
     }
     setFilter(filters);
+  }
+
+  const clear = () => {
+    var filters = [];
+    setFilter(filters);
+    document.querySelectorAll('input[type="checkbox"]')
+    .forEach(el => el.checked = false);
   }
 
   return (
@@ -44,7 +45,7 @@ const MembersPage = () => {
         <PageHeader title="Cloud Native Resources" path="Resources"/>
         <Row>
         <Col xs={12} lg={4}>
-        <ResourcesNavigation handleChange={handleChange} />
+        <ResourcesNavigation handleChange={handleChange} clear={clear} />
         </Col>
         <Col xs={12} lg={8}>
         <ResourcesList resource={filter} />

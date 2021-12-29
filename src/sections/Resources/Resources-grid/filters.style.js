@@ -16,9 +16,28 @@ export const ResourceNavigationWrapper = styled.div`
         margin-top: 1.5rem;
     }
   }
-  h4{
+
+  .heading{
     margin-bottom:1rem;
+    font-size: 1.5rem;
     border-bottom: 2px solid rgba(153, 151, 151, 0.2);
+    span{
+      float: right;
+      font-size: 0.9rem;
+      color: ${(props) => props.theme.primaryColor};
+      cursor: pointer;
+      .clear-icon{
+        vertical-align: middle;
+        width: 1rem; 
+        height: 1rem; 
+      }
+    }
+  }
+  .heading>span:hover{
+    color: ${(props) => props.theme.secondaryColor};
+  }
+  .clear-disabled{
+    display: none;
   }
 
 label {

@@ -4,6 +4,7 @@ import React from "react";
 import ResourcesGrid from "./index";
 import DataWrapper from "./DataWrapper";
 import { options } from "./options";
+import NoResources from "../Resources-error/errorTemplate";
 
 
 const ResourcesList = (props) => {
@@ -106,8 +107,10 @@ else{
     data.push(resources);
   });
 }
-
+if(data.length > 0)
   return <ResourcesGrid data={[...new Set(data)]} {...props} />;
+else 
+  return <NoResources />
 };
 
 export default DataWrapper(ResourcesList);

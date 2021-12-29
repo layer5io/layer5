@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HiOutlineChevronUp, HiOutlineChevronDown } from "react-icons/hi";
+import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
 import { options } from "./options";
 
 import ResourceNavigationWrapper from "./filters.style";
@@ -10,6 +11,8 @@ const Navigation = (props) => {
     const [expandTech, setExpandTech] = useState(false);
     const [expandMesh, setExpandMesh] = useState(false);
 
+    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+
     const data = React.useMemo(() => options);
     let typeOptions = data.filter((data) => data.category === "Type");
     let productOptions = data.filter((data) => data.category === "Product");
@@ -19,9 +22,8 @@ const Navigation = (props) => {
 
     return (
         <ResourceNavigationWrapper>
-            <div className="filter">
-          <h4><strong>Filters</strong></h4>
-        
+        <div className="filter">
+        <p className="heading"><strong>Filters</strong> <span className= {checkboxes.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>Clear Filters <IoMdClose className="clear-icon"  /></span></p>
             
         <div className="toggle-btn">
             <p>
