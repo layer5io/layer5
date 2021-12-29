@@ -27,8 +27,7 @@ const MembersPage = () => {
   }
 
   const clear = () => {
-    var filters = [];
-    setFilter(filters);
+    setFilter([]);
     document.querySelectorAll('input[type="checkbox"]')
     .forEach(el => el.checked = false);
   }
@@ -45,7 +44,7 @@ const MembersPage = () => {
         <PageHeader title="Cloud Native Resources" path="Resources"/>
         <Row>
         <Col xs={12} lg={4}>
-        <ResourcesNavigation handleChange={handleChange} clear={clear} />
+        <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
         </Col>
         <Col xs={12} lg={8}>
         <ResourcesList resource={filter} />

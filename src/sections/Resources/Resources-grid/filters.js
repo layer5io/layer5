@@ -9,9 +9,7 @@ const Navigation = (props) => {
     const [expandType, setExpandType] = useState(true);
     const [expandProduct, setExpandProduct] = useState(false);
     const [expandTech, setExpandTech] = useState(false);
-    const [expandMesh, setExpandMesh] = useState(false);
-
-    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+    const [expandMesh, setExpandMesh] = useState(false); 
 
     const data = React.useMemo(() => options);
     let typeOptions = data.filter((data) => data.category === "Type");
@@ -23,10 +21,10 @@ const Navigation = (props) => {
     return (
         <ResourceNavigationWrapper>
         <div className="filter">
-        <p className="heading"><strong>Filters</strong> <span className= {checkboxes.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>Clear Filters <IoMdClose className="clear-icon"  /></span></p>
+        <p className="heading"><strong>Filters</strong> <span className= {props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>Clear Filters <IoMdClose className="clear-icon"  /></span></p>
             
         <div className="toggle-btn">
-            <p>
+            
         <p><strong>Type</strong></p>
           {expandType ? (
             <HiOutlineChevronUp
@@ -42,7 +40,7 @@ const Navigation = (props) => {
                 setExpandType(!expandType);
               }}
             />
-          )}</p>
+          )}
         </div>
         <div className="list">
         <ul className={`ul ${expandType ? "ul-open" : ""}`}>
@@ -58,7 +56,6 @@ const Navigation = (props) => {
       </div>
 
       <div className="toggle-btn">
-            <p>
         <p><strong>Product</strong></p>
           {expandProduct ? (
             <HiOutlineChevronUp
@@ -74,7 +71,7 @@ const Navigation = (props) => {
                 setExpandProduct(!expandProduct);
               }}
             />
-          )}</p>
+          )}
         </div>
         <div className="list">
         <ul className={`ul ${expandProduct ? "ul-open" : ""}`}>
@@ -90,7 +87,6 @@ const Navigation = (props) => {
       </div>
 
       <div className="toggle-btn">
-            <p>
         <p><strong>Technology</strong></p>
           {expandTech ? (
             <HiOutlineChevronUp
@@ -106,7 +102,7 @@ const Navigation = (props) => {
                 setExpandTech(!expandTech);
               }}
             />
-          )}</p>
+          )}
         </div>
         <div className="list">
         <ul className={`ul ${expandTech ? "ul-open" : ""}`}>
@@ -122,7 +118,6 @@ const Navigation = (props) => {
       </div>
 
       <div className="toggle-btn">
-            <p>
         <p><strong>Service Mesh</strong></p>
           {expandMesh ? (
             <HiOutlineChevronUp
@@ -138,7 +133,7 @@ const Navigation = (props) => {
                 setExpandMesh(!expandMesh);
               }}
             />
-          )}</p>
+          )}
         </div>
         <div className="list">
         <ul className={`ul ${expandMesh ? "ul-open" : ""}`}>
