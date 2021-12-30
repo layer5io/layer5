@@ -59,6 +59,9 @@ input {
       }
 input[type="checkbox"] {
         margin: 0;
+        &:hover{
+          cursor: pointer;
+        }
         }
 
         ul{
@@ -74,7 +77,15 @@ input[type="checkbox"] {
             list-style: none;
           }
         
-         
+          .total{
+            float: right;
+            color: ${props => props.theme.primaryLightColor}; 
+            &:hover{
+                  color: ${props => props.theme.secondaryColor}; 
+                  border-color: ${props => props.theme.secondaryColor}; 
+                  cursor: pointer;
+          }
+          }
            .ul-open{
             display: flex;
             flex-direction: column;
@@ -102,6 +113,7 @@ input[type="checkbox"] {
                 p{
                     display:inline;
                 }
+                cursor: pointer;
             }
          
             .ul{

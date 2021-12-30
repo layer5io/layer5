@@ -2,10 +2,52 @@ import React, { useState } from "react";
 import { HiOutlineChevronUp, HiOutlineChevronDown } from "react-icons/hi";
 import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
 import { options } from "./options";
+import { graphql, Link, useStaticQuery} from "gatsby";
+
 
 import ResourceNavigationWrapper from "./filters.style";
 
 const Navigation = (props) => {
+
+  const counting = useStaticQuery(
+    graphql`
+            query allFilters {
+                type: allMdx(
+                    filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+                ){
+                    group(field: frontmatter___type) {
+                        fieldValue
+                        totalCount
+                    }
+                }
+                product: allMdx(
+                  filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+              ){
+                  group(field: frontmatter___product) {
+                      fieldValue
+                      totalCount
+                  }
+              }
+              technology: allMdx(
+                filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+            ){
+                group(field: frontmatter___technology) {
+                    fieldValue
+                    totalCount
+                }
+            }
+            mesh: allMdx(
+              filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+          ){
+              group(field: frontmatter___mesh) {
+                  fieldValue
+                  totalCount
+              }
+          }
+            }
+        `
+  );
+
     const [expandType, setExpandType] = useState(true);
     const [expandProduct, setExpandProduct] = useState(false);
     const [expandTech, setExpandTech] = useState(false);
@@ -16,29 +58,27 @@ const Navigation = (props) => {
     let productOptions = data.filter((data) => data.category === "Product");
     let techOptions = data.filter((data) => data.category === "Technology");
     let meshOptions = data.filter((data) => data.category === "Service Mesh");
-   
+    let i=0;
+    const types = counting.type.group;
+    const products = counting.product.group;
+    const technologies = counting.technology.group;
+    const meshes = counting.mesh.group;
+
 
     return (
         <ResourceNavigationWrapper>
         <div className="filter">
         <p className="heading"><strong>Filters</strong> <span className= {props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>Clear Filters <IoMdClose className="clear-icon"  /></span></p>
             
-        <div className="toggle-btn">
-            
+        <div className="toggle-btn"  onClick={function () {setExpandType(!expandType);}}>   
         <p><strong>Type</strong></p>
           {expandType ? (
             <HiOutlineChevronUp
               className="menu-icon"
-              onClick={function () {
-                setExpandType(!expandType);
-              }}
             />
           ) : (
             <HiOutlineChevronDown
               className="menu-icon"
-              onClick={function () {
-                setExpandType(!expandType);
-              }}
             />
           )}
         </div>
@@ -49,27 +89,24 @@ const Navigation = (props) => {
                   <label>
                     <input type="checkbox"  value={x.value} onChange={props.handleChange} />
                     <span> {x.label}</span>
+                  { types && types.map(type => (
+                 type.fieldValue === x.value ? <span key={x.id} className="total">({type.totalCount})</span> : ""
+                  ))}
                   </label> 
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="toggle-btn">
+      <div className="toggle-btn" onClick={function () {setExpandProduct(!expandProduct);}}>
         <p><strong>Product</strong></p>
           {expandProduct ? (
             <HiOutlineChevronUp
               className="menu-icon"
-              onClick={function () {
-                setExpandProduct(!expandProduct);
-              }}
             />
           ) : (
             <HiOutlineChevronDown
               className="menu-icon"
-              onClick={function () {
-                setExpandProduct(!expandProduct);
-              }}
             />
           )}
         </div>
@@ -80,27 +117,24 @@ const Navigation = (props) => {
                   <label>
                     <input type="checkbox"  value={x.value} onChange={props.handleChange} />
                     <span> {x.label}</span>
+                  { products && products.map(product => (
+                 product.fieldValue === x.value ? <span key={x.id}  className="total">({product.totalCount})</span> : ""
+                  ))}
                   </label> 
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="toggle-btn">
+      <div className="toggle-btn" onClick={function () {setExpandTech(!expandTech);}}>
         <p><strong>Technology</strong></p>
           {expandTech ? (
             <HiOutlineChevronUp
               className="menu-icon"
-              onClick={function () {
-                setExpandTech(!expandTech);
-              }}
             />
           ) : (
             <HiOutlineChevronDown
               className="menu-icon"
-              onClick={function () {
-                setExpandTech(!expandTech);
-              }}
             />
           )}
         </div>
@@ -111,27 +145,24 @@ const Navigation = (props) => {
                   <label>
                     <input type="checkbox"  value={x.value} onChange={props.handleChange} />
                     <span> {x.label}</span>
+                  { technologies && technologies.map(tech => (
+                 tech.fieldValue === x.value ? <span key={x.id}  className="total">({tech.totalCount})</span> : ""
+                  ))}
                   </label> 
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="toggle-btn">
+      <div className="toggle-btn" onClick={function () {setExpandMesh(!expandMesh);}}>
         <p><strong>Service Mesh</strong></p>
           {expandMesh ? (
             <HiOutlineChevronUp
               className="menu-icon"
-              onClick={function () {
-                setExpandMesh(!expandMesh);
-              }}
             />
           ) : (
             <HiOutlineChevronDown
               className="menu-icon"
-              onClick={function () {
-                setExpandMesh(!expandMesh);
-              }}
             />
           )}
         </div>
@@ -142,6 +173,9 @@ const Navigation = (props) => {
                   <label>
                     <input type="checkbox"  value={x.value} onChange={props.handleChange} />
                     <span> {x.label}</span>
+                  { meshes && meshes.map(mesh => (
+                 mesh.fieldValue === x.value ? <span key={x.id}  className="total">({mesh.totalCount})</span> : ""
+                  ))}
                   </label> 
             </li>
           ))}

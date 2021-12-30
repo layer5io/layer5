@@ -15,7 +15,7 @@ const NoResources = (props) => {
           </Col>
           <Col sm={12} lg={8}>
             <div className="error-text">
-        <h1 className="errorMessage"> No resources match the applied filters </h1>
+        <h1 className="errorMessage"> No matching resources </h1>
         <h3 className="errorSubtitle">Try removing one or more filters to broaden your results.</h3>
         </div>
         </Col>
