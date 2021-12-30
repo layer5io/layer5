@@ -98,6 +98,11 @@ export const CardWrapper = styled.div`
             font-weight: 400;
             flex: auto;
         }
+        .type{
+            text-align: end;
+            font-size: 1rem;
+            font-weight: 400;
+        }
     }
 
     .readmore-btn-wrapper{

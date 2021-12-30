@@ -8,6 +8,8 @@ import PageHeader from "../../../reusecore/PageHeader";
 import RelatedResources from "../../../components/Related-Resources";
 import ResourcePageWrapper from "./resourceSingle.style";
 import RelatedResourcesFactory from "../../../components/Related-Resources/relatedResourcesFactory";
+import { IoIosArrowDropleftCircle } from "react-icons/io";
+
 
 const ResourceSingle = ({data}) => {
   const { frontmatter, body, fields } = data.mdx;
@@ -54,7 +56,6 @@ const ResourceSingle = ({data}) => {
       <PageHeader
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
-        category={frontmatter.category}
 
         thumbnail={frontmatter.thumbnail}
       />
@@ -63,17 +64,12 @@ const ResourceSingle = ({data}) => {
           <SRLWrapper>
             <MDXRenderer>{body}</MDXRenderer>
           </SRLWrapper>
-          <div className="resource-info-block">
-            <div className="tags">
-              <span>Tags:</span>
-              <div>
-                {frontmatter.tags && frontmatter.tags.map(tag => (
-                  <Link key={`${frontmatter.title}-${tag}`}
-                    to={`/resources/tag/${slugify(tag)}`}>{tag}
-                  </Link>
-                ))}
-              </div>
-            </div>
+
+           <div className="backBtn">
+            <Link to="/resources">
+              <IoIosArrowDropleftCircle />
+              <h4>All Resources</h4>
+            </Link>
           </div>
           <RelatedResources
             resourceType="resources"

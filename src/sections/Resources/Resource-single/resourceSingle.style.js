@@ -12,6 +12,31 @@ const ResourcePageWrapper = styled.div`
         padding-bottom: 2rem;
     }
 
+    .backBtn {
+        margin: 3rem auto;
+        font-weight: 600;
+        z-index: 2;
+    
+        @media screen and (max-width: 62rem) {
+            display: none;
+        }
+        a{
+            display: flex;
+            color: ${props => props.theme.primaryColor};
+            &:hover{
+                color: ${props => props.theme.linkColor};
+            }
+            
+            h4 {
+                line-height: 1.75rem;
+                margin-left: 0.5rem;
+            }
+            svg {
+                font-size: 1.75rem;
+            }
+        }
+    }
+
     .tags{
         display: flex;
         span{
