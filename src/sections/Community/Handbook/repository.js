@@ -5,6 +5,8 @@ import TOC from "../../../components/handbook-navigation/index";
 import { repo_data } from "./repo-data";
 import github from "../../../assets/images/socialIcons/github.svg";
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
+import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator.svg";
+import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
@@ -35,6 +37,7 @@ const Repository = () => {
       <div className="page-section">
         <Container>
           <div className="content">
+            <p>A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">Layer5 GitHub Process</a> for more related information.</p>
             <a id="top">
               {" "}
               <h2>GitHub Organizations and Repositories</h2>{" "}
@@ -57,7 +60,7 @@ const Repository = () => {
                     src={layer5icon}
                   />
                   &nbsp; Layer5
-                </a>
+                </a> - emerging projects like GetNighthawk, community with  MeshMates, a catch-all org.
               </li>
               <li>
                 <a href="http://github.com/meshery">
@@ -72,7 +75,7 @@ const Repository = () => {
                   />
                   {"   "}
                   &nbsp; Meshery
-                </a>
+                </a> -  Meshery and its components Meshery Operator <img src={MesheryOperator} className="project-description-icon" /> and MeshSync <img src={MeshSync} className="project-description-icon" />.
               </li>
               <li>
                 {" "}
@@ -85,7 +88,7 @@ const Repository = () => {
                     src={servicemeshperformance}
                   />
                   &nbsp; Service Mesh Performance
-                </a>
+                </a> - Service Mesh Performance specification and site.
               </li>
 
               <li>
@@ -98,7 +101,7 @@ const Repository = () => {
                     src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
                   />{" "}
                   &nbsp; Service Mesh Patterns
-                </a>
+                </a> - a collection of curated patterns of service mesh use cases compatible with Meshery.
               </li>
             </ul>
 
@@ -112,10 +115,10 @@ const Repository = () => {
                 <table className="frontendTable" key={category}>
                   <thead>
                     <tr>
+                      <th className="linkscol">Site</th>
                       <th>Project</th>
                       <th>Framework</th>
-                      <th className="linkscol">Site</th>
-                      <th className="linkscol">GitHub</th>
+                      <th className="linkscol">Repo</th>
                     </tr>
                   </thead>
                   {frontendProjects.subdata.map((subdata) => {
@@ -125,17 +128,18 @@ const Repository = () => {
                       repository,
                       site,
                       image,
+                      description,
                     } = subdata;
                     return (
                       <tbody key={project}>
                         <tr>
-                          <td>{project}</td>
-                          <td>{language}</td>
                           <td>
                             <a href={site} target="_blank" rel="noreferrer">
                               <img className="site-icon" src={image} />
                             </a>
                           </td>
+                          <td>{project}</td>
+                          <td>{language}</td>
                           <td>
                             <a
                               href={repository}
@@ -166,16 +170,19 @@ const Repository = () => {
                     <tr>
                       <th>{category}</th>
                       <th>Language</th>
-                      <th className="linkscol">GitHub</th>
+                      <th>Description</th>
+                      <th className="linkscol">Repo</th>
                     </tr>
                   </thead>
                   {backendProjects.subdata.map((subdata) => {
-                    const { project, language, repository } = subdata;
+                    const { project, image, language, description, repository } = subdata;
                     return (
                       <tbody key={project}>
                         <tr>
-                          <td>{project}</td>
+                          <td>
+                            <img className="site-icon inline" src={image} />&nbsp;{project}</td>
                           <td>{language}</td>
+                          <td>{description}</td>
                           <td>
                             <a
                               href={repository}

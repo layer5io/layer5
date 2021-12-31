@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../../../components/layout";
 
 import SEO from "../../../components/seo";
-import AboutPage from "../../../sections/Community/Handbook/about";
+import LeadershipPage from "../../../sections/Community/Handbook/community-roles";
 import Navigation from "../../../sections/General/Navigation";
 import Footer from "../../../sections/General/Footer";
 
@@ -11,15 +11,15 @@ import { GlobalStyle } from "../../../sections/app.style";
 import theme from "../../../theme/app/themeStyles";
 
 
-const CommunityAbout = () => (
+const ContributorJourney = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Community Handbook" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO title="Contributor Journey" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
       <Navigation />
-      <AboutPage />
+      <LeadershipPage />
       <Footer/>
     </Layout>
   </ThemeProvider>
 );
-export default CommunityAbout;
+export default ContributorJourney;

@@ -34,6 +34,9 @@ const Card = ({ frontmatter, fields }) => {
             {!frontmatter.date && frontmatter.author && (
               <p className="author">{frontmatter.author}</p>
             )}
+             {!frontmatter.author && frontmatter.type && (
+              <p className="type">{frontmatter.type}</p>
+            )}
           </div>
           <div className="readmore-btn-wrapper">
             { fields && fields.slug && frontmatter.eurl && (
