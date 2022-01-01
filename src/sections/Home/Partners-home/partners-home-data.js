@@ -34,7 +34,7 @@ export const partners = [
   },{
     name: "Hashicorp partnership with Layer5",
     imageLink: hashicorp, 
-    imageRoute: "/partners#HashiCorp",
+    imageRoute: "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership",
     innerDivStyle: "partner__block__inner"
   },{
     name: "Hewlett-Packard Enterprise",

@@ -65,7 +65,7 @@ const ResourceSingle = ({data}) => {
             <MDXRenderer>{body}</MDXRenderer>
           </SRLWrapper>
 
-           <div className="backBtn">
+          <div className="backBtn">
             <Link to="/resources">
               <IoIosArrowDropleftCircle />
               <h4>All Resources</h4>
