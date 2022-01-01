@@ -29,12 +29,12 @@ export const partners = [
   },{
     name: "Citrix",
     imageLink: citrix, 
-    imageRoute: "/partners#utaustin",
+    imageRoute: "/partners#Citrix",
     innerDivStyle: "partner__block__inner"
   },{
     name: "Hashicorp partnership with Layer5",
     imageLink: hashicorp, 
-    imageRoute: "/company/news/layer5-and-hashicorp-launch-service-mesh-partnership",
+    imageRoute: "/partners#HashiCorp",
     innerDivStyle: "partner__block__inner"
   },{
     name: "Hewlett-Packard Enterprise",
