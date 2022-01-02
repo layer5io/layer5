@@ -29,7 +29,7 @@ export const partners = [
   },{
     name: "Citrix",
     imageLink: citrix, 
-    imageRoute: "/partners#utaustin",
+    imageRoute: "/partners#Citrix",
     innerDivStyle: "partner__block__inner"
   },{
     name: "Hashicorp partnership with Layer5",

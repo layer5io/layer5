@@ -1,3 +1,4 @@
+
 import partner1 from "../../assets/images/partners/University_of_Texas_at_Austin_seal.png";
 import partner2 from "../../assets/images/partners/gsoc.svg";
 import partner3 from "../../assets/images/partners/UEM_Logo.jpg";
@@ -18,6 +19,7 @@ export const partners = [
     //link: "http://www.ece.utexas.edu/speakers/lee-calcote",
     type: "academic",
     imageLink: partner1, 
+    partnerId: "utaustin",
     //imageRoute: "http://www.ece.utexas.edu/speakers/lee-calcote",
     moreInfo:"In partnership with faculty of the Cockrell School of Engineering at The University of Texas at Austin, graduate students engage in research on the affects of hardware architectures and the performance of software-based networking.Ph.D. candidates leverage Meshery in research and analysis of affect and overhead service mesh architectures have on when running distributed systems. Learn more about our collaborative research"
   },{
@@ -34,6 +36,7 @@ export const partners = [
     //link: "/careers/internships",
     type: "academic",
     imageLink: partner3,
+    partnerId: "uem",
     //imageRoute: "https://uem.edu.in/blog/what-is-open-source/",
     moreInfo: "We have officially partnered with the University of Engineering & Management (UEM), Jaipur. We thank the faculty of UEM Jaipur for partnering with us. As part of the partnership program we have a wide variety of interns from the university participating in our open source projects. The interns have the opportunity to work on a variety of cloud native technologies.Based on the area of their individual interest they can choose the technologies they want to learn or sharpen their skills. Learn more about Layer5's internships",
   },{
@@ -42,6 +45,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner4,
+    partnerId: "Citrix",
     //imageRoute: "https://www.citrix.com/products/citrix-adc/",
     moreInfo: "Citrix ADC is an application delivery and load balancing solution that provides a high-quality user experience for your web, traditional, and cloud-native applications regardless of where they are hosted. It comes in a wide variety of form factors and deployment options without locking you into a single cloud. Pooled capacity licensing enables the movement of capacity among cloud deployments.",
   },{
@@ -58,6 +62,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner6,
+    partnerId: "HashiCorp",
     imageRoute: "https://www.hashicorp.com/partners/tech/layer5",
     moreInfo: "HashiCorp is the leader in cloud infrastructure automation software. Our software stack enables the provisioning, securing, connecting, and running of apps and the infrastructure to support them. HashiCorp unlocks the cloud operating model for every business and enable their digital transformation strategies to succeed.",
   },{
@@ -66,6 +71,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner7,
+    partnerId: "hpe",
     //imageRoute: "https://www.hpe.com/",
     moreInfo: "HPE GreenLake is an IT-as-a-service offering that brings the cloud experience to your on-premises infrastructure and unifies your edges, clouds, and data centers.",
   },{
@@ -90,6 +96,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner9,
+    partnerId: "redhat",
     //imageRoute: "https://www.redhat.com/",
     moreInfo: "The world’s leading provider of enterprise open source solutions, using a community-powered approach to deliver high-performing Linux, cloud, container, and Kubernetes technologies.",
   },{
@@ -106,6 +113,7 @@ export const partners = [
     //link: null,
     type: "technology",
     imageLink: partner11,
+    partnerId: "intel",
     //imageRoute: "https://www.intel.in/content/www/in/en/homepage.html",
     moreInfo:  "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
   }

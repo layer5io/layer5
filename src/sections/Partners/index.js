@@ -67,7 +67,9 @@ const Partner = () => {
                 </Col>
                 <Col xs={12} sm={9} lg={9}>
                   <div className="container">
-                    <h2>{partner.name}</h2>
+                    <a id={partner.partnerId} className="anchor">
+                      <h2>{partner.name}</h2>
+                    </a>
                     <div>
                       {partner.desc}
                     </div>
@@ -114,7 +116,9 @@ const Partner = () => {
                 </Col>
                 <Col xs={12} sm={9} lg={9}>
                   <div className="container">
-                    <h2>{partner.name}</h2>
+                    <a id={partner.partnerId} className="anchor">
+                      <h2>{partner.name}</h2>
+                    </a>
                     <div>
                       {partner.desc}
                     </div>
