@@ -99,6 +99,7 @@ const CourseOverviewTemplate = ({ data, pageContext }) => {
           course={data.courseByTitle.nodes[0]}
           chapters={data.courseChapters.nodes}
           serviceMeshesList={data.serviceMeshesList.nodes}
+          canonical="https://layer5.io/learn/learning-paths"
         />
         <Footer />
       </Layout>

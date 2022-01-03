@@ -13,6 +13,13 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
     {
+      resolve: "gatsby-plugin-react-helmet-canonical-urls",
+      options: {
+        siteUrl: "https://www.layer5.io",
+        noQueryString: true
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: [
