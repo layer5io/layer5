@@ -209,6 +209,14 @@ const PartnerWrapper = styled.section`
     .content-head{
         padding: 3rem;
     }
+
+    .anchor:before{ 
+        display: block;
+        content: " ";
+        height: 50px;
+        margin: -50px 0 0;
+     }
+     
     @media only screen and (max-width: 1500px) {
         .partner-container{
             .partner-container-body{

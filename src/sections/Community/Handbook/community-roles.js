@@ -7,25 +7,17 @@ import { Link } from "gatsby";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const contents = [
-  {
-    id: 0,
-    link: "#top",
-    text: "What does leadership mean to the Layer5 community?",
-  },
+  { id: 0, link: "#top", text: "What are the different roles in the Layer5 community?",},
   { id: 1, link: "#Community Manager", text: "Community Manager" },
   { id: 2, link: "#MeshMate", text: "MeshMate" },
-  {
-    id: 3,
-    link: "#Maintainer",
-    text: "Maintainer",
-  },
+  { id: 3, link: "#Maintainer", text: "Maintainer", },
 ];
 
 const CommunityGuide = () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">
-        <h1>Contributor Journey</h1>
+        <h1>Community Roles</h1>
       </div>
       <TOC />
       <div className="page-section">
@@ -33,7 +25,7 @@ const CommunityGuide = () => {
           <div className="content">
             <a id="top">
               {" "}
-              <h2>What does leadership mean to the Layer5 community?</h2>{" "}
+              <h2>What are the roles held by individuals in the Layer5 community?</h2>{" "}
             </a>
 
             <p>
@@ -121,7 +113,7 @@ const CommunityGuide = () => {
             </a>
 
             <p>
-              <strong> Roles/Responsibilities: </strong>
+              <strong> Roles and Responsibilities: </strong>
               <br />
               Layer5 MeshMates are committed to helping community members be
               successful contributors. MeshMates aid in identifying areas of

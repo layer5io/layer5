@@ -6,12 +6,19 @@ module.exports = {
     author: "Layer5 Authors",
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
-    image: "/images/layer5-tag-dark-bg.png",
+    image: "/images/layer5-company.png",
     twitterUsername: "@layer5",
   },
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-react-helmet-canonical-urls",
+      options: {
+        siteUrl: "https://www.layer5.io",
+        noQueryString: true
+      },
+    },
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
