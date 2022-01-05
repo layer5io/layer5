@@ -10,7 +10,7 @@ When submitting a pull request a preview deployment will be built and made avail
 
 #### Community Member Profile ([create new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A))
 
-Layer5 community members are an integral part of what makes Layer5 and it's projects successful. Prominently highlighting our members and their works is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A), which has all the instructions needed. 
+Layer5 community members are an integral part of what makes Layer5 and it's projects successful. Prominently highlighting our members and their works is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](./.github/ISSUE_TEMPLATE/community_member_profile.md), which has all the instructions needed. 
 
 #### <a name="updating-the-service-mesh-landscape">Updating the Service Mesh Landscape ([create new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D))
 
@@ -102,6 +102,6 @@ To ensure all your commits are signed, you may choose to add this alias to your 
 ```
 Or you may configure your IDE, for example, Visual Studio Code to automatically sign-off commits for you:
 
-<a href="./assets/images/git-signoff-vscode.png" ><img src="./assets/images/git-signoff-vscode.png" width="50%"/><a>
+<a href=".github/assets/images/git-signoff-vscode.png" ><img src=".github/assets/images/git-signoff-vscode.png" width="50%"/><a>
 
 ### <a name="flow">Contribution Flow</a>
