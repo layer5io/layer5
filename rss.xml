@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5]]></title><description><![CDATA[Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 05 Jan 2022 19:11:28 GMT</lastBuildDate><item><title><![CDATA[How to write unit and integration tests for mesheryctl]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5]]></title><description><![CDATA[Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 05 Jan 2022 21:02:44 GMT</lastBuildDate><item><title><![CDATA[How to write unit and integration tests for mesheryctl]]></title><description><![CDATA[function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
@@ -12,9 +12,12 @@ var _frontmatter = {
   "date": "2021-12-22 19:32:05 -0530",
   "author": "Piyush Singariya",
   "thumbnail": "./integration-test.png",
+  "type": "Blog",
+  "product": "Meshery",
   "category": "Meshery",
   "tags": ["Projects", "Meshery", "mesheryctl"],
-  "published": true
+  "published": true,
+  "resource": true
 };
 var layoutProps = {
   _frontmatter: _frontmatter
@@ -113,9 +116,12 @@ var _frontmatter = {
   "date": "2021-11-09 10:30:05 -0530",
   "author": "Layer5 Team",
   "thumbnail": "./service-mesh-specifications.png",
+  "type": "Blog",
+  "product": "Service Mesh Performance",
   "category": "Service Mesh Specifications",
   "tags": ["SMI", "SMP", "Meshery"],
-  "published": true
+  "published": true,
+  "resource": true
 };
 var layoutProps = {
   _frontmatter: _frontmatter
@@ -433,9 +439,12 @@ var _frontmatter = {
   "date": "2021-10-09 10:30:05 -0530",
   "author": "Debopriya Bhattacharjee",
   "thumbnail": "./meshery-webinar.png",
+  "type": "Blog",
+  "product": "Meshery",
   "category": "Meshery",
   "tags": ["Projects", "Meshery"],
-  "published": true
+  "published": true,
+  "resource": true
 };
 var layoutProps = {
   _frontmatter: _frontmatter
@@ -705,10 +714,13 @@ var _frontmatter = {
   "date": "2021-09-20 10:30:05 -0530",
   "author": "Debopriya Bhattacharjee",
   "thumbnail": "./Cover-image.png",
+  "type": "Blog",
+  "product": "Service Mesh Performance",
   "category": "Service Mesh Specifications",
   "tags": ["Projects", "SMI", "SMP"],
   "featured": true,
-  "published": true
+  "published": true,
+  "resource": true
 };
 var layoutProps = {
   _frontmatter: _frontmatter
