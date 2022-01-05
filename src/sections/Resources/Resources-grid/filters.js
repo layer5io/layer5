@@ -13,7 +13,7 @@ const Navigation = (props) => {
     graphql`
             query allFilters {
                 type: allMdx(
-                    filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+                    filter: { fields: { collection: { in: ["blog", "resources"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
                 ){
                     group(field: frontmatter___type) {
                         fieldValue
@@ -21,7 +21,7 @@ const Navigation = (props) => {
                     }
                 }
                 product: allMdx(
-                  filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+                  filter: { fields: { collection: { in: ["blog", "resources"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
               ){
                   group(field: frontmatter___product) {
                       fieldValue
@@ -29,7 +29,7 @@ const Navigation = (props) => {
                   }
               }
               technology: allMdx(
-                filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+                filter: { fields: { collection: { in: ["blog", "resources"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
             ){
                 group(field: frontmatter___technology) {
                     fieldValue
@@ -37,7 +37,7 @@ const Navigation = (props) => {
                 }
             }
             mesh: allMdx(
-              filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+              filter: { fields: { collection: { in: ["blog", "resources"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
           ){
               group(field: frontmatter___mesh) {
                   fieldValue
