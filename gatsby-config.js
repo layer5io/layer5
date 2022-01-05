@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-react-helmet-canonical-urls",
       options: {
-        siteUrl: "https://www.layer5.io",
+        siteUrl: "https://layer5.io",
         noQueryString: true
       },
     },
