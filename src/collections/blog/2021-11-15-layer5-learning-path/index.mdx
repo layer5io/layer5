@@ -1,0 +1,93 @@
+---
+title: "Introducing Layer5 Learning Paths"
+subtitle: ""
+date: 2021-11-15 11:00:00 +0000
+author: Anita Ihuman
+thumbnail: ./learning-path.jpeg
+category: Community
+tags:
+    - Community
+published: true
+---
+
+import { BlogWrapper } from "../Blog.style.js";
+import Blockquote from "../../../reusecore/Blockquote";
+import { Link } from "gatsby";
+import BasicsofServiceMesh from "./mastering-service-meshes-for-Developers.png";
+import Architecture from "./course-architecture.png";
+import LearningPath from "./learning-path.jpeg";
+import ServiceMesh from "./servicemeshes.png";
+
+<BlogWrapper>
+
+<img style="max-height:155px; display: inline; position: relative; float: right; margin-left:0.25rem;" src={LearningPath} />
+<h1>Introducing Layer5 Learning Paths</h1>
+<p>After five months of community-based development, the Layer5 <a href="https://layer5.io/learn/learning-paths">Learning Paths</a> project, is officially launched! Exciting as it sounds, in addition to the existing free <a href="https://layer5.io/learn">service mesh training resources</a> available to you, Layer5 Learning Paths offer curated guides to assist you in developing your general cloud native networking knowledge and service mesh-specific skills.
+</p>
+
+<p>The Learning Path is an initiative developed to help enlighten and test your knowledge on service meshes and management of the workloads that you’ll build atop of them. As a light Learning Management System, Layer5 Learning Paths offer cloud native training and certification through the lens of role-based paths with interactive labs intertwined through the chapters. Oriented around your role as a developer, operator, or security engineer, you can choose your learning path most relevant to your everyday focus.
+</p>
+
+<p>Learning Paths comprise courses that are hand-curated by the maintainers at Layer5 and equip you with the foundational tools like <a href="https://meshery.io/">Meshery</a> that assists you in comprehending service mesh concepts. <a href="https://layer5.io/learn/learning-paths/mastering-service-meshes-for-developers">Mastering Service Meshes For Developers</a> is the initial Learning Path offering that focuses on Developers and what you need to know to successfully design workloads for a service mesh environment.
+</p>
+
+<Blockquote style="padding-bottom: 1rem;" quote="blah"/>
+
+<p>The Layer5 <a href="https://layer5.io/community">community</a> believes that the growth of an individual user and contributor will impact the community’s development as a whole. That is why these courses are all carefully selected to help you learn service mesh the right way from experts on Service Meshes in Layer5. This Learning Path/Certification course is designed to take a developer from a novice in service mesh to becoming an advanced Service Mesh Practitioner.</p>
+
+<h3>Learning Paths information architecture</h3>
+<img style="max-height:155px; display: inline; position: relative; float: right; margin-left:0.25rem;" src={Architecture} />
+
+<p> Since this is the first phase of the Learning Path/Certification project, only
+  one learning path is currently available: Mastering Service Meshes For
+  Developers, which is two courses in length with ~8 chapters per course. The
+  courses in this learning path focus on the fundamentals of Service Meshes and
+  use <a href="https://meshery.io/">Meshery</a> as the management plane to manage the service meshes. It comprises a hands-on tutorial on <a href="https://layer5.io/learn/learning-paths/mastering-service-meshes-for-developers/introduction-to-service-meshes">introduction to Service Meshes</a> and an <a href="https://layer5.io/learn/learning-paths/mastering-service-meshes-for-developers/advance-concepts-of-service-mesh"> introduction to the advanced concepts of Service Meshes</a>. Within each course, you will find
+  eight to nine chapters simplified to help developers understand Service Meshes
+  & its concepts, installing Meshery, deploying applications, and managing
+  service meshes using Meshery.
+</p>
+
+<img style="max-height:155px; display: inline; position: relative; float: right; margin-left:0.25rem;" src={BasicsofServiceMesh} />
+
+<p>
+  There are also options that permit users to switch between the service mesh
+  they wish to learn in each learning path. That is to say, users can understand
+  and master the concepts of different service meshes individually under one
+  learning path.
+</p>
+
+<img style="max-height:155px; display: inline; position: relative; float: right; margin-left:0.25rem;" src={ServiceMesh} />
+
+<p>
+  Phase two and three of the Learning Path/Certification will focus on the
+  user’s details to help track progress on each learning path. There will be
+  multiple learning paths, interactive labs, & quizzes that test the knowledge
+  of participants and award them with a certificate upon the completion of a
+  learning path. Maintainers and contributors are working towards implementing
+  some of these features in future releases of learning paths. Some of the core
+  features to expect are:
+</p>
+<ul>
+  <li>Multiple Learning Paths.</li>
+  <li>User Account</li>
+  <li>Bookmarking / Progression tracking</li>
+  <li>Quizzes and grades</li>
+  <li>Certificate of Completion</li>
+</ul>
+
+<h3>What’s next?</h3>
+<p>
+  The Layer5 maintainers and contributors are improving the Learning path’s
+  features and increasing the number of courses and learning paths. While all
+  that is still in motion, these courses are now available on the <Link to="/learn/learning-paths">Layer5 site</Link>.
+  Feel free to take these courses and try out the hands-on tutorials provided.
+  If you encounter any bugs while taking these courses, kindly report by
+  creating an issue; you can also join the <a href="https://layer5io.slack.com/archives/C015QJKUMPU">#Website</a> Slack channel if you have
+  any questions or wish to contribute to this project.
+</p>
+
+</BlogWrapper>
+
+
+
