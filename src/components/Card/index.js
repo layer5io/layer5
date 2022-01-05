@@ -34,7 +34,7 @@ const Card = ({ frontmatter, fields }) => {
             {!frontmatter.date && frontmatter.author && (
               <p className="author">{frontmatter.author}</p>
             )}
-             {!frontmatter.author && frontmatter.type && (
+            {!frontmatter.author && frontmatter.type && (
               <p className="type">{frontmatter.type}</p>
             )}
           </div>
