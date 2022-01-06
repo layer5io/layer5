@@ -234,10 +234,16 @@ styles for meshmate-of-the-year-2020
   styles for service-mesh-specifications 
   =======================*/
 
+  .slides{
+    width: 45%;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    margin-bottom: 1rem;
+  }
   .slides-right{
     width: 45%;
     display: inline;
     position: relative;
+    margin: 1rem 0 1rem 2rem;
     float: right;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
