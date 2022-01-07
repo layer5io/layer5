@@ -253,7 +253,7 @@ git commit messages:
 
 In most cases, git automatically adds the signoff to your commit with the use of 
 `-s` or `--signoff` flag to `git commit`. You must use your real name and a reachable email
-address (sorry, no pseudonyms or anonymous contributions).//
+address (sorry, no pseudonyms or anonymous contributions).
 
 
 To ensure all your commits are signed, you may choose to add this alias to your global ```.gitconfig```:
