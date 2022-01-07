@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import { repo_data } from "./repo-data";
@@ -35,193 +35,175 @@ const Repository = () => {
       <TOC />
       <div className="page-section">
         <Container>
-          <p>
-            A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">Layer5 GitHub Process</a> for more related information.
-          </p>
-          <a id="top">
-            {" "}
-            <h2>GitHub Organizations and Repositories</h2>
-            {" "}
-          </a>
-          <p>
-            This overview serves as a resource to newcomers seeking a
-            perspective of the collective community efforts (from the limited
-            vantage point of a code-centric perspective).
-            <br /> Note that the Layer5 community spans four GitHub
-            organizations:
-          </p>
+          <div className="content">
+            <p>
+              A brief introduction to all of the Github repositories of Layer5 organization is offered below. This overview serves as a resource to newcomers seeking a perspective of the collective community efforts (from a code-centric perspective). See <a href="https://docs.google.com/document/u/0/d/1FzX-C_xy9hZ3Eu9dcCE0unhFV5LRUrb5YLn_MGYuG6Y/edit">Layer5 GitHub Process</a> for more related information.
+            </p>
 
-          <ul>
-            <li>
-              {" "}
-              <a href="https://github.com/layer5io">
+            <a id="top">
+              <h2>GitHub Organizations and Repositories</h2>
+            </a>
+
+            <p>
+              This overview serves as a resource to newcomers seeking a
+              perspective of the collective community efforts (from the limited
+              vantage point of a code-centric perspective).
+              <br />
+              Note that the Layer5 community spans four GitHub
+              organizations:
+            </p>
+
+            <ul className="project-org-list">
+              <li>
+                <a href="https://github.com/layer5io">
+                  <img
+                    src={layer5icon}
+                    alt="layer5 icon"
+                  />
+                  &nbsp; Layer5
+                </a>
+                  - emerging projects like GetNighthawk, community with  MeshMates, a catch-all org.
+              </li>
+
+              <li>
+                <a href="https://github.com/meshery">
+                  <img
+                    src={meshery}
+                    alt="meshery icon"
+                  />
+                  &nbsp; Meshery
+                </a>
+                  -  Meshery and its components Meshery Operator
                 <img
-                  margin-left="10%"
-                  width="2.5%"
-                  align="left"
-                  src={layer5icon}
-                  alt="layer5"
-                />
-                &nbsp; Layer5
-              </a>
-                - emerging projects like GetNighthawk, community with  MeshMates, a catch-all org.
-            </li>
-            <li>
-              {" "}
-              <a href="https://github.com/meshery">
+                  src={MesheryOperator}
+                  alt="meshery operator icon"
+                  style={{marginLeft: ".3rem"}}
+                /> and MeshSync
                 <img
-                  margin="10%"
-                  width="2%"
-                  align="left"
-                  align="bottom"
-                  src={meshery}
-                  alt="meshery"
-                />
-                {" "}
-                &nbsp; Meshery
-              </a>
-                -  Meshery and its components Meshery Operator
-              <img
-                src={MesheryOperator}
-                alt="meshery operator"
-                className="project-description-icon"
-              /> and MeshSync
-              <img
-                src={MeshSync}
-                alt="mesh sync"
-                className="project-description-icon"
-              />.
-            </li>
-            <li>
-              {" "}
-              <a href="https://github.com/service-mesh-performance">
-                <img
-                  margin="10%"
-                  width="2.5%"
-                  align="left"
-                  align="bottom"
-                  src={servicemeshperformance}
-                  alt="service mesh performance"
-                />
-                &nbsp; Service Mesh Performance
-              </a>
-                - Service Mesh Performance specification and site.
-            </li>
-            <li>
-              <a href="https://github.com/service-mesh-patterns">
-                <img
-                  margin="10%"
-                  width="2%"
-                  align="left"
-                  align="bottom"
-                  src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
-                  alt="service mesh patterns"
-                />{" "}
-                &nbsp; Service Mesh Patterns
-              </a>
-                - a collection of curated patterns of service mesh use cases compatible with Meshery.
-            </li>
-          </ul>
+                  src={MeshSync}
+                  alt="mesh sync icon"
+                  style={{marginLeft: ".3rem"}}
+                />.
+              </li>
 
-          <a id="Frontend Projects">
-            {" "}
-            <h2>Frontend Projects</h2>
-            {" "}
-          </a>
+              <li>
+                <a href="https://github.com/service-mesh-performance">
+                  <img
+                    src={servicemeshperformance}
+                    alt="service mesh performance icon"
+                  />
+                  &nbsp; Service Mesh Performance
+                </a>
+                  - Service Mesh Performance specification and site.
+              </li>
 
-          {frontendProjects.map((frontendProjects) => {
-            const { category } = frontendProjects;
-            return (
-              <table className="frontendTable" key={category}>
-                <thead>
-                  <tr>
-                    <th className="linkscol">Site</th>
-                    <th>Project</th>
-                    <th>Framework</th>
-                    <th className="linkscol">Repo</th>
-                  </tr>
-                </thead>
-                {frontendProjects.subdata.map((subdata) => {
-                  const {
-                    project,
-                    language,
-                    repository,
-                    site,
-                    image,
-                    description,
-                  } = subdata;
-                  return (
-                    <tbody key={project}>
-                      <tr>
-                        <td>
-                          <a href={site} target="_blank" rel="noreferrer">
-                            <img className="site-icon" src={image} />
-                          </a>
-                        </td>
-                        <td>{project}</td>
-                        <td>{language}</td>
-                        <td>
-                          <a
-                            href={repository}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <img className="github-icon" src={github} alt="github" />
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  );
-                })}
-              </table>
-            );
-          })}
+              <li>
+                <a href="https://github.com/service-mesh-patterns">
+                  <img
+                    src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
+                    alt="service mesh patterns icon"
+                  />
+                  &nbsp; Service Mesh Patterns
+                </a>
+                  - a collection of curated patterns of service mesh use cases compatible with Meshery.
+              </li>
+            </ul>
 
-          <a id="Backend Projects">
-            {" "}
-            <h2>Backend Projects</h2>
-            {" "}
-          </a>
+            <a id="Frontend Projects">
+              <h2>Frontend Projects</h2>
+            </a>
 
-          {backendProjects.map((backendProjects) => {
-            const { category } = backendProjects;
-            return (
-              <table key={category}>
-                <thead>
-                  <tr>
-                    <th>{category}</th>
-                    <th>Language</th>
-                    <th>Description</th>
-                    <th className="linkscol">Repo</th>
-                  </tr>
-                </thead>
+            {frontendProjects.map((frontendProjects) => {
+              const { category } = frontendProjects;
+              return (
+                <table className="frontendTable" key={category}>
+                  <thead>
+                    <tr>
+                      <th className="linkscol">Site</th>
+                      <th>Project</th>
+                      <th>Framework</th>
+                      <th className="linkscol">Repo</th>
+                    </tr>
+                  </thead>
+                  {frontendProjects.subdata.map((subdata) => {
+                    const {
+                      project,
+                      language,
+                      repository,
+                      site,
+                      image,
+                      description,
+                    } = subdata;
+                    return (
+                      <tbody key={project}>
+                        <tr>
+                          <td>
+                            <a href={site} target="_blank" rel="noreferrer">
+                              <img className="site-icon" src={image} />
+                            </a>
+                          </td>
+                          <td>{project}</td>
+                          <td>{language}</td>
+                          <td>
+                            <a
+                              href={repository}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <img className="github-icon" src={github} />
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    );
+                  })}
+                </table>
+              );
+            })}
 
-                {backendProjects.subdata.map((subdata) => {
-                  const { project, image, language, description, repository } = subdata;
-                  return (
-                    <tbody key={project}>
-                      <tr>
-                        <td>
-                          <img className="site-icon inline" src={image} />&nbsp;{project}</td>
-                        <td>{language}</td>
-                        <td>{description}</td>
-                        <td>
-                          <a
-                            href={repository}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            <img className="github-icon" src={github} alt="github" />
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  );
-                })}
-              </table>
-            );
-          })}
-          <TocPagination />
+            <a id="Backend Projects">
+              <h2>Backend Projects</h2>
+            </a>
+
+            {backendProjects.map((backendProjects) => {
+              const { category } = backendProjects;
+              return (
+                <table key={category}>
+                  <thead>
+                    <tr>
+                      <th>{category}</th>
+                      <th>Language</th>
+                      <th>Description</th>
+                      <th className="linkscol">Repo</th>
+                    </tr>
+                  </thead>
+                  {backendProjects.subdata.map((subdata) => {
+                    const { project, image, language, description, repository } = subdata;
+                    return (
+                      <tbody key={project}>
+                        <tr>
+                          <td>
+                            <img className="site-icon inline" src={image} />&nbsp;{project}</td>
+                          <td>{language}</td>
+                          <td>{description}</td>
+                          <td>
+                            <a
+                              href={repository}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <img className="github-icon" src={github} />
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    );
+                  })}
+                </table>
+              );
+            })}
+            <TocPagination />
+          </div>
         </Container>
         <IntraPage contents={contents} />
       </div>
