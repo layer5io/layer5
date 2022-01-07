@@ -79,6 +79,7 @@ module.exports = {
                     frontmatter {
                       title
                       author
+                      description
                       date(formatString: "MMM DD YYYY")
                       thumbnail {
                         publicURL
@@ -144,6 +145,7 @@ module.exports = {
                     frontmatter {
                       title
                       author
+                      description
                       date(formatString: "MMM DD YYYY")
                       thumbnail {
                         publicURL
