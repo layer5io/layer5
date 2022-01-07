@@ -70,7 +70,7 @@ module.exports = {
               {
                 allPosts: allMdx(
                   sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { in: ["blog", "news"] } }, frontmatter: { published: { eq: true }, featured: { eq: true }, category: { eq: Announcements } } }
+                  filter: { fields: { collection: { in: ["blog", "news"] } }, frontmatter: { published: { eq: true }, featured: { eq: true }, category: { eq: "Announcements" } } }
                   limit: 20
                 ) {
                   nodes {
