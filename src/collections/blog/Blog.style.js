@@ -282,16 +282,21 @@ styles for meshmate-of-the-year-2020
 }
 .iframe-container{
   position: relative;
+  overflow: hidden;
   width: 100%;
-  padding-bottom: 56.25%; 
-  height: 0;
-}
-.iframe-container iframe{
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  padding-top: 56.25%; 
+  iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    display: block;
+    margin-right: auto;
+    margin-left:auto;
+  }
 }
 
 `;
