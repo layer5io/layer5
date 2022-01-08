@@ -49,9 +49,9 @@ export const repo_data = [
       {
         project: "Meshery UI",
         image: meshery,
-        site: "https://github.com/layer5io/meshery/tree/master/ui",
-        language: "NextJS, MaterialUI and Billboard.js",
-        repository: "https://github.com/layer5io/meshery/tree/master/ui",
+        site: "https://github.com/meshery/meshery/tree/master/ui",
+        language: "NextJS, React.js, MaterialUI and Billboard.js",
+        repository: "https://github.com/meshery/meshery/tree/master/ui",
       },
       {
         project: "Service Mesh Performance",
@@ -73,16 +73,16 @@ export const repo_data = [
         image: meshery,
         site:
           "/service-mesh-management/meshmap",
-        language: "Cytoscape.js",
+        language: "React.js, Cytoscape.js",
         description: "A visual topology to display service mesh configuration, workloads and traffic.",
         repository: "https://github.com/meshery/meshery",
       },
       {
         project: "Service Mesh Discussion",
         image: five,
-        site: "https://discuss.layer5.io/",
+        site: "https://discuss.layer5.io",
         language: "Discourse",
-        repository: " https://staging-discuss.layer5.io/",
+        repository: " https://discuss.layer5.io",
       },
     ],
   },
@@ -146,7 +146,7 @@ export const repo_data = [
         image: meshery,
         language: "Golang, gRPC",
         description: "The service mesh management plane to provide governance and backend system integration. Golang, gRPC, NATS, CloudEvents",
-        repository: "https://github.com/layer5io/meshery",
+        repository: "https://github.com/meshery/meshery",
       },
       {
         project: "SMI Conformance",
@@ -161,14 +161,14 @@ export const repo_data = [
         image: MesheryOperator,
         language: "Golang, Kubernetes Operator",
         description: "Meshery Operator is the multi-service mesh operator and implementation of MeshSync.",
-        repository: "https://github.com/layer5io/meshery-operator",
+        repository: "https://github.com/meshery/meshery-operator",
       },
       {
         project: "MeshSync",
         image: MeshSync,
         language: "Golang and NATS",
         description: "MeshSync is a multi-mesh resource discovery application which is also a custom kubernetes controller.",
-        repository: "https://github.com/layer5io/meshsync",
+        repository: "https://github.com/meshery/meshsync",
       },
       {
         project: "Learn-Layer5",
