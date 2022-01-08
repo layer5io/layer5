@@ -48,6 +48,7 @@ const Navigation = (props) => {
         `
   );
 
+  const [expandFilter, setExpandFilter] = useState(true);
   const [expandType, setExpandType] = useState(true);
   const [expandProduct, setExpandProduct] = useState(false);
   const [expandTech, setExpandTech] = useState(false);
@@ -73,9 +74,14 @@ const Navigation = (props) => {
   return (
     <ResourceNavigationWrapper>
       <div className="filter">
+        <div onClick={() => {
+          setExpandFilter(!expandFilter); 
+        }} className="filter-menu-icon">
+          {expandFilter ? <HiOutlineChevronUp className="menu-icon"/> : <HiOutlineChevronDown className="menu-icon"/>}          
+        </div>
         <p className="heading"><strong>Filters</strong> <span className= {props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>Clear Filters <IoMdClose className="clear-icon"  /></span></p>
             
-        <div className="toggle-btn"  onClick={function () {
+        { expandFilter ? <div><div className="toggle-btn"  onClick={function () {
           setExpandType(!expandType); 
         }}>   
           <p><strong>Type</strong></p>
@@ -199,8 +205,9 @@ const Navigation = (props) => {
               </li>
             ))}
           </ul>
-        </div>
-      
+        </div>    
+        </div> : " "}
+
 
       </div>
       

@@ -6,6 +6,11 @@ export const ResourceNavigationWrapper = styled.div`
   margin-right: 2rem ;
   position: sticky;
 }
+
+.filter-menu-icon {
+  display : none
+}
+
 .filter-wrap {
     display: inline-block;
     float: left;
@@ -134,6 +139,9 @@ input[type="checkbox"] {
        width: auto;
        .filter{
         display:contents;
+       }
+       .filter-menu-icon{
+         display: block;
        }
            
 `;
