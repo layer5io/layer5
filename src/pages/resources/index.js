@@ -16,6 +16,8 @@ import theme from "../../theme/app/themeStyles";
 
 const MembersPage = () => {
   const [filter, setFilter] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(9);
   
   const handleChange = () => {
     var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
@@ -24,10 +26,12 @@ const MembersPage = () => {
       filters.push(checkboxes[i].value);
     }
     setFilter(filters);
+    setCurrentPage(1);
   };
 
   const clear = () => {
     setFilter([]);
+    setCurrentPage(1);
     document.querySelectorAll("input[type=\"checkbox\"]")
       .forEach(el => el.checked = false);
   };
@@ -48,7 +52,7 @@ const MembersPage = () => {
             <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
           </Col>
           <Col xs={12} lg={8}>
-            <ResourcesList resource={filter} />
+            <ResourcesList resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
           </Col>
         </Row>
         <Footer />

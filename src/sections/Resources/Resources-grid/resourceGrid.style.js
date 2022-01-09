@@ -4,6 +4,10 @@ export const ResourcePageWrapper = styled.div`
     .resource-grid-wrapper{
         margin: 5rem 2rem;
     }
+    .resource-pagination-wrapper{
+        display:block;
+        margin: 0 auto;
+    }
 
     @media only screen and (max-width: 992px) {
         .resource-page-wrapper{
