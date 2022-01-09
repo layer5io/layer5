@@ -29,7 +29,7 @@
     "@fullcalendar/react": "^5.5.0",
     "@mdx-js/mdx": "^1.6.11",
     "@mdx-js/react": "^1.6.11",
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "babel-plugin-styled-components": "^1.10.7",
     "caniuse-lite": "^1.0.30001295",
     "dedent": "^0.7.0",
