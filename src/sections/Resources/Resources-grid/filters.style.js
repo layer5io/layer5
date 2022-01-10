@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const ResourceNavigationWrapper = styled.div`
 .filter{
-  margin-left: 8rem ;
-  margin-right: 2rem ;
+  margin-right: 1rem ;
   position: sticky;
 }
 .filter-wrap {
