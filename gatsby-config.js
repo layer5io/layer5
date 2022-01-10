@@ -59,7 +59,7 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  media: node.frontmatter.thumbnail && {
+                  enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [{ "content:encoded": node.html }],
@@ -125,10 +125,12 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  image: node.frontmatter.thumbnail && {
+                  enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{ "content:encoded": node.html }],
+                  custom_elements: [{"media:content": node.frontmatter.thumbnail && {
+                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                  }},{ "content:encoded": node.html }],
                 });
               });
             },
