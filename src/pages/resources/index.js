@@ -18,37 +18,38 @@ const MembersPage = () => {
   const [filter, setFilter] = useState([]);
   
   const handleChange = () => {
-    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+    var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
     var filters = [];
     for (var i = 0; i < checkboxes.length; i++) {
-      filters.push(checkboxes[i].value)
+      filters.push(checkboxes[i].value);
     }
     setFilter(filters);
-  }
+  };
 
   const clear = () => {
     setFilter([]);
-    document.querySelectorAll('input[type="checkbox"]')
-    .forEach(el => el.checked = false);
-  }
+    document.querySelectorAll("input[type=\"checkbox\"]")
+      .forEach(el => el.checked = false);
+  };
 
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
         <SEO 
-        title="Service Mesh Resources" 
-        description="Articles on how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news." 
+          title="Service Mesh Resources" 
+          description="Articles on how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news."
+          canonical="https://layer5.io/resources"
         />
         <Navigation />
         <PageHeader title="Cloud Native Resources" path="Resources"/>
         <Row>
-        <Col xs={12} lg={4}>
-        <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
-        </Col>
-        <Col xs={12} lg={8}>
-        <ResourcesList resource={filter} />
-        </Col>
+          <Col xs={12} lg={4}>
+            <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
+          </Col>
+          <Col xs={12} lg={8}>
+            <ResourcesList resource={filter} />
+          </Col>
         </Row>
         <Footer />
       </Layout>

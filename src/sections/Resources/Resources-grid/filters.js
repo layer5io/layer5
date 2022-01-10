@@ -13,7 +13,7 @@ const Navigation = (props) => {
     graphql`
             query allFilters {
                 type: allMdx(
-                    filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+                    filter: { fields: { collection: { in: ["blog", "resources"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
                 ){
                     group(field: frontmatter___type) {
                         fieldValue
@@ -21,7 +21,7 @@ const Navigation = (props) => {
                     }
                 }
                 product: allMdx(
-                  filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+                  filter: { fields: { collection: { in: ["blog", "resources"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
               ){
                   group(field: frontmatter___product) {
                       fieldValue
@@ -29,7 +29,7 @@ const Navigation = (props) => {
                   }
               }
               technology: allMdx(
-                filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+                filter: { fields: { collection: { in: ["blog", "resources"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
             ){
                 group(field: frontmatter___technology) {
                     fieldValue
@@ -37,7 +37,7 @@ const Navigation = (props) => {
                 }
             }
             mesh: allMdx(
-              filter: { fields: { collection: { eq: "resources" } }, frontmatter: { published: { eq: true } } }
+              filter: { fields: { collection: { in: ["blog", "resources"] } }, frontmatter: { published: { eq: true } , resource: { eq: true} }}
           ){
               group(field: frontmatter___mesh) {
                   fieldValue
@@ -48,30 +48,37 @@ const Navigation = (props) => {
         `
   );
 
-    const [expandType, setExpandType] = useState(true);
-    const [expandProduct, setExpandProduct] = useState(false);
-    const [expandTech, setExpandTech] = useState(false);
-    const [expandMesh, setExpandMesh] = useState(false); 
+  const [expandType, setExpandType] = useState(true);
+  const [expandProduct, setExpandProduct] = useState(false);
+  const [expandTech, setExpandTech] = useState(false);
+  const [expandMesh, setExpandMesh] = useState(false); 
 
-    const data = React.useMemo(() => options);
-    let typeOptions = data.filter((data) => data.category === "Type");
-    let productOptions = data.filter((data) => data.category === "Product");
-    let techOptions = data.filter((data) => data.category === "Technology");
-    let meshOptions = data.filter((data) => data.category === "Service Mesh");
-    let i=0;
-    const types = counting.type.group;
-    const products = counting.product.group;
-    const technologies = counting.technology.group;
-    const meshes = counting.mesh.group;
+  const data = React.useMemo(() => options);
+  let typeOptions = data.filter((data) => data.category === "Type");
+  let productOptions = data.filter((data) => data.category === "Product");
+  let techOptions = data.filter((data) => data.category === "Technology");
+  let meshOptions = data.filter((data) => data.category === "Service Mesh");
+  let i=0;
+  const types = counting.type.group;
+  const typesFieldValues = types.map(type => type.fieldValue);
+  const products = counting.product.group;
+  const productsFieldValues = products.map(product => product.fieldValue);
+  const technologies = counting.technology.group;
+  const technologiesFieldValues = technologies.map(tech => tech.fieldValue);
+  const meshes = counting.mesh.group;
+  const meshesFieldValues = meshes.map(mesh => mesh.fieldValue);
 
 
-    return (
-        <ResourceNavigationWrapper>
-        <div className="filter">
+
+  return (
+    <ResourceNavigationWrapper>
+      <div className="filter">
         <p className="heading"><strong>Filters</strong> <span className= {props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>Clear Filters <IoMdClose className="clear-icon"  /></span></p>
             
-        <div className="toggle-btn"  onClick={function () {setExpandType(!expandType);}}>   
-        <p><strong>Type</strong></p>
+        <div className="toggle-btn"  onClick={function () {
+          setExpandType(!expandType); 
+        }}>   
+          <p><strong>Type</strong></p>
           {expandType ? (
             <HiOutlineChevronUp
               className="menu-icon"
@@ -83,23 +90,26 @@ const Navigation = (props) => {
           )}
         </div>
         <div className="list">
-        <ul className={`ul ${expandType ? "ul-open" : ""}`}>
-        {typeOptions[0].subdata.map((x) => (
-            <li key={x.id}>
-                  <label>
-                    <input type="checkbox"  value={x.value} onChange={props.handleChange} />
-                    <span> {x.label}</span>
+          <ul className={`ul ${expandType ? "ul-open" : ""}`}>
+            {typeOptions[0].subdata.map((x) => (
+              <li key={x.id}>
+                <label>
+                  <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                  <span> {x.label}</span>
                   { types && types.map(type => (
-                 type.fieldValue === x.value ? <span key={x.id} className="total">({type.totalCount})</span> : ""
+                    type.fieldValue === x.value ? <span key={x.id} className="total">({type.totalCount})</span> : ""
                   ))}
-                  </label> 
-            </li>
-          ))}
-        </ul>
-      </div>
+                  { typesFieldValues && !typesFieldValues.includes(x.value) ? <span key={x.id} className="total">(0)</span> : ""}
+                </label> 
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      <div className="toggle-btn" onClick={function () {setExpandProduct(!expandProduct);}}>
-        <p><strong>Product</strong></p>
+        <div className="toggle-btn" onClick={function () {
+          setExpandProduct(!expandProduct); 
+        }}>
+          <p><strong>Product</strong></p>
           {expandProduct ? (
             <HiOutlineChevronUp
               className="menu-icon"
@@ -111,23 +121,26 @@ const Navigation = (props) => {
           )}
         </div>
         <div className="list">
-        <ul className={`ul ${expandProduct ? "ul-open" : ""}`}>
-        {productOptions[0].subdata.map((x) => (
-            <li key={x.id}>
-                  <label>
-                    <input type="checkbox"  value={x.value} onChange={props.handleChange} />
-                    <span> {x.label}</span>
+          <ul className={`ul ${expandProduct ? "ul-open" : ""}`}>
+            {productOptions[0].subdata.map((x) => (
+              <li key={x.id}>
+                <label>
+                  <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                  <span> {x.label}</span>
                   { products && products.map(product => (
-                 product.fieldValue === x.value ? <span key={x.id}  className="total">({product.totalCount})</span> : ""
+                    product.fieldValue === x.value ? <span key={x.id}  className="total">({product.totalCount})</span> : ""
                   ))}
-                  </label> 
-            </li>
-          ))}
-        </ul>
-      </div>
+                  { productsFieldValues && !productsFieldValues.includes(x.value) ? <span key={x.id} className="total">(0)</span> : ""}
+                </label> 
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      <div className="toggle-btn" onClick={function () {setExpandTech(!expandTech);}}>
-        <p><strong>Technology</strong></p>
+        <div className="toggle-btn" onClick={function () {
+          setExpandTech(!expandTech); 
+        }}>
+          <p><strong>Technology</strong></p>
           {expandTech ? (
             <HiOutlineChevronUp
               className="menu-icon"
@@ -139,23 +152,27 @@ const Navigation = (props) => {
           )}
         </div>
         <div className="list">
-        <ul className={`ul ${expandTech ? "ul-open" : ""}`}>
-        {techOptions[0].subdata.map((x) => (
-            <li key={x.id}>
-                  <label>
-                    <input type="checkbox"  value={x.value} onChange={props.handleChange} />
-                    <span> {x.label}</span>
+          <ul className={`ul ${expandTech ? "ul-open" : ""}`}>
+            {techOptions[0].subdata.map((x) => (
+              <li key={x.id}>
+                <label>
+                  <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                  <span> {x.label}</span>
                   { technologies && technologies.map(tech => (
-                 tech.fieldValue === x.value ? <span key={x.id}  className="total">({tech.totalCount})</span> : ""
+                    tech.fieldValue === x.value ? <span key={x.id}  className="total">({tech.totalCount})</span> : ""
                   ))}
-                  </label> 
-            </li>
-          ))}
-        </ul>
-      </div>
+                  { technologiesFieldValues && !technologiesFieldValues.includes(x.value) ? <span key={x.id} className="total">(0)</span> : ""}
 
-      <div className="toggle-btn" onClick={function () {setExpandMesh(!expandMesh);}}>
-        <p><strong>Service Mesh</strong></p>
+                </label> 
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="toggle-btn" onClick={function () {
+          setExpandMesh(!expandMesh); 
+        }}>
+          <p><strong>Service Mesh</strong></p>
           {expandMesh ? (
             <HiOutlineChevronUp
               className="menu-icon"
@@ -167,26 +184,28 @@ const Navigation = (props) => {
           )}
         </div>
         <div className="list">
-        <ul className={`ul ${expandMesh ? "ul-open" : ""}`}>
-        {meshOptions[0].subdata.map((x) => (
-            <li key={x.id}>
-                  <label>
-                    <input type="checkbox"  value={x.value} onChange={props.handleChange} />
-                    <span> {x.label}</span>
+          <ul className={`ul ${expandMesh ? "ul-open" : ""}`}>
+            {meshOptions[0].subdata.map((x) => (
+              <li key={x.id}>
+                <label>
+                  <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                  <span> {x.label}</span>
                   { meshes && meshes.map(mesh => (
-                 mesh.fieldValue === x.value ? <span key={x.id}  className="total">({mesh.totalCount})</span> : ""
+                    mesh.fieldValue === x.value ? <span key={x.id}  className="total">({mesh.totalCount})</span> : ""
                   ))}
-                  </label> 
-            </li>
-          ))}
-        </ul>
-      </div>
+                  { meshesFieldValues && !meshesFieldValues.includes(x.value) ? <span key={x.id} className="total">(0)</span> : ""}
+
+                </label> 
+              </li>
+            ))}
+          </ul>
+        </div>
       
 
       </div>
       
-        </ResourceNavigationWrapper>
-      );
-    };
+    </ResourceNavigationWrapper>
+  );
+};
 
 export default Navigation;

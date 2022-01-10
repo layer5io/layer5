@@ -90,7 +90,10 @@ const SingleChapter = ({data, location}) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.chapter.frontmatter.chapterTitle} />
+        <SEO
+          title={data.chapter.frontmatter.chapterTitle}
+          canonical="https://layer5.io/learn/learning-paths"
+        />
         <Navigation />
         <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes}/>
         <Footer />

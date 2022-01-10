@@ -69,6 +69,7 @@ const CoursesListTemplate = ({data, pageContext}) => {
         <SEO
           title={`${learnpath}`}
           description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
+          canonical="https://layer5.io/learn/learning-paths"
         />
         <Navigation />
         <CoursesList coursesData={sortedCoursesList} learnPath={learnpath} />

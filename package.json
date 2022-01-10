@@ -29,8 +29,9 @@
     "@fullcalendar/react": "^5.5.0",
     "@mdx-js/mdx": "^1.6.11",
     "@mdx-js/react": "^1.6.11",
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "babel-plugin-styled-components": "^1.10.7",
+    "caniuse-lite": "^1.0.30001295",
     "dedent": "^0.7.0",
     "eslint": "^7.23.0",
     "formik": "^2.2.9",
@@ -46,6 +47,7 @@
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-preload-fonts": "^2.2.0",
     "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
     "gatsby-plugin-sharp": "^3.2.0",
     "gatsby-plugin-sitemap": "^3.2.0",
     "gatsby-plugin-styled-components": "^4.2.0",
@@ -58,13 +60,13 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-accessible-accordion": "^3.3.3",
-    "react-countup": "^4.2.3",
+    "react-countup": "^6.1.0",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^4.2.0",
     "react-intersection-observer": "^8.29.0",
     "react-loadable": "^5.5.0",
-    "react-modal": "^3.12.1",
+    "react-modal": "^3.14.4",
     "react-particles-js": "^2.7.1",
     "react-scroll": "^1.7.16",
     "react-select": "^3.1.0",
@@ -77,11 +79,11 @@
     "react-visibility-sensor": "^5.1.1",
     "simple-react-lightbox": "^3.6.5",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^4.4.1",
+    "styled-components": "^5.3.3",
     "swiper": "^6.5.4"
   },
   "peerDependencies": {
-    "styled-components": "^4.4.1"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
