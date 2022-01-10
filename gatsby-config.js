@@ -130,7 +130,7 @@ module.exports = {
                   },
                   custom_elements: [{"media:content": node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                  },},{ "content:encoded": node.html }],
+                  }},{ "content:encoded": node.html }],
                 });
               });
             },
