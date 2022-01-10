@@ -128,9 +128,8 @@ module.exports = {
                   enclosure: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{"media:content": node.frontmatter.thumbnail && {
-                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
-                  }},{ "content:encoded": node.html }],
+                  custom_elements: [{"media:content": site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL},
+                                    { "content:encoded": node.html }],
                 });
               });
             },
