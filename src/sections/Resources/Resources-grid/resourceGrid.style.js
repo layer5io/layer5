@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const ResourcePageWrapper = styled.div`
 
     .resource-grid-wrapper{
-        margin: 5rem 2rem;
+        margin: 4rem 2rem 2rem;
     }
     .resource-pagination-wrapper{
         display:block;

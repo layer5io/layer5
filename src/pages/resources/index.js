@@ -9,7 +9,7 @@ import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
 import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList";
 import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
-import { Row, Col } from "../../reusecore/Layout";
+import { Row, Col, Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import theme from "../../theme/app/themeStyles";
 
@@ -17,7 +17,7 @@ import theme from "../../theme/app/themeStyles";
 const MembersPage = () => {
   const [filter, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(9);
+  const [postsPerPage] = useState(8);
   
   const handleChange = () => {
     var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
@@ -47,6 +47,7 @@ const MembersPage = () => {
         />
         <Navigation />
         <PageHeader title="Cloud Native Resources" path="Resources"/>
+        <Container>
         <Row>
           <Col xs={12} lg={4}>
             <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
@@ -55,6 +56,7 @@ const MembersPage = () => {
             <ResourcesList resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
           </Col>
         </Row>
+        </Container>
         <Footer />
       </Layout>
     </ThemeProvider>
