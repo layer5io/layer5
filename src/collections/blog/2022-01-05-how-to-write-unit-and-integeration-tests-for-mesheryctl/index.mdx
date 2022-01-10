@@ -1,14 +1,18 @@
 ---
 title: "How to write unit and integration tests for mesheryctl"
-date: 2021-12-22 19:32:05 -0530
+date: 2022-01-05 19:32:05 -0530
 author: Piyush Singariya
+description: Unit and integration tests bolster and roll up into broader end-to-end, functional testing performed across Meshery and the rest of its components.
 thumbnail: ./integration-test.png
+type: Blog
+product: Meshery
 category: "Meshery"
 tags:
  - Projects
  - Meshery
  - mesheryctl
 published: true
+resource: true
 ---
 
 import { BlogWrapper } from "../Blog.style.js";
@@ -16,6 +20,7 @@ import Blockquote from "../../../reusecore/Blockquote";
 
 import UnitTest from "./unit-test.png";
 import IntegrationTest from "./integration-test.png";
+import TreeGraph from "./tree-graph.png";
 
 <BlogWrapper>
 
@@ -23,7 +28,9 @@ import IntegrationTest from "./integration-test.png";
 <p>Delivering a high quality user experience is our pinnacle goal in the design of Meshery's CLI: <code>mesheryctl</code>. Delivering a high quality user experience means testing both qualitatively and quantatively. As a concept, quality - whether you're talking about software or anything else - can be directly measured by consistency. A quality user experience is consistent and consistency of <code>mesheryctl</code> is reinforced by its many unit tests.</p>
 </div>
 
-<p><code>mesheryctl</code> is written in Golang. In the Meshery project, we use CodeCov to calculate the code coverage across <code>mesheryctl</code>'s line of code. And there are plenty of lines of code. Acheiving high percentages of code coverage in Meshery's CLI with grows in criticality as we bring more features into <code>mesheryctl</code> as a robust and sophisticated command line client of Meshery. Unit and integration tests bolster and roll up into broader end-to-end, functional testing performed across Meshery and the rest of its components. High levels of code coverage makes it easier for each project contributor to be confident that their code changes aren’t breaking any preexisting <code>mesheryctl</code> commands, side-swiping their functionality unknowningly, and consequently, unwittingly lowering the quality of Meshery's overall user experience.
+<p><code>mesheryctl</code> is written in Golang. In the Meshery project, we use CodeCov to calculate the code coverage across <code>mesheryctl</code>'s line of code. And there are plenty of lines of code. Achieving high percentages of code coverage in Meshery's CLI with grows in criticality as we bring more features into <code>mesheryctl</code> as a robust and sophisticated command line client of Meshery. Unit and integration tests bolster and roll up into broader end-to-end, functional testing performed across Meshery and the rest of its components. </p>
+
+<p>High levels of code coverage makes it easier for each project contributor to be confident that their code changes aren’t breaking any preexisting <code>mesheryctl</code> commands, side-swiping their functionality unknowingly, and consequently, unwittingly lowering the quality of Meshery's overall user experience.
 </p>
 
 <h3> mesheryctl lines of code</h3>
@@ -31,31 +38,29 @@ import IntegrationTest from "./integration-test.png";
 
 ```yaml
 
-270 text files.
-106 unique files.
-166 files ignored.
+    270 text files.
+    106 unique files.
+    166 files ignored.
 
-cloc v 1.92  T=0.15 s (692.3 files/s, 110063.3 lines/s)
-------------------------------------------------------------------
-Language       files          blank        comment           code
-------------------------------------------------------------------
-Go                88           2128           1330          13045
-YAML              12              0              0            215
-JSON               4              0              0             42
-make               1             10              2             31
-Markdown           1             23              0             27
-------------------------------------------------------------------
-SUM:             106           2161           1332          13360
-------------------------------------------------------------------
+    cloc v 1.92  T=0.15 s (692.3 files/s, 110063.3 lines/s)
+    ------------------------------------------------------------------
+    Language       files          blank        comment           code
+    ------------------------------------------------------------------
+    Go                88           2128           1330          13045
+    YAML              12              0              0            215
+    JSON               4              0              0             42
+    make               1             10              2             31
+    Markdown           1             23              0             27
+    ------------------------------------------------------------------
+    SUM:             106           2161           1332          13360
+    ------------------------------------------------------------------
 ```
 
-
-
-<p>Unit Tests can be written in two ways</p>
+<p>Unit Tests can be written in two ways:</p>
 
 <ol>
     <li>
-        Test mesheryctl subcommand
+        Test <code>mesheryctl</code> subcommand
         <ol>
             <li>Mock Meshery(backend) response if needed</li>
             <li>Grab console output</li>
@@ -66,7 +71,7 @@ SUM:             106           2161           1332          13360
         </ol>
     </li>
     <li>
-        Test mesheryctl functions
+        Test <code>mesheryctl</code> functions
         <ol>
             <li>This is the standard testing you may have come across in every project</li>
             <li>You write one test dedicated to one function covering all possible test-cases, matching expected outputs</li>
@@ -77,7 +82,7 @@ SUM:             106           2161           1332          13360
 <h3>Example tree graph</h3>
 <p>This example of a tree graph (from <a href="https://github.com/meshery/meshery/pull/4823">meshery/meshery/pull/4823</a>) shows the impact given changes make on the level of code coverage.</p>
 
-<img src="https://codecov.io/gh/meshery/meshery/pull/4823/graphs/tree.svg?width=650&height=150&src=pr&token=N12E4DBYOH&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=meshery)](https://codecov.io/gh/meshery/meshery/pull/4823?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=meshery" />
+<img src={TreeGraph} />
 
 <h3>Integration Tests</h3>
 

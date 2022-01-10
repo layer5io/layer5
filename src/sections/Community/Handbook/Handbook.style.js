@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { Link } from "gatsby";
 export const HandbookWrapper = styled.div`
-    
+
     .highlight{
       font-weight: 600;
     }
@@ -68,28 +67,28 @@ export const HandbookWrapper = styled.div`
         background-color:${(props) => props.theme.secondaryLightColor};
         color: white;
     }
-    
+
     .page-header-section {
-        height: 10rem;
-        text-align: center;
-        background: rgb(71,126,150);
-        background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
-        h1 {
-            line-height: 10rem;
-            color: white;
-        }
+      height: 10rem;
+      text-align: center;
+      background: rgb(71,126,150);
+      background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
+      h1 {
+          line-height: 10rem;
+          color: white;
+      }
     }
 
     .community-home-subtitle {
-        text-align: center;
-        padding-top: 3rem;
-        padding-bottom: 1.5rem;
+      text-align: center;
+      padding-top: 3rem;
+      padding-bottom: 1.5rem;
     }
 
     #sign-off{
       padding-bottom: 4rem;
     }
-    
+
     table {
       border-collapse: collapse;
       width: 98%;
@@ -135,17 +134,18 @@ export const HandbookWrapper = styled.div`
     }
 
     .community-home-container{
-        padding: 1rem 0;
-        padding-bottom: 4rem;
-        display: flex;
-        flex-wrap : wrap;
-        align-items : center;
-        justify-content: center;
+      padding: 1rem 0;
+      padding-bottom: 4rem;
+      display: flex;
+      flex-wrap : wrap;
+      align-items : center;
+      justify-content: center;
     }
 
     p{
       margin-top: 10px;
     }
+
     input[type=checkbox] + label {
       display: block;
       margin: 0.2em;
@@ -192,7 +192,18 @@ export const HandbookWrapper = styled.div`
       background-color: ${(props) => props.theme.secondaryLightColor};
       border-color: ${(props) => props.theme.secondaryLightColor};
     }
-    
+
+    .project-org-list{
+      a{
+      margin-right .3rem;
+      }
+      img{
+        height: auto;
+        width: 1.6rem;
+        vertical-align: middle;
+      }
+    }
+
     .project-description-icon{
       width: 3%;
       transform : translate(0,25%);
@@ -206,8 +217,6 @@ export const HandbookWrapper = styled.div`
       transform : translate(0,28%);
     }
 
-    
-
     @media only screen and (max-width: 750px){
       .page-section{
         margin-top: -2rem;
@@ -217,11 +226,10 @@ export const HandbookWrapper = styled.div`
       .codes{
       width:100%
       margin-top:-2rem;
-      }  
+      }
     }
 
     @media only screen and (max-width: 475px){
-
       .page-header-section h1{
         padding: 0 1rem;
         line-height: 3rem;
@@ -237,9 +245,8 @@ export const HandbookWrapper = styled.div`
       .frontendTable{
         margin-left: -2.8rem;
       }
-      
     }
-   
+
     @media only screen and (max-width: 1024px){
       .project-title-icon{
         width:5.5%;
@@ -248,8 +255,8 @@ export const HandbookWrapper = styled.div`
       .project-description-icon{
         width:4%;
       }
-      
     }
+
     @media only screen and (max-width: 768px){
       .project-title-icon{
         width:8.5%;
@@ -257,8 +264,8 @@ export const HandbookWrapper = styled.div`
       .project-description-icon{
         width:7%;
       }
-      
     }
+
     @media only screen and (max-width: 425px){
       .project-title-icon{
         width:11%;
@@ -268,6 +275,7 @@ export const HandbookWrapper = styled.div`
         width:8%;
       }
     }
+
     @media only screen and (max-width: 375px){
       .project-title-icon{
         width:13%;
@@ -276,7 +284,6 @@ export const HandbookWrapper = styled.div`
       .project-description-icon{
         width:10%;
       }
-
     }
 
     .channels-list {
@@ -298,13 +305,10 @@ export const HandbookWrapper = styled.div`
       display: flex;
       align-items: center;
       margin: 2.5rem 5rem 3rem 0rem;
-
       @media only screen and (max-width: 992px){
         width: 100%;
       }
-
-    
-   h2{
+      h2{
         margin-bottom: 2rem;
       }
     }
@@ -350,15 +354,10 @@ export const HandbookWrapper = styled.div`
     display: flex;
     flex-direction: column;
     overflow:hidden;
-    
-
-
-    
     .active{
       font-weight:5000;
       color: ${(props) => props.theme.secondaryColor};
     }
-    
     ul{
       list-style: none;
       top: 3rem;
@@ -375,7 +374,7 @@ export const HandbookWrapper = styled.div`
       visibility:hidden;
     }
   }
-  
+
   .learn{
     width: 10rem;
   }

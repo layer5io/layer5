@@ -12,8 +12,8 @@ const ResourceGrid = (props) => {
           <Row>
             <Col xs={12} lg={12}>
               <div className="resource-grid-wrapper">
-               <Row>
-              {props?.data?.map(({ id, frontmatter, fields }) => (
+                <Row>
+                  {props?.data?.map(({ id, frontmatter, fields }) => (
                     <Col key={id} xs={12} sm={6} >
                       <Card frontmatter={frontmatter} fields={fields}/>
                     </Col>
