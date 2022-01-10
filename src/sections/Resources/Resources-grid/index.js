@@ -23,7 +23,7 @@ const ResourceGrid = (props) => {
               <div className="resource-grid-wrapper">
                 <Row>
                   {currentPosts?.map(({ id, frontmatter, fields }) => (
-                    <Col key={id} xs={12} sm={6} md={4}>
+                    <Col key={id} xs={12} sm={6} xl={4}>
                       <Card frontmatter={frontmatter} fields={fields}/>
                     </Col>
                   ))}
