@@ -128,8 +128,7 @@ module.exports = {
                   media: node.frontmatter.thumbnail && {
                     url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
                   },
-                  custom_elements: [{"media:content": media},
-                                    { "content:encoded": node.html }],
+                  custom_elements: [{ "content:encoded": node.html }],
                 });
               });
             },
