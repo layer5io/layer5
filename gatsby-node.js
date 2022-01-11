@@ -54,7 +54,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // New Community Member (Google Form)
   createRedirect({ fromPath: "/newcomer", toPath: "/newcomers", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/go/meshmap-beta", toPath: "/service-mesh-management/meshmap#meshmap-beta", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/go/meshmap", toPath: "/service-mesh-management/meshmap", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshmap", toPath: "/service-mesh-management/meshmap", redirectInBrowser: true, isPermanent: true });
+
   // Create Pages
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
