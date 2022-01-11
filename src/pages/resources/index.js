@@ -17,7 +17,7 @@ import theme from "../../theme/app/themeStyles";
 const MembersPage = () => {
   const [filter, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(8);
+  const [postsPerPage] = useState(9);
   
   const handleChange = () => {
     var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
@@ -40,19 +40,15 @@ const MembersPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO 
-          title="Service Mesh Resources" 
-          description="Articles on how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news."
-          canonical="https://layer5.io/resources"
-        />
+        <SEO title="Service Mesh Resources" description="Articles on how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news." canonical="https://layer5.io/resources" />
         <Navigation />
         <PageHeader title="Cloud Native Resources" path="Resources"/>
         <Container>
         <Row>
-          <Col xs={12} lg={4}>
+          <Col xs={12} lg={3}>
             <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
           </Col>
-          <Col xs={12} lg={8}>
+          <Col xs={12} lg={9}>
             <ResourcesList resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
           </Col>
         </Row>
