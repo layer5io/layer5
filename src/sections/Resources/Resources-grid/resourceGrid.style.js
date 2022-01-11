@@ -2,13 +2,9 @@ import styled from "styled-components";
 export const ResourcePageWrapper = styled.div`
 
     .resource-grid-wrapper{
-        margin: 4rem 2rem 2rem;
+        margin: 4rem 0 1.5rem 1.5rem;
     }
-    .resource-pagination-wrapper{
-        display:block;
-        margin: 0 auto;
-    }
-
+    
     .btn-container {
         display: flex;
         justify-content: center;
@@ -36,12 +32,6 @@ export const ResourcePageWrapper = styled.div`
         border-color: transparent;
         color: #fff;
       }
-
-    @media only screen and (max-width: 992px) {
-        .resource-page-wrapper{
-            margin-bottom: 5rem;
-        }
-    }
 
     @media only screen and (max-width: 575px) {
         .resource-grid-wrapper{

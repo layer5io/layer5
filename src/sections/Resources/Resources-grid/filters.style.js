@@ -1,20 +1,6 @@
 import styled from "styled-components";
 
 export const ResourceNavigationWrapper = styled.div`
-.filter{
-  margin-right: 1rem ;
-  position: sticky;
-}
-.filter-wrap {
-    display: inline-block;
-    float: left;
-    flex-grow: 1;
-    width: 22%;
-    height: 800px; /* height needs to be increased with regarding to the total no. of patterns */
-    p{
-        margin-top: 1.5rem;
-    }
-  }
 
   .heading{
     margin-bottom:1rem;
@@ -103,10 +89,6 @@ input[type="checkbox"] {
             cursor: pointer;
             float: right;
             vertical-align: bottom;
-          }
-
-          .category{
-            display: inline-block;
           }
             .toggle-btn{
                 p{
