@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiOutlineChevronUp, HiOutlineChevronDown } from "react-icons/hi";
 import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
 import { options } from "./options";
@@ -69,6 +69,14 @@ const Navigation = (props) => {
   const meshes = counting.mesh.group;
   const meshesFieldValues = meshes.map(mesh => mesh.fieldValue);
 
+
+  useEffect(() => {
+    if(window.outerWidth > 991){
+      setExpandFilter(true);
+    } else{
+      setExpandFilter(false);
+    }
+  }, [window.outerWidth]);
 
 
   return (

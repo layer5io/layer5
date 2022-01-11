@@ -143,6 +143,13 @@ input[type="checkbox"] {
        .filter-menu-icon{
          display: block;
        }
+      }
+  
+    @media (max-width: 991px) {
+      .filter-menu-icon{
+        display: block;
+      }
+    }
            
 `;
 
