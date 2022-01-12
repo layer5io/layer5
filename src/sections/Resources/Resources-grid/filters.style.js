@@ -7,10 +7,6 @@ export const ResourceNavigationWrapper = styled.div`
   position: sticky;
 }
 
-.filter-menu-icon {
-  display : none
-}
-
 .filter-wrap {
     display: inline-block;
     float: left;
@@ -20,6 +16,12 @@ export const ResourceNavigationWrapper = styled.div`
     p{
         margin-top: 1.5rem;
     }
+  }
+
+  .filter-icon{
+    width: 1.5rem; 
+    height: 1.5rem; 
+    cursor: pointer;
   }
 
   .heading{
@@ -43,6 +45,10 @@ export const ResourceNavigationWrapper = styled.div`
   }
   .clear-disabled{
     display: none;
+  }
+
+  .filter-menu-icon{
+    display : none;
   }
 
 label {
@@ -144,10 +150,22 @@ input[type="checkbox"] {
          display: block;
        }
       }
-  
-    @media (max-width: 991px) {
+
+    @media only screen and (max-width: 991px) {
       .filter-menu-icon{
         display: block;
+      }
+
+      .filters-boxes{
+        display: none;
+      }
+
+      .heading{
+        display : none;
+      }
+
+      #filters-boxes{
+        display : block
       }
     }
            
