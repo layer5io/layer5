@@ -145,7 +145,7 @@ input.footer-input:focus {
     width: 160px;
     border-radius: 0.25rem;
     border: none;
-    margin-right: 2.5rem;
+    /* margin-right: 2.5rem; */
 }
     
 .footer-hr {
@@ -168,3 +168,143 @@ input.footer-input:focus {
 .footer-bottom-right {
     float: right;
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .footer-info {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-resources {
+      margin: 0;
+    }
+    .footer-sections {
+      padding: 20px;
+    }
+    .col-lg-3 {
+      width: 100%;
+    }
+    .footer-desc {
+      padding: 0px 10px 0px 10px;
+      text-align: center;
+    }
+    .col-lg-9 {
+      width: 100%;
+    }
+    .footer-top {
+      flex-direction: column-reverse;
+    }
+    .col-lg-6 {
+      width: 100%;
+      text-align: center;
+    }
+    .footer-icons {
+      justify-content: center;
+    }
+    .footer-logo {
+      padding: 10px 10px 0px 10px;
+    }
+    .subscribe{
+      justify-content: center;
+    }
+    input.footer-input {
+      width: 13rem;
+    }
+    .footer-button{
+      width: 120px;
+    }
+  }
+  
+  /* Media Query for low resolution  Tablets, Ipads */
+  @media (min-width: 481px) and (max-width: 767px) {
+    .footer-info {
+      flex-wrap: wrap;
+    }
+    .footer-resources {
+      margin: 0;
+    }
+    .footer-sections {
+      padding: 20px;
+    }
+    .col-lg-3 {
+      width: 100%;
+    }
+    .footer-desc {
+      padding: 0px 10px 0px 10px;
+      text-align: center;
+    }
+    .col-lg-9 {
+      width: 100%;
+    }
+    .footer-top {
+      flex-direction: column-reverse;
+    }
+    .col-lg-6 {
+      width: 100%;
+      text-align: center;
+    }
+    .footer-icons {
+      justify-content: center;
+    }
+    .footer-logo {
+      padding: 10px 10px 0px 10px;
+    }
+    .subscribe{
+      justify-content: center;
+    }
+    input.footer-input {
+      width: 13rem;
+    }
+    .footer-button{
+      width: 120px;
+    }
+  }
+  
+  /* Media Query for Tablets Ipads portrait mode */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .footer-info {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-resources {
+      margin: 0;
+    }
+    .footer-sections {
+      padding: 20px;
+    }
+    .col-lg-3 {
+      width: 100%;
+    }
+    .footer-desc {
+      padding: 0px 10px 0px 10px;
+      text-align: center;
+    }
+    .footer-top {
+      flex-direction: column-reverse;
+    }
+    .col-lg-6 {
+      width: 100%;
+      text-align: center;
+    }
+    .footer-icons {
+      justify-content: center;
+    }
+    .footer-logo {
+      padding: 10px 10px 0px 10px;
+    }
+    .subscribe{
+      justify-content: center;
+    }
+    .footer-button{
+      width: 120px;
+    }
+  }
+/*   
+  /* Media Query for Laptops and Desktops */
+  /* @media (min-width: 1025px) and (max-width: 1280px) {
+  } */
+  
+  /* Media Query for Large screens */
+  /* @media (min-width: 1281px) {
+  } */ */
+  
