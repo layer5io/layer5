@@ -216,10 +216,9 @@ const data = {
       question: "How often does Layer5 offer internships?",
       category: "internships",
       answer: [
-        "Continuously. Layer5 has internships starting and stopping frequently. Some internships rigidly start and stop on particular dates, particularly those hosted in partnership with other organizations like the Linux Foundation, Google, MLH, Outreachy, and so on. Internships offered directly with Layer5 often start as a batch of candidates show collective readiness.",
-        "We work with individuals to align the timings of the internship with other activities in their life.. Build it into something active and something to be maintained.",
+        "Continuously. Layer5 has internships starting and stopping frequently. Some internships rigidly start and stop on particular dates, while other internships offered start as a batch of candidates show collective readiness. We work with individuals to align the timings of the internship with other activities in their life.",
       ],
-      link: "https://github.com/issues?utf8=✓&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+",
+      link: "https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+",
       linktext: 'Grab a "Help Wanted" Issue',
     },
     {
