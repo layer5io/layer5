@@ -55,6 +55,22 @@ export const ResourceNavigationWrapper = styled.div`
     display : none;
   }
 
+  .filter-btn{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFF;
+    color: ${(props) => props.theme.primaryColor};
+    border: none;
+    span{
+      padding-left: 1.2rem;
+      float: right;
+      font-size: 1.5rem;
+      color: ${(props) => props.theme.primaryColor};
+      cursor: pointer;
+    }
+  }
+
+
 label {
         display: block;
         padding-left: 15px;

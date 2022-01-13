@@ -51,7 +51,7 @@ const Navigation = (props) => {
   );
 
   const [expandFilter, setExpandFilter] = useState(false);
-  const [expandType, setExpandType] = useState(true);
+  const [expandType, setExpandType] = useState(false);
   const [expandProduct, setExpandProduct] = useState(false);
   const [expandTech, setExpandTech] = useState(false);
   const [expandMesh, setExpandMesh] = useState(false); 
@@ -80,16 +80,16 @@ const Navigation = (props) => {
             setExpandFilter(!expandFilter); 
           }} className="filter-menu-icon">
             {expandFilter ? (
-              <>
+              <button className="filter-btn">
                 <IoClose className="filter-icon filter-close" />
                 <span>Close Filters</span>
-              </> 
+              </button> 
             )  :
               (
-                <>
+                <button className="filter-btn">
                   <FiFilter className="filter-icon filter-open"/>
                   <span>Open Filters</span>          
-                </> 
+                </button> 
               )}
             
           </div>
