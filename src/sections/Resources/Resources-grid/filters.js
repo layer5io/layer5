@@ -75,23 +75,32 @@ const Navigation = (props) => {
   return (
     <ResourceNavigationWrapper>
       <div className="filter">
-        <div onClick={() => {
-          setExpandFilter(!expandFilter); 
-        }} className="filter-menu-icon">
-          {expandFilter ? (<>
-            <IoClose className="filter-icon" />
-            <span>Close Filters</span>
-          </> 
-          )  :
-            (
+        <div className="heading">
+          <div onClick={() => {
+            setExpandFilter(!expandFilter); 
+          }} className="filter-menu-icon">
+            {expandFilter ? (
               <>
-                <FiFilter className="filter-icon"/>
-                <span>Open Filters</span>          
+                <IoClose className="filter-icon filter-close" />
+                <span>Close Filters</span>
               </> 
-            )}
-          
+            )  :
+              (
+                <>
+                  <FiFilter className="filter-icon filter-open"/>
+                  <span>Open Filters</span>          
+                </> 
+              )}
+            
+          </div>
+          <p >
+            <strong className="heading-name">Filters</strong> 
+            <span className= {props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>
+              Clear Filters 
+              <IoMdClose className="clear-icon"  />
+            </span>
+          </p>
         </div>
-        <p className="heading"><strong>Filters</strong> <span className= {props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>Clear Filters <IoMdClose className="clear-icon"  /></span></p>
             
         <div className="filters-boxes" id={expandFilter ? "filters-boxes" : ""}>
           <div className="toggle-btn"  onClick={function () {

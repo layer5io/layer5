@@ -22,6 +22,7 @@ export const ResourceNavigationWrapper = styled.div`
     width: 1.5rem; 
     height: 1.5rem; 
     cursor: pointer;
+    margin : 0.2rem;
   }
 
   .heading{
@@ -39,6 +40,9 @@ export const ResourceNavigationWrapper = styled.div`
         height: 1rem; 
       }
     }
+  }
+  .heading-name{
+    font-size: 1.5rem;
   }
   .heading>span:hover{
     color: ${(props) => props.theme.secondaryColor};
@@ -146,14 +150,22 @@ input[type="checkbox"] {
        .filter{
         display:contents;
        }
-       .filter-menu-icon{
-         display: block;
-       }
       }
 
     @media only screen and (max-width: 991px) {
       .filter-menu-icon{
-        display: block;
+        display: flex;
+      }
+
+      .filter-menu-icon>span{
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin : 0 1rem;
+      }
+
+      .filter-close{
+        width: 1.7rem; 
+        height: 1.7rem;
       }
 
       .filters-boxes{
@@ -161,11 +173,29 @@ input[type="checkbox"] {
       }
 
       .heading{
+        display: flex;
+        justify-content: space-between;
+        border: none;
+      }
+
+      .heading-name{
         display : none;
       }
 
       #filters-boxes{
         display : block
+      }
+    }
+
+    @media only screen and (max-width: 575px) {
+      .heading{
+        margin-left: 0;
+        margin-bottom: 2.5rem
+      }
+
+      .filter-close{
+        width: 1.7rem; 
+        height: 1.7rem;
       }
     }
            
