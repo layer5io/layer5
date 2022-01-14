@@ -214,6 +214,22 @@ input[type="checkbox"] {
         height: 1.7rem;
       }
     }
+
+    @media only screen and (max-width: 400px){
+      .filter-btn>span{
+        font-size: 1.2rem;
+      }
+
+      .filter-icon{
+        width: 1rem;
+        height: 1rem;
+      }
+      
+      .filter-close{
+        width: 1.2rem; 
+        height: 1.2rem;
+      }
+     }
            
 `;
 

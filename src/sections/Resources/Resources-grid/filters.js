@@ -95,10 +95,10 @@ const Navigation = (props) => {
           </div>
           <p >
             <strong className="heading-name">Filters</strong> 
-            <span className= {props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>
+            {expandFilter ? (<span className= {props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>
               Clear Filters 
               <IoMdClose className="clear-icon"  />
-            </span>
+            </span>) : ""}
           </p>
         </div>
             
