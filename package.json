@@ -50,7 +50,7 @@
     "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
     "gatsby-plugin-sharp": "^3.2.0",
     "gatsby-plugin-sitemap": "^3.2.0",
-    "gatsby-plugin-styled-components": "^4.2.0",
+    "gatsby-plugin-styled-components": "^4.14.0",
     "gatsby-redirect-from": "^0.3.0",
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-transformer-sharp": "^3.2.0",
