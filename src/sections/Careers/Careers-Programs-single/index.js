@@ -24,7 +24,7 @@ const ProgramsSingle = ({ data, options, setActiveOption, activeOption}) => {
           {Boolean(options) && 
               <div className="selectWrapper">
                 <div className="selectMenu">
-                  {options.length>1 && <Select
+                  {options.length > 1 && <Select
                     name="Select Year of Program"
                     defaultValue={options[activeOption]}
                     isSearchable={false}
