@@ -4,7 +4,17 @@ export const ResourcePageWrapper = styled.div`
     .resource-grid-wrapper{
         margin: 4rem 0 1.5rem 1.5rem;
     }
-    
+    .post-content-block{
+        height: 7rem;
+    }
+    .post-thumb-block{
+        height: 10.5rem;
+    }
+    .post-meta-block{
+        p{
+            margin:0;
+        }
+    }
     .btn-container {
         display: flex;
         justify-content: center;
