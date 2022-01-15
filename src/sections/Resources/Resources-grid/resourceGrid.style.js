@@ -2,14 +2,46 @@ import styled from "styled-components";
 export const ResourcePageWrapper = styled.div`
 
     .resource-grid-wrapper{
-        margin: 5rem 2rem;
+        margin: 4rem 0 1.5rem 1.5rem;
     }
-
-    @media only screen and (max-width: 992px) {
-        .resource-page-wrapper{
-            margin-bottom: 5rem;
+    .post-content-block{
+        height: 7rem;
+    }
+    .post-thumb-block{
+        height: 10.5rem;
+    }
+    .post-meta-block{
+        p{
+            margin:0;
         }
     }
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto 2rem;
+      }
+      .btn {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0.5rem;
+        transition: all 0.3s linear;
+        :hover {
+            box-shadow: 0px 1px 5px 1px rgba(0, 179, 159, 0.5);
+        }
+      }
+      .page-btn {
+        background: ${props => props.theme.white};
+        border: solid 2px;
+        border-color: ${props => props.theme.secondaryColor};
+      }
+      .active-btn {
+        background: ${props => props.theme.secondaryColor};
+        border-color: transparent;
+        color: #fff;
+      }
 
     @media only screen and (max-width: 575px) {
         .resource-grid-wrapper{
