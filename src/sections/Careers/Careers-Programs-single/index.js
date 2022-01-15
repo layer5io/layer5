@@ -23,18 +23,16 @@ const ProgramsSingle = ({ data, options, setActiveOption, activeOption}) => {
           </div>
           {Boolean(options) && 
               <div className="selectWrapper">
-                <div className="selectMenu">
-                  {options.length > 1 && <Select
-                    name="Select Year of Program"
-                    defaultValue={options[activeOption]}
-                    isSearchable={false}
-                    styles={selectStyles}
-                    options={options}
-                    value={options[activeOption]}
-                    onChange={(e) => setActiveOption(() => e.value)}
-                    theme={dropdownTheme}
-                  />}
-                </div>
+                {options.length > 1 && <Select
+                  name="Select Year of Program"
+                  defaultValue={options[activeOption]}
+                  isSearchable={false}
+                  styles={selectStyles}
+                  options={options}
+                  value={options[activeOption]}
+                  onChange={(e) => setActiveOption(() => e.value)}
+                  theme={dropdownTheme}
+                />}
               </div>
           }
         </Row>
