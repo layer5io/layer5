@@ -1,5 +1,5 @@
-import React from 'react';
-import { ResourcePageWrapper } from './resourceGrid.style';
+import React from "react";
+import { ResourcePageWrapper } from "./resourceGrid.style";
 
 const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const pageNumbers = [];
@@ -9,15 +9,15 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   }
 
   return (
-      <ResourcePageWrapper>
-    <div className='btn-container'>
+    <ResourcePageWrapper>
+      <div className='btn-container'>
         {pageNumbers.map(number => (
-            <button key={number} onClick={() => paginate(number)} className={(number === currentPage) ? 'btn active-btn': 'btn page-btn'}>
-              {number}
-            </button>
+          <button key={number} onClick={() => paginate(number)} className={(number === currentPage) ? "btn active-btn": "btn page-btn"}>
+            {number}
+          </button>
         ))}
       </div>
-      </ResourcePageWrapper>
+    </ResourcePageWrapper>
   );
 };
 

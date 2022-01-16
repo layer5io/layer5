@@ -44,14 +44,14 @@ const MembersPage = () => {
         <Navigation />
         <PageHeader title="Cloud Native Resources" path="Resources"/>
         <Container>
-        <Row>
-          <Col xs={12} lg={3}>
-            <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
-          </Col>
-          <Col xs={12} lg={9}>
-            <ResourcesList resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
-          </Col>
-        </Row>
+          <Row>
+            <Col xs={12} lg={3}>
+              <ResourcesNavigation handleChange={handleChange} clear={clear} resources={filter} />
+            </Col>
+            <Col xs={12} lg={9}>
+              <ResourcesList resource={filter} currentPage={currentPage} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+            </Col>
+          </Row>
         </Container>
         <Footer />
       </Layout>
