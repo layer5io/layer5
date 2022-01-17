@@ -99,7 +99,7 @@ const ContactPage = () => {
         </Row>
       </Container>
       <Helmet>
-      <script src="https://v8hx52m354g0.statuspage.io/embed/script.js"></script>
+        <script src="https://v8hx52m354g0.statuspage.io/embed/script.js"></script>
       </Helmet>
     </ContactPageWrapper>
   );

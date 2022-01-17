@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import Card from "../../../components/Card";
 import { Row, Col } from "../../../reusecore/Layout";
-import Pagination from './paginate';
+import Pagination from "./paginate";
 
 import { ResourcePageWrapper } from "./resourceGrid.style";
 
@@ -16,16 +16,16 @@ const ResourceGrid = (props) => {
 
   return (
     <ResourcePageWrapper>
-            <div className="resource-grid-wrapper">
-              <Row>
-                {currentPosts?.map(({ id, frontmatter, fields }) => (
-                  <Col key={id} xs={12} sm={6} xl={4}>
-                    <Card frontmatter={frontmatter} fields={fields}/>
-                  </Col>
-                ))}
-              </Row> 
-            </div>
-            <Pagination postsPerPage={props.postsPerPage} totalPosts={props.data.length} currentPage={props.currentPage} paginate={paginate} />
+      <div className="resource-grid-wrapper">
+        <Row>
+          {currentPosts?.map(({ id, frontmatter, fields }) => (
+            <Col key={id} xs={12} sm={6} xl={4}>
+              <Card frontmatter={frontmatter} fields={fields}/>
+            </Col>
+          ))}
+        </Row> 
+      </div>
+      <Pagination postsPerPage={props.postsPerPage} totalPosts={props.data.length} currentPage={props.currentPage} paginate={paginate} />
     </ResourcePageWrapper>
   );
 };
