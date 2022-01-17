@@ -156,10 +156,6 @@ const Data = {
           path: "/community/meshmates",
         },
         {
-          name: "Community Managers",
-          path: "/community/managers"
-        },
-        {
           name: "Events",
           path: "/community/events",
           sepLine: true
