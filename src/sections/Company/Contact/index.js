@@ -7,6 +7,7 @@ import Partner_Icon from "../../../assets/images/contact/partner.svg";
 import Contact_Icon from "../../../assets/images/contact/contact.svg";
 import CardOutline from "../../../components/Card-Outline";
 import ContactPageWrapper from "./contactpage.style";
+import Helmet from "react-helmet";
 
 const CONTACT_FORM_URL = "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8";
 
@@ -97,6 +98,9 @@ const ContactPage = () => {
           </div>
         </Row>
       </Container>
+      <Helmet>
+        <script src="https://v8hx52m354g0.statuspage.io/embed/script.js"></script>
+      </Helmet>
     </ContactPageWrapper>
   );
 };

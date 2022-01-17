@@ -20,7 +20,7 @@ export const options =  [
     category: "Product",
     subdata: [
       { id: 0, value: "Meshery", label: "Meshery" },
-      { id: 1, value: "Service Mesh Performance", label: "Service Mesh Performance" },
+      { id: 1, value: "Service Mesh Performance", label: "SMP" },
       { id: 2, value: "Nighthawk", label: "Nighthawk" }]
   },
   {

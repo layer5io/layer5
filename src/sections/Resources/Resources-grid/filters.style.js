@@ -136,10 +136,6 @@ input[type="checkbox"] {
             float: right;
             vertical-align: bottom;
           }
-
-          .category{
-            display: inline-block;
-          }
             .toggle-btn{
                 p{
                     display:inline;
