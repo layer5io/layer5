@@ -407,7 +407,7 @@ export const LandscapePageWrapper=styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
-		background-color: #5b8b7e;
+		background-color: ${props => props.theme.menuColor};
 		&:hover {
 			background-color: ${props => props.theme.tertiaryColor};
 			border-top-left-radius: .5rem;
