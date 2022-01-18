@@ -128,7 +128,7 @@ const Meshmates=() => {
           </Row>
         </div>
         <div className="conduct">
-          <h4> Explore about Community Manager at <a href="/community/managers">Layer5 Community Managers</a></h4>
+          <h4> Get to know about <Link to="/community/managers">Layer5 Community Managers <IoIosArrowRoundForward /></a></h4>
         </div>
         <div className="conduct">
           <h2> Code of Conduct </h2>
