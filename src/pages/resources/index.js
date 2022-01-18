@@ -18,7 +18,7 @@ const MembersPage = () => {
   const [filter, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
-  
+
   const handleChange = () => {
     var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
     var filters = [];
@@ -42,7 +42,7 @@ const MembersPage = () => {
         <GlobalStyle />
         <SEO title="Service Mesh Resources" description="Articles on how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news." canonical="https://layer5.io/resources" />
         <Navigation />
-        <PageHeader title="Cloud Native Resources" path="Resources"/>
+        <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and run any Kubernetes and any service mesh for any application." />
         <Container>
           <Row>
             <Col xs={12} lg={3}>
