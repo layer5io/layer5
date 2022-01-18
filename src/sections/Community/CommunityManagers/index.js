@@ -67,7 +67,7 @@ const CommunityManagers=() => {
         </div>
         <div className="manager-meet">
           <h2> Want To Know More About Community Managers?</h2>
-          <p>Checkout their Community roles and responsibilites on <a href="https://layer5.io/community/handbook/community-roles">Community Handbook</a></p>
+          <p>Take a look at the <Link to="/community/handbook">Community Handbook</a></p>
         </div>
         <div className="conduct">
           <h2> Code of Conduct </h2>
