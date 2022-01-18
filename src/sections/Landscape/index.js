@@ -1,4 +1,4 @@
-import React ,{useState} from "react";
+import React ,{useState,useEffect} from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
@@ -22,9 +22,13 @@ import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
 
+const isBrowser=typeof window !== "undefined";
 
 const LandscapeGrid=() => {
-  const [tabIndex,setTabIndex] = useState(2);
+  // const [tabIndex, setTabIndex] = useState(0);
+  // useEffect(() => {
+  //   setTabIndex(2);
+  // }, []);
   return (
     <LandscapePageWrapper>
       <PageHeader title="The Service Mesh Landscape" path="Landscape" />
@@ -88,26 +92,28 @@ const LandscapeGrid=() => {
               <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
                                 Service Mesh Comparison Matrix
               </h2>
-              <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)} className="landscape-table">
-                <TabList>
-                  <Tab>Categories</Tab>
-                  <Tab>Non-Functional</Tab>
-                  <Tab>Functional</Tab>
-                  <Tab>Tools</Tab>
-                </TabList>
-                <TabPanel>
-                  <Categories />
-                </TabPanel>
-                <TabPanel>
-                  <NonFunctional />
-                </TabPanel>
-                <TabPanel>
-                  <Functional />
-                </TabPanel>
-                <TabPanel>
-                  <Tools />
-                </TabPanel>
-              </Tabs>
+              {isBrowser ? 
+                <Tabs defaultIndex={2} className="landscape-table">
+                  <TabList>
+                    <Tab>Categories</Tab>
+                    <Tab>Non-Functional</Tab>
+                    <Tab>Functional</Tab>
+                    <Tab>Tools</Tab>
+                  </TabList>
+                  <TabPanel>
+                    <Categories />
+                  </TabPanel>
+                  <TabPanel>
+                    <NonFunctional />
+                  </TabPanel>
+                  <TabPanel>
+                    <Functional />
+                  </TabPanel>
+                  <TabPanel>
+                    <Tools />
+                  </TabPanel>
+                </Tabs>
+                :""}
               <h2 id="smi" className="sub-heading landscape-section-heading" >Service Mesh Interface Compliance</h2>
               <h4 className="landscape-section-sub-heading">Is your service mesh compliant? <a href="/projects/service-mesh-interface-conformance">Find out</a>.</h4>
               <SMI_Compatibility/>
