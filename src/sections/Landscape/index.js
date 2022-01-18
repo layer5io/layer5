@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
@@ -24,6 +24,7 @@ import Button from "../../reusecore/Button";
 
 
 const LandscapeGrid=() => {
+  const [tabIndex,setTabIndex] = useState(2);
   return (
     <LandscapePageWrapper>
       <PageHeader title="The Service Mesh Landscape" path="Landscape" />
@@ -87,7 +88,7 @@ const LandscapeGrid=() => {
               <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
                                 Service Mesh Comparison Matrix
               </h2>
-              <Tabs defaultIndex={2} className="landscape-table">
+              <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)} className="landscape-table">
                 <TabList>
                   <Tab>Categories</Tab>
                   <Tab>Non-Functional</Tab>
