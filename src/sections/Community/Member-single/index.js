@@ -110,7 +110,7 @@ const MemberSingle = ({ frontmatter }) => {
                       )}
                       {badges.includes("community") && (
                         <li>
-                          <Link to="/community">
+                          <Link to="/community/managers">
                             <img
                               className="profile-social-links"
                               src={communityLogo}

@@ -128,6 +128,9 @@ const Meshmates=() => {
           </Row>
         </div>
         <div className="conduct">
+          <h4> Explore about Community Manager at <a href="/community/managers">Layer5 Community Managers</a></h4>
+        </div>
+        <div className="conduct">
           <h2> Code of Conduct </h2>
           <p> The comfort and safety of Layer5 community members is our priority. You must agree to the Code of Conduct to participate in the Layer5 community, and any violations of the Code of Conduct will be taken seriously. <br/>
                     To report any violations please fill out this incident form. </p>
