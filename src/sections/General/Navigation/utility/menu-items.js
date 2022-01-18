@@ -155,10 +155,6 @@ const Data = {
           name: "MeshMates",
           path: "/community/meshmates",
         },
-        // {
-        //   name: "MeshMasters",
-        //   path: "/community/meshmasters"
-        // },
         {
           name: "Events",
           path: "/community/events",
