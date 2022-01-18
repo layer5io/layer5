@@ -55,7 +55,7 @@
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-transformer-sharp": "^3.2.0",
     "lodash": "^4.17.20",
-    "nuka-carousel": "^4.7.1",
+    "nuka-carousel": "^4.8.4",
     "prism-react-renderer": "^1.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
