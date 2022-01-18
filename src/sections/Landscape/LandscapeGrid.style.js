@@ -408,6 +408,10 @@ export const LandscapePageWrapper=styled.div`
 		bottom: 0px;
 		padding: 1.25rem;
 		background-color: ${props => props.theme.menuColor};
+		border: 1px solid ${props => props.theme.shadowLightColor};
+		&:nth-child(1){
+			border-top-left-radius: .5rem;
+		}
 		&:hover {
 			background-color: ${props => props.theme.tertiaryColor};
 			border-top-left-radius: .5rem;
