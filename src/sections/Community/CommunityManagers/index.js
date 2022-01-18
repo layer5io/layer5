@@ -57,7 +57,7 @@ const CommunityManagers=() => {
           </Row>
         </div>
         <div className="expect">
-          <h2> What Does the Community Managers Do? </h2>
+          <h2> What Does a Community Manager Do? </h2>
           <p> Layer5 Community Managers generally oversee community activities and support ongoing initiatives. They are responsible for the health and growth of the community.
              Community Managers cultivate an environment which attracts new community members by ensuring that timely and completed responses are provided to questions asked. 
              Aspects of marketing including member and project promotion as well as aspects of project management by organizing meetings and triaging issues are under the purview of Community Managers. </p>
