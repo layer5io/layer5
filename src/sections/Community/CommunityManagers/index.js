@@ -4,6 +4,8 @@ import Button from "../../../reusecore/Button";
 import ProfileCard from "../../../components/Profile-card";
 import CommunityManagersWrapper from "./styles";
 import { useStaticQuery, graphql } from "gatsby";
+import {Link} from "gatsby";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const CommunityManagers=() => {
   const data=useStaticQuery(
