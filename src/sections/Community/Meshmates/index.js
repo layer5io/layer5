@@ -7,6 +7,8 @@ import MeshMatesWrapper from "./meshmates.style";
 import { useStaticQuery, graphql } from "gatsby";
 import c_icon from "./c-icon.svg";
 import MeshmateStackImage from "../../../assets/images/meshmate/meshmate-stack.svg";
+import {Link} from "gatsby";
+import { FiArrowRight } from "react-icons/fi";
 
 const Meshmates=() => {
   const data=useStaticQuery(
@@ -128,7 +130,7 @@ const Meshmates=() => {
           </Row>
         </div>
         <div className="conduct">
-          <h4> Get to know about <Link to="/community/managers">Layer5 Community Managers <IoIosArrowRoundForward /></a></h4>
+          <h4> Get to know about <Link className="readmore-btn" to="/community/managers">Layer5 Community Managers <FiArrowRight /></Link></h4>
         </div>
         <div className="conduct">
           <h2> Code of Conduct </h2>

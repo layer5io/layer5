@@ -5,7 +5,7 @@ import ProfileCard from "../../../components/Profile-card";
 import CommunityManagersWrapper from "./styles";
 import { useStaticQuery, graphql } from "gatsby";
 import {Link} from "gatsby";
-import { IoIosArrowRoundForward } from "react-icons/io";
+
 
 const CommunityManagers=() => {
   const data=useStaticQuery(
@@ -67,7 +67,7 @@ const CommunityManagers=() => {
         </div>
         <div className="manager-meet">
           <h2> Want To Know More About Community Managers?</h2>
-          <p>Take a look at the <Link to="/community/handbook">Community Handbook</a></p>
+          <p>Take a look at the <Link to="/community/handbook">Community Handbook</Link></p>
         </div>
         <div className="conduct">
           <h2> Code of Conduct </h2>
