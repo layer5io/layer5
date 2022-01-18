@@ -1,4 +1,4 @@
-import React ,{useState,useEffect} from "react";
+import React from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
@@ -25,10 +25,6 @@ import Button from "../../reusecore/Button";
 const isBrowser=typeof window !== "undefined";
 
 const LandscapeGrid=() => {
-  // const [tabIndex, setTabIndex] = useState(0);
-  // useEffect(() => {
-  //   setTabIndex(2);
-  // }, []);
   return (
     <LandscapePageWrapper>
       <PageHeader title="The Service Mesh Landscape" path="Landscape" />
