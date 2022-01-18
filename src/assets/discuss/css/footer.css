@@ -253,7 +253,7 @@ body {
   padding: 2.5rem 0px 1.5rem;
 }
 .footer h5 {
-  font-weight: 400;
+  font-weight: 300;
   font-family: "Open Sans", sans-serif;
 }
 .row {
@@ -289,7 +289,7 @@ body {
 }
 .section-title {
   font-size: 1.25rem;
-  font-weight: 500px;
+  font-weight: 400px;
   color: rgba(255, 255, 255, 0.8);
   --heading-font-family: "Qanelas Soft", sans-serif;
 }
