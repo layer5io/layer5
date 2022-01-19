@@ -14,6 +14,10 @@ const PageHeaderWrapper = styled.div`
             z-index: 99;
             h1 {
                 padding-top: 3rem;
+                img{
+                    padding-left: 1.1rem;
+                    width: 2.7rem;
+                }
             }
         }
         
