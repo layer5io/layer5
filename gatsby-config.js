@@ -96,25 +96,6 @@ module.exports = {
             output: "/rss.xml",
             title: "Layer5"
           },
-        ],
-      },
-    },
-    {
-      resolve: "gatsby-plugin-feed-mdx",
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
           {
             serialize: ({ query: { site, allPosts }}) => {
               return allPosts.nodes.map( node => {
@@ -162,25 +143,6 @@ module.exports = {
             output: "/rss-contributors.xml",
             title: "Layer5"
           },
-        ],
-      },
-    },
-    {
-      resolve: "gatsby-plugin-feed-mdx",
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
           {
             serialize: ({ query: { site, allPosts }}) => {
               return allPosts.nodes.map( node => {
