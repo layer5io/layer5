@@ -41,6 +41,12 @@ const MeshmapWrapper = styled.div`
     margin: 4rem auto;
     width: 100%;
 }
+p.caption {
+  display: relative;
+  margin-top: -3rem;
+  font-style: italic;
+  text-align: center;
+}
   .member-header{
     align-items:center;
     padding-left:200px

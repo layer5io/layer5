@@ -59,7 +59,8 @@ const OperatingServiceMeshes = () => (
               icon: VisualTopology,
               description:
               <div><p>MeshMap enables of all service mesh management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
-              Designing and configuration your service mesh is as easy as dragging and dropping.</p></div>,
+              Designing and configuration your service mesh is as easy as dragging and dropping.</p>
+              <p>Learn more about <a href="https://layer5.io/service-mesh-management/meshmap">MeshMap</a></p></div>,
             },
             {
               title: "Extension Points",
