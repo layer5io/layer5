@@ -47,7 +47,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/resources/category/webassembly-filters"
+                      to="/learn/learning-paths"
                     >WebAssembly Filters
                     </Link>
                   </li>
