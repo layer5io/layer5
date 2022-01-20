@@ -407,10 +407,16 @@ export const LandscapePageWrapper=styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
+		background-color: ${props => props.theme.primaryColor};
+		border: 1px solid ${props => props.theme.shadowLightColor};
+		&:nth-child(1){
+			border-top-left-radius: .5rem;
+		}
 		&:hover {
 			background-color: ${props => props.theme.tertiaryColor};
-			border-top-left-radius: .5rem;
-			border-top-right-radius: .5rem;
+			&:nth-child(1){
+				border-top-left-radius: .5rem;
+			}
 		}
 	}
 	.react-tabs__tab-list {
@@ -427,6 +433,7 @@ export const LandscapePageWrapper=styled.div`
 	.react-tabs__tab--selected {
 		background: ${props => props.theme.tertiaryColor};
 		border-color: ${props => props.theme.tertiaryColor};
+		border-radius:0;
 		color: white;
 		font-weight: 600;
 	}

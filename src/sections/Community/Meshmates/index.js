@@ -7,6 +7,8 @@ import MeshMatesWrapper from "./meshmates.style";
 import { useStaticQuery, graphql } from "gatsby";
 import c_icon from "./c-icon.svg";
 import MeshmateStackImage from "../../../assets/images/meshmate/meshmate-stack.svg";
+import {Link} from "gatsby";
+import { FiArrowRight } from "react-icons/fi";
 
 const Meshmates=() => {
   const data=useStaticQuery(
@@ -63,7 +65,7 @@ const Meshmates=() => {
           </Col>
         </Row>
         <div className="meshmates-grid">
-          <h1> Our Community MeshMates </h1>
+          <h1> Our MeshMates </h1>
           <p> MeshMate is a distinction that Layer5 awards select members of the community that who innately align with the Layer5 culture of helping others, paying it forward, and have a commitment to sharing their knowledge of Layer5 projects with the community. MeshMates are Layer5 ambassadors (not employees) and their commitment to helping others and sharing their expertise has a huge impact on the Layer5 community – don’t hesitate to reach out to them! </p>
           <Row>
             {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
@@ -126,6 +128,9 @@ const Meshmates=() => {
               <CommunityCallCard />
             </Col>
           </Row>
+        </div>
+        <div className="conduct">
+          <h4> Get to know about <Link className="readmore-btn" to="/community/managers">Layer5 Community Managers <FiArrowRight /></Link></h4>
         </div>
         <div className="conduct">
           <h2> Code of Conduct </h2>
