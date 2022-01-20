@@ -113,8 +113,8 @@ const Meshmap = () => {
                         <Field type="text" className="text-field" id="occupation" name="occupation" />
                         <label htmlFor="org" className="form-name">Organization / Company / School<span className="required-sign">*</span></label>
                         <Field type="text" className="text-field" id="org" name="org" />
-                        <label htmlFor="google" className="form-name">Google Account</label>
-                        <Field type="text" placeholder="john-doe@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                        <label htmlFor="google" className="form-name">Google</label>
+                        <Field type="text" placeholder="my-address@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                         <label htmlFor="github" className="form-name">GitHub</label>
                         <Field type="url" placeholder="https://github.com/" className="text-field" id="github" name="github" pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
                         <label htmlFor="twitter" className="form-name">Twitter</label>
