@@ -19,7 +19,7 @@ const SocialLinksWrapper = styled.div`
             }
         }
         .github:hover {
-            filter: grayscale(0) invert(1);
+            filter: grayscale(1) invert(0.25);
         }
 
         .mail_icon {
