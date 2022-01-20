@@ -2,7 +2,8 @@
 module.exports = {
   siteMetadata: {
     title: "Layer5 - The Service Mesh Company",
-    description: "Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.",
+    description:
+      "Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.",
     author: "Layer5 Authors",
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
@@ -16,15 +17,13 @@ module.exports = {
       resolve: "gatsby-plugin-react-helmet-canonical-urls",
       options: {
         siteUrl: "https://layer5.io",
-        noQueryString: true
+        noQueryString: true,
       },
     },
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
-        trackingIds: [
-          "G-MDVP5FT6JY",
-        ],
+        trackingIds: ["G-MDVP5FT6JY"],
         gtagConfig: {
           anonymize_ip: true,
         },
@@ -50,8 +49,8 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allPosts }}) => {
-              return allPosts.nodes.map( node => {
+            serialize: ({ query: { site, allPosts } }) => {
+              return allPosts.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
@@ -60,7 +59,9 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
-                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    url:
+                      site.siteMetadata.siteUrl +
+                      node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [{ "content:encoded": node.html }],
                 });
@@ -94,11 +95,59 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Layer5"
+            title: "Layer5",
           },
           {
-            serialize: ({ query: { site, allPosts }}) => {
-              return allPosts.nodes.map( node => {
+            serialize: ({ query: { site, allPosts } }) => {
+              return allPosts.nodes.map((node) => {
+                return Object.assign({}, node.frontmatter, {
+                  title: node.frontmatter.title,
+                  author: node.frontmatter.author,
+                  description: node.body,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  enclosure: node.frontmatter.thumbnail && {
+                    url:
+                      site.siteMetadata.siteUrl +
+                      node.frontmatter.thumbnail.publicURL,
+                  },
+                  custom_elements: [{ "content:encoded": node.html }],
+                });
+              });
+            },
+            query: `
+              {
+                allPosts: allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { fields: { collection: { in: [ "news"] } }, frontmatter: { published: { eq: true } } }
+                  limit: 20
+                ) {
+                  nodes {
+                    body
+                    html
+                    frontmatter {
+                      title
+                      author
+                      date(formatString: "MMM DD YYYY")
+                      thumbnail {
+                        publicURL
+                      }
+                    }
+                    fields {
+                      collection
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/news/feed.xml",
+            title: "Layer5",
+          },
+          {
+            serialize: ({ query: { site, allPosts } }) => {
+              return allPosts.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
@@ -107,7 +156,9 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   enclosure: node.frontmatter.thumbnail && {
-                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                    url:
+                      site.siteMetadata.siteUrl +
+                      node.frontmatter.thumbnail.publicURL,
                   },
                   custom_elements: [{ "content:encoded": node.html }],
                 });
@@ -141,7 +192,7 @@ module.exports = {
               }
             `,
             output: "/rss-contributors.xml",
-            title: "Layer5"
+            title: "Layer5",
           },
           {
             serialize: ({ query: { site, allPosts }}) => {
@@ -333,9 +384,9 @@ module.exports = {
     {
       resolve: "gatsby-redirect-from",
       options: {
-        query: "allMdx"
-      }
+        query: "allMdx",
+      },
     },
-    "gatsby-plugin-meta-redirect" // make sure this is always the last one
+    "gatsby-plugin-meta-redirect", // make sure this is always the last one
   ],
 };

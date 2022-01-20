@@ -1,9 +1,30 @@
-name: Invite User to GH Org
+name: Label Triggered Workflow
+
 on:
   issues:
-    types: [labeled]
+    types:
+      - labeled
+
+  pull_request_target:
+    types:
+      - labeled
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
+  comment:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Label Commenter
+        uses: peaceiris/actions-label-commenter@v1
+
   automate_invite:
     if: contains(github.event.issue.labels.*.name, 'issue/invite')
     runs-on: ubuntu-latest
