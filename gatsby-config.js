@@ -239,7 +239,7 @@ module.exports = {
               }
             `,
             output: "/blog/feed.xml",
-            title: "Layer5"
+            title: "Layer5 Blogs"
           },
         ],
       },
