@@ -3,7 +3,6 @@ import styled from "styled-components";
 const MeshmapWrapper = styled.div`
   
   .supscript{
-    /* background-color: red; */
     color: rgb(0, 211, 169);
     font-size: 75%;
     font-family: Qanelas Soft Thin;
@@ -70,10 +69,6 @@ p.caption {
     .label {
       font-size: 1rem;
     }
-
-
-
-
     .form {
         margin: 1rem;
         font-size: .9rem;
@@ -127,7 +122,6 @@ p.caption {
         }
 
     }
-
 
     .center {
         /* display: flex;
