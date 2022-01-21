@@ -99,7 +99,7 @@ const options = [
   },
   {
     label: "Service Mesh Patterns",
-    value: "mesh-patterns",
+    value: "patterns",
     color: theme.linkColor,
     isFixed: true,
     icon: patternsIcon,
