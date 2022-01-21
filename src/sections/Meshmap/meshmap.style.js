@@ -2,7 +2,13 @@ import styled from "styled-components";
 
 const MeshmapWrapper = styled.div`
   
-
+  .supscript{
+    /* background-color: red; */
+    color: rgb(0, 211, 169);
+    font-size: 75%;
+    font-family: Qanelas Soft Thin;
+    font-weight: 300;
+  }
   .required-sign {
     color: #8b0000;
   }
@@ -10,7 +16,7 @@ const MeshmapWrapper = styled.div`
   .checkbox-label {
     font-size: .8rem;
   }
-
+  
   .para {
       padding-top: 4rem;
   }
