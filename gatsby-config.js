@@ -151,6 +151,54 @@ module.exports = {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
+                  description: node.body,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  enclosure: node.frontmatter.thumbnail && {
+                    url:
+                      site.siteMetadata.siteUrl +
+                      node.frontmatter.thumbnail.publicURL,
+                  },
+                  custom_elements: [{ "content:encoded": node.html }],
+                });
+              });
+            },
+            query: `
+              {
+                allPosts: allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { fields: { collection: { in: [ "resources"] } }, frontmatter: { published: { eq: true } } }
+                  limit: 20
+                ) {
+                  nodes {
+                    body
+                    html
+                    frontmatter {
+                      title
+                      author
+                      date(formatString: "MMM DD YYYY")
+                      thumbnail {
+                        publicURL
+                      }
+                    }
+                    fields {
+                      collection
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/resources/feed.xml",
+            title: "Layer5",
+          },
+          {
+            serialize: ({ query: { site, allPosts } }) => {
+              return allPosts.nodes.map((node) => {
+                return Object.assign({}, node.frontmatter, {
+                  title: node.frontmatter.title,
+                  author: node.frontmatter.author,
                   description: node.frontmatter.description,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
