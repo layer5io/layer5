@@ -21,8 +21,38 @@ export const ResourceNavigationWrapper = styled.div`
   .heading>span:hover{
     color: ${(props) => props.theme.secondaryColor};
   }
+
+  .heading-name{
+    font-size: 1.5rem;
+  }
+
   .clear-disabled{
     display: none;
+  }
+
+  .filter-icon{
+    width: 1.5rem; 
+    height: 1.5rem; 
+    cursor: pointer;
+    margin : 0.2rem;
+  }
+
+  .filter-menu-icon{
+    display : none;
+  }
+  .filter-btn{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFF;
+    font-weight: 500;
+    border: none;
+    span{
+      padding-left: 1rem;
+      float: right;
+      color: #000000;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
   }
 
 label {
@@ -116,6 +146,72 @@ input[type="checkbox"] {
        .filter{
         display:contents;
        }
+    }
+
+    @media only screen and (max-width: 991px) {
+      .filter-menu-icon{
+        display: flex;
+      }
+      .filter-menu-icon>span{
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin : 0 1rem;
+      }
+      .filter-close{
+        width: 1.7rem; 
+        height: 1.7rem;
+      }
+      .filters-boxes{
+        display: none;
+      }
+      .heading{
+        display: flex;
+        justify-content: space-between;
+        border: none;
+      }
+      .heading-name{
+        display : none;
+      }
+      #filters-boxes{
+        display : block
+      }
+    }
+    @media only screen and (max-width: 575px) {
+      .heading{
+        margin-left: 0;
+        margin-bottom: 2.5rem
+      }
+      .filter-close{
+        width: 1.7rem; 
+        height: 1.7rem;
+      }
+    }
+    @media only screen and (max-width: 430px){
+      .filter{
+        font-size: 1rem;
+      }
+      .filter-btn>span{
+        font-size: 1rem;
+        font-weight: bold;
+        padding-left: 0.6rem;
+      }
+      .filter-icon{
+        width: 1rem;
+        height: 1rem;
+      }
+
+      .clear-enabled{
+        font-size: 0.5rem;
+      }
+      
+      .filter-close{
+        width: 1.2rem; 
+        height: 1.2rem;
+      }
+     }
+
+     
+    
            
 `;
 
