@@ -26,6 +26,7 @@ import mesheryOpIcon from "../../assets/images/meshery-operator/meshery-operator
 import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import inactiveIcon from "../../assets/images/status/inactive.png";
 import activeIcon from "../../assets/images/status/active.png";
+import patternsIcon from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 
 /**
  * Array containing a list of categories to be shown in the dropdown.
@@ -94,6 +95,14 @@ const options = [
     color: theme.linkColor,
     isFixed: true,
     icon: hawkIcon,
+    className: "allOptions",
+  },
+  {
+    label: "Service Mesh Patterns",
+    value: "patterns",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: patternsIcon,
     className: "allOptions",
   },
   {
