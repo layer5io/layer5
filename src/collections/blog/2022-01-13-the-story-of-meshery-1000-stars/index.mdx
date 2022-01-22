@@ -1,0 +1,93 @@
+---
+title: "The Story of Meshery's 1000 Stars"
+subtitle: "A story about growing together as a community and building a project that matters"
+date: 2022-01-13 10:30:05 -0530
+author: Debopriya Bhattacharjee
+thumbnail: ./Meshery-Stars-cover.png
+category: "Announcements"
+description: "This is a short summary of my blog post. This text will show in the blog's list view and in community newsletters."
+tags:
+ - Community
+ - Meshery
+published: true
+---
+
+import { BlogWrapper } from "../Blog.style.js";
+import Blockquote from "../../../reusecore/Blockquote";
+import BlockquoteAlt from "../../../reusecore/Blockquote/Blockquote-alt-style";
+import { Link } from "gatsby";
+import Stars from "./stars-forks.png"
+
+<BlogWrapper>
+
+<p>
+  <Link to="/service-mesh-management/meshery">Meshery</Link> took its first steps into the Cloud Native world in July of 2019 with the goal to ease the adoption and operation of any service mesh. Since then, Meshery as a project and Layer5 as an open source community have grown by leaps and bounds. Now, we are bursting with pride in announcing that Meshery has reached yet another milestone.  We're overjoyed to report that our GitHub repository has surpassed 1,000 stars.
+</p>
+
+<p>
+  It is quite astounding to see how early on in its journey Meshery has grown to have a thousand meshy brains. While it's a moment of pride for all of us in the community to see how far we’ve come, it only serves us well to reflect on the project's incredible journey since its inception.
+</p>
+
+<h3>Why was Meshery created?</h3>
+<p>
+Meshery was designed as an open source, vendor-neutral project to enable service mesh adopters overcome the challenges of complex virtual networking; to empower them to expect more from their infrastructure; to enable the world to understand and operate any service mesh with confidence.
+</p>
+<p>
+   Meshery is gradually becoming recognized as the ideal tool for service mesh management, intending to enable developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. The project has earned itself the name of The Extensible Service Mesh Manager, rightfully so.
+</p>
+<p>
+  Within just 1 year of meshing around, <Link to="/company/news/meshery-accepted-into-the-cncf-landscape">Meshery lands in the CNCF Landscape.</Link> This was just the beginnging of the flourishing path the project initially set for itself.
+</p>
+<p>Meshery was <Link to="/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5">adopted by the CNCF</Link> in October 2021, not long after. With this giant leap into the Cloud Native Computing Foundation, the community is steadfast on making the project the best version of itself. With continuous improvements in the architecture, user experience and in other features regulated by inclusive monitoring, the project is bound to grow.</p>
+
+<div className="responsive-blog">
+<Blockquote
+  quote="Open source contributions are a must-do for becoming a true cloud native hero. Cloud native is all about the community and one can't be a part of a community by only taking and never giving back. So, if you were looking for a promising and welcoming project to join - look no further!"
+  person="Anton Weiss, one of our valued contributors and proud Meshery user"
+/>
+<Blockquote
+  quote="Meshery is the perfect tool for ensuring that your service mesh applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration."
+  person="Nic Jackson, Principal Developer Advocate at HashiCorp"
+/>
+<Blockquote
+  quote="Layer5 has been instrumental in helping us understand the patterns, best practices, and strategies in our approach to the service mesh ecosystem. Meshery has simplified the process of configuring and operating meshes. Meshery's service mesh neutrality, open source governance, and defining of industry standards like SMP, SMI, and now service mesh patterns will ensure that Meshery helps any organization adopt meshes with utmost clarity curated to their needs"
+  person="Yogi Porla, Customer Success Manager at HPE"
+/>
+</div>
+
+<h3>Engagement in the community is on the rise!</h3>
+<p>
+  It isn't just the number of stars that has grown. We've seen a surge of new contributors, maintainers, new features, commits, PRs, releases, and so much more! How do we assess the impact of Meshery? Here are some statistics on how we track our engagement:
+</p>
+<ul>
+  <li>Stargazers: <b>105.4795%</b> annual growth from 584 to 1200</li>
+  <li>Forks: <b>103.2491%</b> annual growth from 277 to 563</li>
+  <li>Code Commits: <b>250%</b> annual growth from 3.25k to 11.375k</li>
+  <li>In the last 12 months, we had 341 contributors with 291 new.</li>
+  <li>Number of PR's merged in the last 12 months is 2108. Our count of PR’s merged is more than that of 106 CNCF hosted projects.</li>
+</ul>
+
+<img src={Stars} style="width:75%; display: block; margin: auto;" alt="Stars and Forks Graph" />
+<p style="font-size: 15px; text-align: center">
+  Note: These metrics and reports were obtained from DevStats, a CNCF-created tool for analyzing and graphing developer contributions
+</p>
+
+<h3>Our Latest release: Meshery version v0.6.0-rc-4 is out now!</h3>
+<p>Followed by new versions of <Link to="/service-mesh-management/meshery/meshery-operator">Meshery Operator</Link> and Meshsync</p>
+New beta features added:
+<ul>
+<li>Manage Applications</li>
+<li>Manage WASM filters</li>
+<li>Manage <Link to="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</Link></li>
+<li><Link to="/service-mesh-management/meshmap">MeshMap</Link>: Visualise service mesh deployments</li>
+<li>Improved Kubernetes support</li>
+</ul>
+
+<BlockquoteAlt
+    style="width:100%;"
+    style="position:relative;"
+    quote="We’re on a mission to see that organizations are successful in their operation of the world’s next layer of cloud native infrastructure: service meshes. Through Meshery’s management of powerful, service mesh data planes, users can expect more from their infrastructure."
+    person="Lee Calcote"
+  />
+
+</BlogWrapper>
