@@ -214,7 +214,8 @@ p.caption {
                     text-align: center;
                 }
             }
-            
+           
+           
              
         }
       @media only screen and (max-width: 600px) {
