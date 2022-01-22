@@ -4,6 +4,7 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import hawkIcon from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import meshmateicon from "../../../assets/images/meshmate/meshmate-icon.svg";
+import PatternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
 import mesheryoperatoricon from "../../../assets/images/meshery-operator/meshery-operator.svg";
 import mesherysyncicon from "../../../assets/images/meshsync/meshsync.svg";
@@ -164,7 +165,7 @@ const Maintainer = () => {
 
             <a id="Service Mesh Performance">
               <p>
-                <h3 style = {{ margin : "2% 0%"}}>
+                <h3>
                   <a href="https://smp-spec.io/">
                     <img
                       className="project-title-icon"
@@ -196,7 +197,7 @@ const Maintainer = () => {
                     <img
                       className="project-title-icon"
                       alt="service mesh patterns"
-                      src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
+                      src={PatternsLogo}
                     />{" "}
                     &nbsp; Service Mesh Patterns{" "}
                   </a>

@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
-import { Link } from "gatsby";
-import Point from "./images/bullet.svg";
 import TOC from "../../../components/handbook-navigation/index";
 import twitter_icon from "../../../assets/images/socialIcons/twitter-light.svg";
 import mail_icon from "../../../assets/images/socialIcons/mail_keppel.svg";

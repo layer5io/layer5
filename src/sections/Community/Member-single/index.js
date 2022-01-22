@@ -6,14 +6,14 @@ import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
 import MeshMateIcon from "../../../assets/images/meshmate/meshmate-icon.svg";
-import mesheryLogo from "./meshery-logo-light.svg";
-import mesheryOperatorLogo from "./meshery-operator-dark.svg";
-import smpLogo from "./smp-dark-text.svg";
-import landscapeLogo from "./landscape-green.png";
-import patternsLogo from "./patterns-logo.png";
+import mesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import mesheryOperatorLogo from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
+import smpLogo from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
+import landscapeLogo from "../../../assets/images/landscape/layer5_landscape_green.svg";
+import patternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
-import communityLogo from "./community-green.svg";
-import imageHubLogo from "./layer5-image-hub.svg";
+import imageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
+import communityLogo from "../../../assets/images/community/community-green.svg";
 import Button from "../../../reusecore/Button";
 
 const MemberSingle = ({ frontmatter }) => {

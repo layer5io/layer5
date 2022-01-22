@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image"
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import JoinCommunity from "../Community/Join-community";
@@ -7,8 +8,6 @@ import PictureSlider from "./slider";
 import { FaArrowRight, FaUsers } from "react-icons/fa";
 import CommunitySectionWrapper from "./community.style";
 import Lee_workshop from "./Lee_Workshop.png";
-import CommunityMemberImage from "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
-import MeshMateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 
@@ -34,7 +33,7 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-              <img src={CommunityMemberImage} alt="Community Member" />
+            <StaticImage src="./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg" alt="Community Member" placeholder="blurred" />
             </Col>
           </Row>
           <Row className="open-source-projects">
@@ -89,7 +88,7 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-              <img src={MeshMateIcon} alt="MeshMate Icon" />
+              <StaticImage src="../../assets/images/meshmate/meshmate-stack.svg" alt="MeshMate Icon" className="meshmate-img" />
               <Link className="meshmate-link" to="/community/meshmates">
                 <h3>Open Source Mentorship Program</h3>
                 <button className="icon">
