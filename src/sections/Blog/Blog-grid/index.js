@@ -6,13 +6,14 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 
 import PageHeader from "../../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
+import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 
 import { BlogPageWrapper } from "./blogGrid.style";
 
 const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => {
   return (
     <BlogPageWrapper>
-      <PageHeader title="Blog" path="Blog"/>
+      <PageHeader title="Blog" path="Blog" img={RssFeedIcon} feedlink="/blog/feed.xml"/>
       <div className="blog-page-wrapper">
         <Container>
           <Row>
