@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import imgHero from "./images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
+import imgHero from "../../../assets/images/home-page-images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
 
 
 const BannerSectionWrapper = styled.section`

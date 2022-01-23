@@ -1,5 +1,4 @@
 import React from "react";
-
 import BannerSectionWrapper from "./stewards.style";
 import Button from "../../../reusecore/Button";
 

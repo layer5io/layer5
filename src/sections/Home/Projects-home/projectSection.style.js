@@ -70,6 +70,7 @@ const ProjectItemWrapper = styled.section`
         img{
             height: 40px; 
             margin: 10px auto; 
+            width: auto !important;
         }
     }
     .description {
