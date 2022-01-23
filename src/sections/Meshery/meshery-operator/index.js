@@ -1,6 +1,5 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../../../components/layout";
 
 import MesheryOperatorWrapper from "./mesheryoperator.style";
@@ -12,6 +11,8 @@ import Deployment from "./deployment.svg";
 import Initialization from "./initialization.svg";
 import icon from "./icon.svg";
 
+const OperatorLogo = "../../../assets/images/meshery-operator/meshery-operator.png";
+
 const MesheryOperatorPage = () => {
   return (
     <Layout>
@@ -21,7 +22,7 @@ const MesheryOperatorPage = () => {
             <div className="hero-section">
               <Row>
                 <Col lg={6} md={6} sm={12}>
-                <StaticImage src="../../../assets/images/meshery-operator/meshery-operator.png" className="logo" />
+                <StaticImage src={OperatorLogo} className="logo" />
                 </Col>
                 <Col lg={6} md={6} sm={12}>
                   <div className="hero-text">

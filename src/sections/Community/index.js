@@ -11,6 +11,8 @@ import Lee_workshop from "./Lee_Workshop.png";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 
+const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
+const MeshmateIcon = "../../assets/images/meshmate/meshmate-stack.svg";
 
 const CommunityPage = () => {
  
@@ -33,7 +35,7 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-            <StaticImage src="./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg" alt="Community Member" placeholder="blurred" />
+            <StaticImage src={CommunityMember} alt="Community Member" placeholder="blurred" />
             </Col>
           </Row>
           <Row className="open-source-projects">
@@ -88,7 +90,7 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-              <StaticImage src="../../assets/images/meshmate/meshmate-stack.svg" alt="MeshMate Icon" className="meshmate-img" />
+              <StaticImage src={MeshmateIcon} alt="MeshMate Icon" className="meshmate-img" />
               <Link className="meshmate-link" to="/community/meshmates">
                 <h3>Open Source Mentorship Program</h3>
                 <button className="icon">
