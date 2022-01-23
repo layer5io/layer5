@@ -119,8 +119,8 @@ const CommunitySectionWrapper = styled.div`
               text-align:center;
             }
         }
-        img{
-            max-height: 25rem;
+        .meshmate-img{
+            max-width: 25rem;
             display:block;
             margin: auto;
             background-color: ${props => props.theme.secondaryLightColorTwo};
