@@ -20,7 +20,7 @@ const authorField = (author, isSlugAvailable) => {
   );
 };
 
-const PageHeader = ({ category, title, img, feedlink, subtitle,  author, thumbnail }) => {
+const PageHeader = ({ category, title, img, feedlink, subtitle,  author, thumbnail,superscript }) => {
   let isSlugAvailable = false;
   if(author){
     const validMembers = useStaticQuery(
@@ -48,7 +48,9 @@ const PageHeader = ({ category, title, img, feedlink, subtitle,  author, thumbna
         { thumbnail && <div className="feature-image">
           <Image {...thumbnail} imgStyle={{ objectFit: "contain"}} alt={title}/>
         </div>}
-        <h1 className="page-title" >{title} { img && feedlink && (<a href= {feedlink} target="_blank" rel="noreferrer"> <img src={img} alt="RSS Feed"/> </a>) }</h1>
+        <h1 className="page-title" >{title} { img && feedlink && (<a href= {feedlink} target="_blank" rel="noreferrer"> <img src={img} alt="RSS Feed"/> </a>) }
+          <sup className="supscript">{superscript}</sup>
+        </h1>
         {subtitle && (<h3>{subtitle}</h3>)}
         {category && (
           <div className="breadcrumbs">

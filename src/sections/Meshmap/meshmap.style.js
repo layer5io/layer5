@@ -2,7 +2,12 @@ import styled from "styled-components";
 
 const MeshmapWrapper = styled.div`
   
-
+  .supscript{
+    color: rgb(0, 211, 169);
+    font-size: 75%;
+    font-family: Qanelas Soft Thin;
+    font-weight: 300;
+  }
   .required-sign {
     color: #8b0000;
   }
@@ -64,9 +69,6 @@ p.caption {
     .label {
       font-size: 1rem;
     }
-
-
-
 
     .form {
         margin: 1rem;
