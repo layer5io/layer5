@@ -3,9 +3,8 @@ import styled from "styled-components";
 const MeshmapWrapper = styled.div`
   
   .supscript{
-    color: rgb(0, 211, 169);
-    font-size: 75%;
-    font-family: Qanelas Soft Thin;
+    color: #00d3a9;
+    font-size: 2.5rem;
     font-weight: 300;
   }
   .required-sign {
@@ -208,8 +207,6 @@ p.caption {
                 width: auto;
                 height: auto;
               }
-
-           
 
             .hero-text {
                 .title1 {
