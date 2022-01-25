@@ -148,6 +148,11 @@ const Data = {
       path: "/community",
       subItems: [
         {
+          name: "Handbook",
+          path: "/community/handbook",
+          sepLine: true
+        },
+        {
           name: "Members",
           path: "/community/members",
           sepLine: true
@@ -155,10 +160,6 @@ const Data = {
         {
           name: "MeshMates",
           path: "/community/meshmates",
-        },
-        {
-          name: "Newcomers",
-          path: "/community/newcomers",
         },
         {
           name: "Events",
@@ -172,8 +173,8 @@ const Data = {
       ],
       actionItems: [
         {
-          actionName: "Join the discussion",
-          actionLink: "https://discuss.layer5.io",
+          actionName: "Newcomer's journey",
+          actionLink: "/community/newcomers",
         },
         {
           actionName: "Open source internships",

@@ -12,7 +12,7 @@ import VintageBox from "../../../reusecore/VintageBox";
 // Assets
 import { MembersGridWrapper } from "./membersGrid.style";
 import communityImg from "../../../assets/images/community/community-green.svg";
-import { FaEnvelope, FaUsers } from "react-icons/fa";
+import { FaBook, FaUsers } from "react-icons/fa";
 
 const MembersGrid = (props) => {
   return (
@@ -88,11 +88,11 @@ const MembersGrid = (props) => {
                   <Button
                     primary
                     className='banner-btn memberProfileBtn'
-                    title='Read the Layer5 Community Handbook'
+                    title='Read the Community Handbook'
                     url='/community/handbook'
                     external={true}
                   >
-                    <FaEnvelope size={21} className='icon-left' />
+                    <FaBook size={21} className='icon-left' />
                   </Button>
 
                   <Button
