@@ -1,14 +1,15 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import Button from "../../../reusecore/Button";
 import { FaArrowRight } from "react-icons/fa";
 import InternshipSectionWrapper from "./InternshipPage.style";
 import ProgramsGrid from "../Careers-Programs-grid/index";
-import UEM_Img from "../../../assets/images/partners/uem_partner.png";
-import Univ_Texas_Img from "../../../assets/images/partners/texas_partner.png";
-import Peek_Img from "../../../assets/images/layer5/layer5-peek-card-edited.svg";
+const UEM_Img = "../../../assets/images/partners/uem_partner.png";
+const Univ_Texas_Img = "../../../assets/images/partners/texas_partner.png";
+const Peek_Img = "../../../assets/images/layer5/layer5-peek-card-edited.svg";
 
 const InternshipPage = ({ hide_heading }) => {
   const opportunities = useStaticQuery(
@@ -73,7 +74,7 @@ const InternshipPage = ({ hide_heading }) => {
       <Link to={fields.slug}>
         <div className="opportunity-card">
           <div className="peek-card">
-            <img src={Peek_Img} alt="Peek card effect" />
+            <StaticImage style={{width:"5rem",}}  src={Peek_Img} alt="Peek card effect" />
           </div>
           <div className="text">
             <h3>{frontmatter.title}</h3>
@@ -143,8 +144,7 @@ const InternshipPage = ({ hide_heading }) => {
                 <Col className="partner-col">
                   <div className="partners-card">
                     <div className="partner-image">
-                      <img
-                        src={Univ_Texas_Img}
+                      <StaticImage src={Univ_Texas_Img}
                         alt="University of Texas, Austin"
                       />
                     </div>
@@ -154,7 +154,7 @@ const InternshipPage = ({ hide_heading }) => {
                 <Col className="partner-col">
                   <div className="partners-card">
                     <div className="partner-image">
-                      <img src={UEM_Img} alt="UEM Jaipur" />
+                      <StaticImage src={UEM_Img} alt="UEM Jaipur" />
                     </div>
                     <h5>UEM Jaipur</h5>
                   </div>

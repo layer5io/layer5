@@ -1,9 +1,10 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 import { Container } from "../../reusecore/Layout";
 import { Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import InternshipPage from "./Careers-Internship-grid";
-import Lee_and_Rigs from "../../assets/images/careers/Lee-and-Rigs-Caballero-of-Google.jpeg";
+const Lee_and_Rigs = "../../assets/images/careers/Lee-and-Rigs-Caballero-of-Google.jpeg";
 import Lee_giveaway from "../../assets/images/careers/Lee-giving-away-free-t-shirts-at-UT-Austin.jpeg";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
@@ -27,7 +28,7 @@ const CareersPage = () => {
             </p>
           </div>
           <div className="opensource-section-img">
-            <img src={Lee_and_Rigs} alt="Lee-and-Rigs-Caballero-of-Google" />
+            <StaticImage src={Lee_and_Rigs} alt="Lee-and-Rigs-Caballero-of-Google" />
           </div>
         </div>
         <Container>
