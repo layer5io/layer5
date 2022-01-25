@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import JoinCommunity from "../Community/Join-community";
@@ -35,7 +35,7 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-            <StaticImage src={CommunityMember} alt="Community Member" placeholder="blurred" />
+              <StaticImage src={CommunityMember} alt="Community Member" placeholder="blurred" />
             </Col>
           </Row>
           <Row className="open-source-projects">
