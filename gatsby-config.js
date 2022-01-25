@@ -95,7 +95,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Layer5",
+            title: "Layer5 Announcements",
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
@@ -143,7 +143,7 @@ module.exports = {
               }
             `,
             output: "/news/feed.xml",
-            title: "Layer5",
+            title: "Layer5 News",
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
@@ -191,7 +191,7 @@ module.exports = {
               }
             `,
             output: "/resources/feed.xml",
-            title: "Layer5 Blog",
+            title: "Layer5 Resources",
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
@@ -240,7 +240,7 @@ module.exports = {
               }
             `,
             output: "/rss-contributors.xml",
-            title: "Layer5",
+            title: "Layer5 Contributor Feed",
           },
           {
             serialize: ({ query: { site, allPosts }}) => {
@@ -287,7 +287,7 @@ module.exports = {
               }
             `,
             output: "/blog/feed.xml",
-            title: "Layer5 Blogs"
+            title: "Layer5 Blog"
           },
         ],
       },
