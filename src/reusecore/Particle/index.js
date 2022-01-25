@@ -1,5 +1,5 @@
 import React from "react";
-import Particles from "react-particles-js";
+import Particles from "react-tsparticles";
 
 import meshery from "../../assets/images/app/projects/meshery-logo-white.png";
 import smp from "../../assets/images/app/projects/smp.png";
