@@ -104,6 +104,11 @@ const Data = {
           sepLine: true
         },
         {
+          name: "Forum",
+          path: "https://discuss.layer5.io",
+          sepLine: true
+        },
+        {
           name: "Workshops",
           path: "/learn/service-mesh-workshops",
           sepLine: true
@@ -121,7 +126,7 @@ const Data = {
       ],
       actionItems: [
         {
-          actionName: "Discussion forum",
+          actionName: "Join the discussion",
           actionLink: "https://discuss.layer5.io",
         },
         {
@@ -148,12 +153,12 @@ const Data = {
           sepLine: true
         },
         {
-          name: "Newcomers",
-          path: "/community/newcomers"
-        },
-        {
           name: "MeshMates",
           path: "/community/meshmates",
+        },
+        {
+          name: "Newcomers",
+          path: "/community/newcomers",
         },
         {
           name: "Events",
@@ -163,11 +168,6 @@ const Data = {
         {
           name: "Calendar",
           path: "/community/calendar",
-        },
-        {
-          name: "Forum",
-          path: "https://discuss.layer5.io",
-          sepLine: true
         },
       ],
       actionItems: [
