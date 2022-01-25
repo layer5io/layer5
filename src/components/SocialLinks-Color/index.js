@@ -30,7 +30,7 @@ const SocialLinksColor = () => {
           >
             <img height="30px" src={mail_icon} alt="mail" />
           </a>
-          <a href="https://slack.layer5.io/" target="_blank">
+          <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
             <img className="slack" height="30px" src={slack_icon} alt="slack" />
           </a>
           <a href="https://twitter.com/layer5" target="_blank" rel="noreferrer">
