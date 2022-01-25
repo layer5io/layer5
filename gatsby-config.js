@@ -9,6 +9,11 @@ module.exports = {
     image: "/images/layer5-company.png",
     twitterUsername: "@layer5",
   },
+  flags: {
+    FAST_DEV: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+  },
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
