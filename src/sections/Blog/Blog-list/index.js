@@ -17,6 +17,7 @@ const BlogList = ({
   setGridView,
   pageContext,
 }) => {
+  console.log("data",data);
   const category = pageContext.category ? pageContext.category : null;
   const tag = pageContext.tag ? pageContext.tag : null;
   const { totalCount, nodes } = data.allMdx;
