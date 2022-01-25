@@ -191,7 +191,7 @@ module.exports = {
               }
             `,
             output: "/resources/feed.xml",
-            title: "Layer5",
+            title: "Layer5 Blog",
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
