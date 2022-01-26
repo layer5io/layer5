@@ -54,7 +54,7 @@ The following list of instructions pertain to commonplace site updates by contri
 ## Things to keep in mind
 
   1. Use only the theme colors available at [themeStyles.js](https://github.com/layer5io/layer5/blob/master/src/theme/app/themeStyles.js) instead of external color codes.
-  2. Avoid using `rel="noreferrer"` attribute to internal links on the site.
+  2. Avoid adding `rel="noreferrer"` attribute to internal links on the site.
 
 
 ## Adding Images and Icons
