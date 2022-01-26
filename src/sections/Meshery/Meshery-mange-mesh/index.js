@@ -2,8 +2,10 @@ import React from "react";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
-import MultiMesh from "./multi-mesh.svg";
-import { GiClockwork } from "react-icons/gi";
+import { GiClockwork } from "@react-icons/all-files/gi/GiClockwork";
+import { StaticImage } from "gatsby-plugin-image";
+
+const  MultiMesh = "./multi-mesh.svg";
 
 const ManageMeshWrapper = styled.div`
   margin: 4rem auto;
@@ -14,12 +16,12 @@ const ManageMeshWrapper = styled.div`
     margin-bottom: 2rem;
   }
   .banner-btn {
-                    margin: 0rem 0.75rem 0 0;
-                    color: white;
-                    .button-icon{
-                        margin-right: 0.625rem;
-                    }    
-                }
+      margin: 0rem 0.75rem 0 0;
+      color: white;
+      .button-icon{
+          margin-right: 0.625rem;
+      }    
+  }
   img{
     height: 25rem;
     @media (max-width: 62rem) {
@@ -44,7 +46,7 @@ const MesheryManageMesh = () => {
             </Button>
           </Col>
           <Col sm={12} lg={6}>
-            <img src={MultiMesh} alt="meshery-multi-mesh" />
+            <StaticImage src={MultiMesh} alt="Meshery multi-mesh" />
           </Col>
         </Row>
       </Container>

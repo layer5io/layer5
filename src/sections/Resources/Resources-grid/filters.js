@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { HiOutlineChevronUp, HiOutlineChevronDown } from "react-icons/hi";
-import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
+import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp";
+import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { options } from "./options";
-import { graphql, Link, useStaticQuery} from "gatsby";
+import { graphql, useStaticQuery} from "gatsby";
 
 
 import ResourceNavigationWrapper from "./filters.style";

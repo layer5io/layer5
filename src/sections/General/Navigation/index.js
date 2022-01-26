@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
-import { FaBars } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
+import { FaBars } from "@react-icons/all-files/fa/FaBars";
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import Button from "../../../reusecore/Button";
 
 

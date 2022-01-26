@@ -5,9 +5,10 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import JoinCommunity from "../Community/Join-community";
 import PictureSlider from "./slider";
-import { FaArrowRight, FaUsers } from "react-icons/fa";
+import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
+import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import CommunitySectionWrapper from "./community.style";
-import Lee_workshop from "./Lee_Workshop.png";
+import Lee_workshop from "../../assets/images/community/Lee_Workshop.png";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 

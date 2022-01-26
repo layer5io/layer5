@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from "gatsby";
 import Card from "./Card";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 
 const ScrollspyMenu = ({ menuItems, ...props }) => {
   const addAllClasses = [""];

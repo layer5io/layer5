@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { non_functional } from "../../collections/landscape/non-functional";
-import { MdExpandMore } from "react-icons/md";
+import { MdExpandMore } from "@react-icons/all-files/md/MdExpandMore";
 import ServiceMeshIcon from "../../assets/images/service-mesh-icons/service-mesh.svg";
 
 const meshes = [];
