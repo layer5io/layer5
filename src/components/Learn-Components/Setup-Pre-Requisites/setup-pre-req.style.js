@@ -8,6 +8,14 @@ const SetupPreReqWrapper = styled.div`
     .get-started-desc{
         margin: 1rem;
     }
+    // .setup-imgs {
+    //     align-self: center;
+    //     felx: 0 0 25%;
+    //     margin: 0 0.5rem;
+    //     img {
+    //         height: 3rem;
+    //     }
+    // }
     .container-card {
         display: flex;
         a {
@@ -22,11 +30,16 @@ const SetupPreReqWrapper = styled.div`
             .card-header {
                 display: flex;
                 flex: auto;
+                .setup-imgs {
+                    flex: 0 0 25%;
+                    align-self: center;
+                    margin: 0 0.5rem;
+                }
                 img {
                     height: 3rem;
-                    align-self: center;
-                    flex: 0 0 25%;
-                    margin: 0 0.5rem;
+                    width: 3rem;
+                    max-width: 3rem;
+                    margin: auto;
                 }
                 svg {
                     font-size: 4.15rem;

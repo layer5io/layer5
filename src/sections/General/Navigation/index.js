@@ -213,7 +213,12 @@ const Navigation = () => {
                             key={index}
                             className="mobile-nav-subitem"
                           >
-                            <Link to={subItems.path} onClick={changeDropdownState} className="sub-menu-item">{subItems.name}</Link>
+                            { subItems.name === "Forum" ?
+                              <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="sub-menu-item" rel="noreferrer">
+                                {subItems.name}
+                              </a>
+                              : <Link to={subItems.path} onClick={changeDropdownState} className="sub-menu-item">{subItems.name}</Link>
+                            }
                           </li>
                         ))}
                       </ul>

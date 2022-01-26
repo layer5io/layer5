@@ -22,8 +22,8 @@ const ManageMeshWrapper = styled.div`
           margin-right: 0.625rem;
       }    
   }
-  img{
-    height: 25rem;
+  
+  .multi-mesh-img{
     @media (max-width: 62rem) {
       margin-top: 2rem;
     }
@@ -46,7 +46,7 @@ const MesheryManageMesh = () => {
             </Button>
           </Col>
           <Col sm={12} lg={6}>
-            <StaticImage src={MultiMesh} alt="Meshery multi-mesh" />
+            <StaticImage src={MultiMesh} alt="Meshery multi-mesh" className="multi-mesh-img"/>
           </Col>
         </Row>
       </Container>

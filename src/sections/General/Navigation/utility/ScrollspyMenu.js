@@ -64,18 +64,31 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
                 </Link>
                 {active.subItems.map((subItem, i) => (
                   <li key={i}>
-                    <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"}>
-                      {subItem.name}
-                    </Link>
+                    { subItem.name === "Forum" ?
+                      <a href={subItem.path} target="_blank" className="sub-item" rel="noreferrer">
+                        {subItem.name}
+                      </a>
+                      : <Link to={subItem.path} partiallyActive={true} className={subItem.sepLine && "sub-item"}>
+                        {subItem.name}
+                      </Link>
+                    }
                   </li>
                 ))}
                 <div className="action-items">
                   {active.actionItems.map((actionItem, i) => (
-                    <Link key={i} to={actionItem.actionLink} partiallyActive={true} className="action-link">
-                      <span className="readmore-btn">
-                        {actionItem.actionName} <IoIosArrowRoundForward />
-                      </span>
-                    </Link>
+                    ( actionItem.actionName === "Join the discussion" ?
+                      <a href={actionItem.actionLink} target="_blank" className="action-link" rel="noreferrer">
+                        <span className="readmore-btn">
+                          {actionItem.actionName} <IoIosArrowRoundForward />
+                        </span>
+                      </a>
+                      : (<Link key={i} to={actionItem.actionLink} partiallyActive={true} className="action-link">
+                        <span className="readmore-btn">
+                          {actionItem.actionName} <IoIosArrowRoundForward />
+                        </span>
+                      </Link>
+                      )
+                    )
                   ))}
                 </div>
               </div>
