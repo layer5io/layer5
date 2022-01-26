@@ -8,6 +8,7 @@ import Pager from "../../../components/pager";
 import Card from "../../../components/Card";
 
 import { BlogPageWrapper } from "./blogList.style";
+import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 
 const BlogList = ({
   data,
@@ -25,7 +26,7 @@ const BlogList = ({
 
   return (
     <BlogPageWrapper>
-      <PageHeader title={header} path="Blog"/>
+      <PageHeader title={header} path="Blog" img={RssFeedIcon} feedlink="/blog/feed.xml"/>
       <div className="blog-list-wrapper">
         <Container>
           <Row>

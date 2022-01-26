@@ -7,7 +7,7 @@ import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import mesheryCloud from "./meshery-cloud.png";
 import meshmapImage from "./MeshMap.png";
-import serviceMesh from "./service-mesh.svg";
+import serviceMesh from "../../assets/images/service-mesh-icons/service-mesh.svg";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import { Link } from "gatsby";
@@ -43,20 +43,22 @@ const Meshmap = () => {
     return (
         
       <Container>
-        <PageHeader title="MeshMap" />   
+        <PageHeader title="MeshMap" subtitle="bringing GitOps to service meshes" />   
         <Row>
           <Col lg={6} md={6} sm={12}>
-            <p className= "para">As an extensible platform, Meshery has many extension points, MeshMap being a prominent example of a Meshery plugin. MeshMap has two modes: Visualizer and Designer. Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. MeshMap is centered around service mesh patterns. </p>
-            <p>Create and share your own Kubernetes deployments and service mesh patterns in MeshMap Designer or import from the <Link to="/books/service-mesh-patterns"> patterns catalog </Link>. </p>
+            <p className= "para">MeshMap is the world's only visual designer for Kubernetes and service mesh deployments. Use MeshMap to design, deploy, and manage your Kubernetes-based, service mesh deployments. As a plugin for Meshery, MeshMap supports 10+ service meshes. MeshMap not only allows you to create and verify your cloud native application and infrastructure configurations, but also integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.</p>
+            <p>Take advantage of Meshery's catalog of patterns, WebAssembly filters, and eBPF programs (coming soon). MeshMap has two modes:  <b>Designer</b> mode and <b>Visualizer</b> mode. Deployments configured and modeled in Designer mode, can be deployed into your environment and managed using Visualizer. MeshMap designs are centered around service mesh patterns.</p>
+            <p>Create and share your own Kubernetes deployments and <Link to="/books/service-mesh-patterns">service mesh patterns</Link> in MeshMap Designer or import from the catalog. </p>
           </Col>
           <Col lg={6} md={6} sm={12}>
-            <img className="meshmapImage" src={meshmapImage} />
+            <Link to=""><img className="meshmapImage" alt="Layer5 MeshMap - visual service mesh designer and topology modeler" src={meshmapImage} /></Link>
+            <p className="caption">Use MeshMap to design, deploy, and manage your Kubernetes-based, service mesh deployments.</p>
           </Col>
           <Col lg={6} md={6} sm={12}>
             <h4><img className="bullet-image" src={serviceMesh} /> Visualizer Mode</h4>
             <ul className="bullet">
               <li> Examine a visual topology of Kubernetes cluster and its services.</li>
-              <li> View and search streams of your pod container logs.</li>
+              <li> View and search log streams from your pod's containers.</li>
               <li> Connect an interactive terminal to instances of your containers.</li>
             </ul>
           </Col>
@@ -73,9 +75,10 @@ const Meshmap = () => {
             <div className="hero-section">
               <Row>
                 <Col lg={6} md={6} sm={12}>
-                  <p style={{paddingTop: "4.5rem"}}> Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.</p>
+                  <h3 style={{marginBottom: ".5rem"}}>Accessing the Beta</h3>
+                  <p>Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.</p>
                   <img src={mesheryCloud} className="logo" />
-                  <p className="para"> Deploy your designs and manage your infrastructure using MeshMap Visualizer. Enter your name (as soon as possible) into the waiting list for participant in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.</p>
+                  <p> Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.</p>
                   <DiscussCallout />
                 </Col>
                 <Col lg={6} md={6} sm={12}>
@@ -110,6 +113,8 @@ const Meshmap = () => {
                         <Field type="text" className="text-field" id="occupation" name="occupation" />
                         <label htmlFor="org" className="form-name">Organization / Company / School<span className="required-sign">*</span></label>
                         <Field type="text" className="text-field" id="org" name="org" />
+                        <label htmlFor="google" className="form-name">Google</label>
+                        <Field type="text" placeholder="my-address@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                         <label htmlFor="github" className="form-name">GitHub</label>
                         <Field type="url" placeholder="https://github.com/" className="text-field" id="github" name="github" pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
                         <label htmlFor="twitter" className="form-name">Twitter</label>

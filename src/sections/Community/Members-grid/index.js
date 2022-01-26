@@ -12,7 +12,7 @@ import VintageBox from "../../../reusecore/VintageBox";
 // Assets
 import { MembersGridWrapper } from "./membersGrid.style";
 import communityImg from "../../../assets/images/community/community-green.svg";
-import { FaEnvelope, FaUsers } from "react-icons/fa";
+import { FaBook, FaUsers } from "react-icons/fa";
 
 const MembersGrid = (props) => {
   return (
@@ -82,17 +82,17 @@ const MembersGrid = (props) => {
                 so on. All are welcome in the Layer5 projects and community!!
               </p>
 
-              <p className='text-gray'>Would you like a member profile?</p>
+              <p className='text-gray'>Would you like to participate?</p>
               <div className=''>
                 <VintageBox right={true} vintageOne={true}>
                   <Button
                     primary
                     className='banner-btn memberProfileBtn'
-                    title='Let Layer5 Community Managers Know'
-                    url='mailto:community@layer5.io?subject=Layer5 Community Membership'
+                    title='Read the Community Handbook'
+                    url='/community/handbook'
                     external={true}
                   >
-                    <FaEnvelope size={21} className='icon-left' />
+                    <FaBook size={21} className='icon-left' />
                   </Button>
 
                   <Button

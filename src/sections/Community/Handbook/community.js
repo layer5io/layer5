@@ -5,7 +5,7 @@ import TOC from "../../../components/handbook-navigation/index";
 import { Link } from "gatsby";
 import Point from "./images/bullet.svg";
 import CommunityLogo from "../../../assets/images/community/community-green.svg";
-import PatternsLogo from "./images/patterns-logo.png";
+import PatternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
 import LandscapeGreen from "../../../assets/images/landscape/layer5_landscape_green.svg";
 import ImageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
