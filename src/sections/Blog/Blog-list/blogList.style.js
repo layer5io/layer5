@@ -7,12 +7,14 @@ export const BlogPageWrapper = styled.div`
 
 	.blog-lists{
 		margin-top: 5rem;
+		
 	}
 	.post-block{
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		
 		
 	}
 	.blog-lists{
@@ -79,7 +81,7 @@ export const BlogPageWrapper = styled.div`
 
 	@media screen and (max-width:500px){
 		.post-block{
-			height: auto;
+			height: 9rem;
 		}
 		.blog-list-wrapper{
 			margin: 0rem auto 5rem;
