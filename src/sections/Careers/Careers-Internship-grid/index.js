@@ -3,10 +3,11 @@ import { graphql, Link, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
-import Button from "../../../reusecore/Button";
-import { FaArrowRight } from "react-icons/fa";
+
 import InternshipSectionWrapper from "./InternshipPage.style";
 import ProgramsGrid from "../Careers-Programs-grid/index";
+
+
 const UEM_Img = "../../../assets/images/partners/uem_partner.png";
 const Univ_Texas_Img = "../../../assets/images/partners/texas_partner.png";
 const Peek_Img = "../../../assets/images/layer5/layer5-peek-card-edited.svg";

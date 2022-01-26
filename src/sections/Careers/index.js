@@ -4,10 +4,11 @@ import { Container } from "../../reusecore/Layout";
 import { Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import InternshipPage from "./Careers-Internship-grid";
-const Lee_and_Rigs = "../../assets/images/careers/Lee-and-Rigs-Caballero-of-Google.jpeg";
 import Lee_giveaway from "../../assets/images/careers/Lee-giving-away-free-t-shirts-at-UT-Austin.jpeg";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
+
+const Lee_and_Rigs = "../../assets/images/careers/Lee-and-Rigs-Caballero-of-Google.jpeg";
 
 const CareersPage = () => {
   return (
