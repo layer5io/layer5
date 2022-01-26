@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CourseOverviewWrapper } from "./courseoverview.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
@@ -17,6 +17,8 @@ import DiscussCallout from "../../Discuss-Callout";
 import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 
 const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
+  const [hasBookmark, setHasBookmark] = useState(false);
+  const [bookmarkUrl, setBookmarkUrl] = useState("");
   const serviceMeshImages = course.frontmatter.meshesYouLearn;
   const getChapterTitle = (chapter, chapterList) => {
     for (let i = 0; i < chapterList.length; i++) {
@@ -40,17 +42,25 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
   const ServiceMeshesAvailable = ({ serviceMeshes }) =>
     serviceMeshes.map((sm, index) => {
       return (
-        <>
-          <div className="service-mesh-courses" key={index}>
-            <Image
-              {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
-              className="docker"
-              alt={sm}
-            />
-          </div>
-        </>
+        <Link to={sm+"/getting-started"}>
+           <div className="service-mesh-courses" key={index}>
+             <Image
+               {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
+               className="docker"
+               alt={sm}
+             />
+           </div>
+        </Link>
       );
-    });
+  });
+
+  useEffect(() => {
+    let bookmarkPath = localStorage.getItem("bookmark-path");
+    if(bookmarkPath){
+      setHasBookmark(true);
+      setBookmarkUrl(bookmarkPath);
+    }
+  });
 
   return (
     <CourseOverviewWrapper>
@@ -81,6 +91,13 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             title="Get Started"
             url={`istio/${course.frontmatter.toc[0]}`}
           />
+        {bookmarkUrl.split("/")[4] === course.fields.slug.split("/")[3] && hasBookmark && (
+          <div className="resume-button-container"><Button
+          title="Resume"
+          url={bookmarkUrl}
+          />
+          </div>
+        )}
         </div>
         <div className="course-hero-head-image">
           <Image
