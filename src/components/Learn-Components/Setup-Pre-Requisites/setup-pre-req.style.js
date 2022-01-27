@@ -8,14 +8,6 @@ const SetupPreReqWrapper = styled.div`
     .get-started-desc{
         margin: 1rem;
     }
-    // .setup-imgs {
-    //     align-self: center;
-    //     felx: 0 0 25%;
-    //     margin: 0 0.5rem;
-    //     img {
-    //         height: 3rem;
-    //     }
-    // }
     .container-card {
         display: flex;
         a {
@@ -25,8 +17,8 @@ const SetupPreReqWrapper = styled.div`
         .card {
             padding: 2rem;
             background-color: #eee;
-            max-width: 350px;
-            min-height: 200px;
+            max-width: 20rem;
+            min-height: 21.5rem;
             .card-header {
                 display: flex;
                 flex: auto;
@@ -68,10 +60,15 @@ const SetupPreReqWrapper = styled.div`
             .card{
                 margin: 0;
                 max-width: none;
+                min-height: 3rem;
                 .card-header {
+                    .setup-imgs {
+                        flex: 0 0 10%;
+                    }
                     img {
                         height: 2rem;
-                        flex: 0 0 10%;
+                        width: 2rem;
+                        max-width: 2rem;
                     }
                     svg {
                         font-size: 2.15rem;
@@ -81,14 +78,20 @@ const SetupPreReqWrapper = styled.div`
             }
             a{
                 margin: 1rem 0rem;
+                width: 100%;
             }  
         } 
     }
-    @media (max-width: 400px)
+    @media (max-width: 460px)
     {
         .container-card {
             .card {
                 padding: 2rem 1rem;
+                .card-header {
+                    .setup-imgs {
+                        flex: 0 0 15%;
+                    }
+                }
             }
         }
 
