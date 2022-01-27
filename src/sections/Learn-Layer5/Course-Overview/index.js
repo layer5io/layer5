@@ -42,20 +42,18 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
   const ServiceMeshesAvailable = ({ serviceMeshes }) =>
     serviceMeshes.map((sm, index) => {
       return (
-        <Link to={sm+"/getting-started"}>
-           <div className="service-mesh-courses" key={index}>
-             <Image
-               {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
-               className="docker"
-               alt={sm}
-             />
-           </div>
-        </Link>
+        <div className="service-mesh-courses" key={index}>
+          <Image
+            {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
+            className="docker"
+            alt={sm}
+          />
+        </div>
       );
   });
 
   useEffect(() => {
-    let bookmarkPath = localStorage.getItem("bookmark-path");
+    let bookmarkPath = localStorage.getItem("bookmarkpath-"+course.fields.slug.split("/")[3]);
     if(bookmarkPath){
       setHasBookmark(true);
       setBookmarkUrl(bookmarkPath);
@@ -91,12 +89,13 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             title="Get Started"
             url={`istio/${course.frontmatter.toc[0]}`}
           />
-        {bookmarkUrl.split("/")[4] === course.fields.slug.split("/")[3] && hasBookmark && (
-          <div className="resume-button-container"><Button
-          title="Resume"
-          url={bookmarkUrl}
+        {hasBookmark && (
+          <Button
+            className="start-again-button"
+            secondary
+            title="Start again"
+            url={bookmarkUrl}
           />
-          </div>
         )}
         </div>
         <div className="course-hero-head-image">

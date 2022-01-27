@@ -27,7 +27,7 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
   const replaceChapterInSlug = (slugWithReplacedMesh) => replaceSlugPart(5)(slugWithReplacedMesh);
 
   useEffect(() => {
-    localStorage.setItem("bookmark-path", location.pathname); 
+    localStorage.setItem(`bookmarkpath-${location.pathname.split("/")[4]}`, location.pathname); 
   }, []);
 
   const isMeshActive = (sm) => chapterData.fields.slug.split("/")[4] === sm;

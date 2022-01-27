@@ -107,38 +107,15 @@ export const CourseOverviewWrapper = styled.div`
 
   .service-mesh-courses {
     display: inline-flex;
-    padding: 0.4rem 0.75rem;
-    cursor: pointer;
-    border: 1px solid rgba(0,0,0,0.25);
-    border-radius: 5px;
+    padding: 0 1rem;
     img {
       width: 2.5rem;
       height: 2.5rem;
     }
   }
 
-  .service-mesh-courses:first-child{
-    margin-right: 1rem;
-  }
-  .service-mesh-courses:hover{
-    box-shadow: rgb(0 0 0 / 8%) 0px 3px 10px 0px;
-  }
-  .resume-button-container{
-    display: inline-block;
+  .start-again-button{
     margin-left: 1rem;
-    animation: bounce .5s 2;
-  }
-  
-  @keyframes bounce {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
   }
 
   .course {
