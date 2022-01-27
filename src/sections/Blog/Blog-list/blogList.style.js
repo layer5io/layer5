@@ -37,7 +37,7 @@ export const BlogPageWrapper = styled.div`
 	}
 
 	.post-title{
-		font-size: 1.75rem;
+		font-size: 1.5rem;
 	}
 
 	.post-meta-block{

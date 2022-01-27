@@ -268,7 +268,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   paginate({
     createPage,
     items: blogs,
-    itemsPerPage: 8,
+    itemsPerPage: 10,
     pathPrefix: "/blog",
     component: blogViewTemplate
   });
