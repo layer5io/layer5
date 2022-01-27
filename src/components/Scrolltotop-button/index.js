@@ -1,6 +1,6 @@
 import React from "react";
 import { BackToTopButton } from "./ScrollToTopStyles";
-import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowUp } from "@react-icons/all-files/io/IoIosArrowUp";
 import useDelayUnmount from "./useDelayedUnmount";
 import useWindowHasScrolled from "./useWindowHasScrolled";
 

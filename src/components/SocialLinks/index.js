@@ -23,7 +23,7 @@ const SocialLinks = () => {
           </a>
           <a
             href="https://slack.layer5.io/" 
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img className="slack" height="40 px" src={slack_icon} alt="slack" />
           </a>

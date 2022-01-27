@@ -4,10 +4,9 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import MeshFocusWrapper from "./service-mesh-focussed.style";
 import BlockQuoteImage from "../../../assets/images/blockquote/quote-left.svg";
 import Button from "../../../reusecore/Button";
-import { FaArrowRight } from "react-icons/fa";
 import { StaticImage } from "gatsby-plugin-image";
-
 const ServiceMeshFocusedImage = "../../../assets/images/home-page-images/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png";
+import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 
 const ServiceMeshFocused = () => {
 

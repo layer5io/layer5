@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import JoinCommunity from "../Community/Join-community";
 import PictureSlider from "./slider";
-import { FaArrowRight, FaUsers } from "react-icons/fa";
+import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
+import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 import CommunitySectionWrapper from "./community.style";
-import Lee_workshop from "./Lee_Workshop.png";
+import Lee_workshop from "../../assets/images/community/Lee_Workshop.png";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 
@@ -35,7 +36,7 @@ const CommunityPage = () => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-            <StaticImage src={CommunityMember} alt="Community Member" placeholder="blurred" />
+              <StaticImage src={CommunityMember} alt="Community Member" placeholder="blurred" />
             </Col>
           </Row>
           <Row className="open-source-projects">

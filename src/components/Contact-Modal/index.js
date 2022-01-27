@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import Button from "../../reusecore/Button";
-import { GrFormClose } from "react-icons/gr";
+import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
 import styled from "styled-components";
 
 const ContactFormModalWrapper = styled.div`

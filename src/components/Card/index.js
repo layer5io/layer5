@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import { BiLinkExternal } from "react-icons/bi";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
+import { BiLinkExternal } from "@react-icons/all-files/bi/BiLinkExternal";
 import Image from "../image";
 
 import { CardWrapper } from "./Card.style";

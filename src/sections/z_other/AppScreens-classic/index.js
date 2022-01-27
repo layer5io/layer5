@@ -4,7 +4,8 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import { SlickSlider, SliderItem } from "../../../reusecore/SlickSlider";
 
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowRoundBack } from "@react-icons/all-files/io/IoIosArrowRoundBack";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 
 import screen1 from "../../../assets/images/classic/screens/secreens-1.png";
 import screen2 from "../../../assets/images/classic/screens/secreens-2.png";

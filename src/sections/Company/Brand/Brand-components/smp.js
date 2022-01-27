@@ -4,7 +4,7 @@ import {SRLWrapper} from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import SmpDark from "../../../../assets/images/service-mesh-performance/icon/smp-dark.png";
 import SmpLight from "../../../../assets/images/service-mesh-performance/icon/smp-light.png";
 import SmpWhite from "../../../../assets/images/service-mesh-performance/icon/smp-white.png";

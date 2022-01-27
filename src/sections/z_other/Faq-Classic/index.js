@@ -12,7 +12,7 @@ import {
   CloseIcon
 } from "../../../reusecore/Accordion";
 
-import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
+// import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 
 import particle1 from "../../../assets/images/app/particle/07.png";
 import particle2 from "../../../assets/images/app/particle/08.png";
@@ -41,10 +41,10 @@ const FaqClassic = () => {
                     <h5>{faq.title}</h5>
                     <IconWrapper>
                       <OpenIcon>
-                        <IoIosArrowForward />
+                        {/* <IoIosArrowForward /> */}
                       </OpenIcon>
                       <CloseIcon>
-                        <IoIosArrowDown />
+                        {/* <IoIosArrowDown /> */}
                       </CloseIcon>
                     </IconWrapper>
                   </AccordionTitle>

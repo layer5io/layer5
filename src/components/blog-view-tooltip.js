@@ -1,7 +1,7 @@
 import React from "react";
 import { Row } from "../reusecore/Layout";
-import { TiThList } from "react-icons/ti";
-import { BsGrid3X3GapFill } from "react-icons/bs";
+import { TiThList } from "@react-icons/all-files/ti/TiThList";
+import { BsGrid3X3GapFill } from "@react-icons/all-files/bs/BsGrid3X3GapFill";
 import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 

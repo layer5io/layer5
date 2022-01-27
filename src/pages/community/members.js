@@ -176,7 +176,7 @@ const MembersPage = () => {
   /**
    * state storing the currently selected categories.
    */
-  const [members, setMembers] = useState([options[10]]);
+  const [members, setMembers] = useState([options[11]]);
   const handleChange = (value) => setMembers(value);
 
   return (

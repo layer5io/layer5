@@ -1,14 +1,13 @@
 import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import MeshSectionWrapper from "./ServiceMesh.style";
-import ServiceMeshAnimate from "./ServiceMeshAnimation.style";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import MesheryLogo from "../../../assets/images/meshery/full-logo/meshery-logo-light-text.svg";
 import ServiceMesh from "./images/animated-service-mesh.svg";
-import { IoIosArrowForward } from "react-icons/io";
-import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import AnimatedMesh from "./AnimateSVG";
+import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
+import { Link } from "gatsby";
 
 const MeshMap = "../../../assets/images/home-page-images/meshmap.png";
 
@@ -27,11 +26,6 @@ const ServiceMeshManagement = () => {
               The <span>service mesh management <span className="strikethrough">plane</span> platform</span>
             </h2>
           </SectionTitle>
-          {/* <ServiceMeshAnimate className="active" >
-            <img className="active" src={ServiceMesh} />
-            <svg className="active"><use xlink={ServiceMesh}></use></svg>
-            <AnimatedMesh className="active" />
-          </ServiceMeshAnimate> */}
 
           <Col xs={12} sm={12} md={6}>
             <Link to="/service-mesh-management/meshery">

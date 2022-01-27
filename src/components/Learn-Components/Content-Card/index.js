@@ -1,11 +1,11 @@
 import React from "react";
 import ContentCardWrapper from "./content-card.style";
-import {
-  IoDocumentTextOutline,
-  IoVideocam,
-  IoBookmarkOutline,
-} from "react-icons/io5";
-import Button from "../../../reusecore/Button";
+// import Button from "../../../reusecore/Button";
+// import {
+//   IoDocumentTextOutline,
+//   IoVideocam,
+//   IoBookmarkOutline,
+// } from "react-icons/io5";
 
 const ContentCard = ({ chapterNum, chapter }) => (
   <ContentCardWrapper id={chapter.frontmatter.courseTitle ? chapter.frontmatter.courseTitle : null}>
