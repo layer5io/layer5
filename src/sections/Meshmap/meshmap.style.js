@@ -3,7 +3,8 @@ import styled from "styled-components";
 const MeshmapWrapper = styled.div`
   
   .supscript{
-    color: #00d3a9;
+    --theme-color:#00d3a9;
+    color: var(--theme-color);
     font-size: 2.5rem;
     font-weight: 300;
   }
