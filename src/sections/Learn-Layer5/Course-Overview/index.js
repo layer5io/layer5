@@ -86,14 +86,14 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             </div>
           </div>
           <Button
-            title="Get Started"
+            title={hasBookmark ? "Start Again" : "Get Started"}
             url={`istio/${course.frontmatter.toc[0]}`}
           />
         {hasBookmark && (
           <Button
             className="start-again-button"
             secondary
-            title="Start again"
+            title="Resume"
             url={bookmarkUrl}
           />
         )}
