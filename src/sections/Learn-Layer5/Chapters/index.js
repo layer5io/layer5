@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
@@ -8,10 +8,13 @@ import Image from "../../../components/image";
 import { ChapterWrapper } from "./chapters.style";
 import ReactTooltip from "react-tooltip";
 import Pagination from "../../../components/Learn-Components/Pagination";
+import QuizModal from "../../../components/Learn-Components/QuizModal";
 
 const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData}) => {
 
   const { frontmatter, body } = chapterData;
+  const [showQuizModal, setShowQuizModal] = useState(false);
+
   const serviceMeshImages = courseData.frontmatter.meshesYouLearn;
   const tableOfContents = TOCData
     .filter(node => !!node.fields.section)
@@ -79,6 +82,10 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
       </>);
   });
 
+  if(showQuizModal){
+    return <QuizModal />;
+  }
+    
 
   return (
     <ChapterWrapper>
@@ -102,7 +109,7 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
                 <MDXRenderer>{body}</MDXRenderer>
               </SRLWrapper>
             </div>
-            <Pagination TOCData={TOCData} chapterData={chapterData} location={location} />
+            <Pagination TOCData={TOCData} chapterData={chapterData} location={location} showQuizModal={() => setShowQuizModal(true)} />
           </Col>
         </Row>
       </Container>
