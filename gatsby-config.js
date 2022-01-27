@@ -12,10 +12,15 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    PRESERVE_WEBPACK_CACHE: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        disable: true
+      }
+    },
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
     {

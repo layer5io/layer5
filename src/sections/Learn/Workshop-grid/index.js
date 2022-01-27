@@ -5,12 +5,12 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import WorkshopCard from "../../../components/Workshop-Card";
 import PageHeader from "../../../reusecore/PageHeader";
 import { WorkshopPageWrapper } from "./WorkshopsGrid.style";
-import { BsArrowDown } from "react-icons/bs";
-import { BsArrowUp } from "react-icons/bs";
+import { BsArrowDown } from "@react-icons/all-files/bs/BsArrowDown";
+import { BsArrowUp } from "@react-icons/all-files/bs/BsArrowUp";
 import Slack from "../../../assets/images/socialIcons/slack-light.svg";
 import Button from "../../../reusecore/Button";
 import WorkshopImage from "../../../assets/images/workshops/workshops.svg";
-import { FaRegWindowMaximize } from "react-icons/fa";
+import { FaRegWindowMaximize } from "@react-icons/all-files/fa/FaRegWindowMaximize";
 
 
 const WorkshopsPage = () => {

@@ -4,11 +4,8 @@ import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
 import { Link } from "gatsby";
 
-import {
-  IoDocumentTextOutline,
-  IoVideocam,
-  IoChevronBackOutline,
-} from "react-icons/io5";
+import { IoDocumentTextOutline,} from "@react-icons/all-files/io5/IoDocumentTextOutline";
+import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOutline";
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
 import { MDXRenderer } from "gatsby-plugin-mdx";

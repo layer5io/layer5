@@ -5,7 +5,8 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 
-import { FaPlay, FaDownload } from "react-icons/fa";
+import { FaPlay } from "@react-icons/all-files/fa/FaPlay";
+import { FaDownload } from "@react-icons/all-files/fa/FaDownload";
 
 import AppScreenImage from "../../../assets/images/classic/app-screen.png";
 import AppScreenThumb1 from "../../../assets/images/classic/app-screen-thumb-1.png";

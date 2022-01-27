@@ -4,7 +4,7 @@ import {SRLWrapper} from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import MesheryOperatorDark from "../../../../assets/images/meshery-operator/meshery-operator-dark.png";
 import MesheryOperator from "../../../../assets/images/meshery-operator/meshery-operator.png";
 

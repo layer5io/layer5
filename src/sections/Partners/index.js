@@ -3,8 +3,6 @@ import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import { partners } from "./partners";
 import PartnerWrapper from "./partner.style";
-import { BsArrowDown } from "react-icons/bs";
-import { BsArrowUp } from "react-icons/bs";
 import Partner_Icon from "../../assets/images/contact/partner_white.svg";
 
 const Partner = () => {

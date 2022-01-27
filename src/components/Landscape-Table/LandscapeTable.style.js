@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
+
 overflow-x: auto;
 
-img.Mark {
-	height: 70%;
+.gatsby-image-wrapper {
+	img {
+		width: 1.5rem;
+		height: 1.5rem;
+		margin: auto;
+	}
 }
 
 table {
