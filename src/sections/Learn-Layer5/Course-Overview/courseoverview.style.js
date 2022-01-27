@@ -113,6 +113,12 @@ export const CourseOverviewWrapper = styled.div`
       height: 2.5rem;
     }
   }
+
+  .start-again-button{
+    margin-left: 1rem;
+    background: ${props => props.theme.highlightColor} !important;
+  }
+
   .course {
     padding: 0.5rem;
   }

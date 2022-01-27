@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CourseOverviewWrapper } from "./courseoverview.style";
 import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
@@ -14,6 +14,8 @@ import DiscussCallout from "../../Discuss-Callout";
 import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
 
 const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
+  const [hasBookmark, setHasBookmark] = useState(false);
+  const [bookmarkUrl, setBookmarkUrl] = useState("");
   const serviceMeshImages = course.frontmatter.meshesYouLearn;
   const getChapterTitle = (chapter, chapterList) => {
     for (let i = 0; i < chapterList.length; i++) {
@@ -37,17 +39,23 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
   const ServiceMeshesAvailable = ({ serviceMeshes }) =>
     serviceMeshes.map((sm, index) => {
       return (
-        <>
-          <div className="service-mesh-courses" key={index}>
-            <Image
-              {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
-              className="docker"
-              alt={sm}
-            />
-          </div>
-        </>
+        <div className="service-mesh-courses" key={index}>
+          <Image
+            {...findServiceMeshImage(serviceMeshImages, sm).imagepath}
+            className="docker"
+            alt={sm}
+          />
+        </div>
       );
-    });
+  });
+
+  useEffect(() => {
+    let bookmarkPath = localStorage.getItem("bookmarkpath-"+course.fields.slug.split("/")[3]);
+    if(bookmarkPath){
+      setHasBookmark(true);
+      setBookmarkUrl(bookmarkPath);
+    }
+  });
 
   return (
     <CourseOverviewWrapper>
@@ -75,9 +83,17 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             </div>
           </div>
           <Button
-            title="Get Started"
+            title={hasBookmark ? "Start Again" : "Get Started"}
             url={`istio/${course.frontmatter.toc[0]}`}
           />
+        {hasBookmark && (
+          <Button
+            className="start-again-button"
+            primary
+            title="Resume"
+            url={bookmarkUrl}
+          />
+        )}
         </div>
         <div className="course-hero-head-image">
           <Image

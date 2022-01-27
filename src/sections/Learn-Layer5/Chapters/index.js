@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
@@ -26,6 +26,9 @@ const Chapters = ({chapterData, courseData, location, serviceMeshesList, TOCData
   const replaceServiceMeshInSlug = replaceSlugPart(4)(chapterData.fields.slug);
   const replaceChapterInSlug = (slugWithReplacedMesh) => replaceSlugPart(5)(slugWithReplacedMesh);
 
+  useEffect(() => {
+    localStorage.setItem(`bookmarkpath-${location.pathname.split("/")[4]}`, location.pathname); 
+  }, []);
 
   const isMeshActive = (sm) => chapterData.fields.slug.split("/")[4] === sm;
 
