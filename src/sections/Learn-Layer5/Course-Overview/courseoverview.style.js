@@ -116,6 +116,7 @@ export const CourseOverviewWrapper = styled.div`
 
   .start-again-button{
     margin-left: 1rem;
+    background: ${props => props.theme.highlightColor} !important;
   }
 
   .course {

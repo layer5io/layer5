@@ -92,7 +92,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
         {hasBookmark && (
           <Button
             className="start-again-button"
-            secondary
+            primary
             title="Resume"
             url={bookmarkUrl}
           />
