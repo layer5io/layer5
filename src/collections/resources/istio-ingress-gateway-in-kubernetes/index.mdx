@@ -1,0 +1,247 @@
+---
+title: "Istio Ingress Gateway in Kubernetes"
+thumbnail: ./Istio Ingress Gateway.png
+category: Service Mesh
+tags:
+ - Gateway
+type: Article
+product: Meshery
+technology: Kubernetes
+mesh: Istio
+featured: false
+published: true
+resource: true
+---
+
+import { Link } from "gatsby";
+import { ResourcesWrapper } from "../Resources.style.js";
+import Working from "./Istio Ingress Gateway.png";
+import Rep from "./Istio Ingress Gateway No Title.png";
+
+
+<ResourcesWrapper>
+
+<p>
+    Predominantly, Kubernetes has used an Ingress controller to handle the traffic that enters the cluster from the outside. 
+    Istio has replaced all the familiar Ingress resource with new Gateway and VirtualServices resources.
+    They work in sync to route all the traffic into the mesh.
+    Inside the mesh there is no requirement for Gateways since the services can access each other by a cluster local service name.
+</p>
+<h3>Let’s understand the working with a representation</h3>
+<p>
+    <img src={Rep} align="center" alt="Istio Ingress Gateway in Kubernetes No Title" />
+</p>
+<p>
+<ul>
+<li>Firstly A request is made by a client on a specific port</li>
+<li>Then a load balancer on this port listens and forwards the request to one of the workers in theh cluster on same or a new port</li>
+<li>Inside the cluster the request is routed to the Istio Ingress Gateway which is listened on the port of the load balancer</li>
+<li>The Service forwards the requestto an Istio Ingress Gateway Pod which is managed by a deployment</li>
+<li>The Ingress Gateway Pod is configured by a Gateway and a VirtualService.</li>
+<li>The Gateway configures all the ports, protocol, and certificates.</li>
+<li>The Virtual Service configures all the routing information to find the correct Servicein it.</li>
+<li>The Istio Ingress Gateway Pod routes the request to the application Service.</li>
+<li>And lastly, the application Service routes the request to an application Pod which is managed by a deployment.</li>
+</ul>
+</p>
+<ul>
+</ul>
+
+<h2>
+   Ingress Gateway Service
+</h2>
+
+<p>
+    The Ingress Gateway Service must listen to all the ports to be able to forward the traffic to the Ingress Gateway pods. 
+    Here we will be use the routing to bring the port numbers back to their default numbers.
+</p>
+
+<p>
+    Please note that a Kubernetes Service is not a "real" service, but, since we are using type: 
+    NodePort, the request will be handled by the kube-proxy provided by Kubernetes and forwarded to a node with a running pod. 
+    Once on the node, an IP-tables configuration will forward the request to the appropriate pod.
+</p>
+
+```yaml
+
+# From the istio-ingressgateway service
+  ports:
+  - name: http2
+    nodePort: 30000
+    port: 80
+    protocol: TCP
+  - name: https
+    nodePort: 30443
+    port: 443
+    protocol: TCP
+  - name: mysql
+    nodePort: 30306
+    port: 3306
+    protocol: TCP
+```
+<p>
+    If we inspect the service, we will see that it defines more ports than I have describe above.
+    These ports are used for internal Istio communication.
+</p>
+
+<h2>
+    Ingress Gateway Deployment
+</h2>
+
+<p> 
+It is a wrapper around the Envoy proxy and it is configured in the same way as the sidecars used inside the service mesh (it is actually the same container). 
+When we create or change a Gateway or VirtualService, 
+the changes are detected by the Istio Pilot controller which converts this information to an Envoy configuration and sends it to the relevant proxies, including the Envoy inside the IngressGateway.
+</p>
+
+<p>
+    Since container ports don't have to be declared in Kubernetes pods or deployments, we don't have to declare the ports in the IngressGateway Deployment.
+    But, if you look inside the deployment you can see that there are a number of ports declared anyway (unnecessarily).
+    What we do have to care about in the IngressGateway Deployment is SSL certificates. To be able to access the certificates inside the Gateway resources, make sure that you have mounted the certificates properly.
+</p>
+
+```yaml
+
+# Example represents volume mounts
+volumeMounts:
+- mountPath: /etc/istio/ingressgateway-certs
+  name: ingressgateway-certs
+  readOnly: true
+- mountPath: /etc/istio/ingressgateway-ca-certs
+  name: ingressgateway-ca-certs
+  readOnly: true
+
+# Example represents volumes
+volumes:
+- name: ingressgateway-certs
+  secret:
+    defaultMode: 420
+    optional: true
+    secretName: istio-ingressgateway-certs
+- name: ingressgateway-ca-certs
+  secret:
+    defaultMode: 420
+    optional: true
+    secretName: istio-ingressgateway-ca-certs
+```
+
+<h2>The Gateway</h2>
+
+<p>
+    The Gateway resources are used to configure the ports for Envoy. 
+    Since we have exposed three ports with the service, we need these ports to be handled by Envoy. We can do this by declaring one or more Gateways. 
+    In my example, I'm going to use a single Gateway, but it may be split into two or three.
+</p>
+
+```yaml
+
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: default-gateway
+  namespace: istio-system
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+
+  - hosts:
+    - '*'
+    port:
+      name: http
+      number: 80
+      protocol: HTTP
+
+  - hosts:
+    - '*'
+    port:
+      name: https
+      number: 443
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      privateKey: /etc/istio/ingressgateway-certs/tls.key
+      serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
+
+  - hosts: # For TCP routing this fields seems to be ignored, but it is matched
+    - '*'  # with the VirtualService, I use * since it will match anything.
+    port:
+      name: mysql
+      number: 3306
+      protocol: TCP
+```
+
+<h2>VirtualService</h2>
+<p>
+    The final interesting resource is the VirtualService, it works in concert with the Gateway to configure Envoy. 
+    If you only add a Gateway nothing will show up in the Envoy configuration, and the same is true if you only add a VirtualService.
+</p>
+<p>
+    A general configuration for an HTTP(s) service
+</p>
+
+```yaml
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: counter
+spec:
+  gateways:
+  - default-gateway.istio-system.svc.cluster.local
+  hosts:
+  - counter.lab.example.com
+  http:
+  - match:
+    - uri:
+      prefix: /
+    route:
+    - destination:
+        host: counter
+        port:
+          number: 80
+
+```
+<h2>Application Service and Deployment</h2>
+<p>
+    Our request have now reached the application service and deployment. These are just normal Kubernetes resources and I will assume that if you have read this far, you already know all about it. 😃
+</p>
+
+<h2>Extras:</h2>
+
+<h3>Debugging Istio Gateway</h3>
+<p>
+     First use istioctl to check the config status of Istio ingress gateway:
+</p>
+
+```yaml
+
+# istioctl proxy-status istio-ingressgateway-5586f47659-r64lb.istio-system
+Clusters Match
+Listeners Match
+Routes Match
+
+```
+<p>
+    If anything is not synced, try restarting the ingress gateway pod - it may be possible that it somehow missed an update.
+    Next, if RDS looked good, you can check access logs. 
+    If you have access logs enabled:
+</p>
+
+```yaml
+
+# kubectl get configmap istio -n istio-system -o yaml | grep "accessLogFile: "
+disable access log.\naccessLogFile: \"/dev/stdout\"\n\n# If accessLogEncoding
+
+```
+<p>
+    Once access logs are enabled, you can try your request a few more times and then check the logs on the ingress gateway:
+</p>
+
+```yaml
+
+# kubectl logs -n istio-system istio-ingressgateway-5586f47659-r64lb | grep -v deprecated
+
+```
+
+</ResourcesWrapper>
