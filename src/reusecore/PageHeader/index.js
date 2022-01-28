@@ -48,9 +48,7 @@ const PageHeader = ({ category, title, img, feedlink, subtitle,  author, thumbna
         { thumbnail && <div className="feature-image">
           <Image {...thumbnail} imgStyle={{ objectFit: "contain"}} alt={title}/>
         </div>}
-        <h1 className="page-title" >{title} { img && feedlink && (<a href= {feedlink} target="_blank"> <img src={img} alt="RSS Feed"/> </a>) }
-          <sup className="supscript">{superscript}</sup>
-        </h1>
+        <h1 className="page-title" >{title}  <sup className="supscript">{superscript}</sup>{ img && feedlink && (<a href= {feedlink} target="_blank" rel="noreferrer"> <img src={img} alt="RSS Feed"/> </a>) } </h1>
         {subtitle && (<h3>{subtitle}</h3>)}
         {category && (
           <div className="breadcrumbs">
