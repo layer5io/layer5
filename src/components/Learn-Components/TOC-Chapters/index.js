@@ -4,7 +4,8 @@ import { Link } from "gatsby";
 import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
 import { getCurrentPage } from "../../../utils/getCurrentPage";
 import TOCWrapper from "./toc.style";
-import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
+import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 
 const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
