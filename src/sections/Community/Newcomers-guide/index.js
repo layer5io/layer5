@@ -5,13 +5,15 @@ import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
 import CommunityImage1 from "./contributor-chest.svg";
-import CommunityImage2 from "./community-image3.png";
-import CommunityImage3 from "./community-collage.png";
 import CommunityImage4 from "./community-image4.png";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
 import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
+import { StaticImage } from "gatsby-plugin-image";
+
+const CommunityImage2 = "../../../assets/images/newcomers-page-images/community-image3.png";
+const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.png";
 
 const NewcomersGuide = () => {
   const [hover, setHover] = useState(false);
@@ -76,7 +78,7 @@ const NewcomersGuide = () => {
         </div>
         <div className="instructions">
           <Row className="step">
-            <Col sm={12} lg={6}>
+            <Col sm={12} lg={6} >
               <img src={CommunityImage1} className="finding-an-issue" alt="Community Image" />
             </Col>
             <Col sm={12} lg={6}>
@@ -184,13 +186,13 @@ const NewcomersGuide = () => {
                 </li>
               </ol>
             </Col>
-            <Col sm={12} lg={6}>
-              <img src={CommunityImage2} alt="Community Image" />
+            <Col sm={12} lg={6} className="community-img">
+              <StaticImage src={CommunityImage2}   alt="Community Image" />
             </Col>
           </Row>
           <Row className="step">
-            <Col sm={12} lg={6}>
-              <img className="community-collage" src={CommunityImage3} alt="Community Image" />
+            <Col sm={12} lg={6} className="community-collage">
+              <StaticImage  src={CommunityImage3} alt="Community Image" />
             </Col>
             <Col sm={12} lg={6}>
               <h3>While Your Issue is under Review</h3>

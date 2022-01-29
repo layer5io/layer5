@@ -68,6 +68,7 @@ export const NewcomersGuideWrapper = styled.section`
       }
       .finding-an-issue { 
         max-height: 22rem;
+        text-align: center;
       }
       h3{
         display:inline;
@@ -83,13 +84,17 @@ export const NewcomersGuideWrapper = styled.section`
       img{
         display: block;
         margin: 0 auto;
-        max-width: 21.875rem
+        max-width: 21.875rem !important;
+        text-align: center !important; 
       }
     }
     .community-collage {
-      
+      text-align: center !important;
       min-width: 45vmin;
       
+    }
+    .community-img{
+      text-align:center !important;
     }
     .table-wrapper{
       text-align: center;
