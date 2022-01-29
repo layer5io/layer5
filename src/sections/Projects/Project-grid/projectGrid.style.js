@@ -87,6 +87,12 @@ export const ProjectWrapper = styled.div`
         }
         
     }
+    .project__card-container_meshery{
+        height: 13rem;
+    }
+    .project__card-container_one{
+        height: 8rem;
+    }
     
     // Landscape
     .project__card.one{
@@ -104,9 +110,11 @@ export const ProjectWrapper = styled.div`
     .project__card.two{
         grid-column: 3/6;
         grid-row: 1/6;
-        img{
-            width: 100%;
-            align-self: center;
+        
+        .gatsby-image-wrapper{
+            img{
+                width: 12rem;
+            }
         }
         h5{
             font-size: 2rem;
@@ -239,7 +247,6 @@ export const ProjectWrapper = styled.div`
         }
         .project__card.two{
             img{
-                height: 100px;
                 width: 100%;
             }
             h5{
@@ -265,6 +272,12 @@ export const ProjectWrapper = styled.div`
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+        }
+        .project__card-container_meshery{
+            height: 10rem;
+        }
+        .project__card-container_one{
+            height: 10rem;
         }
         .project__card {
             h5{ 

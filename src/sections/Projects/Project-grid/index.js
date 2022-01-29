@@ -33,14 +33,14 @@ const ProjectPage = () => {
         <Container>
           <div className="project__grid">
             <Link to="/service-mesh-landscape" className="project__card one">
-              <div className="project__card-container">
+              <div className="project__card-container project__card-container_one">
                 <StaticImage src={landscape} alt="Landscape" objectFit="contain"/>
                 <h5>Landscape</h5>
               </div>
             </Link>
             <Link to="/service-mesh-management/meshery" className="project__card two">
-              <div className="project__card-container">
-                <StaticImage src={meshery} alt="Meshery" objectFit="contain"/>
+              <div className="project__card-container project__card-container_meshery">
+                <StaticImage src={meshery} alt="Meshery" objectFit="contain"  />
                 <h5>Meshery</h5>
               </div>
             </Link>
