@@ -174,7 +174,7 @@ const Gnhwrapper = styled.section`
             margin: 0.94rem 0;
         }
         img{
-            width: 25rem;
+            width: 100%;
         }
     }
     
