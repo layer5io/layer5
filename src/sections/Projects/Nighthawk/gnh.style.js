@@ -7,7 +7,7 @@ const Gnhwrapper = styled.section`
         .logo{
             display: block;
             margin: 0 auto;
-            width: 80%;
+            width: 100%;
         }
         .hero-text{
             margin: 0 auto;
@@ -30,7 +30,11 @@ const Gnhwrapper = styled.section`
             color: ${props => props.theme.tertiaryColor};
         }
     }
-
+    .gatsby-image-wrapper{
+        img{
+            object-fit: contain;
+        }
+    }
     .explain-1 {
         padding-top: 5rem;
         text-align: center;
@@ -87,7 +91,7 @@ const Gnhwrapper = styled.section`
                     height: 3.75rem;
                     background-color: ${props => props.theme.secondaryLightColorTwo};
                     img { 
-                        padding: 0.625rem 0px;
+                        padding: 0.25rem 0px;
                     }
                 }
             }
@@ -158,7 +162,7 @@ const Gnhwrapper = styled.section`
         float: left;
         width: 30%;
         padding-right: 1rem;
-
+        margin-top: 1rem;
     }
     .callout{
         background: rgb(205,28,109);

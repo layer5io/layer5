@@ -1,23 +1,20 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
-
+import { StaticImage } from "gatsby-plugin-image";
 import PageHeader from "../../../reusecore/PageHeader";
 
 import { ProjectWrapper } from "./projectGrid.style";
-
-import meshery from "../../../assets/images/app/projects/meshery-logo-light.png";
-import landscape from "../../../assets/images/app/projects/landscape.png";
-import smi from "../../../assets/images/app/projects/smi.svg";
-import imagehub from "../../../assets/images/image-hub/layer5-image-hub.png";
-import smp from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
-import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-
-// import distributedPerformance from "../../../collections/projects/distributed-performance-management/distributed-performance_green.svg";
-import L5gray from "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
-import nighthawk from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
-
 import CommunityCallCard from "../../../components/CommunityCallCard/index";
+
+const meshery = "../../../assets/images/app/projects/meshery-logo-light.png";
+const landscape = "../../../assets/images/app/projects/landscape.png";
+const smi = "../../../assets/images/app/projects/smi.svg";
+const imagehub = "../../../assets/images/image-hub/layer5-image-hub.png";
+const smp = "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+const patterns = "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+const L5gray = "../../../assets/images/layer5/5 icon/svg/gray/5-gray-60.svg";
+const nighthawk = "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 
 
 const ProjectPage = () => {
@@ -29,7 +26,7 @@ const ProjectPage = () => {
         path="/projects"
       />
       <h3>
-        for the <img src={L5gray} alt="Layer 5 icon" />
+        for the <StaticImage src={L5gray} alt="Layer 5 icon" />
         th layer of distributed systems
       </h3>
       <div className="project-page-wrapper">
@@ -37,19 +34,19 @@ const ProjectPage = () => {
           <div className="project__grid">
             <Link to="/service-mesh-landscape" className="project__card one">
               <div className="project__card-container">
-                <img src={landscape} alt="Landscape" />
+                <StaticImage src={landscape} alt="Landscape" objectFit="contain"/>
                 <h5>Landscape</h5>
               </div>
             </Link>
             <Link to="/service-mesh-management/meshery" className="project__card two">
               <div className="project__card-container">
-                <img src={meshery} alt="Meshery" />
+                <StaticImage src={meshery} alt="Meshery" objectFit="contain"/>
                 <h5>Meshery</h5>
               </div>
             </Link>
             <Link to="/projects/image-hub" className="project__card three">
               <div className="project__card-container">
-                <img src={imagehub} alt="Image Hub" />
+                <StaticImage src={imagehub} alt="Image Hub" objectFit="contain"/>
                 <h5>Image Hub</h5>
               </div>
             </Link>
@@ -58,7 +55,7 @@ const ProjectPage = () => {
               className="project__card four"
             >
               <div className="project__card-container">
-                <img src={smi} alt="Service Mesh Interface Conformance" />
+                <StaticImage src={smi} alt="Service Mesh Interface Conformance" objectFit="contain"/>
                 <h5>Service Mesh Interface Conformance</h5>
               </div>
             </Link>
@@ -67,13 +64,13 @@ const ProjectPage = () => {
               className="project__card five"
             >
               <div className="project__card-container">
-                <img src={smp} alt="Service Mesh Performance" />
+                <StaticImage src={smp} alt="Service Mesh Performance" objectFit="contain"/>
                 <h5>Service Mesh Performance</h5>
               </div>
             </Link>
             <Link to="/projects/nighthawk" className="project__card six">
               <div className="project__card-container">
-                <img src={nighthawk} alt="Nighthawk" />
+                <StaticImage src={nighthawk} alt="Nighthawk" objectFit="contain"/>
                 <h5>NightHawk</h5>
               </div>
             </Link>
@@ -84,9 +81,10 @@ const ProjectPage = () => {
               <div className="project__card-container-seven">
                 <Row>
                   <Col lg={4} md={12} sm={12} className="image">
-                    <img
+                    <StaticImage
                       src={patterns}
                       alt="Service Mesh Patterns"
+                      objectFit="contain"
                     />
                   </Col>
                   <Col lg={8} md={12} sm={12}>

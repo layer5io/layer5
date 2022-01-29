@@ -1,6 +1,11 @@
 import styled from "styled-components";
 export const ProjectWrapper = styled.div`
     padding-bottom: 5rem;
+    .gatsby-image-wrapper{
+        img{
+            object-fit: contain;
+        }
+    }
     h3{
         color: ${props => props.theme.primaryLightColor};
         margin: 0;
@@ -9,8 +14,6 @@ export const ProjectWrapper = styled.div`
         text-align:center;
         img{
           width: 3rem;
-          position: relative;
-          top: 10px;
         }
     }
     .title{
@@ -90,8 +93,11 @@ export const ProjectWrapper = styled.div`
         grid-column: 2/3;
         grid-row: 1/3;
         img{
-            width: 90px;
+            width: 100%;
             align-self: center;
+        }
+        h5{
+            margin-top: 10px;
         }
     }
     // Meshery
@@ -99,7 +105,7 @@ export const ProjectWrapper = styled.div`
         grid-column: 3/6;
         grid-row: 1/6;
         img{
-            
+            width: 100%;
             align-self: center;
         }
         h5{
@@ -113,9 +119,10 @@ export const ProjectWrapper = styled.div`
         grid-column: 6/8;
         grid-row: 4/6;
         img{
-            width: 90px;
+            margin-top: 1rem;
+            height: 75% !important;
+            width: 100%;
             align-self: center;
-            margin-top: 20px;
         }
         h5{
             margin-bottom: 25px;
@@ -126,12 +133,11 @@ export const ProjectWrapper = styled.div`
         grid-column: 6/8;
         grid-row: 1/4;
         img{
-           width: 150px;
+           width: 100%;
            align-self: center;
-           margin-top: -45px;
-           margin-bottom: 45px;
         }
         h5{
+            margin-top: 1rem;
             width: 150%;
             align-self: center;
         }
@@ -150,11 +156,11 @@ export const ProjectWrapper = styled.div`
         grid-column: 1/3;
         grid-row: 3/8;
         img{
-            width: 180px;
-            margin-top: -35px;
+            width: 100%;
             align-self: center;
         }
         h5{ 
+            margin-top: 1rem;
             align-self: center;
             width: 150%;
         }
@@ -214,7 +220,7 @@ export const ProjectWrapper = styled.div`
                 width: 100%;
            }
             img{
-                width: 150px;
+                width: 100%;
            }
        }
        .project__card.four h5{
@@ -222,12 +228,6 @@ export const ProjectWrapper = styled.div`
        }
        .project__card h5{
         font-size: 15px;
-        }
-        .project__card.two{
-            img {
-                
-            }
-        
         }
     }
     @media only screen and (max-width: 991px) {
@@ -240,14 +240,14 @@ export const ProjectWrapper = styled.div`
         .project__card.two{
             img{
                 height: 100px;
-                width: 100px;
+                width: 100%;
             }
             h5{
                 font-size: 25px;
             }
         }
         .project__card.three img{
-            width: 70px;
+            width: 100%;
         }
         .project__card.four h5{
             width: 100%;
@@ -274,7 +274,7 @@ export const ProjectWrapper = styled.div`
                 padding-bottom: 10px;
             }
             img{
-                width: auto;
+                width: 100%;
                 height: 80px;
                 padding-top: 10px;
             }
@@ -300,8 +300,7 @@ export const ProjectWrapper = styled.div`
         }
         .project__card.six{
             img{
-                width: 130px;
-                margin-top: 10px;
+                width: 100%;
             }
             h5{ 
                 width: 100%;
