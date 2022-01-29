@@ -32,7 +32,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
         }
         eurl
         title
-        topic
+        type
         date(formatString: "MMM Do, YYYY")
         thumbnail {
           publicURL
@@ -47,7 +47,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
   }
   allMeetups: allMdx(
     sort: {fields: frontmatter___date, order: DESC}
-    filter: {frontmatter: {topic: {eq: "meetups"}}}
+    filter: {frontmatter: {type: {eq: "Meetups"}}}
   ) {
     totalCount
     nodes {
@@ -62,7 +62,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
         }
         title
         eurl
-        topic
+        type
         date(formatString: "MMM Do, YYYY")
         thumbnail {
           childImageSharp {
@@ -73,7 +73,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
     }
   }
   allWorkshops: allMdx(
-    filter: {frontmatter: {topic: {eq: "workshop"}, published: {eq: true}}}
+    filter: {frontmatter: {type: {eq: "Workshop"}, published: {eq: true}}}
   ) {
     nodes {
       id
@@ -96,7 +96,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
       }
     }
   }
-  allEvents: allMdx(filter: {frontmatter: {topic: {eq: "event"}}}) {
+  allEvents: allMdx(filter: {frontmatter: {type: {eq: "Event"}}}) {
     nodes {
       id
       fields {
@@ -127,7 +127,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
       body
       frontmatter {
         title
-        topic
+        type
         upcoming
         eurl
         date(formatString: "MMM Do, YYYY")

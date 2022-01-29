@@ -10,11 +10,9 @@ export const options =  [
       { id: 5, value: "Guide", label: "Guide" },
       { id: 6, value: "Interview", label: "Interview" },
       { id: 7, value: "News", label: "News" },
-      { id: 8, value: "Podcast", label: "Podcast" },
-      { id: 9, value: "Presentation", label: "Presentation" },
-      { id: 10, value: "Recorded Webinar", label: "Recorded Webinar" },
-      { id: 11, value: "Tutorial", label: "Tutorial" },
-      { id: 12, value: "White Paper", label: "White Paper" }]
+      { id: 8, value: "Recorded Webinar", label: "Recorded Webinar" },
+      { id: 9, value: "Tutorial", label: "Tutorial" },
+      { id: 10, value: "Workshop", label: "Workshop" }]
   },
   {
     category: "Product",

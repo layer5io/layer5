@@ -26,7 +26,7 @@ export const query = graphql`query EventsBySlug($slug: String!) {
       }
       eurl
       title
-      topic
+      type
       speakers
       date(formatString: "MMM Do, YYYY")
       thumbnail {

@@ -18,7 +18,7 @@ import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
 const MembersPage = () => {
   const [filter, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(9);
+  const [postsPerPage] = useState(12);
 
   const handleChange = () => {
     var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
