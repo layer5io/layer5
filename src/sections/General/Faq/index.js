@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container} from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
-// import { FiSearch } from "react-icons/fi";
+// import { FiSearch } from "@react-icons/all-files/fi/FiSearch";
 import Button from "../../../reusecore/Button";
 import {
   Accordion,
@@ -14,7 +14,8 @@ import {
   CloseIcon
 } from "../../../reusecore/Accordion";
 
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
+import { IoIosArrowUp } from "@react-icons/all-files/io/IoIosArrowUp";
 
 import data from "../../../assets/data/faq";
 

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { useTable } from "react-table";
-import { IoMdHelpCircle } from "react-icons/io";
-import { IconContext } from "react-icons";
+import { IoMdHelpCircle } from "@react-icons/all-files/io/IoMdHelpCircle";
+import { IconContext } from "@react-icons/all-files";
 import { TableWrapper } from "./SMITable.style";
-import halfMark from "../../assets/images/landscape/half.svg";
-import passingMark from "../../assets/images/landscape/passing.svg";
-import failingMark from "../../assets/images/landscape/failing.svg";
 import { non_functional } from "../../collections/landscape/non-functional";
-import ServiceMeshIcon from "../../assets/images/service-mesh-icons/service-mesh.svg";
 import ReactTooltip from "react-tooltip";
+import { StaticImage } from "gatsby-plugin-image";
+
+const halfMark = "../../assets/images/landscape/half.svg";
+const passingMark = "../../assets/images/landscape/passing.svg";
+const failingMark = "../../assets/images/landscape/failing.svg";
+const ServiceMeshIcon = "../../assets/images/service-mesh-icons/service-mesh.svg";
 
 const Table = ({ columns, data, spec }) => {
   // Use the state and functions returned from useTable to build the UI
@@ -54,7 +56,7 @@ const Table = ({ columns, data, spec }) => {
                     {
                       (non_functional.find(ele => ele.name.includes(row.original.mesh_name))) ? 
                         <>
-                          <img data-for="mesh-icon" data-tip={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} />
+                          <img data-for="mesh-icon" data-tip={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} alt="Mesh Icon" />
                           <ReactTooltip 
                             id="mesh-icon"
                             place="left"
@@ -65,7 +67,7 @@ const Table = ({ columns, data, spec }) => {
                           />
                         </>
                         : <>
-                          <img  data-for="mesh-icon" data-tip={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} />
+                          <StaticImage  data-for="mesh-icon" data-tip={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
                           <ReactTooltip 
                             id="mesh-icon"
                             place="left"
@@ -82,7 +84,7 @@ const Table = ({ columns, data, spec }) => {
                     if(spec["capability"] === "FULL"){
                       return <td>
                         <div className="tooltip">
-                          <img data-for="capablity" data-tip={`${spec["result"]}`} className="smiMark" src={passingMark} />
+                          <StaticImage data-for="capablity" data-tip={`${spec["result"]}`} className="smiMark" src={passingMark} alt="Pass Mark" />
                           <ReactTooltip 
                             id="capablity"
                             place="bottom"
@@ -96,7 +98,7 @@ const Table = ({ columns, data, spec }) => {
                     } else if (spec["capability"] === "NONE") {
                       return <td >
                         <div >
-                          <img data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={failingMark} />
+                          <StaticImage data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={failingMark} alt="Fail Mark" />
                           <ReactTooltip 
                             id="capablity"
                             place="bottom"
@@ -112,7 +114,7 @@ const Table = ({ columns, data, spec }) => {
                     } else if(spec["capability"] === "HALF"){
                       return <td>
                         <div className="tooltip">
-                          <img data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={halfMark} />
+                          <StaticImage data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={halfMark} alt="Half Mark" />
                           <ReactTooltip 
                             id="capablity"
                             place="bottom"
@@ -144,15 +146,15 @@ const Table = ({ columns, data, spec }) => {
                         {prevResult.more_details.map(spec => {
                           if(spec["capability"] === "Full"){
                             return <td key="capability-half">
-                              <img className="smiMark" src={passingMark} />
+                              <StaticImage className="smiMark" src={passingMark} alt="Passing Mark" />
                             </td>;
                           } else if(spec["capability"] === "None"){
                             return <td>
-                              <img key="capability-none" className="smiMark" src={failingMark} />
+                              <StaticImage key="capability-none" className="smiMark" src={failingMark} alt="Fail Mark" />
                             </td>;
                           } else if(spec["capability"] === "Half"){
                             return <td>
-                              <img key="capability-half" className="smiMark" src={halfMark} />
+                              <StaticImage key="capability-half" className="smiMark" src={halfMark} alt="Half Mark" />
                             </td>;
                           } else {
                             return <td >

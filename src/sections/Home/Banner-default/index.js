@@ -6,8 +6,8 @@ import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 // import ParticleComponent from "../../../reusecore/Particle";
 
-import { FaMapMarkedAlt } from "react-icons/fa";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 
 const BannerDefault = () => {
   return (

@@ -5,7 +5,7 @@ import MeshFocusWrapper from "./service-mesh-focussed.style";
 import ServiceMeshFocusedImage from "./The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png";
 import BlockQuoteImage from "../../../assets/images/blockquote/quote-left.svg";
 import Button from "../../../reusecore/Button";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 
 const ServiceMeshFocused = () => {
 

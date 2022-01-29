@@ -3,7 +3,7 @@ import {SRLWrapper} from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import SmpLogo from "../../../../assets/images/service-mesh-patterns/service-mesh-patterns.png";
 import SmpWhite from "../../../../assets/images/service-mesh-patterns/service-mesh-patterns-side-white.png";
 import SmpTxt from "../../../../assets/images/service-mesh-patterns/service-mesh-pattern-text_white.png";

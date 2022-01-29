@@ -1,5 +1,5 @@
 import React,{ useState, useEffect } from "react";
-import { HiOutlineChevronLeft } from "react-icons/hi";
+import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 import { Link } from "gatsby";
 import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
 import { getCurrentPage } from "../../../utils/getCurrentPage";

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {SRLWrapper} from "simple-react-lightbox";
 import {Link} from "gatsby";
 import Carousel from "nuka-carousel";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import {FeaturesWrapper} from "./FeaturesCarousel.style";
 
 

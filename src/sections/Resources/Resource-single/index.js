@@ -2,13 +2,12 @@ import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
-import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import RelatedResources from "../../../components/Related-Resources";
 import ResourcePageWrapper from "./resourceSingle.style";
 import RelatedResourcesFactory from "../../../components/Related-Resources/relatedResourcesFactory";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 
 
 const ResourceSingle = ({data}) => {

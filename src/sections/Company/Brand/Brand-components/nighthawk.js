@@ -1,6 +1,5 @@
 import React from "react";
-import { SRLWrapper } from "simple-react-lightbox";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Button from "../../../../reusecore/Button";
 import { Col, Row } from "../../../../reusecore/Layout";
 import GNH from "../../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";

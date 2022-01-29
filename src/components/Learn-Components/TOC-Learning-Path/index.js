@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { HiOutlineChevronLeft } from "react-icons/hi";
+import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 import { Link } from "gatsby";
 import TOCWrapper from "./toc.style";
-import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
+import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 
 const preReqSteps = [
   {name: "Set up", link: "/service-mesh-management/meshery"},
