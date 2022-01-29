@@ -22,4 +22,33 @@ export const PaginationWrapper = styled.div`
             text-align: center;
         }
     }
+
+    @media (max-width: 850px) {
+        .next-chapter-btn {
+            min-width: 100%;
+        }
+    }
+
+    @media (max-width: 510px) {
+        .paginate-section {
+            .next-chapter-heading {
+                flex: 0 0 60%;
+            }
+            .chapter-link {
+                flex: 0 0 40%;
+                text-align: center;
+            }
+        }
+    }
+
+    @media (max-width: 425px) {
+        .paginate-section {
+            flex-direction: column;
+
+            .next-chapter-heading {
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+            }
+        }
+    }
 `;

@@ -26,24 +26,19 @@ const TOCWrapper = styled.div`
                 }
             }
         }
-    }
 
-    .toc-toggle-btn{
-        display:none;
-    }
-     
-    .toc-ul-open{
-        height:auto !important;
-        opacity:1 !important;
-        transition:all .4s !important;
-    }
+        .toc-toggle-btn{
+            display:none;
+        }
 
-    .toc-menu-icon{
-        width: 1.5rem; 
-        height: 1.5rem; 
-        cursor: pointer;
-        fill: ${props => props.theme.menuColor};
+        .toc-menu-icon{
+            width: 1.5rem; 
+            height: 1.5rem; 
+            cursor: pointer;
+            fill: ${props => props.theme.menuColor};
+        }
     }
+    
 
     .toc-list {
         ul {
@@ -116,22 +111,28 @@ const TOCWrapper = styled.div`
                     margin: 0.5rem;
                 }
             }
-        }
 
-        .toc-ul{
-            opacity:0;
-            height:0;
-            transition:none;
-            padding-left: 1rem !important;
-        }
+            .toc-ul{
+                opacity:0;
+                height:0;
+                transition:none;
+                padding-left: 1rem;
+            }
 
-        .toc-toggle-btn{
-            display: flex;
+            .toc-ul-open{
+                height:auto;
+                opacity:1;
+                transition:all .4s;
+            }
         }
 
         .chapter-back {
             h4 {
                 margin: 0 1rem;
+            }
+
+            .toc-toggle-btn{
+                display: flex;
             }
         }
     }
