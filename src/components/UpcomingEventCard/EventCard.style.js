@@ -10,13 +10,13 @@ const UpcomingEventsWrapper = styled.div`
 		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 		padding: 1rem;
 		border-radius: 0.5rem;
-		height: 35rem;
+		height: 39.5rem;
 		transition: all 0.3s;
 	}
 
 	.blog-slider_content{
 		text-align: center;
-		max-height: 18rem;
+		max-height: 24rem;
 		overflow: hidden;
 	}
 
@@ -53,9 +53,21 @@ const UpcomingEventsWrapper = styled.div`
 		background: ${props => props.theme.secondaryColor};
 	}
 
+	.swiper-pagination {
+		background: ${props => props.theme.white};
+		padding-top: 0.8rem;
+    	margin-top: 1rem;
+    	margin-bottom: -1.2rem;
+    	padding-bottom: 0.8rem;
+	}
+
 	@media (max-width: 720px) {
 		.blog-slider_button {
 			margin-bottom: 2rem;
+		}
+
+		.blog-slider {
+			height: 38rem;
 		}
 	}
 
@@ -66,6 +78,10 @@ const UpcomingEventsWrapper = styled.div`
 
 		.blog-slider_text > h2 {
 			font-size: 1.15rem;
+		}
+
+		.blog-slider {
+			height: 35rem;
 		}
 	}
 `;
