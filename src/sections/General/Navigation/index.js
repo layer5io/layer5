@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
-import { FaBars } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
+import { FaBars } from "@react-icons/all-files/fa/FaBars";
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import Button from "../../../reusecore/Button";
 
 
@@ -213,7 +213,12 @@ const Navigation = () => {
                             key={index}
                             className="mobile-nav-subitem"
                           >
-                            <Link to={subItems.path} onClick={changeDropdownState} className="sub-menu-item">{subItems.name}</Link>
+                            { subItems.name === "Forum" ?
+                              <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="sub-menu-item" rel="noreferrer">
+                                {subItems.name}
+                              </a>
+                              : <Link to={subItems.path} onClick={changeDropdownState} className="sub-menu-item">{subItems.name}</Link>
+                            }
                           </li>
                         ))}
                       </ul>

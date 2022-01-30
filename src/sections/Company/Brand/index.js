@@ -9,7 +9,7 @@ import ImageHubBrand from "./Brand-components/imagehub";
 import SMPBrand from "./Brand-components/smp";
 import CommunityBrand from "./Brand-components/community";
 import Button from "../../../reusecore/Button";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import NightHawk from "./Brand-components/nighthawk";
 import ServiceMeshPatterns from "./Brand-components/servicemeshpatterns";
 import MeshMasterBrand from "./Brand-components/meshmaster";

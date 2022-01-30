@@ -3,11 +3,14 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import CareerPageWrapper from "./CareerSingle.style";
-import { FaPlay } from "react-icons/fa";
-import { FaGlobeAmericas } from "react-icons/fa";
-import { FiCalendar, FiClock } from "react-icons/fi";
-import { HiOutlineCash } from "react-icons/hi";
-import Layer5_Icon from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
+import { FaPlay } from "@react-icons/all-files/fa/FaPlay";
+import { FaGlobeAmericas } from "@react-icons/all-files/fa/FaGlobeAmericas";
+import { FiCalendar } from "@react-icons/all-files/fi/FiCalendar";
+import { FiClock } from "@react-icons/all-files/fi/FiClock";
+import { HiOutlineCash } from "@react-icons/all-files/hi/HiOutlineCash";
+import { StaticImage } from "gatsby-plugin-image";
+
+const Layer5_Icon = "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
 
 
 const CareerSingle = ({data}) => {
@@ -42,7 +45,7 @@ const CareerSingle = ({data}) => {
             </Col>
             <Col xs={12} md={5} xl={4} className="logo-col">
               <div className="layer5-logo">
-                <img src={Layer5_Icon} alt="Layer5 Logo"/>
+                <StaticImage src={Layer5_Icon} alt="Layer5 Logo"/>
               </div>
             </Col>
           </Row>

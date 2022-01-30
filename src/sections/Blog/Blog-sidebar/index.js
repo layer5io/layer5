@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, Link, useStaticQuery} from "gatsby";
 import slugify from "../../../utils/slugify";
 
-import { FaSearch } from "react-icons/fa";
+// import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
 import Button from "../../../reusecore/Button";
 import Discuss from "../../Discuss-Callout/layer5-discuss-white.png";

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { smi_data } from "../../collections/landscape/smi";
 import Table from "../../components/SMI-Table";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { reduce } from "lodash";
-import { version } from "react-dom";
 
 function SMI_Compatibility() {
 

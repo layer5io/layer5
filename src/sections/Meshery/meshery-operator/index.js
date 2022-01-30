@@ -1,5 +1,5 @@
 import React from "react";
-
+import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../../../components/layout";
 
 import MesheryOperatorWrapper from "./mesheryoperator.style";
@@ -7,10 +7,11 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import Slider from "react-slick";
 
 import SubscribeSection from "../../../sections/subscribe/subscribe";
-import Operator from "../../../assets/images/meshery-operator/meshery-operator.png";
 import Deployment from "./deployment.svg";
 import Initialization from "./initialization.svg";
 import icon from "./icon.svg";
+
+const OperatorLogo = "../../../assets/images/meshery-operator/meshery-operator.png";
 
 const MesheryOperatorPage = () => {
   return (
@@ -21,7 +22,7 @@ const MesheryOperatorPage = () => {
             <div className="hero-section">
               <Row>
                 <Col lg={6} md={6} sm={12}>
-                  <img src={Operator} className="logo" />
+                  <StaticImage src={OperatorLogo} className="logo" />
                 </Col>
                 <Col lg={6} md={6} sm={12}>
                   <div className="hero-text">

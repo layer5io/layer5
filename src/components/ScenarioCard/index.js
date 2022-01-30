@@ -1,10 +1,10 @@
 import React from "react";
 import { Row, Col } from "../../reusecore/Layout";
 import { ScenarioCardWrapper } from "./ScenarioCard.style";
-import { BsArrowDown } from "react-icons/bs";
-import { BsArrowUp } from "react-icons/bs";
+import { BsArrowDown } from "@react-icons/all-files/bs/BsArrowDown";
+import { BsArrowUp } from "@react-icons/all-files/bs/BsArrowUp";
 import { Link } from "gatsby";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt } from "@react-icons/all-files/fa/FaExternalLinkAlt";
 
 const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID, toggleActive }) => {
 

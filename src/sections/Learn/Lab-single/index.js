@@ -1,7 +1,7 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import LabSinglePageWrapper from "./LabSinglePageWrapper.style";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Link } from "gatsby";
 import PageHeader from "../../../reusecore/PageHeader";
 import Button from "../../../reusecore/Button";

@@ -5,7 +5,7 @@ import {SRLWrapper} from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Layer5CommunityWhite from "../../../../assets/images/layer5/layer5-tagline/png/layer5-tag-white-bg.png";
 import Layer5WhiteBg from "../../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
 import Bookmarks from "../../../../assets/images/layer5/bookmarks.png";

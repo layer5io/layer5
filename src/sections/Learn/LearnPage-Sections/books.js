@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Container } from "../../../reusecore/Layout";
 import { Link } from "gatsby";
 import Button from "../../../reusecore/Button";
-import {FaArrowRight} from "react-icons/fa";
+import {FaArrowRight} from "@react-icons/all-files/fa/FaArrowRight";
 import styled from "styled-components";
 
 const BooksListWrapper = styled.div`

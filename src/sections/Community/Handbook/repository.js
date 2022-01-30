@@ -116,48 +116,50 @@ const Repository = () => {
             {frontendProjects.map((frontendProjects) => {
               const { category } = frontendProjects;
               return (
-                <table className="frontendTable" key={category}>
-                  <thead>
-                    <tr>
-                      <th className="linkscol">Site</th>
-                      <th>Project</th>
-                      <th>Framework</th>
-                      <th className="linkscol">Repo</th>
-                    </tr>
-                  </thead>
-                  {frontendProjects.subdata.map((subdata) => {
-                    const {
-                      project,
-                      language,
-                      repository,
-                      site,
-                      image,
-                      description,
-                    } = subdata;
-                    return (
-                      <tbody key={project}>
-                        <tr>
-                          <td>
-                            <a href={site} target="_blank" rel="noreferrer">
-                              <img className="site-icon" src={image} />
-                            </a>
-                          </td>
-                          <td>{project}</td>
-                          <td>{language}</td>
-                          <td>
-                            <a
-                              href={repository}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              <img className="github-icon" src={github} />
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    );
-                  })}
-                </table>
+                <div className="table-container">
+                  <table className="frontendTable" key={category}>
+                    <thead>
+                      <tr>
+                        <th className="linkscol">Site</th>
+                        <th>Project</th>
+                        <th>Framework</th>
+                        <th className="linkscol">Repo</th>
+                      </tr>
+                    </thead>
+                    {frontendProjects.subdata.map((subdata) => {
+                      const {
+                        project,
+                        language,
+                        repository,
+                        site,
+                        image,
+                        description,
+                      } = subdata;
+                      return (
+                        <tbody key={project}>
+                          <tr>
+                            <td>
+                              <a href={site} target="_blank" rel="noreferrer">
+                                <img className="site-icon" src={image} />
+                              </a>
+                            </td>
+                            <td>{project}</td>
+                            <td>{language}</td>
+                            <td>
+                              <a
+                                href={repository}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <img className="github-icon" src={github} />
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      );
+                    })}
+                  </table>
+                </div>
               );
             })}
 
@@ -168,38 +170,40 @@ const Repository = () => {
             {backendProjects.map((backendProjects) => {
               const { category } = backendProjects;
               return (
-                <table key={category}>
-                  <thead>
-                    <tr>
-                      <th>{category}</th>
-                      <th>Language</th>
-                      <th>Description</th>
-                      <th className="linkscol">Repo</th>
-                    </tr>
-                  </thead>
-                  {backendProjects.subdata.map((subdata) => {
-                    const { project, image, language, description, repository } = subdata;
-                    return (
-                      <tbody key={project}>
-                        <tr>
-                          <td>
-                            <img className="site-icon inline" src={image} />&nbsp;{project}</td>
-                          <td>{language}</td>
-                          <td>{description}</td>
-                          <td>
-                            <a
-                              href={repository}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              <img className="github-icon" src={github} />
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    );
-                  })}
-                </table>
+                <div className="table-container">
+                  <table key={category}>
+                    <thead>
+                      <tr>
+                        <th>{category}</th>
+                        <th>Language</th>
+                        <th>Description</th>
+                        <th className="linkscol">Repo</th>
+                      </tr>
+                    </thead>
+                    {backendProjects.subdata.map((subdata) => {
+                      const { project, image, language, description, repository } = subdata;
+                      return (
+                        <tbody key={project}>
+                          <tr>
+                            <td>
+                              <img className="site-icon inline" src={image} />&nbsp;{project}</td>
+                            <td>{language}</td>
+                            <td>{description}</td>
+                            <td>
+                              <a
+                                href={repository}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <img className="github-icon" src={github} />
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      );
+                    })}
+                  </table>
+                </div>
               );
             })}
             <TocPagination />

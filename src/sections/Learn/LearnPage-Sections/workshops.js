@@ -4,7 +4,8 @@ import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import { feedbackData } from "./feedbackData";
 import Slider from "react-slick";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
+import { FiArrowLeft } from "@react-icons/all-files/fi/FiArrowLeft";
 import styled from "styled-components";
 import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
 

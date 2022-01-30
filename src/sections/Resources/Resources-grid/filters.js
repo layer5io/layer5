@@ -5,7 +5,7 @@ import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoClose } from "@react-icons/all-files/io5/IoClose";
 import {FiFilter} from "@react-icons/all-files/fi/FiFilter";
 import { options } from "./options";
-import { graphql, Link, useStaticQuery} from "gatsby";
+import { graphql, useStaticQuery} from "gatsby";
 
 
 import ResourceNavigationWrapper from "./filters.style";
