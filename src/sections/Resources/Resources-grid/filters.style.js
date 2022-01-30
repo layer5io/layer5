@@ -26,13 +26,17 @@ export const ResourceNavigationWrapper = styled.div`
     font-size: 1.5rem;
   }
 
+  .mob-view{
+    display: none;
+  }
+
   .clear-disabled{
     display: none;
   }
 
   .filter-icon{
-    width: 1.5rem; 
-    height: 1.5rem; 
+    width: 1.2rem; 
+    height: 1.2rem; 
     cursor: pointer;
     margin : 0.2rem;
   }
@@ -43,14 +47,18 @@ export const ResourceNavigationWrapper = styled.div`
   .filter-btn{
     display: flex;
     justify-content: space-between;
-    background-color: #FFF;
+    align-items: center;
+    background-color: ${(props) => props.theme.secondaryColor};
+    color: #FFF;
     font-weight: 500;
+    padding: 0.5rem;
     border: none;
+    border-radius: 5px;
     span{
-      padding-left: 1rem;
+      padding-left: 0.5rem;
       float: right;
-      color: #000000;
-      font-size: 1.5rem;
+      color: #FFF;
+      font-size: 1.2rem;
       cursor: pointer;
     }
   }
@@ -138,17 +146,8 @@ input[type="checkbox"] {
              visibility:visible;
             }
 
-  @media only screen and (max-width: 750px){
-       position: initial;
-       margin-left: 4rem;
-       margin-right: 2rem;
-       width: auto;
-       .filter{
-        display:contents;
-       }
-    }
-
     @media only screen and (max-width: 991px) {
+      margin-left: 1.5rem;
       .filter-menu-icon{
         display: flex;
       }
@@ -158,8 +157,8 @@ input[type="checkbox"] {
         margin : 0 1rem;
       }
       .filter-close{
-        width: 1.7rem; 
-        height: 1.7rem;
+        width: 1.2rem; 
+        height: 1.2rem;
       }
       .filters-boxes{
         display: none;
@@ -172,18 +171,24 @@ input[type="checkbox"] {
       .heading-name{
         display : none;
       }
+      .desk-view{
+        display:none;
+      }
+      .mob-view{
+        display:block;
+      }
+      .clear-disable{
+        display: none;
+      }
       #filters-boxes{
         display : block
       }
     }
     @media only screen and (max-width: 575px) {
+      margin-left: 0rem;
       .heading{
         margin-left: 0;
         margin-bottom: 2.5rem
-      }
-      .filter-close{
-        width: 1.7rem; 
-        height: 1.7rem;
       }
     }
     @media only screen and (max-width: 430px){

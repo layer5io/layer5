@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { HiOutlineChevronUp, HiOutlineChevronDown } from "react-icons/hi";
-import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
-import { IoClose } from "react-icons/io5";
-import {FiFilter} from "react-icons/fi";
+import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp";
+import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
+import { IoClose } from "@react-icons/all-files/io5/IoClose";
+import {FiFilter} from "@react-icons/all-files/fi/FiFilter";
 import { options } from "./options";
 import { graphql, Link, useStaticQuery} from "gatsby";
 
@@ -83,19 +84,23 @@ const Navigation = (props) => {
             {expandFilter ? (
               <button className="filter-btn">
                 <IoClose className="filter-icon filter-close" />
-                <span>Close Filters</span>
+                <span>Filters</span>
               </button> 
             )  :
               (
                 <button className="filter-btn">
                   <FiFilter className="filter-icon filter-open"/>
-                  <span>Open Filters</span>          
+                  <span>Filters</span>          
                 </button> 
               )}
           </div>
           <p >
             <strong className="heading-name">Filters</strong> 
-            {expandFilter ? (<span className= {props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} onClick={props.clear}>
+            <span className= {`${props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} desk-view`} onClick={props.clear}>
+              Clear Filters 
+              <IoMdClose className="clear-icon"  />
+            </span>
+            {expandFilter ? (<span className= {`${props.resources.length === 0 ? "clear-disabled" : "clear-enabled mob-view"}`} onClick={props.clear}>
               Clear Filters 
               <IoMdClose className="clear-icon"  />
             </span>) : ""}
