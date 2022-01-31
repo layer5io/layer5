@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { HiOutlineChevronLeft } from "react-icons/hi";
+import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 import { Link } from "gatsby";
-import { IoMdClose, IoIosArrowDropdownCircle } from "react-icons/io";
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
+import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 
 import TOCWrapper from "./toc.style";
 import { content } from "./content";

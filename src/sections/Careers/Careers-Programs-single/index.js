@@ -2,8 +2,8 @@ import React from "react";
 import Select from "react-select";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { Row, Container, Col } from "../../../reusecore/Layout";
+import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
+import { Row, Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import ProgramsPageWrapper, {dropdownTheme, selectStyles} from "./ProgramsSingle.style.js";
 

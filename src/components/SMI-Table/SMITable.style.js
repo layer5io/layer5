@@ -2,11 +2,19 @@ import styled from "styled-components";
 
 export const TableWrapper = styled.div`
 overflow-y: hidden;
-overflow-x: hidden;
+overflow-x: auto;
 
-img.smiMark {
+.smiMark {
 	height: 70%;
 	max-height:2.5rem;
+}
+
+.gatsby-image-wrapper {
+	img {
+		width: 2.5rem;
+		height: 2.5rem;
+		margin: auto;
+	}
 }
 
 .smi-tooltip {

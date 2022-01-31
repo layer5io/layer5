@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
+import { IoIosArrowRoundBack } from "@react-icons/all-files/io/IoIosArrowRoundBack";
 
 export const PagerWrapper = styled.div`
     display: flex; 

@@ -1,5 +1,5 @@
 import React from "react";
-import {FaSearch } from "react-icons/fa"; 
+// import {FaSearch } from "react-icons/fa"; 
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
@@ -36,7 +36,7 @@ const BannerHosting= () => {
               <div className="search-box">
                 <input type='text' placeholder='Search domain' />
                 <Button className="src-btn">
-                  <FaSearch />
+                  {/* <FaSearch /> */}
                 </Button>
               </div>
               <div className="domain-extention-block">

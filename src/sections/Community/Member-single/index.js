@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
 import { MemberSingleWrapper } from "./memberSingle.style";
-import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
 import MeshMateIcon from "../../../assets/images/meshmate/meshmate-icon.svg";

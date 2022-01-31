@@ -3,7 +3,7 @@ import {SRLWrapper} from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import MeshLogoLightText from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text.png";
 import MeshLogoLightTextSide from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.png";
 import MeshDarkText from "../../../../assets/images/meshery/text-only/meshery-dark-text.png";

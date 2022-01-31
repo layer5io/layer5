@@ -51,6 +51,18 @@ If you'd like to contribute a post to the layer5.io/blog, please open an issue a
 
 The following list of instructions pertain to commonplace site updates by contributors.
 
+## Things to keep in mind
+
+  1. Use only the theme colors available at [themeStyles.js](https://github.com/layer5io/layer5/blob/master/src/theme/app/themeStyles.js) instead of external color codes.
+  2. Avoid adding `rel="noreferrer"` attribute to internal links on the site.
+
+
+## Adding Images and Icons
+
+  1. It is recommended to use `@react-icons/all-files` instead of `react-icons` for importing icons. The issue with react-icons is that even though we are importing a single icon from the package/folder it still imports the complete icon folder which is creating unwanted junks of JS in the build.
+  2. It is recommended to use Gatsby's `<StaticImage>` instead of `<img>` tag to display static images on the site. This performs automatic image optimization, thereby improving site performance.
+  3. Avoid creating duplicate copies of same image under different folders. All images must be imported from `/assets/images` folder. 
+
 ## Adding a Blog Post
 
   1. In order to contribute a blog post, fork this repository, clone it, create a new branch and navigate to the `src/collections/blog` directory.

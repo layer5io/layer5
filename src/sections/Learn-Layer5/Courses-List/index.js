@@ -1,9 +1,9 @@
 import React from "react";
-import { Row, Col, Container } from "../../../reusecore/Layout";
+import { Col, Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { CoursesListWrapper } from "./courseslist.style";
 import ContentCard from "../../../components/Learn-Components/Content-Card";
-import { HiOutlineChevronLeft } from "react-icons/hi";
+import { HiOutlineChevronLeft } from "@react-icons/all-files/hi/HiOutlineChevronLeft";
 import SetupPreReq from "../../../components/Learn-Components/Setup-Pre-Requisites";
 import { Link } from "gatsby";
 // import TOC from "../../../components/Learn-Components/TOC-Learning-Path";

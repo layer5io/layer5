@@ -5,8 +5,8 @@ import Layout from "../../components/layout";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
-import { FiDownloadCloud } from "react-icons/fi";
-import { GiClockwork } from "react-icons/gi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
+import { GiClockwork } from "@react-icons/all-files/gi/GiClockwork";
 
 import FeaturesTable from "./Features-Col";
 

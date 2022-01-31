@@ -12,7 +12,8 @@ import VintageBox from "../../../reusecore/VintageBox";
 // Assets
 import { MembersGridWrapper } from "./membersGrid.style";
 import communityImg from "../../../assets/images/community/community-green.svg";
-import { FaBook, FaUsers } from "react-icons/fa";
+import { FaBook } from "@react-icons/all-files/fa/FaBook";
+import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 
 const MembersGrid = (props) => {
   return (

@@ -42,6 +42,10 @@ const ConductWrapper = styled.div`
       margin-top: -2rem;
       margin-left: 0;
       padding: 1rem 1.5rem;
+
+      .explain-2 div {
+        flex-direction: column-reverse;
+      }
   
   }
 

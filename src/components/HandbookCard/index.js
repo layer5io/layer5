@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { HiOutlineChevronRight } from "react-icons/hi";
+import { HiOutlineChevronRight } from "@react-icons/all-files/hi/HiOutlineChevronRight";
 import { HandbookCardWrapper } from "./HandbookCard.style";
 
 const HandbookCard = ({title, description, to}) => {

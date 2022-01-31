@@ -1,12 +1,15 @@
 import React from "react";
 import { useTable, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from "react-table";
 import ReactTooltip from "react-tooltip";
-import { IoMdHelpCircle } from "react-icons/io";
-import { IconContext } from "react-icons";
+import { IoMdHelpCircle } from "@react-icons/all-files/io/IoMdHelpCircle";
+import { IconContext } from "@react-icons/all-files";
 import { TableWrapper } from "./LandscapeTable.style";
-import passingMark from "../../assets/images/landscape/passing.svg";
-import failingMark from "../../assets/images/landscape/failing.svg";
-import { AiOutlineCaretUp, AiOutlineCaretDown } from "react-icons/ai";
+import { AiOutlineCaretUp } from "@react-icons/all-files/ai/AiOutlineCaretUp";
+import { AiOutlineCaretDown } from "@react-icons/all-files/ai/AiOutlineCaretDown";
+import { StaticImage } from "gatsby-plugin-image";
+
+const passingMark = "../../assets/images/landscape/passing.svg";
+const failingMark = "../../assets/images/landscape/failing.svg";
 
 function GlobalFilter({
   globalFilter,
@@ -142,11 +145,11 @@ const Table = ({ columns, data, placeHolder }) => {
                     </td>;
                   } else if(cell["value"] === "Yes" || cell["value"] === "Full"){
                     return <td {...cell.getCellProps()}>
-                      <img className="Mark" src={passingMark} /> 
+                      <StaticImage className="Mark" src={passingMark} alt="Passing Mark" /> 
                     </td>;
                   } else if(cell["value"] === "No" || cell["value"] === "None"){
                     return <td {...cell.getCellProps()}>
-                      <img className="Mark" src={failingMark} /> 
+                      <StaticImage className="Mark" src={failingMark} alt="Failing Mark" /> 
                     </td>;
                   } else if(cell["value"] === "?"){
                     return <td {...cell.getCellProps()}>
