@@ -83,7 +83,7 @@ const Projects = () => {
             </Link>
           </Col>
           <Col sm={2} md={2} lg={2}>
-            <Link className="partner-card" to="/partners#uem">
+            <Link className="partner-card" to="/partners#rackspace">
               <div className="partner__block__inner">
                 <StaticImage src={rackspace} alt= "Rackspace Technology" objectFit="contain"/>
               </div>
