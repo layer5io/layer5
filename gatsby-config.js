@@ -445,6 +445,15 @@ module.exports = {
         query: "allMdx",
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://layer5.io",
+        sitemap: "https://layer5.io/sitemap.xml",
+        policy: [{userAgent: "*", allow: "/"}],
+      }
+    },
     "gatsby-plugin-meta-redirect", // make sure this is always the last one
   ],
+  
 };

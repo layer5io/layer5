@@ -4,7 +4,6 @@ import Bg1 from "../../assets/images/app/features/bg-1.png";
 import Bg2 from "../../assets/images/app/features/bg-2.png";
 
 import Vintage1 from "../../assets/images/app/features/vintage-1.png";
-import MesheryLogo from "./img/meshery-logo-light.svg";
 import MeshSyncLogo from "./img/meshsync.svg";
 
 
