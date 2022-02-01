@@ -109,6 +109,7 @@ const TOCWrapper = styled.div`
                 li {
                     list-style-type: none;
                     margin: 0.5rem;
+                    display: none;
                 }
             }
 
@@ -123,6 +124,10 @@ const TOCWrapper = styled.div`
                 height:auto;
                 opacity:1;
                 transition:all .4s;
+            }
+
+            .toc-ul-open li {
+                display: inline-block;
             }
         }
 
