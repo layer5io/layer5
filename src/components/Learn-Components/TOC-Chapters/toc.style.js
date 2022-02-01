@@ -3,6 +3,9 @@ import styled from "styled-components";
 const TOCWrapper = styled.div`
 
     .chapter-back {
+        display:flex;
+        justify-content:space-between;
+        align-items:center; 
         a {
             display: inline-flex;
             svg {
@@ -23,7 +26,19 @@ const TOCWrapper = styled.div`
                 }
             }
         }
+
+        .toc-toggle-btn{
+            display:none;
+        }
+
+        .toc-menu-icon{
+            width: 1.5rem; 
+            height: 1.5rem; 
+            cursor: pointer;
+            fill: ${props => props.theme.menuColor};
+        }
     }
+    
 
     .toc-list {
         ul {
@@ -67,6 +82,7 @@ const TOCWrapper = styled.div`
             }
         }
     }
+    
     @media(max-width: 992px){
         .toc-list{
             ul{
@@ -77,26 +93,52 @@ const TOCWrapper = styled.div`
             
         }
     }
+
     @media(max-width: 767px){
         position: initial;
-         .toc-list{
+        .toc-list{
             ul{
                 display: flex;
                 flex-flow: wrap;
                 margin: 1.5rem 0;
+                flex-direction: column;
                 padding-inline-start: 0rem;
                 &::after{
                     display: none;
                 }
                 li {
                     list-style-type: none;
-                    margin:0.5rem;
+                    margin: 0.5rem;
+                    display: none;
                 }
             }
-    }
-    .chapter-back {
-        h4 {
-            margin: 0 1rem;
+
+            .toc-ul{
+                opacity:0;
+                height:0;
+                transition:none;
+                padding-left: 1rem;
+            }
+
+            .toc-ul-open{
+                height:auto;
+                opacity:1;
+                transition:all .4s;
+            }
+
+            .toc-ul-open li {
+                display: inline-block;
+            }
+        }
+
+        .chapter-back {
+            h4 {
+                margin: 0 1rem;
+            }
+
+            .toc-toggle-btn{
+                display: flex;
+            }
         }
     }
 `;
