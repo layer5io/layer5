@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../../reusecore/Button";
-import { PaginationWrapper } from "./paginate.style";
+import { PaginationWrapper, QuizWrapper } from "./paginate.style";
 import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
 import { getCurrentPage } from "../../../utils/getCurrentPage";
 
-const Pagination = ({ TOCData, chapterData, location }) => {
+const Pagination = ({ TOCData, chapterData, location, showQuizModal }) => {
 
   const [path, setPath] = useState("");
 
@@ -45,12 +45,20 @@ const Pagination = ({ TOCData, chapterData, location }) => {
           </h3>
           <div className="chapter-link">
             <Button secondary title="Next Chapter"
+              className="next-chapter-btn"
               url={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${nextChapter}/`}
               external={false} />
           </div>
         </div>
       </PaginationWrapper>
     ) : null
+      // : (
+      //       <QuizWrapper onClick={showQuizModal}>
+      //           <Button secondary title="Take Quiz"
+      //             external={false} 
+      //           />
+      //         </QuizWrapper>
+      //   )
   );
 };
 

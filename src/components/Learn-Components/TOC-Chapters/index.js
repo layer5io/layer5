@@ -4,9 +4,12 @@ import { Link } from "gatsby";
 import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
 import { getCurrentPage } from "../../../utils/getCurrentPage";
 import TOCWrapper from "./toc.style";
+import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
+import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 
 const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
+  const [expand, setExpand] = useState(false);
 
   const reformatTOC= (data) => {
     let newData = data.split("-").join(" ");
@@ -34,9 +37,26 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
           <HiOutlineChevronLeft />
           <h4>{courseData.frontmatter.courseTitle}</h4>
         </Link>
+        <div className="toc-toggle-btn">
+          {expand ? (
+            <IoMdClose
+              className="toc-menu-icon"
+              onClick={function () {
+                setExpand(!expand);
+              }}
+            />
+          ) : (
+            <IoIosArrowDropdownCircle
+              className="toc-menu-icon"
+              onClick={function () {
+                setExpand(!expand);
+              }}
+            />
+          )}
+        </div>
       </div>
       <div className="toc-list">
-        <ul>
+        <ul  className={`toc-ul ${expand ? "toc-ul-open" : ""}`}>
           {availableChapters.map((item) => (
             <li key={item} className={item === path ? "active-link" : ""}>
               <p className="toc-item" key={item}>

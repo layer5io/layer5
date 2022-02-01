@@ -43,7 +43,7 @@ const Meshmap = () => {
     return (
         
       <Container>
-        <PageHeader title="MeshMap" subtitle="bringing GitOps to service meshes" />   
+        <PageHeader title="MeshMap" subtitle="bringing GitOps to service meshes" superscript="BETA"/>   
         <Row>
           <Col lg={6} md={6} sm={12}>
             <p className= "para">MeshMap is the world's only visual designer for Kubernetes and service mesh deployments. Use MeshMap to design, deploy, and manage your Kubernetes-based, service mesh deployments. As a plugin for Meshery, MeshMap supports 10+ service meshes. MeshMap not only allows you to create and verify your cloud native application and infrastructure configurations, but also integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.</p>
