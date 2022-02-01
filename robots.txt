@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://layer5.io/sitemap.xml
+Host: https://layer5.io
