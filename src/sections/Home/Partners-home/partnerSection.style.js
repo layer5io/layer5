@@ -36,7 +36,7 @@ const PartnerItemWrapper = styled.section`
         max-width: 100%;
         min-width: 7rem;
         margin: auto;
-        opacity: .7;
+        opacity: .7 !important;
         max-height:100px;
     }
     @supports (-webkit-hyphens:none) { 

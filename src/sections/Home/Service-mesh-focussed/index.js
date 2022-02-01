@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
-
 import MeshFocusWrapper from "./service-mesh-focussed.style";
-import ServiceMeshFocusedImage from "./The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png";
 import BlockQuoteImage from "../../../assets/images/blockquote/quote-left.svg";
 import Button from "../../../reusecore/Button";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
+import { StaticImage } from "gatsby-plugin-image";
+const ServiceMeshFocusedImage = "../../../assets/images/homePage-images/The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png";
 
 const ServiceMeshFocused = () => {
 
@@ -21,8 +21,8 @@ const ServiceMeshFocused = () => {
           </Col>
         </Row>
         <Row Vcenter >
-          <Col xs={12} sm={6} lg={6}>
-            <img src={ServiceMeshFocusedImage} className="book" alt="The-Enterprise-Path-to-Service-Mesh-Architectures" />
+          <Col xs={12} sm={6} lg={6} className="book" >
+           <StaticImage src={ServiceMeshFocusedImage}  alt="The-Enterprise-Path-to-Service-Mesh-Architectures"  />
           </Col>
           <Col xs={12} sm={6} lg={6}>
             <img src={BlockQuoteImage} className="quote-icon" alt="Quote from book" />

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import imgHero from "./images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
+import imgHero from "../../../assets/images/homePage-images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
 
 
 const BannerSectionWrapper = styled.section`
@@ -50,7 +50,7 @@ const BannerSectionWrapper = styled.section`
     .hero {
         background: url(${imgHero});
         right: 0px;
-        height: 850px;
+        height: 740px;
         overflow-x: hidden;
         padding: 0rem;
         object-fit: cover;
@@ -110,7 +110,7 @@ const BannerSectionWrapper = styled.section`
      }
      @media only screen and (max-width: 767px) {
          .hero {
-            display: none;
+            display: none !important;
          }
          .join-community {
              text-align: center;
