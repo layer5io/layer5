@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 const MeshmapWrapper = styled.div`
   
-
+  .supscript{
+    color: ${props => props.theme.caribbeanGreenColor};
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
   .required-sign {
     color: #8b0000;
   }
@@ -64,9 +68,6 @@ p.caption {
     .label {
       font-size: 1rem;
     }
-
-
-
 
     .form {
         margin: 1rem;
@@ -206,8 +207,6 @@ p.caption {
                 width: auto;
                 height: auto;
               }
-
-           
 
             .hero-text {
                 .title1 {
