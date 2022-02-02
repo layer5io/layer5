@@ -415,6 +415,13 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        path: `${__dirname}/src/collections/tutorials`,
+        name: "tutorials",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         path: `${__dirname}/content-learn`,
         name: "content-learn",
       },
