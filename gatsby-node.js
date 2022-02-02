@@ -236,6 +236,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const news = allNodes.filter(
     node => node.fields.collection === "news"
   );
+  const tutorials = allNodes.filter(
+    node => node.fields.collection === "tutorials"
+  );
 
   const projects = allNodes.filter(
     node => node.fields.collection === "projects"
@@ -320,6 +323,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 
   resources.forEach(resource => {
+    createPage({
+      path: resource.fields.slug,
+      component: resourcePostTemplate,
+      context: {
+        slug: resource.fields.slug,
+      },
+    });
+  });
+
+  tutorials.forEach(resource => {
     createPage({
       path: resource.fields.slug,
       component: resourcePostTemplate,
@@ -540,6 +553,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             slug = `/learn/${collection}/${slugify(node.frontmatter.title)}`;
             break;
           case "resources":
+            if (node.frontmatter.published)
+              slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
+            break;
+          case "tutorials":
             if (node.frontmatter.published)
               slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
             break;

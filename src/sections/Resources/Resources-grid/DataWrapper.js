@@ -11,7 +11,7 @@ const DataWrapper = (WrappedComponent) => {
             allMdx(
                 sort: {fields: [frontmatter___date], order: DESC}
                 filter: {
-                    fields: { collection: { in: ["blog", "resources", "news", "events"] } }
+                    fields: { collection: { in: ["blog", "resources", "news", "events", "tutorials"] } }
                     frontmatter: { published: { eq: true } , resource: { eq: true} }
                   }
           ) {
