@@ -4,7 +4,7 @@ We are beyond excited to see that you want to contribute! We would love to accep
 
   - [Before You Get Started](#before-you-get-started)
   - [Contributing to Layer5 Projects](#contributing-to-layer5-projects)
-  - [Contributing to Layer5's Docs](#contributing-to-layer5s-blogs)
+  - [Contributing to Layer5's Blogs](#contributing-to-layer5s-blogs)
   - [How to Contribute](#how-to-contribute)
       - [Prequisites](#prequisites)
       - [Set up your Local Development Environment](#set-up-your-local-development-environment)
