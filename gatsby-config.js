@@ -286,7 +286,7 @@ module.exports = {
               }
             `,
             output: "/events/feed.xml",
-            title: "Layer5"
+            title: "Layer5 Events"
           },
         ],
       },
