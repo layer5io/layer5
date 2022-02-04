@@ -11,7 +11,7 @@ import { BsBookmarkFill } from "@react-icons/all-files/bs/BsBookmarkFill"
 
 const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
-  const [bookmarkPath, setBookmarkPath] = useState(`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/getting-started/`);
+  const [bookmarkPath, setBookmarkPath] = useState("");
   const [expand, setExpand] = useState(false);
 
   const reformatTOC= (data) => {
@@ -28,9 +28,11 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
     let bookmarkPath = localStorage.getItem("bookmarkpath-"+chapterData.fields.course);
     if(bookmarkPath) {
       setBookmarkPath(bookmarkPath)    
+    } else {
+      setBookmarkPath(`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/getting-started/`)
     }
   }, [bookmarkPath])
-
+  
   useEffect(() => {
     const path = location.pathname.split("/");    
     if(path[2] === "learning-paths"){
@@ -42,7 +44,11 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
 
   const bookmarkTOCItem = (item) => {
     let tocItem = `/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`
-    if(bookmarkPath === tocItem) {
+    let book = bookmarkPath
+    if(book[book.length-1] !== "/") {
+      book += "/"
+    }
+    if(book === tocItem) {
       return true
     }
     return false
@@ -82,7 +88,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
                   {reformatTOC(item)}
                 </Link>
                 {
-                  bookmarkTOCItem(item) && <BsBookmarkFill />
+                  bookmarkTOCItem(item) && <BsBookmarkFill className="bookmark-icon"/>
                 }
               </p>
             </li>
