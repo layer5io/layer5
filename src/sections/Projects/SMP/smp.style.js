@@ -1,6 +1,6 @@
 import styled from "styled-components";
-const smp = "./smp-hero.png";
-const cncf = "./cncf-icon.png";
+import smp from "../../../assets/images/smp-page/smp-hero.png";
+import cncf from "../../../assets/images/smp-page/cncf-icon.png";
 
 const SMPWrapper = styled.section`
     margin-bottom: 3.25rem;

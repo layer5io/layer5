@@ -7,13 +7,14 @@ import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import JoinCommunity from "../../Community/Join-community";
 
-const example = "./service-mesh-performance-specification-example.gif";
-const callout = "../../../assets/images/callout/callout.png";
-const smp = "./smp-white.svg";
-const latency = "./latency-at-scale.png";
-const wasm_capacity = "./native-and-wasm-at-capacity-100rps.png";
-const client_capacity = "./client-capacity.png";
-const c_icon = "./c-icon.svg";
+import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
+import callout from "../../../assets/images/callout/callout.png";
+
+const smp = "../../../assets/images/smp-page/smp-white.svg";
+const latency = "../../../assets/images/smp-page/latency-at-scale.png";
+const wasm_capacity = "../../../assets/images/smp-page/native-and-wasm-at-capacity-100rps.png";
+const client_capacity = "../../../assets/images/smp-page/client-capacity.png";
+const c_icon = "../../../assets/images/smp-page/c-icon.svg";
 
 const SMPPage = () => {
   return (
@@ -39,7 +40,7 @@ const SMPPage = () => {
             <h2> SMP is a collaborative effort of Layer5, UT Austin, Google and The Linux Foundation.</h2>
             <Row>
               <Col lg={6}>
-                <StaticImage src={example} className="smp-example" alt="example: smp in action"></StaticImage>
+                <img src={example} className="smp-example" alt="example: smp in action"></img>
               </Col>
               <Col className="features" lg={6}>
                 <h1> SMP accounts for details of:</h1>
