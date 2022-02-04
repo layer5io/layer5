@@ -412,13 +412,13 @@ module.exports = {
         name: "events",
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/collections/resources/tutorials`,
-        name: "tutorials",
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     path: `${__dirname}/src/collections/resources/tutorials`,
+    //     name: "tutorials",
+    //   },
+    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {
