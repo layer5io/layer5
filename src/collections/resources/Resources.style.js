@@ -333,5 +333,8 @@ div.fact-left {
     margin-left:auto;
   }
 }
+iframe{
+  padding-bottom: 2rem;
+}
 
 `;
