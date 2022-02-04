@@ -50,8 +50,8 @@ const Pagination = ({ TOCData, chapterData, location, showQuizModal }) => {
               external={false} />
           </div>
         </div>
-      </PaginationWrapper>
-    ) : null
+      </PaginationWrapper>) 
+      : null
       // : (
       //       <QuizWrapper onClick={showQuizModal}>
       //           <Button secondary title="Take Quiz"
