@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import smp_bg from "./smp-hero.png";
-import callout from "./callout.png";
-import cncfIcon from "./cncf-icon.png";
+const smp = "./smp-hero.png";
+const cncf = "./cncf-icon.png";
 
 const SMPWrapper = styled.section`
     margin-bottom: 3.25rem;
     .smp-hero{
-        background-image: url(${smp_bg});
+        background-image: url("${smp}");
         height: 34.4rem;
         background-position: center;
         background-repeat: no-repeat;
@@ -89,7 +88,7 @@ const SMPWrapper = styled.section`
     }
     
     .smp-effects{
-        background-image: url(${cncfIcon});
+        background-image: url("${cncf}");
         background-repeat: no-repeat;
         background-position:right top;
         padding-top:3rem;
@@ -152,7 +151,7 @@ const SMPWrapper = styled.section`
             }
         }
         .smp-effects{
-            background-image: url(${cncfIcon});
+            background-image: url("${cncf}");
             background-repeat: no-repeat;
             background-position:right top;
             padding-top:1rem;
@@ -171,7 +170,7 @@ const SMPWrapper = styled.section`
     }
     @media only screen and (min-width: 993px) and  (max-width: 1024px) {
         .smp-effects{
-            background-image: url(${cncfIcon});
+            background-image: url("${cncf}");
             background-repeat: no-repeat;
             background-position:right top;
             padding-top:1rem;
