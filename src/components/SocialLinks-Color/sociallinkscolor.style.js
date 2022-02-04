@@ -23,7 +23,6 @@ const SocialLinksWrapper = styled.div`
         }
         .mail_icon {
             img {
-                margin-top: 0.1rem;
                 width: 2rem;
                 padding: 0.1rem;
                 border-radius: 0.25rem;
@@ -31,17 +30,17 @@ const SocialLinksWrapper = styled.div`
         }
         .youtube_icon{
             img{
-            width: 2.2rem;
+            width: 2rem;
             }
         }
         .docker_icon{
             img{
-            width: 2.2rem;
+            width: 2rem;
             }
         }
         .gatsby-image-wrapper{
             img{
-                object-fit: contain;
+                height: 30px;
             }
         }
 

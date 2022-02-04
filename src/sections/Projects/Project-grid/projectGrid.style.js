@@ -1,11 +1,6 @@
 import styled from "styled-components";
 export const ProjectWrapper = styled.div`
     padding-bottom: 5rem;
-    .gatsby-image-wrapper{
-        img{
-            object-fit: contain;
-        }
-    }
     h3{
         color: ${props => props.theme.primaryLightColor};
         margin: 0;

@@ -22,7 +22,7 @@ const SocialLinksColor = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <StaticImage height={30} src={forum_icon} alt="forum" objectFit="contain"/>
+            <StaticImage   src={forum_icon} alt="forum" objectFit="contain"/>
           </a>
           <a
             className="mail_icon"
@@ -30,17 +30,17 @@ const SocialLinksColor = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <StaticImage height={30} src={mail_icon} alt="mail" objectFit="contain"/>
+            <StaticImage   src={mail_icon} alt="mail" objectFit="contain"/>
           </a>
           <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
-            <StaticImage className="slack" height={30} src={slack_icon} alt="slack" objectFit="contain"/>
+            <StaticImage className="slack"   src={slack_icon} alt="slack" objectFit="contain"/>
           </a>
           <a href="https://twitter.com/layer5" target="_blank" rel="noreferrer">
             <StaticImage
               className="twitter"
-              height={30}
               src={twitter_icon}
               alt="twitter"
+              objectFit= "contain"
             />
           </a>
           <a
@@ -49,10 +49,10 @@ const SocialLinksColor = () => {
             rel="noreferrer"
             className="github"
           >
-            <StaticImage
-              height={30}
+            <StaticImage  
               src={github_icon}
               alt="github"
+              objectFit= "contain"
             />
           </a>
           <a
@@ -61,9 +61,9 @@ const SocialLinksColor = () => {
             rel="noreferrer"
           >
             <StaticImage
-              className="linkedin"
-              height={30}
+              className="linkedin" 
               src={linkedin_icon}
+              objectFit= "contain"
               alt="linkedin"
             />
           </a>
@@ -75,7 +75,7 @@ const SocialLinksColor = () => {
           >
             <StaticImage
               className="youtube"
-              height={30}
+              objectFit= "contain"
               src={youtube_icon}
               alt="youtube"
             />
@@ -88,8 +88,8 @@ const SocialLinksColor = () => {
           >
             <StaticImage
               className="docker"
-              height={30}
               src={docker_icon}
+              objectFit= "contain"
               alt="docker"
             />
           </a>
