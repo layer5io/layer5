@@ -6,9 +6,12 @@ import { getCurrentPage } from "../../../utils/getCurrentPage";
 import TOCWrapper from "./toc.style";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
+import { BsBookmarkFill } from "@react-icons/all-files/bs/BsBookmarkFill"
+
 
 const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
+  const [bookmarkPath, setBookmarkPath] = useState(`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/getting-started/`);
   const [expand, setExpand] = useState(false);
 
   const reformatTOC= (data) => {
@@ -22,13 +25,28 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
     .map(toc => toc.fields.chapter);
 
   useEffect(() => {
-    const path = location.pathname.split("/");
+    let bookmarkPath = localStorage.getItem("bookmarkpath-"+chapterData.fields.course);
+    if(bookmarkPath) {
+      setBookmarkPath(bookmarkPath)    
+    }
+  }, [bookmarkPath])
+
+  useEffect(() => {
+    const path = location.pathname.split("/");    
     if(path[2] === "learning-paths"){
       setPath(getCurrentPage(location));
     } else
       return;
 
   }, [location.pathname]);
+
+  const bookmarkTOCItem = (item) => {
+    let tocItem = `/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`
+    if(bookmarkPath === tocItem) {
+      return true
+    }
+    return false
+  } 
 
   return (
     <TOCWrapper>
@@ -63,6 +81,9 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
                 <Link to={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
                   {reformatTOC(item)}
                 </Link>
+                {
+                  bookmarkTOCItem(item) && <BsBookmarkFill />
+                }
               </p>
             </li>
           ))}
