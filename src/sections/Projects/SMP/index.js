@@ -1,19 +1,19 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../../../components/layout"; 
-
 import SMPWrapper from "./smp.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import JoinCommunity from "../../Community/Join-community";
 
-import example from "./service-mesh-performance-specification-example.gif";
-import c_icon from "./c-icon.svg";
-import wasm_capacity from "./native-and-wasm-at-capacity-100rps.png";
-import latency from "./latency-at-scale.png";
-import client_capacity from "./client-capacity.png";
-import smp from "./smp-white.svg";
-import callout from "./callout.png";
+const example = "./service-mesh-performance-specification-example.gif";
+const callout = "../../../assets/images/callout/callout.png";
+const smp = "./smp-white.svg";
+const latency = "./latency-at-scale.png";
+const wasm_capacity = "./native-and-wasm-at-capacity-100rps.png";
+const client_capacity = "./client-capacity.png";
+const c_icon = "./c-icon.svg";
 
 const SMPPage = () => {
   return (
@@ -24,7 +24,7 @@ const SMPPage = () => {
             <div className="hero-text">
               <Row>
                 <Col lg={5} md={12} sm={12}>
-                  <img className="logo-img" src={smp} />
+                  <StaticImage className="logo-img" alt="smp-logo" src={smp} />
                 </Col>
                 <Col lg={7} md={12} sm={12}>
                   <h1> Service Mesh Performance </h1>
@@ -39,25 +39,25 @@ const SMPPage = () => {
             <h2> SMP is a collaborative effort of Layer5, UT Austin, Google and The Linux Foundation.</h2>
             <Row>
               <Col lg={6}>
-                <img src={example} className="smp-example" alt="example: smp in action"></img>
+                <StaticImage src={example} className="smp-example" alt="example: smp in action"></StaticImage>
               </Col>
               <Col className="features" lg={6}>
                 <h1> SMP accounts for details of:</h1>
                 <table>
                   <tr> 
-                    <td className="icon"><img src={c_icon} alt="icon" /></td>
+                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
                     <td className="feature"> Environment and infrastructure details </td>
                   </tr>
                   <tr> 
-                    <td className="icon"><img src={c_icon} alt="icon" /></td>
+                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
                     <td className="feature"> Service mesh and its configuration </td>
                   </tr>
                   <tr> 
-                    <td className="icon"><img src={c_icon} alt="icon" /></td>
+                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
                     <td className="feature"> Service (workload) details </td>
                   </tr>
                   <tr> 
-                    <td className="icon"><img src={c_icon} alt="icon" /></td>
+                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
                     <td className="feature"> Statistical analysis of performance results </td>
                   </tr>
                 </table>
@@ -72,7 +72,7 @@ const SMPPage = () => {
             </div>
             <Row className="use-case-data">
               <Col className="use-case-box" lg={6}>
-                <img src={wasm_capacity} alt="wasm capacity" />
+                <StaticImage src={wasm_capacity} alt="wasm capacity" />
               </Col>
               <Col className="use-case-box" lg={6}>
                 <div>
@@ -90,12 +90,12 @@ const SMPPage = () => {
                 </div>
               </Col>      
               <Col className="use-case-box" lg={6}>
-                <img src={latency} alt="latency" />
+                <StaticImage src={latency} alt="latency" />
               </Col>                    
             </Row>
             <Row className="use-case-data">
               <Col className="use-case-box" lg={6}>
-                <img src={client_capacity} alt="client capacity" />
+                <StaticImage src={client_capacity} alt="client capacity" />
               </Col>
               <Col className="use-case-box" lg={6}>
                 <div>
