@@ -105,6 +105,13 @@ export const QuizComponentWrapper = styled.div`
         justify-content: space-between;
         align-items: center;
         padding-bottom: 2rem;
+
+        .timer__text{
+          color: ${props => props.theme.secondaryColor};
+          border: 2px solid ${props => props.theme.secondaryColor};
+          padding: 5px 8px;
+          border-radius: 10px;
+        }
       }
       
       .quizbox__progress{

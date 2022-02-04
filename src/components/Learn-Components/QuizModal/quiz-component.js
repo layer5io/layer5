@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Countdown from 'react-countdown';
 import { QuizComponentWrapper } from "./quiz-component.style";
 import Button from "../../../reusecore/Button";
 import { BsArrowLeft } from "@react-icons/all-files/bs/BsArrowLeft"
@@ -60,13 +61,28 @@ const ListItem = (props) => {
   );
     
 };
+
+
+
+const Timer = (props) => {
+  const renderer = ({ hours, minutes, seconds, completed }) => {
+    return <h3 className="timer__text">{minutes}:{seconds}</h3>;
+  };
+
+  return (
+    <Countdown
+      date={props.time}
+      renderer={renderer}
+    />
+  )
+}
   
 const QuestionBox = (props) => {
   return (
     <div className="quizbox__container">
       <div className="quizbox__head--container"> 
         <h2 className="quizbox__head">{props.title}</h2>
-        {/* <Timer time={props.time} /> */}
+        <Timer time={props.time} />
       </div>
       <div className="quizbox__main">
         <h4>
