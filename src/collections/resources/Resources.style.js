@@ -80,41 +80,6 @@ div.fact-left {
   .text-centre {
     text-align: center;
   }
-  .table-adapters {
-    float: right;
-    width: auto;
-    vertical-align: middle;
-    border: 1px solid darkgray;
-    .adapter-logo {
-      vertical-align: middle;
-      margin-right: 5px;
-      height: 30px;
-      width: 30px;
-    }
-    .stable-adapters {
-      width: auto;
-      background-color: #3c494f;
-      text-align: center;
-      color: #fff;
-    }
-    .beta-adapters {
-      width: auto;
-      background-color: #00d3a9;
-      text-align: center;
-      color: #fff;
-    }
-    .alpha-adapters {
-      width: auto;
-      background-color: lightgray;
-      text-align: center;
-      color: black;
-    }
-  }
-
-  .starting-letter {
-    margin-left: 0.75em;
-    font-size: 2em;
-  }
 
   .pull-right {
     float: right;
@@ -131,10 +96,6 @@ div.fact-left {
   .embed-dimension {
     min-height: 315px;
     min-width: 280px;
-  }
-
-  .pa-20 {
-    padding: 20px;
   }
 
   .image-left {
@@ -174,14 +135,6 @@ div.fact-left {
     border-radius: 50%;
   }
 
-  .gsoc-image {
-    max-width: 100%;
-    height: auto;
-  }
-  .smp-image {
-    height: 40%;
-    width: 40%;
-  }
   .date {
     color: gray;
   }
@@ -190,20 +143,7 @@ div.fact-left {
     color: #3c494f;
     text-align: center;
   }
-  .kubecon-header {
-    color: #00b39f;
-  }
-  .kubecon-img1 {
-    width: 28%;
-  }
-  .kubecon-img2 {
-    padding-top: 8px;
-    width: 28%;
-  }
-  .kubecon-img3 {
-    padding-top: 15px;
-    width: 28%;
-  }
+  
   img.right {
     width: 40%;
     display: inline;
