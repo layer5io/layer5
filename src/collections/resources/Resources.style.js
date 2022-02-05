@@ -336,4 +336,7 @@ div.fact-left {
 iframe{
   padding-bottom: 2rem;
 }
+.Tutorial-btn{
+  text-align: center;
+}
 `;
