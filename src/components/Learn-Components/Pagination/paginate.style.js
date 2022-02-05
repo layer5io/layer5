@@ -52,3 +52,9 @@ export const PaginationWrapper = styled.div`
         }
     }
 `;
+
+export const QuizWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+`;
