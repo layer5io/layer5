@@ -336,5 +336,4 @@ div.fact-left {
 iframe{
   padding-bottom: 2rem;
 }
-
 `;
