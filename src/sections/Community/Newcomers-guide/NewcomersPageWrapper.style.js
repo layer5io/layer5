@@ -67,7 +67,7 @@ export const NewcomersGuideWrapper = styled.section`
         margin-bottom: 2rem;
       }
       .finding-an-issue { 
-        text-align: center !important;
+        text-align: center;
       }
       h3{
         display:inline;
@@ -83,17 +83,17 @@ export const NewcomersGuideWrapper = styled.section`
       img{
         display: block;
         margin: 0 auto;
-        max-width: 21.875rem !important;
-        text-align: center !important; 
+        width: 21.875rem;
+        text-align: center; 
       }
     }
     .community-collage {
-      text-align: center !important;
+      text-align: center ;
       min-width: 45vmin;
       
     }
     .community-img{
-      text-align:center !important;
+      text-align:center;
     }
     .table-wrapper{
       text-align: center;
