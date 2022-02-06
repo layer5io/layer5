@@ -22,6 +22,7 @@ const SMPWrapper = styled.section`
             .logo-img{
                 height: 240px;
                 width: auto;
+                marginRight: 100px;
             }
         }
     }
@@ -188,7 +189,7 @@ const SMPWrapper = styled.section`
             .hero-text{
                 padding: 3.125rem 0;
                 .logo-img{
-                    height: 80px;
+                    height: 120px;
                 }
             }
         }

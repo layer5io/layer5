@@ -9,12 +9,13 @@ import JoinCommunity from "../../Community/Join-community";
 
 import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
 import callout from "../../../assets/images/callout/callout.png";
+import smp from "../../../assets/images/smp-page/smp-white.svg";
+import c_icon from "../../../assets/images/smp-page/c-icon.svg";
 
-const smp = "../../../assets/images/smp-page/smp-white.svg";
+
 const latency = "../../../assets/images/smp-page/latency-at-scale.png";
 const wasm_capacity = "../../../assets/images/smp-page/native-and-wasm-at-capacity-100rps.png";
 const client_capacity = "../../../assets/images/smp-page/client-capacity.png";
-const c_icon = "../../../assets/images/smp-page/c-icon.svg";
 
 const SMPPage = () => {
   return (
@@ -25,7 +26,7 @@ const SMPPage = () => {
             <div className="hero-text">
               <Row>
                 <Col lg={5} md={12} sm={12}>
-                  <StaticImage className="logo-img" alt="smp-logo" src={smp} />
+                  <img className="logo-img" alt="smp-logo" src={smp} />
                 </Col>
                 <Col lg={7} md={12} sm={12}>
                   <h1> Service Mesh Performance </h1>
@@ -46,19 +47,19 @@ const SMPPage = () => {
                 <h1> SMP accounts for details of:</h1>
                 <table>
                   <tr> 
-                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                    <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="feature"> Environment and infrastructure details </td>
                   </tr>
                   <tr> 
-                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                    <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="feature"> Service mesh and its configuration </td>
                   </tr>
                   <tr> 
-                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                    <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="feature"> Service (workload) details </td>
                   </tr>
                   <tr> 
-                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                    <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="feature"> Statistical analysis of performance results </td>
                   </tr>
                 </table>
