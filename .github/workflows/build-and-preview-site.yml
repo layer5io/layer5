@@ -17,7 +17,7 @@ jobs:
       - name: Install and Build 🔧 
         run: |
           npm install
-          npm run noIndex
+          npm run build
 
       - name: Zip Site
         run: bash ./script.sh

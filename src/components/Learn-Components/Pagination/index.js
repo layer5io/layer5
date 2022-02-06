@@ -52,13 +52,13 @@ const Pagination = ({ TOCData, chapterData, location, showQuizModal }) => {
         </div>
       </PaginationWrapper>
     ) : null
-      // : (
-      //       <QuizWrapper onClick={showQuizModal}>
-      //           <Button secondary title="Take Quiz"
-      //             external={false} 
-      //           />
-      //         </QuizWrapper>
-      //   )
+  // : (
+  //       <QuizWrapper onClick={showQuizModal}>
+  //           <Button secondary title="Take Quiz"
+  //             external={false} 
+  //           />
+  //         </QuizWrapper>
+  //   )
   );
 };
 
