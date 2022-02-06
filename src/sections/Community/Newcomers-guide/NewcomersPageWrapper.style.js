@@ -67,7 +67,7 @@ export const NewcomersGuideWrapper = styled.section`
         margin-bottom: 2rem;
       }
       .finding-an-issue { 
-        text-align: center;
+        max-height: 22rem;
       }
       h3{
         display:inline;

@@ -4,6 +4,7 @@ import Button from "../../../reusecore/Button";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import { NewcomersGuideWrapper } from "./NewcomersPageWrapper.style";
+import CommunityImage1 from "../../../assets/images/newcomers-page-images/contributor-chest.svg";
 import CommunityImage4 from "./community-image4.png";
 import TutorialsTable from "./Tutorials-table";
 import NewcomersMap from "./newcomers-map";
@@ -11,7 +12,6 @@ import JoinCommunity from "../Join-community";
 import longArrow from "./long-arrow.svg";
 import { StaticImage } from "gatsby-plugin-image";
 
-const CommunityImage1 = "../../../assets/images/newcomers-page-images/contributor-chest.svg";
 const CommunityImage2 = "../../../assets/images/newcomers-page-images/community-image3.png";
 const CommunityImage3 = "../../../assets/images/newcomers-page-images/community-collage.png";
 
@@ -78,8 +78,8 @@ const NewcomersGuide = () => {
         </div>
         <div className="instructions">
           <Row className="step">
-            <Col sm={12} lg={6} className="finding-an-issue" >
-              <StaticImage src={CommunityImage1} alt="Community Image" />
+            <Col sm={12} lg={6}>
+              <img src={CommunityImage1} className="finding-an-issue" alt="Community Image" />
             </Col>
             <Col sm={12} lg={6}>
               <h3>Finding an Issue to Work On</h3>
