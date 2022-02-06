@@ -47,7 +47,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
           />
         </div>
       );
-  });
+    });
 
   useEffect(() => {
     let bookmarkPath = localStorage.getItem("bookmarkpath-"+course.fields.slug.split("/")[3]);
@@ -86,14 +86,14 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
             title={hasBookmark ? "Start Again" : "Get Started"}
             url={`istio/${course.frontmatter.toc[0]}`}
           />
-        {hasBookmark && (
-          <Button
-            className="start-again-button"
-            primary
-            title="Resume"
-            url={bookmarkUrl}
-          />
-        )}
+          {hasBookmark && (
+            <Button
+              className="start-again-button"
+              primary
+              title="Resume"
+              url={bookmarkUrl}
+            />
+          )}
         </div>
         <div className="course-hero-head-image">
           <Image
