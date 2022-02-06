@@ -76,6 +76,7 @@ const QuestionBox = (props) => {
                 answerItem={answer}
                 answerCallback={props.answerCallback}
                 index={index}
+                key={index}
               />
             );
           }, this)}
@@ -122,7 +123,7 @@ const QuizComponent = () => {
     ];
 
     // Will be fetching the title from backend
-    setQuizTitle("Test Quiz")
+    setQuizTitle("Test Quiz");
 
     // Will be fetching these questions from backend
     setQuestionData(fetchedQuestion);
