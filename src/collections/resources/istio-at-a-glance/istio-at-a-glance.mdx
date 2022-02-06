@@ -13,12 +13,13 @@ published: true
 resource: true
 ---
 import { ResourcesWrapper } from "../Resources.style.js";
-import BookinfoWith from "./bookinfo-with-proxies.png";
-import BookinfoWithout from "./bookinfo-without-proxies.png";
-import Architecture from "./istio-arch.png";
+import BookinfoWith from "./bookinfo-with-proxies.svg";
+import BookinfoWithout from "./bookinfo-without-proxies.svg";
+import Architecture from "./istio-architecture.svg";
 
 <ResourcesWrapper>
 <h2>Planes</h2>
+
 <p>
 The <strong>data plane</strong> in Istio intercepts each packet in the request and performs health checks, routing, load balancing, authorization, authentication,  and generation of observable signals. Service proxies are transparently placed in-band, and applications are oblivious of the data plane's presence when they conduct service-to-service calls. Intra-cluster communication and inbound (ingress), and outgoing (egress) cluster network traffic are handled by data planes. Application service traffic is directed first to the service proxy for processing, whether it is entering or leaving the mesh (ingressing or egressing). Istio's traffic is transparently intercepted and redirected to the service proxy using iptables rules.
 </p>
@@ -208,7 +209,8 @@ External requests bypass the sidecar and route directly to the intended destinat
 <p>
 Istio monitoring and route rules can be applied to traffic leaving the mesh through an egress gateway. It also enables communication between applications running in a cluster where the nodes lack public IP addresses, preventing the mesh's applications from accessing the Internet. The nodes (and the applications running on them) can access external services in a regulated manner by defining an egress gateway, directing all egress traffic through it, and allocating public IPs to the egress gateway nodes. 
 </p>
-<img src={Architecture} class="image-center" alt="BookInfo without proxies" />
+<img src={Architecture} class="image-center" alt="Istio Architecture" />
+
 <div class="intro" style="text-align:center">
 <p><b>Why use Istio Gateways and not Kubernetes Ingresses?</b></p>
 <p>In general, the Istio v1alpha3 APIs leverage Gateways for richer functionality as Kubernetes Ingress has proven insufficient for Istio applications. In comparison to Kubernetes Ingress, Istio Gateways can function as a pure L4 TCP proxy and support all protocols supported by Envoy.</p>
