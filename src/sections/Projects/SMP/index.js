@@ -1,19 +1,21 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../../../components/layout"; 
-
 import SMPWrapper from "./smp.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import JoinCommunity from "../../Community/Join-community";
 
-import example from "./service-mesh-performance-specification-example.gif";
-import c_icon from "./c-icon.svg";
-import wasm_capacity from "./native-and-wasm-at-capacity-100rps.png";
-import latency from "./latency-at-scale.png";
-import client_capacity from "./client-capacity.png";
-import smp from "./smp-white.svg";
-import callout from "./callout.png";
+import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
+import callout from "../../../assets/images/callout/callout.png";
+import smp from "../../../assets/images/smp-page/smp-white.svg";
+import c_icon from "../../../assets/images/smp-page/c-icon.svg";
+
+
+const latency = "../../../assets/images/smp-page/latency-at-scale.png";
+const wasm_capacity = "../../../assets/images/smp-page/native-and-wasm-at-capacity-100rps.png";
+const client_capacity = "../../../assets/images/smp-page/client-capacity.png";
 
 const SMPPage = () => {
   return (
@@ -24,7 +26,7 @@ const SMPPage = () => {
             <div className="hero-text">
               <Row>
                 <Col lg={5} md={12} sm={12}>
-                  <img className="logo-img" src={smp} />
+                  <img className="logo-img" alt="smp-logo" src={smp} />
                 </Col>
                 <Col lg={7} md={12} sm={12}>
                   <h1> Service Mesh Performance </h1>
@@ -72,7 +74,7 @@ const SMPPage = () => {
             </div>
             <Row className="use-case-data">
               <Col className="use-case-box" lg={6}>
-                <img src={wasm_capacity} alt="wasm capacity" />
+                <StaticImage src={wasm_capacity} alt="wasm capacity" />
               </Col>
               <Col className="use-case-box" lg={6}>
                 <div>
@@ -90,12 +92,12 @@ const SMPPage = () => {
                 </div>
               </Col>      
               <Col className="use-case-box" lg={6}>
-                <img src={latency} alt="latency" />
+                <StaticImage src={latency} alt="latency" />
               </Col>                    
             </Row>
             <Row className="use-case-data">
               <Col className="use-case-box" lg={6}>
-                <img src={client_capacity} alt="client capacity" />
+                <StaticImage src={client_capacity} alt="client capacity" />
               </Col>
               <Col className="use-case-box" lg={6}>
                 <div>
