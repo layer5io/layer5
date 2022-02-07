@@ -3,13 +3,12 @@
 We are beyond excited to see that you want to contribute! We would love to accept your contributions. Layer5 is built by the community and warmly welcomes collaboration. There are many ways in which one could contribute to Layer5 and every contribution is equally appreciated here. Navigate through the following to understand more about contributing here. 
 
   - [Before You Get Started](#before-you-get-started)
-  - [Contributing to Layer5's Code](#contributing-to-layer5s-code)
-  - [Contributing to Layer5's Docs](#contributing-to-layer5s-docs)
+  - [Contributing to Layer5 Projects](#contributing-to-layer5-projects)
+  - [Contributing to Layer5's Blogs](#contributing-to-layer5s-blogs)
   - [How to Contribute](#how-to-contribute)
       - [Prequisites](#prequisites)
       - [Set up your Local Development Environment](#set-up-your-local-development-environment)
       - [Signing-off on Commits](#signing-off-on-commits)
-  - [Common Types of Site Updates](#common-types-of-site-updates)
 
 
 # Before You Get Started
@@ -152,7 +151,7 @@ Follow the following instructions to start contributing.
   **2.** Clone your forked copy of the project.
 
   ```
-  git clone https://github.com/layer5io/layer5.git
+  git clone https://github.com/<your-github-username>/layer5.git
   ```
 
   **3.** Navigate to the project directory.
