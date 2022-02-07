@@ -88,14 +88,14 @@ Badges are a great way of highlighting the area of contribution by any given com
 
 #### Possible Badges:
 
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/community-green.svg" width="25px" height="25px"/> Community
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/landscape-green.png" width="25px" height="25px"/> Landscape
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark-text.svg" width="25px" height="25px"/> SMP
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/community/Layer5-mentor-program.png" width="25px" height="25px"/> Community
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/landscape/layer5_landscape_green.svg" width="25px" height="25px"/> Landscape
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/image-hub/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery/full-logo/meshery-logo-dark-text.svg" width="25px" height="25px"/> Meshery
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/service-mesh-performance/horizontal/smp-dark-text-side.svg" width="25px" height="25px"/> SMP
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg" width="25px" height="25px"/> Nighthawk
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/patterns-logo.png" width="25px" height="25px"/> Patterns
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/service-mesh-patterns/service-mesh-pattern.svg" width="25px" height="25px"/> Patterns
 
 ## Updating the Service Mesh Landscape 
 
