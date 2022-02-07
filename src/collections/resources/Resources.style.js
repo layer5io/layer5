@@ -99,17 +99,24 @@ div.fact-left {
   }
 
   .image-left {
-    width: 40%;
+    width: 42%;
     float: left;
     margin: 1rem 1.25rem 1rem 0rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+
+    @media only screen and (max-width: 568px) {
+      width: 100%;
+  }
   }
 
   .image-right {
-    width: 40%;
+    width: 42%;
     float: right;
     margin: 1rem 0rem 1rem 1.25rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    @media only screen and (max-width: 568px) {
+      width: 100%;
+  }
   }
   .image-right-no-shadow {
     width: 40%;

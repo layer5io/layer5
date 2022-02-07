@@ -15,7 +15,7 @@ resource: true
 import { ResourcesWrapper } from "../Resources.style.js";
 import BookinfoWith from "./bookinfo-with-proxies.svg";
 import BookinfoWithout from "./bookinfo-without-proxies.svg";
-import Architecture from "./istio-architecture.svg";
+import IstioArchitecture from "./istio-architecture.svg";
 
 <ResourcesWrapper>
 <h2>Planes</h2>
@@ -209,7 +209,7 @@ External requests bypass the sidecar and route directly to the intended destinat
 <p>
 Istio monitoring and route rules can be applied to traffic leaving the mesh through an egress gateway. It also enables communication between applications running in a cluster where the nodes lack public IP addresses, preventing the mesh's applications from accessing the Internet. The nodes (and the applications running on them) can access external services in a regulated manner by defining an egress gateway, directing all egress traffic through it, and allocating public IPs to the egress gateway nodes. 
 </p>
-<img src={Architecture} class="image-center" alt="Istio Architecture" />
+<img src={IstioArchitecture} class="image-center" alt="Istio Architecture" />
 
 <div class="intro" style="text-align:center">
 <p><b>Why use Istio Gateways and not Kubernetes Ingresses?</b></p>
