@@ -6,12 +6,10 @@ import { getCurrentPage } from "../../../utils/getCurrentPage";
 import TOCWrapper from "./toc.style";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
-import { BsBookmarkFill } from "@react-icons/all-files/bs/BsBookmarkFill"
 
 
 const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
-  const [bookmarkPath, setBookmarkPath] = useState("");
   const [expand, setExpand] = useState(false);
 
   const reformatTOC= (data) => {
@@ -25,15 +23,6 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
     .map(toc => toc.fields.chapter);
 
   useEffect(() => {
-    let bookmarkPath = localStorage.getItem("bookmarkpath-"+chapterData.fields.course);
-    if(bookmarkPath) {
-      setBookmarkPath(bookmarkPath)    
-    } else {
-      setBookmarkPath(`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/getting-started/`)
-    }
-  }, [bookmarkPath])
-  
-  useEffect(() => {
     const path = location.pathname.split("/");    
     if(path[2] === "learning-paths"){
       setPath(getCurrentPage(location));
@@ -42,17 +31,6 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
 
   }, [location.pathname]);
 
-  const bookmarkTOCItem = (item) => {
-    let tocItem = `/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`
-    let book = bookmarkPath
-    if(book[book.length-1] !== "/") {
-      book += "/"
-    }
-    if(book === tocItem) {
-      return true
-    }
-    return false
-  } 
 
   return (
     <TOCWrapper>
@@ -87,9 +65,6 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
                 <Link to={`/learn/learning-paths/${chapterData.fields.learnpath}/${chapterData.fields.course}/${getActiveServiceMesh(chapterData)}/${item}/`}>
                   {reformatTOC(item)}
                 </Link>
-                {
-                  bookmarkTOCItem(item) && <BsBookmarkFill className="bookmark-icon"/>
-                }
               </p>
             </li>
           ))}

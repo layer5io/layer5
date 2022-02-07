@@ -63,17 +63,9 @@ const TOCWrapper = styled.div`
                 p {
                     margin: 0;
                     font-size: 1rem;
-                    display: flex;
-                    align-items: center;
 
                     a {
                         color: rgba(0, 0, 0, 0.65);
-                        margin-right: 5px;
-                    }
-
-                    .bookmark-icon {
-                        width: 1.25rem;
-                        height: 1.25rem;
                     }
                 }
                 &:hover {

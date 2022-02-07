@@ -6,7 +6,7 @@ const NotificationComponent = ({ showNotification, closeNotification}) => {
   return showNotification && (
     <NotificationWrapper>
         <div className="notification-container">
-            <p>We bookmark your progress so you don't need to worry about the 'mesh' of remembering where you left.</p>
+            <p>We track your progress so you don't need to worry about the 'mesh' of remembering where you left.</p>
             <MdCancel className="notification-cross-icon" onClick={closeNotification}/>
         </div>
     </NotificationWrapper>
