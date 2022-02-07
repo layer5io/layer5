@@ -274,7 +274,7 @@ To ensure all your commits are signed, you may choose to add this alias to your 
   ```
   [alias]
     amend = commit -s --amend
-    cm = commit -m
+    cm = commit -s -m
     commit = commit -s
   ```
 
