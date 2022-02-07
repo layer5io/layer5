@@ -78,7 +78,7 @@ Badges are a great way of highlighting the area of contribution by any given com
 #### Possible Badges:
 
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/community/Layer5-mentor-program.png" width="25px" height="25px"/> Community
-- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/landscape/comparison-of-service-mesh-strengths-dark.png" width="25px" height="25px"/> Landscape
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/landscape/layer5_landscape_green.svg" width="25px" height="25px"/> Landscape
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/image-hub/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery/full-logo/meshery-logo-dark-text.svg" width="25px" height="25px"/> Meshery
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
