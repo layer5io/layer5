@@ -236,9 +236,6 @@
    const news = allNodes.filter(
      node => node.fields.collection === "news"
    );
-   const tutorials = allNodes.filter(
-     node => node.fields.collection === "tutorials"
-   );
  
    const projects = allNodes.filter(
      node => node.fields.collection === "projects"
@@ -323,16 +320,6 @@
    });
  
    resources.forEach(resource => {
-     createPage({
-       path: resource.fields.slug,
-       component: resourcePostTemplate,
-       context: {
-         slug: resource.fields.slug,
-       },
-     });
-   });
- 
-   tutorials.forEach(resource => {
      createPage({
        path: resource.fields.slug,
        component: resourcePostTemplate,
