@@ -556,10 +556,6 @@
              if (node.frontmatter.published)
                slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
              break;
-           case "tutorials":
-             if (node.frontmatter.published)
-               slug = `/${collection}/${slugify(node.frontmatter.category)}/${slugify(node.frontmatter.title)}`;
-             break;
            case "members":
              if (node.frontmatter.published)
                slug = `/community/members/${slugify(node.frontmatter.name)}`;
