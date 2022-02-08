@@ -502,24 +502,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        resolveEnv: () => process.env.NODE_ENV,
-        env: {
-          production: {
-            policy: [{userAgent: "*", allow: "/"}],
-            host: "https://layer5.io",
-            sitemap: "https://layer5.io/sitemap.xml",
-          },
-          "branch-deploy": {
-            policy: [{userAgent: "*", disallow: ["/"]}],
-            sitemap: null,
-            host: null
-          },
-          "deploy-preview": {
-            policy: [{userAgent: "*", disallow: ["/"]}],
-            sitemap: null,
-            host: null
-          }
-        }
+        host: "https://layer5.io",
+        sitemap: "https://layer5.io/sitemap.xml",
+        policy: [{userAgent: "*", allow: "/"}],
       }
     },
     "gatsby-plugin-meta-redirect", // make sure this is always the last one
