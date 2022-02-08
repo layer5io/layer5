@@ -25,20 +25,23 @@ const PartnerItemWrapper = styled.section`
     }
    
     a.partner-card {
-        /* &:hover {
-            div {
-                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        &:hover {
+            .gatsby-image-wrapper{
+                opacity: 1;
             }
-        } */
+        }
         flex-shrink: 3;
     }
     img {
         max-width: 100%;
         min-width: 7rem;
         margin: auto;
-        opacity: .7 !important;
         max-height:100px;
     }
+    .gatsby-image-wrapper{
+            opacity: 0.7;
+        }
+        
     @supports (-webkit-hyphens:none) { 
         img { 
             min-width: 8rem; 

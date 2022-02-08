@@ -17,7 +17,7 @@ const BannerSectionWrapper = styled.section`
     }
     .left-child {
         position: relative;
-        align-self: flex-end;
+        align-self: center;
         margin-bottom: 3rem;
     }
     .right-col {
@@ -50,7 +50,8 @@ const BannerSectionWrapper = styled.section`
     .hero {
         background: url(${imgHero});
         right: 0px;
-        height: 740px;
+        height: 39.5rem;
+        vertical-align: middle
         overflow-x: hidden;
         padding: 0rem;
         object-fit: cover;
@@ -105,7 +106,7 @@ const BannerSectionWrapper = styled.section`
             }
         }
         .hero {
-            height: 700px;
+            height: 31.6rem;
         }
      }
      @media only screen and (max-width: 767px) {

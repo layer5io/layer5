@@ -68,9 +68,11 @@ const ProjectItemWrapper = styled.section`
         }
 
         img{
-            height: 40px !important; 
+            height: 40px ; 
+            width: auto ;
+        }
+        .gatsby-image-wrapper{
             margin: 10px auto; 
-            width:  auto !important;
         }
     }
     .description {

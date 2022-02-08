@@ -1,10 +1,6 @@
 import React from "react";
-
 import { Container, Row, Col } from "../../../reusecore/Layout";
-// import { partners } from "./partners-home-data";
-
 import SectionTitle from "../../../reusecore/SectionTitle";
-
 import PartnerItemWrapper from "./partnerSection.style";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
