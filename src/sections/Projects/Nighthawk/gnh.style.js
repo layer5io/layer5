@@ -7,7 +7,7 @@ const Gnhwrapper = styled.section`
         .logo{
             display: block;
             margin: 0 auto;
-            width: 100%;
+            width: 80%;
         }
         .hero-text{
             margin: 0 auto;
@@ -30,11 +30,7 @@ const Gnhwrapper = styled.section`
             color: ${props => props.theme.tertiaryColor};
         }
     }
-    .gatsby-image-wrapper{
-        img{
-            object-fit: contain;
-        }
-    }
+
     .explain-1 {
         padding-top: 5rem;
         text-align: center;
@@ -174,7 +170,7 @@ const Gnhwrapper = styled.section`
             margin: 0.94rem 0;
         }
         img{
-            width: 100%;
+            width: 25rem;
         }
     }
     

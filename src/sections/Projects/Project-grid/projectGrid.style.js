@@ -8,7 +8,9 @@ export const ProjectWrapper = styled.div`
         font-weight: 500;
         text-align:center;
         img{
-          width: 3rem;
+            width: 3rem;
+            position: relative;
+            top: 10px;
         }
     }
     .title{
@@ -94,7 +96,7 @@ export const ProjectWrapper = styled.div`
         grid-column: 2/3;
         grid-row: 1/3;
         img{
-            width: 100%;
+            width: 90px;
             align-self: center;
         }
         h5{
@@ -105,11 +107,8 @@ export const ProjectWrapper = styled.div`
     .project__card.two{
         grid-column: 3/6;
         grid-row: 1/6;
-        
-        .gatsby-image-wrapper{
-            img{
-                width: 12rem;
-            }
+        img{
+            align-self: center;
         }
         h5{
             font-size: 2rem;
@@ -122,10 +121,9 @@ export const ProjectWrapper = styled.div`
         grid-column: 6/8;
         grid-row: 4/6;
         img{
-            margin-top: 1rem;
-            height: 75% !important;
-            width: 100%;
+            width: 90px;
             align-self: center;
+            margin-top: 20px;
         }
         h5{
             margin-bottom: 25px;
@@ -136,8 +134,10 @@ export const ProjectWrapper = styled.div`
         grid-column: 6/8;
         grid-row: 1/4;
         img{
-           width: 100%;
-           align-self: center;
+            width: 150px;
+            align-self: center;
+            margin-top: -45px;
+            margin-bottom: 45px;
         }
         h5{
             margin-top: 1rem;
@@ -242,7 +242,8 @@ export const ProjectWrapper = styled.div`
         }
         .project__card.two{
             img{
-                width: 100%;
+                height: 100px;
+                width: 100px;
             }
             h5{
                 font-size: 25px;
@@ -282,7 +283,7 @@ export const ProjectWrapper = styled.div`
                 padding-bottom: 10px;
             }
             img{
-                width: 100%;
+                width: auto;
                 height: 80px;
                 padding-top: 10px;
             }
@@ -308,7 +309,8 @@ export const ProjectWrapper = styled.div`
         }
         .project__card.six{
             img{
-                width: 100%;
+                width: 130px;
+                margin-top: 10px;
             }
             h5{ 
                 width: 100%;

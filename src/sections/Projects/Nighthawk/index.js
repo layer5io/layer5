@@ -3,19 +3,19 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-const logo = "../../../assets/images/nighthawk/with-name/SVG/nighthawk-full.svg";
-const c_icon = "./images/c_icon.svg";
+import logo from "../../../assets/images/nighthawk/with-name/SVG/nighthawk-full.svg";
+import cloud from "./images/cloud-network_green.svg";
+import cpu from "./images/cpu_green.svg";
+import smpIcon from "./images/smp-dark-text.svg";
+import distributedPerf from "./images/distributed-performance_green.svg";
+import cncf from "./images/cncf-white.svg";
 
 const explain1 = "./images/Rectangle 479.png";
 const explain2 = "./images/optimizing-your-average-response-time.png";
 const explain3 = "./images/Comparison-of-different-modes-of-delivery-of-service-mesh-network-functions.png";
+const c_icon = "./images/c_icon.svg";
 const icon = "../../../assets/images/nighthawk/name-only/SVG/nighthawk-text.svg";
-const distributedPerf = "./images/distributed-performance_green.svg";
-const smpIcon = "./images/smp-dark-text.svg";
 //import cli from "./images/cli_green.svg";
-const cloud = "./images/cloud-network_green.svg";
-const cpu = "./images/cpu_green.svg";
-const cncf = "./images/cncf-white.svg";
 
 import Gnhwrapper from "./gnh.style";
 
@@ -37,7 +37,7 @@ const Projects = () => {
         <div className="hero-section">
           <Row>
             <Col lg={6} md={6} sm={12}>
-              <StaticImage src={logo} className="logo" alt="Nighthawk Logo" objectFit="contain" />
+              <img src={logo} className="logo" alt="Nighthawk Logo" objectFit="contain" />
             </Col>
             <Col lg={6} md={6} sm={12}>
               <div className="hero-text">
@@ -115,7 +115,7 @@ const Projects = () => {
               <Col lg={4} md={4} sm={12}>
                 <div className="card">
                   <div className="circle">
-                    <StaticImage src={smpIcon} className="smp" alt="smp logo" />
+                    <img src={smpIcon} className="smp" alt="smp logo" />
                   </div>
                   <h2>SERVICE MESH PERFORMANCE COMPATIBILITY</h2>
                   <p>Enabling Standards-based, Distributed Performance Management - Nighthawk integrates Meshery and Nighthawk. Through this integration Meshery facilitates <Link to="/projects/service-mesh-performance">Service Mesh Performance (SMP)</Link> compatibility for Nighthawk.</p>
@@ -124,7 +124,7 @@ const Projects = () => {
               <Col lg={4} md={4} sm={12}>
                 <div className="card">
                   <div className="circle">
-                    <StaticImage src={cloud} alt="cloud image" />
+                    <img src={cloud} alt="cloud image" />
                   </div>
                   <h2>Nighthawk Distribution</h2>
                   <p>Stable builds available for:
@@ -146,7 +146,7 @@ const Projects = () => {
               <Col lg={4} md={4} sm={12}>
                 <div className="card">
                   <div className="circle">
-                    <StaticImage src={cpu} alt="cpu image" />
+                    <img src={cpu} alt="cpu image" />
                   </div>
                   <h2>SCHEDULING AND ANALYSIS</h2>
                   <p>Nighthawk integrates with <Link to="/meshery">Meshery</Link> and provides you with the ability to schedule performance tests or insert them into your CI pipeline.</p>
@@ -161,8 +161,8 @@ const Projects = () => {
           <Row>
             <Col lg={6} md={6} sm={12}>
               <div className="text">
-                <StaticImage src={distributedPerf} className="distributedPerf" alt="Cloud Native Distributed Performance Management" 
-                  objectFit="contain"/> <h2>Standards-based, distributed performance management</h2>
+                <img src={distributedPerf} className="distributedPerf" alt="Cloud Native Distributed Performance Management" /> 
+                <h2>Standards-based, distributed performance management</h2>
                 <p>Nighthawk will provide generally-available distributions of Nighthawk under different architectures and platforms and easy-to-use tooling for installation and operation. This will include creating distributions of Nighthawk as well as augmenting existing tooling, Meshery, to retrieve these arch-specific packages and update their deployments.</p>
               </div>
 
@@ -216,7 +216,7 @@ const Projects = () => {
         </div>
       </Container>
       <div className="callout">
-        <StaticImage src={cncf} alt="cncf logo" />
+        <img src={cncf} alt="cncf logo" />
         <p> Participate in the state of the art. <br />
           Join us in the Cloud Native Computing Foundation's Service Mesh Working Group.</p>
         <Button primary title="Join Us" url="/community/calendar#meetings" />

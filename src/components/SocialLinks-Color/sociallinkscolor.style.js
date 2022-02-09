@@ -11,7 +11,7 @@ const SocialLinksWrapper = styled.div`
             filter: grayscale(1) invert(0.25);
 
             img {
-                width: 100%;
+                width: 2rem;
             }
 
             &:hover {
@@ -21,26 +21,11 @@ const SocialLinksWrapper = styled.div`
         .github:hover {
             filter: grayscale(0) invert(1);
         }
+
         .mail_icon {
             img {
-                width: 2rem;
                 padding: 0.1rem;
                 border-radius: 0.25rem;
-            }
-        }
-        .youtube_icon{
-            img{
-            width: 2rem;
-            }
-        }
-        .docker_icon{
-            img{
-            width: 2rem;
-            }
-        }
-        .gatsby-image-wrapper{
-            img{
-                height: 30px;
             }
         }
 
@@ -51,11 +36,7 @@ const SocialLinksWrapper = styled.div`
         .social_icons {
             margin-bottom: 2rem;
             justify-content: center;
-            a{
-                margin-bottom: 15px;
-            }
         }
-        
     }
 `;
 

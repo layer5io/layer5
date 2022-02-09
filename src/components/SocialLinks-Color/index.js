@@ -1,16 +1,14 @@
 import React from "react";
 import { Col, Row } from "../../reusecore/Layout";
-import { StaticImage } from "gatsby-plugin-image";
+import forum_icon from "../../assets/images/socialIcons/forum.svg";
+import mail_icon from "../../assets/images/socialIcons/mail_keppel.svg";
+import slack_icon from "../../assets/images/socialIcons/slack-light.svg";
+import twitter_icon from "../../assets/images/socialIcons/twitter-light.svg";
+import github_icon from "../../assets/images/socialIcons/github.svg";
+import youtube_icon from "../../assets/images/socialIcons/youtube.svg";
+import docker_icon from "../../assets/images/socialIcons/docker.svg";
+import linkedin_icon from "../../assets/images/socialIcons/linkedin-light.svg";
 import SocialLinksWrapper from "./sociallinkscolor.style";
-
-const forum_icon = "../../assets/images/socialIcons/forum.svg";
-const mail_icon = "../../assets/images/socialIcons/mail_keppel.svg";
-const slack_icon = "../../assets/images/socialIcons/slack-light.svg";
-const twitter_icon = "../../assets/images/socialIcons/twitter-light.svg";
-const github_icon = "../../assets/images/socialIcons/github.svg";
-const youtube_icon = "../../assets/images/socialIcons/youtube.svg";
-const docker_icon = "../../assets/images/socialIcons/docker.svg";
-const linkedin_icon = "../../assets/images/socialIcons/linkedin-light.svg";
 
 const SocialLinksColor = () => {
   return (
@@ -22,7 +20,7 @@ const SocialLinksColor = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <StaticImage   src={forum_icon} alt="forum" objectFit="contain"/>
+            <img height="30px" src={forum_icon} alt="forum" />
           </a>
           <a
             className="mail_icon"
@@ -30,17 +28,17 @@ const SocialLinksColor = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <StaticImage   src={mail_icon} alt="mail" objectFit="contain"/>
+            <img height="30px" src={mail_icon} alt="mail" />
           </a>
           <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
-            <StaticImage className="slack"   src={slack_icon} alt="slack" objectFit="contain"/>
+            <img className="slack" height="30px" src={slack_icon} alt="slack" />
           </a>
           <a href="https://twitter.com/layer5" target="_blank" rel="noreferrer">
-            <StaticImage
+            <img
               className="twitter"
+              height="30px"
               src={twitter_icon}
               alt="twitter"
-              objectFit= "contain"
             />
           </a>
           <a
@@ -49,10 +47,10 @@ const SocialLinksColor = () => {
             rel="noreferrer"
             className="github"
           >
-            <StaticImage  
+            <img
+              height="30px"
               src={github_icon}
               alt="github"
-              objectFit= "contain"
             />
           </a>
           <a
@@ -60,10 +58,10 @@ const SocialLinksColor = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <StaticImage
-              className="linkedin" 
+            <img
+              className="linkedin"
+              height="30px"
               src={linkedin_icon}
-              objectFit= "contain"
               alt="linkedin"
             />
           </a>
@@ -73,9 +71,9 @@ const SocialLinksColor = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <StaticImage
+            <img
               className="youtube"
-              objectFit= "contain"
+              height="30px"
               src={youtube_icon}
               alt="youtube"
             />
@@ -86,10 +84,10 @@ const SocialLinksColor = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <StaticImage
+            <img
               className="docker"
+              height="30px"
               src={docker_icon}
-              objectFit= "contain"
               alt="docker"
             />
           </a>
