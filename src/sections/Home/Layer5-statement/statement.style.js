@@ -18,7 +18,6 @@ const BannerSectionWrapper = styled.section`
     .left-child {
         position: relative;
         align-self: center;
-        margin-bottom: 3rem;
     }
     .right-col {
         padding-left: 0px;
@@ -111,7 +110,7 @@ const BannerSectionWrapper = styled.section`
      }
      @media only screen and (max-width: 767px) {
          .hero {
-            display: none !important;
+            display: none;
          }
          .join-community {
              text-align: center;

@@ -26,7 +26,7 @@ const PartnerItemWrapper = styled.section`
    
     a.partner-card {
         &:hover {
-            .gatsby-image-wrapper{
+             img  {
                 opacity: 1;
             }
         }
@@ -36,12 +36,9 @@ const PartnerItemWrapper = styled.section`
         max-width: 100%;
         min-width: 7rem;
         margin: auto;
+        opacity: 0.7;
         max-height:100px;
     }
-    .gatsby-image-wrapper{
-            opacity: 0.7;
-        }
-        
     @supports (-webkit-hyphens:none) { 
         img { 
             min-width: 8rem; 
