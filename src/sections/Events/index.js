@@ -6,13 +6,14 @@ import Pager from "../../components/pager";
 import UpcomingEvents from "../../components/UpcomingEventCard";
 import PageHeader from "../../reusecore/PageHeader";
 import Button from "../../reusecore/Button";
+import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
 
 const Meetups = ({ data, pageContext }) => {
   const [active, setActive] = useState("all");
 
   return(
     <MeetupStyle>
-      <PageHeader title="Events" path="Community/Events"/>
+      <PageHeader title="Events" path="Community/Events" img={RssFeedIcon} feedlink="/events/feed.xml"/>
       <h2 className="event-subhead">Join Layer5 at these events</h2>
       <UpcomingEvents data={data.allUpcoming} />
       <Container>

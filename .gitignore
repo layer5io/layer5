@@ -79,3 +79,6 @@ yarn.lock
 .vscode
 
 default.profraw
+
+#Husky configuration
+.husky/

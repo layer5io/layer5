@@ -113,10 +113,10 @@ const Repository = () => {
               <h2>Frontend Projects</h2>
             </a>
 
-            {frontendProjects.map((frontendProjects) => {
-              const { category } = frontendProjects;
+            {frontendProjects.map((frontendProject, index) => {
+              const { category } = frontendProject;
               return (
-                <div className="table-container">
+                <div className="table-container" key={index}>
                   <table className="frontendTable" key={category}>
                     <thead>
                       <tr>
@@ -126,7 +126,7 @@ const Repository = () => {
                         <th className="linkscol">Repo</th>
                       </tr>
                     </thead>
-                    {frontendProjects.subdata.map((subdata) => {
+                    {frontendProject.subdata.map((subdata) => {
                       const {
                         project,
                         language,
@@ -167,10 +167,10 @@ const Repository = () => {
               <h2>Backend Projects</h2>
             </a>
 
-            {backendProjects.map((backendProjects) => {
-              const { category } = backendProjects;
+            {backendProjects.map((backendProject, index) => {
+              const { category } = backendProject;
               return (
-                <div className="table-container">
+                <div className="table-container" key={index}>
                   <table key={category}>
                     <thead>
                       <tr>
@@ -180,7 +180,7 @@ const Repository = () => {
                         <th className="linkscol">Repo</th>
                       </tr>
                     </thead>
-                    {backendProjects.subdata.map((subdata) => {
+                    {backendProject.subdata.map((subdata) => {
                       const { project, image, language, description, repository } = subdata;
                       return (
                         <tbody key={project}>

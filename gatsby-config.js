@@ -299,6 +299,53 @@ module.exports = {
             output: "/blog/feed.xml",
             title: "Layer5 Blog"
           },
+          {
+            serialize: ({ query: { site, allPosts }}) => {
+              return allPosts.nodes.map( node => {
+                return Object.assign({}, node.frontmatter, {
+                  title: node.frontmatter.title,
+                  author: node.frontmatter.author,
+                  description: node.frontmatter.description,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  enclosure: node.frontmatter.thumbnail && {
+                    url: site.siteMetadata.siteUrl + node.frontmatter.thumbnail.publicURL,
+                  },
+                  custom_elements: [{ "content:encoded": node.html }],
+                });
+              });
+            },
+            query: `
+              {
+                allPosts: allMdx(
+                  sort: { fields: [frontmatter___date], order: DESC }
+                  filter: { fields: { collection: { in: ["events"] } }, frontmatter: { published: { eq: true }, } }
+                  limit: 20
+                ) {
+                  nodes {
+                    body
+                    html
+                    frontmatter {
+                      title
+                      author
+                      description
+                      date(formatString: "MMM DD YYYY")
+                      thumbnail {
+                        publicURL
+                      }
+                    }
+                    fields {
+                      collection
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/events/feed.xml",
+            title: "Layer5 Events"
+          },
         ],
       },
     },
@@ -420,7 +467,14 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          placeholder: "blurred",
+        }
+      }
+    },
     {
       resolve: "gatsby-transformer-sharp",
       options: {

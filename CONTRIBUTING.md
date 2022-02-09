@@ -3,13 +3,12 @@
 We are beyond excited to see that you want to contribute! We would love to accept your contributions. Layer5 is built by the community and warmly welcomes collaboration. There are many ways in which one could contribute to Layer5 and every contribution is equally appreciated here. Navigate through the following to understand more about contributing here. 
 
   - [Before You Get Started](#before-you-get-started)
-  - [Contributing to Layer5's Code](#contributing-to-layer5s-code)
-  - [Contributing to Layer5's Docs](#contributing-to-layer5s-docs)
+  - [Contributing to Layer5 Projects](#contributing-to-layer5-projects)
+  - [Contributing to Layer5's Blogs](#contributing-to-layer5s-blogs)
   - [How to Contribute](#how-to-contribute)
       - [Prequisites](#prequisites)
       - [Set up your Local Development Environment](#set-up-your-local-development-environment)
       - [Signing-off on Commits](#signing-off-on-commits)
-  - [Common Types of Site Updates](#common-types-of-site-updates)
 
 
 # Before You Get Started
@@ -89,14 +88,14 @@ Badges are a great way of highlighting the area of contribution by any given com
 
 #### Possible Badges:
 
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/community-green.svg" width="25px" height="25px"/> Community
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/landscape-green.png" width="25px" height="25px"/> Landscape
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/smp-dark-text.svg" width="25px" height="25px"/> SMP
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/community/community-green.svg" width="25px" height="25px"/> Community
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/landscape/layer5_landscape_green.svg" width="25px" height="25px"/> Landscape
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/image-hub/layer5-image-hub.svg" width="25px" height="25px"/> ImageHub
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery/icon-only/meshery-logo-light.svg" width="25px" height="25px"/> Meshery
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg" width="25px" height="25px"/> Meshery Operator
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/service-mesh-performance/stacked/smp-dark-text.svg" width="25px" height="25px"/> SMP
 - <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg" width="25px" height="25px"/> Nighthawk
-- <img src="https://github.com/layer5io/layer5/blob/master/src/sections/Community/Member-single/patterns-logo.png" width="25px" height="25px"/> Patterns
+- <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/service-mesh-patterns/service-mesh-pattern.svg" width="25px" height="25px"/> Patterns
 
 ## Updating the Service Mesh Landscape 
 
@@ -152,7 +151,7 @@ Follow the following instructions to start contributing.
   **2.** Clone your forked copy of the project.
 
   ```
-  git clone https://github.com/layer5io/layer5.git
+  git clone https://github.com/<your-github-username>/layer5.git
   ```
 
   **3.** Navigate to the project directory.
