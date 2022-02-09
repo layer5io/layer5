@@ -17,7 +17,9 @@ resource: true
 ---
 
 import { BlogWrapper } from "../Blog.style.js";
+
 <BlogWrapper>
+
 <p>Hola folks, </p>
 <p>As a contributor, each of us is always striving hard in the ocean to open more and more pull-requests, but being a contributor just doesn&#39;t mean only raising PRs, it also means reviewing other PRs, pointing out mistakes, helping others in improving the code-quality/code-reusability/code-readability, helping in finding missing edge-cases that haven&#39;t been tackled yet, giving your opinions, writing LGTM, CITY helps nothing but just improving the confidence and engagement of the PR author.</p>
 <p>So put on your <strong>Quality Tester</strong> hats because here I&#39;ll talk about how to test the PRs with the label <code>component/mesheryctl</code> i.e. pull-requests related to <code>mesheryctl</code></p>
@@ -48,4 +50,5 @@ This will create a mesheryctl binary according to your OS in the same directory<
 <li>After spending a good amount of time testing the new behaviors, old standard behaviors, new test cases, few edge cases. We can provide new insights to the PR author about the behavior in your system, depending on our experience we can ask the PR author to address our new queries, or we can appreciate the work, or give green flags to the PR.</li>
 </ol>
 <p>Wow, that was a ton of work there. well being a Tester is tough but very important before we merge pull requests. Every PR should be marked green with end-to-end testing before merging, we as a project are using GH Workflows to perform standard golang-testing but manual end-to-end testing completely removes margins of error.</p>
+
 </BlogWrapper>
