@@ -7,6 +7,7 @@ import TOCWrapper from "./toc.style";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 
+
 const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
   const [expand, setExpand] = useState(false);
@@ -22,13 +23,14 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
     .map(toc => toc.fields.chapter);
 
   useEffect(() => {
-    const path = location.pathname.split("/");
+    const path = location.pathname.split("/");    
     if(path[2] === "learning-paths"){
       setPath(getCurrentPage(location));
     } else
       return;
 
   }, [location.pathname]);
+
 
   return (
     <TOCWrapper>
