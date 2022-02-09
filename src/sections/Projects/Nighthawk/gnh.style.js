@@ -87,7 +87,7 @@ const Gnhwrapper = styled.section`
                     height: 3.75rem;
                     background-color: ${props => props.theme.secondaryLightColorTwo};
                     img { 
-                        padding: 0.25rem 0px;
+                        padding: 0.625rem 0px;
                     }
                 }
             }

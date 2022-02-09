@@ -33,7 +33,7 @@ const ProjectPage = () => {
           <div className="project__grid">
             <Link to="/service-mesh-landscape" className="project__card one">
               <div className="project__card-container project__card-container_one">
-                <img src={landscape} alt="Landscape" objectFit="contain"/>
+                <img src={landscape} alt="Landscape"/>
                 <h5>Landscape</h5>
               </div>
             </Link>

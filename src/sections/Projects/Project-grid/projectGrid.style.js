@@ -140,7 +140,6 @@ export const ProjectWrapper = styled.div`
             margin-bottom: 45px;
         }
         h5{
-            margin-top: 1rem;
             width: 150%;
             align-self: center;
         }
@@ -159,7 +158,8 @@ export const ProjectWrapper = styled.div`
         grid-column: 1/3;
         grid-row: 3/8;
         img{
-            width: 100%;
+            width: 180px;
+            margin-top: -35px;
             align-self: center;
         }
         h5{ 
@@ -223,7 +223,7 @@ export const ProjectWrapper = styled.div`
                 width: 100%;
            }
             img{
-                width: 100%;
+                width: 150px;
            }
        }
        .project__card.four h5{
@@ -250,7 +250,7 @@ export const ProjectWrapper = styled.div`
             }
         }
         .project__card.three img{
-            width: 100%;
+            width: 70px;
         }
         .project__card.four h5{
             width: 100%;

@@ -37,7 +37,7 @@ const Projects = () => {
         <div className="hero-section">
           <Row>
             <Col lg={6} md={6} sm={12}>
-              <img src={logo} className="logo" alt="Nighthawk Logo" objectFit="contain" />
+              <img src={logo} className="logo" alt="Nighthawk Logo"/>
             </Col>
             <Col lg={6} md={6} sm={12}>
               <div className="hero-text">
