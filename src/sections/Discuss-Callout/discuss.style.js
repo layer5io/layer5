@@ -100,9 +100,6 @@ const DiscussWrapper = styled.div`
                     }
                 }
             }
-            .logo {
-                width: auto;  
-            }
         }
         @media only screen and (max-width: 1100px){
             .explain {
@@ -140,9 +137,6 @@ const DiscussWrapper = styled.div`
                 }
             }
         }
-        .logo{
-            width: auto;  
-        }
     }
     @media only screen and (max-width: 375px){
         .explain {
@@ -155,9 +149,6 @@ const DiscussWrapper = styled.div`
                     font-size: 13px;  
                 }
             }
-        }
-        .logo{
-            width: auto;  
         }
     } 
 `;
