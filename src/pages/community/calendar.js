@@ -7,11 +7,14 @@ import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
 import Loadable from "react-loadable";
+import Loader from "./Loader.style";
+import LoadingIcon from "../../assets/images/LoadingIcon";
+
 
 const LoadableCalendar = Loadable({
   loader: () => import("../../sections/Community/Calendar"),
   loading() {
-    return <div>Loading...</div>;
+    return <Loader><LoadingIcon/></Loader>;
   }
 });
 
