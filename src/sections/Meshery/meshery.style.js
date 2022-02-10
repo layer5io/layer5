@@ -8,6 +8,7 @@ const MesheryWrapper = styled.section`
         overflow: hidden;
         display: block;
         .meshery-video {
+            border-radius: 1rem;
             width: 100%;
           }
         .meshery-img{
@@ -45,7 +46,7 @@ const MesheryWrapper = styled.section`
             }
             .meshery-hero-img {
                 text-align: center;
-                padding: 6rem 2rem 8rem 2rem;
+                padding: 5rem 2rem 6rem 2rem;
             }
         }
     }
@@ -92,7 +93,7 @@ const MesheryWrapper = styled.section`
 
                 .meshery-hero-img {
                     text-align: center;
-                    padding: 1rem 1rem 2rem 1rem;
+                    padding: 1rem 1rem 1rem 1rem;
                 }
             }
             

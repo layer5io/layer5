@@ -27,12 +27,12 @@ const MesheryPage = () => {
           <Container>
             <div className="info">
               <Row className="description">
-                <Col className="desc-text" lg={6} md={6} sm={8} xs={8}>
-                  <h1 className="heading-1"> the service mesh</h1>
+                <Col className="desc-text" lg={6} md={6} sm={10} xs={8}>
+                  <h1 className="heading-1"> the cloud native</h1>
                   <h1 className="heading-2"> <span className="heading-2">management plane</span></h1>
                   <p className="desc-p">
-                    Meshery is the service mesh management plane. <br />
-                    Adopt and operate any service mesh with confidence using Meshery's management features.
+                    {/* Meshery is the cloud native manager. <br /> */}
+                    Operate your infrastructure and workloads with confidence using Meshery's management features.
                   </p>
                   <Button primary className="banner-btn" title="How Meshery Works" url="./operating-service-meshes">
                     <GiClockwork size={21} className="button-icon" />
@@ -41,7 +41,7 @@ const MesheryPage = () => {
                     <FiDownloadCloud size={21} className="button-icon" />
                   </Button>
                 </Col>
-                <Col lg={6} md={6} sm={4} xs={4} className="meshery-hero-img">
+                <Col lg={6} md={6} className="meshery-hero-img">
                   <video autoPlay muted loop controls className="meshery-video">
                     <source src={mesheryDemo} type="video/mp4" />
                   </video>
