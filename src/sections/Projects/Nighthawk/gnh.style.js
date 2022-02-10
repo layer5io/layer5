@@ -158,7 +158,7 @@ const Gnhwrapper = styled.section`
         float: left;
         width: 30%;
         padding-right: 1rem;
-
+        margin-top: 1rem;
     }
     .callout{
         background: rgb(205,28,109);
