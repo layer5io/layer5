@@ -42,9 +42,9 @@ const MesheryPage = () => {
                   </Button>
                 </Col>
                 <Col lg={6} md={6} sm={4} xs={4}className="meshery-hero-img">
-                  <video controls>
-                    <source src={mesheryDemo} type="video/mp4" width="720" height="960" />
-                  </video>
+                <video autoPlay muted loop controls className="meshery-video">
+                   <source src={mesheryDemo} type="video/mp4" />
+                </video>
                   {/* <img className="meshery-sup-img" src={mesheryFullStack} alt="Meshery the multi-mesh manager" /> */}
                 </Col>
               </Row>
