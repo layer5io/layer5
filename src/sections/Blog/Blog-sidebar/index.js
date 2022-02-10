@@ -1,14 +1,12 @@
 import React from "react";
 import { graphql, Link, useStaticQuery} from "gatsby";
 import slugify from "../../../utils/slugify";
-
+import { StaticImage } from "gatsby-plugin-image";
+import Button from "../../../reusecore/Button";
+import BlogSideBarWrapper from "./blogSidebar.style";
 // import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
-import Button from "../../../reusecore/Button";
-import Discuss from "../../Discuss-Callout/layer5-discuss-white.png";
-
-
-import BlogSideBarWrapper from "./blogSidebar.style";
+const Discuss = "../../../assets/images/discuss/layer5-discuss-white.png";
 
 const Sidebar = ( ) => {
   const data = useStaticQuery(
@@ -57,7 +55,7 @@ const Sidebar = ( ) => {
             <div className="card">
               <h2>Join the Conversation</h2>
               <p>On our Discussion Forum</p>
-              <img className="logo" src={Discuss} />
+              <StaticImage imgClassName="logo" src={Discuss} />
             </div>
           </a>
         </div>

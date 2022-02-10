@@ -105,6 +105,13 @@ export const QuizComponentWrapper = styled.div`
         justify-content: space-between;
         align-items: center;
         padding-bottom: 2rem;
+
+        .timer__text{
+          color: ${props => props.theme.secondaryColor};
+          border: 2px solid ${props => props.theme.secondaryColor};
+          padding: 5px 8px;
+          border-radius: 10px;
+        }
       }
       
       .quizbox__progress{
@@ -113,6 +120,20 @@ export const QuizComponentWrapper = styled.div`
         text-align: center;
         padding: 0 .25rem;
         padding-bottom: 0;
+      }
+
+      .quizbox__control {
+        display: flex;
+        text-align: center;
+        padding: 0 .25rem;
+        padding-bottom: 0;
+        
+        & > div {
+          flex: 1;
+          &:first-child {
+            margin-right: 1.5rem;
+          }
+        }
       }
       
       .quizbox__progress--score{
@@ -123,6 +144,23 @@ export const QuizComponentWrapper = styled.div`
         color: white;
         font-weight: bold;
         border-radius: 5px;
+      }
+
+      .quizbox__progress--control {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .quizbox__progress-control__icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        label {
+          margin: 0 0.5rem;
+          cursor: pointer;
+        }
       }
       
       .quizbox__head {
