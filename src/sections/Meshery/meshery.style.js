@@ -7,6 +7,10 @@ const MesheryWrapper = styled.section`
         position: relative;
         overflow: hidden;
         display: block;
+        .meshery-video {
+            border-radius: 1rem;
+            width: 100%;
+          }
         .meshery-img{
             max-width: 45rem;
             position: relative;
@@ -42,7 +46,7 @@ const MesheryWrapper = styled.section`
             }
             .meshery-hero-img {
                 text-align: center;
-                padding: 6rem 6rem 10rem 6rem;
+                padding: 5rem 2rem 6rem 2rem;
             }
         }
     }
@@ -76,7 +80,7 @@ const MesheryWrapper = styled.section`
 
                 .meshery-hero-img {
                     text-align: center;
-                    padding: 4rem 4rem 8rem 4rem;
+                    padding: 4rem 1rem 6rem 1rem;
                 }
             }
             
@@ -89,7 +93,7 @@ const MesheryWrapper = styled.section`
 
                 .meshery-hero-img {
                     text-align: center;
-                    padding: 1rem 1rem 2rem 1rem;
+                    padding: 1rem 1rem 1rem 1rem;
                 }
             }
             
@@ -103,7 +107,8 @@ const MesheryWrapper = styled.section`
                 flex-direction: column-reverse;
                 .meshery-hero-img {
                     text-align: center;
-                    padding: 0;;
+                    padding: 0;
+                    min-width: 15rem;
                 }
                 .desc-text{
                     text-align: center;
@@ -119,6 +124,8 @@ const MesheryWrapper = styled.section`
             }
         }
     }
+
+
 `;
 
 export default MesheryWrapper;

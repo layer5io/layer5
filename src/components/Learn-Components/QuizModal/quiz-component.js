@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Countdown from 'react-countdown';
+import Countdown from "react-countdown";
 import { QuizComponentWrapper } from "./quiz-component.style";
 import Button from "../../../reusecore/Button";
-import { BsArrowLeft } from "@react-icons/all-files/bs/BsArrowLeft"
-import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight"
+import { BsArrowLeft } from "@react-icons/all-files/bs/BsArrowLeft";
+import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
 
 const Instruction = ({closeInstruction}) => {
   return (
@@ -74,8 +74,8 @@ const Timer = (props) => {
       date={props.time}
       renderer={renderer}
     />
-  )
-}
+  );
+};
   
 const QuestionBox = (props) => {
   return (
@@ -193,21 +193,21 @@ const QuizComponent = () => {
     let current = progress;
     let newCurrent = progress - 1;
     if(0 <= newCurrent) {
-      setProgress(newCurrent)
+      setProgress(newCurrent);
     }
     let newScore = score-1;
     if(0 <= newScore) {
-      setScore(newScore)
+      setScore(newScore);
     }
-  }
+  };
 
   const nextQuestionHandler = () => {
     let current = progress;
     let newCurrent = progress + 1;
     if(newCurrent < questionData.length) {
-      setProgress(newCurrent)
+      setProgress(newCurrent);
     }
-  }
+  };
 
   let questionDatum = questionData[progress];
 
@@ -229,7 +229,7 @@ const QuizComponent = () => {
     if(newAttempt <= questionData.length) {
       setAttempt(newAttempt);
     }
-  }
+  };
 
   if (questionData.length > progress) {
     return (
