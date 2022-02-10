@@ -12,12 +12,12 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
 import DiscussCallout from "../../Discuss-Callout";
 import SubscribeLearnPath from "../../subscribe/SubscribeLearnPath";
-import BookmarkNotification from "../../../components/Learn-Components/BookmarkNotification"
+import BookmarkNotification from "../../../components/Learn-Components/BookmarkNotification";
 
 const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
   const [hasBookmark, setHasBookmark] = useState(false);
   const [bookmarkUrl, setBookmarkUrl] = useState("");
-  const [showNotification, setShowNotification] = useState(true)
+  const [showNotification, setShowNotification] = useState(true);
   const serviceMeshImages = course.frontmatter.meshesYouLearn;
   const getChapterTitle = (chapter, chapterList) => {
     for (let i = 0; i < chapterList.length; i++) {
