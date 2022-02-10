@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { StaticImage } from "gatsby-plugin-image";
 import {Col, Container, Row} from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import ServiceMeshImage from "./service-mesh.svg";
+
+const ServiceMeshImage = "./service-mesh.svg";
 
 const LearnServiceMeshCTAWrapper = styled.div`
     background-color:${props => props.theme.secondaryLightColor};
@@ -38,7 +40,7 @@ const LearnServiceMeshCTA = () => {
             <Button secondary title="Let's Learn" url="/learn/service-mesh-labs"/>
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <img src={ServiceMeshImage} alt="Learn how to Service Mesh"/>
+            <StaticImage src={ServiceMeshImage} alt="Learn how to Service Mesh" objectFit="contain"/>
           </Col>
         </Row>
       </Container>

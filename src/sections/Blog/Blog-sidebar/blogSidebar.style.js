@@ -153,8 +153,7 @@ const BlogSideBarWrapper = styled.div`
             }
         }
 
-        @media screen and (max-width: 992px) {
-               
+        @media screen and (max-width: 992px) {      
             display: none;
         }
 	}
@@ -162,8 +161,7 @@ const BlogSideBarWrapper = styled.div`
     @media only screen and (max-width: 1024px) {
         .sidebar-widgets {
             padding: 3rem 0 0 0;
-        }
-       
+        } 
     }
    
     .explain-1 {
@@ -203,8 +201,7 @@ const BlogSideBarWrapper = styled.div`
                     color: ${props => props.theme.white}; 
                 }
                 .logo{
-                 height: 1.8rem;
-                 width: auto;  
+                 width: 100%;  
                  }
                 &:hover,
                 &:focus {
