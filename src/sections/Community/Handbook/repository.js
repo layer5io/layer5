@@ -26,7 +26,7 @@ const Repository = () => {
   const data = React.useMemo(() => repo_data);
   let frontendProjects = data.filter((data) => data.category === "Frontend");
   let backendProjects = data.filter((data) => data.category !== "Frontend");
-
+  console.log("backend",backendProjects);
   return (
     <HandbookWrapper>
       <div className="page-header-section">
