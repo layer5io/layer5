@@ -55,7 +55,7 @@ const data = {
         }
       ],
       count: {
-        value: 1000,
+        value: 1200,
         description: "users"
       }
     },
