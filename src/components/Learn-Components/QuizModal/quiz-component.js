@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import Countdown from "react-countdown";
 import { QuizComponentWrapper } from "./quiz-component.style";
 import Button from "../../../reusecore/Button";
+import { BsArrowLeft } from "@react-icons/all-files/bs/BsArrowLeft";
+import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
 
 const Instruction = ({closeInstruction}) => {
   return (
@@ -50,6 +53,7 @@ const ListItem = (props) => {
           e.style.color = "#222";
           onClickAnswer();
         }, 300);
+        props.attemptQuestion();
       }}
     >
       {props.answerItem}
@@ -57,13 +61,28 @@ const ListItem = (props) => {
   );
     
 };
+
+
+
+const Timer = (props) => {
+  const renderer = ({ hours, minutes, seconds, completed }) => {
+    return <h3 className="timer__text">{minutes}:{seconds}</h3>;
+  };
+
+  return (
+    <Countdown
+      date={props.time}
+      renderer={renderer}
+    />
+  );
+};
   
 const QuestionBox = (props) => {
   return (
     <div className="quizbox__container">
       <div className="quizbox__head--container"> 
         <h2 className="quizbox__head">{props.title}</h2>
-        {/* <Timer time={props.time} /> */}
+        <Timer time={props.time} />
       </div>
       <div className="quizbox__main">
         <h4>
@@ -76,6 +95,7 @@ const QuestionBox = (props) => {
                 answerItem={answer}
                 answerCallback={props.answerCallback}
                 index={index}
+                attemptQuestion={props.attemptQuestion}
                 key={index}
               />
             );
@@ -91,6 +111,20 @@ const QuestionBox = (props) => {
             <p className="quizbox__progress--score">{props.notattempted}</p>
           </div>
         </div>
+        <div className="quizbox__control">
+          <div>
+            <div className="quizbox__progress--score quizbox__progress--control" onClick={props.prevQuestion}>
+              <BsArrowLeft className="quizbox__progress-control__icon"/>
+              <label>Previous</label>
+            </div>
+          </div>
+          <div>
+            <div className="quizbox__progress--score quizbox__progress--control" onClick={props.nextQuestion}>
+              <label>Next</label>
+              <BsArrowRight className="quizbox__progress-control__icon"/> 
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -100,6 +134,7 @@ const QuizComponent = () => {
   const [questionData, setQuestionData] = useState([]);
   const [quizTitle, setQuizTitle] = useState("");
   const [progress, setProgress] = useState(0);
+  const [attempt, setAttempt] = useState(0);
   const [score, setScore] =  useState(0);
   const [time, setTime] = useState(Date.now() + 180000);
   const [showInstruction, setShowInstruction] = useState(true);
@@ -154,6 +189,26 @@ const QuizComponent = () => {
     finishTimer();
   };
 
+  const prevQuestionHandler = () => {
+    let current = progress;
+    let newCurrent = progress - 1;
+    if(0 <= newCurrent) {
+      setProgress(newCurrent);
+    }
+    let newScore = score-1;
+    if(0 <= newScore) {
+      setScore(newScore);
+    }
+  };
+
+  const nextQuestionHandler = () => {
+    let current = progress;
+    let newCurrent = progress + 1;
+    if(newCurrent < questionData.length) {
+      setProgress(newCurrent);
+    }
+  };
+
   let questionDatum = questionData[progress];
 
   if (showInstruction){
@@ -169,6 +224,13 @@ const QuizComponent = () => {
     );
   }
 
+  const attemptQuestionHandler = () => {
+    let newAttempt = attempt+1;
+    if(newAttempt <= questionData.length) {
+      setAttempt(newAttempt);
+    }
+  };
+
   if (questionData.length > progress) {
     return (
       <QuizComponentWrapper>
@@ -179,8 +241,11 @@ const QuizComponent = () => {
           answerCallback={checkAnswer}
           questionDatum={questionDatum}
           time={time}
-          attempted={progress}
-          notattempted={questionData.length-progress}
+          attempted={attempt}
+          notattempted={questionData.length-attempt}
+          attemptQuestion={attemptQuestionHandler}
+          prevQuestion={prevQuestionHandler}
+          nextQuestion={nextQuestionHandler}
         />
       </QuizComponentWrapper>
     );

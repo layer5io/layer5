@@ -240,6 +240,12 @@ export const repo_data = [
           "Augmentation of Envoy Nighthawk to produce output compatible with Meshery’s visualization of performance test results",
         repository: "https://github.com/layer5io/nighthawk-go",
       },
+      {
+        project:"SMP Action",
+        language:"shell",
+        description:"GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
+        repository:"https://github.com/layer5io/meshery-smp-action"
+      },
     ],
   },
 
@@ -254,6 +260,12 @@ export const repo_data = [
           "A collection of functional examples to be used as patterns for operationalizing cloud native infrastruture and application deployments and applying best practices.",
         repository:
           "https://github.com/service-mesh-patterns/service-mesh-patterns",
+      },
+      {
+        project:"Service Mesh Patterns Action",
+        language:"shell",
+        description:"GitHub Action to deploy Service Mesh Patterns on CI/CD pipelines.",
+        repository:"https://github.com/layer5io/meshery-service-mesh-patterns-action",
       },
     ],
   },

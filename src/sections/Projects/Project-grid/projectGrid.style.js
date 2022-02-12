@@ -8,9 +8,9 @@ export const ProjectWrapper = styled.div`
         font-weight: 500;
         text-align:center;
         img{
-          width: 3rem;
-          position: relative;
-          top: 10px;
+            width: 3rem;
+            position: relative;
+            top: 10px;
         }
     }
     .title{
@@ -84,6 +84,12 @@ export const ProjectWrapper = styled.div`
         }
         
     }
+    .project__card-container_meshery{
+        height: 13rem;
+    }
+    .project__card-container_one{
+        height: 8rem;
+    }
     
     // Landscape
     .project__card.one{
@@ -93,13 +99,15 @@ export const ProjectWrapper = styled.div`
             width: 90px;
             align-self: center;
         }
+        h5{
+            margin-top: 10px;
+        }
     }
     // Meshery
     .project__card.two{
         grid-column: 3/6;
         grid-row: 1/6;
         img{
-            
             align-self: center;
         }
         h5{
@@ -126,10 +134,10 @@ export const ProjectWrapper = styled.div`
         grid-column: 6/8;
         grid-row: 1/4;
         img{
-           width: 150px;
-           align-self: center;
-           margin-top: -45px;
-           margin-bottom: 45px;
+            width: 150px;
+            align-self: center;
+            margin-top: -45px;
+            margin-bottom: 45px;
         }
         h5{
             width: 150%;
@@ -155,6 +163,7 @@ export const ProjectWrapper = styled.div`
             align-self: center;
         }
         h5{ 
+            margin-top: 1rem;
             align-self: center;
             width: 150%;
         }
@@ -223,12 +232,6 @@ export const ProjectWrapper = styled.div`
        .project__card h5{
         font-size: 15px;
         }
-        .project__card.two{
-            img {
-                
-            }
-        
-        }
     }
     @media only screen and (max-width: 991px) {
         padding: 5px 0 0 0;
@@ -265,6 +268,12 @@ export const ProjectWrapper = styled.div`
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+        }
+        .project__card-container_meshery{
+            height: 10rem;
+        }
+        .project__card-container_one{
+            height: 10rem;
         }
         .project__card {
             h5{ 
