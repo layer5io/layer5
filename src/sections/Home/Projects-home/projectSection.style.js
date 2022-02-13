@@ -113,7 +113,6 @@ const ProjectItemWrapper = styled.section`
             padding: 8%;
             img{
                 height: 45px;
-                margin-bottom: 6px;
             }
             h5{
                 margin-bottom: 0px;

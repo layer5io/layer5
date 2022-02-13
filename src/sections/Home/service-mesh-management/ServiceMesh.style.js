@@ -82,6 +82,9 @@ const MeshSectionWrapper = styled.section`
         font-weight: 300;
         margin: 0;
     }
+    .backBtn{
+        text-align: center;
+    }
 
   }
   @media only screen and (max-width: 568px) {

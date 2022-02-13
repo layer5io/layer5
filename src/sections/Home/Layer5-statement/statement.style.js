@@ -24,11 +24,11 @@ const BannerSectionWrapper = styled.section`
         padding-right: 0px;
     }
     h2.statement {
-        color: ${props => props.theme.white};
+        color: ${(props) => props.theme.white};
         margin-bottom: 1rem;
     }
     h3.statement {
-        color: ${props => props.theme.secondaryLightColor};
+        color: ${(props) => props.theme.secondaryLightColor};
         margin-left: 3.5rem;
         text-indent: -3.5rem;
         margin-bottom: 2rem;
@@ -108,6 +108,13 @@ const BannerSectionWrapper = styled.section`
             height: 31.6rem;
         }
      }
+
+    @media only screen and (max-device-width : 768px) { 
+        .hero {
+          height: 33.85rem;
+      }
+     }
+    
      @media only screen and (max-width: 767px) {
          .hero {
             display: none;
