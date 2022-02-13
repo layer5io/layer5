@@ -2,9 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import MeshSectionWrapper from "./ServiceMesh.style";
 import SectionTitle from "../../../reusecore/SectionTitle";
-import MeshMap from "./images/meshmap.png";
 import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+
+const MeshMap = "../../../assets/images/homePage-images/meshmap.png";
 
 const ServiceMeshManagement = () => {
   return (
@@ -24,7 +26,7 @@ const ServiceMeshManagement = () => {
 
           <Col xs={12} sm={12} md={6}>
             <Link to="/service-mesh-management/meshery">
-              <img className="mesh-image" alt="Meshery - the multi-service mesh manager" src={MeshMap} />
+             <StaticImage className="mesh-image" alt="Meshery - the multi-service mesh manager" src={MeshMap} />
             </Link>
           </Col>
           <Col xs={12} sm={12} md={6}>
