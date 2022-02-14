@@ -71,7 +71,7 @@ const Navigation = () => {
       }
     }
   }
-  Blog: allMdx(
+  Resources: allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
     filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
     limit: 2
@@ -174,7 +174,7 @@ const Navigation = () => {
   const closeDropDown = () => {
     dropDownRef.current.classList.remove("expand");
   };
-
+  console.log("data",data);
   return (
     <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
       <Container className="nav-container">

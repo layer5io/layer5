@@ -37,7 +37,6 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
 
   const { active } = state;
   const blogData = props.blogData;
-
   return (
     <ul className={addAllClasses.join(" ")} onMouseOver={wrapDisplay} onMouseOut={wrapNone}>
       {menuItems.map((menu, index) => (

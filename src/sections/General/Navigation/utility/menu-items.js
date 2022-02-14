@@ -192,12 +192,12 @@ const Data = {
       }
     },
     {
-      name: "Blog",
-      path: "/blog",
+      name: "Resources",
+      path: "/resources",
       subItems: [
-        {
-          name: "Resources",
-          path: "/resources",
+        { 
+          name: "Blog",
+          path: "/blog",
           sepLine: true
         },
         {
