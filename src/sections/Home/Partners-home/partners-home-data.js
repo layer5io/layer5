@@ -20,7 +20,7 @@ export const partners = [
     imageLink: intel, 
     imageRoute: "/partners#intel",
     innerDivStyle: "partner__block__inner"
-    
+
   },{
     name: "University of Texas at Austin partnership with Layer5",
     imageLink: utaustin, 
@@ -51,11 +51,11 @@ export const partners = [
     imageLink: rackspace, 
     imageRoute: "/partners#rackspace",
     innerDivStyle: "partner__block__inner"
-   
+
   },{
     name: "UEM",
     imageLink: uem, 
     imageRoute: "/partners#uem",
     innerDivStyle: "partner__block__inner"
   }
-]; 
+];  
