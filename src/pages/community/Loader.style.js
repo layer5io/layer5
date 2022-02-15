@@ -14,8 +14,8 @@ const Loader=styled.div`
            z-index:99999;
         
             svg{
-                width: 65px;
-                height: 60px;
+                width: 100px;
+                height: 100px;
                 path{
                     -webkit-animation: loader 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s infinite;
                     animation: loader 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s infinite;
