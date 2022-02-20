@@ -76,10 +76,6 @@ const InternshipSectionWrapper = styled.div`
       z-index:1030;
       transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out,
         visibility 0.7s ease-in-out;
-
-      img {
-        height: inherit;
-      }
     }
     &:hover {
       box-shadow: 0px 4px 20px 4px ${(props) => props.theme.shadowLightColor};

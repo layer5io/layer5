@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
-import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Link } from "gatsby";
 
 import BookSinglePageWrapper from "./BookSingle.style.js";

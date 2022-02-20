@@ -4,7 +4,7 @@ import {SRLWrapper} from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import MeshSyncLight from "../../../../assets/images/meshsync/meshsync-light.png";
 import MeshSync from "../../../../assets/images/meshsync/meshsync.png";
 

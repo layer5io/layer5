@@ -50,23 +50,19 @@ const CareerPageWrapper = styled.div`
 
     @media screen and (max-width: 1200px) and (min-width: 768px) {
         .layer5-logo {
-            img {
-                margin-top: 8%;
-            }
-        }
-    }
-
-    @media screen and (max-width: 767px) {
-        .layer5-logo {
-            img {
-                margin: 0 0 1.5rem;
-            }
+            margin-top: 8%;
         }
     }
 
     @media screen and (max-width: 900px) {
         .layer5-logo {
-            width: 10rem;
+            width: 13.5rem;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .layer5-logo {
+                margin: 0 auto 1.5rem;
         }
     }
 

@@ -7,7 +7,7 @@ import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import mesheryCloud from "./meshery-cloud.png";
 import meshmapImage from "./MeshMap.png";
-import serviceMesh from "./service-mesh.svg";
+import serviceMesh from "../../assets/images/service-mesh-icons/service-mesh.svg";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import { Link } from "gatsby";

@@ -5,8 +5,8 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 
-import { FaMapMarkedAlt } from "react-icons/fa";
-import { FiDownloadCloud } from "react-icons/fi";
+import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 
 // import AltBannerSectionWrapper from "./altbanner.style";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import WorkshopSinglePageWrapper from "./WorkshopSinglePageWrapper.style";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Link } from "gatsby";
 
 import Slack from "../../../assets/images/socialIcons/slack_color.png";

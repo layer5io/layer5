@@ -222,10 +222,23 @@ export const HandbookWrapper = styled.div`
         margin-top: -2rem;
         margin-left: 0;
         padding: 1rem 2.5rem;
+      
+        .table-container {
+          table {
+            width: 100%;
+            margin-left: 0;
+          }
+          overflow-x: scroll;
+        }
+    
+        .table-container::-webkit-scrollbar { 
+          display: none;
+        }
       }
+      
       .codes{
-      width:100%
-      margin-top:-2rem;
+        width:100%
+        margin-top:-2rem;
       }
     }
 
