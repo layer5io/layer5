@@ -18,11 +18,15 @@ export const ResourceNavigationWrapper = styled.div`
       }
     }
   }
-  .heading>span:hover{
+
+  .heading-name{
+    margin: 0 0 0.3rem 0;
+  }
+  .heading-name>span:hover{
     color: ${(props) => props.theme.secondaryColor};
   }
 
-  .heading-name{
+  .heading-name>strong{
     font-size: 1.5rem;
   }
 
@@ -168,7 +172,7 @@ input[type="checkbox"] {
         justify-content: space-between;
         border: none;
       }
-      .heading-name{
+      .heading-name>strong{
         display : none;
       }
       .desk-view{
@@ -188,7 +192,7 @@ input[type="checkbox"] {
       margin-left: 0rem;
       .heading{
         margin-left: 0;
-        margin-bottom: 2.5rem
+        margin-bottom: 1.5rem
       }
     }
     @media only screen and (max-width: 430px){

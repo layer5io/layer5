@@ -52,10 +52,10 @@ const Navigation = (props) => {
   );
 
   const [expandFilter, setExpandFilter] = useState(false);
-  const [expandType, setExpandType] = useState(false);
-  const [expandProduct, setExpandProduct] = useState(false);
-  const [expandTech, setExpandTech] = useState(false);
-  const [expandMesh, setExpandMesh] = useState(false); 
+  const [expandType, setExpandType] = useState(true);
+  const [expandProduct, setExpandProduct] = useState(true);
+  const [expandTech, setExpandTech] = useState(true);
+  const [expandMesh, setExpandMesh] = useState(true); 
 
   const data = React.useMemo(() => options);
   let typeOptions = data.filter((data) => data.category === "Type");
@@ -94,15 +94,13 @@ const Navigation = (props) => {
                 </button> 
               )}
           </div>
-          <p >
-            <strong className="heading-name">Filters</strong> 
+          <p className="heading-name" >
+            <strong>Filters</strong> 
             <span className= {`${props.resources.length === 0 ? "clear-disabled" : "clear-enabled"} desk-view`} onClick={props.clear}>
               Clear Filters 
-              <IoMdClose className="clear-icon"  />
             </span>
             {expandFilter ? (<span className= {`${props.resources.length === 0 ? "clear-disabled" : "clear-enabled mob-view"}`} onClick={props.clear}>
               Clear Filters 
-              <IoMdClose className="clear-icon"  />
             </span>) : ""}
           </p>
         </div>
@@ -110,7 +108,7 @@ const Navigation = (props) => {
         <div className="filters-boxes" id={expandFilter ? "filters-boxes" : ""}>
           <div className="toggle-btn"  onClick={function () {
             setExpandType(!expandType); 
-          }}>   
+          }}>
             <p><strong>Type</strong></p>
             {expandType ? (
               <HiOutlineChevronUp
