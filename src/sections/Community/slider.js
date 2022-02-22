@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
+import Image from "../../components/image";
 
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -53,6 +54,9 @@ const PictureSlider = () => {
             node {
               extension
               publicURL
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
         }
@@ -74,7 +78,7 @@ const PictureSlider = () => {
     <PictureSliderWrapper>
       <Slider {...settings}>
         {data.allFile.edges.map((image, id) => (
-          <img key={id} src={image.node.publicURL} alt="community" />
+          <Image key={id} {...image.node} alt="community" />
         ))}
       </Slider>
     </PictureSliderWrapper>
