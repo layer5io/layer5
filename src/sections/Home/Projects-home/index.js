@@ -33,7 +33,7 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/service-mesh-landscape">
                 <div className="project__block__inner">
-                <StaticImage src={projectImage1} alt="appion project" />
+                  <StaticImage src={projectImage1} alt="appion project" />
                   <h5>Landscape</h5>
                   <p>Service Mesh Ecosystem</p>
                 </div>
@@ -42,7 +42,7 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/service-mesh-management/meshery">
                 <div className="project__block__inner">
-                <StaticImage src={projectImage3} alt="appion project" />
+                  <StaticImage src={projectImage3} alt="appion project" />
                   <h5>Meshery</h5>
                   <p>Service Mesh Management</p>
                 </div>
@@ -51,7 +51,7 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/projects/service-mesh-performance">
                 <div className="project__block__inner">
-                <StaticImage src={projectImage2} alt="appion project"/>
+                  <StaticImage src={projectImage2} alt="appion project"/>
                   <h5>Service Mesh Performance</h5>
                   <p>The Measurement Standard</p>
                 </div>
@@ -60,7 +60,7 @@ const Projects = () => {
             <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/projects/image-hub">
                 <div className="project__block__inner">
-                <StaticImage src={projectImage4} alt="Business logic in the service mesh data plane" />
+                  <StaticImage src={projectImage4} alt="Business logic in the service mesh data plane" />
                   <h5>Image Hub</h5>
                   <p>WebAssembly Filters</p>
                 </div>

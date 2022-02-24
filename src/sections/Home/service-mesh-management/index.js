@@ -26,7 +26,7 @@ const ServiceMeshManagement = () => {
 
           <Col xs={12} sm={12} md={6}>
             <Link to="/service-mesh-management/meshery">
-             <StaticImage className="mesh-image" alt="Meshery - the multi-service mesh manager" src={MeshMap} />
+              <StaticImage className="mesh-image" alt="Meshery - the multi-service mesh manager" src={MeshMap} />
             </Link>
           </Col>
           <Col xs={12} sm={12} md={6}>
