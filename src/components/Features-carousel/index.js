@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {SRLWrapper} from "simple-react-lightbox";
+import SimpleReactLightbox, {SRLWrapper} from "simple-react-lightbox";
 import {Link} from "gatsby";
 import Carousel from "nuka-carousel";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
@@ -35,9 +35,11 @@ const FeaturesList = ({ features }) => {
           ))}
         </ul>
         <div className="terminal-wrapper">
-          <SRLWrapper>
-            {features[activeFeature].content}
-          </SRLWrapper>
+          <SimpleReactLightbox>
+            <SRLWrapper>
+              {features[activeFeature].content}
+            </SRLWrapper>
+          </SimpleReactLightbox>
         </div>
       </div>
     </FeaturesWrapper>
@@ -101,7 +103,7 @@ const Feature = ({children, title, active, onClick, learnMoreLink, id, Element =
         <p>{children}</p>
         {learnMoreLink && (
           <Link className="learn-more-link" to={learnMoreLink}>
-                        Learn more <IoIosArrowRoundForward />
+            Learn more <IoIosArrowRoundForward />
           </Link>
         )}
       </div>

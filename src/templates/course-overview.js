@@ -9,6 +9,7 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import { ThemeProvider } from "styled-components";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`
   query eachCourse($course: String!) {
@@ -95,12 +96,14 @@ const CourseOverviewTemplate = ({ data, pageContext }) => {
           description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
         />
         <Navigation />
-        <CourseOverview
-          course={data.courseByTitle.nodes[0]}
-          chapters={data.courseChapters.nodes}
-          serviceMeshesList={data.serviceMeshesList.nodes}
-          canonical="https://layer5.io/learn/learning-paths"
-        />
+        <SimpleReactLightbox>
+          <CourseOverview
+            course={data.courseByTitle.nodes[0]}
+            chapters={data.courseChapters.nodes}
+            serviceMeshesList={data.serviceMeshesList.nodes}
+            canonical="https://layer5.io/learn/learning-paths"
+          />
+        </SimpleReactLightbox>
         <Footer />
       </Layout>
     </ThemeProvider>
