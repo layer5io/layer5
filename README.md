@@ -128,9 +128,9 @@ alt="Layer5" align="left" /></a>
 Join us on<a href="http://slack.layer5.io"><img src=".github/assets/images/slack.png" height="16px" align="bottom" />Slack</a>to learn more about Layer5 and its community! Make sure you see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you.
 </p>
 <p>
-<a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src=".github/assets/images/buttons/community.png" style="margin-right:10px;" width="125px" height="110px" align="left" /></a>
+<a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src=".github/assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
 ✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calender.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
-✔️ <em><strong>Watch</strong></em> community <a href="https://www.youtube.com/playlist?list=PL3A-A6hPO2IMPPqVjuzgqNU5xwnFFn3n0">meeting recordings</a>.<br />
+✔️ <em><strong>Watch</strong></em> community <a href="http://youtube.com/Layer5io?sub_confirmation=1">meeting recordings</a>.<br />
 ✔️ <em>Fill-in</em> a <a href="https://layer5.io/newcomers">community member form</a> to gain access to community resources.
 <br />
 ✔️ <em><strong>Discuss</strong></em> in the <a href="https://discuss.layer5.io">Community Forum</a>.<br />
@@ -140,7 +140,7 @@ Join us on<a href="http://slack.layer5.io"><img src=".github/assets/images/slack
 <p>
 <i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted label</a>
 </p>
-<p>Find us on Twitter <img src=".github/assets/images/twitter.png" height="16px" align="bottom" />: <a href="https://twitter.com/layer5">@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a> and <a href="https://twitter.com/smp_spec">@smp_spec</a>. <br>Subscribe on <a href="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">Youtube</a>
+<p>Find us on Twitter <img src=".github/assets/images/twitter.png" height="16px" align="bottom" />: <a href="https://twitter.com/layer5">@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a> and <a href="https://twitter.com/smp_spec">@smp_spec</a>. <br>Subscribe on <a href="http://youtube.com/Layer5io?sub_confirmation=1">Youtube</a>
 </p>
 
 ### License
