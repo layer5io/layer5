@@ -510,7 +510,10 @@ module.exports = {
     {
       resolve: "gatsby-plugin-zopfli",
       options: {
-        extensions: ["css", "html", "js", "svg"]
+        path: "zopfli",
+        compression: {
+          numiterations: 25
+        }
       }
     },
     "gatsby-plugin-meta-redirect", // make sure this is always the last one
