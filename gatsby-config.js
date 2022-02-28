@@ -507,6 +507,12 @@ module.exports = {
         policy: [{userAgent: "*", allow: "/"}],
       }
     },
+    {
+      resolve: "gatsby-plugin-zopfli",
+      options: {
+        extensions: ["css", "html", "js", "svg"]
+      }
+    },
     "gatsby-plugin-meta-redirect", // make sure this is always the last one
   ],
   
