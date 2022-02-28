@@ -55,9 +55,9 @@
     "gatsby-plugin-sharp": "^3.14.3",
     "gatsby-plugin-sitemap": "^3.3.0",
     "gatsby-plugin-styled-components": "^4.14.0",
-    "gatsby-plugin-zopfli": "^2.0.0",
     "gatsby-redirect-from": "^0.4.3",
     "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-plugin-zopfli": "^2.0.0",
     "gatsby-transformer-sharp": "^3.14.0",
     "lodash": "^4.17.21",
     "nuka-carousel": "^4.8.4",
@@ -84,7 +84,9 @@
     "simple-react-lightbox": "^3.6.8",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3",
-    "swiper": "^6.8.4"
+    "swiper": "^6.8.4",
+    "gatsby-background-image": "^1.6.0",
+    "gbimage-bridge": "^0.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.8",
