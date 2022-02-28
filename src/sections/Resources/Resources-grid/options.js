@@ -8,12 +8,12 @@ export const options =  [
       { id: 3, value: "Workshop", label: "Workshop" },
       { id: 4, value: "Recorded Webinar", label: "Recorded Webinar" },
       { id: 5, value: "Event", label: "Event" },
-      { id: 6, value: "Case Study", label: "Case Study" },
-      { id: 7, value: "Demo", label: "Demo" },
-      { id: 8, value: "Guide", label: "Guide" },
-      { id: 9, value: "FAQ", label: "FAQ" },
-      { id: 10, value: "Interview", label: "Interview" },
-      { id: 11, value: "Tutorial", label: "Tutorial" }]
+      { id: 6, value: "Tutorial", label: "Tutorial" },
+      { id: 7, value: "Case Study", label: "Case Study" },
+      { id: 8, value: "Demo", label: "Demo" },
+      { id: 9, value: "Guide", label: "Guide" },
+      { id: 10, value: "FAQ", label: "FAQ" },
+      { id: 11, value: "Interview", label: "Interview" }]
   },
   {
     category: "Product",
