@@ -1,14 +1,35 @@
 import React from "react";
-
 import BannerSectionWrapper from "./stewards.style";
 import Button from "../../../reusecore/Button";
+import { graphql, useStaticQuery } from "gatsby";
+import { getImage } from "gatsby-plugin-image";
+import { BgImage } from "gbimage-bridge";
 
 const StewardsOfIndustry = () => {
+  const { backgroundImage123 } = useStaticQuery(
+    graphql`
+      query {
+        backgroundImage123: file(
+          relativePath: { eq: "stewards/stewards.png" }
+        ) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 2000
+              quality: 50
+              webpOptions: { quality: 70 }
+            )
+          }
+        }
+      }
+    `
+  );
+
+  const pluginImage = getImage(backgroundImage123);
+
   return (
     <BannerSectionWrapper>
-      <div className="section">
-        <h1 className="section-header">
-        Creators of service mesh standards.</h1>
+      <BgImage image={pluginImage} className="section">
+        <h1 className="section-header">Creators of service mesh standards.</h1>
         <h2>Service mesh leaders.</h2>
         <Button
           primary
@@ -16,7 +37,7 @@ const StewardsOfIndustry = () => {
           title="See our Projects"
           url="/projects"
         />
-      </div>
+      </BgImage>
     </BannerSectionWrapper>
   );
 };
