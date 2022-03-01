@@ -35,7 +35,7 @@ const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => 
               </div>
             </Col>
             <Col xs={12} lg={4}>
-              <Sidebar/>
+              <Sidebar pageContext={pageContext}/>
             </Col>
           </Row>
         </Container>

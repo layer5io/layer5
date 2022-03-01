@@ -35,6 +35,7 @@ const BlogSideBarWrapper = styled.div`
 
     .widgets-title{
         margin-bottom: 20px;
+        cursor: pointer;
         h3{
             display: inline-block;
             font-weight: 500;
@@ -48,6 +49,12 @@ const BlogSideBarWrapper = styled.div`
                 height: 1px; 
             }
         }
+        .menu-icon{
+            float:right;
+            vertical-align: bottom;
+            width: 1.5rem; 
+            height: 1.5rem; 
+        }
         
     }
     
@@ -60,7 +67,10 @@ const BlogSideBarWrapper = styled.div`
             padding: 0;
             list-style: none;
         }
-        
+
+        .ul-close{
+            display:none;
+        }
         
         &.catagorie{
             
