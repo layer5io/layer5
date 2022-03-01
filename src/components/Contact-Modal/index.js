@@ -35,6 +35,7 @@ const ContactFormModal = (props) => {
         <div className="contact-form">
           <iframe
             src="https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"
+            loading="lazy"
             className="form-frame"
           />
         </div>
