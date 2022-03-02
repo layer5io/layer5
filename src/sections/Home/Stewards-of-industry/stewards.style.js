@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
-import backgroundImg from "./images/stewards.png";
-
 const BannerSectionWrapper = styled.section`
   z-index:0;
   .section {
-    background-image: url(${backgroundImg});
     background-size: cover;
     height: 35rem;
     display: flex;

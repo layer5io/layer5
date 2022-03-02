@@ -83,7 +83,9 @@
     "simple-react-lightbox": "^3.6.8",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3",
-    "swiper": "^6.8.4"
+    "swiper": "^6.8.4",
+    "gatsby-background-image": "^1.6.0",
+    "gbimage-bridge": "^0.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.8",
