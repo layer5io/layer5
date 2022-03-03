@@ -44,7 +44,7 @@ const BannerDefault = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-          <StaticImage className="hero" src={imgHero} alt="hero image" />
+            <StaticImage className="hero" src={imgHero} alt="hero image" />
           </Col>
         </Row>
       </div>

@@ -12,6 +12,7 @@ import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`query BlogsBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
@@ -45,7 +46,9 @@ const BlogSinglePage = ({data}) => {
         <GlobalStyle />
         <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL}/>
         <Navigation />
-        <BlogSingle data={data}/>
+        <SimpleReactLightbox>
+          <BlogSingle data={data}/>
+        </SimpleReactLightbox>
         <Footer />
       </Layout>
     </ThemeProvider>
