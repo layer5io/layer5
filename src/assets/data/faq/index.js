@@ -140,7 +140,7 @@ const data = {
       linktext: "",
     },
     {
-      question: "When should I adopting a service mesh?",
+      question: "When should I adopt a service mesh?",
       category: "Service Mesh",
       answer: [
         "There are many service meshes to choose from as well as a variety of deployment models. Which is right for you and your organization depends on where you are in your maturity curve (Cloud Native skill set), number of services, underlying infrastructure, and how centric technology is to your business. ",

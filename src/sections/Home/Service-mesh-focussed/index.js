@@ -22,7 +22,7 @@ const ServiceMeshFocused = () => {
         </Row>
         <Row Vcenter >
           <Col xs={12} sm={6} lg={6} className="book" >
-           <StaticImage src={ServiceMeshFocusedImage}  alt="The-Enterprise-Path-to-Service-Mesh-Architectures"  />
+            <StaticImage src={ServiceMeshFocusedImage}  alt="The-Enterprise-Path-to-Service-Mesh-Architectures"  />
           </Col>
           <Col xs={12} sm={6} lg={6}>
             <img src={BlockQuoteImage} className="quote-icon" alt="Quote from book" />
