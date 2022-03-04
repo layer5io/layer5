@@ -42,7 +42,6 @@ const Sidebar = ({ pageContext }) => {
   
   const [showTag, setShowTag] = useState(true);
   const [showCategory, setShowCategory] = useState(true);
-  const [showDownNewsLetter,setShowDownNewsletter]=useState(false);
 
   const tags = data.tags.group.sort((a, b) => {
     return b.totalCount - a.totalCount;
@@ -57,7 +56,6 @@ const Sidebar = ({ pageContext }) => {
     if (tag || category) {
       setShowCategory(false);
       setShowTag(false);
-      setShowDownNewsletter(true);
     }
   }, []);
 
