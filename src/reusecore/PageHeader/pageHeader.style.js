@@ -23,9 +23,11 @@ const PageHeaderWrapper = styled.div`
         
         .feature-image{
             margin: 2rem auto;
-            max-height: 62.5rem;
-            max-width: 31rem;
-            object-fit: contain;    
+            object-fit: contain; 
+            img{
+                max-height: 25rem;
+                max-width: 31rem;
+            }   
         }
         .breadcrumbs {
             display: flex;
