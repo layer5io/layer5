@@ -39,9 +39,10 @@ const Sidebar = ({ pageContext }) => {
       }
     `
   );
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const [showTag, setShowTag] = useState(false);
-  const [showCategory, setShowCategory] = useState(false);
+  
+  const [showTag, setShowTag] = useState(true);
+  const [showCategory, setShowCategory] = useState(true);
+  const [showDownNewsLetter,setShowDownNewsletter]=useState(false);
 
   const tags = data.tags.group.sort((a, b) => {
     return b.totalCount - a.totalCount;
@@ -54,7 +55,9 @@ const Sidebar = ({ pageContext }) => {
 
   useEffect(() => {
     if (tag || category) {
-      setIsCollapsed(true);
+      setShowCategory(false);
+      setShowTag(false);
+      setShowDownNewsletter(true);
     }
   }, []);
 
@@ -83,13 +86,13 @@ const Sidebar = ({ pageContext }) => {
       <div className="sidebar-widgets catagorie">
         <div className="widgets-title" onClick={() => setShowCategory(value => !value)}>
           <h3>Categories</h3>
-          {!isCollapsed ? null : !showCategory ? (
+          {!showCategory ? (
             <HiOutlineChevronDown className="menu-icon"/>
           ) : (
             <HiOutlineChevronUp className="menu-icon"/>
           )}
         </div>
-        <ul className={`${(isCollapsed && !showCategory) ? "ul-close" : null}`}>
+        <ul className={`${(!showCategory) ? "ul-close" : null}`}>
           {categories &&
             categories.map((category) => (
               <li key={category.fieldValue}>
@@ -101,7 +104,26 @@ const Sidebar = ({ pageContext }) => {
             ))}
         </ul>
       </div>
-
+      <div className="sidebar-widgets tags">
+        <div className="widgets-title" onClick={() => setShowTag(value => !value)}>
+          <h3>Tags</h3>
+          {!showTag ? (
+            <HiOutlineChevronDown className="menu-icon"/>
+          ) : (
+            <HiOutlineChevronUp className="menu-icon"/>
+          )}
+        </div>
+        <ul className={`${(!showTag) ? "ul-close" : null}`}>
+          {tags &&
+            tags.map((tag) => (
+              <li key={tag.fieldValue}>
+                <Link to={`/blog/tag/${slugify(tag.fieldValue)}`}>
+                  {tag.fieldValue} ({tag.totalCount})
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </div>
       <div className="subscribe">
         <form
           name="contactform"
@@ -127,27 +149,6 @@ const Sidebar = ({ pageContext }) => {
             <Button secondary title="Subscribe" id="mc-embedded-subscribe" />
           </div>
         </form>
-      </div>
-
-      <div className="sidebar-widgets tags">
-        <div className="widgets-title" onClick={() => setShowTag(value => !value)}>
-          <h3>Tags</h3>
-          {!isCollapsed ? null : !showTag ? (
-            <HiOutlineChevronDown className="menu-icon"/>
-          ) : (
-            <HiOutlineChevronUp className="menu-icon"/>
-          )}
-        </div>
-        <ul className={`${(isCollapsed && !showTag) ? "ul-close" : null}`}>
-          {tags &&
-            tags.map((tag) => (
-              <li key={tag.fieldValue}>
-                <Link to={`/blog/tag/${slugify(tag.fieldValue)}`}>
-                  {tag.fieldValue} ({tag.totalCount})
-                </Link>
-              </li>
-            ))}
-        </ul>
       </div>
     </BlogSideBarWrapper>
   );

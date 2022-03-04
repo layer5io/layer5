@@ -30,7 +30,7 @@ const BlogSideBarWrapper = styled.div`
 
 
     .sidebar-widgets {
-        padding: 30px 30px;
+        padding: 15px 30px;
     }
 
     .widgets-title{
@@ -59,9 +59,6 @@ const BlogSideBarWrapper = styled.div`
     }
     
     .sidebar-widgets{
-        &+.sidebar-widgets{
-            margin-top: 52px;
-        }
         ul{
             margin: 0;
             padding: 0;
