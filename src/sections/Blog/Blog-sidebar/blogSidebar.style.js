@@ -181,7 +181,7 @@ const BlogSideBarWrapper = styled.div`
             background-color: none;
             border-radius: 25px;
             @media only screen and (max-width: 1200px) {
-             margin-top: -4rem;
+            //  margin-top: 0rem;
              padding: 1.5rem 0.8rem 0rem 0.5rem;
              }
             .card {

@@ -13,7 +13,7 @@ export const BlogPageWrapper = styled.div`
 
     @media only screen and (max-width: 575px) {
         .blog-grid-wrapper{
-            margin: 0 auto 5rem;
+            margin: 0 auto 1rem;
         }
     }
 `;
