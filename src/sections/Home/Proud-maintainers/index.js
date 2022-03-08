@@ -27,8 +27,7 @@ const ProudMaintainers = () => {
           </SectionTitle>
           <p className="project-text">
             We are the world’s largest collection of service mesh practitioners
-            and maintainers of leading open source projects We are open source
-            contributors and maintainers.
+            and maintainers of leading open source projects.
           </p>
         </Row>
       </Container>
