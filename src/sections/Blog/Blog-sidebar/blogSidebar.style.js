@@ -221,6 +221,10 @@ const BlogSideBarWrapper = styled.div`
                 }
             }
         }
+    }
+    @media screen and (max-width: 992px) {      
+        display: flex;
+        flex-direction:column-reverse;
     }  
 
 `;
