@@ -14,8 +14,13 @@ const UpcomingEventsWrapper = styled.div`
 		transition: all 0.3s;
 	}
 	.blog-slider_img{
-		max-height: 80rem; 
+		max-height: 25rem; 
 		object-fit: cover;
+		.gatsby-image-wrapper {
+			img {
+				 max-height: 25rem;
+			 }
+	   }
 	}
 	.blog-slider_content{
 		text-align: center;
