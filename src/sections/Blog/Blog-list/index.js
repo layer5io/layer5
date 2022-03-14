@@ -50,7 +50,7 @@ const BlogList = ({
               </Row>
             </Col>
             <Col sm={12} md={4}>
-              <Sidebar />
+              <Sidebar pageContext={pageContext} />
             </Col>
           </Row>
         </Container>
