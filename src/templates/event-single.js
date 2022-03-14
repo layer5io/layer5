@@ -34,7 +34,7 @@ export const query = graphql`query EventsBySlug($slug: String!) {
         relativePath
         extension
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+          gatsbyImageData(layout: CONSTRAINED)
         }
       }
     }
