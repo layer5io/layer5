@@ -125,6 +125,8 @@ const BlogSideBarWrapper = styled.div`
 		font-family: 'Qanelas Soft', sans-serif;
         padding: 0 1rem;
         margin: 1rem auto auto;
+        display:flex;
+        justify-content:center;
 
 		span {
 			h4 {
