@@ -27,7 +27,7 @@ const UpcomingEvents = ({ data }) => {
                 <SwiperSlide key={item.id}>
                   <div className="blog-slider_item swiper-slide">
                     <div className="blog-slider_img">
-                      <Image {...item.frontmatter.thumbnail} alt={item.frontmatter.title} />
+                      <Image {...item.frontmatter.thumbnail}  alt={item.frontmatter.title} />
                     </div>
                     <div className="blog-slider_content">
                       <h3 className="blog-slider_title">{item.frontmatter.title}</h3>
