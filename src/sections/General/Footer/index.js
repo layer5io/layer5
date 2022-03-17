@@ -8,7 +8,7 @@ import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
 const Footer = () => {
-  var currentYear = new Date().getFullYear()
+  var currentYear = new Date().getFullYear();
   return (
     <FooterWrapper>
       <img
