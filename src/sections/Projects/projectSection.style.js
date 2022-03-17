@@ -78,7 +78,7 @@ const ProjectItemWrapper = styled.section`
             }
         }
     }
-    @media only screen and (max-width: 912px) {
+    @media only screen and (max-width: 995px) {
          padding: 60px 0 0 0;
         .project__block__inner{
             padding: 8%;
