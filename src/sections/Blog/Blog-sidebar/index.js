@@ -94,7 +94,7 @@ const Sidebar = ({ pageContext }) => {
           {categories &&
             categories.map((category) => (
               <li key={category.fieldValue}>
-                <Link to={`/blog/category/${slugify(category.fieldValue)}`}>
+                <Link to={`/blog/category/${slugify(category.fieldValue)}`} activeStyle={{ color: "#00b39f" }}>
                   <span>{category.fieldValue}</span>
                   <em>({category.totalCount})</em>
                 </Link>
@@ -115,7 +115,7 @@ const Sidebar = ({ pageContext }) => {
           {tags &&
             tags.map((tag) => (
               <li key={tag.fieldValue}>
-                <Link to={`/blog/tag/${slugify(tag.fieldValue)}`}>
+                <Link to={`/blog/tag/${slugify(tag.fieldValue)}`} activeStyle={{ background: "#00b39f", color: "#ffffff" }}>
                   {tag.fieldValue} ({tag.totalCount})
                 </Link>
               </li>
