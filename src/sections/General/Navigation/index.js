@@ -10,10 +10,9 @@ import smp_dark_text from "../../../assets/images/service-mesh-performance/stack
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
-
+import NavigationWrap from "./navigation.style";
 const layer5_logo = "../../../assets/images/app/layer5.svg";
 
-import NavigationWrap from "./navigation.style";
 
 const Navigation = () => {
   let data = useStaticQuery(
