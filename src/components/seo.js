@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {Helmet} from "react-helmet";
 import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
-/*eslint linebreak-style: ["error", "windows"]*/
+
 const SEO = ({ canonical, description, image, lang, meta, schemaMarkup, title }) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(
