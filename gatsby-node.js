@@ -296,7 +296,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     paginate({
       createPage,
       items: category.nodes,
-      itemsPerPage: 6,
+      itemsPerPage:6,
       pathPrefix: `/blog/category/${slugify(category.fieldValue)}`,
       component: blogCategoryListTemplate,
       context: {
