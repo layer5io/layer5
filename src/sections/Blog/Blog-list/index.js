@@ -50,16 +50,13 @@ const BlogList = ({
                   <Pager pageContext={pageContext} text={"Posts"} isListView={isListView} />
                 </Col>
               </Row>
-
-            </Col>
+              </Col>
             <Col sm={12} md={4}>
               <Sidebar pageContext={pageContext} />
             </Col>
           </Row>
         </Container>
-
       </div>
-
     </BlogPageWrapper>
   );
 };
