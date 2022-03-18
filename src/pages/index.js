@@ -1,7 +1,5 @@
 import React from "react";
 import {ThemeProvider} from "styled-components";
-
-/*eslint linebreak-style: ["error", "windows"]*/
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
