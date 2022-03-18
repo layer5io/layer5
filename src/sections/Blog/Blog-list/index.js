@@ -36,17 +36,13 @@ const BlogList = ({
                   setGridView={setGridView}
                 />
               )}
-
               <Row className="blog-lists">
-                
-                {nodes.map(({ id, frontmatter, fields }) => (
+               {nodes.map(({ id, frontmatter, fields }) => (
                   <Col xs={12} key={id}>
-                    
                     <Card frontmatter={frontmatter} fields={fields} />
                   </Col>
                 ))}
                 <Col>
-
                   <Pager pageContext={pageContext} text={"Posts"} isListView={isListView} />
                 </Col>
               </Row>
