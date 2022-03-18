@@ -1,5 +1,5 @@
 import styled from "styled-components";
-/*eslint linebreak-style: ["error", "windows"]*/
+
 const BlogPageWrapper = styled.div`
 
     .single-post-wrapper{
