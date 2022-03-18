@@ -6,7 +6,7 @@ const sizes = {
   mamabear: 700,
   babybear: 400,
 };
-/*eslint linebreak-style: ["error", "windows"]*/
+
 export default Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
     @media screen and (max-width: ${sizes[label]}px) {
