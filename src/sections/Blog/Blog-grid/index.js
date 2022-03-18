@@ -3,11 +3,9 @@ import BlogViewToolTip from "../../../components/blog-view-tooltip";
 import Card from "../../../components/Card";
 import Pager from "../../../components/pager";
 import { Container, Row, Col } from "../../../reusecore/Layout";
-
 import PageHeader from "../../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
 import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
-
 import { BlogPageWrapper } from "./blogGrid.style";
 
 const BlogGrid = ({ data, isListView, setListView, setGridView, pageContext}) => {
