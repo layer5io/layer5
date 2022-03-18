@@ -4,7 +4,7 @@ import { TiThList } from "@react-icons/all-files/ti/TiThList";
 import { BsGrid3X3GapFill } from "@react-icons/all-files/bs/BsGrid3X3GapFill";
 import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
-/*eslint linebreak-style: ["error", "windows"]*/
+
 export const ToolTipWrapper = styled.div`
     @media screen and (max-width: 576px) {
         display: none;
