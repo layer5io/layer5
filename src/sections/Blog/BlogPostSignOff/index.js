@@ -3,7 +3,6 @@ import {Link, graphql, useStaticQuery} from "gatsby";
 import slugify from "../../../utils/slugify";
 import layer5_img from "../../../assets/images/layer5/layer5-only/svg/layer5-gray-no-trim.svg";
 import BlogPostSignOffWrapper from "./blogpost-signoff.styles";
-
 const authorField = (author, isSlugAvailable) => {
   return(
     <>

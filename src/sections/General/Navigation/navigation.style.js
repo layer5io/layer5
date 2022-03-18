@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 const NavigationWrap = styled.header`
 
   background-color: #F3FFFD;

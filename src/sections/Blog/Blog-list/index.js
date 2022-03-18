@@ -1,12 +1,10 @@
 import React from "react";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
-
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
 import Pager from "../../../components/pager";
 import Card from "../../../components/Card";
-
 import { BlogPageWrapper } from "./blogList.style";
 import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 
@@ -22,11 +20,11 @@ const BlogList = ({
   const { totalCount, nodes } = data.allMdx;
   const header = tag
     ? `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
-    : category ? `${totalCount} post${totalCount === 1 ? "" : "s"} categorized as "${category}"`: "Blog";
+    : category ? `${totalCount} post${totalCount === 1 ? "" : "s"} categorized as "${category}"` : "Blog";
 
   return (
     <BlogPageWrapper>
-      <PageHeader title={header} path="Blog" img={RssFeedIcon} feedlink="/blog/feed.xml"/>
+      <PageHeader title={header} path="Blog" img={RssFeedIcon} feedlink="/blog/feed.xml" />
       <div className="blog-list-wrapper">
         <Container>
           <Row>
@@ -39,16 +37,16 @@ const BlogList = ({
                 />
               )}
               <Row className="blog-lists">
-                {nodes.map(({ id, frontmatter, fields }) => (
+               {nodes.map(({ id, frontmatter, fields }) => (
                   <Col xs={12} key={id}>
-                    <Card frontmatter={frontmatter} fields={fields}/>
+                    <Card frontmatter={frontmatter} fields={fields} />
                   </Col>
                 ))}
                 <Col>
-                  <Pager pageContext={pageContext} text={"Posts"} isListView={isListView}/>
+                  <Pager pageContext={pageContext} text={"Posts"} isListView={isListView} />
                 </Col>
               </Row>
-            </Col>
+              </Col>
             <Col sm={12} md={4}>
               <Sidebar pageContext={pageContext} />
             </Col>

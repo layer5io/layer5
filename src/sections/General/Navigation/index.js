@@ -4,18 +4,15 @@ import { Link } from "gatsby";
 import { FaBars } from "@react-icons/all-files/fa/FaBars";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import Button from "../../../reusecore/Button";
-
-
 import { Container } from "../../../reusecore/Layout";
 import { StaticImage } from "gatsby-plugin-image";
 import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
-
+import NavigationWrap from "./navigation.style";
 const layer5_logo = "../../../assets/images/app/layer5.svg";
 
-import NavigationWrap from "./navigation.style";
 
 const Navigation = () => {
   let data = useStaticQuery(
