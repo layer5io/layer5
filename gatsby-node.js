@@ -296,7 +296,7 @@
      paginate({
        createPage,
        items: category.nodes,
-       itemsPerPage: 4,
+       itemsPerPage: 6,
        pathPrefix: `/blog/category/${slugify(category.fieldValue)}`,
        component: blogCategoryListTemplate,
        context: {
