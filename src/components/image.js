@@ -1,6 +1,6 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
-
+/*eslint linebreak-style: ["error", "windows"]*/
 
 const Image = ({ childImageSharp, extension, publicURL, alt, ...rest }) => {
   if (!childImageSharp && extension === "svg") {

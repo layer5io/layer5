@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import { IoIosArrowRoundBack } from "@react-icons/all-files/io/IoIosArrowRoundBack";
-
+/*eslint linebreak-style: ["error", "windows"]*/
 export const PagerWrapper = styled.div`
     display: flex; 
     justify-content: space-between;

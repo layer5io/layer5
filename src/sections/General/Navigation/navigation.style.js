@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+/*eslint linebreak-style: ["error", "windows"]*/
 const NavigationWrap = styled.header`
 
   background-color: #F3FFFD;

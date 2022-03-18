@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+/*eslint linebreak-style: ["error", "windows"]*/
 export const BlogPageWrapper = styled.div`
 	.blog-list-wrapper {
 		margin-bottom: 5rem;

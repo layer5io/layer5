@@ -10,7 +10,7 @@ import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 
 import { BlogPageWrapper } from "./blogGrid.style";
 
-const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => {
+const BlogGrid = ({ data, isListView, setListView, setGridView, pageContext}) => {
   return (
     <BlogPageWrapper>
       <PageHeader title="Blog" path="Blog" img={RssFeedIcon} feedlink="/blog/feed.xml"/>
@@ -19,23 +19,24 @@ const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => 
           <Row>
             <Col xs={12} lg={8}>
               <BlogViewToolTip isListView={isListView} setListView={setListView}
-                setGridView ={setGridView}
+                setGridView={setGridView}
               />
               <div className="blog-grid-wrapper">
+
                 <Row>
-                  {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+                  {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
                     <Col key={id} xs={12} sm={6} >
-                      <Card frontmatter={frontmatter} fields={fields}/>
+                      <Card frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
                   <Col>
-                    <Pager pageContext={pageContext} text={"Posts"} isListView={isListView}/>
+                    <Pager pageContext={pageContext} text={"Posts"} isListView={isListView} />
                   </Col>
                 </Row>
               </div>
             </Col>
             <Col xs={12} lg={4}>
-              <Sidebar pageContext={pageContext}/>
+              <Sidebar pageContext={pageContext} />
             </Col>
           </Row>
         </Container>

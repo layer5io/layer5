@@ -5,7 +5,7 @@ import { FaBars } from "@react-icons/all-files/fa/FaBars";
 import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import Button from "../../../reusecore/Button";
 
-
+/*eslint linebreak-style: ["error", "windows"]*/
 import { Container } from "../../../reusecore/Layout";
 import { StaticImage } from "gatsby-plugin-image";
 import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
