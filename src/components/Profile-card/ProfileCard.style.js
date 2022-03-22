@@ -8,7 +8,7 @@ export const ProfileCardWrapper = styled.div`
     }
 
     .profile-card{
-        width: 250px;
+        width: 260px;
         border-radius: 2px;
         overflow: hidden;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
@@ -19,6 +19,9 @@ export const ProfileCardWrapper = styled.div`
         filter: ${props => props.status === "Inactive" ? "grayscale(1)" : ""};
         top: 50%;
         transition: 0.3s;
+        min-height: 235px;
+        max-height: 235px;
+        
 
         &:hover{
             background: ${props => props.status === "Active" ? props.theme.secondaryColor : props.theme.primaryLightColor};
@@ -31,6 +34,7 @@ export const ProfileCardWrapper = styled.div`
             padding: 20px 0 20px;
             z-index: 1;
             overflow: hidden;
+            
 
             .gatsby-image-wrapper, .old-gatsby-image-wrapper {
                 display: block;
