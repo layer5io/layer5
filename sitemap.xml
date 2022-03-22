@@ -24,8 +24,8 @@
 <url> <loc>https://layer5.io/blog/programs/communitybridge-2020-teaching-service-meshes-to-be-compliant</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/community/growing-as-an-open-source-contributor-with-layer5</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/istio/service-mesh-istio-patterns-for-multitenancy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/blog/announcements/announcing-meshery-v040</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/community/how-i-schooled-my-seniors</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/blog/announcements/announcing-meshery-v040</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/community/my-journey-from-a-contributor-to-a-maintainer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/open-service-mesh/announcing-the-meshery-adapter-for-open-service-mesh</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/performance/performance-benchmarking-using-meshery-and-nighthawk</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -128,9 +128,9 @@
 <url> <loc>https://layer5.io/resources/service-mesh/service-mesh-fundamentals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/swappable-sidecars</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/beginners-guide-to-contributing-to-meshery-and-mesheryctl</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/resources/service-mesh/contributing-to-meshery-api-swagger-documentation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/an-introduction-to-all-layer5-repositories</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/an-introduction-to-contributing-to-meshery</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/resources/service-mesh/contributing-to-meshery-api-swagger-documentation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/an-introduction-to-mesheryctl</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/a-tutorial-on-contributing-to-layer5-and-working-with-git</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/a-tutorial-on-gatsby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -151,13 +151,13 @@
 <url> <loc>https://layer5.io/company/news/meshery-provides-the-service-mesh-management-plane-and-kubernetes-evolves-into-an-enterprise-platform</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/kubeconcloudnativecon</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/service-mesh-offers-promising-solution-for-cloud-native-networking</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/company/news/5-lesser-known-but-extremely-powerful-kubernetes-service-mesh-tools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/cncf-projects-bring-service-mesh-interoperability-benchmarks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/cncf-adopts-meshery-the-service-mesh-management-plane</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/cncf-adopts-meshery-to-advance-service-mesh-management</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/6-cncf-service-mesh-tools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/company/news/analyzing-service-mesh-performance</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/company/news/5-lesser-known-but-extremely-powerful-kubernetes-service-mesh-tools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-books/istio-up-and-running</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-books/service-mesh-patterns</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -266,9 +266,9 @@
 <url> <loc>https://layer5.io/community/members/jubayer-abdullah-joy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/kanishkar-j</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/karen-hippitaku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/community/members/kelechi-nwachukwu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/kishore-kumar</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/lee-calcote</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/members/kelechi-nwachukwu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/lidor-ettinger</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/madhab-paul</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/manav-kapoor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -312,8 +312,8 @@
 <url> <loc>https://layer5.io/community/members/rohit-agarwal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/ruben-lorenzo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/rudraksh-pareek</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/community/members/sako-mammadov</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/ruth-ikegah</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/members/sako-mammadov</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/saurabh-thakur</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/sayantan-bose</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/shivay-lamba</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
