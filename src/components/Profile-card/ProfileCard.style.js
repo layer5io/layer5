@@ -19,8 +19,8 @@ export const ProfileCardWrapper = styled.div`
         filter: ${props => props.status === "Inactive" ? "grayscale(1)" : ""};
         top: 50%;
         transition: 0.3s;
-        min-height: 235px;
-        max-height: 235px;
+        height: 235px;
+        
         
 
         &:hover{
