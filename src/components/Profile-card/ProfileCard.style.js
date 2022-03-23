@@ -21,9 +21,7 @@ export const ProfileCardWrapper = styled.div`
         transition: 0.3s;
         height: 235px;
        
-        
-
-        &:hover{
+         &:hover{
             background: ${props => props.status === "Active" ? props.theme.secondaryColor : props.theme.primaryLightColor};
         }
 
