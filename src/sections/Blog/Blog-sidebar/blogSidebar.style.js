@@ -177,7 +177,7 @@ const BlogSideBarWrapper = styled.div`
         padding-top: 0rem;
         text-align: center;
         .cards {
-            margin: 0.15rem auto 0 ;
+            margin: 0.15rem auto 2.5rem ;
             max-width: 50rem;
             padding: 1.5rem 2.7rem 0rem 1rem;
             background-color: none;
