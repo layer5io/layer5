@@ -7,13 +7,13 @@ import Button from "../../../reusecore/Button";
 
 
 import { Container } from "../../../reusecore/Layout";
-import { StaticImage } from "gatsby-plugin-image";
+
 import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
+import layer5_logo from "../../../assets/images/app/layer5.svg";
 
-const layer5_logo = "../../../assets/images/app/layer5.svg";
 
 import NavigationWrap from "./navigation.style";
 
@@ -182,7 +182,7 @@ const Navigation = () => {
       <Container className="nav-container">
         <div className="navbar-wrap">
           <Link to="/" className="logo">
-            <StaticImage src={layer5_logo} alt="Layer5 logo" />
+            <img src={layer5_logo} alt="Layer5 logo" />
           </Link>
           <nav className="nav">
             {expand ?
