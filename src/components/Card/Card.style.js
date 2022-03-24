@@ -50,15 +50,16 @@ export const CardWrapper = styled.div`
     }
 
     .post-content-block{
-        padding: 1rem 2rem;
+        padding: 0rem 2rem;
         height: 8rem;
     }
 
     @media screen and (max-width: 1200px) and (min-width: 992px){
         .post-thumb-block{
             height: 12rem;
+            
         }
-
+       
         .post-content-block{
             height: 10rem;
         }
