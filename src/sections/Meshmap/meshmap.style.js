@@ -11,6 +11,27 @@ const MeshmapWrapper = styled.div`
     color: #8b0000;
   }
 
+  .description{
+    margin-top: 3rem;
+  .desc-text {
+    padding: 1.56rem;
+    h1{
+        font-weight: 600;
+    }
+    .heading-1 {
+        font-weight: 500;
+    }
+    .heading-2 {
+        font-weight: 700;
+        color: ${props => props.theme.secondaryColor};
+    }
+    .desc-p {
+        font-size: 1.25rem;   
+        margin: 1.875rem 0 2.5rem 0;
+    }
+  }
+}
+
   .checkbox-label {
     font-size: .8rem;
   }
@@ -32,6 +53,20 @@ const MeshmapWrapper = styled.div`
       width: 50px;
       height: 75px;
       vertical-align: middle;
+  }
+
+  .accounts{
+    p{
+    font-size: 12px;
+    line-height: 15px;
+    color: ${props => props.theme.primaryColor};
+    }
+    h5{
+      margin-top: 1rem;
+    }
+    .accounts_group{
+      margin: 0 1rem 0 1rem;
+    }
   }
 
 
@@ -61,8 +96,8 @@ p.caption {
     margin: 70px 0px 10px 0px;
   }
     .title {
-        font-weight: 700;
         margin: 70px 0px 10px 0px;
+        text-align: center;
     }
 
     .label {
@@ -70,12 +105,10 @@ p.caption {
     }
 
     .form {
-        margin: 1rem;
         font-size: .9rem;
-        margin: 1rem 1.25rem 1rem 0rem;
+        margin: 1rem;
         box-shadow: 0px 10px 10px 2px rgba(0, 179, 159, 0.5);
         padding: 1rem;
-
 
         label {
             display: block;
@@ -120,7 +153,12 @@ p.caption {
           display: block;
           width: auto;
         }
-
+    }
+    @media only screen and (max-width: 300px) {
+      .form{
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
 
 
