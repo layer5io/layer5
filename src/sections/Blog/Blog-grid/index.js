@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
 import Card from "../../../components/Card";
 import Pager from "../../../components/pager";
@@ -9,6 +9,8 @@ import Sidebar from "../Blog-sidebar";
 import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 
 import { BlogPageWrapper } from "./blogGrid.style";
+
+import Paginate from "../paginate";
 
 const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => {
   return (
@@ -29,7 +31,7 @@ const BlogGrid = ({data, isListView, setListView, setGridView, pageContext}) => 
                     </Col>
                   ))}
                   <Col>
-                    <Pager pageContext={pageContext} text={"Posts"} isListView={isListView}/>
+                    <Paginate pageContext={pageContext} isListView={isListView}/>
                   </Col>
                 </Row>
               </div>
