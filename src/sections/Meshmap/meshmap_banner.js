@@ -75,7 +75,7 @@ const BannerSection = () => {
         <PageHeader title="MeshMap" subtitle="bringing GitOps to service meshes" superscript="BETA"/> 
         <p className= "para">MeshMap is the world's only visual designer for Kubernetes and service mesh deployments. Use MeshMap to design, deploy, and manage your Kubernetes-based, service mesh deployments. As a plugin for Meshery, MeshMap supports 10+ service meshes. MeshMap not only allows you to create and verify your cloud native application and infrastructure configurations, but also integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.</p>
         <p>Take advantage of Meshery's catalog of patterns, WebAssembly filters, and eBPF programs (coming soon). MeshMap has two modes:  <b>Designer</b> mode and <b>Visualizer</b> mode. Deployments configured and modeled in Designer mode, can be deployed into your environment and managed using Visualizer. MeshMap designs are centered around service mesh patterns.</p>
-        <p>Create and share your own Kubernetes deployments and <Link to="/books/service-mesh-patterns">service mesh patterns</Link> in MeshMap Designer or import from the catalog. </p>
+        <p>Create and share your own Kubernetes deployments and <Link to="/learn/service-mesh-books/service-mesh-patterns">service mesh patterns</Link> in MeshMap Designer or import from the catalog. </p>
       </div>
     </BannerSectionWrapper>
   );

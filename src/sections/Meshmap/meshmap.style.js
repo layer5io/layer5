@@ -106,10 +106,9 @@ p.caption {
 
     .form {
         font-size: .9rem;
-        margin: 1rem 5rem 2rem 5rem;
+        margin: 1rem;
         box-shadow: 0px 10px 10px 2px rgba(0, 179, 159, 0.5);
         padding: 1rem;
-
 
         label {
             display: block;
@@ -154,7 +153,12 @@ p.caption {
           display: block;
           width: auto;
         }
-
+    }
+    @media only screen and (max-width: 300px) {
+      .form{
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
 
 

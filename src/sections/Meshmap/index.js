@@ -75,10 +75,10 @@ const Meshmap = () => {
             <Container>
 
               <Row className="description">
-                <Col lg={6} md={6} className="meshery-hero-img">
+                <Col lg={6} md={6} sm={12} className="meshery-hero-img">
                   <img src={mesheryCloud} />
                 </Col>
-                <Col className="desc-text" lg={6} md={6} sm={10} xs={8}>
+                <Col className="desc-text" lg={6} md={6} sm={12}>
                   <h1 className="heading-1"> Accessing</h1>
                   <h1 className="heading-2">MeshMap Beta</h1>
                   <p className="desc-p">
