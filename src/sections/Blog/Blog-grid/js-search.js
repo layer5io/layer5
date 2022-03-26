@@ -5,6 +5,8 @@ import Paginate from "../paginate";
 import { Row, Col } from "../../../reusecore/Layout";
 import { SearchBar } from "./blogGrid.style";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
+import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+import Button from "../../../reusecore/Button";
 
 const Search = ({
   data1,
@@ -56,14 +58,16 @@ const Search = ({
           setGridView={setGridView}
         />
         <form onSubmit={handleSubmit}>
-          <div>
-            <input
-              id="Search"
-              value={searchQuery}
-              onChange={searchData}
-              placeholder="Search here"
-              style={{ width: "100%" }}
-            />
+          <div className="sidebar-widgets">
+            <div className="search-box">
+              <input type="text"
+                value={searchQuery}
+                onChange={searchData}
+                placeholder="Search here..." />
+              <Button>
+                <FaSearch />
+              </Button>
+            </div>
           </div>
         </form>
       </div>

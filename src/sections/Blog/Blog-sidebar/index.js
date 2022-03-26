@@ -61,14 +61,14 @@ const Sidebar = ({ pageContext }) => {
 
   return (
     <BlogSideBarWrapper>
-      {/*<div className="sidebar-widgets">*/}
-      {/*  <div className="search-box">*/}
-      {/*    <input type="text" placeholder="Search here..." />*/}
-      {/*    <Button>*/}
-      {/*      <FaSearch />*/}
-      {/*    </Button>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
+      {/* <div className="sidebar-widgets">
+        <div className="search-box">
+         <input type="text" placeholder="Search here..." />
+         <Button>
+         <FaSearch />
+         </Button>
+       </div>
+      </div> */}
       <div className="explain-1">
         <div className="cards">
           <a href="https://discuss.layer5.io/">

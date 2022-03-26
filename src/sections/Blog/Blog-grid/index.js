@@ -6,6 +6,7 @@ import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 import { BlogPageWrapper} from "./blogGrid.style";
 import Search from "./js-search";
 
+
 const BlogGrid = ({
   data,
   isListView,

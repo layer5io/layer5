@@ -34,23 +34,34 @@ export const SearchBar = styled.div`
     display: flex;
     justify-content: space-between;
   }
-  input {
-    padding: 0.5rem;
-    border-radius: 20px;
-    background: #f5f7fa;
-    border: 2px solid #f5f7fa;
-    font-size: 1rem;
-    padding: 0.7rem 2rem;
-    ::placeholder {
-      color: #8ba3cb;
-      font-size: 1rem;
+.search-box {
+    position: relative;
+    display: flex;
+    input{
+        flex-basis: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid ${props => props.theme.headingColor};
+
+        &:focus{
+            border-color: ${props => props.theme.primaryColor};
+        }
     }
-    :focus {
-      outline: none;
-      box-shadow: 0 0 4px #ccc;
+    button {
+        position: absolute;
+        right: 0px;
+        top: 0;
+        height: 100%;
+        min-width: 20px;
+        border-radius: 5px;
+        background: transparent;
+        font-size: 22px;
+        color: ${props => props.theme.headingColor}; 
     }
-    :hover {
-      box-shadow: 0 0 4px #ccc;
-    }
-  }
+}
+
+
+.sidebar-widgets {
+    padding: 15px 30px;
+}
 `;
