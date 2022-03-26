@@ -60,6 +60,7 @@
     "gatsby-source-filesystem": "^3.14.0",
     "gatsby-transformer-sharp": "^3.14.0",
     "gbimage-bridge": "^0.2.1",
+    "js-search": "^2.0.0",
     "lodash": "^4.17.21",
     "nuka-carousel": "^4.8.4",
     "prism-react-renderer": "^1.2.1",
