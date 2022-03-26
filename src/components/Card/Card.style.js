@@ -50,7 +50,7 @@ export const CardWrapper = styled.div`
     }
 
     .post-content-block{
-        padding: 0rem 2rem;
+        padding: 1rem 2rem;
         height: 8rem;
     }
 
@@ -63,11 +63,15 @@ export const CardWrapper = styled.div`
         .post-content-block{
             height: 10rem;
         }
+           
+
     }
+   
 
     @media screen and (max-width: 670px) and (min-width: 560px){
         .post-content-block{
             height: 10rem;
+            
         }
     }
 
@@ -87,7 +91,7 @@ export const CardWrapper = styled.div`
     }
 
     .post-meta-block{
-        height: auto;
+        height: 3.5rem;
         display: flex;
 
         .author{
@@ -109,6 +113,7 @@ export const CardWrapper = styled.div`
     .readmore-btn-wrapper{
         display:flex;
         justify-content: flex-start;
+       
     }
 
     .readmore-btn::after{
@@ -123,6 +128,7 @@ export const CardWrapper = styled.div`
     .readmore-btn, .external-link-btn{
        color: rgba(0,0,0,0.4);
        display: flex;
+       
        flex: auto;
        align-items: center;
        transition: all 0.3s ease-in;
