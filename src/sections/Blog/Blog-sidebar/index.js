@@ -6,7 +6,8 @@ import Button from "../../../reusecore/Button";
 import BlogSideBarWrapper from "./blogSidebar.style";
 import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp";
 import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
-import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+// import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+import SearchBox from "../../../reusecore/Search";
 
 const Discuss = "../../../assets/images/discuss/layer5-discuss-white.png";
 
@@ -61,14 +62,15 @@ const Sidebar = ({ pageContext, searchQuery, searchData }) => {
 
   return (
     <BlogSideBarWrapper>
-      <div className="sidebar-widgets">
+      {/* <div className="sidebar-widgets">
         <div className="search-box">
           <input type="text" value={searchQuery} onChange={searchData} placeholder="Search here..." />
           <Button>
             <FaSearch />
           </Button>
         </div>
-      </div>
+      </div> */}
+      <SearchBox searchQuery={searchQuery} searchData={searchData}/>
       <div className="explain-1">
         <div className="cards">
           <a href="https://discuss.layer5.io/">
