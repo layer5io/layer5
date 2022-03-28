@@ -6,11 +6,11 @@ import Button from "../../../reusecore/Button";
 import BlogSideBarWrapper from "./blogSidebar.style";
 import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp";
 import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
-// import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
+import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
 
 const Discuss = "../../../assets/images/discuss/layer5-discuss-white.png";
 
-const Sidebar = ({ pageContext }) => {
+const Sidebar = ({ pageContext, searchQuery, searchData }) => {
   const data = useStaticQuery(
     graphql`
       query allTagsAndCategories {
@@ -61,14 +61,14 @@ const Sidebar = ({ pageContext }) => {
 
   return (
     <BlogSideBarWrapper>
-      {/* <div className="sidebar-widgets">
+      <div className="sidebar-widgets">
         <div className="search-box">
-         <input type="text" placeholder="Search here..." />
-         <Button>
-         <FaSearch />
-         </Button>
-       </div>
-      </div> */}
+          <input type="text" value={searchQuery} onChange={searchData} placeholder="Search here..." />
+          <Button>
+            <FaSearch />
+          </Button>
+        </div>
+      </div>
       <div className="explain-1">
         <div className="cards">
           <a href="https://discuss.layer5.io/">
