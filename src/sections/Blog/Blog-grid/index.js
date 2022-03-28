@@ -8,8 +8,9 @@ import Card from "../../../components/Card";
 import * as JsSearch from "js-search";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
 import Paginate from "../paginate";
+import useDataList from "./usedataList";
 
-
+const paramsIndex = ["frontmatter", "title"];
 const BlogGrid = ({
   data,
   isListView,
@@ -17,34 +18,9 @@ const BlogGrid = ({
   setGridView,
   pageContext,
 }) => {
-  const [dataList, setDataList] = useState(data.allMdx.nodes);
-  const [search, setSearch] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const queryResults =
-    searchQuery === "" || searchResults.length < 1 ? dataList : searchResults;
-  useEffect(() => {
-    rebuildIndex();
-  }, []);
+  const [queryResults, searchData] = useDataList(data,setSearchQuery,searchQuery,paramsIndex,"title");
 
-  const rebuildIndex = () => {
-    const dataToSearch = new JsSearch.Search("title");
-    dataToSearch.indexStrategy = new JsSearch.PrefixIndexStrategy();
-    dataToSearch.sanitizer = new JsSearch.LowerCaseSanitizer();
-    dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex("title");
-    dataToSearch.addIndex(["frontmatter", "title"]);
-    dataToSearch.addDocuments(dataList);
-    setSearch(dataToSearch);
-    setIsLoading(false);
-  };
-
-  const searchData = (e) => {
-    const queryResult = search.search(e.target.value);
-    setSearchQuery(e.target.value);
-    setSearchResults(queryResult);
-  };
   return (
     <BlogPageWrapper>
       <PageHeader
