@@ -42,6 +42,7 @@ const ListItem = (props) => {
   const onClickAnswer = () => {
     props.answerCallback(props.index);
   };
+  
   return (
     <li
       onClick={(event) => {
@@ -78,6 +79,7 @@ const Timer = (props) => {
 };
   
 const QuestionBox = (props) => {
+  console.log({ props });
   return (
     <div className="quizbox__container">
       <div className="quizbox__head--container"> 
@@ -120,7 +122,7 @@ const QuestionBox = (props) => {
           </div>
           <div>
             <div className="quizbox__progress--score quizbox__progress--control" onClick={props.nextQuestion}>
-              <label>Next</label>
+              <label>{props.answers.length === props.questionIndex ? "Finish":"Next"} </label>
               <BsArrowRight className="quizbox__progress-control__icon"/> 
             </div>
           </div>
@@ -169,16 +171,18 @@ const QuizComponent = () => {
       return;
     }
     let correct = questionData[progress].correct;
-    let newScore = 0,
-        newProgress = 0;
+    let newScore = 0;
+    // let  newProgress = 0;
     if (correct === index) {
       newScore = score + 1;
       setScore(newScore);
-      newProgress = progress + 1;
-      setProgress(newProgress);
+      // newProgress = progress + 1;
+      // setProgress(newProgress);
+      
     } else {
-      newProgress = progress + 1;
-      setProgress(newProgress);
+      // newProgress = progress + 1;
+      // setProgress(newProgress);
+      
     }
   };
 
@@ -206,6 +210,8 @@ const QuizComponent = () => {
     let newCurrent = progress + 1;
     if(newCurrent < questionData.length) {
       setProgress(newCurrent);
+    } else {
+      setProgress(current + 1);
     }
   };
 
