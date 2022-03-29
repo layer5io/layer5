@@ -62,15 +62,6 @@ const Sidebar = ({ pageContext, searchQuery, searchData }) => {
 
   return (
     <BlogSideBarWrapper>
-      {/* <div className="sidebar-widgets">
-        <div className="search-box">
-          <input type="text" value={searchQuery} onChange={searchData} placeholder="Search here..." />
-          <Button>
-            <FaSearch />
-          </Button>
-        </div>
-      </div> */}
-      <SearchBox searchQuery={searchQuery} searchData={searchData}/>
       <div className="explain-1">
         <div className="cards">
           <a href="https://discuss.layer5.io/">

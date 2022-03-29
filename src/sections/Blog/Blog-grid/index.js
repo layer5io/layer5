@@ -9,6 +9,7 @@ import * as JsSearch from "js-search";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
 import Paginate from "../paginate";
 import useDataList from "./usedataList";
+import SearchBox from "../../../reusecore/Search";
 
 const paramsIndex = ["frontmatter", "title"];
 const BlogGrid = ({
@@ -19,7 +20,13 @@ const BlogGrid = ({
   pageContext,
 }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [queryResults, searchData] = useDataList(data,setSearchQuery,searchQuery,paramsIndex,"title");
+  const [queryResults, searchData] = useDataList(
+    data,
+    setSearchQuery,
+    searchQuery,
+    paramsIndex,
+    "title"
+  );
 
   return (
     <BlogPageWrapper>
@@ -33,11 +40,14 @@ const BlogGrid = ({
         <Container>
           <Row>
             <Col xs={12} lg={8}>
-              <BlogViewToolTip
-                isListView={isListView}
-                setListView={setListView}
-                setGridView={setGridView}
-              />
+              <div className="tooltip-search">
+                <BlogViewToolTip
+                  isListView={isListView}
+                  setListView={setListView}
+                  setGridView={setGridView}
+                />
+                <SearchBox searchQuery={searchQuery} searchData={searchData} />
+              </div>
               <div className="blog-grid-wrapper">
                 <Row>
                   {queryResults.map(({ id, frontmatter, fields }) => (
@@ -55,7 +65,11 @@ const BlogGrid = ({
               </div>
             </Col>
             <Col xs={12} lg={4}>
-              <Sidebar searchData={searchData} searchQuery={searchQuery} pageContext={pageContext} />
+              <Sidebar
+                searchData={searchData}
+                searchQuery={searchQuery}
+                pageContext={pageContext}
+              />
             </Col>
           </Row>
         </Container>
