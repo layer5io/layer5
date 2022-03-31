@@ -91,7 +91,7 @@ export const CardWrapper = styled.div`
     }
 
     .post-meta-block{
-        height: 3.5rem;
+        height: auto;
         display: flex;
 
         .author{
