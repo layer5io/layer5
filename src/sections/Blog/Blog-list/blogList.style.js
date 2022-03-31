@@ -49,6 +49,7 @@ export const BlogPageWrapper = styled.div`
 		.author{
 			font-size: 1rem;
 			text-align: start;
+			margin-bottom:0;
 		}
 	}
 
@@ -90,7 +91,7 @@ export const BlogPageWrapper = styled.div`
 			margin-top: 0rem;
 		}
 		.post-content-block{
-			height: 9rem;
+			height: fit-content;
 		}
 	}
 

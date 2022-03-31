@@ -1,7 +1,7 @@
 import React from "react";
 import DiagramStyles from "./diagram.style";
 
-export default function HowMesheryWorksDiagram({ activeExampleIndex }) {
+const HowMesheryWorksDiagram = ({ activeExampleIndex }) => {
   return (
     <DiagramStyles>
       <div className='root' style={{padding: "0px"}}>
@@ -3738,4 +3738,6 @@ export default function HowMesheryWorksDiagram({ activeExampleIndex }) {
       </div>
     </DiagramStyles>
   );
-}
+};
+
+export default HowMesheryWorksDiagram;

@@ -8,6 +8,7 @@ import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
 const Footer = () => {
+  var currentYear = new Date().getFullYear();
   return (
     <FooterWrapper>
       <img
@@ -234,7 +235,7 @@ const Footer = () => {
         <Row>
           <div className="footer-bottom">
             <p className="copyright-text">
-              2021 Copyright ©Layer5, Inc | All Rights Reserved
+              {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
             </p>
             <ul className="policies">
               <li>
