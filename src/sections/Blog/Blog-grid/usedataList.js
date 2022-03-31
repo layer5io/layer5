@@ -12,7 +12,7 @@ const useDataList = (data,setSearchQuery, searchQuery, paramsIndex, paramSearch)
 
   useEffect(() => {
     rebuildIndex();
-  }, []);
+  }, [queryResults]);
 
   const rebuildIndex = () => {
     const dataToSearch = new JsSearch.Search(paramSearch);

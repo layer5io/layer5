@@ -5,7 +5,6 @@ import Sidebar from "../Blog-sidebar";
 import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 import { BlogPageWrapper } from "./blogGrid.style";
 import Card from "../../../components/Card";
-import * as JsSearch from "js-search";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
 import Paginate from "../paginate";
 import useDataList from "./usedataList";
@@ -25,8 +24,10 @@ const BlogGrid = ({
     setSearchQuery,
     searchQuery,
     paramsIndex,
-    "title"
+    "id"
   );
+
+  console.log("data",data);
 
   return (
     <BlogPageWrapper>
@@ -66,8 +67,6 @@ const BlogGrid = ({
             </Col>
             <Col xs={12} lg={4}>
               <Sidebar
-                searchData={searchData}
-                searchQuery={searchQuery}
                 pageContext={pageContext}
               />
             </Col>
