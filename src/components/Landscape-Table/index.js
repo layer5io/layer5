@@ -112,6 +112,7 @@ const Table = ({ columns, data, placeHolder }) => {
                         <td {...cell.getCellProps()}>
                           <a 
                             href={row["original"]["link"]}
+                            rel="nofollow" 
                             data-tip={row["original"]["desc"]}
                             data-for="mesh-name"
                           >
@@ -126,20 +127,20 @@ const Table = ({ columns, data, placeHolder }) => {
                           />
                         </td>
                         :   <td {...cell.getCellProps()}>
-                          <a href={row["original"]["link"]}>
+                          <a href={row["original"]["link"]} rel="nofollow">
                             {cell.render("Cell")}
                           </a>
                         </td>
                     );
                   } else if(cell["column"]["id"] === "tool"){
                     return <td {...cell.getCellProps()}>
-                      <a href={row["original"]["link"]}>
+                      <a href={row["original"]["link"]} rel="nofollow" >
                         {cell.render("Cell")}
                       </a>
                     </td>;
                   } else if(cell["value"] === "Project shutdown"){
                     return <td {...cell.getCellProps()}>
-                      <a href={row["original"]["tmp_link"]}>
+                      <a href={row["original"]["tmp_link"]} rel="nofollow" >
                         {cell.render("Cell")}
                       </a>
                     </td>;

@@ -26,9 +26,6 @@ const BlogGrid = ({
     paramsIndex,
     "id"
   );
-
-  console.log("data",data);
-
   return (
     <BlogPageWrapper>
       <PageHeader
@@ -66,9 +63,7 @@ const BlogGrid = ({
               </div>
             </Col>
             <Col xs={12} lg={4}>
-              <Sidebar
-                pageContext={pageContext}
-              />
+              <Sidebar pageContext={pageContext} />
             </Col>
           </Row>
         </Container>

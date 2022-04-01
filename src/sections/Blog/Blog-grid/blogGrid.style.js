@@ -7,15 +7,19 @@ export const BlogPageWrapper = styled.div`
     margin-bottom: 0.8rem;
   }
 
+  @media only screen and (max-width: 575px) {
+    .blog-grid-wrapper {
+      margin: 0 auto 1rem;
+    }
+  }
+
   @media only screen and (max-width: 992px) {
     .blog-page-wrapper {
       margin-bottom: 5rem;
     }
-  }
 
-  @media only screen and (max-width: 575px) {
-    .blog-grid-wrapper {
-      margin: 0 auto 1rem;
+    .post-meta-block {
+      height: 3.5rem;
     }
   }
 
