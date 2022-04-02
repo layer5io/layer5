@@ -193,7 +193,6 @@ export const QuizComponentWrapper = styled.div`
         margin-bottom: 2rem;
         font-weight: 600;
         font-size: 1rem;
-        color: #222;
         text-transform: capitalize;
         cursor: pointer;
       }
@@ -204,6 +203,14 @@ export const QuizComponentWrapper = styled.div`
       
       .quizbox__main li:last-of-type {
         margin-bottom: 0;
+      }
+      .no-ans{
+        background:transparent;
+        color: #222;
+      }
+      .ans {
+        background-color:#00b39f;
+        color:white;
       }
 
 `;
