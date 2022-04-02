@@ -95,9 +95,13 @@ p.caption {
     font-weight: 700;
     margin: 70px 0px 10px 0px;
   }
-    .title {
-        margin: 70px 0px 10px 0px;
+    .form-title {
+        margin: 0 1rem;
+        padding: 1rem;
         text-align: center;
+        background-color: ${props => props.theme.secondaryColor};
+        color: white;
+        box-shadow: 0px 0px 5px 2px ${props => props.theme.primaryLightColor};
     }
 
     .label {
@@ -106,8 +110,8 @@ p.caption {
 
     .form {
         font-size: .9rem;
-        margin: 1rem;
-        box-shadow: 0px 10px 10px 2px rgba(0, 179, 159, 0.5);
+        margin: 0 1rem 1rem;
+        box-shadow: 0px 5px 5px 2px ${props => props.theme.primaryLightColor};
         padding: 1rem;
 
         label {
@@ -232,9 +236,6 @@ p.caption {
           .title1 {
             text-align: center;
         }
-        .hero-text {
-            text-align: center;
-        }
         p {
             padding-top: 4rem;
         }
@@ -250,6 +251,9 @@ p.caption {
                 .title1 {
                     text-align: center;
                 }
+            }
+            #discuss{
+              display: none;
             }
             
              
