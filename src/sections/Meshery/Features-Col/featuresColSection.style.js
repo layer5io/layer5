@@ -24,11 +24,11 @@ export const FeaturesSectionContainer = styled.div`
     grid-gap: 30px;
     justify-content: center;
 
-    .testDiv {
+    .feature-col {
       grid-column-end: span 2;
     }
 
-    .testDiv:last-child {
+    .feature-col:last-child {
       grid-column-start: 2;
     }
   }

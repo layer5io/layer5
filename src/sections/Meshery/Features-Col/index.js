@@ -27,7 +27,7 @@ function getServiceFeature(service, index) {
 
 function getFeatureBlock(feature, index, performanceCount) {
   return (
-    <FeatureBlockContainer key={index} className="testDiv">
+    <FeatureBlockContainer key={index} className="feature-col">
       <FeatureTitleInfoContainer>
         <div className="feature-block">
           <h3>{feature.name}</h3>
