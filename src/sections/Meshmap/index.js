@@ -55,7 +55,6 @@ const Meshmap = () => {
                   <img
                     src={designerImage}
                     alt="Designer Mode"
-                    objectFit="contain"
                   />
                 ),
               },
@@ -67,7 +66,6 @@ const Meshmap = () => {
                   <img
                     src={visualizerImage}
                     alt="Visualizer Mode"
-                    objectFit="contain"
                   />
                 ),
               },
@@ -84,7 +82,7 @@ const Meshmap = () => {
                   Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.
                   </p>
                   <img src={mesheryCloud} className="meshery-hero-img"/>
-                  <DiscussCallout id="discuss"/>
+                  <DiscussCallout />
                 </Col>
          
                 <Col lg={6} md={6} sm={12}>
