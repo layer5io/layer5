@@ -244,12 +244,13 @@ const QuizComponent = () => {
       updatedQuestionToAns.push(attemptedQuestionToAns); 
 
       setQuestionToAns(updatedQuestionToAns);
+      // If only new question is attempted then need to update the attempted question state otherwise not
+      let newAttempt = attempt+1;
+      if(newAttempt <= questionData.length) {
+        setAttempt(newAttempt);
+      }
     }
 
-    let newAttempt = attempt+1;
-    if(newAttempt <= questionData.length) {
-      setAttempt(newAttempt);
-    }
   };
 
   if (questionData.length > progress) {
