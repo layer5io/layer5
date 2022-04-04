@@ -75,12 +75,12 @@ const DockerExtensionMeshery = () => {
             >
               <Form className="form" method="post">
                 <Field type="hidden" id="form" name="form" value="docker-extension" />
-                <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-                <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                 <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
                 <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
                 <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
                 <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
+                <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
+                <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                 <label htmlFor="occupation" className="form-name">Occupation / Title<span className="required-sign">*</span></label>
                 <Field type="text" className="text-field" id="occupation" name="occupation" />
                 <label htmlFor="org" className="form-name">Organization / Company / School<span className="required-sign">*</span></label>
