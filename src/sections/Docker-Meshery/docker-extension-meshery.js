@@ -14,13 +14,13 @@ const DockerExtensionMeshery = () => {
   const [role, setRole] = useState("");
 
   // Form values
-  const [Person, setPerson] = useState({});
+  const [memberFormOne, setmemberFormOne] = useState({});
   const [submit, setSubmit] = useState(false);
 
   useEffect(() => {
     if (submit) {
       axios.post("https://hook.integromat.com/bklgspwelgqkvbdj4coxompc62d78ngi", {
-        Person,
+        memberFormOne,
       });
     }
   }, [submit]);
@@ -57,7 +57,7 @@ const DockerExtensionMeshery = () => {
                 org: "",
               }}
               onSubmit={values => {
-                setPerson(values);
+                setmemberFormOne(values);
               }}
             >
               <Form className="form" method="post" name="docker-extension">
