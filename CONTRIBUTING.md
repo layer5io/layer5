@@ -64,14 +64,14 @@ The following list of instructions pertains to commonplace site updates by contr
 
 ## Adding a Blog Post
 
-  1. To contribute a blog post, fork this repository, clone it, create a new branch and navigate to the `src/collections/blog` directory.
+  1. In order to contribute a blog post, fork this repository, clone it, create a new branch and navigate to the `src/collections/blog` directory.
   2. Create a copy of the [blog template](https://github.com/layer5io/layer5/tree/master/src/collections/blog/blog-template).
   3. Follow the instructions included in the blog template and name the new file after the title of the blog article.
   4. Entries will be listed in chronological order automatically.
 
 ## Adding News
 
-  1. To add/update news items, fork this repository, clone it, create a new branch, and navigate to the `src/collections/news` directory.
+  1. In order to add/update news items, fork this repository, clone it, create a new branch, and navigate to the `src/collections/news` directory.
   2. Create a copy of the [news template](https://github.com/layer5io/layer5/tree/master/src/collections/news/0000-00-00-news-template).
   3. Follow the instructions included in the news template and name the new file after the title of the news article.
   4. Entries will be listed in chronological order automatically.
