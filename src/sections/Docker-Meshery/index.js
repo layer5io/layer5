@@ -11,7 +11,7 @@ const MesheryDockerPage = () => {
       <div className="page-header-section">
         <Row>
           <Col md={6} sm={12}>
-            <h1>Docker and Meshery Private Beta <br />Program</h1>
+            <h1>Docker Desktop and Meshery <br />Beta Program</h1>
           </Col>
           <Col md={3} sm={12}>
             <img src={meshery} alt="Meshery" className="mesheryIcon"/>
