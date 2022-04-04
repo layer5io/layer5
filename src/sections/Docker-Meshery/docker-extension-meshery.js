@@ -1,32 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { DockerMesheryWrapper } from "./dockerMeshery.style";
 import { Row, Col, Container } from "../../reusecore/Layout";
 import { Field, Formik, Form } from "formik";
 import Button from "../../reusecore/Button";
+import axios from "axios";
 
-const dockerDesktop = "../../assets/images/docker-desktop-extension-for-meshery.png";
+
+const dockerDesktop = "../../assets/images/docker-extension-for-meshery.png";
 import { StaticImage } from "gatsby-plugin-image";
 
-const DockerMesheryBeta = () => {
+const DockerExtensionMeshery = () => {
+
+  const [role, setRole] = useState("");
+
+  // Form values
+  const [Person, setPerson] = useState({});
+  const [submit, setSubmit] = useState(false);
+
+  useEffect(() => {
+    if (submit) {
+      axios.post("https://hook.integromat.com/bklgspwelgqkvbdj4coxompc62d78ngi", {
+        Person,
+      });
+    }
+  }, [submit]);
+
   return (
     <DockerMesheryWrapper>
       <Container>
         <Row>
           <Col md={6} sm={12}>
-            <h2>Docker Desktop Extension for Meshery</h2>
+            <h2>Docker Extension for Meshery</h2>
             <p>
-                The Docker Desktop Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes. 
+                The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes. 
             </p>
-            <StaticImage src={dockerDesktop} alt="Docker Desktop Extension for Meshery"/>
+            <StaticImage src={dockerDesktop} alt="Docker Extension for Meshery"/>
             <p>
                 Join the beta program and get:
               <ul>
-                <li>Early access to the Docker Meshery Extension that offers a visual topology for designing Docker-Compose applications, operating Kubernetes, service meshes, and their workloads</li>
-                <li>Support of 10 different service meshes to the fingertips of Docker Desktop developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.</li>
-                <li>Ability to provide feedback to Docker and Meshery’s product teams</li>
+                <li>Early access to the Docker Extension for Meshery that offers a visual topology for designing Docker-Compose applications, operating Kubernetes, service meshes, and their workloads.</li>
+                <li>Support of 10 different service meshes to the fingertips of developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.</li>
+                <li>Ability to provide feedback to Docker and Meshery’s product teams.</li>
                 <li>Developer support and onboarding help from Layer5 community.</li>
               </ul>
-                Apply now and our team will be in touch!
+                Apply now we'll get you started!
             </p>
           </Col>
           <Col md={6} sm={12}>
@@ -39,8 +56,11 @@ const DockerMesheryBeta = () => {
                 occupation: "",
                 org: "",
               }}
+              onSubmit={values => {
+                setPerson(values);
+              }}
             >
-              <Form className="form" method="post">
+              <Form className="form" method="post" name="docker-extension">
                 <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
                 <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                 <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
@@ -61,4 +81,5 @@ const DockerMesheryBeta = () => {
   );
 };
 
-export default DockerMesheryBeta;
+
+export default DockerExtensionMeshery;

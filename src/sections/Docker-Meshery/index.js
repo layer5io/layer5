@@ -3,7 +3,7 @@ import { DockerMesheryWrapper } from "./dockerMeshery.style";
 import { Row, Col } from "../../reusecore/Layout";
 import docker from "../../assets/images/socialIcons/docker_white.svg";
 import meshery from "../../assets/images/meshery/icon-only/meshery-logo-white.svg";
-import DockerMesheryBeta from "./docker-desktop-meshery-extension";
+import DockerExtensionMeshery from "./docker-extension-meshery";
 
 const MesheryDockerPage = () => {
   return (
@@ -11,7 +11,7 @@ const MesheryDockerPage = () => {
       <div className="page-header-section">
         <Row>
           <Col md={6} sm={12}>
-            <h1>Docker Desktop Extension for Meshery</h1>
+            <h1>Docker Extension for Meshery</h1>
           </Col>
           <Col md={3} sm={12}>
             <img src={meshery} alt="Meshery" className="mesheryIcon"/>
@@ -21,7 +21,7 @@ const MesheryDockerPage = () => {
           </Col>
         </Row>
       </div>
-      <DockerMesheryBeta />
+      <DockerExtensionMeshery />
     </DockerMesheryWrapper>
   );
 };
