@@ -36,10 +36,11 @@ export const DockerMesheryWrapper = styled.div`
 
     h2{
         margin-top: 3rem;
+        margin-top: 1rem;
     }
 
     .form-title {
-        margin: 8rem 1rem 0;
+        margin: 1rem 1rem 0;
         padding: 1rem;
         text-align: center;
         background-color: ${props => props.theme.secondaryColor};
