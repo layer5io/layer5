@@ -17,14 +17,14 @@ const DockerMesheryBeta = () => {
             <p>
                 The Docker Desktop Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes. 
             </p>
-            <StaticImage src={dockerDesktop} alt="Docker Meshery Extension"/>
+            <StaticImage src={dockerDesktop} alt="Docker Desktop Extension for Meshery"/>
             <p>
-                Join the private beta program and get:
+                Join the beta program and get:
               <ul>
                 <li>Early access to the Docker Meshery Extension that offers a visual topology for designing Docker-Compose applications, operating Kubernetes, service meshes, and their workloads</li>
                 <li>Support of 10 different service meshes to the fingertips of Docker Desktop developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.</li>
                 <li>Ability to provide feedback to Docker and Meshery’s product teams</li>
-                <li>Developer support and onboarding help from Layer5 community</li>
+                <li>Developer support and onboarding help from Layer5 community.</li>
               </ul>
                 Apply now and our team will be in touch!
             </p>
