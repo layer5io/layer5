@@ -14,7 +14,7 @@ const MesheryDocker = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Meshery Docker Beta Program"
+        <SEO title="Docker Desktop Extension for Meshery Beta Program"
           description="The Docker Desktop Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes."
           image="/images/meshery-logo-dark-text.png" />
         <Navigation />
