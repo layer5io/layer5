@@ -41,30 +41,20 @@ const ResultBox = ({ score, resetQuiz,correct, incorrect,total  }) => (
 
 const ListItem = (props) => {
 
-  const selected = {
-    backgroundColor: "#00b39f",
-    color: "white"
-  };
-
-  const initialStyle = {
-    backgroundColor: "transparent",
-    color: "#222"
-  };
-
   const onClickAnswer = () => {
     props.answerCallback(props.index);
   };
   
   return (
     <li
-      onClick={() => {
-        props.onClick();
+      className={`${props.pquestionToAns?.aIndex===props.index ? "ans":"no-ans"}`}
+      onClick={(event) => {
+        const e = event.target;
         setTimeout(() => {
           onClickAnswer();
         }, 300);
-        props.attemptQuestion();
+        props.attemptQuestion(props.index);
       }}
-      style={props.isSelected ? selected : initialStyle}
     >
       {props.answerItem}
     </li>
@@ -112,6 +102,7 @@ const QuestionBox = (props) => {
                 index={index}
                 attemptQuestion={props.attemptQuestion}
                 key={index}
+                pquestionToAns={props.pquestionToAns}
               />
             );
           }, this)}
@@ -159,6 +150,7 @@ const QuizComponent = () => {
   const [score, setScore] =  useState(0);
   const [time, setTime] = useState(Date.now() + 180000);
   const [showInstruction, setShowInstruction] = useState(true);
+  const [questionToAns,setQuestionToAns]=useState([]);
 
   const finishTimer = () => {
     setTimeout(() => {
@@ -235,6 +227,7 @@ const QuizComponent = () => {
   };
 
   let questionDatum = questionData[progress];
+  let pquestionToAns=questionToAns.find(item => item.qIndex==progress);
 
   if (showInstruction){
     return (
@@ -249,11 +242,31 @@ const QuizComponent = () => {
     );
   }
 
-  const attemptQuestionHandler = () => {
-    let newAttempt = attempt+1;
-    if(newAttempt <= questionData.length) {
+  const attemptQuestionHandler = (aIndex) => {
+    let qIndex=progress;
+    let attemptedQuestionToAns={
+      qIndex:qIndex,
+      aIndex:aIndex
+    };
+    // finding if the question is already attempted or not
+    let existQuestionIndex=questionToAns.findIndex(item => item.qIndex===qIndex);
+
+    // If it is already exsist replace the old ans with new ans
+    if(existQuestionIndex>=0){
+      let updatedQuestionToAns=[...questionToAns];
+      updatedQuestionToAns[existQuestionIndex]=attemptedQuestionToAns;
+      setQuestionToAns(updatedQuestionToAns);
+      
+    }else{
+      let updatedQuestionToAns=[...questionToAns];
+      updatedQuestionToAns.push(attemptedQuestionToAns); 
+
+      setQuestionToAns(updatedQuestionToAns);
+      // If only new question is attempted then need to update the attempted question state otherwise not
+      let newAttempt = attempt+1;
       setAttempt(newAttempt);
     }
+
   };
 
   if (questionData.length > progress) {
@@ -265,6 +278,7 @@ const QuizComponent = () => {
           answers={questionDatum.answers}
           answerCallback={checkAnswer}
           questionDatum={questionDatum}
+          pquestionToAns={pquestionToAns?pquestionToAns:null}
           time={time}
           attempted={attempt}
           notattempted={questionData.length-attempt}
