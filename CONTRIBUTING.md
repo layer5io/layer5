@@ -6,7 +6,7 @@ We are beyond excited to see that you want to contribute! We would love to accep
   - [Contributing to Layer5 Projects](#contributing-to-layer5-projects)
   - [Contributing to Layer5's Blogs](#contributing-to-layer5s-blogs)
   - [How to Contribute](#how-to-contribute)
-      - [Prerequisites](#prequisites)
+      - [Prerequisites](#prerequisites)
       - [Set up your Local Development Environment](#set-up-your-local-development-environment)
       - [Signing-off on Commits](#signing-off-on-commits)
 
