@@ -41,16 +41,6 @@ const ResultBox = ({ score, resetQuiz,correct, incorrect,total  }) => (
 
 const ListItem = (props) => {
 
-  const selected = {
-    backgroundColor: "#00b39f",
-    color: "white"
-  };
-
-  const initialStyle = {
-    backgroundColor: "transparent",
-    color: "#222"
-  };
-
   const onClickAnswer = () => {
     props.answerCallback(props.index);
   };
@@ -65,7 +55,6 @@ const ListItem = (props) => {
         }, 300);
         props.attemptQuestion(props.index);
       }}
-      style={props.isSelected ? selected : initialStyle}
     >
       {props.answerItem}
     </li>
@@ -275,9 +264,7 @@ const QuizComponent = () => {
       setQuestionToAns(updatedQuestionToAns);
       // If only new question is attempted then need to update the attempted question state otherwise not
       let newAttempt = attempt+1;
-      if(newAttempt <= questionData.length) {
-        setAttempt(newAttempt);
-      }
+      setAttempt(newAttempt);
     }
 
   };
