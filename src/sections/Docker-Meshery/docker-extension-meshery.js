@@ -46,15 +46,19 @@ const DockerExtensionMeshery = () => {
           <Col md={6} sm={12}>
             <StaticImage src={dockerDesktop} alt="Docker Extension for Meshery" />
             <p>
-              Join the beta program and get:
-              <ul>
-                <li>Early access to the Docker Extension for Meshery that offers a visual topology for designing Docker-Compose applications, operating Kubernetes, service meshes, and their workloads.</li>
-                <li>Support of 10 different service meshes to the fingertips of developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.</li>
-                <li>Ability to provide feedback to Docker and Meshery’s product teams.</li>
-                <li>Developer support and onboarding help from Layer5 community.</li>
-              </ul>
-              Apply now we'll get you started!
-            </p>
+              Join the beta program and get:</p>
+            <ol>
+              <li><b>Service mesh support for your Docker Compose apps</b> - <i>Import your Docker Compose apps. Configure and deploy them to Kubernetes and any service mesh.</i></li>
+              <li><b>Visual designer for Docker Compose apps</b> - <i>Early access to the Docker Extension for Meshery that offers a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.</i></li>
+              <li><b>Single-click deployment of any service mesh</b> - <i>Support of 10 different service meshes to the fingertips of developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.</i></li>
+            </ol>
+            You will also be able to:
+            <ul>
+              <li>Provide early feedback to Docker and Meshery’s product teams.</li>
+              <li>Receive support and onboarding help from Layer5.</li>
+            </ul>
+            <p className="uppercase">Let's get you started!</p>
+
           </Col>
           <Col md={6} sm={12}>
             <h3 className="form-title">Apply For the Beta Program</h3>

@@ -49,6 +49,10 @@ export const DockerMesheryWrapper = styled.div`
         }
     }
 
+    p.uppercase { 
+        text-align: center;
+        text-transform: uppercase; 
+      }
     h2 {
         padding: 2rem 0rem;
     }
