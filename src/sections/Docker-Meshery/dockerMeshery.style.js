@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const DockerMesheryWrapper = styled.div`
     .page-header-section {
-        min-height: 35rem;
+        min-height: 30rem;
         background: rgb(71,126,150);
         background: linear-gradient(250deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 35%, rgba(60,73,79,1) 100%);
         display: flex;
         align-items: center;
+        align-content: space-between;
         flex-direction: column;
         padding: 0 6rem;
         justify-content: center;
@@ -15,28 +16,41 @@ export const DockerMesheryWrapper = styled.div`
         }
 
         .dockerIcon{
-            height: 15rem;
+            height: 12rem;
             width: auto;
         }
         .mesheryIcon{
-            height: 15rem;
+            height: 12rem;
             width: auto;
         }
 
           @media screen and (max-width: 768px) {
-            text-align: center;
-            img{
-                display: block;
-                margin: 1rem auto 0;
-                height: 10rem;
+            
+              text-align: center;
+              justify-content: center;
+              align-items: center;
+            
+            .dockerIcon{
+              height: 5rem;
+              width: auto;
+            }
+            .mesheryIcon{
+                height: 5rem;
                 width: auto;
             }
+            img {
+                
+                margin: auto;
+                
+                height: 50%;
+                width: 50%;
+            }
           }
+        }
     }
 
-    h2{
-        margin-top: 3rem;
-        margin-top: 1rem;
+    h2 {
+        padding: 2rem 0rem;
     }
 
     .form-title {
@@ -94,6 +108,9 @@ export const DockerMesheryWrapper = styled.div`
       }
     }
     @media only screen and (max-width: 768px) {
+      .page-header-section {
+        min-height: 20rem;
+      }
         .form-title{
           margin: 3rem 1rem 0;
         }
