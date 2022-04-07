@@ -259,6 +259,11 @@ export const ProjectWrapper = styled.div`
         .project__card.six h5{ 
             width: 100%;
         }
+        .project__card.seven h5{ 
+            width: 100%;
+            padding-top: 1px;
+            
+        }
      }
      @media only screen and (max-width: 740px) {
         .project__grid{
