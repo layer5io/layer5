@@ -49,6 +49,32 @@ export const DockerMesheryWrapper = styled.div`
         }
     }
 
+    .black-box {
+      padding: 20px;
+      min-height: 400px;
+      margin: 5%;
+      padding: 5%;
+      background-color: ${props => props.theme.darkJungleGreenColor};
+      border-radius: 6rem;
+
+      .sign{  
+        width: 5.5rem;
+        transform: skewX(-15deg);
+      }
+      
+      h2, h3 {
+        color: white;
+      }
+      h2{
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+      p {
+        margin-top: .85rem;
+        color: white;
+      }
+      }
+
     p.uppercase { 
         text-align: center;
         text-transform: uppercase; 
