@@ -7,6 +7,7 @@ import DockerMesheryPage from "../sections/Docker-Meshery";
 import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
+import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
 
 
 const MesheryDocker = () => {
@@ -19,6 +20,7 @@ const MesheryDocker = () => {
           image="/images/meshery-logo-dark-text.png" />
         <Navigation />
         <DockerMesheryPage />
+        <LearnServiceMeshCTA />
         <Footer />
       </Layout>
     </ThemeProvider>
