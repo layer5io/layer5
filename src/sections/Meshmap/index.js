@@ -11,7 +11,7 @@ import MeshmapBanner from "./meshmap_banner";
 import { Link } from "gatsby";
 import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
 import designerImage from "../../assets/images/meshmap/MeshMap.png";
-import visualizerImage from "../../assets/images/meshmap/MeshMapVisualizer.png";
+import visualizerImage from "../../assets/images/meshmap/MeshMap-Visualizer.png";
 
 
 const Meshmap = () => {
