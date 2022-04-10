@@ -62,7 +62,7 @@ module.exports = {
     ],
     "linebreak-style": [
       "error",
-      "unix"
+      "windows"
     ],
     "quotes": [
       "error",
@@ -74,5 +74,8 @@ module.exports = {
     ],
     "strict": 0
   }
+//   rules: {
+//     'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+// }
 };
 
