@@ -58,9 +58,9 @@ const BlogGrid = ({
               <div className="blog-grid-wrapper">
                 <Row>
                   {queryResults.length < 1 && (
-                    <div>
+                    <Col xs={12} sm={6}>
                       No blog post that matches the title "{searchQuery}" found.
-                    </div>
+                    </Col>
                   )}
                   {currentPosts?.map(({ id, frontmatter, fields }) => (
                     <Col key={id} xs={12} sm={6}>
