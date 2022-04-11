@@ -5,13 +5,13 @@ import Button from "../../reusecore/Button";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import Features from "../../components/Features-carousel";
-import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
-import designerImage from "../../assets/images/meshmap/MeshMap.png";
-import visualizerImage from "../../assets/images/meshmap/Visualizer.png";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
 import { Link } from "gatsby";
+import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
+import designerImage from "../../assets/images/meshmap/MeshMap.png";
+import visualizerImage from "../../assets/images/meshmap/MeshMap-Visualizer.png";
 
 
 const Meshmap = () => {
@@ -75,21 +75,18 @@ const Meshmap = () => {
             <Container>
 
               <Row className="description">
-                <Col lg={6} md={6} sm={12} className="meshery-hero-img">
-                  <img src={mesheryCloud} />
-                </Col>
-                <Col className="desc-text" lg={6} md={6} sm={12}>
+                <Col lg={6} md={6} sm={12} className="desc-text">
                   <h1 className="heading-1"> Accessing</h1>
                   <h1 className="heading-2">MeshMap Beta</h1>
                   <p className="desc-p">
                   Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.
                   </p>
+                  <img src={mesheryCloud} className="meshery-hero-img" alt="Meshery Cloud" />
+                  <DiscussCallout />
                 </Col>
-              </Row>
-
-              <div className="hero-section">
-                <div className="hero-text">
-                  <h3 className="title" id="meshmap-beta">Join the Waiting List</h3>
+         
+                <Col lg={6} md={6} sm={12}>
+                  <h3 className="form-title">Apply For the Beta Program</h3>
                   <Formik
                     initialValues={{
                       firstname: "",
@@ -191,8 +188,8 @@ const Meshmap = () => {
                       <Button secondary type="submit" className="btn" title="Submit" />
                     </Form>
                   </Formik>
-                </div>
-              </div>
+                </Col>
+              </Row>
             </Container>
           </div>
         </Container>
