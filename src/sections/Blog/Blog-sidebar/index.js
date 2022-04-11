@@ -11,7 +11,7 @@ import SearchBox from "../../../reusecore/Search";
 
 const Discuss = "../../../assets/images/discuss/layer5-discuss-white.png";
 
-const Sidebar = ({ pageContext, searchQuery, searchData }) => {
+const Sidebar = ({ pageContext}) => {
   const data = useStaticQuery(
     graphql`
       query allTagsAndCategories {

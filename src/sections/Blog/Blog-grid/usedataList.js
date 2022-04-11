@@ -8,7 +8,7 @@ const useDataList = (data,setSearchQuery, searchQuery, paramsIndex, paramSearch)
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const queryResults =
-      searchQuery === "" || searchResults.length < 1 ? dataList : searchResults;
+      searchQuery === "" ? dataList : searchResults;
 
   useEffect(() => {
     rebuildIndex();
