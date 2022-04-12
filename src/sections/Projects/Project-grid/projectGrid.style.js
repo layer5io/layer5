@@ -198,7 +198,7 @@ export const ProjectWrapper = styled.div`
     }
     .project__card-container-seven{
         max-width: 100%;
-        height: 10rem;
+        height: 15rem;
         width: 12rem;
         display: flex;
         flex-direction: column;
@@ -261,7 +261,7 @@ export const ProjectWrapper = styled.div`
         }
         .project__card.seven h5{ 
             width: 100%;
-            padding-top: 1px;
+            // padding-top: 10px;
             
         }
      }
@@ -320,6 +320,13 @@ export const ProjectWrapper = styled.div`
             h5{ 
                 width: 100%;
             }
+        }
+        .project__card-container-seven{
+            height: 10rem;
+        }
+        .project__card.seven
+        h5{
+            margin-top: 30px;
         }
     }
     @media only screen and (max-width: 568px) {
