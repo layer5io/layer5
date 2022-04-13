@@ -5,6 +5,7 @@ import Button from "../../../reusecore/Button";
 import { BsArrowLeft } from "@react-icons/all-files/bs/BsArrowLeft";
 import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
 
+
 const Instruction = ({closeInstruction}) => {
   return (
     <section className="instruction__container">
@@ -39,20 +40,37 @@ const ResultBox = ({ score, resetQuiz,correct, incorrect,total  }) => (
 );
 
 const ListItem = (props) => {
+
+  const selected = {
+    backgroundColor: "#00b39f",
+    color: "white"
+  };
+
+  const initialStyle = {
+    backgroundColor: "transparent",
+    color: "#222"
+  };
+
   const onClickAnswer = () => {
     props.answerCallback(props.index);
   };
   
   return (
     <li
+<<<<<<< HEAD
       className={`${props.pquestionToAns?.aIndex===props.index ? "ans":"no-ans"}`}
       onClick={(event) => {
         const e = event.target;
+=======
+      onClick={() => {
+        props.onClick();
+>>>>>>> a492dbe2ce (make selected option remain highlighted)
         setTimeout(() => {
           onClickAnswer();
         }, 300);
         props.attemptQuestion(props.index);
       }}
+      style={props.isSelected ? selected : initialStyle}
     >
       {props.answerItem}
     </li>
@@ -76,7 +94,9 @@ const Timer = (props) => {
 };
   
 const QuestionBox = (props) => {
-  console.log({ props });
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+
+  
   return (
     <div className="quizbox__container">
       <div className="quizbox__head--container"> 
@@ -91,6 +111,8 @@ const QuestionBox = (props) => {
           {props.answers.map(function (answer, index) {
             return (
               <ListItem
+                isSelected={selectedAnswer === index}
+                onClick={() => setSelectedAnswer(index)}
                 answerItem={answer}
                 answerCallback={props.answerCallback}
                 index={index}
@@ -113,13 +135,19 @@ const QuestionBox = (props) => {
         </div>
         <div className="quizbox__control">
           <div>
-            <div className="quizbox__progress--score quizbox__progress--control" onClick={props.prevQuestion}>
+            <div className="quizbox__progress--score quizbox__progress--control" onClick={() => {
+              props.prevQuestion();
+              setSelectedAnswer(null);
+            }}>
               <BsArrowLeft className="quizbox__progress-control__icon"/>
               <label>Previous</label>
             </div>
           </div>
           <div>
-            <div className="quizbox__progress--score quizbox__progress--control" onClick={props.nextQuestion}>
+            <div className="quizbox__progress--score quizbox__progress--control" onClick={() => {
+              props.nextQuestion();
+              setSelectedAnswer(null);
+            }}>
               <label>{props.answers.length === props.questionIndex ? "Finish":"Next"} </label>
               <BsArrowRight className="quizbox__progress-control__icon"/> 
             </div>
