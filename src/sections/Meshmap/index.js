@@ -201,8 +201,8 @@ const Meshmap = () => {
       <Container>
         <div className="black-box">
           <h2>Thank you for your interest in Layer5 MeshMap!</h2>
-          <p>You are now signed up for the Layer5 MeshMap beta program and your position on the waiting list is confirmed. Please patiently await your acceptance and start of the beta program.  We are working through a growing waitlist. </p>
-          <p>If you have any questions in the meantime, please email <a href="mailto:meshmap@layer5.io">meshmap@layer5.io</a>.</p>
+          <p>You are now signed up for the Layer5 MeshMap beta program and your position on the waiting list is confirmed. Please patiently await your acceptance and start of the beta program. We are working through a growing waitlist </p>
+          <p>In the meantime, please visit our <a href="https://discuss.layer5.io">community forum</a> or join us in our <a href="https://slack.layer5.io">community Slack</a>.</p>
           <h3 className="white">- Team <img src={layer5_img} alt="Layer5" width="125" /></h3>
         </div>
       </Container>
