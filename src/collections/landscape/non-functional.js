@@ -10,7 +10,6 @@ import NetworkServiceMesh from "../../assets/images/service-mesh-icons/nsm.svg";
 import Rotor from "../../assets/images/service-mesh-icons/rotor.svg";
 import Maistra from "../../assets/images/service-mesh-icons/maistra.svg";
 import SofaMesh from "../../assets/images/service-mesh-icons/sofa-mesh.svg";
-import Octarine from "../../assets/images/service-mesh-icons/octarine.svg";
 import TraefikMesh from "../../assets/images/service-mesh-icons/traefik.svg";
 import AppMesh from "../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import Kuma from "../../assets/images/service-mesh-icons/kuma.svg";
@@ -199,19 +198,6 @@ export const non_functional=[{
   category: "Service Mesh",
   timeline_order: 14,
   icon: SofaMesh
-},
-{
-  name: "Octarine",
-  opensource: "No",
-  link: "https://www.octarinesec.com/",
-  governance: "OctarineSec",
-  primary_lang: "Go",
-  announce_date: "November 2018",
-  ga_1_date: "November 2019",
-  commercial: "Octarine",
-  category: "Service Mesh",
-  timeline_order: 15,
-  icon: Octarine
 },
 {
   name: "Yggdrasil",
