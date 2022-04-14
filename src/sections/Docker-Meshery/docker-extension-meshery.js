@@ -86,9 +86,9 @@ const DockerExtensionMeshery = () => {
                 <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
                 <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                 <label htmlFor="occupation" className="form-name">Occupation / Title<span className="required-sign">*</span></label>
-                <Field type="text" className="text-field" id="occupation" name="occupation" />
+                <Field type="text" className="text-field" id="occupation" name="occupation" required />
                 <label htmlFor="org" className="form-name">Organization / Company / School<span className="required-sign">*</span></label>
-                <Field type="text" className="text-field" id="org" name="org" />
+                <Field type="text" className="text-field" id="org" name="org" required />
                 <Button secondary type="submit" className="btn" title="Submit" />
               </Form>
             </Formik>
