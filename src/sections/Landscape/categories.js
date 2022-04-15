@@ -17,7 +17,7 @@ function Categories() {
               mesh.name?
                 <li key={mesh.name}>
                   <div className="tooltip">
-                    <a href={mesh.link} data-tip={mesh.desc} data-for="mesh-name">{mesh.name}</a>
+                    <a href={mesh.link} rel="nofollow" data-tip={mesh.desc} data-for="mesh-name">{mesh.name}</a>
                     <ReactTooltip 
                       id="mesh-name"
                       place="bottom"
@@ -39,7 +39,7 @@ function Categories() {
               client.name?
                 <li key={client.name}>
                   <div className="tooltip">
-                    <a href={client.link} data-tip={client.desc} data-for="client-name">{client.name}</a>
+                    <a href={client.link} rel="nofollow" data-tip={client.desc} data-for="client-name">{client.name}</a>
                     <ReactTooltip 
                       id="client-name"
                       place="bottom"
@@ -60,7 +60,7 @@ function Categories() {
               gateway.name?
                 <li key={gateway.name}>
                   <div className="tooltip">
-                    <a href={gateway.link} data-tip={gateway.desc} data-for="gateway-name">{gateway.name}</a>
+                    <a href={gateway.link} rel="nofollow" data-tip={gateway.desc} data-for="gateway-name">{gateway.name}</a>
                     <ReactTooltip 
                       id="gateway-name"
                       place="bottom"
@@ -81,7 +81,7 @@ function Categories() {
               proxy.name?
                 <li key={proxy.name}>
                   <div className="tooltip">
-                    <a href={proxy.link} data-tip={proxy.desc} data-for="proxy-name">{proxy.name}</a>
+                    <a href={proxy.link} rel="nofollow" data-tip={proxy.desc} data-for="proxy-name">{proxy.name}</a>
                     <ReactTooltip 
                       id="proxy-name"
                       place="bottom"
@@ -102,7 +102,7 @@ function Categories() {
               balancer.name?
                 <li key={balancer.name}>
                   <div className="tooltip">
-                    <a href={balancer.link} data-tip={balancer.desc} data-for="balancer-name">{balancer.name}</a>
+                    <a href={balancer.link} rel="nofollow" data-tip={balancer.desc} data-for="balancer-name">{balancer.name}</a>
                     <ReactTooltip 
                       id="balancer-name"
                       place="bottom"
