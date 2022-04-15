@@ -48,6 +48,7 @@ const ListItem = (props) => {
   return (
     <li
 <<<<<<< HEAD
+<<<<<<< HEAD
       className={`${props.pquestionToAns?.aIndex===props.index ? "ans":"no-ans"}`}
       onClick={(event) => {
         const e = event.target;
@@ -55,6 +56,11 @@ const ListItem = (props) => {
       onClick={() => {
         props.onClick();
 >>>>>>> a492dbe2ce (make selected option remain highlighted)
+=======
+      className={`${props.pquestionToAns?.aIndex===props.index ? "ans":"no-ans"}`}
+      onClick={(event) => {
+        const e = event.target;
+>>>>>>> upstream/master
         setTimeout(() => {
           onClickAnswer();
         }, 300);
