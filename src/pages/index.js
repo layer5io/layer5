@@ -1,8 +1,6 @@
 import React from "react";
 import {ThemeProvider} from "styled-components";
-
 import Layout from "../components/layout";
-
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
 import Banner from "../sections/Home/Banner";
@@ -21,7 +19,6 @@ import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
 import CloudNativeLeaders from "../sections/Home/Cloud-Native";
 import SoSpecial from "../sections/Home/So-Special-Section";
-import Meshmap from "../sections/Meshmap";
 
 const IndexPage = () => { 
   const schema= {
@@ -55,7 +52,6 @@ const IndexPage = () => {
         {/* <Pricing /> */}
         {/* <Testimonial /> */}
         <CloudNativeLeaders />
-        <Meshmap/>
         <StewardsOfIndustry />
         {/* <Getapp /> */}
         {/* <News /> */}
