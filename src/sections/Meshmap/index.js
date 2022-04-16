@@ -12,7 +12,6 @@ import { Link } from "gatsby";
 import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
 import designerImage from "../../assets/images/meshmap/MeshMap.png";
 import visualizerImage from "../../assets/images/meshmap/MeshMap-Visualizer.png";
-import { getLowResolutionImageURL } from "gatsby-plugin-image";
 
 
 const Meshmap = () => {
