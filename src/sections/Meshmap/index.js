@@ -12,6 +12,7 @@ import { Link } from "gatsby";
 import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
 import designerImage from "../../assets/images/meshmap/MeshMap.png";
 import visualizerImage from "../../assets/images/meshmap/MeshMap-Visualizer.png";
+import { getLowResolutionImageURL } from "gatsby-plugin-image";
 
 
 const Meshmap = () => {
@@ -23,6 +24,8 @@ const Meshmap = () => {
 
   const [submit, setSubmit] = useState(false);
 
+  const [validateAccounts, setValidateAccounts] = useState(false);
+  const errorAccounts = "Please provide at least one account";
   const nextStep = () => {
     if (stepNumber === 0) {
       setSubmit(true);
@@ -101,9 +104,14 @@ const Meshmap = () => {
                       form: "meshmap",
                     }}
                     onSubmit={values => {
-                      setMemberFormOne(values);
-                      setStepNumber(1);
-                      nextStep();
+                      if(google.value||github.value||twitter.value||linkedin.value) {
+                        setMemberFormOne(values);
+                        setStepNumber(1);
+                        nextStep();
+                      }
+                      else {
+                        setValidateAccounts(true);
+                      }
                     }}
                   >
                     <Form className="form" method="post">
@@ -122,6 +130,7 @@ const Meshmap = () => {
                         <p>
                           Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
                         </p>
+                        {validateAccounts && <p style={{margin:"0px",color:"red"}}>{errorAccounts}</p>}
                         <div className="accounts_group">
                           <label htmlFor="google" className="form-name">Google</label>
                           <Field type="text" placeholder="my-address@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
