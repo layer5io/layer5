@@ -293,6 +293,23 @@ export const meshes=[
     spiffe: "No",
     spire : "No"
   },
+    {
+    name: "Tencent Cloud Mesh (TCM)",
+    desc: "a fully managed control plane integrates with Tencent Cloud infrastructure which is fully compatible with Istio.",
+    link: "https://cloud.tencent.com/product/tcm",
+    autoinject: "Yes",
+    tcp_web: "Yes",
+    grpc: "Yes",
+    h2: "Yes",
+    multi_cluster: "Yes",
+    multi_tenant: "Yes",
+    prometheus: "Yes",
+    tracing: "Yes",
+    encryption: "Yes",
+    multi_tenant_score: 10,
+    spiffe: "?",
+    spire: "?"
+  },
   {
     name: "Maistra",
     desc: "Maistra is a security focused distribution of Istio designed to run on top of OpenShift.",
