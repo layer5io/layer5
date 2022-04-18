@@ -184,12 +184,14 @@ export const ProjectWrapper = styled.div`
         img{
             width: 90px;
             align-self: center;
+            margin-top: 2rem;
             @media only screen and (min-width: 780px) {
                 align-self: flex-start;
             }
         }
         h5{
             align-self: center;
+            margin-top: 2rem;
             @media only screen and (min-width: 780px) {
                 align-self: flex-end;
                 padding-top:  20px;
@@ -232,6 +234,18 @@ export const ProjectWrapper = styled.div`
        .project__card h5{
         font-size: 15px;
         }
+        .project__card.four{
+            width: 100%;
+        }
+        .project__card.seven{
+            img{
+                margin-top: 30px;
+              
+            }
+            h5{
+                margin-top: 30px;
+            }
+        }
     }
     @media only screen and (max-width: 991px) {
         padding: 5px 0 0 0;
@@ -259,9 +273,14 @@ export const ProjectWrapper = styled.div`
         .project__card.six h5{ 
             width: 100%;
         }
-        .project__card.seven h5{ 
+        .project__card.seven {
+            img{
+                margin-top:10px;
+            }
+            h5{ 
             width: 100%;
-            // padding-top: 10px;
+            font-size: 12px;
+            margin-top: 10px;
             
         }
      }
@@ -321,13 +340,15 @@ export const ProjectWrapper = styled.div`
                 width: 100%;
             }
         }
-        .project__card-container-seven{
+        .project__card.seven{
             height: 10rem;
-        }
-        .project__card.seven
-        h5{
-            margin-top: 30px;
-        }
+            img{
+                margin-top: 45px;
+            }
+            h5{
+                margin-top: 40px;
+            }
+        
     }
     @media only screen and (max-width: 568px) {
         margin-left: 5%;
