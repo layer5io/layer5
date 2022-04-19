@@ -4,7 +4,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
 import { ProjectWrapper } from "./projectGrid.style";
-import CommunityCallCard from "../../../components/CommunityCallCard/index";
+import DockerExtensionCTA from "../../Docker-Meshery/docker-extension-CTA";
 
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import landscape from "../../../assets/images/landscape/layer5_landscape_green.svg";
@@ -93,7 +93,7 @@ const ProjectPage = () => {
             </Link>
           </div>
 
-          <CommunityCallCard />
+          <DockerExtensionCTA />
         </Container>
       </div>
     </ProjectWrapper>
