@@ -257,12 +257,10 @@ const MesheryFeatures = () => {
                 "Plug in different service meshes, load generators and providers.",
               content: (
                 <div className="feature-expose-full">
-                  <a href={img6}>
-                    <img
-                      src={img6}
-                      alt="Meshery, the extensible service mesh manager"
-                    />
-                  </a>
+                  <img
+                    src={img6}
+                    alt="Meshery, the extensible service mesh manager"
+                  />
                   <p>
                     Meshery is not just an application. It is a set of
                     microservices where the central component is itself called
@@ -283,12 +281,7 @@ const MesheryFeatures = () => {
                 "Develop service mesh-ready apps using Docker Desktop and Meshery",
               content: (
                 <div className="feature-expose-full">
-                  <a href={img7}>
-                    <img
-                      src={img7}
-                      alt="Meshery, Docker Extension for Meshery"
-                    />
-                  </a>
+                  <img src={img7} alt="Meshery, Docker Extension for Meshery" />
                   <p>
                     The Docker Extension for Meshery extends Docker Desktop’s
                     position as the cloud native developer’s go-to Kubernetes
@@ -297,7 +290,7 @@ const MesheryFeatures = () => {
                   </p>
                 </div>
               ),
-              learnMoreLink: "https://layer5.io/docker-extension-meshery",
+              learnMoreLink: "/docker-extension-meshery",
             },
           ]}
         />
