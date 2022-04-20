@@ -124,6 +124,15 @@ p.caption {
             display: block;
 
         }
+        .formRight select {
+          background: none repeat scroll 0 0 #FFFFFF;
+          border: 1px solid black;
+          border-radius: 10px 10px 10px 10px;
+          height: 40px;
+          margin: 0 0 0 25px;
+          padding: 10px;
+          width: 200px;
+      }
 
         .text-field {
             width: 100%;

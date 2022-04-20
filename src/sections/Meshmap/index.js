@@ -29,7 +29,7 @@ const Meshmap = () => {
     }
     window.scrollTo(0, 0);
   };
-
+  const [selected, setSelected] = useState(null);
 
   useEffect(() => {
     if (submit) {
@@ -133,57 +133,25 @@ const Meshmap = () => {
                         </div>
                       </div>
 
-                      <label htmlFor="role" className="form-name">What role best identifies you?<span className="required-sign">*</span></label>
-                      <div role="group" aria-labelledby="my-radio-group">
-                        <label>
-                          <Field type="radio" name="role" value="Architect" />
-                            Architect
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="Business Operations" />
-                            Business Operations
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="Developer" />
-                            Developer
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="DevOps" />
-                            DevOps/SRE/Sysadmin
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="Executive" />
-                            Executive
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="IT Operations" />
-                            IT Operations
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="Media" />
-                            Media/Analyst
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="Product Manager" />
-                            Product Manager
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="Professor" />
-                            Professor/Academic
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="Sales Marketing" />
-                            Sales Marketing
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="Student" />
-                            Student
-                        </label>
-                        <label>
-                          <Field type="radio" name="role" value="Other" />
-                            Other
-                        </label>
+                      <label For="role" className="form-name">What role best identifies you?<span className="required-sign">*</span></label>
+                      <div className="formRight">
+                        <select onChange={(e) => setSelected(e.target.value || null)} value={selected || ""}>
+                          <option value="Architect">Architect</option>
+                          <option value="Business Operations">Business Operations</option>
+                          <option value="Developer">Developer</option>
+                          <option value="DevOps">DevOps/SRE/Sysadmin </option>
+                          <option value="Executive">Executive</option>
+                          <option value="IT Operations">IT Operations</option>
+                          <option value="Media"> Media/Analyst</option>
+                          <option value="Product Manage">Product Manage</option>
+                          <option value="Professor">Professor/Academic</option>
+                          <option value="Sales Marketing">Sales Marketing</option>
+                          <option value="Student">Student</option>
+                          <option value="Other">Other</option>
+                            
+                        </select>
                       </div>
+                  
                       <br />
                       <Button secondary type="submit" className="btn" title="Submit" />
                     </Form>
