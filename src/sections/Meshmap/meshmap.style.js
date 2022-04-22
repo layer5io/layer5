@@ -127,20 +127,21 @@ p.caption {
         .formRight select {
           background: none repeat scroll 0 0 #FFFFFF;
           border: 1px solid black;
-          border-radius: 10px 10px 10px 10px;
-          height: 40px;
-          margin: 0 0 0 25px;
-          padding: 10px;
-          width: 200px;
+          border-radius: 10px;
+          height: 50px;
+          padding: 1rem .5rem;
+          width: 94%;
+          font-size: .85rem;
+          margin-left:15px;
       }
 
-        .text-field {
-            width: 100%;
-            border: 1px solid black;
-            border-radius: 10px;
-            padding: 1rem .5rem;
-            font-size: .85rem;
-        }
+      .text-field {
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 1rem .5rem;
+        font-size: .85rem;
+    }
 
         .text-field:focus {
           border: 2px solid #00B39F;
