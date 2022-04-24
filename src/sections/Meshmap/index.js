@@ -29,8 +29,7 @@ const Meshmap = () => {
     }
     window.scrollTo(0, 0);
   };
-  const [selected, setSelected] = useState(null);
-
+  
   useEffect(() => {
     if (submit) {
       axios.post("https://hook.integromat.com/bklgspwelgqkvbdj4coxompc62d78ngi", {
@@ -135,8 +134,8 @@ const Meshmap = () => {
 
                       <label For="role" className="form-name">What role best identifies you?<span className="required-sign">*</span></label>
                       <div className="formRight">
-                        <select onChange={(e) => setSelected(e.target.value || null)} value={selected || ""}>
-                          <option value="" disabled hidden>Select any one which suits you best</option>
+                        <select>
+                          <option selected disabled hidden>Select any one which suits you best</option>
                           <option value="Architect">Architect</option>
                           <option value="Business Operations">Business Operations</option>
                           <option value="Developer">Developer</option>
