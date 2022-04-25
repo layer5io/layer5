@@ -6,7 +6,7 @@ import Button from "../../reusecore/Button";
 import axios from "axios";
 
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
-const dockerDesktop = "../../assets/images/docker-extension-for-meshery.png";
+const dockerDesktop = "../../assets/images/docker-extension/docker-extension-meshery.png";
 import { StaticImage } from "gatsby-plugin-image";
 
 const DockerExtensionMeshery = () => {
