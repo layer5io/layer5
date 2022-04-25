@@ -9,7 +9,7 @@ import img3 from "../../../assets/images/meshery-operator/meshery-operator-dark.
 import img4 from "./feature-images/meshery-and-grafana.png";
 import img5 from "./feature-images/meshsync.svg";
 import img6 from "./feature-images/meshery-extensibility.svg";
-import img7 from "../../../assets/images/docker-extension-for-meshery.png";
+import img7 from "../../../assets/images/docker-extension/docker-extension-meshery.png";
 
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
