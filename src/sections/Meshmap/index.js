@@ -134,7 +134,7 @@ const Meshmap = () => {
 
                       <label htmlForFor="role" className="form-name">What role best identifies you?<span className="required-sign">*</span></label>
                       <div role="group" className="formRight" aria-labelledby="select">
-                        <select name="role">
+                        <Field as="select" name="role">
                           <option selected disabled hidden>Select your role</option>
                           <option value="Architect" name="role">Architect</option>
                           <option value="Business Operations" name="role">Business Operations</option>
@@ -148,7 +148,7 @@ const Meshmap = () => {
                           <option value="Sales Marketing" name="role">Sales Marketing</option>
                           <option value="Student" name="role">Student</option>
                           <option value="Other" name="role">Other</option>
-                        </select>
+                        </Field>
                       </div>
                   
                       <br />
