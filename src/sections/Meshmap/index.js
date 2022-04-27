@@ -132,23 +132,22 @@ const Meshmap = () => {
                         </div>
                       </div>
 
-                      <label For="role" className="form-name">What role best identifies you?<span className="required-sign">*</span></label>
-                      <div className="formRight">
-                        <select>
-                          <option selected disabled hidden>Select any one which suits you best</option>
-                          <option value="Architect">Architect</option>
-                          <option value="Business Operations">Business Operations</option>
-                          <option value="Developer">Developer</option>
-                          <option value="DevOps">DevOps/SRE/Sysadmin </option>
-                          <option value="Executive">Executive</option>
-                          <option value="IT Operations">IT Operations</option>
-                          <option value="Media"> Media/Analyst</option>
-                          <option value="Product Manage">Product Manage</option>
-                          <option value="Professor">Professor/Academic</option>
-                          <option value="Sales Marketing">Sales Marketing</option>
-                          <option value="Student">Student</option>
-                          <option value="Other">Other</option>
-                            
+                      <label htmlForFor="role" className="form-name">What role best identifies you?<span className="required-sign">*</span></label>
+                      <div role="group" className="formRight" aria-labelledby="select">
+                        <select name="role">
+                          <option selected disabled hidden>Select your role</option>
+                          <option value="Architect" name="role">Architect</option>
+                          <option value="Business Operations" name="role">Business Operations</option>
+                          <option value="Developer" name="role">Developer</option>
+                          <option value="DevOps" name="role">DevOps/SRE/Sysadmin </option>
+                          <option value="Executive" name="role">Executive</option>
+                          <option value="IT Operations" name="role">IT Operations</option>
+                          <option value="Media" name="role"> Media/Analyst</option>
+                          <option value="Product Manage" name="role">Product Manage</option>
+                          <option value="Professor" name="role">Professor/Academic</option>
+                          <option value="Sales Marketing" name="role">Sales Marketing</option>
+                          <option value="Student" name="role">Student</option>
+                          <option value="Other" name="role">Other</option>
                         </select>
                       </div>
                   
