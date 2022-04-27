@@ -17,9 +17,10 @@ const MesheryFeaturesWrapper = styled.div`
     @media (max-width: 32rem){
         margin-top: 10rem;
     }
+
     .feature-expose {
     img {
-      padding: 4rem;
+      padding: 0 3rem 1rem;
     }
   }
   .feature-expose-full {
@@ -109,6 +110,23 @@ const MesheryFeatures = () => {
               ),
             },
             {
+              title: "Docker Extension for Meshery",
+              description:
+                "Develop service mesh-ready apps using Docker Desktop and Meshery",
+              content: (
+                <div className="feature-expose-full">
+                  <img src={img7} alt="Meshery, Docker Extension for Meshery" />
+                  <p>
+                    The Docker Extension for Meshery extends Docker Desktop’s
+                    position as the cloud native developer’s go-to Kubernetes
+                    environment with easy access to the next layer of cloud
+                    native infrastructure: service meshes.
+                  </p>
+                </div>
+              ),
+              learnMoreLink: "/docker-extension-meshery",
+            },
+            {
               title: "Meshery Operator",
               description: "",
               learnMoreLink:
@@ -116,7 +134,6 @@ const MesheryFeatures = () => {
               content: (
                 <div className="feature-expose">
                   <img src={img3} alt="Kubernetes Operator for Meshery" />
-
                   <p>
                     Service meshes are dynamic. Changes to the service meshes
                     and their workloads occur with great frequency. Meshery
@@ -129,16 +146,6 @@ const MesheryFeatures = () => {
                     Kubernetes operator for Meshery, supports discovery and
                     eventing of greenfield and brownfield service mesh
                     deployments.
-                  </p>
-                  <p>
-                    Learn more about{" "}
-                    <a
-                      className="highlight"
-                      href="/service-mesh-management/meshery/meshery-operator"
-                    >
-                      Meshery Operator
-                    </a>
-                    .
                   </p>
                 </div>
               ),
@@ -274,23 +281,6 @@ const MesheryFeatures = () => {
                 </div>
               ),
               learnMoreLink: "https://docs.meshery.io/extensibility",
-            },
-            {
-              title: "Docker Extension for Meshery",
-              description:
-                "Develop service mesh-ready apps using Docker Desktop and Meshery",
-              content: (
-                <div className="feature-expose-full">
-                  <img src={img7} alt="Meshery, Docker Extension for Meshery" />
-                  <p>
-                    The Docker Extension for Meshery extends Docker Desktop’s
-                    position as the cloud native developer’s go-to Kubernetes
-                    environment with easy access to the next layer of cloud
-                    native infrastructure: service meshes.
-                  </p>
-                </div>
-              ),
-              learnMoreLink: "/docker-extension-meshery",
             },
           ]}
         />
