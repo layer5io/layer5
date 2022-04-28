@@ -129,11 +129,20 @@ p.caption {
           border: 1px solid black;
           border-radius: 10px;
           height: 50px;
-          padding: 1rem .5rem;
-          width: 94%;
-          font-size: .85rem;
-          margin-left:15px;
+          padding: 1rem 1rem;
+          width: 100%;
+          font-size: 0.85rem;
+          margin: 0.5rem 0;
+
+         
+          
+          background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
+          background-color:white;
+          -webkit-appearance: none;
+          background-position-x: 96%;
+          background-position-y: 50%;
       }
+      
 
       .text-field {
         width: 100%;
