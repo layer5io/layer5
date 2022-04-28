@@ -60,6 +60,7 @@ const About = () => {
               <Col xs={12} sm={6}>
                 <div className="head-images">
                   <img src={Community_meetup} alt="Community_meetup" />
+                  <p className="meetup-caption">Layer5 community members at Open Source Africa Community conference, March 2022.</p>
                 </div>
               </Col>
             </Row>

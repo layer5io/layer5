@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const AboutSectionWrapper = styled.section`
   
   .section__particle {
@@ -50,7 +49,7 @@ const AboutSectionWrapper = styled.section`
   }
 
   .about-text.text-two {
-    color: ${props => props.theme.headingColor};
+    color: ${(props) => props.theme.headingColor};
     font-weight: 400;
     margin-bottom: 28px;
   }
@@ -113,6 +112,11 @@ const AboutSectionWrapper = styled.section`
         color:black;
       }
     }
+  }
+
+  .meetup-caption {
+    font-size: 16px;
+    font-style: italic;
   }
   
   @media only screen and (max-width: 1400px) {
