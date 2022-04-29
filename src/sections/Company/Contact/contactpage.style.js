@@ -32,12 +32,88 @@ const ContactPageWrapper = styled.section`
 		transition: height ease-in-out 0.75s;
 		flex: auto;
 		justify-content: center;
+		overflow: hidden;
 		height:0rem;
-		iframe {
-			height:0rem;
-			transition: height ease-in-out 0.75s;
-			
-		}
+
+		.form-data {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			margin: auto;
+		  }
+
+		.form {
+			width: 40%;
+			margin: 40px 40px;
+	  
+			.radio-field {
+			  margin-top: 1rem;
+			}
+			.form-name {
+			  font-weight: 600;
+			  margin: 20px 0px 5px 3px;
+			  display: block;
+			}
+			.form-submit {
+			  display: flex;
+	  
+			  margin-top: 20px;
+			  align-content: center;
+			  justify-content: center;
+			}
+			.text-field {
+			  width: 100%;
+			  border: 1px solid black;
+			  padding: 0.5rem 0.5rem;
+			  font-size: 1.1rem;
+			}
+	  
+			.text-field:focus {
+			  border: 2px solid #00b39f;
+			}
+	  
+			.form-select {
+			  width: 150px;
+			  border: 1px solid black;
+			  border-radius: 10px;
+			  padding: 1rem 0.5rem;
+			}
+	  
+			.upload-field {
+			  width: 100%;
+			  border: 1px dashed black;
+			  border-radius: 15px;
+			  height: 50px;
+			  padding: 12px;
+			}
+	  
+			.form-check {
+			  width: 20px;
+			  height: 20px;
+			  border-radius: 15px;
+			  margin: 2px 10px !important;
+			}
+	  
+			.btn {
+			  float: right;
+			  margin: 20px 0;
+			}
+			.newsletter {
+			  display: flex;
+			  flex-direction: row;
+			  margin-top: 20px;
+			}
+			.required-sign {
+				color: #8b0000;
+			  }
+			  
+		  
+			  .checkbox-label {
+				font-size: 0.8rem;
+			  }
+		  }
 	}
 
 	.showForm {
@@ -45,10 +121,6 @@ const ContactPageWrapper = styled.section`
 		flex-wrap: wrap;
 		margin: auto -15px;
 		height:68rem;
-		iframe {
-			height:100%;
-			
-		}
 	}
 
 	.form-frame {
@@ -62,6 +134,11 @@ const ContactPageWrapper = styled.section`
 		.form-frame {
 			width: 25rem;
 		}
+		.contact-form {
+			.form {
+			  width: 100%;
+			}
+		  }
 	}
 `;
 
