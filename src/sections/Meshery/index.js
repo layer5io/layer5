@@ -12,7 +12,7 @@ import FeaturesTable from "./Features-Col";
 
 import mesheryFullStack from "./images/meshery-logo-light-text-tag.png";
 import mesheryDemo from "../../assets/video/meshery/meshery-full-perf-720p.mp4";
-
+import DockerExtensionCTA from "../Docker-Meshery/docker-extension-CTA";
 
 import MesheryWrapper from "./meshery.style";
 import theme from "../../theme/app/themeStyles";
@@ -58,6 +58,9 @@ const MesheryPage = () => {
             </div>
           </Container>
           <Features />
+          <Container>
+            <DockerExtensionCTA />
+          </Container>
         </MesheryWrapper>
       </Layout>
     </ThemeProvider>
