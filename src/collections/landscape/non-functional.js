@@ -3,7 +3,6 @@ import Linkerd from "../../assets/images/service-mesh-icons/linkerd.svg";
 import Consul from "../../assets/images/service-mesh-icons/consul.svg";
 import Cilium from "../../assets/images/service-mesh-icons/cilium.svg";
 import Istio from "../../assets/images/service-mesh-icons/istio.svg";
-import GreyMatter from "../../assets/images/service-mesh-icons/grey-matter.svg";
 import AspenMesh from "../../assets/images/service-mesh-icons/aspen-mesh.svg";
 import Conduit from "../../assets/images/service-mesh-icons/conduit-logo.svg";
 import NetworkServiceMesh from "../../assets/images/service-mesh-icons/nsm.svg";
@@ -21,7 +20,7 @@ import Asm from "../../assets/images/service-mesh-icons/alibaba-cloud-asm.svg";
 import Tcm from "../../assets/images/service-mesh-icons/tencent-cloud-mesh.svg";
 
 
-export const non_functional=[{
+export const non_functional = [{
   name: "Vulcand",
   opensource: "Yes",
   link: "https://github.com/vulcand/vulcand",
@@ -96,19 +95,6 @@ export const non_functional=[{
   commercial: "Huawei",
   category: "Service Mesh",
   timeline_order: 6
-},
-{
-  name: "Grey Matter",
-  opensource: "No",
-  link: "http://deciphernow.com/grey-matter",
-  governance: "Decipher Technology Studios",
-  primary_lang: "Go",
-  announce_date: "November 2017",
-  ga_1_date: "February 2019",
-  commercial: "Grey Matter",
-  category: "Service Mesh",
-  timeline_order: 7,
-  icon: GreyMatter
 },
 {
   name: "Aspen Mesh",
