@@ -94,7 +94,7 @@
     "cpx": "^1.5.0",
     "cross-env": "^7.0.0",
     "env-cmd": "^10.1.0",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.26",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
     "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.3",
