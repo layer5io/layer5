@@ -110,6 +110,10 @@ const Meshmap = () => {
                       }
                       else {
                         setValidateAccounts(true);
+                        firstname.value=values.firstname;
+                        email.value=values.email;
+                        lastname.value=values.lastname;
+                        occupation.value=values.occupation;
                       }
                     }}
                   >
@@ -145,11 +149,11 @@ const Meshmap = () => {
                       <label htmlFor="role" className="form-name">What role best identifies you?<span className="required-sign">*</span></label>
                       <div role="group" aria-labelledby="my-radio-group">
                         <label>
-                          <Field type="radio" name="role" value="Architect" />
+                          <Field type="radio" name="role" value={"Architect"} />
                             Architect
                         </label>
                         <label>
-                          <Field type="radio" name="role" value="Business Operations" />
+                          <Field type="radio" name="role" value={"Business Operations"} />
                             Business Operations
                         </label>
                         <label>
@@ -157,39 +161,39 @@ const Meshmap = () => {
                             Developer
                         </label>
                         <label>
-                          <Field type="radio" name="role" value="DevOps" />
+                          <Field type="radio" name="role" value={"DevOps"} />
                             DevOps/SRE/Sysadmin
                         </label>
                         <label>
-                          <Field type="radio" name="role" value="Executive" />
+                          <Field type="radio" name="role" value={"Executive"} />
                             Executive
                         </label>
                         <label>
-                          <Field type="radio" name="role" value="IT Operations" />
+                          <Field type="radio" name="role" value={"IT Operations"} />
                             IT Operations
                         </label>
                         <label>
-                          <Field type="radio" name="role" value="Media" />
+                          <Field type="radio" name="role" value={"Media"} />
                             Media/Analyst
                         </label>
                         <label>
-                          <Field type="radio" name="role" value="Product Manager" />
+                          <Field type="radio" name="role" value={"Product Manager"} />
                             Product Manager
                         </label>
                         <label>
-                          <Field type="radio" name="role" value="Professor" />
+                          <Field type="radio" name="role" value={"Professor"} />
                             Professor/Academic
                         </label>
                         <label>
-                          <Field type="radio" name="role" value="Sales Marketing" />
+                          <Field type="radio" name="role" value={"Sales Marketing"} />
                             Sales Marketing
                         </label>
                         <label>
-                          <Field type="radio" name="role" value="Student" />
+                          <Field type="radio" name="role" value={"Student"} />
                             Student
                         </label>
                         <label>
-                          <Field type="radio" name="role" value="Other" />
+                          <Field type="radio" name="role" value={"Other"} />
                             Other
                         </label>
                       </div>
