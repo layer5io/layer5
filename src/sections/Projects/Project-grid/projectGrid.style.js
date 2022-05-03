@@ -180,18 +180,16 @@ export const ProjectWrapper = styled.div`
     }
     .project__card.seven{
         grid-column: 3/8;
-        grid-row: 6/8;
+        grid-row: 7/8;
         img{
             width: 90px;
             align-self: center;
-            margin-top: 2rem;
             @media only screen and (min-width: 780px) {
                 align-self: flex-start;
-            }
+            } 
         }
         h5{
             align-self: center;
-            margin-top: 2rem;
             @media only screen and (min-width: 780px) {
                 align-self: flex-end;
                 padding-top:  20px;
@@ -200,7 +198,7 @@ export const ProjectWrapper = styled.div`
     }
     .project__card-container-seven{
         max-width: 100%;
-        height: 15rem;
+        height: 10em;
         width: 12rem;
         display: flex;
         flex-direction: column;
@@ -212,6 +210,7 @@ export const ProjectWrapper = styled.div`
         h5{
             font-weight: 600;
             text-align: center;
+            
         }
         @media only screen and (min-width: 741px) {
             width: 80%;
@@ -234,18 +233,7 @@ export const ProjectWrapper = styled.div`
        .project__card h5{
         font-size: 15px;
         }
-        .project__card.four{
-            width: 100%;
-        }
-        .project__card.seven{
-            img{
-                margin-top: 30px;
-              
-            }
-            h5{
-                margin-top: 30px;
-            }
-        }
+        
     }
     @media only screen and (max-width: 991px) {
         padding: 5px 0 0 0;
@@ -273,15 +261,8 @@ export const ProjectWrapper = styled.div`
         .project__card.six h5{ 
             width: 100%;
         }
-        .project__card.seven {
-            img{
-                margin-top:10px;
-            }
-            h5{ 
-            width: 100%;
-            font-size: 12px;
-            margin-top: 10px;
-            
+        .project__card.seven{
+            height: 15rem;
         }
      }
      @media only screen and (max-width: 740px) {
@@ -342,12 +323,11 @@ export const ProjectWrapper = styled.div`
         }
         .project__card.seven{
             height: 10rem;
-            img{
-                margin-top: 45px;
-            }
             h5{
-                margin-top: 40px;
+                margin-top: 2rem;
             }
+        }
+        
         
     }
     @media only screen and (max-width: 568px) {
