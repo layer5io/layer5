@@ -6,7 +6,7 @@ import Button from "../../reusecore/Button";
 import axios from "axios";
 
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
-const dockerDesktop = "../../assets/images/docker-extension-for-meshery.png";
+const dockerDesktop = "../../assets/images/docker-extension/docker-extension-meshery.png";
 import { StaticImage } from "gatsby-plugin-image";
 
 const DockerExtensionMeshery = () => {
@@ -27,7 +27,7 @@ const DockerExtensionMeshery = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.integromat.com/bklgspwelgqkvbdj4coxompc62d78ngi", {
+      axios.post("https://hook.us1.make.com/gguommoyd14634ur9xs7l37widuoa7e9", {
         memberFormOne,
       });
     }
@@ -86,9 +86,9 @@ const DockerExtensionMeshery = () => {
                 <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
                 <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                 <label htmlFor="occupation" className="form-name">Occupation / Title<span className="required-sign">*</span></label>
-                <Field type="text" className="text-field" id="occupation" name="occupation" />
+                <Field type="text" className="text-field" id="occupation" name="occupation" required />
                 <label htmlFor="org" className="form-name">Organization / Company / School<span className="required-sign">*</span></label>
-                <Field type="text" className="text-field" id="org" name="org" />
+                <Field type="text" className="text-field" id="org" name="org" required />
                 <Button secondary type="submit" className="btn" title="Submit" />
               </Form>
             </Formik>
@@ -104,7 +104,7 @@ const DockerExtensionMeshery = () => {
         <div className="black-box">
           <h2>Thank you for your interest in Meshery Docker Extension!</h2>
           <p>You are now signed up for the Meshery Docker Extension beta program and your position on the waiting list is confirmed. Please patiently await your acceptance and start of the beta program.  We are working through a growing waitlist. </p>
-          <p>If you have any questions in the meantime, please email <a href="mailto:community@layer5.io">community@layer5.io</a>.</p>
+          <p>In the meantime, please visit our <a href="https://discuss.layer5.io">community forum</a> or join us in our <a href="https://slack.layer5.io">community Slack</a>.</p>
           <p className="white">- <img className="sign" src={layer5_img} alt="Layer5"/> <i>Team</i></p>
         </div>
       </Container>

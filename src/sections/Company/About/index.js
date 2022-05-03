@@ -9,7 +9,7 @@ import layer5BusCard from "./images/layer5-business-card-photo_med.jpg";
 import location from "./images/location.svg";
 import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
-import Tshirts from "./images/free-tshirts.jpg";
+import Community_meetup from "./images/Community_meetup.png";
 import Layer5Projects from "./images/layer5-projects.png";
 import CNCFServiceMesh from "./images/CNCF-Service-Mesh-WG-1.png";
 import CNCFstackedlogo from "./images/cncf-stacked-color.svg";
@@ -59,7 +59,7 @@ const About = () => {
               </Col>
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <img src={Tshirts} alt="free-tshirts" />
+                  <img src={Community_meetup} alt="Community_meetup" />
                 </div>
               </Col>
             </Row>

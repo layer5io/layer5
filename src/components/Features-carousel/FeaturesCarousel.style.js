@@ -32,7 +32,7 @@ export const FeaturesWrapper = styled.div`
           outline: none !important;
         }
       }
-    
+
       & .pagingDots {
         & :global(.paging-item:not(.active) > button) {
           opacity: 1 !important;
@@ -123,7 +123,7 @@ export const FeaturesWrapper = styled.div`
     .terminal-wrapper {
       & > div {
         max-width: 100%;
-        height: 660px;
+        height: 430px;
       }
     
       & > img {
