@@ -55,7 +55,7 @@ const RangeSlider = memo(
           onMouseDown={() => setMouseState("down")}
           onMouseUp={() => setMouseState("up")}
         />
-        <span className="bubble" style={bubbleStyle} className="tooltiptext">{label}</span>
+        <span className="bubble tooltiptext" style={bubbleStyle}>{label}</span>
       </div>
       
     );
@@ -65,7 +65,7 @@ const RangeSlider = memo(
 const ServiceMesh = () => {
   const submit = () => {
     setSubmit(true);
-    axios.post("https://hook.integromat.com/ndmru0l21n51mcw4dsbhc48xg1mzh1v5", {
+    axios.post("https://hook.us1.make.com/3t59ylhftnrmgrweonlr3cve5eltlaa5", {
       parentVal1,
       parentVal2,
       parentVal3,
