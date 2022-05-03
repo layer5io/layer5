@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -7,23 +7,35 @@ import Card from "../../../components/Card";
 import { BlogPageWrapper } from "./blogList.style";
 import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 import Pagination from "../../Resources/Resources-grid/paginate";
+import useDataList from "../Blog-grid/usedataList";
+import SearchBox from "../../../reusecore/Search";
 
 const BlogList = ({
-  data,
   isListView,
   setListView,
   setGridView,
   pageContext,
-  currentPage,
-  paginate,
-  postsPerPage,
-  indexOfFirstPost,
-  indexOfLastPost,
+  data,
 }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const [searchQuery, setSearchQuery] = useState("");
+  const { queryResults, searchData } = useDataList(
+    data.allMdx.nodes,
+    setSearchQuery,
+    searchQuery,
+    ["frontmatter", "title"],
+    "id"
+  );
   const category = pageContext.category ? pageContext.category : null;
   const tag = pageContext.tag ? pageContext.tag : null;
-  const { totalCount, nodes } = data.allMdx;
-  const currentPosts= nodes.slice(indexOfFirstPost, indexOfLastPost);
+  // let {totalCount, nodes} = data.allMdx;
+  // const totalCount =  data.allMdx.totalCount ;
+  let { totalCount, nodes } = data.allMdx;
+  const currentPosts = queryResults.slice(indexOfFirstPost, indexOfLastPost);
+  totalCount = queryResults.length;
   const header = tag
     ? `${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`
     : category
@@ -31,7 +43,14 @@ const BlogList = ({
         totalCount === 1 ? "" : "s"
       } categorized as "${category}"`
       : "Blog";
+  console.log(tag);
+  console.log(category);
+  console.log(queryResults.length);
 
+  // Change page
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
   return (
     <BlogPageWrapper>
       <PageHeader
@@ -44,26 +63,37 @@ const BlogList = ({
         <Container>
           <Row>
             <Col sm={12} md={8}>
-              {!pageContext.tag && !pageContext.category && (
-                <BlogViewToolTip
-                  isListView={isListView}
-                  setListView={setListView}
-                  setGridView={setGridView}
-                />
+              {!pageContext.tag && !pageContext.category ? (
+                <div className="tooltip-search">
+                  <BlogViewToolTip
+                    isListView={isListView}
+                    setListView={setListView}
+                    setGridView={setGridView}
+                  />
+                  <SearchBox
+                    searchQuery={searchQuery}
+                    searchData={searchData}
+                  />
+                </div>
+              ) : (
+                <SearchBox searchQuery={searchQuery} searchData={searchData} />
               )}
               <Row className="blog-lists">
-                {currentPosts?.map(({ id, frontmatter, fields }) => (
-                  <Col xs={12} key={id}>
-                    <Card frontmatter={frontmatter} fields={fields} />
-                  </Col>
-                ))}
+                {currentPosts.length > 0 &&
+                  currentPosts.map(({ id, frontmatter, fields }) => (
+                    <Col xs={12} key={id}>
+                      <Card frontmatter={frontmatter} fields={fields} />
+                    </Col>
+                  ))}
                 <Col>
-                  <Pagination
-                    postsPerPage={postsPerPage}
-                    totalPosts={nodes.length}
-                    currentPage={currentPage}
-                    paginate={paginate}
-                  />
+                  {currentPosts.length > 0 && (
+                    <Pagination
+                      postsPerPage={postsPerPage}
+                      totalPosts={queryResults.length}
+                      currentPage={currentPage}
+                      paginate={paginate}
+                    />
+                  )}
                 </Col>
               </Row>
             </Col>

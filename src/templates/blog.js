@@ -13,7 +13,6 @@ import theme from "../theme/app/themeStyles";
 
 import { graphql } from "gatsby";
 import BlogList from "../sections/Blog/Blog-list";
-import useDataList from "../sections/Blog/Blog-grid/usedataList";
 
 export const query = graphql`
   query allBlogs {
@@ -45,13 +44,10 @@ export const query = graphql`
     }
   }
 `;
+
 const Blog = (props) => {
   const [isListView, setIsListView] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(12);
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-
+ 
   const setListView = () => {
     setIsListView(true);
   };
@@ -59,10 +55,7 @@ const Blog = (props) => {
     setIsListView(false);
   };
 
-  // Change page
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+ 
 
   useEffect(() => {
     if (props.location.state) {
@@ -86,16 +79,11 @@ const Blog = (props) => {
         />
         <Navigation />
         <BlogView
-          data={props.data}
           isListView={isListView}
           setListView={setListView}
           setGridView={setGridView}
           pageContext={props.pageContext}
-          currentPage={currentPage}
-          postsPerPage={postsPerPage}
-          paginate={paginate}
-          indexOfLastPost={indexOfLastPost}
-          indexOfFirstPost = {indexOfFirstPost}
+          data = {props.data}
         />
         <Footer />
       </Layout>
