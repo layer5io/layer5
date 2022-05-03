@@ -1,14 +1,19 @@
 import * as JsSearch from "js-search";
-import { useState,useEffect } from "react";
-
-const useDataList = (data,setSearchQuery, searchQuery, paramsIndex, paramSearch) => {
-  const [dataList, setDataList] = useState(data.allMdx.nodes);
+import { useState, useEffect, useMemo } from "react";
+import debounce from "lodash.debounce";
+const useDataList = (
+  data,
+  setSearchQuery,
+  searchQuery,
+  paramsIndex,
+  paramSearch
+) => {
+  const [dataList, setDataList] = useState(data);
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const queryResults =
-      searchQuery === "" ? dataList : searchResults;
+  const queryResults = searchQuery === "" ? dataList : searchResults;
 
   useEffect(() => {
     rebuildIndex();
@@ -26,12 +31,15 @@ const useDataList = (data,setSearchQuery, searchQuery, paramsIndex, paramSearch)
   };
 
   const searchData = (e) => {
+    console.log(e.target);
     const queryResult = search.search(e.target.value);
     setSearchQuery(e.target.value);
     setSearchResults(queryResult);
   };
 
-  return [queryResults, searchData];
+
+
+  return {queryResults, searchData};
 };
 
 export default useDataList;

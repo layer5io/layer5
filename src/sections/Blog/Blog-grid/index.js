@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, {  useState } from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import Sidebar from "../Blog-sidebar";
@@ -6,35 +6,36 @@ import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 import { BlogPageWrapper } from "./blogGrid.style";
 import Card from "../../../components/Card";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
-import useDataList from "./usedataList";
 import SearchBox from "../../../reusecore/Search";
 import Pagination from "../../Resources/Resources-grid/paginate";
+import useDataList from "./usedataList";
 
-const paramsIndex = ["frontmatter", "title"];
 const BlogGrid = ({
-  data,
   isListView,
   setListView,
   setGridView,
   pageContext,
-  currentPage,
-  paginate,
-  postsPerPage,
-  indexOfLastPost,
-  indexOfFirstPost,
+  data
 }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const [searchQuery, setSearchQuery] = useState("");
-  const [queryResults, searchData] = useDataList(
-    data,
+  const {queryResults, searchData} = useDataList(
+    data.allMdx.nodes,
     setSearchQuery,
     searchQuery,
-    paramsIndex,
+    ["frontmatter", "title"],
     "id"
   );
-  const currentPosts = searchQuery
-    ? queryResults
-    : data.allMdx.nodes.slice(indexOfFirstPost, indexOfLastPost);
+  const searchedPosts = queryResults.slice(indexOfFirstPost, indexOfLastPost);
+  console.log(queryResults);
 
+  // Change page
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
   return (
     <BlogPageWrapper>
       <PageHeader
@@ -62,18 +63,21 @@ const BlogGrid = ({
                       No blog post that matches the title "{searchQuery}" found.
                     </Col>
                   )}
-                  {currentPosts?.map(({ id, frontmatter, fields }) => (
+
+                  {searchedPosts.length > 0 && searchedPosts.map(({ id, frontmatter, fields }) => (
                     <Col key={id} xs={12} sm={6}>
                       <Card frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
                   <Col>
-                    <Pagination
-                      postsPerPage={postsPerPage}
-                      totalPosts={queryResults.length}
-                      currentPage={currentPage}
-                      paginate={paginate}
-                    />
+                    {searchedPosts.length > 0 && (
+                      <Pagination
+                        postsPerPage={postsPerPage}
+                        totalPosts={queryResults.length}
+                        paginate={paginate}
+                        currentPage={currentPage}
+                      />
+                    )}
                   </Col>
                 </Row>
               </div>
