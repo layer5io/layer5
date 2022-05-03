@@ -3,7 +3,10 @@ import React from "react";
 import { Search } from "./searchbox.style";
 import Button from "../../reusecore/Button";
 
+
 const SearchBox = ({searchQuery, searchData}) => {
+
+
   return(
     <Search>
       <div className="search-box">

@@ -1,6 +1,5 @@
 import * as JsSearch from "js-search";
-import { useState, useEffect, useMemo } from "react";
-import debounce from "lodash.debounce";
+import { useState, useEffect } from "react";
 const useDataList = (
   data,
   setSearchQuery,
@@ -12,7 +11,6 @@ const useDataList = (
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
   const queryResults = searchQuery === "" ? dataList : searchResults;
 
   useEffect(() => {
