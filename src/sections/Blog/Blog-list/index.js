@@ -21,9 +21,10 @@ const BlogList = ({
   const [postsPerPage] = useState(10);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  let {totalCount, nodes} = data.allMdx;
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
-    data.allMdx.nodes,
+    nodes,
     setSearchQuery,
     searchQuery,
     ["frontmatter", "title"],
@@ -31,9 +32,6 @@ const BlogList = ({
   );
   const category = pageContext.category ? pageContext.category : null;
   const tag = pageContext.tag ? pageContext.tag : null;
-  // let {totalCount, nodes} = data.allMdx;
-  // const totalCount =  data.allMdx.totalCount ;
-  let { totalCount, nodes } = data.allMdx;
   const currentPosts = queryResults.slice(indexOfFirstPost, indexOfLastPost);
   totalCount = queryResults.length;
   const header = tag
@@ -43,9 +41,6 @@ const BlogList = ({
         totalCount === 1 ? "" : "s"
       } categorized as "${category}"`
       : "Blog";
-  console.log(tag);
-  console.log(category);
-  console.log(queryResults.length);
 
   // Change page
   const paginate = (pageNumber) => {

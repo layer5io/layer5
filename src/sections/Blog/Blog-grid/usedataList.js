@@ -29,7 +29,6 @@ const useDataList = (
   };
 
   const searchData = (e) => {
-    console.log(e.target);
     const queryResult = search.search(e.target.value);
     setSearchQuery(e.target.value);
     setSearchResults(queryResult);

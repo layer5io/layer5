@@ -83,7 +83,7 @@ const Blog = (props) => {
           setListView={setListView}
           setGridView={setGridView}
           pageContext={props.pageContext}
-          data = {props.data}
+          data={props.data}
         />
         <Footer />
       </Layout>

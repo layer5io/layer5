@@ -7,7 +7,6 @@ import BlogSideBarWrapper from "./blogSidebar.style";
 import { HiOutlineChevronUp } from "@react-icons/all-files/hi/HiOutlineChevronUp";
 import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevronDown";
 // import { FaSearch } from "@react-icons/all-files/fa/FaSearch";
-import SearchBox from "../../../reusecore/Search";
 
 const Discuss = "../../../assets/images/discuss/layer5-discuss-white.png";
 
