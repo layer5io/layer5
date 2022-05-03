@@ -13,15 +13,13 @@ import theme from "../theme/app/themeStyles";
 import { graphql } from "gatsby";
 
 export const query = graphql`
-  query BlogsByCategory($category: String!, $skip: Int!, $limit: Int!) {
+  query BlogsByCategory($category: String!) {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         fields: { collection: { eq: "blog" } }
         frontmatter: { category: { eq: $category }, published: { eq: true } }
       }
-      skip: $skip
-      limit: $limit
     ) {
       totalCount
       nodes {
