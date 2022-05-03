@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-export const Search = styled.div`
-  padding: 15px 30px;
-  @media only screen and (max-width: 1024px) {
-    padding: 3rem 0 0 0;
-  }
+export const SearchWrapper = styled.div`
   .search-box {
     position: relative;
     display: flex;

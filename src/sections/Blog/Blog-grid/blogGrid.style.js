@@ -25,14 +25,17 @@ export const BlogPageWrapper = styled.div`
 
   @media only screen and (min-width: 575px) {
     .tooltip-search {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 0;
     }
   }
-  @media only screen and (min-width: 990px) {
+  /* @media only screen and (min-width: 990px) {
     .tooltip-search {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-  }
+  } */
 `;
