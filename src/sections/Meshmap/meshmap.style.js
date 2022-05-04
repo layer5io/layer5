@@ -133,15 +133,34 @@ p.caption {
           width: 100%;
           font-size: 0.85rem;
           margin: 0.5rem 0;
-
-         
-          
-          background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
-          background-color:white;
-          -webkit-appearance: none;
-          background-position-x: 96%;
-          background-position-y: 50%;
       }
+
+
+      .custom-arrow {
+        background-color: white;
+        width: 2rem;
+        height: 2.65rem;
+        position: absolute;
+        right: 3.20rem;
+        bottom: 11.35rem;
+        pointer-events: none;
+        .down-arrow {
+          position: relative;
+          top: 0.5rem;
+          left: 0.5rem;
+          border: solid ${props => props.theme.primaryColor};
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 6px 6px;
+          transform: rotate(45deg);
+          pointer-events: none;
+        }
+        @media screen and (max-width: 300px) {
+					right: 2.2rem;
+				}
+      }
+
+
       
 
       .text-field {
