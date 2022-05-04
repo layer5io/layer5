@@ -4,7 +4,8 @@ import Layout from "../../components/layout";
 
 import SEO from "../../components/seo";
 import BooksPage from "../../sections/Learn/Books-grid";
-import LearnServiceMeshCTA from "../../sections/Learn/Learn-Service-Mesh-CTA";
+import DockerExtensionCTA from "../Docker-Meshery/docker-extension-CTA";
+// import LearnServiceMeshCTA from "../../sections/Learn/Learn-Service-Mesh-CTA";
 import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
 
@@ -12,7 +13,7 @@ import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
 
-const BooksGridPage = ({hide_path}) => (
+const BooksGridPage = ({ hide_path }) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -21,8 +22,8 @@ const BooksGridPage = ({hide_path}) => (
   We are the largest collection of service mesh projects and their maintainers in the world." />
       <Navigation />
       <BooksPage hide_path={hide_path} />
-      <LearnServiceMeshCTA/>
-      <Footer/>
+      <DockerExtensionCTA />
+      <Footer />
     </Layout>
   </ThemeProvider>
 );
