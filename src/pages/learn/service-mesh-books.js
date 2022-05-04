@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 
 import SEO from "../../components/seo";
 import BooksPage from "../../sections/Learn/Books-grid";
-import DockerExtensionCTA from "../Docker-Meshery/docker-extension-CTA";
+import DockerExtensionCTA from "../../sections/Docker-Meshery/docker-extension-CTA";
 // import LearnServiceMeshCTA from "../../sections/Learn/Learn-Service-Mesh-CTA";
 import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
