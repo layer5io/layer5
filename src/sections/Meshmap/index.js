@@ -23,6 +23,15 @@ const Meshmap = () => {
 
   const [submit, setSubmit] = useState(false);
 
+  const [validateAccounts, setValidateAccounts] = useState(false);
+  const [email, setEmail] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [org, setOrg] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [role, setRole] = useState("");
+
+  const errorAccounts = "Please provide at least one account";
   const nextStep = () => {
     if (stepNumber === 0) {
       setSubmit(true);
@@ -88,21 +97,32 @@ const Meshmap = () => {
                   <h3 className="form-title">Apply For the Beta Program</h3>
                   <Formik
                     initialValues={{
-                      firstname: "",
-                      lastname: "",
-                      email: "",
-                      occupation: "",
-                      org: "",
+                      firstname: firstname,
+                      lastname: lastname,
+                      email: email,
+                      occupation: occupation,
+                      org: org,
                       github: "",
                       twitter: "",
                       linkedin: "",
-                      role: "",
+                      role: role,
                       form: "meshmap",
                     }}
                     onSubmit={values => {
-                      setMemberFormOne(values);
-                      setStepNumber(1);
-                      nextStep();
+                      if(google.value||github.value||twitter.value||linkedin.value) {
+                        setMemberFormOne(values);
+                        setStepNumber(1);
+                        nextStep();
+                      }
+                      else {
+                        setValidateAccounts(true);
+                        setFirstName(values.firstname);
+                        setEmail(values.email);
+                        setLastName(values.lastname);
+                        setOccupation(values.occupation);
+                        setOrg(values.org);
+                        setRole(values.role);
+                      }
                     }}
                   >
                     <Form className="form" method="post">
@@ -121,6 +141,7 @@ const Meshmap = () => {
                         <p>
                           Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
                         </p>
+                        {validateAccounts && <p style={{margin:"0px",color:"red"}}>{errorAccounts}</p>}
                         <div className="accounts_group">
                           <label htmlFor="google" className="form-name">Google</label>
                           <Field type="text" placeholder="my-address@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
