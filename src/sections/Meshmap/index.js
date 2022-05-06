@@ -117,8 +117,7 @@ const Meshmap = () => {
                         setMemberFormOne(values);
                         setStepNumber(1);
                         nextStep();
-                      }
-                      else {
+                      } else {
                         setValidateAccounts(true);
                         setFirstName(values.firstname);
                         setEmail(values.email);
