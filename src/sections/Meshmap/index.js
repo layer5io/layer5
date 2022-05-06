@@ -8,7 +8,7 @@ import Features from "../../components/Features-carousel";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
 import designerImage from "../../assets/images/meshmap/MeshMap.png";
 import visualizerImage from "../../assets/images/meshmap/MeshMap-Visualizer.png";
@@ -31,6 +31,10 @@ const Meshmap = () => {
   const [occupation, setOccupation] = useState("");
   const [role, setRole] = useState("");
 
+  const google = "";
+  const github = "";
+  const linkedin = "";
+  const twitter = "";
   const errorAccounts = "Please provide at least one account";
   const nextStep = () => {
     if (stepNumber === 0) {
@@ -38,7 +42,7 @@ const Meshmap = () => {
     }
     window.scrollTo(0, 0);
   };
-  
+
   useEffect(() => {
     if (submit) {
       axios.post("https://hook.us1.make.com/gguommoyd14634ur9xs7l37widuoa7e9", {
@@ -58,7 +62,7 @@ const Meshmap = () => {
               {
                 title: "Designer Mode",
                 description:
-                "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
+                  "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
                 content: (
                   <img
                     src={designerImage}
@@ -69,7 +73,7 @@ const Meshmap = () => {
               {
                 title: "Visualizer Mode",
                 description:
-                "Examine a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers.",
+                  "Examine a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers.",
                 content: (
                   <img
                     src={visualizerImage}
@@ -87,12 +91,12 @@ const Meshmap = () => {
                   <h1 className="heading-1"> Accessing</h1>
                   <h1 className="heading-2">MeshMap Beta</h1>
                   <p className="desc-p">
-                  Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.
+                    Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.
                   </p>
                   <img src={mesheryCloud} className="meshery-hero-img" alt="Meshery Cloud" />
                   <DiscussCallout />
                 </Col>
-         
+
                 <Col lg={6} md={6} sm={12}>
                   <h3 className="form-title">Apply For the Beta Program</h3>
                   <Formik
@@ -109,7 +113,7 @@ const Meshmap = () => {
                       form: "meshmap",
                     }}
                     onSubmit={values => {
-                      if(google.value||github.value||twitter.value||linkedin.value) {
+                      if (google.value || github.value || twitter.value || linkedin.value) {
                         setMemberFormOne(values);
                         setStepNumber(1);
                         nextStep();
@@ -129,19 +133,19 @@ const Meshmap = () => {
                       <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                       <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
-                      <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32"  pattern="[A-Za-z]{1,32}" required />
+                      <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
                       <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
-                      <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32"  pattern="[A-Za-z]{1,32}" required />
+                      <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
                       <label htmlFor="occupation" className="form-name">Occupation / Title<span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="occupation" name="occupation" />
                       <label htmlFor="org" className="form-name">Organization / Company / School<span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="org" name="org" />
-                      <div  className="accounts">
+                      <div className="accounts">
                         <label className="form-name">Account(s) to Connect</label>
                         <p>
                           Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
                         </p>
-                        {validateAccounts && <p style={{margin:"0px",color:"red"}}>{errorAccounts}</p>}
+                        {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
                         <div className="accounts_group">
                           <label htmlFor="google" className="form-name">Google</label>
                           <Field type="text" placeholder="my-address@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
@@ -173,7 +177,7 @@ const Meshmap = () => {
                           <option value="Other">Other</option>
                         </Field>
                       </div>
-                  
+
                       <br />
                       <Button secondary type="submit" className="btn" title="Submit" />
                     </Form>
