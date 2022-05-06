@@ -24,6 +24,13 @@ const Meshmap = () => {
   const [submit, setSubmit] = useState(false);
 
   const [validateAccounts, setValidateAccounts] = useState(false);
+  const [email, setEmail] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [org, setOrg] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [role, setRole] = useState("");
+
   const errorAccounts = "Please provide at least one account";
   const nextStep = () => {
     if (stepNumber === 0) {
@@ -91,15 +98,15 @@ const Meshmap = () => {
                   <h3 className="form-title">Apply For the Beta Program</h3>
                   <Formik
                     initialValues={{
-                      firstname: "",
-                      lastname: "",
-                      email: "",
-                      occupation: "",
-                      org: "",
+                      firstname: firstname,
+                      lastname: lastname,
+                      email: email,
+                      occupation: occupation,
+                      org: org,
                       github: "",
                       twitter: "",
                       linkedin: "",
-                      role: "",
+                      role: role,
                       form: "meshmap",
                     }}
                     onSubmit={values => {
@@ -110,11 +117,12 @@ const Meshmap = () => {
                       }
                       else {
                         setValidateAccounts(true);
-                        firstname.value=values.firstname;
-                        email.value=values.email;
-                        lastname.value=values.lastname;
-                        occupation.value=values.occupation;
-                        org.value=values.org;
+                        setFirstName(values.firstname);
+                        setEmail(values.email);
+                        setLastName(values.lastname);
+                        setOccupation(values.occupation);
+                        setOrg(values.org);
+                        setRole(values.role);
                       }
                     }}
                   >
