@@ -208,6 +208,12 @@ section{
     }
 }
 
+.docker-extension-meshery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Modal CSS Ends */
 `;
 

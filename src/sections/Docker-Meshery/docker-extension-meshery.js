@@ -62,7 +62,7 @@ const DockerExtensionMeshery = () => {
             <p>Join the beta program and get:</p>
             <ol>
               <Row>
-                <Col lg={2}>
+                <Col className="docker-extension-meshery" lg={2}>
                   <StaticImage
                     src={dockercompose_logo}
                     alt="Docker Compose Logo"
@@ -81,7 +81,7 @@ const DockerExtensionMeshery = () => {
                 </Col>
               </Row>
               <Row>
-                <Col lg={2}>
+                <Col className="docker-extension-meshery" lg={2}>
                   <StaticImage
                     src={visual_topology}
                     alt="Visual Topology"
@@ -102,7 +102,7 @@ const DockerExtensionMeshery = () => {
                 </Col>
               </Row>
               <Row>
-                <Col lg={2}>
+                <Col className="docker-extension-meshery" lg={2}>
                   <StaticImage
                     src={mesheryworkdiagram}
                     alt="How Meshery Works with Single Click Deployment"
