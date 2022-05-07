@@ -54,7 +54,7 @@ export const DockerMesheryWrapper = styled.div`
       min-height: 400px;
       margin: 5%;
       padding: 5%;
-      background-color: ${props => props.theme.darkJungleGreenColor};
+      background-color: ${(props) => props.theme.darkJungleGreenColor};
       border-radius: 6rem;
 
       .sign{  
@@ -87,9 +87,9 @@ export const DockerMesheryWrapper = styled.div`
         margin: 1rem 1rem 0;
         padding: 1rem;
         text-align: center;
-        background-color: ${props => props.theme.secondaryColor};
+        background-color: ${(props) => props.theme.secondaryColor};
         color: white;
-        box-shadow: 0px 0px 5px 2px ${props => props.theme.primaryLightColor};
+        box-shadow: 0px 0px 5px 2px ${(props) => props.theme.primaryLightColor};
     }
 
     .label {
@@ -99,7 +99,7 @@ export const DockerMesheryWrapper = styled.div`
     .form {
         font-size: .9rem;
         margin: 0 1rem 1rem;
-        box-shadow: 0px 5px 5px 2px ${props => props.theme.primaryLightColor};
+        box-shadow: 0px 5px 5px 2px ${(props) => props.theme.primaryLightColor};
         padding: 1rem;
 
         label {
@@ -145,4 +145,10 @@ export const DockerMesheryWrapper = styled.div`
           margin: 3rem 1rem 0;
         }
       }
+    
+    .docker-extension-meshery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 `;
