@@ -10,7 +10,7 @@ import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevron
 
 const Discuss = "../../../assets/images/discuss/layer5-discuss-white.png";
 
-const Sidebar = ({ pageContext }) => {
+const Sidebar = ({ pageContext}) => {
   const data = useStaticQuery(
     graphql`
       query allTagsAndCategories {
@@ -61,14 +61,6 @@ const Sidebar = ({ pageContext }) => {
 
   return (
     <BlogSideBarWrapper>
-      {/*<div className="sidebar-widgets">*/}
-      {/*  <div className="search-box">*/}
-      {/*    <input type="text" placeholder="Search here..." />*/}
-      {/*    <Button>*/}
-      {/*      <FaSearch />*/}
-      {/*    </Button>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
       <div className="explain-1">
         <div className="cards">
           <a href="https://discuss.layer5.io/">

@@ -21,11 +21,6 @@ export const NewcomersGuideWrapper = styled.section`
           }
           p {
             margin: 2rem 0;
-            button {
-              margin: 1rem;
-              padding: 1rem;
-              float: left;
-            }
           }
         }
     }
@@ -64,7 +59,15 @@ export const NewcomersGuideWrapper = styled.section`
       .step{
         display: flex;
         align-items: center;
+        align-content: center;
         margin-bottom: 2rem;
+        justify-content: center;
+        
+        button {
+          display:flex;
+          margin: auto;
+          padding: 1rem;
+        }
       }
       .finding-an-issue { 
         max-height: 22rem;
