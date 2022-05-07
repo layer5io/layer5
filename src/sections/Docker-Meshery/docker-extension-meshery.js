@@ -9,7 +9,7 @@ import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-
 const mesheryworkdiagram =
   "../../assets/images/mesherywork-diagram/mesherywork-diagram.svg";
 const dockercompose_logo =
-  "https://user-images.githubusercontent.com/7570704/166245883-b0660ace-1420-4150-8fd8-09eeaa8ff73b.png";
+  "../../assets/images/dockercompose-logo/dockercompose-logo.png";
 const visual_topology =
   "../../assets/images/visual-topology/visual-topology.svg";
 const dockerDesktop =
