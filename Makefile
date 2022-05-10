@@ -2,6 +2,9 @@ setup-libs:
 	npm install
 
 site:
+	npm start
+	
+site-fast:
 	gatsby develop
 
 build:

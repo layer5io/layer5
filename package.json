@@ -21,8 +21,7 @@
     "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
     "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
-    "prepare": "husky install",
-    "watch-ui": "NODE_ENV=development npx webpack --config webpack.watch-config.js --mode development --progress --watch --env"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^5.10.1",
