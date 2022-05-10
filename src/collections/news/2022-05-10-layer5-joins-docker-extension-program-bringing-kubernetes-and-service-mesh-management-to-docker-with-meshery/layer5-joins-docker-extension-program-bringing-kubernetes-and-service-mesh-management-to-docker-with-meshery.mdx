@@ -1,0 +1,83 @@
+---
+title: "Layer5 Joins Docker Extension Program Bringing Kubernetes and Service Mesh Management to Docker with Meshery"
+subtitle: "Managing cloud native infrastructure has never been easier"
+date: 2022-05-10 08:00:00 -0530
+author: Kate Suttons
+thumbnail: ./docker-extension-meshery.png
+category: "Meshery"
+description: "Layer5, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure: service meshes. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any service mesh."
+tags:
+ - Announcements
+ - Projects
+ - News
+type: News
+resource: false
+published: true
+---
+
+import { Link } from "gatsby";
+import { NewsWrapper } from "../News.style.js";
+import Blockquote from "../../../reusecore/Blockquote";
+import BlockquoteAlt from "../../../reusecore/Blockquote/Blockquote-alt-style";
+
+import dockerextension from "./docker-extension-meshery.png";
+import meshmapextension from "./meshmap-docker-extension-for-meshery.png";
+
+
+<NewsWrapper>
+ 
+<p>AUSTIN, TEXAS, May 10th, 2022: Layer5, Inc.<sup>®</sup>, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure: service meshes. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any service mesh.</p>
+
+<img src={meshmapextension} className="pull-right" width="50%" alt="MeshMap Docker Extension" />
+
+<p className="pull-right">From its genesis, Meshery has natively supported Docker as a deployment platform. With the Meshery Docker Extension the ability for developers to access a Kubernetes environment complete with a service mesh like Consul, Linkerd, Kuma, Istio, and so on. Meshery's deep support for the Cilium Service Mesh is the project's latest service mesh adapter.</p>
+
+<p>As a <a href="https://www.docker.com/blog/docker-captain-take-5-lee-calcote/">Docker Captain</a>, I have always been a proponent of Docker. Docker Extensions bring an integrated experience with ecosystem tooling, like Meshery - a critical tool for developers, who are configuring and managing cloud native applications.</p>
+
+<Blockquote
+  quote="With a goal to bring workload identity and attestation to all service meshes, HPE Security Engineering uses the Meshery Docker Extension to deploy their service mesh of choice and test the performance of our SPIFFE and SPIRE-based identity solution."
+  person="Maximiliano Churichi"
+  title="Software Engineer at HPE"
+/>
+
+<img src={dockerextension} className="pull-right" width="50%" alt="Meshery Docker Extension" />
+
+Importantly, the Meshery Docker Extensions provides these significant features directly to Docker users:
+
+<p><strong>Kubernetes and service mesh support for your Docker Compose apps</strong> - Import your Docker Compose apps. Configure and deploy them to Kubernetes and any service mesh.</p>
+
+<p><strong>Visual design of Kubernetes applications</strong> - Using <Link to="/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.</p>
+
+<p><strong>Single-click deployment of any service mesh</strong> - Support of 10 different service meshes to the fingertips of developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.</p>
+
+<p><strong>Detection of Kubernetes environments -</strong> Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another one.</p> 
+
+<BlockquoteAlt
+  quote="The Meshery Extension transforms Docker Desktop into a powerful load generation utility, conveniently enabling HPE engineers with the ability to deploy and configure any service mesh with a click of the button and invoke and control load-based performance tests from our desktop."
+  person="Maximiliano Churichi"
+  title="Software Engineer at HPE"
+/>
+
+#### Resources
+
+- Learn more about <Link to="/meshery">Meshery</Link>.
+- Try the <Link to="/docker-extension-meshery">Meshery Docker Extension</Link>  and download Docker Desktop today.
+- <a href="/blog/docker/extending-docker-with-meshery-spire-and-istio">Extending Docker with Meshery, SPIRE, and Istio</a>
+- <a href="/blog/docker/extending-the-docker-compose-experience-to-service-mesh">Extending the Docker Compose Experience to Service Mesh</a>
+- Follow us on Twitter <a href="https://twitter.com/layer5">@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a>, <a href="https://twitter.com/docker">@docker</a>.
+- Engage in the Layer5 community's <a href="https://discuss.layer5.io">discussion forum</a>.
+
+##### About Layer5, Inc.
+<p style="font-size:1rem">
+Layer5 offers cloud native application management by harnessing the unique position service meshes have in changing how developers write applications, how operators run modern infrastructure and how product owners manage their service offerings. Layer5’s MeshMap delivers the world’s only cloud native designer, built for Kubernetes and any service mesh. Layer5’s leadership stewards the Network and Service Mesh groups in the CNCF. Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. For more information, visit layer5.io</p>
+
+##### About Docker, Inc. 
+<p style="font-size:1rem">
+Docker helps millions of developers efficiently and collaboratively build, share and run applications. The Docker collaborative application development platform provides developers with an unmatched experience for an integrated, reliable and secure workflow that accelerates app delivery from code to the cloud. Through a combination of the world’s largest marketplace of components and integrations with leading tools, Docker allows teams to rapidly create innovative applications. For more information, visit www.docker.com</p>
+
+
+<strong>Media Contacts</strong>
+<p>Kate Suttons<br />
+<span style="font-size:.9rem">press@layer5.io</span></p>
+
+</NewsWrapper>
