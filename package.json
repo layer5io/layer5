@@ -21,7 +21,8 @@
     "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
     "noIndex": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "watch-ui": "NODE_ENV=development npx webpack --config webpack.watch-config.js --mode development --progress --watch --env"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^5.10.1",
@@ -99,7 +100,8 @@
     "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.3",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "webpack-cli": "^4.9.2"
   },
   "husky": {
     "hooks": {
