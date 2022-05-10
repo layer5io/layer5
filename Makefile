@@ -1,4 +1,4 @@
-setup-libs:
+setup:
 	npm install
 
 site:
@@ -11,4 +11,5 @@ build:
 	gatsby build && gatsby serve
 
 clean: 
-	gatsby clean
+	gatsby clean; \
+	make site
