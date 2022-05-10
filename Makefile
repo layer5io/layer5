@@ -6,3 +6,6 @@ site:
 
 build:
 	gatsby build && gatsby serve
+
+clean: 
+	gatsby clean
