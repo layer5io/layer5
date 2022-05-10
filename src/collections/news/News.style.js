@@ -11,6 +11,9 @@ export const NewsWrapper = styled.div`
         }
     }
     .pull-right {
-    float: right;
-  }
+        float: right;
+    }
+    .pull-left {
+        float: left;
+    }
 `;
