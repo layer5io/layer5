@@ -1,0 +1,113 @@
+---
+title: "Extending Docker with Meshery, SPIRE, and Istio"
+date: 2022-05-10 10:30:05 -0530
+author: Gaurav Chadha
+thumbnail: ./dc22-hpe-talk.png
+description: "DockerCon 2022 talk with HPE and Meshery Docker Extension Demo"
+type: Blog
+category: "Docker"
+tags:
+ - Docker
+ - Meshery
+published: true
+---
+
+import { BlogWrapper } from "../Blog.style.js";
+import Blockquote from "../../../reusecore/Blockquote";
+import { Link } from "gatsby";
+import CloudNative from './cloud-native-management.png';
+import CloudNativeIdentity from './cloud-native-identity.png';
+import dde from './dde.png';
+import designer  from './Designer.png';
+import visualizer from './Visualizer.png';
+import meshmapInDocker from './meshmap-docker-extension-for-meshery.png';
+
+<BlogWrapper>
+
+<div className="intro">
+<p>
+    <Link to="/community/members/lee-calcote">Lee Calcote</Link> and Maximiliano Churichi gave a presentation entitled <i>Extending Docker with Meshery, SPIRE, and Istio</i> at DockerCon 2022.
+</p>
+</div>
+
+<p style="margin-left:10px;font-style:italics;">
+    <Link to="/community/members/lee-calcote">Lee Calcote</Link> is an innovative product and technology leader, passionate about empowering engineers and enabling organizations. As the founder and CEO of Layer5, he is at the forefront of the cloud native movement.
+</p>
+
+<p style="margin-left:10px;font-style:italics;">
+    Maximiliano Churichi is a Security Engineer at Hewlett Packed Enterprise fully engaged in open source techonolgies, passionate about service mesh.
+</p>
+
+<div>
+    <h3>
+        Cloud Native Management
+        <img src={CloudNative} alt="Meshery Docker Extension" style="width:50%;float:right;" />
+    </h3>
+    <p>
+        Lee Calcote introduces Meshery as a Cloud Native Management Plane, stating, "Meshery does Lifecycle and Performance Management of 10 different service meshes more than that it helps with configuration management with Kubernetes and with the Meshery Docker Extension it does same for the Docker Compose application."
+    </p>
+</div>                                                                        
+                                                                           
+<p>
+    "As a <Link to="https://www.docker.com/blog/docker-captain-take-5-lee-calcote/">Docker Captain</Link>, Lee have always been a proponent of Docker, and in particular its enablement of developer workflows", "Now, Docker Extensions bring an integrated experience with ecosystem tooling, like Meshery - a critical tool for developers, who are configuring and managing cloud native applications."
+</p>
+
+<div>
+    <h3>
+        Cloud Native Identity
+    </h3>
+    <p>
+        Maximiliano Churichi breifly explains about Cloud Native Identity and the HPE project Mithril, "The Spiffe project is a Secure Secure Production Identity Framework For Everyone it defines defines a set of standards for identifying and securing communications between different application services. The Spire project is a runtime environment, it's a production ready reference implementaion of Spiffe principles additional to all spiffe standard it is used to implement the set of APIs for controlling attestation policies, and coordinates certificate issuance and rotation."
+        <img src={CloudNativeIdentity} alt="Meshery Docker Extension" style="width:50%;float:right;" />
+    </p>
+    <p>
+        Maximiliano also tells how HPE Project Mithril integrates with the Spire and servie increases service management capability. Project Mithril leverages the service management capability of Istio and the secure identity framework of SPIRE to deliver robust and flexible attestation beyond Kubernetes namespaces and service accounts and provide end-to-end secure attestation of workloads based on zero trust principles regardless of location of such workloads.
+    </p>
+</div>
+
+<p>
+    <h3>How "Docker Extension for Meshery" helps to deploy with the click of a button?</h3>
+    <p>
+    <img src={dde} alt="Meshery Extension Meshery" style="width:50%;float:left;padding-right:2rem" />
+    The new Meshery Docker Extension brings <Link to="/meshmap">Layer5 MeshMap</Link>, the world's only visual designer for Kubernetes and service mesh deployments, to the desktop of millions of developers. Developers and operators alike can visually configure and operate their cloud native infrastructure and applications using MeshMap's low code visual designer.
+    </p>
+</p>    
+<p>
+    Maximiliano Churichi, Software Engineer at HPE says how conveniently Meshery integrates different services into Docker.
+</p>
+<ul>
+<li><strong>Kubernetes and service mesh support for your Docker Compose apps</strong> - Import your Docker Compose apps. Configure and deploy them to Kubernetes and any service mesh.</li>
+
+<li><strong>Visual design of Kubernetes applications</strong> - Using <Link to="/meshmap">MeshMap</Link> as a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.</li>
+
+<li><strong>Single-click deployment of any service mesh</strong> - Support of 10 different service meshes to the fingertips of developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.</li>
+
+<li><strong>Detection of Kubernetes environments -</strong> Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another one.</li> 
+</ul>
+
+<p>
+  <h3>Maximiliano demonstrates MeshMap</h3>
+</p>
+
+<img src={meshmapInDocker} alt="Layer5 MeshMap in Meshery Docker Extension" />
+
+<p>
+    <h5>Designer Mode</h5>
+    Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.
+</p> 
+
+<p>
+    <h5>Visualizer Mode</h5>
+    Examine a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers. 
+</p>
+
+<p>
+    <img src={designer} alt="Meshery Docker Extension" align="center" style="margin-left: 10px; width:40%" alt="MeshMap Designer" />
+</p>
+
+<p>
+    <img src={visualizer} alt="Meshery Docker Extension" align="center" style="margin-left: 10px; width:40%" alt="MeshMap Visualizer" />
+</p>    
+
+
+</BlogWrapper>
