@@ -2,7 +2,7 @@ setup-libs:
 	npm install
 
 site:
-	npm start
+	gatsby develop
 
 build:
 	gatsby build && gatsby serve
