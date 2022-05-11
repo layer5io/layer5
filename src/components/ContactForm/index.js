@@ -11,10 +11,9 @@ const ContactForm = () => {
 
   useEffect(() => {
     if (submit) {
-      // axios.post("https://hook.us1.make.com/nt0s4oiuntfomjsvvrom4x85sx3leg8h", {
-      //   contactForm,
-      // });
-      console.log(contactForm);
+      axios.post("https://hook.us1.make.com/nt0s4oiuntfomjsvvrom4x85sx3leg8h", {
+        contactForm,
+      });
     }
   }, [submit]);
 
