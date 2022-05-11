@@ -7,26 +7,12 @@ import Partner_Icon from "../../../assets/images/contact/partner.svg";
 import Contact_Icon from "../../../assets/images/contact/contact.svg";
 import CardOutline from "../../../components/Card-Outline";
 import ContactPageWrapper from "./contactpage.style";
-import Button from "../../../reusecore/Button";
 import { Helmet } from "react-helmet";
-import axios from "axios";
-import { Field, Form, Formik } from "formik";
-import logo from "../../../assets/images/app/layer5.svg";
-
-const CONTACT_FORM_URL =
-  "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8";
+import ContactForm from "../../../components/ContactForm";
 
 const ContactPage = () => {
   const expandForm = useRef();
-  const [contactForm, setcontactForm] = useState({});
-  const [submit, setSubmit] = useState(false);
-
   const toggleForm = () => {
-    if (detectSafari() || !navigator.cookieEnabled) {
-      window.open(CONTACT_FORM_URL);
-      return;
-    }
-
     expandForm.current.classList.toggle("showForm");
   };
 
@@ -47,16 +33,6 @@ const ContactPage = () => {
 
     return safariAgent;
   };
-  useEffect(() => {
-    if (submit) {
-      axios.post(
-        "https://hook.integromat.com/6837rdde4mqpjj1e3pk3zfixjmfn514a",
-        {
-          contactForm,
-        }
-      );
-    }
-  }, [submit]);
 
   return (
     <ContactPageWrapper>
@@ -103,163 +79,7 @@ const ContactPage = () => {
           </Row>
           <div className="contact-form" ref={expandForm}>
             <Container>
-              <div className="form-data">
-                <Formik
-                  initialValues={{
-                    name: "",
-                    email: "",
-                    subject: "",
-                    message: "",
-                    areaofinterest: "",
-                  }}
-                  onSubmit={(values) => {
-                    setcontactForm(values);
-                  }}
-                >
-                  <Form className="form" method="post">
-                    <div className="title">
-                      <img
-                        className="layer5-logo"
-                        src={logo}
-                        alt="Layer5 Logo"
-                      />
-                    </div>
-                    <label htmlFor="name" className="form-name">
-                      Name <span className="required-sign">*</span>
-                    </label>
-                    <Field
-                      type="text"
-                      className="text-field"
-                      id="tname"
-                      name="name"
-                      maxLength="32"
-                      pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)"
-                      required
-                      onInvalid={(e) =>
-                        e.target.setCustomValidity("Please fill-in this field")
-                      }
-                      onInput={(e) => e.target.setCustomValidity("")}
-                    />
-                    <label htmlFor="email" className="form-name">
-                      Email Address <span className="required-sign">*</span>
-                    </label>
-                    <Field
-                      type="text"
-                      className="text-field"
-                      id="email"
-                      name="email"
-                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                      required
-                      onInvalid={(e) =>
-                        e.target.setCustomValidity("Please fill-in this field")
-                      }
-                      onInput={(e) => e.target.setCustomValidity("")}
-                    />
-                    <label htmlFor="subject" className="form-name">
-                      Subject <span className="required-sign">*</span>
-                    </label>
-                    <Field
-                      type="text"
-                      className="text-field"
-                      id="subject"
-                      name="subject"
-                      
-                      required
-                      onInvalid={(e) =>
-                        e.target.setCustomValidity("Please fill-in this field")
-                      }
-                      onInput={(e) => e.target.setCustomValidity("")}
-                    />
-                    <label htmlFor="subject" className="form-name">
-                      Message <span className="required-sign">*</span>
-                    </label>
-                    <Field as = "textarea"
-                      rows="8"
-                      type="text"
-                      className="text-field"
-                      id="message"
-                      name="message"
-                      
-                      required
-                      onInvalid={(e) =>
-                        e.target.setCustomValidity("Please fill-in this field")
-                      }
-                      onInput={(e) => e.target.setCustomValidity("")}
-                    />
-                    <label htmlFor="areaofinterest" className="form-name">
-                      Area of Interest <span className="required-sign">*</span>
-                    </label>
-                    <div
-                      
-                      aria-labelledby="my-radio-group"
-                    >
-                      <label>
-                        <Field className="radio-field"
-                          type="radio"
-                          name="areaofinterest"
-                          value="Meshry"
-                        />
-                        Meshry
-                      </label>
-                      <br></br>
-                      <label>
-                        <Field className="radio-field" type="radio" name="areaofinterest" value="SMP" />
-                        SMP
-                      </label>
-                      <br></br>
-                      <label>
-                        <Field className="radio-field" type="radio" name="areaofinterest" value="SMI" />
-                        SMI
-                      </label>
-                      <br></br>
-                      <label>
-                        <Field className="radio-field"
-                          type="radio"
-                          name="areaofinterest"
-                          value="GetNighthawk"
-                        />
-                        GetNighthawk
-                      </label>
-                      <br></br>
-                      <label>
-                        <Field className="radio-field"
-                          type="radio"
-                          name="areaofinterest"
-                          value="Landscape"
-                        />
-                        Landscape
-                      </label>
-                      <br></br>
-                      <label>
-                        <Field className="radio-field"
-                          type="radio"
-                          name="areaofinterest"
-                          value="Community"
-                        />
-                        Community
-                      </label>
-                      <div className="newsletter">
-                        <label>
-                          <Field
-                            type="checkbox"
-                            name="expect"
-                            className="form-check"
-                          />
-                          <span>Subscribe to our newsletter</span>
-                        </label>
-                      </div>
-                      <div className="form-submit">
-                        <Button
-                          secondary
-                          type="submit"
-                          className="btn-next"
-                          title="Submit"
-                        />
-                      </div>
-                    </div>
-                  </Form>
-                </Formik>
-              </div>
+              <ContactForm />
             </Container>
           </div>
         </Row>
