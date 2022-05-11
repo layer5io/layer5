@@ -6,11 +6,17 @@ import Button from "../../reusecore/Button";
 import axios from "axios";
 
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
-const dockerDesktop = "../../assets/images/docker-extension-for-meshery.png";
+const mesheryworkdiagram =
+  "../../assets/images/mesherywork-diagram/mesherywork-diagram.svg";
+const dockercompose_logo =
+  "../../assets/images/dockercompose-logo/dockercompose-logo.png";
+const visual_topology =
+  "../../assets/images/visual-topology/visual-topology.svg";
+const dockerDesktop =
+  "../../assets/images/docker-extension/docker-extension-meshery.png";
 import { StaticImage } from "gatsby-plugin-image";
 
 const DockerExtensionMeshery = () => {
-
   const [stepNumber, setStepNumber] = useState(0);
 
   // Form values
@@ -35,7 +41,7 @@ const DockerExtensionMeshery = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.integromat.com/bklgspwelgqkvbdj4coxompc62d78ngi", {
+      axios.post("https://hook.us1.make.com/gguommoyd14634ur9xs7l37widuoa7e9", {
         memberFormOne,
       });
     }
@@ -45,28 +51,93 @@ const DockerExtensionMeshery = () => {
     return (
       <Container>
         <Row>
-          <h2 className="sectionTitle">Develop service mesh-ready apps using Docker Desktop and Meshery</h2>
+          <h2 className="sectionTitle">
+            Develop service mesh-ready apps using Docker Desktop and Meshery
+          </h2>
           <p>
-            The Docker Extension for Meshery extends Docker Desktop’s position as the cloud native developer’s go-to Kubernetes environment with easy access to the next layer of cloud native infrastructure: service meshes.
+            The Docker Extension for Meshery extends Docker Desktop’s position
+            as the cloud native developer’s go-to Kubernetes environment with
+            easy access to the next layer of cloud native infrastructure:
+            service meshes.
           </p>
         </Row>
         <Row>
           <Col md={6} sm={12}>
-            <StaticImage src={dockerDesktop} alt="Docker Extension for Meshery" />
-            <p>
-              Join the beta program and get:</p>
+            <StaticImage
+              src={dockerDesktop}
+              alt="Docker Extension for Meshery"
+            />
+            <p>Join the beta program and get:</p>
             <ol>
-              <li><b>Service mesh support for your Docker Compose apps</b> - <i>Import your Docker Compose apps. Configure and deploy them to Kubernetes and any service mesh.</i></li>
-              <li><b>Visual designer for Docker Compose apps</b> - <i>Early access to the Docker Extension for Meshery that offers a visual topology for designing Docker Compose applications, operating Kubernetes, service meshes, and their workloads.</i></li>
-              <li><b>Single-click deployment of any service mesh</b> - <i>Support of 10 different service meshes to the fingertips of developers in connection with Docker Desktop’s ability to deliver Kubernetes locally.</i></li>
+              <Row>
+                <Col className="docker-extension-meshery" lg={2}>
+                  <StaticImage
+                    src={dockercompose_logo}
+                    alt="Docker Compose Logo"
+                    width={150}
+                    objectFit="contain"
+                  />
+                </Col>
+                <Col lg={10}>
+                  <li>
+                    <b>Service mesh support for your Docker Compose apps</b> -{" "}
+                    <i>
+                      Import your Docker Compose apps. Configure and deploy them
+                      to Kubernetes and any service mesh.
+                    </i>
+                  </li>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="docker-extension-meshery" lg={2}>
+                  <StaticImage
+                    src={visual_topology}
+                    alt="Visual Topology"
+                    width={150}
+                    objectFit="contain"
+                  />
+                </Col>
+                <Col lg={10}>
+                  <li>
+                    <b>Visual designer for Docker Compose apps</b> -{" "}
+                    <i>
+                      Early access to the Docker Extension for Meshery that
+                      offers a visual topology for designing Docker Compose
+                      applications, operating Kubernetes, service meshes, and
+                      their workloads.
+                    </i>
+                  </li>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="docker-extension-meshery" lg={2}>
+                  <StaticImage
+                    src={mesheryworkdiagram}
+                    alt="How Meshery Works with Single Click Deployment"
+                    width={150}
+                    objectFit="contain"
+                  />
+                </Col>
+                <Col lg={10}>
+                  <li>
+                    <b>Single-click deployment of any service mesh</b> -{" "}
+                    <i>
+                      Support of 10 different service meshes to the fingertips
+                      of developers in connection with Docker Desktop’s ability
+                      to deliver Kubernetes locally.
+                    </i>
+                  </li>
+                </Col>
+              </Row>
             </ol>
             You will also be able to:
             <ul>
-              <li>Provide early feedback to Docker and Meshery’s product teams.</li>
+              <li>
+                Provide early feedback to Docker and Meshery’s product teams.
+              </li>
               <li>Receive support and onboarding help from Layer5.</li>
             </ul>
             <p className="uppercase">Let's get you started!</p>
-
           </Col>
           <Col md={6} sm={12}>
             <h3 className="form-title">Apply For the Beta Program</h3>
@@ -135,7 +206,6 @@ const DockerExtensionMeshery = () => {
           </Col>
         </Row>
       </Container>
-
     );
   };
   const ThankYou = () => {
@@ -143,9 +213,20 @@ const DockerExtensionMeshery = () => {
       <Container>
         <div className="black-box">
           <h2>Thank you for your interest in Meshery Docker Extension!</h2>
-          <p>You are now signed up for the Meshery Docker Extension beta program and your position on the waiting list is confirmed. Please patiently await your acceptance and start of the beta program.  We are working through a growing waitlist. </p>
-          <p>In the meantime, please visit our <a href="https://discuss.layer5.io">community forum</a> or join us in our <a href="https://slack.layer5.io">community Slack</a>.</p>
-          <p className="white">- <img className="sign" src={layer5_img} alt="Layer5" /> <i>Team</i></p>
+          <p>
+            You are now signed up for the Meshery Docker Extension beta program
+            and your position on the waiting list is confirmed. Please patiently
+            await your acceptance and start of the beta program. We are working
+            through a growing waitlist.{" "}
+          </p>
+          <p>
+            In the meantime, please visit our{" "}
+            <a href="https://discuss.layer5.io">community forum</a> or join us
+            in our <a href="https://slack.layer5.io">community Slack</a>.
+          </p>
+          <p className="white">
+            - <img className="sign" src={layer5_img} alt="Layer5" /> <i>Team</i>
+          </p>
         </div>
       </Container>
     );
@@ -153,16 +234,8 @@ const DockerExtensionMeshery = () => {
   return (
     <DockerMesheryWrapper>
       <div>
-        {
-          stepNumber === 0 &&
-
-          <DockerExtFormPage />
-        }
-        {
-          stepNumber === 1 &&
-          <ThankYou />
-        }
-
+        {stepNumber === 0 && <DockerExtFormPage />}
+        {stepNumber === 1 && <ThankYou />}
       </div>
     </DockerMesheryWrapper>
   );

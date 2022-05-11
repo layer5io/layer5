@@ -1,4 +1,4 @@
-export const clients=[
+export const clients = [
   {
     name: "Akka",
     link: "https://akka.io",

@@ -63,14 +63,9 @@ const Navigation = (props) => {
   let meshOptions = data.filter((data) => data.category === "Service Mesh");
   let i=0;
   const types = counting.type.group;
-  const typesFieldValues = types.map(type => type.fieldValue);
   const products = counting.product.group;
-  const productsFieldValues = products.map(product => product.fieldValue);
   const technologies = counting.technology.group;
-  const technologiesFieldValues = technologies.map(tech => tech.fieldValue);
   const meshes = counting.mesh.group;
-  const meshesFieldValues = meshes.map(mesh => mesh.fieldValue);
-
 
 
   return (
@@ -124,12 +119,18 @@ const Navigation = (props) => {
               {typeOptions[0].subdata.map((x) => (
                 <li key={x.id}>
                   <label>
-                    <input type="checkbox"  value={x.value} onChange={props.handleChange} />
-                    <span> {x.label}</span>
                     { types && types.map(type => (
-                      type.fieldValue === x.value ? <span key={x.id} className="total">({type.totalCount})</span> : ""
+                        
+                      type.fieldValue === x.value && 
+                          <>
+                            <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                            <span> {x.label}</span>
+                            <span key={x.id}  className="total">({type.totalCount})</span>
+                          </>
+                         
+                        
+                    
                     ))}
-                    { typesFieldValues && !typesFieldValues.includes(x.value) ? <span key={x.id} className="total">(0)</span> : ""}
                   </label> 
                 </li>
               ))}
@@ -155,12 +156,18 @@ const Navigation = (props) => {
               {productOptions[0].subdata.map((x) => (
                 <li key={x.id}>
                   <label>
-                    <input type="checkbox"  value={x.value} onChange={props.handleChange} />
-                    <span> {x.label}</span>
                     { products && products.map(product => (
-                      product.fieldValue === x.value ? <span key={x.id}  className="total">({product.totalCount})</span> : ""
+                        
+                      product.fieldValue === x.value && 
+                         <>
+                           <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                           <span> {x.label}</span>
+                           <span key={x.id}  className="total">({product.totalCount})</span>
+                         </>
+                        
+                       
+                   
                     ))}
-                    { productsFieldValues && !productsFieldValues.includes(x.value) ? <span key={x.id} className="total">(0)</span> : ""}
                   </label> 
                 </li>
               ))}
@@ -186,12 +193,18 @@ const Navigation = (props) => {
               {techOptions[0].subdata.map((x) => (
                 <li key={x.id}>
                   <label>
-                    <input type="checkbox"  value={x.value} onChange={props.handleChange} />
-                    <span> {x.label}</span>
-                    { technologies && technologies.map(tech => (
-                      tech.fieldValue === x.value ? <span key={x.id}  className="total">({tech.totalCount})</span> : ""
+                    { technologies && technologies.map(technology => (
+                        
+                      technology.fieldValue === x.value && 
+                         <>
+                           <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                           <span> {x.label}</span>
+                           <span key={x.id}  className="total">({technology.totalCount})</span>
+                         </>
+                        
+                       
+                   
                     ))}
-                    { technologiesFieldValues && !technologiesFieldValues.includes(x.value) ? <span key={x.id} className="total">(0)</span> : ""}
 
                   </label> 
                 </li>
@@ -218,12 +231,18 @@ const Navigation = (props) => {
               {meshOptions[0].subdata.map((x) => (
                 <li key={x.id}>
                   <label>
-                    <input type="checkbox"  value={x.value} onChange={props.handleChange} />
-                    <span> {x.label}</span>
                     { meshes && meshes.map(mesh => (
-                      mesh.fieldValue === x.value ? <span key={x.id}  className="total">({mesh.totalCount})</span> : ""
+                        
+                      mesh.fieldValue === x.value && 
+                         <>
+                           <input type="checkbox"  value={x.value} onChange={props.handleChange} />
+                           <span> {x.label}</span>
+                           <span key={x.id}  className="total">({mesh.totalCount})</span>
+                         </>
+                        
+                       
+                   
                     ))}
-                    { meshesFieldValues && !meshesFieldValues.includes(x.value) ? <span key={x.id} className="total">(0)</span> : ""}
 
                   </label> 
                 </li>

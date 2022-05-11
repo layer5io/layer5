@@ -40,7 +40,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Docker User</h2>
-        <Code codeString={dedent`curl -L https://git.io/meshery | PLATFORM=docker bash -`
+        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -`
         }
         />
       </>
@@ -117,7 +117,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Kubernetes User</h2>
-        <Code codeString={dedent`curl -L https://git.io/meshery | PLATFORM=kubernetes bash - 
+        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash - 
         mesheryctl system start`
         }
         />
@@ -130,7 +130,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Bash User</h2>
-        <Code codeString={dedent`curl -L https://git.io/meshery | PLATFORM=kubernetes bash -`}
+        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -`}
         />
       </>
     )
