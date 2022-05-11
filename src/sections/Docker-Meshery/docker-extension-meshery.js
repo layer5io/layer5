@@ -57,71 +57,66 @@ const DockerExtensionMeshery = () => {
           <Col md={6} sm={12}>
             <StaticImage
               src={dockerDesktop}
-              alt="Docker Extension for Meshery"
+              alt="Meshery Docker Extension"
             />
-            <p>Join the beta program and get:</p>
-            <ol>
-              <Row>
-                <Col className="docker-extension-meshery" lg={2}>
-                  <StaticImage
-                    src={dockercompose_logo}
-                    alt="Docker Compose Logo"
-                    width={150}
-                    objectFit="contain"
-                  />
-                </Col>
-                <Col lg={10}>
-                  <li>
-                    <b>Service mesh support for your Docker Compose apps</b> -{" "}
-                    <i>
-                      Import your Docker Compose apps. Configure and deploy them
-                      to Kubernetes and any service mesh.
-                    </i>
-                  </li>
-                </Col>
-              </Row>
-              <Row>
-                <Col className="docker-extension-meshery" lg={2}>
-                  <StaticImage
-                    src={visual_topology}
-                    alt="Visual Topology"
-                    width={150}
-                    objectFit="contain"
-                  />
-                </Col>
-                <Col lg={10}>
-                  <li>
-                    <b>Visual designer for Docker Compose apps</b> -{" "}
-                    <i>
-                      Early access to the Docker Extension for Meshery that
-                      offers a visual topology for designing Docker Compose
-                      applications, operating Kubernetes, service meshes, and
-                      their workloads.
-                    </i>
-                  </li>
-                </Col>
-              </Row>
-              <Row>
-                <Col className="docker-extension-meshery" lg={2}>
-                  <StaticImage
-                    src={mesheryworkdiagram}
-                    alt="How Meshery Works with Single Click Deployment"
-                    width={150}
-                    objectFit="contain"
-                  />
-                </Col>
-                <Col lg={10}>
-                  <li>
-                    <b>Single-click deployment of any service mesh</b> -{" "}
-                    <i>
-                      Support of 10 different service meshes to the fingertips
-                      of developers in connection with Docker Desktop’s ability
-                      to deliver Kubernetes locally.
-                    </i>
-                  </li>
-                </Col>
-              </Row>
-            </ol>
+            <p>Install Meshery Docker Extension and get:</p>
+
+            <Row>
+              <Col className="docker-extension-meshery" lg={2}>
+                <StaticImage
+                  src={dockercompose_logo}
+                  alt="Docker Compose Logo"
+                  width={150}
+                  objectFit="contain"
+                />
+              </Col>
+              <Col lg={10}>
+
+                <b>Service mesh support for your Docker Compose apps</b> -{" "}
+                <i>
+                  Import your Docker Compose apps. Configure and deploy them
+                  to Kubernetes and any service mesh.
+                </i>
+
+              </Col>
+            </Row>
+            <Row>
+              <Col className="docker-extension-meshery" lg={2}>
+                <StaticImage
+                  src={visual_topology}
+                  alt="Visual Topology"
+                  width={150}
+                  objectFit="contain"
+                />
+              </Col>
+              <Col lg={10}>
+                <b>Visual designer for Docker Compose apps</b> -{" "}
+                <i>
+                  Early access to the Docker Extension for Meshery that
+                  offers a visual topology for designing Docker Compose
+                  applications, operating Kubernetes, service meshes, and
+                  their workloads.
+                </i>
+              </Col>
+            </Row>
+            <Row>
+              <Col className="docker-extension-meshery" lg={2}>
+                <StaticImage
+                  src={mesheryworkdiagram}
+                  alt="Single-click Istio deployment"
+                  width={150}
+                  objectFit="contain"
+                />
+              </Col>
+              <Col lg={10}>
+                <b>Single-click deployment of any service mesh</b> -{" "}
+                <i>
+                  Support of 10 different service meshes to the fingertips
+                  of developers in connection with Docker Desktop’s ability
+                  to deliver Kubernetes locally.
+                </i>
+              </Col>
+            </Row>
             You will also be able to:
             <ul>
               <li>
@@ -132,7 +127,7 @@ const DockerExtensionMeshery = () => {
             <p className="uppercase">Let's get you started!</p>
           </Col>
           <Col md={6} sm={12}>
-            <h3 className="form-title">Apply For the Beta Program</h3>
+            <h3 className="form-title">Learn All Meshery Docker Extension Features</h3>
             <Formik
               initialValues={{
                 firstname: "",
@@ -230,10 +225,7 @@ const DockerExtensionMeshery = () => {
         <div className="black-box">
           <h2>Thank you for your interest in Meshery Docker Extension!</h2>
           <p>
-            You are now signed up for the Meshery Docker Extension beta program
-            and your position on the waiting list is confirmed. Please patiently
-            await your acceptance and start of the beta program. We are working
-            through a growing waitlist.{" "}
+            You will soon receive detailed guidance on the all of the extension's features. {" "}
           </p>
           <p>
             In the meantime, please visit our{" "}
