@@ -138,7 +138,7 @@ const Meshmap = () => {
                       <label htmlFor="org" className="form-name">Organization / Company / School<span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="org" name="org" />
                       <div  className="accounts">
-                        <label className="form-name">Account(s) to Connect</label>
+                        <label className="form-name">Account(s) to Connect<span className="required-sign">*</span></label>
                         <p>
                           Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
                         </p>
