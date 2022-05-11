@@ -1,6 +1,19 @@
 import styled from "styled-components";
 
 export const DockerMesheryWrapper = styled.div`
+    .accounts{
+      p{
+      font-size: 12px;
+      line-height: 15px;
+      color: ${props => props.theme.primaryColor};
+      }
+      h5{
+        margin-top: 1rem;
+      }
+      .accounts_group{
+        margin: 0 1rem 0 1rem;
+      }
+    }
     .page-header-section {
         min-height: 30rem;
         background: rgb(71,126,150);

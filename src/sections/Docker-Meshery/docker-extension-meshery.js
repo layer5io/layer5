@@ -23,7 +23,18 @@ const DockerExtensionMeshery = () => {
   const [memberFormOne, setMemberFormOne] = useState({});
 
   const [submit, setSubmit] = useState(false);
+  const [validateAccounts, setValidateAccounts] = useState(false);
+  const [email, setEmail] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [org, setOrg] = useState("");
+  const [occupation, setOccupation] = useState("");
 
+  const google = "";
+  const github = "";
+  const linkedin = "";
+  const twitter = "";
+  const errorAccounts = "Please provide at least one account";
   const nextStep = () => {
     if (stepNumber === 0) {
       setSubmit(true);
@@ -135,17 +146,29 @@ const DockerExtensionMeshery = () => {
             <h3 className="form-title">Apply For the Beta Program</h3>
             <Formik
               initialValues={{
-                firstname: "",
-                lastname: "",
-                email: "",
-                occupation: "",
-                org: "",
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                occupation: occupation,
+                org: org,
+                github: "",
+                twitter: "",
+                linkedin: "",
                 form: "docker-extension",
               }}
               onSubmit={(values) => {
-                setMemberFormOne(values);
-                setStepNumber(1);
-                nextStep();
+                if (google.value || github.value || twitter.value || linkedin.value) {
+                  setMemberFormOne(values);
+                  setStepNumber(1);
+                  nextStep();
+                } else {
+                  setValidateAccounts(true);
+                  setFirstName(values.firstname);
+                  setEmail(values.email);
+                  setLastName(values.lastname);
+                  setOccupation(values.occupation);
+                  setOrg(values.org);
+                }
               }}
             >
               <Form className="form" method="post">
@@ -211,6 +234,23 @@ const DockerExtensionMeshery = () => {
                   name="org"
                   required
                 />
+                <div className="accounts">
+                  <label className="form-name">Account(s) to Connect<span className="required-sign">*</span></label>
+                  <p>
+                    Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
+                  </p>
+                  {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
+                  <div className="accounts_group">
+                    <label htmlFor="google" className="form-name">Google</label>
+                    <Field type="text" placeholder="my-address@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                    <label htmlFor="github" className="form-name">GitHub</label>
+                    <Field type="url" placeholder="https://github.com/" className="text-field" id="github" name="github" pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
+                    <label htmlFor="twitter" className="form-name">Twitter</label>
+                    <Field type="url" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)twitter.com(\/)([a-zA-z0-9\-_]+)" />
+                    <label htmlFor="linkedin" className="form-name">Linkedin</label>
+                    <Field type="url" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
+                  </div>
+                </div>
                 <Button
                   secondary
                   type="submit"
