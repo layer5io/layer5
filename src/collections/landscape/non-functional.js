@@ -3,7 +3,6 @@ import Linkerd from "../../assets/images/service-mesh-icons/linkerd.svg";
 import Consul from "../../assets/images/service-mesh-icons/consul.svg";
 import Cilium from "../../assets/images/service-mesh-icons/cilium.svg";
 import Istio from "../../assets/images/service-mesh-icons/istio.svg";
-import GreyMatter from "../../assets/images/service-mesh-icons/grey-matter.svg";
 import AspenMesh from "../../assets/images/service-mesh-icons/aspen-mesh.svg";
 import Conduit from "../../assets/images/service-mesh-icons/conduit-logo.svg";
 import NetworkServiceMesh from "../../assets/images/service-mesh-icons/nsm.svg";
@@ -18,9 +17,10 @@ import Citrix from "../../assets/images/service-mesh-icons/citrix.svg";
 import Osm from "../../assets/images/service-mesh-icons/osm.svg";
 import Nginx from "../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
 import Asm from "../../assets/images/service-mesh-icons/alibaba-cloud-asm.svg";
+import Tcm from "../../assets/images/service-mesh-icons/tencent-cloud-mesh.svg";
 
 
-export const non_functional=[{
+export const non_functional = [{
   name: "Vulcand",
   opensource: "Yes",
   link: "https://github.com/vulcand/vulcand",
@@ -95,19 +95,6 @@ export const non_functional=[{
   commercial: "Huawei",
   category: "Service Mesh",
   timeline_order: 6
-},
-{
-  name: "Grey Matter",
-  opensource: "No",
-  link: "http://deciphernow.com/grey-matter",
-  governance: "Decipher Technology Studios",
-  primary_lang: "Go",
-  announce_date: "November 2017",
-  ga_1_date: "February 2019",
-  commercial: "Grey Matter",
-  category: "Service Mesh",
-  timeline_order: 7,
-  icon: GreyMatter
 },
 {
   name: "Aspen Mesh",
@@ -252,6 +239,19 @@ export const non_functional=[{
   icon: AppMesh
 },
 {
+  name: "Tencent Cloud Mesh (TCM)",
+  opensource: "Partial",
+  link: "https://cloud.tencent.com/product/tcm",
+  governance: "Tencent Cloud",
+  primary_lang: "Go",
+  announce_date: "January 2019",
+  ga_1_date: "June 2019",
+  commercial: "Tencent Cloud",
+  category: "Service Mesh",
+  timeline_order: 19,
+  icon: Tcm
+},
+{
   name: "Kuma",
   opensource: "Yes",
   link: "https://kuma.io/",
@@ -261,7 +261,7 @@ export const non_functional=[{
   ga_1_date: "?",
   commercial: "Kuma",
   category: "Service Mesh",
-  timeline_order: 19,
+  timeline_order: 20,
   icon: Kuma
 },
 {
@@ -274,7 +274,7 @@ export const non_functional=[{
   ga_1_date: "July 2016",
   commercial: "Citrix Systems, Inc.",
   category: "Service Proxy",
-  timeline_order: 20,
+  timeline_order: 21,
   icon: Citrix
 },
 {
@@ -287,7 +287,7 @@ export const non_functional=[{
   ga_1_date: "August 2020",
   commercial: "Alibaba Cloud",
   category: "Service Mesh",
-  timeline_order: 21,
+  timeline_order: 22,
   icon: Asm
 },
 {
@@ -300,7 +300,7 @@ export const non_functional=[{
   ga_1_date: "?",
   commercial: "Microsoft",
   category: "Service Mesh",
-  timeline_order: 22,
+  timeline_order: 23,
   icon: Osm
 },
 {
@@ -313,7 +313,7 @@ export const non_functional=[{
   ga_1_date: "?",
   commercial: "NGINX",
   category: "Service Mesh",
-  timeline_order: 23,
+  timeline_order: 24,
   icon: Nginx,
 },
 {
