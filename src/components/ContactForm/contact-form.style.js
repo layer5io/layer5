@@ -94,6 +94,24 @@ const ContactFormWrapper = styled.section`
     border: none;
     margin-top: -2rem;
   }
+  .thanks-response {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+
+    .text-2xl {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+    .text-md {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
 
   @media screen and (max-width: 765px) {
     .form-frame {

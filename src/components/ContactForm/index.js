@@ -17,6 +17,19 @@ const ContactForm = () => {
     }
   }, [submit]);
 
+  if (submit) {
+    return (
+      <ContactFormWrapper>
+        <div className="thanks-response">
+          <div className="text-2xl">Thanks for contacting us!</div>
+          <div className="text-md">
+            We'll get back to you as soon as we can.
+          </div>
+        </div>
+      </ContactFormWrapper>
+    );
+  }
+
   return (
     <ContactFormWrapper>
       <div className="form-data">

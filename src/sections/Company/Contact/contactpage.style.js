@@ -38,6 +38,7 @@ const ContactPageWrapper = styled.section`
   .showForm {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     margin: auto -15px;
     height: 70rem;
   }
