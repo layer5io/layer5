@@ -13,53 +13,35 @@ const MeshmapWrapper = styled.div`
 
   .description{
     margin-top: 3rem;
-  .desc-text {
-    padding: 1.56rem;
-    h1{
-        font-weight: 600;
-    }
-    .heading-1 {
-        font-weight: 500;
-    }
-    .heading-2 {
-        font-weight: 700;
-        color: ${props => props.theme.secondaryColor};
-    }
-    .desc-p {
-        font-size: 1.25rem;   
-        margin: 1.875rem 0 2.5rem 0;
-    }
-  }
-}
 
-  .checkbox-label {
-    font-size: .8rem;
+    .desc-text {
+      padding: 1.56rem;
+      h1{
+          font-weight: 600;
+      }
+      .heading-1 {
+          font-weight: 500;
+      }
+      .heading-2 {
+          font-weight: 700;
+          color: ${props => props.theme.secondaryColor};
+      }
+      .desc-p {
+          font-size: 1.25rem;   
+          margin: 1.875rem 0 2.5rem 0;
+      }
+    }
   }
 
   .para {
-      padding-top: 4rem;
-  }
-
-  .image {
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding-bottom: 1rem;
-
-}
-
-  .bullet-image {
-      width: 50px;
-      height: 75px;
-      vertical-align: middle;
+      padding-top: 6rem;
   }
 
   .accounts{
     p{
-    font-size: 12px;
-    line-height: 15px;
-    color: ${props => props.theme.primaryColor};
+      font-size: 12px;
+      line-height: 15px;
+      color: ${props => props.theme.primaryColor};
     }
     h5{
       margin-top: 1rem;
@@ -70,39 +52,27 @@ const MeshmapWrapper = styled.div`
   }
 
 
-  .bullet {
-      ul > li {
-          color: ${props => props.theme.darkJungleGreenColor};
-      }
-  }
   .meshmapImage{
     display: block;
     margin: 4rem auto;
     width: 100%;
-}
-p.caption {
-  display: relative;
-  margin-top: -3rem;
-  font-style: italic;
-  text-align: center;
-}
-  .member-header{
-    align-items:center;
-    padding-left:200px
   }
 
-  .title1 {
-    font-weight: 700;
-    margin: 70px 0px 10px 0px;
+  p.caption {
+    display: relative;
+    margin-top: -3rem;
+    font-style: italic;
+    text-align: center;
   }
-    .form-title {
-        margin: 0 1rem;
-        padding: 1rem;
-        text-align: center;
-        background-color: ${props => props.theme.secondaryColor};
-        color: white;
-        box-shadow: 0px 0px 5px 2px ${props => props.theme.primaryLightColor};
-    }
+
+  .form-title {
+    margin: 0 1rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: ${props => props.theme.secondaryColor};
+    color: white;
+    box-shadow: 0px 0px 5px 2px ${props => props.theme.primaryLightColor};
+  }
 
     .label {
       font-size: 1rem;
@@ -115,14 +85,13 @@ p.caption {
         padding: 1rem;
 
         label {
-            display: block;
+          display: block;
         }
         
         .form-name {
-            font-weight: 600;
-            margin: 20px 0px 5px 3px;
-            display: block;
-
+          font-weight: 600;
+          margin: 20px 0px 5px 3px;
+          display: block;
         }
         .formRight select {
           background: none repeat scroll 0 0 #FFFFFF;
@@ -133,8 +102,7 @@ p.caption {
           width: 100%;
           font-size: 0.85rem;
           margin: 0.5rem 0;
-      }
-
+        }
 
       .custom-arrow {
         background-color: white;
@@ -142,7 +110,7 @@ p.caption {
         height: 2.65rem;
         position: absolute;
         right: 3.20rem;
-        bottom: 11.35rem;
+        bottom: 9.75rem;
         pointer-events: none;
         .down-arrow {
           position: relative;
@@ -160,41 +128,24 @@ p.caption {
 				}
       }
 
-
-      
-
       .text-field {
         width: 100%;
         border: 1px solid black;
         border-radius: 10px;
         padding: 1rem .5rem;
         font-size: .85rem;
-    }
+      }
 
-        .text-field:focus {
-          border: 2px solid #00B39F;
+      .text-field:focus {
+        border: 2px solid #00B39F;
 
-        }
+      }
 
-        .form-select {
-            width: 150px;
-            border: 1px solid black;
-            border-radius: 10px;
-            padding: 1rem .5rem;
-        }
-
-        .form-check {
-          width: 20px;
-          height: 20px;
-          border-radius: 15px;
-          margin: 2px 10px !important;
-        }
-
-        .btn {
-          margin: 1.9rem auto;
-          display: block;
-          width: auto;
-        }
+      .btn {
+        margin: 1.9rem auto;
+        display: block;
+        width: auto;
+      }
     }
     @media only screen and (max-width: 300px) {
       .form{
@@ -203,30 +154,6 @@ p.caption {
       }
     }
 
-
-    .center {
-        /* display: flex;
-        flex-wrap: wrap; */
-        align-items: center;
-        justify-content: center;
-        margin: 90px;
-        padding:0px 10px;
-    }
-
-    .option {
-        cursor: pointer;
-        flex: 1 1 160px;
-        /* border-radius: 15px; */
-        background-color: #C9FCF6;
-        margin: 25px 5px;
-        color: #00B39F;
-        text-align: center;
-        padding: 25px 10px; 
-    }
-    .option:hover{
-        background-color: #00B39F;
-        color:white;
-    }
 
     .black-box {
       display: flex;
