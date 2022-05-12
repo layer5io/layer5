@@ -8,7 +8,6 @@ import Features from "../../components/Features-carousel";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
-// import { Link } from "gatsby";
 import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
 import designerImage from "../../assets/images/meshmap/MeshMap.png";
 import visualizerImage from "../../assets/images/meshmap/MeshMap-Visualizer.png";
@@ -24,23 +23,25 @@ const Meshmap = () => {
   const [submit, setSubmit] = useState(false);
 
   const [validateAccounts, setValidateAccounts] = useState(false);
+  const [validateRole, setValidateRole] = useState(false);
   const [email, setEmail] = useState("");
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [org, setOrg] = useState("");
   const [occupation, setOccupation] = useState("");
   const [role, setRole] = useState("");
+  const [google, setGoogleAccount] = useState("");
+  const [github, setGithubAccount] = useState("");
+  const [twitter, setTwitterAccount] = useState("");
+  const [linkedin, setLinkedinAccount] = useState("");
 
-  const google = "";
-  const github = "";
-  const linkedin = "";
-  const twitter = "";
   const errorAccounts = "Please provide at least one account";
+  const errorRole = "Please select role as applicable";
   const nextStep = () => {
     if (stepNumber === 0) {
       setSubmit(true);
     }
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 800);
   };
 
   useEffect(() => {
@@ -48,6 +49,7 @@ const Meshmap = () => {
       axios.post("https://hook.us1.make.com/gguommoyd14634ur9xs7l37widuoa7e9", {
         memberFormOne,
       });
+      console.log(memberFormOne);
     }
   }, [submit]);
 
@@ -106,24 +108,38 @@ const Meshmap = () => {
                       email: email,
                       occupation: occupation,
                       org: org,
-                      github: "",
-                      twitter: "",
-                      linkedin: "",
+                      google: google,
+                      github: github,
+                      twitter: twitter,
+                      linkedin: linkedin,
                       role: role,
                       form: "meshmap",
                     }}
                     onSubmit={values => {
-                      if (google.value || github.value || twitter.value || linkedin.value) {
+                      if ((values.google || values.github || values.twitter || values.linkedin) && values.role) {
                         setMemberFormOne(values);
                         setStepNumber(1);
                         nextStep();
                       } else {
-                        setValidateAccounts(true);
+                        if(!values.role) {
+                          setValidateRole(true);
+                        } else {
+                          setValidateRole(false);
+                        }
+                        if (!(values.google || values.github || values.twitter || values.linkedin)) {
+                          setValidateAccounts(true);
+                        } else {
+                          setValidateAccounts(false);
+                        }
                         setFirstName(values.firstname);
                         setEmail(values.email);
                         setLastName(values.lastname);
                         setOccupation(values.occupation);
                         setOrg(values.org);
+                        setGoogleAccount(values.google);
+                        setTwitterAccount(values.twitter);
+                        setGithubAccount(values.github);
+                        setLinkedinAccount(values.linkedin);
                         setRole(values.role);
                       }
                     }}
@@ -131,13 +147,13 @@ const Meshmap = () => {
                     <Form className="form" method="post">
                       <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
-                      <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
+                      <label htmlFor="firstname" className="form-name">First Name <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
-                      <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
+                      <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
-                      <label htmlFor="occupation" className="form-name">Occupation / Title<span className="required-sign">*</span></label>
-                      <Field type="text" className="text-field" id="occupation" name="occupation" />
-                      <label htmlFor="org" className="form-name">Organization / Company / School<span className="required-sign">*</span></label>
+                      <label htmlFor="occupation" className="form-name">Occupation / Title <span className="required-sign">*</span></label>
+                      <Field type="text" className="text-field" id="occupation" name="occupation" required />
+                      <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="org" name="org" />
                       <div className="accounts">
                         <label className="form-name">Account(s) to Connect</label>
@@ -147,17 +163,18 @@ const Meshmap = () => {
                         {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
                         <div className="accounts_group">
                           <label htmlFor="google" className="form-name">Google</label>
-                          <Field type="text" placeholder="my-address@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                          <Field type="email" placeholder="my-address@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
                           <label htmlFor="github" className="form-name">GitHub</label>
-                          <Field type="url" placeholder="https://github.com/" className="text-field" id="github" name="github" pattern="http(s?)(:\/\/)((www.)?)github.com(\/)([a-zA-z0-9\-_]+)" />
+                          <Field type="text" placeholder="https://github.com/" className="text-field" id="github" name="github" />
                           <label htmlFor="twitter" className="form-name">Twitter</label>
-                          <Field type="url" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" pattern="http(s?)(:\/\/)((www.)?)twitter.com(\/)([a-zA-z0-9\-_]+)" />
+                          <Field type="text" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" />
                           <label htmlFor="linkedin" className="form-name">Linkedin</label>
-                          <Field type="url" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
+                          <Field type="text" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
                         </div>
                       </div>
 
-                      <label htmlForFor="role" className="form-name">What role best identifies you?<span className="required-sign">*</span></label>
+                      <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
+                      {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorRole}</p>}
                       <div role="group" className="formRight" aria-labelledby="select">
                         <span className="custom-arrow"><span className="down-arrow"></span></span>
                         <Field as="select" name="role">
@@ -177,7 +194,6 @@ const Meshmap = () => {
                         </Field>
                       </div>
 
-                      <br />
                       <Button secondary type="submit" className="btn" title="Submit" />
                     </Form>
                   </Formik>

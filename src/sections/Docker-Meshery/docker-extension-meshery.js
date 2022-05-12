@@ -26,11 +26,27 @@ const DockerExtensionMeshery = () => {
 
   const [submit, setSubmit] = useState(false);
 
+  const [validateAccounts, setValidateAccounts] = useState(false);
+  const [validateRole, setValidateRole] = useState(false);
+  const [email, setEmail] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [org, setOrg] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [role, setRole] = useState("");
+  const [google, setGoogleAccount] = useState("");
+  const [github, setGithubAccount] = useState("");
+  const [twitter, setTwitterAccount] = useState("");
+  const [linkedin, setLinkedinAccount] = useState("");
+
+  const errorRole = "Please select role as applicable";
+  const errorAccounts = "Please provide at least one account";
+
   const nextStep = () => {
     if (stepNumber === 0) {
       setSubmit(true);
     }
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 600);
   };
 
   useEffect(() => {
@@ -146,27 +162,49 @@ const DockerExtensionMeshery = () => {
             <h3 className="form-title">Learn All Meshery Docker Extension Features</h3>
             <Formik
               initialValues={{
-                firstname: "",
-                lastname: "",
-                email: "",
-                occupation: "",
-                org: "",
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                occupation: occupation,
+                org: org,
+                google: google,
+                github: github,
+                twitter: twitter,
+                linkedin: linkedin,
+                role: role,
                 form: "docker-extension",
               }}
-              onSubmit={(values) => {
-                setMemberFormOne(values);
-                setStepNumber(1);
-                nextStep();
+              onSubmit={values => {
+                if ((values.google || values.github || values.twitter || values.linkedin) && values.role) {
+                  setMemberFormOne(values);
+                  setStepNumber(1);
+                  nextStep();
+                } else {
+                  if(!values.role) {
+                    setValidateRole(true);
+                  } else {
+                    setValidateRole(false);
+                  }
+                  if (!(values.google || values.github || values.twitter || values.linkedin)) {
+                    setValidateAccounts(true);
+                  } else {
+                    setValidateAccounts(false);
+                  }
+                  setFirstName(values.firstname);
+                  setEmail(values.email);
+                  setLastName(values.lastname);
+                  setOccupation(values.occupation);
+                  setOrg(values.org);
+                  setGoogleAccount(values.google);
+                  setTwitterAccount(values.twitter);
+                  setGithubAccount(values.github);
+                  setLinkedinAccount(values.linkedin);
+                  setRole(values.role);
+                }
               }}
             >
               <Form className="form" method="post">
-                <Field
-                  type="hidden"
-                  id="form"
-                  name="form"
-                  value="docker-extension"
-                />
-                <label htmlFor="fname" className="form-name">
+                <label htmlFor="firstname" className="form-name">
                   First Name <span className="required-sign">*</span>
                 </label>
                 <Field
@@ -178,7 +216,7 @@ const DockerExtensionMeshery = () => {
                   pattern="[A-Za-z]{1,32}"
                   required
                 />
-                <label htmlFor="lname" className="form-name">
+                <label htmlFor="lastname" className="form-name">
                   Last Name <span className="required-sign">*</span>
                 </label>
                 <Field
@@ -202,7 +240,7 @@ const DockerExtensionMeshery = () => {
                   required
                 />
                 <label htmlFor="occupation" className="form-name">
-                  Occupation / Title<span className="required-sign">*</span>
+                  Occupation / Title <span className="required-sign">*</span>
                 </label>
                 <Field
                   type="text"
@@ -212,8 +250,7 @@ const DockerExtensionMeshery = () => {
                   required
                 />
                 <label htmlFor="org" className="form-name">
-                  Organization / Company / School
-                  <span className="required-sign">*</span>
+                  Organization / Company / School <span className="required-sign">*</span>
                 </label>
                 <Field
                   type="text"
@@ -222,6 +259,44 @@ const DockerExtensionMeshery = () => {
                   name="org"
                   required
                 />
+                <div className="accounts">
+                  <label className="form-name">Account(s) to Connect</label>
+                  <p>
+                    Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected participants will receive a free Meshery Cloud account and have full access to the Meshery Docker extension for each of the following user accounts that you provide. Please provide at least one account.
+                  </p>
+                  {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
+                  <div className="accounts_group">
+                    <label htmlFor="google" className="form-name">Google</label>
+                    <Field type="email" placeholder="my-address@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                    <label htmlFor="github" className="form-name">GitHub</label>
+                    <Field type="text" placeholder="https://github.com/" className="text-field" id="github" name="github" />
+                    <label htmlFor="twitter" className="form-name">Twitter</label>
+                    <Field type="text" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" />
+                    <label htmlFor="linkedin" className="form-name">Linkedin</label>
+                    <Field type="text" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
+                  </div>
+                </div>
+
+                <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
+                {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorRole}</p>}
+                <div role="group" className="formRight" aria-labelledby="select">
+                  <span className="custom-arrow"><span className="down-arrow"></span></span>
+                  <Field as="select" name="role">
+                    <option selected hidden>Select your role</option>
+                    <option value="Architect">Architect</option>
+                    <option value="Business Operations">Business Operations</option>
+                    <option value="Developer">Developer</option>
+                    <option value="DevOps">DevOps/SRE/Sysadmin </option>
+                    <option value="Executive">Executive</option>
+                    <option value="IT Operations">IT Operations</option>
+                    <option value="Media"> Media/Analyst</option>
+                    <option value="Product Manage">Product Manager</option>
+                    <option value="Professor">Professor/Academic</option>
+                    <option value="Sales Marketing">Sales Marketing</option>
+                    <option value="Student">Student</option>
+                    <option value="Other">Other</option>
+                  </Field>
+                </div>
                 <Button
                   secondary
                   type="submit"
