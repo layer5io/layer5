@@ -13,16 +13,13 @@ import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
 import designerImage from "../../assets/images/meshmap/MeshMap.png";
 import visualizerImage from "../../assets/images/meshmap/MeshMap-Visualizer.png";
 
-
 const Meshmap = () => {
 
   const [stepNumber, setStepNumber] = useState(0);
 
   // Form values
   const [memberFormOne, setMemberFormOne] = useState({});
-
   const [submit, setSubmit] = useState(false);
-
   const [validateAccounts, setValidateAccounts] = useState(false);
   const [email, setEmail] = useState("");
   const [firstname, setFirstName] = useState("");
@@ -50,7 +47,6 @@ const Meshmap = () => {
       });
     }
   }, [submit]);
-
 
   const MeshmapFormPage = () => {
     return (
@@ -176,7 +172,6 @@ const Meshmap = () => {
                           <option value="Other">Other</option>
                         </Field>
                       </div>
-
                       <br />
                       <Button secondary type="submit" className="btn" title="Submit" />
                     </Form>

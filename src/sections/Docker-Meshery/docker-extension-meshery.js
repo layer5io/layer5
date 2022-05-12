@@ -17,11 +17,11 @@ const dockerDesktop =
 import { StaticImage } from "gatsby-plugin-image";
 
 const DockerExtensionMeshery = () => {
+
   const [stepNumber, setStepNumber] = useState(0);
 
   // Form values
   const [memberFormOne, setMemberFormOne] = useState({});
-
   const [submit, setSubmit] = useState(false);
   const [validateAccounts, setValidateAccounts] = useState(false);
   const [email, setEmail] = useState("");
@@ -245,6 +245,25 @@ const DockerExtensionMeshery = () => {
                     <label htmlFor="linkedin" className="form-name">Linkedin</label>
                     <Field type="url" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
                   </div>
+                </div>
+
+                <label htmlForFor="role" className="form-name">What role best identifies you?<span className="required-sign">*</span></label>
+                <div role="group" className="formRight" aria-labelledby="select">
+                  <Field as="select" name="role">
+                    <option selected hidden>Select your role</option>
+                    <option value="Architect">Architect</option>
+                    <option value="Business Operations">Business Operations</option>
+                    <option value="Developer">Developer</option>
+                    <option value="DevOps">DevOps/SRE/Sysadmin </option>
+                    <option value="Executive">Executive</option>
+                    <option value="IT Operations">IT Operations</option>
+                    <option value="Media"> Media/Analyst</option>
+                    <option value="Product Manage">Product Manager</option>
+                    <option value="Professor">Professor/Academic</option>
+                    <option value="Sales Marketing">Sales Marketing</option>
+                    <option value="Student">Student</option>
+                    <option value="Other">Other</option>
+                  </Field>
                 </div>
                 <Button
                   secondary

@@ -123,8 +123,19 @@ export const DockerMesheryWrapper = styled.div`
             font-weight: 600;
             margin: 20px 0px 5px 3px;
             display: block;
-
         }
+
+        .formRight select {
+          background: none repeat scroll 0 0 #FFFFFF;
+          border: 1px solid black;
+          border-radius: 10px;
+          height: 50px;
+          padding: 1rem 1rem;
+          width: 100%;
+          font-size: 0.85rem;
+          margin: 0.5rem 0;
+      }
+
 
         .text-field {
             width: 100%;
