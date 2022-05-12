@@ -163,13 +163,13 @@ const Meshmap = () => {
                         {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
                         <div className="accounts_group">
                           <label htmlFor="google" className="form-name">Google</label>
-                          <Field type="email" placeholder="my-address@gmail.com" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                          <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
                           <label htmlFor="github" className="form-name">GitHub</label>
-                          <Field type="text" placeholder="https://github.com/" className="text-field" id="github" name="github" />
+                          <Field type="text" className="text-field" id="github" name="github" />
                           <label htmlFor="twitter" className="form-name">Twitter</label>
-                          <Field type="text" placeholder="https://twitter.com/" className="text-field" id="twitter" name="twitter" />
+                          <Field type="text" className="text-field" id="twitter" name="twitter" />
                           <label htmlFor="linkedin" className="form-name">Linkedin</label>
-                          <Field type="text" placeholder="https://www.linkedin.com/" className="text-field" id="linkedin" name="linkedin" />
+                          <Field type="text" className="text-field" id="linkedin" name="linkedin" />
                         </div>
                       </div>
 
