@@ -1,6 +1,19 @@
 import styled from "styled-components";
 
 export const DockerMesheryWrapper = styled.div`
+    .accounts{
+      p{
+      font-size: 12px;
+      line-height: 15px;
+      color: ${props => props.theme.primaryColor};
+      }
+      h5{
+        margin-top: 1rem;
+      }
+      .accounts_group{
+        margin: 0 1rem 0 1rem;
+      }
+    }
     .page-header-section {
         min-height: 30rem;
         background: rgb(71,126,150);
@@ -145,10 +158,21 @@ export const DockerMesheryWrapper = styled.div`
           margin: 3rem 1rem 0;
         }
       }
-    
+    div.extension-feature {
+      margin: 2rem 0rem;
+    }
     .docker-extension-meshery {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    div.feature-title {
+      background-color: ${(props) => props.theme.saffronLightColor};
+      padding: .4rem;
+      font-weight: 500;
+      margin-bottom: .3rem;
+      line-height: 1.25rem;
+      padding: 5%;
+      border-radius: 1rem;
     }
 `;

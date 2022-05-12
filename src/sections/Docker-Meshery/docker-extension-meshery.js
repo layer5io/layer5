@@ -5,6 +5,7 @@ import { Field, Formik, Form } from "formik";
 import Button from "../../reusecore/Button";
 import axios from "axios";
 
+const Kubernetes = "./kubernetes-logo.svg";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 const mesheryworkdiagram =
   "../../assets/images/mesherywork-diagram/mesherywork-diagram.svg";
@@ -14,6 +15,7 @@ const visual_topology =
   "../../assets/images/visual-topology/visual-topology.svg";
 const dockerDesktop =
   "../../assets/images/docker-extension/docker-extension-meshery.png";
+
 import { StaticImage } from "gatsby-plugin-image";
 
 const DockerExtensionMeshery = () => {
@@ -66,31 +68,21 @@ const DockerExtensionMeshery = () => {
                 <StaticImage
                   src={dockercompose_logo}
                   alt="Docker Compose Logo"
-                  width={150}
+                  width={250}
                   objectFit="contain"
                 />
               </Col>
               <Col lg={10}>
-
-                <b>Service mesh support for your Docker Compose apps</b> -{" "}
+                <div className="feature-title">Service mesh support for your Docker Compose apps</div> {" "}
                 <i>
                   Import your Docker Compose apps. Configure and deploy them
                   to Kubernetes and any service mesh.
                 </i>
-
               </Col>
             </Row>
-            <Row>
-              <Col className="docker-extension-meshery" lg={2}>
-                <StaticImage
-                  src={visual_topology}
-                  alt="Visual Topology"
-                  width={150}
-                  objectFit="contain"
-                />
-              </Col>
+            <Row className="extension-feature">
               <Col lg={10}>
-                <b>Visual designer for Docker Compose apps</b> -{" "}
+                <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
                 <i>
                   Early access to the Docker Extension for Meshery that
                   offers a visual topology for designing Docker Compose
@@ -98,8 +90,16 @@ const DockerExtensionMeshery = () => {
                   their workloads.
                 </i>
               </Col>
+              <Col className="docker-extension-meshery" lg={2}>
+                <StaticImage
+                  src={visual_topology}
+                  alt="Visual Topology"
+                  width={250}
+                  objectFit="contain"
+                />
+              </Col>
             </Row>
-            <Row>
+            <Row className="extension-feature">
               <Col className="docker-extension-meshery" lg={2}>
                 <StaticImage
                   src={mesheryworkdiagram}
@@ -109,7 +109,7 @@ const DockerExtensionMeshery = () => {
                 />
               </Col>
               <Col lg={10}>
-                <b>Single-click deployment of any service mesh</b> -{" "}
+                <div className="feature-title">Single-click deployment of any service mesh</div> {" "}
                 <i>
                   Support of 10 different service meshes to the fingertips
                   of developers in connection with Docker Desktop’s ability
@@ -117,14 +117,30 @@ const DockerExtensionMeshery = () => {
                 </i>
               </Col>
             </Row>
-            You will also be able to:
+            <Row className="extension-feature">
+              <Col lg={10}>
+                <div className="feature-title">Detection of Kubernetes environments</div> {" "}
+                <i>
+                  Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another one.
+                </i>
+              </Col>
+              <Col className="docker-extension-meshery" lg={2}>
+                <StaticImage
+                  src={Kubernetes}
+                  alt="Kubernetes scan and MeshSync"
+                  width={150}
+                  objectFit="contain"
+                />
+              </Col>
+            </Row>
+            {/* You will also be able to:
             <ul>
               <li>
                 Provide early feedback to Docker and Meshery’s product teams.
               </li>
               <li>Receive support and onboarding help from Layer5.</li>
             </ul>
-            <p className="uppercase">Let's get you started!</p>
+            <p className="uppercase">Let's get you started!</p> */}
           </Col>
           <Col md={6} sm={12}>
             <h3 className="form-title">Learn All Meshery Docker Extension Features</h3>
@@ -215,8 +231,8 @@ const DockerExtensionMeshery = () => {
               </Form>
             </Formik>
           </Col>
-        </Row>
-      </Container>
+        </Row >
+      </Container >
     );
   };
   const ThankYou = () => {
