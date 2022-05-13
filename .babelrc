@@ -1,16 +1,4 @@
 {
-  "plugins": [
-    [
-      "babel-plugin-styled-components",
-      {
-        "ssr": false,
-        "minify": false,
-        "transpileTemplateLiterals": false,
-        "pure": true
-      }
-    ],
-    "@babel/plugin-proposal-optional-chaining"
-  ],
   "presets": [
     [
       "babel-preset-gatsby",
