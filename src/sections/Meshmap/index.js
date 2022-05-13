@@ -5,6 +5,7 @@ import Button from "../../reusecore/Button";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import Features from "../../components/Features-carousel";
+import MeshmapModes from "./meshmap-modes";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
@@ -59,32 +60,35 @@ const Meshmap = () => {
       <div>
         <MeshmapBanner />
         <Container>
-          <Features
-            features={[
-              {
-                title: "Designer Mode",
-                description:
+          <div className="mobile-modes">
+            <Features
+              features={[
+                {
+                  title: "Designer Mode",
+                  description:
                   "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
-                content: (
-                  <img
-                    src={designerImage}
-                    alt="Designer Mode"
-                  />
-                ),
-              },
-              {
-                title: "Visualizer Mode",
-                description:
+                  content: (
+                    <img
+                      src={designerImage}
+                      alt="Designer Mode"
+                    />
+                  ),
+                },
+                {
+                  title: "Visualizer Mode",
+                  description:
                   "Examine a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers.",
-                content: (
-                  <img
-                    src={visualizerImage}
-                    alt="Visualizer Mode"
-                  />
-                ),
-              },
-            ]}
-          />
+                  content: (
+                    <img
+                      src={visualizerImage}
+                      alt="Visualizer Mode"
+                    />
+                  ),
+                },
+              ]}
+            />
+          </div>
+          <MeshmapModes />
           <div className="banner-background">
             <Container>
 

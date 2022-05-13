@@ -154,6 +154,15 @@ const MeshmapWrapper = styled.div`
       }
     }
 
+    .mobile-modes{
+      display: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .mobile-modes{
+        display: block;
+      }
+    }
 
     .black-box {
       display: flex;
