@@ -152,28 +152,18 @@ const DockerExtensionMeshery = () => {
             <Row className="extension-feature">
               <Col lg={10}>
                 <div className="listed">
-                  <table className="table">
-                    <tr>
-                      <td className="service">
-                        <h4>
-                          <strong>Resources</strong> <br />
-                        </h4>
-                        Layer5 presented two talks at DockerCon22 with HPE and HashiCorp, below are the links to the blog posts which covers the detailed overview of "Docker Extension for Meshery".
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <ul>
-                          <li>
-                            <a href="https://layer5.io/blog/docker/extending-the-docker-compose-experience-to-service-mesh">Extending the Docker Compose Experience to Service Mesh</a>
-                          </li>
-                          <li>
-                            <a href="https://layer5.io/blog/docker/extending-docker-with-meshery-spire-and-istio">Extending Docker with Meshery, SPIRE, and Istio</a>
-                          </li>
-                        </ul>
-                      </td>
-                    </tr>
-                  </table>
+                  <strong>Resources</strong>
+                  <p>
+                    Layer5 presented two talks at DockerCon22 with HPE and HashiCorp, below are the links to the blog posts which covers the detailed overview of "Docker Extension for Meshery".
+                  </p>
+                  <ul>
+                    <li>
+                      <a href="https://layer5.io/blog/docker/extending-the-docker-compose-experience-to-service-mesh">Extending the Docker Compose Experience to Service Mesh</a>
+                    </li>
+                    <li>
+                      <a href="https://layer5.io/blog/docker/extending-docker-with-meshery-spire-and-istio">Extending Docker with Meshery, SPIRE, and Istio</a>
+                    </li>
+                  </ul>
                 </div>
               </Col>
             </Row>
