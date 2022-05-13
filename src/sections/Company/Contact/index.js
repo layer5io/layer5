@@ -16,24 +16,6 @@ const ContactPage = () => {
     expandForm.current.classList.toggle("showForm");
   };
 
-  /**
-   * Finds if the given agent is the
-   * browser's agent
-   * @param {string} agent
-   * @returns {boolean}
-   */
-  const findAgent = (agent) => navigator.userAgent.indexOf(agent) > -1;
-
-  const detectSafari = () => {
-    let safariAgent = findAgent("Safari");
-    let chromeAgent = findAgent("Chrome");
-
-    // Discard Safari since it also matches Chrome
-    if (chromeAgent && safariAgent) safariAgent = false;
-
-    return safariAgent;
-  };
-
   return (
     <ContactPageWrapper>
       <Container>

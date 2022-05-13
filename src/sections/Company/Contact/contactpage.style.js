@@ -38,22 +38,11 @@ const ContactPageWrapper = styled.section`
   .showForm {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     margin: auto -15px;
-    height: 70rem;
-  }
-
-  .form-frame {
-    height: 68rem;
-    width: 35rem;
-    border: none;
-    margin-top: -2rem;
+    height: fit-content;
   }
 
   @media screen and (max-width: 765px) {
-    .form-frame {
-      width: 25rem;
-    }
     .contact-form {
       .form {
         width: 100%;
