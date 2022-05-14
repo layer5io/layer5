@@ -247,7 +247,7 @@ export const repo_data = [
         repository:"https://github.com/layer5io/meshery-smp-action"
       },
       {
-        project:"meshery-pref",
+        project:"Meshery-Perf",
         language:"Golang",
         description:"meshery-perf is a Meshery component used to run performance tests",
         repository:"https://github.com/meshery/meshery-perf"
