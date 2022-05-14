@@ -1,6 +1,24 @@
 import styled from "styled-components";
 
 export const DockerMesheryWrapper = styled.div`
+
+    .required-sign {
+      color: #8b0000;
+    }
+
+    .accounts{
+      p{
+      font-size: 12px;
+      line-height: 15px;
+      color: ${props => props.theme.primaryColor};
+      }
+      h5{
+        margin-top: 1rem;
+      }
+      .accounts_group{
+        margin: 0 1rem 0 1rem;
+      }
+    }
     .page-header-section {
         min-height: 30rem;
         background: rgb(71,126,150);
@@ -56,6 +74,7 @@ export const DockerMesheryWrapper = styled.div`
       padding: 5%;
       background-color: ${(props) => props.theme.darkJungleGreenColor};
       border-radius: 6rem;
+      text-align: center;
 
       .sign{  
         width: 5.5rem;
@@ -110,7 +129,6 @@ export const DockerMesheryWrapper = styled.div`
             font-weight: 600;
             margin: 20px 0px 5px 3px;
             display: block;
-
         }
 
         .text-field {
@@ -123,6 +141,41 @@ export const DockerMesheryWrapper = styled.div`
 
         .text-field:focus {
           border: 2px solid #00B39F;
+        }
+
+        .formRight select {
+          background: none repeat scroll 0 0 #FFFFFF;
+          border: 1px solid black;
+          border-radius: 10px;
+          height: 50px;
+          padding: 1rem 1rem;
+          width: 100%;
+          font-size: 0.85rem;
+          margin: 0.5rem 0;
+        }
+
+        .custom-arrow {
+          background-color: white;
+          width: 2rem;
+          height: 2.65rem;
+          position: absolute;
+          right: 3.20rem;
+          bottom: 9.75rem;
+          pointer-events: none;
+          .down-arrow {
+            position: relative;
+            top: 0.5rem;
+            left: 0.5rem;
+            border: solid ${props => props.theme.primaryColor};
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 6px 6px;
+            transform: rotate(45deg);
+            pointer-events: none;
+          }
+          @media screen and (max-width: 300px) {
+            right: 2.2rem;
+          }
         }
 
         .btn {
@@ -145,10 +198,21 @@ export const DockerMesheryWrapper = styled.div`
           margin: 3rem 1rem 0;
         }
       }
-    
+    div.extension-feature {
+      margin: 2rem 0rem;
+    }
     .docker-extension-meshery {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    div.feature-title {
+      background-color: ${(props) => props.theme.saffronLightColor};
+      padding: .4rem;
+      font-weight: 500;
+      margin-bottom: .3rem;
+      line-height: 1.25rem;
+      padding: 5%;
+      border-radius: 1rem;
     }
 `;
