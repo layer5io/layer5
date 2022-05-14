@@ -94,7 +94,7 @@ const DockerExtensionMeshery = () => {
                 <StaticImage
                   src={visual_topology}
                   alt="Visual Topology"
-                  width={250}
+                  width={150}
                   objectFit="contain"
                 />
               </Col>
