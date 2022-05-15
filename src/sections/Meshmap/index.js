@@ -62,6 +62,7 @@ const Meshmap = () => {
         <Container>
           <div className="mobile-modes">
             <Features
+              heading="MeshMap Modes"
               features={[
                 {
                   title: "Designer Mode",
@@ -71,17 +72,19 @@ const Meshmap = () => {
                     <img
                       src={designerImage}
                       alt="Designer Mode"
+                      className="modes-image"
                     />
                   ),
                 },
                 {
                   title: "Visualizer Mode",
                   description:
-                  "Examine a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers.",
+                  "Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services.",
                   content: (
                     <img
                       src={visualizerImage}
                       alt="Visualizer Mode"
+                      className="modes-image"
                     />
                   ),
                 },
