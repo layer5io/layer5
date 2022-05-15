@@ -135,6 +135,15 @@ export const repo_data = [
         repository:
           "https://github.com/layer5io/containers-101-workshop",
       },
+      {
+        project: "Cloud Native Playground",
+        image: meshery,
+        language: "Meshery",
+        description:
+          "Cloud Native Playground for Kubernetes and Service Mesh ",
+        repository:
+          "https://github.com/meshery/play",
+      }
     ],
   },
 
@@ -246,6 +255,12 @@ export const repo_data = [
         description:"GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
         repository:"https://github.com/layer5io/meshery-smp-action"
       },
+      {
+        project:"Meshery-Perf",
+        language:"Golang",
+        description:"meshery-perf is a Meshery component used to run performance tests",
+        repository:"https://github.com/meshery/meshery-perf"
+      }
     ],
   },
 

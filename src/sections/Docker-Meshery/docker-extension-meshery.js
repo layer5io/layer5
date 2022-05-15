@@ -5,6 +5,7 @@ import { Field, Formik, Form } from "formik";
 import Button from "../../reusecore/Button";
 import axios from "axios";
 
+const Kubernetes = "./kubernetes-logo.svg";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 const mesheryworkdiagram =
   "../../assets/images/mesherywork-diagram/mesherywork-diagram.svg";
@@ -14,6 +15,7 @@ const visual_topology =
   "../../assets/images/visual-topology/visual-topology.svg";
 const dockerDesktop =
   "../../assets/images/docker-extension/docker-extension-meshery.png";
+
 import { StaticImage } from "gatsby-plugin-image";
 
 const DockerExtensionMeshery = () => {
@@ -24,11 +26,27 @@ const DockerExtensionMeshery = () => {
 
   const [submit, setSubmit] = useState(false);
 
+  const [validateAccounts, setValidateAccounts] = useState(false);
+  const [validateRole, setValidateRole] = useState(false);
+  const [email, setEmail] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [org, setOrg] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [role, setRole] = useState("");
+  const [google, setGoogleAccount] = useState("");
+  const [github, setGithubAccount] = useState("");
+  const [twitter, setTwitterAccount] = useState("");
+  const [linkedin, setLinkedinAccount] = useState("");
+
+  const errorRole = "Please select role as applicable";
+  const errorAccounts = "Please provide at least one account";
+
   const nextStep = () => {
     if (stepNumber === 0) {
       setSubmit(true);
     }
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 600);
   };
 
   useEffect(() => {
@@ -57,105 +75,136 @@ const DockerExtensionMeshery = () => {
           <Col md={6} sm={12}>
             <StaticImage
               src={dockerDesktop}
-              alt="Docker Extension for Meshery"
+              alt="Meshery Docker Extension"
             />
-            <p>Join the beta program and get:</p>
-            <ol>
-              <Row>
-                <Col className="docker-extension-meshery" lg={2}>
-                  <StaticImage
-                    src={dockercompose_logo}
-                    alt="Docker Compose Logo"
-                    width={150}
-                    objectFit="contain"
-                  />
-                </Col>
-                <Col lg={10}>
-                  <li>
-                    <b>Service mesh support for your Docker Compose apps</b> -{" "}
-                    <i>
-                      Import your Docker Compose apps. Configure and deploy them
-                      to Kubernetes and any service mesh.
-                    </i>
-                  </li>
-                </Col>
-              </Row>
-              <Row>
-                <Col className="docker-extension-meshery" lg={2}>
-                  <StaticImage
-                    src={visual_topology}
-                    alt="Visual Topology"
-                    width={150}
-                    objectFit="contain"
-                  />
-                </Col>
-                <Col lg={10}>
-                  <li>
-                    <b>Visual designer for Docker Compose apps</b> -{" "}
-                    <i>
-                      Early access to the Docker Extension for Meshery that
-                      offers a visual topology for designing Docker Compose
-                      applications, operating Kubernetes, service meshes, and
-                      their workloads.
-                    </i>
-                  </li>
-                </Col>
-              </Row>
-              <Row>
-                <Col className="docker-extension-meshery" lg={2}>
-                  <StaticImage
-                    src={mesheryworkdiagram}
-                    alt="How Meshery Works with Single Click Deployment"
-                    width={150}
-                    objectFit="contain"
-                  />
-                </Col>
-                <Col lg={10}>
-                  <li>
-                    <b>Single-click deployment of any service mesh</b> -{" "}
-                    <i>
-                      Support of 10 different service meshes to the fingertips
-                      of developers in connection with Docker Desktop’s ability
-                      to deliver Kubernetes locally.
-                    </i>
-                  </li>
-                </Col>
-              </Row>
-            </ol>
-            You will also be able to:
+            <p>Install Meshery Docker Extension and get:</p>
+
+            <Row>
+              <Col className="docker-extension-meshery" lg={2}>
+                <StaticImage
+                  src={dockercompose_logo}
+                  alt="Docker Compose Logo"
+                  width={250}
+                  objectFit="contain"
+                />
+              </Col>
+              <Col lg={10}>
+                <div className="feature-title">Service mesh support for your Docker Compose apps</div> {" "}
+                <i>
+                  Import your Docker Compose apps. Configure and deploy them
+                  to Kubernetes and any service mesh.
+                </i>
+              </Col>
+            </Row>
+            <Row className="extension-feature">
+              <Col lg={10}>
+                <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
+                <i>
+                  Early access to the Docker Extension for Meshery that
+                  offers a visual topology for designing Docker Compose
+                  applications, operating Kubernetes, service meshes, and
+                  their workloads.
+                </i>
+              </Col>
+              <Col className="docker-extension-meshery" lg={2}>
+                <StaticImage
+                  src={visual_topology}
+                  alt="Visual Topology"
+                  width={150}
+                  objectFit="contain"
+                />
+              </Col>
+            </Row>
+            <Row className="extension-feature">
+              <Col className="docker-extension-meshery" lg={2}>
+                <StaticImage
+                  src={mesheryworkdiagram}
+                  alt="Single-click Istio deployment"
+                  width={150}
+                  objectFit="contain"
+                />
+              </Col>
+              <Col lg={10}>
+                <div className="feature-title">Single-click deployment of any service mesh</div> {" "}
+                <i>
+                  Support of 10 different service meshes to the fingertips
+                  of developers in connection with Docker Desktop’s ability
+                  to deliver Kubernetes locally.
+                </i>
+              </Col>
+            </Row>
+            <Row className="extension-feature">
+              <Col lg={10}>
+                <div className="feature-title">Detection of Kubernetes environments</div> {" "}
+                <i>
+                  Scan your kubeconfigs and select your current Kubernetes environment. Switch from one environment to another one.
+                </i>
+              </Col>
+              <Col className="docker-extension-meshery" lg={2}>
+                <StaticImage
+                  src={Kubernetes}
+                  alt="Kubernetes scan and MeshSync"
+                  width={150}
+                  objectFit="contain"
+                />
+              </Col>
+            </Row>
+            {/* You will also be able to:
             <ul>
               <li>
                 Provide early feedback to Docker and Meshery’s product teams.
               </li>
               <li>Receive support and onboarding help from Layer5.</li>
             </ul>
-            <p className="uppercase">Let's get you started!</p>
+            <p className="uppercase">Let's get you started!</p> */}
           </Col>
           <Col md={6} sm={12}>
-            <h3 className="form-title">Apply For the Beta Program</h3>
+            <h3 className="form-title">Learn All Meshery Docker Extension Features</h3>
             <Formik
               initialValues={{
-                firstname: "",
-                lastname: "",
-                email: "",
-                occupation: "",
-                org: "",
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                occupation: occupation,
+                org: org,
+                google: google,
+                github: github,
+                twitter: twitter,
+                linkedin: linkedin,
+                role: role,
                 form: "docker-extension",
               }}
-              onSubmit={(values) => {
-                setMemberFormOne(values);
-                setStepNumber(1);
-                nextStep();
+              onSubmit={values => {
+                if ((values.google || values.github || values.twitter || values.linkedin) && values.role) {
+                  setMemberFormOne(values);
+                  setStepNumber(1);
+                  nextStep();
+                } else {
+                  if(!values.role) {
+                    setValidateRole(true);
+                  } else {
+                    setValidateRole(false);
+                  }
+                  if (!(values.google || values.github || values.twitter || values.linkedin)) {
+                    setValidateAccounts(true);
+                  } else {
+                    setValidateAccounts(false);
+                  }
+                  setFirstName(values.firstname);
+                  setEmail(values.email);
+                  setLastName(values.lastname);
+                  setOccupation(values.occupation);
+                  setOrg(values.org);
+                  setGoogleAccount(values.google);
+                  setTwitterAccount(values.twitter);
+                  setGithubAccount(values.github);
+                  setLinkedinAccount(values.linkedin);
+                  setRole(values.role);
+                }
               }}
             >
               <Form className="form" method="post">
-                <Field
-                  type="hidden"
-                  id="form"
-                  name="form"
-                  value="docker-extension"
-                />
-                <label htmlFor="fname" className="form-name">
+                <label htmlFor="firstname" className="form-name">
                   First Name <span className="required-sign">*</span>
                 </label>
                 <Field
@@ -167,7 +216,7 @@ const DockerExtensionMeshery = () => {
                   pattern="[A-Za-z]{1,32}"
                   required
                 />
-                <label htmlFor="lname" className="form-name">
+                <label htmlFor="lastname" className="form-name">
                   Last Name <span className="required-sign">*</span>
                 </label>
                 <Field
@@ -191,7 +240,7 @@ const DockerExtensionMeshery = () => {
                   required
                 />
                 <label htmlFor="occupation" className="form-name">
-                  Occupation / Title<span className="required-sign">*</span>
+                  Occupation / Title <span className="required-sign">*</span>
                 </label>
                 <Field
                   type="text"
@@ -201,8 +250,7 @@ const DockerExtensionMeshery = () => {
                   required
                 />
                 <label htmlFor="org" className="form-name">
-                  Organization / Company / School
-                  <span className="required-sign">*</span>
+                  Organization / Company / School <span className="required-sign">*</span>
                 </label>
                 <Field
                   type="text"
@@ -211,6 +259,44 @@ const DockerExtensionMeshery = () => {
                   name="org"
                   required
                 />
+                <div className="accounts">
+                  <label className="form-name">Account(s) to Connect</label>
+                  <p>
+                    Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected participants will receive a free Meshery Cloud account and have full access to the Meshery Docker extension for each of the following user accounts that you provide. Please provide at least one account.
+                  </p>
+                  {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
+                  <div className="accounts_group">
+                    <label htmlFor="google" className="form-name">Google</label>
+                    <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                    <label htmlFor="github" className="form-name">GitHub</label>
+                    <Field type="text" className="text-field" id="github" name="github" />
+                    <label htmlFor="twitter" className="form-name">Twitter</label>
+                    <Field type="text" className="text-field" id="twitter" name="twitter" />
+                    <label htmlFor="linkedin" className="form-name">Linkedin</label>
+                    <Field type="text" className="text-field" id="linkedin" name="linkedin" />
+                  </div>
+                </div>
+
+                <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
+                {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorRole}</p>}
+                <div role="group" className="formRight" aria-labelledby="select">
+                  <span className="custom-arrow"><span className="down-arrow"></span></span>
+                  <Field as="select" name="role">
+                    <option selected hidden>Select your role</option>
+                    <option value="Architect">Architect</option>
+                    <option value="Business Operations">Business Operations</option>
+                    <option value="Developer">Developer</option>
+                    <option value="DevOps">DevOps/SRE/Sysadmin </option>
+                    <option value="Executive">Executive</option>
+                    <option value="IT Operations">IT Operations</option>
+                    <option value="Media"> Media/Analyst</option>
+                    <option value="Product Manage">Product Manager</option>
+                    <option value="Professor">Professor/Academic</option>
+                    <option value="Sales Marketing">Sales Marketing</option>
+                    <option value="Student">Student</option>
+                    <option value="Other">Other</option>
+                  </Field>
+                </div>
                 <Button
                   secondary
                   type="submit"
@@ -220,8 +306,8 @@ const DockerExtensionMeshery = () => {
               </Form>
             </Formik>
           </Col>
-        </Row>
-      </Container>
+        </Row >
+      </Container >
     );
   };
   const ThankYou = () => {
@@ -230,10 +316,7 @@ const DockerExtensionMeshery = () => {
         <div className="black-box">
           <h2>Thank you for your interest in Meshery Docker Extension!</h2>
           <p>
-            You are now signed up for the Meshery Docker Extension beta program
-            and your position on the waiting list is confirmed. Please patiently
-            await your acceptance and start of the beta program. We are working
-            through a growing waitlist.{" "}
+            You will soon receive detailed guidance on the all of the extension's features. {" "}
           </p>
           <p>
             In the meantime, please visit our{" "}

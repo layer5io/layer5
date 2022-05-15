@@ -187,7 +187,7 @@ Follow the following instructions to start contributing.
   **8.** Install the dependencies for running the site.
 
   ```
-  make setup-libs
+  make setup
   ```
 
   **9.** Make the desired changes.
