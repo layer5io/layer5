@@ -36,7 +36,7 @@ const ResourceGrid = (props) => {
         <Row>
           {queryResults.length < 1 && (
             <Col xs={12} sm={6}>
-              No Resource found that matches the title "{searchQuery}" found.
+              No Resource that matches the title "{searchQuery}" found.
             </Col>
           )}
 
