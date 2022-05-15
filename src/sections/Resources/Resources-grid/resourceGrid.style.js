@@ -2,7 +2,26 @@ import styled from "styled-components";
 export const ResourcePageWrapper = styled.div`
 
     .resource-grid-wrapper{
-        margin: 4rem 0 1.5rem 1.5rem;
+        margin: 0.8rem 0 1.5rem 1.5rem;
+    }
+
+    .search{
+        display:flex;
+        justify-content:flex-end;
+        width:100%;
+        
+        margin-bottom: 0.8rem;
+        .searchBox{
+            flex:0 0 50%;
+            max-width:100%;
+            @media only screen and (max-width:990px){
+                
+                    flex:0 0 100%;
+                    max-width:100%;
+                
+            }
+        }
+        
     }
     .post-content-block{
         height: 7rem;
@@ -41,7 +60,7 @@ export const ResourcePageWrapper = styled.div`
         background: ${props => props.theme.secondaryColor};
         border-color: transparent;
         color: #fff;
-      }
+      }  
 
     @media only screen and (max-width: 575px) {
         .resource-grid-wrapper{
