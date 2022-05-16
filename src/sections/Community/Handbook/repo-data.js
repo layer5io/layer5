@@ -135,6 +135,15 @@ export const repo_data = [
         repository:
           "https://github.com/layer5io/containers-101-workshop",
       },
+      {
+        project: "Cloud Native Playground",
+        image: meshery,
+        language: "Meshery",
+        description:
+          "Cloud Native Playground for Kubernetes and Service Mesh ",
+        repository:
+          "https://github.com/meshery/play",
+      }
     ],
   },
 
