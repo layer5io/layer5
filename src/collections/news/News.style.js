@@ -16,4 +16,14 @@ export const NewsWrapper = styled.div`
     .pull-left {
         float: left;
     }
+@media screen and (min-width: 768px) {
+    .responsive-quotes {
+        display: flex;
+      }
+    }
+@media screen and (max-width: 768px) {
+    img{
+        width: 100%;
+    }
+    }
 `;
