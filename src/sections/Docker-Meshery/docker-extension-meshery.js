@@ -149,14 +149,24 @@ const DockerExtensionMeshery = () => {
                 />
               </Col>
             </Row>
-            {/* You will also be able to:
-            <ul>
-              <li>
-                Provide early feedback to Docker and Meshery’s product teams.
-              </li>
-              <li>Receive support and onboarding help from Layer5.</li>
-            </ul>
-            <p className="uppercase">Let's get you started!</p> */}
+            <Row className="extension-feature">
+              <Col lg={10}>
+                <div className="listed">
+                  <strong>Resources</strong>
+                  <p>
+                    Layer5 presented two talks at DockerCon22 with HPE and HashiCorp, below are the links to the blog posts which covers the detailed overview of "Docker Extension for Meshery".
+                  </p>
+                  <ul>
+                    <li>
+                      <a href="https://layer5.io/blog/docker/extending-the-docker-compose-experience-to-service-mesh">Extending the Docker Compose Experience to Service Mesh</a>
+                    </li>
+                    <li>
+                      <a href="https://layer5.io/blog/docker/extending-docker-with-meshery-spire-and-istio">Extending Docker with Meshery, SPIRE, and Istio</a>
+                    </li>
+                  </ul>
+                </div>
+              </Col>
+            </Row>
           </Col>
           <Col md={6} sm={12}>
             <h3 className="form-title">Learn All Meshery Docker Extension Features</h3>
@@ -180,7 +190,7 @@ const DockerExtensionMeshery = () => {
                   setStepNumber(1);
                   nextStep();
                 } else {
-                  if(!values.role) {
+                  if (!values.role) {
                     setValidateRole(true);
                   } else {
                     setValidateRole(false);
@@ -267,7 +277,7 @@ const DockerExtensionMeshery = () => {
                   {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
                   <div className="accounts_group">
                     <label htmlFor="google" className="form-name">Google</label>
-                    <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                    <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                     <label htmlFor="github" className="form-name">GitHub</label>
                     <Field type="text" className="text-field" id="github" name="github" />
                     <label htmlFor="twitter" className="form-name">Twitter</label>
