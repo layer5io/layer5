@@ -13,6 +13,7 @@ import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import NightHawk from "./Brand-components/nighthawk";
 import ServiceMeshPatterns from "./Brand-components/servicemeshpatterns";
 import MeshMasterBrand from "./Brand-components/meshmaster";
+import MeshMarkBrand from "./Brand-components/meshmark";
 
 const getDimensions = (ele) => {
   let dummyheight = 0,
@@ -95,6 +96,7 @@ const Brand = () => {
   const servicemeshpatternsRef = useRef(null);
   const nightHawkRef = useRef(null);
   const meshmateRef = useRef(null);
+  const meshmarkRef = useRef(null);
 
   const sectionRefs = [
     { section: "Layer5", ref: layer5Ref },
@@ -103,6 +105,7 @@ const Brand = () => {
     { section: "MesheryOperator", ref: mesheryOperatorRef },
     { section: "ImageHub", ref: imageHubRef },
     { section: "SMP", ref: smpRef },
+    { section: "MeshMark", ref: meshmarkRef },
     { section: "ServiceMeshPatterns", ref: servicemeshpatternsRef },
     { section: "NightHawk", ref: nightHawkRef },
     { section: "MeshMate", ref: meshmateRef },
@@ -172,6 +175,9 @@ const Brand = () => {
           </div>
           <div className="section" ref={smpRef}>
             <SMPBrand />
+          </div>
+          <div className="section" ref={meshmarkRef}>
+            <MeshMarkBrand />
           </div>
           <div className="section" ref={servicemeshpatternsRef}>
             <ServiceMeshPatterns />
@@ -247,6 +253,16 @@ const Brand = () => {
               }}
             >
               <span>Service Mesh Performance</span>
+            </p>
+            <p
+              className={`header_link ${
+                visibleSection === "MeshMark" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(meshmarkRef.current);
+              }}
+            >
+              <span>MeshMark</span>
             </p>
             <p
               className={`header_link ${
