@@ -11,7 +11,7 @@ const slugify = require("./src/utils/slugify");
 const { paginate } = require("gatsby-awesome-pagination");
 const { createFilePath } = require("gatsby-source-filesystem");
 const config = require("./gatsby-config");
- 
+
 // Replacing '/' would result in empty string which is invalid
 const replacePath = path => (path === "/" ? path : path.replace(/\/$/, ""));
 // Implement the Gatsby API “onCreatePage”. This is
@@ -27,9 +27,9 @@ exports.onCreatePage = ({ page, actions }) => {
     createPage(page);
   }
 };
- 
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
- 
+
   // Create client-side redirects (these only work in prod deployment)
   const { createRedirect } = actions;
   createRedirect({ fromPath: "/books", toPath: "/learn/service-mesh-books", redirectInBrowser: true, isPermanent: true });
@@ -47,16 +47,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/calendar", toPath: "/community/calendar", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/smi", toPath: "/projects/service-mesh-interface-conformance", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
- 
+
   //****
   // External Resoruce Redirects
   //****
- 
+
   // New Community Member (Google Form)
   createRedirect({ fromPath: "/newcomer", toPath: "/newcomers", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/go/meshmap", toPath: "/service-mesh-management/meshmap", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshmap", toPath: "/service-mesh-management/meshmap", redirectInBrowser: true, isPermanent: true });
- 
+  createRedirect({ fromPath: "/go/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
+
   // Create Pages
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
@@ -71,51 +71,51 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogViewTemplate = path.resolve(
     "src/templates/blog.js"
   );
- 
+
   const EventsTemplate = path.resolve(
     "src/templates/events.js"
   );
- 
+
   const EventTemplate = path.resolve(
     "src/templates/event-single.js"
   );
- 
+
   const NewsPostTemplate = path.resolve(
     "src/templates/news-single.js"
   );
- 
+
   const BookPostTemplate = path.resolve(
     "src/templates/book-single.js"
   );
- 
+
   const ProgramPostTemplate = path.resolve(
     "src/templates/program-single.js"
   );
- 
+
   const MultiProgramPostTemplate = path.resolve(
     "src/templates/program-multiple.js"
   );
- 
+
   const CareerPostTemplate = path.resolve(
     "src/templates/career-single.js"
   );
- 
+
   const MemberTemplate = path.resolve(
     "src/templates/member-single.js"
   );
- 
+
   const WorkshopTemplate = path.resolve(
     "src/templates/workshop-single.js"
   );
- 
+
   const LabTemplate = path.resolve(
     "src/templates/lab-single.js"
   );
- 
+
   const resourcePostTemplate = path.resolve(
     "src/templates/resource-single.js"
   );
-  
+
   const resourceViewTemplate = path.resolve(
     "src/templates/resource.js"
   );
@@ -216,55 +216,55 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
        }
      }
    `);
- 
+
   // handle errors
   if (res.errors) {
     reporter.panicOnBuild("Error while running GraphQL query.");
     return;
   }
- 
+
   const allNodes = res.data.allPosts.nodes;
- 
+
   const blogs = allNodes.filter(
     node => node.fields.collection === "blog"
   );
- 
+
   const resources = allNodes.filter(
     node => node.fields.collection === "resources"
   );
- 
+
   const news = allNodes.filter(
     node => node.fields.collection === "news"
   );
- 
+
   const projects = allNodes.filter(
     node => node.fields.collection === "projects"
   );
- 
+
   const books = allNodes.filter(
     node => node.fields.collection === "service-mesh-books"
   );
- 
+
   const events = allNodes.filter(
     node => node.fields.collection === "events"
   );
- 
+
   const programs = allNodes.filter(
     node => node.fields.collection === "programs"
   );
- 
+
   const careers = allNodes.filter(
     node => node.fields.collection === "careers"
   );
- 
+
   const members = allNodes.filter(
     node => node.fields.collection === "members"
   );
- 
+
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
   // const events = res.data.allCollections.nodes;
- 
+
   paginate({
     createPage,
     items: blogs,
@@ -272,7 +272,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     pathPrefix: "/blog",
     component: blogViewTemplate
   });
- 
+
   paginate({
     createPage,
     items: events,
@@ -280,7 +280,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     pathPrefix: "/community/events",
     component: EventsTemplate
   });
- 
+
   blogs.forEach(blog => {
     createPage({
       path: blog.fields.slug,
@@ -290,7 +290,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   const blogCategory = res.data.blogCategory.group;
   blogCategory.forEach(category => {
     paginate({
@@ -304,7 +304,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   const BlogTags = res.data.blogTags.group;
   BlogTags.forEach(tag => {
     paginate({
@@ -318,7 +318,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   resources.forEach(resource => {
     createPage({
       path: resource.fields.slug,
@@ -328,7 +328,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   news.forEach(singleNews => {
     createPage({
       path: singleNews.fields.slug,
@@ -338,7 +338,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   books.forEach(book => {
     createPage({
       path: book.fields.slug,
@@ -348,7 +348,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   events.forEach(event => {
     createPage({
       path: event.fields.slug,
@@ -358,7 +358,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   programs.forEach(program => {
     createPage({
       path: program.fields.slug,
@@ -368,7 +368,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   careers.forEach(career => {
     createPage({
       path: career.fields.slug,
@@ -378,7 +378,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   members.forEach(member => {
     createPage({
       path: member.fields.slug,
@@ -388,7 +388,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   singleWorkshop.forEach(workshop => {
     createPage({
       path: workshop.fields.slug,
@@ -398,7 +398,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
+
   labs.forEach(lab => {
     createPage({
       path: lab.fields.slug,
@@ -408,13 +408,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
- 
- 
+
+
   let programsArray = [];
   programs.forEach(program => {
     if (
       programsArray.indexOf(program.frontmatter.program) >= 0 &&
-       program.frontmatter.program === "Layer5"
+      program.frontmatter.program === "Layer5"
     ) {
       return false;
     } else {
@@ -428,28 +428,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       });
     }
   });
- 
+
   const learnNodes = res.data.learncontent.nodes;
- 
+
   learnNodes.forEach((node) => {
     if (node.fields) {
       const { pageType } = node.fields;
- 
+
       if (pageType === "learnpath") {
         createCoursesListPage({ createPage, node });
         return;
       }
- 
+
       if (pageType === "course") {
         createCourseOverviewPage({ createPage, node });
         return;
       }
- 
+
       if (pageType === "chapter") {
         createChapterPage({ createPage, node });
         return;
       }
- 
+
       if (pageType === "section") {
         createSectionPage({ createPage, node });
         return;
@@ -457,39 +457,39 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 };
- 
- 
+
+
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
 const getSlugParts = slug => slug.split("/").filter(p => !!p);
- 
+
 const onCreatePathNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
   const [learnpath] = parts;
- 
+
   createNodeField({ node, name: "learnpath", value: learnpath });
   createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "pageType", value: "learnpath" });
 };
- 
+
 const onCreateCourseNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
   const [learnpath, course] = parts;
- 
+
   createNodeField({ node, name: "learnpath", value: learnpath });
   createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
   createNodeField({ node, name: "course", value: course });
   createNodeField({ node, name: "pageType", value: "course" });
 };
- 
+
 const onCreateSectionNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
   const [learnpath, course, section] = parts;
- 
+
   createNodeField({ node, name: "learnpath", value: learnpath });
   createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
@@ -497,12 +497,12 @@ const onCreateSectionNode = ({ actions, node, slug }) => {
   createNodeField({ node, name: "section", value: section });
   createNodeField({ node, name: "pageType", value: "section" });
 };
- 
+
 const onCreateChapterNode = ({ actions, node, slug }) => {
   const { createNodeField } = actions;
   const parts = getSlugParts(slug);
   const [learnpath, course, section, chapter] = parts;
- 
+
   createNodeField({ node, name: "learnpath", value: learnpath });
   createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
   createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
@@ -511,7 +511,7 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   createNodeField({ node, name: "section", value: section });
   createNodeField({ node, name: "pageType", value: "chapter" });
 };
- 
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === "Mdx") {
@@ -566,25 +566,25 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         getNode,
         basePath: "content-learn"
       });
- 
+
       // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
       const parts = slug.split("/").filter(p => !!p);
- 
+
       if (parts.length === 1) {
         onCreatePathNode({ actions, node, slug });
         return;
       }
- 
+
       if (parts.length === 2) {
         onCreateCourseNode({ actions, node, slug });
         return;
       }
- 
+
       if (parts.length === 3) {
         onCreateSectionNode({ actions, node, slug });
         return;
       }
- 
+
       if (parts.length === 4) {
         onCreateChapterNode({ actions, node, slug });
         return;
@@ -592,10 +592,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
   }
 };
- 
+
 const createCoursesListPage = ({ createPage, node }) => {
   const { learnpath, slug, pageType, permalink } = node.fields;
- 
+
   createPage({
     path: `${slug}`,
     component: path.resolve("src/templates/courses-list.js"),
@@ -608,7 +608,7 @@ const createCoursesListPage = ({ createPage, node }) => {
     },
   });
 };
- 
+
 const createCourseOverviewPage = ({ createPage, node }) => {
   const {
     learnpath,
@@ -617,7 +617,7 @@ const createCourseOverviewPage = ({ createPage, node }) => {
     pageType,
     permalink,
   } = node.fields;
- 
+
   createPage({
     path: `${slug}`,
     component: path.resolve("src/templates/course-overview.js"),
@@ -630,7 +630,7 @@ const createCourseOverviewPage = ({ createPage, node }) => {
     },
   });
 };
- 
+
 const createChapterPage = ({ createPage, node }) => {
   const {
     learnpath,
@@ -641,7 +641,7 @@ const createChapterPage = ({ createPage, node }) => {
     pageType,
     permalink,
   } = node.fields;
- 
+
   createPage({
     path: `${slug}`,
     component: path.resolve("src/templates/learn-chapter.js"),
@@ -656,7 +656,7 @@ const createChapterPage = ({ createPage, node }) => {
     },
   });
 };
- 
+
 const createSectionPage = ({ createPage, node }) => {
   const {
     learnpath,
@@ -666,7 +666,7 @@ const createSectionPage = ({ createPage, node }) => {
     pageType,
     permalink,
   } = node.fields;
- 
+
   createPage({
     path: `${slug}`,
     component: path.resolve("src/sections/Learn-Layer5/Section/index.js"),
@@ -680,7 +680,7 @@ const createSectionPage = ({ createPage, node }) => {
     },
   });
 };
- 
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
@@ -706,4 +706,3 @@ exports.createSchemaCustomization = ({ actions }) => {
    `;
   createTypes(typeDefs);
 };
- 
