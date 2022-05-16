@@ -16,21 +16,21 @@ published: true
 ---
 import { Link } from "gatsby";
 import Formula from "./MeshMark-Formula.png";
-import MeshmapMeshmark from "./MeshMark-in-MeshMap.jpeg";
+import MeshmapMeshmark from "./meshmark-score.png";
 import { NewsWrapper } from "../../News.style.js";
 import Blockquote from "../../../../reusecore/Blockquote";
 import BlockquoteAlt from "../../../../reusecore/Blockquote/Blockquote-alt-style";
 
 <NewsWrapper>
 <p>
-VALENCIA, Spain (May 17th, 2022) - ServiceMeshCon EU /KubeCon EU - <a href="https://smp-spec.io/meshmark">MeshMark</a> is a performance index that measures the value and overhead of your cloud native environment. By converting performance measurements into insights about the value of individual, cloud native application networking functions, MeshMark distills a variety of overhead signals and key performance indicators into a simple index to facilitate quick and common comprehension.
+VALENCIA, Spain (May 17th, 2022) - ServiceMeshCon EU /KubeCon EU - <a href="https://smp-spec.io/meshmark">MeshMark</a> is a performance index that measures the <i>value</i> and <i>overhead</i> of your cloud native environment. By converting performance measurements into insights about the value of individual, cloud native application networking functions, MeshMark distills a variety of overhead signals and key performance indicators into a simple index to facilitate quick and common comprehension.
 </p>
 
 <BlockquoteAlt 
   className="pull-right"
   quote="Performance measurement data rarely provides a clear and simple picture of how well our applications are performing from a business point of view, which are so often the key efficiency indicators that we really need"
   person="Ken Owens"
-  title="Vice President Cyber Cloud Security Engineering at Fiserv" 
+  title="Vice President Cyber Cloud Security Engineering at Fiserv"
   />
 
 <p>
@@ -78,7 +78,7 @@ With the project’s <Link to="/company/news/analyzing-service-mesh-performance"
 <Blockquote 
   quote="Are my resources utilized as best as possible? Why am I not getting the SLO met with 4 resources when I only needed 1 resource without the service mesh? How can I improve my 99.9% latencies or can I map my service policy to utilization? Is the network a performance hog, or storage, or cache? Meshmark will model and provide an index in answer to these questions."
   person="Mrittika Ganguli"
-  title="Principle Engineer & Director Cloud Native Network Pathfinding" 
+  title="Principal Engineer & Director Cloud Native Network Pathfinding"
   />
 </div>
 
@@ -94,14 +94,16 @@ A Mesh Utilization Efficiency (MUE) is a calculated, combined ratio of specific 
 <BlockquoteAlt 
   quote="A sophisticated, but simply communicated value-performance index, MeshMark, redefines efficiency utilization, bringing business, application, and infrastructure KPIs under a single unit of measure."
   person="Lee Calcote"
-  title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network" 
+  title="Founder and CEO of Layer5, and Co-Chair of the CNCF TAG Network"
   />
 
 <p>
-Learn how we distill a variety of microarchitecture performance signals and application key performance indicators into a simple measurement scale. Join the open source effort and explore the other side of the performance measurement coin: value measurement.
+Learn how we distill a variety of microarchitecture performance signals and application key performance indicators into a simple measurement scale. Join the open source effort and explore the other side of the performance measurement coin: <i>value measurement</i>.
 </p>
-
+<figure>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yvqn6ckO7BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<figcaption>MeshMark in Meshery (an excerpt from ServiceMeshCon EU 2022 demo)</figcaption>
+</figure>
 
 #### Resources
 <ul>
@@ -112,14 +114,13 @@ Learn how we distill a variety of microarchitecture performance signals and appl
 <li>Follow <a href="https://twitter.com/smp_spec">@smp_spec</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a>, <a href="https://twitter.com/layer5">@layer5</a> on Twitter.</li>
 </ul>
 
-
 ##### About Layer5, Inc.
 <p style="font-size:1rem">
 Layer5 offers cloud native application management by harnessing the unique position service meshes have in changing how developers write applications, how operators run modern infrastructure and how product owners manage their service offerings. For more information, visit <Link to="/">layer5.io</Link></p>
 
 ##### About Service Mesh Performance 
 <p style="font-size:1rem">
-Hosting within the CNCF, <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> is a vendor-neutral cloud native performance measurement standard. Based on SMP, MeshMark provides a universal performance index to gauge your cloud native infrastructure’s efficiency and value. Visit <a href="https://smp-spec.io/">smp-spec.io</a></p>
+Hosted within the CNCF, <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> is a vendor-neutral cloud native performance measurement standard. Based on SMP, MeshMark provides a universal performance index to gauge your cloud native infrastructure’s efficiency and value. Visit <a href="https://smp-spec.io/">smp-spec.io</a></p>
 
 #### Media Contacts
 <p>Kate Suttons<br />
