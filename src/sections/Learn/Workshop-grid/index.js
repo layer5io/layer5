@@ -22,8 +22,8 @@ const WorkshopsPage = () => {
   const data = useStaticQuery(
     graphql`query allWorkshops {
   allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
     filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+    sort: {fields: [frontmatter___date], order: DESC}
   ) {
     nodes {
       id

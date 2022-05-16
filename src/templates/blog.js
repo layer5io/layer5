@@ -17,11 +17,11 @@ import BlogList from "../sections/Blog/Blog-list";
 export const query = graphql`
   query allBlogs {
     allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         fields: { collection: { eq: "blog" } }
         frontmatter: { published: { eq: true } }
       }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       nodes {
         id
