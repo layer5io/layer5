@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 16 May 2022 13:23:57 GMT</lastBuildDate><item><title><![CDATA[Layer5 Joins Docker Extension Program Bringing Kubernetes and Service Mesh Management to Docker with Meshery]]></title><description><![CDATA[var _excluded = ["components"];
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 16 May 2022 14:23:42 GMT</lastBuildDate><item><title><![CDATA[MeshMark: the Cloud Native Value Measurement]]></title><description><![CDATA[var _excluded = ["components"];
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+/* @jsxRuntime classic */
+
+/* @jsx mdx */
+var _frontmatter = {
+  "title": "MeshMark: the Cloud Native Value Measurement",
+  "subtitle": "An open index for measuring performance of cloud native infrastructure in context of the value provided to your business.",
+  "date": "2022-05-18 08:00:00 -0530",
+  "author": "Kate Suttons",
+  "thumbnail": "./meshmark-dark-full.svg",
+  "category": "Meshery",
+  "description": "Layer5, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure: service meshes. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any service mesh.",
+  "tags": ["Announcements", "Meshery", "Docker"],
+  "type": "News",
+  "resource": false,
+  "published": true
+};
+var layoutProps = {
+  _frontmatter: _frontmatter
+};
+var MDXLayout = "wrapper";
+return function MDXContent(_ref) {
+  var components = _ref.components,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  return mdx(MDXLayout, _extends({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout"
+  }), mdx(NewsWrapper, {
+    mdxType: "NewsWrapper"
+  }, mdx("p", null, "VALENCIA, Spain (May 18th, 2022) - ServiceMeshCon EU /KubeCon EU - ", mdx("a", {
+    href: "https://smp-spec.io/meshmark"
+  }, "MeshMark"), " is a performance index that measures the value and overhead of your cloud native environment. By converting performance measurements into insights about the value of individual, cloud native application networking functions, MeshMark distills a variety of overhead signals and key performance indicators into a simple index to facilitate quick and common comprehension."), mdx("p", null, "A wall of performance metrics causes confusion, not clarity. \u201CPerformance measurement data rarely provides a clear and simple picture of how well our applications are performing from a business point of view, which are so often the key efficiency indicators that we really need\u201D, says Ken Owens, Vice President Cyber Cloud Security Engineering at Fiserv."), mdx("p", null, "By specifying a uniform way to analyze and report on the degree to which measured performance provides business value, MeshMark converts these metrics into insights about the efficiency and value of the functions your cloud native infrastructure is providing to your applications and services."), mdx("h2", null, "Service Mesh Performance, the project"), mdx("p", null, "Adopted by the Cloud Native Computing Foundation (CNCF) in October of 2021, Service Mesh Performance is an open source standard for service mesh efficiency, a growing consideration for cloud native operators and developers utilizing a service mesh in their infrastructure. With the myriad service meshes available and their sophisticated configurations, distributed systems efficacy and performance management is a continuous concern."), mdx("p", null, "With project maintainers from Layer5, Intel, HashiCorp, and Red Hat, and collaborators from Isovalent, Buoyant, and FiServ, Service Mesh Performance is a vendor neutral cloud native performance measurement standard."), mdx(Blockquote, {
+    className: "pull-right",
+    quote: "Many cloud native adopters have been put off from using service mesh due to the extra resource consumption and complexity that it can involve. We welcome MeshMark as an objective measure of that overhead, to help drive efficiency and make it easier for users to compare service mesh options.",
+    person: "Liz Rice",
+    title: "Chief Open Source Officer, Isovalent and Emeritus Chair of the CNCF\u2019s TOC",
+    mdxType: "Blockquote"
+  })));
+}
+;
+MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/meshmark-the-cloud-native-value-measurement</link><guid isPermaLink="false">https://layer5.io/company/news/meshmark-the-cloud-native-value-measurement</guid><dc:creator><![CDATA[Kate Suttons]]></dc:creator><pubDate>Wed, 18 May 2022 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/64e667b265f60a0e733642d5cd7b0e8c/meshmark-dark-full.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;div class=&quot;Newsstyle__NewsWrapper-sc-12r6uiw-0 gMnoLw&quot;&gt;&lt;p&gt;VALENCIA, Spain (May 18th, 2022) - ServiceMeshCon EU /KubeCon EU - &lt;a href=&quot;https://smp-spec.io/meshmark&quot;&gt;MeshMark&lt;/a&gt; is a performance index that measures the value and overhead of your cloud native environment. By converting performance measurements into insights about the value of individual, cloud native application networking functions, MeshMark distills a variety of overhead signals and key performance indicators into a simple index to facilitate quick and common comprehension.&lt;/p&gt;&lt;p&gt;A wall of performance metrics causes confusion, not clarity. “Performance measurement data rarely provides a clear and simple picture of how well our applications are performing from a business point of view, which are so often the key efficiency indicators that we really need”, says Ken Owens, Vice President Cyber Cloud Security Engineering at Fiserv.&lt;/p&gt;&lt;p&gt;By specifying a uniform way to analyze and report on the degree to which measured performance provides business value, MeshMark converts these metrics into insights about the efficiency and value of the functions your cloud native infrastructure is providing to your applications and services.&lt;/p&gt;&lt;h2&gt;Service Mesh Performance, the project&lt;/h2&gt;&lt;p&gt;Adopted by the Cloud Native Computing Foundation (CNCF) in October of 2021, Service Mesh Performance is an open source standard for service mesh efficiency, a growing consideration for cloud native operators and developers utilizing a service mesh in their infrastructure. With the myriad service meshes available and their sophisticated configurations, distributed systems efficacy and performance management is a continuous concern.&lt;/p&gt;&lt;p&gt;With project maintainers from Layer5, Intel, HashiCorp, and Red Hat, and collaborators from Isovalent, Buoyant, and FiServ, Service Mesh Performance is a vendor neutral cloud native performance measurement standard.&lt;/p&gt;&lt;div class=&quot;blockquotestyle__BlockquoteStyle-sc-9kzfnh-0 kDkuQn blockquote pull-right&quot; title=&quot;Chief Open Source Officer, Isovalent and Emeritus Chair of the CNCF’s TOC&quot;&gt;&lt;div class=&quot;blockquote-wrapper&quot;&gt;&lt;div class=&quot;blockquote&quot;&gt;&lt;h4&gt;Many cloud native adopters have been put off from using service mesh due to the extra resource consumption and complexity that it can involve. We welcome MeshMark as an objective measure of that overhead, to help drive efficiency and make it easier for users to compare service mesh options.&lt;/h4&gt;&lt;h5 class=&quot;person&quot;&gt;Liz Rice&lt;/h5&gt;&lt;h5 class=&quot;title&quot;&gt;Chief Open Source Officer, Isovalent and Emeritus Chair of the CNCF’s TOC&lt;/h5&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Layer5 Joins Docker Extension Program Bringing Kubernetes and Service Mesh Management to Docker with Meshery]]></title><description><![CDATA[var _excluded = ["components"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -339,7 +387,7 @@ var _frontmatter = {
   "date": "2021-10-13 04:00:05 +0000",
   "author": "The Newsroom",
   "category": "Press Release",
-  "thumbnail": "../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.png",
+  "thumbnail": "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.png",
   "published": true,
   "type": "News",
   "product": "Service Mesh Performance",
@@ -395,7 +443,7 @@ var _frontmatter = {
   "date": "2021-10-13 00:00:05 +0000",
   "author": "The Newsroom",
   "category": "Press Release",
-  "thumbnail": "../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.svg",
+  "thumbnail": "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.svg",
   "published": true,
   "type": "News",
   "product": "Meshery",
@@ -1130,53 +1178,4 @@ return function MDXContent(_ref) {
 }
 ;
 MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/kubecon-na-cncf-sig-network-set-intro-and-deep-dive</link><guid isPermaLink="false">https://layer5.io/company/news/kubecon-na-cncf-sig-network-set-intro-and-deep-dive</guid><dc:creator><![CDATA[The Newsroom]]></dc:creator><pubDate>Sat, 23 Nov 2019 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/fcc022de95829bfc4034ed72a6323daa/KubeCon_NA_2019_bg-01.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;div class=&quot;Newsstyle__NewsWrapper-sc-12r6uiw-0 gMnoLw&quot;&gt;&lt;p&gt;KubeCon NA 2019 - San Diego, CA&lt;/p&gt;&lt;p&gt;At KubeCon 2019, Lee Calcote and Matt Klein introducted the CNCF&amp;#x27;s latest Special Interest Group for cloud native networking.&lt;/p&gt;&lt;iframe width=&quot;450&quot; height=&quot;300&quot; src=&quot;https://www.youtube.com/embed/XZ6TZQeNuKQ&quot; loading=&quot;lazy&quot; frameBorder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;p&gt;Related news by Sean Michael Kerner: &lt;a href=&quot;http://www.enterprisenetworkingplanet.com/datacenter/cncf-sig-network-set-to-push-cloud-native-networking-forward.html&quot;&gt;
-CNCF SIG Network Set to Push Cloud Native Networking Forward &lt;/a&gt; (Posted Nov 23, 2019).&lt;/p&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Enterprise Networking Planet: CNCF SIG Network Set to Push Cloud Native Networking Forward]]></title><description><![CDATA[var _excluded = ["components"];
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-/* @jsxRuntime classic */
-
-/* @jsx mdx */
-var _frontmatter = {
-  "title": "Enterprise Networking Planet: CNCF SIG Network Set to Push Cloud Native Networking Forward",
-  "subtitle": "",
-  "date": "2019-11-23 12:15:05 +0000",
-  "author": "The Newsroom",
-  "category": "Coverage",
-  "thumbnail": "./enterprise_networking_planet_logo_700px-e1533637827914.png",
-  "eurl": "",
-  "published": true,
-  "redirect_from": ["/company/news/cncf-sig-network-set-to-push-cloud-native-networking-forward/"]
-};
-var layoutProps = {
-  _frontmatter: _frontmatter
-};
-var MDXLayout = "wrapper";
-return function MDXContent(_ref) {
-  var components = _ref.components,
-      props = _objectWithoutProperties(_ref, _excluded);
-
-  return mdx(MDXLayout, _extends({}, layoutProps, props, {
-    components: components,
-    mdxType: "MDXLayout"
-  }), mdx(NewsWrapper, {
-    mdxType: "NewsWrapper"
-  }, mdx("i", null, "By Sean Michael Kerner | ", mdx("a", {
-    href: "http://www.enterprisenetworkingplanet.com/datacenter/cncf-sig-network-set-to-push-cloud-native-networking-forward.html"
-  }, "Enterprise Networking Planet"), " | Posted Nov 23, 2019"), mdx("p", null, "SAN DIEGO. The inaugural public meeting the Cloud Native Computing Foundation (CNCF) Networking Special Interest Group (SIG) was held in a session at the KubeCon event on Nov. 19, ushering in a new era for networking at the highly influential open source group."), mdx("img", {
-    src: SIG_network,
-    style: {
-      "position": "relative",
-      "cssFloat": "right"
-    },
-    alt: "SIG-network"
-  }), mdx("p", null, "The CNCF is home to many different projects, including the Kubernetes container orchestration system. Kubernetes itself has its' own set of SIGs, which is the core organizing unit for the project, among those SIGs is one for networking. The CNCF however is a bigger organization that just Kubernetes and includes over 40 projects. CNCF SIGs cut across all projects, with cross project concerns in different topic areas."), mdx("p", null, "Lee Calcote, Founder at Layer5 and one of the leaders of CNCF TAG Network explained during the session that there are already a few network specific projects within the CNCF, including CNI (Container Network Interface), CoreDNS, Envoy, gRPC, Linkerd, NATS and the Network Service Mesh project."), mdx("p", null, "\"Part of what we're hoping to do is with SIGs in general is to help more impact fully scale the CNCF Technical Oversight Committee (TOC),\" Calcote said."), mdx("p", null, "Read more on ", mdx("a", {
-    href: "http://www.enterprisenetworkingplanet.com/datacenter/cncf-sig-network-set-to-push-cloud-native-networking-forward.html"
-  }, "Enterprise Networking Planet"), "...")));
-}
-;
-MDXContent.isMDXComponent = true;]]></description><link>https://layer5.io/company/news/enterprise-networking-planet-cncf-sig-network-set-to-push-cloud-native-networking-forward</link><guid isPermaLink="false">https://layer5.io/company/news/enterprise-networking-planet-cncf-sig-network-set-to-push-cloud-native-networking-forward</guid><dc:creator><![CDATA[The Newsroom]]></dc:creator><pubDate>Sat, 23 Nov 2019 00:00:00 GMT</pubDate><enclosure url="https://layer5.io/static/7ea034a929f022a6e2b1e5ca67c98926/enterprise_networking_planet_logo_700px-e1533637827914.png" length="0" type="image/png"/><content:encoded>&lt;div class=&quot;Newsstyle__NewsWrapper-sc-12r6uiw-0 gMnoLw&quot;&gt;&lt;i&gt;By Sean Michael Kerner | &lt;a href=&quot;http://www.enterprisenetworkingplanet.com/datacenter/cncf-sig-network-set-to-push-cloud-native-networking-forward.html&quot;&gt;Enterprise Networking Planet&lt;/a&gt; | Posted Nov 23, 2019&lt;/i&gt;&lt;p&gt;SAN DIEGO. The inaugural public meeting the Cloud Native Computing Foundation (CNCF) Networking Special Interest Group (SIG) was held in a session at the KubeCon event on Nov. 19, ushering in a new era for networking at the highly influential open source group.&lt;/p&gt;&lt;img src=&quot;static/SIG-network-367x200-1dc079fd5eeee73dc2633f96dfb70ffe.png&quot; style=&quot;position:relative;css-float:right&quot; alt=&quot;SIG-network&quot;/&gt;&lt;p&gt;The CNCF is home to many different projects, including the Kubernetes container orchestration system. Kubernetes itself has its&amp;#x27; own set of SIGs, which is the core organizing unit for the project, among those SIGs is one for networking. The CNCF however is a bigger organization that just Kubernetes and includes over 40 projects. CNCF SIGs cut across all projects, with cross project concerns in different topic areas.&lt;/p&gt;&lt;p&gt;Lee Calcote, Founder at Layer5 and one of the leaders of CNCF TAG Network explained during the session that there are already a few network specific projects within the CNCF, including CNI (Container Network Interface), CoreDNS, Envoy, gRPC, Linkerd, NATS and the Network Service Mesh project.&lt;/p&gt;&lt;p&gt;&amp;quot;Part of what we&amp;#x27;re hoping to do is with SIGs in general is to help more impact fully scale the CNCF Technical Oversight Committee (TOC),&amp;quot; Calcote said.&lt;/p&gt;&lt;p&gt;Read more on &lt;a href=&quot;http://www.enterprisenetworkingplanet.com/datacenter/cncf-sig-network-set-to-push-cloud-native-networking-forward.html&quot;&gt;Enterprise Networking Planet&lt;/a&gt;...&lt;/p&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
+CNCF SIG Network Set to Push Cloud Native Networking Forward &lt;/a&gt; (Posted Nov 23, 2019).&lt;/p&gt;&lt;/div&gt;</content:encoded></item></channel></rss>
