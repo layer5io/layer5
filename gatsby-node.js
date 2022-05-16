@@ -167,7 +167,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
        }
        singleWorkshop: allMdx(
          filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
-         sort: { fields: frontmatter___date, order: DESC }
        ){
          nodes{
            fields{
@@ -188,7 +187,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
        }
        allResources:  allMdx(
          filter: { frontmatter: { published: { eq: true } } }
-         sort: { fields: frontmatter___date, order: DESC }
        ) {
          nodes {
            frontmatter{
@@ -231,7 +229,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     node => node.fields.collection === "blog"
   );
  
-  const resources = res.data.allResources.nodes;
+  const resources = allNodes.filter(
+    node => node.fields.collection === "resources"
+  );
  
   const news = allNodes.filter(
     node => node.fields.collection === "news"
@@ -319,14 +319,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
  
-  resources.forEach((resource, index) => {
+  resources.forEach((resource) => {
     createPage({
       path: resource.fields.slug,
       component: resourcePostTemplate,
       context: {
         slug: resource.fields.slug,
-      },
-      defer: index + 1 > 2
+      }
     });
   });
  
@@ -390,14 +389,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
  
-  singleWorkshop.forEach((workshop, index) => {
+  singleWorkshop.forEach((workshop) => {
     createPage({
       path: workshop.fields.slug,
       component: WorkshopTemplate,
       context: {
         slug: workshop.fields.slug,
-      },
-      defer: index + 1 > 5
+      }
     });
   });
  

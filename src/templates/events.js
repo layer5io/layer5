@@ -74,6 +74,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
   }
   allWorkshops: allMdx(
     filter: {frontmatter: {type: {eq: "Workshop"}, published: {eq: true}}}
+    sort: {fields: frontmatter___date, order: DESC}
   ) {
     nodes {
       id
@@ -96,7 +97,10 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
       }
     }
   }
-  allEvents: allMdx(filter: {frontmatter: {type: {eq: "Event"}}}) {
+  allEvents: allMdx(
+    filter: {frontmatter: {type: {eq: "Event"}}}
+    sort: {fields: frontmatter___date, order: DESC}
+  ) {
     nodes {
       id
       fields {

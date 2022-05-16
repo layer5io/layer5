@@ -21,9 +21,9 @@ const Navigation = () => {
   let data = useStaticQuery(
     graphql`{
   Learn: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "service-mesh-books"}}}
     limit: 2
+    filter: {fields: {collection: {eq: "service-mesh-books"}}}
+    sort: {fields: [frontmatter___date], order: DESC}
   ) {
     nodes {
       id
@@ -47,9 +47,9 @@ const Navigation = () => {
     }
   }
   Community: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "events"}}}
     limit: 2
+    filter: {fields: {collection: {eq: "events"}}}
+    sort: {fields: [frontmatter___date], order: DESC}
   ) {
     nodes {
       id
@@ -74,9 +74,9 @@ const Navigation = () => {
     }
   }
   Blog: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
     limit: 2
+    filter: {fields: {collection: {eq: "blog"}},frontmatter: {featured: {eq: true}}}
+    sort: {fields: [frontmatter___date], order: DESC}
   ) {
     nodes {
       id
@@ -101,9 +101,9 @@ const Navigation = () => {
     }
   }
   Home: allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
     limit: 2
+    filter: {fields: {collection: {eq: "projects"}}, frontmatter: {published: {eq: true}}}
+    sort: {fields: [frontmatter___date], order: DESC}
   ) {
     nodes {
       id
