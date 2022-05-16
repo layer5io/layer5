@@ -44,48 +44,45 @@ By specifying a uniform way to analyze and report on the degree to which measure
 </p>
 
 <h2>Service Mesh Performance, the project</h2>
+<p>
+<Link to="/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5">Adopted by the Cloud Native Computing Foundation (CNCF)</Link> in October of 2021, <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> is an open source standard for service mesh efficiency, a growing consideration for cloud native operators and developers utilizing a service mesh in their infrastructure. With the myriad service meshes available and their sophisticated configurations, distributed systems efficacy and performance management is a continuous concern.
+</p>
 
-<Blockquote className="pull-right"
+<Blockquote 
   quote="Many cloud native adopters have been put off from using service mesh due to the extra resource consumption and complexity that it can involve. We welcome MeshMark as an objective measure of that overhead, to help drive efficiency and make it easier for users to compare service mesh options."
   person="Liz Rice"
   title="Chief Open Source Officer, Isovalent and Emeritus Chair of the CNCF’s TOC" 
   />
 
 <p>
-<Link to="/company/news/cncf-adopts-service-mesh-performance-standard-established-by-layer5">Adopted by the Cloud Native Computing Foundation (CNCF)</Link> in October of 2021, <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> is an open source standard for service mesh efficiency, a growing consideration for cloud native operators and developers utilizing a service mesh in their infrastructure. With the myriad service meshes available and their sophisticated configurations, distributed systems efficacy and performance management is a continuous concern.
-</p>
-<p>
 With project maintainers from Layer5, Intel, HashiCorp, and Red Hat, and collaborators from Isovalent, Buoyant, and FiServ, Service Mesh Performance is a vendor neutral cloud native performance measurement standard.
 </p>
 
-<p>
-With the project’s <Link to="/company/news/analyzing-service-mesh-performance">approach to performance analysis</Link> published in IEEE The Bridge, ongoing analysis of nearly 40,000 performance test results will comprise the initial release of the <a href="https://smp-spec.io/dashboard">Service Mesh Performance Dashboard</a>, also unveiling at KubeCon EU. <Link to="/service-mesh-management/meshery">Meshery</Link>, the cloud native manager, orchestrates the provisioning and configuration of Kubernetes and each service mesh. With <Link to="projects/nighthawk">Nighthawk</Link> embedded, Meshery’s performance management functions are what drives the tests run within the CNCF Lab.
-</p>
-
-<div className="responsive-quotes">
-<Blockquote 
+<BlockquoteAlt
   quote="While speed is one of Linkerd's core competitive advantages, Linkerd provides much more than just an ultrafast data plane. We are pleased to support MeshMark's establishment of a higher order set of functional considerations that incorporate value into the performance equation."
   person="William Morgan"
   title="CEO of Buoyant and one of the creators of Linkerd, the CNCF's flagship service mesh" 
   />
 
-<Blockquote 
+<p>
+With the project’s <Link to="/company/news/analyzing-service-mesh-performance">approach to performance analysis</Link> published in IEEE The Bridge, ongoing analysis of nearly 40,000 performance test results will comprise the initial release of the <a href="https://smp-spec.io/dashboard">Service Mesh Performance Dashboard</a>, also unveiling at KubeCon EU. <Link to="/service-mesh-management/meshery">Meshery</Link>, the cloud native manager, orchestrates the provisioning and configuration of Kubernetes and each service mesh. With <Link to="projects/nighthawk">Nighthawk</Link> embedded, Meshery’s performance management functions are what drives the tests run within the CNCF Lab.
+</p>
+<Blockquote style="display:block;"
   quote="The precision by which performance measurements are generated and analyzed is a pinnacle focus of Nighthawk. Mesh performance characterization should be distilled from a set of value measurements, and that is where MeshMark compliments to create the ultimate comprehensive efficiency calculation."
   person="Otto van der Schaaf"
   title="Principal Engineer at Red Hat" 
   />
 
-<Blockquote 
-  quote="Are my resources utilized as best as possible? Why am I not getting the SLO met with 4 resources when I only needed 1 resource without the service mesh? How can I improve my 99.9% latencies or can I map my service policy to utilization? Is the network a performance hog, or storage, or cache? Meshmark will model and provide an index in answer to these questions."
+<h2>MeshMark, the formula</h2>
+<Blockquote className="pull-right"
+  quote="Are my resources utilized as best as possible? Why am I not getting the SLO met with 4 resources when I only needed 1 resource without the service mesh? How can I improve my 99.9% latencies or can I map my service policy to utilization? Is the network a performance hog, or storage, or cache? MeshMark will model and provide an index in answer to such questions."
   person="Mrittika Ganguli"
   title="Principal Engineer & Director Cloud Native Network Pathfinding"
-  />
-</div>
-
-<h2>MeshMark, the formula</h2>
+  />  
 <p>
 MeshMark functions as a value performance index (a scale) to provide organizations the ability to weigh the value of their service mesh versus the overhead of their service mesh and assess whether they are getting out of the mesh what they are “paying” for in it. MeshMark’s scoring system ranges from 0 to 100 and incorporates collections of resource utilization efficiency calculations, categorized into similar consumption classes.
 </p>
+
 <img src={Formula} alt="MeshMark Formula" />
 <p>
 A Mesh Utilization Efficiency (MUE) is a calculated, combined ratio of specific infrastructure resource utilizations to assigned resources to cloud native infrastructure.
@@ -100,10 +97,10 @@ A Mesh Utilization Efficiency (MUE) is a calculated, combined ratio of specific 
 <p>
 Learn how we distill a variety of microarchitecture performance signals and application key performance indicators into a simple measurement scale. Join the open source effort and explore the other side of the performance measurement coin: <i>value measurement</i>.
 </p>
-<figure>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yvqn6ckO7BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<figcaption>MeshMark in Meshery (an excerpt from ServiceMeshCon EU 2022 demo)</figcaption>
-</figure>
+<div>
+<iframe width="100%" height="315" style="margin-right: 1.5rem;margin-left:1.5rem;" src="https://www.youtube.com/embed/yvqn6ckO7BI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p style="font-style:italic;font-size:1rem;margin-left:1rem;">MeshMark in Meshery (an excerpt from ServiceMeshCon EU 2022 demo)</p>
+</div>
 
 #### Resources
 <ul>
