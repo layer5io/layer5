@@ -52,10 +52,8 @@ const MeshmapWrapper = styled.div`
   }
 
 
-  .meshmapImage{
-    display: block;
-    margin: 4rem auto;
-    width: 100%;
+  .modes-image{
+    margin: 0 0 2rem;
   }
 
   p.caption {
@@ -154,6 +152,15 @@ const MeshmapWrapper = styled.div`
       }
     }
 
+    .mobile-modes{
+      display: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .mobile-modes{
+        display: block;
+      }
+    }
 
     .black-box {
       display: flex;
