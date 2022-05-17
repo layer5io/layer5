@@ -176,7 +176,6 @@ const Meshmap = () => {
                       <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
                       {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorRole}</p>}
                       <div role="group" className="formRight" aria-labelledby="select">
-                        <span className="custom-arrow"><span className="down-arrow"></span></span>
                         <Field as="select" name="role">
                           <option selected hidden>Select your role</option>
                           <option value="Architect">Architect</option>
