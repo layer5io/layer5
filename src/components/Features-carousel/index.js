@@ -6,10 +6,10 @@ import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoun
 import {FeaturesWrapper} from "./FeaturesCarousel.style";
 
 
-const Features = ({features}) => (
+const Features = ({features, heading}) => (
   <>
     {/* carousel rendered at smaller breakpoints */}
-    <FeaturesCarousel features={features} />
+    <FeaturesCarousel features={features} heading={heading} />
     <FeaturesList features={features} />
   </>
 );
@@ -46,11 +46,11 @@ const FeaturesList = ({ features }) => {
   );
 };
 
-const FeaturesCarousel = ({ features }) => {
+const FeaturesCarousel = ({ features, heading }) => {
   return(
     <FeaturesWrapper>
       <div className="features-carousel">
-        <h2 className="main-heading">Features</h2>
+        <h2 className="main-heading">{heading ? heading : "Features"}</h2>
         <Carousel
           renderCenterRightControls={() => null}
           renderCenterLeftControls={() => null}
@@ -63,7 +63,8 @@ const FeaturesCarousel = ({ features }) => {
             switch (key) {
               case "BottomCenter":
                 return {
-                  top: 0,
+                  top: "100%",
+                  marginTop: "2rem",
                 };
             }
           }}

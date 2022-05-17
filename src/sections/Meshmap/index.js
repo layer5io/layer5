@@ -5,6 +5,7 @@ import Button from "../../reusecore/Button";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import Features from "../../components/Features-carousel";
+import MeshmapModes from "./meshmap-modes";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
@@ -59,32 +60,38 @@ const Meshmap = () => {
       <div>
         <MeshmapBanner />
         <Container>
-          <Features
-            features={[
-              {
-                title: "Designer Mode",
-                description:
-                  "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
-                content: (
-                  <img
-                    src={designerImage}
-                    alt="Designer Mode"
-                  />
-                ),
-              },
-              {
-                title: "Visualizer Mode",
-                description:
-                  "Examine a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers.",
-                content: (
-                  <img
-                    src={visualizerImage}
-                    alt="Visualizer Mode"
-                  />
-                ),
-              },
-            ]}
-          />
+          <div className="mobile-modes">
+            <Features
+              heading="MeshMap Modes"
+              features={[
+                {
+                  title: "Designer Mode",
+                  description:
+                    "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
+                  content: (
+                    <img
+                      src={designerImage}
+                      alt="Designer Mode"
+                      className="modes-image"
+                    />
+                  ),
+                },
+                {
+                  title: "Visualizer Mode",
+                  description:
+                    "Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services.",
+                  content: (
+                    <img
+                      src={visualizerImage}
+                      alt="Visualizer Mode"
+                      className="modes-image"
+                    />
+                  ),
+                },
+              ]}
+            />
+          </div>
+          <MeshmapModes />
           <div className="banner-background">
             <Container>
 
@@ -121,7 +128,7 @@ const Meshmap = () => {
                         setStepNumber(1);
                         nextStep();
                       } else {
-                        if(!values.role) {
+                        if (!values.role) {
                           setValidateRole(true);
                         } else {
                           setValidateRole(false);
@@ -158,12 +165,12 @@ const Meshmap = () => {
                       <div className="accounts">
                         <label className="form-name">Account(s) to Connect</label>
                         <p>
-                          Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
+                          Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
                         </p>
                         {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
                         <div className="accounts_group">
                           <label htmlFor="google" className="form-name">Google</label>
-                          <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                          <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                           <label htmlFor="github" className="form-name">GitHub</label>
                           <Field type="text" className="text-field" id="github" name="github" />
                           <label htmlFor="twitter" className="form-name">Twitter</label>
@@ -176,7 +183,6 @@ const Meshmap = () => {
                       <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
                       {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorRole}</p>}
                       <div role="group" className="formRight" aria-labelledby="select">
-                        <span className="custom-arrow"><span className="down-arrow"></span></span>
                         <Field as="select" name="role">
                           <option selected hidden>Select your role</option>
                           <option value="Architect">Architect</option>

@@ -10,6 +10,17 @@ const MeshmapWrapper = styled.div`
   .required-sign {
     color: #8b0000;
   }
+  select {
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+  }
+  
+  /* For IE10 */
+  select::-ms-expand {
+    display: none;
+  }
 
   .description{
     margin-top: 3rem;
@@ -52,10 +63,8 @@ const MeshmapWrapper = styled.div`
   }
 
 
-  .meshmapImage{
-    display: block;
-    margin: 4rem auto;
-    width: 100%;
+  .modes-image{
+    margin: 0 0 2rem;
   }
 
   p.caption {
@@ -154,6 +163,15 @@ const MeshmapWrapper = styled.div`
       }
     }
 
+    .mobile-modes{
+      display: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .mobile-modes{
+        display: block;
+      }
+    }
 
     .black-box {
       display: flex;
