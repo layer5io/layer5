@@ -67,7 +67,7 @@ const Meshmap = () => {
                 {
                   title: "Designer Mode",
                   description:
-                  "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
+                    "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
                   content: (
                     <img
                       src={designerImage}
@@ -79,7 +79,7 @@ const Meshmap = () => {
                 {
                   title: "Visualizer Mode",
                   description:
-                  "Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services.",
+                    "Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services.",
                   content: (
                     <img
                       src={visualizerImage}
@@ -128,7 +128,7 @@ const Meshmap = () => {
                         setStepNumber(1);
                         nextStep();
                       } else {
-                        if(!values.role) {
+                        if (!values.role) {
                           setValidateRole(true);
                         } else {
                           setValidateRole(false);
@@ -165,12 +165,12 @@ const Meshmap = () => {
                       <div className="accounts">
                         <label className="form-name">Account(s) to Connect</label>
                         <p>
-                          Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
+                          Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
                         </p>
                         {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
                         <div className="accounts_group">
                           <label htmlFor="google" className="form-name">Google</label>
-                          <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                          <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                           <label htmlFor="github" className="form-name">GitHub</label>
                           <Field type="text" className="text-field" id="github" name="github" />
                           <label htmlFor="twitter" className="form-name">Twitter</label>
