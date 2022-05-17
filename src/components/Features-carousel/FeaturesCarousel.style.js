@@ -69,11 +69,12 @@ export const FeaturesWrapper = styled.div`
     
     .active-feature {
       border-color: ${props => props.theme.secondaryColor};
-      padding: 3rem 2.75rem 2rem 2.75rem;
+      padding-top: 0;
       @media (min-width: 768px){
         border-color: ${props => props.theme.black};
         background-color: ${props => props.theme.black};
         border-radius: 20px;
+        padding: 3rem 2.75rem 2rem 2.75rem;
       }
       
       & .body {
@@ -114,7 +115,6 @@ export const FeaturesWrapper = styled.div`
       border: none;
       padding: 0;
       font-size: 20px;
-      line-height: 28px;
       font-weight: 600;
       color: ${props => props.theme.headingColor};
       cursor: pointer;

@@ -30,7 +30,7 @@ const OperatingServiceMeshes = () => (
       <GlobalStyle />
       <SEO title="Manage Meshery"
         description="How the service mesh management plane, Meshery works"
-        image="/images/meshery-logo-dark-text.png"/>
+        image="/images/meshery-logo-dark-text.png" />
       <Navigation />
       <HowMesheryWorksHero />
       <HowMesheryWorks
@@ -43,7 +43,7 @@ const OperatingServiceMeshes = () => (
               icon: SMILogo,
               description:
                 <p>Every Meshery Adapter provides a common substrate of support for every service mesh, offering a
-                standard set of management features across all service meshes.</p>,
+                  standard set of management features across all service meshes.</p>,
             },
             {
               title: "Each service mesh adapter is unique",
@@ -51,20 +51,20 @@ const OperatingServiceMeshes = () => (
               description:
                 <div><p>Adapters allow Meshery to interface with the different service meshes, exposing their differentiated value to users.Care is taken in each Meshery Adapter to expose the unique value of each service mesh. </p>
                   <p>Consequently, each Meshery Adapter is not equally capable just as each service mesh is not equally
-                capable as another service mesh.</p>
+                    capable as another service mesh.</p>
                 </div>,
             },
             {
               title: "MeshMap",
               icon: VisualTopology,
               description:
-              <div><p>MeshMap enables of all service mesh management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
-              Designing and configuration your service mesh is as easy as dragging and dropping.</p>
-              <p>Learn more about <a href="https://layer5.io/service-mesh-management/meshmap">MeshMap</a></p></div>,
+                <div><p>MeshMap enables of all service mesh management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
+                  Designing and configuration your service mesh is as easy as dragging and dropping.</p>
+                <p>Learn more about <a href="https://layer5.io/cloud-native-management/meshmap">MeshMap</a></p></div>,
             },
             {
               title: "Extension Points",
-              icon:MesheryLogo,
+              icon: MesheryLogo,
               description: <div>
                 <p>Meshery is not just an application. It is a set of microservices where the central component is itself called Meshery. Integrators may extend Meshery by taking advantage of designated Extension Points. Extension points come in various forms and are available through Mesherys architecture.</p>
 
@@ -82,10 +82,10 @@ const OperatingServiceMeshes = () => (
               icon: MesheryLogo,
               description:
                 <p>Adapters establish
-                communication with Kubernetes and a specific type of service mesh.
-                Multiple adapters of the same type may be deployed concurrently. Although,
-                this isn’t strictly necessary for Meshery to communicate to more than one instance of the same type of service mesh.
-                      See the <a href='https://docs.meshery.io/guides/multiple-adapters' target="_blank" rel="noreferrer">Using Multiple Adapters</a> guide for more information.</p>,
+                  communication with Kubernetes and a specific type of service mesh.
+                  Multiple adapters of the same type may be deployed concurrently. Although,
+                  this isn’t strictly necessary for Meshery to communicate to more than one instance of the same type of service mesh.
+                  See the <a href='https://docs.meshery.io/guides/multiple-adapters' target="_blank" rel="noreferrer">Using Multiple Adapters</a> guide for more information.</p>,
             },
 
             {
