@@ -95,23 +95,36 @@ import meshmapInDocker from './meshmap-docker-extension-for-meshery.png';
 
 <img src={meshmapInDocker} alt="Layer5 MeshMap in Meshery Docker Extension" />
 
-<p>
+<div style="  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;">
+  <div style="  padding: 20px;
+  text-align: center;">
+  <p style="padding-bottom: 1.6rem;">
     <h5>Designer Mode</h5>
     Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.
-</p> 
+</p>
+    <img src={designer} alt="Meshery Docker Extension" align="center" alt="MeshMap Designer" />
 
-<p>
+  </div>
+  <div style="  padding: 20px;
+  text-align: center;">
+  <p>
     <h5>Visualizer Mode</h5>
     Examine a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers. 
 </p>
+    <img src={visualizer} alt="Meshery Docker Extension" align="center" alt="MeshMap Visualizer" />
+  </div>
+</div>
 
-<p>
-    <img src={designer} alt="Meshery Docker Extension" align="center" style="margin-left: 10px; width:40%" alt="MeshMap Designer" />
+
+<div class="iframe-container">
+<iframe src="https://www.youtube.com/embed/SazEJizK4xQ" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+</div>  
+
+<p><strong>Lee Calcote and Maximiliano Churichi packed a great deal of information in this talk. Find the recording below. The Meshery Extension is now out! Try now, and Share your Experience </strong>
+<Link to="/service-mesh-management/meshmap">Apply for MeshMap Beta Program</Link>
 </p>
-
-<p>
-    <img src={visualizer} alt="Meshery Docker Extension" align="center" style="margin-left: 10px; width:40%" alt="MeshMap Visualizer" />
-</p>    
 
 
 </BlogWrapper>
