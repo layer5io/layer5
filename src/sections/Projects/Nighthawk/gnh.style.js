@@ -170,8 +170,8 @@ export const CardsContainer = styled.div`
     grid-template-columns: repeat(auto-fill, 32%);
     grid-auto-rows: 1fr;
     justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     grid-gap: 10px;
 
     .card {
@@ -184,7 +184,6 @@ export const CardsContainer = styled.div`
         0 3.125rem 80px rgba(0, 0, 0, 0.12)
         ;
         margin: 2px;
-        // padding: 1.25rem;
         padding: 1.5rem;
         background-color: white;
         border-radius: 25px;
@@ -212,12 +211,11 @@ export const CardsContainer = styled.div`
         }
     }
 
-
     @media screen and (max-width: 974px) {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr 1fr;
         grid-gap: 20px;
-        padding: 10px;
+        padding: 20px;
         div {
           grid-column-end: span 2;
         }
