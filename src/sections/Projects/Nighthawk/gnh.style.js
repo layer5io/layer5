@@ -169,9 +169,10 @@ export const CardsContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, 32%);
     grid-auto-rows: 1fr;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
+    grid-gap: 10px;
 
     .card {
         box-shadow:
@@ -183,18 +184,21 @@ export const CardsContainer = styled.div`
         0 3.125rem 80px rgba(0, 0, 0, 0.12)
         ;
         margin: 2px;
-        padding: 1.25rem;
+        // padding: 1.25rem;
+        padding: 1.5rem;
         background-color: white;
         border-radius: 25px;
         p {
             text-align: left;
             padding: 0px 0px;
             letter-spacing: 0;
+            margin-top: 10px;
         }
         h2 {
             text-align: left;
             font-size: 24px;
             text-transform:uppercase;
+            margin-top: 10px;
         }
         .circle {
             border-radius: 50%;
@@ -206,6 +210,25 @@ export const CardsContainer = styled.div`
                 padding: 0.3rem 0px;
             }
         }
+    }
+
+
+    @media screen and (max-width: 974px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 20px;
+        padding: 10px;
+        div {
+          grid-column-end: span 2;
+        }
+        div:last-child {
+          grid-column-start: 2;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
     }
 `;
 
