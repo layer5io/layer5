@@ -10,8 +10,9 @@ import DiscussCallout from "../../sections/Discuss-Callout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
 import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
-import designerImage from "../../assets/images/meshmap/MeshMap.png";
+import designerImage from "../../assets/images/meshmap/meshmap-designer.png";
 import visualizerImage from "../../assets/images/meshmap/MeshMap-Visualizer.png";
+import catalog from "../../assets/images/meshmap/meshmap-catalog.png";
 
 
 const Meshmap = () => {
@@ -57,7 +58,7 @@ const Meshmap = () => {
 
   const MeshmapFormPage = () => {
     return (
-      <div>
+      <div >
         <MeshmapBanner />
         <Container>
           <div className="mobile-modes">
@@ -92,11 +93,21 @@ const Meshmap = () => {
             />
           </div>
           <MeshmapModes />
+          <Container className="catalog">
+            <h2 className="heading">Choose your content</h2>
+            <img
+              src={catalog}
+              alt="Service Mesh Catalog"
+
+            />
+            Take advantage of Meshery's catalog of patterns, WebAssembly filters, and eBPF programs (coming soon).
+          </Container>
           <div className="banner-background">
+
             <Container>
 
               <Row className="description">
-                <Col lg={6} md={6} sm={12} className="desc-text">
+                <Col lg={7} md={6} sm={12} className="desc-text">
                   <h1 className="heading-1"> Accessing</h1>
                   <h1 className="heading-2">MeshMap Beta</h1>
                   <p className="desc-p">
@@ -106,8 +117,8 @@ const Meshmap = () => {
                   <DiscussCallout />
                 </Col>
 
-                <Col lg={6} md={6} sm={12}>
-                  <h3 className="form-title">Apply For the Beta Program</h3>
+                <Col lg={5} md={6} sm={12}>
+                  <h3 className="form-title">Join the Beta Program</h3>
                   <Formik
                     initialValues={{
                       firstname: firstname,
@@ -152,12 +163,12 @@ const Meshmap = () => {
                     }}
                   >
                     <Form className="form" method="post">
-                      <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-                      <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                       <label htmlFor="firstname" className="form-name">First Name <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
                       <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
+                      <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
+                      <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                       <label htmlFor="occupation" className="form-name">Occupation / Title <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="occupation" name="occupation" required />
                       <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
