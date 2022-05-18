@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import cover from "./images/Rectangle 495.png";
 
-const Gnhwrapper = styled.section`
+export const Gnhwrapper = styled.section`
     .hero-section{
         padding: 5rem 0rem;
         .logo{
@@ -201,4 +201,12 @@ const Gnhwrapper = styled.section`
     }
 `;
 
-export default Gnhwrapper;
+export const CardsContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 32%);
+    grid-auto-rows: 1fr;
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+`;
+
