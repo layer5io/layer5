@@ -214,7 +214,7 @@ export const ProjectWrapper = styled.div`
         }
         @media only screen and (min-width: 741px) {
             width: 80%;
-            padding: 40px 0px 0px 0px;
+            place-content: center;
         }
         
     }
@@ -261,9 +261,7 @@ export const ProjectWrapper = styled.div`
         .project__card.six h5{ 
             width: 100%;
         }
-        .project__card.seven{
-            height: 15rem;
-        }
+        
      }
      @media only screen and (max-width: 740px) {
         .project__grid{
@@ -322,11 +320,14 @@ export const ProjectWrapper = styled.div`
             }
         }
         .project__card.seven{
-            height: 10rem;
-            h5{
-                margin-top: 2rem;
+            img{
+                margin-top: 10px;
+            }
+            h5{ 
+                margin-top:35px;
             }
         }
+         
         
         
     }
