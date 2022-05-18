@@ -1,5 +1,5 @@
 <p style="text-align:center;" align="center">
-  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-tag-white-bg.png" width="45%" /></p>
+  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg" width="45%" /></p>
 
 <p align="center">
 <a href="https://github.com/layer5io/layer5" alt="GitHub contributors">
