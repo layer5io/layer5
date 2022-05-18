@@ -115,10 +115,6 @@ const MeshmapModesWrapper = styled.div`
         height: auto;
     }
   }
-  .flip {
-    background: linear-gradient(180deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
-
-    }
     
     
   }
@@ -169,21 +165,6 @@ const MeshmapModes = () => {
           <div className="content">
             <h1>Deploy your cloud native infrastructure</h1>
             <img src={visualizerImage} alt="MeshMap Visualizer" />
-            <p>
-              Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services. Connect an interactive terminal to instances of your containers.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="modes-wrapper flip">
-        <div className="mode">
-          <div className="mode-name">
-            <p>Catalog</p>
-          </div>
-          <div className="content">
-            <h1>Deploy your cloud native infrastructure</h1>
-            <img src={catalog} alt="MeshMap Visualizer" />
             <p>
               Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services. Connect an interactive terminal to instances of your containers.
             </p>
