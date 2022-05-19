@@ -137,7 +137,7 @@ const Navigation = () => {
           thumbnail: {
             img: meshery
           },
-          title: "Meshery, the Service Mesh Manager"
+          title: "Meshery, the Cloud Native Manager"
         },
         fields: {
           slug: "/service-mesh-management/meshery"

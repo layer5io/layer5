@@ -29,7 +29,7 @@ const OperatingServiceMeshes = () => (
     <Layout>
       <GlobalStyle />
       <SEO title="Manage Meshery"
-        description="How the service mesh management plane, Meshery works"
+        description="How the cloud native management plane, Meshery works"
         image="/images/meshery-logo-dark-text.png" />
       <Navigation />
       <HowMesheryWorksHero />
@@ -58,7 +58,7 @@ const OperatingServiceMeshes = () => (
               title: "MeshMap",
               icon: VisualTopology,
               description:
-                <div><p>MeshMap enables of all service mesh management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
+                <div><p>MeshMap enables of all cloud native management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
                   Designing and configuration your service mesh is as easy as dragging and dropping.</p>
                 <p>Learn more about <a href="https://layer5.io/cloud-native-management/meshmap">MeshMap</a></p></div>,
             },
