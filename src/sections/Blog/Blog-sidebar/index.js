@@ -67,7 +67,7 @@ const Sidebar = ({ pageContext}) => {
             <div className="card">
               <h2>Join the Conversation</h2>
               <p>On our Discussion Forum</p>
-              <StaticImage imgClassName="logo" src={Discuss} />
+              <StaticImage imgClassName="logo" alt="Discuss" src={Discuss} />
             </div>
           </a>
         </div>

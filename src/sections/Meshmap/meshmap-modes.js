@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import catalog from "../../assets/images/meshmap/meshmap-catalog.png";
-import designerImage from "../../assets/images/meshmap/Meshmap-Designer.png";
-import visualizerImage from "../../assets/images/meshmap/Meshmap-Visualizer.png";
+import catalog from "../../assets/images/meshmap/MeshmapCatalog.png";
+import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
+import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 
 const MeshmapModesWrapper = styled.div`
 
