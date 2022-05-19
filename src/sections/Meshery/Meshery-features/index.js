@@ -242,7 +242,7 @@ const MesheryFeatures = () => {
                 <div className="feature-expose">
                   <img
                     src={img5}
-                    alt="Meshery, the extensible service mesh manager"
+                    alt="Meshery, the extensible cloud native manager"
                   />
                   <p>
                     With MeshSync was designed from the ground up to perform
@@ -266,7 +266,7 @@ const MesheryFeatures = () => {
                 <div className="feature-expose-full">
                   <img
                     src={img6}
-                    alt="Meshery, the extensible service mesh manager"
+                    alt="Meshery, the extensible cloud native manager"
                   />
                   <p>
                     Meshery is not just an application. It is a set of

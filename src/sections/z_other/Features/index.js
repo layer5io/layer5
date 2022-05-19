@@ -22,9 +22,9 @@ const Features = () => {
     <FeaturesSectionWrapper id="features">
       <Container fullWidthSM>
         <SectionTitle UniWidth="65%" className="section-title">
-          <h4>Service Mesh Management</h4>
+          <h4>Cloud Native Management</h4>
           <h2>
-                        Manage your service mesh with features<span> you won't find anywhere else</span>.
+            Manage your cloud native infra and apps with features<span> you won't find anywhere else</span>.
           </h2>
         </SectionTitle>
         <Row>
@@ -35,8 +35,8 @@ const Features = () => {
               </div>
               <h3>Lifecycle Management</h3>
               <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                                eiusmod tempor incididunt.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt.
               </p>
             </div>
           </Col>
@@ -47,8 +47,8 @@ const Features = () => {
               </div>
               <h3>Performance Management</h3>
               <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                                eiusmod tempor incididunt.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt.
               </p>
             </div>
           </Col>
@@ -59,8 +59,8 @@ const Features = () => {
               </div>
               <h3>Configuration Management</h3>
               <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
-                                eiusmod tempor incididunt.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt.
               </p>
             </div>
           </Col>
@@ -71,7 +71,7 @@ const Features = () => {
               </div>
               <h3>Data Plane Intelligence</h3>
               <p>
-                                Harness the power of WebAssembly filters to implement application and offload your service development teams from lengthy engineering cycles. Expect and receive more from your infrastructure.
+                Harness the power of WebAssembly filters to implement application and offload your service development teams from lengthy engineering cycles. Expect and receive more from your infrastructure.
               </p>
             </div>
           </Col>
@@ -82,7 +82,7 @@ const Features = () => {
               </div>
               <h3>Visual Topology</h3>
               <p>
-                                Use <a href="/meshery/service-mesh-map" alt="Service Mesh Visual Map">MeshMap</a> to quickly understand how your service mesh is functioning and to intuitively reconfigure and tune your mesh in accordance with the needs of your workloads.
+                Use <a href="/meshery/service-mesh-map" alt="Service Mesh Visual Map">MeshMap</a> to quickly understand how your service mesh is functioning and to intuitively reconfigure and tune your mesh in accordance with the needs of your workloads.
               </p>
             </div>
           </Col>
