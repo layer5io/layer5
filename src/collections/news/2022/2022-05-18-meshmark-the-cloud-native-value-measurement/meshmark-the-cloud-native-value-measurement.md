@@ -2,7 +2,7 @@
 title: "MeshMark: the Cloud Native Value Measurement"
 subtitle: "An open index for measuring performance of cloud native infrastructure in context of the value provided to your business."
 date: 2022-05-17 08:00:00 -0530
-author: Kate Suttons
+author: The Newsroom
 thumbnail: ../../../../assets/images/meshmark/stacked/meshmark-dark-full.png
 category: "Meshery"
 description: "Layer5, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure: service meshes. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any service mesh."
