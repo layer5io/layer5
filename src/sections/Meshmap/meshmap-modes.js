@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import catalog from "../../assets/images/meshmap/meshmap-catalog.png";
 import designerImage from "../../assets/images/meshmap/Meshmap-Designer.png";
 import visualizerImage from "../../assets/images/meshmap/Meshmap-Visualizer.png";
 
@@ -11,8 +12,9 @@ const MeshmapModesWrapper = styled.div`
   }
   
   .modes-wrapper {
-    box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.25);
     display: flex;
+
     background-color: ${props => props.theme.secondaryColor};
     background: linear-gradient(360deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
 
@@ -34,6 +36,7 @@ const MeshmapModesWrapper = styled.div`
     overflow: hidden;
     transition: width 0.5s ease;
   
+    &:first-of-type {border-left: 0px;}
     &:before,
     &:after {
       transform: translate3d(0, 0, 0);
@@ -89,6 +92,74 @@ const MeshmapModesWrapper = styled.div`
       }
     }
   }
+
+  .mode-catalog { 
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    border-top: 1.5px solid #fff;
+    width: 100%;
+    height: 50vh;
+    min-height: 600px;
+    color: #fff;
+    overflow: hidden;
+    transition: width 0.3s ease;
+
+    &:first-of-type {border-left: 0px;}
+    &:before,
+    &:after {
+      transform: translate3d(0, 0, 0);
+      content: "";
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  
+    &:after {
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+  
+    &:before {
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        #00b39f 100%
+      );
+      z-index: 1;
+      opacity: 0;
+      transform: translate3d(0, 0, 0) translateY(50%);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    &:hover {
+      width: 100% !important;
+      cursor: pointer;
+  
+      &:after {
+        opacity: 0;
+        ttransition: opacity 0.5s ease, transform 0.5s ease;
+
+      }
+  
+      &:before {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) translateY(0);
+        transition: opacity 1s ease, transform 1s ease 0.5s;
+      }
+
+      .mode-name{
+          top: 15%;
+          transition: all 1.1s ease 0.55s;
+      }
+  
+      .content {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 1.1s ease 0.55s;
+      }
+    }
+  }
   
   .content {
     transform: translate3d(0, 0, 0) translateY(95px);
@@ -111,7 +182,13 @@ const MeshmapModesWrapper = styled.div`
         height: auto;
     }
   }
-  
+  .flip {
+    background: linear-gradient(180deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
+
+    }
+    
+    
+  }
   .mode-name {
     position: absolute;
     top: 50%;
@@ -137,7 +214,7 @@ const MeshmapModesWrapper = styled.div`
 const MeshmapModes = () => {
   return (
     <MeshmapModesWrapper>
-      <h2 className="heading">MeshMap Modes</h2>
+      <h2 className="heading">Choose your mode</h2>
       <section className="modes-wrapper">
         <div className="mode">
           <div className="mode-name">
@@ -147,7 +224,7 @@ const MeshmapModes = () => {
             <h1>World Class Visual Editor</h1>
             <img src={designerImage} alt="MeshMap Designer" />
             <p>
-    Build your cloud native infrastructure with custom components and  drag-and-drop controls. Customize a service mesh deployment with application and Envoy filter from scratch.
+              Build your cloud native infrastructure with custom components and  drag-and-drop controls. Customize a service mesh deployment with application and Envoy filter from scratch.
             </p>
           </div>
         </div>
@@ -160,8 +237,23 @@ const MeshmapModes = () => {
             <h1>Deploy your cloud native infrastructure</h1>
             <img src={visualizerImage} alt="MeshMap Visualizer" />
             <p>
-    Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services. Connect an interactive terminal to instances of your containers.
-            </p> 
+              Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services. Connect an interactive terminal to instances of your containers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="modes-wrapper flip">
+        <div className="mode-catalog">
+          <div className="mode-name">
+            <p>Catalog</p>
+          </div>
+          <div className="content">
+            <h1>Deploy your cloud native infrastructure</h1>
+            <img src={catalog} alt="MeshMap Visualizer" />
+            <p>
+              Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services. Connect an interactive terminal to instances of your containers.
+            </p>
           </div>
         </div>
       </section>
