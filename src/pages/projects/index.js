@@ -36,18 +36,16 @@ export const query = graphql`query allProjects {
 }
 `;
 
-const ProjectGridPage = ({data}) => (
+const ProjectGridPage = ({ data }) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Innovative Service Mesh Projects"
-        description="Layer5 - The Service Mesh Company. Layer5 is the maker of Meshery and Service Mesh Performance (SMP)
-           and maintainers of Service Mesh Interface (SMI). We are the largest collection of service mesh projects and their maintainers in the world.
-           Contact Layer5 for help with operating a service mesh."
+      <SEO title="Innovative Cloud Native Projects"
+        description="Layer5, empowerer of engineers. Layer5 is the maker of Meshery, Service Mesh Performance, Service Mesh Interface, and Nighthawk. At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration."
         image="/images/layer5-projects.png" />
       <Navigation />
       <ProjectPage data={data} />
-      <Footer/>
+      <Footer />
     </Layout>
   </ThemeProvider>
 );

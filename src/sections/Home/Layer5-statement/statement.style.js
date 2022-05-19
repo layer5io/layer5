@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import imgHero from "./images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
+import imgHero from "../../../assets/images/homePage-images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
 
 
 const BannerSectionWrapper = styled.section`
@@ -17,19 +17,18 @@ const BannerSectionWrapper = styled.section`
     }
     .left-child {
         position: relative;
-        align-self: flex-end;
-        margin-bottom: 3rem;
+        align-self: center;
     }
     .right-col {
         padding-left: 0px;
         padding-right: 0px;
     }
     h2.statement {
-        color: ${props => props.theme.white};
+        color: ${(props) => props.theme.white};
         margin-bottom: 1rem;
     }
     h3.statement {
-        color: ${props => props.theme.secondaryLightColor};
+        color: ${(props) => props.theme.secondaryLightColor};
         margin-left: 3.5rem;
         text-indent: -3.5rem;
         margin-bottom: 2rem;
@@ -50,7 +49,8 @@ const BannerSectionWrapper = styled.section`
     .hero {
         background: url(${imgHero});
         right: 0px;
-        height: 850px;
+        height: 39.5rem;
+        vertical-align: middle
         overflow-x: hidden;
         padding: 0rem;
         object-fit: cover;
@@ -105,9 +105,16 @@ const BannerSectionWrapper = styled.section`
             }
         }
         .hero {
-            height: 700px;
+            height: 31.6rem;
         }
      }
+
+    @media only screen and (max-device-width : 768px) { 
+        .hero {
+          height: 33.85rem;
+      }
+     }
+    
      @media only screen and (max-width: 767px) {
          .hero {
             display: none;

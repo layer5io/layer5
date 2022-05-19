@@ -12,6 +12,7 @@ import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`
   query chapters($slug: String!, $course: String!) {
@@ -95,7 +96,9 @@ const SingleChapter = ({data, location}) => {
           canonical="https://layer5.io/learn/learning-paths"
         />
         <Navigation />
-        <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes}/>
+        <SimpleReactLightbox>
+          <Chapters chapterData={data.chapter} TOCData={sortedTOCData} courseData={data.course.nodes[0]} location={location} serviceMeshesList={data.serviceMeshesList.nodes}/>
+        </SimpleReactLightbox>
         <Footer />
       </Layout>
     </ThemeProvider>

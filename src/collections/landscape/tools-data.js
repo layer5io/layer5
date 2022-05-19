@@ -19,7 +19,7 @@ export const tools_data= [
     tool: "Meshery",
     link: "https://github.com/layer5io/meshery",
     language: "Golang",
-    written_for: "Istio, Linkerd, Consul, Octarine, Network Service Mesh, App Mesh",
+    written_for: "Istio, Linkerd, Consul, Cilium Service Mesh, Network Service Mesh, App Mesh",
     supported_by: "Layer5",
     desc: "A service mesh playground to facilitate learning about functionality and performance of different service meshes. Meshery incorporates the collection and display of metrics from applications running in the playground.",
   },

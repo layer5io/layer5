@@ -49,6 +49,7 @@ export const BlogPageWrapper = styled.div`
 		.author{
 			font-size: 1rem;
 			text-align: start;
+			margin-bottom:0;
 		}
 	}
 
@@ -90,9 +91,20 @@ export const BlogPageWrapper = styled.div`
 			margin-top: 0rem;
 		}
 		.post-content-block{
-			height: 9rem;
+			height: fit-content;
 		}
 	}
 
-
+	@media only screen and (min-width: 575px) {
+    .tooltip-search {
+      margin-bottom: 0;
+    }
+  }
+  @media only screen and (min-width: 990px) {
+    .tooltip-search {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 `;

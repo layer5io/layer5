@@ -1,15 +1,15 @@
 import React, {useState} from "react";
-import {SRLWrapper} from "simple-react-lightbox";
+import SimpleReactLightbox, {SRLWrapper} from "simple-react-lightbox";
 import {Link} from "gatsby";
 import Carousel from "nuka-carousel";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import {FeaturesWrapper} from "./FeaturesCarousel.style";
 
 
-const Features = ({features}) => (
+const Features = ({features, heading}) => (
   <>
     {/* carousel rendered at smaller breakpoints */}
-    <FeaturesCarousel features={features} />
+    <FeaturesCarousel features={features} heading={heading} />
     <FeaturesList features={features} />
   </>
 );
@@ -35,20 +35,22 @@ const FeaturesList = ({ features }) => {
           ))}
         </ul>
         <div className="terminal-wrapper">
-          <SRLWrapper>
-            {features[activeFeature].content}
-          </SRLWrapper>
+          <SimpleReactLightbox>
+            <SRLWrapper>
+              {features[activeFeature].content}
+            </SRLWrapper>
+          </SimpleReactLightbox>
         </div>
       </div>
     </FeaturesWrapper>
   );
 };
 
-const FeaturesCarousel = ({ features }) => {
+const FeaturesCarousel = ({ features, heading }) => {
   return(
     <FeaturesWrapper>
       <div className="features-carousel">
-        <h2 className="main-heading">Features</h2>
+        <h2 className="main-heading">{heading ? heading : "Features"}</h2>
         <Carousel
           renderCenterRightControls={() => null}
           renderCenterLeftControls={() => null}
@@ -61,7 +63,8 @@ const FeaturesCarousel = ({ features }) => {
             switch (key) {
               case "BottomCenter":
                 return {
-                  top: 0,
+                  top: "100%",
+                  marginTop: "2rem",
                 };
             }
           }}
@@ -101,7 +104,7 @@ const Feature = ({children, title, active, onClick, learnMoreLink, id, Element =
         <p>{children}</p>
         {learnMoreLink && (
           <Link className="learn-more-link" to={learnMoreLink}>
-                        Learn more <IoIosArrowRoundForward />
+            Learn more <IoIosArrowRoundForward />
           </Link>
         )}
       </div>

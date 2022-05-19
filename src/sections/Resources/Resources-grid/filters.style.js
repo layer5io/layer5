@@ -18,11 +18,53 @@ export const ResourceNavigationWrapper = styled.div`
       }
     }
   }
-  .heading>span:hover{
+
+  .heading-name{
+    margin: 0 0 0.3rem 0;
+  }
+  .heading-name>span:hover{
     color: ${(props) => props.theme.secondaryColor};
   }
+
+  .heading-name>strong{
+    font-size: 1.5rem;
+  }
+
+  .mob-view{
+    display: none;
+  }
+
   .clear-disabled{
     display: none;
+  }
+
+  .filter-icon{
+    width: 1.2rem; 
+    height: 1.2rem; 
+    cursor: pointer;
+    margin : 0.2rem;
+  }
+
+  .filter-menu-icon{
+    display : none;
+  }
+  .filter-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: ${(props) => props.theme.secondaryColor};
+    color: #FFF;
+    font-weight: 500;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    span{
+      padding-left: 0.5rem;
+      float: right;
+      color: #FFF;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
   }
 
 label {
@@ -108,14 +150,77 @@ input[type="checkbox"] {
              visibility:visible;
             }
 
-  @media only screen and (max-width: 750px){
-       position: initial;
-       margin-left: 4rem;
-       margin-right: 2rem;
-       width: auto;
-       .filter{
-        display:contents;
-       }
+    @media only screen and (max-width: 991px) {
+      margin-left: 1.5rem;
+      .filter-menu-icon{
+        display: flex;
+      }
+      .filter-menu-icon>span{
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin : 0 1rem;
+      }
+      .filter-close{
+        width: 1.2rem; 
+        height: 1.2rem;
+      }
+      .filters-boxes{
+        display: none;
+      }
+      .heading{
+        display: flex;
+        justify-content: space-between;
+        border: none;
+      }
+      .heading-name>strong{
+        display : none;
+      }
+      .desk-view{
+        display:none;
+      }
+      .mob-view{
+        display:block;
+      }
+      .clear-disable{
+        display: none;
+      }
+      #filters-boxes{
+        display : block
+      }
+    }
+    @media only screen and (max-width: 575px) {
+      margin-left: 0rem;
+      .heading{
+        margin-left: 0;
+        margin-bottom: 1.5rem
+      }
+    }
+    @media only screen and (max-width: 430px){
+      .filter{
+        font-size: 1rem;
+      }
+      .filter-btn>span{
+        font-size: 1rem;
+        font-weight: bold;
+        padding-left: 0.6rem;
+      }
+      .filter-icon{
+        width: 1rem;
+        height: 1rem;
+      }
+
+      .clear-enabled{
+        font-size: 0.5rem;
+      }
+      
+      .filter-close{
+        width: 1.2rem; 
+        height: 1.2rem;
+      }
+     }
+
+     
+    
            
 `;
 

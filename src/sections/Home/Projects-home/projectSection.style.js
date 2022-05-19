@@ -68,7 +68,10 @@ const ProjectItemWrapper = styled.section`
         }
 
         img{
-            height: 40px; 
+            height: 40px ; 
+            width: auto ;
+        }
+        .gatsby-image-wrapper{
             margin: 10px auto; 
         }
     }
@@ -110,7 +113,6 @@ const ProjectItemWrapper = styled.section`
             padding: 8%;
             img{
                 height: 45px;
-                margin-bottom: 6px;
             }
             h5{
                 margin-bottom: 0px;

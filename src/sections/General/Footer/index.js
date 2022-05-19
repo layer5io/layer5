@@ -8,12 +8,13 @@ import FooterWrapper from "./footer.style";
 import bubblesElement from "./images/bubbles-element.svg";
 
 const Footer = () => {
+  var currentYear = new Date().getFullYear();
   return (
     <FooterWrapper>
       <img
         className="section__particle"
         src={bubblesElement}
-        alt="Layer5, the service mesh company"
+        alt="Layer5, the cloud native management company"
       />
       <Container>
         <Row className="footer-head">
@@ -29,10 +30,8 @@ const Footer = () => {
         <Row>
           <Col xs={12} lg={3}>
             <p className="desc-info">
-              Representing the largest collection of service meshes and their
-              maintainers in the world, Layer5 is the service mesh company.
-              Creator and maintainer of service mesh standards. Maker of
-              Meshery, the service mesh management plane.
+              An empowerer of engineers, Layer5 helps you extract more value from your infrastructure.
+              Creator and maintainer of service mesh standards. Maker of Meshery, the cloud native management plane.
             </p>
           </Col>
           <Col className="sections_col" xs={12} lg={9}>
@@ -74,7 +73,7 @@ const Footer = () => {
                     >
                       Service Mesh Comparison
                     </Link>
-                  </li>                  
+                  </li>
                   <li>
                     <Link
                       className="category-link"
@@ -217,7 +216,7 @@ const Footer = () => {
                     placeholder="Email Address"
                     name="EMAIL"
                     id="mce-EMAIL"
-                    onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} 
+                    onInvalid={e => e.target.setCustomValidity("Please fill-in this field")}
                     onInput={e => e.target.setCustomValidity("")}
                     required
                   />
@@ -234,7 +233,7 @@ const Footer = () => {
         <Row>
           <div className="footer-bottom">
             <p className="copyright-text">
-              2021 Copyright ©Layer5, Inc | All Rights Reserved
+              {currentYear} Copyright ©Layer5, Inc | All Rights Reserved
             </p>
             <ul className="policies">
               <li>

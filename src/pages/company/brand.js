@@ -10,6 +10,7 @@ import Brand from "../../sections/Company/Brand";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 const BrandPage = () => (
   <ThemeProvider theme={theme}>
@@ -17,7 +18,9 @@ const BrandPage = () => (
     <Layout>
       <SEO title="Brand Kits" description="Layer5 brand kits with logos, color schemes, and approved usage of Meshery, Image Hub, and other Layer5 projects" />
       <Navigation />
-      <Brand />
+      <SimpleReactLightbox>
+        <Brand />
+      </SimpleReactLightbox>
       <Footer />
     </Layout>
   </ThemeProvider>

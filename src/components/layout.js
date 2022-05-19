@@ -8,7 +8,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Helmet} from "react-helmet";
-import SimpleReactLightbox from "simple-react-lightbox";
 import FavIcon from "../assets/images/favicon.png";
 import ScrollToTopBtn from "./Scrolltotop-button";
 
@@ -17,7 +16,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        <html lang="pt" />
+        <html lang="en" />
         <title>{"Layer5"}</title>
         <link rel="shortcut icon" type="image/x-icon" href={FavIcon} />
         <link
@@ -35,10 +34,8 @@ const Layout = ({ children }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
       </Helmet>
-      <SimpleReactLightbox>
-        {children}
-        <ScrollToTopBtn />
-      </SimpleReactLightbox>
+      {children}
+      <ScrollToTopBtn />
     </>
   );
 };

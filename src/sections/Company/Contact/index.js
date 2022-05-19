@@ -93,6 +93,7 @@ const ContactPage = () => {
             <iframe
               scrolling="no"
               src= {CONTACT_FORM_URL}
+              loading="lazy"
               className="form-frame"
             />
           </div>

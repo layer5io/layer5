@@ -1,13 +1,13 @@
 /* eslint-env node */
 module.exports = {
   siteMetadata: {
-    title: "Layer5 - The Service Mesh Company",
+    title: "Layer5 - Expect more from your infrastructure",
     description:
-      "Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.",
+      "Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.",
     author: "Layer5 Authors",
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
-    image: "/images/layer5-company.png",
+    image: "/images/layer5.png",
     twitterUsername: "@layer5",
   },
   flags: {
@@ -253,8 +253,8 @@ module.exports = {
             title: "Layer5 Contributor Feed",
           },
           {
-            serialize: ({ query: { site, allPosts }}) => {
-              return allPosts.nodes.map( node => {
+            serialize: ({ query: { site, allPosts } }) => {
+              return allPosts.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
@@ -300,8 +300,8 @@ module.exports = {
             title: "Layer5 Blog"
           },
           {
-            serialize: ({ query: { site, allPosts }}) => {
-              return allPosts.nodes.map( node => {
+            serialize: ({ query: { site, allPosts } }) => {
+              return allPosts.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   title: node.frontmatter.title,
                   author: node.frontmatter.author,
@@ -504,10 +504,10 @@ module.exports = {
       options: {
         host: "https://layer5.io",
         sitemap: "https://layer5.io/sitemap.xml",
-        policy: [{userAgent: "*", allow: "/"}],
+        policy: [{ userAgent: "*", allow: "/" }],
       }
     },
     "gatsby-plugin-meta-redirect", // make sure this is always the last one
   ],
-  
+
 };

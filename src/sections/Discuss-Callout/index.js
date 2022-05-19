@@ -1,8 +1,10 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 import { Col} from "../../reusecore/Layout";
 import SectionTitle from "../../reusecore/SectionTitle";
 import DiscussWrapper from "./discuss.style";
-import Discuss from "./layer5-discuss-white.png";
+
+const Discuss = "../../assets/images/discuss/layer5-discuss-white.png";
 
 const DiscussCallout = () => {
   return (
@@ -17,7 +19,7 @@ const DiscussCallout = () => {
                     <h2>Join the Conversation</h2>
                     <p>Ask questions, find answers and share knowledge on our Discussion Forum</p>
        
-                    <button><img className="logo" src={Discuss} /></button>
+                    <button><StaticImage className="logo" alt="Discuss" src={Discuss} /></button>
                 
                   </SectionTitle>
                 </div> 

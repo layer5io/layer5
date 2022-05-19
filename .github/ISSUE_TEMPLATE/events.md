@@ -16,7 +16,7 @@ Please add the following event to layer5.io/events.
 - Video: 
 
 ---
-**Contributor Resources**
+<img src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/5-light-small.svg" width="16px" align="left" /><h4>Contributor Resources</h4>
 
 The layer5.io website uses Gatsby, React, and GitHub Pages. Site content is found under the [`master` branch](https://github.com/layer5io/layer5/tree/master).
 - See [contributing instructions](https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md)
