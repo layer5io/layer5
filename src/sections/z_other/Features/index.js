@@ -13,7 +13,7 @@ import policyEngineGreen from "./img/policy-engine_green.svg";
 import distributedPerformance from "./img/distributed-performance_green.svg";
 import visualToplogy from "./img/visual-topology.svg";
 import performanceManagement from "./img/performance-management.svg";
-
+import Link from "gatsby";
 
 import FeaturesSectionWrapper from "./features.style";
 
@@ -82,7 +82,7 @@ const Features = () => {
               </div>
               <h3>Visual Topology</h3>
               <p>
-                Use <a href="/meshery/service-mesh-map" alt="Service Mesh Visual Map">MeshMap</a> to quickly understand how your service mesh is functioning and to intuitively reconfigure and tune your mesh in accordance with the needs of your workloads.
+                Use <Link to="/meshmap" alt="Cloud Native Visual Map">MeshMap</Link> to quickly understand how your service mesh is functioning and to intuitively reconfigure and tune your mesh in accordance with the needs of your workloads.
               </p>
             </div>
           </Col>
@@ -93,7 +93,7 @@ const Features = () => {
               </div>
               <h3>Automated Operation</h3>
               <p>
-                <a href="/meshery/service-mesh-operator" alt="Service Mesh Operator">Meshery Operator</a>
+                <a href="/meshery/service-mesh-operator" alt="Cloud Native and Service Mesh Operator">Meshery Operator</a>
               </p>
             </div>
           </Col>
