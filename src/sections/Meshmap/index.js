@@ -10,8 +10,8 @@ import DiscussCallout from "../../sections/Discuss-Callout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
 import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
-import designerImage from "../../assets/images/meshmap/meshmap-designer.png";
-import visualizerImage from "../../assets/images/meshmap/MeshMap-Visualizer.png";
+import designerImage from "../../assets/images/meshmap/Meshmap-Designer.png";
+import visualizerImage from "../../assets/images/meshmap/Meshmap-Visualizer.png";
 import catalog from "../../assets/images/meshmap/meshmap-catalog.png";
 
 
