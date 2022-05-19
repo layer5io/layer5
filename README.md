@@ -25,7 +25,7 @@ We create and steward initiatives that press on the service mesh-centric envelop
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
 <a href="https://meshery.io"><img src=".github/assets/images/meshery/meshery-logo.svg"
 style="margin:10px;" width="125px"
-alt="Meshery - Cloud NativeManagement Plane" align="left" /></a>
+alt="Meshery - Cloud Native Management Plane" align="left" /></a>
 <a href="https://meshery.io">Meshery</a> Meshery is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
 <br /><br /><br />
 </p>
