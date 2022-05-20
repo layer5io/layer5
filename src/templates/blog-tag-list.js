@@ -12,12 +12,10 @@ import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 import {graphql} from "gatsby";
 
-export const query = graphql`query BlogsByTags($tag: String!, $skip: Int!, $limit: Int!) {
+export const query = graphql`query BlogsByTags($tag: String!) {
   allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
     filter: {fields: {collection: {eq: "blog"}}, frontmatter: {tags: {in: [$tag]}, published: {eq: true}}}
-    skip: $skip
-    limit: $limit
   ) {
     totalCount
     nodes {

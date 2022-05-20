@@ -7,11 +7,13 @@ import Button from "../../../reusecore/Button";
 
 
 import { Container } from "../../../reusecore/Layout";
-import layer5_logo from "../../../assets/images/app/layer5.svg";
+
 import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
+import layer5_logo from "../../../assets/images/app/layer5.svg";
+
 
 import NavigationWrap from "./navigation.style";
 
@@ -135,7 +137,7 @@ const Navigation = () => {
           thumbnail: {
             img: meshery
           },
-          title:  "Meshery, the Service Mesh Manager"
+          title: "Meshery, the Cloud Native Manager"
         },
         fields: {
           slug: "/service-mesh-management/meshery"
@@ -213,7 +215,7 @@ const Navigation = () => {
                             key={index}
                             className="mobile-nav-subitem"
                           >
-                            { subItems.name === "Forum" ?
+                            {subItems.name === "Forum" ?
                               <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="sub-menu-item" rel="noreferrer">
                                 {subItems.name}
                               </a>
@@ -235,7 +237,7 @@ const Navigation = () => {
           </nav>
         </div>
         <div className="meshery-cta">
-          <Button secondary className="banner-btn two" title="Try Meshery" url="/service-mesh-management/meshery"/>
+          <Button secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />
         </div>
       </Container>
     </NavigationWrap>

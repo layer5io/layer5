@@ -54,8 +54,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // New Community Member (Google Form)
   createRedirect({ fromPath: "/newcomer", toPath: "/newcomers", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/go/meshmap", toPath: "/service-mesh-management/meshmap", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshmap", toPath: "/service-mesh-management/meshmap", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/go/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
 
   // Create Pages
   const { createPage } = actions;
@@ -115,107 +115,107 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const resourcePostTemplate = path.resolve(
     "src/templates/resource-single.js"
   );
- 
+
   const resourceViewTemplate = path.resolve(
     "src/templates/resource.js"
   );
   const res = await graphql(`
-    {
-      allPosts:  allMdx(
-        filter: { frontmatter: { published: { eq: true } } }
-      ) {
-        nodes {
-          frontmatter{
-            program
-            programSlug
-          }
-          fields {
-            collection
-            slug
-          }
-        }
-      }
-      blogTags: allMdx(
-        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-        ){
-          group(field: frontmatter___tags) {
-            nodes{
-              id
-            }
-            fieldValue
-          }
-      }
-      blogCategory: allMdx(
-        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-        ){
-          group(field: frontmatter___category) {
-            nodes{
-              id
-            }
-            fieldValue
-          }
-      }
-      allCollections: allMdx(
-        filter: {fields: {collection: {eq: "events"}}}
-      ){
-        nodes{
-          fields{
-            slug
-            collection
-          }
-        }
-      }
-      singleWorkshop: allMdx(
-        filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
-      ){
-        nodes{
-          fields{
-            slug
-            collection
-          }
-        }
-      }
-      labs: allMdx(
-        filter: {fields: {collection: {eq: "service-mesh-labs"}}}
-      ){
-        nodes{
-          fields{
-            slug
-            collection
-          }
-        }
-      }
-      allResources:  allMdx(
-        filter: { frontmatter: { published: { eq: true } } }
-      ) {
-        nodes {
-          frontmatter{
-            program
-            programSlug
-          }
-          fields {
-            collection
-            slug
-          }
-        }
-      }
-      learncontent: allMdx(
-        filter: {fields: {collection: {eq: "content-learn"}}}
-      ){
-        nodes{
-          fields{
-            learnpath
-            slug
-            course
-            section
-            chapter
-            pageType
-            collection
-          }
-        }
-      }
-    }
-  `);
+     {
+       allPosts:  allMdx(
+         filter: { frontmatter: { published: { eq: true } } }
+       ) {
+         nodes {
+           frontmatter{
+             program
+             programSlug
+           }
+           fields {
+             collection
+             slug
+           }
+         }
+       }
+       blogTags: allMdx(
+         filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+         ){
+           group(field: frontmatter___tags) {
+             nodes{
+               id
+             }
+             fieldValue
+           }
+       }
+       blogCategory: allMdx(
+         filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+         ){
+           group(field: frontmatter___category) {
+             nodes{
+               id
+             }
+             fieldValue
+           }
+       }
+       allCollections: allMdx(
+         filter: {fields: {collection: {eq: "events"}}}
+       ){
+         nodes{
+           fields{
+             slug
+             collection
+           }
+         }
+       }
+       singleWorkshop: allMdx(
+         filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+       ){
+         nodes{
+           fields{
+             slug
+             collection
+           }
+         }
+       }
+       labs: allMdx(
+         filter: {fields: {collection: {eq: "service-mesh-labs"}}}
+       ){
+         nodes{
+           fields{
+             slug
+             collection
+           }
+         }
+       }
+       allResources:  allMdx(
+         filter: { frontmatter: { published: { eq: true } } }
+       ) {
+         nodes {
+           frontmatter{
+             program
+             programSlug
+           }
+           fields {
+             collection
+             slug
+           }
+         }
+       }
+       learncontent: allMdx(
+         filter: {fields: {collection: {eq: "content-learn"}}}
+       ){
+         nodes{
+           fields{
+             learnpath
+             slug
+             course
+             section
+             chapter
+             pageType
+             collection
+           }
+         }
+       }
+     }
+   `);
 
   // handle errors
   if (res.errors) {
@@ -296,7 +296,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     paginate({
       createPage,
       items: category.nodes,
-      itemsPerPage: 4,
+      itemsPerPage: 6,
       pathPrefix: `/blog/category/${slugify(category.fieldValue)}`,
       component: blogCategoryListTemplate,
       context: {
@@ -684,25 +684,25 @@ const createSectionPage = ({ createPage, node }) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
-    type Mdx implements Node {
-      frontmatter: Frontmatter
-    }
-    type Frontmatter {
-      subtitle: String,
-      abstract: String,
-      eurl: String,
-      twitter: String,
-      github: String,
-      meshmate: String,
-      maintainer:String,
-      emeritus: String,
-      link: String,
-      labs: String,
-      slides: String,
-      slack: String,
-      status: String,
-      video: String,
-    }
-  `;
+     type Mdx implements Node {
+       frontmatter: Frontmatter
+     }
+     type Frontmatter {
+       subtitle: String,
+       abstract: String,
+       eurl: String,
+       twitter: String,
+       github: String,
+       meshmate: String,
+       maintainer:String,
+       emeritus: String,
+       link: String,
+       labs: String,
+       slides: String,
+       slack: String,
+       status: String,
+       video: String,
+     }
+   `;
   createTypes(typeDefs);
 };

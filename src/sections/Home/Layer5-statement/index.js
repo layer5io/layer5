@@ -1,12 +1,12 @@
 import React from "react";
-
 import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
-import imgHero from "./images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
-import svgBackground from "./images/background.svg";
-
+import svgBackground from "../../../assets/images/homePage-images/background.svg";
 import BannerSectionWrapper from "./statement.style";
+import { StaticImage } from "gatsby-plugin-image";
+
+const imgHero = "../../../assets/images/homePage-images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
 
 const BannerDefault = () => {
   return (
@@ -44,7 +44,7 @@ const BannerDefault = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-            <img className="hero" src={imgHero} alt="hero image" />
+            <StaticImage className="hero" src={imgHero} alt="hero image" />
           </Col>
         </Row>
       </div>

@@ -21,11 +21,6 @@ export const NewcomersGuideWrapper = styled.section`
           }
           p {
             margin: 2rem 0;
-            button {
-              margin: 1rem;
-              padding: 1rem;
-              float: left;
-            }
           }
         }
     }
@@ -64,7 +59,15 @@ export const NewcomersGuideWrapper = styled.section`
       .step{
         display: flex;
         align-items: center;
+        align-content: center;
         margin-bottom: 2rem;
+        justify-content: center;
+        
+        button {
+          display:flex;
+          margin: auto;
+          padding: 1rem;
+        }
       }
       .finding-an-issue { 
         max-height: 22rem;
@@ -83,13 +86,17 @@ export const NewcomersGuideWrapper = styled.section`
       img{
         display: block;
         margin: 0 auto;
-        max-width: 21.875rem
+        width: 21.875rem;
+        text-align: center; 
       }
     }
     .community-collage {
-      
+      text-align: center ;
       min-width: 45vmin;
       
+    }
+    .community-img{
+      text-align:center;
     }
     .table-wrapper{
       text-align: center;

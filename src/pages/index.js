@@ -6,7 +6,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
 import Banner from "../sections/Home/Banner";
-import Faq from "../sections/General/Faq";
+// import Faq from "../sections/General/Faq";
 import Integrations from "../sections/Home/Projects-home";
 import Statement from "../sections/Home/Layer5-statement";
 import StewardsOfIndustry from "../sections/Home/Stewards-of-industry/index";

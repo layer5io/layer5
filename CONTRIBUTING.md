@@ -6,7 +6,7 @@ We are beyond excited to see that you want to contribute! We would love to accep
   - [Contributing to Layer5 Projects](#contributing-to-layer5-projects)
   - [Contributing to Layer5's Blogs](#contributing-to-layer5s-blogs)
   - [How to Contribute](#how-to-contribute)
-      - [Prequisites](#prequisites)
+      - [Prerequisites](#prerequisites)
       - [Set up your Local Development Environment](#set-up-your-local-development-environment)
       - [Signing-off on Commits](#signing-off-on-commits)
 
@@ -18,8 +18,8 @@ We are beyond excited to see that you want to contribute! We would love to accep
 Layer5 follows the [Cloud Native Computing Foundation (CNCF) Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md).
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting community@layer5.io.
-Violation of the code of conduct is taken seriously, kindly <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform"> report any violations</a> of the Code of Conduct by filling in the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform"> Incident report </a>.
-The comfort and safety of Layer5 community members is our priority. Please do well to adhere to the Code of Conduct to participate in the Layer5 community.
+Violation of the code of conduct is taken seriously, kindly <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform"> report any violations</a> of the Code of Conduct by filling in the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWzC5HjlHugFjB0TtaAVnSkPPqsRQ3JRYjdwyDXf0oyRxcdQ/viewform"> Incident report</a>.
+The comfort and safety of Layer5 community members are our priority. Please do well to adhere to the Code of Conduct to participate in the Layer5 community.
 
 ## Newcomers Guide
 
@@ -31,7 +31,7 @@ The Layer5 website is hosted in this repository and is built using Gatsbyjs. Bef
 
 ## Discussion Forum
 
-Join the [discussion forum](https://discuss.layer5.io/c/landscape/7) (the Landscape topic is appropriate for all layer5.io questions) to discuss suggested new features, possible bugs, enhancement in user experience, and on any other aspects of the site. The discussion forum is our preferred method of communication, you can, however, also inquire in the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel in the Layer5 Slack workspace.
+Join the [discussion forum](https://discuss.layer5.io/c/landscape/7) (the Landscape topic is appropriate for all layer5.io questions) to discuss suggested new features, possible bugs, enhancement in user experience, and any other aspects of the site. The discussion forum is our preferred method of communication, you can, however, also inquire in the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel in the Layer5 Slack workspace.
 
 # Contributing to Layer5 Projects
 
@@ -40,15 +40,15 @@ Please follow these steps and note these guidelines to begin contributing:
 1. First step is to set up the local development environment. See [this](#how-to-contribute) on how to do the same. 
 1. Bug fixes are always welcome. Start by reviewing the [list of bugs](https://github.com/layer5io/layer5/labels/kind%2Fbug).
 1. A good way to easily start contributing is to pick and work on a [good first issue](https://github.com/layer5io/layer5/labels/good%20first%20issue). We try to make these issues as clear as possible and provide basic info on how the code should be changed, and if something is unclear feel free to ask for more information on the issue.
-1. We regularly discuss about new issues to work on in our [discussion forum](https://discuss.layer5.io/c/landscape/7)and in the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss about any issue or any idea that you may have.
+1. We regularly discuss new issues to work on in our [discussion forum](https://discuss.layer5.io/c/landscape/7) and the [#websites](https://layer5io.slack.com/archives/C015QJKUMPU) channel. Feel free to join and discuss any issue or any idea that you may have.
 
 # Contributing to Layer5's Blogs
 
-If you'd like to contribute a post to the layer5.io/blog, please open an issue and suggest a topic. If you don't have a topic, then hop into the [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) channel, and we'll help you find one.
+If you'd like to contribute a post to layer5.io/blog, please open an issue and suggest a topic. If you don't have a topic, then hop into the [#blog-kitchen](https://layer5io.slack.com/archives/C0210TZRF88) channel, and we'll help you find one.
 
 # Common Types of Site Contributions
 
-The following list of instructions pertain to commonplace site updates by contributors.
+The following list of instructions pertains to commonplace site updates by contributors.
 
 ## Things to keep in mind
 
@@ -60,7 +60,7 @@ The following list of instructions pertain to commonplace site updates by contri
 
   1. It is recommended to use `@react-icons/all-files` instead of `react-icons` for importing icons. The issue with react-icons is that even though we are importing a single icon from the package/folder it still imports the complete icon folder which is creating unwanted junks of JS in the build.
   2. It is recommended to use Gatsby's `<StaticImage>` instead of `<img>` tag to display static images on the site. This performs automatic image optimization, thereby improving site performance.
-  3. Avoid creating duplicate copies of same image under different folders. All images must be imported from `/assets/images` folder. 
+  3. Avoid creating duplicate copies of the same image under different folders. All images must be imported from `/assets/images` folder. 
 
 ## Adding a Blog Post
 
@@ -71,16 +71,16 @@ The following list of instructions pertain to commonplace site updates by contri
 
 ## Adding News
 
-  1. In order to add/update news items, fork this repository, clone it, create a new branch and navigate to the `src/collections/news` directory.
+  1. In order to add/update news items, fork this repository, clone it, create a new branch, and navigate to the `src/collections/news` directory.
   2. Create a copy of the [news template](https://github.com/layer5io/layer5/tree/master/src/collections/news/0000-00-00-news-template).
   3. Follow the instructions included in the news template and name the new file after the title of the news article.
   4. Entries will be listed in chronological order automatically.
 
 ## Updating/Creating a Community Member Profile 
 
-Layer5 community members are an integral part of what makes Layer5 and it's projects successful. Prominently highlighting our members and their works is something that we think is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A) which has all the instructions that one may need for this.
+Layer5 community members are an integral part of what makes Layer5 and its projects successful. Prominently highlighting our members and their works is something that we think is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A) which has all the instructions that one may need for this.
 
-Note that the [Community Member Profile template](https://github.com/layer5io/layer5/tree/master/src/collections/members/_member-profile-template) is helpful when adding new or updating an existing community member profiles. You can easily understand how the template is used by reviewing other profiles.
+Note that the [Community Member Profile template](https://github.com/layer5io/layer5/tree/master/src/collections/members/_member-profile-template) is helpful when adding new or updating existing community member profiles. You can easily understand how the template is used by reviewing other profiles.
 
 
 ### Badges for Community Members
@@ -99,9 +99,9 @@ Badges are a great way of highlighting the area of contribution by any given com
 
 ## Updating the Service Mesh Landscape 
 
-Another common site update includes updation of the Service Mesh Landscape. The service mesh landscape is powered by Gatsby.js. In order to update the landscape, fork this repository, clone it, create a branch and navigate to the **src/collections/landscape** folder.
+Another common site update includes the updation of the Service Mesh Landscape. The service mesh landscape is powered by Gatsby.js. To update the landscape, fork this repository, clone it, create a branch and navigate to the **src/collections/landscape** folder.
 
-Make sure to open a [new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D) first. Following are a list of files that you may edit and make the neccessary updates (if appropriate):
+Make sure to open a [new issue](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D) first. Following is a list of files that you may edit and make the necessary updates (if appropriate):
 
 - [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) - overview of various service meshes
 - [meshes.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/meshes.js) - list of individual service mesh details
@@ -111,12 +111,12 @@ Make sure to open a [new issue](https://github.com/layer5io/layer5/issues/new?as
 
 Entries should be listed in alphabetical order. Data provided to the `smi.js` is dynamic and based upon results from conformance tests run using Meshery.
 
-To update the Service Mesh Timeline, add the new service mesh in the [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) file. Add `announce-date` key for the service mesh, then add a `timeline-order` key having a value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
+To update the Service Mesh Timeline, add the new service mesh in the [non-functional.js](https://github.com/layer5io/layer5/blob/master/src/collections/landscape/non-functional.js) file. Add an `announce-date` key for the service mesh, then add a `timeline-order` key having a value 1+`maximum value of timeline-order` till now, to list the service mesh in the timeline correctly.
 
 
 # How to Contribute
 
-## Prequisites
+## Prerequisites
 
 Make sure you have the following prerequisites installed on your operating system before you start contributing:
 
@@ -187,7 +187,7 @@ Follow the following instructions to start contributing.
   **8.** Install the dependencies for running the site.
 
   ```
-  make setup-libs
+  make setup
   ```
 
   **9.** Make the desired changes.
@@ -198,7 +198,7 @@ Follow the following instructions to start contributing.
   make site
   ```
 
-This will run a local web server with "live reload" conveniently enabled. ( **NOTE**: while using make command on Windows, there sometimes arises an error in identifying the command even after it is installed (unrecognized command), this is because the PATH for the binary might not be set correctly ).
+This will run a local webserver with "live reload" conveniently enabled. ( **NOTE**: while using the make command on Windows, there sometimes arises an error in identifying the command even after it is installed (unrecognized command), this is because the PATH for the binary might not be set correctly ).
 
   **11.** Track your changes.
 
@@ -217,7 +217,7 @@ This will run a local web server with "live reload" conveniently enabled. ( **NO
   git commit -s -m "<commit subject>"
   ```
 
-  **13.** While you are working on your branch, other developers may update the `master` branch with their branch. This action means your branch is now out of date of the `master` branch and missing content. So in order to fetch the new changes, follow along:
+  **13.** While you are working on your branch, other developers may update the `master` branch with their branch. This action means your branch is now out of date with the `master` branch and missing content. So to fetch the new changes, follow along:
 
   ```
   git checkout master

@@ -2,39 +2,13 @@ import styled from "styled-components";
 
 
 const BlogSideBarWrapper = styled.div`
-    .search-box {
-        position: relative;
-        display: flex;
-        input{
-            flex-basis: 100%;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid ${props => props.theme.headingColor};
-
-            &:focus{
-                border-color: ${props => props.theme.primaryColor};
-            }
-        }
-        button {
-            position: absolute;
-            right: 0px;
-            top: 0;
-            height: 100%;
-            min-width: 20px;
-            border-radius: 5px;
-            background: transparent;
-            font-size: 22px;
-            color: ${props => props.theme.headingColor}; 
-        }
-    }
-
-
     .sidebar-widgets {
-        padding: 30px 30px;
+        padding: 15px 30px;
     }
 
     .widgets-title{
         margin-bottom: 20px;
+        cursor: pointer;
         h3{
             display: inline-block;
             font-weight: 500;
@@ -48,19 +22,25 @@ const BlogSideBarWrapper = styled.div`
                 height: 1px; 
             }
         }
+        .menu-icon{
+            float:right;
+            vertical-align: bottom;
+            width: 1.5rem; 
+            height: 1.5rem; 
+        }
         
     }
     
     .sidebar-widgets{
-        &+.sidebar-widgets{
-            margin-top: 52px;
-        }
         ul{
             margin: 0;
             padding: 0;
             list-style: none;
         }
-        
+
+        .ul-close{
+            display:none;
+        }
         
         &.catagorie{
             
@@ -118,6 +98,8 @@ const BlogSideBarWrapper = styled.div`
 		font-family: 'Qanelas Soft', sans-serif;
         padding: 0 1rem;
         margin: 1rem auto auto;
+        display:flex;
+        justify-content:center;
 
 		span {
 			h4 {
@@ -153,8 +135,7 @@ const BlogSideBarWrapper = styled.div`
             }
         }
 
-        @media screen and (max-width: 992px) {
-               
+        @media screen and (max-width: 992px) {      
             display: none;
         }
 	}
@@ -162,21 +143,20 @@ const BlogSideBarWrapper = styled.div`
     @media only screen and (max-width: 1024px) {
         .sidebar-widgets {
             padding: 3rem 0 0 0;
-        }
-       
+        } 
     }
    
     .explain-1 {
         padding-top: 0rem;
         text-align: center;
         .cards {
-            margin: 0.15rem auto 0 ;
+            margin: 0.15rem auto 2.5rem ;
             max-width: 50rem;
             padding: 1.5rem 2.7rem 0rem 1rem;
             background-color: none;
             border-radius: 25px;
             @media only screen and (max-width: 1200px) {
-             margin-top: -4rem;
+            //  margin-top: 0rem;
              padding: 1.5rem 0.8rem 0rem 0.5rem;
              }
             .card {
@@ -203,8 +183,7 @@ const BlogSideBarWrapper = styled.div`
                     color: ${props => props.theme.white}; 
                 }
                 .logo{
-                 height: 1.8rem;
-                 width: auto;  
+                 width: 100%;  
                  }
                 &:hover,
                 &:focus {
@@ -217,6 +196,10 @@ const BlogSideBarWrapper = styled.div`
                 }
             }
         }
+    }
+    @media screen and (max-width: 992px) {      
+        display: flex;
+        flex-direction:column-reverse;
     }  
 
 `;

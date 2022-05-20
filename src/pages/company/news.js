@@ -11,6 +11,7 @@ import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`query allNews {
   allMdx(
@@ -40,15 +41,17 @@ export const query = graphql`query allNews {
 }
 `;
 
-const NewsGridPage = ({data}) => (
+const NewsGridPage = ({ data }) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="News" description="News and Press about Layer5, the service mesh company. 
-    Layer5 the company behind the world's largest service mesh community." />
+      <SEO title="News" description="News and press about Layer5, the cloud native management company. 
+    Layer5 the company behind industry-leading, open source software." />
       <Navigation />
-      <NewsPage data={data}/>
-      <Footer/>
+      <SimpleReactLightbox>
+        <NewsPage data={data} />
+      </SimpleReactLightbox>
+      <Footer />
     </Layout>
   </ThemeProvider>
 );

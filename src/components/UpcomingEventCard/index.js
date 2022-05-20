@@ -27,7 +27,7 @@ const UpcomingEvents = ({ data }) => {
                 <SwiperSlide key={item.id}>
                   <div className="blog-slider_item swiper-slide">
                     <div className="blog-slider_img">
-                      <Image {...item.frontmatter.thumbnail} alt={item.frontmatter.title} />
+                      <Image {...item.frontmatter.thumbnail}  alt={item.frontmatter.title} />
                     </div>
                     <div className="blog-slider_content">
                       <h3 className="blog-slider_title">{item.frontmatter.title}</h3>
@@ -38,7 +38,7 @@ const UpcomingEvents = ({ data }) => {
                           {item.body}
                         </MDXRenderer>
                       </div>
-                      <Button secondary className="blog-slider_button" url={item.frontmatter.eurl} title="Join Now" />
+                      <Button secondary className="blog-slider_button" url={item.frontmatter.eurl} title="Join Now" external={true} />
                     </div>
                   </div>
                 </SwiperSlide>

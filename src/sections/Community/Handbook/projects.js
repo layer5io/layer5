@@ -58,10 +58,10 @@ const Maintainer = () => {
             </p>
             <p>
 
-							Its service mesh community represents the largest collection of
-							service Mesh projects.Emerging projects like Nighthawk{" "}
+              Its service mesh community represents the largest collection of
+              service Mesh projects.Emerging projects like Nighthawk{" "}
               <img className="project-description-icon" src={hawkIcon} /> , community with{" "}
-              <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} /> MeshMates </Link>, catch-all org, “home base”. 
+              <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} /> MeshMates </Link>, catch-all org, “home base”.
               <br />
               <ul>
                 <li>
@@ -70,40 +70,40 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-									Layer5 is the official website of the Layer5 community showing
-									an overview of the Layer5 projects. The different service mesh
-									landscapes, resources to learn about service mesh, and
-									communities. <br />
+                  Layer5 is the official website of the Layer5 community showing
+                  an overview of the Layer5 projects. The different service mesh
+                  landscapes, resources to learn about service mesh, and
+                  communities. <br />
                 </p>
                 <li>
                   <h4>
                     <a href="https://layer5.io/projects/image-hub">
-											Image-Hub :
+                      Image-Hub :
                     </a>
                   </h4>{" "}
                 </li>
                 <p>
-									Image Hub is a sample application written to run on Consul for
-									exploring WebAssembly modules used as Envoy filters are
-									written in Rust. These modules can be used to implement
-									multi-tenancy or to implement per-user rate-limiting in your
-									application's endpoints. This application was first
-									demonstrated at DockerCon 2020. <br />
+                  Image Hub is a sample application written to run on Consul for
+                  exploring WebAssembly modules used as Envoy filters are
+                  written in Rust. These modules can be used to implement
+                  multi-tenancy or to implement per-user rate-limiting in your
+                  application's endpoints. This application was first
+                  demonstrated at DockerCon 2020. <br />
                 </p>
                 <li>
                   <h4>
                     <a href="https://layer5.io/projects/nighthawk">
-											Nighthawk :
+                      Nighthawk :
                     </a>
                   </h4>{" "}
                 </li>
                 <p>
-									This Is a Layer 7 (HTTP/HTTPS/HTTP2) performance
-									characterization tool. Nighthawk is Envoy’s load generator and
-									is written in C++. Meshery integrates Nighthawk as one of
-									(currently) three choices of load generators for
-									characterizing and managing the performance of service meshes
-									and their workloads. <br />
+                  This Is a Layer 7 (HTTP/HTTPS/HTTP2) performance
+                  characterization tool. Nighthawk is Envoy’s load generator and
+                  is written in C++. Meshery integrates Nighthawk as one of
+                  (currently) three choices of load generators for
+                  characterizing and managing the performance of service meshes
+                  and their workloads. <br />
                 </p>
               </ul>
             </p>
@@ -121,24 +121,24 @@ const Maintainer = () => {
 
             </p>
             <p>
-							Meshery and its components Meshery Operator{" "}
+              Meshery and its components Meshery Operator{" "}
               <img className="project-description-icon" src={mesheryoperatoricon} /> and MeshSync{" "}
               <img className="project-description-icon" src={mesherysyncicon} />
               <ul>
                 <li>
                   <h4>
                     <a href="https://layer5.io/service-mesh-management/meshery">
-											Meshery
+                      Meshery
                     </a>
                   </h4>{" "}
                 </li>
                 <p>
-									It is a multi-service mesh management plane offering lifecycle
-									management of more types of service meshes than any other tool
-									available today. Meshery facilitates adopting, configuring,
-									operating, and managing the performance of different service
-									meshes and incorporates the collection and display of metrics
-									from applications running on top of any service mesh.
+                  It is a cloud native management plane offering lifecycle
+                  management of more types of service meshes than any other tool
+                  available today. Meshery facilitates adopting, configuring,
+                  operating, and managing the performance of different service
+                  meshes and incorporates the collection and display of metrics
+                  from applications running on top of any service mesh.
                   <br />{" "}
                 </p>
                 <li>
@@ -147,18 +147,18 @@ const Maintainer = () => {
                   </h4>{" "}
                 </li>
                 <p>
-									Website for Meshery, the multi-mesh manager. <br />
+                  Website for Meshery, the cloud native manager. <br />
                 </p>
                 <li>
                   <h4>
                     <a href="https://layer5.io/service-mesh-management/meshery/meshery-operator">
-											Meshery-operator :
+                      Meshery-operator :
                     </a>
                   </h4>{" "}
                 </li>
                 <p>
-									Meshery Operator is the multi-service mesh operator and
-									implementation of MeshSync. <br />
+                  Meshery Operator is the multi-service mesh operator and
+                  implementation of MeshSync. <br />
                 </p>
               </ul>
             </p>
@@ -170,9 +170,9 @@ const Maintainer = () => {
                     <img
                       className="project-title-icon"
                       alt="service mesh performance"
-                      src={servicemeshperformance}    
+                      src={servicemeshperformance}
                     />
-                  &nbsp; Service Mesh Performance{" "}
+                    &nbsp; Service Mesh Performance{" "}
                   </a>
                 </h3>
               </p>
@@ -180,12 +180,12 @@ const Maintainer = () => {
 
             <p>
               <a href="https://layer5.io/projects/service-mesh-performance">
-								The Service Mesh Performance (SMP)
+                The Service Mesh Performance (SMP)
               </a>{" "}
-							is a vendor-neutral specification for capturing details of
-							environment and infrastructure details, service mesh and it’s
-							configuration, service/application details, and bundling of
-							statistical analysis of the result. <br />
+              is a vendor-neutral specification for capturing details of
+              environment and infrastructure details, service mesh and it’s
+              configuration, service/application details, and bundling of
+              statistical analysis of the result. <br />
             </p>
 
             <p>
@@ -205,8 +205,8 @@ const Maintainer = () => {
               </a>
             </p>
             <p>
-							A collection of curated patterns of service mesh use cases
-							compatible with Meshery. <br />
+              A collection of curated patterns of service mesh use cases
+              compatible with Meshery. <br />
             </p>
           </div>
           <TocPagination />

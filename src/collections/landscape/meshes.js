@@ -1,5 +1,5 @@
 
-export const meshes=[
+export const meshes = [
   {
     name: "A10 Secure Service Mesh",
     desc: "A10’s Secure Service Mesh - is a solution that utilizes a hub-spoke model to provide scalable east-west network security and automatic service discovery.",
@@ -50,7 +50,7 @@ export const meshes=[
     multi_tenant_score: 10,
     spiffe: "?",
     spire: "?"
-  },  
+  },
   {
     name: "Aspen Mesh",
     desc: "Aspen Mesh - a commercial offering built on top of Istio with some open source components.",
@@ -85,7 +85,7 @@ export const meshes=[
     multi_tenant_score: 1,
     netdev_persona_score: 4,
     spiffe: "?",
-    spire : "?"
+    spire: "?"
   },
   {
     name: "Citrix Service Mesh",
@@ -103,7 +103,7 @@ export const meshes=[
     multi_tenant_score: 1,
     netdev_persona_score: 9,
     spiffe: "Partial",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Consul",
@@ -130,24 +130,7 @@ export const meshes=[
     tspec: "No",
     tspeclink: "",
     spiffe: "Partial",
-    spire : "No"
-  },
-  {
-    name: "Grey Matter",
-    desc: "Grey Matter is an Istio-compliant, Envoy proxy-based, hybrid cloud service mesh platform for business insight and secure data control with your microservices.",
-    link: "https://greymatter.io",
-    autoinject: "Yes",
-    tcp_web: "Yes",
-    grpc: "Yes",
-    h2: "Yes",
-    multi_cluster: "Yes",
-    multi_tenant: "Yes",
-    prometheus: "Yes",
-    tracing: "OpenTracing compatible",
-    encryption: "Yes",
-    multi_tenant_score: 1,
-    spiffe: "?",
-    spire : "?"
+    spire: "No"
   },
   {
     name: "Istio",
@@ -174,7 +157,7 @@ export const meshes=[
     tspec: "Yes",
     tspeclink: "https://github.com/deislabs/smi-adapter-istio",
     spiffe: "Istio has partial SPIFFE support, but doesn't support the Workload API or Federation API currently, and thus is not interoperable with other SPIFFE implementations.",
-    spire : "Istio does not use SPIRE by default"
+    spire: "Istio does not use SPIRE by default"
   },
   {
     name: "Kuma",
@@ -192,7 +175,7 @@ export const meshes=[
     multi_tenant_score: 8,
     netdev_persona_score: 2,
     spiffe: "Yes",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Linkerd 1.x",
@@ -210,7 +193,7 @@ export const meshes=[
     multi_tenant_score: 1,
     netdev_persona_score: 5,
     spiffe: "SPIFFE IDs are not supported in Linkerd",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Linkerd 2.x(Conduit)",
@@ -237,7 +220,7 @@ export const meshes=[
     tspec: "No",
     tspeclink: "",
     spiffe: "No",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "NGINX Service Mesh",
@@ -264,7 +247,7 @@ export const meshes=[
     tspec: "Yes",
     tspeclink: "https://docs.nginx.com/nginx-service-mesh/usage/traffic-policies/",
     spiffe: "Yes",
-    spire : "Yes"
+    spire: "Yes"
   },
   {
     name: "Traefik Mesh",
@@ -291,7 +274,24 @@ export const meshes=[
     tspec: "Yes",
     tspeclink: "https://github.com/traefik/mesh",
     spiffe: "No",
-    spire : "No"
+    spire: "No"
+  },
+  {
+    name: "Tencent Cloud Mesh (TCM)",
+    desc: "a fully managed control plane integrates with Tencent Cloud infrastructure which is fully compatible with Istio.",
+    link: "https://cloud.tencent.com/product/tcm",
+    autoinject: "Yes",
+    tcp_web: "Yes",
+    grpc: "Yes",
+    h2: "Yes",
+    multi_cluster: "Yes",
+    multi_tenant: "Yes",
+    prometheus: "Yes",
+    tracing: "Yes",
+    encryption: "Yes",
+    multi_tenant_score: 10,
+    spiffe: "?",
+    spire: "?"
   },
   {
     name: "Maistra",
@@ -308,7 +308,7 @@ export const meshes=[
     encryption: "Yes",
     multi_tenant_score: 10,
     spiffe: "Partial",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Mesher",
@@ -325,7 +325,7 @@ export const meshes=[
     encryption: "?",
     multi_tenant_score: 8,
     spiffe: "No",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "SOFAMesh",
@@ -342,12 +342,13 @@ export const meshes=[
     multi_tenant_score: 8,
     netdev_persona_score: 7,
     spiffe: "Partial",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Octarine",
     desc: "Octarine is a security platform for k8s workloads that combines admission control with runtime network security leveraging an Envoy-based service mesh",
     link: "https://www.octarinesec.com/",
+    autoinject: "Project shutdown",
     h2: "Yes",
     grpc: "Yes",
     tcp_web: "Yes",
@@ -359,7 +360,7 @@ export const meshes=[
     multi_tenant_score: 10,
     netdev_persona_score: 8,
     spiffe: "No",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Open Service Mesh",
@@ -386,7 +387,7 @@ export const meshes=[
     tspec: "Yes",
     tspeclink: "https://github.com/openservicemesh/osm#smi-specification-support",
     spiffe: "No",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Rotor",
@@ -403,7 +404,7 @@ export const meshes=[
     tracing: "Project shutdown",
     encryption: "Project shutdown",
     spiffe: "No",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Yggdrasil",
@@ -420,7 +421,7 @@ export const meshes=[
     encryption: "Yes",
     multi_tenant_score: 1,
     spiffe: "No",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Zuul",
@@ -437,7 +438,7 @@ export const meshes=[
     encryption: "?",
     multi_tenant_score: 1,
     spiffe: "No",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Vulcand",
@@ -454,7 +455,7 @@ export const meshes=[
     encryption: "Yes",
     multi_tenant_score: 1,
     spiffe: "No",
-    spire : "No"
+    spire: "No"
   },
   {
     name: "Network Service Mesh",
@@ -471,6 +472,6 @@ export const meshes=[
     encryption: "?",
     multi_tenant_score: 1,
     spiffe: "Yes",
-    spire : "Yes"
+    spire: "Yes"
   }
 ];

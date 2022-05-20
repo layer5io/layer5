@@ -11,71 +11,79 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
 
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
 import BlogList from "../sections/Blog/Blog-list";
 
-export const query = graphql`query allBlogs($skip: Int!, $limit: Int!) {
-  allMdx(
-    sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
-    skip: $skip
-    limit: $limit
-  ) {
-    nodes {
-      id
-      frontmatter {
-        title
-        date(formatString: "MMM Do, YYYY")
-        author
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
-          }
-          extension
-          publicURL
-        }
+export const query = graphql`
+  query allBlogs {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        fields: { collection: { eq: "blog" } }
+        frontmatter: { published: { eq: true } }
       }
-      fields {
-        slug
+    ) {
+      nodes {
+        id
+        frontmatter {
+          title
+          date(formatString: "MMM Do, YYYY")
+          author
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+            extension
+            publicURL
+          }
+        }
+        fields {
+          slug
+        }
       }
     }
   }
-}
 `;
 
-const Blog = props => {
+const Blog = (props) => {
   const [isListView, setIsListView] = useState(false);
-
+ 
   const setListView = () => {
     setIsListView(true);
   };
-
   const setGridView = () => {
     setIsListView(false);
   };
 
+ 
+
   useEffect(() => {
-    if (props.location.state){
+    if (props.location.state) {
       if (props.location.state.isListView) setListView();
     }
   }, []);
 
-  let BlogView = props => {
-    if (isListView)
-      return (<BlogList {...props} />);
-    return (<BlogGrid {...props} />);
+  let BlogView = (props) => {
+    if (isListView) return <BlogList {...props} />;
+    return <BlogGrid {...props} />;
   };
 
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Blog" description="Articles how to service mesh from the world's largest service mesh community.
-              Service mesh how-tos and cloud native ecosystem news." />
+        <SEO
+          title="Blog"
+          description="Articles how to service mesh from the world's largest service mesh community.
+              Service mesh how-tos and cloud native ecosystem news."
+        />
         <Navigation />
-        <BlogView data={props.data} isListView={isListView}
-          setListView={setListView} setGridView={setGridView}
+        <BlogView
+          isListView={isListView}
+          setListView={setListView}
+          setGridView={setGridView}
           pageContext={props.pageContext}
+          data={props.data}
         />
         <Footer />
       </Layout>

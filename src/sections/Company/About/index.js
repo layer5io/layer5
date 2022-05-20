@@ -9,7 +9,7 @@ import layer5BusCard from "./images/layer5-business-card-photo_med.jpg";
 import location from "./images/location.svg";
 import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
-import Tshirts from "./images/free-tshirts.jpg";
+import Community_meetup from "./images/Community_meetup.png";
 import Layer5Projects from "./images/layer5-projects.png";
 import CNCFServiceMesh from "./images/CNCF-Service-Mesh-WG-1.png";
 import CNCFstackedlogo from "./images/cncf-stacked-color.svg";
@@ -50,7 +50,7 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>Community First</h1>
                   <p className="indent">
-                    Layer5 is powered by a growing community of collaborators representing the largest collection of service mesh projects and their maintainers in the world.
+                    Layer5 is powered by a growing community of collaborators representing industry leading, cloud native, open source software.
                   </p>
                   <h5 className="section-title">We are remote oriented.</h5>
                   <p>Our remote working model has been in our DNA since our genesis in 2020, which allows us to maintain a flexible working environment and gives us access to a global pool of diverse talent.</p>
@@ -59,7 +59,11 @@ const About = () => {
               </Col>
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <img src={Tshirts} alt="free-tshirts" />
+                  <img src={Community_meetup} alt="Community_meetup" />
+                  <figcaption className="caption">
+                    Layer5 community members at Open Source Africa Community
+                    conference, March 2022.
+                  </figcaption>
                 </div>
               </Col>
             </Row>
