@@ -16,30 +16,46 @@ const Button = ({
     addClasses.push(className);
   }
 
-  const initalButton = 
-    <BtnStyle 
-      className={addClasses.join(" ")}{...props} 
-      onClick={props.onClick}>
+  let options = {
+    ...props,
+    className: addClasses.join(" "),
+    onClick: props.onClick,
+
+    // convert dom attribute to string
+    // this error: "Received `true` for a non-boolean attribute <attribute_name>"" will occur if not converted.
+    primary: String(props.primary), 
+    secondary: String(props.secondary), 
+  };
+
+  if(props.url) {
+    if(props.external) {
+      options = {
+        ...options,
+        as: "a",
+        href: props.url,
+        target: "_blank",
+        rel: "noreferrer",
+      };
+    } else {
+      options = {
+        ...options,
+        as: Link,
+        to: props.url,
+      };
+    }
+  }
+
+  return (
+    <BtnStyle {...options}>
       {children}
       {props.icon ? <img src={props.icon} alt={props.title} /> : <> </>}
       {props.title}
-    </BtnStyle>;
-
-
-  return (
-    <React.Fragment>
-      {
-        props.url ? 
-          (props.external?
-            <a href={props.url} target="_blank" rel="noreferrer">{initalButton}</a>:<Link to={props.url}>{initalButton}</Link>)
-          :initalButton
-      }
-    </React.Fragment>
+    </BtnStyle>
   );
 };
 
 Button.propTypes = {
-  as: PropTypes.oneOf(["button", "a",]), //--
+  as: PropTypes.oneOf(["button", "a", Link]), //--
   upperCase: PropTypes.bool,
   title: PropTypes.string,
   url: PropTypes.string,
