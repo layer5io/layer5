@@ -24,6 +24,7 @@ export const query = graphql`query allNews {
         title
         date(formatString: "MMMM Do, YYYY")
         author
+        category
         eurl
         thumbnail {
           childImageSharp {

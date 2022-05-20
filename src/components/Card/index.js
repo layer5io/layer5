@@ -21,6 +21,7 @@ const Card = ({ frontmatter, fields }) => {
           <h2 className="post-title">
             {frontmatter.title}
           </h2>
+          
           <div className="post-meta-block">
             {frontmatter.date && frontmatter.author &&(
               <>
