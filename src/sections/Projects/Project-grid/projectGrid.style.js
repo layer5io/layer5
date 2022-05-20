@@ -184,12 +184,14 @@ export const ProjectWrapper = styled.div`
         img{
             width: 90px;
             align-self: center;
+            margin-top: 8px;
             @media only screen and (min-width: 780px) {
                 align-self: flex-start;
             } 
         }
         h5{
             align-self: center;
+            margin-top: 1rem;
             @media only screen and (min-width: 780px) {
                 align-self: flex-end;
                 padding-top:  20px;
@@ -198,7 +200,7 @@ export const ProjectWrapper = styled.div`
     }
     .project__card-container-seven{
         max-width: 100%;
-        height: 10em;
+        height: 10rem;
         width: 12rem;
         display: flex;
         flex-direction: column;
