@@ -51,7 +51,6 @@ const Meshmap = () => {
       axios.post("https://hook.us1.make.com/gguommoyd14634ur9xs7l37widuoa7e9", {
         memberFormOne,
       });
-      console.log(memberFormOne);
     }
   }, [submit]);
 

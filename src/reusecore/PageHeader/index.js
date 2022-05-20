@@ -64,7 +64,6 @@ const PageHeader = ({ category, title, img, feedlink, subtitle,  author, thumbna
               <>
                 <span>
                   <h5>By:</h5>
-                  {console.log(author)}
                   {author.name === "Layer5 Team"
                     ? <p><img src={layer5_img} alt="Layer5" width="85" /> Team</p>
                     : <p>{authorField(author, isSlugAvailable)}</p>
