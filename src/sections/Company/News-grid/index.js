@@ -11,7 +11,6 @@ var CoverageFiltered= true;
 var PressReleaseFiltered=true;
 
 function colorchange(id) {
-
   var background = document.getElementById(id).style.backgroundColor;
   if (background == "rgb(240, 240, 240)") {
     document.getElementById(id).style.background = "#1E2117";

@@ -18,15 +18,11 @@ export const NewsPageWrapper = styled.div`
         background-color: #1E2117;
         border-radius: 5px;
         color: white;
-        
-        
-            }   
+    }   
     .coverage-button {
         background-color: #1E2117;
         border-radius: 5px;
         color: white;
-       
-      
     }
     .filter-topic-input {
     height: 50px;
@@ -43,5 +39,4 @@ export const NewsPageWrapper = styled.div`
         width: 30%;
         font-size: 20px;
     }
-    
 `;
