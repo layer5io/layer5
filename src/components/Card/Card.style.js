@@ -52,6 +52,8 @@ export const CardWrapper = styled.div`
     .post-content-block{
         padding: 1rem 2rem;
         height: 8rem;
+        position: relative;
+        min-height: 150px;
     }
 
     @media screen and (max-width: 1200px) and (min-width: 992px){
@@ -112,8 +114,7 @@ export const CardWrapper = styled.div`
 
     .readmore-btn-wrapper{
         display:flex;
-        justify-content: flex-start;
-       
+        justify-content: space-between;
     }
 
     .readmore-btn::after{
@@ -128,7 +129,8 @@ export const CardWrapper = styled.div`
     .readmore-btn, .external-link-btn{
        color: rgba(0,0,0,0.4);
        display: flex;
-       
+       position: absolute;
+       bottom: 20px;
        flex: auto;
        align-items: center;
        transition: all 0.3s ease-in;
@@ -140,6 +142,8 @@ export const CardWrapper = styled.div`
 
     .external-link-btn{
         justify-content: flex-end;
+        right: 0;
+        padding-right: 1rem;
         svg{
             font-size: 2rem;
             padding: 0.25rem;
