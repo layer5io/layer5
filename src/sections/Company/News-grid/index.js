@@ -10,9 +10,6 @@ import { useEffect } from "react";
 var CoverageFiltered= true;
 var PressReleaseFiltered=true;
 
-
-
-
 function colorchange(id) {
 
   var background = document.getElementById(id).style.backgroundColor;
@@ -27,15 +24,15 @@ function colorchange(id) {
 }
 const NewsGrid = ({data}) => {
   const [constnews, setconstNews] = useState([]);
-  const [eventtopic, seteventtopic] = useState("");
+  const [searchtopic, setsearchtopic] = useState("");
   const [news, setNews] = useState([]);
   const emptynews=[];
   useEffect( () => {
-    const filteredtopic = constnews.filter((obj) => {
-      return obj.frontmatter.title.toLocaleLowerCase().includes(eventtopic);
+    const filteredtopic = constnews.filter((newsitem) => {
+      return newsitem.frontmatter.title.toLocaleLowerCase().includes(searchtopic);
     });
     setNews(filteredtopic);
-  }, [eventtopic]
+  }, [searchtopic]
   );
   useEffect( () => {
     data.allMdx.nodes.map( (node) => (
@@ -45,13 +42,12 @@ const NewsGrid = ({data}) => {
   }, []
   );
   const filterChange = (event) => {
-    seteventtopic(event.target.value);
+    setsearchtopic(event.target.value);
     console.log(event.target.value);
   };
 
   const FilteredCoverage = constnews.filter((obj) => {
     return obj.frontmatter.category.includes("Coverage");
-
   });
   const FilteredPressRelease = constnews.filter((obj) => {
     return obj.frontmatter.category.includes("Press Release");
@@ -99,7 +95,7 @@ const NewsGrid = ({data}) => {
           <div className="button-container">
             <Button id="coverage" onClick={filtercoverage} className="coverage-button">Coverage</Button>
             <Button id="press-release" onClick={filterpressrelease} className="press-release-button">Press-Release</Button>
-            <input onChange={filterChange} value={eventtopic} placeholder="Search here" className="filter-topic-input"/>
+            <input onChange={filterChange} value={searchtopic} placeholder="Search here" className="filter-topic-input"/>
           </div>
           <div className="news-grid-wrapper">
             <Row>
