@@ -17,9 +17,8 @@ published: false
 import { BlogWrapper } from "../../Blog.style.js";
 import Blockquote from "../../../../reusecore/Blockquote";
 
-import UnitTest from "./unit-test.png";
-import IntegrationTest from "./integration-test.png";
-import TreeGraph from "./tree-graph.png";
+import oldDesign from "./initial-design.png";
+import newDesign from "./new-design.webm";
 
 <BlogWrapper>
 
@@ -35,12 +34,14 @@ import TreeGraph from "./tree-graph.png";
         <li>No separate pages for each command and subcommand</li>
     </ol>
     Thus, the idea for redesigning the <code>mesheryctl</code> reference page was desperately needed.
-    <!-- Image here -->
+    <img src = {oldDesign} alt="Initial design of mesheryctl command reference" />
 </p>
 
 <h3>Updated design</h3>
 <p>To tackle the shortcomings of the previous design, I was tasked to redesign the <code>mesheryctl</code> command reference page entirely. This was a big task at first glance to me, as I was a new contributor back then. Eventually after manipulating the reference section with help of great folks, I was able to pull off the task and the design was updated. </p>
-<!-- Image here -->
+<video controls>
+    <source src={newDesign} type="video/webm" />
+</video>
 <p>The redesign work was done with help of HTML in markdown and with optimization in YAML code. The sample is given below...</p>
 ```markdown
     ---
