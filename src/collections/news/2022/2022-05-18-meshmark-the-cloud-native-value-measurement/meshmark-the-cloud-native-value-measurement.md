@@ -5,6 +5,7 @@ date: 2022-05-17 08:00:00 -0530
 author: The Newsroom
 thumbnail: ../../../../assets/images/meshmark/stacked/meshmark-dark-full.png
 category: "Press Release"
+presskit: "/press-kits/MeshMark-press-kit.zip"
 description: "Layer5, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure: service meshes. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any service mesh."
 tags:
  - Announcements
@@ -37,7 +38,7 @@ VALENCIA, Spain (May 17th, 2022) - ServiceMeshCon EU /KubeCon EU - <a href="http
 A wall of performance metrics causes confusion, not clarity.
 </p>
 
-<img src={MeshmapMeshmark} alt="MeshMark in Layer5 MeshMap" width="50%"/>
+<img src={MeshmapMeshmark} alt="MeshMark in Layer5 MeshMap" width="40%"/>
 
 <p>
 By specifying a uniform way to analyze and report on the degree to which measured performance provides business value, MeshMark converts these metrics into insights about the efficiency and value of the functions your cloud native infrastructure is providing to your applications and services.
@@ -118,11 +119,6 @@ Layer5 offers cloud native application management by harnessing the unique posit
 ##### About Service Mesh Performance 
 <p style="font-size:1rem">
 Hosted within the CNCF, <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> is a vendor-neutral cloud native performance measurement standard. Based on SMP, MeshMark provides a universal performance index to gauge your cloud native infrastructure’s efficiency and value. Visit <a href="https://smp-spec.io/">smp-spec.io</a></p>
-
-#### Media Contacts
-<p>Kate Suttons<br />
-<span style="font-size:1rem">press@layer5.io</span></p>
-
 
 
 </NewsWrapper>
