@@ -50,7 +50,7 @@ const NewsSidebar = (props) => {
     <NewsSidebarWrapper>
       {props.kit ? 
         <a href={props.kit}>
-          <Button primary title="Get the Press Kit" external={true}>
+          <Button primary title="Get the press kit" external={true}>
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>
         </a> : "" }
