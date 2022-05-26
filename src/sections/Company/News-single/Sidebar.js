@@ -55,7 +55,7 @@ const NewsSidebar = (props) => {
           </Button>
         </a> : "" }
       <Link to="/brand">
-        <Button secondary title="Check out our Brand Kit" external={true} />
+        <Button secondary title="Layer5 brand kit" external={true} />
       </Link>
       <a href="mailto:press@layer5.io" target="_blank" rel="noreferrer">
         <div className="project__block__inner">
