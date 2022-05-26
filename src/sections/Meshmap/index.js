@@ -92,7 +92,7 @@ const Meshmap = () => {
             />
           </div>
           <MeshmapModes />
-          <Container className="catalog">
+          {/* <Container className="catalog">
             <h2 className="heading">Choose your content</h2>
             <img
               src={catalog}
@@ -100,7 +100,7 @@ const Meshmap = () => {
 
             />
             Take advantage of Meshery's catalog of patterns, WebAssembly filters, and eBPF programs (coming soon).
-          </Container>
+          </Container>*/}
           <div className="banner-background">
 
             <Container>
@@ -217,8 +217,8 @@ const Meshmap = () => {
               </Row>
             </Container>
           </div>
-        </Container>
-      </div>
+        </Container >
+      </div >
     );
   };
   const ThankYou = () => {
