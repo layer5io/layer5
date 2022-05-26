@@ -243,7 +243,7 @@ const MeshmapModes = () => {
         </div>
       </section>
 
-      <section className="modes-wrapper flip">
+      {/* <section className="modes-wrapper flip">
         <div className="mode-catalog">
           <div className="mode-name">
             <p>Catalog</p>
@@ -256,7 +256,7 @@ const MeshmapModes = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
     </MeshmapModesWrapper>
   );
