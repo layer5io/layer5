@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import { FcSms } from "@react-icons/all-files/fc/FcSms";
+import { FiMail } from "@react-icons/all-files/fi/FiMail";
 import { Link } from "gatsby";
 
 const NewsSidebarWrapper = styled.div`
@@ -55,13 +55,13 @@ const NewsSidebar = (props) => {
           </Button>
         </a> : "" }
       <Link to="/brand">
-        <Button primary title="Check out our Brand Kit" external={true} />
+        <Button secondary title="Check out our Brand Kit" external={true} />
       </Link>
       <a href="mailto:press@layer5.io" target="_blank" rel="noreferrer">
         <div className="project__block__inner">
           <h5>Media Contacts</h5>
           <p>Kate Suttons</p>
-          <FcSms size={40} className="icon" />
+          <FiMail size={40} className="icon" />
           <p>press@layer5.io</p>
         </div>
       </a>
