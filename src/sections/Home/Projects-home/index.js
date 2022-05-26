@@ -8,7 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 const projectImage1 = "../../../assets/images/app/projects/landscape.png";
 const projectImage2 = "../../../assets/images/app/projects/smp.png";
 const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.png";
-const projectImage4 = "../../../assets/images/app/projects/image-hub/layer5-image-hub.png";
+const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.png";
 
 const Projects = () => {
   return (
@@ -58,11 +58,11 @@ const Projects = () => {
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/projects/image-hub">
+              <Link className="project-card" to="/projects/nighthawk">
                 <div className="project__block__inner">
-                  <StaticImage src={projectImage4} alt="Business logic in the service mesh data plane" />
-                  <h5>Image Hub</h5>
-                  <p>WebAssembly Filters</p>
+                  <StaticImage src={projectImage4} alt="appion project" />
+                  <h5>Nighthawk</h5>
+                  <p>Distributed Performance Management</p>
                 </div>
               </Link>
             </Col>
