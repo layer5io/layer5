@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import catalog from "../../assets/images/meshmap/MeshmapCatalog.png";
+import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 
@@ -188,7 +188,7 @@ const MeshmapModesWrapper = styled.div`
     }
     
     
-  }
+  
   .mode-name {
     position: absolute;
     top: 50%;
