@@ -188,8 +188,8 @@
 <url> <loc>https://layer5.io/community/events/dockercon-2022-lighting-talk-on-the-main-stage</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/dockercon-live</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/establishing-an-open-source-program-office</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/community/events/hands-on-workshop-introduction-to-istio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/innotech-dallas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/events/hands-on-workshop-introduction-to-istio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/introduction-to-istio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/introduction-to-network-service-mesh</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/istiocon-2021</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -205,6 +205,7 @@
 <url> <loc>https://layer5.io/community/events/oreilly-infrastructure-ops</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/open-infrastructure-summit-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/oreilly-oscon-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/events/open-source-summit-north-america-2022</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/securing-the-mesh</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/service-meshes-but-at-what-cost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/events/servicemeshcon-eu-2022</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -349,8 +350,8 @@
 <url> <loc>https://layer5.io/community/members/stephen-miller</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/subham-rai</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/suhani-agarwal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/community/members/supratik-das</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/sunku-ranganath</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/community/members/supratik-das</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/suryashankar-das</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/tajinder-singh</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/community/members/tanuj-agarwal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
