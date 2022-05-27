@@ -1,0 +1,79 @@
+---
+title: "Debug Envoy Proxy"
+subtitle: ""
+date: 2022-05-27 09:10:00 +0000
+author: Layer5 Team
+thumbnail: ./debug-envoy-proxy.svg
+category: Community
+tags:
+  - Envoy
+  - Troubleshooting
+published: true
+---
+
+import { BlogWrapper } from "../../Blog.style.js";
+import { Link } from "gatsby";
+import bugEnvoy from "./debug-envoy-proxy.svg";
+
+<BlogWrapper>
+
+<div class="intro ">
+<p>
+    If you're using Istio as your gateway and need to troubleshoot your ingress traffic requests, here are a few tips for debugging Envoy proxy.
+</p>
+</div>
+
+<p>
+  If you're using Istio as your gateway, you should first look at <code>VirtualService</code> objects. These can show if the hosts are registered to the gateway correctly.
+</p>
+
+<div className="highlight">
+  <pre>
+    <code>
+      $ kubectl get virtualservice -o=yaml
+    </code>
+  </pre>
+</div>
+
+
+<p>However, sometimes, the <a href="https://envoyproxy.io">Envoy</a> inside the gateway container is not properly configured (likely due to a bug). You can dump Envoy configuration to debug this further</p>
+
+<div className="highlight">
+  <pre>
+    <code>
+      # find istio ingress gateway pod
+      $ kubectl get pods -n istio-system -l app=istio-ingressgateway
+    </code>
+  </pre>
+</div>
+
+<p>
+  Paste the result here: 
+  <code>istio-ingressgateway-a93019f9dfw-l39xd
+  </code>.
+</p>
+
+<div className="highlight">
+  <pre>
+    <code>
+      # enable debugging on envoy
+      $ kubectl exec --namespace=istio-system \
+      istio-ingressgateway-a93019f9dfw-l39xd \
+      -c istio-proxy -- curl -X POST \
+      http://localhost:15000/logging?level=debug
+    </code>
+  </pre>
+</div>
+<p>
+  Then, use <code>istioctl</code> tool to dump route configuration (this will show the output from the <a href="https://www.envoyproxy.io/docs/envoy/latest/operations/admin#operations-admin-interface-config-dump"><code>/config_dump</code> admin endpoint</a> on Envoy):
+</p>
+<div className="highlight">
+  <pre>
+    <code>
+    $ istioctl proxy-config routes -n istio-system -o=json \
+      istio-ingressgateway-a93019f9dfw-l39xd
+    </code>
+  </pre>
+</div>
+
+</BlogWrapper>
