@@ -1,16 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-import Multicluster from "../../assets/images/meshmap/catalog-card-images/multi-cluster.svg";
+import Mutual_tls from "../../assets/images/meshmap/catalog-card-images/mutual-tls.svg";
 import Retries from "../../assets/images/meshmap/catalog-card-images/retries.svg";
-import Node_agent from "../../assets/images/meshmap/catalog-card-images/node-agent.svg";
-import Pre_provision from "../../assets/images/meshmap/catalog-card-images/pre-provision.svg";
-import Retry_deadline from "../../assets/images/meshmap/catalog-card-images/retry-deadline.svg";
+import Traces from "../../assets/images/meshmap/catalog-card-images/traces.svg";
 import Denial from "../../assets/images/meshmap/catalog-card-images/denial.svg";
-import Correlate from "../../assets/images/meshmap/catalog-card-images/correlate-event.svg";
-import Singleton from "../../assets/images/meshmap/catalog-card-images/singleton-queue.svg";
-import Circuit from "../../assets/images/meshmap/catalog-card-images/circuit-breaker.svg";
-import Http_metrics from "../../assets/images/meshmap/catalog-card-images/http-metrics.svg";
+import Correlate_event from "../../assets/images/meshmap/catalog-card-images/correlate-event.svg";
+import Only_wagent from "../../assets/images/meshmap/catalog-card-images/only-wagent.svg";
+import Node_agent from "../../assets/images/meshmap/catalog-card-images/node-agent.svg";
+import Single_tenant from "../../assets/images/meshmap/catalog-card-images/single-tenant.svg";
+import Pre_provison from "../../assets/images/meshmap/catalog-card-images/pre-provision.svg";
+import Circuit_breaker from "../../assets/images/meshmap/catalog-card-images/circuit-breaker.svg";
+import Retry_deadline from "../../assets/images/meshmap/catalog-card-images/retry-deadline.svg";
+import Singleton from "../../assets/images/meshmap/catalog-card-images/singleton.svg";
+import Jwt_transformer from "../../assets/images/meshmap/catalog-card-images/jwt.svg";
+import Multicluster from "../../assets/images/meshmap/catalog-card-images/multicluster.svg";
+import Http_metrics from "../../assets/images/meshmap/catalog-card-images/http.svg";
+
 
 import Options from "../../assets/images/meshmap/options.png";
 import { Container } from "../../reusecore/Layout";
@@ -24,7 +30,7 @@ h2{
 }
 .container{
 	margin: 4rem auto;
-	width: 210px;
+	width: 120px;
 	height: 150px;
 	position: relative;
 	perspective: 1000px;
@@ -60,31 +66,46 @@ img:hover{
 	transform: rotateY(0deg) translateZ(382px);
   }
   .slide.two {
-	transform: rotateY(36deg) translateZ(382px);
+	transform: rotateY(24deg) translateZ(382px);
   }
   .slide.three {
-	transform: rotateY(72deg) translateZ(382px);
+	transform: rotateY(48deg) translateZ(382px);
   }
   .slide.four {
-	transform: rotateY(108deg) translateZ(382px);
+	transform: rotateY(72deg) translateZ(382px);
   }
   .slide.five {
-	transform: rotateY(144deg) translateZ(382px);
+	transform: rotateY(96deg) translateZ(382px);
   }
   .slide.six {
-	transform: rotateY(180deg) translateZ(382px);
+	transform: rotateY(120deg) translateZ(382px);
   }
   .slide.seven {
-	transform: rotateY(216deg) translateZ(382px);
+	transform: rotateY(144deg) translateZ(382px);
   }
   .slide.eight {
-	transform: rotateY(252deg) translateZ(382px);
+	transform: rotateY(168deg) translateZ(382px);
   }
   .slide.nine {
-	transform: rotateY(288deg) translateZ(382px);
+	transform: rotateY(192deg) translateZ(382px);
   }
   .slide.ten {
-	transform: rotateY(324deg) translateZ(382px);
+	transform: rotateY(216deg) translateZ(382px);
+  }
+  .slide.eleven {
+	transform: rotateY(240deg) translateZ(382px);
+  }
+  .slide.twelve {
+	transform: rotateY(264deg) translateZ(382px);
+  }
+  .slide.thirteen {
+	transform: rotateY(288deg) translateZ(382px);
+  }
+  .slide.fourteen {
+	transform: rotateY(312deg) translateZ(382px);
+  }
+  .slide.fifteen {
+	transform: rotateY(336deg) translateZ(382px);
   }
 
   @keyframes swirl {   
@@ -108,33 +129,48 @@ const Catalog = () => {
    	 <div className="container">
     	 <div id="carousel">
 		 <div className="slide one">
-      	   <img src={Multicluster} />
+      	   <img src={Mutual_tls} />
       	 </div>
       	 <div className="slide two">
-      	   <img src={Node_agent} />
-      	 </div>
-      	 <div className="slide three">
       	   <img src={Retries} />
       	 </div>
+      	 <div className="slide three">
+      	   <img src={Traces} />
+      	 </div>
       	 <div className="slide four">
-      	   <img src={Correlate} />
+      	   <img src={Denial} />
       	 </div>
    		 <div className="slide five">
-   		   <img src={Retry_deadline} />
+   		   <img src={Correlate_event} />
    		 </div>
    		 <div className="slide six">
-   		   <img src={Singleton} />
+   		   <img src={Only_wagent} />
    		 </div>
    		 <div className="slide seven">
-   		   <img src={Pre_provision} />
+   		   <img src={Node_agent} />
    		 </div>
    		 <div className="slide eight">
-   		   <img src={Denial} />
+   		   <img src={Single_tenant} />
    		 </div>
    		 <div className="slide nine">
-   		   <img src={Circuit} />
+   		   <img src={Pre_provison} />
    		 </div>
             <div className="slide ten">
+   		   <img src={Circuit_breaker} />
+    	</div>
+            <div className="slide eleven">
+   		   <img src={Retry_deadline} />
+    	</div>
+            <div className="slide twelve">
+   		   <img src={Singleton} />
+    	</div>
+            <div className="slide thirteen">
+   		   <img src={Jwt_transformer} />
+    	</div>
+            <div className="slide fourteen">
+   		   <img src={Multicluster} />
+    	</div>
+            <div className="slide fifteen">
    		   <img src={Http_metrics} />
     	</div>
    		</div>
