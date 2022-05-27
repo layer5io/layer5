@@ -48,12 +48,12 @@ Button{
 const NewsSidebar = (props) => {
   return (
     <NewsSidebarWrapper>
-      {props.kit ? 
+      {props.kit ?
         <a href={props.kit}>
-          <Button primary title="Get the press kit" external={true}>
+          <Button primary title="Press Kit" external={true}>
             <FiDownloadCloud size={21} className="icon-left" />
           </Button>
-        </a> : "" }
+        </a> : ""}
       <Link to="/brand">
         <Button secondary title="Layer5 brand kit" external={true} />
       </Link>
