@@ -1,14 +1,14 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
-import { graphql, useStaticQuery} from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
 import NewsPageWrapper from "./NewsSingle.style.js";
 import RelatedPosts from "../../../components/Related-Posts";
 
-const NewsSingle = ({data}) => {
+const NewsSingle = ({ data }) => {
   const { frontmatter, body } = data.mdx;
   const newsData = useStaticQuery(
     graphql`query relatedNewsPosts {
@@ -24,6 +24,7 @@ const NewsSingle = ({data}) => {
         author
         category
         tags
+        eurl
         thumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
@@ -56,11 +57,19 @@ const NewsSingle = ({data}) => {
               <MDXRenderer>{body}</MDXRenderer>
             </SRLWrapper>
           </div>
-          <RelatedPosts 
+          <div style={{ display: "flex" }}>
+            <h5>
+              Read the full article on
+            </h5>
+            <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">
+              {frontmatter.author}
+            </a>
+          </div>
+          <RelatedPosts
             postType="news"
             relatedPosts={newsData.allMdx.nodes}
-            mainHead="Latest News" 
-            lastCardHead="All News" 
+            mainHead="Latest News"
+            lastCardHead="All News"
             linkToAllItems="/company/news"
           />
         </Container>
