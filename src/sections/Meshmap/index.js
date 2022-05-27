@@ -12,7 +12,7 @@ import MeshmapBanner from "./meshmap_banner";
 import mesheryCloud from "../../assets/images/meshmap/MesheryCloud.png";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
-import catalog from "../../assets/images/meshmap/MeshmapCatalog.png";
+import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
 
 
 const Meshmap = () => {
@@ -100,7 +100,7 @@ const Meshmap = () => {
 
             />
             Take advantage of Meshery's catalog of patterns, WebAssembly filters, and eBPF programs (coming soon).
-          </Container> */}
+          </Container>*/}
           <div className="banner-background">
 
             <Container>
@@ -217,8 +217,8 @@ const Meshmap = () => {
               </Row>
             </Container>
           </div>
-        </Container>
-      </div>
+        </Container >
+      </div >
     );
   };
   const ThankYou = () => {

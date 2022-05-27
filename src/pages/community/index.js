@@ -15,9 +15,9 @@ const CommunityIndex = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Service Mesh Community"
-        description="The Service Mesh Community at Layer5 - Learn, Share, Engage.
-           Join the largest collection of service mesh projects and their maintainers in the world."
+      <SEO title="Cloud Native, Kubernetes, and Service Mesh Community"
+        description="The Cloud Native Management Community at Layer5 - Learn, Share, Engage.
+           Join the award-winning open source community - the warmest and most welcoming open source community around."
         image="/images/layer5-tag-community-dark-bg.png" />
       <Navigation />
       <Community />

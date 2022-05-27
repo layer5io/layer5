@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import catalog from "../../assets/images/meshmap/MeshmapCatalog.png";
+import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
+import { Link } from "gatsby";
 
 const MeshmapModesWrapper = styled.div`
 
@@ -188,7 +189,7 @@ const MeshmapModesWrapper = styled.div`
     }
     
     
-  }
+  
   .mode-name {
     position: absolute;
     top: 50%;
@@ -250,10 +251,8 @@ const MeshmapModes = () => {
           </div>
           <div className="content">
             <h1>Deploy your cloud native infrastructure</h1>
-            <img src={catalog} alt="MeshMap Visualizer" />
-            <p>
-              Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services. Connect an interactive terminal to instances of your containers.
-            </p>
+            <img src={catalog} alt="Catalog" />
+            <p>Create and share your own Kubernetes deployments and <Link to="/learn/service-mesh-books/service-mesh-patterns">service mesh patterns</Link> in MeshMap Designer or import from the catalog. </p>
           </div>
         </div>
       </section>

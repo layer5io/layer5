@@ -22,6 +22,7 @@ export const query = graphql`query NewsBySlug($slug: String!) {
       date(formatString: "MMMM Do, YYYY")
       author
       eurl
+      presskit
       thumbnail {
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
