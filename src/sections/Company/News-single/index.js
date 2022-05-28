@@ -8,7 +8,6 @@ import NewsSidebar from "./Sidebar";
 
 import NewsPageWrapper from "./NewsSingle.style.js";
 import RelatedPosts from "../../../components/Related-Posts";
-import { parseFieldSpecs } from "@fullcalendar/react";
 
 const NewsSingle = ({ data }) => {
   const { frontmatter, body } = data.mdx;
