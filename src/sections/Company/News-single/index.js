@@ -1,13 +1,14 @@
 import React from "react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
-import { graphql, useStaticQuery} from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import NewsSidebar from "./Sidebar";
 
 import NewsPageWrapper from "./NewsSingle.style.js";
 import RelatedPosts from "../../../components/Related-Posts";
+import { parseFieldSpecs } from "@fullcalendar/react";
 
 const NewsSingle = ({ data }) => {
   const { frontmatter, body } = data.mdx;
@@ -66,14 +67,18 @@ const NewsSingle = ({ data }) => {
               </Col>
             </Row>
           </div>
-          <div style={{ display: "flex" }}>
-            <h5>
-              Read the full article on
-            </h5>
-            <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">
-              {frontmatter.author}
-            </a>
-          </div>
+          {
+            body && !body.slug && frontmatter.eurl && (
+              <div style={{ display: "flex" }}>
+                <h5>
+                  Read the full article on
+                </h5>&nbsp; 
+                <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">
+                  {frontmatter.author}
+                </a>
+              </div>
+            )
+          }
           <RelatedPosts
             postType="news"
             relatedPosts={newsData.allMdx.nodes}
