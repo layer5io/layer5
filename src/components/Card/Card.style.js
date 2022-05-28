@@ -113,7 +113,6 @@ export const CardWrapper = styled.div`
     .readmore-btn-wrapper{
         display:flex;
         justify-content: flex-start;
-       
     }
 
     .readmore-btn::after{
@@ -128,7 +127,6 @@ export const CardWrapper = styled.div`
     .readmore-btn, .external-link-btn{
        color: rgba(0,0,0,0.4);
        display: flex;
-       
        flex: auto;
        align-items: center;
        transition: all 0.3s ease-in;

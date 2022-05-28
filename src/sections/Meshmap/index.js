@@ -7,12 +7,13 @@ import axios from "axios";
 import Features from "../../components/Features-carousel";
 import MeshmapModes from "./meshmap-modes";
 import DiscussCallout from "../../sections/Discuss-Callout";
+import Catalog from "./catalog";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
 import mesheryCloud from "../../assets/images/meshmap/MesheryCloud.png";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
-import catalog from "../../assets/images/meshmap/MeshmapCatalog.png";
+import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
 
 
 const Meshmap = () => {
@@ -51,7 +52,6 @@ const Meshmap = () => {
       axios.post("https://hook.us1.make.com/gguommoyd14634ur9xs7l37widuoa7e9", {
         memberFormOne,
       });
-      console.log(memberFormOne);
     }
   }, [submit]);
 
@@ -93,15 +93,8 @@ const Meshmap = () => {
             />
           </div>
           <MeshmapModes />
-          <Container className="catalog">
-            <h2 className="heading">Choose your content</h2>
-            <img
-              src={catalog}
-              alt="Service Mesh Catalog"
-
-            />
-            Take advantage of Meshery's catalog of patterns, WebAssembly filters, and eBPF programs (coming soon).
-          </Container>
+          <Catalog />
+          
           <div className="banner-background">
 
             <Container>
@@ -218,8 +211,8 @@ const Meshmap = () => {
               </Row>
             </Container>
           </div>
-        </Container>
-      </div>
+        </Container >
+      </div >
     );
   };
   const ThankYou = () => {
