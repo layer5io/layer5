@@ -6,83 +6,81 @@ import { NewsPageWrapper } from "./NewsGrid.style";
 import rss_feed_icon from "../../../assets/images/socialIcons/rss-sign.svg";
 import Button from "../../../reusecore/Button";
 import { useEffect } from "react";
+import SearchBox from "../../../reusecore/Search";
 
-var CoverageFiltered= true;
-var PressReleaseFiltered=true;
+
+let coverageFiltered= false;
+let pressReleaseFiltered=false;
 
 function colorchange(id) {
   var background = document.getElementById(id).style.backgroundColor;
-  if (background == "rgb(240, 240, 240)") {
-    document.getElementById(id).style.background = "#1E2117";
-    document.getElementById(id).style.color = "white";
-  } else {
-    document.getElementById(id).style.background = "rgb(240, 240, 240)";
+  if (background == "rgb(30, 33, 23)") {
+    document.getElementById(id).style.background = "#b3b3b3";
     document.getElementById(id).style.color = "black";
+  } else {
+    document.getElementById(id).style.background = "rgb(30, 33, 23)";
+    document.getElementById(id).style.color = "white";
   }
 
 }
 const NewsGrid = ({data}) => {
-  const [constnews, setconstNews] = useState([]);
-  const [searchtopic, setsearchtopic] = useState("");
+  const [constNews, setConstNews] = useState([]);
+  const [searchTopic, setSearchTopic] = useState("");
   const [news, setNews] = useState([]);
-  const emptynews=[];
   useEffect( () => {
-    const filteredtopic = constnews.filter((newsitem) => {
-      return newsitem.frontmatter.title.toLocaleLowerCase().includes(searchtopic);
+    const filteredtopic = constNews.filter((newsitem) => {
+      return newsitem.frontmatter.title.toLocaleLowerCase().includes(searchTopic);
     });
     setNews(filteredtopic);
-  }, [searchtopic]
+  }, [searchTopic]
   );
   useEffect( () => {
     data.allMdx.nodes.map( (node) => (
       setNews(prevArray => [...prevArray, node]),
-      setconstNews(prevArray => [...prevArray, node])
+      setConstNews(prevArray => [...prevArray, node])
     ));
   }, []
   );
   const filterChange = (event) => {
-    setsearchtopic(event.target.value);
+    setSearchTopic(event.target.value);
     console.log(event.target.value);
   };
 
-  const FilteredCoverage = constnews.filter((obj) => {
+  const filteredCoverage = constNews.filter((obj) => {
     return obj.frontmatter.category.includes("Coverage");
   });
-  const FilteredPressRelease = constnews.filter((obj) => {
+  const filteredPressRelease = constNews.filter((obj) => {
     return obj.frontmatter.category.includes("Press Release");
   });
 
-  const filtercoverage = () => {
+  const filterCoverage = () => {
     colorchange("coverage");
-    if(CoverageFiltered==false&&PressReleaseFiltered==false){
-      setNews(FilteredCoverage);
-      CoverageFiltered=true;
-    } else if(CoverageFiltered==false&&PressReleaseFiltered==true) {
-      setNews(constnews);
-      CoverageFiltered=true;
-    } else 
-    if(CoverageFiltered==true && PressReleaseFiltered==true){
-      setNews(FilteredPressRelease);
-      CoverageFiltered=false;
-    } else if(CoverageFiltered==true && PressReleaseFiltered==false){
-      setNews(emptynews);
-      CoverageFiltered=false;
+    if(coverageFiltered==false&&pressReleaseFiltered==false){
+      setNews(filteredCoverage);
+      coverageFiltered=true;
+    } else if(coverageFiltered==false&&pressReleaseFiltered==true) {
+      colorchange("press-release");
+      setNews(filteredCoverage);
+      coverageFiltered=true;
+      pressReleaseFiltered=false;
+    } else if(coverageFiltered==true && pressReleaseFiltered==false){
+      setNews(constNews);
+      coverageFiltered=false;
     }
   }; 
-  const filterpressrelease = () => {
+  const filterPressRelease = () => {
     colorchange("press-release");
-    if(PressReleaseFiltered==false&&CoverageFiltered==false){
-      setNews(FilteredPressRelease);
-      PressReleaseFiltered=true;
-    }else if(PressReleaseFiltered==false&&CoverageFiltered==true) {
-      setNews(constnews);
-      PressReleaseFiltered=true;
-    } else if(PressReleaseFiltered==true&&CoverageFiltered==true){
-      setNews(FilteredCoverage);
-      PressReleaseFiltered=false;
-    } else if(PressReleaseFiltered==true&&CoverageFiltered==false){
-      setNews(emptynews);
-      PressReleaseFiltered=false;
+    if(pressReleaseFiltered==false&&coverageFiltered==false){
+      setNews(filteredPressRelease);
+      pressReleaseFiltered=true;
+    }else if(pressReleaseFiltered==false&&coverageFiltered==true) {
+      colorchange("coverage");
+      setNews(filteredPressRelease);
+      pressReleaseFiltered=true;
+      coverageFiltered=false;
+    } else if(pressReleaseFiltered==true&&coverageFiltered==false){
+      setNews(constNews);
+      pressReleaseFiltered=false;
     }
   }; 
   return (
@@ -91,11 +89,16 @@ const NewsGrid = ({data}) => {
     
       <div>
         <Container>
-          <div className="button-container">
-            <Button id="coverage" onClick={filtercoverage} className="coverage-button">Coverage</Button>
-            <Button id="press-release" onClick={filterpressrelease} className="press-release-button">Press-Release</Button>
-            <input onChange={filterChange} value={searchtopic} placeholder="Search here" className="filter-topic-input"/>
+          <div className="filter-buttons">
+            <div className="button-container">
+              <Button id="coverage" onClick={filterCoverage} className="coverage-button">Coverage</Button>
+              <Button id="press-release" onClick={filterPressRelease} className="press-release-button">Press-Release</Button>
+            </div>
+            <div className="search-box-container">
+              <SearchBox className="filter-topic-input" searchData={filterChange} searchQuery={searchTopic}/>
+            </div>
           </div>
+          
           <div className="news-grid-wrapper">
             <Row>
               {news.map(({id, frontmatter, fields }) => (
