@@ -7,6 +7,7 @@ export const NewsPageWrapper = styled.div`
     .page-header{
         margin:5rem auto;
     }
+
     .button-container{
         display: flex;
         width: 100%;
@@ -30,8 +31,9 @@ export const NewsPageWrapper = styled.div`
     .search-box-container {
         width: 35%;
     }
+    
     .post-content-block {
         height: 10rem;
     }
-    
+
 `;

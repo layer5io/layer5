@@ -17,7 +17,7 @@ const c_icon = "./images/c_icon.svg";
 const icon = "../../../assets/images/nighthawk/name-only/SVG/nighthawk-text.svg";
 //import cli from "./images/cli_green.svg";
 
-import Gnhwrapper from "./gnh.style";
+import {Gnhwrapper, CardsContainer} from "./gnh.style";
 
 import { URL } from "../../Counters/index";
 import Counter from "../../../reusecore/Counter";
@@ -112,7 +112,7 @@ const Projects = () => {
           <p>Engineers need multi-variate load generation and analysis techniques offered through distributed performance analysis. Nighthawk is being improved so that it can be horizontally scalable - such that multiple instances will be cognizant of one another and able to coordinate amongst each other. Nighthawk is growing in popularity with Layer5, Google, Red Hat, and AWS investing into it.</p>
           <div className="cards">
             <Row>
-              <Col lg={4} md={4} sm={12}>
+              <CardsContainer>
                 <div className="card">
                   <div className="circle">
                     <img src={smpIcon} className="smp" alt="smp logo" />
@@ -120,8 +120,6 @@ const Projects = () => {
                   <h2>SERVICE MESH PERFORMANCE COMPATIBILITY</h2>
                   <p>Enabling Standards-based, Distributed Performance Management - Nighthawk integrates Meshery and Nighthawk. Through this integration Meshery facilitates <Link to="/projects/service-mesh-performance">Service Mesh Performance (SMP)</Link> compatibility for Nighthawk.</p>
                 </div>
-              </Col>
-              <Col lg={4} md={4} sm={12}>
                 <div className="card">
                   <div className="circle">
                     <img src={cloud} alt="cloud image" />
@@ -135,15 +133,13 @@ const Projects = () => {
                       <li>macOS</li>
                       <li>Docker</li>
                     </ul>
-                    In these package managers:
+                      In these package managers:
                     <ul>
                       <li>Homebrew</li>
                       <li>Scoop</li>
                     </ul>
                   </p>
                 </div>
-              </Col>
-              <Col lg={4} md={4} sm={12}>
                 <div className="card">
                   <div className="circle">
                     <img src={cpu} alt="cpu image" />
@@ -152,7 +148,7 @@ const Projects = () => {
                   <p>Nighthawk integrates with <Link to="/meshery">Meshery</Link> and provides you with the ability to schedule performance tests or insert them into your CI pipeline.</p>
                   <p>Adapative analysis in which you may run multi-stage performance tests and persist their results in a historical archive is also enabled through integration with Meshery.</p>
                 </div>
-              </Col>
+              </CardsContainer>
             </Row>
           </div>
         </div>
