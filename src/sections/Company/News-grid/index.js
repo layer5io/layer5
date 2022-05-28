@@ -43,7 +43,6 @@ const NewsGrid = ({data}) => {
   );
   const filterChange = (event) => {
     setSearchTopic(event.target.value);
-    console.log(event.target.value);
   };
 
   const filteredCoverage = constNews.filter((obj) => {
