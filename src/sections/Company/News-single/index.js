@@ -74,7 +74,7 @@ const NewsSingle = ({ data }) => {
                 </h5>&nbsp; 
                 <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">
                   {frontmatter.author}
-                </a>
+                </a></h5>
               </div>
             )
           }
