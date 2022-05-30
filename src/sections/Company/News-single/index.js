@@ -71,7 +71,7 @@ const NewsSingle = ({ data }) => {
               <div style={{ display: "flex" }}>
                 <h5>
                   Read the full article on
-                </h5>&nbsp; 
+                
                 <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">
                   {frontmatter.author}
                 </a></h5>
