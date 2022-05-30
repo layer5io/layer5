@@ -27,17 +27,27 @@ const NewsGrid = ({data}) => {
   const [constNews, setConstNews] = useState([]);
   const [searchTopic, setSearchTopic] = useState("");
   const [news, setNews] = useState([]);
+  const [filteredNews, setFilteredNews] = useState([]);
   useEffect( () => {
     const filteredtopic = constNews.filter((newsitem) => {
       return newsitem.frontmatter.title.toLocaleLowerCase().includes(searchTopic);
     });
+    if(coverageFiltered==true) {
+      filterCoverage();
+    }
+    if(pressReleaseFiltered==true) {
+      filterPressRelease();
+    }
     setNews(filteredtopic);
+    setFilteredNews(filteredtopic);
+    
   }, [searchTopic]
   );
   useEffect( () => {
     data.allMdx.nodes.map( (node) => (
       setNews(prevArray => [...prevArray, node]),
-      setConstNews(prevArray => [...prevArray, node])
+      setConstNews(prevArray => [...prevArray, node]),
+      setFilteredNews(prevArray => [...prevArray, node])
     ));
   }, []
   );
@@ -45,10 +55,10 @@ const NewsGrid = ({data}) => {
     setSearchTopic(event.target.value);
   };
 
-  const filteredCoverage = constNews.filter((obj) => {
+  const filteredCoverage = filteredNews.filter((obj) => {
     return obj.frontmatter.category.includes("Coverage");
   });
-  const filteredPressRelease = constNews.filter((obj) => {
+  const filteredPressRelease = filteredNews.filter((obj) => {
     return obj.frontmatter.category.includes("Press Release");
   });
 
@@ -63,7 +73,7 @@ const NewsGrid = ({data}) => {
       coverageFiltered=true;
       pressReleaseFiltered=false;
     } else if(coverageFiltered==true && pressReleaseFiltered==false){
-      setNews(constNews);
+      setNews(filteredNews);
       coverageFiltered=false;
     }
   }; 
@@ -78,7 +88,7 @@ const NewsGrid = ({data}) => {
       pressReleaseFiltered=true;
       coverageFiltered=false;
     } else if(pressReleaseFiltered==true&&coverageFiltered==false){
-      setNews(constNews);
+      setNews(filteredNews);
       pressReleaseFiltered=false;
     }
   }; 
