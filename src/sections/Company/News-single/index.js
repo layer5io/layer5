@@ -70,11 +70,8 @@ const NewsSingle = ({ data }) => {
             body && !body.slug && frontmatter.eurl && (
               <div style={{ display: "flex" }}>
                 <h5>
-                  Read the full article on 
-                
-                <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">
-                  {frontmatter.author}
-                </a></h5>
+                  Read the full article on <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">{frontmatter.author}</a>
+                </h5>
               </div>
             )
           }
