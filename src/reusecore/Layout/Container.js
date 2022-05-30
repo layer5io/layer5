@@ -1,5 +1,5 @@
 import React from "react";
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 const ContainerWrapper = styled.div`
 
@@ -40,10 +40,17 @@ const ContainerWrapper = styled.div`
       color: ${(props) => props.theme.keppelColor};
     }
   }
+  .highlight {
+    color: ${(props) => props.theme.primaryColor};
+    background-color: #eeeeee;
+    border-radius: 8px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 `;
 
-const Container = ({children, ...props}) => {
-  return(
+const Container = ({ children, ...props }) => {
+  return (
     <ContainerWrapper {...props}>
       {children}
     </ContainerWrapper>
