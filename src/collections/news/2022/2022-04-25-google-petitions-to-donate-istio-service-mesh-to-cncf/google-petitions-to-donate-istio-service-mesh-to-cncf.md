@@ -10,6 +10,9 @@ published: true
 type: News
 #product: Service Mesh Performance
 #resource: true
+body: "Google and the Istio Steering Committee today announced at an IstioCon 22 event that they have submitted the open source Istio service mesh for consideration to become an incubating project administered by the Cloud Native Computing Foundation (CNCF).
+"
+
 ---
 
 import { NewsWrapper } from "../../News.style.js";

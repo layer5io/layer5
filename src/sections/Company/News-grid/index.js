@@ -30,7 +30,7 @@ const NewsGrid = ({data}) => {
   const [filteredNews, setFilteredNews] = useState([]);
   useEffect( () => {
     const filteredtopic = constNews.filter((newsitem) => {
-      return newsitem.frontmatter.title.toLocaleLowerCase().includes(searchTopic);
+      return newsitem.frontmatter.body.toLocaleLowerCase().includes(searchTopic.toLocaleLowerCase());
     });
     if(coverageFiltered==true) {
       filterCoverage();
