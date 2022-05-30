@@ -104,6 +104,12 @@ const ProjectItemWrapper = styled.section`
             font-size: 0.7rem;
           }
       }
+      @media screen and (max-width: 660px){
+           h4{
+	    padding-right:1.2rem;
+	    font-size:0.95rem;
+	   }
+      }
 	  @media screen and (max-width: 768px) {
 		
 		.proj_icon_1 {

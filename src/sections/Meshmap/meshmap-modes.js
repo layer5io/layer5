@@ -244,7 +244,7 @@ const MeshmapModes = () => {
         </div>
       </section>
 
-      <section className="modes-wrapper flip">
+      {/* <section className="modes-wrapper flip">
         <div className="mode-catalog">
           <div className="mode-name">
             <p>Catalog</p>
@@ -255,7 +255,7 @@ const MeshmapModes = () => {
             <p>Create and share your own Kubernetes deployments and <Link to="/learn/service-mesh-books/service-mesh-patterns">service mesh patterns</Link> in MeshMap Designer or import from the catalog. </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
     </MeshmapModesWrapper>
   );
