@@ -5,9 +5,9 @@ import Banner3 from "../Banner-3";
 import TopLevelWrapper from "./topBanner.style";
 
 const BannersList = [
-  <BannerDefault key={0} />,
+  <BannerDefault key={2} />,
   <BannerAlt key={1} />,
-  <Banner3 key={2} />
+  <Banner3 key={0} />
 ];
 
 const RotationalBanner = () => {
@@ -30,7 +30,7 @@ const RotationalBanner = () => {
 
   return (
     <TopLevelWrapper>
-      <div className={mounted?`banner${Banner}`: "banner0"}>
+      <div className={mounted ? `banner${Banner}` : "banner0"}>
         {BannersList[Banner]}
       </div>
     </TopLevelWrapper>
