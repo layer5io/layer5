@@ -22,13 +22,13 @@ const Banner3 = () => {
             leftAlign={true}
             UniWidth="100%"
           >
-            <h1>The service mesh company</h1>
+            <h1>Cloud Native Management</h1>
             <h2>
-              representing <span>every</span> service mesh
+              of <span>developer</span>-defined infrastructure
             </h2>
           </SectionTitle>
           <p>
-            The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
+            an open source-first community of cloud native engineers
           </p>
           <span className="vintage-box-container">
             <VintageBox right={true} vintageOne={true}>

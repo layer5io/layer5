@@ -5,7 +5,17 @@ export const DockerMesheryWrapper = styled.div`
     .required-sign {
       color: #8b0000;
     }
-
+    select {
+      /* for Firefox */
+      -moz-appearance: none;
+      /* for Chrome */
+      -webkit-appearance: none;
+    }
+    
+    /* For IE10 */
+    select::-ms-expand {
+      display: none;
+    }
     .accounts{
       p{
       font-size: 12px;

@@ -5,12 +5,15 @@ import Button from "../../reusecore/Button";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import Features from "../../components/Features-carousel";
+import MeshmapModes from "./meshmap-modes";
 import DiscussCallout from "../../sections/Discuss-Callout";
+import Catalog from "./catalog";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
-import mesheryCloud from "../../assets/images/meshmap/meshery-cloud.png";
-import designerImage from "../../assets/images/meshmap/MeshMap.png";
-import visualizerImage from "../../assets/images/meshmap/MeshMap-Visualizer.png";
+import mesheryCloud from "../../assets/images/meshmap/MesheryCloud.png";
+import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
+import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
+import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
 
 
 const Meshmap = () => {
@@ -49,47 +52,55 @@ const Meshmap = () => {
       axios.post("https://hook.us1.make.com/gguommoyd14634ur9xs7l37widuoa7e9", {
         memberFormOne,
       });
-      console.log(memberFormOne);
     }
   }, [submit]);
 
 
   const MeshmapFormPage = () => {
     return (
-      <div>
+      <div >
         <MeshmapBanner />
         <Container>
-          <Features
-            features={[
-              {
-                title: "Designer Mode",
-                description:
-                  "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
-                content: (
-                  <img
-                    src={designerImage}
-                    alt="Designer Mode"
-                  />
-                ),
-              },
-              {
-                title: "Visualizer Mode",
-                description:
-                  "Examine a visual topology of Kubernetes cluster and its services. View and search log streams from your pod's containers. Connect an interactive terminal to instances of your containers.",
-                content: (
-                  <img
-                    src={visualizerImage}
-                    alt="Visualizer Mode"
-                  />
-                ),
-              },
-            ]}
-          />
+          <div className="mobile-modes">
+            <Features
+              heading="MeshMap Modes"
+              features={[
+                {
+                  title: "Designer Mode",
+                  description:
+                    "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
+                  content: (
+                    <img
+                      src={designerImage}
+                      alt="Designer Mode"
+                      className="modes-image"
+                    />
+                  ),
+                },
+                {
+                  title: "Visualizer Mode",
+                  description:
+                    "Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services.",
+                  content: (
+                    <img
+                      src={visualizerImage}
+                      alt="Visualizer Mode"
+                      className="modes-image"
+                    />
+                  ),
+                },
+              ]}
+            />
+          </div>
+          <MeshmapModes />
+          <Catalog />
+          
           <div className="banner-background">
+
             <Container>
 
               <Row className="description">
-                <Col lg={6} md={6} sm={12} className="desc-text">
+                <Col lg={7} md={6} sm={12} className="desc-text">
                   <h1 className="heading-1"> Accessing</h1>
                   <h1 className="heading-2">MeshMap Beta</h1>
                   <p className="desc-p">
@@ -99,8 +110,8 @@ const Meshmap = () => {
                   <DiscussCallout />
                 </Col>
 
-                <Col lg={6} md={6} sm={12}>
-                  <h3 className="form-title">Apply For the Beta Program</h3>
+                <Col lg={5} md={6} sm={12}>
+                  <h3 className="form-title">Join the Beta Program</h3>
                   <Formik
                     initialValues={{
                       firstname: firstname,
@@ -121,7 +132,7 @@ const Meshmap = () => {
                         setStepNumber(1);
                         nextStep();
                       } else {
-                        if(!values.role) {
+                        if (!values.role) {
                           setValidateRole(true);
                         } else {
                           setValidateRole(false);
@@ -145,12 +156,12 @@ const Meshmap = () => {
                     }}
                   >
                     <Form className="form" method="post">
-                      <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-                      <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                       <label htmlFor="firstname" className="form-name">First Name <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
                       <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
+                      <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
+                      <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                       <label htmlFor="occupation" className="form-name">Occupation / Title <span className="required-sign">*</span></label>
                       <Field type="text" className="text-field" id="occupation" name="occupation" required />
                       <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
@@ -158,12 +169,12 @@ const Meshmap = () => {
                       <div className="accounts">
                         <label className="form-name">Account(s) to Connect</label>
                         <p>
-                          Choose between Twitter, Google, LinkedIn, and GitHub, provide the username/handle of your user account for your preferred identity provider. Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
+                          Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
                         </p>
                         {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
                         <div className="accounts_group">
                           <label htmlFor="google" className="form-name">Google</label>
-                          <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                          <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                           <label htmlFor="github" className="form-name">GitHub</label>
                           <Field type="text" className="text-field" id="github" name="github" />
                           <label htmlFor="twitter" className="form-name">Twitter</label>
@@ -176,7 +187,6 @@ const Meshmap = () => {
                       <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
                       {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorRole}</p>}
                       <div role="group" className="formRight" aria-labelledby="select">
-                        <span className="custom-arrow"><span className="down-arrow"></span></span>
                         <Field as="select" name="role">
                           <option selected hidden>Select your role</option>
                           <option value="Architect">Architect</option>
@@ -201,8 +211,8 @@ const Meshmap = () => {
               </Row>
             </Container>
           </div>
-        </Container>
-      </div>
+        </Container >
+      </div >
     );
   };
   const ThankYou = () => {

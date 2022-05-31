@@ -23,11 +23,11 @@ const BannerAlt = () => {
           >
             <h4>Cloud Native Management</h4>
             <h1>
-              Representing <span>every</span> service mesh
+              expect <span>more</span> from your infrastructure
             </h1>
           </SectionTitle>
           <p>
-            The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
+            open source-first company and community of cloud native engineers
           </p>
           <VintageBox right={true} vintageOne={true}>
             <Button primary className="banner-btn one" title="Join in" url="/community">

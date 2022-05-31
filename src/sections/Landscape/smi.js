@@ -76,7 +76,6 @@ function SMI_Compatibility() {
       .then(res => {
         let data = {};
         Object.keys(res).map (ver => {
-          console.log(res[ver]);
           Object.keys(res[ver]).map(mesh => {
             (data[ver] = data[ver] || []).push(res[ver][mesh]);
           });

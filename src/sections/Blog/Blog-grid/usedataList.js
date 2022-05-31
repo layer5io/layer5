@@ -12,7 +12,9 @@ const useDataList = (
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const queryResults = searchQuery === "" ? dataList : searchResults;
-
+  useEffect(() => {
+    setDataList(data);
+  }, [data]);
   useEffect(() => {
     rebuildIndex();
   }, [queryResults]);
@@ -35,9 +37,7 @@ const useDataList = (
     setSearchResults(queryResult);
   };
 
-
-
-  return {queryResults, searchData};
+  return { queryResults, searchData };
 };
 
 export default useDataList;

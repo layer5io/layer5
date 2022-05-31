@@ -1,5 +1,5 @@
 <p style="text-align:center;" align="center">
-  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-tag-white-bg.png" width="45%" /></p>
+  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg" width="45%" /></p>
 
 <p align="center">
 <a href="https://github.com/layer5io/layer5" alt="GitHub contributors">
@@ -16,8 +16,7 @@
 
 # About Layer5
 
-The [Layer5](https://layer5.io) community represents the largest collection of service mesh projects and their maintainers in the world.
-We create and steward initiatives that press on the service mesh-centric envelope of Cloud Native. Our shared commitment to the open source spirit compels our community members to push Layer5 projects forward.
+[Layer5](https://layer5.io)'s cloud native application and infrastructure management software enables organizations to expect more from their infrastructure. We embrace _developer_-defined infrastructure. We empower developers to change how they write applications, support _operators_ in rethinking how they run modern infrastructure, and enable _product owners_ to regain full-control over their product portfolio.
 
 # Projects
 
@@ -25,9 +24,8 @@ We create and steward initiatives that press on the service mesh-centric envelop
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
 <a href="https://meshery.io"><img src=".github/assets/images/meshery/meshery-logo.svg"
 style="margin:10px;" width="125px"
-alt="Meshery - Service Mesh Management Plane" align="left" /></a>
-<a href="https://meshery.io">Meshery</a> is a multi-service mesh management plane offering lifecycle management of more types of service meshes than any other tool available today.
-Meshery facilitates adopting, configuring, operating and managing performance of different service meshes and incorporates the collection and display of metrics from applications running on top of any service mesh.
+alt="Meshery - Cloud Native Management Plane" align="left" /></a>
+<a href="https://meshery.io">Meshery</a> Meshery is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
 <br /><br /><br />
 </p>
 <br />
@@ -121,28 +119,31 @@ alt="Layer5" align="left" /></a>
 
 
 <p style="clear:both;">
-<h1><a name="contributing"></a><a name="community"></a> <a href="http://slack.layer5.io">Community</a> and <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md">Contributions</a></h1>
+<h1><a name="contributing"></a><a name="community"></a> <a href="https://layer5.io/community">Community</a> and <a href="https://layer5.io/community/handbook">Contributions</a></h1>
 <p> We would love to accept your contributions! This project is community-built and welcomes collaboration. Contributions, updates, <a href="/../../issues">discrepancy reports</a> and <a href="/../../pulls">pull requests</a> are all appreciated. Contributors are expected to adhere to the <a href="https://github.com/cncf/foundation/blob/master/code-of-conduct.md">CNCF Code of Conduct</a>.
 </p>
 <p>
-Join us on<a href="http://slack.layer5.io"><img src=".github/assets/images/slack.png" height="16px" align="bottom" />Slack</a>to learn more about Layer5 and its community! Make sure you see the <a href="https://docs.google.com/document/d/17OPtDE_rdnPQxmk2Kauhm3GwXF1R5dZ3Cj8qZLKdo5E/edit">Layer5 Community Welcome Guide</a> for a tour of resources available to you.
+  Join us in the <a href="https://discuss.layer5.io">discussion forum</a> and on <a href="https://slack.layer5.io"><img src=".github/assets/images/slack.png" height="16px" align="bottom" />Slack</a> to learn more about Layer5 and its community! Make sure you see the <a href="https://layer5.io/community/newcomers">newcomer's guide</a> for a tour of resources available to you.
 </p>
 <p>
-<a href="http://slack.layer5.io"><img alt="Layer5 Service Mesh Community" src=".github/assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
-✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://calender.google.com/calendar/b/1?cid=bGF5ZXI1LmlvX2VoMmFhOWRwZjFnNDBlbHZvYzc2MmpucGhzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">community calendar</a>.<br />
+<a href="http://slack.layer5.io"><img alt="Layer5 Cloud Native Community" src=".github/assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
+✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://meet.layer5.io">community calendar</a>.<br />
 ✔️ <em><strong>Watch</strong></em> community <a href="http://youtube.com/Layer5io?sub_confirmation=1">meeting recordings</a>.<br />
 ✔️ <em>Fill-in</em> a <a href="https://layer5.io/newcomers">community member form</a> to gain access to community resources.
 <br />
 ✔️ <em><strong>Discuss</strong></em> in the <a href="https://discuss.layer5.io">Community Forum</a>.<br />
 ✔️ <em><strong>Explore more</strong></em> in the <a href="https://layer5.io/community/handbook">Community Handbook</a>.<br />
+</p>
+<div align="center"><i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+org%3Alayer5labs+label%3A%22help+wanted%22+">help-wanted label</a>.
+</div>
 <br />
-</p>
-<p>
-<i>Not sure where to start?</i> Grab an open issue with the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted label</a>
-</p>
-<p>Find us on Twitter <img src=".github/assets/images/twitter.png" height="16px" align="bottom" />: <a href="https://twitter.com/layer5">@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a> and <a href="https://twitter.com/smp_spec">@smp_spec</a>. <br>Subscribe on <a href="http://youtube.com/Layer5io?sub_confirmation=1">Youtube</a>
-</p>
+<ul>
+  <li>Find us on Twitter: <a href="https://twitter.com/layer5">@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a> and <a href="https://twitter.com/smp_spec">@smp_spec</a>.</li>
+  <li>Visit us on LinkedIn: <a href="https://www.linkedin.com/company/layer5">Layer5</a>, <a href="https://www.linkedin.com/showcase/layer5">Meshery</a>, and <a href="https://www.linkedin.com/showcase/service-mesh-performance">Service Mesh Performance</a>.</li>
+  <li>Subscribe on <a href="http://youtube.com/Layer5io?sub_confirmation=1">Youtube</a>.</li>
+</ul>
 
 ### License
 
-This repository and site are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
+All of Layer5's projects are available as open source under the terms of the [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
+

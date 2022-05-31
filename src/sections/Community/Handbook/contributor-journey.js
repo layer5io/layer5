@@ -32,26 +32,24 @@ const Intro = () => {
               <h2>About Layer5</h2>
             </a>
             <p>
-              Layer5 is a community and open-source-centered service mesh
-              company, representing the largest collection of service meshes and
-              their maintainers in the world. Layer5 is the creator and
+              Layer5 is an open source-first company and community of cloud native engineers. We are the creator and
               maintainer of
               <Link to="../blog/announcements/a-standard-interface-for-service-meshes">
                 {" "}
                 service mesh standards{" "}
               </Link>
-              and also the maker of <a href="https://meshery.io">Meshery </a>,
+              and also the maker of <Link to="/meshery">Meshery </Link>,
               the
               <Link to="/service-mesh-management/meshery">
                 {" "}
-                Service Mesh Management Plane{" "}
+                Cloud Native Management Plane{" "}
               </Link>
               .<br />
               Layer5 is not just a company, we are also:
             </p>
             <h4>Community First</h4>
             <p>
-              Layer5 represents the community. We build projects to provide
+              The Layer5 community builds projects to provide
               learning environments, deployment, and operational best practices,
               performance benchmarks, create documentation, share networking
               opportunities, and more. Our shared commitment to the open-source

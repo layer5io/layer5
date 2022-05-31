@@ -98,9 +98,9 @@ const WebBasedForm = () => {
         >
           <Form className="form" method="post">
             <label htmlFor="fname" className="form-name">First Name <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32"  pattern="[A-Za-z]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
+            <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="lname" className="form-name">Last Name <span className="required-sign">*</span></label>
-            <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32"  pattern="[A-Za-z]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
+            <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z]{1,32}" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
             <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required onInvalid={e => e.target.setCustomValidity("Please fill-in this field")} onInput={e => e.target.setCustomValidity("")} />
             <label htmlFor="occupation" className="form-name">Occupation / Title</label>
@@ -355,10 +355,10 @@ const WebBasedForm = () => {
             <label>
               <Field type="checkbox"
                 name="tutorials"
-                value="Introduction to using a service mesh management plane: Meshery"
+                value="Introduction to using a cloud native management plane: Meshery"
                 className="form-check"
               />
-              <span className="checkbox-label">Introduction to using a service mesh management plane: Meshery</span>
+              <span className="checkbox-label">Introduction to using a cloud native management plane: Meshery</span>
             </label>
             <br />
             <label>
@@ -428,7 +428,7 @@ const WebBasedForm = () => {
               <Field type="checkbox"
                 name="meshMate"
                 value="Yes, and I would like to explore engaging with a Layer5 MeshMate."
-                className="form-check" 
+                className="form-check"
               />
               <span className="checkbox-label">Yes, and I would like to explore engaging with a Layer5 MeshMate.</span>
             </label>
@@ -457,7 +457,7 @@ const WebBasedForm = () => {
             <label htmlFor="profiency" className="form-name">If a contributor, what tools, technologies, or languages are you most proficient with?</label>
             <Field as="textarea" className="text-field" id="profiency" name="profiency" />
             <p className="para label">Examples: [Go/Gorilla, Javascript/React… ], [Photoshop, Illustrator, Figma…], [DevOps, Kubernetes, AWS, CI pipelining…], [Digital marketing, social media, community management…]</p>
-            
+
 
             <p className="form-name">Area(s) of Desired Focus</p>
             <label>

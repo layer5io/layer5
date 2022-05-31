@@ -180,16 +180,18 @@ export const ProjectWrapper = styled.div`
     }
     .project__card.seven{
         grid-column: 3/8;
-        grid-row: 6/8;
+        grid-row: 7/8;
         img{
             width: 90px;
             align-self: center;
+            margin-top: 8px;
             @media only screen and (min-width: 780px) {
                 align-self: flex-start;
-            }
+            } 
         }
         h5{
             align-self: center;
+            margin-top: 1rem;
             @media only screen and (min-width: 780px) {
                 align-self: flex-end;
                 padding-top:  20px;
@@ -210,10 +212,11 @@ export const ProjectWrapper = styled.div`
         h5{
             font-weight: 600;
             text-align: center;
+            
         }
         @media only screen and (min-width: 741px) {
             width: 80%;
-            padding: 40px 0px 0px 0px;
+            place-content: center;
         }
         
     }
@@ -232,6 +235,7 @@ export const ProjectWrapper = styled.div`
        .project__card h5{
         font-size: 15px;
         }
+        
     }
     @media only screen and (max-width: 991px) {
         padding: 5px 0 0 0;
@@ -259,6 +263,7 @@ export const ProjectWrapper = styled.div`
         .project__card.six h5{ 
             width: 100%;
         }
+        
      }
      @media only screen and (max-width: 740px) {
         .project__grid{
@@ -316,6 +321,17 @@ export const ProjectWrapper = styled.div`
                 width: 100%;
             }
         }
+        .project__card.seven{
+            img{
+                margin-top: 10px;
+            }
+            h5{ 
+                margin-top:35px;
+            }
+        }
+         
+        
+        
     }
     @media only screen and (max-width: 568px) {
         margin-left: 5%;

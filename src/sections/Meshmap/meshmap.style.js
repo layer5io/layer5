@@ -2,6 +2,13 @@ import styled from "styled-components";
 
 const MeshmapWrapper = styled.div`
   
+  .heading{
+      text-align: center;
+      padding: 1rem 0;
+  }
+  .catalog {
+    margin: 1rem;
+  }
   .supscript{
     color: ${props => props.theme.caribbeanGreenColor};
     font-size: 2.5rem;
@@ -9,6 +16,17 @@ const MeshmapWrapper = styled.div`
   }
   .required-sign {
     color: #8b0000;
+  }
+  select {
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+  }
+  
+  /* For IE10 */
+  select::-ms-expand {
+    display: none;
   }
 
   .description{
@@ -52,10 +70,8 @@ const MeshmapWrapper = styled.div`
   }
 
 
-  .meshmapImage{
-    display: block;
-    margin: 4rem auto;
-    width: 100%;
+  .modes-image{
+    margin: 0 0 2rem;
   }
 
   p.caption {
@@ -71,7 +87,7 @@ const MeshmapWrapper = styled.div`
     text-align: center;
     background-color: ${props => props.theme.secondaryColor};
     color: white;
-    box-shadow: 0px 0px 5px 2px ${props => props.theme.primaryLightColor};
+    box-shadow: 0px -1px 5px 2px ${props => props.theme.primaryLightColor};
   }
 
     .label {
@@ -132,7 +148,7 @@ const MeshmapWrapper = styled.div`
         width: 100%;
         border: 1px solid black;
         border-radius: 10px;
-        padding: 1rem .5rem;
+        padding: .5rem .5rem;
         font-size: .85rem;
       }
 
@@ -154,6 +170,15 @@ const MeshmapWrapper = styled.div`
       }
     }
 
+    .mobile-modes{
+      display: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .mobile-modes{
+        display: block;
+      }
+    }
 
     .black-box {
       display: flex;
