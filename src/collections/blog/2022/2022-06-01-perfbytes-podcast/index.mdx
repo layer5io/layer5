@@ -7,6 +7,7 @@ thumbnail: ./perfbytes-layer5.svg
 category: Events
 tags:
   - Events
+  - Service Mesh Performance
   - Meshery
 published: true
 ---
@@ -29,16 +30,15 @@ import ConsulDemo from "./consul-docker-extension-demo.png"
 <p>Service mesh is one of the solutions that helps you to route traffic within your cluster so as to expose your services outside the cluster. It is a solution to control how different parts of an application share data with one another. Unlike other systems for managing this communication, a service mesh is a dedicated infrastructure layer built right into an app. You have different options like the service type load balancer or using ingress but service mesh makes sense because it will manage a lot of features around your service to service communication.</p>
 </div>
 
-In general, service meshes arose from the concept of proxies such as the Nginx proxy. Then Envoy was introduced by Lyft. Lyft had the architecture, and Google came along and created it. That gave us Istio, which is now part of CNCF. 
+In general, service meshes arose from the concept of proxies such as the NGINX proxy. Then Envoy was introduced by Lyft. Lyft had the architecture, and Google came along and created it. That gave us Istio, which is now part of CNCF. 
 <Blockquote
   quote="We were slugging it out in our labs trying to figure out how to do performance benchmarking with a service mesh. Instead of ten tools, if we had just one, it would be nice. Then we see Meshery come into the field"
   person="Mrittika"
 />
 
 Service meshes, according to Lee, "hit a real sweet spot personally", having been focused on networking for most part of his career.
-He believes that there are a couple of different ways to speak about the genesis of service meshes, with linkerd being the first to coin the term.
-We had Linkerd v1 written in scala and use jvm and then came Linkerd v2 which is something totally different at this point. It's all different code, different languages and  a different service mesh architecture. There's a number of different architectures by which service
-meshes are deployed. There's a new one that's been softly announced in beta from called Cilium that is helping bring back some of the different architectures of how to run the proxies.
+He believes that there are a couple of different ways to speak about the genesis of service meshes, with Linkerd being the first to coin the term.
+We had Linkerd v1 written in scala and use jvm and then came Linkerd v2 which is something totally different at this point. It's all different code, different languages and  a different service mesh architecture. There's a number of different architectures by which service meshes are deployed. There's a new one that's been softly announced in beta from called Cilium that is helping bring back some of the different architectures of how to run the proxies.
 
 <div className="intro">
 <p>
