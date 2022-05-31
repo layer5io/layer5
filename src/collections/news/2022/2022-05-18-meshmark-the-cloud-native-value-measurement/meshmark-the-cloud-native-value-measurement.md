@@ -14,8 +14,6 @@ tags:
 type: News
 resource: false
 published: true
-body: "VALENCIA, Spain (May 17th, 2022) - ServiceMeshCon EU /KubeCon EU is a performance index that measures the value and overhead of your cloud native environment. By converting performance measurements into insights about the value of individual, cloud native application networking functions, MeshMark distills a variety of overhead signals and key performance indicators into a simple index to facilitate quick and common comprehension."
-
 ---
 import { Link } from "gatsby";
 import Formula from "./MeshMark-Formula.png";

@@ -26,7 +26,6 @@ export const query = graphql`query allNews {
         author
         category
         eurl
-        body
         thumbnail {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
