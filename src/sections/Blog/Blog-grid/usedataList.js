@@ -23,6 +23,7 @@ const useDataList = (
     dataToSearch.sanitizer = new JsSearch.LowerCaseSanitizer();
     dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex(paramSearch);
     dataToSearch.addIndex(paramsIndex);
+    dataList[0].body && dataToSearch.addIndex("body");
     dataToSearch.addDocuments(dataList);
     setSearch(dataToSearch);
     setIsLoading(false);
