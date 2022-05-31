@@ -6,7 +6,7 @@ import hashicorp from "../../../assets/images/partners/hashicorp_vertical_black.
 import hpe from "../../../assets/images/partners/hpe_side_black.svg";
 import nitk from "../../../assets/images/partners/nitk_black.png";
 import rackspace from "../../../assets/images/partners/rackspace_black.svg";
-import intel from "../../../assets/images/partners/intel-black.svg";
+import intel from "../../../assets/images/partners/intel.svg";
 
 
 export const partners = [
