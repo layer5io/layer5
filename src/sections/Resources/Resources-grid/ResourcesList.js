@@ -109,10 +109,8 @@ const ResourcesList = (props) => {
       data.push(resources);
     });
   }
-  if(data.length > 0)
-    return <ResourcesGrid data={[...new Set(data)]} {...props} searchData={searchData} searchQuery={searchQuery} />;
-  else 
-    return <EmptyResources />;
+
+  return <ResourcesGrid data={[...new Set(data)]} {...props} searchData={searchData} searchQuery={searchQuery} />;
 };
 
 export default DataWrapper(ResourcesList);

@@ -3,6 +3,7 @@ import Card from "../../../components/Card";
 import { Row, Col } from "../../../reusecore/Layout";
 import Pagination from "./paginate";
 import SearchBox from "../../../reusecore/Search";
+import EmptyResources from "../Resources-error/emptyStateTemplate";
 
 import { ResourcePageWrapper } from "./resourceGrid.style";
 
@@ -27,9 +28,7 @@ const ResourceGrid = (props) => {
         </div>
         <Row>
           {props.data.length < 1 && (
-            <Col xs={12} sm={6}>
-              No Resource that matches the title "{props.searchQuery}" found.
-            </Col>
+            <EmptyResources />
           )}
 
           {searchedResource.length > 0 &&
