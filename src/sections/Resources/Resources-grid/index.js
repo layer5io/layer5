@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Card from "../../../components/Card";
 import { Row, Col } from "../../../reusecore/Layout";
 import Pagination from "./paginate";
 import SearchBox from "../../../reusecore/Search";
-import useDataList from "../../Blog/Blog-grid/usedataList";
 
 import { ResourcePageWrapper } from "./resourceGrid.style";
 
@@ -11,15 +10,8 @@ const ResourceGrid = (props) => {
   // Get current posts
   const indexOfLastPost = props.currentPage * props.postsPerPage;
   const indexOfFirstPost = indexOfLastPost - props.postsPerPage;
-  const [searchQuery, setSearchQuery] = useState("");
-  const { queryResults, searchData } = useDataList(
-    props.data,
-    setSearchQuery,
-    searchQuery,
-    ["frontmatter", "title"],
-    "id"
-  );
-  const searchedResource = queryResults.slice(
+
+  const searchedResource = props.data.slice(
     indexOfFirstPost,
     indexOfLastPost
   );
@@ -30,13 +22,13 @@ const ResourceGrid = (props) => {
       <div className="resource-grid-wrapper">
         <div className="search">
           <div className="searchBox">
-            <SearchBox searchQuery={searchQuery} searchData={searchData} />
+            <SearchBox searchQuery={props.searchQuery} searchData={props.searchData} />
           </div>
         </div>
         <Row>
-          {queryResults.length < 1 && (
+          {props.data.length < 1 && (
             <Col xs={12} sm={6}>
-              No Resource that matches the title "{searchQuery}" found.
+              No Resource that matches the title "{props.searchQuery}" found.
             </Col>
           )}
 
@@ -51,7 +43,7 @@ const ResourceGrid = (props) => {
       {searchedResource.length > 0 && (
         <Pagination
           postsPerPage={props.postsPerPage}
-          totalPosts={queryResults.length}
+          totalPosts={props.data.length}
           currentPage={props.currentPage}
           paginate={paginate}
         />
