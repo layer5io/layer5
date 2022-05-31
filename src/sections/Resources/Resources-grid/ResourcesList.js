@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import ResourcesGrid from "./index";
 import DataWrapper from "./DataWrapper";
 import { options } from "./options";
-import EmptyResources from "../Resources-error/emptyStateTemplate";
 import useDataList from "../../Blog/Blog-grid/usedataList";
 
 
