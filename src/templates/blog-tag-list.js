@@ -20,6 +20,7 @@ export const query = graphql`query BlogsByTags($tag: String!) {
     totalCount
     nodes {
       id
+      body
       frontmatter {
         title
         subtitle
