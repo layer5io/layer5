@@ -114,6 +114,10 @@ const AboutSectionWrapper = styled.section`
       }
     }
   }
+  .caption {
+    font-size: .9rem;
+    font-style: italic;
+  }
   
   @media only screen and (max-width: 1400px) {
     .about-thumb {

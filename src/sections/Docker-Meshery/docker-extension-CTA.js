@@ -38,16 +38,16 @@ const DockerExtensionCTAWrapper = styled.div`
 `;
 
 const DockerExtensionCTA = () => {
-  return(
+  return (
     <DockerExtensionCTAWrapper>
       <div className="docker-callout">
-        <img src={Dockerimage} alt="Docker and Meshery"/>
+        <img src={Dockerimage} alt="Docker and Meshery" />
         <div>
           <h2>Docker Extension for Meshery is now available!</h2>
           <p><i>Managing cloud native infrastructure has never been easier.</i></p>
-          <p className="text-gray">Join the Beta Program to get early access.</p>
+          <p className="text-gray">Sign up to to get access the extension.</p>
           <Button primary url="/docker-extension-meshery" external={false}>
-                                        Apply Now!
+            Get Access
           </Button>
         </div>
       </div>

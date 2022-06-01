@@ -72,7 +72,7 @@ export const repo_data = [
         project: "MeshMap",
         image: meshery,
         site:
-          "/service-mesh-management/meshmap",
+          "/cloud-native-management/meshmap",
         language: "React.js, Cytoscape.js",
         description: "A visual topology to display service mesh configuration, workloads and traffic.",
         repository: "https://github.com/meshery/meshery",
@@ -135,6 +135,15 @@ export const repo_data = [
         repository:
           "https://github.com/layer5io/containers-101-workshop",
       },
+      {
+        project: "Cloud Native Playground",
+        image: meshery,
+        language: "Meshery",
+        description:
+          "Cloud Native Playground for Kubernetes and Service Mesh ",
+        repository:
+          "https://github.com/meshery/play",
+      }
     ],
   },
 
@@ -145,7 +154,7 @@ export const repo_data = [
         project: "Meshery",
         image: meshery,
         language: "Golang, gRPC",
-        description: "The service mesh management plane to provide governance and backend system integration. Golang, gRPC, NATS, CloudEvents",
+        description: "the cloud native management plane to provide governance and backend system integration. Golang, gRPC, NATS, CloudEvents",
         repository: "https://github.com/meshery/meshery",
       },
       {
@@ -241,11 +250,17 @@ export const repo_data = [
         repository: "https://github.com/layer5io/nighthawk-go",
       },
       {
-        project:"SMP Action",
-        language:"shell",
-        description:"GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
-        repository:"https://github.com/layer5io/meshery-smp-action"
+        project: "SMP Action",
+        language: "shell",
+        description: "GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
+        repository: "https://github.com/layer5io/meshery-smp-action"
       },
+      {
+        project: "Meshery-Perf",
+        language: "Golang",
+        description: "meshery-perf is a Meshery component used to run performance tests",
+        repository: "https://github.com/meshery/meshery-perf"
+      }
     ],
   },
 
@@ -262,10 +277,10 @@ export const repo_data = [
           "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
       {
-        project:"Service Mesh Patterns Action",
-        language:"shell",
-        description:"GitHub Action to deploy Service Mesh Patterns on CI/CD pipelines.",
-        repository:"https://github.com/layer5io/meshery-service-mesh-patterns-action",
+        project: "Service Mesh Patterns Action",
+        language: "shell",
+        description: "GitHub Action to deploy Service Mesh Patterns on CI/CD pipelines.",
+        repository: "https://github.com/layer5io/meshery-service-mesh-patterns-action",
       },
     ],
   },

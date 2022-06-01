@@ -50,7 +50,7 @@ const About = () => {
                 <div className="about-text text-one">
                   <h1>Community First</h1>
                   <p className="indent">
-                    Layer5 is powered by a growing community of collaborators representing the largest collection of service mesh projects and their maintainers in the world.
+                    Layer5 is powered by a growing community of collaborators representing industry leading, cloud native, open source software.
                   </p>
                   <h5 className="section-title">We are remote oriented.</h5>
                   <p>Our remote working model has been in our DNA since our genesis in 2020, which allows us to maintain a flexible working environment and gives us access to a global pool of diverse talent.</p>
@@ -60,6 +60,10 @@ const About = () => {
               <Col xs={12} sm={6}>
                 <div className="head-images">
                   <img src={Community_meetup} alt="Community_meetup" />
+                  <figcaption className="caption">
+                    Layer5 community members at Open Source Africa Community
+                    conference, March 2022.
+                  </figcaption>
                 </div>
               </Col>
             </Row>

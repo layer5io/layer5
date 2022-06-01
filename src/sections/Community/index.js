@@ -16,7 +16,7 @@ const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO
 const MeshmateIcon = "../../assets/images/meshmate/meshmate-stack.svg";
 
 const CommunityPage = () => {
- 
+
   return (
     <CommunitySectionWrapper>
       <div className="community-header">
@@ -27,12 +27,10 @@ const CommunityPage = () => {
         <Container>
           <Row className="service-mesh-projects">
             <Col sm={12} lg={6}>
-              <h2>Largest collection of service mesh projects and their maintainers in the world</h2>
+              <h2>Warm, welcoming, and encouraging. Embrace developer-defined infrastructure and help empower every engineer with us.</h2>
               <p>
-                We build projects to provide learning environments,
-                deployment and operational best practices, performance benchmarks,
-                create documentation, share networking opportunities, and more.
-                Our shared commitment to the open source spirit pushes Layer5 projects forward.
+                We build projects to provide learning environments and
+                cloud native infrastructure and application management tooling. Share in our collective accolades as you build lifelong relationships, and world-stage software. Our shared commitment to the open source spirit pushes Layer5 projects forward.
               </p>
             </Col>
             <Col sm={12} lg={6}>
@@ -112,8 +110,8 @@ const CommunityPage = () => {
                 <h1>Newcomers Welcome!</h1>
                 <h3>Are you new to the community?</h3>
                 <p className="invitation">
-                Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <a href="community/newcomers">Contributor's Journey Map </a>
-                and engage in the community and projects.
+                  Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <a href="community/newcomers">Contributor's Journey Map </a>
+                  and engage in the community and projects.
                 </p>
                 <Button primary title="See All Newcomers Resources" url="/community/newcomers">
                   <FaUsers size={21} className="icon-left" />

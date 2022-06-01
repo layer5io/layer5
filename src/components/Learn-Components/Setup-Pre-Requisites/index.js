@@ -11,11 +11,11 @@ const SetupPreReq = () => (
   <SetupPreReqWrapper>
     <div className="get-started-desc" id="pre-requisites">
       <h2>Prerequisites</h2>
-      <p>In this learning path, we will be using Meshery as the management plane to manage the service meshes. Meshery is the service mesh management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads.</p>
+      <p>In this learning path, we will be using Meshery as the management plane to manage the service meshes. Meshery is the cloud native management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads.</p>
     </div>
     <div className="container-card" id="Set up">
-      <a href="/service-mesh-management/meshery" 
-        target = "_blank" 
+      <a href="/service-mesh-management/meshery"
+        target="_blank"
       >
         <div className="card">
           <div className="card-header">
@@ -26,7 +26,7 @@ const SetupPreReq = () => (
         </div>
       </a>
       <a href="/service-mesh-management/meshery/getting-started" id="Run Meshery"
-        target = "_blank" 
+        target="_blank"
       >
         <div className="card">
           <div className="card-header">
@@ -37,7 +37,7 @@ const SetupPreReq = () => (
         </div>
       </a>
       <a href="/service-mesh-management/meshery/operating-service-meshes" id="Manage Meshery"
-        target = "_blank" 
+        target="_blank"
       >
         <div className="card">
           <div className="card-header">

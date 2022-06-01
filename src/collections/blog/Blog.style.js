@@ -255,6 +255,14 @@ styles for meshmate-of-the-year-2020
     margin: 1rem 2rem 1rem 0rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
+  @media screen and (max-width: 768px) {
+    .slides-right, .slides-left, .slides{
+      width: 100%;
+      display: block;
+      margin: 1rem auto;
+    }
+  }
+
   .slides-left:hover{
     cursor:pointer;
   }
@@ -298,5 +306,30 @@ styles for meshmate-of-the-year-2020
     margin-left:auto;
   }
 }
-
+code {
+      padding: 5px;
+      font-style: normal;
+      font-weight: normal;
+      white-space: pre-wrap;
+      border-radius: 3px;
+      background-color: ${props => props.theme.tertiaryColor};
+      color: ${props => props.theme.shadowLightColor};
+      &.short {
+        line-height: 16px;
+      }
+      &.navy {
+        color: var(--vagrant-l1);
+      }
+      &.gray {
+        color: var(--gray-5);
+      }
+      &.white {
+        color: var(--white);
+      }
+      @media (min-width: 768px){
+        font-size: .85rem;
+        line-height: .85rem;
+      } 
+  }
+    
 `;

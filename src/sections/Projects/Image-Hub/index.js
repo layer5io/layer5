@@ -33,7 +33,7 @@ const ImageHubPage = () => {
                 This project examines how to let application infrastructure concerns melt off your service mesh workloads and have your infrastructure implement multi-tenancy on your behalf.
               </p>
               <p>
-                Learn how to use Docker Desktop and Kubernetes as your development platforms of choice in combination with Meshery, the service mesh management plane, to easily deploy a service mesh. Using Consul and Envoy's latest capabilities, see how WASM can be used to move user authentication and authorization from your application to the infrastructure.
+                Learn how to use Docker Desktop and Kubernetes as your development platforms of choice in combination with Meshery, the cloud native management plane, to easily deploy a service mesh. Using Consul and Envoy's latest capabilities, see how WASM can be used to move user authentication and authorization from your application to the infrastructure.
               </p>
               <iframe className="iframe-div" width="800px" height="400px" src="https://www.youtube.com/embed/5BrbbKZOctw" loading="lazy"
                 frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>

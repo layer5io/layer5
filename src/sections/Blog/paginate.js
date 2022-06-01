@@ -49,7 +49,6 @@ const Paginate = ({pageContext,isListView}) => {
   const category = pageContext.category ? pageContext.category : null;
   const tag = pageContext.tag ? pageContext.tag : null;
   let pageNumbers = [];
-
   for (let i = 1; i <= pageContext.numberOfPages; i++) {
     pageNumbers.push(i);
   }

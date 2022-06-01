@@ -12,7 +12,7 @@ import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
 
 
-const BooksGridPage = ({hide_path}) => (
+const BooksGridPage = ({ hide_path }) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
@@ -21,8 +21,8 @@ const BooksGridPage = ({hide_path}) => (
   We are the largest collection of service mesh projects and their maintainers in the world." />
       <Navigation />
       <BooksPage hide_path={hide_path} />
-      <LearnServiceMeshCTA/>
-      <Footer/>
+      <LearnServiceMeshCTA />
+      <Footer />
     </Layout>
   </ThemeProvider>
 );

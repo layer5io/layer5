@@ -4,45 +4,44 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
+// import ParticleComponent from "../../../reusecore/Particle";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-
-import Backgroundsvg from "./assets/images/background.svg";
+import Banner3SectionWrapper from "./banner3.style";
 
 const Banner3 = () => {
   return (
-    <Container fullWidthSM>
-      <img src={Backgroundsvg} className="background-svg" />
-      <Row>
-        <Col sm={8} lg={8} className="section-title-wrapper">
+    <Banner3SectionWrapper>
+      <Container fullWidthSM>
+        <Row>
+          <Col sm={8} lg={8} className="section-title-wrapper">
 
-          <SectionTitle
-            className="section-title"
-            leftAlign={true}
-            UniWidth="100%"
-          >
-            <h1>The service mesh company</h1>
-            <h2>
-              representing <span>every</span> service mesh
-            </h2>
-          </SectionTitle>
-          <p>
-            The Layer5 community represents the largest collection of service mesh projects and their maintainers in the world.
-          </p>
-          <span className="vintage-box-container">
+            <SectionTitle
+              className="section-title"
+              leftAlign={true}
+              UniWidth="100%"
+            >
+              <h4>Industry-leading Cloud Native Management</h4>
+              <h1>
+              expect <span>more</span> from your infrastructure
+              </h1>
+            </SectionTitle>
+            <p>
+            an open source-first community of cloud native engineers
+            </p>
             <VintageBox right={true} vintageOne={true}>
               <Button primary className="banner-btn one" title="Join in" url="/community">
                 <FaMapMarkedAlt size={21} className="icon-left" />
               </Button>
-              <Button primary className="banner-btn two" title="See Meshery" url="/service-mesh-management/meshery">
+              <Button primary className="banner-btn two" title="See our Projects" url="/projects">
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </VintageBox>
-          </span>
-        </Col>
-      </Row>
-    </Container>
+          </Col>
+        </Row>
+      </Container>
+    </Banner3SectionWrapper>
   );
 };
 
