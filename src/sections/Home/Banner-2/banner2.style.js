@@ -1,18 +1,20 @@
 import styled from "styled-components";
 
-import HeroCubes from "./assets/images/mesh_cubes.svg";
-import HeroCubesBlack from "./assets/images/mesh_cubes_black.svg";
+import Ellipse from "./assets/images/Group.svg";
+import Layer5Icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-no-trim.svg";
 
-const BannerSectionWrapper = styled.section`
+const Banner2SectionWrapper = styled.section`
     padding: 7rem 0;
 
-    background: url(${HeroCubesBlack}) no-repeat;
-    background-size: 50%;
+    background-image: url(${Layer5Icon}), url(${Ellipse});
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: 25%, 23%;
     background-color: #F3FFFD;
-    background-position: bottom -85px right;
+    background-position: center right 160px, bottom right;
     p {
         font-size: 21px;
-        font-weight: 300; 
+        font-weight: 300;
         color: ${props => props.theme.primaryColor};
         margin: 0 0 70px 0;
         width: 70%;
@@ -69,7 +71,8 @@ const BannerSectionWrapper = styled.section`
     }
     @media only screen and (max-width: 912px) {
         padding: 3rem 0;
-        background-size: 45%;
+        background-position: center right 50px, bottom right;
+        background-size: 25%;
 
         p {
             width: 100%;
@@ -99,7 +102,8 @@ const BannerSectionWrapper = styled.section`
      }
      @media only screen and (max-width: 760px) {
         padding: 2rem 0;
-        background-size: 45%;
+        background-position: bottom 100px right 10px, bottom right;
+        background-size: 25%;
  
         .section-title { 
             h1 { margin: 0rem; }
@@ -112,7 +116,9 @@ const BannerSectionWrapper = styled.section`
      }
      @media only screen and (max-width: 480px) {
         padding: 2rem 0;
-        
+        background-position: bottom 230px right 20px, bottom 180px right;
+        background-size: 20%;
+
         .section-title{
             h1 {
                 font-size: 35px;
@@ -132,6 +138,8 @@ const BannerSectionWrapper = styled.section`
 			}
 		 }
      @media only screen and (max-width: 380px) {
+        background-position: bottom 200px right 20px, bottom 150px right;
+        background-size: 25%;
         .section-title{
             h1 {
                 font-size: 30px;
@@ -149,6 +157,8 @@ const BannerSectionWrapper = styled.section`
         } */
      }
      @media only screen and (max-width: 330px) {
+        background-position: bottom 250px right 20px, bottom 220px right;
+        background-size: 20%;
         .section-title{
             h1 {
                 font-size: 23px;
@@ -159,4 +169,4 @@ const BannerSectionWrapper = styled.section`
      
 `;
 
-export default BannerSectionWrapper;
+export default Banner2SectionWrapper;
