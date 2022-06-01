@@ -30,7 +30,6 @@ const BlogGrid = ({
     "id"
   );
   const searchedPosts = queryResults.slice(indexOfFirstPost, indexOfLastPost);
-
   // Change page
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);

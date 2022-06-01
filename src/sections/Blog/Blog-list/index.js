@@ -46,6 +46,7 @@ const BlogList = ({
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
   return (
     <BlogPageWrapper>
       <PageHeader

@@ -30,7 +30,7 @@ const RotationalBanner = () => {
 
   return (
     <TopLevelWrapper>
-      <div className={mounted?`banner${Banner}`: "banner0"}>
+      <div className={mounted ? `banner${Banner}` : "banner0"}>
         {BannersList[Banner]}
       </div>
     </TopLevelWrapper>

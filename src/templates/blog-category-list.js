@@ -24,6 +24,7 @@ export const query = graphql`
       totalCount
       nodes {
         id
+        body
         frontmatter {
           title
           subtitle
