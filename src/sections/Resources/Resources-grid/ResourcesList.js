@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import ResourcesGrid from "./index";
 import DataWrapper from "./DataWrapper";
 import { options } from "./options";
-import useDataList from "../../Blog/Blog-grid/usedataList";
+import useDataList from "../../../utils/usedataList";
+
 
 
 const ResourcesList = (props) => {
