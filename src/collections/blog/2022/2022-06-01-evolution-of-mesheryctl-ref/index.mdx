@@ -43,19 +43,8 @@ import newDesign from "./new-design.webm";
     <source src={newDesign} type="video/webm" />
 </video>
 <p>The redesign work was done with help of HTML in markdown and with optimization in YAML code. The sample is given below...</p>
-```markdown
-    ---
-    layout: default
-    title: mesheryctl mesh
-    permalink: reference/mesheryctl/mesh
-    redirect_from: reference/mesheryctl/mesh/
-    type: reference
-    display-title: "false"
-    language: en
-    command: mesh
-    # image: /assets/img/platforms/brew.png
-    ---
 
+```
     <!-- Copy this template to create individual doc pages for each mesheryctl commands -->
 
     <!-- Name of the command -->
@@ -79,7 +68,7 @@ import newDesign from "./new-design.webm";
 <h3>Adding auto generation feature in reference</h3>
 <p>As time passed, we realised that the command reference missed something for a while, though the design has been changed. Then, we thought the idea of automating the generation of docs such that developers don't need to change the code in docs section while working towards <code>mesheryctl</code>. That's where we got to know that Cobra library (the library for CLI apps made using golang) has a feature to make doc pages automatically. So we decided to incorporate that feature into <code>mesheryctl</code> docs page as well! After making several changes and a PR, I was finally able to introduce the feature in the docs site!</p>
 <br />
-```golang
+```
 var startCmd = &cobra.Command{
 	Use:   "start",
 	Short: "Start Meshery",
