@@ -7,4 +7,8 @@ export const NewsPageWrapper = styled.div`
     .page-header{
         margin:5rem auto;
     }
+
+    .post-content-block {
+        height: 10rem;
+    }
 `;
