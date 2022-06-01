@@ -8,15 +8,69 @@ import styled from "styled-components";
 const BannerSectionWrapper = styled.div`
 
     background: #000000;
-    padding: 8rem 6rem 6rem;
+    padding: 8rem 6rem 3rem 6rem;
     margin-bottom: 3rem;
     min-height: 25rem;
 
-    h1{
+    h1 {
+        background-color: ${props => props.theme.black};
+        font-weight: 500;
+        font-size: 60px;
         color: ${props => props.theme.white};
+        
+        line-height: 4.3rem;
+        margin-bottom: 1rem; 
+        span {
+            font-size: 70px;
+            width: fit-content;
+            border-radius: .25rem;
+            /* padding: .5rem; */
+            /* background-color: ${props => props.theme.saffronLightColor};     */
+            font-weight: 700;
+            color: ${props => props.theme.secondaryColor};
+        }
     }
-    h3, p{
+    h2 {
+        margin-bottom: 1rem;
+        font-size: 1.95rem;
+        font-weight: 400;
+        color: ${props => props.theme.white};
+        font-style: italic;
+        span {
+            font-style: normal;
+        }
+    }
+    h2.readyPlayer {
+        margin: 2rem 0rem 0rem 0rem;
+        background-color: black;
+        position: absolute;
+        z-index: 1;
+        padding: 1.5rem;
+        color: white;
+        font-style: normal;
+        text-transform: uppercase ;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    h3 {
+        color: ${props => props.theme.saffronColor};
+        margin-bottom: .5rem;
+        span {
+            color: ${props => props.theme.saffronColor};
+        }
+    }
+    p {
         color: ${props => props.theme.primaryLightColor};
+    }
+    h4 {
+        text-transform: uppercase;
+        padding-left: 1rem;
+        font-style: italic;
+        font-size: 1.25rem;
+        color: ${props => props.theme.white};
+        span {
+            padding-left: 1rem;
+        }
     }
 
     .learn-particle-img {
@@ -93,11 +147,23 @@ const BannerSection = () => {
         <img src={Meshery_Logo} alt="Meshery Logo" />
       </div>
       <div>
-        <PageHeader title="MeshMap" subtitle="see past the YAML" superscript="BETA" />
-        <p>Step aside, YAML. MeshMap is here - the world's only visual designer for cloud native infrastructure.</p>
-        <p>Use MeshMap to design, deploy, and manage your Kubernetes-based, service mesh deployments. As a plugin for Meshery, MeshMap supports 10+ service meshes. MeshMap not only allows you to create and verify your cloud native application and infrastructure configurations, but also integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.</p>
+        {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
+        <h2>Step aside, YAML</h2>
+        <h1><span>MeshMap</span> is here</h1>
+        {/* <h3>the world's only visual designer for cloud native infrastructure.</h3> */}
+        {/* <h3>
+                    Application reigns King. Context is his Queen.
+                </h3> */}
+        <h3>
+                    Friends don't let friends GitOps alone.
+        </h3>
+        {/* <h4>Discover and Visualize</h4>
+                <h4><span>Collaborate and Design</span></h4>
+                any and all your cloud native infra and apps */}
       </div>
+      {/* <h2 className="readyPlayer">Ready, Players?</h2> */}
     </BannerSectionWrapper>
+
   );
 };
 

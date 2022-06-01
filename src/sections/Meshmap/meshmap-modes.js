@@ -7,9 +7,19 @@ import { Link } from "gatsby";
 
 const MeshmapModesWrapper = styled.div`
 
+  p.caption {
+    margin-top: 1.5rem;
+  }
+  .firstheading {
+    text-align: center;
+    padding-top:0;
+    margin-top:0;
+    background-color: black;
+  }
   .heading{
       text-align: center;
       padding: 1rem 0;
+      text-transform: uppercase;
   }
   
   .modes-wrapper {
@@ -215,7 +225,7 @@ const MeshmapModesWrapper = styled.div`
 const MeshmapModes = () => {
   return (
     <MeshmapModesWrapper>
-      <h2 className="heading">Choose your mode</h2>
+      <h2 className="heading">Ready, Players? Choose Your Mode</h2>
       <section className="modes-wrapper">
         <div className="mode">
           <div className="mode-name">
@@ -256,7 +266,11 @@ const MeshmapModes = () => {
           </div>
         </div>
       </section> */}
-
+      <p className="caption">
+        {/* Discover and Visualize - any and all your cloud native infra and apps. */}
+        Collaboratively and design your Kubernetes clusters, any service mesh deployments, and cloud native applications.
+      </p>
+      {/* MeshMap supports 10+ service meshes. */}
     </MeshmapModesWrapper>
   );
 };
