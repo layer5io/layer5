@@ -68,6 +68,7 @@ import newDesign from "./new-design.webm";
 <h3>Adding auto generation feature in reference</h3>
 <p>As time passed, we realised that the command reference missed something for a while, though the design has been changed. Then, we thought the idea of automating the generation of docs such that developers don't need to change the code in docs section while working towards <code>mesheryctl</code>. That's where we got to know that Cobra library (the library for CLI apps made using golang) has a feature to make doc pages automatically. So we decided to incorporate that feature into <code>mesheryctl</code> docs page as well! After making several changes and a PR, I was finally able to introduce the feature in the docs site!</p>
 <br />
+
 ```
 var startCmd = &cobra.Command{
 	Use:   "start",
@@ -87,6 +88,7 @@ mesheryctl system start --reset
 mesheryctl system start --yes
 	`,
 ```
+
 <p>Using this information in each golang file above, the markdown page is generated using Cobra CLI and thus reducing the workload on the developer.</p>
 <br />
 <p>This is how the <code>mesheryctl</code> command reference is evolved, and it'll continue to evolve better to serve the users better.</p>
