@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
-import BannerDefault from './index';
+import Banner2 from './index';
 it('Banner-default renders without crashing', () => {
-  shallow(<BannerDefault />);
+  shallow(<Banner2 />);
 });
