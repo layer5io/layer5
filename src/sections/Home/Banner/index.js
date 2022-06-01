@@ -5,9 +5,9 @@ import Banner3 from "../Banner-3";
 import TopLevelWrapper from "./topBanner.style";
 
 const BannersList = [
-  <Banner3 key={0} />,
+  <BannerDefault key={0} />,
   <BannerAlt key={1} />,
-  <BannerDefault key={2} />
+  <Banner3 key={2} />
 ];
 
 const RotationalBanner = () => {
