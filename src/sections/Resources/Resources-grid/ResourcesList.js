@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Components
 import ResourcesGrid from "./index";
 import DataWrapper from "./DataWrapper";
 import { options } from "./options";
-import EmptyResources from "../Resources-error/emptyStateTemplate";
+import useDataList from "../../../utils/usedataList";
+
 
 
 const ResourcesList = (props) => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const { queryResults, searchData } = useDataList(
+    props.allResources.allMdx.nodes,
+    setSearchQuery,
+    searchQuery,
+    ["frontmatter", "title"],
+    "id"
+  );
   let data = [];
   let all = [];
   //arrays to store filtered list of resources based on individual filters
@@ -59,7 +68,7 @@ const ResourcesList = (props) => {
   let totalMesh = mesh.length;
 
   if(props.resource.length>0) {
-    props.allResources.allMdx.nodes.forEach((resources) => {
+    queryResults.forEach((resources) => {
 
       all.push(resources);
 
@@ -96,14 +105,12 @@ const ResourcesList = (props) => {
       data = result.reduce((a, b) => a.filter(c => b.includes(c)));
     });
   } else{
-    props.allResources.allMdx.nodes.forEach((resources) => {
+    queryResults.forEach((resources) => {
       data.push(resources);
     });
   }
-  if(data.length > 0)
-    return <ResourcesGrid data={[...new Set(data)]} {...props} />;
-  else 
-    return <EmptyResources />;
+
+  return <ResourcesGrid data={[...new Set(data)]} {...props} searchData={searchData} searchQuery={searchQuery} />;
 };
 
 export default DataWrapper(ResourcesList);

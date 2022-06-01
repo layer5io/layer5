@@ -8,7 +8,8 @@ import Card from "../../../components/Card";
 import BlogViewToolTip from "../../../components/blog-view-tooltip";
 import SearchBox from "../../../reusecore/Search";
 import Pagination from "../../Resources/Resources-grid/paginate";
-import useDataList from "./usedataList";
+import useDataList from "../../../utils/usedataList";
+
 
 const BlogGrid = ({
   isListView,
