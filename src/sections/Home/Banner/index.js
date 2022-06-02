@@ -16,7 +16,7 @@ const RotationalBanner = () => {
   } catch (e) {
     initialValue = 0;
   }
-  const Banner = initialValue;
+  const [Banner, setBanner] = useState(initialValue);
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     if (sessionStorage.getItem("banner")) {
