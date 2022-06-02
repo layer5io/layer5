@@ -16,12 +16,12 @@ export const NewsPageWrapper = styled.div`
     }
     .press-release-button{
         margin-left: 3rem;
-       
+        background : rgb(240, 240, 240);
         border-radius: 5px;
         color: black;
     }   
     .coverage-button {
-      
+        background : rgb(240, 240, 240);
         border-radius: 5px;
         color: black;
     }
@@ -34,6 +34,11 @@ export const NewsPageWrapper = styled.div`
     
     .post-content-block {
         height: 10rem;
+    }
+
+    .mystyle {
+      background : rgb(30, 33, 23);
+      color : white;
     }
 
 `;

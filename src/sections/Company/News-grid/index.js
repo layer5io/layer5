@@ -5,60 +5,42 @@ import PageHeader from "../../../reusecore/PageHeader";
 import { NewsPageWrapper } from "./NewsGrid.style";
 import rss_feed_icon from "../../../assets/images/socialIcons/rss-sign.svg";
 import Button from "../../../reusecore/Button";
-import { useEffect } from "react";
 import SearchBox from "../../../reusecore/Search";
-
+import { useEffect } from "react";
+import useDataList from "../../../utils/usedataList";
 
 let coverageFiltered= false;
 let pressReleaseFiltered=false;
 
 function colorchange(id) {
-  var background = document.getElementById(id).style.backgroundColor;
-  if (background == "rgb(30, 33, 23)") {
-    document.getElementById(id).style.background = "#b3b3b3";
-    document.getElementById(id).style.color = "black";
-  } else {
-    document.getElementById(id).style.background = "rgb(30, 33, 23)";
-    document.getElementById(id).style.color = "white";
-  }
-
+  let element = document.getElementById(id);
+  element.classList.toggle("mystyle");
 }
 const NewsGrid = ({data}) => {
-  const [constNews, setConstNews] = useState([]);
-  const [searchTopic, setSearchTopic] = useState("");
-  const [news, setNews] = useState([]);
-  const [filteredNews, setFilteredNews] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const {queryResults, searchData} = useDataList(
+    data.allMdx.nodes,
+    setSearchQuery,
+    searchQuery,
+    ["frontmatter", "title"],
+    "id"
+  );
+  const [news, setNews] = useState(queryResults);
   useEffect( () => {
-    const filteredtopic = constNews.filter((newsitem) => {
-      return newsitem.frontmatter.title.toLocaleLowerCase().includes(searchTopic);
-    });
+    setNews(queryResults);
     if(coverageFiltered==true) {
-      filterCoverage();
+      setNews(filteredCoverage);
     }
     if(pressReleaseFiltered==true) {
-      filterPressRelease();
+      setNews(filteredPressRelease);
     }
-    setNews(filteredtopic);
-    setFilteredNews(filteredtopic);
-    
-  }, [searchTopic]
-  );
-  useEffect( () => {
-    data.allMdx.nodes.map( (node) => (
-      setNews(prevArray => [...prevArray, node]),
-      setConstNews(prevArray => [...prevArray, node]),
-      setFilteredNews(prevArray => [...prevArray, node])
-    ));
-  }, []
-  );
-  const filterChange = (event) => {
-    setSearchTopic(event.target.value);
-  };
+  }, [queryResults]
 
-  const filteredCoverage = filteredNews.filter((obj) => {
+  );
+  const filteredCoverage = queryResults.filter((obj) => {
     return obj.frontmatter.category.includes("Coverage");
   });
-  const filteredPressRelease = filteredNews.filter((obj) => {
+  const filteredPressRelease = queryResults.filter((obj) => {
     return obj.frontmatter.category.includes("Press Release");
   });
 
@@ -73,7 +55,7 @@ const NewsGrid = ({data}) => {
       coverageFiltered=true;
       pressReleaseFiltered=false;
     } else if(coverageFiltered==true && pressReleaseFiltered==false){
-      setNews(filteredNews);
+      setNews(queryResults);
       coverageFiltered=false;
     }
   }; 
@@ -88,7 +70,7 @@ const NewsGrid = ({data}) => {
       pressReleaseFiltered=true;
       coverageFiltered=false;
     } else if(pressReleaseFiltered==true&&coverageFiltered==false){
-      setNews(filteredNews);
+      setNews(queryResults);
       pressReleaseFiltered=false;
     }
   }; 
@@ -104,12 +86,18 @@ const NewsGrid = ({data}) => {
               <Button id="press-release" onClick={filterPressRelease} className="press-release-button">Press-Release</Button>
             </div>
             <div className="search-box-container">
-              <SearchBox className="filter-topic-input" searchData={filterChange} searchQuery={searchTopic}/>
+              <SearchBox className="filter-topic-input" searchQuery={searchQuery} searchData={searchData}
+              />
             </div>
           </div>
-          
+
           <div className="news-grid-wrapper">
             <Row>
+              {news.length < 1 && (
+                <Col xs={12} sm={6}>
+                      No News post that matches the title "{searchQuery}" found.
+                </Col>
+              )}
               {news.map(({id, frontmatter, fields }) => (
                 <Col xs={12} sm={6} lg={4} key={id}>
                   <Card frontmatter={frontmatter} fields={fields}/>
