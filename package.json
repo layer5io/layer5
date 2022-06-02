@@ -98,7 +98,7 @@
     "env-cmd": "^10.1.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
     "gh-pages": "^3.2.3",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "lint-staged": "^12.3.3",
     "rimraf": "^3.0.2",
     "webpack-cli": "^4.9.2"
