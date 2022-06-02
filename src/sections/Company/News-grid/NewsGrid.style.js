@@ -13,6 +13,11 @@ export const NewsPageWrapper = styled.div`
         width: 100%;
         justify-content: start;
         margin-bottom: 3rem;
+        @media only screen and (max-width:990px){
+                
+            justify-content: center;
+        
+    }
     }
     .press-release-button{
         margin-left: 3rem;
@@ -25,8 +30,13 @@ export const NewsPageWrapper = styled.div`
         border-radius: 5px;
         color: black;
     }
+    
     .filter-buttons {
         display: flex;
+        @media only screen and (max-width:990px){
+            display:block;
+        
+    }
     }
     .search-box-container {
         width: 35%;
@@ -39,6 +49,25 @@ export const NewsPageWrapper = styled.div`
     .mystyle {
       background : rgb(30, 33, 23);
       color : white;
+    }
+
+    .search{
+        display:flex;
+        justify-content:flex-end;
+        width:100%;
+        
+        margin-bottom: 0.8rem;
+        .searchBox{
+            flex:0 0 50%;
+            @media only screen and (max-width:990px){
+                
+                    flex:0 0 100%;
+                    max-width:100%;
+                    margin-bottom: 1.8rem;
+                
+            }
+        }
+        
     }
 
 `;

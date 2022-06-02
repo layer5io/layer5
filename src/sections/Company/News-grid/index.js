@@ -80,18 +80,19 @@ const NewsGrid = ({data}) => {
     
       <div>
         <Container>
-          <div className="filter-buttons">
-            <div className="button-container">
-              <Button id="coverage" onClick={filterCoverage} className="coverage-button">Coverage</Button>
-              <Button id="press-release" onClick={filterPressRelease} className="press-release-button">Press-Release</Button>
-            </div>
-            <div className="search-box-container">
-              <SearchBox className="filter-topic-input" searchQuery={searchQuery} searchData={searchData}
-              />
-            </div>
-          </div>
-
           <div className="news-grid-wrapper">
+            <div className="filter-buttons">
+              <div className="button-container">
+                <Button id="coverage" onClick={filterCoverage} className="coverage-button">Coverage</Button>
+                <Button id="press-release" onClick={filterPressRelease} className="press-release-button">Press-Release</Button>
+              </div>
+              <div className="search">
+                <div className="searchBox">
+                  <SearchBox searchQuery={searchQuery} searchData={searchData} />
+                </div>
+              </div>
+            </div>
+          
             <Row>
               {news.length < 1 && (
                 <Col xs={12} sm={6}>
