@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MeshmapWrapper from "./meshmap.style";
+import { ThemeProvider } from "styled-components";
+import theme from "../../theme/app/themeStyles";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import { Field, Formik, Form } from "formik";
@@ -7,7 +9,7 @@ import axios from "axios";
 import Features from "../../components/Features-carousel";
 import MeshmapModes from "./meshmap-modes";
 import DiscussCallout from "../../sections/Discuss-Callout";
-import Catalog from "./catalog";
+import Catalog from "./meshmap-catalog";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
 import mesheryCloud from "../../assets/images/meshmap/MesheryCloud.png";
@@ -59,7 +61,9 @@ const Meshmap = () => {
   const MeshmapFormPage = () => {
     return (
       <div >
-        <MeshmapBanner />
+        <ThemeProvider theme={theme}>
+          <MeshmapBanner />
+        </ThemeProvider>
         <Container>
           <div className="mobile-modes">
             <Features
@@ -94,7 +98,7 @@ const Meshmap = () => {
           </div>
           <MeshmapModes />
           <Catalog />
-          
+
           <div className="banner-background">
 
             <Container>

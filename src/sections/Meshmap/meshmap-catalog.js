@@ -28,6 +28,9 @@ h2{
 	display: table;
 	margin: 5% auto 1%;
 }
+h2.heading {
+  text-transform: uppercase ;
+}
 .container{
 	margin: 4rem auto;
 	width: 120px;
@@ -123,58 +126,61 @@ const Catalog = () => {
   return (
     <CatalogWrapper>
       <Container>
-        <h2>Choose Your Content</h2>
+        <h2 className="heading">Choose Your Power-ups</h2>
         <img src={Options} alt="" />
 
-   	 <div className="container">
-    	 <div id="carousel">
-		 <div className="slide one">
-      	   <img src={Mutual_tls} />
-      	 </div>
-      	 <div className="slide two">
-      	   <img src={Retries} />
-      	 </div>
-      	 <div className="slide three">
-      	   <img src={Traces} />
-      	 </div>
-      	 <div className="slide four">
-      	   <img src={Denial} />
-      	 </div>
-   		 <div className="slide five">
-   		   <img src={Correlate_event} />
-   		 </div>
-   		 <div className="slide six">
-   		   <img src={Only_wagent} />
-   		 </div>
-   		 <div className="slide seven">
-   		   <img src={Node_agent} />
-   		 </div>
-   		 <div className="slide eight">
-   		   <img src={Single_tenant} />
-   		 </div>
-   		 <div className="slide nine">
-   		   <img src={Pre_provison} />
-   		 </div>
+        <div className="container">
+          <div id="carousel">
+            <div className="slide one">
+              <img src={Mutual_tls} />
+            </div>
+            <div className="slide two">
+              <img src={Retries} />
+            </div>
+            <div className="slide three">
+              <img src={Traces} />
+            </div>
+            <div className="slide four">
+              <img src={Denial} />
+            </div>
+            <div className="slide five">
+              <img src={Correlate_event} />
+            </div>
+            <div className="slide six">
+              <img src={Only_wagent} />
+            </div>
+            <div className="slide seven">
+              <img src={Node_agent} />
+            </div>
+            <div className="slide eight">
+              <img src={Single_tenant} />
+            </div>
+            <div className="slide nine">
+              <img src={Pre_provison} />
+            </div>
             <div className="slide ten">
-   		   <img src={Circuit_breaker} />
-    	</div>
+              <img src={Circuit_breaker} />
+            </div>
             <div className="slide eleven">
-   		   <img src={Retry_deadline} />
-    	</div>
+              <img src={Retry_deadline} />
+            </div>
             <div className="slide twelve">
-   		   <img src={Singleton} />
-    	</div>
+              <img src={Singleton} />
+            </div>
             <div className="slide thirteen">
-   		   <img src={Jwt_transformer} />
-    	</div>
+              <img src={Jwt_transformer} />
+            </div>
             <div className="slide fourteen">
-   		   <img src={Multicluster} />
-    	</div>
+              <img src={Multicluster} />
+            </div>
             <div className="slide fifteen">
-   		   <img src={Http_metrics} />
-    	</div>
-   		</div>
-  	</div>
+              <img src={Http_metrics} />
+            </div>
+          </div>
+        </div>
+        <p>
+          MeshMap not only allows you to create and verify your cloud native application and infrastructure configurations, but also integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.
+        </p>
       </Container>
     </CatalogWrapper>
   );

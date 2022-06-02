@@ -255,6 +255,14 @@ styles for meshmate-of-the-year-2020
     margin: 1rem 2rem 1rem 0rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
+  @media screen and (max-width: 768px) {
+    .slides-right, .slides-left, .slides{
+      width: 100%;
+      display: block;
+      margin: 1rem auto;
+    }
+  }
+
   .slides-left:hover{
     cursor:pointer;
   }
