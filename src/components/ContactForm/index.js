@@ -14,14 +14,17 @@ const ContactForm = () => {
       axios.post("https://hook.us1.make.com/nt0s4oiuntfomjsvvrom4x85sx3leg8h", {
         contactForm,
       });
+      window.scrollTo(0, 700);
     }
   }, [submit]);
 
   if (submit) {
     return (
       <ContactFormWrapper>
-        <h3 className="text-2xl">Thanks for contacting us!</h3>
-        <p className="text-md">We'll get back to you as soon as we can.</p>
+        <div className="form-submitted">
+          <h2 className="text-2xl">Thanks for contacting us!</h2>
+          <p className="text-md">We'll get back to you as soon as we can.</p>
+        </div>
       </ContactFormWrapper>
     );
   }
@@ -42,7 +45,6 @@ const ContactForm = () => {
           onSubmit={(values) => {
             setcontactForm(values);
             setSubmit(true);
-            window.scrollTo(0, 500);
           }}
         >
           <Form className="form" method="post">

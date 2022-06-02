@@ -2,11 +2,21 @@ import styled from "styled-components";
 
 const ContactFormWrapper = styled.section`
   margin-bottom: 2rem;
+
+  .form-submitted {
+    height: 70rem;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  }
   .text-2xl {
+    flex: 0 0 100%;
     font-size: 2.5rem;
     text-align: center;
   }
   .text-md {
+    flex: 0 0 100%;
     font-size: 1.2rem;
     margin-top: 10px;
     text-align: center;
