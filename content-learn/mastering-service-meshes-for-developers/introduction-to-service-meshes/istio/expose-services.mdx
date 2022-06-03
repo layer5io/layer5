@@ -108,6 +108,45 @@ echo "http://$(kubectl get nodes --selector=kubernetes.io/role!=master -o jsonpa
 
 Docker Desktop users please use `http://localhost/productpage` to access product page in your browser.
 
+In case you are using a managed kubernetes cluster like AKS, EKS, or GCE please follow the procedure described below:
+
+- Get the external IP of the service istio-ingressgateway using the following command:
+
+  ```sh
+  kubectl get service istio-ingressgateway -n istio-system
+  ```
+
+- Using Meshery, navigate to the Custom yaml page, and apply the manifest given below to allow all hosts instead of allowing bookinfo.meshery.io only and you are good to access the page using the following url `http://<external-ip of istio-ingressgateway>/productpage`.
+
+```yaml
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: bookinfo
+spec:
+  gateways:
+  - sample-app-gateway
+  hosts:
+  - "*"
+  http:
+  - match:
+    - uri:
+        exact: /productpage
+    - uri:
+        prefix: /static
+    - uri:
+        exact: /login
+    - uri:
+        exact: /logout
+    - uri:
+        prefix: /api/v1/products
+    route:
+    - destination:
+        host: productpage
+        port:
+          number: 9080
+```
+
 <h2 class="chapter-sub-heading"> Apply default destination rules</h2>
 
 Before we start playing with Istio's traffic management capabilities we need to define the available versions of the deployed services. They are called subsets, in destination rules.
