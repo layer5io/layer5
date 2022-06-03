@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import { BiLinkExternal } from "@react-icons/all-files/bi/BiLinkExternal";
 import Image from "../image";
-
 import { CardWrapper } from "./Card.style";
 
 const Card = ({ frontmatter, fields }) => {
