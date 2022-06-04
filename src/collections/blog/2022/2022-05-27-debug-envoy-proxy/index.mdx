@@ -56,6 +56,82 @@ The available log levels are:
 
 The default is <span className="highlight">info</span>.
 
+<h3>Setting Envoy logs in the Helm configuration</h3>
+
+<p>
+  The Consul helm chart uses <code>envoyExtraArgs:</code> to leverage Envoy command line options. One of the helpful options is <code>--component-log-level</code>. This provides granular control over setting log levels for Envoy components. In the example below, the components upstream, http, router and config are set to the debug log level. These four components are vital when debugging issues with requests between your services(sidecar proxies).
+</p>
+
+<div>
+  <pre>
+    <code>connectInject:
+  enabled: true
+  envoyExtraArgs: "--component-log-level upstream:debug,http:debug,router:debug,config:debug"</code>
+  </pre>
+</div>
+
+<p>
+  If you haven't set envoyExtraArgs: in consul-values.yaml just yet, you can set the log levels on the fly by using the following kubectl command:
+</p>
+
+<div>
+  <pre>
+    <code>$ kubectl exec pod/pod-name -c container-name -- curl -X POST http://localhost:19000/logging?config=debug</code>
+  </pre>
+</div>
+
+<p>Example:</p>
+
+<div>
+  <pre>
+    <code>$ kubectl exec pod/static-client-5bf4575d9c-zr2b -c static-client -- curl -X POST  http://localhost:19000/logging?config=debug</code>
+  </pre>
+</div>
+
+<p>
+  You will execute the kubectl command for each component. Make sure to append the correct component at the end of the curl command, i.e. <code>logging? component = debug</code>.
+</p>
+
+<p>
+  If curl is not able to be used in your pod, you can alternatively use <code>kubectl port-forward pod-name 19000</code> to make the Envoy admin accessible. From another terminal window, you can then curl to change the log levels. The output you receive in the terminal will show the modified component log levels.
+</p>
+
+<div>
+  <pre>
+    <code>$ curl -X POST http://localhost:19000/logging? component = debug</code>
+  </pre>
+</div>
+
+<h3>Access Envoy logs in Kubernetes</h3>
+
+<p>Accessing Envoy logs via pods can be done with the following command:</p>
+
+<div>
+  <pre>
+    <code>$ kubectl logs --follow pod/ pod-name -c envoy-sidecar</code>
+  </pre>
+</div>
+
+<p>The --follow flag provides a real time observation into Envoy logs. </p>
+
+<h3>Setting and Accessing Envoy logs when not using Helm.</h3>
+
+<p>The following command will start an envoy side car proxy, set the log level to debug with -l debug and capture Envoy logs in envoy_logs.txt. The .txt file will need to be created before executing this command.</p>
+
+<div>
+  <pre>
+    <code>$ consul connect envoy -sidecar-for counting-1 -- -l debug --log-path envoy_logs.txt</code>
+  </pre>
+</div>
+
+<p>To have granular control over the Envoy components that is needed to be debugged, use the following command:</p>
+
+<div>
+  <pre>
+    <code>$ consul connect envoy -sidecar-for counting-1 -- --log-path envoy_logs.txt --component-log-level upstream:debug,http:debug,router:debug,config:debug</code>
+  </pre>
+</div>
+
 <h2>Find your Istio Ingress Gateway</h2>
 <p>
   With Istio as your gateway, you should first look at <code>VirtualService</code> objects. These can show if the hosts are registered to the gateway correctly.
