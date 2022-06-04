@@ -232,6 +232,10 @@ const Webform = styled.div`
         background-color: #00B39F;
         color:white;
     }
+    .option.active{
+      background-color: #00B39F;
+      color:white;
+    }
 
     .black-box {
       display: flex;
