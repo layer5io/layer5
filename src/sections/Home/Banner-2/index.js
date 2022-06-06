@@ -4,15 +4,15 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
-// import ParticleComponent from "../../../reusecore/Particle";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import Banner3SectionWrapper from "./banner3.style";
 
-const Banner3 = () => {
+import Banner2SectionWrapper from "./banner2.style";
+
+const Banner2 = () => {
   return (
-    <Banner3SectionWrapper>
+    <Banner2SectionWrapper>
       <Container fullWidthSM>
         <Row>
           <Col sm={8} lg={8} className="section-title-wrapper">
@@ -22,27 +22,27 @@ const Banner3 = () => {
               leftAlign={true}
               UniWidth="100%"
             >
-              <h4>Industry-leading Cloud Native Management</h4>
+              <h4>Cloud Native Management</h4>
               <h1>
               expect <span>more</span> from your infrastructure
               </h1>
             </SectionTitle>
             <p>
-            an open source-first community of cloud native engineers
+            open source-first company and community of cloud native engineers
             </p>
             <VintageBox right={true} vintageOne={true}>
               <Button primary className="banner-btn one" title="Join in" url="/community">
                 <FaMapMarkedAlt size={21} className="icon-left" />
               </Button>
-              <Button primary className="banner-btn two" title="See our Projects" url="/projects">
+              <Button primary className="banner-btn two" title="See Meshery" url="/service-mesh-management/meshery">
                 <FiDownloadCloud size={21} className="icon-left" />
               </Button>
             </VintageBox>
           </Col>
         </Row>
       </Container>
-    </Banner3SectionWrapper>
+    </Banner2SectionWrapper>
   );
 };
 
-export default Banner3;
+export default Banner2;

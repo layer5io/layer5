@@ -28,6 +28,9 @@ h2{
 	display: table;
 	margin: 5% auto 1%;
 }
+h2.heading {
+  text-transform: uppercase ;
+}
 .container{
 	margin: 4rem auto;
 	width: 120px;
@@ -123,7 +126,7 @@ const Catalog = () => {
   return (
     <CatalogWrapper>
       <Container>
-        <h2>Choose Your Power-ups</h2>
+        <h2 className="heading">Choose Your Power-ups</h2>
         <img src={Options} alt="" />
 
         <div className="container">
@@ -175,6 +178,9 @@ const Catalog = () => {
             </div>
           </div>
         </div>
+        <p>
+          MeshMap not only allows you to create and verify your cloud native application and infrastructure configurations, but also integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.
+        </p>
       </Container>
     </CatalogWrapper>
   );

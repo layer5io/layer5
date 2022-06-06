@@ -7,8 +7,8 @@ import Card from "../../../components/Card";
 import { BlogPageWrapper } from "./blogList.style";
 import RssFeedIcon from "../../../assets/images/socialIcons/rss-sign.svg";
 import Pagination from "../../Resources/Resources-grid/paginate";
-import useDataList from "../Blog-grid/usedataList";
 import SearchBox from "../../../reusecore/Search";
+import useDataList from "../../../utils/usedataList";
 
 const BlogList = ({
   isListView,

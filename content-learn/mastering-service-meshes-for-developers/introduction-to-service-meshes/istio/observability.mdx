@@ -45,7 +45,7 @@ Once we have the port, we can append the IP of one of the nodes to get the host.
 
 The URL to run a load test against will be `http://<IP/hostname of any of the nodes in the cluster>:<ingress port>/productpage`
 
-**Please note:** If you are using Docker Desktop, please use the IP address of your host. You can leave the port blank. For example: `http://1.2.3.4/productpage`
+**Please note:** If you are using Docker Desktop, please use the IP address of your host. You can leave the port blank. For example: `http://1.2.3.4/productpage`. Managed kubernetes service users will need to use `http://<external-ip of istio-ingressgateway>/productpage` as done in expose services section.
 
 Use the computed URL above in Meshery, in the browser, to run a load test and see the results.
 

@@ -33,7 +33,7 @@ const useDataList = (
 
   const searchData = (e) => {
     const queryResult = search.search(e.target.value);
-    setSearchQuery(e.target.value);
+    setSearchQuery(e.target.value.trim());
     setSearchResults(queryResult);
   };
 

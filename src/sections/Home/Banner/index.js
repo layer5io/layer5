@@ -1,12 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
-import BannerDefault from "../Banner-default";
-import BannerAlt from "../Banner-alt";
+import React, { useEffect, useState } from "react";
 import Banner3 from "../Banner-3";
-import TopLevelWrapper from "./topBanner.style";
+import Banner2 from "../Banner-2";
+import Banner1 from "../Banner-1";
 
 const BannersList = [
-  <BannerDefault key={0} />,
-  <BannerAlt key={1} />,
+  <Banner1 key={0} />,
+  <Banner2 key={1} />,
   <Banner3 key={2} />
 ];
 
@@ -29,11 +28,9 @@ const RotationalBanner = () => {
   }, []);
 
   return (
-    <TopLevelWrapper>
-      <div className={mounted ? `banner${Banner}` : "banner0"}>
-        {BannersList[Banner]}
-      </div>
-    </TopLevelWrapper>
+    <>
+      {mounted ? BannersList[Number(Banner)] : <Banner1 />}
+    </>
   );
 };
 
