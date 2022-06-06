@@ -18,7 +18,7 @@ import { BlogWrapper } from "../../Blog.style.js";
 import Blockquote from "../../../../reusecore/Blockquote";
 
 import oldDesign from "./initial-design.png";
-import newDesign from "./new-design.webm";
+import newDesign from "./mesheryctl-docs.png";
 
 <BlogWrapper>
 
@@ -39,9 +39,9 @@ import newDesign from "./new-design.webm";
 
 <h3>Updated design</h3>
 <p>To tackle the shortcomings of the previous design, I was tasked to redesign the <code>mesheryctl</code> command reference page entirely. This was a big task at first glance to me, as I was a new contributor back then. Eventually after manipulating the reference section with help of great folks, I was able to pull off the task and the design was updated. </p> <br/>
-<video controls>
-    <source src={newDesign} type="video/webm" />
-</video>
+
+<img src={newDesign} />
+
 <p>The redesign work was done with help of HTML in markdown and with optimization in YAML code. The sample is given below...</p>
 
 ```
@@ -66,7 +66,7 @@ import newDesign from "./new-design.webm";
 ```
 
 <h3>Adding auto generation feature in reference</h3>
-<p>As time passed, we realised that the command reference missed something for a while, though the design has been changed. Then, we thought the idea of automating the generation of docs such that developers don't need to change the code in docs section while working towards <code>mesheryctl</code>. That's where we got to know that Cobra library (the library for CLI apps made using golang) has a feature to make doc pages automatically. So we decided to incorporate that feature into <code>mesheryctl</code> docs page as well! After making several changes and a PR, I was finally able to introduce the feature in the docs site!</p>
+<p>As time passed, we realized that the command reference missed something for a while, though the design has been changed. Then, we thought the idea of automating the generation of docs such that developers don't need to change the code in docs section while working towards <code>mesheryctl</code>. That's where we got to know that Cobra library (the library for CLI apps made using golang) has a feature to make doc pages automatically. So we decided to incorporate that feature into <code>mesheryctl</code> docs page as well! After making several changes and a PR, I was finally able to introduce the feature in the docs site!</p>
 
 ```
 var startCmd = &cobra.Command {
@@ -90,7 +90,7 @@ mesheryctl system start --yes
 	`,
 ```
 
-<p>Using this information provided above in each golang file, the markdown page is generated using Cobra CLI library and thus reducing the workload on the developer by automating via GitHub Actions. Example of the workflow is provided in <a href="https://github.com/meshery/meshery/blob/master/.github/workflows/mesheryctl-ci.yml#L73">this link</a>.</p>
+<p>Using this information provided above in each golang file, the markdown page is generated using Cobra CLI library and thus reducing the workload on the developer by automating via <a href="https://github.com/meshery/meshery/blob/master/.github/workflows/mesheryctl-ci.yml#L73">GitHub Actions</a>.</p>
 <br />
 <p>This is so far on how the <code>mesheryctl</code> command reference is evolved for now. And I hope that it'll continue to evolve in the field of documentation to serve the users to use Meshery in best way possible.</p>
 </BlogWrapper>
