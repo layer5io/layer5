@@ -9,6 +9,7 @@ import RelatedPosts from "../../../components/Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
 import BlogPostSignOff from "../BlogPostSignOff";
 import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
+import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
 
 const BlogSingle = ({data}) => {
   const { frontmatter, body, fields } = data.mdx;
@@ -78,6 +79,7 @@ const BlogSingle = ({data}) => {
                 ))}
               </div>
             </div>
+            <CTA_Bottom />
           </div>
           <RelatedPosts
             postType="blogs"
