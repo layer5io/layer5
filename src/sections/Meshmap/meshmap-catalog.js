@@ -32,7 +32,7 @@ margin: 6rem 0 9rem;
   box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.25);
   padding: 4rem;
   background-color: ${props => props.theme.secondaryColor};
-  background: linear-gradient(360deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
+  background: linear-gradient(180deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
   margin-bottom: 0rem;
 }
 p.caption {
@@ -56,6 +56,17 @@ h2{
 h2.heading {
   text-transform: uppercase ;
 }
+h3.containerCaption {
+    color: ${props => props.theme.saffronColor};
+    padding-top: .25rem;
+    margin-bottom: -.5rem;
+    font-size: 1.44rem;
+    font-weight: normal;
+    text-align: center;
+    span {
+        color: ${props => props.theme.saffronColor};
+    }
+}
 .container{
 	margin: 4rem auto;
 	width: 120px;
@@ -63,6 +74,7 @@ h2.heading {
 	position: relative;
 	perspective: 1000px;
 }
+
 #carousel{
 	width: 100%;
 	height: 100%;
@@ -75,12 +87,12 @@ h2.heading {
 }
 
 #carousel{
-img{
-	cursor: pointer;
-	transition: all .5s ease;
-}
-img:hover{
-  transform: scale(1.1,1.1);
+  img{
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+  img:hover{
+    transform: scale(1.1,1.1);
 }
 }
   
@@ -207,6 +219,8 @@ const Catalog = () => {
               </div>
             </div>
           </div>
+          <h3 className="containerCaption">Discover and publish patterns and best practices
+          </h3>
         </section>
 
       </Container>
