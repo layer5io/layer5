@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
-import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
-import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
-import { Link } from "gatsby";
 
-const MeshmapModesWrapper = styled.div`
+import { Container } from "../../reusecore/Layout";
+import MesheryPlatforms from "../../sections/Meshery/Meshery-platforms/index.js";
+import Docker from "../../assets/images/meshmap/docker_white.svg";
+import Kubernetes from "../../assets/images/meshmap/kubernetes_white.svg";
+import SelfHosted from "./images/datacenter-crash.svg";
+import CloudHosted from "./images/meshery-cloud.svg";
 
-  p.caption {
+const PlatformWrapper = styled.div`
+
+p.caption {
     margin: 0rem 0rem 2rem 0rem;
     font-style: normal ;
   }
@@ -214,6 +217,7 @@ const MeshmapModesWrapper = styled.div`
       font-size: 1.728rem;
       line-height: 2;
       margin-bottom: 0;
+      white-space: nowrap;
     }
   }
   
@@ -221,60 +225,48 @@ const MeshmapModesWrapper = styled.div`
     display: none;
   }
 
+  
 `;
 
-const MeshmapModes = () => {
+const Platform = () => {
   return (
-    <MeshmapModesWrapper>
-      <h2 className="heading">Choose Your Mode</h2>
+    <PlatformWrapper>
+      <h2 className="heading">Choose Your Deployment Model</h2>
       <p className="caption">
         {/* Discover and Visualize - any and all your cloud native infra and apps. */}
-        Collaboratively and design your Kubernetes clusters, service mesh deployments, and cloud native apps.
+        Get MeshMap where you need it.
       </p>
       {/* MeshMap supports 10+ service meshes. */}
       <section className="modes-wrapper">
         <div className="mode">
           <div className="mode-name">
-            <p>Designer</p>
+            <p>Self-hosted</p>
           </div>
           <div className="content">
-            <h1>World Class Visual Editor</h1>
-            <img src={designerImage} alt="MeshMap Designer" />
+            <h1>On-Premises Support</h1>
+            <img src={SelfHosted} alt="MeshMap Self-hosted" />
             <p>
-              Build your cloud native infrastructure with custom components and  drag-and-drop controls. Customize a service mesh deployment with application and Envoy filter from scratch.
+              Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.
             </p>
           </div>
         </div>
 
         <div className="mode">
           <div className="mode-name">
-            <p>Visualizer</p>
+            <p>Cloud</p>
           </div>
           <div className="content">
-            <h1>Deploy your cloud native infrastructure</h1>
-            <img src={visualizerImage} alt="MeshMap Visualizer" />
+            <h1>MeshMap as as Service</h1>
+            <img src={CloudHosted} alt="MeshMap Cloud" />
             <p>
-              Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services. Connect an interactive terminal to instances of your containers.
+              Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.
             </p>
           </div>
         </div>
       </section>
-
-      {/* <section className="modes-wrapper flip">
-        <div className="mode-catalog">
-          <div className="mode-name">
-            <p>Catalog</p>
-          </div>
-          <div className="content">
-            <h1>Deploy your cloud native infrastructure</h1>
-            <img src={catalog} alt="Catalog" />
-            <p>Create and share your own Kubernetes deployments and <Link to="/learn/service-mesh-books/service-mesh-patterns">service mesh patterns</Link> in MeshMap Designer or import from the catalog. </p>
-          </div>
-        </div>
-      </section> */}
-    </MeshmapModesWrapper>
+    </PlatformWrapper >
   );
 };
 
-export default MeshmapModes;
+export default Platform;
 

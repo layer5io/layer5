@@ -19,17 +19,53 @@ import Http_metrics from "../../assets/images/meshmap/catalog-card-images/http.s
 
 
 import Options from "../../assets/images/meshmap/options.png";
+import Options1 from "../../assets/images/meshmap/options1.png";
+import Options2 from "../../assets/images/meshmap/options2.png";
+// import OptionsRotated from "../../assets/images/meshmap/options-rotated.png";
 import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
 
 margin: 6rem 0 9rem;
+
+.catalog-wrapper {
+  box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.25);
+  padding: 4rem;
+  background-color: ${props => props.theme.secondaryColor};
+  background: linear-gradient(180deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
+  margin-bottom: 0rem;
+}
+p.caption {
+    margin: 0rem 0rem 2.5rem 0rem;
+    font-style: normal ;
+  }
+.powerupOptions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center ;
+  align-items: center;
+  img {
+    width: 50%;
+  }
+}
+
 h2{
 	display: table;
 	margin: 5% auto 1%;
 }
 h2.heading {
   text-transform: uppercase ;
+}
+h3.containerCaption {
+    color: ${props => props.theme.saffronColor};
+    padding-top: .25rem;
+    margin-bottom: -.5rem;
+    font-size: 1.44rem;
+    font-weight: normal;
+    text-align: center;
+    span {
+        color: ${props => props.theme.saffronColor};
+    }
 }
 .container{
 	margin: 4rem auto;
@@ -38,6 +74,7 @@ h2.heading {
 	position: relative;
 	perspective: 1000px;
 }
+
 #carousel{
 	width: 100%;
 	height: 100%;
@@ -50,12 +87,12 @@ h2.heading {
 }
 
 #carousel{
-img{
-	cursor: pointer;
-	transition: all .5s ease;
-}
-img:hover{
-  transform: scale(1.1,1.1);
+  img{
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+  img:hover{
+    transform: scale(1.1,1.1);
 }
 }
   
@@ -127,60 +164,65 @@ const Catalog = () => {
     <CatalogWrapper>
       <Container>
         <h2 className="heading">Choose Your Power-ups</h2>
-        <img src={Options} alt="" />
-
-        <div className="container">
-          <div id="carousel">
-            <div className="slide one">
-              <img src={Mutual_tls} />
-            </div>
-            <div className="slide two">
-              <img src={Retries} />
-            </div>
-            <div className="slide three">
-              <img src={Traces} />
-            </div>
-            <div className="slide four">
-              <img src={Denial} />
-            </div>
-            <div className="slide five">
-              <img src={Correlate_event} />
-            </div>
-            <div className="slide six">
-              <img src={Only_wagent} />
-            </div>
-            <div className="slide seven">
-              <img src={Node_agent} />
-            </div>
-            <div className="slide eight">
-              <img src={Single_tenant} />
-            </div>
-            <div className="slide nine">
-              <img src={Pre_provison} />
-            </div>
-            <div className="slide ten">
-              <img src={Circuit_breaker} />
-            </div>
-            <div className="slide eleven">
-              <img src={Retry_deadline} />
-            </div>
-            <div className="slide twelve">
-              <img src={Singleton} />
-            </div>
-            <div className="slide thirteen">
-              <img src={Jwt_transformer} />
-            </div>
-            <div className="slide fourteen">
-              <img src={Multicluster} />
-            </div>
-            <div className="slide fifteen">
-              <img src={Http_metrics} />
+        <p className="caption">MeshMap integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.</p>
+        <div className="powerupOptions">
+          <img src={Options1} alt="" />
+          <img src={Options2} alt="" />
+        </div>
+        <section className="catalog-wrapper ">
+          <div className="container">
+            <div id="carousel">
+              <div className="slide one">
+                <img src={Mutual_tls} />
+              </div>
+              <div className="slide two">
+                <img src={Retries} />
+              </div>
+              <div className="slide three">
+                <img src={Traces} />
+              </div>
+              <div className="slide four">
+                <img src={Denial} />
+              </div>
+              <div className="slide five">
+                <img src={Correlate_event} />
+              </div>
+              <div className="slide six">
+                <img src={Only_wagent} />
+              </div>
+              <div className="slide seven">
+                <img src={Node_agent} />
+              </div>
+              <div className="slide eight">
+                <img src={Single_tenant} />
+              </div>
+              <div className="slide nine">
+                <img src={Pre_provison} />
+              </div>
+              <div className="slide ten">
+                <img src={Circuit_breaker} />
+              </div>
+              <div className="slide eleven">
+                <img src={Retry_deadline} />
+              </div>
+              <div className="slide twelve">
+                <img src={Singleton} />
+              </div>
+              <div className="slide thirteen">
+                <img src={Jwt_transformer} />
+              </div>
+              <div className="slide fourteen">
+                <img src={Multicluster} />
+              </div>
+              <div className="slide fifteen">
+                <img src={Http_metrics} />
+              </div>
             </div>
           </div>
-        </div>
-        <p>
-          MeshMap not only allows you to create and verify your cloud native application and infrastructure configurations, but also integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.
-        </p>
+          <h3 className="containerCaption">Discover and publish patterns and best practices
+          </h3>
+        </section>
+
       </Container>
     </CatalogWrapper>
   );
