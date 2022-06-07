@@ -35,6 +35,10 @@ margin: 6rem 0 9rem;
   background: linear-gradient(360deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
   margin-bottom: 0rem;
 }
+p.caption {
+    margin: 0rem 0rem 2.5rem 0rem;
+    font-style: normal ;
+  }
 .powerupOptions {
   display: flex;
   flex-flow: row wrap;
@@ -42,10 +46,6 @@ margin: 6rem 0 9rem;
   align-items: center;
   img {
     width: 50%;
-  }
-  p.caption {
-    margin: 0rem 0rem 2.5rem 0rem;
-    font-style: normal ;
   }
 }
 
@@ -152,8 +152,8 @@ const Catalog = () => {
     <CatalogWrapper>
       <Container>
         <h2 className="heading">Choose Your Power-ups</h2>
+        <p className="caption">MeshMap integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.</p>
         <div className="powerupOptions">
-          <p className="caption">MeshMap integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.</p>
           <img src={Options1} alt="" />
           <img src={Options2} alt="" />
         </div>
