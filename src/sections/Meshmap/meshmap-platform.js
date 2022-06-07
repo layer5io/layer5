@@ -188,7 +188,7 @@ p.caption {
     h1 {
       margin: 0.5rem;
       text-transform: uppercase;
-      color: ${props => props.theme.primaryLightColor}; 
+      color: ${props => props.theme.saffronColor};
       font-size: 1.44rem;
       font-weight: normal;
     }
