@@ -10,6 +10,7 @@ import Features from "../../components/Features-carousel";
 import MeshmapModes from "./meshmap-modes";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import Catalog from "./meshmap-catalog";
+import Platform from "./meshmap-platform";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 import MeshmapBanner from "./meshmap_banner";
 import mesheryCloud from "../../assets/images/meshmap/MesheryCloud.png";
