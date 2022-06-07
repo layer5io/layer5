@@ -99,7 +99,7 @@ const Meshmap = () => {
           </div>
           <MeshmapModes />
           <Catalog />
-          {/* <Platform /> */}
+          <Platform />
 
           <div className="banner-background">
 
