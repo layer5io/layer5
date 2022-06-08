@@ -8,7 +8,6 @@ const BlogPageWrapper = styled.div`
     
 
     .post-container{
-        flex: 1 1 0%;
         width: 80%;
     }
 
@@ -47,17 +46,13 @@ const BlogPageWrapper = styled.div`
         }
     }
 
-    .authors-info-container{
-        background: rgba(201,252,246,.3);
-        height: auto;
-        margin: 3rem 0 0 10px;
-        flex: 1 1 0%;
-        height: 980px;
-        min-height: 929px;
-        max-height: 1500px;
+    .author-info-section{
         width: 20%;
-        padding: 1.8rem;
-        text-align: center;
+        margin: 3rem 0 0 10px;
+        .authors-info-container{
+            padding: 1.8rem;
+            background: rgba(201,252,246,.3);
+            text-align: center;
             h3{
                 font-size: 20px;
                 line-height: 32px;
@@ -134,7 +129,14 @@ const BlogPageWrapper = styled.div`
                     line-height: 32px;
                     color: #1E2117;
                 }
+                .share-icons-container{
+                    width: 60%;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: space-between;
+                }
             }
+        }
     }
 
     @media screen and (max-width: 360px){
@@ -146,17 +148,6 @@ const BlogPageWrapper = styled.div`
             }
         }
     }
-
-    @media (max-width: 1024px) { 
-         width: 95%;
-         margin: 0 auto;
-         .post-container{
-             width: 75%;
-         }
-         .authors-info-container{
-            width: 250%;
-         }
-     }
 
     @media (max-width: 770px) { 
         display: block;

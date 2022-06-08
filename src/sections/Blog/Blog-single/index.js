@@ -2,6 +2,9 @@ import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
+import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
+import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -75,12 +78,6 @@ const BlogSingle = ({data}) => {
 
   const authorInformation = authors.nodes.filter((author) => author.frontmatter.name === frontmatter.author)[0];
 
-  
-
-  console.log({
-    authorInformation
-  });
-
   return (
     <BlogPageWrapper>
       <div className="post-container">
@@ -122,20 +119,27 @@ const BlogSingle = ({data}) => {
         </div>
       </div>
       {authorInformation && (
-        <div className="authors-info-container">
-          <h3>About the author</h3>
-          <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover" }} alt={authorInformation.frontmatter?.name} className="authors-head-shot" />
-          <h5>{authorInformation.frontmatter?.name}</h5>
-          <p>
-            {authorInformation.frontmatter?.bio}
-          </p>
-          <div className="authors-info-meshery">
-            <h6>MeshMap</h6>
-            <p>MeshMap is the world's only visual designer for Kubernetes and service mesh deployments.</p>
-            <Link to="/service-mesh-management/meshery">Get Started</Link>
-          </div>
-          <div className="share-section">
-            <p>Share</p>
+        <div className="author-info-section">
+          <div className="authors-info-container">
+            <h3>About the author</h3>
+            <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover" }} alt={authorInformation.frontmatter?.name} className="authors-head-shot" />
+            <h5>{authorInformation.frontmatter?.name}</h5>
+            <p>
+              {authorInformation.frontmatter?.bio}
+            </p>
+            <div className="authors-info-meshery">
+              <h6>MeshMap</h6>
+              <p>MeshMap is the world's only visual designer for Kubernetes and service mesh deployments.</p>
+              <Link to="/service-mesh-management/meshery">Get Started</Link>
+            </div>
+            <div className="share-section">
+              <p>Share</p>
+              <div className="share-icons-container">
+                <AiOutlineTwitter />
+                <FaFacebookF />
+                <FaLinkedin />
+              </div>
+            </div>
           </div>
         </div>
       )}
