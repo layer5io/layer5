@@ -179,7 +179,49 @@ export const ProjectWrapper = styled.div`
         
     }
     .project__card.seven{
-        grid-column: 3/8;
+        grid-column: 3/6;
+        grid-row: 7/8;
+        img{
+            width: 150px;
+            align-self: center;
+            margin-top: 8px;
+            @media only screen and (min-width: 780px) {
+                align-self: flex-start;
+            } 
+        }
+        h5{
+            align-self: center;
+            margin-top: 1rem;
+            @media only screen and (min-width: 780px) {
+                align-self: flex-end;
+                padding-top:  40px;
+            }
+        }
+    }
+    .project__card-container-seven{
+        max-width: 100%;
+        height: 10rem;
+        width: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        img{
+            max-width: 200%;
+            max-height: 100%;
+        }
+        h5{
+            font-weight: 600;
+            text-align: center;
+            
+        }
+        @media only screen and (min-width: 741px) {
+            width: 80%;
+            place-content: center;
+        }
+        
+    }
+    .project__card.eight{
+        grid-column: 6/8;
         grid-row: 7/8;
         img{
             width: 90px;
@@ -194,11 +236,10 @@ export const ProjectWrapper = styled.div`
             margin-top: 1rem;
             @media only screen and (min-width: 780px) {
                 align-self: flex-end;
-                padding-top:  20px;
             }
         }
     }
-    .project__card-container-seven{
+    .project__card-container-eight{
         max-width: 100%;
         height: 10rem;
         width: 12rem;

@@ -6,6 +6,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 import { ProjectWrapper } from "./projectGrid.style";
 import DockerExtensionCTA from "../../Docker-Meshery/docker-extension-CTA";
 
+import extension from "../../../assets/images/docker-extension/Docker_animated.svg"
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import landscape from "../../../assets/images/landscape/layer5_landscape_green.svg";
 import imagehub from "../../../assets/images/image-hub/layer5-image-hub.svg";
@@ -74,10 +75,28 @@ const ProjectPage = () => {
               </div>
             </Link>
             <Link
-              to="/learn/service-mesh-books/service-mesh-patterns"
+              to="/docker-extension-meshery"
               className="project__card seven"
             >
               <div className="project__card-container-seven">
+                <Row>
+                  <Col lg={4} md={12} sm={12} className="image">
+                    <img
+                      src={extension}
+                      alt="Meshery Docker Extension"
+                    />
+                  </Col>
+                  <Col lg={8} md={12} sm={12}>
+                    <h5> Meshery Docker Extension </h5>
+                  </Col>
+                </Row>
+              </div>
+            </Link>
+            <Link
+              to="/learn/service-mesh-books/service-mesh-patterns"
+              className="project__card eight"
+            >
+              <div className="project__card-container-eight">
                 <Row>
                   <Col lg={4} md={12} sm={12} className="image">
                     <img
