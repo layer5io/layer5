@@ -2,6 +2,9 @@ import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
+import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
+import { GrFacebookOption } from "@react-icons/all-files/gr/GrFacebookOption";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -76,11 +79,6 @@ const BlogSingle = ({data}) => {
   const authorInformation = authors.nodes.filter((author) => author.frontmatter.name === frontmatter.author)[0];
 
   
-
-  console.log({
-    authorInformation
-  });
-
   return (
     <BlogPageWrapper>
       <div className="post-container">
@@ -136,6 +134,11 @@ const BlogSingle = ({data}) => {
           </div>
           <div className="share-section">
             <p>Share</p>
+            <div className="share-icons">
+              <AiOutlineTwitter />
+              <GrFacebookOption />
+              <FaLinkedin />
+            </div>
           </div>
         </div>
       )}
