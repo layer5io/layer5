@@ -8,6 +8,7 @@ const BlogPageWrapper = styled.div`
     
 
     .post-container{
+        flex: 1 1 0%;
         width: 80%;
     }
 
@@ -50,6 +51,7 @@ const BlogPageWrapper = styled.div`
         background: rgba(201,252,246,.3);
         height: auto;
         margin: 3rem 0 0 10px;
+        flex: 1 1 0%;
         height: 980px;
         min-height: 929px;
         max-height: 1500px;
@@ -124,8 +126,6 @@ const BlogPageWrapper = styled.div`
                 }
             }
             .share-section{
-                width: 80%;
-                margin: 0 auto;
                 p{
                     font-family: 'Qanelas Soft';
                     font-style: normal;
@@ -133,10 +133,6 @@ const BlogPageWrapper = styled.div`
                     font-size: 24px;
                     line-height: 32px;
                     color: #1E2117;
-                }
-                .share-icons{
-                    display: flex;
-                    justify-content: space-between;
                 }
             }
     }
