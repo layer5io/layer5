@@ -171,7 +171,7 @@ export const ProjectWrapper = styled.div`
     .image{
         margin: 0 auto;
         @media only screen and (max-width: 991px) {
-            padding-left: 40%;
+            padding-left:20%;
         }
         @media only screen and (max-width: 741px) {
             padding-left: 30%;
@@ -242,6 +242,7 @@ export const ProjectWrapper = styled.div`
             align-self: center;
             margin-top: 1rem;
             @media only screen and (min-width: 780px) {
+                align-self: flex-end;
             }
         }
     }
