@@ -10,6 +10,7 @@ const CTA_BottomWrapper = styled.div`
     height: 16rem;
     margin: 2rem auto 1.5rem;
     box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
 
     a {
         display: block;
@@ -20,6 +21,7 @@ const CTA_BottomWrapper = styled.div`
         height: 16rem;
         object-fit: cover;
         pointer-events: none;
+        border-radius: 0 0.5rem 0.5rem 0;
     }
 
     .cta-content {
