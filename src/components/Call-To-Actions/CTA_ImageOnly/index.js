@@ -11,12 +11,14 @@ const CTA_ImageOnlyWrapper = styled.div`
         display: block;
         height: 15rem;
         background: rgb(201, 252, 246);
+        border-radius: 0.5rem;
     }
 
     img {
         width: 20rem;
         height: 15rem;
         pointer-events: none;
+        border-radius: 0.5rem;
     }
 
     @media screen and (max-width: 500px) {
@@ -32,10 +34,10 @@ export const CTA_ImageOnly = ({ alt, image, url, blend }) => {
   return (
     <CTA_ImageOnlyWrapper>
       <Link to={url ? url : defaultURL}>
-        <img 
+        <img
           src={image ? image : image_src}
           alt={alt ? alt : "Alt Text"}
-          style={{opacity: blend ? "0.7" : "1"}}
+          style={{ opacity: blend ? "0.7" : "1" }}
         />
       </Link>
     </CTA_ImageOnlyWrapper>

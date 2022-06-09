@@ -10,6 +10,7 @@ const CTA_FullWidthWrapper = styled.div`
     height: 16rem;
     margin: 1.5rem auto;
     box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
 
     a {
         display: block;
@@ -20,6 +21,7 @@ const CTA_FullWidthWrapper = styled.div`
         height: 16rem;
         object-fit: cover;
         pointer-events: none;
+        border-radius: 0.5rem 0 0 0.5rem;
     }
 
     .cta-content {
@@ -76,7 +78,7 @@ export const CTA_FullWidth = ({ alt, button_text, content, image, url }) => {
       <img src={image ? image : image_src} alt={alt ? alt : "Alt Text"} />
       <div className="cta-content">
         <p>{content ? content : defaultContent}</p>
-        <Button primary title={button_text ? button_text : "Join Us"} url={url ? url : defaultURL} external ={true} />
+        <Button primary title={button_text ? button_text : "Join Us"} url={url ? url : defaultURL} external={true} />
       </div>
     </CTA_FullWidthWrapper>
   );
