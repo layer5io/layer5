@@ -98,15 +98,10 @@ export const ProjectWrapper = styled.div`
         img{
             width: 90px;
             align-self: center;
-            @media only screen and (max-width: 741px) {
-                self-align: center
-                margin-top: 3rem;   
-              }
         }
         h5{
             margin-top: 10px;
         }
-        
     }
     // Meshery
     .project__card.two{
