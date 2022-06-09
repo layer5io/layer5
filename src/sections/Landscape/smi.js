@@ -92,7 +92,7 @@ function SMI_Compatibility() {
   }
 
   return (
-    <Tabs defaultFocus style={{ overflow: "auto", whiteSpace: "nowrap"}} className="landscape-table">
+    <Tabs style={{ overflow: "auto", whiteSpace: "nowrap"}} className="landscape-table">
       <TabList>
         {
           Object.keys(smiData).map((ver, ind) => {
