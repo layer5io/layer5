@@ -185,16 +185,19 @@ export const ProjectWrapper = styled.div`
             width: 150px;
             align-self: center;
             margin-top: 8px;
+        margin: auto;
+
             @media only screen and (min-width: 780px) {
                 align-self: flex-start;
+            margin-top: 15px;
+
+                
             } 
         }
         h5{
             align-self: center;
-            margin-top: 1rem;
             @media only screen and (min-width: 780px) {
-                align-self: flex-end;
-                padding-top:  40px;
+                padding-top:  0px;
             }
         }
     }
@@ -206,10 +209,14 @@ export const ProjectWrapper = styled.div`
         flex-direction: column;
         justify-content: space-between;
         img{
+            align-self: center;
+
             max-width: 200%;
             max-height: 100%;
+
         }
         h5{
+            top: 0;
             font-weight: 600;
             text-align: center;
             
@@ -235,7 +242,6 @@ export const ProjectWrapper = styled.div`
             align-self: center;
             margin-top: 1rem;
             @media only screen and (min-width: 780px) {
-                align-self: flex-end;
             }
         }
     }
@@ -363,6 +369,15 @@ export const ProjectWrapper = styled.div`
             }
         }
         .project__card.seven{
+            img{
+                margin-top: 15px;
+                width: 150%;
+            }
+            h5{ 
+                margin-top:30px;
+            }
+        }
+        .project__card.eight{
             img{
                 margin-top: 10px;
             }
