@@ -151,9 +151,6 @@ const Banner1SectionWrapper = styled.section`
             }
         }
     }
-    @media only screen and (max-width: 670px) {
-
-    }
     @media only screen and (max-width: 480px) {
         padding: 2rem 0;
         .vintage-box{
