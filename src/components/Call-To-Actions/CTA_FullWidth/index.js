@@ -39,7 +39,19 @@ const CTA_FullWidthWrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 1200px) and (min-width: 700px) {
+        button {
+            min-width: 6.5rem;
+        }
+    }
+
+    @media screen and (max-width: 699px) {
+        button {
+            min-width: auto;
+        }
+    }
+
+    @media screen and (max-width: 550px) {
         display: block;
         width: 18rem;
         height: 18rem;
