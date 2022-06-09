@@ -72,7 +72,7 @@ The following list of instructions pertains to commonplace site updates by contr
 ## Adding News
 
   1. In order to add/update news items, fork this repository, clone it, create a new branch, and navigate to the `src/collections/news` directory.
-  2. Create a copy of the [news template](https://github.com/layer5io/layer5/tree/master/src/collections/news/0000-00-00-news-template).
+  2. Create a copy of the [news template](https://github.com/layer5io/layer5/tree/master/src/collections/news/news-template/0000-00-00-news-title).
   3. Follow the instructions included in the news template and name the new file after the title of the news article.
   4. Entries will be listed in chronological order automatically.
 
