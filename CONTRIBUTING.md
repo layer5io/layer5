@@ -78,7 +78,7 @@ The following list of instructions pertains to commonplace site updates by contr
 
 ## Updating/Creating a Community Member Profile 
 
-Layer5 community members are an integral part of what makes Layer5 and its projects successful. Prominently highlighting our members and their works is something that we think is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Fcommunity&template=New+Member+Profile.md&title=%5BCommunity%5D+Member+Profile%3A) which has all the instructions that one may need for this.
+Layer5 community members are an integral part of what makes Layer5 and its projects successful. Prominently highlighting our members and their works is something that we think is important. When adding a new or updating an existing community member profile, be sure to use the [Community Member Profile issue template](https://github.com/layer5io/layer5/blob/7d4665854c33804630532ccf55da19b7210046ee/.github/ISSUE_TEMPLATE/community_member_profile.md) which has all the instructions that one may need for this.
 
 Note that the [Community Member Profile template](https://github.com/layer5io/layer5/tree/master/src/collections/members/_member-profile-template) is helpful when adding new or updating existing community member profiles. You can easily understand how the template is used by reviewing other profiles.
 
