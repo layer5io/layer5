@@ -5,6 +5,8 @@ import { SRLWrapper } from "simple-react-lightbox";
 import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
 import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
+import { useLocation } from "@reach/router";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -67,7 +69,7 @@ const BlogSingle = ({data}) => {
     }  `
   );
 
-  
+  const location = useLocation();
   const posts = blogData.nodes;
   const relatedPosts = new RelatedPostsFactory (
     posts, fields.slug
@@ -78,9 +80,12 @@ const BlogSingle = ({data}) => {
 
   const authorInformation = authors.nodes.filter((author) => author.frontmatter.name === frontmatter.author)[0];
 
+  const shareQuote = `Check out this post from layer5 ${frontmatter.title}`;
+
+
   return (
     <BlogPageWrapper>
-      <div className="post-container">
+      <div className={`${authorInformation ? "post-container" : ""}`}>
         <PageHeader
           title={frontmatter.title}
           subtitle={frontmatter.subtitle}
@@ -122,7 +127,9 @@ const BlogSingle = ({data}) => {
         <div className="author-info-section">
           <div className="authors-info-container">
             <h3>About the author</h3>
-            <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover" }} alt={authorInformation.frontmatter?.name} className="authors-head-shot" />
+            <div className="authors-head-shot">
+              <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover" }} alt={authorInformation.frontmatter?.name} />
+            </div>
             <h5>{authorInformation.frontmatter?.name}</h5>
             <p>
               {authorInformation.frontmatter?.bio}
@@ -135,9 +142,15 @@ const BlogSingle = ({data}) => {
             <div className="share-section">
               <p>Share</p>
               <div className="share-icons-container">
-                <AiOutlineTwitter />
-                <FaFacebookF />
-                <FaLinkedin />
+                <TwitterShareButton url={location.href} title={shareQuote}>
+                  <AiOutlineTwitter />
+                </TwitterShareButton>
+                <FacebookShareButton url={location.href} quote={shareQuote}>
+                  <FaFacebookF />
+                </FacebookShareButton>
+                <LinkedinShareButton url={location.href}>
+                  <FaLinkedin />
+                </LinkedinShareButton>
               </div>
             </div>
           </div>

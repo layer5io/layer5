@@ -48,11 +48,12 @@ const BlogPageWrapper = styled.div`
 
     .author-info-section{
         width: 20%;
-        margin: 3rem 0 0 10px;
+        margin: 3rem 0 3rem 10px;
         .authors-info-container{
             padding: 1.8rem;
             background: rgba(201,252,246,.3);
             text-align: center;
+            margin-bottom: 3rem;
             h3{
                 font-size: 20px;
                 line-height: 32px;
@@ -62,9 +63,15 @@ const BlogPageWrapper = styled.div`
             .authors-head-shot{
                 border: 5px solid #00D3A9;
                 border-radius: 100%;
-                width: 150px;
-                height: 150px;
-                margin: 1.3rem 0;
+                width: 60%;
+                height: 60%;
+                margin: 1.3rem auto;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
             h5{
                 font-family: 'Qanelas Soft';
@@ -139,6 +146,25 @@ const BlogPageWrapper = styled.div`
         }
     }
 
+     @media (max-width: 770px) { 
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+         .post-container{
+             width: 100%;
+         }
+         .author-info-section{
+            width: 60%;
+            margin: 0 auto;
+             .authors-info-container{
+                .authors-head-shot{
+                    width: 40%;
+                    height: 40%;
+                }
+             }
+         }
+     }
+
     @media screen and (max-width: 360px){
         .tags{
             span{
@@ -147,18 +173,18 @@ const BlogPageWrapper = styled.div`
                 align-self: flex-start;
             }
         }
+        .author-info-section{
+            width: 90%;
+            margin: 0 auto;
+             .authors-info-container{
+                .authors-head-shot{
+                    width: 40%;
+                    height: 40%;
+                }
+             }
+         }
     }
 
-    @media (max-width: 770px) { 
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-         .post-container{
-             width: 100%;
-         }
-         .authors-info-container{
-             display: none;
-         }
-     }
+   
 `;
 export default BlogPageWrapper;

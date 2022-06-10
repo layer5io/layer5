@@ -77,6 +77,7 @@
     "react-modal": "^3.14.4",
     "react-scroll": "^1.8.4",
     "react-select": "^5.3.1",
+    "react-share": "^4.4.0",
     "react-slick": "^0.28.1",
     "react-table": "^7.7.0",
     "react-tabs": "^3.2.3",
