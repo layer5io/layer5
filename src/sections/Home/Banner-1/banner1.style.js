@@ -109,9 +109,9 @@ const Banner1SectionWrapper = styled.section`
                 margin: 0 0 1rem 0;
             }
             h2 {
-                font-size: 2rem;
+                font-size: 1.6rem;
                 margin: 0 auto;
-                width: 80%;
+                width: 90%;
             }
         }
         p { 
@@ -134,15 +134,15 @@ const Banner1SectionWrapper = styled.section`
         .section-title { 
             h1 { 
                 margin: 0rem;
-                font-size: 2rem;
+                font-size: 1.82rem;
             }
             h2 {
-                font-size: 1.4rem;
-                width: 55%;
+                font-size: 1.15rem;
+                width: 80%;
             }
         }
         p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             width:60%;
         }
         .vintage-box{
@@ -167,7 +167,7 @@ const Banner1SectionWrapper = styled.section`
                 font-size: 1.8rem;
             }
             h2 {
-                font-size: 1.3rem;
+                font-size: 1rem;
                 width: 80%;
             }
         }
@@ -194,7 +194,7 @@ const Banner1SectionWrapper = styled.section`
                 /* margin: 0 0 30px 0; */
             }
             h2 {
-                font-size: 1.3rem;
+                font-size: 1rem;
                 width:100%;
             }
         }
