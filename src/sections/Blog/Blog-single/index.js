@@ -58,6 +58,7 @@ const BlogSingle = ({data}) => {
         category={frontmatter.category}
         author={{ name: frontmatter.author }}
         thumbnail={frontmatter.thumbnail}
+        date={frontmatter.date}
       />
       <div className="single-post-wrapper">
         <Container>
