@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 10 Jun 2022 18:58:28 GMT</lastBuildDate><item><title><![CDATA[Intel, Layer 5 Announce MeshMark to Quantify Cloud-Native Performance]]></title><description><![CDATA[var _excluded = ["components"];
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Layer5 News]]></title><description><![CDATA[Expect more from your infrastructure. Cloud native, open source software for your cloud native infrastructure and applications. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure.]]></description><link>https://layer5.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 11 Jun 2022 19:34:51 GMT</lastBuildDate><item><title><![CDATA[Intel, Layer 5 Announce MeshMark to Quantify Cloud-Native Performance]]></title><description><![CDATA[var _excluded = ["components"];
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -214,6 +214,7 @@ var _frontmatter = {
   "author": "The Newsroom",
   "thumbnail": "./docker-extension-meshery.png",
   "category": "Press Release",
+  "presskit": "/press/kits/Meshery-Docker-Extension-press-kit.zip",
   "description": "Layer5, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure: service meshes. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any service mesh.",
   "tags": ["Announcements", "Meshery", "Docker"],
   "type": "News",
@@ -510,6 +511,7 @@ var _frontmatter = {
   "author": "The Newsroom",
   "category": "Press Release",
   "thumbnail": "../../../../assets/images/service-mesh-performance/horizontal/smp-dark-text-side.png",
+  "presskit": "/press/kits/CNCF-Adopts-SMP-press-kit.zip",
   "published": true,
   "type": "News",
   "product": "Service Mesh Performance",
@@ -566,6 +568,7 @@ var _frontmatter = {
   "author": "The Newsroom",
   "category": "Press Release",
   "thumbnail": "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.svg",
+  "presskit": "/press/kits/CNCF-Adopts-Meshery-press-kit.zip",
   "published": true,
   "type": "News",
   "product": "Meshery",
