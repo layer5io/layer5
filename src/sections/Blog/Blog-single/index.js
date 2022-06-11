@@ -64,6 +64,7 @@ const BlogSingle = ({data}) => {
               publicURL
             }
           }
+          slug
         }
       }
     }  `
@@ -81,7 +82,6 @@ const BlogSingle = ({data}) => {
   const authorInformation = authors.nodes.filter((author) => author.frontmatter.name === frontmatter.author)[0];
 
   const shareQuote = `Check out this post from layer5 ${frontmatter.title}`;
-
 
   return (
     <BlogPageWrapper>
@@ -128,7 +128,9 @@ const BlogSingle = ({data}) => {
           <div className="authors-info-container">
             <h3>About the author</h3>
             <div className="authors-head-shot">
-              <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover" }} alt={authorInformation.frontmatter?.name} />
+              <Link to={`/community/members/${authorInformation.slug}`}>
+                <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover" }} alt={authorInformation.frontmatter?.name} className="authors-image" />
+              </Link>
             </div>
             <h5>{authorInformation.frontmatter?.name}</h5>
             <p>

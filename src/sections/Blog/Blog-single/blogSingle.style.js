@@ -61,17 +61,21 @@ const BlogPageWrapper = styled.div`
                 color: #1E2117
             }
             .authors-head-shot{
-                border: 5px solid #00D3A9;
-                border-radius: 100%;
-                width: 60%;
-                height: 60%;
+                width: 150px;
+                height: 150px;
                 margin: 1.3rem auto;
+                border: 5px solid #00D3A9;
+                -webkit-border-radius: 50%;
+                -khtml-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
                 overflow: hidden;
-                img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                a{
+                    img{
+                        clip-path: circle(50% at 50% 50%);
+                    }
                 }
+                
             }
             h5{
                 font-family: 'Qanelas Soft';
@@ -154,14 +158,7 @@ const BlogPageWrapper = styled.div`
              width: 100%;
          }
          .author-info-section{
-            width: 60%;
-            margin: 0 auto;
-             .authors-info-container{
-                .authors-head-shot{
-                    width: 40%;
-                    height: 40%;
-                }
-             }
+           display: none;
          }
      }
 
