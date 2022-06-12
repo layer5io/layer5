@@ -240,6 +240,52 @@ const data = {
         "Many interns become open source maintainers, and have ongoing responsibility to steward Layer5 and CNCF projects.",
       ],
     },
+
+    {
+      question: "How can I upgrade, downgrade or cancel my plan?",
+      category: "Pricing",
+      answer: [
+        "To make changes to your plan, please get in touch with sales.",
+      ],
+    },
+    {
+      question: "What payment methods do you offer?",
+      category: "Pricing",
+      answer: [
+        "We accept credit card payments.",
+      ],
+    },
+    {
+      question: "Do I need to enter my credit card details to sign up to a free plan?",
+      category: "Pricing",
+      answer: [
+        "No. A credit card is required only if you want to upgrade to a higher plan.",
+      ],
+    },
+    {
+      question: "What is the refund policy?",
+      category: "Pricing",
+      answer: [
+        "Users can cancel or downgrade at any time.",
+        " For downgrades, unused monthly funds will be prorated to the next month's bill.",
+        "For cancellations, users will receive refunds to the credit card on file for the days they did not use the service.",
+      ],
+    },
+    {
+      question: "Can I start with Free and upgrade later?",
+      category: "Pricing",
+      answer: [
+        "Yes! You are more than welcome to try the Free version.",
+        "If you and your team want to collaborate or need more advanced capabilities, then try the Enterprise Edition. To upgrade to Enterprise, please get in touch with us.",
+      ],
+    },
+    {
+      question: "What happens if I don't renew my subscription?",
+      category: "Pricing",
+      answer: [
+        "The product will stop monitoring, but you can still log in and see previously stored data.",
+      ],
+    },
   ],
 };
 export default data;
