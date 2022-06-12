@@ -19,13 +19,16 @@ const settings = {
 
 const ReviewsWrapper = styled.div`
 .slider{
-  padding: 4rem 0;
+  padding: 2rem 0 0.5rem;
   background: rgb(0, 179, 158, 0.1);
   cursor: pointer;
   h2{
     text-align: center;
     padding: 0 0 2rem;
   }
+    .type-one-wrapper{
+      margin: 0 1rem;
+    }
 }
 
 `;
@@ -52,7 +55,7 @@ const Reviews = () => {
             image={Otto}
           />
           <Customers 
-            type="3"
+            type="1"
             quote="While speed is one of Linkerd's core competitive advantages, Linkerd provides much more than just an ultrafast data plane. We are pleased to support MeshMark's establishment of a higher order set of functional considerations that incorporate value into the performance equation."
             person="William Morgan"
             title="CEO of Buoyant and one of the creators of Linkerd, the CNCF's flagship service mesh" 

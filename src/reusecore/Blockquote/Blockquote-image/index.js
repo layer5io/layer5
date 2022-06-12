@@ -58,7 +58,7 @@ const Customers = (props) => {
         </section>
         :
         props.type === "2" ?
-          <section className="t-bq-section">
+          <section className="bq-section">
             <div className="type-one-wrapper type-one-wrapper-boxed">
               <Link to={isSlugAvailable ? `/community/members/${slugify(props.person)}` : "/community"} className="links">
                 <div className="bq-quote type-two-quote">
@@ -88,7 +88,7 @@ const Customers = (props) => {
 
           :
 
-          <section className="t-bq-section">
+          <section className="bq-section">
             <div className="type-one-wrapper type-one-wrapper-boxed">
               <Link to={isSlugAvailable ? `/community/members/${slugify(props.person)}` : "/community"} className="links">
                 <div className="bq-quote type-three-quote">
