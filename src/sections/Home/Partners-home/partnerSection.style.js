@@ -12,11 +12,7 @@ const PartnerItemWrapper = styled.section`
         }
     }
     .row{
-        flex-wrap: nowrap;
-        @media(max-width: 1400px){
-            flex-wrap: wrap;
-        }
-
+        flex-wrap: wrap;
         .col{
               flex: 0 0 12%;
               margin-left:0.5rem;
