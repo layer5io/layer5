@@ -85,6 +85,12 @@ const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnai
           <div className="breadcrumbs post">
             <h5>By:</h5>
             <span>{authorField(author, isSlugAvailable)}</span>
+            {date && (
+              <span>
+                <h5>Published Date:</h5>
+                <p>{date}</p>
+              </span>
+            )}
           </div>
         )}
         {/*{!author && path && (*/}
