@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const NavigationWrap = styled.header`
 
-  background-color: #F3FFFD;
+  background-color:  ${props => props.theme.body};
   position: sticky;
   width: 100%;
   z-index: 9999;
   top: 0;
-  transition: all 0.3s ease 0s;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   .nav-container {
     display: flex;
@@ -51,7 +51,7 @@ const NavigationWrap = styled.header`
   }
   .dropdown {
     position: absolute;
-    background: white;
+    background: ${props => props.theme.body};
     opacity: 0;
     border: 1px solid #f5f5f5;
     border-radius: 50px;
@@ -89,11 +89,11 @@ const NavigationWrap = styled.header`
     display: grid;
     grid-template-columns: 35% 65%;
     .hr {
+      background: black;
       display: flex;
       flex-direction: column;
       position: relative;
       padding: 3em;
-      background: #fafafa;
       border-radius: 50px 0 0 50px;
       .sub-item {
         padding: 0;
@@ -134,7 +134,6 @@ const NavigationWrap = styled.header`
     }
     .nav-display {
       border-left: 2px solid #f1f1f1;
-      background: #ffffff;
       padding-top: 3em;
       border-radius: 0 50px 50px 0;
       display: grid;
@@ -298,7 +297,6 @@ const NavigationWrap = styled.header`
   }
   &.scrolled {    
     box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px;
-    background: white;
     .nav {
       .nav-item{
         a {

@@ -4,6 +4,7 @@ export const CardWrapper = styled.div`
     .post-block{
         margin-bottom: 2rem;
         border-radius: 0.5rem;
+        background-Color: ${props => props.theme.projectCardColor};
         box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease-in;
         &:hover{
@@ -84,7 +85,6 @@ export const CardWrapper = styled.div`
     .post-title{
         font-size: 1.4rem;
         font-weight: 400;
-        color: black;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -98,7 +98,7 @@ export const CardWrapper = styled.div`
             text-align: end;
         }
         .author, p{
-            color: rgba(0, 0, 0, 0.4);
+            color: ${props => props.theme.communityText};
             font-size: 0.9rem;
             font-weight: 400;
             flex: auto;

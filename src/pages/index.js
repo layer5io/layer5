@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import {ThemeProvider} from "styled-components";
-
 import Layout from "../components/layout";
-
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
 import Banner from "../sections/Home/Banner";
@@ -16,13 +14,26 @@ import Partners from "../sections/Home/Partners-home";
 import Footer from "../sections/General/Footer";
 import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
 import CloudNativeLeaders from "../sections/Home/Cloud-Native";
 import SoSpecial from "../sections/Home/So-Special-Section";
+import darktheme from "../theme/app/darkThemeStyles";
+import lighttheme from "../theme/app/themeStyles";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
+
 
 const IndexPage = () => { 
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
   const schema= {
     "@context": "https://schema.org",
     "@type": "Corporation",
@@ -37,12 +48,12 @@ const IndexPage = () => {
     ]
   };
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <GlobalStyle />
       <SEO title="Layer5" description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure." 
         schemaMarkup={schema} />
-      <Layout>
-        <Navigation />
+      <Layout >
+        <Navigation theme={theme} themeSetter={themeSetter}/>
         <Banner />
         <Partners />
         <Integrations />

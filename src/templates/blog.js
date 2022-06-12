@@ -13,7 +13,9 @@ import theme from "../theme/app/themeStyles";
 
 import { graphql } from "gatsby";
 import BlogList from "../sections/Blog/Blog-list";
-
+import lighttheme from ".././theme/app/themeStyles";
+import darktheme from ".././theme/app/darkThemeStyles";
+import { useCookies } from "react-cookie";
 export const query = graphql`
   query allBlogs {
     allMdx(
@@ -68,9 +70,17 @@ const Blog = (props) => {
     if (isListView) return <BlogList {...props} />;
     return <BlogGrid {...props} />;
   };
-
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
       <Layout>
         <GlobalStyle />
         <SEO
@@ -78,7 +88,7 @@ const Blog = (props) => {
           description="Articles how to service mesh from the world's largest service mesh community.
               Service mesh how-tos and cloud native ecosystem news."
         />
-        <Navigation />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
         <BlogView
           isListView={isListView}
           setListView={setListView}

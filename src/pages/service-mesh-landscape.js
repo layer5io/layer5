@@ -6,21 +6,36 @@ import LandscapeGrid from "../sections/Landscape";
 import Navigation from "../sections/General/Navigation";
 import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
+import darktheme from "../theme/app/darkThemeStyles";
+import lighttheme from "../theme/app/themeStyles";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
+import { useState } from "react";
 
-const LandscapeGridPage=() => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO
-        title="Service Mesh Landscape"
-        description="Compare service meshes like Istio, Linkerd, App Mesh, Maesh, Kuma, Network Service Mesh,
+const LandscapeGridPage=() => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  return(
+    <ThemeProvider theme={theme ==="light"? lighttheme : darktheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO
+          title="Service Mesh Landscape"
+          description="Compare service meshes like Istio, Linkerd, App Mesh, Maesh, Kuma, Network Service Mesh,
             Consul, Kuma, Citrix and VMware Tanzu Service Mesh. What is the best service mesh? What's the difference between Istio and Envoy?"
-        image="/images/landscape.png" />
-      <Navigation />
-      <LandscapeGrid />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
+          image="/images/landscape.png" />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <LandscapeGrid />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default LandscapeGridPage;

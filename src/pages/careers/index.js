@@ -10,9 +10,10 @@ import CareersSection from "../../sections/Careers";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
-
+import darktheme from "../../theme/app/darkThemeStyles";
+import lighttheme from "../../theme/app/themeStyles";
 const Careers = () => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
     <Layout>
       <GlobalStyle />
       <SEO title="Careers" description="Careers at Layer5. Come work with the largest collection of service mesh projects and their maintainers in the world." />

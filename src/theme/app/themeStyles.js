@@ -1,9 +1,12 @@
-const theme = {
+const lighttheme = {
   black: "#000000",
   white: "#ffffff",
-
+  navigatorColor: "#FFFFFF",
   // charcoal
   primaryColor: "#3c494f",
+  body: "#FFFFFF",
+  text: "#000000",
+ 
 
   // silver chalice (light gray)
   primaryLightColor: "#b3b3b3",
@@ -51,5 +54,17 @@ const theme = {
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
   saffronLightColor: "#EAD07D",
+
+  projectCardColor: "#FFFFFF",
+  projectShadowColor: "#E6E6E6",
+  projectCardHoverColor: "#3c494f",
+  projectIconColor: "#F3F3F3",
+  banner1ButtonShadow: "rgb(0 0 0 / 40%)",
+  sideText: "#3c494f",
+  sideTextDark: "#b3b3b3",
+  sideTextLight: "#b3b3b3",
+  communityText: "rgba(0, 0, 0, 0.6)",
+  subscribeSection: "#FAFAFA",
+  projectsPageCardShadowColor: "lightgrey",
 };
-export default theme;
+export default lighttheme;
