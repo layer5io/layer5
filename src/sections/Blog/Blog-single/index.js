@@ -79,7 +79,9 @@ const BlogSingle = ({data}) => {
                 ))}
               </div>
             </div>
-            {/* <CTA_Bottom /> */}
+            {/* <CTA_Bottom
+              category={"Community"}
+            /> */}
           </div>
           <RelatedPosts
             postType="blogs"

@@ -2,6 +2,7 @@ import React from "react";
 import image_src from "../../../assets/images/callout/callout.png";
 import styled from "styled-components";
 import Button from "../../../reusecore/Button";
+import { Categories } from "./cta_bottom_categories";
 
 const CTA_BottomWrapper = styled.div`
     display: flex;
@@ -58,12 +59,14 @@ const CTA_BottomWrapper = styled.div`
         width: 18rem;
         height: 18rem;
         margin: 1.5rem auto;
+        border-radius: 0.25rem;
 
         img {
             width: 18rem;
             height: 18rem;
             position: absolute;
             filter: brightness(0.5);
+            border-radius: 0.25rem;
         }
 
         .cta-content {
@@ -85,14 +88,26 @@ const CTA_BottomWrapper = styled.div`
 const defaultContent = "Join the Layer5 community and explore the world of service meshes!";
 const defaultURL = "https://slack.layer5.io";
 
-export const CTA_Bottom = ({ alt, button_text, content, image, url }) => {
+export const CTA_Bottom = ({ alt, button_text, category, content, external_link, image, url }) => {
   return (
     <CTA_BottomWrapper>
-      <div className="cta-content">
-        <p>{content ? content : defaultContent}</p>
-        <Button primary title={button_text ? button_text : "Join Us"} url={url ? url : defaultURL} />
-      </div>
-      <img src={image ? image : image_src} alt={alt ? alt : "Alt Text"} />
+      { category ? (
+        <>
+          <div className="cta-content">
+            <p>{Categories[category]["Content"]}</p>
+            <Button primary title={Categories[category]["Button_Text"]} url={Categories[category]["Link"]} external={Categories[category]["Link_external"]} />
+          </div>
+          <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
+        </>
+      ) : (
+        <>        
+          <div className="cta-content">
+            <p>{content ? content : defaultContent}</p>
+            <Button primary title={button_text ? button_text : "Join Us"} url={url ? url : defaultURL} external={external_link ? true : false} />
+          </div>
+          <img src={image ? image : image_src} alt={alt ? alt : "Alt Text"} />
+        </>
+      )}
     </CTA_BottomWrapper>
   );
 };
