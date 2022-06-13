@@ -90,6 +90,7 @@ const SoSpecialWrapper = styled.div`
     .special-cont_btn:hover{
         background-color:white;
         color:black;
+        box-shadow: none;
     }
     .so-special-foot{
         text-align:center;
