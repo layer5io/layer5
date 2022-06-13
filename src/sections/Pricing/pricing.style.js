@@ -21,7 +21,9 @@ const PricingWrapper = styled.section`
 
 
 .headers {
-  background: linear-gradient(180deg, rgba(6,6,6,1) 12%, rgba(0,179,159,1) 52%, rgba(0,179,159,1) 53%, rgba(0,179,159,1) 53%, rgba(255,255,255,1) 79%);  position: relative;
+  background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
+  /* background: linear-gradient(180deg, rgba(6,6,6,1) 12%, rgba(0,179,159,1) 52%, rgba(0,179,159,1) 53%, rgba(0,179,159,1) 53%, rgba(255,255,255,1) 79%);  position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,6 +49,12 @@ const PricingWrapper = styled.section`
   .header-heading {
     color: white;
     text-align: center;
+  }
+  .subscription-duration {
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    h3 {color: white;margin-bottom: .5rem;}
   }
 }
 

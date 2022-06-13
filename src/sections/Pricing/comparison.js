@@ -110,8 +110,8 @@ small{
 const Comparison = () => {
   return (
     <ComparisonWrapper>
-      <h2>Choose a Plan That’s Right For You</h2>
-      <h5>Explore and compare all features</h5>
+      <h2>Compare All Features</h2>
+      <h5>Choose a plan that’s right for you</h5>
       <Container>
         <div className="main">
           <table className="price-table">
