@@ -74,7 +74,7 @@ const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnai
             {date && (
               <>
                 <span>
-                  <h5>Published Date:</h5>
+                  <h5>On:</h5>
                   <p>{date}</p>
                 </span>
               </>
@@ -87,7 +87,7 @@ const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnai
             <span>{authorField(author, isSlugAvailable)}</span>
             {date && (
               <span>
-                <h5>Published Date:</h5>
+                <h5>On:</h5>
                 <p>{date}</p>
               </span>
             )}
