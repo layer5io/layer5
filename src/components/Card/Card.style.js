@@ -23,7 +23,10 @@ export const CardWrapper = styled.div`
             }
         } 
     }
+    .readmore-btn{
+        color: ${props => props.theme.secondaryColor};
 
+    }
     @media screen and (max-width:776px){
 		.post-block{
 			width: auto;

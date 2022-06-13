@@ -8,7 +8,7 @@ export const LandscapePageWrapper=styled.div`
 		font-weight: 600;
 		text-align: center;
 		font-style:unset;
-		color:#1e2117;
+		color:${props => props.theme.text};
 	}
 	#service-mesh-comparison-strength {
             margin: -2.5rem auto 6rem;
@@ -65,7 +65,7 @@ export const LandscapePageWrapper=styled.div`
 				font-size: 1.125rem;
 				text-align: center;
 				padding: 1rem 0.25rem;
-				color: ${props => props.theme.white};
+				color: ${props => props.theme.bodyRevert};
 				background: ${props => props.theme.tertiaryColor};
 				z-index: 0;
 				border-bottom-right-radius: 0.8rem;
@@ -75,6 +75,7 @@ export const LandscapePageWrapper=styled.div`
 
 				p {
 					margin: 0;
+					color: ${props => props.theme.textRevert};
 				}
 			}
 
@@ -126,13 +127,13 @@ export const LandscapePageWrapper=styled.div`
 	}
 	.title-0, .title-1 {
 		font-size: 1.25rem;
-		color: #1E2117;
+		color: ${props => props.theme.text};
 	}
 	.subtitle-0, .subtitle-1 {
 		font-size: 1rem;
 		font-family: 'Open Sans';
 		font-weight: 400;
-		color: #a0a0a0;
+		color: ${props => props.theme.verticalSubtittleColor};
 	}
 	.dashLine-0 {
 		border-bottom: 1px dashed #a0a0a0;
@@ -155,6 +156,7 @@ export const LandscapePageWrapper=styled.div`
 	}
 	.vertical-timeline-element-content {
 		border-radius: 1.25em;
+		background: ${props => props.theme.body};
 		box-shadow: none;
 	}
 	.meshBubble {

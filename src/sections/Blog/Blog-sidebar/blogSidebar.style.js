@@ -49,7 +49,7 @@ const BlogSideBarWrapper = styled.div`
                     margin-top: 3px;
                 }
                 a{
-                    color: ${props => props.theme.black};
+                    color: ${props => props.theme.text};
                     display: flex;
                     justify-content: space-between;
                     font: 400 16px/35px "Open Sans", sans-serif;

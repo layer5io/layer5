@@ -3,9 +3,9 @@ const darktheme = {
   white: "#ffffff",
   navigatorColor: "#000000",
   body: "#121212",
- 
+  textRevert: "#000000",
   text: "#ffffff",
- 
+  bodyRevert: "#ffffff",
   toggleBorder: "#6B8096",
   background: "#999",
   // charcoal
@@ -69,6 +69,10 @@ const darktheme = {
   communityText: "rgba(255, 255, 255, 0.6)",
   subscribeSection: "#1D1D1D",
   projectsPageCardShadowColor: "black",
+  learningCard: "#1d1817",
+  summaryText: "rgba(255, 255, 255, 0.75)",
+  verticalSubtittleColor : "rgb(140, 140, 140)",
+  invertColor: "invert(100%)",
 };
 export default darktheme;
   

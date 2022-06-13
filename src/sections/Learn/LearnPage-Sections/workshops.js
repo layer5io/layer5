@@ -95,7 +95,7 @@ export const WorkshopsListWrapper = styled.div`
 
 			p {
 				font-size: 1.85rem;
-				color: rgba(0,0,0,0.6)
+				color: ${props => props.theme.communityText};
 			}
 		}
 	}

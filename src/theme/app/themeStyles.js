@@ -6,7 +6,8 @@ const lighttheme = {
   primaryColor: "#3c494f",
   body: "#FFFFFF",
   text: "#000000",
- 
+  textRevert: "#FFFFFF",
+  bodyRevert: "#000000",
 
   // silver chalice (light gray)
   primaryLightColor: "#b3b3b3",
@@ -66,5 +67,9 @@ const lighttheme = {
   communityText: "rgba(0, 0, 0, 0.6)",
   subscribeSection: "#FAFAFA",
   projectsPageCardShadowColor: "lightgrey",
+  learningCard: "#E6E6E6",
+  summaryText: "rgba(0, 0, 0, 0.75)",
+  verticalSubtittleColor : "rgb(160, 160, 160)",
+  invertColor: "none",
 };
 export default lighttheme;
