@@ -79,7 +79,7 @@ const BlogSingle = ({data}) => {
                 ))}
               </div>
             </div>
-            <CTA_Bottom />
+            {/* <CTA_Bottom /> */}
           </div>
           <RelatedPosts
             postType="blogs"
