@@ -37,7 +37,7 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 12%, rgba(0,211,169,1) 43%
     height: 30rem;
   }
   h1{
-    margin-top: -4rem;
+    margin-top: -2rem;
   }
   
  .header-svg {
