@@ -15,7 +15,7 @@ const Pricing = () => {
     <PricingWrapper>
 
       <div className="headers">
-        <h1 className="header-heading">Plans or Every Team Size</h1>
+        <h1 className="header-heading">Plans For Every Team Size</h1>
         <div className="subscription-duration">
           <h3>How often do you want to pay?</h3>
           <Button secondary>Monthly</Button><Button secondary>Yearly</Button>
