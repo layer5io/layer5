@@ -8,6 +8,7 @@ import Button from "../../../reusecore/Button";
 import SearchBox from "../../../reusecore/Search";
 import { useEffect } from "react";
 import useDataList from "../../../utils/usedataList";
+import Press from "./press";
 
 let coverageFiltered= false;
 let pressReleaseFiltered=false;
@@ -108,6 +109,7 @@ const NewsGrid = ({data}) => {
           </div>
         </Container>
       </div>
+      <Press />
     </NewsPageWrapper>
   );
 };

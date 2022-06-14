@@ -25,7 +25,7 @@ const Banner1SectionWrapper = styled.section`
     .section-title{
         text-align: center;
         h1 {
-            font-size: 60px;
+            font-size: 57px;
             line-height: 4.3rem;
             span {
                 font-weight: 700;
@@ -83,7 +83,7 @@ const Banner1SectionWrapper = styled.section`
             }
         }
         p {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
     }
     @media only screen and (max-width: 992px) {
@@ -94,11 +94,11 @@ const Banner1SectionWrapper = styled.section`
                 line-height: 2.7rem;
             }
             h2 {
-                font-size: 2rem;
+                font-size: 1.87rem;
             }
         }
         p {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
     }
     @media only screen and (max-width: 912px) {
@@ -109,17 +109,20 @@ const Banner1SectionWrapper = styled.section`
         
         .section-title {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.45rem;
                 line-height: 2.7rem;
                 margin: 0 0 1rem 0;
             }
             h2 {
-                font-size: 2rem;
+                font-size: 1.6rem;
+                margin: 0 auto;
+                width: 90%;
             }
         }
         p { 
             font-size: 1.25rem;
-            margin: 2rem 0rem;
+            margin: 2rem auto;
+            width: 80%;
         }
         .banner-btn {
             min-width: 140px;
@@ -136,14 +139,16 @@ const Banner1SectionWrapper = styled.section`
         .section-title { 
             h1 { 
                 margin: 0rem;
-                font-size: 2rem;
+                font-size: 1.82rem;
             }
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.15rem;
+                width: 80%;
             }
         }
         p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            width:60%;
         }
         .vintage-box{
              &:before{
@@ -167,11 +172,12 @@ const Banner1SectionWrapper = styled.section`
                 font-size: 1.8rem;
             }
             h2 {
-                font-size: 1.3rem;
+                font-size: 1rem;
+                width: 80%;
             }
         }
         p {
-            margin: 1rem 0;
+            margin: 1rem auto;
             font-size: 1.1rem;
         }
         .vintage-box{
@@ -193,7 +199,8 @@ const Banner1SectionWrapper = styled.section`
                 /* margin: 0 0 30px 0; */
             }
             h2 {
-                font-size: 1.3rem;
+                font-size: 1rem;
+                width:100%;
             }
         }
         p {

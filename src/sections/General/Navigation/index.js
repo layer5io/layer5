@@ -241,6 +241,7 @@ const Navigation = ({theme , themeSetter}) => {
   };
   
   return (
+
     <ThemeProvider theme={theme==="dark"?  darktheme:lighttheme}>
       <GlobalStyle />
       <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
