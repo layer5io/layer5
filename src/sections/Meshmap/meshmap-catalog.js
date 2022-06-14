@@ -92,6 +92,7 @@ h3.containerCaption {
     transition: all .5s ease;
   }
   img:hover{
+    cursor: pointer;
     transform: scale(1.1,1.1);
 }
 }

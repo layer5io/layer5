@@ -75,10 +75,10 @@ const BannerSectionWrapper = styled.div`
     }
     .draft-logo {
         
-        position: relative;
-        float: right;
+        position: absolute;
         max-width: 25rem;
         margin-top: -5rem;
+        right: 4rem;
         p {
             text-align: center ;
         }
@@ -123,7 +123,7 @@ const BannerSectionWrapper = styled.div`
                 right: -4rem;
             }
         }
-        .draft-logo { max-width: 20rem; margin-right: -4rem;}
+        .draft-logo { max-width: 20rem; margin-right: -3rem;}
     }
     @media screen and (max-width: 992px) {
         .learn-particle-img {
@@ -136,7 +136,10 @@ const BannerSectionWrapper = styled.div`
             }
         }
         padding: 5rem 3rem;
-        .draft-logo { max-width: 18rem; margin-top:0rem; margin-right: -1rem;}
+        .draft-logo { max-width: 18rem; margin-top:0rem; margin-right: -3rem;}
+    }
+    @media screen and (max-width: 870px) {
+        .draft-logo { max-width: 1px; visibility: hidden ;}
     }
     @media screen and (max-width: 768px) {
         .learn-particle-img {
