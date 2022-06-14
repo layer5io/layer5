@@ -1,6 +1,5 @@
 import styled, {css} from "styled-components";
-// const ButtonStyle = styled.button` 
-const ButtonStyle = styled("button")` 
+const ButtonStyle = styled.button` 
     cursor: pointer;
     display: inline-flex;
     align-items: center;
