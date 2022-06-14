@@ -7,6 +7,7 @@ export const options = [
     featured: true,
     price: 0,
     byline: "Open Source features, plus:",
+    button: ["Join for Free", "https://meshery.layer5.io"],
     summary: ["Multi-mesh", "MeshMark", "MeshMonkey", "Comparative Testing", "Single Team"],
     subdata: [
       { id: 0, category: "Lifecycle", value: "Multi-mesh" },
@@ -24,6 +25,7 @@ export const options = [
     featured: false,
     price: 9.99,
     byline: "Everything in Free, plus:",
+    button: ["Coming Soon", ""],
     summary: ["MeshMap", "Share Results", "Continuous Optimizer", "Automated Canary", "Single Organization"],
     subdata: [
       { id: 0, category: "Lifecycle", value: "MeshMap" },
@@ -41,6 +43,7 @@ export const options = [
     featured: false,
     price: 15.99,
     byline: "Everything in Team, plus:",
+    button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
     summary: ["Catalog Federation", "Pipelined Chaos", "Customizable Optimizer", "Multivariate Feature Flags", "Multi-organization"],
     subdata: [
       { id: 0, category: "Lifecycle", value: "Article" },

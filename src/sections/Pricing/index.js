@@ -7,6 +7,7 @@ import Reviews from "./review-slider";
 import Button from "../../reusecore/Button";
 import { options } from "./data";
 import { FiCheck } from "@react-icons/all-files/fi/FiCheck";
+import ContactFormModal from "../../components/Contact-Modal";
 
 
 const Pricing = () => {
@@ -18,7 +19,7 @@ const Pricing = () => {
         <h1 className="header-heading">Plans For Every Team Size</h1>
         <div className="subscription-duration">
           <h3>How often do you want to pay?</h3>
-          <Button secondary>Monthly</Button><Button secondary>Yearly</Button>
+          <Button primary>Monthly</Button><Button primary>Yearly</Button>
         </div>
         {/* <svg className="header-svg" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
           <polygon fill="white" points="0,100 100,0 100,100"/>
@@ -40,20 +41,14 @@ const Pricing = () => {
                       <div className="feature" key={tier}><FiCheck size={20} className="check" />{tier}</div>
                     ))}
                   </div>
-                  {x.price === 0 ?
-                    <div className="price-tag">
-                      <span className="symbol">$</span>
-                      <span className="amount">{x.price}</span>
-                      {/* <span className="amount free"></span> */}
-                    </div>
-                    :
-                    <div className="price-tag">
-                      <span className="symbol">$</span>
-                      <span className="amount">{x.price}</span>
-                      <span className="after">/user</span>
-                    </div>
-                  }
-                  <Button primary className="price-button" url="https://meshery.layer5.io">Get Started</Button>
+
+                  <div className="price-tag">
+                    <span className="symbol">$</span>
+                    <span className="amount">{x.price}</span>
+                    <span className="after">/user</span>
+                  </div>
+                  
+                  <Button primary className="price-button" url={x.button[1]}>{x.button[0]}</Button>
                 </div>
               </Col>
             ))}
