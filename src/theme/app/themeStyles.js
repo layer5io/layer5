@@ -55,7 +55,7 @@ const lighttheme = {
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
   saffronLightColor: "#EAD07D",
-
+  featureShadowColor: "rgba(0, 0, 0, 0.05)",
   projectCardColor: "#FFFFFF",
   projectShadowColor: "#E6E6E6",
   projectCardHoverColor: "#3c494f",
@@ -64,6 +64,7 @@ const lighttheme = {
   sideText: "#3c494f",
   sideTextDark: "#b3b3b3",
   sideTextLight: "#b3b3b3",
+  featureTextCardColor: "#000000",
   communityText: "rgba(0, 0, 0, 0.6)",
   subscribeSection: "#FAFAFA",
   projectsPageCardShadowColor: "lightgrey",

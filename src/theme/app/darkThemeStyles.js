@@ -38,7 +38,7 @@ const darktheme = {
   
   // light slate gray (medium gray)
   textColor: "#000000",
-  shadowColor: "rgba(0, 0, 0, 0.05)",
+  shadowColor: "rgba(255, 255, 255, 0.05)",
   
   // platinum (light gray)
   shadowLightColor: "#E6E6E6",
@@ -57,11 +57,12 @@ const darktheme = {
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
   saffronLightColor: "#EAD07D",
-
+  featureShadowColor: "rgba(0, 0, 0, 0.05)",
   projectCardColor: "#212121",
   projectShadowColor: "#000000",
   projectCardHoverColor: "#FFFFFF",
   projectIconColor: "#212121",
+  featureTextCardColor: "#212121",
   banner1ButtonShadow: "rgb(255 255 255 / 40%)",
   sideText: "#dee3de",
   sideTextDark: "#737373",
