@@ -245,13 +245,12 @@ const Navigation = ({theme , themeSetter}) => {
       <GlobalStyle />
       <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
         <Container className="nav-container">
-          
           <div className="navbar-wrap">
             <Link to="/" className="logo">
               <img src={layer5_logo} alt="Layer5 logo" />
             </Link>
             <MaterialUISwitch sx={{ m: 1 }} onChange={themeToggler} checked={themeToggle}/>
-            <nav className="nav" >
+            <nav className="nav">
               {expand ?
                 <IoMdClose
                   className="mobile-menu-icon open"
@@ -265,7 +264,7 @@ const Navigation = ({theme , themeSetter}) => {
                   }}
                 />
               }
-              <div className="mobile-dropdown-container" ref={dropDownRef} >
+              <div className="mobile-dropdown-container" ref={dropDownRef}>
                 <div className="mobile-dropdown">
                   <ul className="mobile-collapsed">
                     {Data.menuItems.map((menu, index) => (
@@ -284,7 +283,7 @@ const Navigation = ({theme , themeSetter}) => {
                             >
                               {subItems.name === "Forum" ?
                                 <a href={subItems.path} target="_blank" onClick={changeDropdownState} className="sub-menu-item" rel="noreferrer">
-                                  <Switch onChange={themeToggler} checked={themeToggle} />{subItems.name}
+                                  {subItems.name}
                                 </a>
                                 : <Link to={subItems.path} onClick={changeDropdownState} className="sub-menu-item">{subItems.name}</Link>
                               }
@@ -294,6 +293,13 @@ const Navigation = ({theme , themeSetter}) => {
                       </li>
                     ))}
                   </ul>
+                  <div>
+                    <ul>
+                      <li className="mobile-nav-item">
+                        <Link to="/cloud-native-management/meshmap" className="menu-item">MeshMap</Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <ScrollspyMenu
@@ -302,6 +308,7 @@ const Navigation = ({theme , themeSetter}) => {
                 blogData={data}
               />
             </nav>
+                            
           </div>
           <div className="meshery-cta">
             <Button secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />
