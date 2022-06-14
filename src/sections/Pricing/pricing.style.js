@@ -135,9 +135,7 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 12%, rgba(0,211,169,1) 43%
       .check{
         padding-right: 0.2rem;
         vertical-align: middle;
-        polyline{
-          color: ${props => props.theme.secondaryColor};
-        }
+        color: ${props => props.theme.secondaryColor};
       }
     }
 
