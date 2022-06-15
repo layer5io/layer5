@@ -16,7 +16,6 @@ import MeshmapBanner from "./meshmap_banner";
 import mesheryCloud from "../../assets/images/meshmap/MesheryCloud.png";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
-import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
 
 
 const Meshmap = () => {
