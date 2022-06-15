@@ -115,6 +115,12 @@ const Banner2SectionWrapper = styled.section`
              }
          }
      }
+     @media only screen and (max-width: 576px) {
+        p {
+            padding-right: 9rem;
+        }
+        
+     }
      @media only screen and (max-width: 480px) {
         padding: 2rem 0;
         background-position: bottom 230px right 20px, bottom 180px right;
@@ -124,6 +130,7 @@ const Banner2SectionWrapper = styled.section`
             h1 {
                 font-size: 35px;
                 line-height: 50px;
+                width: 75%;
             }
         }
          .vintage-box{
@@ -137,6 +144,11 @@ const Banner2SectionWrapper = styled.section`
 			{
 				margin: 0 0.5rem 1rem;
 			}
+            .section-title{
+                h1 {
+                    width:85%;
+                }
+            }
 		 }
      @media only screen and (max-width: 380px) {
         background-position: bottom 200px right 20px, bottom 150px right;
@@ -166,7 +178,7 @@ const Banner2SectionWrapper = styled.section`
                 line-height: 35px;
             }
         }
-     }
+    }
      
 `;
 
