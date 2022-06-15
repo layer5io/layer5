@@ -17,10 +17,7 @@ const Pricing = () => {
 
       <div className="headers">
         <h1 className="header-heading">Plans For Every Team Size</h1>
-        <div className="subscription-duration">
-          <h3>How often do you want to pay?</h3>
-          <Button primary>Monthly</Button><Button primary>Yearly</Button>
-        </div>
+
         {/* <svg className="header-svg" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
           <polygon fill="white" points="0,100 100,0 100,100"/>
       <polygon fill="rgba(0,179,159,0.2)" points="50,50 100,0 100,100"/>
@@ -29,6 +26,16 @@ const Pricing = () => {
 
       <div className="wrapper">
         <Container>
+          <Row>
+            <Col>
+              <div className="subscription-duration">
+                <h2>How often do you want to pay?</h2>
+                <div className="subscriptionButtons">
+                  <Button secondary>Monthly</Button><Button secondary>Yearly</Button>
+                </div>
+              </div>
+            </Col>
+          </Row>
           <Row>
             {options.map((x) => (
               <Col md={4} key={x.tier}>
@@ -47,7 +54,7 @@ const Pricing = () => {
                     <span className="amount">{x.price}</span>
                     <span className="after">/user</span>
                   </div>
-                  
+
                   <Button primary className="price-button" url={x.button[1]}>{x.button[0]}</Button>
                 </div>
               </Col>

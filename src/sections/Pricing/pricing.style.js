@@ -22,14 +22,14 @@ const PricingWrapper = styled.section`
 
 .headers {
   background: rgb(255,255,255);
-background: linear-gradient(0deg, rgba(255,255,255,1) 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
   /* background: linear-gradient(180deg, rgba(6,6,6,1) 12%, rgba(0,179,159,1) 52%, rgba(0,179,159,1) 53%, rgba(0,179,159,1) 53%, rgba(255,255,255,1) 79%);  position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 20rem;
+  height: 22rem;
   @media (min-width: 1400px) {
     height: 25rem;
   }  
@@ -50,14 +50,56 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 12%, rgba(0,211,169,1) 43%
     color: white;
     text-align: center;
   }
-  .subscription-duration {
-    color: white;
-    margin-top: 2rem;
-    margin-bottom: 0rem;
-    h3 {color: white;margin-bottom: .5rem;}
-  }
 }
+.subscription-duration {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+.subscriptionButtons {
+  button {
+    margin:.5rem 0rem 0rem 0rem; 
+    font-weight:300;
+    padding: 0.3rem;
+    /* background-color: ${props => props.theme.keppelColor};
+    color: ${props => props.theme.black}; */
+    border-top: 1px solid ${props => props.theme.keppelColor};
+    border-bottom: 1px solid ${props => props.theme.keppelColor};
+    :hover {
+      box-shadow: none;
+      padding: .2rem;
+      -webkit-transition: 250ms all;
+      transition: 150ms all;
+      background-color: ${props => props.theme.caribbeanGreenColor};
+      color: white;
+    }
+  }
+  button:first-child {
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;      
+    border-left: 1px solid ${props => props.theme.keppelColor};
+    
+    }
+   /* DEFAULT SELECTION: YEARLY */
+  button:last-child {
+    border-right: 1px solid ${props => props.theme.keppelColor};
+    border-top-left-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+    background-color: ${props => props.theme.caribbeanGreenColor};
+    padding: .2rem;
+    color: white;
+    }
 
+    /* ONCLICK: STYLE FOR SELECTED SUBSCRIPTION 
+
+    DEBOPRIYA, PLEASE SET THIS AS THE SELECTED STYLE 
+    background-color: ${props => props.theme.caribbeanGreenColor};
+      color: white;
+    padding: .2rem;
+
+    */
+
+  }
 
 .wrapper{
   max-width: 1090px;
@@ -70,10 +112,10 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 12%, rgba(0,211,169,1) 43%
   justify-content: space-between;
   @media (min-width: 1400px) {
     margin: -8rem auto 0;
-}  
+  }  
   @media (min-width: 2048px) {
     margin: -10rem auto;
-}
+  }
 }
 
 
