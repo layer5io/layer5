@@ -2,6 +2,8 @@ import styled from "styled-components";
 import cover from "./images/Rectangle 495.png";
 
 export const Gnhwrapper = styled.section`
+    
+   
     .hero-section{
         padding: 5rem 0rem;
         .logo{
@@ -185,13 +187,16 @@ export const CardsContainer = styled.div`
         ;
         margin: 2px;
         padding: 1.5rem;
-        background-color: white;
+        background-color: ${props => props.theme.projectCardColor};
         border-radius: 25px;
         p {
             text-align: left;
             padding: 0px 0px;
             letter-spacing: 0;
             margin-top: 10px;
+        }
+        a:hover {
+            color: ${props => props.theme.text};
         }
         h2 {
             text-align: left;

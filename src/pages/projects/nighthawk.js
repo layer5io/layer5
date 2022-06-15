@@ -10,22 +10,36 @@ import Footer from "../../sections/General/Footer";
 import Subscribe from "../../sections/subscribe/subscribe";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
-
-const NighthawkPage = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Nighthawk"
-        description="Layer5 is the maker of Meshery,  Service Mesh Performance (SMP), Nighthawk and maintainers of Service Mesh Interface (SMI).
+import lighttheme from "../../theme/app/themeStyles";
+import darktheme from "../../theme/app/darkThemeStyles";
+import { useState } from "react";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
+const NighthawkPage = () => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  return(
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Nighthawk"
+          description="Layer5 is the maker of Meshery,  Service Mesh Performance (SMP), Nighthawk and maintainers of Service Mesh Interface (SMI).
             We are the largest collection of service mesh projects and their maintainers in the world.
             Contact Layer5 for help with operating a service mesh."
-      />
-      <Navigation />
-      <Nighthawk />
-      <Subscribe/>
-      <Footer/>
-    </Layout>
-  </ThemeProvider>
-);
+        />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Nighthawk />
+        <Subscribe/>
+        <Footer/>
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default NighthawkPage;

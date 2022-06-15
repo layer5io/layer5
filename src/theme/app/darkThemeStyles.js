@@ -9,7 +9,7 @@ const darktheme = {
   toggleBorder: "#6B8096",
   background: "#999",
   // charcoal
-  primaryColor: "#121212",
+  primaryColor: "#FFFFFF",
   
   // silver chalice (light gray)
   primaryLightColor: "#2C2C2C",
@@ -74,6 +74,7 @@ const darktheme = {
   summaryText: "rgba(255, 255, 255, 0.75)",
   verticalSubtittleColor : "rgb(140, 140, 140)",
   invertColor: "invert(100%)",
+  backSVGColor: "#FFFFFF",
 };
 export default darktheme;
   

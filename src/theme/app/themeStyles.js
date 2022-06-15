@@ -72,5 +72,6 @@ const lighttheme = {
   summaryText: "rgba(0, 0, 0, 0.75)",
   verticalSubtittleColor : "rgb(160, 160, 160)",
   invertColor: "none",
+  backSVGColor: "#3c494f",
 };
 export default lighttheme;
