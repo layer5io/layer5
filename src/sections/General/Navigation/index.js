@@ -227,6 +227,13 @@ const Navigation = () => {
                     </li>
                   ))}
                 </ul>
+                <div>
+                  <ul>
+                    <li className="mobile-nav-item">
+                      <Link to="/cloud-native-management/meshmap" className="menu-item">MeshMap</Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <ScrollspyMenu
@@ -235,6 +242,7 @@ const Navigation = () => {
               blogData={data}
             />
           </nav>
+                            
         </div>
         <div className="meshery-cta">
           <Button secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />

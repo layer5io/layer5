@@ -34,6 +34,7 @@ export const FeaturesWrapper = styled.div`
       }
 
       & .pagingDots {
+        top: 2rem !important;
         & :global(.paging-item:not(.active) > button) {
           opacity: 1 !important;
           fill: var(--gray-6) !important;

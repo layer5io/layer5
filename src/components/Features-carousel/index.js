@@ -59,15 +59,6 @@ const FeaturesCarousel = ({ features, heading }) => {
             pagingDotsContainerClassName: "pagingDots",
           }}
           cellSpacing={40}
-          getControlsContainerStyles={(key) => {
-            switch (key) {
-              case "BottomCenter":
-                return {
-                  top: "100%",
-                  marginTop: "2rem",
-                };
-            }
-          }}
         >
           {features.map((feature, stableIdx) => (
             <div key={stableIdx}>
