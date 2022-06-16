@@ -52,9 +52,9 @@ border-radius: 4rem;
 
     @media screen and (max-width:767px) {
       display: block;
-      img {
+      .rotate {
         margin: 0 auto 0.25rem;
-        height: 8rem;
+        height: 12rem;
       }
       h2{
         span{
@@ -63,6 +63,16 @@ border-radius: 4rem;
       }
       .subtext{
         font-size: 1rem;
+      }
+      .button-text{
+        display: none;;
+      }
+    }
+    @media screen and (max-width:340px) {
+      h2{
+        span{
+          font-size: 2rem;
+        }
       }
     }
   }
