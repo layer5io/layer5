@@ -64,23 +64,17 @@ const PricingWrapper = styled.section`
     font-weight:400;
     padding: 0.3rem;
     color: white;
-    :hover {
-      box-shadow: none;
-      padding: .25rem;
-      -webkit-transition: 250ms all;
-      transition: 150ms all;
-      background-color: ${props => props.theme.secondaryColor};
-      color: white;
+  }
+  @media (min-width: 434px) {
+    .button:first-child{
+      border-top-right-radius: 0rem;
+      border-bottom-right-radius: 0rem;     
     }
-  }
-  .button:first-child{
-    border-top-right-radius: 0rem;
-    border-bottom-right-radius: 0rem;     
-  }
-  .button:last-child{
-    border-top-left-radius: 0rem;
-    border-bottom-left-radius: 0rem;     
-  }
+    .button:last-child{
+      border-top-left-radius: 0rem;
+      border-bottom-left-radius: 0rem;     
+    }
+  }  
 .active {   
   border-left: 1px solid ${props => props.theme.caribbeanGreenColor};
   border-right: 1px solid ${props => props.theme.caribbeanGreenColor};
@@ -203,7 +197,7 @@ const PricingWrapper = styled.section`
       font-weight: 500;
     }
 
-    .price-button, .price-button-link {
+    .price-button-disabled, .price-button-link {
       color: #fff;
       display: block;
       margin: 2rem auto 0;
@@ -212,14 +206,13 @@ const PricingWrapper = styled.section`
       text-align: center;
       font-weight: 500;
       transition: .3s;
-      background: rgb(0, 179, 158, 0.8);
-    }
-
-    .price-button-link:hover {
-      text-decoration: none;
       background: ${props => props.theme.secondaryColor};
     }
-    .price-button:hover{
+    
+    .price-button-disabled{
+      background: rgb(0, 179, 158, 0.6);
+    }
+    .price-button-disabled:hover{
       cursor: default;
       box-shadow: none;
     }
