@@ -40,7 +40,6 @@ const DataWrapper = (WrappedComponent) => {
         }
       `
     );
-    console.log(props);
     return <WrappedComponent allResources={data} {...props} />;
   };
 };
