@@ -84,11 +84,5 @@ const Pricing = () => {
   );
 };
 
-// const resetPlanYearly = () => {
-//   setMonthly(false);
-// };
-// const resetPlanMonthly = () => {
-//   setMonthly(true);
-// };
 
 export default Pricing;
