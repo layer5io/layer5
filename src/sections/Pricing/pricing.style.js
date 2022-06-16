@@ -51,55 +51,46 @@ const PricingWrapper = styled.section`
     text-align: center;
   }
 }
+
 .subscription-duration {
     margin-top: 2rem;
     margin-bottom: 4rem;
     text-align: center;
-}
+} 
+
 .subscriptionButtons {
-  button {
+  .button {
     margin:.5rem 0rem 0rem 0rem; 
-    font-weight:300;
+    font-weight:400;
     padding: 0.3rem;
-    /* background-color: ${props => props.theme.keppelColor};
-    color: ${props => props.theme.black}; */
-    border-top: 1px solid ${props => props.theme.keppelColor};
-    border-bottom: 1px solid ${props => props.theme.keppelColor};
+    color: white;
     :hover {
       box-shadow: none;
-      padding: .2rem;
+      padding: .25rem;
       -webkit-transition: 250ms all;
       transition: 150ms all;
-      background-color: ${props => props.theme.caribbeanGreenColor};
+      background-color: ${props => props.theme.secondaryColor};
       color: white;
     }
   }
-  button:first-child {
+  .button:first-child{
     border-top-right-radius: 0rem;
-    border-bottom-right-radius: 0rem;      
-    border-left: 1px solid ${props => props.theme.keppelColor};
-    
-    }
-   /* DEFAULT SELECTION: YEARLY */
-  button:last-child {
-    border-right: 1px solid ${props => props.theme.keppelColor};
-    border-top-left-radius: 0rem;
-    border-bottom-left-radius: 0rem;
-    background-color: ${props => props.theme.caribbeanGreenColor};
-    padding: .2rem;
-    color: white;
-    }
-
-    /* ONCLICK: STYLE FOR SELECTED SUBSCRIPTION 
-
-    DEBOPRIYA, PLEASE SET THIS AS THE SELECTED STYLE 
-    background-color: ${props => props.theme.caribbeanGreenColor};
-      color: white;
-    padding: .2rem;
-
-    */
-
+    border-bottom-right-radius: 0rem;     
   }
+  .button:last-child{
+    border-top-left-radius: 0rem;
+    border-bottom-left-radius: 0rem;     
+  }
+.active {   
+  border-left: 1px solid ${props => props.theme.caribbeanGreenColor};
+  border-right: 1px solid ${props => props.theme.caribbeanGreenColor};
+  background-color: ${props => props.theme.caribbeanGreenColor};
+  }
+
+.inactive {
+  background-color: ${props => props.theme.primaryLightColor};
+  }
+}
 
 .wrapper{
   max-width: 1090px;
@@ -133,13 +124,13 @@ const PricingWrapper = styled.section`
 
 .featured{
       transform: scale(1.05);
-      box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.5);
+      box-shadow: 0px 2px 12px 0px rgb(0, 179, 158, 0.7);
     }
 .pricing-table:hover {
       box-shadow: 0px 1px 10px -4px rgba(0, 0, 0, .15);
     }
 .featured:hover{
-      box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 2px 16px rgb(0, 179, 158, 0.9);
     }
 
 .pricing-table{
@@ -194,7 +185,13 @@ const PricingWrapper = styled.section`
 
     .price-tag .amount {
       letter-spacing: -2px;
-      font-size: 60px;
+      font-size: 3rem;
+      @media screen and (max-width: 992px) and (min-width: 768px) {
+        font-size: 1.5rem;
+      }
+      @media screen and (max-width: 400px) {
+        font-size: 2rem;
+      }
     }
 
     .price-tag .free {
@@ -206,7 +203,7 @@ const PricingWrapper = styled.section`
       font-weight: 500;
     }
 
-    .price-button {
+    .price-button, .price-button-link {
       color: #fff;
       display: block;
       margin: 2rem auto 0;
@@ -215,10 +212,16 @@ const PricingWrapper = styled.section`
       text-align: center;
       font-weight: 500;
       transition: .3s;
+      background: rgb(0, 179, 158, 0.8);
     }
 
-    .price-button:hover {
+    .price-button-link:hover {
       text-decoration: none;
+      background: ${props => props.theme.secondaryColor};
+    }
+    .price-button:hover{
+      cursor: default;
+      box-shadow: none;
     }
 
     .pricing-label {
@@ -228,14 +231,6 @@ const PricingWrapper = styled.section`
 
     .price-tag {
       color:  ${props => props.theme.secondaryColor};
-    }
-
-    .price-button {
-      background: rgb(0, 179, 158, 0.8);
-    }
-
-    .price-button:hover {
-      background: ${props => props.theme.secondaryColor};
     }
 }
 

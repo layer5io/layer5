@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import PricingWrapper from "./pricing.style";
 import Comparison from "./comparison";
@@ -11,6 +11,8 @@ import ContactFormModal from "../../components/Contact-Modal";
 
 
 const Pricing = () => {
+
+  const[monthly, setMonthly] = useState(true);
 
   return (
     <PricingWrapper>
@@ -31,7 +33,19 @@ const Pricing = () => {
               <div className="subscription-duration">
                 <h2>How often do you want to pay?</h2>
                 <div className="subscriptionButtons">
-                  <Button secondary>Monthly</Button><Button secondary>Yearly</Button>
+                  <Button 
+                    secondary 
+                    className={monthly? "active button" : "inactive button"}
+                    onClick={() => setMonthly(true)}
+                  >
+                    Monthly
+                  </Button>
+                  <Button 
+                    secondary 
+                    className={monthly? "inactive button" : "active button"}
+                    onClick={() => setMonthly(false)} >
+                    Yearly
+                  </Button>
                 </div>
               </div>
             </Col>
@@ -51,11 +65,11 @@ const Pricing = () => {
 
                   <div className="price-tag">
                     <span className="symbol">$</span>
-                    <span className="amount">{x.price}</span>
-                    <span className="after">/user</span>
+                    <span className="amount">{monthly? x.monthlyprice : x.yearlyprice}</span>
+                    <span className="after">/user{monthly? "/month" : "/year"}</span>
                   </div>
 
-                  <Button primary className="price-button" url={x.button[1]}>{x.button[0]}</Button>
+                  <Button primary className={x.button[0]=== "Coming Soon" ? "price-button" : "price-button-link"} url={x.button[1]}>{x.button[0]}</Button>
                 </div>
               </Col>
             ))}
@@ -69,5 +83,12 @@ const Pricing = () => {
     </PricingWrapper>
   );
 };
+
+// const resetPlanYearly = () => {
+//   setMonthly(false);
+// };
+// const resetPlanMonthly = () => {
+//   setMonthly(true);
+// };
 
 export default Pricing;

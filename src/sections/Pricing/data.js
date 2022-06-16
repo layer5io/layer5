@@ -5,7 +5,8 @@ export const options = [
   {
     tier: "Free",
     featured: true,
-    price: 0,
+    monthlyprice: 0,
+    yearlyprice: 0,
     byline: "Open Source features, plus:",
     button: ["Join for Free", "https://meshery.layer5.io"],
     summary: ["Multi-mesh", "MeshMark", "MeshMonkey", "Comparative Testing", "Single Team"],
@@ -23,7 +24,8 @@ export const options = [
   {
     tier: "Team",
     featured: false,
-    price: 9.99,
+    monthlyprice: 9.99,
+    yearlyprice: 100,
     byline: "Everything in Free, plus:",
     button: ["Coming Soon", ""],
     summary: ["MeshMap", "Share Results", "Continuous Optimizer", "Automated Canary", "Single Organization"],
@@ -41,7 +43,8 @@ export const options = [
   {
     tier: "Enterprise",
     featured: false,
-    price: 15.99,
+    monthlyprice: 15.99,
+    yearlyprice: 180,
     byline: "Everything in Team, plus:",
     button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
     summary: ["Catalog Federation", "Pipelined Chaos", "Customizable Optimizer", "Multivariate Feature Flags", "Multi-organization"],
