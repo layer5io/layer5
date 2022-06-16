@@ -1,11 +1,11 @@
 import React from "react";
 
 import Layout from "../../../components/layout";
-import Subscribe from "../../../sections/subscribe/subscribe"; 
 
 import SMIWrapper from "./smi.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
+import MeshMapCTA from "../../meshmap-cta";
 
 import data from "./data";
 import c_icon from "./c-icon.svg";
@@ -111,7 +111,7 @@ const SMIPage = () => {
           </div>
         </div>
       </SMIWrapper>
-      <Subscribe />
+      <MeshMapCTA />
     </Layout>
   );
 };

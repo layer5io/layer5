@@ -37,7 +37,8 @@ const PageHeaderWrapper = styled.div`
         .breadcrumbs {
             display: flex;
             justify-content: center;
-            margin-top: 1.5rem;  
+            margin-top: 1.5rem;
+            align-items: center;  
             h5 {
                 display: inline-block;
                 margin:0 0.4rem;
