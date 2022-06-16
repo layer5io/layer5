@@ -7,7 +7,7 @@ import Button from "../../reusecore/Button";
 
 const MeshMapCTAWrapper = styled.div`
 .CTAbody{
-background: linear-gradient(180deg, rgba(0,179,159,1) 100%, rgba(71,126,150,1) 477E96%);
+background: linear-gradient(180deg, rgba(71,126,150,1) 0%, rgba(0,179,159,1) 100%);
 border-radius: 4rem;
     display: flex;
     padding: 2rem;
