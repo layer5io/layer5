@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { options } from "./data";
+import { options, details} from "./data";
 import { Container } from "../../reusecore/Layout";
+import FeatureDetails from "./collapsible-details";
 
 
 const ComparisonWrapper = styled.div`
@@ -14,6 +15,7 @@ h2, h5{
     display: block;
     margin: 2rem auto;
     overflow-x: scroll;
+    overflow-y:hidden;
 }
 .price-table {
     width: 100%;
@@ -25,11 +27,17 @@ h2, h5{
 }
 .price-table tr td {
     border-left: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 8px 24px;
-    font-size: 14px;
+    padding: 0rem 2rem;
+    font-size: 1rem;
+    vertical-align: middle;
+    h5{
+      display: inline-block;
+      padding-top: 1rem;
+    }
 }
 .price-table tr td:first-child {
     border-left: 0 none;
+    width: 25%;
 }
 .price-table tr td:not(:first-child) {
     text-align: center;
@@ -98,9 +106,6 @@ h2, h5{
     width: 90px;
     fill: #00b39f;
 }
-small{
-    font-size: 12px; font-weight: 400;
-}
 .icon{
     height: 1.5rem;
     width: auto;
@@ -129,9 +134,9 @@ const Comparison = () => {
                 <td>Enterprise</td>
               </tr>
 
-              {options[0].subdata.map((x) => (
+              {details.map((x) => (
                 <tr key={x.category}>
-                  <td>{x.category}</td>
+                  <td><h5>{x.category}</h5><FeatureDetails description={x.description}/></td>
                   {options.map((tier) => (
                     <td key={tier.tier}>{tier.subdata[x.id].value}</td>
                   ))}

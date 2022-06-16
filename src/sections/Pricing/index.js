@@ -62,12 +62,12 @@ const Pricing = () => {
                       <div className="feature" key={tier}><FiCheck size={20} className="check" />{tier}</div>
                     ))}
                   </div>
-
+                  {/* 
                   <div className="price-tag">
                     <span className="symbol">$</span>
                     <span className="amount">{monthly? x.monthlyprice : x.yearlyprice}</span>
                     <span className="after">/user{monthly? "/month" : "/year"}</span>
-                  </div>
+                  </div> */}
 
                   <Button primary className={x.button[0]=== "Coming Soon" ? "price-button-disabled" : "price-button-link"} url={x.button[1]}>{x.button[0]}</Button>
                 </div>

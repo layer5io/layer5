@@ -1,6 +1,19 @@
 import React from "react";
 import { GiCheckMark } from "@react-icons/all-files/gi/GiCheckMark";
 
+export const details = [
+  { id: 0, category: "Lifecycle", description: "aLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" },
+  { id: 1, category: "Chaos", description: "bLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" },
+  { id: 2, category: "Performance", description: "cLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" },
+  { id: 3, category: "Management", description: "dLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" },
+  { id: 4, category: "Account", description: "eLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" },
+  { id: 5, category: "Feature1", description: "fLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" },
+  { id: 6, category: "Feature2", description: "gLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" },
+  { id: 7, category: "Feature3", description: "hLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" },
+  { id: 8, category: "Feature4", description: null },
+];
+
+
 export const options = [
   {
     tier: "Free",
@@ -60,3 +73,4 @@ export const options = [
       { id: 8, category: "Feature4", value: <GiCheckMark className="icon" /> }]
   },
 ];
+
