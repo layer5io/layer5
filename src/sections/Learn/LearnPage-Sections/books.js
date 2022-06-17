@@ -7,7 +7,10 @@ import {FaArrowRight} from "@react-icons/all-files/fa/FaArrowRight";
 import styled from "styled-components";
 
 const BooksListWrapper = styled.div`
+    Button:hover {
+      box-shadow: 0 2px 10px ${props => props.theme.banner1ButtonShadow};
 
+    }
     .book-heading {
         text-align: center;
         margin: 5rem 0

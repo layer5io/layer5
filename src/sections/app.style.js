@@ -129,7 +129,9 @@ p {
       font-size: 1rem;
     }
 }
-
+Button:hover {
+  box-shadow: 0 2px 10px  ${(props) => props.theme.banner1ButtonShadow};
+}
 a {
     text-decoration: none;
     color: ${(props) => props.theme.linkColor};

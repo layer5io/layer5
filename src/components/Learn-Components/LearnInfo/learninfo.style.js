@@ -8,7 +8,7 @@ const InfoWrapper = styled.div`
     margin: auto;
     .col {
       p {
-        color: rgba(0, 0, 0, 0.7);
+        color: ${props => props.theme.learnInfoText};
         margin: 1rem auto;
       }
 

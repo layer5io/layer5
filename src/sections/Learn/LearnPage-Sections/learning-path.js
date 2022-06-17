@@ -6,7 +6,9 @@ import Button from "../../../reusecore/Button";
 import styled from "styled-components";
 
 const LearningPathsWrapper = styled.div`
-
+    Button:hover {
+  box-shadow: 0 2px 10px ${props => props.theme.banner1ButtonShadow};
+    } 
     margin: 3rem 0 4rem;
 
     .learn-path-heading {

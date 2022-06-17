@@ -75,6 +75,9 @@ const darktheme = {
   verticalSubtittleColor : "rgb(140, 140, 140)",
   invertColor: "invert(100%)",
   backSVGColor: "#FFFFFF",
+  navDropBackground: "rgb(20, 20, 20)",
+  siteLinkBrightness: "1.0",
+  learnInfoText: "rgba(255, 255, 255, 0.7)",
 };
 export default darktheme;
   

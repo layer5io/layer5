@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const WorkshopPageWrapper = styled.div`
+
 	.btn-and-status {
 		display: flex;
 		width: 97%;
@@ -68,6 +69,7 @@ export const WorkshopPageWrapper = styled.div`
 
 	button.readmeBtn {
 		display: flex;
+		color: ${props => props.theme.text};
 		background: transparent;
 		border: none;
 		justify-content: center;
@@ -77,7 +79,7 @@ export const WorkshopPageWrapper = styled.div`
 		transition: 0.2s ease-in all;
 
 		&:hover {
-			color: ${props => props.theme.primaryLightColorTwo};
+			color: ${props => props.theme.linkColor};
 		}
 	}
 
@@ -92,11 +94,11 @@ export const WorkshopPageWrapper = styled.div`
 
 	a.siteLink {
 		padding: 0.5rem 0.25rem 0rem;
-		filter: grayscale(100%) brightness(0.5);
+		filter: grayscale(100%) brightness(${props => props.theme.siteLinkBrightness});
 		transition: 0.2s ease-in-out all;
 
 		&:hover {
-			color: ${props => props.theme.primaryLightColorTwo};
+			color: ${props => props.theme.keppelColor};
 			filter: none;
 		}
 	}
@@ -158,11 +160,10 @@ export const WorkshopPageWrapper = styled.div`
 		padding-bottom: 3.75rem;
 	}
 
-	.workshop-grid-col{
-		transition: all 0.25s ease-in;
-	}
+	
 
 	.workshop-grid-card {
+		background-color: ${props => props.theme.projectCardColor};
 		width: 100%;
 		display: block;
 		height: auto;
@@ -204,6 +205,7 @@ export const WorkshopPageWrapper = styled.div`
 	}
 
 	.para {
+		color: ${props => props.theme.text};
 		text-align: center;
 		font-weight: 500;
 	}
@@ -215,7 +217,9 @@ export const WorkshopPageWrapper = styled.div`
 			margin: auto;
 			display: block;
 		}
-		
+		Button:hover {
+			box-shadow: 0 2px 10px ${props => props.theme.banner1ButtonShadow};
+		}
 		a {
 			margin: auto;
 		}

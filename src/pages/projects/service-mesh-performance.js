@@ -9,19 +9,34 @@ import SMPPage from "../../sections/Projects/SMP";
 import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
+import darktheme from "../../theme/app/darkThemeStyles";
+import { useState } from "react";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
 
-const SMP = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Service Mesh Performance (SMP)"
-        description="Measuring and indexing the performance, overhead, and value of the world's service mesh deployments."
-        image="/images/smp-dark.png" />
-      <Navigation />
-      <SMPPage />
-      <Footer/>
-    </Layout>
-  </ThemeProvider>
-);
+const SMP = () => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  return(
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Service Mesh Performance (SMP)"
+          description="Measuring and indexing the performance, overhead, and value of the world's service mesh deployments."
+          image="/images/smp-dark.png" />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <SMPPage />
+        <Footer/>
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default SMP;

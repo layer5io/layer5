@@ -12,7 +12,9 @@ import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
 export const WorkshopsListWrapper = styled.div`
 
 	margin: 4rem 0;
-
+	Button:hover {
+		box-shadow: 0 2px 10px ${props => props.theme.banner1ButtonShadow};
+	  }
 	.workshops-col {
 			margin: auto;
 	}

@@ -73,5 +73,8 @@ const lighttheme = {
   verticalSubtittleColor : "rgb(160, 160, 160)",
   invertColor: "none",
   backSVGColor: "#3c494f",
+  navDropBackground: "rgb(250, 250, 250)",
+  siteLinkBrightness: "0.5",
+  learnInfoText: "rgba(0, 0, 0, 0.7)",
 };
 export default lighttheme;

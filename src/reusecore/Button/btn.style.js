@@ -38,7 +38,7 @@ const ButtonStyle = styled.button`
         &:hover{
             color: ${props.theme.black};
             background: ${props.theme.highlightColor}; 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 10px ${props.theme.banner1ButtonShadow};
         }
     `}
     ${props => props.secondary && css`
@@ -48,7 +48,7 @@ const ButtonStyle = styled.button`
         &:hover{
             color: #111111; 
             background: #00b39f; 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 10px ${props.theme.banner1ButtonShadow};
         }
     `}
 `;

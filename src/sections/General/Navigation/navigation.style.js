@@ -89,7 +89,7 @@ const NavigationWrap = styled.header`
     display: grid;
     grid-template-columns: 35% 65%;
     .hr {
-      background: black;
+      background: ${props => props.theme.navDropBackground};
       display: flex;
       flex-direction: column;
       position: relative;
@@ -99,7 +99,7 @@ const NavigationWrap = styled.header`
         padding: 0;
       }
       .section {
-        color: black;
+        color: ${props => props.theme.text};
         font-size: 20px;
         font-weight: 600;
         margin-left:0px;
@@ -115,7 +115,7 @@ const NavigationWrap = styled.header`
           padding: 2px 0;
           display: block;
           .readmore-btn {
-            color: ${props => props.theme.black};
+            color: ${props => props.theme.text};
           }
           &:before {
             content: none;
