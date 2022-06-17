@@ -18,7 +18,7 @@ const HowMesheryWorksSpecs = () => {
           <Row Vcenter>
             <Col className="text" xs={12} lg={6}>
               <h2>Meshery is the cloud native management plane</h2>
-              <p>Adopt and operate any service mesh with confidence using Meshery's management features</p>
+              <p>Adopt and operate cloud native infrastructure with confidence using Meshery's intuitive management features</p>
             </Col>
             <Col className="card" xs={12} lg={6}>
               <DataCard />
