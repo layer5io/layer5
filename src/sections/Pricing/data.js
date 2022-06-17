@@ -16,7 +16,7 @@ export const details = [
 
 export const options = [
   {
-    tier: "Free",
+    tier: "Free (Personal)",
     featured: true,
     monthlyprice: 0,
     yearlyprice: 0,
@@ -24,15 +24,15 @@ export const options = [
     button: ["Join for Free", "https://meshery.layer5.io"],
     summary: ["Multi-mesh", "MeshMark", "MeshMonkey", "Comparative Testing", "Single Team"],
     subdata: [
-      { id: 0, category: "Lifecycle", value: "Multi-mesh" },
-      { id: 1, category: "Chaos", value: "MeshMonkey" },
-      { id: 2, category: "Performance", value: "Comparative Testing" },
-      { id: 3, category: "Management", value: "MeshMark" },
-      { id: 4, category: "Account", value: "Single Team" },
-      { id: 5, category: "Feature1", value: <GiCheckMark className="icon" /> },
-      { id: 6, category: "Feature2", value: <GiCheckMark className="icon" /> },
-      { id: 7, category: "Feature3", value: <GiCheckMark className="icon" /> },
-      { id: 8, category: "Feature4", value: <GiCheckMark className="icon" /> }]
+      { id: 0, category: "Lifecycle", description: "", value: "Multi-mesh" },
+      { id: 1, category: "Chaos", description: "", value: "MeshMonkey" },
+      { id: 2, category: "Performance", description: "", value: "Comparative Testing" },
+      { id: 3, category: "Management", description: "", value: "MeshMark" },
+      { id: 4, category: "Account", description: "", value: "Single Team" },
+      { id: 5, category: "Feature1", description: "", value: <GiCheckMark className="icon" /> },
+      { id: 6, category: "Feature2", description: "", value: <GiCheckMark className="icon" /> },
+      { id: 7, category: "Feature3", description: "", value: <GiCheckMark className="icon" /> },
+      { id: 8, category: "Feature4", description: "", value: <GiCheckMark className="icon" /> }]
   },
   {
     tier: "Team",
@@ -43,15 +43,15 @@ export const options = [
     button: ["Coming Soon", ""],
     summary: ["MeshMap", "Share Results", "Continuous Optimizer", "Automated Canary", "Single Organization"],
     subdata: [
-      { id: 0, category: "Lifecycle", value: "MeshMap" },
-      { id: 1, category: "Chaos", value: "Share Results" },
-      { id: 2, category: "Performance", value: "Continuous Optimizer" },
-      { id: 3, category: "Management", value: "Automated Canary" },
-      { id: 4, category: "Account", value: "Single Organization" },
-      { id: 5, category: "Feature1", value: <GiCheckMark className="icon" /> },
-      { id: 6, category: "Feature2", value: <GiCheckMark className="icon" /> },
-      { id: 7, category: "Feature3", value: <GiCheckMark className="icon" /> },
-      { id: 8, category: "Feature4", value: <GiCheckMark className="icon" /> }]
+      { id: 0, category: "Lifecycle", description: "", value: "MeshMap" },
+      { id: 1, category: "Chaos", description: "", value: "Share Results" },
+      { id: 2, category: "Performance", description: "", value: "Continuous Optimizer" },
+      { id: 3, category: "Management", description: "", value: "Automated Canary" },
+      { id: 4, category: "Account", description: "", value: "Single Organization" },
+      { id: 5, category: "Feature1", description: "", value: <GiCheckMark className="icon" /> },
+      { id: 6, category: "Feature2", description: "", value: <GiCheckMark className="icon" /> },
+      { id: 7, category: "Feature3", description: "", value: <GiCheckMark className="icon" /> },
+      { id: 8, category: "Feature4", description: "", value: <GiCheckMark className="icon" /> }]
   },
   {
     tier: "Enterprise",
@@ -62,15 +62,15 @@ export const options = [
     button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
     summary: ["Catalog Federation", "Pipelined Chaos", "Customizable Optimizer", "Multivariate Feature Flags", "Multi-organization"],
     subdata: [
-      { id: 0, category: "Lifecycle", value: "Article" },
-      { id: 1, category: "Chaos", value: "Blog" },
-      { id: 2, category: "Performance", value: "News" },
-      { id: 3, category: "Management", value: "Workshop" },
-      { id: 4, category: "Account", value: "Event" },
-      { id: 5, category: "Feature1", value: <GiCheckMark className="icon" /> },
-      { id: 6, category: "Feature2", value: <GiCheckMark className="icon" /> },
-      { id: 7, category: "Feature3", value: <GiCheckMark className="icon" /> },
-      { id: 8, category: "Feature4", value: <GiCheckMark className="icon" /> }]
+      { id: 0, category: "Lifecycle Management", feature: "", description: "", value: "" },
+      { id: 1, category: "Chaos", description: "", value: "Blog" },
+      { id: 2, category: "Performance", description: "", value: "News" },
+      { id: 3, category: "Management", description: "", value: "Workshop" },
+      { id: 4, category: "Account", description: "", value: "Own and control the user accounts of your enterprise members through your identity provider (IdP)." },
+      { id: 5, category: "Audit Log", description: "Quickly review the actions performed by members of your organization.", value: <GiCheckMark className="icon" /> },
+      { id: 6, category: "LDAP", description: "Access Meshery Cloud using your existing accounts and centrally manage access.", value: <GiCheckMark className="icon" /> },
+      { id: 7, category: "SAML", description: "", value: <GiCheckMark className="icon" /> },
+      { id: 8, category: "Role-based access control", description: "Define users' level of access to your infra, data, and settings", value: <GiCheckMark className="icon" /> }]
   },
 ];
 

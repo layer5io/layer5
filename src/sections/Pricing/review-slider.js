@@ -88,7 +88,7 @@ const Reviews = () => {
             type="1"
             quote="While speed is one of Linkerd's core competitive advantages, Linkerd provides much more than just an ultrafast data plane. We are pleased to support MeshMark's establishment of a higher order set of functional considerations that incorporate value into the performance equation."
             person="William Morgan"
-            title="CEO of Buoyant and one of the creators of Linkerd, the CNCF's flagship service mesh"
+            title="CEO of Buoyant and one of the creators of Linkerd"
             image={Lee}
           />
           <Customers
