@@ -54,6 +54,14 @@ const Data = {
           sepLine: true
         },
         {
+          name: "Docker Extension",
+          path: "/docker-extension-meshery",
+        },
+        {
+          name: "MeshMap",
+          path: "/cloud-native-management/meshmap",
+        },
+        {
           name: "Nighthawk",
           path: "/projects/nighthawk",
           sepLine: true

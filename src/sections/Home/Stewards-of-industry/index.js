@@ -29,7 +29,7 @@ const StewardsOfIndustry = () => {
   return (
     <BannerSectionWrapper>
       <BgImage image={pluginImage} className="section">
-        <h1 className="section-header">Creators of service mesh standards.</h1>
+        <h1 className="section-header">Creators of cloud native standards.</h1>
         <h2>Service mesh leaders.</h2>
         <Button
           primary
