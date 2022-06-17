@@ -62,7 +62,6 @@ const PricingWrapper = styled.section`
   .button {
     margin:.5rem 0rem 0rem 0rem; 
     font-weight:400;
-    padding: 0.3rem;
     color: white;
   }
   @media (min-width: 434px) {
@@ -79,10 +78,12 @@ const PricingWrapper = styled.section`
   border-left: 1px solid ${props => props.theme.caribbeanGreenColor};
   border-right: 1px solid ${props => props.theme.caribbeanGreenColor};
   background-color: ${props => props.theme.caribbeanGreenColor};
+  padding: 0.3rem;
   }
 
 .inactive {
   background-color: ${props => props.theme.primaryLightColor};
+  padding: 0.2rem;
   }
 }
 

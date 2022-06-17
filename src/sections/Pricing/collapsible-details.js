@@ -6,9 +6,8 @@ import { MdExpandMore } from "@react-icons/all-files/md/MdExpandMore";
 const FeatureDetailsWrapper = styled.div`
 margin: 0;
 display: inline;
+cursor: pointer;
 .open{
-    display: flex;
-    flex-direction: column;
     margin-top: 0rem;
     list-style: none;
     height:auto !important;
@@ -19,7 +18,6 @@ display: inline;
    .toggle-icon{
     width: 2rem; 
     height: 2rem; 
-    cursor: pointer;
     fill: ${props => props.theme.primaryColor};
   }
 p{
@@ -30,7 +28,7 @@ p{
     display:inline-block;
     float: right;
    }
-   .toc-ul{
+   .closed{
     opacity:1;
     height:0;
     transition:none;
@@ -52,29 +50,34 @@ const FeatureDetails = (props) => {
 
   return (
     <FeatureDetailsWrapper>
-      {props.description ? 
-        <div className="toggle-btn">
-          {expand ? (
-            <MdExpandLess
-              className="toggle-icon"
-              onClick={function () {
-                setExpand(!expand);
-              }}
-            />
-          ) : (
-            <MdExpandMore
-              className="toggle-icon"
-              onClick={function () {
-                setExpand(!expand);
-              }}
-            />
-          )}
-        </div> : "" }
-      <div className="details">
-        <p className={`toc-ul ${expand ? "open" : ""}`}>
-          {props.description}
-        </p>
-      </div> 
+      <div onClick={function () {
+        setExpand(!expand); 
+      }}>
+        <h5>{props.category}</h5>
+        {props.description ? 
+          <div className="toggle-btn">
+            {expand ? (
+              <MdExpandLess
+                className="toggle-icon"
+                onClick={function () {
+                  setExpand(!expand);
+                }}
+              />
+            ) : (
+              <MdExpandMore
+                className="toggle-icon"
+                onClick={function () {
+                  setExpand(!expand);
+                }}
+              />
+            )}
+          </div> : "" }
+        <div className="details">
+          <p className={`closed ${expand ? "open" : ""}`}>
+            {props.description}
+          </p>
+        </div> 
+      </div>
     </FeatureDetailsWrapper>
   );
 };

@@ -42,7 +42,7 @@ section.bq-section {
 
 .type-one-quote .type-one-quote-pattern {
     flex-basis: 80px;
-    background: linear-gradient(0deg, rgba(0,179,159,1) 0%, rgba(0,179,159,1) 0%, rgba(0,172,153,1) 0%, rgba(6,6,6,1) 71%);
+    background: linear-gradient(180deg,rgba(71,126,150,1) 0%,rgba(0,179,159,1) 35%,rgba(60,73,79,1) 100%);
     border-radius: 10px 0 0 10px;
 }
 
@@ -150,7 +150,7 @@ section.bq-section {
     height: 80px;
     align-items: center;
     justify-content: flex-start;
-    background: linear-gradient(275deg, rgba(0,179,159,1) 0%, rgba(0,179,159,1) 0%, rgba(0,172,153,1) 0%, rgba(6,6,6,1) 57%);
+    background: linear-gradient(250deg,rgba(71,126,150,1) 0%,rgba(0,179,159,1) 35%,rgba(60,73,79,1) 100%);
     border-radius: 10px 10px 0 0;
 }
 
@@ -240,7 +240,7 @@ section.bq-section {
 }
 
 .type-three-quote .type-three-quote-base {
-    background: linear-gradient(0deg, rgba(0,179,159,1) 0%, rgba(0,179,159,1) 0%, rgba(0,172,153,1) 3%, rgba(6,6,6,1) 37%);
+    background: linear-gradient(250deg,rgba(71,126,150,1) 0%,rgba(0,179,159,1) 35%,rgba(60,73,79,1) 100%);
     color: #ffffff;
     font-weight: bold;
     padding: 60px;
@@ -276,8 +276,8 @@ section.bq-section {
     top: 140px;
     right: 5px;
     font-size: 280pt;
-    color: #00b39f;
-    opacity: 0.28;
+    color: #ffffff;
+    opacity: 0.18;
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;

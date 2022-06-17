@@ -12,7 +12,7 @@ import ContactFormModal from "../../components/Contact-Modal";
 
 const Pricing = () => {
 
-  const[monthly, setMonthly] = useState(true);
+  const[monthly, setMonthly] = useState(false);
 
   return (
     <PricingWrapper>

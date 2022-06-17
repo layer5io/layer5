@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Customers from "../../reusecore/Blockquote/Blockquote-image";
 import Slider from "react-slick";
-import Lee from "../../collections/members/lee-calcote/lee-calcote.jpg";
 import Maxi from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.jpg";
 import Otto from "../../collections/members/otto-van-der-schaaf/otto-van-der-schaaf.jpg";
 import Nic from "../../collections/members/nicholas-jackson/nic-jackson.jpg";
+import William from "../../assets/images/reviews/william.png";
+import Ken from "../../assets/images/reviews/ken-owens.png";
+
 
 const settings = {
   dots: false,
@@ -50,8 +52,7 @@ const settings = {
 const ReviewsWrapper = styled.div`
 .slider{
   padding: 2rem 0 0.5rem;
-  background: rgb(0, 179, 158, 0.1);
-  cursor: pointer;
+  background: ${props => props.theme.secondaryLightColor};
   h2{
     text-align: center;
     padding: 0 0 2rem;
@@ -85,18 +86,25 @@ const Reviews = () => {
             image={Otto}
           />
           <Customers
+            type="2"
+            quote="Meshery is the perfect tool for ensuring that your service mesh applications are optimally configured and performing well; it also gives you a fantastic visual insight into what can be a large amount of textual configuration"
+            person="Nic Jackson"
+            title="Principal Developer Advocate at HashiCorp"
+            image={Nic}
+          />
+          <Customers
             type="1"
             quote="While speed is one of Linkerd's core competitive advantages, Linkerd provides much more than just an ultrafast data plane. We are pleased to support MeshMark's establishment of a higher order set of functional considerations that incorporate value into the performance equation."
             person="William Morgan"
             title="CEO of Buoyant and one of the creators of Linkerd"
-            image={Lee}
+            image={William}
           />
           <Customers
             type="2"
             quote="Performance measurement data rarely provides a clear and simple picture of how well our applications are performing from a business point of view, which are so often the key efficiency indicators that we really need"
             person="Ken Owens"
             title="Vice President Cyber Cloud Security Engineering at Fiserv"
-            image={Lee}
+            image={Ken}
           />
           <Customers
             type="1"
@@ -111,13 +119,6 @@ const Reviews = () => {
             person="Nic Jackson"
             title="Principal Developer Advocate at HashiCorp"
             image={Nic}
-          />
-          <Customers
-            type="2"
-            quote="We were slugging it out in our labs trying to figure out how to do performance benchmarking with a service mesh. Instead of ten tools, if we had just one, it would be nice. Then we see Meshery come into the field"
-            person="Mrittika Ganguli"
-            title="Principal Engineer and Director Cloud Native Network Pathfinding"
-            image={Lee}
           />
         </Slider>
       </div>

@@ -33,6 +33,7 @@ h2, h5{
     h5{
       display: inline-block;
       padding-top: 1rem;
+      font-size: 1rem;
     }
 }
 .price-table tr td:first-child {
@@ -102,13 +103,15 @@ h2, h5{
     border: 0 none;
 }
 
-.price-table svg {
-    width: 90px;
-    fill: #00b39f;
-}
 .icon{
     height: 1.5rem;
     width: auto;
+    fill: #00b39f;
+}
+.no-icon{
+  height: 1.5rem;
+  width: auto;
+  fill: red;
 }
 `;
 
@@ -136,7 +139,7 @@ const Comparison = () => {
 
               {details.map((x) => (
                 <tr key={x.category}>
-                  <td><h5>{x.category}</h5><FeatureDetails description={x.description}/></td>
+                  <td><FeatureDetails category={x.category} description={x.description}/></td>
                   {options.map((tier) => (
                     <td key={tier.tier}>{tier.subdata[x.id].value}</td>
                   ))}
