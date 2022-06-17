@@ -3,13 +3,12 @@ import {Link} from "gatsby";
 import layer5_img from "./layer5-white.png";
 
 const sortByLen = (rowA, rowB, id, desc) => {
-    
+
   if (rowA.original.subheading !== "bold") {
     if (rowA.original.subsection === rowB.original.subsection) {
-      if (rowA.length > rowB.length) return desc ? 1 : -1;
-      if (rowA.length < rowB.length) return desc ? -1 : 1;
+      
+      return desc ? rowA.original.service_mesh_pattern.localeCompare(rowB.original.service_mesh_pattern) : rowA.original.service_mesh_pattern.localeCompare(rowB.original.service_mesh_pattern) ;
 
-      return 0;
     }
   }
 };
