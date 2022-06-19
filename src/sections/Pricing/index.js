@@ -7,8 +7,7 @@ import Reviews from "./review-slider";
 import Button from "../../reusecore/Button";
 import { options } from "./data";
 import { FiCheck } from "@react-icons/all-files/fi/FiCheck";
-import ContactFormModal from "../../components/Contact-Modal";
-
+import FeatureDetails from "./collapsible-details";
 
 const Pricing = () => {
 
@@ -56,10 +55,10 @@ const Pricing = () => {
                 <div className={`${x.featured ? "featured" : ""} pricing-table`}>
                   {x.featured ? <div className="pricing-label">Start Here</div> : ""}
                   <h2>{x.tier}</h2>
-                  <h5>{x.byline}</h5>
+                  <h5 className="byline">{x.byline}</h5>
                   <div className="pricing-features">
-                    {x.summary.map((tier) => (
-                      <div className="feature" key={tier}><FiCheck size={20} className="check" />{tier}</div>
+                    {x.summary.map((t) => (
+                      <div className="feature" key={t.id}><FeatureDetails category={t.category} description={t.description}/></div>
                     ))}
                   </div>
                   {/* 
@@ -76,7 +75,6 @@ const Pricing = () => {
           </Row>
         </Container>
       </div>
-      <div className="shapes_wrap"></div>
       <Comparison />
       <Reviews />
       <FAQ category={["Pricing", "Billing"]} />

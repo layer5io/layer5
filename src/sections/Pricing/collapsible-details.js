@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { MdExpandLess} from "@react-icons/all-files/md/MdExpandLess";
-import { MdExpandMore } from "@react-icons/all-files/md/MdExpandMore";
+import { MdExpandMore} from "@react-icons/all-files/md/MdExpandMore";
+import { RiArrowRightSLine } from "@react-icons/all-files/ri/RiArrowRightSLine";
 
 const FeatureDetailsWrapper = styled.div`
-margin: 0;
 display: inline;
 cursor: pointer;
 .open{
@@ -16,17 +15,18 @@ cursor: pointer;
     transition:all .4s !important;
    }
    .toggle-icon{
-    width: 2rem; 
-    height: 2rem; 
+    width: 1.2rem; 
+    height: 1.2rem; 
     fill: ${props => props.theme.primaryColor};
   }
 p{
     font-size: 0.9rem;
+    color: ${props => props.theme.primaryLightColor};
 }
 .toggle-btn{
-    padding-top: 0.8rem;
     display:inline-block;
-    float: right;
+    float: left;
+    vertical-align: middle;;
    }
    .closed{
     opacity:1;
@@ -37,10 +37,10 @@ p{
    .open{
     visibility:visible;
    }
- @media only screen and (max-width: 992px){
-    .toggle-btn{
-        display:none;;
-       }
+
+ h5{
+   display: inline-block;
+   vertical-align: middle;
  }
 
 `;
@@ -53,18 +53,17 @@ const FeatureDetails = (props) => {
       <div onClick={function () {
         setExpand(!expand); 
       }}>
-        <h5>{props.category}</h5>
         {props.description ? 
           <div className="toggle-btn">
             {expand ? (
-              <MdExpandLess
+              <MdExpandMore
                 className="toggle-icon"
                 onClick={function () {
                   setExpand(!expand);
                 }}
               />
             ) : (
-              <MdExpandMore
+              <RiArrowRightSLine
                 className="toggle-icon"
                 onClick={function () {
                   setExpand(!expand);
@@ -72,6 +71,7 @@ const FeatureDetails = (props) => {
               />
             )}
           </div> : "" }
+        <h5>{props.category}</h5>
         <div className="details">
           <p className={`closed ${expand ? "open" : ""}`}>
             {props.description}

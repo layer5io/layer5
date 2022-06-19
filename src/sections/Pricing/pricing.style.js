@@ -3,23 +3,6 @@ import background from "../Home/Projects-home/images/background.svg";
 
 const PricingWrapper = styled.section`
 
-.shapes_wrap{
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  &:before {
-      content: url(${background});
-      position: absolute;
-      right: 3rem;
-      top: 0rem;
-  }
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
-
 .headers {
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,1) 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
@@ -146,7 +129,7 @@ const PricingWrapper = styled.section`
       font-weight: 500;
     }
 
-    h5 {
+    .byline {
       color: ${props => props.theme.primaryLightColor};
       font-size: 16px;
       font-weight: 400;
@@ -157,9 +140,13 @@ const PricingWrapper = styled.section`
     }
 
     .pricing-features .feature {
-      font-size: 14px;
       margin: .5rem 0rem;
-      color: ${props => props.theme.primaryColor};
+      h5{
+        color: #7A848E;
+        font-size: 16px;
+        font-weight: 400;
+        vertical-align: text-top;
+      }
       .check{
         padding-right: 0.2rem;
         vertical-align: middle;

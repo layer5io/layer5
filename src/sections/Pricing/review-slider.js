@@ -5,8 +5,8 @@ import Slider from "react-slick";
 import Maxi from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.jpg";
 import Otto from "../../collections/members/otto-van-der-schaaf/otto-van-der-schaaf.jpg";
 import Nic from "../../collections/members/nicholas-jackson/nic-jackson.jpg";
-import William from "../../assets/images/reviews/william.png";
-import Ken from "../../assets/images/reviews/ken-owens.png";
+import William from "./reviews/william-morgan.png";
+import Ken from "./reviews/ken-owens.png";
 
 
 const settings = {
