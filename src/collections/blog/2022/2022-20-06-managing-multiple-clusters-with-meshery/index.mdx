@@ -46,13 +46,13 @@ All cluster specific operations are now applied over a number of clusters unifor
 It is as simple as selecting the specific cluster(s) from the kubernetes context switcher in the navbar, and then applying whatever operation you wanted to, whether that be deploying a sample app, a service mesh, or a Meshmap design.
 
 <p align="center">
-  <img src={C1} />
+  <img src={C1} alt="context switcher"/>
 </p>
 
 Just before applying the operation, users will be prompted with a confirmation modal which will provide the information about which cluster(s) that operation will be performed against. As the User interface improves, this same modal will also convey more useful information about the operation they are going to perform.
 
 <p align="center">
-  <img src={C2} />
+  <img src={C2} alt="deploy modal" />
 </p>
 
 
@@ -62,10 +62,10 @@ Just before applying the operation, users will be prompted with a confirmation m
 You can switch between views of your cluster in visualizer mode while using Meshmap.
 
 <p align="center">
-  <img src={C3} />
+  <img src={C3} alt="visualizer showing data of context1"/>
 </p>
 <p align="center">
-  <img src={C5} />
+  <img src={C5} alt="visualizer showing data of context2"/>
 </p>
 
 
@@ -74,7 +74,7 @@ You can switch between views of your cluster in visualizer mode while using Mesh
 Users can perform cluster related operations from the settings page like adding more clusters, removing data from existing clusters and removing existing clusters.
 
 <p align="center">
-  <img src={C6} />
+  <img src={C6} alt="Settings page"/>
 </p>
 
 Meshery also deploys its operator across the cluster it’s about to manage. This operator manages the lifecycle of a NATS server and Meshsync. Meshsync pumps the blood into Meshery’s core, in other words, it is responsible for watching all different types of resources by establishing a watch stream over each of them. Meshsync then pumps that data into the NATS server, of which Meshery server itself is a client. From there, Meshery server gets all the relevant data related to activities in the cluster.
@@ -85,14 +85,14 @@ By default Meshery wants to be greedy and as much aware about your infrastructur
 
 
 <p align="center">
-  <img src={C7} />
+  <img src={C7} alt="cluster management"/>
 </p>
 
 If you disconnect your cluster and do not want to persist the data from that cluster then you can perform a fine grain deletion by deleting all Meshsync data(which are the kubernetes objects) for that specific cluster.
 
 
 <p align="center">
-  <img src={C8} />
+  <img src={C8} alt="flushing meshsync data"/>
 </p>
 
 ## Future of multi cluster
