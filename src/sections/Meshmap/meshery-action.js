@@ -101,9 +101,9 @@ p.caption {
 const MesheryAction = () => {
   return (
     <MesheryWrapper>
-      <h2 className="heading">Watch Meshery In Action</h2>
+      <h2 className="heading">See MeshMap In-Action</h2>
       <p className="caption">
-        Everything for service mesh in one place.
+        Recently on-stage at...
       </p>
       <div className="mobile-modes">
 
