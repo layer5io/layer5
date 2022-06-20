@@ -151,6 +151,12 @@ const BannerSectionWrapper = styled.div`
         .draft-logo { max-width: 1px; visibility: hidden ;}
     }
 
+    @media screen and (max-width: 500px) {
+        .learn-particle-img {
+            display: none;
+            }
+        }
+
 `;
 
 const BannerSection = () => {
