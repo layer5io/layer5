@@ -171,7 +171,7 @@ export const ProjectWrapper = styled.div`
     .image{
         margin: 0 auto;
         @media only screen and (max-width: 991px) {
-            padding-left: 40%;
+            padding-left:20%;
         }
         @media only screen and (max-width: 741px) {
             padding-left: 30%;
@@ -179,7 +179,49 @@ export const ProjectWrapper = styled.div`
         
     }
     .project__card.seven{
-        grid-column: 3/8;
+        grid-column: 3/6;
+        grid-row: 7/8;
+        img{
+            width: 6rem;
+            align-self: center;
+            margin: auto;
+
+            @media only screen and (min-width: 780px) {
+                align-self: flex-start;
+            } 
+        }
+        h5{
+            align-self: center;
+            @media only screen and (min-width: 780px) {
+                padding-top:  0px;
+            }
+        }
+    }
+    .project__card-container-seven{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        img{
+            align-self: center;
+            max-width: 100%;
+            max-height: 100%;
+
+        }
+        h5{
+            top: 0;
+            font-weight: 600;
+            text-align: center;
+            
+        }
+        @media only screen and (min-width: 741px) {
+            width: 80%;
+            place-content: center;
+        }
+        
+    }
+    .project__card.eight{
+        grid-column: 6/8;
         grid-row: 7/8;
         img{
             width: 90px;
@@ -194,11 +236,10 @@ export const ProjectWrapper = styled.div`
             margin-top: 1rem;
             @media only screen and (min-width: 780px) {
                 align-self: flex-end;
-                padding-top:  20px;
             }
         }
     }
-    .project__card-container-seven{
+    .project__card-container-eight{
         max-width: 100%;
         height: 10rem;
         width: 12rem;
@@ -279,6 +320,9 @@ export const ProjectWrapper = styled.div`
         }
         .project__card-container_one{
             height: 10rem;
+            img{
+                margin-top: 1.5rem;
+            }
         }
         .project__card {
             h5{ 
@@ -322,6 +366,15 @@ export const ProjectWrapper = styled.div`
             }
         }
         .project__card.seven{
+            img{
+                margin-top: 15px;
+                width: 150%;
+            }
+            h5{ 
+                margin-top:30px;
+            }
+        }
+        .project__card.eight{
             img{
                 margin-top: 10px;
             }

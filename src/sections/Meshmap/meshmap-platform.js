@@ -1,14 +1,56 @@
 import React from "react";
 import styled from "styled-components";
-
-import { Container } from "../../reusecore/Layout";
-import MesheryPlatforms from "../../sections/Meshery/Meshery-platforms/index.js";
-import Docker from "../../assets/images/meshmap/docker_white.svg";
-import Kubernetes from "../../assets/images/meshmap/kubernetes_white.svg";
 import SelfHosted from "./images/datacenter-crash.svg";
 import CloudHosted from "./images/meshery-cloud.svg";
+import Features from "../../components/Features-carousel";
 
 const PlatformWrapper = styled.div`
+
+.blocks {
+  display: flex;
+  padding: 1rem;
+}
+
+.block {
+  min-height: 100px;
+  width: 50%;
+  width: calc(60% + 2rem);
+}
+}
+.block--left {
+  background-color: BLACK;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 3rem) 100%, 0% 100%);
+  h1, p{
+    text-align: left;
+    padding: 1rem 2rem;
+    color: white;
+  }
+  p{
+    width: 75%;
+  }
+  img{
+    width: 65%;
+    padding-left: 3rem;
+  }
+}
+
+.block--right {
+  background-color: #00b39f;
+  margin-left: -8rem;
+  clip-path: polygon(8rem 0, 100% 0, 100% 100%, 0% 100%);
+  h1, p{
+    text-align: right;
+    padding: 1rem 2rem;
+    color: white;
+  }
+  p{
+    padding: 1.1rem 2rem 0 4rem;
+  }
+  img{
+    width: 89%;
+    padding: 1rem 0 1rem 12rem;
+  }
+}
 
 p.caption {
     margin: 0rem 0rem 2rem 0rem;
@@ -25,207 +67,47 @@ p.caption {
       padding: 1rem 0;
       text-transform: uppercase;
   }
-  
-  .modes-wrapper {
-    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.25);
-    display: flex;
 
-    background-color: ${props => props.theme.secondaryColor};
-    background: linear-gradient(360deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
-
-    &:hover {
-      .mode {
-        width: 23.3333%;
+  @media screen and (max-width: 991px) {
+    .block--left, .block--right {
+      width: 50%;
+      margin: 0;
+      clip-path: none;
+      h1{
+        text-align: center;
+        color: white;
+      }
+      p{
+        color: white;
+        width: 100%;
+        padding: 1rem;
+      }
+      img{
+        width: 95%;
+        padding-left: 0;
+        display: block;
+        margin: 0 auto;
       }
     }
+}
+
+.mobile-modes{
+  display: none;
+}
+
+.modes-image{
+  margin: 0 0 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile-modes{
+    display: block;
   }
-  
-  .mode {
-    transform: translate3d(0, 0, 0);
-    position: relative;
-    border-left: 1.5px solid #fff;
-    width: 50%;
-    height: 50vh;
-    min-height: 600px;
-    color: #fff;
-    overflow: hidden;
-    transition: width 0.5s ease;
-  
-    &:first-of-type {border-left: 0px;}
-    &:before,
-    &:after {
-      transform: translate3d(0, 0, 0);
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-    }
-  
-    &:after {
-      background: transparentize(#e0251b, 0.15);
-      opacity: 1;
-      transition: opacity 0.5s ease;
-    }
-  
-    &:before {
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        #00b39f 100%
-      );
-      z-index: 1;
-      opacity: 0;
-      transform: translate3d(0, 0, 0) translateY(50%);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-  
-    &:hover {
-      width: 80% !important;
-      cursor: pointer;
-  
-      &:after {
-        opacity: 0;
-      }
-  
-      &:before {
-        opacity: 1;
-        transform: translate3d(0, 0, 0) translateY(0);
-        transition: opacity 1.5s ease, transform 1.5s ease 0.75s;
-      }
-
-      .mode-name{
-          top: 15%;
-          transition: all 1.5s ease 0.75s;
-      }
-  
-      .content {
-        opacity: 1;
-        transform: translateY(0);
-        transition: all 1.5s ease 0.75s;
-      }
-    }
-  }
-
-  .mode-catalog { 
-    transform: translate3d(0, 0, 0);
-    position: relative;
-    border-top: 1.5px solid #fff;
-    width: 100%;
-    height: 50vh;
-    min-height: 600px;
-    color: #fff;
-    overflow: hidden;
-    transition: width 0.3s ease;
-
-    &:first-of-type {border-left: 0px;}
-    &:before,
-    &:after {
-      transform: translate3d(0, 0, 0);
-      content: "";
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-    }
-  
-    &:after {
-      opacity: 1;
-      transition: opacity 0.5s ease;
-    }
-  
-    &:before {
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0) 0%,
-        #00b39f 100%
-      );
-      z-index: 1;
-      opacity: 0;
-      transform: translate3d(0, 0, 0) translateY(50%);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    &:hover {
-      width: 100% !important;
-      cursor: pointer;
-  
-      &:after {
-        opacity: 0;
-        ttransition: opacity 0.5s ease, transform 0.5s ease;
-
-      }
-  
-      &:before {
-        opacity: 1;
-        transform: translate3d(0, 0, 0) translateY(0);
-        transition: opacity 1s ease, transform 1s ease 0.5s;
-      }
-
-      .mode-name{
-          top: 15%;
-          transition: all 1.1s ease 0.55s;
-      }
-  
-      .content {
-        opacity: 1;
-        transform: translateY(0);
-        transition: all 1.1s ease 0.55s;
-      }
-    }
-  }
-  
-  .content {
-    transform: translate3d(0, 0, 0) translateY(95px);
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    margin: 0 1.618em;
-    top: 23%;
-    opacity: 0;
-  
-    h1 {
-      margin: 0.5rem;
-      text-transform: uppercase;
-      color: ${props => props.theme.saffronColor};
-      font-size: 1.44rem;
-      font-weight: normal;
-    }
-    img{
-        width: 30rem;
-        height: auto;
-    }
-  }
-  .flip {
-    background: linear-gradient(180deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
-
-    }
-    
-    
-  
-  .mode-name {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: 1;
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-  
-    p {
-      font-size: 1.728rem;
-      line-height: 2;
-      margin-bottom: 0;
-      white-space: nowrap;
-    }
-  }
-  
-  @media only screen and (max-width: 768px) {
+  .blocks{
     display: none;
   }
-
-  
+}
+ 
 `;
 
 const Platform = () => {
@@ -233,37 +115,56 @@ const Platform = () => {
     <PlatformWrapper>
       <h2 className="heading">Choose Your Deployment Model</h2>
       <p className="caption">
-        {/* Discover and Visualize - any and all your cloud native infra and apps. */}
         Get MeshMap where you need it.
       </p>
-      {/* MeshMap supports 10+ service meshes. */}
-      <section className="modes-wrapper">
-        <div className="mode">
-          <div className="mode-name">
-            <p>Self-hosted</p>
-          </div>
-          <div className="content">
-            <h1>On-Premises Support</h1>
-            <img src={SelfHosted} alt="MeshMap Self-hosted" />
-            <p>
-              Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.
-            </p>
-          </div>
-        </div>
+      <div className="mobile-modes">
+        <Features
+          heading=" "
+          features={[
+            {
+              title: "Self-hosted",
+              description:
+                    "Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.",
+              content: (
+                <img
+                  src={SelfHosted}
+                  alt="MeshMap Self-hosted"
+                  className="modes-image"
+                />
+              ),
+            },
+            {
+              title: "Cloud",
+              description:
+                    "Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.",
+              content: (
+                <img
+                  src={CloudHosted}
+                  alt="MeshMap Cloud"
+                  className="modes-image"
+                />
+              ),
+            },
+          ]}
+        />
+      </div>
 
-        <div className="mode">
-          <div className="mode-name">
-            <p>Cloud</p>
-          </div>
-          <div className="content">
-            <h1>MeshMap as as Service</h1>
-            <img src={CloudHosted} alt="MeshMap Cloud" />
-            <p>
-              Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.
-            </p>
-          </div>
+      <div className="blocks">
+        <div className="block block--left">
+          <h1>Self-Hosted</h1>
+          <img src={SelfHosted} alt="MeshMap Self-hosted" />
+          <p>
+            Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.
+          </p>
         </div>
-      </section>
+        <div className="block block--right">
+          <h1>Cloud</h1>
+          <img src={CloudHosted} alt="MeshMap Cloud" />
+          <p>
+              Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.
+          </p>
+        </div>
+      </div>
     </PlatformWrapper >
   );
 };

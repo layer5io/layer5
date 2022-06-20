@@ -5,7 +5,9 @@ import PageHeader from "../../../reusecore/PageHeader";
 
 import { ProjectWrapper } from "./projectGrid.style";
 import DockerExtensionCTA from "../../Docker-Meshery/docker-extension-CTA";
+import MeshMapCTA from "../../meshmap-cta";
 
+import extension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import landscape from "../../../assets/images/landscape/layer5_landscape_green.svg";
 import imagehub from "../../../assets/images/image-hub/layer5-image-hub.svg";
@@ -33,7 +35,7 @@ const ProjectPage = () => {
           <div className="project__grid">
             <Link to="/service-mesh-landscape" className="project__card one">
               <div className="project__card-container project__card-container_one">
-                <img src={landscape} alt="Landscape"/>
+                <img src={landscape} alt="Landscape" />
                 <h5>Landscape</h5>
               </div>
             </Link>
@@ -45,7 +47,7 @@ const ProjectPage = () => {
             </Link>
             <Link to="/projects/image-hub" className="project__card three">
               <div className="project__card-container">
-                <img src={imagehub} alt="Image Hub"/>
+                <img src={imagehub} alt="Image Hub" />
                 <h5>Image Hub</h5>
               </div>
             </Link>
@@ -63,21 +65,35 @@ const ProjectPage = () => {
               className="project__card five"
             >
               <div className="project__card-container">
-                <img src={smp} alt="Service Mesh Performance"/>
+                <img src={smp} alt="Service Mesh Performance" />
                 <h5>Service Mesh Performance</h5>
               </div>
             </Link>
             <Link to="/projects/nighthawk" className="project__card six">
               <div className="project__card-container">
-                <img src={nighthawk} alt="Nighthawk"/>
+                <img src={nighthawk} alt="Nighthawk" />
                 <h5>NightHawk</h5>
               </div>
             </Link>
             <Link
-              to="/learn/service-mesh-books/service-mesh-patterns"
+              to="/docker-extension-meshery"
               className="project__card seven"
             >
               <div className="project__card-container-seven">
+                <Row>
+                  <img
+                    src={extension}
+                    alt="Meshery Docker Extension"
+                  />
+                  <h5> Meshery Docker Extension </h5>
+                </Row>
+              </div>
+            </Link>
+            <Link
+              to="/learn/service-mesh-books/service-mesh-patterns"
+              className="project__card eight"
+            >
+              <div className="project__card-container-eight">
                 <Row>
                   <Col lg={4} md={12} sm={12} className="image">
                     <img
@@ -93,7 +109,7 @@ const ProjectPage = () => {
             </Link>
           </div>
 
-          <DockerExtensionCTA />
+          <MeshMapCTA />
         </Container>
       </div>
     </ProjectWrapper>

@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import { Col, Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import Meshery_Logo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import MeshMapDrafts from "./images/meshmap-draft-logos.png";
 import styled from "styled-components";
 
 const BannerSectionWrapper = styled.div`
@@ -72,6 +73,16 @@ const BannerSectionWrapper = styled.div`
             padding-left: 1rem;
         }
     }
+    .draft-logo {
+        
+        position: absolute;
+        max-width: 25rem;
+        margin-top: -5rem;
+        right: 4rem;
+        p {
+            text-align: center ;
+        }
+    }
 
     .learn-particle-img {
         width: 35rem;
@@ -112,6 +123,7 @@ const BannerSectionWrapper = styled.div`
                 right: -4rem;
             }
         }
+        .draft-logo { max-width: 20rem; margin-right: -3rem;}
     }
     @media screen and (max-width: 992px) {
         .learn-particle-img {
@@ -124,6 +136,10 @@ const BannerSectionWrapper = styled.div`
             }
         }
         padding: 5rem 3rem;
+        .draft-logo { max-width: 18rem; margin-top:0rem; margin-right: -3rem;}
+    }
+    @media screen and (max-width: 870px) {
+        .draft-logo { max-width: 1px; visibility: hidden ;}
     }
     @media screen and (max-width: 768px) {
         .learn-particle-img {
@@ -136,6 +152,7 @@ const BannerSectionWrapper = styled.div`
             }
         }
         padding: 5rem 3rem;
+        .draft-logo { max-width: 1px; visibility: hidden ;}
     }
 
 `;
@@ -143,8 +160,11 @@ const BannerSectionWrapper = styled.div`
 const BannerSection = () => {
   return (
     <BannerSectionWrapper>
-      <div className="learn-particle-img">
-        <img src={Meshery_Logo} alt="Meshery Logo" />
+      <div className="draft-logo">
+        <p>Help us choose our logo for MeshMap:</p>
+        <a href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA">
+          <img src={MeshMapDrafts} alt="MeshMap Draft" /></a><br />
+        <p><a href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA">Vote for your favorite design</a></p>
       </div>
       <div>
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}

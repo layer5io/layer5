@@ -5,7 +5,7 @@ import Layout from "../../../components/layout";
 import SMPWrapper from "./smp.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import JoinCommunity from "../../Community/Join-community";
+import MeshMapCTA from "../../meshmap-cta";
 
 import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
 import callout from "../../../assets/images/callout/callout.png";
@@ -132,7 +132,7 @@ const SMPPage = () => {
           <h4> Learn more about these initiatives</h4>
           <Button primary title="Learn More" url="https://smp-spec.io"></Button>
         </div>
-        <JoinCommunity image={callout}/>
+        <MeshMapCTA />
       </SMPWrapper>
     </Layout>
   );

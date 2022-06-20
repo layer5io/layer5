@@ -9,12 +9,12 @@ const theme = {
   primaryLightColor: "#b3b3b3",
 
   // keppel (dark green)
-  primaryLightColorTwo: "#00B39F",
-  keppelColor: "#00B39F",
+  primaryLightColorTwo: "#00d3a9",
+  keppelColor: "#00d3a9",
 
   // caribbean green (light green)
-  secondaryColor: "#00D3A9",
-  caribbeanGreenColor: "#00D3A9",
+  secondaryColor: "#00b39f",
+  caribbeanGreenColor: "#00d3a9",
   secondaryLightColorTwo: "#F3FFFD",
 
   // lighter gray
@@ -42,7 +42,7 @@ const theme = {
 
   // caribbean green (light green)
   menuHoverColor: "#00b39f",
-  linkColor: "#00b39f",
+  linkColor: "#00d3a9",
 
   // saffron (dark yellow)
   highlightColor: "#EBC017",
