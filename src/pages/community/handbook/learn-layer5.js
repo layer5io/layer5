@@ -15,7 +15,7 @@ const CommunityLearn = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Learn Layer5" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO title="Learn Layer5" description="We have put together good learning materials and resources to guide you through learning about cloud native infrastucture." />
       <Navigation />
       <LearnPage />
       <Footer/>
