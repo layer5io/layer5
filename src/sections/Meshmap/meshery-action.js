@@ -94,8 +94,25 @@ p.caption {
   .mobile-modes{
     display: block;
   }
+  .blocks{
+    flex-direction: column;
+    gap: 5rem;
+    width: 100%;
+    align-items: center;
+
+     .block--left, .block--right {
+      width: 80%;
+      height: 20rem;
+     }
+     }
 }
- 
+
+@media only screen and (max-width: 420px) {
+ .blocks{
+  gap: 7rem;
+ }
+}
+
 `;
 
 const MesheryAction = () => {
