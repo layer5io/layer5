@@ -71,7 +71,7 @@ Users can perform cluster related operations from the settings page like adding 
 
 <img src={Settings} alt="Settings page" class="slides-right" />
 
-Meshery also deploys its operator across the cluster it’s about to manage. This operator manages the lifecycle of a NATS server and Meshsync. Meshsync pumps the blood into Meshery’s core, in other words, it is responsible for watching all different types of resources by establishing a watch stream over each of them. Meshsync then pumps that data into the NATS server, of which Meshery server itself is a client. From there, Meshery server gets all the relevant data related to activities in the cluster.
+Meshery also deploys its operator across the cluster it’s about to manage. This operator manages the lifecycle of a NATS server and MeshSync. MeshSync pumps the blood into Meshery’s core, in other words, it is responsible for watching all different types of resources by establishing a watch stream over each of them. MeshSync then pumps that data into the NATS server, of which Meshery server itself is a client. From there, Meshery server gets all the relevant data related to activities in the cluster.
 
 By default Meshery wants to be greedy and as much aware about your infrastructure as possible so it deploys its operator across each detected cluster. But you can fine tune this configuration by going over each one of them from the table as shown.
 
