@@ -114,7 +114,7 @@ const Meshmap = () => {
                   </p>
                   <img src={mesheryCloud} className="meshery-hero-img" alt="Meshery Cloud" />
                   <div className="draft-logo">
-                    <p>Help us choose our logo for MeshMap:</p>
+                    <p>Help choose the best logo for MeshMap:</p>
                     <a href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA">
                       <img src={MeshMapDrafts} alt="MeshMap Draft" /></a><br />
                     <p><a href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA">Vote for your favorite design</a></p>
