@@ -15,7 +15,7 @@ const CommunityAbout = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Community Handbook" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO title="Community Handbook" description="Instructions to encourage and support first-time open-source contributors." />
       <Navigation />
       <AboutPage />
       <Footer/>
