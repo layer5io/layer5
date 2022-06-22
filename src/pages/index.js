@@ -18,7 +18,7 @@ import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
 import CloudNativeLeaders from "../sections/Home/Cloud-Native";
 import SoSpecial from "../sections/Home/So-Special-Section";
-import darktheme from "../theme/app/darkThemeStyles";
+import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
 import { useCookies } from "react-cookie";
 import { useEffect } from "react";

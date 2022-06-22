@@ -14,7 +14,7 @@ import theme from "../theme/app/themeStyles";
 import { graphql } from "gatsby";
 import BlogList from "../sections/Blog/Blog-list";
 import lighttheme from ".././theme/app/themeStyles";
-import darktheme from ".././theme/app/darkThemeStyles";
+import { darktheme } from ".././theme/app/themeStyles";
 import { useCookies } from "react-cookie";
 export const query = graphql`
   query allBlogs {

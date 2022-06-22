@@ -9,7 +9,7 @@ import MesheryPage from "../../../sections/Meshery";
 import Footer from "../../../sections/General/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
-import darktheme from "../../../theme/app/darkThemeStyles";
+import { darktheme } from "../../../theme/app/themeStyles";
 import lighttheme from "../../../theme/app/themeStyles";
 import { useState } from "react";
 import { useCookies } from "react-cookie";

@@ -10,7 +10,7 @@ import Community from "../../sections/Community";
 
 import { GlobalStyle } from "../../sections/app.style";
 import lighttheme from "../../theme/app/themeStyles";
-import darktheme from "../../theme/app/darkThemeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useEffect } from "react";

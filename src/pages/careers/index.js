@@ -10,7 +10,7 @@ import CareersSection from "../../sections/Careers";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
-import darktheme from "../../theme/app/darkThemeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
 const Careers = () => (
   <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>

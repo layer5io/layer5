@@ -10,7 +10,7 @@ import ServiceMeshLabs from "../../sections/Learn/Service-Mesh-Labs";
 
 import { GlobalStyle } from "../../sections/app.style";
 import lighttheme from "../../theme/app/themeStyles";
-import darktheme from "../../theme/app/darkThemeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
 import { useCookies } from "react-cookie";
 
 const ServiceMeshLabsPage = (props) => {

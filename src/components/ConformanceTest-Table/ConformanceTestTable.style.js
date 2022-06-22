@@ -13,12 +13,11 @@ table {
     td {
         padding: 0.3rem;
         height: 4rem;
-        color: black;
         text-align: center;
 		font-size: 0.9rem;
 		line-height: .9rem;
         font-weight: 400;
-        border-bottom: 1px solid #efefef;
+        border-bottom: 1px solid ${props => props.theme.projectCardColor};
     }
     th {
         background: #1E2117;
@@ -31,15 +30,15 @@ table {
   
     tr {
 		:nth-child(odd) {
-			background: #ffffff;
+			background:  ${props => props.theme.projectCardColor};
 			td {
-				border-right: 1px solid #ffffff;
+				border-right: 1px solid ${props => props.theme.projectCardColor};;
 			}
 		}
 		:nth-child(even) {
-			background: #efefef;
+			background: ${props => props.theme.body};
 			td {
-				border-right: 1px solid #efefef;
+				border-right: 1px solid ${props => props.theme.body};
 			}
 		}
 		:last-child {

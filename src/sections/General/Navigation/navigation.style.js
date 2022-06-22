@@ -431,7 +431,7 @@ const NavigationWrap = styled.header`
           }
       }
       .post-title{
-          color: ${props => props.theme.menuHoverColor};
+          color: ${props => props.theme.text};
       }
     }
     a:before {
@@ -477,7 +477,7 @@ const NavigationWrap = styled.header`
     font-size: 16px;
     font-weight: 600;
     line-height: 28px;
-    color: black;
+    color: ${props => props.theme.lightTextColor};
     margin-bottom: 20px;
     display: block;
     white-space: nowrap;
@@ -485,6 +485,11 @@ const NavigationWrap = styled.header`
     text-overflow: ellipsis;
     -webkit-transition: 450ms all;
     transition: 450ms all;
+    &:hover{
+      color: ${props => props.theme.highlightLightColor};
+
+
+    }
     
     @supports (-webkit-line-clamp: 2) {
       overflow: hidden;
@@ -496,7 +501,7 @@ const NavigationWrap = styled.header`
     }
   }
   .readmore-btn {
-    color: rgba(0,0,0,0.35);
+    color: ${props => props.theme.lightTextColor};
     display: flex;
     align-items: center;
     transition: all 0.3s linear;

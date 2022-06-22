@@ -8,7 +8,7 @@ import ProjectPage from "../../sections/Projects/Project-grid";
 import Footer from "../../sections/General/Footer";
 import { GlobalStyle } from "../../sections/app.style";
 import lighttheme from "../../theme/app/themeStyles";
-import darktheme from "../../theme/app/darkThemeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useEffect } from "react";
