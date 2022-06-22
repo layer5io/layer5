@@ -5,12 +5,8 @@ const MesheryWrapper = styled.div`
 
 .blocks {
   display: flex;
-  
   padding-bottom: 5rem;
-
 }
-
-
 
 .block {
   min-height: 100px;
@@ -105,7 +101,7 @@ p.caption {
     align-items: center;
 
      .block--left, .block--right {
-      width: 70%;
+      width: 80%;
       height: 20rem;
      }
      }
