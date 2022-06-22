@@ -10,7 +10,11 @@ import NewsPage from "../../sections/Company/News-grid";
 import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
+import { useState } from "react";
 import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`query allNews {
@@ -43,18 +47,29 @@ export const query = graphql`query allNews {
 }
 `;
 
-const NewsGridPage = ({ data }) => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="News" description="News and press about Layer5, the cloud native management company. 
+const NewsGridPage = ({ data }) => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  return(
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="News" description="News and press about Layer5, the cloud native management company. 
     Layer5 the company behind industry-leading, open source software." />
-      <Navigation />
-      <SimpleReactLightbox>
-        <NewsPage data={data} />
-      </SimpleReactLightbox>
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
+        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <SimpleReactLightbox>
+          <NewsPage data={data} />
+        </SimpleReactLightbox>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default NewsGridPage;

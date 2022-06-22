@@ -11,15 +11,25 @@ import ResourcesList from "../../sections/Resources/Resources-grid/ResourcesList
 import ResourcesNavigation from "../../sections/Resources/Resources-grid/filters";
 import { Row, Col, Container } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
-import theme from "../../theme/app/themeStyles";
 import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
-
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
 
 const MembersPage = () => {
   const [filter, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
-
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
   const handleChange = () => {
     var checkboxes = document.querySelectorAll("input[type=checkbox]:checked");
     var filters = [];
@@ -38,11 +48,11 @@ const MembersPage = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Service Mesh Resources" description="Articles on how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news." canonical="https://layer5.io/resources" />
-        <Navigation />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
         <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes and any service mesh" img={RssFeedIcon} feedlink="/resources/feed.xml"/>
         <Container>
           <Row>
