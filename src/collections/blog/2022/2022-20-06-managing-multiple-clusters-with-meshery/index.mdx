@@ -15,13 +15,13 @@ published: true
 ---
 
 import { BlogWrapper } from "../../Blog.style.js";
-import C1 from "./c1.png";
-import C2 from "./c2.png";
-import C3 from "./c3.png";
-import C5 from "./c5.png";
-import C6 from "./c6.png";
-import C7 from "./c7.png";
-import C8 from "./c8.png";
+import Switcher from "./context-switcher.png";
+import Deploy from "./deploy-modal.png";
+import Cluster2 from "./meshmap-cluster2.png";
+import Cluster1 from "./meshmap-cluster1.png";
+import Settings from "./settings.png";
+import Cluster from "./cluster-mgmt.png";
+import Flush from "./flush-meshsync.png";
 
 <BlogWrapper>
 
@@ -42,13 +42,13 @@ All cluster specific operations are now applied over a number of clusters unifor
 It is as simple as selecting the specific cluster(s) from the kubernetes context switcher in the navbar, and then applying whatever operation you wanted to, whether that be deploying a sample app, a service mesh, or a Meshmap design.
 
 <p align="center">
-  <img src={C1} alt="context switcher"/>
+  <img src={Switcher} alt="context switcher" class="image-center-shadow" />
 </p>
 
 Just before applying the operation, users will be prompted with a confirmation modal which will provide the information about which cluster(s) that operation will be performed against. As the User interface improves, this same modal will also convey more useful information about the operation they are going to perform.
 
 <p align="center">
-  <img src={C2} alt="deploy modal" />
+  <img src={Deploy} alt="deploy modal"  class="image-center-shadow" />
 </p>
 
 
@@ -58,10 +58,10 @@ Just before applying the operation, users will be prompted with a confirmation m
 You can switch between views of your cluster in visualizer mode while using Meshmap.
 
 <p align="center">
-  <img src={C3} alt="visualizer showing data of context1"/>
+  <img src={Cluster2} alt="visualizer showing data of context1" class="slides-right" />
 </p>
 <p align="center">
-  <img src={C5} alt="visualizer showing data of context2"/>
+  <img src={Cluster1} alt="visualizer showing data of context2" class="slides-left" />
 </p>
 
 
@@ -69,27 +69,21 @@ You can switch between views of your cluster in visualizer mode while using Mesh
 
 Users can perform cluster related operations from the settings page like adding more clusters, removing data from existing clusters and removing existing clusters.
 
-<p align="center">
-  <img src={C6} alt="Settings page"/>
-</p>
+<img src={Settings} alt="Settings page" class="slides-right" />
 
 Meshery also deploys its operator across the cluster it’s about to manage. This operator manages the lifecycle of a NATS server and Meshsync. Meshsync pumps the blood into Meshery’s core, in other words, it is responsible for watching all different types of resources by establishing a watch stream over each of them. Meshsync then pumps that data into the NATS server, of which Meshery server itself is a client. From there, Meshery server gets all the relevant data related to activities in the cluster.
 
-
-
 By default Meshery wants to be greedy and as much aware about your infrastructure as possible so it deploys its operator across each detected cluster. But you can fine tune this configuration by going over each one of them from the table as shown.
 
-
-<p align="center">
-  <img src={C7} alt="cluster management"/>
-</p>
+<img src={Cluster} alt="cluster management" class="image-center-shadow" />
 
 If you disconnect your cluster and do not want to persist the data from that cluster then you can perform a fine grain deletion by deleting all Meshsync data(which are the kubernetes objects) for that specific cluster.
+ 
+<img src={Flush} alt="flushing meshsync data"  class="image-center-shadow" />
 
 
-<p align="center">
-  <img src={C8} alt="flushing meshsync data"/>
-</p>
+
+
 
 ## Future of multi cluster
 
