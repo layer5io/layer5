@@ -96,7 +96,7 @@ p.caption {
   }
   .blocks{
     flex-direction: column;
-    gap: 3rem;
+    gap: 5rem;
     width: 100%;
     align-items: center;
 
@@ -105,6 +105,12 @@ p.caption {
       height: 20rem;
      }
      }
+}
+
+@media only screen and (max-width: 420px) {
+ .blocks{
+  gap: 7rem;
+ }
 }
 
 `;
