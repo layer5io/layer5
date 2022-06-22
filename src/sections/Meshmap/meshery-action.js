@@ -5,8 +5,12 @@ const MesheryWrapper = styled.div`
 
 .blocks {
   display: flex;
+  
   padding-bottom: 5rem;
+
 }
+
+
 
 .block {
   min-height: 100px;
@@ -94,8 +98,19 @@ p.caption {
   .mobile-modes{
     display: block;
   }
+  .blocks{
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    align-items: center;
+
+     .block--left, .block--right {
+      width: 70%;
+      height: 20rem;
+     }
+     }
 }
- 
+
 `;
 
 const MesheryAction = () => {
