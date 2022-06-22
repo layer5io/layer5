@@ -79,6 +79,8 @@ const lighttheme = {
   learnInfoText: "rgba(0, 0, 0, 0.7)",
   meshInterfaceLogoFilter: "none",
   featureBlockBG: "#EBFCF8",
+  tagLinks: "#F0F0F0",
+
 };
 export const darktheme = {
   black: "#000000",
@@ -141,7 +143,7 @@ export const darktheme = {
   saffronLightColor: "#EAD07D",
   featureShadowColor: "rgba(0, 0, 0, 0.05)",
   projectCardColor: "#212121",
-  projectShadowColor: "#000000",
+  projectShadowColor: "#00d3a9",
   projectCardHoverColor: "#FFFFFF",
   projectIconColor: "#212121",
   featureTextCardColor: "#212121",
@@ -162,7 +164,7 @@ export const darktheme = {
   learnInfoText: "rgba(255, 255, 255, 0.7)",
   meshInterfaceLogoFilter: "90%",
   featureBlockBG: "rgb(20 23 20)",
-
+  tagLinks: "#212121",
 
 };
 

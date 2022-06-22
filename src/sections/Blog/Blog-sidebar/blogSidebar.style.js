@@ -76,17 +76,17 @@ const BlogSideBarWrapper = styled.div`
             li{
                 display: inline-block;
                 a{
-                    color: ${props => props.theme.black};
+                    color: ${props => props.theme.text};
                     margin: 5px;
                     display: block;
                     padding: 6px 18px;
                     border-radius: 3px;
-                    background: #F0F0F0;
+                    background: ${props => props.theme.tagLinks};
                     font: 400 13px/26px "Open Sans", sans-serif; 
                     transition: all 0.3s linear;
                     &:hover{
                         background: ${props => props.theme.secondaryColor};
-                        color: ${props => props.theme.white};
+                        color: ${props => props.theme.textRevert};
                     }
                 }
             }

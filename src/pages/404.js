@@ -9,18 +9,32 @@ import L404 from "../sections/404";
 import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
+import { darktheme } from "../theme/app/themeStyles";
+import lighttheme from "../theme/app/themeStyles";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
+import { useState } from "react";
 
-const NotFoundPage = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="What a mesh!" />
-      <Navigation />
-      <L404 />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
- 
+const NotFoundPage = () => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  return(
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="What a mesh!" />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <L404 />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default NotFoundPage;

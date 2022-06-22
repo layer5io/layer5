@@ -58,8 +58,6 @@ const Blog = (props) => {
     setIsListView(false);
   };
 
- 
-
   useEffect(() => {
     if (props.location.state) {
       if (props.location.state.isListView) setListView();

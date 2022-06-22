@@ -5,10 +5,10 @@ export const CardWrapper = styled.div`
         margin-bottom: 2rem;
         border-radius: 0.5rem;
         background-Color: ${props => props.theme.projectCardColor};
-        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 2px 6px 0px ${props => props.theme.projectShadowColor};
         transition: all 0.3s ease-in;
         &:hover{
-            box-shadow: 0px 2px 15px 4px rgba(0,0,0,0.2);
+            box-shadow: 0px 2px 15px 4px ${props => props.theme.projectCardHoverColor};
             .post-thumb-block{
                 .gatsby-image-wrapper, .old-gatsby-image-wrapper{
                     transform: scale3d(1.1,1.1,1);
@@ -128,7 +128,7 @@ export const CardWrapper = styled.div`
         bottom: 0;
     }
     .readmore-btn, .external-link-btn{
-       color: rgba(0,0,0,0.4);
+       color: ${props => props.theme.banner1ButtonShadow};
        display: flex;
        flex: auto;
        align-items: center;
