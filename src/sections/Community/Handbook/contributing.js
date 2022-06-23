@@ -19,19 +19,19 @@ const contents = [
 const contributingGuide = () => {
   return (
     <HandbookWrapper>
-      <div className='page-header-section'>
+      <div className="page-header-section">
         <h1>Contribution</h1>
       </div>
       <TOC />
-      <div className='page-section'>
+      <div className="page-section">
         <Container>
           <h2>General contribution flow</h2>
           <p>
 						Pull requests (PRs) are the best ways to propose changes to a
 						project repository. At Layer5 org, we use the Github Flow:
           </p>
-          <div className='content'>
-            <a id='Clone your fork'>
+          <div className="content">
+            <a id="Clone your fork">
               {" "}
               <h3>Clone your fork to your local machine</h3>{" "}
             </a>
@@ -47,8 +47,8 @@ const contributingGuide = () => {
               <li>
                 <span>
 									Open the terminal and run the following git command:
-                  <div className='codes'>
-                    <Code codeString='git clone “URL you copied from the clipboard.”' />
+                  <div className="codes">
+                    <Code codeString="git clone “URL you copied from the clipboard.”" />
                   </div>
                 </span>
               </li>
@@ -68,8 +68,8 @@ const contributingGuide = () => {
                 <span>
 									To do this, you'll need to add a remote. An example of the
 									command is given below:
-                  <div className='codes'>
-                    <Code codeString='git remote add upstream https://github.com/layer5io/meshery.git ' />
+                  <div className="codes">
+                    <Code codeString="git remote add upstream https://github.com/layer5io/meshery.git " />
                   </div>
 									Here “meshery" is used as the example repo. Be sure to
 									reference the actual repo you are contributing to.
@@ -77,7 +77,7 @@ const contributingGuide = () => {
               </li>
             </ul>
 
-            <a id='Checkout a new branch'>
+            <a id="Checkout a new branch">
               {" "}
               <h3>Create and checkout a new branch</h3>{" "}
             </a>
@@ -95,12 +95,12 @@ const contributingGuide = () => {
               <li>
                 <span>
 									Perform the flow:
-                  <div className='codes'>
-                    <Code codeString=' git checkout -b your-new-branch-name' />
+                  <div className="codes">
+                    <Code codeString=" git checkout -b your-new-branch-name" />
                   </div>
 									For example,
-                  <div className='codes'>
-                    <Code codeString='git checkout -b feature' />
+                  <div className="codes">
+                    <Code codeString="git checkout -b feature" />
                   </div>{" "}
 									(feature being a branch name)
                 </span>
@@ -112,8 +112,8 @@ const contributingGuide = () => {
               <li>
                 <span>
 									To add the changes you have made to your branch, use:
-                  <div className='codes'>
-                    <Code codeString='git add <file> ' />
+                  <div className="codes">
+                    <Code codeString="git add <file> " />
                   </div>
                 </span>
               </li>
@@ -122,14 +122,14 @@ const contributingGuide = () => {
                   {" "}
 									If you add multiple file changes to the branch, you simply
 									use:
-                  <div className='codes'>
-                    <Code codeString=' git add .' />
+                  <div className="codes">
+                    <Code codeString=" git add ." />
                   </div>
                 </span>
               </li>
             </ul>
 
-            <a id='Commit your changes'>
+            <a id="Commit your changes">
               {" "}
               <h3>Commit the changes made</h3>{" "}
             </a>
@@ -137,14 +137,14 @@ const contributingGuide = () => {
               <li>
                 <span>
 									Now commit those changes using the git commit command:
-                  <div className='codes'>
-                    <Code codeString='git commit -s -m “This is my commit message”' />
+                  <div className="codes">
+                    <Code codeString="git commit -s -m “This is my commit message”" />
                   </div>
                 </span>
               </li>
             </ul>
 
-            <a id='Push changes to Github'>
+            <a id="Push changes to Github">
               {" "}
               <h3>
 								Push changes to Github and submit a pull request (PR)
@@ -154,18 +154,18 @@ const contributingGuide = () => {
               <li>
                 <span>
 									To push your changes, run the git command:
-                  <div className='codes'>
-                    <Code codeString='git push origin your_branch_name' />
+                  <div className="codes">
+                    <Code codeString="git push origin your_branch_name" />
                   </div>
                 </span>
               </li>
             </ul>
           </div>
-          <a id='Sign-off commits'>
+          <a id="Sign-off commits">
             {" "}
             <h2>
 							Make sure to{" "}
-              <a href='https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits'>
+              <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
 								Sign-off
               </a>{" "}
 							on your Commits (Developer Certificate of Origin)
@@ -181,8 +181,8 @@ const contributingGuide = () => {
 						To signify that you agree to the DCO for contributions, you simply
 						add a line to each of your git commit messages:
           </p>
-          <div className='codes'>
-            <Code codeString='Signed-off-by: Jane Smith <jane.smith@example.com>' />
+          <div className="codes">
+            <Code codeString="Signed-off-by: Jane Smith <jane.smith@example.com>" />
           </div>
           <p>
 						In most cases, you can add this signoff to your commit automatically
@@ -190,27 +190,27 @@ const contributingGuide = () => {
 						name and a reachable email address (sorry, no pseudonyms or
 						anonymous contributions). An example of signing off on a commit:
           </p>
-          <div className='codes'>
-            <Code codeString='$ commit -s -m “my commit message w/signoff”' />
+          <div className="codes">
+            <Code codeString="$ commit -s -m “my commit message w/signoff”" />
           </div>
           <p>
 						To ensure all your commits are signed, you may choose to add this
 						alias to your global .gitconfig:
           </p>
-          <div className='codes'>
+          <div className="codes">
             <Code
-              codeString='[alias]
+              codeString="[alias]
   amend = commit -s --amend
   cm = commit -s -m
   commit = commit -s
-'
+"
             />
           </div>
           <p>
 						Or you may configure your IDE, for example, Visual Studio Code to
 						automatically sign-off commits for you:
           </p>
-          <img src={Signoff} width='74%' id='sign-off' />
+          <img src={Signoff} width="74%" id="sign-off" />
           <TocPagination />
         </Container>
 
