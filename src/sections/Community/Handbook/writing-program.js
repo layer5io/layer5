@@ -192,9 +192,6 @@ const Writers = () => {
               <div className="item">
                 <p>Upon being accepted, you'll work with a coordinator on the content team to decide on a topic, develop a project plan, and discuss submission details.</p>
               </div>
-              <div className="item">
-                <p>Follow the instructions to contribute to your choice of content.</p> 
-              </div>    
             </div>
 
             <h3>Additional Resources</h3>
