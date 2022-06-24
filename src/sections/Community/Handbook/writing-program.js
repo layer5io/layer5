@@ -167,7 +167,7 @@ const Writers = () => {
 
             <div className="process">
               <div className="item">
-                <p>If you’re interested in the Layer5 Writing Program, please apply. Fill out the Content Form to get started.</p>
+                <p>If you’re interested in the Layer5 Writing Program, please submit your information (and proposed topic, if you have one) to get started. <i>Don't have a topic? Don't worry have plenty of suggestions for you.</i></p>
 
                 <Button primary className="open-modal-btn" onClick={openModal} title="Layer5 Content Form" />
                 <Modal
