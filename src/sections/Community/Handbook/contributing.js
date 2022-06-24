@@ -147,7 +147,7 @@ const contributingGuide = () => {
             <a id="Push changes to Github">
               {" "}
               <h3>
-								Push changes to Github and submit a pull request (PR)
+								Push changes to Github and submit a Pull Request (PR)
               </h3>{" "}
             </a>
             <ul>
