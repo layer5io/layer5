@@ -14,6 +14,7 @@ import theme from "../theme/app/themeStyles";
 
 export const query = graphql`query MemberBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
+    body
     frontmatter {
       name
       position
@@ -24,6 +25,9 @@ export const query = graphql`query MemberBySlug($slug: String!) {
       location
       badges
       bio
+      executive_bio
+      executive_position
+      company
       image_path {
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
@@ -43,7 +47,7 @@ const MemberSinglePage = ({data}) => {
         <GlobalStyle />
         <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL}/>
         <Navigation />
-        <MemberSingle frontmatter={data.mdx.frontmatter}/>
+        <MemberSingle frontmatter={data.mdx.frontmatter} body={data.mdx.body} />
         <Footer />
       </Layout>
     </ThemeProvider>

@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { SRLWrapper } from "simple-react-lightbox";
 import { MemberSingleWrapper } from "./memberSingle.style";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
@@ -17,8 +20,10 @@ import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighth
 import imageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import communityLogo from "../../../assets/images/community/community-green.svg";
 import Button from "../../../reusecore/Button";
+import Modal from "react-modal";
+import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
 
-const MemberSingle = ({ frontmatter }) => {
+const MemberSingle = ({ frontmatter, body }) => {
   const {
     name,
     position,
@@ -30,7 +35,15 @@ const MemberSingle = ({ frontmatter }) => {
     location,
     badges,
     bio,
+    executive_bio,
+    executive_position,
+    company,
   } = frontmatter;
+
+  const [modalIsOpen,setIsOpen] = useState(false);
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+  
   return (
     <MemberSingleWrapper>
       <Container>
@@ -161,6 +174,40 @@ const MemberSingle = ({ frontmatter }) => {
               </div>
               <div className="social-bg">
                 <ul className="profile-social-links">
+                  <li>
+                    {executive_bio &&
+                    <div>
+                      <FaUserTie className="bio" size={32} onClick={openModal} />
+                      <Modal
+                        isOpen={modalIsOpen}
+                        onRequestClose={closeModal}
+                        className="Modal"								
+                        overlayClassName="Overlay"			
+                        ariaHideApp={false}
+                        contentLabel="Executive Bio"
+                      >
+                        <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
+                        <div className="exec-bio-image">
+                          <h2 className="modal-heading">Executive Bio</h2>
+                          <Image
+                            className="bio-image"
+                            {...image_path}
+                            imgStyle={{ objectFit: "contain" }}
+                            alt={name}
+                          />
+                          <h3>{name}</h3>
+                          <p>{executive_position}</p>
+                          <p>{company}</p>
+                        </div>
+                        <div className="exec_bio">
+                          <SRLWrapper>
+                            <MDXRenderer>{body}</MDXRenderer>
+                          </SRLWrapper>
+                        </div>
+                      </Modal>
+                    </div>
+                    }
+                  </li>
                   {github && (
                     <li>
                       <a href={`https://github.com/${github}`}>
