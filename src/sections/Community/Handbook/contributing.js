@@ -165,7 +165,7 @@ const contributingGuide = () => {
             {" "}
             <h2>
 							Make sure to{" "}
-              <a href="ttps://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
+              <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
 								Sign-off
               </a>{" "}
 							on your Commits (Developer Certificate of Origin)
