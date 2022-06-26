@@ -147,7 +147,7 @@ const contributingGuide = () => {
             <a id="Push changes to Github">
               {" "}
               <h3>
-								Push changes to Github and submit a Pull Request (PR)
+								Push changes to Github and submit a pull request (PR)
               </h3>{" "}
             </a>
             <ul>
@@ -165,7 +165,7 @@ const contributingGuide = () => {
             {" "}
             <h2>
 							Make sure to{" "}
-              <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
+              <a href="ttps://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
 								Sign-off
               </a>{" "}
 							on your Commits (Developer Certificate of Origin)
