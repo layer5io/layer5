@@ -25,7 +25,7 @@
 <a href="https://meshery.io"><img src=".github/assets/images/meshery/meshery-logo.svg"
 style="margin:10px;" width="125px"
 alt="Meshery - Cloud Native Management Plane" align="left" /></a>
-<a href="https://meshery.io">Meshery</a> Meshery is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
+<a href="https://meshery.io">Meshery</a> is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
 <br /><br /><br />
 </p>
 <br />
