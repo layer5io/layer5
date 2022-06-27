@@ -27,7 +27,7 @@ import requestPayloadImg from "./request_payload.png";
 <BlogWrapper>
 
 <h3>Meshery Pattern Files</h3>
-<p>Meshery uses service mesh patterns that act as configurations of service meshes or applications to be deployed through Meshery. These configurations are written in a YAML format in a pattern file. Here's a small example pattern file to deploy a demo deployment of Istio through Meshery:
+<p><a href="/service-mesh-management/meshery">Meshery</a> uses <a href="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</a> that act as configurations of service meshes or applications to be deployed through Meshery. These configurations are written in a YAML format in a pattern file. Here's a small example pattern file to deploy a demo deployment of Istio through Meshery:
 
 ```yaml
 name: IstioSM
@@ -41,25 +41,25 @@ services:
       profile: demo
 ```
 </p>
-<p>(Meshery pattern files are still under active development. Refer [the Service Mesh Patterns Design Spec](https://docs.google.com/document/d/1B2N78EdRiZF-yVo1-HY3syppwBBDumgMuYg6seD-AJ4) for more information)</p>
+<p>(Meshery pattern files are still under active development. Refer <a href="https://docs.google.com/document/d/1B2N78EdRiZF-yVo1-HY3syppwBBDumgMuYg6seD-AJ4">the Service Mesh Patterns Design Spec</a> for more information)</p>
 
 <h3>Convert Docker Compose / Kubernetes Manifests to Pattern Files</h3>
-<p>Although as a user, you can deploy applications specified as Kubernetes Manifests or Docker Compose files directly through Meshery, you might want to convert them to Meshery Pattern Files. This tutorial can help you do just that
+<p>Although as a user, you can deploy applications specified as Kubernetes Manifests or Docker Compose files directly through Meshery, you might want to convert them to Meshery Pattern Files. This tutorial can help you do just that.
 <ol>
     <li>
     Open the Meshery UI. On the home page you should see the dashboard
     <img src = {dashboardImg} className="image-center-shadow" alt="Screenshot of Meshery Dashboard" />
     </li><br />
     <li>
-    Navigate to `Configuration > Applications` from the navbar on the side
+    Navigate to <code>Configuration > Applications</code> from the navbar on the side
     <img src = {applicationsPageImg} className="image-center-shadow" alt="Screenshot of Meshery Applications page" />
     </li><br />
     <li>
-    Click on `Import Application` and choose upload your Docker Compose file or Kubernetes Manifest
+    Click on <code>Import Application</code> and choose upload your Docker Compose file or Kubernetes Manifest
     <img src = {importAppImg} className="image-center-shadow" alt="Dialog Box prompting upload of an Application file" />
     </li><br />
     <li>
-    Your application will now show up in the list of applications. At this point, open the developer tools on your browser (Press F12 on your keyboard). Go to the networks section of the browser's dev tools, and when you're ready, click the `Deploy` icon next to your application.
+    Your application will now show up in the list of applications. At this point, open the developer tools on your browser (Press F12 on your keyboard). Go to the networks section of the browser's dev tools, and when you're ready, click the <code>Deploy</code> icon next to your application.
     <img src = {clickDeployImg} className="image-center-shadow" alt="Clicking deploy application with dev tools open" />
     </li><br />
     <li>
