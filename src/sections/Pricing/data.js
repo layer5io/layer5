@@ -3,10 +3,10 @@ import { GiCheckMark } from "@react-icons/all-files/gi/GiCheckMark";
 import {MdClose} from "@react-icons/all-files/md/MdClose";
 import MeshMap from "./icons/meshmap-icon.svg";
 import Support from "./icons/support.svg";
-import Collab from "./icons/collab.svg";
+import Collab from "./icons/collaboration.svg";
 import Lifecycle from "./icons/lifecycle.svg";
 import Identity from "./icons/identity.svg";
-import Notification from "./icons/notifications.svg";
+import Notification from "./icons/notification.svg";
 import Configuration from "./icons/configuration.svg";
 import Perforamance from "./icons/perf.svg";
 
@@ -358,7 +358,7 @@ export const options = [
     monthlyprice: 9.99,
     yearlyprice: 100,
     byline: "Everything in Free, plus:",
-    button: ["Coming Soon", ""],
+    button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
     summary: [
       { id: 0, category: "Dry-run", description: "Test and verify configuration changes in a separate environment." },
       { id: 1, category: "Design Reviews", description: "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere." },
@@ -373,7 +373,7 @@ export const options = [
     monthlyprice: 15.99,
     yearlyprice: 180,
     byline: "Everything in Team, plus:",
-    button: ["Contact Sales", "https://us15.list-manage.com/contact-form?u=6b50be5aea3dfe1fd4c041d80&form_id=d0ffe17c92d8014ede6b721aa16096e8"],
+    button: ["Coming Soon", ""],
     summary: [
       { id: 0, category: "User-defined Roles", description: "Customizable roles for specific permission assignments" },
       { id: 1, category: "Authentication: LDAP", description: "Access Meshery Server using your existing accounts and centrally manage repository access." },

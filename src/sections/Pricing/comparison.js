@@ -7,6 +7,9 @@ import FeatureDetails from "./collapsible-details";
 
 const ComparisonWrapper = styled.div`
 margin: 6rem auto;
+@media (min-width: 2048px) {
+  margin: 15rem auto;
+}
 
 h2, h5{
   text-align: center;
