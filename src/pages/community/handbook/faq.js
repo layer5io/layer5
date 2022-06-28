@@ -15,7 +15,7 @@ const Faq = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="FAQ" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO title="FAQ" description="Frequently Asked Questions" />
       <Navigation />
       <Faqs />
       <Footer/>

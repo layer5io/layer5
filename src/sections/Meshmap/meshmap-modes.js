@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
@@ -80,7 +80,7 @@ const MeshmapModesWrapper = styled.div`
   
     &:hover {
       width: 80% !important;
-      cursor: pointer;
+      cursor: default;
   
       &:after {
         opacity: 0;
@@ -146,7 +146,7 @@ const MeshmapModesWrapper = styled.div`
 
     &:hover {
       width: 100% !important;
-      cursor: pointer;
+      cursor: default;
   
       &:after {
         opacity: 0;
@@ -192,6 +192,7 @@ const MeshmapModesWrapper = styled.div`
     img{
         width: 30rem;
         height: auto;
+        cursor: pointer;
     }
   }
   .flip {
@@ -221,9 +222,27 @@ const MeshmapModesWrapper = styled.div`
     display: none;
   }
 
+  .big{
+    transform: scale(1.9);
+    transition: transform 0.25s ease;
+    @media only screen and (max-width: 1198px) {
+      transform: scale(1.5);
+    }
+    @media only screen and (max-width: 991px) {
+      transform: scale(1.1);
+    }
+  }
+  .small{
+    transform: scale(1);
+    transition: transform 0.25s ease;
+  }
+
 `;
 
 const MeshmapModes = () => {
+  const [designerEnlarged, setDesignerEnlarged] = useState(false);
+  const [vizEnlarged, setVizEnlarged] = useState(false);
+
   return (
     <MeshmapModesWrapper>
       <h2 className="heading">Choose Your Mode</h2>
@@ -239,7 +258,7 @@ const MeshmapModes = () => {
           </div>
           <div className="content">
             <h1>World Class Visual Editor</h1>
-            <img src={designerImage} alt="MeshMap Designer" />
+            <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={designerEnlarged? "big" : "small"}/>
             <p>
               Build your cloud native infrastructure with custom components and  drag-and-drop controls. Customize a service mesh deployment with application and Envoy filter from scratch.
             </p>
@@ -252,7 +271,7 @@ const MeshmapModes = () => {
           </div>
           <div className="content">
             <h1>Deploy your cloud native infrastructure</h1>
-            <img src={visualizerImage} alt="MeshMap Visualizer" />
+            <img src={visualizerImage} alt="MeshMap Visualizer" onClick={() => setVizEnlarged(!vizEnlarged)} className={vizEnlarged? "big" : "small"}/>
             <p>
               Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services. Connect an interactive terminal to instances of your containers.
             </p>

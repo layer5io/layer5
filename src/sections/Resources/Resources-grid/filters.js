@@ -67,7 +67,7 @@ const Navigation = (props) => {
   const technologies = counting.technology.group;
   const meshes = counting.mesh.group;
 
-
+  
   return (
     <ResourceNavigationWrapper>
       <div className="filter">

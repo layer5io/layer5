@@ -27,6 +27,8 @@ const theme = {
 
   // Teal Blue
   tertiaryColorTwo: "#477E96",
+  tealColor: "#477E96",
+  tealLightColor: "#66B6D9",
 
   headingColor: "#111111",
 

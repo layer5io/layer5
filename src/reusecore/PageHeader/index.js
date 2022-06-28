@@ -20,7 +20,7 @@ const authorField = (author, isSlugAvailable) => {
   );
 };
 
-const PageHeader = ({ category, title, img, feedlink, subtitle,  author, thumbnail,superscript }) => {
+const PageHeader = ({ category, title, img, feedlink, subtitle, author, thumbnail, superscript, date }) => {
   let isSlugAvailable = false;
   if(author){
     const validMembers = useStaticQuery(
@@ -71,12 +71,26 @@ const PageHeader = ({ category, title, img, feedlink, subtitle,  author, thumbna
                 </span>
               </>
             )}
+            {date && (
+              <>
+                <span>
+                  <h5>On:</h5>
+                  <p>{date}</p>
+                </span>
+              </>
+            )}
           </div>
         )}
         {!category && author && (
           <div className="breadcrumbs post">
             <h5>By:</h5>
             <span>{authorField(author, isSlugAvailable)}</span>
+            {date && (
+              <span>
+                <h5>On:</h5>
+                <p>{date}</p>
+              </span>
+            )}
           </div>
         )}
         {/*{!author && path && (*/}

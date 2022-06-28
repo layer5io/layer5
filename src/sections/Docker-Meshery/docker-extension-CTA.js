@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../../reusecore/Button";
 import Dockerimage from "../../assets/images/docker-extension/Docker_animated.svg";
+import { Container } from "../../reusecore/Layout";
 
 const DockerExtensionCTAWrapper = styled.div`
 .docker-callout {
@@ -40,17 +41,19 @@ const DockerExtensionCTAWrapper = styled.div`
 const DockerExtensionCTA = () => {
   return (
     <DockerExtensionCTAWrapper>
-      <div className="docker-callout">
-        <img src={Dockerimage} alt="Docker and Meshery" />
-        <div>
-          <h2>Docker Extension for Meshery is now available!</h2>
-          <p><i>Managing cloud native infrastructure has never been easier.</i></p>
-          <p className="text-gray">Sign up to to get access the extension.</p>
-          <Button primary url="/docker-extension-meshery" external={false}>
+      <Container>
+        <div className="docker-callout">
+          <img src={Dockerimage} alt="Docker and Meshery" />
+          <div>
+            <h2>Docker Extension for Meshery is now available!</h2>
+            <p><i>Managing cloud native infrastructure has never been easier.</i></p>
+            <p className="text-gray">Sign up to to get access the extension.</p>
+            <Button primary url="/docker-extension-meshery" external={false}>
             Get Access
-          </Button>
+            </Button>
+          </div>
         </div>
-      </div>
+      </Container>
     </DockerExtensionCTAWrapper>
   );
 };

@@ -14,6 +14,7 @@ import RelatedPosts from "../../../components/Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
 import BlogPostSignOff from "../BlogPostSignOff";
 import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
+import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
 
 import Image from "../../../components/image";
 
@@ -85,43 +86,47 @@ const BlogSingle = ({data}) => {
 
   return (
     <BlogPageWrapper>
-      <div className={`${authorInformation ? "post-container" : ""}`}>
-        <PageHeader
-          title={frontmatter.title}
-          subtitle={frontmatter.subtitle}
-          category={frontmatter.category}
-          author={{ name: frontmatter.author }}
-          thumbnail={frontmatter.thumbnail}
-        />
-        <div className="single-post-wrapper">
-          <Container>
-            <SRLWrapper>
-              <MDXRenderer>{body}</MDXRenderer>
-            </SRLWrapper>
-            <BlogPostSignOff
-              author={{ name: frontmatter.author }}
-            />
-            <div className="post-info-block">
-              <div className="tags">
-                <span>Tags:</span>
-                <div>
-                  {frontmatter.tags && frontmatter.tags.map(tag => (
-                    <Link key={`${frontmatter.title}-${tag}`}
-                      to={`/blog/tag/${slugify(tag)}`}>{tag}
-                    </Link>
-                  ))}
-                </div>
+    <div className={`${authorInformation ? "post-container" : ""}`}>
+      <PageHeader
+        title={frontmatter.title}
+        subtitle={frontmatter.subtitle}
+        category={frontmatter.category}
+        author={{ name: frontmatter.author }}
+        thumbnail={frontmatter.thumbnail}
+        date={frontmatter.date}
+      />
+      <div className="single-post-wrapper">
+        <Container>
+          <SRLWrapper>
+            <MDXRenderer>{body}</MDXRenderer>
+          </SRLWrapper>
+          <BlogPostSignOff
+            author={{ name: frontmatter.author }}
+          />
+          <div className="post-info-block">
+            <div className="tags">
+              <span>Tags:</span>
+              <div>
+                {frontmatter.tags && frontmatter.tags.map(tag => (
+                  <Link key={`${frontmatter.title}-${tag}`}
+                    to={`/blog/tag/${slugify(tag)}`}>{tag}
+                  </Link>
+                ))}
               </div>
             </div>
-            <RelatedPosts
-              postType="blogs"
-              relatedPosts={relatedPosts}
-              mainHead="Related Blogs" 
-              lastCardHead="All Blogs" 
-              linkToAllItems="/blog"
-            />
-          </Container>
-        </div>
+            {/* <CTA_Bottom
+              category={"Community"}
+            /> */}
+          </div>
+          <RelatedPosts
+            postType="blogs"
+            relatedPosts={relatedPosts}
+            mainHead="Related Blogs" 
+            lastCardHead="All Blogs" 
+            linkToAllItems="/blog"
+          />
+        </Container>
+
       </div>
       {authorInformation && (
         <div className="author-info-section">
@@ -158,6 +163,7 @@ const BlogSingle = ({data}) => {
           </div>
         </div>
       )}
+      </div>
     </BlogPageWrapper>
   );
 };

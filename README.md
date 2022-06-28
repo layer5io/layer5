@@ -8,7 +8,7 @@
 <img src="https://img.shields.io/github/issues/layer5io/layer5/help%20wanted.svg?color=%23DDDD00" /></a>
 <a href="https://slack.layer5.io" alt="Slack">
 <img src="https://img.shields.io/badge/Slack-@layer5.svg?logo=slack" /></a>
-<a href="https://github.com/layer5io/layer5" alt="Twitter Follow">
+<a href="https://twitter.com/layer5" alt="Twitter Follow">
 <img src="https://img.shields.io/twitter/follow/layer5.svg?label=Follow&style=social" /></a>
 <a href="https://github.com/layer5io/layer5" alt="License">
 <img src="https://img.shields.io/github/license/layer5io/layer5.svg" /></a>
@@ -25,7 +25,7 @@
 <a href="https://meshery.io"><img src=".github/assets/images/meshery/meshery-logo.svg"
 style="margin:10px;" width="125px"
 alt="Meshery - Cloud Native Management Plane" align="left" /></a>
-<a href="https://meshery.io">Meshery</a> Meshery is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
+<a href="https://meshery.io">Meshery</a> is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
 <br /><br /><br />
 </p>
 <br />

@@ -15,9 +15,7 @@ const About = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="About" description="Contact Layer5 for help with operating a service mesh. 
-  Layer5 is the makers of Meshery and service mesh standards. 
-  We are the largest collection of service mesh projects and their maintainers in the world." />
+      <SEO title="About" description='At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?"' />
       <Navigation />
       <AboutSection />
       <Footer />

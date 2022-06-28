@@ -7,6 +7,7 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/General/Navigation";
 import FAQ from "../../sections/General/Faq";
 import Footer from "../../sections/General/Footer";
+import DiscussCallout from "../../sections/Discuss-Callout";
 
 import { GlobalStyle } from "../../sections/app.style";
 import theme from "../../theme/app/themeStyles";
@@ -18,6 +19,7 @@ const FAQPage = () => (
       <SEO title="FAQs" description="Frequently Asked Questions" />
       <Navigation />
       <FAQ category = {["all"]} />
+      <DiscussCallout />
       <Footer />
     </Layout>
   </ThemeProvider>

@@ -23,7 +23,7 @@ const Projects = () => {
             >
               <h4>ENABLING YOU TO</h4>
               <h2>
-                Operate any service mesh <span>with confidence</span>.
+                Operate cloud native infrastructure <span>with confidence</span>.
               </h2>
             </SectionTitle>
           </div>

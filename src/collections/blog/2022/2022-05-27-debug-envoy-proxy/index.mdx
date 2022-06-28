@@ -37,7 +37,6 @@ import Code from "../../../../components/CodeBlock";
 <p>
   The envoy command has a <code>--log-level</code> flag that can be useful for debugging. By default, it’s set to info. To change it to debug, edit the envoy DaemonSet in the istio-system namespace and replace the <code>--log-level info</code> flag with <code>--log-level debug</code>. Setting the Envoy log level to debug can be particilarly useful for debugging TLS connection failures.
 </p>
-
 <h3>Using container image</h3>
 <p>
   If you’re using the Envoy image, you can set the log level to debug through the <code>ENVOY_LOG_LEVEL</code> environment variable. The log level for Envoy system logs can be set using the <code>-l</code> or <code>--log-level</code> option.
@@ -102,7 +101,6 @@ The default is <span className="highlight">info</span>.
     <code>$ curl -X POST http://localhost:19000/logging? component = debug</code>
   </pre>
 </div>
-
 <h3>Access Envoy logs in Kubernetes</h3>
 
 <p>Accessing Envoy logs via pods can be done with the following command:</p>

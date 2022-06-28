@@ -15,9 +15,7 @@ const Contact = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Contact" description="Contact Layer5 for help with operating a service mesh. 
-  Layer5 is the makers of Meshery and service mesh standards. 
-  We are the largest collection of service mesh projects and their maintainers in the world." />
+      <SEO title="Contact" description="Contact Layer5 for help managing your cloud native infrastructre and apps. Layer5 is the maker of Meshery and service mesh standards." />
       <Navigation />
       <ContactPage />
       <Footer />

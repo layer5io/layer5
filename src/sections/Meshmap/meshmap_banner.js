@@ -1,7 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
-import { Col, Container, Row } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
 import Meshery_Logo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import styled from "styled-components";
 
@@ -72,10 +69,20 @@ const BannerSectionWrapper = styled.div`
             padding-left: 1rem;
         }
     }
+    .draft-logo {
+        
+        position: absolute;
+        max-width: 25rem;
+        margin-top: -5rem;
+        right: 4rem;
+        p {
+            text-align: center ;
+        }
+    }
 
     .learn-particle-img {
         width: 35rem;
-        height: 27rem;
+        height: 25rem;
         overflow: hidden;
         margin-top: -8rem;
         position: absolute;
@@ -112,6 +119,7 @@ const BannerSectionWrapper = styled.div`
                 right: -4rem;
             }
         }
+        .draft-logo { max-width: 20rem; margin-right: -3rem;}
     }
     @media screen and (max-width: 992px) {
         .learn-particle-img {
@@ -124,6 +132,10 @@ const BannerSectionWrapper = styled.div`
             }
         }
         padding: 5rem 3rem;
+        .draft-logo { max-width: 18rem; margin-top:0rem; margin-right: -3rem;}
+    }
+    @media screen and (max-width: 870px) {
+        .draft-logo { max-width: 1px; visibility: hidden ;}
     }
     @media screen and (max-width: 768px) {
         .learn-particle-img {
@@ -136,7 +148,14 @@ const BannerSectionWrapper = styled.div`
             }
         }
         padding: 5rem 3rem;
+        .draft-logo { max-width: 1px; visibility: hidden ;}
     }
+
+    @media screen and (max-width: 500px) {
+        .learn-particle-img {
+            display: none;
+            }
+        }
 
 `;
 
@@ -144,7 +163,7 @@ const BannerSection = () => {
   return (
     <BannerSectionWrapper>
       <div className="learn-particle-img">
-        <img src={Meshery_Logo} alt="Meshery Logo" />
+        <img src={Meshery_Logo} alt="Meshery Logo"/>
       </div>
       <div>
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}

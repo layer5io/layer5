@@ -15,6 +15,7 @@ const BannerSectionWrapper = styled.section`
   h2{
     color: white;
     margin-bottom: 3rem;
+    font-weight: 300;
   }
   .section-header,
   .section-content {

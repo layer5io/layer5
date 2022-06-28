@@ -7,6 +7,7 @@ import hpe from "../../../assets/images/partners/hpe_side_black.svg";
 import nitk from "../../../assets/images/partners/nitk_black.png";
 import rackspace from "../../../assets/images/partners/rackspace_black.svg";
 import intel from "../../../assets/images/partners/intel-grey.svg";
+import vmware from "../../../assets/images/partners/vmware.png";
 
 
 export const partners = [
@@ -57,5 +58,11 @@ export const partners = [
     imageLink: uem,
     imageRoute: "/partners#uem",
     innerDivStyle: "partner__block__inner"
+  }, {
+    name:"VMware",
+    imageLink: vmware,
+    imageRoute:"",
+    innerDivStyle:"partner__block__inner"
+    
   }
 ];  

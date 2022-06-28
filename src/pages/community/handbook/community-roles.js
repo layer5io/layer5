@@ -15,7 +15,7 @@ const ContributorJourney = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Contributor Journey" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO title="Contributor Journey" description="Description of the different roles in the Layer5 community" />
       <Navigation />
       <LeadershipPage />
       <Footer/>
