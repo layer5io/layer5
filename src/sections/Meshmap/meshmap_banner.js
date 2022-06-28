@@ -1,6 +1,7 @@
 import React from "react";
 import Meshery_Logo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import styled from "styled-components";
+import MeshmapIcon from "./meshmap-icon.svg";
 
 const BannerSectionWrapper = styled.div`
 
@@ -25,6 +26,12 @@ const BannerSectionWrapper = styled.div`
             /* background-color: ${props => props.theme.saffronLightColor};     */
             font-weight: 700;
             color: ${props => props.theme.secondaryColor};
+        }
+        @media screen and (max-width: 380px) {
+            font-size: 38px;
+            span{
+                font-size: 48px;
+            }
         }
     }
     h2 {
@@ -69,90 +76,40 @@ const BannerSectionWrapper = styled.div`
             padding-left: 1rem;
         }
     }
-    .draft-logo {
-        
-        position: absolute;
-        max-width: 25rem;
-        margin-top: -5rem;
-        right: 4rem;
-        p {
-            text-align: center ;
-        }
-    }
 
-    .learn-particle-img {
-        width: 35rem;
-        height: 25rem;
+    .meshmap-logo {
+        width: 10rem;
         overflow: hidden;
-        margin-top: -8rem;
+        margin-top: -4rem;
         position: absolute;
-        right: 0;
-
-        img {
-            position: absolute;
-            top: -8rem;
-            right: -6rem;
-        }
+        right: 20%;
     }
 
     @media screen and (max-width: 1700px) {
-        .learn-particle-img {
-            width: 25rem;
-            height: 18rem;
-
-            img {
-                top: -7rem;
-                right: -5rem;
-            }
+        .meshmap-logo {
+            width: 12rem;
+            right: 12rem;
         }
         .para {
             margin-top:-3rem;
         }
     }
     @media screen and (max-width: 1150px) {
-        .learn-particle-img {
-            width: 20rem;
-            height: 16rem;
-
-            img {
-                top: -6rem;
-                right: -4rem;
-            }
+        .meshmap-logo {
+            width: 10rem;
+            right: 8rem;
         }
-        .draft-logo { max-width: 20rem; margin-right: -3rem;}
     }
     @media screen and (max-width: 992px) {
-        .learn-particle-img {
-            width: 19rem;
-            height: 15rem;
-
-            img {
-                top: -5rem;
-                right: -5rem;
-            }
+        .meshmap-logo {
+            width: 10rem;
+            right: 2rem;
         }
-        padding: 5rem 3rem;
-        .draft-logo { max-width: 18rem; margin-top:0rem; margin-right: -3rem;}
-    }
-    @media screen and (max-width: 870px) {
-        .draft-logo { max-width: 1px; visibility: hidden ;}
-    }
-    @media screen and (max-width: 768px) {
-        .learn-particle-img {
-            width: 18rem;
-            height: 14rem;
-
-            img {
-                top: -5rem;
-                right: -5rem;
-            }
-        }
-        padding: 5rem 3rem;
-        .draft-logo { max-width: 1px; visibility: hidden ;}
     }
 
-    @media screen and (max-width: 500px) {
-        .learn-particle-img {
+    @media screen and (max-width: 740px) {
+        padding: 8rem 2rem 3rem;
+        .meshmap-logo {
             display: none;
             }
         }
@@ -162,8 +119,8 @@ const BannerSectionWrapper = styled.div`
 const BannerSection = () => {
   return (
     <BannerSectionWrapper>
-      <div className="learn-particle-img">
-        <img src={Meshery_Logo} alt="Meshery Logo"/>
+      <div className="meshmap-logo">
+        <img src={MeshmapIcon} alt="Meshery Logo"/>
       </div>
       <div>
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
