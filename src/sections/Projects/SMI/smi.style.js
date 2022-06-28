@@ -72,7 +72,7 @@ const SMIWrapper = styled.section`
     .feature-block{
         padding: 2.5rem 1.875rem 2.8rem 1.875rem;
         border-radius: 20px;
-        box-shadow: 0 0 15px 5px ${props => props.theme.projectShadowColor};
+        box-shadow: 0 0 ${props => props.theme.projectPageShadowsize} 5px ${props => props.theme.projectShadowColor};
         position: relative;
         transition: all 0.3s ease-in;
         background-color: ${props => props.theme.projectCardColor};

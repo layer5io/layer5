@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const WorkshopPageWrapper = styled.div`
-
+	Button:hover {
+	box-shadow: none;
+	}
 	.btn-and-status {
 		display: flex;
 		width: 97%;

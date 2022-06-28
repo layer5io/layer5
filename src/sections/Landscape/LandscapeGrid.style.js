@@ -375,7 +375,7 @@ export const LandscapePageWrapper=styled.div`
 		border-top-right-radius: .5rem;
 
 		a { 
-			color: ${props => props.theme.tertiaryColor};
+			color: ${props => props.theme.text};
 	
 			&:hover {
 				color: ${props => props.theme.secondaryColor};
@@ -387,7 +387,7 @@ export const LandscapePageWrapper=styled.div`
 		font-size: 1.05rem;
 		padding: 0.75rem;
 		font-weight: 600;
-		color: ${props => props.theme.white};
+		color: ${props => props.theme.textRevert};
 		background: ${props => props.theme.tertiaryColor};
 	}
 	ul.category {
@@ -409,13 +409,14 @@ export const LandscapePageWrapper=styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
-		background-color: ${props => props.theme.primaryColor};
+		background-color: ${props => props.theme.LandscapetabsColor};
 		border: 1px solid ${props => props.theme.shadowLightColor};
 		&:nth-child(1){
 			border-top-left-radius: .5rem;
 		}
 		&:hover {
 			background-color: ${props => props.theme.tertiaryColor};
+			color: ${props => props.theme.textRevert};
 			&:nth-child(1){
 				border-top-left-radius: .5rem;
 			}
@@ -436,21 +437,21 @@ export const LandscapePageWrapper=styled.div`
 		background: ${props => props.theme.tertiaryColor};
 		border-color: ${props => props.theme.tertiaryColor};
 		border-radius:0;
-		color: white;
+		color: ${props => props.theme.textRevert};
 		font-weight: 600;
 	}
 	.card-content {
 		border-right: none;
 	}
 	.odd-row {
-		background: #ffffff;
+		background: ${props => props.theme.projectCardColor};
 		&:hover{
 			box-shadow: 0px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
 	.even-row {
-		background: #efefef;
+		background: ${props => props.theme.projectCardColor};
 		&:hover{
 			box-shadow: 10px 2px 5px -10px black;
 			transform: translateY(0px);

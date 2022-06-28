@@ -9,9 +9,12 @@ import BlogList from "../sections/Blog/Blog-list";
 import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
 import { graphql } from "gatsby";
-
+import { darktheme } from "../theme/app/themeStyles";
+import lighttheme from "../theme/app/themeStyles";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
+import { useState } from "react";
 export const query = graphql`
   query BlogsByCategory($category: String!) {
     allMdx(
@@ -47,8 +50,17 @@ export const query = graphql`
 `;
 
 const BlogListPage = ({ pageContext, data }) => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO
@@ -56,7 +68,7 @@ const BlogListPage = ({ pageContext, data }) => {
           description="Articles how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news."
           canonical="https://layer5.io/blog"
         />
-        <Navigation />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
         <BlogList data={data} pageContext={pageContext} />
         <Footer />
       </Layout>

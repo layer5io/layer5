@@ -32,13 +32,13 @@ table {
 		:nth-child(odd) {
 			background:  ${props => props.theme.projectCardColor};
 			td {
-				border-right: 1px solid ${props => props.theme.projectCardColor};;
+				border-right: 1px solid ${props => props.theme.projectCardColor};
 			}
 		}
 		:nth-child(even) {
-			background: ${props => props.theme.body};
+			background: ${props => props.theme.eventcolumnColor};
 			td {
-				border-right: 1px solid ${props => props.theme.body};
+				border-right: 1px solid ${props => props.theme.eventcolumnColor};
 			}
 		}
 		:last-child {

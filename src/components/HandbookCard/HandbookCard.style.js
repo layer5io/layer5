@@ -9,16 +9,17 @@ export const HandbookCardWrapper = styled.div`
     .handbook__card {
 	  border-radius: 5px;
 	  width: 25rem;
-	  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	  box-shadow: 0 10px 30px ${props => props.theme.handBookCardShadow};
 	  overflow: hidden;
 	  height: 15rem;
 	  transition: all 0.3s;
 	  position: relative;
+	  background-color: ${props => props.theme.projectCardColor};
 	}
 
 	.handbook__card--head {
 	  padding: 1.25rem;
-	  color: rgb(30, 33, 23);
+	  color: ${props => props.theme.text};
 	  text-align: center;
 	  transition: all 0.3s;
 	  position: relative;
@@ -46,7 +47,7 @@ export const HandbookCardWrapper = styled.div`
 	}
 
 	.handbook__card--para {
-	  color: rgba(0, 0, 0, 0.75);
+	  color: ${props => props.theme.learnInfoText};
 	  text-align: center;
 	  margin: 1.5rem;
 	  margin-bottom: 0rem;

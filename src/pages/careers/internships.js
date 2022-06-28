@@ -17,26 +17,21 @@ import { useState } from "react";
 
 const Internships = () =>  {
   const [cookies, setCookie] = useCookies(["user"]);
-  const [theme, setTheme] = useState(cookies.Theme);
-  const [themeToggle, setthemeToggle] = useState("");
-  const handle = () => {
-    theme === "light" ? setthemeToggle(false) : setthemeToggle(true);
-    setCookie("Theme", theme, { path: "/" });
-  };
+  const [theme, setTheme] = useState("light");
   useEffect(() => {
-    
-    handle();
-  }, [theme]);
-  const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
   };
   return(
-    <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Open Source Internship Programs" description="The Service Mesh Community at Layer5 - Learn, Share, Engage.
   Join the largest collection of service mesh projects and their maintainers in the world." />
-        <Navigation theme={theme} themeToggler={themeToggler} themeToggle={themeToggle}/>
+        <Navigation theme={theme} themeSetter={themeSetter}/>
         <InternshipPage />
         <Footer />
       </Layout>

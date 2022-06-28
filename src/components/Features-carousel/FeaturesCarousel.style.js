@@ -5,7 +5,6 @@ export const FeaturesWrapper = styled.div`
       @media (min-width: 768px) {
         display: none;
       }
-      
       .main-heading{
         margin-bottom: 2rem;
       }
@@ -117,6 +116,7 @@ export const FeaturesWrapper = styled.div`
       padding: 0;
       font-size: 20px;
       font-weight: 600;
+      box-shadow: none;
       color: ${props => props.theme.text};
       cursor: pointer;
     }

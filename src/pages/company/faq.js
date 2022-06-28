@@ -9,18 +9,33 @@ import FAQ from "../../sections/General/Faq";
 import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
+import { useState } from "react";
 
-const FAQPage = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="FAQs" description="Frequently Asked Questions" />
-      <Navigation />
-      <FAQ category = {["all"]} />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
+const FAQPage = () => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  return(
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="FAQs" description="Frequently Asked Questions" />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <FAQ category = {["all"]} />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 
 export default FAQPage;

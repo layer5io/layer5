@@ -37,16 +37,17 @@ export const query = graphql`query NewsBySlug($slug: String!) {
   }
 }
 `;
-const [cookies, setCookie] = useCookies(["user"]);
-const [theme, setTheme] = useState("light");
-useEffect(() => {
-  if(cookies.Theme !== undefined)
-    setTheme(cookies.Theme);
-}, []);
-const themeSetter = (thememode) => {
-  setTheme(thememode);
-};
+
 const NewsSinglePage = ({data}) => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
   return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>

@@ -110,14 +110,14 @@ export const BlogWrapper = styled.div`
     width: 40%;
     float: left;
     margin: 1rem 1.25rem 1rem 0rem;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.slideShadow};
   }
 
   .image-right {
     width: 40%;
     float: right;
     margin: 1rem 0rem 1rem 1.25rem;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.slideShadow};
   }
   .image-right-no-shadow {
     width: 40%;
@@ -236,7 +236,7 @@ styles for meshmate-of-the-year-2020
 
   .slides{
     width: 45%;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.slideShadow};     
     margin-bottom: 1rem;
   }
   .slides-right{
@@ -245,7 +245,7 @@ styles for meshmate-of-the-year-2020
     position: relative;
     margin: 1rem 0 1rem 2rem;
     float: right;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.slideShadow};     
   }
   .slides-left {
     width: 45%;
@@ -253,7 +253,7 @@ styles for meshmate-of-the-year-2020
     position: relative;
     float: left;
     margin: 1rem 2rem 1rem 0rem;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.slideShadow};     
   }
   @media screen and (max-width: 768px) {
     .slides-right, .slides-left, .slides{
@@ -313,7 +313,7 @@ code {
       white-space: pre-wrap;
       border-radius: 3px;
       background-color: ${props => props.theme.tertiaryColor};
-      color: ${props => props.theme.shadowLightColor};
+      color: ${props => props.theme.textRevert};
       &.short {
         line-height: 16px;
       }

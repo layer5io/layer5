@@ -9,18 +9,32 @@ import Footer from "../../sections/General/Footer";
 import AboutSection from "../../sections/Company/About";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
+import { useState } from "react";
 
-const About = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="About" description='At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?"' />
-      <Navigation />
-      <AboutSection />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
-
+const About = () => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  return(
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="About" description='At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?"' />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <AboutSection />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default About;

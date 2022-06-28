@@ -30,11 +30,11 @@ table {
     td {
         padding: 0.3rem;
         height: 4rem;
-        color: black;
+        color: ${props => props.theme.text};
         text-align: center;
         font-size: 0.9rem;
         font-weight: 400;
-        border-bottom: 1px solid #efefef;
+        border-bottom: 1px solid ${props => props.theme.SMITableBottomBorder};
     }
     th {
         background: #1E2117;
@@ -45,15 +45,15 @@ table {
     }
   
 	tr.primaryRow {
-		background: #ffffff;
+		background: ${props => props.theme.body};
 		td {
-			border-right: 1px solid #ffffff;
+			border-right: 1px solid ${props => props.theme.body};
 		}
 	}
 	tr.secondaryRow {
 		background: #efefef;
 		td {
-			border-right: 1px solid #efefef;
+			border-right: 1px solid ${props => props.theme.body};
 		}
 	}
 
@@ -77,7 +77,7 @@ table {
 	
 	th, tr{
 		&:hover{
-			box-shadow: 0px 2px 15px -10px black;
+			box-shadow: 0px 2px 15px -10px ${props => props.theme.text};
 			transform: translateY(0px);
 		}
 	}

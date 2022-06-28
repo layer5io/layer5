@@ -14,7 +14,7 @@ export const TableWrapper = styled.div`
 		td {
 			padding: 0.3rem;
 			height: 4rem;
-			color: black;
+			color: ${props => props.theme.text};
 			text-align: center;
 			font-size: 0.9rem;
 			line-height: .9rem;

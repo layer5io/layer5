@@ -69,6 +69,7 @@ const lighttheme = {
   communityText: "rgba(0, 0, 0, 0.6)",
   subscribeSection: "#FAFAFA",
   projectsPageCardShadowColor: "lightgrey",
+  projectPageShadowsize: "10px",
   learningCard: "#E6E6E6",
   summaryText: "rgba(0, 0, 0, 0.75)",
   verticalSubtittleColor : "rgb(160, 160, 160)",
@@ -80,6 +81,13 @@ const lighttheme = {
   meshInterfaceLogoFilter: "none",
   featureBlockBG: "#EBFCF8",
   tagLinks: "#F0F0F0",
+  projectShadowsize: "30px",
+  blogPostColor: "#e5e5e5",
+  slideShadow: "rgba(0, 179, 159, 0.5)",
+  handBookCardShadow: "rgba(0, 0, 0, 0.1)",
+  LandscapetabsColor: "#3c494f",
+  eventcolumnColor: "#efefef",
+  SMITableBottomBorder: "#efefef",
 
 };
 export const darktheme = {
@@ -153,7 +161,8 @@ export const darktheme = {
   sideTextLight: "#737373",
   communityText: "rgba(255, 255, 255, 0.6)",
   subscribeSection: "#1D1D1D",
-  projectsPageCardShadowColor: "black",
+  projectsPageCardShadowColor: "#00d3a9",
+  projectPageShadowsize: "5px",
   learningCard: "#1d1817",
   summaryText: "rgba(255, 255, 255, 0.75)",
   verticalSubtittleColor : "rgb(140, 140, 140)",
@@ -165,7 +174,13 @@ export const darktheme = {
   meshInterfaceLogoFilter: "90%",
   featureBlockBG: "rgb(20 23 20)",
   tagLinks: "#212121",
-
+  projectShadowsize: "5px",
+  blogPostColor: "#e5e5e5",
+  slideShadow: "rgba(0, 179, 159, 1.0)",
+  handBookCardShadow: "rgba(255, 255, 255, 0.9)",
+  LandscapetabsColor: "#121212",
+  eventcolumnColor: "#121212",
+  SMITableBottomBorder: "#212121",
 };
 
 
