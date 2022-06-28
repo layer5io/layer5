@@ -12,8 +12,11 @@ import LearnServiceMeshCTA from "../sections/Learn/Learn-Service-Mesh-CTA";
 import Subscribe from "../sections/subscribe/subscribe";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
-
+import { darktheme } from "../theme/app/themeStyles";
+import lighttheme from "../theme/app/themeStyles";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
+import { useState } from "react";
 import SEO from "../components/seo";
 
 export const query = graphql`query EventsBySlug($slug: String!) {
@@ -43,12 +46,21 @@ export const query = graphql`query EventsBySlug($slug: String!) {
 `;
 
 const EventSinglePage = ({data}) => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL}/>
-        <Navigation />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
         <EventSingle data={data}/>
         <LearnServiceMeshCTA />
         <Subscribe />

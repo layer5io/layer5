@@ -10,8 +10,11 @@ import MemberSingle from "../sections/Community/Member-single";
 import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
-
+import { darktheme } from "../theme/app/themeStyles";
+import lighttheme from "../theme/app/themeStyles";
+import { useCookies } from "react-cookie";
+import { useEffect } from "react";
+import { useState } from "react";
 export const query = graphql`query MemberBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
     frontmatter {
@@ -37,12 +40,21 @@ export const query = graphql`query MemberBySlug($slug: String!) {
 `;
 
 const MemberSinglePage = ({data}) => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if(cookies.Theme !== undefined)
+      setTheme(cookies.Theme);
+  }, []);
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL}/>
-        <Navigation />
+        <Navigation theme={theme} themeSetter={themeSetter}/>
         <MemberSingle frontmatter={data.mdx.frontmatter}/>
         <Footer />
       </Layout>
