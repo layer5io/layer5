@@ -28,7 +28,7 @@ const MeshMapCTAWrapper = styled.div`
     transition: all .3s;
     display: block;
     margin: 1rem auto;
-    height: 18rem;  
+    height: 15rem;  
   }
   @keyframes coin-rotate {
     from {
