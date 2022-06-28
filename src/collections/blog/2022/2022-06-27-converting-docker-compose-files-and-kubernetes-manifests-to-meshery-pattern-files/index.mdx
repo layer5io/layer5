@@ -17,6 +17,7 @@ featured: true
 
 import { BlogWrapper } from "../../Blog.style.js";
 import Blockquote from "../../../../reusecore/Blockquote";
+import { Link } from "gatsby";
 
 import dashboardImg from "./dashboard.png";
 import applicationsPageImg from "./applications_page.png";
@@ -27,7 +28,7 @@ import requestPayloadImg from "./request_payload.png";
 <BlogWrapper>
 
 <h3>Meshery Pattern Files</h3>
-<p><a href="/service-mesh-management/meshery">Meshery</a> uses <a href="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</a> that act as configurations of service meshes or applications to be deployed through Meshery. These configurations are written in a YAML format in a pattern file. Here's a small example pattern file to deploy a demo deployment of Istio through Meshery:
+<p><Link to="/service-mesh-management/meshery">Meshery</Link> uses <Link to="/learn/service-mesh-books/service-mesh-patterns">Service Mesh Patterns</Link> that act as configurations of service meshes or applications to be deployed through Meshery. These configurations are written in a YAML format in a pattern file. Here's a small example pattern file to deploy a demo deployment of Istio through Meshery:
 
 ```yaml
 name: IstioSM
@@ -41,7 +42,7 @@ services:
       profile: demo
 ```
 </p>
-<p>(Meshery pattern files are still under active development. Refer <a href="https://docs.google.com/document/d/1B2N78EdRiZF-yVo1-HY3syppwBBDumgMuYg6seD-AJ4">the Service Mesh Patterns Design Spec</a> for more information)</p>
+<p>(Meshery pattern files are still under active development)</p>
 
 <h3>Convert Docker Compose / Kubernetes Manifests to Pattern Files</h3>
 <p>Although as a user, you can deploy applications specified as Kubernetes Manifests or Docker Compose files directly through Meshery, you might want to convert them to Meshery Pattern Files. This tutorial can help you do just that.
