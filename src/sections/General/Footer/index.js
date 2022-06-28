@@ -51,6 +51,11 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
+                    <Link className="category-link" to="/resources">
+                      Resource Library
+                    </Link>
+                  </li>
+                  <li>
                     <Link
                       className="category-link"
                       to="/learn/service-mesh-books"
@@ -119,6 +124,11 @@ const Footer = () => {
                       Programs
                     </Link>
                   </li>
+                  <li>
+                    <Link className="category-link" to="/community/handbook">
+                      Handbook
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="footer-sections odd-col">
@@ -131,13 +141,12 @@ const Footer = () => {
                   <li>
                     <Link
                       className="category-link"
-                      to="cloud-native-management/meshmap"
+                      to="/cloud-native-management/meshmap"
                     >
                       MeshMap
                       <span className="new-label">NEW</span>
                     </Link>
                   </li>
-                  <div className="divider"> - - - </div>
                   <li>
                     <Link
                       className="category-link"
@@ -210,7 +219,6 @@ const Footer = () => {
                       Partners
                     </Link>
                   </li>
-                  <div className="divider"> - - - </div>
                   <li>
                     <Link className="category-link" to="/company/contact">
                       Contact

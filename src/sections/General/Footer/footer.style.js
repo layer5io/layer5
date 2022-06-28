@@ -63,12 +63,7 @@ const FooterWrapper = styled.section`
 					color: ${props => props.theme.secondaryColor};
 				}
 			}
-			.divider {
-				/* border: .5px dashed rgba(255, 255, 255, 0.25); */
-				margin: -.7rem .5rem; padding: 0rem;
-				color: rgba(255, 255, 255, 0.25);
 
-			}
 			.new-label {
 				background-color: rgba(255, 255, 255, 0.25);
 				font-size: .5rem;
