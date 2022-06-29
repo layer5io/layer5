@@ -90,6 +90,8 @@ const lighttheme = {
   SMITableBottomBorder: "#efefef",
   profileBackColor: "#3c494f",
   profileCardShadow: "rgba(0, 0, 0, 0.20)",
+  programBackColor: "rgba(247, 247, 247, 1)",
+  accordionColor: "#1e2117",
 };
 export const darktheme = {
   black: "#000000",
@@ -184,6 +186,8 @@ export const darktheme = {
   SMITableBottomBorder: "#212121",
   profileBackColor: "#212121",
   profileCardShadow: "rgba(255, 255, 255, 0.20)",
+  programBackColor: "rgba(8, 8, 8, 1)",
+  accordionColor: "rgb(140, 140, 140)",
 
 };
 
