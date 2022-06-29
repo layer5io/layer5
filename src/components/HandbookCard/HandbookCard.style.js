@@ -9,12 +9,11 @@ export const HandbookCardWrapper = styled.div`
     .handbook__card {
 	  border-radius: 5px;
 	  width: 25rem;
-	  box-shadow: 0 10px 30px ${props => props.theme.projectShadowColor};
+	  box-shadow: 0 5px 10px ${props => props.theme.projectShadowColor};
 	  overflow: hidden;
 	  height: 15rem;
 	  transition: all 0.3s;
 	  position: relative;
-	  background-color: ${props => props.theme.projectCardColor};
 	}
 
 	.handbook__card--head {

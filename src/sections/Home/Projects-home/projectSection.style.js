@@ -14,11 +14,12 @@ const ProjectItemWrapper = styled.section`
             }
             h2{
                 color: ${props => props.theme.sideText};
-                margin-bottom: 2.25rem;
+                margin-bottom: 40px;
 
                 span{
                     color: ${props => props.theme.text};
                 }
+            }
             text-align: center;
             margin-bottom: 25px;
         }
