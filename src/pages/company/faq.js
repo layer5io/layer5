@@ -33,6 +33,7 @@ const FAQPage = () => {
         <SEO title="FAQs" description="Frequently Asked Questions" />
         <Navigation theme={theme} themeSetter={themeSetter}/>
         <FAQ category = {["all"]} />
+        <DiscussCallout />
         <Footer />
       </Layout>
     </ThemeProvider>

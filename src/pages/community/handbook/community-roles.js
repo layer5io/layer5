@@ -28,7 +28,7 @@ const ContributorJourney = () => {
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Contributor Journey" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+        <SEO title="Contributor Journey" description="Description of the different roles in the Layer5 community" />
         <Navigation theme={theme} themeSetter={themeSetter}/>
         <LeadershipPage />
         <Footer/>

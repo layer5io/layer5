@@ -29,7 +29,7 @@ const CommunityProjects = () => {
         <GlobalStyle />
         <SEO
           title="Projects"
-          description="The purpose of the handbook is to provide an overview of the Layer5 community"
+          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance and NightHawk"
         />
         <Navigation theme={theme} themeSetter={themeSetter}/>
         <ProjectsPage />

@@ -29,7 +29,7 @@ const Community = () => {
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Community" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+        <SEO title="Community" description="Community guidelines" />
         <Navigation theme={theme} themeSetter={themeSetter}/>
         <CommunityPage />
         <Footer/>
