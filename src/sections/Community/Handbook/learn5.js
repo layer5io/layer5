@@ -8,9 +8,9 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
   {
-    id: 0, link: "#Learning",text: "Learning", },
-  { id: 1, link: "#Eventing", text: "Eventing" },
-  { id: 2, link: "#Blogging", text: "Blogging" },
+    id : 0, link : "#Learning",text : "Learning", },
+  { id : 1, link : "#Eventing", text : "Eventing" },
+  { id : 2, link : "#Blogging", text : "Blogging" },
 ];
 
 const LearnLayer = () => {

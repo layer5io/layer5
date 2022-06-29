@@ -11,7 +11,7 @@ export default function Feature({
   logos,
   onInViewStatusChanged,
 }) {
-  const [ref, inView] = useInView({ threshold: 0.8 });
+  const [ref, inView] = useInView({ threshold : 0.8 });
   const [inViewStatus, setInViewStatus] = useState(false);
   if (inView !== inViewStatus) {
     setInViewStatus(inView);
@@ -20,7 +20,7 @@ export default function Feature({
 
   return (
     <FeatureWrapper>
-      <div className='root' ref={ref}>
+      <div className="root" ref={ref}>
         <div className="icon">
           <img src={icon} alt="title"/>
         </div>

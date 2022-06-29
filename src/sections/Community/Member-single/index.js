@@ -48,7 +48,7 @@ const MemberSingle = ({ frontmatter }) => {
               <Image
                 className="profile-image"
                 {...image_path}
-                imgStyle={{ objectFit: "contain" }}
+                imgStyle={{ objectFit : "contain" }}
                 alt={name}
               />
             </Col>

@@ -8,7 +8,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { data } from "./courseData";
 
 
-const ServiceMeshLabs = ({selectedIndex, setSelectedIndex}) => {
+const ServiceMeshLabs = ({ selectedIndex, setSelectedIndex }) => {
 
   const [content, setContent] = useState(false);
   const [open, setOpen] = useState(false);
@@ -56,7 +56,7 @@ const ServiceMeshLabs = ({selectedIndex, setSelectedIndex}) => {
               <TabPanel className="content" key={id}>
                 <Row className="row-wrapper">
                   {scenarios.map(({ subId, title, cover, info, embed, link }) => (
-                    <Col {...content && ID === subId ? { xs: 12, sm: 12, lg: 12 } : { xs: 12, sm: 6 }} key={subId}>
+                    <Col {...content && ID === subId ? { xs : 12, sm : 12, lg : 12 } : { xs : 12, sm : 6 }} key={subId}>
                       <ScenarioCard
                         title={title}
                         info={info}

@@ -14,20 +14,20 @@ const slides_list = [slide1, slide2, slide3];
 const FeaturesSection = () => {
 
   var settings = {
-    customPaging: function (i) {
+    customPaging : function (i) {
       return (
         <a>
           <img src={slides_list[i]} />
         </a>
       );
     },
-    infinite: false,
-    speed: 400,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    vertical: true,
-    verticalSwiping: true
+    infinite : false,
+    speed : 400,
+    slidesToShow : 1,
+    slidesToScroll : 1,
+    dots : true,
+    vertical : true,
+    verticalSwiping : true
   };
 
   return (

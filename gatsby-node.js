@@ -32,30 +32,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create client-side redirects (these only work in prod deployment)
   const { createRedirect } = actions;
-  createRedirect({ fromPath: "/books", toPath: "/learn/service-mesh-books", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/workshops", toPath: "/learn/service-mesh-workshops", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/labs", toPath: "/learn/service-mesh-labs", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshery", toPath: "/service-mesh-management/meshery", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/landscape", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/events", toPath: "/community/events", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/programs", toPath: "/careers/programs", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/about", toPath: "/company/about", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/brand", toPath: "/company/brand", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/contact", toPath: "/company/contact", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/news", toPath: "/company/news", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/service-meshes", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/calendar", toPath: "/community/calendar", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/smi", toPath: "/projects/service-mesh-interface-conformance", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/projects/getnighthawk", toPath: "/projects/nighthawk", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath : "/books", toPath : "/learn/service-mesh-books", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/workshops", toPath : "/learn/service-mesh-workshops", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/labs", toPath : "/learn/service-mesh-labs", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/meshery", toPath : "/service-mesh-management/meshery", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/landscape", toPath : "/service-mesh-landscape", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/events", toPath : "/community/events", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/programs", toPath : "/careers/programs", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/about", toPath : "/company/about", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/brand", toPath : "/company/brand", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/contact", toPath : "/company/contact", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/news", toPath : "/company/news", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/service-meshes", toPath : "/service-mesh-landscape", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/calendar", toPath : "/community/calendar", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/smi", toPath : "/projects/service-mesh-interface-conformance", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/projects/getnighthawk", toPath : "/projects/nighthawk", redirectInBrowser : true, isPermanent : true });
 
   //****
   // External Resoruce Redirects
   //****
 
   // New Community Member (Google Form)
-  createRedirect({ fromPath: "/newcomer", toPath: "/newcomers", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/go/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshmap", toPath: "/cloud-native-management/meshmap", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath : "/newcomer", toPath : "/newcomers", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/go/meshmap", toPath : "/cloud-native-management/meshmap", redirectInBrowser : true, isPermanent : true });
+  createRedirect({ fromPath : "/meshmap", toPath : "/cloud-native-management/meshmap", redirectInBrowser : true, isPermanent : true });
 
   // Create Pages
   const { createPage } = actions;
@@ -267,26 +267,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   paginate({
     createPage,
-    items: blogs,
-    itemsPerPage: 10,
-    pathPrefix: "/blog",
-    component: blogViewTemplate
+    items : blogs,
+    itemsPerPage : 10,
+    pathPrefix : "/blog",
+    component : blogViewTemplate
   });
 
   paginate({
     createPage,
-    items: events,
-    itemsPerPage: 9,
-    pathPrefix: "/community/events",
-    component: EventsTemplate
+    items : events,
+    itemsPerPage : 9,
+    pathPrefix : "/community/events",
+    component : EventsTemplate
   });
 
   blogs.forEach(blog => {
     createPage({
-      path: blog.fields.slug,
-      component: blogPostTemplate,
-      context: {
-        slug: blog.fields.slug,
+      path : blog.fields.slug,
+      component : blogPostTemplate,
+      context : {
+        slug : blog.fields.slug,
       },
     });
   });
@@ -295,12 +295,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   blogCategory.forEach(category => {
     paginate({
       createPage,
-      items: category.nodes,
-      itemsPerPage: 6,
-      pathPrefix: `/blog/category/${slugify(category.fieldValue)}`,
-      component: blogCategoryListTemplate,
-      context: {
-        category: category.fieldValue,
+      items : category.nodes,
+      itemsPerPage : 6,
+      pathPrefix : `/blog/category/${slugify(category.fieldValue)}`,
+      component : blogCategoryListTemplate,
+      context : {
+        category : category.fieldValue,
       },
     });
   });
@@ -309,102 +309,102 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   BlogTags.forEach(tag => {
     paginate({
       createPage,
-      items: tag.nodes,
-      itemsPerPage: 4,
-      pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
-      component: blogTagListTemplate,
-      context: {
-        tag: tag.fieldValue,
+      items : tag.nodes,
+      itemsPerPage : 4,
+      pathPrefix : `/blog/tag/${slugify(tag.fieldValue)}`,
+      component : blogTagListTemplate,
+      context : {
+        tag : tag.fieldValue,
       },
     });
   });
 
   resources.forEach(resource => {
     createPage({
-      path: resource.fields.slug,
-      component: resourcePostTemplate,
-      context: {
-        slug: resource.fields.slug,
+      path : resource.fields.slug,
+      component : resourcePostTemplate,
+      context : {
+        slug : resource.fields.slug,
       },
     });
   });
 
   news.forEach(singleNews => {
     createPage({
-      path: singleNews.fields.slug,
-      component: NewsPostTemplate,
-      context: {
-        slug: singleNews.fields.slug,
+      path : singleNews.fields.slug,
+      component : NewsPostTemplate,
+      context : {
+        slug : singleNews.fields.slug,
       },
     });
   });
 
   books.forEach(book => {
     createPage({
-      path: book.fields.slug,
-      component: BookPostTemplate,
-      context: {
-        slug: book.fields.slug,
+      path : book.fields.slug,
+      component : BookPostTemplate,
+      context : {
+        slug : book.fields.slug,
       },
     });
   });
 
   events.forEach(event => {
     createPage({
-      path: event.fields.slug,
-      component: EventTemplate,
-      context: {
-        slug: event.fields.slug,
+      path : event.fields.slug,
+      component : EventTemplate,
+      context : {
+        slug : event.fields.slug,
       },
     });
   });
 
   programs.forEach(program => {
     createPage({
-      path: program.fields.slug,
-      component: ProgramPostTemplate,
-      context: {
-        slug: program.fields.slug,
+      path : program.fields.slug,
+      component : ProgramPostTemplate,
+      context : {
+        slug : program.fields.slug,
       },
     });
   });
 
   careers.forEach(career => {
     createPage({
-      path: career.fields.slug,
-      component: CareerPostTemplate,
-      context: {
-        slug: career.fields.slug,
+      path : career.fields.slug,
+      component : CareerPostTemplate,
+      context : {
+        slug : career.fields.slug,
       },
     });
   });
 
   members.forEach(member => {
     createPage({
-      path: member.fields.slug,
-      component: MemberTemplate,
-      context: {
-        slug: member.fields.slug,
+      path : member.fields.slug,
+      component : MemberTemplate,
+      context : {
+        slug : member.fields.slug,
       },
     });
   });
 
   singleWorkshop.forEach(workshop => {
     createPage({
-      path: workshop.fields.slug,
-      component: WorkshopTemplate,
-      context: {
-        slug: workshop.fields.slug,
+      path : workshop.fields.slug,
+      component : WorkshopTemplate,
+      context : {
+        slug : workshop.fields.slug,
       },
     });
   });
 
   labs.forEach(lab => {
     createPage({
-      path: lab.fields.slug,
-      component: LabTemplate,
-      context: {
-        slug: lab.fields.slug,
+      path : lab.fields.slug,
+      component : LabTemplate,
+      context : {
+        slug : lab.fields.slug,
       },
     });
   });
@@ -420,10 +420,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     } else {
       programsArray.push(program.frontmatter.program);
       createPage({
-        path: `/programs/${program.frontmatter.programSlug}`,
-        component: MultiProgramPostTemplate,
-        context: {
-          program: program.frontmatter.program,
+        path : `/programs/${program.frontmatter.programSlug}`,
+        component : MultiProgramPostTemplate,
+        context : {
+          program : program.frontmatter.program,
         },
       });
     }
@@ -467,10 +467,10 @@ const onCreatePathNode = ({ actions, node, slug }) => {
   const parts = getSlugParts(slug);
   const [learnpath] = parts;
 
-  createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "pageType", value: "learnpath" });
+  createNodeField({ node, name : "learnpath", value : learnpath });
+  createNodeField({ node, name : "slug", value : `learn/learning-paths${slug}` });
+  createNodeField({ node, name : "permalink", value : `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name : "pageType", value : "learnpath" });
 };
 
 const onCreateCourseNode = ({ actions, node, slug }) => {
@@ -478,11 +478,11 @@ const onCreateCourseNode = ({ actions, node, slug }) => {
   const parts = getSlugParts(slug);
   const [learnpath, course] = parts;
 
-  createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "course", value: course });
-  createNodeField({ node, name: "pageType", value: "course" });
+  createNodeField({ node, name : "learnpath", value : learnpath });
+  createNodeField({ node, name : "slug", value : `learn/learning-paths${slug}` });
+  createNodeField({ node, name : "permalink", value : `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name : "course", value : course });
+  createNodeField({ node, name : "pageType", value : "course" });
 };
 
 const onCreateSectionNode = ({ actions, node, slug }) => {
@@ -490,12 +490,12 @@ const onCreateSectionNode = ({ actions, node, slug }) => {
   const parts = getSlugParts(slug);
   const [learnpath, course, section] = parts;
 
-  createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "course", value: course });
-  createNodeField({ node, name: "section", value: section });
-  createNodeField({ node, name: "pageType", value: "section" });
+  createNodeField({ node, name : "learnpath", value : learnpath });
+  createNodeField({ node, name : "slug", value : `learn/learning-paths${slug}` });
+  createNodeField({ node, name : "permalink", value : `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name : "course", value : course });
+  createNodeField({ node, name : "section", value : section });
+  createNodeField({ node, name : "pageType", value : "section" });
 };
 
 const onCreateChapterNode = ({ actions, node, slug }) => {
@@ -503,13 +503,13 @@ const onCreateChapterNode = ({ actions, node, slug }) => {
   const parts = getSlugParts(slug);
   const [learnpath, course, section, chapter] = parts;
 
-  createNodeField({ node, name: "learnpath", value: learnpath });
-  createNodeField({ node, name: "slug", value: `learn/learning-paths${slug}` });
-  createNodeField({ node, name: "permalink", value: `${config.siteMetadata.permalink}${slug}` });
-  createNodeField({ node, name: "chapter", value: chapter });
-  createNodeField({ node, name: "course", value: course });
-  createNodeField({ node, name: "section", value: section });
-  createNodeField({ node, name: "pageType", value: "chapter" });
+  createNodeField({ node, name : "learnpath", value : learnpath });
+  createNodeField({ node, name : "slug", value : `learn/learning-paths${slug}` });
+  createNodeField({ node, name : "permalink", value : `${config.siteMetadata.permalink}${slug}` });
+  createNodeField({ node, name : "chapter", value : chapter });
+  createNodeField({ node, name : "course", value : course });
+  createNodeField({ node, name : "section", value : section });
+  createNodeField({ node, name : "pageType", value : "chapter" });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -517,9 +517,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === "Mdx") {
     const collection = getNode(node.parent).sourceInstanceName;
     createNodeField({
-      name: "collection",
+      name : "collection",
       node,
-      value: collection
+      value : collection
     });
     if (collection !== "content-learn") {
       let slug = "";
@@ -556,15 +556,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         }
       }
       createNodeField({
-        name: "slug",
+        name : "slug",
         node,
-        value: slug,
+        value : slug,
       });
     } else {
       const slug = createFilePath({
         node,
         getNode,
-        basePath: "content-learn"
+        basePath : "content-learn"
       });
 
       // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
@@ -597,9 +597,9 @@ const createCoursesListPage = ({ createPage, node }) => {
   const { learnpath, slug, pageType, permalink } = node.fields;
 
   createPage({
-    path: `${slug}`,
-    component: path.resolve("src/templates/courses-list.js"),
-    context: {
+    path : `${slug}`,
+    component : path.resolve("src/templates/courses-list.js"),
+    context : {
       // Data passed to context is available in page queries as GraphQL variables.
       learnpath,
       slug,
@@ -619,9 +619,9 @@ const createCourseOverviewPage = ({ createPage, node }) => {
   } = node.fields;
 
   createPage({
-    path: `${slug}`,
-    component: path.resolve("src/templates/course-overview.js"),
-    context: {
+    path : `${slug}`,
+    component : path.resolve("src/templates/course-overview.js"),
+    context : {
       learnpath,
       slug,
       course,
@@ -643,9 +643,9 @@ const createChapterPage = ({ createPage, node }) => {
   } = node.fields;
 
   createPage({
-    path: `${slug}`,
-    component: path.resolve("src/templates/learn-chapter.js"),
-    context: {
+    path : `${slug}`,
+    component : path.resolve("src/templates/learn-chapter.js"),
+    context : {
       learnpath,
       slug,
       course,
@@ -668,9 +668,9 @@ const createSectionPage = ({ createPage, node }) => {
   } = node.fields;
 
   createPage({
-    path: `${slug}`,
-    component: path.resolve("src/sections/Learn-Layer5/Section/index.js"),
-    context: {
+    path : `${slug}`,
+    component : path.resolve("src/sections/Learn-Layer5/Section/index.js"),
+    context : {
       learnpath,
       slug,
       course,

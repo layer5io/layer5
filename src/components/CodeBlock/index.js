@@ -65,9 +65,9 @@ const Code = ({ codeString, language }) => {
         <Pre>
           <CopyCode onClick={handleClick}>{copyText}</CopyCode>
           <Pre className={className} style={style}>
-                        
+
             {tokens.map((line, i) => (
-              <div {...getLineProps({ line, key: i })} key={i}>
+              <div {...getLineProps({ line, key : i })} key={i}>
                 <LineNo>{i + 1}</LineNo>
                 {line.map((token, key) => (
                   <span {...getTokenProps({ token, key })} key={key}/>

@@ -38,82 +38,82 @@ const MesheryFeatures = () => {
         <Features
           features={[
             {
-              title: "Operational Best Practices",
-              description:
+              title : "Operational Best Practices",
+              description :
                 "Benefit from the operational expertise of the world’s foremost service mesh operator and the patterns they use.",
-              learnMoreLink: "/books/service-mesh-patterns",
-              content: <img src={img1} alt="Operational Best Practices" />,
+              learnMoreLink : "/books/service-mesh-patterns",
+              content : <img src={img1} alt="Operational Best Practices" />,
             },
             {
-              title: "Adaptive WebAssembly Filters for Envoy",
-              description:
+              title : "Adaptive WebAssembly Filters for Envoy",
+              description :
                 "Dynamically offload application infrastructure logic.",
-              learnMoreLink: "/projects/image-hub",
-              content: (
+              learnMoreLink : "/projects/image-hub",
+              content : (
                 <img src={img2} alt="Adaptive WebAssembly Filters for Envoy" />
               ),
             },
             {
-              title: "Integration with ArgoCD",
-              description:
+              title : "Integration with ArgoCD",
+              description :
                 "Canary new releases of your applicatioons intelligently. Leverage your existing ArgoCD workflows.",
-              learnMoreLink: "/",
-              content: (
+              learnMoreLink : "/",
+              content : (
                 <Terminal
                   lines={[
                     {
-                      code: "$ mesheryctl pattern apply -f canary-v3.yaml",
-                      color: "white",
+                      code : "$ mesheryctl pattern apply -f canary-v3.yaml",
+                      color : "white",
                     },
-                    { code: "» Deploying...", color: "navy" },
+                    { code : "» Deploying...", color : "navy" },
                     {
-                      code: "✓ Deployment successfully rolled out!",
-                      color: "green",
+                      code : "✓ Deployment successfully rolled out!",
+                      color : "green",
                     },
-                    { code: "\n" },
-                    { code: "» Traffic splitting...", color: "navy" },
+                    { code : "\n" },
+                    { code : "» Traffic splitting...", color : "navy" },
                     {
-                      code: "✓ 5% of user requests to v3.",
-                      color: "green",
-                    },
-                    {
-                      code: "✓ 30% of user requests to v3.",
-                      color: "green",
+                      code : "✓ 5% of user requests to v3.",
+                      color : "green",
                     },
                     {
-                      code: "✓ 60% of user requests to v3.",
-                      color: "green",
+                      code : "✓ 30% of user requests to v3.",
+                      color : "green",
                     },
                     {
-                      code: "✓ 90% of user requests to v3.",
-                      color: "green",
+                      code : "✓ 60% of user requests to v3.",
+                      color : "green",
                     },
                     {
-                      code: "✓ 100% of user requests to v3.",
-                      color: "green",
-                    },
-                    { code: "\n" },
-                    {
-                      code: "Pattern successfully applied. Rollout of 'canary-v3' completed.",
-                      color: "navy",
+                      code : "✓ 90% of user requests to v3.",
+                      color : "green",
                     },
                     {
-                      code: "» Prerelease URL: https://payments-v3.meshery.run",
-                      color: "green",
+                      code : "✓ 100% of user requests to v3.",
+                      color : "green",
+                    },
+                    { code : "\n" },
+                    {
+                      code : "Pattern successfully applied. Rollout of 'canary-v3' completed.",
+                      color : "navy",
                     },
                     {
-                      code: "» Release URL: https://payments.meshery.run",
-                      color: "green",
+                      code : "» Prerelease URL: https://payments-v3.meshery.run",
+                      color : "green",
+                    },
+                    {
+                      code : "» Release URL: https://payments.meshery.run",
+                      color : "green",
                     },
                   ]}
                 />
               ),
             },
             {
-              title: "Docker Extension for Meshery",
-              description:
+              title : "Docker Extension for Meshery",
+              description :
                 "Develop service mesh-ready apps using Docker Desktop and Meshery",
-              content: (
+              content : (
                 <div className="feature-expose-full">
                   <img src={img7} alt="Meshery, Docker Extension for Meshery" />
                   <p>
@@ -124,14 +124,14 @@ const MesheryFeatures = () => {
                   </p>
                 </div>
               ),
-              learnMoreLink: "/docker-extension-meshery",
+              learnMoreLink : "/docker-extension-meshery",
             },
             {
-              title: "Meshery Operator",
-              description: "",
-              learnMoreLink:
+              title : "Meshery Operator",
+              description : "",
+              learnMoreLink :
                 "/service-mesh-management/meshery/meshery-operator",
-              content: (
+              content : (
                 <div className="feature-expose">
                   <img src={img3} alt="Kubernetes Operator for Meshery" />
                   <p>
@@ -151,9 +151,9 @@ const MesheryFeatures = () => {
               ),
             },
             {
-              title: "Integration with Prometheus and Grafana",
-              description: "",
-              content: (
+              title : "Integration with Prometheus and Grafana",
+              description : "",
+              content : (
                 <div className="feature-expose-full">
                   <img
                     src={img4}
@@ -235,10 +235,10 @@ const MesheryFeatures = () => {
             //   ),
             // },
             {
-              title: "MeshSync",
-              description: "Strict control of service mesh behavior.",
+              title : "MeshSync",
+              description : "Strict control of service mesh behavior.",
               //learnMoreLink: "/",
-              content: (
+              content : (
                 <div className="feature-expose">
                   <img
                     src={img5}
@@ -259,10 +259,10 @@ const MesheryFeatures = () => {
               ),
             },
             {
-              title: "Extensible Management Plane",
-              description:
+              title : "Extensible Management Plane",
+              description :
                 "Plug in different service meshes, load generators and providers.",
-              content: (
+              content : (
                 <div className="feature-expose-full">
                   <img
                     src={img6}
@@ -280,7 +280,7 @@ const MesheryFeatures = () => {
                   </p>
                 </div>
               ),
-              learnMoreLink: "https://docs.meshery.io/extensibility",
+              learnMoreLink : "https://docs.meshery.io/extensibility",
             },
           ]}
         />

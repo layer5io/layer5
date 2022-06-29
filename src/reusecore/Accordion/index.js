@@ -31,7 +31,7 @@ const Accordion = ({ className, children, allowZeroExpanded, allowMultipleExpand
   );
 };
 
-const AccordionItem = ({ className, children}) => {
+const AccordionItem = ({ className, children }) => {
   // Add all classs to an array
   const addAllClasses = ["accordion__item"];
 

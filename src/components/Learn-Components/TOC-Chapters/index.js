@@ -23,8 +23,8 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
     .map(toc => toc.fields.chapter);
 
   useEffect(() => {
-    const path = location.pathname.split("/");    
-    if(path[2] === "learning-paths"){
+    const path = location.pathname.split("/");
+    if (path[2] === "learning-paths"){
       setPath(getCurrentPage(location));
     } else
       return;

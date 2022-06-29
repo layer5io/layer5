@@ -75,7 +75,7 @@ const InternshipPage = ({ hide_heading }) => {
       <Link to={fields.slug}>
         <div className="opportunity-card">
           <div className="peek-card">
-            <StaticImage style={{ width: "5rem", }} src={Peek_Img} alt="Peek card effect" />
+            <StaticImage style={{ width : "5rem", }} src={Peek_Img} alt="Peek card effect" />
           </div>
           <div className="text">
             <h3>{frontmatter.title}</h3>

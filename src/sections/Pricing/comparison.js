@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {details} from "./data";
-import { Container} from "../../reusecore/Layout";
+import { details } from "./data";
+import { Container } from "../../reusecore/Layout";
 import FeatureDetails from "./collapsible-details";
 
 
@@ -170,7 +170,7 @@ const Comparison = () => {
               {details.map((x) => (
                 <>
                   <tr key={x.id} >
-                    <td className="categories" > 
+                    <td className="categories" >
                       <img src={x.icon} height={45} className="category-icon" alt={x.category} />
                       <h3 className="category">{x.category}</h3></td>
                     <td></td>

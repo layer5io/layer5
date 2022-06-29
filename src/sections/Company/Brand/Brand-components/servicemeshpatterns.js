@@ -1,5 +1,5 @@
 import React from "react";
-import {SRLWrapper} from "simple-react-lightbox";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";

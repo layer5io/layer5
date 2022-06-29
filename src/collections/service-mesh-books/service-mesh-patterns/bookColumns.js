@@ -1,12 +1,12 @@
 import React from "react";
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import layer5_img from "./layer5-white.png";
 
 const sortByLen = (rowA, rowB, id, desc) => {
 
   if (rowA.original.subheading !== "bold") {
     if (rowA.original.subsection === rowB.original.subsection) {
-      
+
       return desc ? rowA.original.service_mesh_pattern.localeCompare(rowB.original.service_mesh_pattern) : rowA.original.service_mesh_pattern.localeCompare(rowB.original.service_mesh_pattern) ;
 
     }
@@ -15,34 +15,34 @@ const sortByLen = (rowA, rowB, id, desc) => {
 
 export const Columns = [
   {
-    Header:() => <span>Authors: <a href="https://twitter.com/lcalcote">Lee Calcote</a>, <a href="https://twitter.com/sheriffjackson">Nic Jackson</a></span>,
-    columns: [
+    Header : () => <span>Authors: <a href="https://twitter.com/lcalcote">Lee Calcote</a>, <a href="https://twitter.com/sheriffjackson">Nic Jackson</a></span>,
+    columns : [
       {
-        Header: "Service Mesh Pattern",
-        accessor: "service_mesh_pattern",
-        sortType: sortByLen,
+        Header : "Service Mesh Pattern",
+        accessor : "service_mesh_pattern",
+        sortType : sortByLen,
       }
     ],
-    accessor: "service_mesh"
+    accessor : "service_mesh"
   },
   {
-    Header:() => <Link to="/"><img src={layer5_img} alt="layer5"/></Link>,
-    columns: [
+    Header : () => <Link to="/"><img src={layer5_img} alt="layer5"/></Link>,
+    columns : [
       {
-        Header: "Category",
-        accessor: "category",
-        sortType: sortByLen,
-        Filter: SelectColumnFilter
+        Header : "Category",
+        accessor : "category",
+        sortType : sortByLen,
+        Filter : SelectColumnFilter
       }
     ],
-    accessor: "category_column"
+    accessor : "category_column"
   }
 ];
 
 
 // Filter for selecting category
 function SelectColumnFilter({
-  column: { filterValue, setFilter, preFilteredRows, id },
+  column : { filterValue, setFilter, preFilteredRows, id },
 }) {
   // Calculate the options for filtering
   // using the preFilteredRows

@@ -56,5 +56,5 @@ const MeshFocusWrapper = styled.div`
 
 }
 `;
- 
+
 export default MeshFocusWrapper;

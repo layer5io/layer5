@@ -88,7 +88,7 @@ const LandscapeGrid=() => {
               <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
                                 Service Mesh Comparison Matrix
               </h2>
-              {isBrowser ? 
+              {isBrowser ?
                 <Tabs defaultIndex={2} className="landscape-table">
                   <TabList>
                     <Tab>Categories</Tab>

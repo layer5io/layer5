@@ -131,27 +131,27 @@ const Navigation = () => {
 `
   );
   data["Projects"] = {
-    nodes: [
+    nodes : [
       {
-        frontmatter: {
-          thumbnail: {
-            img: meshery
+        frontmatter : {
+          thumbnail : {
+            img : meshery
           },
-          title: "Meshery, the Cloud Native Manager"
+          title : "Meshery, the Cloud Native Manager"
         },
-        fields: {
-          slug: "/service-mesh-management/meshery"
+        fields : {
+          slug : "/service-mesh-management/meshery"
         }
       },
       {
-        frontmatter: {
-          thumbnail: {
-            img: smp_dark_text
+        frontmatter : {
+          thumbnail : {
+            img : smp_dark_text
           },
-          title: "Service Mesh Performance"
+          title : "Service Mesh Performance"
         },
-        fields: {
-          slug: "/projects/service-mesh-performance"
+        fields : {
+          slug : "/projects/service-mesh-performance"
         }
       }
     ]
@@ -242,7 +242,7 @@ const Navigation = () => {
               blogData={data}
             />
           </nav>
-                            
+
         </div>
         <div className="meshery-cta">
           <Button secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />

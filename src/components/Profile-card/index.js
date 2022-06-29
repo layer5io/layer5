@@ -7,26 +7,26 @@ import Meshmate2021 from "../../assets/images/meshmate-of-the-year/meshmate-of-t
 import Image from "../image";
 
 const ProfileCard = (props) => {
-  const {name, status, image_path, meshmate} = props.frontmatter;
+  const { name, status, image_path, meshmate } = props.frontmatter;
   const link = props.cardlink;
-  return(
+  return (
     <ProfileCardWrapper status={status}>
       <div className="profile-card">
         <Link to={link}>
           <header>
-            <Image {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
+            <Image {...image_path} imgStyle={{ objectFit : "contain" }} alt={name}/>
             { meshmate === "yes" && (
               <Link className="meshmate" to="/community/meshmates">
                 <img src={MeshMateIcon} alt="meshmate-color-icon" />
               </Link>
             )}
             {/* TODO: Code needs to be improved */}
-            { name==="Nikhil Ladha" && ( 
+            { name==="Nikhil Ladha" && (
               <Link className="meshmate" to="/community/meshmates">
                 <img src={Meshmate2020} alt="meshmate-color-icon" />
               </Link>
             )}
-            { name==="Aditya Chatterjee" && ( 
+            { name==="Aditya Chatterjee" && (
               <Link className="meshmate" to="/community/meshmates">
                 <img src={Meshmate2021} alt="meshmate-color-icon" />
               </Link>

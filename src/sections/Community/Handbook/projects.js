@@ -16,20 +16,20 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
   {
-    id: 0,
-    link: "#Layer5",
-    text: "Layer5",
+    id : 0,
+    link : "#Layer5",
+    text : "Layer5",
   },
-  { id: 1, link: "#Meshery", text: "Meshery" },
+  { id : 1, link : "#Meshery", text : "Meshery" },
   {
-    id: 2,
-    link: "#Service Mesh Performance",
-    text: "Service Mesh Performance",
+    id : 2,
+    link : "#Service Mesh Performance",
+    text : "Service Mesh Performance",
   },
   {
-    id: 3,
-    link: "#Service Mesh Patterns",
-    text: " Service Mesh Patterns",
+    id : 3,
+    link : "#Service Mesh Patterns",
+    text : " Service Mesh Patterns",
   },
 ];
 

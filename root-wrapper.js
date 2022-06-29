@@ -6,7 +6,7 @@ import { CTA_FullWidth } from "./src/components/Call-To-Actions/CTA_FullWidth";
 import { CTA_Bottom } from "./src/components/Call-To-Actions/CTA_Bottom";
 
 const components = {
-  pre: ({ children: { props } }) => {
+  pre : ({ children : { props } }) => {
     if (props.mdxType === "code") {
       return (
         <Code

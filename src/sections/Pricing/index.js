@@ -11,7 +11,7 @@ import FeatureDetails from "./collapsible-details";
 
 const Pricing = () => {
 
-  const[monthly, setMonthly] = useState(false);
+  const [monthly, setMonthly] = useState(false);
 
   return (
     <PricingWrapper>
@@ -32,15 +32,15 @@ const Pricing = () => {
               <div className="subscription-duration">
                 <h2>How often do you want to pay?</h2>
                 <div className="subscriptionButtons">
-                  <Button 
-                    secondary 
+                  <Button
+                    secondary
                     className={monthly? "active button" : "inactive button"}
                     onClick={() => setMonthly(true)}
                   >
                     Monthly
                   </Button>
-                  <Button 
-                    secondary 
+                  <Button
+                    secondary
                     className={monthly? "inactive button" : "active button"}
                     onClick={() => setMonthly(false)} >
                     Yearly
@@ -61,7 +61,7 @@ const Pricing = () => {
                       <div className="feature" key={t.id}><FeatureDetails category={t.category} description={t.description}/></div>
                     ))}
                   </div>
-                  {/* 
+                  {/*
                   <div className="price-tag">
                     <span className="symbol">$</span>
                     <span className="amount">{monthly? x.monthlyprice : x.yearlyprice}</span>

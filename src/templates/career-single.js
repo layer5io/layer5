@@ -26,7 +26,7 @@ export const query = graphql`
     }
 `;
 
-const CareerSinglePage = ({data}) => {
+const CareerSinglePage = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>

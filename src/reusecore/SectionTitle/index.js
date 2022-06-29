@@ -1,5 +1,5 @@
 import React from "react";
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 
 const TitleWrap = styled.div`
@@ -10,17 +10,17 @@ text-align: center;
 
 ${props => (props.rightAlign && css (
   {
-    "text-align": "right"
+    "text-align" : "right"
   }
 ))}
 ${props => (props.leftAlign && css (
   {
-    "text-align": "left"
+    "text-align" : "left"
   }
 ))}
 ${props => (props.UniWidth && css (
   {
-    "width": props.UniWidth
+    "width" : props.UniWidth
   }
 ))}
 
