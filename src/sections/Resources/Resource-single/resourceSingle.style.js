@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ResourcePageWrapper = styled.div`
-
+    color: ${props => props.theme.text};
     .single-resource-wrapper{
         margin-bottom: 4rem;
     }

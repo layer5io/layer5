@@ -88,7 +88,8 @@ const lighttheme = {
   LandscapetabsColor: "#3c494f",
   eventcolumnColor: "#efefef",
   SMITableBottomBorder: "#efefef",
-
+  profileBackColor: "#3c494f",
+  profileCardShadow: "rgba(0, 0, 0, 0.20)",
 };
 export const darktheme = {
   black: "#000000",
@@ -181,6 +182,9 @@ export const darktheme = {
   LandscapetabsColor: "#121212",
   eventcolumnColor: "#121212",
   SMITableBottomBorder: "#212121",
+  profileBackColor: "#212121",
+  profileCardShadow: "rgba(255, 255, 255, 0.20)",
+
 };
 
 
