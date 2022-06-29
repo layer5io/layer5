@@ -5,6 +5,7 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import InternshipSectionWrapper from "./InternshipPage.style";
 import ProgramsGrid from "../Careers-Programs-grid/index";
+import FAQ from "../../General/Faq";
 
 
 const UEM_Img = "../../../assets/images/partners/uem_partner.png";
@@ -74,7 +75,7 @@ const InternshipPage = ({ hide_heading }) => {
       <Link to={fields.slug}>
         <div className="opportunity-card">
           <div className="peek-card">
-            <StaticImage style={{width:"5rem",}}  src={Peek_Img} alt="Peek card effect" />
+            <StaticImage style={{ width: "5rem", }} src={Peek_Img} alt="Peek card effect" />
           </div>
           <div className="text">
             <h3>{frontmatter.title}</h3>
@@ -137,6 +138,7 @@ const InternshipPage = ({ hide_heading }) => {
           <div>
             <ProgramsGrid sub_section={true} />
           </div>
+          <FAQ category={["internships"]} />
           <div>
             <h1>Participating Partners</h1>
             <div className="grid">

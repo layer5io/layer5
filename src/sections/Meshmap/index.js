@@ -8,7 +8,6 @@ import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import Features from "../../components/Features-carousel";
 import MeshmapModes from "./meshmap-modes";
-import DiscussCallout from "../../sections/Discuss-Callout";
 import Catalog from "./meshmap-catalog";
 import Platform from "./meshmap-platform";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
@@ -16,7 +15,8 @@ import MeshmapBanner from "./meshmap_banner";
 import mesheryCloud from "../../assets/images/meshmap/MesheryCloud.png";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
-import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
+import MeshMapDrafts from "./images/meshmap-draft-logos.png";
+import MesheryAction from "./meshery-action";
 
 
 const Meshmap = () => {
@@ -99,7 +99,7 @@ const Meshmap = () => {
           </div>
           <MeshmapModes />
           <Catalog />
-          <Platform />
+          <MesheryAction />
 
           <div className="banner-background">
 
@@ -113,7 +113,12 @@ const Meshmap = () => {
                     Join the waiting list for participation in the beta program. Your request for access will be processed as quickly as possible. Due to the large influx of program participation requests, it may take some time before system access is granted. So that you can familiarize while you wait, the Layer5 team will send you additional information about beta program, MeshMap modes, and service mesh patterns.
                   </p>
                   <img src={mesheryCloud} className="meshery-hero-img" alt="Meshery Cloud" />
-                  <DiscussCallout />
+                  <div className="draft-logo">
+                    <p>Help choose the best logo for MeshMap:</p>
+                    <a href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA">
+                      <img src={MeshMapDrafts} alt="MeshMap Draft" /></a><br />
+                    <p><a href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA">Vote for your favorite design</a></p>
+                  </div>
                 </Col>
 
                 <Col lg={5} md={6} sm={12}>
@@ -217,6 +222,7 @@ const Meshmap = () => {
               </Row>
             </Container>
           </div>
+          <Platform />
         </Container >
       </div >
     );

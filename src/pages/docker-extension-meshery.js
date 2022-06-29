@@ -33,7 +33,6 @@ const MesheryDocker = () => {
           image="/images/meshery-logo-dark-text.png" />
         <Navigation theme={theme} themeSetter={themeSetter}/>
         <DockerMesheryPage />
-        <LearnServiceMeshCTA />
         <Footer />
       </Layout>
     </ThemeProvider>

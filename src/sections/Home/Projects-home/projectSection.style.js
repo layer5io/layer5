@@ -8,7 +8,7 @@ const ProjectItemWrapper = styled.section`
     .project-title {
         .section-title{
 
-            h4{
+            h4 {
                 font-weight: 500;
                 color: ${props => props.theme.sideTextLight};
             }
@@ -19,13 +19,15 @@ const ProjectItemWrapper = styled.section`
                 span{
                     color: ${props => props.theme.text};
                 }
+            h2 {
+                margin-bottom: 2.25rem;
             }
             text-align: center;
             margin-bottom: 25px;
         }
         text-align: center;
         padding: 0 5% 0 5%;
-        width: 70%;
+        width: 100%;
         margin: auto;
         p{
             font-size: 17.5px;

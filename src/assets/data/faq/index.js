@@ -240,6 +240,92 @@ const data = {
         "Many interns become open source maintainers, and have ongoing responsibility to steward Layer5 and CNCF projects.",
       ],
     },
+
+    {
+      question: "How can I upgrade, downgrade, or cancel my plan?",
+      category: "Pricing",
+      answer: [
+        "Upgrade as needed. Downgrade or cancel at anytime. To make changes to your plan, please get in touch with sales.",
+      ],
+    },
+    {
+      question: "Do I need to enter my credit card details to sign up to a free plan?",
+      category: "Pricing",
+      answer: [
+        "No. The Free plan does not require a credit card. It is free and will forever be free. A credit card is required only if you want to upgrade to a more fully-featured plan.",
+      ],
+    },
+    {
+      question: "What is the refund policy?",
+      category: "Pricing",
+      answer: [
+        "Users can cancel or downgrade at anytime.",
+        "Your next billing statement will be prorated based on your date of cancelation or downgrade.",
+      ],
+    },
+    {
+      question: "Can I start with Free and upgrade later?",
+      category: "Pricing",
+      answer: [
+        "Yes! You are more than welcome to try the Free version.",
+        "If you and your team want to collaborate or need more advanced capabilities, then try the Enterprise Edition. To upgrade to Enterprise, please get in touch with us.",
+      ],
+    },
+    {
+      question: "What happens if I accidentally don't renew or forget to renew my subscription?",
+      category: "Pricing",
+      answer: [
+        "Continuity of your infrastructure and applicaiton management is important to us as it is to you. Meshery will continue to operate under the Free tier features and usage limits. Your historical data will continue to be available to you. You can renew your subscription to have higher-level plan features reenabled at any time.",
+      ],
+    },
+    {
+      question: "Are there other pricing options?",
+      category: "Pricing",
+      answer: [
+        "Annual and monthly plans are available. We can customize billing plans to meet your needs. For a detailed explanation of billing, please see our Billing FAQ",
+      ],
+    },
+    {
+      question: "What payment methods do you support?",
+      category: "Billing",
+      answer: [
+        "You can pay for Layer5 Team and Enterprise with a credit card or debit card. If you pay by credit card, billing receipts are available to Administrators for previous months under Billing History. For copies of your invoice, email Layer5 billing.",
+        "Layer5 also offers invoicing (ACH or wire). If you pay by ACH or wire, invoices are emailed to the billing email addresses near the 10th business day of each month. If you need an additional copy, email Layer5 billing. Details on where to remit payment can be found on the invoice. To change your payment method, contact your Customer Success Manager."
+      ],
+      linktext: "Contact Layer5 Billing",
+      link: "mailto:support@layer5.io"
+    },
+    {
+      question: "When does the billing cycle start and stop?",
+      category: "Billing",
+      answer: [
+        "The billing cycle begins the first of the month regardless of when you sign up. Your first month is prorated based on your actual sign-up date. Layer5 meters the count of elements under management on a daily basis. The billable count of elements under management is calculated at the end of the month using the maximum count (high water mark) of the lower 99 percent of usage for those days. Layer5 excludes the top 1% to reduce the impact of spikes in usage on your bill. The billable count of elements under management is based on the average number of elements for the month. See your Usage in Meshery Cloud. Billing pages are only accessible to users with the Meshery Admin Role.",
+      ],
+    },
+    {
+      question: "How do I view and manage my subscription?",
+      category: "Billing",
+      answer: [
+        "You can view your account's subscription, your other paid features and products, and your next billing date in your account's billing settings",
+      ],
+    },
+    {
+      question: "What happens if payment fails?",
+      category: "Billing",
+      answer: [
+        "After an initial failed payment, we apply a 14 day grace period on your account and attempt to process a payment each week. After three failed payments, paid features are locked.",
+      ],
+    },
+    {
+      question: "How can I unlock my account after several failed transactions?",
+      category: "Billing",
+      answer: [
+        "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Meshery Cloud account.",
+      ],
+    },
   ],
 };
 export default data;
+
+
+

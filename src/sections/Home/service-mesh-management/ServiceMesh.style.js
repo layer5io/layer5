@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MeshSectionWrapper = styled.section`
-  margin: 0rem 0 5rem
+  margin: 0rem 0rem 2.25rem 0rem;
   position: relative;
   overflow: hidden;
   .title { 
@@ -51,7 +51,6 @@ const MeshSectionWrapper = styled.section`
     color: ${props => props.theme.text}
    }
 
-
   @media only screen and (max-width: 780px) {
     .mesh-image{
         display: block;
@@ -59,7 +58,7 @@ const MeshSectionWrapper = styled.section`
         margin-right: auto;
     }
     .section-title{
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         /* padding-bottom: 1.5rem; */
         
     }

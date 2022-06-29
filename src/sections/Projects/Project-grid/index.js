@@ -5,6 +5,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 
 import { ProjectWrapper } from "./projectGrid.style";
 import DockerExtensionCTA from "../../Docker-Meshery/docker-extension-CTA";
+import MeshMapCTA from "../../meshmap-cta";
 
 import extension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
@@ -108,7 +109,7 @@ const ProjectPage = () => {
             </Link>
           </div>
 
-          <DockerExtensionCTA />
+          <MeshMapCTA />
         </Container>
       </div>
     </ProjectWrapper>

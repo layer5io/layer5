@@ -66,7 +66,7 @@ const Press = () => {
   return (
     <PressWrapper>
       <Container>
-        <h2>Media Kit</h2>
+        <h2>Media Resources</h2>
         <h4>For any press or analyst inquiries, please reach out:</h4>
         <Row>
           <Col xs={12} md={4}>
