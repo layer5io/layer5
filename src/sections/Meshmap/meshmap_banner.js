@@ -25,7 +25,7 @@ const BannerSectionWrapper = styled.div`
             /* padding: .5rem; */
             /* background-color: ${props => props.theme.saffronLightColor};     */
             font-weight: 700;
-            color: ${props => props.theme.secondaryColor};
+            color: ${props => props.theme.caribbeanGreenColor};
         }
         @media screen and (max-width: 380px) {
             font-size: 38px;
@@ -59,6 +59,8 @@ const BannerSectionWrapper = styled.div`
     h3 {
         color: ${props => props.theme.saffronColor};
         margin-bottom: .5rem;
+        font-weight: 300;
+        font-style: italic;
         span {
             color: ${props => props.theme.saffronColor};
         }
@@ -78,32 +80,35 @@ const BannerSectionWrapper = styled.div`
     }
 
     .meshmap-logo {
-        width: 10rem;
+        width: 14rem;
         overflow: hidden;
-        margin-top: -4rem;
+        margin-top: -7rem;
         position: absolute;
-        right: 20%;
+        right: 25%;
     }
 
     @media screen and (max-width: 1700px) {
         .meshmap-logo {
             width: 12rem;
             right: 12rem;
+            margin-top: -5rem;
         }
         .para {
-            margin-top:-3rem;
+            margin-top: -3rem;
         }
     }
     @media screen and (max-width: 1150px) {
         .meshmap-logo {
-            width: 10rem;
+            width: 12rem;
             right: 8rem;
+            margin-top: -5rem;
         }
     }
     @media screen and (max-width: 992px) {
         .meshmap-logo {
-            width: 10rem;
-            right: 2rem;
+            width: 8rem;
+            right: 3rem;
+            margin-top: -2rem;
         }
     }
 
@@ -120,7 +125,7 @@ const BannerSection = () => {
   return (
     <BannerSectionWrapper>
       <div className="meshmap-logo">
-        <img src={MeshmapIcon} alt="Meshery Logo"/>
+        <img src={MeshmapIcon} alt="Meshery Logo" />
       </div>
       <div>
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}
