@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import {ThemeProvider} from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
 
@@ -16,7 +16,7 @@ const DeployServiceMeshPage = () => {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  return(
+  return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <GlobalStyle />
       <SEO title="when should i deploy service mesh" description="when should i deploy service mesh question form." />

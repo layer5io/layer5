@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -13,7 +13,7 @@ const LandscapeGridPage=() => {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  return(
+  return (
     <ThemeProvider theme={theme ==="light"? lighttheme : darktheme}>
       <Layout>
         <GlobalStyle />

@@ -65,7 +65,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     borderRadius: 20 / 2,
   },
 }));
-const Navigation = ({theme , themeSetter}) => {
+const Navigation = ({ theme , themeSetter }) => {
   let data = useStaticQuery(
     graphql`{
   Learn: allMdx(
@@ -212,16 +212,16 @@ const Navigation = ({theme , themeSetter}) => {
     theme === "dark" ? setthemeToggle(true) : setthemeToggle(false);
 
     localStorage.setItem("Theme", theme);
-    
+
   };
 
   useEffect(() => {
-    if(localStorage.getItem("Theme")===null){
-      themeSetter("light"); 
-    } else{
+    if (localStorage.getItem("Theme")===null){
+      themeSetter("light");
+    } else {
       themeSetter(localStorage.getItem("Theme"));
     }
-        
+
   }, []);
 
   useEffect(() => {
@@ -249,7 +249,7 @@ const Navigation = ({theme , themeSetter}) => {
   const closeDropDown = () => {
     dropDownRef.current.classList.remove("expand");
   };
-  
+
   return (
 
     <ThemeProvider theme={theme==="dark"?  darktheme:lighttheme}>
@@ -319,7 +319,7 @@ const Navigation = ({theme , themeSetter}) => {
                 blogData={data}
               />
             </nav>
-                            
+
           </div>
           <div className="meshery-cta">
             <Button secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />

@@ -18,18 +18,18 @@ const MesheryOperator = () => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    if(cookies.Theme !== undefined)
+    if (cookies.Theme !== undefined)
       setTheme(cookies.Theme);
   }, []);
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  return(
+  return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Meshery Operator"
-          description="Meshery Operator is the multi-service mesh operator that manages MeshSync and it’s messaging broker."            
+          description="Meshery Operator is the multi-service mesh operator that manages MeshSync and it’s messaging broker."
           image="/images/meshery-operator.png" />
         <Navigation theme={theme} themeSetter={themeSetter}/>
         <MesheryOperatorPage />

@@ -45,11 +45,11 @@ export const query = graphql`query EventsBySlug($slug: String!) {
 }
 `;
 
-const EventSinglePage = ({data}) => {
+const EventSinglePage = ({ data }) => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    if(cookies.Theme !== undefined)
+    if (cookies.Theme !== undefined)
       setTheme(cookies.Theme);
   }, []);
   const themeSetter = (thememode) => {

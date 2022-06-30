@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {ThemeProvider} from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 import Layout from "../../components/layout";
 
@@ -16,7 +16,7 @@ const MeshmapPage = () => {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  return(
+  return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <GlobalStyle />
       <SEO title="MeshMap" description="An extension plugin to Meshery" />

@@ -240,7 +240,7 @@ const WorkshopsSection = () => {
         </Col>
         <Col xs={12} md={9} className="workshops-col">
           <Row>
-            {data.allMdx.nodes.slice(0, 3).map(({frontmatter, fields}, index) => (
+            {data.allMdx.nodes.slice(0, 3).map(({ frontmatter, fields }, index) => (
               <Col xs={12} sm={6} xl={4} className="workshops-card" key={index}>
                 <Link to={fields.slug} >
                   <div className="workshop-thumbnails">

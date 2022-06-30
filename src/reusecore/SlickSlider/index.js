@@ -3,23 +3,23 @@ import React from "react";
 import { SliderWrapper, SliderItemWrapper } from "./slick.slider";
 
 
-const SlickSlider = ({children, className, ...props}) => {
+const SlickSlider = ({ children, className, ...props }) => {
 
   const AllClasses = ["slick__slider"];
-  if(className){
+  if (className){
     AllClasses.push(className);
   }
 
-  return ( 
+  return (
     <SliderWrapper className={AllClasses.join(" ")} {...props}>
       {children}
     </SliderWrapper>
   );
 };
 
-const SliderItem = ({children, className}) => {
+const SliderItem = ({ children, className }) => {
   const AllClasses = ["slick__slider__item"];
-  if(className){
+  if (className){
     AllClasses.push(className);
   }
 
@@ -30,4 +30,4 @@ const SliderItem = ({children, className}) => {
   );
 };
 
-export {SlickSlider, SliderItem};
+export { SlickSlider, SliderItem };

@@ -10,7 +10,7 @@ import partner8 from "../../assets/images/partners/microsft.svg";
 import partner9 from "../../assets/images/partners/redhat.svg";
 import partner10 from "../../assets/images/partners/smi1.png";
 import partner11 from "../../assets/images/partners/intel.svg";
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 
 export const partners = [
   {
@@ -18,10 +18,10 @@ export const partners = [
     desc: " In partnership with faculty of the Cockrell School of Engineering at The University of Texas at Austin, graduate students engage in research on the affects of hardware architectures and the performance of software-based networking.Ph.D. candidates leverage Meshery in research and analysis of affect and overhead service mesh architectures have on when running distributed systems. Learn more about our collaborative research",
     //link: "http://www.ece.utexas.edu/speakers/lee-calcote",
     type: "academic",
-    imageLink: partner1, 
+    imageLink: partner1,
     partnerId: "utaustin",
     //imageRoute: "http://www.ece.utexas.edu/speakers/lee-calcote",
-    moreInfo:"In partnership with faculty of the Cockrell School of Engineering at The University of Texas at Austin, graduate students engage in research on the affects of hardware architectures and the performance of software-based networking.Ph.D. candidates leverage Meshery in research and analysis of affect and overhead service mesh architectures have on when running distributed systems. Learn more about our collaborative research"
+    moreInfo: "In partnership with faculty of the Cockrell School of Engineering at The University of Texas at Austin, graduate students engage in research on the affects of hardware architectures and the performance of software-based networking.Ph.D. candidates leverage Meshery in research and analysis of affect and overhead service mesh architectures have on when running distributed systems. Learn more about our collaborative research"
   },{
     name: "Google Summer of Code",
     desc: "Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school. Learn more about our mentoring",
@@ -115,8 +115,8 @@ export const partners = [
     imageLink: partner11,
     partnerId: "intel",
     //imageRoute: "https://www.intel.in/content/www/in/en/homepage.html",
-    moreInfo:  "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
+    moreInfo: "Intel and Layer5 have partnered to deliver Service Mesh Performance as a new standard of measure for service mesh performance characterization. Collective works have been published by the IEEE and demonstrated at KubeCon.",
   }
-  
+
 
 ];

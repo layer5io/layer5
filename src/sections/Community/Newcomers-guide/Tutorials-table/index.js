@@ -1,8 +1,8 @@
 import React from "react";
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import { useTable } from "react-table";
 import data from "../../../../assets/data/tutorials";
-import {TutorialsTableWrapper} from "./TutorialsTable.style";
+import { TutorialsTableWrapper } from "./TutorialsTable.style";
 
 const TutorialsTable = () => {
 
@@ -14,9 +14,9 @@ const TutorialsTable = () => {
       },
       {
         Header: "Resources",
-        id:"resources",
+        id: "resources",
         accessor: data => {
-          return(
+          return (
             <p>
               {data.resources.slides ? <span><a href={data.resources.slides} target="_blank" rel="noreferrer">Slides</a></span>: ""}
               {data.resources.recording ? <span><a href={data.resources.recording} target="_blank" rel="noreferrer">Recording</a></span> : ""}
@@ -51,7 +51,7 @@ const TutorialsTable = () => {
     data,
   });
 
-  return(
+  return (
     <TutorialsTableWrapper>
       <table {...getTableProps()}>
         <thead>

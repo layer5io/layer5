@@ -20,12 +20,12 @@ const ResourcesList = (props) => {
   let data = [];
   let all = [];
   //arrays to store filtered list of resources based on individual filters
-  let typeData = [];  
-  let productData = [];  
-  let techData = [];  
-  let meshData = [];  
+  let typeData = [];
+  let productData = [];
+  let techData = [];
+  let meshData = [];
   let result = [];
-  
+
   //arrays storing the options selected to filter
   let types =[];
   let products =[];
@@ -41,22 +41,22 @@ const ResourcesList = (props) => {
   //mapping all filters to separate individual category filters
   props.resource.map((type) => {
     typeOptions[0].subdata.map((x) => {
-      if(type === x.value){
+      if (type === x.value){
         types.push(type);
       }
     });
     productOptions[0].subdata.map((x) => {
-      if(type === x.value){
+      if (type === x.value){
         products.push(type);
       }
     });
     techOptions[0].subdata.map((x) => {
-      if(type === x.value){
+      if (type === x.value){
         tech.push(type);
       }
     });
     meshOptions[0].subdata.map((x) => {
-      if(type === x.value){
+      if (type === x.value){
         mesh.push(type);
       }
     });
@@ -67,44 +67,44 @@ const ResourcesList = (props) => {
   let totalTech = tech.length;
   let totalMesh = mesh.length;
 
-  if(props.resource.length>0) {
+  if (props.resource.length>0) {
     queryResults.forEach((resources) => {
 
       all.push(resources);
 
       types.map((type) => {
-        if(resources.frontmatter.type === type) {
+        if (resources.frontmatter.type === type) {
           typeData.push(resources);
         }
       });
 
       products.map((product) => {
-        if(resources.frontmatter.product === product) {
+        if (resources.frontmatter.product === product) {
           productData.push(resources);
         }
       });
 
       tech.map((tech) => {
-        if(resources.frontmatter.technology === tech) {
+        if (resources.frontmatter.technology === tech) {
           techData.push(resources);
         }
       });
 
       mesh.map((mesh) => {
-        if(resources.frontmatter.mesh === mesh) {
+        if (resources.frontmatter.mesh === mesh) {
           meshData.push(resources);
         }
       });
 
-      if(totalTypes === 0) typeData = all;
-      if(totalProducts === 0) productData = all;
-      if(totalTech === 0) techData = all;
-      if(totalMesh === 0) meshData = all;
+      if (totalTypes === 0) typeData = all;
+      if (totalProducts === 0) productData = all;
+      if (totalTech === 0) techData = all;
+      if (totalMesh === 0) meshData = all;
 
       result = [typeData, productData, techData, meshData],
       data = result.reduce((a, b) => a.filter(c => b.includes(c)));
     });
-  } else{
+  } else {
     queryResults.forEach((resources) => {
       data.push(resources);
     });

@@ -148,11 +148,11 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
 }
 `;
 
-const Events = ({data, pageContext}) => {
+const Events = ({ data, pageContext }) => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    if(cookies.Theme !== undefined)
+    if (cookies.Theme !== undefined)
       setTheme(cookies.Theme);
   }, []);
   const themeSetter = (thememode) => {

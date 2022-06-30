@@ -32,7 +32,7 @@ export const query = graphql`
     }
 `;
 
-const ProgramsPage = ({data}) => {
+const ProgramsPage = ({ data }) => {
   const [activeOption, setActiveOption] = useState(0);
   const programs = data.allMdx.nodes;
   const options = programs.map((program, index) => {
@@ -44,7 +44,7 @@ const ProgramsPage = ({data}) => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    if(cookies.Theme !== undefined)
+    if (cookies.Theme !== undefined)
       setTheme(cookies.Theme);
   }, []);
   const themeSetter = (thememode) => {
@@ -56,7 +56,7 @@ const ProgramsPage = ({data}) => {
         <GlobalStyle />
         <SEO title={programs[activeOption].frontmatter.program} />
         <Navigation theme={theme} themeSetter={themeSetter}/>
-        <ProgramsSingle 
+        <ProgramsSingle
           data={programs[activeOption]}
           options={options}
           setActiveOption={setActiveOption}

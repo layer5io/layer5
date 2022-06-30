@@ -40,13 +40,13 @@ const ProjectGridPage = ({ data }) => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    if(cookies.Theme !== undefined)
+    if (cookies.Theme !== undefined)
       setTheme(cookies.Theme);
   }, []);
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  return(
+  return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />

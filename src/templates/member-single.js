@@ -39,11 +39,11 @@ export const query = graphql`query MemberBySlug($slug: String!) {
 }
 `;
 
-const MemberSinglePage = ({data}) => {
+const MemberSinglePage = ({ data }) => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    if(cookies.Theme !== undefined)
+    if (cookies.Theme !== undefined)
       setTheme(cookies.Theme);
   }, []);
   const themeSetter = (thememode) => {

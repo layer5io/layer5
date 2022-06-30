@@ -20,7 +20,7 @@ export default function Feature({
 
   return (
     <FeatureWrapper>
-      <div className='root' ref={ref}>
+      <div className="root" ref={ref}>
         <div className="icon">
           <img src={icon} alt="title"/>
         </div>

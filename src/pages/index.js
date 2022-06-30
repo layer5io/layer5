@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {ThemeProvider} from "styled-components";
+import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
@@ -21,7 +21,7 @@ import SoSpecial from "../sections/Home/So-Special-Section";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
 
-const IndexPage = () => { 
+const IndexPage = () => {
   const [theme, setTheme] = useState("light");
   const themeSetter = (thememode) => {
     setTheme(thememode);
@@ -42,7 +42,7 @@ const IndexPage = () => {
   return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <GlobalStyle />
-      <SEO title="Layer5" description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure." 
+      <SEO title="Layer5" description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure."
         schemaMarkup={schema} />
       <Layout >
         <Navigation theme={theme} themeSetter={themeSetter}/>

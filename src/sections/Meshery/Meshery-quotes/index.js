@@ -57,8 +57,8 @@ const MesheryQuotes = () => {
   return (
     <MesheryQuotesWrapper>
       <Container>
-        {/* 
-         Enable after go-live  
+        {/*
+         Enable after go-live
          */}
         {/* <h2>Meshery Users Get Mushy</h2>
         <Slider {...settings}>

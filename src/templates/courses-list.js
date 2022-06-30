@@ -47,7 +47,7 @@ export const query = graphql`
     }
   }
 `;
-const CoursesListTemplate = ({data, pageContext}) => {
+const CoursesListTemplate = ({ data, pageContext }) => {
   const getTitle = (learnPathTitle) => {
     const learnPath = learnPathTitle.split("-");
     let str = learnPath.reduce((title, name, idx) => {
@@ -67,7 +67,7 @@ const CoursesListTemplate = ({data, pageContext}) => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    if(cookies.Theme !== undefined)
+    if (cookies.Theme !== undefined)
       setTheme(cookies.Theme);
   }, []);
   const themeSetter = (thememode) => {

@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {StepsListWrapper} from "./StepsList.style";
+import React, { useState } from "react";
+import { StepsListWrapper } from "./StepsList.style";
 import Step from "./Step";
 
 const StepsList = ({ steps, className, onFocusedIndexChanged }) => {

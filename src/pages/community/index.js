@@ -18,7 +18,7 @@ const CommunityIndex = () => {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  return(
+  return (
     <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
       <Layout>
         <GlobalStyle />

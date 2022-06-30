@@ -14,16 +14,16 @@ import lighttheme from "../../../theme/app/themeStyles";
 
 const CodeOfConduct = () => {
   const [theme, setTheme] = useState("light");
- 
+
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  return(
+  return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Code of Conduct" description="Contact Layer5 for help with operating a service mesh. 
-  Layer5 is the makers of Meshery and service mesh standards. 
+        <SEO title="Code of Conduct" description="Contact Layer5 for help with operating a service mesh.
+  Layer5 is the makers of Meshery and service mesh standards.
   We are the largest collection of service mesh projects and their maintainers in the world." />
         <Navigation theme={theme} themeSetter={themeSetter}/>
         <Conduct />

@@ -1,11 +1,11 @@
 import React from "react";
-import {Link} from "gatsby";
-import {Col, Container, Row} from "../../../reusecore/Layout";
+import { Link } from "gatsby";
+import { Col, Container, Row } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import {FaArrowRight} from "@react-icons/all-files/fa/FaArrowRight";
+import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import Meshery_Logo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import OReillyLogo from "./OReilly_logo_rgb.svg";
-import {data} from "../Service-Mesh-Labs/courseData";
+import { data } from "../Service-Mesh-Labs/courseData";
 import styled from "styled-components";
 
 const LearnSectionWrapper = styled.div`
@@ -187,12 +187,12 @@ const LearnSection = () => {
         <Container>
           <Row Hcenter className="learn-buttons-section labs">
             <Col xs={12} lg={6}>
-              <Link to="/learn/service-mesh-labs" state={{selectedIndex: 0}}>
+              <Link to="/learn/service-mesh-labs" state={{ selectedIndex: 0 }}>
                 <Button secondary title="Getting started with any service mesh"/>
               </Link>
             </Col>
             <Col xs={12} lg={6}>
-              <Link to="/learn/service-mesh-labs" state={{selectedIndex: 1}}>
+              <Link to="/learn/service-mesh-labs" state={{ selectedIndex: 1 }}>
                 <Button secondary title="Managing the performance of your service mesh"/>
               </Link>
             </Col>
@@ -202,7 +202,7 @@ const LearnSection = () => {
         <div className="learn-cards-section">
           <h2>Learn to Service Mesh through interactive labs</h2>
           <div className="cards-row">
-            {data[0].scenarios.map(({subId, title, info, link}, index) => (
+            {data[0].scenarios.map(({ subId, title, info, link }, index) => (
               index < 4 && (
                 <Col xs={12} sm={6} lg={4} xl={3} key={subId}>
                   <Link className="link" to={link}>

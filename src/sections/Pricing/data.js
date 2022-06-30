@@ -1,6 +1,6 @@
 import React from "react";
 import { GiCheckMark } from "@react-icons/all-files/gi/GiCheckMark";
-import {MdClose} from "@react-icons/all-files/md/MdClose";
+import { MdClose } from "@react-icons/all-files/md/MdClose";
 import MeshMap from "./icons/meshmap-icon.svg";
 import Support from "./icons/support.svg";
 import Collab from "./icons/collaboration.svg";
@@ -346,12 +346,12 @@ export const options = [
     summary: [
       { id: 0, category: "Cloud Native Design Patterns", description: "Import and export your designs using your local filesystem or remote URL." },
       { id: 1, category: "Multiple Kubernetes Clusters", description: "Ongoing synchronization of Kubernetes configuration, workloads and service mesh changes across any number of Kubernetes clusters." },
-      { id: 2, category: "Cluster Discovery", description: "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes."},
-      { id: 3, category: "Service Perforamance", description: "Continuous visibility across all of your clusters and workloads."},
+      { id: 2, category: "Cluster Discovery", description: "Day 2 support for ongoing synchronization of Kubernetes configuration, workloads and service mesh changes." },
+      { id: 3, category: "Service Perforamance", description: "Continuous visibility across all of your clusters and workloads." },
       { id: 4, category: "Load Generation", description: "Single Load Generator: Support testing multiple endpoints simultaneously." },
-      { id: 5, category: "MeshMark", description: "Identify the cost of a specific network function."}]
-  },    
-  
+      { id: 5, category: "MeshMark", description: "Identify the cost of a specific network function." }]
+  },
+
   {
     tier: "Team",
     featured: false,
@@ -362,10 +362,10 @@ export const options = [
     summary: [
       { id: 0, category: "Dry-run", description: "Test and verify configuration changes in a separate environment." },
       { id: 1, category: "Design Reviews", description: "Discuss any design by leaving review comments or notes on a specific design. Control who has access, notify discussion participants with updates, and link from anywhere." },
-      { id: 2, category: "Visual Design", description: "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads"},
-      { id: 3, category: "Performance Profiles", description: "Share performance profiles and test results with individual users or teams."},
+      { id: 2, category: "Visual Design", description: "Drag-n-drop cloud native infrastructure designer to configure, model, and deploy your workloads" },
+      { id: 3, category: "Performance Profiles", description: "Share performance profiles and test results with individual users or teams." },
       { id: 4, category: "Built-in Roles", description: "Static - out of the box" },
-      { id: 5, category: "Standard Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web."}]
+      { id: 5, category: "Standard Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via the web." }]
   },
   {
     tier: "Enterprise",
@@ -377,10 +377,10 @@ export const options = [
     summary: [
       { id: 0, category: "User-defined Roles", description: "Customizable roles for specific permission assignments" },
       { id: 1, category: "Authentication: LDAP", description: "Access Meshery Server using your existing accounts and centrally manage repository access." },
-      { id: 2, category: "Authentication: SAML", description: "Use an identity provider to manage the identities of GitHub users and applications."},
-      { id: 3, category: "Self-hosted Deployment", description: "Self-hosted Meshery Cloud for on-prem appliances or self-managed cloud tenants."},
+      { id: 2, category: "Authentication: SAML", description: "Use an identity provider to manage the identities of GitHub users and applications." },
+      { id: 3, category: "Self-hosted Deployment", description: "Self-hosted Meshery Cloud for on-prem appliances or self-managed cloud tenants." },
       { id: 4, category: "Traffic Replay", description: "Visual event replay in MeshMap" },
-      { id: 5, category: "Phone Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone."}]
+      { id: 5, category: "Phone Support", description: "Layer5 Support can help you troubleshoot issues you run into while using Meshery. Get support via phone." }]
   },
 ];
 

@@ -84,7 +84,7 @@ export const query = graphql`
 }
 `;
 
-const SingleChapter = ({data, location}) => {
+const SingleChapter = ({ data, location }) => {
 
   const sortedTOCData = data.TOC.nodes.sort((first, second) => {
     let firstOrder = first.frontmatter?.order ? first.frontmatter.order : 100;
@@ -94,7 +94,7 @@ const SingleChapter = ({data, location}) => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    if(cookies.Theme !== undefined)
+    if (cookies.Theme !== undefined)
       setTheme(cookies.Theme);
   }, []);
   const themeSetter = (thememode) => {

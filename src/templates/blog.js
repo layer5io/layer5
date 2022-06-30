@@ -50,7 +50,7 @@ export const query = graphql`
 
 const Blog = (props) => {
   const [isListView, setIsListView] = useState(false);
- 
+
   const setListView = () => {
     setIsListView(true);
   };
@@ -71,7 +71,7 @@ const Blog = (props) => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    if(cookies.Theme !== undefined)
+    if (cookies.Theme !== undefined)
       setTheme(cookies.Theme);
   }, []);
   const themeSetter = (thememode) => {

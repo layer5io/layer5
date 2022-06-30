@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 import Vintage1 from "../../assets/images/app/vintage-1.svg";
 import Vintage2 from "../../assets/images/app/vintage-2.svg";
@@ -50,12 +50,12 @@ const BoxWrapper = styled.div`
 
 const VintageBox = ({ children, ...props }) => {
   const addAllClasses = ["vintage-box"];
-  if(props.className){
+  if (props.className){
     addAllClasses.push(props.className);
   }
   return (
-    <BoxWrapper  { ...props} className={addAllClasses.join(" ")} > 
-      {children} 
+    <BoxWrapper  { ...props} className={addAllClasses.join(" ")} >
+      {children}
     </BoxWrapper>
   );
 };

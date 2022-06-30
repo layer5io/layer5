@@ -74,7 +74,7 @@ const lighttheme = {
   projectPageShadowsize: "10px",
   learningCard: "#E6E6E6",
   summaryText: "rgba(0, 0, 0, 0.75)",
-  verticalSubtittleColor : "rgb(160, 160, 160)",
+  verticalSubtittleColor: "rgb(160, 160, 160)",
   invertColor: "none",
   backSVGColor: "#3c494f",
   navDropBackground: "rgb(250, 250, 250)",
@@ -107,50 +107,50 @@ export const darktheme = {
   background: "#999",
   // charcoal
   primaryColor: "#FFFFFF",
-  
+
   // silver chalice (light gray)
   primaryLightColor: "#2C2C2C",
-  
+
   // keppel (dark green)
   primaryLightColorTwo: "#2C2C2C",
   keppelColor: "#00d3a9",
-  
+
   // caribbean green (light green)
   secondaryColor: "#00b39f",
   caribbeanGreenColor: "#00d3a9",
   secondaryLightColorTwo: "#121212",
-  
+
   // lighter gray
   secondaryLightColor: "#000000",
-  
+
   // dark jungle green
   tertiaryColor: "#FFFFFF",
   darkJungleGreenColor: "#1e2117",
   darkJungleGreenHalfColor: "rgba(30, 33, 23, .5)",
-  
+
   // Teal Blue
   tertiaryColorTwo: "#477E96",
-  
+
   headingColor: "#000000",
-  
+
   // light slate gray (medium gray)
   textColor: "#000000",
   shadowColor: "rgba(255, 255, 255, 0.05)",
-  
+
   // platinum (light gray)
   shadowLightColor: "#E6E6E6",
-  
+
   // charcoal
   menuColor: "#00b39f",
-  
+
   // caribbean green (light green)
   menuHoverColor: "#ffffff",
   linkColor: "#00d3a9",
-  
+
   // saffron (dark yellow)
   highlightColor: "#EBC017",
   saffronColor: "#EBC017",
-  
+
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
   saffronLightColor: "#EAD07D",
@@ -170,7 +170,7 @@ export const darktheme = {
   projectPageShadowsize: "5px",
   learningCard: "#1d1817",
   summaryText: "rgba(255, 255, 255, 0.75)",
-  verticalSubtittleColor : "rgb(140, 140, 140)",
+  verticalSubtittleColor: "rgb(140, 140, 140)",
   invertColor: "invert(100%)",
   backSVGColor: "#FFFFFF",
   navDropBackground: "rgb(20, 20, 20)",

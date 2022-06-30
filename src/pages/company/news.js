@@ -51,11 +51,11 @@ const NewsGridPage = ({ data }) => {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  return(
+  return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="News" description="News and press about Layer5, the cloud native management company. 
+        <SEO title="News" description="News and press about Layer5, the cloud native management company.
     Layer5 the company behind industry-leading, open source software." />
         <Navigation theme={theme} themeSetter={themeSetter}/>
         <SimpleReactLightbox>

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Container } from "../../../reusecore/Layout";
 import { Link } from "gatsby";
 import Button from "../../../reusecore/Button";
-import {FaArrowRight} from "@react-icons/all-files/fa/FaArrowRight";
+import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import styled from "styled-components";
 
 const BooksListWrapper = styled.div`
@@ -130,7 +130,7 @@ const BooksSection = () => {
       <Container>
         <h1 className="book-heading">Service Mesh Books</h1>
         <div className="books-list">
-          {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+          {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
             <div className="books-card" key={id}>
               <Link className="books-page_link" to={fields.slug} >
                 <div className="books-image">

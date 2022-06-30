@@ -11,7 +11,7 @@ import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
 const Meetups = ({ data, pageContext }) => {
   const [active, setActive] = useState("all");
 
-  return(
+  return (
     <MeetupStyle>
       <PageHeader title="Events" path="Community/Events" img={RssFeedIcon} feedlink="/events/feed.xml"/>
       <h2 className="event-subhead">Join Layer5 at these events</h2>
@@ -26,28 +26,28 @@ const Meetups = ({ data, pageContext }) => {
         <div>
           <Row>
             {active == "all" ? data.allCategories.nodes.map(category => {
-              return(
+              return (
                 <Col xs={12} sm={6} lg={4} key={category.id}>
                   <Card frontmatter={category.frontmatter} fields={category.fields} />
                 </Col>
               );
             }) : <></> }
             {active == "events" ? data.allEvents.nodes.map(event => {
-              return(
+              return (
                 <Col xs={12} sm={6} lg={4} key={event.id}>
                   <Card frontmatter={event.frontmatter} fields={event.fields} />
                 </Col>
               );
             }) : <></>}
             {active == "workshops" ? data.allWorkshops.nodes.map(workshop => {
-              return(
+              return (
                 <Col xs={12} sm={6} lg={4} key={workshop.id}>
                   <Card frontmatter={workshop.frontmatter} fields={workshop.fields} />
                 </Col>
               );
             }) : <></>}
             {active == "meetups" ? data.allMeetups.nodes.map(meetup => {
-              return(
+              return (
                 <Col xs={12} sm={6} lg={4} key={meetup.id}>
                   <Card frontmatter={meetup.frontmatter} fields={meetup.fields} />
                 </Col>

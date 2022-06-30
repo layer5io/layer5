@@ -41,7 +41,7 @@ function NonFunctional() {
     ],
     []
   );
-    
+
   const data = React.useMemo(() => non_functional);
 
   return (

@@ -43,11 +43,11 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
 }
 `;
 
-const ResourceSinglePage = ({data}) => {
+const ResourceSinglePage = ({ data }) => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
   useEffect(() => {
-    if(cookies.Theme !== undefined)
+    if (cookies.Theme !== undefined)
       setTheme(cookies.Theme);
   }, []);
   const themeSetter = (thememode) => {

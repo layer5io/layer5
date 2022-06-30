@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {ThemeProvider} from "styled-components";
+import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
@@ -14,7 +14,7 @@ const NewcomersPage = () => {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  return(
+  return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <GlobalStyle />
       <SEO title="Layer5 Community Member Form" description="Layer5 newcomers form for contributors, users and visitors" image="/images/community.png" />

@@ -9,7 +9,7 @@ import Footer from "../../sections/General/Footer";
 import InternshipPage from "../../sections/Careers/Careers-Internship-grid";
 
 import { GlobalStyle } from "../../sections/app.style";
-import { darktheme }from "../../theme/app/themeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
 
 
@@ -18,7 +18,7 @@ const Internships = () =>  {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  return(
+  return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />

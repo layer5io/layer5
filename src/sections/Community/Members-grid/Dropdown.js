@@ -12,9 +12,9 @@ const Dropdown = (props) => {
   return (
     <>
       <PageHeader
-        title='Meet our Community Members'
-        path='Community > Members'
-        subtitle='A warm and welcoming collection of open sourcers'
+        title="Meet our Community Members"
+        path="Community > Members"
+        subtitle="A warm and welcoming collection of open sourcers"
       />
       <Container>
         <div
@@ -26,7 +26,7 @@ const Dropdown = (props) => {
           }}
         >
           <Select
-            name='Filter Members'
+            name="Filter Members"
             defaultValue={[props.options[11]]}
             isSearchable={false}
             styles={selectStyles}

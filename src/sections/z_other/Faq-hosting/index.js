@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle  from "../../../reusecore/SectionTitle";
