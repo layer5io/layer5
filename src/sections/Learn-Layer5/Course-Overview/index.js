@@ -67,7 +67,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
         </Link>
       </div>
       <div
-        style={{ backgroundColor : course.frontmatter.themeColor }}
+        style={{ backgroundColor: course.frontmatter.themeColor }}
         className="course-overview-hero"
       >
         <div className="course-info-content">

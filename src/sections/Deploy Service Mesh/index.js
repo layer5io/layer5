@@ -29,11 +29,11 @@ const RangeSlider = memo(
     };
 
     const sliderStyle = {
-      backgroundImage : `-webkit-gradient(linear,left top,right top,color-stop(${(sliderVal/100)}, #0098A6),color-stop(${(sliderVal/100)}, #D2CECC))`
+      backgroundImage: `-webkit-gradient(linear,left top,right top,color-stop(${(sliderVal/100)}, #0098A6),color-stop(${(sliderVal/100)}, #D2CECC))`
     };
 
     const bubbleStyle = {
-      left : `calc(${sliderVal}%)`
+      left: `calc(${sliderVal}%)`
     };
 
     useEffect(() => {
@@ -132,12 +132,12 @@ const ServiceMesh = () => {
 
   const sliderProps1 = useMemo(
     () => ({
-      min : 0,
-      max : 100,
-      value : parentVal1,
-      step : 2,
-      label : "The higher volume of service requests that you have to internal and external services there are, the more insight and control you will need and the higher the return on investment your service mesh will deliver.",
-      onChange : e => {
+      min: 0,
+      max: 100,
+      value: parentVal1,
+      step: 2,
+      label: "The higher volume of service requests that you have to internal and external services there are, the more insight and control you will need and the higher the return on investment your service mesh will deliver.",
+      onChange: e => {
         setParentVal1(e);
       }
     }),
@@ -145,12 +145,12 @@ const ServiceMesh = () => {
   );
   const sliderProps2 = useMemo(
     () => ({
-      min : 0,
-      max : 100,
-      value : parentVal2,
-      step : 2,
-      label : "Edge focus—metrics and usage are for response time to clients and request failure rates.",
-      onChange : e => {
+      min: 0,
+      max: 100,
+      value: parentVal2,
+      step: 2,
+      label: "Edge focus—metrics and usage are for response time to clients and request failure rates.",
+      onChange: e => {
         setParentVal2(e);
       }
     }),
@@ -158,12 +158,12 @@ const ServiceMesh = () => {
   );
   const sliderProps3 = useMemo(
     () => ({
-      min : 0,
-      max : 100,
-      value : parentVal3,
-      step : 2,
-      label : "Strong separation of external and internal users. Focused on external API experience. APIs are used primarily for client-facing interaction.APIs are for clients only.",
-      onChange : e => {
+      min: 0,
+      max: 100,
+      value: parentVal3,
+      step: 2,
+      label: "Strong separation of external and internal users. Focused on external API experience. APIs are used primarily for client-facing interaction.APIs are for clients only.",
+      onChange: e => {
         setParentVal3(e);
       }
     }),
@@ -171,12 +171,12 @@ const ServiceMesh = () => {
   );
   const sliderProps4 = useMemo(
     () => ({
-      min : 0,
-      max : 100,
-      value : parentVal4,
-      step : 2,
-      label : "The security characteristics are desirable qualities of any deployment. Apply defense-in-depth. Why not pull these into a single layer of control?",
-      onChange : e => {
+      min: 0,
+      max: 100,
+      value: parentVal4,
+      step: 2,
+      label: "The security characteristics are desirable qualities of any deployment. Apply defense-in-depth. Why not pull these into a single layer of control?",
+      onChange: e => {
         setParentVal4(e);
       }
     }),
@@ -184,12 +184,12 @@ const ServiceMesh = () => {
   );
   const sliderProps5 = useMemo(
     () => ({
-      min : 0,
-      max : 100,
-      value : parentVal5,
-      step : 2,
-      label : "Deploy a service mesh early. Doing so lowers risk and affords you time to become confident with the operations of a service mesh.",
-      onChange : e => {
+      min: 0,
+      max: 100,
+      value: parentVal5,
+      step: 2,
+      label: "Deploy a service mesh early. Doing so lowers risk and affords you time to become confident with the operations of a service mesh.",
+      onChange: e => {
         setParentVal5(e);
       }
     }),
@@ -197,12 +197,12 @@ const ServiceMesh = () => {
   );
   const sliderProps6 = useMemo(
     () => ({
-      min : 0,
-      max : 100,
-      value : parentVal6,
-      step : 2,
-      label : "Resilient infrastructure and highly available services are ideal in any environment. Let the service mesh do the heavy lifting for you.",
-      onChange : e => {
+      min: 0,
+      max: 100,
+      value: parentVal6,
+      step: 2,
+      label: "Resilient infrastructure and highly available services are ideal in any environment. Let the service mesh do the heavy lifting for you.",
+      onChange: e => {
         setParentVal6(e);
       }
     }),
@@ -210,12 +210,12 @@ const ServiceMesh = () => {
   );
   const sliderProps7 = useMemo(
     () => ({
-      min : 0,
-      max : 100,
-      value : parentVal7,
-      step : 2,
-      label : "a very small (<5 engineer) team",
-      onChange : e => {
+      min: 0,
+      max: 100,
+      value: parentVal7,
+      step: 2,
+      label: "a very small (<5 engineer) team",
+      onChange: e => {
         setParentVal7(e);
       }
     }),
@@ -223,12 +223,12 @@ const ServiceMesh = () => {
   );
   const sliderProps8 = useMemo(
     () => ({
-      min : 0,
-      max : 100,
-      value : parentVal8,
-      step : 2,
-      label : "Whether your environment is polyglot or not, service mesh instrumentation delivers uniformity, decouples Dev and Ops, and melts infrastructure concern off of application code.",
-      onChange : e => {
+      min: 0,
+      max: 100,
+      value: parentVal8,
+      step: 2,
+      label: "Whether your environment is polyglot or not, service mesh instrumentation delivers uniformity, decouples Dev and Ops, and melts infrastructure concern off of application code.",
+      onChange: e => {
         setParentVal8(e);
       }
     }),
@@ -245,8 +245,8 @@ const ServiceMesh = () => {
 
     setTimeout(() => {
       const newStyle = {
-        opacity : 1,
-        width : `${done}%`
+        opacity: 1,
+        width: `${done}%`
       };
 
       setStyle(newStyle);

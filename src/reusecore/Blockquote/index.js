@@ -34,10 +34,10 @@ const Blockquote = ({
 
 Blockquote.propTypes = {
 
-  quote : PropTypes.string,
-  person : PropTypes.string,
-  className : PropTypes.string,
-  title : PropTypes.string,
+  quote: PropTypes.string,
+  person: PropTypes.string,
+  className: PropTypes.string,
+  title: PropTypes.string,
 };
 
 export default Blockquote;

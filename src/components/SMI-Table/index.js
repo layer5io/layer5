@@ -35,7 +35,7 @@ const Table = ({ columns, data, spec }) => {
             <tr key={"table-header"} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => {
                 if (column.Header == "Traffic Access" || column.Header == "Traffic Split" || column.Header == "Traffic Spec") {
-                  return <th key={column} {...column.getHeaderProps()}>{column.render("Header")} <div style={{ fontSize : "0.9rem", fontWeight : "500" }}>{spec[column.id]}</div></th>;
+                  return <th key={column} {...column.getHeaderProps()}>{column.render("Header")} <div style={{ fontSize: "0.9rem", fontWeight: "500" }}>{spec[column.id]}</div></th>;
                 } else {
                   return <th key={column} {...column.getHeaderProps()}>{column.render("Header")}</th>;
                 }
@@ -127,7 +127,7 @@ const Table = ({ columns, data, spec }) => {
                       </td>;
                     } else {
                       return <td >
-                        <IconContext.Provider value={{ color : "gray", size : "20px" }}>
+                        <IconContext.Provider value={{ color: "gray", size: "20px" }}>
                           <IoMdHelpCircle />
                         </IconContext.Provider>
                       </td>;
@@ -158,7 +158,7 @@ const Table = ({ columns, data, spec }) => {
                             </td>;
                           } else {
                             return <td >
-                              <IconContext.Provider value={{ color : "gray", size : "20px" }}>
+                              <IconContext.Provider value={{ color: "gray", size: "20px" }}>
                                 <IoMdHelpCircle />
                               </IconContext.Provider>
                             </td>;

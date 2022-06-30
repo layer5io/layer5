@@ -7,36 +7,36 @@ function NonFunctional() {
   const columns = React.useMemo(
     () => [
       {
-        Header : "Category",
-        accessor : "category",
+        Header: "Category",
+        accessor: "category",
       },
       {
-        Header : "Name",
-        accessor : "name",
+        Header: "Name",
+        accessor: "name",
       },
       {
-        Header : "Open source",
-        accessor : "opensource",
+        Header: "Open source",
+        accessor: "opensource",
       },
       {
-        Header : "Governance",
-        accessor : "governance",
+        Header: "Governance",
+        accessor: "governance",
       },
       {
-        Header : "Primary Language",
-        accessor : "primary_lang",
+        Header: "Primary Language",
+        accessor: "primary_lang",
       },
       {
-        Header : "Project Announce",
-        accessor : "announce_date",
+        Header: "Project Announce",
+        accessor: "announce_date",
       },
       {
-        Header : "GA/1.0",
-        accessor : "ga_1_date",
+        Header: "GA/1.0",
+        accessor: "ga_1_date",
       },
       {
-        Header : "Commercial Offerings",
-        accessor : "commercial",
+        Header: "Commercial Offerings",
+        accessor: "commercial",
       },
     ],
     []

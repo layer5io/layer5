@@ -34,13 +34,13 @@ const ContactForm = () => {
       <div className="form-data">
         <Formik
           initialValues={{
-            subscribed : false,
-            firstname : "",
-            lastname : "",
-            email : "",
-            subject : "",
-            message : "",
-            ScopeOfQuestion : "",
+            subscribed: false,
+            firstname: "",
+            lastname: "",
+            email: "",
+            subject: "",
+            message: "",
+            ScopeOfQuestion: "",
           }}
           onSubmit={(values) => {
             setcontactForm(values);

@@ -17,49 +17,49 @@ import AppScreenSectionWrapper from "./appScreenSection.style";
 const AppScreens = () => {
   const thumbs = [image1, image2, image3, image4];
   const settings = {
-    customPaging : function(i) {
+    customPaging: function(i) {
       return (
         <a>
           <img src={thumbs[i]} alt="img" />
         </a>
       );
     },
-    infinite : true,
-    autoplay : true,
-    dots : true,
-    className : "app__screen__slider",
-    dotsClass : "slick-dots slick-thumb",
-    centerPadding : "100px",
-    centerMode : true,
-    slidesToShow : 1,
-    speed : 500,
+    infinite: true,
+    autoplay: true,
+    dots: true,
+    className: "app__screen__slider",
+    dotsClass: "slick-dots slick-thumb",
+    centerPadding: "100px",
+    centerMode: true,
+    slidesToShow: 1,
+    speed: 500,
 
-    responsive : [
+    responsive: [
       {
-        breakpoint : 1025,
-        settings : {
-          centerPadding : "280px"
+        breakpoint: 1025,
+        settings: {
+          centerPadding: "280px"
         }
       },
       {
-        breakpoint : 912,
-        settings : {
-          slidesToShow : 3,
-          centerPadding : "80px"
+        breakpoint: 912,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: "80px"
         }
       },
       {
-        breakpoint : 768,
-        settings : {
-          slidesToShow : 3,
-          centerPadding : "50px"
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: "50px"
         }
       },
       {
-        breakpoint : 480,
-        settings : {
-          slidesToShow : 1,
-          centerPadding : "0px"
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "0px"
         }
       }
     ]

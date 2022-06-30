@@ -4,9 +4,9 @@ import DiagramStyles from "./diagram.style";
 const HowMesheryWorksDiagram = ({ activeExampleIndex }) => {
   return (
     <DiagramStyles>
-      <div className="root" style={{ padding : "0px" }}>
+      <div className="root" style={{ padding: "0px" }}>
         <svg xmlns="http://www.w3.org/2000/svg" className="scroll" viewBox="0 0 559.92 498.86">
-          <g style={{ isolation : "isolate" }}>
+          <g style={{ isolation: "isolate" }}>
             <g id="Layer_2" data-name="Layer 2">
               {/* Doted circle*/}
               {/*<path*/}

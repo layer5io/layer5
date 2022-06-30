@@ -23,22 +23,22 @@ const Testimonial = () => {
     </button>
   );
   const settings = {
-    customPaging : function(i) {
+    customPaging: function(i) {
       return (
         <a>
           <img src={data.thumbs[i]} alt="img" />
         </a>
       );
     },
-    dots : true,
-    dotsClass : "slick-dots testimonial__thumb",
-    autoplay : true,
-    infinite : true,
-    speed : 1500,
-    slidesShow : 1,
-    slidesToScroll : 1,
-    prevArrow : <ArrowLeft />,
-    nextArrow : <ArrowRight />
+    dots: true,
+    dotsClass: "slick-dots testimonial__thumb",
+    autoplay: true,
+    infinite: true,
+    speed: 1500,
+    slidesShow: 1,
+    slidesToScroll: 1,
+    prevArrow: <ArrowLeft />,
+    nextArrow: <ArrowRight />
   };
 
   return (

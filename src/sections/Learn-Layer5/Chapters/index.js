@@ -18,7 +18,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
   const serviceMeshImages = courseData.frontmatter.meshesYouLearn;
   const tableOfContents = TOCData
     .filter(node => !!node.fields.section)
-    .map( toc => ({ section : toc.fields.section, chapter : toc.fields.chapter }) );
+    .map( toc => ({ section: toc.fields.section, chapter: toc.fields.chapter }) );
 
 
   const replaceSlugPart = (index) => (oldSlug) => (replacement) => {
@@ -44,7 +44,7 @@ const Chapters = ({ chapterData, courseData, location, serviceMeshesList, TOCDat
     });
 
     if (!serviceMeshes.map(sm => sm.section).includes(sm.fields.section))
-      serviceMeshes.push({ section : sm.fields.section, slug : chapterFound ?
+      serviceMeshes.push({ section: sm.fields.section, slug: chapterFound ?
         replaceServiceMeshInSlug( sm.fields.section)
         : replaceChapterInSlug(replaceServiceMeshInSlug(sm.fields.section))(tableOfContents[0].chapter) });
 

@@ -1,10 +1,10 @@
 import { css } from "styled-components";
 const sizes = {
-  grandpabear : 1980,
-  papabear : 1000,
-  brotherbear : 900,
-  mamabear : 700,
-  babybear : 400,
+  grandpabear: 1980,
+  papabear: 1000,
+  brotherbear: 900,
+  mamabear: 700,
+  babybear: 400,
 };
 
 export default Object.keys(sizes).reduce((acc, label) => {

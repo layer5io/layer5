@@ -7,24 +7,24 @@ function Tools() {
   const columns = React.useMemo(
     () => [
       {
-        Header : "Tool",
-        accessor : "tool",
+        Header: "Tool",
+        accessor: "tool",
       },
       {
-        Header : "Written In",
-        accessor : "language",
+        Header: "Written In",
+        accessor: "language",
       },
       {
-        Header : "Written For",
-        accessor : "written_for",
+        Header: "Written For",
+        accessor: "written_for",
       },
       {
-        Header : "Supported By",
-        accessor : "supported_by",
+        Header: "Supported By",
+        accessor: "supported_by",
       },
       {
-        Header : "Description",
-        accessor : "desc",
+        Header: "Description",
+        accessor: "desc",
       },
     ],
     []

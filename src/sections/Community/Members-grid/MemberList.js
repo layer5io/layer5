@@ -19,7 +19,7 @@ const MembersList = (props) => {
      */
     let isApplicable = 0;
 
-    selectedBadges.forEach(({ value : badge }) => {
+    selectedBadges.forEach(({ value: badge }) => {
       /**
        * Multiple checkes required as for each badge
        * different properties (maintainer, meshmate, badges)

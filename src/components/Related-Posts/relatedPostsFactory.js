@@ -47,8 +47,8 @@ class RelatedPostsFactory {
       const slug = getSlug(post);
       if (!Object.prototype.hasOwnProperty.call(identityMap, slug)){
         identityMap[slug] = {
-          post : post,
-          points : 0
+          post: post,
+          points: 0
         };
       }
     };

@@ -15,24 +15,24 @@ const BoxWrapper = styled.div`
         bottom: -30px;
         ${props => props.vintageOne && css(
   {
-    content : `url(${Vintage1})`
+    content: `url(${Vintage1})`
   }
 )}
         ${props => props.vintageTwo && css(
   {
-    content : `url(${Vintage2})`
+    content: `url(${Vintage2})`
   }
 )}
         ${props => props.right && css(
   {
-    right : "-45px",
-    left : "auto"
+    right: "-45px",
+    left: "auto"
   }
 )}
         ${props => props.left && css(
   {
-    left : "-45px",
-    right : "auto"
+    left: "-45px",
+    right: "auto"
   }
 )}
   @media screen and (max-width: 450px) and (min-width: 402px)
@@ -63,7 +63,7 @@ const VintageBox = ({ children, ...props }) => {
 
 
 VintageBox.propTypes = {
-  children : PropTypes.any.isRequired
+  children: PropTypes.any.isRequired
 };
 
 export default VintageBox;

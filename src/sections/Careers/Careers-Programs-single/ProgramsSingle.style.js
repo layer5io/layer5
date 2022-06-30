@@ -63,56 +63,56 @@ margin-bottom : 3.125rem;
 `;
 
 export const selectStyles = {
-  menu : styles => ({ ...styles, zIndex : 999, }),
-  control : styles => ({ ...styles, backgroundColor : "white", zIndex : 900 }),
-  option : (styles, { isFocused, isSelected }) => ({
+  menu: styles => ({ ...styles, zIndex: 999, }),
+  control: styles => ({ ...styles, backgroundColor: "white", zIndex: 900 }),
+  option: (styles, { isFocused, isSelected }) => ({
     ...styles,
 
-    alignItems : "center",
-    display : "flex",
+    alignItems: "center",
+    display: "flex",
 
-    ":before" : {
-      borderRadius : 10,
-      content : "\" \"",
-      display : "block",
-      marginRight : 12,
-      marginLeft : 5,
-      height : 10,
-      width : 10,
-      zIndex : 1000,
+    ":before": {
+      borderRadius: 10,
+      content: "\" \"",
+      display: "block",
+      marginRight: 12,
+      marginLeft: 5,
+      height: 10,
+      width: 10,
+      zIndex: 1000,
     },
 
-    backgroundColor : isSelected
+    backgroundColor: isSelected
       ? "rgba(11, 177, 158, 1)"
       : isFocused
         ? "rgba(11, 177, 158, 0.30)"
         : "white",
 
-    color : isSelected ? "white" : "black",
+    color: isSelected ? "white" : "black",
 
-    zIndex : 900,
+    zIndex: 900,
 
-    ":active" : {
+    ":active": {
       ...styles[":active"],
-      backgroundColor : (isSelected
+      backgroundColor: (isSelected
         ? "rgba(11, 177, 158, 0.75)"
         : "white"),
     },
   }
   ),
-  input : styles => ({ ...styles, zIndex : 900 }),
-  placeholder : styles => ({ ...styles, zIndex : 900 }),
-  singleValue : (styles) => ({ ...styles, zIndex : 900 }),
+  input: styles => ({ ...styles, zIndex: 900 }),
+  placeholder: styles => ({ ...styles, zIndex: 900 }),
+  singleValue: (styles) => ({ ...styles, zIndex: 900 }),
 };
 
 export const dropdownTheme = theme => ({
   ...theme,
-  borderRadius : 0,
-  colors : {
+  borderRadius: 0,
+  colors: {
     ...theme.colors,
-    primary50 : "#b0e8e2",
-    primary25 : "#b0e8e2",
-    primary : "#00b39f",
+    primary50: "#b0e8e2",
+    primary25: "#b0e8e2",
+    primary: "#00b39f",
   }
 });
 

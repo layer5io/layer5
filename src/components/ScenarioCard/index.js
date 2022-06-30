@@ -29,7 +29,7 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
         <Row>
           <Col xs={12} sm={12}>
             <div className="full-screen">
-              <Link to={link} className="siteLink"><FaExternalLinkAlt style={{ height : "1.5rem", width : "auto" }} /></Link>
+              <Link to={link} className="siteLink"><FaExternalLinkAlt style={{ height: "1.5rem", width: "auto" }} /></Link>
             </div>
           </Col>
         </Row>
@@ -67,7 +67,7 @@ const Card = ({ title, info, courseLink, link, cover, content, embed, subId, ID,
                   data-katacoda-background="#fff"
                   data-katacoda-hideprogress="true"
                   data-katacoda-font="Open Sans"
-                  data-katacoda-fontheader="Open Sans" style={{ minHeight : "37rem" }}>
+                  data-katacoda-fontheader="Open Sans" style={{ minHeight: "37rem" }}>
                 </div>
               </div>
             </div>

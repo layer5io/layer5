@@ -37,52 +37,52 @@ const SoSpecial = () => {
 `
   );
   const settings = {
-    dots : false,
-    infinite : false,
-    speed : 500,
-    slidesToShow : 2.5,
-    swipeToSlide : true,
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2.5,
+    swipeToSlide: true,
 
-    responsive : [
+    responsive: [
       {
-        breakpoint : 1200,
-        settings : {
-          slidesToShow : 2.2,
-
-        }
-      },
-      {
-        breakpoint : 1024,
-        settings : {
-          slidesToShow : 2,
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2.2,
 
         }
       },
       {
-        breakpoint : 800,
-        settings : {
-          slidesToShow : 1.5,
-          slidesToScroll : 1,
-          initialSlide : 1
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+
         }
       },
       {
-        breakpoint : 600,
-        settings : {
-          dots : true,
-          arrows : false,
-          slidesToShow : 1,
-          slidesToScroll : 1,
-          initialSlide : 1
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+          initialSlide: 1
         }
       },
       {
-        breakpoint : 400,
-        settings : {
-          dots : true,
-          arrows : false,
-          slidesToShow : 1,
-          slidesToScroll : 1
+        breakpoint: 600,
+        settings: {
+          dots: true,
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          dots: true,
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       }
     ]
@@ -102,7 +102,7 @@ const SoSpecial = () => {
                   <div id="special-cont_img">
                     <Image
                       {...frontmatter.thumbnail}
-                      imgStyle={{ objectFit : "contain" }}
+                      imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     />
                   </div>
