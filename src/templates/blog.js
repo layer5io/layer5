@@ -68,15 +68,18 @@ const Blog = (props) => {
     if (isListView) return <BlogList {...props} />;
     return <BlogGrid {...props} />;
   };
-  const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
-  useEffect(() => {
-    if (cookies.Theme !== undefined)
-      setTheme(cookies.Theme);
-  }, []);
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  // prevents ssr flash for mismatched dark mode
+  if (!mounted) {
+    return <div style={{ visibility: "hidden" }}>Preventing mismatched Screen</div>;
+  }
   return (
     <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
       <Layout>
