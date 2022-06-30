@@ -61,12 +61,6 @@ export const partners = [
   }, {
     name: "VMware",
     imageLink: vmware,
-    imageRoute: "",
-    innerDivStyle: "partner__block__inner"
-
-  }, {
-    name: "VMware",
-    imageLink: vmware,
     imageRoute: "/partners#VMware",
     innerDivStyle: "partner__block__inner",
   }
