@@ -208,19 +208,19 @@ const WorkshopsSection = () => {
   );
 
   var settings = {
-    infinite: false,
-    speed: 400,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <FiArrowRight />,
-    prevArrow: <FiArrowLeft />,
-    responsive: [
+    infinite : false,
+    speed : 400,
+    slidesToShow : 1,
+    slidesToScroll : 1,
+    nextArrow : <FiArrowRight />,
+    prevArrow : <FiArrowLeft />,
+    responsive : [
       {
-        breakpoint: 700,
-        settings: {
-          dots: true,
-          arrows: false,
-          slidesToShow: 1,
+        breakpoint : 700,
+        settings : {
+          dots : true,
+          arrows : false,
+          slidesToShow : 1,
         }
       },
     ]
@@ -238,7 +238,7 @@ const WorkshopsSection = () => {
         </Col>
         <Col xs={12} md={9} className="workshops-col">
           <Row>
-            {data.allMdx.nodes.slice(0, 3).map(({frontmatter, fields}, index) => (
+            {data.allMdx.nodes.slice(0, 3).map(({ frontmatter, fields }, index) => (
               <Col xs={12} sm={6} xl={4} className="workshops-card" key={index}>
                 <Link to={fields.slug} >
                   <div className="workshop-thumbnails">

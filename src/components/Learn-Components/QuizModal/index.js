@@ -9,7 +9,7 @@ const QuizModal = ({ TOCData, chapterData, location }) => {
   const [userData, setUserData] = useState({});
   const [isLogin, setIsLogin] = useState(false);
 
-  if(isLogin){
+  if (isLogin){
     return <QuizComponent />;
   }
 
@@ -19,16 +19,16 @@ const QuizModal = ({ TOCData, chapterData, location }) => {
         <h2 className="title">Login Form</h2>
         <Formik
           initialValues={{
-            firstname: "",
-            lastname: "",
-            email: "",
-            password: "",
+            firstname : "",
+            lastname : "",
+            email : "",
+            password : "",
           }}
           onSubmit={values => {
             setUserData(values);
 
             // User validation from backend
-            if(values.email){
+            if (values.email){
               // If successfully authenticated then display the quiz modal
               setIsLogin(true);
             }

@@ -8,14 +8,14 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
   const addAllClasses = [""];
 
   const [state, setState] = useState({
-    active: menuItems[0]
+    active : menuItems[0]
   });
 
   const wrapRef = useRef(null);
 
   const handleMouseOver = (index) => {
     setState({
-      active: menuItems[index]
+      active : menuItems[index]
     });
   };
 
@@ -57,7 +57,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
       ))}
       {active.subItems !== undefined && (
         <React.Fragment>
-          <ul className="dropdown" style={{ zIndex: "101" }}>
+          <ul className="dropdown" style={{ zIndex : "101" }}>
             <div className="nav-grid">
               <div className="hr">
                 <Link className="section" to={active.path}  >{active.name}
@@ -98,7 +98,7 @@ const ScrollspyMenu = ({ menuItems, ...props }) => {
               </div>
             </div>
           </ul>
-          <div className="wrap" ref={wrapRef} style={{ zIndex: "100" }} />
+          <div className="wrap" ref={wrapRef} style={{ zIndex : "100" }} />
         </React.Fragment>
       )}
     </ul>

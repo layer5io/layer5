@@ -1,11 +1,11 @@
 import React from "react";
-import {Link, graphql, useStaticQuery} from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import slugify from "../../../utils/slugify";
 import layer5_img from "../../../assets/images/layer5/layer5-only/svg/layer5-gray-no-trim.svg";
 import BlogPostSignOffWrapper from "./blogpost-signoff.styles";
 
 const authorField = (author, isSlugAvailable) => {
-  return(
+  return (
     <>
       {
         isSlugAvailable ?
@@ -18,9 +18,9 @@ const authorField = (author, isSlugAvailable) => {
   );
 };
 
-const BlogPostSignOff = ({ author}) => {
+const BlogPostSignOff = ({ author }) => {
   let isSlugAvailable = false;
-  if(author){
+  if (author){
     const validMembers = useStaticQuery(
       graphql`
             query blogvalidMemberss{

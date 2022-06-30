@@ -14,15 +14,15 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
   {
-    id: 0,
-    link: "#Newsletter",
-    text: "Newsletter",
+    id : 0,
+    link : "#Newsletter",
+    text : "Newsletter",
   },
-  { id: 1, link: "#Mailing Lists", text: "Mailing Lists" },
-  { id: 2, link: "#Calendar", text: "Calendar" },
-  { id: 3, link: "#Slack Community", text: "Slack Community" },
-  { id: 4, link: "#Discussion Forum", text: "Discussion Forum" },
-  { id: 5, link: "#Social Media", text: "Social Media" },
+  { id : 1, link : "#Mailing Lists", text : "Mailing Lists" },
+  { id : 2, link : "#Calendar", text : "Calendar" },
+  { id : 3, link : "#Slack Community", text : "Slack Community" },
+  { id : 4, link : "#Discussion Forum", text : "Discussion Forum" },
+  { id : 5, link : "#Social Media", text : "Social Media" },
 ];
 
 const Connect = () => {

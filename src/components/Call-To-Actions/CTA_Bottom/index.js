@@ -100,7 +100,7 @@ export const CTA_Bottom = ({ alt, button_text, category, content, external_link,
           <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
         </>
       ) : (
-        <>        
+        <>
           <div className="cta-content">
             <p>{content ? content : defaultContent}</p>
             <Button primary title={button_text ? button_text : "Join Us"} url={url ? url : defaultURL} external={external_link ? true : false} />

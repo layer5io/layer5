@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 const ButtonStyle = styled.button` 
     cursor: pointer;
     display: inline-flex;

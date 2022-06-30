@@ -1,5 +1,5 @@
 import React from "react";
-import {ThemeProvider} from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
 
@@ -22,14 +22,14 @@ import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
 import CloudNativeLeaders from "../sections/Home/Cloud-Native";
 import SoSpecial from "../sections/Home/So-Special-Section";
 
-const IndexPage = () => { 
+const IndexPage = () => {
   const schema= {
-    "@context": "https://schema.org",
-    "@type": "Corporation",
-    "name": "Layer5",
-    "url": "https://layer5.io/",
-    "logo": "https://layer5.io/images/layer5-tag-dark-bg.png",
-    "sameAs": [
+    "@context" : "https://schema.org",
+    "@type" : "Corporation",
+    "name" : "Layer5",
+    "url" : "https://layer5.io/",
+    "logo" : "https://layer5.io/images/layer5-tag-dark-bg.png",
+    "sameAs" : [
       "https://twitter.com/layer5",
       "https://www.linkedin.com/company/layer5/",
       "https://github.com/layer5io",
@@ -39,7 +39,7 @@ const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <SEO title="Layer5" description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure." 
+      <SEO title="Layer5" description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure."
         schemaMarkup={schema} />
       <Layout>
         <Navigation />

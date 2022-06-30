@@ -122,10 +122,10 @@ const Platform = () => {
           heading=" "
           features={[
             {
-              title: "Self-hosted",
-              description:
+              title : "Self-hosted",
+              description :
                     "Keep your MeshMap designs internal to your workplace. Get remote support from Layer5 when you need it.",
-              content: (
+              content : (
                 <img
                   src={SelfHosted}
                   alt="MeshMap Self-hosted"
@@ -134,10 +134,10 @@ const Platform = () => {
               ),
             },
             {
-              title: "Cloud",
-              description:
+              title : "Cloud",
+              description :
                     "Connect to Meshery Cloud and have your MeshMap designs versioned and available for team sharing and real-time collaboration.",
-              content: (
+              content : (
                 <img
                   src={CloudHosted}
                   alt="MeshMap Cloud"

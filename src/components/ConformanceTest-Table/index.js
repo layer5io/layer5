@@ -17,7 +17,7 @@ const Table = ({ columns, data }) => {
     },
     useSortBy,
   );
-  
+
   // Render the UI for the table
   return (
     <TableWrapper>
@@ -27,7 +27,7 @@ const Table = ({ columns, data }) => {
             <tr key={"table-header"} {...headerGroup.getHeaderGroupProps()} >
               {headerGroup.headers.map((column) => {
                 return (
-                  <th key={column} {...column.getHeaderProps(column.getSortByToggleProps())} style={{textAlign:"left", paddingLeft: "0.75rem",}}>
+                  <th key={column} {...column.getHeaderProps(column.getSortByToggleProps())} style={{ textAlign : "left", paddingLeft : "0.75rem", }}>
                     {column.render("Header")}
                     <span>
                       {column.isSorted
@@ -38,7 +38,7 @@ const Table = ({ columns, data }) => {
                     </span>
                   </th>
                 );
-                  
+
               })}
             </tr>
           ))}
@@ -49,20 +49,20 @@ const Table = ({ columns, data }) => {
             return (
               <tr key={`row${i}`} {...row.getRowProps()} style={{}}>
                 {row.cells.map(cell => {
-                  if(cell["column"]["id"] === "test_no"){
-                    return <td {...cell.getCellProps()} style={{whiteSpace:"nowrap"}}>
+                  if (cell["column"]["id"] === "test_no"){
+                    return <td {...cell.getCellProps()} style={{ whiteSpace : "nowrap" }}>
                       {cell.render("Cell")}
                     </td>;
-                  } else if(cell["column"]["id"] === "spec"){
-                    return <td {...cell.getCellProps()} style={{whiteSpace:"nowrap"}}>
+                  } else if (cell["column"]["id"] === "spec"){
+                    return <td {...cell.getCellProps()} style={{ whiteSpace : "nowrap" }}>
                       {cell.render("Cell")}
                     </td>;
-                  } else if(cell["column"]["id"] === "test_type"){
-                    return <td {...cell.getCellProps()} style={{whiteSpace:"nowrap"}}>
+                  } else if (cell["column"]["id"] === "test_type"){
+                    return <td {...cell.getCellProps()} style={{ whiteSpace : "nowrap" }}>
                       {cell.render("Cell")}
                     </td>;
-                  } else if(cell["column"]["id"] === "desc"){
-                    return <td {...cell.getCellProps()} style={{textAlign:"left"}}>
+                  } else if (cell["column"]["id"] === "desc"){
+                    return <td {...cell.getCellProps()} style={{ textAlign : "left" }}>
                       <i>{cell.render("Cell")}</i>
                     </td>;
                   } else {

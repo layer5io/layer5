@@ -80,7 +80,7 @@ export const query = graphql`
 }
 `;
 
-const SingleChapter = ({data, location}) => {
+const SingleChapter = ({ data, location }) => {
 
   const sortedTOCData = data.TOC.nodes.sort((first, second) => {
     let firstOrder = first.frontmatter?.order ? first.frontmatter.order : 100;

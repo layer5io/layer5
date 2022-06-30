@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { MdExpandMore} from "@react-icons/all-files/md/MdExpandMore";
+import { MdExpandMore } from "@react-icons/all-files/md/MdExpandMore";
 import { RiArrowRightSLine } from "@react-icons/all-files/ri/RiArrowRightSLine";
 
 const FeatureDetailsWrapper = styled.div`
@@ -51,9 +51,9 @@ const FeatureDetails = (props) => {
   return (
     <FeatureDetailsWrapper>
       <div onClick={function () {
-        setExpand(!expand); 
+        setExpand(!expand);
       }}>
-        {props.description ? 
+        {props.description ?
           <div className="toggle-btn">
             {expand ? (
               <MdExpandMore
@@ -76,7 +76,7 @@ const FeatureDetails = (props) => {
           <p className={`closed ${expand ? "open" : ""}`}>
             {props.description}
           </p>
-        </div> 
+        </div>
       </div>
     </FeatureDetailsWrapper>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
-import Layout from "../../../components/layout"; 
+import Layout from "../../../components/layout";
 import SMPWrapper from "./smp.style";
 import { Row, Col, Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
@@ -46,19 +46,19 @@ const SMPPage = () => {
               <Col className="features" lg={6}>
                 <h1> SMP accounts for details of:</h1>
                 <table>
-                  <tr> 
+                  <tr>
                     <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="feature"> Environment and infrastructure details </td>
                   </tr>
-                  <tr> 
+                  <tr>
                     <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="feature"> Service mesh and its configuration </td>
                   </tr>
-                  <tr> 
+                  <tr>
                     <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="feature"> Service (workload) details </td>
                   </tr>
-                  <tr> 
+                  <tr>
                     <td className="icon"><img src={c_icon} alt="icon" /></td>
                     <td className="feature"> Statistical analysis of performance results </td>
                   </tr>
@@ -90,10 +90,10 @@ const SMPPage = () => {
                   <h1> Latency at scale </h1>
                   <p> When we go beyond the application capacity (100 in our example), we start noticing the power of a in-line ight wasm module which starts terminating requests at the side-car and the core application logic is never invoked/loaded. We notice that even the minimum response time for a terminated request is about 15-20% faster than invoking of application logic since the wasm is a dynamic module in the sidecar and we start to avoid complex network redirection and invocation of a new container/instance. We also notice that the average latency of requests is lower than in the case of native client.</p>
                 </div>
-              </Col>      
+              </Col>
               <Col className="use-case-box" lg={6}>
                 <StaticImage src={latency} alt="latency" />
-              </Col>                    
+              </Col>
             </Row>
             <Row className="use-case-data">
               <Col className="use-case-box" lg={6}>
@@ -120,10 +120,10 @@ const SMPPage = () => {
               frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"allowFullScreen>
             </iframe>
             <iframe	className="iframe" src="https://www.youtube.com/embed/LxP-yHrKL4M" loading="lazy"
-              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"	allowFullScreen>	
+              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"	allowFullScreen>
             </iframe>
             <iframe	className="iframe" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000" loading="lazy"
-              frameBorder="0" allowFullScreen>	
+              frameBorder="0" allowFullScreen>
             </iframe>
           </div>
         </div>

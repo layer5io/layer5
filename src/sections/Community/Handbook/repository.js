@@ -14,12 +14,12 @@ import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
   {
-    id: 0,
-    link: "#top",
-    text: "GitHub Organizations and Repositories",
+    id : 0,
+    link : "#top",
+    text : "GitHub Organizations and Repositories",
   },
-  { id: 1, link: "#Frontend Projects", text: "Frontend Projects" },
-  { id: 2, link: "#Backend Projects", text: "Backend Projects" },
+  { id : 1, link : "#Frontend Projects", text : "Frontend Projects" },
+  { id : 2, link : "#Backend Projects", text : "Backend Projects" },
 ];
 
 const Repository = () => {
@@ -76,12 +76,12 @@ const Repository = () => {
                 <img
                   src={MesheryOperator}
                   alt="meshery operator icon"
-                  style={{marginLeft: ".3rem"}}
+                  style={{ marginLeft : ".3rem" }}
                 /> and MeshSync
                 <img
                   src={MeshSync}
                   alt="mesh sync icon"
-                  style={{marginLeft: ".3rem"}}
+                  style={{ marginLeft : ".3rem" }}
                 />.
               </li>
 

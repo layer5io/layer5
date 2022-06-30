@@ -9,12 +9,12 @@ const RowWrapper = styled.div`
   ${(props) =>
   props.Vcenter &&
     css({
-      "align-items": "center",
+      "align-items" : "center",
     })};
   ${(props) =>
       props.Hcenter &&
     css({
-      "justify-content": "center",
+      "justify-content" : "center",
     })};
 `;
 

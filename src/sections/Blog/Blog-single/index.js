@@ -11,7 +11,7 @@ import BlogPostSignOff from "../BlogPostSignOff";
 import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
 import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
 
-const BlogSingle = ({data}) => {
+const BlogSingle = ({ data }) => {
   const { frontmatter, body, fields } = data.mdx;
   const blogData = useStaticQuery(
     graphql`query relatedPosts {
@@ -42,7 +42,7 @@ const BlogSingle = ({data}) => {
 }
 `
   );
-  
+
   const posts = blogData.allMdx.nodes;
   const relatedPosts = new RelatedPostsFactory (
     posts, fields.slug
@@ -57,7 +57,7 @@ const BlogSingle = ({data}) => {
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
         category={frontmatter.category}
-        author={{ name: frontmatter.author }}
+        author={{ name : frontmatter.author }}
         thumbnail={frontmatter.thumbnail}
         date={frontmatter.date}
       />
@@ -67,7 +67,7 @@ const BlogSingle = ({data}) => {
             <MDXRenderer>{body}</MDXRenderer>
           </SRLWrapper>
           <BlogPostSignOff
-            author={{ name: frontmatter.author }}
+            author={{ name : frontmatter.author }}
           />
           <div className="post-info-block">
             <div className="tags">
@@ -87,8 +87,8 @@ const BlogSingle = ({data}) => {
           <RelatedPosts
             postType="blogs"
             relatedPosts={relatedPosts}
-            mainHead="Related Blogs" 
-            lastCardHead="All Blogs" 
+            mainHead="Related Blogs"
+            lastCardHead="All Blogs"
             linkToAllItems="/blog"
           />
         </Container>

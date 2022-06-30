@@ -172,17 +172,17 @@ const DockerExtensionMeshery = () => {
             <h3 className="form-title">Learn All Meshery Docker Extension Features</h3>
             <Formik
               initialValues={{
-                firstname: firstname,
-                lastname: lastname,
-                email: email,
-                occupation: occupation,
-                org: org,
-                google: google,
-                github: github,
-                twitter: twitter,
-                linkedin: linkedin,
-                role: role,
-                form: "docker-extension",
+                firstname : firstname,
+                lastname : lastname,
+                email : email,
+                occupation : occupation,
+                org : org,
+                google : google,
+                github : github,
+                twitter : twitter,
+                linkedin : linkedin,
+                role : role,
+                form : "docker-extension",
               }}
               onSubmit={values => {
                 if ((values.google || values.github || values.twitter || values.linkedin) && values.role) {
@@ -274,7 +274,7 @@ const DockerExtensionMeshery = () => {
                   <p>
                     Selected participants will receive a free Meshery Cloud account and have full access to the Meshery Docker extension for each of the following user accounts that you provide. Please provide at least one account.
                   </p>
-                  {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
+                  {validateAccounts && <p style={{ margin : "0px", color : "red" }}>{errorAccounts}</p>}
                   <div className="accounts_group">
                     <label htmlFor="google" className="form-name">Google</label>
                     <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
@@ -288,7 +288,7 @@ const DockerExtensionMeshery = () => {
                 </div>
 
                 <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
-                {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorRole}</p>}
+                {validateRole && <p style={{ margin : "0px", color : "red", fontSize : "12px" }}>{errorRole}</p>}
                 <div role="group" className="formRight" aria-labelledby="select">
                   <Field as="select" name="role">
                     <option selected hidden>Select your role</option>

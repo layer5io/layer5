@@ -35,7 +35,7 @@ const Table = ({ columns, data, spec }) => {
             <tr key={"table-header"} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => {
                 if (column.Header == "Traffic Access" || column.Header == "Traffic Split" || column.Header == "Traffic Spec") {
-                  return <th key={column} {...column.getHeaderProps()}>{column.render("Header")} <div style={{ fontSize: "0.9rem", fontWeight: "500" }}>{spec[column.id]}</div></th>;
+                  return <th key={column} {...column.getHeaderProps()}>{column.render("Header")} <div style={{ fontSize : "0.9rem", fontWeight : "500" }}>{spec[column.id]}</div></th>;
                 } else {
                   return <th key={column} {...column.getHeaderProps()}>{column.render("Header")}</th>;
                 }
@@ -50,14 +50,14 @@ const Table = ({ columns, data, spec }) => {
             return (
               <React.Fragment key={`row${i}`}>
                 <tr key={`row${i}`} id={`row${i}`} className="primaryRow" {...row.getRowProps()} onClick={() => {
-                  let e = isCollapsed; e[i] = !isCollapsed[i]; setCollapse([...e]); 
+                  let e = isCollapsed; e[i] = !isCollapsed[i]; setCollapse([...e]);
                 }}>
                   <td>
                     {
-                      (non_functional.find(ele => ele.name.includes(row.original.mesh_name))) ? 
+                      (non_functional.find(ele => ele.name.includes(row.original.mesh_name))) ?
                         <>
                           <img data-for="mesh-icon" data-tip={row.original.mesh_name} className="smiMark" src={non_functional.find(ele => ele.name.includes(row.original.mesh_name)).icon} alt="Mesh Icon" />
-                          <ReactTooltip 
+                          <ReactTooltip
                             id="mesh-icon"
                             place="left"
                             effect="solid"
@@ -68,7 +68,7 @@ const Table = ({ columns, data, spec }) => {
                         </>
                         : <>
                           <StaticImage  data-for="mesh-icon" data-tip={"Service Mesh"} className="smiMark" src={ServiceMeshIcon} alt="Service Mesh" />
-                          <ReactTooltip 
+                          <ReactTooltip
                             id="mesh-icon"
                             place="left"
                             effect="solid"
@@ -81,11 +81,11 @@ const Table = ({ columns, data, spec }) => {
                   </td>
                   <td>{row.original.mesh_version}</td>
                   {row.original.more_details.map(spec => {
-                    if(spec["capability"] === "FULL"){
+                    if (spec["capability"] === "FULL"){
                       return <td>
                         <div className="tooltip">
                           <StaticImage data-for="capablity" data-tip={`${spec["result"]}`} className="smiMark" src={passingMark} alt="Pass Mark" />
-                          <ReactTooltip 
+                          <ReactTooltip
                             id="capablity"
                             place="bottom"
                             effect="solid"
@@ -99,7 +99,7 @@ const Table = ({ columns, data, spec }) => {
                       return <td >
                         <div >
                           <StaticImage data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={failingMark} alt="Fail Mark" />
-                          <ReactTooltip 
+                          <ReactTooltip
                             id="capablity"
                             place="bottom"
                             effect="solid"
@@ -111,11 +111,11 @@ const Table = ({ columns, data, spec }) => {
                           />
                         </div>
                       </td>;
-                    } else if(spec["capability"] === "HALF"){
+                    } else if (spec["capability"] === "HALF"){
                       return <td>
                         <div className="tooltip">
                           <StaticImage data-for="capablity" data-tip={`${spec["reason"]}<br>${spec["result"]}`} className="smiMark" src={halfMark} alt="Half Mark" />
-                          <ReactTooltip 
+                          <ReactTooltip
                             id="capablity"
                             place="bottom"
                             effect="solid"
@@ -127,7 +127,7 @@ const Table = ({ columns, data, spec }) => {
                       </td>;
                     } else {
                       return <td >
-                        <IconContext.Provider value={{ color: "gray", size: "20px" }}>
+                        <IconContext.Provider value={{ color : "gray", size : "20px" }}>
                           <IoMdHelpCircle />
                         </IconContext.Provider>
                       </td>;
@@ -144,21 +144,21 @@ const Table = ({ columns, data, spec }) => {
                         <td></td>
                         <td>{prevResult.mesh_version}</td>
                         {prevResult.more_details.map(spec => {
-                          if(spec["capability"] === "Full"){
+                          if (spec["capability"] === "Full"){
                             return <td key="capability-half">
                               <StaticImage className="smiMark" src={passingMark} alt="Passing Mark" />
                             </td>;
-                          } else if(spec["capability"] === "None"){
+                          } else if (spec["capability"] === "None"){
                             return <td>
                               <StaticImage key="capability-none" className="smiMark" src={failingMark} alt="Fail Mark" />
                             </td>;
-                          } else if(spec["capability"] === "Half"){
+                          } else if (spec["capability"] === "Half"){
                             return <td>
                               <StaticImage key="capability-half" className="smiMark" src={halfMark} alt="Half Mark" />
                             </td>;
                           } else {
                             return <td >
-                              <IconContext.Provider value={{ color: "gray", size: "20px" }}>
+                              <IconContext.Provider value={{ color : "gray", size : "20px" }}>
                                 <IoMdHelpCircle />
                               </IconContext.Provider>
                             </td>;

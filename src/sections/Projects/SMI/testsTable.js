@@ -9,20 +9,20 @@ function TestsTable() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Test #",
-        accessor: "test_no",
+        Header : "Test #",
+        accessor : "test_no",
       },
       {
-        Header: "Spec",
-        accessor: "spec",
+        Header : "Spec",
+        accessor : "spec",
       },
       {
-        Header: "Test Type",
-        accessor: "test_type",
+        Header : "Test Type",
+        accessor : "test_type",
       },
       {
-        Header: "Test Description",
-        accessor: "desc",
+        Header : "Test Description",
+        accessor : "desc",
       },
     ],
     []

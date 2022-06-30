@@ -24,7 +24,7 @@ export const query = graphql`
     }
 `;
 
-const ProgramSinglePage = ({data}) => {
+const ProgramSinglePage = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>

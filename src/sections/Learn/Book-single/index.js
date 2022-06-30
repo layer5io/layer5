@@ -9,7 +9,7 @@ import { Link } from "gatsby";
 
 import BookSinglePageWrapper from "./BookSingle.style.js";
 
-const BookSingle = ({data}) => {
+const BookSingle = ({ data }) => {
 
   const { frontmatter, body } = data.mdx;
   return (

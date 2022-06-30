@@ -74,23 +74,23 @@ const WebBasedForm = () => {
   };
 
   const MemberFormStart = () => {
-    
+
     return (
       <Container>
         <h2 className="title">New Community Member</h2>
         <p className="para">Hi! Welcome to the Layer5 community. As you get oriented with the community and its projects, will you consider filling in this form? It helps us get familiarized with you and you with the ongoing projects and community. There is much to learn around the technologies at-hand. We'll look to get you acclimated and engaged around your areas of interest and passion. </p>
         <Formik
           initialValues={{
-            firstname: memberFormOne.firstname? memberFormOne.firstname : "",
-            lastname: memberFormOne.lastname? memberFormOne.lastname:"",
-            email: memberFormOne.email?memberFormOne.email:"",
-            occupation: memberFormOne.occupation?memberFormOne.occupation:"",
-            org: memberFormOne.org?memberFormOne.org:"",
-            github: memberFormOne.github?memberFormOne.github:"",
-            twitter: memberFormOne.twitter?memberFormOne.twitter:"",
-            linkedin: memberFormOne.linkedin?memberFormOne.linkedin:"",
-            tshirtSize: memberFormOne.tshirtSize?memberFormOne.tshirtSize:"",
-            picture: memberFormOne.picture?memberFormOne.picture:""
+            firstname : memberFormOne.firstname? memberFormOne.firstname : "",
+            lastname : memberFormOne.lastname? memberFormOne.lastname:"",
+            email : memberFormOne.email?memberFormOne.email:"",
+            occupation : memberFormOne.occupation?memberFormOne.occupation:"",
+            org : memberFormOne.org?memberFormOne.org:"",
+            github : memberFormOne.github?memberFormOne.github:"",
+            twitter : memberFormOne.twitter?memberFormOne.twitter:"",
+            linkedin : memberFormOne.linkedin?memberFormOne.linkedin:"",
+            tshirtSize : memberFormOne.tshirtSize?memberFormOne.tshirtSize:"",
+            picture : memberFormOne.picture?memberFormOne.picture:""
           }}
           onSubmit={values => {
             setMemberFormOne(values);
@@ -192,7 +192,7 @@ const WebBasedForm = () => {
             <Button onClick={() => setStepNumber(2)} secondary type="submit" className="btn-next" title="Next Step" />
           </div>
         </div>
-       
+
         <br /><br /><br /><br />
       </Container>
     );
@@ -250,13 +250,13 @@ const WebBasedForm = () => {
         <h2 className="title">Layer5 and You</h2>
         <Formik
           initialValues={{
-            projects: MemberFormThirdValue.projects?MemberFormThirdValue.projects:[],
-            tutorials: MemberFormThirdValue.tutorials?MemberFormThirdValue.tutorials:[],
-            meshMate: MemberFormThirdValue.tutorials?MemberFormThirdValue.meshMate:[],
-            interests: MemberFormThirdValue.interests?MemberFormThirdValue.interests:"",
-            profiency: MemberFormThirdValue.profiency?MemberFormThirdValue.profiency:"",
-            interestToShareContribution: MemberFormThirdValue.interestToShareContribution?MemberFormThirdValue.interestToShareContribution:"",
-            areaOfFocus: MemberFormThirdValue.areaOfFocus?MemberFormThirdValue.areaOfFocus:[]
+            projects : MemberFormThirdValue.projects?MemberFormThirdValue.projects:[],
+            tutorials : MemberFormThirdValue.tutorials?MemberFormThirdValue.tutorials:[],
+            meshMate : MemberFormThirdValue.tutorials?MemberFormThirdValue.meshMate:[],
+            interests : MemberFormThirdValue.interests?MemberFormThirdValue.interests:"",
+            profiency : MemberFormThirdValue.profiency?MemberFormThirdValue.profiency:"",
+            interestToShareContribution : MemberFormThirdValue.interestToShareContribution?MemberFormThirdValue.interestToShareContribution:"",
+            areaOfFocus : MemberFormThirdValue.areaOfFocus?MemberFormThirdValue.areaOfFocus:[]
           }}
           onSubmit={values => {
             setMemberFormThirdValue(values);
@@ -580,11 +580,11 @@ const WebBasedForm = () => {
         <p>Commonly asked questions about general engagement expectations and information focal to internship programs. See the <Link to="/community">Layer5 Community</Link> and <Link to="/programs">Open Source Internship Programs</Link> for additional information.</p>
         <Formik
           initialValues={{
-            expect: false,
-            highlighted: false,
-            paid: false,
-            affiliated:  false,
-            help: MemberFormFourValue.help ? MemberFormFourValue.help : ""
+            expect : false,
+            highlighted : false,
+            paid : false,
+            affiliated : false,
+            help : MemberFormFourValue.help ? MemberFormFourValue.help : ""
           }}
           onSubmit={values => {
             setMemberFormFourValue(values);

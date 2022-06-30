@@ -18,7 +18,7 @@ function Categories() {
                 <li key={mesh.name}>
                   <div className="tooltip">
                     <a href={mesh.link} rel="nofollow" data-tip={mesh.desc} data-for="mesh-name">{mesh.name}</a>
-                    <ReactTooltip 
+                    <ReactTooltip
                       id="mesh-name"
                       place="bottom"
                       effect="solid"
@@ -40,7 +40,7 @@ function Categories() {
                 <li key={client.name}>
                   <div className="tooltip">
                     <a href={client.link} rel="nofollow" data-tip={client.desc} data-for="client-name">{client.name}</a>
-                    <ReactTooltip 
+                    <ReactTooltip
                       id="client-name"
                       place="bottom"
                       effect="solid"
@@ -61,7 +61,7 @@ function Categories() {
                 <li key={gateway.name}>
                   <div className="tooltip">
                     <a href={gateway.link} rel="nofollow" data-tip={gateway.desc} data-for="gateway-name">{gateway.name}</a>
-                    <ReactTooltip 
+                    <ReactTooltip
                       id="gateway-name"
                       place="bottom"
                       effect="solid"
@@ -82,7 +82,7 @@ function Categories() {
                 <li key={proxy.name}>
                   <div className="tooltip">
                     <a href={proxy.link} rel="nofollow" data-tip={proxy.desc} data-for="proxy-name">{proxy.name}</a>
-                    <ReactTooltip 
+                    <ReactTooltip
                       id="proxy-name"
                       place="bottom"
                       effect="solid"
@@ -103,7 +103,7 @@ function Categories() {
                 <li key={balancer.name}>
                   <div className="tooltip">
                     <a href={balancer.link} rel="nofollow" data-tip={balancer.desc} data-for="balancer-name">{balancer.name}</a>
-                    <ReactTooltip 
+                    <ReactTooltip
                       id="balancer-name"
                       place="bottom"
                       effect="solid"

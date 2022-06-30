@@ -8,15 +8,15 @@ const ScrollToTopBtn = () => {
 
   const isMounted = useWindowHasScrolled(false);
 
-  const [ shouldRender, delay ] = useDelayUnmount({ isMounted, delayTime : 250 });
+  const [shouldRender, delay] = useDelayUnmount({ isMounted, delayTime : 250 });
 
   return (
     <>
       {shouldRender && (
-        <BackToTopButton 
-          isMounted={isMounted} 
-          delay={delay} 
-          onClick={() => window.scrollTo({ top: 0, behavior : "smooth" })}
+        <BackToTopButton
+          isMounted={isMounted}
+          delay={delay}
+          onClick={() => window.scrollTo({ top : 0, behavior : "smooth" })}
         >
           <IoIosArrowUp color={"#fff"} size={24}/>
         </BackToTopButton>

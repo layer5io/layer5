@@ -13,29 +13,29 @@ import ClientsSectionWrapper from "./clientSection.style";
 
 const Client = () => {
   const settings = {
-    autoplay: true,
-    infinite: true,
-    dots: false, 
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
+    autoplay : true,
+    infinite : true,
+    dots : false,
+    speed : 500,
+    slidesToShow : 4,
+    slidesToScroll : 1,
+    responsive : [
       {
-        breakpoint: 912,
-        settings: {
-          slidesToShow: 3
+        breakpoint : 912,
+        settings : {
+          slidesToShow : 3
         }
       },
       {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 2
+        breakpoint : 500,
+        settings : {
+          slidesToShow : 2
         }
       },
       {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 1
+        breakpoint : 400,
+        settings : {
+          slidesToShow : 1
         }
       }
     ]
@@ -68,7 +68,7 @@ const Client = () => {
             <div>
               <img src={Client5} alt="our clients" />
             </div>
-          </SliderItem> 
+          </SliderItem>
           <SliderItem>
             <div>
               <img src={Client1} alt="our clients" />

@@ -7,33 +7,33 @@ function SMI_Compatibility() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Service Mesh",
-        accessor: "mesh_name",
+        Header : "Service Mesh",
+        accessor : "mesh_name",
       },
       {
-        Header: "Mesh Version",
-        accessor: "mesh_version",
+        Header : "Mesh Version",
+        accessor : "mesh_version",
       },
       {
-        Header: "Traffic Access",
-        accessor: "traffic-access",
+        Header : "Traffic Access",
+        accessor : "traffic-access",
       },
       {
-        Header: "Traffic Split",
-        accessor: "traffic-split",
+        Header : "Traffic Split",
+        accessor : "traffic-split",
       },
       {
-        Header: "Traffic Spec",
-        accessor: "traffic-spec",
+        Header : "Traffic Spec",
+        accessor : "traffic-spec",
       },
       {
-        Header: "% Passed",
-        accessor: "passing_percentage",
+        Header : "% Passed",
+        accessor : "passing_percentage",
       },
     ],
     []
   );
-    
+
   // const data = React.useMemo(() => smi_data);
   const [smiData, setSmiData] = useState(0);
   const [smiTests, setSmiTests] = useState([]);
@@ -84,15 +84,15 @@ function SMI_Compatibility() {
         setSmiData(data);
         setSmiTests(Object.keys(data));
       });
-    
+
   }, []);
 
-  if(smiData==0) {
+  if (smiData==0) {
     return (<div></div>);
   }
 
   return (
-    <Tabs style={{ overflow: "auto", whiteSpace: "nowrap"}} className="landscape-table">
+    <Tabs style={{ overflow : "auto", whiteSpace : "nowrap" }} className="landscape-table">
       <TabList>
         {
           Object.keys(smiData).map((ver, ind) => {
@@ -102,9 +102,9 @@ function SMI_Compatibility() {
         }
       </TabList>
       {
-        Object.keys(smiData).map(ver => 
+        Object.keys(smiData).map(ver =>
           <TabPanel key={ver}>
-            <Table columns={columns} data={smiData[ver]} spec={{"traffic-access":Object.values(smiData[ver])[0].more_details[0].smi_version, "traffic-split":Object.values(smiData[ver])[0].more_details[1].smi_version, "traffic-spec":Object.values(smiData[ver])[0].more_details[2].smi_version}} /> 
+            <Table columns={columns} data={smiData[ver]} spec={{ "traffic-access" : Object.values(smiData[ver])[0].more_details[0].smi_version, "traffic-split" : Object.values(smiData[ver])[0].more_details[1].smi_version, "traffic-spec" : Object.values(smiData[ver])[0].more_details[2].smi_version }} />
           </TabPanel>
         )}
     </Tabs>
