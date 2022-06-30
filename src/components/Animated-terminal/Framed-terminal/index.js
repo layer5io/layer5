@@ -85,17 +85,17 @@ const FramedTerminal = ({ frame, lines }) => {
       if (remainingFrames >= 0) {
         if (!Array.isArray(line.code)) {
           result = {
-            color : line.color,
-            code : line.code,
-            indent : line.indent,
-            short : line.short,
+            color: line.color,
+            code: line.code,
+            indent: line.indent,
+            short: line.short,
           };
         } else {
           let lineFrame = Math.floor(remainingFrames / line.frames);
           result = {
-            color : line.color,
-            code : line.code.slice(0, lineFrame + 1).splice(-1, 1),
-            indent : line.indent,
+            color: line.color,
+            code: line.code.slice(0, lineFrame + 1).splice(-1, 1),
+            indent: line.indent,
           };
         }
       }

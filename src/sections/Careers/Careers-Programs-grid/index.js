@@ -68,7 +68,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                       <div className={`icon ${sub_section ? "sub-section_icon" : ""}`}>
                         <Image
                           {...frontmatter.thumbnail}
-                          imgStyle={{ objectFit : "contain" }}
+                          imgStyle={{ objectFit: "contain" }}
                           alt={frontmatter.title}
                         />
                       </div>

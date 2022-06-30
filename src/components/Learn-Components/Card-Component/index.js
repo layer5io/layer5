@@ -9,7 +9,7 @@ const CardComponent = ({ tutorial, path, courseCount }) => {
     <CardWrapper>
       {tutorial.frontmatter.disabled === "yes" ?  (
         <div
-          style={{ borderTop : `5px solid ${tutorial.frontmatter.themeColor}`, backgroundColor : "#e6e6e6" }}
+          style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}`, backgroundColor: "#e6e6e6" }}
           className="card-parent"
         >
 
@@ -21,7 +21,7 @@ const CardComponent = ({ tutorial, path, courseCount }) => {
                   ? tutorial.frontmatter.title
                   : tutorial.frontmatter.courseTitle}
               </h3>
-              <div style={{ whiteSpace : "nowrap" }}>
+              <div style={{ whiteSpace: "nowrap" }}>
                 <span>Coming Soon</span>
               </div>
             </div>
@@ -39,7 +39,7 @@ const CardComponent = ({ tutorial, path, courseCount }) => {
       ) :
         <Link to={path} className="card-link">
           <div
-            style={{ borderTop : `5px solid ${tutorial.frontmatter.themeColor}` }}
+            style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}` }}
             className="card-parent"
           >
 

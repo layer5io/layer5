@@ -20,7 +20,7 @@ const UpcomingEvents = ({ data }) => {
             spaceBetween={100}
             slidesPerView={1}
             mousewheel
-            pagination={{ clickable : true }}
+            pagination={{ clickable: true }}
           >
             {data.nodes.map(item => {
               return (

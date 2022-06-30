@@ -164,10 +164,10 @@ const QuizComponent = () => {
 
   const fetchData = () => {
     let fetchedQuestion = [
-      { prompt : "Question 1", answers : ["Answer 1","Answer 2","Answer 3","Answer 4"], correct : 1 },
-      { prompt : "Question 2", answers : ["Answer 1","Answer 2","Answer 3","Answer 4"], correct : 1 },
-      { prompt : "Question 3", answers : ["Answer 1","Answer 2","Answer 3","Answer 4"], correct : 1 },
-      { prompt : "Question 4", answers : ["Answer 1","Answer 2","Answer 3","Answer 4"], correct : 1 },
+      { prompt: "Question 1", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1 },
+      { prompt: "Question 2", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1 },
+      { prompt: "Question 3", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1 },
+      { prompt: "Question 4", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1 },
     ];
 
     // Will be fetching the title from backend
@@ -245,8 +245,8 @@ const QuizComponent = () => {
   const attemptQuestionHandler = (aIndex) => {
     let qIndex=progress;
     let attemptedQuestionToAns={
-      qIndex : qIndex,
-      aIndex : aIndex
+      qIndex: qIndex,
+      aIndex: aIndex
     };
     // finding if the question is already attempted or not
     let existQuestionIndex=questionToAns.findIndex(item => item.qIndex===qIndex);

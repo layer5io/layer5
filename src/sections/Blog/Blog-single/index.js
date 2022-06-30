@@ -57,7 +57,7 @@ const BlogSingle = ({ data }) => {
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
         category={frontmatter.category}
-        author={{ name : frontmatter.author }}
+        author={{ name: frontmatter.author }}
         thumbnail={frontmatter.thumbnail}
         date={frontmatter.date}
       />
@@ -67,7 +67,7 @@ const BlogSingle = ({ data }) => {
             <MDXRenderer>{body}</MDXRenderer>
           </SRLWrapper>
           <BlogPostSignOff
-            author={{ name : frontmatter.author }}
+            author={{ name: frontmatter.author }}
           />
           <div className="post-info-block">
             <div className="tags">

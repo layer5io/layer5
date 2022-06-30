@@ -31,7 +31,7 @@ const Card = ({ frontmatter, fields }) => {
           <div className="post-thumb-block">
             <Image
               {...frontmatter.thumbnail}
-              imgStyle={{ objectFit : "cover" }}
+              imgStyle={{ objectFit: "cover" }}
               alt={frontmatter.title}
             />
           </div>

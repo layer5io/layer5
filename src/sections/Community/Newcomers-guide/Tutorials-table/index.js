@@ -9,13 +9,13 @@ const TutorialsTable = () => {
   const columns = React.useMemo(
     () => [
       {
-        Header : "Topic",
-        accessor : "topic",
+        Header: "Topic",
+        accessor: "topic",
       },
       {
-        Header : "Resources",
-        id : "resources",
-        accessor : data => {
+        Header: "Resources",
+        id: "resources",
+        accessor: data => {
           return (
             <p>
               {data.resources.slides ? <span><a href={data.resources.slides} target="_blank" rel="noreferrer">Slides</a></span>: ""}
@@ -25,9 +25,9 @@ const TutorialsTable = () => {
         }
       },
       {
-        Header : "Presenters",
-        id : "presenters",
-        accessor : data => {
+        Header: "Presenters",
+        id: "presenters",
+        accessor: data => {
           let output = [];
           data.presenters.map(presenter => {
             const e = presenter.link ? <Link to={presenter.link}>{presenter.name}</Link> : presenter.name;

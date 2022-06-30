@@ -35,11 +35,11 @@ const ServiceMeshTimeline = () => {
     elements.map(mesh => (
       <VerticalTimelineElement
         key={mesh.timeline_order}
-        contentStyle={{ background : "rgb(255, 255, 255)", color : "#3C494F" }}
+        contentStyle={{ background: "rgb(255, 255, 255)", color: "#3C494F" }}
         position={mesh.timeline_order % 2 ? "left" : "right"}
-        contentArrowStyle={{ display : "none" }}
+        contentArrowStyle={{ display: "none" }}
         iconClassName="meshBubble"
-        iconStyle={{ width : "35px", height : "35px" }}
+        iconStyle={{ width: "35px", height: "35px" }}
       >
         {mesh.icon?
           <div className={`meshtitle-img-${mesh.timeline_order%2}`}>
@@ -65,7 +65,7 @@ const ServiceMeshTimeline = () => {
         className={loadedAll ? "hideIcon": ""}
         iconOnClick={loadMore}
         iconClassName="moreIcon"
-        iconStyle={{ width : "60px", height : "60px" }}
+        iconStyle={{ width: "60px", height: "60px" }}
         icon={!(loadedAll) ?
           <MdExpandMore className="showMoreIcon"/>
           : <></>

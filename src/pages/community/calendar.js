@@ -16,7 +16,7 @@ import CalendarStyleWrapper from "../../sections/Community/Calendar/calendar.sty
 import PageHeader from "../../reusecore/PageHeader";
 
 const LoadableCalendar = Loadable({
-  loader : () => import("../../sections/Community/Calendar"),
+  loader: () => import("../../sections/Community/Calendar"),
   loading() {
     return (
       <Loader>
@@ -38,9 +38,9 @@ const LoadableCalendar = Loadable({
                     initialView="dayGridMonth"
                     contentHeight={700}
                     headerToolbar={{
-                      left : "prev,next today",
-                      center : "title",
-                      right : "addToCalendar",
+                      left: "prev,next today",
+                      center: "title",
+                      right: "addToCalendar",
                     }}
                   />
                 </div>

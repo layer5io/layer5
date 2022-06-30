@@ -208,19 +208,19 @@ const WorkshopsSection = () => {
   );
 
   var settings = {
-    infinite : false,
-    speed : 400,
-    slidesToShow : 1,
-    slidesToScroll : 1,
-    nextArrow : <FiArrowRight />,
-    prevArrow : <FiArrowLeft />,
-    responsive : [
+    infinite: false,
+    speed: 400,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <FiArrowRight />,
+    prevArrow: <FiArrowLeft />,
+    responsive: [
       {
-        breakpoint : 700,
-        settings : {
-          dots : true,
-          arrows : false,
-          slidesToShow : 1,
+        breakpoint: 700,
+        settings: {
+          dots: true,
+          arrows: false,
+          slidesToShow: 1,
         }
       },
     ]

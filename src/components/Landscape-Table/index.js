@@ -32,10 +32,10 @@ function GlobalFilter({
         }}
         placeholder={searchPlaceHolder}
         style={{
-          font : "400 1rem Open Sans",
-          border : "1.5px solid white",
-          borderRadius : "4px",
-          width : "20rem"
+          font: "400 1rem Open Sans",
+          border: "1.5px solid white",
+          borderRadius: "4px",
+          width: "20rem"
         }}
       />
     </span>
@@ -88,8 +88,8 @@ const Table = ({ columns, data, placeHolder }) => {
             <th
               colSpan={visibleColumns.length}
               style={{
-                textAlign : "left",
-                padding : "0.5rem 0.75rem",
+                textAlign: "left",
+                padding: "0.5rem 0.75rem",
               }}
             >
               <GlobalFilter
@@ -154,7 +154,7 @@ const Table = ({ columns, data, placeHolder }) => {
                     </td>;
                   } else if (cell["value"] === "?"){
                     return <td {...cell.getCellProps()}>
-                      <IconContext.Provider value={{ color : "gray", size : "70%" }}>
+                      <IconContext.Provider value={{ color: "gray", size: "70%" }}>
                         <IoMdHelpCircle className="Mark"/>
                       </IconContext.Provider>
                     </td>;

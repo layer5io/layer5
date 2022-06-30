@@ -56,7 +56,7 @@ const FeaturesCarousel = ({ features, heading }) => {
           renderCenterLeftControls={() => null}
           wrapAround
           defaultControlsConfig={{
-            pagingDotsContainerClassName : "pagingDots",
+            pagingDotsContainerClassName: "pagingDots",
           }}
           cellSpacing={40}
         >

@@ -71,10 +71,10 @@ const Meshmap = () => {
               heading="MeshMap Modes"
               features={[
                 {
-                  title : "Designer Mode",
-                  description :
+                  title: "Designer Mode",
+                  description:
                     "Design a service mesh deployment with application and Envoy filter from scratch. Customize a service mesh deployment with application and Envoy filter from pattern.",
-                  content : (
+                  content: (
                     <img
                       src={designerImage}
                       alt="Designer Mode"
@@ -83,10 +83,10 @@ const Meshmap = () => {
                   ),
                 },
                 {
-                  title : "Visualizer Mode",
-                  description :
+                  title: "Visualizer Mode",
+                  description:
                     "Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services.",
-                  content : (
+                  content: (
                     <img
                       src={visualizerImage}
                       alt="Visualizer Mode"
@@ -125,17 +125,17 @@ const Meshmap = () => {
                   <h3 className="form-title">Join the Beta Program</h3>
                   <Formik
                     initialValues={{
-                      firstname : firstname,
-                      lastname : lastname,
-                      email : email,
-                      occupation : occupation,
-                      org : org,
-                      google : google,
-                      github : github,
-                      twitter : twitter,
-                      linkedin : linkedin,
-                      role : role,
-                      form : "meshmap",
+                      firstname: firstname,
+                      lastname: lastname,
+                      email: email,
+                      occupation: occupation,
+                      org: org,
+                      google: google,
+                      github: github,
+                      twitter: twitter,
+                      linkedin: linkedin,
+                      role: role,
+                      form: "meshmap",
                     }}
                     onSubmit={values => {
                       if ((values.google || values.github || values.twitter || values.linkedin) && values.role) {
@@ -182,7 +182,7 @@ const Meshmap = () => {
                         <p>
                           Selected beta program participants will receive a free Meshery Cloud account and have full access MeshMap enabled for each of the following user accounts that you provide. Please provide at least one account.
                         </p>
-                        {validateAccounts && <p style={{ margin : "0px", color : "red" }}>{errorAccounts}</p>}
+                        {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
                         <div className="accounts_group">
                           <label htmlFor="google" className="form-name">Google</label>
                           <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
@@ -196,7 +196,7 @@ const Meshmap = () => {
                       </div>
 
                       <label htmlFor="role" className="form-name">What role best identifies you? <span className="required-sign">*</span></label>
-                      {validateRole && <p style={{ margin : "0px", color : "red", fontSize : "12px" }}>{errorRole}</p>}
+                      {validateRole && <p style={{ margin: "0px", color: "red", fontSize: "12px" }}>{errorRole}</p>}
                       <div role="group" className="formRight" aria-labelledby="select">
                         <Field as="select" name="role">
                           <option selected hidden>Select your role</option>

@@ -19,46 +19,46 @@ const WhatAwaitsSection = () => {
 
           <Terminal
             lines={[
-              { code : "$ mesheryctl pattern apply -f canary-v3.yaml", color : "white" },
-              { code : "» Deploying...", color : "navy" },
+              { code: "$ mesheryctl pattern apply -f canary-v3.yaml", color: "white" },
+              { code: "» Deploying...", color: "navy" },
               {
-                code : "✓ Deployment successfully rolled out!",
-                color : "green",
+                code: "✓ Deployment successfully rolled out!",
+                color: "green",
               },
-              { code : "\n" },
-              { code : "» Traffic splitting...", color : "navy" },
+              { code: "\n" },
+              { code: "» Traffic splitting...", color: "navy" },
               {
-                code : "✓ 5% of user requests to v3.",
-                color : "green",
-              },
-              {
-                code : "✓ 30% of user requests to v3.",
-                color : "green",
+                code: "✓ 5% of user requests to v3.",
+                color: "green",
               },
               {
-                code : "✓ 60% of user requests to v3.",
-                color : "green",
+                code: "✓ 30% of user requests to v3.",
+                color: "green",
               },
               {
-                code : "✓ 90% of user requests to v3.",
-                color : "green",
+                code: "✓ 60% of user requests to v3.",
+                color: "green",
               },
               {
-                code : "✓ 100% of user requests to v3.",
-                color : "green",
-              },
-              { code : "\n" },
-              {
-                code : "Pattern successfully applied. Rollout of 'canary-v3' completed.",
-                color : "navy",
+                code: "✓ 90% of user requests to v3.",
+                color: "green",
               },
               {
-                code : "» Prerelease URL: https://payments-v3.meshery.run",
-                color : "green",
+                code: "✓ 100% of user requests to v3.",
+                color: "green",
+              },
+              { code: "\n" },
+              {
+                code: "Pattern successfully applied. Rollout of 'canary-v3' completed.",
+                color: "navy",
               },
               {
-                code : "» Release URL: https://payments.meshery.run",
-                color : "green",
+                code: "» Prerelease URL: https://payments-v3.meshery.run",
+                color: "green",
+              },
+              {
+                code: "» Release URL: https://payments.meshery.run",
+                color: "green",
               },
             ]}
           />

@@ -14,7 +14,7 @@ const ProfileCard = (props) => {
       <div className="profile-card">
         <Link to={link}>
           <header>
-            <Image {...image_path} imgStyle={{ objectFit : "contain" }} alt={name}/>
+            <Image {...image_path} imgStyle={{ objectFit: "contain" }} alt={name}/>
             { meshmate === "yes" && (
               <Link className="meshmate" to="/community/meshmates">
                 <img src={MeshMateIcon} alt="meshmate-color-icon" />
