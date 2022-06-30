@@ -19,6 +19,7 @@ import { GlobalStyle } from "../../app.style";
 import { ThemeProvider } from "styled-components";
 import Switch from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
+import { useLayoutEffect } from "react";
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
   height: 34,
@@ -215,7 +216,7 @@ const Navigation = ({ theme , themeSetter }) => {
 
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (localStorage.getItem("Theme")===null){
       themeSetter("light");
     } else {
@@ -224,7 +225,7 @@ const Navigation = ({ theme , themeSetter }) => {
 
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     handle();
   }, [theme]);
   const themeToggler = () => {
