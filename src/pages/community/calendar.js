@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../../sections/app.style";
 import SEO from "../../components/seo";
@@ -15,9 +15,7 @@ import CalendarStyleWrapper from "../../sections/Community/Calendar/calendar.sty
 import PageHeader from "../../reusecore/PageHeader";
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
-import { useCookies } from "react-cookie";
-import { useEffect } from "react";
-import { useState } from "react";
+
 const LoadableCalendar = Loadable({
   loader: () => import("../../sections/Community/Calendar"),
   loading() {
@@ -58,12 +56,7 @@ const LoadableCalendar = Loadable({
 
 
 const CalendarPage = () => {
-  const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
-  useEffect(() => {
-    if(cookies.Theme !== undefined)
-      setTheme(cookies.Theme);
-  }, []);
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

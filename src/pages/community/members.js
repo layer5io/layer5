@@ -27,8 +27,7 @@ import smpIcon from "../../assets/images/service-mesh-performance/icon/smp-dark.
 import inactiveIcon from "../../assets/images/status/inactive.png";
 import activeIcon from "../../assets/images/status/active.png";
 import patternsIcon from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import { useCookies } from "react-cookie";
-import { useEffect } from "react";
+
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
 /**
@@ -181,12 +180,8 @@ const MembersPage = () => {
    */
   const [members, setMembers] = useState([options[11]]);
   const handleChange = (value) => setMembers(value);
-  const [cookies, setCookie] = useCookies(["user"]);
+
   const [theme, setTheme] = useState("light");
-  useEffect(() => {
-    if(cookies.Theme !== undefined)
-      setTheme(cookies.Theme);
-  }, []);
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

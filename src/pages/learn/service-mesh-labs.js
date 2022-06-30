@@ -11,15 +11,10 @@ import ServiceMeshLabs from "../../sections/Learn/Service-Mesh-Labs";
 import { GlobalStyle } from "../../sections/app.style";
 import lighttheme from "../../theme/app/themeStyles";
 import { darktheme } from "../../theme/app/themeStyles";
-import { useCookies } from "react-cookie";
+
 
 const ServiceMeshLabsPage = (props) => {
-  const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
-  useEffect(() => {
-    if(cookies.Theme !== undefined)
-      setTheme(cookies.Theme);
-  }, []);
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

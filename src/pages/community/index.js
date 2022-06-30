@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../../components/layout";
@@ -11,16 +11,10 @@ import Community from "../../sections/Community";
 import { GlobalStyle } from "../../sections/app.style";
 import lighttheme from "../../theme/app/themeStyles";
 import { darktheme } from "../../theme/app/themeStyles";
-import { useState } from "react";
-import { useCookies } from "react-cookie";
-import { useEffect } from "react";
+
+
 const CommunityIndex = () => {
-  const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
-  useEffect(() => {
-    if(cookies.Theme !== undefined)
-      setTheme(cookies.Theme);
-  }, []);
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

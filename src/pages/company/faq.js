@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../../components/layout";
@@ -12,17 +12,10 @@ import DiscussCallout from "../../sections/Discuss-Callout";
 import { GlobalStyle } from "../../sections/app.style";
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
-import { useCookies } from "react-cookie";
-import { useEffect } from "react";
-import { useState } from "react";
+
 
 const FAQPage = () => {
-  const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
-  useEffect(() => {
-    if(cookies.Theme !== undefined)
-      setTheme(cookies.Theme);
-  }, []);
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

@@ -206,13 +206,23 @@ const Navigation = ({theme , themeSetter}) => {
   };
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const [cookies, setCookie] = useCookies(["user"]);
   const [themeToggle, setthemeToggle] = useState(false);
 
   const handle = () => {
     theme === "dark" ? setthemeToggle(true) : setthemeToggle(false);
-    setCookie("Theme", theme, { path: "/" });
+
+    localStorage.setItem("Theme", theme);
+    
   };
+
+  useEffect(() => {
+    if(localStorage.getItem("Theme")===null){
+      themeSetter("light"); 
+    } else{
+      themeSetter(localStorage.getItem("Theme"));
+    }
+        
+  }, []);
 
   useEffect(() => {
     handle();

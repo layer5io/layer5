@@ -13,12 +13,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const LearnGridPage = () => {
-  const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
-  useEffect(() => {
-    if(cookies.Theme !== undefined)
-      setTheme(cookies.Theme);
-  }, []);
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
