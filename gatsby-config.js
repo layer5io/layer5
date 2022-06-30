@@ -81,7 +81,7 @@ module.exports = {
               {
                 allPosts: allMdx(
                   sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { in: ["blog", "news"] } }, frontmatter: { published: { eq: true }, featured: { eq: true }, category: { eq: "Announcements" } } }
+                  filter: { fields: { collection: { in: ["blog", "resources", "news"] } }, frontmatter: { published: { eq: true }, category: { nin: ["Programs", "Community", "Events"] } } }
                   limit: 20
                 ) {
                   nodes {
@@ -105,7 +105,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Layer5 Announcements",
+            title: "Layer5 Technical Posts",
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
