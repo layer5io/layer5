@@ -14,17 +14,17 @@ const Calendar = () => {
   const columns = React.useMemo(
     () => [
       {
-        Header : "Meeting",
-        accessor : "meeting",
+        Header: "Meeting",
+        accessor: "meeting",
       },
       {
-        Header : "Day",
-        accessor : "day",
+        Header: "Day",
+        accessor: "day",
       },
       {
-        Header : "Slack Channel",
-        id : "slack_channel",
-        accessor : meet_links_data => {
+        Header: "Slack Channel",
+        id: "slack_channel",
+        accessor: meet_links_data => {
           return (
             <>
               {
@@ -37,9 +37,9 @@ const Calendar = () => {
         }
       },
       {
-        Header : "Meeting Minutes",
-        id : "meeting_minutes",
-        accessor : meet_links_data => {
+        Header: "Meeting Minutes",
+        id: "meeting_minutes",
+        accessor: meet_links_data => {
           return (
             <>
               {
@@ -52,9 +52,9 @@ const Calendar = () => {
         }
       },
       {
-        Header : "Meeting Link",
-        id : "meeting_link",
-        accessor : meet_links_data => {
+        Header: "Meeting Link",
+        id: "meeting_link",
+        accessor: meet_links_data => {
           return (
             <>
               {
@@ -67,9 +67,9 @@ const Calendar = () => {
         }
       },
       {
-        Header : "Meeting Recordings",
-        id : "meeting_recordings",
-        accessor : meet_links_data => {
+        Header: "Meeting Recordings",
+        id: "meeting_recordings",
+        accessor: meet_links_data => {
           return (
             <>
               {meet_links_data.slack_channel !== "#smi" ?
@@ -103,23 +103,23 @@ const Calendar = () => {
                 initialView="dayGridMonth"
                 googleCalendarApiKey="AIzaSyDcmx-nLYfqvrfpEmVJuclwt9akayYfUgg"
                 events={{
-                  googleCalendarId : "layer5.io_eh2aa9dpf1g40elvoc762jnphs@group.calendar.google.com",
+                  googleCalendarId: "layer5.io_eh2aa9dpf1g40elvoc762jnphs@group.calendar.google.com",
                 }}
                 buttonText={{
-                  today : "Today"
+                  today: "Today"
                 }}
                 customButtons={{
-                  addToCalendar : {
-                    text : "Add To Your Calendar",
-                    click : function () {
+                  addToCalendar: {
+                    text: "Add To Your Calendar",
+                    click: function () {
                       window.open("https://bit.ly/2SbrRhe", "_blank");
                     }
                   }
                 }}
                 headerToolbar={{
-                  left : "prev,next today",
-                  center : "title",
-                  right : "addToCalendar"
+                  left: "prev,next today",
+                  center: "title",
+                  right: "addToCalendar"
                 }}
                 showNonCurrentDates={false}
                 contentHeight={700}

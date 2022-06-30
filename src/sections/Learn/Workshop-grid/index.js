@@ -85,7 +85,7 @@ const WorkshopsPage = () => {
           <div className="workshop-grid-wrapper">
             <Row>
               {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
-                <Col {...content && ID === id ? { xs : 12, sm : 12, lg : 12 } : { xs : 12, sm : 6, lg : 4 } } key={id} className="workshop-grid-col">
+                <Col {...content && ID === id ? { xs: 12, sm: 12, lg: 12 } : { xs: 12, sm: 6, lg: 4 } } key={id} className="workshop-grid-col">
                   <div className="workshop-grid-card">
                     <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                     <div className={content && ID === id ? "active" : "text-contents"}>
@@ -108,7 +108,7 @@ const WorkshopsPage = () => {
                             <button onClick={() => toggleActive(id)} className="readmeBtn readmreBtn"> Read More <BsArrowDown className="icon" size={30} /></button> }
                         </div>
                         <div className="externalLink">
-                          <Link to={fields.slug} className="siteLink"><FaRegWindowMaximize style={{ height : "25px", width : "auto" }} /></Link>
+                          <Link to={fields.slug} className="siteLink"><FaRegWindowMaximize style={{ height: "25px", width: "auto" }} /></Link>
                         </div>
                       </div>
                     </div>

@@ -16,27 +16,27 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [
-  { id : 0, link : "#Community Guidelines", text : "Community Guidelines" },
-  { id : 1, link : "#Recognitions", text : "Recognition" },
-  { id : 2, link : "#Membership", text : "Membership to the github" },
+  { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
+  { id: 1, link: "#Recognitions", text: "Recognition" },
+  { id: 2, link: "#Membership", text: "Membership to the github" },
   {
-    id : 3,
-    link : "#Community_member_profile",
-    text : "Community member profile",
+    id: 3,
+    link: "#Community_member_profile",
+    text: "Community member profile",
   },
 ];
 
 const badgeStyle = {
-  height : "25px",
-  width : "25px",
-  marginRight : "5px",
+  height: "25px",
+  width: "25px",
+  marginRight: "5px",
 };
 const badgeListStyle = {
-  listStyleType : "none",
+  listStyleType: "none",
 };
 
 const recognitionsstyle = {
-  marginBottom : "0.5rem",
+  marginBottom: "0.5rem",
 };
 
 const CommunityGuide = () => {

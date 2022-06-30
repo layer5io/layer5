@@ -19,10 +19,10 @@ const QuizModal = ({ TOCData, chapterData, location }) => {
         <h2 className="title">Login Form</h2>
         <Formik
           initialValues={{
-            firstname : "",
-            lastname : "",
-            email : "",
-            password : "",
+            firstname: "",
+            lastname: "",
+            email: "",
+            password: "",
           }}
           onSubmit={values => {
             setUserData(values);

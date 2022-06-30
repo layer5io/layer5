@@ -24,12 +24,12 @@ import SoSpecial from "../sections/Home/So-Special-Section";
 
 const IndexPage = () => {
   const schema= {
-    "@context" : "https://schema.org",
-    "@type" : "Corporation",
-    "name" : "Layer5",
-    "url" : "https://layer5.io/",
-    "logo" : "https://layer5.io/images/layer5-tag-dark-bg.png",
-    "sameAs" : [
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "name": "Layer5",
+    "url": "https://layer5.io/",
+    "logo": "https://layer5.io/images/layer5-tag-dark-bg.png",
+    "sameAs": [
       "https://twitter.com/layer5",
       "https://www.linkedin.com/company/layer5/",
       "https://github.com/layer5io",

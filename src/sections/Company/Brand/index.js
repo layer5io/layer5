@@ -99,22 +99,22 @@ const Brand = () => {
   const meshmarkRef = useRef(null);
 
   const sectionRefs = [
-    { section : "Layer5", ref : layer5Ref },
-    { section : "Meshery", ref : mesheryRef },
-    { section : "MeshSync", ref : meshsyncRef },
-    { section : "MesheryOperator", ref : mesheryOperatorRef },
-    { section : "ImageHub", ref : imageHubRef },
-    { section : "SMP", ref : smpRef },
-    { section : "MeshMark", ref : meshmarkRef },
-    { section : "ServiceMeshPatterns", ref : servicemeshpatternsRef },
-    { section : "NightHawk", ref : nightHawkRef },
-    { section : "MeshMate", ref : meshmateRef },
-    { section : "MeshMaster", ref : meshMasterRef },
+    { section: "Layer5", ref: layer5Ref },
+    { section: "Meshery", ref: mesheryRef },
+    { section: "MeshSync", ref: meshsyncRef },
+    { section: "MesheryOperator", ref: mesheryOperatorRef },
+    { section: "ImageHub", ref: imageHubRef },
+    { section: "SMP", ref: smpRef },
+    { section: "MeshMark", ref: meshmarkRef },
+    { section: "ServiceMeshPatterns", ref: servicemeshpatternsRef },
+    { section: "NightHawk", ref: nightHawkRef },
+    { section: "MeshMate", ref: meshmateRef },
+    { section: "MeshMaster", ref: meshMasterRef },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const { height : headerHeight } = getDimensions(headerRef.current);
+      const { height: headerHeight } = getDimensions(headerRef.current);
       const scrollPosition = window.scrollY + headerHeight;
 
       const selected = sectionRefs.find(({ section, ref }) => {

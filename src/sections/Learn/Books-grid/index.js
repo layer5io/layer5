@@ -39,29 +39,29 @@ const BooksPage = ({ hide_path }) => {
   let path = hide_path ? "" : "Books";
 
   var settings = {
-    focusOnSelect : true,
-    lazyLoad : true,
-    infinite : false,
-    speed : 400,
-    slidesToShow : 3.5,
-    slidesToScroll : 1,
-    responsive : [
+    focusOnSelect: true,
+    lazyLoad: true,
+    infinite: false,
+    speed: 400,
+    slidesToShow: 3.5,
+    slidesToScroll: 1,
+    responsive: [
       {
-        breakpoint : 1400,
-        settings : {
-          slidesToShow : 3,
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
         }
       },
       {
-        breakpoint : 700,
-        settings : {
-          slidesToShow : 2.25,
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 2.25,
         }
       },
       {
-        breakpoint : 550,
-        settings : {
-          slidesToShow : 1.5,
+        breakpoint: 550,
+        settings: {
+          slidesToShow: 1.5,
         }
       },
     ]

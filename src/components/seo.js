@@ -36,52 +36,52 @@ const SEO = ({ canonical, description, image, lang, meta, schemaMarkup, title })
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       link={
         canonical
-          ? [{ rel : "canonical", key : canonical, href : canonical }]
+          ? [{ rel: "canonical", key: canonical, href: canonical }]
           : []
       }
       meta={[
         {
-          name : "description",
-          content : metaDescription,
+          name: "description",
+          content: metaDescription,
         },
         {
-          property : "og:title",
-          content : title,
+          property: "og:title",
+          content: title,
         },
         {
-          property : "og:description",
-          content : metaDescription,
+          property: "og:description",
+          content: metaDescription,
         },
         {
-          property : "og:url",
-          content : url,
+          property: "og:url",
+          content: url,
         },
         {
-          property : "og:type",
-          content : "website",
+          property: "og:type",
+          content: "website",
         },
         {
-          property : "og:image",
-          content : metaImage,
+          property: "og:image",
+          content: metaImage,
         },
         {
-          name : "twitter:card",
-          content : "summary_large_image",
+          name: "twitter:card",
+          content: "summary_large_image",
         },
         {
-          name : "twitter:creator",
-          content : site.siteMetadata.twitterUsername,
+          name: "twitter:creator",
+          content: site.siteMetadata.twitterUsername,
         },
         {
-          name : "twitter:title",
-          content : title,
+          name: "twitter:title",
+          content: title,
         },
         {
-          name : "twitter:description",
-          content : metaDescription,
+          name: "twitter:description",
+          content: metaDescription,
         },{
-          name : "twitter:image",
-          content : metaImage,
+          name: "twitter:image",
+          content: metaImage,
         },
       ].concat(meta)}
     >
@@ -92,20 +92,20 @@ const SEO = ({ canonical, description, image, lang, meta, schemaMarkup, title })
 };
 
 SEO.defaultProps = {
-  title : null,
-  lang : "en",
-  meta : [],
-  description : "",
-  image : null,
+  title: null,
+  lang: "en",
+  meta: [],
+  description: "",
+  image: null,
 };
 
 SEO.propTypes = {
-  canonical : PropTypes.string,
-  description : PropTypes.string,
-  image : PropTypes.string,
-  lang : PropTypes.string,
-  meta : PropTypes.arrayOf(PropTypes.object),
-  title : PropTypes.string.isRequired,
+  canonical: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
 };
 
 export default SEO;

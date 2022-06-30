@@ -20,9 +20,9 @@ import WSL2 from "./supported-icons/wsl2.svg";
 
 const supported_platforms = [
   {
-    icon : Apple,
-    name : "Apple",
-    steps : (
+    icon: Apple,
+    name: "Apple",
+    steps: (
       <>
         <h2>MacOS User</h2>
         <h4>Install on Mac using Homebrew:</h4>
@@ -35,9 +35,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : Docker,
-    name : "Docker",
-    steps : (
+    icon: Docker,
+    name: "Docker",
+    steps: (
       <>
         <h2>Docker User</h2>
         <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=docker bash -`
@@ -47,9 +47,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : EKS,
-    name : "EKS",
-    steps : (
+    icon: EKS,
+    name: "EKS",
+    steps: (
       <>
         <h2>AWS Elastic Kubernetes Service User</h2>
         <Code codeString={dedent`mesheryctl system config eks
@@ -59,9 +59,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : GKE,
-    name : "GKE",
-    steps : (
+    icon: GKE,
+    name: "GKE",
+    steps: (
       <>
         <h2>Google Kubernetes Engine User</h2>
         <Code codeString={dedent`mesheryctl system config gke --token *PATH_TO_TOKEN* 
@@ -72,9 +72,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : Helm,
-    name : "Helm",
-    steps : (
+    icon: Helm,
+    name: "Helm",
+    steps: (
       <>
         <h2>Helm Chart</h2>
         <p>Install on Kubernetes using Helm:</p>
@@ -85,9 +85,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : HomeBrew,
-    name : "HomeBrew",
-    steps : (
+    icon: HomeBrew,
+    name: "HomeBrew",
+    steps: (
       <>
         <h2>Brew User</h2>
         <h4>Install on Mac or Linux using Homebrew:</h4>
@@ -99,9 +99,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : Kind,
-    name : "Kind",
-    steps : (
+    icon: Kind,
+    name: "Kind",
+    steps: (
       <>
         <h2>Kind User</h2>
         <Code codeString={dedent`export KUBECONFIG=$HOME/.kube/config
@@ -112,9 +112,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : Kubernetes,
-    name : "Kubernetes",
-    steps : (
+    icon: Kubernetes,
+    name: "Kubernetes",
+    steps: (
       <>
         <h2>Kubernetes User</h2>
         <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash - 
@@ -125,9 +125,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : Linux,
-    name : "Linux",
-    steps : (
+    icon: Linux,
+    name: "Linux",
+    steps: (
       <>
         <h2>Bash User</h2>
         <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -`}
@@ -136,9 +136,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : Minikube,
-    name : "Minikube",
-    steps : (
+    icon: Minikube,
+    name: "Minikube",
+    steps: (
       <>
         <h2>Minikube User</h2>
         <Code codeString={dedent`mesheryctl system config minikube -t ~/Downloads/auth.json`
@@ -148,9 +148,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : AKS,
-    name : "AKS",
-    steps : (
+    icon: AKS,
+    name: "AKS",
+    steps: (
       <>
         <h2>Azure Kubernetes Service User</h2>
         <p>Install mesheryctl and configure Meshery to communicate with AKS.</p>
@@ -162,9 +162,9 @@ const supported_platforms = [
     )
   },
   {
-    icon : WSL2,
-    name : "WSL2",
-    steps : (
+    icon: WSL2,
+    name: "WSL2",
+    steps: (
       <>
         <h2>Windows User</h2>
         <p>
@@ -219,7 +219,7 @@ const MesheryPlatforms = () => {
             </Col>
           ))}
         </Row>
-        <Container style={{ transition : "height 0.5s ease-in-out", height : installationStepsHeight, overflow : "hidden" }}>
+        <Container style={{ transition: "height 0.5s ease-in-out", height: installationStepsHeight, overflow: "hidden" }}>
           <Row className="installation-steps" >
             {currentPlatform.name && currentPlatform.steps}
           </Row>

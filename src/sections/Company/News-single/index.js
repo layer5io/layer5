@@ -49,7 +49,7 @@ const NewsSingle = ({ data }) => {
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
         category={frontmatter.category}
-        author={{ name : frontmatter.author }}
+        author={{ name: frontmatter.author }}
         thumbnail={frontmatter.thumbnail}
         date={frontmatter.date}
       />
@@ -69,7 +69,7 @@ const NewsSingle = ({ data }) => {
           </div>
           {
             body && !body.slug && frontmatter.eurl && (
-              <div style={{ display : "flex" }}>
+              <div style={{ display: "flex" }}>
                 <h5>
                   Read the full article on <a href={frontmatter.eurl} target="_blank" rel="noopener noreferrer">{frontmatter.author}</a>
                 </h5>

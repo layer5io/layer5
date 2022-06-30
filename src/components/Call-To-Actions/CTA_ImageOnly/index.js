@@ -39,7 +39,7 @@ export const CTA_ImageOnly = ({ alt, category, image, url, blend }) => {
           <img
             src={Categories[category]["Image"]}
             alt={Categories[category]["Alt"]}
-            style={{ opacity : blend ? "0.7" : "1" }}
+            style={{ opacity: blend ? "0.7" : "1" }}
           />
         </Link>
       ) : (
@@ -47,7 +47,7 @@ export const CTA_ImageOnly = ({ alt, category, image, url, blend }) => {
           <img
             src={image ? image : image_src}
             alt={alt ? alt : "Alt Text"}
-            style={{ opacity : blend ? "0.7" : "1" }}
+            style={{ opacity: blend ? "0.7" : "1" }}
           />
         </Link>
       )}

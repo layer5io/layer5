@@ -27,53 +27,53 @@ const AppScreensClassic = () => {
     </button>
   );
   const settings = {
-    dots : false,
-    autoplay : true,
-    infinite : true,
-    className : "center",
-    centerMode : true,
-    centerPadding : "170px",
-    slidesToShow : 3,
-    slidesToScroll : 1,
-    speed : 300,
-    responsive : [
+    dots: false,
+    autoplay: true,
+    infinite: true,
+    className: "center",
+    centerMode: true,
+    centerPadding: "170px",
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    speed: 300,
+    responsive: [
       {
-        breakpoint : 1025,
-        settings : {
-          centerPadding : "50px"
+        breakpoint: 1025,
+        settings: {
+          centerPadding: "50px"
         }
       },
       {
-        breakpoint : 912,
-        settings : {
-          slidesToShow : 3,
-          centerPadding : "80px"
+        breakpoint: 912,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: "80px"
         }
       },
       {
-        breakpoint : 700,
-        settings : {
-          slidesToShow : 3,
-          centerPadding : "60px"
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: "60px"
         }
       },
       {
-        breakpoint : 600,
-        settings : {
-          slidesToShow : 3,
-          centerPadding : "40px"
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: "40px"
         }
       },
       {
-        breakpoint : 480,
-        settings : {
-          slidesToShow : 1,
-          centerPadding : "00px"
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "00px"
         }
       }
     ],
-    prevArrow : <ArrowLeft />,
-    nextArrow : <ArrowRight />
+    prevArrow: <ArrowLeft />,
+    nextArrow: <ArrowRight />
   };
   return (
     <AppScreenSctionWrapper>

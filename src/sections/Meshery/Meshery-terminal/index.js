@@ -40,19 +40,19 @@ const MesheryTerminal = () => {
         />
         <AnimatedStepsList
           terminalHeroState={{
-            frameLength : 100,
-            loop : true,
-            lines : [
+            frameLength: 100,
+            loop: true,
+            lines: [
               {
-                frames : 5,
-                code : ["curl -L https://meshery.io/install | PLATFORM=kubernetes bash -", "curl -L https://meshery.io/install | PLATFORM=kubernetes bash -|"],
+                frames: 5,
+                code: ["curl -L https://meshery.io/install | PLATFORM=kubernetes bash -", "curl -L https://meshery.io/install | PLATFORM=kubernetes bash -|"],
               },
             ],
           }}
           steps={[
             {
-              name : "Install",
-              description : (
+              name: "Install",
+              description: (
                 <>
                   <p>
                           Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes:
@@ -65,52 +65,52 @@ const MesheryTerminal = () => {
                   </p>
                 </>
               ),
-              logos : [
+              logos: [
                 {
-                  url : Homebrew,
-                  alt : "Homebrew",
+                  url: Homebrew,
+                  alt: "Homebrew",
                 },
                 {
-                  url : Kubernetes,
-                  alt : "Kubernetes",
+                  url: Kubernetes,
+                  alt: "Kubernetes",
                 },
                 {
-                  url : KinD,
-                  alt : "KinD",
+                  url: KinD,
+                  alt: "KinD",
                 },
                 {
-                  url : Minikube,
-                  alt : "Minikube",
+                  url: Minikube,
+                  alt: "Minikube",
                 },
                 {
-                  url : EKS,
-                  alt : "AWS Elastic Kuberentes Service",
+                  url: EKS,
+                  alt: "AWS Elastic Kuberentes Service",
                 },
                 {
-                  url : Helm,
-                  alt : "Meshery Helm Chart",
+                  url: Helm,
+                  alt: "Meshery Helm Chart",
                 },
                 {
-                  url : WSL2,
-                  alt : "WSL2",
+                  url: WSL2,
+                  alt: "WSL2",
                 },
                 {
-                  url : GKE,
-                  alt : "GKE",
+                  url: GKE,
+                  alt: "GKE",
                 },
                 {
-                  url : Docker,
-                  alt : "Docker",
+                  url: Docker,
+                  alt: "Docker",
                 },
               ],
-              terminal : {
-                frameLength : 100,
-                loop : false,
-                lines : [
+              terminal: {
+                frameLength: 100,
+                loop: false,
+                lines: [
                   {
-                    color : "white",
-                    frames : 4,
-                    code : [
+                    color: "white",
+                    frames: 4,
+                    code: [
                       "Extracting mesheryctl-latest",
                       "Extracting mesheryctl-latest .",
                       "Extracting mesheryctl-latest . .",
@@ -118,63 +118,63 @@ const MesheryTerminal = () => {
                     ],
                   },
                   {
-                    frames : 4,
-                    code :
+                    frames: 4,
+                    code:
                             "Archive:  /Users/layer5/meshery.zip",
-                    color : "gray",
+                    color: "gray",
                   },
                   {
-                    frames : 4,
-                    code : "inflating: LICENSE",
-                    indent : 1,
-                    short : true
+                    frames: 4,
+                    code: "inflating: LICENSE",
+                    indent: 1,
+                    short: true
                   },
                   {
-                    frames : 2,
-                    code : "inflating: README.md",
-                    indent : 1,
-                    short : true
+                    frames: 2,
+                    code: "inflating: README.md",
+                    indent: 1,
+                    short: true
                   },
                   {
-                    frames : 2,
-                    code : "inflating: mesheryctl",
-                    indent : 1,
-                    short : true
+                    frames: 2,
+                    code: "inflating: mesheryctl",
+                    indent: 1,
+                    short: true
                   },
-                  { code : " " },
+                  { code: " " },
                   {
-                    frames : 2,
-                    code : "Installing mesheryctl in /usr/local/bin",
-                    color : "gray",
-                  },
-                  {
-                    frames : 2,
-                    code : "mesheryctl installed.",
-                    color : "gray",
+                    frames: 2,
+                    code: "Installing mesheryctl in /usr/local/bin",
+                    color: "gray",
                   },
                   {
-                    frames : 8,
-                    code : [
+                    frames: 2,
+                    code: "mesheryctl installed.",
+                    color: "gray",
+                  },
+                  {
+                    frames: 8,
+                    code: [
                       "downloading manifest files from https://github.com/meshery/meshery/tree/v0.6.0/install/deployment_yamls/k8s",
                     ],
-                    color : "navy",
+                    color: "navy",
                   },
                   {
-                    frames : 8,
-                    code : [
+                    frames: 8,
+                    code: [
                       "Starting meshery",
                       "Starting meshery           .",
                       "Starting meshery           ..",
                       "Starting meshery           ...",
                       "Starting meshery           ...",
                     ],
-                    short : true,
-                    color : "gray",
+                    short: true,
+                    color: "gray",
                   },
                   {
-                    frames : 6,
-                    color : "gray",
-                    code : [
+                    frames: 6,
+                    color: "gray",
+                    code: [
                       "⠋ Deploying Meshery on Kubernetes",
                       "⠙ Deploying Meshery on Kubernetes",
                       "⠹ Deploying Meshery on Kubernetes",
@@ -199,35 +199,35 @@ const MesheryTerminal = () => {
                     ],
                   },
                   {
-                    frames : 4,
-                    code : [
+                    frames: 4,
+                    code: [
                       "Some Meshery pods have not come up yet.",
                       "Some Meshery pods have not come up yet..",
                       "Some Meshery pods have not come up yet...",
                       "Pods are online!",
                     ],
-                    short : true,
-                    color : "gray",
+                    short: true,
+                    color: "gray",
                   },
                   {
-                    frames : 3,
-                    code : [
+                    frames: 3,
+                    code: [
                       "Opening Meshery (https://localhost:9081) on your browser...",
                     ],
-                    short : true,
-                    color : "gray",
+                    short: true,
+                    color: "gray",
                   },
                   {
-                    frames : 1,
-                    code : "\nManagement plane ready at: https://meshery.io/manage",
-                    color : "green",
+                    frames: 1,
+                    code: "\nManagement plane ready at: https://meshery.io/manage",
+                    color: "green",
                   },
                 ],
               },
             },
             {
-              name : "Patterns",
-              description : (
+              name: "Patterns",
+              description: (
                 <>
                   <p>
                           Meshery supports cloud native application patterns using a mesh-agnostic and application-holistic approach: patternfiles.
@@ -240,24 +240,24 @@ const MesheryTerminal = () => {
                   </p>
                 </>
               ),
-              logos : [
+              logos: [
                 {
-                  url : OAM,
-                  alt : "Open Application Model",
+                  url: OAM,
+                  alt: "Open Application Model",
                 },
                 {
-                  url : ImageHub,
-                  alt : "Image Hub",
+                  url: ImageHub,
+                  alt: "Image Hub",
                 }
               ],
-              terminal : {
-                frameLength : 100,
-                loop : false,
-                lines : [
+              terminal: {
+                frameLength: 100,
+                loop: false,
+                lines: [
                   {
-                    color : "white",
-                    frames : 4,
-                    code : [
+                    color: "white",
+                    frames: 4,
+                    code: [
                       "» Deploying pattern",
                       "» Deploying pattern .",
                       "» Deploying pattern . .",
@@ -265,14 +265,14 @@ const MesheryTerminal = () => {
                     ],
                   },
                   {
-                    frames : 5,
-                    code :
+                    frames: 5,
+                    code:
                             "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
                   },
                   {
-                    frames : 2,
-                    color : "gray",
-                    code : [
+                    frames: 2,
+                    color: "gray",
+                    code: [
                       "⠋ Preparing pattern deployment",
                       "⠙ Preparing pattern deployment",
                       "⠹ Preparing pattern deployment",
@@ -297,9 +297,9 @@ const MesheryTerminal = () => {
                     ],
                   },
                   {
-                    frames : 2,
-                    color : "gray",
-                    code : [
+                    frames: 2,
+                    color: "gray",
+                    code: [
                       "⠋ Waiting on pattern to become available: 1/1/0",
                       "⠙ Waiting on pattern to become available: 1/1/0",
                       "⠹ Waiting on pattern to become available: 1/1/0",
@@ -323,26 +323,26 @@ const MesheryTerminal = () => {
                       "✓ Pattern successfully rolled out!",
                     ],
                   },
-                  { code : "" },
+                  { code: "" },
                   {
-                    frames : 2,
-                    code :
+                    frames: 2,
+                    code:
                             "\nYour cloud native application pattern deployment was successful!",
-                    color : "gray",
+                    color: "gray",
                   },
-                  { code : "" },
+                  { code: "" },
                   {
-                    frames : 1,
-                    code :
+                    frames: 1,
+                    code:
                             "\nDeployment URL: https://meshery.local/patterns",
-                    color : "green",
+                    color: "green",
                   },
                 ],
               },
             },
             {
-              name : "Performance",
-              description : (
+              name: "Performance",
+              description: (
                 <>
                   <p>
                           Meshery provides service mesh and application performance measurement and management.
@@ -355,20 +355,20 @@ const MesheryTerminal = () => {
                   </p>
                 </>
               ),
-              logos : [
+              logos: [
                 {
-                  url : SMP,
-                  alt : "Service Mesh Performance",
+                  url: SMP,
+                  alt: "Service Mesh Performance",
                 }
               ],
-              terminal : {
-                frameLength : 100,
-                loop : false,
-                lines : [
+              terminal: {
+                frameLength: 100,
+                loop: false,
+                lines: [
                   {
-                    frames : 1,
-                    color : "white",
-                    code : [
+                    frames: 1,
+                    color: "white",
+                    code: [
                       "» Analyzing",
                       "» Analyzing .",
                       "» Analyzing . .",
@@ -376,14 +376,14 @@ const MesheryTerminal = () => {
                     ],
                   },
                   {
-                    frames : 2,
-                    code :
+                    frames: 2,
+                    code:
                             "✓ Meshery connected to Kubernetes at https://kubernetes.example.com:6443",
                   },
                   {
-                    frames : 2,
-                    color : "gray",
-                    code : [
+                    frames: 2,
+                    color: "gray",
+                    code: [
                       "⠋ Analyzing service mesh",
                       "⠙ Analyzing service mesh",
                       "⠹ Analyzing service mesh",
@@ -407,11 +407,11 @@ const MesheryTerminal = () => {
                       "✓ Analysis complete.",
                     ],
                   },
-                  { code : "" },
+                  { code: "" },
                   {
-                    frames : 2,
-                    color : "white",
-                    code : [
+                    frames: 2,
+                    color: "white",
+                    code: [
                       "» Preparing recommendations",
                       "» Preparing recommendations .",
                       "» Preparing recommendations . .",
@@ -419,21 +419,21 @@ const MesheryTerminal = () => {
                     ],
                   },
                   {
-                    frames : 2,
-                    code : "  Patterns: 01EJCSFNDDD15P2BXBW2KCYVB2",
-                    color : "navy",
+                    frames: 2,
+                    code: "  Patterns: 01EJCSFNDDD15P2BXBW2KCYVB2",
+                    color: "navy",
                   },
-                  { code : "" },
+                  { code: "" },
                   {
-                    frames : 2,
-                    code : "\nBest practice recommendations ready!",
-                    color : "green",
+                    frames: 2,
+                    code: "\nBest practice recommendations ready!",
+                    color: "green",
                   },
-                  { code : "" },
+                  { code: "" },
                   {
-                    frames : 1,
-                    code : "\nRecommendations URL: https://meshery.io/patterns",
-                    color : "green",
+                    frames: 1,
+                    code: "\nRecommendations URL: https://meshery.io/patterns",
+                    color: "green",
                   },
                 ],
               },

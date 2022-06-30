@@ -47,8 +47,8 @@ class RelatedResourcesFactory {
       const slug = getSlug(resource);
       if (!Object.prototype.hasOwnProperty.call(identityMap, slug)){
         identityMap[slug] = {
-          resource : resource,
-          points : 0
+          resource: resource,
+          points: 0
         };
       }
     };

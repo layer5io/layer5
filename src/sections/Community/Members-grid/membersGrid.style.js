@@ -2,67 +2,67 @@
 import styled from "styled-components";
 
 const dot = () => ({
-  alignItems : "center",
-  display : "flex",
+  alignItems: "center",
+  display: "flex",
 });
 
 const img = (icon) => ({
-  display : "flex",
-  alignItems : "center",
-  justifyContent : "left",
-  backgroundImage : icon,
-  backgroundRepeat : "no-repeat",
-  backgroundSize : 20,
-  backgroundPosition : "8px center",
-  paddingLeft : 8,
-  width : "auto",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "left",
+  backgroundImage: icon,
+  backgroundRepeat: "no-repeat",
+  backgroundSize: 20,
+  backgroundPosition: "8px center",
+  paddingLeft: 8,
+  width: "auto",
 });
 
 export const selectStyles = {
-  menu : (styles) => ({
+  menu: (styles) => ({
     ...styles,
-    zIndex : 999,
-    minWidth : "200px",
+    zIndex: 999,
+    minWidth: "200px",
   }),
-  control : (styles) => ({
+  control: (styles) => ({
     ...styles,
-    backgroundColor : "white",
-    zIndex : 900,
-    minWidth : "200px",
+    backgroundColor: "white",
+    zIndex: 900,
+    minWidth: "200px",
   }),
-  option : (styles, { data, isFocused, isSelected }) => ({
+  option: (styles, { data, isFocused, isSelected }) => ({
     ...styles,
 
-    alignItems : "left",
-    marginTop : "0.0em",
-    marginBottom : "0.0em",
-    paddingTop : "0.0em",
-    paddingBottom : "0.0em",
-    backgroundImage : data.value ? data.icon : "",
-    backgroundRepeat : "no-repeat",
-    backgroundSize : 20,
-    backgroundPosition : "15px 70%",
-    paddingLeft : data.value == "" ? 10 : 50,
+    alignItems: "left",
+    marginTop: "0.0em",
+    marginBottom: "0.0em",
+    paddingTop: "0.0em",
+    paddingBottom: "0.0em",
+    backgroundImage: data.value ? data.icon : "",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: 20,
+    backgroundPosition: "15px 70%",
+    paddingLeft: data.value == "" ? 10 : 50,
 
-    ":before" : {
-      borderRadius : 10,
-      content : "\" \"",
-      display : "block",
+    ":before": {
+      borderRadius: 10,
+      content: "\" \"",
+      display: "block",
 
-      marginRight : 12,
-      marginLeft :
+      marginRight: 12,
+      marginLeft:
         data.value === "all" ||
         data.value === "active" ||
         data.value === "inactive"
           ? 1.5
           : 5,
 
-      height : 10,
-      width : 10,
-      zIndex : 1000,
+      height: 10,
+      width: 10,
+      zIndex: 1000,
     },
 
-    backgroundColor : isSelected
+    backgroundColor: isSelected
       ? data.value === "inactive"
         ? "rgba(171, 171, 171, 1)"
         : data.value === ""
@@ -76,76 +76,76 @@ export const selectStyles = {
         : "rgba(11, 177, 158, 0.30)"
       : "white",
 
-    color : isSelected ? "white" : "grey",
+    color: isSelected ? "white" : "grey",
 
-    zIndex : 900,
+    zIndex: 900,
 
-    ":active" : {
+    ":active": {
       ...styles[":active"],
-      backgroundColor : isSelected
+      backgroundColor: isSelected
         ? data.value === "inactive"
           ? "rgba(171, 171, 171, 0.75)"
           : "rgba(11, 177, 158, 0.75)"
         : "white",
     },
   }),
-  input : (styles) => ({
+  input: (styles) => ({
     ...styles,
     ...dot(),
-    zIndex : 900,
+    zIndex: 900,
     // width: "auto",
     // minWidth: "200px",
-    width : "100px",
+    width: "100px",
   }),
-  placeholder : (styles) => ({ ...styles, ...dot(), zIndex : 900 }),
-  multiValueRemove : (styles) => ({
+  placeholder: (styles) => ({ ...styles, ...dot(), zIndex: 900 }),
+  multiValueRemove: (styles) => ({
     ...styles,
-    height : "100%",
-    color : "#00D3A8",
-    ":hover" : {
-      backgroundColor : "transparent",
-      color : "#00D3A8",
+    height: "100%",
+    color: "#00D3A8",
+    ":hover": {
+      backgroundColor: "transparent",
+      color: "#00D3A8",
     },
   }),
-  multiValueLabel : (styles) => ({ ...styles, marginLeft : 20 }),
-  multiValue : (styles, { data }) =>
+  multiValueLabel: (styles) => ({ ...styles, marginLeft: 20 }),
+  multiValue: (styles, { data }) =>
     // prettier-ignore
     data.value === "meshery-operator"
     ? {
         ...styles,
         ...img(data.icon),
-        backgroundColor : "#F8F8F8",
-        marginLeft : "5px",
+        backgroundColor: "#F8F8F8",
+        marginLeft: "5px",
       }
       : data.value === "smp"
         ? {
           ...styles,
           ...img(data.icon),
-          backgroundColor : "#F8F8F8",
-          marginLeft : "5px",
+          backgroundColor: "#F8F8F8",
+          marginLeft: "5px",
         }
         : data.value
           ? {
             ...styles,
             ...img(data.icon),
-            backgroundColor : "#F8F8F8",
-            marginLeft : "5px",
+            backgroundColor: "#F8F8F8",
+            marginLeft: "5px",
           }
           : data.value === ""
-            ? { display : "none", marginLeft : "5px", }
-            : { ...styles, ...dot(data.color), zIndex : 900, marginLeft : "5px", },
+            ? { display: "none", marginLeft: "5px", }
+            : { ...styles, ...dot(data.color), zIndex: 900, marginLeft: "5px", },
 };
 
 export const dropdownTheme = (theme) => ({
   ...theme,
-  borderRadius : 0,
-  colors : {
+  borderRadius: 0,
+  colors: {
     ...theme.colors,
-    primary50 : "#b0e8e2",
-    primary25 : "#b0e8e2",
-    primary : "#00b39f",
+    primary50: "#b0e8e2",
+    primary25: "#b0e8e2",
+    primary: "#00b39f",
   },
-  width : "500px",
+  width: "500px",
 });
 
 export const MembersGridWrapper = styled.div`
