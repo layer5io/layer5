@@ -15,10 +15,10 @@ export const HandbookWrapper = styled.div`
         color: ${(props) => props.theme.menuColor};
       }
       ul > li > span {
-        color: ${(props) => props.theme.black};
+        color: ${(props) => props.theme.text};
       }
       ol > li > span {
-        color: ${(props) => props.theme.black};
+        color: ${(props) => props.theme.text};
       }
     }
 
@@ -437,8 +437,8 @@ width: 90%;
 .content_type { 
   display: flex;
   flex-direction: column;
-  background: ${props => props.theme.white};
-  box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
+  background: ${props => props.theme.projectCardColor};
+  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.projectShadowColor};
   &:hover{
       box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
   }
@@ -455,7 +455,7 @@ width: 90%;
   }
   p{
       font-weight: 300;
-      color: ${props => props.theme.black};
+      color: ${props => props.theme.text};
   }
   img{
       height: 60px ; 
@@ -468,7 +468,6 @@ width: 90%;
   padding: 0px 20px 0px 20px;
 } 
 .process .item {
-  background-color: #fff;
   padding: 10px;
   font-size: 16px;
   line-height: 1.7;
