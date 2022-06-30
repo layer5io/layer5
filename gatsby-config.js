@@ -81,7 +81,7 @@ module.exports = {
               {
                 allPosts: allMdx(
                   sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { in: ["blog", "news"] } }, frontmatter: { published: { eq: true }, category: { nin: ["Programs", "Community", "Events"] } } }
+                  filter: { fields: { collection: { in: ["blog", "resources", "news"] } }, frontmatter: { published: { eq: true }, category: { nin: ["Programs", "Community", "Events"] } } }
                   limit: 20
                 ) {
                   nodes {
