@@ -1,10 +1,10 @@
 ---
-title: Managing Multiple clusters with Meshery
-subtitle: Now Meshery is supporting Kubernetes multi cluster features
-date: 2022-06-20 08:00:00 -0630
+title:  Multi-Cluster Kubernetes Management with Meshery
+subtitle: Wrangling your services one cluster at-a-time
+date: 2022-07-02 08:00:00 -0630
 author: Ashish Tiwari
-description: "Philosophy and approach of managing multiple clusters with Meshery"
-thumbnail: ./thumbnail.png
+description: "Manage all of your Kubernetes clusters with the cloud native management plane, Meshery. Learn how Meshery makes connecting, discovering, and configuring multiple clusters a breeze."
+thumbnail: ./multi-cluster-kubernetes-management-with-meshery.png
 category: "Meshery"
 tags:
  - Meshery
@@ -22,16 +22,20 @@ import Cluster1 from "./meshmap-cluster1.png";
 import Settings from "./settings.png";
 import Cluster from "./cluster-mgmt.png";
 import Flush from "./flush-meshsync.png";
+import CoreArch from "./meshery-core-architecture.png";
 import { Link } from "gatsby";
 
 <BlogWrapper>
 
-# Managing multiple clusters with Meshery
-From multi-mesh to now multi-cluster, <Link to="/meshery">Meshery</Link> is continuously expanding in its capability to give developers and operators more power over their infrastructure.
+<div class="intro">
+<p>
+From multi-mesh to now multi-cluster, <Link to="/meshery">Meshery</Link> is continuously expanding its capability to give developers, operators, and security engineers more control over their infrastructure. In this post, we'll take a look behind the scenes at how each component in Meshery's architecture plays a role in the management of many Kubernetes clusters.
+</p>
+</div>
 
-## Philosophy behind the multi-cluster management approach
+## Philosophy behind Meshery's multi-cluster management approach
 
-<Link to="/meshery">Meshery</Link> is highly extensible and pluggable without adding a lot of overhead or complexity. Under the hood, Meshery server acts as a delegator of operations by figuring out which Meshery adapter registered its capability against the given operation. The operation is then sent to that given component(like one of Meshery’s service mesh adapters,e.g. Istio adapter) via a gRPC call. When the operation involves a kubernetes cluster(s), the kubeconfig(s) is sent as a parameter to the RPCs. It is then the job of the handling adapter to respect that and perform the operation across the passed clusters from kubeconfigs as needed. The operations not requiring a kubeconfig are managed through the same RPC, with the only difference being that the handling component would ignore the `kubeconfigs` field altogether making the system work not just for kubernetes, but for other cloud native use cases. This approach of reusing the same RPC for different types of requests is pretty common and sometimes debatable with the other approach of being strict with the RPCs. This is what makes Meshery completely pluggable and extensible.
+While designing Meshery for the world of many service meshes, and many Kubernetes clusters, much care has been taken to ensure that Meshery is an <a href="https://docs.meshery.io/extensibility">extensible management platform</a>, ready for handling new types of infrastructure and new use cases rapidly through its plugin model. Under the hood, <a href="https://docs.meshery.io">Meshery Server</a> acts as a delegator of operations by figuring out which Meshery Adapter registered its capability against the given operation. The operation is then sent to that given component (like one of Meshery’s service mesh adapters,e.g. Istio adapter) via a gRPC call. <img src={CoreArch} alt="deploy modal"  class="image-right" /> When the operation involves a kubernetes cluster(s), the kubeconfig(s) is sent as a parameter to the RPCs. It is then the job of the handling adapter to respect that and perform the operation across the passed clusters from kubeconfigs as needed. The operations not requiring a kubeconfig are managed through the same RPC, with the only difference being that the handling component would ignore the `kubeconfigs` field altogether making the system work not just for kubernetes, but for other cloud native use cases. This approach of reusing the same RPC for different types of requests is pretty common and sometimes debatable with the other approach of being strict with the RPCs. This is what makes Meshery completely pluggable and extensible.
 
 ## Using multi cluster with Meshery
 From a client's perspective, there are two uses of the multi context feature in general. While deploying a <Link to="/meshmap">MeshMap</Link> design or performing any other operation on their cluster(s), selecting any number of kubernetes contexts will allow them to uniformly and parallely perform the operation across the clusters. And while visualizing the state of their cluster(s), the same context switcher will allow them to filter across the clusters whose view they want to see.
