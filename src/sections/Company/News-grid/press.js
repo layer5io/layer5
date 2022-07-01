@@ -27,10 +27,10 @@ h4, h5{
 }
 
 .press_card { 
-    background: ${props => props.theme.white};
+    background: ${props => props.theme.projectCardColor};
     transition: 450ms all;
     height: 15rem;
-    border: 1px solid ${props => props.theme.shadowLightColor};
+    border: 1px solid ${props => props.theme.projectShadowColor};
     &:hover{
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }
@@ -44,7 +44,7 @@ h4, h5{
     }
     p{
         font-weight: 300;
-        color: ${props => props.theme.black};
+        color: ${props => props.theme.text};
     }
     @media screen and (max-width: 768px) {
         margin: 6% 15%;

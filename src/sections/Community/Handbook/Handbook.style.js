@@ -99,6 +99,7 @@ export const HandbookWrapper = styled.div`
         display: block;
         margin-left: auto;
         margin-right: auto;
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
       }
       .site-icon{
         height: 1.6rem;
@@ -167,17 +168,23 @@ export const HandbookWrapper = styled.div`
       padding-left: 0.2em;
       padding-bottom: 0.3em;
       margin-right: 0.5em;
+
       margin-bottom: 0.15em;
       vertical-align: bottom;
       color: transparent;
+      background-color: white;
     }
 
     input[type=checkbox] + label:active:before {
       transform: scale(0);
     }
-
+    svg {
+      color: "red";
+    }
     input[type=checkbox]:checked + label:before {
-      background-color: ${(props) => props.theme.primaryLightColorTwo};
+      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="black" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
+
+      background-color: ${(props) => props.theme.keppelColor};
       border-color: ${(props) => props.theme.primaryLightColorTwo};
       color: #fff;
     }
