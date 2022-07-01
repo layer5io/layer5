@@ -14,6 +14,14 @@ const ThankYouSection = () => {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  // prevents ssr flash for mismatched dark mode
+  if (!mounted) {
+    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+  }
   return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>

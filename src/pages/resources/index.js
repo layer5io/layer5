@@ -14,19 +14,14 @@ import PageHeader from "../../reusecore/PageHeader";
 import RssFeedIcon from "../../assets/images/socialIcons/rss-sign.svg";
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
-import { useCookies } from "react-cookie";
-import { useEffect } from "react";
+
 
 const MembersPage = () => {
   const [filter, setFilter] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
-  const [cookies, setCookie] = useCookies(["user"]);
   const [theme, setTheme] = useState("light");
-  useEffect(() => {
-    if (cookies.Theme !== undefined)
-      setTheme(cookies.Theme);
-  }, []);
+
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
@@ -46,7 +41,14 @@ const MembersPage = () => {
     document.querySelectorAll("input[type=\"checkbox\"]")
       .forEach(el => el.checked = false);
   };
-
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  // prevents ssr flash for mismatched dark mode
+  if (!mounted) {
+    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+  }
   return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>

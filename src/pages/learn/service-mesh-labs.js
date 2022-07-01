@@ -25,7 +25,14 @@ const ServiceMeshLabsPage = (props) => {
       setSelectedIndex(props.location.state.selectedIndex);
     }
   },[]);
-
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  // prevents ssr flash for mismatched dark mode
+  if (!mounted) {
+    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+  }
   return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <Layout>

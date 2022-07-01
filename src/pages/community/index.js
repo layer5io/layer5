@@ -24,7 +24,7 @@ const CommunityIndex = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Preventing mismatched Screen</div>;
+    return <div style={{ visibility: "hidden" }}>Hello there</div>;
   }
   return (
     <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
