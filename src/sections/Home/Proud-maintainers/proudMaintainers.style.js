@@ -10,7 +10,7 @@ const ProjectItemWrapper = styled.section`
 
 		h4 {
 			margin-bottom: 0.5rem;
-			color: ${props => props.theme.sideTextLight};
+			color: ${props => props.theme.DarkTheme? "#737373": "#b3b3b3"};
 			text-transform: uppercase;
 		}
 		h2{
@@ -21,7 +21,7 @@ const ProjectItemWrapper = styled.section`
 		}
 		.project-text {
 			margin:0 auto 4rem auto;
-			color: ${props => props.theme.communityText};
+			color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" :"rgba(0, 0, 0, 0.6)"};
 			max-width: 60%;
 		}
 	}
@@ -58,7 +58,7 @@ const ProjectItemWrapper = styled.section`
 	.proj_icon_1 {
 		max-width: 18rem;
 		height: 7rem;
-		background: ${props => props.theme.projectIconColor};
+		background: ${props => props.theme.DarkTheme ? "#212121" : "#F3F3F3"};
 		display: flex;
 		border-radius: 1.5rem;
 		justify-content: center;

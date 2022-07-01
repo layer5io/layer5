@@ -43,9 +43,9 @@ table {
 		height: 4rem;
 
 		:nth-child(odd) {
-			background: ${props => props.theme.projectCardColor};
+			background: ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
 			td {
-				border-right: 1px solid ${props => props.theme.projectCardColor};
+				border-right: 1px solid ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
 			}
 		}
 		:nth-child(even) {

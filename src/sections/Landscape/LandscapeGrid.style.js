@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const LandscapePageWrapper=styled.div`
+export const LandscapePageWrapper = styled.div`
 
 	h2.landscape-section-heading {
 		margin-bottom: 2rem;
@@ -444,14 +444,14 @@ export const LandscapePageWrapper=styled.div`
 		border-right: none;
 	}
 	.odd-row {
-		background: ${props => props.theme.projectCardColor};
+		background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 		&:hover{
 			box-shadow: 0px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
 	.even-row {
-		background: ${props => props.theme.projectCardColor};
+		background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 		&:hover{
 			box-shadow: 10px 2px 5px -10px black;
 			transform: translateY(0px);

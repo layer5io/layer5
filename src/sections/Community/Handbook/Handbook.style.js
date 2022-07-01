@@ -444,8 +444,8 @@ width: 90%;
 .content_type { 
   display: flex;
   flex-direction: column;
-  background: ${props => props.theme.projectCardColor};
-  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.projectShadowColor};
+  background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
   &:hover{
       box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
   }

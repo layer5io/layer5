@@ -53,7 +53,8 @@ const SoSpecialWrapper = styled.div`
         text-align:center;
         width:100%;
         border-radius:1rem;
-        background-color:${(props) => props.theme.projectCardColor};
+        background-color: ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
+
         box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.projectShadowColortwo};
         color:${(props) => props.theme.text};
     }

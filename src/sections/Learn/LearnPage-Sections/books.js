@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const BooksListWrapper = styled.div`
     Button:hover {
-      box-shadow: 0 2px 10px ${props => props.theme.banner1ButtonShadow};
+      box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
 
     }
     .book-heading {
@@ -146,7 +146,7 @@ const BooksSection = () => {
           ))}
         </div>
         <div className="see-more-button">
-          <Button primary title="Checkout all service mesh books" url="/learn/service-mesh-books"/>
+          <Button primary title="Checkout all service mesh books" url="/learn/service-mesh-books" />
         </div>
       </Container>
     </BooksListWrapper>

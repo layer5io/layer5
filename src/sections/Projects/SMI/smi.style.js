@@ -72,14 +72,14 @@ const SMIWrapper = styled.section`
     .feature-block{
         padding: 2.5rem 1.875rem 2.8rem 1.875rem;
         border-radius: 20px;
-        box-shadow: 0 0 ${props => props.theme.projectPageShadowsize} 5px ${props => props.theme.projectShadowColor};
+        box-shadow: 0 0 ${props => props.theme.projectPageShadowsize} 5px ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
         position: relative;
         transition: all 0.3s ease-in;
-        background-color: ${props => props.theme.projectCardColor};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         z-index: 999;
         height: 100%;
         &:hover{
-            border-color: ${props => props.theme.projectShadowColor};
+            border-color: ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
             .thumb-block{
                 border-color: ${props => props.theme.primaryColor};
             }
@@ -148,7 +148,7 @@ const SMIWrapper = styled.section`
         }
     }
     .card{
-        background-color: ${props => props.theme.projectCardColor};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         width: 70%;
         max-width: 62.5rem;
         margin: auto;

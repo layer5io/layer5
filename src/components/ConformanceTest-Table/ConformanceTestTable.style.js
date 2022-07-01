@@ -17,7 +17,8 @@ table {
 		font-size: 0.9rem;
 		line-height: .9rem;
         font-weight: 400;
-        border-bottom: 1px solid ${props => props.theme.projectCardColor};
+        border-bottom: 1px solid ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
+
     }
     th {
         background: #1E2117;
@@ -30,9 +31,9 @@ table {
   
     tr {
 		:nth-child(odd) {
-			background:  ${props => props.theme.projectCardColor};
+			background: ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
 			td {
-				border-right: 1px solid ${props => props.theme.projectCardColor};
+				border-right: 1px solid ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
 			}
 		}
 		:nth-child(even) {

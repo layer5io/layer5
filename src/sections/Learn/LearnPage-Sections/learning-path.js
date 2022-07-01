@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const LearningPathsWrapper = styled.div`
     Button:hover {
-  box-shadow: 0 2px 10px ${props => props.theme.banner1ButtonShadow};
+  box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
     } 
     margin: 3rem 0 4rem;
 
@@ -96,7 +96,7 @@ const LearningPaths = () => {
           ))}
         </Row>
         <div className="see-more-button">
-          <Button primary title="Checkout all learning paths" url="/learn/learning-paths"/>
+          <Button primary title="Checkout all learning paths" url="/learn/learning-paths" />
         </div>
       </Container>
     </LearningPathsWrapper>

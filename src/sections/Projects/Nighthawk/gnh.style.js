@@ -187,7 +187,7 @@ export const CardsContainer = styled.div`
         ;
         margin: 2px;
         padding: 1.5rem;
-        background-color: ${props => props.theme.projectCardColor};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         border-radius: 25px;
         p {
             text-align: left;

@@ -27,10 +27,10 @@ h4, h5{
 }
 
 .press_card { 
-    background: ${props => props.theme.projectCardColor};
+    background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
     transition: 450ms all;
     height: 15rem;
-    border: 1px solid ${props => props.theme.projectShadowColor};
+    border: 1px solid ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
     &:hover{
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }

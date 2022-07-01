@@ -68,11 +68,11 @@ export const FeaturesWrapper = styled.div`
     }
     
     .active-feature {
-      border-color: ${props => props.theme.featureTextCardColor};
+      border-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
       padding-top: 0;
       @media (min-width: 768px){
-        border-color: ${props => props.theme.featureTextCardColor};
-        background-color: ${props => props.theme.featureTextCardColor};
+        border-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#000000"};
         border-radius: 20px;
         padding: 3rem 2.75rem 2rem 2.75rem;
       }

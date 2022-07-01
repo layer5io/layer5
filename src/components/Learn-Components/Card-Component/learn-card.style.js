@@ -11,7 +11,7 @@ const CardWrapper = styled.div`
     }
 
     .card-parent{
-        background: ${props => props.theme.projectCardColor};
+        background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         border-top: 5px solid rgb(117, 232, 168);
         border-radius: 0.25rem;
         min-height: 16rem;
@@ -22,7 +22,7 @@ const CardWrapper = styled.div`
         position: relative;
     }
     .card-2{
-        background: ${props => props.theme.learningCard};
+        background: ${props => props.theme.DarkTheme ? "#1D1817" : "#E6E6E6"};
 
     }
     .card-head{
@@ -44,7 +44,7 @@ const CardWrapper = styled.div`
     .card-desc{
         padding: 0 1rem;
         .summary {
-            color:${props => props.theme.summaryText};
+            color:${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.75)" : "rgba(0, 0, 0, 0.75)"};
         }
         p{
             font-size: 1rem;

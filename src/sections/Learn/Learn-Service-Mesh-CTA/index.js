@@ -9,7 +9,7 @@ const ServiceMeshImage = "./service-mesh.svg";
 const LearnServiceMeshCTAWrapper = styled.div`
     background-color:${props => props.theme.navDropBackground};
     Button:hover {
-      box-shadow: 0 2px 10px ${props => props.theme.banner1ButtonShadow};
+      box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
     }
     padding: 5rem 0;
     margin-top: 2rem;
@@ -40,10 +40,10 @@ const LearnServiceMeshCTA = () => {
         <Row className="section-wrapper" Vcenter>
           <Col className="content" sm={12} md={6} lg={6}>
             <h2>Learn to service mesh with interactive labs</h2>
-            <Button secondary title="Let's Learn" url="/learn/service-mesh-labs"/>
+            <Button secondary title="Let's Learn" url="/learn/service-mesh-labs" />
           </Col>
           <Col sm={12} md={6} lg={6}>
-            <StaticImage src={ServiceMeshImage} alt="Learn how to Service Mesh" objectFit="contain"/>
+            <StaticImage src={ServiceMeshImage} alt="Learn how to Service Mesh" objectFit="contain" />
           </Col>
         </Row>
       </Container>

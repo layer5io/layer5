@@ -6,7 +6,7 @@ export const PerfbytesPodcast = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    color: ${(props) => props.theme.blogLightText};
+    color: ${(props) => props.theme.DarkTheme ? "#737373" : "#222"};
     font-style: italic;
     text-align: left;
     border-left: 2px solid ${(props) => props.theme.secondaryColor};

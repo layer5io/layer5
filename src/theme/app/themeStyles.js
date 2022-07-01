@@ -58,46 +58,45 @@ const lighttheme = {
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
   saffronLightColor: "#EAD07D",
-  featureShadowColor: "rgba(0, 0, 0, 0.05)",
-  projectCardColor: "#FFFFFF",
-  projectShadowColor: "#E6E6E6",
-  projectCardHoverColor: "#3c494f",
-  projectIconColor: "#F3F3F3",
-  banner1ButtonShadow: "rgb(0 0 0 / 40%)",
-  sideText: "#3c494f",
-  sideTextDark: "#b3b3b3",
-  sideTextLight: "#b3b3b3",
-  featureTextCardColor: "#000000",
-  communityText: "rgba(0, 0, 0, 0.6)",
-  subscribeSection: "#FAFAFA",
-  projectsPageCardShadowColor: "lightgrey",
-  projectPageShadowsize: "10px",
-  learningCard: "#E6E6E6",
-  summaryText: "rgba(0, 0, 0, 0.75)",
-  verticalSubtittleColor: "rgb(160, 160, 160)",
-  invertColor: "none",
-  backSVGColor: "#3c494f",
-  navDropBackground: "rgb(250, 250, 250)",
-  siteLinkBrightness: "0.5",
-  learnInfoText: "rgba(0, 0, 0, 0.7)",
-  meshInterfaceLogoFilter: "none",
-  featureBlockBG: "#EBFCF8",
-  tagLinks: "#F0F0F0",
-  projectShadowsize: "30px",
-  blogPostColor: "#e5e5e5",
+
+  //Shadows Colors
   slideShadow: "rgba(0, 179, 159, 0.5)",
   handBookCardShadow: "rgba(0, 0, 0, 0.1)",
-  LandscapetabsColor: "#3c494f",
+  profileCardShadow: "rgba(0, 0, 0, 0.20)",
+  blogShadowColor: "rgba(0, 0, 0, 0.20)",
+  projectShadowColortwo: "rgba(0, 0, 0, 0.40)",
+
+  // Shadow Sizes
+  projectPageShadowsize: "10px",
+  projectShadowsize: "30px",
+
+  // Even colomn color fo Tables
   eventcolumnColor: "#efefef",
+
+  //Brightness
+  siteLinkBrightness: "0.5",
+
+  //Invert Colors in dark theme(Usually for svg)
+  invertColor: "none",
+  meshInterfaceLogoFilter: "none",
+
+  //Specefic Purpose Colors
+  verticalSubtittleColor: "rgb(160, 160, 160)",
+  backSVGColor: "#3c494f",
+  navDropBackground: "rgb(250, 250, 250)",
+  featureBlockBG: "#EBFCF8",
+  tagLinks: "#F0F0F0",
+  blogPostColor: "#e5e5e5",
+  LandscapetabsColor: "#3c494f",
   SMITableBottomBorder: "#efefef",
   profileBackColor: "#3c494f",
-  profileCardShadow: "rgba(0, 0, 0, 0.20)",
   programBackColor: "rgba(247, 247, 247, 1)",
   accordionColor: "#1e2117",
-  projectShadowColortwo: "rgba(0, 0, 0, 0.40)",
   highlightBlogColor: "#eeeeee",
-  blogShadowColor: "rgba(0, 0, 0, 0.20)",
-  blogLightText: "#222",
+
+  // Subscribe Section
+  subscribeSection: "#FAFAFA",
+  DarkTheme: false,
 
 };
 export const darktheme = {
@@ -155,32 +154,17 @@ export const darktheme = {
   // saffron (dark yellow)
   highlightColor: "#EBC017",
   saffronColor: "#EBC017",
-
+  DarkTheme: true,
   // flax (light yellow)
   highlightLightColor: "#EAD07D",
   saffronLightColor: "#EAD07D",
-  featureShadowColor: "rgba(0, 0, 0, 0.05)",
-  projectCardColor: "#212121",
-  projectShadowColor: "#00d3a9",
-  projectCardHoverColor: "#FFFFFF",
-  projectIconColor: "#212121",
-  featureTextCardColor: "#212121",
-  banner1ButtonShadow: "rgb(255 255 255 / 40%)",
-  sideText: "#dee3de",
-  sideTextDark: "#737373",
-  sideTextLight: "#737373",
-  communityText: "rgba(255, 255, 255, 0.6)",
   subscribeSection: "#1D1D1D",
-  projectsPageCardShadowColor: "#00d3a9",
   projectPageShadowsize: "5px",
-  learningCard: "#1d1817",
-  summaryText: "rgba(255, 255, 255, 0.75)",
   verticalSubtittleColor: "rgb(140, 140, 140)",
   invertColor: "invert(100%)",
   backSVGColor: "#FFFFFF",
   navDropBackground: "rgb(20, 20, 20)",
   siteLinkBrightness: "1.0",
-  learnInfoText: "rgba(255, 255, 255, 0.7)",
   meshInterfaceLogoFilter: "90%",
   featureBlockBG: "rgb(20 23 20)",
   tagLinks: "#212121",
@@ -198,7 +182,6 @@ export const darktheme = {
   projectShadowColortwo: "#00d3a9",
   highlightBlogColor: "rgb(35, 35, 35)",
   blogShadowColor: "#00d3a9",
-  blogLightText: "#737373",
 
 
 };

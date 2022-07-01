@@ -40,8 +40,8 @@ export const FeaturesSectionContainer = styled.div`
 `;
 
 export const FeatureBlockContainer = styled.div`
-  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.featureShadowColor};
-  background-color: ${(props) => props.theme.projectCardColor};
+  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.05)" :"rgba(0, 0, 0, 0.05)"};
+  background-color:	${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
   border-radius: 1.25rem;
   transition: all 0.3s ease-in;
   display: flex;
@@ -77,7 +77,7 @@ export const FeatureTitleInfoContainer = styled.div`
 
   p {
     font-size: 18px;
-    color: ${(props) => props.theme.sideText};
+    color: ${(props) => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
     text-align: center;
     font-weight: 300;
   }
@@ -109,6 +109,6 @@ export const CountBlockContainer = styled.div`
   }
   .count-desc {
     font-size: 0.94rem;
-    color: ${(props) => props.theme.sideText};
+    color: ${(props) => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
   }
 `;

@@ -10,10 +10,9 @@ const ProjectItemWrapper = styled.section`
 
             h4 {
                 font-weight: 500;
-                color: ${props => props.theme.sideTextLight};
-            }
+                color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};            }
             h2{
-                color: ${props => props.theme.sideText};
+                color: ${props => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
                 margin-bottom: 40px;
 
                 span{
@@ -52,10 +51,10 @@ const ProjectItemWrapper = styled.section`
     .project__block__inner { 
         display: flex;
         flex-direction: column;
-        background: ${props => props.theme.projectCardColor};
-        box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.projectShadowColor};
+        background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
         &:hover{
-            box-shadow: 0px 0px 5px ${props => props.theme.projectCardHoverColor};
+            box-shadow: 0px 0px 5px ${props => props.theme.DarkTheme ? "#FFFFFF" : "#3c494f"};
         }
         padding: 12% 6% 12% 6%;
         height: 220px;
