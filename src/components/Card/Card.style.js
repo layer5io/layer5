@@ -5,10 +5,10 @@ export const CardWrapper = styled.div`
         margin-bottom: 2rem;
         border-radius: 0.5rem;
         background-Color: ${props => props.theme.projectCardColor};
-        box-shadow: 0px 2px 6px 0px ${props => props.theme.projectShadowColor};
+        box-shadow: 0px 2px 6px 0px ${props => props.theme.blogShadowColor};
         transition: all 0.3s ease-in;
         &:hover{
-            box-shadow: 0px 2px 15px 4px ${props => props.theme.projectCardHoverColor};
+            box-shadow: 0px 2px 15px 4px ${props => props.theme.handBookCardShadow};
             .post-thumb-block{
                 .gatsby-image-wrapper, .old-gatsby-image-wrapper{
                     transform: scale3d(1.1,1.1,1);

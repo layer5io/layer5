@@ -8,6 +8,8 @@ const SubscribeWrapper = styled.div`
         font-weight: 600;
         font-size:1.875rem;
         margin:1.25rem 0;
+        color:${props => props.theme.text};
+
     }
     h2 span{
         color:${props => props.theme.secondaryColor};
