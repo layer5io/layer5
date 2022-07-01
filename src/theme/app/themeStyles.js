@@ -97,6 +97,8 @@ const lighttheme = {
   projectShadowColortwo: "rgba(0, 0, 0, 0.40)",
   highlightBlogColor: "#eeeeee",
   blogShadowColor: "rgba(0, 0, 0, 0.20)",
+  blogLightText: "#222",
+
 };
 export const darktheme = {
   black: "#000000",
@@ -196,7 +198,7 @@ export const darktheme = {
   projectShadowColortwo: "#00d3a9",
   highlightBlogColor: "rgb(35, 35, 35)",
   blogShadowColor: "#00d3a9",
-
+  blogLightText: "#737373",
 
 
 };

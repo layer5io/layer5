@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 const BlogPageWrapper = styled.div`
+    div{
+        color: ${props => props.theme.text}; 
 
+    }
     ul {
     list-style: none; /* Remove default bullets */
      }
