@@ -6,6 +6,7 @@ import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import EventPageWrapper from "./EventSingle.style";
 import Button from "../../../reusecore/Button";
+import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
 
 const checkSpeaker = (speaker) => {
 
@@ -79,6 +80,9 @@ const EventSingle = ({ data }) => {
                 </Button>
               </div>
             </div>
+            <CTA_Bottom
+              category={"MeshMap"}
+            />
             {/* <RelatedPosts
             category={frontmatter.category}
             tags={frontmatter.tags}

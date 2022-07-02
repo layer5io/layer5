@@ -11,6 +11,7 @@ const CTA_BottomWrapper = styled.div`
     height: 16rem;
     margin: 2rem auto 1.5rem;
     box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.1);
+    background: rgba(201, 252, 246, 0.3);
     border-radius: 0.5rem;
 
     a {
@@ -20,7 +21,7 @@ const CTA_BottomWrapper = styled.div`
     img {
         width: 16rem;
         height: 16rem;
-        object-fit: cover;
+        object-fit: contain;
         pointer-events: none;
         border-radius: 0 0.5rem 0.5rem 0;
     }
@@ -29,12 +30,13 @@ const CTA_BottomWrapper = styled.div`
         padding: 0.5rem;
         display: flex;
         flex: auto;
-        background: rgba(201, 252, 246, 0.3);
-        text-align: center;
+        text-align: left;
         align-items: center;
         height: 100%;
 
         p {
+            margin-top: 0.5rem;
+            width: 95%;
             flex: 0 0 75%;
         }
         a {
@@ -49,12 +51,6 @@ const CTA_BottomWrapper = styled.div`
     }
 
     @media screen and (max-width: 699px) {
-        button {
-            min-width: auto;
-        }
-    }
-
-    @media screen and (max-width: 550px) {
         display: block;
         width: 18rem;
         height: 18rem;
@@ -77,9 +73,14 @@ const CTA_BottomWrapper = styled.div`
             background: none;
             padding: 4rem 1rem;
             z-index: 1;
+            text-align: center;
 
-            p {
-                color: white;
+            p{
+              width: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              display: block;
+              text-overflow: ellipsis;
             }
         }
     }
@@ -94,7 +95,10 @@ export const CTA_Bottom = ({ alt, button_text, category, content, external_link,
       { category ? (
         <>
           <div className="cta-content">
-            <p>{Categories[category]["Content"]}</p>
+            <div>
+              <h3>{Categories[category]["Heading"]}</h3>
+              <p>{Categories[category]["Content"]}</p>
+            </div>
             <Button primary title={Categories[category]["Button_Text"]} url={Categories[category]["Link"]} external={Categories[category]["Link_external"]} />
           </div>
           <img src={Categories[category]["Image"]} alt={Categories[category]["Image_Alt"]} />
