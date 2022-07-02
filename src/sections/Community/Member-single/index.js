@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
@@ -183,7 +183,6 @@ const MemberSingle = ({ frontmatter, body }) => {
                         isOpen={modalIsOpen}
                         onRequestClose={closeModal}
                         className="Modal"	
-                        id="open-modal"							
                         overlayClassName="Overlay"			
                         ariaHideApp={false}
                         contentLabel="Executive Bio"
