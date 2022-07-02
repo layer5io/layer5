@@ -56,7 +56,7 @@ const BooksListWrapper = styled.div`
             padding: 0 0.75rem;
         }
         &:hover{
-            box-shadow: 0px 0px 20px ${props => props.theme.handBookCardShadow};
+            box-shadow: 0px 0px 20px ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.1)"};
             .arrow_icon{
                 left: 0.2rem;
                 color: white;

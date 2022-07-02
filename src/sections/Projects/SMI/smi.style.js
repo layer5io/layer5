@@ -95,7 +95,7 @@ const SMIWrapper = styled.section`
         }
     }
     .section-3{
-        background-color: ${props => props.theme.subscribeSection};
+        background-color: ${props => props.theme.DarkTheme ? "#1D1D1D" : "FAFAFA"};
         width: 100%;
         padding:7rem 0rem;
     }
@@ -104,7 +104,7 @@ const SMIWrapper = styled.section`
         width: 90%;
         max-width: 73.75rem;
         margin: 20rem auto 0 auto;
-        background-color: ${props => props.theme.featureBlockBG};
+        background-color: ${props => props.theme.DarkTheme ? "rgb(20 23 20)" : "#EBFCF8"};
         position: absolute;
         z-index: 1;
         left: 0;

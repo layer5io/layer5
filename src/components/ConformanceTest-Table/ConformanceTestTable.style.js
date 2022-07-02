@@ -17,7 +17,7 @@ table {
 		font-size: 0.9rem;
 		line-height: .9rem;
         font-weight: 400;
-        border-bottom: 1px solid ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
+        border-bottom: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 
     }
     th {
@@ -31,15 +31,15 @@ table {
   
     tr {
 		:nth-child(odd) {
-			background: ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
+			background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 			td {
-				border-right: 1px solid ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
+				border-right: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 			}
 		}
 		:nth-child(even) {
-			background: ${props => props.theme.eventcolumnColor};
+			background: ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
 			td {
-				border-right: 1px solid ${props => props.theme.eventcolumnColor};
+				border-right: 1px solid ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
 			}
 		}
 		:last-child {

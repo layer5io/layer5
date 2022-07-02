@@ -42,7 +42,7 @@ export const AccordionTitleWrapper = styled(AccordionItemHeading)`
       }
     }
     &[aria-expanded='true'] {
-      background: ${props => props.theme.accordionColor};
+      background: ${props => props.theme.DarkTheme ? "rgb(140, 140, 140)" : "#1e2117"};
     }
   }
 

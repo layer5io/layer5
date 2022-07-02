@@ -5,10 +5,10 @@ export const CardWrapper = styled.div`
         margin-bottom: 2rem;
         border-radius: 0.5rem;
         background-Color:${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
-        box-shadow: 0px 2px 6px 0px ${props => props.theme.blogShadowColor};
+        box-shadow: 0px 2px 6px 0px ${props => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.20)"};
         transition: all 0.3s ease-in;
         &:hover{
-            box-shadow: 0px 2px 15px 4px ${props => props.theme.handBookCardShadow};
+            box-shadow: 0px 2px 15px 4px ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.1)"};
             .post-thumb-block{
                 .gatsby-image-wrapper, .old-gatsby-image-wrapper{
                     transform: scale3d(1.1,1.1,1);

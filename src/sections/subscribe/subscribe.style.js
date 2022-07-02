@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SubscribeWrapper = styled.div`
-    background-color:${props => props.theme.subscribeSection};
+    background-color:${props => props.theme.DarkTheme ? "#1D1D1D" : "FAFAFA"};
     padding: 3.125rem 0.625rem;
     overflow: hidden;
     h2{

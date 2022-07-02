@@ -89,7 +89,7 @@ const NavigationWrap = styled.header`
     display: grid;
     grid-template-columns: 35% 65%;
     .hr {
-      background: ${props => props.theme.navDropBackground};
+      background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
       display: flex;
       flex-direction: column;
       position: relative;

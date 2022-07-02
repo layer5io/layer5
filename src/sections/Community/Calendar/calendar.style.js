@@ -37,11 +37,11 @@ const CalendarStyleWrapper = styled.div`
 
     }
     .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
-        background: ${props => props.theme.secondaryColor};
+        background: ${props => props.theme.keppelColor};
         min-width: 7.5rem;
         padding: 1rem;
         &:hover{
-            color: ${props => props.theme.headingColor};
+            color: ${props => props.theme.text};
             background: ${props => props.theme.primaryLightColorTwo}; 
         }
 

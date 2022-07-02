@@ -15,24 +15,25 @@ export const TableWrapper = styled.div`
 			padding: 0.3rem;
 			height: 4rem;
 			color: ${props => props.theme.text};
+			background-color: ${props => props.theme.DarkTheme ? "rgb(21, 21, 21, 0.1)" : "rgb(255, 255, 255, 0.1)"};
 			text-align: center;
 			font-size: 0.9rem;
 			line-height: .9rem;
 			font-weight: 400;
 			border-bottom: 1px solid #efefef;
 			a {
-				color: ${props => props.theme.darkJungleGreenColor};
+				color: ${props => props.theme.text};
 				&:hover {
 					color: ${props => props.theme.primaryLightColor};
 				}
 			}
 			:first-child {
-				background-color: ${props => props.theme.shadowColor};
+				background-color: ${props => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.1)" : "rgba(0,0,0,0.05)"};
 				font-weight: 600;
 			}
 		}
 		th {
-			background: ${props => props.theme.primaryColor};
+			background-color: ${props => props.theme.DarkTheme ? "rgb(14 14 14)" : "#3c494f"};
 			color: ${props => props.theme.white};
 			height: 4rem;
 			font-weight: 600;
@@ -41,7 +42,6 @@ export const TableWrapper = styled.div`
 		}
 	
 		tr {
-			background: ${props => props.theme.white};
 			td {
 			}
 			:nth-last-child(-n+2) {
@@ -54,7 +54,7 @@ export const TableWrapper = styled.div`
 				background: ${props => props.theme.saffronLightColor};
 			}
 			&:hover {
-				background-color: ${props => props.theme.secondaryLightColorTwo};
+				background-color: ${props => props.theme.DarkTheme ? "rgb(50 50 50)" : "#F3FFFD"};
 				border-color:  ${props => props.theme.shadowColor};
 			}
 		}

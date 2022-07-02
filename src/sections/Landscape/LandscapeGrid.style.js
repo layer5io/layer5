@@ -133,7 +133,7 @@ export const LandscapePageWrapper = styled.div`
 		font-size: 1rem;
 		font-family: 'Open Sans';
 		font-weight: 400;
-		color: ${props => props.theme.verticalSubtittleColor};
+		color: ${props => props.theme.DarkTheme ? "rgb(140, 140, 140)" :"rgb(160, 160, 160)"};
 	}
 	.dashLine-0 {
 		border-bottom: 1px dashed #a0a0a0;
@@ -409,7 +409,7 @@ export const LandscapePageWrapper = styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
-		background-color: ${props => props.theme.LandscapetabsColor};
+		background-color: ${props => props.theme.DarkTheme ? "#121212" :"3C494F"};
 		border: 1px solid ${props => props.theme.shadowLightColor};
 		&:nth-child(1){
 			border-top-left-radius: .5rem;

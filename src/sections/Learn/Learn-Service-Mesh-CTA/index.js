@@ -7,7 +7,7 @@ import Button from "../../../reusecore/Button";
 const ServiceMeshImage = "./service-mesh.svg";
 
 const LearnServiceMeshCTAWrapper = styled.div`
-    background-color:${props => props.theme.navDropBackground};
+    background-color:${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
     Button:hover {
       box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
     }

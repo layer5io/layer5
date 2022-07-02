@@ -34,7 +34,7 @@ table {
         text-align: center;
         font-size: 0.9rem;
         font-weight: 400;
-        border-bottom: 1px solid ${props => props.theme.SMITableBottomBorder};
+        border-bottom: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "efefef"};
     }
     th {
         background: #1E2117;
