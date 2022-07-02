@@ -36,7 +36,7 @@ export const query = graphql`query MemberBySlug($slug: String!) {
 }
 `;
 
-const MemberSinglePage = ({data}) => {
+const MemberSinglePage = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>

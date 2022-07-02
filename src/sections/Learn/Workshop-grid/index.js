@@ -57,19 +57,19 @@ const WorkshopsPage = () => {
   );
 
   const toggleActive = (id) => {
-    if(open){
-      if(ID === id){
+    if (open){
+      if (ID === id){
         setOpen(false);
         setContent(false);
         setID("");
-      } else{
+      } else {
         setOpen(false);
         setContent(false);
         setID(id);
         setContent(true);
         setOpen(true);
       }
-    } else{
+    } else {
       setID(id);
       setContent(true);
       setOpen(true);
@@ -84,8 +84,8 @@ const WorkshopsPage = () => {
         <Container>
           <div className="workshop-grid-wrapper">
             <Row>
-              {data.allMdx.nodes.map(({id, frontmatter, fields, body }) => (
-                <Col {...content && ID === id ? {xs:12, sm:12, lg:12} : {xs:12, sm:6, lg:4} } key={id} className="workshop-grid-col">
+              {data.allMdx.nodes.map(({ id, frontmatter, fields, body }) => (
+                <Col {...content && ID === id ? { xs: 12, sm: 12, lg: 12 } : { xs: 12, sm: 6, lg: 4 } } key={id} className="workshop-grid-col">
                   <div className="workshop-grid-card">
                     <WorkshopCard frontmatter={frontmatter} content={content} ID={ID} id={id} />
                     <div className={content && ID === id ? "active" : "text-contents"}>

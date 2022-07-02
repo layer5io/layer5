@@ -145,7 +145,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
 }
 `;
 
-const Events = ({data, pageContext}) => {
+const Events = ({ data, pageContext }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>

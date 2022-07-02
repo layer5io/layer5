@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import AnimatedTerminal from "../../Animated-terminal";
 
 const SteppedAnimatedTerminal = ({ activeIndex, steps }) => {

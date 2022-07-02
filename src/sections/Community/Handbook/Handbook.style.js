@@ -462,6 +462,30 @@ width: 90%;
       width: auto ;
   }
 }
+.process {
+  margin: 10px auto;
+  border-left: solid 2px ${(props) => props.theme.tertiaryColor};
+  padding: 0px 20px 0px 20px;
+} 
+.process .item {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.7;
+  position: relative;
+}
+.item::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: block;
+  border: 3px solid ${(props) => props.theme.tertiaryColor};
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.secondaryColor};
+  top: 25px;
+  left: -32px;
+}
 }
 
 `;

@@ -32,7 +32,7 @@ export const PositionApplyWrapper = styled.div`
 `;
 
 const PositionApply = () => {
-  return(
+  return (
     <PositionApplyWrapper>
       <div className="apply-now">
         <div className="apply">

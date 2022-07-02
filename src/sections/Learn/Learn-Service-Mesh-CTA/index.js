@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
-import {Col, Container, Row} from "../../../reusecore/Layout";
+import { Col, Container, Row } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 
 const ServiceMeshImage = "./service-mesh.svg";
@@ -31,7 +31,7 @@ const LearnServiceMeshCTAWrapper = styled.div`
 `;
 
 const LearnServiceMeshCTA = () => {
-  return(
+  return (
     <LearnServiceMeshCTAWrapper>
       <Container>
         <Row className="section-wrapper" Vcenter>

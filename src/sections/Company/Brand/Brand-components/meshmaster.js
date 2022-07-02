@@ -1,5 +1,5 @@
 import React from "react";
-import {SRLWrapper} from "simple-react-lightbox";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -52,7 +52,7 @@ const MeshMasterBrand = () => {
             <Col xs={12} sm={4}>
               <img src={MeshMasterText} alt="Meshmaster Text"/>
             </Col>
-            
+
           </Row>
         </SRLWrapper>
       </Row>

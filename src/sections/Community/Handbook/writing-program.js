@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { Link } from "gatsby";
 import { HandbookWrapper } from "./Handbook.style";
@@ -21,7 +21,7 @@ const Writers = () => {
   const [modalIsOpen,setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
-  
+
   const closeModal = () => setIsOpen(false);
 
   return (
@@ -35,7 +35,7 @@ const Writers = () => {
           <div className="content writing_program">
             <h2>What is Layer5 Writing Program?</h2>
             <p>
-            The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content. We collaborate with authors and technologists from around the world to produce high quality articles, blog posts, tutorials and other cloud native resources on Meshery, Kubernetes, service meshes, Docker and related technologies. 
+            The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content. We collaborate with authors and technologists from around the world to produce high quality articles, blog posts, tutorials and other cloud native resources on Meshery, Kubernetes, service meshes, Docker and related technologies.
             </p>
 
             <h2>Why should you participate?</h2>
@@ -164,33 +164,43 @@ const Writers = () => {
             </Row>
 
             <h2>What is the process?</h2>
-            <p>If you’re interested in the Layer5 Writing Program, please apply. Fill out the Content Form to get started.</p>
 
-            <Button primary className="open-modal-btn" onClick={openModal} title="Layer5 Content Form" />
-            <Modal
-              isOpen={modalIsOpen}
-              onRequestClose={closeModal}
-              className="Modal"								
-              overlayClassName="Overlay"			
-              ariaHideApp={false}
-              contentLabel="Content Form"
-            >
-              <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
-              <h2 className="modal-heading">Layer5 Content Form</h2>
-              <div className="content-form">
-                <iframe
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSf0BlMvmeEVsy4x6fMdI2cWcsnyVRSCv7b8e0Ios1hEopjOZQ/viewform"
-                  loading="lazy"
-                  className="form-frame"
-                />
+            <div className="process">
+              <div className="item">
+                <p>If you’re interested in the Layer5 Writing Program, please submit your information (and proposed topic, if you have one) to get started. <i>Don't have a topic? Don't worry, we have plenty of suggestions for you.</i></p>
+
+                <Button primary className="open-modal-btn" onClick={openModal} title="Layer5 Content Form" />
+                <Modal
+                  isOpen={modalIsOpen}
+                  onRequestClose={closeModal}
+                  className="Modal"
+                  overlayClassName="Overlay"
+                  ariaHideApp={false}
+                  contentLabel="Content Form"
+                >
+                  <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
+                  <h2 className="modal-heading">Layer5 Content Form</h2>
+                  <div className="content-form">
+                    <iframe
+                      src="https://docs.google.com/forms/d/e/1FAIpQLSf0BlMvmeEVsy4x6fMdI2cWcsnyVRSCv7b8e0Ios1hEopjOZQ/viewform"
+                      loading="lazy"
+                      className="form-frame"
+                    />
+                  </div>
+                </Modal>
               </div>
-            </Modal>
-            <p>Follow the instructions to contribute to your choice of content. Upon being accepted, you'll work with a coordinator on the content team to decide on a topic, develop a project plan, and discuss submission details.</p>
+              <div className="item">
+                <p>Upon being accepted, you'll work with a coordinator on the content team to decide on a topic, develop a project plan, and discuss submission details.</p>
+              </div>
+            </div>
+
             <h3>Additional Resources</h3>
             <ul>
-              <li><a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#contributing-to-layer5s-blogs">Contributing to Layer5 Blogs</a></li>
+              <li><a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-a-blog-post">Contributing to Layer5 Blogs</a></li>
+              <li><a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#adding-a-resource">Contributing to Layer5 Resources</a></li>
               <li>Join the <a href="https://discuss.layer5.io/">Layer5 Discussion Forum</a></li>
               <li>Explore our <Link to="/resources">Resource Library</Link></li>
+              <li><Link to="/learn">Free service mesh training</Link></li>
             </ul>
 
             <TocPagination />

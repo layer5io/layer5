@@ -44,4 +44,3 @@ export const options =  [
       { id: 6, value: "Traefik Mesh", label: "Traefik Mesh" }]
   },
 ];
-  

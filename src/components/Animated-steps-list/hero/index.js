@@ -5,7 +5,7 @@ import Code from "../../../components/CodeBlock";
 
 
 const Hero = ({ title, initialdescription, enddescription, subtitle, links, code }) => {
-  return(
+  return (
     <HeroWrapper>
       <div className="content">
         <h5 className="subtitle">{subtitle}</h5>

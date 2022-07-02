@@ -23,7 +23,7 @@ const SlackNotif = styled.div`
 
 const SlackLinkNotif = () => {
 
-  return(
+  return (
     <SlackNotif>
       <div className="container">
         <div className="text"><span className="notice"> !</span> If you have not already joined us in Slack, jump in! <Button secondary title="Join Now" url="http://slack.layer5.io/" external={true}/></div>

@@ -4,8 +4,8 @@ import { Link } from "gatsby";
 import bookImage from "./The-Enterprise-path-to-service-mesh-Architectures-2nd-Edition.png";
 import ServiceMeshWrapper from "./whatServiceMesh.style";
 
-const WhatServiceMesh = ({gradient}) => {
-  if(gradient === undefined)
+const WhatServiceMesh = ({ gradient }) => {
+  if (gradient === undefined)
     gradient = true;
   return (
     <ServiceMeshWrapper gradient={gradient}>

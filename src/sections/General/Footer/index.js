@@ -51,6 +51,11 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
+                    <Link className="category-link" to="/resources">
+                      Resource Library
+                    </Link>
+                  </li>
+                  <li>
                     <Link
                       className="category-link"
                       to="/learn/service-mesh-books"
@@ -102,16 +107,6 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/careers/programs">
-                      Programs
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="category-link" to="/company/faq">
-                      FAQs
-                    </Link>
-                  </li>
-                  <li>
                     <a
                       className="category-link"
                       href="https://discuss.layer5.io"
@@ -119,15 +114,39 @@ const Footer = () => {
                       Forum
                     </a>
                   </li>
+                  <li>
+                    <Link className="category-link" to="/company/faq">
+                      FAQs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/careers/programs">
+                      Programs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/community/handbook">
+                      Handbook
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="footer-sections odd-col">
                 <h3 className="section-title">
                   <Link className="title-link" to="/projects">
-                    PROJECTS
+                    SOLUTIONS
                   </Link>
                 </h3>
                 <ul className="section-categories">
+                  <li>
+                    <Link
+                      className="category-link"
+                      to="/cloud-native-management/meshmap"
+                    >
+                      MeshMap
+                      <span className="new-label">NEW</span>
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       className="category-link"
@@ -144,17 +163,17 @@ const Footer = () => {
                   <li>
                     <Link
                       className="category-link"
-                      to="/projects/service-mesh-interface-conformance"
+                      to="/docker-extension-meshery"
                     >
-                      Service Mesh Interface
+                      Docker Extension
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="category-link"
-                      to="/service-mesh-landscape"
+                      to="/projects/service-mesh-interface-conformance"
                     >
-                      Service Mesh Landscape
+                      Service Mesh Interface
                     </Link>
                   </li>
                   <li>
@@ -165,6 +184,7 @@ const Footer = () => {
                       Service Mesh Performance
                     </Link>
                   </li>
+
                 </ul>
               </div>
               <div className="footer-sections even-col">
@@ -182,6 +202,11 @@ const Footer = () => {
                   <li>
                     <Link className="category-link" to="/company/brand">
                       Brand
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="category-link" to="/pricing">
+                      Pricing
                     </Link>
                   </li>
                   <li>

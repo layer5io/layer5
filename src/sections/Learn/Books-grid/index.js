@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "swiper/swiper-bundle.css";
 import { BooksPageWrapper } from "./BooksGrid.style";
 
-const BooksPage = ({hide_path}) => {
+const BooksPage = ({ hide_path }) => {
   const data = useStaticQuery(
     graphql`query allBooks {
   allMdx(
@@ -73,7 +73,7 @@ const BooksPage = ({hide_path}) => {
       <h2 className="sub-heading">Learn to service mesh from the world’s authority </h2>
       <div className="books_caraousel">
         <Slider {...settings}>
-          {data.allMdx.nodes.map(({id, frontmatter, fields }) => (
+          {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
             <div className="book_image" key={id}>
               <div className="blog-slider_img">
                 <img src={frontmatter.cover.publicURL} alt={frontmatter.title} />

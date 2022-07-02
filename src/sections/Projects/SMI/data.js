@@ -4,7 +4,7 @@ const data = {
     {
       name: "Project Goals",
       link: "#",
-      services:[
+      services: [
         {
           content: "Provide users with a compatibility matrix identifying the SMI features that are supported per service mesh.",
           className: "--on"
@@ -17,7 +17,7 @@ const data = {
     },{
       name: "Project Objectives",
       link: "#",
-      services:[
+      services: [
         {
           content: "Define what it means to be in conformance with the SMI specifications.",
           className: "--on"
@@ -31,9 +31,9 @@ const data = {
           className: "--on"
         }
       ],
-    },   
+    },
   ],
-  testDetails:{
+  testDetails: {
     "0.6.0": [
       {
         test_no: "TA - 1.1.1",

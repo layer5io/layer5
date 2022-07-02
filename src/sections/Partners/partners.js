@@ -23,6 +23,7 @@ export const partners = [
     partnerId: "utaustin",
     //imageRoute: "http://www.ece.utexas.edu/speakers/lee-calcote",
     moreInfo: "In partnership with faculty of the Cockrell School of Engineering at The University of Texas at Austin, graduate students engage in research on the affects of hardware architectures and the performance of software-based networking.Ph.D. candidates leverage Meshery in research and analysis of affect and overhead service mesh architectures have on when running distributed systems. Learn more about our collaborative research"
+
   }, {
     name: "Google Summer of Code",
     desc: "Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school. Learn more about our mentoring",

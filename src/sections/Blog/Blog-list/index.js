@@ -21,7 +21,7 @@ const BlogList = ({
   const [postsPerPage] = useState(10);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  let {totalCount, nodes} = data.allMdx;
+  let { totalCount, nodes } = data.allMdx;
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
     nodes,
