@@ -8,6 +8,7 @@ import RelatedResources from "../../../components/Related-Resources";
 import ResourcePageWrapper from "./resourceSingle.style";
 import RelatedResourcesFactory from "../../../components/Related-Resources/relatedResourcesFactory";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
+import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
 
 
 const ResourceSingle = ({ data }) => {
@@ -63,6 +64,10 @@ const ResourceSingle = ({ data }) => {
           <SRLWrapper>
             <MDXRenderer>{body}</MDXRenderer>
           </SRLWrapper>
+
+          <CTA_Bottom
+            category={"MeshMap"}
+          />
 
           <div className="backBtn">
             <Link to="/resources">
