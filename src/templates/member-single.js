@@ -35,6 +35,13 @@ export const query = graphql`query MemberBySlug($slug: String!) {
         extension
         publicURL
       }
+      executive_image {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED)
+        }
+        extension
+        publicURL
+      }
     }
   }
 }

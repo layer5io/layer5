@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
@@ -36,6 +36,7 @@ const MemberSingle = ({ frontmatter, body }) => {
     badges,
     bio,
     executive_bio,
+    executive_image,
     executive_position,
     company,
   } = frontmatter;
@@ -181,7 +182,8 @@ const MemberSingle = ({ frontmatter, body }) => {
                       <Modal
                         isOpen={modalIsOpen}
                         onRequestClose={closeModal}
-                        className="Modal"								
+                        className="Modal"	
+                        id="open-modal"							
                         overlayClassName="Overlay"			
                         ariaHideApp={false}
                         contentLabel="Executive Bio"
@@ -191,8 +193,7 @@ const MemberSingle = ({ frontmatter, body }) => {
                           <h2 className="modal-heading">Executive Bio</h2>
                           <Image
                             className="bio-image"
-                            {...image_path}
-                            imgStyle={{ objectFit: "contain" }}
+                            {...executive_image}
                             alt={name}
                           />
                           <h3>{name}</h3>
