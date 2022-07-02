@@ -47,8 +47,8 @@ const CalendarStyleWrapper = styled.div`
 
     }
     .fc .fc-button-primary,
-    .fc .fc-button-primary:disabled {
-        cursor: pointer;
+    .fc .fc-button-primary:disabled{
+        cursor: pointer; 
         font-family: inherit;
         text-decoration: none;
         text-transform: capitalize; 
