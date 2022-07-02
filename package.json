@@ -55,7 +55,7 @@
     "gatsby-plugin-sharp": "^3.14.3",
     "gatsby-plugin-sitemap": "^3.3.0",
     "gatsby-plugin-styled-components": "^4.14.0",
-    "gatsby-redirect-from": "^0.4.3",
+    "gatsby-redirect-from": "^0.4.4",
     "gatsby-source-filesystem": "^3.14.0",
     "gatsby-transformer-sharp": "^3.14.0",
     "gbimage-bridge": "^0.2.1",
