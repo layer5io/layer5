@@ -86,7 +86,7 @@ const Sidebar = ({ pageContext }) => {
           {categories &&
             categories.map((category) => (
               <li key={category.fieldValue}>
-                <Link to={`/blog/category/${slugify(category.fieldValue)}`} >
+                <Link to={`/blog/category/${slugify(category.fieldValue)}`} activeStyle={{ color: "#00b39f" }}>
                   <span>{category.fieldValue}</span>
                   <em>({category.totalCount})</em>
                 </Link>

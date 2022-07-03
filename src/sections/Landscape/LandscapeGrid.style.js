@@ -409,7 +409,7 @@ export const LandscapePageWrapper = styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
-		background-color: ${props => props.theme.DarkTheme ? "#121212" :"3C494F"};
+		background-color: ${props => props.theme.DarkTheme ? "#121212" :"#3C494F"};
 		border: 1px solid ${props => props.theme.shadowLightColor};
 		&:nth-child(1){
 			border-top-left-radius: .5rem;
