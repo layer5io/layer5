@@ -10,8 +10,6 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
-import { CookiesProvider } from "react-cookie";
-import { useCookies } from "react-cookie";
 import { darktheme } from "../../../theme/app/themeStyles";
 import  lighttheme from "../../../theme/app/themeStyles";
 import NavigationWrap from "./navigation.style";

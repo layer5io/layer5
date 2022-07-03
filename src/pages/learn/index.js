@@ -8,8 +8,6 @@ import Footer from "../../sections/General/Footer";
 import { GlobalStyle } from "../../sections/app.style";
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
-import { useCookies } from "react-cookie";
-import { useEffect } from "react";
 import { useState } from "react";
 
 const LearnGridPage = () => {
