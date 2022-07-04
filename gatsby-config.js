@@ -11,6 +11,7 @@ module.exports = {
     twitterUsername: "@layer5",
   },
   flags: {
+    PARALLEL_SOURCING: true,
     FAST_DEV: true,
     PARALLEL_SOURCING: true
   },
