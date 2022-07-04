@@ -39,6 +39,15 @@ const PricingWrapper = styled.section`
     margin-top: 2rem;
     margin-bottom: 4rem;
     text-align: center;
+    h2 {
+      color: ${props => props.theme.DarkTheme? "white": "black"};
+    }
+    @media (min-width: 1400px) {
+      h2{
+      color: ${props => props.theme.black};
+      }
+
+    }
 } 
 
 .subscriptionButtons {
@@ -89,7 +98,7 @@ const PricingWrapper = styled.section`
 
 
 .pricing-table {
-	background: #fff;
+  background-color: ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
   border-top: 3px solid #00b39f;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
 	padding: 2rem;
@@ -102,6 +111,8 @@ const PricingWrapper = styled.section`
 
 .featured{
       transform: scale(1.05);
+      background-color: ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
+
       box-shadow: 0px 2px 12px 0px rgb(0, 179, 158, 0.7);
     }
 .pricing-table:hover {
@@ -124,13 +135,13 @@ const PricingWrapper = styled.section`
 
     h2 {
       margin-top: 1rem;
-      color: #3b3b3b;
+      color: ${props => props.theme.DarkTheme? "rgb(220, 220, 220)": "#3b3b3b"};
       font-size: 24px;
       font-weight: 500;
     }
 
     .byline {
-      color: ${props => props.theme.primaryLightColor};
+      color: ${props => props.theme.DarkTheme? "rgb(200, 200, 200)": props.theme.primaryLightColor};
       font-size: 16px;
       font-weight: 400;
     }
@@ -142,7 +153,7 @@ const PricingWrapper = styled.section`
     .pricing-features .feature {
       margin: .5rem 0rem;
       h5{
-        color: #7A848E;
+        color: ${props => props.theme.DarkTheme? "#AAAAAA": "#7A848E"};
         font-size: 16px;
         font-weight: 400;
         vertical-align: text-top;

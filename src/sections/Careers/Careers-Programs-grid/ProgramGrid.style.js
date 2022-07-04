@@ -2,7 +2,10 @@ import styled from "styled-components";
 export const ProgramsPageWrapper = styled.div`
     
     margin-top: -2rem;
+    h1{
+        color: ${props => props.theme.text};
 
+    }
     .programs-page-wrapper{
         margin: 4rem 0;
 
@@ -17,7 +20,7 @@ export const ProgramsPageWrapper = styled.div`
         h5{
             font-size: 1.1rem; 
             font-weight: 600;
-            color: black;
+            color: ${props => props.theme.text};
         }
     }
 
@@ -44,8 +47,9 @@ export const ProgramsPageWrapper = styled.div`
         height: 18rem;
         width: 20rem;
         padding: 5px;
+        color: ${props => props.theme.text};
         margin: auto;
-        background: ${props => props.theme.DarkTheme ? "rgba(8, 8, 8, 1)" :"rgba(247, 247, 247, 1)"};
+        background: ${props => props.theme.DarkTheme ? "rgba(10, 10, 10, 1)" :"rgba(247, 247, 247, 1)"};
         justify-content: center;
         border-radius: 1rem;
         transition: all 0.2s;

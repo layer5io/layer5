@@ -3,7 +3,7 @@ import styled from "styled-components";
 const InternshipSectionWrapper = styled.div`
   h1 {
     margin-bottom: 1rem;
-    color: black;
+    color: ${props => props.theme.text};
   }
 
   .grid {
@@ -42,7 +42,7 @@ const InternshipSectionWrapper = styled.div`
     height: 15rem;
     margin: auto;
     padding: 0.5rem;
-    background: rgba(245, 245, 245, 1);
+    background:  ${props => props.theme.DarkTheme ? "#212121" : "rgba(245, 245, 245, 1)"};
     text-align: center;
     border-bottom: 5px solid ${(props) => props.theme.secondaryColor};
     transition: all 0.2s;
@@ -61,7 +61,8 @@ const InternshipSectionWrapper = styled.div`
     }
     p {
       margin: 0.5rem 0;
-      color: rgba(0, 0, 0, 0.8);
+      color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 0.8)"};
+
       transition: transform 0.7s ease-in-out;
     }
 
@@ -133,7 +134,8 @@ const InternshipSectionWrapper = styled.div`
   .partners-card {
     display: block;
     width: max-content;
-    background: rgba(241, 242, 241, 1);
+    background:  ${props => props.theme.DarkTheme? "rgba(5, 5, 5, 1)": "rgba(241, 242, 241, 1)"};
+
     border-radius: 1rem;
     text-align: center;
     justify-content: space-between;

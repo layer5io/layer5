@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const CareersSectionWrapper = styled.div`
     h1{
-        color: black;
+
+        color: ${props => props.theme.text};
     }
     .page-header{
         margin:4rem auto;

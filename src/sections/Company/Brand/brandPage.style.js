@@ -7,7 +7,8 @@ const BrandPageWrapper = styled.section`
 
 	.brandHeader {
 		padding: 6rem 0;
-		background: ${props => props.theme.tertiaryColor};
+		background:${props => props.theme.DarkTheme? "#1e2117": props.theme.tertiaryColor};
+		
 		text-align: center;
 		h1{
 			color: ${props => props.theme.white};
@@ -51,7 +52,7 @@ const BrandPageWrapper = styled.section`
 		margin: 0;
 		position: relative;
 		width: fit-content;
-		color: rgba(0, 0, 0, 0.4);
+		color: ${props => props.theme.DarkTheme? "rgba(255, 255, 255, 0.4)": "rgba(0, 0, 0, 0.4)"};
 		font: 500 1.2rem/2.5rem 'Qanelas Soft', sans-serif;
 		transition: 0.2s border ease-in-out;
 

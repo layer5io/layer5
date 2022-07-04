@@ -16,9 +16,6 @@ import Singleton from "../../assets/images/meshmap/catalog-card-images/singleton
 import Jwt_transformer from "../../assets/images/meshmap/catalog-card-images/jwt.svg";
 import Multicluster from "../../assets/images/meshmap/catalog-card-images/multicluster.svg";
 import Http_metrics from "../../assets/images/meshmap/catalog-card-images/http.svg";
-
-
-import Options from "../../assets/images/meshmap/options.png";
 import Options1 from "../../assets/images/meshmap/options1.png";
 import Options2 from "../../assets/images/meshmap/options2.png";
 // import OptionsRotated from "../../assets/images/meshmap/options-rotated.png";
