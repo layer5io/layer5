@@ -28,7 +28,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Check Cache and Install NPM Dependencies 👀 # Checks yarn cache and use it for dependencies install
+      - name: Install NPM Dependencies 👀 # Checks yarn cache and use it for dependencies install
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
 
