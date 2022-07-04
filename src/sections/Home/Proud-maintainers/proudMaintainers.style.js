@@ -1,8 +1,37 @@
 import styled from "styled-components";
-
 const ProjectItemWrapper = styled.section`
 	margin: 5rem 0rem;
+	path.cls-1{
+		fill:#00d3a9
+	}
+	path.cls-2{
+		fill:#00b39f
+	}
+	path.cls-3{
+		fill: ${props => props.theme.DarkTheme? "grey": "#3c494f"};
+	}
+	path.st2 {
+		fill: #2beda7;
+	}
+	polygon.cls-1{
+		fill:#00d3a9
+	}
+	polygon.cls-2{
+		fill:#00b39f
+	}
+	polygon.cls-3{
+		fill: ${props => props.theme.DarkTheme? "grey": "#3c494f"};
 
+	}
+	path.st2 {
+		fill: #2beda7;
+	}
+	path.LinkerdText {
+		fill: ${props => props.theme.DarkTheme? "white": "black"};
+	}
+	path.CNCFText {
+		fill: ${props => props.theme.DarkTheme? "white": "black"};
+	}
 	.project-title {
 		text-align: center;
 		padding: 0 2rem;
@@ -54,6 +83,7 @@ const ProjectItemWrapper = styled.section`
 		}
 	}
 
+	}
 	.proj_icon_2,
 	.proj_icon_1 {
 		max-width: 18rem;
