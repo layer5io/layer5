@@ -44,24 +44,3 @@ jobs:
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           deploy_url: "${{ steps.netlify.outputs.deploy-url }}"
-
-      - name: Audit URLs using Lighthouse for desktop
-        # https://github.com/treosh/lighthouse-ci-action
-        uses: treosh/lighthouse-ci-action@v9
-        with:
-          urls: ${{ steps.netlify.outputs.url }}
-          budgetPath: ./.github/config/lighthouse-budget.json
-          configPath: ./.github/config/lighthouse-config-desktop.json
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-          runs: 3
-
-      - name: Audit URLs using Lighthouse for mobile
-        uses: treosh/lighthouse-ci-action@v9
-        with:
-          urls: https://layer5.io/
-          budgetPath: ./.github/config/lighthouse-budget.json
-          configPath: ./.github/config/lighthouse-config-mobile.json
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-          runs: 3

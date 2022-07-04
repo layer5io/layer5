@@ -1,0 +1,43 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches: [ master ]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Wait for the Netlify Preview
+        # https://github.com/JakePartusch/wait-for-netlify-action
+        needs: deploy-preview
+        uses: jakepartusch/wait-for-netlify-action@v1
+        id: netlify
+        with:
+          site_name: 'layer5'
+
+      - name: Audit URLs using Lighthouse for desktop
+        # https://github.com/treosh/lighthouse-ci-action
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: ${{ steps.netlify.outputs.url }}
+          budgetPath: ./.github/config/lighthouse-budget.json
+          configPath: ./.github/config/lighthouse-config-desktop.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 3
+
+      - name: Audit URLs using Lighthouse for mobile
+        uses: treosh/lighthouse-ci-action@v9
+        needs: needs.deploy-preview.outputs.url
+        with:
+          urls: ${{ steps.netlify.outputs.url }}
+          budgetPath: ./.github/config/lighthouse-budget.json
+          configPath: ./.github/config/lighthouse-config-mobile.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 3
