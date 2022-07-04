@@ -20,8 +20,8 @@ import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighth
 import imageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import communityLogo from "../../../assets/images/community/community-green.svg";
 import Button from "../../../reusecore/Button";
-import Modal from "react-modal";
-import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
+// import Modal from "react-modal";
+// import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
 
 const MemberSingle = ({ frontmatter, body }) => {
   const {
@@ -179,7 +179,7 @@ const MemberSingle = ({ frontmatter, body }) => {
                     {executive_bio &&
                     <div>
                       <FaUserTie className="bio" size={32} onClick={openModal} />
-                      <Modal
+                      {/* <Modal
                         isOpen={modalIsOpen}
                         onRequestClose={closeModal}
                         className="Modal"	
@@ -204,7 +204,7 @@ const MemberSingle = ({ frontmatter, body }) => {
                             <MDXRenderer>{body}</MDXRenderer>
                           </SRLWrapper>
                         </div>
-                      </Modal>
+                      </Modal> */}
                     </div>
                     }
                   </li>
