@@ -44,5 +44,3 @@ jobs:
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           deploy_url: "${{ steps.netlify.outputs.deploy-url }}"
-
-
