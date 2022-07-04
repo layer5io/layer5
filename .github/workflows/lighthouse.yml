@@ -14,9 +14,10 @@ jobs:
 
       - name: Wait for the Netlify Preview
         # https://github.com/JakePartusch/wait-for-netlify-action
-        uses: jakepartusch/wait-for-netlify-action@v1
+        uses: jakepartusch/wait-for-netlify-action@v1.3
         id: netlify
         with:
+          max_timeout: 1000
           site_name: 'layer5'
 
       - name: Audit URLs using Lighthouse for desktop
