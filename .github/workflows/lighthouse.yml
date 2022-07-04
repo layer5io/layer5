@@ -3,10 +3,11 @@ name: Lighthouse CI
 on:
   pull_request:
     branches: [ master ]
-    types: [opened, synchronize, reopened]
+    types: [ labeled ]
 
 jobs:
   lighthouse:
+    if: ${{ github.event.label.name == 'lighthouse' }}
     runs-on: ubuntu-latest
 
     steps:
