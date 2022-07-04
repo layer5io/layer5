@@ -33,7 +33,7 @@ jobs:
 
       - name: Audit URLs using Lighthouse for mobile
         uses: treosh/lighthouse-ci-action@v9
-        needs: needs.deploy-preview.outputs.url
+        needs: deploy-preview.outputs.url
         with:
           urls: ${{ steps.netlify.outputs.url }}
           budgetPath: ./.github/config/lighthouse-budget.json
