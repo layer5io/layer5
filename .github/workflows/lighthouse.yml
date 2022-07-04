@@ -18,7 +18,7 @@ jobs:
         uses: jakepartusch/wait-for-netlify-action@v1.3
         id: netlify
         with:
-          max_timeout: 1000
+          max_timeout: 600
           site_name: 'layer5'
 
       - name: Audit URLs using Lighthouse for desktop
