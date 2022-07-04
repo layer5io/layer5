@@ -10,23 +10,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v3
         with:
           persist-credentials: false
-
-      - name: Install and Build 🔧 
+      
+      - name: Get NPM Cache Directory 🤔
+        id: npm-cache-dir
         run: |
-          npm install
-          npm run noIndex
+          echo "::set-output name=dir::$(npm config get cache)"
 
-      - name: Zip Site
+      - name: Check for NPM Cache ✅
+        uses: actions/cache@v3
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+        with:
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Check Cache and Install NPM Dependencies 👀 # Checks yarn cache and use it for dependencies install
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Build Site 🔧 
+        run: npm run noIndex
+
+      - name: Zip Site 📚
         run: bash ./script.sh
 
-      - name: Upload files
+      - name: Upload Files ⬆️
         uses: actions/upload-artifact@v2
         with:
           name: public-dir
           path: ./public-dir.zip
           retention-days: 1
+
       - name: Triger Inner workflow
-        run: echo "trigering inner workflow"
+        run: echo "Trigering Inner Workflow"
