@@ -1,0 +1,475 @@
+---
+title: "Istio Pilot"
+thumbnail: ../../../../assets/images/service-mesh-icons/istio.svg
+date: 2021-09-10 10:30:05 -0530
+type: Article
+category: Service Mesh
+mesh: Istio
+technology: Kubernetes
+tags:
+ - Istio
+featured: false
+published: true
+resource: true
+---
+
+import { Link } from "gatsby";
+import { ResourcesWrapper } from "../../Resources.style.js";
+
+<ResourcesWrapper>
+<p>
+This article covers Istio's Pilot, its basic model, the sources of configuration it consumes to produce a model of the mesh, how it uses that model of the mesh to push configuration to Envoys, how to debug it, and how to understand the transformation Pilot performs from Istio configuration to Envoy's. With this knowledge, you should be able to debug and resolve the vast majority of issues that new and intermediate Istio users encounter.
+</p>
+<p>
+In an Istio deployment, Pilot is in charge of programming the data plane, ingress and egress gateways, and service proxies. Pilot models a deployment environment by combining Istio configuration from Galley  with service information from a service registry, such as the Kubernetes API server or Consul. Pilot utilises this model to produce data plane configuration and pushes it out to the fleet of service proxies that are connected to it.
+</p>
+<h3>Configuring Pilot</h3>
+<p>
+Let's look at the surface area of Pilot's configuration to understand better all aspects of the mesh that concerns it. As we process this, keep in mind that Pilot's dependency on Galley for the underlying platform and environment information will grow as the Istio project progresses. Pilot has three primary sources of configuration:
+</p>
+<h4>Mesh Configuration</h4>
+<p>
+Mesh configuration is a set of global configuration that is static for the installation of the mesh. Mesh configuration is split over three API objects:
+</p>
+<ol>
+<li>MeshConfig (<code>mesh.istio.io/v1alpha1.MeshConfig</code>) - MeshConfig allows you to configure how Istio components communicate with one another, where configuration sources are located, etc.</li>
+<li>ProxyConfig (<code>mesh.istio.io/v1alpha1.ProxyConfig</code>) - ProxyConfig tracks where Envoy's bootstrap configuration is located, which ports to bind to, and other options concerned with initialising Envoy.</li>
+<li>MeshNetworks (<code>mesh.istio.io/v1alpha1.MeshNetworks</code>) - MeshNetworks is a collection of networks across which the mesh is deployed, together with the addresses of each network's ingress gateways.</li>
+</ol>
+<p>
+MeshConfig is generally used to define whether policy and/or telemetry are enabled, where to load configuration and locality-based load balancing settings. The exhaustive set of concerns that MeshConfig contains is listed below:
+</p>
+<ul>
+<li>
+How to user Mixer?
+<ul>
+<li>The addresses of the policy and telemetry servers</li>
+<li>Whether policy checks are enabled at runtime</li>
+<li>Whether to fail open or closed when Mixer Policy is inaccessible or returns an error</li>
+<li>Whether to perform policy checks on the client side.</li>
+<li>Whether to use session affinity to target the same Mixer Telemetry instance. Session affinity is always enabled for Mixer Policy (performance of the system relies on it!)</li>
+</ul>
+</li>
+<li>
+How to configure service proxies for listening?
+<ul>
+<li>The ports to bind to to accept traffic (i.e. the port IPTables redirects to) and to accept HTTP PROXY requests</li>
+<li>TCP connection timeout and keepalive settings</li>
+<li>Access log format, output file, and encoding (JSON or text)</li>
+<li>Whether to allow all outbound traffic, or restrict outbound traffic to only services Pilot knows about</li>
+<li>Where to listen for secrets from Citadel (the SDS API), and how to bootstrap trust (in environments with local machine tokens)</li>
+</ul>
+</li>
+<li>Whether to support Kubernetes Ingress resources</li>
+<li>The set of configuration sources for all Istio components (e.g. the local file system, or Galley), and how to communicate with them (the address, whether to use TLS or not, which secrets, etc)</li>
+<li>Locality-based load balancing settings—configuration about failover and traffic splits between zones and regions.</li>
+</ul>
+
+<p>ProxyConfig is mostly used for customising bootstrap settings for Envoy. The exhaustive set of concerns that ProxyConfig contains is the following:</p>
+<ul>
+<li>The location of the file with Envoy’s bootstrap configuration, as well as the location of the Envoy binary itself</li>
+<li>The location of the trace collector (i.e. where to send trace data)</li>
+<li>Shutdown settings (both connection draining and hot restart)</li>
+<li>The location of Envoy’s xDS server (Pilot) and how to communicate with it</li>
+<li>Envoy’s service cluster, meaning the name of the service this Envoy is sidecar for</li>
+<li>Which ports to host the proxy’s admin server and statsd listener</li>
+<li>Envoy’s concurrency (number of worker threads)</li>
+<li>Connection timeout settings</li>
+<li>How Envoy binds the socket to intercept traffic (either via IPTables REDIRECT or TPROXY)</li>
+</ul>
+<p>
+MeshNetworks defines a collection of named networks, the method for sending traffic into those networks (ingress), and their locality. A CIDR range or a set of endpoints returned by a service registry define each network (e.g. the Kubernetes API server). The API object ServiceEntry, which is used to define services in Istio, has a set of endpoints. A ServiceEntry can represent a service that is deployed across multiple networks(or clusters) by labelling each endpoint with a network.
+</p>
+<p>
+Most values in MeshConfig cannot be updated dynamically, therefore the control plane must be restarted for them to take effect. Similarly, updates to values in ProxyConfig only occur when Envoy is redeployed (e.g., in Kubernetes, when the pod is rescheduled). MeshNetworks can be dynamically upgraded at runtime without requiring any control plane components to be restarted.
+</p>
+<p>
+On Kubernetes, the majority of MeshConfig and ProxyConfig configuration is concealed behind options in the Helm installation, although not all of it is exposed via Helm. To have complete control over the installation, you'll need to post-process the file output by Helm.
+</p>
+
+<h4>Networking Configuration</h4>
+<p>
+Networking configuration is Istio’s bread and butter—the configuration to manage how traffic flows through the mesh.
+</p>
+<p>
+Istio's networking APIs revolve around ServiceEntry. ServiceEntry defines a service by its names—the set of hostnames clients use to call the service. DestinationRules define how clients communicate with a service: what load balancing, outlier detection, circuit breaking, and connection pooling strategies to use, which TLS settings to use, etc. VirtualServices configure how traffic flows to a service: L7 and L4 routing, traffic shaping, retries, timeouts, etc. Gateways configure how services are exposed outside of the mesh: what hostnames are routed to which services, how to serve certs for those hostnames, etc. Service proxies configure how services are exposed inside of the mesh, which services are available to which clients.
+</p>
+<h4>Service Discovery</h4>
+<p>
+Pilot integrates with different service discovery systems, such as the Kubernetes API server, Consul, and Eureka, to discover service and endpoint information about the local environment. Adapters in Pilot consume service discovery data from their source and synthesize ServiceEntry objects. For example, the integration with Kubernetes uses the Kubernetes SDK to watch the API server for service creation and service endpoint update events. The registry adapter in Pilot creates a ServiceEntry object based on this data. That ServiceEntry is used to update Pilot’s internal model and generate an updated configuration for the data plane.
+</p>
+<p>
+Pilot registry adapters were previously implemented in Golang.  These adapters can now be detached from Pilot with the introduction of Galley. A service discovery adapter reads an existing service registry and produces a set of ServiceEntry objects as a separate job (or an offline process done by a continuous integration system). Those ServiceEntries can then be supplied to Galley as files and uploaded to the Kubernetes API server. Alternatively, you can create your own Mesh Config Protocol server and feed Galley the ServiceEntries. Static ServiceEntries can be useful to enable Istio in largely static environments (e.g., legacy VM-based deployments with rarely-changing IP addresses).
+</p>
+<p>
+ServiceEntries bind a set of hostnames to endpoints to construct a Service. IP addresses or DNS names can be those endpoints. A network, locality, and weight can be assigned to each endpoint individually. ServiceEntries can define complex network topologies as a result of this. A service deployed across separate clusters (with different networks) that are geographically disparate (have different localities) can be created and have traffic split amongst its members by percentage (weights)—or in fact, by nearly any feature of the request.  Since Istio knows where distant networks' ingress points are, when a service endpoint in a remote network is selected, the service proxy will route traffic to the remote network's ingress. We can even write policies to prefer local endpoints over endpoints in other localities but automatically failover to other localities if local endpoints are unhealthy. 
+</p>
+
+<h3>Config Serving</h3>
+<p>
+Pilot constructs a model of the environment and state of a deployment using these three config sources—mesh config, networking config, and service discovery. As service proxy instances are deployed into the cluster, they connect to Pilot asynchronously. Pilot groups the service proxies based on their labels and the service to which they are sidecarred. Pilot creates Discovery Service (xDS) responses for each group of connected service proxies using this paradigm. Pilot transmits the current state of the environment and the configuration that reflects the environment when a service proxy connects. The model is updated regularly due to the generally dynamic nature of the underlying platform(s). Updates to the model mean updating the current set of xDS configurations. When the Discovery Service config is changed, Pilot computes the groups of affected service proxies and pushes the updated configuration to them.
+</p>
+<p>Service proxy (Envoy) configuration can be divided into two main groups: </p>
+<ul>
+<li>Listeners and Routes</li>
+<li>Clusters and Endpoints</li>
+</ul>
+<p>
+Listeners define a set of filters (for example, an HTTP filter delivers Envoy's HTTP functionality) and how Envoy connects those filters to a port. These are of two types: physical and virtual. A physical listener is one where Envoy binds to the specified port. A virtual listener accepts traffic from a physical listener without binding to a port (instead, some physical listener must direct traffic to it). Listeners and Routes work together to configure how a Listener routes traffic to a specified Cluster (e.g., by matching on HTTP path or SNI name). A cluster is a collection of endpoints that includes information on how to contact them (TLS settings, load balancing strategy, connection pool settings, etc.).  A Cluster is analogous to a "service." Finally, Endpoints are individual network hosts (IP addresses or DNS names) that Envoy will forward traffic to. 
+</p>
+
+<h3>Troubleshooting Pilot</h3>
+<p>
+To examine the state of service proxies connected to Pilot, see these endpoints:
+</p>
+<ul>
+<li><code>/debug/edsz</code> - prints all of Pilot’s set of pre-computed EDS responses; i.e. the endpoints it sends to each connected service proxy</li>
+<li><code>/debug/adsz</code> - prints the set of listeners, routes, and clusters pushed to each service proxy connected to Pilot</li>
+<li><code>/debug/cdsz</code> - prints the set of clusters pushed to each service proxy connected to Pilot</li>
+<li><code>/debug/synz</code> - print the status of ADS, CDS, and EDS connections of all service proxies connected to pilot. In particular this shows the last nonce Pilot is working with vs the last nonce Envoy has ACK’d, showing which Envoys are not accepting configuration updates</li>
+</ul>
+
+<p>
+To examine Pilot’s understanding of the state of the world (its service registries), see these endpoints:
+</p>
+<ul>
+<li><code>/debug/registryz</code> - print the set of services Pilot knows about across all registries</li>
+<li><code>/debug/endpointz[?brief=1]</code> - print the endpoints for every service Pilot knows about, including their ports, protocols, service accounts, labels, etc. If you provide the brief flag, the output will be a human-readable table (as opposed to a JSON blob for the normal version). This is a legacy endpoint and <code>/debug/endpointShardz</code> provides strictly more information.</li>
+<li><code>/debug/endpointShardz</code> - print the endpoints for every service Pilot knows about, grouped by the registry that provided the endpoint. For example, if the same service exists in both Consul and Kubernetes, endpoints for the service will be grouped into two shards, one each for Consul and Kubernetes. This endpoint provides everything from <code>/debug/endpoint</code> and more, including data like the endpoint’s network, locality, load balancer weight, representation in Envoy xDS config, etc.</li>
+<li><code>/debug/workloadz</code> - print the set of endpoints (“workloads”) connected to Pilot, and their metadata (like labels)</li>
+<li><code>/debug/configz</code> - print the entire set of Istio configuration Pilot knows about. Only validated config that Pilot is using to construct its model will be returned; useful for understanding situations where Pilot is not processing new config itself.</li>
+</ul>
+
+<p>
+You can also find miscellaneous endpoints with higher level debug information, be wading through these endpoints:
+</p>
+<ul>
+<li><code>/debug/authenticationz[?proxyID=pod_name.namespace]</code> - prints the Istio authentication policy status of the target proxy for each host and port it’s serving, including: the name of the authentication policy affecting it, the name of the DestinationRule affecting it, whether the port expects mTLS, standard TLS, or plain text, and if settings across configuration cause a conflict for this port.</li>
+<li><code>/debug/config_dump[?proxyID=pod_name.namespace]</code> - prints the listeners, routes, and clusters for the given node; this can be diff’d directly against the output of <code>istioctl proxy-config</code></li>
+<li><code>/debug/push_status</code> - prints the status of each connected endpoint as of Pilot’s last push period; includes the status of each connected proxy, when the push period began (and ended), and the identities assigned to each port of each host.</li>
+</ul>
+
+<h3>Tracing Configuration</h3>
+<p>
+In this section, we’ll use some tools to understand the before-and-after of Istio configuration and the resultant xDS configuration pushed to service proxies. 
+</p>
+<h4>Listeners</h4>
+<p>Gateways and VirtualServices results in Listeners for Envoy. Gateways result in physical listeners (listeners that bind to a port on the network), while VirtualServices result in virtual listeners (listeners that do not bind to a port, but instead receive traffic from physical listeners). Demonstration of how Istio configuration manifests into xDS configuration by creating a Gateway:</p>
+
+```
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: foo-com-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - “*.foo.com”
+    port:
+      number: 80
+      name: http
+      protocol: HTTP
+```
+<p>Creation of this Istio Gateway results in a single HTTP listener on port 80 on our Ingress Gateway.</p>
+
+```
+$ istioctl proxy-config listener istio-ingressgateway_PODNAME -o json -n istio-system
+[
+    {
+        "name": "0.0.0.0_80",
+        "address": {
+            "socketAddress": {
+                "address": "0.0.0.0",
+                "portValue": 80
+            }
+        },
+        "filterChains": [
+            {
+                "filters": [
+                    {
+                        "name": "envoy.http_connection_manager",
+...
+                            "rds": {
+                                "config_source": {
+                                    "ads": {}
+                                },
+                                "route_config_name": "http.80"
+                            },
+...
+```
+<p>It's worth noting that the newly created filter is listening on address 0.0.0.0. This is the listener for all HTTP traffic on port 80, regardless of the host to which it is addressed. If we enable TLS termination for this Gateway, we'll see a new listener created just for the hosts we’re terminating TLS for, while the rest would fall into this catch-all listener.</p>
+<p>Let’s bind a VirtualService to this Gateway</p>
+
+```
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+ name: foo-default
+spec:
+ hosts:
+ - bar.foo.com
+ gateways:
+ - foo-com-gateway
+ http:
+ - route:
+   - destination:
+       host: bar.foo.svc.cluster.local
+```
+
+<p>See how it manifests as virtual listener.</p>
+
+```
+$ istioctl proxy-config listener istio-ingressgateway_PODNAME -o json
+
+
+[
+    {
+        "name": "0.0.0.0_80",
+        "address": {
+            "socketAddress": {
+                "address": "0.0.0.0",
+                "portValue": 80
+            }
+        },
+        "filterChains": [
+            {
+                "filters": [
+                    {
+                        "name": "envoy.http_connection_manager",
+...
+                            "rds": {
+                                "config_source": {
+                                    "ads": {}
+                                },
+                                "route_config_name": "http.80"
+                            },
+...
+```
+<p>
+We encourage that you try different protocols for the ports (or list a single Gateway with many ports with various protocols) to see how this results in different filters. Configuring different TLS settings within the Gateway also changes the generated Listener configuration. For each protocol you use, you'll notice a protocol-specific filter configured in the Listener (for HTTP, this is the http connection manager and its router, for MongoDB another, for TCP another, and so on). To explore how different combinations of hosts in the Gateway and VirtualService interact, we also recommend exploring different combinations of hosts in the Gateway and VirtualService.
+</p>
+
+<h4>Routes</h4>
+<p>We've seen how VirtualServices cause Listeners to be created. In Envoy, the majority of the configuration you specify in VirtualServices manifests as Routes. Routes exist in a variety of flavors, with a set of routes for each protocol supported by Envoy.</p>
+
+```
+$ istioctl proxy-config route istio-ingressgateway_PODNAME -o json
+
+$ istioctl proxy-config route istio-ingressgateway_PODNAME -o json
+[
+    {
+        "name": "0.0.0.0_80",
+        "virtualHosts": [
+            {
+                "name": "bar.foo.com:80",
+                "domains": [
+                    "bar.foo.com",
+                    "bar.foo.com:80"
+                ],
+                "routes": [
+                    {
+                        "match": {
+                            "prefix": "/"
+                        },
+                        "route": {
+                            "cluster": "outbound|8000||bar.foo.svc.cluster.local",
+                            "timeout": "0s",
+                            "retryPolicy": {
+                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
+                                "numRetries": 2,
+                                "retryHostPredicate": [
+                                    {
+                                        "name": "envoy.retry_host_predicates.previous_hosts"
+                                    }
+                                ],
+                                "hostSelectionRetryMaxAttempts": "3",
+                                "retriableStatusCodes": [
+                                    503
+                                ]
+                            },
+...
+
+
+Example 7.5 -  Envoy Route (RDS) configuration for the VirtualService in Example 7.3. Notice the default Retry Policy and the embedded Mixer configuration (which is used for reporting telemetry back to Mixer).
+
+We can update our Route to include some match conditions to see how this results in different Routes for Envoy (Example 7-6):
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+ name: foo-default
+spec:
+  hosts:
+  - bar.foo.com
+  gateways:
+  - foo-com-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /whiz
+    route:
+    - destination:
+        host: whiz.foo.svc.cluster.local
+  - route:
+    - destination:
+        host: bar.foo.svc.cluster.local
+
+```
+<p>We can update our Route to include some match conditions to see how this results in different Routes for Envoy</p>
+
+```
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+ name: foo-default
+spec:
+  hosts:
+  - bar.foo.com
+  gateways:
+  - foo-com-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /whiz
+    route:
+    - destination:
+        host: whiz.foo.svc.cluster.local
+  - route:
+    - destination:
+        host: bar.foo.svc.cluster.local
+
+```
+
+<p>Similarly we can add retries, split traffic amongst several destinations, inject faults, and more. All of these options in VirtualServices manifest as Routes in Envoy.</p>
+
+```
+$ istioctl proxy-config route istio-ingressgateway_PODNAME -o json
+
+
+[
+    {
+        "name": "http.80",
+        "virtualHosts": [
+            {
+                "name": "bar.foo.com:80",
+                "domains": [
+                    "bar.foo.com",
+                    "bar.foo.com:80"
+                ],
+                "routes": [
+                    {
+                        "match": {
+                            "prefix": "/whiz"
+                        },
+                        "route": {
+                            "cluster": "outbound|80||whiz.foo.svc.cluster.local",
+...
+                    {
+                        "match": {
+                            "prefix": "/"
+                        },
+                        "route": {
+                            "cluster": "outbound|80||bar.foo.svc.cluster.local",
+...
+```
+
+<h4>Clusters</h4>
+<p>We can see that Istio creates a cluster for each service and port in the mesh if we use <code>istioctl</code> to look at clusters. To see a new Cluster emerge in Envoy, we can construct a new ServiceEntry:</p>
+
+```
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: http-server
+spec:
+  hosts:
+  - some.domain.com
+  ports:
+  - number: 80
+    name: http
+    protocol: http
+  resolution: STATIC
+  endpoints:
+  - address: 2.2.2.2
+```
+
+```
+$ istioctl proxy-config cluster istio-ingressgateway_PODNAME -o json
+
+
+[
+...
+    {
+        "name": "outbound|80||some.domain.com",
+        "type": "EDS",
+        "edsClusterConfig": {
+            "edsConfig": {
+                "ads": {}
+            },
+            "serviceName": "outbound|80||some.domain.com"
+        },
+        "connectTimeout": "10s",
+        "circuitBreakers": {
+            "thresholds": [
+                {
+                    "maxRetries": 1024
+                }
+            ]
+        }
+    },
+...
+
+```
+<p>We can experiment with adding new ports (with different protocols) to the ServiceEntry to see how this affects the generation of new Clusters. A DestinationRule is another tool that may be used to generate and update Clusters in Istio. We establish new Clusters by creating Subsets, and we impact the configuration inside the Cluster by modifying load balancing and TLS settings.</p>
+
+```
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: some-domain-com
+spec:
+  host: some.domain.com
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+```
+
+```
+$ istioctl proxy-config cluster istio-ingressgateway_PODNAME -o json
+
+
+[
+...
+    {
+        "name": "outbound|80||some.domain.com",
+...
+    },
+    {
+        "name": "outbound|80|v1|some.domain.com",
+...
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/default/destination-rule/some-domain-com"
+                }
+            }
+        }
+    },
+    {
+        "name": "outbound|80|v2|some.domain.com",
+...
+    },
+...
+
+```
+
+<p>Notice that we still have our original cluster, outbound|80||some.domain.com, but that we got a new cluster for each Subset we defined as well. Istio annotates the Envoy configuration with the rule that resulted in it being created to help debug.</p>
+
+
+</ResourcesWrapper>
