@@ -2,11 +2,6 @@ import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
-import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
-import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
-import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
-import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
-import { useLocation } from "@reach/router";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
@@ -15,10 +10,9 @@ import BlogPageWrapper from "./blogSingle.style";
 import BlogPostSignOff from "../BlogPostSignOff";
 import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
 import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
+import AboutTheAuthor from "./author";
 
-import Image from "../../../components/image";
-
-const BlogSingle = ({data}) => {
+const BlogSingle = ({ data }) => {
   const { frontmatter, body, fields } = data.mdx;
   const { relatedPosts: blogData, authors } = useStaticQuery(
     graphql`query relatedPosts {
@@ -71,7 +65,6 @@ const BlogSingle = ({data}) => {
     }  `
   );
 
-  const location = useLocation();
   const posts = blogData.nodes;
   const relatedPosts = new RelatedPostsFactory (
     posts, fields.slug
@@ -86,84 +79,49 @@ const BlogSingle = ({data}) => {
 
   return (
     <BlogPageWrapper>
-    <div className={`${authorInformation ? "post-container" : ""}`}>
-      <PageHeader
-        title={frontmatter.title}
-        subtitle={frontmatter.subtitle}
-        category={frontmatter.category}
-        author={{ name: frontmatter.author }}
-        thumbnail={frontmatter.thumbnail}
-        date={frontmatter.date}
-      />
-      <div className="single-post-wrapper">
-        <Container>
-          <SRLWrapper>
-            <MDXRenderer>{body}</MDXRenderer>
-          </SRLWrapper>
-          <BlogPostSignOff
+      <Container>
+        <AboutTheAuthor authorInformation={authorInformation} shareQuote={shareQuote} />
+        <div>
+          <PageHeader
+            title={frontmatter.title}
+            subtitle={frontmatter.subtitle}
+            category={frontmatter.category}
             author={{ name: frontmatter.author }}
+            thumbnail={frontmatter.thumbnail}
+            date={frontmatter.date}
           />
-          <div className="post-info-block">
-            <div className="tags">
-              <span>Tags:</span>
-              <div>
-                {frontmatter.tags && frontmatter.tags.map(tag => (
-                  <Link key={`${frontmatter.title}-${tag}`}
-                    to={`/blog/tag/${slugify(tag)}`}>{tag}
-                  </Link>
-                ))}
+          <div className="single-post-wrapper">
+            <SRLWrapper>
+              <MDXRenderer>{body}</MDXRenderer>
+            </SRLWrapper>
+            <BlogPostSignOff
+              author={{ name: frontmatter.author }}
+            />
+            <div className="post-info-block">
+              <div className="tags">
+                <span>Tags:</span>
+                <div>
+                  {frontmatter.tags && frontmatter.tags.map(tag => (
+                    <Link key={`${frontmatter.title}-${tag}`}
+                      to={`/blog/tag/${slugify(tag)}`}>{tag}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-            {/* <CTA_Bottom
+              {/* <CTA_Bottom
               category={"Community"}
             /> */}
-          </div>
-          <RelatedPosts
-            postType="blogs"
-            relatedPosts={relatedPosts}
-            mainHead="Related Blogs" 
-            lastCardHead="All Blogs" 
-            linkToAllItems="/blog"
-          />
-        </Container>
-
-      </div>
-      {authorInformation && (
-        <div className="author-info-section">
-          <div className="authors-info-container">
-            <h3>About the author</h3>
-            <div className="authors-head-shot">
-              <Link to={`/community/members/${authorInformation.slug}`}>
-                <Image {...authorInformation?.frontmatter?.image_path} imgStyle={{ objectFit: "cover" }} alt={authorInformation.frontmatter?.name} className="authors-image" />
-              </Link>
             </div>
-            <h5>{authorInformation.frontmatter?.name}</h5>
-            <p>
-              {authorInformation.frontmatter?.bio}
-            </p>
-            <div className="authors-info-meshery">
-              <h6>MeshMap</h6>
-              <p>MeshMap is the world's only visual designer for Kubernetes and service mesh deployments.</p>
-              <Link to="/service-mesh-management/meshery">Get Started</Link>
-            </div>
-            <div className="share-section">
-              <p>Share</p>
-              <div className="share-icons-container">
-                <TwitterShareButton url={location.href} title={shareQuote}>
-                  <AiOutlineTwitter />
-                </TwitterShareButton>
-                <FacebookShareButton url={location.href} quote={shareQuote}>
-                  <FaFacebookF />
-                </FacebookShareButton>
-                <LinkedinShareButton url={location.href}>
-                  <FaLinkedin />
-                </LinkedinShareButton>
-              </div>
-            </div>
+            <RelatedPosts
+              postType="blogs"
+              relatedPosts={relatedPosts}
+              mainHead="Related Blogs" 
+              lastCardHead="All Blogs" 
+              linkToAllItems="/blog"
+            />
           </div>
         </div>
-      )}
-      </div>
+      </Container>
     </BlogPageWrapper>
   );
 };

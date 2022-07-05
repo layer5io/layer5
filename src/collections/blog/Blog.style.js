@@ -7,8 +7,8 @@ export const BlogWrapper = styled.div`
     top: -10px;
   }
 
-
   div.intro {
+    display: flex;
     padding-left: 3rem;
     padding-right: 3rem;
     font-style: italic;
