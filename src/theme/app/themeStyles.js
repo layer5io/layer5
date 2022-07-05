@@ -71,6 +71,9 @@ const lighttheme = {
   invertColor: "none",
   meshInterfaceLogoFilter: "none",
 
+  //Elevation Color(Used in Cards Mostly)
+  elevationColor: "#FFFFFF",
+
   //DarkTheme
   DarkTheme: false,
 
@@ -146,6 +149,9 @@ export const darktheme = {
   //Invert Colors in dark theme(Usually for svg)
   invertColor: "invert(100%)",
   meshInterfaceLogoFilter: "90%",
+
+  //Elevation Color(Used in Cards Mostly)
+  elevationColor: "#212121",
 
   //DarkTheme
   DarkTheme: true,

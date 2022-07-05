@@ -275,7 +275,7 @@ const Catalog = () => {
     <CatalogWrapper>
       <Container>
         <h2 className="heading">Choose Your Power-ups</h2>
-        <p className="caption">MeshMap integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.</p>
+        <p className="caption">Save time with design patterns. Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b>.</p>
         <div className="powerupOptions">
           <img src={Options1} alt="" />
           <img src={Options2} alt="" />
@@ -330,12 +330,12 @@ const Catalog = () => {
               </div>
             </div>
           </div>
-          <h3 className="containerCaption">Discover and publish patterns and best practices
+          <h3 className="containerCaption">Discover best practices. Publish design patterns.
           </h3>
         </section>
 
       </Container>
-    </CatalogWrapper>
+    </CatalogWrapper >
   );
 };
 

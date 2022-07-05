@@ -27,7 +27,7 @@ const MeshmapPage = () => {
   return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
       <GlobalStyle />
-      <SEO title="MeshMap" description="An extension plugin to Meshery" />
+      <SEO title="MeshMap" description="Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps. Confidently configure your systems with MeshMap's visual topology and built-in design patterns." />
       <Layout>
         <Navigation theme={theme} themeSetter={themeSetter}/>
         <Meshmap />
