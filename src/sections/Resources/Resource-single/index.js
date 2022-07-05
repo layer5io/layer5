@@ -10,7 +10,7 @@ import RelatedResourcesFactory from "../../../components/Related-Resources/relat
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 
 
-const ResourceSingle = ({data}) => {
+const ResourceSingle = ({ data }) => {
   const { frontmatter, body, fields } = data.mdx;
   const resourceData = useStaticQuery(
     graphql`query relatedResources {
@@ -41,7 +41,7 @@ const ResourceSingle = ({data}) => {
 }
 `
   );
-  
+
   const resources = resourceData.allMdx.nodes;
   const relatedResources = new RelatedResourcesFactory (
     resources, fields.slug
@@ -73,8 +73,8 @@ const ResourceSingle = ({data}) => {
           <RelatedResources
             resourceType="resources"
             relatedResources={relatedResources}
-            mainHead="Related Resources" 
-            lastCardHead="All Resources" 
+            mainHead="Related Resources"
+            lastCardHead="All Resources"
             linkToAllItems="/resources"
           />
         </Container>

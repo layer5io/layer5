@@ -41,7 +41,7 @@ const SoSpecial = () => {
     infinite: false,
     speed: 500,
     slidesToShow: 2.5,
-    swipeToSlide:true,
+    swipeToSlide: true,
 
     responsive: [
       {
@@ -87,7 +87,7 @@ const SoSpecial = () => {
       }
     ]
   };
-  return(
+  return (
     <SoSpecialWrapper>
       <div className="so-special-head">
         <h4>LAYER5 IN THE NEWS</h4>
@@ -96,7 +96,7 @@ const SoSpecial = () => {
       <div className="special_carousel">
         <Slider {...settings}>
           {
-            data.allMdx.nodes.map(({id,frontmatter,fields}) => (
+            data.allMdx.nodes.map(({ id,frontmatter,fields }) => (
               <Button className="special-cont_btn" url={fields.slug} key={id}>
                 <div id="special-cont" >
                   <div id="special-cont_img">

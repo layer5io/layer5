@@ -35,7 +35,7 @@ export const query = graphql`query NewsBySlug($slug: String!) {
 }
 `;
 
-const NewsSinglePage = ({data}) => {
+const NewsSinglePage = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>

@@ -7,7 +7,7 @@ import ServiceMeshIcon from "../../assets/images/service-mesh-icons/service-mesh
 
 const meshes = [];
 const initialMeshes = [];
-const remainingMeshes = [];	
+const remainingMeshes = [];
 
 non_functional.reverse().map(mesh => (
   mesh.timeline_order ?
@@ -15,8 +15,8 @@ non_functional.reverse().map(mesh => (
     : ""
 ));
 
-for(let i=0; i<meshes.length; i++){
-  if(i<5)
+for (let i=0; i<meshes.length; i++){
+  if (i<5)
     initialMeshes.push(meshes[i]);
   else
     remainingMeshes.push(meshes[i]);
@@ -39,7 +39,7 @@ const ServiceMeshTimeline = () => {
         position={mesh.timeline_order % 2 ? "left" : "right"}
         contentArrowStyle={{ display: "none" }}
         iconClassName="meshBubble"
-        iconStyle={{ width: "35px", height: "35px"}}
+        iconStyle={{ width: "35px", height: "35px" }}
       >
         {mesh.icon?
           <div className={`meshtitle-img-${mesh.timeline_order%2}`}>
@@ -65,8 +65,8 @@ const ServiceMeshTimeline = () => {
         className={loadedAll ? "hideIcon": ""}
         iconOnClick={loadMore}
         iconClassName="moreIcon"
-        iconStyle={{ width: "60px", height: "60px"}}
-        icon={!(loadedAll) ? 
+        iconStyle={{ width: "60px", height: "60px" }}
+        icon={!(loadedAll) ?
           <MdExpandMore className="showMoreIcon"/>
           : <></>
         }

@@ -24,10 +24,6 @@ const MesheryWrapper = styled.div`
   p{
     padding: 1.1rem 2rem 0 4rem;
   }
-  img{
-    width: 89%;
-    padding: 1rem 0 1rem 12rem;
-  }
 }
 
 .block--right {
@@ -38,11 +34,7 @@ const MesheryWrapper = styled.div`
     color: white;
   }
   p{
-    padding: 1.1rem 2rem 0 4rem;
-  }
-  img{
-    width: 89%;
-    padding: 1rem 0 1rem 12rem;
+    padding: 1.1rem 0;
   }
 }
 
@@ -76,24 +68,12 @@ p.caption {
         width: 100%;
         padding: 1rem;
       }
-      img{
-        width: 95%;
-        padding-left: 0;
-        display: block;
-        margin: 0 auto;
-      }
     }
 }
 
 
-.modes-image{
-  margin: 0 0 2rem;
-}
-
 @media only screen and (max-width: 768px) {
-  .mobile-modes{
-    display: block;
-  }
+
   .blocks{
     flex-direction: column;
     gap: 5rem;
@@ -101,7 +81,7 @@ p.caption {
     align-items: center;
 
      .block--left, .block--right {
-      width: 80%;
+      width: 100%;
       height: 20rem;
      }
      }
@@ -122,9 +102,6 @@ const MesheryAction = () => {
       <p className="caption">
         Recently on-stage at...
       </p>
-      <div className="mobile-modes">
-
-      </div>
 
       <div className="blocks">
         <div className="block block--right">

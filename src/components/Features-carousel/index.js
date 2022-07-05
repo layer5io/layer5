@@ -1,12 +1,12 @@
-import React, {useState} from "react";
-import SimpleReactLightbox, {SRLWrapper} from "simple-react-lightbox";
-import {Link} from "gatsby";
+import React, { useState } from "react";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
+import { Link } from "gatsby";
 import Carousel from "nuka-carousel";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
-import {FeaturesWrapper} from "./FeaturesCarousel.style";
+import { FeaturesWrapper } from "./FeaturesCarousel.style";
 
 
-const Features = ({features, heading}) => (
+const Features = ({ features, heading }) => (
   <>
     {/* carousel rendered at smaller breakpoints */}
     <FeaturesCarousel features={features} heading={heading} />
@@ -17,7 +17,7 @@ const Features = ({features, heading}) => (
 
 const FeaturesList = ({ features }) => {
   const [activeFeature, setActiveFeature] = useState(0);
-  return(
+  return (
     <FeaturesWrapper>
       <div className="features">
         <ul className="options">
@@ -47,7 +47,7 @@ const FeaturesList = ({ features }) => {
 };
 
 const FeaturesCarousel = ({ features, heading }) => {
-  return(
+  return (
     <FeaturesWrapper>
       <div className="features-carousel">
         <h2 className="main-heading">{heading ? heading : "Features"}</h2>
@@ -76,8 +76,8 @@ const FeaturesCarousel = ({ features, heading }) => {
   );
 };
 
-const Feature = ({children, title, active, onClick, learnMoreLink, id, Element = "li"}) => {
-  return(
+const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element = "li" }) => {
+  return (
     <Element className={active ? "feature active-feature" : "feature"}>
       {onClick ? (
         <button

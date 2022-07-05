@@ -19,7 +19,7 @@ const CloudNativeLeaders = () => {
           <img src={cncf} alt="Cloud Native-logo" />
           <p>Commissioned by the CNCF.</p>
         </div>
-        
+
       </div>
       <div className="btn-cont">
         <Button primary title="About Us" url="/company/about" />

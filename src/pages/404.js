@@ -22,5 +22,5 @@ const NotFoundPage = () => (
     </Layout>
   </ThemeProvider>
 );
- 
+
 export default NotFoundPage;

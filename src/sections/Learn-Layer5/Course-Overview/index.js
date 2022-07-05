@@ -4,7 +4,7 @@ import { Row, Col } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
 import { Link } from "gatsby";
 
-import { IoDocumentTextOutline,} from "@react-icons/all-files/io5/IoDocumentTextOutline";
+import { IoDocumentTextOutline, } from "@react-icons/all-files/io5/IoDocumentTextOutline";
 import { IoChevronBackOutline } from "@react-icons/all-files/io5/IoChevronBackOutline";
 import Button from "../../../reusecore/Button";
 import ChapterCard from "../../../components/Learn-Components/Chapter-Card";
@@ -53,7 +53,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
 
   useEffect(() => {
     let bookmarkPath = localStorage.getItem("bookmarkpath-"+course.fields.slug.split("/")[3]);
-    if(bookmarkPath){
+    if (bookmarkPath){
       setHasBookmark(true);
       setBookmarkUrl(bookmarkPath);
     }

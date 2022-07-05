@@ -5,7 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Row, Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
-import ProgramsPageWrapper, {dropdownTheme, selectStyles} from "./ProgramsSingle.style.js";
+import ProgramsPageWrapper, { dropdownTheme, selectStyles } from "./ProgramsSingle.style.js";
 
 const ProgramsSingle = ({ data, options, setActiveOption, activeOption }) => {
 
@@ -21,7 +21,7 @@ const ProgramsSingle = ({ data, options, setActiveOption, activeOption }) => {
               <h4>Go Back</h4>
             </Link>
           </div>
-          {Boolean(options) && 
+          {Boolean(options) &&
             <div className="selectWrapper">
               {options.length>1 && <Select
                 name="Select Year of Program"

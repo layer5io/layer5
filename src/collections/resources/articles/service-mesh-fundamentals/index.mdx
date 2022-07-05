@@ -1,0 +1,103 @@
+---
+title: "Service Mesh Fundamentals"
+thumbnail: ../../service-mesh.svg
+date: 2021-10-05 10:30:05 -0530
+category: Service Mesh
+type: Article
+tags:
+ - Service mesh
+featured: false
+published: true
+resource: true
+---
+
+import { Link } from "gatsby";
+import { ResourcesWrapper } from "../../Resources.style.js";
+import Differences from "./figure1.png";
+
+<ResourcesWrapper>
+  <div className="intro">
+    <p>Learn more about service mesh fundamentals in <Link className="blog" to="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource which addresses how to evaluate your organization’s readiness, provides factors to consider when building new applications and converting existing applications to best take advantage of a service mesh, and offers insight on deployment architectures used to get you there.</p>
+  </div>
+
+<p>
+Many emerging technologies are based on or reincarnated from prior thinking and approaches to computing and networking paradigms. Why is this phenomenon required? We'll look to the microservices and containers movement for service meshes, a cloud-native approach to design scalable, independently supplied services. What was previously internal application communications have become a mesh of service-to-service remote procedure calls (RPCs) transported via networks thanks to microservices. Microservices democratize language and technology choice across independent service teams that generate new features quickly as they iteratively and continuously provide software(typically as a service). The most crucial driver of microservices as an architectural model is the decoupling of engineering teams and their enhanced speed.
+</p>
+
+<h3>Operating Many Services</h3>
+
+<p>
+The initial couple of microservices are relatively simple to deliver and operate—at least in comparison to organizations' challenges when they first use many microservices. Whether that "many" is three or one hundred, a major technological issue will inevitably arise. To relieve microservices headaches, several remedies are prescribed; one notable example is the use of client libraries. In microservices environments, language and framework-specific client libraries, whether pre-existing or generated, are utilized to address distributed systems challenges. Many teams first explore their path to a service mesh in these situations. The sheer volume of services that must be managed on an individual, distributed basis (rather than centrally as with monoliths) and the challenges of ensuring their reliability, observability, and security cannot be met with outmoded paradigms, necessitating the need to reincarnate prior thinking and approaches. It is necessary to adapt new tools and techniques.
+</p>
+
+<p>
+Since microservices are distributed (often ephemeral) by nature, and the network is critical to their functioning, we should consider the fallacy that networks are reliable, have no latency, have infinite bandwidth, and that communication is guaranteed. When you consider how important it is to be able to control and secure service communication in distributed systems that rely on network calls with every transaction, every time an application is invoked, you can see why you are under tooled and why running more than a few microservices on a network topology that is in constant flux is so difficult. In the age of microservices, a new layer of tooling for the caretaking of services is needed—a service mesh is needed.
+</p>
+
+<h3>What Is a Service Mesh?</h3>
+
+<p>Service meshes provide intent-based networking for microservices describing desired behavior of the network in the face of constantly changing conditions and network topology. At their core, service meshes provide:
+</p>
+<ul>
+  <li>A services-first network;</li>
+  <li>A developer-driven network;</li>
+  <li>A network that is primarily concerned with alleviating application developers from building infrastructure concerns into their application code; </li>
+  <li>A network that empowers operators with the ability to declaratively define network behavior, node identity, and traffic flow through policy; </li>
+  <li>A network that enables service owners to control application logic without engaging developers to change its code.</li>
+</ul>
+
+<p>
+Value derived from the layer of tooling that service meshes provide is most evident in the land of microservices. The more services, the more value derived from the mesh. In subsequent chapters, I show how service meshes provide value outside of the use of microservices and containers and help modernize existing services (running on virtual or bare metal servers) as well.
+</p>
+
+
+<p>
+Many of you will find yourself working in organizations that have more than one sort of service mesh. Diversity is driven by a broad set of workload requirements varying from process-based to event-driven in their design, from those running on bare metal to executing in functions and those representing every style of deployment artifact in-between. The scope of service mesh capability required by different organizations varies. As a result, different service meshes are created with slightly different use cases in mind, resulting in differences in service mesh architecture and deployment models. Service meshes, which are driven by Cloud, Hybrid, On-Prem, and Edge, can enable each of these. With the requirements of different edge devices and their functions, along with ephemeral cloud-based workloads, microservice patterns and technologies give a plethora of opportunities for service mesh differentiation and specialization. Cloud vendors produce and collaborate as they provide service mesh as a managed service on their platforms.
+</p>
+
+  <div className="center" >
+  <img src={Differences} align="center" alt="comparative spectrum" />
+  <p>Figure 1: A comparative spectrum of the difference between some of the service meshes based on their individual strengths.</p>
+  </div>
+
+<p>
+The demand for service meshes, including meshes native to specific cloud platforms, is growing in tandem with the number of microservices. As a result, many enterprises now use various service mesh products, either separately or together.
+</p>
+
+<h3>Service Mesh Abstractions</h3>
+<p>Because there are any number of service meshes available, independent specifications have cropped up to provide abstraction and standardization across them. Three service mesh abstractions exist today:
+</p>
+<ul>
+    <li><Link to="/projects/service-mesh-performance">Service Mesh Performance</Link> (SMP) is a format for describing and capturing service mesh performance. Created by Layer5; Meshery is the canonical implementation of this specification.</li>
+    <li>Multi-Vendor Service Mesh Interoperation (Hamlet) is a set of API standards for enabling service mesh federation. Created by VMware.</li>
+    <li><Link to="/projects/service-mesh-interface-conformance">Service Mesh Interface</Link> (SMI) is a standard interface for service meshes on Kubernetes. Created by Microsoft; Meshery is the official SMI conformance tool used to ensure that a cluster is properly configured and that its behavior conforms to official SMI specifications.</li>
+</ul>
+
+<h3>Service Mesh Landscape</h3>
+<p>
+Let's start characterizing different service meshes now that we better understand why we live in a multi-mesh world. Some service meshes support non-containerized workloads (services operating on a VM or on bare metal), while others specialize in layering on top of container orchestrators, such as Kubernetes. All service meshes support integration with service discovery systems. The subsections that follow provide a very brief survey of service mesh offerings within the current technology landscape.
+</p>
+
+<div class="fact-left">
+<p>
+See the Layer5 <Link to="/service-mesh-landscape">service mesh landscape</Link> for a comprehensive overview and characterizing of all of the service meshes, service proxies, and related tools available today. This landscape is community-maintained and places service meshes in contrast with one another so that the reader might make the most informed decision about which service mesh best suits their needs.
+</p>
+</div>
+
+<h3>Why Do I Need One?</h3>
+
+<p>
+"I have a container orchestrator; why do I need another infrastructure layer?" you might wonder. Container orchestrators provide most of what the cluster (nodes and containers) requires.  Container orchestrators' primary focus is on scheduling, discovery, and health, mainly at the infrastructure level (networking being a Layer 4 and below focus). As a result, microservices have unmet service-level needs. A service mesh is a specialized infrastructure layer that makes service-to-service communication safe, fast, and reliable. Its operation is typically based on a container orchestrator or integration with another service discovery system. Although service meshes are frequently deployed as a separate layer on top of container orchestrators, they do not require one because control and data plane components could be deployed independently of containerized infrastructure.
+</p>
+
+<p>
+As stated previously, the network is directly and critically involved in every transaction, every execution of business logic, and every request made to the application in microservices deployments. For modern, cloud-native applications, network stability and latency are top priorities. A cloud native application may be made up of hundreds of microservices, each of which could have several instances, and each of those ephemeral instances could be rescheduled by a container orchestrator as needed.
+</p>
+
+<p>
+What would you want from a network that connects your microservices, given the network's criticality? You want your network to be as intelligent and resilient as possible. To improve the aggregate reliability of your cluster, you want your network to route traffic around from failures. You want to avoid overhead like high-latency routes or servers with cold caches in your network. You want your network to protect the traffic that flows between services against trivial attacks. You want your network to provide insight into service communication failures by exposing unforeseen dependencies and root causes. You want your network to let you impose policies at the granularity of service behaviors, not just at the connection level. You also don’t want to write all this logic into your application.
+</p>
+
+<p>You want Layer 5 management. You want a services-first network. You want a service mesh!</p>
+
+</ResourcesWrapper>

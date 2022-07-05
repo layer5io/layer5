@@ -12,7 +12,7 @@ const contents = [
   { id: 0, link: "#Clone your fork", text: "Clone your fork" },
   { id: 1, link: "#Checkout a new branch", text: "Checkout a new branch" },
   { id: 2, link: "#Commit your changes", text: "Commit your changes" },
-  { id: 3, link: "#Push changes to Github", text: "Push changes to Github"},
+  { id: 3, link: "#Push changes to Github", text: "Push changes to Github" },
   { id: 4, link: "#Sign-off commits", text: "Sign-off commits" },
 ];
 

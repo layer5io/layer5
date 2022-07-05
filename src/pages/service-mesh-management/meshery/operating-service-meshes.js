@@ -85,7 +85,7 @@ const OperatingServiceMeshes = () => (
                   communication with Kubernetes and a specific type of service mesh.
                   Multiple adapters of the same type may be deployed concurrently. Although,
                   this isn’t strictly necessary for Meshery to communicate to more than one instance of the same type of service mesh.
-                  See the <a href='https://docs.meshery.io/guides/multiple-adapters' target="_blank" rel="noreferrer">Using Multiple Adapters</a> guide for more information.</p>,
+                  See the <a href="https://docs.meshery.io/guides/multiple-adapters" target="_blank" rel="noreferrer">Using Multiple Adapters</a> guide for more information.</p>,
             },
 
             {

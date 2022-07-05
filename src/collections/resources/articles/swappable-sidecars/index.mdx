@@ -1,0 +1,89 @@
+---
+title: "Swappable Sidecars"
+thumbnail: ./figure1.png
+category: Service Mesh
+date: 2021-10-17 10:30:05 -0530
+type: Article
+tags:
+ - Service Mesh
+published: true
+resource: true
+---
+
+import { Link } from "gatsby";
+import Swappingproxy from "./figure1.png";
+import { ResourcesWrapper } from "../../Resources.style.js";
+
+<ResourcesWrapper>
+  <div className="intro">
+    <p>Learn more about WebAssembly's use within service mesh data planes in <Link className="blog" to="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource for anyone looking to understand WASM filters, Lua scripts, and other options available for extending the data plane.</p>
+  </div>
+
+<p>
+    One of the most significant considerations to make when establishing a service mesh is the proxy's functionality. From the standpoint of a developer, a proxy's cloud native integrations (e.g., with OpenTelemetry / OpenTracing, Prometheus, and so on) are extremely important. Surprisingly, a developer may be uninterested in the APIs of a proxy. The control plane for the service mesh is the point of control for managing proxy settings. A developer, however, will be interested in the APIs of a management plane. Protocol support is at the top of the developers' wish list for proxies. Protocol considerations can be divided into two categories:
+</p>
+<ul>
+    <li>TCP, UDP, HTTP: Network team-centric consideration in which efficiency, performance, offload, and load balancing algorithm support are evaluated. Support for HTTP2 often takes top billing.
+</li>
+    <li>gRPC, NATS, Kafka: A developer-centric consideration in which the top item on the list is application-level protocols, specifically those commonly used in modern distributed application designs.
+</li>
+</ul> 
+
+<p>The reality is that selecting the perfect proxy involves more than protocol support. Your proxy should meet all key criteria:
+</p>
+<ul>
+    <li>High performance and low latency</li>
+<li>High scalability and small memory footprint</li>
+<li>Deep observability at all layers of the network stack</li>
+<li>Programmatic configuration and ecosystem integration</li>
+<li>Thorough documentation to facilitate an understanding of expected proxy behavior</li>
+</ul>  
+
+<p>
+    Envoy is used as a service proxy by a variety of service meshes. Within Istio, Envoy is the default service proxy. Using Envoy’s APIs, various projects have demonstrated the ability to displace Envoy as the default service proxy with the choice of an alternative.
+</p>
+
+  <div className="intro">
+      <h3 align="center">Standardizing Data Plane APIs</h3>
+    <p>
+        The xDS APIs are a collection of Envoy's APIs. The Universal Data Plane API (UDPA) working group attempts to create a set of APIs that will serve as the de facto standard for L4/L7 data plane configuration (similar to OpenFlow's role in SDN at L2/L3/L4). The Envoy xDS APIs are being evolved to address service discovery, load balancing assignments, routing discovery, listener configuration, secret discovery, load reporting, health check delegation, and more, in combination with a well-defined, stable API versioning policy.
+    </p>    
+  </div>
+
+<p>
+    In early versions of Istio, Linkerd exhibited an integration in which Istio was the control plane, supplying configuration to Linkerd proxies.  NGINX also hosted a project called nginMesh, in which Istio served as the control plane and NGINX proxies operated as the data plane.
+</p>
+<p>
+    With many service proxies in the ecosystem, outside of Envoy, only two have currently demonstrated integration with Istio . Linkerd is not yet intended to be a general-purpose proxy; instead, it is focused on being lightweight, placing extensibility as a secondary concern by offering extensions via gRPC plug-in.  Consul makes use of Envoy as a proxy. Why would you want to use another service proxy?
+</p>
+
+<strong>NGINX</strong>
+<p>
+While you won't be able to use NGINX as a proxy to replace Envoy, you could wish to employ NGINX based on your operational expertise, the necessity for a battle-tested proxy, or the integration of an F5 load balancer. You might also be looking for caching, a web application firewall (WAF), or other features in NGINX Plus. The service proxy used in the NGINX Service Mesh data plane is an enhanced version of NGINX Plus that interfaces natively with Kubernetes.
+</p>
+<strong>CPX</strong>
+<p>
+If you already have Citrix Application Delivery Controllers and want to use them across your diverse infrastructure, you might choose to use the Citrix Service Mesh (which is an Istio control plane with a CPX data plane).With infrastructure diversity, holistic control, and monitoring for operational consistency across all your workloads (new microservices and existing monoliths).
+</p>
+<strong>MOSN</strong>
+<p>
+    MOSN can deploy as an Istio data plane. You might choose to deploy MOSN if you need to highly customize your service proxy and are a Golang shop. MOSN supports a multi-protocol framework, and you access private protocols with a unified routing framework. It has a multi-process plug-in mechanism, which can easily extend the plug-ins of independent MOSN processes through the plug-in framework, and do some other management, bypass and other functional module extensions.
+</p>
+
+<div class="fact">
+    You might find this article on <a href="https://www.oreilly.com/content/how-to-customize-an-istio-service-mesh/">How to customize an Istio service mesh and its adjoining webcast</a> helpful in further understanding Istio’s extensibility with respect to swappable service proxies.
+</div>
+
+<p>
+    Without configuration, proxies are without instructions to perform their tasks. Pilot is the head of the ship in an Istio mesh, keeping synchronized with the underlying platform by tracking and representing its services to istio-proxy. istio-proxy contains the proxy of choice (e.g. Envoy). Typically, the same istio-proxy Docker image is used by Istio sidecar and Istio ingress gateway, which contains not only the service proxy but also the Istio Pilot agent.  At regular intervals, the Istio Pilot agent pulls configuration from Pilot to the service proxy, so that each proxy knows where to route traffic.
+</p>
+
+  <div className="center" >
+  <img src={Swappingproxy} align="center" alt="Swapping Proxy" />
+  <p>
+  Figure 1: Example of swapping proxies—Istio + nginMesh.
+  </p>
+  </div>
+
+
+</ResourcesWrapper>

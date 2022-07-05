@@ -33,7 +33,7 @@ const JoinCommunityWrapper = styled.div`
 
 const JoinCommunity = (props) => {
 
-  return(
+  return (
     <JoinCommunityWrapper image={props.image}>
       <div className="join-community">
         <div className="join-community_text-and_button">

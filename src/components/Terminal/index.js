@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import {TerminalWrapper} from "./Terminal.style";
+import { TerminalWrapper } from "./Terminal.style";
 
 /**
  * A Terminal is a simple component representing the presentation

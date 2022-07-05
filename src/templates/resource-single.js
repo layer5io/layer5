@@ -39,7 +39,7 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
 }
 `;
 
-const ResourceSinglePage = ({data}) => {
+const ResourceSinglePage = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>

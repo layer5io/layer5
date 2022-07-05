@@ -1,0 +1,69 @@
+---
+title: "Learn How to Write WebAssembly Filters"
+thumbnail: ./webassembly-logo-horizontal.png
+date: 2021-09-03 10:30:05 -0530
+category: WebAssembly Filters
+tags:
+ - WebAssembly
+ - Envoy
+type: Article
+product: Meshery
+technology: WebAssembly
+mesh: Linkerd
+featured: false
+published: false
+resource: true
+---
+
+import { Link } from "gatsby";
+import wasmLogo from "./webassembly-logo-horizontal.png";
+import { ResourcesWrapper } from "../../Resources.style.js";
+
+<ResourcesWrapper>
+  <div className="intro">
+    <p>Learn more about WebAssembly's use within service mesh data planes in <Link className="blog" to="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource for anyone looking to understand WASM filters, Lua scripts, and other options available for extending the data plane.</p>
+  </div>
+
+<p>
+WebAssembly, or WASM, is an open standard that defines a binary format for executable programs. Through WebAssembly System Interface (WASI), it also defines interfaces for facilitating interaction with host environments. The initial focus of these host environments was browsers and large web applications with the intention of securely running programs to improve performance. As an open standard, WASM is maintained by the W3C, and has been adopted by all modern browsers. After HTML, CSS, and Javascript, WebAssembly is the fourth language to natively run in web browsers.
+</p>
+
+<p>
+WASM support is coming to Envoy through the efforts of Google, and Envoy maintainers embedding Google's open source high-performance JavaScript and WebAssembly engine, V8, into Envoy. Through the WebAssembly System Interface, Envoy exposes an Application Binary Interface (ABI) to WASM modules, so that they can operate as Envoy filters. The way WASI works is straight-forward. You write your application in your favourite languages like Rust, C or C++. Then, build and compile them into a WebAssembly binary targeting the host environment. The generated binary requires the WebAssembly runtime to provide the necessary interfaces to system calls for the binary to execute. Conceptually, this is similar to JVM. If you have a JVM installed then you can run any Java-like languages on it. Similarly, with a runtime, you can run the WebAssembly binary.
+</p>
+
+<h4>Envoy Proxy WASM SDK</h4>
+
+<p>
+Envoy Proxy runs WASM filters inside a stack-based virtual machine, thus the filter’s memory is isolated from the host environment. All interactions between the embedding host (Envoy Proxy) and the WASM filter are realized through functions and callbacks provided by the Envoy Proxy WASM SDK. The Envoy Proxy WASM SDK has implementations in various programming languages like:
+</p>
+
+<ul>
+  <li>C++</li>
+  <li>Rust</li>
+  <li>AssemblyScript</li>
+  <li>Go</li>
+</ul>
+
+<p>
+Let's examine how to write WASM filters for Envoy using the Rust Envoy Proxy WASM SDK. While we will not delve into all the details of the Application Binary Interface (ABI) for Envoy Proxy's WASM SDK, we will touch on a few of the things that are necessary to grasp the basics of writing WASM filters for Envoy.
+</p>
+
+<p>
+Our filter implementation must be derived from the following two classes.
+</p>
+
+<p>
+Envoy provides the ability to integrate additional filters by either:
+</p>
+
+<ul>
+  <li>Natively by incorporating your custom filter into Envoy’s C++ source code and compiling a new Envoy version. The drawback being that you need to maintain your own version of Envoy, while the benefit being that of your custom filter running at native speed.</li>
+  <li>Via WASM by incorporating your custom filter as a WebAssembly binary writing in C++, Rust, AssemblyScript or Go. The drawback being that WASM-based filters incur some overhead, while the benefit being that you can dynamically load and reload WASM-based filters in Envoy at runtime.</li>
+</ul>
+
+<p>
+Envoy configuration is initialized via bootstrap on startup. Envoy’s xDS APIs allow configuration to be loaded and reloaded dynamically during runtime. Envoy configuration has different sections (e.g. LDS which is for configuring Listeners and CDS which is for configuring clusters). Each of the sections can configure WASM plugins (programs).
+</p>
+
+</ResourcesWrapper>

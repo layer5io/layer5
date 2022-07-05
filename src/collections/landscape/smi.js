@@ -85,7 +85,7 @@ export const smi_data=[
       }
     ],
     "previous_versions": [
-                 
+
     ],
   },
   {
@@ -129,7 +129,7 @@ export const smi_data=[
       }
     ],
     "previous_versions": [
-                       
+
     ],
   },
   {
@@ -173,7 +173,7 @@ export const smi_data=[
       }
     ],
     "previous_versions": [
-                       
+
     ],
   },
   {
@@ -218,7 +218,7 @@ export const smi_data=[
       }
     ],
     "previous_versions": [
-                       
+
     ],
   }
 

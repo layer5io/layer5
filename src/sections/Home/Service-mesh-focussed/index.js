@@ -30,7 +30,7 @@ const ServiceMeshFocused = () => {
               "Diverse microservices patterns and technologies, together with the requirements of given microservice applications, provide myriad opportunities for service mesh differentiation and specialization - including meshes native to specific cloud platforms. This will lead to a world where many           enterprises use multiple service mesh products, whether separately or together."
             </p>
             <Button className="book_btn" primary url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition" title="Read Book">
-              <FaArrowRight className="icon-right" /> 
+              <FaArrowRight className="icon-right" />
             </Button>
           </Col>
         </Row>
