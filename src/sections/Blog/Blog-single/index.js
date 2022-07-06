@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
@@ -9,10 +9,17 @@ import RelatedPosts from "../../../components/Related-Posts";
 import BlogPageWrapper from "./blogSingle.style";
 import BlogPostSignOff from "../BlogPostSignOff";
 import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
-import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
+import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
+import { AiOutlineShareAlt } from "@react-icons/all-files/ai/AiOutlineShareAlt";
+import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
+import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { useLocation } from "@reach/router";
+
 import AboutTheAuthor from "./author";
 
 const BlogSingle = ({ data }) => {
+  const location = useLocation();
   const { frontmatter, body, fields } = data.mdx;
   const { relatedPosts: blogData, authors } = useStaticQuery(
     graphql`query relatedPosts {
@@ -65,6 +72,8 @@ const BlogSingle = ({ data }) => {
     }  `
   );
 
+  const [showShareContainer, setShowShareContainer] = useState(false);
+
   const posts = blogData.nodes;
   const relatedPosts = new RelatedPostsFactory (
     posts, fields.slug
@@ -97,26 +106,43 @@ const BlogSingle = ({ data }) => {
             <BlogPostSignOff
               author={{ name: frontmatter.author }}
             />
-            <div className="post-info-block">
-              <div className="tags">
-                <span>Tags:</span>
-                <div>
-                  {frontmatter.tags && frontmatter.tags.map(tag => (
-                    <Link key={`${frontmatter.title}-${tag}`}
-                      to={`/blog/tag/${slugify(tag)}`}>{tag}
-                    </Link>
-                  ))}
+            <div className="post-tag-container">
+              <div className="post-info-block">
+                <div className="tags">
+                  <span>Tags:</span>
+                  <div>
+                    {frontmatter.tags && frontmatter.tags.map(tag => (
+                      <Link key={`${frontmatter.title}-${tag}`}
+                        to={`/blog/tag/${slugify(tag)}`}>{tag}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              {/* <CTA_Bottom
+                {/* <CTA_Bottom
               category={"Community"}
             /> */}
+              </div>
+              <div className="post-share-mobile" onClick={() => setShowShareContainer(!showShareContainer)}>
+                <AiOutlineShareAlt />
+              </div>
+              {showShareContainer ?
+                <div className="share-icons-container">
+                  <TwitterShareButton url={location.href} title={shareQuote}>
+                    <AiOutlineTwitter />
+                  </TwitterShareButton>
+                  <FacebookShareButton url={location.href} quote={shareQuote}>
+                    <FaFacebookF />
+                  </FacebookShareButton>
+                  <LinkedinShareButton url={location.href}>
+                    <FaLinkedin />
+                  </LinkedinShareButton>
+                </div> : ""}
             </div>
             <RelatedPosts
               postType="blogs"
               relatedPosts={relatedPosts}
-              mainHead="Related Blogs" 
-              lastCardHead="All Blogs" 
+              mainHead="Related Blogs"
+              lastCardHead="All Blogs"
               linkToAllItems="/blog"
             />
           </div>

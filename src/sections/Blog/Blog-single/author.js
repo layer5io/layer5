@@ -13,7 +13,7 @@ const AboutTheAuthorWrapper = styled.div`
 
 .author-info-section{
     float: right;
-    width: 20%;
+    width: 25%;
     margin: 3rem 0 3rem 1rem;
     .authors-info-container{
         padding: 1.8rem;
@@ -113,13 +113,13 @@ const AboutTheAuthorWrapper = styled.div`
     }
 }
 
- @media (max-width: 770px) { 
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-     .post-container{
-         width: 100%;
+
+ @media (max-width: 975px) { 
+     .author-info-section{
+       width: 30%;
      }
+ }
+ @media (max-width: 770px) { 
      .author-info-section{
        display: none;
      }
@@ -137,11 +137,10 @@ const AboutTheAuthorWrapper = styled.div`
          }
      }
 }
-
 `;
 
 const AboutTheAuthor = (props) => {
-  const {authorInformation, shareQuote} = props;
+  const { authorInformation, shareQuote } = props;
   const location = useLocation();
 
   return (
