@@ -104,8 +104,8 @@ module.exports = {
                 }
               }
             `,
-            output : "/rss.xml",
-            title : "Layer5 Technical Posts",
+            output: "/rss.xml",
+            title: "Layer5 Technical Posts",
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
