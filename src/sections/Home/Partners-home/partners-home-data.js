@@ -65,4 +65,4 @@ export const partners = [
     innerDivStyle: "partner__block__inner",
   }
 
-];  
+];
