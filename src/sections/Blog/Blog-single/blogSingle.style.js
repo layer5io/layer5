@@ -17,6 +17,10 @@ const BlogPageWrapper = styled.div`
         .post-share-mobile {
             display: none;
         }
+
+        .share-icons-container {
+            display: none;
+        }
     }
 
 
