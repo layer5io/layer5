@@ -1,0 +1,45 @@
+---
+title: "Managing Containers"
+thumbnail: ./wasm-envoy.svg
+date: 2022-07-06 10:30:05 -0530
+category: Kubernetes
+type: Article
+technology: Kubernetes
+tags:
+ - Docker
+ - Kubernetes
+published: false
+resource: true
+---
+
+import { Link } from "gatsby";
+import Infrastructure from "./figure1.png";
+import { ResourcesWrapper } from "../../Resources.style.js";
+
+<ResourcesWrapper>
+  <div className="intro">
+    <p>Learn more about WebAssembly's use within service mesh data planes in <Link className="blog" to="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource for anyone looking to understand WASM filters, Lua scripts, and other options available for extending the data plane.</p>
+  </div>
+
+<p>
+Container management refers to a set of practices that govern and maintain containerization software. Container management tools automate the creation, deployment, destruction and scaling of application or systems containers.
+Containerization is an approach to software development that isolates processes that share an OS kernel -- unlike virtual machines (VMs), which require their own -- and binds application libraries and dependencies into one deployable unit. This makes containers lightweight to run, as they require only the application configuration information and code from the host OS. This design also increases interoperability compared to VM hosting. Each container instance can scale independently with demand.
+Modern Linux container technology was popularized by the Docker project, which started in 2013. Interest soon expanded beyond containerization itself, to the intricacies of how to effectively and efficiently deploy and manage containers.
+</p>
+<div class="fact">
+<p>
+To get a feel of these capabilities, try experimenting with the <Link to="/projects/image-hub">Image Hub</Link>,a prototype application developed in Rust that runs on Consul and allows you to explore WebAssembly modules used as Envoy filters.
+</p>
+</div>
+ 
+  <div className="center" >
+  <img src={Infrastructure} align="center" alt="application infrastructure logic" />
+  <p>
+Figure 1:. How the intelligence of the cloud native management plane and the power of the service mesh data plane combine to deliver application infrastructure logic.  </p>
+  </div>
+
+<p>
+WebAssembly is intriguing in part because of its performance characteristics, which vary depending on the program/filter used. For network filtering use cases, some have a 10% to 20% overhead as compared to natively executed code.  Given its high degree of portability, WebAssembly resembles Docker in certain ways. WASM's virtual stack machine, like the Java Virtual Machine (JVM), is evolving into a write once, run anywhere system (WORA). WASM executables are precompiled with a wide range of languages that support it as a compilation target (currently around 40 languages).
+</p>
+
+</ResourcesWrapper>

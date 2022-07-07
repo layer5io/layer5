@@ -1,0 +1,75 @@
+---
+title: "What is Multi-Cluster Kubernetes?"
+thumbnail: ./kubernetes.svg
+date: 2022-07-05 10:30:05 -0530
+category: Kubernetes
+type: Article
+technology: Kubernetes
+tags:
+ - Docker
+ - Kubernetes
+published: true
+resource: true
+---
+
+import { Link } from "gatsby";
+// import Infrastructure from "./figure1.png";
+// import Kubernetes from "../../../sections/Meshery/Meshery-platforms/supported-icons/kubernetes.svg";
+import { ResourcesWrapper } from "../../Resources.style.js";
+
+<ResourcesWrapper>
+Kubernetes provisions clusters that run and manage our workloads. Depending on the needs of an organization, Kubernetes deployments can be replicated to have the same workloads accessible across multiple nodes and environments. This concept is called Kubernetes multi-cluster orchestration. It’s simply provisioning your workloads in several Kubernetes clusters (going beyond a single cluster). 
+
+A Kubernetes multi-cluster defines deployment strategies to introduce scalability, availability, and isolation for your workloads and environments. A Kubernetes multi-cluster is fully embraced when an organization coordinates the planning, delivery, and management of several Kubernetes environments using appropriate tools and processes.
+
+## Why Do You Need a Kubernetes Multi-Cluster?
+
+In simple deployment cases, Kubernetes can spin workloads in a single cluster. However, some cases need advanced deployment models, and for such scenarios, a multi-cluster architecture is suitable and can improve the performance of your workloads.
+
+Simply put, a development team may need a Kubernetes multi-cluster to handle workloads spanning regions, eliminate a cloud blast radius, manage compliance requirements, solve multi-tenancy conflicts, and enforce security around clusters and tenants.
+
+### Cluster Upgrades and Security Management
+
+Teams that rely heavily on Kubernetes for deployments need to plan for regular upgrades and patches on their environments for comprehensive security fixes.
+
+Running cluster upgrades without due care or proper tools can break more things, and more so when dependent resources are overloaded. Tools like kOPs and Cluster APIs can therefore be used to apply upgrades to your running clusters.
+
+The tools that you install to run your clusters depend entirely on the workloads that your clusters support. How you upgrade a cluster and its tools also depends on how you initially deployed and ran the Kubernetes cluster, that is, whether you’re using a hosted Kubernetes provider or some other means for deployment. Most hosted providers support and handle automatic upgrades, which relieves developers from manual upgrades and patching.
+
+Upgrading a cluster and its toolset follows the approach of upgrading the control plane first, then the nodes in a cluster, followed by upgrading clients such as `kubectl`.
+
+### Managing Kubernetes Multi-Cluster Complexity
+
+The complexity of management tasks across multiple Kubernetes clusters greatly increases your the number of clusters increase. You need higher-level view and control as you manage workloads across clusters; need to be able to simply switch between clusters; you need a management plane. 
+
+<Link className="blog" to="/meshery">Meshery</Link> is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
+
+MeshSync, a custom controller managed by Meshery Operator, uniquely contains cluster-wide details of all objects across any number of managed clusters separated by Kubernetes Cluster ID. 
+
+<div className="intro">
+  <p>Learn more about how to <Link className="blog" to="/blog/meshery/multi-cluster-kubernetes-management-with meshery">wrangle multiple Kubernetes clusters with Meshery</Link>.</p>
+</div>
+
+### Deprovisioning Clusters That Are No Longer Needed
+
+When you deprovision a cluster, its running resources are also deleted. The control plane resources, the node instances, pods, and stored data are all deleted.
+
+Different hosted Kubernetes providers have varying ways of deleting Kubernetes clusters. For instance, GKE supports deletion of clusters from the Google Cloud CLI and Cloud Console. Other tools for spinning Kubernetes clusters such as kOps and Amazon EKS also support the deletion from their CLIs and consoles.
+
+Suppose you have provisioned your clusters with the Google Kubernetes Engine; you can run the following command in the gcloud CLI to deprovision your clusters that are no longer needed:
+
+```
+gcloud container clusters delete CLUSTER_NAME
+```
+
+At this point, you’ve seen the operations around managing a cluster lifecycle, that is, creation, deletion, and upgrading of clusters.
+
+## Conclusion
+
+Teams want working with clusters to be as easy as possible. This ease in operating clusters can be ensured by managing the cluster lifecycle. In this article, you learned what’s involved in managing a cluster lifecycle. You’ve seen how clusters are created at scale using various tools. You’ve also seen what cluster upgrades and security patch management involve while trying to maintain the health of your clusters.
+
+The complexity of Kubernetes environments does present challenges, but setting clear goals and objectives for deploying your clusters can help you overcome any obstacles as your organization makes the transition.
+
+Finally, multi-cluster deployments are a good choice for organizations that are building highly distributed systems, with geographic and regulatory control in check to help scale workloads beyond the limits of single clusters. Multi-cluster deployment and management is useful for minimizing exposure of production services, preventing access to sensitive data in environments like development and testing. Organizations are now opting to deploy their more critical workloads on separate multiple clusters from their less critical ones.
+
+</ResourcesWrapper>
