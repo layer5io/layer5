@@ -59,7 +59,7 @@ const Layer5Brand = () => {
                 <img src={Layer5WhiteBg} alt="Layer5 Logo" />
                   Primary Logo: broadly, and majorly applicable
               </Col>
-              <Col xs={12} sm={4}>
+              <Col xs={12} sm={6}>
                 <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
                   Layer5 Icon: suited for square-shaped display
               </Col>
