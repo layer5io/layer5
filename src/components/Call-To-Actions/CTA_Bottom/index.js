@@ -19,34 +19,37 @@ const CTA_BottomWrapper = styled.div`
     }
 
     img {
-        width: 16rem;
-        height: 16rem;
         object-fit: contain;
         pointer-events: none;
         border-radius: 0 0.5rem 0.5rem 0;
+        padding: 0.5rem;
     }
 
     .cta-content {
-        padding: 0.5rem;
+        padding: 0.5rem 1rem;
         display: flex;
         flex: auto;
-        text-align: left;
         align-items: center;
         height: 100%;
 
         p {
             margin-top: 0.5rem;
-            width: 95%;
             flex: 0 0 75%;
         }
         a {
+            text-align: center;
             flex: 0 0 25%;
         }
     }
 
-    @media screen and (max-width: 1200px) and (min-width: 700px) {
+    @media screen and (max-width: 992px) and (min-width: 600px) {
+      height: auto;
         button {
             min-width: 6.5rem;
+        }
+        img{
+          width: 16rem;
+          height: 16rem;
         }
     }
 
@@ -61,7 +64,7 @@ const CTA_BottomWrapper = styled.div`
             width: 18rem;
             height: 18rem;
             position: absolute;
-            filter: brightness(0.5);
+            opacity: 0.5;
             border-radius: 0.25rem;
         }
 
@@ -86,10 +89,11 @@ const CTA_BottomWrapper = styled.div`
     }
 `;
 
+const defaultHeading = "Layer5 Community";
 const defaultContent = "Join the Layer5 community and explore the world of service meshes!";
 const defaultURL = "https://slack.layer5.io";
 
-export const CTA_Bottom = ({ alt, button_text, category, content, external_link, image, url }) => {
+export const CTA_Bottom = ({ alt, button_text, category, content, external_link, image, url, heading }) => {
   return (
     <CTA_BottomWrapper>
       { category ? (
@@ -106,8 +110,10 @@ export const CTA_Bottom = ({ alt, button_text, category, content, external_link,
       ) : (
         <>
           <div className="cta-content">
-            <p>{content ? content : defaultContent}</p>
-            <Button primary title={button_text ? button_text : "Join Us"} url={url ? url : defaultURL} external={external_link ? true : false} />
+            <div>
+              <h3>{heading ? heading : defaultHeading}</h3>
+              <p>{content ? content : defaultContent}</p>
+            </div>            <Button primary title={button_text ? button_text : "Join Us"} url={url ? url : defaultURL} external={external_link ? true : false} />
           </div>
           <img src={image ? image : image_src} alt={alt ? alt : "Alt Text"} />
         </>
