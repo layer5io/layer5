@@ -6,7 +6,6 @@ import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import Layer5CommunityWhite from "../../../../assets/images/layer5/layer5-tagline/png/layer5-tag-white-bg.png";
 import Layer5WhiteBg from "../../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
 import Bookmarks from "../../../../assets/images/layer5/bookmarks.png";
 import BookmarksPDF from "../../../../assets/brand/bookmarks.pdf";
@@ -56,13 +55,9 @@ const Layer5Brand = () => {
           </Col>
           <SRLWrapper>
             <Row Vcenter className="Layer5Logos">
-              <Col xs={12} sm={4}>
+              <Col xs={12} sm={6}>
                 <img src={Layer5WhiteBg} alt="Layer5 Logo" />
                   Primary Logo: broadly, and majorly applicable
-              </Col>
-              <Col xs={12} sm={4}>
-                <img src={Layer5CommunityWhite} alt="Layer5 Logo with tagline" />
-                  Primary Logo with tagline: alternate horizontal layout
               </Col>
               <Col xs={12} sm={4}>
                 <img src={Layer5Icon} alt="Layer5 Logo" className="Layer5Icon" />
