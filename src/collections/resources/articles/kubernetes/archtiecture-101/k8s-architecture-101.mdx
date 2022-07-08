@@ -21,14 +21,13 @@ import { ResourcesWrapper } from "../../../Resources.style.js";
 The way Kubernetes is architected is what makes it powerful. Kubernetes has a basic client and server architecture, but it goes way beyond that. Kubernetes has the ability to do rolling updates, it also adapts to additional workloads by auto scaling nodes if it needs to and it can also self-heal in the case of a pod meltdown. These innate abilities provide developers and operations teams with a huge advantage in that your applications will have little to no down time. In this section we provide a brief overview of the master and its worker nodes with a high level overview of how Kubernetes manages workloads.
 
 <div className="right" >
-<img src={ArchDiagram} align="centre" height="50%" alt="Simple Kubernetes Architecture Diagram" />
+<img src={ArchDiagram} alt="Simple Kubernetes Architecture Diagram" />
 <i>Simple Kubernetes Architecture Diagram</i>
 </div>
 
 # Kubernetes Components
 
 Let's dive into each of the Kubernetes components, starting with the Master node.
-
 
 ## Kubernetes Master
 
@@ -37,7 +36,7 @@ The Kubernetes master is the primary control unit for the cluster. The master is
 These are the components that run on the master:
 
 ### Etcd Storage
-Etcd isan open-source key-value data store that can be accessed by all nodes in the cluster. It stores configuration data of the cluster’s state. etcd is a simple, distributed, consistent key-value store. It’s mainly used for shared configuration and service discovery.
+Etcd is an open-source key-value data store that can be accessed by all nodes in the cluster. It stores configuration data of the cluster’s state. etcd is a simple, distributed, consistent key-value store. It’s mainly used for shared configuration and service discovery.
 
 It provides a REST API for CRUD operations as well as an interface to register watchers on specific nodes, which enables a reliable way to notify the rest of the cluster about configuration changes.
 
@@ -55,7 +54,6 @@ Kube-controller-manager runs a number of distinct controller processes in the ba
 
 A controller uses apiserver to watch the shared state of the cluster and makes corrective changes to the current state to change it to the desired one.
 An example of such a controller is the Replication controller, which takes care of the number of pods in the system. The replication factor is configured by the user, and it's the controller’s responsibility to recreate a failed pod or remove an extra-scheduled one. Other examples of controllers are endpoints controller, namespace controller, and serviceaccounts controller, but we will not dive into details here.
-
 
 ## Worker Nodes
 These nodes run the workloads according the schedule provided by the master. The interaction between the master and worker nodes are what’s known as the control plane. The pods are run here, so the worker node contains all the necessary services to manage the networking between the containers, communicate with the master node, and assign resources to the containers scheduled.
