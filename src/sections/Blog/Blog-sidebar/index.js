@@ -10,7 +10,7 @@ import { HiOutlineChevronDown } from "@react-icons/all-files/hi/HiOutlineChevron
 
 const Discuss = "../../../assets/images/discuss/layer5-discuss-white.png";
 
-const Sidebar = ({ pageContext}) => {
+const Sidebar = ({ pageContext }) => {
   const data = useStaticQuery(
     graphql`
       query allTagsAndCategories {
@@ -39,7 +39,7 @@ const Sidebar = ({ pageContext}) => {
       }
     `
   );
-  
+
   const [showTag, setShowTag] = useState(true);
   const [showCategory, setShowCategory] = useState(true);
 

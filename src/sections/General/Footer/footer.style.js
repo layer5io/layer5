@@ -10,7 +10,7 @@ const FooterWrapper = styled.section`
 		top: 22%;
 		width: 18rem;
 	}
-
+	
 	.footer-head {
 		margin: 0px 1.5rem 1.5rem -0.75rem;
 		.footer_logo-icons{
@@ -53,7 +53,7 @@ const FooterWrapper = styled.section`
 			padding: 0;
 			list-style: none;
 			margin: 0;
-			font-size: 1.063rem;
+			font-size: .95rem;
 
 			.category-link {
 				color: #CCCCCC;
@@ -62,6 +62,18 @@ const FooterWrapper = styled.section`
 				&:hover{
 					color: ${props => props.theme.secondaryColor};
 				}
+			}
+
+			.new-label {
+				background-color: rgba(255, 255, 255, 0.25);
+				font-size: .5rem;
+				margin-left: .25rem;
+				padding: .2rem;
+				font-weight: 500;
+				border-radius: .25rem;
+				vertical-align: top;
+				text-transform: uppercase;
+				color: ${props => props.theme.saffronLightColor};
 			}
 		}
 	}

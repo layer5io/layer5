@@ -1,20 +1,21 @@
 import React from "react";
-import { Link } from "gatsby";
-import { Col, Container, Row } from "../../reusecore/Layout";
-import PageHeader from "../../reusecore/PageHeader";
 import Meshery_Logo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import MeshMapDrafts from "./images/meshmap-draft-logos.png";
 import styled from "styled-components";
+import MeshmapIcon from "./meshmap-icon.svg";
 
 const BannerSectionWrapper = styled.div`
 
     background: #000000;
+    border-radius: 0% 85% 0% 0% / 0% 80% 0% 0% ;
+    -webkit-box-shadow: 5px -5px 15px 5px rgba(0,0,0,0.33); 
+    box-shadow: 1px -5px 8px 1px rgba(0,211,169,0.55);
+        
     padding: 8rem 6rem 3rem 6rem;
     margin-bottom: 3rem;
     min-height: 25rem;
 
     h1 {
-        background-color: ${props => props.theme.black};
+        /* background-color: ${props => props.theme.black}; */
         font-weight: 500;
         font-size: 60px;
         color: ${props => props.theme.white};
@@ -28,7 +29,13 @@ const BannerSectionWrapper = styled.div`
             /* padding: .5rem; */
             /* background-color: ${props => props.theme.saffronLightColor};     */
             font-weight: 700;
-            color: ${props => props.theme.secondaryColor};
+            color: ${props => props.theme.caribbeanGreenColor};
+        }
+        @media screen and (max-width: 380px) {
+            font-size: 38px;
+            span{
+                font-size: 48px;
+            }
         }
     }
     h2 {
@@ -56,6 +63,8 @@ const BannerSectionWrapper = styled.div`
     h3 {
         color: ${props => props.theme.saffronColor};
         margin-bottom: .5rem;
+        font-weight: 300;
+        font-style: italic;
         span {
             color: ${props => props.theme.saffronColor};
         }
@@ -73,98 +82,73 @@ const BannerSectionWrapper = styled.div`
             padding-left: 1rem;
         }
     }
-    .draft-logo {
-        
-        position: absolute;
-        max-width: 25rem;
-        margin-top: -5rem;
-        right: 4rem;
-        p {
-            text-align: center ;
-        }
-    }
 
-    .learn-particle-img {
-        width: 35rem;
-        height: 27rem;
+    .meshmap-logo {
+        width: 14rem;
         overflow: hidden;
-        margin-top: -8rem;
+        margin-top: -7rem;
         position: absolute;
-        right: 0;
+        right: 25%;
+    }
+    div.accent-bubble {
+        width: 50%;
+        height: 100%;
+        background-position: right 20%;
+        
+        border-radius: 60% 40% 30% 70% / 70% 30% 70% 40%;
+        background: linear-gradient(90deg, hsla(168, 100%, 41%, 1) 57%, hsla(48, 84%, 51%, 1) 100%);
 
-        img {
-            position: absolute;
-            top: -8rem;
-            right: -6rem;
-        }
+        background: -moz-linear-gradient(90deg, hsla(168, 100%, 41%, 1) 57%, hsla(48, 84%, 51%, 1) 100%);
+
+        background: -webkit-linear-gradient(90deg, hsla(168, 100%, 41%, 1) 57%, hsla(48, 84%, 51%, 1) 100%);
+
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#00d3a9", endColorstr="#ebc017", GradientType=1 );
     }
 
     @media screen and (max-width: 1700px) {
-        .learn-particle-img {
-            width: 25rem;
-            height: 18rem;
-
-            img {
-                top: -7rem;
-                right: -5rem;
-            }
+        .meshmap-logo {
+            width: 12rem;
+            right: 12rem;
+            margin-top: -5rem;
         }
         .para {
-            margin-top:-3rem;
+            margin-top: -3rem;
         }
     }
     @media screen and (max-width: 1150px) {
-        .learn-particle-img {
-            width: 20rem;
-            height: 16rem;
-
-            img {
-                top: -6rem;
-                right: -4rem;
-            }
+        .meshmap-logo {
+            width: 12rem;
+            right: 8rem;
+            margin-top: -5rem;
         }
-        .draft-logo { max-width: 20rem; margin-right: -3rem;}
+        border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
     }
     @media screen and (max-width: 992px) {
-        .learn-particle-img {
-            width: 19rem;
-            height: 15rem;
-
-            img {
-                top: -5rem;
-                right: -5rem;
-            }
+        .meshmap-logo {
+            width: 8rem;
+            right: 3rem;
+            margin-top: -2rem;
         }
-        padding: 5rem 3rem;
-        .draft-logo { max-width: 18rem; margin-top:0rem; margin-right: -3rem;}
+        border-radius: 0% 85% 0% 0% / 0% 60% 0% 0% ;
     }
-    @media screen and (max-width: 870px) {
-        .draft-logo { max-width: 1px; visibility: hidden ;}
-    }
-    @media screen and (max-width: 768px) {
-        .learn-particle-img {
-            width: 18rem;
-            height: 14rem;
 
-            img {
-                top: -5rem;
-                right: -5rem;
+    @media screen and (max-width: 740px) {
+        padding: 8rem 2rem 3rem;
+        .meshmap-logo {
+            display: none;
             }
+        border-radius: 0% 85% 0% 0% / 0% 40% 0% 0% ;
         }
-        padding: 5rem 3rem;
-        .draft-logo { max-width: 1px; visibility: hidden ;}
-    }
 
 `;
 
 const BannerSection = () => {
   return (
     <BannerSectionWrapper>
-      <div className="draft-logo">
-        <p>Help us choose our logo for MeshMap:</p>
-        <a href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA">
-          <img src={MeshMapDrafts} alt="MeshMap Draft" /></a><br />
-        <p><a href="https://twitter.com/layer5/status/1536832439833743363?s=20&t=oEDasGEBl8cvsA64P7NNTA">Vote for your favorite design</a></p>
+      <div className="meshmap-logo">
+        <img src={MeshmapIcon} alt="Meshery Logo" />
+        {/* <div className="accent-bubble">asdf</div> */}
+
       </div>
       <div>
         {/* <PageHeader title="MeshMap" subtitle="take the blinders off" superscript="BETA" /> */}

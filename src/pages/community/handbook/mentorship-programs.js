@@ -15,7 +15,7 @@ const Mentorship = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Mentorship Programs" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO title="Mentorship Programs" description="As an open-source organization and a community, we participate in different mentorships programs." />
       <Navigation />
       <MentorshipPage />
       <Footer/>

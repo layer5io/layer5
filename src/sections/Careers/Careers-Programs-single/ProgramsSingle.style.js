@@ -65,9 +65,9 @@ margin-bottom : 3.125rem;
 export const selectStyles = {
   menu: styles => ({ ...styles, zIndex: 999, }),
   control: styles => ({ ...styles, backgroundColor: "white", zIndex: 900 }),
-  option: (styles, {isFocused, isSelected }) => ({
+  option: (styles, { isFocused, isSelected }) => ({
     ...styles,
-  
+
     alignItems: "center",
     display: "flex",
 
@@ -81,17 +81,17 @@ export const selectStyles = {
       width: 10,
       zIndex: 1000,
     },
-  
+
     backgroundColor: isSelected
       ? "rgba(11, 177, 158, 1)"
       : isFocused
         ? "rgba(11, 177, 158, 0.30)"
         : "white",
-  
+
     color: isSelected ? "white" : "black",
-  
+
     zIndex: 900,
-  
+
     ":active": {
       ...styles[":active"],
       backgroundColor: (isSelected
@@ -110,7 +110,7 @@ export const dropdownTheme = theme => ({
   borderRadius: 0,
   colors: {
     ...theme.colors,
-    primary50:"#b0e8e2",
+    primary50: "#b0e8e2",
     primary25: "#b0e8e2",
     primary: "#00b39f",
   }

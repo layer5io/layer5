@@ -99,7 +99,7 @@ export const CTA_FullWidth = ({ alt, button_text, category, content, external_li
           </div>
         </>
       ) : (
-        <>        
+        <>
           <img src={image ? image : image_src} alt={alt ? alt : "Alt Text"} />
           <div className="cta-content">
             <p>{content ? content : defaultContent}</p>

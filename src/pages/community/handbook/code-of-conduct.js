@@ -15,7 +15,7 @@ const CommunityConduct = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Code Of Conduct" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO title="Code Of Conduct" description="Layer5 follows the CNCF Code of Conduct" />
       <Navigation />
       <ConductPage />
       <Footer/>

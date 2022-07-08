@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {SRLWrapper} from "simple-react-lightbox";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
@@ -91,14 +91,10 @@ const MeshMarkBrand = () => {
                 <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo"/>
               </Col>
               <Col xs={12} sm={4}>
-                <div className="logo">
-                  <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo"/>
-                </div>
+                <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo"/>
               </Col>
               <Col xs={12} sm={4}>
-                <div className="logo">
-                  <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo"/>
-                </div>
+                <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo"/>
               </Col>
             </Row>
           </SRLWrapper>

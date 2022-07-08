@@ -143,6 +143,124 @@ h3.containerCaption {
   .slide.fifteen {
 	transform: rotateY(336deg) translateZ(382px);
   }
+  
+  @media screen and (max-width: 992px) {
+
+   .container {
+	width: 90px;
+
+   } 
+  .slide.one {
+    transform: rotateY(0deg) translateZ(260px);
+    }
+    .slide.two {
+    transform: rotateY(24deg) translateZ(260px);
+    }
+    .slide.three {
+    transform: rotateY(48deg) translateZ(260px);
+    }
+    .slide.four {
+    transform: rotateY(72deg) translateZ(260px);
+    }
+    .slide.five {
+    transform: rotateY(96deg) translateZ(260px);
+    }
+    .slide.six {
+    transform: rotateY(120deg) translateZ(260px);
+    }
+    .slide.seven {
+    transform: rotateY(144deg) translateZ(260px);
+    }
+    .slide.eight {
+    transform: rotateY(168deg) translateZ(260px);
+    }
+    .slide.nine {
+    transform: rotateY(192deg) translateZ(260px);
+    }
+    .slide.ten {
+    transform: rotateY(216deg) translateZ(260px);
+    }
+    .slide.eleven {
+    transform: rotateY(240deg) translateZ(260px);
+    }
+    .slide.twelve {
+    transform: rotateY(264deg) translateZ(260px);
+    }
+    .slide.thirteen {
+    transform: rotateY(288deg) translateZ(260px);
+    }
+    .slide.fourteen {
+    transform: rotateY(312deg) translateZ(260px);
+    }
+    .slide.fifteen {
+    transform: rotateY(336deg) translateZ(260px);
+    }
+  }
+  @media screen and (max-width: 572px) {
+    
+    .powerupOptions{
+     flex-flow: column;
+     img {
+      width: 80%;
+    }
+
+    }
+    .catalog-wrapper{
+      padding: 2rem;
+    }
+
+   .container {
+	  width: 65px;
+	  margin: 1.5rem auto 0rem;
+
+  
+   } 
+  .slide.one {
+    transform: rotateY(0deg) translateZ(160px);
+    }
+    .slide.two {
+    transform: rotateY(24deg) translateZ(160px);
+    }
+    .slide.three {
+    transform: rotateY(48deg) translateZ(160px);
+    }
+    .slide.four {
+    transform: rotateY(72deg) translateZ(160px);
+    }
+    .slide.five {
+    transform: rotateY(96deg) translateZ(160px);
+    }
+    .slide.six {
+    transform: rotateY(120deg) translateZ(160px);
+    }
+    .slide.seven {
+    transform: rotateY(144deg) translateZ(160px);
+    }
+    .slide.eight {
+    transform: rotateY(168deg) translateZ(160px);
+    }
+    .slide.nine {
+    transform: rotateY(192deg) translateZ(160px);
+    }
+    .slide.ten {
+    transform: rotateY(216deg) translateZ(160px);
+    }
+    .slide.eleven {
+    transform: rotateY(240deg) translateZ(160px);
+    }
+    .slide.twelve {
+    transform: rotateY(264deg) translateZ(160px);
+    }
+    .slide.thirteen {
+    transform: rotateY(288deg) translateZ(160px);
+    }
+    .slide.fourteen {
+    transform: rotateY(312deg) translateZ(160px);
+    }
+    .slide.fifteen {
+    transform: rotateY(336deg) translateZ(160px);
+    }
+  }
 
   @keyframes swirl {   
 	from {
@@ -160,7 +278,7 @@ const Catalog = () => {
     <CatalogWrapper>
       <Container>
         <h2 className="heading">Choose Your Power-ups</h2>
-        <p className="caption">MeshMap integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.</p>
+        <p className="caption">Save time with design patterns. Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b>.</p>
         <div className="powerupOptions">
           <img src={Options1} alt="" />
           <img src={Options2} alt="" />
@@ -215,12 +333,12 @@ const Catalog = () => {
               </div>
             </div>
           </div>
-          <h3 className="containerCaption">Discover and publish patterns and best practices
+          <h3 className="containerCaption">Discover best practices. Publish design patterns.
           </h3>
         </section>
 
       </Container>
-    </CatalogWrapper>
+    </CatalogWrapper >
   );
 };
 

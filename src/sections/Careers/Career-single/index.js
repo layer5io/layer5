@@ -13,7 +13,7 @@ import { StaticImage } from "gatsby-plugin-image";
 const Layer5_Icon = "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
 
 
-const CareerSingle = ({data}) => {
+const CareerSingle = ({ data }) => {
   const { frontmatter, body } = data.mdx;
 
   return (

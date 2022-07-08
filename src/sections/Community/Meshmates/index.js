@@ -7,7 +7,7 @@ import MeshMatesWrapper from "./meshmates.style";
 import { useStaticQuery, graphql } from "gatsby";
 import c_icon from "./c-icon.svg";
 import MeshmateStackImage from "../../../assets/images/meshmate/meshmate-stack.svg";
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
 
 const Meshmates=() => {

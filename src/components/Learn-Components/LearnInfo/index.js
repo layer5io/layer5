@@ -1,16 +1,16 @@
 import React from "react";
 import InfoWrapper from "./learninfo.style";
-import {Col, Row} from "../../../reusecore/Layout";
+import { Col, Row } from "../../../reusecore/Layout";
 
 const filterData = (data, dtype, pgtype) => {
   const dataList = [];
 
   data.map((val) => {
-    if(pgtype && val["node"]["fields"]["pageType"] === "chapter") {
-      if(val["node"]["fields"][dtype])
+    if (pgtype && val["node"]["fields"]["pageType"] === "chapter") {
+      if (val["node"]["fields"][dtype])
         dataList.push(val["node"]["fields"][dtype]);
-    } else if(pgtype === "") {
-      if(val["node"]["fields"][dtype])
+    } else if (pgtype === "") {
+      if (val["node"]["fields"][dtype])
         dataList.push(val["node"]["fields"][dtype]);
     }
   });
@@ -20,7 +20,7 @@ const filterData = (data, dtype, pgtype) => {
 };
 
 
-const LearnInfo = ({courses, chapters, meshes}) => {
+const LearnInfo = ({ courses, chapters, meshes }) => {
 
   const coursesCount = filterData(courses, "course", "");
   const chaptersCount = filterData(chapters, "chapter", "");

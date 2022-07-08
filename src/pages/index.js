@@ -1,5 +1,5 @@
 import React from "react";
-import {ThemeProvider} from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
 
@@ -22,7 +22,7 @@ import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
 import CloudNativeLeaders from "../sections/Home/Cloud-Native";
 import SoSpecial from "../sections/Home/So-Special-Section";
 
-const IndexPage = () => { 
+const IndexPage = () => {
   const schema= {
     "@context": "https://schema.org",
     "@type": "Corporation",
@@ -39,7 +39,7 @@ const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <SEO title="Layer5" description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure." 
+      <SEO title="Layer5" description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure."
         schemaMarkup={schema} />
       <Layout>
         <Navigation />

@@ -44,7 +44,7 @@ export const query = graphql`
     }
   }
 `;
-const CoursesListTemplate = ({data, pageContext}) => {
+const CoursesListTemplate = ({ data, pageContext }) => {
   const getTitle = (learnPathTitle) => {
     const learnPath = learnPathTitle.split("-");
     let str = learnPath.reduce((title, name, idx) => {

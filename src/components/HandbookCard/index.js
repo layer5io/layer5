@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { HiOutlineChevronRight } from "@react-icons/all-files/hi/HiOutlineChevronRight";
 import { HandbookCardWrapper } from "./HandbookCard.style";
 
-const HandbookCard = ({title, description, to}) => {
+const HandbookCard = ({ title, description, to }) => {
   return (
     <HandbookCardWrapper>
       <Link to={to} class="handbook__card--main">

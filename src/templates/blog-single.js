@@ -39,7 +39,7 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
 }
 `;
 
-const BlogSinglePage = ({data}) => {
+const BlogSinglePage = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>

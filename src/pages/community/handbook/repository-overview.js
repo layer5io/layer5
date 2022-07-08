@@ -15,7 +15,7 @@ const CommunityRepository = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Repository Overview" description="The purpose of the handbook is to provide an overview of the Layer5 community" />
+      <SEO title="Repository Overview" description="A brief introduction to all of the Github repositories of Layer5 organization." />
       <Navigation />
       <RepoPage />
       <Footer/>

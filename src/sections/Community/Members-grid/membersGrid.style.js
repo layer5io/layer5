@@ -132,8 +132,8 @@ export const selectStyles = {
             marginLeft: "5px",
           }
           : data.value === ""
-            ? {display: "none", marginLeft: "5px",}
-            : {...styles, ...dot(data.color), zIndex: 900, marginLeft: "5px",},
+            ? { display: "none", marginLeft: "5px", }
+            : { ...styles, ...dot(data.color), zIndex: 900, marginLeft: "5px", },
 };
 
 export const dropdownTheme = (theme) => ({
