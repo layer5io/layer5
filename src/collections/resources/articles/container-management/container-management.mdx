@@ -1,0 +1,93 @@
+---
+title: "Managing Containers"
+thumbnail: ./docker.svg
+date: 2022-07-06 10:30:05 -0530
+category: Kubernetes
+type: Article
+technology: Kubernetes
+tags:
+ - Docker
+ - Kubernetes
+published: true
+resource: true
+---
+
+import { Link } from "gatsby";
+import Infrastructure from "./figure1.png";
+import { ResourcesWrapper } from "../../Resources.style.js";
+
+<ResourcesWrapper>
+  <div className="intro">
+    <p>Learn more about managing containers with our <a className="blog" href="https://github.com/layer5io/containers-101-workshop">Containers 101 Workshop</a>. Walk-through four hands-on exercises with Docker.</p>
+  </div>
+
+<p>
+Container management refers to a set of practices that govern and maintain containerization software. Container management tools automate the creation, deployment, destruction and scaling of application or systems containers.
+Containerization is an approach to software development that isolates processes that share an OS kernel -- unlike virtual machines (VMs), which require their own -- and binds application libraries and dependencies into one deployable unit. This makes containers lightweight to run, as they require only the application configuration information and code from the host OS. This design also increases interoperability compared to VM hosting. Each container instance can scale independently with demand.
+</p>
+<p>
+Modern Linux container technology was popularized by the Docker project, which started in 2013. Interest soon expanded beyond containerization itself, to the intricacies of how to effectively and efficiently deploy and manage containers.
+</p>
+{/* <div class="fact">
+<p>
+To get a feel of these capabilities, try experimenting with the <Link to="/projects/image-hub">Image Hub</Link>,a prototype application developed in Rust that runs on Consul and allows you to explore WebAssembly modules used as Envoy filters.
+</p>
+</div> */}
+ 
+  {/* <div className="center" >
+  <img src={Infrastructure} align="center" alt="application infrastructure logic" />
+  <p>
+Figure 1:. How the intelligence of the cloud native management plane and the power of the service mesh data plane combine to deliver application infrastructure logic.  </p>
+  </div> */}
+
+<p>
+In 2015, Google introduced the container orchestration platform Kubernetes, which was based on its internal data center management software called Borg. At its most basic level, open source Kubernetes automates the process of running, scheduling, scaling and managing a group of Linux containers. With more stable releases throughout 2017 and 2018, Kubernetes rapidly attracted industry adoption, and today it is the de facto container management technology.
+</p>
+<p>
+IT teams use containers for cloud-native, distributed -- often microservices- based -- applications, and to package legacy applications for increased portability and efficient deployment. Containers have surged in popularity as IT organizations embrace DevOps, which emphasizes rapid application deployment. Organizations can containerize application code from development through test and deployment.
+</p>
+<h2>Benefits of container management</h2>
+<p>
+The chief benefit of container management is simplified management for clusters of container hosts. IT admins and developers can start, stop and restart containers, as well as release updates or check health status, among other actions. Container management includes orchestration and schedulers, security tools, storage, and virtual network management systems and monitoring.
+</p>
+
+<h3>Wrangling container sprawl</h3>
+<p>
+  Organizations can set policies that ensure containers share a host -- or cannot share a host -- based on application design and resource requirements For example, IT admins should colocate containers that communicate heavily to avoid latency. Or, containers with large resource requirements might require an anti-affinity rule to avoid physical storage overload. Container instances can spin up to meet demand -- then shut down -- frequently. Containers also must communicate for distributed applications to work, without opening an attack surface to hackers.
+</p>
+<p> 
+A container management ecosystem automates orchestration, log management, monitoring, networking, load balancing, testing and secrets management, along with other processes. Automation enables IT organizations to manage large containerized environments that are too vast for a human operator to keep up with.
+</p>
+
+<h2>Challenges of container management</h2>
+<p>
+One drawback to container management is its complexity, particularly as it relates to open source container orchestration platforms such as Kubernetes and Apache Mesos. The installation and setup for container orchestration tools can be arduous and error prone. IT operations staff need container management skills and training. It is crucial, for example, to understand the relationships between clusters of host servers as well as how the container network corresponds to applications and dependencies.
+</p>
+<p>
+Issues of persistence and storage present significant container management challenges. Containers are ephemeral -- designed to exist only when needed. Stateful application activities are difficult because any data produced within a container ceases to exist when the container spins down.
+</p>
+<p>
+Container security is another concern. Container orchestrators have several components, including an API server and monitoring and management tools. These pieces make it a major attack vector for hackers. Container management system vulnerabilities mirror standard types of OS vulnerabilities, such as those related to access and authorization, images and intercontainer network traffic. Organizations should minimize risk with security best practices -- for example, identify trusted image sources and close network connections unless they're needed.
+</p>
+
+
+
+<h2>Container management strategy</h2>
+<p>
+Forward-thinking enterprise IT organizations and startups alike use containers and container management tools to quickly deploy and update applications. IT organizations must first implement the correct infrastructure setup for containers, with a solid grasp of the scope and scale of the containerization project in terms of business projections for growth and developers' requirements. IT admins must also know how the existing infrastructure's pieces connect and communicate to preserve those relationships in a containerized environment. Containers can run on bare-metal servers, VMs or in the cloud -- or in a hybrid setup -- based on IT requirements.
+</p>
+<p>
+In addition, the container management tool or platform should meet the project's needs for multi-tenancy; user and application isolation; authentication; resource requirements and constraints; logging, monitoring and alerts; backup management; license management; and other management tasks. IT organizations should understand their hosting commitment and future container plans, such as if the company will adopt multiple cloud platforms or a microservices architecture.
+</p>
+<h2>Kubernetes implementation considerations</h2>
+<p>
+  As described above, containers are arranged into pods in Kubernetes, which run on clusters of nodes; pods, nodes and clusters are controlled by a master. One pod can include one or multiple containers. IT admins should carefully consider the relationships between pods, nodes and clusters when they set up Kubernetes.
+</p>
+<p>Organizations should plan their container deployment based on how many pieces of the application can scale under load -- this depends on the application, not the deployment method. Additionally, capacity planning is vital for balanced pod-to-node mapping, and IT admins should ensure high availability with redundancy with master node components.</p>
+<p>IT organizations can address container security concerns by applying some general IT security best practices to containerization. For example, create multiple security layers throughout the environment, scan all container images for vulnerabilities, enforce signed certificates and run the most up-to-date version of any container or application image. Containers introduce the benefits of an immutable infrastructure methodology as well; the regular disposal and redeployment of containers, with their associated components and dependencies, improves overall system availability and security. Additionally, Kubernetes multi-tenancy promises greater resource isolation, but recently revealed security vulnerabilities make multicluster management preferred for now.
+</p>
+<p>
+  Networking is another significant factor. Kubernetes networking occurs within pods, between pods and in user-to-containerized resource connections. Kubernetes enables pods and nodes to communicate without address translation, allocating subnets as necessary. Lastly, IT admins working with Kubernetes should prepare to troubleshoot common container performance problems, including those caused by unavailable nodes and noisy neighbors, in an implementation.
+</p>
+
+</ResourcesWrapper>
