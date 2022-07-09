@@ -125,8 +125,8 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="category-link" to="/community/handbook">
-                      Handbook
+                    <Link className="category-link" to="/community/handbook/writing-program">
+                      Writing Program
                     </Link>
                   </li>
                 </ul>

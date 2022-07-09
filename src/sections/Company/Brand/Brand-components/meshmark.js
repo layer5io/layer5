@@ -91,14 +91,10 @@ const MeshMarkBrand = () => {
                 <img src={MeshmarkTextLight} alt="MeshmarkTextLight Logo"/>
               </Col>
               <Col xs={12} sm={4}>
-                <div className="logo">
-                  <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo"/>
-                </div>
+                <img src={MeshmarkTextBlue} alt="MeshMarkTextBlue Logo"/>
               </Col>
               <Col xs={12} sm={4}>
-                <div className="logo">
-                  <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo"/>
-                </div>
+                <img src={MeshmarkTextDark} alt="MeshmarkTextDark Logo"/>
               </Col>
             </Row>
           </SRLWrapper>
