@@ -29,7 +29,7 @@ const BrandPageWrapper = styled.section`
 	}
 
 	.logo {
-		background: ${props => props.theme.primaryColor};
+		background: ${ props => props.theme.DarkTheme? "black": props.theme.primaryColor};
 		padding: 0.95rem;
 	}
 
@@ -184,9 +184,9 @@ const BrandPageWrapper = styled.section`
 
 	.blond-color-box, .white-color-box {
 		.PalletBox {
-			color: ${props => props.theme.tertiaryColor};
+			color: rgb(30, 33, 23);
 			.color-name {
-				color: ${props => props.theme.tertiaryColor};
+				color: rgb(30, 33, 23);
 			}
 		}
 	}

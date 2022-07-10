@@ -24,15 +24,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
     "@fullcalendar/daygrid": "^5.10.1",
     "@fullcalendar/google-calendar": "^5.10.1",
     "@fullcalendar/interaction": "^5.11.0",
     "@fullcalendar/react": "^5.10.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@mui/material": "^5.8.3",
     "@react-icons/all-files": "^4.1.0",
     "axios": "^0.24.0",
     "babel-plugin-styled-components": "^2.0.6",

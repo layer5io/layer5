@@ -99,10 +99,10 @@ const SoSpecialWrapper = styled.div`
         text-align:center;
         .so-special-foot-btn
         {
-            color:white;
+            color:${props => props.theme.DarkTheme ? "black" : "white"};
             margin:2rem;
             :hover{
-                color:black;
+                color:${props => props.theme.DarkTheme ? "white" : "black"};
             }
         }
     }

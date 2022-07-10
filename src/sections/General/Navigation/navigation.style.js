@@ -14,6 +14,8 @@ const NavigationWrap = styled.header`
   }
   .meshery-cta {
     position: relative;
+    display: flex;
+    align-items: center;
     right: -4.5rem;
     top: 1.5rem;
     max-height: 50px;
@@ -34,7 +36,14 @@ const NavigationWrap = styled.header`
       right: -1rem;
     }
     @media screen and (max-width: 912px) {
-      display: none;
+      a {
+        display: none;
+      }
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+        margin-bottom: 2.5em;
+      }
+ 
     }
   }
   .navbar-wrap {
@@ -512,6 +521,13 @@ const NavigationWrap = styled.header`
       transition: all 0.3s linear;
     }
   }
+  .dark-theme-toggle {
+
+    margin-left: 2em;
+
+
+  }
+  
 `;
 
 export default NavigationWrap;

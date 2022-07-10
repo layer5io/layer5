@@ -8,7 +8,6 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
-import { style } from "@mui/system";
 
 const LandscapeGridPage=() => {
   const [theme, setTheme] = useState("light");
