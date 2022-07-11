@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Banner4 from "../Banner-4";
 import Banner3 from "../Banner-3";
 import Banner2 from "../Banner-2";
 import Banner1 from "../Banner-1";
@@ -6,7 +7,8 @@ import Banner1 from "../Banner-1";
 const BannersList = [
   <Banner1 key={0} />,
   <Banner2 key={1} />,
-  <Banner3 key={2} />
+  <Banner3 key={2} />,
+  <Banner4 key={3} />
 ];
 
 const RotationalBanner = () => {
