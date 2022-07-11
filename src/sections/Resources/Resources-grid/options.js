@@ -19,8 +19,11 @@ export const options =  [
     category: "Product",
     subdata: [
       { id: 0, value: "Meshery", label: "Meshery" },
-      { id: 1, value: "Service Mesh Performance", label: "SMP" },
-      { id: 2, value: "Nighthawk", label: "Nighthawk" }]
+      { id: 1, value: "MeshMap", label: "MeshMap" },
+      { id: 2, value: "Docker Extension", label: "Docker Extension" },
+      { id: 3, value: "Service Mesh Performance", label: "SMP" },
+      { id: 4, value: "Service Mesh Landscape", label: "Service Mesh Landscape" },
+      { id: 5, value: "Nighthawk", label: "Nighthawk" }]
   },
   {
     category: "Technology",

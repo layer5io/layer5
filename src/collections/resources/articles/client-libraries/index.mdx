@@ -1,0 +1,83 @@
+---
+title: "Client Libraries"
+thumbnail: ./using-different-microservice-client-libraries.png
+date: 2021-09-01 10:30:05 -0530
+category: Service Mesh
+tags:
+ - Service mesh
+type: Article
+product: Meshery
+technology: Docker
+mesh: Linkerd
+featured: false
+published: true
+resource: true
+---
+
+import { Link } from "gatsby";
+import { ResourcesWrapper } from "../../Resources.style.js";
+import Library from "./using-different-microservice-client-libraries.png";
+
+<ResourcesWrapper>
+  <div className="intro">
+    <p>Learn more about service mesh fundamentals in <Link className="blog" to="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource which addresses how to evaluate your organization’s readiness, provides factors to consider when building new applications and converting existing applications to best take advantage of a service mesh, and offers insight on deployment architectures used to get you there.</p>
+  </div>
+
+  <p>
+    Client libraries (microservices frameworks) became very popular as microservices took a foothold in modern application design to avoid rewriting the same logic in every service. Example frameworks include the following:
+  </p>
+
+  <ul>
+  <li>
+  <h3>Twitter Finagle </h3>
+  <p>
+  An open source remote procedure call (RPC) library built on Netty for engineers that want a strongly-typed language on the Java Virtual Machine (JVM). Finagle is written in Scala.
+  </p>
+  </li>
+
+  <li>
+  <h3>Netflix Hystrix</h3>
+  <p>
+  An open source latency and fault tolerance library designed to isolate points of access to remote systems, services, and third-party libraries; stop cascading failure; and enable resilience. Hystrix is written in Java.
+  </p>
+  </li>
+
+  <li>
+  <h3> Netflix Ribbon</h3>
+  <p>
+  An open source Inter-Process Communication (IPCs) library with built-in software load balancers. Ribbon is written in Java.
+  </p>
+  </li>  
+  <li>
+  <h3> Gokit</h3>
+  <p>
+  An open source toolkit for building microservices (or elegant monoliths) with gRPC as the primary messaging pattern. Gokit is written in Go and comes with pluggable serialization and transport.
+  </p>
+  </li>
+
+  <li><h3>DropWizard, Spring Boot, Akka… and others.</h3></li>
+  </ul>
+
+
+  <div class="fact">
+  <p>
+    See the Layer5 <Link to="/landscape">service mesh landscape</Link> for a comprehensive perspective of and characterizing of all popular client libraries.
+  </p>
+  </div>
+
+  <p>
+  Prior to the availability of service meshes, developers used language-specific microservices frameworks to improve the resiliency, security, and observability of their services. The drawback of client libraries is that they embed infrastructure concerns into your application code. Services that embed the same client library across themselves in the presence of a service mesh incorporate duplicative code. Inconsistency is a concern for services that include different client libraries or different versions of the same client library. In environments with polyglot microservices, different client libraries are used.  </p>
+  <p>
+  Getting teams to update their client libraries can be an arduous process. When these infrastructure concerns are embedded in your service code, you'll need to track down your developers to update and reconfigure these libraries.  It can take a long time to get a consistent configuration with the same and most recent version deployed.  Enforcing consistency is challenging.  As seen in the figure below, these frameworks couple your services with the infrastructure.
+  </p>
+  <div className="center" >
+  <img src={Library} align="right" alt="service mesh client libraries" />
+  <p>Figure 1: Services architecture using client libraries coupled with application logic</p>
+
+  </div>
+
+  <p>
+Different services teams must negotiate things like timeouts and retries when infrastructure code is embedded in the application. A service mesh not only decouples infrastructure code from application code, but it also decouples teams. Service meshes are typically implemented as infrastructure that exists outside of your applications, but as their adoption increases, this is changing, and their use for influencing or implementing business logic is becoming more prevalent.
+  </p>
+
+</ResourcesWrapper>
