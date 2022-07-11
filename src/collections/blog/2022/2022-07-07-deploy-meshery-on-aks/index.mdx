@@ -14,11 +14,11 @@ resource: true
 ---
 
 import { BlogWrapper } from "../../Blog.style.js";
-import mesheryui from "./mesheryui.png";
+import mesheryui from "./mesheryui.png"; 
 
 <BlogWrapper>
 
-<p><em>Meshery is the open-source, cloud native management plane that can provision ten different service meshes, onboard your applications, manage WebAssembly filters, apply service mesh patterns, validate against best practices, and benchmarks the performance of your service mesh deployments.</em></p>
+<p><em><a href="https://meshery.io/">Meshery</a>  is the open-source, cloud native management plane that can provision ten different service meshes, onboard your applications, manage WebAssembly filters, apply service mesh patterns, validate against best practices, and benchmarks the performance of your service mesh deployments.</em></p>
 <p><em>Meshery’s vision is to make the operation of cloud native infrastructure and the service mesh layer of cloud simplified. Originally created by Layer5, Meshery is an open source project with hundreds of contributors world-wide and is actively maintained by engineers from Red Hat, VMware, Intel, Layer5 and others. </em></p>
 <h2>Setup and run Meshery on AKS</h2>
 <p>The following instructions expects you to have an active Azure subscription, and Azure CLI installed on your system. </p>
@@ -34,11 +34,11 @@ az group create --name MesheryGroup --location southindia
 az aks create --resource-group MesheryGroup --name MesheryAKS --node-count 1 --generate-ssh-keys
 </code></pre>
 <p>After a few minutes, the command completes and returns a JSON formatted information about the cluster.</p>
-<p>You can connect with your cluster by using <em>az aks get-credentials</em> ,  which basically downloads credentials and configure the Kubernetes CLI. </p>
+<p>You can connect with your cluster by using <code>az aks get-credentials</code> ,  which basically downloads credentials and configure the Kubernetes CLI. </p>
 <pre><code>
 az aks get-credentials --resource-group MesheryGroup --name MesheryAKS
 </code></pre>
-<p>Verify the connection to your cluster using the kubectl get command. </p>
+<p>Verify the connection to your cluster using the <code>kubectl get command</code>. </p>
 <pre><code>
 $kubectl get nodes
 </code></pre>
