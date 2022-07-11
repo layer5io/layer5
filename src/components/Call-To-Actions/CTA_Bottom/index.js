@@ -22,11 +22,11 @@ const CTA_BottomWrapper = styled.div`
         object-fit: contain;
         pointer-events: none;
         border-radius: 0 0.5rem 0.5rem 0;
-        padding: 0.5rem;
+        padding: 1rem;
     }
 
     .cta-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 1.5rem;
         display: flex;
         flex: auto;
         align-items: center;
