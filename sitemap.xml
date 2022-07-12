@@ -56,6 +56,7 @@
 <url> <loc>https://layer5.io/blog/docker/extending-the-docker-compose-experience-to-service-mesh</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/docker/extending-docker-with-meshery-spire-and-istio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/service-mesh-performance/meshmark-cloud-native-value-measurement</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/blog/community/meshmate-of-the-year-2021-aditya-chatterjee</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/envoy/debug-envoy-proxy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/events/perfbytes-podcast</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/community/8-weeks-of-open-source-contribution-with-layer5</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -63,7 +64,6 @@
 <url> <loc>https://layer5.io/blog/meshery/evolution-of-the-meshery-cli-command-reference</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/meshery/validating-meshery-cli-functionality</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/programs/my-journey-as-a-contributor-to-gsoc-intern-at-layer5</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/blog/community/meshmate-of-the-year-2021-aditya-chatterjee</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/category/announcements</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/category/announcements/2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/blog/category/cloud-native</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -151,12 +151,12 @@
 <url> <loc>https://layer5.io/resources/service-mesh/a-tutorial-on-contributing-to-layer5-and-working-with-git</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/a-tutorial-on-gatsby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/working-with-meshery-docs-and-jekyll</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://layer5.io/resources/service-mesh/considerations-of-adopting-a-service-mesh</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh-performance/analyzing-service-mesh-performance</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/api-gateways-interplay-with-service-meshes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/choosing-the-perfect-proxy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/client-libraries</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/kubernetes/managing-containers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://layer5.io/resources/service-mesh/considerations-of-adopting-a-service-mesh</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/deploying-istio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/istio-v15-at-a-glance</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://layer5.io/resources/service-mesh/istio-authorization-policy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
