@@ -16,11 +16,11 @@ import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-co
 const Banner1 = () => {
   return (
     <Banner1SectionWrapper>
-      <Container fullWidthSM>
-        {/* <img src={Backgroundsvg} className="background-svg" /> */}
-        <Row>
-          <Col sm={4} lg={6} className="section-title-wrapper">
-
+      {/* <Container fullWidthSM> */}
+      {/* <img src={Backgroundsvg} className="background-svg" /> */}
+      <Row>
+        <Col sm={4} lg={6} className="section-title-wrapper">
+          <Container fullWidthSM>
             <SectionTitle
               className="section-title"
               leftAlign={true}
@@ -44,15 +44,15 @@ const Banner1 = () => {
                 </Button>
               </VintageBox>
             </span>
-
-          </Col>
-          <Col sm={4} lg={6} className="section-title-wrapper">
-            <video autoPlay muted loop preload="auto" className="meshmapVideo">
-              <source src={meshmapVideo} type="video/mp4"></source>
-            </video>
-          </Col>
-        </Row>
-      </Container>
+          </Container>
+        </Col>
+        <Col sm={4} lg={6} className="section-title-wrapper">
+          <video autoPlay muted loop preload="auto" className="meshmapVideo">
+            <source src={meshmapVideo} type="video/mp4"></source>
+          </video>
+        </Col>
+      </Row>
+      {/* </Container> */}
     </Banner1SectionWrapper>
   );
 };

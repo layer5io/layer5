@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Banner1SectionWrapper = styled.section`
-    padding: 7rem 0;
+    top: 3.2rem;
+    padding-bottom: 2rem;
     .background-svg {
         overflow: visible;
         position: absolute;
@@ -22,7 +23,9 @@ const Banner1SectionWrapper = styled.section`
         margin: auto;
     }
     .section-title{
-        text-align: left;
+        text-align: center;
+        position: relative;
+        z-index: 1000000;
         h1 {
             font-size: 57px;
             line-height: 4.3rem;
@@ -40,9 +43,8 @@ const Banner1SectionWrapper = styled.section`
     }
     .meshmapVideo {
         position: relative;
-        right: -3rem;
         top: -3.625rem;
-
+        z-index: 1;
         min-width:25%;
         max-width:100%;
         object-fit: cover;
@@ -75,7 +77,6 @@ const Banner1SectionWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 1200px) {
-        padding: 4rem 0;
         .section-title { 
             h1 {
                 font-size: 3rem;
@@ -92,6 +93,7 @@ const Banner1SectionWrapper = styled.section`
     }
     @media only screen and (max-width: 992px) {
         padding: 3rem 0;
+        top: 1rem;
         .section-title { 
             h1 {
                 font-size: 2.7rem;
@@ -106,7 +108,6 @@ const Banner1SectionWrapper = styled.section`
         }
     }
     @media only screen and (max-width: 912px) {
-        padding: 3rem 0;
         p {
             width: 100%;
         }
@@ -159,6 +160,9 @@ const Banner1SectionWrapper = styled.section`
                 content: none;
             }
         }
+        .meshmapVideo {
+            top: 1rem;
+    }
     }
     @media only screen and (max-width: 480px) {
         padding: 2rem 0;
