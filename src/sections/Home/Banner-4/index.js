@@ -11,7 +11,7 @@ import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Backgroundsvg from "./assets/images/background.svg";
 import Banner1SectionWrapper from "./banner4.style";
 
-import meshmapVideo from "../../../assets/video/meshmap/meshmap-short-consul.mp4";
+import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
 
 const Banner1 = () => {
   return (
