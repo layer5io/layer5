@@ -8,7 +8,6 @@ import VintageBox from "../../../reusecore/VintageBox";
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 
-import Backgroundsvg from "./assets/images/background.svg";
 import Banner1SectionWrapper from "./banner4.style";
 
 import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
@@ -28,7 +27,7 @@ const Banner1 = () => {
             >
               <h1>Take the blinders off</h1>
               <h2>
-                navigate in <span>style</span> with MeshMap
+                cloud native management with <span>MeshMap</span>
               </h2>
             </SectionTitle>
             {/* <p>
