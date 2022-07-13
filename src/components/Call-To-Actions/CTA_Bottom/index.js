@@ -50,6 +50,7 @@ const CTA_BottomWrapper = styled.div`
         img{
           width: 16rem;
           height: 16rem;
+          align-self: center
         }
     }
 
