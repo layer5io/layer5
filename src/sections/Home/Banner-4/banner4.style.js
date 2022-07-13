@@ -24,8 +24,6 @@ const Banner1SectionWrapper = styled.section`
     }
     .section-title{
         text-align: center;
-        position: relative;
-        z-index: 1000000;
         h1 {
             font-size: 57px;
             line-height: 4.3rem;
@@ -44,7 +42,6 @@ const Banner1SectionWrapper = styled.section`
     .meshmapVideo {
         position: relative;
         top: -3.625rem;
-        z-index: 1;
         min-width:25%;
         max-width:100%;
         object-fit: cover;
