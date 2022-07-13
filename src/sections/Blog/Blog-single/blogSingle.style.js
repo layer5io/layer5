@@ -52,7 +52,6 @@ const BlogPageWrapper = styled.div`
     @media (max-width: 770px) { 
         .post-tag-container {
             position: relative;
-            display: flex;
             justify-content: space-between;
             align-items: center;
 
@@ -62,25 +61,14 @@ const BlogPageWrapper = styled.div`
                 padding-right: .5rem
             }
             .share-icons-container {
-                position: absolute;
-                right: 3rem;
-                background-color: white;
-                width: 150px;
-                height: 80px;
                 display: flex;
+                width: 85%;
+                margin: auto 0;
                 justify-content: space-between;
                 align-items: center;
                 padding: 0 .5rem;
                 border-radius: 10px;
                 font-size: 30px;
-                box-shadow:
-                    0.1px 0.3px 0.7px -2px rgba(0, 0, 0, 0.02),
-                    0.3px 0.7px 1.7px -2px rgba(0, 0, 0, 0.028),
-                    0.6px 1.3px 3.1px -2px rgba(0, 0, 0, 0.035),
-                    1.1px 2.2px 5.6px -2px rgba(0, 0, 0, 0.042),
-                    2.1px 4.2px 10.4px -2px rgba(0, 0, 0, 0.05),
-                    5px 10px 25px -2px rgba(0, 0, 0, 0.07)
-                ;
 
             }
         }

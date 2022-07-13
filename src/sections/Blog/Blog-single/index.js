@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
@@ -10,10 +10,11 @@ import BlogPageWrapper from "./blogSingle.style";
 import BlogPostSignOff from "../BlogPostSignOff";
 import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
-import { AiOutlineShareAlt } from "@react-icons/all-files/ai/AiOutlineShareAlt";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
 import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FiCopy } from "@react-icons/all-files/fi/FiCopy";
 import { useLocation } from "@reach/router";
 
 import AboutTheAuthor from "./author";
@@ -72,8 +73,6 @@ const BlogSingle = ({ data }) => {
     }  `
   );
 
-  const [showShareContainer, setShowShareContainer] = useState(false);
-
   const posts = blogData.nodes;
   const relatedPosts = new RelatedPostsFactory (
     posts, fields.slug
@@ -107,6 +106,21 @@ const BlogSingle = ({ data }) => {
               author={{ name: frontmatter.author }}
             />
             <div className="post-tag-container">
+              <p>Share Post:</p>
+              <div className="share-icons-container">
+                <TwitterShareButton url={location.href} title={shareQuote}>
+                  <AiOutlineTwitter />
+                </TwitterShareButton>
+                <FacebookShareButton url={location.href} quote={shareQuote}>
+                  <FaFacebookF />
+                </FacebookShareButton>
+                <LinkedinShareButton url={location.href}>
+                  <FaLinkedin />
+                </LinkedinShareButton>
+                <CopyToClipboard text={location.href} title="Copy link">
+                  <FiCopy />
+                </CopyToClipboard>
+              </div>
               <div className="post-info-block">
                 <div className="tags">
                   <span>Tags:</span>
@@ -122,21 +136,6 @@ const BlogSingle = ({ data }) => {
               category={"Community"}
             /> */}
               </div>
-              <div className="post-share-mobile" onClick={() => setShowShareContainer(!showShareContainer)}>
-                <AiOutlineShareAlt />
-              </div>
-              {showShareContainer ?
-                <div className="share-icons-container">
-                  <TwitterShareButton url={location.href} title={shareQuote}>
-                    <AiOutlineTwitter />
-                  </TwitterShareButton>
-                  <FacebookShareButton url={location.href} quote={shareQuote}>
-                    <FaFacebookF />
-                  </FacebookShareButton>
-                  <LinkedinShareButton url={location.href}>
-                    <FaLinkedin />
-                  </LinkedinShareButton>
-                </div> : ""}
             </div>
             <RelatedPosts
               postType="blogs"
