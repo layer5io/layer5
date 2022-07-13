@@ -31,7 +31,7 @@ const RotationalBanner = () => {
 
   return (
     <>
-      {mounted ? BannersList[Number(Banner)] : <Banner1 />}
+      {mounted ? BannersList[Number(Banner)] : <Banner4 />}
     </>
   );
 };
