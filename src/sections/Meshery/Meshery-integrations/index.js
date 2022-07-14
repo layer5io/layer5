@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import IntegrationsGrid from "./IntegrationsGrid";
+import IntegrationList from "../../../assets/data/integrations/IntegrationList";
 
 const Integrations = styled.div`
   max-width: 1200px;
@@ -76,7 +77,7 @@ function index() {
       </span>
 
       <span>
-        <IntegrationsGrid />
+        <IntegrationsGrid obj={IntegrationList} />
       </span>
     </Integrations>
   );
