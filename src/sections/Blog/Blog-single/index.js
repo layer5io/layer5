@@ -106,20 +106,22 @@ const BlogSingle = ({ data }) => {
               author={{ name: frontmatter.author }}
             />
             <div className="post-tag-container">
-              <p>Share Post:</p>
-              <div className="share-icons-container">
-                <TwitterShareButton url={location.href} title={shareQuote}>
-                  <AiOutlineTwitter />
-                </TwitterShareButton>
-                <FacebookShareButton url={location.href} quote={shareQuote}>
-                  <FaFacebookF />
-                </FacebookShareButton>
-                <LinkedinShareButton url={location.href}>
-                  <FaLinkedin />
-                </LinkedinShareButton>
-                <CopyToClipboard text={location.href} title="Copy link">
-                  <FiCopy />
-                </CopyToClipboard>
+              <div className="post-share-mobile">
+                <p>Share Post:</p>
+                <div className="share-icons-container">
+                  <TwitterShareButton url={location.href} title={shareQuote}>
+                    <AiOutlineTwitter />
+                  </TwitterShareButton>
+                  <FacebookShareButton url={location.href} quote={shareQuote}>
+                    <FaFacebookF />
+                  </FacebookShareButton>
+                  <LinkedinShareButton url={location.href}>
+                    <FaLinkedin />
+                  </LinkedinShareButton>
+                  <CopyToClipboard text={location.href} title="Copy link">
+                    <FiCopy />
+                  </CopyToClipboard>
+                </div>
               </div>
               <div className="post-info-block">
                 <div className="tags">
