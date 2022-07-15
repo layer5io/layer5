@@ -19,8 +19,10 @@ import Http_metrics from "../../assets/images/meshmap/catalog-card-images/http.s
 
 
 import Options from "../../assets/images/meshmap/options.png";
-import Options1 from "../../assets/images/meshmap/options1.png";
-import Options2 from "../../assets/images/meshmap/options2.png";
+import Options1 from "../../assets/images/meshmap/wasm.svg";
+import Options2 from "../../assets/images/meshmap/pattern.svg";
+import Options3 from "../../assets/images/meshmap/ebpf.svg";
+import Options4 from "../../assets/images/meshmap/opa.svg";
 // import OptionsRotated from "../../assets/images/meshmap/options-rotated.png";
 import { Container } from "../../reusecore/Layout";
 
@@ -39,14 +41,30 @@ p.caption {
     margin: 0rem 0rem 2.5rem 0rem;
     font-style: normal ;
   }
-.powerupOptions {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center ;
-  align-items: center;
-  img {
-    width: 50%;
-  }
+
+.svg-cont{
+  display:flex;
+  justify-content: space-evenly; 
+  align-items:center; 
+ 
+}
+
+.cont{
+  margin:0 auto;
+}
+.cont img{
+  max-width:3.6rem;
+  display:block;
+  margin: 0 auto  ;
+  
+ 
+}
+.ebpf-text{
+  padding-bottom:.7rem;
+}
+.cont p{
+  margin: 0 auto  ;
+  font-weight:600;
 }
 
 h2{
@@ -198,13 +216,27 @@ h3.containerCaption {
   }
   @media screen and (max-width: 572px) {
     
-    .powerupOptions{
-     flex-flow: column;
-     img {
-      width: 80%;
+    .svg-cont{
+      width:90%;
+      margin: 0 auto;
+      justify-content:center;
+      align-items:center;
     }
-
+    .cont img{
+      width:2.4rem
     }
+    .cont p{
+      width:100%; 
+      font-size:1rem;
+      line-height:1.2;
+      padding-top:.3rem;
+      text-align:center;
+    }
+    .ebpf-text{
+      padding-bottom:.5rem;
+    }
+ 
+   
     .catalog-wrapper{
       padding: 2rem;
     }
@@ -279,10 +311,25 @@ const Catalog = () => {
       <Container>
         <h2 className="heading">Choose Your Power-ups</h2>
         <p className="caption">Save time with design patterns. Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b>.</p>
-        <div className="powerupOptions">
-          <img src={Options1} alt="" />
-          <img src={Options2} alt="" />
-        </div>
+        <section className="svg-cont">
+
+          <div className="cont">
+            <img src={Options1} />
+            <p>WASM Filters</p>
+          </div>
+          <div className="cont">
+            <img className="patterns" src={Options2} />
+            <p>Service Patterns</p>
+          </div>
+          <div className="cont">
+            <img src={Options3} />
+            <p className="ebpf-text">ePBF Programs</p>
+          </div>
+          <div className="cont">
+            <img src={Options4} />
+            <p>OPA Policies</p>
+          </div>
+        </section>
         <section className="catalog-wrapper ">
           <div className="container">
             <div id="carousel">
