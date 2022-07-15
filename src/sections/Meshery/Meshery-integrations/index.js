@@ -1,60 +1,63 @@
 import React from "react";
 import { useState } from "react";
-import styled from "styled-components";
 import IntegrationsGrid from "./IntegrationsGrid";
 import IntegrationList from "../../../assets/data/integrations/IntegrationList";
-
-const Integrations = styled.div`
-  max-width: 1200px;
-  margin: 83px auto;
-
-  .heading {
-    text-align: center;
-
-    h1 {
-      font-size: 3.14rem;
-      line-height: 60px;
-    }
-
-    h4 {
-      font-size: 2.125rem;
-    }
-  }
-
-  .category {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 41px 0;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .items {
-    background-color: #f0f0f0;
-    padding: 10px 25px;
-    border-radius: 10px;
-    text-transform: uppercase;
-    color: #1e2117;
-    font-size: 0.875rem;
-    cursor: pointer;
-  }
-
-  .selected {
-    background-color: #1e2117;
-    color: #ffffff;
-  }
-`;
-
-const categoryList = [
-  "All",
-  "Platforms",
-  "Service Mesh",
-  "Operating System",
-  "Collaboration",
-];
+import Integrations from "./Integration.style";
 
 function index() {
-  const [category, setCategory] = useState(["All"]);
+  const [categoryList, setcategoryList] = useState([
+    { name: "All", isSelected: true },
+    { name: "Platforms", isSelected: false },
+    { name: "Service Mesh", isSelected: false },
+    { name: "Operating System", isSelected: false },
+    { name: "Collaboration", isSelected: false },
+  ]);
+
+  const [integrationCollection, setintegrationCollection] =
+    useState(IntegrationList);
+
+  const filterCategory = (e) => {
+    const category = e.target.innerHTML;
+
+    if (category !== "All") {
+      categoryList[0].isSelected = false;
+      categoryList.map((item) =>
+        item.name === category ? (item.isSelected = !item.isSelected) : null
+      );
+      setcategoryList(categoryList);
+    } else {
+      categoryList[0].isSelected = true;
+
+      categoryList.map((item) =>
+        item.name !== "All" ? (item.isSelected = false) : null
+      );
+      setcategoryList(categoryList);
+    }
+
+    let tempCat = [];
+
+    categoryList.map((item) => {
+      if (item.isSelected) tempCat.push(item.name);
+    });
+
+    filterCollection(tempCat);
+  };
+
+  const filterCollection = (selectedCategoryList) => {
+    let tempInt = [];
+
+    IntegrationList.map((Integration) => {
+      selectedCategoryList.map((item) => {
+        if (item === Integration.category) {
+          tempInt.push(Integration);
+        } else if (item === "All") {
+          tempInt.push(Integration);
+        }
+      });
+    });
+
+    setintegrationCollection(tempInt);
+  };
 
   return (
     <Integrations>
@@ -67,17 +70,17 @@ function index() {
         {categoryList.map((item) => {
           return (
             <p
-              className={item === "All" ? "items selected" : "items"}
-              onClick={(e) => e.currentTarget.classList.toggle("selected")}
+              className={item.isSelected ? "items selected" : "items"}
+              onClick={filterCategory}
             >
-              {item}
+              {item.name}
             </p>
           );
         })}
       </span>
 
       <span>
-        <IntegrationsGrid obj={IntegrationList} />
+        <IntegrationsGrid obj={integrationCollection} />
       </span>
     </Integrations>
   );
