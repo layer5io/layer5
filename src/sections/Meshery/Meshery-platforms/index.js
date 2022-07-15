@@ -26,7 +26,7 @@ const supported_platforms = [
       <>
         <h2>MacOS User</h2>
         <h4>Install on Mac using Homebrew:</h4>
-        <Code codeString={dedent`brew tap layer5io/tap
+        <Code codeString={dedent`brew tap meshery/tap
         brew install mesheryctl
         mesheryctl system start`
         }
@@ -91,7 +91,7 @@ const supported_platforms = [
       <>
         <h2>Brew User</h2>
         <h4>Install on Mac or Linux using Homebrew:</h4>
-        <Code codeString={dedent`brew tap layer5io/tap
+        <Code codeString={dedent`brew tap meshery/tap
         brew install mesheryctl
         mesheryctl system start`}
         />
