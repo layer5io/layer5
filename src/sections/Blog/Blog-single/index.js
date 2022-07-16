@@ -80,9 +80,9 @@ const BlogSingle = ({ data }) => {
                 ))}
               </div>
             </div>
-            {/* <CTA_Bottom
-              category={"Community"}
-            /> */}
+            <CTA_Bottom
+              category={"Docker"}
+            />
           </div>
           <RelatedPosts
             postType="blogs"
