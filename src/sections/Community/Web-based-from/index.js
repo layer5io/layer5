@@ -74,7 +74,7 @@ const WebBasedForm = () => {
   };
 
   const MemberFormStart = () => {
-    
+
     return (
       <Container>
         <h2 className="title">New Community Member</h2>
@@ -192,7 +192,7 @@ const WebBasedForm = () => {
             <Button onClick={() => setStepNumber(2)} secondary type="submit" className="btn-next" title="Next Step" />
           </div>
         </div>
-       
+
         <br /><br /><br /><br />
       </Container>
     );
@@ -583,7 +583,7 @@ const WebBasedForm = () => {
             expect: false,
             highlighted: false,
             paid: false,
-            affiliated:  false,
+            affiliated: false,
             help: MemberFormFourValue.help ? MemberFormFourValue.help : ""
           }}
           onSubmit={values => {

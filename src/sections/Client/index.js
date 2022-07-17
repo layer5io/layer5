@@ -15,7 +15,7 @@ const Client = () => {
   const settings = {
     autoplay: true,
     infinite: true,
-    dots: false, 
+    dots: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -68,7 +68,7 @@ const Client = () => {
             <div>
               <img src={Client5} alt="our clients" />
             </div>
-          </SliderItem> 
+          </SliderItem>
           <SliderItem>
             <div>
               <img src={Client1} alt="our clients" />

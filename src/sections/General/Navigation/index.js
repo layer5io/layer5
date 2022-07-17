@@ -242,7 +242,7 @@ const Navigation = () => {
               blogData={data}
             />
           </nav>
-                            
+
         </div>
         <div className="meshery-cta">
           <Button secondary className="banner-btn two" title="Goodbye, YAML" url="/cloud-native-management/meshmap" />

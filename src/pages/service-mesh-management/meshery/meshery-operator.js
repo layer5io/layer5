@@ -16,7 +16,7 @@ const MesheryOperator = () => (
     <Layout>
       <GlobalStyle />
       <SEO title="Meshery Operator"
-        description="Meshery Operator is the multi-service mesh operator that manages MeshSync and it’s messaging broker."            
+        description="Meshery Operator is the multi-service mesh operator that manages MeshSync and it’s messaging broker."
         image="/images/meshery-operator.png" />
       <Navigation />
       <MesheryOperatorPage />

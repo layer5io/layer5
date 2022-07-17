@@ -5,7 +5,7 @@ const Customers = (props) => {
   return (
     <CustomersWrapper>
 
-      {props.type === "1" ? 
+      {props.type === "1" ?
 
         <section className="bq-section">
           <div className="type-one-wrapper type-one-wrapper-boxed">

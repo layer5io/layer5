@@ -22,7 +22,7 @@ const RangeSlider = memo(
       setSliderVal(value);
     }, [value]);
 
-    
+
 
     const changeCallback = e => {
       setSliderVal(e.target.value);
@@ -41,7 +41,7 @@ const RangeSlider = memo(
         onChange(sliderVal);
       }
     }, [mouseState]);
-    return ( 
+    return (
       <div className="slidecontainer tooltip">
         {/* <p>{label}</p> */}
         <input
@@ -57,10 +57,10 @@ const RangeSlider = memo(
         />
         <span className="bubble tooltiptext" style={bubbleStyle}>{label}</span>
       </div>
-      
+
     );
   }
-); 
+);
 
 const ServiceMesh = () => {
   const submit = () => {
@@ -100,7 +100,7 @@ const ServiceMesh = () => {
     if (!flag) {
       const sum = parseInt(parentVal1) + parseInt(parentVal2) + parseInt(parentVal3);
       SetAverage((sum/300)*100);
-    }else {
+    } else {
       const sum = parseInt(parentVal1) + parseInt(parentVal2) + parseInt(parentVal3) + parseInt(parentVal4) + parseInt(parentVal5) + parseInt(parentVal6) + parseInt(parentVal7) + parseInt(parentVal8);
       SetAverage((sum/800)*100);
     }
@@ -109,11 +109,11 @@ const ServiceMesh = () => {
   const expand = () => {
     if (email === "" || first === "" || second === "" || org === ""){
       alert("Kindly fill all the required details");
-    }else {
+    } else {
       setFlag(true);
     }
   };
- 
+
   const addData = (e) => {
     setEmail(e.target.value);
   };
@@ -129,7 +129,7 @@ const ServiceMesh = () => {
   const addData3 = (e) => {
     setOrg(e.target.value);
   };
-  
+
   const sliderProps1 = useMemo(
     () => ({
       min: 0,
@@ -236,22 +236,22 @@ const ServiceMesh = () => {
   );
 
   const handleKeyPress = (event) => {
-    if(event.key === "Enter"){
+    if (event.key === "Enter"){
       expand();
     }
   };
-  const Progress = ({done}) => {
+  const Progress = ({ done }) => {
     const [style, setStyle] = React.useState({});
-    
+
     setTimeout(() => {
       const newStyle = {
         opacity: 1,
         width: `${done}%`
       };
-      
+
       setStyle(newStyle);
     }, 200);
-    
+
     return (
       <div className="progress">
         <div className="progress-done" style={style}>
@@ -424,7 +424,7 @@ const ServiceMesh = () => {
                 <div id="slider">
                   <h4>
                         Diversity of application stack
-                  </h4>  
+                  </h4>
                   <RangeSlider {...sliderProps8}/>
                   <h5>
                     {parentVal8}

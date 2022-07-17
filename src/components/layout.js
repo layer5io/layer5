@@ -7,7 +7,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import FavIcon from "../assets/images/favicon.png";
 import ScrollToTopBtn from "./Scrolltotop-button";
 
@@ -20,8 +20,8 @@ const Layout = ({ children }) => {
         <title>{"Layer5"}</title>
         <link rel="shortcut icon" type="image/x-icon" href={FavIcon} />
         <link
-          href='https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap'
-          rel='stylesheet'
+          href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,500,600,700,800&display=swap"
+          rel="stylesheet"
         />
         <link
           rel="stylesheet"
@@ -39,10 +39,9 @@ const Layout = ({ children }) => {
     </>
   );
 };
- 
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired
 };
- 
+
 export default Layout;
- 

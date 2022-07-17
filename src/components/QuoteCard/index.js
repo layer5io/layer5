@@ -19,8 +19,8 @@ const QuotesCardWrapper = styled.div`
     }
 `;
 
-const QuoteCard = ({name , position, quote}) => {
-  return(
+const QuoteCard = ({ name , position, quote }) => {
+  return (
     <QuotesCardWrapper>
       <div className="content">
         <h3>{quote}</h3>

@@ -16,7 +16,7 @@ const WhatAwaitsSection = () => {
           </p>
         </Col>
         <Col sm={12} md={6} xl={4} className="what-await-section-image">
-        
+
           <Terminal
             lines={[
               { code: "$ mesheryctl pattern apply -f canary-v3.yaml", color: "white" },
@@ -62,7 +62,7 @@ const WhatAwaitsSection = () => {
               },
             ]}
           />
-              
+
         </Col>
       </Row>
     </WhatAwaitsWrapper>

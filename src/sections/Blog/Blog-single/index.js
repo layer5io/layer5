@@ -11,7 +11,7 @@ import BlogPostSignOff from "../BlogPostSignOff";
 import RelatedPostsFactory from "../../../components/Related-Posts/relatedPostsFactory";
 import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
 
-const BlogSingle = ({data}) => {
+const BlogSingle = ({ data }) => {
   const { frontmatter, body, fields } = data.mdx;
   const blogData = useStaticQuery(
     graphql`query relatedPosts {
@@ -42,7 +42,7 @@ const BlogSingle = ({data}) => {
 }
 `
   );
-  
+
   const posts = blogData.allMdx.nodes;
   const relatedPosts = new RelatedPostsFactory (
     posts, fields.slug
@@ -80,15 +80,15 @@ const BlogSingle = ({data}) => {
                 ))}
               </div>
             </div>
-            {/* <CTA_Bottom
-              category={"Community"}
-            /> */}
+            <CTA_Bottom
+              category={"Docker"}
+            />
           </div>
           <RelatedPosts
             postType="blogs"
             relatedPosts={relatedPosts}
-            mainHead="Related Blogs" 
-            lastCardHead="All Blogs" 
+            mainHead="Related Blogs"
+            lastCardHead="All Blogs"
             linkToAllItems="/blog"
           />
         </Container>
