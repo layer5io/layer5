@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import { Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import { SRLWrapper } from "simple-react-lightbox";
 import { MemberSingleWrapper } from "./memberSingle.style";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
@@ -20,8 +18,7 @@ import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighth
 import imageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import communityLogo from "../../../assets/images/community/community-green.svg";
 import Button from "../../../reusecore/Button";
-// import Modal from "react-modal";
-// import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
+import {Executive_Bio} from "./executiveBioModal";
 
 const MemberSingle = ({ frontmatter, body }) => {
   const {
@@ -40,10 +37,6 @@ const MemberSingle = ({ frontmatter, body }) => {
     executive_position,
     company,
   } = frontmatter;
-
-  const [modalIsOpen,setIsOpen] = useState(false);
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
   
   return (
     <MemberSingleWrapper>
@@ -175,39 +168,17 @@ const MemberSingle = ({ frontmatter, body }) => {
               </div>
               <div className="social-bg">
                 <ul className="profile-social-links">
+                  {executive_bio &&
                   <li>
-                    {executive_bio &&
-                    <div>
-                      <FaUserTie className="bio" size={32} onClick={openModal} />
-                      {/* <Modal
-                        isOpen={modalIsOpen}
-                        onRequestClose={closeModal}
-                        className="Modal"	
-                        overlayClassName="Overlay"			
-                        ariaHideApp={false}
-                        contentLabel="Executive Bio"
-                      >
-                        <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
-                        <div className="exec-bio-image">
-                          <h2 className="modal-heading">Executive Bio</h2>
-                          <Image
-                            className="bio-image"
-                            {...executive_image}
-                            alt={name}
-                          />
-                          <h3>{name}</h3>
-                          <p>{executive_position}</p>
-                          <p>{company}</p>
-                        </div>
-                        <div className="exec_bio">
-                          <SRLWrapper>
-                            <MDXRenderer>{body}</MDXRenderer>
-                          </SRLWrapper>
-                        </div>
-                      </Modal> */}
-                    </div>
-                    }
+                        <Executive_Bio 
+                        executive_image ={executive_image} 
+                        executive_position ={executive_position} 
+                        company ={company}
+                        body ={body} 
+                        name = {name}
+                        />
                   </li>
+                  }
                   {github && (
                     <li>
                       <a href={`https://github.com/${github}`}>
