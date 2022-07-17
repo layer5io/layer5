@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const HoneycombGrid = styled.div`
   display: flex;
-  --s: 150px;
-  --m: 4px;
+  --s: 9.375rem;
+  --m: 0.25rem;
   --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
 
   .container {
@@ -24,9 +24,9 @@ const HoneycombGrid = styled.div`
   .container div div {
     background: white;
     display: flex;
-    height: 162px;
-    width: 141px;
-    margin: 5px;
+    height: 10.125rem;
+    width: 8.8125rem;
+    margin: 0.3125rem;
     justify-content: center;
     align-items: center;
   }

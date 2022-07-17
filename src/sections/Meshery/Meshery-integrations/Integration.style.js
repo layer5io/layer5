@@ -1,34 +1,33 @@
 import styled from "styled-components";
 
 const Integrations = styled.div`
-  max-width: 1200px;
-  margin: 83px auto;
+  max-width: 75rem;
+  margin: 5.1875rem auto;
 
   .heading {
     text-align: center;
 
     h1 {
-      font-size: 3.14rem;
-      line-height: 60px;
+      line-height: 3.75rem;
     }
 
-    h4 {
-      font-size: 2.125rem;
+    h2 {
+      font-weight: normal;
     }
   }
 
   .category {
     display: flex;
     flex-wrap: wrap;
-    margin: 41px 0;
-    gap: 10px;
+    margin: 2.5625rem 0;
+    gap: 0.625rem;
     justify-content: center;
   }
 
   .items {
     background-color: #f0f0f0;
-    padding: 10px 25px;
-    border-radius: 10px;
+    padding: 0.625rem 1.5625rem;
+    border-radius: 0.625rem;
     text-transform: uppercase;
     color: #1e2117;
     font-size: 0.875rem;
@@ -38,6 +37,9 @@ const Integrations = styled.div`
   .selected {
     background-color: #1e2117;
     color: #ffffff;
+  }
+  @media (max-width: 394px) and (min-width: 315px) {
+    padding-bottom: 37.5rem;
   }
 `;
 export default Integrations;

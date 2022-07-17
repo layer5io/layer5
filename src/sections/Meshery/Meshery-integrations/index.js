@@ -21,16 +21,21 @@ function index() {
 
     if (category !== "All") {
       categoryList[0].isSelected = false;
-      categoryList.map((item) =>
-        item.name === category ? (item.isSelected = !item.isSelected) : null
-      );
+
+      categoryList.forEach((element) => {
+        element.name === category
+          ? (element.isSelected = !element.isSelected)
+          : null;
+      });
+
       setcategoryList(categoryList);
     } else {
       categoryList[0].isSelected = true;
 
-      categoryList.map((item) =>
-        item.name !== "All" ? (item.isSelected = false) : null
-      );
+      categoryList.forEach((element) => {
+        element.name !== "All" ? (element.isSelected = false) : null;
+      });
+
       setcategoryList(categoryList);
     }
 
@@ -45,14 +50,10 @@ function index() {
 
   const filterCollection = (selectedCategoryList) => {
     let tempInt = [];
-
-    IntegrationList.map((Integration) => {
-      selectedCategoryList.map((item) => {
-        if (item === Integration.category) {
+    IntegrationList.forEach((Integration) => {
+      selectedCategoryList.forEach((item) => {
+        if (item === Integration.category || item === "All")
           tempInt.push(Integration);
-        } else if (item === "All") {
-          tempInt.push(Integration);
-        }
       });
     });
 
@@ -61,12 +62,11 @@ function index() {
 
   return (
     <Integrations>
-      <span className="heading">
+      <section className="heading">
         <h1>Built-In Integrations</h1>
-        <h4>Support for your Cloud Native Infrastructure and Apps</h4>
-      </span>
-
-      <span className="category">
+        <h2>Support for your Cloud Native Infrastructure and Apps</h2>
+      </section>
+      <section className="category">
         {categoryList.map((item) => {
           return (
             <p
@@ -77,11 +77,11 @@ function index() {
             </p>
           );
         })}
-      </span>
+      </section>
 
-      <span>
+      <section>
         <IntegrationsGrid obj={integrationCollection} />
-      </span>
+      </section>
     </Integrations>
   );
 }
