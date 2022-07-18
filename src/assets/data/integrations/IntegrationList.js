@@ -6,7 +6,7 @@ import gke from "../../images/service-mesh-icons/gke.png";
 import helm from "../../images/service-mesh-icons/helm.svg";
 import kinD from "../../images/service-mesh-icons/kinD.png";
 import kubesphere from "../../images/service-mesh-icons/kubesphere.png";
-import minikube from "../../images/service-mesh-icons/minikube.png";
+import minikube from "../../images/service-mesh-icons/minikube.svg";
 import openshift from "../../images/service-mesh-icons/openshift.svg";
 import mac from "../../images/service-mesh-icons/mac.svg";
 import homebrew from "../../images/service-mesh-icons/homebrew.png";

@@ -34,9 +34,11 @@ const Integrations = styled.div`
     cursor: pointer;
   }
 
+  
+
   .selected {
-    background-color: #1e2117;
-    color: #ffffff;
+    background-color: ${props => props.theme.darkJungleGreenColor};
+    color: ${props => props.theme.white};
   }
   @media (max-width: 394px) and (min-width: 315px) {
     padding-bottom: 37.5rem;
