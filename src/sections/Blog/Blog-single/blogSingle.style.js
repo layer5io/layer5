@@ -57,20 +57,17 @@ const BlogPageWrapper = styled.div`
 
             .post-share-mobile {
                 display: block;
-                font-size: 2.188rem;
-                padding-right: .5rem;
+                
                 position: relative;
                 width: 95%;
             }
             .share-icons-container {
                 display: flex;
                 margin: auto 0;
-                justify-content: space-between;
-                align-items: center;
+                justify-content: space-evenly;
                 padding: 0.5rem;
                 border-radius: 0.625rem;
                 font-size: 1.5rem;
-                
             }
             .link-copied-container {
                 display: inline-block;

@@ -46,6 +46,8 @@ const AboutTheAuthorWrapper = styled.div`
             margin: 0 auto;
         }
         p{
+            font-size: 1rem;
+            line-height: 1.5rem;
             margin: 1.5rem 0;
             color: #477E96;
         }
@@ -61,6 +63,8 @@ const AboutTheAuthorWrapper = styled.div`
                 color: #1E2117;
             }
             p{
+                font-size: 1rem;
+            line-height: 1.5rem;
                 line-height: 1.375rem;
                 color: #477E96;
             }
@@ -73,6 +77,7 @@ const AboutTheAuthorWrapper = styled.div`
                 font-size: 1.5rem;
                 color: #1E2117;
                 border-bottom: none;
+                margin-bottom: .5rem;
             }
             .share-icons-container{
                 width: 60%;
