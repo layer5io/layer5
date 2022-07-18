@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { SRLWrapper } from "simple-react-lightbox";
@@ -14,7 +14,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { AiOutlineTwitter } from "@react-icons/all-files/ai/AiOutlineTwitter";
 import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
-import { FiCopy } from "@react-icons/all-files/fi/FiCopy";
+import { IoIosCopy } from "@react-icons/all-files/io/IoIosCopy";
 import { useLocation } from "@reach/router";
 
 import AboutTheAuthor from "./author";
@@ -81,6 +81,16 @@ const BlogSingle = ({ data }) => {
     .setTags(frontmatter.tags)
     .getPosts();
 
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (copied) {
+      setTimeout(() => {
+        setCopied(false);
+      }, 3000);
+    }
+  }, [copied]);
+
   const authorInformation = authors.nodes.filter((author) => author.frontmatter.name === frontmatter.author)[0];
 
   const shareQuote = `Check out this post from layer5 ${frontmatter.title}`;
@@ -107,7 +117,7 @@ const BlogSingle = ({ data }) => {
             />
             <div className="post-tag-container">
               <div className="post-share-mobile">
-                <p>Share Post:</p>
+                <h4>Share Post:</h4>
                 <div className="share-icons-container">
                   <TwitterShareButton url={location.href} title={shareQuote}>
                     <AiOutlineTwitter />
@@ -118,10 +128,13 @@ const BlogSingle = ({ data }) => {
                   <LinkedinShareButton url={location.href}>
                     <FaLinkedin />
                   </LinkedinShareButton>
-                  <CopyToClipboard text={location.href} title="Copy link">
-                    <FiCopy />
+                  <CopyToClipboard text={location.href} title="Copy link" onCopy={() => setCopied(true)}>
+                    <IoIosCopy />
                   </CopyToClipboard>
                 </div>
+                {copied ? <p className="link-copied-container">
+                  Copied
+                </p> : ""}
               </div>
               <div className="post-info-block">
                 <div className="tags">

@@ -57,8 +57,9 @@ const BlogPageWrapper = styled.div`
 
             .post-share-mobile {
                 display: block;
-                font-size: 35px;
-                padding-right: .5rem
+                font-size: 2.188rem;
+                padding-right: .5rem;
+                position: relative;
             }
             .share-icons-container {
                 display: flex;
@@ -66,10 +67,20 @@ const BlogPageWrapper = styled.div`
                 margin: auto 0;
                 justify-content: space-between;
                 align-items: center;
-                padding: 0 .5rem;
-                border-radius: 10px;
-                font-size: 30px;
-
+                padding: 0.5rem;
+                border-radius: 0.625rem;
+                font-size: 1.875rem;
+                
+            }
+            .link-copied-container {
+                display: inline-block;
+                background: #000;
+                color: #fff;
+                padding: 0.5rem;
+                font-size: 1rem;
+                position: absolute;
+                right: 4rem;
+                top: -1.2rem;
             }
         }
     }
