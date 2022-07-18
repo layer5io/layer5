@@ -135,7 +135,7 @@ const BlogSingle = ({ data }) => {
                   </div>
                 </div>
                 {/* <CTA_Bottom
-              category={"Community"}
+              category={"Docker"}
             /> */}
               </div>
             </div>
