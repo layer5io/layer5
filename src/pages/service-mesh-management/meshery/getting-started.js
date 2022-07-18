@@ -26,20 +26,20 @@ const MesheryMainPage = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Meshery Getting Started"
           description="How to get started with any service mesh. Adopting and operating a service mesh."
-          image="/images/meshery-logo-dark-text.png"/>
-        <Navigation theme={theme} themeSetter={themeSetter}/>
-        <MesheryTerminal/>
-        <MesheryPlatforms/>
-        <MesheryManageMesh/>
-        <MesheryQuotes/>
+          image="/images/meshery-logo-dark-text.png" />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <MesheryTerminal />
+        <MesheryPlatforms />
+        <MesheryManageMesh />
+        <MesheryQuotes />
         <Footer />
       </Layout>
     </ThemeProvider>

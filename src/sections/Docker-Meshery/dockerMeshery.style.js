@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DockerMesheryWrapper = styled.div`
-
+  
     .required-sign {
       color: #8b0000;
     }
@@ -222,6 +222,7 @@ export const DockerMesheryWrapper = styled.div`
       font-weight: 500;
       margin-bottom: .3rem;
       line-height: 1.25rem;
+      color: black;
       padding: 5%;
       border-radius: 1rem;
     }

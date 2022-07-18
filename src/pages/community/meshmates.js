@@ -10,7 +10,7 @@ import seoImage from "../../assets/images/meshmate/meshmate-icon.png";
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
 
-const MeshmatePage=() => {
+const MeshmatePage = () => {
   const [theme, setTheme] = useState("light");
   const themeSetter = (thememode) => {
     setTheme(thememode);
@@ -21,17 +21,17 @@ const MeshmatePage=() => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Meshmates"
           description="MeshMates - the Layer5 contributor onboarding program.
                 MeshMates is a collection of service mesh mentors."
-          image={seoImage}/>
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+          image={seoImage} />
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <Meshmates />
         <Footer />
       </Layout>

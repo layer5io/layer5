@@ -25,10 +25,10 @@ const Meshery = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Meshery"
@@ -36,9 +36,9 @@ const Meshery = () => {
                  Traefik Mesh, Cilium Service Mesh, Open Service Mesh, and Kuma.
                 Service mesh comparison. Service mesh patterns and best practices."
           image="/images/meshery-logo-dark-text.png" />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <MesheryPage />
-        <Footer/>
+        <Footer />
       </Layout>
     </ThemeProvider>
   );

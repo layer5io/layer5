@@ -24,7 +24,7 @@ const About = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
@@ -32,7 +32,7 @@ const About = () => {
         <GlobalStyle />
         <SEO title="About" description='At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?"' />
         <Navigation theme={theme} themeSetter={themeSetter}/>
-        <AboutSection />
+        <AboutSection theme={theme}/>
         <Footer />
       </Layout>
     </ThemeProvider>

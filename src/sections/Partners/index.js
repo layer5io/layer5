@@ -5,7 +5,7 @@ import { partners } from "./partners";
 import PartnerWrapper from "./partner.style";
 import Partner_Icon from "../../assets/images/contact/partner_white.svg";
 
-const Partner = () => {
+const Partner = ({ theme }) => {
   let academic_partners = partners.filter(partner => partner.type === "academic");
   let technology_partners = partners.filter(partner => partner.type === "technology");
   let len_acad_part = academic_partners.length;
@@ -59,7 +59,7 @@ const Partner = () => {
                 <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
-                      <img  src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                      <img src={theme ==="dark"? partner.darkimageLink : partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
                     </a>
                   </div>
                 </Col>
@@ -108,7 +108,7 @@ const Partner = () => {
                 <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
-                      <img src={partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                      <img src={theme ==="dark"? partner.darkimageLink : partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
                     </a>
                   </div>
                 </Col>

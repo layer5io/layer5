@@ -48,15 +48,15 @@ const NewsSinglePage = ({ data }) => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL}/>
-        <Navigation theme={theme} themeSetter={themeSetter}/>
-        <NewsSingle data={data}/>
+        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <NewsSingle data={data} />
         <Footer />
       </Layout>
     </ThemeProvider>

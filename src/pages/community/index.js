@@ -24,7 +24,7 @@ const CommunityIndex = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
     <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
@@ -35,7 +35,7 @@ const CommunityIndex = () => {
            Join the award-winning open source community - the warmest and most welcoming open source community around."
           image="/images/layer5-tag-community-dark-bg.png" />
         <Navigation theme={theme} themeSetter={themeSetter}/>
-        <Community />
+        <Community theme={theme}/>
         <Footer />
       </Layout>
     </ThemeProvider>

@@ -11,13 +11,15 @@ import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
 import { darktheme } from "../../../theme/app/themeStyles";
-import  lighttheme from "../../../theme/app/themeStyles";
+import layer5dark_logo from "../../../assets/images/app/layer5dark.svg";
+
+import lighttheme from "../../../theme/app/themeStyles";
 import NavigationWrap from "./navigation.style";
 import { GlobalStyle } from "../../app.style";
 import { ThemeProvider } from "styled-components";
 import { useLayoutEffect } from "react";
 import "./navigation.style.css";
-const Navigation = ({ theme , themeSetter }) => {
+const Navigation = ({ theme, themeSetter }) => {
   let data = useStaticQuery(
     graphql`{
   Learn: allMdx(
@@ -168,7 +170,7 @@ const Navigation = ({ theme , themeSetter }) => {
   };
 
   useLayoutEffect(() => {
-    if (localStorage.getItem("Theme")===null){
+    if (localStorage.getItem("Theme") === null) {
       themeSetter("light");
     } else {
       themeSetter(localStorage.getItem("Theme"));
@@ -180,7 +182,7 @@ const Navigation = ({ theme , themeSetter }) => {
     handle();
   }, [theme]);
   const themeToggler = () => {
-    theme === "light" ?  themeSetter("dark"): themeSetter("light");
+    theme === "light" ? themeSetter("dark") : themeSetter("light");
   };
 
   const dropDownRef = useRef();
@@ -207,17 +209,17 @@ const Navigation = ({ theme , themeSetter }) => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
 
-    <ThemeProvider theme={theme==="dark"?  darktheme:lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <GlobalStyle />
       <NavigationWrap className={`nav-block ${scroll ? "scrolled" : ""}`}>
         <Container className="nav-container">
           <div className="navbar-wrap">
             <Link to="/" className="logo">
-              <img src={layer5_logo} alt="Layer5 logo" />
+              <img src={theme === "dark" ? layer5dark_logo : layer5_logo} alt="Layer5 logo" />
             </Link>
             <nav className="nav">
               {expand ?

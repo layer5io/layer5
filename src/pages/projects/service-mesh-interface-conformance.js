@@ -24,10 +24,10 @@ const SMI = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Service Mesh Interface (SMI)"
@@ -35,9 +35,9 @@ const SMI = () => {
             We are the largest collection of service mesh projects and their maintainers in the world.
             Contact Layer5 for help with operating a service mesh."
           image="/images/servicemeshinterface-icon-color.png" />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <SMIPage />
-        <Footer/>
+        <Footer />
       </Layout>
     </ThemeProvider>
   );

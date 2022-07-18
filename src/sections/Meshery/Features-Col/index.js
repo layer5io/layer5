@@ -17,8 +17,7 @@ function getServiceFeature(service, index) {
     <table className="table" key={index}>
       <tr>
         <td className="icon">
-          <img src={c_icon} />
-        </td>
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg>        </td>
         <td className="service">{service.content}</td>
       </tr>
     </table>

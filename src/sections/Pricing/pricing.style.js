@@ -4,8 +4,8 @@ import background from "../Home/Projects-home/images/background.svg";
 const PricingWrapper = styled.section`
 
 .headers {
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
+  background:${props => props.theme.DarkTheme? props.theme.elevationColor: props.theme.tertiaryColor};
+  background: linear-gradient(0deg, ${props => props.theme.DarkTheme? "#121212": "white"} 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
   /* background: linear-gradient(180deg, rgba(6,6,6,1) 12%, rgba(0,179,159,1) 52%, rgba(0,179,159,1) 53%, rgba(0,179,159,1) 53%, rgba(255,255,255,1) 79%);  position: relative; */
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ const PricingWrapper = styled.section`
     }
     @media (min-width: 1400px) {
       h2{
-      color: ${props => props.theme.black};
+        color: ${props => props.theme.DarkTheme? "white": "black"};
       }
 
     }

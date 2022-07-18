@@ -13,9 +13,11 @@ import Community_meetup from "./images/Community_meetup.png";
 import Layer5Projects from "./images/layer5-projects.png";
 import CNCFServiceMesh from "./images/CNCF-Service-Mesh-WG-1.png";
 import CNCFstackedlogo from "./images/cncf-stacked-color.svg";
+import CNCFLightstackedlogo from "./images/cncf-light-stacked-color.svg";
+
 import { Link } from "gatsby";
 
-const About = () => {
+const About = ({ theme }) => {
   return (
     <AboutSectionWrapper id="about">
 
@@ -70,7 +72,7 @@ const About = () => {
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <img src={CNCFstackedlogo} alt="About Layer5 Projects" />
+                  <img src={theme ==="dark"? CNCFLightstackedlogo : CNCFstackedlogo} alt="About Layer5 Projects" />
                 </div>
               </Col>
               <Col xs={12} sm={6}>
@@ -100,7 +102,7 @@ const About = () => {
               <h1>Collaborate</h1>
               <h4>Join the community and collaborate on our projects all around the world.</h4>
 
-              <img height="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
+              <img id="mapBack" height="100%" src={collabMap} alt="Layer5 Collaborators from around the globe" />
             </SectionTitle>
           </Col>
         </Row>

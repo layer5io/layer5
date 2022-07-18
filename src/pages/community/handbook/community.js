@@ -24,7 +24,7 @@ const Community = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
     <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
@@ -32,7 +32,7 @@ const Community = () => {
         <GlobalStyle />
         <SEO title="Community" description="Community guidelines" />
         <Navigation theme={theme} themeSetter={themeSetter}/>
-        <CommunityPage />
+        <CommunityPage theme={theme}/>
         <Footer/>
       </Layout>
     </ThemeProvider>

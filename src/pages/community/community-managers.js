@@ -11,7 +11,7 @@ import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
 
 
-const ManagersPage=() => {
+const ManagersPage = () => {
   const [theme, setTheme] = useState("light");
   const themeSetter = (thememode) => {
     setTheme(thememode);
@@ -22,16 +22,16 @@ const ManagersPage=() => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Managers"
           description="Managers - A Community Manager is a person who has an innate drive to contribute to the community's prosperity."
-          image={seoImage}/>
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+          image={seoImage} />
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <CommunityManagers />
         <Footer />
       </Layout>

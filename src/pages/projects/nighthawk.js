@@ -23,10 +23,10 @@ const NighthawkPage = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Nighthawk"
@@ -34,10 +34,10 @@ const NighthawkPage = () => {
             We are the largest collection of service mesh projects and their maintainers in the world.
             Contact Layer5 for help with operating a service mesh."
         />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
-        <Nighthawk />
-        <Subscribe/>
-        <Footer/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <Nighthawk theme={theme} />
+        <Subscribe />
+        <Footer />
       </Layout>
     </ThemeProvider>
   );

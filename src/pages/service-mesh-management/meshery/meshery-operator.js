@@ -24,18 +24,18 @@ const MesheryOperator = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Meshery Operator"
           description="Meshery Operator is the multi-service mesh operator that manages MeshSync and it’s messaging broker."
           image="/images/meshery-operator.png" />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <MesheryOperatorPage />
-        <Footer/>
+        <Footer />
       </Layout>
     </ThemeProvider>
   );

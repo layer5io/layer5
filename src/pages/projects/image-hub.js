@@ -19,21 +19,21 @@ const ImageHub = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Image Hub"
           description="Image Hub is a sample application written to run on Consul for exploring WebAssembly modules used as Envoy filters."
           image="/images/layer5-image-hub.png" />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <ImageHubPage />
-        <Footer/>
+        <Footer />
       </Layout>
     </ThemeProvider>
   );

@@ -9,7 +9,7 @@ import { GlobalStyle } from "../sections/app.style";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
 
-const LandscapeGridPage=() => {
+const LandscapeGridPage = () => {
   const [theme, setTheme] = useState("light");
   const themeSetter = (thememode) => {
     setTheme(thememode);
@@ -20,10 +20,10 @@ const LandscapeGridPage=() => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="light"? lighttheme : darktheme}>
+    <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
       <Layout>
         <GlobalStyle />
         <SEO
@@ -31,7 +31,7 @@ const LandscapeGridPage=() => {
           description="Compare service meshes like Istio, Linkerd, App Mesh, Maesh, Kuma, Network Service Mesh,
             Consul, Kuma, Citrix and VMware Tanzu Service Mesh. What is the best service mesh? What's the difference between Istio and Envoy?"
           image="/images/landscape.png" />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <LandscapeGrid />
         <Footer />
       </Layout>

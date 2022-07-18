@@ -118,6 +118,12 @@ export const Gnhwrapper = styled.section`
             }
         }
     }
+    rect {
+        fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+      }
+      path {
+        stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor: "#00B39F"};
+      }
     .distributedPerf {
         display: relative;
         float: left;

@@ -24,16 +24,16 @@ const Privacy = () => {
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Privacy" description="Contact Layer5 for help with operating a service mesh.
   Layer5 is the makers of Meshery and service mesh standards.
   We are the largest collection of service mesh projects and their maintainers in the world." />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <CompanyPrivacy />
         <Footer />
       </Layout>

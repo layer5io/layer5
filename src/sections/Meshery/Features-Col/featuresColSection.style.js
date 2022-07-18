@@ -13,7 +13,12 @@ export const FeaturesSectionContainer = styled.div`
   justify-content: space-evenly;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-
+  rect {
+    fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+  }
+  path {
+    stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor: "#00B39F"};
+  }
   @media (max-width: 1198px) {
     grid-template-columns: repeat(auto-fill, 17rem);
   }

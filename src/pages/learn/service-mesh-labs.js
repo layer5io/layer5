@@ -21,24 +21,24 @@ const ServiceMeshLabsPage = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
-    if (props.location.state && props.location.state.selectedIndex){
+    if (props.location.state && props.location.state.selectedIndex) {
       setSelectedIndex(props.location.state.selectedIndex);
     }
-  },[]);
+  }, []);
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => {
     setMounted(true);
   }, []);
   // prevents ssr flash for mismatched dark mode
   if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Hello there</div>;
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Interactive Service Mesh Labs" description="Learn to service mesh with the industry leaders.Try interactive service mesh lab scenarios." />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <ServiceMeshLabs selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
         <Footer />
       </Layout>

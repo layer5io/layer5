@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 const CareersSectionWrapper = styled.div`
+p {
+    color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 1)"};
+
+}
     h1{
 
         color: ${props => props.theme.text};
@@ -30,7 +34,9 @@ const CareersSectionWrapper = styled.div`
         margin-bottom: 1rem;
     }
     .introText p {
-        text-align: justify
+        text-align: justify;
+        color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.8)" : "rgba(0, 0, 0, 1)"};
+
     }
     .introVideo{
         width: 50%;
@@ -79,6 +85,8 @@ const CareersSectionWrapper = styled.div`
     .opensource-section-text > p{
         max-width: 60rem;
         margin: auto;
+        color: white;
+
     }
     .opensource-section-img{
         margin-top: -8rem;
