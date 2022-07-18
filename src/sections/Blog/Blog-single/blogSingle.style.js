@@ -17,10 +17,10 @@ const BlogPageWrapper = styled.div`
         .post-share-mobile {
             display: none;
         }
-
         .share-icons-container {
             display: none;
         }
+
     }
 
 
@@ -60,16 +60,16 @@ const BlogPageWrapper = styled.div`
                 font-size: 2.188rem;
                 padding-right: .5rem;
                 position: relative;
+                width: 95%;
             }
             .share-icons-container {
                 display: flex;
-                width: 85%;
                 margin: auto 0;
                 justify-content: space-between;
                 align-items: center;
                 padding: 0.5rem;
                 border-radius: 0.625rem;
-                font-size: 1.875rem;
+                font-size: 1.5rem;
                 
             }
             .link-copied-container {
@@ -79,8 +79,7 @@ const BlogPageWrapper = styled.div`
                 padding: 0.5rem;
                 font-size: 1rem;
                 position: absolute;
-                right: 4rem;
-                top: -1.2rem;
+                right: 0;
             }
         }
     }

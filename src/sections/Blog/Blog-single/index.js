@@ -93,7 +93,7 @@ const BlogSingle = ({ data }) => {
 
   const authorInformation = authors.nodes.filter((author) => author.frontmatter.name === frontmatter.author)[0];
 
-  const shareQuote = `Check out this post from layer5 ${frontmatter.title}`;
+  const shareQuote = `Check out this post from layer5 "${frontmatter.title}"`;
 
   return (
     <BlogPageWrapper>
@@ -117,8 +117,8 @@ const BlogSingle = ({ data }) => {
             />
             <div className="post-tag-container">
               <div className="post-share-mobile">
-                <h4>Share Post:</h4>
                 <div className="share-icons-container">
+                  <h4>Share Post:</h4>
                   <TwitterShareButton url={location.href} title={shareQuote}>
                     <AiOutlineTwitter />
                   </TwitterShareButton>

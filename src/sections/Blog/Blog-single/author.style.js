@@ -39,16 +39,13 @@ const AboutTheAuthorWrapper = styled.div`
         }
         h4{
             font-weight: 500;
-            font-size: 18px;
+            font-size: 1.25rem;
             border-bottom: 1px solid rgba(71, 126, 150, 0.5);
             padding-bottom: .5rem;
             width: 80%;
             margin: 0 auto;
         }
         p{
-            font-weight: 500;
-            font-size: 15px;
-            line-height: 22px;
             margin: 1.5rem 0;
             color: #477E96;
         }
@@ -57,16 +54,14 @@ const AboutTheAuthorWrapper = styled.div`
             border-bottom: 1px solid rgba(71, 126, 150, 0.5);
             padding: 2rem 0;
 
-            h5{
+            h4{
                 font-weight: 500;
-                font-size: 20px;
-                line-height: 32px;
+                font-size: 1.25rem;
+                line-height: 2rem;
                 color: #1E2117;
             }
             p{
-                font-weight: 500;
-                font-size: 15px;
-                line-height: 22px;
+                line-height: 1.375rem;
                 color: #477E96;
             }
             .cta-btn{
@@ -74,10 +69,8 @@ const AboutTheAuthorWrapper = styled.div`
             }
         }
         .share-section{
-            h4{
-                font-weight: 500;
-                font-size: 24px;
-                line-height: 32px;
+            h3{
+                font-size: 1.5rem;
                 color: #1E2117;
                 border-bottom: none;
             }

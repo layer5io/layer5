@@ -31,12 +31,12 @@ const AboutTheAuthor = (props) => {
               {authorInformation.frontmatter?.bio}
             </p>
             <div className="authors-info-meshery">
-              <h5>MeshMap</h5>
+              <h4>MeshMap</h4>
               <p>MeshMap is the world's only visual designer for Kubernetes and service mesh deployments.</p>
               <Button secondary url="/meshmap" title="Get Started" className="cta-btn" />
             </div>
             <div className="share-section">
-              <h4>Share</h4>
+              <h3>Share</h3>
               <div className="share-icons-container">
                 <TwitterShareButton url={location.href} title={shareQuote}>
                   <AiOutlineTwitter />
