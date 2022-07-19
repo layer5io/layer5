@@ -19,21 +19,29 @@ const HoneycombGrid = styled.div`
     font-size: initial;
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
     margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+
     :hover {
       transition: background-color 0.25s ease-in;
-      background: linear-gradient(180deg, #00D3A9 0%, rgba(201, 252, 246, 0.3) 100%);
+      background: linear-gradient(
+        180deg,
+        #00d3a9 0%,
+        rgba(201, 252, 246, 0.3) 100%
+      );
       img {
-        filter: brightness(0) invert(1);
+        filter: grayscale(0.8);
       }
       :active {
         transition: background-color 0.25s ease-out;
-        background: linear-gradient(0deg, #00D3A9 0%, rgba(201, 252, 246, 0.3) 100%);
+        background: linear-gradient(
+          0deg,
+          #00d3a9 0%,
+          rgba(201, 252, 246, 0.3) 100%
+        );
       }
     }
-    
   }
   .container div div {
-    background: white;
+    background: black;
     display: flex;
     height: 10.125rem;
     width: 8.8125rem;

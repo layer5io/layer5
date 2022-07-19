@@ -6,11 +6,11 @@ import Integrations from "./Integration.style";
 
 function index() {
   const [categoryList, setcategoryList] = useState([
-    { name: "All", isSelected: true },
-    { name: "Platforms", isSelected: false },
-    { name: "Service Mesh", isSelected: false },
-    { name: "Operating System", isSelected: false },
-    { name: "Collaboration", isSelected: false },
+    { id: 1, name: "All", isSelected: true },
+    { id: 2, name: "Platforms", isSelected: false },
+    { id: 3, name: "Service Mesh", isSelected: false },
+    { id: 4, name: "Operating System", isSelected: false },
+    { id: 5, name: "Collaboration", isSelected: false },
   ]);
 
   const [integrationCollection, setintegrationCollection] =
@@ -70,6 +70,7 @@ function index() {
         {categoryList.map((item) => {
           return (
             <p
+              key={item.id}
               className={item.isSelected ? "items selected" : "items"}
               onClick={filterCategory}
             >
