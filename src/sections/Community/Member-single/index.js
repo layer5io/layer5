@@ -1,10 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import { MemberSingleWrapper } from "./memberSingle.style";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
-import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
@@ -18,7 +17,7 @@ import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighth
 import imageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import communityLogo from "../../../assets/images/community/community-green.svg";
 import Button from "../../../reusecore/Button";
-import {Executive_Bio} from "./executiveBioModal";
+import { Executive_Bio } from "./executiveBioModal";
 
 const MemberSingle = ({ frontmatter, body }) => {
   const {
@@ -37,7 +36,7 @@ const MemberSingle = ({ frontmatter, body }) => {
     executive_position,
     company,
   } = frontmatter;
-  
+
   return (
     <MemberSingleWrapper>
       <Container>
@@ -170,13 +169,13 @@ const MemberSingle = ({ frontmatter, body }) => {
                 <ul className="profile-social-links">
                   {executive_bio &&
                   <li>
-                        <Executive_Bio 
-                        executive_image ={executive_image} 
-                        executive_position ={executive_position} 
-                        company ={company}
-                        body ={body} 
-                        name = {name}
-                        />
+                    <Executive_Bio
+                      executive_image ={executive_image}
+                      executive_position ={executive_position}
+                      company ={company}
+                      body ={body}
+                      name = {name}
+                    />
                   </li>
                   }
                   {github && (
