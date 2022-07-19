@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "gatsby";
 import { MemberSingleWrapper } from "./memberSingle.style";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
@@ -17,9 +17,8 @@ import NighthawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighth
 import imageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import communityLogo from "../../../assets/images/community/community-green.svg";
 import Button from "../../../reusecore/Button";
-import { Executive_Bio } from "./executiveBioModal";
 
-const MemberSingle = ({ frontmatter, body }) => {
+const MemberSingle = ({ frontmatter }) => {
   const {
     name,
     position,
@@ -31,12 +30,7 @@ const MemberSingle = ({ frontmatter, body }) => {
     location,
     badges,
     bio,
-    executive_bio,
-    executive_image,
-    executive_position,
-    company,
   } = frontmatter;
-
   return (
     <MemberSingleWrapper>
       <Container>
@@ -167,17 +161,6 @@ const MemberSingle = ({ frontmatter, body }) => {
               </div>
               <div className="social-bg">
                 <ul className="profile-social-links">
-                  {executive_bio &&
-                  <li>
-                    <Executive_Bio
-                      executive_image ={executive_image}
-                      executive_position ={executive_position}
-                      company ={company}
-                      body ={body}
-                      name = {name}
-                    />
-                  </li>
-                  }
                   {github && (
                     <li>
                       <a href={`https://github.com/${github}`}>

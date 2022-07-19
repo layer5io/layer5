@@ -155,9 +155,6 @@ section{
     padding: 20px;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    max-width: 60rem;
-    max-height: 40rem;
-    overflow-y: scroll;
 
     .close-modal-btn {
         min-width: 2rem;
@@ -176,28 +173,8 @@ section{
 
     .modal-heading {
         text-align: center;
-    }
 
-    .exec-bio-image{
-      text-align: center;
-      margin-bottom: 1rem;
-        img{
-            -ms-interpolation-mode: bicubic;
-            vertical-align: middle;
-        }
-        .gatsby-image-wrapper, .old-gatsby-image-wrapper {
-            display: block;
-            margin: 1rem auto;
-            border-radius: 100%;
-            overflow: hidden;
-            width: 140px;
-            height: 140px;
-            box-shadow: 0px 0px 8px 1px rgba(0,179,159,1);
-          }
-          p{
-              margin: 0 auto;
-          }
-     }
+    }
 }
 
 .Overlay {
@@ -229,12 +206,6 @@ section{
         width: 22rem;
         height: 26rem;
     }
-}
-@media screen and (max-width: 370px) {
-  .form-frame {
-      width: 15rem;
-      height: 26rem;
-  }
 }
 
 /* Modal CSS Ends */

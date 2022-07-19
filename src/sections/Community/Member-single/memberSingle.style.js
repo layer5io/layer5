@@ -106,6 +106,7 @@ export const MemberSingleWrapper = styled.div`
             padding-left: 0 !important;
             
             li {
+                a{
                     display: block;
                     color: black;
                     text-align: left;
@@ -116,10 +117,6 @@ export const MemberSingleWrapper = styled.div`
                     -o-transition: box-shadow 0.2s;
                     transition: box-shadow 0.2s;
                     transition: 0.3s;
-
-                    a{
-                        color: black;   
-                    }
                     
                     &:hover{
                         box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
@@ -133,10 +130,6 @@ export const MemberSingleWrapper = styled.div`
                         }
                         .twitter{
                             color: #1DA1F2;
-                        }
-                        .bio{
-                            color: #00b39f;
-                            cursor: pointer;
                         }
                     }
                     
@@ -155,6 +148,7 @@ export const MemberSingleWrapper = styled.div`
                         height: 2rem;
                         max-width: none;
                     }
+                }
             }
         }
         .start-contributing{
