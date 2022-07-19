@@ -66,12 +66,12 @@ const BlogPageWrapper = styled.div`
                 margin: auto 0;
                 justify-content: space-evenly;
                 padding: 0.5rem;
-                border-radius: 0.625rem;
                 font-size: 1.5rem;
             }
             .link-copied-container {
                 display: inline-block;
-                background: #000;
+                background: #1E2117;
+                border-radius: 0.25rem;
                 color: #fff;
                 padding: 0.5rem;
                 font-size: 1rem;

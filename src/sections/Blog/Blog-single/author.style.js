@@ -47,14 +47,14 @@ const AboutTheAuthorWrapper = styled.div`
         }
         p{
             font-size: 1rem;
-            line-height: 1.5rem;
+            line-height: 1.375rem;
             margin: 1.5rem 0;
             color: #477E96;
         }
         .authors-info-meshery{
             border-top: 1px solid rgba(71, 126, 150, 0.5);
             border-bottom: 1px solid rgba(71, 126, 150, 0.5);
-            padding: 2rem 0;
+            padding: 1.5rem 0;
 
             h4{
                 font-weight: 500;
@@ -64,7 +64,6 @@ const AboutTheAuthorWrapper = styled.div`
             }
             p{
                 font-size: 1rem;
-            line-height: 1.5rem;
                 line-height: 1.375rem;
                 color: #477E96;
             }
@@ -73,6 +72,8 @@ const AboutTheAuthorWrapper = styled.div`
             }
         }
         .share-section{
+            padding: 1.5rem 0;
+            
             h3{
                 font-size: 1.5rem;
                 color: #1E2117;
