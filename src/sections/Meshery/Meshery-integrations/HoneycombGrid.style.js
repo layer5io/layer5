@@ -41,7 +41,7 @@ const HoneycombGrid = styled.div`
     }
   }
   .container div div {
-    background: black;
+    background: white;
     display: flex;
     height: 10.125rem;
     width: 8.8125rem;
