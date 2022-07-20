@@ -42,7 +42,7 @@ export const query = graphql`query EventsBySlug($slug: String!) {
 }
 `;
 
-const EventSinglePage = ({data}) => {
+const EventSinglePage = ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>

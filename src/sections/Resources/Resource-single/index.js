@@ -8,9 +8,10 @@ import RelatedResources from "../../../components/Related-Resources";
 import ResourcePageWrapper from "./resourceSingle.style";
 import RelatedResourcesFactory from "../../../components/Related-Resources/relatedResourcesFactory";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
+import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
 
 
-const ResourceSingle = ({data}) => {
+const ResourceSingle = ({ data }) => {
   const { frontmatter, body, fields } = data.mdx;
   const resourceData = useStaticQuery(
     graphql`query relatedResources {
@@ -41,7 +42,7 @@ const ResourceSingle = ({data}) => {
 }
 `
   );
-  
+
   const resources = resourceData.allMdx.nodes;
   const relatedResources = new RelatedResourcesFactory (
     resources, fields.slug
@@ -64,6 +65,10 @@ const ResourceSingle = ({data}) => {
             <MDXRenderer>{body}</MDXRenderer>
           </SRLWrapper>
 
+          <CTA_Bottom
+            category={"MeshMap"}
+          />
+
           <div className="backBtn">
             <Link to="/resources">
               <IoIosArrowDropleftCircle />
@@ -73,8 +78,8 @@ const ResourceSingle = ({data}) => {
           <RelatedResources
             resourceType="resources"
             relatedResources={relatedResources}
-            mainHead="Related Resources" 
-            lastCardHead="All Resources" 
+            mainHead="Related Resources"
+            lastCardHead="All Resources"
             linkToAllItems="/resources"
           />
         </Container>

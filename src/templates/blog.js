@@ -48,7 +48,7 @@ export const query = graphql`
 
 const Blog = (props) => {
   const [isListView, setIsListView] = useState(false);
- 
+
   const setListView = () => {
     setIsListView(true);
   };
@@ -56,7 +56,7 @@ const Blog = (props) => {
     setIsListView(false);
   };
 
- 
+
 
   useEffect(() => {
     if (props.location.state) {

@@ -17,7 +17,7 @@ const c_icon = "./images/c_icon.svg";
 const icon = "../../../assets/images/nighthawk/name-only/SVG/nighthawk-text.svg";
 //import cli from "./images/cli_green.svg";
 
-import {Gnhwrapper, CardsContainer} from "./gnh.style";
+import { Gnhwrapper, CardsContainer } from "./gnh.style";
 
 import { URL } from "../../Counters/index";
 import Counter from "../../../reusecore/Counter";
@@ -157,7 +157,7 @@ const Projects = () => {
           <Row>
             <Col lg={6} md={6} sm={12}>
               <div className="text">
-                <img src={distributedPerf} className="distributedPerf" alt="Cloud Native Distributed Performance Management" /> 
+                <img src={distributedPerf} className="distributedPerf" alt="Cloud Native Distributed Performance Management" />
                 <h2>Standards-based, distributed performance management</h2>
                 <p>Nighthawk will provide generally-available distributions of Nighthawk under different architectures and platforms and easy-to-use tooling for installation and operation. This will include creating distributions of Nighthawk as well as augmenting existing tooling, Meshery, to retrieve these arch-specific packages and update their deployments.</p>
               </div>

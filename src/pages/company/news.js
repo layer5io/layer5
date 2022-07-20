@@ -47,7 +47,7 @@ const NewsGridPage = ({ data }) => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="News" description="News and press about Layer5, the cloud native management company. 
+      <SEO title="News" description="News and press about Layer5, the cloud native management company.
     Layer5 the company behind industry-leading, open source software." />
       <Navigation />
       <SimpleReactLightbox>

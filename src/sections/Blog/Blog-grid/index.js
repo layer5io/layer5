@@ -23,7 +23,7 @@ const BlogGrid = ({
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const [searchQuery, setSearchQuery] = useState("");
-  const {queryResults, searchData} = useDataList(
+  const { queryResults, searchData } = useDataList(
     data.allMdx.nodes,
     setSearchQuery,
     searchQuery,

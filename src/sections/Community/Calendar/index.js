@@ -101,7 +101,7 @@ const Calendar = () => {
               <FullCalendar
                 plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
                 initialView="dayGridMonth"
-                googleCalendarApiKey='AIzaSyDcmx-nLYfqvrfpEmVJuclwt9akayYfUgg'
+                googleCalendarApiKey="AIzaSyDcmx-nLYfqvrfpEmVJuclwt9akayYfUgg"
                 events={{
                   googleCalendarId: "layer5.io_eh2aa9dpf1g40elvoc762jnphs@group.calendar.google.com",
                 }}

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
@@ -247,8 +247,8 @@ const MeshmapModes = () => {
     <MeshmapModesWrapper>
       <h2 className="heading">Choose Your Mode</h2>
       <p className="caption">
-        {/* Discover and Visualize - any and all your cloud native infra and apps. */}
-        Collaboratively and design your Kubernetes clusters, service mesh deployments, and cloud native apps.
+        {/* Discover and Visualize - any and all of your cloud native infra and apps. */}
+        Collaboratively design and manage your Kubernetes clusters, service mesh deployments, and cloud native apps.
       </p>
       {/* MeshMap supports 10+ service meshes. */}
       <section className="modes-wrapper">
@@ -257,10 +257,10 @@ const MeshmapModes = () => {
             <p>Designer</p>
           </div>
           <div className="content">
-            <h1>World Class Visual Editor</h1>
-            <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={designerEnlarged? "big" : "small"}/>
+            <h1>Discover and model your cloud native deployments</h1>
+            <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={designerEnlarged ? "big" : "small"} />
             <p>
-              Build your cloud native infrastructure with custom components and  drag-and-drop controls. Customize a service mesh deployment with application and Envoy filter from scratch.
+              Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned components. Using a service mesh? Visually configure your Envoy filter chain.
             </p>
           </div>
         </div>
@@ -270,10 +270,10 @@ const MeshmapModes = () => {
             <p>Visualizer</p>
           </div>
           <div className="content">
-            <h1>Deploy your cloud native infrastructure</h1>
-            <img src={visualizerImage} alt="MeshMap Visualizer" onClick={() => setVizEnlarged(!vizEnlarged)} className={vizEnlarged? "big" : "small"}/>
+            <h1>Apply patterns and manage many Kubernetes clusters</h1>
+            <img src={visualizerImage} alt="MeshMap Visualizer" onClick={() => setVizEnlarged(!vizEnlarged)} className={vizEnlarged ? "big" : "small"} />
             <p>
-              Patterns created in Designer can be deployed and viewed as running in your environment using Visualizer. Examine a visual topology of Kubernetes cluster and its services. Connect an interactive terminal to instances of your containers.
+              Deploy designs, apply patterns, manage and operate your deployments in real-time. Bring all your Kubernetes clusters under a common point of management. Interactively connect to terminal sessions or initiate and search log streams from your containers.
             </p>
           </div>
         </div>

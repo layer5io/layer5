@@ -5,8 +5,8 @@ import Button from "../../reusecore/Button";
 import { DebounceInput } from "react-debounce-input";
 
 
-const SearchBox = ({searchQuery, searchData}) => {
-  return(
+const SearchBox = ({ searchQuery, searchData }) => {
+  return (
     <SearchWrapper>
       <div className="search-box">
         <DebounceInput type="text" value={searchQuery} minLength={1} debounceTimeout={500} onChange={searchData} placeholder="Search here..." />

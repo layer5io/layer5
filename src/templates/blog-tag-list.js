@@ -10,7 +10,7 @@ import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import theme from "../theme/app/themeStyles";
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
 
 export const query = graphql`query BlogsByTags($tag: String!) {
   allMdx(

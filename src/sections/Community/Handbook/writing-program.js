@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import { Link } from "gatsby";
 import { HandbookWrapper } from "./Handbook.style";
@@ -21,7 +21,7 @@ const Writers = () => {
   const [modalIsOpen,setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
-  
+
   const closeModal = () => setIsOpen(false);
 
   return (
@@ -35,7 +35,7 @@ const Writers = () => {
           <div className="content writing_program">
             <h2>What is Layer5 Writing Program?</h2>
             <p>
-            The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content. We collaborate with authors and technologists from around the world to produce high quality articles, blog posts, tutorials and other cloud native resources on Meshery, Kubernetes, service meshes, Docker and related technologies. 
+            The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content. We collaborate with authors and technologists from around the world to produce high quality articles, blog posts, tutorials and other cloud native resources on Meshery, Kubernetes, service meshes, Docker and related technologies.
             </p>
 
             <h2>Why should you participate?</h2>
@@ -173,8 +173,8 @@ const Writers = () => {
                 <Modal
                   isOpen={modalIsOpen}
                   onRequestClose={closeModal}
-                  className="Modal"								
-                  overlayClassName="Overlay"			
+                  className="Modal"
+                  overlayClassName="Overlay"
                   ariaHideApp={false}
                   contentLabel="Content Form"
                 >
@@ -187,7 +187,7 @@ const Writers = () => {
                       className="form-frame"
                     />
                   </div>
-                </Modal> 
+                </Modal>
               </div>
               <div className="item">
                 <p>Upon being accepted, you'll work with a coordinator on the content team to decide on a topic, develop a project plan, and discuss submission details.</p>

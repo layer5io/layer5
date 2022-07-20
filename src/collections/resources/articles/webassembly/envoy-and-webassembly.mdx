@@ -1,0 +1,70 @@
+---
+title: "Envoy and WebAssembly"
+thumbnail: ./wasm-envoy.svg
+date: 2021-10-29 10:30:05 -0530
+category: WebAssembly Filters
+type: Article
+technology: WebAssembly
+tags:
+ - WebAssembly
+ - Envoy
+published: true
+resource: true
+---
+
+import { Link } from "gatsby";
+import Infrastructure from "./figure1.png";
+import { ResourcesWrapper } from "../../Resources.style.js";
+
+<ResourcesWrapper>
+  <div className="intro">
+    <p>Learn more about WebAssembly's use within service mesh data planes in <Link className="blog" to="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition">The Enterprise Path to Service Mesh Archictures (2nd Edition)</Link> -  free book and excellent resource for anyone looking to understand WASM filters, Lua scripts, and other options available for extending the data plane.</p>
+  </div>
+
+<p>
+WASM stands for WebAssembly, which is an open standard for defining a binary format for executable programs. It also defines Interfaces for interacting with host environments through the WebAssembly System Interface (WASI). Browsers and large web applications were the primary focus of these host environments, with the goal of securely running programmes to enhance performance. The W3C maintains WASM as an open standard, and all modern browsers have adopted it. WebAssembly is the fourth language that can run natively in web browsers, following HTML, CSS, and Javascript.
+</p>
+
+<p>
+Google's open-source high-performance JavaScript and WebAssembly engine, V8, is being embedded into Envoy, bringing WASM support to the platform. Envoy exposes an Application Binary Interface (ABI) to WASM modules via the WebAssembly System Interface, allowing them to function as Envoy filters. WASI operates effortlessly. Your application is written in one of your favorite languages, such as Rust, C++, or C. Then, for the host environment, build and compile them into a WebAssembly binary. For the resulting binary to execute, the WebAssembly runtime must offer the necessary interfaces to system calls. Conceptually, this is similar to JVM. If you have a JVM installed, then you can run any Java-like languages on it. Similarly, with a runtime, you can run the WebAssembly binary.
+</p>
+
+<p>
+Additional filters can be added to Envoy in one of two ways:
+<ul>
+<li>By incorporating your custom filter into Envoy's C++ source code and building a new version of Envoy natively. The disadvantage is that you'll have to maintain your own version of Envoy, but the advantage is that your custom filter will run at native speed.</li>
+<li>Via WASM, by developing your custom filter in C++, Rust, AssemblyScript, or Go and integrating it as a WebAssembly binary. The disadvantage is that WASM-based filters have considerable overhead, but the advantage is that WASM-based filters may be dynamically loaded and reloaded in Envoy at runtime.</li>
+</ul>
+</p>
+
+<p>
+On startup, Envoy's configuration is initialised using bootstrap. The xDS APIs in Envoy enable dynamic configuration loading and reloading during runtime. There are several sections in the Envoy configuration (e.g. LDS which is for configuring Listeners and CDS which is for configuring clusters). WASM plugins can be configured in each section (programs).
+</p>
+
+<h3>Dynamically (Re)loadable Intelligence</h3>
+<p> Data planes are powerful because they can dynamically load WASM programs to inspect, rewrite, and reroute packets carrying application requests. WASM applications can integrate business logic considerations when filtering application requests when using a management plane. The service mesh can implement business logic, as well as common application infrastructure logic: </p>
+<ul>
+<li>Subscription plan enforcement: rate limiting requests based on user’s subscription plan
+</li>
+<li>Class of Service: directing requests to high performance clusters based on user demographics or activity
+</li>
+<li>Multivariate testing: facilitating comparison a of high number of variables between deployments (service versions) and users
+</li>
+</ul>
+<div class="fact">
+<p>
+To get a feel of these capabilities, try experimenting with the <Link to="/projects/image-hub">Image Hub</Link>,a prototype application developed in Rust that runs on Consul and allows you to explore WebAssembly modules used as Envoy filters.
+</p>
+</div>
+
+  <div className="center" >
+  <img src={Infrastructure} align="center" alt="application infrastructure logic" />
+  <p>
+Figure 1:. How the intelligence of the cloud native management plane and the power of the service mesh data plane combine to deliver application infrastructure logic.  </p>
+  </div>
+
+<p>
+WebAssembly is intriguing in part because of its performance characteristics, which vary depending on the program/filter used. For network filtering use cases, some have a 10% to 20% overhead as compared to natively executed code.  Given its high degree of portability, WebAssembly resembles Docker in certain ways. WASM's virtual stack machine, like the Java Virtual Machine (JVM), is evolving into a write once, run anywhere system (WORA). WASM executables are precompiled with a wide range of languages that support it as a compilation target (currently around 40 languages).
+</p>
+
+</ResourcesWrapper>

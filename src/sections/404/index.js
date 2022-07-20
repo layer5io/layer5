@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import { Container} from "../../reusecore/Layout";
+import React, { useEffect, useState } from "react";
+import { Container } from "../../reusecore/Layout";
 import L404SectionWrapper from "./404.style";
 import serviceMesh from "../../assets/images/service-mesh-icons/service-mesh.svg";
 import Button from "../../reusecore/Button";

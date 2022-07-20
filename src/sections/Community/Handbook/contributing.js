@@ -12,7 +12,7 @@ const contents = [
   { id: 0, link: "#Clone your fork", text: "Clone your fork" },
   { id: 1, link: "#Checkout a new branch", text: "Checkout a new branch" },
   { id: 2, link: "#Commit your changes", text: "Commit your changes" },
-  { id: 3, link: "#Push changes to Github", text: "Push changes to Github"},
+  { id: 3, link: "#Push changes to Github", text: "Push changes to Github" },
   { id: 4, link: "#Sign-off commits", text: "Sign-off commits" },
 ];
 
@@ -38,7 +38,7 @@ const contributingGuide = () => {
                 <span>
                   Go to your GitHub account, open the forked repository, click
                   on the code button and then click the “copy to clipboard” icon
-                  if you intend to use a command-line tool.{" "}
+                  if you intend to use a command-line tool.{ " " }
                 </span>
               </li>
               <li>
@@ -95,7 +95,7 @@ const contributingGuide = () => {
                   For example,
                   <div className="codes">
                     <Code codeString="git checkout -b feature" />
-                  </div>{" "}
+                  </div>{ " " }
                   (feature being a branch name)
                 </span>
               </li>
@@ -113,7 +113,7 @@ const contributingGuide = () => {
               </li>
               <li>
                 <span>
-                  {" "}
+                  { " " }
                   If you add multiple file changes to the branch, you simply
                   use:
                   <div className="codes">
@@ -148,10 +148,10 @@ const contributingGuide = () => {
             </ul>
           </div>
           <a id="Sign-off commits"> <h2>
-            Make sure to{" "}
-            <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits-developer-certificate-of-origin">
+            Make sure to{ " " }
+            <a href="https://github.com/layer5io/layer5/blob/master/CONTRIBUTING.md#signing-off-on-commits">
               Sign-off
-            </a>{" "}
+            </a>{ " " }
             on your Commits (Developer Certificate of Origin)
           </h2>
           </a>
@@ -159,7 +159,7 @@ const contributingGuide = () => {
             To contribute to this project, you must agree to the Developer
             Certificate of Origin (DCO) for each commit you make. The DCO is a
             simple statement that you, as a contributor, have the legal right to
-            contribute.{" "}
+            contribute.{ " " }
           </p>
           <p>
             To signify that you agree to the DCO for contributions, you simply
@@ -194,11 +194,11 @@ const contributingGuide = () => {
             Or you may configure your IDE, for example, Visual Studio Code to
             automatically sign-off commits for you:
           </p>
-          <img src={Signoff} width="74%" id="sign-off" />
+          <img src={ Signoff } width="74%" id="sign-off" />
           <TocPagination />
         </Container>
 
-        <IntraPage contents={contents} />
+        <IntraPage contents={ contents } />
       </div>
     </HandbookWrapper>
   );

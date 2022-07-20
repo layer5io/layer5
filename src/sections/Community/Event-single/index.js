@@ -1,11 +1,12 @@
 import React from "react";
-import {Link, graphql, useStaticQuery} from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import EventPageWrapper from "./EventSingle.style";
 import Button from "../../../reusecore/Button";
+import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
 
 const checkSpeaker = (speaker) => {
 
@@ -32,7 +33,7 @@ const checkSpeaker = (speaker) => {
   isSlugAvailable = validMembers.allMdx.nodes.some(matter => matter.frontmatter.name == speaker);
 
 
-  return(
+  return (
     <>
       {
         isSlugAvailable ?
@@ -49,7 +50,7 @@ const EventSingle = ({ data }) => {
 
   //const frontmatter = ({speakers = []});
   const { frontmatter, body } = data.mdx;
-  
+
   return (
     <EventPageWrapper>
       <PageHeader
@@ -67,7 +68,7 @@ const EventSingle = ({ data }) => {
                 }
                 {frontmatter.speakers && frontmatter.speakers.map((speaker, id) => (
                   <li key={{ id }} className="speakers">
-                    {checkSpeaker(speaker)}              
+                    {checkSpeaker(speaker)}
                   </li>
                 ))}
               </ul>
@@ -79,6 +80,9 @@ const EventSingle = ({ data }) => {
                 </Button>
               </div>
             </div>
+            <CTA_Bottom
+              category={"MeshMap"}
+            />
             {/* <RelatedPosts
             category={frontmatter.category}
             tags={frontmatter.tags}

@@ -19,9 +19,10 @@ Button{
     margin: auto;
 }
 
-.project__block__inner { 
+.media_block { 
     background: ${props => props.theme.white};
     transition: 450ms all;
+    margin-bottom: 1rem;
     border: 1px solid ${props => props.theme.shadowLightColor};
     &:hover{
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
@@ -43,6 +44,50 @@ Button{
         }
 }
 
+  .cta{
+    box-shadow: 0 5px 16px 1px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto 2rem;
+    border-top: solid 3px #00b39f;
+    border-radius: 2px;
+    padding: 1rem;
+    @media screen and (max-width: 768px) {
+      margin: 6% 15%;
+      padding: 6% 10%;
+      }
+
+    .cta_heading {
+      font-weight: 600;
+      text-align: center;
+  }
+
+  .cta_body {
+      display: flex;
+      flex-direction: column;
+
+      .cta_heading-heading {
+          filter: invert(0.5);
+          flex: 0 0 70%;
+          text-align: center;
+          font-size: 1.1rem;
+      }
+      .btn {
+        min-width: 100%;
+    }
+  }
+
+  @media (min-width: 510px) {
+    .cta_heading {
+      text-align: left;
+    }
+      .cta_body {
+          .cta_heading-heading {
+              margin-bottom: 1rem;
+              margin-top: 1rem;
+              text-align: left;
+          }
+      }
+  }
+}
 `;
 
 const NewsSidebar = (props) => {
@@ -58,13 +103,31 @@ const NewsSidebar = (props) => {
         <Button secondary title="Layer5 brand kit" external={true} />
       </Link>
       <a href="mailto:press@layer5.io" target="_blank" rel="noreferrer">
-        <div className="project__block__inner">
+        <div className="media_block">
           <h5>Media Contacts</h5>
           <p>Kate Suttons</p>
           <FiMail size={40} className="icon" />
           <p>press@layer5.io</p>
         </div>
       </a>
+      <Link to="/meshmap">
+        <div className="cta">
+          <h4 className="cta_heading">
+        MeshMap
+          </h4>
+          <div className="cta_body">
+            <h3 className="cta_heading-heading">
+            Your friendly cloud native visual editor.
+            </h3>
+            <div className="chapter-link">
+              <Button primary title="Try Now!"
+                className="btn"
+                url="/meshmap"
+                external={false} />
+            </div>
+          </div>
+        </div>
+      </Link>
     </NewsSidebarWrapper>
   );
 };

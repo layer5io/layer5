@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Col, Row} from "../../../../reusecore/Layout";
+import { Container, Col, Row } from "../../../../reusecore/Layout";
 import styled from "styled-components";
 import HeroImage from "../images/meshery-operator-dark.svg";
 
@@ -41,7 +41,7 @@ const HowMesheryWorksHeroWrapper = styled.div`
 `;
 
 const HowMesheryWorksHero = () => {
-  return(
+  return (
     <HowMesheryWorksHeroWrapper>
       <Container>
         <Row>

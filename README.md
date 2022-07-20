@@ -139,7 +139,7 @@ alt="Layer5" align="left" /></a>
 <br />
 <ul>
   <li>Find us on Twitter: <a href="https://twitter.com/layer5">@layer5</a>, <a href="https://twitter.com/mesheryio">@mesheryio</a> and <a href="https://twitter.com/smp_spec">@smp_spec</a>.</li>
-  <li>Visit us on LinkedIn: <a href="https://www.linkedin.com/company/layer5">Layer5</a>, <a href="https://www.linkedin.com/showcase/layer5">Meshery</a>, and <a href="https://www.linkedin.com/showcase/service-mesh-performance">Service Mesh Performance</a>.</li>
+  <li>Visit us on LinkedIn: <a href="https://www.linkedin.com/company/layer5">Layer5</a>, <a href="https://www.linkedin.com/showcase/meshery/">Meshery</a>, and <a href="https://www.linkedin.com/showcase/service-mesh-performance">Service Mesh Performance</a>.</li>
   <li>Subscribe on <a href="http://youtube.com/Layer5io?sub_confirmation=1">Youtube</a>.</li>
 </ul>
 
