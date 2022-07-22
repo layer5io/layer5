@@ -1,9 +1,9 @@
 ## Adding dark theme for components
 
-1. To differentiate the colors between dark theme and light theme, we have already created a customisation system in which we can define style like colors, position, display etc for both theme using {props => props.theme.DarkTheme? darkThemeStyle: LightThemeStyle} 
+1. To differentiate between the colors of dark and light theme, we have created a customization system in which we can define styles like color, position, display etc using {props => props.theme.DarkTheme? darkThemeStyle: LightThemeStyle} 
   
 
-2. It is not recommended to fill style sheet with css variables, if possible use only colors or styles that are already defined in themeStyles.js.
+2. It is recommended to use pre-existing styles or colors from the theme. Avoid adding your own CSS variables."
 
 
  Examples- To change Text Color according to theme
@@ -16,7 +16,7 @@ color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.the
 
 ## Changing svg according to theme
 
-1. To Change svg according to theme, We strongly recommend to add classe or id in inner paths in the svg and fill them with the preferable colors like we did in the case of the components.
+1. To Change svg according to theme, We strongly recommend innerpaths or rect or polygon to befill them with the preferable colors like we did in the case of the components.
 
 Examples -
 
@@ -42,7 +42,7 @@ Examples -
 
 ## Changing images in gatsby-image-plugin according to theme.
 
-1. Procidure of changing image for gatsby-image is same as we change for local images, however we recommend you to fetch two images, as one for dark theme and one for light theme change it according to theme state as we did with local theme.
+1. Procedure of changing image for gatsby-image is same as we change for local images, however we recommend you to fetch two images, as one for dark theme and one for light theme change it according to theme state as we did with local theme.
 
     Example- 
           <Image
