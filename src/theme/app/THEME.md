@@ -7,11 +7,11 @@
 
 ## Changing svg according to theme
 
-1. To Change svg according to theme, We strongly recommend to add inner paths in the svg and fill them with the preferable colors like we did for compenent.
+1. To Change svg according to theme, We strongly recommend to add classe or id in inner paths in the svg and fill them with the preferable colors like we did in the case of the components.
 
 ## Changing local images according to theme
 
-1. To Change images according to theme, We strongly recommend to pass theme state to specific image and change its source according to the theme. For example- <img src={theme ==="dark"? DarkThemelogoSource : LightThemelogoSource}/> 
+1. To Change images according to theme, We strongly recommend to pass theme state to specific image parent component and change its source according to the theme. For example- <img src={theme ==="dark"? DarkThemelogoSource : LightThemelogoSource}/> 
 
 2. Also Fetching Logo source as a Source variable is recommended as it will be easier to read.
 
