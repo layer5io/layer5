@@ -21,7 +21,7 @@ import Http_metrics from "../../assets/images/meshmap/catalog-card-images/http.s
 
 import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
 import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import Ebpf from "../../assets/images/meshmap/eBPF.svg";
+import Ebpf from "../../assets/images/meshmap/ebpf.svg";
 import Opa from "../../assets/images/meshmap/opa.svg";
 import { Container } from "../../reusecore/Layout";
 
