@@ -300,11 +300,11 @@ const Catalog = () => {
         <Row>
           <Col md={6} xs={12}>
             <section className="svg-cont">
-              <div className="cont">
+              <div>
                 <img className="patterns" src={Patterns} />
                 <p>Service Patterns</p>
               </div>
-              <div className="cont">
+              <div>
                 <img src={Ebpf} />
                 <p className="ebpf-text">ePBF Programs</p>
               </div>
@@ -312,11 +312,11 @@ const Catalog = () => {
           </Col>
           <Col md={6} xs={12}>
             <section className="svg-cont">
-              <div className="cont">
+              <div>
                 <img src={Wasm} />
                 <p>WASM Filters</p>
               </div>
-              <div className="cont">
+              <div>
                 <img src={Opa} />
                 <p>OPA Policies</p>
               </div>
