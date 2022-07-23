@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import catalog from "../../assets/images/meshmap/MeshmapCatalog_trans.png";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
 import { Link } from "gatsby";

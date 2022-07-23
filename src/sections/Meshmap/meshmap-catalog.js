@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Row, Col } from "../../reusecore/Layout";
 
 import Mutual_tls from "../../assets/images/meshmap/catalog-card-images/mutual-tls.svg";
 import Retries from "../../assets/images/meshmap/catalog-card-images/retries.svg";
@@ -18,12 +19,10 @@ import Multicluster from "../../assets/images/meshmap/catalog-card-images/multic
 import Http_metrics from "../../assets/images/meshmap/catalog-card-images/http.svg";
 
 
-import Options from "../../assets/images/meshmap/options.png";
-import Options1 from "../../assets/images/meshmap/wasm.svg";
-import Options2 from "../../assets/images/meshmap/pattern.svg";
-import Options3 from "../../assets/images/meshmap/ebpf.svg";
-import Options4 from "../../assets/images/meshmap/opa.svg";
-// import OptionsRotated from "../../assets/images/meshmap/options-rotated.png";
+import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
+import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+import Ebpf from "../../assets/images/meshmap/eBPF.svg";
+import Opa from "../../assets/images/meshmap/opa.svg";
 import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
@@ -44,28 +43,19 @@ p.caption {
 
 .svg-cont{
   display:flex;
-  justify-content: space-between; 
+  justify-content: space-around; 
   align-items:center; 
- 
+  img{
+    max-width:3.6rem;
+    display:block;
+    margin: 0 auto  ;
+  }
+  p{
+    margin: 0 auto  ;
+    font-weight:600;
+  }
 }
 
-.cont{
-  margin:0 auto;
-}
-.cont img{
-  max-width:3.6rem;
-  display:block;
-  margin: 0 auto  ;
-  
- 
-}
-.ebpf-text{
-  padding-bottom:.7rem;
-}
-.cont p{
-  margin: 0 auto  ;
-  font-weight:600;
-}
 
 h2{
 	display: table;
@@ -217,26 +207,22 @@ h3.containerCaption {
   @media screen and (max-width: 572px) {
     
     .svg-cont{
-      width:90%;
       margin: 0 auto;
-      justify-content:center;
+      justify-content:space-evenly;
       align-items:center;
-    }
-    .cont img{
-      width:2.4rem
-    }
-    .cont p{
-      width:100%; 
-      font-size:1rem;
-      line-height:1.2;
-      padding-top:.3rem;
-      text-align:center;
-    }
-    .ebpf-text{
-      padding-bottom:.5rem;
+
+      img{
+        width:2.4rem
+      }
+      p{
+        width:100%; 
+        font-size:1rem;
+        line-height:1.2;
+        padding-top:.3rem;
+        text-align: center;
+      }
     }
  
-   
     .catalog-wrapper{
       padding: 2rem;
     }
@@ -311,25 +297,32 @@ const Catalog = () => {
       <Container>
         <h2 className="heading">Choose Your Power-ups</h2>
         <p className="caption">Save time with design patterns. Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b>.</p>
-        <section className="svg-cont">
-
-          <div className="cont">
-            <img src={Options1} />
-            <p>WASM Filters</p>
-          </div>
-          <div className="cont">
-            <img className="patterns" src={Options2} />
-            <p>Service Patterns</p>
-          </div>
-          <div className="cont">
-            <img src={Options3} />
-            <p className="ebpf-text">ePBF Programs</p>
-          </div>
-          <div className="cont">
-            <img src={Options4} />
-            <p>OPA Policies</p>
-          </div>
-        </section>
+        <Row>
+          <Col md={6} xs={12}>
+            <section className="svg-cont">
+              <div className="cont">
+                <img className="patterns" src={Patterns} />
+                <p>Service Patterns</p>
+              </div>
+              <div className="cont">
+                <img src={Ebpf} />
+                <p className="ebpf-text">ePBF Programs</p>
+              </div>
+            </section>
+          </Col>
+          <Col md={6} xs={12}>
+            <section className="svg-cont">
+              <div className="cont">
+                <img src={Wasm} />
+                <p>WASM Filters</p>
+              </div>
+              <div className="cont">
+                <img src={Opa} />
+                <p>OPA Policies</p>
+              </div>
+            </section>
+          </Col>
+        </Row>
         <section className="catalog-wrapper ">
           <div className="container">
             <div id="carousel">
