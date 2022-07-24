@@ -82,4 +82,4 @@ yarn.lock
 default.profraw
 
 #Husky configuration
-.husky/
+.husky/_/

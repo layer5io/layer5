@@ -17,6 +17,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "lint": "eslint --fix .",
+    "checklint": "eslint .",
     "pretest": "eslint --ignore-path .gitignore .",
     "preload-fonts": "gatsby-preload-fonts",
     "deploy": "gatsby build && gh-pages -d public -b master",
@@ -75,9 +76,9 @@
     "react-intersection-observer": "^9.3.5",
     "react-loadable": "^5.5.0",
     "react-modal": "^3.14.4",
-    "react-share": "^4.4.0",
     "react-scroll": "^1.8.7",
     "react-select": "^5.4.0",
+    "react-share": "^4.4.0",
     "react-slick": "^0.28.1",
     "react-table": "^7.8.0",
     "react-tabs": "^4.2.1",
@@ -102,18 +103,7 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
     "gh-pages": "^3.2.3",
     "husky": "^8.0.1",
-    "lint-staged": "^12.3.3",
     "rimraf": "^3.0.2",
     "webpack-cli": "^4.9.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "npm run lint"
-    ]
   }
 }
