@@ -1,6 +1,24 @@
 import styled from "styled-components";
 const ProjectItemWrapper = styled.section`
 	margin: 5rem 0rem;
+	path.clss-1{
+		fill: ${props => props.theme.DarkTheme? "white": "#3c494f"};
+	}
+	path.clss-2{
+		fill: ${props => props.theme.DarkTheme? "white": "#3c494f"};
+	}
+	path.clss-3{
+		fill:#647881
+	}
+	path.clss-4{
+		fill:#00b39f
+	}
+	path.clss-5{
+		fill:#00d3a9
+	}
+	path.clss-6{
+		fill:#477e96
+	}
 	path.cls-1{
 		fill:#00d3a9
 	}
@@ -8,7 +26,7 @@ const ProjectItemWrapper = styled.section`
 		fill:#00b39f
 	}
 	path.cls-3{
-		fill: ${props => props.theme.DarkTheme? "grey": "#3c494f"};
+		fill: ${props => props.theme.DarkTheme? "white": "#3c494f"};
 	}
 	path.st2 {
 		fill: #2beda7;
@@ -20,7 +38,7 @@ const ProjectItemWrapper = styled.section`
 		fill:#00b39f
 	}
 	polygon.cls-3{
-		fill: ${props => props.theme.DarkTheme? "grey": "#3c494f"};
+		fill: ${props => props.theme.DarkTheme? "white": "#3c494f"};
 
 	}
 	path.st2 {
