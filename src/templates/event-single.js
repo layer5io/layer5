@@ -44,7 +44,7 @@ export const query = graphql`query EventsBySlug($slug: String!) {
 `;
 
 const EventSinglePage = ({ data }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

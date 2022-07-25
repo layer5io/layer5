@@ -41,7 +41,7 @@ export const query = graphql`query BlogsBySlug($slug: String!) {
 `;
 
 const BlogSinglePage = ({ data }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

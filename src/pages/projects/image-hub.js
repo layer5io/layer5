@@ -12,7 +12,7 @@ import { GlobalStyle } from "../../sections/app.style";
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
 const ImageHub = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => {
     setMounted(true);

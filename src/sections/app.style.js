@@ -40,7 +40,7 @@ body {
   color: ${(props) => props.theme.text};
   font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  font-family: 'Open Sans', sans-serif;z
+  font-family: 'Open Sans', sans-serif
   overflow-x: hidden !important;
   font-weight: 400 !important;
   margin: 0;

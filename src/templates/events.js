@@ -147,7 +147,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
 `;
 
 const Events = ({ data, pageContext }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

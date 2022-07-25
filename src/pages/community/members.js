@@ -181,7 +181,7 @@ const MembersPage = () => {
   const [members, setMembers] = useState([options[11]]);
   const handleChange = (value) => setMembers(value);
 
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

@@ -89,7 +89,7 @@ const SingleChapter = ({ data, location }) => {
     let secondOrder = second.frontmatter?.order ? second.frontmatter.order : 100;
     return firstOrder - secondOrder;
   });
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

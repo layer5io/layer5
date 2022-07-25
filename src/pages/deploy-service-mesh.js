@@ -12,7 +12,7 @@ import DeployServiceMesh from "../sections/Deploy Service Mesh/index";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
 const DeployServiceMeshPage = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

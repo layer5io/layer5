@@ -162,6 +162,7 @@ const Navigation = ({ theme, themeSetter }) => {
   const [scroll, setScroll] = useState(false);
   const [themeToggle, setthemeToggle] = useState(false);
   const [checked, setChecked] = React.useState(true);
+  const defaultTheme="dark";
   const handle = () => {
     theme === "dark" ? setthemeToggle(true) : setthemeToggle(false);
 
@@ -171,7 +172,7 @@ const Navigation = ({ theme, themeSetter }) => {
 
   useLayoutEffect(() => {
     if (localStorage.getItem("Theme") === null) {
-      themeSetter("light");
+      themeSetter(defaultTheme);
     } else {
       themeSetter(localStorage.getItem("Theme"));
     }

@@ -14,7 +14,7 @@ import lighttheme from "../../../theme/app/themeStyles";
 
 
 const Meshery = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

@@ -42,7 +42,7 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
 `;
 
 const ResourceSinglePage = ({ data }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

@@ -10,7 +10,7 @@ import Layout from "../components/layout";
 import ThankYou from "../sections/thank-you/thank-you";
 
 const ThankYouSection = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

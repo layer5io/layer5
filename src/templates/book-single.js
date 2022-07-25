@@ -35,7 +35,7 @@ export const query = graphql`query BookBySlug($slug: String!) {
 `;
 
 const BookSinglePage = ({ data }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

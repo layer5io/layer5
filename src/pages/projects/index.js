@@ -34,7 +34,7 @@ export const query = graphql`query allProjects {
 `;
 
 const ProjectGridPage = ({ data }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

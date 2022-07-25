@@ -35,6 +35,13 @@ export const query = graphql`
             extension
             publicURL
           }
+          darkthumbnail {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+            extension
+            publicURL
+          }
         }
         fields {
           slug
@@ -64,7 +71,7 @@ const Blog = (props) => {
     if (isListView) return <BlogList {...props} />;
     return <BlogGrid {...props} />;
   };
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
@@ -92,6 +99,7 @@ const Blog = (props) => {
           setGridView={setGridView}
           pageContext={props.pageContext}
           data={props.data}
+          theme={theme}
         />
         <Footer />
       </Layout>

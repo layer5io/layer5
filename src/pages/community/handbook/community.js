@@ -14,7 +14,7 @@ import lighttheme from "../../../theme/app/themeStyles";
 
 
 const Community = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
@@ -27,13 +27,13 @@ const Community = () => {
     return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Community" description="Community guidelines" />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
-        <CommunityPage theme={theme}/>
-        <Footer/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <CommunityPage theme={theme} />
+        <Footer />
       </Layout>
     </ThemeProvider>
   );

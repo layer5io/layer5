@@ -10,7 +10,7 @@ import lighttheme from "../theme/app/themeStyles";
 import WebBasedForm from "../sections/Community/Web-based-from";
 
 const NewcomersPage = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

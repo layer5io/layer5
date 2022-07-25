@@ -37,7 +37,7 @@ export const query = graphql`query NewsBySlug($slug: String!) {
 `;
 
 const NewsSinglePage = ({ data }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

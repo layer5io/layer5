@@ -38,7 +38,7 @@ export const query = graphql`query MemberBySlug($slug: String!) {
 `;
 
 const MemberSinglePage = ({ data }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

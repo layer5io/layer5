@@ -13,7 +13,7 @@ import lighttheme from "../../theme/app/themeStyles";
 import { darktheme } from "../../theme/app/themeStyles";
 
 const SMI = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

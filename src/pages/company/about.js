@@ -14,7 +14,7 @@ import lighttheme from "../../theme/app/themeStyles";
 
 
 const About = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
@@ -27,12 +27,12 @@ const About = () => {
     return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="About" description='At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?"' />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
-        <AboutSection theme={theme}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <AboutSection theme={theme} />
         <Footer />
       </Layout>
     </ThemeProvider>

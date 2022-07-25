@@ -22,7 +22,7 @@ import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
 
 const IndexPage = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

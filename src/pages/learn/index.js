@@ -11,7 +11,7 @@ import lighttheme from "../../theme/app/themeStyles";
 import { useState } from "react";
 
 const LearnGridPage = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
@@ -30,7 +30,7 @@ const LearnGridPage = () => {
         <SEO title="Learn Service Mesh"
           description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Open Service Mesh, Traefik Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
           image="/images/workshops.png" />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <LearnPage />
         <Footer />
       </Layout>

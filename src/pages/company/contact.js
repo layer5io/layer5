@@ -15,7 +15,7 @@ import lighttheme from "../../theme/app/themeStyles";
 import ContactPage from "../../sections/Company/Contact";
 
 const Contact = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

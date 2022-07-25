@@ -11,7 +11,7 @@ import { darktheme } from "../../theme/app/themeStyles";
 
 
 const LearningPathsPage = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

@@ -10,7 +10,7 @@ import Layout from "../components/layout";
 import PricingPage from "../sections/Pricing";
 
 const Pricing = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

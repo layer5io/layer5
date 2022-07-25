@@ -26,7 +26,7 @@ export const query = graphql`
 `;
 
 const ProgramSinglePage = ({ data }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

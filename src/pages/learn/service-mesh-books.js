@@ -14,7 +14,7 @@ import { darktheme } from "../../theme/app/themeStyles";
 
 
 const BooksGridPage = ({ hide_path }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

@@ -38,7 +38,7 @@ export const query = graphql`query WorkshopBySlug($slug: String!) {
 `;
 
 const WorkshopSingle = ({ data }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
     setTheme(thememode);

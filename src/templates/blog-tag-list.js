@@ -45,7 +45,7 @@ export const query = graphql`query BlogsByTags($tag: String!) {
 `;
 
 const BlogListPage = ({ pageContext, data }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
