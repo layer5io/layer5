@@ -1,0 +1,142 @@
+---
+title: "What is Multi-Cluster Kubernetes?"
+thumbnail: ./kubernetes.svg
+date: 2022-07-05 10:30:05 -0530
+category: Kubernetes
+type: Article
+technology: Kubernetes
+tags:
+ - Docker
+ - Kubernetes
+ - Meshery
+published: true
+resource: true
+---
+
+import { Link } from "gatsby";
+
+import { ResourcesWrapper } from "../../Resources.style.js";
+
+<!-- Unhide after the blog post below is published.  
+
+<div className="intro">
+  <p>Learn more about how to Link className="blog" to="/blog/meshery/multi-cluster-kubernetes-management-with meshery">wrangle multiple Kubernetes clusters with Meshery</Link.</p>
+</div>  -->
+
+
+<ResourcesWrapper>
+Developers who work in fast-paced environments face the risk of infrastructure sprawl in their VMs or servers. Even with the rise in containerized deployments on Kubernetes and other platforms, admins still must determine how to efficiently manage hundreds and thousands of clusters for various projects.
+
+Common concerns for an organization’s project deployments include how to run multiple workloads and whether a cluster is large enough to handle the work.
+
+A Kubernetes multi-cluster setup can solve these problems. Multi-cluster architecture is a strategy for spinning up several clusters to achieve better isolation, availability, and scalability. In this type of implementation, an application’s infrastructure is distributed and maintained across multiple clusters. Because this strategy can also make cluster management more difficult, it needs to be handled properly.
+
+## What Is a Kubernetes Multi-Cluster Setup?
+
+Kubernetes works with clusters to efficiently run and manage workloads.
+
+In Kubernetes multi-cluster orchestration, platforms such as managed services help you to run workloads across multiple clusters and environments. The multiple clusters can be configured within a single physical host, within multiple hosts in the same data center, or even in a single cloud provider across different regions. This allows you to provision your workloads in several clusters, rather than just one.
+
+This type of deployment enables more scalability, availability, and isolation for your workloads and environments. It also enables you to better coordinate the planning, delivery, and management of these environments.
+
+A key feature of multi-cluster Kubernetes architecture is that each cluster is highly independent, managing its internal state for maximum resource provisioning and service configuration.
+
+## Why Use a Kubernetes Multi-Cluster Setup?
+
+There are multiple use cases for a multi-cluster deployment. You can use it to deploy workloads spanning multiple regions for increased availability, eliminate cloud blast radius, prevent compliance issues, and enforce security around your clusters and tenants.
+
+As your environment grows, so do the potential issues you need to solve in order to align your cluster maintenance with your business needs. Using a Kubernetes multi-cluster setup can help with the following concerns.
+
+## Cluster Discovery and Tenant Isolation
+It is common for projects to exist in dev, staging, and production environments. To achieve this kind of isolation, you require multiple Kubernetes environments.
+
+Conventionally, using namespaces would be enough for discovery and isolation in a single cluster, but Kubernetes isn’t a direct multitenant system. Namespaces are also not great for isolation since any compromise in the namespace means that your cluster is also compromised. Additionally, badly configured applications in a namespace can consume more resources than expected, which impacts other applications in the cluster.
+
+Kubernetes multi-cluster environments enable you to isolate users and projects by cluster, simplifying the process.
+
+## Failover
+Architecting multi-cluster workloads minimizes the downtime issues common within a single cluster, because you can freely transfer the workloads to other running clusters.
+
+# Multi-Cluster, Multitenancy, or a Mix?
+Kubernetes is a complex, high-level platform that offers multiple options for your deployments: single server, multitenant, or multi-cluster.
+
+Multitenancy means a cluster is shared among several workloads, or tenants. Multiple users share the same cluster resources and control plane. Multitenant clusters require fair allocation of resources to the tenants as well as isolation of tenants from each other, in order to minimize the effects of a faulty tenant on other tenants and the overall cluster.
+
+A multi-cluster setup, on the other hand, involves several clusters deployed across one or many data centers. This type of deployment can be used to separate development and production. It improves availability and enhances security around workloads.
+
+The best choice for your organization depends on factors that include the technical expertise of your team, your infrastructure availability, and your budget. Many organizations separate their critical production services from non-critical services by placing them in separate tenants across tiers, teams, locations, or infrastructure providers. Projects that are time- and resource-dependent (where resources are spun up and down on the go) are, however, suitable for multi-cluster architecture.
+
+# When to Use a Multi-Cluster Setup
+To decide whether your projects would function best in a multi-cluster deployment, you first need to define your goals.
+
+You should know the challenges you are trying to solve and how transitioning to a multi-cluster setup would help your organization. Projects that are performance-dependent with workloads that are sensitive to factors like latency can take advantage of the high availability and isolation available in multi-cluster setups. In other words, you can run workloads with intensive computations that don’t need to share resources.
+
+You’ll need to collect workload data and other feedback from your various teams before making a decision. You should assess your teams’ expertise: are they well-versed in provisioning single clusters, even before transitioning to multi-clusters? You’ll also need to evaluate your business model and how such an infrastructure transition could affect your users or customers.
+
+The following are some of the advantages of transitioning to a Kubernetes multi-cluster setup.
+<ul>
+<li>Tenant Isolation</li>
+You might want to establish order while accommodating your development teams. The multi-cluster architecture allows workload isolation. For example, you could spin up separate clusters for staging and production.
+
+With multiple clusters, any tenant configuration changes affect only that specific cluster. This way, cluster admins can easily identify issues, run new feature experiments, and carry out workload shifts without troubling other tenants and clusters.
+
+<li>No  Single Point of Failure</li>
+Running a single cluster can expose your project to a single point of failure, in which one malfunctioning component can bring down an entire system. Using a multi-cluster environment enables you to shift your workloads between clusters so that your projects continue to function if one cluster is down or even disappears entirely.
+
+<li>No Vendor Lock-In</li>
+There are multiple third-party cloud vendors available with varying resource offerings. Because of evolving resource pricing and models, organizations change their usage models over time as well. A Kubernetes multi-cluster setup ensures your workloads are cloud-agnostic so that you can safely use multiple vendors or move workloads from one cloud to another.
+</ul>
+
+
+
+Kubernetes provisions clusters that run and manage our workloads. Depending on the needs of an organization, Kubernetes deployments can be replicated to have the same workloads accessible across multiple nodes and environments. This concept is called Kubernetes multi-cluster orchestration. It’s simply provisioning your workloads in several Kubernetes clusters (going beyond a single cluster). 
+
+A Kubernetes multi-cluster defines deployment strategies to introduce scalability, availability, and isolation for your workloads and environments. A Kubernetes multi-cluster is fully embraced when an organization coordinates the planning, delivery, and management of several Kubernetes environments using appropriate tools and processes.
+
+## Why Do You Need a Kubernetes Multi-Cluster?
+
+In simple deployment cases, Kubernetes can spin workloads in a single cluster. However, some cases need advanced deployment models, and for such scenarios, a multi-cluster architecture is suitable and can improve the performance of your workloads.
+
+Simply put, a development team may need a Kubernetes multi-cluster to handle workloads spanning regions, eliminate a cloud blast radius, manage compliance requirements, solve multi-tenancy conflicts, and enforce security around clusters and tenants.
+
+### Cluster Upgrades and Security Management
+
+Teams that rely heavily on Kubernetes for deployments need to plan for regular upgrades and patches on their environments for comprehensive security fixes.
+
+Running cluster upgrades without due care or proper tools can break more things, and more so when dependent resources are overloaded. Tools like kOPs and Cluster APIs can therefore be used to apply upgrades to your running clusters.
+
+The tools that you install to run your clusters depend entirely on the workloads that your clusters support. How you upgrade a cluster and its tools also depends on how you initially deployed and ran the Kubernetes cluster, that is, whether you’re using a hosted Kubernetes provider or some other means for deployment. Most hosted providers support and handle automatic upgrades, which relieves developers from manual upgrades and patching.
+
+Upgrading a cluster and its toolset follows the approach of upgrading the control plane first, then the nodes in a cluster, followed by upgrading clients such as `kubectl`.
+
+### Managing Kubernetes Multi-Cluster Complexity
+
+The complexity of management tasks across multiple Kubernetes clusters greatly increases your the number of clusters increase. You need higher-level view and control as you manage workloads across clusters; need to be able to simply switch between clusters; you need a management plane. 
+
+<Link className="blog" to="/meshery">Meshery</Link> is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
+
+MeshSync, a custom controller managed by Meshery Operator, uniquely contains cluster-wide details of all objects across any number of managed clusters separated by Kubernetes Cluster ID. 
+
+### Deprovisioning Clusters That Are No Longer Needed
+
+When you deprovision a cluster, its running resources are also deleted. The control plane resources, the node instances, pods, and stored data are all deleted.
+
+Different hosted Kubernetes providers have varying ways of deleting Kubernetes clusters. For instance, GKE supports deletion of clusters from the Google Cloud CLI and Cloud Console. Other tools for spinning Kubernetes clusters such as kOps and Amazon EKS also support the deletion from their CLIs and consoles.
+
+Suppose you have provisioned your clusters with the Google Kubernetes Engine; you can run the following command in the gcloud CLI to deprovision your clusters that are no longer needed:
+
+```
+gcloud container clusters delete CLUSTER_NAME
+```
+
+At this point, you’ve seen the operations around managing a cluster lifecycle, that is, creation, deletion, and upgrading of clusters.
+
+## Conclusion
+
+Teams want working with clusters to be as easy as possible. This ease in operating clusters can be ensured by managing the cluster lifecycle. In this article, you learned what’s involved in managing a cluster lifecycle. You’ve seen how clusters are created at scale using various tools. You’ve also seen what cluster upgrades and security patch management involve while trying to maintain the health of your clusters.
+
+The complexity of Kubernetes environments does present challenges, but setting clear goals and objectives for deploying your clusters can help you overcome any obstacles as your organization makes the transition.
+
+Finally, multi-cluster deployments are a good choice for organizations that are building highly distributed systems, with geographic and regulatory control in check to help scale workloads beyond the limits of single clusters. Multi-cluster deployment and management is useful for minimizing exposure of production services, preventing access to sensitive data in environments like development and testing. Organizations are now opting to deploy their more critical workloads on separate multiple clusters from their less critical ones.
+
+</ResourcesWrapper>

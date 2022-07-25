@@ -8,7 +8,7 @@ const BannerSectionWrapper = styled.div`
     background: #000000;
     border-radius: 0% 85% 0% 0% / 0% 80% 0% 0% ;
     -webkit-box-shadow: 5px -5px 15px 5px rgba(0,0,0,0.33); 
-    box-shadow: 1px -5px 8px 1px rgba(0,211,169,0.55);
+    box-shadow: 1px -5px 5px 1px rgba(235,192,23,.5);
         
     padding: 8rem 6rem 3rem 6rem;
     margin-bottom: 3rem;
