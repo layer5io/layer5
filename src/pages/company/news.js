@@ -36,6 +36,13 @@ export const query = graphql`query allNews {
           extension
           publicURL
         }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
       }
       fields {
         slug
@@ -67,7 +74,7 @@ const NewsGridPage = ({ data }) => {
     Layer5 the company behind industry-leading, open source software." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <SimpleReactLightbox>
-          <NewsPage data={data} />
+          <NewsPage theme={theme} data={data} />
         </SimpleReactLightbox>
         <Footer />
       </Layout>

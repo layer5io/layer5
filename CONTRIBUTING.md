@@ -55,7 +55,6 @@ The following list of instructions pertains to commonplace site updates by contr
   1. Use only the theme colors available at [themeStyles.js](https://github.com/layer5io/layer5/blob/master/src/theme/app/themeStyles.js) instead of external color codes.
   2. Avoid adding `rel="noreferrer"` attribute to internal links on the site.
 
-
 ## Adding Images and Icons
 
   1. It is recommended to use `@react-icons/all-files` instead of `react-icons` for importing icons. The issue with react-icons is that even though we are importing a single icon from the package/folder it still imports the complete icon folder which is creating unwanted junks of JS in the build.

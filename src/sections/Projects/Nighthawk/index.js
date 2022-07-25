@@ -8,6 +8,7 @@ import Lightlogo from "../../../assets/images/nighthawk/with-name/SVG/nighthawk-
 import cloud from "./images/cloud-network_green.svg";
 import cpu from "./images/cpu_green.svg";
 import smpIcon from "./images/smp-dark-text.svg";
+import lightSmpIcon from "./images/smp-light-text.svg";
 import distributedPerf from "./images/distributed-performance_green.svg";
 import cncf from "./images/cncf-white.svg";
 
@@ -116,7 +117,7 @@ const Projects = ({ theme }) => {
               <CardsContainer>
                 <div className="card">
                   <div className="circle">
-                    <img src={smpIcon} className="smp" alt="smp logo" />
+                    <img src={theme ==="dark"? lightSmpIcon : smpIcon} className="smp" alt="smp logo" />
                   </div>
                   <h2>SERVICE MESH PERFORMANCE COMPATIBILITY</h2>
                   <p>Enabling Standards-based, Distributed Performance Management - Nighthawk integrates Meshery and Nighthawk. Through this integration Meshery facilitates <Link to="/projects/service-mesh-performance">Service Mesh Performance (SMP)</Link> compatibility for Nighthawk.</p>

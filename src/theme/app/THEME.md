@@ -16,7 +16,7 @@ color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.the
 
 ## Changing svg according to theme
 
-1. To Change svg according to theme, We strongly recommend innerpaths or rect or polygon to befill them with the preferable colors like we did in the case of the components.
+1. To Change svg according to theme, We strongly recommend innerpaths or rect or polygon to fill them with the preferable colors like we did in the case of the components.
 
 Examples -
 

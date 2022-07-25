@@ -70,7 +70,7 @@ const IndexPage = () => {
         {/* <News /> */}
         {/* <Faq category = "all"/> */}
         {/*<ContactCard />*/}
-        <SoSpecial />
+        <SoSpecial theme={theme} />
         <ServiceMeshFocussed />
         {/* <EngineerEnabler /> */}
         <SubscribeSection />

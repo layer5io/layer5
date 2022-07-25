@@ -5,13 +5,13 @@ import { BiLinkExternal } from "@react-icons/all-files/bi/BiLinkExternal";
 import Image from "../image";
 import { CardWrapper } from "./Card.style";
 
-const Card = ({ frontmatter, fields }) => {
+const Card = ({ frontmatter, fields, theme }) => {
   return (
     <CardWrapper fixed={!!frontmatter.abstract}>
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...frontmatter.thumbnail}
+            {...(theme ==="dark"? frontmatter.darkthumbnail : frontmatter.thumbnail)}
             imgStyle={{ objectFit: "contain" }}
             alt={frontmatter.title}
           />

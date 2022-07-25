@@ -5,6 +5,7 @@ date:   2022-04-25 04:00:05 +0000
 author: Container Journal
 category: Coverage
 thumbnail: istio-to-cncf.jpg
+darkthumbnail: istio-to-cncf.jpg
 eurl: https://containerjournal.com/features/google-petitions-to-donate-istio-service-mesh-to-cncf/
 published: true
 type: News
