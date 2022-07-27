@@ -11,7 +11,7 @@ const ContactForm = () => {
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/nt0s4oiuntfomjsvvrom4x85sx3leg8h", {
+      axios.post("https://hook.us1.make.com/gguommoyd14634ur9xs7l37widuoa7e9", {
         contactForm,
       });
       window.scrollTo(0, 700);
@@ -41,6 +41,7 @@ const ContactForm = () => {
             subject: "",
             message: "",
             ScopeOfQuestion: "",
+            form: "contact",
           }}
           onSubmit={(values) => {
             setcontactForm(values);
