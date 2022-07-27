@@ -44,7 +44,7 @@ const Banner1SectionWrapper = styled.section`
         position: relative;
         top: -3.625rem;
         min-width:25%;
-        max-width:100%;
+        max-width:102.2%;
         object-fit: cover;
 }
     .vintage-box-container {
