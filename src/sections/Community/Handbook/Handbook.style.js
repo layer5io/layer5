@@ -9,7 +9,7 @@ export const HandbookWrapper = styled.div`
       width:100%;
       padding-bottom: 2rem;
       ul > li {
-        color: ${(props) => props.theme.menuColor};
+        color: ${(props) => props.theme.text};
       }
       ol > li {
         color: ${(props) => props.theme.menuColor};
@@ -177,6 +177,12 @@ export const HandbookWrapper = styled.div`
 
     input[type=checkbox] + label:active:before {
       transform: scale(0);
+    }
+    rect {
+      fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+    }
+    path {
+      stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor: "#00B39F"};
     }
     svg {
       color: "red";
