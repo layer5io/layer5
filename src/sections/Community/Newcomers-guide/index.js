@@ -25,12 +25,12 @@ const NewcomersGuide = () => {
         <div className="newcomers-welcome">
           <p>
             Whether you are a first time contributor or an open source
-            veteran,you are welcome to contribute to and actively engage in the
+            veteran, you are welcome to contribute to and actively engage in the
             development of projects at Layer5. Here are some instructions to get
             you started and if you haven’t joined yet, join the{" "}
-            <a href="http://slack.layer5.io/" target="_blank" rel="noreferrer">
+            <a href="https://slack.layer5.io/" target="_blank" rel="noreferrer">
               Slack workspace</a>{" "}
-            to collaborate with the community. Also, you can check the
+            to collaborate with the community and the <a href="https://discuss.layer5.io" target="">discussion forum</a> for questions. Also, you can check the
             quick-links below for jumping straight into things.</p>
           <Row className="newcomers-journey">
             <Col
@@ -42,7 +42,7 @@ const NewcomersGuide = () => {
             >
               <h2>Contributor's Journey</h2>
               <div className="heading-start">
-                <h5>Start Here</h5>
+                <h4>Start Here</h4>
                 <img className="heading-start__arrow" src={longArrow} />
               </div>
             </Col>
@@ -97,19 +97,19 @@ const NewcomersGuide = () => {
                   </a>{" "}
                   issues bearing the “
                   <a
-                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22good+first+issue%22+"
+                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22good+first+issue%22"
                     target="_blank"
                     rel="noreferrer"
                   >
                     good first issue
                   </a>
                   ” label, “
-                  <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22first-timers-only%22+">
+                  <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22first-timers-only%22+">
                     first timers only
                   </a>
                   ” or the “
                   <a
-                    href="https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+label%3A%22help+wanted%22+"
+                    href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -167,24 +167,23 @@ const NewcomersGuide = () => {
                 </li>
                 <li>Contributions of all sizes are welcome.</li>
                 <li>
-                  If you need some additional help, please join Layer5 Slack
-                  workspace at{" "}
+                  If you need some additional help, please join Layer5{" "}
                   <a
-                    href="http://slack.layer5.io/"
+                    href="https://discuss.layer5.io/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    http://slack.layer5.io
+                    discussion forum
                   </a>{" "}
-                  and find your way to the{" "}
+                  or find your way to the{" "}
                   <a
-                    href="https://layer5io.slack.com/archives/C019426UBNY"
+                    href="https://slack.layer5.io"
                     target="_blank"
                     rel="noreferrer"
                   >
                     #newcomers
                   </a>{" "}
-                  channel. Feel free to ask questions.
+                  channel in our Slack workspace. Introduce yourself and ask questions.
                 </li>
               </ol>
             </Col>
