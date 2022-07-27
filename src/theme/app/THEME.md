@@ -44,7 +44,19 @@ Examples -
 
 1. Procedure of changing image for gatsby-image is same as we change for local images, however we recommend you to fetch two images, as one for dark theme and one for light theme change it according to theme state as we did with local theme.
 
-    Example- 
+    Example(For Thumbnail)- 
+      
+        Fetching images through Graphql:
+          Add this in graphql query in frontmatter
+           darkthumbnail {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+            extension
+            publicURL
+          }
+
+          Change image according to theme
           <Image
              {...(theme ==="dark"? frontmatter.darkthumbnail : frontmatter.thumbnail)}
              imgStyle={{ objectFit: "contain" }}
