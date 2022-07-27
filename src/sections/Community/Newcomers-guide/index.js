@@ -78,7 +78,7 @@ const NewcomersGuide = () => {
               <p>Help us get to know you, so that we can highlight projects and initiatives that align with your interests. Fill-in a community member form. Gain access to community resources.</p>
             </Col>
             <Col sm={12} lg={6}>
-              <Button primary className="newcomers-form" title="Member Form" url="/newcomer" external={false} />
+              <Button primary className="newcomers-form" title="Submit a Member Form" url="/newcomer" external={false} />
             </Col>
             <Col sm={12} lg={6}>
               <img src={CommunityImage1} className="finding-an-issue" alt="Community Image" />
@@ -120,14 +120,9 @@ const NewcomersGuide = () => {
                 <li>
                   Alternatively, find an area of interest by reviewing/browsing
                   the{" "}
-                  <a
-                    href="https://drive.google.com/a/layer5.io/open?id=1brtiJhdzal_O6NBZU_JQXiBff2InNtmgL_G1JgAiZtk"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <Link to="/community/handbook/repository-overview/">
                     Layer5 Repository Overview
-                  </a>{" "}
-                  document.
+                  </Link>.
                 </li>
                 <li>
                   After identifying the issue you wish to work on, check whether
@@ -196,12 +191,18 @@ const NewcomersGuide = () => {
               <StaticImage src={CommunityImage3} alt="Community Image" />
             </Col>
             <Col sm={12} lg={6}>
-              <h3>While Your Issue is under Review</h3>
+              <h3>While Your Issue is Under Review</h3>
               <p>
                 Be patient. There are a large number of contributors and only a
                 small number of maintainers/reviewers. All contributors are
                 equally important to us, and we'll be sure to get to you as soon
-                as possible. In the meanwhile, you are welcome to join our{" "}
+                as possible. In the meanwhile, you are welcome to engage in the Layer5{" "}
+                <a
+                  href="https://discuss.layer5.io/"
+                  target="_blank"
+                  rel="noreferrer"
+                > discussion forum
+                </a>, join our{" "}
                 <a
                   href="http://slack.layer5.io/"
                   target="_blank"
@@ -209,7 +210,7 @@ const NewcomersGuide = () => {
                 >
                   Slack workspace
                 </a>{" "}
-                and take a look at all our projects.
+                and take a look at all our <Link to="/projects">projects</Link>.
               </p>
             </Col>
           </Row>
