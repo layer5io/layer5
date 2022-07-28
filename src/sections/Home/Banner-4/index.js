@@ -12,7 +12,7 @@ import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Banner1SectionWrapper from "./banner4.style";
 
 import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
-import Posterimg from "./poster.png";
+import Posterimg from "./1x1.png";
 
 const Banner1 = () => {
   return (
@@ -44,7 +44,7 @@ const Banner1 = () => {
         </Col>
         <Col sm={4} lg={6} className="section-title-wrapper">
           <Link to="/cloud-native-management/meshmap">
-            <video autoPlay muted loop preload="auto" className="meshmapVideo" poster={Posterimg}>
+            <video autoPlay muted loop preload="metadata" className="meshmapVideo">
               <source src={meshmapVideo} type="video/mp4"></source>
             </video>
           </Link>
