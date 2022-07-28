@@ -306,7 +306,7 @@ const Catalog = () => {
               </div>
               <div>
                 <img src={Ebpf} />
-                <p className="ebpf-text">ePBF Programs</p>
+                <p className="ebpf-text">eBPF Programs</p>
               </div>
             </section>
           </Col>
