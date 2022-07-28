@@ -133,8 +133,8 @@ export const BlogWrapper = styled.div`
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1.5rem;
     width: 90%;
-    margin-bottom: 1rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
   .image-center {
