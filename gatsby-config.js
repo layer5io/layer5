@@ -11,7 +11,8 @@ module.exports = {
     twitterUsername: "@layer5",
   },
   flags: {
-    FAST_DEV: true
+    FAST_DEV: true,
+    PARALLEL_SOURCING: true
   },
   plugins: [
     {
