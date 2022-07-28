@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import axios from "axios";
@@ -95,56 +95,56 @@ const EventSingle = ({ data }) => {
 
               { frontmatter.register && stepNumber === 0 &&
                 <div className="form-body">
-                <h3 className="form-title">Register Today!</h3>
-                <Formik
-                      initialValues={{
-                        firstname: firstname,
-                        lastname: lastname,
-                        email: email,
-                        occupation: occupation,
-                        org: org,
-                        form: "event",
-                      }}
-                      onSubmit={values => {
-                          setMemberFormOne(values);
-                          setStepNumber(1);
-                          nextStep();
-                          setFirstName(values.firstname);
-                          setEmail(values.email);
-                          setLastName(values.lastname);
-                          setOccupation(values.occupation);
-                          setOrg(values.org);
-                      }}
-                    >
-                      <Form className="form" method="post">
-                        <Row>
-                          <Col xs={6}>
-                        <label htmlFor="firstname" className="form-name">First Name <span className="required-sign">*</span></label>
-                        <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
-                          </Col>
-                          <Col xs={6}>
-                        <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
-                        <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
-                          </Col>
-                        </Row>
-                        <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
-                        <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
-                        <label htmlFor="occupation" className="form-name">Occupation / Title <span className="required-sign">*</span></label>
-                        <Field type="text" className="text-field" id="occupation" name="occupation" required />
-                        <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
-                        <Field type="text" className="text-field" id="org" name="org" />
+                  <h3 className="form-title">Register Today!</h3>
+                  <Formik
+                    initialValues={{
+                      firstname: firstname,
+                      lastname: lastname,
+                      email: email,
+                      occupation: occupation,
+                      org: org,
+                      form: "event",
+                    }}
+                    onSubmit={values => {
+                      setMemberFormOne(values);
+                      setStepNumber(1);
+                      nextStep();
+                      setFirstName(values.firstname);
+                      setEmail(values.email);
+                      setLastName(values.lastname);
+                      setOccupation(values.occupation);
+                      setOrg(values.org);
+                    }}
+                  >
+                    <Form className="form" method="post">
+                      <Row>
+                        <Col xs={6}>
+                          <label htmlFor="firstname" className="form-name">First Name <span className="required-sign">*</span></label>
+                          <Field type="text" className="text-field" id="firstname" name="firstname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
+                        </Col>
+                        <Col xs={6}>
+                          <label htmlFor="lastname" className="form-name">Last Name <span className="required-sign">*</span></label>
+                          <Field type="text" className="text-field" id="lastname" name="lastname" maxLength="32" pattern="[A-Za-z]{1,32}" required />
+                        </Col>
+                      </Row>
+                      <label htmlFor="email" className="form-name">Email Address <span className="required-sign">*</span></label>
+                      <Field type="text" className="text-field" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
+                      <label htmlFor="occupation" className="form-name">Occupation / Title <span className="required-sign">*</span></label>
+                      <Field type="text" className="text-field" id="occupation" name="occupation" required />
+                      <label htmlFor="org" className="form-name">Organization / Company / School <span className="required-sign">*</span></label>
+                      <Field type="text" className="text-field" id="org" name="org" />
 
-                        <Button secondary type="submit" className="btn" title="Submit" />
-                      </Form>
-                    </Formik>
-                    </div>
-                    }
-                  {
-                    stepNumber === 1 &&
+                      <Button secondary type="submit" className="btn" title="Submit" />
+                    </Form>
+                  </Formik>
+                </div>
+              }
+              {
+                stepNumber === 1 &&
                     <ThankYou title={frontmatter.title} />
-                  }
+              }
 
-                  <MDXRenderer>{body}</MDXRenderer>
+              <MDXRenderer>{body}</MDXRenderer>
               <ul className="speakers">
                 {
                   frontmatter.speakers && frontmatter.speakers ? "Speakers:" : ""
@@ -158,7 +158,7 @@ const EventSingle = ({ data }) => {
               <div className="event-title">
                 <Button primary url={frontmatter.eurl} external={true}>
                   <h3>
-                    Join us at {frontmatter.title} 
+                    Join us at {frontmatter.title}
                   </h3>
                 </Button>
               </div>
