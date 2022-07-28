@@ -28,7 +28,7 @@ const NewComers = () => {
         <GlobalStyle />
         <SEO title="Newcomers" description="Contributions from Newcomers are actively encouraged in Layer5. Find a Meshmate and start contributing!" />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <NewcomersGuide />
+        <NewcomersGuide theme={theme}/>
         <Footer />
       </Layout>
     </ThemeProvider>

@@ -24,7 +24,7 @@ export const query = graphql`query WorkshopBySlug($slug: String!) {
       eurl
       thumbnail {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+          gatsbyImageData(layout: CONSTRAINED)
         }
         extension
         publicURL

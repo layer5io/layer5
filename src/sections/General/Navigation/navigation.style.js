@@ -363,7 +363,7 @@ const NavigationWrap = styled.header`
       position: relative;
       padding: 10px 0 10px 15px;
       display: block;
-      background: white;
+      background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
       border-radius: 10px;
       box-shadow: 0px 10px 10px 10px rgba(0, 211, 169, 0.10);
       max-height: 400px;

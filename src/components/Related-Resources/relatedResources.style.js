@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 const RelatedResourcesWrapper = styled.div`
-
+Button:hover{
+    box-shadow: none;
+}
     .widgets-title{
         margin: 1rem 0 2rem 0.5rem;
         h3{
