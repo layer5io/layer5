@@ -20,7 +20,7 @@ import partnerIstio from "../../assets/images/partners/istio-light.svg";
 import lightPartnerIstio from "../../assets/images/partners/istio-dark.svg";
 
 
-import partner12 from "../../assets/images/partners/vmware.png";
+import partner12 from "../../assets/images/partners/vmware.svg";
 import { Link } from "gatsby";
 
 export const partners = [
