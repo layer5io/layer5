@@ -34,6 +34,8 @@ const IndexPage = () => {
   if (!mounted) {
     return <div style={{ visibility: "hidden" }}>Preventing mismatched Screen</div>;
   }
+
+
   const schema= {
     "@context": "https://schema.org",
     "@type": "Corporation",

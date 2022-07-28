@@ -133,8 +133,8 @@ export const BlogWrapper = styled.div`
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1.5rem;
     width: 90%;
-    margin-bottom: 1rem;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
   .image-center {
@@ -206,6 +206,52 @@ export const BlogWrapper = styled.div`
     font-size: 0.8rem;
     border-bottom: 1px dashed ${(props) => props.theme.primaryLightColor};
   }
+
+
+  /* ==============
+styles for figure with caption
+
+Example: 
+// <figure class="imgWithCaption fig-right">
+//   <img src="" />
+//   <figcaption>
+//     <p>This is text for the image</p>
+//   </figcaption>
+// </figure>
+=======================*/
+
+  figure.imgWithCaption {
+    margin-bottom: 1rem;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    img{
+      width: 100%;
+    }
+  }
+  .fig-right{
+    float: right;
+    width: 40%;
+    margin-left: 1rem;
+  }
+  .fig-left{
+    float: left;
+    width: 40%;
+    margin-right: 1rem;
+  }
+  @media screen and (max-width: 699px) {
+    .fig-right, .fig-left{
+      width: 100%;
+      display: block;
+      margin: 1rem auto;
+    }
+  }
+  
+  figcaption p {
+    text-align: center;
+    font-size: 0.8rem;
+    margin: -0.1rem 0 0.12rem;
+    color: ${props => props.theme.menuColor};
+  }
+
 
   /* ==============
 styles for meshmate-of-the-year-2020 

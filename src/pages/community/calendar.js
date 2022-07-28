@@ -73,7 +73,7 @@ const CalendarPage = () => {
       <Layout>
         <GlobalStyle />
         <SEO
-          title="Service Mesh Events Calendar"
+          title="Layer5 Events Calendar"
           description="Join any or all of the Layer5 community meetings."
         />
         <Navigation theme={theme} themeSetter={themeSetter} />
