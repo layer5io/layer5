@@ -23,6 +23,14 @@ import CloudNativeLeaders from "../sections/Home/Cloud-Native";
 import SoSpecial from "../sections/Home/So-Special-Section";
 
 const IndexPage = () => {
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) {
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
+  }
+
   const schema= {
     "@context": "https://schema.org",
     "@type": "Corporation",
