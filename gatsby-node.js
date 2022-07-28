@@ -281,13 +281,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: EventsTemplate
   });
 
-  blogs.forEach(blog => {
+  blogs.forEach((blog, index) => {
     createPage({
       path: blog.fields.slug,
       component: blogPostTemplate,
       context: {
         slug: blog.fields.slug,
       },
+      defer: index + 1 > 20,
     });
   });
 
@@ -319,23 +320,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  resources.forEach(resource => {
+  resources.forEach((resource, index) => {
     createPage({
       path: resource.fields.slug,
       component: resourcePostTemplate,
       context: {
         slug: resource.fields.slug,
       },
+      defer: index + 1 > 20,
     });
   });
 
-  news.forEach(singleNews => {
+  news.forEach((singleNews, index) => {
     createPage({
       path: singleNews.fields.slug,
       component: NewsPostTemplate,
       context: {
         slug: singleNews.fields.slug,
       },
+      defer: index + 1 > 10,
     });
   });
 
@@ -349,13 +352,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  events.forEach(event => {
+  events.forEach((event, index) => {
     createPage({
       path: event.fields.slug,
       component: EventTemplate,
       context: {
         slug: event.fields.slug,
       },
+      defer: index + 1 > 10,
     });
   });
 
@@ -379,23 +383,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  members.forEach(member => {
+  members.forEach((member, index) => {
     createPage({
       path: member.fields.slug,
       component: MemberTemplate,
       context: {
         slug: member.fields.slug,
       },
+      defer: index + 1 > 2,
     });
   });
 
-  singleWorkshop.forEach(workshop => {
+  singleWorkshop.forEach((workshop, index) => {
     createPage({
       path: workshop.fields.slug,
       component: WorkshopTemplate,
       context: {
         slug: workshop.fields.slug,
       },
+      defer: index + 1 > 5,
     });
   });
 

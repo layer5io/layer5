@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import PageHeader from "../../../reusecore/PageHeader";
 import { Link } from "gatsby";
 import Slider from "react-slick";
-import "swiper/swiper-bundle.css";
 import { BooksPageWrapper } from "./BooksGrid.style";
 
 const BooksPage = ({ hide_path }) => {

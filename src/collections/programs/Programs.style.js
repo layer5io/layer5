@@ -53,7 +53,7 @@ export const ProgramsWrapper = styled.div`
         vertical-align: bottom;
     }
     .gsod-table-container{
-        overflow-x: scroll;
+        overflow-x: auto;
     }
     .tutorials-table {
         border-spacing: 0;
