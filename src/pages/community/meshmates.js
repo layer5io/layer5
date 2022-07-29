@@ -32,7 +32,7 @@ const MeshmatePage = () => {
                 MeshMates is a collection of service mesh mentors."
           image={seoImage} />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <Meshmates />
+        <Meshmates theme={theme}/>
         <Footer />
       </Layout>
     </ThemeProvider>

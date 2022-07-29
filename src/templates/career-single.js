@@ -47,7 +47,7 @@ const CareerSinglePage = ({ data }) => {
         <GlobalStyle />
         <SEO title={data.mdx.frontmatter.title} />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <CareerSingle data={data} />
+        <CareerSingle theme={theme} data={data} />
         <Footer />
       </Layout>
     </ThemeProvider>

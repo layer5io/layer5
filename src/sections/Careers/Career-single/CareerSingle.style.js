@@ -25,14 +25,14 @@ const CareerPageWrapper = styled.div`
 
             svg {
                 vertical-align: top;
-                color: ${props => props.theme.primaryLightColorTwo};
+                color: ${props => props.theme.DarkTheme ? props => "white" : props.theme.primaryLightColorTwo};
                 width: 2rem;
             }
         }
 
         p {
             margin-left: 2.25rem;
-            color: ${props => props.theme.DarkTheme? "rgba(255, 255, 255, 0.5)": "rgba(0, 0, 0, 0.5)"};
+            color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.5)" : "rgba(0, 0, 0, 0.5)"};
 
         }
     }

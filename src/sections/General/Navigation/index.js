@@ -6,6 +6,7 @@ import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import Button from "../../../reusecore/Button";
 import { Container } from "../../../reusecore/Layout";
 import smp_dark_text from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
+import smp_light_text from "../../../assets/images/service-mesh-performance/stacked/smp-light-text.svg";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
@@ -147,7 +148,7 @@ const Navigation = ({ theme, themeSetter }) => {
       {
         frontmatter: {
           thumbnail: {
-            img: smp_dark_text
+            img: theme ==="dark"?smp_light_text:smp_dark_text
           },
           title: "Service Mesh Performance"
         },
