@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-pages-unsubscribed-js",
-    "path": "/unsubscribed",
-    "result": {"pageContext":{}},
-    "staticQueryHashes": ["112401468","1247637131","1485533831","1556364868","1872757318","2104129793","2177868555","2376360048","2535621439","2799848284","3127805956","3180254910","3205812809","3331006692","3403127739","3469917121","3532464890","3657813679","3666442589","3831724438","4047814605","426370538","673082005","7929417","803866341"]}
+{"componentChunkName":"component---src-pages-unsubscribed-js","path":"/unsubscribed","result":{"pageContext":{}},"staticQueryHashes":["2449327605","4047814605"]}
