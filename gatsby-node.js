@@ -116,9 +116,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/resource-single.js"
   );
 
-  const resourceViewTemplate = path.resolve(
-    "src/templates/resource.js"
-  );
   const res = await graphql(`
      {
        allPosts:  allMdx(
@@ -237,10 +234,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     node => node.fields.collection === "news"
   );
 
-  const projects = allNodes.filter(
-    node => node.fields.collection === "projects"
-  );
-
   const books = allNodes.filter(
     node => node.fields.collection === "service-mesh-books"
   );
@@ -267,38 +260,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   paginate({
     createPage,
-    items: blogs,
-    itemsPerPage: 10,
-    pathPrefix: "/blog",
-    component: blogViewTemplate
-  });
-
-  paginate({
-    createPage,
     items: events,
     itemsPerPage: 9,
     pathPrefix: "/community/events",
     component: EventsTemplate
   });
 
-  blogs.forEach((blog, index) => {
+  blogs.forEach(blog => {
     createPage({
       path: blog.fields.slug,
       component: blogPostTemplate,
       context: {
         slug: blog.fields.slug,
       },
-      defer: index + 1 > 20,
     });
   });
 
   const blogCategory = res.data.blogCategory.group;
   blogCategory.forEach(category => {
-    paginate({
-      createPage,
-      items: category.nodes,
-      itemsPerPage: 6,
-      pathPrefix: `/blog/category/${slugify(category.fieldValue)}`,
+    createPage({
+      path: `/blog/category/${slugify(category.fieldValue)}`,
       component: blogCategoryListTemplate,
       context: {
         category: category.fieldValue,
@@ -308,11 +289,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const BlogTags = res.data.blogTags.group;
   BlogTags.forEach(tag => {
-    paginate({
-      createPage,
-      items: tag.nodes,
-      itemsPerPage: 4,
-      pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
+    createPage({
+      path: `/blog/tag/${slugify(tag.fieldValue)}`,
       component: blogTagListTemplate,
       context: {
         tag: tag.fieldValue,
@@ -320,25 +298,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  resources.forEach((resource, index) => {
+  resources.forEach(resource => {
     createPage({
       path: resource.fields.slug,
       component: resourcePostTemplate,
       context: {
         slug: resource.fields.slug,
       },
-      defer: index + 1 > 20,
     });
   });
 
-  news.forEach((singleNews, index) => {
+  news.forEach(singleNews => {
     createPage({
       path: singleNews.fields.slug,
       component: NewsPostTemplate,
       context: {
         slug: singleNews.fields.slug,
       },
-      defer: index + 1 > 10,
     });
   });
 
@@ -352,14 +328,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  events.forEach((event, index) => {
+  events.forEach(event => {
     createPage({
       path: event.fields.slug,
       component: EventTemplate,
       context: {
         slug: event.fields.slug,
       },
-      defer: index + 1 > 10,
     });
   });
 
@@ -383,25 +358,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  members.forEach((member, index) => {
+  members.forEach(member => {
     createPage({
       path: member.fields.slug,
       component: MemberTemplate,
       context: {
         slug: member.fields.slug,
       },
-      defer: index + 1 > 2,
     });
   });
 
-  singleWorkshop.forEach((workshop, index) => {
+  singleWorkshop.forEach(workshop => {
     createPage({
       path: workshop.fields.slug,
       component: WorkshopTemplate,
       context: {
         slug: workshop.fields.slug,
       },
-      defer: index + 1 > 5,
     });
   });
 
