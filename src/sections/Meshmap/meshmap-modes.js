@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import designerImage from "../../assets/images/meshmap/MeshmapDesigner.png";
 import visualizerImage from "../../assets/images/meshmap/MeshmapVisualizer.png";
-import { Link } from "gatsby";
 
 const MeshmapModesWrapper = styled.div`
 

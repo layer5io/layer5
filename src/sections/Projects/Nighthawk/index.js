@@ -14,8 +14,6 @@ const explain1 = "./images/Rectangle 479.png";
 const explain2 = "./images/optimizing-your-average-response-time.png";
 const explain3 = "./images/Comparison-of-different-modes-of-delivery-of-service-mesh-network-functions.png";
 const c_icon = "./images/c_icon.svg";
-const icon = "../../../assets/images/nighthawk/name-only/SVG/nighthawk-text.svg";
-//import cli from "./images/cli_green.svg";
 
 import { Gnhwrapper, CardsContainer } from "./gnh.style";
 

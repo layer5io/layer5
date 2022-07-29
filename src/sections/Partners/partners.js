@@ -11,7 +11,6 @@ import partner9 from "../../assets/images/partners/redhat.svg";
 import partner10 from "../../assets/images/partners/smi1.png";
 import partner11 from "../../assets/images/partners/intel.svg";
 import partner12 from "../../assets/images/partners/vmware.svg";
-import { Link } from "gatsby";
 
 export const partners = [
   {

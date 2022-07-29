@@ -68,9 +68,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogTagListTemplate = path.resolve(
     "src/templates/blog-tag-list.js"
   );
-  const blogViewTemplate = path.resolve(
-    "src/templates/blog.js"
-  );
 
   const EventsTemplate = path.resolve(
     "src/templates/events.js"

@@ -7,7 +7,7 @@ import PageHeader from "../../../reusecore/PageHeader";
 
 import { LearnLabsWrapper } from "./section.style";
 
-const LearnLabs = (data) => {
+const LearnLabs = () => {
   return (
     <LearnLabsWrapper>
       <PageHeader title="Learn Layer5 Section"/>

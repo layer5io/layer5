@@ -4,7 +4,6 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 
 import { ProjectWrapper } from "./projectGrid.style";
-import DockerExtensionCTA from "../../Docker-Meshery/docker-extension-CTA";
 import MeshMapCTA from "../../meshmap-cta";
 
 import extension from "../../../assets/images/docker-extension/docker-extension-meshery-logo.svg";

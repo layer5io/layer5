@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import { Container } from "../../reusecore/Layout";
-import Test from "./meshmap-icon-white.svg";
 import Locator from "./locator.svg";
 import MesherySurface from "./meshery-surface.svg";
 import Button from "../../reusecore/Button";
