@@ -75,8 +75,7 @@ const Blog = (props) => {
         <GlobalStyle />
         <SEO
           title="Blog"
-          description="Articles how to service mesh from the world's largest service mesh community.
-              Service mesh how-tos and cloud native ecosystem news."
+          description="Share your knowledge, experiences or latest news through the Layer5 blog."
         />
         <Navigation />
         <BlogView

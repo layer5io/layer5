@@ -1,5 +1,8 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
+import { getImage } from "gatsby-plugin-image";
+import { BgImage } from "gbimage-bridge";
 
 import Layout from "../../../components/layout";
 import SMPWrapper from "./smp.style";
@@ -17,9 +20,31 @@ const wasm_capacity = "../../../assets/images/smp-page/native-and-wasm-at-capaci
 const client_capacity = "../../../assets/images/smp-page/client-capacity.png";
 
 const SMPPage = () => {
+  
+  const { backgroundImage123 } = useStaticQuery(
+    graphql`
+      query {
+        backgroundImage123: file(
+          relativePath: { eq: "smp-page/smp-hero.png" }
+        ) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 2000
+              quality: 50
+              webpOptions: { quality: 80 }
+            )
+          }
+        }
+      }
+    `
+  );
+
+  const pluginImage = getImage(backgroundImage123);
+
   return (
     <Layout>
       <SMPWrapper>
+      <BgImage image={pluginImage} className="section">
         <div className="smp-hero">
           <Container>
             <div className="hero-text">
@@ -35,6 +60,7 @@ const SMPPage = () => {
             </div>
           </Container>
         </div>
+        </BgImage>
         <Container>
           <div className="smp-details">
             <h2> SMP is a collaborative effort of Layer5, UT Austin, Google and The Linux Foundation.</h2>

@@ -185,7 +185,7 @@ const MembersPage = () => {
         <GlobalStyle />
         <SEO
           title="Members"
-          description="Members - The Layer5 contributors list"
+          description="The Layer5 contributors list"
         />
         <Navigation />
         <Dropdown options={options} handleChange={handleChange} />

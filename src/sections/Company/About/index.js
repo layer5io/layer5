@@ -1,4 +1,5 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
@@ -7,10 +8,11 @@ import collabMap from "./images/layer5-collaboration-map.svg";
 import location from "./images/location.svg";
 import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
-import Community_meetup from "./images/Community_meetup.png";
-import Layer5Projects from "./images/layer5-projects.png";
 import CNCFstackedlogo from "./images/cncf-stacked-color.svg";
 import { Link } from "gatsby";
+
+const Community_meetup = "./images/Community_meetup.png";
+const Layer5Projects = "./images/layer5-projects.png";
 
 const About = () => {
   return (
@@ -39,7 +41,7 @@ const About = () => {
             </Row>
             <Container fullWidthSM>
               <div className="head-images">
-                <Link to={Layer5Projects} ><img src={Layer5Projects} alt="About Layer5 Projects" /></Link>
+                <Link to={Layer5Projects} ><StaticImage src={Layer5Projects} alt="About Layer5 Projects" /></Link>
               </div>
             </Container>
             <Row Vcenter={true} className="row-img-cont-1">
@@ -56,7 +58,7 @@ const About = () => {
               </Col>
               <Col xs={12} sm={6}>
                 <div className="head-images">
-                  <img src={Community_meetup} alt="Community_meetup" />
+                  <StaticImage src={Community_meetup} alt="Community_meetup" />
                   <figcaption className="caption">
                     Layer5 community members at Open Source Africa Community
                     conference, March 2022.

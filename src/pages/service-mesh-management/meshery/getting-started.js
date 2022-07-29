@@ -18,7 +18,7 @@ const MesheryMainPage = () => (
     <Layout>
       <GlobalStyle />
       <SEO title="Meshery Getting Started"
-        description="How to get started with any service mesh. Adopting and operating a service mesh."
+        description="How to get started with cloud native management. Adopting and operating your cloud native infrastructure."
         image="/images/meshery-logo-dark-text.png"/>
       <Navigation />
       <MesheryTerminal/>

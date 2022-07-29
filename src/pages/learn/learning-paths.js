@@ -14,7 +14,7 @@ const LearningPathsPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Learn Service Mesh"
+        <SEO title="Learning Paths"
           description="Learn to build an application using service meshes like Istio, Linkerd"
           image="/images/workshops.png" />
         <Navigation />

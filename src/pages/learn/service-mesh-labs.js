@@ -25,7 +25,7 @@ const ServiceMeshLabsPage = (props) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Interactive Service Mesh Labs" description="Learn to service mesh with the industry leaders.Try interactive service mesh lab scenarios." />
+        <SEO title="Interactive Labs" description="Learn to service mesh with the industry leaders.Try interactive service mesh lab scenarios." />
         <Navigation />
         <ServiceMeshLabs selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
         <Footer />

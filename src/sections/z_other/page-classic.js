@@ -25,7 +25,7 @@ const ClassicPage = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Layout>
-      <SEO title="Layer5 | The Service Mesh Company" />
+      <SEO title="Layer5" />
       <Navigation />
       <BannerClassic />
       <AboutClassic />

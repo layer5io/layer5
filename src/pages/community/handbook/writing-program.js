@@ -15,7 +15,7 @@ const Faq = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Writing Program" description="The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content." />
+      <SEO title="Writing Program" description="We work with authors and technologists from around the world to produce high quality articles on cloud native management, Kubernetes, service meshes and related technologies." />
       <Navigation />
       <Writers />
       <Footer/>

@@ -11,18 +11,44 @@ import CommunitySectionWrapper from "./community.style";
 import Lee_workshop from "../../assets/images/community/Lee_Workshop.png";
 import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
+import { graphql, useStaticQuery } from "gatsby";
+import { getImage } from "gatsby-plugin-image";
+import { BgImage } from "gbimage-bridge";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
 const MeshmateIcon = "../../assets/images/meshmate/meshmate-stack.svg";
 
+
 const CommunityPage = () => {
+
+  const { backgroundImage123 } = useStaticQuery(
+    graphql`
+      query {
+        backgroundImage123: file(
+          relativePath: { eq: "bookmarks.jpg" }
+        ) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 2000
+              quality: 50
+              webpOptions: { quality: 70 }
+            )
+          }
+        }
+      }
+    `
+  );
+
+  const pluginImage = getImage(backgroundImage123);
 
   return (
     <CommunitySectionWrapper>
+      <BgImage image={pluginImage} className="section">
       <div className="community-header">
         <h1>The Layer5 Community</h1>
         <h3>New members are always welcome</h3>
       </div>
+      </BgImage>
       <div className="community-section-wrapper">
         <Container>
           <Row className="service-mesh-projects">

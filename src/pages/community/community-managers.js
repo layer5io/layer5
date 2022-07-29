@@ -16,7 +16,7 @@ const ManagersPage=() => {
       <Layout>
         <GlobalStyle />
         <SEO title="Managers"
-          description="Managers - A Community Manager is a person who has an innate drive to contribute to the community's prosperity."
+          description="A Community Manager is a person who has an innate drive to contribute to the community's prosperity."
           image={seoImage}/>
         <Navigation />
         <CommunityManagers />
