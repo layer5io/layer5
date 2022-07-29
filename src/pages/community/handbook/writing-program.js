@@ -15,7 +15,7 @@ const Faq = () => (
   <ThemeProvider theme={theme}>
     <Layout>
       <GlobalStyle />
-      <SEO title="Writing Program" description="We work with authors and technologists from around the world to produce high quality articles on cloud native management, Kubernetes, service meshes and related technologies." />
+      <SEO title="Writing Program" description="Work with authors and technologists from around the world to share your knowledge of cloud native infrastructure, modern application management, Kubernetes, service meshes and related technologies." />
       <Navigation />
       <Writers />
       <Footer/>
