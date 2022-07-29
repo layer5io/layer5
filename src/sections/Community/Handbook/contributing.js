@@ -1,11 +1,10 @@
 import React from "react";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import Code from "../../../components/CodeBlock";
 import Signoff from "../../../../.github/assets/images/git-signoff-vscode.png";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
-import { Link } from "gatsby";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 
 const contents = [

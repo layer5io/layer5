@@ -10,7 +10,6 @@ import { GiClockwork } from "@react-icons/all-files/gi/GiClockwork";
 
 import FeaturesTable from "./Features-Col";
 
-import mesheryFullStack from "./images/meshery-logo-light-text-tag.png";
 import mesheryDemo from "../../assets/video/meshery/meshery-full-perf-720p.mp4";
 import DockerExtensionCTA from "../Docker-Meshery/docker-extension-CTA";
 

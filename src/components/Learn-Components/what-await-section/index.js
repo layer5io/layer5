@@ -1,6 +1,6 @@
 import React from "react";
 import WhatAwaitsWrapper from "./what-await.styles";
-import { Row, Col, Container } from "../../../reusecore/Layout";
+import { Row, Col } from "../../../reusecore/Layout";
 import Terminal from "../../../components/Terminal";
 
 const WhatAwaitsSection = () => {

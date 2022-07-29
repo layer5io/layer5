@@ -1,12 +1,10 @@
 import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import meshery_logo from "../../../assets/images/meshery/full-logo/meshery-logo-tag-light-white-text-side.png";
 import Slider from "react-slick";
 import slide1 from "../images/service mesh performance example.gif";
 import slide2 from "../images/meshery_benchmark_screen.png";
 import slide3 from "../images/meshery-configuration-management.png";
-import slide4 from "../images/SMI-Conformance-in-Meshery.png";
 import FeaturesSectionWrapper from "./features-section.style";
 
 const slides_list = [slide1, slide2, slide3];

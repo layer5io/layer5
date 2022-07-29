@@ -95,7 +95,7 @@ function SMI_Compatibility() {
     <Tabs style={{ overflow: "auto", whiteSpace: "nowrap" }} className="landscape-table">
       <TabList>
         {
-          Object.keys(smiData).map((ver, ind) => {
+          Object.keys(smiData).map((ver) => {
             return <Tab  key={ver}>{ver}</Tab>;
           }
           )

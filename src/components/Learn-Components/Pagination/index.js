@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../../reusecore/Button";
-import { PaginationWrapper, QuizWrapper } from "./paginate.style";
+import { PaginationWrapper } from "./paginate.style";
 import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
 import { getCurrentPage } from "../../../utils/getCurrentPage";
 
-const Pagination = ({ TOCData, chapterData, location, showQuizModal }) => {
+const Pagination = ({ TOCData, chapterData, location }) => {
 
   const [path, setPath] = useState("");
 
