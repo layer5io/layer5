@@ -41,7 +41,7 @@ const About = () => {
             </Row>
             <Container fullWidthSM>
               <div className="head-images">
-                <Link to={Layer5Projects} ><StaticImage src={Layer5Projects} alt="About Layer5 Projects" /></Link>
+                <StaticImage src={Layer5Projects} alt="About Layer5 Projects" />
               </div>
             </Container>
             <Row Vcenter={true} className="row-img-cont-1">

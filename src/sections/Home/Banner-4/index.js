@@ -12,7 +12,6 @@ import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 import Banner1SectionWrapper from "./banner4.style";
 
 import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
-// import BannerImage from "./1x1.png";
 
 const Banner1 = () => {
   return (
@@ -34,9 +33,6 @@ const Banner1 = () => {
               <VintageBox right={true} vintageOne={true}>
                 <Button primary className="banner-btn one" title="Try MeshMap" url="/cloud-native-management/meshmap">
                   <FaMapMarkedAlt size={21} className="icon-left" />
-                </Button>
-                <Button primary className="banner-btn two" title="See Meshery" url="/service-mesh-management/meshery">
-                  <FiDownloadCloud size={21} className="icon-left" />
                 </Button>
               </VintageBox>
             </span>
