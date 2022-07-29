@@ -50,7 +50,7 @@ const lighttheme = {
 
   // caribbean green (light green)
   menuHoverColor: "#00b39f",
-  linkColor: "#00d3a9",
+  linkColor: "#00b39f",
 
   // saffron (dark yellow)
   highlightColor: "#EBC017",
@@ -129,7 +129,7 @@ export const darktheme = {
 
   // caribbean green (light green)
   menuHoverColor: "#ffffff",
-  linkColor: "#00d3a9",
+  linkColor: "#00b39f",
 
   // saffron (dark yellow)
   highlightColor: "#EBC017",

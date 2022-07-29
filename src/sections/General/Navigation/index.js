@@ -10,9 +10,8 @@ import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light
 import Data from "./utility/menu-items.js";
 import ScrollspyMenu from "./utility/ScrollspyMenu.js";
 import layer5_logo from "../../../assets/images/app/layer5.svg";
+import layer5dark_logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-no-trim.svg";
 import { darktheme } from "../../../theme/app/themeStyles";
-import layer5dark_logo from "../../../assets/images/app/layer5dark.svg";
-
 import lighttheme from "../../../theme/app/themeStyles";
 import NavigationWrap from "./navigation.style";
 import { GlobalStyle } from "../../app.style";
