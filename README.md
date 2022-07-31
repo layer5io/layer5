@@ -1,5 +1,9 @@
 <p style="text-align:center;" align="center">
-  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg" width="45%" /></p>
+ <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012170-638f0731-3a83-4795-a6de-71a3614d4c7d.svg#gh-dark-mode-only">
+  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg#gh-light-mode-only" width="45%" />
+</picture>
+</p>
 
 <p align="center">
 <a href="https://github.com/layer5io/layer5" alt="GitHub contributors">
@@ -22,9 +26,13 @@
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
-<a href="https://meshery.io"><img src=".github/assets/images/meshery/meshery-logo.svg"
+<a href="https://meshery.io">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012415-ccdf486f-49a0-4021-8597-7b12c9d205e5.svg#gh-dark-mode-only">
+  <img src=".github/assets/images/meshery/meshery-logo.svg"
 style="margin:10px;" width="125px"
-alt="Meshery - Cloud Native Management Plane" align="left" /></a>
+alt="Meshery - Cloud Native Management Plane" align="left" />
+</picture></a>
 <a href="https://meshery.io">Meshery</a> is the open source, cloud native management plane that enables the adoption, operation, and management of Kubernetes, any service mesh, and their workloads.
 <br /><br /><br />
 </p>
@@ -33,9 +41,13 @@ alt="Meshery - Cloud Native Management Plane" align="left" /></a>
 
 <p style="clear:both;">
 <h2><a href="https://github.com/service-mesh-patterns">Service Mesh Pattern</a></h2>
-<a href="https://github.com/service-mesh-patterns"><img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png?raw=true"  
+<a href="https://github.com/service-mesh-patterns">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012357-5e5e2380-0159-44ca-ac8e-f164c71e529b.svg#gh-dark-mode-only">
+  <img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png?raw=true#gh-light-mode-only"  
 style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Pattern" align="left"/></a>
+alt="Service Mesh Pattern" align="left"/>
+</picture></a>
 <a href="https://github.com/service-mesh-patterns">Service Mesh Patterns</a> help you get the most out of Linkerd, Consul, App Mesh, Istio, Kuma, Open Service Mesh or <a href="https://layer5.io/service-mesh-landscape">any service mesh</a>, including those using Envoy and use of WebAssembly. Each pattern can be used as a template and is customizable.
 <br /><br /><br />
 </p>
@@ -44,9 +56,13 @@ alt="Service Mesh Pattern" align="left"/></a>
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/landscape">Service Mesh Landscape</a></h2>
-<a href="https://layer5.io/landscape"><img src=".github/assets/images/buttons/landscape.png"  
+<a href="https://layer5.io/landscape">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/images/buttons/landscape.png#gh-dark-mode-only">
+  <img src=".github/assets/images/buttons/landscape.png#gh-light-mode-only"  
 style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Landscape Ecosystem" align="left"/></a>
+alt="Service Mesh Landscape Ecosystem" align="left"/>
+</picture></a>
 The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
 <br /><br /><br />
 </p>
@@ -55,9 +71,13 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a></h2>
-<a href="https://layer5.io/projects/service-mesh-performance"><img src=".github/assets/images/smp-dark-text.svg"
+<a href="https://layer5.io/projects/service-mesh-performance">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012518-f8bba232-dc24-43e7-8eff-ea4cdbed6889.svg#gh-dark-mode-only">
+  <img src=".github/assets/images/smp-dark-text.svg#gh-light-mode-only"
 style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Performance Specification Index" align="left" /></a>
+alt="Service Mesh Performance Specification Index" align="left" />
+</picture></a>
 The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a> (SMP) is a vendor-neutral specification for capturing details of environment and infrastructure details, service mesh and its configuration, service / application details, and bundling of statistical analysis of results.
 <br /><br /><br />
 </p>
@@ -66,9 +86,13 @@ The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh P
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/image-hub">Image Hub</a></h2>
-<a href="https://layer5.io/projects/image-hub"><img src=".github/assets/images/image-hub/layer5-image-hub.png"
+<a href="https://layer5.io/projects/image-hub">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset=".github/assets/images/image-hub/layer5-image-hub.png#gh-dark-mode-only">
+  <img src=".github/assets/images/image-hub/layer5-image-hub.png#gh-light-mode-only"
 style="float:left;margin:10px;" width="125px"
-alt="Image Hub" align="left" /></a>
+alt="Image Hub" align="left" />
+</picture></a>
 <a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application which runs on <a href="https://docs.meshery.io/service-meshes/adapters/consul">Consul</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
 Image Hub supports Envoy-based data planes. It is compatible with and can be deployed on Istio and Consul service meshes.
 <br /><br /><br />
@@ -78,7 +102,11 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 
 <p style="clear:both;">
 <h2><a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a></h2>
-<a href="https://meshery.io/community"><img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg" style="margin:10px;" width="125px" align="left" /></a>
+<a href="https://meshery.io/community">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012641-3e475d9c-74d9-4796-bfb0-a6f20c994b12.svg#gh-dark-mode-only">
+  <img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg#gh-light-mode-only" style="margin:10px;" width="125px" align="left" />
+</picture></a>
 <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> is the multi-service mesh operator and implementation of MeshSync.
 <br /><br /><br /><br />
 </p>
@@ -87,9 +115,13 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 
 <p style="clear:both;">
 <h2><a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a></h2>
-<a href="https://github.com/layer5io/learn-layer5"><img src=".github/assets/images/layer5/5-light-bg.png"
+<a href="https://github.com/layer5io/learn-layer5">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012730-19bf6776-4ebd-460f-b6bb-75105f2a10bc.svg#gh-dark-mode-only">
+  <img src=".github/assets/images/layer5/5-light-bg.png#gh-light-mode-only"
 style="margin:10px;" width="125px"
-alt="Layer5" align="left" /></a>
+alt="Layer5" align="left" />
+</picture></a>
 <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> is a sample application for learning how service meshes work which also provides <a href="https://layer5.io/smi">SMI Conformance testing</a>.
 <br /><br /><br />
 </p>
@@ -98,9 +130,13 @@ alt="Layer5" align="left" /></a>
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
-<a href="https://layer5.io/smi"><img src=".github/assets/images/smi-conformance/checklist.svg"
+<a href="https://layer5.io/smi">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset=".github/assets/images/smi-conformance/checklist.svg#gh-dark-mode-only">
+  <img src=".github/assets/images/smi-conformance/checklist.svg#gh-light-mode-only"
 style="margin:10px;" width="125px"
-alt="Layer5" align="left" /></a>
+alt="Layer5" align="left" />
+</picture></a>
 <a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification. It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
 <br /><br /><br />
 </p>
@@ -109,9 +145,13 @@ alt="Layer5" align="left" /></a>
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Nighthawk</a></h2>
-<a href="https://getnighthawk.dev/"><img src=".github/assets/images/getnighthawk/layer5-getnighthawk.png"
+<a href="https://getnighthawk.dev/">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012911-94e2029a-d7fc-4198-a97d-2f1e85fcd7a7.svg#gh-dark-mode-only">
+  <img src=".github/assets/images/getnighthawk/layer5-getnighthawk.png#gh-light-mode-only"
 style="margin:10px;" width="125px"
-alt="Layer5" align="left" /></a>
+alt="Layer5" align="left" />
+</picture></a>
 <a href="https://getnighthawk.dev/">Nighthawk</a> is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads.
 <br /><br /><br />
 </p>
