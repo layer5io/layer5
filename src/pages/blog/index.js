@@ -4,14 +4,18 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
-import Navigation from "../sections/General/Navigation";
-import BlogGrid from "../sections/Blog/Blog-grid";
-import Footer from "../sections/General/Footer";
-import { GlobalStyle } from "../sections/app.style";
+import Navigation from "../../sections/General/Navigation";
+import BlogGrid from "../../sections/Blog/Blog-grid";
+import Footer from "../../sections/General/Footer";
+
+import { GlobalStyle } from "../../sections/app.style";
+import theme from "../../theme/app/themeStyles";
+
 import { graphql } from "gatsby";
-import BlogList from "../sections/Blog/Blog-list";
-import lighttheme from ".././theme/app/themeStyles";
-import { darktheme } from ".././theme/app/themeStyles";
+import BlogList from "../../sections/Blog/Blog-list";
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
+
 export const query = graphql`
   query allBlogs {
     allMdx(
