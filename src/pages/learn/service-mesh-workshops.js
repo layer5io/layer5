@@ -14,7 +14,7 @@ const WorkshopsGridPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Workshops" description="Workshops and tutorials for Istio, Envoy, Linkerd, Consul, App Mesh, Open Service Mesh" />
+        <SEO title="Service Mesh Workshops" description="Service mesh workshops and tutorials for Istio, Envoy, Linkerd, Consul, App Mesh, Open Service Mesh, Cilium, Kuma, NGINX" />
         <Navigation />
         <WorkshopsPage />
         <Footer />
