@@ -1,8 +1,6 @@
 import React from "react";
-import { Container, Row, Col } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import HandbookCard from "../../../components/HandbookCard/index";
-import { Link } from "gatsby";
 
 
 const handbookHome= () => {

@@ -12,7 +12,7 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PARALLEL_SOURCING: true
   },
   plugins: [
     {
@@ -43,7 +43,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-feed-mdx",
+      resolve: "gatsby-plugin-feed",
       options: {
         query: `
           {

@@ -12,22 +12,22 @@ const Partner = ({ theme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [ID, setID] = useState(-1);
 
-  const toggleActive = (id) => {
+  // const toggleActive = (id) => {
 
-    if (isOpen){
-      if (ID === id){
-        setIsOpen(false);
-        setID(-1);
-      } else {
-        setIsOpen(false);
-        setID(id);
-        setIsOpen(true);
-      }
-    } else {
-      setID(id);
-      setIsOpen(true);
-    }
-  };
+  //   if (isOpen){
+  //     if (ID === id){
+  //       setIsOpen(false);
+  //       setID(-1);
+  //     } else {
+  //       setIsOpen(false);
+  //       setID(id);
+  //       setIsOpen(true);
+  //     }
+  //   } else {
+  //     setID(id);
+  //     setIsOpen(true);
+  //   }
+  // };
 
   return (
 

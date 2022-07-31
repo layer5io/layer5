@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import hawkIcon from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";

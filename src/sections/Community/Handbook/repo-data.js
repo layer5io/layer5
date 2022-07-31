@@ -15,7 +15,6 @@ import nsmLogo from "../../../assets/images/service-mesh-icons/nsm.svg";
 import nginxLogo from "../../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
 import traefikLogo from "../../../assets/images/service-mesh-icons/traefik.svg";
 import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-interface/icon/color/servicemeshinterface-icon-color.svg";
-import osmLogo from "../../../assets/images/service-mesh-icons/open-service-mesh/icon/color/openservicemesh-icon-color.svg";
 import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import background from "../Home/Projects-home/images/background.svg";
 
 const PricingWrapper = styled.section`
 

@@ -50,7 +50,7 @@ const Navigation = ({ theme, themeSetter }) => {
   }
   Community: allMdx(
     sort: {fields: [frontmatter___date], order: DESC}
-    filter: {fields: {collection: {eq: "events"}}}
+    filter: {fields: {collection: {eq: "events"}}, frontmatter: {published: {eq: true}}}
     limit: 2
   ) {
     nodes {

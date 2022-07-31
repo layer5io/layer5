@@ -132,7 +132,6 @@ const Repository = () => {
                         repository,
                         site,
                         image,
-                        description,
                       } = subdata;
                       return (
                         <tbody key={project}>

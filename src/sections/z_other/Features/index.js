@@ -13,7 +13,7 @@ import policyEngineGreen from "./img/policy-engine_green.svg";
 import distributedPerformance from "./img/distributed-performance_green.svg";
 import visualToplogy from "./img/visual-topology.svg";
 import performanceManagement from "./img/performance-management.svg";
-import Link from "gatsby";
+import { Link } from "gatsby";
 
 import FeaturesSectionWrapper from "./features.style";
 

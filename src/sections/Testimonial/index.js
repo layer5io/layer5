@@ -12,12 +12,12 @@ import data from "../../assets/data/testimonial";
 import TestimonialWrapper from "./testimonial.style";
 
 const Testimonial = () => {
-  const ArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+  const ArrowLeft = ({ ...props }) => (
     <button {...props} className="slick-arrow slick-prev-icon">
       <IoIosArrowRoundBack />
     </button>
   );
-  const ArrowRight = ({ currentSlide, slideCount, ...props }) => (
+  const ArrowRight = ({ ...props }) => (
     <button {...props} className="slick-arrow slick-next-icon">
       <IoIosArrowRoundForward />
     </button>

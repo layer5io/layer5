@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Webform from "./webform.style";
 import SlackLinkNotif from "../../../components/SlackLinkNotif";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import img1 from "./Rectangle 471.png";
-import img2 from "./Vector.png";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import { Link } from "gatsby";

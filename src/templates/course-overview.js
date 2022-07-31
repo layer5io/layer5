@@ -86,7 +86,7 @@ export const query = graphql`
       }
   }
 `;
-const CourseOverviewTemplate = ({ data, pageContext }) => {
+const CourseOverviewTemplate = ({ data }) => {
   const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {

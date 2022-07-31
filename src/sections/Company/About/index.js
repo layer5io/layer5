@@ -2,16 +2,13 @@ import React from "react";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
-import VintageBox from "../../../reusecore/VintageBox";
 import AboutSectionWrapper from "./about.style";
 import collabMap from "./images/layer5-collaboration-map.svg";
-import layer5BusCard from "./images/layer5-business-card-photo_med.jpg";
 import location from "./images/location.svg";
 import WhoWeAre from "../WhoWeAre";
 import FiveIcon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
 import Community_meetup from "./images/Community_meetup.png";
 import Layer5Projects from "./images/layer5-projects.png";
-import CNCFServiceMesh from "./images/CNCF-Service-Mesh-WG-1.png";
 import CNCFstackedlogo from "./images/cncf-stacked-color.svg";
 import CNCFLightstackedlogo from "./images/cncf-light-stacked-color.svg";
 

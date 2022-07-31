@@ -61,7 +61,6 @@ const Navigation = (props) => {
   let productOptions = data.filter((data) => data.category === "Product");
   let techOptions = data.filter((data) => data.category === "Technology");
   let meshOptions = data.filter((data) => data.category === "Service Mesh");
-  let i=0;
   const types = counting.type.group;
   const products = counting.product.group;
   const technologies = counting.technology.group;

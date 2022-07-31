@@ -8,7 +8,6 @@ import Button from "../../../reusecore/Button";
 import MeshMapCTA from "../../meshmap-cta";
 
 import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
-import callout from "../../../assets/images/callout/callout.png";
 import smp from "../../../assets/images/smp-page/smp-white.svg";
 import c_icon from "../../../assets/images/smp-page/c-icon.svg";
 

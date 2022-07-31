@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
 
 import Navigation from "../sections/General/Navigation";
 import BlogGrid from "../sections/Blog/Blog-grid";
@@ -92,7 +92,7 @@ const Blog = (props) => {
           description="Articles how to service mesh from the world's largest service mesh community.
               Service mesh how-tos and cloud native ecosystem news."
         />
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <BlogView
           isListView={isListView}
           setListView={setListView}

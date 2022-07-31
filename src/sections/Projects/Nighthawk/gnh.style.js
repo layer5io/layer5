@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import cover from "./images/Rectangle 495.png";
 
 export const Gnhwrapper = styled.section`
     

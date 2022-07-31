@@ -6,7 +6,6 @@ import FAQ from "../General/Faq";
 import Reviews from "./review-slider";
 import Button from "../../reusecore/Button";
 import { options } from "./data";
-import { FiCheck } from "@react-icons/all-files/fi/FiCheck";
 import FeatureDetails from "./collapsible-details";
 
 const Pricing = () => {

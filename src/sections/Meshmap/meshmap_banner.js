@@ -1,5 +1,4 @@
 import React from "react";
-import Meshery_Logo from "../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import styled from "styled-components";
 import MeshmapIcon from "./meshmap-icon.svg";
 

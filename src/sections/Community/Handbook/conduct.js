@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import Point from "./images/bullet.svg";
 import TOC from "../../../components/handbook-navigation/index";
