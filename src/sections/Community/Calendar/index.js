@@ -8,6 +8,8 @@ import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import Table from "../../../components/MeetInfo-Table";
 import { meet_links_data } from "./meetLinksData";
+import JoinCommunity from "../Join-community";
+import CommunityImage4 from "../Newcomers-guide/community-image4.png"
 
 const Calendar = () => {
 
@@ -129,6 +131,8 @@ const Calendar = () => {
         </Container>
         <Table columns={columns} data={data} />
       </div>
+      <JoinCommunity image={CommunityImage4} />
+      <br />
     </CalendarStyleWrapper>
   );
 };
