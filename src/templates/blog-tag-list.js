@@ -48,7 +48,7 @@ const BlogListPage = ({ pageContext, data }) => (
       <GlobalStyle />
       <SEO
         title="Blog"
-        description="Share your knowledge, experiences or latest news through the Layer5 blog."
+        description="The latest news and announcements about Layer5, our products, and our ecosystem, as well as voices from across our community."
         canonical="https://layer5.io/blog"
       />
       <Navigation />
