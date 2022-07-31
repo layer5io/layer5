@@ -56,13 +56,9 @@ alt="Service Mesh Pattern" align="left"/>
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/landscape">Service Mesh Landscape</a></h2>
-<a href="https://layer5.io/landscape">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/images/buttons/landscape.png#gh-dark-mode-only">
-  <img src=".github/assets/images/buttons/landscape.png#gh-light-mode-only"  
+<a href="https://layer5.io/landscape"><img src=".github/assets/images/buttons/landscape.png"  
 style="float:left;margin:10px;" width="125px"
-alt="Service Mesh Landscape Ecosystem" align="left"/>
-</picture></a>
+alt="Service Mesh Landscape Ecosystem" align="left"/></a>
 The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a comprehensive collection of prominent service mesh projects and offerings laid out in contrast to one another.
 <br /><br /><br />
 </p>
@@ -86,13 +82,9 @@ The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh P
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/projects/image-hub">Image Hub</a></h2>
-<a href="https://layer5.io/projects/image-hub">
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset=".github/assets/images/image-hub/layer5-image-hub.png#gh-dark-mode-only">
-  <img src=".github/assets/images/image-hub/layer5-image-hub.png#gh-light-mode-only"
+<a href="https://layer5.io/projects/image-hub"><img src=".github/assets/images/image-hub/layer5-image-hub.png"
 style="float:left;margin:10px;" width="125px"
-alt="Image Hub" align="left" />
-</picture></a>
+alt="Image Hub" align="left" /></a>
 <a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application which runs on <a href="https://docs.meshery.io/service-meshes/adapters/consul">Consul</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
 Image Hub supports Envoy-based data planes. It is compatible with and can be deployed on Istio and Consul service meshes.
 <br /><br /><br />
@@ -130,13 +122,9 @@ alt="Layer5" align="left" />
 
 <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
-<a href="https://layer5.io/smi">
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset=".github/assets/images/smi-conformance/checklist.svg#gh-dark-mode-only">
-  <img src=".github/assets/images/smi-conformance/checklist.svg#gh-light-mode-only"
+<a href="https://layer5.io/smi"><img src=".github/assets/images/smi-conformance/checklist.svg#"
 style="margin:10px;" width="125px"
-alt="Service Mesh Interface Conformance" align="left" />
-</picture></a>
+alt="Service Mesh Interface Conformance" align="left" /></a>
 <a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification. It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
 <br /><br /><br />
 </p>
