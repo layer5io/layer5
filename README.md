@@ -1,7 +1,7 @@
 <p style="text-align:center;" align="center">
  <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012170-638f0731-3a83-4795-a6de-71a3614d4c7d.svg#gh-dark-mode-only">
-  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg#gh-light-mode-only" width="45%" />
+  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/99991521/182012170-638f0731-3a83-4795-a6de-71a3614d4c7d.svg#gh-light-mode-only">
+  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg#gh-dark-mode-only" width="45%" />
 </picture>
 </p>
 
@@ -29,7 +29,7 @@
 <a href="https://meshery.io">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012415-ccdf486f-49a0-4021-8597-7b12c9d205e5.svg#gh-dark-mode-only">
-  <img src=".github/assets/images/meshery/meshery-logo.svg"
+  <img src=".github/assets/images/meshery/meshery-logo.svg#gh-light-mode-only"
 style="margin:10px;" width="125px"
 alt="Meshery - Cloud Native Management Plane" align="left" />
 </picture></a>
@@ -104,7 +104,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <h2><a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a></h2>
 <a href="https://meshery.io/community">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012641-3e475d9c-74d9-4796-bfb0-a6f20c994b12.svg#gh-dark-mode-only">
+<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182032827-17634cfc-30cb-4797-924c-2eb5413b8023.svg#gh-dark-mode-only">
   <img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg#gh-light-mode-only" style="margin:10px;" width="125px" align="left" />
 </picture></a>
 <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> is the multi-service mesh operator and implementation of MeshSync.
@@ -135,7 +135,7 @@ alt="Layer5" align="left" />
 <source media="(prefers-color-scheme: dark)" srcset=".github/assets/images/smi-conformance/checklist.svg#gh-dark-mode-only">
   <img src=".github/assets/images/smi-conformance/checklist.svg#gh-light-mode-only"
 style="margin:10px;" width="125px"
-alt="Layer5" align="left" />
+alt="Service Mesh Interface Conformance" align="left" />
 </picture></a>
 <a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification. It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
 <br /><br /><br />
@@ -150,7 +150,7 @@ alt="Layer5" align="left" />
 <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012911-94e2029a-d7fc-4198-a97d-2f1e85fcd7a7.svg#gh-dark-mode-only">
   <img src=".github/assets/images/getnighthawk/layer5-getnighthawk.png#gh-light-mode-only"
 style="margin:10px;" width="125px"
-alt="Layer5" align="left" />
+alt="Nighthawk" align="left" />
 </picture></a>
 <a href="https://getnighthawk.dev/">Nighthawk</a> is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads.
 <br /><br /><br />
