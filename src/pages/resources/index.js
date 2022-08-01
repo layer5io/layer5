@@ -41,7 +41,7 @@ const MembersPage = () => {
     <ThemeProvider theme={theme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Service Mesh Resources" description="Articles on how to service mesh from the world's largest service mesh community. Service mesh how-tos and cloud native ecosystem news." canonical="https://layer5.io/resources" />
+        <SEO title="Cloud Native Resources" description="Learn how to provision, secure, connect, and manage your applications with GitOps and DevOps techniques running on Kubernetes and any service mesh. Service mesh how-tos and cloud native ecosystem tips and tricks." canonical="https://layer5.io/resources" />
         <Navigation />
         <PageHeader title="Cloud Native Resources" path="Resources" subtitle="Learn how to provision, secure, connect, and manage your applications on Kubernetes and any service mesh" img={RssFeedIcon} feedlink="/resources/feed.xml"/>
         <Container>

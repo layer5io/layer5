@@ -47,7 +47,7 @@ const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <SEO title="Layer5" description="Making service meshes available to the rest of us. Open source software for management of service meshes. Allowing developers to focus on business logic, not infrastructure concerns. Empowering operators to confidentally run modern infrastructure."
+      <SEO title="Layer5" description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of service mesh standards. Maker of Meshery, the cloud native management plane."
         schemaMarkup={schema} />
       <Layout>
         <Navigation />
