@@ -20,12 +20,12 @@ Button{
 }
 
 .media_block { 
-    background: ${props => props.theme.white};
-    transition: 450ms all;
+  background-color: ${props => props.theme.DarkTheme? "#212121" : "white"};		
+  transition: 450ms all;
     margin-bottom: 1rem;
     border: 1px solid ${props => props.theme.shadowLightColor};
     &:hover{
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 2px 10px ${props => props.theme.DarkTheme? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.4)"};;
     }
     padding: 12% 6% 12% 6%;
     border-radius: 4%;
@@ -36,7 +36,7 @@ Button{
     }
     p{
         font-weight: 300;
-        color: ${props => props.theme.black};
+        color: ${props => props.theme.text};
     }
     @media screen and (max-width: 768px) {
         margin: 6% 15%;

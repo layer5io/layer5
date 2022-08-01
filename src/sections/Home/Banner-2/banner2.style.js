@@ -5,22 +5,23 @@ import Layer5Icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-n
 
 const Banner2SectionWrapper = styled.section`
     padding: 7rem 0;
-
+   
     background-image: url(${Layer5Icon}), url(${Ellipse});
     background-repeat: no-repeat, no-repeat;
-
     background-size: 25%, 23%;
-    background-color: #F3FFFD;
+    background-color: ${props => props.theme.body};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    
     background-position: center right 160px, bottom right;
     p {
         font-size: 21px;
         font-weight: 300;
-        color: ${props => props.theme.primaryColor};
+        color:  ${props => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
         margin: 0 0 70px 0;
         width: 70%;
     }
     h4 {
-        color: ${props => props.theme.primaryLightColor};
+        color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};
         text-transform: uppercase;
     }
     .section-title{

@@ -26,7 +26,7 @@ export const LabsWrapper = styled.div`
 		transform: rotate(180deg);
 		transform-origin: center center;
 		list-style-type: none;
-		background: ${props => props.theme.menuHoverColor};
+		background: ${props => props.theme.secondaryColor};
 		cursor: pointer;
 		
 		&:hover {

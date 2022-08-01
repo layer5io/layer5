@@ -10,10 +10,14 @@ const ProjectItemWrapper = styled.section`
 
             h4 {
                 font-weight: 500;
-                color: ${props => props.theme.primaryLightColor};
-            }
-            h2 {
-                margin-bottom: 2.25rem;
+                color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};            }
+            h2{
+                color: ${props => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
+                margin-bottom: 40px;
+
+                span{
+                    color: ${props => props.theme.text};
+                }
             }
             text-align: center;
             margin-bottom: 25px;
@@ -47,10 +51,10 @@ const ProjectItemWrapper = styled.section`
     .project__block__inner { 
         display: flex;
         flex-direction: column;
-        background: ${props => props.theme.white};
-        box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
+        background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+        box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
         &:hover{
-            box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
+            box-shadow: 0px 0px 5px ${props => props.theme.DarkTheme ? "#FFFFFF" : "#3c494f"};
         }
         padding: 12% 6% 12% 6%;
         height: 220px;
@@ -64,7 +68,7 @@ const ProjectItemWrapper = styled.section`
         }
         p{
             font-weight: 300;
-            color: ${props => props.theme.black};
+            color: ${props => props.theme.text};
         }
 
         img{

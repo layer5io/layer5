@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import poster from "./poster.png"
+import poster from "./poster.png";
 
 const Banner1SectionWrapper = styled.section`
     top: 3.2rem;
@@ -35,6 +35,7 @@ const Banner1SectionWrapper = styled.section`
         }
         h2 {
             margin: 0 0 20px 0;
+            color: ${props => props.theme.text};
             span {
                 color: ${props => props.theme.secondaryColor};
             }

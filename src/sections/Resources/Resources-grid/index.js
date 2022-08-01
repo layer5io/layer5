@@ -34,7 +34,7 @@ const ResourceGrid = (props) => {
           {searchedResource.length > 0 &&
             searchedResource.map(({ id, frontmatter, fields }) => (
               <Col key={id} xs={12} sm={6} xl={4}>
-                <Card frontmatter={frontmatter} fields={fields} />
+                <Card theme={props.theme} frontmatter={frontmatter} fields={fields} />
               </Col>
             ))}
         </Row>

@@ -191,6 +191,9 @@ module.exports = {
                       thumbnail {
                         publicURL
                       }
+                      darkthumbnail {
+                        publicURL
+                      }
                     }
                     fields {
                       collection

@@ -20,7 +20,7 @@ const wasm_capacity = "../../../assets/images/smp-page/native-and-wasm-at-capaci
 const client_capacity = "../../../assets/images/smp-page/client-capacity.png";
 
 const SMPPage = () => {
-  
+
   const { backgroundImage123 } = useStaticQuery(
     graphql`
       query {
@@ -44,22 +44,22 @@ const SMPPage = () => {
   return (
     <Layout>
       <SMPWrapper>
-      <BgImage image={pluginImage} className="section">
-        <div className="smp-hero">
-          <Container>
-            <div className="hero-text">
-              <Row>
-                <Col lg={5} md={12} sm={12}>
-                  <img className="logo-img" alt="smp-logo" src={smp} />
-                </Col>
-                <Col lg={7} md={12} sm={12}>
-                  <h1> Service Mesh Performance </h1>
-                  <p> The Service Mesh Performance Working Group is hosted within CNCF TAG Network. All are welcome to participate. This group is defining the Service Mesh Performance(SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
-                </Col>
-              </Row>
-            </div>
-          </Container>
-        </div>
+        <BgImage image={pluginImage} className="section">
+          <div className="smp-hero">
+            <Container>
+              <div className="hero-text">
+                <Row>
+                  <Col lg={5} md={12} sm={12}>
+                    <img className="logo-img" alt="smp-logo" src={smp} />
+                  </Col>
+                  <Col lg={7} md={12} sm={12}>
+                    <h1> Service Mesh Performance </h1>
+                    <p> The Service Mesh Performance Working Group is hosted within CNCF TAG Network. All are welcome to participate. This group is defining the Service Mesh Performance(SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
+                  </Col>
+                </Row>
+              </div>
+            </Container>
+          </div>
         </BgImage>
         <Container>
           <div className="smp-details">
@@ -72,19 +72,19 @@ const SMPPage = () => {
                 <h1> SMP accounts for details of:</h1>
                 <table>
                   <tr>
-                    <td className="icon"><img src={c_icon} alt="icon" /></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5"/><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
                     <td className="feature"> Environment and infrastructure details </td>
                   </tr>
                   <tr>
-                    <td className="icon"><img src={c_icon} alt="icon" /></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5"/><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
                     <td className="feature"> Service mesh and its configuration </td>
                   </tr>
                   <tr>
-                    <td className="icon"><img src={c_icon} alt="icon" /></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5"/><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
                     <td className="feature"> Service (workload) details </td>
                   </tr>
                   <tr>
-                    <td className="icon"><img src={c_icon} alt="icon" /></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5"/><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
                     <td className="feature"> Statistical analysis of performance results </td>
                   </tr>
                 </table>

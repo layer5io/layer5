@@ -33,6 +33,13 @@ const ResourceSingle = ({ data }) => {
           extension
           publicURL
         }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
       }
       fields {
         slug
@@ -44,7 +51,7 @@ const ResourceSingle = ({ data }) => {
   );
 
   const resources = resourceData.allMdx.nodes;
-  const relatedResources = new RelatedResourcesFactory (
+  const relatedResources = new RelatedResourcesFactory(
     resources, fields.slug
   ).setMaxResources(6)
     .setCategory(frontmatter.category)

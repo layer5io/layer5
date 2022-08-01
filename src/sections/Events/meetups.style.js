@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const MeetupStyle = styled.div`
 
     margin-bottom: 4rem;
-
+    Button:hover {
+        box-shadow: none;
+    }
     .event-subhead{
         text-align: center;
         margin: 1rem auto 2rem;
@@ -25,12 +27,12 @@ export const MeetupStyle = styled.div`
             border-radius: 0;
             cursor: pointer;
             padding: 0.5rem 2rem;
-            background: white;
+            background: ${props => props.theme.body};;
             transition: all 0.2s ease-in;
         }
         .active{
-            color: #1E2117;
-            border-bottom: 2px solid #1E2117;
+            color: ${props => props.theme.text};
+            border-bottom: 2px solid ${props => props.theme.text};
         }
     }
 

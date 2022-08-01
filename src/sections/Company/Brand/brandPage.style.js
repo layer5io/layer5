@@ -7,7 +7,8 @@ const BrandPageWrapper = styled.section`
 
 	.brandHeader {
 		padding: 6rem 0;
-		background: ${props => props.theme.tertiaryColor};
+		background:${props => props.theme.DarkTheme? props.theme.elevationColor: props.theme.tertiaryColor};
+		
 		text-align: center;
 		h1{
 			color: ${props => props.theme.white};
@@ -28,7 +29,7 @@ const BrandPageWrapper = styled.section`
 	}
 
 	.logo {
-		background: ${props => props.theme.primaryColor};
+		background: ${ props => props.theme.DarkTheme? "black": props.theme.primaryColor};
 		padding: 0.95rem;
 	}
 
@@ -51,7 +52,7 @@ const BrandPageWrapper = styled.section`
 		margin: 0;
 		position: relative;
 		width: fit-content;
-		color: rgba(0, 0, 0, 0.4);
+		color: ${props => props.theme.DarkTheme? "rgba(255, 255, 255, 0.4)": "rgba(0, 0, 0, 0.4)"};
 		font: 500 1.2rem/2.5rem 'Qanelas Soft', sans-serif;
 		transition: 0.2s border ease-in-out;
 
@@ -183,9 +184,9 @@ const BrandPageWrapper = styled.section`
 
 	.blond-color-box, .white-color-box {
 		.PalletBox {
-			color: ${props => props.theme.tertiaryColor};
+			color: rgb(30, 33, 23);
 			.color-name {
-				color: ${props => props.theme.tertiaryColor};
+				color: rgb(30, 33, 23);
 			}
 		}
 	}
