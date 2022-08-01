@@ -35,7 +35,7 @@
     "axios": "^0.24.0",
     "babel-plugin-styled-components": "^2.0.6",
     "babel-preset-gatsby": "^2.13.0",
-    "caniuse-lite": "^1.0.30001312",
+    "caniuse-lite": "^1.0.30001373",
     "dedent": "^0.7.0",
     "deepmerge": "^4.2.2",
     "formik": "^2.2.9",
