@@ -33,7 +33,7 @@
     "@mdx-js/react": "^1.6.22",
     "@react-icons/all-files": "^4.1.0",
     "axios": "^0.24.0",
-    "babel-plugin-styled-components": "^2.0.6",
+    "babel-plugin-styled-components": "^2.0.7",
     "babel-preset-gatsby": "^2.13.0",
     "caniuse-lite": "^1.0.30001312",
     "dedent": "^0.7.0",
