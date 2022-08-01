@@ -2,18 +2,20 @@ import styled from "styled-components";
 
 const NavigationWrap = styled.header`
 
-  background-color: #F3FFFD;
+  background-color:  ${props => props.theme.body};
   position: sticky;
   width: 100%;
   z-index: 9999;
   top: 0;
-  transition: all 0.3s ease 0s;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
   .nav-container {
     display: flex;
   }
   .meshery-cta {
     position: relative;
+    display: flex;
+    align-items: center;
     right: -4.5rem;
     top: 1.5rem;
     max-height: 50px;
@@ -34,7 +36,14 @@ const NavigationWrap = styled.header`
       right: -1rem;
     }
     @media screen and (max-width: 912px) {
-      display: none;
+      a {
+        display: none;
+      }
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+        margin-bottom: 2.5em;
+      }
+ 
     }
   }
   .navbar-wrap {
@@ -51,9 +60,9 @@ const NavigationWrap = styled.header`
   }
   .dropdown {
     position: absolute;
-    background: white;
+    background: ${props => props.theme.body};
     opacity: 0;
-    border: 1px solid #f5f5f5;
+    border: 1px solid ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "#f5f5f5"};    
     border-radius: 50px;
     top: 100%;
     left: 0;
@@ -89,17 +98,17 @@ const NavigationWrap = styled.header`
     display: grid;
     grid-template-columns: 35% 65%;
     .hr {
+      background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
       display: flex;
       flex-direction: column;
       position: relative;
       padding: 3em;
-      background: #fafafa;
       border-radius: 50px 0 0 50px;
       .sub-item {
         padding: 0;
       }
       .section {
-        color: black;
+        color: ${props => props.theme.text};
         font-size: 20px;
         font-weight: 600;
         margin-left:0px;
@@ -115,7 +124,7 @@ const NavigationWrap = styled.header`
           padding: 2px 0;
           display: block;
           .readmore-btn {
-            color: ${props => props.theme.black};
+            color: ${props => props.theme.text};
           }
           &:before {
             content: none;
@@ -133,8 +142,7 @@ const NavigationWrap = styled.header`
       }
     }
     .nav-display {
-      border-left: 2px solid #f1f1f1;
-      background: #ffffff;
+      border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"}; 
       padding-top: 3em;
       border-radius: 0 50px 50px 0;
       display: grid;
@@ -298,7 +306,6 @@ const NavigationWrap = styled.header`
   }
   &.scrolled {    
     box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px;
-    background: white;
     .nav {
       .nav-item{
         a {
@@ -356,7 +363,7 @@ const NavigationWrap = styled.header`
       position: relative;
       padding: 10px 0 10px 15px;
       display: block;
-      background: white;
+      background: ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "rgb(250, 250, 250)"};
       border-radius: 10px;
       box-shadow: 0px 10px 10px 10px rgba(0, 211, 169, 0.10);
       max-height: 400px;
@@ -433,7 +440,7 @@ const NavigationWrap = styled.header`
           }
       }
       .post-title{
-          color: ${props => props.theme.menuHoverColor};
+          color: ${props => props.theme.text};
       }
     }
     a:before {
@@ -479,7 +486,7 @@ const NavigationWrap = styled.header`
     font-size: 16px;
     font-weight: 600;
     line-height: 28px;
-    color: black;
+    color: ${props => props.theme.lightTextColor};
     margin-bottom: 20px;
     display: block;
     white-space: nowrap;
@@ -487,6 +494,11 @@ const NavigationWrap = styled.header`
     text-overflow: ellipsis;
     -webkit-transition: 450ms all;
     transition: 450ms all;
+    &:hover{
+      color: ${props => props.theme.highlightLightColor};
+
+
+    }
     
     @supports (-webkit-line-clamp: 2) {
       overflow: hidden;
@@ -498,7 +510,7 @@ const NavigationWrap = styled.header`
     }
   }
   .readmore-btn {
-    color: rgba(0,0,0,0.35);
+    color: ${props => props.theme.lightTextColor};
     display: flex;
     align-items: center;
     transition: all 0.3s linear;
@@ -509,6 +521,13 @@ const NavigationWrap = styled.header`
       transition: all 0.3s linear;
     }
   }
+  .dark-theme-toggle {
+
+    margin-left: 2em;
+
+
+  }
+  
 `;
 
 export default NavigationWrap;

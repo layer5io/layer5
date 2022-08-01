@@ -19,7 +19,7 @@ const PartnerWrapper = styled.section`
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        background-color: ${props => props.theme.darkJungleGreenColor};
+        background-color:${props => props.theme.DarkTheme? props.theme.elevationColor:props.theme.darkJungleGreenColor};
         color: white;
         padding: 4rem 0;
         .partner-container-head{

@@ -24,11 +24,17 @@ export const NewsPageWrapper = styled.div`
         background : rgb(240, 240, 240);
         border-radius: 5px;
         color: black;
+        &:hover{
+        box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 0, 0, 0.5)"};
+        }
     }   
     .coverage-button {
         background : rgb(240, 240, 240);
         border-radius: 5px;
         color: black;
+        &:hover{
+            box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 0, 0, 0.4)"};
+            }
     }
     
     .filter-buttons {

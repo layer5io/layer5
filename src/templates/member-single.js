@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 
 import { ThemeProvider } from "styled-components";
@@ -10,7 +10,8 @@ import MemberSingle from "../sections/Community/Member-single";
 import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
+import { darktheme } from "../theme/app/themeStyles";
+import lighttheme from "../theme/app/themeStyles";
 
 export const query = graphql`query MemberBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
@@ -37,13 +38,26 @@ export const query = graphql`query MemberBySlug($slug: String!) {
 `;
 
 const MemberSinglePage = ({ data }) => {
+  const [theme, setTheme] = useState();
+
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  // prevents ssr flash for mismatched dark mode
+  if (!mounted) {
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
+  }
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL}/>
-        <Navigation />
-        <MemberSingle frontmatter={data.mdx.frontmatter}/>
+        <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL} />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <MemberSingle frontmatter={data.mdx.frontmatter} />
         <Footer />
       </Layout>
     </ThemeProvider>

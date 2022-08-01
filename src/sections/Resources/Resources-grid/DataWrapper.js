@@ -31,6 +31,13 @@ const DataWrapper = (WrappedComponent) => {
                     extension
                     publicURL
                 }
+                darkthumbnail {
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH)
+                  }
+                  extension
+                  publicURL
+              }
               }
               fields {
                 slug

@@ -35,7 +35,7 @@ const ServiceMeshTimeline = () => {
     elements.map(mesh => (
       <VerticalTimelineElement
         key={mesh.timeline_order}
-        contentStyle={{ background: "rgb(255, 255, 255)", color: "#3C494F" }}
+        contentStyle={{ color: "#3C494F" }}
         position={mesh.timeline_order % 2 ? "left" : "right"}
         contentArrowStyle={{ display: "none" }}
         iconClassName="meshBubble"

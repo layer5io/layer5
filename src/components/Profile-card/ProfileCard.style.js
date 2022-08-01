@@ -11,11 +11,11 @@ export const ProfileCardWrapper = styled.div`
         width: 260px;
         border-radius: 2px;
         overflow: hidden;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
+        box-shadow: 0 2px 2px 0 ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.20)" : "rgba(0, 0, 0, 0.20)"};
         position: relative;
         margin: auto;
         margin-bottom: 2.5rem;
-        background: ${props => props.status === "Active" ? props.theme.menuColor : "gray"};
+        background: ${props => props.status === "Active" ? props.theme.DarkTheme ? "#212121" : "#3c494f" : "gray"};
         filter: ${props => props.status === "Inactive" ? "grayscale(1)" : ""};
         top: 50%;
         transition: 0.3s;

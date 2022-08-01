@@ -3,8 +3,8 @@ import styled from "styled-components";
 const PricingWrapper = styled.section`
 
 .headers {
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
+  background:${props => props.theme.DarkTheme? props.theme.elevationColor: props.theme.tertiaryColor};
+  background: linear-gradient(0deg, ${props => props.theme.DarkTheme? "#121212": "white"} 12%, rgba(0,211,169,1) 43%, rgba(0,179,159,1) 60%, rgba(71,126,150,1) 100%);
   /* background: linear-gradient(180deg, rgba(6,6,6,1) 12%, rgba(0,179,159,1) 52%, rgba(0,179,159,1) 53%, rgba(0,179,159,1) 53%, rgba(255,255,255,1) 79%);  position: relative; */
   display: flex;
   flex-direction: column;
@@ -38,6 +38,15 @@ const PricingWrapper = styled.section`
     margin-top: 2rem;
     margin-bottom: 4rem;
     text-align: center;
+    h2 {
+      color: ${props => props.theme.DarkTheme? "white": "black"};
+    }
+    @media (min-width: 1400px) {
+      h2{
+        color: ${props => props.theme.DarkTheme? "white": "black"};
+      }
+
+    }
 } 
 
 .subscriptionButtons {
@@ -88,7 +97,7 @@ const PricingWrapper = styled.section`
 
 
 .pricing-table {
-	background: #fff;
+  background-color: ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
   border-top: 3px solid #00b39f;
   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
 	padding: 2rem;
@@ -101,6 +110,8 @@ const PricingWrapper = styled.section`
 
 .featured{
       transform: scale(1.05);
+      background-color: ${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
+
       box-shadow: 0px 2px 12px 0px rgb(0, 179, 158, 0.7);
     }
 .pricing-table:hover {
@@ -123,13 +134,13 @@ const PricingWrapper = styled.section`
 
     h2 {
       margin-top: 1rem;
-      color: #3b3b3b;
+      color: ${props => props.theme.DarkTheme? "rgb(220, 220, 220)": "#3b3b3b"};
       font-size: 24px;
       font-weight: 500;
     }
 
     .byline {
-      color: ${props => props.theme.primaryLightColor};
+      color: ${props => props.theme.DarkTheme? "rgb(200, 200, 200)": props.theme.primaryLightColor};
       font-size: 16px;
       font-weight: 400;
     }
@@ -141,7 +152,7 @@ const PricingWrapper = styled.section`
     .pricing-features .feature {
       margin: .5rem 0rem;
       h5{
-        color: #7A848E;
+        color: ${props => props.theme.DarkTheme? "#AAAAAA": "#7A848E"};
         font-size: 16px;
         font-weight: 400;
         vertical-align: text-top;

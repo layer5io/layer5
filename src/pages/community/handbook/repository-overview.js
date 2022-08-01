@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import Layout from "../../../components/layout";
 
@@ -8,18 +8,34 @@ import Navigation from "../../../sections/General/Navigation";
 import Footer from "../../../sections/General/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
-import theme from "../../../theme/app/themeStyles";
+import { darktheme } from "../../../theme/app/themeStyles";
+import lighttheme from "../../../theme/app/themeStyles";
 
 
-const CommunityRepository = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Repository Overview" description="A brief introduction to all of the Github repositories of Layer5 organization." />
-      <Navigation />
-      <RepoPage />
-      <Footer/>
-    </Layout>
-  </ThemeProvider>
-);
+const CommunityRepository = () => {
+  const [theme, setTheme] = useState();
+
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  // prevents ssr flash for mismatched dark mode
+  if (!mounted) {
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
+  }
+  return (
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Repository Overview" description="A brief introduction to all of the Github repositories of Layer5 organization." />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <RepoPage />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default CommunityRepository;

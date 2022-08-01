@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import poster from "./poster.png";
 
 const Banner1SectionWrapper = styled.section`
     top: 3.2rem;
@@ -34,6 +35,7 @@ const Banner1SectionWrapper = styled.section`
         }
         h2 {
             margin: 0 0 20px 0;
+            color: ${props => props.theme.text};
             span {
                 color: ${props => props.theme.secondaryColor};
             }
@@ -79,9 +81,11 @@ const Banner1SectionWrapper = styled.section`
                 font-size: 3rem;
                 line-height: 3.5rem;
                 margin: 0 0 1rem 0;
+                color: black;
             }
             h2 {
                 font-size: 2rem;
+                color: black;
             }
         }
         p {
@@ -134,9 +138,18 @@ const Banner1SectionWrapper = styled.section`
         } 
      }
      @media only screen and (max-width: 760px) {
-        padding: 2rem 0;
+        padding: 5rem 0;
+        margin: 0;
+        background-image: url(${poster});  
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center; 
+        box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.7);
         .section-title-wrapper {
             min-width: 100%;
+        }
+        .video-col{
+            display: none;
         }
         .section-title { 
             h1 { 

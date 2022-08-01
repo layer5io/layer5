@@ -37,7 +37,7 @@ const WorkshopSinglePageWrapper = styled.div`
 	.bottomBtn {
 		padding:4rem;
 		padding-top:5rem;
-		background-color: #FAFAFA;
+		background-color: ${props => props.theme.DarkTheme? "rgb(20, 20, 20)" : "#FAFAFA"};		
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;

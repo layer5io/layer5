@@ -13,12 +13,12 @@ table {
     td {
         padding: 0.3rem;
         height: 4rem;
-        color: black;
         text-align: center;
 		font-size: 0.9rem;
 		line-height: .9rem;
         font-weight: 400;
-        border-bottom: 1px solid #efefef;
+        border-bottom: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+
     }
     th {
         background: #1E2117;
@@ -31,15 +31,15 @@ table {
   
     tr {
 		:nth-child(odd) {
-			background: #ffffff;
+			background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 			td {
-				border-right: 1px solid #ffffff;
+				border-right: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 			}
 		}
 		:nth-child(even) {
-			background: #efefef;
+			background: ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
 			td {
-				border-right: 1px solid #efefef;
+				border-right: 1px solid ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
 			}
 		}
 		:last-child {

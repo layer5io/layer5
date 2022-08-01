@@ -17,7 +17,7 @@ function colorchange(id) {
   let element = document.getElementById(id);
   element.classList.toggle("mystyle");
 }
-const NewsGrid = ({ data }) => {
+const NewsGrid = ({ data, theme }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
     data.allMdx.nodes,
@@ -102,7 +102,7 @@ const NewsGrid = ({ data }) => {
               )}
               {news.map(({ id, frontmatter, fields }) => (
                 <Col xs={12} sm={6} lg={4} key={id}>
-                  <Card frontmatter={frontmatter} fields={fields}/>
+                  <Card theme={theme} frontmatter={frontmatter} fields={fields}/>
                 </Col>
               ))}
             </Row>

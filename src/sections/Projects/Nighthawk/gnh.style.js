@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Gnhwrapper = styled.section`
+    
+   
     .hero-section{
         padding: 5rem 0rem;
         .logo{
@@ -52,7 +54,6 @@ export const Gnhwrapper = styled.section`
             width: 100%;
             min-height: 500px;
             padding: 5rem 1.25rem;
-            background-color: ${props => props.theme.secondaryLightColorTwo};
             border-radius: 25px;
         }
     }
@@ -116,6 +117,12 @@ export const Gnhwrapper = styled.section`
             }
         }
     }
+    rect {
+        fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+      }
+      path {
+        stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor: "#00B39F"};
+      }
     .distributedPerf {
         display: relative;
         float: left;
@@ -174,23 +181,19 @@ export const CardsContainer = styled.div`
     grid-gap: 10px;
 
     .card {
-        box-shadow:
-        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-        0 12.5px 10px rgba(0, 0, 0, 0.06),
-        0 10.3px 17.9px rgba(0, 0, 0, 0.072),
-        0 20.8px 33.4px rgba(0, 0, 0, 0.086),
-        0 3.125rem 80px rgba(0, 0, 0, 0.12)
-        ;
+      box-shadow: rgb(0 0 0 / 5%) 2px 4px 2.5rem 0.5rem;
         margin: 2px;
         padding: 1.5rem;
-        background-color: white;
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         border-radius: 25px;
         p {
             text-align: left;
             padding: 0px 0px;
             letter-spacing: 0;
             margin-top: 10px;
+        }
+        a:hover {
+            color: ${props => props.theme.text};
         }
         h2 {
             text-align: left;
