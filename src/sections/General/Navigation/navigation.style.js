@@ -62,7 +62,7 @@ const NavigationWrap = styled.header`
     position: absolute;
     background: ${props => props.theme.body};
     opacity: 0;
-    border: 1px solid #f5f5f5;
+    border: 1px solid ${props => props.theme.DarkTheme ? "rgb(20, 20, 20)" : "#f5f5f5"};    
     border-radius: 50px;
     top: 100%;
     left: 0;
@@ -142,7 +142,7 @@ const NavigationWrap = styled.header`
       }
     }
     .nav-display {
-      border-left: 2px solid #f1f1f1;
+      border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"}; 
       padding-top: 3em;
       border-radius: 0 50px 50px 0;
       display: grid;
