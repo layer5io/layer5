@@ -17,20 +17,7 @@ color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" :"rgba(0, 0
 
 ## Changing SVG according to theme
 
-1. To change different SVG according to the theme, import SVG as a source, pass theme from the parent component, and change its source according to it,
-
-Examples - 1. Importing SVG as a source.
-
-             import layer5_logo from "../../../assets/images/app/layer5.svg";
-             import layer5dark_logo from "../../../assets/images/layer5/layer5-only/svg/layer5-light-no-trim.svg";
-
-            2. Pass the theme and change its source according to the theme.
-
-             <img src={theme === "dark" ? layer5dark_logo : layer5_logo} alt="Layer5 logo" />
-
-
-
-2. To change similar SVG as in dark and light according to the theme, fill inner paths or rect or polygon with the preferable colors like in the case of the components.
+To change similar SVG as in dark and light according to the theme, fill inner paths or rect or polygon with the preferable colors like in the case of the components.
 
 Examples -
 
@@ -42,9 +29,9 @@ Examples -
       }
 
 
-## Changing local images according to theme
+## Changing images according to theme
 
-1. To Change images according to the theme, pass the theme state to a specific image parent component and change its source according to the theme. For example- <img src={theme ==="dark"? DarkThemelogoSource : LightThemelogoSource}/> 
+1. To change images or SVG as in image source, according to the theme, pass the theme state to a specific image parent component and change its source according to the theme. For example- <img src={theme ==="dark"? DarkThemelogoSource : LightThemelogoSource}/> 
 
 2. Also Fetch Logo source as a Source variable is recommended as it will be easier to read.
 
@@ -56,9 +43,9 @@ Examples -
 
 ## Changing images in gatsby-image-plugin according to the theme.
 
-1. Procedure of changing the image for the gatsby-image is the same as we change for local images, however, it is recommended to fetch two images, one for a dark theme and one for a light theme change it according to the theme state as did with local images.
+Procedure of changing the image for the gatsby-image is the same as we change for images, however, it is recommended to fetch two images, one for a dark theme and one for a light theme change it according to the theme state as did with images.
 
-    Example(For Thumbnail)- 
+    Example (For Thumbnail)
       
         Fetching images through Graphql:
           Add this in graphql query in frontmatter

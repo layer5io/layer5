@@ -102,7 +102,7 @@ const ResourcesList = (props, { theme }) => {
       if (totalMesh === 0) meshData = all;
 
       result = [typeData, productData, techData, meshData],
-        data = result.reduce((a, b) => a.filter(c => b.includes(c)));
+      data = result.reduce((a, b) => a.filter(c => b.includes(c)));
     });
   } else {
     queryResults.forEach((resources) => {

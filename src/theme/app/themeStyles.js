@@ -125,11 +125,11 @@ export const darktheme = {
   shadowLightColor: "#E6E6E6",
 
   // charcoal
-  menuColor: "#00b39f",
+  menuColor: "#00D3A9",
 
   // caribbean green (light green)
   menuHoverColor: "#ffffff",
-  linkColor: "#00b39f",
+  linkColor: "#00D3A9",
 
   // saffron (dark yellow)
   highlightColor: "#EBC017",
