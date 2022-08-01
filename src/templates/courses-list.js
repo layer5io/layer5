@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
 import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
+import { darktheme } from "../theme/app/themeStyles";
+import lighttheme from "../theme/app/themeStyles";
 import { ThemeProvider } from "styled-components";
 import CoursesList from "../sections/Learn-Layer5/Courses-List";
 
@@ -44,7 +45,7 @@ export const query = graphql`
     }
   }
 `;
-const CoursesListTemplate = ({data, pageContext}) => {
+const CoursesListTemplate = ({ data, pageContext }) => {
   const getTitle = (learnPathTitle) => {
     const learnPath = learnPathTitle.split("-");
     let str = learnPath.reduce((title, name, idx) => {
@@ -61,9 +62,21 @@ const CoursesListTemplate = ({data, pageContext}) => {
     let secondOrder = second.frontmatter?.order ? second.frontmatter.order : 100;
     return firstOrder - secondOrder;
   });
+  const [theme, setTheme] = useState();
 
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  // prevents ssr flash for mismatched dark mode
+  if (!mounted) {
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
+  }
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO
@@ -71,7 +84,7 @@ const CoursesListTemplate = ({data, pageContext}) => {
           description="Learn Service Meshes: Istio, Linkerd, Envoy, Consul, Traefik Mesh, Open Service Mesh, NGINX Service Mesh, Kuma, AWS App Mesh, Citrix, VMware Tanzu Service Mesh"
           canonical="https://layer5.io/learn/learning-paths"
         />
-        <Navigation />
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <CoursesList coursesData={sortedCoursesList} learnPath={learnpath} />
         <Footer />
       </Layout>

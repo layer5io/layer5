@@ -15,27 +15,27 @@ const SocialLinks = () => {
         <Row className="social_icons">
           <a
             className="mail_icon"
-            href="mailto:community@layer5.io" 
+            href="mailto:community@layer5.io"
             target="_blank"
             rel="noreferrer"
           >
             <img height="40 px" src={mail_icon} alt="mail" />
           </a>
           <a
-            href="https://slack.layer5.io/" 
+            href="https://slack.layer5.io/"
             target="_blank" rel="noreferrer"
           >
             <img className="slack" height="40 px" src={slack_icon} alt="slack" />
           </a>
           <a
-            href="https://twitter.com/layer5" 
+            href="https://twitter.com/layer5"
             target="_blank"
             rel="noreferrer"
           >
             <img className="twitter" height="40 px" src={twitter_icon} alt="twitter" />
           </a>
           <a
-            href="https://github.com/layer5io" 
+            href="https://github.com/layer5io"
             target="_blank"
             rel="noreferrer"
           >

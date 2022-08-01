@@ -4,9 +4,11 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import logo from "../../../assets/images/nighthawk/with-name/SVG/nighthawk-full.svg";
+import Lightlogo from "../../../assets/images/nighthawk/with-name/SVG/nighthawk-full_light.svg";
 import cloud from "./images/cloud-network_green.svg";
 import cpu from "./images/cpu_green.svg";
 import smpIcon from "./images/smp-dark-text.svg";
+import lightSmpIcon from "./images/smp-light-text.svg";
 import distributedPerf from "./images/distributed-performance_green.svg";
 import cncf from "./images/cncf-white.svg";
 
@@ -14,15 +16,13 @@ const explain1 = "./images/Rectangle 479.png";
 const explain2 = "./images/optimizing-your-average-response-time.png";
 const explain3 = "./images/Comparison-of-different-modes-of-delivery-of-service-mesh-network-functions.png";
 const c_icon = "./images/c_icon.svg";
-const icon = "../../../assets/images/nighthawk/name-only/SVG/nighthawk-text.svg";
-//import cli from "./images/cli_green.svg";
 
-import {Gnhwrapper, CardsContainer} from "./gnh.style";
+import { Gnhwrapper, CardsContainer } from "./gnh.style";
 
 import { URL } from "../../Counters/index";
 import Counter from "../../../reusecore/Counter";
 
-const Projects = () => {
+const Projects = ({ theme }) => {
   const [performanceCount, setPerformanceCount] = useState(0);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const Projects = () => {
         <div className="hero-section">
           <Row>
             <Col lg={6} md={6} sm={12}>
-              <img src={logo} className="logo" alt="Nighthawk Logo"/>
+              <img src={theme ==="dark"? Lightlogo : logo} className="logo" alt="Nighthawk Logo"/>
             </Col>
             <Col lg={6} md={6} sm={12}>
               <div className="hero-text">
@@ -115,7 +115,7 @@ const Projects = () => {
               <CardsContainer>
                 <div className="card">
                   <div className="circle">
-                    <img src={smpIcon} className="smp" alt="smp logo" />
+                    <img src={theme ==="dark"? lightSmpIcon : smpIcon} className="smp" alt="smp logo" />
                   </div>
                   <h2>SERVICE MESH PERFORMANCE COMPATIBILITY</h2>
                   <p>Enabling Standards-based, Distributed Performance Management - Nighthawk integrates Meshery and Nighthawk. Through this integration Meshery facilitates <Link to="/projects/service-mesh-performance">Service Mesh Performance (SMP)</Link> compatibility for Nighthawk.</p>
@@ -157,7 +157,7 @@ const Projects = () => {
           <Row>
             <Col lg={6} md={6} sm={12}>
               <div className="text">
-                <img src={distributedPerf} className="distributedPerf" alt="Cloud Native Distributed Performance Management" /> 
+                <img src={distributedPerf} className="distributedPerf" alt="Cloud Native Distributed Performance Management" />
                 <h2>Standards-based, distributed performance management</h2>
                 <p>Nighthawk will provide generally-available distributions of Nighthawk under different architectures and platforms and easy-to-use tooling for installation and operation. This will include creating distributions of Nighthawk as well as augmenting existing tooling, Meshery, to retrieve these arch-specific packages and update their deployments.</p>
               </div>
@@ -167,7 +167,7 @@ const Projects = () => {
               <div className="listed">
                 <table className="table">
                   <tr>
-                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
                     <td className="service">
                       <h4>
                         Further the state of distributed <br />
@@ -177,7 +177,7 @@ const Projects = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
                     <td className="service">
                       <h4>
                         Facilitate Nighthawk adoption.
@@ -187,7 +187,7 @@ const Projects = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
                     <td className="service">
                       <h4>
                         Deliver easy-to-use, repeatable <br />
@@ -197,7 +197,7 @@ const Projects = () => {
                     </td>
                   </tr>
                   <tr>
-                    <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
                     <td className="service">
                       <h4>
                         Educate the ecosystem

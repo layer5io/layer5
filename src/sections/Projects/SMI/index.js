@@ -9,9 +9,9 @@ import MeshMapCTA from "../../meshmap-cta";
 
 import data from "./data";
 import c_icon from "./c-icon.svg";
-import logo from "./logo.svg";
-import smi from "./smi.svg";
-import smiLogo from "./smi-logo.png";
+import logo from "../../../assets/images/service-mesh-icons/service-mesh-interface/icon/black/grey-logo.svg";
+import smi from "../../../assets/images/service-mesh-icons/service-mesh-interface/smi-table.svg";
+import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-interface/icon/color/servicemeshinterface-icon-color.svg";
 import TestsTable from "./testsTable";
 
 const SMIPage = () => {
@@ -24,20 +24,20 @@ const SMIPage = () => {
             <Col lg={8} md={12} sm={12}>
               <h4> Conformance and Diagnostics</h4>
               <h1> Service Mesh Interface</h1>
-              <p className="desc-p"> 
+              <p className="desc-p">
                 Integrate and wrap your operational processes around a service mesh without fear of lock-in. SMI provides a standard interface for service meshes on Kubernetes and a basic feature set for the most common service mesh use cases.
               </p>
-              <p> 
+              <p>
                 Meshery is <span>the official</span> SMI Conformance Validator. Use Meshery's diagnostic tool to verify that your service mesh's behavior in an accessible and non-destructive manner.
               </p>
-              <Button primary title="Run SMI Conformance" url="/blog/programs/starting-smi-conformance-testing-with-meshery" /> 
+              <Button primary title="Run SMI Conformance" url="/blog/programs/starting-smi-conformance-testing-with-meshery" />
             </Col>
             <Col lg={4} md={12} sm={12} className="hero_img_col">
               <div className="hero-img">
                 <img src={smi} alt="SMI Table"></img>
               </div>
             </Col>
-          </Row>   
+          </Row>
           <Row className="description feature">
             <div className="section-title">
               <h1>Purpose and Overview</h1>
@@ -74,11 +74,11 @@ const SMIPage = () => {
               <Col lg={8}>
                 <p>
                   Conformance to SMI specifications will be done through
-                  use of a service mesh’s workload. A sample application 
-                  is used as the workload to test. To facilitate a common 
+                  use of a service mesh’s workload. A sample application
+                  is used as the workload to test. To facilitate a common
                   set of tests, a sample application has been developed
-                  for purposes of providing a consistent workload to apply 
-                  SMI specs against. A deployment of the Learn Layer5 
+                  for purposes of providing a consistent workload to apply
+                  SMI specs against. A deployment of the Learn Layer5
                   sample application being fitted to each service mesh.
                 </p>
               </Col>
@@ -97,8 +97,8 @@ const SMIPage = () => {
           </div>
 
           <div className="smiResults">
-            <img src={smiLogo} 
-              alt="Service Mesh Landscape" 
+            <img src={smiLogo}
+              alt="Service Mesh Landscape"
             />
             <div>
               <p>

@@ -76,12 +76,12 @@ const Repository = () => {
                 <img
                   src={MesheryOperator}
                   alt="meshery operator icon"
-                  style={{marginLeft: ".3rem"}}
+                  style={{ marginLeft: ".3rem" }}
                 /> and MeshSync
                 <img
                   src={MeshSync}
                   alt="mesh sync icon"
-                  style={{marginLeft: ".3rem"}}
+                  style={{ marginLeft: ".3rem" }}
                 />.
               </li>
 
@@ -132,7 +132,6 @@ const Repository = () => {
                         repository,
                         site,
                         image,
-                        description,
                       } = subdata;
                       return (
                         <tbody key={project}>

@@ -8,7 +8,7 @@ const Blockquote = ({
 
 }) => {
   const AllClasses = ["blockquote"];
-  if(className){
+  if (className){
     AllClasses.push(className);
   }
   return (
@@ -33,7 +33,7 @@ const Blockquote = ({
 };
 
 Blockquote.propTypes = {
-  
+
   quote: PropTypes.string,
   person: PropTypes.string,
   className: PropTypes.string,

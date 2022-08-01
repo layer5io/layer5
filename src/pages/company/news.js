@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../../components/layout";
@@ -10,7 +10,9 @@ import NewsPage from "../../sections/Company/News-grid";
 import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
+
 import SimpleReactLightbox from "simple-react-lightbox";
 
 export const query = graphql`query allNews {
@@ -34,6 +36,13 @@ export const query = graphql`query allNews {
           extension
           publicURL
         }
+        darkthumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
       }
       fields {
         slug
@@ -43,18 +52,33 @@ export const query = graphql`query allNews {
 }
 `;
 
-const NewsGridPage = ({ data }) => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="News" description="News and press about Layer5, the cloud native management company. 
+const NewsGridPage = ({ data }) => {
+  const [theme, setTheme] = useState();
+
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  // prevents ssr flash for mismatched dark mode
+  if (!mounted) {
+    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
+  }
+  return (
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="News" description="News and press about Layer5, the cloud native management company.
     Layer5 the company behind industry-leading, open source software." />
-      <Navigation />
-      <SimpleReactLightbox>
-        <NewsPage data={data} />
-      </SimpleReactLightbox>
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <SimpleReactLightbox>
+          <NewsPage theme={theme} data={data} />
+        </SimpleReactLightbox>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default NewsGridPage;

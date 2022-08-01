@@ -38,7 +38,7 @@ const Emeritus=() => {
       <div className="emeritus-text">
         <h2>Layer5 MeshMate Emeritus</h2>
         <p>
-                    O​nce a MeshMate, always a MeshMate. We thank and salute our previous MeshMates. Each has served the Layer5 community selflessly.
+           Once a MeshMate, always a MeshMate. We thank and salute our previous MeshMates. Each has served the Layer5 community selflessly.
         </p>
       </div>
       <Row>

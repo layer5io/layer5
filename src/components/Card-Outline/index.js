@@ -2,7 +2,7 @@ import React from "react";
 import CardOutlineWrapper from "./card-outline.style";
 
 const CardOutline = (props) => {
-  return(
+  return (
     <CardOutlineWrapper>
       <div className="card-outline">
         <div className="card-image">

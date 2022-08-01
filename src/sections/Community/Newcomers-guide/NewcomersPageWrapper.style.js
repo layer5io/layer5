@@ -39,16 +39,18 @@ export const NewcomersGuideWrapper = styled.section`
       justify-content: center;
       align-self: flex-end;
       margin-right: 2rem;
-      margin-top: -1.5rem;
-      h5{
-      font-size: 1.125rem;
+      margin-top: -1rem;
+      h4{
+      font-size: 1.5rem;
       font-weight: 400;
-      margin-right: 1rem;
+      margin-right: .75rem;
+      margin-top: -1.5rem;
       }
       img{
       height: 3rem;
       width: 4rem;
       transition: .5s;
+      margin-top: -1.5rem;
       }
       img:hover{
       padding-left: 1rem;
@@ -103,12 +105,25 @@ export const NewcomersGuideWrapper = styled.section`
       margin-bottom: 4rem;
     }
     @media only screen and (max-width: 991px) {
-      .heading-start, .heading-start__arrow{
-        display: none;
+      .heading-start {
+        margin-left: auto; margin-right: auto;
+        h4 {
+          font-size: 1.25rem;
+        }
+        img {
+          margin-top: -.3rem;
+          height: 2rem;
+          transition: .5s;
+         transform: rotate(90deg);
+        }
+      }
+      .heading-start__arrow {
+        margin-bottom: 1rem;
+        margin-left: -1.25rem; margin-right: auto;
       }
       .heading{
-        h2{
-          margin-top: 0;
+        h2 {
+          margin-top: -1.5rem;
         }
       }
   }

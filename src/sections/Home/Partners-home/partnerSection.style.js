@@ -1,12 +1,12 @@
 import styled from "styled-components";
-
+import redhat from "../../../assets/images/partners/redhat_black.svg";
 const PartnerItemWrapper = styled.section`
     padding: 2rem 0;
     margin: 0rem 0rem 5rem;
     overflow: hidden;
     .section-title{
         h4{
-            color: ${props => props.theme.primaryLightColor};
+            color: ${props => props.theme.DarkTheme? "#737373": "#b3b3b3"};
             text-align: center;
             margin-top: .5rem;
         }
@@ -52,6 +52,7 @@ const PartnerItemWrapper = styled.section`
     .partner__block__inner {
         padding: 5px;
         margin: 0px;
+        filter:  ${props => props.theme.invertColor};
         display: flex;
         transition: all 0.2s ease-in-out;
         height: 110px;

@@ -1,9 +1,9 @@
 import React from "react";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 
 
 const Faq= () => {
@@ -11,7 +11,7 @@ const Faq= () => {
     <HandbookWrapper>
       <div className="page-header-section">
         <h1>FAQs</h1>
-      </div>  
+      </div>
       <TOC />
       <div className="page-section">
         <Container>
@@ -19,10 +19,10 @@ const Faq= () => {
             <h2>General FAQs:</h2><br/>
             <h4>Q: Are Layer5’s solutions open source?</h4>
             <p>A: Yes, all Layer5 projects are licensed under Apache V2. Layer5 also offers extensions to the Meshery project in which Enterprise-centric functionality is commercially offered and supported.</p>
-              
+
             <h4>Q: I am new to Open Source, where do I begin?</h4>
             <p>A: You can start by going through the <a href="https://docs.google.com/document/d/1tpg2sLxirozNt3Ofr3GdM002f9rExp74EqrsGZBU710/edit#heading=h.rcr9t5pnt3bw">Newcomers’ Welcome Guide.</a></p>
-              
+
             <h4>Q: What exactly is a MeshMate?</h4>
             <p>A:Layer5<Link to="/community/meshmates"> MeshMates </Link>are individuals committed to helping community members be successful contributors. Meshmates are there to guide and support the community members, helping them identify projects they can contribute to depending on their areas of interest, directing them on groups to join and helping them grow in their open-source and cloud native knowledge.</p>
 
@@ -40,10 +40,10 @@ const Faq= () => {
 
             <h4>Q: I am not a coder, can I contribute too?</h4>
             <p>A: Some community members join to contribute to open source projects, others jump in to put those projects to use, some are here to help cultivate and steward our community, while others are here just to hangout and absorb. All members are most welcome. Be sure to introduce yourself in the Layer5<a href="http://slack.layer5.io"> slack </a>and let other community members get acquainted with you and vice-versa.</p>
-              
+
             <h4>Q: What if I can’t find an open issue to work on?</h4>
             <p>A: Check if any assigned issues are stale. ( Assigned some time back, but no discussions have happened or is not updated for a long time ). If you find such issues, comment to ask if you can help. Alternatively, Look to find the <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+archived%3Afalse+org%3Alayer5io+org%3Ameshery+org%3Aservice-mesh-performance+org%3Aservice-mesh-patterns+label%3A%22help+wanted%22+">help-wanted</a> issues.</p>
-              
+
             {/* <p>Q: Why does the community use slack?</p>
             <p>A:</p>
 
@@ -60,10 +60,10 @@ const Faq= () => {
             <p>A:</p> */}
           </div>
         </Container>
-      </div>      
+      </div>
       <TocPagination />
     </HandbookWrapper>
   );
 };
-    
+
 export default Faq;

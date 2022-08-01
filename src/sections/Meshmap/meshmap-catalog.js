@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Row, Col } from "../../reusecore/Layout";
 
 import Mutual_tls from "../../assets/images/meshmap/catalog-card-images/mutual-tls.svg";
 import Retries from "../../assets/images/meshmap/catalog-card-images/retries.svg";
@@ -18,10 +19,10 @@ import Multicluster from "../../assets/images/meshmap/catalog-card-images/multic
 import Http_metrics from "../../assets/images/meshmap/catalog-card-images/http.svg";
 
 
-import Options from "../../assets/images/meshmap/options.png";
-import Options1 from "../../assets/images/meshmap/options1.png";
-import Options2 from "../../assets/images/meshmap/options2.png";
-// import OptionsRotated from "../../assets/images/meshmap/options-rotated.png";
+import Wasm from "../../assets/images/webassembly/webssembly_icon.svg";
+import Patterns from "../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+import Ebpf from "../../assets/images/meshmap/ebpf.svg";
+import Opa from "../../assets/images/meshmap/opa.svg";
 import { Container } from "../../reusecore/Layout";
 
 const CatalogWrapper = styled.div`
@@ -39,15 +40,22 @@ p.caption {
     margin: 0rem 0rem 2.5rem 0rem;
     font-style: normal ;
   }
-.powerupOptions {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center ;
-  align-items: center;
-  img {
-    width: 50%;
+
+.svg-cont{
+  display:flex;
+  justify-content: space-around; 
+  align-items:center; 
+  img{
+    max-width:3.6rem;
+    display:block;
+    margin: 0 auto  ;
+  }
+  p{
+    margin: 0 auto  ;
+    font-weight:600;
   }
 }
+
 
 h2{
 	display: table;
@@ -143,6 +151,134 @@ h3.containerCaption {
   .slide.fifteen {
 	transform: rotateY(336deg) translateZ(382px);
   }
+  
+  @media screen and (max-width: 992px) {
+
+   .container {
+	width: 90px;
+
+   } 
+  .slide.one {
+    transform: rotateY(0deg) translateZ(260px);
+    }
+    .slide.two {
+    transform: rotateY(24deg) translateZ(260px);
+    }
+    .slide.three {
+    transform: rotateY(48deg) translateZ(260px);
+    }
+    .slide.four {
+    transform: rotateY(72deg) translateZ(260px);
+    }
+    .slide.five {
+    transform: rotateY(96deg) translateZ(260px);
+    }
+    .slide.six {
+    transform: rotateY(120deg) translateZ(260px);
+    }
+    .slide.seven {
+    transform: rotateY(144deg) translateZ(260px);
+    }
+    .slide.eight {
+    transform: rotateY(168deg) translateZ(260px);
+    }
+    .slide.nine {
+    transform: rotateY(192deg) translateZ(260px);
+    }
+    .slide.ten {
+    transform: rotateY(216deg) translateZ(260px);
+    }
+    .slide.eleven {
+    transform: rotateY(240deg) translateZ(260px);
+    }
+    .slide.twelve {
+    transform: rotateY(264deg) translateZ(260px);
+    }
+    .slide.thirteen {
+    transform: rotateY(288deg) translateZ(260px);
+    }
+    .slide.fourteen {
+    transform: rotateY(312deg) translateZ(260px);
+    }
+    .slide.fifteen {
+    transform: rotateY(336deg) translateZ(260px);
+    }
+  }
+  @media screen and (max-width: 572px) {
+    
+    .svg-cont{
+      margin: 0 auto;
+      justify-content:space-evenly;
+      align-items:center;
+
+      img{
+        width:2.4rem
+      }
+      p{
+        width:100%; 
+        font-size:1rem;
+        line-height:1.2;
+        padding-top:.3rem;
+        text-align: center;
+      }
+    }
+ 
+    .catalog-wrapper{
+      padding: 2rem;
+    }
+
+   .container {
+	  width: 65px;
+	  margin: 1.5rem auto 0rem;
+
+  
+   } 
+  .slide.one {
+    transform: rotateY(0deg) translateZ(160px);
+    }
+    .slide.two {
+    transform: rotateY(24deg) translateZ(160px);
+    }
+    .slide.three {
+    transform: rotateY(48deg) translateZ(160px);
+    }
+    .slide.four {
+    transform: rotateY(72deg) translateZ(160px);
+    }
+    .slide.five {
+    transform: rotateY(96deg) translateZ(160px);
+    }
+    .slide.six {
+    transform: rotateY(120deg) translateZ(160px);
+    }
+    .slide.seven {
+    transform: rotateY(144deg) translateZ(160px);
+    }
+    .slide.eight {
+    transform: rotateY(168deg) translateZ(160px);
+    }
+    .slide.nine {
+    transform: rotateY(192deg) translateZ(160px);
+    }
+    .slide.ten {
+    transform: rotateY(216deg) translateZ(160px);
+    }
+    .slide.eleven {
+    transform: rotateY(240deg) translateZ(160px);
+    }
+    .slide.twelve {
+    transform: rotateY(264deg) translateZ(160px);
+    }
+    .slide.thirteen {
+    transform: rotateY(288deg) translateZ(160px);
+    }
+    .slide.fourteen {
+    transform: rotateY(312deg) translateZ(160px);
+    }
+    .slide.fifteen {
+    transform: rotateY(336deg) translateZ(160px);
+    }
+  }
 
   @keyframes swirl {   
 	from {
@@ -160,11 +296,33 @@ const Catalog = () => {
     <CatalogWrapper>
       <Container>
         <h2 className="heading">Choose Your Power-ups</h2>
-        <p className="caption">MeshMap integrates with Meshery's <a href="https://meshery.io/catalog">service mesh catalog</a>.</p>
-        <div className="powerupOptions">
-          <img src={Options1} alt="" />
-          <img src={Options2} alt="" />
-        </div>
+        <p className="caption">Save time with design patterns. Turbo-charge your infrastructure with power-ups from the <b><a href="https://meshery.io/catalog">cloud native catalog</a></b>.</p>
+        <Row>
+          <Col md={6} xs={12}>
+            <section className="svg-cont">
+              <div>
+                <img className="patterns" src={Patterns} />
+                <p>Service Patterns</p>
+              </div>
+              <div>
+                <img src={Ebpf} />
+                <p className="ebpf-text">eBPF Programs</p>
+              </div>
+            </section>
+          </Col>
+          <Col md={6} xs={12}>
+            <section className="svg-cont">
+              <div>
+                <img src={Wasm} />
+                <p>WASM Filters</p>
+              </div>
+              <div>
+                <img src={Opa} />
+                <p>OPA Policies</p>
+              </div>
+            </section>
+          </Col>
+        </Row>
         <section className="catalog-wrapper ">
           <div className="container">
             <div id="carousel">
@@ -215,12 +373,12 @@ const Catalog = () => {
               </div>
             </div>
           </div>
-          <h3 className="containerCaption">Discover and publish patterns and best practices
+          <h3 className="containerCaption">Discover best practices. Publish design patterns.
           </h3>
         </section>
 
       </Container>
-    </CatalogWrapper>
+    </CatalogWrapper >
   );
 };
 

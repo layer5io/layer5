@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../../reusecore/Button";
-import { PaginationWrapper, QuizWrapper } from "./paginate.style";
+import { PaginationWrapper } from "./paginate.style";
 import { getActiveServiceMesh } from "../../../utils/getActiveServiceMesh";
 import { getCurrentPage } from "../../../utils/getCurrentPage";
 
-const Pagination = ({ TOCData, chapterData, location, showQuizModal }) => {
+const Pagination = ({ TOCData, chapterData, location }) => {
 
   const [path, setPath] = useState("");
 
@@ -13,7 +13,7 @@ const Pagination = ({ TOCData, chapterData, location, showQuizModal }) => {
 
   useEffect(() => {
     const path = location.pathname.split("/");
-    if(path[2] === "learning-paths"){
+    if (path[2] === "learning-paths"){
       setPath(getCurrentPage(location));
     } else
       return;
@@ -22,10 +22,10 @@ const Pagination = ({ TOCData, chapterData, location, showQuizModal }) => {
   const currentChapterIndx = availableChapters.indexOf(path);
   let nextChapter = "";
   let nextChapterTitle = "";
-  if(currentChapterIndx + 1 <= availableChapters.length - 1) {
+  if (currentChapterIndx + 1 <= availableChapters.length - 1) {
     nextChapter = availableChapters[currentChapterIndx + 1];
-    for(let i = 0; i < TOCData.length; i++){
-      if(TOCData[i].fields.chapter === nextChapter &&
+    for (let i = 0; i < TOCData.length; i++){
+      if (TOCData[i].fields.chapter === nextChapter &&
           TOCData[i].fields.section === getActiveServiceMesh(chapterData)){
         nextChapterTitle = TOCData[i].frontmatter.chapterTitle;
         break;
@@ -50,12 +50,12 @@ const Pagination = ({ TOCData, chapterData, location, showQuizModal }) => {
               external={false} />
           </div>
         </div>
-      </PaginationWrapper>) 
+      </PaginationWrapper>)
       : null
       // : (
       //   <QuizWrapper onClick={showQuizModal}>
       //     <Button secondary title="Take Quiz"
-      //       external={false} 
+      //       external={false}
       //     />
       //   </QuizWrapper>
       // )

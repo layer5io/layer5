@@ -9,7 +9,7 @@ import { Link } from "gatsby";
 // import TOC from "../../../components/Learn-Components/TOC-Learning-Path";
 
 
-const CoursesList = ({ coursesData, learnPath}) => {
+const CoursesList = ({ coursesData, learnPath }) => {
   return (
     <CoursesListWrapper>
       <div className="go-back">

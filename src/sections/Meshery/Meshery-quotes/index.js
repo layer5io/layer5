@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Slider from "react-slick";
 import { Container } from "../../../reusecore/Layout";
-import QuoteCard from "../../../components/QuoteCard";
 
 const MesheryQuotesWrapper = styled.div`
     margin-top: 2rem;
@@ -57,8 +55,8 @@ const MesheryQuotes = () => {
   return (
     <MesheryQuotesWrapper>
       <Container>
-        {/* 
-         Enable after go-live  
+        {/*
+         Enable after go-live
          */}
         {/* <h2>Meshery Users Get Mushy</h2>
         <Slider {...settings}>

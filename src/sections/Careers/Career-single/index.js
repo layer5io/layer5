@@ -9,16 +9,16 @@ import { FiCalendar } from "@react-icons/all-files/fi/FiCalendar";
 import { FiClock } from "@react-icons/all-files/fi/FiClock";
 import { HiOutlineCash } from "@react-icons/all-files/hi/HiOutlineCash";
 import { StaticImage } from "gatsby-plugin-image";
+import Layer5_Icon from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
+import Layer5_LightIcon from "../../../assets/images/layer5/layer5-only/png/layer5-light-bg.png";
 
-const Layer5_Icon = "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
 
-
-const CareerSingle = ({data}) => {
+const CareerSingle = ({ data, theme }) => {
   const { frontmatter, body } = data.mdx;
 
   return (
     <CareerPageWrapper>
-      <PageHeader title={frontmatter.title}/>
+      <PageHeader title={frontmatter.title} />
       <div className="single-post-wrapper">
         <Container>
           <Row className="job-header-row">
@@ -28,7 +28,7 @@ const CareerSingle = ({data}) => {
                   <h5> <FaPlay /> Start Date</h5>
                   <p>{frontmatter.start_date}</p>
                 </Col>
-                {frontmatter.type === "internship" ? <Col xs={6} className="job-details-col"><h5> <FiCalendar/> Duration</h5><p>{frontmatter.duration}</p></Col> : "" }
+                {frontmatter.type === "internship" ? <Col xs={6} className="job-details-col"><h5> <FiCalendar /> Duration</h5><p>{frontmatter.duration}</p></Col> : ""}
                 <Col xs={6} className="job-details-col">
                   <h5> <FaGlobeAmericas /> Location</h5>
                   <p>{frontmatter.location}</p>
@@ -45,7 +45,7 @@ const CareerSingle = ({data}) => {
             </Col>
             <Col xs={12} md={5} xl={4} className="logo-col">
               <div className="layer5-logo">
-                <StaticImage src={Layer5_Icon} alt="Layer5 Logo"/>
+                <img src={theme === "dark" ? Layer5_LightIcon : Layer5_Icon} alt="Layer5 logo" />
               </div>
             </Col>
           </Row>

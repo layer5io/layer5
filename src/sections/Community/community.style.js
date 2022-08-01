@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import BookmarkImage from "./bookmarks.jpg";
 
 const CommunitySectionWrapper = styled.div`
     margin-bottom: 3.25rem;
@@ -11,9 +10,6 @@ const CommunitySectionWrapper = styled.div`
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: url(${BookmarkImage});
-        background-size: cover;
-        background-position: center;
         h1,h3{
             color: white;
         }

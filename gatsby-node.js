@@ -68,9 +68,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogTagListTemplate = path.resolve(
     "src/templates/blog-tag-list.js"
   );
-  const blogViewTemplate = path.resolve(
-    "src/templates/blog.js"
-  );
 
   const EventsTemplate = path.resolve(
     "src/templates/events.js"
@@ -116,9 +113,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/resource-single.js"
   );
 
-  const resourceViewTemplate = path.resolve(
-    "src/templates/resource.js"
-  );
   const res = await graphql(`
      {
        allPosts:  allMdx(
@@ -237,10 +231,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     node => node.fields.collection === "news"
   );
 
-  const projects = allNodes.filter(
-    node => node.fields.collection === "projects"
-  );
-
   const books = allNodes.filter(
     node => node.fields.collection === "service-mesh-books"
   );
@@ -267,14 +257,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   paginate({
     createPage,
-    items: blogs,
-    itemsPerPage: 10,
-    pathPrefix: "/blog",
-    component: blogViewTemplate
-  });
-
-  paginate({
-    createPage,
     items: events,
     itemsPerPage: 9,
     pathPrefix: "/community/events",
@@ -293,11 +275,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogCategory = res.data.blogCategory.group;
   blogCategory.forEach(category => {
-    paginate({
-      createPage,
-      items: category.nodes,
-      itemsPerPage: 6,
-      pathPrefix: `/blog/category/${slugify(category.fieldValue)}`,
+    createPage({
+      path: `/blog/category/${slugify(category.fieldValue)}`,
       component: blogCategoryListTemplate,
       context: {
         category: category.fieldValue,
@@ -307,11 +286,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const BlogTags = res.data.blogTags.group;
   BlogTags.forEach(tag => {
-    paginate({
-      createPage,
-      items: tag.nodes,
-      itemsPerPage: 4,
-      pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
+    createPage({
+      path: `/blog/tag/${slugify(tag.fieldValue)}`,
       component: blogTagListTemplate,
       context: {
         tag: tag.fieldValue,

@@ -9,16 +9,16 @@ export const HandbookWrapper = styled.div`
       width:100%;
       padding-bottom: 2rem;
       ul > li {
-        color: ${(props) => props.theme.menuColor};
+        color: ${(props) => props.theme.text};
       }
       ol > li {
         color: ${(props) => props.theme.menuColor};
       }
       ul > li > span {
-        color: ${(props) => props.theme.black};
+        color: ${(props) => props.theme.text};
       }
       ol > li > span {
-        color: ${(props) => props.theme.black};
+        color: ${(props) => props.theme.text};
       }
     }
 
@@ -99,6 +99,7 @@ export const HandbookWrapper = styled.div`
         display: block;
         margin-left: auto;
         margin-right: auto;
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
       }
       .site-icon{
         height: 1.6rem;
@@ -167,17 +168,29 @@ export const HandbookWrapper = styled.div`
       padding-left: 0.2em;
       padding-bottom: 0.3em;
       margin-right: 0.5em;
+
       margin-bottom: 0.15em;
       vertical-align: bottom;
       color: transparent;
+      background-color: white;
     }
 
     input[type=checkbox] + label:active:before {
       transform: scale(0);
     }
-
+    rect {
+      fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+    }
+    path {
+      stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor: "#00B39F"};
+    }
+    svg {
+      color: "red";
+    }
     input[type=checkbox]:checked + label:before {
-      background-color: ${(props) => props.theme.primaryLightColorTwo};
+      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="black" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
+
+      background-color: ${(props) => props.theme.keppelColor};
       border-color: ${(props) => props.theme.primaryLightColorTwo};
       color: #fff;
     }
@@ -391,5 +404,100 @@ export const HandbookWrapper = styled.div`
   .learn{
     width: 10rem;
   }
+
+
+.writing_program{
+width: 90%;
+@media only screen and (max-width: 900px){
+  width: 100%;
+}
+.list{
+  padding: 1.875rem 0px;
+  table, tr, td{
+    border:none;
+   }
+  .text{
+    p{
+      color: ${props => props.theme.tertiaryColor};
+    }
+  }
+  .listed{
+      text-align: left;
+      .table{
+          .icon{
+              height: 2.5rem;
+              width: 2.5rem;
+              vertical-align: top;
+          }
+          .skill{
+              color: ${props => props.theme.tertiaryColor};
+              font-size: 16px;
+              padding: 0 0 1.25rem 1.8rem;
+              h4{
+                  font-weight: 600;
+              }
+          }
+      }
+  }
+}
+.content_list{
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.content_type { 
+  display: flex;
+  flex-direction: column;
+  background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
+  &:hover{
+      box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
+  }
+  padding: 12% 6% 12% 6%;
+  height: 220px;
+  border-radius: 4%;
+  margin-bottom: 30px;
+  text-align: center;
+  h5{
+      margin-bottom: auto; 
+      margin-top: 0.5rem;
+      font-weight: 700;
+      color: ${props => props.theme.secondaryColor}
+  }
+  p{
+      font-weight: 300;
+      color: ${props => props.theme.text};
+  }
+  img{
+      height: 60px ; 
+      width: auto ;
+  }
+}
+.process {
+  margin: 10px auto;
+  border-left: solid 2px ${(props) => props.theme.tertiaryColor};
+  padding: 0px 20px 0px 20px;
+} 
+.process .item {
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.7;
+  position: relative;
+}
+.item::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: block;
+  border: 3px solid ${(props) => props.theme.tertiaryColor};
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.secondaryColor};
+  top: 25px;
+  left: -32px;
+}
+}
 
 `;

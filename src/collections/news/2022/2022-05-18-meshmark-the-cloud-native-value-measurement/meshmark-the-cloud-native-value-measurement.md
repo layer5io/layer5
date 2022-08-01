@@ -4,6 +4,7 @@ subtitle: "An open index for measuring performance of cloud native infrastructur
 date: 2022-05-17 08:00:00 -0530
 author: The Newsroom
 thumbnail: ../../../../assets/images/meshmark/stacked/meshmark-dark-full.png
+darkthumbnail: ../../../../assets/images/meshmark/stacked/meshmark-dark-full.png
 category: "Press Release"
 presskit: "/press/kits/MeshMark-press-kit.zip"
 description: "Layer5, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure: service meshes. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any service mesh."
@@ -62,7 +63,7 @@ With project maintainers from Layer5, Intel, HashiCorp, and Red Hat, and collabo
 <BlockquoteAlt
   quote="While speed is one of Linkerd's core competitive advantages, Linkerd provides much more than just an ultrafast data plane. We are pleased to support MeshMark's establishment of a higher order set of functional considerations that incorporate value into the performance equation."
   person="William Morgan"
-  title="CEO of Buoyant and one of the creators of Linkerd, the CNCF's flagship service mesh" 
+  title="CEO of Buoyant and one of the creators of Linkerd" 
   />
 
 <p>

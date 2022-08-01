@@ -1,29 +1,29 @@
 import React from "react";
 import CardWrapper from "./learn-card.style";
 import Image from "../../image";
-import { Link} from "gatsby";
+import { Link } from "gatsby";
 
-const CardComponent = ({ tutorial, path, courseCount}) => {
+const CardComponent = ({ tutorial, path, courseCount }) => {
 
   return (
     <CardWrapper>
       {tutorial.frontmatter.disabled === "yes" ?  (
         <div
-          style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}`, backgroundColor: "#e6e6e6" }}
-          className="card-parent"
+          style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}`, }}
+          className="card-parent card-2"
         >
-           
+
           <div>
             <div className="card-head">
-               
+
               <h3>
                 {tutorial.frontmatter.title
                   ? tutorial.frontmatter.title
                   : tutorial.frontmatter.courseTitle}
               </h3>
-              <div style={{whiteSpace: "nowrap"}}>
+              <div style={{ whiteSpace: "nowrap" }}>
                 <span>Coming Soon</span>
-              </div> 
+              </div>
             </div>
             <div className="card-desc">
               <p className="summary">{tutorial.frontmatter.description}</p>
@@ -36,16 +36,16 @@ const CardComponent = ({ tutorial, path, courseCount}) => {
             />
           </div>
         </div>
-      ) : 
+      ) :
         <Link to={path} className="card-link">
           <div
-            style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}`}}
+            style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}` }}
             className="card-parent"
           >
-         
+
             <div>
               <div className="card-head">
-             
+
                 <h3>
                   {tutorial.frontmatter.title
                     ? tutorial.frontmatter.title
@@ -70,7 +70,7 @@ const CardComponent = ({ tutorial, path, courseCount}) => {
                 alt={tutorial.frontmatter.title}
               />
             </div>
-          </div>  
+          </div>
         </Link>
       }
     </CardWrapper>

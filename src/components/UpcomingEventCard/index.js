@@ -3,11 +3,9 @@ import Image from "../image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import UpcomingEventsWrapper from "./EventCard.style";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Mousewheel } from "swiper";
-import "swiper/swiper-bundle.css";
+import { Pagination, Mousewheel } from "swiper";
+import "swiper/css/bundle";
 import Button from "../../reusecore/Button";
-
-SwiperCore.use([Pagination, Mousewheel]);
 
 
 const UpcomingEvents = ({ data }) => {
@@ -19,11 +17,11 @@ const UpcomingEvents = ({ data }) => {
           <Swiper
             spaceBetween={100}
             slidesPerView={1}
-            mousewheel
+            modules={[Mousewheel, Pagination]}
             pagination={{ clickable: true }}
           >
             {data.nodes.map(item => {
-              return(
+              return (
                 <SwiperSlide key={item.id}>
                   <div className="blog-slider_item swiper-slide">
                     <div className="blog-slider_img">

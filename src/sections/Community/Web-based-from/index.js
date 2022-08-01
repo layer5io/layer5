@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Webform from "./webform.style";
 import SlackLinkNotif from "../../../components/SlackLinkNotif";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import img1 from "./Rectangle 471.png";
-import img2 from "./Vector.png";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import { Link } from "gatsby";
@@ -74,7 +72,7 @@ const WebBasedForm = () => {
   };
 
   const MemberFormStart = () => {
-    
+
     return (
       <Container>
         <h2 className="title">New Community Member</h2>
@@ -192,7 +190,7 @@ const WebBasedForm = () => {
             <Button onClick={() => setStepNumber(2)} secondary type="submit" className="btn-next" title="Next Step" />
           </div>
         </div>
-       
+
         <br /><br /><br /><br />
       </Container>
     );
@@ -583,7 +581,7 @@ const WebBasedForm = () => {
             expect: false,
             highlighted: false,
             paid: false,
-            affiliated:  false,
+            affiliated: false,
             help: MemberFormFourValue.help ? MemberFormFourValue.help : ""
           }}
           onSubmit={values => {

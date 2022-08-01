@@ -2,7 +2,7 @@ import React from "react";
 
 import DoYouNeedWrapper from "./doYouNeedService.style";
 
-const DoYouNeedService = ({onClick}) => {
+const DoYouNeedService = ({ onClick }) => {
   return (
     <DoYouNeedWrapper>
       <div id="content">

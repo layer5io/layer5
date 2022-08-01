@@ -12,7 +12,9 @@ import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
 export const WorkshopsListWrapper = styled.div`
 
 	margin: 4rem 0;
-
+	Button:hover {
+		box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+	  }
 	.workshops-col {
 			margin: auto;
 	}
@@ -95,7 +97,7 @@ export const WorkshopsListWrapper = styled.div`
 
 			p {
 				font-size: 1.85rem;
-				color: rgba(0,0,0,0.6)
+				color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
 			}
 		}
 	}
@@ -233,12 +235,12 @@ const WorkshopsSection = () => {
           <h1>Workshops</h1>
           <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
           <div className="see-more-button">
-            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops"/>
+            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops" />
           </div>
         </Col>
         <Col xs={12} md={9} className="workshops-col">
           <Row>
-            {data.allMdx.nodes.slice(0, 3).map(({frontmatter, fields}, index) => (
+            {data.allMdx.nodes.slice(0, 3).map(({ frontmatter, fields }, index) => (
               <Col xs={12} sm={6} xl={4} className="workshops-card" key={index}>
                 <Link to={fields.slug} >
                   <div className="workshop-thumbnails">

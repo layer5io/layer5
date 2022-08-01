@@ -4,9 +4,10 @@ import utaustin from "../../../assets/images/partners/ut-austin_black.svg";
 import citrix from "../../../assets/images/partners/citrix.svg";
 import hashicorp from "../../../assets/images/partners/hashicorp_vertical_black.svg";
 import hpe from "../../../assets/images/partners/hpe_side_black.svg";
-import nitk from "../../../assets/images/partners/nitk_black.png";
+import nitk from "../../../assets/images/partners/nitk_black.svg";
 import rackspace from "../../../assets/images/partners/rackspace_black.svg";
 import intel from "../../../assets/images/partners/intel-grey.svg";
+import vmware from "../../../assets/images/partners/vmware.svg";
 
 
 export const partners = [
@@ -57,5 +58,11 @@ export const partners = [
     imageLink: uem,
     imageRoute: "/partners#uem",
     innerDivStyle: "partner__block__inner"
+  }, {
+    name: "VMware",
+    imageLink: vmware,
+    imageRoute: "/partners#VMware",
+    innerDivStyle: "partner__block__inner",
   }
-];  
+
+];
