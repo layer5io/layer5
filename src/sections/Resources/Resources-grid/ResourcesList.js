@@ -8,7 +8,7 @@ import useDataList from "../../../utils/usedataList";
 
 
 
-const ResourcesList = (props) => {
+const ResourcesList = (props, { theme }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const { queryResults, searchData } = useDataList(
     props.allResources.allMdx.nodes,
@@ -27,10 +27,10 @@ const ResourcesList = (props) => {
   let result = [];
 
   //arrays storing the options selected to filter
-  let types =[];
-  let products =[];
-  let tech =[];
-  let mesh =[];
+  let types = [];
+  let products = [];
+  let tech = [];
+  let mesh = [];
 
   const optionData = React.useMemo(() => options);
   let typeOptions = optionData.filter((data) => data.category === "Type");
@@ -41,22 +41,22 @@ const ResourcesList = (props) => {
   //mapping all filters to separate individual category filters
   props.resource.map((type) => {
     typeOptions[0].subdata.map((x) => {
-      if (type === x.value){
+      if (type === x.value) {
         types.push(type);
       }
     });
     productOptions[0].subdata.map((x) => {
-      if (type === x.value){
+      if (type === x.value) {
         products.push(type);
       }
     });
     techOptions[0].subdata.map((x) => {
-      if (type === x.value){
+      if (type === x.value) {
         tech.push(type);
       }
     });
     meshOptions[0].subdata.map((x) => {
-      if (type === x.value){
+      if (type === x.value) {
         mesh.push(type);
       }
     });
@@ -67,7 +67,7 @@ const ResourcesList = (props) => {
   let totalTech = tech.length;
   let totalMesh = mesh.length;
 
-  if (props.resource.length>0) {
+  if (props.resource.length > 0) {
     queryResults.forEach((resources) => {
 
       all.push(resources);
@@ -102,7 +102,7 @@ const ResourcesList = (props) => {
       if (totalMesh === 0) meshData = all;
 
       result = [typeData, productData, techData, meshData],
-      data = result.reduce((a, b) => a.filter(c => b.includes(c)));
+        data = result.reduce((a, b) => a.filter(c => b.includes(c)));
     });
   } else {
     queryResults.forEach((resources) => {
@@ -110,7 +110,7 @@ const ResourcesList = (props) => {
     });
   }
 
-  return <ResourcesGrid data={[...new Set(data)]} {...props} searchData={searchData} searchQuery={searchQuery} />;
+  return <ResourcesGrid theme={theme} data={[...new Set(data)]} {...props} searchData={searchData} searchQuery={searchQuery} />;
 };
 
 export default DataWrapper(ResourcesList);

@@ -43,6 +43,14 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
             gatsbyImageData(layout: FULL_WIDTH)
           }
         }
+        darkthumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
       }
     }
   }
@@ -166,7 +174,7 @@ const Events = ({ data, pageContext }) => {
         <GlobalStyle />
         <SEO title="Events" description="Join Layer5 at upcoming events." />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <Meetups data={data} pageContext={pageContext} />
+        <Meetups theme={theme} data={data} pageContext={pageContext} />
         <Footer />
       </Layout>
     </ThemeProvider>

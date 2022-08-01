@@ -11,7 +11,7 @@ const Card = ({ frontmatter, fields, theme }) => {
       <div className="post-block">
         <div className="post-thumb-block">
           <Image
-            {...(theme ==="dark"? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+            {...(theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
             imgStyle={{ objectFit: "contain" }}
             alt={frontmatter.title}
           />
@@ -21,7 +21,7 @@ const Card = ({ frontmatter, fields, theme }) => {
             {frontmatter.title}
           </h2>
           <div className="post-meta-block">
-            {frontmatter.date && frontmatter.author &&(
+            {frontmatter.date && frontmatter.author && (
               <>
                 <p>{frontmatter.date}</p>
                 <p className="author">{frontmatter.author}</p>
@@ -38,19 +38,19 @@ const Card = ({ frontmatter, fields, theme }) => {
             )}
           </div>
           <div className="readmore-btn-wrapper">
-            { fields && fields.slug && frontmatter.eurl && (
+            {fields && fields.slug && frontmatter.eurl && (
               <>
                 <Link className="readmore-btn" to={fields.slug}>
-                                    see more <IoIosArrowRoundForward />
+                  see more <IoIosArrowRoundForward />
                 </Link>
                 <a className="external-link-btn" href={frontmatter.eurl} target="_blank" rel="noreferrer">
                   <BiLinkExternal />
                 </a>
               </>
             )}
-            { fields && fields.slug && !frontmatter.eurl && (
+            {fields && fields.slug && !frontmatter.eurl && (
               <Link className="readmore-btn" to={fields.slug}>
-                                see more <IoIosArrowRoundForward />
+                see more <IoIosArrowRoundForward />
               </Link>
             )}
             {!fields && !fields.slug && frontmatter.eurl && (
