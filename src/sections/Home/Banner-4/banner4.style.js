@@ -81,9 +81,11 @@ const Banner1SectionWrapper = styled.section`
                 font-size: 3rem;
                 line-height: 3.5rem;
                 margin: 0 0 1rem 0;
+                color: black;
             }
             h2 {
                 font-size: 2rem;
+                color: black;
             }
         }
         p {
