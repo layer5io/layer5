@@ -1,15 +1,10 @@
 import styled from "styled-components";
-import smp from "../../../assets/images/smp-page/smp-hero.png";
 import cncf from "../../../assets/images/smp-page/cncf-icon.png";
 
 const SMPWrapper = styled.section`
     margin-bottom: 3.25rem;
     .smp-hero{
-        background-image: url("${smp}");
         height: 34.4rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         .hero-text{
             padding: 9.375rem 0 6.25rem 0;
             h1{

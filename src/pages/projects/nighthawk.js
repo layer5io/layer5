@@ -31,7 +31,7 @@ const NighthawkPage = () => {
         <GlobalStyle />
         <SEO title="Nighthawk"
           description="Layer5 is the maker of Meshery,  Service Mesh Performance (SMP), Nighthawk and maintainers of Service Mesh Interface (SMI).
-            We are the largest collection of service mesh projects and their maintainers in the world.
+            We are the largest collection of cloud native projects and their maintainers in the world.
             Contact Layer5 for help with operating a service mesh."
         />
         <Navigation theme={theme} themeSetter={themeSetter} />

@@ -199,7 +199,7 @@ const MembersPage = () => {
         <GlobalStyle />
         <SEO
           title="Members"
-          description="Members - The Layer5 contributors list"
+          description="An awarding-winning, open source community with a warm and welcoming collection of contributors."
         />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Dropdown options={options} handleChange={handleChange} />

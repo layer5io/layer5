@@ -15,19 +15,43 @@ import NewcomersMap from "./Newcomers-guide/newcomers-map.js";
 import DiscussCallout from "../../sections/Discuss-Callout";
 import MeshmateIcon from "../../assets/images/meshmate/meshmate-stack.svg";
 import lightMeshmateIcon from "../../assets/images/meshmate/meshmate-stack-light.svg";
-
+import { graphql, useStaticQuery } from "gatsby";
+import { getImage } from "gatsby-plugin-image";
+import { BgImage } from "gbimage-bridge";
 
 const CommunityMember = "./Community-pictures/Lee Calcote and Oliver Gould - CTO of Buoyant.jpg";
 
 
-const CommunityPage = ( { theme }) => {
+const CommunityPage = ({ theme }) => {
+
+  const { backgroundImage123 } = useStaticQuery(
+    graphql`
+      query {
+        backgroundImage123: file(
+          relativePath: { eq: "bookmarks.jpg" }
+        ) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 2000
+              quality: 50
+              webpOptions: { quality: 70 }
+            )
+          }
+        }
+      }
+    `
+  );
+
+  const pluginImage = getImage(backgroundImage123);
 
   return (
     <CommunitySectionWrapper>
-      <div className="community-header">
-        <h1>The Layer5 Community</h1>
-        <h3>New members are always welcome</h3>
-      </div>
+      <BgImage image={pluginImage} className="section">
+        <div className="community-header">
+          <h1>The Layer5 Community</h1>
+          <h3>New members are always welcome</h3>
+        </div>
+      </BgImage>
       <div className="community-section-wrapper">
         <Container>
           <Row className="service-mesh-projects">
@@ -94,7 +118,7 @@ const CommunityPage = ( { theme }) => {
               </p>
             </Col>
             <Col sm={12} lg={6}>
-              <img src={theme =="dark"? lightMeshmateIcon: MeshmateIcon} alt="MeshMate Icon" className="meshmate-img" />
+              <img src={theme == "dark" ? lightMeshmateIcon : MeshmateIcon} alt="MeshMate Icon" className="meshmate-img" />
               <Link className="meshmate-link" to="/community/meshmates">
                 <h3>Open Source Mentorship Program</h3>
                 <button className="icon">

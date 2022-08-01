@@ -28,7 +28,7 @@ const LearningPathsPage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Learn Service Mesh"
+        <SEO title="DevOps, GitOps, and Cloud Native Learning Paths"
           description="Learn to build an application using service meshes like Istio, Linkerd"
           image="/images/workshops.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />

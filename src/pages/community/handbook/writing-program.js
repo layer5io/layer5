@@ -30,7 +30,7 @@ const Faq = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Writing Program" description="The Layer5 Writing Program is a way to demonstrate your expertise, give back to the community, and help us produce great content." />
+        <SEO title="Writing Program" description="Work with authors and technologists from around the world to share your knowledge of cloud native infrastructure, modern application management, Kubernetes, service meshes and related technologies." />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <Writers />
         <Footer />
