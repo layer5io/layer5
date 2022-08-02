@@ -40,7 +40,7 @@ const Banner1 = () => {
         </Col>
         <Col sm={4} lg={6} className="section-title-wrapper video-col">
           <Link to="/cloud-native-management/meshmap">
-            <video autoPlay muted loop preload="metadata" className="meshmapVideo">
+            <video autoPlay muted loop className="meshmapVideo">
               <source src={meshmapVideo} type="video/mp4"></source>
             </video>
           </Link>
