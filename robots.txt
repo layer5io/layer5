@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://layer5.io/sitemap.xml
+Sitemap: https://layer5.io/sitemap/sitemap-index.xml
 Host: https://layer5.io
