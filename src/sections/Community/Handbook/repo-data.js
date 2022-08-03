@@ -83,6 +83,13 @@ export const repo_data = [
         language: "Discourse",
         repository: " https://discuss.layer5.io",
       },
+      {
+        project: "Service Mesh Patterns",
+        image: patterns,
+        site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
+        language: "JavaScript",
+        repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
+      },
     ],
   },
 
