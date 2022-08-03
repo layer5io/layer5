@@ -21,7 +21,12 @@ module.exports = {
         disable: true
       }
     },
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        output: "/",
+      }
+    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-react-helmet-canonical-urls",
@@ -506,7 +511,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://layer5.io",
-        sitemap: "https://layer5.io/sitemap/sitemap-index.xml",
+        sitemap: "https://layer5.io/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       }
     },
