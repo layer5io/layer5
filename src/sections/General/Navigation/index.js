@@ -161,7 +161,6 @@ const Navigation = ({ theme, themeSetter }) => {
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [themeToggle, setthemeToggle] = useState(false);
-  const [checked, setChecked] = React.useState(true);
   const defaultTheme = "light";
   const handle = () => {
     theme === "dark" ? setthemeToggle(true) : setthemeToggle(false);
