@@ -3,15 +3,15 @@ import styled from "styled-components";
 const ContentCardWrapper = styled.div`
   padding: 2.5rem;
   margin: 2rem 0;
-  background-color: ${props => props.theme.DarkTheme ? "#111111" :"#fafafa"};
+  background-color: ${props => props.theme.DarkTheme ? "#111111" : "#fafafa"};
   display: flex;
-  border: 1px solid ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.3)" :"rgba(0 ,0 ,0 ,0.1)"};
+  border: 1px solid ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.3)" : "rgba(0 ,0 ,0 ,0.1)"};
   justify-content: space-between;
   :hover {
     transition: background 150ms ease-out 0s, border 150ms ease-out 0s,
       transform 150ms ease-out 0s;
     transform: translate3d(0px, -1px, 0px);
-    box-shadow:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.08)" :"rgba(0 ,0 ,0 ,0.08)"} 0px 8px 16px 0px;
+    box-shadow:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.08)" : "rgba(0 ,0 ,0 ,0.08)"} 0px 8px 16px 0px;
   }
 
   .chapter-content {
@@ -20,7 +20,7 @@ const ContentCardWrapper = styled.div`
     .chapter-number {
         font-size: 2rem;
         margin: 0 2rem 0 1rem;
-        color:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.4)" :"rgba(0 ,0 ,0 ,0.4)"};
+        color:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.4)" : "rgba(0 ,0 ,0 ,0.4)"};
         align-self: center;
     }
     .chapter-desc {
@@ -29,7 +29,7 @@ const ContentCardWrapper = styled.div`
       }
       p {
           margin: 0.35rem 0;
-          color:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.4)" :"rgba(0 ,0 ,0 ,0.4)"};
+          color:  ${props => props.theme.DarkTheme ? "rgba(255 ,255 ,255 ,0.4)" : "rgba(0 ,0 ,0 ,0.4)"};
       }
     }
   }

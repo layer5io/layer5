@@ -1,4 +1,4 @@
-export const proxies=[
+export const proxies = [
   {
     name: "A10 Lightning ADC",
     link: "https://www.a10networks.com/products/lightning-adc/",

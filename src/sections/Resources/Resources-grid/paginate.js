@@ -12,7 +12,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
     <ResourcePageWrapper>
       <div className="btn-container">
         {pageNumbers.map(number => (
-          <button key={number} onClick={() => paginate(number)} className={(number === currentPage) ? "btn active-btn": "btn page-btn"}>
+          <button key={number} onClick={() => paginate(number)} className={(number === currentPage) ? "btn active-btn" : "btn page-btn"}>
             {number}
           </button>
         ))}

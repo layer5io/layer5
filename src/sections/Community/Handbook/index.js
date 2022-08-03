@@ -3,7 +3,7 @@ import { HandbookWrapper } from "./Handbook.style";
 import HandbookCard from "../../../components/HandbookCard/index";
 
 
-const handbookHome= () => {
+const handbookHome = () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">

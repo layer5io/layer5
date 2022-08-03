@@ -108,7 +108,7 @@ const SoSpecial = ({ theme }) => {
                 <div id="special-cont" >
                   <div id="special-cont_img">
                     <Image
-                      {...(theme ==="dark"? frontmatter.darkthumbnail : frontmatter.thumbnail)}
+                      {...(theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     />

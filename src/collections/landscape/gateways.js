@@ -1,4 +1,4 @@
-export const gateways=[
+export const gateways = [
   {
     name: "Ambassador",
     link: "https://getambassador.io",

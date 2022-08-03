@@ -138,7 +138,7 @@ export const MemberSingleWrapper = styled.div`
                     }
                     
                     svg{
-                        color: ${props => props.theme.DarkTheme? "white": "greyscale"};
+                        color: ${props => props.theme.DarkTheme ? "white" : "greyscale"};
                         display: block;
                         width: 2rem;
                     }

@@ -57,7 +57,7 @@ const Terminal = ({ lines, title, noScroll }) => {
           <div className="code-wrapper">
             {lines && lines.map((line, index) => (
               <Fragment key={index}>
-                <pre className={`${line.short ? "short": ""} ${line.color ? line.color: "blue"}`} >
+                <pre className={`${line.short ? "short" : ""} ${line.color ? line.color : "blue"}`} >
                   {line.indent &&
                             new Array(line.indent * 2)
                               .fill({})
