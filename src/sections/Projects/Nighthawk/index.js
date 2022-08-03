@@ -37,7 +37,7 @@ const Projects = ({ theme }) => {
         <div className="hero-section">
           <Row>
             <Col lg={6} md={6} sm={12}>
-              <img src={theme ==="dark"? Lightlogo : logo} className="logo" alt="Nighthawk Logo"/>
+              <img src={theme === "dark" ? Lightlogo : logo} className="logo" alt="Nighthawk Logo"/>
             </Col>
             <Col lg={6} md={6} sm={12}>
               <div className="hero-text">
@@ -115,7 +115,7 @@ const Projects = ({ theme }) => {
               <CardsContainer>
                 <div className="card">
                   <div className="circle">
-                    <img src={theme ==="dark"? lightSmpIcon : smpIcon} className="smp" alt="smp logo" />
+                    <img src={theme === "dark" ? lightSmpIcon : smpIcon} className="smp" alt="smp logo" />
                   </div>
                   <h2>SERVICE MESH PERFORMANCE COMPATIBILITY</h2>
                   <p>Enabling Standards-based, Distributed Performance Management - Nighthawk integrates Meshery and Nighthawk. Through this integration Meshery facilitates <Link to="/projects/service-mesh-performance">Service Mesh Performance (SMP)</Link> compatibility for Nighthawk.</p>

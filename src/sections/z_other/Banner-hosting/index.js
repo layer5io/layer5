@@ -10,7 +10,7 @@ import BannerSectionWrapper from "./banner.style";
 import imgHero1 from "../../../assets/images/hosting/hosting/banner/01.png";
 import imgHero2 from "../../../assets/images/hosting/hosting/banner/02.png";
 
-const BannerHosting= () => {
+const BannerHosting = () => {
   return (
     <BannerSectionWrapper>
       <img src={imgHero1} alt="img" className="section-particle one"/>

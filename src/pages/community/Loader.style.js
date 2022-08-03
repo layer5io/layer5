@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const Loader=styled.div`
+const Loader = styled.div`
         width: 100vw;
         height: 100vh;
         .loading-modal{

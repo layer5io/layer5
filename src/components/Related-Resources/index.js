@@ -34,7 +34,7 @@ const RelatedResources = props => {
                           <Card frontmatter={resource.frontmatter} fields={resource.fields}/>
                         </Col>
                       );
-                    }):relatedResources.map((resource) => {
+                    }) : relatedResources.map((resource) => {
                       return (
                         <Col className="cardCol" xs={12} key={resource.fields.slug}>
                           <Card frontmatter={resource.frontmatter} fields={resource.fields}/>

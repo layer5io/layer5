@@ -1,6 +1,5 @@
 import React from "react";
 
-import { ThemeProvider } from "styled-components";
 import Layout from "../../components/layout";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
@@ -14,7 +13,6 @@ import mesheryDemo from "../../assets/video/meshery/meshery-full-perf-720p.mp4";
 import DockerExtensionCTA from "../Docker-Meshery/docker-extension-CTA";
 
 import MesheryWrapper from "./meshery.style";
-import theme from "../../theme/app/themeStyles";
 import FeaturesSection from "./Features-section";
 import Features from "./Meshery-features";
 

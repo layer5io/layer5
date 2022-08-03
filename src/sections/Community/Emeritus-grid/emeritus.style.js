@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const EmeritusWrapper=styled.div`
+export const EmeritusWrapper = styled.div`
     margin-bottom: 50px;
     .emeritus-text{
         text-align: center;

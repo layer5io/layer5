@@ -36,7 +36,7 @@ const IndexPage = () => {
   }
 
 
-  const schema= {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "Corporation",
     "name": "Layer5",
@@ -50,7 +50,7 @@ const IndexPage = () => {
     ]
   };
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <GlobalStyle />
       <SEO title="Layer5" description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of service mesh standards. Maker of Meshery, the cloud native management plane."
         schemaMarkup={schema} />

@@ -17,7 +17,7 @@ export const FeaturesSectionContainer = styled.div`
     fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
   }
   path {
-    stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor: "#00B39F"};
+    stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
   }
   @media (max-width: 1198px) {
     grid-template-columns: repeat(auto-fill, 17rem);
@@ -45,8 +45,8 @@ export const FeaturesSectionContainer = styled.div`
 `;
 
 export const FeatureBlockContainer = styled.div`
-  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.05)" :"rgba(0, 0, 0, 0.05)"};
-  background-color:	${props => props.theme.DarkTheme? "#212121": "#FFFFFF"};
+  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.05)" : "rgba(0, 0, 0, 0.05)"};
+  background-color:	${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
   border-radius: 1.25rem;
   transition: all 0.3s ease-in;
   display: flex;

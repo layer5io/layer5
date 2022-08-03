@@ -6,7 +6,7 @@ const PartnerItemWrapper = styled.section`
     overflow: hidden;
     .section-title{
         h4{
-            color: ${props => props.theme.DarkTheme? "#737373": "#b3b3b3"};
+            color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};
             text-align: center;
             margin-top: .5rem;
         }

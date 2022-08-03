@@ -34,7 +34,7 @@ const CoursesList = ({ coursesData, learnPath }) => {
                 return (
                   <Col sm={12} key={tutorial.id} name={tutorial.frontmatter.courseTitle}>
                     <Link to={tutorial.fields.course}>
-                      <ContentCard chapterNum={index+1} chapter={tutorial} />
+                      <ContentCard chapterNum={index + 1} chapter={tutorial} />
                     </Link>
                   </Col>
                 );

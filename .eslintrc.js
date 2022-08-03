@@ -82,6 +82,16 @@ module.exports = {
       "error",
       "always"
     ],
-    "strict": 0
+    "strict": 0,
+    "valid-typeof": 0,
+    "space-unary-ops": [
+      1, {
+        "words": true,
+        "nonwords": false
+      }
+    ],
+    "space-infix-ops": [
+      "error"
+    ]
   }
 };
