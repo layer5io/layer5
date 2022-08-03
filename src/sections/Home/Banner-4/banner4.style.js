@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import poster from "./poster.png";
+import Meshmap from "./maps.svg";
 
-const Banner1SectionWrapper = styled.section`
+const Banner4SectionWrapper = styled.section`
     top: 3.2rem;
     padding-bottom: 2rem;
     .background-svg {
@@ -81,11 +81,9 @@ const Banner1SectionWrapper = styled.section`
                 font-size: 3rem;
                 line-height: 3.5rem;
                 margin: 0 0 1rem 0;
-                color: black;
             }
             h2 {
                 font-size: 2rem;
-                color: black;
             }
         }
         p {
@@ -140,11 +138,10 @@ const Banner1SectionWrapper = styled.section`
      @media only screen and (max-width: 760px) {
         padding: 5rem 0;
         margin: 0;
-        background-image: url(${poster});  
+        background-image: url(${Meshmap});  
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: center; 
-        box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.7);
         .section-title-wrapper {
             min-width: 100%;
         }
@@ -241,4 +238,4 @@ const Banner1SectionWrapper = styled.section`
      
 `;
 
-export default Banner1SectionWrapper;
+export default Banner4SectionWrapper;

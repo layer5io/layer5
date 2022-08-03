@@ -7,15 +7,14 @@ import Button from "../../../reusecore/Button";
 import VintageBox from "../../../reusecore/VintageBox";
 
 import { FaMapMarkedAlt } from "@react-icons/all-files/fa/FaMapMarkedAlt";
-import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
 
-import Banner1SectionWrapper from "./banner4.style";
+import Banner4SectionWrapper from "./banner4.style";
 
 import meshmapVideo from "../../../assets/video/meshery/meshmap/meshmap-short-consul.mp4";
 
 const Banner1 = () => {
   return (
-    <Banner1SectionWrapper>
+    <Banner4SectionWrapper>
       <Row>
         <Col sm={4} lg={6} className="section-title-wrapper text-col">
           <Container fullWidthSM>
@@ -40,13 +39,13 @@ const Banner1 = () => {
         </Col>
         <Col sm={4} lg={6} className="section-title-wrapper video-col">
           <Link to="/cloud-native-management/meshmap">
-            <video autoPlay muted loop className="meshmapVideo">
+            <video autoPlay muted loop width="100%" height="auto" className="meshmapVideo">
               <source src={meshmapVideo} type="video/mp4"></source>
             </video>
           </Link>
         </Col>
       </Row>
-    </Banner1SectionWrapper>
+    </Banner4SectionWrapper>
   );
 };
 
