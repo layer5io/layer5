@@ -21,7 +21,7 @@ const integrations = () => {
   }, []);
 
   // prevents ssr flash for mismatched dark mode
-  if (! mounted) {
+  if (!mounted) {
     return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
   }
 
