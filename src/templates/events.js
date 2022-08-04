@@ -56,7 +56,7 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
   }
   allMeetups: allMdx(
     sort: {fields: frontmatter___date, order: DESC}
-    filter: {frontmatter: {type: {eq: "Meetups"}}}
+    filter: {frontmatter: {type: {eq: "Meetups"}, published: {eq: true}}}
   ) {
     totalCount
     nodes {
@@ -74,6 +74,17 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
         type
         date(formatString: "MMM Do, YYYY")
         thumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+        darkthumbnail {
+          publicURL
+          relativePath
+          extension
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
@@ -102,10 +113,18 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
             gatsbyImageData(layout: FULL_WIDTH)
           }
         }
+        darkthumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
       }
     }
   }
-  allEvents: allMdx(filter: {frontmatter: {type: {eq: "Event"}}}) {
+  allEvents: allMdx(filter: {frontmatter: {type: {eq: "Event"}, published: {eq: true}}}) {
     nodes {
       id
       fields {
@@ -117,6 +136,14 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
         title
         date(formatString: "MMM Do, YYYY")
         thumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+        darkthumbnail {
           publicURL
           relativePath
           extension
@@ -141,6 +168,14 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
         eurl
         date(formatString: "MMM Do, YYYY")
         thumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+        darkthumbnail {
           publicURL
           relativePath
           extension
