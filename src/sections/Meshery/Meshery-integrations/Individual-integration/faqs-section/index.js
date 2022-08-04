@@ -12,7 +12,7 @@ import { IoIosArrowUp } from "@react-icons/all-files/io/IoIosArrowUp";
 import FaqSectionWrapper from "../../../../General/Faq/faqSection.style";
 import React from "react";
 
-const index = ({ faqs }) => {
+const index = (props) => {
   return (
     <FaqSectionWrapper>
       <div style={{ maxWidth: "800px", margin: "0 auto" }}>
@@ -33,7 +33,7 @@ const index = ({ faqs }) => {
           >
             Frequently Asked Questions
           </h2>
-          {faqs.map((faq, index) => (
+          {props.data.map((faq, index) => (
             <AccordionItem key={index}>
               <AccordionTitle>
                 <IconWrapper>
