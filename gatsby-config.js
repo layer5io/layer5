@@ -380,14 +380,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "communityImageSlider",
-        path: `${__dirname}/src/assets/images/Community-pictures`,
-      },
-    },
-
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         path: `${__dirname}/src/collections/blog`,
         name: "blog",
       },
