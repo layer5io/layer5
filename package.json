@@ -39,7 +39,7 @@
     "dedent": "^0.7.0",
     "deepmerge": "^4.2.2",
     "formik": "^2.2.9",
-    "gatsby": "^4.19.2",
+    "gatsby": "^4.20.0",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-background-image": "^1.6.0",
     "gatsby-cli": "^4.19.0",
