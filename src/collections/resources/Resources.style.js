@@ -150,6 +150,10 @@ div.fact-left {
     color: #3c494f;
     text-align: center;
   }
+  .btn-center{
+    display: block;
+    margin: auto;
+  }
   
   img.right {
     width: 40%;
