@@ -79,7 +79,7 @@ export const repo_data = [
         project: "Service Mesh Patterns",
         image: patterns,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
-        language: "JavaScript",
+        language: "Gatsby",
         repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
       {
