@@ -114,102 +114,78 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
 
   const res = await graphql(`
-     {
-       allPosts:  allMdx(
-         filter: { frontmatter: { published: { eq: true } } }
-       ) {
-         nodes {
-           frontmatter{
-             program
-             programSlug
-           }
-           fields {
-             collection
-             slug
-           }
-         }
-       }
-       blogTags: allMdx(
-         filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-         ){
-           group(field: frontmatter___tags) {
-             nodes{
-               id
-             }
-             fieldValue
-           }
-       }
-       blogCategory: allMdx(
-         filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-         ){
-           group(field: frontmatter___category) {
-             nodes{
-               id
-             }
-             fieldValue
-           }
-       }
-       allCollections: allMdx(
-         filter: {fields: {collection: {eq: "events"}}}
-       ){
-         nodes{
-           fields{
-             slug
-             collection
-           }
-         }
-       }
-       singleWorkshop: allMdx(
-         filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
-       ){
-         nodes{
-           fields{
-             slug
-             collection
-           }
-         }
-       }
-       labs: allMdx(
-         filter: {fields: {collection: {eq: "service-mesh-labs"}}}
-       ){
-         nodes{
-           fields{
-             slug
-             collection
-           }
-         }
-       }
-       allResources:  allMdx(
-         filter: { frontmatter: { published: { eq: true } } }
-       ) {
-         nodes {
-           frontmatter{
-             program
-             programSlug
-           }
-           fields {
-             collection
-             slug
-           }
-         }
-       }
-       learncontent: allMdx(
-         filter: {fields: {collection: {eq: "content-learn"}}}
-       ){
-         nodes{
-           fields{
-             learnpath
-             slug
-             course
-             section
-             chapter
-             pageType
-             collection
-           }
-         }
-       }
-     }
-   `);
+    {
+      allPosts:  allMdx(
+        filter: { frontmatter: { published: { eq: true } } }
+      ) {
+        nodes {
+          frontmatter{
+            program
+            programSlug
+          }
+          fields {
+            collection
+            slug
+          }
+        }
+      }
+      blogTags: allMdx(
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+        ){
+          group(field: frontmatter___tags) {
+            nodes{
+              id
+            }
+            fieldValue
+          }
+      }
+      blogCategory: allMdx(
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+        ){
+          group(field: frontmatter___category) {
+            nodes{
+              id
+            }
+            fieldValue
+          }
+      }
+      singleWorkshop: allMdx(
+        filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+        }
+      }
+      labs: allMdx(
+        filter: {fields: {collection: {eq: "service-mesh-labs"}}}
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+        }
+      }
+      learncontent: allMdx(
+        filter: {fields: {collection: {eq: "content-learn"}}}
+      ){
+        nodes{
+          fields{
+            learnpath
+            slug
+            course
+            section
+            chapter
+            pageType
+            collection
+          }
+        }
+      }
+    }
+  `);
 
   // handle errors
   if (res.errors) {
