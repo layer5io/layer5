@@ -81,11 +81,9 @@ const Banner1SectionWrapper = styled.section`
                 font-size: 3rem;
                 line-height: 3.5rem;
                 margin: 0 0 1rem 0;
-                color: black;
             }
             h2 {
                 font-size: 2rem;
-                color: black;
             }
         }
         p {
@@ -140,7 +138,7 @@ const Banner1SectionWrapper = styled.section`
      @media only screen and (max-width: 760px) {
         padding: 5rem 0;
         margin: 0;
-        background-image: url(${poster});  
+        background-image: url(${poster});
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: center; 
@@ -155,10 +153,12 @@ const Banner1SectionWrapper = styled.section`
             h1 { 
                 margin: 0rem;
                 font-size: 1.82rem;
+                color: black;
             }
             h2 {
                 font-size: 1.15rem;
                 width: 80%;
+                color: black;
             }
         }
         p {

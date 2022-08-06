@@ -12,7 +12,6 @@ import MeshMapCTA from "../../meshmap-cta";
 
 import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
 import smp from "../../../assets/images/smp-page/smp-white.svg";
-import c_icon from "../../../assets/images/smp-page/c-icon.svg";
 
 
 const latency = "../../../assets/images/smp-page/latency-at-scale.png";
