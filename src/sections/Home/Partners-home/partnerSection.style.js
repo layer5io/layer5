@@ -36,6 +36,8 @@ const PartnerItemWrapper = styled.section`
         max-width: 100%;
         min-width: 7rem;
         margin: auto;
+        height:auto;
+        width:100%;
         opacity: 0.7;
         max-height:100px;
     }
