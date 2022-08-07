@@ -26,6 +26,9 @@ import appmesh from "../../images/service-mesh-icons/aws-app-mesh.svg";
 import tanzu from "../../images/service-mesh-icons/tanzu.svg";
 import slack from "../../images/socialIcons/slack-light.svg";
 import github from "../../images/socialIcons/github.svg";
+import prometheus from "../../images/service-mesh-icons/prometheus.svg";
+import grafana from "../../images/service-mesh-icons/grafana.svg";
+import argo_cd from "../../images/service-mesh-icons/argo_cd.svg";
 
 const IntegrationList = [
   {
@@ -195,6 +198,24 @@ const IntegrationList = [
     img: tanzu,
     status: "inProduction",
     category: "Service Mesh",
+  },
+  {
+    name: "Prometheus",
+    img: prometheus,
+    status: "InProgress",
+    category: "Platforms",
+  },
+  {
+    name: "Grafana",
+    img: grafana,
+    status: "InProgress",
+    category: "Platforms",
+  },
+  {
+    name: "Argo CD",
+    img: argo_cd,
+    status: "InProgress",
+    category: "Platforms",
   },
 ];
 
