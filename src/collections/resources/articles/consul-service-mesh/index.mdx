@@ -2,14 +2,13 @@
 title: "Service Mesh: Consul"
 date: 2022-08-05 10:30:05 -0530
 author: Deepesha Burse
-thumbnail: ./consul-service-mesh.png
-darkthumbnail: ./consul-service-mesh.png
+thumbnail: ../../../../assets/images/service-mesh-icons/consul.svg
+darkthumbnail: ../../../../assets/images/service-mesh-icons/consul.svg
 description: Explanation of Consul Connect
 type: Article
 published: true
 category: Service Mesh
 mesh: Consul
-technology: Service Mesh
 tags:
  - Service Mesh
  - Consul
@@ -21,7 +20,7 @@ import agent from "./consul-agent-architecture.png";
 import datacenter from "./datacenter-architecture.png";
 import proxy from "./service-proxy-architecture.png";
 
-<ResourceWrapper>
+<ResourcesWrapper>
   
   <h3> What is a Service Mesh? </h3>
   
@@ -31,7 +30,7 @@ import proxy from "./service-proxy-architecture.png";
   
   <p> The data plane, on the other hand, handles the communication between services. The amount of knowledge that the services need to have about the network environment is limited by the fact that many service mesh solutions use a sidecar proxy to conduct data plane connections. </p>
   
-  <img src = {serviceMesh} className="image-center-shadow" alt="Service Mesh" />
+  <img src = {serviceMesh} class="image-center" alt="Service Mesh" />
   
   <h3> What is Consul? </h3>
   
@@ -43,17 +42,17 @@ import proxy from "./service-proxy-architecture.png";
   
   <p> Consul is a distributed system built for a node cluster to operate on. A physical server, cloud instance, virtual machine, or container can all function as a Consul node. The collection of interconnected nodes that Consul runs on is known as a datacenter. Consul supports multiple datacenters and considers this as a common case. It is expected that there will be many clients and three to five servers in a datacenter. This creates a balance between performance and availability in the event of a breakdown because consensus slows down as more machines are added. The number of clients, however, is unlimited and can easily increase to thousands or tens of thousands. </p>
   
-  <img src = {datacenter} className="image-center-shadow" alt="Image of datacenter" />
+  <img src = {datacenter} class="image-center" alt="Image of datacenter" />
   
   <p> The Consul Agent is responsible for maintaining membership information, registering services, running checks, responding to queries, etc. It is required to run on every node that is a part of the Consul cluster. In some places, client agents may cache data from the servers to make it available locally for performance and reliability. They can either run in server mode or client mode. Client nodes make up for most of the cluster and are lightweight processes. They act as an interface between server nodes for most operations. They run on every node where services are running. </p>
   
   <p> Along with core agent operations, a server node participates in the consensus quorum. The Raft protocol, which offers excellent consistency and availability in the event of failure, serves as the foundation for the quorum. Because they consume more resources than client nodes, server nodes should run on dedicated instances. </p>
   
-  <img src = {agent} className="image-center-shadow" alt="Consul Agent" />
+  <img src = {agent} class="image-center" alt="Consul Agent" />
   
   <p> A per-service proxy sidecar manages incoming and outgoing service connections by automatically wrapping and verifying TLS connections. Consul includes its own built-in L4 proxy and has first class support for Envoy. Other than this, we can choose to use any other proxy to plug in as well. The following diagram shows how proxies work: </p>
   
-  <img src = {proxy} className="image-center-shadow" alt="Side-car proxy" />
+  <img src = {proxy} class="image-center" alt="Side-car proxy" />
   
   <p> The lifecycle of a Consul cluster:
     <ol>
@@ -97,4 +96,4 @@ import proxy from "./service-proxy-architecture.png";
   </ol>
   </p>
   
-</ResourceWrapper>
+</ResourcesWrapper>
