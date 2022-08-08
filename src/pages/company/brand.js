@@ -5,13 +5,14 @@ import Layout from "../../components/layout";
 import SEO from "../../components/seo";
 
 import Navigation from "../../sections/General/Navigation";
-import Footer from "../../sections/General/Footer";
-import Brand from "../../sections/Company/Brand";
-
 import { GlobalStyle } from "../../sections/app.style";
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
 import SimpleReactLightbox from "simple-react-lightbox";
+import loadable from "@loadable/component";
+
+const Brand = loadable(() => import ("../../sections/Company/Brand"));
+const Footer = loadable(() => import ("../../sections/General/Footer"));
 
 const BrandPage = () => {
   const [theme, setTheme] = useState();

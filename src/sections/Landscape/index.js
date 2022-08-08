@@ -10,7 +10,6 @@ import Tools from "./tools";
 import Subscribe from "../../sections/subscribe/subscribe";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import ServiceMeshTimeline from "./ServiceMeshTimeline";
 import landscape from "../../assets/images/landscape/layer5_landscape_green.svg";
 import Consul_Img from "../../assets/images/service-mesh-icons/consul-white.svg";
 import Nginx_Img from "../../assets/images/service-mesh-icons/nginx-white.svg";
@@ -21,6 +20,9 @@ import halfMark from "../../assets/images/landscape/half.svg";
 import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
+import loadable from "@loadable/component";
+
+const ServiceMeshTimeline = loadable(() => import ("./ServiceMeshTimeline"));
 
 const isBrowser = typeof window !== "undefined";
 
