@@ -4,6 +4,8 @@ import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import { feedbackData } from "./feedbackData";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
 import { FiArrowLeft } from "@react-icons/all-files/fi/FiArrowLeft";
 import styled from "styled-components";

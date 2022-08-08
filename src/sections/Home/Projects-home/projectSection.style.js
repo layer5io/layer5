@@ -41,6 +41,7 @@ const ProjectItemWrapper = styled.section`
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 2rem;
         &:before {
             content: url(${background});
             position: absolute;
@@ -59,16 +60,17 @@ const ProjectItemWrapper = styled.section`
         padding: 12% 6% 12% 6%;
         height: 220px;
         border-radius: 4%;
-        margin-bottom: 30px;
         text-align: center;
+        justify-content: center;
         h5{
-            margin-bottom: auto; 
+            margin: auto;
             font-weight: 700;
             color: ${props => props.theme.secondaryColor}
         }
         p{
             font-weight: 300;
             color: ${props => props.theme.text};
+            margin: auto;
         }
 
         img{
@@ -76,7 +78,8 @@ const ProjectItemWrapper = styled.section`
             width: auto ;
         }
         .gatsby-image-wrapper{
-            margin: 10px auto; 
+            margin: 10px auto;
+            min-height: 40px;
         }
     }
     .description {
