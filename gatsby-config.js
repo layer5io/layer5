@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
-        disable: false
+        disable: true
       }
     },
     "gatsby-plugin-sitemap",
