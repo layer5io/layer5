@@ -3,18 +3,20 @@ import { Accordion,AccordionItem,AccordionTitle,AccordionBody,IconWrapper,OpenIc
 import { IoIosArrowDown } from "@react-icons/all-files/io/IoIosArrowDown";
 import { IoIosArrowUp } from "@react-icons/all-files/io/IoIosArrowUp";
 import FaqSectionWrapper from "../../../General/Faq/faqSection.style";
-import { HeroSection, CTA ,Content,Feature,Overview } from "./IntegrationPage.style";
+import { IntegrationPageWrapper } from "./integrationPage.style";
 import { Link } from "gatsby";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
-import bookCover from "../../../../assets/images/learn/book-cover.png";
 import arrow from "../../../../assets/images/app/forward-arrow.svg";
 import tick from "../../../../assets/images/app/tick.svg";
 import IntegrationList from "../index";
+import { StaticImage } from "gatsby-plugin-image";
+
+
 const IntegrationPage = ({ data }) => {
   return (
-    <>
-      <HeroSection>
+    <IntegrationPageWrapper>
+      <section className="herosection">
         <img src={data.img} alt={data.name} height={90} />
         <h2>
           {data.name} With {" "}
@@ -27,9 +29,9 @@ const IntegrationPage = ({ data }) => {
           </span>
         </h2>
         <p>{data.text}</p>
-      </HeroSection>
-      <Overview>
-        <Feature>
+      </section>
+      <section className="overview">
+        <div className="feature">
           <h3>Features</h3>
           {data.featureList.map((feature, id) => {
             return (
@@ -39,8 +41,8 @@ const IntegrationPage = ({ data }) => {
               </div>
             );
           })}
-        </Feature>
-        <Content>
+        </div>
+        <div className="content">
           <h3>Overview</h3>
           <p>
           Connect {data.name} with any of your favorite apps in just a few
@@ -59,24 +61,23 @@ const IntegrationPage = ({ data }) => {
               <img src={arrow} alt="arrow" height={12} />
             </span>
           </span>
-        </Content>
-      </Overview>
+        </div>
+      </section>
       <IntegrationList />
       <FaqSectionWrapper>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "50rem", margin: "0 auto" }}>
           <Accordion
             allowMultipleExpanded="true"
             allowZeroExpanded="true"
             style={{
               margin: "0 auto",
-              maxWidth: "800px",
+              maxWidth: "50rem",
             }}
           >
             <h2
               style={{
                 textAlign: "center",
                 padding: "2rem 0",
-                fontWeight: "700",
               }}
             >
             Frequently Asked Questions
@@ -104,7 +105,7 @@ const IntegrationPage = ({ data }) => {
           </Accordion>
         </div>
       </FaqSectionWrapper>
-      <CTA>
+      <section className="cta">
         <Row className="book_cover">
           <Col xs={12} sm={6} className="book_col text">
             <p className="cover">Services-first Network</p>
@@ -131,13 +132,14 @@ const IntegrationPage = ({ data }) => {
               }
               className="bookLink"
             >
-              <img src={bookCover} alt="Book Image" />
+              <StaticImage src="../../../../assets/images/learn/book-cover.png" alt="Book Image" />
             </Link>
           </Col>
         </Row>
-      </CTA>
-    </>
+      </section>
+    </IntegrationPageWrapper>
   );
 };
+
 
 export default IntegrationPage;

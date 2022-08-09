@@ -185,13 +185,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      allIntegrations: allMdx(
-        filter: { fields: { collection: { eq: "Integrations" } } }
-      ) {
-        nodes {
-          slug
-        }
-      }
     }
   `);
 

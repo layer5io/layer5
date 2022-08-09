@@ -25,24 +25,13 @@ const IntegrationsList = ({ data }) => {
     setTheme(thememode);
   };
 
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // prevents ssr flash for mismatched dark mode
-
-  if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
-  }
-
   return (
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Integrations" />
+        <SEO title={data.mdx.frontmatter.title} />
         <Navigation
-          theme={data.mdx.frontmatter.title}
+          theme={theme}
           themeSetter={themeSetter}
         />
         <MDXRenderer>{data.mdx.body}</MDXRenderer>

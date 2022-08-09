@@ -394,13 +394,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/src/collections/Integrations`,
-        name: "Integrations",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         path: `${__dirname}/src/collections/projects`,
         name: "projects",
       },
@@ -466,6 +459,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content-learn`,
         name: "content-learn",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/collections/integrations`,
+        name: "integrations",
       },
     },
     "gatsby-plugin-image",

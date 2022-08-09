@@ -1,23 +1,37 @@
 import styled from "styled-components";
 
-export const Overview = styled.section`
+export const IntegrationPageWrapper = styled.section`
+.herosection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  img {
+    margin-bottom: 0.5rem;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.overview{
   display: flex;
   padding: 0 2rem 5rem 2rem;
   gap: 5rem;
   justify-content: center;
-  h3 {
-    font-weight: 700;
-  }
   @media (max-width: 700px) {
     flex-direction: column-reverse;
   } ;
-`;
-
-export const Feature = styled.div`
+}
+.feature{
   display: flex;
   flex-direction: column;
   h3 {
-    font-weight: 700;
     padding-bottom: 1rem;
   }
   div {
@@ -28,15 +42,13 @@ export const Feature = styled.div`
   div p {
     margin: auto 0;
   }
-`;
-
-export const Content = styled.div`
+}
+.content{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   p {
-    line-height: 40px;
-    font-family: "Qanelas Soft", "Open Sans", sans-serif;
+    line-height: 2rem;
     text-align: justify;
   }
   span {
@@ -48,7 +60,7 @@ export const Content = styled.div`
       transition: all 0.5s ease;
       background: #ebc017;
       opacity: 0.8;
-      padding: 5px 2rem;
+      padding: 0.5rem 2rem;
       color: black;
       border-radius: 0.625rem;
     }
@@ -60,22 +72,19 @@ export const Content = styled.div`
       gap: 0.5rem;
       align-items: center;
       a {
-        font-weight: 700;
         color: black;
         transition: all 0.5s ease;
       }
       a:hover {
         padding-right: 5px;
-        transform: scale(1.01);
       }
     }
   }
   @media (min-width: 700px) {
     width: 35rem;
   } ;
-`;
-
-export const CTA = styled.div`
+}
+.cta{
   .book_cover {
     display: flex;
     margin: auto;
@@ -121,24 +130,9 @@ export const CTA = styled.div`
       }
     }
   }
+}
 `;
 
-export const HeroSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  padding: 5rem 1rem;
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-  }
-  img {
-    margin-bottom: 0.5rem;
-  }
-  p {
-    font-family: "Qanelas Soft", "Open Sans", sans-serif;
-    text-align: center;
-  }
-`;
+
+
+

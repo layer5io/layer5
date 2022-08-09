@@ -41,6 +41,9 @@ const HoneycombGrid = styled.div`
     :hover{
       background:white;
     }
+    img{
+      height:60px;
+    }
   }
   .container::before {
     content: "";
@@ -52,6 +55,20 @@ const HoneycombGrid = styled.div`
       #000 0 var(--f)
     );
   }
+ 
+  @media(max-width:768px){
+    --s: 7.8125rem;
+    .container div div{
+      height:8.125rem;
+      width:7.3125rem;
+      margin:0.3125rem;
+
+      img{
+        height:50px;
+      }
+    }
+  }
+
 `;
 
 export default HoneycombGrid;
