@@ -3,20 +3,18 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../../sections/app.style";
 import SEO from "../../components/seo";
 import Navigation from "../../sections/General/Navigation";
+import Footer from "../../sections/General/Footer";
 import Layout from "../../components/layout";
 import Loadable from "react-loadable";
 import Loader from "./Loader.style";
 import LoadingIcon from "../../assets/images/LoadingIcon";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
 import { Container } from "../../reusecore/Layout";
 import CalendarStyleWrapper from "../../sections/Community/Calendar/calendar.style";
 import PageHeader from "../../reusecore/PageHeader";
 import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
-import loadable from "@loadable/component";
-
-const FullCalendar = loadable(() => import ("@fullcalendar/react"));
-const dayGridPlugin = loadable(() => import ("@fullcalendar/daygrid"));
-const Footer = loadable(() => import ("../../sections/General/Footer"));
 
 const LoadableCalendar = Loadable({
   loader: () => import("../../sections/Community/Calendar"),
