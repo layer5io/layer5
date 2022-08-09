@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
 import Partners from "../sections/Home/Partners-home";
+import Integrations from "../sections/Home/Projects-home";
 import Banner from "../sections/Home/Banner";
 import loadable from "@loadable/component";
 import CloudNativeManagement from "../sections/Home/CloudNativeManagement";
@@ -12,7 +13,6 @@ import { GlobalStyle } from "../sections/app.style";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
 
-const Integrations = loadable(() => import ("../sections/Home/Projects-home"));
 const Statement = loadable(() => import ("../sections/Home/Layer5-statement"));
 const StewardsOfIndustry = loadable(() => import ("../sections/Home/Stewards-of-industry/index"));
 const ProudMaintainers = loadable(() => import ("../sections/Home/Proud-maintainers"));
