@@ -59,6 +59,9 @@ const PartnerItemWrapper = styled.section`
         transition: all 0.2s ease-in-out;
         height: 110px;
     }
+    @media only screen and (max-width: 575px) {
+        margin: 2rem auto;
+    }
      /* @media only screen and (max-width: 768px) {
         .horizontal {
             padding: 2rem 4rem;
