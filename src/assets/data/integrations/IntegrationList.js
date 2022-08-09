@@ -125,7 +125,7 @@ const IntegrationList = [
     name: "Slack",
     img: slack,
     status: "InProgress",
-    category: "Platform",
+    category: "Platforms",
   },
   {
     name: "Open Service Mesh",
@@ -173,7 +173,7 @@ const IntegrationList = [
     name: "Github",
     img: github,
     status: "InProgress",
-    category: "Platform",
+    category: "Platforms",
   },
   {
     name: "Cilium Service Mesh",
