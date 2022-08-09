@@ -11,13 +11,13 @@ const IntegrationsGrid = ({ obj }) => {
             const status = item.status === "InProgress" ? true : false;
 
             const data = status ? (
-              <div style={{ background: "rgba(160, 170, 170, 0.5)" }} key={index}>
-                <div style={{ background: "#B1B6B8" }}>
+              <div style={{ background: "#A0AAAA" }} key={index}>
+                <div style={{ background: "#A0AAAA" }}>
                   <img
                     src={item.img}
                     alt={item.name}
                     style={{
-                      filter: "brightness(0.05) invert(.9)",
+                      filter: "brightness(0) invert(1)",
                       height: "60px",
                     }}
                   />

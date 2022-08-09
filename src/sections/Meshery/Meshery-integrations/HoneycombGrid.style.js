@@ -7,11 +7,13 @@ const HoneycombGrid = styled.div`
   --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
 
   .container {
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.1));
     font-size: 0;
+  
   }
 
   .container div {
-    background: #00d3a9;
+    background: white;
     width: var(--s);
     margin: var(--m);
     height: calc(var(--s) * 1.1547);
@@ -21,33 +23,24 @@ const HoneycombGrid = styled.div`
     margin-bottom: calc(var(--m) - var(--s) * 0.2885);
 
     :hover {
-      transition: background-color 0.25s ease-in;
-      background: linear-gradient(
-        180deg,
-        #00d3a9 0%,
-        rgba(201, 252, 246, 0.3) 100%
-      );
-      img {
-        filter: grayscale(0.8);
-      }
-      :active {
-        transition: background-color 0.25s ease-out;
-        background: linear-gradient(
-          0deg,
-          #00d3a9 0%,
-          rgba(201, 252, 246, 0.3) 100%
-        );
-      }
+      transition: all 0.25s ease-in;
+      transform: scale(1.03);
+      background: #00d3a9;
+      
+    
     }
   }
   .container div div {
-    background: white;
     display: flex;
     height: 10.125rem;
     width: 8.8125rem;
     margin: 0.3125rem;
     justify-content: center;
     align-items: center;
+    
+    :hover{
+      background:white;
+    }
   }
   .container::before {
     content: "";
