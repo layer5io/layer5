@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import IntegrationsGrid from "./IntegrationsGrid";
 import IntegrationList from "../../../assets/data/integrations/IntegrationList";
-import Integrations from "./Integration.style";
+import { Integrations } from "./Integration.style";
 
 function index() {
   const [categoryList, setcategoryList] = useState([

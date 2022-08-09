@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import HoneycombGrid from "./HoneycombGrid.style";
+import { HoneycombGrid } from "./Integration.style";
 
 const IntegrationsGrid = ({ obj }) => {
   return (
