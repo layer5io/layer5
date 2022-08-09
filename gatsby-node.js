@@ -59,7 +59,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create Pages
   const { createPage } = actions;
-  const integrationPostTemplate = path.resolve("src/templates/integrations.js");
   const blogPostTemplate = path.resolve(
     "src/templates/blog-single.js"
   );
@@ -188,6 +187,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+      allIntegrations: allMdx(
+        filter: { fields: { collection: { eq: "integrations" } } }
+      ) {
+        nodes {
+          slug
+        }
+      }
     }
   `);
 
@@ -249,7 +255,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   allIntegrations.forEach((integration) => {
     createPage({
       path: `/service-mesh-management/meshery/integrations/${integration.slug}`,
-      component: integrationPostTemplate,
+      component: integrationTemplate,
       context: {
         slug: integration.slug,
       },
