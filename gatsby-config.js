@@ -394,6 +394,13 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        path: `${__dirname}/src/collections/Integrations`,
+        name: "Integrations",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         path: `${__dirname}/src/collections/projects`,
         name: "projects",
       },
