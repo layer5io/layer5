@@ -3,13 +3,11 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../sections/app.style";
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
+import Partner from "../sections/Partners";
+import Footer from "../sections/General/Footer";
 import Layout from "../components/layout";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
-import loadable from "@loadable/component";
-
-const Partner = loadable(() => import ("../sections/Partners"));
-const Footer = loadable(() => import ("../sections/General/Footer"));
 
 const Partners = () => {
   const [theme, setTheme] = useState();
