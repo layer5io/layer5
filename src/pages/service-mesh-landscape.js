@@ -4,12 +4,10 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import LandscapeGrid from "../sections/Landscape";
 import Navigation from "../sections/General/Navigation";
+import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
-import loadable from "@loadable/component";
-
-const Footer = loadable(() => import ("../sections/General/Footer"));
 
 const LandscapeGridPage = () => {
   const [theme, setTheme] = useState();

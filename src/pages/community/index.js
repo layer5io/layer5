@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
+
 import Layout from "../../components/layout";
 import SEO from "../../components/seo";
+
 import Navigation from "../../sections/General/Navigation";
+import Footer from "../../sections/General/Footer";
+import Community from "../../sections/Community";
+
 import { GlobalStyle } from "../../sections/app.style";
 import lighttheme from "../../theme/app/themeStyles";
 import { darktheme } from "../../theme/app/themeStyles";
-import loadable from "@loadable/component";
-
-const Community = loadable(() => import ("../../sections/Community"));
-const Footer = loadable(() => import ("../../sections/General/Footer"));
 
 
 const CommunityIndex = () => {

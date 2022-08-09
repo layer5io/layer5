@@ -2,14 +2,10 @@ import React from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
-import Categories from "./categories";
-import NonFunctional from "./non-functional";
-import Functional from "./functional";
-import SMI_Compatibility from "./smi";
-import Tools from "./tools";
 import Subscribe from "../../sections/subscribe/subscribe";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import ServiceMeshTimeline from "./ServiceMeshTimeline";
 import landscape from "../../assets/images/landscape/layer5_landscape_green.svg";
 import Consul_Img from "../../assets/images/service-mesh-icons/consul-white.svg";
 import Nginx_Img from "../../assets/images/service-mesh-icons/nginx-white.svg";
@@ -22,7 +18,11 @@ import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
 import loadable from "@loadable/component";
 
-const ServiceMeshTimeline = loadable(() => import ("./ServiceMeshTimeline"));
+const Categories = loadable(() => ("./categories"));
+const NonFunctional = loadable(() => ("./non-functional"));
+const Functional = loadable(() => ("./functional"));
+const SMI_Compatibility = loadable(() => ("./smi"));
+const Tools = loadable(() => ("./tools"));
 
 const isBrowser = typeof window !== "undefined";
 
