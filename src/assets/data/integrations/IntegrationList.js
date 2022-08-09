@@ -172,7 +172,7 @@ const IntegrationList = [
   {
     name: "Github",
     img: github,
-    status: "inProgress",
+    status: "InProgress",
     category: "Platform",
   },
   {
