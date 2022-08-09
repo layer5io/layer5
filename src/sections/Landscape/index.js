@@ -18,11 +18,11 @@ import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
 import loadable from "@loadable/component";
 
-const Categories = loadable(() => ("./categories"));
-const NonFunctional = loadable(() => ("./non-functional"));
-const Functional = loadable(() => ("./functional"));
-const SMI_Compatibility = loadable(() => ("./smi"));
-const Tools = loadable(() => ("./tools"));
+const Categories = loadable(() => import ("./categories"));
+const NonFunctional = loadable(() => import ("./non-functional"));
+const Functional = loadable(() => import ("./functional"));
+const SMI_Compatibility = loadable(() => import ("./smi"));
+const Tools = loadable(() => import ("./tools"));
 
 const isBrowser = typeof window !== "undefined";
 
