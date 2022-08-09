@@ -18,7 +18,7 @@ import NavigationWrap from "./navigation.style";
 import { GlobalStyle } from "../../app.style";
 import { ThemeProvider } from "styled-components";
 import { useLayoutEffect } from "react";
-import "./navigation.style.css";
+
 const Navigation = ({ theme, themeSetter }) => {
   let data = useStaticQuery(
     graphql`{

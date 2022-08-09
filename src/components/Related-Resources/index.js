@@ -5,6 +5,8 @@ import Card from "../Card";
 import RelatedResourcesWrapper from "./relatedResources.style";
 import { Col } from "../../reusecore/Layout";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 
