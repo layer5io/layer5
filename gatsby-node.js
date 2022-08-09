@@ -113,6 +113,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const resourcePostTemplate = path.resolve(
     "src/templates/resource-single.js"
   );
+  const integrationTemplate = path.resolve(
+    "src/templates/integrations.js"
+  );
 
   const res = await graphql(`
     {
@@ -374,6 +377,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+  allIntegrations.forEach((integration) => {
+    createPage({
+      path: `/service-mesh-management/meshery/integrations/${integration.slug}`,
+      component: integrationTemplate,
+      context: {
+        slug: integration.slug,
+      },
+    });
+  });
+
 
 
   let programsArray = [];
