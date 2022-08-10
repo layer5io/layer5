@@ -8,13 +8,13 @@ import Footer from "../sections/General/Footer";
 import { GlobalStyle } from "../sections/app.style";
 import lighttheme, { darktheme } from "../theme/app/themeStyles";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import CTA from "../components/Call-To-Actions/CTA_Book";
+import CTA from "../sections/Meshery/Meshery-integrations/CTA_Book";
 import RelatedIntegration from "../sections/Meshery/Meshery-integrations/relatedIntegration";
 import FAQ from "../sections/Meshery/Meshery-integrations/faq";
 
 export const query = graphql`
   query IntegrationsBySlug($slug: String!) {
-    mdx(slug: { eq: $slug }) {
+    mdx(fields:{slug:{eq: $slug}}) {
       body
       frontmatter {
         title
@@ -25,12 +25,10 @@ export const query = graphql`
   }
 `;
 const IntegrationsList = ({ data }) => {
-  console.log(data.mdx.frontmatter.sliderImg_1);
   const [theme, setTheme] = useState();
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  console.log(data.mdx.frontmatter.faqs);
 
   return (
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>

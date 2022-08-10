@@ -187,14 +187,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      allIntegrations: allMdx(
-        filter: { fields: { collection: { eq: "integrations" } } }
-      ) {
+      allIntegrations:   allMdx(filter: { fields: { collection: { eq: "integrations" } } }) {
         nodes {
-          slug
+          fields {
+            collection
+            slug
+          }
         }
+  }
       }
-    }
   `);
 
   // handle errors
@@ -247,19 +248,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     itemsPerPage: 9,
     pathPrefix: "/community/events",
     component: EventsTemplate
-  });
-
-  // Integrations List
-  const allIntegrations = res.data.allIntegrations.nodes;
-
-  allIntegrations.forEach((integration) => {
-    createPage({
-      path: `/service-mesh-management/meshery/integrations/${integration.slug}`,
-      component: integrationTemplate,
-      context: {
-        slug: integration.slug,
-      },
-    });
   });
 
   blogs.forEach(blog => {
@@ -384,16 +372,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  // Integrations List
+  const allIntegrations = res.data.allIntegrations.nodes;
+
   allIntegrations.forEach((integration) => {
     createPage({
-      path: `/service-mesh-management/meshery/integrations/${integration.slug}`,
+      path: `/service-mesh-management/meshery${integration.fields.slug}`,
       component: integrationTemplate,
       context: {
-        slug: integration.slug,
+        slug: integration.fields.slug,
       },
     });
   });
-
 
 
   let programsArray = [];
@@ -443,7 +433,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 };
-
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
 const getSlugParts = slug => slug.split("/").filter(p => !!p);
