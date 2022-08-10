@@ -5,6 +5,11 @@ export const HandbookWrapper = styled.div`
       font-weight: 600;
     }
 
+    .logo{
+      position: relative;
+      bottom: 18px;
+    }
+
     .content{
       width:100%;
       padding-bottom: 2rem;
