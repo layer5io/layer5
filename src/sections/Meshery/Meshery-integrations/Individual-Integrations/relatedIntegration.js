@@ -53,8 +53,8 @@ const RelatedIntegration = ({ category }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 12,
-    slidesToScroll: 12,
+    slidesToShow: 8,
+    slidesToScroll: 8,
     initialSlide: 0,
     responsive: [
       {
@@ -71,14 +71,16 @@ const RelatedIntegration = ({ category }) => {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 4,
-          initialSlide: 2
+          initialSlide: 2,
+          dots: false
         }
       },
       {
         breakpoint: 400,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToScroll: 2,
+          dots: false
         }
       }
     ]
@@ -89,10 +91,10 @@ const RelatedIntegration = ({ category }) => {
       <Slider {...settings}>
         {
           IntegrationList.map((item, index) => {
-            if (item.category === category){
+            if (item.category === category && item.status != "InProgress"){
               return (
                 <div key={index}>
-                  <Link to={`/service-mesh-management/meshery/integrations/${item.name.toLowerCase()}`}>
+                  <Link to={`/service-mesh-management/meshery/integrations/${item.name.replaceAll(" ", "-").toLowerCase()}`}>
                     <img src={item.img} alt={item.name} height={60} className="img-effect" />
                   </Link>
                 </div>

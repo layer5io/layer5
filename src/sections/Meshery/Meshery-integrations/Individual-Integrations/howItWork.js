@@ -194,8 +194,7 @@ const HowIntegrationWorksWrapper = styled.section`
 
 
 const HowIntegrationWorks = ({ name, slides }) => {
-  console.log(slides);
-
+	
   const settings = {
     customPaging: (i) => {
       return (
@@ -234,7 +233,6 @@ const HowIntegrationWorks = ({ name, slides }) => {
               <Slider {...settings}>
                 {slides.map((slide, index) => (
                   <div key={index}>
-                    {console.log(slide.publicURL)}
                     <img src={slide.publicURL} alt={`Slide ${index + 1}`} />
                   </div>
                 ))}

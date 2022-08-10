@@ -4,16 +4,16 @@ import Button from "../../../../reusecore/Button";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import CTA_Book from "./cta-book";
 import RelatedIntegration from "./relatedIntegration";
-import Image from "../../../../components/image";
 import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
+
 
 const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
   return (
     <IntegrationPageWrapper>
       <section className="herosection">
-        <Image {...frontmatter.integrationIcon} imgStyle={{ objectFit: "contain" }} alt={frontmatter.title}/>
+        <img src={frontmatter.integrationIcon.publicURL} alt={frontmatter.title} height={90}/>
         <h2>
           {frontmatter.title} with {" "}<span className="hero-header">Meshery</span>
         </h2>
