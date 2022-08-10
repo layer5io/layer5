@@ -64,32 +64,32 @@ const Integrations = () => {
 
   return (
     <>
-    <IntegrationsWrapper>
-      <section className="heading">
-        <h1>Built-In Integrations</h1>
-        <h2>Support for your Cloud Native Infrastructure and Apps</h2>
-      </section>
-      <section className="category">
-        {categoryList.map((item) => {
-          return (
-            <p
-              key={item.id}
-              className={item.isSelected ? "items selected" : "items"}
-              onClick={filterCategory}
-            >
-              {item.name}
-            </p>
-          );
-        })}
-      </section>
+      <IntegrationsWrapper>
+        <section className="heading">
+          <h1>Built-In Integrations</h1>
+          <h2>Support for your Cloud Native Infrastructure and Apps</h2>
+        </section>
+        <section className="category">
+          {categoryList.map((item) => {
+            return (
+              <p
+                key={item.id}
+                className={item.isSelected ? "items selected" : "items"}
+                onClick={filterCategory}
+              >
+                {item.name}
+              </p>
+            );
+          })}
+        </section>
 
-      <section className="integrations-grid">
-        <IntegrationsGrid obj={integrationCollection} />
-      </section>
-      <FAQ category={["Meshery Integrations"]} />
-    </IntegrationsWrapper>
+        <section className="integrations-grid">
+          <IntegrationsGrid obj={integrationCollection} />
+        </section>
+        <FAQ category={["Meshery Integrations"]} />
+      </IntegrationsWrapper>
       <CTA />
-</>
+    </>
   );
 };
 
