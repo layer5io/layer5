@@ -5,8 +5,8 @@ import { Link } from "gatsby";
 import NewcomersMap from "../Newcomers-guide/newcomers-map";
 import TOC from "../../../components/handbook-navigation/index";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
-import longArrow from "../Newcomers-guide/long-arrow.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
+import { StaticImage } from "gatsby-plugin-image";
 
 const contents = [
   { id: 0, link: "#About Layer5", text: "About Layer5" },
@@ -18,7 +18,7 @@ const contents = [
 
 const Intro = () => {
   const [hover, setHover] = useState(false);
-
+  const longArrow = "../Newcomers-guide/long-arrow.svg";
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -106,7 +106,7 @@ const Intro = () => {
                 <h2>Contributor's Journey</h2>
                 <div className="heading-start">
                   <h5>Start Here</h5>
-                  <img className="heading-start__arrow" src={longArrow} />
+                  <StaticImage className="heading-start__arrow" src={longArrow} />
                 </div>
               </Col>
               <Col sm={12} lg={6}>

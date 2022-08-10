@@ -4,6 +4,7 @@ import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
+import { StaticImage } from "gatsby-plugin-image";
 
 const contents = [
   {

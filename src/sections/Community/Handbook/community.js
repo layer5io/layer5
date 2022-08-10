@@ -42,7 +42,7 @@ const CommunityGuide = () => {
   const ServiceMeshPerformance = "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
   const NightHawkLogo = "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
   const Point = "./images/bullet.svg";
-  
+
   return (
     <HandbookWrapper>
       <div className="page-header-section">
