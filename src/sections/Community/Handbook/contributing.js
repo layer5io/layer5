@@ -194,7 +194,7 @@ const contributingGuide = () => {
             Or you may configure your IDE, for example, Visual Studio Code to
             automatically sign-off commits for you:
           </p>
-          <StaticImage src={ Signoff } width="74%" id="sign-off" />
+          <StaticImage src={ Signoff } width="74%" id="sign-off" alt="Signoff" />
           <TocPagination />
         </Container>
 

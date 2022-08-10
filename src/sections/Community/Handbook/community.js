@@ -62,7 +62,7 @@ const CommunityGuide = () => {
               help you get started:
             </p>
             <p>
-              <StaticImage className="logo" src={Point} />
+              <StaticImage className="logo" src={Point} alt="Point" />
               <strong>For Easy Identification -</strong> When setting up your
               slack workspace, your display name should be the same as your
               GitHub username for easy identification, engage freely, and in
@@ -71,7 +71,7 @@ const CommunityGuide = () => {
               warmly received.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} />
+              <StaticImage className="logo" src={Point} alt="Point" />
               <strong>Familiarize with the community -</strong> As you get to
               familiarize yourself with the community, know that there are
               multiple initiatives for you to explore. Some initiatives have
@@ -83,7 +83,7 @@ const CommunityGuide = () => {
               members over Slack, the mailing list, and so on.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} />
+              <StaticImage className="logo" src={Point} alt="Point" />
               <strong>Familiarize with the projects -</strong> The following is
               a sample of the many active, ongoing community projects. One way
               of doing so is to review the{" "}
@@ -97,7 +97,7 @@ const CommunityGuide = () => {
               on GitHub!
             </p>
             <p>
-              <StaticImage className="logo" src={Point} />
+              <StaticImage className="logo" src={Point} alt="Point" />
               <strong>Be friendly and open-minded -</strong> We encourage you to
               be welcoming to new collaborators and those just getting started.
               Other contributors might not have the same degree of experience or
@@ -105,14 +105,14 @@ const CommunityGuide = () => {
               ideas.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} />
+              <StaticImage className="logo" src={Point} alt="Point" />
               <strong>Be honest -</strong> “A half-truth is a whole lie.” Being
               truthful allows you to reach a better agreement. As a result, be
               open and honest about who you are, what you do, and how you want
               to accomplish it.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} />
+              <StaticImage className="logo" src={Point} alt="Point" />
               <strong>Be respectful and inclusive -</strong> We are a diverse
               group of people with diverse backgrounds and opinions. We expect
               everyone to be civil and professional in their activities.
@@ -121,14 +121,14 @@ const CommunityGuide = () => {
               reasonable person.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} />
+              <StaticImage className="logo" src={Point} alt="Point" />
               <strong>Collaborate and Contribute -</strong> Members are expected
               to attend community and workgroup meetings, find ways to help,
               check up on our Github page regularly etc. Within the community
               and outside, we encourage teamwork.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} />
+              <StaticImage className="logo" src={Point} alt="Point" />
               <strong>Resources -</strong> Be sure to access the resources in
               the{" "}
               <a href="https://drive.google.com/drive/u/0/folders/0ABH8aabN4WAKUk9PVA">
@@ -143,7 +143,7 @@ const CommunityGuide = () => {
               .
             </p>
             <p>
-              <StaticImage className="logo" src={Point} />
+              <StaticImage className="logo" src={Point} alt="Point" />
               <strong>We do not allow:</strong>
               <ul>
                 <li>Threats of violence</li>
@@ -175,35 +175,35 @@ const CommunityGuide = () => {
             </p>
             <ul style={badgeListStyle}>
               <li>
-                <StaticImage src={CommunityLogo} style={badgeStyle} />
+                <StaticImage src={CommunityLogo} style={badgeStyle} alt="badgeStyle"/>
                 Community
               </li>
               <li>
-                <StaticImage src={LandscapeGreen} style={badgeStyle} />
+                <StaticImage src={LandscapeGreen} style={badgeStyle} alt="badgeStyle" />
                 Landscape
               </li>
               <li>
-                <StaticImage src={ImageHubLogo} style={badgeStyle} />
+                <StaticImage src={ImageHubLogo} style={badgeStyle} alt="badgeStyle" />
                 Image Hub
               </li>
               <li>
-                <StaticImage src={MesheryLogo} style={badgeStyle} />
+                <StaticImage src={MesheryLogo} style={badgeStyle} alt="badgeStyle" />
                 Meshery
               </li>
               <li>
-                <StaticImage src={MesheryOperator} style={badgeStyle} />
+                <StaticImage src={MesheryOperator} style={badgeStyle} alt="badgeStyle" />
                 Meshery Operator
               </li>
               <li>
-                <StaticImage src={ServiceMeshPerformance} style={badgeStyle} />
+                <StaticImage src={ServiceMeshPerformance} style={badgeStyle} alt="badgeStyle" />
                 Service Mesh Performance
               </li>
               <li>
-                <StaticImage src={NightHawkLogo} style={badgeStyle} />
+                <StaticImage src={NightHawkLogo} style={badgeStyle} alt="badgeStyle" />
                 Nighthawk
               </li>
               <li>
-                <StaticImage src={PatternsLogo} style={badgeStyle} />
+                <StaticImage src={PatternsLogo} style={badgeStyle} alt="badgeStyle" />
                 Patterns
               </li>
             </ul>
