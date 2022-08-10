@@ -8,7 +8,7 @@ import { GlobalStyle } from "../../../sections/app.style";
 import lighttheme, { darktheme } from "../../../theme/app/themeStyles";
 import MesheryIntegration from "../../../sections/Meshery/Meshery-integrations";
 
-const integrations = () => {
+const Integrations = () => {
   const [theme, setTheme] = React.useState();
 
   const themeSetter = (thememode) => {
@@ -18,8 +18,7 @@ const integrations = () => {
   return (
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <GlobalStyle />
-      <SEO
-        title="Meshery Integrations Collection"
+      <SEO title="Meshery Integrations"
         description="A collection of supported Meshery Integrations."
       />
       <Layout>
@@ -31,4 +30,4 @@ const integrations = () => {
   );
 };
 
-export default integrations;
+export default Integrations;

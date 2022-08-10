@@ -1,13 +1,13 @@
 import React from "react";
+import { Link } from "gatsby";
 import Slider from "react-slick";
 import styled from "styled-components";
-import IntegrationList from "../../../assets/data/integrations/IntegrationList";
-import { Link } from "gatsby";
-import Button from "../../../reusecore/Button";
+import IntegrationList from "../../../../assets/data/integrations/IntegrationList";
 
 const RelatedIntegrationWrapper = styled.section`
 
-  margin:2rem 0;
+  margin: 4rem 0;
+
   .slick-track {
     display: flex;
   }
@@ -18,7 +18,7 @@ const RelatedIntegrationWrapper = styled.section`
     text-align:center;
     margin-right:10px;
     margin-left:10px;
-}
+  }
   .slick-slider {
     display: flex;
     align-items: center;
@@ -26,17 +26,16 @@ const RelatedIntegrationWrapper = styled.section`
     margin: 0 auto;
   }
   
-h2{
-  margin-bottom: 2rem;
-  text-align: center;
-}
+  h2{
+    margin-bottom: 2rem;
+    text-align: center;
+  }
 
-.slick-dots li.slick-active button:before {
-  color: black;
-}
+  .slick-dots li.slick-active button:before {
+    color: black;
+  }
 
-  .slick-prev:before,
-  .slick-next:before {
+  .slick-prev:before, .slick-next:before {
     color: black;
   }
   
@@ -44,16 +43,12 @@ h2{
     cursor: pointer;
     transition: background-color 0.5s ease;
   }
+
   .img-effect:hover{
     transform: scale(1.05);
   }
-  .btn-integration{
-    display: flex;
-    padding: 10px;
-    margin: 0 5rem 2rem auto;
-  }
 `;
-const relatedIntegration = ({ category }) => {
+const RelatedIntegration = ({ category }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -90,23 +85,14 @@ const relatedIntegration = ({ category }) => {
   };
   return (
     <RelatedIntegrationWrapper>
-      <h2> Explore other Integrations </h2>
-      <Button
-        primary
-        className="btn-integration"
-        type="button"
-        title="See All Integrations"
-        url="/service-mesh-management/meshery/integrations"
-      />
+      <h2> Related Integrations </h2>
       <Slider {...settings}>
         {
           IntegrationList.map((item, index) => {
             if (item.category === category){
-              return   (
+              return (
                 <div key={index}>
-                  <Link
-                    to={`/service-mesh-management/meshery/integrations/${item.name.toLowerCase()}`}
-                  >
+                  <Link to={`/service-mesh-management/meshery/integrations/${item.name.toLowerCase()}`}>
                     <img src={item.img} alt={item.name} height={60} className="img-effect" />
                   </Link>
                 </div>
@@ -119,4 +105,4 @@ const relatedIntegration = ({ category }) => {
   );
 };
 
-export default relatedIntegration;
+export default RelatedIntegration;

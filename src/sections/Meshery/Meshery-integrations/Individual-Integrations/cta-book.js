@@ -5,7 +5,9 @@ import { Link } from "gatsby";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 
-const CTA = styled.section`
+const LearnBook = "../../../../assets/images/learn/book-cover.png";
+
+const CTAWrapper = styled.section`
   .book_cover {
     display: flex;
     margin: auto;
@@ -31,8 +33,7 @@ const CTA = styled.section`
         text-align: center;
       }
       h1,
-      p,
-      .learn {
+      p {
         color: white;
       }
     }
@@ -55,14 +56,14 @@ const CTA = styled.section`
 
 `;
 
-const index = () => {
+const CTA_Book = () => {
   return (
-    <CTA>
+    <CTAWrapper>
       <Row className="book_cover">
         <Col xs={12} sm={6} className="book_col text">
           <p className="cover">Services-first Network</p>
           <h1>
-            What is A <br></br> Service Mesh?
+            What is a <br></br> Service Mesh?
           </h1>
           <p>
             Service meshes provide intent-based networking for microservices
@@ -72,24 +73,20 @@ const index = () => {
           <Button
             primary
             className="learn"
-            type="button"
             title="Learn More"
             url="/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"
           />
         </Col>
         <Col xs={12} sm={6} className="book_col book_img">
-          <Link
-            to={
-              "/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"
-            }
+          <Link to={"/learn/service-mesh-books/the-enterprise-path-to-service-mesh-architectures-2nd-edition"}
             className="bookLink"
           >
-            <StaticImage src="../../../../assets/images/learn/book-cover.png" alt="Book Image" />
+            <StaticImage src={LearnBook} alt="Book Image" layout="constrained" />
           </Link>
         </Col>
       </Row>
-    </CTA>
+    </CTAWrapper>
   );
 };
 
-export default index;
+export default CTA_Book;

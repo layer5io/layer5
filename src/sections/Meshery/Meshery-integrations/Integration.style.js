@@ -72,7 +72,7 @@ export const HoneycombGrid = styled.div`
 `;
 
 
-export const Integrations = styled.div`
+export const IntegrationsWrapper = styled.div`
   max-width: 75rem;
   margin: 5.1875rem auto;
 
@@ -106,101 +106,28 @@ export const Integrations = styled.div`
     cursor: pointer;
   }
 
-  
-
   .selected {
     background-color: ${props => props.theme.darkJungleGreenColor};
     color: ${props => props.theme.white};
   }
+
+  .integrations-grid {
+    margin: 2rem auto 8rem;
+
+    @media screen and (min-width:530px) and (max-width: 600px) {
+      margin: 2rem auto 13rem;
+    }
+
+    @media screen and (min-width:400px) and (max-width: 465px) {
+      margin: 2rem auto 18rem;
+    }
+  }
+
   @media (max-width: 394px) and (min-width: 315px) {
     padding-bottom: 37.5rem;
   }
 `;
 
-export const IntegrationPageWrapper = styled.section`
-.herosection{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  padding: 5rem 1rem;
-  h2 {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-  img {
-    margin-bottom: 0.5rem;
-  }
-  p {
-    text-align: center;
-  }
-}
-
-.overview{
-  display: flex;
-  padding: 0 2rem 5rem 2rem;
-  gap: 5rem;
-  justify-content: center;
-  @media (max-width: 700px) {
-    flex-direction: column-reverse;
-  } ;
-}
-.feature{
-  display: flex;
-  flex-direction: column;
-  h3 {
-    padding-bottom: 1rem;
-  }
-  div {
-    display: flex;
-    gap: 0.5rem;
-    padding: 0.625rem 0;
-  }
-  div p {
-    margin: auto 0;
-  }
-}
-.content{
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  p {
-    line-height: 2rem;
-    text-align: justify;
-  }
-  span {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    .btn {
-      font-weight: bold;
-      transition: all 0.5s ease;
-      background: #ebc017;
-      opacity: 0.8;
-      padding: 0.5rem 2rem;
-      color: black;
-      border-radius: 0.625rem;
-    }
-    .btn:hover {
-      opacity: 1;
-    }
-    span {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      a {
-        color: black;
-        transition: all 0.5s ease;
-      }
-      a:hover {
-        padding-right: 5px;
-      }
-    }
-  }
-  @media (min-width: 700px) {
-    width: 35rem;
-  } ;
-}`;
 
 
 

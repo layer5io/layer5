@@ -187,15 +187,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      allIntegrations:   allMdx(filter: { fields: { collection: { eq: "integrations" } } }) {
-        nodes {
-          fields {
-            collection
-            slug
-          }
-        }
-  }
-      }
+    }
   `);
 
   // handle errors
@@ -236,6 +228,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const members = allNodes.filter(
     node => node.fields.collection === "members"
+  );
+
+  const integrations = allNodes.filter(
+    nodes => nodes.fields.collection === "integrations"
   );
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
@@ -372,10 +368,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
-  // Integrations List
-  const allIntegrations = res.data.allIntegrations.nodes;
-
-  allIntegrations.forEach((integration) => {
+  integrations.forEach((integration) => {
     createPage({
       path: `/service-mesh-management/meshery${integration.fields.slug}`,
       component: integrationTemplate,
