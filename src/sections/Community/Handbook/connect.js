@@ -2,13 +2,6 @@ import React from "react";
 import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
-import twitter_icon from "../../../assets/images/socialIcons/twitter-light.svg";
-import mail_icon from "../../../assets/images/socialIcons/mail_keppel.svg";
-import youtube_icon from "../../../assets/images/socialIcons/youtube-light.svg";
-import github_icon from "../../../assets/images/socialIcons/github-light.svg";
-import linkedin_icon from "../../../assets/images/socialIcons/linkedin-light.svg";
-import docker_icon from "../../../assets/images/socialIcons/docker-light.svg";
-import slack_icon from "../../../assets/images/socialIcons/slack-light.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
 
@@ -26,6 +19,13 @@ const contents = [
 ];
 
 const Connect = () => {
+  const twitter_icon = "../../../assets/images/socialIcons/twitter-light.svg";
+  const mail_icon = "../../../assets/images/socialIcons/mail_keppel.svg";
+  const youtube_icon = "../../../assets/images/socialIcons/youtube-light.svg";
+  const github_icon = "../../../assets/images/socialIcons/github-light.svg";
+  const linkedin_icon = "../../../assets/images/socialIcons/linkedin-light.svg";
+  const docker_icon = "../../../assets/images/socialIcons/docker-light.svg";
+  const slack_icon = "../../../assets/images/socialIcons/slack-light.svg";
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -200,8 +200,8 @@ const Connect = () => {
             </p>
             <div className="channels-list">
               <p className="channels-para">
-                <img
-                  className="channels-img"
+                <StaticImage
+                  className="channels-StaticImage"
                   src={twitter_icon}
                   alt="twitter"
                 />
@@ -212,13 +212,13 @@ const Connect = () => {
                 <a href="https://twitter.com/smp_spec">@smp_spec</a>
               </p>
               <p className="channels-para">
-                <img className="channels-img" src={mail_icon} alt="mail" />
+                <StaticImage className="channels-StaticImage" src={mail_icon} alt="mail" />
                 &nbsp;&nbsp;
                 <a href="mailto:community@layer5.io">community@layer5.io</a>
               </p>
               <p className="channels-para">
-                <img
-                  className="channels-img"
+                <StaticImage
+                  className="channels-StaticImage"
                   src={youtube_icon}
                   alt="youtube"
                 />
@@ -228,21 +228,21 @@ const Connect = () => {
                 </a>
               </p>
               <p className="channels-para">
-                <img className="channels-img" src={github_icon} alt="github" />
+                <StaticImage className="channels-StaticImage" src={github_icon} alt="github" />
                 &nbsp;&nbsp;
                 <a href="https://github.com/layer5io">Layer5io</a>
               </p>
               <p className="channels-para">
 
-                <img className="channels-img" src={linkedin_icon} alt="linkedin" />&nbsp;&nbsp;
+                <StaticImage className="channels-StaticImage" src={linkedin_icon} alt="linkedin" />&nbsp;&nbsp;
                 <a href="https://www.linkedin.com/company/layer5">Layer5</a>
               </p>
               <p className="channels-para">
-                <img className="channels-img" src={docker_icon} alt="docker" />&nbsp;&nbsp;
+                <StaticImage className="channels-StaticImage" src={docker_icon} alt="docker" />&nbsp;&nbsp;
                 <a href="https://hub.docker.com/u/layer5/">Layer5</a>
               </p>
               <p className="channels-para">
-                <img className="channels-img" src={slack_icon} alt="slack" />&nbsp;&nbsp;
+                <StaticImage className="channels-StaticImage" src={slack_icon} alt="slack" />&nbsp;&nbsp;
                 <a href="https://bit.ly/3fXwYPk">Layer5</a>
 
               </p>
