@@ -11,11 +11,11 @@ const ResourceGrid = (props) => {
   // Get current posts
   const indexOfLastPost = props.currentPage * props.postsPerPage;
   const indexOfFirstPost = indexOfLastPost - props.postsPerPage;
+  const searchedResource =
+    props.postsPerPage > 0
+      ? props.data.slice(indexOfFirstPost, indexOfLastPost)
+      : props.data;
 
-  const searchedResource = props.data.slice(
-    indexOfFirstPost,
-    indexOfLastPost
-  );
   const paginate = (pageNumber) => props.setCurrentPage(pageNumber);
 
   return (
@@ -23,20 +23,26 @@ const ResourceGrid = (props) => {
       <div className="resource-grid-wrapper">
         <div className="search">
           <div className="searchBox">
-            <SearchBox searchQuery={props.searchQuery} searchData={props.searchData} />
+            <SearchBox
+              searchQuery={props.searchQuery}
+              searchData={props.searchData}
+              paginate={paginate}
+              currentPage={props.currentPage}
+            />
           </div>
         </div>
         <Row>
-          {props.data.length < 1 && (
-            <EmptyResources />
-          )}
+          {props.data.length < 1 && <EmptyResources />}
 
-          {searchedResource.length > 0 &&
-            searchedResource.map(({ id, frontmatter, fields }) => (
-              <Col key={id} xs={12} sm={6} xl={4}>
-                <Card theme={props.theme} frontmatter={frontmatter} fields={fields} />
-              </Col>
-            ))}
+          {searchedResource.map(({ id, frontmatter, fields }) => (
+            <Col key={id} xs={12} sm={6} xl={4}>
+              <Card
+                theme={props.theme}
+                frontmatter={frontmatter}
+                fields={fields}
+              />
+            </Col>
+          ))}
         </Row>
       </div>
       {searchedResource.length > 0 && (
