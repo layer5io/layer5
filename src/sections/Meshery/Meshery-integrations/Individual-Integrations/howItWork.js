@@ -194,7 +194,7 @@ const HowIntegrationWorksWrapper = styled.section`
 
 
 const HowIntegrationWorks = ({ name, slides }) => {
-	
+
   const settings = {
     customPaging: (i) => {
       return (
