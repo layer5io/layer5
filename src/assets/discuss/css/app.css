@@ -6,6 +6,7 @@
   src: url('Qanelas-Soft?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('Qanelas-Soft.woff2') format('woff2'), /* Super Modern Browsers */
        url('Qanelas-Soft.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-display: swap;
 }
 
 body {
