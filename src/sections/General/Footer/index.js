@@ -121,7 +121,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link className="category-link" to="/careers/programs">
-                      Programs
+                      Internship Programs
                     </Link>
                   </li>
                   <li>
