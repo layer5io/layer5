@@ -33,7 +33,7 @@ const SEO = ({ canonical, description, image, lang, meta, schemaMarkup, title })
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`${title} | ${site.siteMetadata.title}`}
       link={
         canonical
           ? [{ rel: "canonical", key: canonical, href: canonical }]

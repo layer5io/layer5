@@ -461,6 +461,13 @@ module.exports = {
         name: "content-learn",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/collections/integrations`,
+        name: "integrations",
+      },
+    },
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",

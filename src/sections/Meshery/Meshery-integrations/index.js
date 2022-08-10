@@ -2,9 +2,10 @@ import React from "react";
 import { useState } from "react";
 import IntegrationsGrid from "./IntegrationsGrid";
 import IntegrationList from "../../../assets/data/integrations/IntegrationList";
-import Integrations from "./Integration.style";
+import FAQ from "../../General/Faq";
+import { IntegrationsWrapper } from "./Integration.style";
 
-function index() {
+const Integrations = () => {
   const [categoryList, setcategoryList] = useState([
     { id: 1, name: "All", isSelected: true },
     { id: 2, name: "Platforms", isSelected: false },
@@ -61,7 +62,7 @@ function index() {
   };
 
   return (
-    <Integrations>
+    <IntegrationsWrapper>
       <section className="heading">
         <h1>Built-In Integrations</h1>
         <h2>Support for your Cloud Native Infrastructure and Apps</h2>
@@ -80,11 +81,12 @@ function index() {
         })}
       </section>
 
-      <section>
+      <section className="integrations-grid">
         <IntegrationsGrid obj={integrationCollection} />
       </section>
-    </Integrations>
+      <FAQ category={["Meshery Integrations"]} />
+    </IntegrationsWrapper>
   );
-}
+};
 
-export default index;
+export default Integrations;

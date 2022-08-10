@@ -29,6 +29,7 @@ import github from "../../images/socialIcons/github.svg";
 import prometheus from "../../images/service-mesh-icons/prometheus.svg";
 import grafana from "../../images/service-mesh-icons/grafana.svg";
 import argo_cd from "../../images/service-mesh-icons/argo_cd.svg";
+import nats from "../../images/service-mesh-icons/nats.svg"
 
 const IntegrationList = [
   {
@@ -192,6 +193,12 @@ const IntegrationList = [
     img: appmesh,
     status: "inProduction",
     category: "Service Mesh",
+  },
+  {
+    name: "Nats",
+    img: nats,
+    status: "InProgress",
+    category: "Platforms",
   },
   {
     name: "Tanzu Service Mesh",

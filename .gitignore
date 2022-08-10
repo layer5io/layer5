@@ -4,6 +4,7 @@ _site
 .jekyll-cache
 .idea
 
+
 # Logs
 logs
 *.log
@@ -72,6 +73,10 @@ yarn-error.log
 yarn.lock
 .pnp/
 .pnp.js
+.pnp.cjs
+.pnp.loader.mjs
+.yarn/
+
 
 # Yarn Integrity file
 .yarn-integrity
