@@ -112,6 +112,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const resourcePostTemplate = path.resolve(
     "src/templates/resource-single.js"
   );
+  const integrationTemplate = path.resolve(
+    "src/templates/integrations.js"
+  );
 
   const res = await graphql(`
     {
@@ -225,6 +228,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const members = allNodes.filter(
     node => node.fields.collection === "members"
+  );
+
+  const integrations = allNodes.filter(
+    nodes => nodes.fields.collection === "integrations"
   );
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
@@ -361,6 +368,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  integrations.forEach((integration) => {
+    createPage({
+      path: `/service-mesh-management/meshery${integration.fields.slug}`,
+      component: integrationTemplate,
+      context: {
+        slug: integration.fields.slug,
+      },
+    });
+  });
+
 
   let programsArray = [];
   programs.forEach(program => {
@@ -409,7 +426,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 };
-
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
 const getSlugParts = slug => slug.split("/").filter(p => !!p);

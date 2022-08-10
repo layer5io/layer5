@@ -1,35 +1,38 @@
 import React from "react";
-import HoneycombGrid from "./HoneycombGrid.style";
+import { Link } from "gatsby";
+import { HoneycombGrid } from "./Integration.style";
 
 const IntegrationsGrid = ({ obj }) => {
   return (
     <HoneycombGrid>
       <div className="container">
-        {obj.map((item) => {
+        {obj.map((item,index) => {
           const status = item.status === "InProgress" ? true : false;
 
           const data = status ? (
-            <div style={{ background: "rgba(160, 170, 170, 0.5)" }}>
-              <div style={{ background: "#B1B6B8" }}>
+            <div style={{ background: "#A0AAAA" }} key={index}>
+              <div style={{ background: "#A0AAAA" }}>
                 <img
                   src={item.img}
                   alt={item.name}
                   style={{
-                    filter: "brightness(0.05) invert(.9)",
-                    height: "60px",
+                    filter: "brightness(0) invert(1)",
                   }}
                 />
               </div>
             </div>
           ) : (
             <div>
-              <div>
-                <img
-                  src={item.img}
-                  alt={item.name}
-                  style={{ height: "60px" }}
-                />
-              </div>
+              <Link
+                to={`/service-mesh-management/meshery/integrations/${item.name.toLowerCase()}`}
+              >
+                <div>
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                  />
+                </div>
+              </Link>
             </div>
           );
 
