@@ -16,7 +16,6 @@ import layer5_logo from "../../../assets/images/app/layer5.svg";
 
 
 import NavigationWrap from "./navigation.style";
-import { StaticImage } from "gatsby-plugin-image";
 
 const Navigation = () => {
   let data = useStaticQuery(
@@ -183,7 +182,7 @@ const Navigation = () => {
       <Container className="nav-container">
         <div className="navbar-wrap">
           <Link to="/" className="logo">
-            <StaticImage src={layer5_logo} alt="Layer5 logo" />
+            <img src={layer5_logo} alt="Layer5 logo" />
           </Link>
           <nav className="nav">
             {expand ?
