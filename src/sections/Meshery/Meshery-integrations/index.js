@@ -4,6 +4,7 @@ import IntegrationsGrid from "./IntegrationsGrid";
 import IntegrationList from "../../../assets/data/integrations/IntegrationList";
 import FAQ from "../../General/Faq";
 import { IntegrationsWrapper } from "./Integration.style";
+import CTA from "./Individual-Integrations/cta-book";
 
 const Integrations = () => {
   const [categoryList, setcategoryList] = useState([
@@ -62,6 +63,7 @@ const Integrations = () => {
   };
 
   return (
+    <>
     <IntegrationsWrapper>
       <section className="heading">
         <h1>Built-In Integrations</h1>
@@ -86,6 +88,8 @@ const Integrations = () => {
       </section>
       <FAQ category={["Meshery Integrations"]} />
     </IntegrationsWrapper>
+      <CTA />
+</>
   );
 };
 
