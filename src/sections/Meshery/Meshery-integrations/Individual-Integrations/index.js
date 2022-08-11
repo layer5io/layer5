@@ -4,6 +4,7 @@ import Button from "../../../../reusecore/Button";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import CTA_Book from "./cta-book";
 import RelatedIntegration from "./relatedIntegration";
+import Image from "../../../../components/image";
 import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
 
@@ -13,7 +14,7 @@ const IndividualIntegrations = ({ data }) => {
   return (
     <IntegrationPageWrapper>
       <section className="herosection">
-        <img src={frontmatter.integrationIcon.publicURL} alt={frontmatter.title} height={90}/>
+        <Image {...frontmatter.integrationIcon} imgStyle={{ height: "90px" }} alt={frontmatter.title}/>
         <h2>
           {frontmatter.title} with {" "}<span className="hero-header">Meshery</span>
         </h2>

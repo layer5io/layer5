@@ -24,7 +24,7 @@ const IntegrationsGrid = ({ obj }) => {
           ) : (
             <div>
               <Link
-                to={`/service-mesh-management/meshery/integrations/${item.name}`}
+                to={`/service-mesh-management/meshery/integrations/${item.name.toLowerCase()}`}
               >
                 <div>
                   <img
