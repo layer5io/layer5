@@ -147,7 +147,6 @@ const Banner1SectionWrapper = styled.section`
             padding: 5rem 0;
             margin: -3rem auto;
             opacity: 1 !important;
-            box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.7);
 
             > div {
                 margin: auto 0;
@@ -163,12 +162,10 @@ const Banner1SectionWrapper = styled.section`
             h1 { 
                 margin: 0rem;
                 font-size: 1.82rem;
-                color: black;
             }
             h2 {
                 font-size: 1.15rem;
                 width: 80%;
-                color: black;
             }
         }
         p {
