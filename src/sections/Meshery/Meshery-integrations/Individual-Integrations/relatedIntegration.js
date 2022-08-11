@@ -94,7 +94,7 @@ const RelatedIntegration = ({ category }) => {
             if (item.category === category && item.status != "InProgress"){
               return (
                 <div key={index}>
-                  <Link to={`/service-mesh-management/meshery/integrations/${item.name.replaceAll(" ", "-").toLowerCase()}`}>
+                  <Link to={`/service-mesh-management/meshery/integrations/${item.name}`}>
                     <img src={item.img} alt={item.name} height={60} className="img-effect" />
                   </Link>
                 </div>

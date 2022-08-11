@@ -2,11 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
 
-
-const integrationURL = (data) => {
-  return data.replaceAll(" ", "-").toLowerCase();
-};
-
 const IntegrationsGrid = ({ obj }) => {
   return (
     <HoneycombGrid>
@@ -29,7 +24,7 @@ const IntegrationsGrid = ({ obj }) => {
           ) : (
             <div>
               <Link
-                to={`/service-mesh-management/meshery/integrations/${integrationURL(item.name)}`}
+                to={`/service-mesh-management/meshery/integrations/${item.name}`}
               >
                 <div>
                   <img
