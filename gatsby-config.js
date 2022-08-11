@@ -468,6 +468,13 @@ module.exports = {
         name: "integrations",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "integration-images",
+        path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`,
+      },
+    },
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",

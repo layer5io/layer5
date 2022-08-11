@@ -2,12 +2,16 @@ import styled from "styled-components";
 import List_Icon from "../../../../assets/images/app/tick.svg";
 
 export const IntegrationPageWrapper = styled.section`
+
+	.old-gatsby-image-wrapper img{
+		height: 90px;
+	}
 	.herosection{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		margin: 0 auto;
-		padding: 5rem 1rem;
+		padding: 1rem 2rem;
 		h2 {
 			font-size: 2.5rem;
 			text-align: center;
@@ -25,7 +29,7 @@ export const IntegrationPageWrapper = styled.section`
 
 	.overview{
 		display: flex;
-		margin: 0 auto 2rem;
+		margin: 2rem;
 		gap: 5rem;
 		justify-content: center;
 		@media (max-width: 700px) {
@@ -40,6 +44,8 @@ export const IntegrationPageWrapper = styled.section`
 			padding-bottom: 1rem;
 		}
 		ul {
+			margin: 0;
+			padding: 0;
 			li {
 				list-style-type: none;
         margin: 2rem 0;
