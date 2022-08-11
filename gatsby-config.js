@@ -471,7 +471,7 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
+        name: "integration-images",
         path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`,
       },
     },
