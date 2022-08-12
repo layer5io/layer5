@@ -28,7 +28,10 @@ const SMPWrapper = styled.section`
             margin: auto;
             text-align: center;
             width: 80%;
-            margin-bottom: 6.25rem;
+            margin-bottom: 1.25rem;
+        }
+        h3 {
+            margin-bottom: 4.25rem;
         }
         h1{
             margin-bottom: 1.875rem;
