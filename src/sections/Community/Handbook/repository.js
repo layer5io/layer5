@@ -138,7 +138,7 @@ const Repository = () => {
                           <tr>
                             <td>
                               <a href={site} target="_blank" rel="noreferrer">
-                                <img className="site-icon" src={image} />
+                                <img className="site-icon" src={image} alt="site-icon" />
                               </a>
                             </td>
                             <td>{project}</td>
@@ -149,7 +149,7 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} />
+                                <img className="github-icon" src={github} alt="github-icon" />
                               </a>
                             </td>
                           </tr>
@@ -184,7 +184,7 @@ const Repository = () => {
                         <tbody key={project}>
                           <tr>
                             <td>
-                              <img className="site-icon inline" src={image} />&nbsp;{project}</td>
+                              <img className="site-icon inline" src={image} />&nbsp;{project} alt="project" </td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>
@@ -193,7 +193,7 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} />
+                                <img className="github-icon" src={github} alt="github-icon" />
                               </a>
                             </td>
                           </tr>

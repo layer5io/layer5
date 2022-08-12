@@ -60,8 +60,8 @@ const Maintainer = () => {
 
               Its service mesh community represents the largest collection of
               service Mesh projects.Emerging projects like Nighthawk{" "}
-              <img className="project-description-icon" src={hawkIcon} /> , community with{" "}
-              <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} /> MeshMates </Link>, catch-all org, “home base”.
+              <img className="project-description-icon" src={hawkIcon} alt="hawkIcon" /> , community with{" "}
+              <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} alt="meshmateicon" /> MeshMates </Link>, catch-all org, “home base”.
               <br />
               <ul>
                 <li>
@@ -122,8 +122,8 @@ const Maintainer = () => {
             </p>
             <p>
               Meshery and its components Meshery Operator{" "}
-              <img className="project-description-icon" src={mesheryoperatoricon} /> and MeshSync{" "}
-              <img className="project-description-icon" src={mesherysyncicon} />
+              <img className="project-description-icon" src={mesheryoperatoricon} alt="mesheryoperatoricon" /> and MeshSync{" "}
+              <img className="project-description-icon" src={mesherysyncicon} alt="mesherysyncicon" />
               <ul>
                 <li>
                   <h4>
