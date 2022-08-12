@@ -3,9 +3,9 @@ import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import Code from "../../../components/CodeBlock";
-import Signoff from "../../../../.github/assets/images/git-signoff-vscode.png";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
+import { StaticImage } from "gatsby-plugin-image";
 
 const contents = [
   { id: 0, link: "#Clone your fork", text: "Clone your fork" },
@@ -16,6 +16,7 @@ const contents = [
 ];
 
 const contributingGuide = () => {
+  const Signoff = "../../../../.github/assets/images/git-signoff-vscode.png";
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -193,7 +194,7 @@ const contributingGuide = () => {
             Or you may configure your IDE, for example, Visual Studio Code to
             automatically sign-off commits for you:
           </p>
-          <img src={ Signoff } width="74%" id="sign-off" />
+          <StaticImage src={ Signoff } width="74%" id="sign-off" alt="Signoff" />
           <TocPagination />
         </Container>
 
