@@ -5,11 +5,6 @@ export const HandbookWrapper = styled.div`
       font-weight: 600;
     }
 
-    .logo{
-      position: relative;
-      bottom: 18px;
-    }
-
     .content{
       width:100%;
       padding-bottom: 2rem;
@@ -321,7 +316,7 @@ export const HandbookWrapper = styled.div`
       padding-left: 40px;
     }
 
-    .channels-StaticImage {
+    .channels-img {
       width: 40px;
       height: 30px;
     }

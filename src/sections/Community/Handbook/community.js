@@ -3,9 +3,17 @@ import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import { Link } from "gatsby";
+import Point from "./images/bullet.svg";
+import CommunityLogo from "../../../assets/images/community/community-green.svg";
+import PatternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+import LandscapeGreen from "../../../assets/images/landscape/layer5_landscape_green.svg";
+import ImageHubLogo from "../../../assets/images/image-hub/layer5-image-hub.svg";
+import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
+import ServiceMeshPerformance from "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
+import NightHawkLogo from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
-import { StaticImage } from "gatsby-plugin-image";
 
 const contents = [
   { id: 0, link: "#Community Guidelines", text: "Community Guidelines" },
@@ -32,17 +40,6 @@ const recognitionsstyle = {
 };
 
 const CommunityGuide = () => {
-
-  const CommunityLogo = "../../../assets/images/community/community-green.svg";
-  const PatternsLogo = "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-  const LandscapeGreen = "../../../assets/images/landscape/layer5_landscape_green.svg";
-  const ImageHubLogo = "../../../assets/images/image-hub/layer5-image-hub.svg";
-  const MesheryLogo = "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-  const MesheryOperator = "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
-  const ServiceMeshPerformance = "../../../assets/images/service-mesh-performance/stacked/smp-dark-text.svg";
-  const NightHawkLogo = "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
-  const Point = "./images/bullet.svg";
-
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -62,7 +59,7 @@ const CommunityGuide = () => {
               help you get started:
             </p>
             <p>
-              <StaticImage className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} />
               <strong>For Easy Identification -</strong> When setting up your
               slack workspace, your display name should be the same as your
               GitHub username for easy identification, engage freely, and in
@@ -71,7 +68,7 @@ const CommunityGuide = () => {
               warmly received.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} />
               <strong>Familiarize with the community -</strong> As you get to
               familiarize yourself with the community, know that there are
               multiple initiatives for you to explore. Some initiatives have
@@ -83,7 +80,7 @@ const CommunityGuide = () => {
               members over Slack, the mailing list, and so on.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} />
               <strong>Familiarize with the projects -</strong> The following is
               a sample of the many active, ongoing community projects. One way
               of doing so is to review the{" "}
@@ -97,7 +94,7 @@ const CommunityGuide = () => {
               on GitHub!
             </p>
             <p>
-              <StaticImage className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} />
               <strong>Be friendly and open-minded -</strong> We encourage you to
               be welcoming to new collaborators and those just getting started.
               Other contributors might not have the same degree of experience or
@@ -105,14 +102,14 @@ const CommunityGuide = () => {
               ideas.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} />
               <strong>Be honest -</strong> “A half-truth is a whole lie.” Being
               truthful allows you to reach a better agreement. As a result, be
               open and honest about who you are, what you do, and how you want
               to accomplish it.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} />
               <strong>Be respectful and inclusive -</strong> We are a diverse
               group of people with diverse backgrounds and opinions. We expect
               everyone to be civil and professional in their activities.
@@ -121,14 +118,14 @@ const CommunityGuide = () => {
               reasonable person.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} />
               <strong>Collaborate and Contribute -</strong> Members are expected
               to attend community and workgroup meetings, find ways to help,
               check up on our Github page regularly etc. Within the community
               and outside, we encourage teamwork.
             </p>
             <p>
-              <StaticImage className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} />
               <strong>Resources -</strong> Be sure to access the resources in
               the{" "}
               <a href="https://drive.google.com/drive/u/0/folders/0ABH8aabN4WAKUk9PVA">
@@ -143,7 +140,7 @@ const CommunityGuide = () => {
               .
             </p>
             <p>
-              <StaticImage className="logo" src={Point} alt="Point" />
+              <img className="logo" src={Point} />
               <strong>We do not allow:</strong>
               <ul>
                 <li>Threats of violence</li>
@@ -175,35 +172,35 @@ const CommunityGuide = () => {
             </p>
             <ul style={badgeListStyle}>
               <li>
-                <StaticImage src={CommunityLogo} style={badgeStyle} alt="CommunityLogo"/>
+                <img src={CommunityLogo} style={badgeStyle} />
                 Community
               </li>
               <li>
-                <StaticImage src={LandscapeGreen} style={badgeStyle} alt="LanscapeGreen" />
+                <img src={LandscapeGreen} style={badgeStyle} />
                 Landscape
               </li>
               <li>
-                <StaticImage src={ImageHubLogo} style={badgeStyle} alt="ImageHubLogo" />
+                <img src={ImageHubLogo} style={badgeStyle} />
                 Image Hub
               </li>
               <li>
-                <StaticImage src={MesheryLogo} style={badgeStyle} alt="MesheryLogo" />
+                <img src={MesheryLogo} style={badgeStyle} />
                 Meshery
               </li>
               <li>
-                <StaticImage src={MesheryOperator} style={badgeStyle} alt="MesheryOperator" />
+                <img src={MesheryOperator} style={badgeStyle} />
                 Meshery Operator
               </li>
               <li>
-                <StaticImage src={ServiceMeshPerformance} style={badgeStyle} alt="ServiceMeshPerformance" />
+                <img src={ServiceMeshPerformance} style={badgeStyle} />
                 Service Mesh Performance
               </li>
               <li>
-                <StaticImage src={NightHawkLogo} style={badgeStyle} alt="NightHawkLogo" />
+                <img src={NightHawkLogo} style={badgeStyle} />
                 Nighthawk
               </li>
               <li>
-                <StaticImage src={PatternsLogo} style={badgeStyle} alt="PatternsLogo" />
+                <img src={PatternsLogo} style={badgeStyle} />
                 Patterns
               </li>
             </ul>
