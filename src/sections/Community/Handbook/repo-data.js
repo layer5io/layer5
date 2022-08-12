@@ -405,14 +405,14 @@ export const repo_data = [
         image: patterns,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
         maintainers: "Nikhil Ladha",
-        repository: "https://github.com/layer5io/layer5",
+        repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
       {
         project: "Meshery.io",
         image: meshery,
         site: "meshery.io",
         maintainers: "Aditya Chatterjee",
-        repository: "https://github.com/layer5io/layer5",
+        repository: "https://github.com/meshery/meshery.io",
       },
       {
         project: "Discuss Layer5.io",
@@ -426,7 +426,7 @@ export const repo_data = [
         image: five,
         site: "http://layer5.io/",
         maintainers: "Debopriya Bhattacharjee,Gaurav Chadha, Nikhil Ladha Aditya Chatterjee",
-        repository: "http://layer5.io/",
+        repository: "https://github.com/layer5io/layer5",
       },
       {
         project: "Service Mesh Pattern-Spec",
@@ -440,7 +440,7 @@ export const repo_data = [
         image: gnh,
         site: "http://getnighthawk.dev/",
         maintainers: "Aaditya Subedy",
-        repository: "http://discuss.layer5.io/",
+        repository: "https://layer5.io/projects/service-mesh-interface-conformance/",
       },
       {
         project: "Docs Meshery",
