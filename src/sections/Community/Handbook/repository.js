@@ -20,12 +20,14 @@ const contents = [
   },
   { id: 1, link: "#Frontend Projects", text: "Frontend Projects" },
   { id: 2, link: "#Backend Projects", text: "Backend Projects" },
+  { id: 3, link: "#Maintainers", text: "Maintainers" },
 ];
 
 const Repository = () => {
   const data = React.useMemo(() => repo_data);
   let frontendProjects = data.filter((data) => data.category === "Frontend");
-  let backendProjects = data.filter((data) => data.category !== "Frontend");
+  let backendProjects = data.filter((data) => data.category !== "Frontend" && data.category !== "Maintainers");
+  let Maintainers = data.filter( (data) => data.category === "Maintainers");
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -187,6 +189,58 @@ const Repository = () => {
                               <img className="site-icon inline" src={image} />&nbsp;{project}</td>
                             <td>{language}</td>
                             <td>{description}</td>
+                            <td>
+                              <a
+                                href={repository}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <img className="github-icon" src={github} />
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      );
+                    })}
+                  </table>
+                </div>
+              );
+            })}
+            <a id="Maintainers">
+              <h2>Maintainers</h2>
+            </a>
+
+            {Maintainers.map((Maintainers, index) => {
+              const { category } = Maintainers;
+              return (
+                <div className="table-container" key={index}>
+                  <table className="frontendTable" key={category}>
+                    <thead>
+                      <tr>
+                        <th className="linkscol">Site</th>
+                        <th>Project</th>
+                        <th>Maintainers</th>
+                        <th className="linkscol">Repo</th>
+                      </tr>
+                    </thead>
+                    {Maintainers.subdata.map((subdata) => {
+                      const {
+                        project,
+                        maintainers,
+                        repository,
+                        site,
+                        image,
+                      } = subdata;
+                      return (
+                        <tbody key={project}>
+                          <tr>
+                            <td>
+                              <a href={site} target="_blank" rel="noreferrer">
+                                <img className="site-icon" src={image} />
+                              </a>
+                            </td>
+                            <td>{project}</td>
+                            <td>{maintainers}</td>
                             <td>
                               <a
                                 href={repository}
