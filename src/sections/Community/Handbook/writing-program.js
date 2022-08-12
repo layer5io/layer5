@@ -7,6 +7,7 @@ import Modal from "react-modal";
 import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
+import ContentForm from "./writing-program/content-form";
 
 import blog from "./images/blogs.svg";
 import event from "./images/event.svg";
@@ -179,13 +180,9 @@ const Writers = () => {
                   contentLabel="Content Form"
                 >
                   <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
-                  <h2 className="modal-heading">Layer5 Content Form</h2>
+                  <h2 className="modal-heading">Layer5 Content Registration Form</h2>
                   <div className="content-form">
-                    <iframe
-                      src="https://docs.google.com/forms/d/e/1FAIpQLSf0BlMvmeEVsy4x6fMdI2cWcsnyVRSCv7b8e0Ios1hEopjOZQ/viewform"
-                      loading="lazy"
-                      className="form-frame"
-                    />
+                    <ContentForm />
                   </div>
                 </Modal>
               </div>

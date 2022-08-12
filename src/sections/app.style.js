@@ -153,13 +153,15 @@ section{
     position: absolute;
     inset: 50% auto auto 50%;
     border: 1px solid rgb(204, 204, 204);
-    background: rgb(255, 255, 255);
-    overflow: hidden;
+    background: ${(props) => props.theme.body};
     border-radius: 0.5rem;
     outline: none;
     padding: 20px;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    max-width: 50rem;
+    max-height: 40rem;
+    overflow-y: scroll;
 
     .close-modal-btn {
         min-width: 2rem;
@@ -172,7 +174,6 @@ section{
         svg {
             font-size: 2rem;
             width: 1.75rem;
-
         }
     }
 
@@ -187,6 +188,7 @@ section{
     inset: 0px;
     background-color: rgba(255, 255, 255, 0.75);
     z-index: 9999;
+    overflowY: auto;
 }
 
 .contact-form {
