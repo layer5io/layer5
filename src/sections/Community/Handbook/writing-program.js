@@ -8,7 +8,13 @@ import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
 
-import { StaticImage } from "gatsby-plugin-image";
+import blog from "./images/blogs.svg";
+import event from "./images/event.svg";
+import talks from "./images/talks.svg";
+import videos from "./images/videos.svg";
+import workshop from "./images/workshop.svg";
+import resources from "./images/resources.svg";
+import c_icon from "./images/checkmark-box_green.svg";
 
 
 const Writers = () => {
@@ -17,12 +23,7 @@ const Writers = () => {
   const openModal = () => setIsOpen(true);
 
   const closeModal = () => setIsOpen(false);
-  const blog = "./images/blogs.svg";
-  const event = "./images/event.svg";
-  const talks ="./images/talks.svg";
-  const videos = "./images/videos.svg";
-  const workshop = "./images/workshop.svg";
-  const resources = "./images/resources.svg";
+
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -104,7 +105,7 @@ const Writers = () => {
                 <Col sm={12} md={6} lg={4}>
                   <Link className="project-card" to="/blog">
                     <div className="content_type">
-                      <StaticImage src={blog} alt="Blog" />
+                      <img src={blog} alt="Blog" />
                       <h5>Blog</h5>
                       <p>Share Your Experience</p>
                     </div>
@@ -113,7 +114,7 @@ const Writers = () => {
                 <Col sm={12} md={6} lg={4}>
                   <Link className="project-card" to="/resources">
                     <div className="content_type">
-                      <StaticImage src={resources} alt="Resource" />
+                      <img src={resources} alt="Resource" />
                       <h5>Resource</h5>
                       <p>Articles, Tutorials, Podcasts and More</p>
                     </div>
@@ -122,7 +123,7 @@ const Writers = () => {
                 <Col sm={12} md={6} lg={4}>
                   <Link className="project-card" to="/learn/service-mesh-workshops">
                     <div className="content_type">
-                      <StaticImage src={workshop} alt="Workshop" />
+                      <img src={workshop} alt="Workshop" />
                       <h5>Workshop</h5>
                       <p>Deliver a Hands-on Learning Experience</p>
                     </div>
@@ -135,7 +136,7 @@ const Writers = () => {
                 <Col sm={12} md={6} lg={4}>
                   <Link className="project-card" to="/community/events">
                     <div className="content_type">
-                      <StaticImage src={event} alt="Event" />
+                      <img src={event} alt="Event" />
                       <h5>Event</h5>
                       <p>Organize an Event</p>
                     </div>
@@ -144,7 +145,7 @@ const Writers = () => {
                 <Col sm={12} md={6} lg={4}>
                   <Link className="project-card" to="/community/events">
                     <div className="content_type">
-                      <StaticImage src={talks} alt="Talks" />
+                      <img src={talks} alt="Talks" />
                       <h5>Talks</h5>
                       <p>Talk About Anything Cloud Native</p>
                     </div>
@@ -153,7 +154,7 @@ const Writers = () => {
                 <Col sm={12} md={6} lg={4}>
                   <Link className="project-card" to="/service-mesh-management/meshery">
                     <div className="content_type">
-                      <StaticImage src={videos} alt="Videos" />
+                      <img src={videos} alt="Videos" />
                       <h5>Recorded Videos</h5>
                       <p>Product Videos, Reviews or Demo</p>
                     </div>
