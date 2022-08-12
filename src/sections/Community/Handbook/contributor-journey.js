@@ -106,7 +106,7 @@ const Intro = () => {
                 <h2>Contributor's Journey</h2>
                 <div className="heading-start">
                   <h5>Start Here</h5>
-                  <img className="heading-start__arrow" src={longArrow} />
+                  <img className="heading-start__arrow" src={longArrow} alt="longArrow" />
                 </div>
               </Col>
               <Col sm={12} lg={6}>
