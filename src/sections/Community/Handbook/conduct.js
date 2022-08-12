@@ -5,7 +5,9 @@ import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import { StaticImage } from "gatsby-plugin-image";
 
+
 const CodeofConduct= () => {
+  
   const Point = "./images/bullet.svg";
   return (
     <HandbookWrapper>
