@@ -1,17 +1,17 @@
 import docker from "../../images/socialIcons/docker.svg";
 import kubernetes from "../../images/mesheryctl/kubernetes.svg";
 import aks from "../../../sections/Meshery/Meshery-platforms/supported-icons/aks.svg";
-import eks from "../../images/service-mesh-icons/eks.svg";
+import eks from "../../../sections/Meshery/Meshery-platforms/supported-icons/eks.svg";
 import gke from "../../../sections/Meshery/Meshery-platforms/supported-icons/gke.svg";
 import helm from "../../images/service-mesh-icons/helm.svg";
 import kinD from "../../../sections/Meshery/Meshery-platforms/supported-icons/kind.svg";
-import kubesphere from "../../images/service-mesh-icons/kubesphere.svg";
-import minikube from "../../images/service-mesh-icons/minikube.svg";
+import kubesphere from "../../../sections/Meshery/Meshery-platforms/supported-icons/kubesphere.svg";
+import minikube from "../../../sections/Meshery/Meshery-platforms/supported-icons/minikube.svg";
 import openshift from "../../images/service-mesh-icons/openshift.svg";
-import mac from "../../images/service-mesh-icons/mac.svg";
-import homebrew from "../../images/service-mesh-icons/homebrew.svg";
-import wsl2 from "../../images/service-mesh-icons/wsl2.svg";
-import raspberrypi from "../../images/service-mesh-icons/raspberry-pi.svg";
+import mac from "../../../sections/Meshery/Meshery-platforms/supported-icons//mac.svg";
+import homebrew from "../../../sections/Meshery/Meshery-platforms/supported-icons/homebrew.svg";
+import wsl2 from "../../../sections/Meshery/Meshery-platforms/supported-icons/wsl2.svg";
+import raspberrypi from "../../../sections/Meshery/Meshery-platforms/supported-icons/raspberry-pi.svg";
 import traefik from "../../images/service-mesh-icons/traefik.svg";
 import osm from "../../images/service-mesh-icons/osm.svg";
 import nsm from "../../images/service-mesh-icons/nsm.svg";
@@ -26,6 +26,10 @@ import appmesh from "../../images/service-mesh-icons/aws-app-mesh.svg";
 import tanzu from "../../images/service-mesh-icons/tanzu.svg";
 import slack from "../../images/socialIcons/slack-light.svg";
 import github from "../../images/socialIcons/github.svg";
+import prometheus from "../../images/service-mesh-icons/prometheus.svg";
+import grafana from "../../images/service-mesh-icons/grafana.svg";
+import argo_cd from "../../images/service-mesh-icons/argo_cd.svg";
+import nats from "../../images/service-mesh-icons/nats.svg"
 
 const IntegrationList = [
   {
@@ -122,7 +126,7 @@ const IntegrationList = [
     name: "Slack",
     img: slack,
     status: "InProgress",
-    category: "Platform",
+    category: "Platforms",
   },
   {
     name: "Open Service Mesh",
@@ -169,8 +173,8 @@ const IntegrationList = [
   {
     name: "Github",
     img: github,
-    status: "inProgress",
-    category: "Platform",
+    status: "InProgress",
+    category: "Platforms",
   },
   {
     name: "Cilium Service Mesh",
@@ -191,10 +195,34 @@ const IntegrationList = [
     category: "Service Mesh",
   },
   {
+    name: "Nats",
+    img: nats,
+    status: "InProgress",
+    category: "Platforms",
+  },
+  {
     name: "Tanzu Service Mesh",
     img: tanzu,
     status: "inProduction",
     category: "Service Mesh",
+  },
+  {
+    name: "Prometheus",
+    img: prometheus,
+    status: "InProgress",
+    category: "Platforms",
+  },
+  {
+    name: "Grafana",
+    img: grafana,
+    status: "InProgress",
+    category: "Platforms",
+  },
+  {
+    name: "Argo CD",
+    img: argo_cd,
+    status: "InProgress",
+    category: "Platforms",
   },
 ];
 

@@ -35,7 +35,7 @@ const BannerSectionWrapper = styled.section`
   }
   .section-button {
     font-weight: 600;
-    color: white;
+    color: ${props => props.theme.DarkTheme ? "black" : "white"};
     margin-bottom: -15rem;
   }
   @media only screen and (max-width: 1224px) {

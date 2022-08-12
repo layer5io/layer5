@@ -12,7 +12,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
   const [expand, setExpand] = useState(false);
 
-  const reformatTOC= (data) => {
+  const reformatTOC = (data) => {
     let newData = data.split("-").join(" ");
     let firstLetter = newData.charAt(0).toUpperCase();
     newData = `${firstLetter}${newData.slice(1)}`;

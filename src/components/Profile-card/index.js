@@ -21,12 +21,12 @@ const ProfileCard = (props) => {
               </Link>
             )}
             {/* TODO: Code needs to be improved */}
-            { name==="Nikhil Ladha" && (
+            { name === "Nikhil Ladha" && (
               <Link className="meshmate" to="/community/meshmates">
                 <img src={Meshmate2020} alt="meshmate-color-icon" />
               </Link>
             )}
-            { name==="Aditya Chatterjee" && (
+            { name === "Aditya Chatterjee" && (
               <Link className="meshmate" to="/community/meshmates">
                 <img src={Meshmate2021} alt="meshmate-color-icon" />
               </Link>

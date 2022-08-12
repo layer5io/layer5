@@ -9,9 +9,9 @@ import MeshMapCTA from "../../meshmap-cta";
 
 import data from "./data";
 import c_icon from "./c-icon.svg";
-import logo from "./logo.svg";
-import smi from "./smi.svg";
-import smiLogo from "./smi-logo.png";
+import logo from "../../../assets/images/service-mesh-icons/service-mesh-interface/icon/black/grey-logo.svg";
+import smi from "../../../assets/images/service-mesh-icons/service-mesh-interface/smi-table.svg";
+import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-interface/icon/color/servicemeshinterface-icon-color.svg";
 import TestsTable from "./testsTable";
 
 const SMIPage = () => {

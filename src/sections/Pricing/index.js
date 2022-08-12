@@ -26,38 +26,38 @@ const Pricing = () => {
 
       <div className="wrapper">
         <Container>
-          <Row>
+          {/* <Row>
             <Col>
               <div className="subscription-duration">
-                <h2>How often do you want to pay?</h2>
+                <h2>Choose <b>annual pricing</b> and get <i>2 months free</i> every year.</h2>
                 <div className="subscriptionButtons">
                   <Button
                     secondary
-                    className={monthly? "active button" : "inactive button"}
+                    className={monthly ? "active button" : "inactive button"}
                     onClick={() => setMonthly(true)}
                   >
                     Monthly
                   </Button>
                   <Button
                     secondary
-                    className={monthly? "inactive button" : "active button"}
+                    className={monthly ? "inactive button" : "active button"}
                     onClick={() => setMonthly(false)} >
                     Yearly
                   </Button>
                 </div>
               </div>
             </Col>
-          </Row>
+          </Row> */}
           <Row>
             {options.map((x) => (
               <Col md={4} key={x.tier}>
                 <div className={`${x.featured ? "featured" : ""} pricing-table`}>
-                  {x.featured ? <div className="pricing-label">Start Here</div> : ""}
+                  {x.featured ? <div className="pricing-label">Free Forever</div> : ""}
                   <h2>{x.tier}</h2>
                   <h5 className="byline">{x.byline}</h5>
                   <div className="pricing-features">
                     {x.summary.map((t) => (
-                      <div className="feature" key={t.id}><FeatureDetails category={t.category} description={t.description}/></div>
+                      <div className="feature" key={t.id}><FeatureDetails category={t.category} description={t.description} /></div>
                     ))}
                   </div>
                   {/*
@@ -67,7 +67,7 @@ const Pricing = () => {
                     <span className="after">/user{monthly? "/month" : "/year"}</span>
                   </div> */}
 
-                  <Button primary className={x.button[0]=== "Coming Soon" ? "price-button-disabled" : "price-button-link"} url={x.button[1]}>{x.button[0]}</Button>
+                  <Button primary className={x.button[0] === "Coming Soon" ? "price-button-disabled" : "price-button-link"} url={x.button[1]}>{x.button[0]}</Button>
                 </div>
               </Col>
             ))}

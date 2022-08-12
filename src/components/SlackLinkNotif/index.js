@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "../../reusecore/Button";
 
 const SlackNotif = styled.div`
+    color: #000000;
     .container {
         background-color: #FFF7D8; 
         padding: 16px 0px 16px 0px;

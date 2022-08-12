@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../../components/layout";
@@ -9,21 +9,29 @@ import Footer from "../../sections/General/Footer";
 import Community from "../../sections/Community";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
+import { darktheme } from "../../theme/app/themeStyles";
 
-const CommunityIndex = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Cloud Native, Kubernetes, and Service Mesh Community"
-        description="The Cloud Native Management Community at Layer5 - Learn, Share, Engage.
+
+const CommunityIndex = () => {
+  const [theme, setTheme] = useState();
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
+  return (
+    <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Cloud Native, Kubernetes, and Service Mesh Community"
+          description="The Cloud Native Management Community at Layer5 - Learn, Share, Engage.
            Join the award-winning open source community - the warmest and most welcoming open source community around."
-        image="/images/layer5-tag-community-dark-bg.png" />
-      <Navigation />
-      <Community />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
-
+          image="/images/layer5-tag-community-dark-bg.png" />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <Community theme={theme} />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default CommunityIndex;

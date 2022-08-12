@@ -3,6 +3,11 @@ import styled from "styled-components";
 const Banner1SectionWrapper = styled.section`
     top: 3.2rem;
     padding-bottom: 2rem;
+    .section-bgimage {
+        &::before, &::after {
+            content: none !important;
+        }
+    }
     .background-svg {
         overflow: visible;
         position: absolute;
@@ -34,6 +39,7 @@ const Banner1SectionWrapper = styled.section`
         }
         h2 {
             margin: 0 0 20px 0;
+            color: ${props => props.theme.text};
             span {
                 color: ${props => props.theme.secondaryColor};
             }
@@ -132,11 +138,25 @@ const Banner1SectionWrapper = styled.section`
         .banner-btn+.banner-btn{
             margin-left: 15px;
         } 
-     }
-     @media only screen and (max-width: 760px) {
-        padding: 2rem 0;
+    }
+    @media only screen and (max-width: 760px) {
+        .section-bgimage {
+            &::before, &::after {
+                content: '' !important;
+            }
+            padding: 5rem 0;
+            margin: -3rem auto;
+            opacity: 1 !important;
+
+            > div {
+                margin: auto 0;
+            }
+        }
         .section-title-wrapper {
             min-width: 100%;
+        }
+        .video-col{
+            display: none;
         }
         .section-title { 
             h1 { 

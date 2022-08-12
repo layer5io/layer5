@@ -1,8 +1,55 @@
 import styled from "styled-components";
-
 const ProjectItemWrapper = styled.section`
 	margin: 5rem 0rem;
+	path.clss-1{
+		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
+	}
+	path.clss-2{
+		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
+	}
+	path.clss-3{
+		fill:#647881
+	}
+	path.clss-4{
+		fill:#00b39f
+	}
+	path.clss-5{
+		fill:#00d3a9
+	}
+	path.clss-6{
+		fill:#477e96
+	}
+	path.cls-1{
+		fill:#00d3a9
+	}
+	path.cls-2{
+		fill:#00b39f
+	}
+	path.cls-3{
+		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
+	}
+	path.st2 {
+		fill: #2beda7;
+	}
+	polygon.cls-1{
+		fill:#00d3a9
+	}
+	polygon.cls-2{
+		fill:#00b39f
+	}
+	polygon.cls-3{
+		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
 
+	}
+	path.st2 {
+		fill: #2beda7;
+	}
+	path.LinkerdText {
+		fill: ${props => props.theme.DarkTheme ? "white" : "black"};
+	}
+	path.CNCFText {
+		fill: ${props => props.theme.DarkTheme ? "white" : "black"};
+	}
 	.project-title {
 		text-align: center;
 		padding: 0 2rem;
@@ -10,15 +57,18 @@ const ProjectItemWrapper = styled.section`
 
 		h4 {
 			margin-bottom: 0.5rem;
-			color: ${props => props.theme.primaryLightColor};
+			color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};
 			text-transform: uppercase;
 		}
 		h2{
+			 span {
+				color: ${props => props.theme.text};
+			 }
 			margin-bottom: 1rem;
 		}
 		.project-text {
 			margin:0 auto 4rem auto;
-			color: rgba(0, 0, 0, 0.6);
+			color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
 			max-width: 60%;
 		}
 	}
@@ -51,11 +101,12 @@ const ProjectItemWrapper = styled.section`
 		}
 	}
 
+	}
 	.proj_icon_2,
 	.proj_icon_1 {
 		max-width: 18rem;
 		height: 7rem;
-		background: #F3F3F3;
+		background: ${props => props.theme.DarkTheme ? "#212121" : "#F3F3F3"};
 		display: flex;
 		border-radius: 1.5rem;
 		justify-content: center;

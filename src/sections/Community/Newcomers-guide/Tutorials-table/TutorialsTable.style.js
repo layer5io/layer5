@@ -17,7 +17,7 @@ export const TutorialsTableWrapper = styled.div`
       vertical-align: middle;
     }
     tr:nth-child(odd) {
-      background-color: #F0F0F0;
+      background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
     }
     th {
       background-color: ${props => props.theme.secondaryColor};

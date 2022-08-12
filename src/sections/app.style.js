@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
 html{
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
+    background: ${(props) => props.theme.body};
 }
 
 body,html {
@@ -35,8 +36,10 @@ body {
   line-height: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  color: ${(props) => props.theme.text};
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   font-family: 'Open Sans', sans-serif;
-  color: ${(props) => props.theme.textColor};
   overflow-x: hidden !important;
   font-weight: 400 !important;
   margin: 0;
@@ -125,7 +128,9 @@ p {
       font-size: 1rem;
     }
 }
-
+Button:hover {
+  box-shadow: 0 2px 10px  ${(props) => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+}
 a {
     text-decoration: none;
     color: ${(props) => props.theme.linkColor};
@@ -194,7 +199,29 @@ section{
     border: none;
     overflow: hidden;
 }
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
 
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: pink;
+}
+
+.fa-sun {
+  color: yellow;
+}
 @media screen and (max-width: 765px) {
     .form-frame {
         width: 25rem;

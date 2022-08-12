@@ -8,9 +8,9 @@ import Counter from "../../../../reusecore/Counter";
 import { URL } from "../../../Counters/index";
 
 const DataCardWrapper = styled.div`
-  background: ${props => props.theme.white};
+  background: ${props => props.theme.DarkTheme ? "#222222" : "#FFFFFF"};
   border-radius: 10px;
-  color: ${props => props.theme.black};
+  color: ${props => props.theme.text};
   padding: 2rem;
   
   ul{

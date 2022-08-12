@@ -41,7 +41,7 @@ const TOCWrapper = styled.div`
   }
 
   .toc-sub-heading {
-    color:#000000;
+    color: ${(props) => props.theme.text};
     margin-top: 1rem;
     font-weight: 300;
     font-size: 1.15rem;

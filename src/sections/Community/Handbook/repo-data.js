@@ -53,21 +53,6 @@ export const repo_data = [
         repository: "https://github.com/meshery/meshery/tree/master/ui",
       },
       {
-        project: "Service Mesh Performance",
-        image: smp,
-        site: "https://smp-spec.io",
-        language: "Jekyll",
-        repository:
-          "https://github.com/service-mesh-performance/service-mesh-performance",
-      },
-      {
-        project: "Nighthawk",
-        image: gnh,
-        site: "https://getnighthawk.dev",
-        language: "Jekyll",
-        repository: "https://github.com/layer5io/nighthawk",
-      },
-      {
         project: "MeshMap",
         image: meshery,
         site:
@@ -77,11 +62,33 @@ export const repo_data = [
         repository: "https://github.com/meshery/meshery",
       },
       {
+        project: "Nighthawk",
+        image: gnh,
+        site: "https://getnighthawk.dev",
+        language: "Jekyll",
+        repository: "https://github.com/layer5io/nighthawk",
+      },
+      {
         project: "Service Mesh Discussion",
         image: five,
         site: "https://discuss.layer5.io",
         language: "Discourse",
         repository: " https://discuss.layer5.io",
+      },
+      {
+        project: "Service Mesh Patterns",
+        image: patterns,
+        site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
+        language: "Gatsby",
+        repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
+      },
+      {
+        project: "Service Mesh Performance",
+        image: smp,
+        site: "https://smp-spec.io",
+        language: "Jekyll",
+        repository:
+          "https://github.com/service-mesh-performance/service-mesh-performance",
       },
     ],
   },

@@ -1,4 +1,4 @@
-export const tools_data= [
+export const tools_data = [
   {
     tool: "fortio",
     link: "https://github.com/istio/fortio/",

@@ -77,7 +77,7 @@ export const MemberSingleWrapper = styled.div`
                 font-weight: 600;
                 font-size: 40px;
                 line-height: 1;
-                color: black;
+                color: ${props => props.theme.text};
                 letter-spacing: -2px;
                 margin-top: 0.9375rem;
                 padding: 0;
@@ -138,7 +138,7 @@ export const MemberSingleWrapper = styled.div`
                     }
                     
                     svg{
-                        color: greyscale;
+                        color: ${props => props.theme.DarkTheme ? "white" : "greyscale"};
                         display: block;
                         width: 2rem;
                     }

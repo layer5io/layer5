@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import theme from "../theme/app/themeStyles";
 import { GlobalStyle } from "../sections/app.style";
 
 import SEO from "../components/seo";
@@ -8,16 +7,25 @@ import Navigation from "../sections/General/Navigation";
 import Footer from "../sections/General/Footer";
 import Layout from "../components/layout";
 import Unsubscribed from "../sections/unsubscribed/unsubscribed";
+import { darktheme } from "../theme/app/themeStyles";
+import lighttheme from "../theme/app/themeStyles";
 
-const UnsubscribedSection = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Service Mesh Newsletter" description="The Service Mesh Newsletter" />
-      <Navigation />
-      <Unsubscribed />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
+const UnsubscribedSection = () => {
+  const [theme, setTheme] = useState();
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
+  return (
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Service Mesh Newsletter" description="The Service Mesh Newsletter" />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <Unsubscribed />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default UnsubscribedSection;

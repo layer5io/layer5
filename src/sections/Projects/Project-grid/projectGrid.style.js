@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const ProjectWrapper = styled.div`
     padding-bottom: 5rem;
     h3{
-        color: ${props => props.theme.primaryLightColor};
+        color: ${props => props.theme.DarkTheme ? "rgba(255,255,255,0.6)" : props.theme.primaryLightColor};  
         margin: 0;
         padding: 0;
         font-weight: 500;
@@ -49,7 +49,8 @@ export const ProjectWrapper = styled.div`
         grid-auto-flow: row;
     }
     .project__card{
-        box-shadow: 0px 0px 10px lightgray;
+        box-shadow: 0px 0px 10px ${props => props.theme.DarkTheme ? "#00d3a9" : "lightgrey"};
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
         border-radius: 4%;
         display: flex;
         justify-content: center;
