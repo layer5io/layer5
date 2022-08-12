@@ -1,18 +1,11 @@
 import React from "react";
 import { Container } from "../../../reusecore/Layout";
-import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
-import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
-import hawkIcon from "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
-import meshmateicon from "../../../assets/images/meshmate/meshmate-icon.svg";
-import PatternsLogo from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
-import mesheryoperatoricon from "../../../assets/images/meshery-operator/meshery-operator.svg";
-import mesherysyncicon from "../../../assets/images/meshsync/meshsync.svg";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import { Link } from "gatsby";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
+import { StaticImage } from "gatsby-plugin-image";
 
 const contents = [
   {
@@ -34,6 +27,14 @@ const contents = [
 ];
 
 const Maintainer = () => {
+  const meshery = "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
+  const layer5icon = "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
+  const hawkIcon = "../../../assets/images/nighthawk/icon-only/SVG/nighthawk-logo.svg";
+  const meshmateicon = "../../../assets/images/meshmate/meshmate-icon.svg";
+  const PatternsLogo = "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
+  const servicemeshperformance = "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+  const mesheryoperatoricon = "../../../assets/images/meshery-operator/meshery-operator.svg";
+  const mesherysyncicon = "../../../assets/images/meshsync/meshsync.svg";
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -49,7 +50,7 @@ const Maintainer = () => {
                 {" "}
                 <h3>
                   <a href="https://layer5.io/">
-                    <img className="project-title-icon" src={layer5icon} alt="Layer5" />
+                    <StaticImage className="project-title-icon" src={layer5icon} alt="Layer5" />
                     &nbsp; Layer5{" "}
                   </a>
                 </h3>{" "}
@@ -60,8 +61,8 @@ const Maintainer = () => {
 
               Its service mesh community represents the largest collection of
               service Mesh projects.Emerging projects like Nighthawk{" "}
-              <img className="project-description-icon" src={hawkIcon} /> , community with{" "}
-              <Link to="/community/meshmates"><img className="project-description-icon" src={meshmateicon} /> MeshMates </Link>, catch-all org, “home base”.
+              <StaticImage className="project-description-icon" src={hawkIcon} /> , community with{" "}
+              <Link to="/community/meshmates"><StaticImage className="project-description-icon" src={meshmateicon} /> MeshMates </Link>, catch-all org, “home base”.
               <br />
               <ul>
                 <li>
@@ -113,7 +114,7 @@ const Maintainer = () => {
                 {" "}
                 <h3>
                   <a href="https://layer5.io/service-mesh-management/meshery">
-                    <img className="project-title-icon" src={meshery} alt="Meshery" />
+                    <StaticImage className="project-title-icon" src={meshery} alt="Meshery" />
                     &nbsp; Meshery
                   </a>
                 </h3>{" "}
@@ -122,8 +123,8 @@ const Maintainer = () => {
             </p>
             <p>
               Meshery and its components Meshery Operator{" "}
-              <img className="project-description-icon" src={mesheryoperatoricon} /> and MeshSync{" "}
-              <img className="project-description-icon" src={mesherysyncicon} />
+              <StaticImage className="project-description-icon" src={mesheryoperatoricon} /> and MeshSync{" "}
+              <StaticImage className="project-description-icon" src={mesherysyncicon} />
               <ul>
                 <li>
                   <h4>
@@ -167,7 +168,7 @@ const Maintainer = () => {
               <p>
                 <h3>
                   <a href="https://smp-spec.io/">
-                    <img
+                    <StaticImage
                       className="project-title-icon"
                       alt="service mesh performance"
                       src={servicemeshperformance}
@@ -194,7 +195,7 @@ const Maintainer = () => {
                 {" "}
                 <h3>
                   <a href="https://github.com/service-mesh-patterns/service-mesh-patterns">
-                    <img
+                    <StaticImage
                       className="project-title-icon"
                       alt="service mesh patterns"
                       src={PatternsLogo}

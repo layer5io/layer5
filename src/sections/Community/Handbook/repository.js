@@ -3,14 +3,9 @@ import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import { repo_data } from "./repo-data";
-import github from "../../../assets/images/socialIcons/github.svg";
-import layer5icon from "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
-import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator.svg";
-import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
-import servicemeshperformance from "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
-import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
+import { StaticImage } from "gatsby-plugin-image";
 
 const contents = [
   {
@@ -23,6 +18,12 @@ const contents = [
 ];
 
 const Repository = () => {
+  const github = "../../../assets/images/socialIcons/github.svg";
+  const layer5icon = "../../../assets/images/layer5/5 icon/svg/light/5-light-bg.svg";
+  const MesheryOperator = "../../../assets/images/meshery-operator/meshery-operator.svg";
+  const MeshSync = "../../../assets/images/meshsync/meshsync.svg";
+  const servicemeshperformance = "../../../assets/images/service-mesh-performance/icon/smp-dark.svg";
+  const meshery = "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
   const data = React.useMemo(() => repo_data);
   let frontendProjects = data.filter((data) => data.category === "Frontend");
   let backendProjects = data.filter((data) => data.category !== "Frontend");
@@ -55,7 +56,7 @@ const Repository = () => {
             <ul className="project-org-list">
               <li>
                 <a href="https://github.com/layer5io">
-                  <img
+                  <StaticImage
                     src={layer5icon}
                     alt="layer5 icon"
                   />
@@ -66,19 +67,19 @@ const Repository = () => {
 
               <li>
                 <a href="https://github.com/meshery">
-                  <img
+                  <StaticImage
                     src={meshery}
                     alt="meshery icon"
                   />
                   &nbsp; Meshery
                 </a>
                   -  Meshery and its components Meshery Operator
-                <img
+                <StaticImage
                   src={MesheryOperator}
                   alt="meshery operator icon"
                   style={{ marginLeft: ".3rem" }}
                 /> and MeshSync
-                <img
+                <StaticImage
                   src={MeshSync}
                   alt="mesh sync icon"
                   style={{ marginLeft: ".3rem" }}
@@ -87,7 +88,7 @@ const Repository = () => {
 
               <li>
                 <a href="https://github.com/service-mesh-performance">
-                  <img
+                  <StaticImage
                     src={servicemeshperformance}
                     alt="service mesh performance icon"
                   />
@@ -98,7 +99,7 @@ const Repository = () => {
 
               <li>
                 <a href="https://github.com/service-mesh-patterns">
-                  <img
+                  <StaticImage
                     src="https://user-images.githubusercontent.com/85789734/134711787-5bf0aeaa-008c-4e2c-a81e-e05f3dcfb54c.png"
                     alt="service mesh patterns icon"
                   />
@@ -138,7 +139,7 @@ const Repository = () => {
                           <tr>
                             <td>
                               <a href={site} target="_blank" rel="noreferrer">
-                                <img className="site-icon" src={image} />
+                                <StaticImage className="site-icon" src={image} />
                               </a>
                             </td>
                             <td>{project}</td>
@@ -149,7 +150,7 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} />
+                                <StaticImage className="github-icon" src={github} />
                               </a>
                             </td>
                           </tr>
@@ -184,7 +185,7 @@ const Repository = () => {
                         <tbody key={project}>
                           <tr>
                             <td>
-                              <img className="site-icon inline" src={image} />&nbsp;{project}</td>
+                              <StaticImage className="site-icon inline" src={image} />&nbsp;{project}</td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>
@@ -193,7 +194,7 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} />
+                                <StaticImage className="github-icon" src={github} />
                               </a>
                             </td>
                           </tr>
