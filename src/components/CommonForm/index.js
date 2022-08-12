@@ -29,12 +29,6 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
 
   const errorAccounts = "Please provide at least one account";
   const errorRole = "Please select role as applicable";
-  const nextStep = () => {
-    if (stepNumber === 0) {
-      setSubmit(true);
-    }
-    window.scrollTo(0, 200);
-  };
 
   useEffect(() => {
     if (submit) {
@@ -68,7 +62,8 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
         if ((values.google || values.github || values.twitter || values.linkedin) && values.role) {
           setMemberFormOne(values);
           setStepNumber(1);
-          nextStep();
+          setSubmit(true);
+          window.scrollTo(0, 300);
         } else {
           if (!values.role) {
             setValidateRole(true);
