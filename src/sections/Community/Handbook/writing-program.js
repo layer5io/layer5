@@ -7,7 +7,9 @@ import Modal from "react-modal";
 import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
+
 import { StaticImage } from "gatsby-plugin-image";
+
 
 const Writers = () => {
   const [modalIsOpen,setIsOpen] = useState(false);
@@ -17,12 +19,10 @@ const Writers = () => {
   const closeModal = () => setIsOpen(false);
   const blog = "./images/blogs.svg";
   const event = "./images/event.svg";
-  const talks = "./images/talks.svg";
+  const talks ="./images/talks.svg";
   const videos = "./images/videos.svg";
   const workshop = "./images/workshop.svg";
   const resources = "./images/resources.svg";
-  const c_icon = "./images/checkmark-box_green.svg";
-
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -44,7 +44,7 @@ const Writers = () => {
                   <div className="listed">
                     <table className="table">
                       <tr>
-                        <td className="icon"> <StaticImage src={c_icon} alt="icon" /></td>
+                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                         <td className="skill">
                           <h4>
                         Improve your writing and  <br />
@@ -53,7 +53,7 @@ const Writers = () => {
                       Publishing is a feedback-driven process that can help you understand your audience better, explain complex topics clearly, and iterate to improve results.                    </td>
                       </tr>
                       <tr>
-                        <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                         <td className="skill">
                           <h4>
                       Give back
@@ -68,7 +68,7 @@ const Writers = () => {
                   <div className="listed">
                     <table className="table">
                       <tr>
-                        <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                         <td className="skill">
                           <h4>
                         Establish your voice
@@ -77,7 +77,7 @@ const Writers = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="icon"><StaticImage src={c_icon} alt="icon" /></td>
+                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                         <td className="skill">
                           <h4>
                         Educate
