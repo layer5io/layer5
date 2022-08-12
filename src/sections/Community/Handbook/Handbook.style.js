@@ -308,7 +308,7 @@ export const HandbookWrapper = styled.div`
       padding-left: 40px;
     }
 
-    .channels-img {
+    .channels-StaticImage {
       width: 40px;
       height: 30px;
     }

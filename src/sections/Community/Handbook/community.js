@@ -175,35 +175,35 @@ const CommunityGuide = () => {
             </p>
             <ul style={badgeListStyle}>
               <li>
-                <StaticImage src={CommunityLogo} style={badgeStyle} alt="badgeStyle"/>
+                <StaticImage src={CommunityLogo} style={badgeStyle} alt="CommunityLogo"/>
                 Community
               </li>
               <li>
-                <StaticImage src={LandscapeGreen} style={badgeStyle} alt="badgeStyle" />
+                <StaticImage src={LandscapeGreen} style={badgeStyle} alt="LanscapeGreen" />
                 Landscape
               </li>
               <li>
-                <StaticImage src={ImageHubLogo} style={badgeStyle} alt="badgeStyle" />
+                <StaticImage src={ImageHubLogo} style={badgeStyle} alt="ImageHubLogo" />
                 Image Hub
               </li>
               <li>
-                <StaticImage src={MesheryLogo} style={badgeStyle} alt="badgeStyle" />
+                <StaticImage src={MesheryLogo} style={badgeStyle} alt="MesheryLogo" />
                 Meshery
               </li>
               <li>
-                <StaticImage src={MesheryOperator} style={badgeStyle} alt="badgeStyle" />
+                <StaticImage src={MesheryOperator} style={badgeStyle} alt="MesheryOperator" />
                 Meshery Operator
               </li>
               <li>
-                <StaticImage src={ServiceMeshPerformance} style={badgeStyle} alt="badgeStyle" />
+                <StaticImage src={ServiceMeshPerformance} style={badgeStyle} alt="ServiceMeshPerformance" />
                 Service Mesh Performance
               </li>
               <li>
-                <StaticImage src={NightHawkLogo} style={badgeStyle} alt="badgeStyle" />
+                <StaticImage src={NightHawkLogo} style={badgeStyle} alt="NightHawkLogo" />
                 Nighthawk
               </li>
               <li>
-                <StaticImage src={PatternsLogo} style={badgeStyle} alt="badgeStyle" />
+                <StaticImage src={PatternsLogo} style={badgeStyle} alt="PatternsLogo" />
                 Patterns
               </li>
             </ul>
