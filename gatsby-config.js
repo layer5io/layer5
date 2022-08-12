@@ -7,7 +7,7 @@ module.exports = {
     author: "Layer5 Authors",
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
-    image: "/images/layer5.png",
+    image: "/images/layer5-gradient.png",
     twitterUsername: "@layer5",
   },
   flags: {
