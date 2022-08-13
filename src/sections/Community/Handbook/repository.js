@@ -184,7 +184,7 @@ const Repository = () => {
                         <tbody key={project}>
                           <tr>
                             <td>
-                              <img className="site-icon inline" src={image} />&nbsp;{project} alt="project" </td>
+                              <img className="site-icon inline" src={image} alt="project" />&nbsp;{project} </td>
                             <td>{language}</td>
                             <td>{description}</td>
                             <td>
