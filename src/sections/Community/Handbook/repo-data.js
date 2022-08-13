@@ -429,7 +429,7 @@ export const repo_data = [
         repository: "https://github.com/layer5io/layer5",
       },
       {
-        project: "Service Mesh Pattern-Spec",
+        project: "Service Mesh Performance",
         image: smp,
         site: "http://smp-spec.io/",
         maintainers: "Aaditya Subedy",

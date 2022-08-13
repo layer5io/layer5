@@ -54,7 +54,7 @@ export const maintainer_data= [
         repository: "http://discuss.layer5.io/",
       },
       {
-        project: "Docs Meshery",
+        project: "Meshery Documentation",
         image: meshery,
         site: "http://docs.meshery.io/",
         maintainers: "Adithya Krishna",
