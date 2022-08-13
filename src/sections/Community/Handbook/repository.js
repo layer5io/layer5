@@ -226,10 +226,11 @@ const Repository = () => {
                     {Maintainers.subdata.map((subdata) => {
                       const {
                         project,
-                        maintainers,
+                        maintainers_name,
                         repository,
                         site,
                         image,
+                        link
                       } = subdata;
                       return (
                         <tbody key={project}>
@@ -240,7 +241,12 @@ const Repository = () => {
                               </a>
                             </td>
                             <td>{project}</td>
-                            <td>{maintainers}</td>
+
+                            <td>
+                              {maintainers_name.map((item,index)=>{
+                                <a href={link[index]}>{item}</a>
+                              })}
+                            </td>                             
                             <td>
                               <a
                                 href={repository}
@@ -268,3 +274,8 @@ const Repository = () => {
 };
 
 export default Repository;
+
+
+// {for (var i = 0; i < link.length; i++) {
+//   return <a href={link[i]}>{maintainers_name[i]}</a>
+// }}

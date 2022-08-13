@@ -404,7 +404,7 @@ export const repo_data = [
         project: "Service Mesh Pattern",
         image: smp,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
-        maintainers: "Nikhil Ladha",
+        maintainers_name: "Nikhil Ladha",
         repository: "https://github.com/service-mesh-patterns",
         link: "https://layer5.io/community/members/nikhil-ladha",
       },
@@ -422,13 +422,13 @@ export const repo_data = [
         site: "http://discuss.layer5.io/",
         maintainers: ["Debopriya Bhattacharjee ","Gaurav Chadha", "Nikhil Ladha", "Aditya Chatterjee"],
         repository: "http://discuss.layer5.io/",
-        link: "https://layer5.io/community/members/ekene-leonard-nwobodo",
+        link:  ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha","https://layer5.io/community/members/aditya-chatterjee"],
       },
       {
         project: "Service Mesh Pattern-Spec",
         image: smp,
         site: "http://smp-spec.io/",
-        maintainers: "Aaditya Subedy",
+        maintainers_name: "Aaditya Subedy",
         repository: "http://discuss.layer5.io/",
         link: "https://layer5.io/community/members/aaditya-narayan-subedy",
       },
@@ -436,7 +436,7 @@ export const repo_data = [
         project: "NightHawk",
         image: gnh,
         site: "http://getnighthawk.dev/",
-        maintainers: "Aaditya Subedy",
+        maintainers_name: "Aaditya Subedy",
         repository: "https://github.com/layer5io/getnighthawk",
         link: "https://layer5.io/community/members/aaditya-narayan-subedy",
       },
@@ -444,7 +444,7 @@ export const repo_data = [
         project: "Meshery Documentation",
         image: meshery,
         site: "http://docs.meshery.io/",
-        maintainers: "Adithya Krishna",
+        maintainers_name: "Adithya Krishna",
         repository: "https://github.com/meshery/meshery/tree/master/docs",
         link: "https://layer5.io/community/members/adithya-krishna",
       },
@@ -452,3 +452,5 @@ export const repo_data = [
   },
 
 ];
+
+
