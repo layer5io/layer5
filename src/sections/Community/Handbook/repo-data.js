@@ -402,7 +402,7 @@ export const repo_data = [
     subdata: [
       {
         project: "Service Mesh Pattern",
-        image: smp,
+        image: patterns,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
         maintainers_name: "Nikhil Ladha",
         repository: "https://github.com/service-mesh-patterns",
@@ -425,7 +425,7 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha","https://layer5.io/community/members/aditya-chatterjee"],
       },
       {
-        project: "Service Mesh Pattern-Spec",
+        project: "Service Mesh Performance",
         image: smp,
         site: "http://smp-spec.io/",
         maintainers_name: "Aaditya Subedy",
