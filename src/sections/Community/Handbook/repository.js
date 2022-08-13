@@ -243,10 +243,10 @@ const Repository = () => {
                             <td>{project}</td>
 
                             <td>
-                              {maintainers_name.map((item,index)=>{
-                                <a href={link[index]}>{item}</a>
+                              {maintainers_name.map((maintainers_name,index) => {
+                                return <a href={link[index]} target="_blank" rel="noreferrer">{maintainers_name}</a>
                               })}
-                            </td>                             
+                            </td>
                             <td>
                               <a
                                 href={repository}
