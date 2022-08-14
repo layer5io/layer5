@@ -28,6 +28,9 @@ const Repository = () => {
   let frontendProjects = data.filter((data) => data.category === "Frontend");
   let backendProjects = data.filter((data) => data.category !== "Frontend" && data.category !== "Maintainers");
   let Maintainers = data.filter( (data) => data.category === "Maintainers");
+  
+  var rows = [];
+  
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -241,11 +244,11 @@ const Repository = () => {
                               </a>
                             </td>
                             <td>{project}</td>
-
-                            <td>
-                              {maintainers_name.map((maintainers_name,index) => {
-                                return <a href={link[index]} target="_blank" rel="noreferrer">{maintainers_name}</a>
-                              })}
+                            <td>                     
+                            <a href={link[0]}>{maintainers_name[0]}</a>
+                            <a href={link[1]}>{maintainers_name[1]}</a>
+                            <a href={link[2]}>{maintainers_name[2]}</a>
+                            <a href={link[3]}>{maintainers_name[3]}</a>
                             </td>
                             <td>
                               <a
