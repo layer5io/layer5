@@ -420,8 +420,16 @@ export const repo_data = [
         project: "Discuss Layer5.io",
         image: five,
         site: "http://discuss.layer5.io/",
-        maintainers_name: ["Debopriya Bhattacharjee, ","Gaurav Chadha, ", "Nikhil Ladha, ", "Aditya Chatterjee, "],
+        maintainers_name: ["Leonard Nwobodo"],
         repository: "http://discuss.layer5.io/",
+        link: ["https://layer5.io/community/members/ekene-leonard-nwobodo"],
+      },
+      {
+        project: "Layer5.io",
+        image: five,
+        site: "https://layer5.io/",
+        maintainers_name: ["Debopriya Bhattacharjee, ","Gaurav Chadha, ", "Nikhil Ladha, ", "Aditya Chatterjee, "],
+        repository: "https://github.com/layer5io/",
         link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha","https://layer5.io/community/members/aditya-chatterjee"],
       },
       {
