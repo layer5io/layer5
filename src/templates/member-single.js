@@ -53,7 +53,6 @@ const MemberSinglePage = ({ data }) => {
         <Navigation theme={theme} themeSetter={themeSetter} />
         <MemberSingle
           frontmatter={data.mdx.frontmatter}
-          body={data.mdx.body}
         />
         <Footer />
       </Layout>
