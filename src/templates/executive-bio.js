@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
-import MemberSingle from "../sections/Community/Member-single/executive_bio";
+import MemberBio from "../sections/Community/Member-single/executive_bio";
 import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
@@ -62,7 +62,7 @@ const MemberBioSinglePage = ({ data }) => {
         <GlobalStyle />
         <SEO title={data.allMdx.nodes[0].frontmatter.name} image={data.allMdx.nodes[0].frontmatter.executive_image.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <MemberSingle
+        <MemberBio
           frontmatter={data.allMdx.nodes[0].frontmatter}
           body={data.allMdx.nodes[0].body}
         />
