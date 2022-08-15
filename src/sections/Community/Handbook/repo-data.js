@@ -401,7 +401,7 @@ export const repo_data = [
     category: "Maintainers",
     subdata: [
       {
-        project: "Service Mesh Pattern",
+        project: "Service Mesh Patterns",
         image: patterns,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
         maintainers_name: ["Nikhil Ladha"],
