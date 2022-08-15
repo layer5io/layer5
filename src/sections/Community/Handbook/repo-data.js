@@ -428,7 +428,7 @@ export const repo_data = [
         project: "Layer5.io",
         image: five,
         site: "https://layer5.io/",
-        maintainers_name: ["Debopriya Bhattacharjee ","Gaurav Chadha ", "Nikhil Ladha ", "Aditya Chatterjee "],
+        maintainers_name: ["Debopriya Bhattacharjee","Gaurav Chadha", "Nikhil Ladha", "Aditya Chatterjee"],
         repository: "https://github.com/layer5io/layer5",
         link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha","https://layer5.io/community/members/aditya-chatterjee"],
       },
