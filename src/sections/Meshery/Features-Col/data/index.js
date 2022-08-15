@@ -37,7 +37,7 @@ const configurationFeatureData = {
       className: "--on",
     },
     {
-      content: "Apply custom configuration to your service mesh",
+      content: "Apply custom configuration to your Kubernetes clusters",
       className: "--on",
     },
     {
@@ -45,11 +45,11 @@ const configurationFeatureData = {
       className: "--on",
     },
     {
-      content: "Control service mesh add-ons",
+      content: "Version your infrastructure configuration designs",
       className: "--on",
     },
     {
-      content: "Visualize your deployment with MeshMap",
+      content: "Visualize and dry-run your deployment with MeshMap",
       className: "--on",
     },
     {
@@ -58,8 +58,8 @@ const configurationFeatureData = {
     },
   ],
   count: {
-    value: 1200,
-    description: "users",
+    value: 100,
+    description: "components",
   },
 };
 

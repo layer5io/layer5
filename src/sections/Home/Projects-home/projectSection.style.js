@@ -2,9 +2,9 @@ import styled from "styled-components";
 import background from "./images/background.svg";
 
 const ProjectItemWrapper = styled.section`
-    padding: 0 0 110px 0;
+    padding: 0 0 2rem 0;
     overflow: hidden;
-    margin-top: 2rem;
+    margin-top: 4rem;
     .project-title {
         .section-title{
 
@@ -85,13 +85,26 @@ const ProjectItemWrapper = styled.section`
     .description {
         padding: 1rem;
         border-radius: 1rem;
+        display: flex;
+
+        justify-content: center;
+        align-items: baseline;
         background: ${props => props.theme.secondaryLightColor};
-        text-align: center;
+        .button {
+            margin: auto;
+        }
         p {
+            display: inline;
+            text-align: center;
+            justify-content: center;
+            font-size: 1rem;
             padding: 0 4rem;
             margin: 0rem;
             color: #737373;
-        }
+            span {
+                font-weight: 600;
+            }
+        }        
     }
     @media only screen and (max-width: 992px) {
         .project__block__wrap:before {

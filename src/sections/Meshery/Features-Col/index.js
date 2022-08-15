@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import c_icon from "./checkmark-box_green.svg";
+// import c_icon from "./checkmark-box_green.svg";
 import data from "./data";
 import Counter from "../../../reusecore/Counter";
 import {
@@ -17,7 +17,7 @@ function getServiceFeature(service, index) {
     <table className="table" key={index}>
       <tr>
         <td className="icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg>        </td>
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg>        </td>
         <td className="service">{service.content}</td>
       </tr>
     </table>
@@ -41,12 +41,12 @@ function getFeatureBlock(feature, index, performanceCount) {
       <CountBlockContainer>
         <h1 className="count">
           <Counter
-            duration={6}
+            duration={5}
             separator=","
             end={
               feature.count.value !== 0 ? feature.count.value : performanceCount
             }
-            suffix={feature.count.description == "users" ? "+" : ""}
+            suffix={feature.count.description == "components" ? "+" : ""}
           />
         </h1>
         <p className="count-desc">{feature.count.description}</p>
@@ -70,7 +70,7 @@ const Features = () => {
       <TitleContainer>
         <h1>
           <span className="light">Your</span> full-service
-          <span className="light"> mesh manager</span>
+          <span className="light"> cloud native manager</span>
         </h1>
       </TitleContainer>
       <FeaturesSectionContainer>

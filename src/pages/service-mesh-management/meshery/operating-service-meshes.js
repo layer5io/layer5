@@ -41,8 +41,8 @@ const OperatingServiceMeshes = () => {
         <Navigation theme={theme} themeSetter={themeSetter} />
         <HowMesheryWorksHero />
         <HowMesheryWorks
-          title="How Meshery Manages Meshes"
-          description="As the multi-mesh manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
+          title="How Meshery Manages Cloud Native Infra"
+          description="As the cloud native manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
           features={
             [
               {
@@ -65,9 +65,11 @@ const OperatingServiceMeshes = () => {
                 title: "MeshMap",
                 icon: VisualTopology,
                 description:
-                  <div><p>MeshMap enables of all cloud native management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
-                    Designing and configuration your service mesh is as easy as dragging and dropping.</p>
-                  <p>Learn more about <a href="https://layer5.io/cloud-native-management/meshmap">MeshMap</a></p></div>,
+                  <div>
+                    <p>MeshMap enables of all cloud native management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
+                      Designing and configuration your service mesh is as easy as dragging and dropping.</p>
+                    <p>Learn more about <a href="https://layer5.io/cloud-native-management/meshmap">MeshMap</a></p>
+                  </div>,
               },
               {
                 title: "Extension Points",

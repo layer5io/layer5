@@ -28,7 +28,7 @@ const MesheryPage = () => {
                 <h1 className="heading-2"> <span className="heading-2">management plane</span></h1>
                 <p className="desc-p">
                   {/* Meshery is the cloud native manager. <br /> */}
-                    Operate your infrastructure and workloads with confidence using Meshery's management features.
+                  Operate your infrastructure and workloads with confidence using Meshery's management features.
                 </p>
                 <Button primary className="banner-btn" title="How Meshery Works" url="./operating-service-meshes">
                   <GiClockwork size={21} className="button-icon" />
@@ -50,7 +50,7 @@ const MesheryPage = () => {
         <FeaturesSection />
         <Container>
           <div className="callout">
-            <h1> Manage your service mesh with features you won't find anywhere else.</h1>
+            <h1> Manage your clusters with features you won't find anywhere else.</h1>
           </div>
         </Container>
         <Features />
