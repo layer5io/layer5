@@ -46,10 +46,10 @@ const IndexPage = () => {
       <SEO title="Layer5" description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of service mesh standards. Maker of Meshery, the cloud native management plane."
         schemaMarkup={schema} />
       <Layout >
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <Banner />
-        <Partners />
         <Integrations />
+        <Partners />
         {/* <Features /> */}
         <ServiceMeshManagement />
         <Statement />

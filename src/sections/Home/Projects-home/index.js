@@ -9,6 +9,7 @@ const projectImage1 = "../../../assets/images/app/projects/landscape.png";
 const projectImage2 = "../../../assets/images/app/projects/smp.png";
 const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.png";
 const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.png";
+const meshmapLogo = "../../../assets/images/meshmap/icon-only/meshmap-icon.svg";
 
 const Projects = () => {
   return (
@@ -30,12 +31,21 @@ const Projects = () => {
         </Row>
         <Row>
           <div className="project__block__wrap">
-            <Col sm={12} md={6} lg={3}>
+            {/* <Col sm={12} md={6} lg={3}>
               <Link className="project-card" to="/service-mesh-landscape">
                 <div className="project__block__inner">
                   <StaticImage src={projectImage1} alt="Landscape Logo" height={40} />
                   <h5>Landscape</h5>
                   <p>Service Mesh Ecosystem</p>
+                </div>
+              </Link>
+            </Col> */}
+            <Col sm={12} md={6} lg={3}>
+              <Link className="project-card" to="/cloud-native-management/meshmap">
+                <div className="project__block__inner">
+                  <StaticImage src={meshmapLogo} alt="MeshMap Logo" height={40} />
+                  <h5>MeshMap</h5>
+                  <p>Visual Infrastructure Management</p>
                 </div>
               </Link>
             </Col>
