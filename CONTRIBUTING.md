@@ -63,11 +63,18 @@ The following list of instructions pertains to commonplace site updates by contr
 2. It is recommended to use pre-existing styles or colors from the theme. Avoid adding your CSS variables."
 
 
- Examples- To change Text Color according to the theme
+### Examples
 
-color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor}; (Recommended)
+To change text color according to the theme (recommended):
 
-color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" :"rgba(0, 0, 0, 0.6)"}; (Not recommended, only use when there is a need for creating a new css variable)
+```
+color: ${props => props.theme.DarkTheme ? props.theme.secondaryColor : props.theme.primaryLightColor}; 
+```
+Alternatively, to change text color according to the theme (Not recommended, only use when there is a need for creating a new css variable):
+
+```
+color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" :"rgba(0, 0, 0, 0.6)"}; 
+```
 
 ## Changing SVG according to theme
 

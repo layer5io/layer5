@@ -19,6 +19,9 @@ import MesheryOperatorLogo from "../../../sections/Meshery/How-meshery-works/ima
 import Smi from "../../../assets/images/app/projects/smi.svg";
 import WebA from "../../../sections/Meshery/How-meshery-works/images/webassembly_logo.svg";
 import SMP from "../../../sections/Meshery/How-meshery-works/images/smp-dark-text.png";
+import dark_githubLogo from "../../../assets/images/socialIcons/github_black.svg";
+import light_githubLogo from "../../../assets/images/socialIcons/github-light.svg";
+
 import { darktheme } from "../../../theme/app/themeStyles";
 import lighttheme from "../../../theme/app/themeStyles";
 
@@ -45,6 +48,11 @@ const OperatingServiceMeshes = () => {
           description="As the cloud native manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
           features={
             [
+              {
+                title: "GitOps: Configuration as Visual Design",
+                icon: dark_githubLogo,
+                description: <p>GitOps is a way to define workflows for declarative configuration using Git. Meshery greatly simplifies configuring and managing cloud native infrastructure at-scale across multiple clusters with a git-integrated experience.</p>
+              },
               {
                 title: "Supporting Service Mesh Interface",
                 icon: SMILogo,
