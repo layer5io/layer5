@@ -29,7 +29,6 @@ const Repository = () => {
   let backendProjects = data.filter((data) => data.category !== "Frontend" && data.category !== "Maintainers");
   let Maintainers = data.filter( (data) => data.category === "Maintainers");
 
-  var rows = [];
 
   return (
     <HandbookWrapper>
@@ -240,7 +239,7 @@ const Repository = () => {
                           <tr>
                             <td>
                               <a href={site} target="_blank" rel="noreferrer">
-                                <img className="site-icon" src={image} />
+                                <img className="site-icon" src={image} alt="Project Website Icon" />
                               </a>
                             </td>
                             <td>{project}</td>
@@ -259,7 +258,7 @@ const Repository = () => {
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                <img className="github-icon" src={github} />
+                                <img className="github-icon" src={github} alt="GitHub Icon" />
                               </a>
                             </td>
                           </tr>
