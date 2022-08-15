@@ -28,6 +28,8 @@ export const query = graphql`query MemberBioBySlug($member: String!) {
       position
       github
       twitter
+      email
+      profile
       meshmate
       linkedin
       location

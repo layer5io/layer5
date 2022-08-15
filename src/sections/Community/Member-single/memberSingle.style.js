@@ -170,12 +170,13 @@ export const MemberSingleWrapper = styled.div`
 
             .exec-bio-image{
                 margin-bottom: 1rem;
+                text-align: center;
                   img{
                       -ms-interpolation-mode: bicubic;
                       vertical-align: middle;
                   }
                   .gatsby-image-wrapper, .old-gatsby-image-wrapper {
-                      margin: 1rem;
+                      margin: 1rem auto;
                       border-radius: 100%;
                       overflow: hidden;
                       width: 140px;
@@ -184,6 +185,11 @@ export const MemberSingleWrapper = styled.div`
                     }
                     p{
                         margin: 0 auto;
+                    }
+                    .profile-social-links {
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
                     }
                }
         }
