@@ -213,7 +213,7 @@ const Repository = () => {
               <h2>Maintainers</h2>
             </a>
 
-            {Maintainers.map((Maintainers, index) => {
+            {Maintainers.map((Maintainer, index) => {
               const { category } = Maintainers;
               return (
                 <div className="table-container" key={index}>
@@ -226,7 +226,7 @@ const Repository = () => {
                         <th className="linkscol">Repo</th>
                       </tr>
                     </thead>
-                    {Maintainers.subdata.map((subdata) => {
+                    {Maintainer.subdata.map((subdata) => {
                       const {
                         project,
                         maintainers_name,
@@ -245,10 +245,13 @@ const Repository = () => {
                             </td>
                             <td>{project}</td>
                             <td>
-                              <a href={link[0]}>{maintainers_name[0]}</a>
-                              <a href={link[1]}>{maintainers_name[1]}</a>
-                              <a href={link[2]}>{maintainers_name[2]}</a>
-                              <a href={link[3]}>{maintainers_name[3]}</a>
+                                {maintainers_name.map((maintainer_name, index) => {
+                                  return (
+                                    <a href={link[index]} rel="noreferrer" target="_blank" key={index}>
+                                      <span>{index > 0 ? ", " : ""}</span>{maintainer_name}
+                                    </a>
+                                  );
+                                })}
                             </td>
                             <td>
                               <a
