@@ -1,0 +1,55 @@
+---
+title: "What is GitOps?"
+thumbnail: "../../../../assets/images/socialIcons/github-dark.svg"
+darkthumbnail: "../../../../assets/images/socialIcons/github-light.svg"
+date: 2022-08-16 10:30:05 -0530
+category: Cloud Native
+tags:
+ - GitOps
+type: Article
+technology: Kubernetes
+product: Meshery
+featured: false
+published: true
+resource: true
+---
+
+import { ResourcesWrapper } from "../../../../Resources.style.js";
+
+<ResourcesWrapper>
+<p>
+    GitOps revolves around the central notion that infrastructure can be treated as code. Like code, not only can you store your infrastructure configuration in a source code version system, but you can also take your infrastructure configurtion and any changes to its configuration through the same change management process that you do when updating your applications and services. In part, GitOps is about change management, and consquently, it is about risk reduction and risk management. When you automated a process and classify the manner in which you systemize the process, risk is reduced through the consistency and series of processes and reviews changes go through.
+</p>
+<p> 
+    GitOps is the acknowledgement that declarative systems that everything is (or should be) defined as code. With all code in a source code system, that system becomes the source of truth and in the system of record for how your infrastructure is running. Well, that is, assumign that your infrastructure configuraiton hasn't drifted from its desired stated defined in your source code system. If Git is the source of truth, you cannot run operations manually by executing random commands. Doing so would mean that Git would stop being the only source of truth. Instead, the only goal of humans (operations) is to define the desired state as code and store it in git. Then, let the machines synchronize that with the actual state. Such synchronization must be continuous so that the two states are (almost) always in sync. In other words, GitOps is about defining everything as code, storing that code in Git, and letting the machines detect the drift between the desired and the actual state – and making sure that drifts are resolved as soon as possible, hence resulting in the two states being almost always in sync.
+</p>
+
+## Principles of GitOps
+The principles of the OpenGitOps initiative identify the following four signifant characteristics of GitOps:
+ 
+### 1) Declarative
+A system managed by GitOps must have its desired state expressed declaratively.
+
+### 2) Versioned and Immutable
+Desired state is stored in a way that enforces immutability, versioning and retains a complete version history.
+
+### 3) Pulled Automatically
+Software agents automatically pull the desired state declarations from the source.
+
+### 4) Continuously Reconciled
+Software agents continuously observe actual system state and attempt to apply the desired state.
+
+OpenGitOps is a set of open-source standards, best practices, and community-focused education to help organizations adopt a structured, standardized approach to implementing GitOps.
+
+If you are new to GitOps, it builds and iterates on ideas drawn from DevOps and Infrastructure as Code that started with Martin Fowler’s comprehensive Continuous Integration overview and provides the freedom to choose the tools that you need for your specific use cases.
+
+Individuals, teams, and organizations who implement GitOps experience many benefits, including:
+
+- Increased Developer & Operational Productivity
+- Enhanced Developer Experience
+- Improved Stability
+- Higher Reliability
+- Consistency and Standardization
+- Stronger Security Guarantees
+
+</ResourcesWrapper>
