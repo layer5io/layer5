@@ -69,9 +69,11 @@ export const MemberSingleWrapper = styled.div`
             display: block;
             position: relative;
             text-align: center;
-            padding: 1.875rem 0 1.25rem;
+            padding: 1.875rem 0 3px;
+            margin-bottom: 1.25rem;
             z-index: 1;
             overflow: hidden;
+            border-bottom: 3px solid ${props => props.theme.secondaryColor};
             
             .name {
                 font-weight: 600;
@@ -92,8 +94,6 @@ export const MemberSingleWrapper = styled.div`
                 letter-spacing: .5px;
                 margin-top: 0.9375rem;
                 padding-top: 1px;
-                padding-bottom: 3px;
-                border-bottom: 3px solid ${props => props.theme.secondaryColor};
                 width: 50%;
                 text-align: left;
             }
@@ -106,7 +106,6 @@ export const MemberSingleWrapper = styled.div`
             padding-left: 0 !important;
             
             li {
-                a{
                     display: block;
                     color: black;
                     text-align: left;
@@ -117,6 +116,10 @@ export const MemberSingleWrapper = styled.div`
                     -o-transition: box-shadow 0.2s;
                     transition: box-shadow 0.2s;
                     transition: 0.3s;
+
+                    a{
+                        color: black;   
+                    }
                     
                     &:hover{
                         box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24);
@@ -130,6 +133,10 @@ export const MemberSingleWrapper = styled.div`
                         }
                         .twitter{
                             color: #1DA1F2;
+                        }
+                        .bio{
+                            color: #00b39f;
+                            cursor: pointer;
                         }
                     }
                     
@@ -148,7 +155,6 @@ export const MemberSingleWrapper = styled.div`
                         height: 2rem;
                         max-width: none;
                     }
-                }
             }
         }
         .start-contributing{
@@ -157,5 +163,34 @@ export const MemberSingleWrapper = styled.div`
           p{
             font-weight: 700;
           }
+        }
+    
+        .executive-bio{
+            margin: 4.5rem 0 3.125rem 0;
+
+            .exec-bio-image{
+                margin-bottom: 1rem;
+                text-align: center;
+                  img{
+                      -ms-interpolation-mode: bicubic;
+                      vertical-align: middle;
+                  }
+                  .gatsby-image-wrapper, .old-gatsby-image-wrapper {
+                      margin: 1rem auto;
+                      border-radius: 100%;
+                      overflow: hidden;
+                      width: 140px;
+                      height: 140px;
+                      box-shadow: 0px 0px 8px 1px rgba(0,179,159,1);
+                    }
+                    p{
+                        margin: 0 auto;
+                    }
+                    .profile-social-links {
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                    }
+               }
         }
 `;

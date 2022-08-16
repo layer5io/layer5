@@ -101,6 +101,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/member-single.js"
   );
 
+  const MemberBioTemplate = path.resolve(
+    "src/templates/executive-bio.js"
+  );
+
   const WorkshopTemplate = path.resolve(
     "src/templates/workshop-single.js"
   );
@@ -150,6 +154,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               id
             }
             fieldValue
+          }
+      }
+      memberBio: allMdx(
+        filter: { fields: { collection: { eq: "members" } }, frontmatter: { published: { eq: true }, executive_bio: { eq: true } } }
+        ){
+          nodes{
+            frontmatter{
+              name
+            }
+            fields{
+              slug
+              collection
+            }
           }
       }
       singleWorkshop: allMdx(
@@ -344,6 +361,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: MemberTemplate,
       context: {
         slug: member.fields.slug,
+      },
+    });
+  });
+
+  const MemberBio = res.data.memberBio.nodes;
+  MemberBio.forEach(memberbio => {
+    createPage({
+      path: `${memberbio.fields.slug}/bio`,
+      component: MemberBioTemplate,
+      context: {
+        member: memberbio.frontmatter.name,
       },
     });
   });

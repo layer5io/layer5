@@ -6,27 +6,39 @@ import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../sections/General/Navigation";
-import MemberSingle from "../sections/Community/Member-single";
+import MemberBio from "../sections/Community/Member-single/executive_bio";
 import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
 
-export const query = graphql`query MemberBySlug($slug: String!) {
-  mdx(fields: {slug: {eq: $slug}}) {
+export const query = graphql`query MemberBioBySlug($member: String!) {
+  allMdx(
+    filter: {
+        fields: { collection: { eq: "members" } }
+        frontmatter: { name: { eq: $member }, published: { eq: true } }
+      }
+  ) {
+    nodes {
+        id
+        body
     frontmatter {
       name
       position
       github
       twitter
+      email
+      profile
       meshmate
       linkedin
       location
       badges
       bio
       executive_bio
-      image_path {
+      executive_position
+      company
+      executive_image {
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED)
         }
@@ -34,11 +46,12 @@ export const query = graphql`query MemberBySlug($slug: String!) {
         publicURL
       }
     }
+}
   }
 }
 `;
 
-const MemberSinglePage = ({ data }) => {
+const MemberBioSinglePage = ({ data }) => {
   const [theme, setTheme] = useState();
 
   const themeSetter = (thememode) => {
@@ -49,10 +62,11 @@ const MemberSinglePage = ({ data }) => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.name} image={data.mdx.frontmatter.image_path.publicURL} />
+        <SEO title={data.allMdx.nodes[0].frontmatter.name} image={data.allMdx.nodes[0].frontmatter.executive_image.publicURL} />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <MemberSingle
-          frontmatter={data.mdx.frontmatter}
+        <MemberBio
+          frontmatter={data.allMdx.nodes[0].frontmatter}
+          body={data.allMdx.nodes[0].body}
         />
         <Footer />
       </Layout>
@@ -60,5 +74,5 @@ const MemberSinglePage = ({ data }) => {
   );
 };
 
-export default MemberSinglePage;
+export default MemberBioSinglePage;
 
