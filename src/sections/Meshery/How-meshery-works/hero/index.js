@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Col, Row } from "../../../../reusecore/Layout";
 import styled from "styled-components";
-import HeroImage from "../images/meshery-operator-dark.svg";
-import HeroImageLight from "../images/meshery-operator-light.svg";
+import HeroImage from "../images/meshery-operator.svg";
+import HeroImageLight from "../images/meshery-operator-white.svg";
 
 const HowMesheryWorksHeroWrapper = styled.div`
     
