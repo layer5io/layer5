@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
 
-const IntegrationsGrid = ({ obj }) => {
+const IntegrationsGrid = ({ data }) => {
   return (
     <HoneycombGrid>
       <div className="container">
-        {obj.map((item,index) => {
+        {data.map((item,index) => {
           const status = item.frontmatter.status === "InProgress" ? true : false;
 
           const data = status ? (
@@ -24,7 +24,7 @@ const IntegrationsGrid = ({ obj }) => {
           ) : (
             <div>
               <Link
-                to={`/service-mesh-management/meshery/integrations/${item.frontmatter.title.toLowerCase().replaceAll(" ", "-")}`}
+                to={`/service-mesh-management/meshery${item.fields.slug}`}
               >
                 <div>
                   <img

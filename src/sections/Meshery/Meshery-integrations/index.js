@@ -24,10 +24,13 @@ const Integrations = () => {
             publicURL
           }
         }
+        fields{
+          slug
+        }
       }
     }
-  }   
-  `);
+  }
+   `);
 
   const [categoryList, setcategoryList] = useState([
     { id: 1, name: "All", isSelected: true },
@@ -105,7 +108,7 @@ const Integrations = () => {
       </section>
 
       <section className="integrations-grid">
-        <IntegrationsGrid obj={integrationCollection} />
+        <IntegrationsGrid data={integrationCollection} />
       </section>
       <FAQ category={["Meshery Integrations"]} />
     </IntegrationsWrapper>

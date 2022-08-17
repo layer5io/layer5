@@ -53,7 +53,12 @@ const RelatedIntegration = ({ category }) => {
 
   const data = useStaticQuery(graphql`
   query {
-    allMdx(filter: { fields: { collection: { eq: "integrations" } } }) {
+    allMdx(
+      filter: {
+        frontmatter: { published: { eq: true } }
+        fields: { collection: { eq: "integrations" } }
+      }
+    ) {
       nodes {
         frontmatter {
           title
@@ -66,6 +71,9 @@ const RelatedIntegration = ({ category }) => {
             extension
             publicURL
           }
+        }
+        fields {
+          slug
         }
       }
     }
@@ -116,10 +124,10 @@ const RelatedIntegration = ({ category }) => {
       <Slider {...settings}>
         {
           IntegrationList.map((item, index) => {
-            if (item.frontmatter.category === category && item.status != "InProgress"){
+            if (item.frontmatter.category === category){
               return (
                 <div key={index}>
-                  <Link to={`/service-mesh-management/meshery/integrations/${item.frontmatter.title.toLowerCase().replaceAll(" ", "-")}`}>
+                  <Link to={`/service-mesh-management/meshery${item.fields.slug}`}>
                     <img src={item.frontmatter.integrationIcon.publicURL} alt={item.frontmatter.title} height={60} className="img-effect" />
                   </Link>
                 </div>
