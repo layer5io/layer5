@@ -42,7 +42,7 @@ const OperatingServiceMeshes = () => {
           description="How the cloud native management plane, Meshery works"
           image="/images/meshery-logo-dark-text.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <HowMesheryWorksHero />
+        <HowMesheryWorksHero theme={theme} />
         <HowMesheryWorks
           title="How Meshery Manages Cloud Native Infra"
           description="As the cloud native manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
