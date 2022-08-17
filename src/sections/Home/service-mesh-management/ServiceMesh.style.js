@@ -18,8 +18,9 @@ const MeshSectionWrapper = styled.section`
     color: ${props => props.theme.text};
     margin: 50px 0 24px 0;
     span {
-           font-weight: 600;
-            color: ${props => props.theme.keppelColor};
+           font-weight: 300;
+            /* color: ${props => props.theme.keppelColor}; */
+
         }
    }
    .side{

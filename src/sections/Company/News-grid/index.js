@@ -10,8 +10,8 @@ import { useEffect } from "react";
 import useDataList from "../../../utils/usedataList";
 import Press from "./press";
 
-let coverageFiltered= false;
-let pressReleaseFiltered=false;
+let coverageFiltered = false;
+let pressReleaseFiltered = false;
 
 function colorchange(id) {
   let element = document.getElementById(id);
@@ -29,10 +29,10 @@ const NewsGrid = ({ data, theme }) => {
   const [news, setNews] = useState(queryResults);
   useEffect( () => {
     setNews(queryResults);
-    if (coverageFiltered==true) {
+    if (coverageFiltered == true) {
       setNews(filteredCoverage);
     }
-    if (pressReleaseFiltered==true) {
+    if (pressReleaseFiltered == true) {
       setNews(filteredPressRelease);
     }
   }, [queryResults]
@@ -47,32 +47,32 @@ const NewsGrid = ({ data, theme }) => {
 
   const filterCoverage = () => {
     colorchange("coverage");
-    if (coverageFiltered==false&&pressReleaseFiltered==false){
+    if (coverageFiltered == false && pressReleaseFiltered == false){
       setNews(filteredCoverage);
-      coverageFiltered=true;
-    } else if (coverageFiltered==false&&pressReleaseFiltered==true) {
+      coverageFiltered = true;
+    } else if (coverageFiltered == false && pressReleaseFiltered == true) {
       colorchange("press-release");
       setNews(filteredCoverage);
-      coverageFiltered=true;
-      pressReleaseFiltered=false;
-    } else if (coverageFiltered==true && pressReleaseFiltered==false){
+      coverageFiltered = true;
+      pressReleaseFiltered = false;
+    } else if (coverageFiltered == true && pressReleaseFiltered == false){
       setNews(queryResults);
-      coverageFiltered=false;
+      coverageFiltered = false;
     }
   };
   const filterPressRelease = () => {
     colorchange("press-release");
-    if (pressReleaseFiltered==false&&coverageFiltered==false){
+    if (pressReleaseFiltered == false && coverageFiltered == false){
       setNews(filteredPressRelease);
-      pressReleaseFiltered=true;
-    } else if (pressReleaseFiltered==false&&coverageFiltered==true) {
+      pressReleaseFiltered = true;
+    } else if (pressReleaseFiltered == false && coverageFiltered == true) {
       colorchange("coverage");
       setNews(filteredPressRelease);
-      pressReleaseFiltered=true;
-      coverageFiltered=false;
-    } else if (pressReleaseFiltered==true&&coverageFiltered==false){
+      pressReleaseFiltered = true;
+      coverageFiltered = false;
+    } else if (pressReleaseFiltered == true && coverageFiltered == false){
       setNews(queryResults);
-      pressReleaseFiltered=false;
+      pressReleaseFiltered = false;
     }
   };
   return (

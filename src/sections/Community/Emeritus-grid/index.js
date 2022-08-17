@@ -5,8 +5,8 @@ import ProfileCard from "../../../components/Profile-card";
 import { useStaticQuery, graphql } from "gatsby";
 import { EmeritusWrapper } from "./emeritus.style";
 
-const Emeritus=() => {
-  const data=useStaticQuery(
+const Emeritus = () => {
+  const data = useStaticQuery(
     graphql`query emeritus {
   allMdx(
     sort: {fields: [frontmatter___name], order: ASC}

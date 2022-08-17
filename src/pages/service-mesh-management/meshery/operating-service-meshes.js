@@ -19,6 +19,9 @@ import MesheryOperatorLogo from "../../../sections/Meshery/How-meshery-works/ima
 import Smi from "../../../assets/images/app/projects/smi.svg";
 import WebA from "../../../sections/Meshery/How-meshery-works/images/webassembly_logo.svg";
 import SMP from "../../../sections/Meshery/How-meshery-works/images/smp-dark-text.png";
+import dark_githubLogo from "../../../assets/images/socialIcons/github_black.svg";
+import light_githubLogo from "../../../assets/images/socialIcons/github-light.svg";
+
 import { darktheme } from "../../../theme/app/themeStyles";
 import lighttheme from "../../../theme/app/themeStyles";
 
@@ -30,14 +33,7 @@ const OperatingServiceMeshes = () => {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-  // prevents ssr flash for mismatched dark mode
-  if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
-  }
+
   return (
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
@@ -46,12 +42,17 @@ const OperatingServiceMeshes = () => {
           description="How the cloud native management plane, Meshery works"
           image="/images/meshery-logo-dark-text.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <HowMesheryWorksHero />
+        <HowMesheryWorksHero theme={theme} />
         <HowMesheryWorks
-          title="How Meshery Manages Meshes"
-          description="As the multi-mesh manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
+          title="How Meshery Manages Cloud Native Infra"
+          description="As the cloud native manager, Meshery offers support for more adapters than any other project or product in the world. Meshery uses adapters for managing the various service meshes."
           features={
             [
+              {
+                title: "GitOps: Configuration as Visual Design",
+                icon: dark_githubLogo,
+                description: <p>GitOps is a way to define workflows for declarative configuration using Git. Meshery greatly simplifies configuring and managing cloud native infrastructure at-scale across multiple clusters with a git-integrated experience.</p>
+              },
               {
                 title: "Supporting Service Mesh Interface",
                 icon: SMILogo,
@@ -72,9 +73,11 @@ const OperatingServiceMeshes = () => {
                 title: "MeshMap",
                 icon: VisualTopology,
                 description:
-                  <div><p>MeshMap enables of all cloud native management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
-                    Designing and configuration your service mesh is as easy as dragging and dropping.</p>
-                  <p>Learn more about <a href="https://layer5.io/cloud-native-management/meshmap">MeshMap</a></p></div>,
+                  <div>
+                    <p>MeshMap enables of all cloud native management operations from `mesheryctl` to Meshery's web-based user interface in visually interactive topology.</p><p>
+                      Designing and configuration your service mesh is as easy as dragging and dropping.</p>
+                    <p>Learn more about <a href="https://layer5.io/cloud-native-management/meshmap">MeshMap</a></p>
+                  </div>,
               },
               {
                 title: "Extension Points",

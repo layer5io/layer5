@@ -1,10 +1,37 @@
 import React from "react";
 import { useState } from "react";
 import IntegrationsGrid from "./IntegrationsGrid";
-import IntegrationList from "../../../assets/data/integrations/IntegrationList";
-import Integrations from "./Integration.style";
+import FAQ from "../../General/Faq";
+import { IntegrationsWrapper } from "./Integration.style";
+import { useStaticQuery, graphql } from "gatsby";
 
-function index() {
+
+
+const Integrations = () => {
+  const data = useStaticQuery(graphql`
+  query {
+    allMdx(filter: { fields: { collection: { eq: "integrations" } } }) {
+      nodes {
+        frontmatter {
+          title
+          status
+          category
+          integrationIcon {
+            childImageSharp {
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
+            }
+            extension
+            publicURL
+          }
+        }
+        fields{
+          slug
+        }
+      }
+    }
+  }
+   `);
+
   const [categoryList, setcategoryList] = useState([
     { id: 1, name: "All", isSelected: true },
     { id: 2, name: "Platforms", isSelected: false },
@@ -12,7 +39,7 @@ function index() {
     { id: 4, name: "Operating System", isSelected: false },
     { id: 5, name: "Collaboration", isSelected: false },
   ]);
-
+  const IntegrationList = data.allMdx.nodes;
   const [integrationCollection, setintegrationCollection] =
     useState(IntegrationList);
 
@@ -52,7 +79,7 @@ function index() {
     let tempInt = [];
     IntegrationList.forEach((Integration) => {
       selectedCategoryList.forEach((item) => {
-        if (item === Integration.category || item === "All")
+        if (item === Integration.frontmatter.category || item === "All")
           tempInt.push(Integration);
       });
     });
@@ -61,7 +88,7 @@ function index() {
   };
 
   return (
-    <Integrations>
+    <IntegrationsWrapper>
       <section className="heading">
         <h1>Built-In Integrations</h1>
         <h2>Support for your Cloud Native Infrastructure and Apps</h2>
@@ -80,11 +107,12 @@ function index() {
         })}
       </section>
 
-      <section>
-        <IntegrationsGrid obj={integrationCollection} />
+      <section className="integrations-grid">
+        <IntegrationsGrid data={integrationCollection} />
       </section>
-    </Integrations>
+      <FAQ category={["Meshery Integrations"]} />
+    </IntegrationsWrapper>
   );
-}
+};
 
-export default index;
+export default Integrations;

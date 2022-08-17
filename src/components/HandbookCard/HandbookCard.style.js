@@ -46,7 +46,7 @@ export const HandbookCardWrapper = styled.div`
 	}
 
 	.handbook__card--para {
-	  color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.7)" :"rgba(0, 0, 0, 0.7)"};
+	  color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.7)" : "rgba(0, 0, 0, 0.7)"};
 	  text-align: center;
 	  margin: 1.5rem;
 	  margin-bottom: 0rem;
@@ -69,7 +69,7 @@ export const HandbookCardWrapper = styled.div`
 	  margin: .5rem 1rem;
 	  font-size: .8rem;
 	  text-decoration: none;
-	  color: ${props => props.theme.DarkTheme ? props.theme.keppelColor :"rgba(71, 126, 150, 1.0)"};
+	  color: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "rgba(71, 126, 150, 1.0)"};
 	  font-weight: 500;
 	  padding: 0.1rem .5rem;
 	  transform: translateX(5rem);
@@ -80,7 +80,7 @@ export const HandbookCardWrapper = styled.div`
 	}
 
 	.handbook__card--lm:hover {
-	  border-bottom: 1px solid ${props => props.theme.DarkTheme ? props.theme.keppelColor :"rgba(71, 126, 150, 1.0)"};
+	  border-bottom: 1px solid ${props => props.theme.DarkTheme ? props.theme.keppelColor : "rgba(71, 126, 150, 1.0)"};
 
 	}
 

@@ -40,7 +40,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
   let programsArray = [];
 
   const programs = data.allMdx.nodes.filter((item) => {
-    if (programsArray.indexOf(item.frontmatter.program)>=0) {
+    if (programsArray.indexOf(item.frontmatter.program) >= 0) {
       return false;
     } else {
       programsArray.push(item.frontmatter.program);
@@ -60,8 +60,8 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
                   <Link
                     to={
                       frontmatter.program === "Layer5"
-                        ?fields.slug
-                        :`/programs/${frontmatter.programSlug}`
+                        ? fields.slug
+                        : `/programs/${frontmatter.programSlug}`
                     }
                   >
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>

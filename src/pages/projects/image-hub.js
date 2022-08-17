@@ -13,14 +13,7 @@ import { darktheme } from "../../theme/app/themeStyles";
 import lighttheme from "../../theme/app/themeStyles";
 const ImageHub = () => {
   const [theme, setTheme] = useState();
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-  // prevents ssr flash for mismatched dark mode
-  if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
-  }
+
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };

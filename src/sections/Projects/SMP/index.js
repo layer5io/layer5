@@ -12,7 +12,6 @@ import MeshMapCTA from "../../meshmap-cta";
 
 import example from "../../../assets/images/smp-page/service-mesh-performance-specification-example.gif";
 import smp from "../../../assets/images/smp-page/smp-white.svg";
-import c_icon from "../../../assets/images/smp-page/c-icon.svg";
 
 
 const latency = "../../../assets/images/smp-page/latency-at-scale.png";
@@ -54,7 +53,7 @@ const SMPPage = () => {
                   </Col>
                   <Col lg={7} md={12} sm={12}>
                     <h1> Service Mesh Performance </h1>
-                    <p> The Service Mesh Performance Working Group is hosted within CNCF TAG Network. All are welcome to participate. This group is defining the Service Mesh Performance(SMP). Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
+                    <p>Donated by Layer5, Intel, Red Hat, and HashiCorp, Service Mesh Performance is a CNCF-hosted project. Using SMP, MeshMark provides a universal performance index to gauge your mesh's efficiency against deployments in other organizations' environments.</p>
                   </Col>
                 </Row>
               </div>
@@ -63,7 +62,8 @@ const SMPPage = () => {
         </BgImage>
         <Container>
           <div className="smp-details">
-            <h2> SMP is a collaborative effort of Layer5, UT Austin, Google and The Linux Foundation.</h2>
+            <h2> Standardizing Service Mesh Value Measurement</h2>
+            <h3>SMP is a collaborative effort of Layer5, UT Austin, Intel, Red Hat, HashiCorp, Google and The Linux Foundation.</h3>
             <Row>
               <Col lg={6}>
                 <img src={example} className="smp-example" alt="example: smp in action"></img>
@@ -72,19 +72,19 @@ const SMPPage = () => {
                 <h1> SMP accounts for details of:</h1>
                 <table>
                   <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5"/><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5" /><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                     <td className="feature"> Environment and infrastructure details </td>
                   </tr>
                   <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5"/><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5" /><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                     <td className="feature"> Service mesh and its configuration </td>
                   </tr>
                   <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5"/><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5" /><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                     <td className="feature"> Service (workload) details </td>
                   </tr>
                   <tr>
-                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5"/><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
+                    <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#FFF7D8" rx="5" /><path stroke="#EBC017" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                     <td className="feature"> Statistical analysis of performance results </td>
                   </tr>
                 </table>
@@ -105,7 +105,7 @@ const SMPPage = () => {
                 <div>
                   <h1> Native WASM at Capacity </h1>
                   <p> When every request goes via the rate-limit check and then the actual program logic, we see that the latency incurred for the WASM code is higher than the Native client. This is expected since the native client has processing for rate-limiting locally in a process whereas the rust module is invoked as an additional thread to do the processing and the communication involved with the module incurs an overhead. This is prominent in the minimum response time case which represents latency just due to rate-limiting logic where every other part of the request is already "warm". <br />
-    As we move towards average latency, the overhead gets slightly amortized but is still above the native rate-limiting case. Our max latency is slightly lower than native, but we attribute it to various other system effects like TLS handshake and network latencies that usually contribute to the maximum tail latency. </p>
+                    As we move towards average latency, the overhead gets slightly amortized but is still above the native rate-limiting case. Our max latency is slightly lower than native, but we attribute it to various other system effects like TLS handshake and network latencies that usually contribute to the maximum tail latency. </p>
                 </div>
               </Col>
             </Row>
@@ -142,12 +142,12 @@ const SMPPage = () => {
           </Container>
           <div className="iframes">
             <iframe className="iframe" src="https://www.youtube.com/embed/rgnb0-ntPko" loading="lazy"
-              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"allowFullScreen>
+              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
             </iframe>
-            <iframe	className="iframe" src="https://www.youtube.com/embed/LxP-yHrKL4M" loading="lazy"
-              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"	allowFullScreen>
+            <iframe className="iframe" src="https://www.youtube.com/embed/LxP-yHrKL4M" loading="lazy"
+              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
             </iframe>
-            <iframe	className="iframe" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000" loading="lazy"
+            <iframe className="iframe" src="https://docs.google.com/presentation/d/e/2PACX-1vSWhREOZIfJqTG8jHtitgb5e-OAHC7E8EMmoVCaTRmC8b_itHkeFUNKcBVn9oaTpX5ozYvlhscvBXiK/embed?start=false&loop=false&delayms=3000" loading="lazy"
               frameBorder="0" allowFullScreen>
             </iframe>
           </div>

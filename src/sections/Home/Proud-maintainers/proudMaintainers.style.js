@@ -2,10 +2,10 @@ import styled from "styled-components";
 const ProjectItemWrapper = styled.section`
 	margin: 5rem 0rem;
 	path.clss-1{
-		fill: ${props => props.theme.DarkTheme? "white": "#3c494f"};
+		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
 	}
 	path.clss-2{
-		fill: ${props => props.theme.DarkTheme? "white": "#3c494f"};
+		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
 	}
 	path.clss-3{
 		fill:#647881
@@ -26,7 +26,7 @@ const ProjectItemWrapper = styled.section`
 		fill:#00b39f
 	}
 	path.cls-3{
-		fill: ${props => props.theme.DarkTheme? "white": "#3c494f"};
+		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
 	}
 	path.st2 {
 		fill: #2beda7;
@@ -38,17 +38,17 @@ const ProjectItemWrapper = styled.section`
 		fill:#00b39f
 	}
 	polygon.cls-3{
-		fill: ${props => props.theme.DarkTheme? "white": "#3c494f"};
+		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
 
 	}
 	path.st2 {
 		fill: #2beda7;
 	}
 	path.LinkerdText {
-		fill: ${props => props.theme.DarkTheme? "white": "black"};
+		fill: ${props => props.theme.DarkTheme ? "white" : "black"};
 	}
 	path.CNCFText {
-		fill: ${props => props.theme.DarkTheme? "white": "black"};
+		fill: ${props => props.theme.DarkTheme ? "white" : "black"};
 	}
 	.project-title {
 		text-align: center;
@@ -57,7 +57,7 @@ const ProjectItemWrapper = styled.section`
 
 		h4 {
 			margin-bottom: 0.5rem;
-			color: ${props => props.theme.DarkTheme? "#737373": "#b3b3b3"};
+			color: ${props => props.theme.DarkTheme ? "#737373" : "#b3b3b3"};
 			text-transform: uppercase;
 		}
 		h2{
@@ -68,7 +68,7 @@ const ProjectItemWrapper = styled.section`
 		}
 		.project-text {
 			margin:0 auto 4rem auto;
-			color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" :"rgba(0, 0, 0, 0.6)"};
+			color: ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.6)" : "rgba(0, 0, 0, 0.6)"};
 			max-width: 60%;
 		}
 	}

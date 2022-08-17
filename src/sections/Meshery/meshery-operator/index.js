@@ -5,11 +5,12 @@ import Layout from "../../../components/layout";
 import MesheryOperatorWrapper from "./mesheryoperator.style";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import SubscribeSection from "../../../sections/subscribe/subscribe";
 import Deployment from "./deployment.svg";
 import Initialization from "./initialization.svg";
-import icon from "./icon.svg";
 
 const OperatorLogo = "../../../assets/images/meshery-operator/meshery-operator.png";
 

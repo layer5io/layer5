@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+include .github/Makefile.show-help.mk
+
 setup-libs: 
 	## "DEPRECATED: This target is deprecated. Use `make setup`.
 
@@ -31,7 +33,7 @@ site-fast:
 build:
 	gatsby build && gatsby serve
 
-## Emptpy build cache and run layer5.io on your local machine.
+## Empty build cache and run layer5.io on your local machine.
 clean: 
 	gatsby clean; \
 	make site

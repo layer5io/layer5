@@ -2,9 +2,9 @@ import styled from "styled-components";
 import background from "./images/background.svg";
 
 const ProjectItemWrapper = styled.section`
-    padding: 0 0 110px 0;
+    padding: 0 0 2rem 0;
     overflow: hidden;
-    margin-top: 2rem;
+    margin-top: 4rem;
     .project-title {
         .section-title{
 
@@ -41,6 +41,7 @@ const ProjectItemWrapper = styled.section`
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 2rem;
         &:before {
             content: url(${background});
             position: absolute;
@@ -59,16 +60,17 @@ const ProjectItemWrapper = styled.section`
         padding: 12% 6% 12% 6%;
         height: 220px;
         border-radius: 4%;
-        margin-bottom: 30px;
         text-align: center;
+        justify-content: center;
         h5{
-            margin-bottom: auto; 
+            margin: auto;
             font-weight: 700;
             color: ${props => props.theme.secondaryColor}
         }
         p{
             font-weight: 300;
             color: ${props => props.theme.text};
+            margin: auto;
         }
 
         img{
@@ -76,19 +78,33 @@ const ProjectItemWrapper = styled.section`
             width: auto ;
         }
         .gatsby-image-wrapper{
-            margin: 10px auto; 
+            margin: 10px auto;
+            min-height: 40px;
         }
     }
     .description {
         padding: 1rem;
         border-radius: 1rem;
+        display: flex;
+
+        justify-content: center;
+        align-items: baseline;
         background: ${props => props.theme.secondaryLightColor};
-        text-align: center;
+        .button {
+            margin: auto;
+        }
         p {
+            display: inline;
+            text-align: center;
+            justify-content: center;
+            font-size: 1rem;
             padding: 0 4rem;
             margin: 0rem;
             color: #737373;
-        }
+            span {
+                font-weight: 600;
+            }
+        }        
     }
     @media only screen and (max-width: 992px) {
         .project__block__wrap:before {

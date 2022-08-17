@@ -7,7 +7,7 @@ module.exports = {
     author: "Layer5 Authors",
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
-    image: "/images/layer5.png",
+    image: "/images/layer5-gradient.png",
     twitterUsername: "@layer5",
   },
   flags: {
@@ -380,14 +380,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "communityImageSlider",
-        path: `${__dirname}/src/assets/images/Community-pictures`,
-      },
-    },
-
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         path: `${__dirname}/src/collections/blog`,
         name: "blog",
       },
@@ -469,6 +461,20 @@ module.exports = {
         name: "content-learn",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/collections/integrations`,
+        name: "integrations",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "integration-images",
+        path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`,
+      },
+    },
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
@@ -506,7 +512,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://layer5.io",
-        sitemap: "https://layer5.io/sitemap.xml",
+        sitemap: "https://layer5.io/sitemap/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       }
     },

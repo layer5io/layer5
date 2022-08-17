@@ -7,8 +7,8 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
 
 
-const CommunityManagers=() => {
-  const data=useStaticQuery(
+const CommunityManagers = () => {
+  const data = useStaticQuery(
     graphql`query managers {
   allMdx(
     sort: {fields: [frontmatter___name], order: ASC}

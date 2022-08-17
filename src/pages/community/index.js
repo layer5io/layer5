@@ -18,14 +18,7 @@ const CommunityIndex = () => {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-  // prevents ssr flash for mismatched dark mode
-  if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
-  }
+
   return (
     <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
       <Layout>

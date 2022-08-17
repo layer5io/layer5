@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import poster from "./poster.png";
 
 const Banner1SectionWrapper = styled.section`
     top: 3.2rem;
     padding-bottom: 2rem;
+    .section-bgimage {
+        &::before, &::after {
+            content: none !important;
+        }
+    }
     .background-svg {
         overflow: visible;
         position: absolute;
@@ -81,11 +85,9 @@ const Banner1SectionWrapper = styled.section`
                 font-size: 3rem;
                 line-height: 3.5rem;
                 margin: 0 0 1rem 0;
-                color: black;
             }
             h2 {
                 font-size: 2rem;
-                color: black;
             }
         }
         p {
@@ -136,15 +138,20 @@ const Banner1SectionWrapper = styled.section`
         .banner-btn+.banner-btn{
             margin-left: 15px;
         } 
-     }
-     @media only screen and (max-width: 760px) {
-        padding: 5rem 0;
-        margin: 0;
-        background-image: url(${poster});  
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center; 
-        box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.7);
+    }
+    @media only screen and (max-width: 760px) {
+        .section-bgimage {
+            &::before, &::after {
+                content: '' !important;
+            }
+            padding: 5rem 0;
+            margin: -3rem auto;
+            opacity: 1 !important;
+
+            > div {
+                margin: auto 0;
+            }
+        }
         .section-title-wrapper {
             min-width: 100%;
         }

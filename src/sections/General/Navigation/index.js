@@ -18,7 +18,7 @@ import NavigationWrap from "./navigation.style";
 import { GlobalStyle } from "../../app.style";
 import { ThemeProvider } from "styled-components";
 import { useLayoutEffect } from "react";
-import "./navigation.style.css";
+
 const Navigation = ({ theme, themeSetter }) => {
   let data = useStaticQuery(
     graphql`{
@@ -148,7 +148,7 @@ const Navigation = ({ theme, themeSetter }) => {
       {
         frontmatter: {
           thumbnail: {
-            img: theme ==="dark"?smp_light_text:smp_dark_text
+            img: theme === "dark" ? smp_light_text : smp_dark_text
           },
           title: "Service Mesh Performance"
         },
@@ -161,8 +161,7 @@ const Navigation = ({ theme, themeSetter }) => {
   const [expand, setExpand] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [themeToggle, setthemeToggle] = useState(false);
-  const [checked, setChecked] = React.useState(true);
-  const defaultTheme="light";
+  const defaultTheme = "light";
   const handle = () => {
     theme === "dark" ? setthemeToggle(true) : setthemeToggle(false);
 
@@ -204,14 +203,7 @@ const Navigation = ({ theme, themeSetter }) => {
   const closeDropDown = () => {
     dropDownRef.current.classList.remove("expand");
   };
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-  // prevents ssr flash for mismatched dark mode
-  if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Prevent Flash</div>;
-  }
+
   return (
 
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>

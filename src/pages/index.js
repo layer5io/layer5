@@ -26,17 +26,8 @@ const IndexPage = () => {
   const themeSetter = (thememode) => {
     setTheme(thememode);
   };
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-  // prevents ssr flash for mismatched dark mode
-  if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>Preventing mismatched Screen</div>;
-  }
 
-
-  const schema= {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "Corporation",
     "name": "Layer5",
@@ -50,15 +41,15 @@ const IndexPage = () => {
     ]
   };
   return (
-    <ThemeProvider theme={theme ==="dark"? darktheme : lighttheme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <GlobalStyle />
       <SEO title="Layer5" description="An empowerer of engineers, Layer5 helps you extract more value from your infrastructure. Creator and maintainer of service mesh standards. Maker of Meshery, the cloud native management plane."
         schemaMarkup={schema} />
       <Layout >
-        <Navigation theme={theme} themeSetter={themeSetter}/>
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <Banner />
-        <Partners />
         <Integrations />
+        <Partners />
         {/* <Features /> */}
         <ServiceMeshManagement />
         <Statement />

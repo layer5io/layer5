@@ -73,7 +73,7 @@ const ConductWrapper = styled.div`
 `;
 
 
-const MentorshipPrograms= () => {
+const MentorshipPrograms = () => {
   const data = React.useMemo(() => programs_data);
   return (
     <HandbookWrapper>

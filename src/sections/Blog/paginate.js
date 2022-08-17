@@ -4,7 +4,7 @@ import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoun
 import { IoIosArrowRoundBack } from "@react-icons/all-files/io/IoIosArrowRoundBack";
 import styled from "styled-components";
 
-export const PaginateWrapper=styled.div`
+export const PaginateWrapper = styled.div`
     .btn-container{
         display:flex;
         justify-content: center;
@@ -62,7 +62,7 @@ const Paginate = ({ pageContext,isListView }) => {
         {pageNumbers.map((number) => (
           <Link
             to={`/blog${
-                          tag ? "/tag/"+tag.toLowerCase() : category ? "/category/"+category.toLowerCase() : ""
+                          tag ? "/tag/" + tag.toLowerCase() : category ? "/category/" + category.toLowerCase() : ""
                         }${number == 1 ? "" : "/" + number}`}
             state={{ isListView }}
             key={number}

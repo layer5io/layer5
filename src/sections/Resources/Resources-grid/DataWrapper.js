@@ -8,28 +8,30 @@ const DataWrapper = (WrappedComponent) => {
     const data = useStaticQuery(
       graphql`
         query allResourcesAndAllResources {
-            allMdx(
-                sort: {fields: [frontmatter___date], order: DESC}
-                filter: {
-                    fields: { collection: { in: ["blog", "resources", "news", "events"] } }
-                    frontmatter: { published: { eq: true } , resource: { eq: true} }
-                  }
+          allMdx(
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: {
+              fields: {
+                collection: { in: ["blog", "resources", "news", "events"] }
+              }
+              frontmatter: { published: { eq: true }, resource: { eq: true } }
+            }
           ) {
             nodes {
-                id
-                body
-                frontmatter {
-                  title
-                  type
-                  technology
-                  product
-                  mesh
-                  thumbnail {
-                    childImageSharp {
-                      gatsbyImageData(layout: FULL_WIDTH)
-                    }
-                    extension
-                    publicURL
+              id
+              body 
+              frontmatter {
+                title
+                type
+                technology
+                product
+                mesh
+                thumbnail {
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH)
+                  }
+                  extension
+                  publicURL
                 }
                 darkthumbnail {
                   childImageSharp {
@@ -37,7 +39,7 @@ const DataWrapper = (WrappedComponent) => {
                   }
                   extension
                   publicURL
-              }
+                }
               }
               fields {
                 slug

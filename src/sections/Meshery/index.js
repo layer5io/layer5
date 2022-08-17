@@ -1,6 +1,5 @@
 import React from "react";
 
-import { ThemeProvider } from "styled-components";
 import Layout from "../../components/layout";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
@@ -14,7 +13,6 @@ import mesheryDemo from "../../assets/video/meshery/meshery-full-perf-720p.mp4";
 import DockerExtensionCTA from "../Docker-Meshery/docker-extension-CTA";
 
 import MesheryWrapper from "./meshery.style";
-import theme from "../../theme/app/themeStyles";
 import FeaturesSection from "./Features-section";
 import Features from "./Meshery-features";
 
@@ -30,7 +28,7 @@ const MesheryPage = () => {
                 <h1 className="heading-2"> <span className="heading-2">management plane</span></h1>
                 <p className="desc-p">
                   {/* Meshery is the cloud native manager. <br /> */}
-                    Operate your infrastructure and workloads with confidence using Meshery's management features.
+                  Operate your infrastructure and workloads with confidence using Meshery's management features.
                 </p>
                 <Button primary className="banner-btn" title="How Meshery Works" url="./operating-service-meshes">
                   <GiClockwork size={21} className="button-icon" />
@@ -52,7 +50,7 @@ const MesheryPage = () => {
         <FeaturesSection />
         <Container>
           <div className="callout">
-            <h1> Manage your service mesh with features you won't find anywhere else.</h1>
+            <h1> Manage your clusters with features you won't find anywhere else.</h1>
           </div>
         </Container>
         <Features />

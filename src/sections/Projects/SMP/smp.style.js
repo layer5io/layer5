@@ -28,7 +28,10 @@ const SMPWrapper = styled.section`
             margin: auto;
             text-align: center;
             width: 80%;
-            margin-bottom: 6.25rem;
+            margin-bottom: 1.25rem;
+        }
+        h3 {
+            margin-bottom: 4.25rem;
         }
         h1{
             margin-bottom: 1.875rem;
@@ -141,7 +144,7 @@ const SMPWrapper = styled.section`
         fill:  ${props => props.theme.DarkTheme ? "#313131" : "#FFF7D8"};  
       }
       path {
-        stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor: "#EBC017"};
+        stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#EBC017"};
       }
     @media only screen and (max-width: 1024px) {
         .smp-hero{

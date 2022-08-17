@@ -3,7 +3,7 @@ import { HandbookWrapper } from "./Handbook.style";
 import HandbookCard from "../../../components/HandbookCard/index";
 
 
-const handbookHome= () => {
+const handbookHome = () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -17,7 +17,7 @@ const handbookHome= () => {
       <div className="community-home-container">
         <HandbookCard
           title="About"
-          description="Layer5 is a community and open source-centered service mesh company, representing the largest collection of service meshes and their maintainers in the world."
+          description="Layer5 offers cloud native application management by harnessing the unique position service meshes have in changing how developers write applications, how operators run modern infrastructure and how product owners manage their service offerings."
           to="/community/handbook/contributor-journey"
         />
 

@@ -11,10 +11,7 @@ const useDataList = (
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const queryResults = searchQuery === "" ? dataList : searchResults;
-  useEffect(() => {
-    setDataList(data);
-  }, [data]);
+  const queryResults = searchQuery ? searchResults : dataList;
   useEffect(() => {
     rebuildIndex();
   }, [queryResults]);
@@ -25,7 +22,7 @@ const useDataList = (
     dataToSearch.sanitizer = new JsSearch.LowerCaseSanitizer();
     dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex(paramSearch);
     dataToSearch.addIndex(paramsIndex);
-    dataList[0].body && dataToSearch.addIndex("body");
+    dataToSearch.addIndex("body");
     dataToSearch.addDocuments(dataList);
     setSearch(dataToSearch);
     setIsLoading(false);

@@ -2,6 +2,8 @@ import React from "react";
 import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import slide1 from "../images/service mesh performance example.gif";
 import slide2 from "../images/meshery_benchmark_screen.png";
 import slide3 from "../images/meshery-configuration-management.png";
@@ -41,23 +43,22 @@ const FeaturesSection = () => {
           <img src={meshery_logo} alt="Meshery Logo" />
         </div> */}
         <div className="section-header">
-          <h2>It's meshy out there.</h2>
-          <h1>Get the <span>most out</span> of your service mesh</h1>
+          <h2>Distributed systems are hard.</h2>
+          <h1>Get the <span>most out</span> of yours</h1>
           {/* <h1>
             <span>Meshery</span> supports the most service meshes.
           </h1> */}
           <p>
-            No matter what service mesh you choose, Meshery works.
+            No matter where you run your workloads, Meshery just works.
           </p>
         </div>
         <div className="smp-section">
           {/* <h4>No matter what service mesh you use, Meshery just works.</h4> */}
           <Row className="smp-section-row">
             <Col xs={12} xl={4} className="smp-section-data">
-              <h3>The Performance Yardstick</h3>
+              <h3>The Performance Yardstick: MeshMark</h3>
               <p>
-                Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your
-                application across different service meshes. Compare and manage service mesh overhead.
+                Assess the value of your service mesh in context of its cost. Benchmark and manage the performance of your          application across different service meshes. Compare and manage service mesh overhead.
               </p>
             </Col>
             <Col xs={12} xl={8} className="smp-section-caraousel">
@@ -77,9 +78,9 @@ const FeaturesSection = () => {
         </div>
         <div className="mesh-mngmnt">
           <div>
-            <h4>One step to managing service meshes</h4>
+            <h4>One step to managing your microservices</h4>
             <h1>Cloud Native Application Management</h1>
-            <p>Confidentally take full advantage of all that a service mesh offers.</p>
+            <p>Confidentally take full advantage of all that your infrastructure offers.</p>
           </div>
           <div className="mesh-mngmnt-btn">
             <Col xs={12} sm={6} md={4}>

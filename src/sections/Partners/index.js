@@ -59,7 +59,7 @@ const Partner = ({ theme }) => {
                 <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
-                      <img src={theme ==="dark"? partner.darkimageLink : partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                      <img src={theme === "dark" ? partner.darkimageLink : partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
                     </a>
                   </div>
                 </Col>
@@ -103,12 +103,12 @@ const Partner = ({ theme }) => {
         <h1 className="heading">Our Technology Partners</h1>
         {
           technology_partners.map((partner,index) => (
-            <div key={index+len_acad_part} className="acc-cont">
-              <Row  className={ ((len_acad_part+ index) % 2 == 1 ) ? "cont-row-reverse" : "cont-row" }>
+            <div key={index + len_acad_part} className="acc-cont">
+              <Row  className={ ((len_acad_part + index) % 2 == 1 ) ? "cont-row-reverse" : "cont-row" }>
                 <Col xs={5} sm={3} lg={3} className="custom-col mob-col">
                   <div className="img1">
                     <a href={partner.imageRoute} target="_blank" rel="noopener noreferrer">
-                      <img src={theme ==="dark"? partner.darkimageLink : partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
+                      <img src={theme === "dark" ? partner.darkimageLink : partner.imageLink} title="Click to know More about our partner" alt={partner.name} />
                     </a>
                   </div>
                 </Col>
