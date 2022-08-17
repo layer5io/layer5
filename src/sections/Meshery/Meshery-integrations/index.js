@@ -1,11 +1,37 @@
 import React from "react";
 import { useState } from "react";
 import IntegrationsGrid from "./IntegrationsGrid";
-import IntegrationList from "../../../assets/data/integrations/IntegrationList";
 import FAQ from "../../General/Faq";
 import { IntegrationsWrapper } from "./Integration.style";
+import { useStaticQuery, graphql } from "gatsby";
+
+
 
 const Integrations = () => {
+  const data = useStaticQuery(graphql`
+  query {
+    allMdx(filter: { fields: { collection: { eq: "integrations" } } }) {
+      nodes {
+        frontmatter {
+          title
+          status
+          category
+          integrationIcon {
+            childImageSharp {
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
+            }
+            extension
+            publicURL
+          }
+        }
+        fields{
+          slug
+        }
+      }
+    }
+  }
+   `);
+
   const [categoryList, setcategoryList] = useState([
     { id: 1, name: "All", isSelected: true },
     { id: 2, name: "Platforms", isSelected: false },
@@ -13,7 +39,7 @@ const Integrations = () => {
     { id: 4, name: "Operating System", isSelected: false },
     { id: 5, name: "Collaboration", isSelected: false },
   ]);
-
+  const IntegrationList = data.allMdx.nodes;
   const [integrationCollection, setintegrationCollection] =
     useState(IntegrationList);
 
@@ -53,7 +79,7 @@ const Integrations = () => {
     let tempInt = [];
     IntegrationList.forEach((Integration) => {
       selectedCategoryList.forEach((item) => {
-        if (item === Integration.category || item === "All")
+        if (item === Integration.frontmatter.category || item === "All")
           tempInt.push(Integration);
       });
     });
@@ -82,7 +108,7 @@ const Integrations = () => {
       </section>
 
       <section className="integrations-grid">
-        <IntegrationsGrid obj={integrationCollection} />
+        <IntegrationsGrid data={integrationCollection} />
       </section>
       <FAQ category={["Meshery Integrations"]} />
     </IntegrationsWrapper>

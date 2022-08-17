@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import Slider from "react-slick";
 import styled from "styled-components";
-import IntegrationList from "../../../../assets/data/integrations/IntegrationList";
+import { useStaticQuery, graphql } from "gatsby";
+
 
 const RelatedIntegrationWrapper = styled.section`
 
@@ -49,6 +50,38 @@ const RelatedIntegrationWrapper = styled.section`
   }
 `;
 const RelatedIntegration = ({ category }) => {
+
+  const data = useStaticQuery(graphql`
+  query {
+    allMdx(
+      filter: {
+        frontmatter: { published: { eq: true } }
+        fields: { collection: { eq: "integrations" } }
+      }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          status
+          category
+          integrationIcon {
+            childImageSharp {
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
+            }
+            extension
+            publicURL
+          }
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }   
+  `);
+
+  const IntegrationList = data.allMdx.nodes;
+
   const settings = {
     dots: true,
     infinite: true,
@@ -91,11 +124,11 @@ const RelatedIntegration = ({ category }) => {
       <Slider {...settings}>
         {
           IntegrationList.map((item, index) => {
-            if (item.category === category && item.status != "InProgress"){
+            if (item.frontmatter.category === category){
               return (
                 <div key={index}>
-                  <Link to={`/service-mesh-management/meshery/integrations/${item.name.toLowerCase()}`}>
-                    <img src={item.img} alt={item.name} height={60} className="img-effect" />
+                  <Link to={`/service-mesh-management/meshery${item.fields.slug}`}>
+                    <img src={item.frontmatter.integrationIcon.publicURL} alt={item.frontmatter.title} height={60} className="img-effect" />
                   </Link>
                 </div>
               );
