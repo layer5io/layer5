@@ -4,6 +4,7 @@ import IntegrationsGrid from "./IntegrationsGrid";
 import FAQ from "../../General/Faq";
 import { IntegrationsWrapper } from "./Integration.style";
 import { useStaticQuery, graphql } from "gatsby";
+import Card from "./Card";
 
 
 
@@ -110,6 +111,7 @@ const Integrations = () => {
       <section className="integrations-grid">
         <IntegrationsGrid data={integrationCollection} />
       </section>
+      <Card />
       <FAQ category={["Meshery Integrations"]} />
     </IntegrationsWrapper>
   );
