@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import imgHero from "../../../assets/images/meshmap/MeshmapDesigner.png";
-
 
 const BannerSectionWrapper = styled.section`
     .row {
@@ -10,6 +8,8 @@ const BannerSectionWrapper = styled.section`
     .left-col {
         padding-left: 0px;
         padding-right: 0px;
+        flex: 0 0 51%;
+        max-width: 51%;
     }
     .left {
         display: flex;
@@ -22,6 +22,8 @@ const BannerSectionWrapper = styled.section`
     .right-col {
         padding-left: 0px;
         padding-right: 0px;
+        flex: 0 0 49%;
+        max-width: 49%;
     }
     h2.statement {
         color: ${(props) => props.theme.white};
@@ -52,7 +54,6 @@ const BannerSectionWrapper = styled.section`
         color: rgba(255, 255, 255, 0.7);
     }
     .hero {
-        /* background: url(${imgHero}); */
         margin: -2rem;
         vertical-align: middle;
         overflow: hidden;
@@ -79,62 +80,29 @@ const BannerSectionWrapper = styled.section`
     }
 
 
-    @media only screen and (max-width: 1600px) {
-        /* .section-title {
-            h3 {
-                font-size: 20px;
-            }
-        } */
-    }
     @media only screen and (max-width: 1440px) {
         .section-title {
             padding: 2rem 3rem;
         }
     }
-    @media only screen and (max-width: 1200px) {
-        .section-title {
-            padding: 2rem 2rem;
-            /* h2 {
-                font-size: 1.9rem;
-                line-height: 2.125rem;
-            } */
-        }
-    }
-    @media only screen and (max-width: 912px) {
-        /* .section-title {
-            h4{
-                font-size: 1rem;
-            }
-            h3 {
-                font-size: 1rem;
-            }
-        } 
-        .hero {
-             height: 31.6rem; 
-        }
-        */
-     }
-
-    @media only screen and (max-device-width : 768px) { 
-        /* .hero {
-            width: 50%;
-            margin: auto;
-        } */
-     }
     
-     @media only screen and (max-width: 767px) {
-         .hero {
-            display: none;
-         }
-         .join-community {
-             text-align: center;
-         }
-     }  
-     @media only screen and (max-width: 576px) {
-         .section-title {
-            padding: 2rem 1rem;
-         }
-     }  
+    @media only screen and (max-width: 767px) {
+        .hero {
+        display: none;
+        }
+        .join-community {
+            text-align: center;
+        }
+        .left-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }  
+    @media only screen and (max-width: 576px) {
+        .section-title {
+        padding: 2rem 1rem;
+        }
+    }  
 `;
 
 export default BannerSectionWrapper;
