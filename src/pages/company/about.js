@@ -7,7 +7,6 @@ import SEO from "../../components/seo";
 import Navigation from "../../sections/General/Navigation";
 import Footer from "../../sections/General/Footer";
 import AboutSection from "../../sections/Company/About";
-import CloudNativeLeaders from "../../sections/Company/Cloud-Native";
 import StewardsOfIndustry from "../../sections/Company/Stewards-of-industry";
 
 import { GlobalStyle } from "../../sections/app.style";
@@ -26,11 +25,7 @@ const About = () => {
         <GlobalStyle />
         <SEO title="About" description='At Layer5, we believe collaboration enables innovation, and infrastructure enables collaboration. We help organizations look at their infrastructure differently, asking it "what have you done for me lately?"' />
         <Navigation theme={theme} themeSetter={themeSetter} />
-
         <AboutSection theme={theme} />
-
-
-        <CloudNativeLeaders />
         <StewardsOfIndustry />
         <Footer />
       </Layout>

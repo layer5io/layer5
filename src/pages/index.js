@@ -15,6 +15,7 @@ import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 import { GlobalStyle } from "../sections/app.style";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
+import CloudNativeLeaders from "../sections/Company/Cloud-Native";
 
 import SoSpecial from "../sections/Home/So-Special-Section";
 import { darktheme } from "../theme/app/themeStyles";
@@ -53,6 +54,8 @@ const IndexPage = () => {
         <ServiceMeshManagement />
         <Statement />
         <ProudMaintainers />
+
+
         {/* <AppScreens /> */}
         {/* <Pricing /> */}
         {/* <Testimonial /> */}
@@ -61,6 +64,7 @@ const IndexPage = () => {
         {/* <Faq category = "all"/> */}
         {/*<ContactCard />*/}
         <SoSpecial theme={theme} />
+        <CloudNativeLeaders />
         <ServiceMeshFocussed />
         {/* <EngineerEnabler /> */}
         <SubscribeSection />

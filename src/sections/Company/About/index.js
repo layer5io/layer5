@@ -44,11 +44,6 @@ const About = ({ theme }) => {
             <StaticImage src={Layer5Projects} alt="About Layer5 Projects" />
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
-                <div className="head-images">
-                  <img src={theme === "dark" ? CNCFLightstackedlogo : CNCFstackedlogo} alt="About Layer5 Projects" />
-                </div>
-              </Col>
-              <Col xs={12} sm={6}>
                 <div className="about-text text-two">
                   <h1>Open Source First</h1>
                   <p className="indent">
@@ -57,6 +52,11 @@ const About = ({ theme }) => {
                   </p>
                   <h5 className="section-title">We are principled.</h5>
                   <p>We are proud of the inclusive and kind work environment we have built. We support each other as we work to solve important problems. We take our work seriously, and we do it with integrity and in alignment with our core principles.</p>
+                </div>
+              </Col>
+              <Col xs={12} sm={6}>
+                <div className="head-images">
+                  <img src={theme === "dark" ? CNCFLightstackedlogo : CNCFstackedlogo} alt="About Layer5 Projects" />
                 </div>
               </Col>
             </Row>
@@ -69,6 +69,15 @@ const About = ({ theme }) => {
           <Col xs={12} sm={12}>
             <Row Vcenter={true} className="row-img-cont-1">
               <Col xs={12} sm={6}>
+                <div className="head-images">
+                  <StaticImage src={Community_meetup} alt="Community_meetup" />
+                  <figcaption className="caption">
+                    Layer5 community members at Open Source Africa Community
+                    conference, March 2022.
+                  </figcaption>
+                </div>
+              </Col>
+              <Col xs={12} sm={6}>
                 <div className="about-text text-one">
                   <h1>Community First</h1>
                   <p className="indent">
@@ -77,15 +86,6 @@ const About = ({ theme }) => {
                   <h5 className="section-title">We are remote oriented.</h5>
                   <p>Our remote working model has been in our DNA since our genesis in 2020, which allows us to maintain a flexible working environment and gives us access to a global pool of diverse talent.</p>
                   <Link className="mute" to="/careers">Learn how Layer5 works</Link>
-                </div>
-              </Col>
-              <Col xs={12} sm={6}>
-                <div className="head-images">
-                  <StaticImage src={Community_meetup} alt="Community_meetup" />
-                  <figcaption className="caption">
-                    Layer5 community members at Open Source Africa Community
-                    conference, March 2022.
-                  </figcaption>
                 </div>
               </Col>
             </Row>
