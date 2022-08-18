@@ -1,6 +1,16 @@
 import styled from "styled-components";
 const ProjectItemWrapper = styled.section`
+	.left-col {
+		text-align: left;
+		align-self: flex-start;
+		margin-left: -5rem;
+		padding: 0rem;
+		@media screen and (max-width: 992px) {
+			margin-left: 0rem;
+		}
+	}
 	margin: 5rem 0rem;
+	
 	path.clss-1{
 		fill: ${props => props.theme.DarkTheme ? "white" : "#3c494f"};
 	}
@@ -52,7 +62,7 @@ const ProjectItemWrapper = styled.section`
 	}
 	.project-title {
 		text-align: center;
-		padding: 0 2rem;
+		align-self: flex-start;
 		margin: auto;
 
 		h4 {
@@ -162,7 +172,7 @@ const ProjectItemWrapper = styled.section`
 	   }
       }
 	  @media screen and (max-width: 768px) {
-		
+
 		.proj_icon_1 {
 			padding: 1rem;
 		}
