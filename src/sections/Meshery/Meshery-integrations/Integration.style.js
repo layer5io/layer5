@@ -143,6 +143,7 @@ export const IntegrationCard = styled.div`
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     border-radius: 0 3.125rem 3.125rem 3.125rem;
     display: flex;
+    justify-content: center;
     gap:0.5rem;
     flex-direction: column;
     align-items: center;
