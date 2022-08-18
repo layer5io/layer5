@@ -26,7 +26,7 @@ const BannerSectionWrapper = styled.section`
     color: white;
   }
   h1,h2 {
-    margin-top: 2rem;
+    margin-top: 0rem;
   }
   .section-content {
     line-height: 1.463rem;
@@ -40,7 +40,7 @@ const BannerSectionWrapper = styled.section`
   }
   @media only screen and (max-width: 1224px) {
     .section-header {
-      padding: 8rem 15rem 1.5rem 15rem;
+      padding: 6rem 15rem 1.5rem 15rem;
     }
     h2 {
       font-weight: 400;
@@ -73,7 +73,7 @@ const BannerSectionWrapper = styled.section`
   }
   @media only screen and (max-width: 624px) {
     .section-header {
-      padding: 6rem 2rem 0.75rem 2rem;
+      padding: 4rem 2rem 0.75rem 2rem;
       margin-top: 1rem;
     }
     .section-content {

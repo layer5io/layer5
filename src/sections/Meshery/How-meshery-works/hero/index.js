@@ -48,7 +48,7 @@ const HowMesheryWorksHero = ({ theme }) => {
         <Row>
           <Col Vcenter className="hero-text" xs={8} lg={6}>
             <h5>Distributed systems are hard.</h5>
-            <h1>Wrangle your mesh</h1>
+            <h1>Wrangle your infrastructure</h1>
             <h2>with Meshery Operator and MeshSync.</h2>
           </Col>
           <Col className="hero-img-wrapper" xs={4} lg={6}>

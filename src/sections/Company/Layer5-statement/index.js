@@ -6,8 +6,9 @@ import svgBackground from "../../../assets/images/homePage-images/background.svg
 import BannerSectionWrapper from "./statement.style";
 import { StaticImage } from "gatsby-plugin-image";
 
-const imgHero = "../../../assets/images/meshmap/MeshmapDesigner.png";
-// const imgHero = "../service-mesh-management/images/service-mesh.svg";
+const imgHero = "../../../assets/images/homePage-images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
+// const imgHero = "./images/layer5-projects.png";
+
 
 const BannerDefault = () => {
   return (
@@ -45,7 +46,7 @@ const BannerDefault = () => {
             </div>
           </Col>
           <Col sm={12} md={6} lg={6} className="right-col">
-            <StaticImage className="hero" src={imgHero} alt="Layer5 MeshMap screenshot" />
+            <StaticImage className="hero" src={imgHero} alt="hero image" />
           </Col>
         </Row>
       </div>
