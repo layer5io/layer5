@@ -27,6 +27,24 @@ const MeshFocusWrapper = styled.div`
     .book {
         object-fit: contain;
         margin: auto;
+        padding: 0rem;
+        height: 100%;
+        border-radius: 5px;
+
+        /* Shadow */
+        background: #F8F8F8; 
+        border: solid #BDBDBD 0; 
+        box-shadow: -3px 3px 20px rgba(0, 0, 0, 0.5)  ; 
+        -webkit-box-shadow: -3px 3px 20px rgba(0, 0, 0, 0.5)  ; 
+        -moz-box-shadow: -3px 3px 20px rgba(0, 0, 0, 0.5)  ; 
+        transform: scale(1,1) rotate(4deg)skew(0,-2deg) translate(0,0); 
+        
+        /* Skew */
+        -webkit-transform: scale(1,1) rotate(0)skew(2,-2deg) translate(0,0); 
+        -moz-transform: scale(1,1) rotate(0)skew(2,-2deg) translate(0,0); 
+        transform-origin: 50% 50%; 
+    }
+    .book-col {
         padding: 4rem;
     }
     p {
