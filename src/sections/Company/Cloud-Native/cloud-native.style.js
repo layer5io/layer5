@@ -11,14 +11,14 @@ const CloudNativeWrapper = styled.div`
      
     padding: 1rem 0rem 2rem 0rem;
     color:white;
-    margin:5rem 0 -9rem;
+    margin: -2rem 0 0rem 0rem;
     position: relative;
     z-index: 1;
     
     
     .cloud-cont{
         margin:6rem 6rem 0rem 6rem;
-        padding:4rem 4rem 0rem 4rem;
+        padding:2rem 4rem 0rem 2rem;
         display:flex;   
 
     }
@@ -76,7 +76,7 @@ const CloudNativeWrapper = styled.div`
         }  
 
         .col-1 h1,h4{
-            padding-top:1rem 1rem 0rem 1rem; 
+            padding-top:1rem; 
             
         } 
         .btn-cont{
