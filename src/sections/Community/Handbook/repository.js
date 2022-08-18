@@ -26,9 +26,9 @@ const contents = [
 const Repository = () => {
   const data = React.useMemo(() => repo_data);
   let frontendProjects = data.filter((data) => data.category === "Frontend");
-  let backendProjects = data.filter((data) => data.category !== "Frontend" && data.category !== "Maintainers");
   let Maintainers = data.filter( (data) => data.category === "Maintainers");
-
+  let backendProjects = data.filter((data) => data.category !== "Frontend" && data.category !== "Maintainers");
+  
 
   return (
     <HandbookWrapper>
@@ -164,50 +164,6 @@ const Repository = () => {
                 </div>
               );
             })}
-
-            <a id="Backend Projects">
-              <h2>Backend Projects</h2>
-            </a>
-
-            {backendProjects.map((backendProject, index) => {
-              const { category } = backendProject;
-              return (
-                <div className="table-container" key={index}>
-                  <table key={category}>
-                    <thead>
-                      <tr>
-                        <th>{category}</th>
-                        <th>Language</th>
-                        <th>Description</th>
-                        <th className="linkscol">Repo</th>
-                      </tr>
-                    </thead>
-                    {backendProject.subdata.map((subdata) => {
-                      const { project, image, language, description, repository } = subdata;
-                      return (
-                        <tbody key={project}>
-                          <tr>
-                            <td>
-                              <img className="site-icon inline" src={image} />&nbsp;{project}</td>
-                            <td>{language}</td>
-                            <td>{description}</td>
-                            <td>
-                              <a
-                                href={repository}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                <img className="github-icon" src={github} />
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      );
-                    })}
-                  </table>
-                </div>
-              );
-            })}
             <a id="Maintainers">
               <h2>Maintainers</h2>
             </a>
@@ -259,6 +215,49 @@ const Repository = () => {
                                 rel="noreferrer"
                               >
                                 <img className="github-icon" src={github} alt="GitHub Icon" />
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      );
+                    })}
+                  </table>
+                </div>
+              );
+            })}
+            <a id="Backend Projects">
+              <h2>Backend Projects</h2>
+            </a>
+
+            {backendProjects.map((backendProject, index) => {
+              const { category } = backendProject;
+              return (
+                <div className="table-container" key={index}>
+                  <table key={category}>
+                    <thead>
+                      <tr>
+                        <th>{category}</th>
+                        <th>Language</th>
+                        <th>Description</th>
+                        <th className="linkscol">Repo</th>
+                      </tr>
+                    </thead>
+                    {backendProject.subdata.map((subdata) => {
+                      const { project, image, language, description, repository } = subdata;
+                      return (
+                        <tbody key={project}>
+                          <tr>
+                            <td>
+                              <img className="site-icon inline" src={image} />&nbsp;{project}</td>
+                            <td>{language}</td>
+                            <td>{description}</td>
+                            <td>
+                              <a
+                                href={repository}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <img className="github-icon" src={github} />
                               </a>
                             </td>
                           </tr>
