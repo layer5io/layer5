@@ -7,7 +7,6 @@ import Banner from "../sections/Home/Banner";
 // import Faq from "../sections/General/Faq";
 import Integrations from "../sections/Home/Projects-home";
 import Statement from "../sections/Home/Layer5-statement";
-import StewardsOfIndustry from "../sections/Home/Stewards-of-industry/index";
 import ProudMaintainers from "../sections/Home/Proud-maintainers";
 /*import ContactCard from "../components/ContactCard";*/
 import Partners from "../sections/Home/Partners-home";
@@ -16,7 +15,7 @@ import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 import { GlobalStyle } from "../sections/app.style";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
-import CloudNativeLeaders from "../sections/Home/Cloud-Native";
+
 import SoSpecial from "../sections/Home/So-Special-Section";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
@@ -57,8 +56,6 @@ const IndexPage = () => {
         {/* <AppScreens /> */}
         {/* <Pricing /> */}
         {/* <Testimonial /> */}
-        <CloudNativeLeaders />
-        <StewardsOfIndustry />
         {/* <Getapp /> */}
         {/* <News /> */}
         {/* <Faq category = "all"/> */}

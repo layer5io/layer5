@@ -4,6 +4,8 @@ import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import AboutSectionWrapper from "./about.style";
+import Statement from "../Layer5-statement";
+
 import collabMap from "./images/layer5-collaboration-map.svg";
 import location from "./images/location.svg";
 import WhoWeAre from "../WhoWeAre";
@@ -39,11 +41,32 @@ const About = ({ theme }) => {
                 </div>
               </Col>
             </Row>
-            <Container fullWidthSM>
-              <div className="head-images">
-                <StaticImage src={Layer5Projects} alt="About Layer5 Projects" />
-              </div>
-            </Container>
+            <StaticImage src={Layer5Projects} alt="About Layer5 Projects" />
+            <Row Vcenter={true} className="row-img-cont-2">
+              <Col xs={12} sm={6}>
+                <div className="head-images">
+                  <img src={theme === "dark" ? CNCFLightstackedlogo : CNCFstackedlogo} alt="About Layer5 Projects" />
+                </div>
+              </Col>
+              <Col xs={12} sm={6}>
+                <div className="about-text text-two">
+                  <h1>Open Source First</h1>
+                  <p className="indent">
+                    Our projects establish industry standards and enable
+                    developers, operators, and product owners with repeatable patterns and best practices for managing all aspects of distributed services.
+                  </p>
+                  <h5 className="section-title">We are principled.</h5>
+                  <p>We are proud of the inclusive and kind work environment we have built. We support each other as we work to solve important problems. We take our work seriously, and we do it with integrity and in alignment with our core principles.</p>
+                </div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+      <Statement />
+      <Container fullWidthSM>
+        <Row Vcenter={true} className="aboutus-title">
+          <Col xs={12} sm={12}>
             <Row Vcenter={true} className="row-img-cont-1">
               <Col xs={12} sm={6}>
                 <div className="about-text text-one">
@@ -63,24 +86,6 @@ const About = ({ theme }) => {
                     Layer5 community members at Open Source Africa Community
                     conference, March 2022.
                   </figcaption>
-                </div>
-              </Col>
-            </Row>
-            <Row Vcenter={true} className="row-img-cont-2">
-              <Col xs={12} sm={6}>
-                <div className="head-images">
-                  <img src={theme === "dark" ? CNCFLightstackedlogo : CNCFstackedlogo} alt="About Layer5 Projects" />
-                </div>
-              </Col>
-              <Col xs={12} sm={6}>
-                <div className="about-text text-two">
-                  <h1>Open Source First</h1>
-                  <p className="indent">
-                    Our projects establish industry standards and enable
-                    developers, operators, and product owners with repeatable patterns and best practices for managing all aspects of distributed services.
-                  </p>
-                  <h5 className="section-title">We are principled.</h5>
-                  <p>We are proud of the inclusive and kind work environment we have built. We support each other as we work to solve important problems. We take our work seriously, and we do it with integrity and in alignment with our core principles.</p>
                 </div>
               </Col>
             </Row>
