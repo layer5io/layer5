@@ -14,9 +14,37 @@ import CNCFstackedlogo from "./images/cncf-stacked-color.svg";
 import CNCFLightstackedlogo from "./images/cncf-light-stacked-color.svg";
 
 import { Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
+import { getImage } from "gatsby-plugin-image";
+import { BgImage } from "gbimage-bridge";
+
 const Community_meetup = "./images/Community_meetup.png";
-const Layer5Projects = "./images/layer5-projects.png";
+// const Layer5Projects = "./images/layer5-projects.svg";
+
+
+
 const About = ({ theme }) => {
+
+  // Lee Calcote learned this trick from Maintainer Nikhil Ladha
+  const { webpImage } = useStaticQuery(
+    graphql`
+      query {
+        webpImage: file(
+          relativePath: { eq: "./images/layer5-projects.svg"" }
+        ) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 2000
+              quality: 50
+              webpOptions: { quality: 70 }
+            )
+          }
+        }
+      }
+    `
+  );
+
+  const Layer5Projects = getImage(webpImage);
   return (
     <AboutSectionWrapper id="about">
 
@@ -41,7 +69,8 @@ const About = ({ theme }) => {
                 </div>
               </Col>
             </Row>
-            <StaticImage src={Layer5Projects} alt="About Layer5 Projects" />
+            <BgImage image={Layer5Projects} className="section" />
+            {/* <StaticImage src={Layer5Projects} alt="About Layer5 Projects" /> */}
             <Row Vcenter={true} className="row-img-cont-2">
               <Col xs={12} sm={6}>
                 <div className="about-text text-two">
