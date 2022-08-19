@@ -13,7 +13,7 @@ const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
   return (
     <IntegrationPageWrapper>
-      <section className="herosection">
+      <section className="herosection">``
         <Image {...frontmatter.integrationIcon} alt={frontmatter.title}/>
         <h2>
           {frontmatter.title} with {" "}<span className="hero-header">Meshery</span>
@@ -35,7 +35,7 @@ const IndividualIntegrations = ({ data }) => {
           <h2>Overview</h2>
           <MDXRenderer>{body}</MDXRenderer>
           <section className="external-btns">
-            <Button primary className="get-started" title="Get Started" url="#" />
+            <Button primary className="get-started" title="Get Started" url="https://layer5.io/service-mesh-management/meshery/getting-started" />
             <span className="doc-link">
               <a href={frontmatter.docURL}>See Documentation</a>
               <FaArrowRight />

@@ -149,16 +149,14 @@ export const IntegrationCard = styled.div`
     align-items: center;
     flex: 0 1 auto;
     max-width: 30rem;
-    transition: all 0.15s ease-in;
-    
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    border-color: #00D3A9; 
+       
     p, h2{
       text-align: center;
     }
-    :hover{
-      border-width: 0px 5px 5px 0px;
-      border-style: solid;
-      border-color: #00D3A9;
-    }
+    
   }
 
  .open-modal-btn{
