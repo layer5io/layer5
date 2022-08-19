@@ -11,6 +11,7 @@ import servicemeshperformance from "../../../assets/images/service-mesh-performa
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
+import { Link } from "gatsby";
 
 const contents = [
   {
@@ -26,6 +27,8 @@ const Repository = () => {
   const data = React.useMemo(() => repo_data);
   let frontendProjects = data.filter((data) => data.category === "Frontend");
   let backendProjects = data.filter((data) => data.category !== "Frontend");
+
+
   return (
     <HandbookWrapper>
       <div className="page-header-section">
@@ -122,6 +125,7 @@ const Repository = () => {
                         <th className="linkscol">Site</th>
                         <th>Project</th>
                         <th>Framework</th>
+                        <th>Maintainers</th>
                         <th className="linkscol">Repo</th>
                       </tr>
                     </thead>
@@ -130,8 +134,10 @@ const Repository = () => {
                         project,
                         language,
                         repository,
+                        maintainers_name,
                         site,
                         image,
+                        link,
                       } = subdata;
                       return (
                         <tbody key={project}>
@@ -143,6 +149,15 @@ const Repository = () => {
                             </td>
                             <td>{project}</td>
                             <td>{language}</td>
+                            <td>
+                              {maintainers_name.map((mname, index) => {
+                                return (
+                                  <Link to={link[index]} key={index}>
+                                    <span>{index > 0 ? ", " : ""}</span>{mname}
+                                  </Link>
+                                );
+                              })}
+                            </td>
                             <td>
                               <a
                                 href={repository}
@@ -160,7 +175,6 @@ const Repository = () => {
                 </div>
               );
             })}
-
             <a id="Backend Projects">
               <h2>Backend Projects</h2>
             </a>
