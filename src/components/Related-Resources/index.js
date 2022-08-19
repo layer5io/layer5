@@ -5,6 +5,8 @@ import Card from "../Card";
 import RelatedResourcesWrapper from "./relatedResources.style";
 import { Col } from "../../reusecore/Layout";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 
@@ -34,7 +36,7 @@ const RelatedResources = props => {
                           <Card frontmatter={resource.frontmatter} fields={resource.fields}/>
                         </Col>
                       );
-                    }):relatedResources.map((resource) => {
+                    }) : relatedResources.map((resource) => {
                       return (
                         <Col className="cardCol" xs={12} key={resource.fields.slug}>
                           <Card frontmatter={resource.frontmatter} fields={resource.fields}/>

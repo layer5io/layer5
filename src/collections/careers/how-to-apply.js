@@ -6,6 +6,7 @@ export const PositionApplyWrapper = styled.div`
     text-align: center;
     .pos-logo{
         width: 2.25rem;
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
         margin: 0 0.5rem;
     }
 

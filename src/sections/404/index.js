@@ -18,7 +18,7 @@ const messages = [
 const L404 = () => {
   const [message, setMessage] = useState(messages[0]);
   useEffect( () => {
-    setMessage(messages[Math.floor(Math.random()*messages.length)]);
+    setMessage(messages[Math.floor(Math.random() * messages.length)]);
   },[]);
 
   return (

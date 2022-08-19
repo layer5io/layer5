@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Customers from "../../reusecore/Blockquote/Blockquote-image";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Maxi from "../../collections/members/maximiliano-churichi/Maximiliano-Churichi.jpg";
 import Otto from "../../collections/members/otto-van-der-schaaf/otto-van-der-schaaf.jpg";
 import Nic from "../../collections/members/nicholas-jackson/nic-jackson.jpg";

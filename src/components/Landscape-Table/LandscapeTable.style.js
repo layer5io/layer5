@@ -19,12 +19,12 @@ table {
     td {
         padding: 0.3rem;
         height: 4rem;
-        color: black;
+        color: ${props => props.theme.text};
         text-align: center;
 		font-size: 0.9rem;
 		line-height: .9rem;
         font-weight: 400;
-        border-bottom: 1px solid #efefef;
+        border-bottom: 1px solid ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
 		height: 4rem;
 		.Mark {
 			height: 1.5rem;
@@ -43,15 +43,15 @@ table {
 		height: 4rem;
 
 		:nth-child(odd) {
-			background: #ffffff;
+			background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 			td {
-				border-right: 1px solid #ffffff;
+				border-right: 1px solid ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 			}
 		}
 		:nth-child(even) {
-			background: #efefef;
+			background: ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
 			td {
-				border-right: 1px solid #efefef;
+				border-right: 1px solid ${props => props.theme.DarkTheme ? "#121212" : "#efefef"};
 			}
 		}
 		:last-child {

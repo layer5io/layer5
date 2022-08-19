@@ -5,6 +5,8 @@ import Card from "../Card";
 import RelatedPostsWrapper from "./relatedPosts.style";
 import { Col } from "../../reusecore/Layout";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 
@@ -34,7 +36,7 @@ const RelatedPosts = props => {
                           <Card frontmatter={post.frontmatter} fields={post.fields}/>
                         </Col>
                       );
-                    }):relatedPosts.map((post) => {
+                    }) : relatedPosts.map((post) => {
                       return (
                         <Col className="cardCol" xs={12} key={post.fields.slug}>
                           <Card frontmatter={post.frontmatter} fields={post.fields}/>

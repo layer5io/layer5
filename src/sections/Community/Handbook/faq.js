@@ -6,7 +6,7 @@ import TocPagination from "../../../components/handbook-navigation/TocPagination
 import { Link } from "gatsby";
 
 
-const Faq= () => {
+const Faq = () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">

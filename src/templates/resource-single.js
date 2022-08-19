@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 
 import { ThemeProvider } from "styled-components";
@@ -11,8 +11,10 @@ import ResourceSingle from "../sections/Resources/Resource-single";
 import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
 import SimpleReactLightbox from "simple-react-lightbox";
+import { darktheme } from "../theme/app/themeStyles";
+import lighttheme from "../theme/app/themeStyles";
+
 
 export const query = graphql`query ResourcesBySlug($slug: String!) {
   mdx(fields: {slug: {eq: $slug}}) {
@@ -40,14 +42,20 @@ export const query = graphql`query ResourcesBySlug($slug: String!) {
 `;
 
 const ResourceSinglePage = ({ data }) => {
+  const [theme, setTheme] = useState();
+
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL}/>
-        <Navigation />
+        <SEO title={data.mdx.frontmatter.title} image={data.mdx.frontmatter.thumbnail.publicURL} />
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <SimpleReactLightbox>
-          <ResourceSingle data={data}/>
+          <ResourceSingle data={data} />
         </SimpleReactLightbox>
         <Footer />
       </Layout>

@@ -69,10 +69,11 @@ const BlogList = ({
                   <SearchBox
                     searchQuery={searchQuery}
                     searchData={searchData}
+                    paginate={paginate} currentPage={currentPage}
                   />
                 </div>
               ) : (
-                <SearchBox searchQuery={searchQuery} searchData={searchData} />
+                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} />
               )}
               <Row className="blog-lists">
                 {currentPosts.length > 0 &&

@@ -20,7 +20,7 @@ const BlockquoteStyle = styled.div`
     &:after {
       position: absolute;
       content: "”";
-      color: ${(props) => props.theme.primaryLightColorTwo};
+      color: ${(props) => props.theme.keppelColor};
       font-family: Copperplate;
       font-size: 10rem;
       line-height: 0;
@@ -30,7 +30,7 @@ const BlockquoteStyle = styled.div`
   }
   .blockquote-quote {
     position: relative;
-    color: ${(props) => props.theme.primaryLightColorTwo};
+    color: ${(props) => props.theme.keppelColor};
     font-size: 1.85rem;
     font-weight: 700;
     line-height: 1;

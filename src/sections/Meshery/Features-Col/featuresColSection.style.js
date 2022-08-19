@@ -13,7 +13,12 @@ export const FeaturesSectionContainer = styled.div`
   justify-content: space-evenly;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-
+  rect {
+    fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+  }
+  path {
+    stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
+  }
   @media (max-width: 1198px) {
     grid-template-columns: repeat(auto-fill, 17rem);
   }
@@ -40,7 +45,8 @@ export const FeaturesSectionContainer = styled.div`
 `;
 
 export const FeatureBlockContainer = styled.div`
-  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.shadowColor};
+  box-shadow: 2px 4px 2.5rem 0.5rem ${(props) => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.05)" : "rgba(0, 0, 0, 0.05)"};
+  background-color:	${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
   border-radius: 1.25rem;
   transition: all 0.3s ease-in;
   display: flex;
@@ -70,13 +76,13 @@ export const FeatureTitleInfoContainer = styled.div`
       font-weight: 600;
       margin: 0 0 0.625rem 0;
       padding-top: 15px;
-      color: ${(props) => props.theme.black};
+      color: ${(props) => props.theme.text};
     }
   }
 
   p {
     font-size: 18px;
-    color: ${(props) => props.theme.primaryColor};
+    color: ${(props) => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
     text-align: center;
     font-weight: 300;
   }
@@ -92,7 +98,7 @@ export const FeatureInfoContainer = styled.div`
       vertical-align: top;
     }
     .service {
-      color: ${(props) => props.theme.black};
+      color: ${(props) => props.theme.text};
       font-size: 16px;
       padding: 0 0 1.25rem 1.875rem;
     }
@@ -104,10 +110,10 @@ export const CountBlockContainer = styled.div`
   .count {
     font-weight: 700;
     margin-bottom: 0.625rem;
-    color: ${(props) => props.theme.black};
+    color: ${(props) => props.theme.text};
   }
   .count-desc {
     font-size: 0.94rem;
-    color: ${(props) => props.theme.primaryColor};
+    color: ${(props) => props.theme.DarkTheme ? "#dee3de" : "#3c494f"};
   }
 `;

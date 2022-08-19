@@ -57,7 +57,7 @@ class RelatedResourcesFactory {
       const categoryPoints = 2;
       const slug = getSlug(resource);
 
-      if (resource.frontmatter.category ===category){
+      if (resource.frontmatter.category === category){
         identityMap[slug].points += categoryPoints;
       }
     };

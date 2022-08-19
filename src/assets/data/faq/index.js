@@ -323,6 +323,28 @@ const data = {
         "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Meshery Cloud account.",
       ],
     },
+
+    {
+      question: "How to Meshery Extension Points work?",
+      category: "Meshery Integrations",
+      answer: [
+        "Yes, as the service management plane, Meshery, provisions and manage the lifecycle of service meshes.",
+      ],
+    },
+    {
+      question: "How can I request a new integration?",
+      category: "Meshery Integrations",
+      answer: [
+        "Yes, as the service management plane, Meshery, provisions and manage the lifecycle of service meshes.",
+      ],
+    },
+    {
+      question: "Does Meshery manage service meshes?",
+      category: "Meshery Integrations",
+      answer: [
+        "Yes, as the service management plane, Meshery, provisions and manage the lifecycle of service meshes.",
+      ],
+    },
   ],
 };
 export default data;

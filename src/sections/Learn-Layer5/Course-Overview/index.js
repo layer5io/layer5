@@ -52,7 +52,7 @@ const CourseOverview = ({ course, chapters, serviceMeshesList }) => {
     });
 
   useEffect(() => {
-    let bookmarkPath = localStorage.getItem("bookmarkpath-"+course.fields.slug.split("/")[3]);
+    let bookmarkPath = localStorage.getItem("bookmarkpath-" + course.fields.slug.split("/")[3]);
     if (bookmarkPath){
       setHasBookmark(true);
       setBookmarkUrl(bookmarkPath);

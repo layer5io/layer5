@@ -125,11 +125,9 @@ div.fact-left {
   }
   .image-center {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1.5rem auto;
     width: 90%;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
 
   .align-right {
@@ -149,6 +147,10 @@ div.fact-left {
   .centered-text {
     color: #3c494f;
     text-align: center;
+  }
+  .btn-center{
+    display: block;
+    margin: auto;
   }
   
   img.right {

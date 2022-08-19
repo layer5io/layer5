@@ -5,6 +5,9 @@ import Dockerimage from "../../assets/images/docker-extension/Docker_animated.sv
 import { Container } from "../../reusecore/Layout";
 
 const DockerExtensionCTAWrapper = styled.div`
+p {
+  color:  black;  
+}
 .docker-callout {
     background: linear-gradient(90deg, hsla(186, 33%, 94%, 0.7) 33%, hsla(173, 54%, 61%, 1) 100%);
     border-radius: 4rem;
@@ -23,6 +26,7 @@ const DockerExtensionCTAWrapper = styled.div`
       margin-right: 2rem;
     }
     h2{
+      color: black;
       padding: 0;
     }
     @media screen and (max-width:767px) {

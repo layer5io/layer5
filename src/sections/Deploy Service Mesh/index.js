@@ -29,7 +29,7 @@ const RangeSlider = memo(
     };
 
     const sliderStyle = {
-      backgroundImage: `-webkit-gradient(linear,left top,right top,color-stop(${(sliderVal/100)}, #0098A6),color-stop(${(sliderVal/100)}, #D2CECC))`
+      backgroundImage: `-webkit-gradient(linear,left top,right top,color-stop(${(sliderVal / 100)}, #0098A6),color-stop(${(sliderVal / 100)}, #D2CECC))`
     };
 
     const bubbleStyle = {
@@ -99,10 +99,10 @@ const ServiceMesh = () => {
   useEffect(() => {
     if (!flag) {
       const sum = parseInt(parentVal1) + parseInt(parentVal2) + parseInt(parentVal3);
-      SetAverage((sum/300)*100);
+      SetAverage((sum / 300) * 100);
     } else {
       const sum = parseInt(parentVal1) + parseInt(parentVal2) + parseInt(parentVal3) + parseInt(parentVal4) + parseInt(parentVal5) + parseInt(parentVal6) + parseInt(parentVal7) + parseInt(parentVal8);
-      SetAverage((sum/800)*100);
+      SetAverage((sum / 800) * 100);
     }
   }, [flag,parentVal1,parentVal2,parentVal3,parentVal4,parentVal5,parentVal6,parentVal7,parentVal8]);
 

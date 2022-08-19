@@ -22,7 +22,7 @@ const Conduct = () => {
 
             <p>layer5.io is a Software Product and Services Site.</p>
 
-            <p>Layer5 is an enterprise service mesh company helping customers in smooth transition to microservices and cloud via their tools, products and services.</p>
+            <p>Layer5 is an enterprise company helping customers in smooth transition to microservices and cloud via their tools, products and services.</p>
           </Col>
         </Row>
         <Row>
