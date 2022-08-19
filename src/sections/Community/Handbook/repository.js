@@ -152,7 +152,7 @@ const Repository = () => {
                             <td>
                               {maintainers_name.map((mname, index) => {
                                 return (
-                                  <Link href={link[index]} rel="noreferrer" target="_blank" key={index}>
+                                  <Link to={link[index]} key={index}>
                                     <span>{index > 0 ? ", " : ""}</span>{mname}
                                   </Link>
                                 );
