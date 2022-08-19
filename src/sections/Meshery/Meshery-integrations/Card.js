@@ -15,7 +15,7 @@ const Card = () => {
         <Button
           secondary
           title="Learn about Extension Points"
-          url="#"
+          url="https://docs.meshery.io/extensibility"
         />
       </div>
       <div className="container">
