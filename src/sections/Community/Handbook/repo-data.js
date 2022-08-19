@@ -25,7 +25,7 @@ export const repo_data = [
     category: "Frontend",
     subdata: [
       {
-        project: "Layer5",
+        project: "Layer5.io",
         image: five,
         site: "https://layer5.io/",
         language: "Gatsby",
@@ -56,8 +56,8 @@ export const repo_data = [
         image: meshery,
         site: "https://github.com/meshery/meshery/tree/master/ui",
         language: "NextJS, React.js, MaterialUI and Billboard.js",
-        maintainers_name: ["Gaurav Chadha"],
-        link: ["https://layer5.io/community/members/gaurav-chadha"],
+        maintainers_name: ["Gaurav Chadha","Nithish Karthik"],
+        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nithish-karthik"],
         repository: "https://github.com/meshery/meshery/tree/master/ui",
       },
       {
