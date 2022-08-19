@@ -20,7 +20,6 @@ const contents = [
   },
   { id: 1, link: "#Frontend Projects", text: "Frontend Projects" },
   { id: 2, link: "#Backend Projects", text: "Backend Projects" },
-  { id: 3, link: "#Maintainers", text: "Maintainers" },
 ];
 
 const Repository = () => {
@@ -28,7 +27,7 @@ const Repository = () => {
   let frontendProjects = data.filter((data) => data.category === "Frontend");
   let Maintainers = data.filter( (data) => data.category === "Maintainers");
   let backendProjects = data.filter((data) => data.category !== "Frontend" && data.category !== "Maintainers");
-  
+
 
   return (
     <HandbookWrapper>
@@ -126,6 +125,7 @@ const Repository = () => {
                         <th className="linkscol">Site</th>
                         <th>Project</th>
                         <th>Framework</th>
+                        <th>Maintainers</th>
                         <th className="linkscol">Repo</th>
                       </tr>
                     </thead>
@@ -134,8 +134,10 @@ const Repository = () => {
                         project,
                         language,
                         repository,
+                        maintainers_name,
                         site,
                         image,
+                        link,
                       } = subdata;
                       return (
                         <tbody key={project}>
@@ -148,73 +150,21 @@ const Repository = () => {
                             <td>{project}</td>
                             <td>{language}</td>
                             <td>
+                              {maintainers_name.map((mname, index) => {
+                                return (
+                                  <a href={link[index]} rel="noreferrer" target="_blank" key={index}>
+                                    <span>{index > 0 ? ", " : ""}</span>{mname}
+                                  </a>
+                                );
+                              })}
+                            </td>
+                            <td>
                               <a
                                 href={repository}
                                 target="_blank"
                                 rel="noreferrer"
                               >
                                 <img className="github-icon" src={github} />
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      );
-                    })}
-                  </table>
-                </div>
-              );
-            })}
-            <a id="Maintainers">
-              <h2>Maintainers</h2>
-            </a>
-
-            {Maintainers.map((Maintainer, index) => {
-              const { category } = Maintainers;
-              return (
-                <div className="table-container" key={index}>
-                  <table className="frontendTable" key={category}>
-                    <thead>
-                      <tr>
-                        <th className="linkscol">Site</th>
-                        <th>Project</th>
-                        <th>Maintainers</th>
-                        <th className="linkscol">Repo</th>
-                      </tr>
-                    </thead>
-                    {Maintainer.subdata.map((subdata) => {
-                      const {
-                        project,
-                        maintainers_name,
-                        repository,
-                        site,
-                        image,
-                        link
-                      } = subdata;
-                      return (
-                        <tbody key={project}>
-                          <tr>
-                            <td>
-                              <a href={site} target="_blank" rel="noreferrer">
-                                <img className="site-icon" src={image} alt="Project Website Icon" />
-                              </a>
-                            </td>
-                            <td>{project}</td>
-                            <td>
-                                {maintainers_name.map((maintainer_name, index) => {
-                                  return (
-                                    <a href={link[index]} rel="noreferrer" target="_blank" key={index}>
-                                      <span>{index > 0 ? ", " : ""}</span>{maintainer_name}
-                                    </a>
-                                  );
-                                })}
-                            </td>
-                            <td>
-                              <a
-                                href={repository}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                <img className="github-icon" src={github} alt="GitHub Icon" />
                               </a>
                             </td>
                           </tr>
