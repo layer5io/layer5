@@ -25,8 +25,7 @@ const contents = [
 const Repository = () => {
   const data = React.useMemo(() => repo_data);
   let frontendProjects = data.filter((data) => data.category === "Frontend");
-  let Maintainers = data.filter( (data) => data.category === "Maintainers");
-  let backendProjects = data.filter((data) => data.category !== "Frontend" && data.category !== "Maintainers");
+  let backendProjects = data.filter((data) => data.category !== "Frontend");
 
 
   return (
