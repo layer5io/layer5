@@ -161,7 +161,7 @@ section{
     transform: translate(-50%, -50%);
     max-width: 50rem;
     max-height: 40rem;
-    overflow-y: scroll;
+    overflow-y: hidden;
 
     .close-modal-btn {
         min-width: 2rem;
