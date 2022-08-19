@@ -11,6 +11,7 @@ import servicemeshperformance from "../../../assets/images/service-mesh-performa
 import meshery from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
+import { Link } from "gatsby";
 
 const contents = [
   {
@@ -151,9 +152,9 @@ const Repository = () => {
                             <td>
                               {maintainers_name.map((mname, index) => {
                                 return (
-                                  <a href={link[index]} rel="noreferrer" target="_blank" key={index}>
+                                  <Link href={link[index]} rel="noreferrer" target="_blank" key={index}>
                                     <span>{index > 0 ? ", " : ""}</span>{mname}
-                                  </a>
+                                  </Link>
                                 );
                               })}
                             </td>
