@@ -7,7 +7,7 @@ import SMPImage from "../../images/meshery_multi_mesh.png";
 
 const HowIntegrationWorksWrapper = styled.section`
 
-  background: ${props => props.theme.DarkTheme};
+  background-color: ${props => props.theme.DarkTheme ? "#101010" : "#F7F7F7"};
 	padding-bottom: 2rem;
 
 	.section-data {
