@@ -83,7 +83,7 @@ export const IntegrationPageWrapper = styled.section`
 				gap: 0.5rem;
 				align-items: center;
 				a {
-					color: black;
+					color: ${props => props.theme.text};
 					transition: padding 0.5s ease;	
                                 }
 				a:hover{
