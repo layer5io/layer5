@@ -84,9 +84,9 @@ export const IntegrationPageWrapper = styled.section`
 				align-items: center;
 				a {
 					color: black;
-					transition: all 0.5s ease;
-				}
-				a:hover {
+					transition: padding 0.5s ease;	
+                                }
+				a:hover{
 					padding-right: 5px;
 				}
 				svg {

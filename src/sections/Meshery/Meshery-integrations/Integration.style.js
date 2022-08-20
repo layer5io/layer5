@@ -131,4 +131,39 @@ export const IntegrationsWrapper = styled.div`
 
 
 
+export const IntegrationCard = styled.div`
+  display:flex;
+  margin: 0 1rem;
+  gap: 5rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+  .container{
+    padding: 3.125rem;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0 3.125rem 3.125rem 3.125rem;
+    display: flex;
+    justify-content: center;
+    gap:0.5rem;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 1 auto;
+    max-width: 30rem;
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    border-color: #00D3A9; 
+       
+    p, h2{
+      text-align: center;
+    }
+    
+  }
 
+ .open-modal-btn{
+  background-color: #00b39f;
+  color: white;
+  :hover{
+    color:black;
+  }
+ }
+`;

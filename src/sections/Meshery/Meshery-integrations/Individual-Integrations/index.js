@@ -35,7 +35,7 @@ const IndividualIntegrations = ({ data }) => {
           <h2>Overview</h2>
           <MDXRenderer>{body}</MDXRenderer>
           <section className="external-btns">
-            <Button primary className="get-started" title="Get Started" url="#" />
+            <Button primary className="get-started" title="Get Started" url="../../getting-started" />
             <span className="doc-link">
               <a href={frontmatter.docURL}>See Documentation</a>
               <FaArrowRight />
