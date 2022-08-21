@@ -4,7 +4,6 @@ import { HoneycombGrid } from "./Integration.style";
 import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
 
 const IntegrationsGrid = ({ category }) => {
-
   const data = useStaticQuery(graphql`
   query {
     allMdx(filter: { fields: { collection: { eq: "integrations" } } }) {
@@ -28,9 +27,7 @@ const IntegrationsGrid = ({ category }) => {
     }
   }
    `);
-
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
-
   let [categoryList,setCategoryList] = useState([
     { id: 1, name: "All", isSelected: false },
     { id: 2, name: "Platforms", isSelected: false },
@@ -38,9 +35,7 @@ const IntegrationsGrid = ({ category }) => {
     { id: 4, name: "Operating System", isSelected: false },
     { id: 5, name: "Collaboration", isSelected: false },
   ]);
-
   useEffect(() => setCategory(), []);
-
   const setCategory = () => {
     if (category !== undefined){
       categoryList.forEach((item) => {
@@ -49,25 +44,18 @@ const IntegrationsGrid = ({ category }) => {
     } else {
       categoryList[0].isSelected = true;
     }
-
     setCategoryList(categoryList);
     setIntegrationCollection();
-
   };
-
   const setFilter = (event) => {
-
     let count = 0;
     const selectedCategory = event.target.innerHTML;
-
     if (selectedCategory == "All"){
       categoryList.forEach(item => {
         if (item.isSelected & item.name != "All") item.isSelected = false;
       }
       );
-
     }
-
     categoryList.forEach(item => {
       if (item.name == selectedCategory) item.isSelected = !item.isSelected;
       if (item.isSelected && item.name != "All") count++;
@@ -79,36 +67,23 @@ const IntegrationsGrid = ({ category }) => {
     setCategoryList(categoryList);
     setIntegrationCollection();
   };
-
   const setIntegrationCollection = () => {
-
     if (categoryList[0].isSelected){
       setIntegrationList(data.allMdx.nodes);
       return;
     }
-
     let tempIntegrationCollection = [];
-
-
     categoryList.forEach(item => {
-
       if (item.isSelected){
-
         data.allMdx.nodes.forEach(integration => {
           if (integration.frontmatter.category == item.name){
             tempIntegrationCollection = [...tempIntegrationCollection, integration];
           }
         });
-
       }
-
     });
-
     setIntegrationList(tempIntegrationCollection);
-
   };
-
-
   return (
     <HoneycombGrid>
       <section className="category">
@@ -124,14 +99,11 @@ const IntegrationsGrid = ({ category }) => {
           );
         })}
       </section>
-
       <ResponsiveHoneycomb
         size={90}
         items={IntegrationList}
         renderItem={(item) => {
-
           const status = item.frontmatter.status === "InProgress" ? true : false;
-
           if (status){
             return (
               <Hexagon className="container" style={{ background: "#A0AAAA" }}>
@@ -148,7 +120,6 @@ const IntegrationsGrid = ({ category }) => {
               </Hexagon>
             );
           } else {
-
             return (
               <Hexagon className="container">
                 <Link
