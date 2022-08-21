@@ -33,7 +33,7 @@ const SetupPreReq = () => (
             <h2>Run Meshery</h2>
             <StaticImage src={meshery} alt="Meshery" className="setup-imgs" />
           </div>
-          <p>With 'mesheryctl', not only you can manage your service meshes, but also manage their workloads, mesure their performance, verify conformance to service mesh standards.</p>
+          <p>With 'mesheryctl', not only you can manage your service meshes, but also manage their workloads, measure their performance, verify conformance to service mesh standards.</p>
         </div>
       </a>
       <a href="/service-mesh-management/meshery/operating-service-meshes" id="Manage Meshery"
