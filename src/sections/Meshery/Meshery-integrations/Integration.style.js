@@ -2,25 +2,41 @@ import styled from "styled-components";
 
 export const HoneycombGrid = styled.div`
   
-  .container{
-    :hover {
-      background: #00d3a9;
-      transition: all 0.25s ease-in;
-      transform: scale(1.03);    
-     
-    }    
-  }
-
-  .container div {
+  .container-active{
     display: flex;
     height: 95%;
     background: white;
-    margin: 4px 4px 0px 4px;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     justify-content: center;
     align-items: center;
-  
+
+    :hover {
+      transition: all 0.25s ease-in;
+      transform: scale(1.03);    
+      background: #00d3a9;
+        ::after{
+          content: "";
+          background: white;
+          margin: 0px 0px 0 6px;
+          clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+          height: 93%;
+          width: 93%;
+          position: absolute;
+          left: 0;
+          z-index: -1;
+      }
+    }    
   }
+
+  .container-inactive{
+    display: flex;
+    height: 95%;
+    background: white;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+
 
   ul li{
     filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.1));

@@ -112,34 +112,31 @@ const IntegrationsGrid = ({ category }) => {
           const status = item.frontmatter.status === "InProgress" ? true : false;
           if (status){
             return (
-              <Hexagon className="container" style={{ background: "#A0AAAA" }}>
-                <div style={{ background: "#A0AAAA" }}>
-                  <img
-                    src={item.frontmatter.integrationIcon.publicURL}
-                    alt={item.frontmatter.title}
-                    style={{
-                      filter: "brightness(0) invert(1)",
-                    }}
-                    height={60}
-                  />
-                </div>
+              <Hexagon className="container-inactive" style={{ background: "#A0AAAA" }}>
+                <img
+                  src={item.frontmatter.integrationIcon.publicURL}
+                  alt={item.frontmatter.title}
+                  style={{
+                    filter: "brightness(0) invert(1)",
+                  }}
+                  height={60}
+                />
               </Hexagon>
             );
           } else {
             return (
-              <Hexagon className="container">
-                <Link
-                  to={`/service-mesh-management/meshery${item.fields.slug}`}
-                >
-                  <div>
-                    <img
-                      src={item.frontmatter.integrationIcon.publicURL}
-                      alt={item.frontmatter.title}
-                      height={60}
-                    />
-                  </div>
-                </Link>
-              </Hexagon>
+              <Link
+                to={`/service-mesh-management/meshery${item.fields.slug}`}
+              >
+                <Hexagon className="container-active">
+
+                  <img
+                    src={item.frontmatter.integrationIcon.publicURL}
+                    alt={item.frontmatter.title}
+                    height={60}
+                  />
+                </Hexagon>
+              </Link>
             );
           }
 
