@@ -27,6 +27,7 @@ const IntegrationsGrid = ({ category }) => {
     }
   }
    `);
+
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
   let [categoryList,setCategoryList] = useState([
     { id: 1, name: "All", isSelected: false },
@@ -35,7 +36,9 @@ const IntegrationsGrid = ({ category }) => {
     { id: 4, name: "Operating System", isSelected: false },
     { id: 5, name: "Collaboration", isSelected: false },
   ]);
+
   useEffect(() => setCategory(), []);
+
   const setCategory = () => {
     if (category !== undefined){
       categoryList.forEach((item) => {
@@ -47,6 +50,7 @@ const IntegrationsGrid = ({ category }) => {
     setCategoryList(categoryList);
     setIntegrationCollection();
   };
+
   const setFilter = (event) => {
     let count = 0;
     const selectedCategory = event.target.innerHTML;
@@ -67,6 +71,7 @@ const IntegrationsGrid = ({ category }) => {
     setCategoryList(categoryList);
     setIntegrationCollection();
   };
+
   const setIntegrationCollection = () => {
     if (categoryList[0].isSelected){
       setIntegrationList(data.allMdx.nodes);
@@ -84,6 +89,7 @@ const IntegrationsGrid = ({ category }) => {
     });
     setIntegrationList(tempIntegrationCollection);
   };
+
   return (
     <HoneycombGrid>
       <section className="category">
