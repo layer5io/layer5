@@ -16,10 +16,10 @@ export const HoneycombGrid = styled.div`
         ::after{
           content: "";
           background: white;
-          margin: 0px 0px 0 6px;
+          margin: 0px 0px 0 4px;
           clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
-          height: 93%;
-          width: 93%;
+          height: 95%;
+          width: 95%;
           position: absolute;
           left: 0;
           z-index: -1;

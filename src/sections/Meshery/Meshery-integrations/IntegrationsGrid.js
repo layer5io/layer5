@@ -42,7 +42,9 @@ const IntegrationsGrid = ({ category }) => {
   const setCategory = () => {
     if (category !== undefined){
       categoryList.forEach((item) => {
-        if (item.name === category) item.isSelected = true;
+        if (item.name === category) {
+          item.isSelected = true;
+        }
       });
     } else {
       categoryList[0].isSelected = true;
@@ -56,17 +58,26 @@ const IntegrationsGrid = ({ category }) => {
     const selectedCategory = event.target.innerHTML;
     if (selectedCategory == "All"){
       categoryList.forEach(item => {
-        if (item.isSelected & item.name != "All") item.isSelected = false;
+        if (item.isSelected & item.name != "All") {
+          item.isSelected = false;
+        }
       }
       );
     }
     categoryList.forEach(item => {
-      if (item.name == selectedCategory) item.isSelected = !item.isSelected;
-      if (item.isSelected && item.name != "All") count++;
+      if (item.name == selectedCategory) {
+        item.isSelected = !item.isSelected;
+      }
+      if (item.isSelected && item.name != "All") {
+        count++;
+      }
     });
 
-    if (count === 0) categoryList[0].isSelected = true;
-    else categoryList[0].isSelected = false;
+    if (count === 0) {
+      categoryList[0].isSelected = true;
+    } else {
+      categoryList[0].isSelected = false;
+    }
 
     setCategoryList(categoryList);
     setIntegrationCollection();
