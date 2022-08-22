@@ -24,7 +24,7 @@ const IntegrationsGrid = ({ data }) => {
           ) : (
             <div>
               <Link
-                to={`/service-mesh-management/meshery${item.fields.slug}`}
+                to={`/cloud-native-management/meshery${item.fields.slug}`}
               >
                 <div>
                   <img

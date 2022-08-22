@@ -153,7 +153,7 @@ const Writers = () => {
                   </Link>
                 </Col>
                 <Col sm={12} md={6} lg={4}>
-                  <Link className="project-card" to="/service-mesh-management/meshery">
+                  <Link className="project-card" to="/cloud-native-management/meshery">
                     <div className="content_type">
                       <img src={videos} alt="Videos" />
                       <h5>Recorded Videos</h5>

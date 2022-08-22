@@ -127,7 +127,7 @@ const RelatedIntegration = ({ category }) => {
             if (item.frontmatter.category === category){
               return (
                 <div key={index}>
-                  <Link to={`/service-mesh-management/meshery${item.fields.slug}`}>
+                  <Link to={`/cloud-native-management/meshery${item.fields.slug}`}>
                     <img src={item.frontmatter.integrationIcon.publicURL} alt={item.frontmatter.title} height={60} className="img-effect" />
                   </Link>
                 </div>

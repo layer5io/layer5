@@ -26,7 +26,7 @@ const ServiceMeshManagement = () => {
           </SectionTitle>
 
           <Col xs={12} sm={12} md={6}>
-            <Link to="/service-mesh-management/meshery">
+            <Link to="/cloud-native-management/meshery">
               <StaticImage className="mesh-image" alt="Meshery - the cloud native management plane" src={MeshMap} />
             </Link>
           </Col>
@@ -42,7 +42,7 @@ const ServiceMeshManagement = () => {
                 </p>
               </div>
               <div className="backBtn">
-                <Link to="/service-mesh-management/meshery">
+                <Link to="/cloud-native-management/meshery">
                   <p>Learn More <span><IoIosArrowForward className="icon" /></span></p>
                 </Link>
               </div>
