@@ -100,4 +100,13 @@ export const IntegrationPageWrapper = styled.section`
 			width: 35rem;
 		};
 	}
+
+	.integration-collection{
+		margin: 2rem auto;
+		max-width: 1200px;
+		
+		h2{
+			text-align: center;
+		}
+	}
 `;
