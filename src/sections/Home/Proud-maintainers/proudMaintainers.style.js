@@ -4,6 +4,7 @@ const ProjectItemWrapper = styled.section`
 		text-align: left;
 		align-self: flex-start;
 		margin-left: -5rem;
+		margin-top: 5rem;
 		padding: 0rem;
 		@media screen and (max-width: 992px) {
 			margin-left: 0rem;
