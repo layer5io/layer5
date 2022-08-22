@@ -41,7 +41,7 @@ const MesheryManageMesh = () => {
           <Col sm={12} lg={6}>
             <h2>Manage your Mesh</h2>
             <p>Manage all aspects of running your service mesh no matter what service mesh you're running</p>
-            <Button primary className="banner-btn" title="How Meshery Works" url="/service-mesh-management/meshery/operating-service-meshes">
+            <Button primary className="banner-btn" title="How Meshery Works" url="/cloud-native-management/meshery/operating-service-meshes">
               <GiClockwork size={21} className="button-icon" />
             </Button>
           </Col>
