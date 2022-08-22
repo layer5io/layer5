@@ -10,6 +10,7 @@ export const BlogPageWrapper = styled.div`
 		
 	}
 	.post-block{
+		background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 		width: 100%;
 		display: flex;
 		justify-content: center;

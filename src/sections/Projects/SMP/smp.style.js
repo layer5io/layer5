@@ -1,15 +1,10 @@
 import styled from "styled-components";
-import smp from "../../../assets/images/smp-page/smp-hero.png";
 import cncf from "../../../assets/images/smp-page/cncf-icon.png";
 
 const SMPWrapper = styled.section`
     margin-bottom: 3.25rem;
     .smp-hero{
-        background-image: url("${smp}");
         height: 34.4rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         .hero-text{
             padding: 9.375rem 0 6.25rem 0;
             h1{
@@ -33,7 +28,10 @@ const SMPWrapper = styled.section`
             margin: auto;
             text-align: center;
             width: 80%;
-            margin-bottom: 6.25rem;
+            margin-bottom: 1.25rem;
+        }
+        h3 {
+            margin-bottom: 4.25rem;
         }
         h1{
             margin-bottom: 1.875rem;
@@ -142,6 +140,12 @@ const SMPWrapper = styled.section`
             margin-top: 1.5rem;
         }
     }
+    rect {
+        fill:  ${props => props.theme.DarkTheme ? "#313131" : "#FFF7D8"};  
+      }
+      path {
+        stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#EBC017"};
+      }
     @media only screen and (max-width: 1024px) {
         .smp-hero{
             .hero-text{

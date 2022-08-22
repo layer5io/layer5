@@ -57,7 +57,7 @@ class RelatedPostsFactory {
       const categoryPoints = 2;
       const slug = getSlug(post);
 
-      if (post.frontmatter.category ===category){
+      if (post.frontmatter.category === category){
         identityMap[slug].points += categoryPoints;
       }
     };

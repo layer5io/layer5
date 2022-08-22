@@ -44,7 +44,7 @@ function SMI_Compatibility() {
       // Group by SMI-spec version
       .then(results => {
         let res = results.results.reduce( (reducedResults, currVal) => {
-          (reducedResults[currVal.more_details[0].smi_version.split("/")[0]]= reducedResults[currVal.more_details[0].smi_version.split("/")[0]] || []).push(currVal);
+          (reducedResults[currVal.more_details[0].smi_version.split("/")[0]] = reducedResults[currVal.more_details[0].smi_version.split("/")[0]] || []).push(currVal);
           return reducedResults;
         }, {});
 
@@ -87,7 +87,7 @@ function SMI_Compatibility() {
 
   }, []);
 
-  if (smiData==0) {
+  if (smiData == 0) {
     return (<div></div>);
   }
 

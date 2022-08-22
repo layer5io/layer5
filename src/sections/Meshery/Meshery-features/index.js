@@ -135,17 +135,12 @@ const MesheryFeatures = () => {
                 <div className="feature-expose">
                   <img src={img3} alt="Kubernetes Operator for Meshery" />
                   <p>
-                    Service meshes are dynamic. Changes to the service meshes
-                    and their workloads occur with great frequency. Meshery
-                    Operator helps Meshery stay in lockstep with these changes.
-                    Service mesh administrators might make updates to service
-                    mesh configuration directly with the service mesh.{" "}
+                    Your infrastructure is dynamic. Changes to your infrastructure and your applications occur with great frequency. Whether you make a change directly or another system makes a change, Meshery Operator helps Meshery stay in lockstep with your ever-evolving infrastructure. {" "}
                   </p>
                   <p>
                     Meshery is continually cognizant of such changes. The
                     Kubernetes operator for Meshery, supports discovery and
-                    eventing of greenfield and brownfield service mesh
-                    deployments.
+                    eventing of greenfield and brownfield of your workloads, services, deployments, replicasets, pods, containers, services, persistent volumes... all of your Kubernetes-based infrastructure.
                   </p>
                 </div>
               ),

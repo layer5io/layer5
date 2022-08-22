@@ -7,7 +7,10 @@ import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import styled from "styled-components";
 
 const BooksListWrapper = styled.div`
+    Button:hover {
+      box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
 
+    }
     .book-heading {
         text-align: center;
         margin: 5rem 0
@@ -53,7 +56,7 @@ const BooksListWrapper = styled.div`
             padding: 0 0.75rem;
         }
         &:hover{
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 20px ${props => props.theme.DarkTheme ? "rgba(255, 255, 255, 0.9)" : "rgba(0, 0, 0, 0.1)"};
             .arrow_icon{
                 left: 0.2rem;
                 color: white;
@@ -143,7 +146,7 @@ const BooksSection = () => {
           ))}
         </div>
         <div className="see-more-button">
-          <Button primary title="Checkout all service mesh books" url="/learn/service-mesh-books"/>
+          <Button primary title="Checkout all service mesh books" url="/learn/service-mesh-books" />
         </div>
       </Container>
     </BooksListWrapper>

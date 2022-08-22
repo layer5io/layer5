@@ -16,7 +16,7 @@ const SetupPreReqWrapper = styled.div`
         }
         .card {
             padding: 2rem;
-            background-color: #eee;
+            background: ${props => props.theme.DarkTheme ? "#212121" : "#eee"};
             max-width: 20rem;
             min-height: 21.5rem;
             .card-header {
@@ -38,11 +38,16 @@ const SetupPreReqWrapper = styled.div`
                     align-self: center;
                     flex: 0 0 25%;
                     margin: 0 0.5rem;
+                    filter: ${props => props.theme.invertColor};
                 }
                 h2 {
                     font-size: 1.75rem;
                     margin: 1rem 0;
                 }
+            }
+            p {
+                color: ${props => props.theme.text};
+
             }
         }
     }

@@ -6,6 +6,9 @@ const SoSpecialWrapper = styled.div`
     justify-content: space-around;
     align-items:center;
     padding:0 3rem 2rem 3rem;
+    Button:hover{
+        box-shadow: none;
+    }
     .slick-list .slick-track{
         width:5000px;
     }
@@ -20,8 +23,9 @@ const SoSpecialWrapper = styled.div`
     }
     
     .slick-arrow::before{
-        color:black;
-        font-size:22px;
+        color: black;
+        font-size: 22px;
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
     }
     .slick-slider{
         .slick-inside-div{
@@ -49,7 +53,10 @@ const SoSpecialWrapper = styled.div`
         text-align:center;
         width:100%;
         border-radius:1rem;
-        box-shadow:0 2px 10px rgba(0,0,0,0.4);
+        background-color: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+
+        box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.DarkTheme ? "#00d3a9" : "rgba(0, 0, 0, 0.40)"};
+        color:${(props) => props.theme.text};
     }
     #special-cont_img{
         height:70%;
@@ -81,24 +88,21 @@ const SoSpecialWrapper = styled.div`
         }
     }
     .special-cont_btn{
-        background-color:white;
+        background-color:${(props) => props.theme.body};
         color:black;
         height:100%;
         outline:none;
         border:none;   
     }
-    .special-cont_btn:hover{
-        background-color:white;
-        color:black;
-    }
+
     .so-special-foot{
         text-align:center;
         .so-special-foot-btn
         {
-            color:white;
+            color:${props => props.theme.DarkTheme ? "black" : "white"};
             margin:2rem;
             :hover{
-                color:black;
+                color:${props => props.theme.DarkTheme ? "white" : "black"};
             }
         }
     }

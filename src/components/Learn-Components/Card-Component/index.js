@@ -9,8 +9,8 @@ const CardComponent = ({ tutorial, path, courseCount }) => {
     <CardWrapper>
       {tutorial.frontmatter.disabled === "yes" ?  (
         <div
-          style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}`, backgroundColor: "#e6e6e6" }}
-          className="card-parent"
+          style={{ borderTop: `5px solid ${tutorial.frontmatter.themeColor}`, }}
+          className="card-parent card-2"
         >
 
           <div>
@@ -61,7 +61,7 @@ const CardComponent = ({ tutorial, path, courseCount }) => {
                 <p className="summary">{tutorial.frontmatter.description}</p>
               </div>
               <div className="card-subdata">
-                <p>{courseCount} Course{courseCount ===1  ? "" : "s"}</p>
+                <p>{courseCount} Course{courseCount === 1  ? "" : "s"}</p>
               </div>
             </div>
             <div className="card-image">

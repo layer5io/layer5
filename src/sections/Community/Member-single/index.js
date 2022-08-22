@@ -4,6 +4,7 @@ import { MemberSingleWrapper } from "./memberSingle.style";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin";
+import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
 import { IoIosArrowDropleftCircle } from "@react-icons/all-files/io/IoIosArrowDropleftCircle";
 import { Col, Container, Row } from "../../../reusecore/Layout";
 import Image from "../../../components/image";
@@ -30,6 +31,7 @@ const MemberSingle = ({ frontmatter }) => {
     location,
     badges,
     bio,
+    executive_bio,
   } = frontmatter;
   return (
     <MemberSingleWrapper>
@@ -161,6 +163,13 @@ const MemberSingle = ({ frontmatter }) => {
               </div>
               <div className="social-bg">
                 <ul className="profile-social-links">
+                  {executive_bio &&
+                  <li>
+                    <Link to="bio">
+                      <FaUserTie className="bio" size={32}  />
+                    </Link>
+                  </li>
+                  }
                   {github && (
                     <li>
                       <a href={`https://github.com/${github}`}>

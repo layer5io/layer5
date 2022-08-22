@@ -59,8 +59,8 @@ const ColWrapper = styled.div`
     @media (min-width: 576px) {
 
         order: ${({ order }) =>
-      (order===1 && "2") ||
-            (order===2 && "1")
+      (order === 1 && "2") ||
+            (order === 2 && "1")
 };
 
         flex: ${({ sm }) =>
@@ -111,8 +111,8 @@ const ColWrapper = styled.div`
 
     @media (min-width: 768px) {
         order: ${({ order }) =>
-      (order===1 && "1") ||
-            (order===2 && "2")
+      (order === 1 && "1") ||
+            (order === 2 && "2")
 };
         flex: ${({ md }) =>
   (md === 1 && `0 0 ${Dimensions[1]}`) ||

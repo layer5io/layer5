@@ -4,7 +4,7 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import SubscribeWrapper from "./subscribe.style";
 
-const subscribe= () => {
+const subscribe = () => {
   return (
     <SubscribeWrapper>
       <div className="parentcard">

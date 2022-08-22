@@ -32,7 +32,7 @@ const ContainerWrapper = styled.div`
   }
   a.highlight {
     color: ${(props) => props.theme.primaryColor};
-    background-color: #eeeeee;
+    background-color: ${(props) => props.theme.DarkTheme ? "rgb(35, 35, 35)" : "#eeeeee"};
     border-radius: 8px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -42,7 +42,7 @@ const ContainerWrapper = styled.div`
   }
   .highlight {
     color: ${(props) => props.theme.primaryColor};
-    background-color: #eeeeee;
+    background-color: ${(props) => props.theme.DarkTheme ? "rgb(35, 35, 35)" : "#eeeeee"};
     border-radius: 8px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;

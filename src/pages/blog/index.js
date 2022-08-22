@@ -13,6 +13,8 @@ import theme from "../../theme/app/themeStyles";
 
 import { graphql } from "gatsby";
 import BlogList from "../../sections/Blog/Blog-list";
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
 
 export const query = graphql`
   query allBlogs {
@@ -31,6 +33,13 @@ export const query = graphql`
           date(formatString: "MMM Do, YYYY")
           author
           thumbnail {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+            extension
+            publicURL
+          }
+          darkthumbnail {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH)
             }
@@ -56,8 +65,6 @@ const Blog = (props) => {
     setIsListView(false);
   };
 
-
-
   useEffect(() => {
     if (props.location.state) {
       if (props.location.state.isListView) setListView();
@@ -68,23 +75,27 @@ const Blog = (props) => {
     if (isListView) return <BlogList {...props} />;
     return <BlogGrid {...props} />;
   };
+  const [theme, setTheme] = useState();
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === "light" ? lighttheme : darktheme}>
       <Layout>
         <GlobalStyle />
         <SEO
           title="Blog"
-          description="Articles how to service mesh from the world's largest service mesh community.
-              Service mesh how-tos and cloud native ecosystem news."
+          description="The latest news and announcements about Layer5, our products, and our ecosystem, as well as voices from across our community."
         />
-        <Navigation />
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <BlogView
           isListView={isListView}
           setListView={setListView}
           setGridView={setGridView}
           pageContext={props.pageContext}
           data={props.data}
+          theme={theme}
         />
         <Footer />
       </Layout>

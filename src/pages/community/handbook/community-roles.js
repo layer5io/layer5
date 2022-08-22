@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import Layout from "../../../components/layout";
 
@@ -8,18 +8,26 @@ import Navigation from "../../../sections/General/Navigation";
 import Footer from "../../../sections/General/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
-import theme from "../../../theme/app/themeStyles";
+import { darktheme } from "../../../theme/app/themeStyles";
+import lighttheme from "../../../theme/app/themeStyles";
 
 
-const ContributorJourney = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Contributor Journey" description="Description of the different roles in the Layer5 community" />
-      <Navigation />
-      <LeadershipPage />
-      <Footer/>
-    </Layout>
-  </ThemeProvider>
-);
+const ContributorJourney = () => {
+  const [theme, setTheme] = useState();
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
+  return (
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Contributor Journey" description="Description of the different roles in the Layer5 community" />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <LeadershipPage />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default ContributorJourney;

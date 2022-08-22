@@ -15,8 +15,8 @@ non_functional.reverse().map(mesh => (
     : ""
 ));
 
-for (let i=0; i<meshes.length; i++){
-  if (i<5)
+for (let i = 0; i < meshes.length; i++){
+  if (i < 5)
     initialMeshes.push(meshes[i]);
   else
     remainingMeshes.push(meshes[i]);
@@ -35,23 +35,23 @@ const ServiceMeshTimeline = () => {
     elements.map(mesh => (
       <VerticalTimelineElement
         key={mesh.timeline_order}
-        contentStyle={{ background: "rgb(255, 255, 255)", color: "#3C494F" }}
+        contentStyle={{ color: "#3C494F" }}
         position={mesh.timeline_order % 2 ? "left" : "right"}
         contentArrowStyle={{ display: "none" }}
         iconClassName="meshBubble"
         iconStyle={{ width: "35px", height: "35px" }}
       >
-        {mesh.icon?
-          <div className={`meshtitle-img-${mesh.timeline_order%2}`}>
+        {mesh.icon ?
+          <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
             <img src={mesh.icon} alt={mesh.name} />
           </div>
-          :   <div className={`meshtitle-img-${mesh.timeline_order%2}`}>
+          :   <div className={`meshtitle-img-${mesh.timeline_order % 2}`}>
             <img src={ServiceMeshIcon} alt={mesh.name} />
           </div>
         }
-        <h3 className={`vertical-timeline-element-title title-${mesh.timeline_order%2}`}>{mesh.name}</h3>
-        <h4 className={`vertical-timeline-element-subtitle subtitle-${mesh.timeline_order%2}`}>{mesh.announce_date}</h4>
-        <p className={`dashLine-${mesh.timeline_order%2}`}></p>
+        <h3 className={`vertical-timeline-element-title title-${mesh.timeline_order % 2}`}>{mesh.name}</h3>
+        <h4 className={`vertical-timeline-element-subtitle subtitle-${mesh.timeline_order % 2}`}>{mesh.announce_date}</h4>
+        <p className={`dashLine-${mesh.timeline_order % 2}`}></p>
       </VerticalTimelineElement>
     ));
 
@@ -62,7 +62,7 @@ const ServiceMeshTimeline = () => {
       { loadedAll && getElements()}
       { !(loadedAll) && getElements()}
       <VerticalTimelineElement
-        className={loadedAll ? "hideIcon": ""}
+        className={loadedAll ? "hideIcon" : ""}
         iconOnClick={loadMore}
         iconClassName="moreIcon"
         iconStyle={{ width: "60px", height: "60px" }}

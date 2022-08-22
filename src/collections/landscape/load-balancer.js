@@ -1,4 +1,4 @@
-export const load_balancer=[
+export const load_balancer = [
   {
     name: "A10 Thunder ADC",
     link: "https://www.a10networks.com/products/thunder-adc/",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import Layout from "../../../components/layout";
 
@@ -8,20 +8,29 @@ import Navigation from "../../../sections/General/Navigation";
 import Footer from "../../../sections/General/Footer";
 
 import { GlobalStyle } from "../../../sections/app.style";
-import theme from "../../../theme/app/themeStyles";
+import { darktheme } from "../../../theme/app/themeStyles";
+import lighttheme from "../../../theme/app/themeStyles";
 
-const CommunityProjects = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO
-        title="Projects"
-        description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance and NightHawk"
-      />
-      <Navigation />
-      <ProjectsPage />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
+const CommunityProjects = () => {
+  const [theme, setTheme] = useState();
+
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
+  return (
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO
+          title="Projects"
+          description="Layer5 Projects: Layer5, Meshery, Service Mesh Performance and NightHawk"
+        />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <ProjectsPage theme={theme} />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default CommunityProjects;

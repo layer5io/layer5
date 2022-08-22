@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../../../components/layout";
@@ -9,20 +9,26 @@ import Footer from "../../../sections/General/Footer";
 import Terms from "../../../sections/Company/Legal/terms-of-service";
 
 import { GlobalStyle } from "../../../sections/app.style";
-import theme from "../../../theme/app/themeStyles";
+import { darktheme } from "../../../theme/app/themeStyles";
+import lighttheme from "../../../theme/app/themeStyles";
+const TermsOfService = () => {
+  const [theme, setTheme] = useState();
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
 
-const TermsOfService = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="Terms of Service" description="Contact Layer5 for help with operating a service mesh.
+  return (
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
+      <Layout>
+        <GlobalStyle />
+        <SEO title="Terms of Service" description="Layer5's cloud native application and infrastructure management software enables organizations to expect more from their infrastructure.
   Layer5 is the makers of Meshery and service mesh standards.
-  We are the largest collection of service mesh projects and their maintainers in the world." />
-      <Navigation />
-      <Terms />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
-
+" />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <Terms />
+        <Footer />
+      </Layout>
+    </ThemeProvider>
+  );
+};
 export default TermsOfService;

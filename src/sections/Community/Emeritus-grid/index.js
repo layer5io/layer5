@@ -5,8 +5,8 @@ import ProfileCard from "../../../components/Profile-card";
 import { useStaticQuery, graphql } from "gatsby";
 import { EmeritusWrapper } from "./emeritus.style";
 
-const Emeritus=() => {
-  const data=useStaticQuery(
+const Emeritus = () => {
+  const data = useStaticQuery(
     graphql`query emeritus {
   allMdx(
     sort: {fields: [frontmatter___name], order: ASC}
@@ -38,7 +38,7 @@ const Emeritus=() => {
       <div className="emeritus-text">
         <h2>Layer5 MeshMate Emeritus</h2>
         <p>
-                    Once a MeshMate, always a MeshMate. We thank and salute our previous MeshMates. Each has served the Layer5 community selflessly.
+           Once a MeshMate, always a MeshMate. We thank and salute our previous MeshMates. Each has served the Layer5 community selflessly.
         </p>
       </div>
       <Row>

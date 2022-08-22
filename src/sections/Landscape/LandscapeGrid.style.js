@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const LandscapePageWrapper=styled.div`
+export const LandscapePageWrapper = styled.div`
 
 	h2.landscape-section-heading {
 		margin-bottom: 2rem;
@@ -8,7 +8,7 @@ export const LandscapePageWrapper=styled.div`
 		font-weight: 600;
 		text-align: center;
 		font-style:unset;
-		color:#1e2117;
+		color:${props => props.theme.text};
 	}
 	#service-mesh-comparison-strength {
             margin: -2.5rem auto 6rem;
@@ -65,7 +65,7 @@ export const LandscapePageWrapper=styled.div`
 				font-size: 1.125rem;
 				text-align: center;
 				padding: 1rem 0.25rem;
-				color: ${props => props.theme.white};
+				color: ${props => props.theme.bodyRevert};
 				background: ${props => props.theme.tertiaryColor};
 				z-index: 0;
 				border-bottom-right-radius: 0.8rem;
@@ -75,6 +75,7 @@ export const LandscapePageWrapper=styled.div`
 
 				p {
 					margin: 0;
+					color: ${props => props.theme.textRevert};
 				}
 			}
 
@@ -126,13 +127,13 @@ export const LandscapePageWrapper=styled.div`
 	}
 	.title-0, .title-1 {
 		font-size: 1.25rem;
-		color: #1E2117;
+		color: ${props => props.theme.text};
 	}
 	.subtitle-0, .subtitle-1 {
 		font-size: 1rem;
 		font-family: 'Open Sans';
 		font-weight: 400;
-		color: #a0a0a0;
+		color: ${props => props.theme.DarkTheme ? "rgb(140, 140, 140)" : "rgb(160, 160, 160)"};
 	}
 	.dashLine-0 {
 		border-bottom: 1px dashed #a0a0a0;
@@ -155,6 +156,7 @@ export const LandscapePageWrapper=styled.div`
 	}
 	.vertical-timeline-element-content {
 		border-radius: 1.25em;
+		background: ${props => props.theme.body};
 		box-shadow: none;
 	}
 	.meshBubble {
@@ -373,7 +375,7 @@ export const LandscapePageWrapper=styled.div`
 		border-top-right-radius: .5rem;
 
 		a { 
-			color: ${props => props.theme.tertiaryColor};
+			color: ${props => props.theme.text};
 	
 			&:hover {
 				color: ${props => props.theme.secondaryColor};
@@ -385,7 +387,7 @@ export const LandscapePageWrapper=styled.div`
 		font-size: 1.05rem;
 		padding: 0.75rem;
 		font-weight: 600;
-		color: ${props => props.theme.white};
+		color: ${props => props.theme.textRevert};
 		background: ${props => props.theme.tertiaryColor};
 	}
 	ul.category {
@@ -407,13 +409,14 @@ export const LandscapePageWrapper=styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
-		background-color: ${props => props.theme.primaryColor};
+		background-color: ${props => props.theme.DarkTheme ? "#121212" : "#3C494F"};
 		border: 1px solid ${props => props.theme.shadowLightColor};
 		&:nth-child(1){
 			border-top-left-radius: .5rem;
 		}
 		&:hover {
 			background-color: ${props => props.theme.tertiaryColor};
+			color: ${props => props.theme.textRevert};
 			&:nth-child(1){
 				border-top-left-radius: .5rem;
 			}
@@ -434,21 +437,21 @@ export const LandscapePageWrapper=styled.div`
 		background: ${props => props.theme.tertiaryColor};
 		border-color: ${props => props.theme.tertiaryColor};
 		border-radius:0;
-		color: white;
+		color: ${props => props.theme.textRevert};
 		font-weight: 600;
 	}
 	.card-content {
 		border-right: none;
 	}
 	.odd-row {
-		background: #ffffff;
+		background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 		&:hover{
 			box-shadow: 0px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
 	.even-row {
-		background: #efefef;
+		background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
 		&:hover{
 			box-shadow: 10px 2px 5px -10px black;
 			transform: translateY(0px);

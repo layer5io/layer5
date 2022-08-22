@@ -7,6 +7,7 @@ import Modal from "react-modal";
 import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 import { GrFormClose } from "@react-icons/all-files/gr/GrFormClose";
+import ContentForm from "./writing-program/content-form";
 
 import blog from "./images/blogs.svg";
 import event from "./images/event.svg";
@@ -45,7 +46,7 @@ const Writers = () => {
                   <div className="listed">
                     <table className="table">
                       <tr>
-                        <td className="icon"><img src={c_icon} alt="icon" /></td>
+                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                         <td className="skill">
                           <h4>
                         Improve your writing and  <br />
@@ -54,7 +55,7 @@ const Writers = () => {
                       Publishing is a feedback-driven process that can help you understand your audience better, explain complex topics clearly, and iterate to improve results.                    </td>
                       </tr>
                       <tr>
-                        <td className="icon"><img src={c_icon} alt="icon" /></td>
+                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                         <td className="skill">
                           <h4>
                       Give back
@@ -69,7 +70,7 @@ const Writers = () => {
                   <div className="listed">
                     <table className="table">
                       <tr>
-                        <td className="icon"><img src={c_icon} alt="icon" /></td>
+                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                         <td className="skill">
                           <h4>
                         Establish your voice
@@ -78,7 +79,7 @@ const Writers = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="icon"><img src={c_icon} alt="icon" /></td>
+                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg></td>
                         <td className="skill">
                           <h4>
                         Educate
@@ -179,13 +180,9 @@ const Writers = () => {
                   contentLabel="Content Form"
                 >
                   <Button secondary className="close-modal-btn" onClick={closeModal}> <GrFormClose /></Button>
-                  <h2 className="modal-heading">Layer5 Content Form</h2>
+                  <h2 className="modal-heading">Layer5 Content Registration Form</h2>
                   <div className="content-form">
-                    <iframe
-                      src="https://docs.google.com/forms/d/e/1FAIpQLSf0BlMvmeEVsy4x6fMdI2cWcsnyVRSCv7b8e0Ios1hEopjOZQ/viewform"
-                      loading="lazy"
-                      className="form-frame"
-                    />
+                    <ContentForm />
                   </div>
                 </Modal>
               </div>

@@ -6,7 +6,7 @@ import TOC from "../../../components/handbook-navigation/index";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 
-const CodeofConduct= () => {
+const CodeofConduct = () => {
   return (
     <HandbookWrapper>
       <div className="page-header-section">

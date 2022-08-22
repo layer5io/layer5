@@ -26,8 +26,7 @@ const supported_platforms = [
       <>
         <h2>MacOS User</h2>
         <h4>Install on Mac using Homebrew:</h4>
-        <Code codeString={dedent`brew tap meshery/tap
-        brew install mesheryctl
+        <Code codeString={dedent`brew install mesheryctl
         mesheryctl system start`
         }
         />
@@ -64,7 +63,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Google Kubernetes Engine User</h2>
-        <Code codeString={dedent`mesheryctl system config gke --token *PATH_TO_TOKEN* 
+        <Code codeString={dedent`mesheryctl system config gke --token *PATH_TO_TOKEN*
         ./generate_kubeconfig_gke.sh cluster-admin-sa-gke default
         mesheryctl system start`}
         />
@@ -91,8 +90,7 @@ const supported_platforms = [
       <>
         <h2>Brew User</h2>
         <h4>Install on Mac or Linux using Homebrew:</h4>
-        <Code codeString={dedent`brew tap meshery/tap
-        brew install mesheryctl
+        <Code codeString={dedent`brew install mesheryctl
         mesheryctl system start`}
         />
       </>
@@ -117,7 +115,7 @@ const supported_platforms = [
     steps: (
       <>
         <h2>Kubernetes User</h2>
-        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash - 
+        <Code codeString={dedent`curl -L https://meshery.io/install | PLATFORM=kubernetes bash -
         mesheryctl system start`
         }
         />

@@ -21,7 +21,7 @@ cursor: pointer;
   }
 p{
     font-size: 0.9rem;
-    color: ${props => props.theme.primaryLightColor};
+    color: ${props => props.theme.DarkTheme ? "#C1C1C1" : props.theme.primaryLightColor};  
 }
 .toggle-btn{
     display:inline-block;
