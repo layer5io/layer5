@@ -155,7 +155,7 @@ const data = {
       answer: [
         "Yes, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes.",
       ],
-      link: "/service-mesh-management/meshery",
+      link: "/cloud-native-management/meshery",
       linktext: "Run Meshery",
     },
     {
@@ -190,7 +190,7 @@ const data = {
         "Performance Management",
         "Workload Management",
       ],
-      link: "/service-mesh-management/meshery",
+      link: "/cloud-native-management/meshery",
       linktext: "Meshery",
     },
     {

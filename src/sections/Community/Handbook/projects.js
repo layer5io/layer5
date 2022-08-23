@@ -112,7 +112,7 @@ const Maintainer = () => {
               <a id="Meshery">
                 {" "}
                 <h3>
-                  <a href="https://layer5.io/service-mesh-management/meshery">
+                  <a href="https://layer5.io/cloud-native-management/meshery">
                     <img className="project-title-icon" src={meshery} alt="Meshery" />
                     &nbsp; Meshery
                   </a>
@@ -127,7 +127,7 @@ const Maintainer = () => {
               <ul>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/service-mesh-management/meshery">
+                    <a href="https://layer5.io/cloud-native-management/meshery">
                       Meshery
                     </a>
                   </h4>{" "}
@@ -151,7 +151,7 @@ const Maintainer = () => {
                 </p>
                 <li>
                   <h4>
-                    <a href="https://layer5.io/service-mesh-management/meshery/meshery-operator">
+                    <a href="https://layer5.io/cloud-native-management/meshery/meshery-operator">
                       Meshery-operator :
                     </a>
                   </h4>{" "}
