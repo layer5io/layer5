@@ -40,6 +40,12 @@ const ButtonStyle = styled.button`
             background: ${props.theme.highlightColor}; 
             box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
         }
+
+        &:focus{
+            color: ${props.theme.black};
+            background: ${props.theme.highlightColor}; 
+            box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
+        }
     `}
     ${props => props.secondary && css`
         color: white; 
