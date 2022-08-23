@@ -138,7 +138,7 @@ const CommunityPage = ({ theme }) => {
                 <h1>Newcomers Welcome!</h1>
                 <h3>Are you new to the community?</h3>
                 <p className="invitation">
-                  Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <a href="community/newcomers">Contributor's Journey Map </a>
+                  Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <a href="newcomers">Contributor's Journey Map </a>
                   and engage in the community and projects.
                 </p>
                 <Button primary title="See All Newcomers Resources" url="/community/newcomers">
