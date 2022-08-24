@@ -56,6 +56,15 @@ export const DockerMesheryWrapper = styled.div`
         padding: 2rem 0rem;
     }
 
+    @media only screen and (max-width: 1000px) {
+      .docker-extension-meshery {
+          margin-bottom: 2rem;
+      }
+      .mobile-image-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
 
     @media only screen and (max-width: 768px) {
       .page-header-section {
