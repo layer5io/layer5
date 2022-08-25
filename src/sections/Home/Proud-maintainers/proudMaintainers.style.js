@@ -5,18 +5,19 @@ const ProjectItemWrapper = styled.section`
 		align-self: flex-start;
 		margin-left: -5rem;
 		padding: 0rem;
+		
 		@media screen and (max-width: 1600px) {
-			margin-left: -12rem;
+			margin-left: 5rem;
 		}
 		@media screen and (max-width: 992px) {
-			margin-left: -10rem;
+			margin-left: 4rem;
 		}
 		@media screen and (max-width: 768px) {
-			margin-left: -8rem;
+			margin-left: 2rem;
 
 		}
 		@media screen and (max-width: 550px) {
-			margin-left: 4rem;
+			margin-left: 3rem;
 		}
 	}
 	margin: 5rem 0rem;
