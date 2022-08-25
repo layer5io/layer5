@@ -13,11 +13,10 @@ const ProjectItemWrapper = styled.section`
 			margin-left: 4rem;
 		}
 		@media screen and (max-width: 768px) {
-			margin-left: 2rem;
-
+			margin-left: 1.0rem;
 		}
 		@media screen and (max-width: 550px) {
-			margin-left: 3rem;
+			margin-left: 0.3rem;
 		}
 	}
 	margin: 5rem 0rem;
