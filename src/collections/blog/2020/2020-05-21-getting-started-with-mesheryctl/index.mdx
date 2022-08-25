@@ -28,7 +28,7 @@ For all those who are unaware of <a href="/meshery">Meshery</a>, Meshery is a mu
 
 Meshery's vision is to make the operating of any service mesh layer of cloud infrastructure simplified, and to hasten the inevitable, eventual, ubiquituous adoption service meshes as a pervasively present layer of any the way that any modern workload is designed and deployed. Meshery is created by the <a href="/community">Layer5</a>.
 
-Layer5 is a community-first, service mesh company which has technology <a href="partners">partnerships</a> with various tech giants like Microsoft, HashiCorp, CNCF, RedHat and many more to enlist. The community consists of open source leaders like maintainers of trending open-source projects, Google SoCers, Docker Captains, service mesh maintainers, Cloud Native Ambassadors and many more (<a href="http://slack.layer5.io">join in!</a>).
+Layer5 is a community-first, service mesh company which has technology <Link to="/partners">partnerships</Link> with various tech giants like Microsoft, HashiCorp, CNCF, RedHat and many more to enlist. The community consists of open source leaders like maintainers of trending open-source projects, Google SoCers, Docker Captains, service mesh maintainers, Cloud Native Ambassadors and many more (<a href="http://slack.layer5.io">join in!</a>).
 
 
 ### What is mesheryctl?
@@ -212,7 +212,7 @@ An example usage of `mesheryctl perf --[flags]` can be
  mesheryctl perf --name "a quick stress test" --url http://192.168.1.15/productpage --qps 300 --concurrent-requests 2 --duration 30s --token "provider=Meshery"
 ```
 
-You can also provide a SMPS Configuration file with `perf` subcommand, with this file provided you will not have to specify url, duration, concurrent-requests & qps. However, if specified the value provided through file will be over-rided by value through CLI. For more info about file configuration, see [here](https://github.com/layer5io/service-mesh-performance-specification/blob/master/smps.yaml).
+You can also provide a SMPS Configuration file with `perf` subcommand, with this file provided you will not have to specify url, duration, concurrent-requests & qps. However, if specified the value provided through file will be over-rided by value through CLI. For more info about file configuration, see [here](https://github.com/service-mesh-performance/service-mesh-performance/blob/master/docs/assets/spec/readme/service%20mesh%20performance%20specification%20result.yaml).
 
 ```bash
  mesheryctl perf --name "a quick stress test" --file {path}/smps.yaml --token "provider=Meshery"
