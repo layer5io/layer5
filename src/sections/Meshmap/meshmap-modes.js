@@ -192,14 +192,17 @@ const MeshmapModesWrapper = styled.div`
         height: auto;
         cursor: pointer;
     }
+    .designer-img {
+      box-shadow: 0px 0.25rem 0.5rem 0rem rgb(0, 0, 0, 0.75);
+      margin: 1rem auto;
+      border-radius: 0.35rem;
+    }
   }
+
   .flip {
     background: linear-gradient(180deg, hsla(173, 100%, 35%, 1) 7%, hsla(0, 0%, 0%, 1) 90%);
+  }    
 
-    }
-    
-    
-  
   .mode-name {
     position: absolute;
     top: 50%;
@@ -256,7 +259,7 @@ const MeshmapModes = () => {
           </div>
           <div className="content">
             <h1>Discover and model your cloud native deployments</h1>
-            <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={designerEnlarged ? "big" : "small"} />
+            <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={`designer-img ${designerEnlarged ? "big" : "small"}`} />
             <p>
               Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned components. Using a service mesh? Visually configure your Envoy filter chain.
             </p>

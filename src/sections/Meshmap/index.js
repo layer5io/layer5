@@ -37,7 +37,7 @@ const Meshmap = () => {
                     <img
                       src={designerImage}
                       alt="Designer Mode"
-                      className="modes-image"
+                      className="designer-img modes-image"
                     />
                   ),
                 },
