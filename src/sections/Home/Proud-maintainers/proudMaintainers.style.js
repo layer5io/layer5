@@ -3,10 +3,16 @@ const ProjectItemWrapper = styled.section`
 	.left-col {
 		text-align: left;
 		align-self: flex-start;
-		margin-left: -5rem;
+		margin: -5.5rem auto auto 0;
+		max-width: 60rem;
 		padding: 0rem;
-		@media screen and (max-width: 992px) {
-			margin-left: 0rem;
+		@media screen and (max-width: 1600px) {
+			margin: -4rem auto auto 0;
+			max-width: 45rem
+		}
+		@media screen and (max-width: 1200px) {
+			margin: 2rem auto auto 0;
+			max-width: none;
 		}
 	}
 	margin: 5rem 0rem;
