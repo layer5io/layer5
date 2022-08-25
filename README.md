@@ -96,7 +96,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <h2><a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a></h2>
 <a href="https://meshery.io/community">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182032827-17634cfc-30cb-4797-924c-2eb5413b8023.svg#gh-dark-mode-only">
+<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/95926324/186697447-b765b715-30dd-43bc-8310-898a11f40a72.png#gh-dark-mode-only">
   <img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg#gh-light-mode-only" style="margin:10px;" width="125px" align="left" />
 </picture></a>
 <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> is the multi-service mesh operator and implementation of MeshSync.
