@@ -96,7 +96,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
  <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator</a></h2>
  <a href="https://meshery.io">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg#gh-light-mode-only">
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg#gh-light-mode-only">
    <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-white.svg#gh-dark-mode-only"
  style="margin:10px;" width="125px"
  alt="Meshery operator dark mode" align="left" />
