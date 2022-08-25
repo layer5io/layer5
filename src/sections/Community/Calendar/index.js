@@ -11,6 +11,7 @@ import { meet_links_data } from "./meetLinksData";
 import NewcomersMap from "../Newcomers-guide/newcomers-map";
 import Button from "../../../reusecore/Button";
 import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
+import { Link } from "gatsby";
 
 const Calendar = () => {
 
