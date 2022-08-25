@@ -6,9 +6,9 @@ import { IoMdClose } from "@react-icons/all-files/io/IoMdClose";
 import { IoIosArrowDropdownCircle } from "@react-icons/all-files/io/IoIosArrowDropdownCircle";
 
 const preReqSteps = [
-  { name: "Set up", link: "/service-mesh-management/meshery" },
-  { name: "Run Meshery",link: "/service-mesh-management/meshery/getting-started" },
-  { name: "Manage Meshery", link: "/service-mesh-management/meshery/operating-service-meshes" }
+  { name: "Set up", link: "/cloud-native-management/meshery" },
+  { name: "Run Meshery",link: "/cloud-native-management/meshery/getting-started" },
+  { name: "Manage Meshery", link: "/cloud-native-management/meshery/operating-service-meshes" }
 ];
 
 const TOC = ({ coursesData }) => {

@@ -3,14 +3,14 @@ import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 import Button from "../../../../reusecore/Button";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import CTA_Book from "./cta-book";
-import RelatedIntegration from "./relatedIntegration";
 import Image from "../../../../components/image";
 import HowIntegrationWorks from "./howItWork";
 import { IntegrationPageWrapper } from "./individual-integrations.style";
-
+import RelatedIntegration from "../IntegrationsGrid";
 
 const IndividualIntegrations = ({ data }) => {
   const { frontmatter, body } = data.mdx;
+  console.log(frontmatter.category);
   return (
     <IntegrationPageWrapper>
       <section className="herosection">
@@ -44,7 +44,10 @@ const IndividualIntegrations = ({ data }) => {
         </div>
       </section>
       <HowIntegrationWorks name={frontmatter.title} slides={frontmatter.workingSlides} />
-      <RelatedIntegration category={frontmatter.category} />
+      <section className="integration-collection">
+        <h2>Related Integrations</h2>
+        <RelatedIntegration category={frontmatter.category} />
+      </section>
       <CTA_Book />
     </IntegrationPageWrapper>
   );

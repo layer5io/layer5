@@ -142,7 +142,7 @@ const Navigation = ({ theme, themeSetter }) => {
           title: "Meshery, the Cloud Native Manager"
         },
         fields: {
-          slug: "/service-mesh-management/meshery"
+          slug: "/cloud-native-management/meshery"
         }
       },
       {

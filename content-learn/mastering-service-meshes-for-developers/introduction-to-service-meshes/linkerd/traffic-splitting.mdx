@@ -65,7 +65,7 @@ You can access the producpage by port-forwarding
     kubectl port-forward svc/productpage 9080:9080
 ```
 
-Checking [localhost:9080](localhost:9080) would show you a product page, with a list of reviews on the right. Those reviews are being loaded from the reviews service which is backed by the 3 reviews pods. The requests to the reviews service are randomly sent to one of the 3 review pods, as they represent different versions of this service.
+Checking localhost:9080 would show you a product page, with a list of reviews on the right. Those reviews are being loaded from the reviews service which is backed by the 3 reviews pods. The requests to the reviews service are randomly sent to one of the 3 review pods, as they represent different versions of this service.
 
 The three different versions provide different output:
 
