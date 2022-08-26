@@ -155,7 +155,7 @@ alt="Nighthawk" align="left" />
   Join us in the <a href="https://discuss.layer5.io">discussion forum</a> and on <a href="https://slack.layer5.io"><img src=".github/assets/images/slack.png" height="16px" align="bottom" />Slack</a> to learn more about Layer5 and its community! Make sure you see the <a href="https://layer5.io/community/newcomers">newcomer's guide</a> for a tour of resources available to you.
 </p>
 <p>
-<a href="http://slack.layer5.io"><img alt="Layer5 Cloud Native Community" src=".github/assets/images/buttons/community.png" style="margin-right:10px;" width="125px" align="left" /></a>
+<a href="http://slack.layer5.io"><img alt="Layer5 Cloud Native Community" src=".github/assets/images/buttons/community.png" style="margin-right:10px;" width="130px" align="left" /></a>
 ✔️ <em><strong>Join</strong></em> any or all of the weekly meetings on the <a href="https://meet.layer5.io">community calendar</a>.<br />
 ✔️ <em><strong>Watch</strong></em> community <a href="http://youtube.com/Layer5io?sub_confirmation=1">meeting recordings</a>.<br />
 ✔️ <em>Fill-in</em> a <a href="https://layer5.io/newcomers">community member form</a> to gain access to community resources.
