@@ -58,7 +58,7 @@ const DockerExtensionMeshery = () => {
                 </i>
               </Col>
             </Row>
-            <Row className="extension-feature">
+            <Row className="extension-feature mobile-image-reverse">
               <Col lg={10}>
                 <div className="feature-title">Visual designer for cloud native applications and infrastructure</div> {" "}
                 <i>
@@ -95,7 +95,7 @@ const DockerExtensionMeshery = () => {
                 </i>
               </Col>
             </Row>
-            <Row className="extension-feature">
+            <Row className="extension-feature mobile-image-reverse">
               <Col lg={10}>
                 <div className="feature-title">Detection of Kubernetes environments</div> {" "}
                 <i>
