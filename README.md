@@ -98,8 +98,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
  <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg#gh-light-mode-only">
    <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-white.svg#gh-dark-mode-only"
- style="margin:10px;" width="125px"
- alt="Meshery operator dark mode" align="left" />
+ style="margin:10px;" width="100px" alt="Meshery operator dark mode" align="left" />
  </picture></a>
  <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> deploys and manages MeshSync.
  <br /><br /><br /><br />
