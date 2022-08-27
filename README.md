@@ -1,7 +1,6 @@
 <p style="text-align:center;" align="center">
  <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012170-638f0731-3a83-4795-a6de-71a3614d4c7d.svg#gh-dark-mode-only">
-  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg#gh-light-mode-only" width="45%" />
+  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg" width="45%" />
 </picture>
 </p>
 
@@ -28,8 +27,7 @@
 <h2><a href="https://layer5.io/meshery">Meshery</a></h2>
 <a href="https://meshery.io">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012415-ccdf486f-49a0-4021-8597-7b12c9d205e5.svg#gh-dark-mode-only">
-  <img src=".github/assets/images/meshery/meshery-logo.svg#gh-light-mode-only"
+  <img src=".github/assets/images/meshery/meshery-logo.svg"
 style="margin:10px;" width="125px"
 alt="Meshery - Cloud Native Management Plane" align="left" />
 </picture></a>
@@ -43,8 +41,7 @@ alt="Meshery - Cloud Native Management Plane" align="left" />
 <h2><a href="https://github.com/service-mesh-patterns">Service Mesh Pattern</a></h2>
 <a href="https://github.com/service-mesh-patterns">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012357-5e5e2380-0159-44ca-ac8e-f164c71e529b.svg#gh-dark-mode-only">
-  <img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png?raw=true#gh-light-mode-only"  
+  <img src="https://github.com/service-mesh-patterns/service-mesh-patterns/blob/master/.github/readme/images/service-mesh-pattern.png"  
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Pattern" align="left"/>
 </picture></a>
@@ -69,8 +66,7 @@ The <a href="https://layer5.io/landscape">Service Mesh Landscape</a> is a compre
 <h2><a href="https://layer5.io/projects/service-mesh-performance">Service Mesh Performance</a></h2>
 <a href="https://layer5.io/projects/service-mesh-performance">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012518-f8bba232-dc24-43e7-8eff-ea4cdbed6889.svg#gh-dark-mode-only">
-  <img src=".github/assets/images/smp-dark-text.svg#gh-light-mode-only"
+  <img src=".github/assets/images/smp-dark-text.svg"
 style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Performance Specification Index" align="left" />
 </picture></a>
@@ -96,9 +92,8 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
  <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator</a></h2>
  <a href="https://meshery.io">
  <picture>
-   <source media="(prefers-color-scheme: light)" srcset="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg#gh-light-mode-only">
-   <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-white.svg#gh-dark-mode-only"
- style="margin:10px;" width="100px" alt="Meshery operator dark mode" align="left" />
+   <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg"
+ style="float:left;margin:10px;" width="125px" alt="Meshery operator dark mode" align="left" />
  </picture></a>
  <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> deploys and manages MeshSync.
  <br /><br /><br /><br />
@@ -110,9 +105,8 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <h2><a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a></h2>
 <a href="https://github.com/layer5io/learn-layer5">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012730-19bf6776-4ebd-460f-b6bb-75105f2a10bc.svg#gh-dark-mode-only">
-  <img src=".github/assets/images/layer5/5-light-bg.png#gh-light-mode-only"
-style="margin:10px;" width="125px"
+  <img src=".github/assets/images/layer5/5-light-bg.png"
+style="float:left;margin:10px;" width="125px"
 alt="Layer5" align="left" />
 </picture></a>
 <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> is a sample application for learning how service meshes work which also provides <a href="https://layer5.io/smi">SMI Conformance testing</a>.
@@ -124,7 +118,7 @@ alt="Layer5" align="left" />
 <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Service Mesh Interface Conformance </a></h2>
 <a href="https://layer5.io/smi"><img src=".github/assets/images/smi-conformance/checklist.svg"
-style="margin:10px;" width="125px"
+style="float:left;margin:10px;" width="125px"
 alt="Service Mesh Interface Conformance" align="left" /></a>
 <a href="https://layer5.io/smi">SMI Conformance</a> includes all service mesh projects participating in the Service Mesh Interface specification. It is an easy-to-use, service mesh and SMI-specific tool to give service mesh projects and users a suite of repeatable conformance tests.
 <br /><br /><br />
@@ -136,9 +130,8 @@ alt="Service Mesh Interface Conformance" align="left" /></a>
 <h2><a href="https://layer5.io/smi">Nighthawk</a></h2>
 <a href="https://getnighthawk.dev/">
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182012911-94e2029a-d7fc-4198-a97d-2f1e85fcd7a7.svg#gh-dark-mode-only">
   <img src=".github/assets/images/getnighthawk/layer5-getnighthawk.png#gh-light-mode-only"
-style="margin:10px;" width="125px"
+style="float:left;margin:10px;" width="125px"
 alt="Nighthawk" align="left" />
 </picture></a>
 <a href="https://getnighthawk.dev/">Nighthawk</a> is a Layer 7 (HTTP/HTTPS/HTTP2) performance characterization tool. Nighthawk is Envoy’s load generator and is written in C++. Meshery integrates Nighthawk as one of (currently) three choices of load generator for characterizing and managing the performance of service meshes and their workloads.
