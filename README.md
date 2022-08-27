@@ -1,5 +1,5 @@
 <p style="text-align:center;" align="center">
-  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg" width="45%" />
+  <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg" alt="Layer5-logo" width="45%" />
 </p>
 
 <p align="center">
@@ -95,7 +95,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <a href="https://github.com/layer5io/learn-layer5">
   <img src=".github/assets/images/layer5/5-light-bg.png"
 style="float:left;margin:10px;" width="125px"
-alt="Layer5" align="left" />
+alt="Learn Layer5" align="left" />
 </a>
 <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> is a sample application for learning how service meshes work which also provides <a href="https://layer5.io/smi">SMI Conformance testing</a>.
 <br /><br /><br />
@@ -117,7 +117,7 @@ alt="Service Mesh Interface Conformance" align="left" /></a>
 <p style="clear:both;">
 <h2><a href="https://layer5.io/smi">Nighthawk</a></h2>
 <a href="https://getnighthawk.dev/">
-  <img src=".github/assets/images/getnighthawk/layer5-getnighthawk.png#gh-light-mode-only"
+  <img src=".github/assets/images/getnighthawk/layer5-getnighthawk.png"
 style="float:left;margin:10px;" width="125px"
 alt="Nighthawk" align="left" />
 </a>
