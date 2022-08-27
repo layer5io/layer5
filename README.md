@@ -1,5 +1,5 @@
 <p style="text-align:center;" align="center">
- <picture>
+ <picture loading="lazy">
   <img align="center" src="https://raw.githubusercontent.com/layer5io/layer5/master/.github/assets/images/layer5/layer5-no-trim.svg" width="45%" loading="lazy" />
 </picture>
 </p>
