@@ -97,7 +97,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 style="float:left;margin:10px;" width="100px"
 alt="Learn Layer5" align="left" />
 </a>
-<a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> is a sample application for learning how service meshes work which also provides <a href="https://layer5.io/smi">SMI Conformance testing</a>.
+<a href="https://github.com/layer5io/learn-layer5"> &nbsp; &nbsp; &nbsp; Learn Layer5</a> is a sample application for learning how service meshes work which also provides <a href="https://layer5.io/smi">SMI Conformance testing</a>.
 <br /><br /><br />
 </p>
 <br />
