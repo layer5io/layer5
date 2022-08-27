@@ -82,7 +82,7 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
  <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator</a></h2>
  <a href="https://meshery.io">
    <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg"
- style="float:left;margin:10px;" width="125px" alt="Meshery operator dark mode" align="left" />
+ style="float:left;margin:10px;" width="125px" alt="Meshery operator" align="left" />
 </a>
  <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> deploys and manages MeshSync.
  <br /><br /><br /><br />
@@ -93,8 +93,8 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 <p style="clear:both;">
 <h2><a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a></h2>
 <a href="https://github.com/layer5io/learn-layer5">
-  <img src=".github/assets/images/layer5/5-light-bg.png"
-style="float:left;margin:10px;" width="125px"
+  <img src=".github/assets/images/layer5/5-light-small.svg"
+style="float:left;margin:10px;" width="100px"
 alt="Learn Layer5" align="left" />
 </a>
 <a href="https://github.com/layer5io/learn-layer5">Learn Layer5</a> is a sample application for learning how service meshes work which also provides <a href="https://layer5.io/smi">SMI Conformance testing</a>.
