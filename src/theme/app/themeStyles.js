@@ -160,6 +160,9 @@ export const darktheme = {
   //selection color(used when text is selected)
   selectionColor: "#3c494f",
 
+  //Active color (when a button is active)
+  activeColor: "#3c494f",
+
   //DarkTheme
   DarkTheme: true,
 

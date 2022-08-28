@@ -15,14 +15,14 @@ const ButtonStyle = styled.button`
     -webkit-transition: 450ms all;
     transition: 450ms all;
     position: relative;
-    color: ${props => props.active ? props.theme.white : props.theme.headingColor};
-    background-color: ${props => props.active ? props.theme.primaryColor : props.theme.primaryLightColor};
+    color: ${props => props.theme.DarkTheme ? props.theme.white : props.theme.headingColor};
+    background-color: ${props => props.theme.DarkTheme ? props.theme.primaryColor : props.theme.primaryLightColor};
     z-index: 999;
     &:hover,
     &:focus {
-        outline: none;
-        background: ${props => props.theme.primaryColor};
-        color: ${props => props.theme.white};
+        color: white;
+        background: ${props => props.theme.activeColor}; 
+        box-shadow: 0 2px 10px ${props => props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
     }
     .icon-left{
         margin-right: 8px;
@@ -32,20 +32,15 @@ const ButtonStyle = styled.button`
     }
 
     ${props => props.primary && css`
-        color: ${props.active ? props.theme.headingColor : props.theme.black};
-        background: ${props.active ? props.theme.highlightColor : props.theme.highlightColor};
+        color: ${props.theme.DarkTheme ? props.theme.headingColor : props.theme.black};
+        background: ${props.theme.DarkTheme ? props.theme.highlightColor : props.theme.highlightColor};
 
         &:hover{
             color: ${props.theme.black};
             background: ${props.theme.highlightColor}; 
             box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
         }
-
-        &:focus{
-            color: ${props.theme.black};
-            background: ${props.theme.highlightColor}; 
-            box-shadow: 0 2px 10px ${props.theme.DarkTheme ? "rgb(255 255 255 / 40%)" : "rgb(0 0 0 / 40%)"};
-        }
+        
     `}
     ${props => props.secondary && css`
         color: white; 
