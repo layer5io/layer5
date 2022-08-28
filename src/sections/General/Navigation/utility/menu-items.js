@@ -50,7 +50,7 @@ const Data = {
         // },
         {
           name: "Meshery",
-          path: "/service-mesh-management/meshery",
+          path: "/cloud-native-management/meshery",
           sepLine: true
         },
         {

@@ -77,7 +77,7 @@ export const repo_data = [
         language: "Jekyll",
         maintainers_name: ["Aaditya Subedy"],
         link: ["https://layer5.io/community/members/aaditya-narayan-subedy"],
-        repository: "https://github.com/layer5io/nighthawk",
+        repository: "https://github.com/layer5io/getnighthawk",
       },
       {
         project: "MeshMap",
@@ -199,7 +199,7 @@ export const repo_data = [
         image: five,
         language: "Golang, Kuttl",
         description: "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
-        repository: "https://github.com/layer5io/smi-conformance",
+        repository: "https://github.com/layer5io/meshery-smi-conformance-action",
       },
       // {
       //   project: "MeshMonkey",

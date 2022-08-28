@@ -93,14 +93,16 @@ Image Hub supports Envoy-based data planes. It is compatible with and can be dep
 
 
 <p style="clear:both;">
-<h2><a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a></h2>
-<a href="https://meshery.io/community">
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/99991521/182032827-17634cfc-30cb-4797-924c-2eb5413b8023.svg#gh-dark-mode-only">
-  <img alt="Layer5 Service Mesh Community" src="https://raw.githubusercontent.com/layer5io/meshery-operator/master/img/readme/meshery-operator-dark.svg#gh-light-mode-only" style="margin:10px;" width="125px" align="left" />
-</picture></a>
-<a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> is the multi-service mesh operator and implementation of MeshSync.
-<br /><br /><br /><br />
+ <h2><a href="https://github.com/meshery/meshery-operator">Meshery Operator</a></h2>
+ <a href="https://meshery.io">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-dark.svg#gh-light-mode-only">
+   <img src="https://github.com/layer5io/layer5/blob/master/src/assets/images/meshery-operator/meshery-operator-white.svg#gh-dark-mode-only"
+ style="margin:10px;" width="125px"
+ alt="Meshery operator dark mode" align="left" />
+ </picture></a>
+ <a href="https://github.com/layer5io/meshery-operator">Meshery Operator</a> deploys and manages MeshSync.
+ <br /><br /><br /><br />
 </p>
 <br />
 

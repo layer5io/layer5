@@ -38,7 +38,7 @@ const ProjectPage = () => {
                 <h5>Landscape</h5>
               </div>
             </Link>
-            <Link to="/service-mesh-management/meshery" className="project__card two">
+            <Link to="/cloud-native-management/meshery" className="project__card two">
               <div className="project__card-container project__card-container_meshery">
                 <img src={meshery} alt="Meshery" />
                 <h5>Meshery</h5>
