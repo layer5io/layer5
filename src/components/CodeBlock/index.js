@@ -28,13 +28,15 @@ export const LineNo = styled.span`
 `;
 
 const CopyCode = styled.button`
-  position: absolute;
-  right: 0;
-  z-index: 1;
-  border: 0;
-  border-radius: 3px;
-  margin: 2em;
-  opacity: 0.5;
+    line-height: 12px;
+    width: 50px;
+    font-size: 10pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:absolute;
+    top:0;
+    right:0;
   &:hover {
     opacity: 1;
     cursor: pointer;
