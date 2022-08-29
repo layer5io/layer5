@@ -36,7 +36,7 @@ const ServiceMeshManagement = () => {
                 The <span>extensible</span> cloud native manager.
               </div>
               <div className="description">
-                <p>An extensible platform, Meshery comes packed with <Link to="service-mesh-management/meshery/integrations">integrations</Link> for Prometheus, Grafana, Jaeger, CloudEvents, and support for WebAssembly filters for Envoy.</p>
+                <p>An extensible platform, Meshery comes packed with <Link to="/cloud-native-management/meshery/integrations">integrations</Link> for Prometheus, Grafana, Jaeger, CloudEvents, and support for WebAssembly filters for Envoy.</p>
                 <p>
                   Meshery is your microservices manager. With extension points throughout, Meshery offers users and integrators the ability to extend and customize platform functionality.
                 </p>
