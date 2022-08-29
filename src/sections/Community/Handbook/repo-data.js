@@ -99,6 +99,15 @@ export const repo_data = [
         link: ["https://layer5.io/community/members/ekene-leonard-nwobodo"],
         repository: " https://discuss.layer5.io",
       },
+      {
+        project: "Service Mesh Pattern",
+        image: patterns,
+        site: "https://github.com/service-mesh-patterns/service-mesh-patterns",
+        language: "Gatsby",
+        maintainers_name: ["Debopriya Bhattacharjee", "Nikhil Ladha"],
+        link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/nikhil-ladha"],
+        repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
+      },
     ],
   },
 
