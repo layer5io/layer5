@@ -6,17 +6,17 @@ import Navigation from "../sections/General/Navigation";
 import Banner from "../sections/Home/Banner";
 // import Faq from "../sections/General/Faq";
 import Integrations from "../sections/Home/Projects-home";
-import Statement from "../sections/Home/Layer5-statement";
-import ProudMaintainers from "../sections/Home/Proud-maintainers";
+// import Statement from "../sections/Home/Layer5-statement";
+import CloudNativeManagement from "../sections/Home/CloudNativeManagement";
 /*import ContactCard from "../components/ContactCard";*/
 import Partners from "../sections/Home/Partners-home";
 import Footer from "../sections/General/Footer";
-import ServiceMeshManagement from "../sections/Home/service-mesh-management";
+// import ServiceMeshManagement from "../sections/Home/service-mesh-management";
 import { GlobalStyle } from "../sections/app.style";
 import SubscribeSection from "../sections/subscribe/subscribe";
 import ServiceMeshFocussed from "../sections/Home/Service-mesh-focussed";
 import CloudNativeLeaders from "../sections/Company/Cloud-Native";
-
+import MesheryIntegration from "..//sections/Meshery/Meshery-integrations";
 import SoSpecial from "../sections/Home/So-Special-Section";
 import { darktheme } from "../theme/app/themeStyles";
 import lighttheme from "../theme/app/themeStyles";
@@ -51,11 +51,10 @@ const IndexPage = () => {
         <Integrations />
         <Partners />
         {/* <Features /> */}
-        <ServiceMeshManagement />
-        <Statement />
-        <ProudMaintainers />
-
-
+        {/* <ServiceMeshManagement /> */}
+        <CloudNativeManagement />
+        <MesheryIntegration />
+        {/* <Statement /> */}
         {/* <AppScreens /> */}
         {/* <Pricing /> */}
         {/* <Testimonial /> */}
