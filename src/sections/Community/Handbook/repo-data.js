@@ -100,7 +100,7 @@ export const repo_data = [
         repository: " https://discuss.layer5.io",
       },
       {
-        project: "Service Mesh Pattern",
+        project: "Service Mesh Patterns",
         image: patterns,
         site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
         language: "Gatsby",
