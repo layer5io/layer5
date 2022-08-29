@@ -77,7 +77,7 @@ export const repo_data = [
         language: "Jekyll",
         maintainers_name: ["Aaditya Subedy"],
         link: ["https://layer5.io/community/members/aaditya-narayan-subedy"],
-        repository: "https://github.com/layer5io/nighthawk",
+        repository: "https://github.com/layer5io/getnighthawk",
       },
       {
         project: "MeshMap",
@@ -98,6 +98,15 @@ export const repo_data = [
         maintainers_name: ["Leonard Nwobodo"],
         link: ["https://layer5.io/community/members/ekene-leonard-nwobodo"],
         repository: " https://discuss.layer5.io",
+      },
+      {
+        project: "Service Mesh Patterns",
+        image: patterns,
+        site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
+        language: "Gatsby",
+        maintainers_name: ["Debopriya Bhattacharjee", "Nikhil Ladha"],
+        link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/nikhil-ladha"],
+        repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
     ],
   },
@@ -199,7 +208,7 @@ export const repo_data = [
         image: five,
         language: "Golang, Kuttl",
         description: "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
-        repository: "https://github.com/layer5io/smi-conformance",
+        repository: "https://github.com/layer5io/meshery-smi-conformance-action",
       },
       // {
       //   project: "MeshMonkey",

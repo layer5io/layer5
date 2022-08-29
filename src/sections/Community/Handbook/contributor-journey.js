@@ -34,7 +34,7 @@ const Intro = () => {
             <p>
               Layer5 is an open source-first company and community of cloud native engineers. We are the creator and
               maintainer of
-              <Link to="../blog/announcements/a-standard-interface-for-service-meshes">
+              <Link to="/blog/announcements/a-standard-interface-for-service-meshes">
                 {" "}
                 service mesh standards{" "}
               </Link>

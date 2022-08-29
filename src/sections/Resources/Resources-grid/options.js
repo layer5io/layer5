@@ -10,7 +10,7 @@ export const options =  [
       { id: 5, value: "Event", label: "Event" },
       { id: 6, value: "Tutorial", label: "Tutorial" },
       { id: 7, value: "Case Study", label: "Case Study" },
-      { id: 8, value: "Demo", label: "Demo" },
+      { id: 8, value: "Infographic", label: "Infographic" },
       { id: 9, value: "Guide", label: "Guide" },
       { id: 10, value: "FAQ", label: "FAQ" },
       { id: 11, value: "Interview", label: "Interview" }]
