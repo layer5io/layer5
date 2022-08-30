@@ -29,16 +29,16 @@ const MeshFocusWrapper = styled.div`
         margin: auto;
         padding: 0rem;
         height: 100%;
-        border-radius: 5px;
-
+        border-radius: .25vw;
         /* Shadow */
         background: #F8F8F8; 
         border: solid #BDBDBD 0; 
-        box-shadow: -3px 3px 20px rgba(0, 0, 0, 0.5)  ; 
-        -webkit-box-shadow: -3px 3px 20px rgba(0, 0, 0, 0.5)  ; 
-        -moz-box-shadow: -3px 3px 20px rgba(0, 0, 0, 0.5)  ; 
-        transform: scale(1,1) rotate(4deg)skew(0,-2deg) translate(0,0); 
-        
+        /* box-shadow: 0px 1.2vw 4vw -1vw rgba(0, 0, 0, 0.6); */
+        box-shadow: -20px 3px 20px rgba(0, 0, 0, 0.5)  ; 
+        -webkit-box-shadow: -20px 3px 20px rgba(0, 0, 0, 0.5)  ; 
+        -moz-box-shadow: -20px 3px 20px rgba(0, 0, 0, 0.5)  ; 
+        transform: scale(1,1) perspective(125vw) rotateX(-10deg) rotateY(20deg); 
+
         /* Skew */
         -webkit-transform: scale(1,1) rotate(0)skew(2,-2deg) translate(0,0); 
         -moz-transform: scale(1,1) rotate(0)skew(2,-2deg) translate(0,0); 
