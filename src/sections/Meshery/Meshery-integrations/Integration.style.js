@@ -10,8 +10,7 @@ export const HoneycombGrid = styled.div`
     align-items: center;
 
     :hover {
-      transition: all 0.25s ease-in;
-      transform: scale(1.03);    
+      transition: all 0.25s ease-in;  
       background: #00d3a9;
         ::after{
           content: "";
