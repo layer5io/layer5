@@ -15,8 +15,8 @@ const ButtonStyle = styled.button`
     -webkit-transition: 450ms all;
     transition: 450ms all;
     position: relative;
-    color: ${props => props.theme.DarkTheme ? props.theme.white : props.theme.headingColor};
-    background-color: ${props => props.theme.DarkTheme ? props.theme.primaryColor : props.theme.primaryLightColor};
+    color: ${props => props.theme.white };
+    background-color: "#00B39F";
     z-index: 999;
     &:hover,
     &:focus {
@@ -32,8 +32,8 @@ const ButtonStyle = styled.button`
     }
 
     ${props => props.primary && css`
-        color: ${props.theme.DarkTheme ? props.theme.headingColor : props.theme.black};
-        background: ${props.theme.DarkTheme ? props.theme.highlightColor : props.theme.highlightColor};
+        color: ${props => props.theme.black};
+        background: ${props => props.theme.highlightColor};
 
         &:hover{
             color: ${props.theme.black};
