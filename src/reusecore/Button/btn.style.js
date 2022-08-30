@@ -16,7 +16,7 @@ const ButtonStyle = styled.button`
     transition: 450ms all;
     position: relative;
     color: ${props => props.theme.white };
-    background-color: "#00B39F";
+    background-color: #00B39F;
     z-index: 999;
     &:hover,
     &:focus {
