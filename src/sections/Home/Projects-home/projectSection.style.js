@@ -131,21 +131,27 @@ const ProjectItemWrapper = styled.section`
             height: 200px;
             margin: 20px;
             padding: 8%;
-            img{
-                height: 45px;
-            }
+
             h5{
                 margin-bottom: 0px;
             }
         }
         .description {
             padding: 1rem 0.5rem;
+            text-align: center;
+            display: flex;
             p {
-                padding: 0 2rem;
+                padding: 2rem;
             }
-        }
-        .button{
-            margin-top: 0px;
+            .button{
+                margin: auto;
+            }
+            @media screen and (max-width:767px) {
+                display: block;
+                .button{
+                    margin: 1rem auto;
+                }
+              }
         }
         .project-text{
             margin-bottom: 40px;
@@ -154,12 +160,6 @@ const ProjectItemWrapper = styled.section`
      @media only screen and (max-width: 760px) {
         .project__block__wrap{
             margin-bottom: 60px;
-        }
-        .description {
-            padding: 1rem 0.5rem;
-            p {
-                padding: 0 1rem;
-            }
         }
      }
      @media only screen and (max-width: 568px) {
@@ -181,12 +181,6 @@ const ProjectItemWrapper = styled.section`
      @media only screen and (max-width: 480px) {
         .project__block__inner{
             padding: 30px;
-        }
-        .description {
-            padding: 1rem 0.5rem;
-            p {
-                padding: 0rem;
-            }
         }
      }
    

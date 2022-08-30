@@ -14,7 +14,7 @@ const SetupPreReq = () => (
       <p>In this learning path, we will be using Meshery as the management plane to manage the service meshes. Meshery is the cloud native management plane which offers lifecycle, configuration, and performance management of service meshes and their workloads.</p>
     </div>
     <div className="container-card" id="Set up">
-      <a href="/service-mesh-management/meshery"
+      <a href="/cloud-native-management/meshery"
         target="_blank"
       >
         <div className="card">
@@ -25,7 +25,7 @@ const SetupPreReq = () => (
           <p>Meshery provides you with a clean, robust, streamlined command-line interface to manage your service meshes: 'mesheryctl'.</p>
         </div>
       </a>
-      <a href="/service-mesh-management/meshery/getting-started" id="Run Meshery"
+      <a href="/cloud-native-management/meshery/getting-started" id="Run Meshery"
         target="_blank"
       >
         <div className="card">
@@ -33,10 +33,10 @@ const SetupPreReq = () => (
             <h2>Run Meshery</h2>
             <StaticImage src={meshery} alt="Meshery" className="setup-imgs" />
           </div>
-          <p>With 'mesheryctl', not only you can manage your service meshes, but also manage their workloads, mesure their performance, verify conformance to service mesh standards.</p>
+          <p>With 'mesheryctl', not only you can manage your service meshes, but also manage their workloads, measure their performance, verify conformance to service mesh standards.</p>
         </div>
       </a>
-      <a href="/service-mesh-management/meshery/operating-service-meshes" id="Manage Meshery"
+      <a href="/cloud-native-management/meshery/operating-service-meshes" id="Manage Meshery"
         target="_blank"
       >
         <div className="card">

@@ -40,6 +40,11 @@ const MeshmapWrapper = styled.div`
     margin: 0 0 2rem;
   }
 
+  .designer-img {
+    box-shadow: 0px 0.25rem 0.5rem 0rem rgb(0, 0, 0, 0.75);
+    border-radius: 0.35rem;
+  }
+
   p.caption {
     display: relative;
     margin-top: -3rem;

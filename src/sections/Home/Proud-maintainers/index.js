@@ -16,7 +16,7 @@ import ProjectItemWrapper from "./proudMaintainers.style";
 const ProudMaintainers = () => {
   return (
     <ProjectItemWrapper>
-      <Container className="left-col">
+      <Container >
         <Row className="project-title">
 
           <SectionTitle UniWidth="100%">

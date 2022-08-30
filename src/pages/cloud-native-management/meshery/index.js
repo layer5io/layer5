@@ -25,9 +25,7 @@ const Meshery = () => {
       <Layout>
         <GlobalStyle />
         <SEO title="Meshery"
-          description="Lifecycle, performance, and configuration management for Istio, Linkerd, Envoy, App Mesh, Consul Connect, Network Service Mesh, Citrix CPX, VMware Tanzu Service Mesh,
-                 Traefik Mesh, Cilium Service Mesh, Open Service Mesh, and Kuma.
-                Service mesh comparison. Service mesh patterns and best practices."
+          description="Lifecycle, performance, and configuration management for cloud native infrastructure as code. Manage your Kubernetes clusters visually. Use the catalog of patterns and best practices."
           image="/images/meshery-logo-dark-text.png" />
         <Navigation theme={theme} themeSetter={themeSetter} />
         <MesheryPage />

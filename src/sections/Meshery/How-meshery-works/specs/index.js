@@ -53,7 +53,7 @@ const HowMesheryWorksSpecs = () => {
               you’ll find a service mesh.</h3>
             <p>Service meshes are the third major step in enterprises cloud native journeys.</p>
             <VintageBox left={true} vintageTwo={true} >
-              <Button primary url="/service-mesh-management/meshery/getting-started" title="Install Meshery" />
+              <Button primary url="/cloud-native-management/meshery/getting-started" title="Install Meshery" />
             </VintageBox>
           </div>
         </div>

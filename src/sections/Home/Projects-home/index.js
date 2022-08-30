@@ -53,7 +53,7 @@ const Projects = () => {
               </Link>
             </Col>
             <Col sm={12} md={6} lg={3}>
-              <Link className="project-card" to="/service-mesh-management/meshery">
+              <Link className="project-card" to="/cloud-native-management/meshery">
                 <div className="project__block__inner">
                   <StaticImage src={projectImage3} alt="Meshery Logo" height={40} />
                   <h5>Meshery</h5>

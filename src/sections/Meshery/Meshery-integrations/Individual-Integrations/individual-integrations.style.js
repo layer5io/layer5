@@ -83,10 +83,10 @@ export const IntegrationPageWrapper = styled.section`
 				gap: 0.5rem;
 				align-items: center;
 				a {
-					color: black;
-					transition: all 0.5s ease;
-				}
-				a:hover {
+					color: ${props => props.theme.text};
+					transition: padding 0.5s ease;	
+                                }
+				a:hover{
 					padding-right: 5px;
 				}
 				svg {
@@ -99,5 +99,14 @@ export const IntegrationPageWrapper = styled.section`
 		@media (min-width: 700px) {
 			width: 35rem;
 		};
+	}
+
+	.integration-collection{
+		margin: 2rem auto;
+		max-width: 1200px;
+		
+		h2{
+			text-align: center;
+		}
 	}
 `;
