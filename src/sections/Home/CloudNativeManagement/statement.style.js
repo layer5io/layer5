@@ -26,7 +26,7 @@ const BannerSectionWrapper = styled.section`
         max-width: 49%;
     }
     h2.statement {
-        color: ${(props) => props.theme.white};
+        color: ${(props) => props.theme.secondaryLightColor};
         margin-bottom: 1rem;
         font-size: clamp(12px, 20px + .8vw, 50px);
         line-height: clamp(14px, 22px + .8vw, 50px);
@@ -51,12 +51,13 @@ const BannerSectionWrapper = styled.section`
     h4.statement {
         font-weight: bold;
         display: flex; 
-        color: rgba(255, 255, 255, 0.7);
+        color: ${props => props.theme.DarkTheme ? "rgba(0, 0, 0, 0.5)" : "rgba(255, 255, 255, 0.7)"};
     }
     .description a {
-        color: white;
+        color: ${props => props.theme.DarkTheme ? props.theme.white : "#3C494F"};
         :hover {
             cursor: hand;
+            color: #111111;
         }
     }
     .hero {
