@@ -8,6 +8,7 @@ import slide1 from "../images/service mesh performance example.gif";
 import slide2 from "../images/meshery_benchmark_screen.png";
 import slide3 from "../images/meshery-configuration-management.png";
 import FeaturesSectionWrapper from "./features-section.style";
+import { StaticImage } from "gatsby-plugin-image";
 
 const slides_list = [slide1, slide2, slide3];
 
@@ -62,15 +63,15 @@ const FeaturesSection = () => {
               </p>
             </Col>
             <Col xs={12} xl={8} className="smp-section-caraousel">
-              <Slider {...settings}>
+              <Slider {...settings} height={600}>
                 <div>
                   <img src={slide1} alt="Slide 1" />
                 </div>
                 <div>
-                  <img src={slide2} alt="Slide 2" />
+                  <StaticImage src="../images/meshery_benchmark_screen.png" alt="Slide 2" />
                 </div>
-                <div>
-                  <img src={slide3} alt="Slide 3" />
+                <div >
+                  <StaticImage src="../images/meshery-configuration-management.png" alt="Slide 3" />
                 </div>
               </Slider>
             </Col>
