@@ -124,13 +124,10 @@ const IntegrationsGrid = ({ category }) => {
           const status = item.frontmatter.status === "InProgress" ? true : false;
           if (status) {
             return (
-              <Hexagon className="container-inactive" style={{ background: "#A0AAAA" }}>
+              <Hexagon className="container-inactive" style={{ background: "#fff" }}>
                 <img
                   src={item.frontmatter.integrationIcon.publicURL}
                   alt={item.frontmatter.title}
-                  style={{
-                    filter: "brightness(0) invert(1)",
-                  }}
                   height={60}
                 />
               </Hexagon>
