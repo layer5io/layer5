@@ -1,11 +1,13 @@
 import React from "react";
-import {Link, graphql, useStaticQuery} from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import slugify from "../../../utils/slugify";
 import { Container } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import EventPageWrapper from "./EventSingle.style";
 import Button from "../../../reusecore/Button";
+import { CTA_Bottom } from "../../../components/Call-To-Actions/CTA_Bottom";
+import CommonForm from "../../../components/CommonForm";
 
 const checkSpeaker = (speaker) => {
 
@@ -32,7 +34,7 @@ const checkSpeaker = (speaker) => {
   isSlugAvailable = validMembers.allMdx.nodes.some(matter => matter.frontmatter.name == speaker);
 
 
-  return(
+  return (
     <>
       {
         isSlugAvailable ?
@@ -45,21 +47,34 @@ const checkSpeaker = (speaker) => {
   );
 };
 
+
 const EventSingle = ({ data }) => {
 
   //const frontmatter = ({speakers = []});
   const { frontmatter, body } = data.mdx;
-  
+
+
   return (
     <EventPageWrapper>
       <PageHeader
-        title={frontmatter.title}
-        thumbnail={frontmatter.thumbnail}
+        title={ frontmatter.title }
+        thumbnail={ frontmatter.thumbnail }
       />
       <div className="single-event-wrapper">
         <Container>
           <div className="event-info-block">
             <div className="tags">
+
+              { frontmatter.register &&
+                  <CommonForm
+                    title="Register Today!"
+                    form="event"
+                    account_desc="Please provide at least one account."
+                    submit_title = {`Thank you for registering to ${frontmatter.title}!`}
+                    submit_body = {`You are now signed up for the ${frontmatter.title} workshop by Layer5. Please patiently await your acceptance. We'll send out additional information about the event soon.`}
+                  />
+              }
+
               <MDXRenderer>{body}</MDXRenderer>
               <ul className="speakers">
                 {
@@ -67,7 +82,7 @@ const EventSingle = ({ data }) => {
                 }
                 {frontmatter.speakers && frontmatter.speakers.map((speaker, id) => (
                   <li key={{ id }} className="speakers">
-                    {checkSpeaker(speaker)}              
+                    {checkSpeaker(speaker)}
                   </li>
                 ))}
               </ul>
@@ -79,6 +94,9 @@ const EventSingle = ({ data }) => {
                 </Button>
               </div>
             </div>
+            <CTA_Bottom
+              category={"MeshMap"}
+            />
             {/* <RelatedPosts
             category={frontmatter.category}
             tags={frontmatter.tags}

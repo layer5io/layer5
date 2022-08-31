@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Layout from "../components/layout";
@@ -8,7 +8,8 @@ import Navigation from "../sections/General/Navigation";
 import Footer from "../sections/General/Footer";
 
 import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
+import { darktheme } from "../theme/app/themeStyles";
+import lighttheme from "../theme/app/themeStyles";
 
 import { graphql } from "gatsby";
 import Meetups from "../sections/Events/index";
@@ -42,12 +43,20 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
             gatsbyImageData(layout: FULL_WIDTH)
           }
         }
+        darkthumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
       }
     }
   }
   allMeetups: allMdx(
     sort: {fields: frontmatter___date, order: DESC}
-    filter: {frontmatter: {type: {eq: "Meetups"}}}
+    filter: {frontmatter: {type: {eq: "Meetups"}, published: {eq: true}}}
   ) {
     totalCount
     nodes {
@@ -65,6 +74,17 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
         type
         date(formatString: "MMM Do, YYYY")
         thumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+        darkthumbnail {
+          publicURL
+          relativePath
+          extension
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
@@ -93,10 +113,18 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
             gatsbyImageData(layout: FULL_WIDTH)
           }
         }
+        darkthumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
       }
     }
   }
-  allEvents: allMdx(filter: {frontmatter: {type: {eq: "Event"}}}) {
+  allEvents: allMdx(filter: {frontmatter: {type: {eq: "Event"}, published: {eq: true}}}) {
     nodes {
       id
       fields {
@@ -108,6 +136,14 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
         title
         date(formatString: "MMM Do, YYYY")
         thumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+        darkthumbnail {
           publicURL
           relativePath
           extension
@@ -139,20 +175,34 @@ export const query = graphql`query allCategories($skip: Int!, $limit: Int!) {
             gatsbyImageData(layout: FULL_WIDTH)
           }
         }
+        darkthumbnail {
+          publicURL
+          relativePath
+          extension
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
       }
     }
   }
 }
 `;
 
-const Events = ({data, pageContext}) => {
+const Events = ({ data, pageContext }) => {
+  const [theme, setTheme] = useState();
+
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO title="Events" description="Join Layer5 at upcoming events." />
-        <Navigation />
-        <Meetups data={data} pageContext={pageContext} />
+        <Navigation theme={theme} themeSetter={themeSetter} />
+        <Meetups theme={theme} data={data} pageContext={pageContext} />
         <Footer />
       </Layout>
     </ThemeProvider>

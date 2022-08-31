@@ -10,16 +10,16 @@ import { useEffect } from "react";
 import useDataList from "../../../utils/usedataList";
 import Press from "./press";
 
-let coverageFiltered= false;
-let pressReleaseFiltered=false;
+let coverageFiltered = false;
+let pressReleaseFiltered = false;
 
 function colorchange(id) {
   let element = document.getElementById(id);
   element.classList.toggle("mystyle");
 }
-const NewsGrid = ({data}) => {
+const NewsGrid = ({ data, theme }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const {queryResults, searchData} = useDataList(
+  const { queryResults, searchData } = useDataList(
     data.allMdx.nodes,
     setSearchQuery,
     searchQuery,
@@ -29,10 +29,10 @@ const NewsGrid = ({data}) => {
   const [news, setNews] = useState(queryResults);
   useEffect( () => {
     setNews(queryResults);
-    if(coverageFiltered==true) {
+    if (coverageFiltered == true) {
       setNews(filteredCoverage);
     }
-    if(pressReleaseFiltered==true) {
+    if (pressReleaseFiltered == true) {
       setNews(filteredPressRelease);
     }
   }, [queryResults]
@@ -47,38 +47,38 @@ const NewsGrid = ({data}) => {
 
   const filterCoverage = () => {
     colorchange("coverage");
-    if(coverageFiltered==false&&pressReleaseFiltered==false){
+    if (coverageFiltered == false && pressReleaseFiltered == false){
       setNews(filteredCoverage);
-      coverageFiltered=true;
-    } else if(coverageFiltered==false&&pressReleaseFiltered==true) {
+      coverageFiltered = true;
+    } else if (coverageFiltered == false && pressReleaseFiltered == true) {
       colorchange("press-release");
       setNews(filteredCoverage);
-      coverageFiltered=true;
-      pressReleaseFiltered=false;
-    } else if(coverageFiltered==true && pressReleaseFiltered==false){
+      coverageFiltered = true;
+      pressReleaseFiltered = false;
+    } else if (coverageFiltered == true && pressReleaseFiltered == false){
       setNews(queryResults);
-      coverageFiltered=false;
+      coverageFiltered = false;
     }
-  }; 
+  };
   const filterPressRelease = () => {
     colorchange("press-release");
-    if(pressReleaseFiltered==false&&coverageFiltered==false){
+    if (pressReleaseFiltered == false && coverageFiltered == false){
       setNews(filteredPressRelease);
-      pressReleaseFiltered=true;
-    }else if(pressReleaseFiltered==false&&coverageFiltered==true) {
+      pressReleaseFiltered = true;
+    } else if (pressReleaseFiltered == false && coverageFiltered == true) {
       colorchange("coverage");
       setNews(filteredPressRelease);
-      pressReleaseFiltered=true;
-      coverageFiltered=false;
-    } else if(pressReleaseFiltered==true&&coverageFiltered==false){
+      pressReleaseFiltered = true;
+      coverageFiltered = false;
+    } else if (pressReleaseFiltered == true && coverageFiltered == false){
       setNews(queryResults);
-      pressReleaseFiltered=false;
+      pressReleaseFiltered = false;
     }
-  }; 
+  };
   return (
     <NewsPageWrapper>
       <PageHeader title="Layer5 in the News" path="News" img={rss_feed_icon}  feedlink="/news/feed.xml" />
-    
+
       <div>
         <Container>
           <div className="news-grid-wrapper">
@@ -93,16 +93,16 @@ const NewsGrid = ({data}) => {
                 </div>
               </div>
             </div>
-          
+
             <Row>
               {news.length < 1 && (
                 <Col xs={12} sm={6}>
                       No News post that matches the title "{searchQuery}" found.
                 </Col>
               )}
-              {news.map(({id, frontmatter, fields }) => (
+              {news.map(({ id, frontmatter, fields }) => (
                 <Col xs={12} sm={6} lg={4} key={id}>
-                  <Card frontmatter={frontmatter} fields={fields}/>
+                  <Card theme={theme} frontmatter={frontmatter} fields={fields}/>
                 </Col>
               ))}
             </Row>

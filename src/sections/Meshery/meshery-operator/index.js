@@ -5,11 +5,12 @@ import Layout from "../../../components/layout";
 import MesheryOperatorWrapper from "./mesheryoperator.style";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import SubscribeSection from "../../../sections/subscribe/subscribe";
 import Deployment from "./deployment.svg";
 import Initialization from "./initialization.svg";
-import icon from "./icon.svg";
 
 const OperatorLogo = "../../../assets/images/meshery-operator/meshery-operator.png";
 
@@ -99,7 +100,7 @@ const MesheryOperatorPage = () => {
                   <div className="listed">
                     <table className="table">
                       <tr>
-                        <td className="icon"><img src={icon} alt="icon" /></td>
+                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
                         <td className="service">
                           <h4>
                             Meshery CLI
@@ -108,7 +109,7 @@ const MesheryOperatorPage = () => {
                         </td>
                       </tr>
                       <tr>
-                        <td className="icon"><img src={icon} alt="icon" /></td>
+                        <td className="icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5"/><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20"/></svg></td>
                         <td className="service">
                           <h4>
                             Meshery UI

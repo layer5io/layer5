@@ -7,12 +7,12 @@ module.exports = {
     author: "Layer5 Authors",
     permalink: "https://layer5.io",
     siteUrl: "https://layer5.io",
-    image: "/images/layer5.png",
+    image: "/images/layer5-gradient.png",
     twitterUsername: "@layer5",
   },
   flags: {
     FAST_DEV: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PARALLEL_SOURCING: true
   },
   plugins: [
     {
@@ -43,7 +43,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-feed-mdx",
+      resolve: "gatsby-plugin-feed",
       options: {
         query: `
           {
@@ -81,7 +81,7 @@ module.exports = {
               {
                 allPosts: allMdx(
                   sort: { fields: [frontmatter___date], order: DESC }
-                  filter: { fields: { collection: { in: ["blog", "news"] } }, frontmatter: { published: { eq: true }, featured: { eq: true }, category: { eq: "Announcements" } } }
+                  filter: { fields: { collection: { in: ["blog", "resources", "news"] } }, frontmatter: { published: { eq: true }, category: { nin: ["Programs", "Community", "Events", "FAQ"] } } }
                   limit: 20
                 ) {
                   nodes {
@@ -105,7 +105,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Layer5 Announcements",
+            title: "Layer5 Technical Posts",
           },
           {
             serialize: ({ query: { site, allPosts } }) => {
@@ -189,6 +189,9 @@ module.exports = {
                       author
                       date(formatString: "MMM DD YYYY")
                       thumbnail {
+                        publicURL
+                      }
+                      darkthumbnail {
                         publicURL
                       }
                     }
@@ -377,14 +380,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "communityImageSlider",
-        path: `${__dirname}/src/assets/images/Community-pictures`,
-      },
-    },
-
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         path: `${__dirname}/src/collections/blog`,
         name: "blog",
       },
@@ -466,6 +461,20 @@ module.exports = {
         name: "content-learn",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/collections/integrations`,
+        name: "integrations",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "integration-images",
+        path: `${__dirname}/src/sections/Meshery/Meshery-platforms/supported-icons`,
+      },
+    },
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-sharp",
@@ -503,7 +512,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://layer5.io",
-        sitemap: "https://layer5.io/sitemap.xml",
+        sitemap: "https://layer5.io/sitemap/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       }
     },

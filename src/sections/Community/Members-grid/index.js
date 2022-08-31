@@ -18,9 +18,9 @@ import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
 const MembersGrid = (props) => {
   return (
     <MembersGridWrapper>
-      <div className='members-page-wrapper'>
+      <div className="members-page-wrapper">
         <Container>
-          <div className='members-profile-cards'>
+          <div className="members-profile-cards">
             <Row>
               {props?.data?.map(({ id, frontmatter, fields }) => (
                 <Col xs={12} sm={6} md={6} lg={4} xl={3} key={id}>
@@ -32,17 +32,17 @@ const MembersGrid = (props) => {
               ))}
             </Row>
           </div>
-          <div className='AboutCommunity'>
+          <div className="AboutCommunity">
             <div>
-              <h3 className='sectionTitle'>Community Membership</h3>
-              <img src={communityImg} alt='Layer5 Service Mesh Community' />
+              <h3 className="sectionTitle">Community Membership</h3>
+              <img src={communityImg} alt="Layer5 Service Mesh Community" />
             </div>
-            <div className='detailsCommunity'>
+            <div className="detailsCommunity">
               <p>
                 The open source community at Layer5 goes out of its way to
                 welcome and encourage new contributors. We often assign
                 newcomers an onboarding buddy, a{" "}
-                <Link to='/community/meshmates' className='meshmate-link'>
+                <Link to="/community/meshmates" className="meshmate-link">
                   MeshMate
                 </Link>
                 , to ensure that newcomers get both introduced to the projects
@@ -57,22 +57,22 @@ const MembersGrid = (props) => {
                 whether "contribution" means code or any of the other various
                 forms of being involved int the projects and community.
                 Likewise, we try to lift up contributors' works on the{" "}
-                <Link to='https://www.linkedin.com/company/layer5'>Layer5</Link>
+                <Link to="https://www.linkedin.com/company/layer5">Layer5</Link>
                 ,{" "}
-                <Link to='https://www.linkedin.com/showcase/meshery'>
+                <Link to="https://www.linkedin.com/showcase/meshery">
                   Meshery
                 </Link>
                 ,{" "}
-                <Link to='https://getnighthawk.dev/'>
+                <Link to="https://getnighthawk.dev/">
                 Nighthawk
                 </Link>
                 , and{" "}
-                <Link to='https://www.linkedin.com/showcase/service-mesh-performance'>
+                <Link to="https://www.linkedin.com/showcase/service-mesh-performance">
                   Service Mesh Performance
                 </Link>{" "}
                 LinkedIn pages, too. We openly and publicly share our community
                 meetings on{" "}
-                <Link to='https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1'>
+                <Link to="https://www.youtube.com/channel/UCFL1af7_wdnhHXL1InzaMvA?sub_confirmation=1">
                   YouTube
                 </Link>
                 .
@@ -83,26 +83,26 @@ const MembersGrid = (props) => {
                 so on. All are welcome in the Layer5 projects and community!!
               </p>
 
-              <p className='text-gray'>Would you like to participate?</p>
-              <div className=''>
+              <p className="text-gray">Would you like to participate?</p>
+              <div className="">
                 <VintageBox right={true} vintageOne={true}>
                   <Button
                     primary
-                    className='banner-btn memberProfileBtn'
-                    title='Read the Community Handbook'
-                    url='/community/handbook'
+                    className="banner-btn memberProfileBtn"
+                    title="Read the Community Handbook"
+                    url="/community/handbook"
                     external={true}
                   >
-                    <FaBook size={21} className='icon-left' />
+                    <FaBook size={21} className="icon-left" />
                   </Button>
 
                   <Button
                     secondary
-                    className='banner-btn two memberProfileBtn'
-                    title='Join the Community'
-                    url='http://slack.layer5.io'
+                    className="banner-btn two memberProfileBtn"
+                    title="Join the Community"
+                    url="http://slack.layer5.io"
                   >
-                    <FaUsers size={21} className='icon-left' />
+                    <FaUsers size={21} className="icon-left" />
                   </Button>
                 </VintageBox>
               </div>

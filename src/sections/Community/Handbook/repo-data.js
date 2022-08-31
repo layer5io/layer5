@@ -15,7 +15,6 @@ import nsmLogo from "../../../assets/images/service-mesh-icons/nsm.svg";
 import nginxLogo from "../../../assets/images/service-mesh-icons/nginx-service-mesh.svg";
 import traefikLogo from "../../../assets/images/service-mesh-icons/traefik.svg";
 import smiLogo from "../../../assets/images/service-mesh-icons/service-mesh-interface/icon/color/servicemeshinterface-icon-color.svg";
-import osmLogo from "../../../assets/images/service-mesh-icons/open-service-mesh/icon/color/openservicemesh-icon-color.svg";
 import appmeshLogo from "../../../assets/images/service-mesh-icons/aws-app-mesh.svg";
 import ciliumLogo from "../../../assets/images/service-mesh-icons/cilium.svg";
 import wasm from "../../../assets/images/webassembly/webssembly_icon.svg";
@@ -26,10 +25,12 @@ export const repo_data = [
     category: "Frontend",
     subdata: [
       {
-        project: "Layer5",
+        project: "Layer5.io",
         image: five,
         site: "https://layer5.io/",
         language: "Gatsby",
+        maintainers_name: ["Debopriya Bhattacharjee","Gaurav Chadha", "Nikhil Ladha", "Aditya Chatterjee"],
+        link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nikhil-ladha","https://layer5.io/community/members/aditya-chatterjee"],
         repository: "https://github.com/layer5io/layer5",
       },
       {
@@ -37,6 +38,8 @@ export const repo_data = [
         image: meshery,
         site: "https://meshery.io",
         language: "Jekyll",
+        maintainers_name: ["Aditya Chatterjee"],
+        link: ["https://layer5.io/community/members/aditya-chatterjee"],
         repository: "https://github.com/meshery/meshery",
       },
       {
@@ -44,6 +47,8 @@ export const repo_data = [
         image: meshery,
         site: "http://docs.meshery.io",
         language: "Jekyll",
+        maintainers_name: ["Adithya Krishna"],
+        link: ["https://layer5.io/community/members/adithya-krishna"],
         repository: "https://github.com/meshery/meshery/tree/master/docs",
       },
       {
@@ -51,6 +56,8 @@ export const repo_data = [
         image: meshery,
         site: "https://github.com/meshery/meshery/tree/master/ui",
         language: "NextJS, React.js, MaterialUI and Billboard.js",
+        maintainers_name: ["Gaurav Chadha","Nithish Karthik"],
+        link: ["https://layer5.io/community/members/gaurav-chadha","https://layer5.io/community/members/nithish-karthik"],
         repository: "https://github.com/meshery/meshery/tree/master/ui",
       },
       {
@@ -58,6 +65,8 @@ export const repo_data = [
         image: smp,
         site: "https://smp-spec.io",
         language: "Jekyll",
+        maintainers_name: ["Aaditya Subedy"],
+        link: ["https://layer5.io/community/members/aaditya-narayan-subedy"],
         repository:
           "https://github.com/service-mesh-performance/service-mesh-performance",
       },
@@ -66,7 +75,9 @@ export const repo_data = [
         image: gnh,
         site: "https://getnighthawk.dev",
         language: "Jekyll",
-        repository: "https://github.com/layer5io/nighthawk",
+        maintainers_name: ["Aaditya Subedy"],
+        link: ["https://layer5.io/community/members/aaditya-narayan-subedy"],
+        repository: "https://github.com/layer5io/getnighthawk",
       },
       {
         project: "MeshMap",
@@ -74,15 +85,28 @@ export const repo_data = [
         site:
           "/cloud-native-management/meshmap",
         language: "React.js, Cytoscape.js",
+        maintainers_name: ["Nithish-Karthik"],
+        link: ["https://layer5.io/community/members/nithish-karthik"],
         description: "A visual topology to display service mesh configuration, workloads and traffic.",
         repository: "https://github.com/meshery/meshery",
       },
       {
-        project: "Service Mesh Discussion",
+        project: "Discuss Layer5.io",
         image: five,
         site: "https://discuss.layer5.io",
         language: "Discourse",
+        maintainers_name: ["Leonard Nwobodo"],
+        link: ["https://layer5.io/community/members/ekene-leonard-nwobodo"],
         repository: " https://discuss.layer5.io",
+      },
+      {
+        project: "Service Mesh Patterns",
+        image: patterns,
+        site: "https://service-mesh-patterns.github.io/service-mesh-patterns/",
+        language: "Gatsby",
+        maintainers_name: ["Debopriya Bhattacharjee", "Nikhil Ladha"],
+        link: ["https://layer5.io/community/members/debopriya-bhattacharjee","https://layer5.io/community/members/nikhil-ladha"],
+        repository: "https://github.com/service-mesh-patterns/service-mesh-patterns",
       },
     ],
   },
@@ -184,7 +208,7 @@ export const repo_data = [
         image: five,
         language: "Golang, Kuttl",
         description: "A utility for validating the conformance of service mesh implementations and their adherence to the Service Mesh Interface specifications.",
-        repository: "https://github.com/layer5io/smi-conformance",
+        repository: "https://github.com/layer5io/meshery-smi-conformance-action",
       },
       // {
       //   project: "MeshMonkey",
@@ -398,23 +422,6 @@ export const repo_data = [
     ],
   },
 
-  {
-    category: "Installers Repos",
-    subdata: [
-      {
-        project: "Scoop Bucket",
-        language: "",
-        description: "Windows-compatible package management for `mesheryctl`",
-        repository: "https://github.com/layer5io/scoop-bucket",
-      },
-      {
-        project: "Homebrew Tap",
-        image: brew,
-        language: "Ruby",
-        description: "MacOS-compatible package management for `mesheryctl`",
-        repository: "https://github.com/layer5io/homebrew-tap",
-      },
-    ],
-  },
-
 ];
+
+

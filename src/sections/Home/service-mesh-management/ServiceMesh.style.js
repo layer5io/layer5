@@ -8,15 +8,19 @@ const MeshSectionWrapper = styled.section`
     text-transform: uppercase;
     color: #A0AAAA;
   }
+  .big-title {
+    color: ${props => props.theme.text};
+  }
   .side-text {
     font-size: 1.45rem;
     font-weight: 600;
     line-height: 2rem;
-    color: ${props => props.theme.headingColor ? props.theme.headingColor : "#2C0075"};
+    color: ${props => props.theme.text};
     margin: 50px 0 24px 0;
     span {
-           font-weight: 600;
-            color: ${props => props.theme.keppelColor};
+           font-weight: 300;
+            /* color: ${props => props.theme.keppelColor}; */
+
         }
    }
    .side{
@@ -44,7 +48,9 @@ const MeshSectionWrapper = styled.section`
     text-decoration: line-through;
     font-weight: 400;
    }
-
+   a:hover {
+    color: ${props => props.theme.text}
+   }
 
   @media only screen and (max-width: 780px) {
     .mesh-image{

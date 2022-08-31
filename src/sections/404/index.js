@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import { Container} from "../../reusecore/Layout";
+import React, { useEffect, useState } from "react";
+import { Container } from "../../reusecore/Layout";
 import L404SectionWrapper from "./404.style";
 import serviceMesh from "../../assets/images/service-mesh-icons/service-mesh.svg";
 import Button from "../../reusecore/Button";
@@ -18,7 +18,7 @@ const messages = [
 const L404 = () => {
   const [message, setMessage] = useState(messages[0]);
   useEffect( () => {
-    setMessage(messages[Math.floor(Math.random()*messages.length)]);
+    setMessage(messages[Math.floor(Math.random() * messages.length)]);
   },[]);
 
   return (

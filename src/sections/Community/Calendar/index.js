@@ -4,10 +4,14 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import googleCalendarPlugin from "@fullcalendar/google-calendar";
-import { Container } from "../../../reusecore/Layout";
+import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import Table from "../../../components/MeetInfo-Table";
 import { meet_links_data } from "./meetLinksData";
+import NewcomersMap from "../Newcomers-guide/newcomers-map";
+import Button from "../../../reusecore/Button";
+import { FaUsers } from "@react-icons/all-files/fa/FaUsers";
+import { Link } from "gatsby";
 
 const Calendar = () => {
 
@@ -44,7 +48,7 @@ const Calendar = () => {
             <>
               {
                 <a href={meet_links_data.meeting_minutes}>
-                                    Minutes
+                  Minutes
                 </a>
               }
             </>
@@ -59,7 +63,7 @@ const Calendar = () => {
             <>
               {
                 <a href={meet_links_data.meeting_link}>
-                                    Zoom
+                  Zoom
                 </a>
               }
             </>
@@ -74,8 +78,8 @@ const Calendar = () => {
             <>
               {meet_links_data.slack_channel !== "#smi" ?
                 <a href={meet_links_data.meeting_recordings}>
-                                    YouTube
-                </a>: "N/A"
+                  YouTube
+                </a> : "N/A"
               }
             </>
           );
@@ -101,7 +105,7 @@ const Calendar = () => {
               <FullCalendar
                 plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
                 initialView="dayGridMonth"
-                googleCalendarApiKey='AIzaSyDcmx-nLYfqvrfpEmVJuclwt9akayYfUgg'
+                googleCalendarApiKey="AIzaSyDcmx-nLYfqvrfpEmVJuclwt9akayYfUgg"
                 events={{
                   googleCalendarId: "layer5.io_eh2aa9dpf1g40elvoc762jnphs@group.calendar.google.com",
                 }}
@@ -129,6 +133,28 @@ const Calendar = () => {
         </Container>
         <Table columns={columns} data={data} />
       </div>
+      <br />
+      <Container>
+        <Row className="newcomers-section">
+          <Col xs={12} lg={6} className="map">
+            <NewcomersMap />
+          </Col>
+          <Col xs={12} lg={6} className="text">
+            <div>
+              <h1>Newcomers Welcome!</h1>
+              <h3>Are you new to the community?</h3>
+              <p className="invitation">
+                Begin your journey by <a href="http://slack.layer5.io">joining the community Slack</a>. Then, use the resources linked in our <Link to="/community/newcomers">Contributor's Journey Map </Link>
+                and engage in the community and projects.
+              </p>
+              <Button primary title="See All Newcomers Resources" url="/community/newcomers">
+                <FaUsers size={21} className="icon-left" />
+              </Button>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      <br />
     </CalendarStyleWrapper>
   );
 };

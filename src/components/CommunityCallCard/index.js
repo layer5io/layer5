@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Row, Col} from "../../reusecore/Layout";
+import { Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import hero from "./hero.png";
 
@@ -51,9 +51,9 @@ const CommunityCallCardWrapper = styled.div`
     }
 `;
 
-const CommunityCallCard = ({hero_image}) => {
+const CommunityCallCard = ({ hero_image }) => {
 
-  return(
+  return (
     <CommunityCallCardWrapper>
       <img className="card-img" alt="community" src={hero_image ? hero_image : hero} />
       <div className="card-text">

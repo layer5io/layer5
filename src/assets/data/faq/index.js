@@ -155,7 +155,7 @@ const data = {
       answer: [
         "Yes, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes.",
       ],
-      link: "/service-mesh-management/meshery",
+      link: "/cloud-native-management/meshery",
       linktext: "Run Meshery",
     },
     {
@@ -190,7 +190,7 @@ const data = {
         "Performance Management",
         "Workload Management",
       ],
-      link: "/service-mesh-management/meshery",
+      link: "/cloud-native-management/meshery",
       linktext: "Meshery",
     },
     {
@@ -321,6 +321,35 @@ const data = {
       category: "Billing",
       answer: [
         "You can unlock the paid features on your account and trigger a new payment attempt by updating the payment method on your account. To learn more about how to manage your payments, visit the Billing section of your Meshery Cloud account.",
+      ],
+    },
+
+    {
+      question: "How do Meshery Extension Points work?",
+      category: "Meshery Integrations",
+      link: "https://docs.meshery.io/extensibility",
+      linktext: "Meshery Extensibility",
+      answer: [
+        "Meshery is an extensible platform. Customize Meshery using any of its purpose-built extension points.",
+        "Take advantage of these extension points for working with different service meshes via adapters, different load generators and different providers. Use Meshery’s REST API or its GraphQL API both of which allow you to connect to any Kubernetes-native app."
+      ],
+    },
+    {
+      question: "How can I request a new integration?",
+      category: "Meshery Integrations",
+      link: "https://layer5.io/company/contact",
+      linktext: "Contact Us",
+      answer: [
+        "Become a Layer5 partner or simply submit an integration proposal.",
+      ],
+    },
+    {
+      question: "Does Meshery manage service meshes?",
+      category: "Meshery Integrations",
+      link: "https://layer5.io/cloud-native-management/meshery",
+      linktext: "Run Meshery",
+      answer: [
+        "Yes, as the cloud native management plane, Meshery provisions and manages the lifecycle of service meshes.",
       ],
     },
   ],

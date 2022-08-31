@@ -1,17 +1,22 @@
 import styled from "styled-components";
 
 const ResourcePageWrapper = styled.div`
-
+    color: ${props => props.theme.text};
     .single-resource-wrapper{
         margin-bottom: 4rem;
     }
 
     .resource-info-block{
         margin-top: 3rem;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid ${props => props.theme.text};
         padding-bottom: 2rem;
     }
-
+    p {
+        color: ${props => props.theme.text};
+    }
+    li {
+        color: ${props => props.theme.text};
+    }
     .backBtn {
         margin: 3rem auto;
         font-weight: 600;

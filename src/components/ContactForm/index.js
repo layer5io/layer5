@@ -6,13 +6,14 @@ import logo from "../../assets/images/app/layer5.svg";
 import ContactFormWrapper from "./contact-form.style";
 
 const ContactForm = () => {
-  const [contactForm, setcontactForm] = useState({});
+  const [memberFormOne, setmemberFormOne] = useState({});
   const [submit, setSubmit] = useState(false);
 
   useEffect(() => {
     if (submit) {
-      axios.post("https://hook.us1.make.com/nt0s4oiuntfomjsvvrom4x85sx3leg8h", {
-        contactForm,
+      // Webhook to handle all event forms and all signup forms, except for the community member form.
+      axios.post("https://hook.us1.make.com/gguommoyd14634ur9xs7l37widuoa7e9", {
+        memberFormOne,
       });
       window.scrollTo(0, 700);
     }
@@ -40,10 +41,11 @@ const ContactForm = () => {
             email: "",
             subject: "",
             message: "",
-            ScopeOfQuestion: "",
+            scope: "",
+            form: "contact",
           }}
           onSubmit={(values) => {
-            setcontactForm(values);
+            setmemberFormOne(values);
             setSubmit(true);
           }}
         >
@@ -128,7 +130,7 @@ const ContactForm = () => {
               }
               onInput={(e) => e.target.setCustomValidity("")}
             />
-            <label htmlFor="ScopeOfQuestion" className="form-name">
+            <label htmlFor="scope" className="form-name">
               Scope of Question <span className="required-sign">*</span>
             </label>
             <div aria-labelledby="my-radio-group">
@@ -136,7 +138,7 @@ const ContactForm = () => {
                 <Field
                   className="radio-field"
                   type="radio"
-                  name="ScopeOfQuestion"
+                  name="scope"
                   value="Meshery"
                 />
                 Meshery
@@ -146,7 +148,7 @@ const ContactForm = () => {
                 <Field
                   className="radio-field"
                   type="radio"
-                  name="ScopeOfQuestion"
+                  name="scope"
                   value="SMP"
                 />
                 SMP
@@ -156,7 +158,7 @@ const ContactForm = () => {
                 <Field
                   className="radio-field"
                   type="radio"
-                  name="ScopeOfQuestion"
+                  name="scope"
                   value="SMI"
                 />
                 SMI
@@ -166,7 +168,7 @@ const ContactForm = () => {
                 <Field
                   className="radio-field"
                   type="radio"
-                  name="ScopeOfQuestion"
+                  name="scope"
                   value="GetNighthawk"
                 />
                 GetNighthawk
@@ -176,7 +178,7 @@ const ContactForm = () => {
                 <Field
                   className="radio-field"
                   type="radio"
-                  name="ScopeOfQuestion"
+                  name="scope"
                   value="Landscape"
                 />
                 Landscape
@@ -186,7 +188,7 @@ const ContactForm = () => {
                 <Field
                   className="radio-field"
                   type="radio"
-                  name="ScopeOfQuestion"
+                  name="scope"
                   value="Community"
                 />
                 Community

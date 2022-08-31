@@ -40,9 +40,9 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
   let programsArray = [];
 
   const programs = data.allMdx.nodes.filter((item) => {
-    if(programsArray.indexOf(item.frontmatter.program)>=0) {
+    if (programsArray.indexOf(item.frontmatter.program) >= 0) {
       return false;
-    }else{
+    } else {
       programsArray.push(item.frontmatter.program);
       return true;
     }
@@ -57,11 +57,11 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
             <Row>
               {programs.reverse().map(({ id, frontmatter, fields }) => (
                 <Col key={id} className="programs-col">
-                  <Link 
+                  <Link
                     to={
                       frontmatter.program === "Layer5"
-                        ?fields.slug
-                        :`/programs/${frontmatter.programSlug}`
+                        ? fields.slug
+                        : `/programs/${frontmatter.programSlug}`
                     }
                   >
                     <div className={`program ${sub_section ? "sub-section_program" : ""}`}>
@@ -82,7 +82,7 @@ const ProgramsGrid = ({ hide_path, sub_section }) => {
           <p>
           Layer5 is driven by its people, who are the stewards of our culture and principles. Join us on the journey to enabling the world's most innovative companies make the transition to cloud navtive and multi-cloud through engineering-empowered automation.
           </p>
-          
+
         </Container>
       </div>
     </ProgramsPageWrapper>

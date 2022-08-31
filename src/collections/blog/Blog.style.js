@@ -7,8 +7,8 @@ export const BlogWrapper = styled.div`
     top: -10px;
   }
 
-
   div.intro {
+    display: flex;
     padding-left: 3rem;
     padding-right: 3rem;
     font-style: italic;
@@ -110,14 +110,14 @@ export const BlogWrapper = styled.div`
     width: 40%;
     float: left;
     margin: 1rem 1.25rem 1rem 0rem;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 179, 159, 0.5)"};
   }
 
   .image-right {
     width: 40%;
     float: right;
     margin: 1rem 0rem 1rem 1.25rem;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 179, 159, 0.5)"};
   }
   .image-right-no-shadow {
     width: 40%;
@@ -133,9 +133,8 @@ export const BlogWrapper = styled.div`
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1.5rem;
     width: 90%;
-    padding-bottom: 10px;
-    padding-top: 10px;
     box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
   }
   .image-center {
@@ -208,6 +207,52 @@ export const BlogWrapper = styled.div`
     border-bottom: 1px dashed ${(props) => props.theme.primaryLightColor};
   }
 
+
+  /* ==============
+styles for figure with caption
+
+Example: 
+// <figure class="imgWithCaption fig-right">
+//   <img src="" />
+//   <figcaption>
+//     <p>This is text for the image</p>
+//   </figcaption>
+// </figure>
+=======================*/
+
+  figure.imgWithCaption {
+    margin-bottom: 1rem;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    img{
+      width: 100%;
+    }
+  }
+  .fig-right{
+    float: right;
+    width: 40%;
+    margin-left: 1rem;
+  }
+  .fig-left{
+    float: left;
+    width: 40%;
+    margin-right: 1rem;
+  }
+  @media screen and (max-width: 699px) {
+    .fig-right, .fig-left{
+      width: 100%;
+      display: block;
+      margin: 1rem auto;
+    }
+  }
+  
+  figcaption p {
+    text-align: center;
+    font-size: 0.8rem;
+    margin: -0.1rem 0 0.12rem;
+    color: ${props => props.theme.menuColor};
+  }
+
+
   /* ==============
 styles for meshmate-of-the-year-2020 
 =======================*/
@@ -236,7 +281,7 @@ styles for meshmate-of-the-year-2020
 
   .slides{
     width: 45%;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 179, 159, 0.5)"};     
     margin-bottom: 1rem;
   }
   .slides-right{
@@ -245,7 +290,7 @@ styles for meshmate-of-the-year-2020
     position: relative;
     margin: 1rem 0 1rem 2rem;
     float: right;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 179, 159, 0.5)"};     
   }
   .slides-left {
     width: 45%;
@@ -253,7 +298,7 @@ styles for meshmate-of-the-year-2020
     position: relative;
     float: left;
     margin: 1rem 2rem 1rem 0rem;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    box-shadow: 0px 5px 10px 1px ${props => props.theme.DarkTheme ? "rgba(0, 179, 159, 1.0)" : "rgba(0, 179, 159, 0.5)"};     
   }
   @media screen and (max-width: 768px) {
     .slides-right, .slides-left, .slides{
@@ -313,7 +358,7 @@ code {
       white-space: pre-wrap;
       border-radius: 3px;
       background-color: ${props => props.theme.tertiaryColor};
-      color: ${props => props.theme.shadowLightColor};
+      color: ${props => props.theme.textRevert};
       &.short {
         line-height: 16px;
       }

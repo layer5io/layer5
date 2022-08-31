@@ -12,7 +12,7 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
   const [path, setPath] = useState("");
   const [expand, setExpand] = useState(false);
 
-  const reformatTOC= (data) => {
+  const reformatTOC = (data) => {
     let newData = data.split("-").join(" ");
     let firstLetter = newData.charAt(0).toUpperCase();
     newData = `${firstLetter}${newData.slice(1)}`;
@@ -23,8 +23,8 @@ const TOC = ({ TOCData,courseData, chapterData, location }) => {
     .map(toc => toc.fields.chapter);
 
   useEffect(() => {
-    const path = location.pathname.split("/");    
-    if(path[2] === "learning-paths"){
+    const path = location.pathname.split("/");
+    if (path[2] === "learning-paths"){
       setPath(getCurrentPage(location));
     } else
       return;

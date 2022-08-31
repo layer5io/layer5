@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import { Container } from "../../reusecore/Layout";
-import Test from "./meshmap-icon-white.svg";
 import Locator from "./locator.svg";
 import MesherySurface from "./meshery-surface.svg";
 import Button from "../../reusecore/Button";
@@ -28,7 +27,7 @@ const MeshMapCTAWrapper = styled.div`
     transition: all .3s;
     display: block;
     margin: 1rem auto;
-    height: 18rem;  
+    height: 15rem;  
   }
   @keyframes coin-rotate {
     from {
@@ -40,9 +39,9 @@ const MeshMapCTAWrapper = styled.div`
   .button {
     margin: 1rem auto;
   }
-  .button-text{
-    color: ${props => props.theme.white};
-    margin: 1rem auto;
+  .text{
+    display: block;
+    margin: auto;
   }
   .subtext {
     color: ${props => props.theme.white};
@@ -106,7 +105,6 @@ const MeshMapCTA = () => {
             <Button primary url="/meshmap" className="button" external={false}>
               Try MeshMap Now!
             </Button>
-            <p className="button-text">A world class visual editor integrated with the cloud native catalog. You don't want to miss out.</p>
 
           </div>
         </div>

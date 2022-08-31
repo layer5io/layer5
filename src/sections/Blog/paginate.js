@@ -1,10 +1,10 @@
-import React,{useState} from "react";
+import React,{ useState } from "react";
 import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import { IoIosArrowRoundBack } from "@react-icons/all-files/io/IoIosArrowRoundBack";
 import styled from "styled-components";
 
-export const PaginateWrapper=styled.div`
+export const PaginateWrapper = styled.div`
     .btn-container{
         display:flex;
         justify-content: center;
@@ -41,7 +41,7 @@ export const PaginateWrapper=styled.div`
   }
 `;
 
-const Paginate = ({pageContext,isListView}) => {
+const Paginate = ({ pageContext,isListView }) => {
   const [currentPage, setCurrentPage] = useState(
     pageContext.humanPageNumber || 1
   );
@@ -62,13 +62,13 @@ const Paginate = ({pageContext,isListView}) => {
         {pageNumbers.map((number) => (
           <Link
             to={`/blog${
-                          tag ? "/tag/"+tag.toLowerCase() : category ? "/category/"+category.toLowerCase() : ""
+                          tag ? "/tag/" + tag.toLowerCase() : category ? "/category/" + category.toLowerCase() : ""
                         }${number == 1 ? "" : "/" + number}`}
             state={{ isListView }}
             key={number}
-                          
+
           >
-                        
+
             <button onClick={() => paginate(number)}
               className={
                 number === currentPage
@@ -77,7 +77,7 @@ const Paginate = ({pageContext,isListView}) => {
               }>
               {number}
             </button>
-                        
+
           </Link>
         ))}
         {nextPagePath && <Link to={nextPagePath} className="btn" state={{ isListView }}><IoIosArrowRoundForward/></Link>}

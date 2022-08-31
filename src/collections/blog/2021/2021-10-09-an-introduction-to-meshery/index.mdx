@@ -3,14 +3,15 @@ title: "An Introduction to Meshery (Webinar-on-Demand) "
 date: 2021-10-09 10:30:05 -0530
 author: Debopriya Bhattacharjee
 thumbnail: ./meshery-webinar.png
-type: Blog
-product: Meshery
+darkthumbnail: ./meshery-webinar.png
 category: "Meshery"
 tags:
  - Projects
  - Meshery
 published: true
 resource: true
+type: Blog
+product: Meshery
 ---
 
 import { BlogWrapper } from "../../Blog.style.js";
@@ -49,8 +50,8 @@ import { Link } from "gatsby";
 <h3><img src={MesheryLogo}  align="center" alt="meshery-logo" height="35rem" width="35rem" style="padding-bottom:5px;padding-top:auto;"/> Meshery</h3>
 
 <img src={MeshManager} className="slides-left" align="right" alt="mesh-manager" />
-<p><Link to="/service-mesh-management/meshery">Meshery</Link> manages the lifecycle of service meshes. Meshery does workload management, helps you onboard or offboard your applications onto the mesh. It also lets you do performance management. <a href="https://docs.meshery.io/concepts/architecture/meshsync">MeshSync</a>, a custom controller within <Link to="/service-mesh-management/meshery/meshery-operator">Meshery operator</Link>, performs discovery of existing service meshes and deep fingerprinting of the specific functions that version of your service mesh is capable of performing. Through MeshSync, Meshery supports brownfield deployments of your service meshes (Meshery discovers your existing service mesh deployment that is already running inside your cluster(s) whether those service meshes were deployed by Meshery or not) </p>
-<p>In order to facilitate such a deep level of understanding of each type of service mesh, <Link to="/service-mesh-management/meshery">Meshery</Link> has adapters that are specific to each service mesh (given that each service mesh has its own set of features). Consequently, in order to leverage the maximum functionality of each service mesh, Meshery has separate, dedicated adapter for each of the <a href="https://docs.meshery.io/getting-started/overview#meshery-is-for-any-service-mesh">supported service meshes</a>: </p>
+<p><Link to="/cloud-native-management/meshery">Meshery</Link> manages the lifecycle of service meshes. Meshery does workload management, helps you onboard or offboard your applications onto the mesh. It also lets you do performance management. <a href="https://docs.meshery.io/concepts/architecture/meshsync">MeshSync</a>, a custom controller within <Link to="/cloud-native-management/meshery/meshery-operator">Meshery operator</Link>, performs discovery of existing service meshes and deep fingerprinting of the specific functions that version of your service mesh is capable of performing. Through MeshSync, Meshery supports brownfield deployments of your service meshes (Meshery discovers your existing service mesh deployment that is already running inside your cluster(s) whether those service meshes were deployed by Meshery or not) </p>
+<p>In order to facilitate such a deep level of understanding of each type of service mesh, <Link to="/cloud-native-management/meshery">Meshery</Link> has adapters that are specific to each service mesh (given that each service mesh has its own set of features). Consequently, in order to leverage the maximum functionality of each service mesh, Meshery has separate, dedicated adapter for each of the <a href="https://docs.meshery.io/getting-started/overview#meshery-is-for-any-service-mesh">supported service meshes</a>: </p>
 
 <table className="table-1" align="center">
 <thead>
@@ -107,14 +108,14 @@ import { Link } from "gatsby";
 </tbody>
 </table>
 
-<p><Link to="/service-mesh-management/meshery">Meshery</Link> also lets you integrate your Prometheus and Grafana add-ons so you can import your existing Grafana dashboards to Meshery. When you first start Meshery, we also have a configuration wizard, which basically walks you through the entire setup to get Meshery up and running. By the end of this, it will make sure that you have Meshery running on your cluster.</p>
+<p><Link to="/cloud-native-management/meshery">Meshery</Link> also lets you integrate your Prometheus and Grafana add-ons so you can import your existing Grafana dashboards to Meshery. When you first start Meshery, we also have a configuration wizard, which basically walks you through the entire setup to get Meshery up and running. By the end of this, it will make sure that you have Meshery running on your cluster.</p>
 <img src={MesheryDeployments} className="slides-right" align="right" alt="meshery-deployment" />
 <p>If you want a more finer configuration, you can configure your environment through settings and you can configure service meshes, and you can configure the metrics, you can define your performance tests to be reused.</p>
-<p>For configuration management, <Link to="/service-mesh-management/meshery">Meshery</Link> will analyze your runtime environment for certain service meshes and tell you if you're doing things right or not. What you can do is you can upload your applications directly into Meshery, edit them in the Meshery UI itself and actually apply these applications or onboard these applications on your service mesh.</p>
+<p>For configuration management, <Link to="/cloud-native-management/meshery">Meshery</Link> will analyze your runtime environment for certain service meshes and tell you if you're doing things right or not. What you can do is you can upload your applications directly into Meshery, edit them in the Meshery UI itself and actually apply these applications or onboard these applications on your service mesh.</p>
 
 <h3><img src={Mesheryoperatoricon}  align="center" alt="meshery-operator-logo" height="32rem" width="32rem" style="padding-bottom:5px;padding-top:auto;"/> Meshery Operator</h3>
 <img src={Mesheryfeatures} className="slides-left" align="right" alt="Meshery-features" />
-<p><Link to="/service-mesh-management/meshery/meshery-operator">Meshery operator</Link> is a custom controller called MeshSync. MeshSync helps keep Meshery apprised of the various changes that are going on to the service meshes and various changes that are happening within Kubernetes itself. In this way Meshery supports not only greenfield deployments like deploying service meshes itself, it also supports connecting to existing service mesh deployments, that is, brownfield deployment. So it will discover your existing deployments as well.</p>
+<p><Link to="/cloud-native-management/meshery/meshery-operator">Meshery operator</Link> is a custom controller called MeshSync. MeshSync helps keep Meshery apprised of the various changes that are going on to the service meshes and various changes that are happening within Kubernetes itself. In this way Meshery supports not only greenfield deployments like deploying service meshes itself, it also supports connecting to existing service mesh deployments, that is, brownfield deployment. So it will discover your existing deployments as well.</p>
 <p>There's an extensible concept in Meshery called a <a href="https://docs.meshery.io/extensibility/providers">provider</a>. Providers can typically offer a layer of persistence so to the extent that users are running performance tests intensely or to the extent that users want to have a particular type of directory integrated to bring their own identity to Meshery and have a multi-user experience. The other area of extensibility is the notion that Meshery has a couple of APIs both – rest API and graphql API. It comes with a command-line interface as well as a user interface. </p>
 
 <h3>Layer5 MeshMap</h3>
@@ -139,7 +140,7 @@ import { Link } from "gatsby";
 </ul>
 <p>If these factors change, so does the ability to run optimization routines. To help you identify the optimal configuration of your mesh but in accordance with your own constraints is again the study of <Link to="/projects/nighthawk">Nighthawk</Link>. </p>
 
-<h3>Check out the CNCF On-Demand Webinar: <Link to="/service-mesh-management/meshery">Meshery</Link> - The Cloud Native Manager to learn more!</h3>
+<h3>Check out the CNCF On-Demand Webinar: <Link to="/cloud-native-management/meshery">Meshery</Link> - The Cloud Native Manager to learn more!</h3>
 <div class="iframe-container">
 <iframe width="460" height="215" src="https://www.youtube.com/embed/mU8qHUGYsk8" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 

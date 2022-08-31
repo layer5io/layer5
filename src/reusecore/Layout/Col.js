@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Dimensions = ["", "8.333333%", "16.666667%", "25%", "33.333333%", "41.666667%", "50%", "58.333333%", "66.666667%", "75%", "83.333333%", "91.666667%", "100%" ]; 
+const Dimensions = ["", "8.333333%", "16.666667%", "25%", "33.333333%", "41.666667%", "50%", "58.333333%", "66.666667%", "75%", "83.333333%", "91.666667%", "100%"];
 
 const ColWrapper = styled.div`
     position: relative;
@@ -10,7 +10,7 @@ const ColWrapper = styled.div`
     padding-right: 15px;
 
     @media (min-width: 315px) {
-        flex: ${({xs}) => 
+        flex: ${({ xs }) =>
   (xs === 1 && `0 0 ${Dimensions[1]}`) ||
             (xs === 2 && `0 0 ${Dimensions[2]}`) ||
             (xs === 3 && `0 0 ${Dimensions[3]}`) ||
@@ -24,7 +24,7 @@ const ColWrapper = styled.div`
             (xs === 11 && `0 0 ${Dimensions[11]}`) ||
             (xs === 12 && `0 0 ${Dimensions[12]}`)
 };
-        max-width: ${({xs}) => 
+        max-width: ${({ xs }) =>
   (xs === 1 && Dimensions[1]) ||
             (xs === 2 && Dimensions[2]) ||
             (xs === 3 && Dimensions[3]) ||
@@ -39,8 +39,8 @@ const ColWrapper = styled.div`
             (xs === 12 && Dimensions[12])
 };
 
-        margin-left: ${props => 
-  props.offsetXs ? 
+        margin-left: ${props =>
+  props.offsetXs ?
     (props.offsetXs === 1 && `${Dimensions[1]}`) ||
             (props.offsetXs === 2 && `${Dimensions[2]}`) ||
             (props.offsetXs === 3 && `${Dimensions[3]}`) ||
@@ -51,19 +51,19 @@ const ColWrapper = styled.div`
             (props.offsetXs === 8 && `${Dimensions[8]}`) ||
             (props.offsetXs === 9 && `${Dimensions[9]}`) ||
             (props.offsetXs === 10 && `${Dimensions[10]}`) ||
-            (props.offsetXs === 11 && `${Dimensions[11]}`) 
+            (props.offsetXs === 11 && `${Dimensions[11]}`)
     : `${Dimensions[0]}`}
 
     }/* @media (min-width: 315px) */
 
     @media (min-width: 576px) {
 
-        order: ${({order}) =>
-      (order===1 && "2") ||
-            (order===2 && "1") 
+        order: ${({ order }) =>
+      (order === 1 && "2") ||
+            (order === 2 && "1")
 };
 
-        flex: ${({sm}) => 
+        flex: ${({ sm }) =>
   (sm === 1 && `0 0 ${Dimensions[1]}`) ||
             (sm === 2 && `0 0 ${Dimensions[2]}`) ||
             (sm === 3 && `0 0 ${Dimensions[3]}`) ||
@@ -77,7 +77,7 @@ const ColWrapper = styled.div`
             (sm === 11 && `0 0 ${Dimensions[11]}`) ||
             (sm === 12 && `0 0 ${Dimensions[12]}`)
 };
-        max-width: ${({sm}) => 
+        max-width: ${({ sm }) =>
   (sm === 1 && Dimensions[1]) ||
             (sm === 2 && Dimensions[2]) ||
             (sm === 3 && Dimensions[3]) ||
@@ -92,8 +92,8 @@ const ColWrapper = styled.div`
             (sm === 12 && Dimensions[12])
 };
 
-        margin-left: ${props => 
-  props.offsetSm ? 
+        margin-left: ${props =>
+  props.offsetSm ?
     (props.offsetSm === 1 && `${Dimensions[1]}`) ||
             (props.offsetSm === 2 && `${Dimensions[2]}`) ||
             (props.offsetSm === 3 && `${Dimensions[3]}`) ||
@@ -104,17 +104,17 @@ const ColWrapper = styled.div`
             (props.offsetSm === 8 && `${Dimensions[8]}`) ||
             (props.offsetSm === 9 && `${Dimensions[9]}`) ||
             (props.offsetSm === 10 && `${Dimensions[10]}`) ||
-            (props.offsetSm === 11 && `${Dimensions[11]}`) 
+            (props.offsetSm === 11 && `${Dimensions[11]}`)
     : `${Dimensions[0]}`}
 
     }/* @media (min-width: 576px) */
 
     @media (min-width: 768px) {
-        order: ${({order}) =>
-      (order===1 && "1") ||
-            (order===2 && "2") 
+        order: ${({ order }) =>
+      (order === 1 && "1") ||
+            (order === 2 && "2")
 };
-        flex: ${({md}) => 
+        flex: ${({ md }) =>
   (md === 1 && `0 0 ${Dimensions[1]}`) ||
             (md === 2 && `0 0 ${Dimensions[2]}`) ||
             (md === 3 && `0 0 ${Dimensions[3]}`) ||
@@ -129,7 +129,7 @@ const ColWrapper = styled.div`
             (md === 12 && `0 0 ${Dimensions[12]}`)
 };
 
-        max-width: ${({md}) => 
+        max-width: ${({ md }) =>
   (md === 1 && `${Dimensions[1]}`) ||
             (md === 2 && `${Dimensions[2]}`) ||
             (md === 3 && `${Dimensions[3]}`) ||
@@ -144,8 +144,8 @@ const ColWrapper = styled.div`
             (md === 12 && `${Dimensions[12]}`)
 };
 
-        margin-left: ${props => 
-  props.offsetMd ? 
+        margin-left: ${props =>
+  props.offsetMd ?
     (props.offsetMd === 1 && `${Dimensions[1]}`) ||
             (props.offsetMd === 2 && `${Dimensions[2]}`) ||
             (props.offsetMd === 3 && `${Dimensions[3]}`) ||
@@ -156,13 +156,13 @@ const ColWrapper = styled.div`
             (props.offsetMd === 8 && `${Dimensions[8]}`) ||
             (props.offsetMd === 9 && `${Dimensions[9]}`) ||
             (props.offsetMd === 10 && `${Dimensions[10]}`) ||
-            (props.offsetMd === 11 && `${Dimensions[11]}`) 
+            (props.offsetMd === 11 && `${Dimensions[11]}`)
     : `${Dimensions[0]}`}
 
     } /*  @media (min-width: 768px)  */
 
     @media (min-width: 992px) {
-        flex: ${({lg}) => 
+        flex: ${({ lg }) =>
       (lg === 1 && `0 0 ${Dimensions[1]}`) ||
             (lg === 2 && `0 0 ${Dimensions[2]}`) ||
             (lg === 3 && `0 0 ${Dimensions[3]}`) ||
@@ -176,7 +176,7 @@ const ColWrapper = styled.div`
             (lg === 11 && `0 0 ${Dimensions[11]}`) ||
             (lg === 12 && `0 0 ${Dimensions[12]}`)
 };
-        max-width: ${({lg}) => 
+        max-width: ${({ lg }) =>
   (lg === 1 && `${Dimensions[1]}`) ||
             (lg === 2 && `${Dimensions[2]}`) ||
             (lg === 3 && `${Dimensions[3]}`) ||
@@ -191,8 +191,8 @@ const ColWrapper = styled.div`
             (lg === 12 && `${Dimensions[12]}`)
 };
 
-        margin-left: ${props => 
-  props.offsetLg ? 
+        margin-left: ${props =>
+  props.offsetLg ?
     (props.offsetLg === 1 && `${Dimensions[1]}`) ||
             (props.offsetLg === 2 && `${Dimensions[2]}`) ||
             (props.offsetLg === 3 && `${Dimensions[3]}`) ||
@@ -203,13 +203,13 @@ const ColWrapper = styled.div`
             (props.offsetLg === 8 && `${Dimensions[8]}`) ||
             (props.offsetLg === 9 && `${Dimensions[9]}`) ||
             (props.offsetLg === 10 && `${Dimensions[10]}`) ||
-            (props.offsetLg === 11 && `${Dimensions[11]}`) 
+            (props.offsetLg === 11 && `${Dimensions[11]}`)
     : `${Dimensions[0]}`}
 
     } /*  @media (min-width: 992px)  */
 
     @media (min-width: 1200px) {
-        flex: ${({xl}) => 
+        flex: ${({ xl }) =>
       (xl === 2 && `0 0 ${Dimensions[2]}`) ||
             (xl === 1 && `0 0 ${Dimensions[1]}`) ||
             (xl === 3 && `0 0 ${Dimensions[3]}`) ||
@@ -223,7 +223,7 @@ const ColWrapper = styled.div`
             (xl === 11 && `0 0 ${Dimensions[11]}`) ||
             (xl === 12 && `0 0 ${Dimensions[12]}`)
 };
-        max-width: ${({xl}) => 
+        max-width: ${({ xl }) =>
   (xl === 1 && `${Dimensions[1]}`) ||
             (xl === 2 && `${Dimensions[2]}`) ||
             (xl === 3 && `${Dimensions[3]}`) ||
@@ -238,8 +238,8 @@ const ColWrapper = styled.div`
             (xl === 12 && `${Dimensions[12]}`)
 };
 
-        margin-left: ${props => 
-  props.offsetXl ? 
+        margin-left: ${props =>
+  props.offsetXl ?
     (props.offsetXl === 1 && `${Dimensions[1]}`) ||
             (props.offsetXl === 2 && `${Dimensions[2]}`) ||
             (props.offsetXl === 3 && `${Dimensions[3]}`) ||
@@ -250,18 +250,18 @@ const ColWrapper = styled.div`
             (props.offsetXl === 8 && `${Dimensions[8]}`) ||
             (props.offsetXl === 9 && `${Dimensions[9]}`) ||
             (props.offsetXl === 10 && `${Dimensions[10]}`) ||
-            (props.offsetXl === 11 && `${Dimensions[11]}`) 
+            (props.offsetXl === 11 && `${Dimensions[11]}`)
     : `${Dimensions[0]}`}
 
     } /*  @media (min-width: 1200px)  */
 `;
 
-const Col = ({children, ...props}) => { 
+const Col = ({ children, ...props }) => {
   const addAllClasses = ["col"];
-  if(props.className){
+  if (props.className){
     addAllClasses.push(props.className);
   }
-  return(
+  return (
     <ColWrapper {...props} className={addAllClasses.join(" ")}>
       {children}
     </ColWrapper>

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import { useLocation } from "@reach/router";
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -33,10 +33,10 @@ const SEO = ({ canonical, description, image, lang, meta, schemaMarkup, title })
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`${title} | ${site.siteMetadata.title}`}
       link={
         canonical
-          ? [{ rel: "canonical", key: canonical, href: canonical }] 
+          ? [{ rel: "canonical", key: canonical, href: canonical }]
           : []
       }
       meta={[

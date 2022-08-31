@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 const MesheryOperatorWrapper = styled.section`
     margin: 0 0 2rem 0;
-    .banner-background{
-        background-color: ${props => props.theme.white};
-    }
+
     .hero-section{
         padding: 5rem 0rem;
         .logo{
@@ -50,8 +48,13 @@ const MesheryOperatorWrapper = styled.section`
         }
         p{
             width: 96%;
-            color: ${props => props.theme.black};
         }
+        rect {
+            fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+          }
+          path {
+            stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
+          }
         .iframe-div{
             height: 450px;
             aspect-ratio: 2;
@@ -166,7 +169,7 @@ const MesheryOperatorWrapper = styled.section`
                 ;
                 margin: 2px;
                 padding: 1.25rem;
-                background-color: white;
+                background: ${props => props.theme.DarkTheme ? "#212121" : "white"};
                 border-radius: 25px;
                 p {
                     text-align: left;
@@ -226,4 +229,4 @@ const MesheryOperatorWrapper = styled.section`
     }
 `;
 
-export default MesheryOperatorWrapper; 
+export default MesheryOperatorWrapper;

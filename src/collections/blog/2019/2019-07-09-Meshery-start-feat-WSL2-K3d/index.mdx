@@ -4,6 +4,7 @@ subtitle: ""
 date: 2019-07-09 12:00:00 +0000
 author: Nuno do Carmo
 thumbnail: ./cnab-logo.jpg
+darkthumbnail: ./cnab-logo.jpg
 category: Meshery
 tags:
  - Community
@@ -32,7 +33,7 @@ import wslmesherystart from "./wsl-meshery-start.png";
 <BlogWrapper>
 
 During KubeCon EU 2019, I had the chance to discover two new softwares that simply amazed me:
-1. [Meshery](https://layer5.io/service-mesh-management/meshery), which is the multi-service mesh management plane.
+1. [Meshery](https://layer5.io/cloud-native-management/meshery), which is the multi-service mesh management plane.
 2. [k3d](https://github.com/rancher/k3d), which is used to create a dockerized [k3s](https://k3s.io) server.
 
 And, what really appealed to me about both of them is that everything from the installation to the usage was just *simple!*
@@ -41,7 +42,7 @@ And cream on the top, both softwares are used with or inside containers, making 
 <h4>Environment Setup</h4>
 
 Before we start having *real* fun with Meshery, I will quickly list the different components I used for this blog post and ensure I define what could be optional for your own setup:
-1. [Meshery](https://layer5.io/service-mesh-management/meshery)
+1. [Meshery](https://layer5.io/cloud-native-management/meshery)
 2. [Docker](https://docs.docker.com/install/)
     - Docker is of course mandatory and as Meshery is based on a Compose file, which means that [docker-compose](https://docs.docker.com/compose/install/) is also mandatory.
 3. [k3d](https://github.com/rancher/k3d)

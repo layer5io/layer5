@@ -9,16 +9,16 @@ export const HandbookWrapper = styled.div`
       width:100%;
       padding-bottom: 2rem;
       ul > li {
-        color: ${(props) => props.theme.menuColor};
+        color: ${(props) => props.theme.text};
       }
       ol > li {
         color: ${(props) => props.theme.menuColor};
       }
       ul > li > span {
-        color: ${(props) => props.theme.black};
+        color: ${(props) => props.theme.text};
       }
       ol > li > span {
-        color: ${(props) => props.theme.black};
+        color: ${(props) => props.theme.text};
       }
     }
 
@@ -99,6 +99,7 @@ export const HandbookWrapper = styled.div`
         display: block;
         margin-left: auto;
         margin-right: auto;
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
       }
       .site-icon{
         height: 1.6rem;
@@ -167,17 +168,29 @@ export const HandbookWrapper = styled.div`
       padding-left: 0.2em;
       padding-bottom: 0.3em;
       margin-right: 0.5em;
+
       margin-bottom: 0.15em;
       vertical-align: bottom;
       color: transparent;
+      background-color: white;
     }
 
     input[type=checkbox] + label:active:before {
       transform: scale(0);
     }
-
+    rect {
+      fill:  ${props => props.theme.DarkTheme ? "#313131" : "#C9FCF6"};  
+    }
+    path {
+      stroke: ${props => props.theme.DarkTheme ? props.theme.keppelColor : "#00B39F"};
+    }
+    svg {
+      color: "red";
+    }
     input[type=checkbox]:checked + label:before {
-      background-color: ${(props) => props.theme.primaryLightColorTwo};
+      content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="black" viewBox="0 4 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');;
+
+      background-color: ${(props) => props.theme.keppelColor};
       border-color: ${(props) => props.theme.primaryLightColorTwo};
       color: #fff;
     }
@@ -437,8 +450,8 @@ width: 90%;
 .content_type { 
   display: flex;
   flex-direction: column;
-  background: ${props => props.theme.white};
-  box-shadow: 0px 0px 30px ${props => props.theme.shadowLightColor};
+  background: ${props => props.theme.DarkTheme ? "#212121" : "#FFFFFF"};
+  box-shadow: 0px 0px ${props => props.theme.projectShadowsize} ${props => props.theme.DarkTheme ? "#00D3A9" : "#E6E6E6"};
   &:hover{
       box-shadow: 0px 0px 5px ${props => props.theme.primaryColor};
   }
@@ -455,7 +468,7 @@ width: 90%;
   }
   p{
       font-weight: 300;
-      color: ${props => props.theme.black};
+      color: ${props => props.theme.text};
   }
   img{
       height: 60px ; 
@@ -468,7 +481,6 @@ width: 90%;
   padding: 0px 20px 0px 20px;
 } 
 .process .item {
-  background-color: #fff;
   padding: 10px;
   font-size: 16px;
   line-height: 1.7;

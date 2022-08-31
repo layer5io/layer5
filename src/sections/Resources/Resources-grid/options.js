@@ -10,7 +10,7 @@ export const options =  [
       { id: 5, value: "Event", label: "Event" },
       { id: 6, value: "Tutorial", label: "Tutorial" },
       { id: 7, value: "Case Study", label: "Case Study" },
-      { id: 8, value: "Demo", label: "Demo" },
+      { id: 8, value: "Infographic", label: "Infographic" },
       { id: 9, value: "Guide", label: "Guide" },
       { id: 10, value: "FAQ", label: "FAQ" },
       { id: 11, value: "Interview", label: "Interview" }]
@@ -19,8 +19,11 @@ export const options =  [
     category: "Product",
     subdata: [
       { id: 0, value: "Meshery", label: "Meshery" },
-      { id: 1, value: "Service Mesh Performance", label: "SMP" },
-      { id: 2, value: "Nighthawk", label: "Nighthawk" }]
+      { id: 1, value: "MeshMap", label: "MeshMap" },
+      { id: 2, value: "Docker Extension", label: "Docker Extension" },
+      { id: 3, value: "Service Mesh Performance", label: "SMP" },
+      { id: 4, value: "Service Mesh Landscape", label: "Service Mesh Landscape" },
+      { id: 5, value: "Nighthawk", label: "Nighthawk" }]
   },
   {
     category: "Technology",
@@ -44,4 +47,3 @@ export const options =  [
       { id: 6, value: "Traefik Mesh", label: "Traefik Mesh" }]
   },
 ];
-  

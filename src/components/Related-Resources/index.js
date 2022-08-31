@@ -1,16 +1,18 @@
 import React from "react";
-import { Link} from "gatsby";
+import { Link } from "gatsby";
 import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 import Card from "../Card";
 import RelatedResourcesWrapper from "./relatedResources.style";
 import { Col } from "../../reusecore/Layout";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 
 const RelatedResources = props => {
-  
-  const {resourceType , relatedResources , mainHead , lastCardHead , linkToAllItems} = props;
+
+  const { resourceType , relatedResources , mainHead , lastCardHead , linkToAllItems } = props;
 
   return (
     <RelatedResourcesWrapper>
@@ -28,13 +30,13 @@ const RelatedResources = props => {
                   slidesToScroll= {1}
                 >
                   {
-                    resourceType === "resources" ? relatedResources.map(({resource}) => {
+                    resourceType === "resources" ? relatedResources.map(({ resource }) => {
                       return (
                         <Col className="cardCol" xs={12} key={resource.fields.slug}>
                           <Card frontmatter={resource.frontmatter} fields={resource.fields}/>
                         </Col>
                       );
-                    }):relatedResources.map((resource) => {
+                    }) : relatedResources.map((resource) => {
                       return (
                         <Col className="cardCol" xs={12} key={resource.fields.slug}>
                           <Card frontmatter={resource.frontmatter} fields={resource.fields}/>

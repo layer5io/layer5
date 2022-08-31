@@ -7,11 +7,12 @@ import MeshMatesWrapper from "./meshmates.style";
 import { useStaticQuery, graphql } from "gatsby";
 import c_icon from "./c-icon.svg";
 import MeshmateStackImage from "../../../assets/images/meshmate/meshmate-stack.svg";
-import {Link} from "gatsby";
+import MeshmateStackLightImage from "../../../assets/images/meshmate/meshmate-stack-light.svg";
+import { Link } from "gatsby";
 import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
 
-const Meshmates=() => {
-  const data=useStaticQuery(
+const Meshmates = ({ theme }) => {
+  const data = useStaticQuery(
     graphql`query meshmates {
   allMdx(
     sort: {fields: [frontmatter___name], order: ASC}
@@ -61,7 +62,7 @@ const Meshmates=() => {
             </p>
           </Col>
           <Col className="meshmate-logo-wrapper" sm={12} lg={6}>
-            <img src={MeshmateStackImage} alt="meshmate logo"/>
+            <img src={theme === "dark" ? MeshmateStackLightImage : MeshmateStackImage} alt="meshmate logo"/>
           </Col>
         </Row>
         <div className="meshmates-grid">

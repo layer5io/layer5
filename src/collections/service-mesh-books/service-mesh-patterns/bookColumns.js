@@ -1,12 +1,12 @@
 import React from "react";
-import {Link} from "gatsby";
+import { Link } from "gatsby";
 import layer5_img from "./layer5-white.png";
 
 const sortByLen = (rowA, rowB, id, desc) => {
 
   if (rowA.original.subheading !== "bold") {
     if (rowA.original.subsection === rowB.original.subsection) {
-      
+
       return desc ? rowA.original.service_mesh_pattern.localeCompare(rowB.original.service_mesh_pattern) : rowA.original.service_mesh_pattern.localeCompare(rowB.original.service_mesh_pattern) ;
 
     }
@@ -15,7 +15,7 @@ const sortByLen = (rowA, rowB, id, desc) => {
 
 export const Columns = [
   {
-    Header:() => <span>Authors: <a href="https://twitter.com/lcalcote">Lee Calcote</a>, <a href="https://twitter.com/sheriffjackson">Nic Jackson</a></span>,
+    Header: () => <span>Authors: <a href="https://twitter.com/lcalcote">Lee Calcote</a>, <a href="https://twitter.com/sheriffjackson">Nic Jackson</a></span>,
     columns: [
       {
         Header: "Service Mesh Pattern",
@@ -26,7 +26,7 @@ export const Columns = [
     accessor: "service_mesh"
   },
   {
-    Header:() => <Link to="/"><img src={layer5_img} alt="layer5"/></Link>,
+    Header: () => <Link to="/"><img src={layer5_img} alt="layer5"/></Link>,
     columns: [
       {
         Header: "Category",

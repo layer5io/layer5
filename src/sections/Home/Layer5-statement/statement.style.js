@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import imgHero from "../../../assets/images/homePage-images/Lee-Calcote-Cloud-Native-Rejekts.jpg";
-
 
 const BannerSectionWrapper = styled.section`
     .row {
@@ -10,6 +8,8 @@ const BannerSectionWrapper = styled.section`
     .left-col {
         padding-left: 0px;
         padding-right: 0px;
+        flex: 0 0 51%;
+        max-width: 51%;
     }
     .left {
         display: flex;
@@ -22,16 +22,23 @@ const BannerSectionWrapper = styled.section`
     .right-col {
         padding-left: 0px;
         padding-right: 0px;
+        flex: 0 0 49%;
+        max-width: 49%;
     }
     h2.statement {
         color: ${(props) => props.theme.white};
         margin-bottom: 1rem;
+        font-size: clamp(12px, 20px + .8vw, 50px);
+        line-height: clamp(14px, 22px + .8vw, 50px);
     }
     h3.statement {
         color: ${(props) => props.theme.secondaryLightColor};
         margin-left: 3.5rem;
         text-indent: -3.5rem;
         margin-bottom: 2rem;
+        font-size: clamp(10px, 12px + .8vw, 50px);
+        line-height: clamp(10px, 12px + .8vw, 50px);
+
         &:before {
             content: "";
             display: inline-block;
@@ -47,14 +54,13 @@ const BannerSectionWrapper = styled.section`
         color: rgba(255, 255, 255, 0.7);
     }
     .hero {
-        background: url(${imgHero});
-        right: 0px;
-        height: 39.5rem;
-        vertical-align: middle
-        overflow-x: hidden;
-        padding: 0rem;
+        margin: auto;
         object-fit: cover;
-        object-position: 50% 50%;
+        width: inherit;
+        box-shadow: -0.25rem 0.25rem 1.25rem rgba(0, 0, 0, 0.25);
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+
     }
     .section-title {
         padding: 3rem 8rem;
@@ -74,60 +80,74 @@ const BannerSectionWrapper = styled.section`
         }
     }
 
+    @media screen and (max-width: 1600px) {
 
-    @media only screen and (max-width: 1600px) {
-        .section-title {
-            h3 {
-                font-size: 20px;
-            }
+        .section {
+            margin: 6em auto;
+        }
+
+        .left-col {
+            flex: 0 0 45%;
+            max-width: 45%;
+        }
+
+        .right-col {
+            flex: 0 0 55%;
+            max-width: 55%;
+        }
+
+        .hero {
+            height: 125%;
+            margin-top: -4.5rem;
         }
     }
+
+
     @media only screen and (max-width: 1440px) {
         .section-title {
             padding: 2rem 3rem;
         }
     }
-    @media only screen and (max-width: 1200px) {
-        .section-title {
-            padding: 2rem 2rem;
-            h2 {
-                font-size: 2rem;
-            }
+
+    @media screen and (max-width: 1200px) {
+
+        .section {
+            margin: 6em auto 8rem;
+        }
+
+        .left-col {
+            flex: 0 0 40%;
+            max-width: 40%;
+        }
+
+        .right-col {
+            flex: 0 0 60%;
+            max-width: 60%;
+        }
+
+        .hero {
+            height: 125%;
+            margin-top: -4.5rem;
         }
     }
-    @media only screen and (max-width: 912px) {
-        .section-title {
-            h4{
-                font-size: 1rem;
-            }
-            h3 {
-                font-size: 1rem;
-            }
-        }
-        .hero {
-            height: 31.6rem;
-        }
-     }
 
-    @media only screen and (max-device-width : 768px) { 
-        .hero {
-          height: 33.85rem;
-      }
-     }
-    
-     @media only screen and (max-width: 767px) {
-         .hero {
+    @media only screen and (max-width: 767px) {
+        .right-col {
             display: none;
-         }
-         .join-community {
-             text-align: center;
-         }
-     }  
-     @media only screen and (max-width: 576px) {
-         .section-title {
-            padding: 2rem 1rem;
-         }
-     }  
+        }
+        .join-community {
+            text-align: center;
+        }
+        .left-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }  
+    @media only screen and (max-width: 576px) {
+        .section-title {
+        padding: 2rem 1rem;
+        }
+    }  
 `;
 
 export default BannerSectionWrapper;

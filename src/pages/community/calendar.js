@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import theme from "../../theme/blog/themeStyles";
 import { GlobalStyle } from "../../sections/app.style";
 import SEO from "../../components/seo";
 import Navigation from "../../sections/General/Navigation";
@@ -14,6 +13,8 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import { Container } from "../../reusecore/Layout";
 import CalendarStyleWrapper from "../../sections/Community/Calendar/calendar.style";
 import PageHeader from "../../reusecore/PageHeader";
+import { darktheme } from "../../theme/app/themeStyles";
+import lighttheme from "../../theme/app/themeStyles";
 
 const LoadableCalendar = Loadable({
   loader: () => import("../../sections/Community/Calendar"),
@@ -55,15 +56,20 @@ const LoadableCalendar = Loadable({
 
 
 const CalendarPage = () => {
+  const [theme, setTheme] = useState();
+  const themeSetter = (thememode) => {
+    setTheme(thememode);
+  };
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
         <SEO
-          title="Service Mesh Events Calendar"
+          title="Layer5 Events Calendar"
           description="Join any or all of the Layer5 community meetings."
         />
-        <Navigation />
+        <Navigation theme={theme} themeSetter={themeSetter} />
         <LoadableCalendar />
         <Footer />
       </Layout>

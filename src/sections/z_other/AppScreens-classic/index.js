@@ -16,12 +16,12 @@ import screen5 from "../../../assets/images/classic/screens/secreens-5.png";
 import AppScreenSctionWrapper from "./appScreenSection.style";
 
 const AppScreensClassic = () => {
-  const ArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+  const ArrowLeft = ({ ...props }) => (
     <button {...props} className="slick-arrow slick-prev-icon">
       <IoIosArrowRoundBack />
     </button>
   );
-  const ArrowRight = ({ currentSlide, slideCount, ...props }) => (
+  const ArrowRight = ({ ...props }) => (
     <button {...props} className="slick-arrow slick-next-icon">
       <IoIosArrowRoundForward />
     </button>

@@ -121,4 +121,4 @@ const ImageHubWrapper = styled.section`
     }
 `;
 
-export default ImageHubWrapper; 
+export default ImageHubWrapper;

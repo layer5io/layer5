@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import twitter_icon from "../../../assets/images/socialIcons/twitter-light.svg";
@@ -74,9 +74,9 @@ const Connect = () => {
               <li><a href="http://meshery-security-vulns-reports@meshery.dev">Meshery Security and Vulnerability Reports</a></li>
               <li><a href="mailto:community@meshery.io">Meshery Community</a></li>
               <li><a href="mailto:katacoda@layer5.io">Katacoda-Managers</a></li>
-              <li><a href="http://developers@nighthawk.dev">Nighthawk Developers</a></li>
-              <li><a href="http://maintainers@nighthawk.dev">Nighthawk Maintainers</a></li>
-              <li><a href="http://users@nighthawk.dev">Nighthawk Users</a></li>
+              <li><a href="https://groups.google.com/a/getnighthawk.dev/g/developers">Nighthawk Developers</a></li>
+              <li><a href="https://groups.google.com/u/2/a/getnighthawk.dev/g/maintainers">Nighthawk Maintainers</a></li>
+              <li><a href="https://groups.google.com/a/getnighthawk.dev/g/users">Nighthawk Users</a></li>
               <li><a href="mailto:community@smp-spec.io">Service Mesh Performance Community</a></li>
               <li><a href="mailto:maintainers@smp-spec.io">Service Mesh Performance Maintainers</a></li>
               <li><a href="mailto:user-group@smp-spec.io">Service Mesh Performance Users</a></li>

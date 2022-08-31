@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import { HandbookWrapper } from "./Handbook.style";
 import TOC from "../../../components/handbook-navigation/index";
 import IntraPage from "../../../components/handbook-navigation/intra-page";
@@ -7,7 +7,7 @@ import { Link } from "gatsby";
 import TocPagination from "../../../components/handbook-navigation/TocPagination";
 
 const contents = [
-  { id: 0, link: "#top", text: "What are the different roles in the Layer5 community?",},
+  { id: 0, link: "#top", text: "What are the different roles in the Layer5 community?", },
   { id: 1, link: "#Community Manager", text: "Community Manager" },
   { id: 2, link: "#MeshMate", text: "MeshMate" },
   { id: 3, link: "#Maintainer", text: "Maintainer", },

@@ -4,7 +4,7 @@ import serviceMesh from "../../../assets/images/service-mesh-icons/service-mesh.
 
 import { ResourcePageWrapper } from "../Resources-grid/resourceGrid.style";
 
-const NoResources = (props) => {
+const NoResources = () => {
   return (
     <ResourcePageWrapper>
       <div className="no-resources-page">

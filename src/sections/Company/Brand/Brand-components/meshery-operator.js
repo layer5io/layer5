@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import {SRLWrapper} from "simple-react-lightbox";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
 import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
-import MesheryOperatorDark from "../../../../assets/images/meshery-operator/meshery-operator-dark.png";
-import MesheryOperator from "../../../../assets/images/meshery-operator/meshery-operator.png";
+import MesheryOperatorDark from "../../../../assets/images/meshery-operator/meshery-operator.png";
+import MesheryOperator from "../../../../assets/images/meshery-operator/meshery-operator-white.png";
 
 const MesheryOperatorWrapper = styled.section`
     .sub-project {

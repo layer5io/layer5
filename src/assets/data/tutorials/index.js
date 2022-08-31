@@ -97,7 +97,6 @@ const data = [
         },
         presenters: [
             {
-                link: "/community/members/navendu-pottekkat",
                 name: "Navendu Pottekkat",
             }
         ]

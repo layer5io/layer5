@@ -16,14 +16,15 @@ const BlogGrid = ({
   setListView,
   setGridView,
   pageContext,
-  data
+  data,
+  theme
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const [searchQuery, setSearchQuery] = useState("");
-  const {queryResults, searchData} = useDataList(
+  const { queryResults, searchData } = useDataList(
     data.allMdx.nodes,
     setSearchQuery,
     searchQuery,
@@ -53,7 +54,7 @@ const BlogGrid = ({
                   setListView={setListView}
                   setGridView={setGridView}
                 />
-                <SearchBox searchQuery={searchQuery} searchData={searchData} />
+                <SearchBox searchQuery={searchQuery} searchData={searchData} paginate={paginate} currentPage={currentPage} />
               </div>
               <div className="blog-grid-wrapper">
                 <Row>
@@ -65,7 +66,7 @@ const BlogGrid = ({
 
                   {searchedPosts.length > 0 && searchedPosts.map(({ id, frontmatter, fields }) => (
                     <Col key={id} xs={12} sm={6}>
-                      <Card frontmatter={frontmatter} fields={fields} />
+                      <Card theme={theme} frontmatter={frontmatter} fields={fields} />
                     </Col>
                   ))}
                   <Col>

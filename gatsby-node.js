@@ -35,7 +35,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   createRedirect({ fromPath: "/books", toPath: "/learn/service-mesh-books", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/workshops", toPath: "/learn/service-mesh-workshops", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/labs", toPath: "/learn/service-mesh-labs", redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: "/meshery", toPath: "/service-mesh-management/meshery", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/meshery", toPath: "/cloud-native-management/meshery", redirectInBrowser: true, isPermanent: true });
+  createRedirect({ fromPath: "/service-mesh-management/meshery", toPath: "/cloud-native-management/meshery", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/landscape", toPath: "/service-mesh-landscape", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/events", toPath: "/community/events", redirectInBrowser: true, isPermanent: true });
   createRedirect({ fromPath: "/programs", toPath: "/careers/programs", redirectInBrowser: true, isPermanent: true });
@@ -67,9 +68,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   );
   const blogTagListTemplate = path.resolve(
     "src/templates/blog-tag-list.js"
-  );
-  const blogViewTemplate = path.resolve(
-    "src/templates/blog.js"
   );
 
   const EventsTemplate = path.resolve(
@@ -104,6 +102,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/member-single.js"
   );
 
+  const MemberBioTemplate = path.resolve(
+    "src/templates/executive-bio.js"
+  );
+
   const WorkshopTemplate = path.resolve(
     "src/templates/workshop-single.js"
   );
@@ -115,107 +117,96 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const resourcePostTemplate = path.resolve(
     "src/templates/resource-single.js"
   );
-
-  const resourceViewTemplate = path.resolve(
-    "src/templates/resource.js"
+  const integrationTemplate = path.resolve(
+    "src/templates/integrations.js"
   );
+
   const res = await graphql(`
-     {
-       allPosts:  allMdx(
-         filter: { frontmatter: { published: { eq: true } } }
-       ) {
-         nodes {
-           frontmatter{
-             program
-             programSlug
-           }
-           fields {
-             collection
-             slug
-           }
-         }
-       }
-       blogTags: allMdx(
-         filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-         ){
-           group(field: frontmatter___tags) {
-             nodes{
-               id
-             }
-             fieldValue
-           }
-       }
-       blogCategory: allMdx(
-         filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
-         ){
-           group(field: frontmatter___category) {
-             nodes{
-               id
-             }
-             fieldValue
-           }
-       }
-       allCollections: allMdx(
-         filter: {fields: {collection: {eq: "events"}}}
-       ){
-         nodes{
-           fields{
-             slug
-             collection
-           }
-         }
-       }
-       singleWorkshop: allMdx(
-         filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
-       ){
-         nodes{
-           fields{
-             slug
-             collection
-           }
-         }
-       }
-       labs: allMdx(
-         filter: {fields: {collection: {eq: "service-mesh-labs"}}}
-       ){
-         nodes{
-           fields{
-             slug
-             collection
-           }
-         }
-       }
-       allResources:  allMdx(
-         filter: { frontmatter: { published: { eq: true } } }
-       ) {
-         nodes {
-           frontmatter{
-             program
-             programSlug
-           }
-           fields {
-             collection
-             slug
-           }
-         }
-       }
-       learncontent: allMdx(
-         filter: {fields: {collection: {eq: "content-learn"}}}
-       ){
-         nodes{
-           fields{
-             learnpath
-             slug
-             course
-             section
-             chapter
-             pageType
-             collection
-           }
-         }
-       }
-     }
-   `);
+    {
+      allPosts:  allMdx(
+        filter: { frontmatter: { published: { eq: true } } }
+      ) {
+        nodes {
+          frontmatter{
+            program
+            programSlug
+          }
+          fields {
+            collection
+            slug
+          }
+        }
+      }
+      blogTags: allMdx(
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+        ){
+          group(field: frontmatter___tags) {
+            nodes{
+              id
+            }
+            fieldValue
+          }
+      }
+      blogCategory: allMdx(
+        filter: { fields: { collection: { eq: "blog" } }, frontmatter: { published: { eq: true } } }
+        ){
+          group(field: frontmatter___category) {
+            nodes{
+              id
+            }
+            fieldValue
+          }
+      }
+      memberBio: allMdx(
+        filter: { fields: { collection: { eq: "members" } }, frontmatter: { published: { eq: true }, executive_bio: { eq: true } } }
+        ){
+          nodes{
+            frontmatter{
+              name
+            }
+            fields{
+              slug
+              collection
+            }
+          }
+      }
+      singleWorkshop: allMdx(
+        filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+        }
+      }
+      labs: allMdx(
+        filter: {fields: {collection: {eq: "service-mesh-labs"}}}
+      ){
+        nodes{
+          fields{
+            slug
+            collection
+          }
+        }
+      }
+      learncontent: allMdx(
+        filter: {fields: {collection: {eq: "content-learn"}}}
+      ){
+        nodes{
+          fields{
+            learnpath
+            slug
+            course
+            section
+            chapter
+            pageType
+            collection
+          }
+        }
+      }
+    }
+  `);
 
   // handle errors
   if (res.errors) {
@@ -235,10 +226,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const news = allNodes.filter(
     node => node.fields.collection === "news"
-  );
-
-  const projects = allNodes.filter(
-    node => node.fields.collection === "projects"
   );
 
   const books = allNodes.filter(
@@ -261,17 +248,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     node => node.fields.collection === "members"
   );
 
+  const integrations = allNodes.filter(
+    nodes => nodes.fields.collection === "integrations"
+  );
+
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
   // const events = res.data.allCollections.nodes;
-
-  paginate({
-    createPage,
-    items: blogs,
-    itemsPerPage: 10,
-    pathPrefix: "/blog",
-    component: blogViewTemplate
-  });
 
   paginate({
     createPage,
@@ -293,11 +276,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogCategory = res.data.blogCategory.group;
   blogCategory.forEach(category => {
-    paginate({
-      createPage,
-      items: category.nodes,
-      itemsPerPage: 6,
-      pathPrefix: `/blog/category/${slugify(category.fieldValue)}`,
+    createPage({
+      path: `/blog/category/${slugify(category.fieldValue)}`,
       component: blogCategoryListTemplate,
       context: {
         category: category.fieldValue,
@@ -307,11 +287,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const BlogTags = res.data.blogTags.group;
   BlogTags.forEach(tag => {
-    paginate({
-      createPage,
-      items: tag.nodes,
-      itemsPerPage: 4,
-      pathPrefix: `/blog/tag/${slugify(tag.fieldValue)}`,
+    createPage({
+      path: `/blog/tag/${slugify(tag.fieldValue)}`,
       component: blogTagListTemplate,
       context: {
         tag: tag.fieldValue,
@@ -389,6 +366,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  const MemberBio = res.data.memberBio.nodes;
+  MemberBio.forEach(memberbio => {
+    createPage({
+      path: `${memberbio.fields.slug}/bio`,
+      component: MemberBioTemplate,
+      context: {
+        member: memberbio.frontmatter.name,
+      },
+    });
+  });
+
   singleWorkshop.forEach(workshop => {
     createPage({
       path: workshop.fields.slug,
@@ -405,6 +393,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: LabTemplate,
       context: {
         slug: lab.fields.slug,
+      },
+    });
+  });
+
+  integrations.forEach((integration) => {
+    createPage({
+      path: `/cloud-native-management/meshery${integration.fields.slug}`,
+      component: integrationTemplate,
+      context: {
+        slug: integration.fields.slug,
       },
     });
   });
@@ -457,7 +455,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 };
-
 
 // slug starts and ends with '/' so parts[0] and parts[-1] will be empty
 const getSlugParts = slug => slug.split("/").filter(p => !!p);

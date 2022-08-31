@@ -1,5 +1,5 @@
 
-export const feedbackData=[
+export const feedbackData = [
   {
     feedback: "I couldn't have enjoyed this workshop more than I did. The Advanced Istio workshop given by Docker Captains was great.",
     workshop: "DockerCon: Advanced Istio",

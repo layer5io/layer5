@@ -13,7 +13,9 @@ export const StepsIndicatorWrapper = styled.ul`
 
         &.active {
           font-weight: 600;
-          color: black;
+          color: ${props => props.theme.text};
+
+
         }
     }
 `;

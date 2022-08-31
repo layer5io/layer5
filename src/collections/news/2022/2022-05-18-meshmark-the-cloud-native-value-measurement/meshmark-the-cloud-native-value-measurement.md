@@ -4,6 +4,7 @@ subtitle: "An open index for measuring performance of cloud native infrastructur
 date: 2022-05-17 08:00:00 -0530
 author: The Newsroom
 thumbnail: ../../../../assets/images/meshmark/stacked/meshmark-dark-full.png
+darkthumbnail: ../../../../assets/images/meshmark/stacked/meshmark-dark-full.png
 category: "Press Release"
 presskit: "/press/kits/MeshMark-press-kit.zip"
 description: "Layer5, a provider of cloud native management software, announced today the general availability of the Meshery Docker Extension. Complementing Docker Desktop's role as the go-to Kubernetes environment for cloud native developers, the Meshery Docker Extension provides easy access to the next layer of cloud native infrastructure: service meshes. As an inaugural Docker Extensions Partner and a maker of industry-defining, cloud native software, Layer5’s integration of Meshery provides a visual pathway for existing Docker Compose applications to move into Kubernetes and onto any service mesh."
@@ -66,7 +67,7 @@ With project maintainers from Layer5, Intel, HashiCorp, and Red Hat, and collabo
   />
 
 <p>
-With the project’s <Link to="/company/news/analyzing-service-mesh-performance">approach to performance analysis</Link> published in IEEE The Bridge, ongoing analysis of nearly 40,000 performance test results will comprise the initial release of the <a href="https://smp-spec.io/dashboard">Service Mesh Performance Dashboard</a>, also unveiling at KubeCon EU. <Link to="/service-mesh-management/meshery">Meshery</Link>, the cloud native manager, orchestrates the provisioning and configuration of Kubernetes and each service mesh. With <Link to="projects/nighthawk">Nighthawk</Link> embedded, Meshery’s performance management functions are what drives the tests run within the CNCF Lab.
+With the project’s <Link to="/company/news/analyzing-service-mesh-performance">approach to performance analysis</Link> published in IEEE The Bridge, ongoing analysis of nearly 40,000 performance test results will comprise the initial release of the <a href="https://smp-spec.io/dashboard">Service Mesh Performance Dashboard</a>, also unveiling at KubeCon EU. <Link to="/cloud-native-management/meshery">Meshery</Link>, the cloud native manager, orchestrates the provisioning and configuration of Kubernetes and each service mesh. With <Link to="/projects/nighthawk">Nighthawk</Link> embedded, Meshery’s performance management functions are what drives the tests run within the CNCF Lab.
 </p>
 <Blockquote style="display:block;"
   quote="The precision by which performance measurements are generated and analyzed is a pinnacle focus of Nighthawk. Mesh performance characterization should be distilled from a set of value measurements, and that is where MeshMark compliments to create the ultimate comprehensive efficiency calculation."

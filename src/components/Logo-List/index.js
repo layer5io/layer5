@@ -1,5 +1,5 @@
 import React from "react";
-import {LogoListWrapper} from "./LogoList.style";
+import { LogoListWrapper } from "./LogoList.style";
 
 const LogoList = ({ logos, className }) => {
   return (

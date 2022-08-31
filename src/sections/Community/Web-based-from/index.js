@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Webform from "./webform.style";
 import SlackLinkNotif from "../../../components/SlackLinkNotif";
-import { Container, Row, Col } from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
-import img1 from "./Rectangle 471.png";
-import img2 from "./Vector.png";
 import { Field, Formik, Form } from "formik";
 import axios from "axios";
 import { Link } from "gatsby";
@@ -74,23 +72,23 @@ const WebBasedForm = () => {
   };
 
   const MemberFormStart = () => {
-    
+
     return (
       <Container>
         <h2 className="title">New Community Member</h2>
         <p className="para">Hi! Welcome to the Layer5 community. As you get oriented with the community and its projects, will you consider filling in this form? It helps us get familiarized with you and you with the ongoing projects and community. There is much to learn around the technologies at-hand. We'll look to get you acclimated and engaged around your areas of interest and passion. </p>
         <Formik
           initialValues={{
-            firstname: memberFormOne.firstname? memberFormOne.firstname : "",
-            lastname: memberFormOne.lastname? memberFormOne.lastname:"",
-            email: memberFormOne.email?memberFormOne.email:"",
-            occupation: memberFormOne.occupation?memberFormOne.occupation:"",
-            org: memberFormOne.org?memberFormOne.org:"",
-            github: memberFormOne.github?memberFormOne.github:"",
-            twitter: memberFormOne.twitter?memberFormOne.twitter:"",
-            linkedin: memberFormOne.linkedin?memberFormOne.linkedin:"",
-            tshirtSize: memberFormOne.tshirtSize?memberFormOne.tshirtSize:"",
-            picture: memberFormOne.picture?memberFormOne.picture:""
+            firstname: memberFormOne.firstname ? memberFormOne.firstname : "",
+            lastname: memberFormOne.lastname ? memberFormOne.lastname : "",
+            email: memberFormOne.email ? memberFormOne.email : "",
+            occupation: memberFormOne.occupation ? memberFormOne.occupation : "",
+            org: memberFormOne.org ? memberFormOne.org : "",
+            github: memberFormOne.github ? memberFormOne.github : "",
+            twitter: memberFormOne.twitter ? memberFormOne.twitter : "",
+            linkedin: memberFormOne.linkedin ? memberFormOne.linkedin : "",
+            tshirtSize: memberFormOne.tshirtSize ? memberFormOne.tshirtSize : "",
+            picture: memberFormOne.picture ? memberFormOne.picture : ""
           }}
           onSubmit={values => {
             setMemberFormOne(values);
@@ -166,22 +164,22 @@ const WebBasedForm = () => {
         </p>
 
         <div className="center">
-          <div className={role==="Contributor"?"option active":"option"} onClick={() => {
+          <div className={role === "Contributor" ? "option active" : "option"} onClick={() => {
             setRole("Contributor");
           }}>
             I'm here as a Contributor
           </div>
-          <div className={role==="Developer"?"option active":"option"} onClick={() => {
+          <div className={role === "Developer" ? "option active" : "option"} onClick={() => {
             setRole("Developer");
           }}>
             I'm here as a User
           </div>
-          <div className={role==="User"?"option active":"option"} onClick={() => {
+          <div className={role === "User" ? "option active" : "option"} onClick={() => {
             setRole("User");
           }}>
             I'm here as a User and Contibutor
           </div>
-          <div className={role==="Bystander"?"option active":"option"} onClick={() => {
+          <div className={role === "Bystander" ? "option active" : "option"} onClick={() => {
             setRole("Bystander");
           }}>
             I'm here as a Bystander <br /><small>(here to learn and absorb passively)</small>
@@ -192,7 +190,7 @@ const WebBasedForm = () => {
             <Button onClick={() => setStepNumber(2)} secondary type="submit" className="btn-next" title="Next Step" />
           </div>
         </div>
-       
+
         <br /><br /><br /><br />
       </Container>
     );
@@ -250,13 +248,13 @@ const WebBasedForm = () => {
         <h2 className="title">Layer5 and You</h2>
         <Formik
           initialValues={{
-            projects: MemberFormThirdValue.projects?MemberFormThirdValue.projects:[],
-            tutorials: MemberFormThirdValue.tutorials?MemberFormThirdValue.tutorials:[],
-            meshMate: MemberFormThirdValue.tutorials?MemberFormThirdValue.meshMate:[],
-            interests: MemberFormThirdValue.interests?MemberFormThirdValue.interests:"",
-            profiency: MemberFormThirdValue.profiency?MemberFormThirdValue.profiency:"",
-            interestToShareContribution: MemberFormThirdValue.interestToShareContribution?MemberFormThirdValue.interestToShareContribution:"",
-            areaOfFocus: MemberFormThirdValue.areaOfFocus?MemberFormThirdValue.areaOfFocus:[]
+            projects: MemberFormThirdValue.projects ? MemberFormThirdValue.projects : [],
+            tutorials: MemberFormThirdValue.tutorials ? MemberFormThirdValue.tutorials : [],
+            meshMate: MemberFormThirdValue.tutorials ? MemberFormThirdValue.meshMate : [],
+            interests: MemberFormThirdValue.interests ? MemberFormThirdValue.interests : "",
+            profiency: MemberFormThirdValue.profiency ? MemberFormThirdValue.profiency : "",
+            interestToShareContribution: MemberFormThirdValue.interestToShareContribution ? MemberFormThirdValue.interestToShareContribution : "",
+            areaOfFocus: MemberFormThirdValue.areaOfFocus ? MemberFormThirdValue.areaOfFocus : []
           }}
           onSubmit={values => {
             setMemberFormThirdValue(values);
@@ -583,7 +581,7 @@ const WebBasedForm = () => {
             expect: false,
             highlighted: false,
             paid: false,
-            affiliated:  false,
+            affiliated: false,
             help: MemberFormFourValue.help ? MemberFormFourValue.help : ""
           }}
           onSubmit={values => {

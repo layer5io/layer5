@@ -10,9 +10,9 @@ const Image = ({ childImageSharp, extension, publicURL, alt, ...rest }) => {
         <img src={publicURL} alt={alt} />
       </div>
     );
-  } else{
+  } else {
     return <GatsbyImage image={childImageSharp.gatsbyImageData} {...rest} alt={alt} />;
-  }  
+  }
 };
 
 export default Image;

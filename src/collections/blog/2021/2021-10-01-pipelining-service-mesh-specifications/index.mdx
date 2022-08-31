@@ -4,8 +4,7 @@ subtitle: "Using SMI and SMP specs on your CI/CD pipelines with Meshery's GitHub
 date: 2021-11-09 10:30:05 -0530
 author: Layer5 Team
 thumbnail: ./service-mesh-specifications.png
-type: Blog
-product: Service Mesh Performance
+darkthumbnail: ./service-mesh-specifications.png
 category: "Service Mesh Specifications"
 tags:
  - SMI
@@ -13,6 +12,8 @@ tags:
  - Meshery
 published: true
 resource: true
+type: Blog
+product: Service Mesh Performance
 ---
 
 import { Link } from "gatsby";
@@ -29,7 +30,7 @@ import githubBlack from "../../../../assets/images/socialIcons/github_black.svg"
   
 <p>With growing adoption of service meshes in cloud native environments, service mesh abstractions - service mesh-neutral specifications - have emerged. <Link to="/projects/service-mesh-performance">Service Mesh Performance</Link>  and <Link to="/projects/service-mesh-interface-conformance">Service Mesh Interface</Link> are two open specifications that address the need for universal interfaces for interacting with and managing any type of service mesh. Let’s examine what each specification provides.</p>
 
-<img src={smpLogo} className="image-left-no-shadow" alt="service mesh performance logo" /><p><Link to="https://smp-spec.io">Service Mesh Performance</Link> standardizes service mesh value measurement, characterizing any deployment's performance by capturing the details of infrastructure capacity, service mesh configuration and workload metadata.</p>
+<img src={smpLogo} className="image-left-no-shadow" alt="service mesh performance logo" /><p><a href="https://smp-spec.io">Service Mesh Performance</a> standardizes service mesh value measurement, characterizing any deployment's performance by capturing the details of infrastructure capacity, service mesh configuration and workload metadata.</p>
 
 <img src={smiLogo} className="image-right-no-shadow" alt="service mesh interface logo" /><p><a href="https://smi-spec.io">Service Mesh Interface</a> provides a standard interface for service meshes on Kubernetes. These (currently) four specfications offer a common denominator set of interfaces to support most common service mesh use cases and the flexibility to evolve to support new service mesh capabilities over time.</p>
 

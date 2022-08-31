@@ -1,12 +1,14 @@
 import React from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import SoSpecialWrapper from "./so-special-style";
 
 import Button from "../../../reusecore/Button";
 import { graphql, useStaticQuery } from "gatsby";
 import Image from "../../../components/image";
 
-const SoSpecial = () => {
+const SoSpecial = ({ theme }) => {
   const data = useStaticQuery(
     graphql`query newsList {
   allMdx(
@@ -27,6 +29,13 @@ const SoSpecial = () => {
           extension
           publicURL
         }
+        darkthumbnail{
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
       }
       fields {
         slug
@@ -41,7 +50,7 @@ const SoSpecial = () => {
     infinite: false,
     speed: 500,
     slidesToShow: 2.5,
-    swipeToSlide:true,
+    swipeToSlide: true,
 
     responsive: [
       {
@@ -87,7 +96,7 @@ const SoSpecial = () => {
       }
     ]
   };
-  return(
+  return (
     <SoSpecialWrapper>
       <div className="so-special-head">
         <h4>LAYER5 IN THE NEWS</h4>
@@ -96,12 +105,12 @@ const SoSpecial = () => {
       <div className="special_carousel">
         <Slider {...settings}>
           {
-            data.allMdx.nodes.map(({id,frontmatter,fields}) => (
+            data.allMdx.nodes.map(({ id,frontmatter,fields }) => (
               <Button className="special-cont_btn" url={fields.slug} key={id}>
                 <div id="special-cont" >
                   <div id="special-cont_img">
                     <Image
-                      {...frontmatter.thumbnail}
+                      {...(theme === "dark" ? frontmatter.darkthumbnail : frontmatter.thumbnail)}
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     />
@@ -112,6 +121,7 @@ const SoSpecial = () => {
                 </div>
               </Button>
             ))}
+
         </Slider>
       </div>
       <div className="so-special-foot">

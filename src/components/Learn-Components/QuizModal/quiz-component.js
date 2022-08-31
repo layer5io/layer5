@@ -6,7 +6,7 @@ import { BsArrowLeft } from "@react-icons/all-files/bs/BsArrowLeft";
 import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
 
 
-const Instruction = ({closeInstruction}) => {
+const Instruction = ({ closeInstruction }) => {
   return (
     <section className="instruction__container">
       <div className="ins__main">
@@ -44,10 +44,10 @@ const ListItem = (props) => {
   const onClickAnswer = () => {
     props.answerCallback(props.index);
   };
-  
+
   return (
     <li
-      className={`${props.pquestionToAns?.aIndex===props.index ? "ans":"no-ans"}`}
+      className={`${props.pquestionToAns?.aIndex === props.index ? "ans" : "no-ans"}`}
       onClick={(event) => {
         const e = event.target;
         setTimeout(() => {
@@ -59,7 +59,7 @@ const ListItem = (props) => {
       {props.answerItem}
     </li>
   );
-    
+
 };
 
 
@@ -76,14 +76,14 @@ const Timer = (props) => {
     />
   );
 };
-  
+
 const QuestionBox = (props) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-  
+
   return (
     <div className="quizbox__container">
-      <div className="quizbox__head--container"> 
+      <div className="quizbox__head--container">
         <h2 className="quizbox__head">{props.title}</h2>
         <Timer time={props.time} />
       </div>
@@ -132,8 +132,8 @@ const QuestionBox = (props) => {
               props.nextQuestion();
               setSelectedAnswer(null);
             }}>
-              <label>{props.answers.length === props.questionIndex ? "Finish":"Next"} </label>
-              <BsArrowRight className="quizbox__progress-control__icon"/> 
+              <label>{props.answers.length === props.questionIndex ? "Finish" : "Next"} </label>
+              <BsArrowRight className="quizbox__progress-control__icon"/>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@ const QuizComponent = () => {
   const [score, setScore] =  useState(0);
   const [time, setTime] = useState(Date.now() + 180000);
   const [showInstruction, setShowInstruction] = useState(true);
-  const [questionToAns,setQuestionToAns]=useState([]);
+  const [questionToAns,setQuestionToAns] = useState([]);
 
   const finishTimer = () => {
     setTimeout(() => {
@@ -164,10 +164,10 @@ const QuizComponent = () => {
 
   const fetchData = () => {
     let fetchedQuestion = [
-      { prompt: "Question 1", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1},
-      { prompt: "Question 2", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1},
-      { prompt: "Question 3", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1},
-      { prompt: "Question 4", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1},
+      { prompt: "Question 1", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1 },
+      { prompt: "Question 2", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1 },
+      { prompt: "Question 3", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1 },
+      { prompt: "Question 4", answers: ["Answer 1","Answer 2","Answer 3","Answer 4"], correct: 1 },
     ];
 
     // Will be fetching the title from backend
@@ -178,7 +178,7 @@ const QuizComponent = () => {
   };
 
   const checkAnswer = (index) => {
-    if(!questionData[progress]){
+    if (!questionData[progress]){
       return;
     }
     let correct = questionData[progress].correct;
@@ -189,17 +189,17 @@ const QuizComponent = () => {
       setScore(newScore);
       // newProgress = progress + 1;
       // setProgress(newProgress);
-      
+
     } else {
       // newProgress = progress + 1;
       // setProgress(newProgress);
-      
+
     }
   };
 
   const resetQuiz = () => {
-    setScore(0); 
-    setProgress(0); 
+    setScore(0);
+    setProgress(0);
     setTime(Date.now() + 180000);
     finishTimer();
   };
@@ -207,11 +207,11 @@ const QuizComponent = () => {
   const prevQuestionHandler = () => {
     let current = progress;
     let newCurrent = progress - 1;
-    if(0 <= newCurrent) {
+    if (0 <= newCurrent) {
       setProgress(newCurrent);
     }
-    let newScore = score-1;
-    if(0 <= newScore) {
+    let newScore = score - 1;
+    if (0 <= newScore) {
       setScore(newScore);
     }
   };
@@ -219,7 +219,7 @@ const QuizComponent = () => {
   const nextQuestionHandler = () => {
     let current = progress;
     let newCurrent = progress + 1;
-    if(newCurrent < questionData.length) {
+    if (newCurrent < questionData.length) {
       setProgress(newCurrent);
     } else {
       setProgress(current + 1);
@@ -227,7 +227,7 @@ const QuizComponent = () => {
   };
 
   let questionDatum = questionData[progress];
-  let pquestionToAns=questionToAns.find(item => item.qIndex==progress);
+  let pquestionToAns = questionToAns.find(item => item.qIndex == progress);
 
   if (showInstruction){
     return (
@@ -236,34 +236,34 @@ const QuizComponent = () => {
           setShowInstruction(false);
           setTime(Date.now() + 180000);
           finishTimer();
-        }} 
+        }}
         />
       </QuizComponentWrapper>
     );
   }
 
   const attemptQuestionHandler = (aIndex) => {
-    let qIndex=progress;
-    let attemptedQuestionToAns={
-      qIndex:qIndex,
-      aIndex:aIndex
+    let qIndex = progress;
+    let attemptedQuestionToAns = {
+      qIndex: qIndex,
+      aIndex: aIndex
     };
     // finding if the question is already attempted or not
-    let existQuestionIndex=questionToAns.findIndex(item => item.qIndex===qIndex);
+    let existQuestionIndex = questionToAns.findIndex(item => item.qIndex === qIndex);
 
     // If it is already exsist replace the old ans with new ans
-    if(existQuestionIndex>=0){
-      let updatedQuestionToAns=[...questionToAns];
-      updatedQuestionToAns[existQuestionIndex]=attemptedQuestionToAns;
+    if (existQuestionIndex >= 0){
+      let updatedQuestionToAns = [...questionToAns];
+      updatedQuestionToAns[existQuestionIndex] = attemptedQuestionToAns;
       setQuestionToAns(updatedQuestionToAns);
-      
-    }else{
-      let updatedQuestionToAns=[...questionToAns];
-      updatedQuestionToAns.push(attemptedQuestionToAns); 
+
+    } else {
+      let updatedQuestionToAns = [...questionToAns];
+      updatedQuestionToAns.push(attemptedQuestionToAns);
 
       setQuestionToAns(updatedQuestionToAns);
       // If only new question is attempted then need to update the attempted question state otherwise not
-      let newAttempt = attempt+1;
+      let newAttempt = attempt + 1;
       setAttempt(newAttempt);
     }
 
@@ -278,10 +278,10 @@ const QuizComponent = () => {
           answers={questionDatum.answers}
           answerCallback={checkAnswer}
           questionDatum={questionDatum}
-          pquestionToAns={pquestionToAns?pquestionToAns:null}
+          pquestionToAns={pquestionToAns ? pquestionToAns : null}
           time={time}
           attempted={attempt}
-          notattempted={questionData.length-attempt}
+          notattempted={questionData.length - attempt}
           attemptQuestion={attemptQuestionHandler}
           prevQuestion={prevQuestionHandler}
           nextQuestion={nextQuestionHandler}

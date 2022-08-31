@@ -73,13 +73,13 @@ const ConductWrapper = styled.div`
 `;
 
 
-const MentorshipPrograms= () => {
+const MentorshipPrograms = () => {
   const data = React.useMemo(() => programs_data);
   return (
     <HandbookWrapper>
       <div className="page-header-section">
         <h1>Mentorship Programs</h1>
-      </div>   
+      </div>
       <TOC />
       <ConductWrapper>
         <Container>
@@ -103,14 +103,14 @@ const MentorshipPrograms= () => {
                   </Row>
                 </div>
               </div>
-            );     
+            );
           })}
 
         </Container>
         <TocPagination />
-      </ConductWrapper>       
+      </ConductWrapper>
     </HandbookWrapper>
   );
 };
-  
+
 export default MentorshipPrograms;

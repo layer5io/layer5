@@ -1,4 +1,4 @@
-import {includes, orderBy } from "lodash";
+import { includes, orderBy } from "lodash";
 
 class RelatedPostsFactory {
 
@@ -45,7 +45,7 @@ class RelatedPostsFactory {
 
     const addToMap = post => {
       const slug = getSlug(post);
-      if(!Object.prototype.hasOwnProperty.call(identityMap, slug)){
+      if (!Object.prototype.hasOwnProperty.call(identityMap, slug)){
         identityMap[slug] = {
           post: post,
           points: 0
@@ -57,7 +57,7 @@ class RelatedPostsFactory {
       const categoryPoints = 2;
       const slug = getSlug(post);
 
-      if(post.frontmatter.category ===category){
+      if (post.frontmatter.category === category){
         identityMap[slug].points += categoryPoints;
       }
     };

@@ -279,6 +279,10 @@ const Webform = styled.div`
         }
       }
     }
+
+    h2.title {
+      color: ${(props) => props.theme.primaryColor};
+    }
 `;
 
 export default Webform;
