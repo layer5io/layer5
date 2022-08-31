@@ -115,7 +115,7 @@ alt="Service Mesh Interface Conformance" align="left" /></a>
 
 
 <p style="clear:both;">
-<h2><a href="https://layer5.io/smi">Nighthawk</a></h2>
+<h2><a href="https://layer5.io/projects/nighthawk">Nighthawk</a></h2>
 <a href="https://getnighthawk.dev/">
   <img src=".github/assets/images/getnighthawk/layer5-getnighthawk.png"
 style="float:left;margin:10px;" width="125px"
