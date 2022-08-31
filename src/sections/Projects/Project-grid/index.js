@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
+import ProudMaintainers from "../../../sections/Home/Proud-maintainers";
 
 import { ProjectWrapper } from "./projectGrid.style";
 import MeshMapCTA from "../../meshmap-cta";
@@ -107,10 +108,10 @@ const ProjectPage = () => {
               </div>
             </Link>
           </div>
-
           <MeshMapCTA />
         </Container>
       </div>
+      <ProudMaintainers />
     </ProjectWrapper>
   );
 };

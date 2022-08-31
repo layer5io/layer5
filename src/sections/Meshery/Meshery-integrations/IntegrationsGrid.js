@@ -29,18 +29,19 @@ const IntegrationsGrid = ({ category }) => {
    `);
 
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
-  let [categoryList,setCategoryList] = useState([
+  let [categoryList, setCategoryList] = useState([
     { id: 1, name: "All", isSelected: false },
     { id: 2, name: "Platforms", isSelected: false },
     { id: 3, name: "Service Mesh", isSelected: false },
     { id: 4, name: "Operating System", isSelected: false },
     { id: 5, name: "Collaboration", isSelected: false },
+    { id: 6, name: "Telemetry", isSelected: false },
   ]);
 
   useEffect(() => setCategory(), []);
 
   const setCategory = () => {
-    if (category !== undefined){
+    if (category !== undefined) {
       categoryList.forEach((item) => {
         if (item.name === category) {
           item.isSelected = true;
@@ -56,7 +57,7 @@ const IntegrationsGrid = ({ category }) => {
   const setFilter = (event) => {
     let count = 0;
     const selectedCategory = event.target.innerHTML;
-    if (selectedCategory == "All"){
+    if (selectedCategory == "All") {
       categoryList.forEach(item => {
         if (item.isSelected & item.name != "All") {
           item.isSelected = false;
@@ -84,15 +85,15 @@ const IntegrationsGrid = ({ category }) => {
   };
 
   const setIntegrationCollection = () => {
-    if (categoryList[0].isSelected){
+    if (categoryList[0].isSelected) {
       setIntegrationList(data.allMdx.nodes);
       return;
     }
     let tempIntegrationCollection = [];
     categoryList.forEach(item => {
-      if (item.isSelected){
+      if (item.isSelected) {
         data.allMdx.nodes.forEach(integration => {
-          if (integration.frontmatter.category == item.name){
+          if (integration.frontmatter.category == item.name) {
             tempIntegrationCollection = [...tempIntegrationCollection, integration];
           }
         });
@@ -121,7 +122,7 @@ const IntegrationsGrid = ({ category }) => {
         items={IntegrationList}
         renderItem={(item) => {
           const status = item.frontmatter.status === "InProgress" ? true : false;
-          if (status){
+          if (status) {
             return (
               <Hexagon className="container-inactive" style={{ background: "#A0AAAA" }}>
                 <img
