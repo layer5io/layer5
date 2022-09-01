@@ -15,6 +15,8 @@ tags:
 resource: true
 ---
 import { ResourcesWrapper } from "../../Resources.style.js";
+import serviceMesh from "./service-mesh.svg";
+import arch from "./arch.svg";
 
 <ResourcesWrapper>
   
@@ -31,6 +33,8 @@ import { ResourcesWrapper } from "../../Resources.style.js";
   <p> Service meshes are divided into two parts: the control plane and the data plane. The control plane's responsibilities include securing the mesh, facilitating service discovery, doing regular health checks, enforcing policies, and handling other operational issues. A central registration of services and their corresponding IP addresses is referred to as service discovery. To share with other services how to communicate with it and to assist enforce rules on which services are allowed to communicate with which other services, the application must be registered on the control plane. </p>
   
   <p> The communication between services, on the other hand, is handled by the data plane. Because many service mesh solutions use a sidecar proxy to manage data plane connections, the amount of knowledge that the services must have about the network environment is constrained. </p>
+ 
+  <img src = {serviceMesh} class="image-center" alt="Service Mesh" />
   
   <h3> Inside the Istio service mesh </h3>
   
@@ -40,6 +44,8 @@ import { ResourcesWrapper } from "../../Resources.style.js";
     <li> The proxies are controlled and set up by the control plane to route traffic. </li>
   </ul>
   </p>
+  
+   <img src = {arch} class="image-center" alt="Istio Service Mesh" />
   
   <h4> Envoy </h4>
   
