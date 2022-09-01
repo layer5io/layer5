@@ -11,6 +11,8 @@ import FeaturesSectionWrapper from "./features-section.style";
 import { StaticImage } from "gatsby-plugin-image";
 
 const slides_list = [slide1, slide2, slide3];
+const slide2Img = "../images/meshery_benchmark_screen.png";
+const slide3Img = "../images/meshery-configuration-management.png";
 
 const FeaturesSection = () => {
 
@@ -68,10 +70,10 @@ const FeaturesSection = () => {
                   <img src={slide1} alt="Slide 1" />
                 </div>
                 <div>
-                  <StaticImage src="../images/meshery_benchmark_screen.png" alt="Slide 2" />
+                  <StaticImage src={slide2Img} alt="Slide 2" />
                 </div>
                 <div >
-                  <StaticImage src="../images/meshery-configuration-management.png" alt="Slide 3" />
+                  <StaticImage src={slide3Img} alt="Slide 3" />
                 </div>
               </Slider>
             </Col>
