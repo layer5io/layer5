@@ -74,7 +74,7 @@ const ContactWrapper = styled.section`
         form{
             padding: 50px;
             input{
-                width: 70%;
+                width: 100%;
             }
         }
 
