@@ -25,10 +25,10 @@ const ContactWrapper = styled.section`
         border-radius: 10px;
     }
     .inputrow{
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
     .firstcol {
-        padding-right: 0;
+        padding-right: 5px;
     }
     .lastcol {
         padding-left: 5px;
@@ -61,6 +61,7 @@ const ContactWrapper = styled.section`
             background: #ebc017;
             color: #000000;
         }
+        margin-top: 12px;
     }
     .section-title{
         h3 {
