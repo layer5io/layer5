@@ -14,9 +14,10 @@ import CNCFstackedlogo from "./images/cncf-stacked-color.svg";
 import CNCFLightstackedlogo from "./images/cncf-light-stacked-color.svg";
 
 import { Link } from "gatsby";
-const Community_meetup = "./images/Community_meetup.png";
-const Layer5Projects = "./images/layer5-projects.png";
+
 const About = ({ theme }) => {
+  const Community_meetup = "./images/Community_meetup.png";
+  const Layer5Projects = "./images/layer5-projects.svg";
   return (
     <AboutSectionWrapper id="about">
 
