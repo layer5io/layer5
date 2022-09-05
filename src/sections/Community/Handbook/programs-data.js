@@ -1,6 +1,6 @@
 import SCA from "../../../collections/programs/sca-contributhon/sca.svg";
 import MLH from "../../../collections/programs/mlh-2020/mlh.svg";
-import LFX from "../../../collections/programs/lfx/Linux_Foundation_logo.png";
+import LFX from "../../../collections/programs/lfx-2022/Linux_Foundation_logo.png";
 import Hacktoberfest from "../../../collections/programs/hacktoberfest-2020/hacktoberfest2020.png";
 import GSOC from "../../../collections/programs/gsoc-2020/gsoc.svg";
 import GSOD from "../../../collections/programs/gsod/gsod.png";
@@ -40,7 +40,7 @@ export const programs_data = [
     name: "Linux Foundation",
     description:
       "The Linux Foundation (Mentorship Programs) are designed to help developers with the necessary skills–many of whom are first-time open source contributors–experiment, learn, and contribute effectively to open source communities. Layer5, as an organization, has been participating in the Linux Foundation mentorship program since 2019. ",
-    buttonLink: "/programs/lfx",
+    buttonLink: "/programs/lfx-2022/index",
     imageLink: LFX,
     imagePosition: "first",
   },
