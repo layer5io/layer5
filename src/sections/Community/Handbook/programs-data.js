@@ -40,7 +40,7 @@ export const programs_data = [
     name: "Linux Foundation",
     description:
       "The Linux Foundation (Mentorship Programs) are designed to help developers with the necessary skills–many of whom are first-time open source contributors–experiment, learn, and contribute effectively to open source communities. Layer5, as an organization, has been participating in the Linux Foundation mentorship program since 2019. ",
-    buttonLink: "/programs/lfx",
+    buttonLink: "/programs/lfx-2022/index",
     imageLink: LFX,
     imagePosition: "first",
   },
