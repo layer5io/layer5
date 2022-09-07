@@ -6,10 +6,12 @@ import Features from "../../../components/Features-carousel";
 import img1 from "./feature-images/meshery-configuration-management.png";
 import img2 from "./feature-images/meshery-wasm.png";
 import img3 from "../../../assets/images/meshery-operator/meshery-operator-dark.svg";
-import img4 from "./feature-images/meshery-and-grafana.png";
 import img5 from "./feature-images/meshsync.svg";
 import img6 from "./feature-images/meshery-extensibility.svg";
-import img7 from "../../../assets/images/docker-extension/docker-extension-meshery.png";
+import { StaticImage } from "gatsby-plugin-image";
+
+const img4 = "./feature-images/meshery-and-grafana.png";
+const img7 = "../../../assets/images/docker-extension/docker-extension-meshery.png";
 
 const MesheryFeaturesWrapper = styled.div`
     margin: auto;
@@ -22,9 +24,17 @@ const MesheryFeaturesWrapper = styled.div`
     img {
       padding: 0 3rem 1rem;
     }
+
+    StaticImage {
+      padding: 0 3rem 1rem;
+    }
   }
   .feature-expose-full {
     img {
+      padding: 0rem;
+    }
+    
+    StaticImage{
       padding: 0rem;
     }
   }
@@ -115,7 +125,7 @@ const MesheryFeatures = () => {
                 "Develop service mesh-ready apps using Docker Desktop and Meshery",
               content: (
                 <div className="feature-expose-full">
-                  <img src={img7} alt="Meshery, Docker Extension for Meshery" />
+                  <StaticImage src={img7} alt="Meshery, Docker Extension for Meshery" />
                   <p>
                     The Docker Extension for Meshery extends Docker Desktop’s
                     position as the cloud native developer’s go-to Kubernetes
@@ -150,7 +160,7 @@ const MesheryFeatures = () => {
               description: "",
               content: (
                 <div className="feature-expose-full">
-                  <img
+                  <StaticImage
                     src={img4}
                     alt="Prometheus and Grafana integration with Meshery"
                   />

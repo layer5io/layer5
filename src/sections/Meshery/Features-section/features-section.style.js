@@ -101,6 +101,11 @@ const FeaturesSectionWrapper = styled.section`
 							max-height: 20rem;
 							margin: auto;
 						}
+
+						StaticImage {
+							max-height: 20rem;
+							margin: auto;
+						}
 					}
 				}
 
@@ -128,6 +133,11 @@ const FeaturesSectionWrapper = styled.section`
 								height: 5rem;
 								vertical-align: middle;
 							}
+
+							StaticImage {
+								height: 5rem;
+								vertical-align: middle;
+							}
 						}
 					}
 				}
@@ -151,6 +161,10 @@ const FeaturesSectionWrapper = styled.section`
 				width: 6rem;
 
 				li a img {
+					height: 4rem;
+				}
+
+				li a StaticImage {
 					height: 4rem;
 				}
 			}
@@ -191,6 +205,10 @@ const FeaturesSectionWrapper = styled.section`
 				img {
 					max-height: 16rem;
 				}
+
+				StaticImage {
+					max-height: 16rem;
+				}
 			}
 		}
 	}
@@ -211,6 +229,10 @@ const FeaturesSectionWrapper = styled.section`
 					li a img {
 						height: 2.5rem;
 					}
+
+					li a StaticImage {
+						height: 2.5rem;
+					}
 				}
 			}
 		}
@@ -225,6 +247,10 @@ const FeaturesSectionWrapper = styled.section`
 					max-width: 80%;
 					.slick-slide {
 						img {
+							max-height: 10rem;
+						}
+
+						StaticImage {
 							max-height: 10rem;
 						}
 					}

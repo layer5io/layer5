@@ -1,14 +1,16 @@
 import React from "react";
 import { Container, Col, Row } from "../../../../reusecore/Layout";
-import MesheryImage1 from "../images/cloud-native-journey.png";
-import MesheryImage2 from "../images/meshery-configuration-management.png";
 import GreenBubble from "../images/green-bubble.svg";
 import YellowBubble from "../images/yellow-bubble.svg";
 import DataCard from "./data-card";
 import VintageBox from "../../../../reusecore/VintageBox";
 import Button from "../../../../reusecore/Button";
 
+const MesheryImage1 = "../images/cloud-native-journey.png";
+const MesheryImage2 = "../images/meshery-configuration-management.png";
+
 import SpecsWrapper from "./specs.style";
+import { StaticImage } from "gatsby-plugin-image";
 
 const HowMesheryWorksSpecs = () => {
   return (
@@ -33,12 +35,12 @@ const HowMesheryWorksSpecs = () => {
             <p>Today: Over 40% of the enterprises run cloud native technologies in production; Over 80% od those enterprises running Kubernetes</p>
           </Col>
           <Col xs={12} lg={6}>
-            <img src={MesheryImage1} alt="Meshery Img" />
+            <StaticImage src={MesheryImage1} alt="Meshery Img" />
           </Col>
         </Row>
         <Row className="cloud-native" Vcenter>
           <Col xs={12} lg={6}>
-            <img src={MesheryImage2} alt="Meshery Img" />
+            <StaticImage src={MesheryImage2} alt="Meshery Img" />
           </Col>
           <Col xs={12} lg={6}>
             <h3>Begin Your Cloud Native Journey</h3>

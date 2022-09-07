@@ -8,6 +8,10 @@ import slide1 from "../images/service mesh performance example.gif";
 import slide2 from "../images/meshery_benchmark_screen.png";
 import slide3 from "../images/meshery-configuration-management.png";
 import FeaturesSectionWrapper from "./features-section.style";
+import { StaticImage } from "gatsby-plugin-image";
+
+const slide_2 = "../images/meshery_benchmark_screen.png";
+const slide_3 = "../images/meshery-configuration-management.png";
 
 const slides_list = [slide1, slide2, slide3];
 
@@ -67,10 +71,10 @@ const FeaturesSection = () => {
                   <img src={slide1} alt="Slide 1" />
                 </div>
                 <div>
-                  <img src={slide2} alt="Slide 2" />
+                  <StaticImage src={slide_2} alt="Slide 2" />
                 </div>
                 <div>
-                  <img src={slide3} alt="Slide 3" />
+                  <StaticImage src={slide_3} alt="Slide 3" />
                 </div>
               </Slider>
             </Col>
