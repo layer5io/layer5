@@ -15,7 +15,8 @@ export const Pre = styled.pre`
   border-radius: 3px;
   & .token-line {
     line-height: 1.3em;
-    height: 1.3em;
+    height: 2em;
+    margin-top: 1em;
   }
   font-family: 'Courier New', Courier, monospace;
 `;
@@ -28,15 +29,16 @@ export const LineNo = styled.span`
 `;
 
 const CopyCode = styled.button`
-    line-height: 12px;
-    width: 50px;
-    font-size: 10pt;
-    font-family: tahoma;
-    margin-top: 1px;
-    margin-right: 2px;
-    position:absolute;
-    top:0;
-    right:0;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  border: 0;
+  border-radius: 3px;
+  margin: 2em;
+  opacity: 0.5;
+  margin-right: 2px;
+  top:0;
+  right:8px;
   &:hover {
     opacity: 1;
     cursor: pointer;
