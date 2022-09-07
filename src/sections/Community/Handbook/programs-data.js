@@ -1,6 +1,6 @@
 import SCA from "../../../collections/programs/sca-contributhon/sca.svg";
 import MLH from "../../../collections/programs/mlh-2020/mlh.svg";
-import LFX from "../../../collections/programs/lfx/Linux_Foundation_logo.png";
+import LFX from "../../../collections/programs/lfx-2022/Linux_Foundation_logo.png";
 import Hacktoberfest from "../../../collections/programs/hacktoberfest-2020/hacktoberfest2020.png";
 import GSOC from "../../../collections/programs/gsoc-2020/gsoc.svg";
 import GSOD from "../../../collections/programs/gsod/gsod.png";
