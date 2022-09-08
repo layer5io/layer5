@@ -12,6 +12,7 @@ type: News
 ---
 
 import { NewsWrapper } from "../../News.style.js";
+import { Link } from "gatsby";
 
 <NewsWrapper>
 
@@ -34,7 +35,7 @@ Open Policy Agent (OPA) can be used to unify cloud-native policies across the cl
 <h3>CI/CD</h3>
 Argo is a suite of packages that help direct jobs on Kubernetes to aid a continuous delivery pipeline. Using Argo, developers can create multi-step custom workflows and share these workflows across a cluster. Other CI/CD tools hosted by CNCF include Flux, Brigade, Keptn, OpenGitOps and OpenKruise.
 <h3>Service Mesh Tools</h3>
-Linkerd is a highly performant developer-favorite service mesh comprised of a control plane to apply configurations and a data plane that deploys its own unique proxy. This proxy can apply consistent security, observability, monitoring and telemetry features across distributed microservices. Other service mesh tools from CNCF include Kuma, Open Service Mesh (OSM), Service Mesh Interface (SMI), Meshery and Service Mesh Performance (SMP).
+Linkerd is a highly performant developer-favorite service mesh comprised of a control plane to apply configurations and a data plane that deploys its own unique proxy. This proxy can apply consistent security, observability, monitoring and telemetry features across distributed microservices. Other service mesh tools from CNCF include Kuma, Open Service Mesh (OSM), <Link to="https://layer5.io/projects/service-mesh-interface-conformance">Service Mesh Interface (SMI) </Link> , <Link to="https://layer5.io/cloud-native-management/meshery">Meshery</Link> and <Link to="https://layer5.io/projects/service-mesh-performance> Service Mesh Performance (SMP) </Link>.
 
 <h3>Service Proxies</h3>
 Envoy is a service proxy commonly used within service meshes like Istio and Kuma. Envoy is intended to run alongside applications to help standardize networking and observability within large microservices networks. Other service proxy projects include Contour BFE and OpenELB.
