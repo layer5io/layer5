@@ -5,11 +5,9 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import ProjectItemWrapper from "./projectSection.style";
 import { StaticImage } from "gatsby-plugin-image";
 import Button from "../../../reusecore/Button";
-import VintageBox from "../../../reusecore/VintageBox";
 
 const projectsIcon = "./images/projects.svg";
 
-const projectImage1 = "../../../assets/images/app/projects/landscape.png";
 const projectImage2 = "../../../assets/images/app/projects/smp.png";
 const projectImage3 = "../../../assets/images/app/projects/meshery-logo-light.png";
 const projectImage4 = "../../../assets/images/app/projects/nighthawk-logo.png";

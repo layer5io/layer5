@@ -3,7 +3,6 @@ import { Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import svgBackground from "../../../assets/images/homePage-images/background.svg";
-import { IoIosArrowForward } from "@react-icons/all-files/io/IoIosArrowForward";
 
 import BannerSectionWrapper from "./statement.style";
 import { Link } from "gatsby";

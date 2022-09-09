@@ -9,7 +9,7 @@ import { Location } from "@reach/router";
 
 
 
-const Integrations = ({ location, data }) => {
+const Integrations = () => {
   return (
     <IntegrationsWrapper>
       <section className="heading">
