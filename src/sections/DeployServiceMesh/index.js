@@ -1,6 +1,5 @@
 import React, {
   memo,
-  useCallback,
   useState,
   useEffect,
   useMemo
@@ -14,7 +13,7 @@ import { Link } from "gatsby";
 import bookCover from "../../assets/images/learn/book-cover.png";
 
 const RangeSlider = memo(
-  ({ classes, label, onChange, value, ...sliderProps }) => {
+  ({ label, onChange, value, ...sliderProps }) => {
     const [sliderVal, setSliderVal] = useState(0);
     const [mouseState, setMouseState] = useState(null);
 

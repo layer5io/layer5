@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import redhat from "../../../assets/images/partners/redhat_black.svg";
 const PartnerItemWrapper = styled.section`
     padding: 2rem 0;
     margin: 0rem 0rem 5rem 0rem;

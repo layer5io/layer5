@@ -2,8 +2,6 @@ import React from "react";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Slider from "react-slick";
 import styled from "styled-components";
-import Image from "../../../../components/image";
-import SMPImage from "../../images/meshery_multi_mesh.png";
 
 const HowIntegrationWorksWrapper = styled.section`
 

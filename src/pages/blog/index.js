@@ -9,7 +9,6 @@ import BlogGrid from "../../sections/Blog/Blog-grid";
 import Footer from "../../sections/General/Footer";
 
 import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
 
 import { graphql } from "gatsby";
 import BlogList from "../../sections/Blog/Blog-list";

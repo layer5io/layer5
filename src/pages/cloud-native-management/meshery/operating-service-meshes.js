@@ -20,7 +20,6 @@ import Smi from "../../../assets/images/app/projects/smi.svg";
 import WebA from "../../../sections/Meshery/How-meshery-works/images/webassembly_logo.svg";
 import SMP from "../../../sections/Meshery/How-meshery-works/images/smp-dark-text.png";
 import dark_githubLogo from "../../../assets/images/socialIcons/github_black.svg";
-import light_githubLogo from "../../../assets/images/socialIcons/github-light.svg";
 
 import { darktheme } from "../../../theme/app/themeStyles";
 import lighttheme from "../../../theme/app/themeStyles";

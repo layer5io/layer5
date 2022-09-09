@@ -48,8 +48,7 @@ const ListItem = (props) => {
   return (
     <li
       className={`${props.pquestionToAns?.aIndex === props.index ? "ans" : "no-ans"}`}
-      onClick={(event) => {
-        const e = event.target;
+      onClick={() => {
         setTimeout(() => {
           onClickAnswer();
         }, 300);
@@ -65,7 +64,7 @@ const ListItem = (props) => {
 
 
 const Timer = (props) => {
-  const renderer = ({ hours, minutes, seconds, completed }) => {
+  const renderer = ({ minutes, seconds }) => {
     return <h3 className="timer__text">{minutes}:{seconds}</h3>;
   };
 
@@ -205,7 +204,6 @@ const QuizComponent = () => {
   };
 
   const prevQuestionHandler = () => {
-    let current = progress;
     let newCurrent = progress - 1;
     if (0 <= newCurrent) {
       setProgress(newCurrent);

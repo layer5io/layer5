@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { DockerMesheryWrapper } from "./dockerMeshery.style";
 import { Row, Col, Container } from "../../reusecore/Layout";
-import Button from "../../reusecore/Button";
 import CommonForm from "../../components/CommonForm";
 
 const Kubernetes = "./kubernetes-logo.svg";
-import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 const mesheryworkdiagram =
   "../../assets/images/mesherywork-diagram/mesherywork-diagram.svg";
 const dockercompose_logo =
