@@ -163,6 +163,14 @@ const options = [
     icon: meshmateIcon,
     className: "allOptions",
   },
+  {
+    label: "CM Profiles",
+    value: "community_managers",
+    color: theme.linkColor,
+    isFixed: true,
+    icon: communityIcon,
+    className: "allOptions",
+  },
 ].map((obj) => ({
   ...obj,
   label: (

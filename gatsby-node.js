@@ -701,6 +701,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        slack: String,
        status: String,
        video: String,
+       community_manager: String,
      }
    `;
   createTypes(typeDefs);
