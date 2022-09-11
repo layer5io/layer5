@@ -104,7 +104,7 @@ const BlogSideBarWrapper = styled.div`
 
     .subscribe {
 		font-family: 'Qanelas Soft', sans-serif;
-        padding: 0 1rem;
+        padding: 0 1rem 1rem;
         margin: 1rem auto auto;
         display:flex;
         justify-content:center;
