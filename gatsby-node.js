@@ -256,7 +256,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
-  // const events = res.data.allCollections.nodes;
 
   paginate({
     createPage,
