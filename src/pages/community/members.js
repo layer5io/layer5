@@ -164,7 +164,7 @@ const options = [
     className: "allOptions",
   },
   {
-    label: "CM Profiles",
+    label: "Community Managers",
     value: "community_managers",
     color: theme.linkColor,
     isFixed: true,
