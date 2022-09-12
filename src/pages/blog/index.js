@@ -6,7 +6,7 @@ import SEO from "../../components/seo";
 
 import BlogGrid from "../../sections/Blog/Blog-grid";
 import Navigation from "../../sections/General/Navigation";
-
+import Footer from "../../sections/General/Footer";
 import { GlobalStyle } from "../../sections/app.style";
 import { graphql } from "gatsby";
 import { darktheme } from "../../theme/app/themeStyles";
@@ -14,7 +14,6 @@ import lighttheme from "../../theme/app/themeStyles";
 import loadable from "@loadable/component";
 
 const BlogList = loadable(() => import ("../../sections/Blog/Blog-list"));
-const Footer = loadable(() => import ("../../sections/General/Footer"));
 
 export const query = graphql`
   query allBlogs {
