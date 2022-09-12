@@ -16,13 +16,11 @@ import halfMark from "../../assets/images/landscape/half.svg";
 import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
-import loadable from "@loadable/component";
-
-const Categories = loadable(() => import ("./categories"));
-const NonFunctional = loadable(() => import ("./non-functional"));
-const Functional = loadable(() => import ("./functional"));
-const SMI_Compatibility = loadable(() => import ("./smi"));
-const Tools = loadable(() => import ("./tools"));
+import Categories from "./categories";
+import NonFunctional from "./non-functional";
+import Functional from "./functional";
+import SMI_Compatibility from "./smi";
+import Tools from "./tools";
 
 const isBrowser = typeof window !== "undefined";
 
