@@ -7,7 +7,7 @@ import SEO from "../../../components/seo";
 import HowMesheryWorksHero from "../../../sections/Meshery/How-meshery-works/hero";
 import Navigation from "../../../sections/General/Navigation";
 import { GlobalStyle } from "../../../sections/app.style";
-
+import Footer from "../../../sections/General/Footer";
 import SMILogo from "../../../sections/Meshery/How-meshery-works/images/servicemeshinterface-icon-color.svg";
 import MesheryLogo from "../../../assets/images/meshery/icon-only/meshery-logo-light.svg";
 import VisualTopology from "../../../sections/Meshery/How-meshery-works/images/visual-topology.svg";
@@ -23,7 +23,6 @@ import loadable from "@loadable/component";
 
 const HowMesheryWorks = loadable(() => import ("../../../sections/Meshery/How-meshery-works"));
 const HowMesheryWorksSpecs = loadable(() => import ("../../../sections/Meshery/How-meshery-works/specs"));
-const Footer = loadable(() => import ("../../../sections/General/Footer"));
 
 
 
