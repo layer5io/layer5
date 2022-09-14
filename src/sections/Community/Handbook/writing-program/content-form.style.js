@@ -31,7 +31,6 @@ const ContentFormWrapper = styled.section`
         padding: 1rem;
         overflow: auto;
         height: 600px;
-        white-space: nowrap;
         &::-webkit-scrollbar {
           display: none;
         }
