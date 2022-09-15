@@ -282,7 +282,7 @@ export const repo_data = [
       },
       {
         project: "Meshery-Perf",
-        image:github,
+        image:meshery,
         language: "Golang",
         description: "meshery-perf is a Meshery component used to run performance tests",
         repository: "https://github.com/meshery/meshery-perf"
