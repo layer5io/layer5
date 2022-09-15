@@ -25,6 +25,18 @@ export const Columns = [
     ],
     accessor: "service_mesh"
   },
+  {
+    Header: () => <Link to="/"><img src={layer5_img} alt="layer5"/></Link>,
+    columns: [
+      {
+        Header: "Category",
+        accessor: "category",
+        sortType: sortByLen,
+        Filter: SelectColumnFilter
+      }
+    ],
+    accessor: "category_column"
+  }
 ];
 
 
