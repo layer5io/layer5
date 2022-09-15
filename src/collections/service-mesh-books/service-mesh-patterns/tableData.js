@@ -14,6 +14,11 @@ export const Data = [
     subsection: "Area I"
   },
   {
+    service_mesh_pattern: "Pattern: How a service mesh empowers a service owner",
+    category: "Foundational",
+    subsection: "Area I"
+  },
+  {
     service_mesh_pattern: "Pattern: How a service mesh empowers a Developer",
     category: "Foundational",
     subsection: "Area I"
