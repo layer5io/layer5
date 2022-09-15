@@ -71,7 +71,7 @@ The <a href="https://layer5.io/projects/service-mesh-performance">Service Mesh P
 <a href="https://layer5.io/projects/image-hub"><img src=".github/assets/images/image-hub/layer5-image-hub.png"
 style="float:left;margin:10px;" width="125px"
 alt="Image Hub" align="left" /></a>
-<a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application that runs on <a href="https://docs.meshery.io/service-meshes/adapters/consul">Consul</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
+<a href="https://layer5.io/projects/image-hub">Image Hub</a> is a demo application which runs on <a href="https://docs.meshery.io/service-meshes/adapters/consul">Consul</a> and facilitates exploring WebAssembly modules used as Envoy Filters.
 Image Hub supports Envoy-based data planes. It is compatible with and can be deployed on Istio and Consul service meshes.
 <br /><br /><br />
 </p>
