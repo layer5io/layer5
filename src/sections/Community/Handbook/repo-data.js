@@ -6,7 +6,7 @@ import imagehub from "../../../assets/images/image-hub/layer5-image-hub.svg";
 import MesheryOperator from "../../../assets/images/meshery-operator/meshery-operator.svg";
 import MeshSync from "../../../assets/images/meshsync/meshsync.svg";
 import patterns from "../../../assets/images/service-mesh-patterns/service-mesh-pattern.svg";
-
+import github from "../../../assets/images/socialIcons/github.svg";
 import istioLogo from "../../../assets/images/service-mesh-icons/istio.svg";
 import linkerdLogo from "../../../assets/images/service-mesh-icons/linkerd.svg";
 import consulLogo from "../../../assets/images/service-mesh-icons/consul.svg";
@@ -251,6 +251,7 @@ export const repo_data = [
       },
       {
         project: "Wrk2",
+        image:meshery,
         language: "C",
         description:
           "a C-based load generator. A fork of wrk2, which includes the concept of coordinated omission.",
@@ -274,12 +275,14 @@ export const repo_data = [
       },
       {
         project: "SMP Action",
+        image: github,
         language: "shell",
         description: "GitHub Action to run SMP Performance Benchmarks on CI/CD pipelines.",
         repository: "https://github.com/layer5io/meshery-smp-action"
       },
       {
         project: "Meshery-Perf",
+        image:meshery,
         language: "Golang",
         description: "meshery-perf is a Meshery component used to run performance tests",
         repository: "https://github.com/meshery/meshery-perf"
@@ -301,6 +304,7 @@ export const repo_data = [
       },
       {
         project: "Service Mesh Patterns Action",
+        image: patterns,
         language: "shell",
         description: "GitHub Action to deploy Service Mesh Patterns on CI/CD pipelines.",
         repository: "https://github.com/layer5io/meshery-service-mesh-patterns-action",
