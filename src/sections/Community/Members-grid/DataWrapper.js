@@ -34,6 +34,7 @@ const DataWrapper = (WrappedComponent) => {
                 badges
                 bio
                 emeritus
+                community_manager
                 image_path {
                   childImageSharp {
                     gatsbyImageData(width: 200, layout: CONSTRAINED)

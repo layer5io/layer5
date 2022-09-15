@@ -256,7 +256,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const singleWorkshop = res.data.singleWorkshop.nodes;
   const labs = res.data.labs.nodes;
-  // const events = res.data.allCollections.nodes;
 
   paginate({
     createPage,
@@ -701,6 +700,7 @@ exports.createSchemaCustomization = ({ actions }) => {
        slack: String,
        status: String,
        video: String,
+       community_manager: String,
      }
    `;
   createTypes(typeDefs);

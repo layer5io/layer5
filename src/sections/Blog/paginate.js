@@ -53,7 +53,7 @@ const Paginate = ({ pageContext,isListView }) => {
     pageNumbers.push(i);
   }
   const paginate = (num) => {
-    setCurrentPage((pre) => num);
+    setCurrentPage(num);
   };
   return (
     <PaginateWrapper>

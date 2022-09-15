@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import collabMap from "./images/layer5-collaboration-map.svg";
 
 const AboutSectionWrapper = styled.section`
     background: linear-gradient(255.21deg, #477E96 20.89%, #01B29F 36.99%, #00B39F 59.78%, #3C494F 90.08%);

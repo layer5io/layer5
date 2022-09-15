@@ -7,7 +7,7 @@ const useWindowHasScrolled = initialState => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleHasScrolled);
-    return _ => window.removeEventListener("scroll", handleHasScrolled);
+    return () => window.removeEventListener("scroll", handleHasScrolled);
   }, []);
 
   return isMounted;

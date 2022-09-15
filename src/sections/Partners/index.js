@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Button from "../../reusecore/Button";
 import { partners } from "./partners";
@@ -9,8 +9,8 @@ const Partner = ({ theme }) => {
   let academic_partners = partners.filter(partner => partner.type === "academic");
   let technology_partners = partners.filter(partner => partner.type === "technology");
   let len_acad_part = academic_partners.length;
-  const [isOpen, setIsOpen] = useState(false);
-  const [ID, setID] = useState(-1);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [ID, setID] = useState(-1);
 
   // const toggleActive = (id) => {
 
