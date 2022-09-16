@@ -23,6 +23,7 @@ const MeshFocusWrapper = styled.div`
     }
     .quote {
         margin-bottom: 4rem;
+        font-size: 20px;
     }
     .book {
         object-fit: contain;
@@ -37,8 +38,8 @@ const MeshFocusWrapper = styled.div`
         box-shadow: -20px 3px 20px rgba(0, 0, 0, 0.5)  ; 
         -webkit-box-shadow: -20px 3px 20px rgba(0, 0, 0, 0.5)  ; 
         -moz-box-shadow: -20px 3px 20px rgba(0, 0, 0, 0.5)  ; 
-        transform: scale(1,1) perspective(125vw) rotateX(-10deg) rotateY(20deg); 
-
+        transform: translateZ(-1000px) scale(1.1,1.1) perspective(125vw) rotateX(-10deg) rotateY(20deg); 
+     
         /* Skew */
         -webkit-transform: scale(1,1) rotate(0)skew(2,-2deg) translate(0,0); 
         -moz-transform: scale(1,1) rotate(0)skew(2,-2deg) translate(0,0); 

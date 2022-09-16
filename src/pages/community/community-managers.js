@@ -20,7 +20,7 @@ const ManagersPage = () => {
     <ThemeProvider theme={theme === "dark" ? darktheme : lighttheme}>
       <Layout>
         <GlobalStyle />
-        <SEO title="Managers"
+        <SEO title="Community Managers"
           description="Layer5 Community Managers have an innate drive to contribute to the community's prosperity and that of our individual contributors' prosperity."
         />
         <Navigation theme={theme} themeSetter={themeSetter} />
