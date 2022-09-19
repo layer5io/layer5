@@ -82,7 +82,7 @@ const Sidebar = ({ pageContext }) => {
             <HiOutlineChevronUp className="menu-icon"/>
           )}
         </div>
-        <ul className={`${(!showCategory) ? "ul-close" : null}`}>
+        <ul className={`${(!showCategory) ? "ul-close" : "scroll"}`}>
           {categories &&
             categories.map((category) => (
               <li key={category.fieldValue}>
@@ -103,7 +103,7 @@ const Sidebar = ({ pageContext }) => {
             <HiOutlineChevronUp className="menu-icon"/>
           )}
         </div>
-        <ul className={`${(!showTag) ? "ul-close" : null}`}>
+        <ul className={`${(!showTag) ? "ul-close" : "scroll"}`}>
           {tags &&
             tags.map((tag) => (
               <li key={tag.fieldValue}>

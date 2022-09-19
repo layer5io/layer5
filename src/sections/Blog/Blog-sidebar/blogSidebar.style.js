@@ -41,6 +41,13 @@ const BlogSideBarWrapper = styled.div`
         .ul-close{
             display:none;
         }
+
+        .scroll{
+            max-height: 100px;
+            overflow: auto;
+            scrollbar-color: red green;
+            padding-right: 10px;
+        }
         
         &.catagorie{
             
