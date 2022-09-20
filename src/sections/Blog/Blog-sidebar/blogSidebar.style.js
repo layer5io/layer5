@@ -43,9 +43,8 @@ const BlogSideBarWrapper = styled.div`
         }
 
         .scroll{
-            max-height: 100px;
+            max-height: 40rem;
             overflow: auto;
-            scrollbar-color: red green;
             padding-right: 10px;
         }
         
