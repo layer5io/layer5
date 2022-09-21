@@ -108,7 +108,7 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
           {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
           <div className="accounts_group">
             <label htmlFor="google" className="form-name">Google</label>
-            <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+            <Field type="email" className="text-field" id="google" name="google" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
             <label htmlFor="github" className="form-name">GitHub</label>
             <Field type="text" className="text-field" id="github" name="github" pattern="[a-zA-Z0-9._.-]{1,32}" placeholder="Username" />
             <label htmlFor="twitter" className="form-name">Twitter</label>
