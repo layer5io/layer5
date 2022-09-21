@@ -114,7 +114,7 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
             <label htmlFor="twitter" className="form-name">Twitter</label>
             <Field type="text" className="text-field" id="twitter" pattern="[a-zA-Z0-9._.-]{1,32}" name="twitter" placeholder="Username"/>
             <label htmlFor="linkedin" className="form-name">Linkedin</label>
-            <Field type="text" className="text-field" id="linkedin" name="linkedin" pattern="[a-zA-Z0-9._.-]{1,32}" placeholder="Username" />
+            <Field type="text" className="text-field" id="linkedin" name="linkedin" placeholder="email" />
           </div>
         </div>
 
