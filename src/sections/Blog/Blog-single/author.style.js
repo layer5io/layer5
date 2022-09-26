@@ -85,6 +85,10 @@ const AboutTheAuthorWrapper = styled.div`
                 margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
+
+                .icon{
+                    box-shadow: none;
+                }
             }
         }
     }
