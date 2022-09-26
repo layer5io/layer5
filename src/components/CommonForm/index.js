@@ -63,7 +63,7 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
           setMemberFormOne(values);
           setStepNumber(1);
           setSubmit(true);
-          window.scrollTo(0, 300);
+          window.scrollTo(0,window.scrollY - 800);
         } else {
           if (!values.role) {
             setValidateRole(true);
@@ -108,13 +108,13 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
           {validateAccounts && <p style={{ margin: "0px", color: "red" }}>{errorAccounts}</p>}
           <div className="accounts_group">
             <label htmlFor="google" className="form-name">Google</label>
-            <Field type="email" className="text-field" id="google" name="google" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+            <Field type="email" className="text-field" id="google" name="google" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
             <label htmlFor="github" className="form-name">GitHub</label>
             <Field type="text" className="text-field" id="github" name="github" pattern="[a-zA-Z0-9._.-]{1,32}" placeholder="Username" />
             <label htmlFor="twitter" className="form-name">Twitter</label>
             <Field type="text" className="text-field" id="twitter" pattern="[a-zA-Z0-9._.-]{1,32}" name="twitter" placeholder="Username"/>
             <label htmlFor="linkedin" className="form-name">Linkedin</label>
-            <Field type="text" className="text-field" id="linkedin" name="linkedin" pattern="[a-zA-Z0-9._.-]{1,32}" placeholder="Username" />
+            <Field type="text" className="text-field" id="linkedin" name="linkedin" placeholder="email" />
           </div>
         </div>
 
