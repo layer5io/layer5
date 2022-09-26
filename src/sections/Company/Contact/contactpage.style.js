@@ -39,7 +39,7 @@ const ContactPageWrapper = styled.section`
     display: flex;
     flex-wrap: wrap;
     margin: auto -15px;
-    height: max-content;
+    height: 70rem;
   }
 
   @media screen and (max-width: 765px) {
