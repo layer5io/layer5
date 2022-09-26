@@ -9,7 +9,7 @@ import { Location } from "@reach/router";
 
 
 
-const Integrations = () => {
+const Integrations = ({ theme }) => {
   return (
     <IntegrationsWrapper>
       <section className="heading">
@@ -25,7 +25,7 @@ const Integrations = () => {
             </>;
           }}
         </Location>
-        <IntegrationsGrid />
+        <IntegrationsGrid theme={theme}/>
         <Location>
           {({ location }) => {
             if (location.pathname !== "/") return <>
