@@ -102,7 +102,7 @@ const NavigationWrap = styled.header`
       display: flex;
       flex-direction: column;
       position: relative;
-      padding: 3em;
+      padding: 1.5em;
       border-radius: 50px 0 0 50px;
       .sub-item {
         padding: 0;
@@ -428,7 +428,7 @@ const NavigationWrap = styled.header`
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    min-height: 300px;
+    min-height: 270px;
     overflow: hidden;
     margin: 0 auto;
     &:hover{
@@ -480,14 +480,13 @@ const NavigationWrap = styled.header`
     justify-content: space-between;
     border-radius: 0 0 3px 3px;
     position: relative;
-    padding: 20px 35px;
+    padding: 10px 20px;
   }
   .post-title{
     font-size: 16px;
     font-weight: 600;
     line-height: 28px;
     color: ${props => props.theme.lightTextColor};
-    margin-bottom: 20px;
     display: block;
     white-space: nowrap;
     overflow: hidden;
