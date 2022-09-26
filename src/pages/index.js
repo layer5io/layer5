@@ -50,7 +50,7 @@ const IndexPage = () => {
         {/* <Features /> */}
         {/* <ServiceMeshManagement /> */}
         <CloudNativeManagement />
-        <MesheryIntegration />
+        <MesheryIntegration theme={theme}/>
         {/* <Statement /> */}
         {/* <AppScreens /> */}
         {/* <Pricing /> */}
