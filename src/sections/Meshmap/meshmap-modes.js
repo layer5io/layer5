@@ -261,7 +261,7 @@ const MeshmapModes = () => {
             <h1>Discover and model your cloud native deployments</h1>
             <img src={designerImage} alt="MeshMap Designer" onClick={() => setDesignerEnlarged(!designerEnlarged)} className={`designer-img ${designerEnlarged ? "big" : "small"}`} />
             <p>
-              Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned components. Using a service mesh? Visually configure your Envoy filter chain.
+              Drag-and-drop your cloud native infrastructure using a pallete of thousands of versioned Kubernetes components. Using a service mesh? Visually configure your Envoy filter chain.
             </p>
           </div>
         </div>
