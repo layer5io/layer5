@@ -4,7 +4,7 @@ const ContactFormWrapper = styled.section`
   margin-bottom: 2rem;
 
   .form-submitted {
-    height: 70rem;
+    height: 20rem;
     align-items: center;
     display: flex;
     flex-wrap: wrap;

@@ -20,6 +20,7 @@ const ContactForm = () => {
   }, [submit]);
 
   if (submit) {
+    document.querySelector(".showForm").style.height = "20rem";
     return (
       <ContactFormWrapper>
         <div className="form-submitted">

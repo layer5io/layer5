@@ -63,7 +63,7 @@ const CommonForm = ({ form, title,account_desc, submit_title, submit_body }) => 
           setMemberFormOne(values);
           setStepNumber(1);
           setSubmit(true);
-          window.scrollTo(0, 300);
+          window.scrollTo(0,window.scrollY - 800);
         } else {
           if (!values.role) {
             setValidateRole(true);
