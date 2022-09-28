@@ -437,7 +437,7 @@ const NavigationWrap = styled.header`
     min-height: 300px;
     overflow: hidden;
     margin: 0 auto;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: 0px 0px 8px -2px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
     @media screen and (max-width: 992px) and (min-width: 912px) {
