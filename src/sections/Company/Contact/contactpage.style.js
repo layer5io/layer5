@@ -38,8 +38,8 @@ const ContactPageWrapper = styled.section`
   .showForm {
     display: flex;
     flex-wrap: wrap;
-    margin: auto -15px;
     height: 70rem;
+    margin: auto -15px;
   }
 
   @media screen and (max-width: 765px) {
