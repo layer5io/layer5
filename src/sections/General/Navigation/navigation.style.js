@@ -102,7 +102,7 @@ const NavigationWrap = styled.header`
       display: flex;
       flex-direction: column;
       position: relative;
-      padding: 3em;
+      padding: 2em;
       border-radius: 50px 0 0 50px;
 
       @media screen and (max-width: 992px) and (min-width: 912px) {
@@ -148,10 +148,11 @@ const NavigationWrap = styled.header`
     }
     .nav-display {
       border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"}; 
-      padding-top: 3em;
+      padding-top: 1em;
       border-radius: 0 50px 50px 0;
       display: grid;
       grid-template-columns: 50% 50%;
+      margin: 10px;
     }
   }
   @keyframes nav-bar-anim {
@@ -436,6 +437,8 @@ const NavigationWrap = styled.header`
     min-height: 300px;
     overflow: hidden;
     margin: 0 auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
 
     @media screen and (max-width: 992px) and (min-width: 912px) {
       min-height: 270px;
