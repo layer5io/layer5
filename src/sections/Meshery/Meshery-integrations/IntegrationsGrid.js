@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import { HoneycombGrid } from "./Integration.style";
 import { ResponsiveHoneycomb, Hexagon } from "react-honeycomb";
 
-const IntegrationsGrid = ({ category }) => {
+const IntegrationsGrid = ({ category, theme }) => {
   const data = useStaticQuery(graphql`
   query {
     allMdx(filter: { fields: { collection: { eq: "integrations" } } }) {
@@ -19,13 +19,20 @@ const IntegrationsGrid = ({ category }) => {
             extension
             publicURL
           }
+          darkModeIntegrationIcon {
+            childImageSharp {
+              gatsbyImageData(width: 500, layout: CONSTRAINED)
+            }
+            extension
+            publicURL
+          }
         }
-        fields{
+        fields {
           slug
         }
       }
     }
-  }
+  }  
    `);
 
   const [IntegrationList, setIntegrationList] = useState(data.allMdx.nodes);
@@ -122,16 +129,19 @@ const IntegrationsGrid = ({ category }) => {
         items={IntegrationList}
         renderItem={(item) => {
           const status = item.frontmatter.status === "InProgress" ? true : false;
+          const integrationIcon = item.frontmatter.integrationIcon.publicURL;
+          const darkModeIntegrationIcon = item.frontmatter.darkModeIntegrationIcon;
           if (status) {
             return (
               <Hexagon className="container-inactive" style={{ background: "#A0AAAA" }}>
                 <img
-                  src={item.frontmatter.integrationIcon.publicURL}
+                  src={integrationIcon}
                   alt={item.frontmatter.title}
                   style={{
                     filter: "brightness(0) invert(1)",
                   }}
-                  height={60}
+                  height={70}
+                  width={70}
                 />
               </Hexagon>
             );
@@ -141,11 +151,11 @@ const IntegrationsGrid = ({ category }) => {
                 to={`/cloud-native-management/meshery${item.fields.slug}`}
               >
                 <Hexagon className="container-active">
-
                   <img
-                    src={item.frontmatter.integrationIcon.publicURL}
+                    src={(theme === "dark" && darkModeIntegrationIcon !== null) ? darkModeIntegrationIcon.publicURL : integrationIcon}
                     alt={item.frontmatter.title}
-                    height={60}
+                    height={70}
+                    width={70}
                   />
                 </Hexagon>
               </Link>
