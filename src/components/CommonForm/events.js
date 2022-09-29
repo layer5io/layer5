@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "../../reusecore/Button";
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
-import CommonFormWrapper from "./CommonForm.style";
+import CommonFormWrapper from "./commonForm.style";
 import { Container } from "../../reusecore/Layout";
 import layer5_img from "../../assets/images/layer5/layer5-only/svg/layer5-white-no-trim.svg";
 
