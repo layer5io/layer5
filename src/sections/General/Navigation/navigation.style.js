@@ -102,13 +102,8 @@ const NavigationWrap = styled.header`
       display: flex;
       flex-direction: column;
       position: relative;
-      padding: 2em;
+      padding: 3em;
       border-radius: 50px 0 0 50px;
-
-      @media screen and (max-width: 992px) and (min-width: 912px) {
-        padding: 1.5em;
-      }
-
       .sub-item {
         padding: 0;
       }
@@ -148,11 +143,10 @@ const NavigationWrap = styled.header`
     }
     .nav-display {
       border-left: 2px solid ${props => props.theme.DarkTheme ? "rgb(60, 60, 60)" : "#f1f1f1"}; 
-      padding-top: 1em;
+      padding-top: 3em;
       border-radius: 0 50px 50px 0;
       display: grid;
       grid-template-columns: 50% 50%;
-      margin: 10px;
     }
   }
   @keyframes nav-bar-anim {
@@ -437,13 +431,6 @@ const NavigationWrap = styled.header`
     min-height: 300px;
     overflow: hidden;
     margin: 0 auto;
-    box-shadow: 0px 0px 8px -2px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-
-    @media screen and (max-width: 992px) and (min-width: 912px) {
-      min-height: 270px;
-    }
-
     &:hover{
       .readmore-btn{
           color: ${props => props.theme.menuHoverColor};
@@ -494,10 +481,6 @@ const NavigationWrap = styled.header`
     border-radius: 0 0 3px 3px;
     position: relative;
     padding: 20px 35px;
-
-    @media screen and (max-width: 992px) and (min-width: 912px) {
-      padding: 10px 20px;
-    }
   }
   .post-title{
     font-size: 16px;
@@ -515,10 +498,6 @@ const NavigationWrap = styled.header`
       color: ${props => props.theme.highlightLightColor};
 
 
-    }
-
-    @media screen and (max-width: 992px) and (min-width: 912px) {
-      margin-bottom: 0;
     }
     
     @supports (-webkit-line-clamp: 2) {
