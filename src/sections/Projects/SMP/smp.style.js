@@ -86,6 +86,50 @@ const SMPWrapper = styled.section`
         }
     }
     
+    .meshmark-formula {
+        margin: 2rem 0;
+        padding: 2rem 0;
+        background: ${props => props.theme.secondaryColor};
+
+        > div {
+            flex: 0 0 75%;
+            max-width: 75%;
+            margin: auto;
+        }
+
+        .formula-description {
+            h2 {
+                color: ${props => props.theme.DarkTheme ? props.theme.darkJungleGreenColor : props.theme.white};
+                margin-bottom: 1.5rem;
+            }
+            h4 {
+                color: ${props => props.theme.DarkTheme ? props.theme.darkJungleGreenColor : props.theme.white};
+                font-style: italic;
+            }
+            p {
+                color: ${props => props.theme.DarkTheme ? props.theme.darkJungleGreenColor : props.theme.white};
+            }
+        }
+
+        .formula-img {
+            align-self: center;
+        }
+
+        button {
+            margin-top: 1.5rem;
+        }
+
+        @media screen and (max-width: 992px) {
+            > div {
+                flex: 0 0 90%;
+                max-width: 90%;
+            }
+            .formula-img {
+                display: none;
+            }
+        }
+    }
+
     .smp-effects{
         background-image: url("${cncf}");
         background-repeat: no-repeat;

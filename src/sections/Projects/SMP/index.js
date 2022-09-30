@@ -17,6 +17,7 @@ import smp from "../../../assets/images/smp-page/smp-white.svg";
 const latency = "../../../assets/images/smp-page/latency-at-scale.png";
 const wasm_capacity = "../../../assets/images/smp-page/native-and-wasm-at-capacity-100rps.png";
 const client_capacity = "../../../assets/images/smp-page/client-capacity.png";
+const meshmark_formula = "../../../assets/images/smp-page/meshmark-formula.png";
 
 const SMPPage = () => {
 
@@ -88,7 +89,7 @@ const SMPPage = () => {
                     <td className="feature"> Statistical analysis of performance results </td>
                   </tr>
                 </table>
-                <Button primary title="Learn More" url="https://smp-spec.io"></Button>
+                <Button primary title="Learn More" url="https://smp-spec.io" external={true}></Button>
               </Col>
             </Row>
           </div>
@@ -133,6 +134,28 @@ const SMPPage = () => {
             </Row>
           </div>
         </Container>
+        <section className="meshmark-formula">
+          <Row>
+            <Col lg={6} className="formula-description">
+              <h4>The Formula</h4>
+              <h2>MeshMark</h2>
+              <p>
+                MeshMark functions as a value performance index (a scale)
+                to provide organizations the ability to weigh the value
+                of their service mesh versus the overhead of their service
+                 mesh and asseses whether they are getting out of the mesh
+                what they are “paying” for in it.
+              </p>
+              <p>
+                MeshMark’s scoring system ranges from 0 to 100 and incorporates collections of resource utilization efficiency calculations, categorized into similar consumption classes.
+              </p>
+              <Button primary title="Understand the formula in-depth" url="/blog/service-mesh-performance/meshmark-cloud-native-value-measurement" />
+            </Col>
+            <Col lg={6} className="formula-img">
+              <StaticImage src={meshmark_formula} alt="MeshMark Formula" />
+            </Col>
+          </Row>
+        </section>
         <div className="smp-effects">
           <Container>
             <div className="effects-title">
