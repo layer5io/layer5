@@ -23,7 +23,7 @@ const Integrations = () => {
       />
       <Layout>
         <Navigation theme={theme} themeSetter={themeSetter} />
-        <MesheryIntegration />
+        <MesheryIntegration theme={theme}/>
         <Footer />
       </Layout>
     </ThemeProvider>
