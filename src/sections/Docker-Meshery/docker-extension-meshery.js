@@ -37,7 +37,7 @@ const DockerExtensionMeshery = () => {
               src={dockerDesktop}
               alt="Meshery Docker Extension"
             />
-            <p>Install Meshery Docker Extension and get:</p>
+            <p>Install Meshery Docker Extension from <a href="https://hub.docker.com/extensions/meshery/docker-extension-meshery">Docker Hub</a> and get:</p>
 
             <Row>
               <Col className="docker-extension-meshery" lg={2}>
