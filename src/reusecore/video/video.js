@@ -1,7 +1,7 @@
 const config = {
   siteMetadata: {
-    title: `My Gatsby Site`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: "My Gatsby Site",
+    siteUrl: "https://www.yourdomain.tld"
   },
   graphqlTypegen: true,
   plugins: [
@@ -52,6 +52,6 @@ const config = {
       __key: "pages"
     }
   ]
-}
+};
 
-export default config
+export default config;
