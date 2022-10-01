@@ -140,35 +140,18 @@ const CommunityGuide = () => {
               .
             </p>
             <p>
-              <img className="logo" src={Point} alt="Point" />
-              <strong>We do not allow:</strong>
-              <ul>
-                <li>Threats of violence</li>
-                <li>Sexually obscene content</li>
-                <li>Bullying</li>
-                <li>Harassment</li>
-                <li>Invasion of privacy </li>
-                <li>Misinformation</li>
-                <li>
-                  Please refer to the{" "}
+              Please refer to the{" "}
                   <Link to="/community/handbook/code-of-conduct">
                     Code of Conduct
                   </Link>{" "}
-                  for more details.
-                </li>
-              </ul>
+              for more details.
             </p>
             <a id="Recognitions">
-              <h3 style={recognitionsstyle}>Recognitions</h3>
+              <h3 style={recognitionsstyle}>Recognition</h3>
             </a>
             <h4>Badges</h4>
             <p>
-              As you continue your contributions to this community, you stand a
-              chance to receive a badge in acknowledgement of your engagement
-              within and/or contribution to the representative project or
-              (sub-)community. A variety of badges exist so that community
-              members and their efforts may be affiliated with a particular
-              project or community initiative.
+              Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project. Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts. Community members are encouraged to collect the whole set! 
             </p>
             <ul style={badgeListStyle}>
               <li>
