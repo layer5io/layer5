@@ -151,11 +151,7 @@ const CommunityGuide = () => {
             </a>
             <h4>Badges</h4>
             <p>
-              You have the opportunity to obtain a badge as you continue to 
-              contribute to this community in recognition of your involvement with 
-              and/or commitment to the selected project or (sub-)community. There are 
-              many different badges available so that community members and their work 
-              can be connected to a certain project or community movement. 
+              Badges are awarded to community members who have been consistently engaged and impactful within a given area of the community or on a specific project. Every community member, whether contributing with code or not, has the opportunity to obtain any number of badges of recognition of their efforts. Community members are encouraged to collect the whole set! 
             </p>
             <ul style={badgeListStyle}>
               <li>
