@@ -60,6 +60,7 @@
     "gatsby-plugin-sitemap": "^5.19.0",
     "gatsby-plugin-styled-components": "^5.19.0",
     "gatsby-redirect-from": "^0.5.0",
+    "gatsby-remark-embed-video": "^3.2.1",
     "gatsby-source-filesystem": "^4.19.0",
     "gatsby-transformer-sharp": "^4.19.0",
     "gbimage-bridge": "^0.2.2",
