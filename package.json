@@ -93,7 +93,7 @@
     "simple-react-lightbox": "^3.6.8",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3",
-    "swiper": "^8.3.2"
+    "swiper": "^8.4.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
