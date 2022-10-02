@@ -404,8 +404,8 @@ export const repo_data = [
       {
         project: "MeshKit",
         image: meshery,
-        language: "Golang",
-        descriptionp: "Toolkit for Layer5's microservices.",
+        language: "Golang,Cuelang",
+        description: "Toolkit for Layer5's microservices.",
         repository: "https://github.com/layer5io/meshkit",
       },
       {
