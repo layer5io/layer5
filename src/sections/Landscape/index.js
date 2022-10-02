@@ -24,7 +24,7 @@ import Tools from "./tools";
 
 const isBrowser = typeof window !== "undefined";
 
-const LandscapeGrid = () => {
+const LandscapeGrid = ( { theme } ) => {
   return (
     <LandscapePageWrapper>
       <PageHeader title="The Service Mesh Landscape" path="Landscape" />
@@ -84,7 +84,7 @@ const LandscapeGrid = () => {
               <h2 className="sub-heading landscape-section-heading">
                                 Service Mesh Timeline
               </h2>
-              <ServiceMeshTimeline />
+              <ServiceMeshTimeline theme={theme} />
               <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
                                 Service Mesh Comparison Matrix
               </h2>
